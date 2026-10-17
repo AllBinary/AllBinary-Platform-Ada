@@ -62,7 +62,8 @@ package body org.allbinary.game.input.event.DownGameKeyEventHandler_Package is
         end loop;
    end removeAllListeners;
 
-   procedure removeListenerSingleThreaded (This : in out DownGameKeyEventHandler; eventListenerInterface : EventListenerInterface_Access) is
+   procedure removeListenerSingleThreaded (This : in out DownGameKeyEventHandler; eventListenerInterface_Param : access EventListenerInterface'Class) is
+      eventListenerInterface : EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
       index : Integer;
    begin
         DownGameKeyEventHandlerBase (This).removeListenerSingleThreaded (eventListenerInterface);
@@ -71,7 +72,8 @@ package body org.allbinary.game.input.event.DownGameKeyEventHandler_Package is
         end loop;
    end removeListenerSingleThreaded;
 
-   procedure removeListener (This : in out DownGameKeyEventHandler; eventListenerInterface : EventListenerInterface_Access) is
+   procedure removeListener (This : in out DownGameKeyEventHandler; eventListenerInterface_Param : access EventListenerInterface'Class) is
+      eventListenerInterface : EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
       index : Integer;
    begin
         DownGameKeyEventHandlerBase (This).removeListener (eventListenerInterface);

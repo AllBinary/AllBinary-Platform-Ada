@@ -82,7 +82,7 @@ package body org.allbinary.logic.visual.transform.template.util.TransformTemplat
         replace := null;
         rootViewName := replace.all_Id (viewName);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (To_Unbounded_String ("RootViewName for ObjectConfig: ") & rootViewName, This'Unchecked_Access, To_Unbounded_String ("getPageNameHack"));
+            This.logUtil.putF (To_Unbounded_String ("RootViewName for ObjectConfig: ") & rootViewName, TransformTemplateCustomizerUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("getPageNameHack"));
         end if;
         return rootViewName;
    end getPageNameHack;

@@ -39,7 +39,8 @@ package body org.allbinary.gui.dialog.FileJDialog_Package is
       return This;
    end Create;
 
-   procedure Initialize (This : in out FileJDialog'Class; parent : Frame_Access; modal : Boolean) is
+   procedure Initialize (This : in out FileJDialog'Class; parent_Param : access Frame'Class; modal : Boolean) is
+      parent : Frame_Access := Frame_Access (parent_Param);
    begin
         JDialog_Package.Initialize (This, parent, modal);
         Initialize_Fields (This);
@@ -47,14 +48,15 @@ package body org.allbinary.gui.dialog.FileJDialog_Package is
         This.getJFileChooser1.setMultiSelectionEnabled (True);
    end Initialize;
 
-   function Create (parent : Frame_Access; modal : Boolean) return FileJDialog_Access is
+   function Create (parent_Param : access Frame'Class; modal : Boolean) return FileJDialog_Access is
       This : constant FileJDialog_Access := new FileJDialog;
    begin
-      FileJDialog_Package.Initialize (This.all, parent, modal);
+      FileJDialog_Package.Initialize (This.all, parent_Param, modal);
       return This;
    end Create;
 
-   procedure addFinishedListener (This : in out FileJDialog; finishedListenerInterface : FileJDialogListenerInterface_Access) is
+   procedure addFinishedListener (This : in out FileJDialog; finishedListenerInterface_Param : access FileJDialogListenerInterface'Class) is
+      finishedListenerInterface : FileJDialogListenerInterface_Access := FileJDialogListenerInterface_Access (finishedListenerInterface_Param);
    begin
         This.finishedListenerInterface := finishedListenerInterface;
    end addFinishedListener;
@@ -66,7 +68,8 @@ package body org.allbinary.gui.dialog.FileJDialog_Package is
         This.setDefaultCloseOperation (javax_Package.swing.WindowConstants.DISPOSE_ON_CLOSE);
         This.jFileChooser1.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt : ActionEvent_Access) is
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
+--        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.jFileChooser1ActionPerformed (evt);
 --     end actionPerformed;
@@ -78,10 +81,11 @@ package body org.allbinary.gui.dialog.FileJDialog_Package is
         This.pack;
    end initComponents;
 
-   procedure jFileChooser1ActionPerformed (This : in out FileJDialog; evt : ActionEvent_Access) is
+   procedure jFileChooser1ActionPerformed (This : in out FileJDialog; evt_Param : access ActionEvent'Class) is
+      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
       files : File_Access_Array_Access;
    begin
-        This.logUtil.putF (To_Unbounded_String ("Starting Action Command: ") & Java_Image (evt.getActionCommand), This'Unchecked_Access, To_Unbounded_String ("ActionPerformed"));
+        This.logUtil.putF (To_Unbounded_String ("Starting Action Command: ") & Java_Image (evt.getActionCommand), FileJDialog_Access'(This'Unchecked_Access), To_Unbounded_String ("ActionPerformed"));
         files := This.getJFileChooser1.getSelectedFiles;
         if (evt.getActionCommand) = (This.getJFileChooser1.CANCEL_SELECTION) then
             This.setVisible (False);
@@ -109,7 +113,8 @@ package body org.allbinary.gui.dialog.FileJDialog_Package is
         return This.jFileChooser1;
    end getJFileChooser1;
 
-   procedure setJFileChooser1 (This : in out FileJDialog; jFileChooser1 : JFileChooser_Access) is
+   procedure setJFileChooser1 (This : in out FileJDialog; jFileChooser1_Param : access JFileChooser'Class) is
+      jFileChooser1 : JFileChooser_Access := JFileChooser_Access (jFileChooser1_Param);
    begin
         This.jFileChooser1 := jFileChooser1;
    end setJFileChooser1;

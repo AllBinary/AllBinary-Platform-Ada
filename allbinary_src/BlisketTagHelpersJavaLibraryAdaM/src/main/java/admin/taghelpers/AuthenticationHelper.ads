@@ -76,10 +76,10 @@ package admin.taghelpers.AuthenticationHelper_Package is
       attemptsInteger : Integer;
    end record;
 
-   procedure Initialize (This : in out AuthenticationHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access);
-   function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return AuthenticationHelper_Access;
-   procedure Initialize (This : in out AuthenticationHelper'Class; hashMap : HashMap_Access; httpServletRequest : HttpServletRequest_Access);
-   function Create (hashMap : HashMap_Access; httpServletRequest : HttpServletRequest_Access) return AuthenticationHelper_Access;
+   procedure Initialize (This : in out AuthenticationHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
+   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return AuthenticationHelper_Access;
+   procedure Initialize (This : in out AuthenticationHelper'Class; hashMap_Param : access HashMap'Class; httpServletRequest_Param : access HttpServletRequest'Class);
+   function Create (hashMap_Param : access HashMap'Class; httpServletRequest_Param : access HttpServletRequest'Class) return AuthenticationHelper_Access;
    procedure getFormData (This : in out AuthenticationHelper);
    function invalidateSession (This : in out AuthenticationHelper) return Integer;
    function isSessionOld (This : in out AuthenticationHelper) return Boolean;
@@ -87,8 +87,8 @@ package admin.taghelpers.AuthenticationHelper_Package is
    function validRole (This : in out AuthenticationHelper) return Unbounded_String;
    function invalidRole (This : in out AuthenticationHelper) return Unbounded_String;
    function isAuthenticated (This : in out AuthenticationHelper) return Boolean;
-   function isAuthenticationSessionValid (This : in out AuthenticationHelper; roles : BasicArrayList_Access) return Boolean;
-   procedure isAuthenticationSessionValid (This : in out AuthenticationHelper; roles : BasicArrayList_Access);
+   function isAuthenticationSessionValid (This : in out AuthenticationHelper; roles_Param : access BasicArrayList'Class) return Boolean;
+   procedure isAuthenticationSessionValid (This : in out AuthenticationHelper; roles_Param : access BasicArrayList'Class);
    procedure nextAttempt (This : in out AuthenticationHelper);
    function processIfNewLogin (This : in out AuthenticationHelper; userName : Unbounded_String; password : Unbounded_String) return Boolean;
    procedure processIfNewLogin (This : in out AuthenticationHelper; userName : Unbounded_String; password : Unbounded_String);

@@ -31,7 +31,7 @@ package org.allbinary.game.score.HighScoresCanvasInputProcessorFactoryInterface_
    type HighScoresCanvasInputProcessorFactoryInterface_Access is access all HighScoresCanvasInputProcessorFactoryInterface'Class;
    type HighScoresCanvasInputProcessorFactoryInterface_Access_Array is array (Natural range <>) of HighScoresCanvasInputProcessorFactoryInterface_Access;
    type HighScoresCanvasInputProcessorFactoryInterface_Access_Array_Access is access all HighScoresCanvasInputProcessorFactoryInterface_Access_Array;
-   function getInstance (This : in out HighScoresCanvasInputProcessorFactoryInterface; highScoresCanvas : HighScoresCanvas_Access) return HighScoresCanvasInputProcessor_Access is abstract;
+   function getInstance (This : in out HighScoresCanvasInputProcessorFactoryInterface; highScoresCanvas_Param : access HighScoresCanvas'Class) return HighScoresCanvasInputProcessor_Access is abstract;
 
 end org.allbinary.game.score.HighScoresCanvasInputProcessorFactoryInterface_Package;
 

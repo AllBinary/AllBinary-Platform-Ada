@@ -39,8 +39,8 @@ package views.business.context.modules.storefront.customizer.generic_Id.page.Pag
       logUtil : LogUtil_Access;
    end record;
 
-   procedure Initialize (This : in out PageView'Class; transformInfoInterface : TransformInfoInterface_Access);
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return PageView_Access;
+   procedure Initialize (This : in out PageView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return PageView_Access;
    function view (This : in out PageView) return Unbounded_String;
 
 end views.business.context.modules.storefront.customizer.generic_Id.page.PageView_Package;

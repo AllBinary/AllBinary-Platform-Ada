@@ -45,10 +45,10 @@ package org.allbinary.media.image.comparison.motion.ConsolidateMotionRectangles_
    end record;
    NAME : Unbounded_String;
 
-   procedure Initialize (This : in out ConsolidateMotionRectangles'Class; motionRectangles : MotionRectangles_Access);
-   function Create (motionRectangles : MotionRectangles_Access) return ConsolidateMotionRectangles_Access;
+   procedure Initialize (This : in out ConsolidateMotionRectangles'Class; motionRectangles_Param : access MotionRectangles'Class);
+   function Create (motionRectangles_Param : access MotionRectangles'Class) return ConsolidateMotionRectangles_Access;
    procedure consolidateMotionRectangles (This : in out ConsolidateMotionRectangles);
-   procedure remove (This : in out ConsolidateMotionRectangles; removeVector : BasicArrayList_Access);
+   procedure remove (This : in out ConsolidateMotionRectangles; removeVector_Param : access BasicArrayList'Class);
 
 end org.allbinary.media.image.comparison.motion.ConsolidateMotionRectangles_Package;
 

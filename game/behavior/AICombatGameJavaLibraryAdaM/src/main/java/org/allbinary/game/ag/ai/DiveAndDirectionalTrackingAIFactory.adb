@@ -34,7 +34,10 @@ package body org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAIFactory_Packag
 
 
    --  throws Exception
-   function getInstance (This : in out DiveAndDirectionalTrackingAIFactory; hashtable : ABHashtable_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return ArtificialIntelligenceInterface_Access is
+   function getInstance (This : in out DiveAndDirectionalTrackingAIFactory; hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return ArtificialIntelligenceInterface_Access is
+      hashtable : ABHashtable_Access := ABHashtable_Access (hashtable_Param);
+      ownerLayerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (ownerLayerInterface_Param);
+      gameInput : GameInput_Access := GameInput_Access (gameInput_Param);
       visitorCanBeNull : Java_Object_Access;
       hashtable2 : ABHashtable_Access;
       artificialIntelligenceInterface : ArtificialIntelligenceInterface_Access;
@@ -49,8 +52,8 @@ package body org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAIFactory_Packag
         return DiveAndDirectionalTrackingAI_Package.Create (ownerLayerInterface, artificialIntelligenceInterface, gameInput, Visitor_Access (visitorCanBeNull));
    end getInstance;
 
-   procedure getInstance (This : in out DiveAndDirectionalTrackingAIFactory; hashtable : ABHashtable_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) is
-      Java_Result : constant ArtificialIntelligenceInterface_Access := DiveAndDirectionalTrackingAIFactory'Class (This).getInstance (hashtable, ownerLayerInterface, gameInput);
+   procedure getInstance (This : in out DiveAndDirectionalTrackingAIFactory; hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) is
+      Java_Result : constant ArtificialIntelligenceInterface_Access := DiveAndDirectionalTrackingAIFactory'Class (This).getInstance (hashtable_Param, ownerLayerInterface_Param, gameInput_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

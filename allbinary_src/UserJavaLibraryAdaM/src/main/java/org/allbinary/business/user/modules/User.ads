@@ -112,11 +112,11 @@ package org.allbinary.business.user.modules.User_Package is
 
    procedure Initialize (This : in out User'Class);
    function Create return User_Access;
-   procedure Initialize (This : in out User'Class; request : HttpServletRequest_Access);
-   function Create (request : HttpServletRequest_Access) return User_Access;
-   procedure Initialize (This : in out User'Class; userHashMap : HashMap_Access);
-   function Create (userHashMap : HashMap_Access) return User_Access;
-   procedure getFormData (This : in out User; userHashMap : HashMap_Access);
+   procedure Initialize (This : in out User'Class; request_Param : access HttpServletRequest'Class);
+   function Create (request_Param : access HttpServletRequest'Class) return User_Access;
+   procedure Initialize (This : in out User'Class; userHashMap_Param : access HashMap'Class);
+   function Create (userHashMap_Param : access HashMap'Class) return User_Access;
+   procedure getFormData (This : in out User; userHashMap_Param : access HashMap'Class);
    function isValid (This : in out User) return Boolean;
    function validationInfo (This : in out User) return Unbounded_String;
    procedure setUserName (This : in out User; value : Unbounded_String);
@@ -135,7 +135,7 @@ package org.allbinary.business.user.modules.User_Package is
    procedure setOtherContact (This : in out User; value : Unbounded_String);
    procedure setElectronicContact (This : in out User; value : Unbounded_String);
    procedure setFax (This : in out User; value : Unbounded_String);
-   procedure setRole (This : in out User; role : UserRole_Access);
+   procedure setRole (This : in out User; role_Param : access UserRole'Class);
    procedure setPermissions (This : in out User; value : Unbounded_String);
    procedure setEncryption (This : in out User; value : Unbounded_String);
    procedure setSecret (This : in out User; value : Unbounded_String);
@@ -167,15 +167,15 @@ package org.allbinary.business.user.modules.User_Package is
    function toVector (This : in out User) return BasicArrayList_Access;
    function toHashMap (This : in out User) return HashMap_Access;
    function toPasswordHashMap (This : in out User) return HashMap_Access;
-   procedure validateSession (This : in out User; weblisketSession : WeblisketSessionInterface_Access);
-   procedure updateSession (This : in out User; weblisketSession : WeblisketSessionInterface_Access);
+   procedure validateSession (This : in out User; weblisketSession_Param : access WeblisketSessionInterface'Class);
+   procedure updateSession (This : in out User; weblisketSession_Param : access WeblisketSessionInterface'Class);
    function isSessionValid (This : in out User) return Boolean;
    function getKey (This : in out User) return Java_Object_Access;
    function toValidationInfoDoc (This : in out User) return Document_Access;
-   function toValidationInfoNode (This : in out User; document : Document_Access) return Node_Access;
-   procedure toValidationInfoNode (This : in out User; document : Document_Access);
+   function toValidationInfoNode (This : in out User; document_Param : access Document'Class) return Node_Access;
+   procedure toValidationInfoNode (This : in out User; document_Param : access Document'Class);
    function getUserConfigurationInterface (This : in out User) return UserConfigurationInterface_Access;
-   procedure setUserConfigurationInterface (This : in out User; userConfigurationInterface : UserConfigurationInterface_Access);
+   procedure setUserConfigurationInterface (This : in out User; userConfigurationInterface_Param : access UserConfigurationInterface'Class);
 
 end org.allbinary.business.user.modules.User_Package;
 

@@ -36,7 +36,9 @@ package body taghelpers.OrderHistoryHelperFactory_Package is
    end Create;
 
    --  throws LicensingException
-   function getInstance (This : in out OrderHistoryHelperFactory; hashMap : HashMap_Access; pageContext : PageContext_Access) return Java_Object_Access is
+   function getInstance (This : in out OrderHistoryHelperFactory; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return Java_Object_Access is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
       commonStrings : CommonStrings_Access;
    begin
         begin
@@ -48,15 +50,15 @@ package body taghelpers.OrderHistoryHelperFactory_Package is
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORYERROR) then
                 commonStrings := CommonStrings_Package.getInstance;
-                This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.GET_INSTANCE, e);
+                This.logUtil.put (commonStrings.EXCEPTION_Id, OrderHistoryHelperFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE, e);
             end if;
             return null;
                 end;
         end;
    end getInstance;
 
-   procedure getInstance (This : in out OrderHistoryHelperFactory; hashMap : HashMap_Access; pageContext : PageContext_Access) is
-      Java_Result : constant Java_Object_Access := OrderHistoryHelperFactory'Class (This).getInstance (hashMap, pageContext);
+   procedure getInstance (This : in out OrderHistoryHelperFactory; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+      Java_Result : constant Java_Object_Access := OrderHistoryHelperFactory'Class (This).getInstance (hashMap_Param, pageContext_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

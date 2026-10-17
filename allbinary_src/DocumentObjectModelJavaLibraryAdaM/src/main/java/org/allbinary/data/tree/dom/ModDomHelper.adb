@@ -35,7 +35,8 @@ package body org.allbinary.data.tree.dom.ModDomHelper_Package is
    end Create;
 
    --  throws Exception
-   function createTextNode (document : Document_Access; name : Unbounded_String; text : Unbounded_String) return Node_Access is
+   function createTextNode (document_Param : access Document'Class; name : Unbounded_String; text : Unbounded_String) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       newValueNode : Node_Access;
       newValueTextNode : Node_Access;
    begin
@@ -46,25 +47,29 @@ package body org.allbinary.data.tree.dom.ModDomHelper_Package is
    end createTextNode;
 
    --  throws Exception
-   function createValueNode (document : Document_Access; text : Unbounded_String) return Node_Access is
+   function createValueNode (document_Param : access Document'Class; text : Unbounded_String) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
    begin
         return ModDomHelper_Package.createTextNode (document, DomData_Package.VALUE, text);
    end createValueNode;
 
    --  throws Exception
-   function createNameNode (document : Document_Access; text : Unbounded_String) return Node_Access is
+   function createNameNode (document_Param : access Document'Class; text : Unbounded_String) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
    begin
         return ModDomHelper_Package.createTextNode (document, DomData_Package.NAME, text);
    end createNameNode;
 
    --  throws Exception
-   function createIndexNode (document : Document_Access; index : Integer) return Node_Access is
+   function createIndexNode (document_Param : access Document'Class; index : Integer) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
    begin
         return ModDomHelper_Package.createTextNode (document, DomData_Package.INDEX, index.toString);
    end createIndexNode;
 
    --  throws Exception
-   function createNameValueNodes (document : Document_Access; elementName : Unbounded_String; nameText : Unbounded_String; valueText : Unbounded_String) return Node_Access is
+   function createNameValueNodes (document_Param : access Document'Class; elementName : Unbounded_String; nameText : Unbounded_String; valueText : Unbounded_String) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       newNode : Node_Access;
    begin
         newNode := document.createElement (elementName);
@@ -74,7 +79,8 @@ package body org.allbinary.data.tree.dom.ModDomHelper_Package is
    end createNameValueNodes;
 
    --  throws Exception
-   function createNameValueNodes (document : Document_Access; elementNameAndNameText : Unbounded_String; valueText : Unbounded_String) return Node_Access is
+   function createNameValueNodes (document_Param : access Document'Class; elementNameAndNameText : Unbounded_String; valueText : Unbounded_String) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       newNode : Node_Access;
    begin
         newNode := ModDomHelper_Package.createNameValueNodes (document, elementNameAndNameText, elementNameAndNameText, valueText);
@@ -82,7 +88,8 @@ package body org.allbinary.data.tree.dom.ModDomHelper_Package is
    end createNameValueNodes;
 
    --  throws Exception
-   function createNameValueIndexNodes (document : Document_Access; elementNameAndNameText : Unbounded_String; index : Integer; valueText : Unbounded_String) return Node_Access is
+   function createNameValueIndexNodes (document_Param : access Document'Class; elementNameAndNameText : Unbounded_String; index : Integer; valueText : Unbounded_String) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       newNode : Node_Access;
    begin
         newNode := ModDomHelper_Package.createNameValueNodes (document, elementNameAndNameText, valueText);
@@ -91,7 +98,9 @@ package body org.allbinary.data.tree.dom.ModDomHelper_Package is
    end createNameValueIndexNodes;
 
    --  throws Exception
-   function createNameValueNodes (document : Document_Access; rootNode : Unbounded_String; hashMap : HashMap_Access) return Node_Access is
+   function createNameValueNodes (document_Param : access Document'Class; rootNode : Unbounded_String; hashMap_Param : access HashMap'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
       node : Node_Access;
    begin
         node := document.createElement (rootNode);
@@ -99,7 +108,10 @@ package body org.allbinary.data.tree.dom.ModDomHelper_Package is
    end createNameValueNodes;
 
    --  throws Exception
-   function createNameValueNodes (document : Document_Access; node : Node_Access; hashMap : HashMap_Access) return Node_Access is
+   function createNameValueNodes (document_Param : access Document'Class; node_Param : access Node'Class; hashMap_Param : access HashMap'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
+      node : Node_Access := Node_Access (node_Param);
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
       stringUtil : StringUtil_Access;
       keySet : Set_Access;
       keyArray : Java_Object_Access_Array_Access;
@@ -134,7 +146,9 @@ package body org.allbinary.data.tree.dom.ModDomHelper_Package is
    end createNameValueNodes;
 
    --  throws Exception
-   function createNameValueNodes (document : Document_Access; rootNodeName : Unbounded_String; duplicateNodeName : Unbounded_String; valueVector : BasicArrayList_Access) return Node_Access is
+   function createNameValueNodes (document_Param : access Document'Class; rootNodeName : Unbounded_String; duplicateNodeName : Unbounded_String; valueVector_Param : access BasicArrayList'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
+      valueVector : BasicArrayList_Access := BasicArrayList_Access (valueVector_Param);
       stringUtil : StringUtil_Access;
       node : Node_Access;
       size : Integer;
@@ -152,7 +166,9 @@ package body org.allbinary.data.tree.dom.ModDomHelper_Package is
    end createNameValueNodes;
 
    --  throws Exception
-   function createNameValueIndexNodes (document : Document_Access; rootNodeName : Unbounded_String; duplicateNodeName : Unbounded_String; valueVector : BasicArrayList_Access) return Node_Access is
+   function createNameValueIndexNodes (document_Param : access Document'Class; rootNodeName : Unbounded_String; duplicateNodeName : Unbounded_String; valueVector_Param : access BasicArrayList'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
+      valueVector : BasicArrayList_Access := BasicArrayList_Access (valueVector_Param);
       stringUtil : StringUtil_Access;
       node : Node_Access;
       size : Integer;
@@ -170,7 +186,9 @@ package body org.allbinary.data.tree.dom.ModDomHelper_Package is
    end createNameValueIndexNodes;
 
    --  throws Exception
-   function createNodeWithValueNodes (document : Document_Access; rootNode : Unbounded_String; hashMap : HashMap_Access) return Node_Access is
+   function createNodeWithValueNodes (document_Param : access Document'Class; rootNode : Unbounded_String; hashMap_Param : access HashMap'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
       node : Node_Access;
    begin
         node := document.createElement (rootNode);
@@ -178,7 +196,10 @@ package body org.allbinary.data.tree.dom.ModDomHelper_Package is
    end createNodeWithValueNodes;
 
    --  throws Exception
-   function createNodeWithValueNodes (document : Document_Access; node : Node_Access; hashMap : HashMap_Access) return Node_Access is
+   function createNodeWithValueNodes (document_Param : access Document'Class; node_Param : access Node'Class; hashMap_Param : access HashMap'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
+      node : Node_Access := Node_Access (node_Param);
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
       stringUtil : StringUtil_Access;
       keySet : Set_Access;
       keyArray : Java_Object_Access_Array_Access;
@@ -201,92 +222,92 @@ package body org.allbinary.data.tree.dom.ModDomHelper_Package is
         return node;
    end createNodeWithValueNodes;
 
-   procedure createTextNode (document : Document_Access; name : Unbounded_String; text : Unbounded_String) is
-      Java_Result : constant Node_Access := createTextNode (document, name, text);
+   procedure createTextNode (document_Param : access Document'Class; name : Unbounded_String; text : Unbounded_String) is
+      Java_Result : constant Node_Access := createTextNode (document_Param, name, text);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createTextNode;
 
-   procedure createValueNode (document : Document_Access; text : Unbounded_String) is
-      Java_Result : constant Node_Access := createValueNode (document, text);
+   procedure createValueNode (document_Param : access Document'Class; text : Unbounded_String) is
+      Java_Result : constant Node_Access := createValueNode (document_Param, text);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createValueNode;
 
-   procedure createNameNode (document : Document_Access; text : Unbounded_String) is
-      Java_Result : constant Node_Access := createNameNode (document, text);
+   procedure createNameNode (document_Param : access Document'Class; text : Unbounded_String) is
+      Java_Result : constant Node_Access := createNameNode (document_Param, text);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createNameNode;
 
-   procedure createIndexNode (document : Document_Access; index : Integer) is
-      Java_Result : constant Node_Access := createIndexNode (document, index);
+   procedure createIndexNode (document_Param : access Document'Class; index : Integer) is
+      Java_Result : constant Node_Access := createIndexNode (document_Param, index);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createIndexNode;
 
-   procedure createNameValueNodes (document : Document_Access; elementName : Unbounded_String; nameText : Unbounded_String; valueText : Unbounded_String) is
-      Java_Result : constant Node_Access := createNameValueNodes (document, elementName, nameText, valueText);
+   procedure createNameValueNodes (document_Param : access Document'Class; elementName : Unbounded_String; nameText : Unbounded_String; valueText : Unbounded_String) is
+      Java_Result : constant Node_Access := createNameValueNodes (document_Param, elementName, nameText, valueText);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createNameValueNodes;
 
-   procedure createNameValueNodes (document : Document_Access; elementNameAndNameText : Unbounded_String; valueText : Unbounded_String) is
-      Java_Result : constant Node_Access := createNameValueNodes (document, elementNameAndNameText, valueText);
+   procedure createNameValueNodes (document_Param : access Document'Class; elementNameAndNameText : Unbounded_String; valueText : Unbounded_String) is
+      Java_Result : constant Node_Access := createNameValueNodes (document_Param, elementNameAndNameText, valueText);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createNameValueNodes;
 
-   procedure createNameValueIndexNodes (document : Document_Access; elementNameAndNameText : Unbounded_String; index : Integer; valueText : Unbounded_String) is
-      Java_Result : constant Node_Access := createNameValueIndexNodes (document, elementNameAndNameText, index, valueText);
+   procedure createNameValueIndexNodes (document_Param : access Document'Class; elementNameAndNameText : Unbounded_String; index : Integer; valueText : Unbounded_String) is
+      Java_Result : constant Node_Access := createNameValueIndexNodes (document_Param, elementNameAndNameText, index, valueText);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createNameValueIndexNodes;
 
-   procedure createNameValueNodes (document : Document_Access; rootNode : Unbounded_String; hashMap : HashMap_Access) is
-      Java_Result : constant Node_Access := createNameValueNodes (document, rootNode, hashMap);
+   procedure createNameValueNodes (document_Param : access Document'Class; rootNode : Unbounded_String; hashMap_Param : access HashMap'Class) is
+      Java_Result : constant Node_Access := createNameValueNodes (document_Param, rootNode, hashMap_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createNameValueNodes;
 
-   procedure createNameValueNodes (document : Document_Access; node : Node_Access; hashMap : HashMap_Access) is
-      Java_Result : constant Node_Access := createNameValueNodes (document, node, hashMap);
+   procedure createNameValueNodes (document_Param : access Document'Class; node_Param : access Node'Class; hashMap_Param : access HashMap'Class) is
+      Java_Result : constant Node_Access := createNameValueNodes (document_Param, node_Param, hashMap_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createNameValueNodes;
 
-   procedure createNameValueNodes (document : Document_Access; rootNodeName : Unbounded_String; duplicateNodeName : Unbounded_String; valueVector : BasicArrayList_Access) is
-      Java_Result : constant Node_Access := createNameValueNodes (document, rootNodeName, duplicateNodeName, valueVector);
+   procedure createNameValueNodes (document_Param : access Document'Class; rootNodeName : Unbounded_String; duplicateNodeName : Unbounded_String; valueVector_Param : access BasicArrayList'Class) is
+      Java_Result : constant Node_Access := createNameValueNodes (document_Param, rootNodeName, duplicateNodeName, valueVector_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createNameValueNodes;
 
-   procedure createNameValueIndexNodes (document : Document_Access; rootNodeName : Unbounded_String; duplicateNodeName : Unbounded_String; valueVector : BasicArrayList_Access) is
-      Java_Result : constant Node_Access := createNameValueIndexNodes (document, rootNodeName, duplicateNodeName, valueVector);
+   procedure createNameValueIndexNodes (document_Param : access Document'Class; rootNodeName : Unbounded_String; duplicateNodeName : Unbounded_String; valueVector_Param : access BasicArrayList'Class) is
+      Java_Result : constant Node_Access := createNameValueIndexNodes (document_Param, rootNodeName, duplicateNodeName, valueVector_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createNameValueIndexNodes;
 
-   procedure createNodeWithValueNodes (document : Document_Access; rootNode : Unbounded_String; hashMap : HashMap_Access) is
-      Java_Result : constant Node_Access := createNodeWithValueNodes (document, rootNode, hashMap);
+   procedure createNodeWithValueNodes (document_Param : access Document'Class; rootNode : Unbounded_String; hashMap_Param : access HashMap'Class) is
+      Java_Result : constant Node_Access := createNodeWithValueNodes (document_Param, rootNode, hashMap_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createNodeWithValueNodes;
 
-   procedure createNodeWithValueNodes (document : Document_Access; node : Node_Access; hashMap : HashMap_Access) is
-      Java_Result : constant Node_Access := createNodeWithValueNodes (document, node, hashMap);
+   procedure createNodeWithValueNodes (document_Param : access Document'Class; node_Param : access Node'Class; hashMap_Param : access HashMap'Class) is
+      Java_Result : constant Node_Access := createNodeWithValueNodes (document_Param, node_Param, hashMap_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

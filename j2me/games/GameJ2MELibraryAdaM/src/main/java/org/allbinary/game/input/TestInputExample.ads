@@ -43,8 +43,8 @@ package org.allbinary.game.input.TestInputExample_Package is
    procedure right (This : in out TestInputExample);
    procedure strafeLeft (This : in out TestInputExample);
    procedure strafeRight (This : in out TestInputExample);
-   procedure paint (This : in out TestInputExample; graphics : Graphics_Access);
-   procedure paintThreed (This : in out TestInputExample; graphics : Graphics_Access);
+   procedure paint (This : in out TestInputExample; graphics_Param : access Graphics'Class);
+   procedure paintThreed (This : in out TestInputExample; graphics_Param : access Graphics'Class);
 
 end org.allbinary.game.input.TestInputExample_Package;
 

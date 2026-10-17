@@ -30,24 +30,26 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AndroidBasicTitleProgressBar'Class; title : Unbounded_String; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) is
+   procedure Initialize (This : in out AndroidBasicTitleProgressBar'Class; title : Unbounded_String; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) is
+      backgroundBasicColor : BasicColor_Access := BasicColor_Access (backgroundBasicColor_Param);
+      foregroundBasicColor : BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
       size : Integer;
       index : Integer;
    begin
         ProgressCanvas_Package.Initialize (This, title, backgroundBasicColor, foregroundBasicColor);
         Initialize_Fields (This);
         This.init;
-        DisplayChangeEventHandler_Package.getInstance.addListenerInterface (This'Unchecked_Access);
+        DisplayChangeEventHandler_Package.getInstance.addListenerInterface (AndroidBasicTitleProgressBar_Access'(This'Unchecked_Access));
         size := This.IMAGE'Length;
         for index in 0 .. (size) - 1 loop
             This.IMAGE (index) := NullImage_Package.NULL_IMAGE;
         end loop;
    end Initialize;
 
-   function Create (title : Unbounded_String; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return AndroidBasicTitleProgressBar_Access is
+   function Create (title : Unbounded_String; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return AndroidBasicTitleProgressBar_Access is
       This : constant AndroidBasicTitleProgressBar_Access := new AndroidBasicTitleProgressBar;
    begin
-      AndroidBasicTitleProgressBar_Package.Initialize (This.all, title, backgroundBasicColor, foregroundBasicColor);
+      AndroidBasicTitleProgressBar_Package.Initialize (This.all, title, backgroundBasicColor_Param, foregroundBasicColor_Param);
       return This;
    end Create;
 
@@ -64,20 +66,21 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.INIT, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, AndroidBasicTitleProgressBar_Access'(This'Unchecked_Access), This.commonStrings.INIT, e);
                 end;
         end;
    end init;
 
-   procedure initActivity (This : in out AndroidBasicTitleProgressBar; activity : Activity_Access) is
+   procedure initActivity (This : in out AndroidBasicTitleProgressBar; activity_Param : access Activity'Class) is
+      activity : Activity_Access := Activity_Access (activity_Param);
    begin
         begin
             if (This.midletActivity) /= (activity) then
                 This.midletActivity := activity;
-                This.showTitleProgressBarRunnable := ShowTitleProgressBarRunnable_Package.Create (This.midletActivity, This'Unchecked_Access);
-                This.dismissTitleProgressBarRunnable := DismissTitleProgressBarRunnable_Package.Create (This.midletActivity, This'Unchecked_Access);
-                This.titleProgressDialogSetProgressRunnable := TitleProgressBarSetProgressRunnable_Package.Create (This.midletActivity, This'Unchecked_Access);
-                This.titleProgressDialogPortionSetProgressRunnable := TitleProgressBarPortionSetProgressRunnable_Package.Create (This.midletActivity, This'Unchecked_Access);
+                This.showTitleProgressBarRunnable := ShowTitleProgressBarRunnable_Package.Create (This.midletActivity, AndroidBasicTitleProgressBar_Access'(This'Unchecked_Access));
+                This.dismissTitleProgressBarRunnable := DismissTitleProgressBarRunnable_Package.Create (This.midletActivity, AndroidBasicTitleProgressBar_Access'(This'Unchecked_Access));
+                This.titleProgressDialogSetProgressRunnable := TitleProgressBarSetProgressRunnable_Package.Create (This.midletActivity, AndroidBasicTitleProgressBar_Access'(This'Unchecked_Access));
+                This.titleProgressDialogPortionSetProgressRunnable := TitleProgressBarPortionSetProgressRunnable_Package.Create (This.midletActivity, AndroidBasicTitleProgressBar_Access'(This'Unchecked_Access));
                 This.loadProgressImages;
             end if;
             This.updateCurrent;
@@ -86,7 +89,7 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.INIT, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, AndroidBasicTitleProgressBar_Access'(This'Unchecked_Access), This.commonStrings.INIT, e);
                 end;
         end;
    end initActivity;
@@ -117,17 +120,19 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.UPDATE, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, AndroidBasicTitleProgressBar_Access'(This'Unchecked_Access), This.commonStrings.UPDATE, e);
                 end;
         end;
    end updateCurrent;
 
-   procedure onEvent (This : in out AndroidBasicTitleProgressBar; eventObject : AllBinaryEventObject_Access) is
+   procedure onEvent (This : in out AndroidBasicTitleProgressBar; eventObject_Param : access AllBinaryEventObject'Class) is
+      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
    begin
-        ForcedLogUtil_Package.log (EventStrings_Package.getInstance.PERFORMANCE_MESSAGE, This'Unchecked_Access);
+        ForcedLogUtil_Package.log (EventStrings_Package.getInstance.PERFORMANCE_MESSAGE, AndroidBasicTitleProgressBar_Access'(This'Unchecked_Access));
    end onEvent;
 
-   procedure onDisplayChangeEvent (This : in out AndroidBasicTitleProgressBar; displayChangeEvent : DisplayChangeEvent_Access) is
+   procedure onDisplayChangeEvent (This : in out AndroidBasicTitleProgressBar; displayChangeEvent_Param : access DisplayChangeEvent'Class) is
+      displayChangeEvent : DisplayChangeEvent_Access := DisplayChangeEvent_Access (displayChangeEvent_Param);
    begin
         begin
             This.loadProgressImages;
@@ -137,7 +142,7 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.putF ((This.commonStrings.EXCEPTION_LABEL) + (ExceptionUtil_Package.getInstance.getStackTrace (e)), This'Unchecked_Access, This.canvasStrings.ON_DISPLAY_CHANGE_EVENT);
+            This.logUtil.putF ((This.commonStrings.EXCEPTION_LABEL) + (ExceptionUtil_Package.getInstance.getStackTrace (e)), AndroidBasicTitleProgressBar_Access'(This'Unchecked_Access), This.canvasStrings.ON_DISPLAY_CHANGE_EVENT);
             This.animation := NullAnimationFactory_Package.getFactoryInstance.getInstance (0);
                 end;
         end;
@@ -162,7 +167,7 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.putF (To_Unbounded_String ("IllegalArgumentException ") & Java_Image (ExceptionUtil_Package.getInstance.getStackTrace (e)), This'Unchecked_Access, To_Unbounded_String ("loadProgressImages"));
+            This.logUtil.putF (To_Unbounded_String ("IllegalArgumentException ") & Java_Image (ExceptionUtil_Package.getInstance.getStackTrace (e)), AndroidBasicTitleProgressBar_Access'(This'Unchecked_Access), To_Unbounded_String ("loadProgressImages"));
             This.animation := NullAnimationFactory_Package.getFactoryInstance.getInstance (0);
                 end;
         end;
@@ -180,7 +185,7 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
    procedure start (This : in out AndroidBasicTitleProgressBar) is
    begin
         begin
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.START_METHOD_NAME);
+            This.logUtil.putF (This.commonStrings.START, AndroidBasicTitleProgressBar_Access'(This'Unchecked_Access), This.commonStrings.START_METHOD_NAME);
             ProgressCanvas (This).start;
             This.midletActivity.runOnUiThread (This.showTitleProgressBarRunnable);
         exception
@@ -188,7 +193,7 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.START_METHOD_NAME, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, AndroidBasicTitleProgressBar_Access'(This'Unchecked_Access), This.commonStrings.START_METHOD_NAME, e);
                 end;
         end;
    end start;
@@ -196,7 +201,7 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
    procedure end_Id (This : in out AndroidBasicTitleProgressBar) is
    begin
         begin
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.END_METHOD_NAME);
+            This.logUtil.putF (This.commonStrings.START, AndroidBasicTitleProgressBar_Access'(This'Unchecked_Access), This.commonStrings.END_METHOD_NAME);
             This.midletActivity.runOnUiThread (This.dismissTitleProgressBarRunnable);
             ProgressCanvas (This).end_Id;
         exception
@@ -204,7 +209,7 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.END_METHOD_NAME, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, AndroidBasicTitleProgressBar_Access'(This'Unchecked_Access), This.commonStrings.END_METHOD_NAME, e);
                 end;
         end;
    end end_Id;
@@ -222,7 +227,7 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.ADD_PORTION, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, AndroidBasicTitleProgressBar_Access'(This'Unchecked_Access), This.ADD_PORTION, e);
                 end;
         end;
    end addEarlyPortion;
@@ -238,7 +243,7 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.ADD_PORTION, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, AndroidBasicTitleProgressBar_Access'(This'Unchecked_Access), This.ADD_PORTION, e);
                 end;
         end;
    end addPortion;
@@ -254,7 +259,7 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.ADD_PORTION, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, AndroidBasicTitleProgressBar_Access'(This'Unchecked_Access), This.ADD_PORTION, e);
                 end;
         end;
    end addNormalPortion;
@@ -269,7 +274,7 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("setValue"), e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, AndroidBasicTitleProgressBar_Access'(This'Unchecked_Access), To_Unbounded_String ("setValue"), e);
                 end;
         end;
    end setValue;
@@ -300,12 +305,13 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
    end setImages;
 
    --  throws Exception
-   procedure initOpenGL (This : in out AndroidBasicTitleProgressBar; graphics : Graphics_Access) is
+   procedure initOpenGL (This : in out AndroidBasicTitleProgressBar; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       preResourceImageUtil : PreResourceImageUtil_Access;
       size : Integer;
       index : Integer;
    begin
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.INIT);
+        This.logUtil.putF (This.commonStrings.START, AndroidBasicTitleProgressBar_Access'(This'Unchecked_Access), This.commonStrings.INIT);
         This.image_Case := GameFeatureImageCacheFactory_Package.getInstance.getWithKey (AndroidBasicTitleProgressBar_Package.RESOURCE);
         preResourceImageUtil := PreResourceImageUtil_Package.getInstance;
         size := This.IMAGE'Length;
@@ -318,12 +324,13 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
    end initOpenGL;
 
    --  throws Exception
-   procedure update (This : in out AndroidBasicTitleProgressBar; graphics : Graphics_Access) is
+   procedure update (This : in out AndroidBasicTitleProgressBar; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       preResourceImageUtil : PreResourceImageUtil_Access;
       size : Integer;
       index : Integer;
    begin
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.UPDATE);
+        This.logUtil.putF (This.commonStrings.START, AndroidBasicTitleProgressBar_Access'(This'Unchecked_Access), This.commonStrings.UPDATE);
         This.initOpenGL (graphics);
         This.image_Case := GameFeatureImageCacheFactory_Package.getInstance.getWithKey (AndroidBasicTitleProgressBar_Package.RESOURCE);
         preResourceImageUtil := PreResourceImageUtil_Package.getInstance;
@@ -348,7 +355,8 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
         return image_Case;
    end getImage;
 
-   procedure paint2 (This : in out AndroidBasicTitleProgressBar; graphics : Graphics_Access) is
+   procedure paint2 (This : in out AndroidBasicTitleProgressBar; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         begin
             This.animation.paintXY (graphics, 0, 20);
@@ -358,7 +366,7 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.canvasStrings.PAINT, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, AndroidBasicTitleProgressBar_Access'(This'Unchecked_Access), This.canvasStrings.PAINT, e);
                 end;
         end;
    end paint2;

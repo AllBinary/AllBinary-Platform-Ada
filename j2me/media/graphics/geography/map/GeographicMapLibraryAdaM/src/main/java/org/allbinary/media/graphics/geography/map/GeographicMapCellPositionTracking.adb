@@ -39,7 +39,8 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellPositio
    end Create;
 
    --  throws Exception
-   function getCurrentOverCellType (This : in out GeographicMapCellPositionTracking; geographicMap : BasicGeographicMap_Access) return GeographicMapCellType_Access is
+   function getCurrentOverCellType (This : in out GeographicMapCellPositionTracking; geographicMap_Param : access BasicGeographicMap'Class) return GeographicMapCellType_Access is
+      geographicMap : BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMap_Param);
       geographicMapCellPosition : GeographicMapCellPosition_Access;
    begin
         geographicMapCellPosition := This.currentGeographicMapCellPosition;
@@ -50,7 +51,9 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellPositio
    end getCurrentOverCellType;
 
    --  throws Exception
-   function updateStart (This : in out GeographicMapCellPositionTracking; gameCanvasInterface : AllBinaryGameCanvasInterface_Access; layer : AllBinaryLayer_Access) return Boolean is
+   function updateStart (This : in out GeographicMapCellPositionTracking; gameCanvasInterface_Param : access AllBinaryGameCanvasInterface'Class; layer_Param : access AllBinaryLayer'Class) return Boolean is
+      gameCanvasInterface : AllBinaryGameCanvasInterface_Access := AllBinaryGameCanvasInterface_Access (gameCanvasInterface_Param);
+      layer : AllBinaryLayer_Access := AllBinaryLayer_Access (layer_Param);
       geographicMapCompositeInterface : GeographicMapCompositeInterface_Access;
       geographicMapInterface : BasicGeographicMap_Access;
    begin
@@ -85,15 +88,15 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellPositio
         return This.currentGeographicMapCellPosition;
    end getCurrentGeographicMapCellPosition;
 
-   procedure getCurrentOverCellType (This : in out GeographicMapCellPositionTracking; geographicMap : BasicGeographicMap_Access) is
-      Java_Result : constant GeographicMapCellType_Access := GeographicMapCellPositionTracking'Class (This).getCurrentOverCellType (geographicMap);
+   procedure getCurrentOverCellType (This : in out GeographicMapCellPositionTracking; geographicMap_Param : access BasicGeographicMap'Class) is
+      Java_Result : constant GeographicMapCellType_Access := GeographicMapCellPositionTracking'Class (This).getCurrentOverCellType (geographicMap_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getCurrentOverCellType;
 
-   procedure updateStart (This : in out GeographicMapCellPositionTracking; gameCanvasInterface : AllBinaryGameCanvasInterface_Access; layer : AllBinaryLayer_Access) is
-      Java_Result : constant Boolean := GeographicMapCellPositionTracking'Class (This).updateStart (gameCanvasInterface, layer);
+   procedure updateStart (This : in out GeographicMapCellPositionTracking; gameCanvasInterface_Param : access AllBinaryGameCanvasInterface'Class; layer_Param : access AllBinaryLayer'Class) is
+      Java_Result : constant Boolean := GeographicMapCellPositionTracking'Class (This).updateStart (gameCanvasInterface_Param, layer_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

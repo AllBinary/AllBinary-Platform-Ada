@@ -29,8 +29,8 @@ package org.allbinary.graphics.paint.PaintableInterface_Package is
    type PaintableInterface_Access is access all PaintableInterface'Class;
    type PaintableInterface_Access_Array is array (Natural range <>) of PaintableInterface_Access;
    type PaintableInterface_Access_Array_Access is access all PaintableInterface_Access_Array;
-   procedure paint (This : in out PaintableInterface; graphics : Graphics_Access) is abstract;
-   procedure paintThreed (This : in out PaintableInterface; graphics : Graphics_Access) is abstract;
+   procedure paint (This : in out PaintableInterface; graphics_Param : access Graphics'Class) is abstract;
+   procedure paintThreed (This : in out PaintableInterface; graphics_Param : access Graphics'Class) is abstract;
 
 end org.allbinary.graphics.paint.PaintableInterface_Package;
 

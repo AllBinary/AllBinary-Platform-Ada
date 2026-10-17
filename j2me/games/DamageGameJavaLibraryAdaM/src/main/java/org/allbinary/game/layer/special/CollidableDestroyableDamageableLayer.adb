@@ -42,7 +42,9 @@ package body org.allbinary.game.layer.special.CollidableDestroyableDamageableLay
         return CollidableDestroyableDamageableLayer_Access (CollidableDestroyableDamageableLayer_Package.NULL_COLLIDABLE_DESTROYABLE_DAMAGE_LAYER);
    end getNullInstance;
 
-   procedure Initialize (This : in out CollidableDestroyableDamageableLayer'Class; groupInterface : Group_Access_Array_Access; name : Unbounded_String; layerInfo : Rectangle_Access; viewPosition : ViewPositionBase_Access) is
+   procedure Initialize (This : in out CollidableDestroyableDamageableLayer'Class; groupInterface : Group_Access_Array_Access; name : Unbounded_String; layerInfo_Param : access Rectangle'Class; viewPosition_Param : access ViewPositionBase'Class) is
+      layerInfo : Rectangle_Access := Rectangle_Access (layerInfo_Param);
+      viewPosition : ViewPositionBase_Access := ViewPositionBase_Access (viewPosition_Param);
    begin
         CollidableCompositeLayer_Package.Initialize (This, name, layerInfo, viewPosition, CollidableNeverCollideBehaviorFactory_Package.getInstance);
         Initialize_Fields (This);
@@ -52,10 +54,10 @@ package body org.allbinary.game.layer.special.CollidableDestroyableDamageableLay
         This.pickupBehavior := PickupBehavior_Package.getNullInstance;
    end Initialize;
 
-   function Create (groupInterface : Group_Access_Array_Access; name : Unbounded_String; layerInfo : Rectangle_Access; viewPosition : ViewPositionBase_Access) return CollidableDestroyableDamageableLayer_Access is
+   function Create (groupInterface : Group_Access_Array_Access; name : Unbounded_String; layerInfo_Param : access Rectangle'Class; viewPosition_Param : access ViewPositionBase'Class) return CollidableDestroyableDamageableLayer_Access is
       This : constant CollidableDestroyableDamageableLayer_Access := new CollidableDestroyableDamageableLayer;
    begin
-      CollidableDestroyableDamageableLayer_Package.Initialize (This.all, groupInterface, name, layerInfo, viewPosition);
+      CollidableDestroyableDamageableLayer_Package.Initialize (This.all, groupInterface, name, layerInfo_Param, viewPosition_Param);
       return This;
    end Create;
 
@@ -73,7 +75,8 @@ package body org.allbinary.game.layer.special.CollidableDestroyableDamageableLay
         This.initZ := z;
    end initPositionXYZ;
 
-   procedure paint (This : in out CollidableDestroyableDamageableLayer; graphics : Graphics_Access) is
+   procedure paint (This : in out CollidableDestroyableDamageableLayer; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         CollidableCompositeLayer (This).paint (graphics);
    end paint;
@@ -107,7 +110,8 @@ package body org.allbinary.game.layer.special.CollidableDestroyableDamageableLay
    end setGroupInterface;
 
    --  throws Exception
-   procedure setAllBinaryGameLayerManager (This : in out CollidableDestroyableDamageableLayer; allBinaryGameLayerManager : AllBinaryGameLayerManager_Access) is
+   procedure setAllBinaryGameLayerManager (This : in out CollidableDestroyableDamageableLayer; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class) is
+      allBinaryGameLayerManager : AllBinaryGameLayerManager_Access := AllBinaryGameLayerManager_Access (allBinaryGameLayerManager_Param);
    begin
         This.allBinaryGameLayerManagerP := allBinaryGameLayerManager;
         if (This.allBinaryGameLayerManagerP) = (null) then
@@ -182,37 +186,49 @@ package body org.allbinary.game.layer.special.CollidableDestroyableDamageableLay
    end strafeRight;
 
    --  throws Exception
-   procedure fire (This : in out CollidableDestroyableDamageableLayer; layerManager : AllBinaryLayerManager_Access; gameKeyEvent : GameKeyEvent_Access) is
+   procedure fire (This : in out CollidableDestroyableDamageableLayer; layerManager_Param : access AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent'Class) is
+      layerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
+      gameKeyEvent : GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
    begin
         null;
    end fire;
 
    --  throws Exception
-   procedure special1 (This : in out CollidableDestroyableDamageableLayer; layerManager : AllBinaryLayerManager_Access; gameKeyEvent : GameKeyEvent_Access) is
+   procedure special1 (This : in out CollidableDestroyableDamageableLayer; layerManager_Param : access AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent'Class) is
+      layerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
+      gameKeyEvent : GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
    begin
         null;
    end special1;
 
    --  throws Exception
-   procedure special2 (This : in out CollidableDestroyableDamageableLayer; layerManager : AllBinaryLayerManager_Access; gameKeyEvent : GameKeyEvent_Access) is
+   procedure special2 (This : in out CollidableDestroyableDamageableLayer; layerManager_Param : access AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent'Class) is
+      layerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
+      gameKeyEvent : GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
    begin
         null;
    end special2;
 
    --  throws Exception
-   procedure special3 (This : in out CollidableDestroyableDamageableLayer; layerManager : AllBinaryLayerManager_Access; gameKeyEvent : GameKeyEvent_Access) is
+   procedure special3 (This : in out CollidableDestroyableDamageableLayer; layerManager_Param : access AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent'Class) is
+      layerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
+      gameKeyEvent : GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
    begin
         null;
    end special3;
 
    --  throws Exception
-   procedure special4 (This : in out CollidableDestroyableDamageableLayer; layerManager : AllBinaryLayerManager_Access; gameKeyEvent : GameKeyEvent_Access) is
+   procedure special4 (This : in out CollidableDestroyableDamageableLayer; layerManager_Param : access AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent'Class) is
+      layerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
+      gameKeyEvent : GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
    begin
         null;
    end special4;
 
    --  throws Exception
-   procedure special5 (This : in out CollidableDestroyableDamageableLayer; layerManager : AllBinaryLayerManager_Access; gameKeyEvent : GameKeyEvent_Access) is
+   procedure special5 (This : in out CollidableDestroyableDamageableLayer; layerManager_Param : access AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent'Class) is
+      layerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
+      gameKeyEvent : GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
    begin
         null;
    end special5;
@@ -242,18 +258,23 @@ package body org.allbinary.game.layer.special.CollidableDestroyableDamageableLay
    end leftAnalog;
 
    --  throws Exception
-   procedure rightTrigger (This : in out CollidableDestroyableDamageableLayer; layerManager : AllBinaryLayerManager_Access; gameKeyEvent : GameKeyEvent_Access; xAnalogValue : Integer) is
+   procedure rightTrigger (This : in out CollidableDestroyableDamageableLayer; layerManager_Param : access AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent'Class; xAnalogValue : Integer) is
+      layerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
+      gameKeyEvent : GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
    begin
         null;
    end rightTrigger;
 
    --  throws Exception
-   procedure leftTrigger (This : in out CollidableDestroyableDamageableLayer; layerManager : AllBinaryLayerManager_Access; gameKeyEvent : GameKeyEvent_Access; xAnalogValue : Integer) is
+   procedure leftTrigger (This : in out CollidableDestroyableDamageableLayer; layerManager_Param : access AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent'Class; xAnalogValue : Integer) is
+      layerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
+      gameKeyEvent : GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
    begin
         null;
    end leftTrigger;
 
-   procedure onDestroyed (This : in out CollidableDestroyableDamageableLayer; destroyedEvent : DestroyedEvent_Access) is
+   procedure onDestroyed (This : in out CollidableDestroyableDamageableLayer; destroyedEvent_Param : access DestroyedEvent'Class) is
+      destroyedEvent : DestroyedEvent_Access := DestroyedEvent_Access (destroyedEvent_Param);
    begin
         null;
    end onDestroyed;
@@ -263,13 +284,15 @@ package body org.allbinary.game.layer.special.CollidableDestroyableDamageableLay
         return This.pickupBehavior;
    end getPickupBehavior;
 
-   procedure setPickupBehavior (This : in out CollidableDestroyableDamageableLayer; pickupBehavior : PickupBehavior_Access) is
+   procedure setPickupBehavior (This : in out CollidableDestroyableDamageableLayer; pickupBehavior_Param : access PickupBehavior'Class) is
+      pickupBehavior : PickupBehavior_Access := PickupBehavior_Access (pickupBehavior_Param);
    begin
         This.pickupBehavior := pickupBehavior;
    end setPickupBehavior;
 
    --  throws Exception
-   procedure addPart (This : in out CollidableDestroyableDamageableLayer; pickedUpLayerInterfaceFactoryInterface : PickedUpLayerInterfaceFactoryInterface_Access) is
+   procedure addPart (This : in out CollidableDestroyableDamageableLayer; pickedUpLayerInterfaceFactoryInterface_Param : access PickedUpLayerInterfaceFactoryInterface'Class) is
+      pickedUpLayerInterfaceFactoryInterface : PickedUpLayerInterfaceFactoryInterface_Access := PickedUpLayerInterfaceFactoryInterface_Access (pickedUpLayerInterfaceFactoryInterface_Param);
    begin
         null;
    end addPart;
@@ -284,7 +307,8 @@ package body org.allbinary.game.layer.special.CollidableDestroyableDamageableLay
         return This.partInterfaceArrayP;
    end getPartInterfaceArray;
 
-   procedure toStringAppend (This : in out CollidableDestroyableDamageableLayer; stringBuffer : StringMaker_Access) is
+   procedure toStringAppend (This : in out CollidableDestroyableDamageableLayer; stringBuffer_Param : access StringMaker'Class) is
+      stringBuffer : StringMaker_Access := StringMaker_Access (stringBuffer_Param);
       commonSeps : CommonSeps_Access;
       positionStrings : PositionStrings_Access;
       groupInterfaceArray : Group_Access_Array_Access;

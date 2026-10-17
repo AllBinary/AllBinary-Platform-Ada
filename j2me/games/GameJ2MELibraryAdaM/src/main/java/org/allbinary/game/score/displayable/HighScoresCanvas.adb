@@ -32,14 +32,20 @@ package body org.allbinary.game.score.displayable.HighScoresCanvas_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out HighScoresCanvas'Class; commandListener : CommandListener_Access; allBinaryGameLayerManager : AllBinaryGameLayerManager_Access; gameInfo : GameInfo_Access; paintable : HighScoresPaintable_Access; highScoresFactoryInterface : HighScoresFactoryInterface_Access; highScoresCanvasInputProcessorFactoryInterface : HighScoresCanvasInputProcessorFactoryInterface_Access) is
+   procedure Initialize (This : in out HighScoresCanvas'Class; commandListener_Param : access CommandListener'Class; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class; gameInfo_Param : access GameInfo'Class; paintable_Param : access HighScoresPaintable'Class; highScoresFactoryInterface_Param : access HighScoresFactoryInterface'Class; highScoresCanvasInputProcessorFactoryInterface_Param : access HighScoresCanvasInputProcessorFactoryInterface'Class) is
+      commandListener : CommandListener_Access := CommandListener_Access (commandListener_Param);
+      allBinaryGameLayerManager : AllBinaryGameLayerManager_Access := AllBinaryGameLayerManager_Access (allBinaryGameLayerManager_Param);
+      gameInfo : GameInfo_Access := GameInfo_Access (gameInfo_Param);
+      paintable : HighScoresPaintable_Access := HighScoresPaintable_Access (paintable_Param);
+      highScoresFactoryInterface : HighScoresFactoryInterface_Access := HighScoresFactoryInterface_Access (highScoresFactoryInterface_Param);
+      highScoresCanvasInputProcessorFactoryInterface : HighScoresCanvasInputProcessorFactoryInterface_Access := HighScoresCanvasInputProcessorFactoryInterface_Access (highScoresCanvasInputProcessorFactoryInterface_Param);
    begin
         GameCommandCanvas_Package.Initialize (This, commandListener, HighScoresCanvas_Package.NAME, allBinaryGameLayerManager.getBackgroundBasicColor, allBinaryGameLayerManager.getForegroundBasicColor);
         Initialize_Fields (This);
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+        This.logUtil.putF (This.commonStrings.START, HighScoresCanvas_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         This.highScoresPaintable := paintable;
         This.highScoresFactoryInterface := highScoresFactoryInterface;
-        This.highScoresCanvasInputProcessor := highScoresCanvasInputProcessorFactoryInterface.getInstance (This'Unchecked_Access);
+        This.highScoresCanvasInputProcessor := highScoresCanvasInputProcessorFactoryInterface.getInstance (HighScoresCanvas_Access'(This'Unchecked_Access));
         This.gameInfo := gameInfo;
         This.waitPaintable.setBasicColorP (allBinaryGameLayerManager.getForegroundBasicColor);
         This.getHighScoresPaintable.setBasicColorP (allBinaryGameLayerManager.getForegroundBasicColor);
@@ -47,22 +53,23 @@ package body org.allbinary.game.score.displayable.HighScoresCanvas_Package is
         if (This.highScoresHelper.getHighScoresArray) = (NoHighScoresFactory_Package.getInstance.NO_HIGH_SCORES) then
             This.setPaintable (This.waitPaintable);
         else
-            This.logUtil.putF (To_Unbounded_String ("Show HighScores that are already loaded"), This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+            This.logUtil.putF (To_Unbounded_String ("Show HighScores that are already loaded"), HighScoresCanvas_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
             This.updateCommand (This.currentCommand);
             This.setPaintable (This.getHighScoresPaintable);
         end if;
         --  Java nested class HighScoreRunnable: move it to its own package
-        SecondaryThreadPool_Package.getInstance.runTask (HighScoreRunnable_Package.Create (This'Unchecked_Access));
+        SecondaryThreadPool_Package.getInstance.runTask (HighScoreRunnable_Package.Create (HighScoresCanvas_Access'(This'Unchecked_Access)));
    end Initialize;
 
-   function Create (commandListener : CommandListener_Access; allBinaryGameLayerManager : AllBinaryGameLayerManager_Access; gameInfo : GameInfo_Access; paintable : HighScoresPaintable_Access; highScoresFactoryInterface : HighScoresFactoryInterface_Access; highScoresCanvasInputProcessorFactoryInterface : HighScoresCanvasInputProcessorFactoryInterface_Access) return HighScoresCanvas_Access is
+   function Create (commandListener_Param : access CommandListener'Class; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class; gameInfo_Param : access GameInfo'Class; paintable_Param : access HighScoresPaintable'Class; highScoresFactoryInterface_Param : access HighScoresFactoryInterface'Class; highScoresCanvasInputProcessorFactoryInterface_Param : access HighScoresCanvasInputProcessorFactoryInterface'Class) return HighScoresCanvas_Access is
       This : constant HighScoresCanvas_Access := new HighScoresCanvas;
    begin
-      HighScoresCanvas_Package.Initialize (This.all, commandListener, allBinaryGameLayerManager, gameInfo, paintable, highScoresFactoryInterface, highScoresCanvasInputProcessorFactoryInterface);
+      HighScoresCanvas_Package.Initialize (This.all, commandListener_Param, allBinaryGameLayerManager_Param, gameInfo_Param, paintable_Param, highScoresFactoryInterface_Param, highScoresCanvasInputProcessorFactoryInterface_Param);
       return This;
    end Create;
 
-   procedure initCommands (This : in out HighScoresCanvas; cmdListener : CommandListener_Access) is
+   procedure initCommands (This : in out HighScoresCanvas; cmdListener_Param : access CommandListener'Class) is
+      cmdListener : CommandListener_Access := CommandListener_Access (cmdListener_Param);
    begin
         This.removeAllCommands;
         This.addCommand (GameCommandsFactory_Package.getInstance.CLOSE_AND_SHOW_GAME_CANVAS);
@@ -82,7 +89,8 @@ package body org.allbinary.game.score.displayable.HighScoresCanvas_Package is
         This.highScoresCanvasInputProcessor.close;
    end close;
 
-   procedure paint (This : in out HighScoresCanvas; graphics : Graphics_Access) is
+   procedure paint (This : in out HighScoresCanvas; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.colorFillPaintable.paint (graphics);
         This.paintable.paint (graphics);
@@ -96,13 +104,13 @@ package body org.allbinary.game.score.displayable.HighScoresCanvas_Package is
    procedure executeUpdate (This : in out HighScoresCanvas) is
    begin
         begin
-            This.highScoresFactoryInterface.fetchHighScores (This.getGameInfo, This'Unchecked_Access);
+            This.highScoresFactoryInterface.fetchHighScores (This.getGameInfo, HighScoresCanvas_Access'(This'Unchecked_Access));
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.UPDATE, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, HighScoresCanvas_Access'(This'Unchecked_Access), This.commonStrings.UPDATE, e);
                 end;
         end;
    end executeUpdate;
@@ -116,9 +124,9 @@ package body org.allbinary.game.score.displayable.HighScoresCanvas_Package is
    begin
         begin
             if (highScoresArray) /= (null) then
-                This.logUtil.putF (StringMaker_Package.Create.append (This.commonStrings.START).appendint (highScoresArray'Length).toString, This'Unchecked_Access, To_Unbounded_String ("setHighScoresArray"));
+                This.logUtil.putF (StringMaker_Package.Create.append (This.commonStrings.START).appendint (highScoresArray'Length).toString, HighScoresCanvas_Access'(This'Unchecked_Access), To_Unbounded_String ("setHighScoresArray"));
             else
-                This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("setHighScoresArray"));
+                This.logUtil.putF (This.commonStrings.START, HighScoresCanvas_Access'(This'Unchecked_Access), To_Unbounded_String ("setHighScoresArray"));
             end if;
             This.highScoresHelper.setHighScoresArray (highScoresArray);
             This.updateCommand (This.currentCommand);
@@ -128,19 +136,20 @@ package body org.allbinary.game.score.displayable.HighScoresCanvas_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.UPDATE, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, HighScoresCanvas_Access'(This'Unchecked_Access), This.commonStrings.UPDATE, e);
                 end;
         end;
    end setHighScoresArray;
 
    --  throws Exception
-   procedure updateCommand (This : in out HighScoresCanvas; command : Command_Access) is
+   procedure updateCommand (This : in out HighScoresCanvas; command_Param : access Command'Class) is
+      command : Command_Access := Command_Access (command_Param);
       gameCommandsFactory : GameCommandsFactory_Access;
       index : Integer;
       nextIndex : Integer;
       highScoresArray : HighScores_Access_Array_Access;
    begin
-        This.logUtil.putF (StringMaker_Package.Create.append (This.commonStrings.START).append (This.stringUtil.toString (command)).toString, This'Unchecked_Access, This.commonStrings.UPDATE);
+        This.logUtil.putF (StringMaker_Package.Create.append (This.commonStrings.START).append (This.stringUtil.toString (command)).toString, HighScoresCanvas_Access'(This'Unchecked_Access), This.commonStrings.UPDATE);
         gameCommandsFactory := GameCommandsFactory_Package.getInstance;
         if This.highScoreCommandsFactory.isHighScoreCommand (command) then
             index := This.highScoreCommandsFactory.getIndex (command);
@@ -164,7 +173,7 @@ package body org.allbinary.game.score.displayable.HighScoresCanvas_Package is
         This.close;
         GameCommandCanvas (This).initMenu;
         This.open;
-        This.repaintBehavior.onChangeRepaint (This'Unchecked_Access);
+        This.repaintBehavior.onChangeRepaint (HighScoresCanvas_Access'(This'Unchecked_Access));
    end updateCommand;
 
    function getGameInfo (This : in out HighScoresCanvas) return GameInfo_Access is
@@ -172,10 +181,11 @@ package body org.allbinary.game.score.displayable.HighScoresCanvas_Package is
         return This.gameInfo;
    end getGameInfo;
 
-   procedure setPaintable (This : in out HighScoresCanvas; paintable : Paintable_Access) is
+   procedure setPaintable (This : in out HighScoresCanvas; paintable_Param : access Paintable'Class) is
+      paintable : Paintable_Access := Paintable_Access (paintable_Param);
    begin
         This.paintable := paintable;
-        This.repaintBehavior.onChangeRepaint (This'Unchecked_Access);
+        This.repaintBehavior.onChangeRepaint (HighScoresCanvas_Access'(This'Unchecked_Access));
    end setPaintable;
 
 begin

@@ -18,7 +18,7 @@ package body org.allbinary.game.input.form.TechRTSFormInput_Package is
    procedure Initialize_Fields (This : in out TechRTSFormInput'Class) is
    begin
       null;
-      This.EVENT := AllBinaryEventObject_Package.Create (This'Unchecked_Access);
+      This.EVENT := AllBinaryEventObject_Package.Create (TechRTSFormInput_Access'(This'Unchecked_Access));
       
    end Initialize_Fields;
 
@@ -29,7 +29,7 @@ package body org.allbinary.game.input.form.TechRTSFormInput_Package is
         RTSFormInput_Package.Initialize (This, groupInterface);
         Initialize_Fields (This);
         basicColorFactory := BasicColorFactory_Package.getInstance;
-        This.noMoneyGameNotificationEvent := GameNotificationEvent_Package.Create (This'Unchecked_Access, RTSGameStrings_Package.getInstance.NO_MONEY, SmallIntegerSingletonFactory_Package.getInstance.getAt (2), basicColorFactory.WHITE, BooleanFactory_Package.getInstance.FALSE);
+        This.noMoneyGameNotificationEvent := GameNotificationEvent_Package.Create (TechRTSFormInput_Access'(This'Unchecked_Access), RTSGameStrings_Package.getInstance.NO_MONEY, SmallIntegerSingletonFactory_Package.getInstance.getAt (2), basicColorFactory.WHITE, BooleanFactory_Package.getInstance.FALSE);
    end Initialize;
 
    function Create (groupInterface : Group_Access_Array_Access) return TechRTSFormInput_Access is
@@ -40,7 +40,8 @@ package body org.allbinary.game.input.form.TechRTSFormInput_Package is
    end Create;
 
    --  throws Exception
-   procedure setAllBinaryGameLayerManager (This : in out TechRTSFormInput; allBinaryGameLayerManager : AllBinaryGameLayerManager_Access) is
+   procedure setAllBinaryGameLayerManager (This : in out TechRTSFormInput; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class) is
+      allBinaryGameLayerManager : AllBinaryGameLayerManager_Access := AllBinaryGameLayerManager_Access (allBinaryGameLayerManager_Param);
       geographicMapCompositeInterface : GeographicMapCompositeInterface_Access;
       geographicMapInterface : BasicGeographicMap_Access;
    begin
@@ -51,7 +52,11 @@ package body org.allbinary.game.input.form.TechRTSFormInput_Package is
    end setAllBinaryGameLayerManager;
 
    --  throws Exception
-   procedure processGameSpecific (This : in out TechRTSFormInput; associatedRtsLayer : CollidableDestroyableDamageableLayer_Access; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; layerManager : AllBinaryLayerManager_Access; item : ABCustomItem_Access; itemIndex : Integer) is
+   procedure processGameSpecific (This : in out TechRTSFormInput; associatedRtsLayer_Param : access CollidableDestroyableDamageableLayer'Class; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; layerManager_Param : access AllBinaryLayerManager'Class; item_Param : access ABCustomItem'Class; itemIndex : Integer) is
+      associatedRtsLayer : CollidableDestroyableDamageableLayer_Access := CollidableDestroyableDamageableLayer_Access (associatedRtsLayer_Param);
+      rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access := RTSPlayerLayerInterface_Access (rtsPlayerLayerInterface_Param);
+      layerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
+      item : ABCustomItem_Access := ABCustomItem_Access (item_Param);
       commonStrings : CommonStrings_Access;
       stringMaker : StringMaker_Access;
       technologyRTSInterfaceImageItem : TechnologyRTSInterfaceImageItem_Access;
@@ -64,12 +69,12 @@ package body org.allbinary.game.input.form.TechRTSFormInput_Package is
         stringMaker := StringMaker_Package.Create;
         technologyRTSInterfaceImageItem := TechnologyRTSInterfaceImageItem_Access (item);
         rtsInterface := technologyRTSInterfaceImageItem.getRtsInterface;
-        This.logUtil.putF (stringMaker.append (To_Unbounded_String ("isUpgradeable: ")).appendboolean (rtsInterface.isUpgradeable).toString, This'Unchecked_Access, commonStrings.PROCESS);
+        This.logUtil.putF (stringMaker.append (To_Unbounded_String ("isUpgradeable: ")).appendboolean (rtsInterface.isUpgradeable).toString, TechRTSFormInput_Access'(This'Unchecked_Access), commonStrings.PROCESS);
         if rtsInterface.isUpgradeable then
             cost := rtsInterface.getUpgradeCost;
             capital := rtsPlayerLayerInterface.getCapital;
             stringMaker.delete (0, stringMaker.length);
-            This.logUtil.putF (stringMaker.appendint (cost).append (To_Unbounded_String ("<=")).appendint (Integer (capital.getTotalMoney)).toString, This'Unchecked_Access, commonStrings.PROCESS);
+            This.logUtil.putF (stringMaker.appendint (cost).append (To_Unbounded_String ("<=")).appendint (Integer (capital.getTotalMoney)).toString, TechRTSFormInput_Access'(This'Unchecked_Access), commonStrings.PROCESS);
             if (cost) <= (capital.getTotalMoney) then
                 rtsPlayerLayerInterface.add (BuildingSound_Package.getInstance);
                 capital.removeMoney (cost);

@@ -48,9 +48,9 @@ package org.allbinary.animation.text.CustomTextAnimation_Package is
       textWidth : Integer;
    end record;
 
-   procedure Initialize (This : in out CustomTextAnimation'Class; text : Unbounded_String; fontSize : Integer; animationBehavior : AnimationBehavior_Access);
-   function Create (text : Unbounded_String; fontSize : Integer; animationBehavior : AnimationBehavior_Access) return CustomTextAnimation_Access;
-   procedure paintXY (This : in out CustomTextAnimation; graphics : Graphics_Access; x : Integer; y : Integer);
+   procedure Initialize (This : in out CustomTextAnimation'Class; text : Unbounded_String; fontSize : Integer; animationBehavior_Param : access AnimationBehavior'Class);
+   function Create (text : Unbounded_String; fontSize : Integer; animationBehavior_Param : access AnimationBehavior'Class) return CustomTextAnimation_Access;
+   procedure paintXY (This : in out CustomTextAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
    procedure setScale (This : in out CustomTextAnimation; scaleX : Float; scaleY : Float);
    procedure setText (This : in out CustomTextAnimation; text : Unbounded_String);
    function getText (This : in out CustomTextAnimation) return Unbounded_String;

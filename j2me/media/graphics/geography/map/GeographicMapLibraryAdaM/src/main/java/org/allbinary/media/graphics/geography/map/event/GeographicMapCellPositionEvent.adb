@@ -22,26 +22,30 @@ package body org.allbinary.media.graphics.geography.map.event.GeographicMapCellP
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out GeographicMapCellPositionEvent'Class; anyType : Java_Object_Access; geographicMapCellPosition : CellPosition_Access) is
+   procedure Initialize (This : in out GeographicMapCellPositionEvent'Class; anyType_Param : access Java_Object'Class; geographicMapCellPosition_Param : access CellPosition'Class) is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      geographicMapCellPosition : CellPosition_Access := CellPosition_Access (geographicMapCellPosition_Param);
    begin
         AllBinaryEventObject_Package.Initialize (This, anyType);
         Initialize_Fields (This);
         This.geographicMapCellPosition := geographicMapCellPosition;
    end Initialize;
 
-   function Create (anyType : Java_Object_Access; geographicMapCellPosition : CellPosition_Access) return GeographicMapCellPositionEvent_Access is
+   function Create (anyType_Param : access Java_Object'Class; geographicMapCellPosition_Param : access CellPosition'Class) return GeographicMapCellPositionEvent_Access is
       This : constant GeographicMapCellPositionEvent_Access := new GeographicMapCellPositionEvent;
    begin
-      GeographicMapCellPositionEvent_Package.Initialize (This.all, anyType, geographicMapCellPosition);
+      GeographicMapCellPositionEvent_Package.Initialize (This.all, anyType_Param, geographicMapCellPosition_Param);
       return This;
    end Create;
 
-   procedure init (This : in out GeographicMapCellPositionEvent; anyType : Java_Object_Access) is
+   procedure init (This : in out GeographicMapCellPositionEvent; anyType_Param : access Java_Object'Class) is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         This.setSource (anyType);
    end init;
 
-   procedure setGeographicMapCellPosition (This : in out GeographicMapCellPositionEvent; geographicMapCellPosition : GeographicMapCellPosition_Access) is
+   procedure setGeographicMapCellPosition (This : in out GeographicMapCellPositionEvent; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is
+      geographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
    begin
         This.geographicMapCellPosition := geographicMapCellPosition;
    end setGeographicMapCellPosition;

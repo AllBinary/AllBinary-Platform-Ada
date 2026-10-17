@@ -38,12 +38,12 @@ package org.allbinary.data.tables.transform.info.TransformInfoEntityInterface_Pa
    type TransformInfoEntityInterface_Access is access all TransformInfoEntityInterface'Class;
    type TransformInfoEntityInterface_Access_Array is array (Natural range <>) of TransformInfoEntityInterface_Access;
    type TransformInfoEntityInterface_Access_Array_Access is access all TransformInfoEntityInterface_Access_Array;
-   function get (This : in out TransformInfoEntityInterface; name : Unbounded_String; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return TransformInfoInterface_Access is abstract;
+   function get (This : in out TransformInfoEntityInterface; name : Unbounded_String; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return TransformInfoInterface_Access is abstract;
    function getObjectConfigs (This : in out TransformInfoEntityInterface; storeName : Unbounded_String) return BasicArrayList_Access is abstract;
    function getNames (This : in out TransformInfoEntityInterface; storeName : Unbounded_String) return BasicArrayList_Access is abstract;
    procedure delete (This : in out TransformInfoEntityInterface; name : Unbounded_String) is abstract;
-   procedure insert (This : in out TransformInfoEntityInterface; values : BasicArrayList_Access) is abstract;
-   procedure update (This : in out TransformInfoEntityInterface; updatedValues : HashMap_Access) is abstract;
+   procedure insert (This : in out TransformInfoEntityInterface; values_Param : access BasicArrayList'Class) is abstract;
+   procedure update (This : in out TransformInfoEntityInterface; updatedValues_Param : access HashMap'Class) is abstract;
 
 end org.allbinary.data.tables.transform.info.TransformInfoEntityInterface_Package;
 

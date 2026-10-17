@@ -39,12 +39,12 @@ package org.allbinary.input.automation.module.actions.script.condition.processor
 
    type BasicProfileActionScriptOutput is new BasicProfileActionScriptProcessor and ProfileActionScriptOutputInterface with null record;
 
-   procedure Initialize (This : in out BasicProfileActionScriptOutput'Class; label : Unbounded_String; node : Node_Access);
-   function Create (label : Unbounded_String; node : Node_Access) return BasicProfileActionScriptOutput_Access;
+   procedure Initialize (This : in out BasicProfileActionScriptOutput'Class; label : Unbounded_String; node_Param : access Node'Class);
+   function Create (label : Unbounded_String; node_Param : access Node'Class) return BasicProfileActionScriptOutput_Access;
    procedure Initialize (This : in out BasicProfileActionScriptOutput'Class; label : Unbounded_String);
    function Create (label : Unbounded_String) return BasicProfileActionScriptOutput_Access;
-   function toXmlNode (This : in out BasicProfileActionScriptOutput; document : Document_Access) return Node_Access;
-   procedure toXmlNode (This : in out BasicProfileActionScriptOutput; document : Document_Access);
+   function toXmlNode (This : in out BasicProfileActionScriptOutput; document_Param : access Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out BasicProfileActionScriptOutput; document_Param : access Document'Class);
 
 end org.allbinary.input.automation.module.actions.script.condition.processors.output.BasicProfileActionScriptOutput_Package;
 

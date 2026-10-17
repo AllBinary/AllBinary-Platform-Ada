@@ -22,7 +22,10 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpContext_
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out TransformInfoHttpContext'Class; databaseHashMap : HashMap_Access; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) is
+   procedure Initialize (This : in out TransformInfoHttpContext'Class; databaseHashMap_Param : access HashMap'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+      databaseHashMap : HashMap_Access := HashMap_Access (databaseHashMap_Param);
+      propertiesHashMap : HashMap_Access := HashMap_Access (propertiesHashMap_Param);
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
       stringBuffer : StringMaker_Access;
    begin
         TransformInfoHttp_Package.Initialize (This, databaseHashMap, propertiesHashMap, pageContext);
@@ -33,32 +36,34 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpContext_
             stringBuffer.append (databaseHashMap.toString);
             stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "Properties HashMap: "));
             stringBuffer.append (propertiesHashMap.toString);
-            This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+            This.logUtil.putF (stringBuffer.toString, TransformInfoHttpContext_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
         This.setStoreName (StringUtil_Package.getInstance.EMPTY_STRING);
    end Initialize;
 
-   function Create (databaseHashMap : HashMap_Access; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return TransformInfoHttpContext_Access is
+   function Create (databaseHashMap_Param : access HashMap'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return TransformInfoHttpContext_Access is
       This : constant TransformInfoHttpContext_Access := new TransformInfoHttpContext;
    begin
-      TransformInfoHttpContext_Package.Initialize (This.all, databaseHashMap, propertiesHashMap, pageContext);
+      TransformInfoHttpContext_Package.Initialize (This.all, databaseHashMap_Param, propertiesHashMap_Param, pageContext_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out TransformInfoHttpContext'Class; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) is
+   procedure Initialize (This : in out TransformInfoHttpContext'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+      propertiesHashMap : HashMap_Access := HashMap_Access (propertiesHashMap_Param);
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
    begin
         TransformInfoHttp_Package.Initialize (This, propertiesHashMap, pageContext);
         Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (To_Unbounded_String ("Properties HashMap: ") & propertiesHashMap.toString, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+            This.logUtil.putF (To_Unbounded_String ("Properties HashMap: ") & propertiesHashMap.toString, TransformInfoHttpContext_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
         This.setStoreName (StringUtil_Package.getInstance.EMPTY_STRING);
    end Initialize;
 
-   function Create (propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return TransformInfoHttpContext_Access is
+   function Create (propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return TransformInfoHttpContext_Access is
       This : constant TransformInfoHttpContext_Access := new TransformInfoHttpContext;
    begin
-      TransformInfoHttpContext_Package.Initialize (This.all, propertiesHashMap, pageContext);
+      TransformInfoHttpContext_Package.Initialize (This.all, propertiesHashMap_Param, pageContext_Param);
       return This;
    end Create;
 

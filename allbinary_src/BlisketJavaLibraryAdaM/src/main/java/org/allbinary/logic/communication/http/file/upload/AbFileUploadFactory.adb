@@ -41,7 +41,8 @@ package body org.allbinary.logic.communication.http.file.upload.AbFileUploadFact
    end Create;
 
    --  throws Exception
-   function getFileItemStreamList (This : in out AbFileUploadFactory; httpServletRequest : HttpServletRequest_Access) return List_Access is
+   function getFileItemStreamList (This : in out AbFileUploadFactory; httpServletRequest_Param : access HttpServletRequest'Class) return List_Access is
+      httpServletRequest : HttpServletRequest_Access := HttpServletRequest_Access (httpServletRequest_Param);
       fileUpload : AbFileUpload_Access;
       iterator : FileItemIterator_Access;
       items : List_Access;
@@ -67,7 +68,7 @@ package body org.allbinary.logic.communication.http.file.upload.AbFileUploadFact
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPERROR) then
                 commonStrings := CommonStrings_Package.getInstance;
-                This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("get()"), e);
+                This.logUtil.put (commonStrings.EXCEPTION_Id, AbFileUploadFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("get()"), e);
             end if;
             Java_Throw (e);
                 end;
@@ -75,7 +76,8 @@ package body org.allbinary.logic.communication.http.file.upload.AbFileUploadFact
    end getFileItemStreamList;
 
    --  throws Exception
-   function getFileItemList (This : in out AbFileUploadFactory; httpServletRequest : HttpServletRequest_Access) return List_Access is
+   function getFileItemList (This : in out AbFileUploadFactory; httpServletRequest_Param : access HttpServletRequest'Class) return List_Access is
+      httpServletRequest : HttpServletRequest_Access := HttpServletRequest_Access (httpServletRequest_Param);
       abFileUpload : AbFileUpload_Access;
       commonStrings : CommonStrings_Access;
    begin
@@ -89,22 +91,22 @@ package body org.allbinary.logic.communication.http.file.upload.AbFileUploadFact
                 begin
             commonStrings := CommonStrings_Package.getInstance;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPERROR) then
-                This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("get()"), e);
+                This.logUtil.put (commonStrings.EXCEPTION_Id, AbFileUploadFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("get()"), e);
             end if;
             Java_Throw (e);
                 end;
         end;
    end getFileItemList;
 
-   procedure getFileItemStreamList (This : in out AbFileUploadFactory; httpServletRequest : HttpServletRequest_Access) is
-      Java_Result : constant List_Access := AbFileUploadFactory'Class (This).getFileItemStreamList (httpServletRequest);
+   procedure getFileItemStreamList (This : in out AbFileUploadFactory; httpServletRequest_Param : access HttpServletRequest'Class) is
+      Java_Result : constant List_Access := AbFileUploadFactory'Class (This).getFileItemStreamList (httpServletRequest_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getFileItemStreamList;
 
-   procedure getFileItemList (This : in out AbFileUploadFactory; httpServletRequest : HttpServletRequest_Access) is
-      Java_Result : constant List_Access := AbFileUploadFactory'Class (This).getFileItemList (httpServletRequest);
+   procedure getFileItemList (This : in out AbFileUploadFactory; httpServletRequest_Param : access HttpServletRequest'Class) is
+      Java_Result : constant List_Access := AbFileUploadFactory'Class (This).getFileItemList (httpServletRequest_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

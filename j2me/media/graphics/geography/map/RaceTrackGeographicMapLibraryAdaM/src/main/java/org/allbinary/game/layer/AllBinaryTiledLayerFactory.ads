@@ -48,10 +48,10 @@ package org.allbinary.game.layer.AllBinaryTiledLayerFactory_Package is
 
    procedure Initialize (This : in out AllBinaryTiledLayerFactory'Class);
    function Create return AllBinaryTiledLayerFactory_Access;
-   function getInstance (This : in out AllBinaryTiledLayerFactory; raceTrackInfo : RaceTrackInfo_Access; raceTrackData : RaceTrackData_Access) return AllBinaryTiledLayer_Access;
-   procedure getInstance (This : in out AllBinaryTiledLayerFactory; raceTrackInfo : RaceTrackInfo_Access; raceTrackData : RaceTrackData_Access);
-   function getMiniInstance (This : in out AllBinaryTiledLayerFactory; raceTrackData : RaceTrackData_Access) return AllBinaryTiledLayer_Access;
-   procedure getMiniInstance (This : in out AllBinaryTiledLayerFactory; raceTrackData : RaceTrackData_Access);
+   function getInstance (This : in out AllBinaryTiledLayerFactory; raceTrackInfo_Param : access RaceTrackInfo'Class; raceTrackData_Param : access RaceTrackData'Class) return AllBinaryTiledLayer_Access;
+   procedure getInstance (This : in out AllBinaryTiledLayerFactory; raceTrackInfo_Param : access RaceTrackInfo'Class; raceTrackData_Param : access RaceTrackData'Class);
+   function getMiniInstance (This : in out AllBinaryTiledLayerFactory; raceTrackData_Param : access RaceTrackData'Class) return AllBinaryTiledLayer_Access;
+   procedure getMiniInstance (This : in out AllBinaryTiledLayerFactory; raceTrackData_Param : access RaceTrackData'Class);
 
 end org.allbinary.game.layer.AllBinaryTiledLayerFactory_Package;
 

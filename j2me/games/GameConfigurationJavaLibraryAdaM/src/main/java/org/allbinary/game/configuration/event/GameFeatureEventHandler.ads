@@ -43,7 +43,7 @@ package org.allbinary.game.configuration.event.GameFeatureEventHandler_Package i
    procedure Initialize (This : in out GameFeatureEventHandler'Class);
    function Create return GameFeatureEventHandler_Access;
    function getInstance return GameFeatureEventHandler_Access;
-   procedure process (This : in out GameFeatureEventHandler; eventObject : AllBinaryEventObject_Access; eventListenerInterface : EventListenerInterface_Access);
+   procedure process (This : in out GameFeatureEventHandler; eventObject_Param : access AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface'Class);
 
 end org.allbinary.game.configuration.event.GameFeatureEventHandler_Package;
 

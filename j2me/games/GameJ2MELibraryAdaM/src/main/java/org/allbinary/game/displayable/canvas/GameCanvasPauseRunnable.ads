@@ -46,8 +46,8 @@ package org.allbinary.game.displayable.canvas.GameCanvasPauseRunnable_Package is
       allBinaryGameCanvas : AllBinaryGameCanvas_Access;
    end record;
 
-   procedure Initialize (This : in out GameCanvasPauseRunnable'Class; allBinaryGameCanvas : AllBinaryGameCanvas_Access);
-   function Create (allBinaryGameCanvas : AllBinaryGameCanvas_Access) return GameCanvasPauseRunnable_Access;
+   procedure Initialize (This : in out GameCanvasPauseRunnable'Class; allBinaryGameCanvas_Param : access AllBinaryGameCanvas'Class);
+   function Create (allBinaryGameCanvas_Param : access AllBinaryGameCanvas'Class) return GameCanvasPauseRunnable_Access;
    procedure run (This : in out GameCanvasPauseRunnable);
    procedure processLoopSleep (This : in out GameCanvasPauseRunnable);
 

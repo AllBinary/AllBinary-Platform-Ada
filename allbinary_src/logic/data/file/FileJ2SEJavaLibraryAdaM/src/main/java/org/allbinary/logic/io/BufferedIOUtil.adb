@@ -34,7 +34,9 @@ package body org.allbinary.logic.io.BufferedIOUtil_Package is
 
 
    --  throws Exception
-   procedure copy (backupFile : AbFile_Access; backupFileBak : AbFile_Access) is
+   procedure copy (backupFile_Param : access AbFile'Class; backupFileBak_Param : access AbFile'Class) is
+      backupFile : AbFile_Access := AbFile_Access (backupFile_Param);
+      backupFileBak : AbFile_Access := AbFile_Access (backupFileBak_Param);
       line : Unbounded_String;
       tmpOut : BufferedWriter_Access;
       tmpIn : BufferedReader_Access;

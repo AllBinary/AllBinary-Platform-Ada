@@ -33,12 +33,17 @@ package body org.allbinary.image.opengles.OpenGLImageUtilBase_Package is
    end Create;
 
 
-   function paint (This : in out OpenGLImageUtilBase; alphaBitmap : OpenGLBitmap_Access; originalBitmap : OpenGLBitmap_Access; index : Integer) return OpenGLBitmap_Access is
+   function paint (This : in out OpenGLImageUtilBase; alphaBitmap_Param : access OpenGLBitmap'Class; originalBitmap_Param : access OpenGLBitmap'Class; index : Integer) return OpenGLBitmap_Access is
+      alphaBitmap : OpenGLBitmap_Access := OpenGLBitmap_Access (alphaBitmap_Param);
+      originalBitmap : OpenGLBitmap_Access := OpenGLBitmap_Access (originalBitmap_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end paint;
 
-   function paint (This : in out OpenGLImageUtilBase; colorBitmap : OpenGLBitmap_Access; originalBitmap : OpenGLBitmap_Access; alpha : Integer; basicColor : BasicColor_Access) return OpenGLBitmap_Access is
+   function paint (This : in out OpenGLImageUtilBase; colorBitmap_Param : access OpenGLBitmap'Class; originalBitmap_Param : access OpenGLBitmap'Class; alpha : Integer; basicColor_Param : access BasicColor'Class) return OpenGLBitmap_Access is
+      colorBitmap : OpenGLBitmap_Access := OpenGLBitmap_Access (colorBitmap_Param);
+      originalBitmap : OpenGLBitmap_Access := OpenGLBitmap_Access (originalBitmap_Param);
+      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end paint;
@@ -50,20 +55,21 @@ package body org.allbinary.image.opengles.OpenGLImageUtilBase_Package is
    end createImage;
 
    --  throws Exception
-   function createImageFromInputStream (This : in out OpenGLImageUtilBase; inputStream : InputStream_Access) return OpenGLBitmap_Access is
+   function createImageFromInputStream (This : in out OpenGLImageUtilBase; inputStream_Param : access InputStream'Class) return OpenGLBitmap_Access is
+      inputStream : InputStream_Access := InputStream_Access (inputStream_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end createImageFromInputStream;
 
-   procedure paint (This : in out OpenGLImageUtilBase; alphaBitmap : OpenGLBitmap_Access; originalBitmap : OpenGLBitmap_Access; index : Integer) is
-      Java_Result : constant OpenGLBitmap_Access := OpenGLImageUtilBase'Class (This).paint (alphaBitmap, originalBitmap, index);
+   procedure paint (This : in out OpenGLImageUtilBase; alphaBitmap_Param : access OpenGLBitmap'Class; originalBitmap_Param : access OpenGLBitmap'Class; index : Integer) is
+      Java_Result : constant OpenGLBitmap_Access := OpenGLImageUtilBase'Class (This).paint (alphaBitmap_Param, originalBitmap_Param, index);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end paint;
 
-   procedure paint (This : in out OpenGLImageUtilBase; colorBitmap : OpenGLBitmap_Access; originalBitmap : OpenGLBitmap_Access; alpha : Integer; basicColor : BasicColor_Access) is
-      Java_Result : constant OpenGLBitmap_Access := OpenGLImageUtilBase'Class (This).paint (colorBitmap, originalBitmap, alpha, basicColor);
+   procedure paint (This : in out OpenGLImageUtilBase; colorBitmap_Param : access OpenGLBitmap'Class; originalBitmap_Param : access OpenGLBitmap'Class; alpha : Integer; basicColor_Param : access BasicColor'Class) is
+      Java_Result : constant OpenGLBitmap_Access := OpenGLImageUtilBase'Class (This).paint (colorBitmap_Param, originalBitmap_Param, alpha, basicColor_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
@@ -76,8 +82,8 @@ package body org.allbinary.image.opengles.OpenGLImageUtilBase_Package is
       null;
    end createImage;
 
-   procedure createImageFromInputStream (This : in out OpenGLImageUtilBase; inputStream : InputStream_Access) is
-      Java_Result : constant OpenGLBitmap_Access := OpenGLImageUtilBase'Class (This).createImageFromInputStream (inputStream);
+   procedure createImageFromInputStream (This : in out OpenGLImageUtilBase; inputStream_Param : access InputStream'Class) is
+      Java_Result : constant OpenGLBitmap_Access := OpenGLImageUtilBase'Class (This).createImageFromInputStream (inputStream_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

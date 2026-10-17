@@ -36,7 +36,7 @@ package org.allbinary.animation.image.ScaleBaseProcessor_Package is
    procedure Initialize (This : in out ScaleBaseProcessor'Class);
    function Create return ScaleBaseProcessor_Access;
    function getInstance return ScaleBaseProcessor_Access;
-   procedure update (This : in out ScaleBaseProcessor; originalImage : Image_Access; originalImageArray : Image_Access_Array_Access; imageToShowArray : Image_Access_Array_Access; index : Integer; scaleX : Float; scaleY : Float; maxScaleX : Float; maxScaleY : Float);
+   procedure update (This : in out ScaleBaseProcessor; originalImage_Param : access Image'Class; originalImageArray : Image_Access_Array_Access; imageToShowArray : Image_Access_Array_Access; index : Integer; scaleX : Float; scaleY : Float; maxScaleX : Float; maxScaleY : Float);
 
 end org.allbinary.animation.image.ScaleBaseProcessor_Package;
 

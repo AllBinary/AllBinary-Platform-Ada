@@ -44,7 +44,7 @@ package body org.allbinary.input.motion.button.BasicTouchButtonsBuilder_Package 
       list : BasicArrayList_Access;
    begin
         begin
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.GET_LIST);
+            This.logUtil.putF (This.commonStrings.START, BasicTouchButtonsBuilder_Access'(This'Unchecked_Access), This.commonStrings.GET_LIST);
             list := BasicArrayListD_Package.Create;
             return list;
         exception
@@ -52,7 +52,7 @@ package body org.allbinary.input.motion.button.BasicTouchButtonsBuilder_Package 
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.GET_LIST, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, BasicTouchButtonsBuilder_Access'(This'Unchecked_Access), This.commonStrings.GET_LIST, e);
             return BasicArrayListUtil_Package.getInstance.getImmutableInstance;
                 end;
         end;

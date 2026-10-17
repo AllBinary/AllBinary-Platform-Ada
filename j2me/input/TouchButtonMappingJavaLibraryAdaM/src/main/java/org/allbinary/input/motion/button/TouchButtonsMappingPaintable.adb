@@ -25,7 +25,8 @@ package body org.allbinary.input.motion.button.TouchButtonsMappingPaintable_Pack
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out TouchButtonsMappingPaintable'Class; basicColor : BasicColor_Access) is
+   procedure Initialize (This : in out TouchButtonsMappingPaintable'Class; basicColor_Param : access BasicColor'Class) is
+      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
       Paintable_Package.Initialize (This);
       Initialize_Fields (This);
@@ -33,10 +34,10 @@ package body org.allbinary.input.motion.button.TouchButtonsMappingPaintable_Pack
         This.init;
    end Initialize;
 
-   function Create (basicColor : BasicColor_Access) return TouchButtonsMappingPaintable_Access is
+   function Create (basicColor_Param : access BasicColor'Class) return TouchButtonsMappingPaintable_Access is
       This : constant TouchButtonsMappingPaintable_Access := new TouchButtonsMappingPaintable;
    begin
-      TouchButtonsMappingPaintable_Package.Initialize (This.all, basicColor);
+      TouchButtonsMappingPaintable_Package.Initialize (This.all, basicColor_Param);
       return This;
    end Create;
 
@@ -51,7 +52,7 @@ package body org.allbinary.input.motion.button.TouchButtonsMappingPaintable_Pack
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("updateRectangle"), e);
+            This.logUtil.put (commonStrings.EXCEPTION_Id, TouchButtonsMappingPaintable_Access'(This'Unchecked_Access), To_Unbounded_String ("updateRectangle"), e);
                 end;
         end;
    end init;
@@ -79,7 +80,8 @@ package body org.allbinary.input.motion.button.TouchButtonsMappingPaintable_Pack
         return paintableTable;
    end createPaintableTable;
 
-   procedure paint (This : in out TouchButtonsMappingPaintable; graphics : Graphics_Access) is
+   procedure paint (This : in out TouchButtonsMappingPaintable; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       totalColumns : Integer;
       totalRows : Integer;
       rowIndex : Integer;

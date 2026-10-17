@@ -39,7 +39,7 @@ package org.allbinary.animation.image.AlphaProcessor_Package is
    procedure Initialize (This : in out AlphaProcessor'Class);
    function Create return AlphaProcessor_Access;
    function getInstance return AlphaProcessor_Access;
-   procedure setAlpha (This : in out AlphaProcessor; imageModifierUtil : ImageModifierUtil_Access; originalImage : Image_Access; imageToShow : Image_Access; alpha : Integer);
+   procedure setAlpha (This : in out AlphaProcessor; imageModifierUtil_Param : access ImageModifierUtil'Class; originalImage_Param : access Image'Class; imageToShow_Param : access Image'Class; alpha : Integer);
 
 end org.allbinary.animation.image.AlphaProcessor_Package;
 

@@ -22,30 +22,34 @@ package body org.allbinary.game.configuration.GameOptionsForm_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out GameOptionsForm'Class; commandListener : CommandListener_Access; title : Unbounded_String; backgrounBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) is
+   procedure Initialize (This : in out GameOptionsForm'Class; commandListener_Param : access CommandListener'Class; title : Unbounded_String; backgrounBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) is
+      commandListener : CommandListener_Access := CommandListener_Access (commandListener_Param);
+      backgrounBasicColor : BasicColor_Access := BasicColor_Access (backgrounBasicColor_Param);
+      foregroundBasicColor : BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
       gameFeatureFormUtil : GameFeatureFormUtil_Access;
    begin
         CommandForm_Package.Initialize (This, commandListener, title, backgrounBasicColor, foregroundBasicColor);
         Initialize_Fields (This);
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+        This.logUtil.putF (This.commonStrings.START, GameOptionsForm_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         This.addConfiguration;
         gameFeatureFormUtil := GameFeatureFormUtil_Package.getInstance;
-        gameFeatureFormUtil.addChoiceGroup (This'Unchecked_Access, GameFeatureChoiceGroups_Package.getExclusiveInstance.get, Choice_Package.EXCLUSIVE);
-        gameFeatureFormUtil.addChoiceGroup (This'Unchecked_Access, GameFeatureChoiceGroups_Package.getMultipleInstance.get, Choice_Package.MULTIPLE);
+        gameFeatureFormUtil.addChoiceGroup (GameOptionsForm_Access'(This'Unchecked_Access), GameFeatureChoiceGroups_Package.getExclusiveInstance.get, Choice_Package.EXCLUSIVE);
+        gameFeatureFormUtil.addChoiceGroup (GameOptionsForm_Access'(This'Unchecked_Access), GameFeatureChoiceGroups_Package.getMultipleInstance.get, Choice_Package.MULTIPLE);
         This.initCommands (commandListener);
-        This.setItemStateListener (GameFeatureItemStateListener_Package.Create (This'Unchecked_Access));
+        This.setItemStateListener (GameFeatureItemStateListener_Package.Create (GameOptionsForm_Access'(This'Unchecked_Access)));
         This.addTextFieldsIfSimulated;
    end Initialize;
 
-   function Create (commandListener : CommandListener_Access; title : Unbounded_String; backgrounBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return GameOptionsForm_Access is
+   function Create (commandListener_Param : access CommandListener'Class; title : Unbounded_String; backgrounBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return GameOptionsForm_Access is
       This : constant GameOptionsForm_Access := new GameOptionsForm;
    begin
-      GameOptionsForm_Package.Initialize (This.all, commandListener, title, backgrounBasicColor, foregroundBasicColor);
+      GameOptionsForm_Package.Initialize (This.all, commandListener_Param, title, backgrounBasicColor_Param, foregroundBasicColor_Param);
       return This;
    end Create;
 
    --  throws Exception
-   procedure closeClientInformation (This : in out GameOptionsForm; abeClientInformation : AbeClientInformationInterface_Access) is
+   procedure closeClientInformation (This : in out GameOptionsForm; abeClientInformation_Param : access AbeClientInformationInterface'Class) is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
    begin
         CommandForm (This).close;
         This.save (abeClientInformation);
@@ -86,7 +90,7 @@ package body org.allbinary.game.configuration.GameOptionsForm_Package is
         for index in 0 .. (size) - 1 loop
             gameConfigurationTextInput := GameConfigurationTextInput_Access (hashtable.get (Java_Object_Access (objectArray (index))));
             textField := TextField_Package.Create (gameConfigurationTextInput.getLabel, gameConfigurationTextInput.getText, 30, TextField_Package.ANY);
-            This.meUtil.appendItem (This'Unchecked_Access, textField);
+            This.meUtil.appendItem (GameOptionsForm_Access'(This'Unchecked_Access), textField);
         end loop;
    end addTextFields;
 
@@ -112,15 +116,16 @@ package body org.allbinary.game.configuration.GameOptionsForm_Package is
         for index in 0 .. (size) - 1 loop
             gameConfiguration := GameConfiguration_Access (list.objectArray (index));
             stringMaker.delete (0, stringMaker.length);
-            This.logUtil.putF (stringMaker.append (NAME).append (gameConfiguration.toString).toString, This'Unchecked_Access, METHOD_NAME);
+            This.logUtil.putF (stringMaker.append (NAME).append (gameConfiguration.toString).toString, GameOptionsForm_Access'(This'Unchecked_Access), METHOD_NAME);
             gauge := GameConfigurationGauge_Package.Create (gameConfiguration);
             gauge.setDefaultCommand (GAUGE_CHANGE);
-            gauge.setItemCommandListener (GameFeatureItemCommandListener_Package.Create (This'Unchecked_Access));
-            This.meUtil.appendItem (This'Unchecked_Access, gauge);
+            gauge.setItemCommandListener (GameFeatureItemCommandListener_Package.Create (GameOptionsForm_Access'(This'Unchecked_Access)));
+            This.meUtil.appendItem (GameOptionsForm_Access'(This'Unchecked_Access), gauge);
         end loop;
    end addConfiguration;
 
-   procedure initCommands (This : in out GameOptionsForm; cmdListener : CommandListener_Access) is
+   procedure initCommands (This : in out GameOptionsForm; cmdListener_Param : access CommandListener'Class) is
+      cmdListener : CommandListener_Access := CommandListener_Access (cmdListener_Param);
       gameCommandsFactory : GameCommandsFactory_Access;
    begin
         gameCommandsFactory := GameCommandsFactory_Package.getInstance;
@@ -131,7 +136,8 @@ package body org.allbinary.game.configuration.GameOptionsForm_Package is
    end initCommands;
 
    --  throws Exception
-   procedure save (This : in out GameOptionsForm; abeClientInformation : AbeClientInformationInterface_Access) is
+   procedure save (This : in out GameOptionsForm; abeClientInformation_Param : access AbeClientInformationInterface'Class) is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
       size : Integer;
       item : Item_Access;
       index : Integer;

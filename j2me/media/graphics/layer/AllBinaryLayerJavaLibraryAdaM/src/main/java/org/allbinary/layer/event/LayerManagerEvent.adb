@@ -23,17 +23,18 @@ package body org.allbinary.layer.event.LayerManagerEvent_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out LayerManagerEvent'Class; layerManager : LayerManager_Access; crud : Unbounded_String) is
+   procedure Initialize (This : in out LayerManagerEvent'Class; layerManager_Param : access LayerManager'Class; crud : Unbounded_String) is
+      layerManager : LayerManager_Access := LayerManager_Access (layerManager_Param);
    begin
         AllBinaryEventObject_Package.Initialize (This, layerManager);
         Initialize_Fields (This);
         This.crud := crud;
    end Initialize;
 
-   function Create (layerManager : LayerManager_Access; crud : Unbounded_String) return LayerManagerEvent_Access is
+   function Create (layerManager_Param : access LayerManager'Class; crud : Unbounded_String) return LayerManagerEvent_Access is
       This : constant LayerManagerEvent_Access := new LayerManagerEvent;
    begin
-      LayerManagerEvent_Package.Initialize (This.all, layerManager, crud);
+      LayerManagerEvent_Package.Initialize (This.all, layerManager_Param, crud);
       return This;
    end Create;
 
@@ -42,7 +43,8 @@ package body org.allbinary.layer.event.LayerManagerEvent_Package is
         return This.layerInterface;
    end getLayerInterface;
 
-   procedure setLayerInterface (This : in out LayerManagerEvent; layerInterface : AllBinaryLayer_Access) is
+   procedure setLayerInterface (This : in out LayerManagerEvent; layerInterface_Param : access AllBinaryLayer'Class) is
+      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
    begin
         This.layerInterface := layerInterface;
    end setLayerInterface;

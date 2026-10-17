@@ -21,7 +21,7 @@ package body org.allbinary.media.AllBinaryVisualDebugVibration_Package is
       This.displayInfoSingleton := DisplayInfoSingleton_Package.getInstance;
       This.timeDelayHelper := TimeDelayHelper_Package.Create (Integer_Package.MAX_VALUE);
       This.VIBRATING := To_Unbounded_String ("Vibrating");
-      This.myFontProcessor := UpdateMyFontProcessor_Package.Create (This'Unchecked_Access);
+      This.myFontProcessor := UpdateMyFontProcessor_Package.Create (AllBinaryVisualDebugVibration_Access'(This'Unchecked_Access));
       This.anchor := Anchor_Package.TOP_LEFT;
       This.width := 0;
    end Initialize_Fields;
@@ -40,7 +40,8 @@ package body org.allbinary.media.AllBinaryVisualDebugVibration_Package is
    end Create;
 
 
-   procedure updateMeasurement (This : in out AllBinaryVisualDebugVibration; graphics : Graphics_Access) is
+   procedure updateMeasurement (This : in out AllBinaryVisualDebugVibration; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       font : Font_Access;
    begin
         font := graphics.getFont;
@@ -53,7 +54,8 @@ package body org.allbinary.media.AllBinaryVisualDebugVibration_Package is
         This.timeDelayHelper.delay_Id := duration;
    end vibrate;
 
-   procedure paint (This : in out AllBinaryVisualDebugVibration; graphics : Graphics_Access) is
+   procedure paint (This : in out AllBinaryVisualDebugVibration; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         if This.timeDelayHelper.isTimeTNT then
             This.timeDelayHelper.delay_Id := Integer_Package.MAX_VALUE;

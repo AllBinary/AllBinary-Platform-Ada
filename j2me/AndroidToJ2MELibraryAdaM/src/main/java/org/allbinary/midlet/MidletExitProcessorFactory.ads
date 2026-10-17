@@ -43,8 +43,8 @@ package org.allbinary.midlet.MidletExitProcessorFactory_Package is
    procedure Initialize (This : in out MidletExitProcessorFactory'Class);
    function Create return MidletExitProcessorFactory_Access;
    function getInstance return MidletExitProcessorFactory_Access;
-   function getExitInstance (This : in out MidletExitProcessorFactory; midlet : MIDlet_Access) return Processor_Access;
-   procedure getExitInstance (This : in out MidletExitProcessorFactory; midlet : MIDlet_Access);
+   function getExitInstance (This : in out MidletExitProcessorFactory; midlet_Param : access MIDlet'Class) return Processor_Access;
+   procedure getExitInstance (This : in out MidletExitProcessorFactory; midlet_Param : access MIDlet'Class);
 
 end org.allbinary.midlet.MidletExitProcessorFactory_Package;
 

@@ -49,12 +49,12 @@ package org.allbinary.bounds.LayerBounds_Package is
       rectangle : Rectangle_Access;
    end record;
 
-   procedure Initialize (This : in out LayerBounds'Class; rectangle : Rectangle_Access);
-   function Create (rectangle : Rectangle_Access) return LayerBounds_Access;
+   procedure Initialize (This : in out LayerBounds'Class; rectangle_Param : access Rectangle'Class);
+   function Create (rectangle_Param : access Rectangle'Class) return LayerBounds_Access;
    function getRectangleP (This : in out LayerBounds) return Rectangle_Access;
-   procedure visit (This : in out LayerBounds; boundsVisitorInterface : BoundsVisitorInterface_Access);
-   procedure onEvent (This : in out LayerBounds; eventObject : AllBinaryEventObject_Access);
-   procedure onBoundsChangeEvent (This : in out LayerBounds; boundsChangeEvent : BoundsChangeEvent_Access);
+   procedure visit (This : in out LayerBounds; boundsVisitorInterface_Param : access BoundsVisitorInterface'Class);
+   procedure onEvent (This : in out LayerBounds; eventObject_Param : access AllBinaryEventObject'Class);
+   procedure onBoundsChangeEvent (This : in out LayerBounds; boundsChangeEvent_Param : access BoundsChangeEvent'Class);
 
 end org.allbinary.bounds.LayerBounds_Package;
 

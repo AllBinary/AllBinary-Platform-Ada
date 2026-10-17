@@ -42,7 +42,8 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.transact
    end Create;
 
    --  throws Exception
-   function getInstance (This : in out PaymentTransactionInterfaceRequestFactory; transformInfoInterface : TransformInfoInterface_Access) return PaymentTransactionInterface_Access is
+   function getInstance (This : in out PaymentTransactionInterfaceRequestFactory; transformInfoInterface_Param : access TransformInfoInterface'Class) return PaymentTransactionInterface_Access is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
       httpTransformInfoInterface : TransformInfoHttpInterface_Access;
       pageContext : PageContext_Access;
       httpServletRequest : HttpServletRequest_Access;
@@ -77,7 +78,7 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.transact
                 orderPaymentInfo.setTenderType (TenderTypeFactory_Package.getInstance.CREDITCARD.toString);
                 orderReview.setPaymentInfo (orderPaymentInfo);
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PAYMENT) then
-                    This.logUtil.putF (orderReview.getId, This'Unchecked_Access, To_Unbounded_String ("getPaymentTransactionInterface()"));
+                    This.logUtil.putF (orderReview.getId, PaymentTransactionInterfaceRequestFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getPaymentTransactionInterface()"));
                 end if;
                 paymentTransactionInterface := PaymentTransactionInterfaceFactory_Package.getInstance.getInstance (orderReview);
                 return paymentTransactionInterface;
@@ -88,7 +89,7 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.transact
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PAYMENTERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("getPaymentTransactionInterface()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, PaymentTransactionInterfaceRequestFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getPaymentTransactionInterface()"), e);
             end if;
             Java_Throw (e);
                 end;
@@ -96,7 +97,8 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.transact
    end getInstance;
 
    --  throws Exception
-   function generateFromTestData (This : in out PaymentTransactionInterfaceRequestFactory; transformInfoInterface : TransformInfoInterface_Access) return PaymentTransactionInterface_Access is
+   function generateFromTestData (This : in out PaymentTransactionInterfaceRequestFactory; transformInfoInterface_Param : access TransformInfoInterface'Class) return PaymentTransactionInterface_Access is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
       httpTransformInfoInterface : TransformInfoHttpInterface_Access;
       propertiesHashMap : HashMap_Access;
       pageContext : PageContext_Access;
@@ -192,22 +194,22 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.transact
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PAYMENTERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("generatePaymentTransactionInterfaceFromTestData()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, PaymentTransactionInterfaceRequestFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("generatePaymentTransactionInterfaceFromTestData()"), e);
             end if;
             Java_Throw (e);
                 end;
         end;
    end generateFromTestData;
 
-   procedure getInstance (This : in out PaymentTransactionInterfaceRequestFactory; transformInfoInterface : TransformInfoInterface_Access) is
-      Java_Result : constant PaymentTransactionInterface_Access := PaymentTransactionInterfaceRequestFactory'Class (This).getInstance (transformInfoInterface);
+   procedure getInstance (This : in out PaymentTransactionInterfaceRequestFactory; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+      Java_Result : constant PaymentTransactionInterface_Access := PaymentTransactionInterfaceRequestFactory'Class (This).getInstance (transformInfoInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
-   procedure generateFromTestData (This : in out PaymentTransactionInterfaceRequestFactory; transformInfoInterface : TransformInfoInterface_Access) is
-      Java_Result : constant PaymentTransactionInterface_Access := PaymentTransactionInterfaceRequestFactory'Class (This).generateFromTestData (transformInfoInterface);
+   procedure generateFromTestData (This : in out PaymentTransactionInterfaceRequestFactory; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+      Java_Result : constant PaymentTransactionInterface_Access := PaymentTransactionInterfaceRequestFactory'Class (This).generateFromTestData (transformInfoInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

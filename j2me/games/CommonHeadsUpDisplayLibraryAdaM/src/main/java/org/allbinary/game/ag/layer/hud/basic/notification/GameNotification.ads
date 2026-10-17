@@ -54,7 +54,7 @@ package org.allbinary.game.ag.layer.hud.basic.notification.GameNotification_Pack
 
    procedure Initialize (This : in out GameNotification'Class);
    function Create return GameNotification_Access;
-   procedure add (This : in out GameNotification; string_Id : Unbounded_String; seconds : Integer; basicColor : BasicColor_Access);
+   procedure add (This : in out GameNotification; string_Id : Unbounded_String; seconds : Integer; basicColor_Param : access BasicColor'Class);
    procedure clear (This : in out GameNotification);
    function getSize (This : in out GameNotification) return Integer;
 

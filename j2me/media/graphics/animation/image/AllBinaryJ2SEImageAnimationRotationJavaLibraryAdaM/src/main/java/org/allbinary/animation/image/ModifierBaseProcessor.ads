@@ -40,8 +40,8 @@ package org.allbinary.animation.image.ModifierBaseProcessor_Package is
    procedure Initialize (This : in out ModifierBaseProcessor'Class);
    function Create return ModifierBaseProcessor_Access;
    function getInstance return ModifierBaseProcessor_Access;
-   procedure updateColor (This : in out ModifierBaseProcessor; imageModifierUtil : ImageModifierUtil_Access; originalImage : Image_Access; imageToShow : Image_Access; index : Integer; basicColor : BasicColor_Access);
-   procedure updateAlpha (This : in out ModifierBaseProcessor; imageModifierUtil : ImageModifierUtil_Access; originalImage : Image_Access; imageToShow : Image_Access; index : Integer; alpha : Integer);
+   procedure updateColor (This : in out ModifierBaseProcessor; imageModifierUtil_Param : access ImageModifierUtil'Class; originalImage_Param : access Image'Class; imageToShow_Param : access Image'Class; index : Integer; basicColor_Param : access BasicColor'Class);
+   procedure updateAlpha (This : in out ModifierBaseProcessor; imageModifierUtil_Param : access ImageModifierUtil'Class; originalImage_Param : access Image'Class; imageToShow_Param : access Image'Class; index : Integer; alpha : Integer);
 
 end org.allbinary.animation.image.ModifierBaseProcessor_Package;
 

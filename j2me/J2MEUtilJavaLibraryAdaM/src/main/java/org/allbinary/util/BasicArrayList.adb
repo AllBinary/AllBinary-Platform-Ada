@@ -25,7 +25,8 @@ package body org.allbinary.util.BasicArrayList_Package is
       return This;
    end Create;
 
-   procedure addAt (This : in out BasicArrayList; index : Integer; element : Java_Object_Access) is
+   procedure addAt (This : in out BasicArrayList; index : Integer; element_Param : access Java_Object'Class) is
+      element : Java_Object_Access := Java_Object_Access (element_Param);
       stringBuffer : StringMaker_Access;
    begin
         if ((index) > (This.currentIndex)) or else ((index) < (0)) then
@@ -42,7 +43,8 @@ package body org.allbinary.util.BasicArrayList_Package is
         This.currentIndex := This.currentIndex + 1;
    end addAt;
 
-   function add (This : in out BasicArrayList; anyType : Java_Object_Access) return Boolean is
+   function add (This : in out BasicArrayList; anyType_Param : access Java_Object'Class) return Boolean is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         This.ensureCapacity ((This.currentIndex) + (1));
         This.objectArray (Java_Post_Increment (This.currentIndex)) := anyType;
@@ -71,7 +73,8 @@ package body org.allbinary.util.BasicArrayList_Package is
         return oldValue;
    end removeAt;
 
-   function remove (This : in out BasicArrayList; anyType : Java_Object_Access) return Boolean is
+   function remove (This : in out BasicArrayList; anyType_Param : access Java_Object'Class) return Boolean is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
       numMoved : Integer;
       index : Integer;
    begin
@@ -101,7 +104,8 @@ package body org.allbinary.util.BasicArrayList_Package is
         return False;
    end remove;
 
-   function removeAll2 (This : in out BasicArrayList; list : BasicArrayList_Access) return Boolean is
+   function removeAll2 (This : in out BasicArrayList; list_Param : access BasicArrayList'Class) return Boolean is
+      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
       result : Boolean;
       size_Case : Integer;
       index : Integer;
@@ -118,7 +122,8 @@ package body org.allbinary.util.BasicArrayList_Package is
         return result;
    end removeAll2;
 
-   function addAll2 (This : in out BasicArrayList; list : BasicArrayList_Access) return Boolean is
+   function addAll2 (This : in out BasicArrayList; list_Param : access BasicArrayList'Class) return Boolean is
+      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
       listSize : Integer;
       index : Integer;
    begin
@@ -130,7 +135,8 @@ package body org.allbinary.util.BasicArrayList_Package is
         return True;
    end addAll2;
 
-   function addAllList (This : in out BasicArrayList; list : BasicArrayList_Access) return Boolean is
+   function addAllList (This : in out BasicArrayList; list_Param : access BasicArrayList'Class) return Boolean is
+      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
       newObjectArray : Java_Object_Access_Array_Access;
    begin
         newObjectArray := list.toArray;
@@ -170,7 +176,8 @@ package body org.allbinary.util.BasicArrayList_Package is
         end if;
    end trimToSize;
 
-   function indexOf (This : in out BasicArrayList; anyType : Java_Object_Access) return Integer is
+   function indexOf (This : in out BasicArrayList; anyType_Param : access Java_Object'Class) return Integer is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
       i : Integer;
    begin
         if (anyType) = (null) then
@@ -189,7 +196,8 @@ package body org.allbinary.util.BasicArrayList_Package is
         return -(1);
    end indexOf;
 
-   function lastIndexOf (This : in out BasicArrayList; anyType : Java_Object_Access) return Integer is
+   function lastIndexOf (This : in out BasicArrayList; anyType_Param : access Java_Object'Class) return Integer is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
       i : Integer;
    begin
         if (anyType) = (null) then
@@ -222,7 +230,8 @@ package body org.allbinary.util.BasicArrayList_Package is
         return This.objectArray (index);
    end get;
 
-   function set (This : in out BasicArrayList; index : Integer; element : Java_Object_Access) return Java_Object_Access is
+   function set (This : in out BasicArrayList; index : Integer; element_Param : access Java_Object'Class) return Java_Object_Access is
+      element : Java_Object_Access := Java_Object_Access (element_Param);
       stringBuffer : StringMaker_Access;
       oldValue : Java_Object_Access;
    begin
@@ -258,7 +267,8 @@ package body org.allbinary.util.BasicArrayList_Package is
         return (This.currentIndex) = (0);
    end isEmpty;
 
-   function contains (This : in out BasicArrayList; anyType : Java_Object_Access) return Boolean is
+   function contains (This : in out BasicArrayList; anyType_Param : access Java_Object'Class) return Boolean is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         return (This.indexOf (anyType)) >= (0);
    end contains;
@@ -310,8 +320,8 @@ package body org.allbinary.util.BasicArrayList_Package is
         return stringBuffer.toString;
    end toString;
 
-   procedure add (This : in out BasicArrayList; anyType : Java_Object_Access) is
-      Java_Result : constant Boolean := BasicArrayList'Class (This).add (anyType);
+   procedure add (This : in out BasicArrayList; anyType_Param : access Java_Object'Class) is
+      Java_Result : constant Boolean := BasicArrayList'Class (This).add (anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
@@ -324,29 +334,29 @@ package body org.allbinary.util.BasicArrayList_Package is
       null;
    end removeAt;
 
-   procedure remove (This : in out BasicArrayList; anyType : Java_Object_Access) is
-      Java_Result : constant Boolean := BasicArrayList'Class (This).remove (anyType);
+   procedure remove (This : in out BasicArrayList; anyType_Param : access Java_Object'Class) is
+      Java_Result : constant Boolean := BasicArrayList'Class (This).remove (anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end remove;
 
-   procedure removeAll2 (This : in out BasicArrayList; list : BasicArrayList_Access) is
-      Java_Result : constant Boolean := BasicArrayList'Class (This).removeAll2 (list);
+   procedure removeAll2 (This : in out BasicArrayList; list_Param : access BasicArrayList'Class) is
+      Java_Result : constant Boolean := BasicArrayList'Class (This).removeAll2 (list_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end removeAll2;
 
-   procedure addAll2 (This : in out BasicArrayList; list : BasicArrayList_Access) is
-      Java_Result : constant Boolean := BasicArrayList'Class (This).addAll2 (list);
+   procedure addAll2 (This : in out BasicArrayList; list_Param : access BasicArrayList'Class) is
+      Java_Result : constant Boolean := BasicArrayList'Class (This).addAll2 (list_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end addAll2;
 
-   procedure addAllList (This : in out BasicArrayList; list : BasicArrayList_Access) is
-      Java_Result : constant Boolean := BasicArrayList'Class (This).addAllList (list);
+   procedure addAllList (This : in out BasicArrayList; list_Param : access BasicArrayList'Class) is
+      Java_Result : constant Boolean := BasicArrayList'Class (This).addAllList (list_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
@@ -359,15 +369,15 @@ package body org.allbinary.util.BasicArrayList_Package is
       null;
    end addAll;
 
-   procedure indexOf (This : in out BasicArrayList; anyType : Java_Object_Access) is
-      Java_Result : constant Integer := BasicArrayList'Class (This).indexOf (anyType);
+   procedure indexOf (This : in out BasicArrayList; anyType_Param : access Java_Object'Class) is
+      Java_Result : constant Integer := BasicArrayList'Class (This).indexOf (anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end indexOf;
 
-   procedure lastIndexOf (This : in out BasicArrayList; anyType : Java_Object_Access) is
-      Java_Result : constant Integer := BasicArrayList'Class (This).lastIndexOf (anyType);
+   procedure lastIndexOf (This : in out BasicArrayList; anyType_Param : access Java_Object'Class) is
+      Java_Result : constant Integer := BasicArrayList'Class (This).lastIndexOf (anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
@@ -380,15 +390,15 @@ package body org.allbinary.util.BasicArrayList_Package is
       null;
    end get;
 
-   procedure set (This : in out BasicArrayList; index : Integer; element : Java_Object_Access) is
-      Java_Result : constant Java_Object_Access := BasicArrayList'Class (This).set (index, element);
+   procedure set (This : in out BasicArrayList; index : Integer; element_Param : access Java_Object'Class) is
+      Java_Result : constant Java_Object_Access := BasicArrayList'Class (This).set (index, element_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end set;
 
-   procedure contains (This : in out BasicArrayList; anyType : Java_Object_Access) is
-      Java_Result : constant Boolean := BasicArrayList'Class (This).contains (anyType);
+   procedure contains (This : in out BasicArrayList; anyType_Param : access Java_Object'Class) is
+      Java_Result : constant Boolean := BasicArrayList'Class (This).contains (anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

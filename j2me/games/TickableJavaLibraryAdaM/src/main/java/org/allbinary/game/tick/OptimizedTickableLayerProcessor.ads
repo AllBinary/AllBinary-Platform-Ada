@@ -42,9 +42,9 @@ package org.allbinary.game.tick.OptimizedTickableLayerProcessor_Package is
 
    procedure Initialize (This : in out OptimizedTickableLayerProcessor'Class);
    function Create return OptimizedTickableLayerProcessor_Access;
-   procedure processAt (This : in out OptimizedTickableLayerProcessor; allBinaryLayerManager : AllBinaryLayerManager_Access; layerInterface : AllBinaryLayer_Access; index : Integer);
-   function isProcessorLayer (This : in out OptimizedTickableLayerProcessor; layerInterface : AllBinaryLayer_Access) return Boolean;
-   procedure isProcessorLayer (This : in out OptimizedTickableLayerProcessor; layerInterface : AllBinaryLayer_Access);
+   procedure processAt (This : in out OptimizedTickableLayerProcessor; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class; layerInterface_Param : access AllBinaryLayer'Class; index : Integer);
+   function isProcessorLayer (This : in out OptimizedTickableLayerProcessor; layerInterface_Param : access AllBinaryLayer'Class) return Boolean;
+   procedure isProcessorLayer (This : in out OptimizedTickableLayerProcessor; layerInterface_Param : access AllBinaryLayer'Class);
 
 end org.allbinary.game.tick.OptimizedTickableLayerProcessor_Package;
 

@@ -43,9 +43,9 @@ package org.allbinary.time.StupidTimer_Package is
 
    procedure Initialize (This : in out StupidTimer'Class);
    function Create return StupidTimer_Access;
-   function visitBool (This : in out StupidTimer; visitorInterface : Visitor_Access) return Boolean;
-   procedure visitBool (This : in out StupidTimer; visitorInterface : Visitor_Access);
-   procedure visit (This : in out StupidTimer; visitorInterface : Visitor_Access; timeDelayHelper : TimeDelayHelper_Access);
+   function visitBool (This : in out StupidTimer; visitorInterface_Param : access Visitor'Class) return Boolean;
+   procedure visitBool (This : in out StupidTimer; visitorInterface_Param : access Visitor'Class);
+   procedure visit (This : in out StupidTimer; visitorInterface_Param : access Visitor'Class; timeDelayHelper_Param : access TimeDelayHelper'Class);
    procedure stopWaiting (This : in out StupidTimer);
 
 end org.allbinary.time.StupidTimer_Package;

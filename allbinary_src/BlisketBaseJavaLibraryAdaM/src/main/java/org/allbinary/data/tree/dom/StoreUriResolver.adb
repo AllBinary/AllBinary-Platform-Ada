@@ -25,17 +25,19 @@ package body org.allbinary.data.tree.dom.StoreUriResolver_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out StoreUriResolver'Class; parentTransformInfoInterface : TransformInfoInterface_Access; basicURIResolver : BasicUriResolver_Access) is
+   procedure Initialize (This : in out StoreUriResolver'Class; parentTransformInfoInterface_Param : access TransformInfoInterface'Class; basicURIResolver_Param : access BasicUriResolver'Class) is
+      parentTransformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (parentTransformInfoInterface_Param);
+      basicURIResolver : BasicUriResolver_Access := BasicUriResolver_Access (basicURIResolver_Param);
    begin
       Initialize_Fields (This);
         This.parentTransformInfoInterface := parentTransformInfoInterface;
         This.basicURIResolver := basicURIResolver;
    end Initialize;
 
-   function Create (parentTransformInfoInterface : TransformInfoInterface_Access; basicURIResolver : BasicUriResolver_Access) return StoreUriResolver_Access is
+   function Create (parentTransformInfoInterface_Param : access TransformInfoInterface'Class; basicURIResolver_Param : access BasicUriResolver'Class) return StoreUriResolver_Access is
       This : constant StoreUriResolver_Access := new StoreUriResolver;
    begin
-      StoreUriResolver_Package.Initialize (This.all, parentTransformInfoInterface, basicURIResolver);
+      StoreUriResolver_Package.Initialize (This.all, parentTransformInfoInterface_Param, basicURIResolver_Param);
       return This;
    end Create;
 
@@ -63,7 +65,7 @@ package body org.allbinary.data.tree.dom.StoreUriResolver_Package is
                 stringBuffer.append (This.uriResolverStrings.URL_GLOBAL);
                 stringBuffer.append (This.uriResolverStrings.REQUIRED_EXTENSION);
                 stringBuffer.append (This.basicURIResolver.getExtension);
-                This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, This.uriResolverStrings.RESOLVE);
+                This.logUtil.putF (stringBuffer.toString, StoreUriResolver_Access'(This'Unchecked_Access), This.uriResolverStrings.RESOLVE);
             end if;
             return StreamSource_Package.Create (CryptFileReader_Package.Create (TransformInfoTemplateData_Package.getInstance.UNCRYPTED_EXTENSION, TransformInfoTemplateData_Package.getInstance.ENCRYPTED_EXTENSION).getInputStream (fileAbPath));
         exception

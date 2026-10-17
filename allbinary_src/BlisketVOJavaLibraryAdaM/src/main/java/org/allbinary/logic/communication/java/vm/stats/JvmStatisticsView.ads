@@ -44,8 +44,8 @@ package org.allbinary.logic.communication.java.vm.stats.JvmStatisticsView_Packag
 
    procedure Initialize (This : in out JvmStatisticsView'Class);
    function Create return JvmStatisticsView_Access;
-   function toXmlNode (This : in out JvmStatisticsView; document : Document_Access) return Node_Access;
-   procedure toXmlNode (This : in out JvmStatisticsView; document : Document_Access);
+   function toXmlNode (This : in out JvmStatisticsView; document_Param : access Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out JvmStatisticsView; document_Param : access Document'Class);
 
 end org.allbinary.logic.communication.java.vm.stats.JvmStatisticsView_Package;
 

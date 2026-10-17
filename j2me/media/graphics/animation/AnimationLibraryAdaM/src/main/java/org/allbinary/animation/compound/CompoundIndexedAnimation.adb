@@ -23,7 +23,8 @@ package body org.allbinary.animation.compound.CompoundIndexedAnimation_Package i
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CompoundIndexedAnimation'Class; animationInterfaceArray : Animation_Access_Array_Access; animationBehavior : AnimationBehavior_Access) is
+   procedure Initialize (This : in out CompoundIndexedAnimation'Class; animationInterfaceArray : Animation_Access_Array_Access; animationBehavior_Param : access AnimationBehavior'Class) is
+      animationBehavior : AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
    begin
         IndexedAnimation_Package.Initialize (This, animationBehavior);
         Initialize_Fields (This);
@@ -31,10 +32,10 @@ package body org.allbinary.animation.compound.CompoundIndexedAnimation_Package i
         This.circularIndexUtil := CircularIndexUtil_Package.createInstance (This.animationInterfaceArray'Length);
    end Initialize;
 
-   function Create (animationInterfaceArray : Animation_Access_Array_Access; animationBehavior : AnimationBehavior_Access) return CompoundIndexedAnimation_Access is
+   function Create (animationInterfaceArray : Animation_Access_Array_Access; animationBehavior_Param : access AnimationBehavior'Class) return CompoundIndexedAnimation_Access is
       This : constant CompoundIndexedAnimation_Access := new CompoundIndexedAnimation;
    begin
-      CompoundIndexedAnimation_Package.Initialize (This.all, animationInterfaceArray, animationBehavior);
+      CompoundIndexedAnimation_Package.Initialize (This.all, animationInterfaceArray, animationBehavior_Param);
       return This;
    end Create;
 
@@ -82,12 +83,14 @@ package body org.allbinary.animation.compound.CompoundIndexedAnimation_Package i
         This.animationInterfaceArray (This.circularIndexUtil.getIndex).nextFrame;
    end nextFrame;
 
-   procedure paintXY (This : in out CompoundIndexedAnimation; graphics : Graphics_Access; x : Integer; y : Integer) is
+   procedure paintXY (This : in out CompoundIndexedAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.animationInterfaceArray (This.circularIndexUtil.getIndex).paintXY (graphics, x, y);
    end paintXY;
 
-   procedure paintThreedXYZ (This : in out CompoundIndexedAnimation; graphics : Graphics_Access; x : Integer; y : Integer; z : Integer) is
+   procedure paintThreedXYZ (This : in out CompoundIndexedAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer; z : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.animationInterfaceArray (This.circularIndexUtil.getIndex).paintThreedXYZ (graphics, x, y, z);
    end paintThreedXYZ;
@@ -132,7 +135,8 @@ package body org.allbinary.animation.compound.CompoundIndexedAnimation_Package i
    end setAnimationInterfaceArray;
 
    --  throws Exception
-   procedure set (This : in out CompoundIndexedAnimation; gl : GL_Access) is
+   procedure set (This : in out CompoundIndexedAnimation; gl_Param : access GL'Class) is
+      gl : GL_Access := GL_Access (gl_Param);
       index : Integer;
    begin
         index := This.animationInterfaceArray'Length;

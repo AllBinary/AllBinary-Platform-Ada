@@ -35,7 +35,8 @@ package body org.allbinary.input.automation.robot.osgi.InputAutomationRobotUtil_
    end Create;
 
    --  throws Exception
-   function getChangeEvent (inputRobotInterface : InputRobotInterface_Access) return InputAutomationRobotChangeEvent_Access is
+   function getChangeEvent (inputRobotInterface_Param : access InputRobotInterface'Class) return InputAutomationRobotChangeEvent_Access is
+      inputRobotInterface : InputRobotInterface_Access := InputRobotInterface_Access (inputRobotInterface_Param);
       inputAutomationRobotInterfaceWrapper : InputAutomationRobotInterfaceWrapper_Access;
       inputAutomationRobotChangeEvent : InputAutomationRobotChangeEvent_Access;
    begin
@@ -44,8 +45,8 @@ package body org.allbinary.input.automation.robot.osgi.InputAutomationRobotUtil_
         return inputAutomationRobotChangeEvent;
    end getChangeEvent;
 
-   procedure getChangeEvent (inputRobotInterface : InputRobotInterface_Access) is
-      Java_Result : constant InputAutomationRobotChangeEvent_Access := getChangeEvent (inputRobotInterface);
+   procedure getChangeEvent (inputRobotInterface_Param : access InputRobotInterface'Class) is
+      Java_Result : constant InputAutomationRobotChangeEvent_Access := getChangeEvent (inputRobotInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -41,14 +41,14 @@ package org.allbinary.animation.image.AllBinaryAdjustedJ2SEImageRotationAnimatio
       dy : Integer;
    end record;
 
-   procedure Initialize (This : in out AllBinaryAdjustedJ2SEImageRotationAnimation'Class; originalImage : Image_Access; image : Image_Access; angleInfo : AngleInfo_Access; totalAngle : Short_Integer; dx : Integer; dy : Integer; animationBehavior : AnimationBehavior_Access);
-   function Create (originalImage : Image_Access; image : Image_Access; angleInfo : AngleInfo_Access; totalAngle : Short_Integer; dx : Integer; dy : Integer; animationBehavior : AnimationBehavior_Access) return AllBinaryAdjustedJ2SEImageRotationAnimation_Access;
+   procedure Initialize (This : in out AllBinaryAdjustedJ2SEImageRotationAnimation'Class; originalImage_Param : access Image'Class; image_Param : access Image'Class; angleInfo_Param : access AngleInfo'Class; totalAngle : Short_Integer; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior'Class);
+   function Create (originalImage_Param : access Image'Class; image_Param : access Image'Class; angleInfo_Param : access AngleInfo'Class; totalAngle : Short_Integer; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior'Class) return AllBinaryAdjustedJ2SEImageRotationAnimation_Access;
    procedure init (This : in out AllBinaryAdjustedJ2SEImageRotationAnimation; dx : Integer; dy : Integer);
    procedure setDx (This : in out AllBinaryAdjustedJ2SEImageRotationAnimation; dx : Integer);
    function getDx (This : in out AllBinaryAdjustedJ2SEImageRotationAnimation) return Integer;
    procedure setDy (This : in out AllBinaryAdjustedJ2SEImageRotationAnimation; dy : Integer);
    function getDy (This : in out AllBinaryAdjustedJ2SEImageRotationAnimation) return Integer;
-   procedure paintXY (This : in out AllBinaryAdjustedJ2SEImageRotationAnimation; graphics : Graphics_Access; x : Integer; y : Integer);
+   procedure paintXY (This : in out AllBinaryAdjustedJ2SEImageRotationAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
 
 end org.allbinary.animation.image.AllBinaryAdjustedJ2SEImageRotationAnimation_Package;
 

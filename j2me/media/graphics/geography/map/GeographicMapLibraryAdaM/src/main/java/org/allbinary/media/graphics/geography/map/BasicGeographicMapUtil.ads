@@ -43,12 +43,12 @@ package org.allbinary.media.graphics.geography.map.BasicGeographicMapUtil_Packag
    procedure Initialize (This : in out BasicGeographicMapUtil'Class);
    function Create return BasicGeographicMapUtil_Access;
    function getInstance return BasicGeographicMapUtil_Access;
-   function getBorderingRow (This : in out BasicGeographicMapUtil; direction : Integer; oldGeographicMapCellPosition : GeographicMapCellPosition_Access) return Integer;
-   procedure getBorderingRow (This : in out BasicGeographicMapUtil; direction : Integer; oldGeographicMapCellPosition : GeographicMapCellPosition_Access);
-   function getBorderingColumn (This : in out BasicGeographicMapUtil; direction : Integer; oldGeographicMapCellPosition : GeographicMapCellPosition_Access) return Integer;
-   procedure getBorderingColumn (This : in out BasicGeographicMapUtil; direction : Integer; oldGeographicMapCellPosition : GeographicMapCellPosition_Access);
-   function isSameCellPosition (This : in out BasicGeographicMapUtil; fromGeographicMapCellPosition : GeographicMapCellPosition_Access; toGeographicMapCellPosition : GeographicMapCellPosition_Access) return Boolean;
-   procedure isSameCellPosition (This : in out BasicGeographicMapUtil; fromGeographicMapCellPosition : GeographicMapCellPosition_Access; toGeographicMapCellPosition : GeographicMapCellPosition_Access);
+   function getBorderingRow (This : in out BasicGeographicMapUtil; direction : Integer; oldGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return Integer;
+   procedure getBorderingRow (This : in out BasicGeographicMapUtil; direction : Integer; oldGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class);
+   function getBorderingColumn (This : in out BasicGeographicMapUtil; direction : Integer; oldGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return Integer;
+   procedure getBorderingColumn (This : in out BasicGeographicMapUtil; direction : Integer; oldGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class);
+   function isSameCellPosition (This : in out BasicGeographicMapUtil; fromGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class; toGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return Boolean;
+   procedure isSameCellPosition (This : in out BasicGeographicMapUtil; fromGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class; toGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class);
    function createAllBinaryTiledLayerArray (This : in out BasicGeographicMapUtil; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access) return Layer_Access_Array_Access;
    procedure createAllBinaryTiledLayerArray (This : in out BasicGeographicMapUtil; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access);
    function getAllBinaryTiledLayerArray (This : in out BasicGeographicMapUtil; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; tiledLayerArray : Layer_Access_Array_Access; startIndex : Integer) return Layer_Access_Array_Access;

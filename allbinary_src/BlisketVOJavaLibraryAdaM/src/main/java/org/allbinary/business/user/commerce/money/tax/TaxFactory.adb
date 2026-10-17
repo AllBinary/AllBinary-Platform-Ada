@@ -43,7 +43,9 @@ package body org.allbinary.business.user.commerce.money.tax.TaxFactory_Package i
    end Create;
 
    --  throws Exception
-   function getInstance (This : in out TaxFactory; abeClientInformation : AbeClientInformationInterface_Access; storeFrontInterface : StoreFrontInterface_Access) return TaxModuleInterface_Access is
+   function getInstance (This : in out TaxFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; storeFrontInterface_Param : access StoreFrontInterface'Class) return TaxModuleInterface_Access is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      storeFrontInterface : StoreFrontInterface_Access := StoreFrontInterface_Access (storeFrontInterface_Param);
       stringBuffer : StringMaker_Access;
       abPath : AbPath_Access;
       transformInfoObjectConfigData : TransformInfoObjectConfigData_Access;
@@ -80,20 +82,20 @@ package body org.allbinary.business.user.commerce.money.tax.TaxFactory_Package i
                     return TaxModuleInterface_Access (AbeFactory_Package.getInstance.getInstance (abeClientInformation, className));
                 else
                     if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAX) then
-                        This.logUtil.putF (To_Unbounded_String ("Class Node Null"), This'Unchecked_Access, This.commonStrings.GET_INSTANCE);
+                        This.logUtil.putF (To_Unbounded_String ("Class Node Null"), TaxFactory_Access'(This'Unchecked_Access), This.commonStrings.GET_INSTANCE);
                     end if;
                 end if;
             else
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAX) then
-                    This.logUtil.putF (To_Unbounded_String ("Tax Name Node Node Children"), This'Unchecked_Access, This.commonStrings.GET_INSTANCE);
+                    This.logUtil.putF (To_Unbounded_String ("Tax Name Node Node Children"), TaxFactory_Access'(This'Unchecked_Access), This.commonStrings.GET_INSTANCE);
                 end if;
             end if;
         end loop;
         return TaxModuleInterface_Access (SimpleStateTaxModule_Package.Create);
    end getInstance;
 
-   procedure getInstance (This : in out TaxFactory; abeClientInformation : AbeClientInformationInterface_Access; storeFrontInterface : StoreFrontInterface_Access) is
-      Java_Result : constant TaxModuleInterface_Access := TaxFactory'Class (This).getInstance (abeClientInformation, storeFrontInterface);
+   procedure getInstance (This : in out TaxFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; storeFrontInterface_Param : access StoreFrontInterface'Class) is
+      Java_Result : constant TaxModuleInterface_Access := TaxFactory'Class (This).getInstance (abeClientInformation_Param, storeFrontInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

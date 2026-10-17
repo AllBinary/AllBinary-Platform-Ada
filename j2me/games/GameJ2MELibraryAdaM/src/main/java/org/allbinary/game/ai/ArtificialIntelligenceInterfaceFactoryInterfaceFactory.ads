@@ -48,9 +48,9 @@ package org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterfaceFac
    function Create return ArtificialIntelligenceInterfaceFactoryInterfaceFactory_Access;
    procedure clear (This : in out ArtificialIntelligenceInterfaceFactoryInterfaceFactory);
    function getInstance return ArtificialIntelligenceInterfaceFactoryInterfaceFactory_Access;
-   function getInstanceFromCollection (This : in out ArtificialIntelligenceInterfaceFactoryInterfaceFactory; hashtable : ABHashtable_Access) return ArtificialIntelligenceInterfaceFactoryInterface_Access;
-   procedure getInstanceFromCollection (This : in out ArtificialIntelligenceInterfaceFactoryInterfaceFactory; hashtable : ABHashtable_Access);
-   procedure add (This : in out ArtificialIntelligenceInterfaceFactoryInterfaceFactory; artificialIntelligenceInterfaceFactoryInterface : ArtificialIntelligenceInterfaceFactoryInterface_Access);
+   function getInstanceFromCollection (This : in out ArtificialIntelligenceInterfaceFactoryInterfaceFactory; hashtable_Param : access ABHashtable'Class) return ArtificialIntelligenceInterfaceFactoryInterface_Access;
+   procedure getInstanceFromCollection (This : in out ArtificialIntelligenceInterfaceFactoryInterfaceFactory; hashtable_Param : access ABHashtable'Class);
+   procedure add (This : in out ArtificialIntelligenceInterfaceFactoryInterfaceFactory; artificialIntelligenceInterfaceFactoryInterface_Param : access ArtificialIntelligenceInterfaceFactoryInterface'Class);
 
 end org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterfaceFactory_Package;
 

@@ -30,8 +30,8 @@ package org.allbinary.data.tree.category.CategoryModifierTreeInterface_Package i
    type CategoryModifierTreeInterface_Access is access all CategoryModifierTreeInterface'Class;
    type CategoryModifierTreeInterface_Access_Array is array (Natural range <>) of CategoryModifierTreeInterface_Access;
    type CategoryModifierTreeInterface_Access_Array_Access is access all CategoryModifierTreeInterface_Access_Array;
-   procedure insert (This : in out CategoryModifierTreeInterface; parentCategoryInterface : CategoryInterface_Access; newChildCategoryInterface : CategoryInterface_Access) is abstract;
-   procedure delete (This : in out CategoryModifierTreeInterface; parentCategoryInterface : CategoryInterface_Access; newChildCategoryInterface : CategoryInterface_Access) is abstract;
+   procedure insert (This : in out CategoryModifierTreeInterface; parentCategoryInterface_Param : access CategoryInterface'Class; newChildCategoryInterface_Param : access CategoryInterface'Class) is abstract;
+   procedure delete (This : in out CategoryModifierTreeInterface; parentCategoryInterface_Param : access CategoryInterface'Class; newChildCategoryInterface_Param : access CategoryInterface'Class) is abstract;
 
 end org.allbinary.data.tree.category.CategoryModifierTreeInterface_Package;
 

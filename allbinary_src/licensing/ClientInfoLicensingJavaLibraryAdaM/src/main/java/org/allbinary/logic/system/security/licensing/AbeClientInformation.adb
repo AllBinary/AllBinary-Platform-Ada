@@ -53,7 +53,7 @@ package body org.allbinary.logic.system.security.licensing.AbeClientInformation_
                 This.setLicenseId (NONE);
             end if;
             commonStrings := CommonStrings_Package.getInstance;
-            PreLogUtil_Package.put (StringMaker_Package.Create.append (To_Unbounded_String ("Special Name: ")).append (This.getSpecialName).toString, This'Unchecked_Access, commonStrings.CONSTRUCTOR);
+            PreLogUtil_Package.put (StringMaker_Package.Create.append (To_Unbounded_String ("Special Name: ")).append (This.getSpecialName).toString, AbeClientInformation_Access'(This'Unchecked_Access), commonStrings.CONSTRUCTOR);
         exception
             when Java_Occurrence : others =>
                 declare
@@ -61,7 +61,7 @@ package body org.allbinary.logic.system.security.licensing.AbeClientInformation_
                 begin
             logUtil := LogUtil_Package.getInstance;
             commonStrings := CommonStrings_Package.getInstance;
-            logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.CONSTRUCTOR, e);
+            logUtil.put (commonStrings.EXCEPTION_Id, AbeClientInformation_Access'(This'Unchecked_Access), commonStrings.CONSTRUCTOR, e);
                 end;
         end;
    end init;

@@ -29,7 +29,7 @@ package org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Packag
    type CacheableInterfaceFactoryInterface_Access is access all CacheableInterfaceFactoryInterface'Class;
    type CacheableInterfaceFactoryInterface_Access_Array is array (Natural range <>) of CacheableInterfaceFactoryInterface_Access;
    type CacheableInterfaceFactoryInterface_Access_Array_Access is access all CacheableInterfaceFactoryInterface_Access_Array;
-   function getInstance (This : in out CacheableInterfaceFactoryInterface; key : Java_Object_Access) return CacheableInterface_Access is abstract;
+   function getInstance (This : in out CacheableInterfaceFactoryInterface; key_Param : access Java_Object'Class) return CacheableInterface_Access is abstract;
 
 end org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package;
 

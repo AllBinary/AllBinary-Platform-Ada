@@ -42,37 +42,42 @@ package body org.allbinary.logic.communication.log.LogFactory_Package is
         return Log_Package.Create (stringUtil.EMPTY_STRING, nullUtil.NULL_OBJECT, stringUtil.EMPTY_STRING, nullUtil.NULL_OBJECT);
    end getInstanceD;
 
-   function getInstanceNoF (specialMessage : Unbounded_String; anyType : Java_Object_Access; exception_Id : Java_Object_Access) return Log_Access is
+   function getInstanceNoF (specialMessage : Unbounded_String; anyType_Param : access Java_Object'Class; exception_Id_Param : access Java_Object'Class) return Log_Access is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      exception_Id : Java_Object_Access := Java_Object_Access (exception_Id_Param);
    begin
         return Log_Package.Create (specialMessage, anyType, StringUtil_Package.getInstance.EMPTY_STRING, exception_Id);
    end getInstanceNoF;
 
-   function getInstance (specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String; exception_Id : Java_Object_Access) return Log_Access is
+   function getInstance (specialMessage : Unbounded_String; anyType_Param : access Java_Object'Class; functionName : Unbounded_String; exception_Id_Param : access Java_Object'Class) return Log_Access is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      exception_Id : Java_Object_Access := Java_Object_Access (exception_Id_Param);
    begin
         return Log_Package.Create (specialMessage, anyType, functionName, exception_Id);
    end getInstance;
 
-   function getInstanceF (specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String) return Log_Access is
+   function getInstanceF (specialMessage : Unbounded_String; anyType_Param : access Java_Object'Class; functionName : Unbounded_String) return Log_Access is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         return Log_Package.Create (specialMessage, anyType, functionName, NullUtil_Package.getInstance.NULL_OBJECT);
    end getInstanceF;
 
-   procedure getInstanceNoF (specialMessage : Unbounded_String; anyType : Java_Object_Access; exception_Id : Java_Object_Access) is
-      Java_Result : constant Log_Access := getInstanceNoF (specialMessage, anyType, exception_Id);
+   procedure getInstanceNoF (specialMessage : Unbounded_String; anyType_Param : access Java_Object'Class; exception_Id_Param : access Java_Object'Class) is
+      Java_Result : constant Log_Access := getInstanceNoF (specialMessage, anyType_Param, exception_Id_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstanceNoF;
 
-   procedure getInstance (specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String; exception_Id : Java_Object_Access) is
-      Java_Result : constant Log_Access := getInstance (specialMessage, anyType, functionName, exception_Id);
+   procedure getInstance (specialMessage : Unbounded_String; anyType_Param : access Java_Object'Class; functionName : Unbounded_String; exception_Id_Param : access Java_Object'Class) is
+      Java_Result : constant Log_Access := getInstance (specialMessage, anyType_Param, functionName, exception_Id_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
-   procedure getInstanceF (specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String) is
-      Java_Result : constant Log_Access := getInstanceF (specialMessage, anyType, functionName);
+   procedure getInstanceF (specialMessage : Unbounded_String; anyType_Param : access Java_Object'Class; functionName : Unbounded_String) is
+      Java_Result : constant Log_Access := getInstanceF (specialMessage, anyType_Param, functionName);
       pragma Unreferenced (Java_Result);
    begin
       null;

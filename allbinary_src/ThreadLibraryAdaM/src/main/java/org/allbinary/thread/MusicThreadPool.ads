@@ -42,9 +42,9 @@ package org.allbinary.thread.MusicThreadPool_Package is
    procedure Initialize (This : in out MusicThreadPool'Class; poolName : Unbounded_String; numThreads : Integer; priority : Integer);
    function Create (poolName : Unbounded_String; numThreads : Integer; priority : Integer) return MusicThreadPool_Access;
    function getInstance return ThreadPool_Access;
-   procedure runTask (This : in out MusicThreadPool; task_Id : Runnable_Access);
-   procedure startTask (This : in out MusicThreadPool; task_Id : Runnable_Access);
-   procedure completedTask (This : in out MusicThreadPool; task_Id : Runnable_Access);
+   procedure runTask (This : in out MusicThreadPool; task_Id_Param : access Runnable'Class);
+   procedure startTask (This : in out MusicThreadPool; task_Id_Param : access Runnable'Class);
+   procedure completedTask (This : in out MusicThreadPool; task_Id_Param : access Runnable'Class);
 
 end org.allbinary.thread.MusicThreadPool_Package;
 

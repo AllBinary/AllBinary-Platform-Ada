@@ -35,7 +35,8 @@ package body views.admin.inventory.listings.InventoryViewFactory_Package is
    end Create;
 
    --  throws LicensingException
-   function getInstance (searchRequest : SearchRequest_Access) return InventoryViewSearchInterface_Access is
+   function getInstance (searchRequest_Param : access SearchRequest'Class) return InventoryViewSearchInterface_Access is
+      searchRequest : SearchRequest_Access := SearchRequest_Access (searchRequest_Param);
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
    begin
@@ -56,8 +57,8 @@ package body views.admin.inventory.listings.InventoryViewFactory_Package is
         end;
    end getInstance;
 
-   procedure getInstance (searchRequest : SearchRequest_Access) is
-      Java_Result : constant InventoryViewSearchInterface_Access := getInstance (searchRequest);
+   procedure getInstance (searchRequest_Param : access SearchRequest'Class) is
+      Java_Result : constant InventoryViewSearchInterface_Access := getInstance (searchRequest_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

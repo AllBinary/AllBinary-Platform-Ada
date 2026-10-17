@@ -22,7 +22,7 @@ package body org.allbinary.game.displayable.canvas.BasicPopupMenuPaintable_Packa
       This.drawStringUtil := DrawVerticalStringUtil_Package.getInstance;
       
       
-      This.myFontProcessor := UpdateMyFontProcessor_Package.Create (This'Unchecked_Access);
+      This.myFontProcessor := UpdateMyFontProcessor_Package.Create (BasicPopupMenuPaintable_Access'(This'Unchecked_Access));
       
       This.BORDER := 0;
       This.heightOffset := 0;
@@ -31,7 +31,10 @@ package body org.allbinary.game.displayable.canvas.BasicPopupMenuPaintable_Packa
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BasicPopupMenuPaintable'Class; rectangle : Rectangle_Access; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) is
+   procedure Initialize (This : in out BasicPopupMenuPaintable'Class; rectangle_Param : access Rectangle'Class; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) is
+      rectangle : Rectangle_Access := Rectangle_Access (rectangle_Param);
+      backgroundBasicColor : BasicColor_Access := BasicColor_Access (backgroundBasicColor_Param);
+      foregroundBasicColor : BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
    begin
       Paintable_Package.Initialize (This);
       Initialize_Fields (This);
@@ -46,14 +49,15 @@ package body org.allbinary.game.displayable.canvas.BasicPopupMenuPaintable_Packa
         This.init (rectangle);
    end Initialize;
 
-   function Create (rectangle : Rectangle_Access; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return BasicPopupMenuPaintable_Access is
+   function Create (rectangle_Param : access Rectangle'Class; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return BasicPopupMenuPaintable_Access is
       This : constant BasicPopupMenuPaintable_Access := new BasicPopupMenuPaintable;
    begin
-      BasicPopupMenuPaintable_Package.Initialize (This.all, rectangle, backgroundBasicColor, foregroundBasicColor);
+      BasicPopupMenuPaintable_Package.Initialize (This.all, rectangle_Param, backgroundBasicColor_Param, foregroundBasicColor_Param);
       return This;
    end Create;
 
-   procedure updateMeasurement (This : in out BasicPopupMenuPaintable; graphics : Graphics_Access) is
+   procedure updateMeasurement (This : in out BasicPopupMenuPaintable; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       font : Font_Access;
       features : Features_Access;
       isOpenGL : Boolean;
@@ -86,7 +90,8 @@ package body org.allbinary.game.displayable.canvas.BasicPopupMenuPaintable_Packa
    end updateMeasurement;
 
    --  throws Exception
-   procedure init (This : in out BasicPopupMenuPaintable; rectangle : Rectangle_Access) is
+   procedure init (This : in out BasicPopupMenuPaintable; rectangle_Param : access Rectangle'Class) is
+      rectangle : Rectangle_Access := Rectangle_Access (rectangle_Param);
       width : Integer;
       height : Integer;
       rectangleFilledAnimation : RectangleFilledAnimation_Access;
@@ -103,7 +108,8 @@ package body org.allbinary.game.displayable.canvas.BasicPopupMenuPaintable_Packa
         end if;
    end init;
 
-   procedure paint (This : in out BasicPopupMenuPaintable; graphics : Graphics_Access) is
+   procedure paint (This : in out BasicPopupMenuPaintable; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       point : GPoint_Access;
       x : Integer;
       y : Integer;

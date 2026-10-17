@@ -57,11 +57,11 @@ package org.allbinary.game.layer.resources.OnDemandLoader_Package is
       resourceAnimationInterfaceFactoryInterfaceFactory : BaseResourceAnimationInterfaceFactoryInterfaceFactory_Access;
    end record;
 
-   procedure Initialize (This : in out OnDemandLoader'Class; onDemandResourcesFactory : OnDemandResourcesFactory_Access; gameLayerPlacementInterfaceBasicArrayListFactoryInterfaceFactory : GameLayerPlacementInterfaceBasicArrayListFactoryInterfaceFactory_Access; resourceAnimationInterfaceFactoryInterfaceFactory : BaseResourceAnimationInterfaceFactoryInterfaceFactory_Access);
-   function Create (onDemandResourcesFactory : OnDemandResourcesFactory_Access; gameLayerPlacementInterfaceBasicArrayListFactoryInterfaceFactory : GameLayerPlacementInterfaceBasicArrayListFactoryInterfaceFactory_Access; resourceAnimationInterfaceFactoryInterfaceFactory : BaseResourceAnimationInterfaceFactoryInterfaceFactory_Access) return OnDemandLoader_Access;
-   procedure init (This : in out OnDemandLoader; imageCache : ImageCache_Access; level : Integer; loadingString : Unbounded_String);
-   procedure initAll (This : in out OnDemandLoader; imageCache : ImageCache_Access; loadingString : Unbounded_String);
-   procedure initLevel (This : in out OnDemandLoader; layerPlacementInterfaceBasicArrayListFactoryInterface : LayerPlacementInterfaceBasicArrayListFactoryInterface_Access; imageCache : ImageCache_Access; level : Integer; loadingString : Unbounded_String);
+   procedure Initialize (This : in out OnDemandLoader'Class; onDemandResourcesFactory_Param : access OnDemandResourcesFactory'Class; gameLayerPlacementInterfaceBasicArrayListFactoryInterfaceFactory_Param : access GameLayerPlacementInterfaceBasicArrayListFactoryInterfaceFactory'Class; resourceAnimationInterfaceFactoryInterfaceFactory_Param : access BaseResourceAnimationInterfaceFactoryInterfaceFactory'Class);
+   function Create (onDemandResourcesFactory_Param : access OnDemandResourcesFactory'Class; gameLayerPlacementInterfaceBasicArrayListFactoryInterfaceFactory_Param : access GameLayerPlacementInterfaceBasicArrayListFactoryInterfaceFactory'Class; resourceAnimationInterfaceFactoryInterfaceFactory_Param : access BaseResourceAnimationInterfaceFactoryInterfaceFactory'Class) return OnDemandLoader_Access;
+   procedure init (This : in out OnDemandLoader; imageCache_Param : access ImageCache'Class; level : Integer; loadingString : Unbounded_String);
+   procedure initAll (This : in out OnDemandLoader; imageCache_Param : access ImageCache'Class; loadingString : Unbounded_String);
+   procedure initLevel (This : in out OnDemandLoader; layerPlacementInterfaceBasicArrayListFactoryInterface_Param : access LayerPlacementInterfaceBasicArrayListFactoryInterface'Class; imageCache_Param : access ImageCache'Class; level : Integer; loadingString : Unbounded_String);
 
 end org.allbinary.game.layer.resources.OnDemandLoader_Package;
 

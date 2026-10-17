@@ -40,8 +40,8 @@ package org.allbinary.game.ag.layer.weapon.mine.MineLayerFactory_Package is
       viewPositionFactoryInterface : ViewPositionFactoryInterface_Access;
    end record;
 
-   procedure Initialize (This : in out MineLayerFactory'Class; viewPositionFactoryInterface : ViewPositionFactoryInterface_Access);
-   function Create (viewPositionFactoryInterface : ViewPositionFactoryInterface_Access) return MineLayerFactory_Access;
+   procedure Initialize (This : in out MineLayerFactory'Class; viewPositionFactoryInterface_Param : access ViewPositionFactoryInterface'Class);
+   function Create (viewPositionFactoryInterface_Param : access ViewPositionFactoryInterface'Class) return MineLayerFactory_Access;
    function getInstance (This : in out MineLayerFactory) return AllBinaryLayer_Access;
 
 end org.allbinary.game.ag.layer.weapon.mine.MineLayerFactory_Package;

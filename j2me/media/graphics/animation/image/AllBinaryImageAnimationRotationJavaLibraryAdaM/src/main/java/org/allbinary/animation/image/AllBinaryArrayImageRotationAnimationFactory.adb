@@ -24,7 +24,8 @@ package body org.allbinary.animation.image.AllBinaryArrayImageRotationAnimationF
 
 
    --  throws Exception
-   function createFactory (image : Image_Access; dx : Integer; dy : Integer) return AllBinaryArrayImageRotationAnimationFactory_Access is
+   function createFactory (image_Param : access Image'Class; dx : Integer; dy : Integer) return AllBinaryArrayImageRotationAnimationFactory_Access is
+      image : Image_Access := Image_Access (image_Param);
       arrayImageRotationAnimationFactory : AllBinaryArrayImageRotationAnimationFactory_Access;
    begin
         arrayImageRotationAnimationFactory := AllBinaryArrayImageRotationAnimationFactory_Package.Create (image, image.getWidth, image.getHeight, (AngleFactory_Package.getInstance.TOTAL_ANGLE) / (GameConfigurationCentral_Package.getInstance.getGameControlFidelity), AnimationBehaviorFactory_Package.getInstance);
@@ -33,7 +34,8 @@ package body org.allbinary.animation.image.AllBinaryArrayImageRotationAnimationF
    end createFactory;
 
    --  throws Exception
-   function createFactoryA (image : Image_Access; dx : Integer; dy : Integer; angleIncrement : Integer) return AllBinaryArrayImageRotationAnimationFactory_Access is
+   function createFactoryA (image_Param : access Image'Class; dx : Integer; dy : Integer; angleIncrement : Integer) return AllBinaryArrayImageRotationAnimationFactory_Access is
+      image : Image_Access := Image_Access (image_Param);
       arrayImageRotationAnimationFactory : AllBinaryArrayImageRotationAnimationFactory_Access;
    begin
         arrayImageRotationAnimationFactory := AllBinaryArrayImageRotationAnimationFactory_Package.Create (image, image.getWidth, image.getHeight, angleIncrement, AnimationBehaviorFactory_Package.getInstance);
@@ -41,7 +43,9 @@ package body org.allbinary.animation.image.AllBinaryArrayImageRotationAnimationF
         return arrayImageRotationAnimationFactory;
    end createFactoryA;
 
-   procedure Initialize (This : in out AllBinaryArrayImageRotationAnimationFactory'Class; image : Image_Access; width : Integer; height : Integer; angleIncrement : Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access) is
+   procedure Initialize (This : in out AllBinaryArrayImageRotationAnimationFactory'Class; image_Param : access Image'Class; width : Integer; height : Integer; angleIncrement : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) is
+      image : Image_Access := Image_Access (image_Param);
+      animationBehaviorFactory : AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
    begin
         BaseImageAnimationFactory_Package.Initialize (This, image, PrimitiveIntUtil_Package.getArrayInstance, width, height, 0, 0, animationBehaviorFactory);
         Initialize_Fields (This);
@@ -49,10 +53,10 @@ package body org.allbinary.animation.image.AllBinaryArrayImageRotationAnimationF
         This.init;
    end Initialize;
 
-   function Create (image : Image_Access; width : Integer; height : Integer; angleIncrement : Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access) return AllBinaryArrayImageRotationAnimationFactory_Access is
+   function Create (image_Param : access Image'Class; width : Integer; height : Integer; angleIncrement : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return AllBinaryArrayImageRotationAnimationFactory_Access is
       This : constant AllBinaryArrayImageRotationAnimationFactory_Access := new AllBinaryArrayImageRotationAnimationFactory;
    begin
-      AllBinaryArrayImageRotationAnimationFactory_Package.Initialize (This.all, image, width, height, angleIncrement, animationBehaviorFactory);
+      AllBinaryArrayImageRotationAnimationFactory_Package.Initialize (This.all, image_Param, width, height, angleIncrement, animationBehaviorFactory_Param);
       return This;
    end Create;
 
@@ -84,7 +88,7 @@ package body org.allbinary.animation.image.AllBinaryArrayImageRotationAnimationF
             scaledImageArray (index) := This.animationFactoryImageScaleUtil.createImage (image, image.getWidth, image.getHeight, This.scaleProperties.scaleWidth, This.scaleProperties.scaleHeight);
         end loop;
         if ((This.animationFactoryInitializationVisitor.dx) /= (0)) or else ((This.animationFactoryInitializationVisitor.dy) /= (0)) then
-            This.animationFactoryImageScaleUtil.processAdjust (This'Unchecked_Access);
+            This.animationFactoryImageScaleUtil.processAdjust (AllBinaryArrayImageRotationAnimationFactory_Access'(This'Unchecked_Access));
             return AdjustedImageArrayRotationAnimation_Package.Create (scaledImageArray, AngleInfo_Package.getInstance (Short_Integer (This.getAngleIncrement)), Integer (AngleFactory_Package.getInstance.TOTAL_ANGLE), This.animationFactoryInitializationVisitor.dx, This.animationFactoryInitializationVisitor.dy, This.animationBehaviorFactory.getOrCreateInstance);
         else
             return ImageArrayRotationAnimation_Package.Create (scaledImageArray, AngleInfo_Package.getInstance (Short_Integer (This.getAngleIncrement)), Integer (AngleFactory_Package.getInstance.TOTAL_ANGLE), This.animationBehaviorFactory.getOrCreateInstance);
@@ -101,15 +105,15 @@ package body org.allbinary.animation.image.AllBinaryArrayImageRotationAnimationF
         return This.angleIncrement;
    end getAngleIncrement;
 
-   procedure createFactory (image : Image_Access; dx : Integer; dy : Integer) is
-      Java_Result : constant AllBinaryArrayImageRotationAnimationFactory_Access := createFactory (image, dx, dy);
+   procedure createFactory (image_Param : access Image'Class; dx : Integer; dy : Integer) is
+      Java_Result : constant AllBinaryArrayImageRotationAnimationFactory_Access := createFactory (image_Param, dx, dy);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createFactory;
 
-   procedure createFactoryA (image : Image_Access; dx : Integer; dy : Integer; angleIncrement : Integer) is
-      Java_Result : constant AllBinaryArrayImageRotationAnimationFactory_Access := createFactoryA (image, dx, dy, angleIncrement);
+   procedure createFactoryA (image_Param : access Image'Class; dx : Integer; dy : Integer; angleIncrement : Integer) is
+      Java_Result : constant AllBinaryArrayImageRotationAnimationFactory_Access := createFactoryA (image_Param, dx, dy, angleIncrement);
       pragma Unreferenced (Java_Result);
    begin
       null;

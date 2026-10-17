@@ -31,7 +31,7 @@ package body org.allbinary.logic.communication.smtp.info.BasicEmailInfo_Package 
       Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.putF (commonStrings.START, This'Unchecked_Access, commonStrings.CONSTRUCTOR);
+            This.logUtil.putF (commonStrings.START, BasicEmailInfo_Access'(This'Unchecked_Access), commonStrings.CONSTRUCTOR);
         end if;
         This.subject := subject;
         This.textBody := textBody;
@@ -59,7 +59,8 @@ package body org.allbinary.logic.communication.smtp.info.BasicEmailInfo_Package 
         return This.emailServerConfigurationInterface;
    end getEmailServerConfigurationInterface;
 
-   procedure setEmailServerConfigurationInterface (This : in out BasicEmailInfo; emailServerConfigurationInterface : EmailServerConfigurationInterface_Access) is
+   procedure setEmailServerConfigurationInterface (This : in out BasicEmailInfo; emailServerConfigurationInterface_Param : access EmailServerConfigurationInterface'Class) is
+      emailServerConfigurationInterface : EmailServerConfigurationInterface_Access := EmailServerConfigurationInterface_Access (emailServerConfigurationInterface_Param);
    begin
         This.emailServerConfigurationInterface := emailServerConfigurationInterface;
    end setEmailServerConfigurationInterface;

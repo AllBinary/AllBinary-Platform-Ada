@@ -33,15 +33,18 @@ package body org.allbinary.game.ag.ai.SpinnerAIFactory_Package is
    end Create;
 
 
-   function getInstance (This : in out SpinnerAIFactory; hashtable : ABHashtable_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return ArtificialIntelligenceInterface_Access is
+   function getInstance (This : in out SpinnerAIFactory; hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return ArtificialIntelligenceInterface_Access is
+      hashtable : ABHashtable_Access := ABHashtable_Access (hashtable_Param);
+      ownerLayerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (ownerLayerInterface_Param);
+      gameInput : GameInput_Access := GameInput_Access (gameInput_Param);
       direction : Integer_Array_Access;
    begin
         direction := new Integer_Array'(0 => Canvas_Package.LEFT);
         return SpinnerAI_Package.Create (direction, ownerLayerInterface, gameInput);
    end getInstance;
 
-   procedure getInstance (This : in out SpinnerAIFactory; hashtable : ABHashtable_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) is
-      Java_Result : constant ArtificialIntelligenceInterface_Access := SpinnerAIFactory'Class (This).getInstance (hashtable, ownerLayerInterface, gameInput);
+   procedure getInstance (This : in out SpinnerAIFactory; hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) is
+      Java_Result : constant ArtificialIntelligenceInterface_Access := SpinnerAIFactory'Class (This).getInstance (hashtable_Param, ownerLayerInterface_Param, gameInput_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

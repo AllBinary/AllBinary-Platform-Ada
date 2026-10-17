@@ -37,9 +37,9 @@ package org.allbinary.game.layer.special.SpecialAnalogRightTriggerGameInputProce
 
    type SpecialAnalogRightTriggerGameInputProcessor is new SpecialGameInputProcessor with null record;
 
-   procedure Initialize (This : in out SpecialAnalogRightTriggerGameInputProcessor'Class; collidableDestroyableDamageableLayer : CollidableDestroyableDamageableLayer_Access);
-   function Create (collidableDestroyableDamageableLayer : CollidableDestroyableDamageableLayer_Access) return SpecialAnalogRightTriggerGameInputProcessor_Access;
-   procedure processAnalog (This : in out SpecialAnalogRightTriggerGameInputProcessor; allbinaryLayerManager : AllBinaryLayerManager_Access; gameKeyEvent : GameKeyEvent_Access; yAnalogValue : Integer);
+   procedure Initialize (This : in out SpecialAnalogRightTriggerGameInputProcessor'Class; collidableDestroyableDamageableLayer_Param : access CollidableDestroyableDamageableLayer'Class);
+   function Create (collidableDestroyableDamageableLayer_Param : access CollidableDestroyableDamageableLayer'Class) return SpecialAnalogRightTriggerGameInputProcessor_Access;
+   procedure processAnalog (This : in out SpecialAnalogRightTriggerGameInputProcessor; allbinaryLayerManager_Param : access AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent'Class; yAnalogValue : Integer);
 
 end org.allbinary.game.layer.special.SpecialAnalogRightTriggerGameInputProcessor_Package;
 

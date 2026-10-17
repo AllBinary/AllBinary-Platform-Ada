@@ -31,7 +31,11 @@ package body org.allbinary.animation.caption.CaptionIndexedAnimation_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CaptionIndexedAnimation'Class; animationInterface : Animation_Access; movieIndexedAnimationInterface : IndexedAnimation_Access; player : Player_Access; captionDx : Integer; captionDy : Integer; dx : Integer; dy : Integer; time : Integer; animationBehavior : AnimationBehavior_Access) is
+   procedure Initialize (This : in out CaptionIndexedAnimation'Class; animationInterface_Param : access Animation'Class; movieIndexedAnimationInterface_Param : access IndexedAnimation'Class; player_Param : access Player'Class; captionDx : Integer; captionDy : Integer; dx : Integer; dy : Integer; time : Integer; animationBehavior_Param : access AnimationBehavior'Class) is
+      animationInterface : Animation_Access := Animation_Access (animationInterface_Param);
+      movieIndexedAnimationInterface : IndexedAnimation_Access := IndexedAnimation_Access (movieIndexedAnimationInterface_Param);
+      player : Player_Access := Player_Access (player_Param);
+      animationBehavior : AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
       timePerFrame : Integer;
    begin
         IndexedAnimation_Package.Initialize (This, animationBehavior);
@@ -43,17 +47,17 @@ package body org.allbinary.animation.caption.CaptionIndexedAnimation_Package is
         This.dx := dx;
         This.dy := dy;
         This.time := time;
-        This.END_EVENT := AllBinaryEventObject_Package.Create (This'Unchecked_Access);
+        This.END_EVENT := AllBinaryEventObject_Package.Create (CaptionIndexedAnimation_Access'(This'Unchecked_Access));
         timePerFrame := (This.time) / (This.getSize);
         This.timeDelayHelper := TimeDelayHelper_Package.Create (timePerFrame);
         This.player := player;
         This.player.start;
    end Initialize;
 
-   function Create (animationInterface : Animation_Access; movieIndexedAnimationInterface : IndexedAnimation_Access; player : Player_Access; captionDx : Integer; captionDy : Integer; dx : Integer; dy : Integer; time : Integer; animationBehavior : AnimationBehavior_Access) return CaptionIndexedAnimation_Access is
+   function Create (animationInterface_Param : access Animation'Class; movieIndexedAnimationInterface_Param : access IndexedAnimation'Class; player_Param : access Player'Class; captionDx : Integer; captionDy : Integer; dx : Integer; dy : Integer; time : Integer; animationBehavior_Param : access AnimationBehavior'Class) return CaptionIndexedAnimation_Access is
       This : constant CaptionIndexedAnimation_Access := new CaptionIndexedAnimation;
    begin
-      CaptionIndexedAnimation_Package.Initialize (This.all, animationInterface, movieIndexedAnimationInterface, player, captionDx, captionDy, dx, dy, time, animationBehavior);
+      CaptionIndexedAnimation_Package.Initialize (This.all, animationInterface_Param, movieIndexedAnimationInterface_Param, player_Param, captionDx, captionDy, dx, dy, time, animationBehavior_Param);
       return This;
    end Create;
 
@@ -107,13 +111,15 @@ package body org.allbinary.animation.caption.CaptionIndexedAnimation_Package is
         return PrimitiveIntUtil_Package.getArrayInstance;
    end getSequence;
 
-   procedure paintXY (This : in out CaptionIndexedAnimation; graphics : Graphics_Access; x : Integer; y : Integer) is
+   procedure paintXY (This : in out CaptionIndexedAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.animationInterface.paintXY (graphics, (x) + (This.captionDx), (y) + (This.captionDy));
         This.movieIndexedAnimationInterface.paintXY (graphics, ((x) + (This.captionDx)) + (This.dx), ((y) + (This.captionDy)) + (This.dy));
    end paintXY;
 
-   procedure paintThreedXYZ (This : in out CaptionIndexedAnimation; graphics : Graphics_Access; x : Integer; y : Integer; z : Integer) is
+   procedure paintThreedXYZ (This : in out CaptionIndexedAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer; z : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.animationInterface.paintThreedXYZ (graphics, (x) + (This.captionDx), (y) + (This.captionDy), z);
         This.movieIndexedAnimationInterface.paintThreedXYZ (graphics, ((x) + (This.captionDx)) + (This.dx), ((y) + (This.captionDy)) + (This.dy), z);

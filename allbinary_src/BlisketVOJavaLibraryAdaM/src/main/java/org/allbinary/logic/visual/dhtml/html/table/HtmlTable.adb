@@ -69,7 +69,8 @@ package body org.allbinary.logic.visual.dhtml.html.table.HtmlTable_Package is
       return This;
    end Create;
 
-   procedure addRow (This : in out HtmlTable; htmlRow : HtmlRow_Access) is
+   procedure addRow (This : in out HtmlTable; htmlRow_Param : access HtmlRow'Class) is
+      htmlRow : HtmlRow_Access := HtmlRow_Access (htmlRow_Param);
    begin
         if (This.numberOfColumns) < (htmlRow.getNumberOfColumns) then
             This.numberOfColumns := htmlRow.getNumberOfColumns;

@@ -53,11 +53,11 @@ package org.allbinary.image.opengles.OpenGLESGL11ExtImage_Package is
       rectangle : Integer_Array_Access;
    end record;
 
-   procedure Initialize (This : in out OpenGLESGL11ExtImage'Class; image : Image_Access; bitmapFactory : PlatformBitmapBaseFactory_Access; textureFactory : PlatformTextureBaseFactory_Access);
-   function Create (image : Image_Access; bitmapFactory : PlatformBitmapBaseFactory_Access; textureFactory : PlatformTextureBaseFactory_Access) return OpenGLESGL11ExtImage_Access;
-   procedure onDisplayChangeEvent (This : in out OpenGLESGL11ExtImage; displayChangeEvent : DisplayChangeEvent_Access);
-   procedure set (This : in out OpenGLESGL11ExtImage; gl : GL_Access);
-   procedure draw (This : in out OpenGLESGL11ExtImage; gl : GL10_Access; x : Integer; y : Integer; z : Integer);
+   procedure Initialize (This : in out OpenGLESGL11ExtImage'Class; image_Param : access Image'Class; bitmapFactory_Param : access PlatformBitmapBaseFactory'Class; textureFactory_Param : access PlatformTextureBaseFactory'Class);
+   function Create (image_Param : access Image'Class; bitmapFactory_Param : access PlatformBitmapBaseFactory'Class; textureFactory_Param : access PlatformTextureBaseFactory'Class) return OpenGLESGL11ExtImage_Access;
+   procedure onDisplayChangeEvent (This : in out OpenGLESGL11ExtImage; displayChangeEvent_Param : access DisplayChangeEvent'Class);
+   procedure set (This : in out OpenGLESGL11ExtImage; gl_Param : access GL'Class);
+   procedure draw (This : in out OpenGLESGL11ExtImage; gl_Param : access GL10'Class; x : Integer; y : Integer; z : Integer);
 
 end org.allbinary.image.opengles.OpenGLESGL11ExtImage_Package;
 

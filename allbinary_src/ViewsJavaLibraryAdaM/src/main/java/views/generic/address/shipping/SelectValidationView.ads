@@ -42,13 +42,13 @@ package views.generic_Id.address.shipping.SelectValidationView_Package is
 
    type SelectValidationView is new ShippingAddressView and ValidationComponentInterface with null record;
 
-   procedure Initialize (This : in out SelectValidationView'Class; transformInfoInterface : TransformInfoInterface_Access);
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return SelectValidationView_Access;
+   procedure Initialize (This : in out SelectValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return SelectValidationView_Access;
    function isValid (This : in out SelectValidationView) return Boolean;
    function validationInfo (This : in out SelectValidationView) return Unbounded_String;
    function toValidationInfoDoc (This : in out SelectValidationView) return Document_Access;
-   function toValidationInfoNode (This : in out SelectValidationView; document : Document_Access) return Node_Access;
-   procedure toValidationInfoNode (This : in out SelectValidationView; document : Document_Access);
+   function toValidationInfoNode (This : in out SelectValidationView; document_Param : access Document'Class) return Node_Access;
+   procedure toValidationInfoNode (This : in out SelectValidationView; document_Param : access Document'Class);
 
 end views.generic_Id.address.shipping.SelectValidationView_Package;
 

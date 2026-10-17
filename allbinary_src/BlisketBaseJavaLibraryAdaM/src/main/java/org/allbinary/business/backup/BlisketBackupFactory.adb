@@ -59,7 +59,7 @@ package body org.allbinary.business.backup.BlisketBackupFactory_Package is
       fileBasicArrayList : BasicArrayList_Access;
    begin
         begin
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("backup()"));
+            This.logUtil.putF (This.commonStrings.START, BlisketBackupFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("backup()"));
             stringBuffer := StringMaker_Package.Create;
             stringBuffer.append (URLGLOBALS.getWebappPath);
             stringBuffer.append (PATH_GLOBALS.getInstance.BACKUP_PATH);
@@ -72,7 +72,7 @@ package body org.allbinary.business.backup.BlisketBackupFactory_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("backup()"), e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, BlisketBackupFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("backup()"), e);
                 end;
         end;
    end backup;
@@ -90,7 +90,7 @@ package body org.allbinary.business.backup.BlisketBackupFactory_Package is
       index : Integer;
    begin
         begin
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("backupViews()"));
+            This.logUtil.putF (This.commonStrings.START, BlisketBackupFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("backupViews()"));
             stringBuffer := StringMaker_Package.Create;
             stringBuffer.append (URLGLOBALS.getWebappPath);
             stringBuffer.append (PATH_GLOBALS.getInstance.BACKUP_PATH);
@@ -114,7 +114,7 @@ package body org.allbinary.business.backup.BlisketBackupFactory_Package is
                 stringBuffer.append (nextStore);
                 stringBuffer.append (To_Unbounded_String (" from: "));
                 stringBuffer.append (viewsPath);
-                PreLogUtil_Package.put (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("backupViews()"));
+                PreLogUtil_Package.put (stringBuffer.toString, BlisketBackupFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("backupViews()"));
                 fileBasicArrayList.addAllList (This.getFileBasicArrayList (viewsPath));
             end loop;
             This.backup (fileBasicArrayList, Java_Image (path.toFileSystemString) & To_Unbounded_String ("backupViews.zip"));
@@ -123,7 +123,7 @@ package body org.allbinary.business.backup.BlisketBackupFactory_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("backupViews()"), e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, BlisketBackupFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("backupViews()"), e);
                 end;
         end;
    end backupViews;
@@ -142,7 +142,7 @@ package body org.allbinary.business.backup.BlisketBackupFactory_Package is
       index : Integer;
    begin
         begin
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("backupResources()"));
+            This.logUtil.putF (This.commonStrings.START, BlisketBackupFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("backupResources()"));
             stringBuffer := StringMaker_Package.Create;
             stringBuffer.append (URLGLOBALS.getWebappPath);
             stringBuffer.append (PATH_GLOBALS.getInstance.BACKUP_PATH);
@@ -168,7 +168,7 @@ package body org.allbinary.business.backup.BlisketBackupFactory_Package is
                 stringBuffer.append (nextStore);
                 stringBuffer.append (To_Unbounded_String (" from: "));
                 stringBuffer.append (resourcesPath);
-                PreLogUtil_Package.put (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("backupResources()"));
+                PreLogUtil_Package.put (stringBuffer.toString, BlisketBackupFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("backupResources()"));
                 fileBasicArrayList.addAllList (This.getFileBasicArrayList (resourcesPath));
             end loop;
             This.backup (fileBasicArrayList, Java_Image (path.toFileSystemString) & To_Unbounded_String ("backupResources.zip"));
@@ -177,7 +177,7 @@ package body org.allbinary.business.backup.BlisketBackupFactory_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("backupResources()"), e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, BlisketBackupFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("backupResources()"), e);
                 end;
         end;
    end backupResources;
@@ -194,7 +194,7 @@ package body org.allbinary.business.backup.BlisketBackupFactory_Package is
       index : Integer;
    begin
         begin
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("backupJsps()"));
+            This.logUtil.putF (This.commonStrings.START, BlisketBackupFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("backupJsps()"));
             stringBuffer := StringMaker_Package.Create;
             stringBuffer.append (URLGLOBALS.getWebappPath);
             stringBuffer.append (PATH_GLOBALS.getInstance.BACKUP_PATH);
@@ -207,7 +207,7 @@ package body org.allbinary.business.backup.BlisketBackupFactory_Package is
             nextStore := Null_Unbounded_String;
             for index in 0 .. (size) - 1 loop
                 nextStore := Unbounded_String (storeFrontNamesBasicArrayList.get (index));
-                PreLogUtil_Package.put (To_Unbounded_String ("Backup Store Jsps: ") & nextStore, This'Unchecked_Access, To_Unbounded_String ("backupJsps()"));
+                PreLogUtil_Package.put (To_Unbounded_String ("Backup Store Jsps: ") & nextStore, BlisketBackupFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("backupJsps()"));
                 stringBuffer.delete (0, stringBuffer.length);
                 stringBuffer.append (URLGLOBALS.getWebappPath);
                 stringBuffer.append (nextStore);
@@ -219,12 +219,13 @@ package body org.allbinary.business.backup.BlisketBackupFactory_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("backupJsps()"), e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, BlisketBackupFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("backupJsps()"), e);
                 end;
         end;
    end backupJsps;
 
-   procedure backup (This : in out BlisketBackupFactory; fileBasicArrayList : BasicArrayList_Access; zipFile : Unbounded_String) is
+   procedure backup (This : in out BlisketBackupFactory; fileBasicArrayList_Param : access BasicArrayList'Class; zipFile : Unbounded_String) is
+      fileBasicArrayList : BasicArrayList_Access := BasicArrayList_Access (fileBasicArrayList_Param);
       stringBuffer : StringMaker_Access;
    begin
         begin
@@ -234,15 +235,15 @@ package body org.allbinary.business.backup.BlisketBackupFactory_Package is
             stringBuffer.append (zipFile);
             stringBuffer.append (To_Unbounded_String (" BasicArrayList: "));
             stringBuffer.appendint (fileBasicArrayList.size);
-            PreLogUtil_Package.put (To_Unbounded_String ("Creating Backup Zip File: ") & stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("backup()"));
+            PreLogUtil_Package.put (To_Unbounded_String ("Creating Backup Zip File: ") & stringBuffer.toString, BlisketBackupFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("backup()"));
             ZipFileUtil_Package.getInstance.create (zipFile, fileBasicArrayList);
-            This.logUtil.putF (To_Unbounded_String ("Created Backup Zip File"), This'Unchecked_Access, To_Unbounded_String ("backup()"));
+            This.logUtil.putF (To_Unbounded_String ("Created Backup Zip File"), BlisketBackupFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("backup()"));
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("backup()"), e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, BlisketBackupFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("backup()"), e);
                 end;
         end;
    end backup;

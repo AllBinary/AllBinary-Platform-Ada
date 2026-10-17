@@ -62,13 +62,13 @@ package org.allbinary.image.gui.CreateIconImagesJPanel_Package is
       aboveJButton : JButton_Access;
    end record;
 
-   procedure Initialize (This : in out CreateIconImagesJPanel'Class; imageProcessorInput : ImageProcessorInput_Access);
-   function Create (imageProcessorInput : ImageProcessorInput_Access) return CreateIconImagesJPanel_Access;
+   procedure Initialize (This : in out CreateIconImagesJPanel'Class; imageProcessorInput_Param : access ImageProcessorInput'Class);
+   function Create (imageProcessorInput_Param : access ImageProcessorInput'Class) return CreateIconImagesJPanel_Access;
    procedure process (This : in out CreateIconImagesJPanel);
    function getImageProcessorInput (This : in out CreateIconImagesJPanel) return ImageProcessorInput_Access;
-   procedure setImageProcessorInput (This : in out CreateIconImagesJPanel; imageProcessorInput : ImageProcessorInput_Access);
+   procedure setImageProcessorInput (This : in out CreateIconImagesJPanel; imageProcessorInput_Param : access ImageProcessorInput'Class);
    procedure initComponents (This : in out CreateIconImagesJPanel);
-   procedure aboveJButtonActionPerformed (This : in out CreateIconImagesJPanel; evt : ActionEvent_Access);
+   procedure aboveJButtonActionPerformed (This : in out CreateIconImagesJPanel; evt_Param : access ActionEvent'Class);
 
 end org.allbinary.image.gui.CreateIconImagesJPanel_Package;
 

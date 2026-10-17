@@ -36,7 +36,7 @@ package org.allbinary.logic.system.hardware.components.interfaces.CpuInterface_P
    function getStepping (This : in out CpuInterface) return Unbounded_String is abstract;
    function getCpuSpeed (This : in out CpuInterface) return Unbounded_String is abstract;
    function getCacheSize (This : in out CpuInterface) return Unbounded_String is abstract;
-   function compareTo (This : in out CpuInterface; cpuInterface : CpuInterface_Access) return Boolean is abstract;
+   function compareTo (This : in out CpuInterface; cpuInterface_Param : access CpuInterface'Class) return Boolean is abstract;
 
 end org.allbinary.logic.system.hardware.components.interfaces.CpuInterface_Package;
 

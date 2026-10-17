@@ -38,8 +38,8 @@ package org.allbinary.game.midlet.LicenseCheckRunnableFactory_Package is
 
    procedure Initialize (This : in out LicenseCheckRunnableFactory'Class);
    function Create return LicenseCheckRunnableFactory_Access;
-   function getInstance (This : in out LicenseCheckRunnableFactory; specialDemoGameMidlet : SpecialDemoGameMidlet_Access) return ABRunnable_Access;
-   procedure getInstance (This : in out LicenseCheckRunnableFactory; specialDemoGameMidlet : SpecialDemoGameMidlet_Access);
+   function getInstance (This : in out LicenseCheckRunnableFactory; specialDemoGameMidlet_Param : access SpecialDemoGameMidlet'Class) return ABRunnable_Access;
+   procedure getInstance (This : in out LicenseCheckRunnableFactory; specialDemoGameMidlet_Param : access SpecialDemoGameMidlet'Class);
 
 end org.allbinary.game.midlet.LicenseCheckRunnableFactory_Package;
 

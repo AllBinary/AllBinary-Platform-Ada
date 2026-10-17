@@ -61,12 +61,12 @@ package org.allbinary.data.tables.staticpages.StaticPagesEntity_Package is
 
    procedure Initialize (This : in out StaticPagesEntity'Class);
    function Create return StaticPagesEntity_Access;
-   procedure insert (This : in out StaticPagesEntity; values : BasicArrayList_Access);
+   procedure insert (This : in out StaticPagesEntity; values_Param : access BasicArrayList'Class);
    function getFile (This : in out StaticPagesEntity; store : Unbounded_String; keywords : Unbounded_String) return Unbounded_String;
    procedure getFile (This : in out StaticPagesEntity; store : Unbounded_String; keywords : Unbounded_String);
    procedure delete (This : in out StaticPagesEntity; keywords : Unbounded_String);
    function dropTable (This : in out StaticPagesEntity) return Unbounded_String;
-   procedure update (This : in out StaticPagesEntity; updatedValues : HashMap_Access);
+   procedure update (This : in out StaticPagesEntity; updatedValues_Param : access HashMap'Class);
    function createTableStatement (This : in out StaticPagesEntity) return Unbounded_String;
    function createTable (This : in out StaticPagesEntity) return Unbounded_String;
 

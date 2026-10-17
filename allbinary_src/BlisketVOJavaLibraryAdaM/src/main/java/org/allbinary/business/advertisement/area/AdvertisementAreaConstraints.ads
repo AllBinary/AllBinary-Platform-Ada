@@ -50,10 +50,10 @@ package org.allbinary.business.advertisement.area.AdvertisementAreaConstraints_P
       twoDimensionConstraintsInterface : TwoDimensionalConstraintInterface_Access;
    end record;
 
-   procedure Initialize (This : in out AdvertisementAreaConstraints'Class; document : Document_Access);
-   function Create (document : Document_Access) return AdvertisementAreaConstraints_Access;
-   procedure setDisplayInBrowserContraints (This : in out AdvertisementAreaConstraints; displayInBrowserContraintsInterface : DisplayInBrowserContraintsInterface_Access);
-   procedure getTwoDimensionContraints (This : in out AdvertisementAreaConstraints; twoDimensionConstraintsInterface : TwoDimensionalConstraintInterface_Access);
+   procedure Initialize (This : in out AdvertisementAreaConstraints'Class; document_Param : access Document'Class);
+   function Create (document_Param : access Document'Class) return AdvertisementAreaConstraints_Access;
+   procedure setDisplayInBrowserContraints (This : in out AdvertisementAreaConstraints; displayInBrowserContraintsInterface_Param : access DisplayInBrowserContraintsInterface'Class);
+   procedure getTwoDimensionContraints (This : in out AdvertisementAreaConstraints; twoDimensionConstraintsInterface_Param : access TwoDimensionalConstraintInterface'Class);
    function getDisplayInBrowserContraints (This : in out AdvertisementAreaConstraints) return DisplayInBrowserContraintsInterface_Access;
    function getTwoDimensionContraints (This : in out AdvertisementAreaConstraints) return TwoDimensionalConstraintInterface_Access;
 

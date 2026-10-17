@@ -22,21 +22,23 @@ package body org.allbinary.logic.communication.log.XmlRpcRemoteLogClient_Package
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out XmlRpcRemoteLogClient'Class; clientInfo : AbeClientInformationInterface_Access) is
+   procedure Initialize (This : in out XmlRpcRemoteLogClient'Class; clientInfo_Param : access AbeClientInformationInterface'Class) is
+      clientInfo : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (clientInfo_Param);
    begin
         XmlRpcAbeClient_Package.Initialize (This, clientInfo, To_Unbounded_String ("SSLLogServ.logUtil"));
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (clientInfo : AbeClientInformationInterface_Access) return XmlRpcRemoteLogClient_Access is
+   function Create (clientInfo_Param : access AbeClientInformationInterface'Class) return XmlRpcRemoteLogClient_Access is
       This : constant XmlRpcRemoteLogClient_Access := new XmlRpcRemoteLogClient;
    begin
-      XmlRpcRemoteLogClient_Package.Initialize (This.all, clientInfo);
+      XmlRpcRemoteLogClient_Package.Initialize (This.all, clientInfo_Param);
       return This;
    end Create;
 
    --  throws Exception
-   function get (This : in out XmlRpcRemoteLogClient; anyType : Java_Object_Access) return Java_Object_Access is
+   function get (This : in out XmlRpcRemoteLogClient; anyType_Param : access Java_Object'Class) return Java_Object_Access is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
       param : BasicArrayList_Access;
       serverUrl : Unbounded_String;
       index : Integer;
@@ -72,8 +74,8 @@ package body org.allbinary.logic.communication.log.XmlRpcRemoteLogClient_Package
         end;
    end get;
 
-   procedure get (This : in out XmlRpcRemoteLogClient; anyType : Java_Object_Access) is
-      Java_Result : constant Java_Object_Access := XmlRpcRemoteLogClient'Class (This).get (anyType);
+   procedure get (This : in out XmlRpcRemoteLogClient; anyType_Param : access Java_Object'Class) is
+      Java_Result : constant Java_Object_Access := XmlRpcRemoteLogClient'Class (This).get (anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

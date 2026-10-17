@@ -36,10 +36,10 @@ package org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventSourc
       angle : Long_Float;
    end record;
 
-   procedure Initialize (This : in out MyGraphicItemEventSource'Class; command : Unbounded_String; treeNode : MutableTreeNode_Access);
-   function Create (command : Unbounded_String; treeNode : MutableTreeNode_Access) return MyGraphicItemEventSource_Access;
-   procedure Initialize (This : in out MyGraphicItemEventSource'Class; command : Unbounded_String; angle : Long_Float; treeNode : MutableTreeNode_Access);
-   function Create (command : Unbounded_String; angle : Long_Float; treeNode : MutableTreeNode_Access) return MyGraphicItemEventSource_Access;
+   procedure Initialize (This : in out MyGraphicItemEventSource'Class; command : Unbounded_String; treeNode_Param : access MutableTreeNode'Class);
+   function Create (command : Unbounded_String; treeNode_Param : access MutableTreeNode'Class) return MyGraphicItemEventSource_Access;
+   procedure Initialize (This : in out MyGraphicItemEventSource'Class; command : Unbounded_String; angle : Long_Float; treeNode_Param : access MutableTreeNode'Class);
+   function Create (command : Unbounded_String; angle : Long_Float; treeNode_Param : access MutableTreeNode'Class) return MyGraphicItemEventSource_Access;
    function getCommand (This : in out MyGraphicItemEventSource) return Unbounded_String;
    function getTreeNode (This : in out MyGraphicItemEventSource) return MutableTreeNode_Access;
    function getAngle (This : in out MyGraphicItemEventSource) return Long_Float;

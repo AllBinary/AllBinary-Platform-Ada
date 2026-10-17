@@ -29,17 +29,18 @@ package body org.allbinary.game.displayable.canvas.FormInputProcessor_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out FormInputProcessor'Class; allBinaryGameCanvas : AllBinaryGameCanvas_Access) is
+   procedure Initialize (This : in out FormInputProcessor'Class; allBinaryGameCanvas_Param : access AllBinaryGameCanvas'Class) is
+      allBinaryGameCanvas : AllBinaryGameCanvas_Access := AllBinaryGameCanvas_Access (allBinaryGameCanvas_Param);
    begin
       InputProcessor_Package.Initialize (This);
       Initialize_Fields (This);
         This.allBinaryGameCanvas := allBinaryGameCanvas;
    end Initialize;
 
-   function Create (allBinaryGameCanvas : AllBinaryGameCanvas_Access) return FormInputProcessor_Access is
+   function Create (allBinaryGameCanvas_Param : access AllBinaryGameCanvas'Class) return FormInputProcessor_Access is
       This : constant FormInputProcessor_Access := new FormInputProcessor;
    begin
-      FormInputProcessor_Package.Initialize (This.all, allBinaryGameCanvas);
+      FormInputProcessor_Package.Initialize (This.all, allBinaryGameCanvas_Param);
       return This;
    end Create;
 
@@ -48,7 +49,7 @@ package body org.allbinary.game.displayable.canvas.FormInputProcessor_Package is
       gameKeyEvent : GameKeyEvent_Access;
    begin
         begin
-            PreLogUtil_Package.put (StringMaker_Package.Create.append (This.inputFactory.KEY_CODE_LABEL).appendint (keyCode).append (CommonSeps_Package.getInstance.SPACE).append (This.inputFactory.DEVICE_ID_LABEL).appendint (deviceId).toString, This'Unchecked_Access, This.gameInputStrings.KEY_PRESSED);
+            PreLogUtil_Package.put (StringMaker_Package.Create.append (This.inputFactory.KEY_CODE_LABEL).appendint (keyCode).append (CommonSeps_Package.getInstance.SPACE).append (This.inputFactory.DEVICE_ID_LABEL).appendint (deviceId).toString, FormInputProcessor_Access'(This'Unchecked_Access), This.gameInputStrings.KEY_PRESSED);
             input := This.inputFactory.getInstanceById (keyCode);
             gameKeyEvent := This.gameKeyEventFactory.getInstanceForInput (This.allBinaryGameCanvas, input);
             This.downKeyEventHandler.fireEventForGameKeyEvent (gameKeyEvent);
@@ -57,12 +58,13 @@ package body org.allbinary.game.displayable.canvas.FormInputProcessor_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.gameInputStrings.ADD_KEY_EVENT, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, FormInputProcessor_Access'(This'Unchecked_Access), This.gameInputStrings.ADD_KEY_EVENT, e);
                 end;
         end;
    end keyPressedByDevice;
 
-   procedure keyReleasedByDevice (This : in out FormInputProcessor; canvas : Canvas_Access; keyCode : Integer; deviceId : Integer) is
+   procedure keyReleasedByDevice (This : in out FormInputProcessor; canvas_Param : access Canvas'Class; keyCode : Integer; deviceId : Integer) is
+      canvas : Canvas_Access := Canvas_Access (canvas_Param);
       input : Input_Access;
       gameKey : GameKey_Access;
       gameKeyEventSourceInterface : GameKeyEventSourceInterface_Access;
@@ -71,7 +73,7 @@ package body org.allbinary.game.displayable.canvas.FormInputProcessor_Package is
         begin
             input := This.inputFactory.getInstanceById (keyCode);
             if This.platformKeyFactory.isEnter (input) then
-                PreLogUtil_Package.put (StringMaker_Package.Create.append (This.inputFactory.KEY_CODE_LABEL).appendint (keyCode).append (CommonSeps_Package.getInstance.SPACE).append (This.inputFactory.DEVICE_ID_LABEL).appendint (deviceId).toString, This'Unchecked_Access, This.gameInputStrings.KEY_RELEASED);
+                PreLogUtil_Package.put (StringMaker_Package.Create.append (This.inputFactory.KEY_CODE_LABEL).appendint (keyCode).append (CommonSeps_Package.getInstance.SPACE).append (This.inputFactory.DEVICE_ID_LABEL).appendint (deviceId).toString, FormInputProcessor_Access'(This'Unchecked_Access), This.gameInputStrings.KEY_RELEASED);
                 gameKey := GameKeyFactory_Package.getInstance.KEY_NUM0;
                 gameKeyEventSourceInterface := GameKeyEventSourceInterface_Access (canvas);
                 gameKeyEvent := This.gameKeyEventFactory.getInstanceForInput (gameKeyEventSourceInterface, gameKey);
@@ -83,7 +85,7 @@ package body org.allbinary.game.displayable.canvas.FormInputProcessor_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.gameInputStrings.ADD_KEY_EVENT, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, FormInputProcessor_Access'(This'Unchecked_Access), This.gameInputStrings.ADD_KEY_EVENT, e);
                 end;
         end;
    end keyReleasedByDevice;

@@ -23,7 +23,8 @@ package body views.admin.user.EditValidationUserView_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out EditValidationUserView'Class; transformInfoInterface : TransformInfoInterface_Access) is
+   procedure Initialize (This : in out EditValidationUserView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
       httpServletRequest : HttpServletRequest_Access;
       hashMap : HashMap_Access;
    begin
@@ -34,10 +35,10 @@ package body views.admin.user.EditValidationUserView_Package is
         This.userName := UserName_Package.Create (hashMap).get;
    end Initialize;
 
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return EditValidationUserView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return EditValidationUserView_Access is
       This : constant EditValidationUserView_Access := new EditValidationUserView;
    begin
-      EditValidationUserView_Package.Initialize (This.all, transformInfoInterface);
+      EditValidationUserView_Package.Initialize (This.all, transformInfoInterface_Param);
       return This;
    end Create;
 
@@ -59,7 +60,7 @@ package body views.admin.user.EditValidationUserView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to validate form"), This'Unchecked_Access, This.commonStrings.IS_VALID, e);
+                This.logUtil.put (To_Unbounded_String ("Failed to validate form"), EditValidationUserView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
             end if;
             return False;
                 end;
@@ -73,7 +74,7 @@ package body views.admin.user.EditValidationUserView_Package is
             stringBuffer := StringMaker_Package.Create;
             if (UserName_Package.getInstance.isValid (This.userName)) = (True) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                    This.logUtil.putF (To_Unbounded_String ("User Name is valid"), This'Unchecked_Access, To_Unbounded_String ("validationInfo()"));
+                    This.logUtil.putF (To_Unbounded_String ("User Name is valid"), EditValidationUserView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"));
                 end if;
                 This.user := UserEntityFactory_Package.getInstance.getUser (This.userName);
                 if (This.user) = (null) then
@@ -86,7 +87,7 @@ package body views.admin.user.EditValidationUserView_Package is
             end if;
             if (This.user.isValid) = (False) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                    This.logUtil.putF (To_Unbounded_String ("User exists but is invalid - Probably manually modified"), This'Unchecked_Access, To_Unbounded_String ("validationInfo()"));
+                    This.logUtil.putF (To_Unbounded_String ("User exists but is invalid - Probably manually modified"), EditValidationUserView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"));
                 end if;
                 stringBuffer.append (To_Unbounded_String ("User data is not valid - Please call administrator.<br />"));
                 stringBuffer.append (This.user.validationInfo);
@@ -98,7 +99,7 @@ package body views.admin.user.EditValidationUserView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), This'Unchecked_Access, To_Unbounded_String ("validationInfo()"), e);
+                This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), EditValidationUserView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
             end if;
             return To_Unbounded_String ("Error Validating Form");
                 end;
@@ -110,13 +111,14 @@ package body views.admin.user.EditValidationUserView_Package is
         return null;
    end toValidationInfoDoc;
 
-   function toValidationInfoNode (This : in out EditValidationUserView; document : Document_Access) return Node_Access is
+   function toValidationInfoNode (This : in out EditValidationUserView; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
    begin
         return null;
    end toValidationInfoNode;
 
-   procedure toValidationInfoNode (This : in out EditValidationUserView; document : Document_Access) is
-      Java_Result : constant Node_Access := EditValidationUserView'Class (This).toValidationInfoNode (document);
+   procedure toValidationInfoNode (This : in out EditValidationUserView; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := EditValidationUserView'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

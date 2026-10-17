@@ -23,17 +23,19 @@ package body org.allbinary.animation.image.AdjustedLeftToRightImageAnimation_Pac
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AdjustedLeftToRightImageAnimation'Class; image : Image_Access; sequenceArray : Integer_Array_Access; dx : Integer; dy : Integer; animationBehavior : AnimationBehavior_Access) is
+   procedure Initialize (This : in out AdjustedLeftToRightImageAnimation'Class; image_Param : access Image'Class; sequenceArray : Integer_Array_Access; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior'Class) is
+      image : Image_Access := Image_Access (image_Param);
+      animationBehavior : AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
    begin
         LeftToRightImageAnimation_Package.Initialize (This, image, sequenceArray, animationBehavior);
         Initialize_Fields (This);
         This.init (dx, dy);
    end Initialize;
 
-   function Create (image : Image_Access; sequenceArray : Integer_Array_Access; dx : Integer; dy : Integer; animationBehavior : AnimationBehavior_Access) return AdjustedLeftToRightImageAnimation_Access is
+   function Create (image_Param : access Image'Class; sequenceArray : Integer_Array_Access; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior'Class) return AdjustedLeftToRightImageAnimation_Access is
       This : constant AdjustedLeftToRightImageAnimation_Access := new AdjustedLeftToRightImageAnimation;
    begin
-      AdjustedLeftToRightImageAnimation_Package.Initialize (This.all, image, sequenceArray, dx, dy, animationBehavior);
+      AdjustedLeftToRightImageAnimation_Package.Initialize (This.all, image_Param, sequenceArray, dx, dy, animationBehavior_Param);
       return This;
    end Create;
 
@@ -44,7 +46,8 @@ package body org.allbinary.animation.image.AdjustedLeftToRightImageAnimation_Pac
         This.dy := dy;
    end init;
 
-   procedure paintXY (This : in out AdjustedLeftToRightImageAnimation; graphics : Graphics_Access; x : Integer; y : Integer) is
+   procedure paintXY (This : in out AdjustedLeftToRightImageAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         LeftToRightImageAnimation (This).paintXY (graphics, (x) + (This.dx), (y) + (This.dy));
    end paintXY;

@@ -56,8 +56,8 @@ package org.allbinary.graphics.draw.DrawStringUtil_Package is
    procedure Initialize (This : in out DrawStringUtil'Class);
    function Create return DrawStringUtil_Access;
    function getInstance return DrawStringUtil_Access;
-   procedure drawCenterString (This : in out DrawStringUtil; graphics : Graphics_Access; string_Id : Unbounded_String; offset : Integer; length : Integer; x : Integer; y : Integer);
-   procedure drawCenterStrings (This : in out DrawStringUtil; graphics : Graphics_Access; stringArray : Unbounded_String_Array_Access; maxWidth : Integer; charHeight : Integer; x : Integer; y : Integer);
+   procedure drawCenterString (This : in out DrawStringUtil; graphics_Param : access Graphics'Class; string_Id : Unbounded_String; offset : Integer; length : Integer; x : Integer; y : Integer);
+   procedure drawCenterStrings (This : in out DrawStringUtil; graphics_Param : access Graphics'Class; stringArray : Unbounded_String_Array_Access; maxWidth : Integer; charHeight : Integer; x : Integer; y : Integer);
 
 end org.allbinary.graphics.draw.DrawStringUtil_Package;
 

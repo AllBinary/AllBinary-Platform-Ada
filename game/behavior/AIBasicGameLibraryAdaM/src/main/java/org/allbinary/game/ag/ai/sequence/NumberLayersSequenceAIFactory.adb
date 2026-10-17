@@ -33,13 +33,15 @@ package body org.allbinary.game.ag.ai.sequence.NumberLayersSequenceAIFactory_Pac
    end Create;
 
 
-   function getInstance (This : in out NumberLayersSequenceAIFactory; numberOfEnemiesLeft : Integer; artificialIntelligenceInterface : ArtificialIntelligenceInterface_Access_Array_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return ArtificialIntelligenceInterface_Access is
+   function getInstance (This : in out NumberLayersSequenceAIFactory; numberOfEnemiesLeft : Integer; artificialIntelligenceInterface : ArtificialIntelligenceInterface_Access_Array_Access; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return ArtificialIntelligenceInterface_Access is
+      ownerLayerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (ownerLayerInterface_Param);
+      gameInput : GameInput_Access := GameInput_Access (gameInput_Param);
    begin
         return NumberLayersSequenceAI_Package.Create (numberOfEnemiesLeft, artificialIntelligenceInterface, ownerLayerInterface, gameInput);
    end getInstance;
 
-   procedure getInstance (This : in out NumberLayersSequenceAIFactory; numberOfEnemiesLeft : Integer; artificialIntelligenceInterface : ArtificialIntelligenceInterface_Access_Array_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) is
-      Java_Result : constant ArtificialIntelligenceInterface_Access := NumberLayersSequenceAIFactory'Class (This).getInstance (numberOfEnemiesLeft, artificialIntelligenceInterface, ownerLayerInterface, gameInput);
+   procedure getInstance (This : in out NumberLayersSequenceAIFactory; numberOfEnemiesLeft : Integer; artificialIntelligenceInterface : ArtificialIntelligenceInterface_Access_Array_Access; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) is
+      Java_Result : constant ArtificialIntelligenceInterface_Access := NumberLayersSequenceAIFactory'Class (This).getInstance (numberOfEnemiesLeft, artificialIntelligenceInterface, ownerLayerInterface_Param, gameInput_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

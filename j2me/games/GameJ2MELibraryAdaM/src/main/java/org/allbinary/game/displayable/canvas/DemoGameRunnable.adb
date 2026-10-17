@@ -24,17 +24,18 @@ package body org.allbinary.game.displayable.canvas.DemoGameRunnable_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out DemoGameRunnable'Class; demoCanvas : DemoCanvas_Access) is
+   procedure Initialize (This : in out DemoGameRunnable'Class; demoCanvas_Param : access DemoCanvas'Class) is
+      demoCanvas : DemoCanvas_Access := DemoCanvas_Access (demoCanvas_Param);
    begin
       GameRunnable_Package.Initialize (This);
       Initialize_Fields (This);
         This.demoCanvas := demoCanvas;
    end Initialize;
 
-   function Create (demoCanvas : DemoCanvas_Access) return DemoGameRunnable_Access is
+   function Create (demoCanvas_Param : access DemoCanvas'Class) return DemoGameRunnable_Access is
       This : constant DemoGameRunnable_Access := new DemoGameRunnable;
    begin
-      DemoGameRunnable_Package.Initialize (This.all, demoCanvas);
+      DemoGameRunnable_Package.Initialize (This.all, demoCanvas_Param);
       return This;
    end Create;
 
@@ -50,7 +51,7 @@ package body org.allbinary.game.displayable.canvas.DemoGameRunnable_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.RUN, e);
+            This.logUtil.put (commonStrings.EXCEPTION_Id, DemoGameRunnable_Access'(This'Unchecked_Access), commonStrings.RUN, e);
                 end;
         end;
    end run;

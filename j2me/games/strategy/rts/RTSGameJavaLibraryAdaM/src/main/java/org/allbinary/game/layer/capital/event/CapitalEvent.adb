@@ -21,16 +21,17 @@ package body org.allbinary.game.layer.capital.event.CapitalEvent_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CapitalEvent'Class; anyType : Java_Object_Access) is
+   procedure Initialize (This : in out CapitalEvent'Class; anyType_Param : access Java_Object'Class) is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         AllBinaryEventObject_Package.Initialize (This, anyType);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (anyType : Java_Object_Access) return CapitalEvent_Access is
+   function Create (anyType_Param : access Java_Object'Class) return CapitalEvent_Access is
       This : constant CapitalEvent_Access := new CapitalEvent;
    begin
-      CapitalEvent_Package.Initialize (This.all, anyType);
+      CapitalEvent_Package.Initialize (This.all, anyType_Param);
       return This;
    end Create;
 

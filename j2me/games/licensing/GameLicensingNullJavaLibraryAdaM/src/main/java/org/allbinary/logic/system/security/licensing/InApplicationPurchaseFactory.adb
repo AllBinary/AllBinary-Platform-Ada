@@ -39,12 +39,16 @@ package body org.allbinary.logic.system.security.licensing.InApplicationPurchase
       return This;
    end Create;
 
-   procedure init (This : in out InApplicationPurchaseFactory; anyType : Java_Object_Access; stateObject : Java_Object_Access) is
+   procedure init (This : in out InApplicationPurchaseFactory; anyType_Param : access Java_Object'Class; stateObject_Param : access Java_Object'Class) is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      stateObject : Java_Object_Access := Java_Object_Access (stateObject_Param);
    begin
         null;
    end init;
 
-   procedure onCreate (This : in out InApplicationPurchaseFactory; anyType : Java_Object_Access; stateObject : Java_Object_Access) is
+   procedure onCreate (This : in out InApplicationPurchaseFactory; anyType_Param : access Java_Object'Class; stateObject_Param : access Java_Object'Class) is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      stateObject : Java_Object_Access := Java_Object_Access (stateObject_Param);
    begin
         null;
    end onCreate;
@@ -54,12 +58,14 @@ package body org.allbinary.logic.system.security.licensing.InApplicationPurchase
         null;
    end onStart;
 
-   procedure onResult (This : in out InApplicationPurchaseFactory; requestCode : Integer; resultCode : Integer; data : Java_Object_Access) is
+   procedure onResult (This : in out InApplicationPurchaseFactory; requestCode : Integer; resultCode : Integer; data_Param : access Java_Object'Class) is
+      data : Java_Object_Access := Java_Object_Access (data_Param);
    begin
         null;
    end onResult;
 
-   procedure onSaveState (This : in out InApplicationPurchaseFactory; anyType : Java_Object_Access) is
+   procedure onSaveState (This : in out InApplicationPurchaseFactory; anyType_Param : access Java_Object'Class) is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         null;
    end onSaveState;
@@ -74,17 +80,20 @@ package body org.allbinary.logic.system.security.licensing.InApplicationPurchase
         null;
    end onDestroy;
 
-   procedure purchase (This : in out InApplicationPurchaseFactory; lockableFeature : LockableFeature_Access) is
+   procedure purchase (This : in out InApplicationPurchaseFactory; lockableFeature_Param : access LockableFeature'Class) is
+      lockableFeature : LockableFeature_Access := LockableFeature_Access (lockableFeature_Param);
    begin
         null;
    end purchase;
 
-   function isPurchased (This : in out InApplicationPurchaseFactory; lockableFeature : LockableFeature_Access) return Boolean is
+   function isPurchased (This : in out InApplicationPurchaseFactory; lockableFeature_Param : access LockableFeature'Class) return Boolean is
+      lockableFeature : LockableFeature_Access := LockableFeature_Access (lockableFeature_Param);
    begin
         return False;
    end isPurchased;
 
-   procedure add (This : in out InApplicationPurchaseFactory; lockableFeature : LockableFeature_Access) is
+   procedure add (This : in out InApplicationPurchaseFactory; lockableFeature_Param : access LockableFeature'Class) is
+      lockableFeature : LockableFeature_Access := LockableFeature_Access (lockableFeature_Param);
    begin
         null;
    end add;
@@ -99,8 +108,8 @@ package body org.allbinary.logic.system.security.licensing.InApplicationPurchase
         return False;
    end isEnabled;
 
-   procedure isPurchased (This : in out InApplicationPurchaseFactory; lockableFeature : LockableFeature_Access) is
-      Java_Result : constant Boolean := InApplicationPurchaseFactory'Class (This).isPurchased (lockableFeature);
+   procedure isPurchased (This : in out InApplicationPurchaseFactory; lockableFeature_Param : access LockableFeature'Class) is
+      Java_Result : constant Boolean := InApplicationPurchaseFactory'Class (This).isPurchased (lockableFeature_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

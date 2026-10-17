@@ -55,9 +55,9 @@ package org.allbinary.media.image.ImageWaitCompleteUtil_Package is
 
    procedure Initialize (This : in out ImageWaitCompleteUtil'Class);
    function Create return ImageWaitCompleteUtil_Access;
-   procedure waitForImage (This : in out ImageWaitCompleteUtil; image : Image_Access; name : Unbounded_String);
+   procedure waitForImage (This : in out ImageWaitCompleteUtil; image_Param : access Image'Class; name : Unbounded_String);
    procedure handleTimeout (This : in out ImageWaitCompleteUtil; name : Unbounded_String);
-   procedure waitForATime (This : in out ImageWaitCompleteUtil; image : Image_Access; name : Unbounded_String; timeDelayHelper : TimeDelayHelper_Access);
+   procedure waitForATime (This : in out ImageWaitCompleteUtil; image_Param : access Image'Class; name : Unbounded_String; timeDelayHelper_Param : access TimeDelayHelper'Class);
    procedure waitForAll (This : in out ImageWaitCompleteUtil);
 
 end org.allbinary.media.image.ImageWaitCompleteUtil_Package;

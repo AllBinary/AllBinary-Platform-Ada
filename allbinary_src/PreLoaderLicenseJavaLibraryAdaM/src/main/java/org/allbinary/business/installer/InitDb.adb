@@ -41,20 +41,22 @@ package body org.allbinary.business.installer.InitDb_Package is
       return This;
    end Create;
 
-   procedure Initialize (This : in out InitDb'Class; dbConnectionInfo : DbConnectionInfo_Access) is
+   procedure Initialize (This : in out InitDb'Class; dbConnectionInfo_Param : access DbConnectionInfo'Class) is
+      dbConnectionInfo : DbConnectionInfo_Access := DbConnectionInfo_Access (dbConnectionInfo_Param);
    begin
       Initialize_Fields (This);
         null;
    end Initialize;
 
-   function Create (dbConnectionInfo : DbConnectionInfo_Access) return InitDb_Access is
+   function Create (dbConnectionInfo_Param : access DbConnectionInfo'Class) return InitDb_Access is
       This : constant InitDb_Access := new InitDb;
    begin
-      InitDb_Package.Initialize (This.all, dbConnectionInfo);
+      InitDb_Package.Initialize (This.all, dbConnectionInfo_Param);
       return This;
    end Create;
 
-   procedure setHelper (This : in out InitDb; anyType : Java_Object_Access) is
+   procedure setHelper (This : in out InitDb; anyType_Param : access Java_Object'Class) is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         This.anyType := anyType;
    end setHelper;

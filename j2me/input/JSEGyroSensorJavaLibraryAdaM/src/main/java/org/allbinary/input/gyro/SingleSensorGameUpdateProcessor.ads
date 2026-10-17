@@ -41,8 +41,8 @@ package org.allbinary.input.gyro.SingleSensorGameUpdateProcessor_Package is
 
    procedure Initialize (This : in out SingleSensorGameUpdateProcessor'Class);
    function Create return SingleSensorGameUpdateProcessor_Access;
-   procedure process (This : in out SingleSensorGameUpdateProcessor; anyType : Java_Object_Access);
-   procedure sendNotifications (This : in out SingleSensorGameUpdateProcessor; anyType : Java_Object_Access);
+   procedure process (This : in out SingleSensorGameUpdateProcessor; anyType_Param : access Java_Object'Class);
+   procedure sendNotifications (This : in out SingleSensorGameUpdateProcessor; anyType_Param : access Java_Object'Class);
 
 end org.allbinary.input.gyro.SingleSensorGameUpdateProcessor_Package;
 

@@ -67,13 +67,13 @@ package views.admin.inventory.download.DeleteFileValidationView_Package is
       downloadItemId : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out DeleteFileValidationView'Class; transformInfoInterface : TransformInfoInterface_Access);
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return DeleteFileValidationView_Access;
+   procedure Initialize (This : in out DeleteFileValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return DeleteFileValidationView_Access;
    procedure getFormData (This : in out DeleteFileValidationView);
    function isValid (This : in out DeleteFileValidationView) return Boolean;
    function toValidationInfoDoc (This : in out DeleteFileValidationView) return Document_Access;
-   function toValidationInfoNode (This : in out DeleteFileValidationView; document : Document_Access) return Node_Access;
-   procedure toValidationInfoNode (This : in out DeleteFileValidationView; document : Document_Access);
+   function toValidationInfoNode (This : in out DeleteFileValidationView; document_Param : access Document'Class) return Node_Access;
+   procedure toValidationInfoNode (This : in out DeleteFileValidationView; document_Param : access Document'Class);
    function validationInfo (This : in out DeleteFileValidationView) return Unbounded_String;
 
 end views.admin.inventory.download.DeleteFileValidationView_Package;

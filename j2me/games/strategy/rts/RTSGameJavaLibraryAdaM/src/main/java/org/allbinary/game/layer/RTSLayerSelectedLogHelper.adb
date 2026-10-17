@@ -43,7 +43,9 @@ package body org.allbinary.game.layer.RTSLayerSelectedLogHelper_Package is
         return RTSLayerSelectedLogHelper_Package.instanceC;
    end getInstance;
 
-   procedure setClosestGeographicMapCellHistory (This : in out RTSLayerSelectedLogHelper; associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access; pathsList : BasicArrayList_Access) is
+   procedure setClosestGeographicMapCellHistory (This : in out RTSLayerSelectedLogHelper; associatedAdvancedRTSGameLayer_Param : access PathFindingLayerInterface'Class; pathsList_Param : access BasicArrayList'Class) is
+      associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (associatedAdvancedRTSGameLayer_Param);
+      pathsList : BasicArrayList_Access := BasicArrayList_Access (pathsList_Param);
       stringBuffer : StringMaker_Access;
    begin
         stringBuffer := StringMaker_Package.Create;
@@ -53,10 +55,12 @@ package body org.allbinary.game.layer.RTSLayerSelectedLogHelper_Package is
         stringBuffer.appendint (pathsList.size);
         stringBuffer.append (To_Unbounded_String (" -> "));
         stringBuffer.append (StringUtil_Package.getInstance.toString (pathsList));
-        This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("selected: setClosestGeographicMapCellHistory"));
+        This.logUtil.putF (stringBuffer.toString, RTSLayerSelectedLogHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("selected: setClosestGeographicMapCellHistory"));
    end setClosestGeographicMapCellHistory;
 
-   procedure trackTo (This : in out RTSLayerSelectedLogHelper; associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access; nextUnvisitedPathGeographicMapCellPosition : GeographicMapCellPosition_Access; dx : Integer; dy : Integer; reason : Unbounded_String) is
+   procedure trackTo (This : in out RTSLayerSelectedLogHelper; associatedAdvancedRTSGameLayer_Param : access PathFindingLayerInterface'Class; nextUnvisitedPathGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class; dx : Integer; dy : Integer; reason : Unbounded_String) is
+      associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (associatedAdvancedRTSGameLayer_Param);
+      nextUnvisitedPathGeographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (nextUnvisitedPathGeographicMapCellPosition_Param);
       stringBuffer : StringMaker_Access;
    begin
         stringBuffer := StringMaker_Package.Create;
@@ -70,10 +74,13 @@ package body org.allbinary.game.layer.RTSLayerSelectedLogHelper_Package is
         stringBuffer.appendint (dy);
         stringBuffer.append (This.commonSeps.SPACE);
         stringBuffer.append (reason);
-        This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("selected: trackTo"));
+        This.logUtil.putF (stringBuffer.toString, RTSLayerSelectedLogHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("selected: trackTo"));
    end trackTo;
 
-   procedure turnTo (This : in out RTSLayerSelectedLogHelper; associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access; dx : Integer; dy : Integer; angleInfo : AngleInfo_Access; angle : Integer; movementAngle : NamedAngle_Access; evading : Boolean; targetAngle : Integer) is
+   procedure turnTo (This : in out RTSLayerSelectedLogHelper; associatedAdvancedRTSGameLayer_Param : access PathFindingLayerInterface'Class; dx : Integer; dy : Integer; angleInfo_Param : access AngleInfo'Class; angle : Integer; movementAngle_Param : access NamedAngle'Class; evading : Boolean; targetAngle : Integer) is
+      associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (associatedAdvancedRTSGameLayer_Param);
+      angleInfo : AngleInfo_Access := AngleInfo_Access (angleInfo_Param);
+      movementAngle : NamedAngle_Access := NamedAngle_Access (movementAngle_Param);
       stringBuffer : StringMaker_Access;
       angleIncrement : Short_Integer;
    begin
@@ -98,74 +105,91 @@ package body org.allbinary.game.layer.RTSLayerSelectedLogHelper_Package is
         end if;
         stringBuffer.append (To_Unbounded_String (" Evading: "));
         stringBuffer.appendboolean (evading);
-        This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, This.TRACKTO_TURNTO);
+        This.logUtil.putF (stringBuffer.toString, RTSLayerSelectedLogHelper_Access'(This'Unchecked_Access), This.TRACKTO_TURNTO);
    end turnTo;
 
-   procedure doneMoving (This : in out RTSLayerSelectedLogHelper; associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access) is
+   procedure doneMoving (This : in out RTSLayerSelectedLogHelper; associatedAdvancedRTSGameLayer_Param : access PathFindingLayerInterface'Class) is
+      associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (associatedAdvancedRTSGameLayer_Param);
    begin
-        This.logUtil.putF (StringMaker_Package.Create.append (associatedAdvancedRTSGameLayer.getName).append (To_Unbounded_String (" steering - done moving 0,0")).toString, This'Unchecked_Access, This.TRACKTO_TURNTO);
+        This.logUtil.putF (StringMaker_Package.Create.append (associatedAdvancedRTSGameLayer.getName).append (To_Unbounded_String (" steering - done moving 0,0")).toString, RTSLayerSelectedLogHelper_Access'(This'Unchecked_Access), This.TRACKTO_TURNTO);
    end doneMoving;
 
-   procedure closeEnough (This : in out RTSLayerSelectedLogHelper; associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access) is
+   procedure closeEnough (This : in out RTSLayerSelectedLogHelper; associatedAdvancedRTSGameLayer_Param : access PathFindingLayerInterface'Class) is
+      associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (associatedAdvancedRTSGameLayer_Param);
    begin
-        This.logUtil.putF (StringMaker_Package.Create.append (associatedAdvancedRTSGameLayer.getName).append (To_Unbounded_String (" steering - close enough")).toString, This'Unchecked_Access, This.TRACKTO_TURNTO);
+        This.logUtil.putF (StringMaker_Package.Create.append (associatedAdvancedRTSGameLayer.getName).append (To_Unbounded_String (" steering - close enough")).toString, RTSLayerSelectedLogHelper_Access'(This'Unchecked_Access), This.TRACKTO_TURNTO);
    end closeEnough;
 
-   procedure movingLeft (This : in out RTSLayerSelectedLogHelper; associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access) is
+   procedure movingLeft (This : in out RTSLayerSelectedLogHelper; associatedAdvancedRTSGameLayer_Param : access PathFindingLayerInterface'Class) is
+      associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (associatedAdvancedRTSGameLayer_Param);
    begin
-        This.logUtil.putF (StringMaker_Package.Create.append (associatedAdvancedRTSGameLayer.getName).append (To_Unbounded_String (" steering - allow movingLeft")).toString, This'Unchecked_Access, This.TRACKTO_TURNTO);
+        This.logUtil.putF (StringMaker_Package.Create.append (associatedAdvancedRTSGameLayer.getName).append (To_Unbounded_String (" steering - allow movingLeft")).toString, RTSLayerSelectedLogHelper_Access'(This'Unchecked_Access), This.TRACKTO_TURNTO);
    end movingLeft;
 
-   procedure movingRight (This : in out RTSLayerSelectedLogHelper; associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access) is
+   procedure movingRight (This : in out RTSLayerSelectedLogHelper; associatedAdvancedRTSGameLayer_Param : access PathFindingLayerInterface'Class) is
+      associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (associatedAdvancedRTSGameLayer_Param);
    begin
-        This.logUtil.putF (StringMaker_Package.Create.append (associatedAdvancedRTSGameLayer.getName).append (To_Unbounded_String (" steering - allow movingRight")).toString, This'Unchecked_Access, This.TRACKTO_TURNTO);
+        This.logUtil.putF (StringMaker_Package.Create.append (associatedAdvancedRTSGameLayer.getName).append (To_Unbounded_String (" steering - allow movingRight")).toString, RTSLayerSelectedLogHelper_Access'(This'Unchecked_Access), This.TRACKTO_TURNTO);
    end movingRight;
 
-   procedure movingUp (This : in out RTSLayerSelectedLogHelper; associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access) is
+   procedure movingUp (This : in out RTSLayerSelectedLogHelper; associatedAdvancedRTSGameLayer_Param : access PathFindingLayerInterface'Class) is
+      associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (associatedAdvancedRTSGameLayer_Param);
    begin
-        This.logUtil.putF (StringMaker_Package.Create.append (associatedAdvancedRTSGameLayer.getName).append (To_Unbounded_String (" steering - allow movingUp")).toString, This'Unchecked_Access, This.TRACKTO_TURNTO);
+        This.logUtil.putF (StringMaker_Package.Create.append (associatedAdvancedRTSGameLayer.getName).append (To_Unbounded_String (" steering - allow movingUp")).toString, RTSLayerSelectedLogHelper_Access'(This'Unchecked_Access), This.TRACKTO_TURNTO);
    end movingUp;
 
-   procedure movingDown (This : in out RTSLayerSelectedLogHelper; associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access) is
+   procedure movingDown (This : in out RTSLayerSelectedLogHelper; associatedAdvancedRTSGameLayer_Param : access PathFindingLayerInterface'Class) is
+      associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (associatedAdvancedRTSGameLayer_Param);
    begin
-        This.logUtil.putF (StringMaker_Package.Create.append (associatedAdvancedRTSGameLayer.getName).append (To_Unbounded_String (" steering - allow movingDown")).toString, This'Unchecked_Access, This.TRACKTO_TURNTO);
+        This.logUtil.putF (StringMaker_Package.Create.append (associatedAdvancedRTSGameLayer.getName).append (To_Unbounded_String (" steering - allow movingDown")).toString, RTSLayerSelectedLogHelper_Access'(This'Unchecked_Access), This.TRACKTO_TURNTO);
    end movingDown;
 
-   procedure currentMoveEnded (This : in out RTSLayerSelectedLogHelper; associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access) is
+   procedure currentMoveEnded (This : in out RTSLayerSelectedLogHelper; associatedAdvancedRTSGameLayer_Param : access PathFindingLayerInterface'Class) is
+      associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (associatedAdvancedRTSGameLayer_Param);
    begin
-        This.logUtil.putF (StringMaker_Package.Create.append (associatedAdvancedRTSGameLayer.getName).append (To_Unbounded_String (" steering - correct angle, but movement not needed for current deltas so reseting movement angle")).toString, This'Unchecked_Access, This.TRACKTO_TURNTO);
+        This.logUtil.putF (StringMaker_Package.Create.append (associatedAdvancedRTSGameLayer.getName).append (To_Unbounded_String (" steering - correct angle, but movement not needed for current deltas so reseting movement angle")).toString, RTSLayerSelectedLogHelper_Access'(This'Unchecked_Access), This.TRACKTO_TURNTO);
    end currentMoveEnded;
 
-   procedure evade (This : in out RTSLayerSelectedLogHelper; associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access) is
+   procedure evade (This : in out RTSLayerSelectedLogHelper; associatedAdvancedRTSGameLayer_Param : access PathFindingLayerInterface'Class) is
+      associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (associatedAdvancedRTSGameLayer_Param);
    begin
-        This.logUtil.putF (StringMaker_Package.Create.append (associatedAdvancedRTSGameLayer.getName).append (To_Unbounded_String (" steering - evade")).toString, This'Unchecked_Access, This.TRACKTO_TURNTO);
+        This.logUtil.putF (StringMaker_Package.Create.append (associatedAdvancedRTSGameLayer.getName).append (To_Unbounded_String (" steering - evade")).toString, RTSLayerSelectedLogHelper_Access'(This'Unchecked_Access), This.TRACKTO_TURNTO);
    end evade;
 
-   procedure rotateLeft (This : in out RTSLayerSelectedLogHelper; associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access) is
+   procedure rotateLeft (This : in out RTSLayerSelectedLogHelper; associatedAdvancedRTSGameLayer_Param : access PathFindingLayerInterface'Class) is
+      associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (associatedAdvancedRTSGameLayer_Param);
    begin
-        This.logUtil.putF (StringMaker_Package.Create.append (associatedAdvancedRTSGameLayer.getName).append (To_Unbounded_String (" steering - rotating left")).toString, This'Unchecked_Access, This.TRACKTO_TURNTO);
+        This.logUtil.putF (StringMaker_Package.Create.append (associatedAdvancedRTSGameLayer.getName).append (To_Unbounded_String (" steering - rotating left")).toString, RTSLayerSelectedLogHelper_Access'(This'Unchecked_Access), This.TRACKTO_TURNTO);
    end rotateLeft;
 
-   procedure rotateRight (This : in out RTSLayerSelectedLogHelper; associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access) is
+   procedure rotateRight (This : in out RTSLayerSelectedLogHelper; associatedAdvancedRTSGameLayer_Param : access PathFindingLayerInterface'Class) is
+      associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (associatedAdvancedRTSGameLayer_Param);
    begin
-        This.logUtil.putF (StringMaker_Package.Create.append (associatedAdvancedRTSGameLayer.getName).append (To_Unbounded_String (" steering - rotating right")).toString, This'Unchecked_Access, This.TRACKTO_TURNTO);
+        This.logUtil.putF (StringMaker_Package.Create.append (associatedAdvancedRTSGameLayer.getName).append (To_Unbounded_String (" steering - rotating right")).toString, RTSLayerSelectedLogHelper_Access'(This'Unchecked_Access), This.TRACKTO_TURNTO);
    end rotateRight;
 
-   procedure handle (This : in out RTSLayerSelectedLogHelper; associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access; movementAngle : NamedAngle_Access) is
+   procedure handle (This : in out RTSLayerSelectedLogHelper; associatedAdvancedRTSGameLayer_Param : access PathFindingLayerInterface'Class; movementAngle_Param : access NamedAngle'Class) is
+      associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (associatedAdvancedRTSGameLayer_Param);
+      movementAngle : NamedAngle_Access := NamedAngle_Access (movementAngle_Param);
    begin
-        This.logUtil.putF (StringMaker_Package.Create.append (associatedAdvancedRTSGameLayer.getName).append (To_Unbounded_String (" steering - movementAngle: ")).append (movementAngle.name).append (This.commonSeps.FORWARD_SLASH).appendshort (Short_Integer (movementAngle.getValue)).toString, This'Unchecked_Access, This.TRACKTO_TURNTO);
+        This.logUtil.putF (StringMaker_Package.Create.append (associatedAdvancedRTSGameLayer.getName).append (To_Unbounded_String (" steering - movementAngle: ")).append (movementAngle.name).append (This.commonSeps.FORWARD_SLASH).appendshort (Short_Integer (movementAngle.getValue)).toString, RTSLayerSelectedLogHelper_Access'(This'Unchecked_Access), This.TRACKTO_TURNTO);
    end handle;
 
-   procedure noRotation (This : in out RTSLayerSelectedLogHelper; associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access) is
+   procedure noRotation (This : in out RTSLayerSelectedLogHelper; associatedAdvancedRTSGameLayer_Param : access PathFindingLayerInterface'Class) is
+      associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (associatedAdvancedRTSGameLayer_Param);
    begin
-        This.logUtil.putF (StringMaker_Package.Create.append (associatedAdvancedRTSGameLayer.getName).append (To_Unbounded_String (" steering - Do not rotate")).toString, This'Unchecked_Access, This.TRACKTO_TURNTO);
+        This.logUtil.putF (StringMaker_Package.Create.append (associatedAdvancedRTSGameLayer.getName).append (To_Unbounded_String (" steering - Do not rotate")).toString, RTSLayerSelectedLogHelper_Access'(This'Unchecked_Access), This.TRACKTO_TURNTO);
    end noRotation;
 
-   procedure notOnPath (This : in out RTSLayerSelectedLogHelper; associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access; geographicMapCellHistory : GeographicMapCellHistory_Access; currentGeographicMapCellPosition : GeographicMapCellPosition_Access; pathList : BasicArrayList_Access) is
+   procedure notOnPath (This : in out RTSLayerSelectedLogHelper; associatedAdvancedRTSGameLayer_Param : access PathFindingLayerInterface'Class; geographicMapCellHistory_Param : access GeographicMapCellHistory'Class; currentGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class; pathList_Param : access BasicArrayList'Class) is
+      associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (associatedAdvancedRTSGameLayer_Param);
+      geographicMapCellHistory : GeographicMapCellHistory_Access := GeographicMapCellHistory_Access (geographicMapCellHistory_Param);
+      currentGeographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (currentGeographicMapCellPosition_Param);
+      pathList : BasicArrayList_Access := BasicArrayList_Access (pathList_Param);
       stringUtil : StringUtil_Access;
    begin
         stringUtil := StringUtil_Package.getInstance;
-        This.logUtil.putF (StringMaker_Package.Create.append (associatedAdvancedRTSGameLayer.getName).append (CommonSeps_Package.getInstance.SPACE).appendint (Integer (geographicMapCellHistory.getTotalVisited)).append (CommonSeps_Package.getInstance.SPACE).append (stringUtil.toString (currentGeographicMapCellPosition)).append (To_Unbounded_String (" - trying to move but not on path: ")).append (stringUtil.toString (pathList)).toString, This'Unchecked_Access, To_Unbounded_String ("turnTo"));
+        This.logUtil.putF (StringMaker_Package.Create.append (associatedAdvancedRTSGameLayer.getName).append (CommonSeps_Package.getInstance.SPACE).appendint (Integer (geographicMapCellHistory.getTotalVisited)).append (CommonSeps_Package.getInstance.SPACE).append (stringUtil.toString (currentGeographicMapCellPosition)).append (To_Unbounded_String (" - trying to move but not on path: ")).append (stringUtil.toString (pathList)).toString, RTSLayerSelectedLogHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("turnTo"));
    end notOnPath;
 
 begin

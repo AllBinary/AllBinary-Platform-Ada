@@ -44,8 +44,8 @@ package org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBa
       ZOOM_OUT_AND_IN : Integer_Array_Access;
    end record;
 
-   procedure Initialize (This : in out DismissTitleProgressBarRunnable'Class; midletActivity : Activity_Access; progressCanvas : ProgressCanvas_Access);
-   function Create (midletActivity : Activity_Access; progressCanvas : ProgressCanvas_Access) return DismissTitleProgressBarRunnable_Access;
+   procedure Initialize (This : in out DismissTitleProgressBarRunnable'Class; midletActivity_Param : access Activity'Class; progressCanvas_Param : access ProgressCanvas'Class);
+   function Create (midletActivity_Param : access Activity'Class; progressCanvas_Param : access ProgressCanvas'Class) return DismissTitleProgressBarRunnable_Access;
    procedure run (This : in out DismissTitleProgressBarRunnable);
 
 end org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package;

@@ -47,18 +47,18 @@ package org.allbinary.business.advertisement.GameAdStateBase_Package is
       okayToShowAdsP : Boolean;
    end record;
 
-   procedure Initialize (This : in out GameAdStateBase'Class; adConfiguration : AdConfiguration_Access);
-   function Create (adConfiguration : AdConfiguration_Access) return GameAdStateBase_Access;
+   procedure Initialize (This : in out GameAdStateBase'Class; adConfiguration_Param : access AdConfiguration'Class);
+   function Create (adConfiguration_Param : access AdConfiguration'Class) return GameAdStateBase_Access;
    procedure initViewArray (This : in out GameAdStateBase; viewArray : Java_Object_Access_Array_Access);
-   procedure onStart (This : in out GameAdStateBase; anyType : Java_Object_Access);
+   procedure onStart (This : in out GameAdStateBase; anyType_Param : access Java_Object'Class);
    procedure init (This : in out GameAdStateBase);
    function isShowingAtLocation (This : in out GameAdStateBase; location : Integer) return Boolean;
    procedure isShowingAtLocation (This : in out GameAdStateBase; location : Integer);
    function isShowingAt (This : in out GameAdStateBase) return Boolean;
    procedure show (This : in out GameAdStateBase);
    procedure hide (This : in out GameAdStateBase);
-   procedure onEvent (This : in out GameAdStateBase; eventObject : AllBinaryEventObject_Access);
-   procedure processAdState (This : in out GameAdStateBase; gameState : GameState_Access; gameType : GameType_Access);
+   procedure onEvent (This : in out GameAdStateBase; eventObject_Param : access AllBinaryEventObject'Class);
+   procedure processAdState (This : in out GameAdStateBase; gameState_Param : access GameState'Class; gameType_Param : access GameType'Class);
    procedure processPageAdState (This : in out GameAdStateBase);
    procedure playingAdState (This : in out GameAdStateBase);
    procedure playingAdStateWH (This : in out GameAdStateBase; width : Integer; height : Integer);

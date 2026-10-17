@@ -41,8 +41,8 @@ package admin.taghelpers.BasketRequestHelperFactory_Package is
 
    procedure Initialize (This : in out BasketRequestHelperFactory'Class);
    function Create return BasketRequestHelperFactory_Access;
-   function getInstance (This : in out BasketRequestHelperFactory; hashMap : HashMap_Access; pageContext : PageContext_Access) return Java_Object_Access;
-   procedure getInstance (This : in out BasketRequestHelperFactory; hashMap : HashMap_Access; pageContext : PageContext_Access);
+   function getInstance (This : in out BasketRequestHelperFactory; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return Java_Object_Access;
+   procedure getInstance (This : in out BasketRequestHelperFactory; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
 
 end admin.taghelpers.BasketRequestHelperFactory_Package;
 

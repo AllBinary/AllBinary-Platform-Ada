@@ -43,7 +43,8 @@ package body org.allbinary.logic.communication.log.config.LogConfig_Package is
       return This;
    end Create;
 
-   procedure Initialize (This : in out LogConfig'Class; node : Node_Access) is
+   procedure Initialize (This : in out LogConfig'Class; node_Param : access Node'Class) is
+      node : Node_Access := Node_Access (node_Param);
       enabledValueNode : Node_Access;
       isEnabledString : Unbounded_String;
       logConfigData : LogConfigData_Access;
@@ -64,10 +65,10 @@ package body org.allbinary.logic.communication.log.config.LogConfig_Package is
         This.fileName := DomNodeHelper_Package.getTextNodeValue (fileValueNode);
    end Initialize;
 
-   function Create (node : Node_Access) return LogConfig_Access is
+   function Create (node_Param : access Node'Class) return LogConfig_Access is
       This : constant LogConfig_Access := new LogConfig;
    begin
-      LogConfig_Package.Initialize (This.all, node);
+      LogConfig_Package.Initialize (This.all, node_Param);
       return This;
    end Create;
 

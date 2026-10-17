@@ -41,7 +41,8 @@ package body org.allbinary.game.input.CompleteMotionGestureInputEventHandler_Pac
       return This;
    end Create;
 
-   procedure addListener (This : in out CompleteMotionGestureInputEventHandler; completeMotionGestureInputEventListener : CompleteMotionGestureInputEventListener_Access) is
+   procedure addListener (This : in out CompleteMotionGestureInputEventHandler; completeMotionGestureInputEventListener_Param : access CompleteMotionGestureInputEventListener'Class) is
+      completeMotionGestureInputEventListener : CompleteMotionGestureInputEventListener_Access := CompleteMotionGestureInputEventListener_Access (completeMotionGestureInputEventListener_Param);
    begin
         if not (This.list.contains (completeMotionGestureInputEventListener)) then
             This.list.add (completeMotionGestureInputEventListener);
@@ -54,14 +55,16 @@ package body org.allbinary.game.input.CompleteMotionGestureInputEventHandler_Pac
         BasicEventHandler (This).removeAllListeners;
    end removeAllListeners;
 
-   procedure removeListener (This : in out CompleteMotionGestureInputEventHandler; eventListenerInterface : EventListenerInterface_Access) is
+   procedure removeListener (This : in out CompleteMotionGestureInputEventHandler; eventListenerInterface_Param : access EventListenerInterface'Class) is
+      eventListenerInterface : EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
    begin
         This.list.remove (eventListenerInterface);
         BasicEventHandler (This).removeListener (eventListenerInterface);
    end removeListener;
 
    --  throws Exception
-   procedure fireEvent (This : in out CompleteMotionGestureInputEventHandler; eventObject : AllBinaryEventObject_Access) is
+   procedure fireEvent (This : in out CompleteMotionGestureInputEventHandler; eventObject_Param : access AllBinaryEventObject'Class) is
+      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
       completeMotionGestureInputEventListener : CompleteMotionGestureInputEventListener_Access;
       index : Integer;
    begin
@@ -75,7 +78,7 @@ package body org.allbinary.game.input.CompleteMotionGestureInputEventHandler_Pac
                     declare
                         e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                     begin
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, EventStrings_Package.getInstance.FIRE_EVENT, e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, CompleteMotionGestureInputEventHandler_Access'(This'Unchecked_Access), EventStrings_Package.getInstance.FIRE_EVENT, e);
                     end;
             end;
         end loop;
@@ -83,7 +86,9 @@ package body org.allbinary.game.input.CompleteMotionGestureInputEventHandler_Pac
    end fireEvent;
 
    --  throws Exception
-   procedure process (This : in out CompleteMotionGestureInputEventHandler; eventObject : AllBinaryEventObject_Access; eventListenerInterface : EventListenerInterface_Access) is
+   procedure process (This : in out CompleteMotionGestureInputEventHandler; eventObject_Param : access AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface'Class) is
+      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
+      eventListenerInterface : EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
       completeMotionGestureInputEventListenerInterface : CompleteMotionGestureInputEventListenerInterface_Access;
    begin
         completeMotionGestureInputEventListenerInterface := CompleteMotionGestureInputEventListenerInterface_Access (eventListenerInterface);

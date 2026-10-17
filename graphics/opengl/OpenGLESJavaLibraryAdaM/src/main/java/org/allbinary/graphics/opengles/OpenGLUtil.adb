@@ -38,24 +38,27 @@ package body org.allbinary.graphics.opengles.OpenGLUtil_Package is
         return OpenGLUtil_Package.instance;
    end getInstance;
 
-   procedure onSurfaceCreated (This : in out OpenGLUtil; gl : GL10_Access) is
+   procedure onSurfaceCreated (This : in out OpenGLUtil; gl_Param : access GL10'Class) is
+      gl : GL10_Access := GL10_Access (gl_Param);
    begin
         begin
             if not (This.created) then
                 This.created := True;
-                PreLogUtil_Package.put (Java_Image (CommonLabels_Package.getInstance.START_LABEL) & OpenGLCapabilities_Package.getInstance.toString, This'Unchecked_Access, This.renderStrings.ON_SURFACE_CREATED);
+                PreLogUtil_Package.put (Java_Image (CommonLabels_Package.getInstance.START_LABEL) & OpenGLCapabilities_Package.getInstance.toString, OpenGLUtil_Access'(This'Unchecked_Access), This.renderStrings.ON_SURFACE_CREATED);
             end if;
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.renderStrings.ON_SURFACE_CREATED, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, OpenGLUtil_Access'(This'Unchecked_Access), This.renderStrings.ON_SURFACE_CREATED, e);
                 end;
         end;
    end onSurfaceCreated;
 
-   procedure onSurfaceCreated (This : in out OpenGLUtil; gl : GL10_Access; loadTextures : LoadTextures_Access) is
+   procedure onSurfaceCreated (This : in out OpenGLUtil; gl_Param : access GL10'Class; loadTextures_Param : access LoadTextures'Class) is
+      gl : GL10_Access := GL10_Access (gl_Param);
+      loadTextures : LoadTextures_Access := LoadTextures_Access (loadTextures_Param);
    begin
         begin
             loadTextures.load (gl);
@@ -65,13 +68,15 @@ package body org.allbinary.graphics.opengles.OpenGLUtil_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.renderStrings.ON_SURFACE_CREATED, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, OpenGLUtil_Access'(This'Unchecked_Access), This.renderStrings.ON_SURFACE_CREATED, e);
                 end;
         end;
    end onSurfaceCreated;
 
    --  throws Exception
-   procedure onSurfaceChanged (This : in out OpenGLUtil; gl : GL10_Access; graphics : OpenGLESGraphics_Access) is
+   procedure onSurfaceChanged (This : in out OpenGLUtil; gl_Param : access GL10'Class; graphics_Param : access OpenGLESGraphics'Class) is
+      gl : GL10_Access := GL10_Access (gl_Param);
+      graphics : OpenGLESGraphics_Access := OpenGLESGraphics_Access (graphics_Param);
       progressCanvas : ProgressCanvas_Access;
    begin
         if not (This.surfaceCreatedAndInitialized) then
@@ -86,7 +91,8 @@ package body org.allbinary.graphics.opengles.OpenGLUtil_Package is
         This.set (gl);
    end onSurfaceChanged;
 
-   function addImage (This : in out OpenGLUtil; image : Image_Access) return Image_Access is
+   function addImage (This : in out OpenGLUtil; image_Param : access Image'Class) return Image_Access is
+      image : Image_Access := Image_Access (image_Param);
       encapsulateImage : Image_Access;
    begin
         encapsulateImage := This.preResourceImageUtil.encapsulate (image);
@@ -106,7 +112,8 @@ package body org.allbinary.graphics.opengles.OpenGLUtil_Package is
         end;
    end clear;
 
-   procedure addRunnable (This : in out OpenGLUtil; runnable : Runnable_Access) is
+   procedure addRunnable (This : in out OpenGLUtil; runnable_Param : access Runnable'Class) is
+      runnable : Runnable_Access := Runnable_Access (runnable_Param);
    begin
         begin  --  synchronized
             if not (This.runnableList.contains (runnable)) then
@@ -133,7 +140,8 @@ package body org.allbinary.graphics.opengles.OpenGLUtil_Package is
    end processRunnables;
 
    --  throws Exception
-   procedure set (This : in out OpenGLUtil; gl : GL10_Access) is
+   procedure set (This : in out OpenGLUtil; gl_Param : access GL10'Class) is
+      gl : GL10_Access := GL10_Access (gl_Param);
       size : Integer;
       image : Java_Object_Access;
       index2 : Integer;
@@ -146,8 +154,8 @@ package body org.allbinary.graphics.opengles.OpenGLUtil_Package is
         end loop;
    end set;
 
-   procedure addImage (This : in out OpenGLUtil; image : Image_Access) is
-      Java_Result : constant Image_Access := OpenGLUtil'Class (This).addImage (image);
+   procedure addImage (This : in out OpenGLUtil; image_Param : access Image'Class) is
+      Java_Result : constant Image_Access := OpenGLUtil'Class (This).addImage (image_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

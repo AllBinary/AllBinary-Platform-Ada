@@ -37,7 +37,8 @@ package body org.allbinary.media.audio.PlayerQueue_Package is
       return This;
    end Create;
 
-   procedure add (This : in out PlayerQueue; sound : Sound_Access) is
+   procedure add (This : in out PlayerQueue; sound_Param : access Sound'Class) is
+      sound : Sound_Access := Sound_Access (sound_Param);
    begin
         begin
             if not (This.list.contains (sound)) then
@@ -48,7 +49,7 @@ package body org.allbinary.media.audio.PlayerQueue_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            PreLogUtil_Package.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.ADD);
+            PreLogUtil_Package.put (This.commonStrings.EXCEPTION_Id, PlayerQueue_Access'(This'Unchecked_Access), This.commonStrings.ADD);
                 end;
         end;
    end add;
@@ -81,7 +82,7 @@ package body org.allbinary.media.audio.PlayerQueue_Package is
             if (sound) /= (null) then
                 resource := sound.getResource;
             end if;
-            PreLogUtil_Package.put (StringMaker_Package.Create.append (This.commonStrings.EXCEPTION_LABEL).append (resource).toString, This'Unchecked_Access, This.commonStrings.PROCESS);
+            PreLogUtil_Package.put (StringMaker_Package.Create.append (This.commonStrings.EXCEPTION_LABEL).append (resource).toString, PlayerQueue_Access'(This'Unchecked_Access), This.commonStrings.PROCESS);
             return False;
                 end;
         end;

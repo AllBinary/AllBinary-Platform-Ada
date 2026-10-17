@@ -25,7 +25,9 @@ package body admin.taghelpers.AuthenticationRequestHelper_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AuthenticationRequestHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access) is
+   procedure Initialize (This : in out AuthenticationRequestHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
    begin
       TagHelper_Package.Initialize (This);
       Initialize_Fields (This);
@@ -33,14 +35,16 @@ package body admin.taghelpers.AuthenticationRequestHelper_Package is
         This.request := HttpServletRequest_Access (pageContext.getRequest);
    end Initialize;
 
-   function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return AuthenticationRequestHelper_Access is
+   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return AuthenticationRequestHelper_Access is
       This : constant AuthenticationRequestHelper_Access := new AuthenticationRequestHelper;
    begin
-      AuthenticationRequestHelper_Package.Initialize (This.all, hashMap, pageContext);
+      AuthenticationRequestHelper_Package.Initialize (This.all, hashMap_Param, pageContext_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out AuthenticationRequestHelper'Class; hashMap : HashMap_Access; httpServletRequest : HttpServletRequest_Access) is
+   procedure Initialize (This : in out AuthenticationRequestHelper'Class; hashMap_Param : access HashMap'Class; httpServletRequest_Param : access HttpServletRequest'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+      httpServletRequest : HttpServletRequest_Access := HttpServletRequest_Access (httpServletRequest_Param);
    begin
       TagHelper_Package.Initialize (This);
       Initialize_Fields (This);
@@ -48,10 +52,10 @@ package body admin.taghelpers.AuthenticationRequestHelper_Package is
         This.request := httpServletRequest;
    end Initialize;
 
-   function Create (hashMap : HashMap_Access; httpServletRequest : HttpServletRequest_Access) return AuthenticationRequestHelper_Access is
+   function Create (hashMap_Param : access HashMap'Class; httpServletRequest_Param : access HttpServletRequest'Class) return AuthenticationRequestHelper_Access is
       This : constant AuthenticationRequestHelper_Access := new AuthenticationRequestHelper;
    begin
-      AuthenticationRequestHelper_Package.Initialize (This.all, hashMap, httpServletRequest);
+      AuthenticationRequestHelper_Package.Initialize (This.all, hashMap_Param, httpServletRequest_Param);
       return This;
    end Create;
 
@@ -83,14 +87,14 @@ package body admin.taghelpers.AuthenticationRequestHelper_Package is
             userName := This.request.getParameter (WeblisketSessionData_Package.REMOVABLEUSERNAME);
             email := This.request.getParameter (UserData_Package.MAINEMAIL);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPER) then
-                This.logUtil.putF (To_Unbounded_String ("Generating New Password For: ") & userName, This'Unchecked_Access, To_Unbounded_String ("newPassword()"));
+                This.logUtil.putF (To_Unbounded_String ("Generating New Password For: ") & userName, AuthenticationRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("newPassword()"));
             end if;
             userEntityInterface := UserEntityFactory_Package.getInstance;
             userInterface := userEntityInterface.getUser (userName);
             if (userInterface.getMainEmail.compareTo (email)) /= (0) then
                 if ((userInterface.getSecondaryEmail) /= (null)) and then ((userInterface.getSecondaryEmail.compareTo (email)) /= (0)) then
                     if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPER) then
-                        This.logUtil.putF (To_Unbounded_String ("Requested Email Is Not In User Profile"), This'Unchecked_Access, To_Unbounded_String ("newPassword()"));
+                        This.logUtil.putF (To_Unbounded_String ("Requested Email Is Not In User Profile"), AuthenticationRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("newPassword()"));
                     end if;
                     return False;
                 end if;
@@ -101,7 +105,7 @@ package body admin.taghelpers.AuthenticationRequestHelper_Package is
             UserEntityFactory_Package.getInstance.update (userName, newPasswordHashMap);
             NewPasswordEmail_Package.Create (This.abeClientInformation, userInterface, newPassword).process;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPER) then
-                This.logUtil.putF (To_Unbounded_String ("Generated New Password For: ") & userName, This'Unchecked_Access, To_Unbounded_String ("newPassword()"));
+                This.logUtil.putF (To_Unbounded_String ("Generated New Password For: ") & userName, AuthenticationRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("newPassword()"));
             end if;
             return True;
         exception
@@ -110,7 +114,7 @@ package body admin.taghelpers.AuthenticationRequestHelper_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("newPassword()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, AuthenticationRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("newPassword()"), e);
             end if;
             return False;
                 end;
@@ -135,18 +139,18 @@ package body admin.taghelpers.AuthenticationRequestHelper_Package is
             newPassword := This.request.getParameter (WeblisketSessionData_Package.REMOVABLENEWPASSWORD);
             newReenteredPassword := This.request.getParameter (WeblisketSessionData_Package.REMOVABLEREENTERNEWPASSWORD);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPER) then
-                This.logUtil.putF (To_Unbounded_String ("Changing Password For User: ") & userName, This'Unchecked_Access, To_Unbounded_String ("changePassword()"));
+                This.logUtil.putF (To_Unbounded_String ("Changing Password For User: ") & userName, AuthenticationRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("changePassword()"));
             end if;
             password := Password_Package.Create (newPassword);
             if not (password.isValid.booleanValue) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPER) then
-                    This.logUtil.putF (To_Unbounded_String ("New Password Is Not Valid"), This'Unchecked_Access, To_Unbounded_String ("changePassword()"));
+                    This.logUtil.putF (To_Unbounded_String ("New Password Is Not Valid"), AuthenticationRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("changePassword()"));
                 end if;
                 return False;
             end if;
             if (newPassword.compareTo (newReenteredPassword)) /= (0) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPER) then
-                    This.logUtil.putF (To_Unbounded_String ("New Password Fields Do Not Match"), This'Unchecked_Access, To_Unbounded_String ("changePassword()"));
+                    This.logUtil.putF (To_Unbounded_String ("New Password Fields Do Not Match"), AuthenticationRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("changePassword()"));
                 end if;
                 return False;
             end if;
@@ -156,7 +160,7 @@ package body admin.taghelpers.AuthenticationRequestHelper_Package is
             login := userEntityInterface.login (userName, passwordString);
             if (login.compareTo (GLOBALS2.LOGINSUCCESS)) = (0) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPER) then
-                    This.logUtil.putF (To_Unbounded_String ("Authentication Successful"), This'Unchecked_Access, To_Unbounded_String ("changePassword()"));
+                    This.logUtil.putF (To_Unbounded_String ("Authentication Successful"), AuthenticationRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("changePassword()"));
                 end if;
                 newPasswordHashMap := password.toHashMap (null);
                 UserEntityFactory_Package.getInstance.update (userName, newPasswordHashMap);
@@ -164,7 +168,7 @@ package body admin.taghelpers.AuthenticationRequestHelper_Package is
                 return True;
             end if;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPER) then
-                This.logUtil.putF (To_Unbounded_String ("Authentication Failed"), This'Unchecked_Access, To_Unbounded_String ("changePassword()"));
+                This.logUtil.putF (To_Unbounded_String ("Authentication Failed"), AuthenticationRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("changePassword()"));
             end if;
             return False;
         exception
@@ -173,14 +177,15 @@ package body admin.taghelpers.AuthenticationRequestHelper_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERERROR) then
-                This.logUtil.put (To_Unbounded_String ("Authentication Failed"), This'Unchecked_Access, To_Unbounded_String ("changePassword()"), e);
+                This.logUtil.put (To_Unbounded_String ("Authentication Failed"), AuthenticationRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("changePassword()"), e);
             end if;
             return False;
                 end;
         end;
    end changePassword;
 
-   function isRoleValid (This : in out AuthenticationRequestHelper; userName : Unbounded_String; password : Unbounded_String; roles : BasicArrayList_Access) return Boolean is
+   function isRoleValid (This : in out AuthenticationRequestHelper; userName : Unbounded_String; password : Unbounded_String; roles_Param : access BasicArrayList'Class) return Boolean is
+      roles : BasicArrayList_Access := BasicArrayList_Access (roles_Param);
       userEntityInterface : UserEntityInterface_Access;
       userInterface : UserInterface_Access;
       basicUserRoleArray : Java_Object_Access_Array_Access;
@@ -194,7 +199,7 @@ package body admin.taghelpers.AuthenticationRequestHelper_Package is
             userInterface := userEntityInterface.getUser (userName);
             if (userInterface.getRole) = (null) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPER) then
-                    This.logUtil.putF (To_Unbounded_String ("Role is null: ") & Java_Image (userInterface.getRole) & To_Unbounded_String (" Valid Roles: ") & roles.toString, This'Unchecked_Access, To_Unbounded_String ("isRoleValid()"));
+                    This.logUtil.putF (To_Unbounded_String ("Role is null: ") & Java_Image (userInterface.getRole) & To_Unbounded_String (" Valid Roles: ") & roles.toString, AuthenticationRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("isRoleValid()"));
                 end if;
                 return False;
             end if;
@@ -215,7 +220,7 @@ package body admin.taghelpers.AuthenticationRequestHelper_Package is
                 stringBuffer.append (userInterface.getRole.toString);
                 stringBuffer.append (To_Unbounded_String (" Valid Roles: "));
                 stringBuffer.append (roles.toString);
-                This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("isRoleValid()"));
+                This.logUtil.putF (stringBuffer.toString, AuthenticationRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("isRoleValid()"));
             end if;
             return False;
         exception
@@ -224,15 +229,15 @@ package body admin.taghelpers.AuthenticationRequestHelper_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("isRoleValid()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, AuthenticationRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("isRoleValid()"), e);
             end if;
             return False;
                 end;
         end;
    end isRoleValid;
 
-   procedure isRoleValid (This : in out AuthenticationRequestHelper; userName : Unbounded_String; password : Unbounded_String; roles : BasicArrayList_Access) is
-      Java_Result : constant Boolean := AuthenticationRequestHelper'Class (This).isRoleValid (userName, password, roles);
+   procedure isRoleValid (This : in out AuthenticationRequestHelper; userName : Unbounded_String; password : Unbounded_String; roles_Param : access BasicArrayList'Class) is
+      Java_Result : constant Boolean := AuthenticationRequestHelper'Class (This).isRoleValid (userName, password, roles_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

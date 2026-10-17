@@ -36,29 +36,31 @@ package body org.allbinary.business.category.properties.CategoryProperties_Packa
       return This;
    end Create;
 
-   procedure Initialize (This : in out CategoryProperties'Class; node : Node_Access) is
+   procedure Initialize (This : in out CategoryProperties'Class; node_Param : access Node'Class) is
+      node : Node_Access := Node_Access (node_Param);
    begin
       Initialize_Fields (This);
         This.category := CategoryUtil_Package.getNameFromNode (node);
    end Initialize;
 
-   function Create (node : Node_Access) return CategoryProperties_Access is
+   function Create (node_Param : access Node'Class) return CategoryProperties_Access is
       This : constant CategoryProperties_Access := new CategoryProperties;
    begin
-      CategoryProperties_Package.Initialize (This.all, node);
+      CategoryProperties_Package.Initialize (This.all, node_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out CategoryProperties'Class; categoryPropertiesHashMap : HashMap_Access) is
+   procedure Initialize (This : in out CategoryProperties'Class; categoryPropertiesHashMap_Param : access HashMap'Class) is
+      categoryPropertiesHashMap : HashMap_Access := HashMap_Access (categoryPropertiesHashMap_Param);
    begin
       Initialize_Fields (This);
         This.category := Java_New_String (Unbounded_String (categoryPropertiesHashMap.get (CategoryData_Package.getInstance.NAME)));
    end Initialize;
 
-   function Create (categoryPropertiesHashMap : HashMap_Access) return CategoryProperties_Access is
+   function Create (categoryPropertiesHashMap_Param : access HashMap'Class) return CategoryProperties_Access is
       This : constant CategoryProperties_Access := new CategoryProperties;
    begin
-      CategoryProperties_Package.Initialize (This.all, categoryPropertiesHashMap);
+      CategoryProperties_Package.Initialize (This.all, categoryPropertiesHashMap_Param);
       return This;
    end Create;
 
@@ -83,7 +85,8 @@ package body org.allbinary.business.category.properties.CategoryProperties_Packa
    end getValue;
 
    --  throws Exception
-   function getPath (This : in out CategoryProperties; categoryHierarchyInterface : CategoryHierarchyInterface_Access) return AbPath_Access is
+   function getPath (This : in out CategoryProperties; categoryHierarchyInterface_Param : access CategoryHierarchyInterface'Class) return AbPath_Access is
+      categoryHierarchyInterface : CategoryHierarchyInterface_Access := CategoryHierarchyInterface_Access (categoryHierarchyInterface_Param);
       abPathData : AbPathData_Access;
       pathStringBuffer : StringMaker_Access;
       list : BasicArrayList_Access;
@@ -96,7 +99,7 @@ package body org.allbinary.business.category.properties.CategoryProperties_Packa
         pathStringBuffer := StringMaker_Package.Create;
         list := BasicArrayListD_Package.Create;
         nextParentCategoryInterface := categoryHierarchyInterface.getParent;
-        if (This'Unchecked_Access) /= (nextParentCategoryInterface.getProperties) then
+        if (CategoryProperties_Access'(This'Unchecked_Access)) /= (nextParentCategoryInterface.getProperties) then
             depthIndex := 0;
             while (nextParentCategoryInterface) /= (null) loop
                 if nextParentCategoryInterface.getProperties.isRealRoot then
@@ -126,7 +129,7 @@ package body org.allbinary.business.category.properties.CategoryProperties_Packa
         end loop;
         pathStringBuffer.append (abPathData.SEPARATOR);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY) then
-            This.logUtil.putF (To_Unbounded_String ("path = ") & pathStringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("getPath"));
+            This.logUtil.putF (To_Unbounded_String ("path = ") & pathStringBuffer.toString, CategoryProperties_Access'(This'Unchecked_Access), To_Unbounded_String ("getPath"));
         end if;
         return AbPath_Package.Create (pathStringBuffer.toString, StringUtil_Package.getInstance.EMPTY_STRING);
    end getPath;
@@ -180,7 +183,8 @@ package body org.allbinary.business.category.properties.CategoryProperties_Packa
    end toValidationInfoDoc;
 
    --  throws Exception
-   function toValidationInfoNode (This : in out CategoryProperties; document : Document_Access) return Node_Access is
+   function toValidationInfoNode (This : in out CategoryProperties; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
    begin
         return null;
    end toValidationInfoNode;
@@ -191,15 +195,15 @@ package body org.allbinary.business.category.properties.CategoryProperties_Packa
         return Null_Unbounded_String;
    end validationInfo;
 
-   procedure getPath (This : in out CategoryProperties; categoryHierarchyInterface : CategoryHierarchyInterface_Access) is
-      Java_Result : constant AbPath_Access := CategoryProperties'Class (This).getPath (categoryHierarchyInterface);
+   procedure getPath (This : in out CategoryProperties; categoryHierarchyInterface_Param : access CategoryHierarchyInterface'Class) is
+      Java_Result : constant AbPath_Access := CategoryProperties'Class (This).getPath (categoryHierarchyInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getPath;
 
-   procedure toValidationInfoNode (This : in out CategoryProperties; document : Document_Access) is
-      Java_Result : constant Node_Access := CategoryProperties'Class (This).toValidationInfoNode (document);
+   procedure toValidationInfoNode (This : in out CategoryProperties; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := CategoryProperties'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

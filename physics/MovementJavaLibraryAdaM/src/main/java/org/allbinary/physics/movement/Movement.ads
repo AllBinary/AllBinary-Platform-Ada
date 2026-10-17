@@ -38,8 +38,8 @@ package org.allbinary.physics.movement.Movement_Package is
 
    procedure Initialize (This : in out Movement'Class);
    function Create return Movement_Access;
-   procedure init (This : in out Movement; speedBasicDecimal : BasicDecimal_Access; angle : Integer; otherAngle : Integer);
-   procedure process (This : in out Movement; layer : AllBinaryGameLayer_Access);
+   procedure init (This : in out Movement; speedBasicDecimal_Param : access BasicDecimal'Class; angle : Integer; otherAngle : Integer);
+   procedure process (This : in out Movement; layer_Param : access AllBinaryGameLayer'Class);
    procedure stop (This : in out Movement);
 
 end org.allbinary.physics.movement.Movement_Package;

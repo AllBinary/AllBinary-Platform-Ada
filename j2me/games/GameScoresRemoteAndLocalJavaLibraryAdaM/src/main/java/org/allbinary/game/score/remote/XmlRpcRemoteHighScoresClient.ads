@@ -57,10 +57,10 @@ package org.allbinary.game.score.remote.XmlRpcRemoteHighScoresClient_Package is
       page : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out XmlRpcRemoteHighScoresClient'Class; clientInfo : AbeClientInformationInterface_Access; page : Unbounded_String; remoteMethod : Unbounded_String);
-   function Create (clientInfo : AbeClientInformationInterface_Access; page : Unbounded_String; remoteMethod : Unbounded_String) return XmlRpcRemoteHighScoresClient_Access;
-   function get (This : in out XmlRpcRemoteHighScoresClient; anyType : Java_Object_Access; cryptInterface : CryptInterface_Access) return Java_Object_Access;
-   procedure get (This : in out XmlRpcRemoteHighScoresClient; anyType : Java_Object_Access; cryptInterface : CryptInterface_Access);
+   procedure Initialize (This : in out XmlRpcRemoteHighScoresClient'Class; clientInfo_Param : access AbeClientInformationInterface'Class; page : Unbounded_String; remoteMethod : Unbounded_String);
+   function Create (clientInfo_Param : access AbeClientInformationInterface'Class; page : Unbounded_String; remoteMethod : Unbounded_String) return XmlRpcRemoteHighScoresClient_Access;
+   function get (This : in out XmlRpcRemoteHighScoresClient; anyType_Param : access Java_Object'Class; cryptInterface_Param : access CryptInterface'Class) return Java_Object_Access;
+   procedure get (This : in out XmlRpcRemoteHighScoresClient; anyType_Param : access Java_Object'Class; cryptInterface_Param : access CryptInterface'Class);
 
 end org.allbinary.game.score.remote.XmlRpcRemoteHighScoresClient_Package;
 

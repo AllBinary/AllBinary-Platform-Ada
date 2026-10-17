@@ -45,7 +45,7 @@ package body admin.tags.DownloadItemsTag_Package is
                 if (This.getCommand) /= (null) then
                     if ((((This.getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.BACKUP)) /= (0)) and then ((This.getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.RESTORE)) /= (0))) and then ((This.getCommand.compareTo (This.commonStrings.CREATE)) /= (0))) and then ((This.getCommand.compareTo (This.commonStrings.DROP)) /= (0)) then
                         parentTag := This.getParent;
-                        ParentInventoryTagHelper_Package.getInstance.isValid (This'Unchecked_Access, parentTag);
+                        ParentInventoryTagHelper_Package.getInstance.isValid (DownloadItemsTag_Access'(This'Unchecked_Access), parentTag);
                         This.getPropertiesHashMap.put (AbTagData_Package.PARENT, parentTag);
                     end if;
                     return TableTag (This).doStartTag;

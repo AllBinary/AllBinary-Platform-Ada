@@ -38,7 +38,7 @@ package org.allbinary.input.automation.actions.script.condition.processors.input
    procedure Initialize (This : in out InputAutomationTypeJPanel'Class);
    function Create return InputAutomationTypeJPanel_Access;
    function getInputAutomationTypeJComboBox (This : in out InputAutomationTypeJPanel) return JComboBox_Access;
-   procedure setInputAutomationTypeJComboBox (This : in out InputAutomationTypeJPanel; inputAutomationTypeJComboBox : JComboBox_Access);
+   procedure setInputAutomationTypeJComboBox (This : in out InputAutomationTypeJPanel; inputAutomationTypeJComboBox_Param : access JComboBox'Class);
    procedure initComponents (This : in out InputAutomationTypeJPanel);
 
 end org.allbinary.input.automation.actions.script.condition.processors.input.InputAutomationTypeJPanel_Package;

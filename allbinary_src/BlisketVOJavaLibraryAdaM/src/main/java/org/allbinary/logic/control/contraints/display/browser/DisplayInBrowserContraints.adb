@@ -25,16 +25,17 @@ package body org.allbinary.logic.control.contraints.display.browser.DisplayInBro
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out DisplayInBrowserContraints'Class; node : Node_Access) is
+   procedure Initialize (This : in out DisplayInBrowserContraints'Class; node_Param : access Node'Class) is
+      node : Node_Access := Node_Access (node_Param);
    begin
       Initialize_Fields (This);
         null;
    end Initialize;
 
-   function Create (node : Node_Access) return DisplayInBrowserContraints_Access is
+   function Create (node_Param : access Node'Class) return DisplayInBrowserContraints_Access is
       This : constant DisplayInBrowserContraints_Access := new DisplayInBrowserContraints;
    begin
-      DisplayInBrowserContraints_Package.Initialize (This.all, node);
+      DisplayInBrowserContraints_Package.Initialize (This.all, node_Param);
       return This;
    end Create;
 

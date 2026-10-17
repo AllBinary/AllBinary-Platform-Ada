@@ -50,16 +50,16 @@ package org.allbinary.logic.visual.transform.info.TransformInfoBasic_Package is
       storeFrontInterface : StoreFrontInterface_Access;
    end record;
 
-   procedure Initialize (This : in out TransformInfoBasic'Class; storeFrontInterface : StoreFrontInterface_Access; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access);
-   function Create (storeFrontInterface : StoreFrontInterface_Access; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return TransformInfoBasic_Access;
+   procedure Initialize (This : in out TransformInfoBasic'Class; storeFrontInterface_Param : access StoreFrontInterface'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
+   function Create (storeFrontInterface_Param : access StoreFrontInterface'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return TransformInfoBasic_Access;
    function getStoreName (This : in out TransformInfoBasic) return Unbounded_String;
    function log (This : in out TransformInfoBasic) return Unbounded_String;
-   procedure override (This : in out TransformInfoBasic; hashMap : HashMap_Access);
+   procedure override (This : in out TransformInfoBasic; hashMap_Param : access HashMap'Class);
    function getName (This : in out TransformInfoBasic) return Unbounded_String;
    function getObjectFile (This : in out TransformInfoBasic) return Unbounded_String;
    function getObject (This : in out TransformInfoBasic) return Java_Object_Access;
    function getObjectConfigInterface (This : in out TransformInfoBasic) return TransformInfoObjectConfigInterface_Access;
-   procedure setObjectConfigInterface (This : in out TransformInfoBasic; transformInfoObjectConfigInterface : TransformInfoObjectConfigInterface_Access);
+   procedure setObjectConfigInterface (This : in out TransformInfoBasic; transformInfoObjectConfigInterface_Param : access TransformInfoObjectConfigInterface'Class);
    function getTemplateFilePath (This : in out TransformInfoBasic) return AbPath_Access;
    function getTemplateFile (This : in out TransformInfoBasic) return Unbounded_String;
    function getTemplate (This : in out TransformInfoBasic) return Unbounded_String;
@@ -69,7 +69,7 @@ package org.allbinary.logic.visual.transform.info.TransformInfoBasic_Package is
    procedure setName (This : in out TransformInfoBasic; value : Unbounded_String);
    procedure setStoreName (This : in out TransformInfoBasic; value : Unbounded_String);
    procedure setObjectFile (This : in out TransformInfoBasic; value : Unbounded_String);
-   procedure setObject (This : in out TransformInfoBasic; anyType : Java_Object_Access);
+   procedure setObject (This : in out TransformInfoBasic; anyType_Param : access Java_Object'Class);
    procedure setObjectConfigFile (This : in out TransformInfoBasic; value : Unbounded_String);
    procedure setTemplateFile (This : in out TransformInfoBasic; value : Unbounded_String);
    procedure setTemplate (This : in out TransformInfoBasic; value : Unbounded_String);

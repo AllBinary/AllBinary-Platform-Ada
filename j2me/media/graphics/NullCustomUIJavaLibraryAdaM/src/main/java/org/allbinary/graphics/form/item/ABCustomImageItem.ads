@@ -26,8 +26,8 @@ package org.allbinary.graphics.form.item.ABCustomImageItem_Package is
       yOffset : Integer;
    end record;
 
-   procedure Initialize (This : in out ABCustomImageItem'Class; label : Unbounded_String; image : Image_Access; layout : Integer; altText : Unbounded_String; basicColor : BasicColor_Access; yOffset : Integer);
-   function Create (label : Unbounded_String; image : Image_Access; layout : Integer; altText : Unbounded_String; basicColor : BasicColor_Access; yOffset : Integer) return ABCustomImageItem_Access;
+   procedure Initialize (This : in out ABCustomImageItem'Class; label : Unbounded_String; image_Param : access Image'Class; layout : Integer; altText : Unbounded_String; basicColor_Param : access BasicColor'Class; yOffset : Integer);
+   function Create (label : Unbounded_String; image_Param : access Image'Class; layout : Integer; altText : Unbounded_String; basicColor_Param : access BasicColor'Class; yOffset : Integer) return ABCustomImageItem_Access;
    function getImage (This : in out ABCustomImageItem) return Image_Access;
 
 end org.allbinary.graphics.form.item.ABCustomImageItem_Package;

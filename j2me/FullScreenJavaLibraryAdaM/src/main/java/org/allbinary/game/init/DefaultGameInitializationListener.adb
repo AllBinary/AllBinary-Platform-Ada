@@ -30,7 +30,7 @@ package body org.allbinary.game.init.DefaultGameInitializationListener_Package i
       Initialize_Fields (This);
         gameInitializedEventHandler := GameInitializedEventHandler_Package.getInstance;
         gameInitializedEventHandler.removeAllListeners;
-        gameInitializedEventHandler.addListenerInterface (GameInitializedListenerInterface_Access (This'Unchecked_Access));
+        gameInitializedEventHandler.addListenerInterface (GameInitializedListenerInterface_Access (DefaultGameInitializationListener_Access'(This'Unchecked_Access)));
    end Initialize;
 
    function Create return DefaultGameInitializationListener_Access is
@@ -40,21 +40,23 @@ package body org.allbinary.game.init.DefaultGameInitializationListener_Package i
       return This;
    end Create;
 
-   procedure onEvent (This : in out DefaultGameInitializationListener; eventObject : AllBinaryEventObject_Access) is
+   procedure onEvent (This : in out DefaultGameInitializationListener; eventObject_Param : access AllBinaryEventObject'Class) is
+      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
    begin
-        ForcedLogUtil_Package.log (EventStrings_Package.getInstance.PERFORMANCE_MESSAGE, This'Unchecked_Access);
+        ForcedLogUtil_Package.log (EventStrings_Package.getInstance.PERFORMANCE_MESSAGE, DefaultGameInitializationListener_Access'(This'Unchecked_Access));
    end onEvent;
 
-   procedure onGameInitialized (This : in out DefaultGameInitializationListener; gameInitializedEvent : GameInitializedEvent_Access) is
+   procedure onGameInitialized (This : in out DefaultGameInitializationListener; gameInitializedEvent_Param : access GameInitializedEvent'Class) is
+      gameInitializedEvent : GameInitializedEvent_Access := GameInitializedEvent_Access (gameInitializedEvent_Param);
       ON_GAME_INITIALIZED : Unbounded_String;
       commonStrings : CommonStrings_Access;
    begin
         ON_GAME_INITIALIZED := To_Unbounded_String ("onGameInitialized");
         commonStrings := CommonStrings_Package.getInstance;
         begin
-            This.logUtil.putF (commonStrings.START, This'Unchecked_Access, ON_GAME_INITIALIZED);
+            This.logUtil.putF (commonStrings.START, DefaultGameInitializationListener_Access'(This'Unchecked_Access), ON_GAME_INITIALIZED);
             while not (This.swtJOGLProcessor.isHolderCreated) loop
-                This.logUtil.putF (commonStrings.UPDATE, This'Unchecked_Access, ON_GAME_INITIALIZED);
+                This.logUtil.putF (commonStrings.UPDATE, DefaultGameInitializationListener_Access'(This'Unchecked_Access), ON_GAME_INITIALIZED);
                 Java_Sleep (20);
             end loop;
             FeatureResourceInitializationUtil_Package.getInstance.init (gameInitializedEvent.getLevel);
@@ -68,7 +70,7 @@ package body org.allbinary.game.init.DefaultGameInitializationListener_Package i
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, ON_GAME_INITIALIZED, e);
+            This.logUtil.put (commonStrings.EXCEPTION_Id, DefaultGameInitializationListener_Access'(This'Unchecked_Access), ON_GAME_INITIALIZED, e);
                 end;
         end;
    end onGameInitialized;

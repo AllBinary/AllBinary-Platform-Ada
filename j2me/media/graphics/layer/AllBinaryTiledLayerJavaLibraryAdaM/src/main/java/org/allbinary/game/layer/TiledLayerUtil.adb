@@ -38,7 +38,8 @@ package body org.allbinary.game.layer.TiledLayerUtil_Package is
         return TiledLayerUtil_Package.instance;
    end getInstance;
 
-   function keepOnBorderdMapX (This : in out TiledLayerUtil; terrainTiledLayer : AllBinaryTiledLayer_Access; x : Integer; width : Integer; mapBorderBufferWidth : Integer) return Integer is
+   function keepOnBorderdMapX (This : in out TiledLayerUtil; terrainTiledLayer_Param : access AllBinaryTiledLayer'Class; x : Integer; width : Integer; mapBorderBufferWidth : Integer) return Integer is
+      terrainTiledLayer : AllBinaryTiledLayer_Access := AllBinaryTiledLayer_Access (terrainTiledLayer_Param);
       newX : Integer;
       maxRight : Integer;
    begin
@@ -53,7 +54,8 @@ package body org.allbinary.game.layer.TiledLayerUtil_Package is
         return newX;
    end keepOnBorderdMapX;
 
-   function keepOnBorderdMapY (This : in out TiledLayerUtil; terrainTiledLayer : AllBinaryTiledLayer_Access; y : Integer; height : Integer; mapBorderBufferHeight : Integer) return Integer is
+   function keepOnBorderdMapY (This : in out TiledLayerUtil; terrainTiledLayer_Param : access AllBinaryTiledLayer'Class; y : Integer; height : Integer; mapBorderBufferHeight : Integer) return Integer is
+      terrainTiledLayer : AllBinaryTiledLayer_Access := AllBinaryTiledLayer_Access (terrainTiledLayer_Param);
       newY : Integer;
       maxBottom : Integer;
    begin
@@ -68,7 +70,8 @@ package body org.allbinary.game.layer.TiledLayerUtil_Package is
         return newY;
    end keepOnBorderdMapY;
 
-   function keepOnMapX (This : in out TiledLayerUtil; terrainTiledLayer : AllBinaryTiledLayer_Access; x : Integer; width : Integer) return Integer is
+   function keepOnMapX (This : in out TiledLayerUtil; terrainTiledLayer_Param : access AllBinaryTiledLayer'Class; x : Integer; width : Integer) return Integer is
+      terrainTiledLayer : AllBinaryTiledLayer_Access := AllBinaryTiledLayer_Access (terrainTiledLayer_Param);
       newX : Integer;
       maxRight : Integer;
    begin
@@ -83,7 +86,8 @@ package body org.allbinary.game.layer.TiledLayerUtil_Package is
         return newX;
    end keepOnMapX;
 
-   function keepOnMapY (This : in out TiledLayerUtil; terrainTiledLayer : AllBinaryTiledLayer_Access; y : Integer; height : Integer) return Integer is
+   function keepOnMapY (This : in out TiledLayerUtil; terrainTiledLayer_Param : access AllBinaryTiledLayer'Class; y : Integer; height : Integer) return Integer is
+      terrainTiledLayer : AllBinaryTiledLayer_Access := AllBinaryTiledLayer_Access (terrainTiledLayer_Param);
       newY : Integer;
       maxBottom : Integer;
    begin
@@ -98,29 +102,29 @@ package body org.allbinary.game.layer.TiledLayerUtil_Package is
         return newY;
    end keepOnMapY;
 
-   procedure keepOnBorderdMapX (This : in out TiledLayerUtil; terrainTiledLayer : AllBinaryTiledLayer_Access; x : Integer; width : Integer; mapBorderBufferWidth : Integer) is
-      Java_Result : constant Integer := TiledLayerUtil'Class (This).keepOnBorderdMapX (terrainTiledLayer, x, width, mapBorderBufferWidth);
+   procedure keepOnBorderdMapX (This : in out TiledLayerUtil; terrainTiledLayer_Param : access AllBinaryTiledLayer'Class; x : Integer; width : Integer; mapBorderBufferWidth : Integer) is
+      Java_Result : constant Integer := TiledLayerUtil'Class (This).keepOnBorderdMapX (terrainTiledLayer_Param, x, width, mapBorderBufferWidth);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end keepOnBorderdMapX;
 
-   procedure keepOnBorderdMapY (This : in out TiledLayerUtil; terrainTiledLayer : AllBinaryTiledLayer_Access; y : Integer; height : Integer; mapBorderBufferHeight : Integer) is
-      Java_Result : constant Integer := TiledLayerUtil'Class (This).keepOnBorderdMapY (terrainTiledLayer, y, height, mapBorderBufferHeight);
+   procedure keepOnBorderdMapY (This : in out TiledLayerUtil; terrainTiledLayer_Param : access AllBinaryTiledLayer'Class; y : Integer; height : Integer; mapBorderBufferHeight : Integer) is
+      Java_Result : constant Integer := TiledLayerUtil'Class (This).keepOnBorderdMapY (terrainTiledLayer_Param, y, height, mapBorderBufferHeight);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end keepOnBorderdMapY;
 
-   procedure keepOnMapX (This : in out TiledLayerUtil; terrainTiledLayer : AllBinaryTiledLayer_Access; x : Integer; width : Integer) is
-      Java_Result : constant Integer := TiledLayerUtil'Class (This).keepOnMapX (terrainTiledLayer, x, width);
+   procedure keepOnMapX (This : in out TiledLayerUtil; terrainTiledLayer_Param : access AllBinaryTiledLayer'Class; x : Integer; width : Integer) is
+      Java_Result : constant Integer := TiledLayerUtil'Class (This).keepOnMapX (terrainTiledLayer_Param, x, width);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end keepOnMapX;
 
-   procedure keepOnMapY (This : in out TiledLayerUtil; terrainTiledLayer : AllBinaryTiledLayer_Access; y : Integer; height : Integer) is
-      Java_Result : constant Integer := TiledLayerUtil'Class (This).keepOnMapY (terrainTiledLayer, y, height);
+   procedure keepOnMapY (This : in out TiledLayerUtil; terrainTiledLayer_Param : access AllBinaryTiledLayer'Class; y : Integer; height : Integer) is
+      Java_Result : constant Integer := TiledLayerUtil'Class (This).keepOnMapY (terrainTiledLayer_Param, y, height);
       pragma Unreferenced (Java_Result);
    begin
       null;

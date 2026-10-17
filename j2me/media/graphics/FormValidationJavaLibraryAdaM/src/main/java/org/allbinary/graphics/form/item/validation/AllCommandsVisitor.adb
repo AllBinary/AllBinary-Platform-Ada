@@ -35,13 +35,14 @@ package body org.allbinary.graphics.form.item.validation.AllCommandsVisitor_Pack
       return This;
    end Create;
 
-   function visit (This : in out AllCommandsVisitor; anyType : Java_Object_Access) return Java_Object_Access is
+   function visit (This : in out AllCommandsVisitor; anyType_Param : access Java_Object'Class) return Java_Object_Access is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         return BooleanFactory_Package.getInstance.TRUE;
    end visit;
 
-   procedure visit (This : in out AllCommandsVisitor; anyType : Java_Object_Access) is
-      Java_Result : constant Java_Object_Access := AllCommandsVisitor'Class (This).visit (anyType);
+   procedure visit (This : in out AllCommandsVisitor; anyType_Param : access Java_Object'Class) is
+      Java_Result : constant Java_Object_Access := AllCommandsVisitor'Class (This).visit (anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

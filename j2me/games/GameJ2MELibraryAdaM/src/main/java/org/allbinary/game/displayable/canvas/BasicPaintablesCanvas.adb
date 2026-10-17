@@ -23,7 +23,9 @@ package body org.allbinary.game.displayable.canvas.BasicPaintablesCanvas_Package
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BasicPaintablesCanvas'Class; cmdListener : CommandListener_Access; name : Unbounded_String; allBinaryGameLayerManager : AllBinaryGameLayerManager_Access; paintableArray : Paintable_Access_Array_Access) is
+   procedure Initialize (This : in out BasicPaintablesCanvas'Class; cmdListener_Param : access CommandListener'Class; name : Unbounded_String; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class; paintableArray : Paintable_Access_Array_Access) is
+      cmdListener : CommandListener_Access := CommandListener_Access (cmdListener_Param);
+      allBinaryGameLayerManager : AllBinaryGameLayerManager_Access := AllBinaryGameLayerManager_Access (allBinaryGameLayerManager_Param);
    begin
         GameCommandCanvas_Package.Initialize (This, cmdListener, name, allBinaryGameLayerManager.getBackgroundBasicColor, allBinaryGameLayerManager.getForegroundBasicColor);
         Initialize_Fields (This);
@@ -31,14 +33,15 @@ package body org.allbinary.game.displayable.canvas.BasicPaintablesCanvas_Package
         This.colorFillPaintable := ColorFillPaintableFactory_Package.getInstance.getInstance (allBinaryGameLayerManager.getBackgroundBasicColor, False);
    end Initialize;
 
-   function Create (cmdListener : CommandListener_Access; name : Unbounded_String; allBinaryGameLayerManager : AllBinaryGameLayerManager_Access; paintableArray : Paintable_Access_Array_Access) return BasicPaintablesCanvas_Access is
+   function Create (cmdListener_Param : access CommandListener'Class; name : Unbounded_String; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class; paintableArray : Paintable_Access_Array_Access) return BasicPaintablesCanvas_Access is
       This : constant BasicPaintablesCanvas_Access := new BasicPaintablesCanvas;
    begin
-      BasicPaintablesCanvas_Package.Initialize (This.all, cmdListener, name, allBinaryGameLayerManager, paintableArray);
+      BasicPaintablesCanvas_Package.Initialize (This.all, cmdListener_Param, name, allBinaryGameLayerManager_Param, paintableArray);
       return This;
    end Create;
 
-   procedure paint (This : in out BasicPaintablesCanvas; graphics : Graphics_Access) is
+   procedure paint (This : in out BasicPaintablesCanvas; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       index : Integer;
    begin
         This.colorFillPaintable.paint (graphics);

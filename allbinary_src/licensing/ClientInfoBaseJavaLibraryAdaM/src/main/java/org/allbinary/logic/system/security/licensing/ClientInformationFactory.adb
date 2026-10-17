@@ -40,7 +40,7 @@ package body org.allbinary.logic.system.security.licensing.ClientInformationFact
    begin
         logUtil := LogUtil_Package.getInstance;
         commonStrings := CommonStrings_Package.getInstance;
-        logUtil.putF (commonStrings.NOT_IMPLEMENTED, This'Unchecked_Access, commonStrings.GET_INSTANCE);
+        logUtil.putF (commonStrings.NOT_IMPLEMENTED, ClientInformationFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);
         stringUtil := StringUtil_Package.getInstance;
         return ClientInformation_Package.Create (stringUtil.NULL_STRING, stringUtil.NULL_STRING, stringUtil.NULL_STRING, stringUtil.NULL_STRING);
    end getInstance;

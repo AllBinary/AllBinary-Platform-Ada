@@ -60,7 +60,7 @@ package admin.tags.MultipartRequestParamForwardTag_Package is
    function Create return MultipartRequestParamForwardTag_Access;
    procedure setPage (This : in out MultipartRequestParamForwardTag; page : Unbounded_String);
    procedure setCommand (This : in out MultipartRequestParamForwardTag; command : Unbounded_String);
-   procedure setParamVector (This : in out MultipartRequestParamForwardTag; paramVector : BasicArrayList_Access);
+   procedure setParamVector (This : in out MultipartRequestParamForwardTag; paramVector_Param : access BasicArrayList'Class);
    function doStartTag (This : in out MultipartRequestParamForwardTag) return Integer;
 
 end admin.tags.MultipartRequestParamForwardTag_Package;

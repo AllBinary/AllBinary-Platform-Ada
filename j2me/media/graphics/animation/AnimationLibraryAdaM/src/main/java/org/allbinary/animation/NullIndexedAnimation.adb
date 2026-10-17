@@ -9,15 +9,16 @@ package body org.allbinary.animation.NullIndexedAnimation_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out NullIndexedAnimation'Class; animationBehavior : AnimationBehavior_Access) is
+   procedure Initialize (This : in out NullIndexedAnimation'Class; animationBehavior_Param : access AnimationBehavior'Class) is
+      animationBehavior : AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
    begin
         IndexedAnimation_Package.Initialize (This, animationBehavior);
    end Initialize;
 
-   function Create (animationBehavior : AnimationBehavior_Access) return NullIndexedAnimation_Access is
+   function Create (animationBehavior_Param : access AnimationBehavior'Class) return NullIndexedAnimation_Access is
       This : constant NullIndexedAnimation_Access := new NullIndexedAnimation;
    begin
-      NullIndexedAnimation_Package.Initialize (This.all, animationBehavior);
+      NullIndexedAnimation_Package.Initialize (This.all, animationBehavior_Param);
       return This;
    end Create;
 

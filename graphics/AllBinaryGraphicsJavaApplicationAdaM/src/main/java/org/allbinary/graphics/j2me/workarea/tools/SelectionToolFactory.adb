@@ -33,13 +33,14 @@ package body org.allbinary.graphics.j2me.workarea.tools.SelectionToolFactory_Pac
    end Create;
 
 
-   function getInstance (This : in out SelectionToolFactory; canvasJPanel : CanvasJPanel_Access) return GraphicItemInterface_Access is
+   function getInstance (This : in out SelectionToolFactory; canvasJPanel_Param : access CanvasJPanel'Class) return GraphicItemInterface_Access is
+      canvasJPanel : CanvasJPanel_Access := CanvasJPanel_Access (canvasJPanel_Param);
    begin
         return SelectionTool_Package.Create (canvasJPanel);
    end getInstance;
 
-   procedure getInstance (This : in out SelectionToolFactory; canvasJPanel : CanvasJPanel_Access) is
-      Java_Result : constant GraphicItemInterface_Access := SelectionToolFactory'Class (This).getInstance (canvasJPanel);
+   procedure getInstance (This : in out SelectionToolFactory; canvasJPanel_Param : access CanvasJPanel'Class) is
+      Java_Result : constant GraphicItemInterface_Access := SelectionToolFactory'Class (This).getInstance (canvasJPanel_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

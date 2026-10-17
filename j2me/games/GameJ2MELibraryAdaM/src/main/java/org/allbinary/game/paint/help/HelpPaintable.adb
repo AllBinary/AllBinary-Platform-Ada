@@ -19,7 +19,7 @@ package body org.allbinary.game.paint.help.HelpPaintable_Package is
    begin
       null;
       This.displayInfo := DisplayInfoSingleton_Package.getInstance;
-      This.updateMyFontProcessor := UpdateMyFontProcessor_Package.Create (This'Unchecked_Access);
+      This.updateMyFontProcessor := UpdateMyFontProcessor_Package.Create (HelpPaintable_Access'(This'Unchecked_Access));
       This.myFontProcessor := This.updateMyFontProcessor;
       This.anchor := Anchor_Package.TOP_LEFT;
       
@@ -31,7 +31,9 @@ package body org.allbinary.game.paint.help.HelpPaintable_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out HelpPaintable'Class; title : Unbounded_String; backgroundBasicColor : BasicColor_Access; basicColor : BasicColor_Access) is
+   procedure Initialize (This : in out HelpPaintable'Class; title : Unbounded_String; backgroundBasicColor_Param : access BasicColor'Class; basicColor_Param : access BasicColor'Class) is
+      backgroundBasicColor : BasicColor_Access := BasicColor_Access (backgroundBasicColor_Param);
+      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
       Paintable_Package.Initialize (This);
       Initialize_Fields (This);
@@ -39,14 +41,15 @@ package body org.allbinary.game.paint.help.HelpPaintable_Package is
         This.basicColor := basicColor;
    end Initialize;
 
-   function Create (title : Unbounded_String; backgroundBasicColor : BasicColor_Access; basicColor : BasicColor_Access) return HelpPaintable_Access is
+   function Create (title : Unbounded_String; backgroundBasicColor_Param : access BasicColor'Class; basicColor_Param : access BasicColor'Class) return HelpPaintable_Access is
       This : constant HelpPaintable_Access := new HelpPaintable;
    begin
-      HelpPaintable_Package.Initialize (This.all, title, backgroundBasicColor, basicColor);
+      HelpPaintable_Package.Initialize (This.all, title, backgroundBasicColor_Param, basicColor_Param);
       return This;
    end Create;
 
-   procedure updateMeasurement (This : in out HelpPaintable; graphics : Graphics_Access) is
+   procedure updateMeasurement (This : in out HelpPaintable; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       font : Font_Access;
       size : Integer;
       index : Integer;
@@ -68,7 +71,8 @@ package body org.allbinary.game.paint.help.HelpPaintable_Package is
         This.myFontProcessor := This.updateMyFontProcessor;
    end setInputInfoP;
 
-   procedure paint (This : in out HelpPaintable; graphics : Graphics_Access) is
+   procedure paint (This : in out HelpPaintable; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       halfWidth : Integer;
       size : Integer;
       index : Integer;

@@ -50,7 +50,8 @@ package body org.allbinary.game.configuration.feature.InGameFeatureChoiceGroups_
         return This.hashtable;
    end get;
 
-   procedure add (This : in out InGameFeatureChoiceGroups; name : Unbounded_String; list : BasicArrayList_Access) is
+   procedure add (This : in out InGameFeatureChoiceGroups; name : Unbounded_String; list_Param : access BasicArrayList'Class) is
+      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
    begin
         This.hashtable.put (name, list);
    end add;

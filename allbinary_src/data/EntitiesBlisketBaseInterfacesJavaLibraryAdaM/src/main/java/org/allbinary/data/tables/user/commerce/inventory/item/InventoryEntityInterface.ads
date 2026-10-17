@@ -42,11 +42,11 @@ package org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityIn
    type InventoryEntityInterface_Access_Array is array (Natural range <>) of InventoryEntityInterface_Access;
    type InventoryEntityInterface_Access_Array_Access is access all InventoryEntityInterface_Access_Array;
    function getItem (This : in out InventoryEntityInterface; id : Unbounded_String) return ItemInterface_Access is abstract;
-   function getItems (This : in out InventoryEntityInterface; storeFrontInterface : StoreFrontInterface_Access) return BasicArrayList_Access is abstract;
+   function getItems (This : in out InventoryEntityInterface; storeFrontInterface_Param : access StoreFrontInterface'Class) return BasicArrayList_Access is abstract;
    function getWeight (This : in out InventoryEntityInterface; id : Unbounded_String) return Unbounded_String is abstract;
    procedure deleteWhere (This : in out InventoryEntityInterface; key : Unbounded_String; value : Unbounded_String) is abstract;
-   procedure insert (This : in out InventoryEntityInterface; values : BasicArrayList_Access) is abstract;
-   procedure update (This : in out InventoryEntityInterface; updatedValues : HashMap_Access) is abstract;
+   procedure insert (This : in out InventoryEntityInterface; values_Param : access BasicArrayList'Class) is abstract;
+   procedure update (This : in out InventoryEntityInterface; updatedValues_Param : access HashMap'Class) is abstract;
 
 end org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityInterface_Package;
 

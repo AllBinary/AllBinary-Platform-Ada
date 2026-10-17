@@ -35,7 +35,8 @@ package body org.allbinary.image.gui.ResizeImageJPanel_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ResizeImageJPanel'Class; imageProcessorInput : ImageProcessorInput_Access) is
+   procedure Initialize (This : in out ResizeImageJPanel'Class; imageProcessorInput_Param : access ImageProcessorInput'Class) is
+      imageProcessorInput : ImageProcessorInput_Access := ImageProcessorInput_Access (imageProcessorInput_Param);
       numberStringArray : Unbounded_String_Array_Access;
       index : Integer;
       araster : Raster_Access;
@@ -58,10 +59,10 @@ package body org.allbinary.image.gui.ResizeImageJPanel_Package is
         end if;
    end Initialize;
 
-   function Create (imageProcessorInput : ImageProcessorInput_Access) return ResizeImageJPanel_Access is
+   function Create (imageProcessorInput_Param : access ImageProcessorInput'Class) return ResizeImageJPanel_Access is
       This : constant ResizeImageJPanel_Access := new ResizeImageJPanel;
    begin
-      ResizeImageJPanel_Package.Initialize (This.all, imageProcessorInput);
+      ResizeImageJPanel_Package.Initialize (This.all, imageProcessorInput_Param);
       return This;
    end Create;
 
@@ -116,7 +117,7 @@ package body org.allbinary.image.gui.ResizeImageJPanel_Package is
 --                          declare
 --                              e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
 --                          begin
---                      logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.RUN, e);
+--                      logUtil.put (This.commonStrings.EXCEPTION_Id, ResizeImageJPanel_Access'(This'Unchecked_Access), This.commonStrings.RUN, e);
 --                          end;
 --                  end;
 --     end run;
@@ -152,7 +153,7 @@ package body org.allbinary.image.gui.ResizeImageJPanel_Package is
 --                          declare
 --                              e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
 --                          begin
---                      logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.RUN, e);
+--                      logUtil.put (This.commonStrings.EXCEPTION_Id, ResizeImageJPanel_Access'(This'Unchecked_Access), This.commonStrings.RUN, e);
 --                          end;
 --                  end;
 --     end run;
@@ -188,7 +189,7 @@ package body org.allbinary.image.gui.ResizeImageJPanel_Package is
 --                          declare
 --                              e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
 --                          begin
---                      logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.RUN, e);
+--                      logUtil.put (This.commonStrings.EXCEPTION_Id, ResizeImageJPanel_Access'(This'Unchecked_Access), This.commonStrings.RUN, e);
 --                          end;
 --                  end;
 --     end run;
@@ -224,7 +225,7 @@ package body org.allbinary.image.gui.ResizeImageJPanel_Package is
 --                          declare
 --                              e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
 --                          begin
---                      logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.RUN, e);
+--                      logUtil.put (This.commonStrings.EXCEPTION_Id, ResizeImageJPanel_Access'(This'Unchecked_Access), This.commonStrings.RUN, e);
 --                          end;
 --                  end;
 --     end run;
@@ -236,7 +237,8 @@ package body org.allbinary.image.gui.ResizeImageJPanel_Package is
         return This.imageProcessorInput;
    end getImageProcessorInput;
 
-   procedure setImageProcessorInput (This : in out ResizeImageJPanel; imageProcessorInput : ImageProcessorInput_Access) is
+   procedure setImageProcessorInput (This : in out ResizeImageJPanel; imageProcessorInput_Param : access ImageProcessorInput'Class) is
+      imageProcessorInput : ImageProcessorInput_Access := ImageProcessorInput_Access (imageProcessorInput_Param);
    begin
         This.imageProcessorInput := imageProcessorInput;
    end setImageProcessorInput;
@@ -260,7 +262,8 @@ package body org.allbinary.image.gui.ResizeImageJPanel_Package is
         This.aboveJButton.setText (To_Unbounded_String ("Process"));
         This.aboveJButton.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt : ActionEvent_Access) is
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
+--        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.aboveJButtonActionPerformed (evt);
 --     end actionPerformed;
@@ -270,7 +273,8 @@ package body org.allbinary.image.gui.ResizeImageJPanel_Package is
         This.updateJButton.setText (To_Unbounded_String ("Update"));
         This.updateJButton.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt : ActionEvent_Access) is
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
+--        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.updateJButtonActionPerformed (evt);
 --     end actionPerformed;
@@ -280,7 +284,8 @@ package body org.allbinary.image.gui.ResizeImageJPanel_Package is
         This.adjustFor16AboveJButton.setText (To_Unbounded_String ("Adjust for 16 Above"));
         This.adjustFor16AboveJButton.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt : ActionEvent_Access) is
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
+--        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.adjustFor16AboveJButtonActionPerformed (evt);
 --     end actionPerformed;
@@ -288,33 +293,38 @@ package body org.allbinary.image.gui.ResizeImageJPanel_Package is
         This.adjustFor16BelowJButton.setText (To_Unbounded_String ("Adjust for 16 Below"));
         This.adjustFor16BelowJButton.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt : ActionEvent_Access) is
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
+--        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.adjustFor16BelowJButtonActionPerformed (evt);
 --     end actionPerformed;
 );
-        layout := GroupLayout_Package.Create (This'Unchecked_Access);
+        layout := GroupLayout_Package.Create (ResizeImageJPanel_Access'(This'Unchecked_Access));
         This.setLayout (layout);
         layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addContainerGap.addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addComponent (This.jLabel1).addComponent (This.jLabel2).addComponent (This.jLabel3)).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING, False).addComponent (This.jComboBox1, 0, javax_Package.swing.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE).addComponent (This.jTextField1).addComponent (This.jTextField2)).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.UNRELATED).addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addComponent (This.floatPercentJTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addComponent (This.adjustFor16AboveJButton).addComponent (This.adjustFor16BelowJButton)).addContainerGap (javax_Package.swing.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE)).addGroup (layout.createSequentialGroup.addComponent (This.updateJButton).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.aboveJButton).addGap (0, 250, Short_Package.MAX_VALUE)));
         layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addContainerGap.addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.jLabel1).addComponent (This.jComboBox1, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addComponent (This.floatPercentJTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE)).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.jTextField1, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addComponent (This.jLabel2).addComponent (This.adjustFor16AboveJButton)).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.jLabel3).addComponent (This.jTextField2, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addComponent (This.adjustFor16BelowJButton)).addGap (18, 18, 18).addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.aboveJButton).addComponent (This.updateJButton)).addContainerGap (175, Short_Package.MAX_VALUE)));
    end initComponents;
 
-   procedure aboveJButtonActionPerformed (This : in out ResizeImageJPanel; evt : ActionEvent_Access) is
+   procedure aboveJButtonActionPerformed (This : in out ResizeImageJPanel; evt_Param : access ActionEvent'Class) is
+      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         This.process;
    end aboveJButtonActionPerformed;
 
-   procedure updateJButtonActionPerformed (This : in out ResizeImageJPanel; evt : ActionEvent_Access) is
+   procedure updateJButtonActionPerformed (This : in out ResizeImageJPanel; evt_Param : access ActionEvent'Class) is
+      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         This.update;
    end updateJButtonActionPerformed;
 
-   procedure adjustFor16AboveJButtonActionPerformed (This : in out ResizeImageJPanel; evt : ActionEvent_Access) is
+   procedure adjustFor16AboveJButtonActionPerformed (This : in out ResizeImageJPanel; evt_Param : access ActionEvent'Class) is
+      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         This.updateFor16Above;
    end adjustFor16AboveJButtonActionPerformed;
 
-   procedure adjustFor16BelowJButtonActionPerformed (This : in out ResizeImageJPanel; evt : ActionEvent_Access) is
+   procedure adjustFor16BelowJButtonActionPerformed (This : in out ResizeImageJPanel; evt_Param : access ActionEvent'Class) is
+      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         This.updateFor16Below;
    end adjustFor16BelowJButtonActionPerformed;

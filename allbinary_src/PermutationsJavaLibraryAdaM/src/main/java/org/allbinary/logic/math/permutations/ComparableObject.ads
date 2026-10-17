@@ -36,8 +36,8 @@ package org.allbinary.logic.math.permutations.ComparableObject_Package is
 
    procedure Initialize (This : in out ComparableObject'Class);
    function Create return ComparableObject_Access;
-   function compareTo (This : in out ComparableObject; anyType : Java_Object_Access) return Integer;
-   procedure compareTo (This : in out ComparableObject; anyType : Java_Object_Access);
+   function compareTo (This : in out ComparableObject; anyType_Param : access Java_Object'Class) return Integer;
+   procedure compareTo (This : in out ComparableObject; anyType_Param : access Java_Object'Class);
 
 end org.allbinary.logic.math.permutations.ComparableObject_Package;
 

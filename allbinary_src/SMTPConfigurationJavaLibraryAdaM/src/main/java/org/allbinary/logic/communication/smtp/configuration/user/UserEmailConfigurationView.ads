@@ -62,13 +62,13 @@ package org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfi
       userEmailConfigurationInterface : UserEmailConfigurationInterface_Access;
    end record;
 
-   procedure Initialize (This : in out UserEmailConfigurationView'Class; node : Node_Access);
-   function Create (node : Node_Access) return UserEmailConfigurationView_Access;
-   procedure Initialize (This : in out UserEmailConfigurationView'Class; userEmailConfigurationInterface : UserEmailConfigurationInterface_Access);
-   function Create (userEmailConfigurationInterface : UserEmailConfigurationInterface_Access) return UserEmailConfigurationView_Access;
+   procedure Initialize (This : in out UserEmailConfigurationView'Class; node_Param : access Node'Class);
+   function Create (node_Param : access Node'Class) return UserEmailConfigurationView_Access;
+   procedure Initialize (This : in out UserEmailConfigurationView'Class; userEmailConfigurationInterface_Param : access UserEmailConfigurationInterface'Class);
+   function Create (userEmailConfigurationInterface_Param : access UserEmailConfigurationInterface'Class) return UserEmailConfigurationView_Access;
    function getEmailConfigurationInterface (This : in out UserEmailConfigurationView) return UserEmailConfigurationInterface_Access;
-   function toXmlNode (This : in out UserEmailConfigurationView; document : Document_Access) return Node_Access;
-   procedure toXmlNode (This : in out UserEmailConfigurationView; document : Document_Access);
+   function toXmlNode (This : in out UserEmailConfigurationView; document_Param : access Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out UserEmailConfigurationView; document_Param : access Document'Class);
 
 end org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationView_Package;
 

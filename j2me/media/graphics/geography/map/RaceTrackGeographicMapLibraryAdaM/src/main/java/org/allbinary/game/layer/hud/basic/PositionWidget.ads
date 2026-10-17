@@ -43,11 +43,11 @@ package org.allbinary.game.layer.hud.basic.PositionWidget_Package is
       positionString : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out PositionWidget'Class; position : Integer; location : Integer; direction : Integer; basicColor : BasicColor_Access);
-   function Create (position : Integer; location : Integer; direction : Integer; basicColor : BasicColor_Access) return PositionWidget_Access;
+   procedure Initialize (This : in out PositionWidget'Class; position : Integer; location : Integer; direction : Integer; basicColor_Param : access BasicColor'Class);
+   function Create (position : Integer; location : Integer; direction : Integer; basicColor_Param : access BasicColor'Class) return PositionWidget_Access;
    function get (This : in out PositionWidget) return Integer;
    procedure set (This : in out PositionWidget; position : Integer);
-   procedure paint (This : in out PositionWidget; graphics : Graphics_Access);
+   procedure paint (This : in out PositionWidget; graphics_Param : access Graphics'Class);
    function toString (position : Integer) return Unbounded_String;
    procedure toString (position : Integer);
 

@@ -45,11 +45,11 @@ package org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyView_Pack
 
    procedure Initialize (This : in out CssPropertyView'Class; name : Unbounded_String);
    function Create (name : Unbounded_String) return CssPropertyView_Access;
-   procedure Initialize (This : in out CssPropertyView'Class; node : Node_Access);
-   function Create (node : Node_Access) return CssPropertyView_Access;
+   procedure Initialize (This : in out CssPropertyView'Class; node_Param : access Node'Class);
+   function Create (node_Param : access Node'Class) return CssPropertyView_Access;
    function getProperty (This : in out CssPropertyView) return CssProperty_Access;
-   function toXmlNode (This : in out CssPropertyView; document : Document_Access) return Node_Access;
-   procedure toXmlNode (This : in out CssPropertyView; document : Document_Access);
+   function toXmlNode (This : in out CssPropertyView; document_Param : access Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out CssPropertyView; document_Param : access Document'Class);
 
 end org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyView_Package;
 

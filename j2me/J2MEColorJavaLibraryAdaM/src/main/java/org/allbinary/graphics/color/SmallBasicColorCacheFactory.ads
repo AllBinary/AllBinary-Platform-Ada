@@ -44,7 +44,7 @@ package org.allbinary.graphics.color.SmallBasicColorCacheFactory_Package is
    procedure Initialize (This : in out SmallBasicColorCacheFactory'Class);
    function Create return SmallBasicColorCacheFactory_Access;
    function getInstance return SmallBasicColorCacheFactory_Access;
-   procedure add (This : in out SmallBasicColorCacheFactory; basicDefaultColor : BasicColor_Access);
+   procedure add (This : in out SmallBasicColorCacheFactory; basicDefaultColor_Param : access BasicColor'Class);
    function getAndOrCreate (This : in out SmallBasicColorCacheFactory; colorAsInt : Integer) return BasicColor_Access;
    procedure getAndOrCreate (This : in out SmallBasicColorCacheFactory; colorAsInt : Integer);
 

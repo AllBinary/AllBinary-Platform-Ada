@@ -67,7 +67,8 @@ package body org.allbinary.logic.io.file.AbFileSystem_Package is
         return StringUtil_Package.getInstance.EMPTY_STRING;
    end readAsString;
 
-   function close (This : in out AbFileSystem; closeable : Java_Object_Access) return Boolean is
+   function close (This : in out AbFileSystem; closeable_Param : access Java_Object'Class) return Boolean is
+      closeable : Java_Object_Access := Java_Object_Access (closeable_Param);
       inputStream : InputStream_Access;
    begin
         begin
@@ -81,7 +82,7 @@ package body org.allbinary.logic.io.file.AbFileSystem_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.CLOSE, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, AbFileSystem_Access'(This'Unchecked_Access), This.commonStrings.CLOSE, e);
             return False;
                 end;
         end;
@@ -122,8 +123,8 @@ package body org.allbinary.logic.io.file.AbFileSystem_Package is
       null;
    end readAsString;
 
-   procedure close (This : in out AbFileSystem; closeable : Java_Object_Access) is
-      Java_Result : constant Boolean := AbFileSystem'Class (This).close (closeable);
+   procedure close (This : in out AbFileSystem; closeable_Param : access Java_Object'Class) is
+      Java_Result : constant Boolean := AbFileSystem'Class (This).close (closeable_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

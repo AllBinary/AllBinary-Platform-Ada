@@ -46,7 +46,8 @@ package body org.allbinary.game.combat.destroy.DestroyedLayerProcessor_Package i
    end getInstance;
 
    --  throws Exception
-   procedure process (This : in out DestroyedLayerProcessor; allBinaryLayerManager : AllBinaryLayerManager_Access) is
+   procedure process (This : in out DestroyedLayerProcessor; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class) is
+      allBinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
       list : BasicArrayList_Access;
       size : Integer;
       destroyedEventHandler : DestroyedEventHandler_Access;

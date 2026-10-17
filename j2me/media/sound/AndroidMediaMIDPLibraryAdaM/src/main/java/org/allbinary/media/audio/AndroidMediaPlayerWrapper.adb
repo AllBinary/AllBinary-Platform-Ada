@@ -60,7 +60,7 @@ package body org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (Java_Image (This.commonStrings.EXCEPTION_LABEL) & resource, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR, e);
+            This.logUtil.put (Java_Image (This.commonStrings.EXCEPTION_LABEL) & resource, AndroidMediaPlayerWrapper_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR, e);
             Java_Throw (e);
                 end;
         end;
@@ -85,12 +85,14 @@ package body org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package is
         end if;
    end setLoopCount;
 
-   procedure addPlayerListener (This : in out AndroidMediaPlayerWrapper; playerListener : PlayerListener_Access) is
+   procedure addPlayerListener (This : in out AndroidMediaPlayerWrapper; playerListener_Param : access PlayerListener'Class) is
+      playerListener : PlayerListener_Access := PlayerListener_Access (playerListener_Param);
    begin
         BasicPlayer (This).addPlayerListener (playerListener);
    end addPlayerListener;
 
-   procedure removePlayerListener (This : in out AndroidMediaPlayerWrapper; playerListener : PlayerListener_Access) is
+   procedure removePlayerListener (This : in out AndroidMediaPlayerWrapper; playerListener_Param : access PlayerListener'Class) is
+      playerListener : PlayerListener_Access := PlayerListener_Access (playerListener_Param);
    begin
         BasicPlayer (This).removePlayerListener (playerListener);
    end removePlayerListener;
@@ -114,7 +116,7 @@ package body org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.CLOSE, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, AndroidMediaPlayerWrapper_Access'(This'Unchecked_Access), This.commonStrings.CLOSE, e);
                 end;
         end;
    end close;
@@ -134,7 +136,7 @@ package body org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.START_METHOD_NAME, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, AndroidMediaPlayerWrapper_Access'(This'Unchecked_Access), This.commonStrings.START_METHOD_NAME, e);
                 end;
         end;
    end start;
@@ -151,7 +153,7 @@ package body org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("stop"), e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, AndroidMediaPlayerWrapper_Access'(This'Unchecked_Access), To_Unbounded_String ("stop"), e);
                 end;
         end;
    end stop;
@@ -161,11 +163,11 @@ package body org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package is
       listener : PlayerListener_Access;
       index : Integer;
    begin
-        This.logUtil.putF (To_Unbounded_String ("LineEvent: ") & event, This'Unchecked_Access, This.commonStrings.UPDATE);
+        This.logUtil.putF (To_Unbounded_String ("LineEvent: ") & event, AndroidMediaPlayerWrapper_Access'(This'Unchecked_Access), This.commonStrings.UPDATE);
         size := This.listenersList.size;
         for index in 0 .. (size) - 1 loop
             listener := PlayerListener_Access (This.listenersList.objectArray (index));
-            listener.playerUpdate (This'Unchecked_Access, event, NullUtil_Package.getInstance.NULL_OBJECT);
+            listener.playerUpdate (AndroidMediaPlayerWrapper_Access'(This'Unchecked_Access), event, NullUtil_Package.getInstance.NULL_OBJECT);
         end loop;
    end update;
 
@@ -179,7 +181,8 @@ package body org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package is
         return Long_Long_Integer (This.mediaPlayer.getDuration);
    end getDuration;
 
-   procedure setMediaPlayer (This : in out AndroidMediaPlayerWrapper; mediaPlayer : MediaPlayer_Access) is
+   procedure setMediaPlayer (This : in out AndroidMediaPlayerWrapper; mediaPlayer_Param : access MediaPlayer'Class) is
+      mediaPlayer : MediaPlayer_Access := MediaPlayer_Access (mediaPlayer_Param);
    begin
         This.mediaPlayer := mediaPlayer;
    end setMediaPlayer;

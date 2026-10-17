@@ -24,7 +24,7 @@ package body org.allbinary.game.part.CountedLayersHudPaintable_Package is
       
       
       
-      This.myFontProcessor := UpdateMyFontProcessor_Package.Create (This'Unchecked_Access);
+      This.myFontProcessor := UpdateMyFontProcessor_Package.Create (CountedLayersHudPaintable_Access'(This'Unchecked_Access));
       This.height := 0;
    end Initialize_Fields;
 
@@ -46,7 +46,8 @@ package body org.allbinary.game.part.CountedLayersHudPaintable_Package is
       return This;
    end Create;
 
-   procedure updateMeasurement (This : in out CountedLayersHudPaintable; graphics : Graphics_Access) is
+   procedure updateMeasurement (This : in out CountedLayersHudPaintable; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       font : Font_Access;
       XXString : Unbounded_String;
    begin
@@ -62,7 +63,8 @@ package body org.allbinary.game.part.CountedLayersHudPaintable_Package is
         This.myFontProcessor := MyFontProcessor_Package.getInstance;
    end updateMeasurement;
 
-   procedure paint (This : in out CountedLayersHudPaintable; graphics : Graphics_Access) is
+   procedure paint (This : in out CountedLayersHudPaintable; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       lastWidth : Integer;
       widthEdge : Integer;
       size : Integer;
@@ -105,7 +107,8 @@ package body org.allbinary.game.part.CountedLayersHudPaintable_Package is
         end if;
    end paint;
 
-   procedure paintThreed (This : in out CountedLayersHudPaintable; graphics : Graphics_Access) is
+   procedure paintThreed (This : in out CountedLayersHudPaintable; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         null;
    end paintThreed;

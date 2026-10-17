@@ -23,21 +23,23 @@ package body org.allbinary.logic.communication.smtp.event.modules.event.user.Use
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out UserEmailEventListenerModule'Class; userInterface : UserInterface_Access) is
+   procedure Initialize (This : in out UserEmailEventListenerModule'Class; userInterface_Param : access UserInterface'Class) is
+      userInterface : UserInterface_Access := UserInterface_Access (userInterface_Param);
    begin
       Initialize_Fields (This);
         This.userInterface := userInterface;
    end Initialize;
 
-   function Create (userInterface : UserInterface_Access) return UserEmailEventListenerModule_Access is
+   function Create (userInterface_Param : access UserInterface'Class) return UserEmailEventListenerModule_Access is
       This : constant UserEmailEventListenerModule_Access := new UserEmailEventListenerModule;
    begin
-      UserEmailEventListenerModule_Package.Initialize (This.all, userInterface);
+      UserEmailEventListenerModule_Package.Initialize (This.all, userInterface_Param);
       return This;
    end Create;
 
    --  throws Exception
-   procedure onEmailSendFailure (This : in out UserEmailEventListenerModule; emailEvent : EmailEvent_Access) is
+   procedure onEmailSendFailure (This : in out UserEmailEventListenerModule; emailEvent_Param : access EmailEvent'Class) is
+      emailEvent : EmailEvent_Access := EmailEvent_Access (emailEvent_Param);
       to : Unbounded_String;
       email : BasicEmail_Access;
    begin
@@ -47,12 +49,13 @@ package body org.allbinary.logic.communication.smtp.event.modules.event.user.Use
    end onEmailSendFailure;
 
    --  throws Exception
-   procedure onEmailSendRequest (This : in out UserEmailEventListenerModule; emailEvent : EmailEvent_Access) is
+   procedure onEmailSendRequest (This : in out UserEmailEventListenerModule; emailEvent_Param : access EmailEvent'Class) is
+      emailEvent : EmailEvent_Access := EmailEvent_Access (emailEvent_Param);
       to : Unbounded_String;
       email : BasicEmail_Access;
    begin
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
-            This.logUtil.putF (To_Unbounded_String ("Add Email To Que For Sending: ") & emailEvent.toString, This'Unchecked_Access, To_Unbounded_String ("onEmailSendRequest"));
+            This.logUtil.putF (To_Unbounded_String ("Add Email To Que For Sending: ") & emailEvent.toString, UserEmailEventListenerModule_Access'(This'Unchecked_Access), To_Unbounded_String ("onEmailSendRequest"));
         end if;
         to := This.userInterface.getMainEmail;
         email := BasicEmail_Package.Create (emailEvent.getEmailInfo, to);

@@ -29,7 +29,8 @@ package body org.allbinary.game.combat.damage.PtsDamageFloaters_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out PtsDamageFloaters'Class; layerInterface : AllBinaryLayer_Access) is
+   procedure Initialize (This : in out PtsDamageFloaters'Class; layerInterface_Param : access AllBinaryLayer'Class) is
+      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
       CHAR_ARRAY : Character_Array_Access;
       index : Integer;
    begin
@@ -43,10 +44,10 @@ package body org.allbinary.game.combat.damage.PtsDamageFloaters_Package is
         end loop;
    end Initialize;
 
-   function Create (layerInterface : AllBinaryLayer_Access) return PtsDamageFloaters_Access is
+   function Create (layerInterface_Param : access AllBinaryLayer'Class) return PtsDamageFloaters_Access is
       This : constant PtsDamageFloaters_Access := new PtsDamageFloaters;
    begin
-      PtsDamageFloaters_Package.Initialize (This.all, layerInterface);
+      PtsDamageFloaters_Package.Initialize (This.all, layerInterface_Param);
       return This;
    end Create;
 
@@ -60,7 +61,8 @@ package body org.allbinary.game.combat.damage.PtsDamageFloaters_Package is
         This.circularIndexUtil.next;
    end add;
 
-   procedure paint (This : in out PtsDamageFloaters; graphics : Graphics_Access) is
+   procedure paint (This : in out PtsDamageFloaters; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       viewPosition : ViewPositionBase_Access;
       x : Integer;
       y : Integer;

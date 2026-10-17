@@ -48,7 +48,8 @@ package body org.allbinary.media.image.analysis.ImageColorResults_Package is
         return This.colorRange;
    end getColorRange;
 
-   procedure setColorRange (This : in out ImageColorResults; colorRange : ColorRange_Access) is
+   procedure setColorRange (This : in out ImageColorResults; colorRange_Param : access ColorRange'Class) is
+      colorRange : ColorRange_Access := ColorRange_Access (colorRange_Param);
    begin
         This.colorRange := colorRange;
    end setColorRange;
@@ -58,7 +59,8 @@ package body org.allbinary.media.image.analysis.ImageColorResults_Package is
         return This.colorAverage;
    end getColorAverage;
 
-   procedure setColorAverage (This : in out ImageColorResults; colorAverage : ColorAverage_Access) is
+   procedure setColorAverage (This : in out ImageColorResults; colorAverage_Param : access ColorAverage'Class) is
+      colorAverage : ColorAverage_Access := ColorAverage_Access (colorAverage_Param);
    begin
         This.colorAverage := colorAverage;
    end setColorAverage;

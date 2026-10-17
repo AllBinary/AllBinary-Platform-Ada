@@ -50,7 +50,7 @@ package body org.allbinary.input.TouchJ2ME_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("pointerDragged"), e);
+            This.logUtil.put (commonStrings.EXCEPTION_Id, TouchJ2ME_Access'(This'Unchecked_Access), To_Unbounded_String ("pointerDragged"), e);
                 end;
         end;
    end pointerDragged;
@@ -66,7 +66,7 @@ package body org.allbinary.input.TouchJ2ME_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("pointerPressed"), e);
+            This.logUtil.put (commonStrings.EXCEPTION_Id, TouchJ2ME_Access'(This'Unchecked_Access), To_Unbounded_String ("pointerPressed"), e);
                 end;
         end;
    end pointerPressed;
@@ -82,7 +82,7 @@ package body org.allbinary.input.TouchJ2ME_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("pointerReleased"), e);
+            This.logUtil.put (commonStrings.EXCEPTION_Id, TouchJ2ME_Access'(This'Unchecked_Access), To_Unbounded_String ("pointerReleased"), e);
                 end;
         end;
    end pointerReleased;

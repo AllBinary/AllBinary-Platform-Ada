@@ -77,13 +77,13 @@ package views.business.context.modules.storefront.customizer.template.InsertCust
       viewName : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out InsertCustomizerValidationView'Class; transformInfoInterface : TransformInfoInterface_Access);
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return InsertCustomizerValidationView_Access;
+   procedure Initialize (This : in out InsertCustomizerValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return InsertCustomizerValidationView_Access;
    function isValid (This : in out InsertCustomizerValidationView) return Boolean;
    function validationInfo (This : in out InsertCustomizerValidationView) return Unbounded_String;
    function toValidationInfoDoc (This : in out InsertCustomizerValidationView) return Document_Access;
-   function toValidationInfoNode (This : in out InsertCustomizerValidationView; document : Document_Access) return Node_Access;
-   procedure toValidationInfoNode (This : in out InsertCustomizerValidationView; document : Document_Access);
+   function toValidationInfoNode (This : in out InsertCustomizerValidationView; document_Param : access Document'Class) return Node_Access;
+   procedure toValidationInfoNode (This : in out InsertCustomizerValidationView; document_Param : access Document'Class);
    function view (This : in out InsertCustomizerValidationView) return Unbounded_String;
 
 end views.business.context.modules.storefront.customizer.template.InsertCustomizerValidationView_Package;

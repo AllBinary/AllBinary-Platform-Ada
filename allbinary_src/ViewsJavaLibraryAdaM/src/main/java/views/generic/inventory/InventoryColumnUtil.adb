@@ -40,7 +40,8 @@ package body views.generic_Id.inventory.InventoryColumnUtil_Package is
         return InventoryColumnUtil_Package.instance;
    end getInstance;
 
-   function getColumnWhereLike (This : in out InventoryColumnUtil; inventoryEntity : InventoryEntity_Access; category : Unbounded_String; column : Unbounded_String) return BasicArrayList_Access is
+   function getColumnWhereLike (This : in out InventoryColumnUtil; inventoryEntity_Param : access InventoryEntity'Class; category : Unbounded_String; column : Unbounded_String) return BasicArrayList_Access is
+      inventoryEntity : InventoryEntity_Access := InventoryEntity_Access (inventoryEntity_Param);
       keywords : BasicArrayList_Access;
       vectorOfHashMaps : BasicArrayList_Access;
       size : Integer;
@@ -48,7 +49,7 @@ package body views.generic_Id.inventory.InventoryColumnUtil_Package is
       categoryName : Unbounded_String;
       index : Integer;
    begin
-        This.logUtil.putF (To_Unbounded_String ("Start Category: ") & category, This'Unchecked_Access, To_Unbounded_String ("getKeywords"));
+        This.logUtil.putF (To_Unbounded_String ("Start Category: ") & category, InventoryColumnUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("getKeywords"));
         keywords := BasicArrayListD_Package.Create;
         vectorOfHashMaps := inventoryEntity.getAllRows;
         size := vectorOfHashMaps.size;
@@ -62,8 +63,8 @@ package body views.generic_Id.inventory.InventoryColumnUtil_Package is
         return keywords;
    end getColumnWhereLike;
 
-   procedure getColumnWhereLike (This : in out InventoryColumnUtil; inventoryEntity : InventoryEntity_Access; category : Unbounded_String; column : Unbounded_String) is
-      Java_Result : constant BasicArrayList_Access := InventoryColumnUtil'Class (This).getColumnWhereLike (inventoryEntity, category, column);
+   procedure getColumnWhereLike (This : in out InventoryColumnUtil; inventoryEntity_Param : access InventoryEntity'Class; category : Unbounded_String; column : Unbounded_String) is
+      Java_Result : constant BasicArrayList_Access := InventoryColumnUtil'Class (This).getColumnWhereLike (inventoryEntity_Param, category, column);
       pragma Unreferenced (Java_Result);
    begin
       null;

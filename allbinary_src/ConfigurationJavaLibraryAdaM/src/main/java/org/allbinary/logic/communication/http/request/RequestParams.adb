@@ -29,7 +29,7 @@ package body org.allbinary.logic.communication.http.request.RequestParams_Packag
    procedure Initialize (This : in out RequestParams'Class) is
    begin
       Initialize_Fields (This);
-        This.logUtil.putF (To_Unbounded_String ("New RequestParams Size: 0"), This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+        This.logUtil.putF (To_Unbounded_String ("New RequestParams Size: 0"), RequestParams_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
    end Initialize;
 
    function Create return RequestParams_Access is
@@ -39,35 +39,38 @@ package body org.allbinary.logic.communication.http.request.RequestParams_Packag
       return This;
    end Create;
 
-   procedure Initialize (This : in out RequestParams'Class; request : HttpServletRequest_Access) is
+   procedure Initialize (This : in out RequestParams'Class; request_Param : access HttpServletRequest'Class) is
+      request : HttpServletRequest_Access := HttpServletRequest_Access (request_Param);
    begin
       Initialize_Fields (This);
         This.map := request.getParameterMap;
-        This.logUtil.putF (To_Unbounded_String ("RequestParams Size: ") & Java_Image (This.getMap.keySet.size), This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+        This.logUtil.putF (To_Unbounded_String ("RequestParams Size: ") & Java_Image (This.getMap.keySet.size), RequestParams_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
    end Initialize;
 
-   function Create (request : HttpServletRequest_Access) return RequestParams_Access is
+   function Create (request_Param : access HttpServletRequest'Class) return RequestParams_Access is
       This : constant RequestParams_Access := new RequestParams;
    begin
-      RequestParams_Package.Initialize (This.all, request);
+      RequestParams_Package.Initialize (This.all, request_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out RequestParams'Class; pageContext : PageContext_Access) is
+   procedure Initialize (This : in out RequestParams'Class; pageContext_Param : access PageContext'Class) is
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
    begin
       Initialize_Fields (This);
         This.map := pageContext.getRequest.getParameterMap;
-        This.logUtil.putF (To_Unbounded_String ("Request Params Size: ") & Java_Image (This.getMap.keySet.size), This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+        This.logUtil.putF (To_Unbounded_String ("Request Params Size: ") & Java_Image (This.getMap.keySet.size), RequestParams_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
    end Initialize;
 
-   function Create (pageContext : PageContext_Access) return RequestParams_Access is
+   function Create (pageContext_Param : access PageContext'Class) return RequestParams_Access is
       This : constant RequestParams_Access := new RequestParams;
    begin
-      RequestParams_Package.Initialize (This.all, pageContext);
+      RequestParams_Package.Initialize (This.all, pageContext_Param);
       return This;
    end Create;
 
-   procedure setMap (This : in out RequestParams; map : Map_Access) is
+   procedure setMap (This : in out RequestParams; map_Param : access Map'Class) is
+      map : Map_Access := Map_Access (map_Param);
    begin
         This.map := map;
    end setMap;
@@ -77,7 +80,8 @@ package body org.allbinary.logic.communication.http.request.RequestParams_Packag
         return This.map;
    end getMap;
 
-   function toXmlNode (This : in out RequestParams; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out RequestParams; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       node : Node_Access;
       stringBuffer : StringMaker_Access;
       keys : Set_Access;
@@ -101,7 +105,7 @@ package body org.allbinary.logic.communication.http.request.RequestParams_Packag
                 stringBuffer.append (key_Case);
                 stringBuffer.append (This.VALUE);
                 stringBuffer.append (values (0));
-                This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("toXmlNode(document)"));
+                This.logUtil.putF (stringBuffer.toString, RequestParams_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode(document)"));
                 node.appendChild (ModDomHelper_Package.createNameValueNodes (document, RequestData_Package.PARAMETER, Java_New_String (key_Case), Java_New_String (values (0))));
             end loop;
             return node;
@@ -110,7 +114,7 @@ package body org.allbinary.logic.communication.http.request.RequestParams_Packag
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("toXmlNode(document)"), e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, RequestParams_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode(document)"), e);
             return null;
                 end;
         end;
@@ -142,12 +146,12 @@ package body org.allbinary.logic.communication.http.request.RequestParams_Packag
         stringBuffer.append (This.map.toString);
         stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "toHashMap: "));
         stringBuffer.append (hashMap.toString);
-        This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("toHashMap()"));
+        This.logUtil.putF (stringBuffer.toString, RequestParams_Access'(This'Unchecked_Access), To_Unbounded_String ("toHashMap()"));
         return hashMap;
    end toHashMap;
 
-   procedure toXmlNode (This : in out RequestParams; document : Document_Access) is
-      Java_Result : constant Node_Access := RequestParams'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out RequestParams; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := RequestParams'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -39,8 +39,8 @@ package org.allbinary.business.user.commerce.money.payment.PaymentFactory_Packag
 
    procedure Initialize (This : in out PaymentFactory'Class);
    function Create return PaymentFactory_Access;
-   function getInstance (request : ServletRequest_Access) return PaymentInterface_Access;
-   procedure getInstance (request : ServletRequest_Access);
+   function getInstance (request_Param : access ServletRequest'Class) return PaymentInterface_Access;
+   procedure getInstance (request_Param : access ServletRequest'Class);
 
 end org.allbinary.business.user.commerce.money.payment.PaymentFactory_Package;
 

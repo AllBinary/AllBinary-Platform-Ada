@@ -47,8 +47,8 @@ package org.allbinary.game.configuration.GameOptionsFormFactory_Package is
    procedure Initialize (This : in out GameOptionsFormFactory'Class);
    function Create return GameOptionsFormFactory_Access;
    function getInstance return GameOptionsFormFactory_Access;
-   function init (This : in out GameOptionsFormFactory; commandListener : CommandListener_Access; title : Unbounded_String; backgrounBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return CommandForm_Access;
-   procedure init (This : in out GameOptionsFormFactory; commandListener : CommandListener_Access; title : Unbounded_String; backgrounBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access);
+   function init (This : in out GameOptionsFormFactory; commandListener_Param : access CommandListener'Class; title : Unbounded_String; backgrounBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return CommandForm_Access;
+   procedure init (This : in out GameOptionsFormFactory; commandListener_Param : access CommandListener'Class; title : Unbounded_String; backgrounBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class);
 
 end org.allbinary.game.configuration.GameOptionsFormFactory_Package;
 

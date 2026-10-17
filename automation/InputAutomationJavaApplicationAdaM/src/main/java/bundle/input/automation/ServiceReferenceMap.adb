@@ -22,16 +22,17 @@ package body bundle.input.automation.ServiceReferenceMap_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ServiceReferenceMap'Class; serviceReference : ServiceReference_Access) is
+   procedure Initialize (This : in out ServiceReferenceMap'Class; serviceReference_Param : access ServiceReference'Class) is
+      serviceReference : ServiceReference_Access := ServiceReference_Access (serviceReference_Param);
    begin
       Initialize_Fields (This);
         This.serviceReference := serviceReference;
    end Initialize;
 
-   function Create (serviceReference : ServiceReference_Access) return ServiceReferenceMap_Access is
+   function Create (serviceReference_Param : access ServiceReference'Class) return ServiceReferenceMap_Access is
       This : constant ServiceReferenceMap_Access := new ServiceReferenceMap;
    begin
-      ServiceReferenceMap_Package.Initialize (This.all, serviceReference);
+      ServiceReferenceMap_Package.Initialize (This.all, serviceReference_Param);
       return This;
    end Create;
 
@@ -45,32 +46,39 @@ package body bundle.input.automation.ServiceReferenceMap_Package is
         return False;
    end isEmpty;
 
-   function containsKey (This : in out ServiceReferenceMap; key : Java_Object_Access) return Boolean is
+   function containsKey (This : in out ServiceReferenceMap; key_Param : access Java_Object'Class) return Boolean is
+      key : Java_Object_Access := Java_Object_Access (key_Param);
    begin
         return False;
    end containsKey;
 
-   function containsValue (This : in out ServiceReferenceMap; value : Java_Object_Access) return Boolean is
+   function containsValue (This : in out ServiceReferenceMap; value_Param : access Java_Object'Class) return Boolean is
+      value : Java_Object_Access := Java_Object_Access (value_Param);
    begin
         return False;
    end containsValue;
 
-   function get (This : in out ServiceReferenceMap; key : Java_Object_Access) return Java_Object_Access is
+   function get (This : in out ServiceReferenceMap; key_Param : access Java_Object'Class) return Java_Object_Access is
+      key : Java_Object_Access := Java_Object_Access (key_Param);
    begin
         return This.serviceReference.getProperty (Unbounded_String (key));
    end get;
 
-   function put (This : in out ServiceReferenceMap; key : Java_Object_Access; value : Java_Object_Access) return Java_Object_Access is
+   function put (This : in out ServiceReferenceMap; key_Param : access Java_Object'Class; value_Param : access Java_Object'Class) return Java_Object_Access is
+      key : Java_Object_Access := Java_Object_Access (key_Param);
+      value : Java_Object_Access := Java_Object_Access (value_Param);
    begin
         return null;
    end put;
 
-   function remove (This : in out ServiceReferenceMap; key : Java_Object_Access) return Java_Object_Access is
+   function remove (This : in out ServiceReferenceMap; key_Param : access Java_Object'Class) return Java_Object_Access is
+      key : Java_Object_Access := Java_Object_Access (key_Param);
    begin
         return null;
    end remove;
 
-   procedure putAll (This : in out ServiceReferenceMap; m : Map_Access) is
+   procedure putAll (This : in out ServiceReferenceMap; m_Param : access Map'Class) is
+      m : Map_Access := Map_Access (m_Param);
    begin
         null;
    end putAll;
@@ -97,50 +105,51 @@ package body bundle.input.automation.ServiceReferenceMap_Package is
         return null;
    end entrySet;
 
-   function toString (map : Map_Access) return Unbounded_String is
+   function toString (map_Param : access Map'Class) return Unbounded_String is
+      map : Map_Access := Map_Access (map_Param);
       stringBuffer : StringMaker_Access;
    begin
         stringBuffer := StringMaker_Package.Create;
         return stringBuffer.toString;
    end toString;
 
-   procedure containsKey (This : in out ServiceReferenceMap; key : Java_Object_Access) is
-      Java_Result : constant Boolean := ServiceReferenceMap'Class (This).containsKey (key);
+   procedure containsKey (This : in out ServiceReferenceMap; key_Param : access Java_Object'Class) is
+      Java_Result : constant Boolean := ServiceReferenceMap'Class (This).containsKey (key_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end containsKey;
 
-   procedure containsValue (This : in out ServiceReferenceMap; value : Java_Object_Access) is
-      Java_Result : constant Boolean := ServiceReferenceMap'Class (This).containsValue (value);
+   procedure containsValue (This : in out ServiceReferenceMap; value_Param : access Java_Object'Class) is
+      Java_Result : constant Boolean := ServiceReferenceMap'Class (This).containsValue (value_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end containsValue;
 
-   procedure get (This : in out ServiceReferenceMap; key : Java_Object_Access) is
-      Java_Result : constant Java_Object_Access := ServiceReferenceMap'Class (This).get (key);
+   procedure get (This : in out ServiceReferenceMap; key_Param : access Java_Object'Class) is
+      Java_Result : constant Java_Object_Access := ServiceReferenceMap'Class (This).get (key_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end get;
 
-   procedure put (This : in out ServiceReferenceMap; key : Java_Object_Access; value : Java_Object_Access) is
-      Java_Result : constant Java_Object_Access := ServiceReferenceMap'Class (This).put (key, value);
+   procedure put (This : in out ServiceReferenceMap; key_Param : access Java_Object'Class; value_Param : access Java_Object'Class) is
+      Java_Result : constant Java_Object_Access := ServiceReferenceMap'Class (This).put (key_Param, value_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end put;
 
-   procedure remove (This : in out ServiceReferenceMap; key : Java_Object_Access) is
-      Java_Result : constant Java_Object_Access := ServiceReferenceMap'Class (This).remove (key);
+   procedure remove (This : in out ServiceReferenceMap; key_Param : access Java_Object'Class) is
+      Java_Result : constant Java_Object_Access := ServiceReferenceMap'Class (This).remove (key_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end remove;
 
-   procedure toString (map : Map_Access) is
-      Java_Result : constant Unbounded_String := toString (map);
+   procedure toString (map_Param : access Map'Class) is
+      Java_Result : constant Unbounded_String := toString (map_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

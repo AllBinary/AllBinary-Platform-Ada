@@ -53,12 +53,12 @@ package org.allbinary.media.image.analysis.ImageAnalysis_Package is
    procedure Initialize (This : in out ImageAnalysis'Class);
    function Create return ImageAnalysis_Access;
    function getInstance return ImageAnalysis_Access;
-   function process (This : in out ImageAnalysis; bufferedImageArray : BufferedImage_Access_Array_Access; colorRangeInterface : ColorRangeInterface_Access) return ImageAnalysisResults_Access_Array_Access;
-   procedure process (This : in out ImageAnalysis; bufferedImageArray : BufferedImage_Access_Array_Access; colorRangeInterface : ColorRangeInterface_Access);
-   function process (bufferedImage : BufferedImage_Access; colorRangeInterface : ColorRangeInterface_Access) return ImageAnalysisResults_Access;
-   procedure process (bufferedImage : BufferedImage_Access; colorRangeInterface : ColorRangeInterface_Access);
-   procedure processColorRangeResults (imageAnalysisResults : ImageAnalysisResults_Access; colorRangeInterface : ColorRangeInterface_Access; color : Color_Access);
-   procedure processImageColorResults (imageColorResults : ImageColorResults_Access; colorRangeInterface : ColorRangeInterface_Access; color : Color_Access);
+   function process (This : in out ImageAnalysis; bufferedImageArray : BufferedImage_Access_Array_Access; colorRangeInterface_Param : access ColorRangeInterface'Class) return ImageAnalysisResults_Access_Array_Access;
+   procedure process (This : in out ImageAnalysis; bufferedImageArray : BufferedImage_Access_Array_Access; colorRangeInterface_Param : access ColorRangeInterface'Class);
+   function process (bufferedImage_Param : access BufferedImage'Class; colorRangeInterface_Param : access ColorRangeInterface'Class) return ImageAnalysisResults_Access;
+   procedure process (bufferedImage_Param : access BufferedImage'Class; colorRangeInterface_Param : access ColorRangeInterface'Class);
+   procedure processColorRangeResults (imageAnalysisResults_Param : access ImageAnalysisResults'Class; colorRangeInterface_Param : access ColorRangeInterface'Class; color_Param : access Color'Class);
+   procedure processImageColorResults (imageColorResults_Param : access ImageColorResults'Class; colorRangeInterface_Param : access ColorRangeInterface'Class; color_Param : access Color'Class);
 
 end org.allbinary.media.image.analysis.ImageAnalysis_Package;
 

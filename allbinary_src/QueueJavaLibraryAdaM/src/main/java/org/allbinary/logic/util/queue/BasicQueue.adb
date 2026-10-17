@@ -36,13 +36,15 @@ package body org.allbinary.logic.util.queue.BasicQueue_Package is
    end Create;
 
    --  throws Exception
-   function offer (This : in out BasicQueue; anyType : Java_Object_Access) return Boolean is
+   function offer (This : in out BasicQueue; anyType_Param : access Java_Object'Class) return Boolean is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         This.queueVector.add (anyType);
         return True;
    end offer;
 
-   procedure remove (This : in out BasicQueue; anyType : Java_Object_Access) is
+   procedure remove (This : in out BasicQueue; anyType_Param : access Java_Object'Class) is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         This.queueVector.remove (anyType);
    end remove;
@@ -55,8 +57,8 @@ package body org.allbinary.logic.util.queue.BasicQueue_Package is
         return anyType;
    end removeLast;
 
-   procedure offer (This : in out BasicQueue; anyType : Java_Object_Access) is
-      Java_Result : constant Boolean := BasicQueue'Class (This).offer (anyType);
+   procedure offer (This : in out BasicQueue; anyType_Param : access Java_Object'Class) is
+      Java_Result : constant Boolean := BasicQueue'Class (This).offer (anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

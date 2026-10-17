@@ -40,8 +40,8 @@ package org.allbinary.animation.image.ImageAnimationSingletonInterfaceFactory_Pa
 
    type ImageAnimationSingletonInterfaceFactory is new SingletonAnimationInterfaceFactory with null record;
 
-   procedure Initialize (This : in out ImageAnimationSingletonInterfaceFactory'Class; animationInterface : Animation_Access; width : Integer; height : Integer);
-   function Create (animationInterface : Animation_Access; width : Integer; height : Integer) return ImageAnimationSingletonInterfaceFactory_Access;
+   procedure Initialize (This : in out ImageAnimationSingletonInterfaceFactory'Class; animationInterface_Param : access Animation'Class; width : Integer; height : Integer);
+   function Create (animationInterface_Param : access Animation'Class; width : Integer; height : Integer) return ImageAnimationSingletonInterfaceFactory_Access;
 
 end org.allbinary.animation.image.ImageAnimationSingletonInterfaceFactory_Package;
 

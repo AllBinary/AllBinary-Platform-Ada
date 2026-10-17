@@ -41,11 +41,11 @@ package org.allbinary.game.displayable.canvas.PopupCommandFormInputProcessor_Pac
 
    type PopupCommandFormInputProcessor is new CommandFormInputProcessor with null record;
 
-   procedure Initialize (This : in out PopupCommandFormInputProcessor'Class; gameKeyEventList : BasicArrayList_Access; playerInputId : Integer; gameCanvas : MyCanvas_Access; form : ScrollSelectionForm_Access; popupMenuInputProcessor : PopupMenuInputProcessor_Access);
-   function Create (gameKeyEventList : BasicArrayList_Access; playerInputId : Integer; gameCanvas : MyCanvas_Access; form : ScrollSelectionForm_Access; popupMenuInputProcessor : PopupMenuInputProcessor_Access) return PopupCommandFormInputProcessor_Access;
+   procedure Initialize (This : in out PopupCommandFormInputProcessor'Class; gameKeyEventList_Param : access BasicArrayList'Class; playerInputId : Integer; gameCanvas_Param : access MyCanvas'Class; form_Param : access ScrollSelectionForm'Class; popupMenuInputProcessor_Param : access PopupMenuInputProcessor'Class);
+   function Create (gameKeyEventList_Param : access BasicArrayList'Class; playerInputId : Integer; gameCanvas_Param : access MyCanvas'Class; form_Param : access ScrollSelectionForm'Class; popupMenuInputProcessor_Param : access PopupMenuInputProcessor'Class) return PopupCommandFormInputProcessor_Access;
    function processInput (This : in out PopupCommandFormInputProcessor; key : Integer) return Integer;
    procedure processInput (This : in out PopupCommandFormInputProcessor; key : Integer);
-   procedure processMotionInput (This : in out PopupCommandFormInputProcessor; motionGestureEvent : MotionGestureEvent_Access);
+   procedure processMotionInput (This : in out PopupCommandFormInputProcessor; motionGestureEvent_Param : access MotionGestureEvent'Class);
 
 end org.allbinary.game.displayable.canvas.PopupCommandFormInputProcessor_Package;
 

@@ -34,7 +34,8 @@ package body org.allbinary.game.ag.layer.weapon.mine.MineLayerCircularStaticPool
 
 
    --  throws Exception
-   procedure init (viewPositionFactoryInterface : ViewPositionFactoryInterface_Access) is
+   procedure init (viewPositionFactoryInterface_Param : access ViewPositionFactoryInterface'Class) is
+      viewPositionFactoryInterface : ViewPositionFactoryInterface_Access := ViewPositionFactoryInterface_Access (viewPositionFactoryInterface_Param);
    begin
         MineCountedPickedUpLayerInterfaceFactory_Package.init;
         MineLayerCircularStaticPool_Package.WEAPON_LAYER_CIRCULAR_STATIC_POOL.initAllBinaryLayerCircularPool (MineLayerFactory_Package.Create (viewPositionFactoryInterface), 20);

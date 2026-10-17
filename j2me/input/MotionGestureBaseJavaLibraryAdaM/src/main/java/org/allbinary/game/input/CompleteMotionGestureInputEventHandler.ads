@@ -52,11 +52,11 @@ package org.allbinary.game.input.CompleteMotionGestureInputEventHandler_Package 
    procedure Initialize (This : in out CompleteMotionGestureInputEventHandler'Class);
    function Create return CompleteMotionGestureInputEventHandler_Access;
    function getInstance return CompleteMotionGestureInputEventHandler_Access;
-   procedure addListener (This : in out CompleteMotionGestureInputEventHandler; completeMotionGestureInputEventListener : CompleteMotionGestureInputEventListener_Access);
+   procedure addListener (This : in out CompleteMotionGestureInputEventHandler; completeMotionGestureInputEventListener_Param : access CompleteMotionGestureInputEventListener'Class);
    procedure removeAllListeners (This : in out CompleteMotionGestureInputEventHandler);
-   procedure removeListener (This : in out CompleteMotionGestureInputEventHandler; eventListenerInterface : EventListenerInterface_Access);
-   procedure fireEvent (This : in out CompleteMotionGestureInputEventHandler; eventObject : AllBinaryEventObject_Access);
-   procedure process (This : in out CompleteMotionGestureInputEventHandler; eventObject : AllBinaryEventObject_Access; eventListenerInterface : EventListenerInterface_Access);
+   procedure removeListener (This : in out CompleteMotionGestureInputEventHandler; eventListenerInterface_Param : access EventListenerInterface'Class);
+   procedure fireEvent (This : in out CompleteMotionGestureInputEventHandler; eventObject_Param : access AllBinaryEventObject'Class);
+   procedure process (This : in out CompleteMotionGestureInputEventHandler; eventObject_Param : access AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface'Class);
 
 end org.allbinary.game.input.CompleteMotionGestureInputEventHandler_Package;
 

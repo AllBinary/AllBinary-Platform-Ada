@@ -18,7 +18,7 @@ package body org.allbinary.logic.system.security.licensing.LockedFeatureNotifica
    procedure Initialize_Fields (This : in out LockedFeatureNotificationUtil'Class) is
    begin
       null;
-      This.gameNotificationEvent := GameNotificationEvent_Package.Create (This'Unchecked_Access, LicenseStrings_Package.getInstance.LOCKED, SmallIntegerSingletonFactory_Package.getInstance.getAt (3), BasicColorFactory_Package.getInstance.RED, BooleanFactory_Package.getInstance.FALSE);
+      This.gameNotificationEvent := GameNotificationEvent_Package.Create (LockedFeatureNotificationUtil_Access'(This'Unchecked_Access), LicenseStrings_Package.getInstance.LOCKED, SmallIntegerSingletonFactory_Package.getInstance.getAt (3), BasicColorFactory_Package.getInstance.RED, BooleanFactory_Package.getInstance.FALSE);
    end Initialize_Fields;
 
    procedure Initialize (This : in out LockedFeatureNotificationUtil'Class) is
@@ -47,7 +47,8 @@ package body org.allbinary.logic.system.security.licensing.LockedFeatureNotifica
    end fire;
 
    --  throws Exception
-   procedure fireWithColor (This : in out LockedFeatureNotificationUtil; basicColor : BasicColor_Access) is
+   procedure fireWithColor (This : in out LockedFeatureNotificationUtil; basicColor_Param : access BasicColor'Class) is
+      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         PrimaryPlayerQueueFactory_Package.getInstance.add (ErrorSound_Package.getInstance);
         This.gameNotificationEvent.setBasicColorP (basicColor);

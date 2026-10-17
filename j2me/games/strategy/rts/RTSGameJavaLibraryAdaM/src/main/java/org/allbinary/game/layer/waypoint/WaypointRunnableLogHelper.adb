@@ -38,12 +38,14 @@ package body org.allbinary.game.layer.waypoint.WaypointRunnableLogHelper_Package
         return WaypointRunnableLogHelper_Package.instance;
    end getInstance;
 
-   procedure start (This : in out WaypointRunnableLogHelper; pathFindingLayerInterface : PathFindingLayerInterface_Access) is
+   procedure start (This : in out WaypointRunnableLogHelper; pathFindingLayerInterface_Param : access PathFindingLayerInterface'Class) is
+      pathFindingLayerInterface : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (pathFindingLayerInterface_Param);
    begin
         null;
    end start;
 
-   procedure end_Id (This : in out WaypointRunnableLogHelper; pathFindingLayerInterface : PathFindingLayerInterface_Access) is
+   procedure end_Id (This : in out WaypointRunnableLogHelper; pathFindingLayerInterface_Param : access PathFindingLayerInterface'Class) is
+      pathFindingLayerInterface : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (pathFindingLayerInterface_Param);
    begin
         null;
    end end_Id;

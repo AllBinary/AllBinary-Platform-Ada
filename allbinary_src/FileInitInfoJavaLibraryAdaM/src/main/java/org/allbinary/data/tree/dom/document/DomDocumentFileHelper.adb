@@ -35,7 +35,8 @@ package body org.allbinary.data.tree.dom.document.DomDocumentFileHelper_Package 
    end Create;
 
    --  throws Exception
-   function createDocument (xmlFile : AbFile_Access) return Document_Access is
+   function createDocument (xmlFile_Param : access AbFile'Class) return Document_Access is
+      xmlFile : AbFile_Access := AbFile_Access (xmlFile_Param);
    begin
         begin
             return DomDocumentHelper_Package.create (AbFileInputStream_Package.Create (xmlFile));
@@ -50,7 +51,9 @@ package body org.allbinary.data.tree.dom.document.DomDocumentFileHelper_Package 
    end createDocument;
 
    --  throws Exception
-   procedure save (file : AbFile_Access; document : Document_Access) is
+   procedure save (file_Param : access AbFile'Class; document_Param : access Document'Class) is
+      file : AbFile_Access := AbFile_Access (file_Param);
+      document : Document_Access := Document_Access (document_Param);
       dataOutputStream : AbDataOutputStream_Access;
       copyTransformerFactory : TransformerFactory_Access;
       copyTransformer : Transformer_Access;
@@ -84,8 +87,8 @@ package body org.allbinary.data.tree.dom.document.DomDocumentFileHelper_Package 
         end;
    end save;
 
-   procedure createDocument (xmlFile : AbFile_Access) is
-      Java_Result : constant Document_Access := createDocument (xmlFile);
+   procedure createDocument (xmlFile_Param : access AbFile'Class) is
+      Java_Result : constant Document_Access := createDocument (xmlFile_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

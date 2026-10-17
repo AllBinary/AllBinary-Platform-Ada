@@ -25,20 +25,22 @@ package body org.allbinary.business.context.AbContext_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AbContext'Class; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) is
+   procedure Initialize (This : in out AbContext'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+      propertiesHashMap : HashMap_Access := HashMap_Access (propertiesHashMap_Param);
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
    begin
       Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (To_Unbounded_String ("Properties HashMap: ") & propertiesHashMap.toString, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+            This.logUtil.putF (To_Unbounded_String ("Properties HashMap: ") & propertiesHashMap.toString, AbContext_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
         This.propertiesHashMap := propertiesHashMap;
         This.pageContext := pageContext;
    end Initialize;
 
-   function Create (propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return AbContext_Access is
+   function Create (propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return AbContext_Access is
       This : constant AbContext_Access := new AbContext;
    begin
-      AbContext_Package.Initialize (This.all, propertiesHashMap, pageContext);
+      AbContext_Package.Initialize (This.all, propertiesHashMap_Param, pageContext_Param);
       return This;
    end Create;
 

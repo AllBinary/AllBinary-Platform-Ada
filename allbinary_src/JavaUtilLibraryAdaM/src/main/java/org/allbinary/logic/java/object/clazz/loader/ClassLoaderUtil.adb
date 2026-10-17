@@ -35,7 +35,8 @@ package body org.allbinary.logic.java.anyType.clazz.loader.ClassLoaderUtil_Packa
    end Create;
 
    --  throws Exception
-   function getName (anyType : Java_Object_Access) return Unbounded_String is
+   function getName (anyType_Param : access Java_Object'Class) return Unbounded_String is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
       classLoader : ClassLoader_Access;
    begin
         classLoader := anyType.all'Tag.getClassLoader;
@@ -45,8 +46,8 @@ package body org.allbinary.logic.java.anyType.clazz.loader.ClassLoaderUtil_Packa
         Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Unable to get ClassLoader")));
    end getName;
 
-   procedure getName (anyType : Java_Object_Access) is
-      Java_Result : constant Unbounded_String := getName (anyType);
+   procedure getName (anyType_Param : access Java_Object'Class) is
+      Java_Result : constant Unbounded_String := getName (anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

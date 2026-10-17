@@ -40,12 +40,12 @@ package org.allbinary.game.displayable.canvas.InGameMenuBehavior_Package is
    procedure Initialize (This : in out InGameMenuBehavior'Class);
    function Create return InGameMenuBehavior_Access;
    function getInstance return InGameMenuBehavior_Access;
-   procedure onDisplayChangeEvent (This : in out InGameMenuBehavior; allBinaryGameCanvas : AllBinaryGameCanvas_Access; displayChangeEvent : DisplayChangeEvent_Access);
-   procedure initSpecialPaint (This : in out InGameMenuBehavior; allBinaryGameCanvas : AllBinaryGameCanvas_Access);
-   procedure initMenu (This : in out InGameMenuBehavior; allBinaryGameCanvas : AllBinaryGameCanvas_Access);
-   procedure updateMenu (This : in out InGameMenuBehavior; allBinaryGameCanvas : AllBinaryGameCanvas_Access);
-   procedure popupMenu (This : in out InGameMenuBehavior; allBinaryGameCanvas : AllBinaryGameCanvas_Access);
-   procedure closeMenu (This : in out InGameMenuBehavior; allBinaryGameCanvas : AllBinaryGameCanvas_Access);
+   procedure onDisplayChangeEvent (This : in out InGameMenuBehavior; allBinaryGameCanvas_Param : access AllBinaryGameCanvas'Class; displayChangeEvent_Param : access DisplayChangeEvent'Class);
+   procedure initSpecialPaint (This : in out InGameMenuBehavior; allBinaryGameCanvas_Param : access AllBinaryGameCanvas'Class);
+   procedure initMenu (This : in out InGameMenuBehavior; allBinaryGameCanvas_Param : access AllBinaryGameCanvas'Class);
+   procedure updateMenu (This : in out InGameMenuBehavior; allBinaryGameCanvas_Param : access AllBinaryGameCanvas'Class);
+   procedure popupMenu (This : in out InGameMenuBehavior; allBinaryGameCanvas_Param : access AllBinaryGameCanvas'Class);
+   procedure closeMenu (This : in out InGameMenuBehavior; allBinaryGameCanvas_Param : access AllBinaryGameCanvas'Class);
 
 end org.allbinary.game.displayable.canvas.InGameMenuBehavior_Package;
 

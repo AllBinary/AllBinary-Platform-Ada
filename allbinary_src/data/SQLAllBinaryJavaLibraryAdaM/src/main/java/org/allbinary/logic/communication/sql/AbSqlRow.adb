@@ -36,16 +36,17 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AbSqlRow'Class; databaseConnectionInfoInterface : DbConnectionInfo_Access) is
+   procedure Initialize (This : in out AbSqlRow'Class; databaseConnectionInfoInterface_Param : access DbConnectionInfo'Class) is
+      databaseConnectionInfoInterface : DbConnectionInfo_Access := DbConnectionInfo_Access (databaseConnectionInfoInterface_Param);
    begin
         AbSqlColumn_Package.Initialize (This, databaseConnectionInfoInterface);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (databaseConnectionInfoInterface : DbConnectionInfo_Access) return AbSqlRow_Access is
+   function Create (databaseConnectionInfoInterface_Param : access DbConnectionInfo'Class) return AbSqlRow_Access is
       This : constant AbSqlRow_Access := new AbSqlRow;
    begin
-      AbSqlRow_Package.Initialize (This.all, databaseConnectionInfoInterface);
+      AbSqlRow_Package.Initialize (This.all, databaseConnectionInfoInterface_Param);
       return This;
    end Create;
 
@@ -58,7 +59,8 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
         end if;
    end getValue;
 
-   procedure updateWhere (This : in out AbSqlRow; key : Unbounded_String; value : Unbounded_String; updatedKeyValuePairs : HashMap_Access) is
+   procedure updateWhere (This : in out AbSqlRow; key : Unbounded_String; value : Unbounded_String; updatedKeyValuePairs_Param : access HashMap'Class) is
+      updatedKeyValuePairs : HashMap_Access := HashMap_Access (updatedKeyValuePairs_Param);
       stringBuffer : StringMaker_Access;
       keyArray : Java_Object_Access_Array_Access;
       size : Integer;
@@ -99,7 +101,7 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
             sqlStatement := stringBuffer.toString;
             This.executeSQLStatement (sqlStatement);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.putF (Java_Image (This.SUCCESS_SQL_STATEMENT) & sqlStatement, This'Unchecked_Access, This.METHOD_UPDATE_WHERE);
+                This.logUtil.putF (Java_Image (This.SUCCESS_SQL_STATEMENT) & sqlStatement, AbSqlRow_Access'(This'Unchecked_Access), This.METHOD_UPDATE_WHERE);
             end if;
         exception
             when Java_Occurrence : others =>
@@ -107,14 +109,16 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
-                This.logUtil.put ((This.FAILED_SQL_STATEMENT) + (stringBuffer), This'Unchecked_Access, This.METHOD_UPDATE_WHERE, e);
+                This.logUtil.put ((This.FAILED_SQL_STATEMENT) + (stringBuffer), AbSqlRow_Access'(This'Unchecked_Access), This.METHOD_UPDATE_WHERE, e);
             end if;
                 end;
         end;
    end updateWhere;
 
    --  throws Exception
-   procedure updateWhere (This : in out AbSqlRow; whereKeyValuePairs : HashMap_Access; updatedKeyValuePairs : HashMap_Access) is
+   procedure updateWhere (This : in out AbSqlRow; whereKeyValuePairs_Param : access HashMap'Class; updatedKeyValuePairs_Param : access HashMap'Class) is
+      whereKeyValuePairs : HashMap_Access := HashMap_Access (whereKeyValuePairs_Param);
+      updatedKeyValuePairs : HashMap_Access := HashMap_Access (updatedKeyValuePairs_Param);
       stringBuffer : StringMaker_Access;
       keyArray : Java_Object_Access_Array_Access;
       size : Integer;
@@ -141,7 +145,7 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
                 stringBuffer.append (columnName);
                 stringBuffer.append (This.EQUAL_QUOTE);
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                    This.logUtil.putF (This.COLUMN_NAME_LABEL & columnName, This'Unchecked_Access, This.METHOD_UPDATE_WHERE);
+                    This.logUtil.putF (This.COLUMN_NAME_LABEL & columnName, AbSqlRow_Access'(This'Unchecked_Access), This.METHOD_UPDATE_WHERE);
                 end if;
                 columnValue := Unbounded_String (updatedKeyValuePairs.get (columnName));
                 if (columnValue) = (Null_Unbounded_String) then
@@ -175,7 +179,7 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
             sqlStatement := stringBuffer.toString;
             This.executeSQLStatement (sqlStatement);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.putF (Java_Image (This.SUCCESS_SQL_STATEMENT) & sqlStatement, This'Unchecked_Access, This.METHOD_UPDATE_WHERE);
+                This.logUtil.putF (Java_Image (This.SUCCESS_SQL_STATEMENT) & sqlStatement, AbSqlRow_Access'(This'Unchecked_Access), This.METHOD_UPDATE_WHERE);
             end if;
         exception
             when Java_Occurrence : others =>
@@ -183,7 +187,7 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
-                This.logUtil.put ((This.FAILED_SQL_STATEMENT) + (stringBuffer), This'Unchecked_Access, This.METHOD_UPDATE_WHERE, e);
+                This.logUtil.put ((This.FAILED_SQL_STATEMENT) + (stringBuffer), AbSqlRow_Access'(This'Unchecked_Access), This.METHOD_UPDATE_WHERE, e);
             end if;
             Java_Throw (e);
                 end;
@@ -207,7 +211,7 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
             sqlStatement := stringBuffer.toString;
             This.executeSQLStatement (sqlStatement);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.putF (Java_Image (This.SUCCESS_SQL_STATEMENT) & sqlStatement, This'Unchecked_Access, This.METHOD_DELETE_WHERE);
+                This.logUtil.putF (Java_Image (This.SUCCESS_SQL_STATEMENT) & sqlStatement, AbSqlRow_Access'(This'Unchecked_Access), This.METHOD_DELETE_WHERE);
             end if;
         exception
             when Java_Occurrence : others =>
@@ -215,13 +219,14 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
-                This.logUtil.put (Java_Image (This.FAILED_SQL_STATEMENT) & stringBuffer.toString, This'Unchecked_Access, This.METHOD_DELETE_WHERE, e);
+                This.logUtil.put (Java_Image (This.FAILED_SQL_STATEMENT) & stringBuffer.toString, AbSqlRow_Access'(This'Unchecked_Access), This.METHOD_DELETE_WHERE, e);
             end if;
                 end;
         end;
    end deleteWhere;
 
-   procedure deleteWhere (This : in out AbSqlRow; keysAndValues : HashMap_Access) is
+   procedure deleteWhere (This : in out AbSqlRow; keysAndValues_Param : access HashMap'Class) is
+      keysAndValues : HashMap_Access := HashMap_Access (keysAndValues_Param);
       stringBuffer : StringMaker_Access;
       set : Set_Access;
       keyArray : Java_Object_Access_Array_Access;
@@ -254,7 +259,7 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
             sqlStatement := stringBuffer.toString;
             This.executeSQLStatement (sqlStatement);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.putF (Java_Image (This.SUCCESS_SQL_STATEMENT) & sqlStatement, This'Unchecked_Access, This.METHOD_DELETE_WHERE);
+                This.logUtil.putF (Java_Image (This.SUCCESS_SQL_STATEMENT) & sqlStatement, AbSqlRow_Access'(This'Unchecked_Access), This.METHOD_DELETE_WHERE);
             end if;
         exception
             when Java_Occurrence : others =>
@@ -262,13 +267,14 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
-                This.logUtil.put (Java_Image (This.FAILED_SQL_STATEMENT) & stringBuffer.toString, This'Unchecked_Access, This.METHOD_DELETE_WHERE, e);
+                This.logUtil.put (Java_Image (This.FAILED_SQL_STATEMENT) & stringBuffer.toString, AbSqlRow_Access'(This'Unchecked_Access), This.METHOD_DELETE_WHERE, e);
             end if;
                 end;
         end;
    end deleteWhere;
 
-   procedure insert (This : in out AbSqlRow; values : BasicArrayList_Access) is
+   procedure insert (This : in out AbSqlRow; values_Param : access BasicArrayList'Class) is
+      values : BasicArrayList_Access := BasicArrayList_Access (values_Param);
       stringBuffer : StringMaker_Access;
       value : Unbounded_String;
       i : Integer;
@@ -292,7 +298,7 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
             sqlStatement := stringBuffer.toString;
             This.executeSQLStatement (sqlStatement);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.putF (Java_Image (This.SUCCESS_SQL_STATEMENT) & sqlStatement, This'Unchecked_Access, This.INSERT);
+                This.logUtil.putF (Java_Image (This.SUCCESS_SQL_STATEMENT) & sqlStatement, AbSqlRow_Access'(This'Unchecked_Access), This.INSERT);
             end if;
         exception
             when Java_Occurrence : others =>
@@ -300,13 +306,14 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
-                This.logUtil.put (Java_Image (This.FAILED_SQL_STATEMENT) & stringBuffer.toString, This'Unchecked_Access, INSERT, e);
+                This.logUtil.put (Java_Image (This.FAILED_SQL_STATEMENT) & stringBuffer.toString, AbSqlRow_Access'(This'Unchecked_Access), INSERT, e);
             end if;
                 end;
         end;
    end insert;
 
-   function getRow (This : in out AbSqlRow; keysAndValues : HashMap_Access) return HashMap_Access is
+   function getRow (This : in out AbSqlRow; keysAndValues_Param : access HashMap'Class) return HashMap_Access is
+      keysAndValues : HashMap_Access := HashMap_Access (keysAndValues_Param);
       stringBuffer : StringMaker_Access;
       result : HashMap_Access;
       set : Set_Access;
@@ -344,7 +351,7 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
             end loop;
             sqlStatement := stringBuffer.toString;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.putF (Java_Image (This.sqlStrings.SQL_STATEMENT_LABEL) & sqlStatement, This'Unchecked_Access, This.METHOD_GET_ROW);
+                This.logUtil.putF (Java_Image (This.sqlStrings.SQL_STATEMENT_LABEL) & sqlStatement, AbSqlRow_Access'(This'Unchecked_Access), This.METHOD_GET_ROW);
             end if;
             rset := This.executeSQLStatement (sqlStatement);
             resultSetMetaData := rset.getMetaData;
@@ -357,12 +364,12 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
                     result.put (columnName, field);
                 end loop;
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                    This.logUtil.putF (This.ROW_VALUE_LABEL & result.toString, This'Unchecked_Access, This.METHOD_GET_ROW);
+                    This.logUtil.putF (This.ROW_VALUE_LABEL & result.toString, AbSqlRow_Access'(This'Unchecked_Access), This.METHOD_GET_ROW);
                 end if;
                 return result;
             end loop;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
-                This.logUtil.putF (This.NO_RESULTS_IN_RESULT_SET, This'Unchecked_Access, This.METHOD_GET_ROW);
+                This.logUtil.putF (This.NO_RESULTS_IN_RESULT_SET, AbSqlRow_Access'(This'Unchecked_Access), This.METHOD_GET_ROW);
             end if;
             return null;
         exception
@@ -371,19 +378,21 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
-                This.logUtil.put ((This.FAILED_SQL_STATEMENT) + (stringBuffer), This'Unchecked_Access, This.METHOD_GET_ROW, e);
+                This.logUtil.put ((This.FAILED_SQL_STATEMENT) + (stringBuffer), AbSqlRow_Access'(This'Unchecked_Access), This.METHOD_GET_ROW, e);
             end if;
             return null;
                 end;
         end;
    end getRow;
 
-   function getRows (This : in out AbSqlRow; keysAndValues : HashMap_Access) return BasicArrayList_Access is
+   function getRows (This : in out AbSqlRow; keysAndValues_Param : access HashMap'Class) return BasicArrayList_Access is
+      keysAndValues : HashMap_Access := HashMap_Access (keysAndValues_Param);
    begin
         return This.getRows (keysAndValues, StringUtil_Package.getInstance.EMPTY_STRING);
    end getRows;
 
-   function getRows (This : in out AbSqlRow; keysAndValues : HashMap_Access; more : Unbounded_String) return BasicArrayList_Access is
+   function getRows (This : in out AbSqlRow; keysAndValues_Param : access HashMap'Class; more : Unbounded_String) return BasicArrayList_Access is
+      keysAndValues : HashMap_Access := HashMap_Access (keysAndValues_Param);
       stringBuffer : StringMaker_Access;
       rows : BasicArrayList_Access;
       set : Set_Access;
@@ -422,7 +431,7 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
                 end if;
             end loop;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.putF ((This.sqlStrings.SQL_STATEMENT_LABEL) + (stringBuffer), This'Unchecked_Access, This.METHOD_GET_ROWS);
+                This.logUtil.putF ((This.sqlStrings.SQL_STATEMENT_LABEL) + (stringBuffer), AbSqlRow_Access'(This'Unchecked_Access), This.METHOD_GET_ROWS);
             end if;
             stringBuffer.append (more);
             sqlStatement := stringBuffer.toString;
@@ -438,7 +447,7 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
                 end loop;
                 resultAsString := result.toString;
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                    This.logUtil.putF (This.GET_ROW & resultAsString, This'Unchecked_Access, This.METHOD_GET_ROWS);
+                    This.logUtil.putF (This.GET_ROW & resultAsString, AbSqlRow_Access'(This'Unchecked_Access), This.METHOD_GET_ROWS);
                 end if;
                 rows.add (result);
             end loop;
@@ -449,7 +458,7 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
-                This.logUtil.put ((This.FAILED_SQL_STATEMENT) + (stringBuffer), This'Unchecked_Access, This.METHOD_GET_ROWS, e);
+                This.logUtil.put ((This.FAILED_SQL_STATEMENT) + (stringBuffer), AbSqlRow_Access'(This'Unchecked_Access), This.METHOD_GET_ROWS, e);
             end if;
             return null;
                 end;
@@ -473,7 +482,7 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
         stringBuffer.append (This.getTableName);
         begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.putF ((This.sqlStrings.SQL_STATEMENT_LABEL) + (stringBuffer), This'Unchecked_Access, This.METHOD_GET_ALL_ROWS);
+                This.logUtil.putF ((This.sqlStrings.SQL_STATEMENT_LABEL) + (stringBuffer), AbSqlRow_Access'(This'Unchecked_Access), This.METHOD_GET_ALL_ROWS);
             end if;
             rows := BasicArrayListD_Package.Create;
             sqlStatement := stringBuffer.toString;
@@ -488,7 +497,7 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
                     result.put (columnName, field);
                 end loop;
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                    This.logUtil.putF (This.ROW_VALUES_LABEL & result.toString, This'Unchecked_Access, This.METHOD_GET_ALL_ROWS);
+                    This.logUtil.putF (This.ROW_VALUES_LABEL & result.toString, AbSqlRow_Access'(This'Unchecked_Access), This.METHOD_GET_ALL_ROWS);
                 end if;
                 rows.add (result);
             end loop;
@@ -499,14 +508,15 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
-                This.logUtil.put ((This.FAILED_SQL_STATEMENT) + (stringBuffer), This'Unchecked_Access, This.METHOD_GET_ALL_ROWS, e);
+                This.logUtil.put ((This.FAILED_SQL_STATEMENT) + (stringBuffer), AbSqlRow_Access'(This'Unchecked_Access), This.METHOD_GET_ALL_ROWS, e);
             end if;
             return null;
                 end;
         end;
    end getAllRows;
 
-   function getRowsWhereBetween (This : in out AbSqlRow; whereKeyValuePairs : HashMap_Access; betweenColumn : Unbounded_String; smallest : Unbounded_String; largest : Unbounded_String) return BasicArrayList_Access is
+   function getRowsWhereBetween (This : in out AbSqlRow; whereKeyValuePairs_Param : access HashMap'Class; betweenColumn : Unbounded_String; smallest : Unbounded_String; largest : Unbounded_String) return BasicArrayList_Access is
+      whereKeyValuePairs : HashMap_Access := HashMap_Access (whereKeyValuePairs_Param);
       stringBuffer : StringMaker_Access;
       rows : BasicArrayList_Access;
       set : Set_Access;
@@ -555,7 +565,7 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
             stringBuffer.append (This.sqlStrings.CLOSE_QUOTE);
             sqlStatement := stringBuffer.toString;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.putF (Java_Image (This.sqlStrings.SQL_STATEMENT_LABEL) & sqlStatement, This'Unchecked_Access, This.METHOD_GET_ROWS_WHERE_BETWEEN);
+                This.logUtil.putF (Java_Image (This.sqlStrings.SQL_STATEMENT_LABEL) & sqlStatement, AbSqlRow_Access'(This'Unchecked_Access), This.METHOD_GET_ROWS_WHERE_BETWEEN);
             end if;
             rset := This.executeSQLStatement (sqlStatement);
             resultSetMetaData := rset.getMetaData;
@@ -574,7 +584,7 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
                     result.put (columnName, field);
                 end loop;
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                    This.logUtil.putF (This.ROW_VALUE_LABEL & result.toString, This'Unchecked_Access, This.METHOD_GET_ROWS_WHERE_BETWEEN);
+                    This.logUtil.putF (This.ROW_VALUE_LABEL & result.toString, AbSqlRow_Access'(This'Unchecked_Access), This.METHOD_GET_ROWS_WHERE_BETWEEN);
                 end if;
                 rows.add (result);
             end loop;
@@ -585,7 +595,7 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
-                This.logUtil.put ((This.FAILED_SQL_STATEMENT) + (stringBuffer), This'Unchecked_Access, This.METHOD_GET_ROWS_WHERE_BETWEEN, e);
+                This.logUtil.put ((This.FAILED_SQL_STATEMENT) + (stringBuffer), AbSqlRow_Access'(This'Unchecked_Access), This.METHOD_GET_ROWS_WHERE_BETWEEN, e);
             end if;
             return null;
                 end;
@@ -622,7 +632,7 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
             stringBuffer.append (This.sqlStrings.CLOSE_QUOTE);
             sqlStatement := stringBuffer.toString;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.putF (Java_Image (This.sqlStrings.SQL_STATEMENT_LABEL) & sqlStatement, This'Unchecked_Access, This.METHOD_GET_ROWS_WHERE_BETWEEN);
+                This.logUtil.putF (Java_Image (This.sqlStrings.SQL_STATEMENT_LABEL) & sqlStatement, AbSqlRow_Access'(This'Unchecked_Access), This.METHOD_GET_ROWS_WHERE_BETWEEN);
             end if;
             rset := This.executeSQLStatement (sqlStatement);
             resultSetMetaData := rset.getMetaData;
@@ -641,7 +651,7 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
                     result.put (columnName, field);
                 end loop;
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                    This.logUtil.putF (This.ROW_VALUE_LABEL & result.toString, This'Unchecked_Access, This.METHOD_GET_ROWS_WHERE_BETWEEN);
+                    This.logUtil.putF (This.ROW_VALUE_LABEL & result.toString, AbSqlRow_Access'(This'Unchecked_Access), This.METHOD_GET_ROWS_WHERE_BETWEEN);
                 end if;
                 rows.add (result);
             end loop;
@@ -652,7 +662,7 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
-                This.logUtil.put ((This.FAILED_SQL_STATEMENT) + (stringBuffer), This'Unchecked_Access, This.METHOD_GET_ROWS_WHERE_BETWEEN, e);
+                This.logUtil.put ((This.FAILED_SQL_STATEMENT) + (stringBuffer), AbSqlRow_Access'(This'Unchecked_Access), This.METHOD_GET_ROWS_WHERE_BETWEEN, e);
             end if;
             return null;
                 end;
@@ -666,29 +676,29 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
       null;
    end getValue;
 
-   procedure getRow (This : in out AbSqlRow; keysAndValues : HashMap_Access) is
-      Java_Result : constant HashMap_Access := AbSqlRow'Class (This).getRow (keysAndValues);
+   procedure getRow (This : in out AbSqlRow; keysAndValues_Param : access HashMap'Class) is
+      Java_Result : constant HashMap_Access := AbSqlRow'Class (This).getRow (keysAndValues_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getRow;
 
-   procedure getRows (This : in out AbSqlRow; keysAndValues : HashMap_Access) is
-      Java_Result : constant BasicArrayList_Access := AbSqlRow'Class (This).getRows (keysAndValues);
+   procedure getRows (This : in out AbSqlRow; keysAndValues_Param : access HashMap'Class) is
+      Java_Result : constant BasicArrayList_Access := AbSqlRow'Class (This).getRows (keysAndValues_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getRows;
 
-   procedure getRows (This : in out AbSqlRow; keysAndValues : HashMap_Access; more : Unbounded_String) is
-      Java_Result : constant BasicArrayList_Access := AbSqlRow'Class (This).getRows (keysAndValues, more);
+   procedure getRows (This : in out AbSqlRow; keysAndValues_Param : access HashMap'Class; more : Unbounded_String) is
+      Java_Result : constant BasicArrayList_Access := AbSqlRow'Class (This).getRows (keysAndValues_Param, more);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getRows;
 
-   procedure getRowsWhereBetween (This : in out AbSqlRow; whereKeyValuePairs : HashMap_Access; betweenColumn : Unbounded_String; smallest : Unbounded_String; largest : Unbounded_String) is
-      Java_Result : constant BasicArrayList_Access := AbSqlRow'Class (This).getRowsWhereBetween (whereKeyValuePairs, betweenColumn, smallest, largest);
+   procedure getRowsWhereBetween (This : in out AbSqlRow; whereKeyValuePairs_Param : access HashMap'Class; betweenColumn : Unbounded_String; smallest : Unbounded_String; largest : Unbounded_String) is
+      Java_Result : constant BasicArrayList_Access := AbSqlRow'Class (This).getRowsWhereBetween (whereKeyValuePairs_Param, betweenColumn, smallest, largest);
       pragma Unreferenced (Java_Result);
    begin
       null;

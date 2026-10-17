@@ -63,13 +63,13 @@ package org.allbinary.game.input.mapping.InputMapping_Package is
    function isDefaultNew (This : in out InputMapping) return Boolean;
    function getDefault (This : in out InputMapping) return InputToGameKeyMapping_Access;
    procedure removeAll (This : in out InputMapping);
-   procedure remove (This : in out InputMapping; input : Input_Access; mappedToInput : Input_Access);
-   procedure addMapping (This : in out InputMapping; inputToGameKeyMapping : InputToGameKeyMapping_Access);
-   procedure add (This : in out InputMapping; input : Input_Access; mappedToInput : Input_Access);
-   function isMapped (This : in out InputMapping; input : Input_Access) return Boolean;
-   procedure isMapped (This : in out InputMapping; input : Input_Access);
-   function getMappedInput (This : in out InputMapping; id : Input_Access) return BasicArrayList_Access;
-   procedure getMappedInput (This : in out InputMapping; id : Input_Access);
+   procedure remove (This : in out InputMapping; input_Param : access Input'Class; mappedToInput_Param : access Input'Class);
+   procedure addMapping (This : in out InputMapping; inputToGameKeyMapping_Param : access InputToGameKeyMapping'Class);
+   procedure add (This : in out InputMapping; input_Param : access Input'Class; mappedToInput_Param : access Input'Class);
+   function isMapped (This : in out InputMapping; input_Param : access Input'Class) return Boolean;
+   procedure isMapped (This : in out InputMapping; input_Param : access Input'Class);
+   function getMappedInput (This : in out InputMapping; id_Param : access Input'Class) return BasicArrayList_Access;
+   procedure getMappedInput (This : in out InputMapping; id_Param : access Input'Class);
    function getHashtable (This : in out InputMapping) return ABHashtable_Access;
 
 end org.allbinary.game.input.mapping.InputMapping_Package;

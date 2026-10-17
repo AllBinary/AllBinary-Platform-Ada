@@ -47,7 +47,8 @@ package body org.allbinary.media.graphics.geography.map.racetrack.drop.RaceTrack
    end init;
 
    --  throws Exception
-   function isDropAllowedAt (This : in out RaceTrackDropCellPositionGenerator; geographicMapCellPosition : GeographicMapCellPosition_Access) return Boolean is
+   function isDropAllowedAt (This : in out RaceTrackDropCellPositionGenerator; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return Boolean is
+      geographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
       raceTrackGeographicMapCellType : RaceTrackGeographicMapCellType_Access;
       raceTrackGeographicMapCellTypeFactory : RaceTrackGeographicMapCellTypeFactory_Access;
    begin
@@ -60,7 +61,9 @@ package body org.allbinary.media.graphics.geography.map.racetrack.drop.RaceTrack
    end isDropAllowedAt;
 
    --  throws Exception
-   procedure update (This : in out RaceTrackDropCellPositionGenerator; allBinaryGameLayerManager : AllBinaryGameLayerManager_Access; geographicMapInterface : BasicGeographicMap_Access) is
+   procedure update (This : in out RaceTrackDropCellPositionGenerator; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class; geographicMapInterface_Param : access BasicGeographicMap'Class) is
+      allBinaryGameLayerManager : AllBinaryGameLayerManager_Access := AllBinaryGameLayerManager_Access (allBinaryGameLayerManager_Param);
+      geographicMapInterface : BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
       baseRaceTrackGeographicMap : BaseRaceTrackGeographicMap_Access;
       roadGeographicMapCellHistory : GeographicMapCellHistory_Access;
       trackedList : BasicArrayList_Access;
@@ -104,7 +107,8 @@ package body org.allbinary.media.graphics.geography.map.racetrack.drop.RaceTrack
    end update;
 
    --  throws Exception
-   procedure processTick (This : in out RaceTrackDropCellPositionGenerator; allBinaryLayerManager : AllBinaryLayerManager_Access) is
+   procedure processTick (This : in out RaceTrackDropCellPositionGenerator; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class) is
+      allBinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
       index : Integer;
    begin
         if This.timeDelayHelper.isTime (GameTickTimeDelayHelperFactory_Package.getInstance.startTime) then
@@ -114,13 +118,14 @@ package body org.allbinary.media.graphics.geography.map.racetrack.drop.RaceTrack
    end processTick;
 
    --  throws Exception
-   procedure drop (This : in out RaceTrackDropCellPositionGenerator; allBinaryLayerManager : AllBinaryLayerManager_Access; index : Integer) is
+   procedure drop (This : in out RaceTrackDropCellPositionGenerator; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class; index : Integer) is
+      allBinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
    begin
         Java_Throw (Java_New_Exception ("Exception", CommonStrings_Package.getInstance.NOT_IMPLEMENTED));
    end drop;
 
-   procedure isDropAllowedAt (This : in out RaceTrackDropCellPositionGenerator; geographicMapCellPosition : GeographicMapCellPosition_Access) is
-      Java_Result : constant Boolean := RaceTrackDropCellPositionGenerator'Class (This).isDropAllowedAt (geographicMapCellPosition);
+   procedure isDropAllowedAt (This : in out RaceTrackDropCellPositionGenerator; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is
+      Java_Result : constant Boolean := RaceTrackDropCellPositionGenerator'Class (This).isDropAllowedAt (geographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

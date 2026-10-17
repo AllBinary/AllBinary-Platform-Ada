@@ -49,12 +49,12 @@ package org.allbinary.game.identification.CompositeGroup_Package is
       list : BasicArrayList_Access;
    end record;
 
-   procedure Initialize (This : in out CompositeGroup'Class; groupInterface : Group_Access);
-   function Create (groupInterface : Group_Access) return CompositeGroup_Access;
+   procedure Initialize (This : in out CompositeGroup'Class; groupInterface_Param : access Group'Class);
+   function Create (groupInterface_Param : access Group'Class) return CompositeGroup_Access;
    procedure clear (This : in out CompositeGroup);
-   procedure add (This : in out CompositeGroup; groupInterface : Group_Access);
-   function isInGroup (This : in out CompositeGroup; groupInterface : Group_Access) return Boolean;
-   procedure isInGroup (This : in out CompositeGroup; groupInterface : Group_Access);
+   procedure add (This : in out CompositeGroup; groupInterface_Param : access Group'Class);
+   function isInGroup (This : in out CompositeGroup; groupInterface_Param : access Group'Class) return Boolean;
+   procedure isInGroup (This : in out CompositeGroup; groupInterface_Param : access Group'Class);
    function getGroup (This : in out CompositeGroup) return Group_Access;
 
 end org.allbinary.game.identification.CompositeGroup_Package;

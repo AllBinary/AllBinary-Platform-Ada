@@ -60,8 +60,8 @@ package org.allbinary.animation.caption.CaptionIndexedAnimation_Package is
       player : Player_Access;
    end record;
 
-   procedure Initialize (This : in out CaptionIndexedAnimation'Class; animationInterface : Animation_Access; movieIndexedAnimationInterface : IndexedAnimation_Access; player : Player_Access; captionDx : Integer; captionDy : Integer; dx : Integer; dy : Integer; time : Integer; animationBehavior : AnimationBehavior_Access);
-   function Create (animationInterface : Animation_Access; movieIndexedAnimationInterface : IndexedAnimation_Access; player : Player_Access; captionDx : Integer; captionDy : Integer; dx : Integer; dy : Integer; time : Integer; animationBehavior : AnimationBehavior_Access) return CaptionIndexedAnimation_Access;
+   procedure Initialize (This : in out CaptionIndexedAnimation'Class; animationInterface_Param : access Animation'Class; movieIndexedAnimationInterface_Param : access IndexedAnimation'Class; player_Param : access Player'Class; captionDx : Integer; captionDy : Integer; dx : Integer; dy : Integer; time : Integer; animationBehavior_Param : access AnimationBehavior'Class);
+   function Create (animationInterface_Param : access Animation'Class; movieIndexedAnimationInterface_Param : access IndexedAnimation'Class; player_Param : access Player'Class; captionDx : Integer; captionDy : Integer; dx : Integer; dy : Integer; time : Integer; animationBehavior_Param : access AnimationBehavior'Class) return CaptionIndexedAnimation_Access;
    procedure nextFrame (This : in out CaptionIndexedAnimation);
    function isLastFrame (This : in out CaptionIndexedAnimation) return Boolean;
    procedure previousFrame (This : in out CaptionIndexedAnimation);
@@ -70,8 +70,8 @@ package org.allbinary.animation.caption.CaptionIndexedAnimation_Package is
    function getSize (This : in out CaptionIndexedAnimation) return Integer;
    procedure setSequence (This : in out CaptionIndexedAnimation; sequence : Integer_Array_Access);
    function getSequence (This : in out CaptionIndexedAnimation) return Integer_Array_Access;
-   procedure paintXY (This : in out CaptionIndexedAnimation; graphics : Graphics_Access; x : Integer; y : Integer);
-   procedure paintThreedXYZ (This : in out CaptionIndexedAnimation; graphics : Graphics_Access; x : Integer; y : Integer; z : Integer);
+   procedure paintXY (This : in out CaptionIndexedAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
+   procedure paintThreedXYZ (This : in out CaptionIndexedAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer; z : Integer);
 
 end org.allbinary.animation.caption.CaptionIndexedAnimation_Package;
 

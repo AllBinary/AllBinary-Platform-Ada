@@ -69,8 +69,8 @@ package admin.taghelpers.BasicOptionItemsRequestHelper_Package is
       lastModified : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out BasicOptionItemsRequestHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access);
-   function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return BasicOptionItemsRequestHelper_Access;
+   procedure Initialize (This : in out BasicOptionItemsRequestHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
+   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return BasicOptionItemsRequestHelper_Access;
    procedure getFormData (This : in out BasicOptionItemsRequestHelper);
    function getHashMap (This : in out BasicOptionItemsRequestHelper) return HashMap_Access;
    function insert (This : in out BasicOptionItemsRequestHelper) return Unbounded_String;

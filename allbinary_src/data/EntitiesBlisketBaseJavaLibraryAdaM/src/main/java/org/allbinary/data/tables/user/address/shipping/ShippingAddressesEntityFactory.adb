@@ -52,7 +52,7 @@ package body org.allbinary.data.tables.user.address.shipping.ShippingAddressesEn
                 begin
             commonStrings := CommonStrings_Package.getInstance;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.ENTITYFACTORYERROR) then
-                This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("getShippingAddressesEntityInstance()"), e);
+                This.logUtil.put (commonStrings.EXCEPTION_Id, ShippingAddressesEntityFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getShippingAddressesEntityInstance()"), e);
             end if;
             return null;
                 end;

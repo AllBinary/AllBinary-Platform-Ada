@@ -74,15 +74,15 @@ package org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package is
 
    procedure Initialize (This : in out MotionGestureRecognizer'Class; id : Integer);
    function Create (id : Integer) return MotionGestureRecognizer_Access;
-   function processPressedMotionEvent (This : in out MotionGestureRecognizer; current : GPoint_Access; deviceId : Integer; button : Integer) return Boolean;
-   procedure processPressedMotionEvent (This : in out MotionGestureRecognizer; current : GPoint_Access; deviceId : Integer; button : Integer);
-   function processReleasedMotionEvent (This : in out MotionGestureRecognizer; current : GPoint_Access; deviceId : Integer; button : Integer) return Boolean;
-   procedure processReleasedMotionEvent (This : in out MotionGestureRecognizer; current : GPoint_Access; deviceId : Integer; button : Integer);
-   procedure processDraggedMotionEvent (This : in out MotionGestureRecognizer; current : GPoint_Access; deviceId : Integer; buttonMask : Integer);
-   function processMovedMotionEvent (This : in out MotionGestureRecognizer; current : GPoint_Access; deviceId : Integer; button : Integer) return Boolean;
-   procedure processMovedMotionEvent (This : in out MotionGestureRecognizer; current : GPoint_Access; deviceId : Integer; button : Integer);
-   function processScrolledMotionEvent (This : in out MotionGestureRecognizer; current : GPoint_Access; deviceId : Integer; button : Integer) return Boolean;
-   procedure processScrolledMotionEvent (This : in out MotionGestureRecognizer; current : GPoint_Access; deviceId : Integer; button : Integer);
+   function processPressedMotionEvent (This : in out MotionGestureRecognizer; current_Param : access GPoint'Class; deviceId : Integer; button : Integer) return Boolean;
+   procedure processPressedMotionEvent (This : in out MotionGestureRecognizer; current_Param : access GPoint'Class; deviceId : Integer; button : Integer);
+   function processReleasedMotionEvent (This : in out MotionGestureRecognizer; current_Param : access GPoint'Class; deviceId : Integer; button : Integer) return Boolean;
+   procedure processReleasedMotionEvent (This : in out MotionGestureRecognizer; current_Param : access GPoint'Class; deviceId : Integer; button : Integer);
+   procedure processDraggedMotionEvent (This : in out MotionGestureRecognizer; current_Param : access GPoint'Class; deviceId : Integer; buttonMask : Integer);
+   function processMovedMotionEvent (This : in out MotionGestureRecognizer; current_Param : access GPoint'Class; deviceId : Integer; button : Integer) return Boolean;
+   procedure processMovedMotionEvent (This : in out MotionGestureRecognizer; current_Param : access GPoint'Class; deviceId : Integer; button : Integer);
+   function processScrolledMotionEvent (This : in out MotionGestureRecognizer; current_Param : access GPoint'Class; deviceId : Integer; button : Integer) return Boolean;
+   procedure processScrolledMotionEvent (This : in out MotionGestureRecognizer; current_Param : access GPoint'Class; deviceId : Integer; button : Integer);
    function getMotionGesturesHandler (This : in out MotionGestureRecognizer) return BasicMotionGesturesHandler_Access;
 
 end org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package;

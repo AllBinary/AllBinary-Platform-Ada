@@ -44,7 +44,7 @@ package body org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, LinesGraphicItem_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR, e);
                 end;
         end;
    end Initialize;
@@ -56,7 +56,8 @@ package body org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package
       return This;
    end Create;
 
-   procedure Initialize (This : in out LinesGraphicItem'Class; linesNode : Node_Access) is
+   procedure Initialize (This : in out LinesGraphicItem'Class; linesNode_Param : access Node'Class) is
+      linesNode : Node_Access := Node_Access (linesNode_Param);
       lineNodes : BasicArrayList_Access;
       numberOfLines : Integer;
       lineNode : Node_Access;
@@ -86,10 +87,10 @@ package body org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package
         end if;
    end Initialize;
 
-   function Create (linesNode : Node_Access) return LinesGraphicItem_Access is
+   function Create (linesNode_Param : access Node'Class) return LinesGraphicItem_Access is
       This : constant LinesGraphicItem_Access := new LinesGraphicItem;
    begin
-      LinesGraphicItem_Package.Initialize (This.all, linesNode);
+      LinesGraphicItem_Package.Initialize (This.all, linesNode_Param);
       return This;
    end Create;
 
@@ -157,7 +158,8 @@ package body org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package
    end getStaticName;
 
    --  throws Exception
-   procedure addPoint (This : in out LinesGraphicItem; pointNodes : NodeList_Access) is
+   procedure addPoint (This : in out LinesGraphicItem; pointNodes_Param : access NodeList'Class) is
+      pointNodes : NodeList_Access := NodeList_Access (pointNodes_Param);
       list : BasicArrayList_Access;
       xNode : Node_Access;
       xTextNode : Node_Access;
@@ -178,10 +180,11 @@ package body org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package
         This.addPoint (point);
    end addPoint;
 
-   procedure addPoint (This : in out LinesGraphicItem; point : GPoint_Access) is
+   procedure addPoint (This : in out LinesGraphicItem; point_Param : access GPoint'Class) is
+      point : GPoint_Access := GPoint_Access (point_Param);
    begin
         This.points.getPoints.add (point);
-        This.logUtil.putF (point.toString, This'Unchecked_Access, To_Unbounded_String ("addPoint"));
+        This.logUtil.putF (point.toString, LinesGraphicItem_Access'(This'Unchecked_Access), To_Unbounded_String ("addPoint"));
         This.pointTreeNodeVector.add (DefaultMutableTreeNode_Package.Create (point.toString));
         This.treeNode.add (DefaultMutableTreeNode_Access (This.pointTreeNodeVector.get ((This.pointTreeNodeVector.size) - (1))));
    end addPoint;
@@ -220,7 +223,8 @@ package body org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package
    end activate;
 
    --  throws Exception
-   procedure duplicatePoints (This : in out LinesGraphicItem; list : BasicArrayList_Access) is
+   procedure duplicatePoints (This : in out LinesGraphicItem; list_Param : access BasicArrayList'Class) is
+      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
       size : Integer;
       point : GPoint_Access;
       index : Integer;
@@ -251,12 +255,15 @@ package body org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package
         return Ada.Numerics.Long_Elementary_Functions.ToDegrees (This.theta);
    end getAngle;
 
-   procedure setFulcrumPoint (This : in out LinesGraphicItem; point : GPoint_Access) is
+   procedure setFulcrumPoint (This : in out LinesGraphicItem; point_Param : access GPoint'Class) is
+      point : GPoint_Access := GPoint_Access (point_Param);
    begin
         This.fulcrumPoint := point;
    end setFulcrumPoint;
 
-   procedure paint (This : in out LinesGraphicItem; g : Graphics_Access; canvasAngle : Long_Float; dimension : IntegerDimension_Access; x : Integer; y : Integer) is
+   procedure paint (This : in out LinesGraphicItem; g_Param : access Graphics'Class; canvasAngle : Long_Float; dimension_Param : access IntegerDimension'Class; x : Integer; y : Integer) is
+      g : Graphics_Access := Graphics_Access (g_Param);
+      dimension : IntegerDimension_Access := IntegerDimension_Access (dimension_Param);
       graphics : Graphics2D_Access;
       tempPointVector : BasicArrayList_Access;
       size : Integer;
@@ -290,13 +297,14 @@ package body org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("mouseMoved"), e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, LinesGraphicItem_Access'(This'Unchecked_Access), To_Unbounded_String ("mouseMoved"), e);
                 end;
         end;
    end paint;
 
    --  throws Exception
-   function toDom (This : in out LinesGraphicItem; canvasDom : CanvasDom_Access) return Node_Access is
+   function toDom (This : in out LinesGraphicItem; canvasDom_Param : access CanvasDom'Class) return Node_Access is
+      canvasDom : CanvasDom_Access := CanvasDom_Access (canvasDom_Param);
    begin
         return PointsDomUtil_Package.getInstance.toDom (canvasDom, This.points.getPoints);
    end toDom;
@@ -311,7 +319,8 @@ package body org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package
         return This.points;
    end getPointsInterface;
 
-   procedure setPointsInterface (This : in out LinesGraphicItem; points : Points_Access) is
+   procedure setPointsInterface (This : in out LinesGraphicItem; points_Param : access Points'Class) is
+      points : Points_Access := Points_Access (points_Param);
    begin
         This.points := points;
    end setPointsInterface;
@@ -321,12 +330,14 @@ package body org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package
         return This.color;
    end getColor;
 
-   procedure setColor (This : in out LinesGraphicItem; color : Color_Access) is
+   procedure setColor (This : in out LinesGraphicItem; color_Param : access Color'Class) is
+      color : Color_Access := Color_Access (color_Param);
    begin
         This.color := color;
    end setColor;
 
-   procedure mouseClicked (This : in out LinesGraphicItem; mouseEvent : MouseEvent_Access; x : Integer; y : Integer) is
+   procedure mouseClicked (This : in out LinesGraphicItem; mouseEvent_Param : access MouseEvent'Class; x : Integer; y : Integer) is
+      mouseEvent : MouseEvent_Access := MouseEvent_Access (mouseEvent_Param);
       mousePoint : GPoint_Access;
       point : GPoint_Access;
    begin
@@ -346,37 +357,43 @@ package body org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("mouseMoved"), e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, LinesGraphicItem_Access'(This'Unchecked_Access), To_Unbounded_String ("mouseMoved"), e);
                 end;
         end;
    end mouseClicked;
 
-   procedure mouseEntered (This : in out LinesGraphicItem; mouseEvent : MouseEvent_Access) is
+   procedure mouseEntered (This : in out LinesGraphicItem; mouseEvent_Param : access MouseEvent'Class) is
+      mouseEvent : MouseEvent_Access := MouseEvent_Access (mouseEvent_Param);
    begin
         null;
    end mouseEntered;
 
-   procedure mouseExited (This : in out LinesGraphicItem; mouseEvent : MouseEvent_Access) is
+   procedure mouseExited (This : in out LinesGraphicItem; mouseEvent_Param : access MouseEvent'Class) is
+      mouseEvent : MouseEvent_Access := MouseEvent_Access (mouseEvent_Param);
    begin
         null;
    end mouseExited;
 
-   procedure mousePressed (This : in out LinesGraphicItem; mouseEvent : MouseEvent_Access; xPixelsPerCell : Integer; yPixelsPerCell : Integer) is
+   procedure mousePressed (This : in out LinesGraphicItem; mouseEvent_Param : access MouseEvent'Class; xPixelsPerCell : Integer; yPixelsPerCell : Integer) is
+      mouseEvent : MouseEvent_Access := MouseEvent_Access (mouseEvent_Param);
    begin
         null;
    end mousePressed;
 
-   procedure mouseReleased (This : in out LinesGraphicItem; mouseEvent : MouseEvent_Access; xPixelsPerCell : Integer; yPixelsPerCell : Integer) is
+   procedure mouseReleased (This : in out LinesGraphicItem; mouseEvent_Param : access MouseEvent'Class; xPixelsPerCell : Integer; yPixelsPerCell : Integer) is
+      mouseEvent : MouseEvent_Access := MouseEvent_Access (mouseEvent_Param);
    begin
         null;
    end mouseReleased;
 
-   procedure mouseDragged (This : in out LinesGraphicItem; mouseEvent : MouseEvent_Access; xPixelsPerCell : Integer; yPixelsPerCell : Integer) is
+   procedure mouseDragged (This : in out LinesGraphicItem; mouseEvent_Param : access MouseEvent'Class; xPixelsPerCell : Integer; yPixelsPerCell : Integer) is
+      mouseEvent : MouseEvent_Access := MouseEvent_Access (mouseEvent_Param);
    begin
         null;
    end mouseDragged;
 
-   procedure mouseMoved (This : in out LinesGraphicItem; mouseEvent : MouseEvent_Access; x : Integer; y : Integer) is
+   procedure mouseMoved (This : in out LinesGraphicItem; mouseEvent_Param : access MouseEvent'Class; x : Integer; y : Integer) is
+      mouseEvent : MouseEvent_Access := MouseEvent_Access (mouseEvent_Param);
       mousePoint : GPoint_Access;
       point : GPoint_Access;
    begin
@@ -389,12 +406,13 @@ package body org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("mouseMoved"), e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, LinesGraphicItem_Access'(This'Unchecked_Access), To_Unbounded_String ("mouseMoved"), e);
                 end;
         end;
    end mouseMoved;
 
-   procedure keyPressed (This : in out LinesGraphicItem; keyEvent : KeyEvent_Access) is
+   procedure keyPressed (This : in out LinesGraphicItem; keyEvent_Param : access KeyEvent'Class) is
+      keyEvent : KeyEvent_Access := KeyEvent_Access (keyEvent_Param);
       keyCode : Integer;
    begin
         begin
@@ -416,23 +434,25 @@ package body org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.gameInputStrings.KEY_PRESSED, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, LinesGraphicItem_Access'(This'Unchecked_Access), This.gameInputStrings.KEY_PRESSED, e);
                 end;
         end;
    end keyPressed;
 
-   procedure keyReleased (This : in out LinesGraphicItem; keyEvent : KeyEvent_Access) is
+   procedure keyReleased (This : in out LinesGraphicItem; keyEvent_Param : access KeyEvent'Class) is
+      keyEvent : KeyEvent_Access := KeyEvent_Access (keyEvent_Param);
    begin
         null;
    end keyReleased;
 
-   procedure keyTyped (This : in out LinesGraphicItem; keyEvent : KeyEvent_Access) is
+   procedure keyTyped (This : in out LinesGraphicItem; keyEvent_Param : access KeyEvent'Class) is
+      keyEvent : KeyEvent_Access := KeyEvent_Access (keyEvent_Param);
    begin
         null;
    end keyTyped;
 
-   procedure toDom (This : in out LinesGraphicItem; canvasDom : CanvasDom_Access) is
-      Java_Result : constant Node_Access := LinesGraphicItem'Class (This).toDom (canvasDom);
+   procedure toDom (This : in out LinesGraphicItem; canvasDom_Param : access CanvasDom'Class) is
+      Java_Result : constant Node_Access := LinesGraphicItem'Class (This).toDom (canvasDom_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

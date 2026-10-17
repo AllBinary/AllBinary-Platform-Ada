@@ -37,10 +37,10 @@ package org.allbinary.input.media.image.capture.CapturedImageWorkerResultsEvent_
       bufferedImage : BufferedImage_Access;
    end record;
 
-   procedure Initialize (This : in out CapturedImageWorkerResultsEvent'Class; anyType : Java_Object_Access; frame : Long_Long_Integer; bufferedImage : BufferedImage_Access);
-   function Create (anyType : Java_Object_Access; frame : Long_Long_Integer; bufferedImage : BufferedImage_Access) return CapturedImageWorkerResultsEvent_Access;
+   procedure Initialize (This : in out CapturedImageWorkerResultsEvent'Class; anyType_Param : access Java_Object'Class; frame : Long_Long_Integer; bufferedImage_Param : access BufferedImage'Class);
+   function Create (anyType_Param : access Java_Object'Class; frame : Long_Long_Integer; bufferedImage_Param : access BufferedImage'Class) return CapturedImageWorkerResultsEvent_Access;
    function getBufferedImage (This : in out CapturedImageWorkerResultsEvent) return BufferedImage_Access;
-   procedure setBufferedImage (This : in out CapturedImageWorkerResultsEvent; bufferedImage : BufferedImage_Access);
+   procedure setBufferedImage (This : in out CapturedImageWorkerResultsEvent; bufferedImage_Param : access BufferedImage'Class);
    function getFrame (This : in out CapturedImageWorkerResultsEvent) return Long_Long_Integer;
 
 end org.allbinary.input.media.image.capture.CapturedImageWorkerResultsEvent_Package;

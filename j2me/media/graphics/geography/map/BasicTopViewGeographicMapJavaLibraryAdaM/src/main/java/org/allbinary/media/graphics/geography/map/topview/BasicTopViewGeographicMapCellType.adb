@@ -33,7 +33,8 @@ package body org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeog
         return BasicTopViewGeographicMapCellType_Package.Create (name, types, cost);
    end createType;
 
-   procedure Initialize (This : in out BasicTopViewGeographicMapCellType'Class; name : Unbounded_String; types : BasicArrayList_Access; cost : Integer) is
+   procedure Initialize (This : in out BasicTopViewGeographicMapCellType'Class; name : Unbounded_String; types_Param : access BasicArrayList'Class; cost : Integer) is
+      types : BasicArrayList_Access := BasicArrayList_Access (types_Param);
       size : Integer;
       typeArray : Integer_Array_Access;
       typeAsInteger : Integer;
@@ -60,14 +61,15 @@ package body org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeog
         This.types := typeArray;
    end Initialize;
 
-   function Create (name : Unbounded_String; types : BasicArrayList_Access; cost : Integer) return BasicTopViewGeographicMapCellType_Access is
+   function Create (name : Unbounded_String; types_Param : access BasicArrayList'Class; cost : Integer) return BasicTopViewGeographicMapCellType_Access is
       This : constant BasicTopViewGeographicMapCellType_Access := new BasicTopViewGeographicMapCellType;
    begin
-      BasicTopViewGeographicMapCellType_Package.Initialize (This.all, name, types, cost);
+      BasicTopViewGeographicMapCellType_Package.Initialize (This.all, name, types_Param, cost);
       return This;
    end Create;
 
-   function isType (This : in out BasicTopViewGeographicMapCellType; type_Id : GeographicMapCellType_Access) return Boolean is
+   function isType (This : in out BasicTopViewGeographicMapCellType; type_Id_Param : access GeographicMapCellType'Class) return Boolean is
+      type_Id : GeographicMapCellType_Access := GeographicMapCellType_Access (type_Id_Param);
    begin
         return This.hasType (type_Id.getType);
    end isType;
@@ -110,8 +112,8 @@ package body org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeog
       null;
    end createType;
 
-   procedure isType (This : in out BasicTopViewGeographicMapCellType; type_Id : GeographicMapCellType_Access) is
-      Java_Result : constant Boolean := BasicTopViewGeographicMapCellType'Class (This).isType (type_Id);
+   procedure isType (This : in out BasicTopViewGeographicMapCellType; type_Id_Param : access GeographicMapCellType'Class) is
+      Java_Result : constant Boolean := BasicTopViewGeographicMapCellType'Class (This).isType (type_Id_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

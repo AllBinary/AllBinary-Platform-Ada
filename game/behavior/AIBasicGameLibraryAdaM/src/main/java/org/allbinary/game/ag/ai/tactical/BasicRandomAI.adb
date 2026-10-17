@@ -26,7 +26,11 @@ package body org.allbinary.game.ag.ai.tactical.BasicRandomAI_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BasicRandomAI'Class; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access; inputProbability : InputProbability_Access; visitor : Visitor_Access) is
+   procedure Initialize (This : in out BasicRandomAI'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class; inputProbability_Param : access InputProbability'Class; visitor_Param : access Visitor'Class) is
+      ownerLayerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (ownerLayerInterface_Param);
+      gameInput : GameInput_Access := GameInput_Access (gameInput_Param);
+      inputProbability : InputProbability_Access := InputProbability_Access (inputProbability_Param);
+      visitor : Visitor_Access := Visitor_Access (visitor_Param);
    begin
         BasicAI_Package.Initialize (This, ownerLayerInterface, gameInput);
         Initialize_Fields (This);
@@ -34,15 +38,16 @@ package body org.allbinary.game.ag.ai.tactical.BasicRandomAI_Package is
         This.visitor := visitor;
    end Initialize;
 
-   function Create (ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access; inputProbability : InputProbability_Access; visitor : Visitor_Access) return BasicRandomAI_Access is
+   function Create (ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class; inputProbability_Param : access InputProbability'Class; visitor_Param : access Visitor'Class) return BasicRandomAI_Access is
       This : constant BasicRandomAI_Access := new BasicRandomAI;
    begin
-      BasicRandomAI_Package.Initialize (This.all, ownerLayerInterface, gameInput, inputProbability, visitor);
+      BasicRandomAI_Package.Initialize (This.all, ownerLayerInterface_Param, gameInput_Param, inputProbability_Param, visitor_Param);
       return This;
    end Create;
 
    --  throws Exception
-   procedure processAI (This : in out BasicRandomAI; allBinaryLayerManager : AllBinaryLayerManager_Access) is
+   procedure processAI (This : in out BasicRandomAI; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class) is
+      allBinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
       repeat : Boolean;
       repeatLikelyhoodIntegerArray : Integer_Array_Access;
       likelyhoodIntegerArray : Integer_Array_Access_Array_Access;
@@ -74,7 +79,7 @@ package body org.allbinary.game.ag.ai.tactical.BasicRandomAI_Package is
                     end if;
                 end loop;
             end if;
-            This.visitor.visit (This'Unchecked_Access);
+            This.visitor.visit (BasicRandomAI_Access'(This'Unchecked_Access));
         end if;
    end processAI;
 

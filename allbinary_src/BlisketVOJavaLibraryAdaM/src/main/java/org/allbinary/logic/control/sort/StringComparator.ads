@@ -34,8 +34,8 @@ package org.allbinary.logic.control.sort.StringComparator_Package is
 
    procedure Initialize (This : in out StringComparator'Class);
    function Create return StringComparator_Access;
-   function compare (This : in out StringComparator; anyType : Java_Object_Access; object2 : Java_Object_Access) return Integer;
-   procedure compare (This : in out StringComparator; anyType : Java_Object_Access; object2 : Java_Object_Access);
+   function compare (This : in out StringComparator; anyType_Param : access Java_Object'Class; object2_Param : access Java_Object'Class) return Integer;
+   procedure compare (This : in out StringComparator; anyType_Param : access Java_Object'Class; object2_Param : access Java_Object'Class);
 
 end org.allbinary.logic.control.sort.StringComparator_Package;
 

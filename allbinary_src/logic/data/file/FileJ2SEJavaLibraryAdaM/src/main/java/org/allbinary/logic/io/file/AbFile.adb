@@ -23,7 +23,8 @@ package body org.allbinary.logic.io.file.AbFile_Package is
 
 
    --  throws Exception
-   function createAbFileWithChild (file : AbFile_Access; childPathName : Unbounded_String) return AbFile_Access is
+   function createAbFileWithChild (file_Param : access AbFile'Class; childPathName : Unbounded_String) return AbFile_Access is
+      file : AbFile_Access := AbFile_Access (file_Param);
    begin
         return AbFile_Package.Create (File_Package.Create (file.getFile, childPathName));
    end createAbFileWithChild;
@@ -40,7 +41,8 @@ package body org.allbinary.logic.io.file.AbFile_Package is
         return AbFile_Package.Create (File_Package.Create (AbPath_Package.Create (filePath, StringUtil_Package.getInstance.EMPTY_STRING).toFileSystemString, fileName));
    end createAbFilePathAndName;
 
-   function createAbFileFromAbPath (abPath : AbPath_Access) return AbFile_Access is
+   function createAbFileFromAbPath (abPath_Param : access AbPath'Class) return AbFile_Access is
+      abPath : AbPath_Access := AbPath_Access (abPath_Param);
    begin
         return AbFile_Package.Create (File_Package.Create (abPath.toFileSystemString));
    end createAbFileFromAbPath;
@@ -50,16 +52,17 @@ package body org.allbinary.logic.io.file.AbFile_Package is
         return AbFile_Package.Create (File_Package.Create (filePath));
    end createAbFileFromRawPath;
 
-   procedure Initialize (This : in out AbFile'Class; file : File_Access) is
+   procedure Initialize (This : in out AbFile'Class; file_Param : access File'Class) is
+      file : File_Access := File_Access (file_Param);
    begin
       Initialize_Fields (This);
         This.file := file;
    end Initialize;
 
-   function Create (file : File_Access) return AbFile_Access is
+   function Create (file_Param : access File'Class) return AbFile_Access is
       This : constant AbFile_Access := new AbFile;
    begin
-      AbFile_Package.Initialize (This.all, file);
+      AbFile_Package.Initialize (This.all, file_Param);
       return This;
    end Create;
 
@@ -182,7 +185,8 @@ package body org.allbinary.logic.io.file.AbFile_Package is
         return This.file.list;
    end list;
 
-   function listWithFilter (This : in out AbFile; filter : FilenameFilter_Access) return Unbounded_String_Array_Access is
+   function listWithFilter (This : in out AbFile; filter_Param : access FilenameFilter'Class) return Unbounded_String_Array_Access is
+      filter : FilenameFilter_Access := FilenameFilter_Access (filter_Param);
    begin
         return This.file.list (filter);
    end listWithFilter;
@@ -192,12 +196,14 @@ package body org.allbinary.logic.io.file.AbFile_Package is
         return Java_Object_Access_Array_Access (This.file.listFiles);
    end listFiles;
 
-   function listFilesFileNameFilter (This : in out AbFile; filter : FilenameFilter_Access) return Java_Object_Access_Array_Access is
+   function listFilesFileNameFilter (This : in out AbFile; filter_Param : access FilenameFilter'Class) return Java_Object_Access_Array_Access is
+      filter : FilenameFilter_Access := FilenameFilter_Access (filter_Param);
    begin
         return Java_Object_Access_Array_Access (This.file.listFiles (filter));
    end listFilesFileNameFilter;
 
-   function listFilesFileFilter (This : in out AbFile; filter : FileFilter_Access) return Java_Object_Access_Array_Access is
+   function listFilesFileFilter (This : in out AbFile; filter_Param : access FileFilter'Class) return Java_Object_Access_Array_Access is
+      filter : FileFilter_Access := FileFilter_Access (filter_Param);
    begin
         return Java_Object_Access_Array_Access (This.file.listFiles (filter));
    end listFilesFileFilter;
@@ -212,7 +218,8 @@ package body org.allbinary.logic.io.file.AbFile_Package is
         return This.file.mkdirs;
    end mkdirs;
 
-   function renameTo (This : in out AbFile; dest : AbFile_Access) return Boolean is
+   function renameTo (This : in out AbFile; dest_Param : access AbFile'Class) return Boolean is
+      dest : AbFile_Access := AbFile_Access (dest_Param);
    begin
         return This.file.renameTo (dest.getFile);
    end renameTo;
@@ -277,12 +284,14 @@ package body org.allbinary.logic.io.file.AbFile_Package is
         return This.file.getUsableSpace;
    end getUsableSpace;
 
-   function compareTo (This : in out AbFile; pathname : File_Access) return Integer is
+   function compareTo (This : in out AbFile; pathname_Param : access File'Class) return Integer is
+      pathname : File_Access := File_Access (pathname_Param);
    begin
         return This.file.compareTo (pathname);
    end compareTo;
 
-   function equals (This : in out AbFile; obj : Java_Object_Access) return Boolean is
+   function equals (This : in out AbFile; obj_Param : access Java_Object'Class) return Boolean is
+      obj : Java_Object_Access := Java_Object_Access (obj_Param);
    begin
         return TsUtil_Package.getInstance.equalsNotstring (This.file, obj);
    end equals;
@@ -297,8 +306,8 @@ package body org.allbinary.logic.io.file.AbFile_Package is
         return This.file.toString;
    end toString;
 
-   procedure createAbFileWithChild (file : AbFile_Access; childPathName : Unbounded_String) is
-      Java_Result : constant AbFile_Access := createAbFileWithChild (file, childPathName);
+   procedure createAbFileWithChild (file_Param : access AbFile'Class; childPathName : Unbounded_String) is
+      Java_Result : constant AbFile_Access := createAbFileWithChild (file_Param, childPathName);
       pragma Unreferenced (Java_Result);
    begin
       null;
@@ -318,8 +327,8 @@ package body org.allbinary.logic.io.file.AbFile_Package is
       null;
    end createAbFilePathAndName;
 
-   procedure createAbFileFromAbPath (abPath : AbPath_Access) is
-      Java_Result : constant AbFile_Access := createAbFileFromAbPath (abPath);
+   procedure createAbFileFromAbPath (abPath_Param : access AbPath'Class) is
+      Java_Result : constant AbFile_Access := createAbFileFromAbPath (abPath_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
@@ -332,29 +341,29 @@ package body org.allbinary.logic.io.file.AbFile_Package is
       null;
    end createAbFileFromRawPath;
 
-   procedure listWithFilter (This : in out AbFile; filter : FilenameFilter_Access) is
-      Java_Result : constant Unbounded_String_Array_Access := AbFile'Class (This).listWithFilter (filter);
+   procedure listWithFilter (This : in out AbFile; filter_Param : access FilenameFilter'Class) is
+      Java_Result : constant Unbounded_String_Array_Access := AbFile'Class (This).listWithFilter (filter_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end listWithFilter;
 
-   procedure listFilesFileNameFilter (This : in out AbFile; filter : FilenameFilter_Access) is
-      Java_Result : constant Java_Object_Access_Array_Access := AbFile'Class (This).listFilesFileNameFilter (filter);
+   procedure listFilesFileNameFilter (This : in out AbFile; filter_Param : access FilenameFilter'Class) is
+      Java_Result : constant Java_Object_Access_Array_Access := AbFile'Class (This).listFilesFileNameFilter (filter_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end listFilesFileNameFilter;
 
-   procedure listFilesFileFilter (This : in out AbFile; filter : FileFilter_Access) is
-      Java_Result : constant Java_Object_Access_Array_Access := AbFile'Class (This).listFilesFileFilter (filter);
+   procedure listFilesFileFilter (This : in out AbFile; filter_Param : access FileFilter'Class) is
+      Java_Result : constant Java_Object_Access_Array_Access := AbFile'Class (This).listFilesFileFilter (filter_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end listFilesFileFilter;
 
-   procedure renameTo (This : in out AbFile; dest : AbFile_Access) is
-      Java_Result : constant Boolean := AbFile'Class (This).renameTo (dest);
+   procedure renameTo (This : in out AbFile; dest_Param : access AbFile'Class) is
+      Java_Result : constant Boolean := AbFile'Class (This).renameTo (dest_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
@@ -409,15 +418,15 @@ package body org.allbinary.logic.io.file.AbFile_Package is
       null;
    end setExecutable;
 
-   procedure compareTo (This : in out AbFile; pathname : File_Access) is
-      Java_Result : constant Integer := AbFile'Class (This).compareTo (pathname);
+   procedure compareTo (This : in out AbFile; pathname_Param : access File'Class) is
+      Java_Result : constant Integer := AbFile'Class (This).compareTo (pathname_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end compareTo;
 
-   procedure equals (This : in out AbFile; obj : Java_Object_Access) is
-      Java_Result : constant Boolean := AbFile'Class (This).equals (obj);
+   procedure equals (This : in out AbFile; obj_Param : access Java_Object'Class) is
+      Java_Result : constant Boolean := AbFile'Class (This).equals (obj_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

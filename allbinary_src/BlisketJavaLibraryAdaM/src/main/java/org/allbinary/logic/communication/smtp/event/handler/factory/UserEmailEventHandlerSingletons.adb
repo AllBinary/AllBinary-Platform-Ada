@@ -33,7 +33,7 @@ package body org.allbinary.logic.communication.smtp.event.handler.factory.UserEm
    begin
       Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+            This.logUtil.putF (This.commonStrings.START, UserEmailEventHandlerSingletons_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
    end Initialize;
 
@@ -45,18 +45,21 @@ package body org.allbinary.logic.communication.smtp.event.handler.factory.UserEm
    end Create;
 
    --  throws Exception
-   function getInstance (This : in out UserEmailEventHandlerSingletons; abeClientInformation : AbeClientInformationInterface_Access; userEmailEventNameData : UserEmailEventNameData_Access; userInterface : UserInterface_Access) return UserEmailEventHandler_Access is
+   function getInstance (This : in out UserEmailEventHandlerSingletons; abeClientInformation_Param : access AbeClientInformationInterface'Class; userEmailEventNameData_Param : access UserEmailEventNameData'Class; userInterface_Param : access UserInterface'Class) return UserEmailEventHandler_Access is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      userEmailEventNameData : UserEmailEventNameData_Access := UserEmailEventNameData_Access (userEmailEventNameData_Param);
+      userInterface : UserInterface_Access := UserInterface_Access (userInterface_Param);
       userEmailEventHandler : UserEmailEventHandler_Access;
       newUserEmailEventHandler : UserEmailEventHandler_Access;
       vector : BasicArrayList_Access;
    begin
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.GET_INSTANCE);
+            This.logUtil.putF (This.commonStrings.START, UserEmailEventHandlerSingletons_Access'(This'Unchecked_Access), This.commonStrings.GET_INSTANCE);
         end if;
         userEmailEventHandler := UserEmailEventHandler_Access (This.userEmailEventHandlerHashMap.get (userEmailEventNameData));
         if (userEmailEventHandler) = (null) then
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
-                This.logUtil.putF (To_Unbounded_String ("Creating New Named UserEmailEventHandler"), This'Unchecked_Access, This.commonStrings.GET_INSTANCE);
+                This.logUtil.putF (To_Unbounded_String ("Creating New Named UserEmailEventHandler"), UserEmailEventHandlerSingletons_Access'(This'Unchecked_Access), This.commonStrings.GET_INSTANCE);
             end if;
             newUserEmailEventHandler := UserEmailEventHandler_Package.Create;
             vector := EmailEventHandlerUtil_Package.getUserEmailEventListenerVector (abeClientInformation, userEmailEventNameData, userInterface);
@@ -66,14 +69,14 @@ package body org.allbinary.logic.communication.smtp.event.handler.factory.UserEm
             return newUserEmailEventHandler;
         else
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
-                This.logUtil.putF (To_Unbounded_String ("Returning existing UserEmailEventHandler"), This'Unchecked_Access, This.commonStrings.GET_INSTANCE);
+                This.logUtil.putF (To_Unbounded_String ("Returning existing UserEmailEventHandler"), UserEmailEventHandlerSingletons_Access'(This'Unchecked_Access), This.commonStrings.GET_INSTANCE);
             end if;
             return userEmailEventHandler;
         end if;
    end getInstance;
 
-   procedure getInstance (This : in out UserEmailEventHandlerSingletons; abeClientInformation : AbeClientInformationInterface_Access; userEmailEventNameData : UserEmailEventNameData_Access; userInterface : UserInterface_Access) is
-      Java_Result : constant UserEmailEventHandler_Access := UserEmailEventHandlerSingletons'Class (This).getInstance (abeClientInformation, userEmailEventNameData, userInterface);
+   procedure getInstance (This : in out UserEmailEventHandlerSingletons; abeClientInformation_Param : access AbeClientInformationInterface'Class; userEmailEventNameData_Param : access UserEmailEventNameData'Class; userInterface_Param : access UserInterface'Class) is
+      Java_Result : constant UserEmailEventHandler_Access := UserEmailEventHandlerSingletons'Class (This).getInstance (abeClientInformation_Param, userEmailEventNameData_Param, userInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

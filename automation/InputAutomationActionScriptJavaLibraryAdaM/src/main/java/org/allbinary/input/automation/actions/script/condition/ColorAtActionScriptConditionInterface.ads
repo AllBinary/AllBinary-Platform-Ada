@@ -32,9 +32,9 @@ package org.allbinary.input.automation.actions.script.condition.ColorAtActionScr
    type ColorAtActionScriptConditionInterface_Access_Array is array (Natural range <>) of ColorAtActionScriptConditionInterface_Access;
    type ColorAtActionScriptConditionInterface_Access_Array_Access is access all ColorAtActionScriptConditionInterface_Access_Array;
    function getPoint (This : in out ColorAtActionScriptConditionInterface) return Point_Access is abstract;
-   procedure setPoint (This : in out ColorAtActionScriptConditionInterface; point : Point_Access) is abstract;
+   procedure setPoint (This : in out ColorAtActionScriptConditionInterface; point_Param : access Point'Class) is abstract;
    function getColorRangeInterface (This : in out ColorAtActionScriptConditionInterface) return ColorRangeInterface_Access is abstract;
-   procedure setColorRangeInterface (This : in out ColorAtActionScriptConditionInterface; colorRangeInterface : ColorRangeInterface_Access) is abstract;
+   procedure setColorRangeInterface (This : in out ColorAtActionScriptConditionInterface; colorRangeInterface_Param : access ColorRangeInterface'Class) is abstract;
    procedure log (This : in out ColorAtActionScriptConditionInterface) is abstract;
 
 end org.allbinary.input.automation.actions.script.condition.ColorAtActionScriptConditionInterface_Package;

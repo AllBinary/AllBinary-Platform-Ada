@@ -22,23 +22,25 @@ package body org.allbinary.data.tree.category.CategoryLoader_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CategoryLoader'Class; categoryFactoryInterface : CategoryFactoryInterface_Access) is
+   procedure Initialize (This : in out CategoryLoader'Class; categoryFactoryInterface_Param : access CategoryFactoryInterface'Class) is
+      categoryFactoryInterface : CategoryFactoryInterface_Access := CategoryFactoryInterface_Access (categoryFactoryInterface_Param);
    begin
         CategoryModifierTree_Package.Initialize (This, categoryFactoryInterface);
         Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY) then
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("CategoryLoader(CategoryFactoryInterface categoryFactoryInterface)"));
+            This.logUtil.putF (This.commonStrings.START, CategoryLoader_Access'(This'Unchecked_Access), To_Unbounded_String ("CategoryLoader(CategoryFactoryInterface categoryFactoryInterface)"));
         end if;
    end Initialize;
 
-   function Create (categoryFactoryInterface : CategoryFactoryInterface_Access) return CategoryLoader_Access is
+   function Create (categoryFactoryInterface_Param : access CategoryFactoryInterface'Class) return CategoryLoader_Access is
       This : constant CategoryLoader_Access := new CategoryLoader;
    begin
-      CategoryLoader_Package.Initialize (This.all, categoryFactoryInterface);
+      CategoryLoader_Package.Initialize (This.all, categoryFactoryInterface_Param);
       return This;
    end Create;
 
-   function getDoc (This : in out CategoryLoader; categoryInterface : CategoryInterface_Access) return Document_Access is
+   function getDoc (This : in out CategoryLoader; categoryInterface_Param : access CategoryInterface'Class) return Document_Access is
+      categoryInterface : CategoryInterface_Access := CategoryInterface_Access (categoryInterface_Param);
       rootAbFile : AbFile_Access;
       fileAbPath : AbPath_Access;
       cryptFileReader : CryptFileReader_Access;
@@ -76,17 +78,18 @@ package body org.allbinary.data.tree.category.CategoryLoader_Package is
                         declare
                             e2 : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                         begin
-                    This.logUtil.put (To_Unbounded_String ("Could Not Log Category"), This'Unchecked_Access, To_Unbounded_String ("getDoc"), e);
+                    This.logUtil.put (To_Unbounded_String ("Could Not Log Category"), CategoryLoader_Access'(This'Unchecked_Access), To_Unbounded_String ("getDoc"), e);
                         end;
                 end;
-                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("getDoc"), e);
+                This.logUtil.put (This.commonStrings.FAILURE, CategoryLoader_Access'(This'Unchecked_Access), To_Unbounded_String ("getDoc"), e);
             end if;
             return null;
                 end;
         end;
    end getDoc;
 
-   function get (This : in out CategoryLoader; categoryInterface : CategoryInterface_Access) return CategoryInterface_Access is
+   function get (This : in out CategoryLoader; categoryInterface_Param : access CategoryInterface'Class) return CategoryInterface_Access is
+      categoryInterface : CategoryInterface_Access := CategoryInterface_Access (categoryInterface_Param);
       document : Document_Access;
       categoryNode : Node_Access;
    begin
@@ -100,14 +103,15 @@ package body org.allbinary.data.tree.category.CategoryLoader_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, This.commonStrings.GET, e);
+                This.logUtil.put (This.commonStrings.FAILURE, CategoryLoader_Access'(This'Unchecked_Access), This.commonStrings.GET, e);
             end if;
             return null;
                 end;
         end;
    end get;
 
-   function get (This : in out CategoryLoader; document : Document_Access) return CategoryInterface_Access is
+   function get (This : in out CategoryLoader; document_Param : access Document'Class) return CategoryInterface_Access is
+      document : Document_Access := Document_Access (document_Param);
       categoryNode : Node_Access;
       loadedCategoryInterface : CategoryInterface_Access;
    begin
@@ -121,14 +125,15 @@ package body org.allbinary.data.tree.category.CategoryLoader_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, This.commonStrings.GET, e);
+                This.logUtil.put (This.commonStrings.FAILURE, CategoryLoader_Access'(This'Unchecked_Access), This.commonStrings.GET, e);
             end if;
             return null;
                 end;
         end;
    end get;
 
-   function getAll (This : in out CategoryLoader; categoryInterface : CategoryInterface_Access) return CategoryInterface_Access is
+   function getAll (This : in out CategoryLoader; categoryInterface_Param : access CategoryInterface'Class) return CategoryInterface_Access is
+      categoryInterface : CategoryInterface_Access := CategoryInterface_Access (categoryInterface_Param);
       document : Document_Access;
    begin
         begin
@@ -140,14 +145,15 @@ package body org.allbinary.data.tree.category.CategoryLoader_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, This.commonStrings.GET, e);
+                This.logUtil.put (This.commonStrings.FAILURE, CategoryLoader_Access'(This'Unchecked_Access), This.commonStrings.GET, e);
             end if;
             return null;
                 end;
         end;
    end getAll;
 
-   function getAll (This : in out CategoryLoader; document : Document_Access) return CategoryInterface_Access is
+   function getAll (This : in out CategoryLoader; document_Param : access Document'Class) return CategoryInterface_Access is
+      document : Document_Access := Document_Access (document_Param);
       categoryNode : Node_Access;
       loadedCategoryInterface : CategoryInterface_Access;
    begin
@@ -161,14 +167,16 @@ package body org.allbinary.data.tree.category.CategoryLoader_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, This.commonStrings.GET, e);
+                This.logUtil.put (This.commonStrings.FAILURE, CategoryLoader_Access'(This'Unchecked_Access), This.commonStrings.GET, e);
             end if;
             return null;
                 end;
         end;
    end getAll;
 
-   function getAll (This : in out CategoryLoader; parentCategoryInterface : CategoryInterface_Access; categoryNodeList : NodeList_Access) return CategoryInterface_Access is
+   function getAll (This : in out CategoryLoader; parentCategoryInterface_Param : access CategoryInterface'Class; categoryNodeList_Param : access NodeList'Class) return CategoryInterface_Access is
+      parentCategoryInterface : CategoryInterface_Access := CategoryInterface_Access (parentCategoryInterface_Param);
+      categoryNodeList : NodeList_Access := NodeList_Access (categoryNodeList_Param);
       categoryNode : Node_Access;
       categoryInterface : CategoryInterface_Access;
       index : Integer;
@@ -190,14 +198,16 @@ package body org.allbinary.data.tree.category.CategoryLoader_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, This.commonStrings.GET, e);
+                This.logUtil.put (This.commonStrings.FAILURE, CategoryLoader_Access'(This'Unchecked_Access), This.commonStrings.GET, e);
             end if;
             return null;
                 end;
         end;
    end getAll;
 
-   function addProperties (This : in out CategoryLoader; loadedCategoryInterface : CategoryInterface_Access; categoryNodeList : NodeList_Access) return CategoryInterface_Access is
+   function addProperties (This : in out CategoryLoader; loadedCategoryInterface_Param : access CategoryInterface'Class; categoryNodeList_Param : access NodeList'Class) return CategoryInterface_Access is
+      loadedCategoryInterface : CategoryInterface_Access := CategoryInterface_Access (loadedCategoryInterface_Param);
+      categoryNodeList : NodeList_Access := NodeList_Access (categoryNodeList_Param);
       categoryNode : Node_Access;
       categoryPropertiesInterface : CategoryPropertiesInterface_Access;
       index : Integer;
@@ -219,57 +229,57 @@ package body org.allbinary.data.tree.category.CategoryLoader_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, This.commonStrings.GET, e);
+                This.logUtil.put (This.commonStrings.FAILURE, CategoryLoader_Access'(This'Unchecked_Access), This.commonStrings.GET, e);
             end if;
             return null;
                 end;
         end;
    end addProperties;
 
-   procedure getDoc (This : in out CategoryLoader; categoryInterface : CategoryInterface_Access) is
-      Java_Result : constant Document_Access := CategoryLoader'Class (This).getDoc (categoryInterface);
+   procedure getDoc (This : in out CategoryLoader; categoryInterface_Param : access CategoryInterface'Class) is
+      Java_Result : constant Document_Access := CategoryLoader'Class (This).getDoc (categoryInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getDoc;
 
-   procedure get (This : in out CategoryLoader; categoryInterface : CategoryInterface_Access) is
-      Java_Result : constant CategoryInterface_Access := CategoryLoader'Class (This).get (categoryInterface);
+   procedure get (This : in out CategoryLoader; categoryInterface_Param : access CategoryInterface'Class) is
+      Java_Result : constant CategoryInterface_Access := CategoryLoader'Class (This).get (categoryInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end get;
 
-   procedure get (This : in out CategoryLoader; document : Document_Access) is
-      Java_Result : constant CategoryInterface_Access := CategoryLoader'Class (This).get (document);
+   procedure get (This : in out CategoryLoader; document_Param : access Document'Class) is
+      Java_Result : constant CategoryInterface_Access := CategoryLoader'Class (This).get (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end get;
 
-   procedure getAll (This : in out CategoryLoader; categoryInterface : CategoryInterface_Access) is
-      Java_Result : constant CategoryInterface_Access := CategoryLoader'Class (This).getAll (categoryInterface);
+   procedure getAll (This : in out CategoryLoader; categoryInterface_Param : access CategoryInterface'Class) is
+      Java_Result : constant CategoryInterface_Access := CategoryLoader'Class (This).getAll (categoryInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getAll;
 
-   procedure getAll (This : in out CategoryLoader; document : Document_Access) is
-      Java_Result : constant CategoryInterface_Access := CategoryLoader'Class (This).getAll (document);
+   procedure getAll (This : in out CategoryLoader; document_Param : access Document'Class) is
+      Java_Result : constant CategoryInterface_Access := CategoryLoader'Class (This).getAll (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getAll;
 
-   procedure getAll (This : in out CategoryLoader; parentCategoryInterface : CategoryInterface_Access; categoryNodeList : NodeList_Access) is
-      Java_Result : constant CategoryInterface_Access := CategoryLoader'Class (This).getAll (parentCategoryInterface, categoryNodeList);
+   procedure getAll (This : in out CategoryLoader; parentCategoryInterface_Param : access CategoryInterface'Class; categoryNodeList_Param : access NodeList'Class) is
+      Java_Result : constant CategoryInterface_Access := CategoryLoader'Class (This).getAll (parentCategoryInterface_Param, categoryNodeList_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getAll;
 
-   procedure addProperties (This : in out CategoryLoader; loadedCategoryInterface : CategoryInterface_Access; categoryNodeList : NodeList_Access) is
-      Java_Result : constant CategoryInterface_Access := CategoryLoader'Class (This).addProperties (loadedCategoryInterface, categoryNodeList);
+   procedure addProperties (This : in out CategoryLoader; loadedCategoryInterface_Param : access CategoryInterface'Class; categoryNodeList_Param : access NodeList'Class) is
+      Java_Result : constant CategoryInterface_Access := CategoryLoader'Class (This).addProperties (loadedCategoryInterface_Param, categoryNodeList_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

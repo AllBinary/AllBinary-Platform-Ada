@@ -39,8 +39,8 @@ package org.allbinary.image.opengles.OpenGLImageFactory_Package is
 
    procedure Initialize (This : in out OpenGLImageFactory'Class);
    function Create return OpenGLImageFactory_Access;
-   function getInstance (This : in out OpenGLImageFactory; image : Image_Access; bitmapFactory : PlatformBitmapBaseFactory_Access; textureFactory : PlatformTextureBaseFactory_Access) return Image_Access;
-   procedure getInstance (This : in out OpenGLImageFactory; image : Image_Access; bitmapFactory : PlatformBitmapBaseFactory_Access; textureFactory : PlatformTextureBaseFactory_Access);
+   function getInstance (This : in out OpenGLImageFactory; image_Param : access Image'Class; bitmapFactory_Param : access PlatformBitmapBaseFactory'Class; textureFactory_Param : access PlatformTextureBaseFactory'Class) return Image_Access;
+   procedure getInstance (This : in out OpenGLImageFactory; image_Param : access Image'Class; bitmapFactory_Param : access PlatformBitmapBaseFactory'Class; textureFactory_Param : access PlatformTextureBaseFactory'Class);
 
 end org.allbinary.image.opengles.OpenGLImageFactory_Package;
 

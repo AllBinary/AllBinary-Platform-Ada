@@ -32,7 +32,7 @@ package admin.taghelpers.TagHelperFactoryInterface_Package is
    type TagHelperFactoryInterface_Access is access all TagHelperFactoryInterface'Class;
    type TagHelperFactoryInterface_Access_Array is array (Natural range <>) of TagHelperFactoryInterface_Access;
    type TagHelperFactoryInterface_Access_Array_Access is access all TagHelperFactoryInterface_Access_Array;
-   function getInstance (This : in out TagHelperFactoryInterface; hashMap : HashMap_Access; pageContext : PageContext_Access) return Java_Object_Access is abstract;
+   function getInstance (This : in out TagHelperFactoryInterface; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return Java_Object_Access is abstract;
 
 end admin.taghelpers.TagHelperFactoryInterface_Package;
 

@@ -39,8 +39,8 @@ package org.allbinary.logic.system.hardware.components.linux.PCI_Package is
 
    procedure Initialize (This : in out PCI'Class; data : Unbounded_String);
    function Create (data : Unbounded_String) return PCI_Access;
-   function compareTo (This : in out PCI; componentInterface : HardwareComponentInterface_Access) return Boolean;
-   procedure compareTo (This : in out PCI; componentInterface : HardwareComponentInterface_Access);
+   function compareTo (This : in out PCI; componentInterface_Param : access HardwareComponentInterface'Class) return Boolean;
+   procedure compareTo (This : in out PCI; componentInterface_Param : access HardwareComponentInterface'Class);
    function toString (This : in out PCI) return Unbounded_String;
 
 end org.allbinary.logic.system.hardware.components.linux.PCI_Package;

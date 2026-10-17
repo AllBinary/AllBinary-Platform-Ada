@@ -25,7 +25,8 @@ package body org.allbinary.input.automation.actions.script.condition.ColorAtActi
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ColorAtActionScriptCondition'Class; node : Node_Access) is
+   procedure Initialize (This : in out ColorAtActionScriptCondition'Class; node_Param : access Node'Class) is
+      node : Node_Access := Node_Access (node_Param);
       actionNode : Node_Access;
       nodeList : NodeList_Access;
       childNode : Node_Access;
@@ -74,10 +75,10 @@ package body org.allbinary.input.automation.actions.script.condition.ColorAtActi
         This.init;
    end Initialize;
 
-   function Create (node : Node_Access) return ColorAtActionScriptCondition_Access is
+   function Create (node_Param : access Node'Class) return ColorAtActionScriptCondition_Access is
       This : constant ColorAtActionScriptCondition_Access := new ColorAtActionScriptCondition;
    begin
-      ColorAtActionScriptCondition_Package.Initialize (This.all, node);
+      ColorAtActionScriptCondition_Package.Initialize (This.all, node_Param);
       return This;
    end Create;
 
@@ -98,7 +99,7 @@ package body org.allbinary.input.automation.actions.script.condition.ColorAtActi
 
    procedure init (This : in out ColorAtActionScriptCondition) is
    begin
-        This.colorAtActionScriptConditionJPanel := ColorAtActionScriptConditionJPanel_Package.Create (This'Unchecked_Access);
+        This.colorAtActionScriptConditionJPanel := ColorAtActionScriptConditionJPanel_Package.Create (ColorAtActionScriptCondition_Access'(This'Unchecked_Access));
    end init;
 
    function getPoint (This : in out ColorAtActionScriptCondition) return Point_Access is
@@ -106,7 +107,8 @@ package body org.allbinary.input.automation.actions.script.condition.ColorAtActi
         return This.point;
    end getPoint;
 
-   procedure setPoint (This : in out ColorAtActionScriptCondition; point : Point_Access) is
+   procedure setPoint (This : in out ColorAtActionScriptCondition; point_Param : access Point'Class) is
+      point : Point_Access := Point_Access (point_Param);
    begin
         This.point := point;
    end setPoint;
@@ -128,12 +130,13 @@ package body org.allbinary.input.automation.actions.script.condition.ColorAtActi
         hashMap.put (ColorAtActionScriptConditionData_Package.MAX_GREEN, To_Unbounded_String (Java_Image (This.getColorRangeInterface.getMaxGreen)));
         hashMap.put (ColorAtActionScriptConditionData_Package.MIN_BLUE, To_Unbounded_String (Java_Image (This.getColorRangeInterface.getMinBlue)));
         hashMap.put (ColorAtActionScriptConditionData_Package.MAX_BLUE, To_Unbounded_String (Java_Image (This.getColorRangeInterface.getMaxBlue)));
-        This.logUtil.putF (To_Unbounded_String ("HashMap: ") & hashMap.toString, This'Unchecked_Access, To_Unbounded_String ("toHashMap()"));
+        This.logUtil.putF (To_Unbounded_String ("HashMap: ") & hashMap.toString, ColorAtActionScriptCondition_Access'(This'Unchecked_Access), To_Unbounded_String ("toHashMap()"));
         return hashMap;
    end toHashMap;
 
    --  throws Exception
-   function toXmlNode (This : in out ColorAtActionScriptCondition; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out ColorAtActionScriptCondition; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       node : Node_Access;
    begin
         node := BasicProfileActionScriptCondition (This).toXmlNode (document);
@@ -166,7 +169,7 @@ package body org.allbinary.input.automation.actions.script.condition.ColorAtActi
       message : Unbounded_String;
    begin
         message := StringMaker_Package.Create.append (To_Unbounded_String ("getPoint(): ")).append (This.getPoint.toString).append (CommonSeps_Package.getInstance.NEW_LINE).append (This.getColorRangeInterface.toString).toString;
-        This.logUtil.putF (message, This'Unchecked_Access, To_Unbounded_String ("log"));
+        This.logUtil.putF (message, ColorAtActionScriptCondition_Access'(This'Unchecked_Access), To_Unbounded_String ("log"));
    end log;
 
    function getColorRangeInterface (This : in out ColorAtActionScriptCondition) return ColorRangeInterface_Access is
@@ -174,13 +177,14 @@ package body org.allbinary.input.automation.actions.script.condition.ColorAtActi
         return This.colorRangeInterface;
    end getColorRangeInterface;
 
-   procedure setColorRangeInterface (This : in out ColorAtActionScriptCondition; colorRangeInterface : ColorRangeInterface_Access) is
+   procedure setColorRangeInterface (This : in out ColorAtActionScriptCondition; colorRangeInterface_Param : access ColorRangeInterface'Class) is
+      colorRangeInterface : ColorRangeInterface_Access := ColorRangeInterface_Access (colorRangeInterface_Param);
    begin
         This.colorRangeInterface := colorRangeInterface;
    end setColorRangeInterface;
 
-   procedure toXmlNode (This : in out ColorAtActionScriptCondition; document : Document_Access) is
-      Java_Result : constant Node_Access := ColorAtActionScriptCondition'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out ColorAtActionScriptCondition; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := ColorAtActionScriptCondition'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

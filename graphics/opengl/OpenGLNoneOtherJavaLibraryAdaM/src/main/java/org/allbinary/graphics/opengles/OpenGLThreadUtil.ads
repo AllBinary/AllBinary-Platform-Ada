@@ -23,7 +23,7 @@ package org.allbinary.graphics.opengles.OpenGLThreadUtil_Package is
    procedure Initialize (This : in out OpenGLThreadUtil'Class);
    function Create return OpenGLThreadUtil_Access;
    function getInstance return OpenGLThreadUtil_Access;
-   procedure set (This : in out OpenGLThreadUtil; glSurfaceView : Java_Object_Access);
+   procedure set (This : in out OpenGLThreadUtil; glSurfaceView_Param : access Java_Object'Class);
    procedure onPause (This : in out OpenGLThreadUtil);
    procedure onResume (This : in out OpenGLThreadUtil);
 

@@ -61,7 +61,8 @@ package body org.allbinary.dom.DomHelper_Package is
    end createDocument;
 
    --  throws Exception
-   function createDocument (This : in out DomHelper; xmlFile : File_Access) return Document_Access is
+   function createDocument (This : in out DomHelper; xmlFile_Param : access File'Class) return Document_Access is
+      xmlFile : File_Access := File_Access (xmlFile_Param);
       factory : DocumentBuilderFactory_Access;
       builder : DocumentBuilder_Access;
       document : Document_Access;
@@ -82,7 +83,8 @@ package body org.allbinary.dom.DomHelper_Package is
    end createDocument;
 
    --  throws Exception
-   function toString (This : in out DomHelper; document : Document_Access) return Unbounded_String is
+   function toString (This : in out DomHelper; document_Param : access Document'Class) return Unbounded_String is
+      document : Document_Access := Document_Access (document_Param);
       domSource : DOMSource_Access;
       byteArrayOutputStream : ByteArrayOutputStream_Access;
       streamResult : StreamResult_Access;
@@ -108,7 +110,9 @@ package body org.allbinary.dom.DomHelper_Package is
    end toString;
 
    --  throws Exception
-   procedure save (This : in out DomHelper; file : File_Access; document : Document_Access) is
+   procedure save (This : in out DomHelper; file_Param : access File'Class; document_Param : access Document'Class) is
+      file : File_Access := File_Access (file_Param);
+      document : Document_Access := Document_Access (document_Param);
       copyTransformerFactory : TransformerFactory_Access;
       copyTransformer : Transformer_Access;
       domSource : DOMSource_Access;
@@ -132,7 +136,8 @@ package body org.allbinary.dom.DomHelper_Package is
    end save;
 
    --  throws Exception
-   function getChildNodeList (This : in out DomHelper; nodeName : Unbounded_String; nodeList : NodeList_Access) return NodeList_Access is
+   function getChildNodeList (This : in out DomHelper; nodeName : Unbounded_String; nodeList_Param : access NodeList'Class) return NodeList_Access is
+      nodeList : NodeList_Access := NodeList_Access (nodeList_Param);
       numberOfNodes : Integer;
       node : Node_Access;
       index : Integer;
@@ -148,7 +153,8 @@ package body org.allbinary.dom.DomHelper_Package is
    end getChildNodeList;
 
    --  throws Exception
-   function getChildrenWithoutTextNodes (This : in out DomHelper; nodeName : Unbounded_String; nodeList : NodeList_Access) return BasicArrayList_Access is
+   function getChildrenWithoutTextNodes (This : in out DomHelper; nodeName : Unbounded_String; nodeList_Param : access NodeList'Class) return BasicArrayList_Access is
+      nodeList : NodeList_Access := NodeList_Access (nodeList_Param);
       list : BasicArrayList_Access;
       childNodeList : NodeList_Access;
       numberOfChildren : Integer;
@@ -168,7 +174,8 @@ package body org.allbinary.dom.DomHelper_Package is
    end getChildrenWithoutTextNodes;
 
    --  throws Exception
-   function getWithoutTextNodes (This : in out DomHelper; nodeList : NodeList_Access) return BasicArrayList_Access is
+   function getWithoutTextNodes (This : in out DomHelper; nodeList_Param : access NodeList'Class) return BasicArrayList_Access is
+      nodeList : NodeList_Access := NodeList_Access (nodeList_Param);
       list : BasicArrayList_Access;
       numberOfChildren : Integer;
       node : Node_Access;
@@ -186,7 +193,8 @@ package body org.allbinary.dom.DomHelper_Package is
    end getWithoutTextNodes;
 
    --  throws Exception
-   function searchNodeList (This : in out DomHelper; nodeName : Unbounded_String; nodeList : NodeList_Access) return Node_Access is
+   function searchNodeList (This : in out DomHelper; nodeName : Unbounded_String; nodeList_Param : access NodeList'Class) return Node_Access is
+      nodeList : NodeList_Access := NodeList_Access (nodeList_Param);
       numberOfNodes : Integer;
       node : Node_Access;
       index : Integer;
@@ -194,7 +202,7 @@ package body org.allbinary.dom.DomHelper_Package is
         numberOfNodes := nodeList.getLength;
         for index in 0 .. (numberOfNodes) - 1 loop
             node := nodeList.item (index);
-            This.logUtil.putF (To_Unbounded_String ("NodeName: ") & Java_Image (node.getNodeName), This'Unchecked_Access, To_Unbounded_String ("searchNodeList"));
+            This.logUtil.putF (To_Unbounded_String ("NodeName: ") & Java_Image (node.getNodeName), DomHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("searchNodeList"));
             if (node.getNodeName.compareTo (nodeName)) = (0) then
                 return node;
             end if;
@@ -203,7 +211,8 @@ package body org.allbinary.dom.DomHelper_Package is
    end searchNodeList;
 
    --  throws Exception
-   function searchNodeList (This : in out DomHelper; nodeName : Unbounded_String; nodeList : BasicArrayList_Access) return Node_Access is
+   function searchNodeList (This : in out DomHelper; nodeName : Unbounded_String; nodeList_Param : access BasicArrayList'Class) return Node_Access is
+      nodeList : BasicArrayList_Access := BasicArrayList_Access (nodeList_Param);
       numberOfNodes : Integer;
       node : Node_Access;
       index : Integer;
@@ -211,7 +220,7 @@ package body org.allbinary.dom.DomHelper_Package is
         numberOfNodes := nodeList.size;
         for index in 0 .. (numberOfNodes) - 1 loop
             node := Node_Access (nodeList.get (index));
-            This.logUtil.putF (To_Unbounded_String ("NodeName: ") & Java_Image (node.getNodeName), This'Unchecked_Access, To_Unbounded_String ("searchNodeList"));
+            This.logUtil.putF (To_Unbounded_String ("NodeName: ") & Java_Image (node.getNodeName), DomHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("searchNodeList"));
             if (node.getNodeName.compareTo (nodeName)) = (0) then
                 return node;
             end if;
@@ -219,50 +228,50 @@ package body org.allbinary.dom.DomHelper_Package is
         Java_Throw (Java_New_Exception ("Exception", nodeName & To_Unbounded_String (" Node Not Found in search")));
    end searchNodeList;
 
-   procedure createDocument (This : in out DomHelper; xmlFile : File_Access) is
-      Java_Result : constant Document_Access := DomHelper'Class (This).createDocument (xmlFile);
+   procedure createDocument (This : in out DomHelper; xmlFile_Param : access File'Class) is
+      Java_Result : constant Document_Access := DomHelper'Class (This).createDocument (xmlFile_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createDocument;
 
-   procedure toString (This : in out DomHelper; document : Document_Access) is
-      Java_Result : constant Unbounded_String := DomHelper'Class (This).toString (document);
+   procedure toString (This : in out DomHelper; document_Param : access Document'Class) is
+      Java_Result : constant Unbounded_String := DomHelper'Class (This).toString (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toString;
 
-   procedure getChildNodeList (This : in out DomHelper; nodeName : Unbounded_String; nodeList : NodeList_Access) is
-      Java_Result : constant NodeList_Access := DomHelper'Class (This).getChildNodeList (nodeName, nodeList);
+   procedure getChildNodeList (This : in out DomHelper; nodeName : Unbounded_String; nodeList_Param : access NodeList'Class) is
+      Java_Result : constant NodeList_Access := DomHelper'Class (This).getChildNodeList (nodeName, nodeList_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getChildNodeList;
 
-   procedure getChildrenWithoutTextNodes (This : in out DomHelper; nodeName : Unbounded_String; nodeList : NodeList_Access) is
-      Java_Result : constant BasicArrayList_Access := DomHelper'Class (This).getChildrenWithoutTextNodes (nodeName, nodeList);
+   procedure getChildrenWithoutTextNodes (This : in out DomHelper; nodeName : Unbounded_String; nodeList_Param : access NodeList'Class) is
+      Java_Result : constant BasicArrayList_Access := DomHelper'Class (This).getChildrenWithoutTextNodes (nodeName, nodeList_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getChildrenWithoutTextNodes;
 
-   procedure getWithoutTextNodes (This : in out DomHelper; nodeList : NodeList_Access) is
-      Java_Result : constant BasicArrayList_Access := DomHelper'Class (This).getWithoutTextNodes (nodeList);
+   procedure getWithoutTextNodes (This : in out DomHelper; nodeList_Param : access NodeList'Class) is
+      Java_Result : constant BasicArrayList_Access := DomHelper'Class (This).getWithoutTextNodes (nodeList_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getWithoutTextNodes;
 
-   procedure searchNodeList (This : in out DomHelper; nodeName : Unbounded_String; nodeList : NodeList_Access) is
-      Java_Result : constant Node_Access := DomHelper'Class (This).searchNodeList (nodeName, nodeList);
+   procedure searchNodeList (This : in out DomHelper; nodeName : Unbounded_String; nodeList_Param : access NodeList'Class) is
+      Java_Result : constant Node_Access := DomHelper'Class (This).searchNodeList (nodeName, nodeList_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end searchNodeList;
 
-   procedure searchNodeList (This : in out DomHelper; nodeName : Unbounded_String; nodeList : BasicArrayList_Access) is
-      Java_Result : constant Node_Access := DomHelper'Class (This).searchNodeList (nodeName, nodeList);
+   procedure searchNodeList (This : in out DomHelper; nodeName : Unbounded_String; nodeList_Param : access BasicArrayList'Class) is
+      Java_Result : constant Node_Access := DomHelper'Class (This).searchNodeList (nodeName, nodeList_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

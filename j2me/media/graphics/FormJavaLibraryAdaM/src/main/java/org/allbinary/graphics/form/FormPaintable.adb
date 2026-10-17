@@ -22,21 +22,23 @@ package body org.allbinary.graphics.form.FormPaintable_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out FormPaintable'Class; form : PaintableForm_Access) is
+   procedure Initialize (This : in out FormPaintable'Class; form_Param : access PaintableForm'Class) is
+      form : PaintableForm_Access := PaintableForm_Access (form_Param);
    begin
       Paintable_Package.Initialize (This);
       Initialize_Fields (This);
         This.form := form;
    end Initialize;
 
-   function Create (form : PaintableForm_Access) return FormPaintable_Access is
+   function Create (form_Param : access PaintableForm'Class) return FormPaintable_Access is
       This : constant FormPaintable_Access := new FormPaintable;
    begin
-      FormPaintable_Package.Initialize (This.all, form);
+      FormPaintable_Package.Initialize (This.all, form_Param);
       return This;
    end Create;
 
-   procedure paint (This : in out FormPaintable; graphics : Graphics_Access) is
+   procedure paint (This : in out FormPaintable; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.form.paint (graphics);
    end paint;

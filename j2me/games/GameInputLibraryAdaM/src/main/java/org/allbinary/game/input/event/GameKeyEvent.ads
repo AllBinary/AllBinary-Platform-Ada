@@ -44,11 +44,11 @@ package org.allbinary.game.input.event.GameKeyEvent_Package is
    end record;
    NONE : GameKeyEvent_Access;
 
-   procedure Initialize (This : in out GameKeyEvent'Class; anyType : Java_Object_Access; sourceId : Integer; originalKey : Integer; gameActionKey : Integer; key : Integer; repeated : Boolean);
-   function Create (anyType : Java_Object_Access; sourceId : Integer; originalKey : Integer; gameActionKey : Integer; key : Integer; repeated : Boolean) return GameKeyEvent_Access;
-   function createEvent (anyType : Java_Object_Access; sourceId : Integer; key : Integer) return GameKeyEvent_Access;
-   procedure createEvent (anyType : Java_Object_Access; sourceId : Integer; key : Integer);
-   procedure init (This : in out GameKeyEvent; anyType : Java_Object_Access);
+   procedure Initialize (This : in out GameKeyEvent'Class; anyType_Param : access Java_Object'Class; sourceId : Integer; originalKey : Integer; gameActionKey : Integer; key : Integer; repeated : Boolean);
+   function Create (anyType_Param : access Java_Object'Class; sourceId : Integer; originalKey : Integer; gameActionKey : Integer; key : Integer; repeated : Boolean) return GameKeyEvent_Access;
+   function createEvent (anyType_Param : access Java_Object'Class; sourceId : Integer; key : Integer) return GameKeyEvent_Access;
+   procedure createEvent (anyType_Param : access Java_Object'Class; sourceId : Integer; key : Integer);
+   procedure init (This : in out GameKeyEvent; anyType_Param : access Java_Object'Class);
    procedure setRepeatEvents (This : in out GameKeyEvent; repeated : Boolean);
    function hasRepeatEvents (This : in out GameKeyEvent) return Boolean;
    function getKey (This : in out GameKeyEvent) return Integer;

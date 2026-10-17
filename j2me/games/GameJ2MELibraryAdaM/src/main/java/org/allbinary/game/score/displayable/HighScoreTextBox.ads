@@ -74,13 +74,13 @@ package org.allbinary.game.score.displayable.HighScoreTextBox_Package is
       submitted : Boolean;
    end record;
 
-   procedure Initialize (This : in out HighScoreTextBox'Class; highScoresFactoryInterface : HighScoresFactoryInterface_Access; highScoresHelper : HighScoresHelperBaseInterface_Access; abeClientInformation : AbeClientInformationInterface_Access; gameInfo : GameInfo_Access; cmdListener : CommandListener_Access; name : Unbounded_String; highScore : HighScore_Access; backgrounBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access);
-   function Create (highScoresFactoryInterface : HighScoresFactoryInterface_Access; highScoresHelper : HighScoresHelperBaseInterface_Access; abeClientInformation : AbeClientInformationInterface_Access; gameInfo : GameInfo_Access; cmdListener : CommandListener_Access; name : Unbounded_String; highScore : HighScore_Access; backgrounBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return HighScoreTextBox_Access;
-   procedure initCommands (This : in out HighScoreTextBox; cmdListener : CommandListener_Access);
+   procedure Initialize (This : in out HighScoreTextBox'Class; highScoresFactoryInterface_Param : access HighScoresFactoryInterface'Class; highScoresHelper_Param : access HighScoresHelperBaseInterface'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; gameInfo_Param : access GameInfo'Class; cmdListener_Param : access CommandListener'Class; name : Unbounded_String; highScore_Param : access HighScore'Class; backgrounBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class);
+   function Create (highScoresFactoryInterface_Param : access HighScoresFactoryInterface'Class; highScoresHelper_Param : access HighScoresHelperBaseInterface'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; gameInfo_Param : access GameInfo'Class; cmdListener_Param : access CommandListener'Class; name : Unbounded_String; highScore_Param : access HighScore'Class; backgrounBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return HighScoreTextBox_Access;
+   procedure initCommands (This : in out HighScoreTextBox; cmdListener_Param : access CommandListener'Class);
    procedure open (This : in out HighScoreTextBox);
    procedure close (This : in out HighScoreTextBox);
    procedure update (This : in out HighScoreTextBox);
-   procedure paint (This : in out HighScoreTextBox; graphics : Graphics_Access);
+   procedure paint (This : in out HighScoreTextBox; graphics_Param : access Graphics'Class);
    procedure saveHighScore (This : in out HighScoreTextBox);
    procedure submit (This : in out HighScoreTextBox);
 

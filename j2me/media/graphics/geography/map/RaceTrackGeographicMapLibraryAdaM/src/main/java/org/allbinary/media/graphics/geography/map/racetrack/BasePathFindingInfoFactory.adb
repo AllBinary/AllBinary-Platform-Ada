@@ -35,32 +35,39 @@ package body org.allbinary.media.graphics.geography.map.racetrack.BasePathFindin
 
 
    --  throws Exception
-   procedure init (This : in out BasePathFindingInfoFactory; geographicMapInterface : BasicGeographicMap_Access; pathFindingInfo : PathFindingInfo_Access; mapArray : Integer_Array_Access_Array_Access) is
+   procedure init (This : in out BasePathFindingInfoFactory; geographicMapInterface_Param : access BasicGeographicMap'Class; pathFindingInfo_Param : access PathFindingInfo'Class; mapArray : Integer_Array_Access_Array_Access) is
+      geographicMapInterface : BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
+      pathFindingInfo : PathFindingInfo_Access := PathFindingInfo_Access (pathFindingInfo_Param);
    begin
         --  Java nested class RaceTrackGeographicMapCellPositionFactoryInitVisitor: move it to its own package
         geographicMapInterface.getGeographicMapCellPositionFactory.visit (RaceTrackGeographicMapCellPositionFactoryInitVisitor_Package.Create);
    end init;
 
    --  throws Exception
-   procedure addStartPathFindingNode (This : in out BasePathFindingInfoFactory; pathFindingInfo : PathFindingInfo_Access; startGeographicMapCellPosition : GeographicMapCellPosition_Access) is
+   procedure addStartPathFindingNode (This : in out BasePathFindingInfoFactory; pathFindingInfo_Param : access PathFindingInfo'Class; startGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is
+      pathFindingInfo : PathFindingInfo_Access := PathFindingInfo_Access (pathFindingInfo_Param);
+      startGeographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (startGeographicMapCellPosition_Param);
    begin
         pathFindingInfo.addStartPathFindingNode (PathFindingNode_Package.Create (NullUtil_Package.getInstance.NULL_OBJECT, startGeographicMapCellPosition));
    end addStartPathFindingNode;
 
    --  throws Exception
-   procedure addEndPathFindingNode (This : in out BasePathFindingInfoFactory; pathFindingInfo : PathFindingInfo_Access; endGeographicMapCellPosition : GeographicMapCellPosition_Access) is
+   procedure addEndPathFindingNode (This : in out BasePathFindingInfoFactory; pathFindingInfo_Param : access PathFindingInfo'Class; endGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is
+      pathFindingInfo : PathFindingInfo_Access := PathFindingInfo_Access (pathFindingInfo_Param);
+      endGeographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (endGeographicMapCellPosition_Param);
    begin
         pathFindingInfo.addEndPathFindingNode (PathFindingNode_Package.Create (NullUtil_Package.getInstance.NULL_OBJECT, endGeographicMapCellPosition));
    end addEndPathFindingNode;
 
    --  throws Exception
-   function getInstancePathFindingInfo (This : in out BasePathFindingInfoFactory; geographicMapInterface : BasicGeographicMap_Access; graphArray : Integer_Array_Access_Array_Access) return PathFindingInfo_Access is
+   function getInstancePathFindingInfo (This : in out BasePathFindingInfoFactory; geographicMapInterface_Param : access BasicGeographicMap'Class; graphArray : Integer_Array_Access_Array_Access) return PathFindingInfo_Access is
+      geographicMapInterface : BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end getInstancePathFindingInfo;
 
-   procedure getInstancePathFindingInfo (This : in out BasePathFindingInfoFactory; geographicMapInterface : BasicGeographicMap_Access; graphArray : Integer_Array_Access_Array_Access) is
-      Java_Result : constant PathFindingInfo_Access := BasePathFindingInfoFactory'Class (This).getInstancePathFindingInfo (geographicMapInterface, graphArray);
+   procedure getInstancePathFindingInfo (This : in out BasePathFindingInfoFactory; geographicMapInterface_Param : access BasicGeographicMap'Class; graphArray : Integer_Array_Access_Array_Access) is
+      Java_Result : constant PathFindingInfo_Access := BasePathFindingInfoFactory'Class (This).getInstancePathFindingInfo (geographicMapInterface_Param, graphArray);
       pragma Unreferenced (Java_Result);
    begin
       null;

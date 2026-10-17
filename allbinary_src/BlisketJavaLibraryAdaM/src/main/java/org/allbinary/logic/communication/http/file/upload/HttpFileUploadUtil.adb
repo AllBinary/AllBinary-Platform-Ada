@@ -41,7 +41,8 @@ package body org.allbinary.logic.communication.http.file.upload.HttpFileUploadUt
    end Create;
 
    --  throws Exception
-   function isValid (This : in out HttpFileUploadUtil; anyType : Java_Object_Access) return Boolean is
+   function isValid (This : in out HttpFileUploadUtil; anyType_Param : access Java_Object'Class) return Boolean is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         if ((anyType) /= (null)) and then (not (((anyType.all in String_Package.String'Class)))) then
             if (anyType.all in FileItem_Package.FileItem'Class) then
@@ -54,7 +55,8 @@ package body org.allbinary.logic.communication.http.file.upload.HttpFileUploadUt
    end isValid;
 
    --  throws Exception
-   procedure log (fileItem : FileItemStream_Access) is
+   procedure log (fileItem_Param : access FileItemStream'Class) is
+      fileItem : FileItemStream_Access := FileItemStream_Access (fileItem_Param);
       logUtil : LogUtil_Access;
       stringBuffer : StringMaker_Access;
       commonSeps : CommonSeps_Access;
@@ -80,7 +82,8 @@ package body org.allbinary.logic.communication.http.file.upload.HttpFileUploadUt
         end if;
    end log;
 
-   procedure log (fileItem : FileItem_Access) is
+   procedure log (fileItem_Param : access FileItem'Class) is
+      fileItem : FileItem_Access := FileItem_Access (fileItem_Param);
       logUtil : LogUtil_Access;
       stringBuffer : StringMaker_Access;
       commonSeps : CommonSeps_Access;
@@ -106,8 +109,8 @@ package body org.allbinary.logic.communication.http.file.upload.HttpFileUploadUt
         end if;
    end log;
 
-   procedure isValid (This : in out HttpFileUploadUtil; anyType : Java_Object_Access) is
-      Java_Result : constant Boolean := HttpFileUploadUtil'Class (This).isValid (anyType);
+   procedure isValid (This : in out HttpFileUploadUtil; anyType_Param : access Java_Object'Class) is
+      Java_Result : constant Boolean := HttpFileUploadUtil'Class (This).isValid (anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

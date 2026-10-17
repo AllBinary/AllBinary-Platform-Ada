@@ -40,7 +40,8 @@ package body org.allbinary.game.input.motion.action.GameKeyCompleteMotionGesture
         return GameKeyCompleteMotionGestureInputEventFactory_Package.SINGLETON;
    end getInstance;
 
-   procedure add (This : in out GameKeyCompleteMotionGestureInputEventFactory; gameKeyCompleteMotionGestureInputEvent : GameKeyCompleteMotionGestureInputEvent_Access) is
+   procedure add (This : in out GameKeyCompleteMotionGestureInputEventFactory; gameKeyCompleteMotionGestureInputEvent_Param : access GameKeyCompleteMotionGestureInputEvent'Class) is
+      gameKeyCompleteMotionGestureInputEvent : GameKeyCompleteMotionGestureInputEvent_Access := GameKeyCompleteMotionGestureInputEvent_Access (gameKeyCompleteMotionGestureInputEvent_Param);
    begin
         This.eventList.add (gameKeyCompleteMotionGestureInputEvent);
    end add;
@@ -49,7 +50,7 @@ package body org.allbinary.game.input.motion.action.GameKeyCompleteMotionGesture
       gameKeyCompleteMotionGestureInputEvent : GameKeyCompleteMotionGestureInputEvent_Access;
       index : Integer;
    begin
-        This.logUtil.putF (StringMaker_Package.Create.append (CommonLabels_Package.getInstance.START_LABEL).appendint (This.eventList.size).toString, This'Unchecked_Access, To_Unbounded_String ("updateAll"));
+        This.logUtil.putF (StringMaker_Package.Create.append (CommonLabels_Package.getInstance.START_LABEL).appendint (This.eventList.size).toString, GameKeyCompleteMotionGestureInputEventFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("updateAll"));
         for index in reverse 0 .. (This.eventList.size) - (1) loop
             gameKeyCompleteMotionGestureInputEvent := GameKeyCompleteMotionGestureInputEvent_Access (This.eventList.objectArray (index));
             gameKeyCompleteMotionGestureInputEvent.update;

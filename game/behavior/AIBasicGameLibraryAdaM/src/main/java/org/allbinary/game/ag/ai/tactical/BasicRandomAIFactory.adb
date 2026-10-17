@@ -34,7 +34,10 @@ package body org.allbinary.game.ag.ai.tactical.BasicRandomAIFactory_Package is
 
 
    --  throws Exception
-   function getInstance (This : in out BasicRandomAIFactory; hashtable : ABHashtable_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return ArtificialIntelligenceInterface_Access is
+   function getInstance (This : in out BasicRandomAIFactory; hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return ArtificialIntelligenceInterface_Access is
+      hashtable : ABHashtable_Access := ABHashtable_Access (hashtable_Param);
+      ownerLayerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (ownerLayerInterface_Param);
+      gameInput : GameInput_Access := GameInput_Access (gameInput_Param);
       visitor : Visitor_Access;
       inputProbability : InputProbability_Access;
    begin
@@ -46,8 +49,8 @@ package body org.allbinary.game.ag.ai.tactical.BasicRandomAIFactory_Package is
         return BasicRandomAI_Package.Create (ownerLayerInterface, gameInput, inputProbability, visitor);
    end getInstance;
 
-   procedure getInstance (This : in out BasicRandomAIFactory; hashtable : ABHashtable_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) is
-      Java_Result : constant ArtificialIntelligenceInterface_Access := BasicRandomAIFactory'Class (This).getInstance (hashtable, ownerLayerInterface, gameInput);
+   procedure getInstance (This : in out BasicRandomAIFactory; hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) is
+      Java_Result : constant ArtificialIntelligenceInterface_Access := BasicRandomAIFactory'Class (This).getInstance (hashtable_Param, ownerLayerInterface_Param, gameInput_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

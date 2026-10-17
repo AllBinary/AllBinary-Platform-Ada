@@ -27,7 +27,9 @@ package body org.allbinary.business.user.commerce.inventory.order.status.OrderSt
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out OrderStatusEmail'Class; abeClientInformation : AbeClientInformationInterface_Access; orderHistory : OrderHistory_Access) is
+   procedure Initialize (This : in out OrderStatusEmail'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; orderHistory_Param : access OrderHistory'Class) is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      orderHistory : OrderHistory_Access := OrderHistory_Access (orderHistory_Param);
       storeName : Unbounded_String;
    begin
       Initialize_Fields (This);
@@ -38,10 +40,10 @@ package body org.allbinary.business.user.commerce.inventory.order.status.OrderSt
         This.user := UserEntityFactory_Package.getInstance.getUser (orderHistory.getUserName);
    end Initialize;
 
-   function Create (abeClientInformation : AbeClientInformationInterface_Access; orderHistory : OrderHistory_Access) return OrderStatusEmail_Access is
+   function Create (abeClientInformation_Param : access AbeClientInformationInterface'Class; orderHistory_Param : access OrderHistory'Class) return OrderStatusEmail_Access is
       This : constant OrderStatusEmail_Access := new OrderStatusEmail;
    begin
-      OrderStatusEmail_Package.Initialize (This.all, abeClientInformation, orderHistory);
+      OrderStatusEmail_Package.Initialize (This.all, abeClientInformation_Param, orderHistory_Param);
       return This;
    end Create;
 
@@ -66,7 +68,7 @@ package body org.allbinary.business.user.commerce.inventory.order.status.OrderSt
    begin
         begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
-                This.logUtil.putF (To_Unbounded_String ("Order Email"), This'Unchecked_Access, To_Unbounded_String ("emailStoreAdmin"));
+                This.logUtil.putF (To_Unbounded_String ("Order Email"), OrderStatusEmail_Access'(This'Unchecked_Access), To_Unbounded_String ("emailStoreAdmin"));
             end if;
             adminEmailSubject := To_Unbounded_String ("Order ") & Java_Image (This.orderHistory.getStatus) & To_Unbounded_String (" Attempt");
             adminEmailTextBody := To_Unbounded_String ("Order attempt: ") & Java_Image (This.orderHistory.getId) & To_Unbounded_String (" Preprocessing by: ") & Java_Image (This.user.getUserName);
@@ -85,7 +87,7 @@ package body org.allbinary.business.user.commerce.inventory.order.status.OrderSt
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGINGERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("emailAdmin"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, OrderStatusEmail_Access'(This'Unchecked_Access), To_Unbounded_String ("emailAdmin"), e);
             end if;
                 end;
         end;
@@ -102,7 +104,7 @@ package body org.allbinary.business.user.commerce.inventory.order.status.OrderSt
    begin
         begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
-                This.logUtil.putF (To_Unbounded_String ("Email User"), This'Unchecked_Access, To_Unbounded_String ("notifyUser()"));
+                This.logUtil.putF (To_Unbounded_String ("Email User"), OrderStatusEmail_Access'(This'Unchecked_Access), To_Unbounded_String ("notifyUser()"));
             end if;
             subject := To_Unbounded_String ("Order ") & Java_Image (This.orderHistory.getStatus) & To_Unbounded_String (" Attempt");
             textBody := To_Unbounded_String ("Order attempt: ") & Java_Image (This.orderHistory.getId) & To_Unbounded_String (" Preprocessing by: ") & Java_Image (This.user.getUserName);
@@ -117,7 +119,7 @@ package body org.allbinary.business.user.commerce.inventory.order.status.OrderSt
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGINGERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("notifyUser"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, OrderStatusEmail_Access'(This'Unchecked_Access), To_Unbounded_String ("notifyUser"), e);
             end if;
             Java_Throw (e);
                 end;

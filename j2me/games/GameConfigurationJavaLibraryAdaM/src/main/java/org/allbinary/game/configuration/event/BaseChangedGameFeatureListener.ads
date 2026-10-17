@@ -62,13 +62,13 @@ package org.allbinary.game.configuration.event.BaseChangedGameFeatureListener_Pa
 
    procedure Initialize (This : in out BaseChangedGameFeatureListener'Class);
    function Create return BaseChangedGameFeatureListener_Access;
-   procedure onEvent (This : in out BaseChangedGameFeatureListener; eventObject : AllBinaryEventObject_Access);
-   procedure onGameFeatureChange (This : in out BaseChangedGameFeatureListener; gameFeatureEvent : GameFeatureEvent_Access);
-   procedure add (This : in out BaseChangedGameFeatureListener; gameFeature : Feature_Access);
-   procedure remove (This : in out BaseChangedGameFeatureListener; gameFeature : Feature_Access);
+   procedure onEvent (This : in out BaseChangedGameFeatureListener; eventObject_Param : access AllBinaryEventObject'Class);
+   procedure onGameFeatureChange (This : in out BaseChangedGameFeatureListener; gameFeatureEvent_Param : access GameFeatureEvent'Class);
+   procedure add (This : in out BaseChangedGameFeatureListener; gameFeature_Param : access Feature'Class);
+   procedure remove (This : in out BaseChangedGameFeatureListener; gameFeature_Param : access Feature'Class);
    procedure setChanged (This : in out BaseChangedGameFeatureListener; initialized : Boolean);
-   function isChangedFeature (This : in out BaseChangedGameFeatureListener; gameFeature : Feature_Access) return Boolean;
-   procedure isChangedFeature (This : in out BaseChangedGameFeatureListener; gameFeature : Feature_Access);
+   function isChangedFeature (This : in out BaseChangedGameFeatureListener; gameFeature_Param : access Feature'Class) return Boolean;
+   procedure isChangedFeature (This : in out BaseChangedGameFeatureListener; gameFeature_Param : access Feature'Class);
    function isChanged (This : in out BaseChangedGameFeatureListener) return Boolean;
 
 end org.allbinary.game.configuration.event.BaseChangedGameFeatureListener_Package;

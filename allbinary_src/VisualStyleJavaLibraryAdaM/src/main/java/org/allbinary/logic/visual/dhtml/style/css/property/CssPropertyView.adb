@@ -36,16 +36,17 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyView
       return This;
    end Create;
 
-   procedure Initialize (This : in out CssPropertyView'Class; node : Node_Access) is
+   procedure Initialize (This : in out CssPropertyView'Class; node_Param : access Node'Class) is
+      node : Node_Access := Node_Access (node_Param);
    begin
       Initialize_Fields (This);
         This.cssProperty := CssProperty_Package.Create (node);
    end Initialize;
 
-   function Create (node : Node_Access) return CssPropertyView_Access is
+   function Create (node_Param : access Node'Class) return CssPropertyView_Access is
       This : constant CssPropertyView_Access := new CssPropertyView;
    begin
-      CssPropertyView_Package.Initialize (This.all, node);
+      CssPropertyView_Package.Initialize (This.all, node_Param);
       return This;
    end Create;
 
@@ -55,13 +56,14 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyView
    end getProperty;
 
    --  throws Exception
-   function toXmlNode (This : in out CssPropertyView; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out CssPropertyView; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
    begin
         return This.cssProperty.toXmlNode (document);
    end toXmlNode;
 
-   procedure toXmlNode (This : in out CssPropertyView; document : Document_Access) is
-      Java_Result : constant Node_Access := CssPropertyView'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out CssPropertyView; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := CssPropertyView'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -43,8 +43,8 @@ package org.allbinary.input.motion.button.CancelTouchButtonInputFactory_Package 
    procedure Initialize (This : in out CancelTouchButtonInputFactory'Class);
    function Create return CancelTouchButtonInputFactory_Access;
    function getInstance return CancelTouchButtonInputFactory_Access;
-   function getCancel (This : in out CancelTouchButtonInputFactory; touchButtonInput : TouchButtonInput_Access) return TouchButtonInput_Access;
-   procedure getCancel (This : in out CancelTouchButtonInputFactory; touchButtonInput : TouchButtonInput_Access);
+   function getCancel (This : in out CancelTouchButtonInputFactory; touchButtonInput_Param : access TouchButtonInput'Class) return TouchButtonInput_Access;
+   procedure getCancel (This : in out CancelTouchButtonInputFactory; touchButtonInput_Param : access TouchButtonInput'Class);
 
 end org.allbinary.input.motion.button.CancelTouchButtonInputFactory_Package;
 

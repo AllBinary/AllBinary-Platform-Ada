@@ -23,17 +23,19 @@ package body org.allbinary.animation.image.AdjustedImageAnimation_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AdjustedImageAnimation'Class; image : Image_Access; dx : Integer; dy : Integer; animationBehavior : AnimationBehavior_Access) is
+   procedure Initialize (This : in out AdjustedImageAnimation'Class; image_Param : access Image'Class; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior'Class) is
+      image : Image_Access := Image_Access (image_Param);
+      animationBehavior : AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
    begin
         ImageAnimation_Package.Initialize (This, image, animationBehavior);
         Initialize_Fields (This);
         This.init (dx, dy);
    end Initialize;
 
-   function Create (image : Image_Access; dx : Integer; dy : Integer; animationBehavior : AnimationBehavior_Access) return AdjustedImageAnimation_Access is
+   function Create (image_Param : access Image'Class; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior'Class) return AdjustedImageAnimation_Access is
       This : constant AdjustedImageAnimation_Access := new AdjustedImageAnimation;
    begin
-      AdjustedImageAnimation_Package.Initialize (This.all, image, dx, dy, animationBehavior);
+      AdjustedImageAnimation_Package.Initialize (This.all, image_Param, dx, dy, animationBehavior_Param);
       return This;
    end Create;
 
@@ -44,7 +46,8 @@ package body org.allbinary.animation.image.AdjustedImageAnimation_Package is
         This.setDy (dy);
    end init;
 
-   procedure paintXY (This : in out AdjustedImageAnimation; graphics : Graphics_Access; x : Integer; y : Integer) is
+   procedure paintXY (This : in out AdjustedImageAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         ImageAnimation (This).paintXY (graphics, (x) + (This.dx), (y) + (This.dy));
    end paintXY;

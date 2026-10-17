@@ -25,7 +25,9 @@ package body org.allbinary.graphics.RelativeRelationship_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out RelativeRelationship'Class; point : GPoint_Access; typesAllowedList : BasicArrayList_Access) is
+   procedure Initialize (This : in out RelativeRelationship'Class; point_Param : access GPoint'Class; typesAllowedList_Param : access BasicArrayList'Class) is
+      point : GPoint_Access := GPoint_Access (point_Param);
+      typesAllowedList : BasicArrayList_Access := BasicArrayList_Access (typesAllowedList_Param);
    begin
       Initialize_Fields (This);
         This.x := point.getX;
@@ -34,10 +36,10 @@ package body org.allbinary.graphics.RelativeRelationship_Package is
         This.typesAllowedList := typesAllowedList;
    end Initialize;
 
-   function Create (point : GPoint_Access; typesAllowedList : BasicArrayList_Access) return RelativeRelationship_Access is
+   function Create (point_Param : access GPoint'Class; typesAllowedList_Param : access BasicArrayList'Class) return RelativeRelationship_Access is
       This : constant RelativeRelationship_Access := new RelativeRelationship;
    begin
-      RelativeRelationship_Package.Initialize (This.all, point, typesAllowedList);
+      RelativeRelationship_Package.Initialize (This.all, point_Param, typesAllowedList_Param);
       return This;
    end Create;
 
@@ -61,7 +63,8 @@ package body org.allbinary.graphics.RelativeRelationship_Package is
         return This.typesAllowedList;
    end getTypesAllowedList;
 
-   procedure setTypesAllowedList (This : in out RelativeRelationship; typesAllowedList : BasicArrayList_Access) is
+   procedure setTypesAllowedList (This : in out RelativeRelationship; typesAllowedList_Param : access BasicArrayList'Class) is
+      typesAllowedList : BasicArrayList_Access := BasicArrayList_Access (typesAllowedList_Param);
    begin
         This.typesAllowedList := typesAllowedList;
    end setTypesAllowedList;

@@ -52,7 +52,7 @@ package body org.allbinary.data.generator.UniqueIdGenerator_Package is
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.IDLOGGING) then
                 commonStrings := CommonStrings_Package.getInstance;
-                This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("initialize"), e);
+                This.logUtil.put (commonStrings.EXCEPTION_Id, UniqueIdGenerator_Access'(This'Unchecked_Access), To_Unbounded_String ("initialize"), e);
             end if;
                 end;
         end;
@@ -91,7 +91,7 @@ package body org.allbinary.data.generator.UniqueIdGenerator_Package is
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.IDLOGGING) then
                 commonStrings := CommonStrings_Package.getInstance;
-                This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("getNext"), e);
+                This.logUtil.put (commonStrings.EXCEPTION_Id, UniqueIdGenerator_Access'(This'Unchecked_Access), To_Unbounded_String ("getNext"), e);
             end if;
             return To_Unbounded_String ("Error");
                 end;

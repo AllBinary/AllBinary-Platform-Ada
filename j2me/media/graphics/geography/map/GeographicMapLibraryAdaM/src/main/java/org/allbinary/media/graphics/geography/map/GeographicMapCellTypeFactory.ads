@@ -47,8 +47,8 @@ package org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_
    function getStartType (This : in out GeographicMapCellTypeFactory) return Integer;
    function getEndType (This : in out GeographicMapCellTypeFactory) return Integer;
    function getEmptyType (This : in out GeographicMapCellTypeFactory) return Integer;
-   function isPath (This : in out GeographicMapCellTypeFactory; cellType : GeographicMapCellType_Access) return Boolean;
-   procedure isPath (This : in out GeographicMapCellTypeFactory; cellType : GeographicMapCellType_Access);
+   function isPath (This : in out GeographicMapCellTypeFactory; cellType_Param : access GeographicMapCellType'Class) return Boolean;
+   procedure isPath (This : in out GeographicMapCellTypeFactory; cellType_Param : access GeographicMapCellType'Class);
 
 end org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package;
 

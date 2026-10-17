@@ -41,10 +41,10 @@ package org.allbinary.game.score.HighScoreCommandsBaseFactory_Package is
 
    procedure Initialize (This : in out HighScoreCommandsBaseFactory'Class; HIGH_SCORE_COMMANDS : Command_Access_Array_Access);
    function Create (HIGH_SCORE_COMMANDS : Command_Access_Array_Access) return HighScoreCommandsBaseFactory_Access;
-   function isHighScoreCommand (This : in out HighScoreCommandsBaseFactory; command : Command_Access) return Boolean;
-   procedure isHighScoreCommand (This : in out HighScoreCommandsBaseFactory; command : Command_Access);
-   function getIndex (This : in out HighScoreCommandsBaseFactory; command : Command_Access) return Integer;
-   procedure getIndex (This : in out HighScoreCommandsBaseFactory; command : Command_Access);
+   function isHighScoreCommand (This : in out HighScoreCommandsBaseFactory; command_Param : access Command'Class) return Boolean;
+   procedure isHighScoreCommand (This : in out HighScoreCommandsBaseFactory; command_Param : access Command'Class);
+   function getIndex (This : in out HighScoreCommandsBaseFactory; command_Param : access Command'Class) return Integer;
+   procedure getIndex (This : in out HighScoreCommandsBaseFactory; command_Param : access Command'Class);
 
 end org.allbinary.game.score.HighScoreCommandsBaseFactory_Package;
 

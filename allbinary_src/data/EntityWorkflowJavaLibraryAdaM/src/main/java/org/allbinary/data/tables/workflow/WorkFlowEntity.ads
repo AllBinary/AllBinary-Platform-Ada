@@ -73,13 +73,13 @@ package org.allbinary.data.tables.workflow.WorkFlowEntity_Package is
 
    procedure Initialize (This : in out WorkFlowEntity'Class);
    function Create return WorkFlowEntity_Access;
-   procedure insert (This : in out WorkFlowEntity; values : BasicArrayList_Access);
+   procedure insert (This : in out WorkFlowEntity; values_Param : access BasicArrayList'Class);
    procedure delete (This : in out WorkFlowEntity; name : Unbounded_String; storeName : Unbounded_String);
    function get (This : in out WorkFlowEntity; name : Unbounded_String; storeName : Unbounded_String) return WorkFlowInterface_Access;
    procedure get (This : in out WorkFlowEntity; name : Unbounded_String; storeName : Unbounded_String);
    function get (This : in out WorkFlowEntity; storeName : Unbounded_String) return BasicArrayList_Access;
    procedure get (This : in out WorkFlowEntity; storeName : Unbounded_String);
-   procedure update (This : in out WorkFlowEntity; updatedValues : HashMap_Access);
+   procedure update (This : in out WorkFlowEntity; updatedValues_Param : access HashMap'Class);
    function createTableStatement (This : in out WorkFlowEntity) return Unbounded_String;
    function createTable (This : in out WorkFlowEntity) return Unbounded_String;
    function dropTable (This : in out WorkFlowEntity) return Unbounded_String;

@@ -23,17 +23,18 @@ package body org.allbinary.business.user.commerce.inventory.item.download.Downlo
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out DownloadableItemValidation'Class; downloadableItem : DownloadableItem_Access) is
+   procedure Initialize (This : in out DownloadableItemValidation'Class; downloadableItem_Param : access DownloadableItem'Class) is
+      downloadableItem : DownloadableItem_Access := DownloadableItem_Access (downloadableItem_Param);
    begin
       Validation_Package.Initialize (This);
       Initialize_Fields (This);
         This.downloadableItem := downloadableItem;
    end Initialize;
 
-   function Create (downloadableItem : DownloadableItem_Access) return DownloadableItemValidation_Access is
+   function Create (downloadableItem_Param : access DownloadableItem'Class) return DownloadableItemValidation_Access is
       This : constant DownloadableItemValidation_Access := new DownloadableItemValidation;
    begin
-      DownloadableItemValidation_Package.Initialize (This.all, downloadableItem);
+      DownloadableItemValidation_Package.Initialize (This.all, downloadableItem_Param);
       return This;
    end Create;
 
@@ -93,7 +94,7 @@ package body org.allbinary.business.user.commerce.inventory.item.download.Downlo
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to validate form"), This'Unchecked_Access, This.commonStrings.IS_VALID, e);
+                This.logUtil.put (To_Unbounded_String ("Failed to validate form"), DownloadableItemValidation_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
             end if;
             return False;
                 end;
@@ -176,7 +177,7 @@ package body org.allbinary.business.user.commerce.inventory.item.download.Downlo
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), This'Unchecked_Access, To_Unbounded_String ("validationInfo()"), e);
+                This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), DownloadableItemValidation_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
             end if;
             return To_Unbounded_String ("Error Validating Form");
                 end;
@@ -188,13 +189,14 @@ package body org.allbinary.business.user.commerce.inventory.item.download.Downlo
         return null;
    end toValidationInfoDoc;
 
-   function toValidationInfoNode (This : in out DownloadableItemValidation; document : Document_Access) return Node_Access is
+   function toValidationInfoNode (This : in out DownloadableItemValidation; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
    begin
         return null;
    end toValidationInfoNode;
 
-   procedure toValidationInfoNode (This : in out DownloadableItemValidation; document : Document_Access) is
-      Java_Result : constant Node_Access := DownloadableItemValidation'Class (This).toValidationInfoNode (document);
+   procedure toValidationInfoNode (This : in out DownloadableItemValidation; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := DownloadableItemValidation'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

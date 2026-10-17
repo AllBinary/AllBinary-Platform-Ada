@@ -40,8 +40,8 @@ package org.allbinary.business.user.modules.customer.affiliate.AffiliateUserFact
    procedure Initialize (This : in out AffiliateUserFactory'Class);
    function Create return AffiliateUserFactory_Access;
    function getInstance (This : in out AffiliateUserFactory) return UserInterface_Access;
-   function getInstance (This : in out AffiliateUserFactory; hashMap : HashMap_Access) return UserInterface_Access;
-   procedure getInstance (This : in out AffiliateUserFactory; hashMap : HashMap_Access);
+   function getInstance (This : in out AffiliateUserFactory; hashMap_Param : access HashMap'Class) return UserInterface_Access;
+   procedure getInstance (This : in out AffiliateUserFactory; hashMap_Param : access HashMap'Class);
 
 end org.allbinary.business.user.modules.customer.affiliate.AffiliateUserFactory_Package;
 

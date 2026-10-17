@@ -41,13 +41,14 @@ package body views.ValidationOnlyTempUtil_Package is
    end Create;
 
    --  throws Exception
-   function view (This : in out ValidationOnlyTempUtil; validationComponentInterface : ValidationComponentInterface_Access) return Unbounded_String is
+   function view (This : in out ValidationOnlyTempUtil; validationComponentInterface_Param : access ValidationComponentInterface'Class) return Unbounded_String is
+      validationComponentInterface : ValidationComponentInterface_Access := ValidationComponentInterface_Access (validationComponentInterface_Param);
       commonStrings : CommonStrings_Access;
    begin
         commonStrings := CommonStrings_Package.getInstance;
         begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (To_Unbounded_String ("View Name: ") & validationComponentInterface.getTransformInfoInterface.getName, This'Unchecked_Access, To_Unbounded_String ("view()"));
+                This.logUtil.putF (To_Unbounded_String ("View Name: ") & validationComponentInterface.getTransformInfoInterface.getName, ValidationOnlyTempUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"));
             end if;
             return StringUtil_Package.getInstance.EMPTY_STRING;
         exception
@@ -56,15 +57,15 @@ package body views.ValidationOnlyTempUtil_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("view()"), e);
+                This.logUtil.put (commonStrings.EXCEPTION_Id, ValidationOnlyTempUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
             end if;
             Java_Throw (e);
                 end;
         end;
    end view;
 
-   procedure view (This : in out ValidationOnlyTempUtil; validationComponentInterface : ValidationComponentInterface_Access) is
-      Java_Result : constant Unbounded_String := ValidationOnlyTempUtil'Class (This).view (validationComponentInterface);
+   procedure view (This : in out ValidationOnlyTempUtil; validationComponentInterface_Param : access ValidationComponentInterface'Class) is
+      Java_Result : constant Unbounded_String := ValidationOnlyTempUtil'Class (This).view (validationComponentInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

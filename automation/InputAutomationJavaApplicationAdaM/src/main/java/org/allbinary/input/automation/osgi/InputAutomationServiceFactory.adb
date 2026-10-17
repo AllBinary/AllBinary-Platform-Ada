@@ -41,19 +41,24 @@ package body org.allbinary.input.automation.osgi.InputAutomationServiceFactory_P
         return InputAutomationServiceFactory_Package.inputAutomationServiceFactory;
    end getInstance;
 
-   function getService (This : in out InputAutomationServiceFactory; bundle : Bundle_Access; registration : ServiceRegistration_Access) return Java_Object_Access is
+   function getService (This : in out InputAutomationServiceFactory; bundle_Param : access Bundle'Class; registration_Param : access ServiceRegistration'Class) return Java_Object_Access is
+      bundle : Bundle_Access := Bundle_Access (bundle_Param);
+      registration : ServiceRegistration_Access := ServiceRegistration_Access (registration_Param);
    begin
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("getService"));
+        This.logUtil.putF (This.commonStrings.START, InputAutomationServiceFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getService"));
         return InputAutomationJFrame_Package.getInstance;
    end getService;
 
-   procedure ungetService (This : in out InputAutomationServiceFactory; bundle : Bundle_Access; registration : ServiceRegistration_Access; service : Java_Object_Access) is
+   procedure ungetService (This : in out InputAutomationServiceFactory; bundle_Param : access Bundle'Class; registration_Param : access ServiceRegistration'Class; service_Param : access Java_Object'Class) is
+      bundle : Bundle_Access := Bundle_Access (bundle_Param);
+      registration : ServiceRegistration_Access := ServiceRegistration_Access (registration_Param);
+      service : Java_Object_Access := Java_Object_Access (service_Param);
    begin
         null;
    end ungetService;
 
-   procedure getService (This : in out InputAutomationServiceFactory; bundle : Bundle_Access; registration : ServiceRegistration_Access) is
-      Java_Result : constant Java_Object_Access := InputAutomationServiceFactory'Class (This).getService (bundle, registration);
+   procedure getService (This : in out InputAutomationServiceFactory; bundle_Param : access Bundle'Class; registration_Param : access ServiceRegistration'Class) is
+      Java_Result : constant Java_Object_Access := InputAutomationServiceFactory'Class (This).getService (bundle_Param, registration_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

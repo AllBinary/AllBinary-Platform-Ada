@@ -54,8 +54,8 @@ package org.allbinary.logic.control.workflow.StoreTagWorkFlowFactory_Package is
    procedure Initialize (This : in out StoreTagWorkFlowFactory'Class);
    function Create return StoreTagWorkFlowFactory_Access;
    function getInstance return StoreTagWorkFlowFactory_Access;
-   function getInstance (This : in out StoreTagWorkFlowFactory; abeClientInformation : AbeClientInformationInterface_Access; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return StoreWorkFlowInterface_Access;
-   procedure getInstance (This : in out StoreTagWorkFlowFactory; abeClientInformation : AbeClientInformationInterface_Access; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access);
+   function getInstance (This : in out StoreTagWorkFlowFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return StoreWorkFlowInterface_Access;
+   procedure getInstance (This : in out StoreTagWorkFlowFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
 
 end org.allbinary.logic.control.workflow.StoreTagWorkFlowFactory_Package;
 

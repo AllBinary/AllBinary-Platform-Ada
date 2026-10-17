@@ -25,7 +25,8 @@ package body org.allbinary.game.media.graphics.geography.map.racetrack.BasePathF
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BasePathFinderGraphVisitor'Class; geographicMapInterface : BasicGeographicMap_Access; edgeMinimum : Integer; minPathWeight : Integer; maxPathWeight : Integer) is
+   procedure Initialize (This : in out BasePathFinderGraphVisitor'Class; geographicMapInterface_Param : access BasicGeographicMap'Class; edgeMinimum : Integer; minPathWeight : Integer; maxPathWeight : Integer) is
+      geographicMapInterface : BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
    begin
       PathFinderGraphVisitorBase_Package.Initialize (This);
       Initialize_Fields (This);
@@ -35,21 +36,27 @@ package body org.allbinary.game.media.graphics.geography.map.racetrack.BasePathF
         This.maxPathWeight := maxPathWeight;
    end Initialize;
 
-   function Create (geographicMapInterface : BasicGeographicMap_Access; edgeMinimum : Integer; minPathWeight : Integer; maxPathWeight : Integer) return BasePathFinderGraphVisitor_Access is
+   function Create (geographicMapInterface_Param : access BasicGeographicMap'Class; edgeMinimum : Integer; minPathWeight : Integer; maxPathWeight : Integer) return BasePathFinderGraphVisitor_Access is
       This : constant BasePathFinderGraphVisitor_Access := new BasePathFinderGraphVisitor;
    begin
-      BasePathFinderGraphVisitor_Package.Initialize (This.all, geographicMapInterface, edgeMinimum, minPathWeight, maxPathWeight);
+      BasePathFinderGraphVisitor_Package.Initialize (This.all, geographicMapInterface_Param, edgeMinimum, minPathWeight, maxPathWeight);
       return This;
    end Create;
 
    --  throws Exception
-   procedure visit (This : in out BasePathFinderGraphVisitor; graph : SimpleWeightedGraph_Access; startPathFindingNodeList : BasicArrayList_Access; endPathFindingNodeList : BasicArrayList_Access) is
+   procedure visit (This : in out BasePathFinderGraphVisitor; graph_Param : access SimpleWeightedGraph'Class; startPathFindingNodeList_Param : access BasicArrayList'Class; endPathFindingNodeList_Param : access BasicArrayList'Class) is
+      graph : SimpleWeightedGraph_Access := SimpleWeightedGraph_Access (graph_Param);
+      startPathFindingNodeList : BasicArrayList_Access := BasicArrayList_Access (startPathFindingNodeList_Param);
+      endPathFindingNodeList : BasicArrayList_Access := BasicArrayList_Access (endPathFindingNodeList_Param);
    begin
         null;
    end visit;
 
    --  throws Exception
-   procedure fixPath (This : in out BasePathFinderGraphVisitor; startPathFindingNodeList : BasicArrayList_Access; endPathFindingNodeList : BasicArrayList_Access; pathList : BasicArrayList_Access) is
+   procedure fixPath (This : in out BasePathFinderGraphVisitor; startPathFindingNodeList_Param : access BasicArrayList'Class; endPathFindingNodeList_Param : access BasicArrayList'Class; pathList_Param : access BasicArrayList'Class) is
+      startPathFindingNodeList : BasicArrayList_Access := BasicArrayList_Access (startPathFindingNodeList_Param);
+      endPathFindingNodeList : BasicArrayList_Access := BasicArrayList_Access (endPathFindingNodeList_Param);
+      pathList : BasicArrayList_Access := BasicArrayList_Access (pathList_Param);
       startPathFindingNode : PathFindingNode_Access;
       index : Integer;
    begin
@@ -60,7 +67,8 @@ package body org.allbinary.game.media.graphics.geography.map.racetrack.BasePathF
         end loop;
    end fixPath;
 
-   function isValid (This : in out BasePathFinderGraphVisitor; graphPath : GraphPath_Access) return Boolean is
+   function isValid (This : in out BasePathFinderGraphVisitor; graphPath_Param : access GraphPath'Class) return Boolean is
+      graphPath : GraphPath_Access := GraphPath_Access (graphPath_Param);
    begin
         if (((graphPath.getEdgeList.size) > (This.edgeMinimum)) and then ((graphPath.getWeight) < (This.maxPathWeight))) and then ((graphPath.getWeight) > (This.minPathWeight)) then
             return True;
@@ -69,7 +77,8 @@ package body org.allbinary.game.media.graphics.geography.map.racetrack.BasePathF
         end if;
    end isValid;
 
-   function getInvalidReason (This : in out BasePathFinderGraphVisitor; graphPath : GraphPath_Access) return Unbounded_String is
+   function getInvalidReason (This : in out BasePathFinderGraphVisitor; graphPath_Param : access GraphPath'Class) return Unbounded_String is
+      graphPath : GraphPath_Access := GraphPath_Access (graphPath_Param);
       stringBuffer : StringMaker_Access;
    begin
         stringBuffer := StringMaker_Package.Create;
@@ -85,15 +94,15 @@ package body org.allbinary.game.media.graphics.geography.map.racetrack.BasePathF
         return stringBuffer.toString;
    end getInvalidReason;
 
-   procedure isValid (This : in out BasePathFinderGraphVisitor; graphPath : GraphPath_Access) is
-      Java_Result : constant Boolean := BasePathFinderGraphVisitor'Class (This).isValid (graphPath);
+   procedure isValid (This : in out BasePathFinderGraphVisitor; graphPath_Param : access GraphPath'Class) is
+      Java_Result : constant Boolean := BasePathFinderGraphVisitor'Class (This).isValid (graphPath_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isValid;
 
-   procedure getInvalidReason (This : in out BasePathFinderGraphVisitor; graphPath : GraphPath_Access) is
-      Java_Result : constant Unbounded_String := BasePathFinderGraphVisitor'Class (This).getInvalidReason (graphPath);
+   procedure getInvalidReason (This : in out BasePathFinderGraphVisitor; graphPath_Param : access GraphPath'Class) is
+      Java_Result : constant Unbounded_String := BasePathFinderGraphVisitor'Class (This).getInvalidReason (graphPath_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

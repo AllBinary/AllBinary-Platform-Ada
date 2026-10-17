@@ -33,8 +33,8 @@ package org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package is
 
    type DisplayChangeEvent is new AllBinaryEventObject with null record;
 
-   procedure Initialize (This : in out DisplayChangeEvent'Class; anyType : Java_Object_Access);
-   function Create (anyType : Java_Object_Access) return DisplayChangeEvent_Access;
+   procedure Initialize (This : in out DisplayChangeEvent'Class; anyType_Param : access Java_Object'Class);
+   function Create (anyType_Param : access Java_Object'Class) return DisplayChangeEvent_Access;
 
 end org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package;
 

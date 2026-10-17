@@ -88,9 +88,9 @@ package org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewa
       timeEntered : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out PaymentGateway'Class; hashMap : HashMap_Access);
-   function Create (hashMap : HashMap_Access) return PaymentGateway_Access;
-   procedure getFormData (This : in out PaymentGateway; hashMap : HashMap_Access);
+   procedure Initialize (This : in out PaymentGateway'Class; hashMap_Param : access HashMap'Class);
+   function Create (hashMap_Param : access HashMap'Class) return PaymentGateway_Access;
+   procedure getFormData (This : in out PaymentGateway; hashMap_Param : access HashMap'Class);
    function getStoreName (This : in out PaymentGateway) return Unbounded_String;
    function getName (This : in out PaymentGateway) return Unbounded_String;
    function getEnable (This : in out PaymentGateway) return Unbounded_String;

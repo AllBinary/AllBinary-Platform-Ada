@@ -41,7 +41,8 @@ package body org.allbinary.android.input.motion.event.AnalogControllerConfigurat
       return This;
    end Create;
 
-   procedure addListener (This : in out AnalogControllerConfigurationEventHandler; analogControllerConfigurationEventListenerInterface : AnalogControllerConfigurationEventListenerInterface_Access) is
+   procedure addListener (This : in out AnalogControllerConfigurationEventHandler; analogControllerConfigurationEventListenerInterface_Param : access AnalogControllerConfigurationEventListenerInterface'Class) is
+      analogControllerConfigurationEventListenerInterface : AnalogControllerConfigurationEventListenerInterface_Access := AnalogControllerConfigurationEventListenerInterface_Access (analogControllerConfigurationEventListenerInterface_Param);
    begin
         if not (This.list.contains (analogControllerConfigurationEventListenerInterface)) then
             This.list.add (analogControllerConfigurationEventListenerInterface);
@@ -54,14 +55,16 @@ package body org.allbinary.android.input.motion.event.AnalogControllerConfigurat
         BasicEventHandler (This).removeAllListeners;
    end removeAllListeners;
 
-   procedure removeListener (This : in out AnalogControllerConfigurationEventHandler; eventListenerInterface : EventListenerInterface_Access) is
+   procedure removeListener (This : in out AnalogControllerConfigurationEventHandler; eventListenerInterface_Param : access EventListenerInterface'Class) is
+      eventListenerInterface : EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
    begin
         This.list.remove (eventListenerInterface);
         BasicEventHandler (This).removeListener (eventListenerInterface);
    end removeListener;
 
    --  throws Exception
-   procedure fireEvent (This : in out AnalogControllerConfigurationEventHandler; eventObject : AllBinaryEventObject_Access) is
+   procedure fireEvent (This : in out AnalogControllerConfigurationEventHandler; eventObject_Param : access AllBinaryEventObject'Class) is
+      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
       playerGameInput : AnalogControllerConfigurationEventListenerInterface_Access;
       index : Integer;
    begin
@@ -75,7 +78,7 @@ package body org.allbinary.android.input.motion.event.AnalogControllerConfigurat
                     declare
                         e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                     begin
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, EventStrings_Package.getInstance.FIRE_EVENT, e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, AnalogControllerConfigurationEventHandler_Access'(This'Unchecked_Access), EventStrings_Package.getInstance.FIRE_EVENT, e);
                     end;
             end;
         end loop;
@@ -83,7 +86,9 @@ package body org.allbinary.android.input.motion.event.AnalogControllerConfigurat
    end fireEvent;
 
    --  throws Exception
-   procedure process (This : in out AnalogControllerConfigurationEventHandler; eventObject : AllBinaryEventObject_Access; eventListenerInterface : EventListenerInterface_Access) is
+   procedure process (This : in out AnalogControllerConfigurationEventHandler; eventObject_Param : access AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface'Class) is
+      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
+      eventListenerInterface : EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
       analogControllerConfigurationEventListenerInterface : AnalogControllerConfigurationEventListenerInterface_Access;
    begin
         analogControllerConfigurationEventListenerInterface := (AnalogControllerConfigurationEventListenerInterface_Access (eventListenerInterface));

@@ -40,8 +40,8 @@ package org.allbinary.business.user.modules.customer.subscriber.SubscriberUserFa
    procedure Initialize (This : in out SubscriberUserFactory'Class);
    function Create return SubscriberUserFactory_Access;
    function getInstance (This : in out SubscriberUserFactory) return UserInterface_Access;
-   function getInstance (This : in out SubscriberUserFactory; hashMap : HashMap_Access) return UserInterface_Access;
-   procedure getInstance (This : in out SubscriberUserFactory; hashMap : HashMap_Access);
+   function getInstance (This : in out SubscriberUserFactory; hashMap_Param : access HashMap'Class) return UserInterface_Access;
+   procedure getInstance (This : in out SubscriberUserFactory; hashMap_Param : access HashMap'Class);
 
 end org.allbinary.business.user.modules.customer.subscriber.SubscriberUserFactory_Package;
 

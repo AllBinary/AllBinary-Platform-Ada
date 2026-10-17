@@ -95,9 +95,9 @@ package org.allbinary.game.input.form.UnitRTSFormInput_Package is
 
    procedure Initialize (This : in out UnitRTSFormInput'Class; groupInterface : Group_Access_Array_Access);
    function Create (groupInterface : Group_Access_Array_Access) return UnitRTSFormInput_Access;
-   procedure setAllBinaryGameLayerManager (This : in out UnitRTSFormInput; allBinaryGameLayerManager : AllBinaryGameLayerManager_Access);
-   procedure processGameSpecific (This : in out UnitRTSFormInput; associatedRtsLayer : CollidableDestroyableDamageableLayer_Access; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; layerManager : AllBinaryLayerManager_Access; item : ABCustomItem_Access; itemIndex : Integer);
-   procedure attemptBuild (This : in out UnitRTSFormInput; associatedRtsLayer : RTSLayer_Access; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; layerManager : AllBinaryLayerManager_Access; layerInterface : RTSLayer_Access; itemIndex : Integer);
+   procedure setAllBinaryGameLayerManager (This : in out UnitRTSFormInput; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class);
+   procedure processGameSpecific (This : in out UnitRTSFormInput; associatedRtsLayer_Param : access CollidableDestroyableDamageableLayer'Class; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; layerManager_Param : access AllBinaryLayerManager'Class; item_Param : access ABCustomItem'Class; itemIndex : Integer);
+   procedure attemptBuild (This : in out UnitRTSFormInput; associatedRtsLayer_Param : access RTSLayer'Class; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; layerManager_Param : access AllBinaryLayerManager'Class; layerInterface_Param : access RTSLayer'Class; itemIndex : Integer);
 
 end org.allbinary.game.input.form.UnitRTSFormInput_Package;
 

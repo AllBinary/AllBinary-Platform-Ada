@@ -42,10 +42,10 @@ package org.allbinary.layer.event.LayerManagerEvent_Package is
       crud : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out LayerManagerEvent'Class; layerManager : LayerManager_Access; crud : Unbounded_String);
-   function Create (layerManager : LayerManager_Access; crud : Unbounded_String) return LayerManagerEvent_Access;
+   procedure Initialize (This : in out LayerManagerEvent'Class; layerManager_Param : access LayerManager'Class; crud : Unbounded_String);
+   function Create (layerManager_Param : access LayerManager'Class; crud : Unbounded_String) return LayerManagerEvent_Access;
    function getLayerInterface (This : in out LayerManagerEvent) return AllBinaryLayer_Access;
-   procedure setLayerInterface (This : in out LayerManagerEvent; layerInterface : AllBinaryLayer_Access);
+   procedure setLayerInterface (This : in out LayerManagerEvent; layerInterface_Param : access AllBinaryLayer'Class);
    function toString (This : in out LayerManagerEvent) return Unbounded_String;
 
 end org.allbinary.layer.event.LayerManagerEvent_Package;

@@ -41,10 +41,10 @@ package org.allbinary.image.ImageFactory_Package is
    procedure createImageUrl (This : in out ImageFactory; url : Unbounded_String);
    function createImage (This : in out ImageFactory; caller : Unbounded_String; width : Integer; height : Integer) return Image_Access;
    procedure createImage (This : in out ImageFactory; caller : Unbounded_String; width : Integer; height : Integer);
-   function createImageFromInputStream (This : in out ImageFactory; key : Java_Object_Access; inputStream : InputStream_Access) return Image_Access;
-   procedure createImageFromInputStream (This : in out ImageFactory; key : Java_Object_Access; inputStream : InputStream_Access);
-   function createImageFromInputStream (This : in out ImageFactory; inputStream : InputStream_Access) return Image_Access;
-   procedure createImageFromInputStream (This : in out ImageFactory; inputStream : InputStream_Access);
+   function createImageFromInputStream (This : in out ImageFactory; key_Param : access Java_Object'Class; inputStream_Param : access InputStream'Class) return Image_Access;
+   procedure createImageFromInputStream (This : in out ImageFactory; key_Param : access Java_Object'Class; inputStream_Param : access InputStream'Class);
+   function createImageFromInputStream (This : in out ImageFactory; inputStream_Param : access InputStream'Class) return Image_Access;
+   procedure createImageFromInputStream (This : in out ImageFactory; inputStream_Param : access InputStream'Class);
 
 end org.allbinary.image.ImageFactory_Package;
 

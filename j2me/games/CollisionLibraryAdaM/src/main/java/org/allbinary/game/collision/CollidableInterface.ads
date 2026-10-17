@@ -35,10 +35,10 @@ package org.allbinary.game.collision.CollidableInterface_Package is
    type CollidableInterface_Access is access all CollidableInterface'Class;
    type CollidableInterface_Access_Array is array (Natural range <>) of CollidableInterface_Access;
    type CollidableInterface_Access_Array_Access is access all CollidableInterface_Access_Array;
-   function isCollidable (This : in out CollidableInterface; ownerLayer : CollidableCompositeLayer_Access) return Boolean is abstract;
-   function isCollision (This : in out CollidableInterface; ownerLayer : CollidableCompositeLayer_Access; collidableInterfaceCompositeInterface : CollidableCompositeLayer_Access) return Boolean is abstract;
-   procedure collide (This : in out CollidableInterface; ownerLayer : CollidableCompositeLayer_Access; collidableInterfaceCompositeInterface : CollidableCompositeLayer_Access) is abstract;
-   function getCollisionTypeWith (This : in out CollidableInterface; layerInterface : AllBinaryLayer_Access) return CollisionType_Access is abstract;
+   function isCollidable (This : in out CollidableInterface; ownerLayer_Param : access CollidableCompositeLayer'Class) return Boolean is abstract;
+   function isCollision (This : in out CollidableInterface; ownerLayer_Param : access CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableCompositeLayer'Class) return Boolean is abstract;
+   procedure collide (This : in out CollidableInterface; ownerLayer_Param : access CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableCompositeLayer'Class) is abstract;
+   function getCollisionTypeWith (This : in out CollidableInterface; layerInterface_Param : access AllBinaryLayer'Class) return CollisionType_Access is abstract;
 
 end org.allbinary.game.collision.CollidableInterface_Package;
 

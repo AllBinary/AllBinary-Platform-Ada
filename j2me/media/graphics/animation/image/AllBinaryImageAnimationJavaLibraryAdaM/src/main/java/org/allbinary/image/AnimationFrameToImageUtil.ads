@@ -40,10 +40,10 @@ package org.allbinary.image.AnimationFrameToImageUtil_Package is
    procedure Initialize (This : in out AnimationFrameToImageUtil'Class);
    function Create return AnimationFrameToImageUtil_Access;
    function getInstance return AnimationFrameToImageUtil_Access;
-   function getInstanceTranslate (This : in out AnimationFrameToImageUtil; width : Integer; height : Integer; animationInterface : Animation_Access) return Image_Access;
-   procedure getInstanceTranslate (This : in out AnimationFrameToImageUtil; width : Integer; height : Integer; animationInterface : Animation_Access);
-   function getInstanceWH (This : in out AnimationFrameToImageUtil; width : Integer; height : Integer; animationInterface : Animation_Access) return Image_Access;
-   procedure getInstanceWH (This : in out AnimationFrameToImageUtil; width : Integer; height : Integer; animationInterface : Animation_Access);
+   function getInstanceTranslate (This : in out AnimationFrameToImageUtil; width : Integer; height : Integer; animationInterface_Param : access Animation'Class) return Image_Access;
+   procedure getInstanceTranslate (This : in out AnimationFrameToImageUtil; width : Integer; height : Integer; animationInterface_Param : access Animation'Class);
+   function getInstanceWH (This : in out AnimationFrameToImageUtil; width : Integer; height : Integer; animationInterface_Param : access Animation'Class) return Image_Access;
+   procedure getInstanceWH (This : in out AnimationFrameToImageUtil; width : Integer; height : Integer; animationInterface_Param : access Animation'Class);
 
 end org.allbinary.image.AnimationFrameToImageUtil_Package;
 

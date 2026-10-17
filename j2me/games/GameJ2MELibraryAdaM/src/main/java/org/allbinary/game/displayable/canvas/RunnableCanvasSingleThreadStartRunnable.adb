@@ -23,17 +23,18 @@ package body org.allbinary.game.displayable.canvas.RunnableCanvasSingleThreadSta
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out RunnableCanvasSingleThreadStartRunnable'Class; demoCanvas : RunnableCanvas_Access) is
+   procedure Initialize (This : in out RunnableCanvasSingleThreadStartRunnable'Class; demoCanvas_Param : access RunnableCanvas'Class) is
+      demoCanvas : RunnableCanvas_Access := RunnableCanvas_Access (demoCanvas_Param);
    begin
       GameRunnable_Package.Initialize (This);
       Initialize_Fields (This);
         This.runnableCanvas := demoCanvas;
    end Initialize;
 
-   function Create (demoCanvas : RunnableCanvas_Access) return RunnableCanvasSingleThreadStartRunnable_Access is
+   function Create (demoCanvas_Param : access RunnableCanvas'Class) return RunnableCanvasSingleThreadStartRunnable_Access is
       This : constant RunnableCanvasSingleThreadStartRunnable_Access := new RunnableCanvasSingleThreadStartRunnable;
    begin
-      RunnableCanvasSingleThreadStartRunnable_Package.Initialize (This.all, demoCanvas);
+      RunnableCanvasSingleThreadStartRunnable_Package.Initialize (This.all, demoCanvas_Param);
       return This;
    end Create;
 
@@ -48,7 +49,7 @@ package body org.allbinary.game.displayable.canvas.RunnableCanvasSingleThreadSta
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.RUN, e);
+            This.logUtil.put (commonStrings.EXCEPTION_Id, RunnableCanvasSingleThreadStartRunnable_Access'(This'Unchecked_Access), commonStrings.RUN, e);
                 end;
         end;
    end run;

@@ -59,14 +59,15 @@ package body org.allbinary.android.input.motion.api5.GameInputMotionEventProcess
    begin
         if (pointerId) > (This.TOTAL_MINUS_ONE) then
             message := To_Unbounded_String ("Log that the pointer Ids are not what would be expected or Android has more than what I set my stuff to support pointerId: ");
-            ForcedLogUtil_Package.log (message & Java_Image (pointerId), This'Unchecked_Access);
+            ForcedLogUtil_Package.log (message & Java_Image (pointerId), GameInputMotionEventProcessorAPI5_Access'(This'Unchecked_Access));
             return False;
         else
             return True;
         end if;
    end isValid;
 
-   procedure process (This : in out GameInputMotionEventProcessorAPI5; motionEvent : MotionEvent_Access) is
+   procedure process (This : in out GameInputMotionEventProcessorAPI5; motionEvent_Param : access MotionEvent'Class) is
+      motionEvent : MotionEvent_Access := MotionEvent_Access (motionEvent_Param);
       action : Integer;
       total : Integer;
       message : Unbounded_String;
@@ -84,7 +85,7 @@ package body org.allbinary.android.input.motion.api5.GameInputMotionEventProcess
                 total := motionEvent.getPointerCount;
             else
                 message := To_Unbounded_String ("Log that Android has more pointers than I have expected so increase it motionEvent.getPointerCount(): ");
-                ForcedLogUtil_Package.log (message & Java_Image (motionEvent.getPointerCount), This'Unchecked_Access);
+                ForcedLogUtil_Package.log (message & Java_Image (motionEvent.getPointerCount), GameInputMotionEventProcessorAPI5_Access'(This'Unchecked_Access));
             end if;
             totalMinusOne := (total) - (1);
             if (action) = (MotionEvent_Package.ACTION_DOWN) then
@@ -123,7 +124,7 @@ package body org.allbinary.android.input.motion.api5.GameInputMotionEventProcess
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.PROCESS, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, GameInputMotionEventProcessorAPI5_Access'(This'Unchecked_Access), This.commonStrings.PROCESS, e);
                 end;
         end;
    end process;

@@ -78,8 +78,8 @@ package org.allbinary.logic.communication.log.config.LogConfig_Package is
 
    procedure Initialize (This : in out LogConfig'Class; aName : Unbounded_String; aDescription : Unbounded_String; aPath : Unbounded_String; aFileName : Unbounded_String);
    function Create (aName : Unbounded_String; aDescription : Unbounded_String; aPath : Unbounded_String; aFileName : Unbounded_String) return LogConfig_Access;
-   procedure Initialize (This : in out LogConfig'Class; node : Node_Access);
-   function Create (node : Node_Access) return LogConfig_Access;
+   procedure Initialize (This : in out LogConfig'Class; node_Param : access Node'Class);
+   function Create (node_Param : access Node'Class) return LogConfig_Access;
    function getName (This : in out LogConfig) return Unbounded_String;
    function isEnabled (This : in out LogConfig) return Boolean;
    procedure enable (This : in out LogConfig);

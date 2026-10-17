@@ -50,8 +50,8 @@ package org.allbinary.game.layer.LevelLayersFinder_Package is
    procedure Initialize (This : in out LevelLayersFinder'Class);
    function Create return LevelLayersFinder_Access;
    function getInstance return LevelLayersFinder_Access;
-   function get (This : in out LevelLayersFinder; hashtable : ABHashtable_Access) return BasicArrayList_Access;
-   procedure get (This : in out LevelLayersFinder; hashtable : ABHashtable_Access);
+   function get (This : in out LevelLayersFinder; hashtable_Param : access ABHashtable'Class) return BasicArrayList_Access;
+   procedure get (This : in out LevelLayersFinder; hashtable_Param : access ABHashtable'Class);
 
 end org.allbinary.game.layer.LevelLayersFinder_Package;
 

@@ -86,14 +86,14 @@ package org.allbinary.game.displayable.canvas.CommandFormInputProcessor_Package 
       NAME_LABEL : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out CommandFormInputProcessor'Class; gameKeyEventList : BasicArrayList_Access; playerInputId : Integer; gameCanvas : MyCanvas_Access; form : ScrollSelectionForm_Access);
-   function Create (gameKeyEventList : BasicArrayList_Access; playerInputId : Integer; gameCanvas : MyCanvas_Access; form : ScrollSelectionForm_Access) return CommandFormInputProcessor_Access;
+   procedure Initialize (This : in out CommandFormInputProcessor'Class; gameKeyEventList_Param : access BasicArrayList'Class; playerInputId : Integer; gameCanvas_Param : access MyCanvas'Class; form_Param : access ScrollSelectionForm'Class);
+   function Create (gameKeyEventList_Param : access BasicArrayList'Class; playerInputId : Integer; gameCanvas_Param : access MyCanvas'Class; form_Param : access ScrollSelectionForm'Class) return CommandFormInputProcessor_Access;
    function processInput (This : in out CommandFormInputProcessor; key : Integer) return Integer;
    procedure processInput (This : in out CommandFormInputProcessor; key : Integer);
    function processCommand (This : in out CommandFormInputProcessor) return Integer;
    function processInputList (This : in out CommandFormInputProcessor) return Integer;
    function processMotionInputs (This : in out CommandFormInputProcessor) return Integer;
-   procedure processMotionInput (This : in out CommandFormInputProcessor; motionGestureEvent : MotionGestureEvent_Access);
+   procedure processMotionInput (This : in out CommandFormInputProcessor; motionGestureEvent_Param : access MotionGestureEvent'Class);
    function toString (This : in out CommandFormInputProcessor) return Unbounded_String;
 
 end org.allbinary.game.displayable.canvas.CommandFormInputProcessor_Package;

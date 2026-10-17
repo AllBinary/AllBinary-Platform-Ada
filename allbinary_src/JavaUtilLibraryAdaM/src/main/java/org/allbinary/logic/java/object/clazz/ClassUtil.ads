@@ -41,8 +41,8 @@ package org.allbinary.logic.java.anyType.clazz.ClassUtil_Package is
 
    procedure Initialize (This : in out ClassUtil'Class);
    function Create return ClassUtil_Access;
-   function viewAll (anyType : Java_Object_Access; lineBreak : Unbounded_String) return Unbounded_String;
-   procedure viewAll (anyType : Java_Object_Access; lineBreak : Unbounded_String);
+   function viewAll (anyType_Param : access Java_Object'Class; lineBreak : Unbounded_String) return Unbounded_String;
+   procedure viewAll (anyType_Param : access Java_Object'Class; lineBreak : Unbounded_String);
    function viewAll (myClass : Ada.Tags.Tag; lineBreak : Unbounded_String) return Unbounded_String;
    procedure viewAll (myClass : Ada.Tags.Tag; lineBreak : Unbounded_String);
 

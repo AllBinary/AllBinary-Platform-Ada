@@ -40,7 +40,8 @@ package body org.allbinary.image.AnimationFactoryImageScaleUtil_Package is
    end getInstance;
 
    --  throws Exception
-   function createImage (This : in out AnimationFactoryImageScaleUtil; image : Image_Access; width : Integer; height : Integer; scaleWidth : Integer; scaleHeight : Integer) return Image_Access is
+   function createImage (This : in out AnimationFactoryImageScaleUtil; image_Param : access Image'Class; width : Integer; height : Integer; scaleWidth : Integer; scaleHeight : Integer) return Image_Access is
+      image : Image_Access := Image_Access (image_Param);
       scaledImage : Image_Access;
       scaleX : Float;
       scaleY : Float;
@@ -65,7 +66,8 @@ package body org.allbinary.image.AnimationFactoryImageScaleUtil_Package is
    end createImage;
 
    --  throws Exception
-   procedure processAdjust (This : in out AnimationFactoryImageScaleUtil; baseImageAnimationFactory : BaseImageAnimationFactory_Access) is
+   procedure processAdjust (This : in out AnimationFactoryImageScaleUtil; baseImageAnimationFactory_Param : access BaseImageAnimationFactory'Class) is
+      baseImageAnimationFactory : BaseImageAnimationFactory_Access := BaseImageAnimationFactory_Access (baseImageAnimationFactory_Param);
       scaleProperties : ScaleProperties_Access;
       animationFactoryInitializationVisitor : AnimationFactoryInitializationVisitor_Access;
       scaleX : Float;
@@ -87,8 +89,8 @@ package body org.allbinary.image.AnimationFactoryImageScaleUtil_Package is
         end if;
    end processAdjust;
 
-   procedure createImage (This : in out AnimationFactoryImageScaleUtil; image : Image_Access; width : Integer; height : Integer; scaleWidth : Integer; scaleHeight : Integer) is
-      Java_Result : constant Image_Access := AnimationFactoryImageScaleUtil'Class (This).createImage (image, width, height, scaleWidth, scaleHeight);
+   procedure createImage (This : in out AnimationFactoryImageScaleUtil; image_Param : access Image'Class; width : Integer; height : Integer; scaleWidth : Integer; scaleHeight : Integer) is
+      Java_Result : constant Image_Access := AnimationFactoryImageScaleUtil'Class (This).createImage (image_Param, width, height, scaleWidth, scaleHeight);
       pragma Unreferenced (Java_Result);
    begin
       null;

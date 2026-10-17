@@ -50,10 +50,10 @@ package org.allbinary.logic.control.workflow.RequestWorkFlowFactory_Package is
 
    procedure Initialize (This : in out RequestWorkFlowFactory'Class);
    function Create return RequestWorkFlowFactory_Access;
-   function getInstance (request : ServletRequest_Access; response : ServletResponse_Access; servletConfig : ServletConfig_Access; servletContext : ServletContext_Access) return WorkFlowInterface_Access;
-   procedure getInstance (request : ServletRequest_Access; response : ServletResponse_Access; servletConfig : ServletConfig_Access; servletContext : ServletContext_Access);
-   function getInstance (hashMap : HashMap_Access; pageContext : PageContext_Access) return WorkFlowInterface_Access;
-   procedure getInstance (hashMap : HashMap_Access; pageContext : PageContext_Access);
+   function getInstance (request_Param : access ServletRequest'Class; response_Param : access ServletResponse'Class; servletConfig_Param : access ServletConfig'Class; servletContext_Param : access ServletContext'Class) return WorkFlowInterface_Access;
+   procedure getInstance (request_Param : access ServletRequest'Class; response_Param : access ServletResponse'Class; servletConfig_Param : access ServletConfig'Class; servletContext_Param : access ServletContext'Class);
+   function getInstance (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return WorkFlowInterface_Access;
+   procedure getInstance (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
 
 end org.allbinary.logic.control.workflow.RequestWorkFlowFactory_Package;
 

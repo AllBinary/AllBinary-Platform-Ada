@@ -41,7 +41,10 @@ package body org.allbinary.logic.visual.transform.generator.TransformGeneratorUt
    end Create;
 
    --  throws Exception
-   procedure generate (This : in out TransformGeneratorUtil; abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access; ownerTransformInfoInterface : TransformInfoInterface_Access) is
+   procedure generate (This : in out TransformGeneratorUtil; abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; ownerTransformInfoInterface_Param : access TransformInfoInterface'Class) is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+      ownerTransformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (ownerTransformInfoInterface_Param);
       componentInterface : TransformInterface_Access;
       result : Unbounded_String;
       httpTransformInfoInterface : TransformInfoHttpInterface_Access;
@@ -49,7 +52,7 @@ package body org.allbinary.logic.visual.transform.generator.TransformGeneratorUt
    begin
         begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (To_Unbounded_String ("Generating View: ") & transformInfoInterface.getName, This'Unchecked_Access, To_Unbounded_String ("generate()"));
+                This.logUtil.putF (To_Unbounded_String ("Generating View: ") & transformInfoInterface.getName, TransformGeneratorUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("generate()"));
             end if;
             componentInterface := TransformFactory_Package.getInstance.getInstance (abeClientInformation, transformInfoInterface.getName, ownerTransformInfoInterface);
             result := componentInterface.view;
@@ -67,7 +70,7 @@ package body org.allbinary.logic.visual.transform.generator.TransformGeneratorUt
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to generate a view"), This'Unchecked_Access, To_Unbounded_String ("generate()"), e);
+                This.logUtil.put (To_Unbounded_String ("Failed to generate a view"), TransformGeneratorUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("generate()"), e);
             end if;
             Java_Throw (e);
                 end;
@@ -75,7 +78,10 @@ package body org.allbinary.logic.visual.transform.generator.TransformGeneratorUt
    end generate;
 
    --  throws Exception
-   procedure generate (This : in out TransformGeneratorUtil; abeClientInformation : AbeClientInformationInterface_Access; transformInfoDomNode : TransformInfoDomNode_Access; ownerTransformInfoInterface : TransformInfoInterface_Access) is
+   procedure generate (This : in out TransformGeneratorUtil; abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoDomNode_Param : access TransformInfoDomNode'Class; ownerTransformInfoInterface_Param : access TransformInfoInterface'Class) is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      transformInfoDomNode : TransformInfoDomNode_Access := TransformInfoDomNode_Access (transformInfoDomNode_Param);
+      ownerTransformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (ownerTransformInfoInterface_Param);
    begin
         This.generate (abeClientInformation, transformInfoDomNode.getTransformInfoInterface, ownerTransformInfoInterface);
    end generate;

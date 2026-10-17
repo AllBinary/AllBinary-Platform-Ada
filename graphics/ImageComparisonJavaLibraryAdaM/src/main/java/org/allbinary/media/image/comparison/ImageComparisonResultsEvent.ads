@@ -36,10 +36,10 @@ package org.allbinary.media.image.comparison.ImageComparisonResultsEvent_Package
       imageComparisonResult : ImageComparisonResult_Access;
    end record;
 
-   procedure Initialize (This : in out ImageComparisonResultsEvent'Class; anyType : Java_Object_Access; imageComparisonInfo : ImageComparisonResult_Access);
-   function Create (anyType : Java_Object_Access; imageComparisonInfo : ImageComparisonResult_Access) return ImageComparisonResultsEvent_Access;
+   procedure Initialize (This : in out ImageComparisonResultsEvent'Class; anyType_Param : access Java_Object'Class; imageComparisonInfo_Param : access ImageComparisonResult'Class);
+   function Create (anyType_Param : access Java_Object'Class; imageComparisonInfo_Param : access ImageComparisonResult'Class) return ImageComparisonResultsEvent_Access;
    function getImageComparisonResult (This : in out ImageComparisonResultsEvent) return ImageComparisonResult_Access;
-   procedure setImageComparisonResult (This : in out ImageComparisonResultsEvent; imageComparisonResult : ImageComparisonResult_Access);
+   procedure setImageComparisonResult (This : in out ImageComparisonResultsEvent; imageComparisonResult_Param : access ImageComparisonResult'Class);
 
 end org.allbinary.media.image.comparison.ImageComparisonResultsEvent_Package;
 

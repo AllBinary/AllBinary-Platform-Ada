@@ -37,8 +37,8 @@ package org.allbinary.graphics.opengles.OpenGLLogUtil_Package is
    procedure Initialize (This : in out OpenGLLogUtil'Class);
    function Create return OpenGLLogUtil_Access;
    function getInstance return OpenGLLogUtil_Access;
-   procedure logError (This : in out OpenGLLogUtil; gl : GL10_Access);
-   procedure logError (This : in out OpenGLLogUtil; gl : GL10_Access; image_Case : Image_Access);
+   procedure logError (This : in out OpenGLLogUtil; gl_Param : access GL10'Class);
+   procedure logError (This : in out OpenGLLogUtil; gl_Param : access GL10'Class; image_Case_Param : access Image'Class);
 
 end org.allbinary.graphics.opengles.OpenGLLogUtil_Package;
 

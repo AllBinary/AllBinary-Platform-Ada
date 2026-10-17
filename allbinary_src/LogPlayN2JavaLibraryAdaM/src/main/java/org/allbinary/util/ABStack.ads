@@ -37,15 +37,15 @@ package org.allbinary.util.ABStack_Package is
 
    procedure Initialize (This : in out ABStack'Class);
    function Create return ABStack_Access;
-   function push (This : in out ABStack; item : Java_Object_Access) return Java_Object_Access;
-   procedure push (This : in out ABStack; item : Java_Object_Access);
+   function push (This : in out ABStack; item_Param : access Java_Object'Class) return Java_Object_Access;
+   procedure push (This : in out ABStack; item_Param : access Java_Object'Class);
    function pop (This : in out ABStack) return Java_Object_Access;
    function peek (This : in out ABStack) return Java_Object_Access;
    function empty (This : in out ABStack) return Boolean;
-   function search (This : in out ABStack; obj : Java_Object_Access) return Integer;
-   procedure search (This : in out ABStack; obj : Java_Object_Access);
-   function removeElement (This : in out ABStack; obj : Java_Object_Access) return Boolean;
-   procedure removeElement (This : in out ABStack; obj : Java_Object_Access);
+   function search (This : in out ABStack; obj_Param : access Java_Object'Class) return Integer;
+   procedure search (This : in out ABStack; obj_Param : access Java_Object'Class);
+   function removeElement (This : in out ABStack; obj_Param : access Java_Object'Class) return Boolean;
+   procedure removeElement (This : in out ABStack; obj_Param : access Java_Object'Class);
 
 end org.allbinary.util.ABStack_Package;
 

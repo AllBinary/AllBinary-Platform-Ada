@@ -63,13 +63,13 @@ package org.allbinary.game.ag.layer.hud.basic.health.HealthHudWidget_Package is
       fastBeatTimeDelayHelper : TimeDelayHelper_Access;
    end record;
 
-   procedure Initialize (This : in out HealthHudWidget'Class; animationInterface : Animation_Access; healthInterface : Health_Access; location : Integer; direction : Integer);
-   function Create (animationInterface : Animation_Access; healthInterface : Health_Access; location : Integer; direction : Integer) return HealthHudWidget_Access;
+   procedure Initialize (This : in out HealthHudWidget'Class; animationInterface_Param : access Animation'Class; healthInterface_Param : access Health'Class; location : Integer; direction : Integer);
+   function Create (animationInterface_Param : access Animation'Class; healthInterface_Param : access Health'Class; location : Integer; direction : Integer) return HealthHudWidget_Access;
    procedure update (This : in out HealthHudWidget);
    procedure setX (This : in out HealthHudWidget; x : Integer);
    procedure onHealthChange (This : in out HealthHudWidget);
-   procedure paint (This : in out HealthHudWidget; graphics : Graphics_Access);
-   procedure paintThreed (This : in out HealthHudWidget; graphics : Graphics_Access);
+   procedure paint (This : in out HealthHudWidget; graphics_Param : access Graphics'Class);
+   procedure paintThreed (This : in out HealthHudWidget; graphics_Param : access Graphics'Class);
 
 end org.allbinary.game.ag.layer.hud.basic.health.HealthHudWidget_Package;
 

@@ -39,13 +39,15 @@ package body org.allbinary.media.graphics.geography.map.racetrack.threed.AllBina
    end getInstance;
 
    --  throws Exception
-   function getInstance (This : in out AllBinaryThreedTiledLayerFactory; raceTrackInfo : RaceTrackInfo_Access; raceTrackData : RaceTrackData_Access) return AllBinaryTiledLayer_Access is
+   function getInstance (This : in out AllBinaryThreedTiledLayerFactory; raceTrackInfo_Param : access RaceTrackInfo'Class; raceTrackData_Param : access RaceTrackData'Class) return AllBinaryTiledLayer_Access is
+      raceTrackInfo : RaceTrackInfo_Access := RaceTrackInfo_Access (raceTrackInfo_Param);
+      raceTrackData : RaceTrackData_Access := RaceTrackData_Access (raceTrackData_Param);
    begin
         Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Threed")));
    end getInstance;
 
-   procedure getInstance (This : in out AllBinaryThreedTiledLayerFactory; raceTrackInfo : RaceTrackInfo_Access; raceTrackData : RaceTrackData_Access) is
-      Java_Result : constant AllBinaryTiledLayer_Access := AllBinaryThreedTiledLayerFactory'Class (This).getInstance (raceTrackInfo, raceTrackData);
+   procedure getInstance (This : in out AllBinaryThreedTiledLayerFactory; raceTrackInfo_Param : access RaceTrackInfo'Class; raceTrackData_Param : access RaceTrackData'Class) is
+      Java_Result : constant AllBinaryTiledLayer_Access := AllBinaryThreedTiledLayerFactory'Class (This).getInstance (raceTrackInfo_Param, raceTrackData_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

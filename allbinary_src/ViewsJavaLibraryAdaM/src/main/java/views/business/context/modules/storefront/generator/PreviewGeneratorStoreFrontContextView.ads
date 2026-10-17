@@ -46,8 +46,8 @@ package views.business.context.modules.storefront.generator.PreviewGeneratorStor
       logUtil : LogUtil_Access;
    end record;
 
-   procedure Initialize (This : in out PreviewGeneratorStoreFrontContextView'Class; transformInfoInterface : TransformInfoInterface_Access);
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return PreviewGeneratorStoreFrontContextView_Access;
+   procedure Initialize (This : in out PreviewGeneratorStoreFrontContextView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return PreviewGeneratorStoreFrontContextView_Access;
    function view (This : in out PreviewGeneratorStoreFrontContextView) return Unbounded_String;
 
 end views.business.context.modules.storefront.generator.PreviewGeneratorStoreFrontContextView_Package;

@@ -28,7 +28,7 @@ package body org.allbinary.logic.communication.smtp.configuration.user.UserEmail
    begin
       Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
-            This.logUtil.putF (This.commonStrings.CONSTRUCTOR, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+            This.logUtil.putF (This.commonStrings.CONSTRUCTOR, UserEmailConfiguration_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
         This.setUserEmailEventsConfigurationInterface (UserEmailEventsConfiguration_Package.Create);
    end Initialize;
@@ -40,19 +40,20 @@ package body org.allbinary.logic.communication.smtp.configuration.user.UserEmail
       return This;
    end Create;
 
-   procedure Initialize (This : in out UserEmailConfiguration'Class; hashMap : HashMap_Access) is
+   procedure Initialize (This : in out UserEmailConfiguration'Class; hashMap_Param : access HashMap'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
    begin
       Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
-            This.logUtil.putF (This.commonStrings.CONSTRUCTOR, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+            This.logUtil.putF (This.commonStrings.CONSTRUCTOR, UserEmailConfiguration_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
         This.setUserEmailEventsConfigurationInterface (UserEmailEventsConfiguration_Package.Create (hashMap));
    end Initialize;
 
-   function Create (hashMap : HashMap_Access) return UserEmailConfiguration_Access is
+   function Create (hashMap_Param : access HashMap'Class) return UserEmailConfiguration_Access is
       This : constant UserEmailConfiguration_Access := new UserEmailConfiguration;
    begin
-      UserEmailConfiguration_Package.Initialize (This.all, hashMap);
+      UserEmailConfiguration_Package.Initialize (This.all, hashMap_Param);
       return This;
    end Create;
 
@@ -61,7 +62,8 @@ package body org.allbinary.logic.communication.smtp.configuration.user.UserEmail
         return This.userEmailEventsConfigurationInterface;
    end getUserEmailEventsConfigurationInterface;
 
-   procedure setUserEmailEventsConfigurationInterface (This : in out UserEmailConfiguration; userEmailEventsConfigurationInterface : UserEmailEventsConfigurationInterface_Access) is
+   procedure setUserEmailEventsConfigurationInterface (This : in out UserEmailConfiguration; userEmailEventsConfigurationInterface_Param : access UserEmailEventsConfigurationInterface'Class) is
+      userEmailEventsConfigurationInterface : UserEmailEventsConfigurationInterface_Access := UserEmailEventsConfigurationInterface_Access (userEmailEventsConfigurationInterface_Param);
    begin
         This.userEmailEventsConfigurationInterface := userEmailEventsConfigurationInterface;
    end setUserEmailEventsConfigurationInterface;

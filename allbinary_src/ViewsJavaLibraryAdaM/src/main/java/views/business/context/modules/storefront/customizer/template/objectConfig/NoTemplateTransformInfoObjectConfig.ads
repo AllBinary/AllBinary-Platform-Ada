@@ -58,14 +58,14 @@ package views.business.context.modules.storefront.customizer.template.objectConf
       logUtil : LogUtil_Access;
    end record;
 
-   procedure Initialize (This : in out NoTemplateTransformInfoObjectConfig'Class; transformInfoInterface : TransformInfoInterface_Access);
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return NoTemplateTransformInfoObjectConfig_Access;
-   procedure Initialize (This : in out NoTemplateTransformInfoObjectConfig'Class; transformInfoInterface : TransformInfoInterface_Access; document : Document_Access);
-   function Create (transformInfoInterface : TransformInfoInterface_Access; document : Document_Access) return NoTemplateTransformInfoObjectConfig_Access;
-   procedure Initialize (This : in out NoTemplateTransformInfoObjectConfig'Class; transformInfoInterface : TransformInfoInterface_Access; name : Unbounded_String; type_Id : Unbounded_String);
-   function Create (transformInfoInterface : TransformInfoInterface_Access; name : Unbounded_String; type_Id : Unbounded_String) return NoTemplateTransformInfoObjectConfig_Access;
-   function generate (This : in out NoTemplateTransformInfoObjectConfig; objectConfigDocument : Document_Access) return Document_Access;
-   procedure generate (This : in out NoTemplateTransformInfoObjectConfig; objectConfigDocument : Document_Access);
+   procedure Initialize (This : in out NoTemplateTransformInfoObjectConfig'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return NoTemplateTransformInfoObjectConfig_Access;
+   procedure Initialize (This : in out NoTemplateTransformInfoObjectConfig'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; document_Param : access Document'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class; document_Param : access Document'Class) return NoTemplateTransformInfoObjectConfig_Access;
+   procedure Initialize (This : in out NoTemplateTransformInfoObjectConfig'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; name : Unbounded_String; type_Id : Unbounded_String);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class; name : Unbounded_String; type_Id : Unbounded_String) return NoTemplateTransformInfoObjectConfig_Access;
+   function generate (This : in out NoTemplateTransformInfoObjectConfig; objectConfigDocument_Param : access Document'Class) return Document_Access;
+   procedure generate (This : in out NoTemplateTransformInfoObjectConfig; objectConfigDocument_Param : access Document'Class);
 
 end views.business.context.modules.storefront.customizer.template.objectConfig.NoTemplateTransformInfoObjectConfig_Package;
 

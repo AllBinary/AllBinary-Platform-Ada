@@ -24,7 +24,8 @@ package body org.allbinary.game.ag.ai.ReverseVelocityBoundsVisitor_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ReverseVelocityBoundsVisitor'Class; layerInterface : LayerInterface_Access) is
+   procedure Initialize (This : in out ReverseVelocityBoundsVisitor'Class; layerInterface_Param : access LayerInterface'Class) is
+      layerInterface : LayerInterface_Access := LayerInterface_Access (layerInterface_Param);
       velocityInterfaceCompositeInterface : VelocityInterfaceCompositeInterface_Access;
    begin
       Initialize_Fields (This);
@@ -33,10 +34,10 @@ package body org.allbinary.game.ag.ai.ReverseVelocityBoundsVisitor_Package is
         This.velocityInterface := VelocityInterface_Access (velocityInterfaceCompositeInterface.getVelocityProperties);
    end Initialize;
 
-   function Create (layerInterface : LayerInterface_Access) return ReverseVelocityBoundsVisitor_Access is
+   function Create (layerInterface_Param : access LayerInterface'Class) return ReverseVelocityBoundsVisitor_Access is
       This : constant ReverseVelocityBoundsVisitor_Access := new ReverseVelocityBoundsVisitor;
    begin
-      ReverseVelocityBoundsVisitor_Package.Initialize (This.all, layerInterface);
+      ReverseVelocityBoundsVisitor_Package.Initialize (This.all, layerInterface_Param);
       return This;
    end Create;
 

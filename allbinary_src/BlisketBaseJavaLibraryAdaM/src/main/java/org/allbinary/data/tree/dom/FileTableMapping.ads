@@ -50,8 +50,8 @@ package org.allbinary.data.tree.dom.FileTableMapping_Package is
       file : AbFile_Access;
    end record;
 
-   procedure Initialize (This : in out FileTableMapping'Class; file : AbFile_Access);
-   function Create (file : AbFile_Access) return FileTableMapping_Access;
+   procedure Initialize (This : in out FileTableMapping'Class; file_Param : access AbFile'Class);
+   function Create (file_Param : access AbFile'Class) return FileTableMapping_Access;
    function getKey (This : in out FileTableMapping) return Java_Object_Access;
    function toVector (This : in out FileTableMapping) return BasicArrayList_Access;
    function toHashMap (This : in out FileTableMapping) return HashMap_Access;

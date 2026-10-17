@@ -38,7 +38,7 @@ package org.allbinary.thirdparty.store.NoThirdPartyStore_Package is
 
    procedure Initialize (This : in out NoThirdPartyStore'Class);
    function Create return NoThirdPartyStore_Access;
-   procedure authorize (This : in out NoThirdPartyStore; clientInformationInterface : AbeClientInformationInterface_Access);
+   procedure authorize (This : in out NoThirdPartyStore; clientInformationInterface_Param : access AbeClientInformationInterface'Class);
 
 end org.allbinary.thirdparty.store.NoThirdPartyStore_Package;
 

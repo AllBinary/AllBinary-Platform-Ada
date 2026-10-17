@@ -35,8 +35,8 @@ package org.allbinary.android.ActivityFractureUtil_Package is
 
    procedure Initialize (This : in out ActivityFractureUtil'Class);
    function Create return ActivityFractureUtil_Access;
-   procedure process (This : in out ActivityFractureUtil; activity : Activity_Access);
-   procedure setFullScreen (This : in out ActivityFractureUtil; activity : Activity_Access);
+   procedure process (This : in out ActivityFractureUtil; activity_Param : access Activity'Class);
+   procedure setFullScreen (This : in out ActivityFractureUtil; activity_Param : access Activity'Class);
 
 end org.allbinary.android.ActivityFractureUtil_Package;
 

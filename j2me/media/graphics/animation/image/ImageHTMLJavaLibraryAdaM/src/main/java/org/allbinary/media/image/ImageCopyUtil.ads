@@ -52,12 +52,12 @@ package org.allbinary.media.image.ImageCopyUtil_Package is
    procedure Initialize (This : in out ImageCopyUtil'Class);
    function Create return ImageCopyUtil_Access;
    function getInstance return ImageCopyUtil_Access;
-   function createImageForRotation (This : in out ImageCopyUtil; originalImage : Image_Access) return Image_Access;
-   procedure createImageForRotation (This : in out ImageCopyUtil; originalImage : Image_Access);
-   function createImage (This : in out ImageCopyUtil; originalImage : Image_Access) return Image_Access;
-   procedure createImage (This : in out ImageCopyUtil; originalImage : Image_Access);
-   function createImageScale (This : in out ImageCopyUtil; originalImage : Image_Access; canvasScale : Float; resize : Boolean) return Image_Access;
-   procedure createImageScale (This : in out ImageCopyUtil; originalImage : Image_Access; canvasScale : Float; resize : Boolean);
+   function createImageForRotation (This : in out ImageCopyUtil; originalImage_Param : access Image'Class) return Image_Access;
+   procedure createImageForRotation (This : in out ImageCopyUtil; originalImage_Param : access Image'Class);
+   function createImage (This : in out ImageCopyUtil; originalImage_Param : access Image'Class) return Image_Access;
+   procedure createImage (This : in out ImageCopyUtil; originalImage_Param : access Image'Class);
+   function createImageScale (This : in out ImageCopyUtil; originalImage_Param : access Image'Class; canvasScale : Float; resize : Boolean) return Image_Access;
+   procedure createImageScale (This : in out ImageCopyUtil; originalImage_Param : access Image'Class; canvasScale : Float; resize : Boolean);
 
 end org.allbinary.media.image.ImageCopyUtil_Package;
 

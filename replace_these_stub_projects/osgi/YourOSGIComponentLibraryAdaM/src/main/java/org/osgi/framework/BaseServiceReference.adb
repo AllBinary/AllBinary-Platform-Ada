@@ -43,7 +43,8 @@ package body org.osgi.framework.BaseServiceReference_Package is
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end getPropertyKeys;
 
-   function compareTo (This : in out BaseServiceReference; o : Java_Object_Access) return Integer is
+   function compareTo (This : in out BaseServiceReference; o_Param : access Java_Object'Class) return Integer is
+      o : Java_Object_Access := Java_Object_Access (o_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end compareTo;
@@ -55,8 +56,8 @@ package body org.osgi.framework.BaseServiceReference_Package is
       null;
    end getProperty;
 
-   procedure compareTo (This : in out BaseServiceReference; o : Java_Object_Access) is
-      Java_Result : constant Integer := BaseServiceReference'Class (This).compareTo (o);
+   procedure compareTo (This : in out BaseServiceReference; o_Param : access Java_Object'Class) is
+      Java_Result : constant Integer := BaseServiceReference'Class (This).compareTo (o_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

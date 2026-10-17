@@ -28,7 +28,7 @@ package org.allbinary.android.activity.ProgressActivityInterface_Package is
    type ProgressActivityInterface_Access is access all ProgressActivityInterface'Class;
    type ProgressActivityInterface_Access_Array is array (Natural range <>) of ProgressActivityInterface_Access;
    type ProgressActivityInterface_Access_Array_Access is access all ProgressActivityInterface_Access_Array;
-   procedure runOnUiThread (This : in out ProgressActivityInterface; action : Runnable_Access) is abstract;
+   procedure runOnUiThread (This : in out ProgressActivityInterface; action_Param : access Runnable'Class) is abstract;
    procedure onDismissTitleProgressBar (This : in out ProgressActivityInterface) is abstract;
    procedure onShowTitleProgressBar (This : in out ProgressActivityInterface; value : Integer; indeterminate : Boolean) is abstract;
    procedure onTitleProgressBarSetProgress (This : in out ProgressActivityInterface; value : Integer) is abstract;

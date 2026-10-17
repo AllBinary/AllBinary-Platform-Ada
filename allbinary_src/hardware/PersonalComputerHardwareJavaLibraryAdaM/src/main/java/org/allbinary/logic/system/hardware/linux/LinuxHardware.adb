@@ -64,7 +64,7 @@ package body org.allbinary.logic.system.hardware.linux.LinuxHardware_Package is
             This.componentInterfaceVector.add (cpu);
         end if;
         if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.OS) then
-            This.logUtil.putF (To_Unbounded_String ("Hardware Data: ") & This.toString, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+            This.logUtil.putF (To_Unbounded_String ("Hardware Data: ") & This.toString, LinuxHardware_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
    end Initialize;
 
@@ -88,7 +88,7 @@ package body org.allbinary.logic.system.hardware.linux.LinuxHardware_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.OS) then
-                This.logUtil.put (To_Unbounded_String ("Hardware Data: ") & This.toString, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR, e);
+                This.logUtil.put (To_Unbounded_String ("Hardware Data: ") & This.toString, LinuxHardware_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR, e);
             end if;
             Java_Throw (e);
                 end;
@@ -96,8 +96,8 @@ package body org.allbinary.logic.system.hardware.linux.LinuxHardware_Package is
    end init;
 
    --  throws Exception
-   procedure init (This : in out LinuxHardware; lineNumberReader_Param : LineNumberReader_Access; filePath : Unbounded_String) is
-      lineNumberReader : LineNumberReader_Access := lineNumberReader_Param;
+   procedure init (This : in out LinuxHardware; lineNumberReader_Param : access LineNumberReader'Class; filePath : Unbounded_String) is
+      lineNumberReader : LineNumberReader_Access := LineNumberReader_Access (lineNumberReader_Param);
       pciFile_Case : FileReader_Access;
       fileVector : BasicArrayList_Access;
       file : AbFile_Access;
@@ -133,7 +133,7 @@ package body org.allbinary.logic.system.hardware.linux.LinuxHardware_Package is
             end if;
             if (lineNumberReader) /= (null) then
                 if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.OS) then
-                    This.logUtil.putF (To_Unbounded_String ("PCI File Found"), This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+                    This.logUtil.putF (To_Unbounded_String ("PCI File Found"), LinuxHardware_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
                 end if;
                 nextLine := lineNumberReader.readLine;
                 while ((lineNumberReader) /= (null)) and then ((nextLine) /= (Null_Unbounded_String)) loop
@@ -145,7 +145,7 @@ package body org.allbinary.logic.system.hardware.linux.LinuxHardware_Package is
                 while This.isNextHardware (nextLine) loop
                     componentData := StringMaker_Package.Create;
                     if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.OS) then
-                        This.logUtil.putF (To_Unbounded_String ("Found Hardware Device: ") & Java_Image (This.componentInterfaceVector.size), This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+                        This.logUtil.putF (To_Unbounded_String ("Found Hardware Device: ") & Java_Image (This.componentInterfaceVector.size), LinuxHardware_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
                     end if;
                     componentData.append (nextLine);
                     componentData.append (CommonSeps_Package.getInstance.NEW_LINE);
@@ -166,7 +166,7 @@ package body org.allbinary.logic.system.hardware.linux.LinuxHardware_Package is
                 end loop;
             else
                 if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.OS) then
-                    This.logUtil.putF (To_Unbounded_String ("Could not load PCI File"), This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+                    This.logUtil.putF (To_Unbounded_String ("Could not load PCI File"), LinuxHardware_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
                 end if;
             end if;
             lineNumberReader.close;
@@ -258,12 +258,14 @@ package body org.allbinary.logic.system.hardware.linux.LinuxHardware_Package is
         return hardwareBuffer.toString;
    end toString;
 
-   function compareTo (This : in out LinuxHardware; hardwareInterface : HardwareInterface_Access) return Boolean is
+   function compareTo (This : in out LinuxHardware; hardwareInterface_Param : access HardwareInterface'Class) return Boolean is
+      hardwareInterface : HardwareInterface_Access := HardwareInterface_Access (hardwareInterface_Param);
    begin
         return True;
    end compareTo;
 
-   function difference (This : in out LinuxHardware; hardwareInterface : HardwareInterface_Access) return ABHashtable_Access is
+   function difference (This : in out LinuxHardware; hardwareInterface_Param : access HardwareInterface'Class) return ABHashtable_Access is
+      hardwareInterface : HardwareInterface_Access := HardwareInterface_Access (hardwareInterface_Param);
    begin
         return StdUtil_Package.getInstance.NULL_TABLE;
    end difference;
@@ -364,15 +366,15 @@ package body org.allbinary.logic.system.hardware.linux.LinuxHardware_Package is
       null;
    end getComponent;
 
-   procedure compareTo (This : in out LinuxHardware; hardwareInterface : HardwareInterface_Access) is
-      Java_Result : constant Boolean := LinuxHardware'Class (This).compareTo (hardwareInterface);
+   procedure compareTo (This : in out LinuxHardware; hardwareInterface_Param : access HardwareInterface'Class) is
+      Java_Result : constant Boolean := LinuxHardware'Class (This).compareTo (hardwareInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end compareTo;
 
-   procedure difference (This : in out LinuxHardware; hardwareInterface : HardwareInterface_Access) is
-      Java_Result : constant ABHashtable_Access := LinuxHardware'Class (This).difference (hardwareInterface);
+   procedure difference (This : in out LinuxHardware; hardwareInterface_Param : access HardwareInterface'Class) is
+      Java_Result : constant ABHashtable_Access := LinuxHardware'Class (This).difference (hardwareInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

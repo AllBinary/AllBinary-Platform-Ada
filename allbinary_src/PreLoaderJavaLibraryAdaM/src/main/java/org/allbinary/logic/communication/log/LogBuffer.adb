@@ -36,7 +36,8 @@ package body org.allbinary.logic.communication.log.LogBuffer_Package is
       return This;
    end Create;
 
-   procedure add (This : in out LogBuffer; log : Log_Access) is
+   procedure add (This : in out LogBuffer; log_Param : access Log'Class) is
+      log : Log_Access := Log_Access (log_Param);
    begin
         This.logEntryVector.add (log);
    end add;

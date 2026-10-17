@@ -51,12 +51,12 @@ package org.allbinary.logic.communication.http.request.MultipartRequestParams_Pa
       special : Boolean;
    end record;
 
-   procedure Initialize (This : in out MultipartRequestParams'Class; request : HttpServletRequest_Access);
-   function Create (request : HttpServletRequest_Access) return MultipartRequestParams_Access;
-   procedure Initialize (This : in out MultipartRequestParams'Class; pageContext : PageContext_Access);
-   function Create (pageContext : PageContext_Access) return MultipartRequestParams_Access;
+   procedure Initialize (This : in out MultipartRequestParams'Class; request_Param : access HttpServletRequest'Class);
+   function Create (request_Param : access HttpServletRequest'Class) return MultipartRequestParams_Access;
+   procedure Initialize (This : in out MultipartRequestParams'Class; pageContext_Param : access PageContext'Class);
+   function Create (pageContext_Param : access PageContext'Class) return MultipartRequestParams_Access;
    procedure setSpecial (This : in out MultipartRequestParams);
-   procedure processMultipartRequest (This : in out MultipartRequestParams; request : HttpServletRequest_Access);
+   procedure processMultipartRequest (This : in out MultipartRequestParams; request_Param : access HttpServletRequest'Class);
    function toHashMap (This : in out MultipartRequestParams) return HashMap_Access;
 
 end org.allbinary.logic.communication.http.request.MultipartRequestParams_Package;

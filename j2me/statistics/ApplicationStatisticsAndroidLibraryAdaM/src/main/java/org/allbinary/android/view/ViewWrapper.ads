@@ -36,8 +36,8 @@ package org.allbinary.android.view.ViewWrapper_Package is
       view : View_Access;
    end record;
 
-   procedure Initialize (This : in out ViewWrapper'Class; view : View_Access);
-   function Create (view : View_Access) return ViewWrapper_Access;
+   procedure Initialize (This : in out ViewWrapper'Class; view_Param : access View'Class);
+   function Create (view_Param : access View'Class) return ViewWrapper_Access;
    procedure invalidate (This : in out ViewWrapper);
    procedure postInvalidate (This : in out ViewWrapper);
 

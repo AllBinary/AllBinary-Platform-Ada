@@ -51,7 +51,7 @@ package org.allbinary.logic.communication.smtp.info.BasicEmailInfo_Package is
    function getSubject (This : in out BasicEmailInfo) return Unbounded_String;
    function getTextBody (This : in out BasicEmailInfo) return Unbounded_String;
    function getEmailServerConfigurationInterface (This : in out BasicEmailInfo) return EmailServerConfigurationInterface_Access;
-   procedure setEmailServerConfigurationInterface (This : in out BasicEmailInfo; emailServerConfigurationInterface : EmailServerConfigurationInterface_Access);
+   procedure setEmailServerConfigurationInterface (This : in out BasicEmailInfo; emailServerConfigurationInterface_Param : access EmailServerConfigurationInterface'Class);
    function toString (This : in out BasicEmailInfo) return Unbounded_String;
    procedure init (This : in out BasicEmailInfo);
 

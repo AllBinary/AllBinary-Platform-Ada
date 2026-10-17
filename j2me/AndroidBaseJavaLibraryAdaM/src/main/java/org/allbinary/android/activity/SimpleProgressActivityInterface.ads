@@ -28,7 +28,7 @@ package org.allbinary.android.activity.SimpleProgressActivityInterface_Package i
    type SimpleProgressActivityInterface_Access is access all SimpleProgressActivityInterface'Class;
    type SimpleProgressActivityInterface_Access_Array is array (Natural range <>) of SimpleProgressActivityInterface_Access;
    type SimpleProgressActivityInterface_Access_Array_Access is access all SimpleProgressActivityInterface_Access_Array;
-   procedure runOnUiThread (This : in out SimpleProgressActivityInterface; action : Runnable_Access) is abstract;
+   procedure runOnUiThread (This : in out SimpleProgressActivityInterface; action_Param : access Runnable'Class) is abstract;
    procedure onSetProgress (This : in out SimpleProgressActivityInterface; value : Integer; text : Unbounded_String) is abstract;
    procedure onDismissProgress (This : in out SimpleProgressActivityInterface; animationSequence : Integer_Array_Access) is abstract;
    procedure onShowProgress (This : in out SimpleProgressActivityInterface; indeterminate : Boolean; animationSequence : Integer_Array_Access) is abstract;

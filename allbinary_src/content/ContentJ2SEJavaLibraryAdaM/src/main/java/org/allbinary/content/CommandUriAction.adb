@@ -41,12 +41,14 @@ package body org.allbinary.content.CommandUriAction_Package is
         return CommandUriAction_Package.instance;
    end getInstance;
 
-   procedure add (This : in out CommandUriAction; command : Command_Access; url : Unbounded_String) is
+   procedure add (This : in out CommandUriAction; command_Param : access Command'Class; url : Unbounded_String) is
+      command : Command_Access := Command_Access (command_Param);
    begin
         This.hashtable.put (command, url);
    end add;
 
-   procedure process (This : in out CommandUriAction; command : Command_Access) is
+   procedure process (This : in out CommandUriAction; command_Param : access Command'Class) is
+      command : Command_Access := Command_Access (command_Param);
    begin
         begin
             null;
@@ -55,20 +57,21 @@ package body org.allbinary.content.CommandUriAction_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.PROCESS, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, CommandUriAction_Access'(This'Unchecked_Access), This.commonStrings.PROCESS, e);
                 end;
         end;
    end process;
 
-   function getIntent (This : in out CommandUriAction; command : Command_Access) return Intent_Access is
+   function getIntent (This : in out CommandUriAction; command_Param : access Command'Class) return Intent_Access is
+      command : Command_Access := Command_Access (command_Param);
       url : Unbounded_String;
    begin
         url := Unbounded_String (This.hashtable.get (command));
         return This.intent;
    end getIntent;
 
-   procedure getIntent (This : in out CommandUriAction; command : Command_Access) is
-      Java_Result : constant Intent_Access := CommandUriAction'Class (This).getIntent (command);
+   procedure getIntent (This : in out CommandUriAction; command_Param : access Command'Class) is
+      Java_Result : constant Intent_Access := CommandUriAction'Class (This).getIntent (command_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

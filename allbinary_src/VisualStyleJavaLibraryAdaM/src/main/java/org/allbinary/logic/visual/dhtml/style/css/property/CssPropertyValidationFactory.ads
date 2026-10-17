@@ -39,8 +39,8 @@ package org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyValidatio
 
    procedure Initialize (This : in out CssPropertyValidationFactory'Class);
    function Create return CssPropertyValidationFactory_Access;
-   function getInstance (node : Node_Access) return ValidationInterface_Access;
-   procedure getInstance (node : Node_Access);
+   function getInstance (node_Param : access Node'Class) return ValidationInterface_Access;
+   procedure getInstance (node_Param : access Node'Class);
 
 end org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyValidationFactory_Package;
 

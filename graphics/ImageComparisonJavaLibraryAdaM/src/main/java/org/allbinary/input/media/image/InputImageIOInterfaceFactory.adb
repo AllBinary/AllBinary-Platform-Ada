@@ -35,7 +35,8 @@ package body org.allbinary.input.media.image.InputImageIOInterfaceFactory_Packag
    end Create;
 
    --  throws Exception
-   function getInstance (imageType : InputImageType_Access) return ImageIOInterface_Access is
+   function getInstance (imageType_Param : access InputImageType'Class) return ImageIOInterface_Access is
+      imageType : InputImageType_Access := InputImageType_Access (imageType_Param);
    begin
         if (imageType) = (InputImageType_Package.CAPTURE) then
             return CapturedImageInputOutput_Package.Create;
@@ -48,8 +49,8 @@ package body org.allbinary.input.media.image.InputImageIOInterfaceFactory_Packag
         end if;
    end getInstance;
 
-   procedure getInstance (imageType : InputImageType_Access) is
-      Java_Result : constant ImageIOInterface_Access := getInstance (imageType);
+   procedure getInstance (imageType_Param : access InputImageType'Class) is
+      Java_Result : constant ImageIOInterface_Access := getInstance (imageType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

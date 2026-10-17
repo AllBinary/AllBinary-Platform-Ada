@@ -61,9 +61,9 @@ package org.allbinary.game.part.CountedLayersHudPaintable_Package is
 
    procedure Initialize (This : in out CountedLayersHudPaintable'Class; partInterfaceArray : PartInterface_Access_Array_Access; dropSize : Integer; startIndex : Integer; countedTotalStringColor : Integer; countedPartsBorder : Integer);
    function Create (partInterfaceArray : PartInterface_Access_Array_Access; dropSize : Integer; startIndex : Integer; countedTotalStringColor : Integer; countedPartsBorder : Integer) return CountedLayersHudPaintable_Access;
-   procedure updateMeasurement (This : in out CountedLayersHudPaintable; graphics : Graphics_Access);
-   procedure paint (This : in out CountedLayersHudPaintable; graphics : Graphics_Access);
-   procedure paintThreed (This : in out CountedLayersHudPaintable; graphics : Graphics_Access);
+   procedure updateMeasurement (This : in out CountedLayersHudPaintable; graphics_Param : access Graphics'Class);
+   procedure paint (This : in out CountedLayersHudPaintable; graphics_Param : access Graphics'Class);
+   procedure paintThreed (This : in out CountedLayersHudPaintable; graphics_Param : access Graphics'Class);
 
 end org.allbinary.game.part.CountedLayersHudPaintable_Package;
 

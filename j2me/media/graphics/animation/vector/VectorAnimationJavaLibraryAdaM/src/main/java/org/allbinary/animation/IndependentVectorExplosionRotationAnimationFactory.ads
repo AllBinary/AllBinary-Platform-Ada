@@ -49,11 +49,11 @@ package org.allbinary.animation.IndependentVectorExplosionRotationAnimationFacto
       vectorExplosionGenerator : VectorExplosionGenerator_Access;
    end record;
 
-   procedure Initialize (This : in out IndependentVectorExplosionRotationAnimationFactory'Class; vectorInfo : VectorInfo_Access; basicColor : BasicColor_Access; vectorAnimationFactoryInterface : VectorAnimationFactoryInterface_Access);
-   function Create (vectorInfo : VectorInfo_Access; basicColor : BasicColor_Access; vectorAnimationFactoryInterface : VectorAnimationFactoryInterface_Access) return IndependentVectorExplosionRotationAnimationFactory_Access;
+   procedure Initialize (This : in out IndependentVectorExplosionRotationAnimationFactory'Class; vectorInfo_Param : access VectorInfo'Class; basicColor_Param : access BasicColor'Class; vectorAnimationFactoryInterface_Param : access VectorAnimationFactoryInterface'Class);
+   function Create (vectorInfo_Param : access VectorInfo'Class; basicColor_Param : access BasicColor'Class; vectorAnimationFactoryInterface_Param : access VectorAnimationFactoryInterface'Class) return IndependentVectorExplosionRotationAnimationFactory_Access;
    procedure init (This : in out IndependentVectorExplosionRotationAnimationFactory);
-   function getInstanceAnimation (This : in out IndependentVectorExplosionRotationAnimationFactory; animationInterface : Animation_Access) return Animation_Access;
-   procedure getInstanceAnimation (This : in out IndependentVectorExplosionRotationAnimationFactory; animationInterface : Animation_Access);
+   function getInstanceAnimation (This : in out IndependentVectorExplosionRotationAnimationFactory; animationInterface_Param : access Animation'Class) return Animation_Access;
+   procedure getInstanceAnimation (This : in out IndependentVectorExplosionRotationAnimationFactory; animationInterface_Param : access Animation'Class);
 
 end org.allbinary.animation.IndependentVectorExplosionRotationAnimationFactory_Package;
 

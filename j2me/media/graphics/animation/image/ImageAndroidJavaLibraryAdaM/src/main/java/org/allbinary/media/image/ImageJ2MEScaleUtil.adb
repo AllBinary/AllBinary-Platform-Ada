@@ -52,7 +52,8 @@ package body org.allbinary.media.image.ImageJ2MEScaleUtil_Package is
    end scaleArray;
 
    --  throws Exception
-   function scale (This : in out ImageJ2MEScaleUtil; image : Image_Access; width : Integer; height : Integer) return Image_Access is
+   function scale (This : in out ImageJ2MEScaleUtil; image_Param : access Image'Class; width : Integer; height : Integer) return Image_Access is
+      image : Image_Access := Image_Access (image_Param);
    begin
         return ImageScaleUtil_Package.getInstance.createImage2 (GameFeatureImageCacheFactory_Package.getInstance, image, Float (width), Float (image.getWidth), Float (height), Float (image.getHeight), False);
    end scale;
@@ -64,8 +65,8 @@ package body org.allbinary.media.image.ImageJ2MEScaleUtil_Package is
       null;
    end scaleArray;
 
-   procedure scale (This : in out ImageJ2MEScaleUtil; image : Image_Access; width : Integer; height : Integer) is
-      Java_Result : constant Image_Access := ImageJ2MEScaleUtil'Class (This).scale (image, width, height);
+   procedure scale (This : in out ImageJ2MEScaleUtil; image_Param : access Image'Class; width : Integer; height : Integer) is
+      Java_Result : constant Image_Access := ImageJ2MEScaleUtil'Class (This).scale (image_Param, width, height);
       pragma Unreferenced (Java_Result);
    begin
       null;

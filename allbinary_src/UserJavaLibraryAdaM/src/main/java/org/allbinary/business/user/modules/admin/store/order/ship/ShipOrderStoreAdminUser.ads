@@ -38,10 +38,10 @@ package org.allbinary.business.user.modules.admin.store.order.ship.ShipOrderStor
 
    procedure Initialize (This : in out ShipOrderStoreAdminUser'Class);
    function Create return ShipOrderStoreAdminUser_Access;
-   procedure Initialize (This : in out ShipOrderStoreAdminUser'Class; userHashMap : HashMap_Access);
-   function Create (userHashMap : HashMap_Access) return ShipOrderStoreAdminUser_Access;
-   procedure validateSession (This : in out ShipOrderStoreAdminUser; weblisketSession : WeblisketSessionInterface_Access);
-   procedure updateSession (This : in out ShipOrderStoreAdminUser; weblisketSession : WeblisketSessionInterface_Access);
+   procedure Initialize (This : in out ShipOrderStoreAdminUser'Class; userHashMap_Param : access HashMap'Class);
+   function Create (userHashMap_Param : access HashMap'Class) return ShipOrderStoreAdminUser_Access;
+   procedure validateSession (This : in out ShipOrderStoreAdminUser; weblisketSession_Param : access WeblisketSessionInterface'Class);
+   procedure updateSession (This : in out ShipOrderStoreAdminUser; weblisketSession_Param : access WeblisketSessionInterface'Class);
 
 end org.allbinary.business.user.modules.admin.store.order.ship.ShipOrderStoreAdminUser_Package;
 

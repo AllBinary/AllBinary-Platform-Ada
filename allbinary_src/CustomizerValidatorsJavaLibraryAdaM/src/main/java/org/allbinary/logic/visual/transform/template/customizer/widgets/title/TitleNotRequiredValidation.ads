@@ -50,15 +50,15 @@ package org.allbinary.logic.visual.transform.template.customizer.widgets.title.T
 
    procedure Initialize (This : in out TitleNotRequiredValidation'Class);
    function Create return TitleNotRequiredValidation_Access;
-   procedure Initialize (This : in out TitleNotRequiredValidation'Class; node : Node_Access);
-   function Create (node : Node_Access) return TitleNotRequiredValidation_Access;
-   procedure Initialize (This : in out TitleNotRequiredValidation'Class; hashMap : HashMap_Access);
-   function Create (hashMap : HashMap_Access) return TitleNotRequiredValidation_Access;
+   procedure Initialize (This : in out TitleNotRequiredValidation'Class; node_Param : access Node'Class);
+   function Create (node_Param : access Node'Class) return TitleNotRequiredValidation_Access;
+   procedure Initialize (This : in out TitleNotRequiredValidation'Class; hashMap_Param : access HashMap'Class);
+   function Create (hashMap_Param : access HashMap'Class) return TitleNotRequiredValidation_Access;
    function isValid (This : in out TitleNotRequiredValidation) return Boolean;
    function validationInfo (This : in out TitleNotRequiredValidation) return Unbounded_String;
    function toValidationInfoDoc (This : in out TitleNotRequiredValidation) return Document_Access;
-   function toValidationInfoNode (This : in out TitleNotRequiredValidation; document : Document_Access) return Node_Access;
-   procedure toValidationInfoNode (This : in out TitleNotRequiredValidation; document : Document_Access);
+   function toValidationInfoNode (This : in out TitleNotRequiredValidation; document_Param : access Document'Class) return Node_Access;
+   procedure toValidationInfoNode (This : in out TitleNotRequiredValidation; document_Param : access Document'Class);
 
 end org.allbinary.logic.visual.transform.template.customizer.widgets.title.TitleNotRequiredValidation_Package;
 

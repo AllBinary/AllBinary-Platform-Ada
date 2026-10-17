@@ -30,8 +30,8 @@ package bundle.input.automation.robot.InputAutomationRobotChangeListener_Package
    type InputAutomationRobotChangeListener_Access is access all InputAutomationRobotChangeListener'Class;
    type InputAutomationRobotChangeListener_Access_Array is array (Natural range <>) of InputAutomationRobotChangeListener_Access;
    type InputAutomationRobotChangeListener_Access_Array_Access is access all InputAutomationRobotChangeListener_Access_Array;
-   procedure onAdd (This : in out InputAutomationRobotChangeListener; inputAutomationRobotChangeEvent : InputAutomationRobotChangeEvent_Access) is abstract;
-   procedure onRemove (This : in out InputAutomationRobotChangeListener; inputAutomationRobotChangeEvent : InputAutomationRobotChangeEvent_Access) is abstract;
+   procedure onAdd (This : in out InputAutomationRobotChangeListener; inputAutomationRobotChangeEvent_Param : access InputAutomationRobotChangeEvent'Class) is abstract;
+   procedure onRemove (This : in out InputAutomationRobotChangeListener; inputAutomationRobotChangeEvent_Param : access InputAutomationRobotChangeEvent'Class) is abstract;
 
 end bundle.input.automation.robot.InputAutomationRobotChangeListener_Package;
 

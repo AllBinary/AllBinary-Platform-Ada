@@ -53,7 +53,8 @@ package body org.allbinary.animation.text.CustomTextBoxIndexedAnimationFactory_P
         return CustomTextBoxIndexedAnimation_Package.Create (customTextBox);
    end getInstance;
 
-   procedure setInitialScale (This : in out CustomTextBoxIndexedAnimationFactory; scaleProperties : ScaleProperties_Access) is
+   procedure setInitialScale (This : in out CustomTextBoxIndexedAnimationFactory; scaleProperties_Param : access ScaleProperties'Class) is
+      scaleProperties : ScaleProperties_Access := ScaleProperties_Access (scaleProperties_Param);
       fontSize : Integer;
    begin
         fontSize := This.scaleProperties.scaleHeight;

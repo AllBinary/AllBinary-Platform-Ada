@@ -34,14 +34,17 @@ package body org.allbinary.game.tick.OptimizedTickableLayerProcessor_Package is
    end Create;
 
    --  throws Exception
-   procedure processAt (This : in out OptimizedTickableLayerProcessor; allBinaryLayerManager : AllBinaryLayerManager_Access; layerInterface : AllBinaryLayer_Access; index : Integer) is
+   procedure processAt (This : in out OptimizedTickableLayerProcessor; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class; layerInterface_Param : access AllBinaryLayer'Class; index : Integer) is
+      allBinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
+      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
       tickableInterface : AllBinaryGameLayer_Access;
    begin
         tickableInterface := AllBinaryGameLayer_Access (layerInterface);
         tickableInterface.processTick (allBinaryLayerManager);
    end processAt;
 
-   function isProcessorLayer (This : in out OptimizedTickableLayerProcessor; layerInterface : AllBinaryLayer_Access) return Boolean is
+   function isProcessorLayer (This : in out OptimizedTickableLayerProcessor; layerInterface_Param : access AllBinaryLayer'Class) return Boolean is
+      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
    begin
         if layerInterface.implmentsTickableInterface then
             return True;
@@ -50,8 +53,8 @@ package body org.allbinary.game.tick.OptimizedTickableLayerProcessor_Package is
         end if;
    end isProcessorLayer;
 
-   procedure isProcessorLayer (This : in out OptimizedTickableLayerProcessor; layerInterface : AllBinaryLayer_Access) is
-      Java_Result : constant Boolean := OptimizedTickableLayerProcessor'Class (This).isProcessorLayer (layerInterface);
+   procedure isProcessorLayer (This : in out OptimizedTickableLayerProcessor; layerInterface_Param : access AllBinaryLayer'Class) is
+      Java_Result : constant Boolean := OptimizedTickableLayerProcessor'Class (This).isProcessorLayer (layerInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -40,13 +40,14 @@ package body org.allbinary.media.graphics.geography.map.racetrack.CustomMapGener
    end Create;
 
    --  throws Exception
-   function create (This : in out CustomMapGeneratorBaseFactory; raceTrackGeographicMap : RaceTrackGeographicMap_Access) return CustomMapGeneratorBase_Access is
+   function create (This : in out CustomMapGeneratorBaseFactory; raceTrackGeographicMap_Param : access RaceTrackGeographicMap'Class) return CustomMapGeneratorBase_Access is
+      raceTrackGeographicMap : RaceTrackGeographicMap_Access := RaceTrackGeographicMap_Access (raceTrackGeographicMap_Param);
    begin
         return CustomMapGeneratorBase_Package.Create;
    end create;
 
-   procedure create (This : in out CustomMapGeneratorBaseFactory; raceTrackGeographicMap : RaceTrackGeographicMap_Access) is
-      Java_Result : constant CustomMapGeneratorBase_Access := CustomMapGeneratorBaseFactory'Class (This).create (raceTrackGeographicMap);
+   procedure create (This : in out CustomMapGeneratorBaseFactory; raceTrackGeographicMap_Param : access RaceTrackGeographicMap'Class) is
+      Java_Result : constant CustomMapGeneratorBase_Access := CustomMapGeneratorBaseFactory'Class (This).create (raceTrackGeographicMap_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

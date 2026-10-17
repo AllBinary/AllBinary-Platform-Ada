@@ -23,7 +23,9 @@ package body org.allbinary.graphics.canvas.transition.progress.ProgressRunnable_
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ProgressRunnable'Class; midletActivity : Activity_Access; progressCanvas : ProgressCanvas_Access) is
+   procedure Initialize (This : in out ProgressRunnable'Class; midletActivity_Param : access Activity'Class; progressCanvas_Param : access ProgressCanvas'Class) is
+      midletActivity : Activity_Access := Activity_Access (midletActivity_Param);
+      progressCanvas : ProgressCanvas_Access := ProgressCanvas_Access (progressCanvas_Param);
       midletActivity2 : MidletActivityBase_Access;
    begin
       ARunnable_Package.Initialize (This);
@@ -33,10 +35,10 @@ package body org.allbinary.graphics.canvas.transition.progress.ProgressRunnable_
         This.progressCanvas := progressCanvas;
    end Initialize;
 
-   function Create (midletActivity : Activity_Access; progressCanvas : ProgressCanvas_Access) return ProgressRunnable_Access is
+   function Create (midletActivity_Param : access Activity'Class; progressCanvas_Param : access ProgressCanvas'Class) return ProgressRunnable_Access is
       This : constant ProgressRunnable_Access := new ProgressRunnable;
    begin
-      ProgressRunnable_Package.Initialize (This.all, midletActivity, progressCanvas);
+      ProgressRunnable_Package.Initialize (This.all, midletActivity_Param, progressCanvas_Param);
       return This;
    end Create;
 

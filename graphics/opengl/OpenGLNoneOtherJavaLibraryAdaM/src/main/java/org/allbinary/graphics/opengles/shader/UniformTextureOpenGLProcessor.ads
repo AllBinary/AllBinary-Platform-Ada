@@ -34,9 +34,9 @@ package org.allbinary.graphics.opengles.shader.UniformTextureOpenGLProcessor_Pac
 
    type UniformTextureOpenGLProcessor is new OpenGLObject3dProcessor with null record;
 
-   procedure Initialize (This : in out UniformTextureOpenGLProcessor'Class; shaderComposite : ShaderComposite_Access; handleIndex : Integer);
-   function Create (shaderComposite : ShaderComposite_Access; handleIndex : Integer) return UniformTextureOpenGLProcessor_Access;
-   procedure process (This : in out UniformTextureOpenGLProcessor; gl : GL10_Access; unused : Java_Object_Access; index : Integer);
+   procedure Initialize (This : in out UniformTextureOpenGLProcessor'Class; shaderComposite_Param : access ShaderComposite'Class; handleIndex : Integer);
+   function Create (shaderComposite_Param : access ShaderComposite'Class; handleIndex : Integer) return UniformTextureOpenGLProcessor_Access;
+   procedure process (This : in out UniformTextureOpenGLProcessor; gl_Param : access GL10'Class; unused_Param : access Java_Object'Class; index : Integer);
 
 end org.allbinary.graphics.opengles.shader.UniformTextureOpenGLProcessor_Package;
 

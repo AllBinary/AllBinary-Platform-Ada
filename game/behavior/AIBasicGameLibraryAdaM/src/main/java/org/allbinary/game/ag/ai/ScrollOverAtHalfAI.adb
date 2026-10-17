@@ -21,20 +21,23 @@ package body org.allbinary.game.ag.ai.ScrollOverAtHalfAI_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ScrollOverAtHalfAI'Class; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) is
+   procedure Initialize (This : in out ScrollOverAtHalfAI'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) is
+      ownerLayerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (ownerLayerInterface_Param);
+      gameInput : GameInput_Access := GameInput_Access (gameInput_Param);
    begin
         BasicAI_Package.Initialize (This, ownerLayerInterface, gameInput);
    end Initialize;
 
-   function Create (ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return ScrollOverAtHalfAI_Access is
+   function Create (ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return ScrollOverAtHalfAI_Access is
       This : constant ScrollOverAtHalfAI_Access := new ScrollOverAtHalfAI;
    begin
-      ScrollOverAtHalfAI_Package.Initialize (This.all, ownerLayerInterface, gameInput);
+      ScrollOverAtHalfAI_Package.Initialize (This.all, ownerLayerInterface_Param, gameInput_Param);
       return This;
    end Create;
 
    --  throws Exception
-   procedure processAI (This : in out ScrollOverAtHalfAI; allBinaryLayerManager : AllBinaryLayerManager_Access) is
+   procedure processAI (This : in out ScrollOverAtHalfAI; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class) is
+      allBinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
       ownerLayerInterface : AllBinaryLayer_Access;
       x : Integer;
       y : Integer;

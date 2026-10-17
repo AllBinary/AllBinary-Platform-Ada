@@ -46,15 +46,15 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
             endIndex := data.lastIndexOf ('>');
             document := DomDocumentHelper_Package.create (Unbounded_Slice (data, (0) + 1, (endIndex) + (1)));
             nodeList := document.getElementsByTagName (GenericProfilesData_Package.NAME);
-            This.logUtil.putF (To_Unbounded_String ("Number Of Profiles Specified: ") & Java_Image (nodeList.getLength), This'Unchecked_Access, To_Unbounded_String ("Contructor"));
+            This.logUtil.putF (To_Unbounded_String ("Number Of Profiles Specified: ") & Java_Image (nodeList.getLength), GenericProfiles_Access'(This'Unchecked_Access), To_Unbounded_String ("Contructor"));
             if (nodeList) /= (null) then
                 This.initProfiles (nodeList.item (0));
             else
                 Java_Throw (Java_New_Exception ("Exception", Java_Image (GenericProfileActionData_Package.NAME) & To_Unbounded_String (" Name Node Node Children")));
             end if;
-            This.logUtil.putF (To_Unbounded_String ("Loaded: ") & Java_Image (This.hashMap.size) & To_Unbounded_String (" Configuration Profile Actions"), This'Unchecked_Access, To_Unbounded_String ("Contructor"));
+            This.logUtil.putF (To_Unbounded_String ("Loaded: ") & Java_Image (This.hashMap.size) & To_Unbounded_String (" Configuration Profile Actions"), GenericProfiles_Access'(This'Unchecked_Access), To_Unbounded_String ("Contructor"));
         else
-            This.logUtil.putF (To_Unbounded_String ("No Generic Profile: ") & fileName, This'Unchecked_Access, To_Unbounded_String ("Contructor"));
+            This.logUtil.putF (To_Unbounded_String ("No Generic Profile: ") & fileName, GenericProfiles_Access'(This'Unchecked_Access), To_Unbounded_String ("Contructor"));
         end if;
         This.getDefaultListModelHelper.initDefaultModelList;
    end Initialize;
@@ -67,7 +67,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    end Create;
 
    --  throws Exception
-   procedure initProfiles (This : in out GenericProfiles; node : Node_Access) is
+   procedure initProfiles (This : in out GenericProfiles; node_Param : access Node'Class) is
+      node : Node_Access := Node_Access (node_Param);
       nodeList : NodeList_Access;
       profileNameNode : Node_Access;
       genericProfile : GenericProfile_Access;
@@ -97,7 +98,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         genericProfile := GenericProfile_Access (This.hashMap.get (name));
         if (genericProfile) = (null) then
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.putF (To_Unbounded_String ("No Generic Profile Named: ") & name & To_Unbounded_String (" availability was: ") & Java_Image (This.hashMap), This'Unchecked_Access, commonStrings.GET);
+            This.logUtil.putF (To_Unbounded_String ("No Generic Profile Named: ") & name & To_Unbounded_String (" availability was: ") & Java_Image (This.hashMap), GenericProfiles_Access'(This'Unchecked_Access), commonStrings.GET);
         end if;
         return genericProfile;
    end get;
@@ -121,7 +122,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    end remove;
 
    --  throws Exception
-   function toXmlNode (This : in out GenericProfiles; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out GenericProfiles; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       node : Node_Access;
       set : Set_Access;
       nameArray : Java_Object_Access_Array_Access;
@@ -170,8 +172,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
       null;
    end get;
 
-   procedure toXmlNode (This : in out GenericProfiles; document : Document_Access) is
-      Java_Result : constant Node_Access := GenericProfiles'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out GenericProfiles; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := GenericProfiles'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

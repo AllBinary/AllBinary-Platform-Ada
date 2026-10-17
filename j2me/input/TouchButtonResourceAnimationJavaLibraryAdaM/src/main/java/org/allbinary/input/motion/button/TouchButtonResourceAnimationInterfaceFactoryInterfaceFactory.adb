@@ -45,7 +45,8 @@ package body org.allbinary.input.motion.button.TouchButtonResourceAnimationInter
    end init;
 
    --  throws Exception
-   procedure initImageCache (This : in out TouchButtonResourceAnimationInterfaceFactoryInterfaceFactory; imageCache : ImageCache_Access; level : Integer) is
+   procedure initImageCache (This : in out TouchButtonResourceAnimationInterfaceFactoryInterfaceFactory; imageCache_Param : access ImageCache'Class; level : Integer) is
+      imageCache : ImageCache_Access := ImageCache_Access (imageCache_Param);
       portion : Integer;
       loadingString : Unbounded_String;
       index : Integer;

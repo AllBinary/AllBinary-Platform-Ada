@@ -38,7 +38,8 @@ package body org.allbinary.game.displayable.canvas.NullAllBinaryGameCanvas_Packa
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end getLayerManager;
 
-   procedure addCommand (This : in out NullAllBinaryGameCanvas; cmd : Command_Access) is
+   procedure addCommand (This : in out NullAllBinaryGameCanvas; cmd_Param : access Command'Class) is
+      cmd : Command_Access := Command_Access (cmd_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end addCommand;
@@ -53,12 +54,14 @@ package body org.allbinary.game.displayable.canvas.NullAllBinaryGameCanvas_Packa
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end getWidth;
 
-   procedure removeCommand (This : in out NullAllBinaryGameCanvas; cmd : Command_Access) is
+   procedure removeCommand (This : in out NullAllBinaryGameCanvas; cmd_Param : access Command'Class) is
+      cmd : Command_Access := Command_Access (cmd_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end removeCommand;
 
-   procedure setCommandListener (This : in out NullAllBinaryGameCanvas; l : CommandListener_Access) is
+   procedure setCommandListener (This : in out NullAllBinaryGameCanvas; l_Param : access CommandListener'Class) is
+      l : CommandListener_Access := CommandListener_Access (l_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end setCommandListener;

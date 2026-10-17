@@ -35,27 +35,29 @@ package body org.allbinary.logic.visual.transform.template.customizer.includes.s
       return This;
    end Create;
 
-   procedure Initialize (This : in out EditCssStyleValidation'Class; document : Document_Access) is
+   procedure Initialize (This : in out EditCssStyleValidation'Class; document_Param : access Document'Class) is
+      document : Document_Access := Document_Access (document_Param);
    begin
         CssStyleValidation_Package.Initialize (This, document);
    end Initialize;
 
-   function Create (document : Document_Access) return EditCssStyleValidation_Access is
+   function Create (document_Param : access Document'Class) return EditCssStyleValidation_Access is
       This : constant EditCssStyleValidation_Access := new EditCssStyleValidation;
    begin
-      EditCssStyleValidation_Package.Initialize (This.all, document);
+      EditCssStyleValidation_Package.Initialize (This.all, document_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out EditCssStyleValidation'Class; hashMap : HashMap_Access) is
+   procedure Initialize (This : in out EditCssStyleValidation'Class; hashMap_Param : access HashMap'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
    begin
         CssStyleValidation_Package.Initialize (This, hashMap);
    end Initialize;
 
-   function Create (hashMap : HashMap_Access) return EditCssStyleValidation_Access is
+   function Create (hashMap_Param : access HashMap'Class) return EditCssStyleValidation_Access is
       This : constant EditCssStyleValidation_Access := new EditCssStyleValidation;
    begin
-      EditCssStyleValidation_Package.Initialize (This.all, hashMap);
+      EditCssStyleValidation_Package.Initialize (This.all, hashMap_Param);
       return This;
    end Create;
 
@@ -74,13 +76,15 @@ package body org.allbinary.logic.visual.transform.template.customizer.includes.s
         return null;
    end toValidationInfoDoc;
 
-   function toValidationInfoNode (This : in out EditCssStyleValidation; document : Document_Access) return Node_Access is
+   function toValidationInfoNode (This : in out EditCssStyleValidation; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
    begin
         return null;
    end toValidationInfoNode;
 
    --  throws Exception
-   function toXmlNode (This : in out EditCssStyleValidation; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out EditCssStyleValidation; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       node : Node_Access;
       styleNode : Node_Access;
       size : Integer;
@@ -99,15 +103,15 @@ package body org.allbinary.logic.visual.transform.template.customizer.includes.s
         return node;
    end toXmlNode;
 
-   procedure toValidationInfoNode (This : in out EditCssStyleValidation; document : Document_Access) is
-      Java_Result : constant Node_Access := EditCssStyleValidation'Class (This).toValidationInfoNode (document);
+   procedure toValidationInfoNode (This : in out EditCssStyleValidation; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := EditCssStyleValidation'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toValidationInfoNode;
 
-   procedure toXmlNode (This : in out EditCssStyleValidation; document : Document_Access) is
-      Java_Result : constant Node_Access := EditCssStyleValidation'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out EditCssStyleValidation; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := EditCssStyleValidation'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -44,27 +44,33 @@ package body org.allbinary.util.ABHashMap_Package is
         return HashMap (This).isEmpty;
    end isEmpty;
 
-   function get (This : in out ABHashMap; key : Java_Object_Access) return Java_Object_Access is
+   function get (This : in out ABHashMap; key_Param : access Java_Object'Class) return Java_Object_Access is
+      key : Java_Object_Access := Java_Object_Access (key_Param);
    begin
         return HashMap (This).get (key);
    end get;
 
-   function containsKey (This : in out ABHashMap; key : Java_Object_Access) return Boolean is
+   function containsKey (This : in out ABHashMap; key_Param : access Java_Object'Class) return Boolean is
+      key : Java_Object_Access := Java_Object_Access (key_Param);
    begin
         return HashMap (This).containsKey (key);
    end containsKey;
 
-   function put (This : in out ABHashMap; key : Java_Object_Access; value : Java_Object_Access) return Java_Object_Access is
+   function put (This : in out ABHashMap; key_Param : access Java_Object'Class; value_Param : access Java_Object'Class) return Java_Object_Access is
+      key : Java_Object_Access := Java_Object_Access (key_Param);
+      value : Java_Object_Access := Java_Object_Access (value_Param);
    begin
         return HashMap (This).put (key, value);
    end put;
 
-   procedure putAll (This : in out ABHashMap; map : Map_Access) is
+   procedure putAll (This : in out ABHashMap; map_Param : access Map'Class) is
+      map : Map_Access := Map_Access (map_Param);
    begin
         HashMap (This).putAll (map);
    end putAll;
 
-   function remove (This : in out ABHashMap; key : Java_Object_Access) return Java_Object_Access is
+   function remove (This : in out ABHashMap; key_Param : access Java_Object'Class) return Java_Object_Access is
+      key : Java_Object_Access := Java_Object_Access (key_Param);
    begin
         return HashMap (This).remove (key);
    end remove;
@@ -74,7 +80,8 @@ package body org.allbinary.util.ABHashMap_Package is
         HashMap (This).clear;
    end clear;
 
-   function containsValue (This : in out ABHashMap; value : Java_Object_Access) return Boolean is
+   function containsValue (This : in out ABHashMap; value_Param : access Java_Object'Class) return Boolean is
+      value : Java_Object_Access := Java_Object_Access (value_Param);
    begin
         return HashMap (This).containsValue (value);
    end containsValue;
@@ -89,12 +96,16 @@ package body org.allbinary.util.ABHashMap_Package is
         return HashMap (This).entrySet;
    end entrySet;
 
-   function getOrDefault (This : in out ABHashMap; key : Java_Object_Access; defaultValue : Java_Object_Access) return Java_Object_Access is
+   function getOrDefault (This : in out ABHashMap; key_Param : access Java_Object'Class; defaultValue_Param : access Java_Object'Class) return Java_Object_Access is
+      key : Java_Object_Access := Java_Object_Access (key_Param);
+      defaultValue : Java_Object_Access := Java_Object_Access (defaultValue_Param);
    begin
         return HashMap (This).getOrDefault (key, defaultValue);
    end getOrDefault;
 
-   function putIfAbsent (This : in out ABHashMap; key : Java_Object_Access; value : Java_Object_Access) return Java_Object_Access is
+   function putIfAbsent (This : in out ABHashMap; key_Param : access Java_Object'Class; value_Param : access Java_Object'Class) return Java_Object_Access is
+      key : Java_Object_Access := Java_Object_Access (key_Param);
+      value : Java_Object_Access := Java_Object_Access (value_Param);
    begin
         return HashMap (This).putIfAbsent (key, value);
    end putIfAbsent;
@@ -104,50 +115,50 @@ package body org.allbinary.util.ABHashMap_Package is
         return HashMap (This).clone;
    end clone;
 
-   procedure get (This : in out ABHashMap; key : Java_Object_Access) is
-      Java_Result : constant Java_Object_Access := ABHashMap'Class (This).get (key);
+   procedure get (This : in out ABHashMap; key_Param : access Java_Object'Class) is
+      Java_Result : constant Java_Object_Access := ABHashMap'Class (This).get (key_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end get;
 
-   procedure containsKey (This : in out ABHashMap; key : Java_Object_Access) is
-      Java_Result : constant Boolean := ABHashMap'Class (This).containsKey (key);
+   procedure containsKey (This : in out ABHashMap; key_Param : access Java_Object'Class) is
+      Java_Result : constant Boolean := ABHashMap'Class (This).containsKey (key_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end containsKey;
 
-   procedure put (This : in out ABHashMap; key : Java_Object_Access; value : Java_Object_Access) is
-      Java_Result : constant Java_Object_Access := ABHashMap'Class (This).put (key, value);
+   procedure put (This : in out ABHashMap; key_Param : access Java_Object'Class; value_Param : access Java_Object'Class) is
+      Java_Result : constant Java_Object_Access := ABHashMap'Class (This).put (key_Param, value_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end put;
 
-   procedure remove (This : in out ABHashMap; key : Java_Object_Access) is
-      Java_Result : constant Java_Object_Access := ABHashMap'Class (This).remove (key);
+   procedure remove (This : in out ABHashMap; key_Param : access Java_Object'Class) is
+      Java_Result : constant Java_Object_Access := ABHashMap'Class (This).remove (key_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end remove;
 
-   procedure containsValue (This : in out ABHashMap; value : Java_Object_Access) is
-      Java_Result : constant Boolean := ABHashMap'Class (This).containsValue (value);
+   procedure containsValue (This : in out ABHashMap; value_Param : access Java_Object'Class) is
+      Java_Result : constant Boolean := ABHashMap'Class (This).containsValue (value_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end containsValue;
 
-   procedure getOrDefault (This : in out ABHashMap; key : Java_Object_Access; defaultValue : Java_Object_Access) is
-      Java_Result : constant Java_Object_Access := ABHashMap'Class (This).getOrDefault (key, defaultValue);
+   procedure getOrDefault (This : in out ABHashMap; key_Param : access Java_Object'Class; defaultValue_Param : access Java_Object'Class) is
+      Java_Result : constant Java_Object_Access := ABHashMap'Class (This).getOrDefault (key_Param, defaultValue_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getOrDefault;
 
-   procedure putIfAbsent (This : in out ABHashMap; key : Java_Object_Access; value : Java_Object_Access) is
-      Java_Result : constant Java_Object_Access := ABHashMap'Class (This).putIfAbsent (key, value);
+   procedure putIfAbsent (This : in out ABHashMap; key_Param : access Java_Object'Class; value_Param : access Java_Object'Class) is
+      Java_Result : constant Java_Object_Access := ABHashMap'Class (This).putIfAbsent (key_Param, value_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

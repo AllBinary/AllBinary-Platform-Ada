@@ -39,7 +39,7 @@ package body org.allbinary.logic.system.security.crypt.jcehelper.AbBasicCrypt_Pa
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            PreLogUtil_Package.putOE (commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("AbCrypt(alg,key)"), e);
+            PreLogUtil_Package.putOE (commonStrings.EXCEPTION_Id, AbBasicCrypt_Access'(This'Unchecked_Access), To_Unbounded_String ("AbCrypt(alg,key)"), e);
                 end;
         end;
    end Initialize;
@@ -70,7 +70,7 @@ package body org.allbinary.logic.system.security.crypt.jcehelper.AbBasicCrypt_Pa
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            PreLogUtil_Package.putOE (To_Unbounded_String ("init Failed"), This'Unchecked_Access, commonStrings.INIT, e);
+            PreLogUtil_Package.putOE (To_Unbounded_String ("init Failed"), AbBasicCrypt_Access'(This'Unchecked_Access), commonStrings.INIT, e);
                 end;
         end;
    end init;
@@ -86,7 +86,7 @@ package body org.allbinary.logic.system.security.crypt.jcehelper.AbBasicCrypt_Pa
             ivArray := This.secretKey.getEncoded;
             encrypted := This.cipher.doFinal (array_Id);
             result := new Short_Short_Integer_Array'(0 .. ((ivArray'Length) + (encrypted'Length)) - 1 => 0);
-            PreLogUtil_Package.put (To_Unbounded_String ("ivArray Length: ") & Java_Image (ivArray'Length), This'Unchecked_Access, To_Unbounded_String ("encrypt"));
+            PreLogUtil_Package.put (To_Unbounded_String ("ivArray Length: ") & Java_Image (ivArray'Length), AbBasicCrypt_Access'(This'Unchecked_Access), To_Unbounded_String ("encrypt"));
             for index in 0 .. (ivArray'Length) - 1 loop
                 result (index) := ivArray (index);
             end loop;
@@ -99,7 +99,7 @@ package body org.allbinary.logic.system.security.crypt.jcehelper.AbBasicCrypt_Pa
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            PreLogUtil_Package.putOE (To_Unbounded_String ("Encrypt Failed"), This'Unchecked_Access, To_Unbounded_String ("encrypt"), e);
+            PreLogUtil_Package.putOE (To_Unbounded_String ("Encrypt Failed"), AbBasicCrypt_Access'(This'Unchecked_Access), To_Unbounded_String ("encrypt"), e);
             return null;
                 end;
         end;
@@ -117,7 +117,7 @@ package body org.allbinary.logic.system.security.crypt.jcehelper.AbBasicCrypt_Pa
             for index in 0 .. (8) - 1 loop
                 ivArray (index) := array_Id (index);
             end loop;
-            PreLogUtil_Package.put (To_Unbounded_String ("ivArray Length: ") & Java_Image (ivArray'Length), This'Unchecked_Access, To_Unbounded_String ("encrypt"));
+            PreLogUtil_Package.put (To_Unbounded_String ("ivArray Length: ") & Java_Image (ivArray'Length), AbBasicCrypt_Access'(This'Unchecked_Access), To_Unbounded_String ("encrypt"));
             result := new Short_Short_Integer_Array'(0 .. ((array_Id'Length) - (ivArray'Length)) - 1 => 0);
             for index in ivArray'Length .. (array_Id'Length) - 1 loop
                 result ((index) - (ivArray'Length)) := array_Id (index);
@@ -129,7 +129,7 @@ package body org.allbinary.logic.system.security.crypt.jcehelper.AbBasicCrypt_Pa
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            PreLogUtil_Package.putOE (To_Unbounded_String ("decrypt Failed"), This'Unchecked_Access, To_Unbounded_String ("decrypt"), e);
+            PreLogUtil_Package.putOE (To_Unbounded_String ("decrypt Failed"), AbBasicCrypt_Access'(This'Unchecked_Access), To_Unbounded_String ("decrypt"), e);
             return null;
                 end;
         end;

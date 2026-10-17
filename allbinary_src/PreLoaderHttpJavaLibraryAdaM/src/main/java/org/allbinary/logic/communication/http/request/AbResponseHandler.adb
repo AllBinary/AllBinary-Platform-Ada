@@ -36,7 +36,9 @@ package body org.allbinary.logic.communication.http.request.AbResponseHandler_Pa
    end Create;
 
    --  throws JspTagException
-   procedure sendJspTagRedirect (pageContext : PageContext_Access; e : Java_Throwable) is
+   procedure sendJspTagRedirect (pageContext_Param : access PageContext'Class; e_Param : access Java_Throwable_Object'Class) is
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
+      e : Java_Throwable := Java_Throwable (e_Param);
       logUtil : LogUtil_Access;
    begin
         logUtil := LogUtil_Package.getInstance;
@@ -59,7 +61,9 @@ package body org.allbinary.logic.communication.http.request.AbResponseHandler_Pa
    end sendJspTagRedirect;
 
    --  throws ServletException
-   procedure sendServletRedirect (pageContext : PageContext_Access; e : Java_Throwable) is
+   procedure sendServletRedirect (pageContext_Param : access PageContext'Class; e_Param : access Java_Throwable_Object'Class) is
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
+      e : Java_Throwable := Java_Throwable (e_Param);
       logUtil : LogUtil_Access;
    begin
         logUtil := LogUtil_Package.getInstance;
@@ -82,7 +86,9 @@ package body org.allbinary.logic.communication.http.request.AbResponseHandler_Pa
    end sendServletRedirect;
 
    --  throws JspTagException
-   procedure sendJspTagLicensingRedirect (pageContext : PageContext_Access; e : Java_Throwable) is
+   procedure sendJspTagLicensingRedirect (pageContext_Param : access PageContext'Class; e_Param : access Java_Throwable_Object'Class) is
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
+      e : Java_Throwable := Java_Throwable (e_Param);
       logUtil : LogUtil_Access;
    begin
         logUtil := LogUtil_Package.getInstance;
@@ -105,7 +111,9 @@ package body org.allbinary.logic.communication.http.request.AbResponseHandler_Pa
    end sendJspTagLicensingRedirect;
 
    --  throws ServletException
-   procedure sendServletLicensingRedirect (pageContext : PageContext_Access; e : Java_Throwable) is
+   procedure sendServletLicensingRedirect (pageContext_Param : access PageContext'Class; e_Param : access Java_Throwable_Object'Class) is
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
+      e : Java_Throwable := Java_Throwable (e_Param);
       logUtil : LogUtil_Access;
    begin
         logUtil := LogUtil_Package.getInstance;
@@ -128,7 +136,8 @@ package body org.allbinary.logic.communication.http.request.AbResponseHandler_Pa
    end sendServletLicensingRedirect;
 
    --  throws Exception
-   procedure sendRedirect (pageContext : PageContext_Access; page : Unbounded_String) is
+   procedure sendRedirect (pageContext_Param : access PageContext'Class; page : Unbounded_String) is
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
       request : HttpServletRequest_Access;
       response : HttpServletResponse_Access;
       requestDispatcher : RequestDispatcher_Access;

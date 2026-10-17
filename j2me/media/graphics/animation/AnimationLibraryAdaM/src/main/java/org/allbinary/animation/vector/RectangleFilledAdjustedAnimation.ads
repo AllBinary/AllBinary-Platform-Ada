@@ -40,10 +40,10 @@ package org.allbinary.animation.vector.RectangleFilledAdjustedAnimation_Package 
       offsetY : Integer;
    end record;
 
-   procedure Initialize (This : in out RectangleFilledAdjustedAnimation'Class; width : Integer; height : Integer; offsetX : Integer; offsetY : Integer; basicColor : BasicColor_Access);
-   function Create (width : Integer; height : Integer; offsetX : Integer; offsetY : Integer; basicColor : BasicColor_Access) return RectangleFilledAdjustedAnimation_Access;
+   procedure Initialize (This : in out RectangleFilledAdjustedAnimation'Class; width : Integer; height : Integer; offsetX : Integer; offsetY : Integer; basicColor_Param : access BasicColor'Class);
+   function Create (width : Integer; height : Integer; offsetX : Integer; offsetY : Integer; basicColor_Param : access BasicColor'Class) return RectangleFilledAdjustedAnimation_Access;
    procedure nextFrame (This : in out RectangleFilledAdjustedAnimation);
-   procedure paintXY (This : in out RectangleFilledAdjustedAnimation; graphics : Graphics_Access; x : Integer; y : Integer);
+   procedure paintXY (This : in out RectangleFilledAdjustedAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
    procedure setOffsetX (This : in out RectangleFilledAdjustedAnimation; offsetX : Integer);
    procedure setOffsetY (This : in out RectangleFilledAdjustedAnimation; offsetY : Integer);
 

@@ -51,15 +51,15 @@ package org.allbinary.game.layer.AdvancedPlayerOwnedRTSLayers_Package is
 
    procedure Initialize (This : in out AdvancedPlayerOwnedRTSLayers'Class);
    function Create return AdvancedPlayerOwnedRTSLayers_Access;
-   procedure addUnit (This : in out AdvancedPlayerOwnedRTSLayers; rtsLayer : RTSLayer_Access);
-   procedure addWaypoint (This : in out AdvancedPlayerOwnedRTSLayers; rtsLayer : RTSLayer_Access);
-   procedure addBase (This : in out AdvancedPlayerOwnedRTSLayers; rtsLayer : RTSLayer_Access);
-   procedure addGarrison (This : in out AdvancedPlayerOwnedRTSLayers; rtsLayer : RTSLayer_Access);
-   procedure addHouse (This : in out AdvancedPlayerOwnedRTSLayers; rtsLayer : RTSLayer_Access);
-   procedure addLab (This : in out AdvancedPlayerOwnedRTSLayers; rtsLayer : RTSLayer_Access);
-   procedure addFactory (This : in out AdvancedPlayerOwnedRTSLayers; rtsLayer : RTSLayer_Access);
-   procedure removeUnit (This : in out AdvancedPlayerOwnedRTSLayers; gameLayer : AllBinaryGameLayer_Access);
-   procedure removeWaypoint (This : in out AdvancedPlayerOwnedRTSLayers; gameLayer : AllBinaryGameLayer_Access);
+   procedure addUnit (This : in out AdvancedPlayerOwnedRTSLayers; rtsLayer_Param : access RTSLayer'Class);
+   procedure addWaypoint (This : in out AdvancedPlayerOwnedRTSLayers; rtsLayer_Param : access RTSLayer'Class);
+   procedure addBase (This : in out AdvancedPlayerOwnedRTSLayers; rtsLayer_Param : access RTSLayer'Class);
+   procedure addGarrison (This : in out AdvancedPlayerOwnedRTSLayers; rtsLayer_Param : access RTSLayer'Class);
+   procedure addHouse (This : in out AdvancedPlayerOwnedRTSLayers; rtsLayer_Param : access RTSLayer'Class);
+   procedure addLab (This : in out AdvancedPlayerOwnedRTSLayers; rtsLayer_Param : access RTSLayer'Class);
+   procedure addFactory (This : in out AdvancedPlayerOwnedRTSLayers; rtsLayer_Param : access RTSLayer'Class);
+   procedure removeUnit (This : in out AdvancedPlayerOwnedRTSLayers; gameLayer_Param : access AllBinaryGameLayer'Class);
+   procedure removeWaypoint (This : in out AdvancedPlayerOwnedRTSLayers; gameLayer_Param : access AllBinaryGameLayer'Class);
    function getUnitsList (This : in out AdvancedPlayerOwnedRTSLayers) return BasicArrayList_Access;
    function getWaypointsList (This : in out AdvancedPlayerOwnedRTSLayers) return BasicArrayList_Access;
    function getBaseList (This : in out AdvancedPlayerOwnedRTSLayers) return BasicArrayList_Access;
@@ -68,7 +68,7 @@ package org.allbinary.game.layer.AdvancedPlayerOwnedRTSLayers_Package is
    function getLabList (This : in out AdvancedPlayerOwnedRTSLayers) return BasicArrayList_Access;
    function getFactoryList (This : in out AdvancedPlayerOwnedRTSLayers) return BasicArrayList_Access;
    function getTotalBuildings (This : in out AdvancedPlayerOwnedRTSLayers) return Integer;
-   procedure removeBuilding (This : in out AdvancedPlayerOwnedRTSLayers; layerInterface : AllBinaryGameLayer_Access);
+   procedure removeBuilding (This : in out AdvancedPlayerOwnedRTSLayers; layerInterface_Param : access AllBinaryGameLayer'Class);
    function toString (This : in out AdvancedPlayerOwnedRTSLayers) return Unbounded_String;
    function getBuildingList (This : in out AdvancedPlayerOwnedRTSLayers) return BasicArrayList_Access;
 

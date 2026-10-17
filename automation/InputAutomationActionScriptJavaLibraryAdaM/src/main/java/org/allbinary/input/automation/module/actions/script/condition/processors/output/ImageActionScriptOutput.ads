@@ -63,14 +63,14 @@ package org.allbinary.input.automation.module.actions.script.condition.processor
    end record;
    NAME : Unbounded_String;
 
-   procedure Initialize (This : in out ImageActionScriptOutput'Class; node : Node_Access);
-   function Create (node : Node_Access) return ImageActionScriptOutput_Access;
+   procedure Initialize (This : in out ImageActionScriptOutput'Class; node_Param : access Node'Class);
+   function Create (node_Param : access Node'Class) return ImageActionScriptOutput_Access;
    procedure Initialize (This : in out ImageActionScriptOutput'Class);
    function Create return ImageActionScriptOutput_Access;
    function getActionScriptOutputJPanel (This : in out ImageActionScriptOutput) return ImageActionScriptOutputJPanel_Access;
    function toHashMap (This : in out ImageActionScriptOutput) return HashMap_Access;
-   function toXmlNode (This : in out ImageActionScriptOutput; document : Document_Access) return Node_Access;
-   procedure toXmlNode (This : in out ImageActionScriptOutput; document : Document_Access);
+   function toXmlNode (This : in out ImageActionScriptOutput; document_Param : access Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out ImageActionScriptOutput; document_Param : access Document'Class);
    procedure process (This : in out ImageActionScriptOutput; frame : Long_Long_Integer);
    procedure showDialog (This : in out ImageActionScriptOutput);
    function isSaved (This : in out ImageActionScriptOutput) return Boolean;
@@ -80,7 +80,7 @@ package org.allbinary.input.automation.module.actions.script.condition.processor
    function future_toString (This : in out ImageActionScriptOutput) return Unbounded_String;
    procedure log (This : in out ImageActionScriptOutput);
    function getImageTypes (This : in out ImageActionScriptOutput) return ImageTypes_Access;
-   procedure setImageTypes (This : in out ImageActionScriptOutput; imageTypes : ImageTypes_Access);
+   procedure setImageTypes (This : in out ImageActionScriptOutput; imageTypes_Param : access ImageTypes'Class);
 
 end org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutput_Package;
 

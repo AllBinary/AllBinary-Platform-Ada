@@ -74,8 +74,8 @@ package taghelpers.OrderHistoryHelper_Package is
       newStatus : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out OrderHistoryHelper'Class; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access);
-   function Create (propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return OrderHistoryHelper_Access;
+   procedure Initialize (This : in out OrderHistoryHelper'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
+   function Create (propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return OrderHistoryHelper_Access;
    procedure getFormData (This : in out OrderHistoryHelper);
    function setOrderStatus (This : in out OrderHistoryHelper) return Unbounded_String;
 

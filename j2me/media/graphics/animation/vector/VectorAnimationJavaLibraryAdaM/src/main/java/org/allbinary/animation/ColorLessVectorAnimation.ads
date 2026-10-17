@@ -36,9 +36,9 @@ package org.allbinary.animation.ColorLessVectorAnimation_Package is
 
    type ColorLessVectorAnimation is new VectorAnimation with null record;
 
-   procedure Initialize (This : in out ColorLessVectorAnimation'Class; currentPoints : Integer_Array_Access_Array_Access_Array_Access; animationBehavior : AnimationBehavior_Access);
-   function Create (currentPoints : Integer_Array_Access_Array_Access_Array_Access; animationBehavior : AnimationBehavior_Access) return ColorLessVectorAnimation_Access;
-   procedure paintXY (This : in out ColorLessVectorAnimation; graphics : Graphics_Access; x : Integer; y : Integer);
+   procedure Initialize (This : in out ColorLessVectorAnimation'Class; currentPoints : Integer_Array_Access_Array_Access_Array_Access; animationBehavior_Param : access AnimationBehavior'Class);
+   function Create (currentPoints : Integer_Array_Access_Array_Access_Array_Access; animationBehavior_Param : access AnimationBehavior'Class) return ColorLessVectorAnimation_Access;
+   procedure paintXY (This : in out ColorLessVectorAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
 
 end org.allbinary.animation.ColorLessVectorAnimation_Package;
 

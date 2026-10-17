@@ -54,8 +54,8 @@ package admin.taghelpers.BasicTextEmailHelper_Package is
       pageContext : PageContext_Access;
    end record;
 
-   procedure Initialize (This : in out BasicTextEmailHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access);
-   function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return BasicTextEmailHelper_Access;
+   procedure Initialize (This : in out BasicTextEmailHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
+   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return BasicTextEmailHelper_Access;
    procedure send (This : in out BasicTextEmailHelper);
 
 end admin.taghelpers.BasicTextEmailHelper_Package;

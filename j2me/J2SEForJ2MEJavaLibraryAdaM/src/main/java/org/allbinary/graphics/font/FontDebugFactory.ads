@@ -37,7 +37,7 @@ package org.allbinary.graphics.font.FontDebugFactory_Package is
    procedure Initialize (This : in out FontDebugFactory'Class);
    function Create return FontDebugFactory_Access;
    function getInstance return FontDebugFactory_Access;
-   procedure setFont (This : in out FontDebugFactory; font : Font_Access; graphics : Graphics_Access);
+   procedure setFont (This : in out FontDebugFactory; font_Param : access Font'Class; graphics_Param : access Graphics'Class);
 
 end org.allbinary.graphics.font.FontDebugFactory_Package;
 

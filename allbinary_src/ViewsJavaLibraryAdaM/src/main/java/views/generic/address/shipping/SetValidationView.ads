@@ -42,13 +42,13 @@ package views.generic_Id.address.shipping.SetValidationView_Package is
 
    type SetValidationView is new ShippingAddressView and ValidationComponentInterface with null record;
 
-   procedure Initialize (This : in out SetValidationView'Class; transformInfoInterface : TransformInfoInterface_Access);
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return SetValidationView_Access;
+   procedure Initialize (This : in out SetValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return SetValidationView_Access;
    function isValid (This : in out SetValidationView) return Boolean;
    function validationInfo (This : in out SetValidationView) return Unbounded_String;
    function toValidationInfoDoc (This : in out SetValidationView) return Document_Access;
-   function toValidationInfoNode (This : in out SetValidationView; document : Document_Access) return Node_Access;
-   procedure toValidationInfoNode (This : in out SetValidationView; document : Document_Access);
+   function toValidationInfoNode (This : in out SetValidationView; document_Param : access Document'Class) return Node_Access;
+   procedure toValidationInfoNode (This : in out SetValidationView; document_Param : access Document'Class);
 
 end views.generic_Id.address.shipping.SetValidationView_Package;
 

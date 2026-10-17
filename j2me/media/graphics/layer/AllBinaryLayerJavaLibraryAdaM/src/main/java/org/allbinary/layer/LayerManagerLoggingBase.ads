@@ -35,10 +35,10 @@ package org.allbinary.layer.LayerManagerLoggingBase_Package is
 
    procedure Initialize (This : in out LayerManagerLoggingBase'Class);
    function Create return LayerManagerLoggingBase_Access;
-   procedure append (This : in out LayerManagerLoggingBase; layerInterface : AllBinaryLayer_Access);
-   procedure appendAt (This : in out LayerManagerLoggingBase; layerInterface : AllBinaryLayer_Access; index : Integer);
-   procedure remove (This : in out LayerManagerLoggingBase; layerInterface : AllBinaryLayer_Access);
-   procedure removeResult (This : in out LayerManagerLoggingBase; layerManager : LayerManager_Access; layerInterface : AllBinaryLayer_Access; result : Boolean);
+   procedure append (This : in out LayerManagerLoggingBase; layerInterface_Param : access AllBinaryLayer'Class);
+   procedure appendAt (This : in out LayerManagerLoggingBase; layerInterface_Param : access AllBinaryLayer'Class; index : Integer);
+   procedure remove (This : in out LayerManagerLoggingBase; layerInterface_Param : access AllBinaryLayer'Class);
+   procedure removeResult (This : in out LayerManagerLoggingBase; layerManager_Param : access LayerManager'Class; layerInterface_Param : access AllBinaryLayer'Class; result : Boolean);
    procedure clear (This : in out LayerManagerLoggingBase);
 
 end org.allbinary.layer.LayerManagerLoggingBase_Package;

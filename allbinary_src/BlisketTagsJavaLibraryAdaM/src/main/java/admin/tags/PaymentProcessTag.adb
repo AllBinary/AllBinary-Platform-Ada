@@ -55,7 +55,7 @@ package body admin.tags.PaymentProcessTag_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.LICENSINGERROR) then
-                This.logUtil.put (To_Unbounded_String ("LicensingException"), This'Unchecked_Access, This.commonStrings.PROCESS, e);
+                This.logUtil.put (To_Unbounded_String ("LicensingException"), PaymentProcessTag_Access'(This'Unchecked_Access), This.commonStrings.PROCESS, e);
             end if;
             Java_Throw (e);
                 end;

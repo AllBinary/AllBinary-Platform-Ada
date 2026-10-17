@@ -47,8 +47,8 @@ package org.allbinary.game.ag.ai.ThrustAIVisitor_Package is
 
    procedure Initialize (This : in out ThrustAIVisitor'Class);
    function Create return ThrustAIVisitor_Access;
-   function visit (This : in out ThrustAIVisitor; anyType : Java_Object_Access) return Java_Object_Access;
-   procedure visit (This : in out ThrustAIVisitor; anyType : Java_Object_Access);
+   function visit (This : in out ThrustAIVisitor; anyType_Param : access Java_Object'Class) return Java_Object_Access;
+   procedure visit (This : in out ThrustAIVisitor; anyType_Param : access Java_Object'Class);
 
 end org.allbinary.game.ag.ai.ThrustAIVisitor_Package;
 

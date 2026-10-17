@@ -24,16 +24,17 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentG
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out PaymentGatewayView'Class; paymentGatewayInterface : PaymentGatewayInterface_Access) is
+   procedure Initialize (This : in out PaymentGatewayView'Class; paymentGatewayInterface_Param : access PaymentGatewayInterface'Class) is
+      paymentGatewayInterface : PaymentGatewayInterface_Access := PaymentGatewayInterface_Access (paymentGatewayInterface_Param);
    begin
       Initialize_Fields (This);
         This.paymentGatewayInterface := paymentGatewayInterface;
    end Initialize;
 
-   function Create (paymentGatewayInterface : PaymentGatewayInterface_Access) return PaymentGatewayView_Access is
+   function Create (paymentGatewayInterface_Param : access PaymentGatewayInterface'Class) return PaymentGatewayView_Access is
       This : constant PaymentGatewayView_Access := new PaymentGatewayView;
    begin
-      PaymentGatewayView_Package.Initialize (This.all, paymentGatewayInterface);
+      PaymentGatewayView_Package.Initialize (This.all, paymentGatewayInterface_Param);
       return This;
    end Create;
 
@@ -51,13 +52,14 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentG
    end toHashMap;
 
    --  throws Exception
-   function toXmlNode (This : in out PaymentGatewayView; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out PaymentGatewayView; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       hashMap : HashMap_Access;
       paymentGatewayNode : Node_Access;
    begin
         begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("toXmlNode"));
+                This.logUtil.putF (This.commonStrings.START, PaymentGatewayView_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode"));
             end if;
             hashMap := PaymentGatewayMapping_Package.Create (This.paymentGatewayInterface).toHashMap;
             hashMap.putAll (This.toHashMap);
@@ -69,15 +71,15 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentG
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.XSLLOGGINGERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("toXmlNode"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, PaymentGatewayView_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode"), e);
             end if;
             Java_Throw (e);
                 end;
         end;
    end toXmlNode;
 
-   procedure toXmlNode (This : in out PaymentGatewayView; document : Document_Access) is
-      Java_Result : constant Node_Access := PaymentGatewayView'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out PaymentGatewayView; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := PaymentGatewayView'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

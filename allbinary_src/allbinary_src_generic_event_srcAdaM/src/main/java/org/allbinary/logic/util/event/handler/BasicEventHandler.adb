@@ -60,7 +60,7 @@ package body org.allbinary.logic.util.event.handler.BasicEventHandler_Package is
                         e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                     begin
                 commonStrings := CommonStrings_Package.getInstance;
-                This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.TOSTRING, e);
+                This.logUtil.put (commonStrings.EXCEPTION_Id, BasicEventHandler_Access'(This'Unchecked_Access), commonStrings.TOSTRING, e);
                     end;
             end;
             index := index + 1;
@@ -73,32 +73,37 @@ package body org.allbinary.logic.util.event.handler.BasicEventHandler_Package is
         This.eventListenerInterfaceList := BasicArrayListD_Package.Create;
    end removeAllListeners;
 
-   procedure addListenerSingleThreaded (This : in out BasicEventHandler; eventListenerInterface : EventListenerInterface_Access) is
+   procedure addListenerSingleThreaded (This : in out BasicEventHandler; eventListenerInterface_Param : access EventListenerInterface'Class) is
+      eventListenerInterface : EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
    begin
         if not (This.eventListenerInterfaceList.contains (eventListenerInterface)) then
             This.eventListenerInterfaceList.add (eventListenerInterface);
         end if;
    end addListenerSingleThreaded;
 
-   procedure addListenerInterface (This : in out BasicEventHandler; eventListenerInterface : EventListenerInterface_Access) is
+   procedure addListenerInterface (This : in out BasicEventHandler; eventListenerInterface_Param : access EventListenerInterface'Class) is
+      eventListenerInterface : EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
    begin
         if not (This.eventListenerInterfaceList.contains (eventListenerInterface)) then
             This.eventListenerInterfaceList.add (eventListenerInterface);
         end if;
    end addListenerInterface;
 
-   procedure removeListenerSingleThreaded (This : in out BasicEventHandler; eventListenerInterface : EventListenerInterface_Access) is
+   procedure removeListenerSingleThreaded (This : in out BasicEventHandler; eventListenerInterface_Param : access EventListenerInterface'Class) is
+      eventListenerInterface : EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
    begin
         This.eventListenerInterfaceList.remove (eventListenerInterface);
    end removeListenerSingleThreaded;
 
-   procedure removeListener (This : in out BasicEventHandler; eventListenerInterface : EventListenerInterface_Access) is
+   procedure removeListener (This : in out BasicEventHandler; eventListenerInterface_Param : access EventListenerInterface'Class) is
+      eventListenerInterface : EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
    begin
         This.eventListenerInterfaceList.remove (eventListenerInterface);
    end removeListener;
 
    --  throws Exception
-   procedure fireEvent (This : in out BasicEventHandler; eventObject : AllBinaryEventObject_Access) is
+   procedure fireEvent (This : in out BasicEventHandler; eventObject_Param : access AllBinaryEventObject'Class) is
+      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
       index : Integer;
       eventListenerInterface : EventListenerInterface_Access;
       commonStrings : CommonStrings_Access;
@@ -115,7 +120,7 @@ package body org.allbinary.logic.util.event.handler.BasicEventHandler_Package is
                         e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                     begin
                 commonStrings := CommonStrings_Package.getInstance;
-                This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, EventStrings_Package.getInstance.FIRE_EVENT, e);
+                This.logUtil.put (commonStrings.EXCEPTION_Id, BasicEventHandler_Access'(This'Unchecked_Access), EventStrings_Package.getInstance.FIRE_EVENT, e);
                     end;
             end;
             index := index + 1;
@@ -123,7 +128,9 @@ package body org.allbinary.logic.util.event.handler.BasicEventHandler_Package is
    end fireEvent;
 
    --  throws Exception
-   procedure process (This : in out BasicEventHandler; eventObject : AllBinaryEventObject_Access; eventListenerInterface : EventListenerInterface_Access) is
+   procedure process (This : in out BasicEventHandler; eventObject_Param : access AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface'Class) is
+      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
+      eventListenerInterface : EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
    begin
         eventListenerInterface.onEvent (eventObject);
    end process;

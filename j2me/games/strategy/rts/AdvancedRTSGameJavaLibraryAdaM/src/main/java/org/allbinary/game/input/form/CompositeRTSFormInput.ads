@@ -64,17 +64,17 @@ package org.allbinary.game.input.form.CompositeRTSFormInput_Package is
 
    procedure Initialize (This : in out CompositeRTSFormInput'Class; groupInterface : Group_Access_Array_Access; isPrimaryWaypointCreator : Boolean; itemIndex : Integer_Array_Access);
    function Create (groupInterface : Group_Access_Array_Access; isPrimaryWaypointCreator : Boolean; itemIndex : Integer_Array_Access) return CompositeRTSFormInput_Access;
-   procedure setAllBinaryGameLayerManager (This : in out CompositeRTSFormInput; allBinaryGameLayerManager : AllBinaryGameLayerManager_Access);
-   procedure processAtPoint (This : in out CompositeRTSFormInput; associatedRtsLayer : CollidableDestroyableDamageableLayer_Access; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; layerManager : AllBinaryLayerManager_Access; point : GPoint_Access);
-   procedure processGameSpecific (This : in out CompositeRTSFormInput; associatedRtsLayer : CollidableDestroyableDamageableLayer_Access; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; layerManager : AllBinaryLayerManager_Access; item : ABCustomItem_Access; index : Integer);
-   function processSticky (This : in out CompositeRTSFormInput; associatedRtsLayer : CollidableDestroyableDamageableLayer_Access; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; layerManager : AllBinaryLayerManager_Access; point : GPoint_Access) return Boolean;
-   procedure processSticky (This : in out CompositeRTSFormInput; associatedRtsLayer : CollidableDestroyableDamageableLayer_Access; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; layerManager : AllBinaryLayerManager_Access; point : GPoint_Access);
-   procedure processStickyGameSpecific (This : in out CompositeRTSFormInput; associatedRtsLayer : CollidableDestroyableDamageableLayer_Access; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; layerManager : AllBinaryLayerManager_Access; item : ABCustomItem_Access; index : Integer);
+   procedure setAllBinaryGameLayerManager (This : in out CompositeRTSFormInput; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class);
+   procedure processAtPoint (This : in out CompositeRTSFormInput; associatedRtsLayer_Param : access CollidableDestroyableDamageableLayer'Class; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; layerManager_Param : access AllBinaryLayerManager'Class; point_Param : access GPoint'Class);
+   procedure processGameSpecific (This : in out CompositeRTSFormInput; associatedRtsLayer_Param : access CollidableDestroyableDamageableLayer'Class; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; layerManager_Param : access AllBinaryLayerManager'Class; item_Param : access ABCustomItem'Class; index : Integer);
+   function processSticky (This : in out CompositeRTSFormInput; associatedRtsLayer_Param : access CollidableDestroyableDamageableLayer'Class; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; layerManager_Param : access AllBinaryLayerManager'Class; point_Param : access GPoint'Class) return Boolean;
+   procedure processSticky (This : in out CompositeRTSFormInput; associatedRtsLayer_Param : access CollidableDestroyableDamageableLayer'Class; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; layerManager_Param : access AllBinaryLayerManager'Class; point_Param : access GPoint'Class);
+   procedure processStickyGameSpecific (This : in out CompositeRTSFormInput; associatedRtsLayer_Param : access CollidableDestroyableDamageableLayer'Class; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; layerManager_Param : access AllBinaryLayerManager'Class; item_Param : access ABCustomItem'Class; index : Integer);
    function getSelectedStickyItemIndex (This : in out CompositeRTSFormInput) return Integer;
    function isStickyItemSelected (This : in out CompositeRTSFormInput) return Boolean;
    procedure setStickyItemSelected (This : in out CompositeRTSFormInput; stickyItemSelected : Boolean);
    function getSelectedStickyItem (This : in out CompositeRTSFormInput) return ABCustomItem_Access;
-   procedure setSelectedStickyItem (This : in out CompositeRTSFormInput; selectedStickyItem : ABCustomItem_Access);
+   procedure setSelectedStickyItem (This : in out CompositeRTSFormInput; selectedStickyItem_Param : access ABCustomItem'Class);
 
 end org.allbinary.game.input.form.CompositeRTSFormInput_Package;
 

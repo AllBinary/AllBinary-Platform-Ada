@@ -40,13 +40,14 @@ package body org.allbinary.graphics.form.ItemPaintableFactory_Package is
    end getInstance;
 
    --  throws Exception
-   function getInstanceItemPaintable (This : in out ItemPaintableFactory; paintableForm : PaintableForm_Access) return ItemPaintable_Access is
+   function getInstanceItemPaintable (This : in out ItemPaintableFactory; paintableForm_Param : access PaintableForm'Class) return ItemPaintable_Access is
+      paintableForm : PaintableForm_Access := PaintableForm_Access (paintableForm_Param);
    begin
         return ItemPaintableFactory_Package.instance;
    end getInstanceItemPaintable;
 
-   procedure getInstanceItemPaintable (This : in out ItemPaintableFactory; paintableForm : PaintableForm_Access) is
-      Java_Result : constant ItemPaintable_Access := ItemPaintableFactory'Class (This).getInstanceItemPaintable (paintableForm);
+   procedure getInstanceItemPaintable (This : in out ItemPaintableFactory; paintableForm_Param : access PaintableForm'Class) is
+      Java_Result : constant ItemPaintable_Access := ItemPaintableFactory'Class (This).getInstanceItemPaintable (paintableForm_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

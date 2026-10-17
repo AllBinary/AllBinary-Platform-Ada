@@ -56,7 +56,7 @@ package org.allbinary.android.input.motion.TrackballGameInputMotionEventProcesso
    procedure Initialize (This : in out TrackballGameInputMotionEventProcessor'Class);
    function Create return TrackballGameInputMotionEventProcessor_Access;
    function getInstance return TrackballGameInputMotionEventProcessor_Access;
-   procedure process (This : in out TrackballGameInputMotionEventProcessor; motionEvent : MotionEvent_Access);
+   procedure process (This : in out TrackballGameInputMotionEventProcessor; motionEvent_Param : access MotionEvent'Class);
 
 end org.allbinary.android.input.motion.TrackballGameInputMotionEventProcessor_Package;
 

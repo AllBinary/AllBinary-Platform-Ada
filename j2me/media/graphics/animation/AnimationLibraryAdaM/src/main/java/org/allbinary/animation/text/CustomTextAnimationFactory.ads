@@ -58,13 +58,13 @@ package org.allbinary.animation.text.CustomTextAnimationFactory_Package is
       scaleProperties : ScaleProperties_Access;
    end record;
 
-   procedure Initialize (This : in out CustomTextAnimationFactory'Class; text : Unbounded_String; fontSize : Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access);
-   function Create (text : Unbounded_String; fontSize : Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access) return CustomTextAnimationFactory_Access;
-   function createDXY (text : Unbounded_String; fontSize : Integer; dx : Integer; dy : Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access) return CustomTextAnimationFactory_Access;
-   procedure createDXY (text : Unbounded_String; fontSize : Integer; dx : Integer; dy : Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access);
+   procedure Initialize (This : in out CustomTextAnimationFactory'Class; text : Unbounded_String; fontSize : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class);
+   function Create (text : Unbounded_String; fontSize : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return CustomTextAnimationFactory_Access;
+   function createDXY (text : Unbounded_String; fontSize : Integer; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return CustomTextAnimationFactory_Access;
+   procedure createDXY (text : Unbounded_String; fontSize : Integer; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class);
    function getInstance (This : in out CustomTextAnimationFactory; instanceId : Integer) return Animation_Access;
    procedure getInstance (This : in out CustomTextAnimationFactory; instanceId : Integer);
-   procedure setInitialScale (This : in out CustomTextAnimationFactory; scaleProperties : ScaleProperties_Access);
+   procedure setInitialScale (This : in out CustomTextAnimationFactory; scaleProperties_Param : access ScaleProperties'Class);
    function getWidth (This : in out CustomTextAnimationFactory) return Integer;
    function getHeight (This : in out CustomTextAnimationFactory) return Integer;
 

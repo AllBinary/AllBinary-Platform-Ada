@@ -30,7 +30,7 @@ package org.allbinary.game.layer.pickup.PickupProcessorInterface_Package is
    type PickupProcessorInterface_Access is access all PickupProcessorInterface'Class;
    type PickupProcessorInterface_Access_Array is array (Natural range <>) of PickupProcessorInterface_Access;
    type PickupProcessorInterface_Access_Array_Access is access all PickupProcessorInterface_Access_Array;
-   procedure process (This : in out PickupProcessorInterface; sourceLayerInterface : AllBinaryLayer_Access) is abstract;
+   procedure process (This : in out PickupProcessorInterface; sourceLayerInterface_Param : access AllBinaryLayer'Class) is abstract;
 
 end org.allbinary.game.layer.pickup.PickupProcessorInterface_Package;
 

@@ -51,8 +51,8 @@ package org.allbinary.logic.io.file.FileUtil2_Package is
    procedure Initialize (This : in out FileUtil2'Class);
    function Create return FileUtil2_Access;
    function getInstance return FileUtil2_Access;
-   function loadFileAsList (This : in out FileUtil2; file : AbFile_Access; max : Integer; byteArray1 : Short_Short_Integer_Array_Access) return BasicArrayList_Access;
-   procedure loadFileAsList (This : in out FileUtil2; file : AbFile_Access; max : Integer; byteArray1 : Short_Short_Integer_Array_Access);
+   function loadFileAsList (This : in out FileUtil2; file_Param : access AbFile'Class; max : Integer; byteArray1 : Short_Short_Integer_Array_Access) return BasicArrayList_Access;
+   procedure loadFileAsList (This : in out FileUtil2; file_Param : access AbFile'Class; max : Integer; byteArray1 : Short_Short_Integer_Array_Access);
 
 end org.allbinary.logic.io.file.FileUtil2_Package;
 

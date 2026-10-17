@@ -60,19 +60,19 @@ package org.allbinary.game.layer.AllBinaryGameLayerManager_Package is
    NULL_ALLBINARY_LAYER_MANAGER : Java_Object_Access;
    ID : Integer;
 
-   procedure Initialize (This : in out AllBinaryGameLayerManager'Class; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access; gameInfo : GameInfo_Access);
-   function Create (backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access; gameInfo : GameInfo_Access) return AllBinaryGameLayerManager_Access;
+   procedure Initialize (This : in out AllBinaryGameLayerManager'Class; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class; gameInfo_Param : access GameInfo'Class);
+   function Create (backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class; gameInfo_Param : access GameInfo'Class) return AllBinaryGameLayerManager_Access;
    function getNullInstance return AllBinaryGameLayerManager_Access;
    function getLayerManager (This : in out AllBinaryGameLayerManager) return AllBinaryLayerManager_Access;
    procedure init (This : in out AllBinaryGameLayerManager);
    function getBackgroundBasicColor (This : in out AllBinaryGameLayerManager) return BasicColor_Access;
-   procedure setBackgroundBasicColor (This : in out AllBinaryGameLayerManager; backgroundBasicColor : BasicColor_Access);
+   procedure setBackgroundBasicColor (This : in out AllBinaryGameLayerManager; backgroundBasicColor_Param : access BasicColor'Class);
    function getForegroundBasicColor (This : in out AllBinaryGameLayerManager) return BasicColor_Access;
-   procedure setForegroundBasicColor (This : in out AllBinaryGameLayerManager; foregroundBasicColor : BasicColor_Access);
+   procedure setForegroundBasicColor (This : in out AllBinaryGameLayerManager; foregroundBasicColor_Param : access BasicColor'Class);
    function getGameInfo (This : in out AllBinaryGameLayerManager) return GameInfo_Access;
-   procedure setGameInfo (This : in out AllBinaryGameLayerManager; gameInfo : GameInfo_Access);
-   procedure setLayerProcessorList (This : in out AllBinaryGameLayerManager; list : BasicArrayList_Access);
-   procedure setPlayerGameInputCompositeInterface (This : in out AllBinaryGameLayerManager; playerGameInputCompositeInterface : PlayerGameInputCompositeInterface_Access);
+   procedure setGameInfo (This : in out AllBinaryGameLayerManager; gameInfo_Param : access GameInfo'Class);
+   procedure setLayerProcessorList (This : in out AllBinaryGameLayerManager; list_Param : access BasicArrayList'Class);
+   procedure setPlayerGameInputCompositeInterface (This : in out AllBinaryGameLayerManager; playerGameInputCompositeInterface_Param : access PlayerGameInputCompositeInterface'Class);
    function getPlayerGameInputCompositeInterface (This : in out AllBinaryGameLayerManager) return PlayerGameInputCompositeInterface_Access;
 
 end org.allbinary.game.layer.AllBinaryGameLayerManager_Package;

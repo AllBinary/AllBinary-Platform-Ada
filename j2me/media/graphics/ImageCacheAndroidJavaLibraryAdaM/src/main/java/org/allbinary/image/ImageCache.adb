@@ -38,12 +38,14 @@ package body org.allbinary.image.ImageCache_Package is
       return This;
    end Create;
 
-   procedure addListener (This : in out ImageCache; renderer : Java_Object_Access) is
+   procedure addListener (This : in out ImageCache; renderer_Param : access Java_Object'Class) is
+      renderer : Java_Object_Access := Java_Object_Access (renderer_Param);
    begin
         null;
    end addListener;
 
-   function getIndex (This : in out ImageCache; key : Java_Object_Access) return Integer is
+   function getIndex (This : in out ImageCache; key_Param : access Java_Object'Class) return Integer is
+      key : Java_Object_Access := Java_Object_Access (key_Param);
       gdResources : GDResources_Access;
       resourceStringArray : Unbounded_String_Array_Access;
       size : Integer;
@@ -57,7 +59,7 @@ package body org.allbinary.image.ImageCache_Package is
                 return index;
             end if;
         end loop;
-        This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("unable to find key: ")).append (StringUtil_Package.getInstance.toString (key)).toString, This'Unchecked_Access, This.commonStrings.RUN);
+        This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("unable to find key: ")).append (StringUtil_Package.getInstance.toString (key)).toString, ImageCache_Access'(This'Unchecked_Access), This.commonStrings.RUN);
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end getIndex;
 
@@ -87,7 +89,8 @@ package body org.allbinary.image.ImageCache_Package is
    end get;
 
    --  throws Exception
-   function getWithKey (This : in out ImageCache; key : Java_Object_Access) return Image_Access is
+   function getWithKey (This : in out ImageCache; key_Param : access Java_Object'Class) return Image_Access is
+      key : Java_Object_Access := Java_Object_Access (key_Param);
       resourceUtil : ResourceUtil_Access;
       resourceId : Integer;
       image : Image_Access;
@@ -99,18 +102,18 @@ package body org.allbinary.image.ImageCache_Package is
         if (image) = (NullImage_Package.NULL_IMAGE) then
             inputStream := resourceUtil.getResourceAsStream (Unbounded_String (key));
             begin
-                This.logUtil.putF (Memory_Package.getInfo, This'Unchecked_Access, This.commonStrings.GET);
+                This.logUtil.putF (Memory_Package.getInfo, ImageCache_Access'(This'Unchecked_Access), This.commonStrings.GET);
                 image := This.createImageFromInputStream (key, inputStream);
             exception
                 when Java_Occurrence : others =>
                     declare
                         e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                     begin
-                This.logUtil.put (To_Unbounded_String ("Exception: Trying Again After GC"), This'Unchecked_Access, This.commonStrings.GET, e);
-                This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("InputStream: ")).append (StringUtil_Package.getInstance.toString (inputStream)).toString, This'Unchecked_Access, This.commonStrings.GET);
+                This.logUtil.put (To_Unbounded_String ("Exception: Trying Again After GC"), ImageCache_Access'(This'Unchecked_Access), This.commonStrings.GET, e);
+                This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("InputStream: ")).append (StringUtil_Package.getInstance.toString (inputStream)).toString, ImageCache_Access'(This'Unchecked_Access), This.commonStrings.GET);
                 This.tsUtil.gc;
                 This.tsUtil.gc;
-                This.logUtil.putF (Memory_Package.getInfo, This'Unchecked_Access, This.commonStrings.GET);
+                This.logUtil.putF (Memory_Package.getInfo, ImageCache_Access'(This'Unchecked_Access), This.commonStrings.GET);
                 Java_Sleep (100);
                 image := This.createImageFromInputStream (key, inputStream);
                     end;
@@ -131,8 +134,8 @@ package body org.allbinary.image.ImageCache_Package is
         return False;
    end isLazy;
 
-   procedure getIndex (This : in out ImageCache; key : Java_Object_Access) is
-      Java_Result : constant Integer := ImageCache'Class (This).getIndex (key);
+   procedure getIndex (This : in out ImageCache; key_Param : access Java_Object'Class) is
+      Java_Result : constant Integer := ImageCache'Class (This).getIndex (key_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
@@ -145,8 +148,8 @@ package body org.allbinary.image.ImageCache_Package is
       null;
    end get;
 
-   procedure getWithKey (This : in out ImageCache; key : Java_Object_Access) is
-      Java_Result : constant Image_Access := ImageCache'Class (This).getWithKey (key);
+   procedure getWithKey (This : in out ImageCache; key_Param : access Java_Object'Class) is
+      Java_Result : constant Image_Access := ImageCache'Class (This).getWithKey (key_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

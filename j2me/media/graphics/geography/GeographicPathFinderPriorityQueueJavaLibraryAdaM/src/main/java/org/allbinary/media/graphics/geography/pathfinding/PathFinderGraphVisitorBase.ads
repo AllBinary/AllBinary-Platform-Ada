@@ -35,12 +35,12 @@ package org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisito
 
    procedure Initialize (This : in out PathFinderGraphVisitorBase'Class);
    function Create return PathFinderGraphVisitorBase_Access;
-   procedure visit (This : in out PathFinderGraphVisitorBase; graph : Java_Object_Access; startPathFindingNodeList : BasicArrayList_Access; endPathFindingNodeList : BasicArrayList_Access);
-   procedure fixPath (This : in out PathFinderGraphVisitorBase; startPathFindingNodeList : BasicArrayList_Access; endPathFindingNodeList : BasicArrayList_Access; pathList : BasicArrayList_Access);
-   function isValid (This : in out PathFinderGraphVisitorBase; graphPath : Java_Object_Access) return Boolean;
-   procedure isValid (This : in out PathFinderGraphVisitorBase; graphPath : Java_Object_Access);
-   function getInvalidReason (This : in out PathFinderGraphVisitorBase; graphPath : Java_Object_Access) return Unbounded_String;
-   procedure getInvalidReason (This : in out PathFinderGraphVisitorBase; graphPath : Java_Object_Access);
+   procedure visit (This : in out PathFinderGraphVisitorBase; graph_Param : access Java_Object'Class; startPathFindingNodeList_Param : access BasicArrayList'Class; endPathFindingNodeList_Param : access BasicArrayList'Class);
+   procedure fixPath (This : in out PathFinderGraphVisitorBase; startPathFindingNodeList_Param : access BasicArrayList'Class; endPathFindingNodeList_Param : access BasicArrayList'Class; pathList_Param : access BasicArrayList'Class);
+   function isValid (This : in out PathFinderGraphVisitorBase; graphPath_Param : access Java_Object'Class) return Boolean;
+   procedure isValid (This : in out PathFinderGraphVisitorBase; graphPath_Param : access Java_Object'Class);
+   function getInvalidReason (This : in out PathFinderGraphVisitorBase; graphPath_Param : access Java_Object'Class) return Unbounded_String;
+   procedure getInvalidReason (This : in out PathFinderGraphVisitorBase; graphPath_Param : access Java_Object'Class);
 
 end org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorBase_Package;
 

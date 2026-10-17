@@ -35,7 +35,10 @@ package body org.allbinary.game.ag.ai.NumberOnOwnGroupSequenceAIFactory_Package 
 
 
    --  throws Exception
-   function getInstance (This : in out NumberOnOwnGroupSequenceAIFactory; hashtable : ABHashtable_Access; artificialIntelligenceInterface : ArtificialIntelligenceInterface_Access_Array_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return ArtificialIntelligenceInterface_Access is
+   function getInstance (This : in out NumberOnOwnGroupSequenceAIFactory; hashtable_Param : access ABHashtable'Class; artificialIntelligenceInterface : ArtificialIntelligenceInterface_Access_Array_Access; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return ArtificialIntelligenceInterface_Access is
+      hashtable : ABHashtable_Access := ABHashtable_Access (hashtable_Param);
+      ownerLayerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (ownerLayerInterface_Param);
+      gameInput : GameInput_Access := GameInput_Access (gameInput_Param);
       integerArray : Integer_Array_Access;
       list : BasicArrayList_Access;
       integerCanBeNull : Java_Object_Access;
@@ -60,7 +63,7 @@ package body org.allbinary.game.ag.ai.NumberOnOwnGroupSequenceAIFactory_Package 
         stringBuffer.appendint (artificialIntelligenceInterface'Length);
         stringBuffer.append (To_Unbounded_String (" + 1"));
         commonStrings := CommonStrings_Package.getInstance;
-        This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, commonStrings.GET_INSTANCE);
+        This.logUtil.putF (stringBuffer.toString, NumberOnOwnGroupSequenceAIFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);
         if ((artificialIntelligenceInterface'Length) - (1)) > (list.size) then
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Not enough AI properties.")));
         end if;
@@ -74,8 +77,8 @@ package body org.allbinary.game.ag.ai.NumberOnOwnGroupSequenceAIFactory_Package 
         return NumberOnOwnGroupSequenceAI_Package.Create (numberOnSameTeam, artificialIntelligenceInterface, ownerLayerInterface, gameInput);
    end getInstance;
 
-   procedure getInstance (This : in out NumberOnOwnGroupSequenceAIFactory; hashtable : ABHashtable_Access; artificialIntelligenceInterface : ArtificialIntelligenceInterface_Access_Array_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) is
-      Java_Result : constant ArtificialIntelligenceInterface_Access := NumberOnOwnGroupSequenceAIFactory'Class (This).getInstance (hashtable, artificialIntelligenceInterface, ownerLayerInterface, gameInput);
+   procedure getInstance (This : in out NumberOnOwnGroupSequenceAIFactory; hashtable_Param : access ABHashtable'Class; artificialIntelligenceInterface : ArtificialIntelligenceInterface_Access_Array_Access; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) is
+      Java_Result : constant ArtificialIntelligenceInterface_Access := NumberOnOwnGroupSequenceAIFactory'Class (This).getInstance (hashtable_Param, artificialIntelligenceInterface, ownerLayerInterface_Param, gameInput_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

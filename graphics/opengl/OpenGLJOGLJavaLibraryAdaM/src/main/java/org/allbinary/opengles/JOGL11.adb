@@ -22,29 +22,32 @@ package body org.allbinary.opengles.JOGL11_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out JOGL11'Class; gl : GL_Access) is
+   procedure Initialize (This : in out JOGL11'Class; gl_Param : access GL'Class) is
+      gl : GL_Access := GL_Access (gl_Param);
    begin
         Initialize (This, gl, GL2_Access (gl));
    end Initialize;
 
-   function Create (gl : GL_Access) return JOGL11_Access is
+   function Create (gl_Param : access GL'Class) return JOGL11_Access is
       This : constant JOGL11_Access := new JOGL11;
    begin
-      JOGL11_Package.Initialize (This.all, gl);
+      JOGL11_Package.Initialize (This.all, gl_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out JOGL11'Class; gl : GL_Access; gl2 : GL2_Access) is
+   procedure Initialize (This : in out JOGL11'Class; gl_Param : access GL'Class; gl2_Param : access GL2'Class) is
+      gl : GL_Access := GL_Access (gl_Param);
+      gl2 : GL2_Access := GL2_Access (gl2_Param);
    begin
         JOGL10_Package.Initialize (This, gl, gl2);
         Initialize_Fields (This);
         This.gl11 := This.getJOGLGL;
    end Initialize;
 
-   function Create (gl : GL_Access; gl2 : GL2_Access) return JOGL11_Access is
+   function Create (gl_Param : access GL'Class; gl2_Param : access GL2'Class) return JOGL11_Access is
       This : constant JOGL11_Access := new JOGL11;
    begin
-      JOGL11_Package.Initialize (This.all, gl, gl2);
+      JOGL11_Package.Initialize (This.all, gl_Param, gl2_Param);
       return This;
    end Create;
 
@@ -53,12 +56,14 @@ package body org.allbinary.opengles.JOGL11_Package is
         This.gl11.glBindBuffer (target, buffer);
    end glBindBuffer;
 
-   procedure glBufferData (This : in out JOGL11; target : Integer; size : Integer; data : Buffer_Access; usage : Integer) is
+   procedure glBufferData (This : in out JOGL11; target : Integer; size : Integer; data_Param : access Buffer'Class; usage : Integer) is
+      data : Buffer_Access := Buffer_Access (data_Param);
    begin
         This.gl11.glBufferData (target, size, data, usage);
    end glBufferData;
 
-   procedure glBufferSubData (This : in out JOGL11; target : Integer; offset : Integer; size : Integer; data : Buffer_Access) is
+   procedure glBufferSubData (This : in out JOGL11; target : Integer; offset : Integer; size : Integer; data_Param : access Buffer'Class) is
+      data : Buffer_Access := Buffer_Access (data_Param);
    begin
         This.gl11.glBufferSubData (target, offset, size, data);
    end glBufferSubData;
@@ -68,7 +73,8 @@ package body org.allbinary.opengles.JOGL11_Package is
         This.gl11.glClipPlanef (plane, equation, offset);
    end glClipPlanef;
 
-   procedure glClipPlanef (This : in out JOGL11; plane : Integer; equation : FloatBuffer_Access) is
+   procedure glClipPlanef (This : in out JOGL11; plane : Integer; equation_Param : access FloatBuffer'Class) is
+      equation : FloatBuffer_Access := FloatBuffer_Access (equation_Param);
    begin
         This.gl11.glClipPlanef (plane, equation);
    end glClipPlanef;
@@ -88,7 +94,8 @@ package body org.allbinary.opengles.JOGL11_Package is
         This.gl11.glDeleteBuffers (n, buffers, offset);
    end glDeleteBuffers;
 
-   procedure glDeleteBuffers (This : in out JOGL11; n : Integer; buffers : IntBuffer_Access) is
+   procedure glDeleteBuffers (This : in out JOGL11; n : Integer; buffers_Param : access IntBuffer'Class) is
+      buffers : IntBuffer_Access := IntBuffer_Access (buffers_Param);
    begin
         This.gl11.glDeleteBuffers (n, buffers);
    end glDeleteBuffers;
@@ -103,7 +110,8 @@ package body org.allbinary.opengles.JOGL11_Package is
         This.gl11.glGenBuffers (n, buffers, offset);
    end glGenBuffers;
 
-   procedure glGenBuffers (This : in out JOGL11; n : Integer; buffers : IntBuffer_Access) is
+   procedure glGenBuffers (This : in out JOGL11; n : Integer; buffers_Param : access IntBuffer'Class) is
+      buffers : IntBuffer_Access := IntBuffer_Access (buffers_Param);
    begin
         This.gl11.glGenBuffers (n, buffers);
    end glGenBuffers;
@@ -113,7 +121,8 @@ package body org.allbinary.opengles.JOGL11_Package is
         This.gl11.glGetBufferParameteriv (target, pname, params, offset);
    end glGetBufferParameteriv;
 
-   procedure glGetBufferParameteriv (This : in out JOGL11; target : Integer; pname : Integer; params : IntBuffer_Access) is
+   procedure glGetBufferParameteriv (This : in out JOGL11; target : Integer; pname : Integer; params_Param : access IntBuffer'Class) is
+      params : IntBuffer_Access := IntBuffer_Access (params_Param);
    begin
         This.gl11.glGetBufferParameteriv (target, pname, params);
    end glGetBufferParameteriv;
@@ -123,7 +132,8 @@ package body org.allbinary.opengles.JOGL11_Package is
         This.gl11.glGetClipPlanef (pname, eqn, offset);
    end glGetClipPlanef;
 
-   procedure glGetClipPlanef (This : in out JOGL11; pname : Integer; eqn : FloatBuffer_Access) is
+   procedure glGetClipPlanef (This : in out JOGL11; pname : Integer; eqn_Param : access FloatBuffer'Class) is
+      eqn : FloatBuffer_Access := FloatBuffer_Access (eqn_Param);
    begin
         This.gl11.glGetClipPlanef (pname, eqn);
    end glGetClipPlanef;
@@ -133,7 +143,8 @@ package body org.allbinary.opengles.JOGL11_Package is
         This.gl11.glGetFloatv (pname, params, offset);
    end glGetFloatv;
 
-   procedure glGetFloatv (This : in out JOGL11; pname : Integer; params : FloatBuffer_Access) is
+   procedure glGetFloatv (This : in out JOGL11; pname : Integer; params_Param : access FloatBuffer'Class) is
+      params : FloatBuffer_Access := FloatBuffer_Access (params_Param);
    begin
         This.gl11.glGetFloatv (pname, params);
    end glGetFloatv;
@@ -143,7 +154,8 @@ package body org.allbinary.opengles.JOGL11_Package is
         This.gl11.glGetLightfv (light, pname, params, offset);
    end glGetLightfv;
 
-   procedure glGetLightfv (This : in out JOGL11; light : Integer; pname : Integer; params : FloatBuffer_Access) is
+   procedure glGetLightfv (This : in out JOGL11; light : Integer; pname : Integer; params_Param : access FloatBuffer'Class) is
+      params : FloatBuffer_Access := FloatBuffer_Access (params_Param);
    begin
         This.gl11.glGetLightfv (light, pname, params);
    end glGetLightfv;
@@ -153,7 +165,8 @@ package body org.allbinary.opengles.JOGL11_Package is
         This.gl11.glGetMaterialfv (face, pname, params, offset);
    end glGetMaterialfv;
 
-   procedure glGetMaterialfv (This : in out JOGL11; face : Integer; pname : Integer; params : FloatBuffer_Access) is
+   procedure glGetMaterialfv (This : in out JOGL11; face : Integer; pname : Integer; params_Param : access FloatBuffer'Class) is
+      params : FloatBuffer_Access := FloatBuffer_Access (params_Param);
    begin
         This.gl11.glGetMaterialfv (face, pname, params);
    end glGetMaterialfv;
@@ -163,7 +176,8 @@ package body org.allbinary.opengles.JOGL11_Package is
         This.gl11.glGetTexEnviv (env, pname, params, offset);
    end glGetTexEnviv;
 
-   procedure glGetTexEnviv (This : in out JOGL11; env : Integer; pname : Integer; params : IntBuffer_Access) is
+   procedure glGetTexEnviv (This : in out JOGL11; env : Integer; pname : Integer; params_Param : access IntBuffer'Class) is
+      params : IntBuffer_Access := IntBuffer_Access (params_Param);
    begin
         This.gl11.glGetTexEnviv (env, pname, params);
    end glGetTexEnviv;
@@ -173,7 +187,8 @@ package body org.allbinary.opengles.JOGL11_Package is
         This.gl11.glGetTexParameterfv (target, pname, params, offset);
    end glGetTexParameterfv;
 
-   procedure glGetTexParameterfv (This : in out JOGL11; target : Integer; pname : Integer; params : FloatBuffer_Access) is
+   procedure glGetTexParameterfv (This : in out JOGL11; target : Integer; pname : Integer; params_Param : access FloatBuffer'Class) is
+      params : FloatBuffer_Access := FloatBuffer_Access (params_Param);
    begin
         This.gl11.glGetTexParameterfv (target, pname, params);
    end glGetTexParameterfv;
@@ -183,7 +198,8 @@ package body org.allbinary.opengles.JOGL11_Package is
         This.gl11.glGetTexParameteriv (target, pname, params, offset);
    end glGetTexParameteriv;
 
-   procedure glGetTexParameteriv (This : in out JOGL11; target : Integer; pname : Integer; params : IntBuffer_Access) is
+   procedure glGetTexParameteriv (This : in out JOGL11; target : Integer; pname : Integer; params_Param : access IntBuffer'Class) is
+      params : IntBuffer_Access := IntBuffer_Access (params_Param);
    begin
         This.gl11.glGetTexParameteriv (target, pname, params);
    end glGetTexParameteriv;
@@ -218,7 +234,8 @@ package body org.allbinary.opengles.JOGL11_Package is
         This.gl11.glPointParameterfv (pname, params, offset);
    end glPointParameterfv;
 
-   procedure glPointParameterfv (This : in out JOGL11; pname : Integer; params : FloatBuffer_Access) is
+   procedure glPointParameterfv (This : in out JOGL11; pname : Integer; params_Param : access FloatBuffer'Class) is
+      params : FloatBuffer_Access := FloatBuffer_Access (params_Param);
    begin
         This.gl11.glPointParameterfv (pname, params);
    end glPointParameterfv;
@@ -238,7 +255,8 @@ package body org.allbinary.opengles.JOGL11_Package is
         This.gl11.glTexEnviv (target, pname, params, offset);
    end glTexEnviv;
 
-   procedure glTexEnviv (This : in out JOGL11; target : Integer; pname : Integer; params : IntBuffer_Access) is
+   procedure glTexEnviv (This : in out JOGL11; target : Integer; pname : Integer; params_Param : access IntBuffer'Class) is
+      params : IntBuffer_Access := IntBuffer_Access (params_Param);
    begin
         This.gl11.glTexEnviv (target, pname, params);
    end glTexEnviv;
@@ -248,7 +266,8 @@ package body org.allbinary.opengles.JOGL11_Package is
         This.gl11.glTexParameterfv (target, pname, params, offset);
    end glTexParameterfv;
 
-   procedure glTexParameterfv (This : in out JOGL11; target : Integer; pname : Integer; params : FloatBuffer_Access) is
+   procedure glTexParameterfv (This : in out JOGL11; target : Integer; pname : Integer; params_Param : access FloatBuffer'Class) is
+      params : FloatBuffer_Access := FloatBuffer_Access (params_Param);
    begin
         This.gl11.glTexParameterfv (target, pname, params);
    end glTexParameterfv;
@@ -263,7 +282,8 @@ package body org.allbinary.opengles.JOGL11_Package is
         This.gl11.glTexParameteriv (target, pname, params, offset);
    end glTexParameteriv;
 
-   procedure glTexParameteriv (This : in out JOGL11; target : Integer; pname : Integer; params : IntBuffer_Access) is
+   procedure glTexParameteriv (This : in out JOGL11; target : Integer; pname : Integer; params_Param : access IntBuffer'Class) is
+      params : IntBuffer_Access := IntBuffer_Access (params_Param);
    begin
         This.gl11.glTexParameteriv (target, pname, params);
    end glTexParameteriv;

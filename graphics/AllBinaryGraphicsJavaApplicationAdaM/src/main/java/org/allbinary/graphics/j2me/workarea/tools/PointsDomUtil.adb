@@ -45,7 +45,9 @@ package body org.allbinary.graphics.j2me.workarea.tools.PointsDomUtil_Package is
    end getInstance;
 
    --  throws Exception
-   function toDom (This : in out PointsDomUtil; canvasDom : CanvasDom_Access; pointVector : BasicArrayList_Access) return Node_Access is
+   function toDom (This : in out PointsDomUtil; canvasDom_Param : access CanvasDom'Class; pointVector_Param : access BasicArrayList'Class) return Node_Access is
+      canvasDom : CanvasDom_Access := CanvasDom_Access (canvasDom_Param);
+      pointVector : BasicArrayList_Access := BasicArrayList_Access (pointVector_Param);
       tempPointVector : BasicArrayList_Access;
       document : Document_Access;
       linesNode : Node_Access;
@@ -95,7 +97,8 @@ package body org.allbinary.graphics.j2me.workarea.tools.PointsDomUtil_Package is
         return linesNode;
    end toDom;
 
-   function getPointNode (This : in out PointsDomUtil; point : GPoint_Access; pointName : Unbounded_String) return Node_Access is
+   function getPointNode (This : in out PointsDomUtil; point_Param : access GPoint'Class; pointName : Unbounded_String) return Node_Access is
+      point : GPoint_Access := GPoint_Access (point_Param);
       document : Document_Access;
       pointNode : Node_Access;
       xNode : Node_Access;
@@ -116,15 +119,15 @@ package body org.allbinary.graphics.j2me.workarea.tools.PointsDomUtil_Package is
         return pointNode;
    end getPointNode;
 
-   procedure toDom (This : in out PointsDomUtil; canvasDom : CanvasDom_Access; pointVector : BasicArrayList_Access) is
-      Java_Result : constant Node_Access := PointsDomUtil'Class (This).toDom (canvasDom, pointVector);
+   procedure toDom (This : in out PointsDomUtil; canvasDom_Param : access CanvasDom'Class; pointVector_Param : access BasicArrayList'Class) is
+      Java_Result : constant Node_Access := PointsDomUtil'Class (This).toDom (canvasDom_Param, pointVector_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toDom;
 
-   procedure getPointNode (This : in out PointsDomUtil; point : GPoint_Access; pointName : Unbounded_String) is
-      Java_Result : constant Node_Access := PointsDomUtil'Class (This).getPointNode (point, pointName);
+   procedure getPointNode (This : in out PointsDomUtil; point_Param : access GPoint'Class; pointName : Unbounded_String) is
+      Java_Result : constant Node_Access := PointsDomUtil'Class (This).getPointNode (point_Param, pointName);
       pragma Unreferenced (Java_Result);
    begin
       null;

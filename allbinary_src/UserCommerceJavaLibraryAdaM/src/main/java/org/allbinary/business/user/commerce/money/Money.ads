@@ -44,8 +44,8 @@ package org.allbinary.business.user.commerce.money.Money_Package is
       DEFAULT_CURRENCY : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out Money'Class; money : Money_Access);
-   function Create (money : Money_Access) return Money_Access;
+   procedure Initialize (This : in out Money'Class; money_Param : access Money'Class);
+   function Create (money_Param : access Money'Class) return Money_Access;
    procedure Initialize (This : in out Money'Class);
    function Create return Money_Access;
    procedure Initialize (This : in out Money'Class; usDollarStr : Unbounded_String);
@@ -53,7 +53,7 @@ package org.allbinary.business.user.commerce.money.Money_Package is
    procedure Initialize (This : in out Money'Class; units : Long_Long_Integer);
    function Create (units : Long_Long_Integer) return Money_Access;
    function isValid (This : in out Money) return Boolean;
-   procedure add (This : in out Money; moreMoney : Money_Access);
+   procedure add (This : in out Money; moreMoney_Param : access Money'Class);
    procedure add (This : in out Money; usDollarStr : Unbounded_String);
    procedure subtract (This : in out Money; usDollarStr : Unbounded_String);
    procedure multiply (This : in out Money; multiplier : Float);

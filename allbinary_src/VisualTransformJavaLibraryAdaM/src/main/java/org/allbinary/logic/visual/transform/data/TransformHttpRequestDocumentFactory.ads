@@ -38,8 +38,8 @@ package org.allbinary.logic.visual.transform.data.TransformHttpRequestDocumentFa
 
    procedure Initialize (This : in out TransformHttpRequestDocumentFactory'Class);
    function Create return TransformHttpRequestDocumentFactory_Access;
-   function getInstance (pageContext : PageContext_Access; weblisketSession : WeblisketSession_Access) return TransformDocumentInterface_Access;
-   procedure getInstance (pageContext : PageContext_Access; weblisketSession : WeblisketSession_Access);
+   function getInstance (pageContext_Param : access PageContext'Class; weblisketSession_Param : access WeblisketSession'Class) return TransformDocumentInterface_Access;
+   procedure getInstance (pageContext_Param : access PageContext'Class; weblisketSession_Param : access WeblisketSession'Class);
 
 end org.allbinary.logic.visual.transform.data.TransformHttpRequestDocumentFactory_Package;
 

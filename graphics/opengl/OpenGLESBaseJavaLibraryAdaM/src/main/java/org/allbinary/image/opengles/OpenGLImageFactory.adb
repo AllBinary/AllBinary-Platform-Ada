@@ -33,13 +33,16 @@ package body org.allbinary.image.opengles.OpenGLImageFactory_Package is
    end Create;
 
 
-   function getInstance (This : in out OpenGLImageFactory; image : Image_Access; bitmapFactory : PlatformBitmapBaseFactory_Access; textureFactory : PlatformTextureBaseFactory_Access) return Image_Access is
+   function getInstance (This : in out OpenGLImageFactory; image_Param : access Image'Class; bitmapFactory_Param : access PlatformBitmapBaseFactory'Class; textureFactory_Param : access PlatformTextureBaseFactory'Class) return Image_Access is
+      image : Image_Access := Image_Access (image_Param);
+      bitmapFactory : PlatformBitmapBaseFactory_Access := PlatformBitmapBaseFactory_Access (bitmapFactory_Param);
+      textureFactory : PlatformTextureBaseFactory_Access := PlatformTextureBaseFactory_Access (textureFactory_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end getInstance;
 
-   procedure getInstance (This : in out OpenGLImageFactory; image : Image_Access; bitmapFactory : PlatformBitmapBaseFactory_Access; textureFactory : PlatformTextureBaseFactory_Access) is
-      Java_Result : constant Image_Access := OpenGLImageFactory'Class (This).getInstance (image, bitmapFactory, textureFactory);
+   procedure getInstance (This : in out OpenGLImageFactory; image_Param : access Image'Class; bitmapFactory_Param : access PlatformBitmapBaseFactory'Class; textureFactory_Param : access PlatformTextureBaseFactory'Class) is
+      Java_Result : constant Image_Access := OpenGLImageFactory'Class (This).getInstance (image_Param, bitmapFactory_Param, textureFactory_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

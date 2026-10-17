@@ -64,10 +64,10 @@ package org.allbinary.logic.communication.smtp.event.handler.EmailEventHandlerUt
    procedure Initialize (This : in out EmailEventHandlerUtil'Class);
    function Create return EmailEventHandlerUtil_Access;
    function getInstance return EmailEventHandlerUtil_Access;
-   function getEventHandler (This : in out EmailEventHandlerUtil; abeClientInformation : AbeClientInformationInterface_Access; userEmailEventNameData : UserEmailEventNameData_Access; userVector : BasicArrayList_Access) return UserEmailEventHandler_Access;
-   procedure getEventHandler (This : in out EmailEventHandlerUtil; abeClientInformation : AbeClientInformationInterface_Access; userEmailEventNameData : UserEmailEventNameData_Access; userVector : BasicArrayList_Access);
-   function getUserEmailEventListenerVector (abeClientInformation : AbeClientInformationInterface_Access; userEmailEventNameData : UserEmailEventNameData_Access; userInterface : UserInterface_Access) return BasicArrayList_Access;
-   procedure getUserEmailEventListenerVector (abeClientInformation : AbeClientInformationInterface_Access; userEmailEventNameData : UserEmailEventNameData_Access; userInterface : UserInterface_Access);
+   function getEventHandler (This : in out EmailEventHandlerUtil; abeClientInformation_Param : access AbeClientInformationInterface'Class; userEmailEventNameData_Param : access UserEmailEventNameData'Class; userVector_Param : access BasicArrayList'Class) return UserEmailEventHandler_Access;
+   procedure getEventHandler (This : in out EmailEventHandlerUtil; abeClientInformation_Param : access AbeClientInformationInterface'Class; userEmailEventNameData_Param : access UserEmailEventNameData'Class; userVector_Param : access BasicArrayList'Class);
+   function getUserEmailEventListenerVector (abeClientInformation_Param : access AbeClientInformationInterface'Class; userEmailEventNameData_Param : access UserEmailEventNameData'Class; userInterface_Param : access UserInterface'Class) return BasicArrayList_Access;
+   procedure getUserEmailEventListenerVector (abeClientInformation_Param : access AbeClientInformationInterface'Class; userEmailEventNameData_Param : access UserEmailEventNameData'Class; userInterface_Param : access UserInterface'Class);
 
 end org.allbinary.logic.communication.smtp.event.handler.EmailEventHandlerUtil_Package;
 

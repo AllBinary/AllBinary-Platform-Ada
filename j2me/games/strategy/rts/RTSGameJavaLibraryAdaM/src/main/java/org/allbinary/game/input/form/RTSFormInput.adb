@@ -54,13 +54,18 @@ package body org.allbinary.game.input.form.RTSFormInput_Package is
    end Create;
 
    --  throws Exception
-   procedure setAllBinaryGameLayerManager (This : in out RTSFormInput; allBinaryGameLayerManager : AllBinaryGameLayerManager_Access) is
+   procedure setAllBinaryGameLayerManager (This : in out RTSFormInput; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class) is
+      allBinaryGameLayerManager : AllBinaryGameLayerManager_Access := AllBinaryGameLayerManager_Access (allBinaryGameLayerManager_Param);
    begin
         null;
    end setAllBinaryGameLayerManager;
 
    --  throws Exception
-   procedure processAtPoint (This : in out RTSFormInput; associatedRtsLayer : CollidableDestroyableDamageableLayer_Access; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; layerManager : AllBinaryLayerManager_Access; point : GPoint_Access) is
+   procedure processAtPoint (This : in out RTSFormInput; associatedRtsLayer_Param : access CollidableDestroyableDamageableLayer'Class; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; layerManager_Param : access AllBinaryLayerManager'Class; point_Param : access GPoint'Class) is
+      associatedRtsLayer : CollidableDestroyableDamageableLayer_Access := CollidableDestroyableDamageableLayer_Access (associatedRtsLayer_Param);
+      rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access := RTSPlayerLayerInterface_Access (rtsPlayerLayerInterface_Param);
+      layerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
+      point : GPoint_Access := GPoint_Access (point_Param);
       index : Integer;
       scrollSelectionForm : ScrollSelectionForm_Access;
       item : ABCustomItem_Access;
@@ -78,19 +83,28 @@ package body org.allbinary.game.input.form.RTSFormInput_Package is
    end processAtPoint;
 
    --  throws Exception
-   procedure process (This : in out RTSFormInput; layerManager : AllBinaryLayerManager_Access) is
+   procedure process (This : in out RTSFormInput; layerManager_Param : access AllBinaryLayerManager'Class) is
+      layerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
    begin
         This.setAllBinaryGameLayerManager (AllBinaryGameLayerManager_Access (layerManager));
    end process;
 
    --  throws Exception
-   procedure processGameSpecific (This : in out RTSFormInput; associatedRtsLayer : CollidableDestroyableDamageableLayer_Access; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; layerManager : AllBinaryLayerManager_Access; item : ABCustomItem_Access; index : Integer) is
+   procedure processGameSpecific (This : in out RTSFormInput; associatedRtsLayer_Param : access CollidableDestroyableDamageableLayer'Class; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; layerManager_Param : access AllBinaryLayerManager'Class; item_Param : access ABCustomItem'Class; index : Integer) is
+      associatedRtsLayer : CollidableDestroyableDamageableLayer_Access := CollidableDestroyableDamageableLayer_Access (associatedRtsLayer_Param);
+      rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access := RTSPlayerLayerInterface_Access (rtsPlayerLayerInterface_Param);
+      layerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
+      item : ABCustomItem_Access := ABCustomItem_Access (item_Param);
    begin
         null;
    end processGameSpecific;
 
    --  throws Exception
-   function processSticky (This : in out RTSFormInput; associatedRtsLayer : CollidableDestroyableDamageableLayer_Access; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; layerManager : AllBinaryLayerManager_Access; point : GPoint_Access) return Boolean is
+   function processSticky (This : in out RTSFormInput; associatedRtsLayer_Param : access CollidableDestroyableDamageableLayer'Class; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; layerManager_Param : access AllBinaryLayerManager'Class; point_Param : access GPoint'Class) return Boolean is
+      associatedRtsLayer : CollidableDestroyableDamageableLayer_Access := CollidableDestroyableDamageableLayer_Access (associatedRtsLayer_Param);
+      rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access := RTSPlayerLayerInterface_Access (rtsPlayerLayerInterface_Param);
+      layerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
+      point : GPoint_Access := GPoint_Access (point_Param);
       index : Integer;
       scrollSelectionForm : ScrollSelectionForm_Access;
       item : ABCustomItem_Access;
@@ -109,31 +123,42 @@ package body org.allbinary.game.input.form.RTSFormInput_Package is
    end processSticky;
 
    --  throws Exception
-   procedure processStickyGameSpecific (This : in out RTSFormInput; associatedRtsLayer : CollidableDestroyableDamageableLayer_Access; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; layerManager : AllBinaryLayerManager_Access; item : ABCustomItem_Access; index : Integer) is
+   procedure processStickyGameSpecific (This : in out RTSFormInput; associatedRtsLayer_Param : access CollidableDestroyableDamageableLayer'Class; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; layerManager_Param : access AllBinaryLayerManager'Class; item_Param : access ABCustomItem'Class; index : Integer) is
+      associatedRtsLayer : CollidableDestroyableDamageableLayer_Access := CollidableDestroyableDamageableLayer_Access (associatedRtsLayer_Param);
+      rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access := RTSPlayerLayerInterface_Access (rtsPlayerLayerInterface_Param);
+      layerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
+      item : ABCustomItem_Access := ABCustomItem_Access (item_Param);
    begin
         null;
    end processStickyGameSpecific;
 
    --  throws Exception
-   function getItemAt (This : in out RTSFormInput; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; point : GPoint_Access) return ABCustomItem_Access is
+   function getItemAt (This : in out RTSFormInput; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; point_Param : access GPoint'Class) return ABCustomItem_Access is
+      rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access := RTSPlayerLayerInterface_Access (rtsPlayerLayerInterface_Param);
+      point : GPoint_Access := GPoint_Access (point_Param);
       scrollSelectionForm : ScrollSelectionForm_Access;
    begin
-        This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Point: ")).append (StringUtil_Package.getInstance.toString (point)).toString, This'Unchecked_Access, To_Unbounded_String ("getItemAt"));
+        This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Point: ")).append (StringUtil_Package.getInstance.toString (point)).toString, RTSFormInput_Access'(This'Unchecked_Access), To_Unbounded_String ("getItemAt"));
         scrollSelectionForm := rtsPlayerLayerInterface.getCurrentScrollSelectionForm;
         return scrollSelectionForm.getSelectedItem (point);
    end getItemAt;
 
    --  throws Exception
-   function getIndexAt (This : in out RTSFormInput; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; point : GPoint_Access) return Integer is
+   function getIndexAt (This : in out RTSFormInput; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; point_Param : access GPoint'Class) return Integer is
+      rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access := RTSPlayerLayerInterface_Access (rtsPlayerLayerInterface_Param);
+      point : GPoint_Access := GPoint_Access (point_Param);
       scrollSelectionForm : ScrollSelectionForm_Access;
    begin
-        This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Point: ")).append (StringUtil_Package.getInstance.toString (point)).toString, This'Unchecked_Access, To_Unbounded_String ("getItemAt"));
+        This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Point: ")).append (StringUtil_Package.getInstance.toString (point)).toString, RTSFormInput_Access'(This'Unchecked_Access), To_Unbounded_String ("getItemAt"));
         scrollSelectionForm := rtsPlayerLayerInterface.getCurrentScrollSelectionForm;
         return scrollSelectionForm.getSelectedIndexForPoint (point);
    end getIndexAt;
 
    --  throws Exception
-   function getInstance (This : in out RTSFormInput; layerManager : AllBinaryLayerManager_Access; aItem : ABCustomItem_Access; geographicMapCellPosition : GeographicMapCellPosition_Access) return CollidableDestroyableDamageableLayer_Access is
+   function getInstance (This : in out RTSFormInput; layerManager_Param : access AllBinaryLayerManager'Class; aItem_Param : access ABCustomItem'Class; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return CollidableDestroyableDamageableLayer_Access is
+      layerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
+      aItem : ABCustomItem_Access := ABCustomItem_Access (aItem_Param);
+      geographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
       item : LayerInterfaceFactoryImageItem_Access;
       layerInterfaceFactoryInterface : LayerInterfaceFactoryInterface_Access;
       cellPoint : GPoint_Access;
@@ -153,9 +178,10 @@ package body org.allbinary.game.input.form.RTSFormInput_Package is
         return This.selectedGeographicCellPosition;
    end getSelectedGeographicCellPosition;
 
-   procedure setSelectedGeographicCellPosition (This : in out RTSFormInput; selectedGeographicCellPosition : GeographicMapCellPosition_Access) is
+   procedure setSelectedGeographicCellPosition (This : in out RTSFormInput; selectedGeographicCellPosition_Param : access GeographicMapCellPosition'Class) is
+      selectedGeographicCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (selectedGeographicCellPosition_Param);
    begin
-        This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Selected GeographicMapCellPosition: ")).append (selectedGeographicCellPosition.toString).toString, This'Unchecked_Access, To_Unbounded_String ("setSelectedGeographicCellPosition"));
+        This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Selected GeographicMapCellPosition: ")).append (selectedGeographicCellPosition.toString).toString, RTSFormInput_Access'(This'Unchecked_Access), To_Unbounded_String ("setSelectedGeographicCellPosition"));
         This.selectedGeographicCellPosition := selectedGeographicCellPosition;
    end setSelectedGeographicCellPosition;
 
@@ -174,7 +200,8 @@ package body org.allbinary.game.input.form.RTSFormInput_Package is
         return This.selectedStickyItem;
    end getSelectedStickyItem;
 
-   procedure setSelectedStickyItem (This : in out RTSFormInput; selectedStickyItem : ABCustomItem_Access) is
+   procedure setSelectedStickyItem (This : in out RTSFormInput; selectedStickyItem_Param : access ABCustomItem'Class) is
+      selectedStickyItem : ABCustomItem_Access := ABCustomItem_Access (selectedStickyItem_Param);
    begin
         This.selectedStickyItem := selectedStickyItem;
    end setSelectedStickyItem;
@@ -194,29 +221,29 @@ package body org.allbinary.game.input.form.RTSFormInput_Package is
         return This.hashtable;
    end getHashtable;
 
-   procedure processSticky (This : in out RTSFormInput; associatedRtsLayer : CollidableDestroyableDamageableLayer_Access; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; layerManager : AllBinaryLayerManager_Access; point : GPoint_Access) is
-      Java_Result : constant Boolean := RTSFormInput'Class (This).processSticky (associatedRtsLayer, rtsPlayerLayerInterface, layerManager, point);
+   procedure processSticky (This : in out RTSFormInput; associatedRtsLayer_Param : access CollidableDestroyableDamageableLayer'Class; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; layerManager_Param : access AllBinaryLayerManager'Class; point_Param : access GPoint'Class) is
+      Java_Result : constant Boolean := RTSFormInput'Class (This).processSticky (associatedRtsLayer_Param, rtsPlayerLayerInterface_Param, layerManager_Param, point_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end processSticky;
 
-   procedure getItemAt (This : in out RTSFormInput; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; point : GPoint_Access) is
-      Java_Result : constant ABCustomItem_Access := RTSFormInput'Class (This).getItemAt (rtsPlayerLayerInterface, point);
+   procedure getItemAt (This : in out RTSFormInput; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; point_Param : access GPoint'Class) is
+      Java_Result : constant ABCustomItem_Access := RTSFormInput'Class (This).getItemAt (rtsPlayerLayerInterface_Param, point_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getItemAt;
 
-   procedure getIndexAt (This : in out RTSFormInput; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; point : GPoint_Access) is
-      Java_Result : constant Integer := RTSFormInput'Class (This).getIndexAt (rtsPlayerLayerInterface, point);
+   procedure getIndexAt (This : in out RTSFormInput; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; point_Param : access GPoint'Class) is
+      Java_Result : constant Integer := RTSFormInput'Class (This).getIndexAt (rtsPlayerLayerInterface_Param, point_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getIndexAt;
 
-   procedure getInstance (This : in out RTSFormInput; layerManager : AllBinaryLayerManager_Access; aItem : ABCustomItem_Access; geographicMapCellPosition : GeographicMapCellPosition_Access) is
-      Java_Result : constant CollidableDestroyableDamageableLayer_Access := RTSFormInput'Class (This).getInstance (layerManager, aItem, geographicMapCellPosition);
+   procedure getInstance (This : in out RTSFormInput; layerManager_Param : access AllBinaryLayerManager'Class; aItem_Param : access ABCustomItem'Class; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is
+      Java_Result : constant CollidableDestroyableDamageableLayer_Access := RTSFormInput'Class (This).getInstance (layerManager_Param, aItem_Param, geographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

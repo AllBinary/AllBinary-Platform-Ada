@@ -44,15 +44,15 @@ package org.allbinary.business.advertisement.campaign.AdvertisementCampaigns_Pac
       advertisementsVector : BasicArrayList_Access;
    end record;
 
-   procedure Initialize (This : in out AdvertisementCampaigns'Class; vector : BasicArrayList_Access);
-   function Create (vector : BasicArrayList_Access) return AdvertisementCampaigns_Access;
-   procedure add (This : in out AdvertisementCampaigns; advertisementInterface : AdvertisementInterface_Access);
+   procedure Initialize (This : in out AdvertisementCampaigns'Class; vector_Param : access BasicArrayList'Class);
+   function Create (vector_Param : access BasicArrayList'Class) return AdvertisementCampaigns_Access;
+   procedure add (This : in out AdvertisementCampaigns; advertisementInterface_Param : access AdvertisementInterface'Class);
    function get (This : in out AdvertisementCampaigns; index : Integer) return AdvertisementInterface_Access;
    procedure get (This : in out AdvertisementCampaigns; index : Integer);
    function size (This : in out AdvertisementCampaigns) return Integer;
    function isEnabled (This : in out AdvertisementCampaigns) return Boolean;
-   function search (This : in out AdvertisementCampaigns; advertisementSearchInterface : AdvertisementSearchInterface_Access) return AdvertisementsInterface_Access;
-   procedure search (This : in out AdvertisementCampaigns; advertisementSearchInterface : AdvertisementSearchInterface_Access);
+   function search (This : in out AdvertisementCampaigns; advertisementSearchInterface_Param : access AdvertisementSearchInterface'Class) return AdvertisementsInterface_Access;
+   procedure search (This : in out AdvertisementCampaigns; advertisementSearchInterface_Param : access AdvertisementSearchInterface'Class);
 
 end org.allbinary.business.advertisement.campaign.AdvertisementCampaigns_Package;
 

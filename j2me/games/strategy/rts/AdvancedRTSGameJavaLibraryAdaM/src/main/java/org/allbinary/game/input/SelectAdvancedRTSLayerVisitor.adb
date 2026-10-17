@@ -22,21 +22,23 @@ package body org.allbinary.game.input.SelectAdvancedRTSLayerVisitor_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out SelectAdvancedRTSLayerVisitor'Class; selectedRTSLayersPlayerGameInput : SelectedRTSLayersPlayerGameInput_Access) is
+   procedure Initialize (This : in out SelectAdvancedRTSLayerVisitor'Class; selectedRTSLayersPlayerGameInput_Param : access SelectedRTSLayersPlayerGameInput'Class) is
+      selectedRTSLayersPlayerGameInput : SelectedRTSLayersPlayerGameInput_Access := SelectedRTSLayersPlayerGameInput_Access (selectedRTSLayersPlayerGameInput_Param);
    begin
       Visitor_Package.Initialize (This);
       Initialize_Fields (This);
         This.selectedRTSLayersPlayerGameInput := selectedRTSLayersPlayerGameInput;
    end Initialize;
 
-   function Create (selectedRTSLayersPlayerGameInput : SelectedRTSLayersPlayerGameInput_Access) return SelectAdvancedRTSLayerVisitor_Access is
+   function Create (selectedRTSLayersPlayerGameInput_Param : access SelectedRTSLayersPlayerGameInput'Class) return SelectAdvancedRTSLayerVisitor_Access is
       This : constant SelectAdvancedRTSLayerVisitor_Access := new SelectAdvancedRTSLayerVisitor;
    begin
-      SelectAdvancedRTSLayerVisitor_Package.Initialize (This.all, selectedRTSLayersPlayerGameInput);
+      SelectAdvancedRTSLayerVisitor_Package.Initialize (This.all, selectedRTSLayersPlayerGameInput_Param);
       return This;
    end Create;
 
-   function visit (This : in out SelectAdvancedRTSLayerVisitor; anyType : Java_Object_Access) return Java_Object_Access is
+   function visit (This : in out SelectAdvancedRTSLayerVisitor; anyType_Param : access Java_Object'Class) return Java_Object_Access is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
       selectedLayer : CollidableDestroyableDamageableLayer_Access;
       rtsGameLayer : AdvancedRTSGameLayer_Access;
       assignWaypointsUtil : AssignWaypointsUtil_Access;
@@ -64,8 +66,8 @@ package body org.allbinary.game.input.SelectAdvancedRTSLayerVisitor_Package is
         return NullUtil_Package.getInstance.NULL_OBJECT;
    end visit;
 
-   procedure visit (This : in out SelectAdvancedRTSLayerVisitor; anyType : Java_Object_Access) is
-      Java_Result : constant Java_Object_Access := SelectAdvancedRTSLayerVisitor'Class (This).visit (anyType);
+   procedure visit (This : in out SelectAdvancedRTSLayerVisitor; anyType_Param : access Java_Object'Class) is
+      Java_Result : constant Java_Object_Access := SelectAdvancedRTSLayerVisitor'Class (This).visit (anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

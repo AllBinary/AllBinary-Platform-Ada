@@ -35,11 +35,11 @@ package org.allbinary.business.user.modules.configuration.UserConfigurationInter
    type UserConfigurationInterface_Access_Array is array (Natural range <>) of UserConfigurationInterface_Access;
    type UserConfigurationInterface_Access_Array_Access is access all UserConfigurationInterface_Access_Array;
    function getUserEmailConfigurationInterface (This : in out UserConfigurationInterface) return UserEmailConfigurationInterface_Access is abstract;
-   procedure setUserEmailConfigurationInterface (This : in out UserConfigurationInterface; userEmailConfigurationInterface : UserEmailConfigurationInterface_Access) is abstract;
+   procedure setUserEmailConfigurationInterface (This : in out UserConfigurationInterface; userEmailConfigurationInterface_Param : access UserEmailConfigurationInterface'Class) is abstract;
    function getTimeCreated (This : in out UserConfigurationInterface) return TimeCreated_Access is abstract;
    function getTimeLastModified (This : in out UserConfigurationInterface) return TimeLastModified_Access is abstract;
-   procedure setTimeCreated (This : in out UserConfigurationInterface; timeCreated : TimeCreated_Access) is abstract;
-   procedure setTimeLastModified (This : in out UserConfigurationInterface; timeLastModified : TimeLastModified_Access) is abstract;
+   procedure setTimeCreated (This : in out UserConfigurationInterface; timeCreated_Param : access TimeCreated'Class) is abstract;
+   procedure setTimeLastModified (This : in out UserConfigurationInterface; timeLastModified_Param : access TimeLastModified'Class) is abstract;
 
 end org.allbinary.business.user.modules.configuration.UserConfigurationInterface_Package;
 

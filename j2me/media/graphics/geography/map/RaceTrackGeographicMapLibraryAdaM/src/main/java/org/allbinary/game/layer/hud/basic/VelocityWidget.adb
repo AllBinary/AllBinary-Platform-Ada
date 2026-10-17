@@ -31,7 +31,8 @@ package body org.allbinary.game.layer.hud.basic.VelocityWidget_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out VelocityWidget'Class; powerOfTenVelocity : Integer; location : Integer; direction : Integer; basicColor : BasicColor_Access) is
+   procedure Initialize (This : in out VelocityWidget'Class; powerOfTenVelocity : Integer; location : Integer; direction : Integer; basicColor_Param : access BasicColor'Class) is
+      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         BasicHud_Package.Initialize (This, location, direction, 2, basicColor);
         Initialize_Fields (This);
@@ -42,14 +43,15 @@ package body org.allbinary.game.layer.hud.basic.VelocityWidget_Package is
         This.updateMaxHeight := 14;
    end Initialize;
 
-   function Create (powerOfTenVelocity : Integer; location : Integer; direction : Integer; basicColor : BasicColor_Access) return VelocityWidget_Access is
+   function Create (powerOfTenVelocity : Integer; location : Integer; direction : Integer; basicColor_Param : access BasicColor'Class) return VelocityWidget_Access is
       This : constant VelocityWidget_Access := new VelocityWidget;
    begin
-      VelocityWidget_Package.Initialize (This.all, powerOfTenVelocity, location, direction, basicColor);
+      VelocityWidget_Package.Initialize (This.all, powerOfTenVelocity, location, direction, basicColor_Param);
       return This;
    end Create;
 
-   procedure updateMeasurement (This : in out VelocityWidget; graphics : Graphics_Access) is
+   procedure updateMeasurement (This : in out VelocityWidget; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       font : Font_Access;
    begin
         font := graphics.getFont;
@@ -93,7 +95,8 @@ package body org.allbinary.game.layer.hud.basic.VelocityWidget_Package is
         This.set ((This.velocity) - (value));
    end reduce;
 
-   procedure paint (This : in out VelocityWidget; graphics : Graphics_Access) is
+   procedure paint (This : in out VelocityWidget; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         BasicHud (This).paintDXY (graphics, This.string_Id, 0, This.totalDigits, This.KILOMETERS_PER_HOUR_STR, 0, This.totalChars, This.offset2, This.offset);
    end paint;

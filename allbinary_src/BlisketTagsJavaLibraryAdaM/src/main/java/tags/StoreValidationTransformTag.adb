@@ -47,7 +47,7 @@ package body tags.StoreValidationTransformTag_Package is
    begin
         begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
-                This.logUtil.putF (To_Unbounded_String ("Tag Start"), This'Unchecked_Access, This.tagStrings.DO_START_TAG);
+                This.logUtil.putF (To_Unbounded_String ("Tag Start"), StoreValidationTransformTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
             end if;
             return ValidationTransformTag (This).doStartTag;
         exception

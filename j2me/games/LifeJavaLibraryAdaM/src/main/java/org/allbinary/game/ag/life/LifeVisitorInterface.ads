@@ -29,7 +29,7 @@ package org.allbinary.game.ag.life.LifeVisitorInterface_Package is
    type LifeVisitorInterface_Access is access all LifeVisitorInterface'Class;
    type LifeVisitorInterface_Access_Array is array (Natural range <>) of LifeVisitorInterface_Access;
    type LifeVisitorInterface_Access_Array_Access is access all LifeVisitorInterface_Access_Array;
-   procedure visit (This : in out LifeVisitorInterface; lifeInterface : Life_Access) is abstract;
+   procedure visit (This : in out LifeVisitorInterface; lifeInterface_Param : access Life'Class) is abstract;
 
 end org.allbinary.game.ag.life.LifeVisitorInterface_Package;
 

@@ -41,10 +41,10 @@ package org.allbinary.animation.vector.CircleFilledAnimation_Package is
       height : Integer;
    end record;
 
-   procedure Initialize (This : in out CircleFilledAnimation'Class; width : Integer; height : Integer; basicColor : BasicColor_Access);
-   function Create (width : Integer; height : Integer; basicColor : BasicColor_Access) return CircleFilledAnimation_Access;
+   procedure Initialize (This : in out CircleFilledAnimation'Class; width : Integer; height : Integer; basicColor_Param : access BasicColor'Class);
+   function Create (width : Integer; height : Integer; basicColor_Param : access BasicColor'Class) return CircleFilledAnimation_Access;
    procedure nextFrame (This : in out CircleFilledAnimation);
-   procedure paintXY (This : in out CircleFilledAnimation; graphics : Graphics_Access; x : Integer; y : Integer);
+   procedure paintXY (This : in out CircleFilledAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
 
 end org.allbinary.animation.vector.CircleFilledAnimation_Package;
 

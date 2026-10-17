@@ -53,14 +53,14 @@ package org.allbinary.game.input.event.DownKeyEventHandlerBase_Package is
 
    procedure Initialize (This : in out DownKeyEventHandlerBase'Class);
    function Create return DownKeyEventHandlerBase_Access;
-   procedure addListener (This : in out DownKeyEventHandlerBase; playerGameInput : PlayerGameInput_Access);
+   procedure addListener (This : in out DownKeyEventHandlerBase; playerGameInput_Param : access PlayerGameInput'Class);
    procedure removeAllListeners (This : in out DownKeyEventHandlerBase);
-   procedure removeListenerSingleThreaded (This : in out DownKeyEventHandlerBase; eventListenerInterface : EventListenerInterface_Access);
-   procedure removeListener (This : in out DownKeyEventHandlerBase; eventListenerInterface : EventListenerInterface_Access);
+   procedure removeListenerSingleThreaded (This : in out DownKeyEventHandlerBase; eventListenerInterface_Param : access EventListenerInterface'Class);
+   procedure removeListener (This : in out DownKeyEventHandlerBase; eventListenerInterface_Param : access EventListenerInterface'Class);
    procedure fireEventI (This : in out DownKeyEventHandlerBase; eventObject : Integer);
-   procedure fireEventForGameKeyEvent (This : in out DownKeyEventHandlerBase; eventObject : GameKeyEvent_Access);
-   procedure processI (This : in out DownKeyEventHandlerBase; eventObject : Integer; eventListenerInterface : EventListenerInterface_Access);
-   procedure processEvent (This : in out DownKeyEventHandlerBase; eventObject : GameKeyEvent_Access; eventListenerInterface : EventListenerInterface_Access);
+   procedure fireEventForGameKeyEvent (This : in out DownKeyEventHandlerBase; eventObject_Param : access GameKeyEvent'Class);
+   procedure processI (This : in out DownKeyEventHandlerBase; eventObject : Integer; eventListenerInterface_Param : access EventListenerInterface'Class);
+   procedure processEvent (This : in out DownKeyEventHandlerBase; eventObject_Param : access GameKeyEvent'Class; eventListenerInterface_Param : access EventListenerInterface'Class);
    function toString (This : in out DownKeyEventHandlerBase) return Unbounded_String;
 
 end org.allbinary.game.input.event.DownKeyEventHandlerBase_Package;

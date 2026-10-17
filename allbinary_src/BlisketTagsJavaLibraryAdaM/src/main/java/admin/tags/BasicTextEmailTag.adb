@@ -69,7 +69,7 @@ package body admin.tags.BasicTextEmailTag_Package is
                 begin
             error := To_Unbounded_String ("Failed to Send Email.");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("send()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, BasicTextEmailTag_Access'(This'Unchecked_Access), To_Unbounded_String ("send()"), e);
             end if;
             return error;
                 end;

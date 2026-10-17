@@ -48,14 +48,14 @@ package org.allbinary.logic.io.file.directory.DirectoryOrIncludeFileExtensionAnd
       includesString : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor'Class; filterStringBasicArrayList : BasicArrayList_Access);
-   function Create (filterStringBasicArrayList : BasicArrayList_Access) return DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor_Access;
-   procedure Initialize (This : in out DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor'Class; filterStringBasicArrayList : BasicArrayList_Access; includesString : Unbounded_String);
-   function Create (filterStringBasicArrayList : BasicArrayList_Access; includesString : Unbounded_String) return DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor_Access;
-   function visit (This : in out DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor; file : AbFile_Access) return Boolean;
-   procedure visit (This : in out DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor; file : AbFile_Access);
-   function visit (This : in out DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor; file : AbFile_Access; fileNameString : Unbounded_String) return Boolean;
-   procedure visit (This : in out DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor; file : AbFile_Access; fileNameString : Unbounded_String);
+   procedure Initialize (This : in out DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor'Class; filterStringBasicArrayList_Param : access BasicArrayList'Class);
+   function Create (filterStringBasicArrayList_Param : access BasicArrayList'Class) return DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor_Access;
+   procedure Initialize (This : in out DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor'Class; filterStringBasicArrayList_Param : access BasicArrayList'Class; includesString : Unbounded_String);
+   function Create (filterStringBasicArrayList_Param : access BasicArrayList'Class; includesString : Unbounded_String) return DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor_Access;
+   function visit (This : in out DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor; file_Param : access AbFile'Class) return Boolean;
+   procedure visit (This : in out DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor; file_Param : access AbFile'Class);
+   function visit (This : in out DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor; file_Param : access AbFile'Class; fileNameString : Unbounded_String) return Boolean;
+   procedure visit (This : in out DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor; file_Param : access AbFile'Class; fileNameString : Unbounded_String);
    procedure main (args : Unbounded_String_Array_Access);
 
 end org.allbinary.logic.io.file.directory.DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor_Package;

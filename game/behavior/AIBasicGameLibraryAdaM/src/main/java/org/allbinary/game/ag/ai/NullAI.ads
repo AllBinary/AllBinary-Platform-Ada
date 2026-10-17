@@ -37,7 +37,7 @@ package org.allbinary.game.ag.ai.NullAI_Package is
 
    procedure Initialize (This : in out NullAI'Class);
    function Create return NullAI_Access;
-   procedure processAI (This : in out NullAI; allBinaryLayerManager : AllBinaryLayerManager_Access);
+   procedure processAI (This : in out NullAI; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class);
 
 end org.allbinary.game.ag.ai.NullAI_Package;
 

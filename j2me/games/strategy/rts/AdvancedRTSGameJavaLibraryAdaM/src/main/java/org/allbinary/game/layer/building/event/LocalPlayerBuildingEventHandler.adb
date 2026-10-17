@@ -40,7 +40,9 @@ package body org.allbinary.game.layer.building.event.LocalPlayerBuildingEventHan
    end getInstance;
 
    --  throws Exception
-   procedure process (This : in out LocalPlayerBuildingEventHandler; eventObject : AllBinaryEventObject_Access; eventListenerInterface : EventListenerInterface_Access) is
+   procedure process (This : in out LocalPlayerBuildingEventHandler; eventObject_Param : access AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface'Class) is
+      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
+      eventListenerInterface : EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
       buildingEventListenerInterface : BuildingEventListenerInterface_Access;
    begin
         buildingEventListenerInterface := (BuildingEventListenerInterface_Access (eventListenerInterface));

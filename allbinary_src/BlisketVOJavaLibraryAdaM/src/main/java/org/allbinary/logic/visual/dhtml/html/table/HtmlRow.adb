@@ -44,7 +44,8 @@ package body org.allbinary.logic.visual.dhtml.html.table.HtmlRow_Package is
       return This;
    end Create;
 
-   procedure addCell (This : in out HtmlRow; htmlCell : HtmlCell_Access) is
+   procedure addCell (This : in out HtmlRow; htmlCell_Param : access HtmlCell'Class) is
+      htmlCell : HtmlCell_Access := HtmlCell_Access (htmlCell_Param);
    begin
         This.htmlCellsVector.add (htmlCell);
         This.numberOfColumns := This.numberOfColumns + 1;

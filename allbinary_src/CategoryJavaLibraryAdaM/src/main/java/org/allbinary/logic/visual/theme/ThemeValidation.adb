@@ -30,7 +30,9 @@ package body org.allbinary.logic.visual.theme.ThemeValidation_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ThemeValidation'Class; transformInfoInterface : TransformInfoInterface_Access; cssStyleValidation : CssStyleValidation_Access; categoryThemePath : Unbounded_String) is
+   procedure Initialize (This : in out ThemeValidation'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; cssStyleValidation_Param : access CssStyleValidation'Class; categoryThemePath : Unbounded_String) is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+      cssStyleValidation : CssStyleValidation_Access := CssStyleValidation_Access (cssStyleValidation_Param);
       pathData : AbPathData_Access;
       pathUtil : PathUtil_Access;
    begin
@@ -44,14 +46,16 @@ package body org.allbinary.logic.visual.theme.ThemeValidation_Package is
         This.init;
    end Initialize;
 
-   function Create (transformInfoInterface : TransformInfoInterface_Access; cssStyleValidation : CssStyleValidation_Access; categoryThemePath : Unbounded_String) return ThemeValidation_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class; cssStyleValidation_Param : access CssStyleValidation'Class; categoryThemePath : Unbounded_String) return ThemeValidation_Access is
       This : constant ThemeValidation_Access := new ThemeValidation;
    begin
-      ThemeValidation_Package.Initialize (This.all, transformInfoInterface, cssStyleValidation, categoryThemePath);
+      ThemeValidation_Package.Initialize (This.all, transformInfoInterface_Param, cssStyleValidation_Param, categoryThemePath);
       return This;
    end Create;
 
-   procedure Initialize (This : in out ThemeValidation'Class; transformInfoInterface : TransformInfoInterface_Access; hashMap : HashMap_Access) is
+   procedure Initialize (This : in out ThemeValidation'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; hashMap_Param : access HashMap'Class) is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
       categoryThemeAbPath : AbPath_Access;
       pathData : AbPathData_Access;
       pathUtil : PathUtil_Access;
@@ -72,19 +76,21 @@ package body org.allbinary.logic.visual.theme.ThemeValidation_Package is
             stringBuffer.append (This.categoryAbPath.toString);
             stringBuffer.append (To_Unbounded_String (" & ThemeName: "));
             stringBuffer.append (This.themeName);
-            This.logUtil.putF (To_Unbounded_String ("Http Request Constructor"), This'Unchecked_Access, stringBuffer.toString);
+            This.logUtil.putF (To_Unbounded_String ("Http Request Constructor"), ThemeValidation_Access'(This'Unchecked_Access), stringBuffer.toString);
         end if;
         This.init;
    end Initialize;
 
-   function Create (transformInfoInterface : TransformInfoInterface_Access; hashMap : HashMap_Access) return ThemeValidation_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class; hashMap_Param : access HashMap'Class) return ThemeValidation_Access is
       This : constant ThemeValidation_Access := new ThemeValidation;
    begin
-      ThemeValidation_Package.Initialize (This.all, transformInfoInterface, hashMap);
+      ThemeValidation_Package.Initialize (This.all, transformInfoInterface_Param, hashMap_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out ThemeValidation'Class; storeThemeCategoryInterface : StoreThemeCategoryInterface_Access; node : Node_Access) is
+   procedure Initialize (This : in out ThemeValidation'Class; storeThemeCategoryInterface_Param : access StoreThemeCategoryInterface'Class; node_Param : access Node'Class) is
+      storeThemeCategoryInterface : StoreThemeCategoryInterface_Access := StoreThemeCategoryInterface_Access (storeThemeCategoryInterface_Param);
+      node : Node_Access := Node_Access (node_Param);
       themeNameNode : Node_Access;
       valueNode : Node_Access;
       previewImageNameNode : Node_Access;
@@ -103,10 +109,10 @@ package body org.allbinary.logic.visual.theme.ThemeValidation_Package is
         This.init (storeThemeCategoryInterface);
    end Initialize;
 
-   function Create (storeThemeCategoryInterface : StoreThemeCategoryInterface_Access; node : Node_Access) return ThemeValidation_Access is
+   function Create (storeThemeCategoryInterface_Param : access StoreThemeCategoryInterface'Class; node_Param : access Node'Class) return ThemeValidation_Access is
       This : constant ThemeValidation_Access := new ThemeValidation;
    begin
-      ThemeValidation_Package.Initialize (This.all, storeThemeCategoryInterface, node);
+      ThemeValidation_Package.Initialize (This.all, storeThemeCategoryInterface_Param, node_Param);
       return This;
    end Create;
 
@@ -123,7 +129,8 @@ package body org.allbinary.logic.visual.theme.ThemeValidation_Package is
    end init;
 
    --  throws Exception
-   procedure init (This : in out ThemeValidation; storeThemeCategoryInterface : StoreThemeCategoryInterface_Access) is
+   procedure init (This : in out ThemeValidation; storeThemeCategoryInterface_Param : access StoreThemeCategoryInterface'Class) is
+      storeThemeCategoryInterface : StoreThemeCategoryInterface_Access := StoreThemeCategoryInterface_Access (storeThemeCategoryInterface_Param);
    begin
         This.fileAbPath := AbPath_Package.Create (storeThemeCategoryInterface.getRootFilePath.toString & This.categoryAbPath.toString, StringUtil_Package.getInstance.EMPTY_STRING);
         This.webAppAbPath := storeThemeCategoryInterface.getWebAppPath;
@@ -176,7 +183,7 @@ package body org.allbinary.logic.visual.theme.ThemeValidation_Package is
         begin
             isValid := True;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.IS_VALID);
+                This.logUtil.putF (This.commonStrings.START, ThemeValidation_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
             end if;
             if not (StringValidationUtil_Package.getInstance.isValidRequired (This.categoryAbPath.toString, AbSqlData_Package.MINSTRING, AbSqlData_Package.MAXSTRING)) then
                 isValid := False;
@@ -188,7 +195,7 @@ package body org.allbinary.logic.visual.theme.ThemeValidation_Package is
                 isValid := False;
             end if;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (To_Unbounded_String ("End: ") & Java_Image (isValid), This'Unchecked_Access, This.commonStrings.IS_VALID);
+                This.logUtil.putF (To_Unbounded_String ("End: ") & Java_Image (isValid), ThemeValidation_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
             end if;
             return isValid;
         exception
@@ -197,7 +204,7 @@ package body org.allbinary.logic.visual.theme.ThemeValidation_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to validate form"), This'Unchecked_Access, This.commonStrings.IS_VALID, e);
+                This.logUtil.put (To_Unbounded_String ("Failed to validate form"), ThemeValidation_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
             end if;
             return False;
                 end;
@@ -217,7 +224,7 @@ package body org.allbinary.logic.visual.theme.ThemeValidation_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), This'Unchecked_Access, To_Unbounded_String ("validationInfo()"), e);
+                This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), ThemeValidation_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
             end if;
             return To_Unbounded_String ("Error Validating Form");
                 end;
@@ -229,7 +236,8 @@ package body org.allbinary.logic.visual.theme.ThemeValidation_Package is
         return null;
    end toValidationInfoDoc;
 
-   function toValidationInfoNode (This : in out ThemeValidation; document : Document_Access) return Node_Access is
+   function toValidationInfoNode (This : in out ThemeValidation; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
    begin
         return null;
    end toValidationInfoNode;
@@ -264,7 +272,8 @@ package body org.allbinary.logic.visual.theme.ThemeValidation_Package is
    end toHashMap;
 
    --  throws Exception
-   function toXmlNode (This : in out ThemeValidation; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out ThemeValidation; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       node : Node_Access;
       domNodeInterface : DomNodeInterface_Access;
    begin
@@ -274,15 +283,15 @@ package body org.allbinary.logic.visual.theme.ThemeValidation_Package is
         return node;
    end toXmlNode;
 
-   procedure toValidationInfoNode (This : in out ThemeValidation; document : Document_Access) is
-      Java_Result : constant Node_Access := ThemeValidation'Class (This).toValidationInfoNode (document);
+   procedure toValidationInfoNode (This : in out ThemeValidation; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := ThemeValidation'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toValidationInfoNode;
 
-   procedure toXmlNode (This : in out ThemeValidation; document : Document_Access) is
-      Java_Result : constant Node_Access := ThemeValidation'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out ThemeValidation; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := ThemeValidation'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

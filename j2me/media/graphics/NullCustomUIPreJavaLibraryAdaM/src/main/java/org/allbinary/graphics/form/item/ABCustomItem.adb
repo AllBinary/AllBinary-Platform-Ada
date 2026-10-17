@@ -17,30 +17,35 @@ package body org.allbinary.graphics.form.item.ABCustomItem_Package is
         return ABCustomItem_Access (ABCustomItem_Package.NULL_CUSTOM_ITEM);
    end getNullInstance;
 
-   procedure Initialize (This : in out ABCustomItem'Class; label : Unbounded_String; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) is
+   procedure Initialize (This : in out ABCustomItem'Class; label : Unbounded_String; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) is
+      backgroundBasicColor : BasicColor_Access := BasicColor_Access (backgroundBasicColor_Param);
+      foregroundBasicColor : BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
    begin
       Initialize_Fields (This);
         null;
    end Initialize;
 
-   function Create (label : Unbounded_String; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return ABCustomItem_Access is
+   function Create (label : Unbounded_String; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return ABCustomItem_Access is
       This : constant ABCustomItem_Access := new ABCustomItem;
    begin
-      ABCustomItem_Package.Initialize (This.all, label, backgroundBasicColor, foregroundBasicColor);
+      ABCustomItem_Package.Initialize (This.all, label, backgroundBasicColor_Param, foregroundBasicColor_Param);
       return This;
    end Create;
 
-   procedure setOwner (This : in out ABCustomItem; owner : Screen_Access) is
+   procedure setOwner (This : in out ABCustomItem; owner_Param : access Screen'Class) is
+      owner : Screen_Access := Screen_Access (owner_Param);
    begin
         null;
    end setOwner;
 
-   procedure paintXY (This : in out ABCustomItem; graphics : Graphics_Access; x : Integer; y : Integer) is
+   procedure paintXY (This : in out ABCustomItem; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         null;
    end paintXY;
 
-   procedure paintUnselected (This : in out ABCustomItem; graphics : Graphics_Access; x : Integer; y : Integer) is
+   procedure paintUnselected (This : in out ABCustomItem; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         null;
    end paintUnselected;
@@ -90,7 +95,8 @@ package body org.allbinary.graphics.form.item.ABCustomItem_Package is
         return 0;
    end getMinimumHeight;
 
-   procedure preMeasurement (This : in out ABCustomItem; graphics : Graphics_Access) is
+   procedure preMeasurement (This : in out ABCustomItem; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         null;
    end preMeasurement;

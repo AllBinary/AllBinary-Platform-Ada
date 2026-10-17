@@ -47,12 +47,12 @@ package org.allbinary.game.combat.destroy.event.DestroyedEvent_Package is
       allBinaryLayerInterface : AllBinaryLayer_Access;
    end record;
 
-   procedure Initialize (This : in out DestroyedEvent'Class; combatGameCanvas : AllBinaryGameCanvas_Access);
-   function Create (combatGameCanvas : AllBinaryGameCanvas_Access) return DestroyedEvent_Access;
+   procedure Initialize (This : in out DestroyedEvent'Class; combatGameCanvas_Param : access AllBinaryGameCanvas'Class);
+   function Create (combatGameCanvas_Param : access AllBinaryGameCanvas'Class) return DestroyedEvent_Access;
    function getAllBinaryGameCanvas (This : in out DestroyedEvent) return AllBinaryGameCanvas_Access;
    function getLayerInterface (This : in out DestroyedEvent) return AllBinaryLayer_Access;
-   procedure setAllBinaryGameCanvas (This : in out DestroyedEvent; allBinaryGameCanvas : AllBinaryGameCanvas_Access);
-   procedure setLayerInterfaceForCircularStaticPool (This : in out DestroyedEvent; allBinaryLayerInterface : AllBinaryLayer_Access);
+   procedure setAllBinaryGameCanvas (This : in out DestroyedEvent; allBinaryGameCanvas_Param : access AllBinaryGameCanvas'Class);
+   procedure setLayerInterfaceForCircularStaticPool (This : in out DestroyedEvent; allBinaryLayerInterface_Param : access AllBinaryLayer'Class);
    function toString (This : in out DestroyedEvent) return Unbounded_String;
 
 end org.allbinary.game.combat.destroy.event.DestroyedEvent_Package;

@@ -43,7 +43,7 @@ package org.allbinary.graphics.opengles.shader.AppRendererShaderUpdaterFactory_P
    function Create return AppRendererShaderUpdaterFactory_Access;
    function getInstance return AppRendererShaderUpdaterFactory_Access;
    function getTestShaders (This : in out AppRendererShaderUpdaterFactory) return ShaderOpenGLProcessor_Access_Array_Access;
-   procedure setShaderComposite (This : in out AppRendererShaderUpdaterFactory; object3d : Java_Object_Access);
+   procedure setShaderComposite (This : in out AppRendererShaderUpdaterFactory; object3d_Param : access Java_Object'Class);
 
 end org.allbinary.graphics.opengles.shader.AppRendererShaderUpdaterFactory_Package;
 

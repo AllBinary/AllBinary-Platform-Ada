@@ -26,16 +26,18 @@ package body taghelpers.ViewHelper_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ViewHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access) is
+   procedure Initialize (This : in out ViewHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
    begin
       Initialize_Fields (This);
         This.componentInterface := TransformFactory_Package.getInstance.getInstance (This.abeClientInformation, hashMap, pageContext);
    end Initialize;
 
-   function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return ViewHelper_Access is
+   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return ViewHelper_Access is
       This : constant ViewHelper_Access := new ViewHelper;
    begin
-      ViewHelper_Package.Initialize (This.all, hashMap, pageContext);
+      ViewHelper_Package.Initialize (This.all, hashMap_Param, pageContext_Param);
       return This;
    end Create;
 
@@ -62,7 +64,7 @@ package body taghelpers.ViewHelper_Package is
                 error := error & To_Unbounded_String ("Unknown");
             end if;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("view()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, ViewHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
             end if;
             Java_Throw (e);
                 end;
@@ -87,7 +89,7 @@ package body taghelpers.ViewHelper_Package is
                 error := error & To_Unbounded_String ("Unknown");
             end if;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("view()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, ViewHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
             end if;
             Java_Throw (e);
                 end;
@@ -110,7 +112,8 @@ package body taghelpers.ViewHelper_Package is
         return null;
    end getTransformDocumentInterface;
 
-   procedure setTransformDocumentInterface (This : in out ViewHelper; viewDocumentInterface : TransformDocumentInterface_Access) is
+   procedure setTransformDocumentInterface (This : in out ViewHelper; viewDocumentInterface_Param : access TransformDocumentInterface'Class) is
+      viewDocumentInterface : TransformDocumentInterface_Access := TransformDocumentInterface_Access (viewDocumentInterface_Param);
    begin
         return;
    end setTransformDocumentInterface;

@@ -51,7 +51,7 @@ package org.allbinary.data.resource.ResourceUtil_Package is
    function Create return ResourceUtil_Access;
    function getInstance return ResourceUtil_Access;
    procedure setLoadingPaths (This : in out ResourceUtil; path : Unbounded_String; ext : Unbounded_String);
-   procedure setClassLoader (This : in out ResourceUtil; classLoader : ClassLoader_Access);
+   procedure setClassLoader (This : in out ResourceUtil; classLoader_Param : access ClassLoader'Class);
    function getResourceAsStream (This : in out ResourceUtil; resource : Unbounded_String) return InputStream_Access;
    procedure getResourceAsStream (This : in out ResourceUtil; resource : Unbounded_String);
    function getResourceAsStreamAtStart (This : in out ResourceUtil; resource : Unbounded_String; startIndex : Integer) return InputStream_Access;

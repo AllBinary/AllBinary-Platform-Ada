@@ -22,16 +22,17 @@ package body org.allbinary.logic.java.jar.JarUtil_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out JarUtil'Class; jarURL : URL_Access) is
+   procedure Initialize (This : in out JarUtil'Class; jarURL_Param : access URL'Class) is
+      jarURL : URL_Access := URL_Access (jarURL_Param);
    begin
       Initialize_Fields (This);
         This.jarURL := jarURL;
    end Initialize;
 
-   function Create (jarURL : URL_Access) return JarUtil_Access is
+   function Create (jarURL_Param : access URL'Class) return JarUtil_Access is
       This : constant JarUtil_Access := new JarUtil;
    begin
-      JarUtil_Package.Initialize (This.all, jarURL);
+      JarUtil_Package.Initialize (This.all, jarURL_Param);
       return This;
    end Create;
 

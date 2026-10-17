@@ -22,21 +22,23 @@ package body views.generic_Id.basket.mini.MiniBasketView_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out MiniBasketView'Class; transformInfoInterface : TransformInfoInterface_Access) is
+   procedure Initialize (This : in out MiniBasketView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return MiniBasketView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return MiniBasketView_Access is
       This : constant MiniBasketView_Access := new MiniBasketView;
    begin
-      MiniBasketView_Package.Initialize (This.all, transformInfoInterface);
+      MiniBasketView_Package.Initialize (This.all, transformInfoInterface_Param);
       return This;
    end Create;
 
    --  throws Exception
-   function toXmlNode (This : in out MiniBasketView; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out MiniBasketView; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       basketInterface : BasketInterface_Access;
       basketNode : Node_Access;
       totalNumberNode : Node_Access;
@@ -68,7 +70,7 @@ package body views.generic_Id.basket.mini.MiniBasketView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.XSLLOGGINGERROR) then
-                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("toXmlNode"), e);
+                This.logUtil.put (This.commonStrings.FAILURE, MiniBasketView_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode"), e);
             end if;
             Java_Throw (e);
                 end;
@@ -77,7 +79,7 @@ package body views.generic_Id.basket.mini.MiniBasketView_Package is
 
    procedure addDomNodeInterfaces (This : in out MiniBasketView) is
    begin
-        This.addDomNodeInterface (DomNodeInterface_Access (This'Unchecked_Access));
+        This.addDomNodeInterface (DomNodeInterface_Access (MiniBasketView_Access'(This'Unchecked_Access)));
    end addDomNodeInterfaces;
 
    --  throws Exception
@@ -92,15 +94,15 @@ package body views.generic_Id.basket.mini.MiniBasketView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("view()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, MiniBasketView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
             end if;
             Java_Throw (e);
                 end;
         end;
    end view;
 
-   procedure toXmlNode (This : in out MiniBasketView; document : Document_Access) is
-      Java_Result : constant Node_Access := MiniBasketView'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out MiniBasketView; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := MiniBasketView'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

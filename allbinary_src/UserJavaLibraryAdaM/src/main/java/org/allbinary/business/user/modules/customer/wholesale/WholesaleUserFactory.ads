@@ -40,8 +40,8 @@ package org.allbinary.business.user.modules.customer.wholesale.WholesaleUserFact
    procedure Initialize (This : in out WholesaleUserFactory'Class);
    function Create return WholesaleUserFactory_Access;
    function getInstance (This : in out WholesaleUserFactory) return UserInterface_Access;
-   function getInstance (This : in out WholesaleUserFactory; hashMap : HashMap_Access) return UserInterface_Access;
-   procedure getInstance (This : in out WholesaleUserFactory; hashMap : HashMap_Access);
+   function getInstance (This : in out WholesaleUserFactory; hashMap_Param : access HashMap'Class) return UserInterface_Access;
+   procedure getInstance (This : in out WholesaleUserFactory; hashMap_Param : access HashMap'Class);
 
 end org.allbinary.business.user.modules.customer.wholesale.WholesaleUserFactory_Package;
 

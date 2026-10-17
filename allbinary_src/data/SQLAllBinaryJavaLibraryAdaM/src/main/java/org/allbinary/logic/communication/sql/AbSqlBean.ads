@@ -45,14 +45,14 @@ package org.allbinary.logic.communication.sql.AbSqlBean_Package is
       METHOD_IS_SUBSET_OF_ENTRY : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out AbSqlBean'Class; databaseConnectionInfoInterface : DbConnectionInfo_Access);
-   function Create (databaseConnectionInfoInterface : DbConnectionInfo_Access) return AbSqlBean_Access;
+   procedure Initialize (This : in out AbSqlBean'Class; databaseConnectionInfoInterface_Param : access DbConnectionInfo'Class);
+   function Create (databaseConnectionInfoInterface_Param : access DbConnectionInfo'Class) return AbSqlBean_Access;
    function getField (This : in out AbSqlBean; key : Unbounded_String; value : Unbounded_String; requestedField : Unbounded_String) return Unbounded_String;
    procedure getField (This : in out AbSqlBean; key : Unbounded_String; value : Unbounded_String; requestedField : Unbounded_String);
-   function getField (This : in out AbSqlBean; keysAndValues : HashMap_Access; requestedField : Unbounded_String) return Unbounded_String;
-   procedure getField (This : in out AbSqlBean; keysAndValues : HashMap_Access; requestedField : Unbounded_String);
-   function isSubsetOfEntry (This : in out AbSqlBean; key : Unbounded_String; value : Unbounded_String; columnsAndValues : HashMap_Access) return Unbounded_String;
-   procedure isSubsetOfEntry (This : in out AbSqlBean; key : Unbounded_String; value : Unbounded_String; columnsAndValues : HashMap_Access);
+   function getField (This : in out AbSqlBean; keysAndValues_Param : access HashMap'Class; requestedField : Unbounded_String) return Unbounded_String;
+   procedure getField (This : in out AbSqlBean; keysAndValues_Param : access HashMap'Class; requestedField : Unbounded_String);
+   function isSubsetOfEntry (This : in out AbSqlBean; key : Unbounded_String; value : Unbounded_String; columnsAndValues_Param : access HashMap'Class) return Unbounded_String;
+   procedure isSubsetOfEntry (This : in out AbSqlBean; key : Unbounded_String; value : Unbounded_String; columnsAndValues_Param : access HashMap'Class);
 
 end org.allbinary.logic.communication.sql.AbSqlBean_Package;
 

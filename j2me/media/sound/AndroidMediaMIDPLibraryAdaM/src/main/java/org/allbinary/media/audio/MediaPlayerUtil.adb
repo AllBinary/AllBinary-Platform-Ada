@@ -40,7 +40,8 @@ package body org.allbinary.media.audio.MediaPlayerUtil_Package is
    end getInstance;
 
    --  throws Exception
-   procedure waitForMediaPlayer (This : in out MediaPlayerUtil; mediaPlayer : MediaPlayer_Access) is
+   procedure waitForMediaPlayer (This : in out MediaPlayerUtil; mediaPlayer_Param : access MediaPlayer'Class) is
+      mediaPlayer : MediaPlayer_Access := MediaPlayer_Access (mediaPlayer_Param);
       MESSAGE : Unbounded_String;
       METHOD_NAME : Unbounded_String;
       index : Integer;
@@ -49,7 +50,7 @@ package body org.allbinary.media.audio.MediaPlayerUtil_Package is
         METHOD_NAME := To_Unbounded_String ("wait");
         index := 0;
         while (mediaPlayer.isPlaying) and then ((index) < (50)) loop
-            This.logUtil.putF (MESSAGE, This'Unchecked_Access, METHOD_NAME);
+            This.logUtil.putF (MESSAGE, MediaPlayerUtil_Access'(This'Unchecked_Access), METHOD_NAME);
             Java_Sleep (100);
             index := index + 1;
         end loop;

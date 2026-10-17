@@ -58,27 +58,27 @@ package body org.allbinary.logic.system.os.OperatingSystemFactory_Package is
             osArch := systemProperties.getArch;
             osVersion := systemProperties.getVersion;
             if not (This.hasDetected) then
-                This.logUtil.putF (To_Unbounded_String ("osName: ") & osName, This'Unchecked_Access, This.commonStrings.GET_INSTANCE);
+                This.logUtil.putF (To_Unbounded_String ("osName: ") & osName, OperatingSystemFactory_Access'(This'Unchecked_Access), This.commonStrings.GET_INSTANCE);
                 This.hasDetected := True;
                 if ((Index (osName, To_String (operatingSystems.LINUX)) - 1)) >= (0) then
                     if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.FACTORYERROR) then
-                        This.logUtil.putF (To_Unbounded_String ("Found a Linux OS"), This'Unchecked_Access, This.commonStrings.GET_INSTANCE);
+                        This.logUtil.putF (To_Unbounded_String ("Found a Linux OS"), OperatingSystemFactory_Access'(This'Unchecked_Access), This.commonStrings.GET_INSTANCE);
                     end if;
                     This.genericOperatingSystem := LinuxOperatingSystemFactory_Package.getInstance.getOperatingSystemInstance;
                 elsif ((Index (osName, To_String (operatingSystems.WINDOWS)) - 1)) >= (0) then
                     if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.FACTORYERROR) then
-                        This.logUtil.putF (To_Unbounded_String ("Found a Windows OS"), This'Unchecked_Access, This.commonStrings.GET_INSTANCE);
+                        This.logUtil.putF (To_Unbounded_String ("Found a Windows OS"), OperatingSystemFactory_Access'(This'Unchecked_Access), This.commonStrings.GET_INSTANCE);
                     end if;
                     This.genericOperatingSystem := WindowsOperatingSystemFactory_Package.getInstance.getOperatingSystemInstance;
                 elsif ((Index (osName, To_String (operatingSystems.SOLARIS)) - 1)) >= (0) then
                     if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.FACTORYERROR) then
-                        This.logUtil.putF (To_Unbounded_String ("Found a Solaris OS"), This'Unchecked_Access, This.commonStrings.GET_INSTANCE);
+                        This.logUtil.putF (To_Unbounded_String ("Found a Solaris OS"), OperatingSystemFactory_Access'(This'Unchecked_Access), This.commonStrings.GET_INSTANCE);
                     end if;
                     This.genericOperatingSystem := SolarisOperatingSystemFactory_Package.getInstance.getOperatingSystemInstance;
                 else
                     Java_Throw (Java_New_Exception ("Exception", StringMaker_Package.Create.append (To_Unbounded_String ("OS Not Supported: ")).append (osName).toString));
                 end if;
-                log := LogFactory_Package.getInstanceF (StringMaker_Package.Create.append (To_Unbounded_String ("OperatingSystem Info: ")).append (StringUtil_Package.getInstance.toString (This.genericOperatingSystem)).toString, This'Unchecked_Access, This.commonStrings.GET_INSTANCE);
+                log := LogFactory_Package.getInstanceF (StringMaker_Package.Create.append (To_Unbounded_String ("OperatingSystem Info: ")).append (StringUtil_Package.getInstance.toString (This.genericOperatingSystem)).toString, OperatingSystemFactory_Access'(This'Unchecked_Access), This.commonStrings.GET_INSTANCE);
                 Ada.Text_IO.Put_Line (Java_Image (log.toString));
                 This.logUtil.putL (log);
             end if;
@@ -89,7 +89,7 @@ package body org.allbinary.logic.system.os.OperatingSystemFactory_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.FACTORYERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.GET_INSTANCE, e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, OperatingSystemFactory_Access'(This'Unchecked_Access), This.commonStrings.GET_INSTANCE, e);
             end if;
             return NoOperatingSystem_Package.NO_OPERATING_SYSTEM;
                 end;

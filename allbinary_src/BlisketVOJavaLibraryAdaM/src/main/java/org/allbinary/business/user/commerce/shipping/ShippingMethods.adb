@@ -25,17 +25,19 @@ package body org.allbinary.business.user.commerce.shipping.ShippingMethods_Packa
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ShippingMethods'Class; abeClientInformation : AbeClientInformationInterface_Access; storeFrontInterface : StoreFrontInterface_Access) is
+   procedure Initialize (This : in out ShippingMethods'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; storeFrontInterface_Param : access StoreFrontInterface'Class) is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      storeFrontInterface : StoreFrontInterface_Access := StoreFrontInterface_Access (storeFrontInterface_Param);
    begin
       Initialize_Fields (This);
         This.defaultShippingMethodInterface := ShippingMethodsFactory_Package.Create (abeClientInformation, storeFrontInterface).getDefaultInstance;
         This.shippingVector := ShippingMethodsFactory_Package.Create (abeClientInformation, storeFrontInterface).getInstance;
    end Initialize;
 
-   function Create (abeClientInformation : AbeClientInformationInterface_Access; storeFrontInterface : StoreFrontInterface_Access) return ShippingMethods_Access is
+   function Create (abeClientInformation_Param : access AbeClientInformationInterface'Class; storeFrontInterface_Param : access StoreFrontInterface'Class) return ShippingMethods_Access is
       This : constant ShippingMethods_Access := new ShippingMethods;
    begin
-      ShippingMethods_Package.Initialize (This.all, abeClientInformation, storeFrontInterface);
+      ShippingMethods_Package.Initialize (This.all, abeClientInformation_Param, storeFrontInterface_Param);
       return This;
    end Create;
 
@@ -61,7 +63,7 @@ package body org.allbinary.business.user.commerce.shipping.ShippingMethods_Packa
         end loop;
         error := To_Unbounded_String ("Error Finding Shipping: ") & name;
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SHIPPINGERROR) then
-            This.logUtil.putF (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("getShippingInterface(String name)"));
+            This.logUtil.putF (This.commonStrings.EXCEPTION_Id, ShippingMethods_Access'(This'Unchecked_Access), To_Unbounded_String ("getShippingInterface(String name)"));
         end if;
         Java_Throw (Java_New_Exception ("Exception", error));
    end getShippingInterface;

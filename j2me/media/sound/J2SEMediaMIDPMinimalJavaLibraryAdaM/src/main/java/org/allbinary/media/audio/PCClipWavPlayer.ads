@@ -62,15 +62,15 @@ package org.allbinary.media.audio.PCClipWavPlayer_Package is
       clip : Clip_Access;
    end record;
 
-   procedure Initialize (This : in out PCClipWavPlayer'Class; inputStream : InputStream_Access);
-   function Create (inputStream : InputStream_Access) return PCClipWavPlayer_Access;
+   procedure Initialize (This : in out PCClipWavPlayer'Class; inputStream_Param : access InputStream'Class);
+   function Create (inputStream_Param : access InputStream'Class) return PCClipWavPlayer_Access;
    procedure close (This : in out PCClipWavPlayer);
    procedure close2 (This : in out PCClipWavPlayer);
    function getContentType (This : in out PCClipWavPlayer) return Unbounded_String;
    procedure start (This : in out PCClipWavPlayer);
    procedure start2 (This : in out PCClipWavPlayer);
-   function create (This : in out PCClipWavPlayer; audioInputStream : AudioInputStream_Access) return Clip_Access;
-   procedure create (This : in out PCClipWavPlayer; audioInputStream : AudioInputStream_Access);
+   function create (This : in out PCClipWavPlayer; audioInputStream_Param : access AudioInputStream'Class) return Clip_Access;
+   procedure create (This : in out PCClipWavPlayer; audioInputStream_Param : access AudioInputStream'Class);
    procedure stop (This : in out PCClipWavPlayer);
    procedure stop2 (This : in out PCClipWavPlayer);
    function getControl (This : in out PCClipWavPlayer; controlType : Unbounded_String) return Control_Access;
@@ -80,7 +80,7 @@ package org.allbinary.media.audio.PCClipWavPlayer_Package is
    function getVolume (This : in out PCClipWavPlayer) return Float;
    procedure setVolumeF (This : in out PCClipWavPlayer; volume : Float);
    function getDuration (This : in out PCClipWavPlayer) return Long_Long_Integer;
-   procedure update (This : in out PCClipWavPlayer; event : LineEvent_Access);
+   procedure update (This : in out PCClipWavPlayer; event_Param : access LineEvent'Class);
 
 end org.allbinary.media.audio.PCClipWavPlayer_Package;
 

@@ -43,17 +43,17 @@ package body org.allbinary.logic.math.SmallIntegerSingletonFactory_Package is
                 null;
             elsif AndroidUtil_Package.isAndroid then
                 logUtil := LogUtil_Package.getInstance;
-                logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Android InputFactory was initialized before GameMidlet: ")).appendint (This.MIN).toString, This'Unchecked_Access, To_Unbounded_String ("getMin"));
+                logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Android InputFactory was initialized before GameMidlet: ")).appendint (This.MIN).toString, SmallIntegerSingletonFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getMin"));
                 This.initWithRange (16#291#, 6);
             else
                 logUtil := LogUtil_Package.getInstance;
-                logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("InputFactory was initialized before GameMidlet or KeyFactoryInitializer - Currently this is occurs on JS build by TouchMotionGestureFactory constructor: ")).appendint (This.MIN).toString, This'Unchecked_Access, To_Unbounded_String ("getMin"));
+                logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("InputFactory was initialized before GameMidlet or KeyFactoryInitializer - Currently this is occurs on JS build by TouchMotionGestureFactory constructor: ")).appendint (This.MIN).toString, SmallIntegerSingletonFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getMin"));
                 This.initWithRange (16#2D0#, 6);
             end if;
         end if;
         if (This.MIN) <= (minAllowed) then
             logUtil := LogUtil_Package.getInstance;
-            logUtil.put (To_Unbounded_String ("This means you loaded the InputFactory before determining the platform input size requirements."), This'Unchecked_Access, To_Unbounded_String ("getMin"), Java_New_Exception ("Exception"));
+            logUtil.put (To_Unbounded_String ("This means you loaded the InputFactory before determining the platform input size requirements."), SmallIntegerSingletonFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getMin"), Java_New_Exception ("Exception"));
         end if;
         return This.MIN;
    end getMin;

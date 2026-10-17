@@ -66,16 +66,16 @@ package org.allbinary.input.automation.actions.script.condition.processors.input
       time : Integer;
    end record;
 
-   procedure Initialize (This : in out BasicProfileActionScriptInput'Class; label : Unbounded_String; node : Node_Access);
-   function Create (label : Unbounded_String; node : Node_Access) return BasicProfileActionScriptInput_Access;
+   procedure Initialize (This : in out BasicProfileActionScriptInput'Class; label : Unbounded_String; node_Param : access Node'Class);
+   function Create (label : Unbounded_String; node_Param : access Node'Class) return BasicProfileActionScriptInput_Access;
    procedure Initialize (This : in out BasicProfileActionScriptInput'Class; label : Unbounded_String);
    function Create (label : Unbounded_String) return BasicProfileActionScriptInput_Access;
    function getTime (This : in out BasicProfileActionScriptInput) return Integer;
    procedure setTime (This : in out BasicProfileActionScriptInput; time : Integer);
    function BasicProfileActionScriptInput_toHashMap (This : in out BasicProfileActionScriptInput) return HashMap_Access;
-   function toXmlNode (This : in out BasicProfileActionScriptInput; document : Document_Access) return Node_Access;
-   procedure toXmlNode (This : in out BasicProfileActionScriptInput; document : Document_Access);
-   procedure setInputRobotInterface (This : in out BasicProfileActionScriptInput; inputRobotInterface : InputRobotInterface_Access);
+   function toXmlNode (This : in out BasicProfileActionScriptInput; document_Param : access Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out BasicProfileActionScriptInput; document_Param : access Document'Class);
+   procedure setInputRobotInterface (This : in out BasicProfileActionScriptInput; inputRobotInterface_Param : access InputRobotInterface'Class);
    function getInputRobotInterface (This : in out BasicProfileActionScriptInput) return InputRobotInterface_Access;
    function toString (This : in out BasicProfileActionScriptInput) return Unbounded_String;
 

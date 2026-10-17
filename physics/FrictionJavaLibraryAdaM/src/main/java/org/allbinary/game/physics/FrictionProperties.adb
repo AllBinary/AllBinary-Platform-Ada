@@ -34,7 +34,8 @@ package body org.allbinary.game.physics.FrictionProperties_Package is
       return This;
    end Create;
 
-   procedure friction (This : in out FrictionProperties; velocityProperties : VelocityProperties_Access; nominator : Integer) is
+   procedure friction (This : in out FrictionProperties; velocityProperties_Param : access VelocityProperties'Class; nominator : Integer) is
+      velocityProperties : VelocityProperties_Access := VelocityProperties_Access (velocityProperties_Param);
    begin
         DragVelocityBehavior_Package.instance.reduce (velocityProperties, nominator, FrictionData_Package.getFrictionDenominator);
    end friction;

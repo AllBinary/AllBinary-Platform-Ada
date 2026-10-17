@@ -41,14 +41,14 @@ package org.allbinary.animation.image.AllBinaryAdjustedHTMLImageRotationAnimatio
       dy : Integer;
    end record;
 
-   procedure Initialize (This : in out AllBinaryAdjustedHTMLImageRotationAnimation'Class; originalImage : Image_Access; image : Image_Access; angleInfo : AngleInfo_Access; totalAngle : Short_Integer; dx : Integer; dy : Integer; animationBehavior : AnimationBehavior_Access);
-   function Create (originalImage : Image_Access; image : Image_Access; angleInfo : AngleInfo_Access; totalAngle : Short_Integer; dx : Integer; dy : Integer; animationBehavior : AnimationBehavior_Access) return AllBinaryAdjustedHTMLImageRotationAnimation_Access;
+   procedure Initialize (This : in out AllBinaryAdjustedHTMLImageRotationAnimation'Class; originalImage_Param : access Image'Class; image_Param : access Image'Class; angleInfo_Param : access AngleInfo'Class; totalAngle : Short_Integer; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior'Class);
+   function Create (originalImage_Param : access Image'Class; image_Param : access Image'Class; angleInfo_Param : access AngleInfo'Class; totalAngle : Short_Integer; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior'Class) return AllBinaryAdjustedHTMLImageRotationAnimation_Access;
    procedure init (This : in out AllBinaryAdjustedHTMLImageRotationAnimation; dx : Integer; dy : Integer);
    procedure setDx (This : in out AllBinaryAdjustedHTMLImageRotationAnimation; dx : Integer);
    function getDx (This : in out AllBinaryAdjustedHTMLImageRotationAnimation) return Integer;
    procedure setDy (This : in out AllBinaryAdjustedHTMLImageRotationAnimation; dy : Integer);
    function getDy (This : in out AllBinaryAdjustedHTMLImageRotationAnimation) return Integer;
-   procedure paintXY (This : in out AllBinaryAdjustedHTMLImageRotationAnimation; graphics : Graphics_Access; x : Integer; y : Integer);
+   procedure paintXY (This : in out AllBinaryAdjustedHTMLImageRotationAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
 
 end org.allbinary.animation.image.AllBinaryAdjustedHTMLImageRotationAnimation_Package;
 

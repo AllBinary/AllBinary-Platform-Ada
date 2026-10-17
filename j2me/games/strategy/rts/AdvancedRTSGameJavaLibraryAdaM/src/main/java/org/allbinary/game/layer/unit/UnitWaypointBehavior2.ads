@@ -112,39 +112,39 @@ package org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
    TARGET_DISTANCE : Unbounded_String;
    TARGET_LAYER : Unbounded_String;
 
-   procedure Initialize (This : in out UnitWaypointBehavior2'Class; ownerAdvancedRTSGameLayer : UnitLayer_Access; fakeWaypoint : AdvancedRTSGameLayer_Access);
-   function Create (ownerAdvancedRTSGameLayer : UnitLayer_Access; fakeWaypoint : AdvancedRTSGameLayer_Access) return UnitWaypointBehavior2_Access;
+   procedure Initialize (This : in out UnitWaypointBehavior2'Class; ownerAdvancedRTSGameLayer_Param : access UnitLayer'Class; fakeWaypoint_Param : access AdvancedRTSGameLayer'Class);
+   function Create (ownerAdvancedRTSGameLayer_Param : access UnitLayer'Class; fakeWaypoint_Param : access AdvancedRTSGameLayer'Class) return UnitWaypointBehavior2_Access;
    procedure initRange (This : in out UnitWaypointBehavior2; weaponRange : Integer);
    function getNextUnvisitedPathGeographicMapCellPosition (This : in out UnitWaypointBehavior2) return GeographicMapCellPosition_Access;
    function isRunning (This : in out UnitWaypointBehavior2) return Boolean;
-   procedure processTick (This : in out UnitWaypointBehavior2; allBinaryLayerManager : AllBinaryLayerManager_Access);
-   procedure onEnemyMovement (This : in out UnitWaypointBehavior2; layerInterface : AdvancedRTSGameLayer_Access);
-   procedure processPossibleTarget (This : in out UnitWaypointBehavior2; layerInterface : AdvancedRTSGameLayer_Access; anotherTargetDistance : Integer);
+   procedure processTick (This : in out UnitWaypointBehavior2; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class);
+   procedure onEnemyMovement (This : in out UnitWaypointBehavior2; layerInterface_Param : access AdvancedRTSGameLayer'Class);
+   procedure processPossibleTarget (This : in out UnitWaypointBehavior2; layerInterface_Param : access AdvancedRTSGameLayer'Class; anotherTargetDistance : Integer);
    procedure teleportIfNoProgress (This : in out UnitWaypointBehavior2);
-   procedure setTarget (This : in out UnitWaypointBehavior2; layerInterface : AdvancedRTSGameLayer_Access; anotherTargetDistance : Integer);
+   procedure setTarget (This : in out UnitWaypointBehavior2; layerInterface_Param : access AdvancedRTSGameLayer'Class; anotherTargetDistance : Integer);
    procedure setTargetPath (This : in out UnitWaypointBehavior2);
-   procedure setGeographicMapCellHistoryPath (This : in out UnitWaypointBehavior2; geographicMapCellPositionBasicArrayList : BasicArrayList_Access);
+   procedure setGeographicMapCellHistoryPath (This : in out UnitWaypointBehavior2; geographicMapCellPositionBasicArrayList_Param : access BasicArrayList'Class);
    procedure processWaypoint (This : in out UnitWaypointBehavior2);
    procedure wander (This : in out UnitWaypointBehavior2);
-   function visitIfAtMidPoint (This : in out UnitWaypointBehavior2; geographicMapCellPosition : GeographicMapCellPosition_Access) return Boolean;
-   procedure visitIfAtMidPoint (This : in out UnitWaypointBehavior2; geographicMapCellPosition : GeographicMapCellPosition_Access);
+   function visitIfAtMidPoint (This : in out UnitWaypointBehavior2; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return Boolean;
+   procedure visitIfAtMidPoint (This : in out UnitWaypointBehavior2; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class);
    procedure processTargetList (This : in out UnitWaypointBehavior2);
    procedure processTargeting (This : in out UnitWaypointBehavior2);
    procedure updateCurrentPathGeographicMapCellPosition (This : in out UnitWaypointBehavior2);
-   procedure setWaypointPath (This : in out UnitWaypointBehavior2; waypointLayer : AdvancedRTSGameLayer_Access);
-   procedure runWaypointPathTask (This : in out UnitWaypointBehavior2; waypointLayer : AdvancedRTSGameLayer_Access);
-   procedure removeWaypoint (This : in out UnitWaypointBehavior2; waypointLayer : RTSLayer_Access; reason : Unbounded_String);
+   procedure setWaypointPath (This : in out UnitWaypointBehavior2; waypointLayer_Param : access AdvancedRTSGameLayer'Class);
+   procedure runWaypointPathTask (This : in out UnitWaypointBehavior2; waypointLayer_Param : access AdvancedRTSGameLayer'Class);
+   procedure removeWaypoint (This : in out UnitWaypointBehavior2; waypointLayer_Param : access RTSLayer'Class; reason : Unbounded_String);
    procedure clearTarget (This : in out UnitWaypointBehavior2);
    function isWaypointListEmptyOrOnlyTargets (This : in out UnitWaypointBehavior2) return Boolean;
-   function isCloseRange (This : in out UnitWaypointBehavior2; layerInterface : AdvancedRTSGameLayer_Access; targetDistance : Integer) return Boolean;
-   procedure isCloseRange (This : in out UnitWaypointBehavior2; layerInterface : AdvancedRTSGameLayer_Access; targetDistance : Integer);
-   function isInSensorRange (This : in out UnitWaypointBehavior2; layerInterface : CollidableDestroyableDamageableLayer_Access; targetDistance : Integer) return Boolean;
-   procedure isInSensorRange (This : in out UnitWaypointBehavior2; layerInterface : CollidableDestroyableDamageableLayer_Access; targetDistance : Integer);
+   function isCloseRange (This : in out UnitWaypointBehavior2; layerInterface_Param : access AdvancedRTSGameLayer'Class; targetDistance : Integer) return Boolean;
+   procedure isCloseRange (This : in out UnitWaypointBehavior2; layerInterface_Param : access AdvancedRTSGameLayer'Class; targetDistance : Integer);
+   function isInSensorRange (This : in out UnitWaypointBehavior2; layerInterface_Param : access CollidableDestroyableDamageableLayer'Class; targetDistance : Integer) return Boolean;
+   procedure isInSensorRange (This : in out UnitWaypointBehavior2; layerInterface_Param : access CollidableDestroyableDamageableLayer'Class; targetDistance : Integer);
    function getCurrentTargetingStateString (This : in out UnitWaypointBehavior2) return Unbounded_String;
-   procedure addWaypointFromUser (This : in out UnitWaypointBehavior2; advancedRTSGameLayer : AdvancedRTSGameLayer_Access);
-   procedure addBuildingChase (This : in out UnitWaypointBehavior2; allbinaryLayer : AllBinaryLayer_Access; cellPosition : GeographicMapCellPosition_Access);
-   function buildingChase (This : in out UnitWaypointBehavior2; allbinaryLayer : AllBinaryLayer_Access; cellPosition : GeographicMapCellPosition_Access) return Boolean;
-   procedure buildingChase (This : in out UnitWaypointBehavior2; allbinaryLayer : AllBinaryLayer_Access; cellPosition : GeographicMapCellPosition_Access);
+   procedure addWaypointFromUser (This : in out UnitWaypointBehavior2; advancedRTSGameLayer_Param : access AdvancedRTSGameLayer'Class);
+   procedure addBuildingChase (This : in out UnitWaypointBehavior2; allbinaryLayer_Param : access AllBinaryLayer'Class; cellPosition_Param : access GeographicMapCellPosition'Class);
+   function buildingChase (This : in out UnitWaypointBehavior2; allbinaryLayer_Param : access AllBinaryLayer'Class; cellPosition_Param : access GeographicMapCellPosition'Class) return Boolean;
+   procedure buildingChase (This : in out UnitWaypointBehavior2; allbinaryLayer_Param : access AllBinaryLayer'Class; cellPosition_Param : access GeographicMapCellPosition'Class);
 
 end org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package;
 
@@ -232,8 +232,8 @@ package org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package is
 
    procedure Initialize (This : in out BuildingSteeringVisitor'Class);
    function Create return BuildingSteeringVisitor_Access;
-   function visit (This : in out BuildingSteeringVisitor; anyType : Java_Object_Access) return Java_Object_Access;
-   procedure visit (This : in out BuildingSteeringVisitor; anyType : Java_Object_Access);
+   function visit (This : in out BuildingSteeringVisitor; anyType_Param : access Java_Object'Class) return Java_Object_Access;
+   procedure visit (This : in out BuildingSteeringVisitor; anyType_Param : access Java_Object'Class);
    function getPositionList (This : in out BuildingSteeringVisitor) return BasicArrayList_Access;
 
 end org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package;

@@ -41,8 +41,8 @@ package org.allbinary.logic.visual.transform.ContextTransformer_Package is
 
    type ContextTransformer is new BasicTransformer with null record;
 
-   procedure Initialize (This : in out ContextTransformer'Class; abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access);
-   function Create (abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access) return ContextTransformer_Access;
+   procedure Initialize (This : in out ContextTransformer'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
+   function Create (abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) return ContextTransformer_Access;
 
 end org.allbinary.logic.visual.transform.ContextTransformer_Package;
 

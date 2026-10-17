@@ -82,14 +82,14 @@ package org.allbinary.game.configuration.GameOptionsForm_Package is
       meUtil : MEUtil_Access;
    end record;
 
-   procedure Initialize (This : in out GameOptionsForm'Class; commandListener : CommandListener_Access; title : Unbounded_String; backgrounBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access);
-   function Create (commandListener : CommandListener_Access; title : Unbounded_String; backgrounBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return GameOptionsForm_Access;
-   procedure closeClientInformation (This : in out GameOptionsForm; abeClientInformation : AbeClientInformationInterface_Access);
+   procedure Initialize (This : in out GameOptionsForm'Class; commandListener_Param : access CommandListener'Class; title : Unbounded_String; backgrounBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class);
+   function Create (commandListener_Param : access CommandListener'Class; title : Unbounded_String; backgrounBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return GameOptionsForm_Access;
+   procedure closeClientInformation (This : in out GameOptionsForm; abeClientInformation_Param : access AbeClientInformationInterface'Class);
    procedure addTextFieldsIfSimulated (This : in out GameOptionsForm);
    procedure addTextFields (This : in out GameOptionsForm);
    procedure addConfiguration (This : in out GameOptionsForm);
-   procedure initCommands (This : in out GameOptionsForm; cmdListener : CommandListener_Access);
-   procedure save (This : in out GameOptionsForm; abeClientInformation : AbeClientInformationInterface_Access);
+   procedure initCommands (This : in out GameOptionsForm; cmdListener_Param : access CommandListener'Class);
+   procedure save (This : in out GameOptionsForm; abeClientInformation_Param : access AbeClientInformationInterface'Class);
 
 end org.allbinary.game.configuration.GameOptionsForm_Package;
 

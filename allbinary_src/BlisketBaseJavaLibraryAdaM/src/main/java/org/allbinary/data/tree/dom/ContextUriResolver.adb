@@ -24,16 +24,17 @@ package body org.allbinary.data.tree.dom.ContextUriResolver_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ContextUriResolver'Class; basicURIResolver : BasicUriResolver_Access) is
+   procedure Initialize (This : in out ContextUriResolver'Class; basicURIResolver_Param : access BasicUriResolver'Class) is
+      basicURIResolver : BasicUriResolver_Access := BasicUriResolver_Access (basicURIResolver_Param);
    begin
       Initialize_Fields (This);
         This.basicURIResolver := basicURIResolver;
    end Initialize;
 
-   function Create (basicURIResolver : BasicUriResolver_Access) return ContextUriResolver_Access is
+   function Create (basicURIResolver_Param : access BasicUriResolver'Class) return ContextUriResolver_Access is
       This : constant ContextUriResolver_Access := new ContextUriResolver;
    begin
-      ContextUriResolver_Package.Initialize (This.all, basicURIResolver);
+      ContextUriResolver_Package.Initialize (This.all, basicURIResolver_Param);
       return This;
    end Create;
 
@@ -63,7 +64,7 @@ package body org.allbinary.data.tree.dom.ContextUriResolver_Package is
                 stringBuffer.append (This.uriResolverStrings.URL_GLOBAL);
                 stringBuffer.append (This.uriResolverStrings.REQUIRED_EXTENSION);
                 stringBuffer.append (This.basicURIResolver.getExtension);
-                This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, This.uriResolverStrings.RESOLVE);
+                This.logUtil.putF (stringBuffer.toString, ContextUriResolver_Access'(This'Unchecked_Access), This.uriResolverStrings.RESOLVE);
             end if;
             return StreamSource_Package.Create (CryptFileReader_Package.Create (TransformInfoTemplateData_Package.getInstance.UNCRYPTED_EXTENSION, TransformInfoTemplateData_Package.getInstance.ENCRYPTED_EXTENSION).getInputStream (fileAbPath));
         exception

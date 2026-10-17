@@ -42,11 +42,11 @@ package views.admin.payment.gateway.PaymentGatewayViewAbstract_Package is
       paymentGatewayPrimaryKey : PaymentGatewayPrimaryKey_Access;
    end record;
 
-   procedure Initialize (This : in out PaymentGatewayViewAbstract'Class; transformInfoInterface : TransformInfoInterface_Access);
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return PaymentGatewayViewAbstract_Access;
-   procedure getFormData (This : in out PaymentGatewayViewAbstract; request : HttpServletRequest_Access);
+   procedure Initialize (This : in out PaymentGatewayViewAbstract'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return PaymentGatewayViewAbstract_Access;
+   procedure getFormData (This : in out PaymentGatewayViewAbstract; request_Param : access HttpServletRequest'Class);
    function getPaymentGatewayPrimaryKey (This : in out PaymentGatewayViewAbstract) return PaymentGatewayPrimaryKey_Access;
-   procedure setPaymentGatewayPrimaryKey (This : in out PaymentGatewayViewAbstract; paymentGatewayPrimaryKey : PaymentGatewayPrimaryKey_Access);
+   procedure setPaymentGatewayPrimaryKey (This : in out PaymentGatewayViewAbstract; paymentGatewayPrimaryKey_Param : access PaymentGatewayPrimaryKey'Class);
 
 end views.admin.payment.gateway.PaymentGatewayViewAbstract_Package;
 

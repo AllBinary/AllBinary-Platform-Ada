@@ -50,11 +50,11 @@ package servlet.request.RequestHandler_Package is
 
    procedure Initialize (This : in out RequestHandler'Class);
    function Create return RequestHandler_Access;
-   procedure init (This : in out RequestHandler; config : ServletConfig_Access);
+   procedure init (This : in out RequestHandler; config_Param : access ServletConfig'Class);
    procedure destroy (This : in out RequestHandler);
-   procedure processRequest (This : in out RequestHandler; request : HttpServletRequest_Access; response : HttpServletResponse_Access);
-   procedure doGet (This : in out RequestHandler; request : HttpServletRequest_Access; response : HttpServletResponse_Access);
-   procedure doPost (This : in out RequestHandler; request : HttpServletRequest_Access; response : HttpServletResponse_Access);
+   procedure processRequest (This : in out RequestHandler; request_Param : access HttpServletRequest'Class; response_Param : access HttpServletResponse'Class);
+   procedure doGet (This : in out RequestHandler; request_Param : access HttpServletRequest'Class; response_Param : access HttpServletResponse'Class);
+   procedure doPost (This : in out RequestHandler; request_Param : access HttpServletRequest'Class; response_Param : access HttpServletResponse'Class);
    function getServletInfo (This : in out RequestHandler) return Unbounded_String;
 
 end servlet.request.RequestHandler_Package;

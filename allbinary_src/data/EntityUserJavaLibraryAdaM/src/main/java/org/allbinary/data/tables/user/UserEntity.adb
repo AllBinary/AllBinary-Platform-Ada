@@ -44,12 +44,13 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
       return This;
    end Create;
 
-   procedure insert (This : in out UserEntity; values : BasicArrayList_Access) is
+   procedure insert (This : in out UserEntity; values_Param : access BasicArrayList'Class) is
+      values : BasicArrayList_Access := BasicArrayList_Access (values_Param);
    begin
         begin
             AbSqlBean (This).insert (values);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.putF (This.commonStrings.SUCCESS, This'Unchecked_Access, INSERT);
+                This.logUtil.putF (This.commonStrings.SUCCESS, UserEntity_Access'(This'Unchecked_Access), INSERT);
             end if;
         exception
             when Java_Occurrence : others =>
@@ -57,7 +58,7 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, INSERT, e);
+                This.logUtil.put (This.commonStrings.FAILURE, UserEntity_Access'(This'Unchecked_Access), INSERT, e);
             end if;
                 end;
         end;
@@ -70,7 +71,8 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
    end getAdministrators;
 
    --  throws Exception
-   function getStoreManagers (This : in out UserEntity; storeFrontInterface : StoreFrontInterface_Access) return BasicArrayList_Access is
+   function getStoreManagers (This : in out UserEntity; storeFrontInterface_Param : access StoreFrontInterface'Class) return BasicArrayList_Access is
+      storeFrontInterface : StoreFrontInterface_Access := StoreFrontInterface_Access (storeFrontInterface_Param);
       keysAndValues : HashMap_Access;
       usersVector : BasicArrayList_Access;
       usersHashMapVector : BasicArrayList_Access;
@@ -100,7 +102,8 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
    end getCustomers;
 
    --  throws Exception
-   function getUsersWithRole (This : in out UserEntity; userRole : UserRole_Access) return BasicArrayList_Access is
+   function getUsersWithRole (This : in out UserEntity; userRole_Param : access UserRole'Class) return BasicArrayList_Access is
+      userRole : UserRole_Access := UserRole_Access (userRole_Param);
       keysAndValues : HashMap_Access;
       usersVector : BasicArrayList_Access;
       usersHashMapVector : BasicArrayList_Access;
@@ -123,7 +126,8 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
    end getUsersWithRole;
 
    --  throws Exception
-   function getUsers (This : in out UserEntity; storeFrontInterface : StoreFrontInterface_Access) return BasicArrayList_Access is
+   function getUsers (This : in out UserEntity; storeFrontInterface_Param : access StoreFrontInterface'Class) return BasicArrayList_Access is
+      storeFrontInterface : StoreFrontInterface_Access := StoreFrontInterface_Access (storeFrontInterface_Param);
       keysAndValues : HashMap_Access;
       usersVector : BasicArrayList_Access;
       usersHashMapVector : BasicArrayList_Access;
@@ -165,7 +169,7 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
         begin
             AbSqlBean (This).deleteWhere (key, value);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.putF (This.commonStrings.SUCCESS, This'Unchecked_Access, To_Unbounded_String ("deleteWhere"));
+                This.logUtil.putF (This.commonStrings.SUCCESS, UserEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("deleteWhere"));
             end if;
         exception
             when Java_Occurrence : others =>
@@ -173,7 +177,7 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("deleteWhere"), e);
+                This.logUtil.put (This.commonStrings.FAILURE, UserEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("deleteWhere"), e);
             end if;
                 end;
         end;
@@ -193,7 +197,7 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
                 isUserNameAndPasswordCorrect := result.compareTo (SuperCrypt_Package.Create (encryption.intValue).encrypt (password));
             else
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                    This.logUtil.putF (To_Unbounded_String ("Command Success but login failed for user: ") & userName & To_Unbounded_String (" because user did not exist"), This'Unchecked_Access, To_Unbounded_String ("login"));
+                    This.logUtil.putF (To_Unbounded_String ("Command Success but login failed for user: ") & userName & To_Unbounded_String (" because user did not exist"), UserEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("login"));
                 end if;
                 return GLOBALS2.LOGINFAILED;
             end if;
@@ -206,7 +210,7 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
                     stringBuffer.append (password);
                     stringBuffer.append (This.EQUALS);
                     stringBuffer.append (result);
-                    This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("login"));
+                    This.logUtil.putF (stringBuffer.toString, UserEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("login"));
                 end if;
                 return GLOBALS2.LOGINSUCCESS;
             else
@@ -219,7 +223,7 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
                     stringBuffer.append (This.NOT_EQUAL);
                     stringBuffer.append (result);
                     stringBuffer.append (This.END_QUOTES);
-                    This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("login"));
+                    This.logUtil.putF (stringBuffer.toString, UserEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("login"));
                 end if;
                 return GLOBALS2.LOGINFAILED;
             end if;
@@ -229,14 +233,15 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("login"), e);
+                This.logUtil.put (This.commonStrings.FAILURE, UserEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("login"), e);
             end if;
             return To_Unbounded_String ("Error");
                 end;
         end;
    end login;
 
-   procedure update (This : in out UserEntity; userName : Unbounded_String; updatedValues : HashMap_Access) is
+   procedure update (This : in out UserEntity; userName : Unbounded_String; updatedValues_Param : access HashMap'Class) is
+      updatedValues : HashMap_Access := HashMap_Access (updatedValues_Param);
    begin
         AbSqlBean (This).updateWhere (UserData_Package.USERNAME, userName, updatedValues);
    end update;
@@ -261,22 +266,22 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
         return AbSqlBean (This).createTable (This.createTableStatement);
    end createTable;
 
-   procedure getStoreManagers (This : in out UserEntity; storeFrontInterface : StoreFrontInterface_Access) is
-      Java_Result : constant BasicArrayList_Access := UserEntity'Class (This).getStoreManagers (storeFrontInterface);
+   procedure getStoreManagers (This : in out UserEntity; storeFrontInterface_Param : access StoreFrontInterface'Class) is
+      Java_Result : constant BasicArrayList_Access := UserEntity'Class (This).getStoreManagers (storeFrontInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getStoreManagers;
 
-   procedure getUsersWithRole (This : in out UserEntity; userRole : UserRole_Access) is
-      Java_Result : constant BasicArrayList_Access := UserEntity'Class (This).getUsersWithRole (userRole);
+   procedure getUsersWithRole (This : in out UserEntity; userRole_Param : access UserRole'Class) is
+      Java_Result : constant BasicArrayList_Access := UserEntity'Class (This).getUsersWithRole (userRole_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getUsersWithRole;
 
-   procedure getUsers (This : in out UserEntity; storeFrontInterface : StoreFrontInterface_Access) is
-      Java_Result : constant BasicArrayList_Access := UserEntity'Class (This).getUsers (storeFrontInterface);
+   procedure getUsers (This : in out UserEntity; storeFrontInterface_Param : access StoreFrontInterface'Class) is
+      Java_Result : constant BasicArrayList_Access := UserEntity'Class (This).getUsers (storeFrontInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

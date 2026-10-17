@@ -23,31 +23,33 @@ package body org.allbinary.logic.communication.http.request.MultipartRequestPara
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out MultipartRequestParams'Class; request : HttpServletRequest_Access) is
+   procedure Initialize (This : in out MultipartRequestParams'Class; request_Param : access HttpServletRequest'Class) is
+      request : HttpServletRequest_Access := HttpServletRequest_Access (request_Param);
    begin
         RequestParams_Package.Initialize (This);
         Initialize_Fields (This);
         This.processMultipartRequest (request);
    end Initialize;
 
-   function Create (request : HttpServletRequest_Access) return MultipartRequestParams_Access is
+   function Create (request_Param : access HttpServletRequest'Class) return MultipartRequestParams_Access is
       This : constant MultipartRequestParams_Access := new MultipartRequestParams;
    begin
-      MultipartRequestParams_Package.Initialize (This.all, request);
+      MultipartRequestParams_Package.Initialize (This.all, request_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out MultipartRequestParams'Class; pageContext : PageContext_Access) is
+   procedure Initialize (This : in out MultipartRequestParams'Class; pageContext_Param : access PageContext'Class) is
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
    begin
         RequestParams_Package.Initialize (This);
         Initialize_Fields (This);
         This.processMultipartRequest (HttpServletRequest_Access (pageContext.getRequest));
    end Initialize;
 
-   function Create (pageContext : PageContext_Access) return MultipartRequestParams_Access is
+   function Create (pageContext_Param : access PageContext'Class) return MultipartRequestParams_Access is
       This : constant MultipartRequestParams_Access := new MultipartRequestParams;
    begin
-      MultipartRequestParams_Package.Initialize (This.all, pageContext);
+      MultipartRequestParams_Package.Initialize (This.all, pageContext_Param);
       return This;
    end Create;
 
@@ -56,7 +58,8 @@ package body org.allbinary.logic.communication.http.request.MultipartRequestPara
         This.special := True;
    end setSpecial;
 
-   procedure processMultipartRequest (This : in out MultipartRequestParams; request : HttpServletRequest_Access) is
+   procedure processMultipartRequest (This : in out MultipartRequestParams; request_Param : access HttpServletRequest'Class) is
+      request : HttpServletRequest_Access := HttpServletRequest_Access (request_Param);
       specialRequest : HashMap_Access;
       multipartRequestList : List_Access;
       fileItemArray : Java_Object_Access_Array_Access;
@@ -70,7 +73,7 @@ package body org.allbinary.logic.communication.http.request.MultipartRequestPara
             multipartRequestList := AbFileUploadFactory_Package.getInstance.getFileItemStreamList (request);
             if (multipartRequestList) /= (null) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
-                    This.logUtil.putF (To_Unbounded_String ("FileItem List Size: ") & Java_Image (multipartRequestList.size), This'Unchecked_Access, To_Unbounded_String ("processMultipartRequest()"));
+                    This.logUtil.putF (To_Unbounded_String ("FileItem List Size: ") & Java_Image (multipartRequestList.size), MultipartRequestParams_Access'(This'Unchecked_Access), To_Unbounded_String ("processMultipartRequest()"));
                 end if;
                 fileItemArray := multipartRequestList.toArray;
                 size := fileItemArray'Length;
@@ -84,7 +87,7 @@ package body org.allbinary.logic.communication.http.request.MultipartRequestPara
                     end if;
                 end loop;
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
-                    This.logUtil.putF (To_Unbounded_String ("Special Request Data: ") & specialRequest.toString, This'Unchecked_Access, To_Unbounded_String ("processMultipartRequest()"));
+                    This.logUtil.putF (To_Unbounded_String ("Special Request Data: ") & specialRequest.toString, MultipartRequestParams_Access'(This'Unchecked_Access), To_Unbounded_String ("processMultipartRequest()"));
                 end if;
                 This.setSpecial;
                 This.setMap (specialRequest);
@@ -95,7 +98,7 @@ package body org.allbinary.logic.communication.http.request.MultipartRequestPara
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
-                This.logUtil.putF (To_Unbounded_String ("Using Normal RequestParams"), This'Unchecked_Access, To_Unbounded_String ("processMultipartRequest()"));
+                This.logUtil.putF (To_Unbounded_String ("Using Normal RequestParams"), MultipartRequestParams_Access'(This'Unchecked_Access), To_Unbounded_String ("processMultipartRequest()"));
             end if;
             RequestParams (This).setMap (request.getParameterMap);
                 end;

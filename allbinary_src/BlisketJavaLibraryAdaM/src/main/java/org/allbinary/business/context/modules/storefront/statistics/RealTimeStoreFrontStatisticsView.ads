@@ -62,10 +62,10 @@ package org.allbinary.business.context.modules.storefront.statistics.RealTimeSto
       userRole : UserRole_Access;
    end record;
 
-   procedure Initialize (This : in out RealTimeStoreFrontStatisticsView'Class; storeFrontStatisticsInterface : StoreFrontStatisticsInterface_Access; userRole : UserRole_Access);
-   function Create (storeFrontStatisticsInterface : StoreFrontStatisticsInterface_Access; userRole : UserRole_Access) return RealTimeStoreFrontStatisticsView_Access;
-   function toXmlNode (This : in out RealTimeStoreFrontStatisticsView; document : Document_Access) return Node_Access;
-   procedure toXmlNode (This : in out RealTimeStoreFrontStatisticsView; document : Document_Access);
+   procedure Initialize (This : in out RealTimeStoreFrontStatisticsView'Class; storeFrontStatisticsInterface_Param : access StoreFrontStatisticsInterface'Class; userRole_Param : access UserRole'Class);
+   function Create (storeFrontStatisticsInterface_Param : access StoreFrontStatisticsInterface'Class; userRole_Param : access UserRole'Class) return RealTimeStoreFrontStatisticsView_Access;
+   function toXmlNode (This : in out RealTimeStoreFrontStatisticsView; document_Param : access Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out RealTimeStoreFrontStatisticsView; document_Param : access Document'Class);
 
 end org.allbinary.business.context.modules.storefront.statistics.RealTimeStoreFrontStatisticsView_Package;
 

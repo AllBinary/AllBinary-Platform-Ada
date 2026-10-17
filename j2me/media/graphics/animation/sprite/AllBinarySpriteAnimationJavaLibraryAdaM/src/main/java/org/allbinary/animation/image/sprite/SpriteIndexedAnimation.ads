@@ -54,14 +54,14 @@ package org.allbinary.animation.image.sprite.SpriteIndexedAnimation_Package is
       basicColorArray : BasicColor_Access_Array_Access;
    end record;
 
-   procedure Initialize (This : in out SpriteIndexedAnimation'Class; sprite : Sprite_Access; image : Image_Access; basicColorArray : BasicColor_Access_Array_Access; animationBehavior : AnimationBehavior_Access);
-   function Create (sprite : Sprite_Access; image : Image_Access; basicColorArray : BasicColor_Access_Array_Access; animationBehavior : AnimationBehavior_Access) return SpriteIndexedAnimation_Access;
+   procedure Initialize (This : in out SpriteIndexedAnimation'Class; sprite_Param : access Sprite'Class; image_Param : access Image'Class; basicColorArray : BasicColor_Access_Array_Access; animationBehavior_Param : access AnimationBehavior'Class);
+   function Create (sprite_Param : access Sprite'Class; image_Param : access Image'Class; basicColorArray : BasicColor_Access_Array_Access; animationBehavior_Param : access AnimationBehavior'Class) return SpriteIndexedAnimation_Access;
    function getAnimationSize (This : in out SpriteIndexedAnimation) return Integer;
-   procedure setBasicColorP (This : in out SpriteIndexedAnimation; basicColor : BasicColor_Access);
+   procedure setBasicColorP (This : in out SpriteIndexedAnimation; basicColor_Param : access BasicColor'Class);
    function getBasicColorP (This : in out SpriteIndexedAnimation) return BasicColor_Access;
-   procedure paintFrame (This : in out SpriteIndexedAnimation; graphics : Graphics_Access; frame : Integer; x : Integer; y : Integer);
-   procedure paintXY (This : in out SpriteIndexedAnimation; graphics : Graphics_Access; x : Integer; y : Integer);
-   procedure paint (This : in out SpriteIndexedAnimation; graphics : Graphics_Access);
+   procedure paintFrame (This : in out SpriteIndexedAnimation; graphics_Param : access Graphics'Class; frame : Integer; x : Integer; y : Integer);
+   procedure paintXY (This : in out SpriteIndexedAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
+   procedure paint (This : in out SpriteIndexedAnimation; graphics_Param : access Graphics'Class);
    procedure nextFrame (This : in out SpriteIndexedAnimation);
    procedure previousFrame (This : in out SpriteIndexedAnimation);
    function getSize (This : in out SpriteIndexedAnimation) return Integer;

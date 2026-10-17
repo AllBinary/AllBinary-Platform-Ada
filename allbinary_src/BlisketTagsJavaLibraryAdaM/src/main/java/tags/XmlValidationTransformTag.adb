@@ -53,7 +53,7 @@ package body tags.XmlValidationTransformTag_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.IS_VALID, e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, XmlValidationTransformTag_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
             end if;
             Java_Throw (e);
                 end;

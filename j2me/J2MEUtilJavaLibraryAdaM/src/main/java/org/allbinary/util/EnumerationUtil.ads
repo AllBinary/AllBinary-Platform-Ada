@@ -42,12 +42,12 @@ package org.allbinary.util.EnumerationUtil_Package is
    procedure Initialize (This : in out EnumerationUtil'Class);
    function Create return EnumerationUtil_Access;
    function getInstance return EnumerationUtil_Access;
-   function hasMoreElements (This : in out EnumerationUtil; enumeration : Enumeration_Access) return Boolean;
-   procedure hasMoreElements (This : in out EnumerationUtil; enumeration : Enumeration_Access);
-   function nextElement (This : in out EnumerationUtil; enumeration : Enumeration_Access) return Java_Object_Access;
-   procedure nextElement (This : in out EnumerationUtil; enumeration : Enumeration_Access);
-   function getAsArray (This : in out EnumerationUtil; enumeration : Enumeration_Access) return Java_Object_Access_Array_Access;
-   procedure getAsArray (This : in out EnumerationUtil; enumeration : Enumeration_Access);
+   function hasMoreElements (This : in out EnumerationUtil; enumeration_Param : access Enumeration'Class) return Boolean;
+   procedure hasMoreElements (This : in out EnumerationUtil; enumeration_Param : access Enumeration'Class);
+   function nextElement (This : in out EnumerationUtil; enumeration_Param : access Enumeration'Class) return Java_Object_Access;
+   procedure nextElement (This : in out EnumerationUtil; enumeration_Param : access Enumeration'Class);
+   function getAsArray (This : in out EnumerationUtil; enumeration_Param : access Enumeration'Class) return Java_Object_Access_Array_Access;
+   procedure getAsArray (This : in out EnumerationUtil; enumeration_Param : access Enumeration'Class);
 
 end org.allbinary.util.EnumerationUtil_Package;
 

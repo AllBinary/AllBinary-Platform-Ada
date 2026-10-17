@@ -23,17 +23,18 @@ package body org.allbinary.animation.image.AdjustedImageArrayAnimation_Package i
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AdjustedImageArrayAnimation'Class; imageArray : Image_Access_Array_Access; dx : Integer; dy : Integer; animationBehavior : AnimationBehavior_Access) is
+   procedure Initialize (This : in out AdjustedImageArrayAnimation'Class; imageArray : Image_Access_Array_Access; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior'Class) is
+      animationBehavior : AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
    begin
         ImageArrayAnimation_Package.Initialize (This, imageArray, animationBehavior);
         Initialize_Fields (This);
         This.init (dx, dy);
    end Initialize;
 
-   function Create (imageArray : Image_Access_Array_Access; dx : Integer; dy : Integer; animationBehavior : AnimationBehavior_Access) return AdjustedImageArrayAnimation_Access is
+   function Create (imageArray : Image_Access_Array_Access; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior'Class) return AdjustedImageArrayAnimation_Access is
       This : constant AdjustedImageArrayAnimation_Access := new AdjustedImageArrayAnimation;
    begin
-      AdjustedImageArrayAnimation_Package.Initialize (This.all, imageArray, dx, dy, animationBehavior);
+      AdjustedImageArrayAnimation_Package.Initialize (This.all, imageArray, dx, dy, animationBehavior_Param);
       return This;
    end Create;
 
@@ -44,7 +45,8 @@ package body org.allbinary.animation.image.AdjustedImageArrayAnimation_Package i
         This.setDy (dy);
    end init;
 
-   procedure paintXY (This : in out AdjustedImageArrayAnimation; graphics : Graphics_Access; x : Integer; y : Integer) is
+   procedure paintXY (This : in out AdjustedImageArrayAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         ImageArrayAnimation (This).paintXY (graphics, (x) + (This.dx), (y) + (This.dy));
    end paintXY;

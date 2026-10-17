@@ -78,11 +78,11 @@ package org.allbinary.game.input.form.BuildingAdvancedRTSFormInput_Package is
 
    procedure Initialize (This : in out BuildingAdvancedRTSFormInput'Class; groupInterface : Group_Access_Array_Access; isUnitProducer : Boolean);
    function Create (groupInterface : Group_Access_Array_Access; isUnitProducer : Boolean) return BuildingAdvancedRTSFormInput_Access;
-   procedure setAllBinaryGameLayerManager (This : in out BuildingAdvancedRTSFormInput; allBinaryGameLayerManager : AllBinaryGameLayerManager_Access);
+   procedure setAllBinaryGameLayerManager (This : in out BuildingAdvancedRTSFormInput; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class);
    function isPositionBlocked (This : in out BuildingAdvancedRTSFormInput) return Boolean;
-   function isBuildAttemptValid (This : in out BuildingAdvancedRTSFormInput; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; layerInterface : RTSLayer_Access) return Boolean;
-   procedure isBuildAttemptValid (This : in out BuildingAdvancedRTSFormInput; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; layerInterface : RTSLayer_Access);
-   procedure add (This : in out BuildingAdvancedRTSFormInput; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; layerManager : AllBinaryLayerManager_Access; layerInterface : RTSLayer_Access);
+   function isBuildAttemptValid (This : in out BuildingAdvancedRTSFormInput; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; layerInterface_Param : access RTSLayer'Class) return Boolean;
+   procedure isBuildAttemptValid (This : in out BuildingAdvancedRTSFormInput; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; layerInterface_Param : access RTSLayer'Class);
+   procedure add (This : in out BuildingAdvancedRTSFormInput; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; layerManager_Param : access AllBinaryLayerManager'Class; layerInterface_Param : access RTSLayer'Class);
 
 end org.allbinary.game.input.form.BuildingAdvancedRTSFormInput_Package;
 

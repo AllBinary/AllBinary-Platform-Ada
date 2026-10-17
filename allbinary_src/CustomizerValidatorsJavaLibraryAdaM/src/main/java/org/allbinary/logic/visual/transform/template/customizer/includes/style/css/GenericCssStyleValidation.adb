@@ -36,7 +36,8 @@ package body org.allbinary.logic.visual.transform.template.customizer.includes.s
       return This;
    end Create;
 
-   procedure Initialize (This : in out GenericCssStyleValidation'Class; document : Document_Access) is
+   procedure Initialize (This : in out GenericCssStyleValidation'Class; document_Param : access Document'Class) is
+      document : Document_Access := Document_Access (document_Param);
       nodeList : NodeList_Access;
    begin
       Validation_Package.Initialize (This);
@@ -44,29 +45,31 @@ package body org.allbinary.logic.visual.transform.template.customizer.includes.s
         nodeList := document.getElementsByTagName (StylesData_Package.getInstance.NAME);
    end Initialize;
 
-   function Create (document : Document_Access) return GenericCssStyleValidation_Access is
+   function Create (document_Param : access Document'Class) return GenericCssStyleValidation_Access is
       This : constant GenericCssStyleValidation_Access := new GenericCssStyleValidation;
    begin
-      GenericCssStyleValidation_Package.Initialize (This.all, document);
+      GenericCssStyleValidation_Package.Initialize (This.all, document_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out GenericCssStyleValidation'Class; hashMap : HashMap_Access) is
+   procedure Initialize (This : in out GenericCssStyleValidation'Class; hashMap_Param : access HashMap'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
    begin
       Validation_Package.Initialize (This);
       Initialize_Fields (This);
         This.getFormData (hashMap);
    end Initialize;
 
-   function Create (hashMap : HashMap_Access) return GenericCssStyleValidation_Access is
+   function Create (hashMap_Param : access HashMap'Class) return GenericCssStyleValidation_Access is
       This : constant GenericCssStyleValidation_Access := new GenericCssStyleValidation;
    begin
-      GenericCssStyleValidation_Package.Initialize (This.all, hashMap);
+      GenericCssStyleValidation_Package.Initialize (This.all, hashMap_Param);
       return This;
    end Create;
 
    --  throws Exception
-   procedure getFormData (This : in out GenericCssStyleValidation; hashMap : HashMap_Access) is
+   procedure getFormData (This : in out GenericCssStyleValidation; hashMap_Param : access HashMap'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
    begin
         null;
    end getFormData;
@@ -77,10 +80,10 @@ package body org.allbinary.logic.visual.transform.template.customizer.includes.s
         begin
             isValid := True;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.IS_VALID);
+                This.logUtil.putF (This.commonStrings.START, GenericCssStyleValidation_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
             end if;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (To_Unbounded_String ("End: ") & Java_Image (isValid), This'Unchecked_Access, This.commonStrings.IS_VALID);
+                This.logUtil.putF (To_Unbounded_String ("End: ") & Java_Image (isValid), GenericCssStyleValidation_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
             end if;
             return isValid;
         exception
@@ -89,7 +92,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.includes.s
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to validate form"), This'Unchecked_Access, This.commonStrings.IS_VALID, e);
+                This.logUtil.put (To_Unbounded_String ("Failed to validate form"), GenericCssStyleValidation_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
             end if;
             return False;
                 end;
@@ -108,7 +111,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.includes.s
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), This'Unchecked_Access, To_Unbounded_String ("validationInfo()"), e);
+                This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), GenericCssStyleValidation_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
             end if;
             return To_Unbounded_String ("Error Validating Form");
                 end;
@@ -120,28 +123,30 @@ package body org.allbinary.logic.visual.transform.template.customizer.includes.s
         return null;
    end toValidationInfoDoc;
 
-   function toValidationInfoNode (This : in out GenericCssStyleValidation; document : Document_Access) return Node_Access is
+   function toValidationInfoNode (This : in out GenericCssStyleValidation; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
    begin
         return null;
    end toValidationInfoNode;
 
    --  throws Exception
-   function toXmlNode (This : in out GenericCssStyleValidation; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out GenericCssStyleValidation; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       node : Node_Access;
    begin
         node := ModDomHelper_Package.createNameValueNodes (document, BodyData_Package.getInstance.NAME, StringUtil_Package.getInstance.EMPTY_STRING);
         return node;
    end toXmlNode;
 
-   procedure toValidationInfoNode (This : in out GenericCssStyleValidation; document : Document_Access) is
-      Java_Result : constant Node_Access := GenericCssStyleValidation'Class (This).toValidationInfoNode (document);
+   procedure toValidationInfoNode (This : in out GenericCssStyleValidation; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := GenericCssStyleValidation'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toValidationInfoNode;
 
-   procedure toXmlNode (This : in out GenericCssStyleValidation; document : Document_Access) is
-      Java_Result : constant Node_Access := GenericCssStyleValidation'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out GenericCssStyleValidation; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := GenericCssStyleValidation'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

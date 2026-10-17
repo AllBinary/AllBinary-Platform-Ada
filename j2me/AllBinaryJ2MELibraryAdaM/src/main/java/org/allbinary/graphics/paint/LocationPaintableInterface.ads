@@ -29,7 +29,7 @@ package org.allbinary.graphics.paint.LocationPaintableInterface_Package is
    type LocationPaintableInterface_Access is access all LocationPaintableInterface'Class;
    type LocationPaintableInterface_Access_Array is array (Natural range <>) of LocationPaintableInterface_Access;
    type LocationPaintableInterface_Access_Array_Access is access all LocationPaintableInterface_Access_Array;
-   procedure paintXY (This : in out LocationPaintableInterface; graphics : Graphics_Access; x : Integer; y : Integer) is abstract;
+   procedure paintXY (This : in out LocationPaintableInterface; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is abstract;
 
 end org.allbinary.graphics.paint.LocationPaintableInterface_Package;
 

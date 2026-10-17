@@ -32,7 +32,9 @@ package body taghelpers.OrderHistoryHelper_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out OrderHistoryHelper'Class; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) is
+   procedure Initialize (This : in out OrderHistoryHelper'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+      propertiesHashMap : HashMap_Access := HashMap_Access (propertiesHashMap_Param);
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
       storeName : Unbounded_String;
    begin
       TagHelper_Package.Initialize (This);
@@ -48,10 +50,10 @@ package body taghelpers.OrderHistoryHelper_Package is
         This.getFormData;
    end Initialize;
 
-   function Create (propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return OrderHistoryHelper_Access is
+   function Create (propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return OrderHistoryHelper_Access is
       This : constant OrderHistoryHelper_Access := new OrderHistoryHelper;
    begin
-      OrderHistoryHelper_Package.Initialize (This.all, propertiesHashMap, pageContext);
+      OrderHistoryHelper_Package.Initialize (This.all, propertiesHashMap_Param, pageContext_Param);
       return This;
    end Create;
 
@@ -89,7 +91,7 @@ package body taghelpers.OrderHistoryHelper_Package is
                 return To_Unbounded_String ("Order ") & This.id & To_Unbounded_String (" has been cancelled.<br/>");
             end if;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, To_Unbounded_String ("setOrderStatus()"));
+                This.logUtil.putF (success, OrderHistoryHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("setOrderStatus()"));
             end if;
             return To_Unbounded_String ("Error Setting Order Status");
         exception
@@ -99,7 +101,7 @@ package body taghelpers.OrderHistoryHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to set order status");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("setOrderStatus()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, OrderHistoryHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("setOrderStatus()"), e);
             end if;
             return error & To_Unbounded_String ("<br/>") & To_Unbounded_String ("Exception: ") & Java_Image (e) & To_Unbounded_String ("<br/>");
                 end;

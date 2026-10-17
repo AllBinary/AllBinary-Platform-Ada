@@ -26,71 +26,83 @@ package body org.allbinary.input.motion.gesture.observer.GameMotionGestureListen
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out GameMotionGestureListener'Class; signed : CompleteMotionGestureListenerInterface_Access) is
+   procedure Initialize (This : in out GameMotionGestureListener'Class; signed_Param : access CompleteMotionGestureListenerInterface'Class) is
+      signed : CompleteMotionGestureListenerInterface_Access := CompleteMotionGestureListenerInterface_Access (signed_Param);
    begin
       Initialize_Fields (This);
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+        This.logUtil.putF (This.commonStrings.START, GameMotionGestureListener_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         This.signed := signed;
    end Initialize;
 
-   function Create (signed : CompleteMotionGestureListenerInterface_Access) return GameMotionGestureListener_Access is
+   function Create (signed_Param : access CompleteMotionGestureListenerInterface'Class) return GameMotionGestureListener_Access is
       This : constant GameMotionGestureListener_Access := new GameMotionGestureListener;
    begin
-      GameMotionGestureListener_Package.Initialize (This.all, signed);
+      GameMotionGestureListener_Package.Initialize (This.all, signed_Param);
       return This;
    end Create;
 
-   procedure onEvent (This : in out GameMotionGestureListener; eventObject : AllBinaryEventObject_Access) is
+   procedure onEvent (This : in out GameMotionGestureListener; eventObject_Param : access AllBinaryEventObject'Class) is
+      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
    begin
-        ForcedLogUtil_Package.log (This.commonStrings.NOT_IMPLEMENTED, This'Unchecked_Access);
+        ForcedLogUtil_Package.log (This.commonStrings.NOT_IMPLEMENTED, GameMotionGestureListener_Access'(This'Unchecked_Access));
    end onEvent;
 
-   procedure onUpMotionGestureEvent (This : in out GameMotionGestureListener; ev : MotionGestureEvent_Access) is
+   procedure onUpMotionGestureEvent (This : in out GameMotionGestureListener; ev_Param : access MotionGestureEvent'Class) is
+      ev : MotionGestureEvent_Access := MotionGestureEvent_Access (ev_Param);
    begin
         This.onMotionGestureEvent (ev);
    end onUpMotionGestureEvent;
 
-   procedure onDownMotionGestureEvent (This : in out GameMotionGestureListener; ev : MotionGestureEvent_Access) is
+   procedure onDownMotionGestureEvent (This : in out GameMotionGestureListener; ev_Param : access MotionGestureEvent'Class) is
+      ev : MotionGestureEvent_Access := MotionGestureEvent_Access (ev_Param);
    begin
         This.onMotionGestureEvent (ev);
    end onDownMotionGestureEvent;
 
-   procedure onLeftMotionGestureEvent (This : in out GameMotionGestureListener; ev : MotionGestureEvent_Access) is
+   procedure onLeftMotionGestureEvent (This : in out GameMotionGestureListener; ev_Param : access MotionGestureEvent'Class) is
+      ev : MotionGestureEvent_Access := MotionGestureEvent_Access (ev_Param);
    begin
         This.onMotionGestureEvent (ev);
    end onLeftMotionGestureEvent;
 
-   procedure onRightMotionGestureEvent (This : in out GameMotionGestureListener; ev : MotionGestureEvent_Access) is
+   procedure onRightMotionGestureEvent (This : in out GameMotionGestureListener; ev_Param : access MotionGestureEvent'Class) is
+      ev : MotionGestureEvent_Access := MotionGestureEvent_Access (ev_Param);
    begin
         This.onMotionGestureEvent (ev);
    end onRightMotionGestureEvent;
 
-   procedure onDiagonalDownRightMotionGestureEvent (This : in out GameMotionGestureListener; ev : MotionGestureEvent_Access) is
+   procedure onDiagonalDownRightMotionGestureEvent (This : in out GameMotionGestureListener; ev_Param : access MotionGestureEvent'Class) is
+      ev : MotionGestureEvent_Access := MotionGestureEvent_Access (ev_Param);
    begin
         This.onMotionGestureEvent (ev);
    end onDiagonalDownRightMotionGestureEvent;
 
-   procedure onDiagonalDownLeftMotionGestureEvent (This : in out GameMotionGestureListener; ev : MotionGestureEvent_Access) is
+   procedure onDiagonalDownLeftMotionGestureEvent (This : in out GameMotionGestureListener; ev_Param : access MotionGestureEvent'Class) is
+      ev : MotionGestureEvent_Access := MotionGestureEvent_Access (ev_Param);
    begin
         This.onMotionGestureEvent (ev);
    end onDiagonalDownLeftMotionGestureEvent;
 
-   procedure onDiagonalUpRightMotionGestureEvent (This : in out GameMotionGestureListener; ev : MotionGestureEvent_Access) is
+   procedure onDiagonalUpRightMotionGestureEvent (This : in out GameMotionGestureListener; ev_Param : access MotionGestureEvent'Class) is
+      ev : MotionGestureEvent_Access := MotionGestureEvent_Access (ev_Param);
    begin
         This.onMotionGestureEvent (ev);
    end onDiagonalUpRightMotionGestureEvent;
 
-   procedure onDiagonalUpLeftMotionGestureEvent (This : in out GameMotionGestureListener; ev : MotionGestureEvent_Access) is
+   procedure onDiagonalUpLeftMotionGestureEvent (This : in out GameMotionGestureListener; ev_Param : access MotionGestureEvent'Class) is
+      ev : MotionGestureEvent_Access := MotionGestureEvent_Access (ev_Param);
    begin
         This.onMotionGestureEvent (ev);
    end onDiagonalUpLeftMotionGestureEvent;
 
-   procedure onPressedMotionGestureEvent (This : in out GameMotionGestureListener; ev : MotionGestureEvent_Access) is
+   procedure onPressedMotionGestureEvent (This : in out GameMotionGestureListener; ev_Param : access MotionGestureEvent'Class) is
+      ev : MotionGestureEvent_Access := MotionGestureEvent_Access (ev_Param);
    begin
         This.touchGestureCollection.add (ev.getMotionGesture);
    end onPressedMotionGestureEvent;
 
-   procedure released (This : in out GameMotionGestureListener; ev : MotionGestureEvent_Access) is
+   procedure released (This : in out GameMotionGestureListener; ev_Param : access MotionGestureEvent'Class) is
+      ev : MotionGestureEvent_Access := MotionGestureEvent_Access (ev_Param);
       stringBuffer : StringMaker_Access;
    begin
         begin
@@ -105,17 +117,19 @@ package body org.allbinary.input.motion.gesture.observer.GameMotionGestureListen
             stringBuffer := StringMaker_Package.Create;
             stringBuffer.append (This.commonStrings.EXCEPTION_LABEL);
             stringBuffer.append (StringUtil_Package.getInstance.toString (ev.getMotionGesture));
-            This.logUtil.put (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("release"), e);
+            This.logUtil.put (stringBuffer.toString, GameMotionGestureListener_Access'(This'Unchecked_Access), To_Unbounded_String ("release"), e);
                 end;
         end;
    end released;
 
-   procedure onScrolledMotionGestureEvent (This : in out GameMotionGestureListener; motionGestureEvent : MotionGestureEvent_Access) is
+   procedure onScrolledMotionGestureEvent (This : in out GameMotionGestureListener; motionGestureEvent_Param : access MotionGestureEvent'Class) is
+      motionGestureEvent : MotionGestureEvent_Access := MotionGestureEvent_Access (motionGestureEvent_Param);
    begin
         null;
    end onScrolledMotionGestureEvent;
 
-   procedure onMotionGestureEvent (This : in out GameMotionGestureListener; ev : MotionGestureEvent_Access) is
+   procedure onMotionGestureEvent (This : in out GameMotionGestureListener; ev_Param : access MotionGestureEvent'Class) is
+      ev : MotionGestureEvent_Access := MotionGestureEvent_Access (ev_Param);
       motionGestureInput : MotionGestureInput_Access;
       stringBuffer : StringMaker_Access;
    begin
@@ -139,7 +153,7 @@ package body org.allbinary.input.motion.gesture.observer.GameMotionGestureListen
             stringBuffer := StringMaker_Package.Create;
             stringBuffer.append (This.commonStrings.EXCEPTION_LABEL);
             stringBuffer.append (StringUtil_Package.getInstance.toString (ev.getMotionGesture));
-            This.logUtil.put (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("onMotionGestureEvent"), e);
+            This.logUtil.put (stringBuffer.toString, GameMotionGestureListener_Access'(This'Unchecked_Access), To_Unbounded_String ("onMotionGestureEvent"), e);
                 end;
         end;
    end onMotionGestureEvent;

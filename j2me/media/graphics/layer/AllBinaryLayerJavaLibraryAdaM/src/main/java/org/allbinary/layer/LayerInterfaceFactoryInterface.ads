@@ -31,7 +31,7 @@ package org.allbinary.layer.LayerInterfaceFactoryInterface_Package is
    type LayerInterfaceFactoryInterface_Access is access all LayerInterfaceFactoryInterface'Class;
    type LayerInterfaceFactoryInterface_Access_Array is array (Natural range <>) of LayerInterfaceFactoryInterface_Access;
    type LayerInterfaceFactoryInterface_Access_Array_Access is access all LayerInterfaceFactoryInterface_Access_Array;
-   function getNextInstance (This : in out LayerInterfaceFactoryInterface; hashtable : ABHashtable_Access; x : Integer; y : Integer; z : Integer) return AllBinaryLayer_Access is abstract;
+   function getNextInstance (This : in out LayerInterfaceFactoryInterface; hashtable_Param : access ABHashtable'Class; x : Integer; y : Integer; z : Integer) return AllBinaryLayer_Access is abstract;
 
 end org.allbinary.layer.LayerInterfaceFactoryInterface_Package;
 

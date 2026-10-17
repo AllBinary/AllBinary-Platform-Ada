@@ -41,9 +41,9 @@ package org.allbinary.game.ag.ai.ScrollOverXImmediateYStopAI_Package is
 
    type ScrollOverXImmediateYStopAI is new BasicAI with null record;
 
-   procedure Initialize (This : in out ScrollOverXImmediateYStopAI'Class; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access);
-   function Create (ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return ScrollOverXImmediateYStopAI_Access;
-   procedure processAI (This : in out ScrollOverXImmediateYStopAI; allBinaryLayerManager : AllBinaryLayerManager_Access);
+   procedure Initialize (This : in out ScrollOverXImmediateYStopAI'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class);
+   function Create (ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return ScrollOverXImmediateYStopAI_Access;
+   procedure processAI (This : in out ScrollOverXImmediateYStopAI; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class);
 
 end org.allbinary.game.ag.ai.ScrollOverXImmediateYStopAI_Package;
 

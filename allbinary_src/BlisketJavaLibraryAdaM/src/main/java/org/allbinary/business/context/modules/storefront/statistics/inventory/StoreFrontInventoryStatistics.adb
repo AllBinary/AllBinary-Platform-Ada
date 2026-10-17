@@ -23,7 +23,8 @@ package body org.allbinary.business.context.modules.storefront.statistics.invent
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out StoreFrontInventoryStatistics'Class; storeFrontInterface : StoreFrontInterface_Access) is
+   procedure Initialize (This : in out StoreFrontInventoryStatistics'Class; storeFrontInterface_Param : access StoreFrontInterface'Class) is
+      storeFrontInterface : StoreFrontInterface_Access := StoreFrontInterface_Access (storeFrontInterface_Param);
       inventoryEntityInterface : InventoryEntityInterface_Access;
       itemVector : BasicArrayList_Access;
       size : Integer;
@@ -47,10 +48,10 @@ package body org.allbinary.business.context.modules.storefront.statistics.invent
         end loop;
    end Initialize;
 
-   function Create (storeFrontInterface : StoreFrontInterface_Access) return StoreFrontInventoryStatistics_Access is
+   function Create (storeFrontInterface_Param : access StoreFrontInterface'Class) return StoreFrontInventoryStatistics_Access is
       This : constant StoreFrontInventoryStatistics_Access := new StoreFrontInventoryStatistics;
    begin
-      StoreFrontInventoryStatistics_Package.Initialize (This.all, storeFrontInterface);
+      StoreFrontInventoryStatistics_Package.Initialize (This.all, storeFrontInterface_Param);
       return This;
    end Create;
 

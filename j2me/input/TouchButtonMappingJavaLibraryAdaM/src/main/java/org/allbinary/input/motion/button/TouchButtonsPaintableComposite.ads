@@ -79,10 +79,10 @@ package org.allbinary.input.motion.button.TouchButtonsPaintableComposite_Package
       IGNORE : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out TouchButtonsPaintableComposite'Class; inputMappingInterface : InputMappingInterface_Access; basicColor : BasicColor_Access);
-   function Create (inputMappingInterface : InputMappingInterface_Access; basicColor : BasicColor_Access) return TouchButtonsPaintableComposite_Access;
-   procedure onEvent (This : in out TouchButtonsPaintableComposite; eventObject : AllBinaryEventObject_Access);
-   procedure onCompleteMotionGestureInputEvent (This : in out TouchButtonsPaintableComposite; completeMotionGestureInputEvent : CompleteMotionGestureInputEvent_Access);
+   procedure Initialize (This : in out TouchButtonsPaintableComposite'Class; inputMappingInterface_Param : access InputMappingInterface'Class; basicColor_Param : access BasicColor'Class);
+   function Create (inputMappingInterface_Param : access InputMappingInterface'Class; basicColor_Param : access BasicColor'Class) return TouchButtonsPaintableComposite_Access;
+   procedure onEvent (This : in out TouchButtonsPaintableComposite; eventObject_Param : access AllBinaryEventObject'Class);
+   procedure onCompleteMotionGestureInputEvent (This : in out TouchButtonsPaintableComposite; completeMotionGestureInputEvent_Param : access CompleteMotionGestureInputEvent'Class);
    procedure process (This : in out TouchButtonsPaintableComposite);
 
 end org.allbinary.input.motion.button.TouchButtonsPaintableComposite_Package;

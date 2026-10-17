@@ -39,10 +39,10 @@ package org.allbinary.animation.image.AdjustedImageAnimation_Package is
       dy : Integer;
    end record;
 
-   procedure Initialize (This : in out AdjustedImageAnimation'Class; image : Image_Access; dx : Integer; dy : Integer; animationBehavior : AnimationBehavior_Access);
-   function Create (image : Image_Access; dx : Integer; dy : Integer; animationBehavior : AnimationBehavior_Access) return AdjustedImageAnimation_Access;
+   procedure Initialize (This : in out AdjustedImageAnimation'Class; image_Param : access Image'Class; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior'Class);
+   function Create (image_Param : access Image'Class; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior'Class) return AdjustedImageAnimation_Access;
    procedure init (This : in out AdjustedImageAnimation; dx : Integer; dy : Integer);
-   procedure paintXY (This : in out AdjustedImageAnimation; graphics : Graphics_Access; x : Integer; y : Integer);
+   procedure paintXY (This : in out AdjustedImageAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
    procedure setDx (This : in out AdjustedImageAnimation; dx : Integer);
    function getDx (This : in out AdjustedImageAnimation) return Integer;
    procedure setDy (This : in out AdjustedImageAnimation; dy : Integer);

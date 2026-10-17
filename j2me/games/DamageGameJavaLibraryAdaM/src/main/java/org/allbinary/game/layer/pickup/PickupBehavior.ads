@@ -62,13 +62,13 @@ package org.allbinary.game.layer.pickup.PickupBehavior_Package is
    end record;
    NULL_PICKUP_BEHAVIOR : Java_Object_Access;
 
-   procedure Initialize (This : in out PickupBehavior'Class; ownerLayerInterface : CollidableCompositeLayer_Access; countedIndex : Integer);
-   function Create (ownerLayerInterface : CollidableCompositeLayer_Access; countedIndex : Integer) return PickupBehavior_Access;
+   procedure Initialize (This : in out PickupBehavior'Class; ownerLayerInterface_Param : access CollidableCompositeLayer'Class; countedIndex : Integer);
+   function Create (ownerLayerInterface_Param : access CollidableCompositeLayer'Class; countedIndex : Integer) return PickupBehavior_Access;
    function getNullInstance return PickupBehavior_Access;
-   procedure doPickup (This : in out PickupBehavior; pickupProcessorInterface : PickupProcessorInterface_Access);
-   procedure doPickupLayer (This : in out PickupBehavior; pickupLayerInterface : PickedUpLayerInterface_Access);
-   procedure add (This : in out PickupBehavior; countedPickedUpLayerInterfaceFactoryInterface : CountedPickedUpLayerInterfaceFactoryInterface_Access);
-   procedure addAt (This : in out PickupBehavior; countedPickedUpLayerInterfaceFactoryInterface : CountedPickedUpLayerInterfaceFactoryInterface_Access; partIndex : Integer);
+   procedure doPickup (This : in out PickupBehavior; pickupProcessorInterface_Param : access PickupProcessorInterface'Class);
+   procedure doPickupLayer (This : in out PickupBehavior; pickupLayerInterface_Param : access PickedUpLayerInterface'Class);
+   procedure add (This : in out PickupBehavior; countedPickedUpLayerInterfaceFactoryInterface_Param : access CountedPickedUpLayerInterfaceFactoryInterface'Class);
+   procedure addAt (This : in out PickupBehavior; countedPickedUpLayerInterfaceFactoryInterface_Param : access CountedPickedUpLayerInterfaceFactoryInterface'Class; partIndex : Integer);
    function getFirstAvailableCountedLayerInterfaceFactory (This : in out PickupBehavior; pickedUpLayerTypeArray : PickedUpLayerType_Access_Array_Access) return CountedLayerInterfaceFactoryPart_Access;
    procedure getFirstAvailableCountedLayerInterfaceFactory (This : in out PickupBehavior; pickedUpLayerTypeArray : PickedUpLayerType_Access_Array_Access);
    function getCountedLayerInterfaceFactoryForSlot (This : in out PickupBehavior; slotIndex : Integer) return CountedLayerInterfaceFactoryPart_Access;

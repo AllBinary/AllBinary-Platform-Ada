@@ -23,7 +23,8 @@ package body org.allbinary.game.displayable.canvas.PreGameLockablePaintable_Pack
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out PreGameLockablePaintable'Class; paintableForm : ScrollCurrentSelectionForm_Access; lockedIndex : Integer) is
+   procedure Initialize (This : in out PreGameLockablePaintable'Class; paintableForm_Param : access ScrollCurrentSelectionForm'Class; lockedIndex : Integer) is
+      paintableForm : ScrollCurrentSelectionForm_Access := ScrollCurrentSelectionForm_Access (paintableForm_Param);
    begin
         LockablePaintable_Package.Initialize (This, lockedIndex);
         Initialize_Fields (This);
@@ -31,14 +32,15 @@ package body org.allbinary.game.displayable.canvas.PreGameLockablePaintable_Pack
         This.halfWidth := (GameFeatureImageCacheFactory_Package.getInstance.getWithKey (LockedResources_Package.getInstance.LOCKED_DEMO_GAME_FEATURE_RESOURCE).getWidth) / (2);
    end Initialize;
 
-   function Create (paintableForm : ScrollCurrentSelectionForm_Access; lockedIndex : Integer) return PreGameLockablePaintable_Access is
+   function Create (paintableForm_Param : access ScrollCurrentSelectionForm'Class; lockedIndex : Integer) return PreGameLockablePaintable_Access is
       This : constant PreGameLockablePaintable_Access := new PreGameLockablePaintable;
    begin
-      PreGameLockablePaintable_Package.Initialize (This.all, paintableForm, lockedIndex);
+      PreGameLockablePaintable_Package.Initialize (This.all, paintableForm_Param, lockedIndex);
       return This;
    end Create;
 
-   procedure paint (This : in out PreGameLockablePaintable; graphics : Graphics_Access; currentIndex : Integer; x : Integer; y : Integer) is
+   procedure paint (This : in out PreGameLockablePaintable; graphics_Param : access Graphics'Class; currentIndex : Integer; x : Integer; y : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         if (LockedUtil_Package.getInstance.isLocked) and then ((This.getPaintableForm.getSelectedIndex) >= (This.getLockedIndex)) then
             This.getAnimation.paintXY (graphics, (This.getPaintableForm.getDx) - (This.halfWidth), (This.getPaintableForm.getDy) + (34));

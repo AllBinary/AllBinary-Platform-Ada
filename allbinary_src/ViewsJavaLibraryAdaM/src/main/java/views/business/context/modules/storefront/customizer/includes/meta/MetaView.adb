@@ -23,17 +23,18 @@ package body views.business.context.modules.storefront.customizer.includes.meta.
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out MetaView'Class; transformInfoInterface : TransformInfoInterface_Access) is
+   procedure Initialize (This : in out MetaView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
         This.metasValidation := MetasValidation_Package.Create (This.getWeblisketSession.getStoreName);
    end Initialize;
 
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return MetaView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return MetaView_Access is
       This : constant MetaView_Access := new MetaView;
    begin
-      MetaView_Package.Initialize (This.all, transformInfoInterface);
+      MetaView_Package.Initialize (This.all, transformInfoInterface_Param);
       return This;
    end Create;
 
@@ -43,7 +44,8 @@ package body views.business.context.modules.storefront.customizer.includes.meta.
    end addDomNodeInterfaces;
 
    --  throws Exception
-   function toXmlNode (This : in out MetaView; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out MetaView; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
    begin
         begin
             return This.metasValidation.toXmlNode (document);
@@ -53,7 +55,7 @@ package body views.business.context.modules.storefront.customizer.includes.meta.
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.XSLLOGGINGERROR) then
-                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("toXmlNode"), e);
+                This.logUtil.put (This.commonStrings.FAILURE, MetaView_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode"), e);
             end if;
             Java_Throw (e);
                 end;
@@ -72,15 +74,15 @@ package body views.business.context.modules.storefront.customizer.includes.meta.
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("view()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, MetaView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
             end if;
             Java_Throw (e);
                 end;
         end;
    end view;
 
-   procedure toXmlNode (This : in out MetaView; document : Document_Access) is
-      Java_Result : constant Node_Access := MetaView'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out MetaView; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := MetaView'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

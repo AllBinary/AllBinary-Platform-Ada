@@ -46,7 +46,7 @@ package org.allbinary.game.configuration.GameConfigurationTextInput_Package is
 
    procedure Initialize (This : in out GameConfigurationTextInput'Class; label : Unbounded_String; text : Unbounded_String);
    function Create (label : Unbounded_String; text : Unbounded_String) return GameConfigurationTextInput_Access;
-   procedure update (textField : TextField_Access);
+   procedure update (textField_Param : access TextField'Class);
    procedure setText (This : in out GameConfigurationTextInput; text : Unbounded_String);
    function getText (This : in out GameConfigurationTextInput) return Unbounded_String;
    procedure setLabel (This : in out GameConfigurationTextInput; label : Unbounded_String);

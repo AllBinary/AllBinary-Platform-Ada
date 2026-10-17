@@ -36,12 +36,14 @@ package body org.allbinary.game.input.motion.action.GameKeyFromMotionGestureEven
    end Create;
 
 
-   procedure onEvent (This : in out GameKeyFromMotionGestureEventListener; eventObject : AllBinaryEventObject_Access) is
+   procedure onEvent (This : in out GameKeyFromMotionGestureEventListener; eventObject_Param : access AllBinaryEventObject'Class) is
+      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
    begin
-        ForcedLogUtil_Package.log (EventStrings_Package.getInstance.PERFORMANCE_MESSAGE, This'Unchecked_Access);
+        ForcedLogUtil_Package.log (EventStrings_Package.getInstance.PERFORMANCE_MESSAGE, GameKeyFromMotionGestureEventListener_Access'(This'Unchecked_Access));
    end onEvent;
 
-   procedure onCompleteMotionGestureInputEvent (This : in out GameKeyFromMotionGestureEventListener; completeMotionGestureInputEvent : CompleteMotionGestureInputEvent_Access) is
+   procedure onCompleteMotionGestureInputEvent (This : in out GameKeyFromMotionGestureEventListener; completeMotionGestureInputEvent_Param : access CompleteMotionGestureInputEvent'Class) is
+      completeMotionGestureInputEvent : CompleteMotionGestureInputEvent_Access := CompleteMotionGestureInputEvent_Access (completeMotionGestureInputEvent_Param);
       gameKeyCompleteMotionGestureInputEvent : GameKeyCompleteMotionGestureInputEvent_Access;
       gameKeyEvent : GameKeyEvent_Access;
       commonStrings : CommonStrings_Access;
@@ -64,7 +66,7 @@ package body org.allbinary.game.input.motion.action.GameKeyFromMotionGestureEven
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("onCompleteMotionGestureInputEvent"), e);
+            This.logUtil.put (commonStrings.EXCEPTION_Id, GameKeyFromMotionGestureEventListener_Access'(This'Unchecked_Access), To_Unbounded_String ("onCompleteMotionGestureInputEvent"), e);
                 end;
         end;
    end onCompleteMotionGestureInputEvent;

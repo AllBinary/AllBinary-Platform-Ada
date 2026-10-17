@@ -48,8 +48,8 @@ package org.allbinary.logic.communication.log.LogUtil_Package is
    function Create return LogUtil_Access;
    function getInstance return LogUtil_Access;
    procedure init (This : in out LogUtil);
-   procedure putL (This : in out LogUtil; log : Log_Access);
-   procedure put (This : in out LogUtil; specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String; exception_Id : Java_Object_Access);
+   procedure putL (This : in out LogUtil; log_Param : access Log'Class);
+   procedure put (This : in out LogUtil; specialMessage : Unbounded_String; anyType_Param : access Java_Object'Class; functionName : Unbounded_String; exception_Id_Param : access Java_Object'Class);
 
 end org.allbinary.logic.communication.log.LogUtil_Package;
 

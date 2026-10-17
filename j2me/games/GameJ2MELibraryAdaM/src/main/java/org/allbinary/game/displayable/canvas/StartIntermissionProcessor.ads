@@ -43,8 +43,8 @@ package org.allbinary.game.displayable.canvas.StartIntermissionProcessor_Package
       WAIT : Long_Long_Integer;
    end record;
 
-   procedure Initialize (This : in out StartIntermissionProcessor'Class; gameCanvas : AllBinaryGameCanvas_Access);
-   function Create (gameCanvas : AllBinaryGameCanvas_Access) return StartIntermissionProcessor_Access;
+   procedure Initialize (This : in out StartIntermissionProcessor'Class; gameCanvas_Param : access AllBinaryGameCanvas'Class);
+   function Create (gameCanvas_Param : access AllBinaryGameCanvas'Class) return StartIntermissionProcessor_Access;
    procedure process (This : in out StartIntermissionProcessor);
 
 end org.allbinary.game.displayable.canvas.StartIntermissionProcessor_Package;

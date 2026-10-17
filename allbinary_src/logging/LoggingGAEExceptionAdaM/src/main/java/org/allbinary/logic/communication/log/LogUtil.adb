@@ -43,10 +43,11 @@ package body org.allbinary.logic.communication.log.LogUtil_Package is
 
    procedure init (This : in out LogUtil) is
    begin
-        PreLogUtil_Package.put (To_Unbounded_String ("Loggin Initialized"), This'Unchecked_Access, To_Unbounded_String ("init()"));
+        PreLogUtil_Package.put (To_Unbounded_String ("Loggin Initialized"), LogUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("init()"));
    end init;
 
-   procedure putL (This : in out LogUtil; log : Log_Access) is
+   procedure putL (This : in out LogUtil; log_Param : access Log'Class) is
+      log : Log_Access := Log_Access (log_Param);
       exception_Id : Java_Object_Access;
       specialMessage : Unbounded_String;
       anyType : Java_Object_Access;
@@ -63,8 +64,8 @@ package body org.allbinary.logic.communication.log.LogUtil_Package is
                 functionName := log.getFunctionName;
                 className := CommonStrings_Package.getInstance.EMPTY;
                 clazz := anyType.all'Tag;
-                if (clazz.getName) /= (Null_Unbounded_String) then
-                    className := clazz.getName;
+                if (To_Unbounded_String (Ada.Tags.Expanded_Name (clazz))) /= (Null_Unbounded_String) then
+                    className := To_Unbounded_String (Ada.Tags.Expanded_Name (clazz));
                 end if;
                 message := This.logFormatUtil.get (className, functionName, specialMessage, exception_Id);
                 This.logger.log (Level_Package.INFO, message);
@@ -79,7 +80,9 @@ package body org.allbinary.logic.communication.log.LogUtil_Package is
         end;
    end putL;
 
-   procedure put (This : in out LogUtil; specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String; exception_Id : Java_Object_Access) is
+   procedure put (This : in out LogUtil; specialMessage : Unbounded_String; anyType_Param : access Java_Object'Class; functionName : Unbounded_String; exception_Id_Param : access Java_Object'Class) is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      exception_Id : Java_Object_Access := Java_Object_Access (exception_Id_Param);
       className : Unbounded_String;
       clazz : Ada.Tags.Tag;
       message : Unbounded_String;
@@ -87,8 +90,8 @@ package body org.allbinary.logic.communication.log.LogUtil_Package is
         begin
             className := CommonStrings_Package.getInstance.EMPTY;
             clazz := anyType.all'Tag;
-            if (clazz.getName) /= (Null_Unbounded_String) then
-                className := clazz.getName;
+            if (To_Unbounded_String (Ada.Tags.Expanded_Name (clazz))) /= (Null_Unbounded_String) then
+                className := To_Unbounded_String (Ada.Tags.Expanded_Name (clazz));
             end if;
             message := This.logFormatUtil.getS (className, functionName, specialMessage);
             if (exception_Id) /= (null) then

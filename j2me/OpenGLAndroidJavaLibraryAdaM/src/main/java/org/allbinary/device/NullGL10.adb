@@ -108,17 +108,20 @@ package body org.allbinary.device.NullGL10_Package is
         return;
    end glColorMask;
 
-   procedure glColorPointer (This : in out NullGL10; size : Integer; type_Id : Integer; stride : Integer; pointer : Buffer_Access) is
+   procedure glColorPointer (This : in out NullGL10; size : Integer; type_Id : Integer; stride : Integer; pointer_Param : access Buffer'Class) is
+      pointer : Buffer_Access := Buffer_Access (pointer_Param);
    begin
         return;
    end glColorPointer;
 
-   procedure glCompressedTexImage2D (This : in out NullGL10; target : Integer; level : Integer; internalformat : Integer; width : Integer; height : Integer; border : Integer; imageSize : Integer; data : Buffer_Access) is
+   procedure glCompressedTexImage2D (This : in out NullGL10; target : Integer; level : Integer; internalformat : Integer; width : Integer; height : Integer; border : Integer; imageSize : Integer; data_Param : access Buffer'Class) is
+      data : Buffer_Access := Buffer_Access (data_Param);
    begin
         return;
    end glCompressedTexImage2D;
 
-   procedure glCompressedTexSubImage2D (This : in out NullGL10; target : Integer; level : Integer; xoffset : Integer; yoffset : Integer; width : Integer; height : Integer; format : Integer; imageSize : Integer; data : Buffer_Access) is
+   procedure glCompressedTexSubImage2D (This : in out NullGL10; target : Integer; level : Integer; xoffset : Integer; yoffset : Integer; width : Integer; height : Integer; format : Integer; imageSize : Integer; data_Param : access Buffer'Class) is
+      data : Buffer_Access := Buffer_Access (data_Param);
    begin
         return;
    end glCompressedTexSubImage2D;
@@ -143,7 +146,8 @@ package body org.allbinary.device.NullGL10_Package is
         return;
    end glDeleteTextures;
 
-   procedure glDeleteTextures (This : in out NullGL10; n : Integer; textures : IntBuffer_Access) is
+   procedure glDeleteTextures (This : in out NullGL10; n : Integer; textures_Param : access IntBuffer'Class) is
+      textures : IntBuffer_Access := IntBuffer_Access (textures_Param);
    begin
         return;
    end glDeleteTextures;
@@ -183,7 +187,8 @@ package body org.allbinary.device.NullGL10_Package is
         return;
    end glDrawArrays;
 
-   procedure glDrawElements (This : in out NullGL10; mode : Integer; count : Integer; type_Id : Integer; indices : Buffer_Access) is
+   procedure glDrawElements (This : in out NullGL10; mode : Integer; count : Integer; type_Id : Integer; indices_Param : access Buffer'Class) is
+      indices : Buffer_Access := Buffer_Access (indices_Param);
    begin
         return;
    end glDrawElements;
@@ -218,7 +223,8 @@ package body org.allbinary.device.NullGL10_Package is
         return;
    end glFogfv;
 
-   procedure glFogfv (This : in out NullGL10; pname : Integer; params : FloatBuffer_Access) is
+   procedure glFogfv (This : in out NullGL10; pname : Integer; params_Param : access FloatBuffer'Class) is
+      params : FloatBuffer_Access := FloatBuffer_Access (params_Param);
    begin
         return;
    end glFogfv;
@@ -233,7 +239,8 @@ package body org.allbinary.device.NullGL10_Package is
         null;
    end glFogxv;
 
-   procedure glFogxv (This : in out NullGL10; pname : Integer; params : IntBuffer_Access) is
+   procedure glFogxv (This : in out NullGL10; pname : Integer; params_Param : access IntBuffer'Class) is
+      params : IntBuffer_Access := IntBuffer_Access (params_Param);
    begin
         null;
    end glFogxv;
@@ -258,7 +265,8 @@ package body org.allbinary.device.NullGL10_Package is
         return;
    end glGenTextures;
 
-   procedure glGenTextures (This : in out NullGL10; n : Integer; textures : IntBuffer_Access) is
+   procedure glGenTextures (This : in out NullGL10; n : Integer; textures_Param : access IntBuffer'Class) is
+      textures : IntBuffer_Access := IntBuffer_Access (textures_Param);
    begin
         return;
    end glGenTextures;
@@ -273,7 +281,8 @@ package body org.allbinary.device.NullGL10_Package is
         return;
    end glGetIntegerv;
 
-   procedure glGetIntegerv (This : in out NullGL10; pname : Integer; params : IntBuffer_Access) is
+   procedure glGetIntegerv (This : in out NullGL10; pname : Integer; params_Param : access IntBuffer'Class) is
+      params : IntBuffer_Access := IntBuffer_Access (params_Param);
    begin
         return;
    end glGetIntegerv;
@@ -298,7 +307,8 @@ package body org.allbinary.device.NullGL10_Package is
         return;
    end glLightModelfv;
 
-   procedure glLightModelfv (This : in out NullGL10; pname : Integer; params : FloatBuffer_Access) is
+   procedure glLightModelfv (This : in out NullGL10; pname : Integer; params_Param : access FloatBuffer'Class) is
+      params : FloatBuffer_Access := FloatBuffer_Access (params_Param);
    begin
         return;
    end glLightModelfv;
@@ -313,7 +323,8 @@ package body org.allbinary.device.NullGL10_Package is
         null;
    end glLightModelxv;
 
-   procedure glLightModelxv (This : in out NullGL10; pname : Integer; params : IntBuffer_Access) is
+   procedure glLightModelxv (This : in out NullGL10; pname : Integer; params_Param : access IntBuffer'Class) is
+      params : IntBuffer_Access := IntBuffer_Access (params_Param);
    begin
         null;
    end glLightModelxv;
@@ -328,7 +339,8 @@ package body org.allbinary.device.NullGL10_Package is
         return;
    end glLightfv;
 
-   procedure glLightfv (This : in out NullGL10; light : Integer; pname : Integer; params : FloatBuffer_Access) is
+   procedure glLightfv (This : in out NullGL10; light : Integer; pname : Integer; params_Param : access FloatBuffer'Class) is
+      params : FloatBuffer_Access := FloatBuffer_Access (params_Param);
    begin
         return;
    end glLightfv;
@@ -343,7 +355,8 @@ package body org.allbinary.device.NullGL10_Package is
         null;
    end glLightxv;
 
-   procedure glLightxv (This : in out NullGL10; light : Integer; pname : Integer; params : IntBuffer_Access) is
+   procedure glLightxv (This : in out NullGL10; light : Integer; pname : Integer; params_Param : access IntBuffer'Class) is
+      params : IntBuffer_Access := IntBuffer_Access (params_Param);
    begin
         null;
    end glLightxv;
@@ -368,7 +381,8 @@ package body org.allbinary.device.NullGL10_Package is
         return;
    end glLoadMatrixf;
 
-   procedure glLoadMatrixf (This : in out NullGL10; m : FloatBuffer_Access) is
+   procedure glLoadMatrixf (This : in out NullGL10; m_Param : access FloatBuffer'Class) is
+      m : FloatBuffer_Access := FloatBuffer_Access (m_Param);
    begin
         return;
    end glLoadMatrixf;
@@ -378,7 +392,8 @@ package body org.allbinary.device.NullGL10_Package is
         null;
    end glLoadMatrixx;
 
-   procedure glLoadMatrixx (This : in out NullGL10; m : IntBuffer_Access) is
+   procedure glLoadMatrixx (This : in out NullGL10; m_Param : access IntBuffer'Class) is
+      m : IntBuffer_Access := IntBuffer_Access (m_Param);
    begin
         null;
    end glLoadMatrixx;
@@ -398,7 +413,8 @@ package body org.allbinary.device.NullGL10_Package is
         return;
    end glMaterialfv;
 
-   procedure glMaterialfv (This : in out NullGL10; face : Integer; pname : Integer; params : FloatBuffer_Access) is
+   procedure glMaterialfv (This : in out NullGL10; face : Integer; pname : Integer; params_Param : access FloatBuffer'Class) is
+      params : FloatBuffer_Access := FloatBuffer_Access (params_Param);
    begin
         return;
    end glMaterialfv;
@@ -413,7 +429,8 @@ package body org.allbinary.device.NullGL10_Package is
         null;
    end glMaterialxv;
 
-   procedure glMaterialxv (This : in out NullGL10; face : Integer; pname : Integer; params : IntBuffer_Access) is
+   procedure glMaterialxv (This : in out NullGL10; face : Integer; pname : Integer; params_Param : access IntBuffer'Class) is
+      params : IntBuffer_Access := IntBuffer_Access (params_Param);
    begin
         null;
    end glMaterialxv;
@@ -428,7 +445,8 @@ package body org.allbinary.device.NullGL10_Package is
         return;
    end glMultMatrixf;
 
-   procedure glMultMatrixf (This : in out NullGL10; m : FloatBuffer_Access) is
+   procedure glMultMatrixf (This : in out NullGL10; m_Param : access FloatBuffer'Class) is
+      m : FloatBuffer_Access := FloatBuffer_Access (m_Param);
    begin
         return;
    end glMultMatrixf;
@@ -438,7 +456,8 @@ package body org.allbinary.device.NullGL10_Package is
         null;
    end glMultMatrixx;
 
-   procedure glMultMatrixx (This : in out NullGL10; m : IntBuffer_Access) is
+   procedure glMultMatrixx (This : in out NullGL10; m_Param : access IntBuffer'Class) is
+      m : IntBuffer_Access := IntBuffer_Access (m_Param);
    begin
         null;
    end glMultMatrixx;
@@ -463,7 +482,8 @@ package body org.allbinary.device.NullGL10_Package is
         null;
    end glNormal3x;
 
-   procedure glNormalPointer (This : in out NullGL10; type_Id : Integer; stride : Integer; pointer : Buffer_Access) is
+   procedure glNormalPointer (This : in out NullGL10; type_Id : Integer; stride : Integer; pointer_Param : access Buffer'Class) is
+      pointer : Buffer_Access := Buffer_Access (pointer_Param);
    begin
         return;
    end glNormalPointer;
@@ -513,7 +533,8 @@ package body org.allbinary.device.NullGL10_Package is
         return;
    end glPushMatrix;
 
-   procedure glReadPixels (This : in out NullGL10; x : Integer; y : Integer; width : Integer; height : Integer; format : Integer; type_Id : Integer; pixels : Buffer_Access) is
+   procedure glReadPixels (This : in out NullGL10; x : Integer; y : Integer; width : Integer; height : Integer; format : Integer; type_Id : Integer; pixels_Param : access Buffer'Class) is
+      pixels : Buffer_Access := Buffer_Access (pixels_Param);
    begin
         return;
    end glReadPixels;
@@ -573,7 +594,8 @@ package body org.allbinary.device.NullGL10_Package is
         return;
    end glStencilOp;
 
-   procedure glTexCoordPointer (This : in out NullGL10; size : Integer; type_Id : Integer; stride : Integer; pointer : Buffer_Access) is
+   procedure glTexCoordPointer (This : in out NullGL10; size : Integer; type_Id : Integer; stride : Integer; pointer_Param : access Buffer'Class) is
+      pointer : Buffer_Access := Buffer_Access (pointer_Param);
    begin
         return;
    end glTexCoordPointer;
@@ -588,7 +610,8 @@ package body org.allbinary.device.NullGL10_Package is
         return;
    end glTexEnvfv;
 
-   procedure glTexEnvfv (This : in out NullGL10; target : Integer; pname : Integer; params : FloatBuffer_Access) is
+   procedure glTexEnvfv (This : in out NullGL10; target : Integer; pname : Integer; params_Param : access FloatBuffer'Class) is
+      params : FloatBuffer_Access := FloatBuffer_Access (params_Param);
    begin
         return;
    end glTexEnvfv;
@@ -603,12 +626,14 @@ package body org.allbinary.device.NullGL10_Package is
         null;
    end glTexEnvxv;
 
-   procedure glTexEnvxv (This : in out NullGL10; target : Integer; pname : Integer; params : IntBuffer_Access) is
+   procedure glTexEnvxv (This : in out NullGL10; target : Integer; pname : Integer; params_Param : access IntBuffer'Class) is
+      params : IntBuffer_Access := IntBuffer_Access (params_Param);
    begin
         null;
    end glTexEnvxv;
 
-   procedure glTexImage2D (This : in out NullGL10; target : Integer; level : Integer; internalformat : Integer; width : Integer; height : Integer; border : Integer; format : Integer; type_Id : Integer; pixels : Buffer_Access) is
+   procedure glTexImage2D (This : in out NullGL10; target : Integer; level : Integer; internalformat : Integer; width : Integer; height : Integer; border : Integer; format : Integer; type_Id : Integer; pixels_Param : access Buffer'Class) is
+      pixels : Buffer_Access := Buffer_Access (pixels_Param);
    begin
         return;
    end glTexImage2D;
@@ -623,7 +648,8 @@ package body org.allbinary.device.NullGL10_Package is
         null;
    end glTexParameterx;
 
-   procedure glTexSubImage2D (This : in out NullGL10; target : Integer; level : Integer; xoffset : Integer; yoffset : Integer; width : Integer; height : Integer; format : Integer; type_Id : Integer; pixels : Buffer_Access) is
+   procedure glTexSubImage2D (This : in out NullGL10; target : Integer; level : Integer; xoffset : Integer; yoffset : Integer; width : Integer; height : Integer; format : Integer; type_Id : Integer; pixels_Param : access Buffer'Class) is
+      pixels : Buffer_Access := Buffer_Access (pixels_Param);
    begin
         return;
    end glTexSubImage2D;
@@ -638,7 +664,8 @@ package body org.allbinary.device.NullGL10_Package is
         null;
    end glTranslatex;
 
-   procedure glVertexPointer (This : in out NullGL10; size : Integer; type_Id : Integer; stride : Integer; pointer : Buffer_Access) is
+   procedure glVertexPointer (This : in out NullGL10; size : Integer; type_Id : Integer; stride : Integer; pointer_Param : access Buffer'Class) is
+      pointer : Buffer_Access := Buffer_Access (pointer_Param);
    begin
         return;
    end glVertexPointer;

@@ -44,8 +44,8 @@ package org.allbinary.game.ag.ai.scroller.RandomPatrolAIFactory_Package is
 
    procedure Initialize (This : in out RandomPatrolAIFactory'Class);
    function Create return RandomPatrolAIFactory_Access;
-   function getInstance (This : in out RandomPatrolAIFactory; hashtable : ABHashtable_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return ArtificialIntelligenceInterface_Access;
-   procedure getInstance (This : in out RandomPatrolAIFactory; hashtable : ABHashtable_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access);
+   function getInstance (This : in out RandomPatrolAIFactory; hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return ArtificialIntelligenceInterface_Access;
+   procedure getInstance (This : in out RandomPatrolAIFactory; hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class);
 
 end org.allbinary.game.ag.ai.scroller.RandomPatrolAIFactory_Package;
 

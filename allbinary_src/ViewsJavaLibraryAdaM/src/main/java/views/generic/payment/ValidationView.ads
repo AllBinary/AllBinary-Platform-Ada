@@ -42,12 +42,12 @@ package views.generic_Id.payment.ValidationView_Package is
 
    type ValidationView is new PaymentView and ValidationComponentInterface with null record;
 
-   procedure Initialize (This : in out ValidationView'Class; transformInfoInterface : TransformInfoInterface_Access);
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return ValidationView_Access;
+   procedure Initialize (This : in out ValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return ValidationView_Access;
    function isValid (This : in out ValidationView) return Boolean;
    function toValidationInfoDoc (This : in out ValidationView) return Document_Access;
-   function toValidationInfoNode (This : in out ValidationView; document : Document_Access) return Node_Access;
-   procedure toValidationInfoNode (This : in out ValidationView; document : Document_Access);
+   function toValidationInfoNode (This : in out ValidationView; document_Param : access Document'Class) return Node_Access;
+   procedure toValidationInfoNode (This : in out ValidationView; document_Param : access Document'Class);
    function validationInfo (This : in out ValidationView) return Unbounded_String;
 
 end views.generic_Id.payment.ValidationView_Package;

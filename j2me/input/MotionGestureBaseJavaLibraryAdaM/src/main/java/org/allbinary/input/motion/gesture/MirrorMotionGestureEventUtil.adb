@@ -36,7 +36,8 @@ package body org.allbinary.input.motion.gesture.MirrorMotionGestureEventUtil_Pac
    end Create;
 
    --  throws Exception
-   function mirrorVerticle (This : in out MirrorMotionGestureEventUtil; motionGestureEvent : MotionGestureEvent_Access; halfWidth : Integer) return MotionGestureEvent_Access is
+   function mirrorVerticle (This : in out MirrorMotionGestureEventUtil; motionGestureEvent_Param : access MotionGestureEvent'Class; halfWidth : Integer) return MotionGestureEvent_Access is
+      motionGestureEvent : MotionGestureEvent_Access := MotionGestureEvent_Access (motionGestureEvent_Param);
       event : MotionGestureEvent_Access;
       previousNewX : Integer;
       currentNewX : Integer;
@@ -72,8 +73,8 @@ package body org.allbinary.input.motion.gesture.MirrorMotionGestureEventUtil_Pac
         return MirrorMotionGestureEventUtil_Package.instance;
    end getInstance;
 
-   procedure mirrorVerticle (This : in out MirrorMotionGestureEventUtil; motionGestureEvent : MotionGestureEvent_Access; halfWidth : Integer) is
-      Java_Result : constant MotionGestureEvent_Access := MirrorMotionGestureEventUtil'Class (This).mirrorVerticle (motionGestureEvent, halfWidth);
+   procedure mirrorVerticle (This : in out MirrorMotionGestureEventUtil; motionGestureEvent_Param : access MotionGestureEvent'Class; halfWidth : Integer) is
+      Java_Result : constant MotionGestureEvent_Access := MirrorMotionGestureEventUtil'Class (This).mirrorVerticle (motionGestureEvent_Param, halfWidth);
       pragma Unreferenced (Java_Result);
    begin
       null;

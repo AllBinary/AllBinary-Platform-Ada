@@ -55,10 +55,10 @@ package org.allbinary.logic.system.security.licensing.AbeClientLicense_Package i
       licenseType : LicenseType_Access;
    end record;
 
-   procedure Initialize (This : in out AbeClientLicense'Class; hashtable : ABHashtable_Access);
-   function Create (hashtable : ABHashtable_Access) return AbeClientLicense_Access;
-   function hasRequiredKeys (resultHashtable : ABHashtable_Access) return Boolean;
-   procedure hasRequiredKeys (resultHashtable : ABHashtable_Access);
+   procedure Initialize (This : in out AbeClientLicense'Class; hashtable_Param : access ABHashtable'Class);
+   function Create (hashtable_Param : access ABHashtable'Class) return AbeClientLicense_Access;
+   function hasRequiredKeys (resultHashtable_Param : access ABHashtable'Class) return Boolean;
+   procedure hasRequiredKeys (resultHashtable_Param : access ABHashtable'Class);
    function hasKey (This : in out AbeClientLicense) return Boolean;
    function getKey (This : in out AbeClientLicense; keyName : Unbounded_String) return Unbounded_String;
    procedure getKey (This : in out AbeClientLicense; keyName : Unbounded_String);

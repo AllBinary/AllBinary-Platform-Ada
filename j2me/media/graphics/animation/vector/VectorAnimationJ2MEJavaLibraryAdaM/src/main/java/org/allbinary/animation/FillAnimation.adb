@@ -12,7 +12,8 @@ package body org.allbinary.animation.FillAnimation_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out FillAnimation'Class; pixelBuffer : Integer_Array_Access; width : Integer; height : Integer; animationBehavior : AnimationBehavior_Access) is
+   procedure Initialize (This : in out FillAnimation'Class; pixelBuffer : Integer_Array_Access; width : Integer; height : Integer; animationBehavior_Param : access AnimationBehavior'Class) is
+      animationBehavior : AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
    begin
         IndexedAnimation_Package.Initialize (This, animationBehavior);
         Initialize_Fields (This);
@@ -21,14 +22,15 @@ package body org.allbinary.animation.FillAnimation_Package is
         This.pixelBuffer := pixelBuffer;
    end Initialize;
 
-   function Create (pixelBuffer : Integer_Array_Access; width : Integer; height : Integer; animationBehavior : AnimationBehavior_Access) return FillAnimation_Access is
+   function Create (pixelBuffer : Integer_Array_Access; width : Integer; height : Integer; animationBehavior_Param : access AnimationBehavior'Class) return FillAnimation_Access is
       This : constant FillAnimation_Access := new FillAnimation;
    begin
-      FillAnimation_Package.Initialize (This.all, pixelBuffer, width, height, animationBehavior);
+      FillAnimation_Package.Initialize (This.all, pixelBuffer, width, height, animationBehavior_Param);
       return This;
    end Create;
 
-   procedure setBasicColorP (This : in out FillAnimation; basicColor : BasicColor_Access) is
+   procedure setBasicColorP (This : in out FillAnimation; basicColor_Param : access BasicColor'Class) is
+      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
       changed : Boolean;
    begin
         changed := False;
@@ -41,7 +43,8 @@ package body org.allbinary.animation.FillAnimation_Package is
         end if;
    end setBasicColorP;
 
-   procedure changeBasicColor (This : in out FillAnimation; basicColor : BasicColor_Access) is
+   procedure changeBasicColor (This : in out FillAnimation; basicColor_Param : access BasicColor'Class) is
+      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
       changed : Boolean;
    begin
         changed := False;
@@ -82,7 +85,8 @@ package body org.allbinary.animation.FillAnimation_Package is
         null;
    end updateModifiers;
 
-   procedure paint (This : in out FillAnimation; g : Graphics_Access) is
+   procedure paint (This : in out FillAnimation; g_Param : access Graphics'Class) is
+      g : Graphics_Access := Graphics_Access (g_Param);
    begin
         g.drawRGB (This.pixelBuffer, 0, This.width, 0, 0, This.width, This.height, True);
    end paint;

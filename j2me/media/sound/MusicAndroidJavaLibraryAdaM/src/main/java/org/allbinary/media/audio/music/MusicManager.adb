@@ -27,24 +27,25 @@ package body org.allbinary.media.audio.music.MusicManager_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out MusicManager'Class; musicServiceClass : Ada.Tags.Tag; songList : BasicArrayList_Access) is
+   procedure Initialize (This : in out MusicManager'Class; musicServiceClass : Ada.Tags.Tag; songList_Param : access BasicArrayList'Class) is
+      songList : BasicArrayList_Access := BasicArrayList_Access (songList_Param);
    begin
       Initialize_Fields (This);
-        PreLogUtil_Package.put ((This.commonStateStrings.CONTEXT) + (This.resourceUtil.getContext), This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+        PreLogUtil_Package.put ((This.commonStateStrings.CONTEXT) + (This.resourceUtil.getContext), MusicManager_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         This.musicServiceClass := musicServiceClass;
         This.currentIntent := Intent_Package.Create (This.resourceUtil.getContext, musicServiceClass);
         This.songList := songList;
    end Initialize;
 
-   function Create (musicServiceClass : Ada.Tags.Tag; songList : BasicArrayList_Access) return MusicManager_Access is
+   function Create (musicServiceClass : Ada.Tags.Tag; songList_Param : access BasicArrayList'Class) return MusicManager_Access is
       This : constant MusicManager_Access := new MusicManager;
    begin
-      MusicManager_Package.Initialize (This.all, musicServiceClass, songList);
+      MusicManager_Package.Initialize (This.all, musicServiceClass, songList_Param);
       return This;
    end Create;
 
-   procedure nextSong (This : in out MusicManager; nextSongSound_Param : Sound_Access; leftVolume : Integer; rightVolume : Integer) is
-      nextSongSound : Sound_Access := nextSongSound_Param;
+   procedure nextSong (This : in out MusicManager; nextSongSound_Param : access Sound'Class; leftVolume : Integer; rightVolume : Integer) is
+      nextSongSound : Sound_Access := Sound_Access (nextSongSound_Param);
    begin
         if (nextSongSound) = (null) then
             nextSongSound := NoSound_Package.getInstance;
@@ -70,7 +71,7 @@ package body org.allbinary.media.audio.music.MusicManager_Package is
             return;
         end if;
         if This.timeDelayHelper2.isTime (This.gameTickTimeDelayHelper.startTime) then
-            if This.androidServicesUtil.isServiceRunning (This.musicServiceClass.getName) then
+            if This.androidServicesUtil.isServiceRunning (To_Unbounded_String (Ada.Tags.Expanded_Name (This.musicServiceClass))) then
                 null;
             else
                 This.startNewSong;
@@ -87,7 +88,7 @@ package body org.allbinary.media.audio.music.MusicManager_Package is
         while (Java_Pre_Decrement (index)) >= (0) loop
             sound := Sound_Access (This.songList.get (index));
             duration := Long_Long_Integer (sound.getDuration);
-            PreLogUtil_Package.put (StringMaker_Package.Create.append (This.PLAY).append (sound.getResource).append (This.FOR_Id).appendlong (duration).toString, This'Unchecked_Access, This.commonStrings.PROCESS);
+            PreLogUtil_Package.put (StringMaker_Package.Create.append (This.PLAY).append (sound.getResource).append (This.FOR_Id).appendlong (duration).toString, MusicManager_Access'(This'Unchecked_Access), This.commonStrings.PROCESS);
         end loop;
    end show;
 
@@ -104,7 +105,7 @@ package body org.allbinary.media.audio.music.MusicManager_Package is
                 This.nextSongSound := NoSound_Package.getInstance;
             end if;
             duration := Long_Long_Integer (This.currentSongSound.getDuration);
-            PreLogUtil_Package.put (StringMaker_Package.Create.append (This.PLAY).append (This.currentSongSound.getResource).append (This.FOR_Id).appendlong (duration).toString, This'Unchecked_Access, This.commonStrings.PROCESS);
+            PreLogUtil_Package.put (StringMaker_Package.Create.append (This.PLAY).append (This.currentSongSound.getResource).append (This.FOR_Id).appendlong (duration).toString, MusicManager_Access'(This'Unchecked_Access), This.commonStrings.PROCESS);
             This.timeDelayHelper.delay_Id := Integer (duration);
             This.currentIntent.putExtra (This.musicStrings.SONG_EXTRA, This.resourceUtil.getResourceId (This.currentSongSound.getResource).intValue);
             This.currentIntent.putExtra (This.musicStrings.LEFT_VOLUME, This.leftVolume);
@@ -119,7 +120,7 @@ package body org.allbinary.media.audio.music.MusicManager_Package is
             if (This.currentSongSound) /= (null) then
                 resource := This.currentSongSound.getResource;
             end if;
-            PreLogUtil_Package.putOE (Java_Image (This.commonStrings.EXCEPTION_LABEL) & resource, This'Unchecked_Access, This.commonStrings.PROCESS, e);
+            PreLogUtil_Package.putOE (Java_Image (This.commonStrings.EXCEPTION_LABEL) & resource, MusicManager_Access'(This'Unchecked_Access), This.commonStrings.PROCESS, e);
                 end;
         end;
    end startNewSong;
@@ -130,7 +131,8 @@ package body org.allbinary.media.audio.music.MusicManager_Package is
         This.resourceUtil.getContext.stopService (This.currentIntent);
    end stop;
 
-   procedure pause (activity : Activity_Access; musicServiceClass : Ada.Tags.Tag) is
+   procedure pause (activity_Param : access Activity'Class; musicServiceClass : Ada.Tags.Tag) is
+      activity : Activity_Access := Activity_Access (activity_Param);
       commonStateStrings : CommonStateStrings_Access;
       musicPauseIntent : Intent_Access;
    begin
@@ -140,11 +142,12 @@ package body org.allbinary.media.audio.music.MusicManager_Package is
         activity.startService (musicPauseIntent);
    end pause;
 
-   procedure resume (activity : Activity_Access; musicServiceClass : Ada.Tags.Tag) is
+   procedure resume (activity_Param : access Activity'Class; musicServiceClass : Ada.Tags.Tag) is
+      activity : Activity_Access := Activity_Access (activity_Param);
       commonStateStrings : CommonStateStrings_Access;
       musicResumeIntent : Intent_Access;
    begin
-        if AndroidServicesUtil_Package.getInstance.isServiceRunning (musicServiceClass.getName) then
+        if AndroidServicesUtil_Package.getInstance.isServiceRunning (To_Unbounded_String (Ada.Tags.Expanded_Name (musicServiceClass))) then
             commonStateStrings := CommonStateStrings_Package.getInstance;
             musicResumeIntent := Intent_Package.Create (activity, musicServiceClass);
             musicResumeIntent.putExtra (commonStateStrings.ON_START_COMMAND, 2);

@@ -42,7 +42,7 @@ package org.allbinary.graphics.j2me.workarea.tools.Points_Package is
    function Create return Points_Access;
    procedure init (This : in out Points);
    function getPoints (This : in out Points) return BasicArrayList_Access;
-   procedure addPoints (This : in out Points; vector : BasicArrayList_Access);
+   procedure addPoints (This : in out Points; vector_Param : access BasicArrayList'Class);
    function isValid (This : in out Points) return Boolean;
    function getSize (This : in out Points) return Integer;
 

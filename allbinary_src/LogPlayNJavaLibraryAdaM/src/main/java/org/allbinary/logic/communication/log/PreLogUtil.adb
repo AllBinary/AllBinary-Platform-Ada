@@ -34,7 +34,8 @@ package body org.allbinary.logic.communication.log.PreLogUtil_Package is
       return This;
    end Create;
 
-   procedure put (specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String) is
+   procedure put (specialMessage : Unbounded_String; anyType_Param : access Java_Object'Class; functionName : Unbounded_String) is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
       className : Unbounded_String;
       message : Unbounded_String;
    begin
@@ -47,7 +48,9 @@ package body org.allbinary.logic.communication.log.PreLogUtil_Package is
         PlayN_Package.log.debug (Java_Image (PreLogUtil_Package.LOG_SUCCESS) & message);
    end put;
 
-   procedure putOE (specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String; exception_Id : Java_Object_Access) is
+   procedure putOE (specialMessage : Unbounded_String; anyType_Param : access Java_Object'Class; functionName : Unbounded_String; exception_Id_Param : access Java_Object'Class) is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      exception_Id : Java_Object_Access := Java_Object_Access (exception_Id_Param);
       className : Unbounded_String;
       message : Unbounded_String;
    begin
@@ -67,7 +70,8 @@ package body org.allbinary.logic.communication.log.PreLogUtil_Package is
         PlayN_Package.log.debug (Java_Image (PreLogUtil_Package.LOG_SUCCESS) & message);
    end putS;
 
-   procedure putSE (specialMessage : Unbounded_String; className : Unbounded_String; functionName : Unbounded_String; exception_Id : Java_Object_Access) is
+   procedure putSE (specialMessage : Unbounded_String; className : Unbounded_String; functionName : Unbounded_String; exception_Id_Param : access Java_Object'Class) is
+      exception_Id : Java_Object_Access := Java_Object_Access (exception_Id_Param);
       message : Unbounded_String;
    begin
         message := LogFormatUtil_Package.getInstance.get (className, functionName, specialMessage, exception_Id);
@@ -75,8 +79,8 @@ package body org.allbinary.logic.communication.log.PreLogUtil_Package is
    end putSE;
 
 
-   procedure getClassName (anyType : Java_Object_Access) is
-      Java_Result : constant Unbounded_String := getClassName (anyType);
+   procedure getClassName (anyType_Param : access Java_Object'Class) is
+      Java_Result : constant Unbounded_String := getClassName (anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

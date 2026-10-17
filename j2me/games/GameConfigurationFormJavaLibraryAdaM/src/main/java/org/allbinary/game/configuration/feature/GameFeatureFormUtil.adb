@@ -40,7 +40,8 @@ package body org.allbinary.game.configuration.feature.GameFeatureFormUtil_Packag
         return GameFeatureFormUtil_Package.instance;
    end getInstance;
 
-   function getChoiceGroup (This : in out GameFeatureFormUtil; hashtable : ABHashtable_Access; name : Unbounded_String; option : Integer) return ChoiceGroup_Access is
+   function getChoiceGroup (This : in out GameFeatureFormUtil; hashtable_Param : access ABHashtable'Class; name : Unbounded_String; option : Integer) return ChoiceGroup_Access is
+      hashtable : ABHashtable_Access := ABHashtable_Access (hashtable_Param);
       stringMaker : StringMaker_Access;
       choiceGroup : ChoiceGroup_Access;
       list : BasicArrayList_Access;
@@ -61,7 +62,7 @@ package body org.allbinary.game.configuration.feature.GameFeatureFormUtil_Packag
         for index in 0 .. (size) - 1 loop
             gameFeature := Feature_Access (list.objectArray (index));
             stringMaker.delete (0, stringMaker.length);
-            This.logUtil.putF (stringMaker.append (name).append (ADD_CHOICE).append (gameFeature.toString).toString, This'Unchecked_Access, GET_CHOICE_GROUP);
+            This.logUtil.putF (stringMaker.append (name).append (ADD_CHOICE).append (gameFeature.toString).toString, GameFeatureFormUtil_Access'(This'Unchecked_Access), GET_CHOICE_GROUP);
             choiceGroup.append (gameFeature.toString, NullImage_Package.NULL_IMAGE);
             if features.isFeature (gameFeature) then
                 choiceGroup.setSelectedIndex (index, True);
@@ -70,7 +71,9 @@ package body org.allbinary.game.configuration.feature.GameFeatureFormUtil_Packag
         return choiceGroup;
    end getChoiceGroup;
 
-   procedure addChoiceGroup (This : in out GameFeatureFormUtil; form : CommandForm_Access; hashtable : ABHashtable_Access; option : Integer) is
+   procedure addChoiceGroup (This : in out GameFeatureFormUtil; form_Param : access CommandForm'Class; hashtable_Param : access ABHashtable'Class; option : Integer) is
+      form : CommandForm_Access := CommandForm_Access (form_Param);
+      hashtable : ABHashtable_Access := ABHashtable_Access (hashtable_Param);
       stringMaker : StringMaker_Access;
       ADDING_CHOICE_GROUP : Unbounded_String;
       ADD_CHOICE_GROUP : Unbounded_String;
@@ -88,13 +91,14 @@ package body org.allbinary.game.configuration.feature.GameFeatureFormUtil_Packag
         for index in 0 .. (size) - 1 loop
             name := Unbounded_String (objectArray (index));
             stringMaker.delete (0, stringMaker.length);
-            This.logUtil.putF (stringMaker.append (ADDING_CHOICE_GROUP).append (name).toString, This'Unchecked_Access, ADD_CHOICE_GROUP);
+            This.logUtil.putF (stringMaker.append (ADDING_CHOICE_GROUP).append (name).toString, GameFeatureFormUtil_Access'(This'Unchecked_Access), ADD_CHOICE_GROUP);
             This.meUtil.appendItem (form, This.getChoiceGroup (hashtable, name, option));
         end loop;
    end addChoiceGroup;
 
    --  throws Exception
-   procedure setDefault (This : in out GameFeatureFormUtil; form : CommandForm_Access) is
+   procedure setDefault (This : in out GameFeatureFormUtil; form_Param : access CommandForm'Class) is
+      form : CommandForm_Access := CommandForm_Access (form_Param);
       size : Integer;
       item : Item_Access;
       index : Integer;
@@ -110,8 +114,8 @@ package body org.allbinary.game.configuration.feature.GameFeatureFormUtil_Packag
         end loop;
    end setDefault;
 
-   procedure getChoiceGroup (This : in out GameFeatureFormUtil; hashtable : ABHashtable_Access; name : Unbounded_String; option : Integer) is
-      Java_Result : constant ChoiceGroup_Access := GameFeatureFormUtil'Class (This).getChoiceGroup (hashtable, name, option);
+   procedure getChoiceGroup (This : in out GameFeatureFormUtil; hashtable_Param : access ABHashtable'Class; name : Unbounded_String; option : Integer) is
+      Java_Result : constant ChoiceGroup_Access := GameFeatureFormUtil'Class (This).getChoiceGroup (hashtable_Param, name, option);
       pragma Unreferenced (Java_Result);
    begin
       null;

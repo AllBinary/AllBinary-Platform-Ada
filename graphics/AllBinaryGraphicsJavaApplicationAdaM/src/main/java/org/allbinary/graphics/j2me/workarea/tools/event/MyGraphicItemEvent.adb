@@ -21,15 +21,16 @@ package body org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out MyGraphicItemEvent'Class; source : Java_Object_Access) is
+   procedure Initialize (This : in out MyGraphicItemEvent'Class; source_Param : access Java_Object'Class) is
+      source : Java_Object_Access := Java_Object_Access (source_Param);
    begin
         EventObject_Package.Initialize (This, source);
    end Initialize;
 
-   function Create (source : Java_Object_Access) return MyGraphicItemEvent_Access is
+   function Create (source_Param : access Java_Object'Class) return MyGraphicItemEvent_Access is
       This : constant MyGraphicItemEvent_Access := new MyGraphicItemEvent;
    begin
-      MyGraphicItemEvent_Package.Initialize (This.all, source);
+      MyGraphicItemEvent_Package.Initialize (This.all, source_Param);
       return This;
    end Create;
 

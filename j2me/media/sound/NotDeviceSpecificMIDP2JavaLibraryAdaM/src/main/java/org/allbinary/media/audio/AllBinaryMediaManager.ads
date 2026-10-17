@@ -60,8 +60,8 @@ package org.allbinary.media.audio.AllBinaryMediaManager_Package is
    function isMuted return Boolean;
    procedure setMuted (aMuted : Boolean);
    function update return Boolean;
-   procedure init (soundsFactoryInterface : SoundsFactoryInterface_Access);
-   procedure shutdown (soundsFactoryInterface : SoundsFactoryInterface_Access);
+   procedure init (soundsFactoryInterface_Param : access SoundsFactoryInterface'Class);
+   procedure shutdown (soundsFactoryInterface_Param : access SoundsFactoryInterface'Class);
    function createPlayer (resource : Unbounded_String) return Player_Access;
    procedure createPlayer (resource : Unbounded_String);
    procedure playTone (frequency : Integer; time : Integer; volume : Integer);

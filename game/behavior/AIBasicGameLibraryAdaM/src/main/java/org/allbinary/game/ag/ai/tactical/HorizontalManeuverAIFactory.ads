@@ -44,8 +44,8 @@ package org.allbinary.game.ag.ai.tactical.HorizontalManeuverAIFactory_Package is
 
    procedure Initialize (This : in out HorizontalManeuverAIFactory'Class);
    function Create return HorizontalManeuverAIFactory_Access;
-   function getInstance (This : in out HorizontalManeuverAIFactory; hashtable : ABHashtable_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return ArtificialIntelligenceInterface_Access;
-   procedure getInstance (This : in out HorizontalManeuverAIFactory; hashtable : ABHashtable_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access);
+   function getInstance (This : in out HorizontalManeuverAIFactory; hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return ArtificialIntelligenceInterface_Access;
+   procedure getInstance (This : in out HorizontalManeuverAIFactory; hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class);
 
 end org.allbinary.game.ag.ai.tactical.HorizontalManeuverAIFactory_Package;
 

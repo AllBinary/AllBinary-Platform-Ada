@@ -39,7 +39,9 @@ package body admin.tags.ParentInventoryTagHelper_Package is
    end getInstance;
 
    --  throws Exception
-   procedure isValid (This : in out ParentInventoryTagHelper; tagClass : Java_Object_Access; parentTag : Tag_Access) is
+   procedure isValid (This : in out ParentInventoryTagHelper; tagClass_Param : access Java_Object'Class; parentTag_Param : access Tag'Class) is
+      tagClass : Java_Object_Access := Java_Object_Access (tagClass_Param);
+      parentTag : Tag_Access := Tag_Access (parentTag_Param);
       stringBuffer : StringMaker_Access;
    begin
         if (parentTag) = (null) then

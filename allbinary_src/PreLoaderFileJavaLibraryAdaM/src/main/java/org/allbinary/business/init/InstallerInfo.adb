@@ -59,7 +59,7 @@ package body org.allbinary.business.init.InstallerInfo_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PRELOADERERROR) then
-                This.logUtil.putF (To_Unbounded_String ("Failed"), This'Unchecked_Access, To_Unbounded_String ("write"));
+                This.logUtil.putF (To_Unbounded_String ("Failed"), InstallerInfo_Access'(This'Unchecked_Access), To_Unbounded_String ("write"));
             end if;
             Java_Throw (e);
                 end;
@@ -87,7 +87,7 @@ package body org.allbinary.business.init.InstallerInfo_Package is
                 This.setPassword (WeakCrypt_Package.Create (2).decrypt (decryptedPassword));
             else
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PRELOADER) then
-                    This.logUtil.putF (To_Unbounded_String ("Not a File - Failed Loading: ") & FILEABPATH.toString, This'Unchecked_Access, To_Unbounded_String ("read"));
+                    This.logUtil.putF (To_Unbounded_String ("Not a File - Failed Loading: ") & FILEABPATH.toString, InstallerInfo_Access'(This'Unchecked_Access), To_Unbounded_String ("read"));
                 end if;
             end if;
         exception
@@ -96,7 +96,7 @@ package body org.allbinary.business.init.InstallerInfo_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PRELOADERERROR) then
-                This.logUtil.putF (To_Unbounded_String ("Failed"), This'Unchecked_Access, To_Unbounded_String ("read"));
+                This.logUtil.putF (To_Unbounded_String ("Failed"), InstallerInfo_Access'(This'Unchecked_Access), To_Unbounded_String ("read"));
             end if;
                 end;
         end;
@@ -125,7 +125,7 @@ package body org.allbinary.business.init.InstallerInfo_Package is
             This.read;
             if ((InstallerInfo_Package.userName) = (null)) or else ((InstallerInfo_Package.password) = (null)) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PRELOADER) then
-                    This.logUtil.putF (To_Unbounded_String ("Failed"), This'Unchecked_Access, To_Unbounded_String ("updateIfNeeded"));
+                    This.logUtil.putF (To_Unbounded_String ("Failed"), InstallerInfo_Access'(This'Unchecked_Access), To_Unbounded_String ("updateIfNeeded"));
                 end if;
             end if;
         end if;

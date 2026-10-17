@@ -21,15 +21,16 @@ package body org.allbinary.android.input.motion.event.AnalogControllerConfigurat
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AnalogControllerConfigurationEvent'Class; anyType : Java_Object_Access) is
+   procedure Initialize (This : in out AnalogControllerConfigurationEvent'Class; anyType_Param : access Java_Object'Class) is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         AllBinaryEventObject_Package.Initialize (This, anyType);
    end Initialize;
 
-   function Create (anyType : Java_Object_Access) return AnalogControllerConfigurationEvent_Access is
+   function Create (anyType_Param : access Java_Object'Class) return AnalogControllerConfigurationEvent_Access is
       This : constant AnalogControllerConfigurationEvent_Access := new AnalogControllerConfigurationEvent;
    begin
-      AnalogControllerConfigurationEvent_Package.Initialize (This.all, anyType);
+      AnalogControllerConfigurationEvent_Package.Initialize (This.all, anyType_Param);
       return This;
    end Create;
 

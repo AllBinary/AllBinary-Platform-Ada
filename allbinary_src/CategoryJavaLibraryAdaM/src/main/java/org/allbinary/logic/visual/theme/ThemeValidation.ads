@@ -106,14 +106,14 @@ package org.allbinary.logic.visual.theme.ThemeValidation_Package is
       fileAbPath : AbPath_Access;
    end record;
 
-   procedure Initialize (This : in out ThemeValidation'Class; transformInfoInterface : TransformInfoInterface_Access; cssStyleValidation : CssStyleValidation_Access; categoryThemePath : Unbounded_String);
-   function Create (transformInfoInterface : TransformInfoInterface_Access; cssStyleValidation : CssStyleValidation_Access; categoryThemePath : Unbounded_String) return ThemeValidation_Access;
-   procedure Initialize (This : in out ThemeValidation'Class; transformInfoInterface : TransformInfoInterface_Access; hashMap : HashMap_Access);
-   function Create (transformInfoInterface : TransformInfoInterface_Access; hashMap : HashMap_Access) return ThemeValidation_Access;
-   procedure Initialize (This : in out ThemeValidation'Class; storeThemeCategoryInterface : StoreThemeCategoryInterface_Access; node : Node_Access);
-   function Create (storeThemeCategoryInterface : StoreThemeCategoryInterface_Access; node : Node_Access) return ThemeValidation_Access;
+   procedure Initialize (This : in out ThemeValidation'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; cssStyleValidation_Param : access CssStyleValidation'Class; categoryThemePath : Unbounded_String);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class; cssStyleValidation_Param : access CssStyleValidation'Class; categoryThemePath : Unbounded_String) return ThemeValidation_Access;
+   procedure Initialize (This : in out ThemeValidation'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; hashMap_Param : access HashMap'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class; hashMap_Param : access HashMap'Class) return ThemeValidation_Access;
+   procedure Initialize (This : in out ThemeValidation'Class; storeThemeCategoryInterface_Param : access StoreThemeCategoryInterface'Class; node_Param : access Node'Class);
+   function Create (storeThemeCategoryInterface_Param : access StoreThemeCategoryInterface'Class; node_Param : access Node'Class) return ThemeValidation_Access;
    procedure init (This : in out ThemeValidation);
-   procedure init (This : in out ThemeValidation; storeThemeCategoryInterface : StoreThemeCategoryInterface_Access);
+   procedure init (This : in out ThemeValidation; storeThemeCategoryInterface_Param : access StoreThemeCategoryInterface'Class);
    function getTransformInfoInterface (This : in out ThemeValidation) return TransformInfoInterface_Access;
    function getName (This : in out ThemeValidation) return Unbounded_String;
    function getPreviewImageName (This : in out ThemeValidation) return Unbounded_String;
@@ -123,13 +123,13 @@ package org.allbinary.logic.visual.theme.ThemeValidation_Package is
    function isValid (This : in out ThemeValidation) return Boolean;
    function validationInfo (This : in out ThemeValidation) return Unbounded_String;
    function toValidationInfoDoc (This : in out ThemeValidation) return Document_Access;
-   function toValidationInfoNode (This : in out ThemeValidation; document : Document_Access) return Node_Access;
-   procedure toValidationInfoNode (This : in out ThemeValidation; document : Document_Access);
+   function toValidationInfoNode (This : in out ThemeValidation; document_Param : access Document'Class) return Node_Access;
+   procedure toValidationInfoNode (This : in out ThemeValidation; document_Param : access Document'Class);
    function getKey (This : in out ThemeValidation) return Java_Object_Access;
    function toVector (This : in out ThemeValidation) return BasicArrayList_Access;
    function toHashMap (This : in out ThemeValidation) return HashMap_Access;
-   function toXmlNode (This : in out ThemeValidation; document : Document_Access) return Node_Access;
-   procedure toXmlNode (This : in out ThemeValidation; document : Document_Access);
+   function toXmlNode (This : in out ThemeValidation; document_Param : access Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out ThemeValidation; document_Param : access Document'Class);
 
 end org.allbinary.logic.visual.theme.ThemeValidation_Package;
 

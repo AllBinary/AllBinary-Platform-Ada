@@ -52,30 +52,31 @@ package body org.allbinary.input.automation.robot.NullInputRobot_Package is
 
    procedure keyPress (This : in out NullInputRobot; keycode : Integer) is
    begin
-        This.logUtil.putF (To_Unbounded_String ("KeyCode: ") & Java_Image (keycode), This'Unchecked_Access, To_Unbounded_String ("keyPress"));
+        This.logUtil.putF (To_Unbounded_String ("KeyCode: ") & Java_Image (keycode), NullInputRobot_Access'(This'Unchecked_Access), To_Unbounded_String ("keyPress"));
    end keyPress;
 
    procedure keyRelease (This : in out NullInputRobot; keycode : Integer) is
    begin
-        This.logUtil.putF (To_Unbounded_String ("KeyCode: ") & Java_Image (keycode), This'Unchecked_Access, To_Unbounded_String ("keyRelease"));
+        This.logUtil.putF (To_Unbounded_String ("KeyCode: ") & Java_Image (keycode), NullInputRobot_Access'(This'Unchecked_Access), To_Unbounded_String ("keyRelease"));
    end keyRelease;
 
    procedure mouseMove (This : in out NullInputRobot; x : Integer; y : Integer) is
    begin
-        This.logUtil.putF (To_Unbounded_String ("X: ") & Java_Image (x) & To_Unbounded_String (" Y: ") & Java_Image (y), This'Unchecked_Access, To_Unbounded_String ("mouseMove"));
+        This.logUtil.putF (To_Unbounded_String ("X: ") & Java_Image (x) & To_Unbounded_String (" Y: ") & Java_Image (y), NullInputRobot_Access'(This'Unchecked_Access), To_Unbounded_String ("mouseMove"));
    end mouseMove;
 
    procedure mousePress (This : in out NullInputRobot; buttons : Integer) is
    begin
-        This.logUtil.putF (To_Unbounded_String ("Buttons: ") & Java_Image (buttons), This'Unchecked_Access, To_Unbounded_String ("mousePress"));
+        This.logUtil.putF (To_Unbounded_String ("Buttons: ") & Java_Image (buttons), NullInputRobot_Access'(This'Unchecked_Access), To_Unbounded_String ("mousePress"));
    end mousePress;
 
    procedure mouseRelease (This : in out NullInputRobot; buttons : Integer) is
    begin
-        This.logUtil.putF (To_Unbounded_String ("Buttons: ") & Java_Image (buttons), This'Unchecked_Access, To_Unbounded_String ("mouseRelease"));
+        This.logUtil.putF (To_Unbounded_String ("Buttons: ") & Java_Image (buttons), NullInputRobot_Access'(This'Unchecked_Access), To_Unbounded_String ("mouseRelease"));
    end mouseRelease;
 
-   function createScreenCapture (This : in out NullInputRobot; screenRect : Rectangle_Access) return BufferedImage_Access is
+   function createScreenCapture (This : in out NullInputRobot; screenRect_Param : access Rectangle'Class) return BufferedImage_Access is
+      screenRect : Rectangle_Access := Rectangle_Access (screenRect_Param);
    begin
         return null;
    end createScreenCapture;
@@ -125,8 +126,8 @@ package body org.allbinary.input.automation.robot.NullInputRobot_Package is
         null;
    end waitForIdle;
 
-   procedure createScreenCapture (This : in out NullInputRobot; screenRect : Rectangle_Access) is
-      Java_Result : constant BufferedImage_Access := NullInputRobot'Class (This).createScreenCapture (screenRect);
+   procedure createScreenCapture (This : in out NullInputRobot; screenRect_Param : access Rectangle'Class) is
+      Java_Result : constant BufferedImage_Access := NullInputRobot'Class (This).createScreenCapture (screenRect_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

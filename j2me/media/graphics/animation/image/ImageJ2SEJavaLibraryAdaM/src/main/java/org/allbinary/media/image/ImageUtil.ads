@@ -69,20 +69,20 @@ package org.allbinary.media.image.ImageUtil_Package is
    procedure createBufferedImage2 (This : in out ImageUtil; bufferedImageArray : BufferedImage_Access_Array_Access; percent : Float; scale : Boolean);
    function createBufferedImage3 (This : in out ImageUtil; bufferedImageArray : BufferedImage_Access_Array_Access; width : Integer; height : Integer; scale : Boolean) return BufferedImage_Access_Array_Access;
    procedure createBufferedImage3 (This : in out ImageUtil; bufferedImageArray : BufferedImage_Access_Array_Access; width : Integer; height : Integer; scale : Boolean);
-   function createBufferedImageForSave (This : in out ImageUtil; bufferedImage : BufferedImage_Access; newWidth : Integer; newHeight : Integer) return BufferedImage_Access;
-   procedure createBufferedImageForSave (This : in out ImageUtil; bufferedImage : BufferedImage_Access; newWidth : Integer; newHeight : Integer);
-   function createBufferedImage (This : in out ImageUtil; bufferedImage : BufferedImage_Access; newWidth : Integer; newHeight : Integer; scale : Boolean) return BufferedImage_Access;
-   procedure createBufferedImage (This : in out ImageUtil; bufferedImage : BufferedImage_Access; newWidth : Integer; newHeight : Integer; scale : Boolean);
-   function createBufferedImageAllowTranslate (This : in out ImageUtil; bufferedImage : BufferedImage_Access; newWidth : Integer; newHeight : Integer; scale : Boolean; allowTranslate : Boolean) return BufferedImage_Access;
-   procedure createBufferedImageAllowTranslate (This : in out ImageUtil; bufferedImage : BufferedImage_Access; newWidth : Integer; newHeight : Integer; scale : Boolean; allowTranslate : Boolean);
-   function createBufferedImageWithLargerCanvas (This : in out ImageUtil; bufferedImage : BufferedImage_Access; newWidth : Integer; newHeight : Integer) return BufferedImage_Access;
-   procedure createBufferedImageWithLargerCanvas (This : in out ImageUtil; bufferedImage : BufferedImage_Access; newWidth : Integer; newHeight : Integer);
-   function convertToBufferedImage (This : in out ImageUtil; toolkitImage : Image_Access) return BufferedImage_Access;
-   procedure convertToBufferedImage (This : in out ImageUtil; toolkitImage : Image_Access);
-   function getBufferedImage (This : in out ImageUtil; image : Image_Access) return BufferedImage_Access;
-   procedure getBufferedImage (This : in out ImageUtil; image : Image_Access);
-   function toString (This : in out ImageUtil; bufferedImage : BufferedImage_Access) return Unbounded_String;
-   procedure toString (This : in out ImageUtil; bufferedImage : BufferedImage_Access);
+   function createBufferedImageForSave (This : in out ImageUtil; bufferedImage_Param : access BufferedImage'Class; newWidth : Integer; newHeight : Integer) return BufferedImage_Access;
+   procedure createBufferedImageForSave (This : in out ImageUtil; bufferedImage_Param : access BufferedImage'Class; newWidth : Integer; newHeight : Integer);
+   function createBufferedImage (This : in out ImageUtil; bufferedImage_Param : access BufferedImage'Class; newWidth : Integer; newHeight : Integer; scale : Boolean) return BufferedImage_Access;
+   procedure createBufferedImage (This : in out ImageUtil; bufferedImage_Param : access BufferedImage'Class; newWidth : Integer; newHeight : Integer; scale : Boolean);
+   function createBufferedImageAllowTranslate (This : in out ImageUtil; bufferedImage_Param : access BufferedImage'Class; newWidth : Integer; newHeight : Integer; scale : Boolean; allowTranslate : Boolean) return BufferedImage_Access;
+   procedure createBufferedImageAllowTranslate (This : in out ImageUtil; bufferedImage_Param : access BufferedImage'Class; newWidth : Integer; newHeight : Integer; scale : Boolean; allowTranslate : Boolean);
+   function createBufferedImageWithLargerCanvas (This : in out ImageUtil; bufferedImage_Param : access BufferedImage'Class; newWidth : Integer; newHeight : Integer) return BufferedImage_Access;
+   procedure createBufferedImageWithLargerCanvas (This : in out ImageUtil; bufferedImage_Param : access BufferedImage'Class; newWidth : Integer; newHeight : Integer);
+   function convertToBufferedImage (This : in out ImageUtil; toolkitImage_Param : access Image'Class) return BufferedImage_Access;
+   procedure convertToBufferedImage (This : in out ImageUtil; toolkitImage_Param : access Image'Class);
+   function getBufferedImage (This : in out ImageUtil; image_Param : access Image'Class) return BufferedImage_Access;
+   procedure getBufferedImage (This : in out ImageUtil; image_Param : access Image'Class);
+   function toString (This : in out ImageUtil; bufferedImage_Param : access BufferedImage'Class) return Unbounded_String;
+   procedure toString (This : in out ImageUtil; bufferedImage_Param : access BufferedImage'Class);
 
 end org.allbinary.media.image.ImageUtil_Package;
 

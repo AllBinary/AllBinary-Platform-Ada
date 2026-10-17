@@ -25,8 +25,8 @@ package body org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Pac
       
       This.gameNotification := GameNotification_Package.Create;
       This.permanentGameNotification := GameNotification_Package.Create;
-      This.setAndRemoveProcessor := SetAndRemoveProcessor_Package.Create (This'Unchecked_Access);
-      This.nextUnremoveableProcessor := NextUnremoveableProcessor_Package.Create (This'Unchecked_Access);
+      This.setAndRemoveProcessor := SetAndRemoveProcessor_Package.Create (PlayerGameNotificationHud_Access'(This'Unchecked_Access));
+      This.nextUnremoveableProcessor := NextUnremoveableProcessor_Package.Create (PlayerGameNotificationHud_Access'(This'Unchecked_Access));
       This.processor := Processor_Package.getInstance;
       This.PERMANENT_GAME_NOTIFICATION := To_Unbounded_String ("Permanent Game Notification: ");
       This.lastString := StringUtil_Package.getInstance.EMPTY_STRING;
@@ -36,7 +36,8 @@ package body org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Pac
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out PlayerGameNotificationHud'Class; location : Integer; direction : Integer; bufferZone : Integer; basicColor : BasicColor_Access) is
+   procedure Initialize (This : in out PlayerGameNotificationHud'Class; location : Integer; direction : Integer; bufferZone : Integer; basicColor_Param : access BasicColor'Class) is
+      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
       gameNotificationEventHandler : GameNotificationEventHandler_Access;
    begin
         GameNotificationHud_Package.Initialize (This, location, direction, bufferZone, basicColor);
@@ -44,17 +45,18 @@ package body org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Pac
         This.circularIndexUtil := CircularIndexUtil_Package.createInstance (0);
         gameNotificationEventHandler := GameNotificationEventHandler_Package.getInstance;
         gameNotificationEventHandler.removeAllListeners;
-        gameNotificationEventHandler.addListenerInterface (This'Unchecked_Access);
+        gameNotificationEventHandler.addListenerInterface (PlayerGameNotificationHud_Access'(This'Unchecked_Access));
    end Initialize;
 
-   function Create (location : Integer; direction : Integer; bufferZone : Integer; basicColor : BasicColor_Access) return PlayerGameNotificationHud_Access is
+   function Create (location : Integer; direction : Integer; bufferZone : Integer; basicColor_Param : access BasicColor'Class) return PlayerGameNotificationHud_Access is
       This : constant PlayerGameNotificationHud_Access := new PlayerGameNotificationHud;
    begin
-      PlayerGameNotificationHud_Package.Initialize (This.all, location, direction, bufferZone, basicColor);
+      PlayerGameNotificationHud_Package.Initialize (This.all, location, direction, bufferZone, basicColor_Param);
       return This;
    end Create;
 
-   procedure updateMeasurement (This : in out PlayerGameNotificationHud; graphics : Graphics_Access) is
+   procedure updateMeasurement (This : in out PlayerGameNotificationHud; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       font : Font_Access;
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
@@ -72,7 +74,7 @@ package body org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Pac
                 begin
             logUtil := LogUtil_Package.getInstance;
             commonStrings := CommonStrings_Package.getInstance;
-            logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.UPDATE, e);
+            logUtil.put (commonStrings.EXCEPTION_Id, PlayerGameNotificationHud_Access'(This'Unchecked_Access), commonStrings.UPDATE, e);
                 end;
         end;
    end updateMeasurement;
@@ -85,12 +87,13 @@ package body org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Pac
         return This.point;
    end getPoint;
 
-   procedure add (This : in out PlayerGameNotificationHud; string_Id : Unbounded_String; seconds : Integer; basicColor : BasicColor_Access; permanent : Boolean) is
+   procedure add (This : in out PlayerGameNotificationHud; string_Id : Unbounded_String; seconds : Integer; basicColor_Param : access BasicColor'Class; permanent : Boolean) is
+      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         if permanent.booleanValue then
             if (This.lastString) /= (string_Id) then
                 This.lastString := string_Id;
-                This.logUtil.putF (StringMaker_Package.Create.append (This.PERMANENT_GAME_NOTIFICATION).append (string_Id).toString, This'Unchecked_Access, This.commonStrings.ADD);
+                This.logUtil.putF (StringMaker_Package.Create.append (This.PERMANENT_GAME_NOTIFICATION).append (string_Id).toString, PlayerGameNotificationHud_Access'(This'Unchecked_Access), This.commonStrings.ADD);
             end if;
             This.permanentGameNotification.add (string_Id, seconds, basicColor);
             This.circularIndexUtil.setSize (This.permanentGameNotification.getSize);
@@ -174,7 +177,8 @@ package body org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Pac
         This.permanentGameNotification.clear;
    end clear;
 
-   procedure paint (This : in out PlayerGameNotificationHud; graphics : Graphics_Access) is
+   procedure paint (This : in out PlayerGameNotificationHud; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.myFontProcessor.process (graphics);
         GameNotificationHud (This).paintString (graphics, This.string_Id);
@@ -199,17 +203,18 @@ package body org.allbinary.game.ag.layer.hud.basic.SetAndRemoveProcessor_Package
    end Initialize_Fields;
 
     
-   procedure Initialize (This : in out SetAndRemoveProcessor'Class; updateMeasurementProcessor : PlayerGameNotificationHud_Access) is
+   procedure Initialize (This : in out SetAndRemoveProcessor'Class; updateMeasurementProcessor_Param : access PlayerGameNotificationHud'Class) is
+      updateMeasurementProcessor : PlayerGameNotificationHud_Access := PlayerGameNotificationHud_Access (updateMeasurementProcessor_Param);
    begin
       Processor_Package.Initialize (This);
       Initialize_Fields (This);
             This.updateMeasurementProcessor := updateMeasurementProcessor;
    end Initialize;
 
-   function Create (updateMeasurementProcessor : PlayerGameNotificationHud_Access) return SetAndRemoveProcessor_Access is
+   function Create (updateMeasurementProcessor_Param : access PlayerGameNotificationHud'Class) return SetAndRemoveProcessor_Access is
       This : constant SetAndRemoveProcessor_Access := new SetAndRemoveProcessor;
    begin
-      SetAndRemoveProcessor_Package.Initialize (This.all, updateMeasurementProcessor);
+      SetAndRemoveProcessor_Package.Initialize (This.all, updateMeasurementProcessor_Param);
       return This;
    end Create;
     
@@ -231,17 +236,18 @@ package body org.allbinary.game.ag.layer.hud.basic.NextUnremoveableProcessor_Pac
    end Initialize_Fields;
 
     
-   procedure Initialize (This : in out NextUnremoveableProcessor'Class; updateMeasurementProcessor : PlayerGameNotificationHud_Access) is
+   procedure Initialize (This : in out NextUnremoveableProcessor'Class; updateMeasurementProcessor_Param : access PlayerGameNotificationHud'Class) is
+      updateMeasurementProcessor : PlayerGameNotificationHud_Access := PlayerGameNotificationHud_Access (updateMeasurementProcessor_Param);
    begin
       Processor_Package.Initialize (This);
       Initialize_Fields (This);
             This.updateMeasurementProcessor := updateMeasurementProcessor;
    end Initialize;
 
-   function Create (updateMeasurementProcessor : PlayerGameNotificationHud_Access) return NextUnremoveableProcessor_Access is
+   function Create (updateMeasurementProcessor_Param : access PlayerGameNotificationHud'Class) return NextUnremoveableProcessor_Access is
       This : constant NextUnremoveableProcessor_Access := new NextUnremoveableProcessor;
    begin
-      NextUnremoveableProcessor_Package.Initialize (This.all, updateMeasurementProcessor);
+      NextUnremoveableProcessor_Package.Initialize (This.all, updateMeasurementProcessor_Param);
       return This;
    end Create;
     

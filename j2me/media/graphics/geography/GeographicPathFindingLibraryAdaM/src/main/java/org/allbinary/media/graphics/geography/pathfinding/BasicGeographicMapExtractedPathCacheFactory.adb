@@ -51,7 +51,8 @@ package body org.allbinary.media.graphics.geography.pathfinding.BasicGeographicM
         end if;
    end getPath;
 
-   procedure release (This : in out BasicGeographicMapExtractedPathCacheFactory; list : BasicArrayList_Access) is
+   procedure release (This : in out BasicGeographicMapExtractedPathCacheFactory; list_Param : access BasicArrayList'Class) is
+      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
    begin
         list.clear;
         This.list.add (list);

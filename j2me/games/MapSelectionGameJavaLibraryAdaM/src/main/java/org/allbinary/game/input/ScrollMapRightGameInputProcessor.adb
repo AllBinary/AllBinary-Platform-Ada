@@ -21,20 +21,23 @@ package body org.allbinary.game.input.ScrollMapRightGameInputProcessor_Package i
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ScrollMapRightGameInputProcessor'Class; scrollMapPlayerGameInput : ScrollMapPlayerGameInput_Access) is
+   procedure Initialize (This : in out ScrollMapRightGameInputProcessor'Class; scrollMapPlayerGameInput_Param : access ScrollMapPlayerGameInput'Class) is
+      scrollMapPlayerGameInput : ScrollMapPlayerGameInput_Access := ScrollMapPlayerGameInput_Access (scrollMapPlayerGameInput_Param);
    begin
         ScrollMapGameInputProcessor_Package.Initialize (This, scrollMapPlayerGameInput);
    end Initialize;
 
-   function Create (scrollMapPlayerGameInput : ScrollMapPlayerGameInput_Access) return ScrollMapRightGameInputProcessor_Access is
+   function Create (scrollMapPlayerGameInput_Param : access ScrollMapPlayerGameInput'Class) return ScrollMapRightGameInputProcessor_Access is
       This : constant ScrollMapRightGameInputProcessor_Access := new ScrollMapRightGameInputProcessor;
    begin
-      ScrollMapRightGameInputProcessor_Package.Initialize (This.all, scrollMapPlayerGameInput);
+      ScrollMapRightGameInputProcessor_Package.Initialize (This.all, scrollMapPlayerGameInput_Param);
       return This;
    end Create;
 
    --  throws Exception
-   procedure processEvent (This : in out ScrollMapRightGameInputProcessor; allbinaryLayerManager : AllBinaryLayerManager_Access; gameKeyEvent : GameKeyEvent_Access) is
+   procedure processEvent (This : in out ScrollMapRightGameInputProcessor; allbinaryLayerManager_Param : access AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent'Class) is
+      allbinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allbinaryLayerManager_Param);
+      gameKeyEvent : GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
    begin
         This.scrollMapPlayerGameInput.right;
    end processEvent;

@@ -24,7 +24,9 @@ package body admin.taghelpers.InventoryRequestHelper_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out InventoryRequestHelper'Class; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) is
+   procedure Initialize (This : in out InventoryRequestHelper'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+      propertiesHashMap : HashMap_Access := HashMap_Access (propertiesHashMap_Param);
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
       inventoryTag : HelperTag_Access;
       itemView : InventoryItemView_Access;
    begin
@@ -35,10 +37,10 @@ package body admin.taghelpers.InventoryRequestHelper_Package is
         This.itemInterface := itemView.getItemInterface;
    end Initialize;
 
-   function Create (propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return InventoryRequestHelper_Access is
+   function Create (propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return InventoryRequestHelper_Access is
       This : constant InventoryRequestHelper_Access := new InventoryRequestHelper;
    begin
-      InventoryRequestHelper_Package.Initialize (This.all, propertiesHashMap, pageContext);
+      InventoryRequestHelper_Package.Initialize (This.all, propertiesHashMap_Param, pageContext_Param);
       return This;
    end Create;
 
@@ -55,7 +57,7 @@ package body admin.taghelpers.InventoryRequestHelper_Package is
             InventoryEntityFactory_Package.getInstance.getInventoryEntityInstance.insert (values);
             success := To_Unbounded_String ("Successfully Added Product");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, To_Unbounded_String ("insert()"));
+                This.logUtil.putF (success, InventoryRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("insert()"));
             end if;
             return success;
         exception
@@ -65,7 +67,7 @@ package body admin.taghelpers.InventoryRequestHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to add item to Inventory");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("insert()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, InventoryRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("insert()"), e);
             end if;
             return error;
                 end;
@@ -91,7 +93,7 @@ package body admin.taghelpers.InventoryRequestHelper_Package is
             stringBuffer.append (To_Unbounded_String (" from to the Inventory table"));
             success := stringBuffer.toString;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, This.tagStrings.DO_START_TAG);
+                This.logUtil.putF (success, InventoryRequestHelper_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
             end if;
             return success;
         exception
@@ -101,7 +103,7 @@ package body admin.taghelpers.InventoryRequestHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to remove item with from Inventory");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.tagStrings.DO_START_TAG, e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, InventoryRequestHelper_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG, e);
             end if;
             return error;
                 end;
@@ -117,7 +119,7 @@ package body admin.taghelpers.InventoryRequestHelper_Package is
             This.insert;
             success := To_Unbounded_String ("Item Successfully Updated");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, To_Unbounded_String ("update()"));
+                This.logUtil.putF (success, InventoryRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("update()"));
             end if;
             return success;
         exception
@@ -127,7 +129,7 @@ package body admin.taghelpers.InventoryRequestHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed To Update Item");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("update()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, InventoryRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("update()"), e);
             end if;
             return error;
                 end;

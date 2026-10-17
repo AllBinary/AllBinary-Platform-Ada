@@ -36,7 +36,8 @@ package body org.allbinary.game.input.event.DownGameKeyEventHandlerBase_Package 
       return This;
    end Create;
 
-   procedure addListener (This : in out DownGameKeyEventHandlerBase; playerGameInput : PlayerGameInput_Access) is
+   procedure addListener (This : in out DownGameKeyEventHandlerBase; playerGameInput_Param : access PlayerGameInput'Class) is
+      playerGameInput : PlayerGameInput_Access := PlayerGameInput_Access (playerGameInput_Param);
    begin
         if not (This.list.contains (playerGameInput)) then
             This.list.add (playerGameInput);
@@ -49,20 +50,23 @@ package body org.allbinary.game.input.event.DownGameKeyEventHandlerBase_Package 
         BasicEventHandler (This).removeAllListeners;
    end removeAllListeners;
 
-   procedure removeListenerSingleThreaded (This : in out DownGameKeyEventHandlerBase; eventListenerInterface : EventListenerInterface_Access) is
+   procedure removeListenerSingleThreaded (This : in out DownGameKeyEventHandlerBase; eventListenerInterface_Param : access EventListenerInterface'Class) is
+      eventListenerInterface : EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
    begin
         This.list.remove (eventListenerInterface);
         BasicEventHandler (This).removeListenerSingleThreaded (eventListenerInterface);
    end removeListenerSingleThreaded;
 
-   procedure removeListener (This : in out DownGameKeyEventHandlerBase; eventListenerInterface : EventListenerInterface_Access) is
+   procedure removeListener (This : in out DownGameKeyEventHandlerBase; eventListenerInterface_Param : access EventListenerInterface'Class) is
+      eventListenerInterface : EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
    begin
         This.list.remove (eventListenerInterface);
         BasicEventHandler (This).removeListener (eventListenerInterface);
    end removeListener;
 
    --  throws Exception
-   procedure fireEvent (This : in out DownGameKeyEventHandlerBase; eventObject : AllBinaryEventObject_Access) is
+   procedure fireEvent (This : in out DownGameKeyEventHandlerBase; eventObject_Param : access AllBinaryEventObject'Class) is
+      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
       playerGameInput : PlayerGameInput_Access;
       index : Integer;
    begin
@@ -76,7 +80,7 @@ package body org.allbinary.game.input.event.DownGameKeyEventHandlerBase_Package 
                     declare
                         e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                     begin
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, EventStrings_Package.getInstance.FIRE_EVENT, e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, DownGameKeyEventHandlerBase_Access'(This'Unchecked_Access), EventStrings_Package.getInstance.FIRE_EVENT, e);
                     end;
             end;
         end loop;
@@ -84,7 +88,9 @@ package body org.allbinary.game.input.event.DownGameKeyEventHandlerBase_Package 
    end fireEvent;
 
    --  throws Exception
-   procedure process (This : in out DownGameKeyEventHandlerBase; eventObject : AllBinaryEventObject_Access; eventListenerInterface : EventListenerInterface_Access) is
+   procedure process (This : in out DownGameKeyEventHandlerBase; eventObject_Param : access AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface'Class) is
+      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
+      eventListenerInterface : EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
       downGameKeyEventListenerInterface : DownGameKeyEventListenerInterface_Access;
    begin
         downGameKeyEventListenerInterface := DownGameKeyEventListenerInterface_Access (eventListenerInterface);
@@ -114,7 +120,7 @@ package body org.allbinary.game.input.event.DownGameKeyEventHandlerBase_Package 
                     declare
                         e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                     begin
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.TOSTRING, e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, DownGameKeyEventHandlerBase_Access'(This'Unchecked_Access), This.commonStrings.TOSTRING, e);
                     end;
             end;
             index := index + 1;

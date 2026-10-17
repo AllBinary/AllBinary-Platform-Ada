@@ -82,8 +82,8 @@ package admin.taghelpers.StoreFrontsRequestHelper_Package is
       portion : Portion_Access;
    end record;
 
-   procedure Initialize (This : in out StoreFrontsRequestHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access);
-   function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return StoreFrontsRequestHelper_Access;
+   procedure Initialize (This : in out StoreFrontsRequestHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
+   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return StoreFrontsRequestHelper_Access;
    procedure getFormData (This : in out StoreFrontsRequestHelper);
    function update (This : in out StoreFrontsRequestHelper) return Unbounded_String;
    procedure sendStoreCreatedEmails (This : in out StoreFrontsRequestHelper);

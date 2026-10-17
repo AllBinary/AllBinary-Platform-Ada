@@ -41,10 +41,11 @@ package body org.allbinary.logic.system.security.AbKeys_Package is
    end Create;
 
    --  throws LicensingException
-   function getKey (This : in out AbKeys; abeClientInformation : AbeClientInformationInterface_Access; keyName : Unbounded_String) return Unbounded_String is
+   function getKey (This : in out AbKeys; abeClientInformation_Param : access AbeClientInformationInterface'Class; keyName : Unbounded_String) return Unbounded_String is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
    begin
         begin
-            This.logUtil.putF (To_Unbounded_String ("Getting Key: ") & keyName, This'Unchecked_Access, To_Unbounded_String ("getKey"));
+            This.logUtil.putF (To_Unbounded_String ("Getting Key: ") & keyName, AbKeys_Access'(This'Unchecked_Access), To_Unbounded_String ("getKey"));
             if ((((keyName.compareTo (To_Unbounded_String ("DirectX 8"))) = (0)) or else ((keyName.compareTo (To_Unbounded_String ("DirectX"))) = (0))) or else ((keyName.compareTo (To_Unbounded_String ("Low Level"))) = (0))) or else ((keyName.compareTo (To_Unbounded_String ("System Drivers"))) = (0)) then
                 return To_Unbounded_String ("Temp For Input Library");
             end if;
@@ -59,8 +60,8 @@ package body org.allbinary.logic.system.security.AbKeys_Package is
         end;
    end getKey;
 
-   procedure getKey (This : in out AbKeys; abeClientInformation : AbeClientInformationInterface_Access; keyName : Unbounded_String) is
-      Java_Result : constant Unbounded_String := AbKeys'Class (This).getKey (abeClientInformation, keyName);
+   procedure getKey (This : in out AbKeys; abeClientInformation_Param : access AbeClientInformationInterface'Class; keyName : Unbounded_String) is
+      Java_Result : constant Unbounded_String := AbKeys'Class (This).getKey (abeClientInformation_Param, keyName);
       pragma Unreferenced (Java_Result);
    begin
       null;

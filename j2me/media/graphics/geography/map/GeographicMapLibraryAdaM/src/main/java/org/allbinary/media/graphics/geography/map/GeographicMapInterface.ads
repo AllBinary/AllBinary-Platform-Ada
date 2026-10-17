@@ -42,12 +42,12 @@ package org.allbinary.media.graphics.geography.map.GeographicMapInterface_Packag
    function getName (This : in out GeographicMapInterface) return Unbounded_String is abstract;
    procedure reset (This : in out GeographicMapInterface) is abstract;
    function getAllBinaryTiledLayer (This : in out GeographicMapInterface) return AllBinaryTiledLayer_Access is abstract;
-   function getCellPositionsAt (This : in out GeographicMapInterface; layer : Layer_Access; currentCellPositionArray : GeographicMapCellPosition_Access_Array_Access_Array_Access; cellPositionArray : GeographicMapCellPosition_Access_Array_Access_Array_Access) return Boolean is abstract;
+   function getCellPositionsAt (This : in out GeographicMapInterface; layer_Param : access Layer'Class; currentCellPositionArray : GeographicMapCellPosition_Access_Array_Access_Array_Access; cellPositionArray : GeographicMapCellPosition_Access_Array_Access_Array_Access) return Boolean is abstract;
    function getCellPositionAtXY (This : in out GeographicMapInterface; x : Integer; y : Integer) return GeographicMapCellPosition_Access is abstract;
    function getCellPositionAtXYNoThrow (This : in out GeographicMapInterface; x : Integer; y : Integer) return GeographicMapCellPosition_Access is abstract;
    function getCellTypeFromMapCellTypeInt (This : in out GeographicMapInterface; cellTypeId : Integer) return Integer is abstract;
    function getCellTypeAtXY (This : in out GeographicMapInterface; x : Integer; y : Integer) return GeographicMapCellType_Access is abstract;
-   function getCellTypeAt (This : in out GeographicMapInterface; geographicMapCellPosition : GeographicMapCellPosition_Access) return GeographicMapCellType_Access is abstract;
+   function getCellTypeAt (This : in out GeographicMapInterface; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return GeographicMapCellType_Access is abstract;
    function getGeographicMapCellPositionFactory (This : in out GeographicMapInterface) return BasicGeographicMapCellPositionFactory_Access is abstract;
    function getGeographicMapCellPositionFactoryInterface (This : in out GeographicMapInterface) return GeographicMapCellPositionFactoryInterface_Access is abstract;
    function getForegroundBasicColor (This : in out GeographicMapInterface) return BasicColor_Access is abstract;

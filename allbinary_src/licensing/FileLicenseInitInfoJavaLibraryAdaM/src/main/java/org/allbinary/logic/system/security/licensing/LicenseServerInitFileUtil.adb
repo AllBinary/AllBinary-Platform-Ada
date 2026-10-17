@@ -43,7 +43,7 @@ package body org.allbinary.logic.system.security.licensing.LicenseServerInitFile
             filePath := LicenseInitInfoUtil_Package.getInstance.INITFILENAME;
             LicenseInitInfoUtil_Package.getInstance.setFilePath (StringUtil_Package.getInstance.EMPTY_STRING);
             if FileFactory_Package.getInstance.isFile (filePath) then
-                This.logUtil.putF (To_Unbounded_String ("Using Existing License File"), This'Unchecked_Access, This.commonStrings.INIT);
+                This.logUtil.putF (To_Unbounded_String ("Using Existing License File"), LicenseServerInitFileUtil_Access'(This'Unchecked_Access), This.commonStrings.INIT);
             else
                 This.write;
             end if;
@@ -52,7 +52,7 @@ package body org.allbinary.logic.system.security.licensing.LicenseServerInitFile
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.INIT, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, LicenseServerInitFileUtil_Access'(This'Unchecked_Access), This.commonStrings.INIT, e);
                 end;
         end;
    end init;
@@ -71,7 +71,7 @@ package body org.allbinary.logic.system.security.licensing.LicenseServerInitFile
             resourceUtil := ResourceUtil_Package.getInstance;
             filePath := LicenseInitInfoUtil_Package.getInstance.INITFILENAME;
             inputStream := resourceUtil.getResourceAsStream (filePath);
-            This.logUtil.putF (To_Unbounded_String ("Writing Default License File"), This'Unchecked_Access, This.commonStrings.INIT);
+            This.logUtil.putF (To_Unbounded_String ("Writing Default License File"), LicenseServerInitFileUtil_Access'(This'Unchecked_Access), This.commonStrings.INIT);
             fileStreamFactory := FileStreamFactory_Package.getInstance;
             fileOutputStream := fileStreamFactory.getFileOutputStreamInstance (StringUtil_Package.getInstance.EMPTY_STRING, filePath);
             b := 0;
@@ -84,14 +84,14 @@ package body org.allbinary.logic.system.security.licensing.LicenseServerInitFile
                 fileOutputStream.write (b);
                 index := index + 1;
             end loop;
-            This.logUtil.putF (To_Unbounded_String ("Wrote Bytes: ") & Java_Image (index), This'Unchecked_Access, This.commonStrings.INIT);
+            This.logUtil.putF (To_Unbounded_String ("Wrote Bytes: ") & Java_Image (index), LicenseServerInitFileUtil_Access'(This'Unchecked_Access), This.commonStrings.INIT);
             fileOutputStream.flush;
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.INIT, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, LicenseServerInitFileUtil_Access'(This'Unchecked_Access), This.commonStrings.INIT, e);
                 end;
         end;
         --  finally

@@ -37,7 +37,8 @@ package body org.allbinary.graphics.form.LockablePaintable_Package is
       return This;
    end Create;
 
-   procedure paint (This : in out LockablePaintable; graphics : Graphics_Access; currentIndex : Integer; x : Integer; y : Integer) is
+   procedure paint (This : in out LockablePaintable; graphics_Param : access Graphics'Class; currentIndex : Integer; x : Integer; y : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         if (LockedUtil_Package.getInstance.isLocked) and then ((currentIndex) >= (This.getLockedIndex)) then
             This.getAnimation.paintXY (graphics, x, y);

@@ -33,13 +33,15 @@ package body org.allbinary.input.motion.button.TouchButtonsPaintableCompositeFac
    end Create;
 
 
-   function getInstance (inputMappingInterface : InputMappingInterface_Access; basicColor : BasicColor_Access) return ProcessPaintable_Access is
+   function getInstance (inputMappingInterface_Param : access InputMappingInterface'Class; basicColor_Param : access BasicColor'Class) return ProcessPaintable_Access is
+      inputMappingInterface : InputMappingInterface_Access := InputMappingInterface_Access (inputMappingInterface_Param);
+      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         return ProcessPaintable_Package.Create;
    end getInstance;
 
-   procedure getInstance (inputMappingInterface : InputMappingInterface_Access; basicColor : BasicColor_Access) is
-      Java_Result : constant ProcessPaintable_Access := getInstance (inputMappingInterface, basicColor);
+   procedure getInstance (inputMappingInterface_Param : access InputMappingInterface'Class; basicColor_Param : access BasicColor'Class) is
+      Java_Result : constant ProcessPaintable_Access := getInstance (inputMappingInterface_Param, basicColor_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

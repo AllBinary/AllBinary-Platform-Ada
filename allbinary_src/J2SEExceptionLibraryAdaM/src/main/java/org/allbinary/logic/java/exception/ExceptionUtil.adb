@@ -40,7 +40,8 @@ package body org.allbinary.logic.java.exception_Id.ExceptionUtil_Package is
       return This;
    end Create;
 
-   function getStackTrace (This : in out ExceptionUtil; e : Java_Throwable) return Unbounded_String is
+   function getStackTrace (This : in out ExceptionUtil; e_Param : access Java_Throwable_Object'Class) return Unbounded_String is
+      e : Java_Throwable := Java_Throwable (e_Param);
       byteArrayOutputStream : ByteArrayOutputStream_Access;
       printStream : PrintStream_Access;
       output : Unbounded_String;
@@ -57,8 +58,8 @@ package body org.allbinary.logic.java.exception_Id.ExceptionUtil_Package is
         return This.NONE;
    end getStackTrace;
 
-   procedure getStackTrace (This : in out ExceptionUtil; e : Java_Throwable) is
-      Java_Result : constant Unbounded_String := ExceptionUtil'Class (This).getStackTrace (e);
+   procedure getStackTrace (This : in out ExceptionUtil; e_Param : access Java_Throwable_Object'Class) is
+      Java_Result : constant Unbounded_String := ExceptionUtil'Class (This).getStackTrace (e_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

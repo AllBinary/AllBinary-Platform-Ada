@@ -35,8 +35,8 @@ package org.allbinary.logic.math.vector.XAxisMathVector_Package is
 
    type XAxisMathVector is new MathVector with null record;
 
-   procedure Initialize (This : in out XAxisMathVector'Class; magnitudeBasicDecimal : BasicDecimal_Access; direction : Integer);
-   function Create (magnitudeBasicDecimal : BasicDecimal_Access; direction : Integer) return XAxisMathVector_Access;
+   procedure Initialize (This : in out XAxisMathVector'Class; magnitudeBasicDecimal_Param : access BasicDecimal'Class; direction : Integer);
+   function Create (magnitudeBasicDecimal_Param : access BasicDecimal'Class; direction : Integer) return XAxisMathVector_Access;
    procedure calculate (This : in out XAxisMathVector);
 
 end org.allbinary.logic.math.vector.XAxisMathVector_Package;

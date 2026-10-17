@@ -50,14 +50,14 @@ package org.allbinary.business.category.properties.root.store.RootStoreCategoryP
       categoryPropertiesInterface : CategoryPropertiesInterface_Access;
    end record;
 
-   procedure Initialize (This : in out RootStoreCategoryPropertiesFactory'Class; transformInfoInterface : TransformInfoInterface_Access);
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return RootStoreCategoryPropertiesFactory_Access;
-   procedure Initialize (This : in out RootStoreCategoryPropertiesFactory'Class; transformInfoInterface : TransformInfoInterface_Access; abPath : AbPath_Access);
-   function Create (transformInfoInterface : TransformInfoInterface_Access; abPath : AbPath_Access) return RootStoreCategoryPropertiesFactory_Access;
-   procedure Initialize (This : in out RootStoreCategoryPropertiesFactory'Class; transformInfoInterface : TransformInfoInterface_Access; node : Node_Access);
-   function Create (transformInfoInterface : TransformInfoInterface_Access; node : Node_Access) return RootStoreCategoryPropertiesFactory_Access;
-   procedure Initialize (This : in out RootStoreCategoryPropertiesFactory'Class; transformInfoInterface : TransformInfoInterface_Access; categoryPropertiesHashMap : HashMap_Access);
-   function Create (transformInfoInterface : TransformInfoInterface_Access; categoryPropertiesHashMap : HashMap_Access) return RootStoreCategoryPropertiesFactory_Access;
+   procedure Initialize (This : in out RootStoreCategoryPropertiesFactory'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return RootStoreCategoryPropertiesFactory_Access;
+   procedure Initialize (This : in out RootStoreCategoryPropertiesFactory'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; abPath_Param : access AbPath'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class; abPath_Param : access AbPath'Class) return RootStoreCategoryPropertiesFactory_Access;
+   procedure Initialize (This : in out RootStoreCategoryPropertiesFactory'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; node_Param : access Node'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class; node_Param : access Node'Class) return RootStoreCategoryPropertiesFactory_Access;
+   procedure Initialize (This : in out RootStoreCategoryPropertiesFactory'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; categoryPropertiesHashMap_Param : access HashMap'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class; categoryPropertiesHashMap_Param : access HashMap'Class) return RootStoreCategoryPropertiesFactory_Access;
    function getInstance (This : in out RootStoreCategoryPropertiesFactory) return CategoryPropertiesInterface_Access;
 
 end org.allbinary.business.category.properties.root.store.RootStoreCategoryPropertiesFactory_Package;

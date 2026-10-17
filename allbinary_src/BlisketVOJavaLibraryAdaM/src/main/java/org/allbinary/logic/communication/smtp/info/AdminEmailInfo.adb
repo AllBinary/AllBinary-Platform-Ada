@@ -29,7 +29,7 @@ package body org.allbinary.logic.communication.smtp.info.AdminEmailInfo_Package 
         Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.putF (commonStrings.START, This'Unchecked_Access, commonStrings.CONSTRUCTOR);
+            This.logUtil.putF (commonStrings.START, AdminEmailInfo_Access'(This'Unchecked_Access), commonStrings.CONSTRUCTOR);
         end if;
         This.init;
    end Initialize;

@@ -44,10 +44,10 @@ package org.allbinary.business.context.modules.storefront.statistics.orders.hist
       storeFrontOrdersHistoryStatisticsInterface : StoreFrontOrdersHistoryStatisticsInterface_Access;
    end record;
 
-   procedure Initialize (This : in out StoreFrontOrdersHistoryStatisticsView'Class; storeFrontOrdersHistoryStatisticsInterface : StoreFrontOrdersHistoryStatisticsInterface_Access);
-   function Create (storeFrontOrdersHistoryStatisticsInterface : StoreFrontOrdersHistoryStatisticsInterface_Access) return StoreFrontOrdersHistoryStatisticsView_Access;
-   function toXmlNode (This : in out StoreFrontOrdersHistoryStatisticsView; document : Document_Access) return Node_Access;
-   procedure toXmlNode (This : in out StoreFrontOrdersHistoryStatisticsView; document : Document_Access);
+   procedure Initialize (This : in out StoreFrontOrdersHistoryStatisticsView'Class; storeFrontOrdersHistoryStatisticsInterface_Param : access StoreFrontOrdersHistoryStatisticsInterface'Class);
+   function Create (storeFrontOrdersHistoryStatisticsInterface_Param : access StoreFrontOrdersHistoryStatisticsInterface'Class) return StoreFrontOrdersHistoryStatisticsView_Access;
+   function toXmlNode (This : in out StoreFrontOrdersHistoryStatisticsView; document_Param : access Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out StoreFrontOrdersHistoryStatisticsView; document_Param : access Document'Class);
 
 end org.allbinary.business.context.modules.storefront.statistics.orders.history.StoreFrontOrdersHistoryStatisticsView_Package;
 

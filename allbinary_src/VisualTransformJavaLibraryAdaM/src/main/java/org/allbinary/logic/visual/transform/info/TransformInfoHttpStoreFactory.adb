@@ -40,13 +40,16 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreFac
    end Create;
 
    --  throws Exception
-   function getInstance (This : in out TransformInfoHttpStoreFactory; databaseHashMap : HashMap_Access; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return TransformInfoInterface_Access is
+   function getInstance (This : in out TransformInfoHttpStoreFactory; databaseHashMap_Param : access HashMap'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return TransformInfoInterface_Access is
+      databaseHashMap : HashMap_Access := HashMap_Access (databaseHashMap_Param);
+      propertiesHashMap : HashMap_Access := HashMap_Access (propertiesHashMap_Param);
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
    begin
         return TransformInfoHttpStore_Package.Create (databaseHashMap, propertiesHashMap, pageContext);
    end getInstance;
 
-   procedure getInstance (This : in out TransformInfoHttpStoreFactory; databaseHashMap : HashMap_Access; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) is
-      Java_Result : constant TransformInfoInterface_Access := TransformInfoHttpStoreFactory'Class (This).getInstance (databaseHashMap, propertiesHashMap, pageContext);
+   procedure getInstance (This : in out TransformInfoHttpStoreFactory; databaseHashMap_Param : access HashMap'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+      Java_Result : constant TransformInfoInterface_Access := TransformInfoHttpStoreFactory'Class (This).getInstance (databaseHashMap_Param, propertiesHashMap_Param, pageContext_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

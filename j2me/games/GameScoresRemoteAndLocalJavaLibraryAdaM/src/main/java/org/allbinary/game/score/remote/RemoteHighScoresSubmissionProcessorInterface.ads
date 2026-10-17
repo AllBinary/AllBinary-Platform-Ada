@@ -33,7 +33,7 @@ package org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessorInter
    type RemoteHighScoresSubmissionProcessorInterface_Access is access all RemoteHighScoresSubmissionProcessorInterface'Class;
    type RemoteHighScoresSubmissionProcessorInterface_Access_Array is array (Natural range <>) of RemoteHighScoresSubmissionProcessorInterface_Access;
    type RemoteHighScoresSubmissionProcessorInterface_Access_Array_Access is access all RemoteHighScoresSubmissionProcessorInterface_Access_Array;
-   procedure process (This : in out RemoteHighScoresSubmissionProcessorInterface; remoteHighScores : RemoteHighScores_Access; abeClientInformation : AbeClientInformationInterface_Access; highScore : HighScore_Access) is abstract;
+   procedure process (This : in out RemoteHighScoresSubmissionProcessorInterface; remoteHighScores_Param : access RemoteHighScores'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; highScore_Param : access HighScore'Class) is abstract;
 
 end org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessorInterface_Package;
 

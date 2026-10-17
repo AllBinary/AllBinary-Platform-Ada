@@ -55,13 +55,13 @@ package org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_P
    end record;
    NULL_GAME_NOTIFICATION : GameNotificationHud_Access;
 
-   procedure Initialize (This : in out GameNotificationHud'Class; location : Integer; direction : Integer; bufferZone : Integer; basicColor : BasicColor_Access);
-   function Create (location : Integer; direction : Integer; bufferZone : Integer; basicColor : BasicColor_Access) return GameNotificationHud_Access;
-   procedure onEvent (This : in out GameNotificationHud; eventObject : AllBinaryEventObject_Access);
-   procedure onGameNotificationEvent (This : in out GameNotificationHud; gameNotificationEvent : GameNotificationEvent_Access);
-   procedure add (This : in out GameNotificationHud; string_Id : Unbounded_String; seconds : Integer; basicColor : BasicColor_Access; permanent : Boolean);
+   procedure Initialize (This : in out GameNotificationHud'Class; location : Integer; direction : Integer; bufferZone : Integer; basicColor_Param : access BasicColor'Class);
+   function Create (location : Integer; direction : Integer; bufferZone : Integer; basicColor_Param : access BasicColor'Class) return GameNotificationHud_Access;
+   procedure onEvent (This : in out GameNotificationHud; eventObject_Param : access AllBinaryEventObject'Class);
+   procedure onGameNotificationEvent (This : in out GameNotificationHud; gameNotificationEvent_Param : access GameNotificationEvent'Class);
+   procedure add (This : in out GameNotificationHud; string_Id : Unbounded_String; seconds : Integer; basicColor_Param : access BasicColor'Class; permanent : Boolean);
    procedure processTick (This : in out GameNotificationHud);
-   procedure paint (This : in out GameNotificationHud; graphics : Graphics_Access);
+   procedure paint (This : in out GameNotificationHud; graphics_Param : access Graphics'Class);
    procedure clear (This : in out GameNotificationHud);
 
 end org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package;

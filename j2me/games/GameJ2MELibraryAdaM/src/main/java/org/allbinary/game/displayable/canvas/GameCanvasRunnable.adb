@@ -25,17 +25,18 @@ package body org.allbinary.game.displayable.canvas.GameCanvasRunnable_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out GameCanvasRunnable'Class; allBinaryGameCanvas : AllBinaryGameCanvas_Access) is
+   procedure Initialize (This : in out GameCanvasRunnable'Class; allBinaryGameCanvas_Param : access AllBinaryGameCanvas'Class) is
+      allBinaryGameCanvas : AllBinaryGameCanvas_Access := AllBinaryGameCanvas_Access (allBinaryGameCanvas_Param);
    begin
       GameRunnable_Package.Initialize (This);
       Initialize_Fields (This);
         This.allBinaryGameCanvas := allBinaryGameCanvas;
    end Initialize;
 
-   function Create (allBinaryGameCanvas : AllBinaryGameCanvas_Access) return GameCanvasRunnable_Access is
+   function Create (allBinaryGameCanvas_Param : access AllBinaryGameCanvas'Class) return GameCanvasRunnable_Access is
       This : constant GameCanvasRunnable_Access := new GameCanvasRunnable;
    begin
-      GameCanvasRunnable_Package.Initialize (This.all, allBinaryGameCanvas);
+      GameCanvasRunnable_Package.Initialize (This.all, allBinaryGameCanvas_Param);
       return This;
    end Create;
 
@@ -52,7 +53,7 @@ package body org.allbinary.game.displayable.canvas.GameCanvasRunnable_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.RUN, e);
+            This.logUtil.put (commonStrings.EXCEPTION_Id, GameCanvasRunnable_Access'(This'Unchecked_Access), commonStrings.RUN, e);
                 end;
         end;
    end run;

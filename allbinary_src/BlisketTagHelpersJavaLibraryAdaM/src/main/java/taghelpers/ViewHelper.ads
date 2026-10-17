@@ -57,15 +57,15 @@ package taghelpers.ViewHelper_Package is
       NO_TYPE : Integer;
    end record;
 
-   procedure Initialize (This : in out ViewHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access);
-   function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return ViewHelper_Access;
+   procedure Initialize (This : in out ViewHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
+   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return ViewHelper_Access;
    function getTypeId (This : in out ViewHelper) return Integer;
    function view (This : in out ViewHelper) return Unbounded_String;
    function toXmlDoc (This : in out ViewHelper) return Document_Access;
    function getViewObject (This : in out ViewHelper) return TransformInterface_Access;
    function getTransformInfoInterface (This : in out ViewHelper) return TransformInfoInterface_Access;
    function getTransformDocumentInterface (This : in out ViewHelper) return TransformDocumentInterface_Access;
-   procedure setTransformDocumentInterface (This : in out ViewHelper; viewDocumentInterface : TransformDocumentInterface_Access);
+   procedure setTransformDocumentInterface (This : in out ViewHelper; viewDocumentInterface_Param : access TransformDocumentInterface'Class);
 
 end taghelpers.ViewHelper_Package;
 

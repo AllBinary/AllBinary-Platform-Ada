@@ -25,7 +25,9 @@ package body org.allbinary.logic.visual.transform.data.TransformHttpRequestDocum
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out TransformHttpRequestDocument'Class; pageContext : PageContext_Access; weblisketSession : WeblisketSession_Access) is
+   procedure Initialize (This : in out TransformHttpRequestDocument'Class; pageContext_Param : access PageContext'Class; weblisketSession_Param : access WeblisketSession'Class) is
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
+      weblisketSession : WeblisketSession_Access := WeblisketSession_Access (weblisketSession_Param);
       contentType : Unbounded_String;
       contentTypeNode : Node_Access;
       languageTypeNode : Node_Access;
@@ -43,7 +45,7 @@ package body org.allbinary.logic.visual.transform.data.TransformHttpRequestDocum
             contentTypeNode.appendChild (languageTypeNode);
             This.document.appendChild (contentTypeNode);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.putF (This.log, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+                This.logUtil.putF (This.log, TransformHttpRequestDocument_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
             end if;
         exception
             when Java_Occurrence : others =>
@@ -51,21 +53,22 @@ package body org.allbinary.logic.visual.transform.data.TransformHttpRequestDocum
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR, e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, TransformHttpRequestDocument_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR, e);
             end if;
             Java_Throw (e);
                 end;
         end;
    end Initialize;
 
-   function Create (pageContext : PageContext_Access; weblisketSession : WeblisketSession_Access) return TransformHttpRequestDocument_Access is
+   function Create (pageContext_Param : access PageContext'Class; weblisketSession_Param : access WeblisketSession'Class) return TransformHttpRequestDocument_Access is
       This : constant TransformHttpRequestDocument_Access := new TransformHttpRequestDocument;
    begin
-      TransformHttpRequestDocument_Package.Initialize (This.all, pageContext, weblisketSession);
+      TransformHttpRequestDocument_Package.Initialize (This.all, pageContext_Param, weblisketSession_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out TransformHttpRequestDocument'Class; searchRequest : SearchRequest_Access) is
+   procedure Initialize (This : in out TransformHttpRequestDocument'Class; searchRequest_Param : access SearchRequest'Class) is
+      searchRequest : SearchRequest_Access := SearchRequest_Access (searchRequest_Param);
       contentType : Unbounded_String;
       contentTypeNode : Node_Access;
       languageTypeNode : Node_Access;
@@ -88,17 +91,17 @@ package body org.allbinary.logic.visual.transform.data.TransformHttpRequestDocum
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR, e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, TransformHttpRequestDocument_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR, e);
             end if;
             Java_Throw (e);
                 end;
         end;
    end Initialize;
 
-   function Create (searchRequest : SearchRequest_Access) return TransformHttpRequestDocument_Access is
+   function Create (searchRequest_Param : access SearchRequest'Class) return TransformHttpRequestDocument_Access is
       This : constant TransformHttpRequestDocument_Access := new TransformHttpRequestDocument;
    begin
-      TransformHttpRequestDocument_Package.Initialize (This.all, searchRequest);
+      TransformHttpRequestDocument_Package.Initialize (This.all, searchRequest_Param);
       return This;
    end Create;
 

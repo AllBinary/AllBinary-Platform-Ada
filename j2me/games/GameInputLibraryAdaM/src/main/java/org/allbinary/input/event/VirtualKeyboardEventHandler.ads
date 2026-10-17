@@ -48,7 +48,7 @@ package org.allbinary.input.event.VirtualKeyboardEventHandler_Package is
    procedure Initialize (This : in out VirtualKeyboardEventHandler'Class);
    function Create return VirtualKeyboardEventHandler_Access;
    function getInstance return VirtualKeyboardEventHandler_Access;
-   procedure process (This : in out VirtualKeyboardEventHandler; eventObject : AllBinaryEventObject_Access; eventListenerInterface : EventListenerInterface_Access);
+   procedure process (This : in out VirtualKeyboardEventHandler; eventObject_Param : access AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface'Class);
    procedure open (This : in out VirtualKeyboardEventHandler);
    procedure close (This : in out VirtualKeyboardEventHandler);
 

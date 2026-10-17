@@ -28,7 +28,7 @@ package body org.allbinary.bundle.logic.system.loader.CryptService_Package is
    begin
       Initialize_Fields (This);
         Globals_Package.getInstance.init (This.all'Tag.getClassLoader, To_Unbounded_String ("./"));
-        This.logUtil.putF (To_Unbounded_String ("Set Globals: ") & Java_Image (URLGLOBALS.getWebappPath), This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+        This.logUtil.putF (To_Unbounded_String ("Set Globals: ") & Java_Image (URLGLOBALS.getWebappPath), CryptService_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
    end Initialize;
 
    function Create return CryptService_Access is
@@ -38,7 +38,9 @@ package body org.allbinary.bundle.logic.system.loader.CryptService_Package is
       return This;
    end Create;
 
-   function getDecryptedInputStream (This : in out CryptService; abeClientInformation : AbeClientInformationInterface_Access; name : Unbounded_String; inputStream : InputStream_Access) return InputStream_Access is
+   function getDecryptedInputStream (This : in out CryptService; abeClientInformation_Param : access AbeClientInformationInterface'Class; name : Unbounded_String; inputStream_Param : access InputStream'Class) return InputStream_Access is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      inputStream : InputStream_Access := InputStream_Access (inputStream_Param);
       key : Unbounded_String;
       decrypted : Short_Short_Integer_Array_Access;
    begin
@@ -57,12 +59,14 @@ package body org.allbinary.bundle.logic.system.loader.CryptService_Package is
         return null;
    end getDecryptedInputStream;
 
-   procedure showLicenseDialog (This : in out CryptService; abeClientInformation : AbeClientInformationInterface_Access; e : Java_Throwable) is
+   procedure showLicenseDialog (This : in out CryptService; abeClientInformation_Param : access AbeClientInformationInterface'Class; e_Param : access Java_Throwable_Object'Class) is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      e : Java_Throwable := Java_Throwable (e_Param);
       basicTextJDialog : BasicTextJDialog_Access;
       abeLicenseInterface : AbeLicenseInterface_Access;
    begin
         begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.INIT, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, CryptService_Access'(This'Unchecked_Access), This.commonStrings.INIT, e);
             basicTextJDialog := BasicTextJDialog_Package.Create (Java_Get_Message (e));
             begin
                 abeLicenseInterface := AbeLicenseInterfaceFactory_Package.getInstance.getLicenseInstance (abeClientInformation);
@@ -76,7 +80,7 @@ package body org.allbinary.bundle.logic.system.loader.CryptService_Package is
                     declare
                         e2 : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                     begin
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.INIT, e2);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, CryptService_Access'(This'Unchecked_Access), This.commonStrings.INIT, e2);
                     end;
             end;
             basicTextJDialog.addCloseListener (ExitCloseListener_Package.Create);
@@ -86,13 +90,13 @@ package body org.allbinary.bundle.logic.system.loader.CryptService_Package is
                 declare
                     e3 : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.INIT, e3);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, CryptService_Access'(This'Unchecked_Access), This.commonStrings.INIT, e3);
                 end;
         end;
    end showLicenseDialog;
 
-   procedure getDecryptedInputStream (This : in out CryptService; abeClientInformation : AbeClientInformationInterface_Access; name : Unbounded_String; inputStream : InputStream_Access) is
-      Java_Result : constant InputStream_Access := CryptService'Class (This).getDecryptedInputStream (abeClientInformation, name, inputStream);
+   procedure getDecryptedInputStream (This : in out CryptService; abeClientInformation_Param : access AbeClientInformationInterface'Class; name : Unbounded_String; inputStream_Param : access InputStream'Class) is
+      Java_Result : constant InputStream_Access := CryptService'Class (This).getDecryptedInputStream (abeClientInformation_Param, name, inputStream_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

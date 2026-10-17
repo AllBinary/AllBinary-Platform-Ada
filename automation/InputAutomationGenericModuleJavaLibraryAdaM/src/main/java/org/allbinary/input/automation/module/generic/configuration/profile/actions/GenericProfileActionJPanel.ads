@@ -61,13 +61,13 @@ package org.allbinary.input.automation.module.generic_Id.configuration.profile.a
    function Create return GenericProfileActionJPanel_Access;
    procedure updateProfileActionUI (This : in out GenericProfileActionJPanel);
    function getGenericProfileAction (This : in out GenericProfileActionJPanel) return GenericProfileAction_Access;
-   procedure setGenericProfileAction (This : in out GenericProfileActionJPanel; genericProfileAction : GenericProfileAction_Access);
+   procedure setGenericProfileAction (This : in out GenericProfileActionJPanel; genericProfileAction_Param : access GenericProfileAction'Class);
    function getGenericProfileActionScriptJPanel (This : in out GenericProfileActionJPanel) return GenericProfileActionScriptJPanel_Access;
-   procedure setGenericProfileActionScriptJPanel (This : in out GenericProfileActionJPanel; genericProfileActionScriptJPanel : GenericProfileActionScriptJPanel_Access);
+   procedure setGenericProfileActionScriptJPanel (This : in out GenericProfileActionJPanel; genericProfileActionScriptJPanel_Param : access GenericProfileActionScriptJPanel'Class);
    procedure initComponents (This : in out GenericProfileActionJPanel);
-   procedure newTimeIntervalJButtonActionPerformed (This : in out GenericProfileActionJPanel; evt : ActionEvent_Access);
-   procedure newAlwaysJButtonActionPerformed (This : in out GenericProfileActionJPanel; evt : ActionEvent_Access);
-   procedure newColorAtJButtonActionPerformed (This : in out GenericProfileActionJPanel; evt : ActionEvent_Access);
+   procedure newTimeIntervalJButtonActionPerformed (This : in out GenericProfileActionJPanel; evt_Param : access ActionEvent'Class);
+   procedure newAlwaysJButtonActionPerformed (This : in out GenericProfileActionJPanel; evt_Param : access ActionEvent'Class);
+   procedure newColorAtJButtonActionPerformed (This : in out GenericProfileActionJPanel; evt_Param : access ActionEvent'Class);
 
 end org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionJPanel_Package;
 

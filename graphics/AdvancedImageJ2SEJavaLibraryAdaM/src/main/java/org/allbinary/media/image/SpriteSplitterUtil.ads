@@ -60,7 +60,7 @@ package org.allbinary.media.image.SpriteSplitterUtil_Package is
    procedure Initialize (This : in out SpriteSplitterUtil'Class);
    function Create return SpriteSplitterUtil_Access;
    function getInstance return SpriteSplitterUtil_Access;
-   procedure process (This : in out SpriteSplitterUtil; imageProcessorInput : ImageProcessorInput_Access; totalFrames : Integer; totalAnimations : Integer; widthReduction : Integer; heightReduction : Integer; increaseWidth : Integer; increaseHeight : Integer; spriteType : Unbounded_String; visitor : ImageProcessedVisitor_Access);
+   procedure process (This : in out SpriteSplitterUtil; imageProcessorInput_Param : access ImageProcessorInput'Class; totalFrames : Integer; totalAnimations : Integer; widthReduction : Integer; heightReduction : Integer; increaseWidth : Integer; increaseHeight : Integer; spriteType : Unbounded_String; visitor_Param : access ImageProcessedVisitor'Class);
 
 end org.allbinary.media.image.SpriteSplitterUtil_Package;
 

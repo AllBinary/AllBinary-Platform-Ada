@@ -42,7 +42,8 @@ package body org.allbinary.logic.math.PrimitiveLongUtil_Package is
         return primitiveLongUtil;
    end createPowerOfTen;
 
-   procedure Initialize (This : in out PrimitiveLongUtil'Class; powerOfTen : Integer; unused : Java_Object_Access) is
+   procedure Initialize (This : in out PrimitiveLongUtil'Class; powerOfTen : Integer; unused_Param : access Java_Object'Class) is
+      unused : Java_Object_Access := Java_Object_Access (unused_Param);
    begin
       Initialize_Fields (This);
         This.maxDigits := MathUtil_Package.getInstance.getTotalDigits (powerOfTen);
@@ -51,10 +52,10 @@ package body org.allbinary.logic.math.PrimitiveLongUtil_Package is
         This.charArray := new Character_Array'(0 .. (This.maxDigits) - 1 => ASCII.NUL);
    end Initialize;
 
-   function Create (powerOfTen : Integer; unused : Java_Object_Access) return PrimitiveLongUtil_Access is
+   function Create (powerOfTen : Integer; unused_Param : access Java_Object'Class) return PrimitiveLongUtil_Access is
       This : constant PrimitiveLongUtil_Access := new PrimitiveLongUtil;
    begin
-      PrimitiveLongUtil_Package.Initialize (This.all, powerOfTen, unused);
+      PrimitiveLongUtil_Package.Initialize (This.all, powerOfTen, unused_Param);
       return This;
    end Create;
 

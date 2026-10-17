@@ -42,9 +42,9 @@ package org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostIn
 
    procedure Initialize (This : in out PathFindingNodeCostInfoFactory'Class; max : Integer);
    function Create (max : Integer) return PathFindingNodeCostInfoFactory_Access;
-   procedure create (This : in out PathFindingNodeCostInfoFactory; geographicMapInterface : BasicGeographicMap_Access; goingToGeographicMapCellPosition : GeographicMapCellPosition_Access; geographicMapCellPosition : GeographicMapCellPosition_Access; costFromStart : Long_Long_Integer; costToEnd : Long_Long_Integer);
-   function getTotalCost (This : in out PathFindingNodeCostInfoFactory; geographicMapInterface : BasicGeographicMap_Access; comingFromGeographicMapCellPosition : GeographicMapCellPosition_Access; geographicMapCellPosition : GeographicMapCellPosition_Access) return Long_Long_Integer;
-   procedure getTotalCost (This : in out PathFindingNodeCostInfoFactory; geographicMapInterface : BasicGeographicMap_Access; comingFromGeographicMapCellPosition : GeographicMapCellPosition_Access; geographicMapCellPosition : GeographicMapCellPosition_Access);
+   procedure create (This : in out PathFindingNodeCostInfoFactory; geographicMapInterface_Param : access BasicGeographicMap'Class; goingToGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class; costFromStart : Long_Long_Integer; costToEnd : Long_Long_Integer);
+   function getTotalCost (This : in out PathFindingNodeCostInfoFactory; geographicMapInterface_Param : access BasicGeographicMap'Class; comingFromGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return Long_Long_Integer;
+   procedure getTotalCost (This : in out PathFindingNodeCostInfoFactory; geographicMapInterface_Param : access BasicGeographicMap'Class; comingFromGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class);
 
 end org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoFactory_Package;
 

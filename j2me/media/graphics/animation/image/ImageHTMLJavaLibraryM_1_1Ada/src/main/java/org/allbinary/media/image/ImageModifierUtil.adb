@@ -42,17 +42,25 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
         return ImageModifierUtil_Package.Create;
    end getInstanceOrCreate;
 
-   procedure setColor (This : in out ImageModifierUtil; unusedOriginalImage : Image_Access; image : Image_Access; imageIndex : Integer; basicColor : BasicColor_Access) is
+   procedure setColor (This : in out ImageModifierUtil; unusedOriginalImage_Param : access Image'Class; image_Param : access Image'Class; imageIndex : Integer; basicColor_Param : access BasicColor'Class) is
+      unusedOriginalImage : Image_Access := Image_Access (unusedOriginalImage_Param);
+      image : Image_Access := Image_Access (image_Param);
+      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         null;
    end setColor;
 
-   procedure changeColor (This : in out ImageModifierUtil; unusedOriginalImage : Image_Access; image : Image_Access; imageIndex : Integer; basicColor : BasicColor_Access) is
+   procedure changeColor (This : in out ImageModifierUtil; unusedOriginalImage_Param : access Image'Class; image_Param : access Image'Class; imageIndex : Integer; basicColor_Param : access BasicColor'Class) is
+      unusedOriginalImage : Image_Access := Image_Access (unusedOriginalImage_Param);
+      image : Image_Access := Image_Access (image_Param);
+      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         null;
    end changeColor;
 
-   procedure setAlpha (This : in out ImageModifierUtil; originalImage : Image_Access; image : Image_Access; imageIndex : Integer; alpha : Integer) is
+   procedure setAlpha (This : in out ImageModifierUtil; originalImage_Param : access Image'Class; image_Param : access Image'Class; imageIndex : Integer; alpha : Integer) is
+      originalImage : Image_Access := Image_Access (originalImage_Param);
+      image : Image_Access := Image_Access (image_Param);
       alphaF : Float;
       alphaFloat : Float;
    begin
@@ -61,7 +69,9 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
         This.setAlphaF (originalImage, image, imageIndex, alphaFloat);
    end setAlpha;
 
-   procedure setAlphaF (This : in out ImageModifierUtil; originalImage : Image_Access; image : Image_Access; imageIndex : Integer; alpha : Float) is
+   procedure setAlphaF (This : in out ImageModifierUtil; originalImage_Param : access Image'Class; image_Param : access Image'Class; imageIndex : Integer; alpha : Float) is
+      originalImage : Image_Access := Image_Access (originalImage_Param);
+      image : Image_Access := Image_Access (image_Param);
    begin
         if This.alphaArray (imageIndex) then
             This.alphaArray (imageIndex) := False;
@@ -69,7 +79,9 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
         end if;
    end setAlphaF;
 
-   procedure setAlpha2 (This : in out ImageModifierUtil; originalImage : Image_Access; image : Image_Access; imageIndex : Integer; alpha : Float) is
+   procedure setAlpha2 (This : in out ImageModifierUtil; originalImage_Param : access Image'Class; image_Param : access Image'Class; imageIndex : Integer; alpha : Float) is
+      originalImage : Image_Access := Image_Access (originalImage_Param);
+      image : Image_Access := Image_Access (image_Param);
       htmlImage : PlaynImage_Access;
       canvasImage : CanvasImage_Access;
       originalPlaynImage : Image_Access;
@@ -84,7 +96,8 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
         canvas.drawImage (originalPlaynImage, 0, 0);
    end setAlpha2;
 
-   procedure setAlpha3 (This : in out ImageModifierUtil; image : Image_Access; alpha : Float) is
+   procedure setAlpha3 (This : in out ImageModifierUtil; image_Param : access Image'Class; alpha : Float) is
+      image : Image_Access := Image_Access (image_Param);
       alphaF : Float;
       alphaFloat : Float;
       htmlImage : PlaynImage_Access;
@@ -114,7 +127,8 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
         return imageArray;
    end getImageArray;
 
-   procedure handleImage (This : in out ImageModifierUtil; imageArray : Image_Access_Array_Access; index : Integer; image : Image_Access) is
+   procedure handleImage (This : in out ImageModifierUtil; imageArray : Image_Access_Array_Access; index : Integer; image_Param : access Image'Class) is
+      image : Image_Access := Image_Access (image_Param);
       image3 : Image_Access;
       callback : Callback_Access;
    begin
@@ -125,29 +139,33 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
             else
                 callback := Callback_Package.Create  --  Java anonymous class body: implement it as a named type
 --                      
---     procedure onSuccess (This : in out ; resource : Java_Object_Access) is
+--     procedure onSuccess (This : in out ; resource_Param : access Java_Object'Class) is
+--        resource : Java_Object_Access := Java_Object_Access (resource_Param);
 --        logUtil : LogUtil_Access;
 --     begin
 --                          logUtil := LogUtil_Package.getInstance;
---                          logUtil.putF (Java_Image (This.resourceCallbackStrings.DONE) & image.getName, This'Unchecked_Access, This.resourceCallbackStrings.HANDLE_IMAGE);
+--                          logUtil.putF (Java_Image (This.resourceCallbackStrings.DONE) & image.getName, ImageModifierUtil_Access'(This'Unchecked_Access), This.resourceCallbackStrings.HANDLE_IMAGE);
 --                          This.copy (imageArray, index, image, image3);
 --     end onSuccess;
 --                      
---     procedure onFailure (This : in out ; e : Java_Throwable) is
+--     procedure onFailure (This : in out ; e_Param : access Java_Throwable_Object'Class) is
+--        e : Java_Throwable := Java_Throwable (e_Param);
 --        logUtil : LogUtil_Access;
 --     begin
 --                          logUtil := LogUtil_Package.getInstance;
---                          logUtil.putF (StringMaker_Package.Create.append (This.commonStrings.EXCEPTION_LABEL).append (This.resourceCallbackStrings.ERROR).append (image.getName).toString, This'Unchecked_Access, This.resourceCallbackStrings.HANDLE_IMAGE);
+--                          logUtil.putF (StringMaker_Package.Create.append (This.commonStrings.EXCEPTION_LABEL).append (This.resourceCallbackStrings.ERROR).append (image.getName).toString, ImageModifierUtil_Access'(This'Unchecked_Access), This.resourceCallbackStrings.HANDLE_IMAGE);
 --     end onFailure;
 ;
                 image3.addCallback (callback);
             end if;
         else
-            This.logUtil.putF ((This.resourceCallbackStrings.NULL_Id) + (image.isMutable), This'Unchecked_Access, This.resourceCallbackStrings.HANDLE_IMAGE);
+            This.logUtil.putF ((This.resourceCallbackStrings.NULL_Id) + (image.isMutable), ImageModifierUtil_Access'(This'Unchecked_Access), This.resourceCallbackStrings.HANDLE_IMAGE);
         end if;
    end handleImage;
 
-   procedure copy (This : in out ImageModifierUtil; imageArray : Image_Access_Array_Access; index : Integer; image : Image_Access; image3 : Image_Access) is
+   procedure copy (This : in out ImageModifierUtil; imageArray : Image_Access_Array_Access; index : Integer; image_Param : access Image'Class; image3_Param : access Image'Class) is
+      image : Image_Access := Image_Access (image_Param);
+      image3 : Image_Access := Image_Access (image3_Param);
       image2 : Image_Access;
       graphics : Graphics_Access;
    begin
@@ -161,7 +179,7 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.putF ((This.commonStrings.EXCEPTION_LABEL) + (This.resourceCallbackStrings.DONE), This'Unchecked_Access, This.resourceCallbackStrings.HANDLE_IMAGE);
+            This.logUtil.putF ((This.commonStrings.EXCEPTION_LABEL) + (This.resourceCallbackStrings.DONE), ImageModifierUtil_Access'(This'Unchecked_Access), This.resourceCallbackStrings.HANDLE_IMAGE);
                 end;
         end;
    end copy;

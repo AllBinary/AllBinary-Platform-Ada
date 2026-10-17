@@ -23,7 +23,8 @@ package body views.compound.CompoundTransform_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CompoundTransform'Class; transformInfoInterface : TransformInfoInterface_Access) is
+   procedure Initialize (This : in out CompoundTransform'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
       objectConfig : CompoundContextTransformInfoObjectConfig_Access;
       templateInputStream : InputStream_Access;
    begin
@@ -32,16 +33,16 @@ package body views.compound.CompoundTransform_Package is
         This.setURIResolver (URIResolver_Access (StoreUriResolver_Package.Create (This.getTransformInfoInterface, BasicUriResolver_Access (This.getURIResolver))));
         objectConfig := CompoundContextTransformInfoObjectConfig_Package.Create (This.abeClientInformation, This.getTransformInfoInterface, This.getTransformInfoInterface.getObjectConfigInterface.toXmlDoc);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (To_Unbounded_String ("" & ASCII.LF & "ObjectConfig: " & ASCII.LF & "") & objectConfig.toString, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+            This.logUtil.putF (To_Unbounded_String ("" & ASCII.LF & "ObjectConfig: " & ASCII.LF & "") & objectConfig.toString, CompoundTransform_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
         templateInputStream := objectConfig.createInputStream;
         This.setInputStream (templateInputStream);
    end Initialize;
 
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return CompoundTransform_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return CompoundTransform_Access is
       This : constant CompoundTransform_Access := new CompoundTransform;
    begin
-      CompoundTransform_Package.Initialize (This.all, transformInfoInterface);
+      CompoundTransform_Package.Initialize (This.all, transformInfoInterface_Param);
       return This;
    end Create;
 

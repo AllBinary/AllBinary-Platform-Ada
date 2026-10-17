@@ -23,20 +23,22 @@ package body admin.taghelpers.AdminConfigurationRequestHelper_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AdminConfigurationRequestHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access) is
+   procedure Initialize (This : in out AdminConfigurationRequestHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
    begin
       ModifyTable_Package.Initialize (This);
       Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-            This.logUtil.putF (This.commonStrings.CONSTRUCTOR, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+            This.logUtil.putF (This.commonStrings.CONSTRUCTOR, AdminConfigurationRequestHelper_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
         This.request := HttpServletRequest_Access (pageContext.getRequest);
    end Initialize;
 
-   function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return AdminConfigurationRequestHelper_Access is
+   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return AdminConfigurationRequestHelper_Access is
       This : constant AdminConfigurationRequestHelper_Access := new AdminConfigurationRequestHelper;
    begin
-      AdminConfigurationRequestHelper_Package.Initialize (This.all, hashMap, pageContext);
+      AdminConfigurationRequestHelper_Package.Initialize (This.all, hashMap_Param, pageContext_Param);
       return This;
    end Create;
 
@@ -47,13 +49,13 @@ package body admin.taghelpers.AdminConfigurationRequestHelper_Package is
    begin
         begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("insert()"));
+                This.logUtil.putF (This.commonStrings.START, AdminConfigurationRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("insert()"));
             end if;
             success := To_Unbounded_String ("Successfully inserted AdminConfiguration");
             adminConfigurationInterface := AdminConfigurationInterface_Access (AdminConfiguration_Package.Create (This.request));
             adminConfigurationInterface.write;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, To_Unbounded_String ("insert()"));
+                This.logUtil.putF (success, AdminConfigurationRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("insert()"));
             end if;
             return success;
         exception
@@ -63,7 +65,7 @@ package body admin.taghelpers.AdminConfigurationRequestHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to created AdminConfiguration");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("insert()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, AdminConfigurationRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("insert()"), e);
             end if;
             return error;
                 end;
@@ -77,7 +79,7 @@ package body admin.taghelpers.AdminConfigurationRequestHelper_Package is
         begin
             success := To_Unbounded_String ("Successfully deleted AdminConfiguration");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, To_Unbounded_String ("delete()"));
+                This.logUtil.putF (success, AdminConfigurationRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("delete()"));
             end if;
             return success;
         exception
@@ -87,7 +89,7 @@ package body admin.taghelpers.AdminConfigurationRequestHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to delete");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("delete()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, AdminConfigurationRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("delete()"), e);
             end if;
             return error;
                 end;
@@ -103,7 +105,7 @@ package body admin.taghelpers.AdminConfigurationRequestHelper_Package is
             success := To_Unbounded_String ("Updated AdminConfiguration Successful");
             adminConfigurationInterface := AdminConfigurationInterface_Access (AdminConfiguration_Package.Create (This.request));
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, To_Unbounded_String ("update()"));
+                This.logUtil.putF (success, AdminConfigurationRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("update()"));
             end if;
             return success;
         exception
@@ -113,7 +115,7 @@ package body admin.taghelpers.AdminConfigurationRequestHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to update");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("update()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, AdminConfigurationRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("update()"), e);
             end if;
             return error;
                 end;

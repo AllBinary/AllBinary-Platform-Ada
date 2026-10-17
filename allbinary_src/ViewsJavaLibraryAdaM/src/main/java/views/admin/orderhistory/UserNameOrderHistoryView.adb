@@ -30,7 +30,8 @@ package body views.admin.orderhistory.UserNameOrderHistoryView_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out UserNameOrderHistoryView'Class; transformInfoInterface : TransformInfoInterface_Access) is
+   procedure Initialize (This : in out UserNameOrderHistoryView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
@@ -43,16 +44,16 @@ package body views.admin.orderhistory.UserNameOrderHistoryView_Package is
         This.cancelled := This.request.getParameter (OrderHistoryData_Package.CANCELLEDNAME);
    end Initialize;
 
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return UserNameOrderHistoryView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return UserNameOrderHistoryView_Access is
       This : constant UserNameOrderHistoryView_Access := new UserNameOrderHistoryView;
    begin
-      UserNameOrderHistoryView_Package.Initialize (This.all, transformInfoInterface);
+      UserNameOrderHistoryView_Package.Initialize (This.all, transformInfoInterface_Param);
       return This;
    end Create;
 
    procedure addDomNodeInterfaces (This : in out UserNameOrderHistoryView) is
    begin
-        This.addDomNodeInterface (DomNodeInterface_Access (This'Unchecked_Access));
+        This.addDomNodeInterface (DomNodeInterface_Access (UserNameOrderHistoryView_Access'(This'Unchecked_Access)));
    end addDomNodeInterfaces;
 
    --  throws Exception
@@ -67,14 +68,15 @@ package body views.admin.orderhistory.UserNameOrderHistoryView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("view()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, UserNameOrderHistoryView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
             end if;
             Java_Throw (e);
                 end;
         end;
    end view;
 
-   function toXmlNode (This : in out UserNameOrderHistoryView; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out UserNameOrderHistoryView; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       node : Node_Access;
       orderHistoryEntity : OrderHistoryEntity_Access;
       orderReviewVector : BasicArrayList_Access;
@@ -96,7 +98,7 @@ package body views.admin.orderhistory.UserNameOrderHistoryView_Package is
                 node.appendChild (orderHistory.toXmlNode (document));
             end loop;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (To_Unbounded_String ("Attempt to View a users order history"), This'Unchecked_Access, To_Unbounded_String ("view"));
+                This.logUtil.putF (To_Unbounded_String ("Attempt to View a users order history"), UserNameOrderHistoryView_Access'(This'Unchecked_Access), To_Unbounded_String ("view"));
             end if;
             node.appendChild (ModDomHelper_Package.createNameValueNodes (document, OrderHistoryData_Package.PREPROCESSINGNAME, OrderHistoryData_Package.PREPROCESSING));
             node.appendChild (ModDomHelper_Package.createNameValueNodes (document, OrderHistoryData_Package.PROCESSINGNAME, OrderHistoryData_Package.PROCESSING));
@@ -111,7 +113,7 @@ package body views.admin.orderhistory.UserNameOrderHistoryView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.XSLLOGGINGERROR) then
-                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("toXmlNode"), e);
+                This.logUtil.put (This.commonStrings.FAILURE, UserNameOrderHistoryView_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode"), e);
             end if;
             return null;
                 end;
@@ -121,7 +123,7 @@ package body views.admin.orderhistory.UserNameOrderHistoryView_Package is
    function isValid (This : in out UserNameOrderHistoryView) return Boolean is
    begin
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (To_Unbounded_String ("Started"), This'Unchecked_Access, This.commonStrings.IS_VALID);
+            This.logUtil.putF (To_Unbounded_String ("Started"), UserNameOrderHistoryView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
         end if;
         if (UserName_Package.getInstance.isValid (This.userName)) = (True) then
             return True;
@@ -134,7 +136,8 @@ package body views.admin.orderhistory.UserNameOrderHistoryView_Package is
         return null;
    end toValidationInfoDoc;
 
-   function toValidationInfoNode (This : in out UserNameOrderHistoryView; document : Document_Access) return Node_Access is
+   function toValidationInfoNode (This : in out UserNameOrderHistoryView; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
    begin
         return null;
    end toValidationInfoNode;
@@ -150,15 +153,15 @@ package body views.admin.orderhistory.UserNameOrderHistoryView_Package is
         return To_Unbounded_String ("Unknown Error<br />");
    end validationInfo;
 
-   procedure toXmlNode (This : in out UserNameOrderHistoryView; document : Document_Access) is
-      Java_Result : constant Node_Access := UserNameOrderHistoryView'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out UserNameOrderHistoryView; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := UserNameOrderHistoryView'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toXmlNode;
 
-   procedure toValidationInfoNode (This : in out UserNameOrderHistoryView; document : Document_Access) is
-      Java_Result : constant Node_Access := UserNameOrderHistoryView'Class (This).toValidationInfoNode (document);
+   procedure toValidationInfoNode (This : in out UserNameOrderHistoryView; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := UserNameOrderHistoryView'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

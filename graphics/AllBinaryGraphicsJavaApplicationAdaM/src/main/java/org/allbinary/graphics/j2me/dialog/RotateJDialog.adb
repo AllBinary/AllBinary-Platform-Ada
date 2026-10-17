@@ -29,17 +29,18 @@ package body org.allbinary.graphics.j2me.dialog.RotateJDialog_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out RotateJDialog'Class; parent : Frame_Access; modal : Boolean) is
+   procedure Initialize (This : in out RotateJDialog'Class; parent_Param : access Frame'Class; modal : Boolean) is
+      parent : Frame_Access := Frame_Access (parent_Param);
    begin
         JDialog_Package.Initialize (This, parent, modal);
         Initialize_Fields (This);
         This.initComponents;
    end Initialize;
 
-   function Create (parent : Frame_Access; modal : Boolean) return RotateJDialog_Access is
+   function Create (parent_Param : access Frame'Class; modal : Boolean) return RotateJDialog_Access is
       This : constant RotateJDialog_Access := new RotateJDialog;
    begin
-      RotateJDialog_Package.Initialize (This.all, parent, modal);
+      RotateJDialog_Package.Initialize (This.all, parent_Param, modal);
       return This;
    end Create;
 
@@ -61,7 +62,8 @@ package body org.allbinary.graphics.j2me.dialog.RotateJDialog_Package is
         This.jButton1.setText (To_Unbounded_String ("OK"));
         This.jButton1.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt : ActionEvent_Access) is
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
+--        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.jButton1ActionPerformed (evt);
 --     end actionPerformed;
@@ -77,7 +79,8 @@ package body org.allbinary.graphics.j2me.dialog.RotateJDialog_Package is
         This.pack;
    end initComponents;
 
-   procedure jButton1ActionPerformed (This : in out RotateJDialog; evt : ActionEvent_Access) is
+   procedure jButton1ActionPerformed (This : in out RotateJDialog; evt_Param : access ActionEvent'Class) is
+      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
       commonStrings : CommonStrings_Access;
    begin
         begin
@@ -91,7 +94,7 @@ package body org.allbinary.graphics.j2me.dialog.RotateJDialog_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.putF (commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("jButton1ActionPerformed"));
+            This.logUtil.putF (commonStrings.EXCEPTION_Id, RotateJDialog_Access'(This'Unchecked_Access), To_Unbounded_String ("jButton1ActionPerformed"));
                 end;
         end;
    end jButton1ActionPerformed;
@@ -106,7 +109,8 @@ package body org.allbinary.graphics.j2me.dialog.RotateJDialog_Package is
 --                  dialog := RotateJDialog_Package.Create (JFrame_Package.Create, True);
 --                  dialog.addWindowListener (WindowAdapter_Package.Create  --  Java anonymous class body: implement it as a named type
 --  --                      
---  --     procedure windowClosing (This : in out ; e : WindowEvent_Access) is
+--  --     procedure windowClosing (This : in out ; e_Param : access WindowEvent'Class) is
+--  --        e : WindowEvent_Access := WindowEvent_Access (e_Param);
 --  --     begin
 --  --                          System_Package.exit_Id (0);
 --  --     end windowClosing;

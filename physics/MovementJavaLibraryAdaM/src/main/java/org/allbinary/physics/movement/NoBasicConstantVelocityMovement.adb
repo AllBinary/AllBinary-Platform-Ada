@@ -34,7 +34,8 @@ package body org.allbinary.physics.movement.NoBasicConstantVelocityMovement_Pack
    end Create;
 
    --  throws Exception
-   procedure process (This : in out NoBasicConstantVelocityMovement; layer : AllBinaryGameLayer_Access) is
+   procedure process (This : in out NoBasicConstantVelocityMovement; layer_Param : access AllBinaryGameLayer'Class) is
+      layer : AllBinaryGameLayer_Access := AllBinaryGameLayer_Access (layer_Param);
    begin
         null;
    end process;

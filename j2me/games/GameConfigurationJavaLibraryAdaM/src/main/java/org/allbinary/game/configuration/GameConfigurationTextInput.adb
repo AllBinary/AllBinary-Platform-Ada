@@ -28,7 +28,7 @@ package body org.allbinary.game.configuration.GameConfigurationTextInput_Package
       Initialize_Fields (This);
         This.setText (text);
         This.setLabel (label);
-        GameConfigurationTextInput_Package.hashtable.put (This.getLabel, This'Unchecked_Access);
+        GameConfigurationTextInput_Package.hashtable.put (This.getLabel, GameConfigurationTextInput_Access'(This'Unchecked_Access));
    end Initialize;
 
    function Create (label : Unbounded_String; text : Unbounded_String) return GameConfigurationTextInput_Access is
@@ -38,7 +38,8 @@ package body org.allbinary.game.configuration.GameConfigurationTextInput_Package
       return This;
    end Create;
 
-   procedure update (textField : TextField_Access) is
+   procedure update (textField_Param : access TextField'Class) is
+      textField : TextField_Access := TextField_Access (textField_Param);
       anyType : Java_Object_Access;
       gameConfigurationTextInput : GameConfigurationTextInput_Access;
    begin

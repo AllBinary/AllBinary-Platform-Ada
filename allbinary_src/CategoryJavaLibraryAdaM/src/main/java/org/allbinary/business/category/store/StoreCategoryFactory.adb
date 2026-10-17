@@ -23,20 +23,21 @@ package body org.allbinary.business.category.store.StoreCategoryFactory_Package 
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out StoreCategoryFactory'Class; transformInfoInterface : TransformInfoInterface_Access) is
+   procedure Initialize (This : in out StoreCategoryFactory'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
       CategoryAbstractFactory_Package.Initialize (This);
       Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY) then
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("StoreCategoryFactory(TransformInfoInterface transformInfoInterface)"));
+            This.logUtil.putF (This.commonStrings.START, StoreCategoryFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("StoreCategoryFactory(TransformInfoInterface transformInfoInterface)"));
         end if;
         This.transformInfoInterface := transformInfoInterface;
    end Initialize;
 
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return StoreCategoryFactory_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return StoreCategoryFactory_Access is
       This : constant StoreCategoryFactory_Access := new StoreCategoryFactory;
    begin
-      StoreCategoryFactory_Package.Initialize (This.all, transformInfoInterface);
+      StoreCategoryFactory_Package.Initialize (This.all, transformInfoInterface_Param);
       return This;
    end Create;
 
@@ -52,14 +53,15 @@ package body org.allbinary.business.category.store.StoreCategoryFactory_Package 
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.ENTITYFACTORYERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("getInstance(String, int)"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, StoreCategoryFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getInstance(String, int)"), e);
             end if;
             return null;
                 end;
         end;
    end getRootInstance;
 
-   function getRootInstance (This : in out StoreCategoryFactory; categoryPath : AbPath_Access) return CategoryInterface_Access is
+   function getRootInstance (This : in out StoreCategoryFactory; categoryPath_Param : access AbPath'Class) return CategoryInterface_Access is
+      categoryPath : AbPath_Access := AbPath_Access (categoryPath_Param);
       level : Integer;
       categoryPropertiesFactoryInterface : CategoryPropertiesFactoryInterface_Access;
    begin
@@ -73,14 +75,15 @@ package body org.allbinary.business.category.store.StoreCategoryFactory_Package 
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.ENTITYFACTORYERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("getInstance(String, int)"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, StoreCategoryFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getInstance(String, int)"), e);
             end if;
             return null;
                 end;
         end;
    end getRootInstance;
 
-   function getRootInstanceFromNode (This : in out StoreCategoryFactory; node : Node_Access) return CategoryInterface_Access is
+   function getRootInstanceFromNode (This : in out StoreCategoryFactory; node_Param : access Node'Class) return CategoryInterface_Access is
+      node : Node_Access := Node_Access (node_Param);
       categoryPropertiesFactoryInterface : CategoryPropertiesFactoryInterface_Access;
       categoryPath : AbPath_Access;
       level : Integer;
@@ -96,22 +99,22 @@ package body org.allbinary.business.category.store.StoreCategoryFactory_Package 
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.ENTITYFACTORYERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("getInstance(String, int)"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, StoreCategoryFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getInstance(String, int)"), e);
             end if;
             return null;
                 end;
         end;
    end getRootInstanceFromNode;
 
-   procedure getRootInstance (This : in out StoreCategoryFactory; categoryPath : AbPath_Access) is
-      Java_Result : constant CategoryInterface_Access := StoreCategoryFactory'Class (This).getRootInstance (categoryPath);
+   procedure getRootInstance (This : in out StoreCategoryFactory; categoryPath_Param : access AbPath'Class) is
+      Java_Result : constant CategoryInterface_Access := StoreCategoryFactory'Class (This).getRootInstance (categoryPath_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getRootInstance;
 
-   procedure getRootInstanceFromNode (This : in out StoreCategoryFactory; node : Node_Access) is
-      Java_Result : constant CategoryInterface_Access := StoreCategoryFactory'Class (This).getRootInstanceFromNode (node);
+   procedure getRootInstanceFromNode (This : in out StoreCategoryFactory; node_Param : access Node'Class) is
+      Java_Result : constant CategoryInterface_Access := StoreCategoryFactory'Class (This).getRootInstanceFromNode (node_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

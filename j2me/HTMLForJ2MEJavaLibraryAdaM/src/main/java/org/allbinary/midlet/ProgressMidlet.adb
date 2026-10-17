@@ -22,7 +22,8 @@ package body org.allbinary.midlet.ProgressMidlet_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ProgressMidlet'Class; clientInformationFactory : ClientInformationFactory_Access) is
+   procedure Initialize (This : in out ProgressMidlet'Class; clientInformationFactory_Param : access ClientInformationFactory'Class) is
+      clientInformationFactory : ClientInformationFactory_Access := ClientInformationFactory_Access (clientInformationFactory_Param);
    begin
       AllBinaryMidlet_Package.Initialize (This);
       Initialize_Fields (This);
@@ -30,10 +31,10 @@ package body org.allbinary.midlet.ProgressMidlet_Package is
         This.abeClientInformation := clientInformationFactory.getInstance;
    end Initialize;
 
-   function Create (clientInformationFactory : ClientInformationFactory_Access) return ProgressMidlet_Access is
+   function Create (clientInformationFactory_Param : access ClientInformationFactory'Class) return ProgressMidlet_Access is
       This : constant ProgressMidlet_Access := new ProgressMidlet;
    begin
-      ProgressMidlet_Package.Initialize (This.all, clientInformationFactory);
+      ProgressMidlet_Package.Initialize (This.all, clientInformationFactory_Param);
       return This;
    end Create;
 
@@ -47,17 +48,17 @@ package body org.allbinary.midlet.ProgressMidlet_Package is
       primaryThreadPool : ThreadPool_Access;
       runnable : Runnable_Access;
    begin
-        processor := MidletExitProcessorFactory_Package.getInstance.getExitInstance (This'Unchecked_Access);
+        processor := MidletExitProcessorFactory_Package.getInstance.getExitInstance (ProgressMidlet_Access'(This'Unchecked_Access));
         begin
             primaryThreadPool := PrimaryThreadPool_Package.getInstance;
-            runnable := ExitRunnable_Package.Create (This'Unchecked_Access, processor, isProgress);
+            runnable := ExitRunnable_Package.Create (ProgressMidlet_Access'(This'Unchecked_Access), processor, isProgress);
             primaryThreadPool.runTask (runnable);
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("exit"), e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, ProgressMidlet_Access'(This'Unchecked_Access), To_Unbounded_String ("exit"), e);
             begin
                 processor.process;
             exception
@@ -65,7 +66,7 @@ package body org.allbinary.midlet.ProgressMidlet_Package is
                     declare
                         e2 : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                     begin
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("exit"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, ProgressMidlet_Access'(This'Unchecked_Access), To_Unbounded_String ("exit"), e);
                     end;
             end;
                 end;

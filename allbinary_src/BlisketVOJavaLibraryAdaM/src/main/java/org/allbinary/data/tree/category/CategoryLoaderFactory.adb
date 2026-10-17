@@ -34,7 +34,8 @@ package body org.allbinary.data.tree.category.CategoryLoaderFactory_Package is
       return This;
    end Create;
 
-   function getInstance (categoryFactoryInterface : CategoryFactoryInterface_Access) return CategoryLoaderInterface_Access is
+   function getInstance (categoryFactoryInterface_Param : access CategoryFactoryInterface'Class) return CategoryLoaderInterface_Access is
+      categoryFactoryInterface : CategoryFactoryInterface_Access := CategoryFactoryInterface_Access (categoryFactoryInterface_Param);
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
    begin
@@ -55,8 +56,8 @@ package body org.allbinary.data.tree.category.CategoryLoaderFactory_Package is
         end;
    end getInstance;
 
-   procedure getInstance (categoryFactoryInterface : CategoryFactoryInterface_Access) is
-      Java_Result : constant CategoryLoaderInterface_Access := getInstance (categoryFactoryInterface);
+   procedure getInstance (categoryFactoryInterface_Param : access CategoryFactoryInterface'Class) is
+      Java_Result : constant CategoryLoaderInterface_Access := getInstance (categoryFactoryInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

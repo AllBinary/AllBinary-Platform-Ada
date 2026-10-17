@@ -38,8 +38,8 @@ package org.allbinary.graphics.j2me.workarea.tools.SelectionToolFactory_Package 
 
    procedure Initialize (This : in out SelectionToolFactory'Class);
    function Create return SelectionToolFactory_Access;
-   function getInstance (This : in out SelectionToolFactory; canvasJPanel : CanvasJPanel_Access) return GraphicItemInterface_Access;
-   procedure getInstance (This : in out SelectionToolFactory; canvasJPanel : CanvasJPanel_Access);
+   function getInstance (This : in out SelectionToolFactory; canvasJPanel_Param : access CanvasJPanel'Class) return GraphicItemInterface_Access;
+   procedure getInstance (This : in out SelectionToolFactory; canvasJPanel_Param : access CanvasJPanel'Class);
 
 end org.allbinary.graphics.j2me.workarea.tools.SelectionToolFactory_Package;
 

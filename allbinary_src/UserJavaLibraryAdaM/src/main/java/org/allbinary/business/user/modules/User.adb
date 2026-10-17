@@ -59,36 +59,39 @@ package body org.allbinary.business.user.modules.User_Package is
       return This;
    end Create;
 
-   procedure Initialize (This : in out User'Class; request : HttpServletRequest_Access) is
+   procedure Initialize (This : in out User'Class; request_Param : access HttpServletRequest'Class) is
+      request : HttpServletRequest_Access := HttpServletRequest_Access (request_Param);
    begin
       Initialize_Fields (This);
         This.getFormData (RequestParams_Package.Create (request).toHashMap);
         This.userConfigurationInterface := UserConfigurationInterfaceFactory_Package.getInstance (This.getRole);
    end Initialize;
 
-   function Create (request : HttpServletRequest_Access) return User_Access is
+   function Create (request_Param : access HttpServletRequest'Class) return User_Access is
       This : constant User_Access := new User;
    begin
-      User_Package.Initialize (This.all, request);
+      User_Package.Initialize (This.all, request_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out User'Class; userHashMap : HashMap_Access) is
+   procedure Initialize (This : in out User'Class; userHashMap_Param : access HashMap'Class) is
+      userHashMap : HashMap_Access := HashMap_Access (userHashMap_Param);
    begin
       Initialize_Fields (This);
         This.getFormData (userHashMap);
         This.userConfigurationInterface := UserConfigurationInterfaceFactory_Package.getInstance (This.getRole);
    end Initialize;
 
-   function Create (userHashMap : HashMap_Access) return User_Access is
+   function Create (userHashMap_Param : access HashMap'Class) return User_Access is
       This : constant User_Access := new User;
    begin
-      User_Package.Initialize (This.all, userHashMap);
+      User_Package.Initialize (This.all, userHashMap_Param);
       return This;
    end Create;
 
    --  throws Exception
-   procedure getFormData (This : in out User; userHashMap : HashMap_Access) is
+   procedure getFormData (This : in out User; userHashMap_Param : access HashMap'Class) is
+      userHashMap : HashMap_Access := HashMap_Access (userHashMap_Param);
       stringUtil : StringUtil_Access;
       passwordString : Unbounded_String;
       stringValidationUtil : StringValidationUtil_Access;
@@ -162,7 +165,7 @@ package body org.allbinary.business.user.modules.User_Package is
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VALIDATIONERROR) then
                 commonStrings := CommonStrings_Package.getInstance;
-                This.logUtil.put (To_Unbounded_String ("Failed to validate form"), This'Unchecked_Access, commonStrings.IS_VALID, e);
+                This.logUtil.put (To_Unbounded_String ("Failed to validate form"), User_Access'(This'Unchecked_Access), commonStrings.IS_VALID, e);
             end if;
             return False;
                 end;
@@ -194,7 +197,7 @@ package body org.allbinary.business.user.modules.User_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), This'Unchecked_Access, To_Unbounded_String ("validationInfo()"), e);
+                This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), User_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
             end if;
             return To_Unbounded_String ("Error Validating Form");
                 end;
@@ -281,7 +284,8 @@ package body org.allbinary.business.user.modules.User_Package is
         This.fax := value;
    end setFax;
 
-   procedure setRole (This : in out User; role : UserRole_Access) is
+   procedure setRole (This : in out User; role_Param : access UserRole'Class) is
+      role : UserRole_Access := UserRole_Access (role_Param);
    begin
         This.role := role;
    end setRole;
@@ -506,14 +510,16 @@ package body org.allbinary.business.user.modules.User_Package is
         return This.password.toHashMap (This.secret);
    end toPasswordHashMap;
 
-   procedure validateSession (This : in out User; weblisketSession : WeblisketSessionInterface_Access) is
+   procedure validateSession (This : in out User; weblisketSession_Param : access WeblisketSessionInterface'Class) is
+      weblisketSession : WeblisketSessionInterface_Access := WeblisketSessionInterface_Access (weblisketSession_Param);
    begin
         weblisketSession.setAuthenticated;
         weblisketSession.setRole (This.getRole);
         weblisketSession.setUserName (This.getUserName);
    end validateSession;
 
-   procedure updateSession (This : in out User; weblisketSession : WeblisketSessionInterface_Access) is
+   procedure updateSession (This : in out User; weblisketSession_Param : access WeblisketSessionInterface'Class) is
+      weblisketSession : WeblisketSessionInterface_Access := WeblisketSessionInterface_Access (weblisketSession_Param);
    begin
         null;
    end updateSession;
@@ -534,7 +540,8 @@ package body org.allbinary.business.user.modules.User_Package is
         return null;
    end toValidationInfoDoc;
 
-   function toValidationInfoNode (This : in out User; document : Document_Access) return Node_Access is
+   function toValidationInfoNode (This : in out User; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
    begin
         return null;
    end toValidationInfoNode;
@@ -544,13 +551,14 @@ package body org.allbinary.business.user.modules.User_Package is
         return This.userConfigurationInterface;
    end getUserConfigurationInterface;
 
-   procedure setUserConfigurationInterface (This : in out User; userConfigurationInterface : UserConfigurationInterface_Access) is
+   procedure setUserConfigurationInterface (This : in out User; userConfigurationInterface_Param : access UserConfigurationInterface'Class) is
+      userConfigurationInterface : UserConfigurationInterface_Access := UserConfigurationInterface_Access (userConfigurationInterface_Param);
    begin
         This.userConfigurationInterface := userConfigurationInterface;
    end setUserConfigurationInterface;
 
-   procedure toValidationInfoNode (This : in out User; document : Document_Access) is
-      Java_Result : constant Node_Access := User'Class (This).toValidationInfoNode (document);
+   procedure toValidationInfoNode (This : in out User; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := User'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

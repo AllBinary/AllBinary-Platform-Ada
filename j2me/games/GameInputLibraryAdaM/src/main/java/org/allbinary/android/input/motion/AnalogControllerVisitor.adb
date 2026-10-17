@@ -33,7 +33,9 @@ package body org.allbinary.android.input.motion.AnalogControllerVisitor_Package 
    end Create;
 
 
-   procedure process (This : in out AnalogControllerVisitor; allbinaryLayerManager : AllBinaryLayerManager_Access; analogLocationInputProcessor : AnalogLocationInputProcessor_Access) is
+   procedure process (This : in out AnalogControllerVisitor; allbinaryLayerManager_Param : access AllBinaryLayerManager'Class; analogLocationInputProcessor_Param : access AnalogLocationInputProcessor'Class) is
+      allbinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allbinaryLayerManager_Param);
+      analogLocationInputProcessor : AnalogLocationInputProcessor_Access := AnalogLocationInputProcessor_Access (analogLocationInputProcessor_Param);
    begin
         null;
    end process;

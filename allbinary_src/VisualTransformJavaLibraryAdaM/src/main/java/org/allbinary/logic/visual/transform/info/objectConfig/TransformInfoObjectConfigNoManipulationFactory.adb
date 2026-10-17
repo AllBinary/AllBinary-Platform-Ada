@@ -41,7 +41,9 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
    end Create;
 
    --  throws Exception
-   function getInstance (This : in out TransformInfoObjectConfigNoManipulationFactory; transformInfoInterface : TransformInfoInterface_Access; objectConfigFileAbPath : AbPath_Access) return TransformInfoObjectConfigInterface_Access is
+   function getInstance (This : in out TransformInfoObjectConfigNoManipulationFactory; transformInfoInterface_Param : access TransformInfoInterface'Class; objectConfigFileAbPath_Param : access AbPath'Class) return TransformInfoObjectConfigInterface_Access is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+      objectConfigFileAbPath : AbPath_Access := AbPath_Access (objectConfigFileAbPath_Param);
       transformInfoObjectConfigData : TransformInfoObjectConfigData_Access;
       data : Unbounded_String;
       commonStrings : CommonStrings_Access;
@@ -57,15 +59,15 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
                 begin
             commonStrings := CommonStrings_Package.getInstance;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Could Not Load Object Config"), This'Unchecked_Access, commonStrings.GET_INSTANCE, e);
+                This.logUtil.put (To_Unbounded_String ("Could Not Load Object Config"), TransformInfoObjectConfigNoManipulationFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE, e);
             end if;
             Java_Throw (e);
                 end;
         end;
    end getInstance;
 
-   procedure getInstance (This : in out TransformInfoObjectConfigNoManipulationFactory; transformInfoInterface : TransformInfoInterface_Access; objectConfigFileAbPath : AbPath_Access) is
-      Java_Result : constant TransformInfoObjectConfigInterface_Access := TransformInfoObjectConfigNoManipulationFactory'Class (This).getInstance (transformInfoInterface, objectConfigFileAbPath);
+   procedure getInstance (This : in out TransformInfoObjectConfigNoManipulationFactory; transformInfoInterface_Param : access TransformInfoInterface'Class; objectConfigFileAbPath_Param : access AbPath'Class) is
+      Java_Result : constant TransformInfoObjectConfigInterface_Access := TransformInfoObjectConfigNoManipulationFactory'Class (This).getInstance (transformInfoInterface_Param, objectConfigFileAbPath_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

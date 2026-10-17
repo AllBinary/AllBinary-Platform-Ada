@@ -62,13 +62,13 @@ package org.allbinary.logic.communication.smtp.configuration.user.event.UserEmai
       userEmailEventsConfigurationInterface : UserEmailEventsConfigurationInterface_Access;
    end record;
 
-   procedure Initialize (This : in out UserEmailEventsConfigurationView'Class; node : Node_Access);
-   function Create (node : Node_Access) return UserEmailEventsConfigurationView_Access;
-   procedure Initialize (This : in out UserEmailEventsConfigurationView'Class; userEmailEventsConfigurationInterface : UserEmailEventsConfigurationInterface_Access);
-   function Create (userEmailEventsConfigurationInterface : UserEmailEventsConfigurationInterface_Access) return UserEmailEventsConfigurationView_Access;
+   procedure Initialize (This : in out UserEmailEventsConfigurationView'Class; node_Param : access Node'Class);
+   function Create (node_Param : access Node'Class) return UserEmailEventsConfigurationView_Access;
+   procedure Initialize (This : in out UserEmailEventsConfigurationView'Class; userEmailEventsConfigurationInterface_Param : access UserEmailEventsConfigurationInterface'Class);
+   function Create (userEmailEventsConfigurationInterface_Param : access UserEmailEventsConfigurationInterface'Class) return UserEmailEventsConfigurationView_Access;
    function getUserEmailEventsConfigurationInterface (This : in out UserEmailEventsConfigurationView) return UserEmailEventsConfigurationInterface_Access;
-   function toXmlNode (This : in out UserEmailEventsConfigurationView; document : Document_Access) return Node_Access;
-   procedure toXmlNode (This : in out UserEmailEventsConfigurationView; document : Document_Access);
+   function toXmlNode (This : in out UserEmailEventsConfigurationView; document_Param : access Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out UserEmailEventsConfigurationView; document_Param : access Document'Class);
 
 end org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationView_Package;
 

@@ -40,12 +40,16 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
         return ImageModifierUtil_Package.instance;
    end getInstanceOrCreate;
 
-   procedure setBasicColorP (This : in out ImageModifierUtil; basicColor : BasicColor_Access) is
+   procedure setBasicColorP (This : in out ImageModifierUtil; basicColor_Param : access BasicColor'Class) is
+      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         null;
    end setBasicColorP;
 
-   procedure setColor (This : in out ImageModifierUtil; unusedOriginalImage : Image_Access; image : Image_Access; imageIndex : Integer; basicColor : BasicColor_Access) is
+   procedure setColor (This : in out ImageModifierUtil; unusedOriginalImage_Param : access Image'Class; image_Param : access Image'Class; imageIndex : Integer; basicColor_Param : access BasicColor'Class) is
+      unusedOriginalImage : Image_Access := Image_Access (unusedOriginalImage_Param);
+      image : Image_Access := Image_Access (image_Param);
+      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
       newBufferedImage : BufferedImage_Access;
       r : Short_Integer;
       g : Short_Integer;
@@ -88,7 +92,10 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
         end loop;
    end setColor;
 
-   procedure changeColor (This : in out ImageModifierUtil; unusedOriginalImage : Image_Access; image : Image_Access; imageIndex : Integer; basicColor : BasicColor_Access) is
+   procedure changeColor (This : in out ImageModifierUtil; unusedOriginalImage_Param : access Image'Class; image_Param : access Image'Class; imageIndex : Integer; basicColor_Param : access BasicColor'Class) is
+      unusedOriginalImage : Image_Access := Image_Access (unusedOriginalImage_Param);
+      image : Image_Access := Image_Access (image_Param);
+      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
       newBufferedImage : BufferedImage_Access;
       MAX : Float;
       r : Float;
@@ -134,7 +141,9 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
         end loop;
    end changeColor;
 
-   procedure setAlpha (This : in out ImageModifierUtil; unusedOriginalImage : Image_Access; image : Image_Access; imageIndex : Integer; alphaInt : Integer) is
+   procedure setAlpha (This : in out ImageModifierUtil; unusedOriginalImage_Param : access Image'Class; image_Param : access Image'Class; imageIndex : Integer; alphaInt : Integer) is
+      unusedOriginalImage : Image_Access := Image_Access (unusedOriginalImage_Param);
+      image : Image_Access := Image_Access (image_Param);
       alpha : Short_Short_Integer;
       newBufferedImage : BufferedImage_Access;
       width : Integer;
@@ -182,13 +191,14 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            PreLogUtil_Package.putOE (commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("getImageArray"), e);
+            PreLogUtil_Package.putOE (commonStrings.EXCEPTION_Id, ImageModifierUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("getImageArray"), e);
             return originalImageArray;
                 end;
         end;
    end getImageArray;
 
-   procedure handleImage (This : in out ImageModifierUtil; imageArray : Image_Access_Array_Access; index : Integer; image : Image_Access) is
+   procedure handleImage (This : in out ImageModifierUtil; imageArray : Image_Access_Array_Access; index : Integer; image_Param : access Image'Class) is
+      image : Image_Access := Image_Access (image_Param);
    begin
         null;
    end handleImage;

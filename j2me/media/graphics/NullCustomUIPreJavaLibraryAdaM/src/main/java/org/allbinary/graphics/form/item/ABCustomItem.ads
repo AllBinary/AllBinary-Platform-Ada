@@ -30,12 +30,12 @@ package org.allbinary.graphics.form.item.ABCustomItem_Package is
    type ABCustomItem is new Java_Object with null record;
    NULL_CUSTOM_ITEM : Java_Object_Access;
 
-   procedure Initialize (This : in out ABCustomItem'Class; label : Unbounded_String; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access);
-   function Create (label : Unbounded_String; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return ABCustomItem_Access;
+   procedure Initialize (This : in out ABCustomItem'Class; label : Unbounded_String; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class);
+   function Create (label : Unbounded_String; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return ABCustomItem_Access;
    function getNullInstance return ABCustomItem_Access;
-   procedure setOwner (This : in out ABCustomItem; owner : Screen_Access);
-   procedure paintXY (This : in out ABCustomItem; graphics : Graphics_Access; x : Integer; y : Integer);
-   procedure paintUnselected (This : in out ABCustomItem; graphics : Graphics_Access; x : Integer; y : Integer);
+   procedure setOwner (This : in out ABCustomItem; owner_Param : access Screen'Class);
+   procedure paintXY (This : in out ABCustomItem; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
+   procedure paintUnselected (This : in out ABCustomItem; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
    function isFocusable (This : in out ABCustomItem) return Boolean;
    function getLabel (This : in out ABCustomItem) return Unbounded_String;
    procedure setLabel (This : in out ABCustomItem; label : Unbounded_String);
@@ -45,7 +45,7 @@ package org.allbinary.graphics.form.item.ABCustomItem_Package is
    procedure setValue (This : in out ABCustomItem; value : Float);
    function getMinimumWidth (This : in out ABCustomItem) return Integer;
    function getMinimumHeight (This : in out ABCustomItem) return Integer;
-   procedure preMeasurement (This : in out ABCustomItem; graphics : Graphics_Access);
+   procedure preMeasurement (This : in out ABCustomItem; graphics_Param : access Graphics'Class);
 
 end org.allbinary.graphics.form.item.ABCustomItem_Package;
 

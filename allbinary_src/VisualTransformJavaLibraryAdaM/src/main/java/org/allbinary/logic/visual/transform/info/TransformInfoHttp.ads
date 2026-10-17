@@ -62,17 +62,17 @@ package org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package is
       abContext : AbContext_Access;
    end record;
 
-   procedure Initialize (This : in out TransformInfoHttp'Class; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access; crud : Boolean);
-   function Create (propertiesHashMap : HashMap_Access; pageContext : PageContext_Access; crud : Boolean) return TransformInfoHttp_Access;
-   procedure Initialize (This : in out TransformInfoHttp'Class; request : HttpServletRequest_Access; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access);
-   function Create (request : HttpServletRequest_Access; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return TransformInfoHttp_Access;
-   procedure Initialize (This : in out TransformInfoHttp'Class; databaseHashMap : HashMap_Access; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access);
-   function Create (databaseHashMap : HashMap_Access; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return TransformInfoHttp_Access;
-   procedure Initialize (This : in out TransformInfoHttp'Class; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access);
-   function Create (propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return TransformInfoHttp_Access;
-   procedure Initialize (This : in out TransformInfoHttp'Class; parentViewOfThisTransformInfoInterface : TransformInfoHttp_Access);
-   function Create (parentViewOfThisTransformInfoInterface : TransformInfoHttp_Access) return TransformInfoHttp_Access;
-   procedure set (This : in out TransformInfoHttp; hashMap : HashMap_Access);
+   procedure Initialize (This : in out TransformInfoHttp'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class; crud : Boolean);
+   function Create (propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class; crud : Boolean) return TransformInfoHttp_Access;
+   procedure Initialize (This : in out TransformInfoHttp'Class; request_Param : access HttpServletRequest'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
+   function Create (request_Param : access HttpServletRequest'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return TransformInfoHttp_Access;
+   procedure Initialize (This : in out TransformInfoHttp'Class; databaseHashMap_Param : access HashMap'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
+   function Create (databaseHashMap_Param : access HashMap'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return TransformInfoHttp_Access;
+   procedure Initialize (This : in out TransformInfoHttp'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
+   function Create (propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return TransformInfoHttp_Access;
+   procedure Initialize (This : in out TransformInfoHttp'Class; parentViewOfThisTransformInfoInterface_Param : access TransformInfoHttp'Class);
+   function Create (parentViewOfThisTransformInfoInterface_Param : access TransformInfoHttp'Class) return TransformInfoHttp_Access;
+   procedure set (This : in out TransformInfoHttp; hashMap_Param : access HashMap'Class);
    function getWeblisketSession (This : in out TransformInfoHttp) return WeblisketSessionInterface_Access;
    function getPageContext (This : in out TransformInfoHttp) return PageContext_Access;
    function getPropertiesHashMap (This : in out TransformInfoHttp) return HashMap_Access;

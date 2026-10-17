@@ -18,7 +18,7 @@ package body org.allbinary.graphics.draw.KeyValueDrawString_Package is
    procedure Initialize_Fields (This : in out KeyValueDrawString'Class) is
    begin
       null;
-      This.myFontProcessor := UpdateMyFontProcessor_Package.Create (This'Unchecked_Access);
+      This.myFontProcessor := UpdateMyFontProcessor_Package.Create (KeyValueDrawString_Access'(This'Unchecked_Access));
       
       
       This.valueX := 0;
@@ -40,7 +40,8 @@ package body org.allbinary.graphics.draw.KeyValueDrawString_Package is
       return This;
    end Create;
 
-   procedure updateMeasurement (This : in out KeyValueDrawString; graphics : Graphics_Access) is
+   procedure updateMeasurement (This : in out KeyValueDrawString; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       labelWidth : Integer;
    begin
         labelWidth := (graphics.getFont.stringWidth (This.LABEL)) - (Length (This.LABEL));
@@ -48,7 +49,8 @@ package body org.allbinary.graphics.draw.KeyValueDrawString_Package is
         This.myFontProcessor := MyFontProcessor_Package.getInstance;
    end updateMeasurement;
 
-   procedure paint (This : in out KeyValueDrawString; graphics : Graphics_Access; y : Integer) is
+   procedure paint (This : in out KeyValueDrawString; graphics_Param : access Graphics'Class; y : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.myFontProcessor.process (graphics);
         graphics.drawString (This.LABEL, This.labelX, y, 0);

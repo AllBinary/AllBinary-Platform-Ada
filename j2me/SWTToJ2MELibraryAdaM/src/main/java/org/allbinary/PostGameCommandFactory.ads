@@ -39,7 +39,7 @@ package org.allbinary.PostGameCommandFactory_Package is
    procedure Initialize (This : in out PostGameCommandFactory'Class);
    function Create return PostGameCommandFactory_Access;
    function getInstance return PostGameCommandFactory_Access;
-   procedure addCommands (This : in out PostGameCommandFactory; canvas : MyCanvas_Access);
+   procedure addCommands (This : in out PostGameCommandFactory; canvas_Param : access MyCanvas'Class);
 
 end org.allbinary.PostGameCommandFactory_Package;
 

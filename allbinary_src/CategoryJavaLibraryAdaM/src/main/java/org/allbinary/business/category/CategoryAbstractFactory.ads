@@ -53,20 +53,20 @@ package org.allbinary.business.category.CategoryAbstractFactory_Package is
    procedure Initialize (This : in out CategoryAbstractFactory'Class);
    function Create return CategoryAbstractFactory_Access;
    function getRootInstance (This : in out CategoryAbstractFactory) return CategoryInterface_Access;
-   function getRootInstance (This : in out CategoryAbstractFactory; categoryAbPath : AbPath_Access) return CategoryInterface_Access;
-   procedure getRootInstance (This : in out CategoryAbstractFactory; categoryAbPath : AbPath_Access);
-   function getRootInstanceFromNode (This : in out CategoryAbstractFactory; node : Node_Access) return CategoryInterface_Access;
-   procedure getRootInstanceFromNode (This : in out CategoryAbstractFactory; node : Node_Access);
+   function getRootInstance (This : in out CategoryAbstractFactory; categoryAbPath_Param : access AbPath'Class) return CategoryInterface_Access;
+   procedure getRootInstance (This : in out CategoryAbstractFactory; categoryAbPath_Param : access AbPath'Class);
+   function getRootInstanceFromNode (This : in out CategoryAbstractFactory; node_Param : access Node'Class) return CategoryInterface_Access;
+   procedure getRootInstanceFromNode (This : in out CategoryAbstractFactory; node_Param : access Node'Class);
    function getInstance (This : in out CategoryAbstractFactory; categoryName : Unbounded_String) return CategoryInterface_Access;
    procedure getInstance (This : in out CategoryAbstractFactory; categoryName : Unbounded_String);
-   function getInstance (This : in out CategoryAbstractFactory; rootCategoryInterface : CategoryInterface_Access; parentCategoryInterface : CategoryInterface_Access; categoryName : Unbounded_String) return CategoryInterface_Access;
-   procedure getInstance (This : in out CategoryAbstractFactory; rootCategoryInterface : CategoryInterface_Access; parentCategoryInterface : CategoryInterface_Access; categoryName : Unbounded_String);
-   function getInstance (This : in out CategoryAbstractFactory; node : Node_Access) return CategoryInterface_Access;
-   procedure getInstance (This : in out CategoryAbstractFactory; node : Node_Access);
-   function getInstance (This : in out CategoryAbstractFactory; rootCategoryInterface : CategoryInterface_Access; parentCategoryInterface : CategoryInterface_Access; node : Node_Access) return CategoryInterface_Access;
-   procedure getInstance (This : in out CategoryAbstractFactory; rootCategoryInterface : CategoryInterface_Access; parentCategoryInterface : CategoryInterface_Access; node : Node_Access);
-   function getInstance (This : in out CategoryAbstractFactory; rootCategoryInterface : CategoryInterface_Access; parentCategoryInterface : CategoryInterface_Access; categoryPropertiesHashMap : HashMap_Access) return CategoryInterface_Access;
-   procedure getInstance (This : in out CategoryAbstractFactory; rootCategoryInterface : CategoryInterface_Access; parentCategoryInterface : CategoryInterface_Access; categoryPropertiesHashMap : HashMap_Access);
+   function getInstance (This : in out CategoryAbstractFactory; rootCategoryInterface_Param : access CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface'Class; categoryName : Unbounded_String) return CategoryInterface_Access;
+   procedure getInstance (This : in out CategoryAbstractFactory; rootCategoryInterface_Param : access CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface'Class; categoryName : Unbounded_String);
+   function getInstance (This : in out CategoryAbstractFactory; node_Param : access Node'Class) return CategoryInterface_Access;
+   procedure getInstance (This : in out CategoryAbstractFactory; node_Param : access Node'Class);
+   function getInstance (This : in out CategoryAbstractFactory; rootCategoryInterface_Param : access CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface'Class; node_Param : access Node'Class) return CategoryInterface_Access;
+   procedure getInstance (This : in out CategoryAbstractFactory; rootCategoryInterface_Param : access CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface'Class; node_Param : access Node'Class);
+   function getInstance (This : in out CategoryAbstractFactory; rootCategoryInterface_Param : access CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface'Class; categoryPropertiesHashMap_Param : access HashMap'Class) return CategoryInterface_Access;
+   procedure getInstance (This : in out CategoryAbstractFactory; rootCategoryInterface_Param : access CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface'Class; categoryPropertiesHashMap_Param : access HashMap'Class);
 
 end org.allbinary.business.category.CategoryAbstractFactory_Package;
 

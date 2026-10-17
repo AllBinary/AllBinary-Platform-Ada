@@ -66,12 +66,15 @@ package body org.allbinary.logic.communication.log.GuiLog_Package is
         error.show;
    end showDialog;
 
-   function put (This : in out GuiLog; specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String) return Unbounded_String is
+   function put (This : in out GuiLog; specialMessage : Unbounded_String; anyType_Param : access Java_Object'Class; functionName : Unbounded_String) return Unbounded_String is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         return This.put (specialMessage, anyType, functionName, null);
    end put;
 
-   function put (This : in out GuiLog; specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String; exception_Id : Java_Throwable) return Unbounded_String is
+   function put (This : in out GuiLog; specialMessage : Unbounded_String; anyType_Param : access Java_Object'Class; functionName : Unbounded_String; exception_Id_Param : access Java_Throwable_Object'Class) return Unbounded_String is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      exception_Id : Java_Throwable := Java_Throwable (exception_Id_Param);
       data : Unbounded_String;
    begin
         begin
@@ -84,7 +87,7 @@ package body org.allbinary.logic.communication.log.GuiLog_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            PreLogUtil_Package.putOE (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("put"), e);
+            PreLogUtil_Package.putOE (This.commonStrings.EXCEPTION_Id, GuiLog_Access'(This'Unchecked_Access), To_Unbounded_String ("put"), e);
             return To_Unbounded_String ("Logging Error");
                 end;
         end;
@@ -95,7 +98,8 @@ package body org.allbinary.logic.communication.log.GuiLog_Package is
         return This.put (specialMessage, className, functionName, null);
    end put;
 
-   function put (This : in out GuiLog; specialMessage : Unbounded_String; className : Unbounded_String; functionName : Unbounded_String; exception_Id : Java_Throwable) return Unbounded_String is
+   function put (This : in out GuiLog; specialMessage : Unbounded_String; className : Unbounded_String; functionName : Unbounded_String; exception_Id_Param : access Java_Throwable_Object'Class) return Unbounded_String is
+      exception_Id : Java_Throwable := Java_Throwable (exception_Id_Param);
       data : Unbounded_String;
    begin
         begin
@@ -108,21 +112,21 @@ package body org.allbinary.logic.communication.log.GuiLog_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            PreLogUtil_Package.putOE (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("put"), e);
+            PreLogUtil_Package.putOE (This.commonStrings.EXCEPTION_Id, GuiLog_Access'(This'Unchecked_Access), To_Unbounded_String ("put"), e);
             return To_Unbounded_String ("Logging Error");
                 end;
         end;
    end put;
 
-   procedure put (This : in out GuiLog; specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String) is
-      Java_Result : constant Unbounded_String := GuiLog'Class (This).put (specialMessage, anyType, functionName);
+   procedure put (This : in out GuiLog; specialMessage : Unbounded_String; anyType_Param : access Java_Object'Class; functionName : Unbounded_String) is
+      Java_Result : constant Unbounded_String := GuiLog'Class (This).put (specialMessage, anyType_Param, functionName);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end put;
 
-   procedure put (This : in out GuiLog; specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String; exception_Id : Java_Throwable) is
-      Java_Result : constant Unbounded_String := GuiLog'Class (This).put (specialMessage, anyType, functionName, exception_Id);
+   procedure put (This : in out GuiLog; specialMessage : Unbounded_String; anyType_Param : access Java_Object'Class; functionName : Unbounded_String; exception_Id_Param : access Java_Throwable_Object'Class) is
+      Java_Result : constant Unbounded_String := GuiLog'Class (This).put (specialMessage, anyType_Param, functionName, exception_Id_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
@@ -135,8 +139,8 @@ package body org.allbinary.logic.communication.log.GuiLog_Package is
       null;
    end put;
 
-   procedure put (This : in out GuiLog; specialMessage : Unbounded_String; className : Unbounded_String; functionName : Unbounded_String; exception_Id : Java_Throwable) is
-      Java_Result : constant Unbounded_String := GuiLog'Class (This).put (specialMessage, className, functionName, exception_Id);
+   procedure put (This : in out GuiLog; specialMessage : Unbounded_String; className : Unbounded_String; functionName : Unbounded_String; exception_Id_Param : access Java_Throwable_Object'Class) is
+      Java_Result : constant Unbounded_String := GuiLog'Class (This).put (specialMessage, className, functionName, exception_Id_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

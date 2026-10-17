@@ -40,12 +40,12 @@ package org.allbinary.game.tracking.TrackingEvent_Package is
       layerInterface : AllBinaryLayer_Access;
    end record;
 
-   procedure Initialize (This : in out TrackingEvent'Class; allBinaryLayerInterface : Java_Object_Access);
-   function Create (allBinaryLayerInterface : Java_Object_Access) return TrackingEvent_Access;
-   procedure init (This : in out TrackingEvent; anyType : Java_Object_Access);
+   procedure Initialize (This : in out TrackingEvent'Class; allBinaryLayerInterface_Param : access Java_Object'Class);
+   function Create (allBinaryLayerInterface_Param : access Java_Object'Class) return TrackingEvent_Access;
+   procedure init (This : in out TrackingEvent; anyType_Param : access Java_Object'Class);
    function getLayerInterface (This : in out TrackingEvent) return AllBinaryLayer_Access;
-   procedure setLayerInterface (This : in out TrackingEvent; layerInterface : AllBinaryLayer_Access);
-   procedure setLayerInterfaceForCircularStaticPool (This : in out TrackingEvent; layerInterface : AllBinaryLayer_Access);
+   procedure setLayerInterface (This : in out TrackingEvent; layerInterface_Param : access AllBinaryLayer'Class);
+   procedure setLayerInterfaceForCircularStaticPool (This : in out TrackingEvent; layerInterface_Param : access AllBinaryLayer'Class);
    function toString (This : in out TrackingEvent) return Unbounded_String;
 
 end org.allbinary.game.tracking.TrackingEvent_Package;

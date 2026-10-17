@@ -24,20 +24,24 @@ package body org.allbinary.game.displayable.screen.LicenseRegistrationTextBox_Pa
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out LicenseRegistrationTextBox'Class; cmdListener : CommandListener_Access; backgrounBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) is
+   procedure Initialize (This : in out LicenseRegistrationTextBox'Class; cmdListener_Param : access CommandListener'Class; backgrounBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) is
+      cmdListener : CommandListener_Access := CommandListener_Access (cmdListener_Param);
+      backgrounBasicColor : BasicColor_Access := BasicColor_Access (backgrounBasicColor_Param);
+      foregroundBasicColor : BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
    begin
         CustomTextBox_Package.Initialize (This, cmdListener, To_Unbounded_String ("Enter Registration Code:"), StringUtil_Package.getInstance.EMPTY_STRING, 60, TextField_Package.ANY, Font_Package.getDefaultFont, backgrounBasicColor, foregroundBasicColor);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (cmdListener : CommandListener_Access; backgrounBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return LicenseRegistrationTextBox_Access is
+   function Create (cmdListener_Param : access CommandListener'Class; backgrounBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return LicenseRegistrationTextBox_Access is
       This : constant LicenseRegistrationTextBox_Access := new LicenseRegistrationTextBox;
    begin
-      LicenseRegistrationTextBox_Package.Initialize (This.all, cmdListener, backgrounBasicColor, foregroundBasicColor);
+      LicenseRegistrationTextBox_Package.Initialize (This.all, cmdListener_Param, backgrounBasicColor_Param, foregroundBasicColor_Param);
       return This;
    end Create;
 
-   procedure initCommands (This : in out LicenseRegistrationTextBox; cmdListener : CommandListener_Access) is
+   procedure initCommands (This : in out LicenseRegistrationTextBox; cmdListener_Param : access CommandListener'Class) is
+      cmdListener : CommandListener_Access := CommandListener_Access (cmdListener_Param);
    begin
         This.removeAllCommands;
         This.addCommand (GameCommandsFactory_Package.getInstance.CLOSE_AND_SHOW_GAME_CANVAS);
@@ -57,7 +61,7 @@ package body org.allbinary.game.displayable.screen.LicenseRegistrationTextBox_Pa
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("open"), e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, LicenseRegistrationTextBox_Access'(This'Unchecked_Access), To_Unbounded_String ("open"), e);
                 end;
         end;
         CustomTextBox (This).open;
@@ -77,7 +81,7 @@ package body org.allbinary.game.displayable.screen.LicenseRegistrationTextBox_Pa
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("open"), e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, LicenseRegistrationTextBox_Access'(This'Unchecked_Access), To_Unbounded_String ("open"), e);
                 end;
         end;
         This.paintable := This.pleaseWaitPaintable;
@@ -85,7 +89,8 @@ package body org.allbinary.game.displayable.screen.LicenseRegistrationTextBox_Pa
         CustomTextBox (This).close;
    end close;
 
-   procedure paint (This : in out LicenseRegistrationTextBox; graphics : Graphics_Access) is
+   procedure paint (This : in out LicenseRegistrationTextBox; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         CustomTextBox (This).paint (graphics);
         This.paintable.paint (graphics);
@@ -95,7 +100,7 @@ package body org.allbinary.game.displayable.screen.LicenseRegistrationTextBox_Pa
       commandListener : CommandListener_Access;
    begin
         commandListener := This.getCustomCommandListener;
-        commandListener.commandAction (SUBMIT_COMMAND, This'Unchecked_Access);
+        commandListener.commandAction (SUBMIT_COMMAND, LicenseRegistrationTextBox_Access'(This'Unchecked_Access));
    end submit;
 
 begin

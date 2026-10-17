@@ -30,7 +30,7 @@ package org.allbinary.logic.util.cache.AutomaticCacheInterface_Package is
    type AutomaticCacheInterface_Access is access all AutomaticCacheInterface'Class;
    type AutomaticCacheInterface_Access_Array is array (Natural range <>) of AutomaticCacheInterface_Access;
    type AutomaticCacheInterface_Access_Array_Access is access all AutomaticCacheInterface_Access_Array;
-   function get (This : in out AutomaticCacheInterface; key : Java_Object_Access) return CacheableInterface_Access is abstract;
+   function get (This : in out AutomaticCacheInterface; key_Param : access Java_Object'Class) return CacheableInterface_Access is abstract;
 
 end org.allbinary.logic.util.cache.AutomaticCacheInterface_Package;
 

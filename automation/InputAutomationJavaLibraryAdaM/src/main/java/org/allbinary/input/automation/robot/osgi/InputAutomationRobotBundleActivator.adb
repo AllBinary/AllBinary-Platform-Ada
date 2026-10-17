@@ -45,13 +45,15 @@ package body org.allbinary.input.automation.robot.osgi.InputAutomationRobotBundl
    end init;
 
    --  throws Exception
-   procedure registerAsService (This : in out InputAutomationRobotBundleActivator; bundleContext : BundleContext_Access) is
+   procedure registerAsService (This : in out InputAutomationRobotBundleActivator; bundleContext_Param : access BundleContext'Class) is
+      bundleContext : BundleContext_Access := BundleContext_Access (bundleContext_Param);
    begin
         OSGIActivatorUtil_Package.registerAsService (bundleContext, This.getServiceFactory, InputAutomationRobotServiceInterface_Package.InputAutomationRobotServiceInterface'Tag.getName);
    end registerAsService;
 
    --  throws Exception
-   function getInputAutomationRobotChangeListener (This : in out InputAutomationRobotBundleActivator; context : BundleContext_Access) return InputAutomationRobotChangeListener_Access is
+   function getInputAutomationRobotChangeListener (This : in out InputAutomationRobotBundleActivator; context_Param : access BundleContext'Class) return InputAutomationRobotChangeListener_Access is
+      context : BundleContext_Access := BundleContext_Access (context_Param);
       serviceReference : ServiceReference_Access;
       inputAutomationRobotChangeListener : InputAutomationRobotChangeListener_Access;
    begin
@@ -63,18 +65,19 @@ package body org.allbinary.input.automation.robot.osgi.InputAutomationRobotBundl
             end if;
             return inputAutomationRobotChangeListener;
         else
-            This.logUtil.putF (To_Unbounded_String ("No ServiceReference: ") & InputAutomationRobotChangeListener_Package.InputAutomationRobotChangeListener'Tag.getName, This'Unchecked_Access, To_Unbounded_String ("getInputAutomationRobotChangeListener"));
+            This.logUtil.putF (To_Unbounded_String ("No ServiceReference: ") & InputAutomationRobotChangeListener_Package.InputAutomationRobotChangeListener'Tag.getName, InputAutomationRobotBundleActivator_Access'(This'Unchecked_Access), To_Unbounded_String ("getInputAutomationRobotChangeListener"));
             return null;
         end if;
    end getInputAutomationRobotChangeListener;
 
-   procedure addRobots (This : in out InputAutomationRobotBundleActivator; context : BundleContext_Access) is
+   procedure addRobots (This : in out InputAutomationRobotBundleActivator; context_Param : access BundleContext'Class) is
+      context : BundleContext_Access := BundleContext_Access (context_Param);
       inputAutomationRobotChangeListener : InputAutomationRobotChangeListener_Access;
       inputAutomationRobotChangeEvent : InputAutomationRobotChangeEvent_Access;
       index : Integer;
    begin
         begin
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("addRobots"));
+            This.logUtil.putF (This.commonStrings.START, InputAutomationRobotBundleActivator_Access'(This'Unchecked_Access), To_Unbounded_String ("addRobots"));
             inputAutomationRobotChangeListener := This.getInputAutomationRobotChangeListener (context);
             if (inputAutomationRobotChangeListener) /= (null) then
                 for index in 0 .. (This.getInputRobotInterface'Length) - 1 loop
@@ -87,18 +90,19 @@ package body org.allbinary.input.automation.robot.osgi.InputAutomationRobotBundl
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.putF (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("addModules"));
+            This.logUtil.putF (This.commonStrings.EXCEPTION_Id, InputAutomationRobotBundleActivator_Access'(This'Unchecked_Access), To_Unbounded_String ("addModules"));
                 end;
         end;
    end addRobots;
 
-   procedure removeRobots (This : in out InputAutomationRobotBundleActivator; context : BundleContext_Access) is
+   procedure removeRobots (This : in out InputAutomationRobotBundleActivator; context_Param : access BundleContext'Class) is
+      context : BundleContext_Access := BundleContext_Access (context_Param);
       inputAutomationRobotChangeListener : InputAutomationRobotChangeListener_Access;
       inputAutomationRobotChangeEvent : InputAutomationRobotChangeEvent_Access;
       index : Integer;
    begin
         begin
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("removeRobots"));
+            This.logUtil.putF (This.commonStrings.START, InputAutomationRobotBundleActivator_Access'(This'Unchecked_Access), To_Unbounded_String ("removeRobots"));
             inputAutomationRobotChangeListener := This.getInputAutomationRobotChangeListener (context);
             if (inputAutomationRobotChangeListener) /= (null) then
                 for index in 0 .. (This.getInputRobotInterface'Length) - 1 loop
@@ -111,23 +115,25 @@ package body org.allbinary.input.automation.robot.osgi.InputAutomationRobotBundl
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.putF (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("removeRobots"));
+            This.logUtil.putF (This.commonStrings.EXCEPTION_Id, InputAutomationRobotBundleActivator_Access'(This'Unchecked_Access), To_Unbounded_String ("removeRobots"));
                 end;
         end;
    end removeRobots;
 
    --  throws Exception
-   procedure start (This : in out InputAutomationRobotBundleActivator; context : BundleContext_Access) is
+   procedure start (This : in out InputAutomationRobotBundleActivator; context_Param : access BundleContext'Class) is
+      context : BundleContext_Access := BundleContext_Access (context_Param);
    begin
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.START);
+        This.logUtil.putF (This.commonStrings.START, InputAutomationRobotBundleActivator_Access'(This'Unchecked_Access), This.commonStrings.START);
         This.addRobots (context);
         This.registerAsService (context);
    end start;
 
    --  throws Exception
-   procedure stop (This : in out InputAutomationRobotBundleActivator; context : BundleContext_Access) is
+   procedure stop (This : in out InputAutomationRobotBundleActivator; context_Param : access BundleContext'Class) is
+      context : BundleContext_Access := BundleContext_Access (context_Param);
    begin
-        This.logUtil.putF (To_Unbounded_String ("Stop"), This'Unchecked_Access, This.commonStrings.START);
+        This.logUtil.putF (To_Unbounded_String ("Stop"), InputAutomationRobotBundleActivator_Access'(This'Unchecked_Access), This.commonStrings.START);
         This.removeRobots (context);
    end stop;
 
@@ -136,7 +142,8 @@ package body org.allbinary.input.automation.robot.osgi.InputAutomationRobotBundl
         return This.serviceFactory;
    end getServiceFactory;
 
-   procedure setServiceFactory (This : in out InputAutomationRobotBundleActivator; serviceObject : ServiceFactory_Access) is
+   procedure setServiceFactory (This : in out InputAutomationRobotBundleActivator; serviceObject_Param : access ServiceFactory'Class) is
+      serviceObject : ServiceFactory_Access := ServiceFactory_Access (serviceObject_Param);
    begin
         This.serviceFactory := serviceObject;
    end setServiceFactory;
@@ -151,8 +158,8 @@ package body org.allbinary.input.automation.robot.osgi.InputAutomationRobotBundl
         This.inputRobotInterface := inputRobotInterface;
    end setInputRobotInterface;
 
-   procedure getInputAutomationRobotChangeListener (This : in out InputAutomationRobotBundleActivator; context : BundleContext_Access) is
-      Java_Result : constant InputAutomationRobotChangeListener_Access := InputAutomationRobotBundleActivator'Class (This).getInputAutomationRobotChangeListener (context);
+   procedure getInputAutomationRobotChangeListener (This : in out InputAutomationRobotBundleActivator; context_Param : access BundleContext'Class) is
+      Java_Result : constant InputAutomationRobotChangeListener_Access := InputAutomationRobotBundleActivator'Class (This).getInputAutomationRobotChangeListener (context_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

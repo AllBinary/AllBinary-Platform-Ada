@@ -35,7 +35,8 @@ package body org.allbinary.logic.system.hardware.components.linux.Monitor_Packag
       return This;
    end Create;
 
-   function compareTo (This : in out Monitor; componentInterface : HardwareComponentInterface_Access) return Boolean is
+   function compareTo (This : in out Monitor; componentInterface_Param : access HardwareComponentInterface'Class) return Boolean is
+      componentInterface : HardwareComponentInterface_Access := HardwareComponentInterface_Access (componentInterface_Param);
    begin
         return True;
    end compareTo;
@@ -45,8 +46,8 @@ package body org.allbinary.logic.system.hardware.components.linux.Monitor_Packag
         return This.data;
    end toString;
 
-   procedure compareTo (This : in out Monitor; componentInterface : HardwareComponentInterface_Access) is
-      Java_Result : constant Boolean := Monitor'Class (This).compareTo (componentInterface);
+   procedure compareTo (This : in out Monitor; componentInterface_Param : access HardwareComponentInterface'Class) is
+      Java_Result : constant Boolean := Monitor'Class (This).compareTo (componentInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

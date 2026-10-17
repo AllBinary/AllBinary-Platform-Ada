@@ -23,29 +23,34 @@ package body org.allbinary.animation.image.ImageArrayRotationAnimation_Package i
 
 
    --  throws Exception
-   function createAnimation (anyType : Java_Object_Access; animationBehavior : AnimationBehavior_Access) return ImageArrayRotationAnimation_Access is
+   function createAnimation (anyType_Param : access Java_Object'Class; animationBehavior_Param : access AnimationBehavior'Class) return ImageArrayRotationAnimation_Access is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      animationBehavior : AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
       imageRotationAnimationInfo : ImageArrayRotationAnimationInfo_Access;
    begin
         imageRotationAnimationInfo := ImageArrayRotationAnimationInfo_Access (anyType);
         return ImageArrayRotationAnimation_Package.Create (imageRotationAnimationInfo.getImageArray, imageRotationAnimationInfo.getAngleInfoP, imageRotationAnimationInfo.getTotalAngle, animationBehavior);
    end createAnimation;
 
-   procedure Initialize (This : in out ImageArrayRotationAnimation'Class; imageArray : Image_Access_Array_Access; angleInfo : AngleInfo_Access; totalAngle : Integer; animationBehavior : AnimationBehavior_Access) is
+   procedure Initialize (This : in out ImageArrayRotationAnimation'Class; imageArray : Image_Access_Array_Access; angleInfo_Param : access AngleInfo'Class; totalAngle : Integer; animationBehavior_Param : access AnimationBehavior'Class) is
+      angleInfo : AngleInfo_Access := AngleInfo_Access (angleInfo_Param);
+      animationBehavior : AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
    begin
         ImageArrayBaseRotationAnimation_Package.Initialize (This, imageArray, angleInfo, animationBehavior);
         Initialize_Fields (This);
         This.init (imageArray, angleInfo, totalAngle);
    end Initialize;
 
-   function Create (imageArray : Image_Access_Array_Access; angleInfo : AngleInfo_Access; totalAngle : Integer; animationBehavior : AnimationBehavior_Access) return ImageArrayRotationAnimation_Access is
+   function Create (imageArray : Image_Access_Array_Access; angleInfo_Param : access AngleInfo'Class; totalAngle : Integer; animationBehavior_Param : access AnimationBehavior'Class) return ImageArrayRotationAnimation_Access is
       This : constant ImageArrayRotationAnimation_Access := new ImageArrayRotationAnimation;
    begin
-      ImageArrayRotationAnimation_Package.Initialize (This.all, imageArray, angleInfo, totalAngle, animationBehavior);
+      ImageArrayRotationAnimation_Package.Initialize (This.all, imageArray, angleInfo_Param, totalAngle, animationBehavior_Param);
       return This;
    end Create;
 
    --  throws Exception
-   procedure init (This : in out ImageArrayRotationAnimation; imageArray : Image_Access_Array_Access; angleInfo : AngleInfo_Access; totalAngle : Integer) is
+   procedure init (This : in out ImageArrayRotationAnimation; imageArray : Image_Access_Array_Access; angleInfo_Param : access AngleInfo'Class; totalAngle : Integer) is
+      angleInfo : AngleInfo_Access := AngleInfo_Access (angleInfo_Param);
    begin
         This.expectedTotalFrames := (totalAngle) / (This.angleInfo.getAngleIncrementInfo.getAngleIncrement);
         This.angleInfo.adjustAngle (0);
@@ -60,8 +65,8 @@ package body org.allbinary.animation.image.ImageArrayRotationAnimation_Package i
         This.angleInfo.adjustAngle (0);
    end setImageArray;
 
-   procedure createAnimation (anyType : Java_Object_Access; animationBehavior : AnimationBehavior_Access) is
-      Java_Result : constant ImageArrayRotationAnimation_Access := createAnimation (anyType, animationBehavior);
+   procedure createAnimation (anyType_Param : access Java_Object'Class; animationBehavior_Param : access AnimationBehavior'Class) is
+      Java_Result : constant ImageArrayRotationAnimation_Access := createAnimation (anyType_Param, animationBehavior_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

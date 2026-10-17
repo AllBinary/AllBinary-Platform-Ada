@@ -62,13 +62,13 @@ package views.BasicComponentView_Package is
       NO_TYPE : Integer;
    end record;
 
-   procedure Initialize (This : in out BasicComponentView'Class; transformInfoInterface : TransformInfoInterface_Access);
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return BasicComponentView_Access;
+   procedure Initialize (This : in out BasicComponentView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return BasicComponentView_Access;
    function getTypeId (This : in out BasicComponentView) return Integer;
    function getTransformDocumentInterface (This : in out BasicComponentView) return TransformDocumentInterface_Access;
-   procedure setTransformDocumentInterface (This : in out BasicComponentView; transformDocumentInterface : TransformDocumentInterface_Access);
+   procedure setTransformDocumentInterface (This : in out BasicComponentView; transformDocumentInterface_Param : access TransformDocumentInterface'Class);
    function getTransformInfoInterface (This : in out BasicComponentView) return TransformInfoInterface_Access;
-   procedure setTransformInfoInterface (This : in out BasicComponentView; transformInfoInterface : TransformInfoInterface_Access);
+   procedure setTransformInfoInterface (This : in out BasicComponentView; transformInfoInterface_Param : access TransformInfoInterface'Class);
    function toXmlDoc (This : in out BasicComponentView) return Document_Access;
    function getDoc (This : in out BasicComponentView) return Document_Access;
    function view (This : in out BasicComponentView) return Unbounded_String;

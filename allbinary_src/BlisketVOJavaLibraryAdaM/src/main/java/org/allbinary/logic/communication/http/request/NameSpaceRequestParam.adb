@@ -53,7 +53,7 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
         sepTokenizer := Tokenizer_Package.Create (NameSpaceRequestParamData_Package.SEP);
         nameSpaceWithPropertiesVector := sepTokenizer.getTokensFromString (packages, BasicArrayListD_Package.Create);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
-            This.logUtil.putF (To_Unbounded_String ("" & ASCII.LF & "Sep Tokens: ") & nameSpaceWithPropertiesVector.toString, This'Unchecked_Access, To_Unbounded_String ("NameSpaceRequestParam()"));
+            This.logUtil.putF (To_Unbounded_String ("" & ASCII.LF & "Sep Tokens: ") & nameSpaceWithPropertiesVector.toString, NameSpaceRequestParam_Access'(This'Unchecked_Access), To_Unbounded_String ("NameSpaceRequestParam()"));
         end if;
         nameSpaceAndPropertiesTokenizer := Tokenizer_Package.Create (NameSpaceRequestParamData_Package.PROPERTIES);
         packageIndex := 0;
@@ -65,7 +65,7 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
             list.clear;
             nameSpaceAndPropertiesVector := nameSpaceAndPropertiesTokenizer.getTokensFromString (nameSpaceWithProperties, list);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
-                This.logUtil.putF (To_Unbounded_String ("" & ASCII.LF & "PackageName and PackageName Properties Tokens: ") & nameSpaceAndPropertiesVector.toString, This'Unchecked_Access, To_Unbounded_String ("NameSpaceRequestParam()"));
+                This.logUtil.putF (To_Unbounded_String ("" & ASCII.LF & "PackageName and PackageName Properties Tokens: ") & nameSpaceAndPropertiesVector.toString, NameSpaceRequestParam_Access'(This'Unchecked_Access), To_Unbounded_String ("NameSpaceRequestParam()"));
             end if;
             if (nameSpaceAndPropertiesVector.size) > (0) then
                 packageName := Unbounded_String (nameSpaceAndPropertiesVector.get (0));
@@ -82,7 +82,7 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
             end if;
         end loop;
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
-            This.logUtil.putF (To_Unbounded_String ("NameSpace: ") & This.nameSpaceVector.toString, This'Unchecked_Access, To_Unbounded_String ("NameSpaceRequestParam()"));
+            This.logUtil.putF (To_Unbounded_String ("NameSpace: ") & This.nameSpaceVector.toString, NameSpaceRequestParam_Access'(This'Unchecked_Access), To_Unbounded_String ("NameSpaceRequestParam()"));
         end if;
    end Initialize;
 
@@ -96,7 +96,7 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
    function getPackages (This : in out NameSpaceRequestParam) return BasicArrayList_Access is
    begin
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
-            This.logUtil.putF (To_Unbounded_String ("NameSpace: ") & This.nameSpaceVector.toString, This'Unchecked_Access, To_Unbounded_String ("getPackages()"));
+            This.logUtil.putF (To_Unbounded_String ("NameSpace: ") & This.nameSpaceVector.toString, NameSpaceRequestParam_Access'(This'Unchecked_Access), To_Unbounded_String ("getPackages()"));
         end if;
         return This.nameSpaceVector;
    end getPackages;
@@ -109,7 +109,7 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
             packagePropertiesHashMap := StdUtil_Package.getInstance.createHashMap;
         end if;
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
-            This.logUtil.putF (To_Unbounded_String ("Package Properties: ") & packagePropertiesHashMap.toString, This'Unchecked_Access, To_Unbounded_String ("getPackagesProperties()"));
+            This.logUtil.putF (To_Unbounded_String ("Package Properties: ") & packagePropertiesHashMap.toString, NameSpaceRequestParam_Access'(This'Unchecked_Access), To_Unbounded_String ("getPackagesProperties()"));
         end if;
         return packagePropertiesHashMap;
    end getPackageProperties;
@@ -117,7 +117,7 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
    function getValue (This : in out NameSpaceRequestParam) return Unbounded_String is
    begin
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
-            This.logUtil.putF (To_Unbounded_String ("" & ASCII.LF & "Value: ") & This.value, This'Unchecked_Access, To_Unbounded_String ("getValue()"));
+            This.logUtil.putF (To_Unbounded_String ("" & ASCII.LF & "Value: ") & This.value, NameSpaceRequestParam_Access'(This'Unchecked_Access), To_Unbounded_String ("getValue()"));
         end if;
         return This.value;
    end getValue;
@@ -154,7 +154,7 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
                 if (propertyNameValueVector.size) > (1) then
                     propertyValue := Unbounded_String (propertyNameValueVector.get (Java_Post_Increment (index2)));
                     if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
-                        This.logUtil.putF (To_Unbounded_String ("" & ASCII.LF & "Property Name: ") & propertyName & To_Unbounded_String ("" & ASCII.LF & "Property Value: ") & propertyValue, This'Unchecked_Access, To_Unbounded_String ("generatePackagePropertiesHashMap()"));
+                        This.logUtil.putF (To_Unbounded_String ("" & ASCII.LF & "Property Name: ") & propertyName & To_Unbounded_String ("" & ASCII.LF & "Property Value: ") & propertyValue, NameSpaceRequestParam_Access'(This'Unchecked_Access), To_Unbounded_String ("generatePackagePropertiesHashMap()"));
                     end if;
                     packagePropertiesHashMap.put (propertyName, propertyValue);
                 else

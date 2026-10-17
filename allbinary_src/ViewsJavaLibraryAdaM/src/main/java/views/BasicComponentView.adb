@@ -27,20 +27,21 @@ package body views.BasicComponentView_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BasicComponentView'Class; transformInfoInterface : TransformInfoInterface_Access) is
+   procedure Initialize (This : in out BasicComponentView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
       Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (To_Unbounded_String ("View Name: ") & transformInfoInterface.getName, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+            This.logUtil.putF (To_Unbounded_String ("View Name: ") & transformInfoInterface.getName, BasicComponentView_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
         This.setTransformInfoInterface (transformInfoInterface);
         This.setTransformDocumentInterface (TransformDocumentFactory_Package.getInstance);
    end Initialize;
 
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return BasicComponentView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return BasicComponentView_Access is
       This : constant BasicComponentView_Access := new BasicComponentView;
    begin
-      BasicComponentView_Package.Initialize (This.all, transformInfoInterface);
+      BasicComponentView_Package.Initialize (This.all, transformInfoInterface_Param);
       return This;
    end Create;
 
@@ -54,7 +55,8 @@ package body views.BasicComponentView_Package is
         return This.transformDocumentInterface;
    end getTransformDocumentInterface;
 
-   procedure setTransformDocumentInterface (This : in out BasicComponentView; transformDocumentInterface : TransformDocumentInterface_Access) is
+   procedure setTransformDocumentInterface (This : in out BasicComponentView; transformDocumentInterface_Param : access TransformDocumentInterface'Class) is
+      transformDocumentInterface : TransformDocumentInterface_Access := TransformDocumentInterface_Access (transformDocumentInterface_Param);
    begin
         This.transformDocumentInterface := transformDocumentInterface;
    end setTransformDocumentInterface;
@@ -64,7 +66,8 @@ package body views.BasicComponentView_Package is
         return This.transformInfoInterface;
    end getTransformInfoInterface;
 
-   procedure setTransformInfoInterface (This : in out BasicComponentView; transformInfoInterface : TransformInfoInterface_Access) is
+   procedure setTransformInfoInterface (This : in out BasicComponentView; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         This.transformInfoInterface := transformInfoInterface;
    end setTransformInfoInterface;
@@ -102,7 +105,7 @@ package body views.BasicComponentView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("view()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, BasicComponentView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
             end if;
             Java_Throw (e);
                 end;

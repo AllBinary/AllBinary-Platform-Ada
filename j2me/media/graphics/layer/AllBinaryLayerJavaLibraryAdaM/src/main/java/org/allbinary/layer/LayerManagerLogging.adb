@@ -50,47 +50,53 @@ package body org.allbinary.layer.LayerManagerLogging_Package is
    end getInstance;
 
    --  throws Exception
-   procedure append_Case (This : in out LayerManagerLogging; layerInterface : AllBinaryLayer_Access) is
+   procedure append_Case (This : in out LayerManagerLogging; layerInterface_Param : access AllBinaryLayer'Class) is
+      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
    begin
         This.stringBuilder.delete (0, This.stringBuilder.length);
-        This.logUtil.putF (This.stringBuilder.appendint (Integer (TsUtil_Package.getInstance.hashCode (This'Unchecked_Access))).append_Case (This.APPEND_U).append_Case (layerInterface.getName).toString, This'Unchecked_Access, This.APPEND);
+        This.logUtil.putF (This.stringBuilder.appendint (Integer (TsUtil_Package.getInstance.hashCode (LayerManagerLogging_Access'(This'Unchecked_Access)))).append_Case (This.APPEND_U).append_Case (layerInterface.getName).toString, LayerManagerLogging_Access'(This'Unchecked_Access), This.APPEND);
    end append_Case;
 
-   procedure appendAt (This : in out LayerManagerLogging; layerInterface : AllBinaryLayer_Access; index : Integer) is
+   procedure appendAt (This : in out LayerManagerLogging; layerInterface_Param : access AllBinaryLayer'Class; index : Integer) is
+      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
    begin
         This.stringBuilder.delete (0, This.stringBuilder.length);
-        This.logUtil.putF (This.stringBuilder.appendint (Integer (TsUtil_Package.getInstance.hashCode (This'Unchecked_Access))).append_Case (This.APPEND_U).append_Case (layerInterface.getName).append_Case (This.U_AT_U).appendint (index).toString, This'Unchecked_Access, This.APPEND);
+        This.logUtil.putF (This.stringBuilder.appendint (Integer (TsUtil_Package.getInstance.hashCode (LayerManagerLogging_Access'(This'Unchecked_Access)))).append_Case (This.APPEND_U).append_Case (layerInterface.getName).append_Case (This.U_AT_U).appendint (index).toString, LayerManagerLogging_Access'(This'Unchecked_Access), This.APPEND);
    end appendAt;
 
-   procedure remove_Case (This : in out LayerManagerLogging; layerInterface : AllBinaryLayer_Access) is
+   procedure remove_Case (This : in out LayerManagerLogging; layerInterface_Param : access AllBinaryLayer'Class) is
+      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
    begin
         if (layerInterface) = (null) then
             This.stringBuilder.delete (0, This.stringBuilder.length);
-            This.logUtil.putF (This.stringBuilder.appendint (Integer (TsUtil_Package.getInstance.hashCode (This'Unchecked_Access))).append_Case (This.ATTEMPT_REMOVE_U).append_Case (StringUtil_Package.getInstance.toString (layerInterface)).toString, This'Unchecked_Access, This.REMOVE);
+            This.logUtil.putF (This.stringBuilder.appendint (Integer (TsUtil_Package.getInstance.hashCode (LayerManagerLogging_Access'(This'Unchecked_Access)))).append_Case (This.ATTEMPT_REMOVE_U).append_Case (StringUtil_Package.getInstance.toString (layerInterface)).toString, LayerManagerLogging_Access'(This'Unchecked_Access), This.REMOVE);
         else
             This.stringBuilder.delete (0, This.stringBuilder.length);
-            This.logUtil.putF (This.stringBuilder.appendint (Integer (TsUtil_Package.getInstance.hashCode (This'Unchecked_Access))).append_Case (This.ATTEMPT_REMOVE_U).append_Case (layerInterface.getName).toString, This'Unchecked_Access, This.REMOVE);
+            This.logUtil.putF (This.stringBuilder.appendint (Integer (TsUtil_Package.getInstance.hashCode (LayerManagerLogging_Access'(This'Unchecked_Access)))).append_Case (This.ATTEMPT_REMOVE_U).append_Case (layerInterface.getName).toString, LayerManagerLogging_Access'(This'Unchecked_Access), This.REMOVE);
         end if;
    end remove_Case;
 
-   procedure removeResult (This : in out LayerManagerLogging; layerManager : LayerManager_Access; layerInterface : AllBinaryLayer_Access; result : Boolean) is
+   procedure removeResult (This : in out LayerManagerLogging; layerManager_Param : access LayerManager'Class; layerInterface_Param : access AllBinaryLayer'Class; result : Boolean) is
+      layerManager : LayerManager_Access := LayerManager_Access (layerManager_Param);
+      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
    begin
         if (layerInterface) = (null) then
             This.stringBuilder.delete (0, This.stringBuilder.length);
-            This.logUtil.putF (This.stringBuilder.appendint (Integer (TsUtil_Package.getInstance.hashCode (This'Unchecked_Access))).append_Case (This.REMOVE_U).append_Case (StringUtil_Package.getInstance.toString (layerInterface)).toString, This'Unchecked_Access, This.REMOVE);
+            This.logUtil.putF (This.stringBuilder.appendint (Integer (TsUtil_Package.getInstance.hashCode (LayerManagerLogging_Access'(This'Unchecked_Access)))).append_Case (This.REMOVE_U).append_Case (StringUtil_Package.getInstance.toString (layerInterface)).toString, LayerManagerLogging_Access'(This'Unchecked_Access), This.REMOVE);
         elsif result then
             if LayerManagerLogging_Package.removeFailed then
                 This.stringBuilder.delete (0, This.stringBuilder.length);
-                This.logUtil.putF (This.stringBuilder.appendint (Integer (TsUtil_Package.getInstance.hashCode (This'Unchecked_Access))).append_Case (This.REMOVE_U).append_Case (layerInterface.getName).toString, This'Unchecked_Access, This.REMOVE);
+                This.logUtil.putF (This.stringBuilder.appendint (Integer (TsUtil_Package.getInstance.hashCode (LayerManagerLogging_Access'(This'Unchecked_Access)))).append_Case (This.REMOVE_U).append_Case (layerInterface.getName).toString, LayerManagerLogging_Access'(This'Unchecked_Access), This.REMOVE);
             end if;
         else
             This.stringBuilder.delete (0, This.stringBuilder.length);
-            This.logUtil.putF (This.stringBuilder.appendint (Integer (TsUtil_Package.getInstance.hashCode (This'Unchecked_Access))).append_Case (This.DID_NOT_REMOVE).append_Case (layerInterface.getName).toString, This'Unchecked_Access, This.REMOVE);
+            This.logUtil.putF (This.stringBuilder.appendint (Integer (TsUtil_Package.getInstance.hashCode (LayerManagerLogging_Access'(This'Unchecked_Access)))).append_Case (This.DID_NOT_REMOVE).append_Case (layerInterface.getName).toString, LayerManagerLogging_Access'(This'Unchecked_Access), This.REMOVE);
             LayerManagerLogging_Package.removeFailed := True;
         end if;
    end removeResult;
 
-   procedure log (This : in out LayerManagerLogging; layerManager : LayerManager_Access) is
+   procedure log (This : in out LayerManagerLogging; layerManager_Param : access LayerManager'Class) is
+      layerManager : LayerManager_Access := LayerManager_Access (layerManager_Param);
       size : Integer;
       commonSeps : CommonSeps_Access;
       allBinaryLayer : AllBinaryLayer_Access;
@@ -106,13 +112,13 @@ package body org.allbinary.layer.LayerManagerLogging_Package is
             allBinaryLayer := (AllBinaryLayer_Access (layerManager.getLayerAt (index)));
             This.stringBuilder.append_Case (allBinaryLayer.getName).append_Case (commonSeps.COMMA);
         end loop;
-        This.logUtil.putF (This.stringBuilder.toString, This'Unchecked_Access, This.REMOVE);
+        This.logUtil.putF (This.stringBuilder.toString, LayerManagerLogging_Access'(This'Unchecked_Access), This.REMOVE);
    end log;
 
    procedure clear_Case (This : in out LayerManagerLogging) is
    begin
         This.stringBuilder.delete (0, This.stringBuilder.length);
-        This.logUtil.putF (This.stringBuilder.appendint (Integer (TsUtil_Package.getInstance.hashCode (This'Unchecked_Access))).append_Case (This.CLEAR).toString, This'Unchecked_Access, This.CLEAR);
+        This.logUtil.putF (This.stringBuilder.appendint (Integer (TsUtil_Package.getInstance.hashCode (LayerManagerLogging_Access'(This'Unchecked_Access)))).append_Case (This.CLEAR).toString, LayerManagerLogging_Access'(This'Unchecked_Access), This.CLEAR);
    end clear_Case;
 
 begin

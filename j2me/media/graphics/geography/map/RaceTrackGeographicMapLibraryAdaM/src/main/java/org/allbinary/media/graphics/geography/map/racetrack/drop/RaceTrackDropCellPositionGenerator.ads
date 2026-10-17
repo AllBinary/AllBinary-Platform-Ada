@@ -79,11 +79,11 @@ package org.allbinary.media.graphics.geography.map.racetrack.drop.RaceTrackDropC
    procedure Initialize (This : in out RaceTrackDropCellPositionGenerator'Class);
    function Create return RaceTrackDropCellPositionGenerator_Access;
    procedure init (This : in out RaceTrackDropCellPositionGenerator);
-   function isDropAllowedAt (This : in out RaceTrackDropCellPositionGenerator; geographicMapCellPosition : GeographicMapCellPosition_Access) return Boolean;
-   procedure isDropAllowedAt (This : in out RaceTrackDropCellPositionGenerator; geographicMapCellPosition : GeographicMapCellPosition_Access);
-   procedure update (This : in out RaceTrackDropCellPositionGenerator; allBinaryGameLayerManager : AllBinaryGameLayerManager_Access; geographicMapInterface : BasicGeographicMap_Access);
-   procedure processTick (This : in out RaceTrackDropCellPositionGenerator; allBinaryLayerManager : AllBinaryLayerManager_Access);
-   procedure drop (This : in out RaceTrackDropCellPositionGenerator; allBinaryLayerManager : AllBinaryLayerManager_Access; index : Integer);
+   function isDropAllowedAt (This : in out RaceTrackDropCellPositionGenerator; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return Boolean;
+   procedure isDropAllowedAt (This : in out RaceTrackDropCellPositionGenerator; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class);
+   procedure update (This : in out RaceTrackDropCellPositionGenerator; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class; geographicMapInterface_Param : access BasicGeographicMap'Class);
+   procedure processTick (This : in out RaceTrackDropCellPositionGenerator; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class);
+   procedure drop (This : in out RaceTrackDropCellPositionGenerator; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class; index : Integer);
 
 end org.allbinary.media.graphics.geography.map.racetrack.drop.RaceTrackDropCellPositionGenerator_Package;
 

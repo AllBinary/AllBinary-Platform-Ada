@@ -52,7 +52,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.customs.Cust
                 begin
             commonStrings := CommonStrings_Package.getInstance;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.ENTITYFACTORYERROR) then
-                This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.GET_INSTANCE, e);
+                This.logUtil.put (commonStrings.EXCEPTION_Id, CustomItemsEntityFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE, e);
             end if;
             return null;
                 end;

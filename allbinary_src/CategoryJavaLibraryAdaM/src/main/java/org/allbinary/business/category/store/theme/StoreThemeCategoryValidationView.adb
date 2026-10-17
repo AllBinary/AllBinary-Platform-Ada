@@ -21,15 +21,16 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategoryValid
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out StoreThemeCategoryValidationView'Class; categoryInterface : StoreThemeCategoryInterface_Access) is
+   procedure Initialize (This : in out StoreThemeCategoryValidationView'Class; categoryInterface_Param : access StoreThemeCategoryInterface'Class) is
+      categoryInterface : StoreThemeCategoryInterface_Access := StoreThemeCategoryInterface_Access (categoryInterface_Param);
    begin
         StoreThemeCategoryView_Package.Initialize (This, StoreThemeCategoryInterface_Access (categoryInterface));
    end Initialize;
 
-   function Create (categoryInterface : StoreThemeCategoryInterface_Access) return StoreThemeCategoryValidationView_Access is
+   function Create (categoryInterface_Param : access StoreThemeCategoryInterface'Class) return StoreThemeCategoryValidationView_Access is
       This : constant StoreThemeCategoryValidationView_Access := new StoreThemeCategoryValidationView;
    begin
-      StoreThemeCategoryValidationView_Package.Initialize (This.all, categoryInterface);
+      StoreThemeCategoryValidationView_Package.Initialize (This.all, categoryInterface_Param);
       return This;
    end Create;
 
@@ -46,7 +47,8 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategoryValid
    end toValidationInfoDoc;
 
    --  throws Exception
-   function toValidationInfoNode (This : in out StoreThemeCategoryValidationView; document : Document_Access) return Node_Access is
+   function toValidationInfoNode (This : in out StoreThemeCategoryValidationView; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
    begin
         return null;
    end toValidationInfoNode;
@@ -57,8 +59,8 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategoryValid
         return To_Unbounded_String ("Error");
    end validationInfo;
 
-   procedure toValidationInfoNode (This : in out StoreThemeCategoryValidationView; document : Document_Access) is
-      Java_Result : constant Node_Access := StoreThemeCategoryValidationView'Class (This).toValidationInfoNode (document);
+   procedure toValidationInfoNode (This : in out StoreThemeCategoryValidationView; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := StoreThemeCategoryValidationView'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

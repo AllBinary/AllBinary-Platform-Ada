@@ -26,7 +26,9 @@ package body admin.taghelpers.PaymentHelper_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out PaymentHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access) is
+   procedure Initialize (This : in out PaymentHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
    begin
       Table_Package.Initialize (This);
       Initialize_Fields (This);
@@ -36,10 +38,10 @@ package body admin.taghelpers.PaymentHelper_Package is
         This.getFormData;
    end Initialize;
 
-   function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return PaymentHelper_Access is
+   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return PaymentHelper_Access is
       This : constant PaymentHelper_Access := new PaymentHelper;
    begin
-      PaymentHelper_Package.Initialize (This.all, hashMap, pageContext);
+      PaymentHelper_Package.Initialize (This.all, hashMap_Param, pageContext_Param);
       return This;
    end Create;
 
@@ -61,7 +63,7 @@ package body admin.taghelpers.PaymentHelper_Package is
             paymentEntity.add (This.weblisketSession.getUserName, paymentInterface);
             paymentEntity.setDefault (This.weblisketSession.getUserName, paymentEntity.getLastId (This.weblisketSession.getUserName));
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, To_Unbounded_String ("addPayment()"));
+                This.logUtil.putF (success, PaymentHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("addPayment()"));
             end if;
             return success;
         exception
@@ -71,7 +73,7 @@ package body admin.taghelpers.PaymentHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to add Payment");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("addPayment()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, PaymentHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("addPayment()"), e);
             end if;
             return error;
                 end;
@@ -88,7 +90,7 @@ package body admin.taghelpers.PaymentHelper_Package is
             paymentEntity := PaymentEntityFactory_Package.getInstance.getPaymentEntityInstance;
             paymentEntity.setDefault (This.weblisketSession.getUserName, This.value);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, To_Unbounded_String ("selectPayment()"));
+                This.logUtil.putF (success, PaymentHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("selectPayment()"));
             end if;
             return success;
         exception
@@ -98,7 +100,7 @@ package body admin.taghelpers.PaymentHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to select Payment");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("selectPayment()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, PaymentHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("selectPayment()"), e);
             end if;
             return error;
                 end;
@@ -120,7 +122,7 @@ package body admin.taghelpers.PaymentHelper_Package is
                 paymentEntity.setDefault (This.weblisketSession.getUserName, paymentEntity.getLastId (This.weblisketSession.getUserName));
             end if;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, To_Unbounded_String ("removePayment()"));
+                This.logUtil.putF (success, PaymentHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("removePayment()"));
             end if;
             return success;
         exception
@@ -130,7 +132,7 @@ package body admin.taghelpers.PaymentHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to remove Payment");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("removePayment()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, PaymentHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("removePayment()"), e);
             end if;
             return error;
                 end;
@@ -146,7 +148,7 @@ package body admin.taghelpers.PaymentHelper_Package is
             paymentEntity := PaymentEntityFactory_Package.getInstance.getPaymentEntityInstance;
             success := paymentEntity.dropTable;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, This.commonStrings.DROP);
+                This.logUtil.putF (success, PaymentHelper_Access'(This'Unchecked_Access), This.commonStrings.DROP);
             end if;
             return success;
         exception
@@ -156,7 +158,7 @@ package body admin.taghelpers.PaymentHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to drop Admin table");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.DROP, e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, PaymentHelper_Access'(This'Unchecked_Access), This.commonStrings.DROP, e);
             end if;
             return error;
                 end;
@@ -172,7 +174,7 @@ package body admin.taghelpers.PaymentHelper_Package is
             paymentEntity := PaymentEntityFactory_Package.getInstance.getPaymentEntityInstance;
             success := paymentEntity.createTable;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, To_Unbounded_String ("create()"));
+                This.logUtil.putF (success, PaymentHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("create()"));
             end if;
             return success;
         exception
@@ -182,7 +184,7 @@ package body admin.taghelpers.PaymentHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to create user table");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("create()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, PaymentHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("create()"), e);
             end if;
             return error;
                 end;
@@ -198,7 +200,7 @@ package body admin.taghelpers.PaymentHelper_Package is
             success := To_Unbounded_String ("Restore Successful");
             result := AbSqlTableUtil_Package.getInstance.restoreTable (PaymentEntityFactory_Package.getInstance.getPaymentEntityInstance, This.portion);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, To_Unbounded_String ("restore()"));
+                This.logUtil.putF (success, PaymentHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("restore()"));
             end if;
             return result;
         exception
@@ -208,7 +210,7 @@ package body admin.taghelpers.PaymentHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to restore backup");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("restore()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, PaymentHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("restore()"), e);
             end if;
             return error;
                 end;
@@ -224,7 +226,7 @@ package body admin.taghelpers.PaymentHelper_Package is
             success := To_Unbounded_String ("Backup Successful");
             result := AbSqlTableUtil_Package.getInstance.backupTable (PaymentEntityFactory_Package.getInstance.getPaymentEntityInstance);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, To_Unbounded_String ("backup()"));
+                This.logUtil.putF (success, PaymentHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("backup()"));
             end if;
             return result;
         exception
@@ -234,7 +236,7 @@ package body admin.taghelpers.PaymentHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to make backup");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("backup()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, PaymentHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("backup()"), e);
             end if;
             return error;
                 end;

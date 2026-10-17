@@ -42,7 +42,8 @@ package body org.allbinary.game.resource.FeaturedResourceRelativeRelationshipFac
    end getInstance;
 
    --  throws Exception
-   function getRelativeRelationshipList (This : in out FeaturedResourceRelativeRelationshipFactory; resource : Unbounded_String; layer : AllBinaryLayer_Access) return BasicArrayList_Access is
+   function getRelativeRelationshipList (This : in out FeaturedResourceRelativeRelationshipFactory; resource : Unbounded_String; layer_Param : access AllBinaryLayer'Class) return BasicArrayList_Access is
+      layer : AllBinaryLayer_Access := AllBinaryLayer_Access (layer_Param);
       featureReleaseList : BasicArrayList_Access;
       size : Integer;
       featureInterface : ResourceRelativeRelationshipFactoryInterface_Access;
@@ -64,7 +65,9 @@ package body org.allbinary.game.resource.FeaturedResourceRelativeRelationshipFac
    end getRelativeRelationshipList;
 
    --  throws Exception
-   function duplicate (This : in out FeaturedResourceRelativeRelationshipFactory; list : BasicArrayList_Access; layer : AllBinaryLayer_Access) return BasicArrayList_Access is
+   function duplicate (This : in out FeaturedResourceRelativeRelationshipFactory; list_Param : access BasicArrayList'Class; layer_Param : access AllBinaryLayer'Class) return BasicArrayList_Access is
+      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
+      layer : AllBinaryLayer_Access := AllBinaryLayer_Access (layer_Param);
       pointFactory : PointFactory_Access;
       newList : BasicArrayList_Access;
       size : Integer;
@@ -81,15 +84,15 @@ package body org.allbinary.game.resource.FeaturedResourceRelativeRelationshipFac
         return newList;
    end duplicate;
 
-   procedure getRelativeRelationshipList (This : in out FeaturedResourceRelativeRelationshipFactory; resource : Unbounded_String; layer : AllBinaryLayer_Access) is
-      Java_Result : constant BasicArrayList_Access := FeaturedResourceRelativeRelationshipFactory'Class (This).getRelativeRelationshipList (resource, layer);
+   procedure getRelativeRelationshipList (This : in out FeaturedResourceRelativeRelationshipFactory; resource : Unbounded_String; layer_Param : access AllBinaryLayer'Class) is
+      Java_Result : constant BasicArrayList_Access := FeaturedResourceRelativeRelationshipFactory'Class (This).getRelativeRelationshipList (resource, layer_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getRelativeRelationshipList;
 
-   procedure duplicate (This : in out FeaturedResourceRelativeRelationshipFactory; list : BasicArrayList_Access; layer : AllBinaryLayer_Access) is
-      Java_Result : constant BasicArrayList_Access := FeaturedResourceRelativeRelationshipFactory'Class (This).duplicate (list, layer);
+   procedure duplicate (This : in out FeaturedResourceRelativeRelationshipFactory; list_Param : access BasicArrayList'Class; layer_Param : access AllBinaryLayer'Class) is
+      Java_Result : constant BasicArrayList_Access := FeaturedResourceRelativeRelationshipFactory'Class (This).duplicate (list_Param, layer_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

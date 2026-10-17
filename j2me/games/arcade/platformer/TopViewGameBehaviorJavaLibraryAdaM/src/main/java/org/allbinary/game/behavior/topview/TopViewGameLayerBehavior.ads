@@ -47,10 +47,10 @@ package org.allbinary.game.behavior.topview.TopViewGameLayerBehavior_Package is
    procedure Initialize (This : in out TopViewGameLayerBehavior'Class; maxGravityActionIndex : Integer);
    function Create (maxGravityActionIndex : Integer) return TopViewGameLayerBehavior_Access;
    procedure gravity (This : in out TopViewGameLayerBehavior);
-   procedure land (This : in out TopViewGameLayerBehavior; velocityProperties : VelocityProperties_Access);
+   procedure land (This : in out TopViewGameLayerBehavior; velocityProperties_Param : access VelocityProperties'Class);
    procedure landReset (This : in out TopViewGameLayerBehavior);
-   procedure up (This : in out TopViewGameLayerBehavior; velocityProperties : VelocityProperties_Access; acceleration : BasicAccelerationProperties_Access; jumpBehavior : InitialJumpBehavior_Access; accelerationMultiplier : Integer);
-   procedure inputFrames (This : in out TopViewGameLayerBehavior; velocityProperties : VelocityProperties_Access);
+   procedure up (This : in out TopViewGameLayerBehavior; velocityProperties_Param : access VelocityProperties'Class; acceleration_Param : access BasicAccelerationProperties'Class; jumpBehavior_Param : access InitialJumpBehavior'Class; accelerationMultiplier : Integer);
+   procedure inputFrames (This : in out TopViewGameLayerBehavior; velocityProperties_Param : access VelocityProperties'Class);
 
 end org.allbinary.game.behavior.topview.TopViewGameLayerBehavior_Package;
 

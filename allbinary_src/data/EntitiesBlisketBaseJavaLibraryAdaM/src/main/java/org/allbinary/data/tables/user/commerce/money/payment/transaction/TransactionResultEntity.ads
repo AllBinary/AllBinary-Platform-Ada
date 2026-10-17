@@ -67,7 +67,7 @@ package org.allbinary.data.tables.user.commerce.money.payment.transaction.Transa
    procedure Initialize (This : in out TransactionResultEntity'Class);
    function Create return TransactionResultEntity_Access;
    procedure remove (This : in out TransactionResultEntity; userName : Unbounded_String; orderNumber : Unbounded_String);
-   procedure add (This : in out TransactionResultEntity; userName : Unbounded_String; orderNumber : Unbounded_String; transactionResultInterface : TransactionResultInterface_Access);
+   procedure add (This : in out TransactionResultEntity; userName : Unbounded_String; orderNumber : Unbounded_String; transactionResultInterface_Param : access TransactionResultInterface'Class);
    function getTransactionResultInterface (This : in out TransactionResultEntity; orderNumber : Unbounded_String) return TransactionResultInterface_Access;
    procedure getTransactionResultInterface (This : in out TransactionResultEntity; orderNumber : Unbounded_String);
    function createTableStatement (This : in out TransactionResultEntity) return Unbounded_String;

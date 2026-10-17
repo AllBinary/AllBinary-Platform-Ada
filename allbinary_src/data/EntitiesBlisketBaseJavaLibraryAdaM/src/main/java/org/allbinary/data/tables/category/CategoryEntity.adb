@@ -23,17 +23,18 @@ package body org.allbinary.data.tables.category.CategoryEntity_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CategoryEntity'Class; categoryFactoryInterface : CategoryFactoryInterface_Access) is
+   procedure Initialize (This : in out CategoryEntity'Class; categoryFactoryInterface_Param : access CategoryFactoryInterface'Class) is
+      categoryFactoryInterface : CategoryFactoryInterface_Access := CategoryFactoryInterface_Access (categoryFactoryInterface_Param);
    begin
         AbSqlBean_Package.Initialize (This, InventoryDbInitInfo_Package.Create);
         Initialize_Fields (This);
         This.setTableName (This.tableName);
    end Initialize;
 
-   function Create (categoryFactoryInterface : CategoryFactoryInterface_Access) return CategoryEntity_Access is
+   function Create (categoryFactoryInterface_Param : access CategoryFactoryInterface'Class) return CategoryEntity_Access is
       This : constant CategoryEntity_Access := new CategoryEntity;
    begin
-      CategoryEntity_Package.Initialize (This.all, categoryFactoryInterface);
+      CategoryEntity_Package.Initialize (This.all, categoryFactoryInterface_Param);
       return This;
    end Create;
 
@@ -51,7 +52,8 @@ package body org.allbinary.data.tables.category.CategoryEntity_Package is
       return This;
    end Create;
 
-   procedure insert (This : in out CategoryEntity; category : Category_Access) is
+   procedure insert (This : in out CategoryEntity; category_Param : access Category'Class) is
+      category : Category_Access := Category_Access (category_Param);
       categoryVector : BasicArrayList_Access;
       values : BasicArrayList_Access;
    begin
@@ -62,7 +64,7 @@ package body org.allbinary.data.tables.category.CategoryEntity_Package is
             values.add (categoryVector.get (1));
             AbSqlBean (This).insert (values);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.putF (This.commonStrings.SUCCESS, This'Unchecked_Access, INSERT);
+                This.logUtil.putF (This.commonStrings.SUCCESS, CategoryEntity_Access'(This'Unchecked_Access), INSERT);
             end if;
         exception
             when Java_Occurrence : others =>
@@ -70,7 +72,7 @@ package body org.allbinary.data.tables.category.CategoryEntity_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, INSERT, e);
+                This.logUtil.put (This.commonStrings.FAILURE, CategoryEntity_Access'(This'Unchecked_Access), INSERT, e);
             end if;
                 end;
         end;
@@ -81,7 +83,7 @@ package body org.allbinary.data.tables.category.CategoryEntity_Package is
         begin
             AbSqlBean (This).deleteWhere (CategoryData_Package.getInstance.NAME, value);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.putF (This.commonStrings.SUCCESS, This'Unchecked_Access, This.commonStrings.delete);
+                This.logUtil.putF (This.commonStrings.SUCCESS, CategoryEntity_Access'(This'Unchecked_Access), This.commonStrings.delete);
             end if;
         exception
             when Java_Occurrence : others =>
@@ -89,7 +91,7 @@ package body org.allbinary.data.tables.category.CategoryEntity_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, This.commonStrings.delete, e);
+                This.logUtil.put (This.commonStrings.FAILURE, CategoryEntity_Access'(This'Unchecked_Access), This.commonStrings.delete, e);
             end if;
                 end;
         end;
@@ -117,7 +119,8 @@ package body org.allbinary.data.tables.category.CategoryEntity_Package is
         return AbSqlBean (This).createTable (This.createTableStatement);
    end createTable;
 
-   procedure update (This : in out CategoryEntity; updatedValues : HashMap_Access) is
+   procedure update (This : in out CategoryEntity; updatedValues_Param : access HashMap'Class) is
+      updatedValues : HashMap_Access := HashMap_Access (updatedValues_Param);
    begin
         AbSqlBean (This).updateWhere (CategoryData_Package.getInstance.NAME, Unbounded_String (updatedValues.get (CategoryData_Package.getInstance.NAME)), updatedValues);
    end update;

@@ -50,7 +50,7 @@ package org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package 
    function Create return GameNotificationEventHandler_Access;
    procedure removeAllListeners (This : in out GameNotificationEventHandler);
    function getInstance return GameNotificationEventHandler_Access;
-   procedure process (This : in out GameNotificationEventHandler; eventObject : AllBinaryEventObject_Access; eventListenerInterface : EventListenerInterface_Access);
+   procedure process (This : in out GameNotificationEventHandler; eventObject_Param : access AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface'Class);
 
 end org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package;
 

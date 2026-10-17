@@ -41,7 +41,10 @@ package body org.allbinary.graphics.displayable.screen.WebCommandProcessor_Packa
         return WebCommandProcessor_Package.instance;
    end getInstance;
 
-   procedure process (This : in out WebCommandProcessor; midletCommandListener : CommandListener_Access; command : Command_Access; canvas : Canvas_Access) is
+   procedure process (This : in out WebCommandProcessor; midletCommandListener_Param : access CommandListener'Class; command_Param : access Command'Class; canvas_Param : access Canvas'Class) is
+      midletCommandListener : CommandListener_Access := CommandListener_Access (midletCommandListener_Param);
+      command : Command_Access := Command_Access (command_Param);
+      canvas : Canvas_Access := Canvas_Access (canvas_Param);
       commonStrings : CommonStrings_Access;
    begin
         begin
@@ -54,7 +57,7 @@ package body org.allbinary.graphics.displayable.screen.WebCommandProcessor_Packa
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("process"), e);
+            This.logUtil.put (commonStrings.EXCEPTION_Id, WebCommandProcessor_Access'(This'Unchecked_Access), To_Unbounded_String ("process"), e);
                 end;
         end;
    end process;

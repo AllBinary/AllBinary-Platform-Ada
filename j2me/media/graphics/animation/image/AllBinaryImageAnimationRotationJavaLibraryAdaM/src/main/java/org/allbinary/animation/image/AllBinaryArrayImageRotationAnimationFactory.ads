@@ -53,12 +53,12 @@ package org.allbinary.animation.image.AllBinaryArrayImageRotationAnimationFactor
       angleIncrement : Integer;
    end record;
 
-   procedure Initialize (This : in out AllBinaryArrayImageRotationAnimationFactory'Class; image : Image_Access; width : Integer; height : Integer; angleIncrement : Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access);
-   function Create (image : Image_Access; width : Integer; height : Integer; angleIncrement : Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access) return AllBinaryArrayImageRotationAnimationFactory_Access;
-   function createFactory (image : Image_Access; dx : Integer; dy : Integer) return AllBinaryArrayImageRotationAnimationFactory_Access;
-   procedure createFactory (image : Image_Access; dx : Integer; dy : Integer);
-   function createFactoryA (image : Image_Access; dx : Integer; dy : Integer; angleIncrement : Integer) return AllBinaryArrayImageRotationAnimationFactory_Access;
-   procedure createFactoryA (image : Image_Access; dx : Integer; dy : Integer; angleIncrement : Integer);
+   procedure Initialize (This : in out AllBinaryArrayImageRotationAnimationFactory'Class; image_Param : access Image'Class; width : Integer; height : Integer; angleIncrement : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class);
+   function Create (image_Param : access Image'Class; width : Integer; height : Integer; angleIncrement : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return AllBinaryArrayImageRotationAnimationFactory_Access;
+   function createFactory (image_Param : access Image'Class; dx : Integer; dy : Integer) return AllBinaryArrayImageRotationAnimationFactory_Access;
+   procedure createFactory (image_Param : access Image'Class; dx : Integer; dy : Integer);
+   function createFactoryA (image_Param : access Image'Class; dx : Integer; dy : Integer; angleIncrement : Integer) return AllBinaryArrayImageRotationAnimationFactory_Access;
+   procedure createFactoryA (image_Param : access Image'Class; dx : Integer; dy : Integer; angleIncrement : Integer);
    procedure init (This : in out AllBinaryArrayImageRotationAnimationFactory);
    procedure initDXY (This : in out AllBinaryArrayImageRotationAnimationFactory; dx : Integer; dy : Integer);
    function getInstance (This : in out AllBinaryArrayImageRotationAnimationFactory; instanceId : Integer) return Animation_Access;

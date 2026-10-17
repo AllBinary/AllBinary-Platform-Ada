@@ -46,13 +46,13 @@ package views.generic_Id.user.UsersValidationView_Package is
       logUtil : LogUtil_Access;
    end record;
 
-   procedure Initialize (This : in out UsersValidationView'Class; transformInfoInterface : TransformInfoInterface_Access);
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return UsersValidationView_Access;
+   procedure Initialize (This : in out UsersValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return UsersValidationView_Access;
    function isValid (This : in out UsersValidationView) return Boolean;
    function validationInfo (This : in out UsersValidationView) return Unbounded_String;
    function toValidationInfoDoc (This : in out UsersValidationView) return Document_Access;
-   function toValidationInfoNode (This : in out UsersValidationView; document : Document_Access) return Node_Access;
-   procedure toValidationInfoNode (This : in out UsersValidationView; document : Document_Access);
+   function toValidationInfoNode (This : in out UsersValidationView; document_Param : access Document'Class) return Node_Access;
+   procedure toValidationInfoNode (This : in out UsersValidationView; document_Param : access Document'Class);
 
 end views.generic_Id.user.UsersValidationView_Package;
 

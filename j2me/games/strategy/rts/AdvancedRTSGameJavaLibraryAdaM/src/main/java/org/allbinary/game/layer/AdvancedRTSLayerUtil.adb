@@ -37,7 +37,8 @@ package body org.allbinary.game.layer.AdvancedRTSLayerUtil_Package is
         return AdvancedRTSLayerUtil_Package.instance;
    end getInstance;
 
-   function createFakeRTSLayerHashtable (This : in out AdvancedRTSLayerUtil; baseRaceTrackGeographicMap : BaseRaceTrackGeographicMap_Access) return ABHashtable_Access is
+   function createFakeRTSLayerHashtable (This : in out AdvancedRTSLayerUtil; baseRaceTrackGeographicMap_Param : access BaseRaceTrackGeographicMap'Class) return ABHashtable_Access is
+      baseRaceTrackGeographicMap : BaseRaceTrackGeographicMap_Access := BaseRaceTrackGeographicMap_Access (baseRaceTrackGeographicMap_Param);
       hashtable : ABHashtable_Access;
    begin
         hashtable := RTSLayerUtil_Package.getInstance.createFakeRTSLayerHashtable (baseRaceTrackGeographicMap);
@@ -45,8 +46,8 @@ package body org.allbinary.game.layer.AdvancedRTSLayerUtil_Package is
         return hashtable;
    end createFakeRTSLayerHashtable;
 
-   procedure createFakeRTSLayerHashtable (This : in out AdvancedRTSLayerUtil; baseRaceTrackGeographicMap : BaseRaceTrackGeographicMap_Access) is
-      Java_Result : constant ABHashtable_Access := AdvancedRTSLayerUtil'Class (This).createFakeRTSLayerHashtable (baseRaceTrackGeographicMap);
+   procedure createFakeRTSLayerHashtable (This : in out AdvancedRTSLayerUtil; baseRaceTrackGeographicMap_Param : access BaseRaceTrackGeographicMap'Class) is
+      Java_Result : constant ABHashtable_Access := AdvancedRTSLayerUtil'Class (This).createFakeRTSLayerHashtable (baseRaceTrackGeographicMap_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

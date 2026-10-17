@@ -59,18 +59,18 @@ package org.allbinary.input.automation.actions.script.condition.TimeIntervalActi
    end record;
    NAME : Unbounded_String;
 
-   procedure Initialize (This : in out TimeIntervalActionScriptCondition'Class; node : Node_Access);
-   function Create (node : Node_Access) return TimeIntervalActionScriptCondition_Access;
+   procedure Initialize (This : in out TimeIntervalActionScriptCondition'Class; node_Param : access Node'Class);
+   function Create (node_Param : access Node'Class) return TimeIntervalActionScriptCondition_Access;
    procedure Initialize (This : in out TimeIntervalActionScriptCondition'Class);
    function Create return TimeIntervalActionScriptCondition_Access;
    procedure init (This : in out TimeIntervalActionScriptCondition);
    procedure showDialog (This : in out TimeIntervalActionScriptCondition);
    function toHashMap (This : in out TimeIntervalActionScriptCondition) return HashMap_Access;
-   function toXmlNode (This : in out TimeIntervalActionScriptCondition; document : Document_Access) return Node_Access;
-   procedure toXmlNode (This : in out TimeIntervalActionScriptCondition; document : Document_Access);
+   function toXmlNode (This : in out TimeIntervalActionScriptCondition; document_Param : access Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out TimeIntervalActionScriptCondition; document_Param : access Document'Class);
    procedure log (This : in out TimeIntervalActionScriptCondition);
    function getTimeDelayHelper (This : in out TimeIntervalActionScriptCondition) return TimeDelayHelper_Access;
-   procedure setTimeDelayHelper (This : in out TimeIntervalActionScriptCondition; timeHelper : TimeDelayHelper_Access);
+   procedure setTimeDelayHelper (This : in out TimeIntervalActionScriptCondition; timeHelper_Param : access TimeDelayHelper'Class);
    function shouldProcess (This : in out TimeIntervalActionScriptCondition; frame : Long_Long_Integer) return Boolean;
    procedure shouldProcess (This : in out TimeIntervalActionScriptCondition; frame : Long_Long_Integer);
 

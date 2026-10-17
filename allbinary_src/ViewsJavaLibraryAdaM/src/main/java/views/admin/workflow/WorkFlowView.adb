@@ -23,20 +23,22 @@ package body views.admin.workflow.WorkFlowView_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out WorkFlowView'Class; transformInfoInterface : TransformInfoInterface_Access) is
+   procedure Initialize (This : in out WorkFlowView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return WorkFlowView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return WorkFlowView_Access is
       This : constant WorkFlowView_Access := new WorkFlowView;
    begin
-      WorkFlowView_Package.Initialize (This.all, transformInfoInterface);
+      WorkFlowView_Package.Initialize (This.all, transformInfoInterface_Param);
       return This;
    end Create;
 
-   function toXmlNode (This : in out WorkFlowView; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out WorkFlowView; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
    begin
         begin
             return null;
@@ -46,7 +48,7 @@ package body views.admin.workflow.WorkFlowView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("toXmlNode()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, WorkFlowView_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode()"), e);
             end if;
             return null;
                 end;
@@ -55,7 +57,7 @@ package body views.admin.workflow.WorkFlowView_Package is
 
    procedure addDomNodeInterfaces (This : in out WorkFlowView) is
    begin
-        This.addDomNodeInterface (DomNodeInterface_Access (This'Unchecked_Access));
+        This.addDomNodeInterface (DomNodeInterface_Access (WorkFlowView_Access'(This'Unchecked_Access)));
    end addDomNodeInterfaces;
 
    --  throws Exception
@@ -70,15 +72,15 @@ package body views.admin.workflow.WorkFlowView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("view()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, WorkFlowView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
             end if;
             Java_Throw (e);
                 end;
         end;
    end view;
 
-   procedure toXmlNode (This : in out WorkFlowView; document : Document_Access) is
-      Java_Result : constant Node_Access := WorkFlowView'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out WorkFlowView; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := WorkFlowView'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

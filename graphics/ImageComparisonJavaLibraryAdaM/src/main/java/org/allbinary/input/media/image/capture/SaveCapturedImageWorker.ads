@@ -62,8 +62,8 @@ package org.allbinary.input.media.image.capture.SaveCapturedImageWorker_Package 
    function Create return SaveCapturedImageWorker_Access;
    function isRunning (This : in out SaveCapturedImageWorker) return Boolean;
    procedure setRunning (This : in out SaveCapturedImageWorker; running : Boolean);
-   procedure onCaptureEvent (This : in out SaveCapturedImageWorker; capturedImageEvent : CapturedImageWorkerResultsEvent_Access);
-   procedure onEvent (This : in out SaveCapturedImageWorker; allBinaryEventObject : AllBinaryEventObject_Access);
+   procedure onCaptureEvent (This : in out SaveCapturedImageWorker; capturedImageEvent_Param : access CapturedImageWorkerResultsEvent'Class);
+   procedure onEvent (This : in out SaveCapturedImageWorker; allBinaryEventObject_Param : access AllBinaryEventObject'Class);
    procedure run (This : in out SaveCapturedImageWorker);
 
 end org.allbinary.input.media.image.capture.SaveCapturedImageWorker_Package;

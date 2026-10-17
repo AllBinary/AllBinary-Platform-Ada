@@ -46,8 +46,8 @@ package org.allbinary.graphics.form.item.LimitCommandsVisitor_Package is
 
    procedure Initialize (This : in out LimitCommandsVisitor'Class);
    function Create return LimitCommandsVisitor_Access;
-   function visit (This : in out LimitCommandsVisitor; anyType : Java_Object_Access) return Java_Object_Access;
-   procedure visit (This : in out LimitCommandsVisitor; anyType : Java_Object_Access);
+   function visit (This : in out LimitCommandsVisitor; anyType_Param : access Java_Object'Class) return Java_Object_Access;
+   procedure visit (This : in out LimitCommandsVisitor; anyType_Param : access Java_Object'Class);
 
 end org.allbinary.graphics.form.item.LimitCommandsVisitor_Package;
 

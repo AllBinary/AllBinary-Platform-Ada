@@ -35,13 +35,15 @@ package body taghelpers.ValidatedViewHelperFactory_Package is
    end Create;
 
    --  throws Exception, LicensingException
-   function getInstance (This : in out ValidatedViewHelperFactory; hashMap : HashMap_Access; pageContext : PageContext_Access) return Java_Object_Access is
+   function getInstance (This : in out ValidatedViewHelperFactory; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return Java_Object_Access is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
    begin
         return HelperFactory_Package.getInstance (FACTORYNAME, CLASSNAME, hashMap, pageContext);
    end getInstance;
 
-   procedure getInstance (This : in out ValidatedViewHelperFactory; hashMap : HashMap_Access; pageContext : PageContext_Access) is
-      Java_Result : constant Java_Object_Access := ValidatedViewHelperFactory'Class (This).getInstance (hashMap, pageContext);
+   procedure getInstance (This : in out ValidatedViewHelperFactory; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+      Java_Result : constant Java_Object_Access := ValidatedViewHelperFactory'Class (This).getInstance (hashMap_Param, pageContext_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

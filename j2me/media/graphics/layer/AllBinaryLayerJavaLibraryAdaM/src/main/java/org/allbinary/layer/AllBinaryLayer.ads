@@ -70,10 +70,10 @@ package org.allbinary.layer.AllBinaryLayer_Package is
    NULL_ALLBINARY_LAYER : AllBinaryLayer_Access;
    TYPE_Id : Unbounded_String;
 
-   procedure Initialize (This : in out AllBinaryLayer'Class; name : Unbounded_String; rectangle : Rectangle_Access; viewPosition : ViewPositionBase_Access);
-   function Create (name : Unbounded_String; rectangle : Rectangle_Access; viewPosition : ViewPositionBase_Access) return AllBinaryLayer_Access;
-   procedure onChangeEvent (This : in out AllBinaryLayer; layerManagerEvent : ViewPositionEvent_Access);
-   procedure paintThreed (This : in out AllBinaryLayer; graphics : Graphics_Access);
+   procedure Initialize (This : in out AllBinaryLayer'Class; name : Unbounded_String; rectangle_Param : access Rectangle'Class; viewPosition_Param : access ViewPositionBase'Class);
+   function Create (name : Unbounded_String; rectangle_Param : access Rectangle'Class; viewPosition_Param : access ViewPositionBase'Class) return AllBinaryLayer_Access;
+   procedure onChangeEvent (This : in out AllBinaryLayer; layerManagerEvent_Param : access ViewPositionEvent'Class);
+   procedure paintThreed (This : in out AllBinaryLayer; graphics_Param : access Graphics'Class);
    function getX2 (This : in out AllBinaryLayer) return Integer;
    function getY2 (This : in out AllBinaryLayer) return Integer;
    function getZ2 (This : in out AllBinaryLayer) return Integer;
@@ -84,7 +84,7 @@ package org.allbinary.layer.AllBinaryLayer_Package is
    function getHalfHeight (This : in out AllBinaryLayer) return Integer;
    function getHalfDepth (This : in out AllBinaryLayer) return Integer;
    function getViewPosition (This : in out AllBinaryLayer) return ViewPositionBase_Access;
-   procedure setViewPosition (This : in out AllBinaryLayer; viewPosition : ViewPositionBase_Access);
+   procedure setViewPosition (This : in out AllBinaryLayer; viewPosition_Param : access ViewPositionBase'Class);
    function getGroupInterface (This : in out AllBinaryLayer) return Group_Access_Array_Access;
    function implmentsTickableInterface (This : in out AllBinaryLayer) return Boolean;
    function implmentsGameInputInterface (This : in out AllBinaryLayer) return Boolean;
@@ -93,7 +93,7 @@ package org.allbinary.layer.AllBinaryLayer_Package is
    function implementsThreedInterface (This : in out AllBinaryLayer) return Boolean;
    function getType (This : in out AllBinaryLayer) return Integer;
    function getMultiPlayerType (This : in out AllBinaryLayer) return Integer;
-   procedure toStringAppend (This : in out AllBinaryLayer; stringBuffer : StringMaker_Access);
+   procedure toStringAppend (This : in out AllBinaryLayer; stringBuffer_Param : access StringMaker'Class);
    function toString (This : in out AllBinaryLayer) return Unbounded_String;
 
 end org.allbinary.layer.AllBinaryLayer_Package;

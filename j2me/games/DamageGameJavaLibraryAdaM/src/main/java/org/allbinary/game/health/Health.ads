@@ -59,7 +59,7 @@ package org.allbinary.game.health.Health_Package is
    procedure setMaxHealth (This : in out Health; maxHealth : Integer);
    procedure setHealth (This : in out Health; health : Integer);
    function getHealth (This : in out Health) return Integer;
-   procedure addListener (This : in out Health; healthGraphic : HealthListenerInterface_Access);
+   procedure addListener (This : in out Health; healthGraphic_Param : access HealthListenerInterface'Class);
    function toString (This : in out Health) return Unbounded_String;
 
 end org.allbinary.game.health.Health_Package;

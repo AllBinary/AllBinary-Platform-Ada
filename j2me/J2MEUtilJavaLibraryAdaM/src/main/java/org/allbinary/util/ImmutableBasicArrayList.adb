@@ -36,15 +36,17 @@ package body org.allbinary.util.ImmutableBasicArrayList_Package is
       return This;
    end Create;
 
-   function add (This : in out ImmutableBasicArrayList; e : Java_Object_Access) return Boolean is
+   function add (This : in out ImmutableBasicArrayList; e_Param : access Java_Object'Class) return Boolean is
+      e : Java_Object_Access := Java_Object_Access (e_Param);
    begin
-        ForcedLogUtil_Package.log (This.name, This'Unchecked_Access);
+        ForcedLogUtil_Package.log (This.name, ImmutableBasicArrayList_Access'(This'Unchecked_Access));
         return True;
    end add;
 
-   procedure addAt (This : in out ImmutableBasicArrayList; index : Integer; element : Java_Object_Access) is
+   procedure addAt (This : in out ImmutableBasicArrayList; index : Integer; element_Param : access Java_Object'Class) is
+      element : Java_Object_Access := Java_Object_Access (element_Param);
    begin
-        ForcedLogUtil_Package.log (This.name, This'Unchecked_Access);
+        ForcedLogUtil_Package.log (This.name, ImmutableBasicArrayList_Access'(This'Unchecked_Access));
    end addAt;
 
    function toString (This : in out ImmutableBasicArrayList) return Unbounded_String is
@@ -52,8 +54,8 @@ package body org.allbinary.util.ImmutableBasicArrayList_Package is
         return This.name;
    end toString;
 
-   procedure add (This : in out ImmutableBasicArrayList; e : Java_Object_Access) is
-      Java_Result : constant Boolean := ImmutableBasicArrayList'Class (This).add (e);
+   procedure add (This : in out ImmutableBasicArrayList; e_Param : access Java_Object'Class) is
+      Java_Result : constant Boolean := ImmutableBasicArrayList'Class (This).add (e_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

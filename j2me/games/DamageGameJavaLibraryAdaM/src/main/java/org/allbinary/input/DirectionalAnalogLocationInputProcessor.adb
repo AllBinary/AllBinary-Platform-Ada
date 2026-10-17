@@ -37,19 +37,19 @@ package body org.allbinary.input.DirectionalAnalogLocationInputProcessor_Package
       Initialize_Fields (This);
         This.inputProcessorArray := inputProcessorArray;
         begin
-            This.leftGameKeyEvent := GameKeyEventFactory_Package.getInstance.getInstanceForInput (This'Unchecked_Access, This.gameKeyFactory.LEFT);
-            This.rightGameKeyEvent := GameKeyEventFactory_Package.getInstance.getInstanceForInput (This'Unchecked_Access, This.gameKeyFactory.RIGHT);
-            This.upGameKeyEvent := GameKeyEventFactory_Package.getInstance.getInstanceForInput (This'Unchecked_Access, This.gameKeyFactory.UP);
-            This.downGameKeyEvent := GameKeyEventFactory_Package.getInstance.getInstanceForInput (This'Unchecked_Access, This.gameKeyFactory.DOWN);
-            This.leftTriggerGameKeyEvent := GameKeyEventFactory_Package.getInstance.getInstanceForInput (This'Unchecked_Access, This.gameKeyFactory.KEY_NUM0);
-            This.rightTriggerGameKeyEvent := GameKeyEventFactory_Package.getInstance.getInstanceForInput (This'Unchecked_Access, This.gameKeyFactory.KEY_NUM5);
+            This.leftGameKeyEvent := GameKeyEventFactory_Package.getInstance.getInstanceForInput (DirectionalAnalogLocationInputProcessor_Access'(This'Unchecked_Access), This.gameKeyFactory.LEFT);
+            This.rightGameKeyEvent := GameKeyEventFactory_Package.getInstance.getInstanceForInput (DirectionalAnalogLocationInputProcessor_Access'(This'Unchecked_Access), This.gameKeyFactory.RIGHT);
+            This.upGameKeyEvent := GameKeyEventFactory_Package.getInstance.getInstanceForInput (DirectionalAnalogLocationInputProcessor_Access'(This'Unchecked_Access), This.gameKeyFactory.UP);
+            This.downGameKeyEvent := GameKeyEventFactory_Package.getInstance.getInstanceForInput (DirectionalAnalogLocationInputProcessor_Access'(This'Unchecked_Access), This.gameKeyFactory.DOWN);
+            This.leftTriggerGameKeyEvent := GameKeyEventFactory_Package.getInstance.getInstanceForInput (DirectionalAnalogLocationInputProcessor_Access'(This'Unchecked_Access), This.gameKeyFactory.KEY_NUM0);
+            This.rightTriggerGameKeyEvent := GameKeyEventFactory_Package.getInstance.getInstanceForInput (DirectionalAnalogLocationInputProcessor_Access'(This'Unchecked_Access), This.gameKeyFactory.KEY_NUM5);
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.CONSTRUCTOR, e);
+            This.logUtil.put (commonStrings.EXCEPTION_Id, DirectionalAnalogLocationInputProcessor_Access'(This'Unchecked_Access), commonStrings.CONSTRUCTOR, e);
                 end;
         end;
    end Initialize;
@@ -61,7 +61,9 @@ package body org.allbinary.input.DirectionalAnalogLocationInputProcessor_Package
       return This;
    end Create;
 
-   procedure process (This : in out DirectionalAnalogLocationInputProcessor; allbinaryLayerManager : AllBinaryLayerManager_Access; analogLocationInput : AnalogLocationInput_Access) is
+   procedure process (This : in out DirectionalAnalogLocationInputProcessor; allbinaryLayerManager_Param : access AllBinaryLayerManager'Class; analogLocationInput_Param : access AnalogLocationInput'Class) is
+      allbinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allbinaryLayerManager_Param);
+      analogLocationInput : AnalogLocationInput_Access := AnalogLocationInput_Access (analogLocationInput_Param);
       customGPoint : CustomGPoint_Access;
       x : Integer;
       y : Integer;
@@ -98,7 +100,7 @@ package body org.allbinary.input.DirectionalAnalogLocationInputProcessor_Package
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.put (To_Unbounded_String ("Unable to process analog input"), This'Unchecked_Access, commonStrings.PROCESS, e);
+            This.logUtil.put (To_Unbounded_String ("Unable to process analog input"), DirectionalAnalogLocationInputProcessor_Access'(This'Unchecked_Access), commonStrings.PROCESS, e);
                 end;
         end;
    end process;

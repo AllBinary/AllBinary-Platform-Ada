@@ -53,8 +53,8 @@ package admin.taghelpers.BasketHelper_Package is
       MAX : Integer;
    end record;
 
-   procedure Initialize (This : in out BasketHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access);
-   function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return BasketHelper_Access;
+   procedure Initialize (This : in out BasketHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
+   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return BasketHelper_Access;
    function isBasketEmpty (This : in out BasketHelper) return Boolean;
 
 end admin.taghelpers.BasketHelper_Package;

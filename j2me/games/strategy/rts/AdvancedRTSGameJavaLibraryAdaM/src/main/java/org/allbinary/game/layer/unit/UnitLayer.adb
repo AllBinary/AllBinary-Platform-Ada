@@ -47,11 +47,29 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
       This.movementAngle := This.angleFactory.NOT_ANGLE;
       This.steeringInsideGeographicMapCellPosition := SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION;
       This.sensorGeographicMapCellPositionList := BasicArrayListD_Package.Create;
-      This.CAPITAL_EVENT := CapitalEvent_Package.Create (This'Unchecked_Access);
+      This.CAPITAL_EVENT := CapitalEvent_Package.Create (UnitLayer_Access'(This'Unchecked_Access));
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out UnitLayer'Class; remoteInfo : RemoteInfo_Access; parentLayer : PathFindingLayerInterface_Access; advancedRTSProperties : AdvancedRTSProperties_Access; groupInterface : Group_Access_Array_Access; rootName : Unbounded_String; name : Unbounded_String; vehicleProperties : VehicleProperties_Access; healthInterface : Health_Access; maxResourceLoad : Integer; moveSoundInterface : Sound_Access; waypointLayerInterfaceFactoryInterface : LayerInterfaceFactoryInterface_Access; animationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; emptyAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; baseAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; buildAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; verticleBuildAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; decalAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; resourceAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; proceduralAnimationInterfaceFactoryInterface : ProceduralAnimationInterfaceFactoryInterface_Access; rectangle : Rectangle_Access; direction : Direction_Access; x : Integer; y : Integer; z : Integer; viewPosition : ViewPositionBase_Access) is
+   procedure Initialize (This : in out UnitLayer'Class; remoteInfo_Param : access RemoteInfo'Class; parentLayer_Param : access PathFindingLayerInterface'Class; advancedRTSProperties_Param : access AdvancedRTSProperties'Class; groupInterface : Group_Access_Array_Access; rootName : Unbounded_String; name : Unbounded_String; vehicleProperties_Param : access VehicleProperties'Class; healthInterface_Param : access Health'Class; maxResourceLoad : Integer; moveSoundInterface_Param : access Sound'Class; waypointLayerInterfaceFactoryInterface_Param : access LayerInterfaceFactoryInterface'Class; animationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface'Class; emptyAnimationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface'Class; baseAnimationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface'Class; buildAnimationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface'Class; verticleBuildAnimationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface'Class; decalAnimationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface'Class; resourceAnimationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface'Class; proceduralAnimationInterfaceFactoryInterface_Param : access ProceduralAnimationInterfaceFactoryInterface'Class; rectangle_Param : access Rectangle'Class; direction_Param : access Direction'Class; x : Integer; y : Integer; z : Integer; viewPosition_Param : access ViewPositionBase'Class) is
+      remoteInfo : RemoteInfo_Access := RemoteInfo_Access (remoteInfo_Param);
+      parentLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (parentLayer_Param);
+      advancedRTSProperties : AdvancedRTSProperties_Access := AdvancedRTSProperties_Access (advancedRTSProperties_Param);
+      vehicleProperties : VehicleProperties_Access := VehicleProperties_Access (vehicleProperties_Param);
+      healthInterface : Health_Access := Health_Access (healthInterface_Param);
+      moveSoundInterface : Sound_Access := Sound_Access (moveSoundInterface_Param);
+      waypointLayerInterfaceFactoryInterface : LayerInterfaceFactoryInterface_Access := LayerInterfaceFactoryInterface_Access (waypointLayerInterfaceFactoryInterface_Param);
+      animationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access := AnimationInterfaceFactoryInterface_Access (animationInterfaceFactoryInterface_Param);
+      emptyAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access := AnimationInterfaceFactoryInterface_Access (emptyAnimationInterfaceFactoryInterface_Param);
+      baseAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access := AnimationInterfaceFactoryInterface_Access (baseAnimationInterfaceFactoryInterface_Param);
+      buildAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access := AnimationInterfaceFactoryInterface_Access (buildAnimationInterfaceFactoryInterface_Param);
+      verticleBuildAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access := AnimationInterfaceFactoryInterface_Access (verticleBuildAnimationInterfaceFactoryInterface_Param);
+      decalAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access := AnimationInterfaceFactoryInterface_Access (decalAnimationInterfaceFactoryInterface_Param);
+      resourceAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access := AnimationInterfaceFactoryInterface_Access (resourceAnimationInterfaceFactoryInterface_Param);
+      proceduralAnimationInterfaceFactoryInterface : ProceduralAnimationInterfaceFactoryInterface_Access := ProceduralAnimationInterfaceFactoryInterface_Access (proceduralAnimationInterfaceFactoryInterface_Param);
+      rectangle : Rectangle_Access := Rectangle_Access (rectangle_Param);
+      direction : Direction_Access := Direction_Access (direction_Param);
+      viewPosition : ViewPositionBase_Access := ViewPositionBase_Access (viewPosition_Param);
    begin
         AdvancedRTSGameLayer_Package.Initialize (This, remoteInfo, parentLayer, advancedRTSProperties, groupInterface, rootName, name, healthInterface, WaypointRTSFormInput_Package.Create (groupInterface, True), animationInterfaceFactoryInterface, emptyAnimationInterfaceFactoryInterface, baseAnimationInterfaceFactoryInterface, buildAnimationInterfaceFactoryInterface, verticleBuildAnimationInterfaceFactoryInterface, proceduralAnimationInterfaceFactoryInterface, rectangle, x, y, viewPosition);
         Initialize_Fields (This);
@@ -60,14 +78,14 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
         This.maxResourceLoad := maxResourceLoad.shortValue;
         This.moveSoundInterface := moveSoundInterface;
         if Features_Package.getInstance.isFeature (GameFeatureFactory_Package.getInstance.DAMAGE_FLOATERS) then
-            This.damageFloaters := PtsDamageFloaters_Package.Create (This'Unchecked_Access);
+            This.damageFloaters := PtsDamageFloaters_Package.Create (UnitLayer_Access'(This'Unchecked_Access));
             This.damageFloatersPaintableInterface := This.damageFloaters;
         else
             This.damageFloatersPaintableInterface := NullPaintable_Package.getInstance;
             This.damageFloaters := DamageFloaters_Package.Create;
         end if;
         if Features_Package.getInstance.isFeature (GameFeatureFactory_Package.getInstance.HEALTH_BARS) then
-            This.healthBar := HealthBar_Package.Create (This'Unchecked_Access, This.getHealthInterface, HealthBarTwodAnimation_Package.Create (AllBinaryLayer_Access (This'Unchecked_Access), BasicHudFactory_Package.getInstance.BOTTOMLEFT), -(1));
+            This.healthBar := HealthBar_Package.Create (UnitLayer_Access'(This'Unchecked_Access), This.getHealthInterface, HealthBarTwodAnimation_Package.Create (AllBinaryLayer_Access (UnitLayer_Access'(This'Unchecked_Access)), BasicHudFactory_Package.getInstance.BOTTOMLEFT), -(1));
         else
             This.healthBar := NullPaintable_Package.getInstance;
         end if;
@@ -79,49 +97,52 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
         This.rotationAnimationInterfaceP.setFrameByDirection (direction);
         This.setMaxLevel (12);
         This.vehicleProperties := vehicleProperties;
-        This.trackingEvent := TrackingEvent_Package.Create (This'Unchecked_Access);
-        This.initPathAnimation := PathAnimation_Package.Create (This'Unchecked_Access, LinePathRelativeAnimation_Package.getInstance);
+        This.trackingEvent := TrackingEvent_Package.Create (UnitLayer_Access'(This'Unchecked_Access));
+        This.initPathAnimation := PathAnimation_Package.Create (UnitLayer_Access'(This'Unchecked_Access), LinePathRelativeAnimation_Package.getInstance);
    end Initialize;
 
-   function Create (remoteInfo : RemoteInfo_Access; parentLayer : PathFindingLayerInterface_Access; advancedRTSProperties : AdvancedRTSProperties_Access; groupInterface : Group_Access_Array_Access; rootName : Unbounded_String; name : Unbounded_String; vehicleProperties : VehicleProperties_Access; healthInterface : Health_Access; maxResourceLoad : Integer; moveSoundInterface : Sound_Access; waypointLayerInterfaceFactoryInterface : LayerInterfaceFactoryInterface_Access; animationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; emptyAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; baseAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; buildAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; verticleBuildAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; decalAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; resourceAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; proceduralAnimationInterfaceFactoryInterface : ProceduralAnimationInterfaceFactoryInterface_Access; rectangle : Rectangle_Access; direction : Direction_Access; x : Integer; y : Integer; z : Integer; viewPosition : ViewPositionBase_Access) return UnitLayer_Access is
+   function Create (remoteInfo_Param : access RemoteInfo'Class; parentLayer_Param : access PathFindingLayerInterface'Class; advancedRTSProperties_Param : access AdvancedRTSProperties'Class; groupInterface : Group_Access_Array_Access; rootName : Unbounded_String; name : Unbounded_String; vehicleProperties_Param : access VehicleProperties'Class; healthInterface_Param : access Health'Class; maxResourceLoad : Integer; moveSoundInterface_Param : access Sound'Class; waypointLayerInterfaceFactoryInterface_Param : access LayerInterfaceFactoryInterface'Class; animationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface'Class; emptyAnimationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface'Class; baseAnimationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface'Class; buildAnimationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface'Class; verticleBuildAnimationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface'Class; decalAnimationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface'Class; resourceAnimationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface'Class; proceduralAnimationInterfaceFactoryInterface_Param : access ProceduralAnimationInterfaceFactoryInterface'Class; rectangle_Param : access Rectangle'Class; direction_Param : access Direction'Class; x : Integer; y : Integer; z : Integer; viewPosition_Param : access ViewPositionBase'Class) return UnitLayer_Access is
       This : constant UnitLayer_Access := new UnitLayer;
    begin
-      UnitLayer_Package.Initialize (This.all, remoteInfo, parentLayer, advancedRTSProperties, groupInterface, rootName, name, vehicleProperties, healthInterface, maxResourceLoad, moveSoundInterface, waypointLayerInterfaceFactoryInterface, animationInterfaceFactoryInterface, emptyAnimationInterfaceFactoryInterface, baseAnimationInterfaceFactoryInterface, buildAnimationInterfaceFactoryInterface, verticleBuildAnimationInterfaceFactoryInterface, decalAnimationInterfaceFactoryInterface, resourceAnimationInterfaceFactoryInterface, proceduralAnimationInterfaceFactoryInterface, rectangle, direction, x, y, z, viewPosition);
+      UnitLayer_Package.Initialize (This.all, remoteInfo_Param, parentLayer_Param, advancedRTSProperties_Param, groupInterface, rootName, name, vehicleProperties_Param, healthInterface_Param, maxResourceLoad, moveSoundInterface_Param, waypointLayerInterfaceFactoryInterface_Param, animationInterfaceFactoryInterface_Param, emptyAnimationInterfaceFactoryInterface_Param, baseAnimationInterfaceFactoryInterface_Param, buildAnimationInterfaceFactoryInterface_Param, verticleBuildAnimationInterfaceFactoryInterface_Param, decalAnimationInterfaceFactoryInterface_Param, resourceAnimationInterfaceFactoryInterface_Param, proceduralAnimationInterfaceFactoryInterface_Param, rectangle_Param, direction_Param, x, y, z, viewPosition_Param);
       return This;
    end Create;
 
    --  throws Exception
-   procedure setAllBinaryGameLayerManager (This : in out UnitLayer; allBinaryGameLayerManager : AllBinaryGameLayerManager_Access) is
+   procedure setAllBinaryGameLayerManager (This : in out UnitLayer; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class) is
+      allBinaryGameLayerManager : AllBinaryGameLayerManager_Access := AllBinaryGameLayerManager_Access (allBinaryGameLayerManager_Param);
    begin
         AdvancedRTSGameLayer (This).setAllBinaryGameLayerManager (allBinaryGameLayerManager);
         This.initPathAnimation.setAllBinaryGameLayerManager (allBinaryGameLayerManager);
    end setAllBinaryGameLayerManager;
 
    --  throws Exception
-   procedure updateWaypointBehavior (This : in out UnitLayer; geographicMapInterface : BasicGeographicMap_Access) is
+   procedure updateWaypointBehavior (This : in out UnitLayer; geographicMapInterface_Param : access BasicGeographicMap'Class) is
+      geographicMapInterface : BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
       hashtable : ABHashtable_Access;
       features : Features_Access;
       waypoint : WaypointBase_Access;
    begin
         hashtable := StdUtil_Package.getInstance.createHashtable;
         hashtable.put (This.groupCommonFactory.ID, This.getGroupInterface);
-        hashtable.put (Layer_Package.ID, This'Unchecked_Access);
+        hashtable.put (Layer_Package.ID, UnitLayer_Access'(This'Unchecked_Access));
         hashtable.put (AllBinaryGameLayerManager_Package.ID, This.allBinaryGameLayerManagerP);
-        This.setWaypointBehavior (UnitWaypointBehavior2_Package.Create (This'Unchecked_Access, AdvancedRTSGameLayer_Access (This.waypointLayerInterfaceFactoryInterface.getNextInstance (hashtable, This.x, This.y, This.z))));
+        This.setWaypointBehavior (UnitWaypointBehavior2_Package.Create (UnitLayer_Access'(This'Unchecked_Access), AdvancedRTSGameLayer_Access (This.waypointLayerInterfaceFactoryInterface.getNextInstance (hashtable, This.x, This.y, This.z))));
         features := Features_Package.getInstance;
-        waypoint := (if J2MEUtil_Package.isHTML then MultipassNoCacheWaypoint_Package.Create (This'Unchecked_Access, AttackSound_Package.getInstance) else NoCacheWaypoint_Package.Create (This'Unchecked_Access, AttackSound_Package.getInstance));
+        waypoint := (if J2MEUtil_Package.isHTML then MultipassNoCacheWaypoint_Package.Create (UnitLayer_Access'(This'Unchecked_Access), AttackSound_Package.getInstance) else NoCacheWaypoint_Package.Create (UnitLayer_Access'(This'Unchecked_Access), AttackSound_Package.getInstance));
         This.getWaypointBehavior.setWaypoint (waypoint);
         AdvancedRTSGameLayer (This).updateWaypointBehavior (geographicMapInterface);
         This.initRangeHack;
    end updateWaypointBehavior;
 
    --  throws Exception
-   procedure construct (This : in out UnitLayer; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access) is
+   procedure construct (This : in out UnitLayer; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class) is
+      rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access := RTSPlayerLayerInterface_Access (rtsPlayerLayerInterface_Param);
    begin
         AdvancedRTSGameLayer (This).construct (rtsPlayerLayerInterface);
-        TrackingEventHandler_Package.getInstance.addListenerInterface (This'Unchecked_Access);
+        TrackingEventHandler_Package.getInstance.addListenerInterface (UnitLayer_Access'(This'Unchecked_Access));
         WaypointEventHandlerFactory_Package.getInstance (This.getGroupInterface (0)).addListenerInterface (This.getUnitWaypointBehavior);
-        BuildingEventHandler_Package.getInstance.addListenerInterface (This'Unchecked_Access);
+        BuildingEventHandler_Package.getInstance.addListenerInterface (UnitLayer_Access'(This'Unchecked_Access));
         This.getUnitWaypointBehavior.setCurrentPathGeographicMapCellPosition (This.getCurrentGeographicMapCellPosition);
         This.updateSensorGeographicMapCellPositionList;
         This.getUnitWaypointBehavior.setLastPathGeographicMapCellPosition (This.getUnitWaypointBehavior.getCurrentPathGeographicMapCellPosition);
@@ -219,7 +240,8 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
    end setSelected;
 
    --  throws Exception
-   procedure setClosestGeographicMapCellHistory (This : in out UnitLayer; pathsList : BasicArrayList_Access) is
+   procedure setClosestGeographicMapCellHistory (This : in out UnitLayer; pathsList_Param : access BasicArrayList'Class) is
+      pathsList : BasicArrayList_Access := BasicArrayList_Access (pathsList_Param);
       closestIndex : Integer;
       shortestDistance : Integer;
       currentDistance : Integer;
@@ -227,14 +249,14 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
       geographicMapCellPosition : GeographicMapCellPosition_Access;
       index : Integer;
    begin
-        This.rtsLogHelper.setClosestGeographicMapCellHistory (This'Unchecked_Access, pathsList);
+        This.rtsLogHelper.setClosestGeographicMapCellHistory (UnitLayer_Access'(This'Unchecked_Access), pathsList);
         closestIndex := -(1);
         shortestDistance := Integer_Package.MAX_VALUE;
         currentDistance := Integer_Package.MAX_VALUE;
         for index in reverse 0 .. (pathsList.size) - (1) loop
             geographicMapCellPositionBasicArrayList := BasicArrayList_Access (pathsList.get (index));
             geographicMapCellPosition := GeographicMapCellPosition_Access (geographicMapCellPositionBasicArrayList.get ((geographicMapCellPositionBasicArrayList.size) - (1)));
-            currentDistance := This.layerDistanceUtil.getDistanceAt (This'Unchecked_Access, geographicMapCellPosition.getMidPoint);
+            currentDistance := This.layerDistanceUtil.getDistanceAt (UnitLayer_Access'(This'Unchecked_Access), geographicMapCellPosition.getMidPoint);
             if (currentDistance) < (shortestDistance) then
                 shortestDistance := currentDistance;
                 closestIndex := index;
@@ -248,12 +270,15 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
    end setClosestGeographicMapCellHistory;
 
    --  throws Exception
-   procedure init (This : in out UnitLayer; geographicMapCellHistory : GeographicMapCellHistory_Access; geographicMapCellPositionBasicArrayList : BasicArrayList_Access) is
+   procedure init (This : in out UnitLayer; geographicMapCellHistory_Param : access GeographicMapCellHistory'Class; geographicMapCellPositionBasicArrayList_Param : access BasicArrayList'Class) is
+      geographicMapCellHistory : GeographicMapCellHistory_Access := GeographicMapCellHistory_Access (geographicMapCellHistory_Param);
+      geographicMapCellPositionBasicArrayList : BasicArrayList_Access := BasicArrayList_Access (geographicMapCellPositionBasicArrayList_Param);
    begin
         geographicMapCellHistory.trackAll (geographicMapCellPositionBasicArrayList);
    end init;
 
-   procedure onMovement (This : in out UnitLayer; trackingEvent : TrackingEvent_Access) is
+   procedure onMovement (This : in out UnitLayer; trackingEvent_Param : access TrackingEvent'Class) is
+      trackingEvent : TrackingEvent_Access := TrackingEvent_Access (trackingEvent_Param);
       layerInterface : AdvancedRTSGameLayer_Access;
    begin
         begin
@@ -267,13 +292,14 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("onMovement"), e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, UnitLayer_Access'(This'Unchecked_Access), To_Unbounded_String ("onMovement"), e);
                 end;
         end;
    end onMovement;
 
    --  throws Exception
-   procedure onMovementFound (This : in out UnitLayer; trackingEvent : TrackingEvent_Access) is
+   procedure onMovementFound (This : in out UnitLayer; trackingEvent_Param : access TrackingEvent'Class) is
+      trackingEvent : TrackingEvent_Access := TrackingEvent_Access (trackingEvent_Param);
       layerInterface : AdvancedRTSGameLayer_Access;
    begin
         layerInterface := AdvancedRTSGameLayer_Access (trackingEvent.getLayerInterface);
@@ -298,7 +324,8 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
    end initRangeHack;
 
    --  throws Exception
-   procedure processBuiltTick (This : in out UnitLayer; allBinaryLayerManager : AllBinaryLayerManager_Access) is
+   procedure processBuiltTick (This : in out UnitLayer; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class) is
+      allBinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
       currentFrame : Integer;
       size : Integer;
    begin
@@ -327,7 +354,8 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
         This.getUnitWaypointBehavior.processTick (allBinaryLayerManager);
    end processBuiltTick;
 
-   procedure teleportTo (This : in out UnitLayer; geographicMapCellPosition : GeographicMapCellPosition_Access) is
+   procedure teleportTo (This : in out UnitLayer; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is
+      geographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
       point : GPoint_Access;
    begin
         point := geographicMapCellPosition.getMidPoint;
@@ -352,7 +380,9 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
    end getCurrentGeographicMapCellPosition;
 
    --  throws Exception
-   procedure fire (This : in out UnitLayer; layerManager : AllBinaryLayerManager_Access; gameKeyEvent : GameKeyEvent_Access) is
+   procedure fire (This : in out UnitLayer; layerManager_Param : access AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent'Class) is
+      layerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
+      gameKeyEvent : GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
    begin
         if This.fireTimeHelper.isTimeTNT then
             This.fireAll (layerManager);
@@ -397,17 +427,18 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
 
    procedure initInputProcessors (This : in out UnitLayer) is
    begin
-        This.inputProcessorArray (Canvas_Package.RIGHT) := SpecialRightGameInputProcessor_Package.Create (This'Unchecked_Access);
-        This.inputProcessorArray (Canvas_Package.LEFT) := SpecialLeftGameInputProcessor_Package.Create (This'Unchecked_Access);
-        This.inputProcessorArray (Canvas_Package.KEY_NUM0) := SpecialFireGameInputProcessor_Package.Create (This'Unchecked_Access);
+        This.inputProcessorArray (Canvas_Package.RIGHT) := SpecialRightGameInputProcessor_Package.Create (UnitLayer_Access'(This'Unchecked_Access));
+        This.inputProcessorArray (Canvas_Package.LEFT) := SpecialLeftGameInputProcessor_Package.Create (UnitLayer_Access'(This'Unchecked_Access));
+        This.inputProcessorArray (Canvas_Package.KEY_NUM0) := SpecialFireGameInputProcessor_Package.Create (UnitLayer_Access'(This'Unchecked_Access));
         This.inputProcessorArray (Canvas_Package.KEY_POUND) := This.inputProcessorArray (Canvas_Package.KEY_NUM0);
-        This.inputProcessorArray (Canvas_Package.DOWN) := SpecialDownGameInputProcessor_Package.Create (This'Unchecked_Access);
-        This.inputProcessorArray (Canvas_Package.UP) := SpecialUpGameInputProcessor_Package.Create (This'Unchecked_Access);
+        This.inputProcessorArray (Canvas_Package.DOWN) := SpecialDownGameInputProcessor_Package.Create (UnitLayer_Access'(This'Unchecked_Access));
+        This.inputProcessorArray (Canvas_Package.UP) := SpecialUpGameInputProcessor_Package.Create (UnitLayer_Access'(This'Unchecked_Access));
         AdvancedRTSGameLayer (This).initInputProcessors;
    end initInputProcessors;
 
    --  throws Exception
-   procedure processInput (This : in out UnitLayer; layerManager : AllBinaryLayerManager_Access) is
+   procedure processInput (This : in out UnitLayer; layerManager_Param : access AllBinaryLayerManager'Class) is
+      layerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
       list : BasicArrayList_Access;
       size : Integer;
       anyType : Java_Object_Access;
@@ -426,13 +457,15 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
         This.move_Case;
    end processInput;
 
-   procedure accelerate (This : in out UnitLayer; accelerate : BasicDecimal_Access) is
+   procedure accelerate (This : in out UnitLayer; accelerate_Param : access BasicDecimal'Class) is
+      accelerate : BasicDecimal_Access := BasicDecimal_Access (accelerate_Param);
    begin
         This.getVehicleProperties.getVelocityProperties.addVelocityi (accelerate.getUnscaled, Integer (This.rotationAnimationInterfaceP.getAngleInfoP.getAngle), 90);
    end accelerate;
 
    --  throws Exception
-   procedure fireAll (This : in out UnitLayer; layerManager : AllBinaryLayerManager_Access) is
+   procedure fireAll (This : in out UnitLayer; layerManager_Param : access AllBinaryLayerManager'Class) is
+      layerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
       angleInfo : AngleInfo_Access;
       angle : Integer;
       salvoInterface : SalvoInterface_Access;
@@ -477,7 +510,7 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
         point := nextUnvisitedPathGeographicMapCellPosition.getMidPoint;
         dx := (((This.getXP) + (This.getHalfWidth))) - (point.getX);
         dy := (((This.getYP) + (This.getHalfHeight))) - (point.getY);
-        This.rtsLogHelper.trackTo (This'Unchecked_Access, nextUnvisitedPathGeographicMapCellPosition, dx, dy, reason);
+        This.rtsLogHelper.trackTo (UnitLayer_Access'(This'Unchecked_Access), nextUnvisitedPathGeographicMapCellPosition, dx, dy, reason);
         This.trackToDXY (dx, dy);
    end trackTo;
 
@@ -504,35 +537,35 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
         nextUnvisitedPathGeographicMapCellPosition := waypointBehaviorBase.getNextUnvisitedPathGeographicMapCellPosition;
         evading := False;
         if (This.getUnitWaypointBehavior.getSensorAction) = (SensorActionFactory_Package.getInstance.EVADE) then
-            This.rtsLogHelper.evade (This'Unchecked_Access);
+            This.rtsLogHelper.evade (UnitLayer_Access'(This'Unchecked_Access));
             evading := True;
             targetAngle := (targetAngle) + (180);
         end if;
         angleInfo := This.rotationAnimationInterfaceP.getAngleInfoP;
         angle := FrameUtil_Package.getInstance.adjustAngleToFrameAngle ((angleInfo.getAngle) - (270));
-        This.rtsLogHelper.turnTo (This'Unchecked_Access, dx, dy, angleInfo, angle, This.movementAngle, evading, targetAngle);
+        This.rtsLogHelper.turnTo (UnitLayer_Access'(This'Unchecked_Access), dx, dy, angleInfo, angle, This.movementAngle, evading, targetAngle);
         gameKeyEventFactory := GameKeyEventFactory_Package.getInstance;
         if ((dx) = (0)) and then ((dy) = (0)) then
-            This.rtsLogHelper.doneMoving (This'Unchecked_Access);
+            This.rtsLogHelper.doneMoving (UnitLayer_Access'(This'Unchecked_Access));
             return True;
         elsif ((Integer (This.movementAngle.getValue))) = (angle) then
             if ((dx) > (0)) and then ((This.movementAngle) = (This.angleFactory.LEFT)) then
-                This.rtsLogHelper.movingLeft (This'Unchecked_Access);
+                This.rtsLogHelper.movingLeft (UnitLayer_Access'(This'Unchecked_Access));
                 return False;
             end if;
             if ((dx) < (0)) and then ((This.movementAngle) = (This.angleFactory.RIGHT)) then
-                This.rtsLogHelper.movingRight (This'Unchecked_Access);
+                This.rtsLogHelper.movingRight (UnitLayer_Access'(This'Unchecked_Access));
                 return False;
             end if;
             if ((dy) > (0)) and then ((This.movementAngle) = (This.angleFactory.UP)) then
-                This.rtsLogHelper.movingUp (This'Unchecked_Access);
+                This.rtsLogHelper.movingUp (UnitLayer_Access'(This'Unchecked_Access));
                 return False;
             end if;
             if ((dy) < (0)) and then ((This.movementAngle) = (This.angleFactory.DOWN)) then
-                This.rtsLogHelper.movingDown (This'Unchecked_Access);
+                This.rtsLogHelper.movingDown (UnitLayer_Access'(This'Unchecked_Access));
                 return False;
             end if;
-            This.rtsLogHelper.currentMoveEnded (This'Unchecked_Access);
+            This.rtsLogHelper.currentMoveEnded (UnitLayer_Access'(This'Unchecked_Access));
             if ((This.movementAngle) = (This.angleFactory.LEFT)) or else ((This.movementAngle) = (This.angleFactory.RIGHT)) then
                 This.handleDeltalY (dx, dy);
             elsif ((This.movementAngle) = (This.angleFactory.UP)) or else ((This.movementAngle) = (This.angleFactory.DOWN)) then
@@ -552,15 +585,15 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
                 end if;
                 deltaAngle2 := (This.movementAngle.getValue) - (angle);
                 if (deltaAngle2) > (0) then
-                    This.rtsLogHelper.rotateRight (This'Unchecked_Access);
-                    This.getGameKeyEventList.add (gameKeyEventFactory.getInstanceForKey (This'Unchecked_Access, Canvas_Package.RIGHT));
+                    This.rtsLogHelper.rotateRight (UnitLayer_Access'(This'Unchecked_Access));
+                    This.getGameKeyEventList.add (gameKeyEventFactory.getInstanceForKey (UnitLayer_Access'(This'Unchecked_Access), Canvas_Package.RIGHT));
                 else
-                    This.rtsLogHelper.rotateLeft (This'Unchecked_Access);
-                    This.getGameKeyEventList.add (gameKeyEventFactory.getInstanceForKey (This'Unchecked_Access, Canvas_Package.LEFT));
+                    This.rtsLogHelper.rotateLeft (UnitLayer_Access'(This'Unchecked_Access));
+                    This.getGameKeyEventList.add (gameKeyEventFactory.getInstanceForKey (UnitLayer_Access'(This'Unchecked_Access), Canvas_Package.LEFT));
                 end if;
                 return True;
             else
-                This.rtsLogHelper.noRotation (This'Unchecked_Access);
+                This.rtsLogHelper.noRotation (UnitLayer_Access'(This'Unchecked_Access));
             end if;
             return False;
         end if;
@@ -579,7 +612,7 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
             This.movementAngle := This.angleFactory.RIGHT;
             This.steeringInsideGeographicMapCellPosition := nextUnvisitedPathGeographicMapCellPosition;
         end if;
-        This.rtsLogHelper.handle (This'Unchecked_Access, This.movementAngle);
+        This.rtsLogHelper.handle (UnitLayer_Access'(This'Unchecked_Access), This.movementAngle);
    end handleDeltalX;
 
    procedure handleDeltalY (This : in out UnitLayer; dx : Integer; dy : Integer) is
@@ -595,7 +628,7 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
             This.movementAngle := This.angleFactory.DOWN;
             This.steeringInsideGeographicMapCellPosition := nextUnvisitedPathGeographicMapCellPosition;
         end if;
-        This.rtsLogHelper.handle (This'Unchecked_Access, This.movementAngle);
+        This.rtsLogHelper.handle (UnitLayer_Access'(This'Unchecked_Access), This.movementAngle);
    end handleDeltalY;
 
    --  throws Exception
@@ -609,7 +642,7 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
         if (list.size) > (0) then
             for index in reverse 0 .. (list.size) - (1) loop
                 steeringVisitor := SteeringVisitor_Access (list.get (index));
-                anyType := steeringVisitor.visit (This'Unchecked_Access);
+                anyType := steeringVisitor.visit (UnitLayer_Access'(This'Unchecked_Access));
                 if (anyType) = (null) then
                     list.removeAt (index);
                 end if;
@@ -626,16 +659,16 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
    begin
         gameKeyEventFactory := GameKeyEventFactory_Package.getInstance;
         if This.getUnitWaypointBehavior.needToMove then
-            This.rtsLayer2LogHelper.steeringUp (This'Unchecked_Access);
+            This.rtsLayer2LogHelper.steeringUp (UnitLayer_Access'(This'Unchecked_Access));
             if (This.showMoreCaptionStates) and then (not (This.captionAnimationHelper.isShowing)) then
                 This.captionAnimationHelper.update (UnitLayer_Package.MOVE, This.basicColorFactory.GREEN);
             end if;
-            This.getGameKeyEventList.add (gameKeyEventFactory.getInstanceForKey (This'Unchecked_Access, Canvas_Package.UP));
+            This.getGameKeyEventList.add (gameKeyEventFactory.getInstanceForKey (UnitLayer_Access'(This'Unchecked_Access), Canvas_Package.UP));
         else
             This.captionAnimationHelper.update (CommonPhoneStrings_Package.getInstance.FIRE, This.basicColorFactory.RED);
-            This.rtsLayer2LogHelper.steeringFireOrStop (This'Unchecked_Access);
+            This.rtsLayer2LogHelper.steeringFireOrStop (UnitLayer_Access'(This'Unchecked_Access));
             This.allStop;
-            This.getGameKeyEventList.add (gameKeyEventFactory.getInstanceForKey (This'Unchecked_Access, Canvas_Package.KEY_NUM0));
+            This.getGameKeyEventList.add (gameKeyEventFactory.getInstanceForKey (UnitLayer_Access'(This'Unchecked_Access), Canvas_Package.KEY_NUM0));
             TrackingEventHandler_Package.getInstance.fireEvent (This.getTrackingEvent);
         end if;
    end fireOrMove;
@@ -662,7 +695,7 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
                 This.getUnitWaypointBehavior.setMoving (True);
                 geographicMapCompositeInterface := GeographicMapCompositeInterface_Access (This.allBinaryGameLayerManagerP);
                 geographicMapInterface := geographicMapCompositeInterface.getGeographicMapInterface (0);
-                This.layerPartialCellPositionsUtil.getAllDXY (geographicMapInterface, This'Unchecked_Access, Integer (velocityXScaled), Integer (velocityYScaled), UnitLayer_Package.getPartialpositionlist);
+                This.layerPartialCellPositionsUtil.getAllDXY (geographicMapInterface, UnitLayer_Access'(This'Unchecked_Access), Integer (velocityXScaled), Integer (velocityYScaled), UnitLayer_Package.getPartialpositionlist);
                 cellPosition := GeographicMapCellPosition_Access (DropCellPositionHistory_Package.getInstance.getCellPositionWithDrop (UnitLayer_Package.getPartialpositionlist));
                 if (cellPosition) = (This.cellPositionFactory.NONE) then
                     tiledLayer := geographicMapInterface.getAllBinaryTiledLayer;
@@ -691,7 +724,7 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("move"), e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, UnitLayer_Access'(This'Unchecked_Access), To_Unbounded_String ("move"), e);
                 end;
         end;
    end move_Case;
@@ -704,7 +737,8 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
         velocityProperties.getVelocityYBasicDecimalP.setint (0);
    end allStop;
 
-   procedure paint (This : in out UnitLayer; graphics : Graphics_Access) is
+   procedure paint (This : in out UnitLayer; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       viewPosition : ViewPositionBase_Access;
       viewX : Integer;
       viewY : Integer;
@@ -726,7 +760,8 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
    end paint;
 
    --  throws Exception
-   procedure onBuildingEvent (This : in out UnitLayer; event : RTSLayerEvent_Access) is
+   procedure onBuildingEvent (This : in out UnitLayer; event_Param : access RTSLayerEvent'Class) is
+      event : RTSLayerEvent_Access := RTSLayerEvent_Access (event_Param);
       buildingLayer : BuildingLayer_Access;
    begin
         buildingLayer := BuildingLayer_Access (event.getRtsLayer);
@@ -758,12 +793,12 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
    procedure setDestroyed (This : in out UnitLayer; destroyed : Boolean) is
       damage : Integer;
    begin
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("setDestroyed"));
+        This.logUtil.putF (This.commonStrings.START, UnitLayer_Access'(This'Unchecked_Access), To_Unbounded_String ("setDestroyed"));
         AdvancedRTSGameLayer (This).setDestroyed (destroyed);
         if This.isDestroyed then
             WaypointEventHandlerFactory_Package.getInstance (This.getGroupInterface (0)).removeListener (This.getUnitWaypointBehavior);
-            TrackingEventHandler_Package.getInstance.removeListener (This'Unchecked_Access);
-            BuildingEventHandler_Package.getInstance.removeListener (This'Unchecked_Access);
+            TrackingEventHandler_Package.getInstance.removeListener (UnitLayer_Access'(This'Unchecked_Access));
+            BuildingEventHandler_Package.getInstance.removeListener (UnitLayer_Access'(This'Unchecked_Access));
             if not (This.getHealthInterface.isAlive) then
                 damage := This.getHealthInterface.getMaxHealth;
                 if (damage) > (10) then
@@ -811,7 +846,8 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
    end addLoad;
 
    --  throws Exception
-   procedure handleCost (This : in out UnitLayer; ownerLayer : PathFindingLayerInterface_Access) is
+   procedure handleCost (This : in out UnitLayer; ownerLayer_Param : access PathFindingLayerInterface'Class) is
+      ownerLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (ownerLayer_Param);
    begin
         if (This.getLoad) > (0) then
             This.CAPITAL_EVENT.setValue (This.getLoad);
@@ -825,7 +861,7 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
    begin
         rtsLayerHudPaintable := RTSLayerHudPaintable_Package.getInstance;
         rtsLayerHudPaintable.setBasicColorP (This.allBinaryGameLayerManagerP.getForegroundBasicColor);
-        rtsLayerHudPaintable.setRtsLayer (This'Unchecked_Access);
+        rtsLayerHudPaintable.setRtsLayer (UnitLayer_Access'(This'Unchecked_Access));
         return rtsLayerHudPaintable;
    end createHudPaintable;
 

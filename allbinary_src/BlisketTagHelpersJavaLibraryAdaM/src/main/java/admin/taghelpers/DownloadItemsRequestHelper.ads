@@ -56,8 +56,8 @@ package admin.taghelpers.DownloadItemsRequestHelper_Package is
       downloadableItem : DownloadableItem_Access;
    end record;
 
-   procedure Initialize (This : in out DownloadItemsRequestHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access);
-   function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return DownloadItemsRequestHelper_Access;
+   procedure Initialize (This : in out DownloadItemsRequestHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
+   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return DownloadItemsRequestHelper_Access;
    function insert (This : in out DownloadItemsRequestHelper) return Unbounded_String;
    function delete (This : in out DownloadItemsRequestHelper) return Unbounded_String;
    function update (This : in out DownloadItemsRequestHelper) return Unbounded_String;

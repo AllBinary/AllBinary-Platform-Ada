@@ -39,7 +39,8 @@ package body admin.taghelpers.InventoryItemViewParentTagHelper_Package is
    end getInstance;
 
    --  throws Exception
-   function getInventoryItemView (This : in out InventoryItemViewParentTagHelper; inventoryTag : HelperTag_Access) return InventoryItemView_Access is
+   function getInventoryItemView (This : in out InventoryItemViewParentTagHelper; inventoryTag_Param : access HelperTag'Class) return InventoryItemView_Access is
+      inventoryTag : HelperTag_Access := HelperTag_Access (inventoryTag_Param);
       validationViewHelper : ValidationViewHelper_Access;
       viewObject : TransformInterface_Access;
       stringBuffer : StringMaker_Access;
@@ -62,7 +63,8 @@ package body admin.taghelpers.InventoryItemViewParentTagHelper_Package is
    end getInventoryItemView;
 
    --  throws Exception
-   function getDownloadableInventoryItemView (This : in out InventoryItemViewParentTagHelper; inventoryTag : HelperTag_Access) return DownloadableInventoryItemView_Access is
+   function getDownloadableInventoryItemView (This : in out InventoryItemViewParentTagHelper; inventoryTag_Param : access HelperTag'Class) return DownloadableInventoryItemView_Access is
+      inventoryTag : HelperTag_Access := HelperTag_Access (inventoryTag_Param);
       validationViewHelper : ValidationViewHelper_Access;
       viewObject : TransformInterface_Access;
       stringBuffer : StringMaker_Access;
@@ -85,7 +87,8 @@ package body admin.taghelpers.InventoryItemViewParentTagHelper_Package is
    end getDownloadableInventoryItemView;
 
    --  throws Exception
-   function getRequestMapInterface (This : in out InventoryItemViewParentTagHelper; inventoryTag : HelperTag_Access) return RequestMapInterface_Access is
+   function getRequestMapInterface (This : in out InventoryItemViewParentTagHelper; inventoryTag_Param : access HelperTag'Class) return RequestMapInterface_Access is
+      inventoryTag : HelperTag_Access := HelperTag_Access (inventoryTag_Param);
       validationViewHelper : ValidationViewHelper_Access;
       viewObject : TransformInterface_Access;
       stringBuffer : StringMaker_Access;
@@ -108,7 +111,8 @@ package body admin.taghelpers.InventoryItemViewParentTagHelper_Package is
    end getRequestMapInterface;
 
    --  throws Exception
-   procedure checkForValidationViewHelper (This : in out InventoryItemViewParentTagHelper; helperObject : Java_Object_Access) is
+   procedure checkForValidationViewHelper (This : in out InventoryItemViewParentTagHelper; helperObject_Param : access Java_Object'Class) is
+      helperObject : Java_Object_Access := Java_Object_Access (helperObject_Param);
       stringBuffer : StringMaker_Access;
    begin
         if not (((helperObject.all in ValidationViewHelper_Package.ValidationViewHelper'Class))) then
@@ -121,22 +125,22 @@ package body admin.taghelpers.InventoryItemViewParentTagHelper_Package is
         end if;
    end checkForValidationViewHelper;
 
-   procedure getInventoryItemView (This : in out InventoryItemViewParentTagHelper; inventoryTag : HelperTag_Access) is
-      Java_Result : constant InventoryItemView_Access := InventoryItemViewParentTagHelper'Class (This).getInventoryItemView (inventoryTag);
+   procedure getInventoryItemView (This : in out InventoryItemViewParentTagHelper; inventoryTag_Param : access HelperTag'Class) is
+      Java_Result : constant InventoryItemView_Access := InventoryItemViewParentTagHelper'Class (This).getInventoryItemView (inventoryTag_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInventoryItemView;
 
-   procedure getDownloadableInventoryItemView (This : in out InventoryItemViewParentTagHelper; inventoryTag : HelperTag_Access) is
-      Java_Result : constant DownloadableInventoryItemView_Access := InventoryItemViewParentTagHelper'Class (This).getDownloadableInventoryItemView (inventoryTag);
+   procedure getDownloadableInventoryItemView (This : in out InventoryItemViewParentTagHelper; inventoryTag_Param : access HelperTag'Class) is
+      Java_Result : constant DownloadableInventoryItemView_Access := InventoryItemViewParentTagHelper'Class (This).getDownloadableInventoryItemView (inventoryTag_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getDownloadableInventoryItemView;
 
-   procedure getRequestMapInterface (This : in out InventoryItemViewParentTagHelper; inventoryTag : HelperTag_Access) is
-      Java_Result : constant RequestMapInterface_Access := InventoryItemViewParentTagHelper'Class (This).getRequestMapInterface (inventoryTag);
+   procedure getRequestMapInterface (This : in out InventoryItemViewParentTagHelper; inventoryTag_Param : access HelperTag'Class) is
+      Java_Result : constant RequestMapInterface_Access := InventoryItemViewParentTagHelper'Class (This).getRequestMapInterface (inventoryTag_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -34,7 +34,7 @@ package org.allbinary.graphics.form.ItemPaintable_Package is
 
    procedure Initialize (This : in out ItemPaintable'Class);
    function Create return ItemPaintable_Access;
-   procedure paint (This : in out ItemPaintable; graphics : Graphics_Access; currentIndex : Integer; x : Integer; y : Integer);
+   procedure paint (This : in out ItemPaintable; graphics_Param : access Graphics'Class; currentIndex : Integer; x : Integer; y : Integer);
 
 end org.allbinary.graphics.form.ItemPaintable_Package;
 

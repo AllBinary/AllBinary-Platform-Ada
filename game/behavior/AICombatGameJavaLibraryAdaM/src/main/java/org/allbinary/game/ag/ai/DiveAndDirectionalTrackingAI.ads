@@ -107,11 +107,11 @@ package org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package is
       lastDirection : Direction_Access;
    end record;
 
-   procedure Initialize (This : in out DiveAndDirectionalTrackingAI'Class; ownerLayerInterface : AllBinaryLayer_Access; artificialIntelligenceInterface : ArtificialIntelligenceInterface_Access; gameInput : GameInput_Access; visitor : Visitor_Access);
-   function Create (ownerLayerInterface : AllBinaryLayer_Access; artificialIntelligenceInterface : ArtificialIntelligenceInterface_Access; gameInput : GameInput_Access; visitor : Visitor_Access) return DiveAndDirectionalTrackingAI_Access;
-   procedure processAI (This : in out DiveAndDirectionalTrackingAI; allBinaryLayerManager : AllBinaryLayerManager_Access);
+   procedure Initialize (This : in out DiveAndDirectionalTrackingAI'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; artificialIntelligenceInterface_Param : access ArtificialIntelligenceInterface'Class; gameInput_Param : access GameInput'Class; visitor_Param : access Visitor'Class);
+   function Create (ownerLayerInterface_Param : access AllBinaryLayer'Class; artificialIntelligenceInterface_Param : access ArtificialIntelligenceInterface'Class; gameInput_Param : access GameInput'Class; visitor_Param : access Visitor'Class) return DiveAndDirectionalTrackingAI_Access;
+   procedure processAI (This : in out DiveAndDirectionalTrackingAI; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class);
    procedure init (This : in out DiveAndDirectionalTrackingAI);
-   procedure target (This : in out DiveAndDirectionalTrackingAI; allBinaryLayerManager : AllBinaryLayerManager_Access);
+   procedure target (This : in out DiveAndDirectionalTrackingAI; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class);
    procedure verticalTargeting (This : in out DiveAndDirectionalTrackingAI; x : Integer);
    procedure horizontalTargeting (This : in out DiveAndDirectionalTrackingAI; y : Integer);
    procedure setDive (This : in out DiveAndDirectionalTrackingAI);
@@ -123,10 +123,10 @@ package org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package is
    procedure attack (This : in out DiveAndDirectionalTrackingAI);
    procedure drop (This : in out DiveAndDirectionalTrackingAI);
    function isBeyondTarget (This : in out DiveAndDirectionalTrackingAI) return Boolean;
-   procedure onEvent (This : in out DiveAndDirectionalTrackingAI; eventObject : AllBinaryEventObject_Access);
-   procedure onMovement (This : in out DiveAndDirectionalTrackingAI; trackingEvent : TrackingEvent_Access);
-   procedure onDestroyed (This : in out DiveAndDirectionalTrackingAI; destroyedEvent : DestroyedEvent_Access);
-   procedure setLastDirection (This : in out DiveAndDirectionalTrackingAI; lastDirection : Direction_Access);
+   procedure onEvent (This : in out DiveAndDirectionalTrackingAI; eventObject_Param : access AllBinaryEventObject'Class);
+   procedure onMovement (This : in out DiveAndDirectionalTrackingAI; trackingEvent_Param : access TrackingEvent'Class);
+   procedure onDestroyed (This : in out DiveAndDirectionalTrackingAI; destroyedEvent_Param : access DestroyedEvent'Class);
+   procedure setLastDirection (This : in out DiveAndDirectionalTrackingAI; lastDirection_Param : access Direction'Class);
    procedure setLastKey (This : in out DiveAndDirectionalTrackingAI; lastKey : Integer);
    function getLastDirection (This : in out DiveAndDirectionalTrackingAI) return Direction_Access;
    function toString (This : in out DiveAndDirectionalTrackingAI) return Unbounded_String;

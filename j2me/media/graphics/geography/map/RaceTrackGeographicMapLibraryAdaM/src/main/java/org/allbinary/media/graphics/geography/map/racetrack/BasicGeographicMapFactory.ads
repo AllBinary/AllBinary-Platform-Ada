@@ -48,8 +48,8 @@ package org.allbinary.media.graphics.geography.map.racetrack.BasicGeographicMapF
 
    procedure Initialize (This : in out BasicGeographicMapFactory'Class);
    function Create return BasicGeographicMapFactory_Access;
-   function getInstance (This : in out BasicGeographicMapFactory; raceTrackInfo : RaceTrackInfo_Access; raceTrackData : RaceTrackData_Access; tiledLayerFactoryInterface : AllBinaryTiledLayerFactoryInterface_Access; geographicMapCellPositionFactoryInterface : GeographicMapCellPositionFactoryInterface_Access; geographicMapCellTypeFactory : GeographicMapCellTypeFactory_Access) return BasicGeographicMap_Access;
-   procedure getInstance (This : in out BasicGeographicMapFactory; raceTrackInfo : RaceTrackInfo_Access; raceTrackData : RaceTrackData_Access; tiledLayerFactoryInterface : AllBinaryTiledLayerFactoryInterface_Access; geographicMapCellPositionFactoryInterface : GeographicMapCellPositionFactoryInterface_Access; geographicMapCellTypeFactory : GeographicMapCellTypeFactory_Access);
+   function getInstance (This : in out BasicGeographicMapFactory; raceTrackInfo_Param : access RaceTrackInfo'Class; raceTrackData_Param : access RaceTrackData'Class; tiledLayerFactoryInterface_Param : access AllBinaryTiledLayerFactoryInterface'Class; geographicMapCellPositionFactoryInterface_Param : access GeographicMapCellPositionFactoryInterface'Class; geographicMapCellTypeFactory_Param : access GeographicMapCellTypeFactory'Class) return BasicGeographicMap_Access;
+   procedure getInstance (This : in out BasicGeographicMapFactory; raceTrackInfo_Param : access RaceTrackInfo'Class; raceTrackData_Param : access RaceTrackData'Class; tiledLayerFactoryInterface_Param : access AllBinaryTiledLayerFactoryInterface'Class; geographicMapCellPositionFactoryInterface_Param : access GeographicMapCellPositionFactoryInterface'Class; geographicMapCellTypeFactory_Param : access GeographicMapCellTypeFactory'Class);
 
 end org.allbinary.media.graphics.geography.map.racetrack.BasicGeographicMapFactory_Package;
 

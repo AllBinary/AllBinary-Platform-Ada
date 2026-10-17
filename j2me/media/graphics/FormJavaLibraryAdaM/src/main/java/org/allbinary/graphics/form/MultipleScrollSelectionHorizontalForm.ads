@@ -57,19 +57,19 @@ package org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Packag
       fontHeight : Integer;
    end record;
 
-   procedure Initialize (This : in out MultipleScrollSelectionHorizontalForm'Class; title : Unbounded_String; items : ABCustomItem_Access_Array_Access; formPaintableFactory : ItemPaintableFactory_Access; border : Integer; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access);
-   function Create (title : Unbounded_String; items : ABCustomItem_Access_Array_Access; formPaintableFactory : ItemPaintableFactory_Access; border : Integer; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return MultipleScrollSelectionHorizontalForm_Access;
-   function createForm (title : Unbounded_String; items : ABCustomItem_Access_Array_Access; rectangle : Rectangle_Access; formType : FormType_Access; border : Integer; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return ScrollSelectionForm_Access;
-   procedure createForm (title : Unbounded_String; items : ABCustomItem_Access_Array_Access; rectangle : Rectangle_Access; formType : FormType_Access; border : Integer; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access);
-   procedure fillRect (This : in out MultipleScrollSelectionHorizontalForm; graphics : Graphics_Access);
-   procedure init (This : in out MultipleScrollSelectionHorizontalForm; rectangle : Rectangle_Access; formType : FormType_Access);
-   procedure updateMeasurement (This : in out MultipleScrollSelectionHorizontalForm; graphics : Graphics_Access);
-   function paintHorizontal (This : in out MultipleScrollSelectionHorizontalForm; graphics : Graphics_Access; index : Integer; item : ABCustomItem_Access; dx_Param : Integer; dy : Integer) return Integer;
-   procedure paintHorizontal (This : in out MultipleScrollSelectionHorizontalForm; graphics : Graphics_Access; index : Integer; item : ABCustomItem_Access; dx_Param : Integer; dy : Integer);
-   function paintVertical (This : in out MultipleScrollSelectionHorizontalForm; graphics : Graphics_Access; index : Integer; item : ABCustomItem_Access; dx : Integer; dy : Integer) return Integer;
-   procedure paintVertical (This : in out MultipleScrollSelectionHorizontalForm; graphics : Graphics_Access; index : Integer; item : ABCustomItem_Access; dx : Integer; dy : Integer);
+   procedure Initialize (This : in out MultipleScrollSelectionHorizontalForm'Class; title : Unbounded_String; items : ABCustomItem_Access_Array_Access; formPaintableFactory_Param : access ItemPaintableFactory'Class; border : Integer; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class);
+   function Create (title : Unbounded_String; items : ABCustomItem_Access_Array_Access; formPaintableFactory_Param : access ItemPaintableFactory'Class; border : Integer; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return MultipleScrollSelectionHorizontalForm_Access;
+   function createForm (title : Unbounded_String; items : ABCustomItem_Access_Array_Access; rectangle_Param : access Rectangle'Class; formType_Param : access FormType'Class; border : Integer; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return ScrollSelectionForm_Access;
+   procedure createForm (title : Unbounded_String; items : ABCustomItem_Access_Array_Access; rectangle_Param : access Rectangle'Class; formType_Param : access FormType'Class; border : Integer; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class);
+   procedure fillRect (This : in out MultipleScrollSelectionHorizontalForm; graphics_Param : access Graphics'Class);
+   procedure init (This : in out MultipleScrollSelectionHorizontalForm; rectangle_Param : access Rectangle'Class; formType_Param : access FormType'Class);
+   procedure updateMeasurement (This : in out MultipleScrollSelectionHorizontalForm; graphics_Param : access Graphics'Class);
+   function paintHorizontal (This : in out MultipleScrollSelectionHorizontalForm; graphics_Param : access Graphics'Class; index : Integer; item_Param : access ABCustomItem'Class; dx_Param : Integer; dy : Integer) return Integer;
+   procedure paintHorizontal (This : in out MultipleScrollSelectionHorizontalForm; graphics_Param : access Graphics'Class; index : Integer; item_Param : access ABCustomItem'Class; dx_Param : Integer; dy : Integer);
+   function paintVertical (This : in out MultipleScrollSelectionHorizontalForm; graphics_Param : access Graphics'Class; index : Integer; item_Param : access ABCustomItem'Class; dx : Integer; dy : Integer) return Integer;
+   procedure paintVertical (This : in out MultipleScrollSelectionHorizontalForm; graphics_Param : access Graphics'Class; index : Integer; item_Param : access ABCustomItem'Class; dx : Integer; dy : Integer);
    function getStartIndex (This : in out MultipleScrollSelectionHorizontalForm) return Integer;
-   procedure paint (This : in out MultipleScrollSelectionHorizontalForm; graphics : Graphics_Access);
+   procedure paint (This : in out MultipleScrollSelectionHorizontalForm; graphics_Param : access Graphics'Class);
 
 end org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package;
 
@@ -125,10 +125,10 @@ package org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPaintab
       multipleScrollSelectionForm : MultipleScrollSelectionHorizontalForm_Access;
    end record;
 
-   procedure Initialize (This : in out MultipleScrollSelectionFormHorizontalPaintable'Class; multipleScrollSelectionForm : MultipleScrollSelectionHorizontalForm_Access);
-   function Create (multipleScrollSelectionForm : MultipleScrollSelectionHorizontalForm_Access) return MultipleScrollSelectionFormHorizontalPaintable_Access;
-   function paint (This : in out MultipleScrollSelectionFormHorizontalPaintable; graphics : Graphics_Access; index : Integer; item : ABCustomItem_Access; dx : Integer; dy : Integer) return Integer;
-   procedure paint (This : in out MultipleScrollSelectionFormHorizontalPaintable; graphics : Graphics_Access; index : Integer; item : ABCustomItem_Access; dx : Integer; dy : Integer);
+   procedure Initialize (This : in out MultipleScrollSelectionFormHorizontalPaintable'Class; multipleScrollSelectionForm_Param : access MultipleScrollSelectionHorizontalForm'Class);
+   function Create (multipleScrollSelectionForm_Param : access MultipleScrollSelectionHorizontalForm'Class) return MultipleScrollSelectionFormHorizontalPaintable_Access;
+   function paint (This : in out MultipleScrollSelectionFormHorizontalPaintable; graphics_Param : access Graphics'Class; index : Integer; item_Param : access ABCustomItem'Class; dx : Integer; dy : Integer) return Integer;
+   procedure paint (This : in out MultipleScrollSelectionFormHorizontalPaintable; graphics_Param : access Graphics'Class; index : Integer; item_Param : access ABCustomItem'Class; dx : Integer; dy : Integer);
 
 end org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPaintable_Package;
 
@@ -184,10 +184,10 @@ package org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPaintable
       multipleScrollSelectionForm : MultipleScrollSelectionHorizontalForm_Access;
    end record;
 
-   procedure Initialize (This : in out MultipleScrollSelectionFormVerticalPaintable'Class; multipleScrollSelectionForm : MultipleScrollSelectionHorizontalForm_Access);
-   function Create (multipleScrollSelectionForm : MultipleScrollSelectionHorizontalForm_Access) return MultipleScrollSelectionFormVerticalPaintable_Access;
-   function paint (This : in out MultipleScrollSelectionFormVerticalPaintable; graphics : Graphics_Access; index : Integer; item : ABCustomItem_Access; dx : Integer; dy : Integer) return Integer;
-   procedure paint (This : in out MultipleScrollSelectionFormVerticalPaintable; graphics : Graphics_Access; index : Integer; item : ABCustomItem_Access; dx : Integer; dy : Integer);
+   procedure Initialize (This : in out MultipleScrollSelectionFormVerticalPaintable'Class; multipleScrollSelectionForm_Param : access MultipleScrollSelectionHorizontalForm'Class);
+   function Create (multipleScrollSelectionForm_Param : access MultipleScrollSelectionHorizontalForm'Class) return MultipleScrollSelectionFormVerticalPaintable_Access;
+   function paint (This : in out MultipleScrollSelectionFormVerticalPaintable; graphics_Param : access Graphics'Class; index : Integer; item_Param : access ABCustomItem'Class; dx : Integer; dy : Integer) return Integer;
+   procedure paint (This : in out MultipleScrollSelectionFormVerticalPaintable; graphics_Param : access Graphics'Class; index : Integer; item_Param : access ABCustomItem'Class; dx : Integer; dy : Integer);
 
 end org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPaintable_Package;
 

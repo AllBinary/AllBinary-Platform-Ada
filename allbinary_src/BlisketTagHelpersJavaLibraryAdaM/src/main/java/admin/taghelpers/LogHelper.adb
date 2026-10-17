@@ -23,17 +23,19 @@ package body admin.taghelpers.LogHelper_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out LogHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access) is
+   procedure Initialize (This : in out LogHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
    begin
       BasicTable_Package.Initialize (This);
       Initialize_Fields (This);
         This.portion := Portion_Package.Create (hashMap);
    end Initialize;
 
-   function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return LogHelper_Access is
+   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return LogHelper_Access is
       This : constant LogHelper_Access := new LogHelper;
    begin
-      LogHelper_Package.Initialize (This.all, hashMap, pageContext);
+      LogHelper_Package.Initialize (This.all, hashMap_Param, pageContext_Param);
       return This;
    end Create;
 
@@ -49,7 +51,7 @@ package body admin.taghelpers.LogHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to drop log table");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.DROP, e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, LogHelper_Access'(This'Unchecked_Access), This.commonStrings.DROP, e);
             end if;
             return error;
                 end;
@@ -68,7 +70,7 @@ package body admin.taghelpers.LogHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to create new log table");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("create()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, LogHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("create()"), e);
             end if;
             return error;
                 end;
@@ -86,7 +88,7 @@ package body admin.taghelpers.LogHelper_Package is
             logTableEntity := LogTableEntityFactory_Package.getInstance.getLogTableEntityInstance;
             result := AbSqlTableUtil_Package.getInstance.restoreTable (logTableEntity, This.portion);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, To_Unbounded_String ("restore()"));
+                This.logUtil.putF (success, LogHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("restore()"));
             end if;
             return result;
         exception
@@ -96,7 +98,7 @@ package body admin.taghelpers.LogHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to restore backup");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("restore()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, LogHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("restore()"), e);
             end if;
             return error;
                 end;
@@ -112,7 +114,7 @@ package body admin.taghelpers.LogHelper_Package is
             success := To_Unbounded_String ("Backup Successful");
             result := AbSqlTableUtil_Package.getInstance.backupTable (LogTableEntityFactory_Package.getInstance.getLogTableEntityInstance);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, To_Unbounded_String ("backup()"));
+                This.logUtil.putF (success, LogHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("backup()"));
             end if;
             return result;
         exception
@@ -122,7 +124,7 @@ package body admin.taghelpers.LogHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to make backup");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("backup()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, LogHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("backup()"), e);
             end if;
             return error;
                 end;

@@ -43,7 +43,9 @@ package body org.allbinary.business.user.commerce.money.tax.modules.SimpleStateT
    end Create;
 
    --  throws Exception
-   function getTaxRate (This : in out SimpleStateTaxModule; streetAddress : StreetAddress_Access; storeFrontInterface : StoreFrontInterface_Access) return Float is
+   function getTaxRate (This : in out SimpleStateTaxModule; streetAddress_Param : access StreetAddress'Class; storeFrontInterface_Param : access StoreFrontInterface'Class) return Float is
+      streetAddress : StreetAddress_Access := StreetAddress_Access (streetAddress_Param);
+      storeFrontInterface : StoreFrontInterface_Access := StoreFrontInterface_Access (storeFrontInterface_Param);
       fileAbPath : AbPath_Access;
       data : Unbounded_String;
       state : Unbounded_String;
@@ -65,7 +67,7 @@ package body org.allbinary.business.user.commerce.money.tax.modules.SimpleStateT
         data := CryptFileReader_Package.Create (TransformInfoObjectConfigData_Package.getInstance.UNCRYPTED_EXTENSION, TransformInfoObjectConfigData_Package.getInstance.ENCRYPTED_EXTENSION).get (fileAbPath);
         This.document := DomDocumentHelper_Package.create (data);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAX) then
-            This.logUtil.putF (To_Unbounded_String ("Tax Doc: ") & XmlDocumentHelper_Package.toString (This.document), This'Unchecked_Access, To_Unbounded_String ("getTaxRate"));
+            This.logUtil.putF (To_Unbounded_String ("Tax Doc: ") & XmlDocumentHelper_Package.toString (This.document), SimpleStateTaxModule_Access'(This'Unchecked_Access), To_Unbounded_String ("getTaxRate"));
         end if;
         state := This.streetAddress.getState;
         country := This.streetAddress.getCountry;
@@ -89,7 +91,9 @@ package body org.allbinary.business.user.commerce.money.tax.modules.SimpleStateT
         return 0;
    end getTaxRate;
 
-   function isValid (This : in out SimpleStateTaxModule; streetAddress : StreetAddress_Access; storeFrontInterface : StoreFrontInterface_Access) return Boolean is
+   function isValid (This : in out SimpleStateTaxModule; streetAddress_Param : access StreetAddress'Class; storeFrontInterface_Param : access StoreFrontInterface'Class) return Boolean is
+      streetAddress : StreetAddress_Access := StreetAddress_Access (streetAddress_Param);
+      storeFrontInterface : StoreFrontInterface_Access := StoreFrontInterface_Access (storeFrontInterface_Param);
       fileAbPath : AbPath_Access;
       data : Unbounded_String;
       country : Unbounded_String;
@@ -111,7 +115,7 @@ package body org.allbinary.business.user.commerce.money.tax.modules.SimpleStateT
             data := CryptFileReader_Package.Create (TransformInfoObjectConfigData_Package.getInstance.UNCRYPTED_EXTENSION, TransformInfoObjectConfigData_Package.getInstance.ENCRYPTED_EXTENSION).get (fileAbPath);
             This.document := DomDocumentHelper_Package.create (data);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAX) then
-                This.logUtil.putF (To_Unbounded_String ("Tax Doc: ") & XmlDocumentHelper_Package.toString (This.document), This'Unchecked_Access, This.commonStrings.IS_VALID);
+                This.logUtil.putF (To_Unbounded_String ("Tax Doc: ") & XmlDocumentHelper_Package.toString (This.document), SimpleStateTaxModule_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
             end if;
             country := This.streetAddress.getCountry;
             rootNode := This.document.getElementsByTagName (TransformInfoObjectConfigData_Package.getInstance.NAME).item (0);
@@ -128,7 +132,7 @@ package body org.allbinary.business.user.commerce.money.tax.modules.SimpleStateT
                     stringBuffer.append (streetAddressNode.getNodeValue);
                     stringBuffer.append (To_Unbounded_String (" Number Of Children: "));
                     stringBuffer.appendint (Integer (streetAddressNode.getChildNodes.getLength));
-                    This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, This.commonStrings.IS_VALID);
+                    This.logUtil.putF (stringBuffer.toString, SimpleStateTaxModule_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
                 end if;
                 taxableStreetAddress := StreetAddress_Package.Create (streetAddressNode);
                 stringValidationUtil := StringValidationUtil_Package.getInstance;
@@ -149,22 +153,22 @@ package body org.allbinary.business.user.commerce.money.tax.modules.SimpleStateT
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to validate"), This'Unchecked_Access, This.commonStrings.IS_VALID, e);
+                This.logUtil.put (To_Unbounded_String ("Failed to validate"), SimpleStateTaxModule_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
             end if;
             return False;
                 end;
         end;
    end isValid;
 
-   procedure getTaxRate (This : in out SimpleStateTaxModule; streetAddress : StreetAddress_Access; storeFrontInterface : StoreFrontInterface_Access) is
-      Java_Result : constant Float := SimpleStateTaxModule'Class (This).getTaxRate (streetAddress, storeFrontInterface);
+   procedure getTaxRate (This : in out SimpleStateTaxModule; streetAddress_Param : access StreetAddress'Class; storeFrontInterface_Param : access StoreFrontInterface'Class) is
+      Java_Result : constant Float := SimpleStateTaxModule'Class (This).getTaxRate (streetAddress_Param, storeFrontInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getTaxRate;
 
-   procedure isValid (This : in out SimpleStateTaxModule; streetAddress : StreetAddress_Access; storeFrontInterface : StoreFrontInterface_Access) is
-      Java_Result : constant Boolean := SimpleStateTaxModule'Class (This).isValid (streetAddress, storeFrontInterface);
+   procedure isValid (This : in out SimpleStateTaxModule; streetAddress_Param : access StreetAddress'Class; storeFrontInterface_Param : access StoreFrontInterface'Class) is
+      Java_Result : constant Boolean := SimpleStateTaxModule'Class (This).isValid (streetAddress_Param, storeFrontInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

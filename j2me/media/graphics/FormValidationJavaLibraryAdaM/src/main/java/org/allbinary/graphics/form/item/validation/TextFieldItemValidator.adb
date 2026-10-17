@@ -25,7 +25,8 @@ package body org.allbinary.graphics.form.item.validation.TextFieldItemValidator_
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out TextFieldItemValidator'Class; textFieldItem : ABTextFieldItem_Access; min : Integer; max : Integer; allowOnEmpty : Boolean) is
+   procedure Initialize (This : in out TextFieldItemValidator'Class; textFieldItem_Param : access ABTextFieldItem'Class; min : Integer; max : Integer; allowOnEmpty : Boolean) is
+      textFieldItem : ABTextFieldItem_Access := ABTextFieldItem_Access (textFieldItem_Param);
    begin
       ValidatorBase_Package.Initialize (This);
       Initialize_Fields (This);
@@ -35,10 +36,10 @@ package body org.allbinary.graphics.form.item.validation.TextFieldItemValidator_
         This.allowOnEmpty := allowOnEmpty;
    end Initialize;
 
-   function Create (textFieldItem : ABTextFieldItem_Access; min : Integer; max : Integer; allowOnEmpty : Boolean) return TextFieldItemValidator_Access is
+   function Create (textFieldItem_Param : access ABTextFieldItem'Class; min : Integer; max : Integer; allowOnEmpty : Boolean) return TextFieldItemValidator_Access is
       This : constant TextFieldItemValidator_Access := new TextFieldItemValidator;
    begin
-      TextFieldItemValidator_Package.Initialize (This.all, textFieldItem, min, max, allowOnEmpty);
+      TextFieldItemValidator_Package.Initialize (This.all, textFieldItem_Param, min, max, allowOnEmpty);
       return This;
    end Create;
 

@@ -38,17 +38,20 @@ package body javax.microedition.lcdui.NullCanvas_Package is
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end getCommandStack;
 
-   function isCommand (This : in out NullCanvas; command : Command_Access) return Boolean is
+   function isCommand (This : in out NullCanvas; command_Param : access Command'Class) return Boolean is
+      command : Command_Access := Command_Access (command_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end isCommand;
 
-   procedure addCommand (This : in out NullCanvas; command : Command_Access) is
+   procedure addCommand (This : in out NullCanvas; command_Param : access Command'Class) is
+      command : Command_Access := Command_Access (command_Param);
    begin
         null;
    end addCommand;
 
-   procedure removeCommand (This : in out NullCanvas; command : Command_Access) is
+   procedure removeCommand (This : in out NullCanvas; command_Param : access Command'Class) is
+      command : Command_Access := Command_Access (command_Param);
    begin
         null;
    end removeCommand;
@@ -58,7 +61,8 @@ package body javax.microedition.lcdui.NullCanvas_Package is
         null;
    end removeAllCommands;
 
-   procedure setCommandListener (This : in out NullCanvas; l : CommandListener_Access) is
+   procedure setCommandListener (This : in out NullCanvas; l_Param : access CommandListener'Class) is
+      l : CommandListener_Access := CommandListener_Access (l_Param);
    begin
         null;
    end setCommandListener;
@@ -94,7 +98,8 @@ package body javax.microedition.lcdui.NullCanvas_Package is
         null;
    end process;
 
-   procedure paint (This : in out NullCanvas; graphics : Graphics_Access) is
+   procedure paint (This : in out NullCanvas; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         null;
    end paint;
@@ -124,8 +129,8 @@ package body javax.microedition.lcdui.NullCanvas_Package is
         null;
    end pointerReleased;
 
-   procedure isCommand (This : in out NullCanvas; command : Command_Access) is
-      Java_Result : constant Boolean := NullCanvas'Class (This).isCommand (command);
+   procedure isCommand (This : in out NullCanvas; command_Param : access Command'Class) is
+      Java_Result : constant Boolean := NullCanvas'Class (This).isCommand (command_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

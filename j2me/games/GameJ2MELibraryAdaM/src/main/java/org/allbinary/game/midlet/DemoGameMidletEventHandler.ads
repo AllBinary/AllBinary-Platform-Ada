@@ -43,7 +43,7 @@ package org.allbinary.game.midlet.DemoGameMidletEventHandler_Package is
    procedure Initialize (This : in out DemoGameMidletEventHandler'Class);
    function Create return DemoGameMidletEventHandler_Access;
    function getInstance return DemoGameMidletEventHandler_Access;
-   procedure process (This : in out DemoGameMidletEventHandler; eventObject : AllBinaryEventObject_Access; eventListenerInterface : EventListenerInterface_Access);
+   procedure process (This : in out DemoGameMidletEventHandler; eventObject_Param : access AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface'Class);
 
 end org.allbinary.game.midlet.DemoGameMidletEventHandler_Package;
 

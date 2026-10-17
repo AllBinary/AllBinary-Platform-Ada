@@ -48,13 +48,15 @@ package body org.allbinary.game.layer.resources.OnDemandResources_Package is
    end init;
 
    --  throws Exception
-   function initAt (This : in out OnDemandResources; imageCache : ImageCache_Access; resourceAnimationInterfaceFactoryInterfaceFactory : BaseResourceAnimationInterfaceFactoryInterfaceFactory_Access; portion : Integer; loadingString : Unbounded_String; index : Integer) return Integer is
+   function initAt (This : in out OnDemandResources; imageCache_Param : access ImageCache'Class; resourceAnimationInterfaceFactoryInterfaceFactory_Param : access BaseResourceAnimationInterfaceFactoryInterfaceFactory'Class; portion : Integer; loadingString : Unbounded_String; index : Integer) return Integer is
+      imageCache : ImageCache_Access := ImageCache_Access (imageCache_Param);
+      resourceAnimationInterfaceFactoryInterfaceFactory : BaseResourceAnimationInterfaceFactoryInterfaceFactory_Access := BaseResourceAnimationInterfaceFactoryInterfaceFactory_Access (resourceAnimationInterfaceFactoryInterfaceFactory_Param);
    begin
         return 0;
    end initAt;
 
-   procedure initAt (This : in out OnDemandResources; imageCache : ImageCache_Access; resourceAnimationInterfaceFactoryInterfaceFactory : BaseResourceAnimationInterfaceFactoryInterfaceFactory_Access; portion : Integer; loadingString : Unbounded_String; index : Integer) is
-      Java_Result : constant Integer := OnDemandResources'Class (This).initAt (imageCache, resourceAnimationInterfaceFactoryInterfaceFactory, portion, loadingString, index);
+   procedure initAt (This : in out OnDemandResources; imageCache_Param : access ImageCache'Class; resourceAnimationInterfaceFactoryInterfaceFactory_Param : access BaseResourceAnimationInterfaceFactoryInterfaceFactory'Class; portion : Integer; loadingString : Unbounded_String; index : Integer) is
+      Java_Result : constant Integer := OnDemandResources'Class (This).initAt (imageCache_Param, resourceAnimationInterfaceFactoryInterfaceFactory_Param, portion, loadingString, index);
       pragma Unreferenced (Java_Result);
    begin
       null;

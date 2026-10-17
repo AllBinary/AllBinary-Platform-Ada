@@ -57,8 +57,8 @@ package org.allbinary.game.displayable.canvas.CheatGameInputProcessor_Package is
    end record;
    inputProcessor : SpecialGameInputInterface_Access;
 
-   procedure Initialize (This : in out CheatGameInputProcessor'Class; gameCanvas : AllBinaryGameCanvas_Access);
-   function Create (gameCanvas : AllBinaryGameCanvas_Access) return CheatGameInputProcessor_Access;
+   procedure Initialize (This : in out CheatGameInputProcessor'Class; gameCanvas_Param : access AllBinaryGameCanvas'Class);
+   function Create (gameCanvas_Param : access AllBinaryGameCanvas'Class) return CheatGameInputProcessor_Access;
    procedure update (This : in out CheatGameInputProcessor);
 
 end org.allbinary.game.displayable.canvas.CheatGameInputProcessor_Package;

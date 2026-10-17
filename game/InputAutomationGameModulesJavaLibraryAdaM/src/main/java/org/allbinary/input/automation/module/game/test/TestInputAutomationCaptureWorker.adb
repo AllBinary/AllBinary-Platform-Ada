@@ -27,18 +27,22 @@ package body org.allbinary.input.automation.module.game.test.TestInputAutomation
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out TestInputAutomationCaptureWorker'Class; inputAutomationActionInterface : InputAutomationActionInterface_Access; genericProfileActions : GenericProfileActions_Access; imageComparatorConstraintsInterface : ImageComparatorConstraintsInterface_Access; motionRectangleConstraintsInterface : MotionRectangleConstraintsInterface_Access) is
+   procedure Initialize (This : in out TestInputAutomationCaptureWorker'Class; inputAutomationActionInterface_Param : access InputAutomationActionInterface'Class; genericProfileActions_Param : access GenericProfileActions'Class; imageComparatorConstraintsInterface_Param : access ImageComparatorConstraintsInterface'Class; motionRectangleConstraintsInterface_Param : access MotionRectangleConstraintsInterface'Class) is
+      inputAutomationActionInterface : InputAutomationActionInterface_Access := InputAutomationActionInterface_Access (inputAutomationActionInterface_Param);
+      genericProfileActions : GenericProfileActions_Access := GenericProfileActions_Access (genericProfileActions_Param);
+      imageComparatorConstraintsInterface : ImageComparatorConstraintsInterface_Access := ImageComparatorConstraintsInterface_Access (imageComparatorConstraintsInterface_Param);
+      motionRectangleConstraintsInterface : MotionRectangleConstraintsInterface_Access := MotionRectangleConstraintsInterface_Access (motionRectangleConstraintsInterface_Param);
    begin
         AbstractInputAutomationWorker_Package.Initialize (This, inputAutomationActionInterface);
         Initialize_Fields (This);
-        This.logUtil.putF (This.MESSAGE, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+        This.logUtil.putF (This.MESSAGE, TestInputAutomationCaptureWorker_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         This.setGenericProfileActions (genericProfileActions);
    end Initialize;
 
-   function Create (inputAutomationActionInterface : InputAutomationActionInterface_Access; genericProfileActions : GenericProfileActions_Access; imageComparatorConstraintsInterface : ImageComparatorConstraintsInterface_Access; motionRectangleConstraintsInterface : MotionRectangleConstraintsInterface_Access) return TestInputAutomationCaptureWorker_Access is
+   function Create (inputAutomationActionInterface_Param : access InputAutomationActionInterface'Class; genericProfileActions_Param : access GenericProfileActions'Class; imageComparatorConstraintsInterface_Param : access ImageComparatorConstraintsInterface'Class; motionRectangleConstraintsInterface_Param : access MotionRectangleConstraintsInterface'Class) return TestInputAutomationCaptureWorker_Access is
       This : constant TestInputAutomationCaptureWorker_Access := new TestInputAutomationCaptureWorker;
    begin
-      TestInputAutomationCaptureWorker_Package.Initialize (This.all, inputAutomationActionInterface, genericProfileActions, imageComparatorConstraintsInterface, motionRectangleConstraintsInterface);
+      TestInputAutomationCaptureWorker_Package.Initialize (This.all, inputAutomationActionInterface_Param, genericProfileActions_Param, imageComparatorConstraintsInterface_Param, motionRectangleConstraintsInterface_Param);
       return This;
    end Create;
 
@@ -58,7 +62,7 @@ package body org.allbinary.input.automation.module.game.test.TestInputAutomation
    begin
         cacheInterface := J2SECacheInterface_Access (CapturedBufferedImagesCacheSingleton_Package.getInstance);
         if (cacheInterface.keySet.size) > (0) then
-            This.logUtil.putF (This.IMAGE_AVAILABLE_SO_PROCESSING, This'Unchecked_Access, This.PROCESS_DATA_WORKER_RESULTS);
+            This.logUtil.putF (This.IMAGE_AVAILABLE_SO_PROCESSING, TestInputAutomationCaptureWorker_Access'(This'Unchecked_Access), This.PROCESS_DATA_WORKER_RESULTS);
             anyType := cacheInterface.keySet.toArray (0);
             hashMap := This.getGenericProfileActions.getHashMap;
             set := hashMap.keySet;
@@ -72,14 +76,14 @@ package body org.allbinary.input.automation.module.game.test.TestInputAutomation
             end loop;
             cacheInterface.get (anyType);
         else
-            This.logUtil.putF (This.IMAGE_NOT_AVAILABLE, This'Unchecked_Access, This.PROCESS_DATA_WORKER_RESULTS);
+            This.logUtil.putF (This.IMAGE_NOT_AVAILABLE, TestInputAutomationCaptureWorker_Access'(This'Unchecked_Access), This.PROCESS_DATA_WORKER_RESULTS);
         end if;
    end processDataWorkerResults;
 
    --  throws Exception
    procedure process (This : in out TestInputAutomationCaptureWorker) is
    begin
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.PROCESS);
+        This.logUtil.putF (This.commonStrings.START, TestInputAutomationCaptureWorker_Access'(This'Unchecked_Access), This.commonStrings.PROCESS);
         This.startDataWorkers;
         This.processDataWorkerResults;
    end process;
@@ -89,7 +93,8 @@ package body org.allbinary.input.automation.module.game.test.TestInputAutomation
         return This.genericProfileActions;
    end getGenericProfileActions;
 
-   procedure setGenericProfileActions (This : in out TestInputAutomationCaptureWorker; genericProfileActions : GenericProfileActions_Access) is
+   procedure setGenericProfileActions (This : in out TestInputAutomationCaptureWorker; genericProfileActions_Param : access GenericProfileActions'Class) is
+      genericProfileActions : GenericProfileActions_Access := GenericProfileActions_Access (genericProfileActions_Param);
    begin
         This.genericProfileActions := genericProfileActions;
    end setGenericProfileActions;

@@ -64,8 +64,8 @@ package org.allbinary.data.tree.dom.StoreUriResolver_Package is
       parentTransformInfoInterface : TransformInfoInterface_Access;
    end record;
 
-   procedure Initialize (This : in out StoreUriResolver'Class; parentTransformInfoInterface : TransformInfoInterface_Access; basicURIResolver : BasicUriResolver_Access);
-   function Create (parentTransformInfoInterface : TransformInfoInterface_Access; basicURIResolver : BasicUriResolver_Access) return StoreUriResolver_Access;
+   procedure Initialize (This : in out StoreUriResolver'Class; parentTransformInfoInterface_Param : access TransformInfoInterface'Class; basicURIResolver_Param : access BasicUriResolver'Class);
+   function Create (parentTransformInfoInterface_Param : access TransformInfoInterface'Class; basicURIResolver_Param : access BasicUriResolver'Class) return StoreUriResolver_Access;
    function resolve (This : in out StoreUriResolver; href : Unbounded_String; base : Unbounded_String) return Source_Access;
    procedure resolve (This : in out StoreUriResolver; href : Unbounded_String; base : Unbounded_String);
    function toString (This : in out StoreUriResolver) return Unbounded_String;

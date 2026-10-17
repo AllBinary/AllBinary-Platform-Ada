@@ -26,7 +26,8 @@ package body org.allbinary.business.context.modules.storefront.statistics.orders
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out StoreFrontOrdersHistoryStatistics'Class; storeFrontInterface : StoreFrontInterface_Access) is
+   procedure Initialize (This : in out StoreFrontOrdersHistoryStatistics'Class; storeFrontInterface_Param : access StoreFrontInterface'Class) is
+      storeFrontInterface : StoreFrontInterface_Access := StoreFrontInterface_Access (storeFrontInterface_Param);
       orderHistoryEntityInterface : OrderHistoryEntityInterface_Access;
       orderHistoryInterfaceVector : BasicArrayList_Access;
       numberOfOrders : Long_Long_Integer;
@@ -55,10 +56,10 @@ package body org.allbinary.business.context.modules.storefront.statistics.orders
         This.numberOfOrdersLong := numberOfOrders;
    end Initialize;
 
-   function Create (storeFrontInterface : StoreFrontInterface_Access) return StoreFrontOrdersHistoryStatistics_Access is
+   function Create (storeFrontInterface_Param : access StoreFrontInterface'Class) return StoreFrontOrdersHistoryStatistics_Access is
       This : constant StoreFrontOrdersHistoryStatistics_Access := new StoreFrontOrdersHistoryStatistics;
    begin
-      StoreFrontOrdersHistoryStatistics_Package.Initialize (This.all, storeFrontInterface);
+      StoreFrontOrdersHistoryStatistics_Package.Initialize (This.all, storeFrontInterface_Param);
       return This;
    end Create;
 

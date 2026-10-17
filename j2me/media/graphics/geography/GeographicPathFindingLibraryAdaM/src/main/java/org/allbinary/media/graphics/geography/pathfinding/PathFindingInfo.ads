@@ -45,14 +45,14 @@ package org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Packa
    end record;
    NULL_PATH_FINDING_INFO : PathFindingInfo_Access;
 
-   procedure Initialize (This : in out PathFindingInfo'Class; pathFindingNodeCostInfoFactoryInterface : PathFindingNodeCostInfoFactoryBase_Access; startPathFindingNodeList : BasicArrayList_Access; endPathFindingNodeList : BasicArrayList_Access);
-   function Create (pathFindingNodeCostInfoFactoryInterface : PathFindingNodeCostInfoFactoryBase_Access; startPathFindingNodeList : BasicArrayList_Access; endPathFindingNodeList : BasicArrayList_Access) return PathFindingInfo_Access;
+   procedure Initialize (This : in out PathFindingInfo'Class; pathFindingNodeCostInfoFactoryInterface_Param : access PathFindingNodeCostInfoFactoryBase'Class; startPathFindingNodeList_Param : access BasicArrayList'Class; endPathFindingNodeList_Param : access BasicArrayList'Class);
+   function Create (pathFindingNodeCostInfoFactoryInterface_Param : access PathFindingNodeCostInfoFactoryBase'Class; startPathFindingNodeList_Param : access BasicArrayList'Class; endPathFindingNodeList_Param : access BasicArrayList'Class) return PathFindingInfo_Access;
    function getStartPathFindingNodeList (This : in out PathFindingInfo) return BasicArrayList_Access;
    function getEndPathFindingNodeList (This : in out PathFindingInfo) return BasicArrayList_Access;
    function getPathFinder (This : in out PathFindingInfo) return GeographicPathFinderBase_Access;
-   procedure addStartPathFindingNode (This : in out PathFindingInfo; startPathFindingNode : PathFindingNode_Access);
-   procedure addEndPathFindingNode (This : in out PathFindingInfo; endPathFindingNode : PathFindingNode_Access);
-   procedure setPathFinder (This : in out PathFindingInfo; pathFinder : GeographicPathFinderBase_Access);
+   procedure addStartPathFindingNode (This : in out PathFindingInfo; startPathFindingNode_Param : access PathFindingNode'Class);
+   procedure addEndPathFindingNode (This : in out PathFindingInfo; endPathFindingNode_Param : access PathFindingNode'Class);
+   procedure setPathFinder (This : in out PathFindingInfo; pathFinder_Param : access GeographicPathFinderBase'Class);
    function getPathFindingNodeCostInfoFactoryInterface (This : in out PathFindingInfo) return PathFindingNodeCostInfoFactoryBase_Access;
 
 end org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package;

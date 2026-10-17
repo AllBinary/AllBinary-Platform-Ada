@@ -59,8 +59,8 @@ package org.allbinary.media.image.comparison.motion.SaveMotionRectanglesResultsW
    procedure Initialize (This : in out SaveMotionRectanglesResultsWorker'Class);
    function Create return SaveMotionRectanglesResultsWorker_Access;
    function getMotionRectanglesVector (This : in out SaveMotionRectanglesResultsWorker) return BasicArrayList_Access;
-   procedure onMotionRectanglesImageComparisonResultsEvent (This : in out SaveMotionRectanglesResultsWorker; motionRectanglesResultsEvent : MotionRectanglesResultsEvent_Access);
-   procedure onEvent (This : in out SaveMotionRectanglesResultsWorker; allBinaryEventObject : AllBinaryEventObject_Access);
+   procedure onMotionRectanglesImageComparisonResultsEvent (This : in out SaveMotionRectanglesResultsWorker; motionRectanglesResultsEvent_Param : access MotionRectanglesResultsEvent'Class);
+   procedure onEvent (This : in out SaveMotionRectanglesResultsWorker; allBinaryEventObject_Param : access AllBinaryEventObject'Class);
    function isRunning (This : in out SaveMotionRectanglesResultsWorker) return Boolean;
    procedure setRunning (This : in out SaveMotionRectanglesResultsWorker; running : Boolean);
    procedure run (This : in out SaveMotionRectanglesResultsWorker);

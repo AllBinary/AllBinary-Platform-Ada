@@ -51,8 +51,8 @@ package org.allbinary.math.AngleInfo_Package is
    end record;
    ANGLE : Unbounded_String;
 
-   procedure Initialize (This : in out AngleInfo'Class; angleIncrementInfo : AngleIncrementInfo_Access);
-   function Create (angleIncrementInfo : AngleIncrementInfo_Access) return AngleInfo_Access;
+   procedure Initialize (This : in out AngleInfo'Class; angleIncrementInfo_Param : access AngleIncrementInfo'Class);
+   function Create (angleIncrementInfo_Param : access AngleIncrementInfo'Class) return AngleInfo_Access;
    function getInstance (angleIncrement : Short_Integer) return AngleInfo_Access;
    procedure getInstance (angleIncrement : Short_Integer);
    procedure adjustAngle (This : in out AngleInfo; frame : Integer);

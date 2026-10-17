@@ -33,8 +33,8 @@ package org.allbinary.input.event.VirtualKeyboardEvent_Package is
 
    type VirtualKeyboardEvent is new AllBinaryEventObject with null record;
 
-   procedure Initialize (This : in out VirtualKeyboardEvent'Class; anyType : Java_Object_Access);
-   function Create (anyType : Java_Object_Access) return VirtualKeyboardEvent_Access;
+   procedure Initialize (This : in out VirtualKeyboardEvent'Class; anyType_Param : access Java_Object'Class);
+   function Create (anyType_Param : access Java_Object'Class) return VirtualKeyboardEvent_Access;
 
 end org.allbinary.input.event.VirtualKeyboardEvent_Package;
 

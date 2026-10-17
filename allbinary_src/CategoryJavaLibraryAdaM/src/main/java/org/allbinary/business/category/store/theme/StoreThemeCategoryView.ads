@@ -44,10 +44,10 @@ package org.allbinary.business.category.store.theme.StoreThemeCategoryView_Packa
 
    type StoreThemeCategoryView is new CategoryView and DomNodeInterface with null record;
 
-   procedure Initialize (This : in out StoreThemeCategoryView'Class; categoryInterface : StoreThemeCategoryInterface_Access);
-   function Create (categoryInterface : StoreThemeCategoryInterface_Access) return StoreThemeCategoryView_Access;
-   function toXmlNode (This : in out StoreThemeCategoryView; document : Document_Access) return Node_Access;
-   procedure toXmlNode (This : in out StoreThemeCategoryView; document : Document_Access);
+   procedure Initialize (This : in out StoreThemeCategoryView'Class; categoryInterface_Param : access StoreThemeCategoryInterface'Class);
+   function Create (categoryInterface_Param : access StoreThemeCategoryInterface'Class) return StoreThemeCategoryView_Access;
+   function toXmlNode (This : in out StoreThemeCategoryView; document_Param : access Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out StoreThemeCategoryView; document_Param : access Document'Class);
 
 end org.allbinary.business.category.store.theme.StoreThemeCategoryView_Package;
 

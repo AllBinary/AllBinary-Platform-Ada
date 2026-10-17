@@ -57,8 +57,8 @@ package org.allbinary.logic.io.file.AbFileSystem_Package is
    procedure readAsString (This : in out AbFileSystem; fileName : Unbounded_String);
    function readAsString (This : in out AbFileSystem; fileName : Unbounded_String; bytes : Short_Short_Integer_Array_Access) return Unbounded_String;
    procedure readAsString (This : in out AbFileSystem; fileName : Unbounded_String; bytes : Short_Short_Integer_Array_Access);
-   function close (This : in out AbFileSystem; closeable : Java_Object_Access) return Boolean;
-   procedure close (This : in out AbFileSystem; closeable : Java_Object_Access);
+   function close (This : in out AbFileSystem; closeable_Param : access Java_Object'Class) return Boolean;
+   procedure close (This : in out AbFileSystem; closeable_Param : access Java_Object'Class);
 
 end org.allbinary.logic.io.file.AbFileSystem_Package;
 

@@ -51,15 +51,15 @@ package org.allbinary.android.api5.ActivityFractureUtilAPI5_Package is
    procedure Initialize (This : in out ActivityFractureUtilAPI5'Class);
    function Create return ActivityFractureUtilAPI5_Access;
    function getInstance return ActivityFractureUtilAPI5_Access;
-   procedure process (This : in out ActivityFractureUtilAPI5; activity : Activity_Access);
-   function isTouch (This : in out ActivityFractureUtilAPI5; activity : Activity_Access) return Boolean;
-   procedure isTouch (This : in out ActivityFractureUtilAPI5; activity : Activity_Access);
-   function isMultiTouch (This : in out ActivityFractureUtilAPI5; activity : Activity_Access) return Boolean;
-   procedure isMultiTouch (This : in out ActivityFractureUtilAPI5; activity : Activity_Access);
-   function isMultiTouchDistinct (This : in out ActivityFractureUtilAPI5; activity : Activity_Access) return Boolean;
-   procedure isMultiTouchDistinct (This : in out ActivityFractureUtilAPI5; activity : Activity_Access);
-   function isFeature (This : in out ActivityFractureUtilAPI5; activity : Activity_Access; property : Unbounded_String) return Boolean;
-   procedure isFeature (This : in out ActivityFractureUtilAPI5; activity : Activity_Access; property : Unbounded_String);
+   procedure process (This : in out ActivityFractureUtilAPI5; activity_Param : access Activity'Class);
+   function isTouch (This : in out ActivityFractureUtilAPI5; activity_Param : access Activity'Class) return Boolean;
+   procedure isTouch (This : in out ActivityFractureUtilAPI5; activity_Param : access Activity'Class);
+   function isMultiTouch (This : in out ActivityFractureUtilAPI5; activity_Param : access Activity'Class) return Boolean;
+   procedure isMultiTouch (This : in out ActivityFractureUtilAPI5; activity_Param : access Activity'Class);
+   function isMultiTouchDistinct (This : in out ActivityFractureUtilAPI5; activity_Param : access Activity'Class) return Boolean;
+   procedure isMultiTouchDistinct (This : in out ActivityFractureUtilAPI5; activity_Param : access Activity'Class);
+   function isFeature (This : in out ActivityFractureUtilAPI5; activity_Param : access Activity'Class; property : Unbounded_String) return Boolean;
+   procedure isFeature (This : in out ActivityFractureUtilAPI5; activity_Param : access Activity'Class; property : Unbounded_String);
 
 end org.allbinary.android.api5.ActivityFractureUtilAPI5_Package;
 

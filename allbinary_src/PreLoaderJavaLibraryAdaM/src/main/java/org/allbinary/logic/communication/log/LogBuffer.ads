@@ -44,7 +44,7 @@ package org.allbinary.logic.communication.log.LogBuffer_Package is
 
    procedure Initialize (This : in out LogBuffer'Class);
    function Create return LogBuffer_Access;
-   procedure add (This : in out LogBuffer; log : Log_Access);
+   procedure add (This : in out LogBuffer; log_Param : access Log'Class);
    procedure logAll (This : in out LogBuffer);
 
 end org.allbinary.logic.communication.log.LogBuffer_Package;

@@ -24,21 +24,23 @@ package body org.allbinary.business.user.commerce.inventory.item.download.Downlo
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out DownloadableItemView'Class; downloadableItem : DownloadableItem_Access) is
+   procedure Initialize (This : in out DownloadableItemView'Class; downloadableItem_Param : access DownloadableItem'Class) is
+      downloadableItem : DownloadableItem_Access := DownloadableItem_Access (downloadableItem_Param);
    begin
       Initialize_Fields (This);
         This.downloadableItem := downloadableItem;
    end Initialize;
 
-   function Create (downloadableItem : DownloadableItem_Access) return DownloadableItemView_Access is
+   function Create (downloadableItem_Param : access DownloadableItem'Class) return DownloadableItemView_Access is
       This : constant DownloadableItemView_Access := new DownloadableItemView;
    begin
-      DownloadableItemView_Package.Initialize (This.all, downloadableItem);
+      DownloadableItemView_Package.Initialize (This.all, downloadableItem_Param);
       return This;
    end Create;
 
    --  throws Exception
-   function toXmlNode (This : in out DownloadableItemView; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out DownloadableItemView; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       hashMap : HashMap_Access;
       totalTime : Long_Long_Integer;
       calendar : Calendar_Access;
@@ -64,7 +66,7 @@ package body org.allbinary.business.user.commerce.inventory.item.download.Downlo
       index : Integer;
    begin
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PRODUCTSEARCHLOGGING) then
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("toXmlNode"));
+            This.logUtil.putF (This.commonStrings.START, DownloadableItemView_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode"));
         end if;
         hashMap := This.downloadableItem.toHashMap;
         totalTime := This.downloadableItem.getValidTime.longValue;
@@ -112,8 +114,8 @@ package body org.allbinary.business.user.commerce.inventory.item.download.Downlo
         return Null_Unbounded_String;
    end view;
 
-   procedure toXmlNode (This : in out DownloadableItemView; document : Document_Access) is
-      Java_Result : constant Node_Access := DownloadableItemView'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out DownloadableItemView; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := DownloadableItemView'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -35,13 +35,16 @@ package body org.allbinary.logic.util.cache.AutomaticCacheInterfaceFactory_Packa
    end Create;
 
    --  throws Exception
-   function getInstance (cacheableInterfaceFactoryInterface : CacheableInterfaceFactoryInterface_Access; cacheType : CacheType_Access; cachePolicy : CachePolicy_Access) return AutomaticCacheInterface_Access is
+   function getInstance (cacheableInterfaceFactoryInterface_Param : access CacheableInterfaceFactoryInterface'Class; cacheType_Param : access CacheType'Class; cachePolicy_Param : access CachePolicy'Class) return AutomaticCacheInterface_Access is
+      cacheableInterfaceFactoryInterface : CacheableInterfaceFactoryInterface_Access := CacheableInterfaceFactoryInterface_Access (cacheableInterfaceFactoryInterface_Param);
+      cacheType : CacheType_Access := CacheType_Access (cacheType_Param);
+      cachePolicy : CachePolicy_Access := CachePolicy_Access (cachePolicy_Param);
    begin
         Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No such ") & cacheType.toString));
    end getInstance;
 
-   procedure getInstance (cacheableInterfaceFactoryInterface : CacheableInterfaceFactoryInterface_Access; cacheType : CacheType_Access; cachePolicy : CachePolicy_Access) is
-      Java_Result : constant AutomaticCacheInterface_Access := getInstance (cacheableInterfaceFactoryInterface, cacheType, cachePolicy);
+   procedure getInstance (cacheableInterfaceFactoryInterface_Param : access CacheableInterfaceFactoryInterface'Class; cacheType_Param : access CacheType'Class; cachePolicy_Param : access CachePolicy'Class) is
+      Java_Result : constant AutomaticCacheInterface_Access := getInstance (cacheableInterfaceFactoryInterface_Param, cacheType_Param, cachePolicy_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

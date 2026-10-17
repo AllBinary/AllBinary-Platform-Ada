@@ -71,7 +71,7 @@ package body org.allbinary.business.installer.DeleteCloud_Package is
                 stringBuffer.appendint (start);
                 stringBuffer.append (To_Unbounded_String (" - "));
                 stringBuffer.appendint (end_Id);
-                This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("initialize()"));
+                This.logUtil.putF (stringBuffer.toString, DeleteCloud_Access'(This'Unchecked_Access), To_Unbounded_String ("initialize()"));
                 nextFile := null;
                 for index in start .. (end_Id) - 1 loop
                     nextFile := AbFile_Access (fileBasicArrayList.get (index));
@@ -88,7 +88,7 @@ package body org.allbinary.business.installer.DeleteCloud_Package is
                             end;
                     end;
                 end loop;
-                This.logUtil.putF (To_Unbounded_String ("Deleted Files From Cloud"), This'Unchecked_Access, To_Unbounded_String ("initialize()"));
+                This.logUtil.putF (To_Unbounded_String ("Deleted Files From Cloud"), DeleteCloud_Access'(This'Unchecked_Access), To_Unbounded_String ("initialize()"));
             end if;
             return True;
         exception
@@ -96,7 +96,7 @@ package body org.allbinary.business.installer.DeleteCloud_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (To_Unbounded_String ("Unable to copy installer files into cloud"), This'Unchecked_Access, To_Unbounded_String ("initialize()"), e);
+            This.logUtil.put (To_Unbounded_String ("Unable to copy installer files into cloud"), DeleteCloud_Access'(This'Unchecked_Access), To_Unbounded_String ("initialize()"), e);
             return False;
                 end;
         end;

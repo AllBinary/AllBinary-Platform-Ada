@@ -21,20 +21,23 @@ package body org.allbinary.game.layer.special.SpecialAnalogLeftTriggerGameInputP
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out SpecialAnalogLeftTriggerGameInputProcessor'Class; collidableDestroyableDamageableLayer : CollidableDestroyableDamageableLayer_Access) is
+   procedure Initialize (This : in out SpecialAnalogLeftTriggerGameInputProcessor'Class; collidableDestroyableDamageableLayer_Param : access CollidableDestroyableDamageableLayer'Class) is
+      collidableDestroyableDamageableLayer : CollidableDestroyableDamageableLayer_Access := CollidableDestroyableDamageableLayer_Access (collidableDestroyableDamageableLayer_Param);
    begin
         SpecialGameInputProcessor_Package.Initialize (This, collidableDestroyableDamageableLayer);
    end Initialize;
 
-   function Create (collidableDestroyableDamageableLayer : CollidableDestroyableDamageableLayer_Access) return SpecialAnalogLeftTriggerGameInputProcessor_Access is
+   function Create (collidableDestroyableDamageableLayer_Param : access CollidableDestroyableDamageableLayer'Class) return SpecialAnalogLeftTriggerGameInputProcessor_Access is
       This : constant SpecialAnalogLeftTriggerGameInputProcessor_Access := new SpecialAnalogLeftTriggerGameInputProcessor;
    begin
-      SpecialAnalogLeftTriggerGameInputProcessor_Package.Initialize (This.all, collidableDestroyableDamageableLayer);
+      SpecialAnalogLeftTriggerGameInputProcessor_Package.Initialize (This.all, collidableDestroyableDamageableLayer_Param);
       return This;
    end Create;
 
    --  throws Exception
-   procedure processAnalog (This : in out SpecialAnalogLeftTriggerGameInputProcessor; allbinaryLayerManager : AllBinaryLayerManager_Access; gameKeyEvent : GameKeyEvent_Access; yAnalogValue : Integer) is
+   procedure processAnalog (This : in out SpecialAnalogLeftTriggerGameInputProcessor; allbinaryLayerManager_Param : access AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent'Class; yAnalogValue : Integer) is
+      allbinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allbinaryLayerManager_Param);
+      gameKeyEvent : GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
    begin
         This.collidableDestroyableDamageableLayer.leftTrigger (allbinaryLayerManager, gameKeyEvent, yAnalogValue);
    end processAnalog;

@@ -22,16 +22,17 @@ package body org.allbinary.logic.communication.smtp.configuration.user.event.Use
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out UserEmailEventsConfigurationMapping'Class; userEmailEventsConfigurationInterface : UserEmailEventsConfigurationInterface_Access) is
+   procedure Initialize (This : in out UserEmailEventsConfigurationMapping'Class; userEmailEventsConfigurationInterface_Param : access UserEmailEventsConfigurationInterface'Class) is
+      userEmailEventsConfigurationInterface : UserEmailEventsConfigurationInterface_Access := UserEmailEventsConfigurationInterface_Access (userEmailEventsConfigurationInterface_Param);
    begin
       Initialize_Fields (This);
         This.userEmailEventsConfigurationInterface := userEmailEventsConfigurationInterface;
    end Initialize;
 
-   function Create (userEmailEventsConfigurationInterface : UserEmailEventsConfigurationInterface_Access) return UserEmailEventsConfigurationMapping_Access is
+   function Create (userEmailEventsConfigurationInterface_Param : access UserEmailEventsConfigurationInterface'Class) return UserEmailEventsConfigurationMapping_Access is
       This : constant UserEmailEventsConfigurationMapping_Access := new UserEmailEventsConfigurationMapping;
    begin
-      UserEmailEventsConfigurationMapping_Package.Initialize (This.all, userEmailEventsConfigurationInterface);
+      UserEmailEventsConfigurationMapping_Package.Initialize (This.all, userEmailEventsConfigurationInterface_Param);
       return This;
    end Create;
 

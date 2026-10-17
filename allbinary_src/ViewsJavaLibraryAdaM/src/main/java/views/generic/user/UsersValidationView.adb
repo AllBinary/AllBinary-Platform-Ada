@@ -22,17 +22,18 @@ package body views.generic_Id.user.UsersValidationView_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out UsersValidationView'Class; transformInfoInterface : TransformInfoInterface_Access) is
+   procedure Initialize (This : in out UsersValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         UsersView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
         This.userVector := UserEntityFactory_Package.getInstance.getCustomers;
    end Initialize;
 
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return UsersValidationView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return UsersValidationView_Access is
       This : constant UsersValidationView_Access := new UsersValidationView;
    begin
-      UsersValidationView_Package.Initialize (This.all, transformInfoInterface);
+      UsersValidationView_Package.Initialize (This.all, transformInfoInterface_Param);
       return This;
    end Create;
 
@@ -50,7 +51,7 @@ package body views.generic_Id.user.UsersValidationView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to validate"), This'Unchecked_Access, This.commonStrings.IS_VALID, e);
+                This.logUtil.put (To_Unbounded_String ("Failed to validate"), UsersValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
             end if;
             return False;
                 end;
@@ -67,7 +68,7 @@ package body views.generic_Id.user.UsersValidationView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), This'Unchecked_Access, To_Unbounded_String ("validationInfo()"), e);
+                This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), UsersValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
             end if;
             return To_Unbounded_String ("Error Getting Validation Info");
                 end;
@@ -79,13 +80,14 @@ package body views.generic_Id.user.UsersValidationView_Package is
         return null;
    end toValidationInfoDoc;
 
-   function toValidationInfoNode (This : in out UsersValidationView; document : Document_Access) return Node_Access is
+   function toValidationInfoNode (This : in out UsersValidationView; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
    begin
         return null;
    end toValidationInfoNode;
 
-   procedure toValidationInfoNode (This : in out UsersValidationView; document : Document_Access) is
-      Java_Result : constant Node_Access := UsersValidationView'Class (This).toValidationInfoNode (document);
+   procedure toValidationInfoNode (This : in out UsersValidationView; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := UsersValidationView'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

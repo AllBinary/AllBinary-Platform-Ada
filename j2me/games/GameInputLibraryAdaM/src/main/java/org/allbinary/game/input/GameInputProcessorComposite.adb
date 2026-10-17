@@ -24,7 +24,8 @@ package body org.allbinary.game.input.GameInputProcessorComposite_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out GameInputProcessorComposite'Class; name : Unbounded_String; gameInputProcessorInterface : GameInputProcessorInterface_Access) is
+   procedure Initialize (This : in out GameInputProcessorComposite'Class; name : Unbounded_String; gameInputProcessorInterface_Param : access GameInputProcessorInterface'Class) is
+      gameInputProcessorInterface : GameInputProcessorInterface_Access := GameInputProcessorInterface_Access (gameInputProcessorInterface_Param);
    begin
         PlayerGameInput_Package.Initialize (This, BasicArrayListD_Package.Create, BasicArrayListD_Package.Create, -(1));
         Initialize_Fields (This);
@@ -32,10 +33,10 @@ package body org.allbinary.game.input.GameInputProcessorComposite_Package is
         This.gameInputProcessorInterface := gameInputProcessorInterface;
    end Initialize;
 
-   function Create (name : Unbounded_String; gameInputProcessorInterface : GameInputProcessorInterface_Access) return GameInputProcessorComposite_Access is
+   function Create (name : Unbounded_String; gameInputProcessorInterface_Param : access GameInputProcessorInterface'Class) return GameInputProcessorComposite_Access is
       This : constant GameInputProcessorComposite_Access := new GameInputProcessorComposite;
    begin
-      GameInputProcessorComposite_Package.Initialize (This.all, name, gameInputProcessorInterface);
+      GameInputProcessorComposite_Package.Initialize (This.all, name, gameInputProcessorInterface_Param);
       return This;
    end Create;
 
@@ -50,7 +51,7 @@ package body org.allbinary.game.input.GameInputProcessorComposite_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.UPDATE, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, GameInputProcessorComposite_Access'(This'Unchecked_Access), This.commonStrings.UPDATE, e);
                 end;
         end;
    end update;

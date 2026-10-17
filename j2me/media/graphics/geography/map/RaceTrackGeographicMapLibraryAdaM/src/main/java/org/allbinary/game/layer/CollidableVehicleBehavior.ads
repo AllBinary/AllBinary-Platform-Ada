@@ -55,10 +55,10 @@ package org.allbinary.game.layer.CollidableVehicleBehavior_Package is
 
    procedure Initialize (This : in out CollidableVehicleBehavior'Class; collidable : Boolean);
    function Create (collidable : Boolean) return CollidableVehicleBehavior_Access;
-   procedure collide (This : in out CollidableVehicleBehavior; ownerLayer : CollidableCompositeLayer_Access; collidableInterfaceCompositeInterface : CollidableCompositeLayer_Access);
-   procedure collideInterface (This : in out CollidableVehicleBehavior; ownerLayer : CollidableCompositeLayer_Access; collidableInterfaceCompositeInterface : CollidableInterfaceCompositeInterface_Access);
-   procedure collideVehicle (This : in out CollidableVehicleBehavior; ownerLayer : CollidableCompositeLayer_Access; vehiclePropertiesCompositeInterface : VehiclePropertiesCompositeInterface_Access);
-   procedure collideFriction (This : in out CollidableVehicleBehavior; vehiclePropertiesCompositeInterface : VehiclePropertiesCompositeInterface_Access);
+   procedure collide (This : in out CollidableVehicleBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableCompositeLayer'Class);
+   procedure collideInterface (This : in out CollidableVehicleBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableInterfaceCompositeInterface'Class);
+   procedure collideVehicle (This : in out CollidableVehicleBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; vehiclePropertiesCompositeInterface_Param : access VehiclePropertiesCompositeInterface'Class);
+   procedure collideFriction (This : in out CollidableVehicleBehavior; vehiclePropertiesCompositeInterface_Param : access VehiclePropertiesCompositeInterface'Class);
 
 end org.allbinary.game.layer.CollidableVehicleBehavior_Package;
 

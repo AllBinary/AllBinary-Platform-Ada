@@ -33,25 +33,28 @@ package body org.allbinary.business.user.modules.admin.store.order.ship.ShipOrde
       return This;
    end Create;
 
-   procedure Initialize (This : in out ShipOrderStoreAdminUser'Class; userHashMap : HashMap_Access) is
+   procedure Initialize (This : in out ShipOrderStoreAdminUser'Class; userHashMap_Param : access HashMap'Class) is
+      userHashMap : HashMap_Access := HashMap_Access (userHashMap_Param);
    begin
         User_Package.Initialize (This, userHashMap);
    end Initialize;
 
-   function Create (userHashMap : HashMap_Access) return ShipOrderStoreAdminUser_Access is
+   function Create (userHashMap_Param : access HashMap'Class) return ShipOrderStoreAdminUser_Access is
       This : constant ShipOrderStoreAdminUser_Access := new ShipOrderStoreAdminUser;
    begin
-      ShipOrderStoreAdminUser_Package.Initialize (This.all, userHashMap);
+      ShipOrderStoreAdminUser_Package.Initialize (This.all, userHashMap_Param);
       return This;
    end Create;
 
-   procedure validateSession (This : in out ShipOrderStoreAdminUser; weblisketSession : WeblisketSessionInterface_Access) is
+   procedure validateSession (This : in out ShipOrderStoreAdminUser; weblisketSession_Param : access WeblisketSessionInterface'Class) is
+      weblisketSession : WeblisketSessionInterface_Access := WeblisketSessionInterface_Access (weblisketSession_Param);
    begin
         User (This).validateSession (weblisketSession);
         This.updateSession (weblisketSession);
    end validateSession;
 
-   procedure updateSession (This : in out ShipOrderStoreAdminUser; weblisketSession : WeblisketSessionInterface_Access) is
+   procedure updateSession (This : in out ShipOrderStoreAdminUser; weblisketSession_Param : access WeblisketSessionInterface'Class) is
+      weblisketSession : WeblisketSessionInterface_Access := WeblisketSessionInterface_Access (weblisketSession_Param);
    begin
         weblisketSession.setStoreName (This.getPermissions);
    end updateSession;

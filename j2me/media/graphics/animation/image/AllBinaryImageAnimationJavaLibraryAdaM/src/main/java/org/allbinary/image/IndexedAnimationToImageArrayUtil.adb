@@ -34,7 +34,8 @@ package body org.allbinary.image.IndexedAnimationToImageArrayUtil_Package is
 
 
    --  throws Exception
-   function getInstance (width : Integer; height : Integer; sequentialAnimationInterface : IndexedAnimation_Access) return Image_Access_Array_Access is
+   function getInstance (width : Integer; height : Integer; sequentialAnimationInterface_Param : access IndexedAnimation'Class) return Image_Access_Array_Access is
+      sequentialAnimationInterface : IndexedAnimation_Access := IndexedAnimation_Access (sequentialAnimationInterface_Param);
       size : Integer;
       imageArray : Image_Access_Array_Access;
       index : Integer;
@@ -48,8 +49,8 @@ package body org.allbinary.image.IndexedAnimationToImageArrayUtil_Package is
         return imageArray;
    end getInstance;
 
-   procedure getInstance (width : Integer; height : Integer; sequentialAnimationInterface : IndexedAnimation_Access) is
-      Java_Result : constant Image_Access_Array_Access := getInstance (width, height, sequentialAnimationInterface);
+   procedure getInstance (width : Integer; height : Integer; sequentialAnimationInterface_Param : access IndexedAnimation'Class) is
+      Java_Result : constant Image_Access_Array_Access := getInstance (width, height, sequentialAnimationInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

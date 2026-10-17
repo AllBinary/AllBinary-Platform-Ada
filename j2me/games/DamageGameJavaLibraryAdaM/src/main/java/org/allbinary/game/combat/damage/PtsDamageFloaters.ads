@@ -65,10 +65,10 @@ package org.allbinary.game.combat.damage.PtsDamageFloaters_Package is
    end record;
    basicColorArrayIndexer : BasicColorArrayIndexer_Access;
 
-   procedure Initialize (This : in out PtsDamageFloaters'Class; layerInterface : AllBinaryLayer_Access);
-   function Create (layerInterface : AllBinaryLayer_Access) return PtsDamageFloaters_Access;
+   procedure Initialize (This : in out PtsDamageFloaters'Class; layerInterface_Param : access AllBinaryLayer'Class);
+   function Create (layerInterface_Param : access AllBinaryLayer'Class) return PtsDamageFloaters_Access;
    procedure add (This : in out PtsDamageFloaters; damage : Integer);
-   procedure paint (This : in out PtsDamageFloaters; graphics : Graphics_Access);
+   procedure paint (This : in out PtsDamageFloaters; graphics_Param : access Graphics'Class);
 
 end org.allbinary.game.combat.damage.PtsDamageFloaters_Package;
 

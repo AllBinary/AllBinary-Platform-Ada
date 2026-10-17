@@ -51,7 +51,8 @@ package body org.allbinary.game.layer.waypoint.Waypoint2SelectedLogHelper_Packag
         return Waypoint2SelectedLogHelper_Package.instanceC;
    end getInstance;
 
-   procedure initRange (This : in out Waypoint2SelectedLogHelper; associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access; closeRange : Integer; sensorRange : Integer) is
+   procedure initRange (This : in out Waypoint2SelectedLogHelper; associatedAdvancedRTSGameLayer_Param : access PathFindingLayerInterface'Class; closeRange : Integer; sensorRange : Integer) is
+      associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (associatedAdvancedRTSGameLayer_Param);
       stringBuffer : StringMaker_Access;
    begin
         stringBuffer := StringMaker_Package.Create;
@@ -60,10 +61,13 @@ package body org.allbinary.game.layer.waypoint.Waypoint2SelectedLogHelper_Packag
         stringBuffer.appendint (closeRange);
         stringBuffer.append (This.SENSOR_RANGE);
         stringBuffer.appendint (sensorRange);
-        This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("selected: initRange"));
+        This.logUtil.putF (stringBuffer.toString, Waypoint2SelectedLogHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("selected: initRange"));
    end initRange;
 
-   procedure processPossibleTarget (This : in out Waypoint2SelectedLogHelper; associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access; waypointBehaviorBase : WaypointBehaviorBase_Access; layerInterface : PathFindingLayerInterface_Access; anotherTargetDistance : Integer; isShorterThanCurrentTargetDistance : Boolean; isCurrentTargetDestroyed : Boolean) is
+   procedure processPossibleTarget (This : in out Waypoint2SelectedLogHelper; associatedAdvancedRTSGameLayer_Param : access PathFindingLayerInterface'Class; waypointBehaviorBase_Param : access WaypointBehaviorBase'Class; layerInterface_Param : access PathFindingLayerInterface'Class; anotherTargetDistance : Integer; isShorterThanCurrentTargetDistance : Boolean; isCurrentTargetDestroyed : Boolean) is
+      associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (associatedAdvancedRTSGameLayer_Param);
+      waypointBehaviorBase : WaypointBehaviorBase_Access := WaypointBehaviorBase_Access (waypointBehaviorBase_Param);
+      layerInterface : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (layerInterface_Param);
       stringBuffer : StringMaker_Access;
    begin
         if (waypointBehaviorBase.isWaypointListEmptyOrOnlyTargets) and then (waypointBehaviorBase.isInSensorRange (CollidableDestroyableDamageableLayer_Access (layerInterface), anotherTargetDistance)) then
@@ -77,11 +81,14 @@ package body org.allbinary.game.layer.waypoint.Waypoint2SelectedLogHelper_Packag
             stringBuffer.appendboolean (isCurrentTargetDestroyed);
             stringBuffer.append (This.CURRENT_TARGET_NOT_AVAILABLE);
             stringBuffer.appendboolean (((waypointBehaviorBase.getCurrentTargetLayerInterface) = (null)));
-            This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, This.PROCESS_POSSIBLE_TARGET);
+            This.logUtil.putF (stringBuffer.toString, Waypoint2SelectedLogHelper_Access'(This'Unchecked_Access), This.PROCESS_POSSIBLE_TARGET);
         end if;
    end processPossibleTarget;
 
-   procedure processSetTarget (This : in out Waypoint2SelectedLogHelper; associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access; waypointBehaviorBase : WaypointBehaviorBase_Access; layerInterface : PathFindingLayerInterface_Access; anotherTargetDistance : Integer) is
+   procedure processSetTarget (This : in out Waypoint2SelectedLogHelper; associatedAdvancedRTSGameLayer_Param : access PathFindingLayerInterface'Class; waypointBehaviorBase_Param : access WaypointBehaviorBase'Class; layerInterface_Param : access PathFindingLayerInterface'Class; anotherTargetDistance : Integer) is
+      associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (associatedAdvancedRTSGameLayer_Param);
+      waypointBehaviorBase : WaypointBehaviorBase_Access := WaypointBehaviorBase_Access (waypointBehaviorBase_Param);
+      layerInterface : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (layerInterface_Param);
       stringBuffer : StringMaker_Access;
    begin
         stringBuffer := StringMaker_Package.Create;
@@ -92,10 +99,13 @@ package body org.allbinary.game.layer.waypoint.Waypoint2SelectedLogHelper_Packag
         stringBuffer.append (layerInterface.getName);
         stringBuffer.append (To_Unbounded_String (" anotherTargetDistance: "));
         stringBuffer.appendint (anotherTargetDistance);
-        This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("selected: processPossibleTarget2"));
+        This.logUtil.putF (stringBuffer.toString, Waypoint2SelectedLogHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("selected: processPossibleTarget2"));
    end processSetTarget;
 
-   procedure processPossibleTargetCloser (This : in out Waypoint2SelectedLogHelper; associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access; waypointBehaviorBase : WaypointBehaviorBase_Access; layerInterface : PathFindingLayerInterface_Access; anotherTargetDistance : Integer) is
+   procedure processPossibleTargetCloser (This : in out Waypoint2SelectedLogHelper; associatedAdvancedRTSGameLayer_Param : access PathFindingLayerInterface'Class; waypointBehaviorBase_Param : access WaypointBehaviorBase'Class; layerInterface_Param : access PathFindingLayerInterface'Class; anotherTargetDistance : Integer) is
+      associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (associatedAdvancedRTSGameLayer_Param);
+      waypointBehaviorBase : WaypointBehaviorBase_Access := WaypointBehaviorBase_Access (waypointBehaviorBase_Param);
+      layerInterface : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (layerInterface_Param);
       stringBuffer : StringMaker_Access;
    begin
         stringBuffer := StringMaker_Package.Create;
@@ -106,10 +116,13 @@ package body org.allbinary.game.layer.waypoint.Waypoint2SelectedLogHelper_Packag
         stringBuffer.append (layerInterface.getName);
         stringBuffer.append (To_Unbounded_String (" anotherTargetDistance: "));
         stringBuffer.appendint (anotherTargetDistance);
-        This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("selected: processPossibleTarget3"));
+        This.logUtil.putF (stringBuffer.toString, Waypoint2SelectedLogHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("selected: processPossibleTarget3"));
    end processPossibleTargetCloser;
 
-   procedure setTarget (This : in out Waypoint2SelectedLogHelper; associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access; waypointBehaviorBase : WaypointBehaviorBase_Access; layerInterface : PathFindingLayerInterface_Access; anotherTargetDistance : Integer) is
+   procedure setTarget (This : in out Waypoint2SelectedLogHelper; associatedAdvancedRTSGameLayer_Param : access PathFindingLayerInterface'Class; waypointBehaviorBase_Param : access WaypointBehaviorBase'Class; layerInterface_Param : access PathFindingLayerInterface'Class; anotherTargetDistance : Integer) is
+      associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (associatedAdvancedRTSGameLayer_Param);
+      waypointBehaviorBase : WaypointBehaviorBase_Access := WaypointBehaviorBase_Access (waypointBehaviorBase_Param);
+      layerInterface : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (layerInterface_Param);
       stringBuffer : StringMaker_Access;
    begin
         stringBuffer := StringMaker_Package.Create;
@@ -122,15 +135,18 @@ package body org.allbinary.game.layer.waypoint.Waypoint2SelectedLogHelper_Packag
         stringBuffer.appendint (anotherTargetDistance);
         stringBuffer.append (To_Unbounded_String (" instead of: "));
         stringBuffer.append (waypointBehaviorBase.getCurrentTargetingStateString);
-        This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("selected: setTarget"));
+        This.logUtil.putF (stringBuffer.toString, Waypoint2SelectedLogHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("selected: setTarget"));
    end setTarget;
 
-   procedure setTargetPath (This : in out Waypoint2SelectedLogHelper; associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access) is
+   procedure setTargetPath (This : in out Waypoint2SelectedLogHelper; associatedAdvancedRTSGameLayer_Param : access PathFindingLayerInterface'Class) is
+      associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (associatedAdvancedRTSGameLayer_Param);
    begin
-        This.logUtil.putF (To_Unbounded_String ("Target Destroyed"), This'Unchecked_Access, To_Unbounded_String ("selected: setTargetPath"));
+        This.logUtil.putF (To_Unbounded_String ("Target Destroyed"), Waypoint2SelectedLogHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("selected: setTargetPath"));
    end setTargetPath;
 
-   procedure setTargetPathIgnoreNewPath (This : in out Waypoint2SelectedLogHelper; associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access; waypointBehaviorBase : WaypointBehaviorBase_Access) is
+   procedure setTargetPathIgnoreNewPath (This : in out Waypoint2SelectedLogHelper; associatedAdvancedRTSGameLayer_Param : access PathFindingLayerInterface'Class; waypointBehaviorBase_Param : access WaypointBehaviorBase'Class) is
+      associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (associatedAdvancedRTSGameLayer_Param);
+      waypointBehaviorBase : WaypointBehaviorBase_Access := WaypointBehaviorBase_Access (waypointBehaviorBase_Param);
       stringBuffer : StringMaker_Access;
    begin
         stringBuffer := StringMaker_Package.Create;
@@ -139,10 +155,13 @@ package body org.allbinary.game.layer.waypoint.Waypoint2SelectedLogHelper_Packag
         stringBuffer.append (waypointBehaviorBase.getCurrentTargetLayerInterface.getName);
         stringBuffer.append (This.commonSeps.SPACE);
         stringBuffer.append (This.stringUtil.toString (waypointBehaviorBase.getCurrentTargetLayerInterface));
-        This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("selected: setTargetPath"));
+        This.logUtil.putF (stringBuffer.toString, Waypoint2SelectedLogHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("selected: setTargetPath"));
    end setTargetPathIgnoreNewPath;
 
-   procedure processWaypoint (This : in out Waypoint2SelectedLogHelper; associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access; waypointBehaviorBase : WaypointBehaviorBase_Access; targetLayer : PathFindingLayerInterface_Access; size : Integer) is
+   procedure processWaypoint (This : in out Waypoint2SelectedLogHelper; associatedAdvancedRTSGameLayer_Param : access PathFindingLayerInterface'Class; waypointBehaviorBase_Param : access WaypointBehaviorBase'Class; targetLayer_Param : access PathFindingLayerInterface'Class; size : Integer) is
+      associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (associatedAdvancedRTSGameLayer_Param);
+      waypointBehaviorBase : WaypointBehaviorBase_Access := WaypointBehaviorBase_Access (waypointBehaviorBase_Param);
+      targetLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (targetLayer_Param);
       stringBuffer : StringMaker_Access;
    begin
         stringBuffer := StringMaker_Package.Create;
@@ -157,10 +176,12 @@ package body org.allbinary.game.layer.waypoint.Waypoint2SelectedLogHelper_Packag
         stringBuffer.appendboolean (waypointBehaviorBase.isTrackingWaypoint);
         stringBuffer.append (To_Unbounded_String (" WaypointOverridesAttacking: "));
         stringBuffer.appendboolean (waypointBehaviorBase.isWaypointOverridesAttacking);
-        This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("selected: processWaypoint"));
+        This.logUtil.putF (stringBuffer.toString, Waypoint2SelectedLogHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("selected: processWaypoint"));
    end processWaypoint;
 
-   procedure processWaypointTracked (This : in out Waypoint2SelectedLogHelper; associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access; waypointBehaviorBase : WaypointBehaviorBase_Access) is
+   procedure processWaypointTracked (This : in out Waypoint2SelectedLogHelper; associatedAdvancedRTSGameLayer_Param : access PathFindingLayerInterface'Class; waypointBehaviorBase_Param : access WaypointBehaviorBase'Class) is
+      associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (associatedAdvancedRTSGameLayer_Param);
+      waypointBehaviorBase : WaypointBehaviorBase_Access := WaypointBehaviorBase_Access (waypointBehaviorBase_Param);
       stringBuffer : StringMaker_Access;
    begin
         stringBuffer := StringMaker_Package.Create;
@@ -171,35 +192,41 @@ package body org.allbinary.game.layer.waypoint.Waypoint2SelectedLogHelper_Packag
         stringBuffer.append (This.stringUtil.toString (waypointBehaviorBase.getNextUnvisitedPathGeographicMapCellPosition));
         stringBuffer.append (To_Unbounded_String (" Tracked: "));
         stringBuffer.append (This.stringUtil.toString (waypointBehaviorBase.getCurrentGeographicMapCellHistory.getTracked));
-        This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("selected: processWaypoint"));
+        This.logUtil.putF (stringBuffer.toString, Waypoint2SelectedLogHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("selected: processWaypoint"));
    end processWaypointTracked;
 
-   procedure processWaypointTrackedVisit (This : in out Waypoint2SelectedLogHelper; associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access; geographicMapCellPosition : GeographicMapCellPosition_Access) is
+   procedure processWaypointTrackedVisit (This : in out Waypoint2SelectedLogHelper; associatedAdvancedRTSGameLayer_Param : access PathFindingLayerInterface'Class; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is
+      associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (associatedAdvancedRTSGameLayer_Param);
+      geographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
       stringBuffer : StringMaker_Access;
    begin
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (associatedAdvancedRTSGameLayer.getName);
         stringBuffer.append (To_Unbounded_String (" Visited: "));
         stringBuffer.append (This.stringUtil.toString (geographicMapCellPosition));
-        This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("selected: processWaypoint"));
+        This.logUtil.putF (stringBuffer.toString, Waypoint2SelectedLogHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("selected: processWaypoint"));
    end processWaypointTrackedVisit;
 
-   procedure processWaypointTrackedWithoutProgress (This : in out Waypoint2SelectedLogHelper; associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access; reason : Unbounded_String) is
+   procedure processWaypointTrackedWithoutProgress (This : in out Waypoint2SelectedLogHelper; associatedAdvancedRTSGameLayer_Param : access PathFindingLayerInterface'Class; reason : Unbounded_String) is
+      associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (associatedAdvancedRTSGameLayer_Param);
    begin
-        This.logUtil.putF (StringMaker_Package.Create.append (associatedAdvancedRTSGameLayer.getName).append (reason).toString, This'Unchecked_Access, To_Unbounded_String ("turnTo"));
+        This.logUtil.putF (StringMaker_Package.Create.append (associatedAdvancedRTSGameLayer.getName).append (reason).toString, Waypoint2SelectedLogHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("turnTo"));
    end processWaypointTrackedWithoutProgress;
 
-   procedure wander (This : in out Waypoint2SelectedLogHelper; associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access) is
+   procedure wander (This : in out Waypoint2SelectedLogHelper; associatedAdvancedRTSGameLayer_Param : access PathFindingLayerInterface'Class) is
+      associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (associatedAdvancedRTSGameLayer_Param);
    begin
-        This.logUtil.putF (associatedAdvancedRTSGameLayer.getName, This'Unchecked_Access, To_Unbounded_String ("wander"));
+        This.logUtil.putF (associatedAdvancedRTSGameLayer.getName, Waypoint2SelectedLogHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("wander"));
    end wander;
 
-   procedure targetDestroyed (This : in out Waypoint2SelectedLogHelper; associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access) is
+   procedure targetDestroyed (This : in out Waypoint2SelectedLogHelper; associatedAdvancedRTSGameLayer_Param : access PathFindingLayerInterface'Class) is
+      associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (associatedAdvancedRTSGameLayer_Param);
    begin
-        This.logUtil.putF (StringMaker_Package.Create.append (associatedAdvancedRTSGameLayer.getName).append (To_Unbounded_String (" Target Destroyed")).toString, This'Unchecked_Access, To_Unbounded_String ("selected: processTargeting"));
+        This.logUtil.putF (StringMaker_Package.Create.append (associatedAdvancedRTSGameLayer.getName).append (To_Unbounded_String (" Target Destroyed")).toString, Waypoint2SelectedLogHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("selected: processTargeting"));
    end targetDestroyed;
 
-   procedure processTargeting (This : in out Waypoint2SelectedLogHelper; associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access; dx : Integer; dy : Integer) is
+   procedure processTargeting (This : in out Waypoint2SelectedLogHelper; associatedAdvancedRTSGameLayer_Param : access PathFindingLayerInterface'Class; dx : Integer; dy : Integer) is
+      associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (associatedAdvancedRTSGameLayer_Param);
       stringBuffer : StringMaker_Access;
    begin
         stringBuffer := StringMaker_Package.Create;
@@ -210,10 +237,11 @@ package body org.allbinary.game.layer.waypoint.Waypoint2SelectedLogHelper_Packag
         stringBuffer.append (This.commonSeps.SPACE);
         stringBuffer.append (This.positionStrings.DY_LABEL);
         stringBuffer.appendint (dy);
-        This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("selected: processTargeting"));
+        This.logUtil.putF (stringBuffer.toString, Waypoint2SelectedLogHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("selected: processTargeting"));
    end processTargeting;
 
-   procedure processTargetingNonWayPoint (This : in out Waypoint2SelectedLogHelper; associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access; dx : Integer; dy : Integer) is
+   procedure processTargetingNonWayPoint (This : in out Waypoint2SelectedLogHelper; associatedAdvancedRTSGameLayer_Param : access PathFindingLayerInterface'Class; dx : Integer; dy : Integer) is
+      associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (associatedAdvancedRTSGameLayer_Param);
       stringBuffer : StringMaker_Access;
    begin
         stringBuffer := StringMaker_Package.Create;
@@ -224,10 +252,13 @@ package body org.allbinary.game.layer.waypoint.Waypoint2SelectedLogHelper_Packag
         stringBuffer.append (This.commonSeps.SPACE);
         stringBuffer.append (This.positionStrings.DY_LABEL);
         stringBuffer.appendint (dy);
-        This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("selected: processTargeting"));
+        This.logUtil.putF (stringBuffer.toString, Waypoint2SelectedLogHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("selected: processTargeting"));
    end processTargetingNonWayPoint;
 
-   procedure removeWaypoint (This : in out Waypoint2SelectedLogHelper; associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access; unitWaypointBehavior2 : WaypointBehaviorBase_Access; waypointLayer : PathFindingLayerInterface_Access; reason : Unbounded_String) is
+   procedure removeWaypoint (This : in out Waypoint2SelectedLogHelper; associatedAdvancedRTSGameLayer_Param : access PathFindingLayerInterface'Class; unitWaypointBehavior2_Param : access WaypointBehaviorBase'Class; waypointLayer_Param : access PathFindingLayerInterface'Class; reason : Unbounded_String) is
+      associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (associatedAdvancedRTSGameLayer_Param);
+      unitWaypointBehavior2 : WaypointBehaviorBase_Access := WaypointBehaviorBase_Access (unitWaypointBehavior2_Param);
+      waypointLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (waypointLayer_Param);
       stringBuffer : StringMaker_Access;
    begin
         stringBuffer := StringMaker_Package.Create;
@@ -238,10 +269,13 @@ package body org.allbinary.game.layer.waypoint.Waypoint2SelectedLogHelper_Packag
         stringBuffer.append (waypointLayer.getName);
         stringBuffer.append (To_Unbounded_String (" because: "));
         stringBuffer.append (reason);
-        This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("selected: removeWaypoint"));
+        This.logUtil.putF (stringBuffer.toString, Waypoint2SelectedLogHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("selected: removeWaypoint"));
    end removeWaypoint;
 
-   procedure removeWaypointList (This : in out Waypoint2SelectedLogHelper; associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access; unitWaypointBehavior2 : WaypointBehaviorBase_Access; list : BasicArrayList_Access) is
+   procedure removeWaypointList (This : in out Waypoint2SelectedLogHelper; associatedAdvancedRTSGameLayer_Param : access PathFindingLayerInterface'Class; unitWaypointBehavior2_Param : access WaypointBehaviorBase'Class; list_Param : access BasicArrayList'Class) is
+      associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (associatedAdvancedRTSGameLayer_Param);
+      unitWaypointBehavior2 : WaypointBehaviorBase_Access := WaypointBehaviorBase_Access (unitWaypointBehavior2_Param);
+      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
       stringBuffer : StringMaker_Access;
    begin
         stringBuffer := StringMaker_Package.Create;
@@ -250,20 +284,24 @@ package body org.allbinary.game.layer.waypoint.Waypoint2SelectedLogHelper_Packag
         stringBuffer.append (unitWaypointBehavior2.getName);
         stringBuffer.append (To_Unbounded_String (" Waypoints: "));
         stringBuffer.append (This.stringUtil.toString (list));
-        This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("selected: removeWaypoint"));
+        This.logUtil.putF (stringBuffer.toString, Waypoint2SelectedLogHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("selected: removeWaypoint"));
    end removeWaypointList;
 
-   procedure removeWaypointClear (This : in out Waypoint2SelectedLogHelper; associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access) is
+   procedure removeWaypointClear (This : in out Waypoint2SelectedLogHelper; associatedAdvancedRTSGameLayer_Param : access PathFindingLayerInterface'Class) is
+      associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (associatedAdvancedRTSGameLayer_Param);
    begin
-        This.logUtil.putF (StringMaker_Package.Create.append (associatedAdvancedRTSGameLayer.getName).append (To_Unbounded_String (" Clearing removed waypoint")).toString, This'Unchecked_Access, To_Unbounded_String ("selected: removeWaypoint"));
+        This.logUtil.putF (StringMaker_Package.Create.append (associatedAdvancedRTSGameLayer.getName).append (To_Unbounded_String (" Clearing removed waypoint")).toString, Waypoint2SelectedLogHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("selected: removeWaypoint"));
    end removeWaypointClear;
 
-   procedure clearTarget (This : in out Waypoint2SelectedLogHelper; associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access) is
+   procedure clearTarget (This : in out Waypoint2SelectedLogHelper; associatedAdvancedRTSGameLayer_Param : access PathFindingLayerInterface'Class) is
+      associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (associatedAdvancedRTSGameLayer_Param);
    begin
-        This.logUtil.putF (StringMaker_Package.Create.append (associatedAdvancedRTSGameLayer.getName).append (To_Unbounded_String (" Cleared Target")).toString, This'Unchecked_Access, To_Unbounded_String ("selected: clearTarget"));
+        This.logUtil.putF (StringMaker_Package.Create.append (associatedAdvancedRTSGameLayer.getName).append (To_Unbounded_String (" Cleared Target")).toString, Waypoint2SelectedLogHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("selected: clearTarget"));
    end clearTarget;
 
-   procedure addWaypointFromUser (This : in out Waypoint2SelectedLogHelper; associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access; advancedRTSGameLayer : PathFindingLayerInterface_Access) is
+   procedure addWaypointFromUser (This : in out Waypoint2SelectedLogHelper; associatedAdvancedRTSGameLayer_Param : access PathFindingLayerInterface'Class; advancedRTSGameLayer_Param : access PathFindingLayerInterface'Class) is
+      associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (associatedAdvancedRTSGameLayer_Param);
+      advancedRTSGameLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (advancedRTSGameLayer_Param);
       stringBuffer : StringMaker_Access;
    begin
         stringBuffer := StringMaker_Package.Create;
@@ -274,12 +312,13 @@ package body org.allbinary.game.layer.waypoint.Waypoint2SelectedLogHelper_Packag
             stringBuffer.append (To_Unbounded_String (" With Parent: "));
             stringBuffer.append (advancedRTSGameLayer.getParentLayer.getName);
         end if;
-        This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("selected: onWaypointEvent"));
+        This.logUtil.putF (stringBuffer.toString, Waypoint2SelectedLogHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("selected: onWaypointEvent"));
    end addWaypointFromUser;
 
-   procedure targetMovedSoRetarget (This : in out Waypoint2SelectedLogHelper; associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access) is
+   procedure targetMovedSoRetarget (This : in out Waypoint2SelectedLogHelper; associatedAdvancedRTSGameLayer_Param : access PathFindingLayerInterface'Class) is
+      associatedAdvancedRTSGameLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (associatedAdvancedRTSGameLayer_Param);
    begin
-        This.logUtil.putF (StringMaker_Package.Create.append (associatedAdvancedRTSGameLayer.getName).append (To_Unbounded_String (" - target moved so retargeting")).toString, This'Unchecked_Access, To_Unbounded_String ("turnTo"));
+        This.logUtil.putF (StringMaker_Package.Create.append (associatedAdvancedRTSGameLayer.getName).append (To_Unbounded_String (" - target moved so retargeting")).toString, Waypoint2SelectedLogHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("turnTo"));
    end targetMovedSoRetarget;
 
 begin

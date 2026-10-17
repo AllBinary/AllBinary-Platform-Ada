@@ -40,10 +40,10 @@ package org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositi
       geographicMapCellPositionEventHandler : GeographicMapCellPositionEventHandler_Access;
    end record;
 
-   procedure Initialize (This : in out GeographicMapCellPositionEventUtil'Class; anyType : Java_Object_Access);
-   function Create (anyType : Java_Object_Access) return GeographicMapCellPositionEventUtil_Access;
-   procedure update (This : in out GeographicMapCellPositionEventUtil; geographicMapCellPositionTracking : GeographicMapCellPositionTracking_Access);
-   procedure remove (This : in out GeographicMapCellPositionEventUtil; geographicMapCellPositionTracking : GeographicMapCellPositionTracking_Access);
+   procedure Initialize (This : in out GeographicMapCellPositionEventUtil'Class; anyType_Param : access Java_Object'Class);
+   function Create (anyType_Param : access Java_Object'Class) return GeographicMapCellPositionEventUtil_Access;
+   procedure update (This : in out GeographicMapCellPositionEventUtil; geographicMapCellPositionTracking_Param : access GeographicMapCellPositionTracking'Class);
+   procedure remove (This : in out GeographicMapCellPositionEventUtil; geographicMapCellPositionTracking_Param : access GeographicMapCellPositionTracking'Class);
 
 end org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEventUtil_Package;
 

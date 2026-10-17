@@ -44,7 +44,8 @@ package body org.allbinary.image.sprite.AnimationFactorySpriteScaleUtil_Package 
    end getInstance;
 
    --  throws Exception
-   function createImage (This : in out AnimationFactorySpriteScaleUtil; image : Image_Access; width : Integer; height : Integer; scaleWidth : Integer; scaleHeight : Integer) return Sprite_Access is
+   function createImage (This : in out AnimationFactorySpriteScaleUtil; image_Param : access Image'Class; width : Integer; height : Integer; scaleWidth : Integer; scaleHeight : Integer) return Sprite_Access is
+      image : Image_Access := Image_Access (image_Param);
       spriteFactory : SpriteFactory_Access;
       sprite : Sprite_Access;
       scaledImage : Image_Access;
@@ -93,8 +94,8 @@ package body org.allbinary.image.sprite.AnimationFactorySpriteScaleUtil_Package 
         return sprite;
    end createImage;
 
-   procedure createImage (This : in out AnimationFactorySpriteScaleUtil; image : Image_Access; width : Integer; height : Integer; scaleWidth : Integer; scaleHeight : Integer) is
-      Java_Result : constant Sprite_Access := AnimationFactorySpriteScaleUtil'Class (This).createImage (image, width, height, scaleWidth, scaleHeight);
+   procedure createImage (This : in out AnimationFactorySpriteScaleUtil; image_Param : access Image'Class; width : Integer; height : Integer; scaleWidth : Integer; scaleHeight : Integer) is
+      Java_Result : constant Sprite_Access := AnimationFactorySpriteScaleUtil'Class (This).createImage (image_Param, width, height, scaleWidth, scaleHeight);
       pragma Unreferenced (Java_Result);
    begin
       null;

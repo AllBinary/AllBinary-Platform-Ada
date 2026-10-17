@@ -58,17 +58,17 @@ package org.allbinary.input.automation.module.actions.script.condition.processor
       titleJLabel : JLabel_Access;
    end record;
 
-   procedure Initialize (This : in out ImageActionScriptOutputJPanel'Class; capturedImageActionScriptOutputInterface : ImageActionScriptOutputInterface_Access);
-   function Create (capturedImageActionScriptOutputInterface : ImageActionScriptOutputInterface_Access) return ImageActionScriptOutputJPanel_Access;
+   procedure Initialize (This : in out ImageActionScriptOutputJPanel'Class; capturedImageActionScriptOutputInterface_Param : access ImageActionScriptOutputInterface'Class);
+   function Create (capturedImageActionScriptOutputInterface_Param : access ImageActionScriptOutputInterface'Class) return ImageActionScriptOutputJPanel_Access;
    procedure set (This : in out ImageActionScriptOutputJPanel);
    procedure update (This : in out ImageActionScriptOutputJPanel);
    procedure setImageTypeJlistModel (This : in out ImageActionScriptOutputJPanel);
    function getCapturedImageActionJDialog (This : in out ImageActionScriptOutputJPanel) return JDialog_Access;
-   procedure setCapturedImageActionJDialog (This : in out ImageActionScriptOutputJPanel; capturedImageActionJDialog : JDialog_Access);
+   procedure setCapturedImageActionJDialog (This : in out ImageActionScriptOutputJPanel; capturedImageActionJDialog_Param : access JDialog'Class);
    procedure initComponents (This : in out ImageActionScriptOutputJPanel);
-   procedure displayJCheckBoxActionPerformed (This : in out ImageActionScriptOutputJPanel; evt : ActionEvent_Access);
-   procedure okJButtonActionPerformed (This : in out ImageActionScriptOutputJPanel; evt : ActionEvent_Access);
-   procedure capturedImageActionJButtonActionPerformed (This : in out ImageActionScriptOutputJPanel; evt : ActionEvent_Access);
+   procedure displayJCheckBoxActionPerformed (This : in out ImageActionScriptOutputJPanel; evt_Param : access ActionEvent'Class);
+   procedure okJButtonActionPerformed (This : in out ImageActionScriptOutputJPanel; evt_Param : access ActionEvent'Class);
+   procedure capturedImageActionJButtonActionPerformed (This : in out ImageActionScriptOutputJPanel; evt_Param : access ActionEvent'Class);
 
 end org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutputJPanel_Package;
 

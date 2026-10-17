@@ -58,8 +58,8 @@ package org.allbinary.media.audio.BasicPlayer_Package is
    procedure getControl (This : in out BasicPlayer; controlType : Unbounded_String);
    function getControls (This : in out BasicPlayer) return Control_Access_Array_Access;
    procedure close (This : in out BasicPlayer);
-   procedure addPlayerListener (This : in out BasicPlayer; playerListener : PlayerListener_Access);
-   procedure removePlayerListener (This : in out BasicPlayer; playerListener : PlayerListener_Access);
+   procedure addPlayerListener (This : in out BasicPlayer; playerListener_Param : access PlayerListener'Class);
+   procedure removePlayerListener (This : in out BasicPlayer; playerListener_Param : access PlayerListener'Class);
    function getState (This : in out BasicPlayer) return Integer;
    procedure setState (This : in out BasicPlayer; state : Integer);
    function getDuration (This : in out BasicPlayer) return Long_Long_Integer;

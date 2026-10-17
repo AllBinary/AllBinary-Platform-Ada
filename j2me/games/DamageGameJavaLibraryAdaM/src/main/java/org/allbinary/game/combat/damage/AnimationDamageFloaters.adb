@@ -27,7 +27,8 @@ package body org.allbinary.game.combat.damage.AnimationDamageFloaters_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AnimationDamageFloaters'Class; layerInterface : AllBinaryLayer_Access; animationInterfaceArray : IndexedAnimation_Access_Array_Access; dx : Integer; dy : Integer) is
+   procedure Initialize (This : in out AnimationDamageFloaters'Class; layerInterface_Param : access AllBinaryLayer'Class; animationInterfaceArray : IndexedAnimation_Access_Array_Access; dx : Integer; dy : Integer) is
+      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
       index : Integer;
    begin
       DamageFloaters_Package.Initialize (This);
@@ -42,10 +43,10 @@ package body org.allbinary.game.combat.damage.AnimationDamageFloaters_Package is
         This.dy := dy;
    end Initialize;
 
-   function Create (layerInterface : AllBinaryLayer_Access; animationInterfaceArray : IndexedAnimation_Access_Array_Access; dx : Integer; dy : Integer) return AnimationDamageFloaters_Access is
+   function Create (layerInterface_Param : access AllBinaryLayer'Class; animationInterfaceArray : IndexedAnimation_Access_Array_Access; dx : Integer; dy : Integer) return AnimationDamageFloaters_Access is
       This : constant AnimationDamageFloaters_Access := new AnimationDamageFloaters;
    begin
-      AnimationDamageFloaters_Package.Initialize (This.all, layerInterface, animationInterfaceArray, dx, dy);
+      AnimationDamageFloaters_Package.Initialize (This.all, layerInterface_Param, animationInterfaceArray, dx, dy);
       return This;
    end Create;
 
@@ -57,7 +58,8 @@ package body org.allbinary.game.combat.damage.AnimationDamageFloaters_Package is
         This.circularIndexUtil.next;
    end add;
 
-   procedure paint (This : in out AnimationDamageFloaters; graphics : Graphics_Access) is
+   procedure paint (This : in out AnimationDamageFloaters; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       viewPosition : ViewPositionBase_Access;
       x : Integer;
       y : Integer;
@@ -86,7 +88,7 @@ package body org.allbinary.game.combat.damage.AnimationDamageFloaters_Package is
                 begin
             commonStrings := CommonStrings_Package.getInstance;
             canvasStrings := CanvasStrings_Package.getInstance;
-            This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, canvasStrings.PAINT, e);
+            This.logUtil.put (commonStrings.EXCEPTION_Id, AnimationDamageFloaters_Access'(This'Unchecked_Access), canvasStrings.PAINT, e);
                 end;
         end;
    end paint;

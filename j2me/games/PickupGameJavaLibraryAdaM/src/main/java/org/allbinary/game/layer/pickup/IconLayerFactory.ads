@@ -36,8 +36,8 @@ package org.allbinary.game.layer.pickup.IconLayerFactory_Package is
 
    procedure Initialize (This : in out IconLayerFactory'Class);
    function Create return IconLayerFactory_Access;
-   function getInstance (animationInterface : Animation_Access; width : Integer; height : Integer) return IconLayer_Access;
-   procedure getInstance (animationInterface : Animation_Access; width : Integer; height : Integer);
+   function getInstance (animationInterface_Param : access Animation'Class; width : Integer; height : Integer) return IconLayer_Access;
+   procedure getInstance (animationInterface_Param : access Animation'Class; width : Integer; height : Integer);
 
 end org.allbinary.game.layer.pickup.IconLayerFactory_Package;
 

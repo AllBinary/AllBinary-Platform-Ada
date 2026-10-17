@@ -28,33 +28,37 @@ package body admin.taghelpers.AuthenticationHelper_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AuthenticationHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access) is
+   procedure Initialize (This : in out AuthenticationHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
    begin
         Initialize (This, hashMap, HttpServletRequest_Access (pageContext.getRequest));
    end Initialize;
 
-   function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return AuthenticationHelper_Access is
+   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return AuthenticationHelper_Access is
       This : constant AuthenticationHelper_Access := new AuthenticationHelper;
    begin
-      AuthenticationHelper_Package.Initialize (This.all, hashMap, pageContext);
+      AuthenticationHelper_Package.Initialize (This.all, hashMap_Param, pageContext_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out AuthenticationHelper'Class; hashMap : HashMap_Access; httpServletRequest : HttpServletRequest_Access) is
+   procedure Initialize (This : in out AuthenticationHelper'Class; hashMap_Param : access HashMap'Class; httpServletRequest_Param : access HttpServletRequest'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+      httpServletRequest : HttpServletRequest_Access := HttpServletRequest_Access (httpServletRequest_Param);
    begin
       TagHelper_Package.Initialize (This);
       Initialize_Fields (This);
         This.weblisketSession := WeblisketSession_Package.Create (hashMap, httpServletRequest);
         This.getFormData;
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.AUTHENTICATION) then
-            This.logUtil.putF (This.outputSessionInfo, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+            This.logUtil.putF (This.outputSessionInfo, AuthenticationHelper_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
    end Initialize;
 
-   function Create (hashMap : HashMap_Access; httpServletRequest : HttpServletRequest_Access) return AuthenticationHelper_Access is
+   function Create (hashMap_Param : access HashMap'Class; httpServletRequest_Param : access HttpServletRequest'Class) return AuthenticationHelper_Access is
       This : constant AuthenticationHelper_Access := new AuthenticationHelper;
    begin
-      AuthenticationHelper_Package.Initialize (This.all, hashMap, httpServletRequest);
+      AuthenticationHelper_Package.Initialize (This.all, hashMap_Param, httpServletRequest_Param);
       return This;
    end Create;
 
@@ -80,7 +84,7 @@ package body admin.taghelpers.AuthenticationHelper_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.AUTHENTICATIONERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("invalidateSession()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, AuthenticationHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("invalidateSession()"), e);
             end if;
             return null;
                 end;
@@ -108,13 +112,13 @@ package body admin.taghelpers.AuthenticationHelper_Package is
                     stringBuffer.appendlong (timeFirst);
                     stringBuffer.append (To_Unbounded_String (" > "));
                     stringBuffer.appendlong (timeCreated);
-                    This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("isSessionOld()"));
+                    This.logUtil.putF (stringBuffer.toString, AuthenticationHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("isSessionOld()"));
                 end if;
                 return True;
             end if;
         else
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.AUTHENTICATION) then
-                This.logUtil.putF (To_Unbounded_String ("Role Is Not In Session"), This'Unchecked_Access, To_Unbounded_String ("isSessionOld()"));
+                This.logUtil.putF (To_Unbounded_String ("Role Is Not In Session"), AuthenticationHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("isSessionOld()"));
             end if;
         end if;
         return This.isRarelyUsedSession;
@@ -142,11 +146,11 @@ package body admin.taghelpers.AuthenticationHelper_Package is
                 stringBuffer.appendlong (timeFirst);
                 stringBuffer.append (To_Unbounded_String (" > "));
                 stringBuffer.appendlong (inactivityAllowed);
-                This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("isRarelyUsedSession()"));
+                This.logUtil.putF (stringBuffer.toString, AuthenticationHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("isRarelyUsedSession()"));
             end if;
         else
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.AUTHENTICATION) then
-                This.logUtil.putF (To_Unbounded_String ("Role Is Not In Session"), This'Unchecked_Access, To_Unbounded_String ("isRarelyUsedSession()"));
+                This.logUtil.putF (To_Unbounded_String ("Role Is Not In Session"), AuthenticationHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("isRarelyUsedSession()"));
             end if;
         end if;
         return False;
@@ -167,7 +171,7 @@ package body admin.taghelpers.AuthenticationHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to set valid role");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.AUTHENTICATIONERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("validRole()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, AuthenticationHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("validRole()"), e);
             end if;
             return error;
                 end;
@@ -191,7 +195,7 @@ package body admin.taghelpers.AuthenticationHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to set role invalid");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.AUTHENTICATIONERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("invalidRole()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, AuthenticationHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("invalidRole()"), e);
             end if;
             return error;
                 end;
@@ -208,7 +212,8 @@ package body admin.taghelpers.AuthenticationHelper_Package is
         end if;
    end isAuthenticated;
 
-   function isAuthenticationSessionValid (This : in out AuthenticationHelper; roles : BasicArrayList_Access) return Boolean is
+   function isAuthenticationSessionValid (This : in out AuthenticationHelper; roles_Param : access BasicArrayList'Class) return Boolean is
+      roles : BasicArrayList_Access := BasicArrayList_Access (roles_Param);
       basicUserRole : BasicUserRole_Access;
       basicUserRoleArray : Java_Object_Access_Array_Access;
       size : Integer;
@@ -242,7 +247,7 @@ package body admin.taghelpers.AuthenticationHelper_Package is
                 end if;
             else
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.AUTHENTICATION) then
-                    This.logUtil.putF (To_Unbounded_String ("Role Is Not In Session"), This'Unchecked_Access, To_Unbounded_String ("isAuthenticationSessionValid()"));
+                    This.logUtil.putF (To_Unbounded_String ("Role Is Not In Session"), AuthenticationHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("isAuthenticationSessionValid()"));
                 end if;
             end if;
             return False;
@@ -252,7 +257,7 @@ package body admin.taghelpers.AuthenticationHelper_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.AUTHENTICATIONERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("isAuthenticatedSessionValid()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, AuthenticationHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("isAuthenticatedSessionValid()"), e);
             end if;
             return False;
                 end;
@@ -275,7 +280,7 @@ package body admin.taghelpers.AuthenticationHelper_Package is
    begin
         begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.AUTHENTICATIONERROR) then
-                This.logUtil.putF (To_Unbounded_String ("Starting: ") & userName, This'Unchecked_Access, To_Unbounded_String ("processIfNewLogin()"));
+                This.logUtil.putF (To_Unbounded_String ("Starting: ") & userName, AuthenticationHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("processIfNewLogin()"));
             end if;
             if ((((userName) /= (Null_Unbounded_String)) and then ((userName.compareTo (StringUtil_Package.getInstance.EMPTY_STRING)) /= (0))) and then ((password) /= (Null_Unbounded_String))) and then ((password.compareTo (StringUtil_Package.getInstance.EMPTY_STRING)) /= (0)) then
                 login := Null_Unbounded_String;
@@ -299,7 +304,7 @@ package body admin.taghelpers.AuthenticationHelper_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.AUTHENTICATIONERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("processIfNewLogin()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, AuthenticationHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("processIfNewLogin()"), e);
             end if;
             return False;
                 end;
@@ -323,7 +328,7 @@ package body admin.taghelpers.AuthenticationHelper_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.AUTHENTICATIONERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("processInvalidation()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, AuthenticationHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("processInvalidation()"), e);
             end if;
             return False;
                 end;
@@ -378,8 +383,8 @@ package body admin.taghelpers.AuthenticationHelper_Package is
         return This.role;
    end getRole;
 
-   procedure isAuthenticationSessionValid (This : in out AuthenticationHelper; roles : BasicArrayList_Access) is
-      Java_Result : constant Boolean := AuthenticationHelper'Class (This).isAuthenticationSessionValid (roles);
+   procedure isAuthenticationSessionValid (This : in out AuthenticationHelper; roles_Param : access BasicArrayList'Class) is
+      Java_Result : constant Boolean := AuthenticationHelper'Class (This).isAuthenticationSessionValid (roles_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

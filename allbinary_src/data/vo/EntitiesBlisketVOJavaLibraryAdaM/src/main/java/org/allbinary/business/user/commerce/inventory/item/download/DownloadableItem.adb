@@ -61,7 +61,8 @@ package body org.allbinary.business.user.commerce.inventory.item.download.Downlo
       return This;
    end Create;
 
-   procedure Initialize (This : in out DownloadableItem'Class; hashMap : HashMap_Access) is
+   procedure Initialize (This : in out DownloadableItem'Class; hashMap_Param : access HashMap'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
       value : Unbounded_String;
       validTime : Unbounded_String;
       totalYears : Unbounded_String;
@@ -105,10 +106,10 @@ package body org.allbinary.business.user.commerce.inventory.item.download.Downlo
         This.retries := Unbounded_String (hashMap.get (DownloadItemData_Package.RETRIES));
    end Initialize;
 
-   function Create (hashMap : HashMap_Access) return DownloadableItem_Access is
+   function Create (hashMap_Param : access HashMap'Class) return DownloadableItem_Access is
       This : constant DownloadableItem_Access := new DownloadableItem;
    begin
-      DownloadableItem_Package.Initialize (This.all, hashMap);
+      DownloadableItem_Package.Initialize (This.all, hashMap_Param);
       return This;
    end Create;
 

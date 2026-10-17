@@ -49,8 +49,8 @@ package org.allbinary.input.automation.module.TestInputAutomationActionWorker_Pa
       sleep : Integer;
    end record;
 
-   procedure Initialize (This : in out TestInputAutomationActionWorker'Class; sleep : Integer; inputAutomationActionInterface : InputAutomationActionInterface_Access; imageComparatorConstraintsInterface : ImageComparatorConstraintsInterface_Access; motionRectangleConstraintsInterface : MotionRectangleConstraintsInterface_Access);
-   function Create (sleep : Integer; inputAutomationActionInterface : InputAutomationActionInterface_Access; imageComparatorConstraintsInterface : ImageComparatorConstraintsInterface_Access; motionRectangleConstraintsInterface : MotionRectangleConstraintsInterface_Access) return TestInputAutomationActionWorker_Access;
+   procedure Initialize (This : in out TestInputAutomationActionWorker'Class; sleep : Integer; inputAutomationActionInterface_Param : access InputAutomationActionInterface'Class; imageComparatorConstraintsInterface_Param : access ImageComparatorConstraintsInterface'Class; motionRectangleConstraintsInterface_Param : access MotionRectangleConstraintsInterface'Class);
+   function Create (sleep : Integer; inputAutomationActionInterface_Param : access InputAutomationActionInterface'Class; imageComparatorConstraintsInterface_Param : access ImageComparatorConstraintsInterface'Class; motionRectangleConstraintsInterface_Param : access MotionRectangleConstraintsInterface'Class) return TestInputAutomationActionWorker_Access;
    procedure processBetweenWorkers (This : in out TestInputAutomationActionWorker);
    procedure process (This : in out TestInputAutomationActionWorker);
 

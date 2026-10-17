@@ -34,7 +34,8 @@ package body org.allbinary.game.behavior.topview.placement.AllAnimationsEverywhe
    end Create;
 
 
-   procedure visit (This : in out AllAnimationsEverywhereTileMapPlacementVisitor; lastMap : TiledMap_Access; mapData : Integer_Array_Access_Array_Access) is
+   procedure visit (This : in out AllAnimationsEverywhereTileMapPlacementVisitor; lastMap_Param : access TiledMap'Class; mapData : Integer_Array_Access_Array_Access) is
+      lastMap : TiledMap_Access := TiledMap_Access (lastMap_Param);
       size : Integer;
       size2 : Integer;
       index2 : Integer;

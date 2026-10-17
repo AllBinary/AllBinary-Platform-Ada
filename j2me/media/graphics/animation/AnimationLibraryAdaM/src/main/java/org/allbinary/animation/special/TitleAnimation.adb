@@ -40,7 +40,8 @@ package body org.allbinary.animation.special.TitleAnimation_Package is
         return TitleAnimation_Package.Create (animationInterfaceArray, basicColorArray, dxArray, dyArray, y, width, IndexedAnimationBehavior_Package.Create (1, 250));
    end createAnimation;
 
-   procedure Initialize (This : in out TitleAnimation'Class; animationInterfaceArray : IndexedAnimation_Access_Array_Access; basicColorArray : BasicColor_Access_Array_Access; dxArray : Integer_Array_Access; dyArray : Integer_Array_Access; y : Integer; width : Integer; animationBehavior : AnimationBehavior_Access) is
+   procedure Initialize (This : in out TitleAnimation'Class; animationInterfaceArray : IndexedAnimation_Access_Array_Access; basicColorArray : BasicColor_Access_Array_Access; dxArray : Integer_Array_Access; dyArray : Integer_Array_Access; y : Integer; width : Integer; animationBehavior_Param : access AnimationBehavior'Class) is
+      animationBehavior : AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
    begin
         SpecialAnimation_Package.Initialize (This, animationBehavior);
         Initialize_Fields (This);
@@ -55,10 +56,10 @@ package body org.allbinary.animation.special.TitleAnimation_Package is
         This.reset;
    end Initialize;
 
-   function Create (animationInterfaceArray : IndexedAnimation_Access_Array_Access; basicColorArray : BasicColor_Access_Array_Access; dxArray : Integer_Array_Access; dyArray : Integer_Array_Access; y : Integer; width : Integer; animationBehavior : AnimationBehavior_Access) return TitleAnimation_Access is
+   function Create (animationInterfaceArray : IndexedAnimation_Access_Array_Access; basicColorArray : BasicColor_Access_Array_Access; dxArray : Integer_Array_Access; dyArray : Integer_Array_Access; y : Integer; width : Integer; animationBehavior_Param : access AnimationBehavior'Class) return TitleAnimation_Access is
       This : constant TitleAnimation_Access := new TitleAnimation;
    begin
-      TitleAnimation_Package.Initialize (This.all, animationInterfaceArray, basicColorArray, dxArray, dyArray, y, width, animationBehavior);
+      TitleAnimation_Package.Initialize (This.all, animationInterfaceArray, basicColorArray, dxArray, dyArray, y, width, animationBehavior_Param);
       return This;
    end Create;
 
@@ -139,13 +140,15 @@ package body org.allbinary.animation.special.TitleAnimation_Package is
         end loop;
    end previousFrame;
 
-   procedure paintFrameXY (This : in out TitleAnimation; graphics : Graphics_Access; frame : Integer; x : Integer; y : Integer) is
+   procedure paintFrameXY (This : in out TitleAnimation; graphics_Param : access Graphics'Class; frame : Integer; x : Integer; y : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.setFrame (frame);
         This.paintXY (graphics, x, y);
    end paintFrameXY;
 
-   procedure paintXY (This : in out TitleAnimation; graphics : Graphics_Access; ax : Integer; ay : Integer) is
+   procedure paintXY (This : in out TitleAnimation; graphics_Param : access Graphics'Class; ax : Integer; ay : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       x : Integer;
       deltaX : Integer;
       deltaY : Integer;

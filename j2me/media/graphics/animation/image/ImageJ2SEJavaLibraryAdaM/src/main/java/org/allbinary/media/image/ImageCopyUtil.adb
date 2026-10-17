@@ -44,13 +44,15 @@ package body org.allbinary.media.image.ImageCopyUtil_Package is
    end Create;
 
    --  throws Exception
-   function createImageForRotation (This : in out ImageCopyUtil; originalImage : Image_Access) return Image_Access is
+   function createImageForRotation (This : in out ImageCopyUtil; originalImage_Param : access Image'Class) return Image_Access is
+      originalImage : Image_Access := Image_Access (originalImage_Param);
    begin
         return This.createImage (originalImage);
    end createImageForRotation;
 
    --  throws Exception
-   function createImage (This : in out ImageCopyUtil; originalImage : Image_Access) return Image_Access is
+   function createImage (This : in out ImageCopyUtil; originalImage_Param : access Image'Class) return Image_Access is
+      originalImage : Image_Access := Image_Access (originalImage_Param);
       image : Image_Access;
    begin
         image := This.imageCreationUtil.createImageWH (originalImage.getWidth, originalImage.getHeight);
@@ -63,7 +65,8 @@ package body org.allbinary.media.image.ImageCopyUtil_Package is
    end createImage;
 
    --  throws Exception
-   function createImageScale (This : in out ImageCopyUtil; originalImage : Image_Access; canvasScale : Float; resize : Boolean) return Image_Access is
+   function createImageScale (This : in out ImageCopyUtil; originalImage_Param : access Image'Class; canvasScale : Float; resize : Boolean) return Image_Access is
+      originalImage : Image_Access := Image_Access (originalImage_Param);
       newWidth : Integer;
       newHeight : Integer;
       originalBufferedImage : BufferedImage_Access;
@@ -86,22 +89,22 @@ package body org.allbinary.media.image.ImageCopyUtil_Package is
         return image;
    end createImageScale;
 
-   procedure createImageForRotation (This : in out ImageCopyUtil; originalImage : Image_Access) is
-      Java_Result : constant Image_Access := ImageCopyUtil'Class (This).createImageForRotation (originalImage);
+   procedure createImageForRotation (This : in out ImageCopyUtil; originalImage_Param : access Image'Class) is
+      Java_Result : constant Image_Access := ImageCopyUtil'Class (This).createImageForRotation (originalImage_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createImageForRotation;
 
-   procedure createImage (This : in out ImageCopyUtil; originalImage : Image_Access) is
-      Java_Result : constant Image_Access := ImageCopyUtil'Class (This).createImage (originalImage);
+   procedure createImage (This : in out ImageCopyUtil; originalImage_Param : access Image'Class) is
+      Java_Result : constant Image_Access := ImageCopyUtil'Class (This).createImage (originalImage_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createImage;
 
-   procedure createImageScale (This : in out ImageCopyUtil; originalImage : Image_Access; canvasScale : Float; resize : Boolean) is
-      Java_Result : constant Image_Access := ImageCopyUtil'Class (This).createImageScale (originalImage, canvasScale, resize);
+   procedure createImageScale (This : in out ImageCopyUtil; originalImage_Param : access Image'Class; canvasScale : Float; resize : Boolean) is
+      Java_Result : constant Image_Access := ImageCopyUtil'Class (This).createImageScale (originalImage_Param, canvasScale, resize);
       pragma Unreferenced (Java_Result);
    begin
       null;

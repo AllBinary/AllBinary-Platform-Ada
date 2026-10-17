@@ -51,15 +51,15 @@ package org.allbinary.game.layer.building.SimulatedBuildingPropertiesFactory_Pac
    procedure Initialize (This : in out SimulatedBuildingPropertiesFactory'Class);
    function Create return SimulatedBuildingPropertiesFactory_Access;
    function getInstance return SimulatedBuildingPropertiesFactory_Access;
-   function getEfficiencyPerLevel (This : in out SimulatedBuildingPropertiesFactory; buildingLayer : BuildingLayer_Access) return Integer;
-   procedure getEfficiencyPerLevel (This : in out SimulatedBuildingPropertiesFactory; buildingLayer : BuildingLayer_Access);
-   function getDamageFloaters (This : in out SimulatedBuildingPropertiesFactory; buildingLayer : BuildingLayer_Access) return DamageFloaters_Access;
-   procedure getDamageFloaters (This : in out SimulatedBuildingPropertiesFactory; buildingLayer : BuildingLayer_Access);
-   function getHealthBar (This : in out SimulatedBuildingPropertiesFactory; buildingLayer : BuildingLayer_Access) return Paintable_Access;
-   procedure getHealthBar (This : in out SimulatedBuildingPropertiesFactory; buildingLayer : BuildingLayer_Access);
+   function getEfficiencyPerLevel (This : in out SimulatedBuildingPropertiesFactory; buildingLayer_Param : access BuildingLayer'Class) return Integer;
+   procedure getEfficiencyPerLevel (This : in out SimulatedBuildingPropertiesFactory; buildingLayer_Param : access BuildingLayer'Class);
+   function getDamageFloaters (This : in out SimulatedBuildingPropertiesFactory; buildingLayer_Param : access BuildingLayer'Class) return DamageFloaters_Access;
+   procedure getDamageFloaters (This : in out SimulatedBuildingPropertiesFactory; buildingLayer_Param : access BuildingLayer'Class);
+   function getHealthBar (This : in out SimulatedBuildingPropertiesFactory; buildingLayer_Param : access BuildingLayer'Class) return Paintable_Access;
+   procedure getHealthBar (This : in out SimulatedBuildingPropertiesFactory; buildingLayer_Param : access BuildingLayer'Class);
    function getHashtable (This : in out SimulatedBuildingPropertiesFactory) return ABHashtable_Access;
-   function getTrackingEvent (This : in out SimulatedBuildingPropertiesFactory; buildingLayer : BuildingLayer_Access) return TrackingEvent_Access;
-   procedure getTrackingEvent (This : in out SimulatedBuildingPropertiesFactory; buildingLayer : BuildingLayer_Access);
+   function getTrackingEvent (This : in out SimulatedBuildingPropertiesFactory; buildingLayer_Param : access BuildingLayer'Class) return TrackingEvent_Access;
+   procedure getTrackingEvent (This : in out SimulatedBuildingPropertiesFactory; buildingLayer_Param : access BuildingLayer'Class);
 
 end org.allbinary.game.layer.building.SimulatedBuildingPropertiesFactory_Package;
 

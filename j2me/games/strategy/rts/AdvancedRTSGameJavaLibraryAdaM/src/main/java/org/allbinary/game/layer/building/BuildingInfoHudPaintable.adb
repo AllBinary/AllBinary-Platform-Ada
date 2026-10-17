@@ -88,7 +88,7 @@ package body org.allbinary.game.layer.building.BuildingInfoHudPaintable_Package 
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.CONSTRUCTOR, e);
+            This.logUtil.put (commonStrings.EXCEPTION_Id, BuildingInfoHudPaintable_Access'(This'Unchecked_Access), commonStrings.CONSTRUCTOR, e);
                 end;
         end;
         This.productivityHud := productivityHud;
@@ -104,7 +104,8 @@ package body org.allbinary.game.layer.building.BuildingInfoHudPaintable_Package 
       return This;
    end Create;
 
-   procedure updateMeasurement (This : in out BuildingInfoHudPaintable; graphics : Graphics_Access) is
+   procedure updateMeasurement (This : in out BuildingInfoHudPaintable; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       font : Font_Access;
       totalLength : Integer;
    begin
@@ -114,7 +115,8 @@ package body org.allbinary.game.layer.building.BuildingInfoHudPaintable_Package 
         This.myFontProcessor := MyFontProcessor_Package.getInstance;
    end updateMeasurement;
 
-   procedure setBasicColorP (This : in out BuildingInfoHudPaintable; basicColor : BasicColor_Access) is
+   procedure setBasicColorP (This : in out BuildingInfoHudPaintable; basicColor_Param : access BasicColor'Class) is
+      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         SelectionHudPaintable (This).setBasicColorP (basicColor);
         This.productivityHud.setBasicColorP (basicColor);
@@ -123,7 +125,8 @@ package body org.allbinary.game.layer.building.BuildingInfoHudPaintable_Package 
         This.maxHealthHud.setBasicColorP (basicColor);
    end setBasicColorP;
 
-   procedure paint (This : in out BuildingInfoHudPaintable; graphics : Graphics_Access) is
+   procedure paint (This : in out BuildingInfoHudPaintable; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         SelectionHudPaintable (This).paint (graphics);
         This.myFontProcessor.process (graphics);
@@ -148,7 +151,8 @@ package body org.allbinary.game.layer.building.BuildingInfoHudPaintable_Package 
         This.maxHealthHud.set (buildingLayer.getHealthInterface.getMaxHealth);
    end updateSelectionInfo;
 
-   procedure setRtsLayer (This : in out BuildingInfoHudPaintable; rtsLayer : PathFindingLayerInterface_Access) is
+   procedure setRtsLayer (This : in out BuildingInfoHudPaintable; rtsLayer_Param : access PathFindingLayerInterface'Class) is
+      rtsLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (rtsLayer_Param);
    begin
         This.rtsLayer := rtsLayer;
    end setRtsLayer;

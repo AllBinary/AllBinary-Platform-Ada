@@ -37,17 +37,17 @@ package org.allbinary.logic.system.security.licensing.ThirdPartyInApplicationPur
 
    procedure Initialize (This : in out ThirdPartyInApplicationPurchase'Class);
    function Create return ThirdPartyInApplicationPurchase_Access;
-   function isPurchased (This : in out ThirdPartyInApplicationPurchase; lockableFeature : LockableFeature_Access) return Boolean;
-   procedure isPurchased (This : in out ThirdPartyInApplicationPurchase; lockableFeature : LockableFeature_Access);
-   procedure onCreate (This : in out ThirdPartyInApplicationPurchase; anyType : Java_Object_Access; stateObject : Java_Object_Access);
+   function isPurchased (This : in out ThirdPartyInApplicationPurchase; lockableFeature_Param : access LockableFeature'Class) return Boolean;
+   procedure isPurchased (This : in out ThirdPartyInApplicationPurchase; lockableFeature_Param : access LockableFeature'Class);
+   procedure onCreate (This : in out ThirdPartyInApplicationPurchase; anyType_Param : access Java_Object'Class; stateObject_Param : access Java_Object'Class);
    procedure onDestroy (This : in out ThirdPartyInApplicationPurchase);
    procedure onStart (This : in out ThirdPartyInApplicationPurchase);
-   procedure onActivityResult (This : in out ThirdPartyInApplicationPurchase; requestCode : Integer; resultCode : Integer; dataObject : Java_Object_Access);
-   procedure onSaveInstanceState (This : in out ThirdPartyInApplicationPurchase; anyType : Java_Object_Access);
+   procedure onActivityResult (This : in out ThirdPartyInApplicationPurchase; requestCode : Integer; resultCode : Integer; dataObject_Param : access Java_Object'Class);
+   procedure onSaveInstanceState (This : in out ThirdPartyInApplicationPurchase; anyType_Param : access Java_Object'Class);
    procedure onStop (This : in out ThirdPartyInApplicationPurchase);
-   procedure requestPurchase (This : in out ThirdPartyInApplicationPurchase; lockableFeature : LockableFeature_Access);
+   procedure requestPurchase (This : in out ThirdPartyInApplicationPurchase; lockableFeature_Param : access LockableFeature'Class);
    procedure requestReceipts (This : in out ThirdPartyInApplicationPurchase);
-   procedure add (This : in out ThirdPartyInApplicationPurchase; lockableFeature : LockableFeature_Access);
+   procedure add (This : in out ThirdPartyInApplicationPurchase; lockableFeature_Param : access LockableFeature'Class);
    function getUserName (This : in out ThirdPartyInApplicationPurchase) return Unbounded_String;
    function isEnabled (This : in out ThirdPartyInApplicationPurchase) return Boolean;
    procedure requestProducts (This : in out ThirdPartyInApplicationPurchase);

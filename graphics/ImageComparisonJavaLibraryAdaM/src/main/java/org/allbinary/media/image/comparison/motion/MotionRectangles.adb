@@ -25,7 +25,8 @@ package body org.allbinary.media.image.comparison.motion.MotionRectangles_Packag
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out MotionRectangles'Class; name : Unbounded_String; imageComparisonResult : ImageComparisonResult_Access) is
+   procedure Initialize (This : in out MotionRectangles'Class; name : Unbounded_String; imageComparisonResult_Param : access ImageComparisonResult'Class) is
+      imageComparisonResult : ImageComparisonResult_Access := ImageComparisonResult_Access (imageComparisonResult_Param);
    begin
       Initialize_Fields (This);
         This.name := name;
@@ -33,10 +34,10 @@ package body org.allbinary.media.image.comparison.motion.MotionRectangles_Packag
         This.setVector (BasicArrayListD_Package.Create);
    end Initialize;
 
-   function Create (name : Unbounded_String; imageComparisonResult : ImageComparisonResult_Access) return MotionRectangles_Access is
+   function Create (name : Unbounded_String; imageComparisonResult_Param : access ImageComparisonResult'Class) return MotionRectangles_Access is
       This : constant MotionRectangles_Access := new MotionRectangles;
    begin
-      MotionRectangles_Package.Initialize (This.all, name, imageComparisonResult);
+      MotionRectangles_Package.Initialize (This.all, name, imageComparisonResult_Param);
       return This;
    end Create;
 
@@ -45,7 +46,8 @@ package body org.allbinary.media.image.comparison.motion.MotionRectangles_Packag
         return This.rectangleVector;
    end getVector;
 
-   procedure setVector (This : in out MotionRectangles; rectangleVector : BasicArrayList_Access) is
+   procedure setVector (This : in out MotionRectangles; rectangleVector_Param : access BasicArrayList'Class) is
+      rectangleVector : BasicArrayList_Access := BasicArrayList_Access (rectangleVector_Param);
    begin
         This.rectangleVector := rectangleVector;
    end setVector;
@@ -60,7 +62,8 @@ package body org.allbinary.media.image.comparison.motion.MotionRectangles_Packag
         return This.imageComparisonResult;
    end getImageComparisonResult;
 
-   procedure setImageComparisonResult (This : in out MotionRectangles; imageComparisonResult : ImageComparisonResult_Access) is
+   procedure setImageComparisonResult (This : in out MotionRectangles; imageComparisonResult_Param : access ImageComparisonResult'Class) is
+      imageComparisonResult : ImageComparisonResult_Access := ImageComparisonResult_Access (imageComparisonResult_Param);
    begin
         This.imageComparisonResult := imageComparisonResult;
    end setImageComparisonResult;

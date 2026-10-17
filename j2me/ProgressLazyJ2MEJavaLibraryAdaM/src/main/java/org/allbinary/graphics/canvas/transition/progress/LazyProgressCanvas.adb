@@ -21,15 +21,17 @@ package body org.allbinary.graphics.canvas.transition.progress.LazyProgressCanva
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out LazyProgressCanvas'Class; title : Unbounded_String; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) is
+   procedure Initialize (This : in out LazyProgressCanvas'Class; title : Unbounded_String; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) is
+      backgroundBasicColor : BasicColor_Access := BasicColor_Access (backgroundBasicColor_Param);
+      foregroundBasicColor : BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
    begin
         ProgressCanvas_Package.Initialize (This, title, backgroundBasicColor, foregroundBasicColor);
    end Initialize;
 
-   function Create (title : Unbounded_String; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return LazyProgressCanvas_Access is
+   function Create (title : Unbounded_String; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return LazyProgressCanvas_Access is
       This : constant LazyProgressCanvas_Access := new LazyProgressCanvas;
    begin
-      LazyProgressCanvas_Package.Initialize (This.all, title, backgroundBasicColor, foregroundBasicColor);
+      LazyProgressCanvas_Package.Initialize (This.all, title, backgroundBasicColor_Param, foregroundBasicColor_Param);
       return This;
    end Create;
 
@@ -42,7 +44,7 @@ package body org.allbinary.graphics.canvas.transition.progress.LazyProgressCanva
    procedure end_Id (This : in out LazyProgressCanvas) is
    begin
         begin
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.END_METHOD_NAME);
+            This.logUtil.putF (This.commonStrings.START, LazyProgressCanvas_Access'(This'Unchecked_Access), This.commonStrings.END_METHOD_NAME);
             This.endActual;
             This.paintable := This.GAUGE_PAINTABLE;
             ImageCacheFactory_Package.getInstance.runTask;
@@ -52,7 +54,7 @@ package body org.allbinary.graphics.canvas.transition.progress.LazyProgressCanva
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.putF (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.END_METHOD_NAME);
+            This.logUtil.putF (This.commonStrings.EXCEPTION_Id, LazyProgressCanvas_Access'(This'Unchecked_Access), This.commonStrings.END_METHOD_NAME);
                 end;
         end;
    end end_Id;

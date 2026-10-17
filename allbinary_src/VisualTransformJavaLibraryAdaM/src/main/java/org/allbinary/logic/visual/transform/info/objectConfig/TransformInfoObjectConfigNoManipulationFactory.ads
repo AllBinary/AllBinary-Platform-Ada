@@ -52,8 +52,8 @@ package org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObje
    procedure Initialize (This : in out TransformInfoObjectConfigNoManipulationFactory'Class);
    function Create return TransformInfoObjectConfigNoManipulationFactory_Access;
    function getInstance return TransformInfoObjectConfigNoManipulationFactory_Access;
-   function getInstance (This : in out TransformInfoObjectConfigNoManipulationFactory; transformInfoInterface : TransformInfoInterface_Access; objectConfigFileAbPath : AbPath_Access) return TransformInfoObjectConfigInterface_Access;
-   procedure getInstance (This : in out TransformInfoObjectConfigNoManipulationFactory; transformInfoInterface : TransformInfoInterface_Access; objectConfigFileAbPath : AbPath_Access);
+   function getInstance (This : in out TransformInfoObjectConfigNoManipulationFactory; transformInfoInterface_Param : access TransformInfoInterface'Class; objectConfigFileAbPath_Param : access AbPath'Class) return TransformInfoObjectConfigInterface_Access;
+   procedure getInstance (This : in out TransformInfoObjectConfigNoManipulationFactory; transformInfoInterface_Param : access TransformInfoInterface'Class; objectConfigFileAbPath_Param : access AbPath'Class);
 
 end org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigNoManipulationFactory_Package;
 

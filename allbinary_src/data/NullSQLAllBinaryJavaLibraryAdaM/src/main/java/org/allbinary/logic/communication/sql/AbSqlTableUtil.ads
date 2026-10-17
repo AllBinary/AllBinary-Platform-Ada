@@ -53,10 +53,10 @@ package org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
    procedure Initialize (This : in out AbSqlTableUtil'Class);
    function Create return AbSqlTableUtil_Access;
    function getInstance return AbSqlTableUtil_Access;
-   function backupTable (This : in out AbSqlTableUtil; abSqlTable : AbSqlTable_Access) return Unbounded_String;
-   procedure backupTable (This : in out AbSqlTableUtil; abSqlTable : AbSqlTable_Access);
-   function restoreTable (This : in out AbSqlTableUtil; abSqlTable : AbSqlTable_Access; portion : Portion_Access) return Unbounded_String;
-   procedure restoreTable (This : in out AbSqlTableUtil; abSqlTable : AbSqlTable_Access; portion : Portion_Access);
+   function backupTable (This : in out AbSqlTableUtil; abSqlTable_Param : access AbSqlTable'Class) return Unbounded_String;
+   procedure backupTable (This : in out AbSqlTableUtil; abSqlTable_Param : access AbSqlTable'Class);
+   function restoreTable (This : in out AbSqlTableUtil; abSqlTable_Param : access AbSqlTable'Class; portion_Param : access Portion'Class) return Unbounded_String;
+   procedure restoreTable (This : in out AbSqlTableUtil; abSqlTable_Param : access AbSqlTable'Class; portion_Param : access Portion'Class);
 
 end org.allbinary.logic.communication.sql.AbSqlTableUtil_Package;
 

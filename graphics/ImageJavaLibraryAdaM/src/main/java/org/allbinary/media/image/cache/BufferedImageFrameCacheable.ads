@@ -39,11 +39,11 @@ package org.allbinary.media.image.cache.BufferedImageFrameCacheable_Package is
       bufferedImage : BufferedImage_Access;
    end record;
 
-   procedure Initialize (This : in out BufferedImageFrameCacheable'Class; bufferedImage : BufferedImage_Access; frame : Long_Long_Integer);
-   function Create (bufferedImage : BufferedImage_Access; frame : Long_Long_Integer) return BufferedImageFrameCacheable_Access;
+   procedure Initialize (This : in out BufferedImageFrameCacheable'Class; bufferedImage_Param : access BufferedImage'Class; frame : Long_Long_Integer);
+   function Create (bufferedImage_Param : access BufferedImage'Class; frame : Long_Long_Integer) return BufferedImageFrameCacheable_Access;
    function getKey (This : in out BufferedImageFrameCacheable) return Java_Object_Access;
    function getBufferedImage (This : in out BufferedImageFrameCacheable) return BufferedImage_Access;
-   procedure setBufferedImage (This : in out BufferedImageFrameCacheable; bufferedImage : BufferedImage_Access);
+   procedure setBufferedImage (This : in out BufferedImageFrameCacheable; bufferedImage_Param : access BufferedImage'Class);
    function getFrame (This : in out BufferedImageFrameCacheable) return Long_Long_Integer;
    procedure setFrame (This : in out BufferedImageFrameCacheable; frame : Long_Long_Integer);
    function toString (This : in out BufferedImageFrameCacheable) return Unbounded_String;

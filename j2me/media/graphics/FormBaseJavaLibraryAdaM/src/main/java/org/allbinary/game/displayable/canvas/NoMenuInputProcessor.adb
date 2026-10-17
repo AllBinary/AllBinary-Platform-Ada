@@ -38,17 +38,20 @@ package body org.allbinary.game.displayable.canvas.NoMenuInputProcessor_Package 
       return This;
    end Create;
 
-   procedure onDownGameKeyEvent (This : in out NoMenuInputProcessor; gameKeyEvent : GameKeyEvent_Access) is
+   procedure onDownGameKeyEvent (This : in out NoMenuInputProcessor; gameKeyEvent_Param : access GameKeyEvent'Class) is
+      gameKeyEvent : GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
    begin
         null;
    end onDownGameKeyEvent;
 
-   procedure onUpGameKeyEvent (This : in out NoMenuInputProcessor; gameKeyEvent : GameKeyEvent_Access) is
+   procedure onUpGameKeyEvent (This : in out NoMenuInputProcessor; gameKeyEvent_Param : access GameKeyEvent'Class) is
+      gameKeyEvent : GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
    begin
         null;
    end onUpGameKeyEvent;
 
-   procedure onMotionGestureEvent (This : in out NoMenuInputProcessor; motionGestureEvent : MotionGestureEvent_Access) is
+   procedure onMotionGestureEvent (This : in out NoMenuInputProcessor; motionGestureEvent_Param : access MotionGestureEvent'Class) is
+      motionGestureEvent : MotionGestureEvent_Access := MotionGestureEvent_Access (motionGestureEvent_Param);
    begin
         null;
    end onMotionGestureEvent;

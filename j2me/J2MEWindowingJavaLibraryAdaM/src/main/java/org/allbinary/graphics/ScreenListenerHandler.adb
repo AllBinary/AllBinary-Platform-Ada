@@ -39,7 +39,8 @@ package body org.allbinary.graphics.ScreenListenerHandler_Package is
         return ScreenListenerHandler_Package.instance;
    end getInstance;
 
-   procedure setListener (This : in out ScreenListenerHandler; screenListenerInterface : ScreenListenerInterface_Access) is
+   procedure setListener (This : in out ScreenListenerHandler; screenListenerInterface_Param : access ScreenListenerInterface'Class) is
+      screenListenerInterface : ScreenListenerInterface_Access := ScreenListenerInterface_Access (screenListenerInterface_Param);
    begin
         This.screenListenerInterface := screenListenerInterface;
    end setListener;

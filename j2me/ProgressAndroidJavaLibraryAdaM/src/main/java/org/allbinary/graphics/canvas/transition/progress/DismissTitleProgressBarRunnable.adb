@@ -23,16 +23,18 @@ package body org.allbinary.graphics.canvas.transition.progress.DismissTitleProgr
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out DismissTitleProgressBarRunnable'Class; midletActivity : Activity_Access; progressCanvas : ProgressCanvas_Access) is
+   procedure Initialize (This : in out DismissTitleProgressBarRunnable'Class; midletActivity_Param : access Activity'Class; progressCanvas_Param : access ProgressCanvas'Class) is
+      midletActivity : Activity_Access := Activity_Access (midletActivity_Param);
+      progressCanvas : ProgressCanvas_Access := ProgressCanvas_Access (progressCanvas_Param);
    begin
         ProgressRunnable_Package.Initialize (This, midletActivity, progressCanvas);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (midletActivity : Activity_Access; progressCanvas : ProgressCanvas_Access) return DismissTitleProgressBarRunnable_Access is
+   function Create (midletActivity_Param : access Activity'Class; progressCanvas_Param : access ProgressCanvas'Class) return DismissTitleProgressBarRunnable_Access is
       This : constant DismissTitleProgressBarRunnable_Access := new DismissTitleProgressBarRunnable;
    begin
-      DismissTitleProgressBarRunnable_Package.Initialize (This.all, midletActivity, progressCanvas);
+      DismissTitleProgressBarRunnable_Package.Initialize (This.all, midletActivity_Param, progressCanvas_Param);
       return This;
    end Create;
 
@@ -47,7 +49,7 @@ package body org.allbinary.graphics.canvas.transition.progress.DismissTitleProgr
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.RUN, e);
+            This.logUtil.put (commonStrings.EXCEPTION_Id, DismissTitleProgressBarRunnable_Access'(This'Unchecked_Access), commonStrings.RUN, e);
                 end;
         end;
    end run;

@@ -75,12 +75,12 @@ package body org.allbinary.game.input.LocalPlayerInputIdFactory_Package is
         if (deviceId) < (This.MAX_FAST_DEVICEID) then
             This.deviceIdToplayerId (deviceId) := index;
         else
-            This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Added DeviceId: ")).appendint (deviceId).append (To_Unbounded_String (" beyond fast Id list")).toString, This'Unchecked_Access, To_Unbounded_String ("getPlayerForDevice"));
+            This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Added DeviceId: ")).appendint (deviceId).append (To_Unbounded_String (" beyond fast Id list")).toString, LocalPlayerInputIdFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getPlayerForDevice"));
         end if;
         This.playerIdToDeviceId (index) := deviceId;
         AnalogLocationInputFactory_Package.getInstance.addPlayer (This.totalDevicesMapped);
         This.totalDevicesMapped := This.totalDevicesMapped + 1;
-        This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Added DeviceId: ")).appendint (deviceId).append (To_Unbounded_String (" at: ")).appendint (index).append (To_Unbounded_String (" Total: ")).appendint (This.totalDevicesMapped).toString, This'Unchecked_Access, To_Unbounded_String ("getPlayerForDevice"));
+        This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Added DeviceId: ")).appendint (deviceId).append (To_Unbounded_String (" at: ")).appendint (index).append (To_Unbounded_String (" Total: ")).appendint (This.totalDevicesMapped).toString, LocalPlayerInputIdFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getPlayerForDevice"));
         return index;
    end getPlayerForDevice;
 
@@ -104,13 +104,13 @@ package body org.allbinary.game.input.LocalPlayerInputIdFactory_Package is
 
    procedure setPlayerInPlay (This : in out LocalPlayerInputIdFactory; playerInputId : Integer) is
    begin
-        This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Setting PlayerInPlay with playerInputId: ")).appendint (playerInputId).toString, This'Unchecked_Access, To_Unbounded_String ("setPlayerInPlay"));
+        This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Setting PlayerInPlay with playerInputId: ")).appendint (playerInputId).toString, LocalPlayerInputIdFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("setPlayerInPlay"));
         This.playersInPlay (playerInputId) := True;
    end setPlayerInPlay;
 
    procedure setPlayerOutOfPlay (This : in out LocalPlayerInputIdFactory; playerInputId : Integer) is
    begin
-        This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Setting PlayerOutOfPlay with playerInputId: ")).appendint (playerInputId).toString, This'Unchecked_Access, To_Unbounded_String ("setPlayerOutOfPlay"));
+        This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Setting PlayerOutOfPlay with playerInputId: ")).appendint (playerInputId).toString, LocalPlayerInputIdFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("setPlayerOutOfPlay"));
         This.playersInPlay (playerInputId) := False;
    end setPlayerOutOfPlay;
 

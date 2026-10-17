@@ -66,7 +66,7 @@ package body org.allbinary.android.AndroidServicesUtil_Package is
                 return True;
             end if;
         end loop;
-        This.logUtil.putF (This.SERVICE_NOT_FOUND_RUNNING & name, This'Unchecked_Access, This.IS_SERVICE_RUNNING);
+        This.logUtil.putF (This.SERVICE_NOT_FOUND_RUNNING & name, AndroidServicesUtil_Access'(This'Unchecked_Access), This.IS_SERVICE_RUNNING);
         return False;
    end isServiceRunning;
 

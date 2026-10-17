@@ -65,8 +65,8 @@ package org.allbinary.image.sprite.AnimationFactorySpriteScaleUtil_Package is
    procedure Initialize (This : in out AnimationFactorySpriteScaleUtil'Class);
    function Create return AnimationFactorySpriteScaleUtil_Access;
    function getInstance return AnimationFactorySpriteScaleUtil_Access;
-   function createImage (This : in out AnimationFactorySpriteScaleUtil; image : Image_Access; width : Integer; height : Integer; scaleWidth : Integer; scaleHeight : Integer) return Sprite_Access;
-   procedure createImage (This : in out AnimationFactorySpriteScaleUtil; image : Image_Access; width : Integer; height : Integer; scaleWidth : Integer; scaleHeight : Integer);
+   function createImage (This : in out AnimationFactorySpriteScaleUtil; image_Param : access Image'Class; width : Integer; height : Integer; scaleWidth : Integer; scaleHeight : Integer) return Sprite_Access;
+   procedure createImage (This : in out AnimationFactorySpriteScaleUtil; image_Param : access Image'Class; width : Integer; height : Integer; scaleWidth : Integer; scaleHeight : Integer);
 
 end org.allbinary.image.sprite.AnimationFactorySpriteScaleUtil_Package;
 

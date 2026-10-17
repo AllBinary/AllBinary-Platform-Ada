@@ -35,26 +35,29 @@ package body org.allbinary.logic.visual.transform.data.TransformStoreDocumentFac
    end Create;
 
    --  throws Exception
-   function getInstance (pageContext : PageContext_Access; weblisketSession : WeblisketSession_Access) return TransformDocumentInterface_Access is
+   function getInstance (pageContext_Param : access PageContext'Class; weblisketSession_Param : access WeblisketSession'Class) return TransformDocumentInterface_Access is
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
+      weblisketSession : WeblisketSession_Access := WeblisketSession_Access (weblisketSession_Param);
    begin
         return TransformDocumentInterface_Access (TransformStoreDocument_Package.Create (pageContext, weblisketSession));
    end getInstance;
 
    --  throws Exception
-   function getInstance (searchRequest : SearchRequest_Access) return TransformDocumentInterface_Access is
+   function getInstance (searchRequest_Param : access SearchRequest'Class) return TransformDocumentInterface_Access is
+      searchRequest : SearchRequest_Access := SearchRequest_Access (searchRequest_Param);
    begin
         return TransformDocumentInterface_Access (TransformStoreDocument_Package.Create (searchRequest));
    end getInstance;
 
-   procedure getInstance (pageContext : PageContext_Access; weblisketSession : WeblisketSession_Access) is
-      Java_Result : constant TransformDocumentInterface_Access := getInstance (pageContext, weblisketSession);
+   procedure getInstance (pageContext_Param : access PageContext'Class; weblisketSession_Param : access WeblisketSession'Class) is
+      Java_Result : constant TransformDocumentInterface_Access := getInstance (pageContext_Param, weblisketSession_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
-   procedure getInstance (searchRequest : SearchRequest_Access) is
-      Java_Result : constant TransformDocumentInterface_Access := getInstance (searchRequest);
+   procedure getInstance (searchRequest_Param : access SearchRequest'Class) is
+      Java_Result : constant TransformDocumentInterface_Access := getInstance (searchRequest_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

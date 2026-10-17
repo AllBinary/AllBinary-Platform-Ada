@@ -57,14 +57,14 @@ package org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package i
    PREVIOUS : Unbounded_String;
    HASHCODE : Unbounded_String;
 
-   procedure Initialize (This : in out MotionGestureEvent'Class; source : Java_Object_Access; id : Integer; motionGesture : MotionGestureInput_Access);
-   function Create (source : Java_Object_Access; id : Integer; motionGesture : MotionGestureInput_Access) return MotionGestureEvent_Access;
+   procedure Initialize (This : in out MotionGestureEvent'Class; source_Param : access Java_Object'Class; id : Integer; motionGesture_Param : access MotionGestureInput'Class);
+   function Create (source_Param : access Java_Object'Class; id : Integer; motionGesture_Param : access MotionGestureInput'Class) return MotionGestureEvent_Access;
    function getMotionGesture (This : in out MotionGestureEvent) return MotionGestureInput_Access;
-   procedure setMotionGesture (This : in out MotionGestureEvent; motionGesture : MotionGestureInput_Access);
+   procedure setMotionGesture (This : in out MotionGestureEvent; motionGesture_Param : access MotionGestureInput'Class);
    function getPreviousPoint (This : in out MotionGestureEvent) return GPoint_Access;
-   procedure setPreviousPoint (This : in out MotionGestureEvent; previousPoint : GPoint_Access);
+   procedure setPreviousPoint (This : in out MotionGestureEvent; previousPoint_Param : access GPoint'Class);
    function getCurrentPoint (This : in out MotionGestureEvent) return GPoint_Access;
-   procedure setCurrentPoint (This : in out MotionGestureEvent; currentPoint : GPoint_Access);
+   procedure setCurrentPoint (This : in out MotionGestureEvent; currentPoint_Param : access GPoint'Class);
    function toString (This : in out MotionGestureEvent) return Unbounded_String;
    function getId (This : in out MotionGestureEvent) return Integer;
 

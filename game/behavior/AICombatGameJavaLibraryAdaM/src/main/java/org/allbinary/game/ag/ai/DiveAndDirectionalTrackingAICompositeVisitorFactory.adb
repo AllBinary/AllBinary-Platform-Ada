@@ -33,13 +33,14 @@ package body org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAICompositeVisit
    end Create;
 
 
-   function getInstance (This : in out DiveAndDirectionalTrackingAICompositeVisitorFactory; diveBombAI : DiveAndDirectionalTrackingAI_Access) return Visitor_Access is
+   function getInstance (This : in out DiveAndDirectionalTrackingAICompositeVisitorFactory; diveBombAI_Param : access DiveAndDirectionalTrackingAI'Class) return Visitor_Access is
+      diveBombAI : DiveAndDirectionalTrackingAI_Access := DiveAndDirectionalTrackingAI_Access (diveBombAI_Param);
    begin
         return Visitor_Package.getInstance;
    end getInstance;
 
-   procedure getInstance (This : in out DiveAndDirectionalTrackingAICompositeVisitorFactory; diveBombAI : DiveAndDirectionalTrackingAI_Access) is
-      Java_Result : constant Visitor_Access := DiveAndDirectionalTrackingAICompositeVisitorFactory'Class (This).getInstance (diveBombAI);
+   procedure getInstance (This : in out DiveAndDirectionalTrackingAICompositeVisitorFactory; diveBombAI_Param : access DiveAndDirectionalTrackingAI'Class) is
+      Java_Result : constant Visitor_Access := DiveAndDirectionalTrackingAICompositeVisitorFactory'Class (This).getInstance (diveBombAI_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

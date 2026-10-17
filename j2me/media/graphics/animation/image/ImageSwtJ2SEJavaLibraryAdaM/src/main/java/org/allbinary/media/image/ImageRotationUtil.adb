@@ -41,7 +41,9 @@ package body org.allbinary.media.image.ImageRotationUtil_Package is
       return This;
    end Create;
 
-   procedure rotateImage (This : in out ImageRotationUtil; originalImage : Image_Access; image : Image_Access; totalAngle : Integer) is
+   procedure rotateImage (This : in out ImageRotationUtil; originalImage_Param : access Image'Class; image_Param : access Image'Class; totalAngle : Integer) is
+      originalImage : Image_Access := Image_Access (originalImage_Param);
+      image : Image_Access := Image_Access (image_Param);
       originalImage2 : Image_Access;
       openGLESImage : OpenGLESImage_Access;
       originalSwtImage : Image_Access;
@@ -56,7 +58,7 @@ package body org.allbinary.media.image.ImageRotationUtil_Package is
                 openGLESImage.openGLESImageProperties.angle := totalAngle;
                 return;
             else
-                PreLogUtil_Package.put (To_Unbounded_String ("OpenGL but image is: ") & Java_Image (image) & To_Unbounded_String (" type: ") & Java_Image (image.getType), This'Unchecked_Access, To_Unbounded_String ("rotateImage"));
+                PreLogUtil_Package.put (To_Unbounded_String ("OpenGL but image is: ") & Java_Image (image) & To_Unbounded_String (" type: ") & Java_Image (image.getType), ImageRotationUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("rotateImage"));
             end if;
         end if;
         originalSwtImage := (Image_Access (originalImage2.getImage));
@@ -68,18 +70,19 @@ package body org.allbinary.media.image.ImageRotationUtil_Package is
             gc := swtImage.getGc;
             This.imageSwtRotationUtil.rotateImage (originalSwtImage, copySwtImage, gc, totalAngle);
         else
-            PreLogUtil_Package.put (To_Unbounded_String ("No rotation for: ") & image.toString, This'Unchecked_Access, To_Unbounded_String ("rotateImage"));
+            PreLogUtil_Package.put (To_Unbounded_String ("No rotation for: ") & image.toString, ImageRotationUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("rotateImage"));
         end if;
    end rotateImage;
 
    --  throws Exception
-   function createRotatedImage (This : in out ImageRotationUtil; originalImage : Image_Access; rotationInDegrees : Integer) return Image_Access is
+   function createRotatedImage (This : in out ImageRotationUtil; originalImage_Param : access Image'Class; rotationInDegrees : Integer) return Image_Access is
+      originalImage : Image_Access := Image_Access (originalImage_Param);
    begin
         return originalImage;
    end createRotatedImage;
 
-   procedure createRotatedImage (This : in out ImageRotationUtil; originalImage : Image_Access; rotationInDegrees : Integer) is
-      Java_Result : constant Image_Access := ImageRotationUtil'Class (This).createRotatedImage (originalImage, rotationInDegrees);
+   procedure createRotatedImage (This : in out ImageRotationUtil; originalImage_Param : access Image'Class; rotationInDegrees : Integer) is
+      Java_Result : constant Image_Access := ImageRotationUtil'Class (This).createRotatedImage (originalImage_Param, rotationInDegrees);
       pragma Unreferenced (Java_Result);
    begin
       null;

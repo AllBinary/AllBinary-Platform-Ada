@@ -43,11 +43,11 @@ package org.allbinary.animation.image.ImageArrayRotationAnimationPool_Package is
    type ImageArrayRotationAnimationPool is new BasicArrayListResetablePool with null record;
    IMAGE_ROTATION_ANIMATION_POOL : PoolInterface_Access;
 
-   procedure Initialize (This : in out ImageArrayRotationAnimationPool'Class; cacheableInterfaceFactoryInterface : CacheableInterfaceFactoryInterface_Access);
-   function Create (cacheableInterfaceFactoryInterface : CacheableInterfaceFactoryInterface_Access) return ImageArrayRotationAnimationPool_Access;
+   procedure Initialize (This : in out ImageArrayRotationAnimationPool'Class; cacheableInterfaceFactoryInterface_Param : access CacheableInterfaceFactoryInterface'Class);
+   function Create (cacheableInterfaceFactoryInterface_Param : access CacheableInterfaceFactoryInterface'Class) return ImageArrayRotationAnimationPool_Access;
    function getInstance return PoolInterface_Access;
-   function remove (This : in out ImageArrayRotationAnimationPool; key : Java_Object_Access) return CacheableInterface_Access;
-   procedure remove (This : in out ImageArrayRotationAnimationPool; key : Java_Object_Access);
+   function remove (This : in out ImageArrayRotationAnimationPool; key_Param : access Java_Object'Class) return CacheableInterface_Access;
+   procedure remove (This : in out ImageArrayRotationAnimationPool; key_Param : access Java_Object'Class);
 
 end org.allbinary.animation.image.ImageArrayRotationAnimationPool_Package;
 

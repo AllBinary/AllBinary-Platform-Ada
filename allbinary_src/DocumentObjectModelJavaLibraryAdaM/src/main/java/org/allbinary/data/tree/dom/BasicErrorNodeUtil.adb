@@ -35,7 +35,8 @@ package body org.allbinary.data.tree.dom.BasicErrorNodeUtil_Package is
    end Create;
 
    --  throws Exception
-   function get (document : Document_Access; errorText : Unbounded_String) return Node_Access is
+   function get (document_Param : access Document'Class; errorText : Unbounded_String) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       node : Node_Access;
    begin
         begin
@@ -52,8 +53,8 @@ package body org.allbinary.data.tree.dom.BasicErrorNodeUtil_Package is
         end;
    end get;
 
-   procedure get (document : Document_Access; errorText : Unbounded_String) is
-      Java_Result : constant Node_Access := get (document, errorText);
+   procedure get (document_Param : access Document'Class; errorText : Unbounded_String) is
+      Java_Result : constant Node_Access := get (document_Param, errorText);
       pragma Unreferenced (Java_Result);
    begin
       null;

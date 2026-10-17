@@ -21,20 +21,23 @@ package body org.allbinary.game.ag.ai.sequence.ComboSequenceAI_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ComboSequenceAI'Class; artificialIntelligenceInterface : ArtificialIntelligenceInterface_Access_Array_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) is
+   procedure Initialize (This : in out ComboSequenceAI'Class; artificialIntelligenceInterface : ArtificialIntelligenceInterface_Access_Array_Access; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) is
+      ownerLayerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (ownerLayerInterface_Param);
+      gameInput : GameInput_Access := GameInput_Access (gameInput_Param);
    begin
         SequenceAI_Package.Initialize (This, artificialIntelligenceInterface, ownerLayerInterface, gameInput);
    end Initialize;
 
-   function Create (artificialIntelligenceInterface : ArtificialIntelligenceInterface_Access_Array_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return ComboSequenceAI_Access is
+   function Create (artificialIntelligenceInterface : ArtificialIntelligenceInterface_Access_Array_Access; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return ComboSequenceAI_Access is
       This : constant ComboSequenceAI_Access := new ComboSequenceAI;
    begin
-      ComboSequenceAI_Package.Initialize (This.all, artificialIntelligenceInterface, ownerLayerInterface, gameInput);
+      ComboSequenceAI_Package.Initialize (This.all, artificialIntelligenceInterface, ownerLayerInterface_Param, gameInput_Param);
       return This;
    end Create;
 
    --  throws Exception
-   procedure processAI (This : in out ComboSequenceAI; allBinaryLayerManager : AllBinaryLayerManager_Access) is
+   procedure processAI (This : in out ComboSequenceAI; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class) is
+      allBinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
       artificialIntelligenceInterfaceArray : ArtificialIntelligenceInterface_Access_Array_Access;
       size : Integer;
       index : Integer;

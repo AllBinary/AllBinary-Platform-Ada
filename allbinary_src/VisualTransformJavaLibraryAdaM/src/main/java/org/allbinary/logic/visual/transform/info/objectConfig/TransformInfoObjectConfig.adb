@@ -26,7 +26,8 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out TransformInfoObjectConfig'Class; transformInfoInterface : TransformInfoInterface_Access) is
+   procedure Initialize (This : in out TransformInfoObjectConfig'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
       stringBuffer : StringMaker_Access;
    begin
       Initialize_Fields (This);
@@ -42,18 +43,20 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
             end if;
             stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "Constructed with document: "));
             stringBuffer.append (This.toString);
-            This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("Constructor(TransformInfoInterface)"));
+            This.logUtil.putF (stringBuffer.toString, TransformInfoObjectConfig_Access'(This'Unchecked_Access), To_Unbounded_String ("Constructor(TransformInfoInterface)"));
         end if;
    end Initialize;
 
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return TransformInfoObjectConfig_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return TransformInfoObjectConfig_Access is
       This : constant TransformInfoObjectConfig_Access := new TransformInfoObjectConfig;
    begin
-      TransformInfoObjectConfig_Package.Initialize (This.all, transformInfoInterface);
+      TransformInfoObjectConfig_Package.Initialize (This.all, transformInfoInterface_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out TransformInfoObjectConfig'Class; transformInfoInterface : TransformInfoInterface_Access; document : Document_Access) is
+   procedure Initialize (This : in out TransformInfoObjectConfig'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; document_Param : access Document'Class) is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+      document : Document_Access := Document_Access (document_Param);
       node : Node_Access;
       stringBuffer : StringMaker_Access;
    begin
@@ -74,18 +77,19 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
             end if;
             stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "Constructed with document: "));
             stringBuffer.append (This.toString);
-            This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("Constructor(TransformInfoInterface, Document)"));
+            This.logUtil.putF (stringBuffer.toString, TransformInfoObjectConfig_Access'(This'Unchecked_Access), To_Unbounded_String ("Constructor(TransformInfoInterface, Document)"));
         end if;
    end Initialize;
 
-   function Create (transformInfoInterface : TransformInfoInterface_Access; document : Document_Access) return TransformInfoObjectConfig_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class; document_Param : access Document'Class) return TransformInfoObjectConfig_Access is
       This : constant TransformInfoObjectConfig_Access := new TransformInfoObjectConfig;
    begin
-      TransformInfoObjectConfig_Package.Initialize (This.all, transformInfoInterface, document);
+      TransformInfoObjectConfig_Package.Initialize (This.all, transformInfoInterface_Param, document_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out TransformInfoObjectConfig'Class; transformInfoInterface : TransformInfoInterface_Access; name : Unbounded_String; type_Id : Unbounded_String) is
+   procedure Initialize (This : in out TransformInfoObjectConfig'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; name : Unbounded_String; type_Id : Unbounded_String) is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
       configNameAttr : Attr_Access;
       objectConfigNode : Node_Access;
       stringBuffer : StringMaker_Access;
@@ -107,14 +111,14 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
             end if;
             stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "Constructed with document: "));
             stringBuffer.append (This.toString);
-            This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("Constructor(TransformInfoInterface, name, type)"));
+            This.logUtil.putF (stringBuffer.toString, TransformInfoObjectConfig_Access'(This'Unchecked_Access), To_Unbounded_String ("Constructor(TransformInfoInterface, name, type)"));
         end if;
    end Initialize;
 
-   function Create (transformInfoInterface : TransformInfoInterface_Access; name : Unbounded_String; type_Id : Unbounded_String) return TransformInfoObjectConfig_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class; name : Unbounded_String; type_Id : Unbounded_String) return TransformInfoObjectConfig_Access is
       This : constant TransformInfoObjectConfig_Access := new TransformInfoObjectConfig;
    begin
-      TransformInfoObjectConfig_Package.Initialize (This.all, transformInfoInterface, name, type_Id);
+      TransformInfoObjectConfig_Package.Initialize (This.all, transformInfoInterface_Param, name, type_Id);
       return This;
    end Create;
 
@@ -137,12 +141,14 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
         return This.document;
    end toXmlDoc;
 
-   procedure setDocument (This : in out TransformInfoObjectConfig; document : Document_Access) is
+   procedure setDocument (This : in out TransformInfoObjectConfig; document_Param : access Document'Class) is
+      document : Document_Access := Document_Access (document_Param);
    begin
         This.document := document;
    end setDocument;
 
-   function containsView (This : in out TransformInfoObjectConfig; transformInfoInterface : TransformInfoInterface_Access) return Boolean is
+   function containsView (This : in out TransformInfoObjectConfig; transformInfoInterface_Param : access TransformInfoInterface'Class) return Boolean is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
       objectConfigNode : Node_Access;
       viewNodeList : NodeList_Access;
       numberOfViews : Integer;
@@ -206,7 +212,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
                 stringBuffer.append (nodeName);
                 stringBuffer.append (To_Unbounded_String (" Nodes: "));
                 stringBuffer.appendint (numberOfViews);
-                This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("getNodeVector(nodename)"));
+                This.logUtil.putF (stringBuffer.toString, TransformInfoObjectConfig_Access'(This'Unchecked_Access), To_Unbounded_String ("getNodeVector(nodename)"));
             end if;
             return viewNodeVector;
         end if;
@@ -267,7 +273,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
       viewNode : Node_Access;
    begin
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (To_Unbounded_String ("Started: ") & group, This'Unchecked_Access, To_Unbounded_String ("getTransformsGroup()"));
+            This.logUtil.putF (To_Unbounded_String ("Started: ") & group, TransformInfoObjectConfig_Access'(This'Unchecked_Access), To_Unbounded_String ("getTransformsGroup()"));
         end if;
         viewVector := BasicArrayListD_Package.Create;
         GROUP := TransformInfosData_Package.getInstance.GROUP;
@@ -288,7 +294,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
             viewNodeVector := DomSearchHelper_Package.getAllNodes (TransformInfoData_Package.getInstance.NAME, componentsNode.getChildNodes);
             numberOfViews := viewNodeVector.size;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (To_Unbounded_String ("Number Of Nodes: ") & Java_Image (numberOfViews), This'Unchecked_Access, To_Unbounded_String ("getTransformsGroup()"));
+                This.logUtil.putF (To_Unbounded_String ("Number Of Nodes: ") & Java_Image (numberOfViews), TransformInfoObjectConfig_Access'(This'Unchecked_Access), To_Unbounded_String ("getTransformsGroup()"));
             end if;
             size := viewNodeVector.size;
             for index in 0 .. (size) - 1 loop
@@ -298,9 +304,9 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
         else
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
                 if (componentsNodeList) = (null) then
-                    This.logUtil.putF (To_Unbounded_String ("Number Of Nodes: NULL"), This'Unchecked_Access, To_Unbounded_String ("getTransformsGroup()"));
+                    This.logUtil.putF (To_Unbounded_String ("Number Of Nodes: NULL"), TransformInfoObjectConfig_Access'(This'Unchecked_Access), To_Unbounded_String ("getTransformsGroup()"));
                 else
-                    This.logUtil.putF (To_Unbounded_String ("Number Of Nodes: 0"), This'Unchecked_Access, To_Unbounded_String ("getTransformsGroup()"));
+                    This.logUtil.putF (To_Unbounded_String ("Number Of Nodes: 0"), TransformInfoObjectConfig_Access'(This'Unchecked_Access), To_Unbounded_String ("getTransformsGroup()"));
                 end if;
             end if;
         end if;
@@ -385,15 +391,15 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.putF (To_Unbounded_String ("DOM Document error"), This'Unchecked_Access, This.commonStrings.TOSTRING);
+                This.logUtil.putF (To_Unbounded_String ("DOM Document error"), TransformInfoObjectConfig_Access'(This'Unchecked_Access), This.commonStrings.TOSTRING);
             end if;
             return Null_Unbounded_String;
                 end;
         end;
    end toString;
 
-   procedure containsView (This : in out TransformInfoObjectConfig; transformInfoInterface : TransformInfoInterface_Access) is
-      Java_Result : constant Boolean := TransformInfoObjectConfig'Class (This).containsView (transformInfoInterface);
+   procedure containsView (This : in out TransformInfoObjectConfig; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+      Java_Result : constant Boolean := TransformInfoObjectConfig'Class (This).containsView (transformInfoInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

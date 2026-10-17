@@ -68,7 +68,7 @@ package body org.allbinary.game.part.MakeCountedPartsSingletonArrayFactory_Packa
         stringBuffer.append (To_Unbounded_String (" Counted: "));
         stringBuffer.appendint (countedBasicArrayList.size);
         commonStrings := CommonStrings_Package.getInstance;
-        This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, commonStrings.GET_INSTANCE);
+        This.logUtil.putF (stringBuffer.toString, MakeCountedPartsSingletonArrayFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);
         newPartInterfaceArray := new PartInterface_Access_Array'(0 .. (This.list.size) - 1 => null);
         newSize := newPartInterfaceArray'Length;
         for index in 0 .. (newSize) - 1 loop

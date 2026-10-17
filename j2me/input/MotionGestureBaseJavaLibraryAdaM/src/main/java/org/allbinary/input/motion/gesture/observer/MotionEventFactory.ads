@@ -48,8 +48,8 @@ package org.allbinary.input.motion.gesture.observer.MotionEventFactory_Package i
    end record;
    index : Integer;
 
-   procedure Initialize (This : in out MotionEventFactory'Class; source : Java_Object_Access; id : Integer);
-   function Create (source : Java_Object_Access; id : Integer) return MotionEventFactory_Access;
+   procedure Initialize (This : in out MotionEventFactory'Class; source_Param : access Java_Object'Class; id : Integer);
+   function Create (source_Param : access Java_Object'Class; id : Integer) return MotionEventFactory_Access;
    function getInstance (This : in out MotionEventFactory) return AllBinaryEventObject_Access;
 
 end org.allbinary.input.motion.gesture.observer.MotionEventFactory_Package;

@@ -41,7 +41,9 @@ package body org.allbinary.input.motion.gesture.observer.ScrolledMotionGesturesH
    end Create;
 
    --  throws Exception
-   procedure process (This : in out ScrolledMotionGesturesHandler; eventObject : AllBinaryEventObject_Access; eventListenerInterface : EventListenerInterface_Access) is
+   procedure process (This : in out ScrolledMotionGesturesHandler; eventObject_Param : access AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface'Class) is
+      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
+      eventListenerInterface : EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
       baseMotionGestureEventListener : BaseMotionGestureEventListener_Access;
    begin
         baseMotionGestureEventListener := BaseMotionGestureEventListener_Access (eventListenerInterface);

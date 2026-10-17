@@ -51,9 +51,9 @@ package org.allbinary.game.input.event.GameKeyEventHandler_Package is
    function Create return GameKeyEventHandler_Access;
    function getInstance return GameKeyEventHandler_Access;
    procedure removeAllListeners (This : in out GameKeyEventHandler);
-   procedure addListenerForPlayer (This : in out GameKeyEventHandler; eventListenerInterface : EventListenerInterface_Access; playerInputId : Integer);
-   procedure addListener (This : in out GameKeyEventHandler; eventListenerInterface : EventListenerInterface_Access);
-   procedure removeListener (This : in out GameKeyEventHandler; eventListenerInterface : EventListenerInterface_Access);
+   procedure addListenerForPlayer (This : in out GameKeyEventHandler; eventListenerInterface_Param : access EventListenerInterface'Class; playerInputId : Integer);
+   procedure addListener (This : in out GameKeyEventHandler; eventListenerInterface_Param : access EventListenerInterface'Class);
+   procedure removeListener (This : in out GameKeyEventHandler; eventListenerInterface_Param : access EventListenerInterface'Class);
 
 end org.allbinary.game.input.event.GameKeyEventHandler_Package;
 

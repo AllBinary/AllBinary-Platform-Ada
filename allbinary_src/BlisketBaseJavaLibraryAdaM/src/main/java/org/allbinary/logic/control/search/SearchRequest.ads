@@ -51,10 +51,10 @@ package org.allbinary.logic.control.search.SearchRequest_Package is
       storeFront : StoreFrontInterface_Access;
    end record;
 
-   procedure Initialize (This : in out SearchRequest'Class; storeFront : StoreFrontInterface_Access; searchParams : SearchParams_Access; xslFile : Unbounded_String; contentType : Unbounded_String; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access);
-   function Create (storeFront : StoreFrontInterface_Access; searchParams : SearchParams_Access; xslFile : Unbounded_String; contentType : Unbounded_String; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return SearchRequest_Access;
-   procedure setStoreFront (This : in out SearchRequest; storeFront : StoreFrontInterface_Access);
-   procedure setParams (This : in out SearchRequest; searchParams : SearchParams_Access);
+   procedure Initialize (This : in out SearchRequest'Class; storeFront_Param : access StoreFrontInterface'Class; searchParams_Param : access SearchParams'Class; xslFile : Unbounded_String; contentType : Unbounded_String; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
+   function Create (storeFront_Param : access StoreFrontInterface'Class; searchParams_Param : access SearchParams'Class; xslFile : Unbounded_String; contentType : Unbounded_String; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return SearchRequest_Access;
+   procedure setStoreFront (This : in out SearchRequest; storeFront_Param : access StoreFrontInterface'Class);
+   procedure setParams (This : in out SearchRequest; searchParams_Param : access SearchParams'Class);
    procedure setXslFile (This : in out SearchRequest; value : Unbounded_String);
    procedure setFileBaseName (This : in out SearchRequest; value : Unbounded_String);
    procedure setContentType (This : in out SearchRequest; value : Unbounded_String);
@@ -63,8 +63,8 @@ package org.allbinary.logic.control.search.SearchRequest_Package is
    function getXslFile (This : in out SearchRequest) return Unbounded_String;
    function getFileBaseName (This : in out SearchRequest) return Unbounded_String;
    function getContentType (This : in out SearchRequest) return Unbounded_String;
-   function getFileBaseNameNode (This : in out SearchRequest; document : Document_Access) return Node_Access;
-   procedure getFileBaseNameNode (This : in out SearchRequest; document : Document_Access);
+   function getFileBaseNameNode (This : in out SearchRequest; document_Param : access Document'Class) return Node_Access;
+   procedure getFileBaseNameNode (This : in out SearchRequest; document_Param : access Document'Class);
 
 end org.allbinary.logic.control.search.SearchRequest_Package;
 

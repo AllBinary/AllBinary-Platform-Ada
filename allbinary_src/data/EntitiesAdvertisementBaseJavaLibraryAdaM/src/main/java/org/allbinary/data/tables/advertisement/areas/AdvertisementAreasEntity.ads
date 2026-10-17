@@ -71,7 +71,7 @@ package org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntity_P
    procedure get (This : in out AdvertisementAreasEntity; storeName : Unbounded_String; advertisementAreaName : Unbounded_String);
    function createTableStatement (This : in out AdvertisementAreasEntity) return Unbounded_String;
    function createTable (This : in out AdvertisementAreasEntity) return Unbounded_String;
-   procedure update (This : in out AdvertisementAreasEntity; updatedValues : HashMap_Access);
+   procedure update (This : in out AdvertisementAreasEntity; updatedValues_Param : access HashMap'Class);
    function dropTable (This : in out AdvertisementAreasEntity) return Unbounded_String;
 
 end org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntity_Package;

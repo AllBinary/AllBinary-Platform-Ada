@@ -24,16 +24,17 @@ package body org.allbinary.game.identification.CompositeGroup_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CompositeGroup'Class; groupInterface : Group_Access) is
+   procedure Initialize (This : in out CompositeGroup'Class; groupInterface_Param : access Group'Class) is
+      groupInterface : Group_Access := Group_Access (groupInterface_Param);
    begin
       Initialize_Fields (This);
         This.groupInterface := groupInterface;
    end Initialize;
 
-   function Create (groupInterface : Group_Access) return CompositeGroup_Access is
+   function Create (groupInterface_Param : access Group'Class) return CompositeGroup_Access is
       This : constant CompositeGroup_Access := new CompositeGroup;
    begin
-      CompositeGroup_Package.Initialize (This.all, groupInterface);
+      CompositeGroup_Package.Initialize (This.all, groupInterface_Param);
       return This;
    end Create;
 
@@ -42,7 +43,8 @@ package body org.allbinary.game.identification.CompositeGroup_Package is
         This.list.clear;
    end clear;
 
-   procedure add (This : in out CompositeGroup; groupInterface : Group_Access) is
+   procedure add (This : in out CompositeGroup; groupInterface_Param : access Group'Class) is
+      groupInterface : Group_Access := Group_Access (groupInterface_Param);
       commonStrings : CommonStrings_Access;
       groupCommonFactory : GroupCommonFactory_Access;
       stringBuffer : StringMaker_Access;
@@ -54,11 +56,12 @@ package body org.allbinary.game.identification.CompositeGroup_Package is
         stringBuffer.append (groupInterface.toString);
         stringBuffer.append (groupCommonFactory.TO_LABEL);
         stringBuffer.append (StringUtil_Package.getInstance.toString (This.groupInterface));
-        This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, commonStrings.ADD);
+        This.logUtil.putF (stringBuffer.toString, CompositeGroup_Access'(This'Unchecked_Access), commonStrings.ADD);
         This.list.add (groupInterface);
    end add;
 
-   function isInGroup (This : in out CompositeGroup; groupInterface : Group_Access) return Boolean is
+   function isInGroup (This : in out CompositeGroup; groupInterface_Param : access Group'Class) return Boolean is
+      groupInterface : Group_Access := Group_Access (groupInterface_Param);
    begin
         if This.list.contains (groupInterface) then
             return True;
@@ -72,8 +75,8 @@ package body org.allbinary.game.identification.CompositeGroup_Package is
         return This.groupInterface;
    end getGroup;
 
-   procedure isInGroup (This : in out CompositeGroup; groupInterface : Group_Access) is
-      Java_Result : constant Boolean := CompositeGroup'Class (This).isInGroup (groupInterface);
+   procedure isInGroup (This : in out CompositeGroup; groupInterface_Param : access Group'Class) is
+      Java_Result : constant Boolean := CompositeGroup'Class (This).isInGroup (groupInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

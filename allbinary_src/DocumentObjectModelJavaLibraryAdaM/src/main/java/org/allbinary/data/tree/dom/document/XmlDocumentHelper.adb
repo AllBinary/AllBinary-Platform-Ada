@@ -61,7 +61,7 @@ package body org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.INIT, e);
+            This.logUtil.put (commonStrings.EXCEPTION_Id, XmlDocumentHelper_Access'(This'Unchecked_Access), commonStrings.INIT, e);
                 end;
         end;
    end init;
@@ -80,7 +80,8 @@ package body org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package is
    end format;
 
    --  throws Exception
-   function toString (document : Document_Access) return Unbounded_String is
+   function toString (document_Param : access Document'Class) return Unbounded_String is
+      document : Document_Access := Document_Access (document_Param);
       domSource : DOMSource_Access;
       byteArrayOutputStream : ByteArrayOutputStream_Access;
       streamResult : StreamResult_Access;
@@ -112,8 +113,8 @@ package body org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package is
       null;
    end format;
 
-   procedure toString (document : Document_Access) is
-      Java_Result : constant Unbounded_String := toString (document);
+   procedure toString (document_Param : access Document'Class) is
+      Java_Result : constant Unbounded_String := toString (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

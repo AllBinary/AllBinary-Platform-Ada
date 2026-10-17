@@ -74,15 +74,15 @@ package admin.taghelpers.AuthenticationRequestHelper_Package is
       request : HttpServletRequest_Access;
    end record;
 
-   procedure Initialize (This : in out AuthenticationRequestHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access);
-   function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return AuthenticationRequestHelper_Access;
-   procedure Initialize (This : in out AuthenticationRequestHelper'Class; hashMap : HashMap_Access; httpServletRequest : HttpServletRequest_Access);
-   function Create (hashMap : HashMap_Access; httpServletRequest : HttpServletRequest_Access) return AuthenticationRequestHelper_Access;
+   procedure Initialize (This : in out AuthenticationRequestHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
+   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return AuthenticationRequestHelper_Access;
+   procedure Initialize (This : in out AuthenticationRequestHelper'Class; hashMap_Param : access HashMap'Class; httpServletRequest_Param : access HttpServletRequest'Class);
+   function Create (hashMap_Param : access HashMap'Class; httpServletRequest_Param : access HttpServletRequest'Class) return AuthenticationRequestHelper_Access;
    function generateNewPassword (This : in out AuthenticationRequestHelper) return Unbounded_String;
    function newPassword (This : in out AuthenticationRequestHelper) return Boolean;
    function changePassword (This : in out AuthenticationRequestHelper) return Boolean;
-   function isRoleValid (This : in out AuthenticationRequestHelper; userName : Unbounded_String; password : Unbounded_String; roles : BasicArrayList_Access) return Boolean;
-   procedure isRoleValid (This : in out AuthenticationRequestHelper; userName : Unbounded_String; password : Unbounded_String; roles : BasicArrayList_Access);
+   function isRoleValid (This : in out AuthenticationRequestHelper; userName : Unbounded_String; password : Unbounded_String; roles_Param : access BasicArrayList'Class) return Boolean;
+   procedure isRoleValid (This : in out AuthenticationRequestHelper; userName : Unbounded_String; password : Unbounded_String; roles_Param : access BasicArrayList'Class);
 
 end admin.taghelpers.AuthenticationRequestHelper_Package;
 

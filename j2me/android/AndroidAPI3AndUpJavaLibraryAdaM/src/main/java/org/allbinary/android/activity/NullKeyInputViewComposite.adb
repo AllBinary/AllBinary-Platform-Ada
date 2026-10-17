@@ -33,7 +33,8 @@ package body org.allbinary.android.activity.NullKeyInputViewComposite_Package is
    end Create;
 
 
-   procedure setKeyInputView (This : in out NullKeyInputViewComposite; keyInputView : View_Access) is
+   procedure setKeyInputView (This : in out NullKeyInputViewComposite; keyInputView_Param : access View'Class) is
+      keyInputView : View_Access := View_Access (keyInputView_Param);
    begin
         null;
    end setKeyInputView;
@@ -48,7 +49,8 @@ package body org.allbinary.android.activity.NullKeyInputViewComposite_Package is
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end getView;
 
-   procedure runOnUiThread (This : in out NullKeyInputViewComposite; action : Runnable_Access) is
+   procedure runOnUiThread (This : in out NullKeyInputViewComposite; action_Param : access Runnable'Class) is
+      action : Runnable_Access := Runnable_Access (action_Param);
    begin
         null;
    end runOnUiThread;

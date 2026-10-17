@@ -60,8 +60,8 @@ package admin.taghelpers.AuthenticationHelperUtil_Package is
    procedure Initialize (This : in out AuthenticationHelperUtil'Class);
    function Create return AuthenticationHelperUtil_Access;
    function getInstance return AuthenticationHelperUtil_Access;
-   function isAuthorized (This : in out AuthenticationHelperUtil; authenticationHelper : AuthenticationHelper_Access; filePath : Unbounded_String) return Boolean;
-   procedure isAuthorized (This : in out AuthenticationHelperUtil; authenticationHelper : AuthenticationHelper_Access; filePath : Unbounded_String);
+   function isAuthorized (This : in out AuthenticationHelperUtil; authenticationHelper_Param : access AuthenticationHelper'Class; filePath : Unbounded_String) return Boolean;
+   procedure isAuthorized (This : in out AuthenticationHelperUtil; authenticationHelper_Param : access AuthenticationHelper'Class; filePath : Unbounded_String);
 
 end admin.taghelpers.AuthenticationHelperUtil_Package;
 

@@ -39,7 +39,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.generator.Ba
    function process (This : in out BasicGenerator; input : Unbounded_String) return Unbounded_String is
    begin
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (To_Unbounded_String ("Processing"), This'Unchecked_Access, This.commonStrings.PROCESS);
+            This.logUtil.putF (To_Unbounded_String ("Processing"), BasicGenerator_Access'(This'Unchecked_Access), This.commonStrings.PROCESS);
         end if;
         return input;
    end process;

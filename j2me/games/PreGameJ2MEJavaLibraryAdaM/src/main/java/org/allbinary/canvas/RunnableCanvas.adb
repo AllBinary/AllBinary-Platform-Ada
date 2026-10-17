@@ -42,29 +42,32 @@ package body org.allbinary.canvas.RunnableCanvas_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out RunnableCanvas'Class; commandListener : CommandListener_Access; childNameList : BasicArrayList_Access; hasParam : Boolean) is
+   procedure Initialize (This : in out RunnableCanvas'Class; commandListener_Param : access CommandListener'Class; childNameList_Param : access BasicArrayList'Class; hasParam : Boolean) is
+      commandListener : CommandListener_Access := CommandListener_Access (commandListener_Param);
+      childNameList : BasicArrayList_Access := BasicArrayList_Access (childNameList_Param);
    begin
         MyCanvas_Package.Initialize (This, CommonStrings_Package.getInstance.UNKNOWN, childNameList);
         Initialize_Fields (This);
-        This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("RunnableCanvas delay: ")).appendint (Integer (This.loopTimeHelper.delay_Id)).toString, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
-        This.runnableCanvasRefreshHelper := RunnableCanvasRefreshHelper_Package.Create (This'Unchecked_Access);
+        This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("RunnableCanvas delay: ")).appendint (Integer (This.loopTimeHelper.delay_Id)).toString, RunnableCanvas_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
+        This.runnableCanvasRefreshHelper := RunnableCanvasRefreshHelper_Package.Create (RunnableCanvas_Access'(This'Unchecked_Access));
         if (commandListener) /= (null) then
             This.initCommands (commandListener);
         elsif hasParam then
-            This.logUtil.putF (To_Unbounded_String ("commandListener was null"), This'Unchecked_Access, To_Unbounded_String ("initCommands"));
+            This.logUtil.putF (To_Unbounded_String ("commandListener was null"), RunnableCanvas_Access'(This'Unchecked_Access), To_Unbounded_String ("initCommands"));
         end if;
    end Initialize;
 
-   function Create (commandListener : CommandListener_Access; childNameList : BasicArrayList_Access; hasParam : Boolean) return RunnableCanvas_Access is
+   function Create (commandListener_Param : access CommandListener'Class; childNameList_Param : access BasicArrayList'Class; hasParam : Boolean) return RunnableCanvas_Access is
       This : constant RunnableCanvas_Access := new RunnableCanvas;
    begin
-      RunnableCanvas_Package.Initialize (This.all, commandListener, childNameList, hasParam);
+      RunnableCanvas_Package.Initialize (This.all, commandListener_Param, childNameList_Param, hasParam);
       return This;
    end Create;
 
-   procedure initCommands (This : in out RunnableCanvas; cmdListener : CommandListener_Access) is
+   procedure initCommands (This : in out RunnableCanvas; cmdListener_Param : access CommandListener'Class) is
+      cmdListener : CommandListener_Access := CommandListener_Access (cmdListener_Param);
    begin
-        This.logUtil.putF (This.commonStrings.NOT_IMPLEMENTED, This'Unchecked_Access, To_Unbounded_String ("initCommands"));
+        This.logUtil.putF (This.commonStrings.NOT_IMPLEMENTED, RunnableCanvas_Access'(This'Unchecked_Access), To_Unbounded_String ("initCommands"));
    end initCommands;
 
    function isMainCanvas (This : in out RunnableCanvas) return Boolean is
@@ -76,7 +79,8 @@ package body org.allbinary.canvas.RunnableCanvas_Package is
         end if;
    end isMainCanvas;
 
-   procedure setThread (This : in out RunnableCanvas; thread_Case : Thread_Access) is
+   procedure setThread (This : in out RunnableCanvas; thread_Case_Param : access Thread'Class) is
+      thread_Case : Thread_Access := Thread_Access (thread_Case_Param);
    begin
         This.thread_Case := thread_Case;
    end setThread;
@@ -87,10 +91,10 @@ package body org.allbinary.canvas.RunnableCanvas_Package is
         if not (This.running) then
             This.thread_Case := NullThread_Package.NULL_THREAD;
             begin  --  synchronized
-                This.threadObjectUtil.notifyObject (This'Unchecked_Access);
+                This.threadObjectUtil.notifyObject (RunnableCanvas_Access'(This'Unchecked_Access));
             end;
         end if;
-        This.logUtil.putF (StringMaker_Package.Create.append (This.IS_RUNNING).appendboolean (This.running).toString, This'Unchecked_Access, This.SET_RUNNING);
+        This.logUtil.putF (StringMaker_Package.Create.append (This.IS_RUNNING).appendboolean (This.running).toString, RunnableCanvas_Access'(This'Unchecked_Access), This.SET_RUNNING);
    end setRunning;
 
    function isRunning (This : in out RunnableCanvas) return Boolean is
@@ -108,7 +112,7 @@ package body org.allbinary.canvas.RunnableCanvas_Package is
             if (This.currentThread) /= (null) then
                 stringBuffer.append (StringUtil_Package.getInstance.toString (This.currentThread));
             end if;
-            This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, This.IS_RUNNING);
+            This.logUtil.putF (stringBuffer.toString, RunnableCanvas_Access'(This'Unchecked_Access), This.IS_RUNNING);
             return False;
         end if;
    end isRunning;
@@ -122,7 +126,7 @@ package body org.allbinary.canvas.RunnableCanvas_Package is
    begin
         This.loopTimeHelper.delay_Id := wait;
         This.pauseWait := (Long_Long_Integer (wait)) * (3);
-        This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("setWait - delay: ")).appendint (Integer (This.loopTimeHelper.delay_Id)).toString, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+        This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("setWait - delay: ")).appendint (Integer (This.loopTimeHelper.delay_Id)).toString, RunnableCanvas_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
    end setWait;
 
    function getWait (This : in out RunnableCanvas) return Integer is
@@ -149,7 +153,7 @@ package body org.allbinary.canvas.RunnableCanvas_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("showNotify"), e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, RunnableCanvas_Access'(This'Unchecked_Access), To_Unbounded_String ("showNotify"), e);
                 end;
         end;
    end showNotify;
@@ -159,7 +163,7 @@ package body org.allbinary.canvas.RunnableCanvas_Package is
    begin
         This.notified := True;
         begin  --  synchronized
-            This.threadObjectUtil.notifyObject (This'Unchecked_Access);
+            This.threadObjectUtil.notifyObject (RunnableCanvas_Access'(This'Unchecked_Access));
         end;
         This.repaint;
    end stopWaiting;
@@ -169,9 +173,9 @@ package body org.allbinary.canvas.RunnableCanvas_Package is
    begin
         if not (This.notified) then
             if (wait) > (0) then
-                This.threadObjectUtil.waitObjectFor (This'Unchecked_Access, wait);
+                This.threadObjectUtil.waitObjectFor (RunnableCanvas_Access'(This'Unchecked_Access), wait);
             else
-                This.threadObjectUtil.waitObject (This'Unchecked_Access);
+                This.threadObjectUtil.waitObject (RunnableCanvas_Access'(This'Unchecked_Access));
             end if;
         end if;
    end waitOnNotify;
@@ -206,12 +210,12 @@ package body org.allbinary.canvas.RunnableCanvas_Package is
             if (This.isRunning) and then (not (This.isSingleThread)) then
                 stringMaker.delete (0, stringMaker.length);
                 currentTimeMillis := This.systemWrapper.currentTimeMillis;
-                This.logUtil.putF (stringMaker.append (This.START_PAUSE).appendlong (currentTimeMillis).append (This.PAUSE_SLEEP).appendlong (This.pauseWait).toString, This'Unchecked_Access, This.PROCESS_LOOP_SLEEP);
+                This.logUtil.putF (stringMaker.append (This.START_PAUSE).appendlong (currentTimeMillis).append (This.PAUSE_SLEEP).appendlong (This.pauseWait).toString, RunnableCanvas_Access'(This'Unchecked_Access), This.PROCESS_LOOP_SLEEP);
                 while ((This.isPaused) and then (This.isRunning)) and then (not (This.isSingleThread)) loop
                     This.processSleep;
                     if not (This.isPausable) then
                         stringMaker.delete (0, stringMaker.length);
-                        This.logUtil.putF (stringMaker.append (This.END_PAUSE).appendlong (currentTimeMillis).toString, This'Unchecked_Access, This.PROCESS_LOOP_SLEEP);
+                        This.logUtil.putF (stringMaker.append (This.END_PAUSE).appendlong (currentTimeMillis).toString, RunnableCanvas_Access'(This'Unchecked_Access), This.PROCESS_LOOP_SLEEP);
                         return;
                     end if;
                 end loop;

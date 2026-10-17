@@ -42,7 +42,7 @@ package org.allbinary.game.Intermission_Package is
 
    procedure Initialize (This : in out Intermission'Class);
    function Create return Intermission_Access;
-   procedure setListener (This : in out Intermission; enableListener : IntermissionEnableListenerInterface_Access);
+   procedure setListener (This : in out Intermission; enableListener_Param : access IntermissionEnableListenerInterface'Class);
    function getTimeDelayHelper (This : in out Intermission) return TimeDelayHelper_Access;
    procedure setEnabled (This : in out Intermission; enabled : Boolean);
    function isEnabled (This : in out Intermission) return Boolean;

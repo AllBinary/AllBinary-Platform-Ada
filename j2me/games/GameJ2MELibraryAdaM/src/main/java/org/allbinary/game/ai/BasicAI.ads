@@ -64,9 +64,9 @@ package org.allbinary.game.ai.BasicAI_Package is
    AI_VISITOR : Integer;
    ID : Integer;
 
-   procedure Initialize (This : in out BasicAI'Class; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access);
-   function Create (ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return BasicAI_Access;
-   procedure processAI (This : in out BasicAI; allBinaryLayerManager : AllBinaryLayerManager_Access);
+   procedure Initialize (This : in out BasicAI'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class);
+   function Create (ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return BasicAI_Access;
+   procedure processAI (This : in out BasicAI; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class);
    procedure processKeyAI (This : in out BasicAI; key : Integer);
    procedure setLastKey (This : in out BasicAI; lastKey : Integer);
    function getLastKey (This : in out BasicAI) return Integer;

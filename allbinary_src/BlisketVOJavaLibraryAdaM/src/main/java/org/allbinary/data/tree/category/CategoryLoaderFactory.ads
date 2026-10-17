@@ -41,8 +41,8 @@ package org.allbinary.data.tree.category.CategoryLoaderFactory_Package is
 
    procedure Initialize (This : in out CategoryLoaderFactory'Class);
    function Create return CategoryLoaderFactory_Access;
-   function getInstance (categoryFactoryInterface : CategoryFactoryInterface_Access) return CategoryLoaderInterface_Access;
-   procedure getInstance (categoryFactoryInterface : CategoryFactoryInterface_Access);
+   function getInstance (categoryFactoryInterface_Param : access CategoryFactoryInterface'Class) return CategoryLoaderInterface_Access;
+   procedure getInstance (categoryFactoryInterface_Param : access CategoryFactoryInterface'Class);
 
 end org.allbinary.data.tree.category.CategoryLoaderFactory_Package;
 

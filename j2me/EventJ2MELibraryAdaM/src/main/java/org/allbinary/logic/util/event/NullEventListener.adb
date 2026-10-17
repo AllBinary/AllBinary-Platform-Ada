@@ -33,7 +33,8 @@ package body org.allbinary.logic.util.event.NullEventListener_Package is
    end Create;
 
 
-   procedure onEvent (This : in out NullEventListener; eventObject : AllBinaryEventObject_Access) is
+   procedure onEvent (This : in out NullEventListener; eventObject_Param : access AllBinaryEventObject'Class) is
+      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
    begin
         null;
    end onEvent;

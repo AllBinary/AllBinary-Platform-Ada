@@ -42,7 +42,8 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
         return This.inputAutomationTypeJComboBox;
    end getInputAutomationTypeJComboBox;
 
-   procedure setInputAutomationTypeJComboBox (This : in out InputAutomationTypeJPanel; inputAutomationTypeJComboBox : JComboBox_Access) is
+   procedure setInputAutomationTypeJComboBox (This : in out InputAutomationTypeJPanel; inputAutomationTypeJComboBox_Param : access JComboBox'Class) is
+      inputAutomationTypeJComboBox : JComboBox_Access := JComboBox_Access (inputAutomationTypeJComboBox_Param);
    begin
         This.inputAutomationTypeJComboBox := inputAutomationTypeJComboBox;
    end setInputAutomationTypeJComboBox;
@@ -54,7 +55,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
         This.jLabel1 := JLabel_Package.Create;
         This.inputAutomationTypeJComboBox.setModel (DefaultComboBoxModel_Package.Create (new Unbounded_String_Array'(To_Unbounded_String ("DirectX"), To_Unbounded_String ("DirectX 8"), To_Unbounded_String ("Low Level"), To_Unbounded_String ("Java Robot"))));
         This.jLabel1.setText (To_Unbounded_String ("Input Type:"));
-        layout := GroupLayout_Package.Create (This'Unchecked_Access);
+        layout := GroupLayout_Package.Create (InputAutomationTypeJPanel_Access'(This'Unchecked_Access));
         This.setLayout (layout);
         layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addComponent (This.jLabel1).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.inputAutomationTypeJComboBox, 0, 98, Short_Package.MAX_VALUE)));
         layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.jLabel1).addComponent (This.inputAutomationTypeJComboBox, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE)));

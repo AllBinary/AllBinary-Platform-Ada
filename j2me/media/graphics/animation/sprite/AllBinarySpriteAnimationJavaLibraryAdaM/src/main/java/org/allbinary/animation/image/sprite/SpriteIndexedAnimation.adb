@@ -24,7 +24,10 @@ package body org.allbinary.animation.image.sprite.SpriteIndexedAnimation_Package
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out SpriteIndexedAnimation'Class; sprite : Sprite_Access; image : Image_Access; basicColorArray : BasicColor_Access_Array_Access; animationBehavior : AnimationBehavior_Access) is
+   procedure Initialize (This : in out SpriteIndexedAnimation'Class; sprite_Param : access Sprite'Class; image_Param : access Image'Class; basicColorArray : BasicColor_Access_Array_Access; animationBehavior_Param : access AnimationBehavior'Class) is
+      sprite : Sprite_Access := Sprite_Access (sprite_Param);
+      image : Image_Access := Image_Access (image_Param);
+      animationBehavior : AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
    begin
         IndexedAnimation_Package.Initialize (This, animationBehavior);
         Initialize_Fields (This);
@@ -36,10 +39,10 @@ package body org.allbinary.animation.image.sprite.SpriteIndexedAnimation_Package
         end if;
    end Initialize;
 
-   function Create (sprite : Sprite_Access; image : Image_Access; basicColorArray : BasicColor_Access_Array_Access; animationBehavior : AnimationBehavior_Access) return SpriteIndexedAnimation_Access is
+   function Create (sprite_Param : access Sprite'Class; image_Param : access Image'Class; basicColorArray : BasicColor_Access_Array_Access; animationBehavior_Param : access AnimationBehavior'Class) return SpriteIndexedAnimation_Access is
       This : constant SpriteIndexedAnimation_Access := new SpriteIndexedAnimation;
    begin
-      SpriteIndexedAnimation_Package.Initialize (This.all, sprite, image, basicColorArray, animationBehavior);
+      SpriteIndexedAnimation_Package.Initialize (This.all, sprite_Param, image_Param, basicColorArray, animationBehavior_Param);
       return This;
    end Create;
 
@@ -49,7 +52,8 @@ package body org.allbinary.animation.image.sprite.SpriteIndexedAnimation_Package
         return This.getSize;
    end getAnimationSize;
 
-   procedure setBasicColorP (This : in out SpriteIndexedAnimation; basicColor : BasicColor_Access) is
+   procedure setBasicColorP (This : in out SpriteIndexedAnimation; basicColor_Param : access BasicColor'Class) is
+      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
       index : Integer;
    begin
         for index in 0 .. (This.basicColorArray'Length) - 1 loop
@@ -69,20 +73,23 @@ package body org.allbinary.animation.image.sprite.SpriteIndexedAnimation_Package
         end if;
    end getBasicColorP;
 
-   procedure paintFrame (This : in out SpriteIndexedAnimation; graphics : Graphics_Access; frame : Integer; x : Integer; y : Integer) is
+   procedure paintFrame (This : in out SpriteIndexedAnimation; graphics_Param : access Graphics'Class; frame : Integer; x : Integer; y : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.setFrame (frame);
         This.sprite.setPosition (x, y);
         This.sprite.paint (graphics);
    end paintFrame;
 
-   procedure paintXY (This : in out SpriteIndexedAnimation; graphics : Graphics_Access; x : Integer; y : Integer) is
+   procedure paintXY (This : in out SpriteIndexedAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.sprite.setPosition (x, y);
         This.sprite.paint (graphics);
    end paintXY;
 
-   procedure paint (This : in out SpriteIndexedAnimation; graphics : Graphics_Access) is
+   procedure paint (This : in out SpriteIndexedAnimation; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.sprite.paint (graphics);
    end paint;

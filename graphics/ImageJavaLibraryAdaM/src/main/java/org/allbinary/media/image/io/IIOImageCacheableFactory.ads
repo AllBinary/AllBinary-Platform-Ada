@@ -38,8 +38,8 @@ package org.allbinary.media.image.io.IIOImageCacheableFactory_Package is
 
    procedure Initialize (This : in out IIOImageCacheableFactory'Class);
    function Create return IIOImageCacheableFactory_Access;
-   function getInstance (This : in out IIOImageCacheableFactory; key : Java_Object_Access) return CacheableInterface_Access;
-   procedure getInstance (This : in out IIOImageCacheableFactory; key : Java_Object_Access);
+   function getInstance (This : in out IIOImageCacheableFactory; key_Param : access Java_Object'Class) return CacheableInterface_Access;
+   procedure getInstance (This : in out IIOImageCacheableFactory; key_Param : access Java_Object'Class);
 
 end org.allbinary.media.image.io.IIOImageCacheableFactory_Package;
 

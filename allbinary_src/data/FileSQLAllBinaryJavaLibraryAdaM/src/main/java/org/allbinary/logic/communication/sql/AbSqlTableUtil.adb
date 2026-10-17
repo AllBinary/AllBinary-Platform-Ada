@@ -73,7 +73,7 @@ package body org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
         begin
             fileName := tableName & This.EXTENSION;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.putF (This.SAVING & tableName, This'Unchecked_Access, This.METHOD_GET_OUTPUT_STREAM);
+                This.logUtil.putF (This.SAVING & tableName, AbSqlTableUtil_Access'(This'Unchecked_Access), This.METHOD_GET_OUTPUT_STREAM);
             end if;
             backupFilePath := AbPath_Package.Create (backupPath, fileName);
             backupFile := AbFile_Package.createAbFile (backupFilePath);
@@ -90,14 +90,15 @@ package body org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
-                This.logUtil.put (To_Unbounded_String ("Create File"), This'Unchecked_Access, This.METHOD_GET_OUTPUT_STREAM, e);
+                This.logUtil.put (To_Unbounded_String ("Create File"), AbSqlTableUtil_Access'(This'Unchecked_Access), This.METHOD_GET_OUTPUT_STREAM, e);
             end if;
             return null;
                 end;
         end;
    end getOutputStream;
 
-   function backupFile (This : in out AbSqlTableUtil; path : AbPath_Access; backupPath : Unbounded_String; tableName : Unbounded_String) return Boolean is
+   function backupFile (This : in out AbSqlTableUtil; path_Param : access AbPath'Class; backupPath : Unbounded_String; tableName : Unbounded_String) return Boolean is
+      path : AbPath_Access := AbPath_Access (path_Param);
       calendar : Calendar_Access;
       timeLong : Long_Long_Integer;
       time : Unbounded_String;
@@ -122,7 +123,7 @@ package body org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
                 stringBuffer.append (backupAbPath.toFileSystemString);
                 stringBuffer.append (This.FILE_LABEL);
                 stringBuffer.append (fileName);
-                This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, This.METHOD_BACKUP_FILE);
+                This.logUtil.putF (stringBuffer.toString, AbSqlTableUtil_Access'(This'Unchecked_Access), This.METHOD_BACKUP_FILE);
             end if;
             Directory_Package.create (backupAbPath);
             backupFileBak := AbFile_Package.createAbFile (backupAbPath.toFileSystemString);
@@ -135,7 +136,7 @@ package body org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.METHOD_BACKUP_FILE, e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, AbSqlTableUtil_Access'(This'Unchecked_Access), This.METHOD_BACKUP_FILE, e);
             end if;
             return False;
                 end;
@@ -168,7 +169,8 @@ package body org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
         return stringBuffer.toString;
    end convertNewLines;
 
-   function backupTable (This : in out AbSqlTableUtil; abSqlTable : AbSqlTable_Access) return Unbounded_String is
+   function backupTable (This : in out AbSqlTableUtil; abSqlTable_Param : access AbSqlTable'Class) return Unbounded_String is
+      abSqlTable : AbSqlTable_Access := AbSqlTable_Access (abSqlTable_Param);
       tableName : Unbounded_String;
       count : Integer;
       sqlStatement : Unbounded_String;
@@ -190,7 +192,7 @@ package body org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
             path := (org_Package.allbinary.globals.URLGLOBALS.getMainPath) + (PATH_GLOBALS.getInstance.BACKUP_PATH);
             if not (Directory_Package.create (AbPath_Package.Create (path))) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                    This.logUtil.putF (This.ERROR_CREATING & Java_Image (path), This'Unchecked_Access, This.METHOD_BACKUP_TABLE);
+                    This.logUtil.putF (This.ERROR_CREATING & Java_Image (path), AbSqlTableUtil_Access'(This'Unchecked_Access), This.METHOD_BACKUP_TABLE);
                 end if;
             end if;
             rset := abSqlTable.executeSQLStatement (sqlStatement);
@@ -211,7 +213,7 @@ package body org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
                 stringBuffer.append (This.END_Id);
                 sqlStatementLine := stringBuffer.toString;
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                    This.logUtil.putF (This.APPENDING & sqlStatementLine, This'Unchecked_Access, This.METHOD_BACKUP_TABLE);
+                    This.logUtil.putF (This.APPENDING & sqlStatementLine, AbSqlTableUtil_Access'(This'Unchecked_Access), This.METHOD_BACKUP_TABLE);
                 end if;
                 outputStream.write (sqlStatementLine.getBytes);
             end loop;
@@ -223,14 +225,16 @@ package body org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
-                This.logUtil.put (To_Unbounded_String ("Backup Table Failed" & ASCII.LF & "SQL Statement"), This'Unchecked_Access, This.METHOD_BACKUP_TABLE, e);
+                This.logUtil.put (To_Unbounded_String ("Backup Table Failed" & ASCII.LF & "SQL Statement"), AbSqlTableUtil_Access'(This'Unchecked_Access), This.METHOD_BACKUP_TABLE, e);
             end if;
             return This.TABLE_LABEL & tableName & To_Unbounded_String (" Backup Failed");
                 end;
         end;
    end backupTable;
 
-   function restoreTable (This : in out AbSqlTableUtil; abSqlTable : AbSqlTable_Access; portion : Portion_Access) return Unbounded_String is
+   function restoreTable (This : in out AbSqlTableUtil; abSqlTable_Param : access AbSqlTable'Class; portion_Param : access Portion'Class) return Unbounded_String is
+      abSqlTable : AbSqlTable_Access := AbSqlTable_Access (abSqlTable_Param);
+      portion : Portion_Access := Portion_Access (portion_Param);
       tableName : Unbounded_String;
       path : Unbounded_String;
       current : Integer;
@@ -250,7 +254,7 @@ package body org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
             if (current) = (0) then
                 if Directory_Package.create (AbPath_Package.Create (path)) then
                     if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                        This.logUtil.putF (This.ERROR_CREATING & Java_Image (path), This'Unchecked_Access, This.METHOD_RESTORE_TABLE);
+                        This.logUtil.putF (This.ERROR_CREATING & Java_Image (path), AbSqlTableUtil_Access'(This'Unchecked_Access), This.METHOD_RESTORE_TABLE);
                     end if;
                 end if;
             end if;
@@ -271,7 +275,7 @@ package body org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
             stringBuffer.append (This.DASH);
             stringBuffer.append (end_Case_Id);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, This.METHOD_RESTORE_TABLE);
+                This.logUtil.putF (stringBuffer.toString, AbSqlTableUtil_Access'(This'Unchecked_Access), This.METHOD_RESTORE_TABLE);
             end if;
             bufferedLineReader.readUpToLines (start);
             line := This.stringUtil.EMPTY_STRING;
@@ -291,7 +295,7 @@ package body org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
-                This.logUtil.put (To_Unbounded_String ("Restore Table Failed" & ASCII.LF & "SQL Statement"), This'Unchecked_Access, This.METHOD_RESTORE_TABLE, e);
+                This.logUtil.put (To_Unbounded_String ("Restore Table Failed" & ASCII.LF & "SQL Statement"), AbSqlTableUtil_Access'(This'Unchecked_Access), This.METHOD_RESTORE_TABLE, e);
             end if;
             stringBuffer := StringMaker_Package.Create;
             stringBuffer.append (This.TABLE_LABEL);
@@ -309,8 +313,8 @@ package body org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
       null;
    end getOutputStream;
 
-   procedure backupFile (This : in out AbSqlTableUtil; path : AbPath_Access; backupPath : Unbounded_String; tableName : Unbounded_String) is
-      Java_Result : constant Boolean := AbSqlTableUtil'Class (This).backupFile (path, backupPath, tableName);
+   procedure backupFile (This : in out AbSqlTableUtil; path_Param : access AbPath'Class; backupPath : Unbounded_String; tableName : Unbounded_String) is
+      Java_Result : constant Boolean := AbSqlTableUtil'Class (This).backupFile (path_Param, backupPath, tableName);
       pragma Unreferenced (Java_Result);
    begin
       null;
@@ -323,15 +327,15 @@ package body org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
       null;
    end convertNewLines;
 
-   procedure backupTable (This : in out AbSqlTableUtil; abSqlTable : AbSqlTable_Access) is
-      Java_Result : constant Unbounded_String := AbSqlTableUtil'Class (This).backupTable (abSqlTable);
+   procedure backupTable (This : in out AbSqlTableUtil; abSqlTable_Param : access AbSqlTable'Class) is
+      Java_Result : constant Unbounded_String := AbSqlTableUtil'Class (This).backupTable (abSqlTable_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end backupTable;
 
-   procedure restoreTable (This : in out AbSqlTableUtil; abSqlTable : AbSqlTable_Access; portion : Portion_Access) is
-      Java_Result : constant Unbounded_String := AbSqlTableUtil'Class (This).restoreTable (abSqlTable, portion);
+   procedure restoreTable (This : in out AbSqlTableUtil; abSqlTable_Param : access AbSqlTable'Class; portion_Param : access Portion'Class) is
+      Java_Result : constant Unbounded_String := AbSqlTableUtil'Class (This).restoreTable (abSqlTable_Param, portion_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

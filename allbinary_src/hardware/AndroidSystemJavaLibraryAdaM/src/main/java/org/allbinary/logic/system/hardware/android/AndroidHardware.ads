@@ -73,10 +73,10 @@ package org.allbinary.logic.system.hardware.android.AndroidHardware_Package is
    function getComponent (This : in out AndroidHardware; index : Integer) return HardwareComponentInterface_Access;
    procedure getComponent (This : in out AndroidHardware; index : Integer);
    function toString (This : in out AndroidHardware) return Unbounded_String;
-   function compareTo (This : in out AndroidHardware; hardwareInterface : HardwareInterface_Access) return Boolean;
-   procedure compareTo (This : in out AndroidHardware; hardwareInterface : HardwareInterface_Access);
-   function difference (This : in out AndroidHardware; hardwareInterface : HardwareInterface_Access) return ABHashtable_Access;
-   procedure difference (This : in out AndroidHardware; hardwareInterface : HardwareInterface_Access);
+   function compareTo (This : in out AndroidHardware; hardwareInterface_Param : access HardwareInterface'Class) return Boolean;
+   procedure compareTo (This : in out AndroidHardware; hardwareInterface_Param : access HardwareInterface'Class);
+   function difference (This : in out AndroidHardware; hardwareInterface_Param : access HardwareInterface'Class) return ABHashtable_Access;
+   procedure difference (This : in out AndroidHardware; hardwareInterface_Param : access HardwareInterface'Class);
 
 end org.allbinary.logic.system.hardware.android.AndroidHardware_Package;
 

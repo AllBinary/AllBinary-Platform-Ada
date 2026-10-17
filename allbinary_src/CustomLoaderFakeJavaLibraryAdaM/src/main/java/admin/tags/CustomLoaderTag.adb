@@ -62,7 +62,7 @@ package body admin.tags.CustomLoaderTag_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAGERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("setCustomLoaderWebappPath()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, CustomLoaderTag_Access'(This'Unchecked_Access), To_Unbounded_String ("setCustomLoaderWebappPath()"), e);
             end if;
                 end;
         end;
@@ -73,7 +73,7 @@ package body admin.tags.CustomLoaderTag_Package is
    begin
         begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
-                This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.tagStrings.DO_START_TAG);
+                This.logUtil.putF (This.commonStrings.START, CustomLoaderTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
             end if;
             if (This.command) /= (Null_Unbounded_String) then
                 if (This.command.compareTo (GLOBALS2.SET)) = (0) then

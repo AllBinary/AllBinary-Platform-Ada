@@ -22,22 +22,25 @@ package body org.allbinary.game.layer.waypoint.NoCacheWaypoint_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out NoCacheWaypoint'Class; ownerLayer : PathFindingLayerInterface_Access; sound : Sound_Access) is
+   procedure Initialize (This : in out NoCacheWaypoint'Class; ownerLayer_Param : access PathFindingLayerInterface'Class; sound_Param : access Sound'Class) is
+      ownerLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (ownerLayer_Param);
+      sound : Sound_Access := Sound_Access (sound_Param);
    begin
         WaypointBase_Package.Initialize (This, sound);
         Initialize_Fields (This);
         This.ownerLayer := ownerLayer;
    end Initialize;
 
-   function Create (ownerLayer : PathFindingLayerInterface_Access; sound : Sound_Access) return NoCacheWaypoint_Access is
+   function Create (ownerLayer_Param : access PathFindingLayerInterface'Class; sound_Param : access Sound'Class) return NoCacheWaypoint_Access is
       This : constant NoCacheWaypoint_Access := new NoCacheWaypoint;
    begin
-      NoCacheWaypoint_Package.Initialize (This.all, ownerLayer, sound);
+      NoCacheWaypoint_Package.Initialize (This.all, ownerLayer_Param, sound_Param);
       return This;
    end Create;
 
    --  throws Exception
-   procedure setAllBinaryGameLayerManager (This : in out NoCacheWaypoint; allBinaryGameLayerManager : AllBinaryGameLayerManager_Access) is
+   procedure setAllBinaryGameLayerManager (This : in out NoCacheWaypoint; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class) is
+      allBinaryGameLayerManager : AllBinaryGameLayerManager_Access := AllBinaryGameLayerManager_Access (allBinaryGameLayerManager_Param);
    begin
         WaypointBase (This).setAllBinaryGameLayerManager (allBinaryGameLayerManager);
    end setAllBinaryGameLayerManager;
@@ -48,19 +51,22 @@ package body org.allbinary.game.layer.waypoint.NoCacheWaypoint_Package is
    end releaseCachedPaths;
 
    --  throws Exception
-   function getPathsListFromCacheOnly (This : in out NoCacheWaypoint; geographicMapCellPosition : GeographicMapCellPosition_Access) return BasicArrayList_Access is
+   function getPathsListFromCacheOnly (This : in out NoCacheWaypoint; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return BasicArrayList_Access is
+      geographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
    begin
         return BasicArrayListUtil_Package.getInstance.getImmutableInstance;
    end getPathsListFromCacheOnly;
 
    --  throws Exception
-   function getPathsListRunnable (This : in out NoCacheWaypoint; geographicMapCellPosition : GeographicMapCellPosition_Access) return BasicArrayList_Access is
+   function getPathsListRunnable (This : in out NoCacheWaypoint; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return BasicArrayList_Access is
+      geographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
    begin
         return This.createPaths (geographicMapCellPosition);
    end getPathsListRunnable;
 
    --  throws Exception
-   function getEndGeographicMapCellPosition (This : in out NoCacheWaypoint; startGeographicMapCellPosition : GeographicMapCellPosition_Access) return GeographicMapCellPosition_Access is
+   function getEndGeographicMapCellPosition (This : in out NoCacheWaypoint; startGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return GeographicMapCellPosition_Access is
+      startGeographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (startGeographicMapCellPosition_Param);
       endList : BasicArrayList_Access;
       endGeographicMapCellPosition : GeographicMapCellPosition_Access;
       index : Integer;
@@ -79,7 +85,8 @@ package body org.allbinary.game.layer.waypoint.NoCacheWaypoint_Package is
    end getEndGeographicMapCellPosition;
 
    --  throws Exception
-   function createPaths (This : in out NoCacheWaypoint; startGeographicMapCellPosition : GeographicMapCellPosition_Access) return BasicArrayList_Access is
+   function createPaths (This : in out NoCacheWaypoint; startGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return BasicArrayList_Access is
+      startGeographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (startGeographicMapCellPosition_Param);
       endGeographicMapCellPosition : GeographicMapCellPosition_Access;
       geographicMapCompositeInterface : GeographicMapCompositeInterface_Access;
       geographicMapInterface : BasicGeographicMap_Access;
@@ -118,13 +125,15 @@ package body org.allbinary.game.layer.waypoint.NoCacheWaypoint_Package is
         return list;
    end createPaths;
 
-   procedure onEvent (This : in out NoCacheWaypoint; eventObject : AllBinaryEventObject_Access) is
+   procedure onEvent (This : in out NoCacheWaypoint; eventObject_Param : access AllBinaryEventObject'Class) is
+      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
    begin
-        ForcedLogUtil_Package.log (EventStrings_Package.getInstance.PERFORMANCE_MESSAGE, This'Unchecked_Access);
+        ForcedLogUtil_Package.log (EventStrings_Package.getInstance.PERFORMANCE_MESSAGE, NoCacheWaypoint_Access'(This'Unchecked_Access));
    end onEvent;
 
    --  throws Exception
-   procedure onBuildingEvent (This : in out NoCacheWaypoint; event : RTSLayerEvent_Access) is
+   procedure onBuildingEvent (This : in out NoCacheWaypoint; event_Param : access RTSLayerEvent'Class) is
+      event : RTSLayerEvent_Access := RTSLayerEvent_Access (event_Param);
    begin
         null;
    end onBuildingEvent;
@@ -135,7 +144,8 @@ package body org.allbinary.game.layer.waypoint.NoCacheWaypoint_Package is
    end reset;
 
    --  throws Exception
-   procedure visit (This : in out NoCacheWaypoint; unitLayer : PathFindingLayerInterface_Access) is
+   procedure visit (This : in out NoCacheWaypoint; unitLayer_Param : access PathFindingLayerInterface'Class) is
+      unitLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (unitLayer_Param);
       size : Integer;
       unitWaypointBehavior : UnitWaypointBehavior_Access;
       rtsLayer : CollidableDestroyableDamageableLayer_Access;
@@ -159,29 +169,29 @@ package body org.allbinary.game.layer.waypoint.NoCacheWaypoint_Package is
         end if;
    end visit;
 
-   procedure getPathsListFromCacheOnly (This : in out NoCacheWaypoint; geographicMapCellPosition : GeographicMapCellPosition_Access) is
-      Java_Result : constant BasicArrayList_Access := NoCacheWaypoint'Class (This).getPathsListFromCacheOnly (geographicMapCellPosition);
+   procedure getPathsListFromCacheOnly (This : in out NoCacheWaypoint; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is
+      Java_Result : constant BasicArrayList_Access := NoCacheWaypoint'Class (This).getPathsListFromCacheOnly (geographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getPathsListFromCacheOnly;
 
-   procedure getPathsListRunnable (This : in out NoCacheWaypoint; geographicMapCellPosition : GeographicMapCellPosition_Access) is
-      Java_Result : constant BasicArrayList_Access := NoCacheWaypoint'Class (This).getPathsListRunnable (geographicMapCellPosition);
+   procedure getPathsListRunnable (This : in out NoCacheWaypoint; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is
+      Java_Result : constant BasicArrayList_Access := NoCacheWaypoint'Class (This).getPathsListRunnable (geographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getPathsListRunnable;
 
-   procedure getEndGeographicMapCellPosition (This : in out NoCacheWaypoint; startGeographicMapCellPosition : GeographicMapCellPosition_Access) is
-      Java_Result : constant GeographicMapCellPosition_Access := NoCacheWaypoint'Class (This).getEndGeographicMapCellPosition (startGeographicMapCellPosition);
+   procedure getEndGeographicMapCellPosition (This : in out NoCacheWaypoint; startGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is
+      Java_Result : constant GeographicMapCellPosition_Access := NoCacheWaypoint'Class (This).getEndGeographicMapCellPosition (startGeographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getEndGeographicMapCellPosition;
 
-   procedure createPaths (This : in out NoCacheWaypoint; startGeographicMapCellPosition : GeographicMapCellPosition_Access) is
-      Java_Result : constant BasicArrayList_Access := NoCacheWaypoint'Class (This).createPaths (startGeographicMapCellPosition);
+   procedure createPaths (This : in out NoCacheWaypoint; startGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is
+      Java_Result : constant BasicArrayList_Access := NoCacheWaypoint'Class (This).createPaths (startGeographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

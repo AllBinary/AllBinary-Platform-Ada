@@ -22,17 +22,18 @@ package body org.allbinary.canvas.RunnableCanvasRefreshHelper_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out RunnableCanvasRefreshHelper'Class; runnableCanvas : MyCanvas_Access) is
+   procedure Initialize (This : in out RunnableCanvasRefreshHelper'Class; runnableCanvas_Param : access MyCanvas'Class) is
+      runnableCanvas : MyCanvas_Access := MyCanvas_Access (runnableCanvas_Param);
    begin
       Processor_Package.Initialize (This);
       Initialize_Fields (This);
         This.runnableCanvas := runnableCanvas;
    end Initialize;
 
-   function Create (runnableCanvas : MyCanvas_Access) return RunnableCanvasRefreshHelper_Access is
+   function Create (runnableCanvas_Param : access MyCanvas'Class) return RunnableCanvasRefreshHelper_Access is
       This : constant RunnableCanvasRefreshHelper_Access := new RunnableCanvasRefreshHelper;
    begin
-      RunnableCanvasRefreshHelper_Package.Initialize (This.all, runnableCanvas);
+      RunnableCanvasRefreshHelper_Package.Initialize (This.all, runnableCanvas_Param);
       return This;
    end Create;
 

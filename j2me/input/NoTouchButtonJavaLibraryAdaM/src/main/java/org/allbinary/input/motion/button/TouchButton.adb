@@ -32,7 +32,11 @@ package body org.allbinary.input.motion.button.TouchButton_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out TouchButton'Class; touchButtonInput : TouchButtonInput_Access; animationInterface : AnimationInterface_Access; rawRectangle : Rectangle_Access; cellPosition : CellPosition_Access; xBorder : Integer; yBorder : Integer) is
+   procedure Initialize (This : in out TouchButton'Class; touchButtonInput_Param : access TouchButtonInput'Class; animationInterface_Param : access AnimationInterface'Class; rawRectangle_Param : access Rectangle'Class; cellPosition_Param : access CellPosition'Class; xBorder : Integer; yBorder : Integer) is
+      touchButtonInput : TouchButtonInput_Access := TouchButtonInput_Access (touchButtonInput_Param);
+      animationInterface : AnimationInterface_Access := AnimationInterface_Access (animationInterface_Param);
+      rawRectangle : Rectangle_Access := Rectangle_Access (rawRectangle_Param);
+      cellPosition : CellPosition_Access := CellPosition_Access (cellPosition_Param);
    begin
       Paintable_Package.Initialize (This);
       Initialize_Fields (This);
@@ -43,17 +47,18 @@ package body org.allbinary.input.motion.button.TouchButton_Package is
         This.xBorder := xBorder;
         This.yBorder := yBorder;
         This.updateRectangle;
-        This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Created: ")).append (This.toString).toString, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+        This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Created: ")).append (This.toString).toString, TouchButton_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
    end Initialize;
 
-   function Create (touchButtonInput : TouchButtonInput_Access; animationInterface : AnimationInterface_Access; rawRectangle : Rectangle_Access; cellPosition : CellPosition_Access; xBorder : Integer; yBorder : Integer) return TouchButton_Access is
+   function Create (touchButtonInput_Param : access TouchButtonInput'Class; animationInterface_Param : access AnimationInterface'Class; rawRectangle_Param : access Rectangle'Class; cellPosition_Param : access CellPosition'Class; xBorder : Integer; yBorder : Integer) return TouchButton_Access is
       This : constant TouchButton_Access := new TouchButton;
    begin
-      TouchButton_Package.Initialize (This.all, touchButtonInput, animationInterface, rawRectangle, cellPosition, xBorder, yBorder);
+      TouchButton_Package.Initialize (This.all, touchButtonInput_Param, animationInterface_Param, rawRectangle_Param, cellPosition_Param, xBorder, yBorder);
       return This;
    end Create;
 
-   procedure paint (This : in out TouchButton; graphics : Graphics_Access) is
+   procedure paint (This : in out TouchButton; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.animationInterface.paintXY (graphics, This.animationX, This.animationY);
    end paint;
@@ -77,7 +82,7 @@ package body org.allbinary.input.motion.button.TouchButton_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("updateRectangle"), e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, TouchButton_Access'(This'Unchecked_Access), To_Unbounded_String ("updateRectangle"), e);
                 end;
         end;
    end updateRectangle;

@@ -36,7 +36,9 @@ package body org.allbinary.game.init.CommonGameInitialization_Package is
    end Create;
 
    --  throws Exception
-   procedure init (This : in out CommonGameInitialization; abeClientInformation : AbeClientInformationInterface_Access; commandListener : CommandListener_Access; level : Integer) is
+   procedure init (This : in out CommonGameInitialization; abeClientInformation_Param : access AbeClientInformationInterface'Class; commandListener_Param : access CommandListener'Class; level : Integer) is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      commandListener : CommandListener_Access := CommandListener_Access (commandListener_Param);
       resourceLoadingLevelFactory : ResourceLoadingLevelFactory_Access;
       progressCanvas : ProgressCanvas_Access;
    begin

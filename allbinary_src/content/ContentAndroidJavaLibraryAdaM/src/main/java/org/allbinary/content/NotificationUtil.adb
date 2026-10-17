@@ -48,7 +48,8 @@ package body org.allbinary.content.NotificationUtil_Package is
       return This;
    end Create;
 
-   procedure notify (This : in out NotificationUtil; command : Command_Access; resource : Unbounded_String; message : Unbounded_String) is
+   procedure notify (This : in out NotificationUtil; command_Param : access Command'Class; resource : Unbounded_String; message : Unbounded_String) is
+      command : Command_Access := Command_Access (command_Param);
       context : Context_Access;
       intent : Intent_Access;
       integer_Id : Integer;
@@ -65,7 +66,7 @@ package body org.allbinary.content.NotificationUtil_Package is
         pendingIntent := PendingIntent_Package.getActivity (context, 0, intent, (if (SDK_VERSION) > (22) then FLAG_IMMUTABLE else 0));
         if (This.notificationBuilder) = (null) then
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.putF (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.NOT_IMPLEMENTED);
+            This.logUtil.putF (commonStrings.EXCEPTION_Id, NotificationUtil_Access'(This'Unchecked_Access), commonStrings.NOT_IMPLEMENTED);
             return;
         end if;
         This.notificationBuilder.build (context, command, message, integer_Id, pendingIntent);

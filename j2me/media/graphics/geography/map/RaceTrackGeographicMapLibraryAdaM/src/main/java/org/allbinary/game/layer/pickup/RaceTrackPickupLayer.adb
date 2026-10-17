@@ -35,19 +35,20 @@ package body org.allbinary.game.layer.pickup.RaceTrackPickupLayer_Package is
       return This;
    end Create;
 
-   procedure setTiledLayer (This : in out RaceTrackPickupLayer; tiledLayer : AllBinaryTiledLayer_Access) is
+   procedure setTiledLayer (This : in out RaceTrackPickupLayer; tiledLayer_Param : access AllBinaryTiledLayer'Class) is
+      tiledLayer : AllBinaryTiledLayer_Access := AllBinaryTiledLayer_Access (tiledLayer_Param);
       viewPosition : TileLayerPositionIntoViewPosition_Access;
    begin
         viewPosition := TileLayerPositionIntoViewPosition_Access (This.getViewPosition);
         viewPosition.setTiledLayer (tiledLayer);
-        This.viewPositionEventHandler.addListener (AllBinaryLayer_Access (This'Unchecked_Access));
+        This.viewPositionEventHandler.addListener (AllBinaryLayer_Access (RaceTrackPickupLayer_Access'(This'Unchecked_Access)));
    end setTiledLayer;
 
    procedure setDestroyed (This : in out RaceTrackPickupLayer; destroyed : Boolean) is
    begin
         PickupLayer (This).setDestroyed (destroyed);
         if This.isDestroyed then
-            This.viewPositionEventHandler.removeListener (This'Unchecked_Access);
+            This.viewPositionEventHandler.removeListener (RaceTrackPickupLayer_Access'(This'Unchecked_Access));
         end if;
    end setDestroyed;
 

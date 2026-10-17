@@ -52,13 +52,13 @@ package org.allbinary.game.midlet.DemoGameMidlet_Package is
 
    type DemoGameMidlet is new GameMidlet with null record;
 
-   procedure Initialize (This : in out DemoGameMidlet'Class; clientInformationFactory : ClientInformationFactory_Access);
-   function Create (clientInformationFactory : ClientInformationFactory_Access) return DemoGameMidlet_Access;
+   procedure Initialize (This : in out DemoGameMidlet'Class; clientInformationFactory_Param : access ClientInformationFactory'Class);
+   function Create (clientInformationFactory_Param : access ClientInformationFactory'Class) return DemoGameMidlet_Access;
    function isContinue (This : in out DemoGameMidlet) return Boolean;
    function getHighestLevel (This : in out DemoGameMidlet) return Integer;
    function createDemoGameCanvasRunnableInterface (This : in out DemoGameMidlet) return GameCanvasRunnableInterface_Access;
-   function createGameCanvasRunnable (This : in out DemoGameMidlet; allBinaryGameLayerManager : AllBinaryGameLayerManager_Access) return GameCanvasRunnableInterface_Access;
-   procedure createGameCanvasRunnable (This : in out DemoGameMidlet; allBinaryGameLayerManager : AllBinaryGameLayerManager_Access);
+   function createGameCanvasRunnable (This : in out DemoGameMidlet; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class) return GameCanvasRunnableInterface_Access;
+   procedure createGameCanvasRunnable (This : in out DemoGameMidlet; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class);
    function createGameCanvasRunnableInterface (This : in out DemoGameMidlet) return GameCanvasRunnableInterface_Access;
    procedure demoSetup (This : in out DemoGameMidlet);
    procedure postDemoSetup (This : in out DemoGameMidlet);

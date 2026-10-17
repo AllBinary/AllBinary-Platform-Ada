@@ -49,7 +49,8 @@ package body org.allbinary.game.media.graphics.geography.map.racetrack.PathFindi
    end Create;
 
    --  throws Exception
-   function getInstancePathFindingInfo (This : in out PathFindingInfoFactory; geographicMapInterface : BasicGeographicMap_Access; mapArray : Integer_Array_Access_Array_Access) return PathFindingInfo_Access is
+   function getInstancePathFindingInfo (This : in out PathFindingInfoFactory; geographicMapInterface_Param : access BasicGeographicMap'Class; mapArray : Integer_Array_Access_Array_Access) return PathFindingInfo_Access is
+      geographicMapInterface : BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
       pathFindingInfo : PathFindingInfo_Access;
    begin
         pathFindingInfo := PathFindingInfo_Package.Create (This.pathFindingInfo.getPathFindingNodeCostInfoFactoryInterface, BasicArrayListS_Package.Create (1), BasicArrayListS_Package.Create (1));
@@ -61,20 +62,27 @@ package body org.allbinary.game.media.graphics.geography.map.racetrack.PathFindi
    end getInstancePathFindingInfo;
 
    --  throws Exception
-   procedure init (This : in out PathFindingInfoFactory; geographicMapInterface : BasicGeographicMap_Access; pathFindingInfo : PathFindingInfo_Access; mapArray : Integer_Array_Access_Array_Access) is
+   procedure init (This : in out PathFindingInfoFactory; geographicMapInterface_Param : access BasicGeographicMap'Class; pathFindingInfo_Param : access PathFindingInfo'Class; mapArray : Integer_Array_Access_Array_Access) is
+      geographicMapInterface : BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
+      pathFindingInfo : PathFindingInfo_Access := PathFindingInfo_Access (pathFindingInfo_Param);
    begin
         BasePathFindingInfoFactory (This).init (geographicMapInterface, pathFindingInfo, mapArray);
         This.buildPathFindingNodes (geographicMapInterface, pathFindingInfo, mapArray);
    end init;
 
    --  throws Exception
-   procedure buildPathFindingNodesForCellPosition (This : in out PathFindingInfoFactory; geographicMapInterface : BasicGeographicMap_Access; pathFindingInfo : PathFindingInfo_Access; mapArray : Integer_Array_Access_Array_Access; cellPosition : GeographicMapCellPosition_Access) is
+   procedure buildPathFindingNodesForCellPosition (This : in out PathFindingInfoFactory; geographicMapInterface_Param : access BasicGeographicMap'Class; pathFindingInfo_Param : access PathFindingInfo'Class; mapArray : Integer_Array_Access_Array_Access; cellPosition_Param : access GeographicMapCellPosition'Class) is
+      geographicMapInterface : BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
+      pathFindingInfo : PathFindingInfo_Access := PathFindingInfo_Access (pathFindingInfo_Param);
+      cellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (cellPosition_Param);
    begin
         null;
    end buildPathFindingNodesForCellPosition;
 
    --  throws Exception
-   procedure buildPathFindingNodes (This : in out PathFindingInfoFactory; geographicMapInterface : BasicGeographicMap_Access; pathFindingInfo : PathFindingInfo_Access; mapArray : Integer_Array_Access_Array_Access) is
+   procedure buildPathFindingNodes (This : in out PathFindingInfoFactory; geographicMapInterface_Param : access BasicGeographicMap'Class; pathFindingInfo_Param : access PathFindingInfo'Class; mapArray : Integer_Array_Access_Array_Access) is
+      geographicMapInterface : BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
+      pathFindingInfo : PathFindingInfo_Access := PathFindingInfo_Access (pathFindingInfo_Param);
       geographicMapCellPositionFactory : BasicGeographicMapCellPositionFactory_Access;
       allBinaryTiledLayer : AllBinaryTiledLayer_Access;
       totalColumns : Integer;
@@ -93,8 +101,8 @@ package body org.allbinary.game.media.graphics.geography.map.racetrack.PathFindi
         end loop;
    end buildPathFindingNodes;
 
-   procedure getInstancePathFindingInfo (This : in out PathFindingInfoFactory; geographicMapInterface : BasicGeographicMap_Access; mapArray : Integer_Array_Access_Array_Access) is
-      Java_Result : constant PathFindingInfo_Access := PathFindingInfoFactory'Class (This).getInstancePathFindingInfo (geographicMapInterface, mapArray);
+   procedure getInstancePathFindingInfo (This : in out PathFindingInfoFactory; geographicMapInterface_Param : access BasicGeographicMap'Class; mapArray : Integer_Array_Access_Array_Access) is
+      Java_Result : constant PathFindingInfo_Access := PathFindingInfoFactory'Class (This).getInstancePathFindingInfo (geographicMapInterface_Param, mapArray);
       pragma Unreferenced (Java_Result);
    begin
       null;

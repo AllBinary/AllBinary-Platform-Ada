@@ -34,8 +34,8 @@ package org.allbinary.logic.java.anyType.clazz.loader.ClassLoaderUtil_Package is
 
    procedure Initialize (This : in out ClassLoaderUtil'Class);
    function Create return ClassLoaderUtil_Access;
-   function getName (anyType : Java_Object_Access) return Unbounded_String;
-   procedure getName (anyType : Java_Object_Access);
+   function getName (anyType_Param : access Java_Object'Class) return Unbounded_String;
+   procedure getName (anyType_Param : access Java_Object'Class);
 
 end org.allbinary.logic.java.anyType.clazz.loader.ClassLoaderUtil_Package;
 

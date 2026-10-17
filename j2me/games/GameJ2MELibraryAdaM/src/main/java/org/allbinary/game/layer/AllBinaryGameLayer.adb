@@ -25,7 +25,8 @@ package body org.allbinary.game.layer.AllBinaryGameLayer_Package is
 --          This.basicSetColorUtil := BasicColorSetUtil_Package.getInstance;
 --          This.BLACK := BasicColorFactory_Package.getInstance.BLACK;
 --          
---     procedure paint (This : in out ; graphics : Graphics_Access) is
+--     procedure paint (This : in out ; graphics_Param : access Graphics'Class) is
+--        graphics : Graphics_Access := Graphics_Access (graphics_Param);
 --     begin
 --              This.basicSetColorUtil.setBasicColorP (graphics, This.BLACK);
 --     end paint;
@@ -34,21 +35,24 @@ package body org.allbinary.game.layer.AllBinaryGameLayer_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AllBinaryGameLayer'Class; name : Unbounded_String; layerInfo : Rectangle_Access; viewPosition : ViewPositionBase_Access) is
+   procedure Initialize (This : in out AllBinaryGameLayer'Class; name : Unbounded_String; layerInfo_Param : access Rectangle'Class; viewPosition_Param : access ViewPositionBase'Class) is
+      layerInfo : Rectangle_Access := Rectangle_Access (layerInfo_Param);
+      viewPosition : ViewPositionBase_Access := ViewPositionBase_Access (viewPosition_Param);
    begin
         AllBinaryLayer_Package.Initialize (This, name, layerInfo, viewPosition);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (name : Unbounded_String; layerInfo : Rectangle_Access; viewPosition : ViewPositionBase_Access) return AllBinaryGameLayer_Access is
+   function Create (name : Unbounded_String; layerInfo_Param : access Rectangle'Class; viewPosition_Param : access ViewPositionBase'Class) return AllBinaryGameLayer_Access is
       This : constant AllBinaryGameLayer_Access := new AllBinaryGameLayer;
    begin
-      AllBinaryGameLayer_Package.Initialize (This.all, name, layerInfo, viewPosition);
+      AllBinaryGameLayer_Package.Initialize (This.all, name, layerInfo_Param, viewPosition_Param);
       return This;
    end Create;
 
    --  throws Exception
-   procedure set (This : in out AllBinaryGameLayer; gl : GL_Access) is
+   procedure set (This : in out AllBinaryGameLayer; gl_Param : access GL'Class) is
+      gl : GL_Access := GL_Access (gl_Param);
    begin
         Java_Throw (Java_New_Exception ("Exception", This.commonStrings.NOT_IMPLEMENTED));
    end set;
@@ -64,20 +68,23 @@ package body org.allbinary.game.layer.AllBinaryGameLayer_Package is
    end getGameKeyEventList;
 
    --  throws Exception
-   procedure processInput (This : in out AllBinaryGameLayer; allBinaryLayerManager : AllBinaryLayerManager_Access) is
+   procedure processInput (This : in out AllBinaryGameLayer; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class) is
+      allBinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
    begin
         Java_Throw (Java_New_Exception ("Exception", This.commonStrings.NOT_IMPLEMENTED));
    end processInput;
 
    --  throws Exception
-   procedure processTick (This : in out AllBinaryGameLayer; allBinaryLayerManager : AllBinaryLayerManager_Access) is
+   procedure processTick (This : in out AllBinaryGameLayer; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class) is
+      allBinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
    begin
         Java_Throw (Java_New_Exception ("Exception", This.commonStrings.NOT_IMPLEMENTED));
    end processTick;
 
-   procedure onEvent (This : in out AllBinaryGameLayer; eventObject : AllBinaryEventObject_Access) is
+   procedure onEvent (This : in out AllBinaryGameLayer; eventObject_Param : access AllBinaryEventObject'Class) is
+      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
    begin
-        ForcedLogUtil_Package.log (EventStrings_Package.getInstance.PERFORMANCE_MESSAGE, This'Unchecked_Access);
+        ForcedLogUtil_Package.log (EventStrings_Package.getInstance.PERFORMANCE_MESSAGE, AllBinaryGameLayer_Access'(This'Unchecked_Access));
    end onEvent;
 
    --  throws Exception
@@ -87,21 +94,24 @@ package body org.allbinary.game.layer.AllBinaryGameLayer_Package is
    end onViewPositionChangeEvent;
 
    --  throws Exception
-   procedure onChangeEvent (This : in out AllBinaryGameLayer; layerManagerEvent : ViewPositionEvent_Access) is
+   procedure onChangeEvent (This : in out AllBinaryGameLayer; layerManagerEvent_Param : access ViewPositionEvent'Class) is
+      layerManagerEvent : ViewPositionEvent_Access := ViewPositionEvent_Access (layerManagerEvent_Param);
    begin
-        if GameLayerUtil_Package.isOnScreen (This'Unchecked_Access) then
+        if GameLayerUtil_Package.isOnScreen (AllBinaryGameLayer_Access'(This'Unchecked_Access)) then
             This.setVisible (True);
         else
             This.setVisible (False);
         end if;
    end onChangeEvent;
 
-   procedure paintFirst (This : in out AllBinaryGameLayer; graphics : Graphics_Access) is
+   procedure paintFirst (This : in out AllBinaryGameLayer; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.paintable.paint (graphics);
    end paintFirst;
 
-   procedure paintDebug (This : in out AllBinaryGameLayer; graphics : Graphics_Access) is
+   procedure paintDebug (This : in out AllBinaryGameLayer; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       viewPosition : ViewPositionBase_Access;
       viewX : Integer;
       viewY : Integer;

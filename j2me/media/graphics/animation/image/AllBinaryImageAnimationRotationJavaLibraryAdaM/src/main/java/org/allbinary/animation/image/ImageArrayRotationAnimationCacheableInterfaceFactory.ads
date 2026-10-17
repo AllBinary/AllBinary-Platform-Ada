@@ -40,8 +40,8 @@ package org.allbinary.animation.image.ImageArrayRotationAnimationCacheableInterf
 
    procedure Initialize (This : in out ImageArrayRotationAnimationCacheableInterfaceFactory'Class);
    function Create return ImageArrayRotationAnimationCacheableInterfaceFactory_Access;
-   function getInstance (This : in out ImageArrayRotationAnimationCacheableInterfaceFactory; key : Java_Object_Access) return CacheableInterface_Access;
-   procedure getInstance (This : in out ImageArrayRotationAnimationCacheableInterfaceFactory; key : Java_Object_Access);
+   function getInstance (This : in out ImageArrayRotationAnimationCacheableInterfaceFactory; key_Param : access Java_Object'Class) return CacheableInterface_Access;
+   procedure getInstance (This : in out ImageArrayRotationAnimationCacheableInterfaceFactory; key_Param : access Java_Object'Class);
 
 end org.allbinary.animation.image.ImageArrayRotationAnimationCacheableInterfaceFactory_Package;
 

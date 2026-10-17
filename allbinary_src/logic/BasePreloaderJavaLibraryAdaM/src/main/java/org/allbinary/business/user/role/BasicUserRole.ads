@@ -51,8 +51,8 @@ package org.allbinary.business.user.role.BasicUserRole_Package is
    function getRole (This : in out BasicUserRole) return Unbounded_String;
    function getSessionTimeout (This : in out BasicUserRole) return Long_Long_Integer;
    function getSessionInactivityTimeout (This : in out BasicUserRole) return Long_Long_Integer;
-   function equals (This : in out BasicUserRole; basicUserRole : BasicUserRole_Access) return Boolean;
-   procedure equals (This : in out BasicUserRole; basicUserRole : BasicUserRole_Access);
+   function equals (This : in out BasicUserRole; basicUserRole_Param : access BasicUserRole'Class) return Boolean;
+   procedure equals (This : in out BasicUserRole; basicUserRole_Param : access BasicUserRole'Class);
    function toString (This : in out BasicUserRole) return Unbounded_String;
    function getRole (role : Unbounded_String) return BasicUserRole_Access;
    procedure getRole (role : Unbounded_String);

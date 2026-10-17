@@ -41,12 +41,12 @@ package org.allbinary.logic.java.anyType.InterfaceUtil_Package is
    procedure viewAll (myClass : Ada.Tags.Tag; lineBreak : Unbounded_String);
    function getClass (interfaceName : Unbounded_String; interfaces : Ada_Tags_Tag_Array_Access) return Ada.Tags.Tag;
    procedure getClass (interfaceName : Unbounded_String; interfaces : Ada_Tags_Tag_Array_Access);
-   function isImplemented (clazz : Ada.Tags.Tag; anyType : Java_Object_Access) return Boolean;
-   procedure isImplemented (clazz : Ada.Tags.Tag; anyType : Java_Object_Access);
-   function isImplemented (className : Unbounded_String; anyType : Java_Object_Access) return Boolean;
-   procedure isImplemented (className : Unbounded_String; anyType : Java_Object_Access);
-   function isImplementedView (clazz : Ada.Tags.Tag; anyType : Java_Object_Access) return Unbounded_String;
-   procedure isImplementedView (clazz : Ada.Tags.Tag; anyType : Java_Object_Access);
+   function isImplemented (clazz : Ada.Tags.Tag; anyType_Param : access Java_Object'Class) return Boolean;
+   procedure isImplemented (clazz : Ada.Tags.Tag; anyType_Param : access Java_Object'Class);
+   function isImplemented (className : Unbounded_String; anyType_Param : access Java_Object'Class) return Boolean;
+   procedure isImplemented (className : Unbounded_String; anyType_Param : access Java_Object'Class);
+   function isImplementedView (clazz : Ada.Tags.Tag; anyType_Param : access Java_Object'Class) return Unbounded_String;
+   procedure isImplementedView (clazz : Ada.Tags.Tag; anyType_Param : access Java_Object'Class);
 
 end org.allbinary.logic.java.anyType.InterfaceUtil_Package;
 

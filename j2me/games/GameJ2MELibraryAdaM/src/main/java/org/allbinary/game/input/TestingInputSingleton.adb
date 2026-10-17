@@ -47,7 +47,8 @@ package body org.allbinary.game.input.TestingInputSingleton_Package is
         null;
    end initInputProcessors;
 
-   procedure initInputProcessorsForTestInput (This : in out TestingInputSingleton; aTestInputInterface : TestInputInterface_Access) is
+   procedure initInputProcessorsForTestInput (This : in out TestingInputSingleton; aTestInputInterface_Param : access TestInputInterface'Class) is
+      aTestInputInterface : TestInputInterface_Access := TestInputInterface_Access (aTestInputInterface_Param);
       testInputInterface : TestInputInterface_Access;
    begin
         testInputInterface := aTestInputInterface;
@@ -55,7 +56,9 @@ package body org.allbinary.game.input.TestingInputSingleton_Package is
         This.inputProcessorArray (Canvas_Package.UP) := GameInputProcessor_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
 --     --  throws Exception
---     procedure processEvent (This : in out ; allbinaryLayerManager : AllBinaryLayerManager_Access; gameKeyEvent : GameKeyEvent_Access) is
+--     procedure processEvent (This : in out ; allbinaryLayerManager_Param : access AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent'Class) is
+--        allbinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allbinaryLayerManager_Param);
+--        gameKeyEvent : GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
 --     begin
 --                  testInputInterface.up;
 --     end processEvent;
@@ -63,7 +66,9 @@ package body org.allbinary.game.input.TestingInputSingleton_Package is
         This.inputProcessorArray (Canvas_Package.DOWN) := GameInputProcessor_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
 --     --  throws Exception
---     procedure processEvent (This : in out ; allbinaryLayerManager : AllBinaryLayerManager_Access; gameKeyEvent : GameKeyEvent_Access) is
+--     procedure processEvent (This : in out ; allbinaryLayerManager_Param : access AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent'Class) is
+--        allbinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allbinaryLayerManager_Param);
+--        gameKeyEvent : GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
 --     begin
 --                  testInputInterface.down;
 --     end processEvent;
@@ -71,7 +76,9 @@ package body org.allbinary.game.input.TestingInputSingleton_Package is
         This.inputProcessorArray (Canvas_Package.LEFT) := GameInputProcessor_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
 --     --  throws Exception
---     procedure processEvent (This : in out ; allbinaryLayerManager : AllBinaryLayerManager_Access; gameKeyEvent : GameKeyEvent_Access) is
+--     procedure processEvent (This : in out ; allbinaryLayerManager_Param : access AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent'Class) is
+--        allbinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allbinaryLayerManager_Param);
+--        gameKeyEvent : GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
 --     begin
 --                  testInputInterface.left;
 --     end processEvent;
@@ -79,7 +86,9 @@ package body org.allbinary.game.input.TestingInputSingleton_Package is
         This.inputProcessorArray (Canvas_Package.RIGHT) := GameInputProcessor_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
 --     --  throws Exception
---     procedure processEvent (This : in out ; allbinaryLayerManager : AllBinaryLayerManager_Access; gameKeyEvent : GameKeyEvent_Access) is
+--     procedure processEvent (This : in out ; allbinaryLayerManager_Param : access AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent'Class) is
+--        allbinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allbinaryLayerManager_Param);
+--        gameKeyEvent : GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
 --     begin
 --                  testInputInterface.right;
 --     end processEvent;
@@ -87,7 +96,9 @@ package body org.allbinary.game.input.TestingInputSingleton_Package is
         This.inputProcessorArray (Canvas_Package.KEY_NUM7) := GameInputProcessor_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
 --     --  throws Exception
---     procedure processEvent (This : in out ; allbinaryLayerManager : AllBinaryLayerManager_Access; gameKeyEvent : GameKeyEvent_Access) is
+--     procedure processEvent (This : in out ; allbinaryLayerManager_Param : access AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent'Class) is
+--        allbinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allbinaryLayerManager_Param);
+--        gameKeyEvent : GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
 --     begin
 --                  testInputInterface.strafeLeft;
 --     end processEvent;
@@ -95,7 +106,9 @@ package body org.allbinary.game.input.TestingInputSingleton_Package is
         This.inputProcessorArray (Canvas_Package.KEY_NUM9) := GameInputProcessor_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
 --     --  throws Exception
---     procedure processEvent (This : in out ; allbinaryLayerManager : AllBinaryLayerManager_Access; gameKeyEvent : GameKeyEvent_Access) is
+--     procedure processEvent (This : in out ; allbinaryLayerManager_Param : access AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent'Class) is
+--        allbinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allbinaryLayerManager_Param);
+--        gameKeyEvent : GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
 --     begin
 --                  testInputInterface.strafeRight;
 --     end processEvent;
@@ -104,7 +117,9 @@ package body org.allbinary.game.input.TestingInputSingleton_Package is
    end initInputProcessorsForTestInput;
 
    --  throws Exception
-   procedure processInputList (This : in out TestingInputSingleton; allbinaryLayerManager : AllBinaryLayerManager_Access; list : BasicArrayList_Access) is
+   procedure processInputList (This : in out TestingInputSingleton; allbinaryLayerManager_Param : access AllBinaryLayerManager'Class; list_Param : access BasicArrayList'Class) is
+      allbinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allbinaryLayerManager_Param);
+      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
       key : Integer;
       gameKeyEvent : GameKeyEvent_Access;
       size : Integer;
@@ -121,13 +136,15 @@ package body org.allbinary.game.input.TestingInputSingleton_Package is
    end processInputList;
 
    --  throws Exception
-   procedure processInput (This : in out TestingInputSingleton; allbinaryLayerManager : AllBinaryLayerManager_Access) is
+   procedure processInput (This : in out TestingInputSingleton; allbinaryLayerManager_Param : access AllBinaryLayerManager'Class) is
+      allbinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allbinaryLayerManager_Param);
    begin
         This.processInputList (allbinaryLayerManager, This.getGameKeyEventList);
         This.getGameKeyEventList.clear;
    end processInput;
 
-   procedure paint (This : in out TestingInputSingleton; graphics : Graphics_Access) is
+   procedure paint (This : in out TestingInputSingleton; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.paintable.paint (graphics);
    end paint;

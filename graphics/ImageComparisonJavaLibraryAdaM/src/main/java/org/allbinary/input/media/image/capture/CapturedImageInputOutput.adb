@@ -41,11 +41,12 @@ package body org.allbinary.input.media.image.capture.CapturedImageInputOutput_Pa
    begin
         commonStrings := CommonStrings_Package.getInstance;
         capturedBufferedImageCacheable := (BufferedImageFrameCacheable_Access ((AutomaticCacheInterface_Access (CapturedBufferedImagesCacheSingleton_Package.getInstance)).get (frame)));
-        This.logUtil.putF ((To_Unbounded_String ("Saving: ") & capturedBufferedImageCacheable.toString), This'Unchecked_Access, commonStrings.SAVE);
+        This.logUtil.putF ((To_Unbounded_String ("Saving: ") & capturedBufferedImageCacheable.toString), CapturedImageInputOutput_Access'(This'Unchecked_Access), commonStrings.SAVE);
         This.save (capturedBufferedImageCacheable.getBufferedImage, frame);
    end save;
 
-   procedure save (This : in out CapturedImageInputOutput; bufferedImage : BufferedImage_Access; frame : Long_Long_Integer) is
+   procedure save (This : in out CapturedImageInputOutput; bufferedImage_Param : access BufferedImage'Class; frame : Long_Long_Integer) is
+      bufferedImage : BufferedImage_Access := BufferedImage_Access (bufferedImage_Param);
       commonStrings : CommonStrings_Access;
       imageUtil : ImageUtil_Access;
       filePathStringBuffer : StringMaker_Access;
@@ -59,7 +60,7 @@ package body org.allbinary.input.media.image.capture.CapturedImageInputOutput_Pa
         filePathStringBuffer.append (LongUtil_Package.fillIn (frame.toString));
         filePathStringBuffer.append (MediaDataFactory_Package.getInstance.JPG.getExtension);
         filePath := filePathStringBuffer.toString;
-        This.logUtil.putF ((To_Unbounded_String ("Image File Path: ") & filePath & imageUtil.toString (bufferedImage)), This'Unchecked_Access, commonStrings.SAVE);
+        This.logUtil.putF ((To_Unbounded_String ("Image File Path: ") & filePath & imageUtil.toString (bufferedImage)), CapturedImageInputOutput_Access'(This'Unchecked_Access), commonStrings.SAVE);
         imagePersistanceUtil := ImagePersistanceUtil_Package.getInstance;
         imagePersistanceUtil.saveWithImageIO (filePath, bufferedImage);
    end save;

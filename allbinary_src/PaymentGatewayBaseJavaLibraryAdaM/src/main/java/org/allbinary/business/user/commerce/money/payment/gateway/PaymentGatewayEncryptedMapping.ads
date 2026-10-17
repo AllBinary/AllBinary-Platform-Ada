@@ -41,8 +41,8 @@ package org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewa
       paymentGatewayInterface : PaymentGatewayInterface_Access;
    end record;
 
-   procedure Initialize (This : in out PaymentGatewayEncryptedMapping'Class; paymentGatewayInterface : PaymentGatewayInterface_Access);
-   function Create (paymentGatewayInterface : PaymentGatewayInterface_Access) return PaymentGatewayEncryptedMapping_Access;
+   procedure Initialize (This : in out PaymentGatewayEncryptedMapping'Class; paymentGatewayInterface_Param : access PaymentGatewayInterface'Class);
+   function Create (paymentGatewayInterface_Param : access PaymentGatewayInterface'Class) return PaymentGatewayEncryptedMapping_Access;
    function toHashMap (This : in out PaymentGatewayEncryptedMapping) return HashMap_Access;
    function toVector (This : in out PaymentGatewayEncryptedMapping) return BasicArrayList_Access;
    function getKey (This : in out PaymentGatewayEncryptedMapping) return Java_Object_Access;

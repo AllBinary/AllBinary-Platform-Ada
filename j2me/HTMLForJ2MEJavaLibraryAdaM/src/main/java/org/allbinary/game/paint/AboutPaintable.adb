@@ -22,8 +22,8 @@ package body org.allbinary.game.paint.AboutPaintable_Package is
       This.ABOUT := CanvasStrings_Package.getInstance.ABOUT;
       
       
-      This.paintableArray := new Paintable_Access_Array'(0 => This'Unchecked_Access);
-      This.myFontProcessor := UpdateMyFontProcessor_Package.Create (This'Unchecked_Access);
+      This.paintableArray := new Paintable_Access_Array'(0 => AboutPaintable_Access'(This'Unchecked_Access));
+      This.myFontProcessor := UpdateMyFontProcessor_Package.Create (AboutPaintable_Access'(This'Unchecked_Access));
       This.charHeight := 0;
       This.aboutBeginWidth := 0;
       
@@ -54,7 +54,8 @@ package body org.allbinary.game.paint.AboutPaintable_Package is
       return This;
    end Create;
 
-   procedure updateMeasurement (This : in out AboutPaintable; graphics : Graphics_Access) is
+   procedure updateMeasurement (This : in out AboutPaintable; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       font : Font_Access;
       infoSize : Integer;
       index : Integer;
@@ -79,7 +80,8 @@ package body org.allbinary.game.paint.AboutPaintable_Package is
         return This.paintableArray;
    end getPaintableArrayInstance;
 
-   procedure paint (This : in out AboutPaintable; graphics : Graphics_Access) is
+   procedure paint (This : in out AboutPaintable; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       halfWidth : Integer;
       infoSize : Integer;
       index : Integer;

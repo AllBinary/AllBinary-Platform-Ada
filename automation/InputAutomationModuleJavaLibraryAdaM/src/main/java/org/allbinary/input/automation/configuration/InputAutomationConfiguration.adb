@@ -50,7 +50,7 @@ package body org.allbinary.input.automation.configuration.InputAutomationConfigu
    procedure setInstalled (This : in out InputAutomationConfiguration; installed : Boolean) is
    begin
         This.installed := installed;
-        This.logUtil.putF (To_Unbounded_String ("Installed: ") & Java_Image (installed), This'Unchecked_Access, To_Unbounded_String ("setIntalled"));
+        This.logUtil.putF (To_Unbounded_String ("Installed: ") & Java_Image (installed), InputAutomationConfiguration_Access'(This'Unchecked_Access), To_Unbounded_String ("setIntalled"));
    end setInstalled;
 
    function getInputAutomationModuleConfigurationList (This : in out InputAutomationConfiguration) return List_Access is
@@ -71,7 +71,7 @@ package body org.allbinary.input.automation.configuration.InputAutomationConfigu
         jaxbContext := JAXBContext_Package.newInstance (InputAutomationConfiguration_Package.InputAutomationConfiguration'Tag);
         marshaller := jaxbContext.createMarshaller;
         marshaller.setProperty (Marshaller_Package.JAXB_FORMATTED_OUTPUT, True);
-        marshaller.marshal (This'Unchecked_Access, document);
+        marshaller.marshal (InputAutomationConfiguration_Access'(This'Unchecked_Access), document);
         DomDocumentFileHelper_Package.save (FileWrapperUtil_Package.wrapFile (file), document);
    end save;
 

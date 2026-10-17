@@ -38,12 +38,19 @@ package body org.allbinary.animation.image.ModifierBaseProcessor_Package is
         return ModifierBaseProcessor_Package.instance;
    end getInstance;
 
-   procedure updateColor (This : in out ModifierBaseProcessor; imageModifierUtil : ImageModifierUtil_Access; originalImage : Image_Access; imageToShow : Image_Access; index : Integer; basicColor : BasicColor_Access) is
+   procedure updateColor (This : in out ModifierBaseProcessor; imageModifierUtil_Param : access ImageModifierUtil'Class; originalImage_Param : access Image'Class; imageToShow_Param : access Image'Class; index : Integer; basicColor_Param : access BasicColor'Class) is
+      imageModifierUtil : ImageModifierUtil_Access := ImageModifierUtil_Access (imageModifierUtil_Param);
+      originalImage : Image_Access := Image_Access (originalImage_Param);
+      imageToShow : Image_Access := Image_Access (imageToShow_Param);
+      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         null;
    end updateColor;
 
-   procedure updateAlpha (This : in out ModifierBaseProcessor; imageModifierUtil : ImageModifierUtil_Access; originalImage : Image_Access; imageToShow : Image_Access; index : Integer; alpha : Integer) is
+   procedure updateAlpha (This : in out ModifierBaseProcessor; imageModifierUtil_Param : access ImageModifierUtil'Class; originalImage_Param : access Image'Class; imageToShow_Param : access Image'Class; index : Integer; alpha : Integer) is
+      imageModifierUtil : ImageModifierUtil_Access := ImageModifierUtil_Access (imageModifierUtil_Param);
+      originalImage : Image_Access := Image_Access (originalImage_Param);
+      imageToShow : Image_Access := Image_Access (imageToShow_Param);
    begin
         null;
    end updateAlpha;

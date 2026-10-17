@@ -41,7 +41,8 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.transact
    end Create;
 
    --  throws Exception
-   function getInstance (This : in out PaymentTransactionInterfaceFactory; orderReview : OrderHistory_Access) return PaymentTransactionInterface_Access is
+   function getInstance (This : in out PaymentTransactionInterfaceFactory; orderReview_Param : access OrderHistory'Class) return PaymentTransactionInterface_Access is
+      orderReview : OrderHistory_Access := OrderHistory_Access (orderReview_Param);
       gatewayName : Unbounded_String;
       paymentType : PaymentType_Access;
       paymentTransactionInterfaceFactoryInterface : PaymentTransactionInterfaceFactoryInterface_Access;
@@ -64,15 +65,15 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.transact
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PAYMENTERROR) then
                 commonStrings := CommonStrings_Package.getInstance;
-                This.logUtil.put (To_Unbounded_String ("Failed to generate test data"), This'Unchecked_Access, commonStrings.GET_INSTANCE, e);
+                This.logUtil.put (To_Unbounded_String ("Failed to generate test data"), PaymentTransactionInterfaceFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE, e);
             end if;
             Java_Throw (e);
                 end;
         end;
    end getInstance;
 
-   procedure getInstance (This : in out PaymentTransactionInterfaceFactory; orderReview : OrderHistory_Access) is
-      Java_Result : constant PaymentTransactionInterface_Access := PaymentTransactionInterfaceFactory'Class (This).getInstance (orderReview);
+   procedure getInstance (This : in out PaymentTransactionInterfaceFactory; orderReview_Param : access OrderHistory'Class) is
+      Java_Result : constant PaymentTransactionInterface_Access := PaymentTransactionInterfaceFactory'Class (This).getInstance (orderReview_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

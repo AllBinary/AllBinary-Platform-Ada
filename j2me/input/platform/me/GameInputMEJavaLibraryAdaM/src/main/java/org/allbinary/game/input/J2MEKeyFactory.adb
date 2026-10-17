@@ -53,7 +53,8 @@ package body org.allbinary.game.input.J2MEKeyFactory_Package is
         end loop;
    end init;
 
-   function isSubmission (This : in out J2MEKeyFactory; input : Input_Access) return Boolean is
+   function isSubmission (This : in out J2MEKeyFactory; input_Param : access Input'Class) return Boolean is
+      input : Input_Access := Input_Access (input_Param);
    begin
         if (input) = (This.gameKeyFactory.FIRE) then
             return True;
@@ -61,7 +62,8 @@ package body org.allbinary.game.input.J2MEKeyFactory_Package is
         return False;
    end isSubmission;
 
-   function isDelete (This : in out J2MEKeyFactory; input : Input_Access) return Boolean is
+   function isDelete (This : in out J2MEKeyFactory; input_Param : access Input'Class) return Boolean is
+      input : Input_Access := Input_Access (input_Param);
    begin
         if (input) = (This.gameKeyFactory.GAME_D) then
             return True;
@@ -69,12 +71,14 @@ package body org.allbinary.game.input.J2MEKeyFactory_Package is
         return False;
    end isDelete;
 
-   function isBackSpace (This : in out J2MEKeyFactory; input : Input_Access) return Boolean is
+   function isBackSpace (This : in out J2MEKeyFactory; input_Param : access Input'Class) return Boolean is
+      input : Input_Access := Input_Access (input_Param);
    begin
         return False;
    end isBackSpace;
 
-   function isUp (This : in out J2MEKeyFactory; input : Input_Access) return Boolean is
+   function isUp (This : in out J2MEKeyFactory; input_Param : access Input'Class) return Boolean is
+      input : Input_Access := Input_Access (input_Param);
    begin
         if (input) = (This.gameKeyFactory.UP) then
             return True;
@@ -82,7 +86,8 @@ package body org.allbinary.game.input.J2MEKeyFactory_Package is
         return False;
    end isUp;
 
-   function isDown (This : in out J2MEKeyFactory; input : Input_Access) return Boolean is
+   function isDown (This : in out J2MEKeyFactory; input_Param : access Input'Class) return Boolean is
+      input : Input_Access := Input_Access (input_Param);
    begin
         if (input) = (This.gameKeyFactory.DOWN) then
             return True;
@@ -90,7 +95,8 @@ package body org.allbinary.game.input.J2MEKeyFactory_Package is
         return False;
    end isDown;
 
-   function isLeft (This : in out J2MEKeyFactory; input : Input_Access) return Boolean is
+   function isLeft (This : in out J2MEKeyFactory; input_Param : access Input'Class) return Boolean is
+      input : Input_Access := Input_Access (input_Param);
    begin
         if (input) = (This.gameKeyFactory.LEFT) then
             return True;
@@ -98,7 +104,8 @@ package body org.allbinary.game.input.J2MEKeyFactory_Package is
         return False;
    end isLeft;
 
-   function isRight (This : in out J2MEKeyFactory; input : Input_Access) return Boolean is
+   function isRight (This : in out J2MEKeyFactory; input_Param : access Input'Class) return Boolean is
+      input : Input_Access := Input_Access (input_Param);
    begin
         if (input) = (This.gameKeyFactory.RIGHT) then
             return True;
@@ -106,7 +113,8 @@ package body org.allbinary.game.input.J2MEKeyFactory_Package is
         return False;
    end isRight;
 
-   function isEnter (This : in out J2MEKeyFactory; input : Input_Access) return Boolean is
+   function isEnter (This : in out J2MEKeyFactory; input_Param : access Input'Class) return Boolean is
+      input : Input_Access := Input_Access (input_Param);
    begin
         if (input) = (This.gameKeyFactory.FIRE) then
             return True;
@@ -114,57 +122,57 @@ package body org.allbinary.game.input.J2MEKeyFactory_Package is
         return False;
    end isEnter;
 
-   procedure isSubmission (This : in out J2MEKeyFactory; input : Input_Access) is
-      Java_Result : constant Boolean := J2MEKeyFactory'Class (This).isSubmission (input);
+   procedure isSubmission (This : in out J2MEKeyFactory; input_Param : access Input'Class) is
+      Java_Result : constant Boolean := J2MEKeyFactory'Class (This).isSubmission (input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isSubmission;
 
-   procedure isDelete (This : in out J2MEKeyFactory; input : Input_Access) is
-      Java_Result : constant Boolean := J2MEKeyFactory'Class (This).isDelete (input);
+   procedure isDelete (This : in out J2MEKeyFactory; input_Param : access Input'Class) is
+      Java_Result : constant Boolean := J2MEKeyFactory'Class (This).isDelete (input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isDelete;
 
-   procedure isBackSpace (This : in out J2MEKeyFactory; input : Input_Access) is
-      Java_Result : constant Boolean := J2MEKeyFactory'Class (This).isBackSpace (input);
+   procedure isBackSpace (This : in out J2MEKeyFactory; input_Param : access Input'Class) is
+      Java_Result : constant Boolean := J2MEKeyFactory'Class (This).isBackSpace (input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isBackSpace;
 
-   procedure isUp (This : in out J2MEKeyFactory; input : Input_Access) is
-      Java_Result : constant Boolean := J2MEKeyFactory'Class (This).isUp (input);
+   procedure isUp (This : in out J2MEKeyFactory; input_Param : access Input'Class) is
+      Java_Result : constant Boolean := J2MEKeyFactory'Class (This).isUp (input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isUp;
 
-   procedure isDown (This : in out J2MEKeyFactory; input : Input_Access) is
-      Java_Result : constant Boolean := J2MEKeyFactory'Class (This).isDown (input);
+   procedure isDown (This : in out J2MEKeyFactory; input_Param : access Input'Class) is
+      Java_Result : constant Boolean := J2MEKeyFactory'Class (This).isDown (input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isDown;
 
-   procedure isLeft (This : in out J2MEKeyFactory; input : Input_Access) is
-      Java_Result : constant Boolean := J2MEKeyFactory'Class (This).isLeft (input);
+   procedure isLeft (This : in out J2MEKeyFactory; input_Param : access Input'Class) is
+      Java_Result : constant Boolean := J2MEKeyFactory'Class (This).isLeft (input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isLeft;
 
-   procedure isRight (This : in out J2MEKeyFactory; input : Input_Access) is
-      Java_Result : constant Boolean := J2MEKeyFactory'Class (This).isRight (input);
+   procedure isRight (This : in out J2MEKeyFactory; input_Param : access Input'Class) is
+      Java_Result : constant Boolean := J2MEKeyFactory'Class (This).isRight (input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isRight;
 
-   procedure isEnter (This : in out J2MEKeyFactory; input : Input_Access) is
-      Java_Result : constant Boolean := J2MEKeyFactory'Class (This).isEnter (input);
+   procedure isEnter (This : in out J2MEKeyFactory; input_Param : access Input'Class) is
+      Java_Result : constant Boolean := J2MEKeyFactory'Class (This).isEnter (input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

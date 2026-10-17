@@ -47,10 +47,10 @@ package org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfi
 
    procedure Initialize (This : in out UserEmailConfiguration'Class);
    function Create return UserEmailConfiguration_Access;
-   procedure Initialize (This : in out UserEmailConfiguration'Class; hashMap : HashMap_Access);
-   function Create (hashMap : HashMap_Access) return UserEmailConfiguration_Access;
+   procedure Initialize (This : in out UserEmailConfiguration'Class; hashMap_Param : access HashMap'Class);
+   function Create (hashMap_Param : access HashMap'Class) return UserEmailConfiguration_Access;
    function getUserEmailEventsConfigurationInterface (This : in out UserEmailConfiguration) return UserEmailEventsConfigurationInterface_Access;
-   procedure setUserEmailEventsConfigurationInterface (This : in out UserEmailConfiguration; userEmailEventsConfigurationInterface : UserEmailEventsConfigurationInterface_Access);
+   procedure setUserEmailEventsConfigurationInterface (This : in out UserEmailConfiguration; userEmailEventsConfigurationInterface_Param : access UserEmailEventsConfigurationInterface'Class);
 
 end org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfiguration_Package;
 

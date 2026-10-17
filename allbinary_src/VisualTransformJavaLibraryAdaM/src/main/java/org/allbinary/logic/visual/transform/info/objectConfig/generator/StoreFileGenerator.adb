@@ -26,7 +26,8 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.generator.St
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out StoreFileGenerator'Class; transformInfoInterface : TransformInfoInterface_Access) is
+   procedure Initialize (This : in out StoreFileGenerator'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
       httpTransformInfoInterface : TransformInfoHttpInterface_Access;
       weblisketSession : WeblisketSession_Access;
       stringBuffer : StringMaker_Access;
@@ -78,14 +79,14 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.generator.St
         This.fileAbPath := abPath;
         This.file := AbFile_Package.createAbFileFromAbPath (This.fileAbPath);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (To_Unbounded_String ("File: ") & This.fileAbPath.toString, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+            This.logUtil.putF (To_Unbounded_String ("File: ") & This.fileAbPath.toString, StoreFileGenerator_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
    end Initialize;
 
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return StoreFileGenerator_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return StoreFileGenerator_Access is
       This : constant StoreFileGenerator_Access := new StoreFileGenerator;
    begin
-      StoreFileGenerator_Package.Initialize (This.all, transformInfoInterface);
+      StoreFileGenerator_Package.Initialize (This.all, transformInfoInterface_Param);
       return This;
    end Create;
 
@@ -94,7 +95,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.generator.St
       inputStream : InputStream_Access;
    begin
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (To_Unbounded_String ("Processing"), This'Unchecked_Access, This.commonStrings.PROCESS);
+            This.logUtil.putF (To_Unbounded_String ("Processing"), StoreFileGenerator_Access'(This'Unchecked_Access), This.commonStrings.PROCESS);
         end if;
         if not (This.file.exists) then
             This.file.createNewFile;
@@ -106,7 +107,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.generator.St
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Could Not Create: ") & This.fileAbPath.toString));
         end if;
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (To_Unbounded_String ("Processed"), This'Unchecked_Access, This.commonStrings.PROCESS);
+            This.logUtil.putF (To_Unbounded_String ("Processed"), StoreFileGenerator_Access'(This'Unchecked_Access), This.commonStrings.PROCESS);
         end if;
         return StringUtil_Package.getInstance.EMPTY_STRING;
    end process;

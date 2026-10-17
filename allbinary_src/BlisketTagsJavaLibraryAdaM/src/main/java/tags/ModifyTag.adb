@@ -22,19 +22,20 @@ package body tags.ModifyTag_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ModifyTag'Class; tagHelperFactoryInterface : TagHelperFactoryInterface_Access) is
+   procedure Initialize (This : in out ModifyTag'Class; tagHelperFactoryInterface_Param : access TagHelperFactoryInterface'Class) is
+      tagHelperFactoryInterface : TagHelperFactoryInterface_Access := TagHelperFactoryInterface_Access (tagHelperFactoryInterface_Param);
    begin
         HelperTag_Package.Initialize (This, tagHelperFactoryInterface);
         Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+            This.logUtil.putF (This.commonStrings.START, ModifyTag_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
    end Initialize;
 
-   function Create (tagHelperFactoryInterface : TagHelperFactoryInterface_Access) return ModifyTag_Access is
+   function Create (tagHelperFactoryInterface_Param : access TagHelperFactoryInterface'Class) return ModifyTag_Access is
       This : constant ModifyTag_Access := new ModifyTag;
    begin
-      ModifyTag_Package.Initialize (This.all, tagHelperFactoryInterface);
+      ModifyTag_Package.Initialize (This.all, tagHelperFactoryInterface_Param);
       return This;
    end Create;
 
@@ -57,7 +58,7 @@ package body tags.ModifyTag_Package is
                 begin
             error := To_Unbounded_String ("Failed to insert");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("insert()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, ModifyTag_Access'(This'Unchecked_Access), To_Unbounded_String ("insert()"), e);
             end if;
             return error;
                 end;
@@ -83,7 +84,7 @@ package body tags.ModifyTag_Package is
                 begin
             error := To_Unbounded_String ("Failed to delete");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("delete()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, ModifyTag_Access'(This'Unchecked_Access), To_Unbounded_String ("delete()"), e);
             end if;
             return error;
                 end;
@@ -109,7 +110,7 @@ package body tags.ModifyTag_Package is
                 begin
             error := To_Unbounded_String ("Failed to update");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("update()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, ModifyTag_Access'(This'Unchecked_Access), To_Unbounded_String ("update()"), e);
             end if;
             return error;
                 end;
@@ -131,7 +132,7 @@ package body tags.ModifyTag_Package is
                 stringBuffer.append (This.getCommand);
                 stringBuffer.append (To_Unbounded_String (" Request URI: "));
                 stringBuffer.append (request.getRequestURI);
-                This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, This.tagStrings.DO_START_TAG);
+                This.logUtil.putF (stringBuffer.toString, ModifyTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
             end if;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
                 null;

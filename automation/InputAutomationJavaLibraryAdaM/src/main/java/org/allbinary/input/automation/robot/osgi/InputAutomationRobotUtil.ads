@@ -37,8 +37,8 @@ package org.allbinary.input.automation.robot.osgi.InputAutomationRobotUtil_Packa
 
    procedure Initialize (This : in out InputAutomationRobotUtil'Class);
    function Create return InputAutomationRobotUtil_Access;
-   function getChangeEvent (inputRobotInterface : InputRobotInterface_Access) return InputAutomationRobotChangeEvent_Access;
-   procedure getChangeEvent (inputRobotInterface : InputRobotInterface_Access);
+   function getChangeEvent (inputRobotInterface_Param : access InputRobotInterface'Class) return InputAutomationRobotChangeEvent_Access;
+   procedure getChangeEvent (inputRobotInterface_Param : access InputRobotInterface'Class);
 
 end org.allbinary.input.automation.robot.osgi.InputAutomationRobotUtil_Package;
 

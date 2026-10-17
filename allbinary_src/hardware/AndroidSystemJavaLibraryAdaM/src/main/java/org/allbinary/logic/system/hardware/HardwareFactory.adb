@@ -42,7 +42,8 @@ package body org.allbinary.logic.system.hardware.HardwareFactory_Package is
    end Create;
 
    --  throws Exception
-   function getInstance (This : in out HardwareFactory; os : GenericOperatingSystem_Access) return HardwareInterface_Access is
+   function getInstance (This : in out HardwareFactory; os_Param : access GenericOperatingSystem'Class) return HardwareInterface_Access is
+      os : GenericOperatingSystem_Access := GenericOperatingSystem_Access (os_Param);
       operatingSystems : OperatingSystems_Access;
       commonStrings : CommonStrings_Access;
    begin
@@ -60,14 +61,14 @@ package body org.allbinary.logic.system.hardware.HardwareFactory_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.put (To_Unbounded_String ("Ignoring Exception Returning NoHardware"), This'Unchecked_Access, commonStrings.GET_INSTANCE, e);
+            This.logUtil.put (To_Unbounded_String ("Ignoring Exception Returning NoHardware"), HardwareFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE, e);
             return NoHardware_Package.Create;
                 end;
         end;
    end getInstance;
 
-   procedure getInstance (This : in out HardwareFactory; os : GenericOperatingSystem_Access) is
-      Java_Result : constant HardwareInterface_Access := HardwareFactory'Class (This).getInstance (os);
+   procedure getInstance (This : in out HardwareFactory; os_Param : access GenericOperatingSystem'Class) is
+      Java_Result : constant HardwareInterface_Access := HardwareFactory'Class (This).getInstance (os_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -39,14 +39,14 @@ package org.allbinary.gui.dialog.BasicTextJDialog_Package is
       textJLabel : JLabel_Access;
    end record;
 
-   procedure Initialize (This : in out BasicTextJDialog'Class; parent : Frame_Access; modal : Boolean; text : Unbounded_String);
-   function Create (parent : Frame_Access; modal : Boolean; text : Unbounded_String) return BasicTextJDialog_Access;
+   procedure Initialize (This : in out BasicTextJDialog'Class; parent_Param : access Frame'Class; modal : Boolean; text : Unbounded_String);
+   function Create (parent_Param : access Frame'Class; modal : Boolean; text : Unbounded_String) return BasicTextJDialog_Access;
    procedure Initialize (This : in out BasicTextJDialog'Class; text : Unbounded_String);
    function Create (text : Unbounded_String) return BasicTextJDialog_Access;
    procedure setText (This : in out BasicTextJDialog; text : Unbounded_String);
-   procedure addCloseListener (This : in out BasicTextJDialog; closeListenerInterface : CloseJDialogListenerInterface_Access);
+   procedure addCloseListener (This : in out BasicTextJDialog; closeListenerInterface_Param : access CloseJDialogListenerInterface'Class);
    procedure initComponents (This : in out BasicTextJDialog);
-   procedure jButton1ActionPerformed (This : in out BasicTextJDialog; evt : ActionEvent_Access);
+   procedure jButton1ActionPerformed (This : in out BasicTextJDialog; evt_Param : access ActionEvent'Class);
    procedure main (args : Unbounded_String_Array_Access);
 
 end org.allbinary.gui.dialog.BasicTextJDialog_Package;

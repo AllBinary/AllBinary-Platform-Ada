@@ -39,8 +39,8 @@ package org.allbinary.logic.communication.smtp.configuration.user.event.UserEmai
    type UserEmailEventsConfigurationInterface_Access_Array is array (Natural range <>) of UserEmailEventsConfigurationInterface_Access;
    type UserEmailEventsConfigurationInterface_Access_Array_Access is access all UserEmailEventsConfigurationInterface_Access_Array;
    function getEventConfigurationHashMap (This : in out UserEmailEventsConfigurationInterface) return HashMap_Access is abstract;
-   procedure addUserEmailEventConfiguration (This : in out UserEmailEventsConfigurationInterface; userEmailEventConfigurationInterface : UserEmailEventConfigurationInterface_Access) is abstract;
-   function getEventListener (This : in out UserEmailEventsConfigurationInterface; abeClientInformation : AbeClientInformationInterface_Access; userEmailEventNameData : UserEmailEventNameData_Access; userInterface : UserInterface_Access) return UserEmailEventListenerInterface_Access is abstract;
+   procedure addUserEmailEventConfiguration (This : in out UserEmailEventsConfigurationInterface; userEmailEventConfigurationInterface_Param : access UserEmailEventConfigurationInterface'Class) is abstract;
+   function getEventListener (This : in out UserEmailEventsConfigurationInterface; abeClientInformation_Param : access AbeClientInformationInterface'Class; userEmailEventNameData_Param : access UserEmailEventNameData'Class; userInterface_Param : access UserInterface'Class) return UserEmailEventListenerInterface_Access is abstract;
 
 end org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationInterface_Package;
 

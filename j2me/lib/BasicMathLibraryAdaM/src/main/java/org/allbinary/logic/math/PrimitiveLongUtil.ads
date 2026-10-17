@@ -47,8 +47,8 @@ package org.allbinary.logic.math.PrimitiveLongUtil_Package is
       primitiveLongSingleton : PrimitiveLongSingleton_Access;
    end record;
 
-   procedure Initialize (This : in out PrimitiveLongUtil'Class; powerOfTen : Integer; unused : Java_Object_Access);
-   function Create (powerOfTen : Integer; unused : Java_Object_Access) return PrimitiveLongUtil_Access;
+   procedure Initialize (This : in out PrimitiveLongUtil'Class; powerOfTen : Integer; unused_Param : access Java_Object'Class);
+   function Create (powerOfTen : Integer; unused_Param : access Java_Object'Class) return PrimitiveLongUtil_Access;
    function createPowerOfTen (powerOfTen : Integer) return PrimitiveLongUtil_Access;
    procedure createPowerOfTen (powerOfTen : Integer);
    function getCharArray (This : in out PrimitiveLongUtil; value : Integer) return Character_Array_Access;

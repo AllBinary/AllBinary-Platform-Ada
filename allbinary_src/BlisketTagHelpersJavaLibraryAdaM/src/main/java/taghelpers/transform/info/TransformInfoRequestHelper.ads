@@ -50,8 +50,8 @@ package taghelpers.transform.info.TransformInfoRequestHelper_Package is
       transformInfoInterface : TransformInfoHttpInterface_Access;
    end record;
 
-   procedure Initialize (This : in out TransformInfoRequestHelper'Class; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access);
-   function Create (propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return TransformInfoRequestHelper_Access;
+   procedure Initialize (This : in out TransformInfoRequestHelper'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
+   function Create (propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return TransformInfoRequestHelper_Access;
    function update (This : in out TransformInfoRequestHelper) return Unbounded_String;
    function insert (This : in out TransformInfoRequestHelper) return Unbounded_String;
    function delete (This : in out TransformInfoRequestHelper) return Unbounded_String;

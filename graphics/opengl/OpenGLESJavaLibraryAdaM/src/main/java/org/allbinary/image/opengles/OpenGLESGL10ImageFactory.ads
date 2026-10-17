@@ -40,8 +40,8 @@ package org.allbinary.image.opengles.OpenGLESGL10ImageFactory_Package is
 
    procedure Initialize (This : in out OpenGLESGL10ImageFactory'Class);
    function Create return OpenGLESGL10ImageFactory_Access;
-   function getInstance (This : in out OpenGLESGL10ImageFactory; image : Image_Access; bitmapFactory : PlatformBitmapBaseFactory_Access; textureFactory : PlatformTextureBaseFactory_Access) return Image_Access;
-   procedure getInstance (This : in out OpenGLESGL10ImageFactory; image : Image_Access; bitmapFactory : PlatformBitmapBaseFactory_Access; textureFactory : PlatformTextureBaseFactory_Access);
+   function getInstance (This : in out OpenGLESGL10ImageFactory; image_Param : access Image'Class; bitmapFactory_Param : access PlatformBitmapBaseFactory'Class; textureFactory_Param : access PlatformTextureBaseFactory'Class) return Image_Access;
+   procedure getInstance (This : in out OpenGLESGL10ImageFactory; image_Param : access Image'Class; bitmapFactory_Param : access PlatformBitmapBaseFactory'Class; textureFactory_Param : access PlatformTextureBaseFactory'Class);
 
 end org.allbinary.image.opengles.OpenGLESGL10ImageFactory_Package;
 

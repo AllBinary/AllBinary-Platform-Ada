@@ -42,14 +42,14 @@ package org.allbinary.data.tree.dom.DomNodeHelper_Package is
 
    procedure Initialize (This : in out DomNodeHelper'Class);
    function Create return DomNodeHelper_Access;
-   function getFirstChildElement (parentNode : Node_Access) return Node_Access;
-   procedure getFirstChildElement (parentNode : Node_Access);
-   function getTextNodeValue (node : Node_Access) return Unbounded_String;
-   procedure getTextNodeValue (node : Node_Access);
-   function getTextNodeValue (nodeName : Unbounded_String; nodeList : NodeList_Access) return Unbounded_String;
-   procedure getTextNodeValue (nodeName : Unbounded_String; nodeList : NodeList_Access);
-   function getTextNodesValue (node : Node_Access) return Unbounded_String;
-   procedure getTextNodesValue (node : Node_Access);
+   function getFirstChildElement (parentNode_Param : access Node'Class) return Node_Access;
+   procedure getFirstChildElement (parentNode_Param : access Node'Class);
+   function getTextNodeValue (node_Param : access Node'Class) return Unbounded_String;
+   procedure getTextNodeValue (node_Param : access Node'Class);
+   function getTextNodeValue (nodeName : Unbounded_String; nodeList_Param : access NodeList'Class) return Unbounded_String;
+   procedure getTextNodeValue (nodeName : Unbounded_String; nodeList_Param : access NodeList'Class);
+   function getTextNodesValue (node_Param : access Node'Class) return Unbounded_String;
+   procedure getTextNodesValue (node_Param : access Node'Class);
 
 end org.allbinary.data.tree.dom.DomNodeHelper_Package;
 

@@ -31,17 +31,20 @@ package body org.allbinary.game.displayable.canvas.CommandFormInputProcessor_Pac
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CommandFormInputProcessor'Class; gameKeyEventList : BasicArrayList_Access; playerInputId : Integer; gameCanvas : MyCanvas_Access; form : ScrollSelectionForm_Access) is
+   procedure Initialize (This : in out CommandFormInputProcessor'Class; gameKeyEventList_Param : access BasicArrayList'Class; playerInputId : Integer; gameCanvas_Param : access MyCanvas'Class; form_Param : access ScrollSelectionForm'Class) is
+      gameKeyEventList : BasicArrayList_Access := BasicArrayList_Access (gameKeyEventList_Param);
+      gameCanvas : MyCanvas_Access := MyCanvas_Access (gameCanvas_Param);
+      form : ScrollSelectionForm_Access := ScrollSelectionForm_Access (form_Param);
    begin
         BasicMenuInputProcessor_Package.Initialize (This, gameKeyEventList, playerInputId, gameCanvas);
         Initialize_Fields (This);
         This.form := form;
    end Initialize;
 
-   function Create (gameKeyEventList : BasicArrayList_Access; playerInputId : Integer; gameCanvas : MyCanvas_Access; form : ScrollSelectionForm_Access) return CommandFormInputProcessor_Access is
+   function Create (gameKeyEventList_Param : access BasicArrayList'Class; playerInputId : Integer; gameCanvas_Param : access MyCanvas'Class; form_Param : access ScrollSelectionForm'Class) return CommandFormInputProcessor_Access is
       This : constant CommandFormInputProcessor_Access := new CommandFormInputProcessor;
    begin
-      CommandFormInputProcessor_Package.Initialize (This.all, gameKeyEventList, playerInputId, gameCanvas, form);
+      CommandFormInputProcessor_Package.Initialize (This.all, gameKeyEventList_Param, playerInputId, gameCanvas_Param, form_Param);
       return This;
    end Create;
 
@@ -67,13 +70,13 @@ package body org.allbinary.game.displayable.canvas.CommandFormInputProcessor_Pac
    begin
         commandCurrentSelectionForm := CommandCurrentSelectionForm_Access (This.form);
         command := commandCurrentSelectionForm.getSelectedCommand;
-        This.logUtil.putF (command.toString, This'Unchecked_Access, This.PROCESS_COMMAND);
+        This.logUtil.putF (command.toString, CommandFormInputProcessor_Access'(This'Unchecked_Access), This.PROCESS_COMMAND);
         features := Features_Package.getInstance;
         openGLFeatureFactory := OpenGLFeatureFactory_Package.getInstance;
         if ((SWTUtil_Package.isSWT) and then (features.isFeature (openGLFeatureFactory.OPENGL))) and then ((command) /= (GameCommandsFactory_Package.getInstance.EXIT_COMMAND)) then
-            CommandRunnable_Package.Create (This'Unchecked_Access, command).run;
+            CommandRunnable_Package.Create (CommandFormInputProcessor_Access'(This'Unchecked_Access), command).run;
         else
-            PrimaryThreadPool_Package.getInstance.runTask (CommandRunnable_Package.Create (This'Unchecked_Access, command));
+            PrimaryThreadPool_Package.getInstance.runTask (CommandRunnable_Package.Create (CommandFormInputProcessor_Access'(This'Unchecked_Access), command));
         end if;
         if (command) = (GameCommandsFactory_Package.getInstance.QUIT_COMMAND) then
             return -(1);
@@ -117,7 +120,7 @@ package body org.allbinary.game.displayable.canvas.CommandFormInputProcessor_Pac
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.gameInputStrings.PROCESS_INPUT, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, CommandFormInputProcessor_Access'(This'Unchecked_Access), This.gameInputStrings.PROCESS_INPUT, e);
             return -(1);
                 end;
         end;
@@ -138,7 +141,8 @@ package body org.allbinary.game.displayable.canvas.CommandFormInputProcessor_Pac
    end processMotionInputs;
 
    --  throws Exception
-   procedure processMotionInput (This : in out CommandFormInputProcessor; motionGestureEvent : MotionGestureEvent_Access) is
+   procedure processMotionInput (This : in out CommandFormInputProcessor; motionGestureEvent_Param : access MotionGestureEvent'Class) is
+      motionGestureEvent : MotionGestureEvent_Access := MotionGestureEvent_Access (motionGestureEvent_Param);
       touchMotionGestureFactory : TouchMotionGestureFactory_Access;
       motionGestureInput : MotionGestureInput_Access;
       point : GPoint_Access;
@@ -165,7 +169,7 @@ package body org.allbinary.game.displayable.canvas.CommandFormInputProcessor_Pac
             end if;
             if This.hasPressed then
                 if not (This.doubleClickTimeHelper.isTimeTNT) then
-                    This.logUtil.putF (To_Unbounded_String ("Double Press"), This'Unchecked_Access, This.gameInputStrings.PROCESS_MOTION_INPUT);
+                    This.logUtil.putF (To_Unbounded_String ("Double Press"), CommandFormInputProcessor_Access'(This'Unchecked_Access), This.gameInputStrings.PROCESS_MOTION_INPUT);
                     This.processCommand;
                 end if;
                 This.doubleClickTimeHelper.delay_Id := This.DOUBLE_CLICK_DELAY;

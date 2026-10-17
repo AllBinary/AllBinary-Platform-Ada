@@ -39,13 +39,14 @@ package body org.allbinary.AppletUtil_Package is
         AppletUtil_Package.applet := True;
    end setApplet;
 
-   function isAppletLoader (anyType : Java_Object_Access) return Boolean is
+   function isAppletLoader (anyType_Param : access Java_Object'Class) return Boolean is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         return AppletUtil_Package.applet;
    end isAppletLoader;
 
-   procedure isAppletLoader (anyType : Java_Object_Access) is
-      Java_Result : constant Boolean := isAppletLoader (anyType);
+   procedure isAppletLoader (anyType_Param : access Java_Object'Class) is
+      Java_Result : constant Boolean := isAppletLoader (anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

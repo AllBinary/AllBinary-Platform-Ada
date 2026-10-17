@@ -57,14 +57,14 @@ package org.allbinary.business.category.properties.root.store.theme.RootStoreThe
 
    type RootStoreThemeCategoryProperties is new RootStoreCategoryProperties with null record;
 
-   procedure Initialize (This : in out RootStoreThemeCategoryProperties'Class; transformInfoInterface : TransformInfoInterface_Access);
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return RootStoreThemeCategoryProperties_Access;
-   procedure Initialize (This : in out RootStoreThemeCategoryProperties'Class; transformInfoInterface : TransformInfoInterface_Access; abPath : AbPath_Access);
-   function Create (transformInfoInterface : TransformInfoInterface_Access; abPath : AbPath_Access) return RootStoreThemeCategoryProperties_Access;
-   procedure Initialize (This : in out RootStoreThemeCategoryProperties'Class; transformInfoInterface : TransformInfoInterface_Access; node : Node_Access);
-   function Create (transformInfoInterface : TransformInfoInterface_Access; node : Node_Access) return RootStoreThemeCategoryProperties_Access;
-   procedure Initialize (This : in out RootStoreThemeCategoryProperties'Class; transformInfoInterface : TransformInfoInterface_Access; categoryPropertiesHashMap : HashMap_Access);
-   function Create (transformInfoInterface : TransformInfoInterface_Access; categoryPropertiesHashMap : HashMap_Access) return RootStoreThemeCategoryProperties_Access;
+   procedure Initialize (This : in out RootStoreThemeCategoryProperties'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return RootStoreThemeCategoryProperties_Access;
+   procedure Initialize (This : in out RootStoreThemeCategoryProperties'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; abPath_Param : access AbPath'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class; abPath_Param : access AbPath'Class) return RootStoreThemeCategoryProperties_Access;
+   procedure Initialize (This : in out RootStoreThemeCategoryProperties'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; node_Param : access Node'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class; node_Param : access Node'Class) return RootStoreThemeCategoryProperties_Access;
+   procedure Initialize (This : in out RootStoreThemeCategoryProperties'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; categoryPropertiesHashMap_Param : access HashMap'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class; categoryPropertiesHashMap_Param : access HashMap'Class) return RootStoreThemeCategoryProperties_Access;
    procedure initPath (This : in out RootStoreThemeCategoryProperties);
 
 end org.allbinary.business.category.properties.root.store.theme.RootStoreThemeCategoryProperties_Package;

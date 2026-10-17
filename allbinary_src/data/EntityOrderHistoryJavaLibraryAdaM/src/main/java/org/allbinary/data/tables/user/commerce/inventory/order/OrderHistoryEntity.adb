@@ -37,7 +37,8 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
       return This;
    end Create;
 
-   procedure insert (This : in out OrderHistoryEntity; userName : Unbounded_String; order : Order_Access) is
+   procedure insert (This : in out OrderHistoryEntity; userName : Unbounded_String; order_Param : access Order'Class) is
+      order : Order_Access := Order_Access (order_Param);
       vector : BasicArrayList_Access;
       paymentInterface : PaymentInterface_Access;
       billingAddress : StreetAddress_Access;
@@ -146,7 +147,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
             vector.add (order.getStoreCancelComments);
             This.insert (vector);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.putF (This.commonStrings.SUCCESS, This'Unchecked_Access, INSERT);
+                This.logUtil.putF (This.commonStrings.SUCCESS, OrderHistoryEntity_Access'(This'Unchecked_Access), INSERT);
             end if;
         exception
             when Java_Occurrence : others =>
@@ -154,18 +155,19 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.put (To_Unbounded_String ("Command Failed: ") & Java_Image (vector), This'Unchecked_Access, INSERT, e);
+                This.logUtil.put (To_Unbounded_String ("Command Failed: ") & Java_Image (vector), OrderHistoryEntity_Access'(This'Unchecked_Access), INSERT, e);
             end if;
                 end;
         end;
    end insert;
 
-   procedure insert (This : in out OrderHistoryEntity; values : BasicArrayList_Access) is
+   procedure insert (This : in out OrderHistoryEntity; values_Param : access BasicArrayList'Class) is
+      values : BasicArrayList_Access := BasicArrayList_Access (values_Param);
    begin
         begin
             AbSqlBean (This).insert (values);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.putF (This.commonStrings.SUCCESS, This'Unchecked_Access, INSERT);
+                This.logUtil.putF (This.commonStrings.SUCCESS, OrderHistoryEntity_Access'(This'Unchecked_Access), INSERT);
             end if;
         exception
             when Java_Occurrence : others =>
@@ -173,7 +175,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, INSERT, e);
+                This.logUtil.put (This.commonStrings.FAILURE, OrderHistoryEntity_Access'(This'Unchecked_Access), INSERT, e);
             end if;
                 end;
         end;
@@ -201,7 +203,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("setStatus"), e);
+                This.logUtil.put (This.commonStrings.FAILURE, OrderHistoryEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("setStatus"), e);
             end if;
                 end;
         end;
@@ -225,14 +227,15 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("setPaymentMethod"), e);
+                This.logUtil.put (This.commonStrings.FAILURE, OrderHistoryEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("setPaymentMethod"), e);
             end if;
                 end;
         end;
    end setPaymentMethod;
 
    --  throws Exception
-   function getStoreOrders (This : in out OrderHistoryEntity; storeFrontInterface : StoreFrontInterface_Access) return BasicArrayList_Access is
+   function getStoreOrders (This : in out OrderHistoryEntity; storeFrontInterface_Param : access StoreFrontInterface'Class) return BasicArrayList_Access is
+      storeFrontInterface : StoreFrontInterface_Access := StoreFrontInterface_Access (storeFrontInterface_Param);
       orderReviewVector : BasicArrayList_Access;
       whereHashMap : HashMap_Access;
       orderHashMapVector : BasicArrayList_Access;
@@ -437,7 +440,9 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
    end dropTable;
 
    --  throws Exception
-   procedure update (This : in out OrderHistoryEntity; whereHashMap : HashMap_Access; orderHashMap : HashMap_Access) is
+   procedure update (This : in out OrderHistoryEntity; whereHashMap_Param : access HashMap'Class; orderHashMap_Param : access HashMap'Class) is
+      whereHashMap : HashMap_Access := HashMap_Access (whereHashMap_Param);
+      orderHashMap : HashMap_Access := HashMap_Access (orderHashMap_Param);
    begin
         begin
             This.updateWhere (whereHashMap, orderHashMap);
@@ -451,8 +456,8 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
         end;
    end update;
 
-   procedure getStoreOrders (This : in out OrderHistoryEntity; storeFrontInterface : StoreFrontInterface_Access) is
-      Java_Result : constant BasicArrayList_Access := OrderHistoryEntity'Class (This).getStoreOrders (storeFrontInterface);
+   procedure getStoreOrders (This : in out OrderHistoryEntity; storeFrontInterface_Param : access StoreFrontInterface'Class) is
+      Java_Result : constant BasicArrayList_Access := OrderHistoryEntity'Class (This).getStoreOrders (storeFrontInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

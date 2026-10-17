@@ -66,7 +66,7 @@ package body org.allbinary.game.input.TextNotificationUtil_Package is
    procedure fire (This : in out TextNotificationUtil; message : Unbounded_String) is
       gameNotificationEvent : GameNotificationEvent_Access;
    begin
-        gameNotificationEvent := GameNotificationEvent_Package.Create (This'Unchecked_Access, message, This.TWO, BasicColorFactory_Package.getInstance.RED, This.FALSE);
+        gameNotificationEvent := GameNotificationEvent_Package.Create (TextNotificationUtil_Access'(This'Unchecked_Access), message, This.TWO, BasicColorFactory_Package.getInstance.RED, This.FALSE);
         This.gameNotificationEventHandler.fireEvent (gameNotificationEvent);
    end fire;
 

@@ -40,7 +40,8 @@ package body org.allbinary.media.graphics.geography.map.BasicGeographicMapUtil_P
    end getInstance;
 
    --  throws Exception
-   function getBorderingRow (This : in out BasicGeographicMapUtil; direction : Integer; oldGeographicMapCellPosition : GeographicMapCellPosition_Access) return Integer is
+   function getBorderingRow (This : in out BasicGeographicMapUtil; direction : Integer; oldGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return Integer is
+      oldGeographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (oldGeographicMapCellPosition_Param);
       LOCATION_CHANGE : Integer;
    begin
         LOCATION_CHANGE := 1;
@@ -59,7 +60,8 @@ package body org.allbinary.media.graphics.geography.map.BasicGeographicMapUtil_P
    end getBorderingRow;
 
    --  throws Exception
-   function getBorderingColumn (This : in out BasicGeographicMapUtil; direction : Integer; oldGeographicMapCellPosition : GeographicMapCellPosition_Access) return Integer is
+   function getBorderingColumn (This : in out BasicGeographicMapUtil; direction : Integer; oldGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return Integer is
+      oldGeographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (oldGeographicMapCellPosition_Param);
       LOCATION_CHANGE : Integer;
    begin
         LOCATION_CHANGE := 1;
@@ -78,7 +80,9 @@ package body org.allbinary.media.graphics.geography.map.BasicGeographicMapUtil_P
    end getBorderingColumn;
 
    --  throws Exception
-   function isSameCellPosition (This : in out BasicGeographicMapUtil; fromGeographicMapCellPosition : GeographicMapCellPosition_Access; toGeographicMapCellPosition : GeographicMapCellPosition_Access) return Boolean is
+   function isSameCellPosition (This : in out BasicGeographicMapUtil; fromGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class; toGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return Boolean is
+      fromGeographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (fromGeographicMapCellPosition_Param);
+      toGeographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (toGeographicMapCellPosition_Param);
       fromColumn : Integer;
       fromRow : Integer;
       goColumn : Integer;
@@ -147,22 +151,22 @@ package body org.allbinary.media.graphics.geography.map.BasicGeographicMapUtil_P
         end loop;
    end setPosition;
 
-   procedure getBorderingRow (This : in out BasicGeographicMapUtil; direction : Integer; oldGeographicMapCellPosition : GeographicMapCellPosition_Access) is
-      Java_Result : constant Integer := BasicGeographicMapUtil'Class (This).getBorderingRow (direction, oldGeographicMapCellPosition);
+   procedure getBorderingRow (This : in out BasicGeographicMapUtil; direction : Integer; oldGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is
+      Java_Result : constant Integer := BasicGeographicMapUtil'Class (This).getBorderingRow (direction, oldGeographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getBorderingRow;
 
-   procedure getBorderingColumn (This : in out BasicGeographicMapUtil; direction : Integer; oldGeographicMapCellPosition : GeographicMapCellPosition_Access) is
-      Java_Result : constant Integer := BasicGeographicMapUtil'Class (This).getBorderingColumn (direction, oldGeographicMapCellPosition);
+   procedure getBorderingColumn (This : in out BasicGeographicMapUtil; direction : Integer; oldGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is
+      Java_Result : constant Integer := BasicGeographicMapUtil'Class (This).getBorderingColumn (direction, oldGeographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getBorderingColumn;
 
-   procedure isSameCellPosition (This : in out BasicGeographicMapUtil; fromGeographicMapCellPosition : GeographicMapCellPosition_Access; toGeographicMapCellPosition : GeographicMapCellPosition_Access) is
-      Java_Result : constant Boolean := BasicGeographicMapUtil'Class (This).isSameCellPosition (fromGeographicMapCellPosition, toGeographicMapCellPosition);
+   procedure isSameCellPosition (This : in out BasicGeographicMapUtil; fromGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class; toGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is
+      Java_Result : constant Boolean := BasicGeographicMapUtil'Class (This).isSameCellPosition (fromGeographicMapCellPosition_Param, toGeographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -39,7 +39,8 @@ package body org.allbinary.media.image.ImageCompleteUtil_Package is
    end getInstance;
 
    --  throws Exception
-   procedure waitForImage (This : in out ImageCompleteUtil; image : Image_Access; name : Unbounded_String) is
+   procedure waitForImage (This : in out ImageCompleteUtil; image_Param : access Image'Class; name : Unbounded_String) is
+      image : Image_Access := Image_Access (image_Param);
    begin
         null;
    end waitForImage;

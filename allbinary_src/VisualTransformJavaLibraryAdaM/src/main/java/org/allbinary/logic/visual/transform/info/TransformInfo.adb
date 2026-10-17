@@ -79,7 +79,8 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
    end Create;
 
    --  throws Exception
-   procedure override (This : in out TransformInfo; hashMap : HashMap_Access) is
+   procedure override (This : in out TransformInfo; hashMap_Param : access HashMap'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
       transformInfoData : TransformInfoData_Access;
       stringValidationUtil : StringValidationUtil_Access;
       aName : Unbounded_String;
@@ -108,7 +109,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
             stringBuffer.append (This.getName);
             stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & " properties: "));
             stringBuffer.append (hashMap.toString);
-            This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("override(HashMap hashMap)"));
+            This.logUtil.putF (stringBuffer.toString, TransformInfo_Access'(This'Unchecked_Access), To_Unbounded_String ("override(HashMap hashMap)"));
         end if;
         aStoreName := Unbounded_String (hashMap.get (StoreFrontData_Package.getInstance.NAME));
         if not (stringValidationUtil.isEmpty (aStoreName)) then
@@ -127,7 +128,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
         aObject := Unbounded_String (hashMap.get (transformInfoData.OBJECT));
         if not (stringValidationUtil.isEmpty (aObject)) then
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (To_Unbounded_String ("TransformInfo override view Object for: ") & This.getName, This'Unchecked_Access, To_Unbounded_String ("override(HashMap hashMap)"));
+                This.logUtil.putF (To_Unbounded_String ("TransformInfo override view Object for: ") & This.getName, TransformInfo_Access'(This'Unchecked_Access), To_Unbounded_String ("override(HashMap hashMap)"));
             end if;
             fileDataString := CryptFileReader_Package.Create (TransformInfoObjectData_Package.getInstance.UNCRYPTED_EXTENSION, TransformInfoObjectData_Package.getInstance.ENCRYPTED_EXTENSION).get (AbPath_Package.Create (fileAbPath.toString, aObject));
             if (fileDataString) /= (Null_Unbounded_String) then
@@ -136,21 +137,21 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
         end if;
         if not (stringValidationUtil.isEmpty (Unbounded_String (hashMap.get (transformInfoData.OBJECTCONFIG)))) then
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (To_Unbounded_String ("TransformInfo override ObjectConfig for: ") & This.getName, This'Unchecked_Access, To_Unbounded_String ("override(HashMap hashMap)"));
+                This.logUtil.putF (To_Unbounded_String ("TransformInfo override ObjectConfig for: ") & This.getName, TransformInfo_Access'(This'Unchecked_Access), To_Unbounded_String ("override(HashMap hashMap)"));
             end if;
             This.setObjectConfig (Unbounded_String (hashMap.get (transformInfoData.OBJECTCONFIG)));
         end if;
         objectConfigFileName := Unbounded_String (hashMap.get (transformInfoData.OBJECTCONFIGFILENAME));
         if not (stringValidationUtil.isEmpty (objectConfigFileName)) then
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (To_Unbounded_String ("TransformInfo override ObjectConfig File for: ") & This.getName, This'Unchecked_Access, To_Unbounded_String ("override(HashMap hashMap)"));
+                This.logUtil.putF (To_Unbounded_String ("TransformInfo override ObjectConfig File for: ") & This.getName, TransformInfo_Access'(This'Unchecked_Access), To_Unbounded_String ("override(HashMap hashMap)"));
             end if;
             This.setObjectConfigFile (objectConfigFileName);
         end if;
         type_Id := Unbounded_String (hashMap.get (OutputTypeData_Package.getInstance.NAME));
         if not (stringValidationUtil.isEmpty (type_Id)) then
             if (This.getObjectConfigInterface) = (null) then
-                This.setObjectConfigInterface (TransformInfoObjectConfig_Package.Create (This'Unchecked_Access));
+                This.setObjectConfigInterface (TransformInfoObjectConfig_Package.Create (TransformInfo_Access'(This'Unchecked_Access)));
             end if;
             This.getObjectConfigInterface.setOutputTypeName (type_Id);
         end if;
@@ -161,7 +162,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
         aTemplate := Unbounded_String (hashMap.get (transformInfoData.TEMPLATE));
         if not (stringValidationUtil.isEmpty (aTemplate)) then
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (To_Unbounded_String ("TransformInfo override Template for: ") & This.getName, This'Unchecked_Access, To_Unbounded_String ("override(HashMap hashMap)"));
+                This.logUtil.putF (To_Unbounded_String ("TransformInfo override Template for: ") & This.getName, TransformInfo_Access'(This'Unchecked_Access), To_Unbounded_String ("override(HashMap hashMap)"));
             end if;
             fileDataString := CryptFileReader_Package.Create (TransformInfoTemplateData_Package.getInstance.UNCRYPTED_EXTENSION, TransformInfoTemplateData_Package.getInstance.ENCRYPTED_EXTENSION).get (AbPath_Package.Create (fileAbPath.toString, aTemplate));
             if not (stringValidationUtil.isEmpty (fileDataString)) then
@@ -175,7 +176,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
         aData := Unbounded_String (hashMap.get (transformInfoData.DATA));
         if not (stringValidationUtil.isEmpty (aData)) then
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (To_Unbounded_String ("TransformInfo override Data for: ") & This.getName, This'Unchecked_Access, To_Unbounded_String ("override(HashMap hashMap)"));
+                This.logUtil.putF (To_Unbounded_String ("TransformInfo override Data for: ") & This.getName, TransformInfo_Access'(This'Unchecked_Access), To_Unbounded_String ("override(HashMap hashMap)"));
             end if;
             fileDataString := CryptFileReader_Package.Create (TransformInfoDataData_Package.getInstance.UNCRYPTED_EXTENSION, TransformInfoDataData_Package.getInstance.ENCRYPTED_EXTENSION).get (AbPath_Package.Create (fileAbPath.toString, aData));
             if not (stringValidationUtil.isEmpty (fileDataString)) then
@@ -199,10 +200,10 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
             stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "ObjectFile: "));
             stringBuffer.append (This.getObjectFile);
             stringBuffer.append (To_Unbounded_String ("->TransformInfo"));
-            This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("TransformInfoInterface(HashMap)"));
+            This.logUtil.putF (stringBuffer.toString, TransformInfo_Access'(This'Unchecked_Access), To_Unbounded_String ("TransformInfoInterface(HashMap)"));
         end if;
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORY) then
-            This.logUtil.putF (This.log, This'Unchecked_Access, To_Unbounded_String ("override"));
+            This.logUtil.putF (This.log, TransformInfo_Access'(This'Unchecked_Access), To_Unbounded_String ("override"));
         end if;
    end override;
 
@@ -244,7 +245,8 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
         return This.storeName;
    end getStoreName;
 
-   procedure setObject (This : in out TransformInfo; anyType : Java_Object_Access) is
+   procedure setObject (This : in out TransformInfo; anyType_Param : access Java_Object'Class) is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         This.anyType := anyType;
    end setObject;
@@ -274,7 +276,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
    procedure setObjectConfigFile (This : in out TransformInfo; value : Unbounded_String) is
    begin
         This.objectConfigFileName := value;
-        This.setObjectConfigInterface (TransformInfoObjectConfigAndManipulatorFactory_Package.getInstance.getInstance (This.abeClientInformation, This'Unchecked_Access, This.getObjectConfigFilePath));
+        This.setObjectConfigInterface (TransformInfoObjectConfigAndManipulatorFactory_Package.getInstance.getInstance (This.abeClientInformation, TransformInfo_Access'(This'Unchecked_Access), This.getObjectConfigFilePath));
    end setObjectConfigFile;
 
    --  throws Exception
@@ -282,7 +284,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
       document : Document_Access;
    begin
         document := DomDocumentHelper_Package.create (value);
-        This.setObjectConfigInterface (TransformInfoObjectConfigAndManipulatorFactory_Package.getInstance.getInstance (This.abeClientInformation, This'Unchecked_Access, document));
+        This.setObjectConfigInterface (TransformInfoObjectConfigAndManipulatorFactory_Package.getInstance.getInstance (This.abeClientInformation, TransformInfo_Access'(This'Unchecked_Access), document));
    end setObjectConfig;
 
    procedure setDataFile (This : in out TransformInfo; value : Unbounded_String) is
@@ -356,7 +358,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
                 fileData := CryptFileReader_Package.Create (TransformInfoDataData_Package.getInstance.UNCRYPTED_EXTENSION, TransformInfoDataData_Package.getInstance.ENCRYPTED_EXTENSION).get (This.getDataFilePath);
                 if not (stringValidationUtil.isEmpty (This.data)) then
                     if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                        This.logUtil.putF (To_Unbounded_String ("Data File overriding existing data: ") & Java_Image (This.getDataFilePath), This'Unchecked_Access, To_Unbounded_String ("getData()"));
+                        This.logUtil.putF (To_Unbounded_String ("Data File overriding existing data: ") & Java_Image (This.getDataFilePath), TransformInfo_Access'(This'Unchecked_Access), To_Unbounded_String ("getData()"));
                     end if;
                 end if;
                 This.data := fileData;
@@ -366,7 +368,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
                         e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                     begin
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                    This.logUtil.put (To_Unbounded_String ("Could Not Load Data from: ") & Java_Image (This.getDataFile), This'Unchecked_Access, To_Unbounded_String ("getData()"), e);
+                    This.logUtil.put (To_Unbounded_String ("Could Not Load Data from: ") & Java_Image (This.getDataFile), TransformInfo_Access'(This'Unchecked_Access), To_Unbounded_String ("getData()"), e);
                 end if;
                     end;
             end;
@@ -374,7 +376,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
         begin
             if not (stringValidationUtil.isEmpty (This.data)) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                    This.logUtil.putF (To_Unbounded_String ("Data: ") & XmlDocumentHelper_Package.toString (DomDocumentHelper_Package.create (This.data)), This'Unchecked_Access, To_Unbounded_String ("getData()"));
+                    This.logUtil.putF (To_Unbounded_String ("Data: ") & XmlDocumentHelper_Package.toString (DomDocumentHelper_Package.create (This.data)), TransformInfo_Access'(This'Unchecked_Access), To_Unbounded_String ("getData()"));
                 end if;
             else
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
@@ -386,7 +388,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
                     stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "Path: "));
                     stringBuffer.append (This.getDataFilePath.toFileSystemString);
                     if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                        This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("getData()"));
+                        This.logUtil.putF (stringBuffer.toString, TransformInfo_Access'(This'Unchecked_Access), To_Unbounded_String ("getData()"));
                     end if;
                 end if;
             end if;
@@ -396,7 +398,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Could Not Preview Data: ") & This.data, This'Unchecked_Access, To_Unbounded_String ("getData()"), e);
+                This.logUtil.put (To_Unbounded_String ("Could Not Preview Data: ") & This.data, TransformInfo_Access'(This'Unchecked_Access), To_Unbounded_String ("getData()"), e);
             end if;
                 end;
         end;
@@ -413,7 +415,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
         stringValidationUtil := StringValidationUtil_Package.getInstance;
         if stringValidationUtil.isEmpty (localData) then
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.putF (To_Unbounded_String ("No Data So Creating New Document"), This'Unchecked_Access, To_Unbounded_String ("getDataDocument()"));
+                This.logUtil.putF (To_Unbounded_String ("No Data So Creating New Document"), TransformInfo_Access'(This'Unchecked_Access), To_Unbounded_String ("getDataDocument()"));
             end if;
             return DomDocumentHelper_Package.create;
         else
@@ -494,7 +496,8 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
         return This.objectConfigInterface;
    end getObjectConfigInterface;
 
-   procedure setObjectConfigInterface (This : in out TransformInfo; objectConfigInterface : TransformInfoObjectConfigInterface_Access) is
+   procedure setObjectConfigInterface (This : in out TransformInfo; objectConfigInterface_Param : access TransformInfoObjectConfigInterface'Class) is
+      objectConfigInterface : TransformInfoObjectConfigInterface_Access := TransformInfoObjectConfigInterface_Access (objectConfigInterface_Param);
    begin
         This.objectConfigInterface := objectConfigInterface;
    end setObjectConfigInterface;

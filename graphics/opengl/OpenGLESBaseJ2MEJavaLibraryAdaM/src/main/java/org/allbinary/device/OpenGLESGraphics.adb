@@ -24,12 +24,14 @@ package body org.allbinary.device.OpenGLESGraphics_Package is
       return This;
    end Create;
 
-   procedure updateGL (This : in out OpenGLESGraphics; gl : GL_Access) is
+   procedure updateGL (This : in out OpenGLESGraphics; gl_Param : access GL'Class) is
+      gl : GL_Access := GL_Access (gl_Param);
    begin
         null;
    end updateGL;
 
-   procedure set (This : in out OpenGLESGraphics; gl : GL_Access) is
+   procedure set (This : in out OpenGLESGraphics; gl_Param : access GL'Class) is
+      gl : GL_Access := GL_Access (gl_Param);
    begin
         null;
    end set;
@@ -61,7 +63,9 @@ package body org.allbinary.device.OpenGLESGraphics_Package is
         return This.gl;
    end getGlP;
 
-   procedure setFontDebug (This : in out OpenGLESGraphics; font : Font_Access; fontDebug : FontDebugBase_Access) is
+   procedure setFontDebug (This : in out OpenGLESGraphics; font_Param : access Font'Class; fontDebug_Param : access FontDebugBase'Class) is
+      font : Font_Access := Font_Access (font_Param);
+      fontDebug : FontDebugBase_Access := FontDebugBase_Access (fontDebug_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end setFontDebug;

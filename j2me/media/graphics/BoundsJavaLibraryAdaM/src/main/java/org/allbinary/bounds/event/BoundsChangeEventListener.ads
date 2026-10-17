@@ -31,7 +31,7 @@ package org.allbinary.bounds.event.BoundsChangeEventListener_Package is
    type BoundsChangeEventListener_Access is access all BoundsChangeEventListener'Class;
    type BoundsChangeEventListener_Access_Array is array (Natural range <>) of BoundsChangeEventListener_Access;
    type BoundsChangeEventListener_Access_Array_Access is access all BoundsChangeEventListener_Access_Array;
-   procedure onBoundsChangeEvent (This : in out BoundsChangeEventListener; boundsChangeEvent : BoundsChangeEvent_Access) is abstract;
+   procedure onBoundsChangeEvent (This : in out BoundsChangeEventListener; boundsChangeEvent_Param : access BoundsChangeEvent'Class) is abstract;
 
 end org.allbinary.bounds.event.BoundsChangeEventListener_Package;
 

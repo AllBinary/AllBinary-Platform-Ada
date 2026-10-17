@@ -35,8 +35,8 @@ package org.allbinary.logic.math.vector.YAxisMathVector_Package is
 
    type YAxisMathVector is new MathVector with null record;
 
-   procedure Initialize (This : in out YAxisMathVector'Class; magnitudeBasicDecimal : BasicDecimal_Access; direction : Integer);
-   function Create (magnitudeBasicDecimal : BasicDecimal_Access; direction : Integer) return YAxisMathVector_Access;
+   procedure Initialize (This : in out YAxisMathVector'Class; magnitudeBasicDecimal_Param : access BasicDecimal'Class; direction : Integer);
+   function Create (magnitudeBasicDecimal_Param : access BasicDecimal'Class; direction : Integer) return YAxisMathVector_Access;
    function getResult (This : in out YAxisMathVector) return BasicDecimal_Access;
    procedure calculate (This : in out YAxisMathVector);
 

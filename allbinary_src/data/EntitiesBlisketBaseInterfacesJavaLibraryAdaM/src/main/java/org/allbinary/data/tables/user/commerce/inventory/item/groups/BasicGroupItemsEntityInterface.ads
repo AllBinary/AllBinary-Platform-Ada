@@ -36,8 +36,8 @@ package org.allbinary.data.tables.user.commerce.inventory.item.groups.BasicGroup
    type BasicGroupItemsEntityInterface_Access_Array is array (Natural range <>) of BasicGroupItemsEntityInterface_Access;
    type BasicGroupItemsEntityInterface_Access_Array_Access is access all BasicGroupItemsEntityInterface_Access_Array;
    procedure delete (This : in out BasicGroupItemsEntityInterface; value : Unbounded_String) is abstract;
-   procedure insert (This : in out BasicGroupItemsEntityInterface; values : BasicArrayList_Access) is abstract;
-   procedure update (This : in out BasicGroupItemsEntityInterface; updatedValues : HashMap_Access) is abstract;
+   procedure insert (This : in out BasicGroupItemsEntityInterface; values_Param : access BasicArrayList'Class) is abstract;
+   procedure update (This : in out BasicGroupItemsEntityInterface; updatedValues_Param : access HashMap'Class) is abstract;
 
 end org.allbinary.data.tables.user.commerce.inventory.item.groups.BasicGroupItemsEntityInterface_Package;
 

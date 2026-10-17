@@ -44,13 +44,13 @@ package views.admin.customizers.CustomizersValidationView_Package is
       logUtil : LogUtil_Access;
    end record;
 
-   procedure Initialize (This : in out CustomizersValidationView'Class; transformInfoInterface : TransformInfoInterface_Access);
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return CustomizersValidationView_Access;
+   procedure Initialize (This : in out CustomizersValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return CustomizersValidationView_Access;
    function isValid (This : in out CustomizersValidationView) return Boolean;
    function validationInfo (This : in out CustomizersValidationView) return Unbounded_String;
    function toValidationInfoDoc (This : in out CustomizersValidationView) return Document_Access;
-   function toValidationInfoNode (This : in out CustomizersValidationView; document : Document_Access) return Node_Access;
-   procedure toValidationInfoNode (This : in out CustomizersValidationView; document : Document_Access);
+   function toValidationInfoNode (This : in out CustomizersValidationView; document_Param : access Document'Class) return Node_Access;
+   procedure toValidationInfoNode (This : in out CustomizersValidationView; document_Param : access Document'Class);
 
 end views.admin.customizers.CustomizersValidationView_Package;
 

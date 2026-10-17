@@ -49,7 +49,9 @@ package body org.allbinary.emulator.device.TrueTypeFontUtil_Package is
       return This;
    end Create;
 
-   function getFontBitmapGL (This : in out TrueTypeFontUtil; gl : GL10_Access; filename : Unbounded_String; cellSize : Integer; basicColor : BasicColor_Access) return Image_Access is
+   function getFontBitmapGL (This : in out TrueTypeFontUtil; gl_Param : access GL10'Class; filename : Unbounded_String; cellSize : Integer; basicColor_Param : access BasicColor'Class) return Image_Access is
+      gl : GL10_Access := GL10_Access (gl_Param);
+      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
       canvasStrings : CanvasStrings_Access;
       openGLCapabilities : OpenGLCapabilities_Access;
       FONT_ATLAS_512 : Unbounded_String;
@@ -87,7 +89,7 @@ package body org.allbinary.emulator.device.TrueTypeFontUtil_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            PreLogUtil_Package.putOE (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.EXCEPTION_Id, e);
+            PreLogUtil_Package.putOE (commonStrings.EXCEPTION_Id, TrueTypeFontUtil_Access'(This'Unchecked_Access), commonStrings.EXCEPTION_Id, e);
             Java_Throw (Java_New_Exception ("RuntimeException"));
                 end;
         end;
@@ -106,7 +108,8 @@ package body org.allbinary.emulator.device.TrueTypeFontUtil_Package is
         imageLoader.save ((CommonSeps_Package.getInstance.PERIOD) + (CanvasStrings_Package.getInstance.FONT_ATLAS), SWT_Package.IMAGE_PNG);
    end saveFontAtlasAsFile;
 
-   function getFontBitmap (This : in out TrueTypeFontUtil; filename : Unbounded_String; cellSize : Integer; basicColor : BasicColor_Access) return Image_Access is
+   function getFontBitmap (This : in out TrueTypeFontUtil; filename : Unbounded_String; cellSize : Integer; basicColor_Param : access BasicColor'Class) return Image_Access is
+      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
       cellsPerRow2 : Integer;
       cellsPerRow3 : Integer;
       cellsPerRow4 : Integer;
@@ -211,15 +214,15 @@ package body org.allbinary.emulator.device.TrueTypeFontUtil_Package is
         return This.U_characterWidth;
    end getFontWidths;
 
-   procedure getFontBitmapGL (This : in out TrueTypeFontUtil; gl : GL10_Access; filename : Unbounded_String; cellSize : Integer; basicColor : BasicColor_Access) is
-      Java_Result : constant Image_Access := TrueTypeFontUtil'Class (This).getFontBitmapGL (gl, filename, cellSize, basicColor);
+   procedure getFontBitmapGL (This : in out TrueTypeFontUtil; gl_Param : access GL10'Class; filename : Unbounded_String; cellSize : Integer; basicColor_Param : access BasicColor'Class) is
+      Java_Result : constant Image_Access := TrueTypeFontUtil'Class (This).getFontBitmapGL (gl_Param, filename, cellSize, basicColor_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getFontBitmapGL;
 
-   procedure getFontBitmap (This : in out TrueTypeFontUtil; filename : Unbounded_String; cellSize : Integer; basicColor : BasicColor_Access) is
-      Java_Result : constant Image_Access := TrueTypeFontUtil'Class (This).getFontBitmap (filename, cellSize, basicColor);
+   procedure getFontBitmap (This : in out TrueTypeFontUtil; filename : Unbounded_String; cellSize : Integer; basicColor_Param : access BasicColor'Class) is
+      Java_Result : constant Image_Access := TrueTypeFontUtil'Class (This).getFontBitmap (filename, cellSize, basicColor_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

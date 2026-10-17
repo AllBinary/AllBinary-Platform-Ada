@@ -22,12 +22,16 @@ package body org.allbinary.graphics.opengles.shader.OpenGLObject3dProcessor_Pack
    end Create;
 
 
-   procedure process (This : in out OpenGLObject3dProcessor; gl : GL10_Access; object3d : Java_Object_Access) is
+   procedure process (This : in out OpenGLObject3dProcessor; gl_Param : access GL10'Class; object3d_Param : access Java_Object'Class) is
+      gl : GL10_Access := GL10_Access (gl_Param);
+      object3d : Java_Object_Access := Java_Object_Access (object3d_Param);
    begin
         null;
    end process;
 
-   procedure process (This : in out OpenGLObject3dProcessor; gl : GL10_Access; object3d : Java_Object_Access; index : Integer) is
+   procedure process (This : in out OpenGLObject3dProcessor; gl_Param : access GL10'Class; object3d_Param : access Java_Object'Class; index : Integer) is
+      gl : GL10_Access := GL10_Access (gl_Param);
+      object3d : Java_Object_Access := Java_Object_Access (object3d_Param);
    begin
         null;
    end process;

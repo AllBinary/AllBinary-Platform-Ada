@@ -51,8 +51,8 @@ package views.admin.storefront.statistics.StoreFrontStatisticsComponent_Package 
       domNodeInterface : DomNodeInterface_Access;
    end record;
 
-   procedure Initialize (This : in out StoreFrontStatisticsComponent'Class; transformInfoInterface : TransformInfoInterface_Access);
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return StoreFrontStatisticsComponent_Access;
+   procedure Initialize (This : in out StoreFrontStatisticsComponent'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return StoreFrontStatisticsComponent_Access;
    procedure addDomNodeInterfaces (This : in out StoreFrontStatisticsComponent);
    function view (This : in out StoreFrontStatisticsComponent) return Unbounded_String;
 

@@ -49,12 +49,12 @@ package org.allbinary.game.input.GameInput_Package is
       isRemoveDuplicateKeyPresses : Boolean;
    end record;
 
-   procedure Initialize (This : in out GameInput'Class; gameKeyEventList : BasicArrayList_Access; removalGameKeyEventList : BasicArrayList_Access);
-   function Create (gameKeyEventList : BasicArrayList_Access; removalGameKeyEventList : BasicArrayList_Access) return GameInput_Access;
-   procedure add (This : in out GameInput; gameKeyEvent : GameKeyEvent_Access);
-   procedure addForRemoval (This : in out GameInput; gameKeyEvent : GameKeyEvent_Access);
-   function isForRemoval (This : in out GameInput; gameKeyEvent : GameKeyEvent_Access) return Boolean;
-   procedure isForRemoval (This : in out GameInput; gameKeyEvent : GameKeyEvent_Access);
+   procedure Initialize (This : in out GameInput'Class; gameKeyEventList_Param : access BasicArrayList'Class; removalGameKeyEventList_Param : access BasicArrayList'Class);
+   function Create (gameKeyEventList_Param : access BasicArrayList'Class; removalGameKeyEventList_Param : access BasicArrayList'Class) return GameInput_Access;
+   procedure add (This : in out GameInput; gameKeyEvent_Param : access GameKeyEvent'Class);
+   procedure addForRemoval (This : in out GameInput; gameKeyEvent_Param : access GameKeyEvent'Class);
+   function isForRemoval (This : in out GameInput; gameKeyEvent_Param : access GameKeyEvent'Class) return Boolean;
+   procedure isForRemoval (This : in out GameInput; gameKeyEvent_Param : access GameKeyEvent'Class);
    procedure clear (This : in out GameInput);
    procedure removeNonAIInputGameKeyEvents (This : in out GameInput);
    procedure update (This : in out GameInput);

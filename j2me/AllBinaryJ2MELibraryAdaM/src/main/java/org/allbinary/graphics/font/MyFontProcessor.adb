@@ -33,12 +33,14 @@ package body org.allbinary.graphics.font.MyFontProcessor_Package is
    end Create;
 
 
-   function defaultCharWidth (font : Font_Access) return Integer is
+   function defaultCharWidth (font_Param : access Font'Class) return Integer is
+      font : Font_Access := Font_Access (font_Param);
    begin
         return font.charWidth ('C');
    end defaultCharWidth;
 
-   function defaultStringWidth (font : Font_Access; size : Integer) return Integer is
+   function defaultStringWidth (font_Param : access Font'Class; size : Integer) return Integer is
+      font : Font_Access := Font_Access (font_Param);
    begin
         return (MyFontProcessor_Package.defaultCharWidth (font)) * (size);
    end defaultStringWidth;
@@ -48,20 +50,21 @@ package body org.allbinary.graphics.font.MyFontProcessor_Package is
         return MyFontProcessor_Package.instance;
    end getInstance;
 
-   procedure process (This : in out MyFontProcessor; graphics : Graphics_Access) is
+   procedure process (This : in out MyFontProcessor; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         null;
    end process;
 
-   procedure defaultCharWidth (font : Font_Access) is
-      Java_Result : constant Integer := defaultCharWidth (font);
+   procedure defaultCharWidth (font_Param : access Font'Class) is
+      Java_Result : constant Integer := defaultCharWidth (font_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end defaultCharWidth;
 
-   procedure defaultStringWidth (font : Font_Access; size : Integer) is
-      Java_Result : constant Integer := defaultStringWidth (font, size);
+   procedure defaultStringWidth (font_Param : access Font'Class; size : Integer) is
+      Java_Result : constant Integer := defaultStringWidth (font_Param, size);
       pragma Unreferenced (Java_Result);
    begin
       null;

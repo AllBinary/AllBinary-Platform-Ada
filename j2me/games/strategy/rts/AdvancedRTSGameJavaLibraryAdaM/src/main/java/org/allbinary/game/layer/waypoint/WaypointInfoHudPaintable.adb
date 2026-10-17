@@ -38,7 +38,8 @@ package body org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package 
       return This;
    end Create;
 
-   procedure updateMeasurement (This : in out WaypointInfoHudPaintable; graphics : Graphics_Access) is
+   procedure updateMeasurement (This : in out WaypointInfoHudPaintable; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       font : Font_Access;
    begin
         SelectionHudPaintable (This).updateMeasurement (graphics);
@@ -55,7 +56,8 @@ package body org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package 
         This.keyvalueDrawString.update (rtsLayer.getParentLayer.getName);
    end updateSelectionInfo;
 
-   procedure setRtsLayer (This : in out WaypointInfoHudPaintable; rtsLayer : RTSLayer_Access) is
+   procedure setRtsLayer (This : in out WaypointInfoHudPaintable; rtsLayer_Param : access RTSLayer'Class) is
+      rtsLayer : RTSLayer_Access := RTSLayer_Access (rtsLayer_Param);
    begin
         This.rtsLayerP := rtsLayer;
    end setRtsLayer;
@@ -65,7 +67,8 @@ package body org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package 
         return This.rtsLayerP;
    end getRtsLayer;
 
-   procedure paint (This : in out WaypointInfoHudPaintable; graphics : Graphics_Access) is
+   procedure paint (This : in out WaypointInfoHudPaintable; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         SelectionHudPaintable (This).paint (graphics);
         This.keyvalueDrawString.paint (graphics, This.textLine2Y);

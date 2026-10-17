@@ -36,7 +36,9 @@ package body org.allbinary.opengles.JOGL10_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out JOGL10'Class; gl : GL_Access; gl2 : GL2_Access) is
+   procedure Initialize (This : in out JOGL10'Class; gl_Param : access GL'Class; gl2_Param : access GL2'Class) is
+      gl : GL_Access := GL_Access (gl_Param);
+      gl2 : GL2_Access := GL2_Access (gl2_Param);
    begin
       Initialize_Fields (This);
         This.gl10 := gl2;
@@ -45,10 +47,10 @@ package body org.allbinary.opengles.JOGL10_Package is
         This.GL_QUAD_STRIP := com_Package.jogamp.opengl.GL2.GL_QUAD_STRIP;
    end Initialize;
 
-   function Create (gl : GL_Access; gl2 : GL2_Access) return JOGL10_Access is
+   function Create (gl_Param : access GL'Class; gl2_Param : access GL2'Class) return JOGL10_Access is
       This : constant JOGL10_Access := new JOGL10;
    begin
-      JOGL10_Package.Initialize (This.all, gl, gl2);
+      JOGL10_Package.Initialize (This.all, gl_Param, gl2_Param);
       return This;
    end Create;
 
@@ -112,17 +114,20 @@ package body org.allbinary.opengles.JOGL10_Package is
         This.gl10.glColorMask (red_Case, green_Case, blue_Case, alpha_Case);
    end glColorMask;
 
-   procedure glColorPointer (This : in out JOGL10; size : Integer; type_Id : Integer; stride : Integer; pointer : Buffer_Access) is
+   procedure glColorPointer (This : in out JOGL10; size : Integer; type_Id : Integer; stride : Integer; pointer_Param : access Buffer'Class) is
+      pointer : Buffer_Access := Buffer_Access (pointer_Param);
    begin
         This.gl10.glColorPointer (size, type_Id, stride, pointer);
    end glColorPointer;
 
-   procedure glCompressedTexImage2D (This : in out JOGL10; target_Case : Integer; level : Integer; internalformat : Integer; width : Integer; height : Integer; border : Integer; imageSize : Integer; data : Buffer_Access) is
+   procedure glCompressedTexImage2D (This : in out JOGL10; target_Case : Integer; level : Integer; internalformat : Integer; width : Integer; height : Integer; border : Integer; imageSize : Integer; data_Param : access Buffer'Class) is
+      data : Buffer_Access := Buffer_Access (data_Param);
    begin
         This.gl10.glCompressedTexImage2D (target_Case, level, internalformat, width, height, border, imageSize, data);
    end glCompressedTexImage2D;
 
-   procedure glCompressedTexSubImage2D (This : in out JOGL10; target_Case : Integer; level : Integer; xoffset : Integer; yoffset : Integer; width : Integer; height : Integer; format : Integer; imageSize : Integer; data : Buffer_Access) is
+   procedure glCompressedTexSubImage2D (This : in out JOGL10; target_Case : Integer; level : Integer; xoffset : Integer; yoffset : Integer; width : Integer; height : Integer; format : Integer; imageSize : Integer; data_Param : access Buffer'Class) is
+      data : Buffer_Access := Buffer_Access (data_Param);
    begin
         This.gl10.glCompressedTexSubImage2D (target_Case, level, xoffset, yoffset, width, height, format, imageSize, data);
    end glCompressedTexSubImage2D;
@@ -147,7 +152,8 @@ package body org.allbinary.opengles.JOGL10_Package is
         This.gl10.glDeleteTextures (n, textures, offset);
    end glDeleteTextures;
 
-   procedure glDeleteTextures (This : in out JOGL10; n : Integer; textures : IntBuffer_Access) is
+   procedure glDeleteTextures (This : in out JOGL10; n : Integer; textures_Param : access IntBuffer'Class) is
+      textures : IntBuffer_Access := IntBuffer_Access (textures_Param);
    begin
         This.gl10.glDeleteTextures (n, textures);
    end glDeleteTextures;
@@ -182,7 +188,8 @@ package body org.allbinary.opengles.JOGL10_Package is
         This.gl10.glDrawArrays (mode, first, count);
    end glDrawArrays;
 
-   procedure glDrawElements (This : in out JOGL10; mode : Integer; count : Integer; type_Id : Integer; indices : Buffer_Access) is
+   procedure glDrawElements (This : in out JOGL10; mode : Integer; count : Integer; type_Id : Integer; indices_Param : access Buffer'Class) is
+      indices : Buffer_Access := Buffer_Access (indices_Param);
    begin
         This.gl10.glDrawElements (mode, count, type_Id, indices);
    end glDrawElements;
@@ -217,7 +224,8 @@ package body org.allbinary.opengles.JOGL10_Package is
         This.gl10.glFogfv (pname_Case, params_Case, offset);
    end glFogfv;
 
-   procedure glFogfv (This : in out JOGL10; pname_Case : Integer; params_Case : FloatBuffer_Access) is
+   procedure glFogfv (This : in out JOGL10; pname_Case : Integer; params_Case_Param : access FloatBuffer'Class) is
+      params_Case : FloatBuffer_Access := FloatBuffer_Access (params_Case_Param);
    begin
         This.gl10.glFogfv (pname_Case, params_Case);
    end glFogfv;
@@ -237,7 +245,8 @@ package body org.allbinary.opengles.JOGL10_Package is
         This.gl10.glGenTextures (n, textures, offset);
    end glGenTextures;
 
-   procedure glGenTextures (This : in out JOGL10; n : Integer; textures : IntBuffer_Access) is
+   procedure glGenTextures (This : in out JOGL10; n : Integer; textures_Param : access IntBuffer'Class) is
+      textures : IntBuffer_Access := IntBuffer_Access (textures_Param);
    begin
         This.gl10.glGenTextures (n, textures);
    end glGenTextures;
@@ -252,7 +261,8 @@ package body org.allbinary.opengles.JOGL10_Package is
         This.gl10.glGetIntegerv (pname_Case, params_Case, offset);
    end glGetIntegerv;
 
-   procedure glGetIntegerv (This : in out JOGL10; pname_Case : Integer; params_Case : IntBuffer_Access) is
+   procedure glGetIntegerv (This : in out JOGL10; pname_Case : Integer; params_Case_Param : access IntBuffer'Class) is
+      params_Case : IntBuffer_Access := IntBuffer_Access (params_Case_Param);
    begin
         This.gl10.glGetIntegerv (pname_Case, params_Case);
    end glGetIntegerv;
@@ -277,7 +287,8 @@ package body org.allbinary.opengles.JOGL10_Package is
         This.gl10.glLightModelfv (pname_Case, params_Case, offset);
    end glLightModelfv;
 
-   procedure glLightModelfv (This : in out JOGL10; pname_Case : Integer; params_Case : FloatBuffer_Access) is
+   procedure glLightModelfv (This : in out JOGL10; pname_Case : Integer; params_Case_Param : access FloatBuffer'Class) is
+      params_Case : FloatBuffer_Access := FloatBuffer_Access (params_Case_Param);
    begin
         This.gl10.glLightModelfv (pname_Case, params_Case);
    end glLightModelfv;
@@ -292,7 +303,8 @@ package body org.allbinary.opengles.JOGL10_Package is
         This.gl10.glLightfv (light_Case, pname_Case, params_Case, offset);
    end glLightfv;
 
-   procedure glLightfv (This : in out JOGL10; light_Case : Integer; pname_Case : Integer; params_Case : FloatBuffer_Access) is
+   procedure glLightfv (This : in out JOGL10; light_Case : Integer; pname_Case : Integer; params_Case_Param : access FloatBuffer'Class) is
+      params_Case : FloatBuffer_Access := FloatBuffer_Access (params_Case_Param);
    begin
         This.gl10.glLightfv (light_Case, pname_Case, params_Case);
    end glLightfv;
@@ -312,7 +324,8 @@ package body org.allbinary.opengles.JOGL10_Package is
         This.gl10.glLoadMatrixf (m, offset);
    end glLoadMatrixf;
 
-   procedure glLoadMatrixf (This : in out JOGL10; m : FloatBuffer_Access) is
+   procedure glLoadMatrixf (This : in out JOGL10; m_Param : access FloatBuffer'Class) is
+      m : FloatBuffer_Access := FloatBuffer_Access (m_Param);
    begin
         This.gl10.glLoadMatrixf (m);
    end glLoadMatrixf;
@@ -332,7 +345,8 @@ package body org.allbinary.opengles.JOGL10_Package is
         This.gl10.glMaterialfv (face_Case, pname_Case, params_Case, offset);
    end glMaterialfv;
 
-   procedure glMaterialfv (This : in out JOGL10; face_Case : Integer; pname_Case : Integer; params_Case : FloatBuffer_Access) is
+   procedure glMaterialfv (This : in out JOGL10; face_Case : Integer; pname_Case : Integer; params_Case_Param : access FloatBuffer'Class) is
+      params_Case : FloatBuffer_Access := FloatBuffer_Access (params_Case_Param);
    begin
         This.gl10.glMaterialfv (face_Case, pname_Case, params_Case);
    end glMaterialfv;
@@ -347,7 +361,8 @@ package body org.allbinary.opengles.JOGL10_Package is
         This.gl10.glMultMatrixf (m, offset);
    end glMultMatrixf;
 
-   procedure glMultMatrixf (This : in out JOGL10; m : FloatBuffer_Access) is
+   procedure glMultMatrixf (This : in out JOGL10; m_Param : access FloatBuffer'Class) is
+      m : FloatBuffer_Access := FloatBuffer_Access (m_Param);
    begin
         This.gl10.glMultMatrixf (m);
    end glMultMatrixf;
@@ -362,7 +377,8 @@ package body org.allbinary.opengles.JOGL10_Package is
         This.gl10.glNormal3f (nx, ny, nz);
    end glNormal3f;
 
-   procedure glNormalPointer (This : in out JOGL10; type_Id : Integer; stride : Integer; pointer : Buffer_Access) is
+   procedure glNormalPointer (This : in out JOGL10; type_Id : Integer; stride : Integer; pointer_Param : access Buffer'Class) is
+      pointer : Buffer_Access := Buffer_Access (pointer_Param);
    begin
         This.gl10.glNormalPointer (type_Id, stride, pointer);
    end glNormalPointer;
@@ -397,7 +413,8 @@ package body org.allbinary.opengles.JOGL10_Package is
         This.gl10.glPushMatrix;
    end glPushMatrix;
 
-   procedure glReadPixels (This : in out JOGL10; x : Integer; y : Integer; width : Integer; height : Integer; format : Integer; type_Id : Integer; pixels : Buffer_Access) is
+   procedure glReadPixels (This : in out JOGL10; x : Integer; y : Integer; width : Integer; height : Integer; format : Integer; type_Id : Integer; pixels_Param : access Buffer'Class) is
+      pixels : Buffer_Access := Buffer_Access (pixels_Param);
    begin
         This.gl10.glReadPixels (x, y, width, height, format, type_Id, pixels);
    end glReadPixels;
@@ -452,7 +469,8 @@ package body org.allbinary.opengles.JOGL10_Package is
         This.gl10.glStencilOp (fail, zfail, zpass);
    end glStencilOp;
 
-   procedure glTexCoordPointer (This : in out JOGL10; size : Integer; type_Id : Integer; stride : Integer; pointer : Buffer_Access) is
+   procedure glTexCoordPointer (This : in out JOGL10; size : Integer; type_Id : Integer; stride : Integer; pointer_Param : access Buffer'Class) is
+      pointer : Buffer_Access := Buffer_Access (pointer_Param);
    begin
         This.gl10.glTexCoordPointer (size, type_Id, stride, pointer);
    end glTexCoordPointer;
@@ -467,12 +485,14 @@ package body org.allbinary.opengles.JOGL10_Package is
         This.gl10.glTexEnvfv (target_Case, pname_Case, params_Case, offset);
    end glTexEnvfv;
 
-   procedure glTexEnvfv (This : in out JOGL10; target_Case : Integer; pname_Case : Integer; params_Case : FloatBuffer_Access) is
+   procedure glTexEnvfv (This : in out JOGL10; target_Case : Integer; pname_Case : Integer; params_Case_Param : access FloatBuffer'Class) is
+      params_Case : FloatBuffer_Access := FloatBuffer_Access (params_Case_Param);
    begin
         This.gl10.glTexEnvfv (target_Case, pname_Case, params_Case);
    end glTexEnvfv;
 
-   procedure glTexImage2D (This : in out JOGL10; target_Case : Integer; level : Integer; internalformat : Integer; width : Integer; height : Integer; border : Integer; format : Integer; type_Id : Integer; pixels : Buffer_Access) is
+   procedure glTexImage2D (This : in out JOGL10; target_Case : Integer; level : Integer; internalformat : Integer; width : Integer; height : Integer; border : Integer; format : Integer; type_Id : Integer; pixels_Param : access Buffer'Class) is
+      pixels : Buffer_Access := Buffer_Access (pixels_Param);
    begin
         This.gl10.glTexImage2D (target_Case, level, internalformat, width, height, border, format, type_Id, pixels);
    end glTexImage2D;
@@ -487,7 +507,8 @@ package body org.allbinary.opengles.JOGL10_Package is
         This.gl10.glTexParameteri (target_Case, pname_Case, param_Case);
    end glTexParameteri;
 
-   procedure glTexSubImage2D (This : in out JOGL10; target_Case : Integer; level : Integer; xoffset : Integer; yoffset : Integer; width : Integer; height : Integer; format : Integer; type_Id : Integer; pixels : Buffer_Access) is
+   procedure glTexSubImage2D (This : in out JOGL10; target_Case : Integer; level : Integer; xoffset : Integer; yoffset : Integer; width : Integer; height : Integer; format : Integer; type_Id : Integer; pixels_Param : access Buffer'Class) is
+      pixels : Buffer_Access := Buffer_Access (pixels_Param);
    begin
         This.gl10.glTexSubImage2D (target_Case, level, xoffset, yoffset, width, height, format, type_Id, pixels);
    end glTexSubImage2D;
@@ -497,7 +518,8 @@ package body org.allbinary.opengles.JOGL10_Package is
         This.gl10.glTranslatef (x, y, z);
    end glTranslatef;
 
-   procedure glVertexPointer (This : in out JOGL10; size : Integer; type_Id : Integer; stride : Integer; pointer : Buffer_Access) is
+   procedure glVertexPointer (This : in out JOGL10; size : Integer; type_Id : Integer; stride : Integer; pointer_Param : access Buffer'Class) is
+      pointer : Buffer_Access := Buffer_Access (pointer_Param);
    begin
         This.gl10.glVertexPointer (size, type_Id, stride, pointer);
    end glVertexPointer;

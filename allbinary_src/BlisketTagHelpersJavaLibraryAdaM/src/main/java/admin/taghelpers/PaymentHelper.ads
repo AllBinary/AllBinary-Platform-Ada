@@ -59,8 +59,8 @@ package admin.taghelpers.PaymentHelper_Package is
       portion : Portion_Access;
    end record;
 
-   procedure Initialize (This : in out PaymentHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access);
-   function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return PaymentHelper_Access;
+   procedure Initialize (This : in out PaymentHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
+   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return PaymentHelper_Access;
    procedure getFormData (This : in out PaymentHelper);
    function insert (This : in out PaymentHelper) return Unbounded_String;
    function select_Id (This : in out PaymentHelper) return Unbounded_String;

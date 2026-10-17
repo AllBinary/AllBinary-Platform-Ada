@@ -50,16 +50,16 @@ package org.allbinary.physics.movement.BasicConstantVelocityMovement_Package is
       axisMathVectorUtil : AxisMathVectorUtil_Access;
    end record;
 
-   procedure Initialize (This : in out BasicConstantVelocityMovement'Class; basicDecimal : BasicDecimal_Access; velocityProperties : BasicVelocityProperties_Access);
-   function Create (basicDecimal : BasicDecimal_Access; velocityProperties : BasicVelocityProperties_Access) return BasicConstantVelocityMovement_Access;
-   procedure init (This : in out BasicConstantVelocityMovement; speedBasicDecimal : BasicDecimal_Access; angle : Integer; otherAngle : Integer);
-   procedure moveOutsideRadius (This : in out BasicConstantVelocityMovement; layer : AllBinaryLayer_Access; radius : Long_Long_Integer; angle : Integer; otherAngle : Integer);
-   procedure process (This : in out BasicConstantVelocityMovement; layer : AllBinaryGameLayer_Access);
+   procedure Initialize (This : in out BasicConstantVelocityMovement'Class; basicDecimal_Param : access BasicDecimal'Class; velocityProperties_Param : access BasicVelocityProperties'Class);
+   function Create (basicDecimal_Param : access BasicDecimal'Class; velocityProperties_Param : access BasicVelocityProperties'Class) return BasicConstantVelocityMovement_Access;
+   procedure init (This : in out BasicConstantVelocityMovement; speedBasicDecimal_Param : access BasicDecimal'Class; angle : Integer; otherAngle : Integer);
+   procedure moveOutsideRadius (This : in out BasicConstantVelocityMovement; layer_Param : access AllBinaryLayer'Class; radius : Long_Long_Integer; angle : Integer; otherAngle : Integer);
+   procedure process (This : in out BasicConstantVelocityMovement; layer_Param : access AllBinaryGameLayer'Class);
    function toString (This : in out BasicConstantVelocityMovement) return Unbounded_String;
    procedure stop (This : in out BasicConstantVelocityMovement);
    function getVelocityProperties (This : in out BasicConstantVelocityMovement) return BasicVelocityProperties_Access;
-   procedure setVelocityProperties (This : in out BasicConstantVelocityMovement; velocityProperties : BasicVelocityProperties_Access);
-   procedure setSpeedBasicDecimal (This : in out BasicConstantVelocityMovement; speedBasicDecimal : BasicDecimal_Access);
+   procedure setVelocityProperties (This : in out BasicConstantVelocityMovement; velocityProperties_Param : access BasicVelocityProperties'Class);
+   procedure setSpeedBasicDecimal (This : in out BasicConstantVelocityMovement; speedBasicDecimal_Param : access BasicDecimal'Class);
    function getSpeedBasicDecimal (This : in out BasicConstantVelocityMovement) return BasicDecimal_Access;
 
 end org.allbinary.physics.movement.BasicConstantVelocityMovement_Package;

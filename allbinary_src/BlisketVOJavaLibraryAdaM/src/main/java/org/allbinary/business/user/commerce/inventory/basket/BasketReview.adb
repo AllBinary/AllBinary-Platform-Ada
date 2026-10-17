@@ -40,7 +40,8 @@ package body org.allbinary.business.user.commerce.inventory.basket.BasketReview_
         return True;
    end isValid;
 
-   procedure addItem (This : in out BasketReview; item : Item_Access) is
+   procedure addItem (This : in out BasketReview; item_Param : access Item'Class) is
+      item : Item_Access := Item_Access (item_Param);
    begin
         This.items.add (item);
    end addItem;
@@ -139,7 +140,8 @@ package body org.allbinary.business.user.commerce.inventory.basket.BasketReview_
    end getNumberOf;
 
    --  throws Exception
-   function toXmlNode (This : in out BasketReview; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out BasketReview; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       node : Node_Access;
       itemArray : Java_Object_Access_Array_Access;
       size : Integer;
@@ -163,8 +165,8 @@ package body org.allbinary.business.user.commerce.inventory.basket.BasketReview_
       null;
    end getNumberOf;
 
-   procedure toXmlNode (This : in out BasketReview; document : Document_Access) is
-      Java_Result : constant Node_Access := BasketReview'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out BasketReview; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := BasketReview'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

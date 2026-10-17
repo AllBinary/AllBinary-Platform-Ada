@@ -34,18 +34,21 @@ package body org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent
       return This;
    end Create;
 
-   procedure addListener (listener : MyGraphicItemEventListener_Access) is
+   procedure addListener (listener_Param : access MyGraphicItemEventListener'Class) is
+      listener : MyGraphicItemEventListener_Access := MyGraphicItemEventListener_Access (listener_Param);
    begin
         MyGraphicItemEventService_Package.listenerList.add (Ada.Tags.Tag (listener.all'Tag), EventListener_Access (listener));
    end addListener;
 
-   procedure removeListener (listener : MyGraphicItemEventListener_Access) is
+   procedure removeListener (listener_Param : access MyGraphicItemEventListener'Class) is
+      listener : MyGraphicItemEventListener_Access := MyGraphicItemEventListener_Access (listener_Param);
    begin
         MyGraphicItemEventService_Package.listenerList.remove (Ada.Tags.Tag (listener.all'Tag), EventListener_Access (listener));
    end removeListener;
 
    --  throws Exception
-   procedure fire (evt : MyGraphicItemEvent_Access) is
+   procedure fire (evt_Param : access MyGraphicItemEvent'Class) is
+      evt : MyGraphicItemEvent_Access := MyGraphicItemEvent_Access (evt_Param);
       listeners : Java_Object_Access_Array_Access;
       i : Integer;
    begin

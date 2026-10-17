@@ -70,47 +70,61 @@ package body org.allbinary.game.layer.special.SpecialGameInput_Package is
    end strafeRight;
 
    --  throws Exception
-   procedure fire (This : in out SpecialGameInput; layerManager : AllBinaryLayerManager_Access; gameKeyEvent : GameKeyEvent_Access) is
+   procedure fire (This : in out SpecialGameInput; layerManager_Param : access AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent'Class) is
+      layerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
+      gameKeyEvent : GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
    begin
         null;
    end fire;
 
    --  throws Exception
-   procedure special1 (This : in out SpecialGameInput; layerManager : AllBinaryLayerManager_Access; gameKeyEvent : GameKeyEvent_Access) is
+   procedure special1 (This : in out SpecialGameInput; layerManager_Param : access AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent'Class) is
+      layerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
+      gameKeyEvent : GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
    begin
         null;
    end special1;
 
    --  throws Exception
-   procedure special2 (This : in out SpecialGameInput; layerManager : AllBinaryLayerManager_Access; gameKeyEvent : GameKeyEvent_Access) is
+   procedure special2 (This : in out SpecialGameInput; layerManager_Param : access AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent'Class) is
+      layerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
+      gameKeyEvent : GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
    begin
         null;
    end special2;
 
    --  throws Exception
-   procedure special3 (This : in out SpecialGameInput; layerManager : AllBinaryLayerManager_Access; gameKeyEvent : GameKeyEvent_Access) is
+   procedure special3 (This : in out SpecialGameInput; layerManager_Param : access AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent'Class) is
+      layerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
+      gameKeyEvent : GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
    begin
         null;
    end special3;
 
    --  throws Exception
-   procedure special4 (This : in out SpecialGameInput; layerManager : AllBinaryLayerManager_Access; gameKeyEvent : GameKeyEvent_Access) is
+   procedure special4 (This : in out SpecialGameInput; layerManager_Param : access AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent'Class) is
+      layerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
+      gameKeyEvent : GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
    begin
         null;
    end special4;
 
    --  throws Exception
-   procedure special5 (This : in out SpecialGameInput; layerManager : AllBinaryLayerManager_Access; gameKeyEvent : GameKeyEvent_Access) is
+   procedure special5 (This : in out SpecialGameInput; layerManager_Param : access AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent'Class) is
+      layerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
+      gameKeyEvent : GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
    begin
         null;
    end special5;
 
-   procedure paint (This : in out SpecialGameInput; graphics : Graphics_Access) is
+   procedure paint (This : in out SpecialGameInput; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         null;
    end paint;
 
-   procedure paintThreed (This : in out SpecialGameInput; graphics : Graphics_Access) is
+   procedure paintThreed (This : in out SpecialGameInput; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         null;
    end paintThreed;

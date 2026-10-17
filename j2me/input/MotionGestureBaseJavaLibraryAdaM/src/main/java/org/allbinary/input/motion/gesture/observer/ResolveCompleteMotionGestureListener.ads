@@ -54,7 +54,7 @@ package org.allbinary.input.motion.gesture.observer.ResolveCompleteMotionGesture
 
    procedure Initialize (This : in out ResolveCompleteMotionGestureListener'Class);
    function Create return ResolveCompleteMotionGestureListener_Access;
-   procedure onMotionGestureCompleted (This : in out ResolveCompleteMotionGestureListener; list : BasicArrayList_Access);
+   procedure onMotionGestureCompleted (This : in out ResolveCompleteMotionGestureListener; list_Param : access BasicArrayList'Class);
 
 end org.allbinary.input.motion.gesture.observer.ResolveCompleteMotionGestureListener_Package;
 

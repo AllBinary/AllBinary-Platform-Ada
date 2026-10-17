@@ -45,7 +45,7 @@ package body org.allbinary.data.resource.ResourceUtil_Package is
 
    procedure setLoadingPaths (This : in out ResourceUtil; path : Unbounded_String; ext : Unbounded_String) is
    begin
-        This.logUtil.putF (CommonStrings_Package.getInstance.NOT_IMPLEMENTED, This'Unchecked_Access, To_Unbounded_String ("setLoadingPaths"));
+        This.logUtil.putF (CommonStrings_Package.getInstance.NOT_IMPLEMENTED, ResourceUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("setLoadingPaths"));
    end setLoadingPaths;
 
    function getContext (This : in out ResourceUtil) return Context_Access is
@@ -53,12 +53,14 @@ package body org.allbinary.data.resource.ResourceUtil_Package is
         return Context_Access (This.context);
    end getContext;
 
-   procedure setContextFromActivity (This : in out ResourceUtil; activity : Activity_Access) is
+   procedure setContextFromActivity (This : in out ResourceUtil; activity_Param : access Activity'Class) is
+      activity : Activity_Access := Activity_Access (activity_Param);
    begin
         This.context := activity;
    end setContextFromActivity;
 
-   procedure setContext (This : in out ResourceUtil; aContext : Context_Access) is
+   procedure setContext (This : in out ResourceUtil; aContext_Param : access Context'Class) is
+      aContext : Context_Access := Context_Access (aContext_Param);
    begin
         This.context := aContext;
    end setContext;
@@ -68,7 +70,7 @@ package body org.allbinary.data.resource.ResourceUtil_Package is
    begin
         value := Integer (This.hashMap.get (resource));
         if (DebugFactory_Package.getInstance) /= (NoDebug_Package.getInstance) then
-            PreLogUtil_Package.put (StringMaker_Package.Create.append (resource).append (CommonSeps_Package.getInstance.COLON).append (value.toString).toString, This'Unchecked_Access, To_Unbounded_String ("getResourceId"));
+            PreLogUtil_Package.put (StringMaker_Package.Create.append (resource).append (CommonSeps_Package.getInstance.COLON).append (value.toString).toString, ResourceUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("getResourceId"));
         end if;
         return value;
    end getResourceId;
@@ -76,9 +78,9 @@ package body org.allbinary.data.resource.ResourceUtil_Package is
    procedure addResource (This : in out ResourceUtil; resource : Unbounded_String; value : Integer) is
    begin
         if (DebugFactory_Package.getInstance) /= (NoDebug_Package.getInstance) then
-            PreLogUtil_Package.put (StringMaker_Package.Create.append (resource).append (CommonSeps_Package.getInstance.COLON).append (value.toString).toString, This'Unchecked_Access, To_Unbounded_String ("addResource"));
+            PreLogUtil_Package.put (StringMaker_Package.Create.append (resource).append (CommonSeps_Package.getInstance.COLON).append (value.toString).toString, ResourceUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("addResource"));
             if This.containsDuplicate (resource, value) then
-                ForcedLogUtil_Package.log (StringMaker_Package.Create.append (To_Unbounded_String ("Found Duplicate Resource: ")).append (resource).toString, This'Unchecked_Access);
+                ForcedLogUtil_Package.log (StringMaker_Package.Create.append (To_Unbounded_String ("Found Duplicate Resource: ")).append (resource).toString, ResourceUtil_Access'(This'Unchecked_Access));
             end if;
         end if;
         This.hashMap.put (resource, value);
@@ -104,9 +106,10 @@ package body org.allbinary.data.resource.ResourceUtil_Package is
         return False;
    end containsDuplicate;
 
-   procedure setResources (This : in out ResourceUtil; resources : Resources_Access) is
+   procedure setResources (This : in out ResourceUtil; resources_Param : access Resources'Class) is
+      resources : Resources_Access := Resources_Access (resources_Param);
    begin
-        This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Resource Loader: ")).append (To_Unbounded_String (Ada.Tags.Expanded_Name (resources.all'Tag))).toString, This'Unchecked_Access, To_Unbounded_String ("setResources"));
+        This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Resource Loader: ")).append (To_Unbounded_String (Ada.Tags.Expanded_Name (resources.all'Tag))).toString, ResourceUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("setResources"));
         This.resources := resources;
    end setResources;
 

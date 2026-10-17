@@ -19,8 +19,8 @@ package body org.allbinary.layer.AllBinaryLayerManager_Package is
    begin
       null;
       This.layerManagerEventHandler := LayerManagerEventHandler_Package.getInstance;
-      This.createLayerManagerEvent := LayerManagerEvent_Package.Create (This'Unchecked_Access, This.layerManagerEventHandler.CREATE);
-      This.deleteLayerManagerEvent := LayerManagerEvent_Package.Create (This'Unchecked_Access, This.layerManagerEventHandler.DELETE);
+      This.createLayerManagerEvent := LayerManagerEvent_Package.Create (AllBinaryLayerManager_Access'(This'Unchecked_Access), This.layerManagerEventHandler.CREATE);
+      This.deleteLayerManagerEvent := LayerManagerEvent_Package.Create (AllBinaryLayerManager_Access'(This'Unchecked_Access), This.layerManagerEventHandler.DELETE);
       This.basicLayerProcessorArray := new LayerProcessor_Access_Array'(0 .. (0) - 1 => null);
    end Initialize_Fields;
 
@@ -60,7 +60,8 @@ package body org.allbinary.layer.AllBinaryLayerManager_Package is
    end log;
 
    --  throws Exception
-   procedure append (This : in out AllBinaryLayerManager; layerInterface : AllBinaryLayer_Access) is
+   procedure append (This : in out AllBinaryLayerManager; layerInterface_Param : access AllBinaryLayer'Class) is
+      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
    begin
         if not (This.contains (layerInterface)) then
             This.appendProcessors (layerInterface);
@@ -69,7 +70,8 @@ package body org.allbinary.layer.AllBinaryLayerManager_Package is
    end append;
 
    --  throws Exception
-   procedure appendAt (This : in out AllBinaryLayerManager; layerInterface : AllBinaryLayer_Access; index : Integer) is
+   procedure appendAt (This : in out AllBinaryLayerManager; layerInterface_Param : access AllBinaryLayer'Class; index : Integer) is
+      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
    begin
         if not (This.contains (layerInterface)) then
             This.appendProcessors (layerInterface);
@@ -78,7 +80,8 @@ package body org.allbinary.layer.AllBinaryLayerManager_Package is
    end appendAt;
 
    --  throws Exception
-   procedure appendProcessors (This : in out AllBinaryLayerManager; layerInterface : AllBinaryLayer_Access) is
+   procedure appendProcessors (This : in out AllBinaryLayerManager; layerInterface_Param : access AllBinaryLayer'Class) is
+      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
       layerProcessorInterface : LayerProcessor_Access;
       index : Integer;
    begin
@@ -95,7 +98,8 @@ package body org.allbinary.layer.AllBinaryLayerManager_Package is
    end appendProcessors;
 
    --  throws Exception
-   procedure remove (This : in out AllBinaryLayerManager; layerInterface : AllBinaryLayer_Access) is
+   procedure remove (This : in out AllBinaryLayerManager; layerInterface_Param : access AllBinaryLayer'Class) is
+      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
       layerProcessorInterface : LayerProcessor_Access;
       index : Integer;
    begin
@@ -120,7 +124,7 @@ package body org.allbinary.layer.AllBinaryLayerManager_Package is
         size := This.basicLayerProcessorArray'Length;
         for index in 0 .. (size) - 1 loop
             layerProcessorInterface := This.basicLayerProcessorArray (index);
-            layerProcessorInterface.process (This'Unchecked_Access);
+            layerProcessorInterface.process (AllBinaryLayerManager_Access'(This'Unchecked_Access));
         end loop;
    end process;
 

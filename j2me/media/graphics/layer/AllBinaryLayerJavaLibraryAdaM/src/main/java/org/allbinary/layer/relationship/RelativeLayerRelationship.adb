@@ -22,17 +22,20 @@ package body org.allbinary.layer.relationship.RelativeLayerRelationship_Package 
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out RelativeLayerRelationship'Class; layer : AllBinaryLayer_Access; point : GPoint_Access; typesAllowedList : BasicArrayList_Access) is
+   procedure Initialize (This : in out RelativeLayerRelationship'Class; layer_Param : access AllBinaryLayer'Class; point_Param : access GPoint'Class; typesAllowedList_Param : access BasicArrayList'Class) is
+      layer : AllBinaryLayer_Access := AllBinaryLayer_Access (layer_Param);
+      point : GPoint_Access := GPoint_Access (point_Param);
+      typesAllowedList : BasicArrayList_Access := BasicArrayList_Access (typesAllowedList_Param);
    begin
         RelativeRelationship_Package.Initialize (This, point, typesAllowedList);
         Initialize_Fields (This);
         This.layer := layer;
    end Initialize;
 
-   function Create (layer : AllBinaryLayer_Access; point : GPoint_Access; typesAllowedList : BasicArrayList_Access) return RelativeLayerRelationship_Access is
+   function Create (layer_Param : access AllBinaryLayer'Class; point_Param : access GPoint'Class; typesAllowedList_Param : access BasicArrayList'Class) return RelativeLayerRelationship_Access is
       This : constant RelativeLayerRelationship_Access := new RelativeLayerRelationship;
    begin
-      RelativeLayerRelationship_Package.Initialize (This.all, layer, point, typesAllowedList);
+      RelativeLayerRelationship_Package.Initialize (This.all, layer_Param, point_Param, typesAllowedList_Param);
       return This;
    end Create;
 

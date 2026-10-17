@@ -85,11 +85,11 @@ package org.allbinary.game.displayable.canvas.BasicPopupMenuPaintable_Package is
    end record;
    NAME : Unbounded_String;
 
-   procedure Initialize (This : in out BasicPopupMenuPaintable'Class; rectangle : Rectangle_Access; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access);
-   function Create (rectangle : Rectangle_Access; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return BasicPopupMenuPaintable_Access;
-   procedure updateMeasurement (This : in out BasicPopupMenuPaintable; graphics : Graphics_Access);
-   procedure init (This : in out BasicPopupMenuPaintable; rectangle : Rectangle_Access);
-   procedure paint (This : in out BasicPopupMenuPaintable; graphics : Graphics_Access);
+   procedure Initialize (This : in out BasicPopupMenuPaintable'Class; rectangle_Param : access Rectangle'Class; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class);
+   function Create (rectangle_Param : access Rectangle'Class; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return BasicPopupMenuPaintable_Access;
+   procedure updateMeasurement (This : in out BasicPopupMenuPaintable; graphics_Param : access Graphics'Class);
+   procedure init (This : in out BasicPopupMenuPaintable; rectangle_Param : access Rectangle'Class);
+   procedure paint (This : in out BasicPopupMenuPaintable; graphics_Param : access Graphics'Class);
 
 end org.allbinary.game.displayable.canvas.BasicPopupMenuPaintable_Package;
 

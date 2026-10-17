@@ -35,8 +35,8 @@ package org.allbinary.business.category.hierarchy.CategoryHierarchyInterface_Pac
    function getRoot (This : in out CategoryHierarchyInterface) return CategoryInterface_Access is abstract;
    function getParent (This : in out CategoryHierarchyInterface) return CategoryInterface_Access is abstract;
    procedure setLevel (This : in out CategoryHierarchyInterface; level : Integer) is abstract;
-   procedure setRoot (This : in out CategoryHierarchyInterface; categoryInterface : CategoryInterface_Access) is abstract;
-   procedure setParent (This : in out CategoryHierarchyInterface; categoryInterface : CategoryInterface_Access) is abstract;
+   procedure setRoot (This : in out CategoryHierarchyInterface; categoryInterface_Param : access CategoryInterface'Class) is abstract;
+   procedure setParent (This : in out CategoryHierarchyInterface; categoryInterface_Param : access CategoryInterface'Class) is abstract;
 
 end org.allbinary.business.category.hierarchy.CategoryHierarchyInterface_Package;
 

@@ -67,7 +67,7 @@ package body org.allbinary.game.layer.AllBinaryTiledLayer_Package is
         stringBuffer.appendint (This.getRows);
         stringBuffer.append (To_Unbounded_String (" columns: "));
         stringBuffer.appendint (This.getColumns);
-        This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("setCells"));
+        This.logUtil.putF (stringBuffer.toString, AllBinaryTiledLayer_Access'(This'Unchecked_Access), To_Unbounded_String ("setCells"));
         rows := This.getRows;
         columns := This.getColumns;
         for col in 0 .. (columns) - 1 loop
@@ -100,12 +100,14 @@ package body org.allbinary.game.layer.AllBinaryTiledLayer_Package is
         return To_Unbounded_String (Ada.Tags.Expanded_Name (This.all'Tag));
    end getName;
 
-   procedure paint (This : in out AllBinaryTiledLayer; graphics : Graphics_Access) is
+   procedure paint (This : in out AllBinaryTiledLayer; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         null;
    end paint;
 
-   procedure paintThreed (This : in out AllBinaryTiledLayer; graphics : Graphics_Access) is
+   procedure paintThreed (This : in out AllBinaryTiledLayer; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         null;
    end paintThreed;

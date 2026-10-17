@@ -37,7 +37,8 @@ package body org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeDa
       return This;
    end Create;
 
-   function equals (This : in out HtmlMetaAttributeData; htmlMetaAttributeData : HtmlMetaAttributeData_Access) return Boolean is
+   function equals (This : in out HtmlMetaAttributeData; htmlMetaAttributeData_Param : access HtmlMetaAttributeData'Class) return Boolean is
+      htmlMetaAttributeData : HtmlMetaAttributeData_Access := HtmlMetaAttributeData_Access (htmlMetaAttributeData_Param);
    begin
         if (htmlMetaAttributeData.id) = (This.id) then
             return True;
@@ -51,8 +52,8 @@ package body org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeDa
         return This.name;
    end toString;
 
-   procedure equals (This : in out HtmlMetaAttributeData; htmlMetaAttributeData : HtmlMetaAttributeData_Access) is
-      Java_Result : constant Boolean := HtmlMetaAttributeData'Class (This).equals (htmlMetaAttributeData);
+   procedure equals (This : in out HtmlMetaAttributeData; htmlMetaAttributeData_Param : access HtmlMetaAttributeData'Class) is
+      Java_Result : constant Boolean := HtmlMetaAttributeData'Class (This).equals (htmlMetaAttributeData_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

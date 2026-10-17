@@ -46,13 +46,13 @@ package views.admin.workflow.UpdateView_Package is
       logUtil : LogUtil_Access;
    end record;
 
-   procedure Initialize (This : in out UpdateView'Class; transformInfoInterface : TransformInfoInterface_Access);
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return UpdateView_Access;
+   procedure Initialize (This : in out UpdateView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return UpdateView_Access;
    function isValid (This : in out UpdateView) return Boolean;
    function validationInfo (This : in out UpdateView) return Unbounded_String;
    function toValidationInfoDoc (This : in out UpdateView) return Document_Access;
-   function toValidationInfoNode (This : in out UpdateView; document : Document_Access) return Node_Access;
-   procedure toValidationInfoNode (This : in out UpdateView; document : Document_Access);
+   function toValidationInfoNode (This : in out UpdateView; document_Param : access Document'Class) return Node_Access;
+   procedure toValidationInfoNode (This : in out UpdateView; document_Param : access Document'Class);
 
 end views.admin.workflow.UpdateView_Package;
 

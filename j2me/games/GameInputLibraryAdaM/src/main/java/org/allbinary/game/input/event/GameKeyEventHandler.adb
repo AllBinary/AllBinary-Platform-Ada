@@ -50,25 +50,28 @@ package body org.allbinary.game.input.event.GameKeyEventHandler_Package is
         This.downGameKeyEventHandler.removeAllListeners;
    end removeAllListeners;
 
-   procedure addListenerForPlayer (This : in out GameKeyEventHandler; eventListenerInterface : EventListenerInterface_Access; playerInputId : Integer) is
+   procedure addListenerForPlayer (This : in out GameKeyEventHandler; eventListenerInterface_Param : access EventListenerInterface'Class; playerInputId : Integer) is
+      eventListenerInterface : EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
    begin
-        This.logUtil.putF (eventListenerInterface.toString, This'Unchecked_Access, This.commonStrings.ADD_LISTENER);
+        This.logUtil.putF (eventListenerInterface.toString, GameKeyEventHandler_Access'(This'Unchecked_Access), This.commonStrings.ADD_LISTENER);
         This.pressGameKeyEventHandler.addListenerSingleThreaded (eventListenerInterface);
         This.upGameKeyEventHandler.getInstanceForPlayer (playerInputId).addListenerSingleThreaded (eventListenerInterface);
         This.downGameKeyEventHandler.getInstanceForPlayer (playerInputId).addListenerSingleThreaded (eventListenerInterface);
    end addListenerForPlayer;
 
-   procedure addListener (This : in out GameKeyEventHandler; eventListenerInterface : EventListenerInterface_Access) is
+   procedure addListener (This : in out GameKeyEventHandler; eventListenerInterface_Param : access EventListenerInterface'Class) is
+      eventListenerInterface : EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
    begin
-        This.logUtil.putF (eventListenerInterface.toString, This'Unchecked_Access, This.commonStrings.ADD_LISTENER);
+        This.logUtil.putF (eventListenerInterface.toString, GameKeyEventHandler_Access'(This'Unchecked_Access), This.commonStrings.ADD_LISTENER);
         This.pressGameKeyEventHandler.addListenerSingleThreaded (eventListenerInterface);
         This.upGameKeyEventHandler.addListenerSingleThreaded (eventListenerInterface);
         This.downGameKeyEventHandler.addListenerSingleThreaded (eventListenerInterface);
    end addListener;
 
-   procedure removeListener (This : in out GameKeyEventHandler; eventListenerInterface : EventListenerInterface_Access) is
+   procedure removeListener (This : in out GameKeyEventHandler; eventListenerInterface_Param : access EventListenerInterface'Class) is
+      eventListenerInterface : EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
    begin
-        This.logUtil.putF (eventListenerInterface.toString, This'Unchecked_Access, This.commonStrings.REMOVE_LISTENER);
+        This.logUtil.putF (eventListenerInterface.toString, GameKeyEventHandler_Access'(This'Unchecked_Access), This.commonStrings.REMOVE_LISTENER);
         This.pressGameKeyEventHandler.removeListenerSingleThreaded (eventListenerInterface);
         This.upGameKeyEventHandler.removeListenerSingleThreaded (eventListenerInterface);
         This.downGameKeyEventHandler.removeListenerSingleThreaded (eventListenerInterface);

@@ -31,7 +31,7 @@ package org.allbinary.midlet.MidletCompositeInterface_Package is
    type MidletCompositeInterface_Access is access all MidletCompositeInterface'Class;
    type MidletCompositeInterface_Access_Array is array (Natural range <>) of MidletCompositeInterface_Access;
    type MidletCompositeInterface_Access_Array_Access is access all MidletCompositeInterface_Access_Array;
-   procedure setMidlet (This : in out MidletCompositeInterface; midlet : MIDlet_Access) is abstract;
+   procedure setMidlet (This : in out MidletCompositeInterface; midlet_Param : access MIDlet'Class) is abstract;
    function getMidlet (This : in out MidletCompositeInterface) return AllBinaryMidlet_Access is abstract;
    function getDisplayable (This : in out MidletCompositeInterface) return Displayable_Access is abstract;
 

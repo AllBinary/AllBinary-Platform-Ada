@@ -47,8 +47,8 @@ package org.allbinary.game.layer.special.CollidableCharacterBehavior_Package is
 
    procedure Initialize (This : in out CollidableCharacterBehavior'Class; collidable : Boolean);
    function Create (collidable : Boolean) return CollidableCharacterBehavior_Access;
-   procedure collide (This : in out CollidableCharacterBehavior; ownerLayer : CollidableCompositeLayer_Access; collidableInterfaceCompositeInterface : CollidableCompositeLayer_Access);
-   procedure collideInterface (This : in out CollidableCharacterBehavior; ownerLayer : CollidableCompositeLayer_Access; collidableInterfaceCompositeInterface : CollidableInterfaceCompositeInterface_Access);
+   procedure collide (This : in out CollidableCharacterBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableCompositeLayer'Class);
+   procedure collideInterface (This : in out CollidableCharacterBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableInterfaceCompositeInterface'Class);
 
 end org.allbinary.game.layer.special.CollidableCharacterBehavior_Package;
 

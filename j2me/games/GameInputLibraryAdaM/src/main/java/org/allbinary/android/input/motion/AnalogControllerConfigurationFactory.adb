@@ -21,7 +21,7 @@ package body org.allbinary.android.input.motion.AnalogControllerConfigurationFac
       This.SCALE_FACTOR := ScaleFactorFactory_Package.getInstance.DEFAULT_SCALE_FACTOR;
       This.SCALE_VALUE := ScaleFactorFactory_Package.getInstance.DEFAULT_SCALE_VALUE;
       This.available := False;
-      This.analogControllerConfigurationEvent := AnalogControllerConfigurationEvent_Package.Create (This'Unchecked_Access);
+      This.analogControllerConfigurationEvent := AnalogControllerConfigurationEvent_Package.Create (AnalogControllerConfigurationFactory_Access'(This'Unchecked_Access));
    end Initialize_Fields;
 
 

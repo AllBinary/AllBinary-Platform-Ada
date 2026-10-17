@@ -45,13 +45,13 @@ package taghelpers.ValidationViewHelper_Package is
       viewInterface : ValidationComponentInterface_Access;
    end record;
 
-   procedure Initialize (This : in out ValidationViewHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access);
-   function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return ValidationViewHelper_Access;
+   procedure Initialize (This : in out ValidationViewHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
+   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return ValidationViewHelper_Access;
    function isValid (This : in out ValidationViewHelper) return Boolean;
    function validationInfo (This : in out ValidationViewHelper) return Unbounded_String;
    function toValidationInfoDoc (This : in out ValidationViewHelper) return Document_Access;
-   function toValidationInfoNode (This : in out ValidationViewHelper; document : Document_Access) return Node_Access;
-   procedure toValidationInfoNode (This : in out ValidationViewHelper; document : Document_Access);
+   function toValidationInfoNode (This : in out ValidationViewHelper; document_Param : access Document'Class) return Node_Access;
+   procedure toValidationInfoNode (This : in out ValidationViewHelper; document_Param : access Document'Class);
 
 end taghelpers.ValidationViewHelper_Package;
 

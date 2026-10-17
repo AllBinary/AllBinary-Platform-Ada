@@ -21,22 +21,24 @@ package body org.allbinary.game.ag.layer.pickup.points.PointsLayerCircularStatic
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out PointsLayerCircularStaticPool'Class; allbinaryLayerFactoryInterface : AllBinaryLayerFactoryInterface_Access; total : Integer) is
+   procedure Initialize (This : in out PointsLayerCircularStaticPool'Class; allbinaryLayerFactoryInterface_Param : access AllBinaryLayerFactoryInterface'Class; total : Integer) is
+      allbinaryLayerFactoryInterface : AllBinaryLayerFactoryInterface_Access := AllBinaryLayerFactoryInterface_Access (allbinaryLayerFactoryInterface_Param);
    begin
       AllBinaryLayerCircularPool_Package.Initialize (This);
       Initialize_Fields (This);
         AllBinaryLayerCircularPool (This).initAllBinaryLayerCircularPool (allbinaryLayerFactoryInterface, total);
    end Initialize;
 
-   function Create (allbinaryLayerFactoryInterface : AllBinaryLayerFactoryInterface_Access; total : Integer) return PointsLayerCircularStaticPool_Access is
+   function Create (allbinaryLayerFactoryInterface_Param : access AllBinaryLayerFactoryInterface'Class; total : Integer) return PointsLayerCircularStaticPool_Access is
       This : constant PointsLayerCircularStaticPool_Access := new PointsLayerCircularStaticPool;
    begin
-      PointsLayerCircularStaticPool_Package.Initialize (This.all, allbinaryLayerFactoryInterface, total);
+      PointsLayerCircularStaticPool_Package.Initialize (This.all, allbinaryLayerFactoryInterface_Param, total);
       return This;
    end Create;
 
    --  throws Exception
-   procedure visit (This : in out PointsLayerCircularStaticPool; sourceLayerInterface : AllBinaryLayer_Access) is
+   procedure visit (This : in out PointsLayerCircularStaticPool; sourceLayerInterface_Param : access AllBinaryLayer'Class) is
+      sourceLayerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (sourceLayerInterface_Param);
       pointsLayer : PointsLayer_Access;
       scoreableInterface : ScoreableInterface_Access;
    begin

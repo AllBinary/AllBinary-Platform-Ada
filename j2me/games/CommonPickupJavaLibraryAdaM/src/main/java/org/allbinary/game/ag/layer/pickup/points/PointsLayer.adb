@@ -36,12 +36,14 @@ package body org.allbinary.game.ag.layer.pickup.points.PointsLayer_Package is
       return This;
    end Create;
 
-   procedure paint (This : in out PointsLayer; graphics : Graphics_Access) is
+   procedure paint (This : in out PointsLayer; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         null;
    end paint;
 
-   procedure visit (This : in out PointsLayer; scoreableInterface : ScoreableInterface_Access) is
+   procedure visit (This : in out PointsLayer; scoreableInterface_Param : access ScoreableInterface'Class) is
+      scoreableInterface : ScoreableInterface_Access := ScoreableInterface_Access (scoreableInterface_Param);
    begin
         scoreableInterface.addPoints (This.points);
    end visit;

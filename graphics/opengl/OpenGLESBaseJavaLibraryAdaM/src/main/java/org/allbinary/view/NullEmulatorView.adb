@@ -33,17 +33,20 @@ package body org.allbinary.view.NullEmulatorView_Package is
    end Create;
 
 
-   procedure setMidlet (This : in out NullEmulatorView; midlet : MIDlet_Access) is
+   procedure setMidlet (This : in out NullEmulatorView; midlet_Param : access MIDlet'Class) is
+      midlet : MIDlet_Access := MIDlet_Access (midlet_Param);
    begin
         null;
    end setMidlet;
 
-   procedure onEmulatorInitComplete (This : in out NullEmulatorView; midletActivity : Java_Object_Access) is
+   procedure onEmulatorInitComplete (This : in out NullEmulatorView; midletActivity_Param : access Java_Object'Class) is
+      midletActivity : Java_Object_Access := Java_Object_Access (midletActivity_Param);
    begin
         null;
    end onEmulatorInitComplete;
 
-   procedure onSetDisplayable (This : in out NullEmulatorView; displayable : Displayable_Access) is
+   procedure onSetDisplayable (This : in out NullEmulatorView; displayable_Param : access Displayable'Class) is
+      displayable : Displayable_Access := Displayable_Access (displayable_Param);
    begin
         null;
    end onSetDisplayable;

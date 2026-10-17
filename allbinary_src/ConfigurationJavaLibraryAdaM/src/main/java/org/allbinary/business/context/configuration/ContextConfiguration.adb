@@ -27,7 +27,7 @@ package body org.allbinary.business.context.configuration.ContextConfiguration_P
    procedure Initialize (This : in out ContextConfiguration'Class) is
    begin
       Initialize_Fields (This);
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("ContextConfiguration"));
+        This.logUtil.putF (This.commonStrings.START, ContextConfiguration_Access'(This'Unchecked_Access), To_Unbounded_String ("ContextConfiguration"));
         This.setEmailServerConfigurationInterface (EmailServerConfigurationInterface_Access (EmailServerConfiguration_Package.Create));
    end Initialize;
 
@@ -38,17 +38,18 @@ package body org.allbinary.business.context.configuration.ContextConfiguration_P
       return This;
    end Create;
 
-   procedure Initialize (This : in out ContextConfiguration'Class; hashMap : HashMap_Access) is
+   procedure Initialize (This : in out ContextConfiguration'Class; hashMap_Param : access HashMap'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
    begin
       Initialize_Fields (This);
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("ContextConfiguration(HashMap)"));
+        This.logUtil.putF (This.commonStrings.START, ContextConfiguration_Access'(This'Unchecked_Access), To_Unbounded_String ("ContextConfiguration(HashMap)"));
         This.setEmailServerConfigurationInterface (EmailServerConfigurationInterface_Access (EmailServerConfiguration_Package.Create (hashMap)));
    end Initialize;
 
-   function Create (hashMap : HashMap_Access) return ContextConfiguration_Access is
+   function Create (hashMap_Param : access HashMap'Class) return ContextConfiguration_Access is
       This : constant ContextConfiguration_Access := new ContextConfiguration;
    begin
-      ContextConfiguration_Package.Initialize (This.all, hashMap);
+      ContextConfiguration_Package.Initialize (This.all, hashMap_Param);
       return This;
    end Create;
 
@@ -57,7 +58,8 @@ package body org.allbinary.business.context.configuration.ContextConfiguration_P
         return This.emailServerConfigurationInterface;
    end getEmailServerConfigurationInterface;
 
-   procedure setEmailServerConfigurationInterface (This : in out ContextConfiguration; emailServerConfigurationInterface : EmailServerConfigurationInterface_Access) is
+   procedure setEmailServerConfigurationInterface (This : in out ContextConfiguration; emailServerConfigurationInterface_Param : access EmailServerConfigurationInterface'Class) is
+      emailServerConfigurationInterface : EmailServerConfigurationInterface_Access := EmailServerConfigurationInterface_Access (emailServerConfigurationInterface_Param);
    begin
         This.emailServerConfigurationInterface := emailServerConfigurationInterface;
    end setEmailServerConfigurationInterface;

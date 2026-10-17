@@ -48,14 +48,14 @@ package admin.taghelpers.HelperFactory_Package is
 
    procedure Initialize (This : in out HelperFactory'Class);
    function Create return HelperFactory_Access;
-   function getInstance (abeClientInformation : AbeClientInformationInterface_Access; factoryName : Unbounded_String; className : Unbounded_String; hashMap : HashMap_Access; httpServletRequest : HttpServletRequest_Access) return Java_Object_Access;
-   procedure getInstance (abeClientInformation : AbeClientInformationInterface_Access; factoryName : Unbounded_String; className : Unbounded_String; hashMap : HashMap_Access; httpServletRequest : HttpServletRequest_Access);
-   function getInstance (abeClientInformation : AbeClientInformationInterface_Access; factoryName : Unbounded_String; className : Unbounded_String; hashMap : HashMap_Access; pageContext : PageContext_Access) return Java_Object_Access;
-   procedure getInstance (abeClientInformation : AbeClientInformationInterface_Access; factoryName : Unbounded_String; className : Unbounded_String; hashMap : HashMap_Access; pageContext : PageContext_Access);
-   function getInstance (abeClientInformation : AbeClientInformationInterface_Access; factoryName : Unbounded_String; className : Unbounded_String; hashMap : HashMap_Access; specialhashMap : HashMap_Access; pageContext : PageContext_Access) return Java_Object_Access;
-   procedure getInstance (abeClientInformation : AbeClientInformationInterface_Access; factoryName : Unbounded_String; className : Unbounded_String; hashMap : HashMap_Access; specialhashMap : HashMap_Access; pageContext : PageContext_Access);
-   function getInstance (abeClientInformation : AbeClientInformationInterface_Access; factoryName : Unbounded_String; className : Unbounded_String) return Java_Object_Access;
-   procedure getInstance (abeClientInformation : AbeClientInformationInterface_Access; factoryName : Unbounded_String; className : Unbounded_String);
+   function getInstance (abeClientInformation_Param : access AbeClientInformationInterface'Class; factoryName : Unbounded_String; className : Unbounded_String; hashMap_Param : access HashMap'Class; httpServletRequest_Param : access HttpServletRequest'Class) return Java_Object_Access;
+   procedure getInstance (abeClientInformation_Param : access AbeClientInformationInterface'Class; factoryName : Unbounded_String; className : Unbounded_String; hashMap_Param : access HashMap'Class; httpServletRequest_Param : access HttpServletRequest'Class);
+   function getInstance (abeClientInformation_Param : access AbeClientInformationInterface'Class; factoryName : Unbounded_String; className : Unbounded_String; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return Java_Object_Access;
+   procedure getInstance (abeClientInformation_Param : access AbeClientInformationInterface'Class; factoryName : Unbounded_String; className : Unbounded_String; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
+   function getInstance (abeClientInformation_Param : access AbeClientInformationInterface'Class; factoryName : Unbounded_String; className : Unbounded_String; hashMap_Param : access HashMap'Class; specialhashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return Java_Object_Access;
+   procedure getInstance (abeClientInformation_Param : access AbeClientInformationInterface'Class; factoryName : Unbounded_String; className : Unbounded_String; hashMap_Param : access HashMap'Class; specialhashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
+   function getInstance (abeClientInformation_Param : access AbeClientInformationInterface'Class; factoryName : Unbounded_String; className : Unbounded_String) return Java_Object_Access;
+   procedure getInstance (abeClientInformation_Param : access AbeClientInformationInterface'Class; factoryName : Unbounded_String; className : Unbounded_String);
 
 end admin.taghelpers.HelperFactory_Package;
 

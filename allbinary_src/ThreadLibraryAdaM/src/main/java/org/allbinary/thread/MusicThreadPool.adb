@@ -38,20 +38,23 @@ package body org.allbinary.thread.MusicThreadPool_Package is
       return This;
    end Create;
 
-   procedure runTask (This : in out MusicThreadPool; task_Id : Runnable_Access) is
+   procedure runTask (This : in out MusicThreadPool; task_Id_Param : access Runnable'Class) is
+      task_Id : Runnable_Access := Runnable_Access (task_Id_Param);
    begin
-        This.logUtil.putF (StringMaker_Package.Create.append (StringUtil_Package.getInstance.toString (task_Id)).appendlong (Long_Long_Integer (Java_Current_Time_Millis)).toString, This'Unchecked_Access, This.threadPoolStrings.ADD_TASK);
+        This.logUtil.putF (StringMaker_Package.Create.append (StringUtil_Package.getInstance.toString (task_Id)).appendlong (Long_Long_Integer (Java_Current_Time_Millis)).toString, MusicThreadPool_Access'(This'Unchecked_Access), This.threadPoolStrings.ADD_TASK);
         ThreadPool (This).runTask (task_Id);
    end runTask;
 
-   procedure startTask (This : in out MusicThreadPool; task_Id : Runnable_Access) is
+   procedure startTask (This : in out MusicThreadPool; task_Id_Param : access Runnable'Class) is
+      task_Id : Runnable_Access := Runnable_Access (task_Id_Param);
    begin
-        This.logUtil.putF (StringMaker_Package.Create.append (This.threadPoolStrings.START_TASK).append (StringUtil_Package.getInstance.toString (task_Id)).appendlong (Long_Long_Integer (Java_Current_Time_Millis)).toString, This'Unchecked_Access, This.commonStrings.RUN);
+        This.logUtil.putF (StringMaker_Package.Create.append (This.threadPoolStrings.START_TASK).append (StringUtil_Package.getInstance.toString (task_Id)).appendlong (Long_Long_Integer (Java_Current_Time_Millis)).toString, MusicThreadPool_Access'(This'Unchecked_Access), This.commonStrings.RUN);
    end startTask;
 
-   procedure completedTask (This : in out MusicThreadPool; task_Id : Runnable_Access) is
+   procedure completedTask (This : in out MusicThreadPool; task_Id_Param : access Runnable'Class) is
+      task_Id : Runnable_Access := Runnable_Access (task_Id_Param);
    begin
-        This.logUtil.putF (StringMaker_Package.Create.append (This.threadPoolStrings.COMPLETE_TASK).append (StringUtil_Package.getInstance.toString (task_Id)).appendlong (Long_Long_Integer (Java_Current_Time_Millis)).toString, This'Unchecked_Access, This.commonStrings.RUN);
+        This.logUtil.putF (StringMaker_Package.Create.append (This.threadPoolStrings.COMPLETE_TASK).append (StringUtil_Package.getInstance.toString (task_Id)).appendlong (Long_Long_Integer (Java_Current_Time_Millis)).toString, MusicThreadPool_Access'(This'Unchecked_Access), This.commonStrings.RUN);
    end completedTask;
 
 begin

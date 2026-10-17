@@ -33,8 +33,8 @@ package org.allbinary.view.event.ViewPositionEvent_Package is
 
    type ViewPositionEvent is new AllBinaryEventObject with null record;
 
-   procedure Initialize (This : in out ViewPositionEvent'Class; anyType : Java_Object_Access);
-   function Create (anyType : Java_Object_Access) return ViewPositionEvent_Access;
+   procedure Initialize (This : in out ViewPositionEvent'Class; anyType_Param : access Java_Object'Class);
+   function Create (anyType_Param : access Java_Object'Class) return ViewPositionEvent_Access;
 
 end org.allbinary.view.event.ViewPositionEvent_Package;
 

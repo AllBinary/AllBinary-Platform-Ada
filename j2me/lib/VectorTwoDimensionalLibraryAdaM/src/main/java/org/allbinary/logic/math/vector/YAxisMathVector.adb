@@ -21,16 +21,17 @@ package body org.allbinary.logic.math.vector.YAxisMathVector_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out YAxisMathVector'Class; magnitudeBasicDecimal : BasicDecimal_Access; direction : Integer) is
+   procedure Initialize (This : in out YAxisMathVector'Class; magnitudeBasicDecimal_Param : access BasicDecimal'Class; direction : Integer) is
+      magnitudeBasicDecimal : BasicDecimal_Access := BasicDecimal_Access (magnitudeBasicDecimal_Param);
    begin
         MathVector_Package.Initialize (This, magnitudeBasicDecimal, direction);
         This.calculate;
    end Initialize;
 
-   function Create (magnitudeBasicDecimal : BasicDecimal_Access; direction : Integer) return YAxisMathVector_Access is
+   function Create (magnitudeBasicDecimal_Param : access BasicDecimal'Class; direction : Integer) return YAxisMathVector_Access is
       This : constant YAxisMathVector_Access := new YAxisMathVector;
    begin
-      YAxisMathVector_Package.Initialize (This.all, magnitudeBasicDecimal, direction);
+      YAxisMathVector_Package.Initialize (This.all, magnitudeBasicDecimal_Param, direction);
       return This;
    end Create;
 

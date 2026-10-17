@@ -23,17 +23,18 @@ package body org.allbinary.game.graphics.hud.HudGraphicsPosition_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out HudGraphicsPosition'Class; point : GPoint_Access; anchor : Integer) is
+   procedure Initialize (This : in out HudGraphicsPosition'Class; point_Param : access GPoint'Class; anchor : Integer) is
+      point : GPoint_Access := GPoint_Access (point_Param);
    begin
       Initialize_Fields (This);
         This.setAnchor (anchor);
         This.setPoint (point);
    end Initialize;
 
-   function Create (point : GPoint_Access; anchor : Integer) return HudGraphicsPosition_Access is
+   function Create (point_Param : access GPoint'Class; anchor : Integer) return HudGraphicsPosition_Access is
       This : constant HudGraphicsPosition_Access := new HudGraphicsPosition;
    begin
-      HudGraphicsPosition_Package.Initialize (This.all, point, anchor);
+      HudGraphicsPosition_Package.Initialize (This.all, point_Param, anchor);
       return This;
    end Create;
 
@@ -52,7 +53,8 @@ package body org.allbinary.game.graphics.hud.HudGraphicsPosition_Package is
         return This.point;
    end getPoint;
 
-   procedure setPoint (This : in out HudGraphicsPosition; point : GPoint_Access) is
+   procedure setPoint (This : in out HudGraphicsPosition; point_Param : access GPoint'Class) is
+      point : GPoint_Access := GPoint_Access (point_Param);
    begin
         This.point := point;
    end setPoint;

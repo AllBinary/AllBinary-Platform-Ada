@@ -25,7 +25,9 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out GenericProfileAction'Class; genericProfileActionJPanel : GenericProfileActionJPanel_Access; node : Node_Access) is
+   procedure Initialize (This : in out GenericProfileAction'Class; genericProfileActionJPanel_Param : access GenericProfileActionJPanel'Class; node_Param : access Node'Class) is
+      genericProfileActionJPanel : GenericProfileActionJPanel_Access := GenericProfileActionJPanel_Access (genericProfileActionJPanel_Param);
+      node : Node_Access := Node_Access (node_Param);
       actionNameNode : Node_Access;
    begin
       Initialize_Fields (This);
@@ -38,10 +40,10 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         This.setGenericProfileActionScript (GenericProfileActionScript_Package.Create (This.genericProfileActionJPanel, node));
    end Initialize;
 
-   function Create (genericProfileActionJPanel : GenericProfileActionJPanel_Access; node : Node_Access) return GenericProfileAction_Access is
+   function Create (genericProfileActionJPanel_Param : access GenericProfileActionJPanel'Class; node_Param : access Node'Class) return GenericProfileAction_Access is
       This : constant GenericProfileAction_Access := new GenericProfileAction;
    begin
-      GenericProfileAction_Package.Initialize (This.all, genericProfileActionJPanel, node);
+      GenericProfileAction_Package.Initialize (This.all, genericProfileActionJPanel_Param, node_Param);
       return This;
    end Create;
 
@@ -74,12 +76,13 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    begin
         hashMap := StdUtil_Package.getInstance.createHashMap;
         hashMap.put (GenericProfileActionData_Package.NAME, This.name);
-        This.logUtil.putF (To_Unbounded_String ("HashMap: ") & hashMap.toString, This'Unchecked_Access, To_Unbounded_String ("toHashMap()"));
+        This.logUtil.putF (To_Unbounded_String ("HashMap: ") & hashMap.toString, GenericProfileAction_Access'(This'Unchecked_Access), To_Unbounded_String ("toHashMap()"));
         return hashMap;
    end toHashMap;
 
    --  throws Exception
-   function toXmlNode (This : in out GenericProfileAction; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out GenericProfileAction; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       node : Node_Access;
    begin
         node := ModDomHelper_Package.createNodeWithValueNodes (document, GenericProfileActionData_Package.NAME, This.toHashMap);
@@ -92,13 +95,14 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         return This.genericProfileActionScript;
    end getGenericProfileActionScript;
 
-   procedure setGenericProfileActionScript (This : in out GenericProfileAction; genericProfileActionScript : GenericProfileActionScript_Access) is
+   procedure setGenericProfileActionScript (This : in out GenericProfileAction; genericProfileActionScript_Param : access GenericProfileActionScript'Class) is
+      genericProfileActionScript : GenericProfileActionScript_Access := GenericProfileActionScript_Access (genericProfileActionScript_Param);
    begin
         This.genericProfileActionScript := genericProfileActionScript;
    end setGenericProfileActionScript;
 
-   procedure toXmlNode (This : in out GenericProfileAction; document : Document_Access) is
-      Java_Result : constant Node_Access := GenericProfileAction'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out GenericProfileAction; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := GenericProfileAction'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

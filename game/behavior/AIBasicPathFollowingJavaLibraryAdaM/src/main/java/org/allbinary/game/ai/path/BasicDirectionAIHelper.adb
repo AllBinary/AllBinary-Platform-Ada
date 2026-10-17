@@ -23,17 +23,18 @@ package body org.allbinary.game.ai.path.BasicDirectionAIHelper_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BasicDirectionAIHelper'Class; name : Unbounded_String; angleInfo : AngleInfo_Access) is
+   procedure Initialize (This : in out BasicDirectionAIHelper'Class; name : Unbounded_String; angleInfo_Param : access AngleInfo'Class) is
+      angleInfo : AngleInfo_Access := AngleInfo_Access (angleInfo_Param);
    begin
       Initialize_Fields (This);
         This.name := name;
         This.angleInfo := angleInfo;
    end Initialize;
 
-   function Create (name : Unbounded_String; angleInfo : AngleInfo_Access) return BasicDirectionAIHelper_Access is
+   function Create (name : Unbounded_String; angleInfo_Param : access AngleInfo'Class) return BasicDirectionAIHelper_Access is
       This : constant BasicDirectionAIHelper_Access := new BasicDirectionAIHelper;
    begin
-      BasicDirectionAIHelper_Package.Initialize (This.all, name, angleInfo);
+      BasicDirectionAIHelper_Package.Initialize (This.all, name, angleInfo_Param);
       return This;
    end Create;
 
@@ -74,7 +75,8 @@ package body org.allbinary.game.ai.path.BasicDirectionAIHelper_Package is
         end if;
    end getAIKeyPressed;
 
-   function getAIKeyPressedFromDirection (This : in out BasicDirectionAIHelper; geographicMapDirectionData : Direction_Access) return Integer is
+   function getAIKeyPressedFromDirection (This : in out BasicDirectionAIHelper; geographicMapDirectionData_Param : access Direction'Class) return Integer is
+      geographicMapDirectionData : Direction_Access := Direction_Access (geographicMapDirectionData_Param);
       keyDirection : Integer;
       angleIncrementInfo : AngleIncrementInfo_Access;
       directionFactory : DirectionFactory_Access;
@@ -118,8 +120,8 @@ package body org.allbinary.game.ai.path.BasicDirectionAIHelper_Package is
       null;
    end getAIKeyPressed;
 
-   procedure getAIKeyPressedFromDirection (This : in out BasicDirectionAIHelper; geographicMapDirectionData : Direction_Access) is
-      Java_Result : constant Integer := BasicDirectionAIHelper'Class (This).getAIKeyPressedFromDirection (geographicMapDirectionData);
+   procedure getAIKeyPressedFromDirection (This : in out BasicDirectionAIHelper; geographicMapDirectionData_Param : access Direction'Class) is
+      Java_Result : constant Integer := BasicDirectionAIHelper'Class (This).getAIKeyPressedFromDirection (geographicMapDirectionData_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

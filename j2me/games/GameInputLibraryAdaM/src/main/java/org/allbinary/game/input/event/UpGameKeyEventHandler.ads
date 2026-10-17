@@ -48,8 +48,8 @@ package org.allbinary.game.input.event.UpGameKeyEventHandler_Package is
    function getInstanceForPlayer (This : in out UpGameKeyEventHandler; playerInputId : Integer) return UpGameKeyEventHandlerBase_Access;
    procedure getInstanceForPlayer (This : in out UpGameKeyEventHandler; playerInputId : Integer);
    procedure removeAllListeners (This : in out UpGameKeyEventHandler);
-   procedure removeListenerSingleThreaded (This : in out UpGameKeyEventHandler; eventListenerInterface : EventListenerInterface_Access);
-   procedure removeListener (This : in out UpGameKeyEventHandler; eventListenerInterface : EventListenerInterface_Access);
+   procedure removeListenerSingleThreaded (This : in out UpGameKeyEventHandler; eventListenerInterface_Param : access EventListenerInterface'Class);
+   procedure removeListener (This : in out UpGameKeyEventHandler; eventListenerInterface_Param : access EventListenerInterface'Class);
 
 end org.allbinary.game.input.event.UpGameKeyEventHandler_Package;
 

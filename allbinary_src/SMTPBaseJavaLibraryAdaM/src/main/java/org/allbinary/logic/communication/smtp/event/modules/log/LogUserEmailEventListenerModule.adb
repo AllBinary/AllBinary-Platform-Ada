@@ -36,12 +36,13 @@ package body org.allbinary.logic.communication.smtp.event.modules.log.LogUserEma
    end Create;
 
    --  throws Exception
-   procedure onEmailSendRequest (This : in out LogUserEmailEventListenerModule; userEmailInfoEvent : EmailEvent_Access) is
+   procedure onEmailSendRequest (This : in out LogUserEmailEventListenerModule; userEmailInfoEvent_Param : access EmailEvent'Class) is
+      userEmailInfoEvent : EmailEvent_Access := EmailEvent_Access (userEmailInfoEvent_Param);
       message : Unbounded_String;
    begin
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
             message := To_Unbounded_String ("Logging EmailEvent - Temporary Listener for debugging." & ASCII.LF & "" & ASCII.LF & "") & userEmailInfoEvent.toString;
-            This.logUtil.putF (message, This'Unchecked_Access, To_Unbounded_String ("onEmailSendRequest"));
+            This.logUtil.putF (message, LogUserEmailEventListenerModule_Access'(This'Unchecked_Access), To_Unbounded_String ("onEmailSendRequest"));
         end if;
    end onEmailSendRequest;
 

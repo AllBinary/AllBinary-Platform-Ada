@@ -41,7 +41,10 @@ package body org.allbinary.logic.control.workflow.NewWorkFlowFactory_Package is
    end Create;
 
    --  throws Exception, LicensingException
-   function getInstance (This : in out NewWorkFlowFactory; abeClientInformation : AbeClientInformationInterface_Access; hashMap : HashMap_Access; pageContext : PageContext_Access) return WorkFlowInterface_Access is
+   function getInstance (This : in out NewWorkFlowFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return WorkFlowInterface_Access is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
       className : Unbounded_String;
       params : Java_Object_Access_Array_Access;
       classes : Ada_Tags_Tag_Array_Access;
@@ -65,7 +68,7 @@ package body org.allbinary.logic.control.workflow.NewWorkFlowFactory_Package is
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORYERROR) then
                 commonStrings := CommonStrings_Package.getInstance;
-                This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("getInstance(HashMap)"), e);
+                This.logUtil.put (commonStrings.EXCEPTION_Id, NewWorkFlowFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getInstance(HashMap)"), e);
             end if;
             Java_Throw (e);
                 end;
@@ -73,7 +76,8 @@ package body org.allbinary.logic.control.workflow.NewWorkFlowFactory_Package is
    end getInstance;
 
    --  throws Exception, LicensingException
-   function getInstance (This : in out NewWorkFlowFactory; abeClientInformation : AbeClientInformationInterface_Access; className : Unbounded_String) return WorkFlowInterface_Access is
+   function getInstance (This : in out NewWorkFlowFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; className : Unbounded_String) return WorkFlowInterface_Access is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
       stringUtil : StringUtil_Access;
       anyType : Java_Object_Access;
       commonStrings : CommonStrings_Access;
@@ -93,22 +97,22 @@ package body org.allbinary.logic.control.workflow.NewWorkFlowFactory_Package is
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORYERROR) then
                 commonStrings := CommonStrings_Package.getInstance;
-                This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.GET_INSTANCE, e);
+                This.logUtil.put (commonStrings.EXCEPTION_Id, NewWorkFlowFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE, e);
             end if;
             Java_Throw (e);
                 end;
         end;
    end getInstance;
 
-   procedure getInstance (This : in out NewWorkFlowFactory; abeClientInformation : AbeClientInformationInterface_Access; hashMap : HashMap_Access; pageContext : PageContext_Access) is
-      Java_Result : constant WorkFlowInterface_Access := NewWorkFlowFactory'Class (This).getInstance (abeClientInformation, hashMap, pageContext);
+   procedure getInstance (This : in out NewWorkFlowFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+      Java_Result : constant WorkFlowInterface_Access := NewWorkFlowFactory'Class (This).getInstance (abeClientInformation_Param, hashMap_Param, pageContext_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
-   procedure getInstance (This : in out NewWorkFlowFactory; abeClientInformation : AbeClientInformationInterface_Access; className : Unbounded_String) is
-      Java_Result : constant WorkFlowInterface_Access := NewWorkFlowFactory'Class (This).getInstance (abeClientInformation, className);
+   procedure getInstance (This : in out NewWorkFlowFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; className : Unbounded_String) is
+      Java_Result : constant WorkFlowInterface_Access := NewWorkFlowFactory'Class (This).getInstance (abeClientInformation_Param, className);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -24,11 +24,11 @@ package org.allbinary.graphics.form.item.ABStringComponent_Package is
    type ABStringComponent is new Java_Object with null record;
    NULL_STRING_COMPONENT : ABStringComponent_Access;
 
-   procedure Initialize (This : in out ABStringComponent'Class; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access);
-   function Create (backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return ABStringComponent_Access;
+   procedure Initialize (This : in out ABStringComponent'Class; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class);
+   function Create (backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return ABStringComponent_Access;
    function getBackgroundBasicColor (This : in out ABStringComponent) return BasicColor_Access;
    function getForegroundBasicColor (This : in out ABStringComponent) return BasicColor_Access;
-   procedure setForegroundBasicColor (This : in out ABStringComponent; foregroundBasicColor : BasicColor_Access);
+   procedure setForegroundBasicColor (This : in out ABStringComponent; foregroundBasicColor_Param : access BasicColor'Class);
 
 end org.allbinary.graphics.form.item.ABStringComponent_Package;
 

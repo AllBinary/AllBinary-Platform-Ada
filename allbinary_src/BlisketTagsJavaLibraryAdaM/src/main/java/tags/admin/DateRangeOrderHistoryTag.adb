@@ -46,7 +46,7 @@ package body tags.admin.DateRangeOrderHistoryTag_Package is
    begin
         begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
-                This.logUtil.putF (To_Unbounded_String ("Tag Start"), This'Unchecked_Access, This.tagStrings.DO_START_TAG);
+                This.logUtil.putF (To_Unbounded_String ("Tag Start"), DateRangeOrderHistoryTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
             end if;
             This.setName (To_Unbounded_String ("Range Order History View"));
             This.setObjectFile (To_Unbounded_String ("views.admin.orderhistory.DateRangeOrderHistoryView"));

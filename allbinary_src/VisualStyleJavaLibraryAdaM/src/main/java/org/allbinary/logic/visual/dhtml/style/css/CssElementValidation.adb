@@ -35,16 +35,17 @@ package body org.allbinary.logic.visual.dhtml.style.css.CssElementValidation_Pac
       return This;
    end Create;
 
-   procedure Initialize (This : in out CssElementValidation'Class; node : Node_Access) is
+   procedure Initialize (This : in out CssElementValidation'Class; node_Param : access Node'Class) is
+      node : Node_Access := Node_Access (node_Param);
    begin
         CssElementView_Package.Initialize (This, node);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (node : Node_Access) return CssElementValidation_Access is
+   function Create (node_Param : access Node'Class) return CssElementValidation_Access is
       This : constant CssElementValidation_Access := new CssElementValidation;
    begin
-      CssElementValidation_Package.Initialize (This.all, node);
+      CssElementValidation_Package.Initialize (This.all, node_Param);
       return This;
    end Create;
 
@@ -54,10 +55,10 @@ package body org.allbinary.logic.visual.dhtml.style.css.CssElementValidation_Pac
         begin
             valid := True;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (To_Unbounded_String ("CssElementValidation"), This'Unchecked_Access, This.commonStrings.IS_VALID);
+                This.logUtil.putF (To_Unbounded_String ("CssElementValidation"), CssElementValidation_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
             end if;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (To_Unbounded_String ("CssElementValidation: ") & Java_Image (valid), This'Unchecked_Access, This.commonStrings.IS_VALID);
+                This.logUtil.putF (To_Unbounded_String ("CssElementValidation: ") & Java_Image (valid), CssElementValidation_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
             end if;
             return valid;
         exception
@@ -66,7 +67,7 @@ package body org.allbinary.logic.visual.dhtml.style.css.CssElementValidation_Pac
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to validate data"), This'Unchecked_Access, This.commonStrings.IS_VALID, e);
+                This.logUtil.put (To_Unbounded_String ("Failed to validate data"), CssElementValidation_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
             end if;
             return False;
                 end;
@@ -87,7 +88,7 @@ package body org.allbinary.logic.visual.dhtml.style.css.CssElementValidation_Pac
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to generate validation info error"), This'Unchecked_Access, To_Unbounded_String ("validationInfo()"), e);
+                This.logUtil.put (To_Unbounded_String ("Failed to generate validation info error"), CssElementValidation_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
             end if;
             return To_Unbounded_String ("Error Validating Data");
                 end;
@@ -99,13 +100,14 @@ package body org.allbinary.logic.visual.dhtml.style.css.CssElementValidation_Pac
         return null;
    end toValidationInfoDoc;
 
-   function toValidationInfoNode (This : in out CssElementValidation; document : Document_Access) return Node_Access is
+   function toValidationInfoNode (This : in out CssElementValidation; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
    begin
         return null;
    end toValidationInfoNode;
 
-   procedure toValidationInfoNode (This : in out CssElementValidation; document : Document_Access) is
-      Java_Result : constant Node_Access := CssElementValidation'Class (This).toValidationInfoNode (document);
+   procedure toValidationInfoNode (This : in out CssElementValidation; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := CssElementValidation'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

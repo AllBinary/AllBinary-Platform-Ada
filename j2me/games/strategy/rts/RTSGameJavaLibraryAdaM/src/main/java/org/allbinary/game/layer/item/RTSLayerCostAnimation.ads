@@ -71,13 +71,13 @@ package org.allbinary.game.layer.item.RTSLayerCostAnimation_Package is
       fontHeight : Integer;
    end record;
 
-   procedure Initialize (This : in out RTSLayerCostAnimation'Class; image : Image_Access; layerInterfaceFactoryInterface : CostLayerInterfaceFactoryInterface_Access);
-   function Create (image : Image_Access; layerInterfaceFactoryInterface : CostLayerInterfaceFactoryInterface_Access) return RTSLayerCostAnimation_Access;
-   procedure updateMeasurement (This : in out RTSLayerCostAnimation; graphics : Graphics_Access);
-   procedure onEvent (This : in out RTSLayerCostAnimation; event : AllBinaryEventObject_Access);
-   procedure onTechEvent (This : in out RTSLayerCostAnimation; event : AllBinaryEventObject_Access);
+   procedure Initialize (This : in out RTSLayerCostAnimation'Class; image_Param : access Image'Class; layerInterfaceFactoryInterface_Param : access CostLayerInterfaceFactoryInterface'Class);
+   function Create (image_Param : access Image'Class; layerInterfaceFactoryInterface_Param : access CostLayerInterfaceFactoryInterface'Class) return RTSLayerCostAnimation_Access;
+   procedure updateMeasurement (This : in out RTSLayerCostAnimation; graphics_Param : access Graphics'Class);
+   procedure onEvent (This : in out RTSLayerCostAnimation; event_Param : access AllBinaryEventObject'Class);
+   procedure onTechEvent (This : in out RTSLayerCostAnimation; event_Param : access AllBinaryEventObject'Class);
    procedure update (This : in out RTSLayerCostAnimation);
-   procedure paintXY (This : in out RTSLayerCostAnimation; graphics : Graphics_Access; x : Integer; y : Integer);
+   procedure paintXY (This : in out RTSLayerCostAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
 
 end org.allbinary.game.layer.item.RTSLayerCostAnimation_Package;
 

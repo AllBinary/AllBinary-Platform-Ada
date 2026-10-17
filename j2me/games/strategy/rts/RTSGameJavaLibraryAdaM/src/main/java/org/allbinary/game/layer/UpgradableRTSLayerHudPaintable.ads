@@ -64,12 +64,12 @@ package org.allbinary.game.layer.UpgradableRTSLayerHudPaintable_Package is
    procedure Initialize (This : in out UpgradableRTSLayerHudPaintable'Class);
    function Create return UpgradableRTSLayerHudPaintable_Access;
    function getInstance return UpgradableRTSLayerHudPaintable_Access;
-   procedure updateMeasurement (This : in out UpgradableRTSLayerHudPaintable; graphics : Graphics_Access);
+   procedure updateMeasurement (This : in out UpgradableRTSLayerHudPaintable; graphics_Param : access Graphics'Class);
    procedure update (This : in out UpgradableRTSLayerHudPaintable);
    procedure updateSelectionInfo (This : in out UpgradableRTSLayerHudPaintable);
    procedure updateInfo (This : in out UpgradableRTSLayerHudPaintable);
-   procedure paint (This : in out UpgradableRTSLayerHudPaintable; graphics : Graphics_Access);
-   procedure setRtsLayer (This : in out UpgradableRTSLayerHudPaintable; rtsLayer : RTSLayer_Access);
+   procedure paint (This : in out UpgradableRTSLayerHudPaintable; graphics_Param : access Graphics'Class);
+   procedure setRtsLayer (This : in out UpgradableRTSLayerHudPaintable; rtsLayer_Param : access RTSLayer'Class);
    function getRtsLayer (This : in out UpgradableRTSLayerHudPaintable) return CollidableDestroyableDamageableLayer_Access;
 
 end org.allbinary.game.layer.UpgradableRTSLayerHudPaintable_Package;

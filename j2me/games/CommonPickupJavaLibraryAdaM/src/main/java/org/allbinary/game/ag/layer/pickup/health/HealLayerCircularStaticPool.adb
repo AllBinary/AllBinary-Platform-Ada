@@ -21,22 +21,24 @@ package body org.allbinary.game.ag.layer.pickup.health.HealLayerCircularStaticPo
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out HealLayerCircularStaticPool'Class; allbinaryLayerFactoryInterface : AllBinaryLayerFactoryInterface_Access; total : Integer) is
+   procedure Initialize (This : in out HealLayerCircularStaticPool'Class; allbinaryLayerFactoryInterface_Param : access AllBinaryLayerFactoryInterface'Class; total : Integer) is
+      allbinaryLayerFactoryInterface : AllBinaryLayerFactoryInterface_Access := AllBinaryLayerFactoryInterface_Access (allbinaryLayerFactoryInterface_Param);
    begin
       AllBinaryLayerCircularPool_Package.Initialize (This);
       Initialize_Fields (This);
         AllBinaryLayerCircularPool (This).initAllBinaryLayerCircularPool (allbinaryLayerFactoryInterface, total);
    end Initialize;
 
-   function Create (allbinaryLayerFactoryInterface : AllBinaryLayerFactoryInterface_Access; total : Integer) return HealLayerCircularStaticPool_Access is
+   function Create (allbinaryLayerFactoryInterface_Param : access AllBinaryLayerFactoryInterface'Class; total : Integer) return HealLayerCircularStaticPool_Access is
       This : constant HealLayerCircularStaticPool_Access := new HealLayerCircularStaticPool;
    begin
-      HealLayerCircularStaticPool_Package.Initialize (This.all, allbinaryLayerFactoryInterface, total);
+      HealLayerCircularStaticPool_Package.Initialize (This.all, allbinaryLayerFactoryInterface_Param, total);
       return This;
    end Create;
 
    --  throws Exception
-   procedure visit (This : in out HealLayerCircularStaticPool; sourceLayerInterface : AllBinaryLayer_Access) is
+   procedure visit (This : in out HealLayerCircularStaticPool; sourceLayerInterface_Param : access AllBinaryLayer'Class) is
+      sourceLayerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (sourceLayerInterface_Param);
       healLayer : HealLayer_Access;
       healthInterfaceCompositeInterface : HealthInterfaceCompositeInterface_Access;
       healthInterface : HealthInterface_Access;

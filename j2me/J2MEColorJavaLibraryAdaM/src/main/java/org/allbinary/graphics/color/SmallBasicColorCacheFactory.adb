@@ -43,7 +43,8 @@ package body org.allbinary.graphics.color.SmallBasicColorCacheFactory_Package is
       return This;
    end Create;
 
-   procedure add (This : in out SmallBasicColorCacheFactory; basicDefaultColor : BasicColor_Access) is
+   procedure add (This : in out SmallBasicColorCacheFactory; basicDefaultColor_Param : access BasicColor'Class) is
+      basicDefaultColor : BasicColor_Access := BasicColor_Access (basicDefaultColor_Param);
    begin
         This.BASIC_COLOR_ARRAY (This.colorIndex) := basicDefaultColor;
         This.INDEX_TO_COLOR (This.colorIndex) := basicDefaultColor.intValue;

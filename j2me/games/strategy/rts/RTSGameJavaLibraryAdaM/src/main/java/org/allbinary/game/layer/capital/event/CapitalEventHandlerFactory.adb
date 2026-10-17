@@ -43,7 +43,8 @@ package body org.allbinary.game.layer.capital.event.CapitalEventHandlerFactory_P
         end loop;
    end Initializer;
 
-   function getInstance (groupInterface : Group_Access) return CapitalEventHandler_Access is
+   function getInstance (groupInterface_Param : access Group'Class) return CapitalEventHandler_Access is
+      groupInterface : Group_Access := Group_Access (groupInterface_Param);
    begin
         return CapitalEventHandlerFactory_Package.capitalEventHandlerArray (Integer (groupInterface.getGroupId));
    end getInstance;
@@ -56,8 +57,8 @@ package body org.allbinary.game.layer.capital.event.CapitalEventHandlerFactory_P
         end loop;
    end removeAll;
 
-   procedure getInstance (groupInterface : Group_Access) is
-      Java_Result : constant CapitalEventHandler_Access := getInstance (groupInterface);
+   procedure getInstance (groupInterface_Param : access Group'Class) is
+      Java_Result : constant CapitalEventHandler_Access := getInstance (groupInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -38,7 +38,9 @@ package body org.allbinary.logic.ABSystemWrapper_Package is
         return ABSystemWrapper_Package.instance;
    end getInstance;
 
-   procedure arraycopy (This : in out ABSystemWrapper; src : Java_Object_Access; srcPos : Integer; dest : Java_Object_Access; destPos : Integer; length : Integer) is
+   procedure arraycopy (This : in out ABSystemWrapper; src_Param : access Java_Object'Class; srcPos : Integer; dest_Param : access Java_Object'Class; destPos : Integer; length : Integer) is
+      src : Java_Object_Access := Java_Object_Access (src_Param);
+      dest : Java_Object_Access := Java_Object_Access (dest_Param);
    begin
         Java_Array_Copy (src, srcPos, dest, destPos, length);
    end arraycopy;

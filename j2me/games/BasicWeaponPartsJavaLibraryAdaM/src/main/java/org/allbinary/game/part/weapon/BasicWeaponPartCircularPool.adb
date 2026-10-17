@@ -35,20 +35,25 @@ package body org.allbinary.game.part.weapon.BasicWeaponPartCircularPool_Package 
 
 
    --  throws Exception
-   procedure init (This : in out BasicWeaponPartCircularPool; basicWeaponPartFactoryInterface : BasicWeaponPartFactoryInterface_Access) is
+   procedure init (This : in out BasicWeaponPartCircularPool; basicWeaponPartFactoryInterface_Param : access BasicWeaponPartFactoryInterface'Class) is
+      basicWeaponPartFactoryInterface : BasicWeaponPartFactoryInterface_Access := BasicWeaponPartFactoryInterface_Access (basicWeaponPartFactoryInterface_Param);
    begin
         This.basicWeaponPart := basicWeaponPartFactoryInterface.getInstance;
    end init;
 
    --  throws Exception
-   function getInstance (This : in out BasicWeaponPartCircularPool; sourceLayerInterface : AllBinaryLayer_Access; weaponProperties : WeaponProperties_Access; scoreableInterface : ScoreableInterface_Access; relativeRelationship : RelativeRelationship_Access) return BasicWeaponPart_Access is
+   function getInstance (This : in out BasicWeaponPartCircularPool; sourceLayerInterface_Param : access AllBinaryLayer'Class; weaponProperties_Param : access WeaponProperties'Class; scoreableInterface_Param : access ScoreableInterface'Class; relativeRelationship_Param : access RelativeRelationship'Class) return BasicWeaponPart_Access is
+      sourceLayerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (sourceLayerInterface_Param);
+      weaponProperties : WeaponProperties_Access := WeaponProperties_Access (weaponProperties_Param);
+      scoreableInterface : ScoreableInterface_Access := ScoreableInterface_Access (scoreableInterface_Param);
+      relativeRelationship : RelativeRelationship_Access := RelativeRelationship_Access (relativeRelationship_Param);
    begin
         This.basicWeaponPart.init (sourceLayerInterface, weaponProperties, scoreableInterface, relativeRelationship);
         return This.basicWeaponPart;
    end getInstance;
 
-   procedure getInstance (This : in out BasicWeaponPartCircularPool; sourceLayerInterface : AllBinaryLayer_Access; weaponProperties : WeaponProperties_Access; scoreableInterface : ScoreableInterface_Access; relativeRelationship : RelativeRelationship_Access) is
-      Java_Result : constant BasicWeaponPart_Access := BasicWeaponPartCircularPool'Class (This).getInstance (sourceLayerInterface, weaponProperties, scoreableInterface, relativeRelationship);
+   procedure getInstance (This : in out BasicWeaponPartCircularPool; sourceLayerInterface_Param : access AllBinaryLayer'Class; weaponProperties_Param : access WeaponProperties'Class; scoreableInterface_Param : access ScoreableInterface'Class; relativeRelationship_Param : access RelativeRelationship'Class) is
+      Java_Result : constant BasicWeaponPart_Access := BasicWeaponPartCircularPool'Class (This).getInstance (sourceLayerInterface_Param, weaponProperties_Param, scoreableInterface_Param, relativeRelationship_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

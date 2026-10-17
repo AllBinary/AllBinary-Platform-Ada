@@ -22,7 +22,8 @@ package body org.allbinary.media.image.comparison.motion.ConsolidateMotionRectan
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ConsolidateMotionRectangles'Class; motionRectangles : MotionRectangles_Access) is
+   procedure Initialize (This : in out ConsolidateMotionRectangles'Class; motionRectangles_Param : access MotionRectangles'Class) is
+      motionRectangles : MotionRectangles_Access := MotionRectangles_Access (motionRectangles_Param);
       vector : BasicArrayList_Access;
       size : Integer;
       motionRectangle : MotionRectangle_Access;
@@ -39,10 +40,10 @@ package body org.allbinary.media.image.comparison.motion.ConsolidateMotionRectan
         This.consolidateMotionRectangles;
    end Initialize;
 
-   function Create (motionRectangles : MotionRectangles_Access) return ConsolidateMotionRectangles_Access is
+   function Create (motionRectangles_Param : access MotionRectangles'Class) return ConsolidateMotionRectangles_Access is
       This : constant ConsolidateMotionRectangles_Access := new ConsolidateMotionRectangles;
    begin
-      ConsolidateMotionRectangles_Package.Initialize (This.all, motionRectangles);
+      ConsolidateMotionRectangles_Package.Initialize (This.all, motionRectangles_Param);
       return This;
    end Create;
 
@@ -62,7 +63,7 @@ package body org.allbinary.media.image.comparison.motion.ConsolidateMotionRectan
       index : Integer;
    begin
         vector := This.getVector;
-        This.logUtil.putF (To_Unbounded_String ("Start - Size Before: ") & Java_Image (vector.size), This'Unchecked_Access, To_Unbounded_String ("consolidateMotionRectangleConstraints"));
+        This.logUtil.putF (To_Unbounded_String ("Start - Size Before: ") & Java_Image (vector.size), ConsolidateMotionRectangles_Access'(This'Unchecked_Access), To_Unbounded_String ("consolidateMotionRectangleConstraints"));
         removeVector := BasicArrayListD_Package.Create;
         size := vector.size;
         for index in 0 .. (size) - 1 loop
@@ -83,7 +84,8 @@ package body org.allbinary.media.image.comparison.motion.ConsolidateMotionRectan
         This.remove (removeVector);
    end consolidateMotionRectangles;
 
-   procedure remove (This : in out ConsolidateMotionRectangles; removeVector : BasicArrayList_Access) is
+   procedure remove (This : in out ConsolidateMotionRectangles; removeVector_Param : access BasicArrayList'Class) is
+      removeVector : BasicArrayList_Access := BasicArrayList_Access (removeVector_Param);
       vector : BasicArrayList_Access;
       size : Integer;
       index : Integer;

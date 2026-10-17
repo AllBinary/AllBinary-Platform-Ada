@@ -22,7 +22,8 @@ package body org.allbinary.input.gyro.AllBinaryOrientationSensor_Package is
    end Initialize_Fields;
 
 
-   procedure setListener (This : in out AllBinaryOrientationSensor; completeMotionGestureInputEventListenerInterface : CompleteMotionGestureInputEventListenerInterface_Access) is
+   procedure setListener (This : in out AllBinaryOrientationSensor; completeMotionGestureInputEventListenerInterface_Param : access CompleteMotionGestureInputEventListenerInterface'Class) is
+      completeMotionGestureInputEventListenerInterface : CompleteMotionGestureInputEventListenerInterface_Access := CompleteMotionGestureInputEventListenerInterface_Access (completeMotionGestureInputEventListenerInterface_Param);
    begin
         This.listener := completeMotionGestureInputEventListenerInterface;
    end setListener;

@@ -22,26 +22,29 @@ package body org.allbinary.game.layer.pickup.IconLayer_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out IconLayer'Class; animationInterface : Animation_Access; width : Integer; height : Integer) is
+   procedure Initialize (This : in out IconLayer'Class; animationInterface_Param : access Animation'Class; width : Integer; height : Integer) is
+      animationInterface : Animation_Access := Animation_Access (animationInterface_Param);
    begin
         AllBinaryLayer_Package.Initialize (This, StringUtil_Package.getInstance.EMPTY_STRING, Rectangle_Package.Create (PointFactory_Package.getInstance.ZERO_ZERO, width, height), ViewPosition_Package.getInstanceD);
         Initialize_Fields (This);
         This.animationInterface := animationInterface;
    end Initialize;
 
-   function Create (animationInterface : Animation_Access; width : Integer; height : Integer) return IconLayer_Access is
+   function Create (animationInterface_Param : access Animation'Class; width : Integer; height : Integer) return IconLayer_Access is
       This : constant IconLayer_Access := new IconLayer;
    begin
-      IconLayer_Package.Initialize (This.all, animationInterface, width, height);
+      IconLayer_Package.Initialize (This.all, animationInterface_Param, width, height);
       return This;
    end Create;
 
-   procedure paint (This : in out IconLayer; graphics : Graphics_Access) is
+   procedure paint (This : in out IconLayer; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.animationInterface.paintXY (graphics, This.x, This.y);
    end paint;
 
-   procedure paintThreed (This : in out IconLayer; graphics : Graphics_Access) is
+   procedure paintThreed (This : in out IconLayer; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.animationInterface.paintThreedXYZ (graphics, This.x, This.y, This.z);
    end paintThreed;

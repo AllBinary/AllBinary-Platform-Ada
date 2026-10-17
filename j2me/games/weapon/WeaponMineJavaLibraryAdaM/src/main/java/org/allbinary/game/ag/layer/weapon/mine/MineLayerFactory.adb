@@ -22,16 +22,17 @@ package body org.allbinary.game.ag.layer.weapon.mine.MineLayerFactory_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out MineLayerFactory'Class; viewPositionFactoryInterface : ViewPositionFactoryInterface_Access) is
+   procedure Initialize (This : in out MineLayerFactory'Class; viewPositionFactoryInterface_Param : access ViewPositionFactoryInterface'Class) is
+      viewPositionFactoryInterface : ViewPositionFactoryInterface_Access := ViewPositionFactoryInterface_Access (viewPositionFactoryInterface_Param);
    begin
       Initialize_Fields (This);
         This.viewPositionFactoryInterface := viewPositionFactoryInterface;
    end Initialize;
 
-   function Create (viewPositionFactoryInterface : ViewPositionFactoryInterface_Access) return MineLayerFactory_Access is
+   function Create (viewPositionFactoryInterface_Param : access ViewPositionFactoryInterface'Class) return MineLayerFactory_Access is
       This : constant MineLayerFactory_Access := new MineLayerFactory;
    begin
-      MineLayerFactory_Package.Initialize (This.all, viewPositionFactoryInterface);
+      MineLayerFactory_Package.Initialize (This.all, viewPositionFactoryInterface_Param);
       return This;
    end Create;
 

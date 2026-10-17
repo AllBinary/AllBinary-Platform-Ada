@@ -40,8 +40,8 @@ package org.allbinary.graphics.canvas.transition.progress.LazyProgressCanvas_Pac
 
    type LazyProgressCanvas is new ProgressCanvas with null record;
 
-   procedure Initialize (This : in out LazyProgressCanvas'Class; title : Unbounded_String; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access);
-   function Create (title : Unbounded_String; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return LazyProgressCanvas_Access;
+   procedure Initialize (This : in out LazyProgressCanvas'Class; title : Unbounded_String; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class);
+   function Create (title : Unbounded_String; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return LazyProgressCanvas_Access;
    procedure start (This : in out LazyProgressCanvas);
    procedure end_Id (This : in out LazyProgressCanvas);
    procedure inGame (This : in out LazyProgressCanvas);

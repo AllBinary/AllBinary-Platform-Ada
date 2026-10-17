@@ -28,7 +28,9 @@ package body admin.taghelpers.BillingAddressHelper_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BillingAddressHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access) is
+   procedure Initialize (This : in out BillingAddressHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
    begin
       Table_Package.Initialize (This);
       Initialize_Fields (This);
@@ -38,10 +40,10 @@ package body admin.taghelpers.BillingAddressHelper_Package is
         This.getAddressForm;
    end Initialize;
 
-   function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return BillingAddressHelper_Access is
+   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return BillingAddressHelper_Access is
       This : constant BillingAddressHelper_Access := new BillingAddressHelper;
    begin
-      BillingAddressHelper_Package.Initialize (This.all, hashMap, pageContext);
+      BillingAddressHelper_Package.Initialize (This.all, hashMap_Param, pageContext_Param);
       return This;
    end Create;
 
@@ -61,7 +63,7 @@ package body admin.taghelpers.BillingAddressHelper_Package is
         begin
             success := BillingAddressesEntity_Package.Create (This.stringUtil.EMPTY_STRING).drop;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, This.commonStrings.DROP);
+                This.logUtil.putF (success, BillingAddressHelper_Access'(This'Unchecked_Access), This.commonStrings.DROP);
             end if;
             return success;
         exception
@@ -71,7 +73,7 @@ package body admin.taghelpers.BillingAddressHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to drop Admin table");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.DROP, e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, BillingAddressHelper_Access'(This'Unchecked_Access), This.commonStrings.DROP, e);
             end if;
             return error;
                 end;
@@ -85,7 +87,7 @@ package body admin.taghelpers.BillingAddressHelper_Package is
         begin
             success := BillingAddressesEntity_Package.Create (This.stringUtil.EMPTY_STRING).createTable;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, To_Unbounded_String ("create()"));
+                This.logUtil.putF (success, BillingAddressHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("create()"));
             end if;
             return success;
         exception
@@ -95,7 +97,7 @@ package body admin.taghelpers.BillingAddressHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to create user table");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("create()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, BillingAddressHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("create()"), e);
             end if;
             return error;
                 end;
@@ -113,7 +115,7 @@ package body admin.taghelpers.BillingAddressHelper_Package is
             billingAddressesEntity := BillingAddressesEntity_Package.Create (StringUtil_Package.getInstance.EMPTY_STRING);
             result := AbSqlTableUtil_Package.getInstance.restoreTable (billingAddressesEntity, This.portion);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, To_Unbounded_String ("restore()"));
+                This.logUtil.putF (success, BillingAddressHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("restore()"));
             end if;
             return result;
         exception
@@ -123,7 +125,7 @@ package body admin.taghelpers.BillingAddressHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to restore backup");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("restore()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, BillingAddressHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("restore()"), e);
             end if;
             return error;
                 end;
@@ -139,7 +141,7 @@ package body admin.taghelpers.BillingAddressHelper_Package is
             success := To_Unbounded_String ("Backup Successful");
             result := AbSqlTableUtil_Package.getInstance.backupTable (BillingAddressesEntity_Package.Create (StringUtil_Package.getInstance.EMPTY_STRING));
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, To_Unbounded_String ("backup()"));
+                This.logUtil.putF (success, BillingAddressHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("backup()"));
             end if;
             return result;
         exception
@@ -149,7 +151,7 @@ package body admin.taghelpers.BillingAddressHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to make backup");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("backup()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, BillingAddressHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("backup()"), e);
             end if;
             return error;
                 end;
@@ -164,7 +166,7 @@ package body admin.taghelpers.BillingAddressHelper_Package is
             success := To_Unbounded_String ("Successfully Added Billing Address");
             BillingAddressesEntityFactory_Package.getInstance.getInstance (This.weblisketSession.getUserName).add (This.streetAddress);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, To_Unbounded_String ("add()"));
+                This.logUtil.putF (success, BillingAddressHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("add()"));
             end if;
             return success;
         exception
@@ -174,7 +176,7 @@ package body admin.taghelpers.BillingAddressHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to add Billing Address");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("add()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, BillingAddressHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("add()"), e);
             end if;
             return error;
                 end;
@@ -189,7 +191,7 @@ package body admin.taghelpers.BillingAddressHelper_Package is
             success := To_Unbounded_String ("Successfully Updated Billing Address");
             BillingAddressesEntityFactory_Package.getInstance.getInstance (This.weblisketSession.getUserName).update (This.streetAddress);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (To_Unbounded_String ("Successfull update of a user Billing Address table"), This'Unchecked_Access, To_Unbounded_String ("update()"));
+                This.logUtil.putF (To_Unbounded_String ("Successfull update of a user Billing Address table"), BillingAddressHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("update()"));
             end if;
             return success;
         exception
@@ -199,7 +201,7 @@ package body admin.taghelpers.BillingAddressHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed update of a User Billing Address Table");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("update()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, BillingAddressHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("update()"), e);
             end if;
             return error;
                 end;
@@ -227,7 +229,7 @@ package body admin.taghelpers.BillingAddressHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to Set Billing address to Shipping Address");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("setToShippingAddress()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, BillingAddressHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("setToShippingAddress()"), e);
             end if;
             return error;
                 end;
@@ -242,7 +244,7 @@ package body admin.taghelpers.BillingAddressHelper_Package is
             success := To_Unbounded_String ("Successfully Removed Billing Address");
             BillingAddressesEntityFactory_Package.getInstance.getInstance (This.weblisketSession.getUserName).remove (This.streetAddress.getId);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, To_Unbounded_String ("delete()"));
+                This.logUtil.putF (success, BillingAddressHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("delete()"));
             end if;
             return success;
         exception
@@ -252,7 +254,7 @@ package body admin.taghelpers.BillingAddressHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to remove Billing Address");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("delete()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, BillingAddressHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("delete()"), e);
             end if;
             return error;
                 end;
@@ -267,7 +269,7 @@ package body admin.taghelpers.BillingAddressHelper_Package is
             success := To_Unbounded_String ("Successfully Set Billing Address");
             BillingAddressesEntityFactory_Package.getInstance.getInstance (This.weblisketSession.getUserName).setDefault (This.streetAddress.getId);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, To_Unbounded_String ("set()"));
+                This.logUtil.putF (success, BillingAddressHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("set()"));
             end if;
             return success;
         exception
@@ -277,7 +279,7 @@ package body admin.taghelpers.BillingAddressHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to set billing Address");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("set()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, BillingAddressHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("set()"), e);
             end if;
             return error;
                 end;

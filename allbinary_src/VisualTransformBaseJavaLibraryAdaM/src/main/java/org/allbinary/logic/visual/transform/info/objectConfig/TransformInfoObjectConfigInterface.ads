@@ -36,7 +36,7 @@ package org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObje
    type TransformInfoObjectConfigInterface_Access is access all TransformInfoObjectConfigInterface'Class;
    type TransformInfoObjectConfigInterface_Access_Array is array (Natural range <>) of TransformInfoObjectConfigInterface_Access;
    type TransformInfoObjectConfigInterface_Access_Array_Access is access all TransformInfoObjectConfigInterface_Access_Array;
-   function containsView (This : in out TransformInfoObjectConfigInterface; transformInfoInterface : TransformInfoInterface_Access) return Boolean is abstract;
+   function containsView (This : in out TransformInfoObjectConfigInterface; transformInfoInterface_Param : access TransformInfoInterface'Class) return Boolean is abstract;
    function getName (This : in out TransformInfoObjectConfigInterface) return Unbounded_String is abstract;
    function getTransformsGroup (This : in out TransformInfoObjectConfigInterface; group : Unbounded_String) return BasicArrayList_Access is abstract;
    function getTransforms (This : in out TransformInfoObjectConfigInterface) return BasicArrayList_Access is abstract;

@@ -67,14 +67,14 @@ package org.allbinary.image.gui.MirrorSpriteImageJPanel_Package is
       writeOverOriginalJCheckBox : JCheckBox_Access;
    end record;
 
-   procedure Initialize (This : in out MirrorSpriteImageJPanel'Class; imageProcessorInput : ImageProcessorInput_Access);
-   function Create (imageProcessorInput : ImageProcessorInput_Access) return MirrorSpriteImageJPanel_Access;
+   procedure Initialize (This : in out MirrorSpriteImageJPanel'Class; imageProcessorInput_Param : access ImageProcessorInput'Class);
+   function Create (imageProcessorInput_Param : access ImageProcessorInput'Class) return MirrorSpriteImageJPanel_Access;
    procedure process (This : in out MirrorSpriteImageJPanel);
    procedure initComponents (This : in out MirrorSpriteImageJPanel);
-   procedure generateJButtonActionPerformed (This : in out MirrorSpriteImageJPanel; evt : ActionEvent_Access);
-   procedure imageHeightIsFrameSizeJCheckBoxActionPerformed (This : in out MirrorSpriteImageJPanel; evt : ActionEvent_Access);
+   procedure generateJButtonActionPerformed (This : in out MirrorSpriteImageJPanel; evt_Param : access ActionEvent'Class);
+   procedure imageHeightIsFrameSizeJCheckBoxActionPerformed (This : in out MirrorSpriteImageJPanel; evt_Param : access ActionEvent'Class);
    function getImageProcessorInput (This : in out MirrorSpriteImageJPanel) return ImageProcessorInput_Access;
-   procedure setImageProcessorInput (This : in out MirrorSpriteImageJPanel; imageProcessorInput : ImageProcessorInput_Access);
+   procedure setImageProcessorInput (This : in out MirrorSpriteImageJPanel; imageProcessorInput_Param : access ImageProcessorInput'Class);
 
 end org.allbinary.image.gui.MirrorSpriteImageJPanel_Package;
 

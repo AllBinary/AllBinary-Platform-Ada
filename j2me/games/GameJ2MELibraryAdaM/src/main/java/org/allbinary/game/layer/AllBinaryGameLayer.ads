@@ -77,18 +77,18 @@ package org.allbinary.game.layer.AllBinaryGameLayer_Package is
       gameKeyEventList : BasicArrayList_Access;
    end record;
 
-   procedure Initialize (This : in out AllBinaryGameLayer'Class; name : Unbounded_String; layerInfo : Rectangle_Access; viewPosition : ViewPositionBase_Access);
-   function Create (name : Unbounded_String; layerInfo : Rectangle_Access; viewPosition : ViewPositionBase_Access) return AllBinaryGameLayer_Access;
-   procedure set (This : in out AllBinaryGameLayer; gl : GL_Access);
+   procedure Initialize (This : in out AllBinaryGameLayer'Class; name : Unbounded_String; layerInfo_Param : access Rectangle'Class; viewPosition_Param : access ViewPositionBase'Class);
+   function Create (name : Unbounded_String; layerInfo_Param : access Rectangle'Class; viewPosition_Param : access ViewPositionBase'Class) return AllBinaryGameLayer_Access;
+   procedure set (This : in out AllBinaryGameLayer; gl_Param : access GL'Class);
    procedure move (This : in out AllBinaryGameLayer);
    function getGameKeyEventList (This : in out AllBinaryGameLayer) return BasicArrayList_Access;
-   procedure processInput (This : in out AllBinaryGameLayer; allBinaryLayerManager : AllBinaryLayerManager_Access);
-   procedure processTick (This : in out AllBinaryGameLayer; allBinaryLayerManager : AllBinaryLayerManager_Access);
-   procedure onEvent (This : in out AllBinaryGameLayer; eventObject : AllBinaryEventObject_Access);
+   procedure processInput (This : in out AllBinaryGameLayer; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class);
+   procedure processTick (This : in out AllBinaryGameLayer; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class);
+   procedure onEvent (This : in out AllBinaryGameLayer; eventObject_Param : access AllBinaryEventObject'Class);
    procedure onViewPositionChangeEvent (This : in out AllBinaryGameLayer);
-   procedure onChangeEvent (This : in out AllBinaryGameLayer; layerManagerEvent : ViewPositionEvent_Access);
-   procedure paintFirst (This : in out AllBinaryGameLayer; graphics : Graphics_Access);
-   procedure paintDebug (This : in out AllBinaryGameLayer; graphics : Graphics_Access);
+   procedure onChangeEvent (This : in out AllBinaryGameLayer; layerManagerEvent_Param : access ViewPositionEvent'Class);
+   procedure paintFirst (This : in out AllBinaryGameLayer; graphics_Param : access Graphics'Class);
+   procedure paintDebug (This : in out AllBinaryGameLayer; graphics_Param : access Graphics'Class);
    procedure setWidth (This : in out AllBinaryGameLayer; width : Integer);
    procedure setHeight (This : in out AllBinaryGameLayer; height : Integer);
 

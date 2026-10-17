@@ -79,7 +79,8 @@ package body org.allbinary.graphics.opengles.OpenGLCapabilities_Package is
         null;
    end requireInitialization;
 
-   procedure initCapabilities (This : in out OpenGLCapabilities; gl : GL10_Access) is
+   procedure initCapabilities (This : in out OpenGLCapabilities; gl_Param : access GL10'Class) is
+      gl : GL10_Access := GL10_Access (gl_Param);
       METHOD_NAME : Unbounded_String;
       features : Features_Access;
       openGLFeatureFactory : OpenGLFeatureFactory_Access;
@@ -117,7 +118,7 @@ package body org.allbinary.graphics.opengles.OpenGLCapabilities_Package is
                         e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                     begin
                 commonStrings := CommonStrings_Package.getInstance;
-                This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, METHOD_NAME, e);
+                This.logUtil.put (commonStrings.EXCEPTION_Id, OpenGLCapabilities_Access'(This'Unchecked_Access), METHOD_NAME, e);
                     end;
             end;
             This.glRenderer := gl.glGetString (GL10.GL_RENDERER);
@@ -166,12 +167,12 @@ package body org.allbinary.graphics.opengles.OpenGLCapabilities_Package is
                 This.glExtensions := This.stringUtil.EMPTY_STRING;
             end if;
             if This.possiblyAccelerated then
-                PreLogUtil_Package.put (StringMaker_Package.Create.append (To_Unbounded_String ("VBO:?")).appendboolean (((This.glInstanceVersion) = (This.VERSION_1_1))).append (To_Unbounded_String ("||")).appendboolean (This.isExtension (openGLFeatureFactory.OPENGL_VERTEX_BUFFER_OBJECT)).toString, This'Unchecked_Access, METHOD_NAME);
+                PreLogUtil_Package.put (StringMaker_Package.Create.append (To_Unbounded_String ("VBO:?")).appendboolean (((This.glInstanceVersion) = (This.VERSION_1_1))).append (To_Unbounded_String ("||")).appendboolean (This.isExtension (openGLFeatureFactory.OPENGL_VERTEX_BUFFER_OBJECT)).toString, OpenGLCapabilities_Access'(This'Unchecked_Access), METHOD_NAME);
                 if (((This.glInstanceVersion) = (This.VERSION_1_1)) or else (This.isExtension (openGLFeatureFactory.OPENGL_VERTEX_BUFFER_OBJECT))) then
                     if AndroidUtil_Package.isAndroid then
-                        PreLogUtil_Package.put (To_Unbounded_String ("VBO implementation was detected, but disabled by default for Android"), This'Unchecked_Access, METHOD_NAME);
+                        PreLogUtil_Package.put (To_Unbounded_String ("VBO implementation was detected, but disabled by default for Android"), OpenGLCapabilities_Access'(This'Unchecked_Access), METHOD_NAME);
                     else
-                        PreLogUtil_Package.put (To_Unbounded_String ("VBO implementation was detected, but disabled for now"), This'Unchecked_Access, METHOD_NAME);
+                        PreLogUtil_Package.put (To_Unbounded_String ("VBO implementation was detected, but disabled for now"), OpenGLCapabilities_Access'(This'Unchecked_Access), METHOD_NAME);
                     end if;
                 end if;
             end if;
@@ -183,13 +184,13 @@ package body org.allbinary.graphics.opengles.OpenGLCapabilities_Package is
                     stringBuffer.append (To_Unbounded_String ("OpenGL is on but "));
                     stringBuffer.append (stringUtil.toString (openGLFeatureFactory.OPENGL_DRAW_TEXTURE));
                     stringBuffer.append (To_Unbounded_String (" was not available"));
-                    PreLogUtil_Package.put (stringBuffer.toString, This'Unchecked_Access, METHOD_NAME);
+                    PreLogUtil_Package.put (stringBuffer.toString, OpenGLCapabilities_Access'(This'Unchecked_Access), METHOD_NAME);
                     openGLImageSpecificFactory.setImageFactory (OpenGLESGL10ImageFactory_Package.Create);
                 end if;
             else
                 stringBuffer.append (stringUtil.toString (openGLFeatureFactory.OPENGL_AUTO_SELECT));
                 stringBuffer.append (To_Unbounded_String (" is not on"));
-                PreLogUtil_Package.put (stringBuffer.toString, This'Unchecked_Access, METHOD_NAME);
+                PreLogUtil_Package.put (stringBuffer.toString, OpenGLCapabilities_Access'(This'Unchecked_Access), METHOD_NAME);
                 openGLImageSpecificFactory.setImageFactory (OpenGLESGL10ImageFactory_Package.Create);
             end if;
             maxTextureSizeArray := new Integer_Array'(0 .. (1) - 1 => 0);
@@ -202,12 +203,13 @@ package body org.allbinary.graphics.opengles.OpenGLCapabilities_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, METHOD_NAME, e);
+            This.logUtil.put (commonStrings.EXCEPTION_Id, OpenGLCapabilities_Access'(This'Unchecked_Access), METHOD_NAME, e);
                 end;
         end;
    end initCapabilities;
 
-   function isExtension (This : in out OpenGLCapabilities; gameFeature : OpenGLFeature_Access) return Boolean is
+   function isExtension (This : in out OpenGLCapabilities; gameFeature_Param : access OpenGLFeature'Class) return Boolean is
+      gameFeature : OpenGLFeature_Access := OpenGLFeature_Access (gameFeature_Param);
       index : Integer;
    begin
         index := (Index (This.glExtensions, To_String (gameFeature.getName)) - 1);
@@ -324,14 +326,14 @@ package body org.allbinary.graphics.opengles.OpenGLCapabilities_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            PreLogUtil_Package.putOE (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.TOSTRING, e);
+            PreLogUtil_Package.putOE (commonStrings.EXCEPTION_Id, OpenGLCapabilities_Access'(This'Unchecked_Access), commonStrings.TOSTRING, e);
                 end;
         end;
         return stringBuffer.toString;
    end toString;
 
-   procedure isExtension (This : in out OpenGLCapabilities; gameFeature : OpenGLFeature_Access) is
-      Java_Result : constant Boolean := OpenGLCapabilities'Class (This).isExtension (gameFeature);
+   procedure isExtension (This : in out OpenGLCapabilities; gameFeature_Param : access OpenGLFeature'Class) is
+      Java_Result : constant Boolean := OpenGLCapabilities'Class (This).isExtension (gameFeature_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

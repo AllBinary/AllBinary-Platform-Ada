@@ -51,7 +51,8 @@ package body org.allbinary.game.init.BaseGameInitialization_Package is
    end initKey;
 
    --  throws Exception
-   procedure initKeyMapping (This : in out BaseGameInitialization; abeClientInformation : AbeClientInformationInterface_Access; portion : Integer) is
+   procedure initKeyMapping (This : in out BaseGameInitialization; abeClientInformation_Param : access AbeClientInformationInterface'Class; portion : Integer) is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
    begin
         if ChangedGameFeatureListener_Package.getInstance.isChangedFeature (InputFeatureFactory_Package.getInstance.INPUT_MAPPING) then
             PlatformInputMappingFactory_Package.getInstance.getPersistentInputMappingInstance.init (abeClientInformation);
@@ -61,7 +62,9 @@ package body org.allbinary.game.init.BaseGameInitialization_Package is
    end initKeyMapping;
 
    --  throws Exception
-   procedure init (This : in out BaseGameInitialization; abeClientInformation : AbeClientInformationInterface_Access; commandListener : CommandListener_Access; level : Integer) is
+   procedure init (This : in out BaseGameInitialization; abeClientInformation_Param : access AbeClientInformationInterface'Class; commandListener_Param : access CommandListener'Class; level : Integer) is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      commandListener : CommandListener_Access := CommandListener_Access (commandListener_Param);
       resourceLoadingLevelFactory : ResourceLoadingLevelFactory_Access;
       localPortion : Integer;
       progressCanvas : ProgressCanvas_Access;

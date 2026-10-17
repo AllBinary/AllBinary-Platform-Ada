@@ -22,17 +22,18 @@ package body org.allbinary.game.layer.special.SpecialGameInputInterfaceProcessor
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out SpecialGameInputInterfaceProcessor'Class; collidableDestroyableDamageableLayer : SpecialGameInputInterface_Access) is
+   procedure Initialize (This : in out SpecialGameInputInterfaceProcessor'Class; collidableDestroyableDamageableLayer_Param : access SpecialGameInputInterface'Class) is
+      collidableDestroyableDamageableLayer : SpecialGameInputInterface_Access := SpecialGameInputInterface_Access (collidableDestroyableDamageableLayer_Param);
    begin
       GameInputProcessor_Package.Initialize (This);
       Initialize_Fields (This);
         This.specialGameInputInterface := collidableDestroyableDamageableLayer;
    end Initialize;
 
-   function Create (collidableDestroyableDamageableLayer : SpecialGameInputInterface_Access) return SpecialGameInputInterfaceProcessor_Access is
+   function Create (collidableDestroyableDamageableLayer_Param : access SpecialGameInputInterface'Class) return SpecialGameInputInterfaceProcessor_Access is
       This : constant SpecialGameInputInterfaceProcessor_Access := new SpecialGameInputInterfaceProcessor;
    begin
-      SpecialGameInputInterfaceProcessor_Package.Initialize (This.all, collidableDestroyableDamageableLayer);
+      SpecialGameInputInterfaceProcessor_Package.Initialize (This.all, collidableDestroyableDamageableLayer_Param);
       return This;
    end Create;
 

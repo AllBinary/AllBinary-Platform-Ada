@@ -26,7 +26,10 @@ package body org.allbinary.animation.IndependentVectorExplosionRotationAnimation
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out IndependentVectorExplosionRotationAnimationFactory'Class; vectorInfo : VectorInfo_Access; basicColor : BasicColor_Access; vectorAnimationFactoryInterface : VectorAnimationFactoryInterface_Access) is
+   procedure Initialize (This : in out IndependentVectorExplosionRotationAnimationFactory'Class; vectorInfo_Param : access VectorInfo'Class; basicColor_Param : access BasicColor'Class; vectorAnimationFactoryInterface_Param : access VectorAnimationFactoryInterface'Class) is
+      vectorInfo : VectorInfo_Access := VectorInfo_Access (vectorInfo_Param);
+      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
+      vectorAnimationFactoryInterface : VectorAnimationFactoryInterface_Access := VectorAnimationFactoryInterface_Access (vectorAnimationFactoryInterface_Param);
    begin
       Initialize_Fields (This);
         This.vectorInfo := vectorInfo;
@@ -35,10 +38,10 @@ package body org.allbinary.animation.IndependentVectorExplosionRotationAnimation
         This.init;
    end Initialize;
 
-   function Create (vectorInfo : VectorInfo_Access; basicColor : BasicColor_Access; vectorAnimationFactoryInterface : VectorAnimationFactoryInterface_Access) return IndependentVectorExplosionRotationAnimationFactory_Access is
+   function Create (vectorInfo_Param : access VectorInfo'Class; basicColor_Param : access BasicColor'Class; vectorAnimationFactoryInterface_Param : access VectorAnimationFactoryInterface'Class) return IndependentVectorExplosionRotationAnimationFactory_Access is
       This : constant IndependentVectorExplosionRotationAnimationFactory_Access := new IndependentVectorExplosionRotationAnimationFactory;
    begin
-      IndependentVectorExplosionRotationAnimationFactory_Package.Initialize (This.all, vectorInfo, basicColor, vectorAnimationFactoryInterface);
+      IndependentVectorExplosionRotationAnimationFactory_Package.Initialize (This.all, vectorInfo_Param, basicColor_Param, vectorAnimationFactoryInterface_Param);
       return This;
    end Create;
 
@@ -49,7 +52,8 @@ package body org.allbinary.animation.IndependentVectorExplosionRotationAnimation
    end init;
 
    --  throws Exception
-   function getInstanceAnimation (This : in out IndependentVectorExplosionRotationAnimationFactory; animationInterface : Animation_Access) return Animation_Access is
+   function getInstanceAnimation (This : in out IndependentVectorExplosionRotationAnimationFactory; animationInterface_Param : access Animation'Class) return Animation_Access is
+      animationInterface : Animation_Access := Animation_Access (animationInterface_Param);
       frame : Integer;
       rotationAnimationInterface : IndexedAnimation_Access;
       points : Integer_Array_Access_Array_Access_Array_Access;
@@ -63,8 +67,8 @@ package body org.allbinary.animation.IndependentVectorExplosionRotationAnimation
         return This.vectorAnimationFactoryInterface.getInstance (points, This.basicColor);
    end getInstanceAnimation;
 
-   procedure getInstanceAnimation (This : in out IndependentVectorExplosionRotationAnimationFactory; animationInterface : Animation_Access) is
-      Java_Result : constant Animation_Access := IndependentVectorExplosionRotationAnimationFactory'Class (This).getInstanceAnimation (animationInterface);
+   procedure getInstanceAnimation (This : in out IndependentVectorExplosionRotationAnimationFactory; animationInterface_Param : access Animation'Class) is
+      Java_Result : constant Animation_Access := IndependentVectorExplosionRotationAnimationFactory'Class (This).getInstanceAnimation (animationInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

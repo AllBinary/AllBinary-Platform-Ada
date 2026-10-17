@@ -76,7 +76,7 @@ package body org.allbinary.business.installer.InitializeCloud_Package is
                 stringBuffer.appendint (start);
                 stringBuffer.append (To_Unbounded_String (" - "));
                 stringBuffer.appendint (end_Id);
-                This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("initialize()"));
+                This.logUtil.putF (stringBuffer.toString, InitializeCloud_Access'(This'Unchecked_Access), To_Unbounded_String ("initialize()"));
                 nextFile := null;
                 for index in start .. (end_Id) - 1 loop
                     nextFile := AbFile_Access (fileBasicArrayList.get (index));
@@ -86,7 +86,7 @@ package body org.allbinary.business.installer.InitializeCloud_Package is
                         FileUtil_Package.getInstance.copyToCloud (nextFile, path, realPath, cloud_Case, overwriteNewer, overwriteAll);
                     end if;
                 end loop;
-                This.logUtil.putF (To_Unbounded_String ("Copied Files To Cloud"), This'Unchecked_Access, To_Unbounded_String ("initialize()"));
+                This.logUtil.putF (To_Unbounded_String ("Copied Files To Cloud"), InitializeCloud_Access'(This'Unchecked_Access), To_Unbounded_String ("initialize()"));
             end if;
             return True;
         exception
@@ -94,7 +94,7 @@ package body org.allbinary.business.installer.InitializeCloud_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (To_Unbounded_String ("Unable to copy installer files into cloud"), This'Unchecked_Access, To_Unbounded_String ("initialize()"), e);
+            This.logUtil.put (To_Unbounded_String ("Unable to copy installer files into cloud"), InitializeCloud_Access'(This'Unchecked_Access), To_Unbounded_String ("initialize()"), e);
             return False;
                 end;
         end;

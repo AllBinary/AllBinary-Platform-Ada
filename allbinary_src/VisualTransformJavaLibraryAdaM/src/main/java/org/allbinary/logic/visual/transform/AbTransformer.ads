@@ -54,11 +54,11 @@ package org.allbinary.logic.visual.transform.AbTransformer_Package is
       uriResolver : URIResolver_Access;
    end record;
 
-   procedure Initialize (This : in out AbTransformer'Class; transformInfoInterface : TransformInfoInterface_Access);
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return AbTransformer_Access;
+   procedure Initialize (This : in out AbTransformer'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return AbTransformer_Access;
    function getTransformInfoInterface (This : in out AbTransformer) return TransformInfoInterface_Access;
-   procedure setInputStream (This : in out AbTransformer; inputStream : InputStream_Access);
-   procedure setURIResolver (This : in out AbTransformer; uriResolver : URIResolver_Access);
+   procedure setInputStream (This : in out AbTransformer; inputStream_Param : access InputStream'Class);
+   procedure setURIResolver (This : in out AbTransformer; uriResolver_Param : access URIResolver'Class);
    function getInputStream (This : in out AbTransformer) return InputStream_Access;
    function getURIResolver (This : in out AbTransformer) return URIResolver_Access;
    function getStreamSource (This : in out AbTransformer) return StreamSource_Access;

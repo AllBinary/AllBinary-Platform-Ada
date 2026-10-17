@@ -55,8 +55,8 @@ package org.allbinary.logic.visual.transform.generator.TransformGeneratorUtil_Pa
    procedure Initialize (This : in out TransformGeneratorUtil'Class);
    function Create return TransformGeneratorUtil_Access;
    function getInstance return TransformGeneratorUtil_Access;
-   procedure generate (This : in out TransformGeneratorUtil; abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access; ownerTransformInfoInterface : TransformInfoInterface_Access);
-   procedure generate (This : in out TransformGeneratorUtil; abeClientInformation : AbeClientInformationInterface_Access; transformInfoDomNode : TransformInfoDomNode_Access; ownerTransformInfoInterface : TransformInfoInterface_Access);
+   procedure generate (This : in out TransformGeneratorUtil; abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; ownerTransformInfoInterface_Param : access TransformInfoInterface'Class);
+   procedure generate (This : in out TransformGeneratorUtil; abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoDomNode_Param : access TransformInfoDomNode'Class; ownerTransformInfoInterface_Param : access TransformInfoInterface'Class);
 
 end org.allbinary.logic.visual.transform.generator.TransformGeneratorUtil_Package;
 

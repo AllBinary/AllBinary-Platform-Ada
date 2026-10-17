@@ -40,7 +40,8 @@ package body org.allbinary.media.graphics.geography.map.ColorFromEventUtil_Packa
         return ColorFromEventUtil_Package.instance;
    end getInstance;
 
-   function getForegroundColor (This : in out ColorFromEventUtil; gameCanvasInterface : AllBinaryGameCanvas_Access) return BasicColor_Access is
+   function getForegroundColor (This : in out ColorFromEventUtil; gameCanvasInterface_Param : access AllBinaryGameCanvas'Class) return BasicColor_Access is
+      gameCanvasInterface : AllBinaryGameCanvas_Access := AllBinaryGameCanvas_Access (gameCanvasInterface_Param);
       color : BasicColor_Access;
       geographicMapCompositeInterface : GeographicMapCompositeInterface_Access;
       geographicMapInterface : BasicGeographicMap_Access;
@@ -56,8 +57,8 @@ package body org.allbinary.media.graphics.geography.map.ColorFromEventUtil_Packa
         return color;
    end getForegroundColor;
 
-   procedure getForegroundColor (This : in out ColorFromEventUtil; gameCanvasInterface : AllBinaryGameCanvas_Access) is
-      Java_Result : constant BasicColor_Access := ColorFromEventUtil'Class (This).getForegroundColor (gameCanvasInterface);
+   procedure getForegroundColor (This : in out ColorFromEventUtil; gameCanvasInterface_Param : access AllBinaryGameCanvas'Class) is
+      Java_Result : constant BasicColor_Access := ColorFromEventUtil'Class (This).getForegroundColor (gameCanvasInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

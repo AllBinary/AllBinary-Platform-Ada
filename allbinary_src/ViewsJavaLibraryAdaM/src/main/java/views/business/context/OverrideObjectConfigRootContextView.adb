@@ -22,19 +22,20 @@ package body views.business.context.OverrideObjectConfigRootContextView_Package 
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out OverrideObjectConfigRootContextView'Class; transformInfoInterface : TransformInfoInterface_Access) is
+   procedure Initialize (This : in out OverrideObjectConfigRootContextView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (To_Unbounded_String ("View Name: ") & transformInfoInterface.getName, This'Unchecked_Access, To_Unbounded_String ("OverrideObjectRootContextView()"));
+            This.logUtil.putF (To_Unbounded_String ("View Name: ") & transformInfoInterface.getName, OverrideObjectConfigRootContextView_Access'(This'Unchecked_Access), To_Unbounded_String ("OverrideObjectRootContextView()"));
         end if;
    end Initialize;
 
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return OverrideObjectConfigRootContextView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return OverrideObjectConfigRootContextView_Access is
       This : constant OverrideObjectConfigRootContextView_Access := new OverrideObjectConfigRootContextView;
    begin
-      OverrideObjectConfigRootContextView_Package.Initialize (This.all, transformInfoInterface);
+      OverrideObjectConfigRootContextView_Package.Initialize (This.all, transformInfoInterface_Param);
       return This;
    end Create;
 
@@ -52,7 +53,7 @@ package body views.business.context.OverrideObjectConfigRootContextView_Package 
    begin
         begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (To_Unbounded_String ("View Name: ") & This.getTransformInfoInterface.getName, This'Unchecked_Access, To_Unbounded_String ("view()"));
+                This.logUtil.putF (To_Unbounded_String ("View Name: ") & This.getTransformInfoInterface.getName, OverrideObjectConfigRootContextView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"));
             end if;
             rootTransformInfoInterface := TransformInfoInterface_Access (TransformInfoHttp_Package.Create (TransformInfoHttp_Access (This.getTransformInfoInterface)));
             stringBuffer := StringMaker_Package.Create;
@@ -68,7 +69,7 @@ package body views.business.context.OverrideObjectConfigRootContextView_Package 
             end if;
             overrideObjectConfigDocument := This.getTransformInfoInterface.getObjectConfigInterface.toXmlDoc;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (To_Unbounded_String ("Retrieved OverrideObjectConfig: ") & XmlDocumentHelper_Package.toString (overrideObjectConfigDocument), This'Unchecked_Access, To_Unbounded_String ("view()"));
+                This.logUtil.putF (To_Unbounded_String ("Retrieved OverrideObjectConfig: ") & XmlDocumentHelper_Package.toString (overrideObjectConfigDocument), OverrideObjectConfigRootContextView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"));
             end if;
             transformFactory := TransformFactory_Package.getInstance;
             rootComponentInterface := transformFactory.getInstance (This.abeClientInformation, rootTransformInfoInterface.getName, rootTransformInfoInterface);
@@ -77,7 +78,7 @@ package body views.business.context.OverrideObjectConfigRootContextView_Package 
             transformInfoObjectConfigInterface := TransformInfoObjectConfigAndManipulatorFactory_Package.getInstance.getInstance (This.abeClientInformation, componentInterface.getTransformInfoInterface, overrideObjectConfigDocument);
             componentInterface.getTransformInfoInterface.setObjectConfigInterface (transformInfoObjectConfigInterface);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (To_Unbounded_String ("Set OverrideObjectConfig: ") & componentInterface.getTransformInfoInterface.getObjectConfigInterface.toString, This'Unchecked_Access, To_Unbounded_String ("view()"));
+                This.logUtil.putF (To_Unbounded_String ("Set OverrideObjectConfig: ") & componentInterface.getTransformInfoInterface.getObjectConfigInterface.toString, OverrideObjectConfigRootContextView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"));
             end if;
             return componentInterface.view;
         exception
@@ -86,7 +87,7 @@ package body views.business.context.OverrideObjectConfigRootContextView_Package 
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("view()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, OverrideObjectConfigRootContextView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
             end if;
             Java_Throw (e);
                 end;

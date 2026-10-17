@@ -21,31 +21,34 @@ package body org.allbinary.business.installer.DynamicInitDb_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out DynamicInitDb'Class; abeClientInformation : AbeClientInformationInterface_Access) is
+   procedure Initialize (This : in out DynamicInitDb'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class) is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
    begin
       InitDb_Package.Initialize (This);
       Initialize_Fields (This);
         This.setHelper (InitDbHelperFactory_Package.getInstance (abeClientInformation));
    end Initialize;
 
-   function Create (abeClientInformation : AbeClientInformationInterface_Access) return DynamicInitDb_Access is
+   function Create (abeClientInformation_Param : access AbeClientInformationInterface'Class) return DynamicInitDb_Access is
       This : constant DynamicInitDb_Access := new DynamicInitDb;
    begin
-      DynamicInitDb_Package.Initialize (This.all, abeClientInformation);
+      DynamicInitDb_Package.Initialize (This.all, abeClientInformation_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out DynamicInitDb'Class; abeClientInformation : AbeClientInformationInterface_Access; databaseConnectionInfoInterface : DatabaseConnectionInfoInterface_Access) is
+   procedure Initialize (This : in out DynamicInitDb'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; databaseConnectionInfoInterface_Param : access DatabaseConnectionInfoInterface'Class) is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      databaseConnectionInfoInterface : DatabaseConnectionInfoInterface_Access := DatabaseConnectionInfoInterface_Access (databaseConnectionInfoInterface_Param);
    begin
       InitDb_Package.Initialize (This);
       Initialize_Fields (This);
         This.setHelper (InitDbHelperFactory_Package.getInstance (abeClientInformation, databaseConnectionInfoInterface));
    end Initialize;
 
-   function Create (abeClientInformation : AbeClientInformationInterface_Access; databaseConnectionInfoInterface : DatabaseConnectionInfoInterface_Access) return DynamicInitDb_Access is
+   function Create (abeClientInformation_Param : access AbeClientInformationInterface'Class; databaseConnectionInfoInterface_Param : access DatabaseConnectionInfoInterface'Class) return DynamicInitDb_Access is
       This : constant DynamicInitDb_Access := new DynamicInitDb;
    begin
-      DynamicInitDb_Package.Initialize (This.all, abeClientInformation, databaseConnectionInfoInterface);
+      DynamicInitDb_Package.Initialize (This.all, abeClientInformation_Param, databaseConnectionInfoInterface_Param);
       return This;
    end Create;
 

@@ -54,9 +54,9 @@ package views.business.context.modules.storefront.customizer.StoreCustomizerComp
    procedure Initialize (This : in out StoreCustomizerComponentUtil'Class);
    function Create return StoreCustomizerComponentUtil_Access;
    function getInstance return StoreCustomizerComponentUtil_Access;
-   function generate (This : in out StoreCustomizerComponentUtil; abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access) return Unbounded_String;
-   procedure generate (This : in out StoreCustomizerComponentUtil; abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access);
-   procedure generate (This : in out StoreCustomizerComponentUtil; abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access; allViewsToBeModifiedVector : BasicArrayList_Access);
+   function generate (This : in out StoreCustomizerComponentUtil; abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) return Unbounded_String;
+   procedure generate (This : in out StoreCustomizerComponentUtil; abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
+   procedure generate (This : in out StoreCustomizerComponentUtil; abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; allViewsToBeModifiedVector_Param : access BasicArrayList'Class);
 
 end views.business.context.modules.storefront.customizer.StoreCustomizerComponentUtil_Package;
 

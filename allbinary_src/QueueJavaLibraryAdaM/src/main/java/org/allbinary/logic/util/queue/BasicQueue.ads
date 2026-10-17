@@ -39,9 +39,9 @@ package org.allbinary.logic.util.queue.BasicQueue_Package is
 
    procedure Initialize (This : in out BasicQueue'Class);
    function Create return BasicQueue_Access;
-   function offer (This : in out BasicQueue; anyType : Java_Object_Access) return Boolean;
-   procedure offer (This : in out BasicQueue; anyType : Java_Object_Access);
-   procedure remove (This : in out BasicQueue; anyType : Java_Object_Access);
+   function offer (This : in out BasicQueue; anyType_Param : access Java_Object'Class) return Boolean;
+   procedure offer (This : in out BasicQueue; anyType_Param : access Java_Object'Class);
+   procedure remove (This : in out BasicQueue; anyType_Param : access Java_Object'Class);
    function removeLast (This : in out BasicQueue) return Java_Object_Access;
 
 end org.allbinary.logic.util.queue.BasicQueue_Package;

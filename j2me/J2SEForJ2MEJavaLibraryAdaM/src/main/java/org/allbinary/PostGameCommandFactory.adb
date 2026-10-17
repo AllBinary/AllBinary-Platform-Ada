@@ -38,7 +38,8 @@ package body org.allbinary.PostGameCommandFactory_Package is
         return PostGameCommandFactory_Package.instance;
    end getInstance;
 
-   procedure addCommands (This : in out PostGameCommandFactory; canvas : Canvas_Access) is
+   procedure addCommands (This : in out PostGameCommandFactory; canvas_Param : access Canvas'Class) is
+      canvas : Canvas_Access := Canvas_Access (canvas_Param);
    begin
         MultiPlayerGameFeatureFactory_Package.getInstance.addCommands (canvas);
    end addCommands;

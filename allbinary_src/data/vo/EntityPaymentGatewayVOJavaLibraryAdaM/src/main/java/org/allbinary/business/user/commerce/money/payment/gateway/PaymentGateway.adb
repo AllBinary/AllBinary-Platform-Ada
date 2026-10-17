@@ -55,20 +55,22 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentG
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out PaymentGateway'Class; hashMap : HashMap_Access) is
+   procedure Initialize (This : in out PaymentGateway'Class; hashMap_Param : access HashMap'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
    begin
       Initialize_Fields (This);
         This.getFormData (hashMap);
    end Initialize;
 
-   function Create (hashMap : HashMap_Access) return PaymentGateway_Access is
+   function Create (hashMap_Param : access HashMap'Class) return PaymentGateway_Access is
       This : constant PaymentGateway_Access := new PaymentGateway;
    begin
-      PaymentGateway_Package.Initialize (This.all, hashMap);
+      PaymentGateway_Package.Initialize (This.all, hashMap_Param);
       return This;
    end Create;
 
-   procedure getFormData (This : in out PaymentGateway; hashMap : HashMap_Access) is
+   procedure getFormData (This : in out PaymentGateway; hashMap_Param : access HashMap'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
       stringUtil : StringUtil_Access;
       empty : Unbounded_String;
    begin

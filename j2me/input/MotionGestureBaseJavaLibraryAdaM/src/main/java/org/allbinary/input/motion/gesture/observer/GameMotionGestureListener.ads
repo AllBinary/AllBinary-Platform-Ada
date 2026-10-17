@@ -60,21 +60,21 @@ package org.allbinary.input.motion.gesture.observer.GameMotionGestureListener_Pa
       signed : CompleteMotionGestureListenerInterface_Access;
    end record;
 
-   procedure Initialize (This : in out GameMotionGestureListener'Class; signed : CompleteMotionGestureListenerInterface_Access);
-   function Create (signed : CompleteMotionGestureListenerInterface_Access) return GameMotionGestureListener_Access;
-   procedure onEvent (This : in out GameMotionGestureListener; eventObject : AllBinaryEventObject_Access);
-   procedure onUpMotionGestureEvent (This : in out GameMotionGestureListener; ev : MotionGestureEvent_Access);
-   procedure onDownMotionGestureEvent (This : in out GameMotionGestureListener; ev : MotionGestureEvent_Access);
-   procedure onLeftMotionGestureEvent (This : in out GameMotionGestureListener; ev : MotionGestureEvent_Access);
-   procedure onRightMotionGestureEvent (This : in out GameMotionGestureListener; ev : MotionGestureEvent_Access);
-   procedure onDiagonalDownRightMotionGestureEvent (This : in out GameMotionGestureListener; ev : MotionGestureEvent_Access);
-   procedure onDiagonalDownLeftMotionGestureEvent (This : in out GameMotionGestureListener; ev : MotionGestureEvent_Access);
-   procedure onDiagonalUpRightMotionGestureEvent (This : in out GameMotionGestureListener; ev : MotionGestureEvent_Access);
-   procedure onDiagonalUpLeftMotionGestureEvent (This : in out GameMotionGestureListener; ev : MotionGestureEvent_Access);
-   procedure onPressedMotionGestureEvent (This : in out GameMotionGestureListener; ev : MotionGestureEvent_Access);
-   procedure released (This : in out GameMotionGestureListener; ev : MotionGestureEvent_Access);
-   procedure onScrolledMotionGestureEvent (This : in out GameMotionGestureListener; motionGestureEvent : MotionGestureEvent_Access);
-   procedure onMotionGestureEvent (This : in out GameMotionGestureListener; ev : MotionGestureEvent_Access);
+   procedure Initialize (This : in out GameMotionGestureListener'Class; signed_Param : access CompleteMotionGestureListenerInterface'Class);
+   function Create (signed_Param : access CompleteMotionGestureListenerInterface'Class) return GameMotionGestureListener_Access;
+   procedure onEvent (This : in out GameMotionGestureListener; eventObject_Param : access AllBinaryEventObject'Class);
+   procedure onUpMotionGestureEvent (This : in out GameMotionGestureListener; ev_Param : access MotionGestureEvent'Class);
+   procedure onDownMotionGestureEvent (This : in out GameMotionGestureListener; ev_Param : access MotionGestureEvent'Class);
+   procedure onLeftMotionGestureEvent (This : in out GameMotionGestureListener; ev_Param : access MotionGestureEvent'Class);
+   procedure onRightMotionGestureEvent (This : in out GameMotionGestureListener; ev_Param : access MotionGestureEvent'Class);
+   procedure onDiagonalDownRightMotionGestureEvent (This : in out GameMotionGestureListener; ev_Param : access MotionGestureEvent'Class);
+   procedure onDiagonalDownLeftMotionGestureEvent (This : in out GameMotionGestureListener; ev_Param : access MotionGestureEvent'Class);
+   procedure onDiagonalUpRightMotionGestureEvent (This : in out GameMotionGestureListener; ev_Param : access MotionGestureEvent'Class);
+   procedure onDiagonalUpLeftMotionGestureEvent (This : in out GameMotionGestureListener; ev_Param : access MotionGestureEvent'Class);
+   procedure onPressedMotionGestureEvent (This : in out GameMotionGestureListener; ev_Param : access MotionGestureEvent'Class);
+   procedure released (This : in out GameMotionGestureListener; ev_Param : access MotionGestureEvent'Class);
+   procedure onScrolledMotionGestureEvent (This : in out GameMotionGestureListener; motionGestureEvent_Param : access MotionGestureEvent'Class);
+   procedure onMotionGestureEvent (This : in out GameMotionGestureListener; ev_Param : access MotionGestureEvent'Class);
 
 end org.allbinary.input.motion.gesture.observer.GameMotionGestureListener_Package;
 

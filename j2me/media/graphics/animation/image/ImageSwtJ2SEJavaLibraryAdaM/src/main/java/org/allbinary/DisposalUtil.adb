@@ -39,7 +39,8 @@ package body org.allbinary.DisposalUtil_Package is
         return DisposalUtil_Package.instance;
    end getInstance;
 
-   procedure disposeImage (This : in out DisposalUtil; image : Image_Access) is
+   procedure disposeImage (This : in out DisposalUtil; image_Param : access Image'Class) is
+      image : Image_Access := Image_Access (image_Param);
       mutableImage : SwtMutableImage_Access;
    begin
         if (image) = (null) then
@@ -53,7 +54,8 @@ package body org.allbinary.DisposalUtil_Package is
         end if;
    end disposeImage;
 
-   procedure disposeResource (This : in out DisposalUtil; resource : Resource_Access) is
+   procedure disposeResource (This : in out DisposalUtil; resource_Param : access Resource'Class) is
+      resource : Resource_Access := Resource_Access (resource_Param);
    begin
         if not (resource.isDisposed) then
             Ada.Text_IO.Put_Line (Java_Image (This.commonStrings.CLOSE));

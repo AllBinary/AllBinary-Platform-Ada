@@ -54,9 +54,9 @@ package org.allbinary.image.AnimationFactoryImageScaleUtil_Package is
    procedure Initialize (This : in out AnimationFactoryImageScaleUtil'Class);
    function Create return AnimationFactoryImageScaleUtil_Access;
    function getInstance return AnimationFactoryImageScaleUtil_Access;
-   function createImage (This : in out AnimationFactoryImageScaleUtil; image : Image_Access; width : Integer; height : Integer; scaleWidth : Integer; scaleHeight : Integer) return Image_Access;
-   procedure createImage (This : in out AnimationFactoryImageScaleUtil; image : Image_Access; width : Integer; height : Integer; scaleWidth : Integer; scaleHeight : Integer);
-   procedure processAdjust (This : in out AnimationFactoryImageScaleUtil; baseImageAnimationFactory : BaseImageAnimationFactory_Access);
+   function createImage (This : in out AnimationFactoryImageScaleUtil; image_Param : access Image'Class; width : Integer; height : Integer; scaleWidth : Integer; scaleHeight : Integer) return Image_Access;
+   procedure createImage (This : in out AnimationFactoryImageScaleUtil; image_Param : access Image'Class; width : Integer; height : Integer; scaleWidth : Integer; scaleHeight : Integer);
+   procedure processAdjust (This : in out AnimationFactoryImageScaleUtil; baseImageAnimationFactory_Param : access BaseImageAnimationFactory'Class);
 
 end org.allbinary.image.AnimationFactoryImageScaleUtil_Package;
 

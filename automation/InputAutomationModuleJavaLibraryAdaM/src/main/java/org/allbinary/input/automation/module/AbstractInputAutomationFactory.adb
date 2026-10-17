@@ -24,7 +24,9 @@ package body org.allbinary.input.automation.module.AbstractInputAutomationFactor
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AbstractInputAutomationFactory'Class; name : Unbounded_String; jPanel : JPanel_Access; helpSet : HelpSet_Access) is
+   procedure Initialize (This : in out AbstractInputAutomationFactory'Class; name : Unbounded_String; jPanel_Param : access JPanel'Class; helpSet_Param : access HelpSet'Class) is
+      jPanel : JPanel_Access := JPanel_Access (jPanel_Param);
+      helpSet : HelpSet_Access := HelpSet_Access (helpSet_Param);
    begin
       InputAutomationModuleFactoryInterface_Package.Initialize (This);
       Initialize_Fields (This);
@@ -33,14 +35,15 @@ package body org.allbinary.input.automation.module.AbstractInputAutomationFactor
         This.helpSet := helpSet;
    end Initialize;
 
-   function Create (name : Unbounded_String; jPanel : JPanel_Access; helpSet : HelpSet_Access) return AbstractInputAutomationFactory_Access is
+   function Create (name : Unbounded_String; jPanel_Param : access JPanel'Class; helpSet_Param : access HelpSet'Class) return AbstractInputAutomationFactory_Access is
       This : constant AbstractInputAutomationFactory_Access := new AbstractInputAutomationFactory;
    begin
-      AbstractInputAutomationFactory_Package.Initialize (This.all, name, jPanel, helpSet);
+      AbstractInputAutomationFactory_Package.Initialize (This.all, name, jPanel_Param, helpSet_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out AbstractInputAutomationFactory'Class; name : Unbounded_String; jPanel : JPanel_Access) is
+   procedure Initialize (This : in out AbstractInputAutomationFactory'Class; name : Unbounded_String; jPanel_Param : access JPanel'Class) is
+      jPanel : JPanel_Access := JPanel_Access (jPanel_Param);
       url : URL_Access;
    begin
       InputAutomationModuleFactoryInterface_Package.Initialize (This);
@@ -51,10 +54,10 @@ package body org.allbinary.input.automation.module.AbstractInputAutomationFactor
         This.helpSet := JavaHelpUtil_Package.getInstance.getHelpSet (url);
    end Initialize;
 
-   function Create (name : Unbounded_String; jPanel : JPanel_Access) return AbstractInputAutomationFactory_Access is
+   function Create (name : Unbounded_String; jPanel_Param : access JPanel'Class) return AbstractInputAutomationFactory_Access is
       This : constant AbstractInputAutomationFactory_Access := new AbstractInputAutomationFactory;
    begin
-      AbstractInputAutomationFactory_Package.Initialize (This.all, name, jPanel);
+      AbstractInputAutomationFactory_Package.Initialize (This.all, name, jPanel_Param);
       return This;
    end Create;
 

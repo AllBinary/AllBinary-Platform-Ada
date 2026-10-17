@@ -64,10 +64,10 @@ package org.allbinary.game.paint.OwnershipPaintable_Package is
    procedure Initialize (This : in out OwnershipPaintable'Class);
    function Create return OwnershipPaintable_Access;
    function getInstance return OwnershipPaintable_Access;
-   procedure updateMeasurement (This : in out OwnershipPaintable; graphics : Graphics_Access);
-   procedure setBasicColorP (This : in out OwnershipPaintable; basicColor : BasicColor_Access);
+   procedure updateMeasurement (This : in out OwnershipPaintable; graphics_Param : access Graphics'Class);
+   procedure setBasicColorP (This : in out OwnershipPaintable; basicColor_Param : access BasicColor'Class);
    function getBasicColorP (This : in out OwnershipPaintable) return BasicColor_Access;
-   procedure paint (This : in out OwnershipPaintable; graphics : Graphics_Access);
+   procedure paint (This : in out OwnershipPaintable; graphics_Param : access Graphics'Class);
 
 end org.allbinary.game.paint.OwnershipPaintable_Package;
 

@@ -25,7 +25,9 @@ package body org.allbinary.logic.system.security.crypt.jcehelper.SecretComposite
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out SecretComposite'Class; secretKey : SecretKey_Access; cipher : Cipher_Access; key : Short_Short_Integer_Array_Access) is
+   procedure Initialize (This : in out SecretComposite'Class; secretKey_Param : access SecretKey'Class; cipher_Param : access Cipher'Class; key : Short_Short_Integer_Array_Access) is
+      secretKey : SecretKey_Access := SecretKey_Access (secretKey_Param);
+      cipher : Cipher_Access := Cipher_Access (cipher_Param);
    begin
       BaseSecretComposite_Package.Initialize (This);
       Initialize_Fields (This);
@@ -34,10 +36,10 @@ package body org.allbinary.logic.system.security.crypt.jcehelper.SecretComposite
         This.key := key;
    end Initialize;
 
-   function Create (secretKey : SecretKey_Access; cipher : Cipher_Access; key : Short_Short_Integer_Array_Access) return SecretComposite_Access is
+   function Create (secretKey_Param : access SecretKey'Class; cipher_Param : access Cipher'Class; key : Short_Short_Integer_Array_Access) return SecretComposite_Access is
       This : constant SecretComposite_Access := new SecretComposite;
    begin
-      SecretComposite_Package.Initialize (This.all, secretKey, cipher, key);
+      SecretComposite_Package.Initialize (This.all, secretKey_Param, cipher_Param, key);
       return This;
    end Create;
 

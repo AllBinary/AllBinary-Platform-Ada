@@ -60,7 +60,9 @@ package body admin.taghelpers.UpdateOrderHelper_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out UpdateOrderHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access) is
+   procedure Initialize (This : in out UpdateOrderHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
    begin
       TagHelper_Package.Initialize (This);
       Initialize_Fields (This);
@@ -68,10 +70,10 @@ package body admin.taghelpers.UpdateOrderHelper_Package is
         This.getFormData;
    end Initialize;
 
-   function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return UpdateOrderHelper_Access is
+   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return UpdateOrderHelper_Access is
       This : constant UpdateOrderHelper_Access := new UpdateOrderHelper;
    begin
-      UpdateOrderHelper_Package.Initialize (This.all, hashMap, pageContext);
+      UpdateOrderHelper_Package.Initialize (This.all, hashMap_Param, pageContext_Param);
       return This;
    end Create;
 
@@ -164,7 +166,7 @@ package body admin.taghelpers.UpdateOrderHelper_Package is
             whereHashMap.put (OrderData_Package.ID, This.orderId);
             OrderHistoryEntityFactory_Package.getInstance.update (whereHashMap, orderHashMap);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, To_Unbounded_String ("update()"));
+                This.logUtil.putF (success, UpdateOrderHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("update()"));
             end if;
             return success;
         exception
@@ -174,7 +176,7 @@ package body admin.taghelpers.UpdateOrderHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to update order table");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("update()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, UpdateOrderHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("update()"), e);
             end if;
             return error;
                 end;

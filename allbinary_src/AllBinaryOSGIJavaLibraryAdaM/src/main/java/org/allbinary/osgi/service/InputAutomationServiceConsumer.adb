@@ -27,7 +27,9 @@ package body org.allbinary.osgi.service.InputAutomationServiceConsumer_Package i
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out InputAutomationServiceConsumer'Class; registryName : Unbounded_String; bundleContext : BundleContext_Access; osgiServiceVisitorInterface : OSGIServiceVisitorInterface_Access) is
+   procedure Initialize (This : in out InputAutomationServiceConsumer'Class; registryName : Unbounded_String; bundleContext_Param : access BundleContext'Class; osgiServiceVisitorInterface_Param : access OSGIServiceVisitorInterface'Class) is
+      bundleContext : BundleContext_Access := BundleContext_Access (bundleContext_Param);
+      osgiServiceVisitorInterface : OSGIServiceVisitorInterface_Access := OSGIServiceVisitorInterface_Access (osgiServiceVisitorInterface_Param);
    begin
       Initialize_Fields (This);
         This.setRegistryName (registryName);
@@ -35,10 +37,10 @@ package body org.allbinary.osgi.service.InputAutomationServiceConsumer_Package i
         This.setOsgiServiceVisitorInterface (osgiServiceVisitorInterface);
    end Initialize;
 
-   function Create (registryName : Unbounded_String; bundleContext : BundleContext_Access; osgiServiceVisitorInterface : OSGIServiceVisitorInterface_Access) return InputAutomationServiceConsumer_Access is
+   function Create (registryName : Unbounded_String; bundleContext_Param : access BundleContext'Class; osgiServiceVisitorInterface_Param : access OSGIServiceVisitorInterface'Class) return InputAutomationServiceConsumer_Access is
       This : constant InputAutomationServiceConsumer_Access := new InputAutomationServiceConsumer;
    begin
-      InputAutomationServiceConsumer_Package.Initialize (This.all, registryName, bundleContext, osgiServiceVisitorInterface);
+      InputAutomationServiceConsumer_Package.Initialize (This.all, registryName, bundleContext_Param, osgiServiceVisitorInterface_Param);
       return This;
    end Create;
 
@@ -49,9 +51,9 @@ package body org.allbinary.osgi.service.InputAutomationServiceConsumer_Package i
       osgiServiceInterface : OSGIServiceInterface_Access;
       index : Integer;
    begin
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.PROCESS);
+        This.logUtil.putF (This.commonStrings.START, InputAutomationServiceConsumer_Access'(This'Unchecked_Access), This.commonStrings.PROCESS);
         vector := This.osgiServiceUtil.getServicesObjectVector (This.getBundleContext, This.getServiceReferences);
-        This.logUtil.putF (To_Unbounded_String ("Processing ") & Java_Image (vector.size) & To_Unbounded_String (" Services"), This'Unchecked_Access, This.commonStrings.PROCESS);
+        This.logUtil.putF (To_Unbounded_String ("Processing ") & Java_Image (vector.size) & To_Unbounded_String (" Services"), InputAutomationServiceConsumer_Access'(This'Unchecked_Access), This.commonStrings.PROCESS);
         size := vector.size;
         osgiServiceInterface := null;
         for index in 0 .. (size) - 1 loop
@@ -73,7 +75,8 @@ package body org.allbinary.osgi.service.InputAutomationServiceConsumer_Package i
         return This.bundleContext;
    end getBundleContext;
 
-   procedure setBundleContext (This : in out InputAutomationServiceConsumer; aBundleContext : BundleContext_Access) is
+   procedure setBundleContext (This : in out InputAutomationServiceConsumer; aBundleContext_Param : access BundleContext'Class) is
+      aBundleContext : BundleContext_Access := BundleContext_Access (aBundleContext_Param);
    begin
         This.bundleContext := aBundleContext;
    end setBundleContext;
@@ -93,7 +96,8 @@ package body org.allbinary.osgi.service.InputAutomationServiceConsumer_Package i
         return This.osgiServiceVisitorInterface;
    end getOsgiServiceVisitorInterface;
 
-   procedure setOsgiServiceVisitorInterface (This : in out InputAutomationServiceConsumer; osgiServiceVisitorInterface : OSGIServiceVisitorInterface_Access) is
+   procedure setOsgiServiceVisitorInterface (This : in out InputAutomationServiceConsumer; osgiServiceVisitorInterface_Param : access OSGIServiceVisitorInterface'Class) is
+      osgiServiceVisitorInterface : OSGIServiceVisitorInterface_Access := OSGIServiceVisitorInterface_Access (osgiServiceVisitorInterface_Param);
    begin
         This.osgiServiceVisitorInterface := osgiServiceVisitorInterface;
    end setOsgiServiceVisitorInterface;

@@ -64,10 +64,10 @@ package bundle.input.automation.InputAutomationBundleActivator_Package is
    procedure Initialize (This : in out InputAutomationBundleActivator'Class);
    function Create return InputAutomationBundleActivator_Access;
    function getBundleContext return BundleContext_Access;
-   procedure start (This : in out InputAutomationBundleActivator; bundleContext : BundleContext_Access);
+   procedure start (This : in out InputAutomationBundleActivator; bundleContext_Param : access BundleContext'Class);
    procedure registerAsService (This : in out InputAutomationBundleActivator);
    procedure useServices (This : in out InputAutomationBundleActivator);
-   procedure stop (This : in out InputAutomationBundleActivator; context : BundleContext_Access);
+   procedure stop (This : in out InputAutomationBundleActivator; context_Param : access BundleContext'Class);
 
 end bundle.input.automation.InputAutomationBundleActivator_Package;
 

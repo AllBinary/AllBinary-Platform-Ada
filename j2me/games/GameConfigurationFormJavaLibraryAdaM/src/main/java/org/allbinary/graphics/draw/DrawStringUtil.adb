@@ -40,7 +40,8 @@ package body org.allbinary.graphics.draw.DrawStringUtil_Package is
         return DrawStringUtil_Package.instance;
    end getInstance;
 
-   procedure drawCenterString (This : in out DrawStringUtil; graphics : Graphics_Access; string_Id : Unbounded_String; offset : Integer; length : Integer; x : Integer; y : Integer) is
+   procedure drawCenterString (This : in out DrawStringUtil; graphics_Param : access Graphics'Class; string_Id : Unbounded_String; offset : Integer; length : Integer; x : Integer; y : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       width : Integer;
    begin
         width := (Java_Shift_Right_Arithmetic (graphics.getFont.substringWidth (string_Id, offset, length), 1));
@@ -51,12 +52,13 @@ package body org.allbinary.graphics.draw.DrawStringUtil_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            PreLogUtil_Package.put (StringMaker_Package.Create.append (To_Unbounded_String ("Exception: stringLength: ")).appendint (Length (string_Id)).append (To_Unbounded_String (" offset: ")).appendint (offset).append (To_Unbounded_String (" currentLength: ")).appendint (length).toString, This'Unchecked_Access, To_Unbounded_String ("drawCenterString"));
+            PreLogUtil_Package.put (StringMaker_Package.Create.append (To_Unbounded_String ("Exception: stringLength: ")).appendint (Length (string_Id)).append (To_Unbounded_String (" offset: ")).appendint (offset).append (To_Unbounded_String (" currentLength: ")).appendint (length).toString, DrawStringUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("drawCenterString"));
                 end;
         end;
    end drawCenterString;
 
-   procedure drawCenterStrings (This : in out DrawStringUtil; graphics : Graphics_Access; stringArray : Unbounded_String_Array_Access; maxWidth : Integer; charHeight : Integer; x : Integer; y : Integer) is
+   procedure drawCenterStrings (This : in out DrawStringUtil; graphics_Param : access Graphics'Class; stringArray : Unbounded_String_Array_Access; maxWidth : Integer; charHeight : Integer; x : Integer; y : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       extraLines : Integer;
       string_Id : Unbounded_String;
       width : Integer;

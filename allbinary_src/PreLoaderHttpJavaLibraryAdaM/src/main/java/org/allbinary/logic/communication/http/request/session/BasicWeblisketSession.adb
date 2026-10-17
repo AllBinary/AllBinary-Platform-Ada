@@ -23,7 +23,8 @@ package body org.allbinary.logic.communication.http.request.session.BasicWeblisk
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BasicWeblisketSession'Class; pageContext : PageContext_Access) is
+   procedure Initialize (This : in out BasicWeblisketSession'Class; pageContext_Param : access PageContext'Class) is
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
       request : HttpServletRequest_Access;
    begin
       Initialize_Fields (This);
@@ -32,14 +33,15 @@ package body org.allbinary.logic.communication.http.request.session.BasicWeblisk
         This.session := request.getSession (True);
    end Initialize;
 
-   function Create (pageContext : PageContext_Access) return BasicWeblisketSession_Access is
+   function Create (pageContext_Param : access PageContext'Class) return BasicWeblisketSession_Access is
       This : constant BasicWeblisketSession_Access := new BasicWeblisketSession;
    begin
-      BasicWeblisketSession_Package.Initialize (This.all, pageContext);
+      BasicWeblisketSession_Package.Initialize (This.all, pageContext_Param);
       return This;
    end Create;
 
-   procedure setRole (This : in out BasicWeblisketSession; aRole : BasicUserRole_Access) is
+   procedure setRole (This : in out BasicWeblisketSession; aRole_Param : access BasicUserRole'Class) is
+      aRole : BasicUserRole_Access := BasicUserRole_Access (aRole_Param);
    begin
         This.session.setAttribute (BasicUserRoleData_Package.NAME.toString, aRole);
    end setRole;

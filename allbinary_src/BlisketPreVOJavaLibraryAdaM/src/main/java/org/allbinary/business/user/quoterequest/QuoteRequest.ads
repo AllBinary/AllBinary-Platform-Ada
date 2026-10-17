@@ -69,10 +69,10 @@ package org.allbinary.business.user.quoterequest.QuoteRequest_Package is
       comments : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out QuoteRequest'Class; userName : Unbounded_String; request : HttpServletRequest_Access);
-   function Create (userName : Unbounded_String; request : HttpServletRequest_Access) return QuoteRequest_Access;
-   procedure Initialize (This : in out QuoteRequest'Class; hashMap : HashMap_Access);
-   function Create (hashMap : HashMap_Access) return QuoteRequest_Access;
+   procedure Initialize (This : in out QuoteRequest'Class; userName : Unbounded_String; request_Param : access HttpServletRequest'Class);
+   function Create (userName : Unbounded_String; request_Param : access HttpServletRequest'Class) return QuoteRequest_Access;
+   procedure Initialize (This : in out QuoteRequest'Class; hashMap_Param : access HashMap'Class);
+   function Create (hashMap_Param : access HashMap'Class) return QuoteRequest_Access;
    function isValid (This : in out QuoteRequest) return Boolean;
    function validationInfo (This : in out QuoteRequest) return Unbounded_String;
    function toVector (This : in out QuoteRequest) return BasicArrayList_Access;

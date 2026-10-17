@@ -57,24 +57,27 @@ package body org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package i
       return This;
    end Create;
 
-   procedure setMyCanvas (This : in out CurrentDisplayableFactory; displayable : MyCanvas_Access) is
+   procedure setMyCanvas (This : in out CurrentDisplayableFactory; displayable_Param : access MyCanvas'Class) is
+      displayable : MyCanvas_Access := MyCanvas_Access (displayable_Param);
    begin
         if (This.displayable.all in MyCanvas_Package.MyCanvas'Class) then
             if displayable.hasChild (MyCanvas_Access (This.displayable)) then
-                PreLogUtil_Package.put (StringMaker_Package.Create.append (To_Unbounded_String ("Child Displayable is already set for: ")).append (This.stringUtil.toString (displayable)).toString, This'Unchecked_Access, This.SET_DISPLAYABLE);
+                PreLogUtil_Package.put (StringMaker_Package.Create.append (To_Unbounded_String ("Child Displayable is already set for: ")).append (This.stringUtil.toString (displayable)).toString, CurrentDisplayableFactory_Access'(This'Unchecked_Access), This.SET_DISPLAYABLE);
                 return;
             end if;
         end if;
         This.setDisplayable (displayable);
    end setMyCanvas;
 
-   procedure setDisplayable (This : in out CurrentDisplayableFactory; displayable : Displayable_Access) is
+   procedure setDisplayable (This : in out CurrentDisplayableFactory; displayable_Param : access Displayable'Class) is
+      displayable : Displayable_Access := Displayable_Access (displayable_Param);
    begin
         This.displayable := displayable;
         This.setOpenGlReadydisplayable (displayable);
    end setDisplayable;
 
-   procedure setOpenGlReadydisplayable (This : in out CurrentDisplayableFactory; openGlReadydisplayable : Displayable_Access) is
+   procedure setOpenGlReadydisplayable (This : in out CurrentDisplayableFactory; openGlReadydisplayable_Param : access Displayable'Class) is
+      openGlReadydisplayable : Displayable_Access := Displayable_Access (openGlReadydisplayable_Param);
    begin
         This.openGlReadydisplayable := openGlReadydisplayable;
         This.update;
@@ -85,20 +88,21 @@ package body org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package i
         return This.openGlReadydisplayable;
    end getOpenGlReadydisplayable;
 
-   procedure setRunnable (This : in out CurrentDisplayableFactory; runnable_Case : GameRunnable_Access) is
+   procedure setRunnable (This : in out CurrentDisplayableFactory; runnable_Case_Param : access GameRunnable'Class) is
+      runnable_Case : GameRunnable_Access := GameRunnable_Access (runnable_Case_Param);
    begin
-        PreLogUtil_Package.put (StringMaker_Package.Create.append (This.RUNNABLE).append (This.stringUtil.toString (runnable_Case)).toString, This'Unchecked_Access, This.SET_RUNNABLE);
+        PreLogUtil_Package.put (StringMaker_Package.Create.append (This.RUNNABLE).append (This.stringUtil.toString (runnable_Case)).toString, CurrentDisplayableFactory_Access'(This'Unchecked_Access), This.SET_RUNNABLE);
         This.runnable_Case := runnable_Case;
         if (This.usedRunnable) /= (This.runnable_Case) then
             This.update;
         else
-            PreLogUtil_Package.put (StringMaker_Package.Create.append (This.RUNNABLE_WAS_ALREADY_IN_USE).append (This.stringUtil.toString (runnable_Case)).toString, This'Unchecked_Access, This.SET_RUNNABLE);
+            PreLogUtil_Package.put (StringMaker_Package.Create.append (This.RUNNABLE_WAS_ALREADY_IN_USE).append (This.stringUtil.toString (runnable_Case)).toString, CurrentDisplayableFactory_Access'(This'Unchecked_Access), This.SET_RUNNABLE);
         end if;
    end setRunnable;
 
    procedure clearRunnable (This : in out CurrentDisplayableFactory) is
    begin
-        PreLogUtil_Package.put (StringMaker_Package.Create.append (This.RUNNABLE).append (This.stringUtil.toString (NullRunnable_Package.getInstance)).toString, This'Unchecked_Access, This.CLEAR_RUNNABLE);
+        PreLogUtil_Package.put (StringMaker_Package.Create.append (This.RUNNABLE).append (This.stringUtil.toString (NullRunnable_Package.getInstance)).toString, CurrentDisplayableFactory_Access'(This'Unchecked_Access), This.CLEAR_RUNNABLE);
         This.setUsedRunnable (NullWaitGameRunnable_Package.getInstance);
    end clearRunnable;
 
@@ -113,16 +117,16 @@ package body org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package i
             stringMaker := StringMaker_Package.Create;
             stringMaker.append (This.stringUtil.toString (This.openGlReadydisplayable));
             if (SWTUtil_Package.isSWT) and then (not (features.isDefault (OpenGLFeatureFactory_Package.getInstance.OPENGL))) then
-                PreLogUtil_Package.put (stringMaker.append (commonSeps.SPACE).append (SWTUtil_Package.SWT).append (commonSeps.SPACE).append (This.RUNNABLE).append (This.stringUtil.toString (NullRunnable_Package.getInstance)).toString, This'Unchecked_Access, This.commonStrings.UPDATE);
+                PreLogUtil_Package.put (stringMaker.append (commonSeps.SPACE).append (SWTUtil_Package.SWT).append (commonSeps.SPACE).append (This.RUNNABLE).append (This.stringUtil.toString (NullRunnable_Package.getInstance)).toString, CurrentDisplayableFactory_Access'(This'Unchecked_Access), This.commonStrings.UPDATE);
                 This.setUsedRunnable (NullWaitGameRunnable_Package.getInstance);
             elsif J2MEUtil_Package.isHTML then
-                PreLogUtil_Package.put (stringMaker.append (commonSeps.SPACE).append (GraphicsStrings_Package.getInstance.HTML).append (commonSeps.SPACE).append (This.RUNNABLE).append (This.stringUtil.toString (This.runnable_Case)).toString, This'Unchecked_Access, This.commonStrings.UPDATE);
+                PreLogUtil_Package.put (stringMaker.append (commonSeps.SPACE).append (GraphicsStrings_Package.getInstance.HTML).append (commonSeps.SPACE).append (This.RUNNABLE).append (This.stringUtil.toString (This.runnable_Case)).toString, CurrentDisplayableFactory_Access'(This'Unchecked_Access), This.commonStrings.UPDATE);
                 This.setUsedRunnable (This.runnable_Case);
             elsif (((This.openGlReadydisplayable.all in DemoCanvas_Package.DemoCanvas'Class)) or else ((This.openGlReadydisplayable.all in AllBinaryGameCanvas_Package.AllBinaryGameCanvas'Class))) or else (features.isDefault (OpenGLFeatureFactory_Package.getInstance.OPENGL)) then
-                PreLogUtil_Package.put (stringMaker.append (commonSeps.SPACE).append (OpenGLFeatureFactory_Package.getInstance.OPENGL.toString).append (commonSeps.SPACE).append (This.RUNNABLE).append (This.stringUtil.toString (This.runnable_Case)).toString, This'Unchecked_Access, This.commonStrings.UPDATE);
+                PreLogUtil_Package.put (stringMaker.append (commonSeps.SPACE).append (OpenGLFeatureFactory_Package.getInstance.OPENGL.toString).append (commonSeps.SPACE).append (This.RUNNABLE).append (This.stringUtil.toString (This.runnable_Case)).toString, CurrentDisplayableFactory_Access'(This'Unchecked_Access), This.commonStrings.UPDATE);
                 This.setUsedRunnable (This.runnable_Case);
             else
-                PreLogUtil_Package.put (stringMaker.append (This.RUNNABLE).append (This.stringUtil.toString (NullRunnable_Package.getInstance)).toString, This'Unchecked_Access, This.commonStrings.UPDATE);
+                PreLogUtil_Package.put (stringMaker.append (This.RUNNABLE).append (This.stringUtil.toString (NullRunnable_Package.getInstance)).toString, CurrentDisplayableFactory_Access'(This'Unchecked_Access), This.commonStrings.UPDATE);
                 This.setUsedRunnable (NullWaitGameRunnable_Package.getInstance);
             end if;
         end;
@@ -138,9 +142,10 @@ package body org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package i
         return This.usedRunnable;
    end getUsedRunnable;
 
-   procedure setUsedRunnable (This : in out CurrentDisplayableFactory; usedRunnable : GameRunnable_Access) is
+   procedure setUsedRunnable (This : in out CurrentDisplayableFactory; usedRunnable_Param : access GameRunnable'Class) is
+      usedRunnable : GameRunnable_Access := GameRunnable_Access (usedRunnable_Param);
    begin
-        PreLogUtil_Package.put (StringMaker_Package.Create.append (This.RUNNABLE).append (This.stringUtil.toString (This.runnable_Case)).append (CommonSeps_Package.getInstance.COLON_SEP).append (This.stringUtil.toString (usedRunnable)).toString, This'Unchecked_Access, This.SET_USED_RUNNABLE);
+        PreLogUtil_Package.put (StringMaker_Package.Create.append (This.RUNNABLE).append (This.stringUtil.toString (This.runnable_Case)).append (CommonSeps_Package.getInstance.COLON_SEP).append (This.stringUtil.toString (usedRunnable)).toString, CurrentDisplayableFactory_Access'(This'Unchecked_Access), This.SET_USED_RUNNABLE);
         This.usedRunnable := usedRunnable;
    end setUsedRunnable;
 

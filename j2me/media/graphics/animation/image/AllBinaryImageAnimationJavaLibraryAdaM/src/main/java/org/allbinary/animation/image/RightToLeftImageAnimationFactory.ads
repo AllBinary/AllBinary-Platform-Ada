@@ -41,8 +41,8 @@ package org.allbinary.animation.image.RightToLeftImageAnimationFactory_Package i
 
    type RightToLeftImageAnimationFactory is new BaseImageAnimationFactory with null record;
 
-   procedure Initialize (This : in out RightToLeftImageAnimationFactory'Class; image : Image_Access; dx : Integer; dy : Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access);
-   function Create (image : Image_Access; dx : Integer; dy : Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access) return RightToLeftImageAnimationFactory_Access;
+   procedure Initialize (This : in out RightToLeftImageAnimationFactory'Class; image_Param : access Image'Class; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class);
+   function Create (image_Param : access Image'Class; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return RightToLeftImageAnimationFactory_Access;
    function getInstance (This : in out RightToLeftImageAnimationFactory; instanceId : Integer) return Animation_Access;
    procedure getInstance (This : in out RightToLeftImageAnimationFactory; instanceId : Integer);
 

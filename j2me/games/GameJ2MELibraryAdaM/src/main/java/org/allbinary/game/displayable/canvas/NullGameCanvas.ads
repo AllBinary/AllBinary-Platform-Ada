@@ -52,20 +52,20 @@ package org.allbinary.game.displayable.canvas.NullGameCanvas_Package is
    NO_GAME : Unbounded_String;
    TYPE_Id : Integer;
 
-   procedure Initialize (This : in out NullGameCanvas'Class; gameLayerManager : AllBinaryGameLayerManager_Access);
-   function Create (gameLayerManager : AllBinaryGameLayerManager_Access) return NullGameCanvas_Access;
+   procedure Initialize (This : in out NullGameCanvas'Class; gameLayerManager_Param : access AllBinaryGameLayerManager'Class);
+   function Create (gameLayerManager_Param : access AllBinaryGameLayerManager'Class) return NullGameCanvas_Access;
    function createNull return NullGameCanvas_Access;
    function getInstance return NullGameCanvas_Access;
-   function createCanvas (gameLayerManager : AllBinaryGameLayerManager_Access) return NullGameCanvas_Access;
-   procedure createCanvas (gameLayerManager : AllBinaryGameLayerManager_Access);
+   function createCanvas (gameLayerManager_Param : access AllBinaryGameLayerManager'Class) return NullGameCanvas_Access;
+   procedure createCanvas (gameLayerManager_Param : access AllBinaryGameLayerManager'Class);
    function isGameOver (This : in out NullGameCanvas) return Boolean;
    procedure setRunning (This : in out NullGameCanvas; running : Boolean);
    function isRunning (This : in out NullGameCanvas) return Boolean;
    procedure pause (This : in out NullGameCanvas);
    procedure unPause (This : in out NullGameCanvas);
-   procedure initCommands (This : in out NullGameCanvas; cmdListener : CommandListener_Access);
+   procedure initCommands (This : in out NullGameCanvas; cmdListener_Param : access CommandListener'Class);
    procedure buildGameInit (This : in out NullGameCanvas; isProgress : Boolean);
-   procedure draw (This : in out NullGameCanvas; graphics : Graphics_Access);
+   procedure draw (This : in out NullGameCanvas; graphics_Param : access Graphics'Class);
    procedure run (This : in out NullGameCanvas);
    function getType (This : in out NullGameCanvas) return Integer;
 

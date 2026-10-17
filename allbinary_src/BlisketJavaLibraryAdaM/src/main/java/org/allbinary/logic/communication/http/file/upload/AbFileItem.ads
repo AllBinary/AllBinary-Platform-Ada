@@ -71,8 +71,8 @@ package org.allbinary.logic.communication.http.file.upload.AbFileItem_Package is
    function getString (This : in out AbFileItem; encoding : Unbounded_String) return Unbounded_String;
    procedure getString (This : in out AbFileItem; encoding : Unbounded_String);
    function getString (This : in out AbFileItem) return Unbounded_String;
-   procedure write (This : in out AbFileItem; file : File_Access);
-   procedure write (This : in out AbFileItem; file : AbFile_Access);
+   procedure write (This : in out AbFileItem; file_Param : access File'Class);
+   procedure write (This : in out AbFileItem; file_Param : access AbFile'Class);
    procedure delete (This : in out AbFileItem);
    function getFieldName (This : in out AbFileItem) return Unbounded_String;
    procedure setFieldName (This : in out AbFileItem; name : Unbounded_String);
@@ -80,7 +80,7 @@ package org.allbinary.logic.communication.http.file.upload.AbFileItem_Package is
    procedure setFormField (This : in out AbFileItem; state : Boolean);
    function getOutputStream (This : in out AbFileItem) return OutputStream_Access;
    function getHeaders (This : in out AbFileItem) return FileItemHeaders_Access;
-   procedure setHeaders (This : in out AbFileItem; fih : FileItemHeaders_Access);
+   procedure setHeaders (This : in out AbFileItem; fih_Param : access FileItemHeaders'Class);
 
 end org.allbinary.logic.communication.http.file.upload.AbFileItem_Package;
 

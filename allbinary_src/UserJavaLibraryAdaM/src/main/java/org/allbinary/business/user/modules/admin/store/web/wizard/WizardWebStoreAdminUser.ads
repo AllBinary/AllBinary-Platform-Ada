@@ -38,10 +38,10 @@ package org.allbinary.business.user.modules.admin.store.web.wizard.WizardWebStor
 
    procedure Initialize (This : in out WizardWebStoreAdminUser'Class);
    function Create return WizardWebStoreAdminUser_Access;
-   procedure Initialize (This : in out WizardWebStoreAdminUser'Class; userHashMap : HashMap_Access);
-   function Create (userHashMap : HashMap_Access) return WizardWebStoreAdminUser_Access;
-   procedure validateSession (This : in out WizardWebStoreAdminUser; weblisketSession : WeblisketSessionInterface_Access);
-   procedure updateSession (This : in out WizardWebStoreAdminUser; weblisketSession : WeblisketSessionInterface_Access);
+   procedure Initialize (This : in out WizardWebStoreAdminUser'Class; userHashMap_Param : access HashMap'Class);
+   function Create (userHashMap_Param : access HashMap'Class) return WizardWebStoreAdminUser_Access;
+   procedure validateSession (This : in out WizardWebStoreAdminUser; weblisketSession_Param : access WeblisketSessionInterface'Class);
+   procedure updateSession (This : in out WizardWebStoreAdminUser; weblisketSession_Param : access WeblisketSessionInterface'Class);
 
 end org.allbinary.business.user.modules.admin.store.web.wizard.WizardWebStoreAdminUser_Package;
 

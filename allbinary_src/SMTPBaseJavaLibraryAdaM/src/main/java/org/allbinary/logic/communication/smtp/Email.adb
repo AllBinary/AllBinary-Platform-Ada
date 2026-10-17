@@ -83,7 +83,7 @@ package body org.allbinary.logic.communication.smtp.Email_Package is
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGINGERROR) then
                 commonStrings := CommonStrings_Package.getInstance;
-                This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("emailConstructor"), e);
+                This.logUtil.put (commonStrings.EXCEPTION_Id, Email_Access'(This'Unchecked_Access), To_Unbounded_String ("emailConstructor"), e);
             end if;
             Java_Throw (e);
                 end;
@@ -91,7 +91,8 @@ package body org.allbinary.logic.communication.smtp.Email_Package is
    end init;
 
    --  throws MessagingException
-   procedure init (This : in out Email; server : Unbounded_String; authenticator : Authenticator_Access; addresses_from : InternetAddress_Access_Array_Access; addresses_to : InternetAddress_Access_Array_Access; addresses_cc : InternetAddress_Access_Array_Access; addresses_bcc : InternetAddress_Access_Array_Access; subject : Unbounded_String; mimeBodyParts : MimeBodyPart_Access_Array_Access) is
+   procedure init (This : in out Email; server : Unbounded_String; authenticator_Param : access Authenticator'Class; addresses_from : InternetAddress_Access_Array_Access; addresses_to : InternetAddress_Access_Array_Access; addresses_cc : InternetAddress_Access_Array_Access; addresses_bcc : InternetAddress_Access_Array_Access; subject : Unbounded_String; mimeBodyParts : MimeBodyPart_Access_Array_Access) is
+      authenticator : Authenticator_Access := Authenticator_Access (authenticator_Param);
       hostName : Unbounded_String;
       session : Session_Access;
       printStream : PrintStream_Access;
@@ -104,7 +105,7 @@ package body org.allbinary.logic.communication.smtp.Email_Package is
             hostName := StringUtil_Package.getInstance.EMPTY_STRING;
             if StringValidationUtil_Package.getInstance.isEmpty (hostName) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGINGERROR) then
-                    This.logUtil.putF (To_Unbounded_String ("Unable to get HostName so using fake"), This'Unchecked_Access, To_Unbounded_String ("init()"));
+                    This.logUtil.putF (To_Unbounded_String ("Unable to get HostName so using fake"), Email_Access'(This'Unchecked_Access), To_Unbounded_String ("init()"));
                 end if;
                 This.properties.put (Email_Package.SMTP_LOCAL_HOST, To_Unbounded_String ("FakeHostName"));
             end if;
@@ -114,7 +115,7 @@ package body org.allbinary.logic.communication.smtp.Email_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGINGERROR) then
-                This.logUtil.put (To_Unbounded_String ("Continuing on Exception: Unable to get HostName"), This'Unchecked_Access, To_Unbounded_String ("init()"), e);
+                This.logUtil.put (To_Unbounded_String ("Continuing on Exception: Unable to get HostName"), Email_Access'(This'Unchecked_Access), To_Unbounded_String ("init()"), e);
             end if;
             This.properties.put (Email_Package.SMTP_LOCAL_HOST, To_Unbounded_String ("FakeHostName"));
                 end;
@@ -212,7 +213,7 @@ package body org.allbinary.logic.communication.smtp.Email_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGINGERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("toHashMap()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, Email_Access'(This'Unchecked_Access), To_Unbounded_String ("toHashMap()"), e);
             end if;
             Java_Throw (e);
                 end;
@@ -220,7 +221,8 @@ package body org.allbinary.logic.communication.smtp.Email_Package is
    end toHashMap;
 
    --  throws Exception
-   function toXmlNode (This : in out Email; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out Email; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       node : Node_Access;
    begin
         node := ModDomHelper_Package.createNameValueNodes (document, EmailData_Package.NAME, This.toHashMap);
@@ -233,8 +235,8 @@ package body org.allbinary.logic.communication.smtp.Email_Package is
         Java_Throw (Java_New_Exception ("Exception", CommonStrings_Package.getInstance.NOT_IMPLEMENTED));
    end toXmlDoc;
 
-   procedure toXmlNode (This : in out Email; document : Document_Access) is
-      Java_Result : constant Node_Access := Email'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out Email; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := Email'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -23,26 +23,29 @@ package body org.allbinary.game.configuration.feature.GameFeatureItemCommandList
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out GameFeatureItemCommandListener'Class; gameOptionsForm : GameOptionsForm_Access) is
+   procedure Initialize (This : in out GameFeatureItemCommandListener'Class; gameOptionsForm_Param : access GameOptionsForm'Class) is
+      gameOptionsForm : GameOptionsForm_Access := GameOptionsForm_Access (gameOptionsForm_Param);
    begin
       Initialize_Fields (This);
         This.gameOptionsForm := gameOptionsForm;
    end Initialize;
 
-   function Create (gameOptionsForm : GameOptionsForm_Access) return GameFeatureItemCommandListener_Access is
+   function Create (gameOptionsForm_Param : access GameOptionsForm'Class) return GameFeatureItemCommandListener_Access is
       This : constant GameFeatureItemCommandListener_Access := new GameFeatureItemCommandListener;
    begin
-      GameFeatureItemCommandListener_Package.Initialize (This.all, gameOptionsForm);
+      GameFeatureItemCommandListener_Package.Initialize (This.all, gameOptionsForm_Param);
       return This;
    end Create;
 
-   procedure commandAction (This : in out GameFeatureItemCommandListener; command : Command_Access; item : Item_Access) is
+   procedure commandAction (This : in out GameFeatureItemCommandListener; command_Param : access Command'Class; item_Param : access Item'Class) is
+      command : Command_Access := Command_Access (command_Param);
+      item : Item_Access := Item_Access (item_Param);
       itemLabel : Unbounded_String;
       commonStrings : CommonStrings_Access;
    begin
         begin
             itemLabel := item.getLabel;
-            This.logUtil.putF (StringMaker_Package.Create.append (CommonLabels_Package.getInstance.ITEM_LABEL).append (itemLabel).toString, This'Unchecked_Access, MidletStrings_Package.getInstance.COMMAND_ACTION);
+            This.logUtil.putF (StringMaker_Package.Create.append (CommonLabels_Package.getInstance.ITEM_LABEL).append (itemLabel).toString, GameFeatureItemCommandListener_Access'(This'Unchecked_Access), MidletStrings_Package.getInstance.COMMAND_ACTION);
             if (item.all in GameConfigurationGauge_Package.GameConfigurationGauge'Class) then
                 GameConfigurationUtil_Package.getInstance.change (This.gameOptionsForm, GameConfigurationGauge_Access (item));
             end if;
@@ -52,7 +55,7 @@ package body org.allbinary.game.configuration.feature.GameFeatureItemCommandList
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, MidletStrings_Package.getInstance.COMMAND_ACTION, e);
+            This.logUtil.put (commonStrings.EXCEPTION_Id, GameFeatureItemCommandListener_Access'(This'Unchecked_Access), MidletStrings_Package.getInstance.COMMAND_ACTION, e);
                 end;
         end;
    end commandAction;

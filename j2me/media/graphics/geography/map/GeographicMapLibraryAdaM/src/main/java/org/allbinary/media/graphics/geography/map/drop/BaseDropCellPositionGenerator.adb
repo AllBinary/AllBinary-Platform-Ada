@@ -39,25 +39,29 @@ package body org.allbinary.media.graphics.geography.map.drop.BaseDropCellPositio
    end getName;
 
    --  throws Exception
-   procedure update (This : in out BaseDropCellPositionGenerator; allBinaryGameLayerManager : AllBinaryGameLayerManager_Access; geographicMapInterface : BasicGeographicMap_Access) is
+   procedure update (This : in out BaseDropCellPositionGenerator; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class; geographicMapInterface_Param : access BasicGeographicMap'Class) is
+      allBinaryGameLayerManager : AllBinaryGameLayerManager_Access := AllBinaryGameLayerManager_Access (allBinaryGameLayerManager_Param);
+      geographicMapInterface : BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
    begin
         null;
    end update;
 
    --  throws Exception
-   function isDropAllowedAt (This : in out BaseDropCellPositionGenerator; geographicMapCellPosition : GeographicMapCellPosition_Access) return Boolean is
+   function isDropAllowedAt (This : in out BaseDropCellPositionGenerator; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return Boolean is
+      geographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
    begin
         return True;
    end isDropAllowedAt;
 
    --  throws Exception
-   procedure processTick (This : in out BaseDropCellPositionGenerator; allBinaryLayerManager : AllBinaryLayerManager_Access) is
+   procedure processTick (This : in out BaseDropCellPositionGenerator; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class) is
+      allBinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
    begin
         null;
    end processTick;
 
-   procedure isDropAllowedAt (This : in out BaseDropCellPositionGenerator; geographicMapCellPosition : GeographicMapCellPosition_Access) is
-      Java_Result : constant Boolean := BaseDropCellPositionGenerator'Class (This).isDropAllowedAt (geographicMapCellPosition);
+   procedure isDropAllowedAt (This : in out BaseDropCellPositionGenerator; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is
+      Java_Result : constant Boolean := BaseDropCellPositionGenerator'Class (This).isDropAllowedAt (geographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

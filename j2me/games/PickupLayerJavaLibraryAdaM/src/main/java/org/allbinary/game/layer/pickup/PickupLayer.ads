@@ -61,12 +61,12 @@ package org.allbinary.game.layer.pickup.PickupLayer_Package is
       animationInterface : Animation_Access;
    end record;
 
-   procedure Initialize (This : in out PickupLayer'Class; name : Unbounded_String; remoteInfo : RemoteInfo_Access; total : Integer; pickedUpLayerInterfaceFactoryInterface : PickedUpLayerInterfaceFactoryInterface_Access; animationInterface : Animation_Access; rectangle : Rectangle_Access; viewPosition : ViewPositionBase_Access);
-   function Create (name : Unbounded_String; remoteInfo : RemoteInfo_Access; total : Integer; pickedUpLayerInterfaceFactoryInterface : PickedUpLayerInterfaceFactoryInterface_Access; animationInterface : Animation_Access; rectangle : Rectangle_Access; viewPosition : ViewPositionBase_Access) return PickupLayer_Access;
-   procedure init (This : in out PickupLayer; pickedUpLayerInterfaceFactoryInterface : PickedUpLayerInterfaceFactoryInterface_Access; animationInterface : Animation_Access);
+   procedure Initialize (This : in out PickupLayer'Class; name : Unbounded_String; remoteInfo_Param : access RemoteInfo'Class; total : Integer; pickedUpLayerInterfaceFactoryInterface_Param : access PickedUpLayerInterfaceFactoryInterface'Class; animationInterface_Param : access Animation'Class; rectangle_Param : access Rectangle'Class; viewPosition_Param : access ViewPositionBase'Class);
+   function Create (name : Unbounded_String; remoteInfo_Param : access RemoteInfo'Class; total : Integer; pickedUpLayerInterfaceFactoryInterface_Param : access PickedUpLayerInterfaceFactoryInterface'Class; animationInterface_Param : access Animation'Class; rectangle_Param : access Rectangle'Class; viewPosition_Param : access ViewPositionBase'Class) return PickupLayer_Access;
+   procedure init (This : in out PickupLayer; pickedUpLayerInterfaceFactoryInterface_Param : access PickedUpLayerInterfaceFactoryInterface'Class; animationInterface_Param : access Animation'Class);
    procedure initXYZ (This : in out PickupLayer; x : Integer; y : Integer; z : Integer);
-   procedure paint (This : in out PickupLayer; graphics : Graphics_Access);
-   procedure paintThreed (This : in out PickupLayer; graphics : Graphics_Access);
+   procedure paint (This : in out PickupLayer; graphics_Param : access Graphics'Class);
+   procedure paintThreed (This : in out PickupLayer; graphics_Param : access Graphics'Class);
    function getPickedUpLayerInterfaceFactoryInterface (This : in out PickupLayer) return PickedUpLayerInterfaceFactoryInterface_Access;
    procedure setPickedUp (This : in out PickupLayer);
    function isDestroyed (This : in out PickupLayer) return Boolean;
@@ -74,7 +74,7 @@ package org.allbinary.game.layer.pickup.PickupLayer_Package is
    procedure damage (This : in out PickupLayer; damage : Integer; damageType : Integer);
    function getDamage (This : in out PickupLayer; damageType : Integer) return Integer;
    procedure getDamage (This : in out PickupLayer; damageType : Integer);
-   procedure set (This : in out PickupLayer; gl : GL_Access);
+   procedure set (This : in out PickupLayer; gl_Param : access GL'Class);
 
 end org.allbinary.game.layer.pickup.PickupLayer_Package;
 

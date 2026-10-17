@@ -63,17 +63,17 @@ package org.allbinary.input.automation.module.osgi.InputAutomationModuleBundleAc
    procedure Initialize (This : in out InputAutomationModuleBundleActivator'Class);
    function Create return InputAutomationModuleBundleActivator_Access;
    procedure init (This : in out InputAutomationModuleBundleActivator);
-   function getInputAutomationConfigurationModuleChangeListener (This : in out InputAutomationModuleBundleActivator; context : BundleContext_Access) return InputAutomationConfigurationModuleChangeListener_Access;
-   procedure getInputAutomationConfigurationModuleChangeListener (This : in out InputAutomationModuleBundleActivator; context : BundleContext_Access);
-   procedure addModules (This : in out InputAutomationModuleBundleActivator; context : BundleContext_Access);
-   procedure registerAsService (This : in out InputAutomationModuleBundleActivator; bundleContext : BundleContext_Access);
-   procedure removeModules (This : in out InputAutomationModuleBundleActivator; context : BundleContext_Access);
-   procedure start (This : in out InputAutomationModuleBundleActivator; context : BundleContext_Access);
-   procedure stop (This : in out InputAutomationModuleBundleActivator; context : BundleContext_Access);
+   function getInputAutomationConfigurationModuleChangeListener (This : in out InputAutomationModuleBundleActivator; context_Param : access BundleContext'Class) return InputAutomationConfigurationModuleChangeListener_Access;
+   procedure getInputAutomationConfigurationModuleChangeListener (This : in out InputAutomationModuleBundleActivator; context_Param : access BundleContext'Class);
+   procedure addModules (This : in out InputAutomationModuleBundleActivator; context_Param : access BundleContext'Class);
+   procedure registerAsService (This : in out InputAutomationModuleBundleActivator; bundleContext_Param : access BundleContext'Class);
+   procedure removeModules (This : in out InputAutomationModuleBundleActivator; context_Param : access BundleContext'Class);
+   procedure start (This : in out InputAutomationModuleBundleActivator; context_Param : access BundleContext'Class);
+   procedure stop (This : in out InputAutomationModuleBundleActivator; context_Param : access BundleContext'Class);
    function getInputAutomationModuleInterface (This : in out InputAutomationModuleBundleActivator) return InputAutomationModuleFactoryInterface_Access_Array_Access;
    procedure setInputAutomationModuleInterface (This : in out InputAutomationModuleBundleActivator; inputAutomationModuleInterface : InputAutomationModuleFactoryInterface_Access_Array_Access);
    function getServiceFactory (This : in out InputAutomationModuleBundleActivator) return Java_Object_Access;
-   procedure setServiceFactory (This : in out InputAutomationModuleBundleActivator; serviceObject : ServiceFactory_Access);
+   procedure setServiceFactory (This : in out InputAutomationModuleBundleActivator; serviceObject_Param : access ServiceFactory'Class);
 
 end org.allbinary.input.automation.module.osgi.InputAutomationModuleBundleActivator_Package;
 

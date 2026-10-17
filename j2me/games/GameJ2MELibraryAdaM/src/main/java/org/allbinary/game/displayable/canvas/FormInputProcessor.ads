@@ -74,10 +74,10 @@ package org.allbinary.game.displayable.canvas.FormInputProcessor_Package is
       allBinaryGameCanvas : AllBinaryGameCanvas_Access;
    end record;
 
-   procedure Initialize (This : in out FormInputProcessor'Class; allBinaryGameCanvas : AllBinaryGameCanvas_Access);
-   function Create (allBinaryGameCanvas : AllBinaryGameCanvas_Access) return FormInputProcessor_Access;
+   procedure Initialize (This : in out FormInputProcessor'Class; allBinaryGameCanvas_Param : access AllBinaryGameCanvas'Class);
+   function Create (allBinaryGameCanvas_Param : access AllBinaryGameCanvas'Class) return FormInputProcessor_Access;
    procedure keyPressedByDevice (This : in out FormInputProcessor; keyCode : Integer; deviceId : Integer);
-   procedure keyReleasedByDevice (This : in out FormInputProcessor; canvas : Canvas_Access; keyCode : Integer; deviceId : Integer);
+   procedure keyReleasedByDevice (This : in out FormInputProcessor; canvas_Param : access Canvas'Class; keyCode : Integer; deviceId : Integer);
 
 end org.allbinary.game.displayable.canvas.FormInputProcessor_Package;
 

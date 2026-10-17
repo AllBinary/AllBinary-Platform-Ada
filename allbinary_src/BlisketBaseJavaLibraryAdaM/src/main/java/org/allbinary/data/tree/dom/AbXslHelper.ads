@@ -44,10 +44,10 @@ package org.allbinary.data.tree.dom.AbXslHelper_Package is
    procedure Initialize (This : in out AbXslHelper'Class);
    function Create return AbXslHelper_Access;
    function getInstance return AbXslHelper_Access;
-   function translate (This : in out AbXslHelper; xslFile : AbFile_Access; xmlFile : AbFile_Access) return Unbounded_String;
-   procedure translate (This : in out AbXslHelper; xslFile : AbFile_Access; xmlFile : AbFile_Access);
-   function translate (This : in out AbXslHelper; xslPath : AbPath_Access; xmlPath : AbPath_Access) return Unbounded_String;
-   procedure translate (This : in out AbXslHelper; xslPath : AbPath_Access; xmlPath : AbPath_Access);
+   function translate (This : in out AbXslHelper; xslFile_Param : access AbFile'Class; xmlFile_Param : access AbFile'Class) return Unbounded_String;
+   procedure translate (This : in out AbXslHelper; xslFile_Param : access AbFile'Class; xmlFile_Param : access AbFile'Class);
+   function translate (This : in out AbXslHelper; xslPath_Param : access AbPath'Class; xmlPath_Param : access AbPath'Class) return Unbounded_String;
+   procedure translate (This : in out AbXslHelper; xslPath_Param : access AbPath'Class; xmlPath_Param : access AbPath'Class);
    function translate (This : in out AbXslHelper; xsltFilePath : Unbounded_String; xmlFilePath : Unbounded_String) return Unbounded_String;
    procedure translate (This : in out AbXslHelper; xsltFilePath : Unbounded_String; xmlFilePath : Unbounded_String);
 

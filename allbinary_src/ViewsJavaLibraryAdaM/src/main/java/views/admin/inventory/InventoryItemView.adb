@@ -29,7 +29,8 @@ package body views.admin.inventory.InventoryItemView_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out InventoryItemView'Class; transformInfoInterface : TransformInfoInterface_Access) is
+   procedure Initialize (This : in out InventoryItemView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
@@ -37,24 +38,25 @@ package body views.admin.inventory.InventoryItemView_Package is
         This.getFormData;
    end Initialize;
 
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return InventoryItemView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return InventoryItemView_Access is
       This : constant InventoryItemView_Access := new InventoryItemView;
    begin
-      InventoryItemView_Package.Initialize (This.all, transformInfoInterface);
+      InventoryItemView_Package.Initialize (This.all, transformInfoInterface_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out InventoryItemView'Class; transformInfoInterface : TransformInfoInterface_Access; empty : Unbounded_String) is
+   procedure Initialize (This : in out InventoryItemView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; empty : Unbounded_String) is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
         This.request := HttpServletRequest_Access (This.getPageContext.getRequest);
    end Initialize;
 
-   function Create (transformInfoInterface : TransformInfoInterface_Access; empty : Unbounded_String) return InventoryItemView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class; empty : Unbounded_String) return InventoryItemView_Access is
       This : constant InventoryItemView_Access := new InventoryItemView;
    begin
-      InventoryItemView_Package.Initialize (This.all, transformInfoInterface, empty);
+      InventoryItemView_Package.Initialize (This.all, transformInfoInterface_Param, empty);
       return This;
    end Create;
 
@@ -87,7 +89,7 @@ package body views.admin.inventory.InventoryItemView_Package is
                     stringBuffer.append (This.imageFileName);
                     stringBuffer.append (To_Unbounded_String (" Extension: "));
                     stringBuffer.append (This.mediaData.getName);
-                    This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("getFormData()"));
+                    This.logUtil.putF (stringBuffer.toString, InventoryItemView_Access'(This'Unchecked_Access), To_Unbounded_String ("getFormData()"));
                 end if;
             end if;
         end if;
@@ -127,7 +129,7 @@ package body views.admin.inventory.InventoryItemView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("view()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, InventoryItemView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
             end if;
             Java_Throw (e);
                 end;
@@ -159,7 +161,8 @@ package body views.admin.inventory.InventoryItemView_Package is
         end loop;
    end processImageFiles;
 
-   procedure setRequestHashMap (This : in out InventoryItemView; requestHashMap : HashMap_Access) is
+   procedure setRequestHashMap (This : in out InventoryItemView; requestHashMap_Param : access HashMap'Class) is
+      requestHashMap : HashMap_Access := HashMap_Access (requestHashMap_Param);
    begin
         This.requestHashMap := requestHashMap;
    end setRequestHashMap;

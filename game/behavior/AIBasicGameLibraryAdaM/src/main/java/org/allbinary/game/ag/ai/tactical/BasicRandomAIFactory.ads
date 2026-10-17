@@ -50,8 +50,8 @@ package org.allbinary.game.ag.ai.tactical.BasicRandomAIFactory_Package is
 
    procedure Initialize (This : in out BasicRandomAIFactory'Class);
    function Create return BasicRandomAIFactory_Access;
-   function getInstance (This : in out BasicRandomAIFactory; hashtable : ABHashtable_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return ArtificialIntelligenceInterface_Access;
-   procedure getInstance (This : in out BasicRandomAIFactory; hashtable : ABHashtable_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access);
+   function getInstance (This : in out BasicRandomAIFactory; hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return ArtificialIntelligenceInterface_Access;
+   procedure getInstance (This : in out BasicRandomAIFactory; hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class);
 
 end org.allbinary.game.ag.ai.tactical.BasicRandomAIFactory_Package;
 

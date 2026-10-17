@@ -63,18 +63,18 @@ package org.allbinary.animation.image.AllBinaryHTMLImageRotationAnimation_Packag
       alphaProcessor : AlphaBaseProcessor_Access;
    end record;
 
-   procedure Initialize (This : in out AllBinaryHTMLImageRotationAnimation'Class; originalImage : Image_Access; image : Image_Access; angleInfo : AngleInfo_Access; totalAngle : Short_Integer; animationBehavior : AnimationBehavior_Access);
-   function Create (originalImage : Image_Access; image : Image_Access; angleInfo : AngleInfo_Access; totalAngle : Short_Integer; animationBehavior : AnimationBehavior_Access) return AllBinaryHTMLImageRotationAnimation_Access;
-   function getCanvasSurface (This : in out AllBinaryHTMLImageRotationAnimation; image : Image_Access) return CanvasSurface_Access;
-   procedure getCanvasSurface (This : in out AllBinaryHTMLImageRotationAnimation; image : Image_Access);
-   procedure setBasicColorP (This : in out AllBinaryHTMLImageRotationAnimation; basicColor : BasicColor_Access);
+   procedure Initialize (This : in out AllBinaryHTMLImageRotationAnimation'Class; originalImage_Param : access Image'Class; image_Param : access Image'Class; angleInfo_Param : access AngleInfo'Class; totalAngle : Short_Integer; animationBehavior_Param : access AnimationBehavior'Class);
+   function Create (originalImage_Param : access Image'Class; image_Param : access Image'Class; angleInfo_Param : access AngleInfo'Class; totalAngle : Short_Integer; animationBehavior_Param : access AnimationBehavior'Class) return AllBinaryHTMLImageRotationAnimation_Access;
+   function getCanvasSurface (This : in out AllBinaryHTMLImageRotationAnimation; image_Param : access Image'Class) return CanvasSurface_Access;
+   procedure getCanvasSurface (This : in out AllBinaryHTMLImageRotationAnimation; image_Param : access Image'Class);
+   procedure setBasicColorP (This : in out AllBinaryHTMLImageRotationAnimation; basicColor_Param : access BasicColor'Class);
    procedure setAlpha (This : in out AllBinaryHTMLImageRotationAnimation; alpha : Integer);
    procedure nextRotation (This : in out AllBinaryHTMLImageRotationAnimation);
    procedure previousRotation (This : in out AllBinaryHTMLImageRotationAnimation);
    procedure updateImage (This : in out AllBinaryHTMLImageRotationAnimation);
    procedure setFrame (This : in out AllBinaryHTMLImageRotationAnimation; index : Integer);
    procedure swap (This : in out AllBinaryHTMLImageRotationAnimation);
-   procedure paintXY (This : in out AllBinaryHTMLImageRotationAnimation; graphics : Graphics_Access; x : Integer; y : Integer);
+   procedure paintXY (This : in out AllBinaryHTMLImageRotationAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
 
 end org.allbinary.animation.image.AllBinaryHTMLImageRotationAnimation_Package;
 

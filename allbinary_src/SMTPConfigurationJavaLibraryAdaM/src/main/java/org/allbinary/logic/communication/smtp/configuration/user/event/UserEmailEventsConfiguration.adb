@@ -37,16 +37,17 @@ package body org.allbinary.logic.communication.smtp.configuration.user.event.Use
       return This;
    end Create;
 
-   procedure Initialize (This : in out UserEmailEventsConfiguration'Class; hashMap : HashMap_Access) is
+   procedure Initialize (This : in out UserEmailEventsConfiguration'Class; hashMap_Param : access HashMap'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
    begin
       Initialize_Fields (This);
         This.init;
    end Initialize;
 
-   function Create (hashMap : HashMap_Access) return UserEmailEventsConfiguration_Access is
+   function Create (hashMap_Param : access HashMap'Class) return UserEmailEventsConfiguration_Access is
       This : constant UserEmailEventsConfiguration_Access := new UserEmailEventsConfiguration;
    begin
-      UserEmailEventsConfiguration_Package.Initialize (This.all, hashMap);
+      UserEmailEventsConfiguration_Package.Initialize (This.all, hashMap_Param);
       return This;
    end Create;
 
@@ -54,7 +55,7 @@ package body org.allbinary.logic.communication.smtp.configuration.user.event.Use
    begin
         This.emailEventHashMap := StdUtil_Package.getInstance.createHashMap;
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
-            This.logUtil.putF (This.commonStrings.CONSTRUCTOR, This'Unchecked_Access, To_Unbounded_String (" Constructor"));
+            This.logUtil.putF (This.commonStrings.CONSTRUCTOR, UserEmailEventsConfiguration_Access'(This'Unchecked_Access), To_Unbounded_String (" Constructor"));
         end if;
    end init;
 
@@ -63,24 +64,28 @@ package body org.allbinary.logic.communication.smtp.configuration.user.event.Use
         return This.emailEventHashMap;
    end getEventConfigurationHashMap;
 
-   procedure addUserEmailEventConfiguration (This : in out UserEmailEventsConfiguration; userEmailEventConfigurationInterface : UserEmailEventConfigurationInterface_Access) is
+   procedure addUserEmailEventConfiguration (This : in out UserEmailEventsConfiguration; userEmailEventConfigurationInterface_Param : access UserEmailEventConfigurationInterface'Class) is
+      userEmailEventConfigurationInterface : UserEmailEventConfigurationInterface_Access := UserEmailEventConfigurationInterface_Access (userEmailEventConfigurationInterface_Param);
    begin
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
-            This.logUtil.putF (To_Unbounded_String ("Adding: ") & Java_Image (userEmailEventConfigurationInterface.log), This'Unchecked_Access, To_Unbounded_String ("addUserEmailEventConfiguration"));
+            This.logUtil.putF (To_Unbounded_String ("Adding: ") & Java_Image (userEmailEventConfigurationInterface.log), UserEmailEventsConfiguration_Access'(This'Unchecked_Access), To_Unbounded_String ("addUserEmailEventConfiguration"));
         end if;
         This.emailEventHashMap.put (userEmailEventConfigurationInterface.getName, userEmailEventConfigurationInterface);
    end addUserEmailEventConfiguration;
 
    --  throws Exception
-   function getEventListener (This : in out UserEmailEventsConfiguration; abeClientInformation : AbeClientInformationInterface_Access; userEmailEventNameData : UserEmailEventNameData_Access; userInterface : UserInterface_Access) return UserEmailEventListenerInterface_Access is
+   function getEventListener (This : in out UserEmailEventsConfiguration; abeClientInformation_Param : access AbeClientInformationInterface'Class; userEmailEventNameData_Param : access UserEmailEventNameData'Class; userInterface_Param : access UserInterface'Class) return UserEmailEventListenerInterface_Access is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      userEmailEventNameData : UserEmailEventNameData_Access := UserEmailEventNameData_Access (userEmailEventNameData_Param);
+      userInterface : UserInterface_Access := UserInterface_Access (userInterface_Param);
       userEmailEventConfigurationInterface : UserEmailEventConfigurationInterface_Access;
    begin
         userEmailEventConfigurationInterface := UserEmailEventConfigurationInterface_Access (This.emailEventHashMap.get (userEmailEventNameData.toString));
         return UserEmailEventListenerFactory_Package.getInstance (abeClientInformation, userEmailEventConfigurationInterface, userInterface);
    end getEventListener;
 
-   procedure getEventListener (This : in out UserEmailEventsConfiguration; abeClientInformation : AbeClientInformationInterface_Access; userEmailEventNameData : UserEmailEventNameData_Access; userInterface : UserInterface_Access) is
-      Java_Result : constant UserEmailEventListenerInterface_Access := UserEmailEventsConfiguration'Class (This).getEventListener (abeClientInformation, userEmailEventNameData, userInterface);
+   procedure getEventListener (This : in out UserEmailEventsConfiguration; abeClientInformation_Param : access AbeClientInformationInterface'Class; userEmailEventNameData_Param : access UserEmailEventNameData'Class; userInterface_Param : access UserInterface'Class) is
+      Java_Result : constant UserEmailEventListenerInterface_Access := UserEmailEventsConfiguration'Class (This).getEventListener (abeClientInformation_Param, userEmailEventNameData_Param, userInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

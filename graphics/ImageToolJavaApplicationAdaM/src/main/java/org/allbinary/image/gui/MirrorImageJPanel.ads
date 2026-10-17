@@ -66,14 +66,14 @@ package org.allbinary.image.gui.MirrorImageJPanel_Package is
       writeOverOriginalJRadioButton : JRadioButton_Access;
    end record;
 
-   procedure Initialize (This : in out MirrorImageJPanel'Class; imageProcessorInput : ImageProcessorInput_Access);
-   function Create (imageProcessorInput : ImageProcessorInput_Access) return MirrorImageJPanel_Access;
+   procedure Initialize (This : in out MirrorImageJPanel'Class; imageProcessorInput_Param : access ImageProcessorInput'Class);
+   function Create (imageProcessorInput_Param : access ImageProcessorInput'Class) return MirrorImageJPanel_Access;
    procedure process (This : in out MirrorImageJPanel);
    procedure initComponents (This : in out MirrorImageJPanel);
-   procedure generateJButtonActionPerformed (This : in out MirrorImageJPanel; evt : ActionEvent_Access);
-   procedure renameJRadioButtonActionPerformed (This : in out MirrorImageJPanel; evt : ActionEvent_Access);
+   procedure generateJButtonActionPerformed (This : in out MirrorImageJPanel; evt_Param : access ActionEvent'Class);
+   procedure renameJRadioButtonActionPerformed (This : in out MirrorImageJPanel; evt_Param : access ActionEvent'Class);
    function getImageProcessorInput (This : in out MirrorImageJPanel) return ImageProcessorInput_Access;
-   procedure setImageProcessorInput (This : in out MirrorImageJPanel; imageProcessorInput : ImageProcessorInput_Access);
+   procedure setImageProcessorInput (This : in out MirrorImageJPanel; imageProcessorInput_Param : access ImageProcessorInput'Class);
 
 end org.allbinary.image.gui.MirrorImageJPanel_Package;
 

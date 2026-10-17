@@ -74,10 +74,10 @@ package views.admin.inventory.InventoryUploadMediaUtil_Package is
       itemInterface : ItemInterface_Access;
    end record;
 
-   procedure Initialize (This : in out InventoryUploadMediaUtil'Class; storeFrontInterface : StoreFrontInterface_Access; itemInterface : ItemInterface_Access);
-   function Create (storeFrontInterface : StoreFrontInterface_Access; itemInterface : ItemInterface_Access) return InventoryUploadMediaUtil_Access;
-   function saveFiles (This : in out InventoryUploadMediaUtil; byteArray : Short_Short_Integer_Array_Access; fileName : Unbounded_String; mediaData : MediaData_Access) return ItemInterface_Access;
-   procedure saveFiles (This : in out InventoryUploadMediaUtil; byteArray : Short_Short_Integer_Array_Access; fileName : Unbounded_String; mediaData : MediaData_Access);
+   procedure Initialize (This : in out InventoryUploadMediaUtil'Class; storeFrontInterface_Param : access StoreFrontInterface'Class; itemInterface_Param : access ItemInterface'Class);
+   function Create (storeFrontInterface_Param : access StoreFrontInterface'Class; itemInterface_Param : access ItemInterface'Class) return InventoryUploadMediaUtil_Access;
+   function saveFiles (This : in out InventoryUploadMediaUtil; byteArray : Short_Short_Integer_Array_Access; fileName : Unbounded_String; mediaData_Param : access MediaData'Class) return ItemInterface_Access;
+   procedure saveFiles (This : in out InventoryUploadMediaUtil; byteArray : Short_Short_Integer_Array_Access; fileName : Unbounded_String; mediaData_Param : access MediaData'Class);
    procedure setFileNames (This : in out InventoryUploadMediaUtil; fileName : Unbounded_String);
 
 end views.admin.inventory.InventoryUploadMediaUtil_Package;

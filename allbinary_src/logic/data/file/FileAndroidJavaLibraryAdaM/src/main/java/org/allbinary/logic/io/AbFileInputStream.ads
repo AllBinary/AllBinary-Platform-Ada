@@ -38,8 +38,8 @@ package org.allbinary.logic.io.AbFileInputStream_Package is
       fileInputStream : FileInputStream_Access;
    end record;
 
-   procedure Initialize (This : in out AbFileInputStream'Class; fileInputStream : FileInputStream_Access);
-   function Create (fileInputStream : FileInputStream_Access) return AbFileInputStream_Access;
+   procedure Initialize (This : in out AbFileInputStream'Class; fileInputStream_Param : access FileInputStream'Class);
+   function Create (fileInputStream_Param : access FileInputStream'Class) return AbFileInputStream_Access;
    procedure mark (This : in out AbFileInputStream; readlimit : Integer);
    function markSupported (This : in out AbFileInputStream) return Boolean;
    procedure reset (This : in out AbFileInputStream);

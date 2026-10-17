@@ -41,8 +41,8 @@ package org.allbinary.graphics.j2me.workarea.canvas.Grid_Package is
 
    procedure Initialize (This : in out Grid'Class);
    function Create return Grid_Access;
-   procedure Initialize (This : in out Grid'Class; grid : Grid_Access);
-   function Create (grid : Grid_Access) return Grid_Access;
+   procedure Initialize (This : in out Grid'Class; grid_Param : access Grid'Class);
+   function Create (grid_Param : access Grid'Class) return Grid_Access;
    function isGridOn (This : in out Grid) return Boolean;
    function isGridPossible (This : in out Grid) return Boolean;
    function getGrid (This : in out Grid) return GPoint_Access;

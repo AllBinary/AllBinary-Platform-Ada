@@ -41,7 +41,9 @@ package body org.allbinary.game.midlet.DemoGameMidletEventHandler_Package is
    end getInstance;
 
    --  throws Exception
-   procedure process (This : in out DemoGameMidletEventHandler; eventObject : AllBinaryEventObject_Access; eventListenerInterface : EventListenerInterface_Access) is
+   procedure process (This : in out DemoGameMidletEventHandler; eventObject_Param : access AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface'Class) is
+      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
+      eventListenerInterface : EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
       demoGameMidletEventListener : DemoGameMidletEventListener_Access;
    begin
         demoGameMidletEventListener := DemoGameMidletEventListener_Access (eventListenerInterface);

@@ -24,16 +24,17 @@ package body org.allbinary.logic.control.workflow.WorkFlowWrapper_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out WorkFlowWrapper'Class; anyType : Java_Object_Access) is
+   procedure Initialize (This : in out WorkFlowWrapper'Class; anyType_Param : access Java_Object'Class) is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
       Initialize_Fields (This);
         This.anyType := anyType;
    end Initialize;
 
-   function Create (anyType : Java_Object_Access) return WorkFlowWrapper_Access is
+   function Create (anyType_Param : access Java_Object'Class) return WorkFlowWrapper_Access is
       This : constant WorkFlowWrapper_Access := new WorkFlowWrapper;
    begin
-      WorkFlowWrapper_Package.Initialize (This.all, anyType);
+      WorkFlowWrapper_Package.Initialize (This.all, anyType_Param);
       return This;
    end Create;
 
@@ -61,7 +62,7 @@ package body org.allbinary.logic.control.workflow.WorkFlowWrapper_Package is
                 begin
             error := To_Unbounded_String ("Reflection Exception");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("getName()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, WorkFlowWrapper_Access'(This'Unchecked_Access), To_Unbounded_String ("getName()"), e);
             end if;
             Java_Throw (Java_New_Exception ("Exception", error));
                 end;
@@ -87,7 +88,7 @@ package body org.allbinary.logic.control.workflow.WorkFlowWrapper_Package is
                 begin
             error := To_Unbounded_String ("Reflection Exception");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("getStoreName()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, WorkFlowWrapper_Access'(This'Unchecked_Access), To_Unbounded_String ("getStoreName()"), e);
             end if;
             Java_Throw (Java_New_Exception ("Exception", error));
                 end;
@@ -113,7 +114,7 @@ package body org.allbinary.logic.control.workflow.WorkFlowWrapper_Package is
                 begin
             error := To_Unbounded_String ("Reflection Exception");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.PROCESS, e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, WorkFlowWrapper_Access'(This'Unchecked_Access), This.commonStrings.PROCESS, e);
             end if;
             Java_Throw (Java_New_Exception ("Exception", error));
                 end;

@@ -55,8 +55,8 @@ package org.allbinary.media.graphics.geography.map.racetrack.NullRaceTrackGeogra
    function getName (This : in out NullRaceTrackGeographicMap) return Unbounded_String;
    procedure reset (This : in out NullRaceTrackGeographicMap);
    function getAllBinaryTiledLayer (This : in out NullRaceTrackGeographicMap) return AllBinaryTiledLayer_Access;
-   function getCellPositionsAt (This : in out NullRaceTrackGeographicMap; layer : Layer_Access; currentCellPositionArray : GeographicMapCellPosition_Access_Array_Access_Array_Access; cellPositionArray : GeographicMapCellPosition_Access_Array_Access_Array_Access) return Boolean;
-   procedure getCellPositionsAt (This : in out NullRaceTrackGeographicMap; layer : Layer_Access; currentCellPositionArray : GeographicMapCellPosition_Access_Array_Access_Array_Access; cellPositionArray : GeographicMapCellPosition_Access_Array_Access_Array_Access);
+   function getCellPositionsAt (This : in out NullRaceTrackGeographicMap; layer_Param : access Layer'Class; currentCellPositionArray : GeographicMapCellPosition_Access_Array_Access_Array_Access; cellPositionArray : GeographicMapCellPosition_Access_Array_Access_Array_Access) return Boolean;
+   procedure getCellPositionsAt (This : in out NullRaceTrackGeographicMap; layer_Param : access Layer'Class; currentCellPositionArray : GeographicMapCellPosition_Access_Array_Access_Array_Access; cellPositionArray : GeographicMapCellPosition_Access_Array_Access_Array_Access);
    function getCellPositionAtXY (This : in out NullRaceTrackGeographicMap; x : Integer; y : Integer) return GeographicMapCellPosition_Access;
    procedure getCellPositionAtXY (This : in out NullRaceTrackGeographicMap; x : Integer; y : Integer);
    function getCellPositionAtXYNoThrow (This : in out NullRaceTrackGeographicMap; x : Integer; y : Integer) return GeographicMapCellPosition_Access;
@@ -65,16 +65,16 @@ package org.allbinary.media.graphics.geography.map.racetrack.NullRaceTrackGeogra
    procedure getCellTypeFromMapCellTypeInt (This : in out NullRaceTrackGeographicMap; cellTypeId : Integer);
    function getCellTypeAtXY (This : in out NullRaceTrackGeographicMap; x : Integer; y : Integer) return GeographicMapCellType_Access;
    procedure getCellTypeAtXY (This : in out NullRaceTrackGeographicMap; x : Integer; y : Integer);
-   function getCellTypeAt (This : in out NullRaceTrackGeographicMap; geographicMapCellPosition : GeographicMapCellPosition_Access) return GeographicMapCellType_Access;
-   procedure getCellTypeAt (This : in out NullRaceTrackGeographicMap; geographicMapCellPosition : GeographicMapCellPosition_Access);
+   function getCellTypeAt (This : in out NullRaceTrackGeographicMap; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return GeographicMapCellType_Access;
+   procedure getCellTypeAt (This : in out NullRaceTrackGeographicMap; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class);
    function getGeographicMapCellPositionFactory (This : in out NullRaceTrackGeographicMap) return BasicGeographicMapCellPositionFactory_Access;
    function getGeographicMapCellPositionFactoryInterface (This : in out NullRaceTrackGeographicMap) return GeographicMapCellPositionFactoryInterface_Access;
    function getForegroundBasicColor (This : in out NullRaceTrackGeographicMap) return BasicColor_Access;
    function getBackgroundBasicColor (This : in out NullRaceTrackGeographicMap) return BasicColor_Access;
    function getRaceTrackInfo (This : in out NullRaceTrackGeographicMap) return RaceTrackInfo_Access;
-   procedure setRaceTrackInfo (This : in out NullRaceTrackGeographicMap; aRaceTrackInfo : RaceTrackInfo_Access);
+   procedure setRaceTrackInfo (This : in out NullRaceTrackGeographicMap; aRaceTrackInfo_Param : access RaceTrackInfo'Class);
    function getRaceTrackData (This : in out NullRaceTrackGeographicMap) return RaceTrackData_Access;
-   procedure setRaceTrackData (This : in out NullRaceTrackGeographicMap; raceTrackData : RaceTrackData_Access);
+   procedure setRaceTrackData (This : in out NullRaceTrackGeographicMap; raceTrackData_Param : access RaceTrackData'Class);
 
 end org.allbinary.media.graphics.geography.map.racetrack.NullRaceTrackGeographicMap_Package;
 

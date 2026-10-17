@@ -43,7 +43,7 @@ package org.allbinary.game.view.TileLayerPositionIntoViewPositionUtil_Package is
 
    procedure Initialize (This : in out TileLayerPositionIntoViewPositionUtil'Class);
    function Create return TileLayerPositionIntoViewPositionUtil_Access;
-   procedure init (gameCanvasInterface : AllBinaryGameCanvas_Access; viewPosition : TileLayerPositionIntoViewPosition_Access);
+   procedure init (gameCanvasInterface_Param : access AllBinaryGameCanvas'Class; viewPosition_Param : access TileLayerPositionIntoViewPosition'Class);
 
 end org.allbinary.game.view.TileLayerPositionIntoViewPositionUtil_Package;
 

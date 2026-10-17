@@ -24,7 +24,8 @@ package body org.allbinary.input.automation.actions.script.condition.TimeInterva
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out TimeIntervalActionScriptCondition'Class; node : Node_Access) is
+   procedure Initialize (This : in out TimeIntervalActionScriptCondition'Class; node_Param : access Node'Class) is
+      node : Node_Access := Node_Access (node_Param);
       actionNode : Node_Access;
       nodeList : NodeList_Access;
       childNode : Node_Access;
@@ -51,10 +52,10 @@ package body org.allbinary.input.automation.actions.script.condition.TimeInterva
         This.init;
    end Initialize;
 
-   function Create (node : Node_Access) return TimeIntervalActionScriptCondition_Access is
+   function Create (node_Param : access Node'Class) return TimeIntervalActionScriptCondition_Access is
       This : constant TimeIntervalActionScriptCondition_Access := new TimeIntervalActionScriptCondition;
    begin
-      TimeIntervalActionScriptCondition_Package.Initialize (This.all, node);
+      TimeIntervalActionScriptCondition_Package.Initialize (This.all, node_Param);
       return This;
    end Create;
 
@@ -75,7 +76,7 @@ package body org.allbinary.input.automation.actions.script.condition.TimeInterva
 
    procedure init (This : in out TimeIntervalActionScriptCondition) is
    begin
-        This.timeIntervalActionScriptConditionJPanel := TimeIntervalActionScriptConditionJPanel_Package.Create (This'Unchecked_Access);
+        This.timeIntervalActionScriptConditionJPanel := TimeIntervalActionScriptConditionJPanel_Package.Create (TimeIntervalActionScriptCondition_Access'(This'Unchecked_Access));
    end init;
 
    procedure showDialog (This : in out TimeIntervalActionScriptCondition) is
@@ -88,12 +89,13 @@ package body org.allbinary.input.automation.actions.script.condition.TimeInterva
    begin
         hashMap := StdUtil_Package.getInstance.createHashMap;
         hashMap.put (TimeIntervalActionScriptConditionData_Package.TIME, To_Unbounded_String (Java_Image (This.timeHelper.delay_Id)));
-        This.logUtil.putF (To_Unbounded_String ("HashMap: ") & hashMap.toString, This'Unchecked_Access, To_Unbounded_String ("toHashMap()"));
+        This.logUtil.putF (To_Unbounded_String ("HashMap: ") & hashMap.toString, TimeIntervalActionScriptCondition_Access'(This'Unchecked_Access), To_Unbounded_String ("toHashMap()"));
         return hashMap;
    end toHashMap;
 
    --  throws Exception
-   function toXmlNode (This : in out TimeIntervalActionScriptCondition; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out TimeIntervalActionScriptCondition; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       node : Node_Access;
    begin
         node := BasicProfileActionScriptCondition (This).toXmlNode (document);
@@ -103,7 +105,7 @@ package body org.allbinary.input.automation.actions.script.condition.TimeInterva
 
    procedure log (This : in out TimeIntervalActionScriptCondition) is
    begin
-        This.logUtil.putF (To_Unbounded_String ("Time Interval: ") & Java_Image (This.timeHelper.delay_Id), This'Unchecked_Access, To_Unbounded_String ("log"));
+        This.logUtil.putF (To_Unbounded_String ("Time Interval: ") & Java_Image (This.timeHelper.delay_Id), TimeIntervalActionScriptCondition_Access'(This'Unchecked_Access), To_Unbounded_String ("log"));
    end log;
 
    function getTimeDelayHelper (This : in out TimeIntervalActionScriptCondition) return TimeDelayHelper_Access is
@@ -111,7 +113,8 @@ package body org.allbinary.input.automation.actions.script.condition.TimeInterva
         return This.timeHelper;
    end getTimeDelayHelper;
 
-   procedure setTimeDelayHelper (This : in out TimeIntervalActionScriptCondition; timeHelper : TimeDelayHelper_Access) is
+   procedure setTimeDelayHelper (This : in out TimeIntervalActionScriptCondition; timeHelper_Param : access TimeDelayHelper'Class) is
+      timeHelper : TimeDelayHelper_Access := TimeDelayHelper_Access (timeHelper_Param);
    begin
         This.timeHelper := timeHelper;
    end setTimeDelayHelper;
@@ -128,8 +131,8 @@ package body org.allbinary.input.automation.actions.script.condition.TimeInterva
         return False;
    end shouldProcess;
 
-   procedure toXmlNode (This : in out TimeIntervalActionScriptCondition; document : Document_Access) is
-      Java_Result : constant Node_Access := TimeIntervalActionScriptCondition'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out TimeIntervalActionScriptCondition; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := TimeIntervalActionScriptCondition'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

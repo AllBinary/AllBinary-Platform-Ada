@@ -23,55 +23,62 @@ package body org.allbinary.business.category.properties.root.store.RootStoreCate
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out RootStoreCategoryPropertiesFactory'Class; transformInfoInterface : TransformInfoInterface_Access) is
+   procedure Initialize (This : in out RootStoreCategoryPropertiesFactory'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
       Initialize_Fields (This);
         This.categoryPropertiesInterface := CategoryPropertiesInterface_Access (RootStoreCategoryProperties_Package.Create (transformInfoInterface));
    end Initialize;
 
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return RootStoreCategoryPropertiesFactory_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return RootStoreCategoryPropertiesFactory_Access is
       This : constant RootStoreCategoryPropertiesFactory_Access := new RootStoreCategoryPropertiesFactory;
    begin
-      RootStoreCategoryPropertiesFactory_Package.Initialize (This.all, transformInfoInterface);
+      RootStoreCategoryPropertiesFactory_Package.Initialize (This.all, transformInfoInterface_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out RootStoreCategoryPropertiesFactory'Class; transformInfoInterface : TransformInfoInterface_Access; abPath : AbPath_Access) is
+   procedure Initialize (This : in out RootStoreCategoryPropertiesFactory'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; abPath_Param : access AbPath'Class) is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+      abPath : AbPath_Access := AbPath_Access (abPath_Param);
    begin
       Initialize_Fields (This);
         This.categoryPropertiesInterface := CategoryPropertiesInterface_Access (RootStoreCategoryProperties_Package.Create (transformInfoInterface, abPath));
    end Initialize;
 
-   function Create (transformInfoInterface : TransformInfoInterface_Access; abPath : AbPath_Access) return RootStoreCategoryPropertiesFactory_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class; abPath_Param : access AbPath'Class) return RootStoreCategoryPropertiesFactory_Access is
       This : constant RootStoreCategoryPropertiesFactory_Access := new RootStoreCategoryPropertiesFactory;
    begin
-      RootStoreCategoryPropertiesFactory_Package.Initialize (This.all, transformInfoInterface, abPath);
+      RootStoreCategoryPropertiesFactory_Package.Initialize (This.all, transformInfoInterface_Param, abPath_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out RootStoreCategoryPropertiesFactory'Class; transformInfoInterface : TransformInfoInterface_Access; node : Node_Access) is
+   procedure Initialize (This : in out RootStoreCategoryPropertiesFactory'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; node_Param : access Node'Class) is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+      node : Node_Access := Node_Access (node_Param);
    begin
       Initialize_Fields (This);
         This.categoryPropertiesInterface := CategoryPropertiesInterface_Access (RootStoreCategoryProperties_Package.Create (transformInfoInterface, node));
    end Initialize;
 
-   function Create (transformInfoInterface : TransformInfoInterface_Access; node : Node_Access) return RootStoreCategoryPropertiesFactory_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class; node_Param : access Node'Class) return RootStoreCategoryPropertiesFactory_Access is
       This : constant RootStoreCategoryPropertiesFactory_Access := new RootStoreCategoryPropertiesFactory;
    begin
-      RootStoreCategoryPropertiesFactory_Package.Initialize (This.all, transformInfoInterface, node);
+      RootStoreCategoryPropertiesFactory_Package.Initialize (This.all, transformInfoInterface_Param, node_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out RootStoreCategoryPropertiesFactory'Class; transformInfoInterface : TransformInfoInterface_Access; categoryPropertiesHashMap : HashMap_Access) is
+   procedure Initialize (This : in out RootStoreCategoryPropertiesFactory'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; categoryPropertiesHashMap_Param : access HashMap'Class) is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+      categoryPropertiesHashMap : HashMap_Access := HashMap_Access (categoryPropertiesHashMap_Param);
    begin
       Initialize_Fields (This);
         This.categoryPropertiesInterface := CategoryPropertiesInterface_Access (RootStoreCategoryProperties_Package.Create (transformInfoInterface, categoryPropertiesHashMap));
    end Initialize;
 
-   function Create (transformInfoInterface : TransformInfoInterface_Access; categoryPropertiesHashMap : HashMap_Access) return RootStoreCategoryPropertiesFactory_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class; categoryPropertiesHashMap_Param : access HashMap'Class) return RootStoreCategoryPropertiesFactory_Access is
       This : constant RootStoreCategoryPropertiesFactory_Access := new RootStoreCategoryPropertiesFactory;
    begin
-      RootStoreCategoryPropertiesFactory_Package.Initialize (This.all, transformInfoInterface, categoryPropertiesHashMap);
+      RootStoreCategoryPropertiesFactory_Package.Initialize (This.all, transformInfoInterface_Param, categoryPropertiesHashMap_Param);
       return This;
    end Create;
 
@@ -87,7 +94,7 @@ package body org.allbinary.business.category.properties.root.store.RootStoreCate
                 begin
             commonStrings := CommonStrings_Package.getInstance;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.ENTITYFACTORYERROR) then
-                This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.GET_INSTANCE, e);
+                This.logUtil.put (commonStrings.EXCEPTION_Id, RootStoreCategoryPropertiesFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE, e);
             end if;
             return null;
                 end;

@@ -27,7 +27,9 @@ package body admin.taghelpers.BasketHelper_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BasketHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access) is
+   procedure Initialize (This : in out BasketHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
       storeName : Unbounded_String;
    begin
       TagHelper_Package.Initialize (This);
@@ -41,10 +43,10 @@ package body admin.taghelpers.BasketHelper_Package is
         This.weblisketSession := WeblisketSession_Package.Create (hashMap, pageContext);
    end Initialize;
 
-   function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return BasketHelper_Access is
+   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return BasketHelper_Access is
       This : constant BasketHelper_Access := new BasketHelper;
    begin
-      BasketHelper_Package.Initialize (This.all, hashMap, pageContext);
+      BasketHelper_Package.Initialize (This.all, hashMap_Param, pageContext_Param);
       return This;
    end Create;
 
@@ -64,7 +66,7 @@ package body admin.taghelpers.BasketHelper_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("isBasketEmpty()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, BasketHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("isBasketEmpty()"), e);
             end if;
             return True;
                 end;

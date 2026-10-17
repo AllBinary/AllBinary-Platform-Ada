@@ -28,8 +28,8 @@ package body org.allbinary.input.media.image.InputImageType_Package is
       Initialize_Fields (This);
         This.name := name;
         This.index := index;
-        InputImageType_Package.TYPE_VECTOR.add (This'Unchecked_Access);
-        InputImageType_Package.hashMap.put (This.getName, This'Unchecked_Access);
+        InputImageType_Package.TYPE_VECTOR.add (InputImageType_Access'(This'Unchecked_Access));
+        InputImageType_Package.hashMap.put (This.getName, InputImageType_Access'(This'Unchecked_Access));
    end Initialize;
 
    function Create (name : Unbounded_String; index : Integer) return InputImageType_Access is

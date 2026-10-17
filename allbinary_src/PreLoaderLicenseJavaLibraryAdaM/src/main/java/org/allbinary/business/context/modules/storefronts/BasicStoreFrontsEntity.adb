@@ -49,7 +49,7 @@ package body org.allbinary.business.context.modules.storefronts.BasicStoreFronts
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such Store: ") & name));
         end if;
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.FACTORYERROR) then
-            This.logUtil.putF (To_Unbounded_String ("StoreFront: ") & storeHashMap.toString, This'Unchecked_Access, To_Unbounded_String ("getStore()"));
+            This.logUtil.putF (To_Unbounded_String ("StoreFront: ") & storeHashMap.toString, BasicStoreFrontsEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("getStore()"));
         end if;
         return BasicStoreFrontInterface_Access (BasicStoreFront_Package.Create (storeHashMap));
    end getStoreFrontInterface;

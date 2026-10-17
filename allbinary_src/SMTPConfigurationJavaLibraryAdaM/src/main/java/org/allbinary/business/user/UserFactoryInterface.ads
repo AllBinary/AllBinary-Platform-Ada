@@ -31,7 +31,7 @@ package org.allbinary.business.user.UserFactoryInterface_Package is
    type UserFactoryInterface_Access is access all UserFactoryInterface'Class;
    type UserFactoryInterface_Access_Array is array (Natural range <>) of UserFactoryInterface_Access;
    type UserFactoryInterface_Access_Array_Access is access all UserFactoryInterface_Access_Array;
-   function getInstance (This : in out UserFactoryInterface; hashMap : HashMap_Access) return UserInterface_Access is abstract;
+   function getInstance (This : in out UserFactoryInterface; hashMap_Param : access HashMap'Class) return UserInterface_Access is abstract;
 
 end org.allbinary.business.user.UserFactoryInterface_Package;
 

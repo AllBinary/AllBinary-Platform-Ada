@@ -30,8 +30,8 @@ package body org.allbinary.game.input.form.UnitRTSFormInput_Package is
         Initialize_Fields (This);
         smallIntegerSingletonFactory := SmallIntegerSingletonFactory_Package.getInstance;
         basicColorFactory := BasicColorFactory_Package.getInstance;
-        This.noMoneyGameNotificationEvent := GameNotificationEvent_Package.Create (This'Unchecked_Access, RTSGameStrings_Package.getInstance.NO_MONEY, smallIntegerSingletonFactory.getAt (2), basicColorFactory.WHITE, BooleanFactory_Package.getInstance.FALSE);
-        This.newUnitGameNotificationEvent := GameNotificationEvent_Package.Create (This'Unchecked_Access, RTSGameStrings_Package.getInstance.NEW_UNIT, smallIntegerSingletonFactory.getAt (2), basicColorFactory.WHITE, BooleanFactory_Package.getInstance.FALSE);
+        This.noMoneyGameNotificationEvent := GameNotificationEvent_Package.Create (UnitRTSFormInput_Access'(This'Unchecked_Access), RTSGameStrings_Package.getInstance.NO_MONEY, smallIntegerSingletonFactory.getAt (2), basicColorFactory.WHITE, BooleanFactory_Package.getInstance.FALSE);
+        This.newUnitGameNotificationEvent := GameNotificationEvent_Package.Create (UnitRTSFormInput_Access'(This'Unchecked_Access), RTSGameStrings_Package.getInstance.NEW_UNIT, smallIntegerSingletonFactory.getAt (2), basicColorFactory.WHITE, BooleanFactory_Package.getInstance.FALSE);
         This.getHashtable.put (WorkWaypoint_Package.ID, smallIntegerSingletonFactory.getAt (50));
    end Initialize;
 
@@ -43,7 +43,8 @@ package body org.allbinary.game.input.form.UnitRTSFormInput_Package is
    end Create;
 
    --  throws Exception
-   procedure setAllBinaryGameLayerManager (This : in out UnitRTSFormInput; allBinaryGameLayerManager : AllBinaryGameLayerManager_Access) is
+   procedure setAllBinaryGameLayerManager (This : in out UnitRTSFormInput; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class) is
+      allBinaryGameLayerManager : AllBinaryGameLayerManager_Access := AllBinaryGameLayerManager_Access (allBinaryGameLayerManager_Param);
       geographicMapCompositeInterface : GeographicMapCompositeInterface_Access;
       geographicMapInterface : BasicGeographicMap_Access;
    begin
@@ -55,7 +56,11 @@ package body org.allbinary.game.input.form.UnitRTSFormInput_Package is
    end setAllBinaryGameLayerManager;
 
    --  throws Exception
-   procedure processGameSpecific (This : in out UnitRTSFormInput; associatedRtsLayer : CollidableDestroyableDamageableLayer_Access; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; layerManager : AllBinaryLayerManager_Access; item : ABCustomItem_Access; itemIndex : Integer) is
+   procedure processGameSpecific (This : in out UnitRTSFormInput; associatedRtsLayer_Param : access CollidableDestroyableDamageableLayer'Class; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; layerManager_Param : access AllBinaryLayerManager'Class; item_Param : access ABCustomItem'Class; itemIndex : Integer) is
+      associatedRtsLayer : CollidableDestroyableDamageableLayer_Access := CollidableDestroyableDamageableLayer_Access (associatedRtsLayer_Param);
+      rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access := RTSPlayerLayerInterface_Access (rtsPlayerLayerInterface_Param);
+      layerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
+      item : ABCustomItem_Access := ABCustomItem_Access (item_Param);
       associatedRtsLayer2 : RTSLayer_Access;
       geographicMapCellPositionArea : GeographicMapCellPositionAreaBase_Access;
       geographicMapCellPosition : GeographicMapCellPosition_Access;
@@ -87,7 +92,11 @@ package body org.allbinary.game.input.form.UnitRTSFormInput_Package is
    end processGameSpecific;
 
    --  throws Exception
-   procedure attemptBuild (This : in out UnitRTSFormInput; associatedRtsLayer : RTSLayer_Access; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; layerManager : AllBinaryLayerManager_Access; layerInterface : RTSLayer_Access; itemIndex : Integer) is
+   procedure attemptBuild (This : in out UnitRTSFormInput; associatedRtsLayer_Param : access RTSLayer'Class; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; layerManager_Param : access AllBinaryLayerManager'Class; layerInterface_Param : access RTSLayer'Class; itemIndex : Integer) is
+      associatedRtsLayer : RTSLayer_Access := RTSLayer_Access (associatedRtsLayer_Param);
+      rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access := RTSPlayerLayerInterface_Access (rtsPlayerLayerInterface_Param);
+      layerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
+      layerInterface : RTSLayer_Access := RTSLayer_Access (layerInterface_Param);
       cost : Integer;
       capital : Capital_Access;
       stringBuffer : StringMaker_Access;
@@ -103,7 +112,7 @@ package body org.allbinary.game.input.form.UnitRTSFormInput_Package is
         stringBuffer.appendint (cost);
         stringBuffer.append (To_Unbounded_String (" with "));
         stringBuffer.appendint (Integer (capital.getTotalMoney));
-        This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("attemptBuild"));
+        This.logUtil.putF (stringBuffer.toString, UnitRTSFormInput_Access'(This'Unchecked_Access), To_Unbounded_String ("attemptBuild"));
         if (cost) <= (capital.getTotalMoney) then
             layerInterface.construct (rtsPlayerLayerInterface);
             This.newUnconstructedRTSLayerInterfaceArray (itemIndex) := CollidableDestroyableDamageableLayer_Package.getNullInstance;

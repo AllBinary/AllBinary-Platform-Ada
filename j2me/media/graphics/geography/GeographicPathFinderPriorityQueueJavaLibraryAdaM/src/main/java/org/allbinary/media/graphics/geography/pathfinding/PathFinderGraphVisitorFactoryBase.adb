@@ -33,13 +33,14 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphV
    end Create;
 
 
-   function getInstance (This : in out PathFinderGraphVisitorFactoryBase; geographicMapInterface : BasicGeographicMap_Access) return PathFinderGraphVisitorBase_Access is
+   function getInstance (This : in out PathFinderGraphVisitorFactoryBase; geographicMapInterface_Param : access BasicGeographicMap'Class) return PathFinderGraphVisitorBase_Access is
+      geographicMapInterface : BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end getInstance;
 
-   procedure getInstance (This : in out PathFinderGraphVisitorFactoryBase; geographicMapInterface : BasicGeographicMap_Access) is
-      Java_Result : constant PathFinderGraphVisitorBase_Access := PathFinderGraphVisitorFactoryBase'Class (This).getInstance (geographicMapInterface);
+   procedure getInstance (This : in out PathFinderGraphVisitorFactoryBase; geographicMapInterface_Param : access BasicGeographicMap'Class) is
+      Java_Result : constant PathFinderGraphVisitorBase_Access := PathFinderGraphVisitorFactoryBase'Class (This).getInstance (geographicMapInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

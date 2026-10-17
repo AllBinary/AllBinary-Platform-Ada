@@ -52,17 +52,17 @@ package org.allbinary.media.audio.music.BaseMusicService_Package is
 
    procedure Initialize (This : in out BaseMusicService'Class);
    function Create return BaseMusicService_Access;
-   function onBind (This : in out BaseMusicService; intent : Intent_Access) return IBinder_Access;
-   procedure onBind (This : in out BaseMusicService; intent : Intent_Access);
+   function onBind (This : in out BaseMusicService; intent_Param : access Intent'Class) return IBinder_Access;
+   procedure onBind (This : in out BaseMusicService; intent_Param : access Intent'Class);
    procedure onCreate (This : in out BaseMusicService);
    procedure onDestroy (This : in out BaseMusicService);
    procedure pause (This : in out BaseMusicService);
    procedure resume (This : in out BaseMusicService);
    procedure start (This : in out BaseMusicService);
-   procedure onStart (This : in out BaseMusicService; intent : Intent_Access; startid : Integer);
-   function onStartCommand (This : in out BaseMusicService; intent : Intent_Access; flags : Integer; startId : Integer) return Integer;
-   procedure onStartCommand (This : in out BaseMusicService; intent : Intent_Access; flags : Integer; startId : Integer);
-   procedure onStartCommandIntent (This : in out BaseMusicService; intent : Intent_Access);
+   procedure onStart (This : in out BaseMusicService; intent_Param : access Intent'Class; startid : Integer);
+   function onStartCommand (This : in out BaseMusicService; intent_Param : access Intent'Class; flags : Integer; startId : Integer) return Integer;
+   procedure onStartCommand (This : in out BaseMusicService; intent_Param : access Intent'Class; flags : Integer; startId : Integer);
+   procedure onStartCommandIntent (This : in out BaseMusicService; intent_Param : access Intent'Class);
 
 end org.allbinary.media.audio.music.BaseMusicService_Package;
 

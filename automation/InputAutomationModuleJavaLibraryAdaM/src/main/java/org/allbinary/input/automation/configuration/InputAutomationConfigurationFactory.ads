@@ -54,7 +54,7 @@ package org.allbinary.input.automation.configuration.InputAutomationConfiguratio
    procedure Initialize (This : in out InputAutomationConfigurationFactory'Class);
    function Create return InputAutomationConfigurationFactory_Access;
    function getInstance return InputAutomationConfigurationFactory_Access;
-   procedure init (This : in out InputAutomationConfigurationFactory; abeClientInformation : AbeClientInformationInterface_Access);
+   procedure init (This : in out InputAutomationConfigurationFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class);
 
 end org.allbinary.input.automation.configuration.InputAutomationConfigurationFactory_Package;
 

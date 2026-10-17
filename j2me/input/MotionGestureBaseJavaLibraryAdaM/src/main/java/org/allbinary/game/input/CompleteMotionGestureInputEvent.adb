@@ -24,7 +24,8 @@ package body org.allbinary.game.input.CompleteMotionGestureInputEvent_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CompleteMotionGestureInputEvent'Class; name : Unbounded_String; motionGestureInput : MotionGestureInput_Access) is
+   procedure Initialize (This : in out CompleteMotionGestureInputEvent'Class; name : Unbounded_String; motionGestureInput_Param : access MotionGestureInput'Class) is
+      motionGestureInput : MotionGestureInput_Access := MotionGestureInput_Access (motionGestureInput_Param);
       commonStrings : CommonStrings_Access;
    begin
         AllBinaryEventObject_Package.Initialize (This, motionGestureInput);
@@ -38,15 +39,15 @@ package body org.allbinary.game.input.CompleteMotionGestureInputEvent_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("InputToGameKeyEventAction"), e);
+            This.logUtil.put (commonStrings.EXCEPTION_Id, CompleteMotionGestureInputEvent_Access'(This'Unchecked_Access), To_Unbounded_String ("InputToGameKeyEventAction"), e);
                 end;
         end;
    end Initialize;
 
-   function Create (name : Unbounded_String; motionGestureInput : MotionGestureInput_Access) return CompleteMotionGestureInputEvent_Access is
+   function Create (name : Unbounded_String; motionGestureInput_Param : access MotionGestureInput'Class) return CompleteMotionGestureInputEvent_Access is
       This : constant CompleteMotionGestureInputEvent_Access := new CompleteMotionGestureInputEvent;
    begin
-      CompleteMotionGestureInputEvent_Package.Initialize (This.all, name, motionGestureInput);
+      CompleteMotionGestureInputEvent_Package.Initialize (This.all, name, motionGestureInput_Param);
       return This;
    end Create;
 
@@ -60,7 +61,8 @@ package body org.allbinary.game.input.CompleteMotionGestureInputEvent_Package is
         return This.name;
    end getName;
 
-   procedure setMotionGestureInput (This : in out CompleteMotionGestureInputEvent; motionGestureInput : MotionGestureInput_Access) is
+   procedure setMotionGestureInput (This : in out CompleteMotionGestureInputEvent; motionGestureInput_Param : access MotionGestureInput'Class) is
+      motionGestureInput : MotionGestureInput_Access := MotionGestureInput_Access (motionGestureInput_Param);
    begin
         This.motionGestureInput := motionGestureInput;
    end setMotionGestureInput;

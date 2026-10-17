@@ -48,13 +48,13 @@ package org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package is
       animationInterface : Animation_Access;
    end record;
 
-   procedure Initialize (This : in out LivesHudWidget'Class; animationInterface : Animation_Access; lifeInterface : Life_Access; location : Integer; direction : Integer);
-   function Create (animationInterface : Animation_Access; lifeInterface : Life_Access; location : Integer; direction : Integer) return LivesHudWidget_Access;
-   procedure updateMeasurement (This : in out LivesHudWidget; graphics : Graphics_Access);
-   procedure onDisplayChangeEvent (This : in out LivesHudWidget; displayChangeEvent : DisplayChangeEvent_Access);
+   procedure Initialize (This : in out LivesHudWidget'Class; animationInterface_Param : access Animation'Class; lifeInterface_Param : access Life'Class; location : Integer; direction : Integer);
+   function Create (animationInterface_Param : access Animation'Class; lifeInterface_Param : access Life'Class; location : Integer; direction : Integer) return LivesHudWidget_Access;
+   procedure updateMeasurement (This : in out LivesHudWidget; graphics_Param : access Graphics'Class);
+   procedure onDisplayChangeEvent (This : in out LivesHudWidget; displayChangeEvent_Param : access DisplayChangeEvent'Class);
    procedure setX (This : in out LivesHudWidget; x : Integer);
-   procedure paint (This : in out LivesHudWidget; graphics : Graphics_Access);
-   procedure paintThreed (This : in out LivesHudWidget; graphics : Graphics_Access);
+   procedure paint (This : in out LivesHudWidget; graphics_Param : access Graphics'Class);
+   procedure paintThreed (This : in out LivesHudWidget; graphics_Param : access Graphics'Class);
    function getLifeInterface (This : in out LivesHudWidget) return Life_Access;
 
 end org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package;

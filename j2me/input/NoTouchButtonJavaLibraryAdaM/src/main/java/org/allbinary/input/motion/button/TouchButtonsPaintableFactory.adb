@@ -33,13 +33,14 @@ package body org.allbinary.input.motion.button.TouchButtonsPaintableFactory_Pack
    end Create;
 
 
-   function getInstance (basicColor : BasicColor_Access) return Paintable_Access is
+   function getInstance (basicColor_Param : access BasicColor'Class) return Paintable_Access is
+      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         return Paintable_Package.Create;
    end getInstance;
 
-   procedure getInstance (basicColor : BasicColor_Access) is
-      Java_Result : constant Paintable_Access := getInstance (basicColor);
+   procedure getInstance (basicColor_Param : access BasicColor'Class) is
+      Java_Result : constant Paintable_Access := getInstance (basicColor_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

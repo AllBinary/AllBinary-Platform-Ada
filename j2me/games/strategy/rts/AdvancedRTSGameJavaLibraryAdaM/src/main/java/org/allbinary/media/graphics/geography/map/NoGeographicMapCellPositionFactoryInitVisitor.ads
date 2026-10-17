@@ -37,7 +37,7 @@ package org.allbinary.media.graphics.geography.map.NoGeographicMapCellPositionFa
 
    procedure Initialize (This : in out NoGeographicMapCellPositionFactoryInitVisitor'Class);
    function Create return NoGeographicMapCellPositionFactoryInitVisitor_Access;
-   procedure visit (This : in out NoGeographicMapCellPositionFactoryInitVisitor; tiledLayer : AllBinaryTiledLayer_Access; cellPosition : GeographicMapCellPosition_Access);
+   procedure visit (This : in out NoGeographicMapCellPositionFactoryInitVisitor; tiledLayer_Param : access AllBinaryTiledLayer'Class; cellPosition_Param : access GeographicMapCellPosition'Class);
 
 end org.allbinary.media.graphics.geography.map.NoGeographicMapCellPositionFactoryInitVisitor_Package;
 

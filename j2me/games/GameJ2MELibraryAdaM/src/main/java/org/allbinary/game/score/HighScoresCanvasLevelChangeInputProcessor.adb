@@ -20,26 +20,28 @@ package body org.allbinary.game.score.HighScoresCanvasLevelChangeInputProcessor_
       null;
       This.displayInfoSingleton := DisplayInfoSingleton_Package.getInstance;
       This.INSTRUCTIONS := To_Unbounded_String ("(Right = Next Track, Left = Previous Track)");
-      This.myFontProcessor := UpdateMyFontProcessor_Package.Create (This'Unchecked_Access);
+      This.myFontProcessor := UpdateMyFontProcessor_Package.Create (HighScoresCanvasLevelChangeInputProcessor_Access'(This'Unchecked_Access));
       This.anchor := Anchor_Package.TOP_LEFT;
       This.fontHeight := 0;
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out HighScoresCanvasLevelChangeInputProcessor'Class; highScoresCanvas : HighScoresCanvas_Access) is
+   procedure Initialize (This : in out HighScoresCanvasLevelChangeInputProcessor'Class; highScoresCanvas_Param : access HighScoresCanvas'Class) is
+      highScoresCanvas : HighScoresCanvas_Access := HighScoresCanvas_Access (highScoresCanvas_Param);
    begin
         HighScoresCanvasInputProcessor_Package.Initialize (This, highScoresCanvas);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (highScoresCanvas : HighScoresCanvas_Access) return HighScoresCanvasLevelChangeInputProcessor_Access is
+   function Create (highScoresCanvas_Param : access HighScoresCanvas'Class) return HighScoresCanvasLevelChangeInputProcessor_Access is
       This : constant HighScoresCanvasLevelChangeInputProcessor_Access := new HighScoresCanvasLevelChangeInputProcessor;
    begin
-      HighScoresCanvasLevelChangeInputProcessor_Package.Initialize (This.all, highScoresCanvas);
+      HighScoresCanvasLevelChangeInputProcessor_Package.Initialize (This.all, highScoresCanvas_Param);
       return This;
    end Create;
 
-   procedure updateMeasurement (This : in out HighScoresCanvasLevelChangeInputProcessor; graphics : Graphics_Access) is
+   procedure updateMeasurement (This : in out HighScoresCanvasLevelChangeInputProcessor; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       font : Font_Access;
    begin
         font := graphics.getFont;
@@ -49,12 +51,12 @@ package body org.allbinary.game.score.HighScoresCanvasLevelChangeInputProcessor_
 
    procedure open (This : in out HighScoresCanvasLevelChangeInputProcessor) is
    begin
-        GameKeyEventHandler_Package.getInstance.addListener (This'Unchecked_Access);
+        GameKeyEventHandler_Package.getInstance.addListener (HighScoresCanvasLevelChangeInputProcessor_Access'(This'Unchecked_Access));
    end open;
 
    procedure close (This : in out HighScoresCanvasLevelChangeInputProcessor) is
    begin
-        GameKeyEventHandler_Package.getInstance.removeListener (This'Unchecked_Access);
+        GameKeyEventHandler_Package.getInstance.removeListener (HighScoresCanvasLevelChangeInputProcessor_Access'(This'Unchecked_Access));
    end close;
 
    procedure update (This : in out HighScoresCanvasLevelChangeInputProcessor) is
@@ -79,7 +81,8 @@ package body org.allbinary.game.score.HighScoresCanvasLevelChangeInputProcessor_
         list.clear;
    end update;
 
-   procedure paint (This : in out HighScoresCanvasLevelChangeInputProcessor; graphics : Graphics_Access) is
+   procedure paint (This : in out HighScoresCanvasLevelChangeInputProcessor; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       width : Integer;
       topScoresWidth : Integer;
    begin

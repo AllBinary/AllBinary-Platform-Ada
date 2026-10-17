@@ -54,18 +54,18 @@ package org.allbinary.animation.text.CustomTextBoxIndexedAnimation_Package is
       textChangeListener : TextChangeListener_Access;
    end record;
 
-   procedure Initialize (This : in out CustomTextBoxIndexedAnimation'Class; customTextBox : CustomTextBox_Access);
-   function Create (customTextBox : CustomTextBox_Access) return CustomTextBoxIndexedAnimation_Access;
-   procedure setBasicColorP (This : in out CustomTextBoxIndexedAnimation; basicColor : BasicColor_Access);
-   procedure setBackgroundBasicColorP (This : in out CustomTextBoxIndexedAnimation; basicColor : BasicColor_Access);
-   procedure setTextWithOnMeasure (This : in out CustomTextBoxIndexedAnimation; text : Unbounded_String; textChangeListener : TextChangeListener_Access);
-   procedure updateMeasurement (This : in out CustomTextBoxIndexedAnimation; graphics : Graphics_Access);
+   procedure Initialize (This : in out CustomTextBoxIndexedAnimation'Class; customTextBox_Param : access CustomTextBox'Class);
+   function Create (customTextBox_Param : access CustomTextBox'Class) return CustomTextBoxIndexedAnimation_Access;
+   procedure setBasicColorP (This : in out CustomTextBoxIndexedAnimation; basicColor_Param : access BasicColor'Class);
+   procedure setBackgroundBasicColorP (This : in out CustomTextBoxIndexedAnimation; basicColor_Param : access BasicColor'Class);
+   procedure setTextWithOnMeasure (This : in out CustomTextBoxIndexedAnimation; text : Unbounded_String; textChangeListener_Param : access TextChangeListener'Class);
+   procedure updateMeasurement (This : in out CustomTextBoxIndexedAnimation; graphics_Param : access Graphics'Class);
    procedure setText (This : in out CustomTextBoxIndexedAnimation; text : Unbounded_String);
    function getText (This : in out CustomTextBoxIndexedAnimation) return Unbounded_String;
    procedure onEventRaw (This : in out CustomTextBoxIndexedAnimation; keyCode : Integer; deviceId : Integer; repeated : Boolean);
    function getFontHeight (This : in out CustomTextBoxIndexedAnimation) return Integer;
-   procedure paintXY (This : in out CustomTextBoxIndexedAnimation; graphics : Graphics_Access; x : Integer; y : Integer);
-   procedure paintThreedXYZ (This : in out CustomTextBoxIndexedAnimation; graphics : Graphics_Access; x : Integer; y : Integer; z : Integer);
+   procedure paintXY (This : in out CustomTextBoxIndexedAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
+   procedure paintThreedXYZ (This : in out CustomTextBoxIndexedAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer; z : Integer);
 
 end org.allbinary.animation.text.CustomTextBoxIndexedAnimation_Package;
 

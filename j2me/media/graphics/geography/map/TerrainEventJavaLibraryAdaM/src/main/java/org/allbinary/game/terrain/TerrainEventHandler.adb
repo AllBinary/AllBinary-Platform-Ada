@@ -27,7 +27,8 @@ package body org.allbinary.game.terrain.TerrainEventHandler_Package is
         TerrainEventHandler_Package.hashtable := StdUtil_Package.getInstance.createHashtable;
    end init;
 
-   function getInstance (anyType : Java_Object_Access) return TerrainEventHandler_Access is
+   function getInstance (anyType_Param : access Java_Object'Class) return TerrainEventHandler_Access is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
       eventHandlerCanBeNull : Java_Object_Access;
    begin
         eventHandlerCanBeNull := TerrainEventHandler_Package.hashtable.get (anyType);
@@ -52,7 +53,8 @@ package body org.allbinary.game.terrain.TerrainEventHandler_Package is
       return This;
    end Create;
 
-   procedure addListener (This : in out TerrainEventHandler; terrainEventListener : TerrainEventListener_Access) is
+   procedure addListener (This : in out TerrainEventHandler; terrainEventListener_Param : access TerrainEventListener'Class) is
+      terrainEventListener : TerrainEventListener_Access := TerrainEventListener_Access (terrainEventListener_Param);
    begin
         if not (This.list.contains (terrainEventListener)) then
             This.list.add (terrainEventListener);
@@ -65,14 +67,16 @@ package body org.allbinary.game.terrain.TerrainEventHandler_Package is
         BasicEventHandler (This).removeAllListeners;
    end removeAllListeners;
 
-   procedure removeListener (This : in out TerrainEventHandler; eventListenerInterface : EventListenerInterface_Access) is
+   procedure removeListener (This : in out TerrainEventHandler; eventListenerInterface_Param : access EventListenerInterface'Class) is
+      eventListenerInterface : EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
    begin
         This.list.remove (eventListenerInterface);
         BasicEventHandler (This).removeListener (eventListenerInterface);
    end removeListener;
 
    --  throws Exception
-   procedure fireEvent (This : in out TerrainEventHandler; eventObject : AllBinaryEventObject_Access) is
+   procedure fireEvent (This : in out TerrainEventHandler; eventObject_Param : access AllBinaryEventObject'Class) is
+      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
       terrainEventListener : TerrainEventListener_Access;
       index : Integer;
    begin
@@ -86,7 +90,7 @@ package body org.allbinary.game.terrain.TerrainEventHandler_Package is
                     declare
                         e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                     begin
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, EventStrings_Package.getInstance.FIRE_EVENT, e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, TerrainEventHandler_Access'(This'Unchecked_Access), EventStrings_Package.getInstance.FIRE_EVENT, e);
                     end;
             end;
         end loop;
@@ -94,15 +98,17 @@ package body org.allbinary.game.terrain.TerrainEventHandler_Package is
    end fireEvent;
 
    --  throws Exception
-   procedure process (This : in out TerrainEventHandler; eventObject : AllBinaryEventObject_Access; eventListenerInterface : EventListenerInterface_Access) is
+   procedure process (This : in out TerrainEventHandler; eventObject_Param : access AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface'Class) is
+      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
+      eventListenerInterface : EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
       terrainEventListenerInterface : TerrainEventListenerInterface_Access;
    begin
         terrainEventListenerInterface := TerrainEventListenerInterface_Access (eventListenerInterface);
         terrainEventListenerInterface.onTerrainEvent (TerrainEvent_Access (eventObject));
    end process;
 
-   procedure getInstance (anyType : Java_Object_Access) is
-      Java_Result : constant TerrainEventHandler_Access := getInstance (anyType);
+   procedure getInstance (anyType_Param : access Java_Object'Class) is
+      Java_Result : constant TerrainEventHandler_Access := getInstance (anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

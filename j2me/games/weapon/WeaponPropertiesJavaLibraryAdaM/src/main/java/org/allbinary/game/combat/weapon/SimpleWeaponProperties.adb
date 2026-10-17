@@ -36,7 +36,8 @@ package body org.allbinary.game.combat.weapon.SimpleWeaponProperties_Package is
    end Create;
 
 
-   procedure set (This : in out SimpleWeaponProperties; simpleWeaponProperties : SimpleWeaponProperties_Access) is
+   procedure set (This : in out SimpleWeaponProperties; simpleWeaponProperties_Param : access SimpleWeaponProperties'Class) is
+      simpleWeaponProperties : SimpleWeaponProperties_Access := SimpleWeaponProperties_Access (simpleWeaponProperties_Param);
    begin
         This.setDamage (simpleWeaponProperties.getDamage);
         This.setDissipation (simpleWeaponProperties.getDissipation);

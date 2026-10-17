@@ -27,7 +27,7 @@ package body org.allbinary.input.motion.gesture.observer.NullCompleteMotionGestu
    begin
       Initialize_Fields (This);
         commonStrings := CommonStrings_Package.getInstance;
-        This.logUtil.putF (To_Unbounded_String ("Null Gesture Reciever"), This'Unchecked_Access, commonStrings.CONSTRUCTOR);
+        This.logUtil.putF (To_Unbounded_String ("Null Gesture Reciever"), NullCompleteMotionGestureReceiver_Access'(This'Unchecked_Access), commonStrings.CONSTRUCTOR);
    end Initialize;
 
    function Create return NullCompleteMotionGestureReceiver_Access is
@@ -38,7 +38,8 @@ package body org.allbinary.input.motion.gesture.observer.NullCompleteMotionGestu
    end Create;
 
    --  throws Exception
-   procedure onMotionGestureCompleted (This : in out NullCompleteMotionGestureReceiver; list : BasicArrayList_Access) is
+   procedure onMotionGestureCompleted (This : in out NullCompleteMotionGestureReceiver; list_Param : access BasicArrayList'Class) is
+      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
    begin
         null;
    end onMotionGestureCompleted;

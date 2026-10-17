@@ -45,10 +45,10 @@ package admin.taghelpers.CustomLoaderHelperFactory_Package is
 
    procedure Initialize (This : in out CustomLoaderHelperFactory'Class);
    function Create return CustomLoaderHelperFactory_Access;
-   function getInstance (This : in out CustomLoaderHelperFactory; hashMap : HashMap_Access; pageContext : PageContext_Access) return Java_Object_Access;
-   procedure getInstance (This : in out CustomLoaderHelperFactory; hashMap : HashMap_Access; pageContext : PageContext_Access);
-   function getInstance (This : in out CustomLoaderHelperFactory; abeClientInformation : AbeClientInformationInterface_Access) return Java_Object_Access;
-   procedure getInstance (This : in out CustomLoaderHelperFactory; abeClientInformation : AbeClientInformationInterface_Access);
+   function getInstance (This : in out CustomLoaderHelperFactory; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return Java_Object_Access;
+   procedure getInstance (This : in out CustomLoaderHelperFactory; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
+   function getInstance (This : in out CustomLoaderHelperFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class) return Java_Object_Access;
+   procedure getInstance (This : in out CustomLoaderHelperFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class);
 
 end admin.taghelpers.CustomLoaderHelperFactory_Package;
 

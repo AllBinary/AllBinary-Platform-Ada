@@ -21,15 +21,17 @@ package body org.allbinary.animation.image.ImageArrayRotationAnimationCacheable_
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ImageArrayRotationAnimationCacheable'Class; anyType : Java_Object_Access; animationBehavior : AnimationBehavior_Access) is
+   procedure Initialize (This : in out ImageArrayRotationAnimationCacheable'Class; anyType_Param : access Java_Object'Class; animationBehavior_Param : access AnimationBehavior'Class) is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      animationBehavior : AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
    begin
         AdjustedImageArrayRotationAnimation_Package.Initialize (This, (ImageArrayRotationAnimationInfo_Access (anyType)).getImageArray, (ImageArrayRotationAnimationInfo_Access (anyType)).getAngleInfoP, (ImageArrayRotationAnimationInfo_Access (anyType)).getTotalAngle, (ImageArrayRotationAnimationInfo_Access (anyType)).getDx, (ImageArrayRotationAnimationInfo_Access (anyType)).getDy, animationBehavior);
    end Initialize;
 
-   function Create (anyType : Java_Object_Access; animationBehavior : AnimationBehavior_Access) return ImageArrayRotationAnimationCacheable_Access is
+   function Create (anyType_Param : access Java_Object'Class; animationBehavior_Param : access AnimationBehavior'Class) return ImageArrayRotationAnimationCacheable_Access is
       This : constant ImageArrayRotationAnimationCacheable_Access := new ImageArrayRotationAnimationCacheable;
    begin
-      ImageArrayRotationAnimationCacheable_Package.Initialize (This.all, anyType, animationBehavior);
+      ImageArrayRotationAnimationCacheable_Package.Initialize (This.all, anyType_Param, animationBehavior_Param);
       return This;
    end Create;
 

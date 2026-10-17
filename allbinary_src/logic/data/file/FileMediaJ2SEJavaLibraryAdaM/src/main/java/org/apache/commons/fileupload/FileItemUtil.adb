@@ -35,13 +35,15 @@ package body org.apache.commons.fileupload.FileItemUtil_Package is
    end getString;
 
    --  throws Exception
-   function getString (This : in out FileItemUtil; fileItem : FileItemStream_Access) return Unbounded_String is
+   function getString (This : in out FileItemUtil; fileItem_Param : access FileItemStream'Class) return Unbounded_String is
+      fileItem : FileItemStream_Access := FileItemStream_Access (fileItem_Param);
    begin
         return Java_New_String (This.getBytes (fileItem), This.DEFAULT_CHARSET);
    end getString;
 
    --  throws Exception
-   function getBytes (This : in out FileItemUtil; fileItem : FileItemStream_Access) return Short_Short_Integer_Array_Access is
+   function getBytes (This : in out FileItemUtil; fileItem_Param : access FileItemStream'Class) return Short_Short_Integer_Array_Access is
+      fileItem : FileItemStream_Access := FileItemStream_Access (fileItem_Param);
       streamUtil : StreamUtil_Access;
       inputStream : InputStream_Access;
       outputStream : ByteArrayOutputStream_Access;
@@ -54,14 +56,14 @@ package body org.apache.commons.fileupload.FileItemUtil_Package is
             inputStream := fileItem.openStream;
             outputStream := ByteArrayOutputStream_Package.Create;
             if fileItem.isFormField then
-                This.logUtil.putF (To_Unbounded_String ("FileItemStream FieldName: ") & Java_Image (fileItem.getFieldName), This'Unchecked_Access, To_Unbounded_String ("write()"));
+                This.logUtil.putF (To_Unbounded_String ("FileItemStream FieldName: ") & Java_Image (fileItem.getFieldName), FileItemUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("write()"));
             else
                 stringBuffer := StringMaker_Package.Create;
                 stringBuffer.append (To_Unbounded_String ("Uploaded File FieldName: "));
                 stringBuffer.append (fileItem.getFieldName);
                 stringBuffer.append (To_Unbounded_String (" name = "));
                 stringBuffer.append (fileItem.getName);
-                This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("write()"));
+                This.logUtil.putF (stringBuffer.toString, FileItemUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("write()"));
             end if;
             outputStream := ByteArrayOutputStream_Access (streamUtil.get (inputStream, outputStream, new Short_Short_Integer_Array'(0 .. (16384) - 1 => 0)));
             return outputStream.toByteArray;
@@ -74,7 +76,9 @@ package body org.apache.commons.fileupload.FileItemUtil_Package is
    end getBytes;
 
    --  throws Exception
-   procedure write (This : in out FileItemUtil; fileItem : FileItem_Access; file : AbFile_Access) is
+   procedure write (This : in out FileItemUtil; fileItem_Param : access FileItem'Class; file_Param : access AbFile'Class) is
+      fileItem : FileItem_Access := FileItem_Access (fileItem_Param);
+      file : AbFile_Access := AbFile_Access (file_Param);
    begin
         fileItem.write (AbFileNativeUtil_Package.get (file));
    end write;
@@ -86,15 +90,15 @@ package body org.apache.commons.fileupload.FileItemUtil_Package is
       null;
    end getString;
 
-   procedure getString (This : in out FileItemUtil; fileItem : FileItemStream_Access) is
-      Java_Result : constant Unbounded_String := FileItemUtil'Class (This).getString (fileItem);
+   procedure getString (This : in out FileItemUtil; fileItem_Param : access FileItemStream'Class) is
+      Java_Result : constant Unbounded_String := FileItemUtil'Class (This).getString (fileItem_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getString;
 
-   procedure getBytes (This : in out FileItemUtil; fileItem : FileItemStream_Access) is
-      Java_Result : constant Short_Short_Integer_Array_Access := FileItemUtil'Class (This).getBytes (fileItem);
+   procedure getBytes (This : in out FileItemUtil; fileItem_Param : access FileItemStream'Class) is
+      Java_Result : constant Short_Short_Integer_Array_Access := FileItemUtil'Class (This).getBytes (fileItem_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

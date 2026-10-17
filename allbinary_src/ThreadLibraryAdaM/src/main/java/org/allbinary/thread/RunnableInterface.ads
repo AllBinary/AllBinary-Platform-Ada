@@ -31,7 +31,7 @@ package org.allbinary.thread.RunnableInterface_Package is
    type RunnableInterface_Access_Array_Access is access all RunnableInterface_Access_Array;
    function isRunning (This : in out RunnableInterface) return Boolean is abstract;
    procedure setRunning (This : in out RunnableInterface; isRunning : Boolean) is abstract;
-   procedure setThread (This : in out RunnableInterface; thread : Thread_Access) is abstract;
+   procedure setThread (This : in out RunnableInterface; thread_Param : access Thread'Class) is abstract;
 
 end org.allbinary.thread.RunnableInterface_Package;
 

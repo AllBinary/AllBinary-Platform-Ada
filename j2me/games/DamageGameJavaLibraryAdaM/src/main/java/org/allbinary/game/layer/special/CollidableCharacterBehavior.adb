@@ -34,7 +34,9 @@ package body org.allbinary.game.layer.special.CollidableCharacterBehavior_Packag
    end Create;
 
    --  throws Exception
-   procedure collide (This : in out CollidableCharacterBehavior; ownerLayer : CollidableCompositeLayer_Access; collidableInterfaceCompositeInterface : CollidableCompositeLayer_Access) is
+   procedure collide (This : in out CollidableCharacterBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableCompositeLayer'Class) is
+      ownerLayer : CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (ownerLayer_Param);
+      collidableInterfaceCompositeInterface : CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (collidableInterfaceCompositeInterface_Param);
       collisionTypeFactory : CollisionTypeFactory_Access;
       collisionType : CollisionType_Access;
       collidableDestroyableDamageableLayer : CollidableDestroyableDamageableLayer_Access;
@@ -50,9 +52,11 @@ package body org.allbinary.game.layer.special.CollidableCharacterBehavior_Packag
    end collide;
 
    --  throws Exception
-   procedure collideInterface (This : in out CollidableCharacterBehavior; ownerLayer : CollidableCompositeLayer_Access; collidableInterfaceCompositeInterface : CollidableInterfaceCompositeInterface_Access) is
+   procedure collideInterface (This : in out CollidableCharacterBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableInterfaceCompositeInterface'Class) is
+      ownerLayer : CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (ownerLayer_Param);
+      collidableInterfaceCompositeInterface : CollidableInterfaceCompositeInterface_Access := CollidableInterfaceCompositeInterface_Access (collidableInterfaceCompositeInterface_Param);
    begin
-        ForcedLogUtil_Package.log (This.commonStrings.NOT_IMPLEMENTED, This'Unchecked_Access);
+        ForcedLogUtil_Package.log (This.commonStrings.NOT_IMPLEMENTED, CollidableCharacterBehavior_Access'(This'Unchecked_Access));
    end collideInterface;
 
 end org.allbinary.game.layer.special.CollidableCharacterBehavior_Package;

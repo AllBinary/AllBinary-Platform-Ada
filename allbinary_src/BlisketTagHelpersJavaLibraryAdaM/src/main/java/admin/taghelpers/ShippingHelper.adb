@@ -28,7 +28,9 @@ package body admin.taghelpers.ShippingHelper_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ShippingHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access) is
+   procedure Initialize (This : in out ShippingHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
       storeName : Unbounded_String;
    begin
       TagHelper_Package.Initialize (This);
@@ -43,10 +45,10 @@ package body admin.taghelpers.ShippingHelper_Package is
         This.getFormData;
    end Initialize;
 
-   function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return ShippingHelper_Access is
+   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return ShippingHelper_Access is
       This : constant ShippingHelper_Access := new ShippingHelper;
    begin
-      ShippingHelper_Package.Initialize (This.all, hashMap, pageContext);
+      ShippingHelper_Package.Initialize (This.all, hashMap_Param, pageContext_Param);
       return This;
    end Create;
 
@@ -65,7 +67,7 @@ package body admin.taghelpers.ShippingHelper_Package is
             order := This.weblisketSession.getOrder;
             order.setShippingMethod (This.shippingType);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, To_Unbounded_String ("setShippingType()"));
+                This.logUtil.putF (success, ShippingHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("setShippingType()"));
             end if;
             return success;
         exception
@@ -75,7 +77,7 @@ package body admin.taghelpers.ShippingHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to view Shipping Type");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("setShippingType()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, ShippingHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("setShippingType()"), e);
             end if;
             return error;
                 end;

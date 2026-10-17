@@ -41,13 +41,14 @@ package body org.allbinary.media.image.analysis.ImageAnalysis_Package is
    end Create;
 
    --  throws Exception
-   function process (This : in out ImageAnalysis; bufferedImageArray : BufferedImage_Access_Array_Access; colorRangeInterface : ColorRangeInterface_Access) return ImageAnalysisResults_Access_Array_Access is
+   function process (This : in out ImageAnalysis; bufferedImageArray : BufferedImage_Access_Array_Access; colorRangeInterface_Param : access ColorRangeInterface'Class) return ImageAnalysisResults_Access_Array_Access is
+      colorRangeInterface : ColorRangeInterface_Access := ColorRangeInterface_Access (colorRangeInterface_Param);
       commonStrings : CommonStrings_Access;
       imageAnalysisResultsArray : ImageAnalysisResults_Access_Array_Access;
       index : Integer;
    begin
         commonStrings := CommonStrings_Package.getInstance;
-        This.logUtil.putF (Java_Image (CommonLabels_Package.getInstance.START) & colorRangeInterface.toString, This'Unchecked_Access, commonStrings.PROCESS);
+        This.logUtil.putF (Java_Image (CommonLabels_Package.getInstance.START) & colorRangeInterface.toString, ImageAnalysis_Access'(This'Unchecked_Access), commonStrings.PROCESS);
         imageAnalysisResultsArray := new ImageAnalysisResults_Access_Array'(0 .. (bufferedImageArray'Length) - 1 => null);
         for index in 0 .. (bufferedImageArray'Length) - 1 loop
             imageAnalysisResultsArray (index) := ImageAnalysis_Package.process (bufferedImageArray (index), colorRangeInterface);
@@ -56,7 +57,9 @@ package body org.allbinary.media.image.analysis.ImageAnalysis_Package is
    end process;
 
    --  throws Exception
-   function process (bufferedImage : BufferedImage_Access; colorRangeInterface : ColorRangeInterface_Access) return ImageAnalysisResults_Access is
+   function process (bufferedImage_Param : access BufferedImage'Class; colorRangeInterface_Param : access ColorRangeInterface'Class) return ImageAnalysisResults_Access is
+      bufferedImage : BufferedImage_Access := BufferedImage_Access (bufferedImage_Param);
+      colorRangeInterface : ColorRangeInterface_Access := ColorRangeInterface_Access (colorRangeInterface_Param);
       imageAnalysisResults : ImageAnalysisResults_Access;
       redTotal : Long_Long_Integer;
       greenTotal : Long_Long_Integer;
@@ -93,7 +96,10 @@ package body org.allbinary.media.image.analysis.ImageAnalysis_Package is
         return imageAnalysisResults;
    end process;
 
-   procedure processColorRangeResults (imageAnalysisResults : ImageAnalysisResults_Access; colorRangeInterface : ColorRangeInterface_Access; color : Color_Access) is
+   procedure processColorRangeResults (imageAnalysisResults_Param : access ImageAnalysisResults'Class; colorRangeInterface_Param : access ColorRangeInterface'Class; color_Param : access Color'Class) is
+      imageAnalysisResults : ImageAnalysisResults_Access := ImageAnalysisResults_Access (imageAnalysisResults_Param);
+      colorRangeInterface : ColorRangeInterface_Access := ColorRangeInterface_Access (colorRangeInterface_Param);
+      color : Color_Access := Color_Access (color_Param);
    begin
         if colorRangeInterface.isInRange (color) then
             imageAnalysisResults.getImageColorRangeResults.addMatchingPixelsChecked;
@@ -103,7 +109,10 @@ package body org.allbinary.media.image.analysis.ImageAnalysis_Package is
         imageAnalysisResults.getImageColorRangeResults.addTotalPixelsChecked;
    end processColorRangeResults;
 
-   procedure processImageColorResults (imageColorResults : ImageColorResults_Access; colorRangeInterface : ColorRangeInterface_Access; color : Color_Access) is
+   procedure processImageColorResults (imageColorResults_Param : access ImageColorResults'Class; colorRangeInterface_Param : access ColorRangeInterface'Class; color_Param : access Color'Class) is
+      imageColorResults : ImageColorResults_Access := ImageColorResults_Access (imageColorResults_Param);
+      colorRangeInterface : ColorRangeInterface_Access := ColorRangeInterface_Access (colorRangeInterface_Param);
+      color : Color_Access := Color_Access (color_Param);
    begin
         if (color.getRed) < (imageColorResults.getColorRange.getMinRed) then
             imageColorResults.getColorRange.setMinRed (color.getRed);
@@ -125,15 +134,15 @@ package body org.allbinary.media.image.analysis.ImageAnalysis_Package is
         end if;
    end processImageColorResults;
 
-   procedure process (This : in out ImageAnalysis; bufferedImageArray : BufferedImage_Access_Array_Access; colorRangeInterface : ColorRangeInterface_Access) is
-      Java_Result : constant ImageAnalysisResults_Access_Array_Access := ImageAnalysis'Class (This).process (bufferedImageArray, colorRangeInterface);
+   procedure process (This : in out ImageAnalysis; bufferedImageArray : BufferedImage_Access_Array_Access; colorRangeInterface_Param : access ColorRangeInterface'Class) is
+      Java_Result : constant ImageAnalysisResults_Access_Array_Access := ImageAnalysis'Class (This).process (bufferedImageArray, colorRangeInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end process;
 
-   procedure process (bufferedImage : BufferedImage_Access; colorRangeInterface : ColorRangeInterface_Access) is
-      Java_Result : constant ImageAnalysisResults_Access := process (bufferedImage, colorRangeInterface);
+   procedure process (bufferedImage_Param : access BufferedImage'Class; colorRangeInterface_Param : access ColorRangeInterface'Class) is
+      Java_Result : constant ImageAnalysisResults_Access := process (bufferedImage_Param, colorRangeInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

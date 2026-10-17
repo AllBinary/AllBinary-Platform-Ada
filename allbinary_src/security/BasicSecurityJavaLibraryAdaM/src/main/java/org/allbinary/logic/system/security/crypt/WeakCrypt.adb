@@ -35,7 +35,7 @@ package body org.allbinary.logic.system.security.crypt.WeakCrypt_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            PreLogUtil_Package.putOE (commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("SuperCrypt(key)"), e);
+            PreLogUtil_Package.putOE (commonStrings.EXCEPTION_Id, WeakCrypt_Access'(This'Unchecked_Access), To_Unbounded_String ("SuperCrypt(key)"), e);
                 end;
         end;
    end Initialize;
@@ -58,7 +58,7 @@ package body org.allbinary.logic.system.security.crypt.WeakCrypt_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            PreLogUtil_Package.putOE (To_Unbounded_String ("Encrypt Failed"), This'Unchecked_Access, To_Unbounded_String ("encrypt"), e);
+            PreLogUtil_Package.putOE (To_Unbounded_String ("Encrypt Failed"), WeakCrypt_Access'(This'Unchecked_Access), To_Unbounded_String ("encrypt"), e);
             return StringUtil_Package.getInstance.EMPTY_STRING;
                 end;
         end;
@@ -75,7 +75,7 @@ package body org.allbinary.logic.system.security.crypt.WeakCrypt_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            PreLogUtil_Package.putOE (To_Unbounded_String ("decrypt Failed"), This'Unchecked_Access, To_Unbounded_String ("decrypt"), e);
+            PreLogUtil_Package.putOE (To_Unbounded_String ("decrypt Failed"), WeakCrypt_Access'(This'Unchecked_Access), To_Unbounded_String ("decrypt"), e);
             return StringUtil_Package.getInstance.EMPTY_STRING;
                 end;
         end;

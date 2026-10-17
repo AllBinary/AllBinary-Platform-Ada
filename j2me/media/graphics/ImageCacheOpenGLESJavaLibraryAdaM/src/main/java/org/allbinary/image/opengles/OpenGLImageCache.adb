@@ -41,13 +41,15 @@ package body org.allbinary.image.opengles.OpenGLImageCache_Package is
       return This;
    end Create;
 
-   procedure addListener (This : in out OpenGLImageCache; renderer : Java_Object_Access) is
+   procedure addListener (This : in out OpenGLImageCache; renderer_Param : access Java_Object'Class) is
+      renderer : Java_Object_Access := Java_Object_Access (renderer_Param);
    begin
         This.renderer := AllBinaryRendererBase3_Access (renderer);
    end addListener;
 
    --  throws Exception
-   procedure update (This : in out OpenGLImageCache; gl : GL10_Access) is
+   procedure update (This : in out OpenGLImageCache; gl_Param : access GL10'Class) is
+      gl : GL10_Access := GL10_Access (gl_Param);
       openGLESImage : OpenGLESImage_Access;
       index : Integer;
    begin
@@ -90,7 +92,9 @@ package body org.allbinary.image.opengles.OpenGLImageCache_Package is
    end createImage;
 
    --  throws Exception
-   function createImageFromInputStream (This : in out OpenGLImageCache; key : Java_Object_Access; inputStream : InputStream_Access) return Image_Access is
+   function createImageFromInputStream (This : in out OpenGLImageCache; key_Param : access Java_Object'Class; inputStream_Param : access InputStream'Class) return Image_Access is
+      key : Java_Object_Access := Java_Object_Access (key_Param);
+      inputStream : InputStream_Access := InputStream_Access (inputStream_Param);
       cachedImage : Image_Access;
       image : Image_Access;
    begin
@@ -109,7 +113,8 @@ package body org.allbinary.image.opengles.OpenGLImageCache_Package is
         return This.gl;
    end getGlP;
 
-   procedure init (This : in out OpenGLImageCache; image : Image_Access) is
+   procedure init (This : in out OpenGLImageCache; image_Param : access Image'Class) is
+      image : Image_Access := Image_Access (image_Param);
    begin
         begin
             begin  --  synchronized
@@ -124,7 +129,7 @@ package body org.allbinary.image.opengles.OpenGLImageCache_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.INIT, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, OpenGLImageCache_Access'(This'Unchecked_Access), This.commonStrings.INIT, e);
                 end;
         end;
    end init;
@@ -136,8 +141,8 @@ package body org.allbinary.image.opengles.OpenGLImageCache_Package is
       null;
    end createImage;
 
-   procedure createImageFromInputStream (This : in out OpenGLImageCache; key : Java_Object_Access; inputStream : InputStream_Access) is
-      Java_Result : constant Image_Access := OpenGLImageCache'Class (This).createImageFromInputStream (key, inputStream);
+   procedure createImageFromInputStream (This : in out OpenGLImageCache; key_Param : access Java_Object'Class; inputStream_Param : access InputStream'Class) is
+      Java_Result : constant Image_Access := OpenGLImageCache'Class (This).createImageFromInputStream (key_Param, inputStream_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -55,16 +55,17 @@ package body org.allbinary.logic.string_Id.regex.replace.Replace_Package is
       return This;
    end Create;
 
-   procedure Initialize (This : in out Replace'Class; hashMap : HashMap_Access) is
+   procedure Initialize (This : in out Replace'Class; hashMap_Param : access HashMap'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
    begin
       Initialize_Fields (This);
         This.hashMap := hashMap;
    end Initialize;
 
-   function Create (hashMap : HashMap_Access) return Replace_Access is
+   function Create (hashMap_Param : access HashMap'Class) return Replace_Access is
       This : constant Replace_Access := new Replace;
    begin
-      Replace_Package.Initialize (This.all, hashMap);
+      Replace_Package.Initialize (This.all, hashMap_Param);
       return This;
    end Create;
 
@@ -145,7 +146,7 @@ package body org.allbinary.logic.string_Id.regex.replace.Replace_Package is
         end loop;
         if (totalNumberOfReplaces) > (0) then
             if LogConfigTypes_Package.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.REPLACE) then
-                This.logUtil.putF (To_Unbounded_String ("Total Number Of Replaces: ") & Java_Image (totalNumberOfReplaces), This'Unchecked_Access, This.ALL_Id);
+                This.logUtil.putF (To_Unbounded_String ("Total Number Of Replaces: ") & Java_Image (totalNumberOfReplaces), Replace_Access'(This'Unchecked_Access), This.ALL_Id);
             end if;
         end if;
         return replace;
@@ -193,7 +194,7 @@ package body org.allbinary.logic.string_Id.regex.replace.Replace_Package is
             end loop;
         end loop;
         if LogConfigTypes_Package.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.REPLACE) then
-            This.logUtil.putF (To_Unbounded_String ("Total Number Of Replaces: ") & Java_Image (totalNumberOfReplaces), This'Unchecked_Access, This.ALL_Id);
+            This.logUtil.putF (To_Unbounded_String ("Total Number Of Replaces: ") & Java_Image (totalNumberOfReplaces), Replace_Access'(This'Unchecked_Access), This.ALL_Id);
         end if;
         return replace;
    end line;

@@ -42,7 +42,9 @@ package body org.allbinary.logic.visual.transform.TransformFactory_Package is
    end Create;
 
    --  throws Exception
-   function getInstance (This : in out TransformFactory; abeClientInformation : AbeClientInformationInterface_Access; viewName : Unbounded_String; ownerTransformInfoInterface : TransformInfoInterface_Access) return TransformInterface_Access is
+   function getInstance (This : in out TransformFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; viewName : Unbounded_String; ownerTransformInfoInterface_Param : access TransformInfoInterface'Class) return TransformInterface_Access is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      ownerTransformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (ownerTransformInfoInterface_Param);
       ownerTransformInfoHttpInterface : TransformInfoHttpInterface_Access;
       transformInfoEntity : TransformInfoEntity_Access;
       transformInfoInterface : TransformInfoInterface_Access;
@@ -50,7 +52,7 @@ package body org.allbinary.logic.visual.transform.TransformFactory_Package is
    begin
         begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORY) then
-                This.logUtil.putF (To_Unbounded_String ("Creating Transform: ") & viewName, This'Unchecked_Access, This.commonStrings.GET_INSTANCE);
+                This.logUtil.putF (To_Unbounded_String ("Creating Transform: ") & viewName, TransformFactory_Access'(This'Unchecked_Access), This.commonStrings.GET_INSTANCE);
             end if;
             ownerTransformInfoHttpInterface := TransformInfoHttpInterface_Access (ownerTransformInfoInterface);
             transformInfoEntity := TransformInfoEntityBuilder_Package.getInstance;
@@ -61,7 +63,7 @@ package body org.allbinary.logic.visual.transform.TransformFactory_Package is
             transformInfoInterface.setChild;
             anyType := TransformInfoObjectFactory_Package.getInstance.getInstance (abeClientInformation, transformInfoInterface);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORY) then
-                This.logUtil.putF (To_Unbounded_String ("Created Transform: ") & viewName, This'Unchecked_Access, This.commonStrings.GET_INSTANCE);
+                This.logUtil.putF (To_Unbounded_String ("Created Transform: ") & viewName, TransformFactory_Access'(This'Unchecked_Access), This.commonStrings.GET_INSTANCE);
             end if;
             return TransformInterface_Access (anyType);
         exception
@@ -70,7 +72,7 @@ package body org.allbinary.logic.visual.transform.TransformFactory_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORYERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.GET_INSTANCE, e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, TransformFactory_Access'(This'Unchecked_Access), This.commonStrings.GET_INSTANCE, e);
             end if;
             Java_Throw (e);
                 end;
@@ -78,7 +80,10 @@ package body org.allbinary.logic.visual.transform.TransformFactory_Package is
    end getInstance;
 
    --  throws Exception
-   function getInstance (This : in out TransformFactory; abeClientInformation : AbeClientInformationInterface_Access; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return TransformInterface_Access is
+   function getInstance (This : in out TransformFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return TransformInterface_Access is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      propertiesHashMap : HashMap_Access := HashMap_Access (propertiesHashMap_Param);
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
       transformInfoData : TransformInfoData_Access;
       transformInfoEntity : TransformInfoEntity_Access;
       transformInfoInterface : TransformInfoInterface_Access;
@@ -88,7 +93,7 @@ package body org.allbinary.logic.visual.transform.TransformFactory_Package is
         begin
             transformInfoData := TransformInfoData_Package.getInstance;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORY) then
-                This.logUtil.putF (To_Unbounded_String ("Creating Transform: ") & Java_Image (propertiesHashMap.get (transformInfoData.NAME)), This'Unchecked_Access, This.commonStrings.GET_INSTANCE);
+                This.logUtil.putF (To_Unbounded_String ("Creating Transform: ") & Java_Image (propertiesHashMap.get (transformInfoData.NAME)), TransformFactory_Access'(This'Unchecked_Access), This.commonStrings.GET_INSTANCE);
             end if;
             transformInfoEntity := TransformInfoEntityBuilder_Package.getInstance;
             transformInfoInterface := transformInfoEntity.get (Unbounded_String (propertiesHashMap.get (transformInfoData.NAME)), propertiesHashMap, pageContext);
@@ -99,7 +104,7 @@ package body org.allbinary.logic.visual.transform.TransformFactory_Package is
             end if;
             anyType := TransformInfoObjectFactory_Package.getInstance.getInstance (abeClientInformation, transformInfoInterface);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORY) then
-                This.logUtil.putF (To_Unbounded_String ("Created Transform: ") & Java_Image (propertiesHashMap.get (transformInfoData.NAME)), This'Unchecked_Access, This.commonStrings.GET_INSTANCE);
+                This.logUtil.putF (To_Unbounded_String ("Created Transform: ") & Java_Image (propertiesHashMap.get (transformInfoData.NAME)), TransformFactory_Access'(This'Unchecked_Access), This.commonStrings.GET_INSTANCE);
             end if;
             return TransformInterface_Access (anyType);
         exception
@@ -112,7 +117,7 @@ package body org.allbinary.logic.visual.transform.TransformFactory_Package is
                 stringBuffer.append (To_Unbounded_String ("Failed To Get Instance: "));
                 stringBuffer.append (Unbounded_String (propertiesHashMap.get (TransformInfoData_Package.getInstance.NAME)));
                 stringBuffer.append (To_Unbounded_String ("->TransformFactory"));
-                This.logUtil.put (stringBuffer.toString, This'Unchecked_Access, This.commonStrings.GET_INSTANCE, e);
+                This.logUtil.put (stringBuffer.toString, TransformFactory_Access'(This'Unchecked_Access), This.commonStrings.GET_INSTANCE, e);
             end if;
             Java_Throw (e);
                 end;
@@ -120,16 +125,18 @@ package body org.allbinary.logic.visual.transform.TransformFactory_Package is
    end getInstance;
 
    --  throws Exception
-   function getInstance (This : in out TransformFactory; abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access) return TransformInterface_Access is
+   function getInstance (This : in out TransformFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) return TransformInterface_Access is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
       anyType : Java_Object_Access;
    begin
         begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORY) then
-                This.logUtil.putF (To_Unbounded_String ("Creating Transform: ") & transformInfoInterface.getName, This'Unchecked_Access, To_Unbounded_String ("getInstance(TransformInfoInterface)"));
+                This.logUtil.putF (To_Unbounded_String ("Creating Transform: ") & transformInfoInterface.getName, TransformFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getInstance(TransformInfoInterface)"));
             end if;
             anyType := TransformInfoObjectFactory_Package.getInstance.getInstance (abeClientInformation, transformInfoInterface);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORY) then
-                This.logUtil.putF (To_Unbounded_String ("Created Transform: ") & transformInfoInterface.getName, This'Unchecked_Access, To_Unbounded_String ("getInstance(TransformInfoInterface)"));
+                This.logUtil.putF (To_Unbounded_String ("Created Transform: ") & transformInfoInterface.getName, TransformFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getInstance(TransformInfoInterface)"));
             end if;
             return TransformInterface_Access (anyType);
         exception
@@ -138,29 +145,29 @@ package body org.allbinary.logic.visual.transform.TransformFactory_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORYERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("getInstance(TransformInfoInterface)"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, TransformFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getInstance(TransformInfoInterface)"), e);
             end if;
             Java_Throw (e);
                 end;
         end;
    end getInstance;
 
-   procedure getInstance (This : in out TransformFactory; abeClientInformation : AbeClientInformationInterface_Access; viewName : Unbounded_String; ownerTransformInfoInterface : TransformInfoInterface_Access) is
-      Java_Result : constant TransformInterface_Access := TransformFactory'Class (This).getInstance (abeClientInformation, viewName, ownerTransformInfoInterface);
+   procedure getInstance (This : in out TransformFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; viewName : Unbounded_String; ownerTransformInfoInterface_Param : access TransformInfoInterface'Class) is
+      Java_Result : constant TransformInterface_Access := TransformFactory'Class (This).getInstance (abeClientInformation_Param, viewName, ownerTransformInfoInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
-   procedure getInstance (This : in out TransformFactory; abeClientInformation : AbeClientInformationInterface_Access; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) is
-      Java_Result : constant TransformInterface_Access := TransformFactory'Class (This).getInstance (abeClientInformation, propertiesHashMap, pageContext);
+   procedure getInstance (This : in out TransformFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+      Java_Result : constant TransformInterface_Access := TransformFactory'Class (This).getInstance (abeClientInformation_Param, propertiesHashMap_Param, pageContext_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
-   procedure getInstance (This : in out TransformFactory; abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access) is
-      Java_Result : constant TransformInterface_Access := TransformFactory'Class (This).getInstance (abeClientInformation, transformInfoInterface);
+   procedure getInstance (This : in out TransformFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+      Java_Result : constant TransformInterface_Access := TransformFactory'Class (This).getInstance (abeClientInformation_Param, transformInfoInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -43,13 +43,15 @@ package body org.allbinary.media.image.comparison.motion.SaveMotionRectanglesRes
         return This.motionRectanglesVector;
    end getMotionRectanglesVector;
 
-   procedure onMotionRectanglesImageComparisonResultsEvent (This : in out SaveMotionRectanglesResultsWorker; motionRectanglesResultsEvent : MotionRectanglesResultsEvent_Access) is
+   procedure onMotionRectanglesImageComparisonResultsEvent (This : in out SaveMotionRectanglesResultsWorker; motionRectanglesResultsEvent_Param : access MotionRectanglesResultsEvent'Class) is
+      motionRectanglesResultsEvent : MotionRectanglesResultsEvent_Access := MotionRectanglesResultsEvent_Access (motionRectanglesResultsEvent_Param);
    begin
         This.getMotionRectanglesVector.add (motionRectanglesResultsEvent);
         This.run;
    end onMotionRectanglesImageComparisonResultsEvent;
 
-   procedure onEvent (This : in out SaveMotionRectanglesResultsWorker; allBinaryEventObject : AllBinaryEventObject_Access) is
+   procedure onEvent (This : in out SaveMotionRectanglesResultsWorker; allBinaryEventObject_Param : access AllBinaryEventObject'Class) is
+      allBinaryEventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (allBinaryEventObject_Param);
    begin
         This.onMotionRectanglesImageComparisonResultsEvent (MotionRectanglesResultsEvent_Access (allBinaryEventObject));
    end onEvent;
@@ -70,7 +72,7 @@ package body org.allbinary.media.image.comparison.motion.SaveMotionRectanglesRes
       motionRectangles : MotionRectangles_Access;
    begin
         begin
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.RUN);
+            This.logUtil.putF (This.commonStrings.START, SaveMotionRectanglesResultsWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
             This.setRunning (True);
             timeHelper := TimeDelayHelper_Package.Create (1000);
             timeHelper.setStartTimeTNT;
@@ -78,14 +80,14 @@ package body org.allbinary.media.image.comparison.motion.SaveMotionRectanglesRes
             motionRectangles := motionRectanglesResultsEvent.getMotionRectangles;
             MotionRectanglesImageInputOutput_Package.Create.save (motionRectangles, motionRectanglesResultsEvent.getFrame);
             This.getMotionRectanglesVector.remove (motionRectangles);
-            This.logUtil.putF ((CommonLabels_Package.getInstance.ELAPSED) + (timeHelper.getElapsedTNT), This'Unchecked_Access, This.commonStrings.RUN);
-            This.logUtil.putF (This.commonStrings.END_Id, This'Unchecked_Access, This.commonStrings.RUN);
+            This.logUtil.putF ((CommonLabels_Package.getInstance.ELAPSED) + (timeHelper.getElapsedTNT), SaveMotionRectanglesResultsWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
+            This.logUtil.putF (This.commonStrings.END_Id, SaveMotionRectanglesResultsWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.RUN, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, SaveMotionRectanglesResultsWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN, e);
                 end;
         end;
    end run;

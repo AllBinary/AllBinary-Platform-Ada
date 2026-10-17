@@ -27,7 +27,9 @@ package body org.allbinary.animation.image.ImageSegmentAnimation_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ImageSegmentAnimation'Class; image : Image_Access; sequenceArray : Integer_Array_Access; animationBehavior : AnimationBehavior_Access) is
+   procedure Initialize (This : in out ImageSegmentAnimation'Class; image_Param : access Image'Class; sequenceArray : Integer_Array_Access; animationBehavior_Param : access AnimationBehavior'Class) is
+      image : Image_Access := Image_Access (image_Param);
+      animationBehavior : AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
    begin
         ImageAnimation_Package.Initialize (This, image, animationBehavior);
         Initialize_Fields (This);
@@ -39,10 +41,10 @@ package body org.allbinary.animation.image.ImageSegmentAnimation_Package is
         This.sequenceArray := sequenceArray;
    end Initialize;
 
-   function Create (image : Image_Access; sequenceArray : Integer_Array_Access; animationBehavior : AnimationBehavior_Access) return ImageSegmentAnimation_Access is
+   function Create (image_Param : access Image'Class; sequenceArray : Integer_Array_Access; animationBehavior_Param : access AnimationBehavior'Class) return ImageSegmentAnimation_Access is
       This : constant ImageSegmentAnimation_Access := new ImageSegmentAnimation;
    begin
-      ImageSegmentAnimation_Package.Initialize (This.all, image, sequenceArray, animationBehavior);
+      ImageSegmentAnimation_Package.Initialize (This.all, image_Param, sequenceArray, animationBehavior_Param);
       return This;
    end Create;
 
@@ -81,7 +83,8 @@ package body org.allbinary.animation.image.ImageSegmentAnimation_Package is
         return This.sequenceArray;
    end getSequence;
 
-   procedure paintXY (This : in out ImageSegmentAnimation; graphics : Graphics_Access; x : Integer; y : Integer) is
+   procedure paintXY (This : in out ImageSegmentAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         null;
    end paintXY;

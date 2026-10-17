@@ -37,7 +37,9 @@ package body admin.taghelpers.PaymentGatewayHelperFactory_Package is
    end Create;
 
    --  throws LicensingException
-   function getInstance (This : in out PaymentGatewayHelperFactory; hashMap : HashMap_Access; pageContext : PageContext_Access) return Java_Object_Access is
+   function getInstance (This : in out PaymentGatewayHelperFactory; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return Java_Object_Access is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
    begin
         begin
             return PaymentGatewayHelper_Package.Create (hashMap, pageContext);
@@ -47,15 +49,15 @@ package body admin.taghelpers.PaymentGatewayHelperFactory_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORYERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.GET_INSTANCE, e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, PaymentGatewayHelperFactory_Access'(This'Unchecked_Access), This.commonStrings.GET_INSTANCE, e);
             end if;
             return null;
                 end;
         end;
    end getInstance;
 
-   procedure getInstance (This : in out PaymentGatewayHelperFactory; hashMap : HashMap_Access; pageContext : PageContext_Access) is
-      Java_Result : constant Java_Object_Access := PaymentGatewayHelperFactory'Class (This).getInstance (hashMap, pageContext);
+   procedure getInstance (This : in out PaymentGatewayHelperFactory; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+      Java_Result : constant Java_Object_Access := PaymentGatewayHelperFactory'Class (This).getInstance (hashMap_Param, pageContext_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -127,7 +127,8 @@ package body org.allbinary.logic.communication.log.config.LoggingInitInfo_Packag
         end;
    end isValid;
 
-   procedure set (logConfigInfoVector : BasicArrayList_Access) is
+   procedure set (logConfigInfoVector_Param : access BasicArrayList'Class) is
+      logConfigInfoVector : BasicArrayList_Access := BasicArrayList_Access (logConfigInfoVector_Param);
    begin
         LoggingInitInfo_Package.logConfigInfoList := logConfigInfoVector;
    end set;

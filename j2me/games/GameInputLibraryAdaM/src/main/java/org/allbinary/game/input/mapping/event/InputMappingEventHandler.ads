@@ -43,7 +43,7 @@ package org.allbinary.game.input.mapping.event.InputMappingEventHandler_Package 
    procedure Initialize (This : in out InputMappingEventHandler'Class);
    function Create return InputMappingEventHandler_Access;
    function getInstance return InputMappingEventHandler_Access;
-   procedure process (This : in out InputMappingEventHandler; eventObject : AllBinaryEventObject_Access; eventListenerInterface : EventListenerInterface_Access);
+   procedure process (This : in out InputMappingEventHandler; eventObject_Param : access AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface'Class);
 
 end org.allbinary.game.input.mapping.event.InputMappingEventHandler_Package;
 

@@ -59,14 +59,16 @@ package body org.allbinary.media.audio.BasicPlayer_Package is
         null;
    end close;
 
-   procedure addPlayerListener (This : in out BasicPlayer; playerListener : PlayerListener_Access) is
+   procedure addPlayerListener (This : in out BasicPlayer; playerListener_Param : access PlayerListener'Class) is
+      playerListener : PlayerListener_Access := PlayerListener_Access (playerListener_Param);
    begin
         if not (This.listenersList.contains (playerListener)) then
             This.listenersList.add (playerListener);
         end if;
    end addPlayerListener;
 
-   procedure removePlayerListener (This : in out BasicPlayer; playerListener : PlayerListener_Access) is
+   procedure removePlayerListener (This : in out BasicPlayer; playerListener_Param : access PlayerListener'Class) is
+      playerListener : PlayerListener_Access := PlayerListener_Access (playerListener_Param);
    begin
         This.listenersList.remove (playerListener);
    end removePlayerListener;

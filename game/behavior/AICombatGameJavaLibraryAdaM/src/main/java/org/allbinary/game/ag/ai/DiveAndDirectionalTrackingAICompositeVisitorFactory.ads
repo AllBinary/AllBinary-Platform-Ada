@@ -36,8 +36,8 @@ package org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAICompositeVisitorFac
 
    procedure Initialize (This : in out DiveAndDirectionalTrackingAICompositeVisitorFactory'Class);
    function Create return DiveAndDirectionalTrackingAICompositeVisitorFactory_Access;
-   function getInstance (This : in out DiveAndDirectionalTrackingAICompositeVisitorFactory; diveBombAI : DiveAndDirectionalTrackingAI_Access) return Visitor_Access;
-   procedure getInstance (This : in out DiveAndDirectionalTrackingAICompositeVisitorFactory; diveBombAI : DiveAndDirectionalTrackingAI_Access);
+   function getInstance (This : in out DiveAndDirectionalTrackingAICompositeVisitorFactory; diveBombAI_Param : access DiveAndDirectionalTrackingAI'Class) return Visitor_Access;
+   procedure getInstance (This : in out DiveAndDirectionalTrackingAICompositeVisitorFactory; diveBombAI_Param : access DiveAndDirectionalTrackingAI'Class);
 
 end org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAICompositeVisitorFactory_Package;
 

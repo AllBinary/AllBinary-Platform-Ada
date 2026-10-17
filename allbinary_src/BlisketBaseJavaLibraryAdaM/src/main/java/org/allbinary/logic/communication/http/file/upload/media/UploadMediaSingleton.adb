@@ -67,7 +67,7 @@ package body org.allbinary.logic.communication.http.file.upload.media.UploadMedi
             stringBuffer.append (This.readerFileTypesHashMap.toString);
             stringBuffer.append (To_Unbounded_String (" Writers: "));
             stringBuffer.append (This.writerFileTypesHashMap.toString);
-            This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+            This.logUtil.putF (stringBuffer.toString, UploadMediaSingleton_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
    end Initialize;
 
@@ -116,7 +116,8 @@ package body org.allbinary.logic.communication.http.file.upload.media.UploadMedi
         return This.isMedia (mediaFileType, aMediaType, This.writerFileTypesHashMap);
    end isWriterMedia;
 
-   function isMedia (This : in out UploadMediaSingleton; mediaFileType : Unbounded_String; aMediaType : Unbounded_String; hashMap : HashMap_Access) return Boolean is
+   function isMedia (This : in out UploadMediaSingleton; mediaFileType : Unbounded_String; aMediaType : Unbounded_String; hashMap_Param : access HashMap'Class) return Boolean is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
       mediaType : Unbounded_String;
    begin
         if hashMap.containsKey (mediaFileType) then
@@ -173,8 +174,8 @@ package body org.allbinary.logic.communication.http.file.upload.media.UploadMedi
       null;
    end isWriterMedia;
 
-   procedure isMedia (This : in out UploadMediaSingleton; mediaFileType : Unbounded_String; aMediaType : Unbounded_String; hashMap : HashMap_Access) is
-      Java_Result : constant Boolean := UploadMediaSingleton'Class (This).isMedia (mediaFileType, aMediaType, hashMap);
+   procedure isMedia (This : in out UploadMediaSingleton; mediaFileType : Unbounded_String; aMediaType : Unbounded_String; hashMap_Param : access HashMap'Class) is
+      Java_Result : constant Boolean := UploadMediaSingleton'Class (This).isMedia (mediaFileType, aMediaType, hashMap_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

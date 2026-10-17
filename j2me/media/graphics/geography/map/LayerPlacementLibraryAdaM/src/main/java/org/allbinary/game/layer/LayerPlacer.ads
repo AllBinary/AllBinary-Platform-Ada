@@ -55,12 +55,12 @@ package org.allbinary.game.layer.LayerPlacer_Package is
       dimension : GPoint_Access;
    end record;
 
-   procedure Initialize (This : in out LayerPlacer'Class; layerInterfaceVisitor : LayerInterfaceVisitor_Access; dimension : GPoint_Access);
-   function Create (layerInterfaceVisitor : LayerInterfaceVisitor_Access; dimension : GPoint_Access) return LayerPlacer_Access;
-   procedure processList (This : in out LayerPlacer; list : BasicArrayList_Access);
-   procedure process (This : in out LayerPlacer; layerPlacementInterface : LayerPlacementInterface_Access);
-   function getPoint (This : in out LayerPlacer; layerPlacementInterface : LayerPlacementInterface_Access) return GPoint_Access;
-   procedure getPoint (This : in out LayerPlacer; layerPlacementInterface : LayerPlacementInterface_Access);
+   procedure Initialize (This : in out LayerPlacer'Class; layerInterfaceVisitor_Param : access LayerInterfaceVisitor'Class; dimension_Param : access GPoint'Class);
+   function Create (layerInterfaceVisitor_Param : access LayerInterfaceVisitor'Class; dimension_Param : access GPoint'Class) return LayerPlacer_Access;
+   procedure processList (This : in out LayerPlacer; list_Param : access BasicArrayList'Class);
+   procedure process (This : in out LayerPlacer; layerPlacementInterface_Param : access LayerPlacementInterface'Class);
+   function getPoint (This : in out LayerPlacer; layerPlacementInterface_Param : access LayerPlacementInterface'Class) return GPoint_Access;
+   procedure getPoint (This : in out LayerPlacer; layerPlacementInterface_Param : access LayerPlacementInterface'Class);
 
 end org.allbinary.game.layer.LayerPlacer_Package;
 

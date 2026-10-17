@@ -67,17 +67,17 @@ package org.allbinary.input.automation.module.generic_Id.configuration.profile.a
    end record;
    NAME : Unbounded_String;
 
-   procedure Initialize (This : in out GenericProfileActionScript'Class; genericProfileActionJPanel : GenericProfileActionJPanel_Access; node : Node_Access);
-   function Create (genericProfileActionJPanel : GenericProfileActionJPanel_Access; node : Node_Access) return GenericProfileActionScript_Access;
-   procedure Initialize (This : in out GenericProfileActionScript'Class; genericProfileActionJPanel : GenericProfileActionJPanel_Access);
-   function Create (genericProfileActionJPanel : GenericProfileActionJPanel_Access) return GenericProfileActionScript_Access;
-   procedure addCondition (This : in out GenericProfileActionScript; profileActionScriptNodeInterface : ProfileActionScriptNodeInterface_Access);
-   procedure removeCondition (This : in out GenericProfileActionScript; profileActionScriptNodeInterface : ProfileActionScriptNodeInterface_Access);
+   procedure Initialize (This : in out GenericProfileActionScript'Class; genericProfileActionJPanel_Param : access GenericProfileActionJPanel'Class; node_Param : access Node'Class);
+   function Create (genericProfileActionJPanel_Param : access GenericProfileActionJPanel'Class; node_Param : access Node'Class) return GenericProfileActionScript_Access;
+   procedure Initialize (This : in out GenericProfileActionScript'Class; genericProfileActionJPanel_Param : access GenericProfileActionJPanel'Class);
+   function Create (genericProfileActionJPanel_Param : access GenericProfileActionJPanel'Class) return GenericProfileActionScript_Access;
+   procedure addCondition (This : in out GenericProfileActionScript; profileActionScriptNodeInterface_Param : access ProfileActionScriptNodeInterface'Class);
+   procedure removeCondition (This : in out GenericProfileActionScript; profileActionScriptNodeInterface_Param : access ProfileActionScriptNodeInterface'Class);
    function toHashMap (This : in out GenericProfileActionScript) return HashMap_Access;
    function getProfileActionConditionInterfaceVector (This : in out GenericProfileActionScript) return BasicArrayList_Access;
-   procedure setProfileActionConditionInterfaceVector (This : in out GenericProfileActionScript; profileActionConditionInterfaceVector : BasicArrayList_Access);
-   function toXmlNode (This : in out GenericProfileActionScript; document : Document_Access) return Node_Access;
-   procedure toXmlNode (This : in out GenericProfileActionScript; document : Document_Access);
+   procedure setProfileActionConditionInterfaceVector (This : in out GenericProfileActionScript; profileActionConditionInterfaceVector_Param : access BasicArrayList'Class);
+   function toXmlNode (This : in out GenericProfileActionScript; document_Param : access Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out GenericProfileActionScript; document_Param : access Document'Class);
 
 end org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.script.GenericProfileActionScript_Package;
 

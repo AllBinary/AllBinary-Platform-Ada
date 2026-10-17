@@ -52,9 +52,9 @@ package org.allbinary.game.ag.ai.sequence.SequenceAI_Package is
    end record;
    SEQUENCE_AI : Unbounded_String;
 
-   procedure Initialize (This : in out SequenceAI'Class; artificialIntelligenceInterfaceArray : ArtificialIntelligenceInterface_Access_Array_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access);
-   function Create (artificialIntelligenceInterfaceArray : ArtificialIntelligenceInterface_Access_Array_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return SequenceAI_Access;
-   procedure processAI (This : in out SequenceAI; allBinaryLayerManager : AllBinaryLayerManager_Access);
+   procedure Initialize (This : in out SequenceAI'Class; artificialIntelligenceInterfaceArray : ArtificialIntelligenceInterface_Access_Array_Access; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class);
+   function Create (artificialIntelligenceInterfaceArray : ArtificialIntelligenceInterface_Access_Array_Access; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return SequenceAI_Access;
+   procedure processAI (This : in out SequenceAI; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class);
    procedure next (This : in out SequenceAI);
    function getIndex (This : in out SequenceAI) return Integer;
    procedure setIndex (This : in out SequenceAI; index : Integer);

@@ -46,7 +46,8 @@ package body org.allbinary.business.user.commerce.shipping.modules.BasicWeightSh
         return null;
    end toValidationInfoDoc;
 
-   function toValidationInfoNode (This : in out BasicWeightShippingModuleView; document : Document_Access) return Node_Access is
+   function toValidationInfoNode (This : in out BasicWeightShippingModuleView; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
    begin
         return null;
    end toValidationInfoNode;
@@ -56,7 +57,8 @@ package body org.allbinary.business.user.commerce.shipping.modules.BasicWeightSh
         return Null_Unbounded_String;
    end validationInfo;
 
-   function toXmlNode (This : in out BasicWeightShippingModuleView; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out BasicWeightShippingModuleView; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       shippingMethodNode : Node_Access;
    begin
         begin
@@ -70,7 +72,7 @@ package body org.allbinary.business.user.commerce.shipping.modules.BasicWeightSh
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("toXmlNode"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, BasicWeightShippingModuleView_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode"), e);
             end if;
             return null;
                 end;
@@ -89,7 +91,7 @@ package body org.allbinary.business.user.commerce.shipping.modules.BasicWeightSh
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("toXmlDoc"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, BasicWeightShippingModuleView_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlDoc"), e);
             end if;
             return null;
                 end;
@@ -106,22 +108,22 @@ package body org.allbinary.business.user.commerce.shipping.modules.BasicWeightSh
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("view"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, BasicWeightShippingModuleView_Access'(This'Unchecked_Access), To_Unbounded_String ("view"), e);
             end if;
             return Null_Unbounded_String;
                 end;
         end;
    end view;
 
-   procedure toValidationInfoNode (This : in out BasicWeightShippingModuleView; document : Document_Access) is
-      Java_Result : constant Node_Access := BasicWeightShippingModuleView'Class (This).toValidationInfoNode (document);
+   procedure toValidationInfoNode (This : in out BasicWeightShippingModuleView; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := BasicWeightShippingModuleView'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toValidationInfoNode;
 
-   procedure toXmlNode (This : in out BasicWeightShippingModuleView; document : Document_Access) is
-      Java_Result : constant Node_Access := BasicWeightShippingModuleView'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out BasicWeightShippingModuleView; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := BasicWeightShippingModuleView'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

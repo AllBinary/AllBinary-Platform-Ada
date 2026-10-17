@@ -23,54 +23,57 @@ package body org.allbinary.data.tree.category.CategoryPrivateTree_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CategoryPrivateTree'Class; categoryFactoryInterface : CategoryFactoryInterface_Access) is
+   procedure Initialize (This : in out CategoryPrivateTree'Class; categoryFactoryInterface_Param : access CategoryFactoryInterface'Class) is
+      categoryFactoryInterface : CategoryFactoryInterface_Access := CategoryFactoryInterface_Access (categoryFactoryInterface_Param);
       commonStrings : CommonStrings_Access;
    begin
       Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY) then
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.putF (commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("CategoryPrivateTree(CategoryFactoryInterface categoryFactoryInterface)"));
+            This.logUtil.putF (commonStrings.START, CategoryPrivateTree_Access'(This'Unchecked_Access), To_Unbounded_String ("CategoryPrivateTree(CategoryFactoryInterface categoryFactoryInterface)"));
         end if;
         This.categoryFactoryInterface := categoryFactoryInterface;
    end Initialize;
 
-   function Create (categoryFactoryInterface : CategoryFactoryInterface_Access) return CategoryPrivateTree_Access is
+   function Create (categoryFactoryInterface_Param : access CategoryFactoryInterface'Class) return CategoryPrivateTree_Access is
       This : constant CategoryPrivateTree_Access := new CategoryPrivateTree;
    begin
-      CategoryPrivateTree_Package.Initialize (This.all, categoryFactoryInterface);
+      CategoryPrivateTree_Package.Initialize (This.all, categoryFactoryInterface_Param);
       return This;
    end Create;
 
    --  throws Exception
-   procedure save (This : in out CategoryPrivateTree; categoryInterface : CategoryInterface_Access) is
+   procedure save (This : in out CategoryPrivateTree; categoryInterface_Param : access CategoryInterface'Class) is
+      categoryInterface : CategoryInterface_Access := CategoryInterface_Access (categoryInterface_Param);
       document : Document_Access;
       cryptFileWriter : CryptFileWriter_Access;
    begin
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-            This.logUtil.putF (To_Unbounded_String ("Saving Category File: ") & Java_Image (categoryInterface.getFilePath), This'Unchecked_Access, To_Unbounded_String ("save()"));
+            This.logUtil.putF (To_Unbounded_String ("Saving Category File: ") & Java_Image (categoryInterface.getFilePath), CategoryPrivateTree_Access'(This'Unchecked_Access), To_Unbounded_String ("save()"));
         end if;
         document := CategoryComponent_Package.Create (categoryInterface).toXmlDoc;
         cryptFileWriter := CryptFileWriter_Package.Create (CategoryData_Package.getInstance.UNCRYPTED_EXTENSION, CategoryData_Package.getInstance.ENCRYPTED_EXTENSION);
         cryptFileWriter.write (categoryInterface.getFilePath, document);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-            This.logUtil.putF (To_Unbounded_String ("end"), This'Unchecked_Access, To_Unbounded_String ("save()"));
+            This.logUtil.putF (To_Unbounded_String ("end"), CategoryPrivateTree_Access'(This'Unchecked_Access), To_Unbounded_String ("save()"));
         end if;
    end save;
 
    --  throws Exception
-   procedure delete (This : in out CategoryPrivateTree; categoryInterface : CategoryInterface_Access) is
+   procedure delete (This : in out CategoryPrivateTree; categoryInterface_Param : access CategoryInterface'Class) is
+      categoryInterface : CategoryInterface_Access := CategoryInterface_Access (categoryInterface_Param);
       categoryFile : AbFile_Access;
    begin
         if categoryInterface.isLeaf then
             categoryFile := AbFile_Package.createAbFileFromAbPath (categoryInterface.getFilePath);
             if categoryFile.delete then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                    This.logUtil.putF (To_Unbounded_String ("Removed: ") & Java_Image (categoryInterface.getFilePath), This'Unchecked_Access, To_Unbounded_String ("delete(CategoryInterface)"));
+                    This.logUtil.putF (To_Unbounded_String ("Removed: ") & Java_Image (categoryInterface.getFilePath), CategoryPrivateTree_Access'(This'Unchecked_Access), To_Unbounded_String ("delete(CategoryInterface)"));
                 end if;
             end if;
         else
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.putF (To_Unbounded_String ("Not a leaf unable to remove"), This'Unchecked_Access, To_Unbounded_String ("delete(CategoryInterface)"));
+                This.logUtil.putF (To_Unbounded_String ("Not a leaf unable to remove"), CategoryPrivateTree_Access'(This'Unchecked_Access), To_Unbounded_String ("delete(CategoryInterface)"));
             end if;
         end if;
    end delete;

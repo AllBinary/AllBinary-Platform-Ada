@@ -22,21 +22,23 @@ package body org.allbinary.business.context.modules.storefront.statistics.users.
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out StoreFrontUsersStatisticsView'Class; storeFrontUsersStatisticsInterface : StoreFrontUsersStatisticsInterface_Access) is
+   procedure Initialize (This : in out StoreFrontUsersStatisticsView'Class; storeFrontUsersStatisticsInterface_Param : access StoreFrontUsersStatisticsInterface'Class) is
+      storeFrontUsersStatisticsInterface : StoreFrontUsersStatisticsInterface_Access := StoreFrontUsersStatisticsInterface_Access (storeFrontUsersStatisticsInterface_Param);
    begin
       Initialize_Fields (This);
         This.storeFrontUsersStatisticsInterface := storeFrontUsersStatisticsInterface;
    end Initialize;
 
-   function Create (storeFrontUsersStatisticsInterface : StoreFrontUsersStatisticsInterface_Access) return StoreFrontUsersStatisticsView_Access is
+   function Create (storeFrontUsersStatisticsInterface_Param : access StoreFrontUsersStatisticsInterface'Class) return StoreFrontUsersStatisticsView_Access is
       This : constant StoreFrontUsersStatisticsView_Access := new StoreFrontUsersStatisticsView;
    begin
-      StoreFrontUsersStatisticsView_Package.Initialize (This.all, storeFrontUsersStatisticsInterface);
+      StoreFrontUsersStatisticsView_Package.Initialize (This.all, storeFrontUsersStatisticsInterface_Param);
       return This;
    end Create;
 
    --  throws Exception
-   function toXmlNode (This : in out StoreFrontUsersStatisticsView; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out StoreFrontUsersStatisticsView; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       hashMap : HashMap_Access;
       node : Node_Access;
    begin
@@ -45,8 +47,8 @@ package body org.allbinary.business.context.modules.storefront.statistics.users.
         return node;
    end toXmlNode;
 
-   procedure toXmlNode (This : in out StoreFrontUsersStatisticsView; document : Document_Access) is
-      Java_Result : constant Node_Access := StoreFrontUsersStatisticsView'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out StoreFrontUsersStatisticsView; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := StoreFrontUsersStatisticsView'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -26,18 +26,20 @@ package body org.allbinary.game.midlet.CreateGameRunnable_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CreateGameRunnable'Class; demoGameMidlet : DemoGameMidlet_Access; hashtable : ABHashtable_Access) is
+   procedure Initialize (This : in out CreateGameRunnable'Class; demoGameMidlet_Param : access DemoGameMidlet'Class; hashtable_Param : access ABHashtable'Class) is
+      demoGameMidlet : DemoGameMidlet_Access := DemoGameMidlet_Access (demoGameMidlet_Param);
+      hashtable : ABHashtable_Access := ABHashtable_Access (hashtable_Param);
    begin
       Initialize_Fields (This);
         This.demoGameMidlet := demoGameMidlet;
         This.hashtable := hashtable;
-        This.startGameMidletEvent := DemoGameMidletEvent_Package.Create (This'Unchecked_Access, DemoGameMidletStateFactory_Package.getInstance.START_GAME);
+        This.startGameMidletEvent := DemoGameMidletEvent_Package.Create (CreateGameRunnable_Access'(This'Unchecked_Access), DemoGameMidletStateFactory_Package.getInstance.START_GAME);
    end Initialize;
 
-   function Create (demoGameMidlet : DemoGameMidlet_Access; hashtable : ABHashtable_Access) return CreateGameRunnable_Access is
+   function Create (demoGameMidlet_Param : access DemoGameMidlet'Class; hashtable_Param : access ABHashtable'Class) return CreateGameRunnable_Access is
       This : constant CreateGameRunnable_Access := new CreateGameRunnable;
    begin
-      CreateGameRunnable_Package.Initialize (This.all, demoGameMidlet, hashtable);
+      CreateGameRunnable_Package.Initialize (This.all, demoGameMidlet_Param, hashtable_Param);
       return This;
    end Create;
 
@@ -45,7 +47,7 @@ package body org.allbinary.game.midlet.CreateGameRunnable_Package is
       progressCanvas : ProgressCanvas_Access;
    begin
         begin
-            This.logUtil.putF (This.commonStrings.START_RUNNABLE, This'Unchecked_Access, This.commonStrings.RUN);
+            This.logUtil.putF (This.commonStrings.START_RUNNABLE, CreateGameRunnable_Access'(This'Unchecked_Access), This.commonStrings.RUN);
             progressCanvas := ProgressCanvasFactory_Package.getInstance;
             This.demoGameMidlet.commandAction (MyCommandsFactory_Package.getInstance.SET_DISPLAYABLE, progressCanvas);
             This.demoGameMidlet.stopGameCanvasRunnableInterface;
@@ -53,13 +55,13 @@ package body org.allbinary.game.midlet.CreateGameRunnable_Package is
             This.demoGameMidlet.getGameCanvasRunnableInterface.setLoadStateHashtable (This.hashtable);
             This.demoGameMidlet.startGameCanvasRunnableInterface;
             DemoGameMidletEventHandler_Package.getInstance.fireEvent (This.startGameMidletEvent);
-            This.logUtil.putF (This.commonStrings.END_RUNNABLE, This'Unchecked_Access, This.commonStrings.RUN);
+            This.logUtil.putF (This.commonStrings.END_RUNNABLE, CreateGameRunnable_Access'(This'Unchecked_Access), This.commonStrings.RUN);
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.RUN, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, CreateGameRunnable_Access'(This'Unchecked_Access), This.commonStrings.RUN, e);
                 end;
         end;
    end run;

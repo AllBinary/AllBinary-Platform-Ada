@@ -23,22 +23,25 @@ package body org.allbinary.game.ag.ai.tactical.HorizontalManeuverAI_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out HorizontalManeuverAI'Class; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) is
+   procedure Initialize (This : in out HorizontalManeuverAI'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) is
+      ownerLayerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (ownerLayerInterface_Param);
+      gameInput : GameInput_Access := GameInput_Access (gameInput_Param);
    begin
         BasicAI_Package.Initialize (This, ownerLayerInterface, gameInput);
         Initialize_Fields (This);
         This.currentSpeed := 5;
    end Initialize;
 
-   function Create (ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return HorizontalManeuverAI_Access is
+   function Create (ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return HorizontalManeuverAI_Access is
       This : constant HorizontalManeuverAI_Access := new HorizontalManeuverAI;
    begin
-      HorizontalManeuverAI_Package.Initialize (This.all, ownerLayerInterface, gameInput);
+      HorizontalManeuverAI_Package.Initialize (This.all, ownerLayerInterface_Param, gameInput_Param);
       return This;
    end Create;
 
    --  throws Exception
-   procedure processAI (This : in out HorizontalManeuverAI; allBinaryLayerManager : AllBinaryLayerManager_Access) is
+   procedure processAI (This : in out HorizontalManeuverAI; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class) is
+      allBinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
       ownerLayerInterface : AllBinaryLayer_Access;
       x : Integer;
    begin

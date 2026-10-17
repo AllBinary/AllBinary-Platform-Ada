@@ -48,15 +48,16 @@ package body org.allbinary.media.image.comparison.ComparisonImageInputOutput_Pac
                 imageComparisonResult := imageComparisonResultFrameCacheable.getImageComparisonResult;
                 This.save (imageComparisonResult, imageComparisonResultFrameCacheable.getFrame);
             else
-                This.logUtil.putF (To_Unbounded_String ("Comparison Results Not Available for Output: ") & Java_Image (frame), This'Unchecked_Access, commonStrings.SAVE);
+                This.logUtil.putF (To_Unbounded_String ("Comparison Results Not Available for Output: ") & Java_Image (frame), ComparisonImageInputOutput_Access'(This'Unchecked_Access), commonStrings.SAVE);
             end if;
         else
-            This.logUtil.putF (To_Unbounded_String ("No Comparison Results: for first frame: ") & Java_Image (frame), This'Unchecked_Access, commonStrings.SAVE);
+            This.logUtil.putF (To_Unbounded_String ("No Comparison Results: for first frame: ") & Java_Image (frame), ComparisonImageInputOutput_Access'(This'Unchecked_Access), commonStrings.SAVE);
         end if;
    end save;
 
    --  throws Exception
-   procedure save (This : in out ComparisonImageInputOutput; imageComparisonResult : ImageComparisonResult_Access; frame : Long_Long_Integer) is
+   procedure save (This : in out ComparisonImageInputOutput; imageComparisonResult_Param : access ImageComparisonResult'Class; frame : Long_Long_Integer) is
+      imageComparisonResult : ImageComparisonResult_Access := ImageComparisonResult_Access (imageComparisonResult_Param);
       commonStrings : CommonStrings_Access;
       filePathStringBuffer : StringMaker_Access;
       filePathStringBuffer1 : StringMaker_Access;
@@ -83,8 +84,8 @@ package body org.allbinary.media.image.comparison.ComparisonImageInputOutput_Pac
         filePathStringBuffer2.append (MediaDataFactory_Package.getInstance.JPG.getExtension);
         filePath2 := filePathStringBuffer2.toString;
         bufferedImageCacheables := ChangedPixelsUtil_Package.generateBufferedImageChacheables (imageComparisonResult);
-        This.logUtil.putF (To_Unbounded_String ("Comparison Image File Path 1: ") & filePath1, This'Unchecked_Access, commonStrings.SAVE);
-        This.logUtil.putF (To_Unbounded_String ("Comparison Image File Path 2: ") & filePath2, This'Unchecked_Access, commonStrings.SAVE);
+        This.logUtil.putF (To_Unbounded_String ("Comparison Image File Path 1: ") & filePath1, ComparisonImageInputOutput_Access'(This'Unchecked_Access), commonStrings.SAVE);
+        This.logUtil.putF (To_Unbounded_String ("Comparison Image File Path 2: ") & filePath2, ComparisonImageInputOutput_Access'(This'Unchecked_Access), commonStrings.SAVE);
         bufferedImageArray := new BufferedImage_Access_Array'(0 .. (2) - 1 => null);
         bufferedImageArray (0) := bufferedImageCacheables (0).getBufferedImage;
         bufferedImageArray (1) := bufferedImageCacheables (1).getBufferedImage;

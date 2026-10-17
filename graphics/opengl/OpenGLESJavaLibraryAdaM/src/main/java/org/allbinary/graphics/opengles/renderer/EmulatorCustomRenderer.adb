@@ -36,17 +36,19 @@ package body org.allbinary.graphics.opengles.renderer.EmulatorCustomRenderer_Pac
    end Create;
 
 
-   procedure onSurfaceCreated (This : in out EmulatorCustomRenderer; gl : GL10_Access; eglConfig : EGLConfig_Access) is
+   procedure onSurfaceCreated (This : in out EmulatorCustomRenderer; gl_Param : access GL10'Class; eglConfig_Param : access EGLConfig'Class) is
+      gl : GL10_Access := GL10_Access (gl_Param);
+      eglConfig : EGLConfig_Access := EGLConfig_Access (eglConfig_Param);
       initEmulatorFactory : InitEmulatorFactory_Access;
       WAIT_FOR_EMULATOR : Unbounded_String;
    begin
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.renderStrings.ON_SURFACE_CREATED);
+        This.logUtil.putF (This.commonStrings.START, EmulatorCustomRenderer_Access'(This'Unchecked_Access), This.renderStrings.ON_SURFACE_CREATED);
         initEmulatorFactory := InitEmulatorFactory_Package.getInstance;
         if not (initEmulatorFactory.isInitEmulator) then
             begin
                 WAIT_FOR_EMULATOR := To_Unbounded_String ("Waiting on Emulator Initialization");
                 while not (initEmulatorFactory.isInitEmulator) loop
-                    PreLogUtil_Package.put (WAIT_FOR_EMULATOR, This'Unchecked_Access, This.renderStrings.ON_SURFACE_CREATED);
+                    PreLogUtil_Package.put (WAIT_FOR_EMULATOR, EmulatorCustomRenderer_Access'(This'Unchecked_Access), This.renderStrings.ON_SURFACE_CREATED);
                     Java_Sleep (180);
                 end loop;
             exception
@@ -54,7 +56,7 @@ package body org.allbinary.graphics.opengles.renderer.EmulatorCustomRenderer_Pac
                     declare
                         e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                     begin
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.renderStrings.ON_SURFACE_CREATED, e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, EmulatorCustomRenderer_Access'(This'Unchecked_Access), This.renderStrings.ON_SURFACE_CREATED, e);
                     end;
             end;
         end if;

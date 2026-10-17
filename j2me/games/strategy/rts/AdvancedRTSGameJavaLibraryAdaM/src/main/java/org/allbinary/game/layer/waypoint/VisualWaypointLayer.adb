@@ -20,15 +20,20 @@ package body org.allbinary.game.layer.waypoint.VisualWaypointLayer_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out VisualWaypointLayer'Class; remoteInfo : RemoteInfo_Access; parentLayer : PathFindingLayerInterface_Access; groupInterface : Group_Access_Array_Access; rootName : Unbounded_String; name : Unbounded_String; animationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; proceduralAnimationInterfaceFactoryInterface : ProceduralAnimationInterfaceFactoryInterface_Access; rectangle : Rectangle_Access; x : Integer; y : Integer) is
+   procedure Initialize (This : in out VisualWaypointLayer'Class; remoteInfo_Param : access RemoteInfo'Class; parentLayer_Param : access PathFindingLayerInterface'Class; groupInterface : Group_Access_Array_Access; rootName : Unbounded_String; name : Unbounded_String; animationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface'Class; proceduralAnimationInterfaceFactoryInterface_Param : access ProceduralAnimationInterfaceFactoryInterface'Class; rectangle_Param : access Rectangle'Class; x : Integer; y : Integer) is
+      remoteInfo : RemoteInfo_Access := RemoteInfo_Access (remoteInfo_Param);
+      parentLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (parentLayer_Param);
+      animationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access := AnimationInterfaceFactoryInterface_Access (animationInterfaceFactoryInterface_Param);
+      proceduralAnimationInterfaceFactoryInterface : ProceduralAnimationInterfaceFactoryInterface_Access := ProceduralAnimationInterfaceFactoryInterface_Access (proceduralAnimationInterfaceFactoryInterface_Param);
+      rectangle : Rectangle_Access := Rectangle_Access (rectangle_Param);
    begin
         WaypointLayer_Package.Initialize (This, remoteInfo, parentLayer, groupInterface, rootName, name, animationInterfaceFactoryInterface, proceduralAnimationInterfaceFactoryInterface, rectangle, x, y);
    end Initialize;
 
-   function Create (remoteInfo : RemoteInfo_Access; parentLayer : PathFindingLayerInterface_Access; groupInterface : Group_Access_Array_Access; rootName : Unbounded_String; name : Unbounded_String; animationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access; proceduralAnimationInterfaceFactoryInterface : ProceduralAnimationInterfaceFactoryInterface_Access; rectangle : Rectangle_Access; x : Integer; y : Integer) return VisualWaypointLayer_Access is
+   function Create (remoteInfo_Param : access RemoteInfo'Class; parentLayer_Param : access PathFindingLayerInterface'Class; groupInterface : Group_Access_Array_Access; rootName : Unbounded_String; name : Unbounded_String; animationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface'Class; proceduralAnimationInterfaceFactoryInterface_Param : access ProceduralAnimationInterfaceFactoryInterface'Class; rectangle_Param : access Rectangle'Class; x : Integer; y : Integer) return VisualWaypointLayer_Access is
       This : constant VisualWaypointLayer_Access := new VisualWaypointLayer;
    begin
-      VisualWaypointLayer_Package.Initialize (This.all, remoteInfo, parentLayer, groupInterface, rootName, name, animationInterfaceFactoryInterface, proceduralAnimationInterfaceFactoryInterface, rectangle, x, y);
+      VisualWaypointLayer_Package.Initialize (This.all, remoteInfo_Param, parentLayer_Param, groupInterface, rootName, name, animationInterfaceFactoryInterface_Param, proceduralAnimationInterfaceFactoryInterface_Param, rectangle_Param, x, y);
       return This;
    end Create;
 
@@ -37,7 +42,7 @@ package body org.allbinary.game.layer.waypoint.VisualWaypointLayer_Package is
    begin
         rtsLayerHudPaintable := WaypointInfoHudPaintableSingleton_Package.getInstance;
         rtsLayerHudPaintable.setBasicColorP (This.allBinaryGameLayerManagerP.getForegroundBasicColor);
-        rtsLayerHudPaintable.setRtsLayer (This'Unchecked_Access);
+        rtsLayerHudPaintable.setRtsLayer (VisualWaypointLayer_Access'(This'Unchecked_Access));
         return rtsLayerHudPaintable;
    end createHudPaintable;
 

@@ -19,7 +19,7 @@ package body org.allbinary.game.paint.FullScreenPaintable_Package is
    begin
       null;
       This.displayInfo := DisplayInfoSingleton_Package.getInstance;
-      This.myFontProcessor := UpdateMyFontProcessor_Package.Create (This'Unchecked_Access);
+      This.myFontProcessor := UpdateMyFontProcessor_Package.Create (FullScreenPaintable_Access'(This'Unchecked_Access));
       This.FULLSCREEN_TEXT := To_Unbounded_String ("F11 - Toggle Fullscreen");
       This.anchor := Anchor_Package.TOP_LEFT;
       This.Y := 0;
@@ -46,7 +46,8 @@ package body org.allbinary.game.paint.FullScreenPaintable_Package is
       return This;
    end Create;
 
-   procedure updateMeasurement (This : in out FullScreenPaintable; graphics : Graphics_Access) is
+   procedure updateMeasurement (This : in out FullScreenPaintable; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       font : Font_Access;
    begin
         font := graphics.getFont;
@@ -55,7 +56,8 @@ package body org.allbinary.game.paint.FullScreenPaintable_Package is
         This.myFontProcessor := MyFontProcessor_Package.getInstance;
    end updateMeasurement;
 
-   procedure paint (This : in out FullScreenPaintable; graphics : Graphics_Access) is
+   procedure paint (This : in out FullScreenPaintable; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       halfWidth : Integer;
       height : Integer;
    begin

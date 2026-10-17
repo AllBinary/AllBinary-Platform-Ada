@@ -51,7 +51,9 @@ package body org.allbinary.game.score.HighScoreNamePersistanceSingleton_Package 
    end clear;
 
    --  throws Exception
-   procedure deleteAll (This : in out HighScoreNamePersistanceSingleton; abeClientInformation : AbeClientInformationInterface_Access; gameInfo : GameInfo_Access) is
+   procedure deleteAll (This : in out HighScoreNamePersistanceSingleton; abeClientInformation_Param : access AbeClientInformationInterface'Class; gameInfo_Param : access GameInfo'Class) is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      gameInfo : GameInfo_Access := GameInfo_Access (gameInfo_Param);
       size : Integer;
       integer_Id : Integer;
       index : Integer;
@@ -64,18 +66,21 @@ package body org.allbinary.game.score.HighScoreNamePersistanceSingleton_Package 
         This.clear;
    end deleteAll;
 
-   function getRecordId (This : in out HighScoreNamePersistanceSingleton; abeClientInformation : AbeClientInformationInterface_Access) return Unbounded_String is
+   function getRecordId (This : in out HighScoreNamePersistanceSingleton; abeClientInformation_Param : access AbeClientInformationInterface'Class) return Unbounded_String is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
    begin
         return This.platformRecordIdUtil.getRecordId (abeClientInformation, This.RECORD_ID);
    end getRecordId;
 
    --  throws Exception
-   procedure delete (This : in out HighScoreNamePersistanceSingleton; abeClientInformation : AbeClientInformationInterface_Access; gameInfo : GameInfo_Access; deleteId : Integer) is
+   procedure delete (This : in out HighScoreNamePersistanceSingleton; abeClientInformation_Param : access AbeClientInformationInterface'Class; gameInfo_Param : access GameInfo'Class; deleteId : Integer) is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      gameInfo : GameInfo_Access := GameInfo_Access (gameInfo_Param);
       recordStore : RecordStore_Access;
    begin
         recordStore := NullRecordStore_Package.NULL_RECORD_STORE;
         begin
-            This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Deleting: ")).appendint (deleteId).toString, This'Unchecked_Access, This.commonStrings.delete);
+            This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Deleting: ")).appendint (deleteId).toString, HighScoreNamePersistanceSingleton_Access'(This'Unchecked_Access), This.commonStrings.delete);
             recordStore := RecordStore_Package.openRecordStore (This.getRecordId (abeClientInformation), True);
             recordStore.deleteRecord (deleteId);
         exception
@@ -89,7 +94,7 @@ package body org.allbinary.game.score.HighScoreNamePersistanceSingleton_Package 
         --  finally
         begin
             if (recordStore) /= (null) then
-                PreLogUtil_Package.put (To_Unbounded_String ("Closing RecordStore"), This'Unchecked_Access, This.commonStrings.delete);
+                PreLogUtil_Package.put (To_Unbounded_String ("Closing RecordStore"), HighScoreNamePersistanceSingleton_Access'(This'Unchecked_Access), This.commonStrings.delete);
                 recordStore.closeRecordStore;
             end if;
         end;
@@ -100,7 +105,9 @@ package body org.allbinary.game.score.HighScoreNamePersistanceSingleton_Package 
         return This.nameBasicArrayList;
    end getIds;
 
-   function load (This : in out HighScoreNamePersistanceSingleton; abeClientInformation : AbeClientInformationInterface_Access; gameInfo : GameInfo_Access) return Unbounded_String is
+   function load (This : in out HighScoreNamePersistanceSingleton; abeClientInformation_Param : access AbeClientInformationInterface'Class; gameInfo_Param : access GameInfo'Class) return Unbounded_String is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      gameInfo : GameInfo_Access := GameInfo_Access (gameInfo_Param);
       recordStore : RecordStore_Access;
       LOADING_ID : Unbounded_String;
       recordEnum : RecordEnumeration_Access;
@@ -122,7 +129,7 @@ package body org.allbinary.game.score.HighScoreNamePersistanceSingleton_Package 
                 inputStream := null;
                 while recordEnum.hasNextElement loop
                     id := recordEnum.nextRecordId;
-                    This.logUtil.putF (StringMaker_Package.Create.append (LOADING_ID).appendint (id).toString, This'Unchecked_Access, This.commonStrings.LOAD);
+                    This.logUtil.putF (StringMaker_Package.Create.append (LOADING_ID).appendint (id).toString, HighScoreNamePersistanceSingleton_Access'(This'Unchecked_Access), This.commonStrings.LOAD);
                     recordAsBytes := This.tsUtil.getRecord (recordStore, id);
                     byteArrayInputStream := ByteArrayInputStream_Package.Create (recordAsBytes);
                     inputStream := DataInputStream_Package.Create (byteArrayInputStream);
@@ -138,14 +145,14 @@ package body org.allbinary.game.score.HighScoreNamePersistanceSingleton_Package 
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             This.save (abeClientInformation, gameInfo, This.name);
-            This.logUtil.putF (StringMaker_Package.Create.append (This.commonStrings.EXCEPTION_LABEL).append (ExceptionUtil_Package.getInstance.getStackTrace (e)).toString, This'Unchecked_Access, This.commonStrings.LOAD);
+            This.logUtil.putF (StringMaker_Package.Create.append (This.commonStrings.EXCEPTION_LABEL).append (ExceptionUtil_Package.getInstance.getStackTrace (e)).toString, HighScoreNamePersistanceSingleton_Access'(This'Unchecked_Access), This.commonStrings.LOAD);
                 end;
         end;
         --  finally
         begin
             begin
                 if (recordStore) /= (null) then
-                    PreLogUtil_Package.put (To_Unbounded_String ("Closing RecordStore"), This'Unchecked_Access, This.commonStrings.LOAD);
+                    PreLogUtil_Package.put (To_Unbounded_String ("Closing RecordStore"), HighScoreNamePersistanceSingleton_Access'(This'Unchecked_Access), This.commonStrings.LOAD);
                     recordStore.closeRecordStore;
                 end if;
             exception
@@ -153,14 +160,16 @@ package body org.allbinary.game.score.HighScoreNamePersistanceSingleton_Package 
                     declare
                         e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                     begin
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.LOAD, e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, HighScoreNamePersistanceSingleton_Access'(This'Unchecked_Access), This.commonStrings.LOAD, e);
                     end;
             end;
         end;
         return This.name;
    end load;
 
-   procedure save (This : in out HighScoreNamePersistanceSingleton; abeClientInformation : AbeClientInformationInterface_Access; gameInfo : GameInfo_Access; name : Unbounded_String) is
+   procedure save (This : in out HighScoreNamePersistanceSingleton; abeClientInformation_Param : access AbeClientInformationInterface'Class; gameInfo_Param : access GameInfo'Class; name : Unbounded_String) is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      gameInfo : GameInfo_Access := GameInfo_Access (gameInfo_Param);
       recordStore : RecordStore_Access;
       byteArrayOutputStream : ByteArrayOutputStream_Access;
       outputStream : DataOutputStream_Access;
@@ -168,7 +177,7 @@ package body org.allbinary.game.score.HighScoreNamePersistanceSingleton_Package 
    begin
         recordStore := NullRecordStore_Package.NULL_RECORD_STORE;
         begin
-            This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Saving: ")).append (name).toString, This'Unchecked_Access, This.commonStrings.SAVE);
+            This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Saving: ")).append (name).toString, HighScoreNamePersistanceSingleton_Access'(This'Unchecked_Access), This.commonStrings.SAVE);
             recordStore := RecordStore_Package.openRecordStore (This.getRecordId (abeClientInformation), True);
             byteArrayOutputStream := ByteArrayOutputStream_Package.Create;
             outputStream := DataOutputStream_Package.Create (byteArrayOutputStream);
@@ -181,14 +190,14 @@ package body org.allbinary.game.score.HighScoreNamePersistanceSingleton_Package 
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.SAVE, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, HighScoreNamePersistanceSingleton_Access'(This'Unchecked_Access), This.commonStrings.SAVE, e);
                 end;
         end;
         --  finally
         begin
             begin
                 if (recordStore) /= (null) then
-                    PreLogUtil_Package.put (To_Unbounded_String ("Closing RecordStore"), This'Unchecked_Access, This.commonStrings.SAVE);
+                    PreLogUtil_Package.put (To_Unbounded_String ("Closing RecordStore"), HighScoreNamePersistanceSingleton_Access'(This'Unchecked_Access), This.commonStrings.SAVE);
                     recordStore.closeRecordStore;
                 end if;
             exception
@@ -196,21 +205,21 @@ package body org.allbinary.game.score.HighScoreNamePersistanceSingleton_Package 
                     declare
                         e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                     begin
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.SAVE, e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, HighScoreNamePersistanceSingleton_Access'(This'Unchecked_Access), This.commonStrings.SAVE, e);
                     end;
             end;
         end;
    end save;
 
-   procedure getRecordId (This : in out HighScoreNamePersistanceSingleton; abeClientInformation : AbeClientInformationInterface_Access) is
-      Java_Result : constant Unbounded_String := HighScoreNamePersistanceSingleton'Class (This).getRecordId (abeClientInformation);
+   procedure getRecordId (This : in out HighScoreNamePersistanceSingleton; abeClientInformation_Param : access AbeClientInformationInterface'Class) is
+      Java_Result : constant Unbounded_String := HighScoreNamePersistanceSingleton'Class (This).getRecordId (abeClientInformation_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getRecordId;
 
-   procedure load (This : in out HighScoreNamePersistanceSingleton; abeClientInformation : AbeClientInformationInterface_Access; gameInfo : GameInfo_Access) is
-      Java_Result : constant Unbounded_String := HighScoreNamePersistanceSingleton'Class (This).load (abeClientInformation, gameInfo);
+   procedure load (This : in out HighScoreNamePersistanceSingleton; abeClientInformation_Param : access AbeClientInformationInterface'Class; gameInfo_Param : access GameInfo'Class) is
+      Java_Result : constant Unbounded_String := HighScoreNamePersistanceSingleton'Class (This).load (abeClientInformation_Param, gameInfo_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

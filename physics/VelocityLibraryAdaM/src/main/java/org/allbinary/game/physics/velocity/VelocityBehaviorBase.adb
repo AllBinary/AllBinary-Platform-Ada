@@ -33,17 +33,20 @@ package body org.allbinary.game.physics.velocity.VelocityBehaviorBase_Package is
    end Create;
 
 
-   procedure reduce (This : in out VelocityBehaviorBase; velocityProperties : BasicVelocityProperties_Access; nominator : Integer; denominator : Integer) is
+   procedure reduce (This : in out VelocityBehaviorBase; velocityProperties_Param : access BasicVelocityProperties'Class; nominator : Integer; denominator : Integer) is
+      velocityProperties : BasicVelocityProperties_Access := BasicVelocityProperties_Access (velocityProperties_Param);
    begin
         null;
    end reduce;
 
-   procedure reduceX (This : in out VelocityBehaviorBase; velocityProperties : BasicVelocityProperties_Access; nominator : Integer; denominator : Integer) is
+   procedure reduceX (This : in out VelocityBehaviorBase; velocityProperties_Param : access BasicVelocityProperties'Class; nominator : Integer; denominator : Integer) is
+      velocityProperties : BasicVelocityProperties_Access := BasicVelocityProperties_Access (velocityProperties_Param);
    begin
         null;
    end reduceX;
 
-   procedure reduceY (This : in out VelocityBehaviorBase; velocityProperties : BasicVelocityProperties_Access; nominator : Integer; denominator : Integer) is
+   procedure reduceY (This : in out VelocityBehaviorBase; velocityProperties_Param : access BasicVelocityProperties'Class; nominator : Integer; denominator : Integer) is
+      velocityProperties : BasicVelocityProperties_Access := BasicVelocityProperties_Access (velocityProperties_Param);
    begin
         null;
    end reduceY;

@@ -29,7 +29,7 @@ package body org.allbinary.game.input.J2MEGameKey_Package is
         id := This.getId;
         if (id) >= (0) then
             inputFactory := InputFactory_Package.getInstance;
-            inputFactory.add (id, This'Unchecked_Access);
+            inputFactory.add (id, J2MEGameKey_Access'(This'Unchecked_Access));
         end if;
    end Initialize;
 

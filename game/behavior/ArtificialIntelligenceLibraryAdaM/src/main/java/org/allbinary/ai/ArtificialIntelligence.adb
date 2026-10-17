@@ -40,7 +40,8 @@ package body org.allbinary.ai.ArtificialIntelligence_Package is
    end Create;
 
    --  throws Exception
-   procedure processAI (This : in out ArtificialIntelligence; layerManager : AllBinaryLayerManager_Access) is
+   procedure processAI (This : in out ArtificialIntelligence; layerManager_Param : access AllBinaryLayerManager'Class) is
+      layerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
    begin
         null;
    end processAI;

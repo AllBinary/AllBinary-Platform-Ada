@@ -37,9 +37,9 @@ package org.allbinary.game.layer.special.SpecialFireGameInputInterfaceProcessor_
 
    type SpecialFireGameInputInterfaceProcessor is new SpecialGameInputInterfaceProcessor with null record;
 
-   procedure Initialize (This : in out SpecialFireGameInputInterfaceProcessor'Class; collidableDestroyableDamageableLayer : SpecialGameInputInterface_Access);
-   function Create (collidableDestroyableDamageableLayer : SpecialGameInputInterface_Access) return SpecialFireGameInputInterfaceProcessor_Access;
-   procedure processEvent (This : in out SpecialFireGameInputInterfaceProcessor; allbinaryLayerManager : AllBinaryLayerManager_Access; gameKeyEvent : GameKeyEvent_Access);
+   procedure Initialize (This : in out SpecialFireGameInputInterfaceProcessor'Class; collidableDestroyableDamageableLayer_Param : access SpecialGameInputInterface'Class);
+   function Create (collidableDestroyableDamageableLayer_Param : access SpecialGameInputInterface'Class) return SpecialFireGameInputInterfaceProcessor_Access;
+   procedure processEvent (This : in out SpecialFireGameInputInterfaceProcessor; allbinaryLayerManager_Param : access AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent'Class);
 
 end org.allbinary.game.layer.special.SpecialFireGameInputInterfaceProcessor_Package;
 

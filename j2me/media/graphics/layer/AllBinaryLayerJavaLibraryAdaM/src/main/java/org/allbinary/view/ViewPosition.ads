@@ -45,7 +45,7 @@ package org.allbinary.view.ViewPosition_Package is
    function getX2 (This : in out ViewPosition) return Integer;
    function getY2 (This : in out ViewPosition) return Integer;
    function getZ2 (This : in out ViewPosition) return Integer;
-   procedure setAllbinaryLayer (This : in out ViewPosition; allbinaryLayer : Java_Object_Access);
+   procedure setAllbinaryLayer (This : in out ViewPosition; allbinaryLayer_Param : access Java_Object'Class);
 
 end org.allbinary.view.ViewPosition_Package;
 

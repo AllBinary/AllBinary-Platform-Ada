@@ -54,7 +54,8 @@ package body org.allbinary.game.resource.ResourceRelativeRelationshipFactory_Pac
    end getResourceRelativeRelationshipList;
 
    --  throws Exception
-   procedure addResourceRelativeRelationship (This : in out ResourceRelativeRelationshipFactory; resource : Unbounded_String; hardPoint : RelativeRelationship_Access) is
+   procedure addResourceRelativeRelationship (This : in out ResourceRelativeRelationshipFactory; resource : Unbounded_String; hardPoint_Param : access RelativeRelationship'Class) is
+      hardPoint : RelativeRelationship_Access := RelativeRelationship_Access (hardPoint_Param);
       list : BasicArrayList_Access;
    begin
         list := This.getResourceRelativeRelationshipList (resource);

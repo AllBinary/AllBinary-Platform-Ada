@@ -73,7 +73,8 @@ package body org.allbinary.logic.string_Id.StringUtil_Package is
         return count;
    end count;
 
-   function toString (This : in out StringUtil; anyType : Java_Object_Access) return Unbounded_String is
+   function toString (This : in out StringUtil; anyType_Param : access Java_Object'Class) return Unbounded_String is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         if (anyType) /= (null) then
             return anyType.toString;
@@ -96,8 +97,8 @@ package body org.allbinary.logic.string_Id.StringUtil_Package is
       null;
    end count;
 
-   procedure toString (This : in out StringUtil; anyType : Java_Object_Access) is
-      Java_Result : constant Unbounded_String := StringUtil'Class (This).toString (anyType);
+   procedure toString (This : in out StringUtil; anyType_Param : access Java_Object'Class) is
+      Java_Result : constant Unbounded_String := StringUtil'Class (This).toString (anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

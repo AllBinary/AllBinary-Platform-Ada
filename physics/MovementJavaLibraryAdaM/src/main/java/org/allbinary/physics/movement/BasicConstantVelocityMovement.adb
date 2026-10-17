@@ -24,7 +24,9 @@ package body org.allbinary.physics.movement.BasicConstantVelocityMovement_Packag
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BasicConstantVelocityMovement'Class; basicDecimal : BasicDecimal_Access; velocityProperties : BasicVelocityProperties_Access) is
+   procedure Initialize (This : in out BasicConstantVelocityMovement'Class; basicDecimal_Param : access BasicDecimal'Class; velocityProperties_Param : access BasicVelocityProperties'Class) is
+      basicDecimal : BasicDecimal_Access := BasicDecimal_Access (basicDecimal_Param);
+      velocityProperties : BasicVelocityProperties_Access := BasicVelocityProperties_Access (velocityProperties_Param);
    begin
       Movement_Package.Initialize (This);
       Initialize_Fields (This);
@@ -32,14 +34,15 @@ package body org.allbinary.physics.movement.BasicConstantVelocityMovement_Packag
         This.velocityProperties := velocityProperties;
    end Initialize;
 
-   function Create (basicDecimal : BasicDecimal_Access; velocityProperties : BasicVelocityProperties_Access) return BasicConstantVelocityMovement_Access is
+   function Create (basicDecimal_Param : access BasicDecimal'Class; velocityProperties_Param : access BasicVelocityProperties'Class) return BasicConstantVelocityMovement_Access is
       This : constant BasicConstantVelocityMovement_Access := new BasicConstantVelocityMovement;
    begin
-      BasicConstantVelocityMovement_Package.Initialize (This.all, basicDecimal, velocityProperties);
+      BasicConstantVelocityMovement_Package.Initialize (This.all, basicDecimal_Param, velocityProperties_Param);
       return This;
    end Create;
 
-   procedure init (This : in out BasicConstantVelocityMovement; speedBasicDecimal : BasicDecimal_Access; angle : Integer; otherAngle : Integer) is
+   procedure init (This : in out BasicConstantVelocityMovement; speedBasicDecimal_Param : access BasicDecimal'Class; angle : Integer; otherAngle : Integer) is
+      speedBasicDecimal : BasicDecimal_Access := BasicDecimal_Access (speedBasicDecimal_Param);
       angleFactory : AngleFactory_Access;
    begin
         This.speedBasicDecimal := speedBasicDecimal;
@@ -47,7 +50,8 @@ package body org.allbinary.physics.movement.BasicConstantVelocityMovement_Packag
         This.velocityProperties.setVelocityWithBigDecimal (speedBasicDecimal, angleFactory.getAt (angle), angleFactory.getAt (otherAngle));
    end init;
 
-   procedure moveOutsideRadius (This : in out BasicConstantVelocityMovement; layer : AllBinaryLayer_Access; radius : Long_Long_Integer; angle : Integer; otherAngle : Integer) is
+   procedure moveOutsideRadius (This : in out BasicConstantVelocityMovement; layer_Param : access AllBinaryLayer'Class; radius : Long_Long_Integer; angle : Integer; otherAngle : Integer) is
+      layer : AllBinaryLayer_Access := AllBinaryLayer_Access (layer_Param);
       scaleFactorValue : Integer;
       xVector : Integer;
       yVector : Integer;
@@ -61,7 +65,8 @@ package body org.allbinary.physics.movement.BasicConstantVelocityMovement_Packag
    end moveOutsideRadius;
 
    --  throws Exception
-   procedure process (This : in out BasicConstantVelocityMovement; layer : AllBinaryGameLayer_Access) is
+   procedure process (This : in out BasicConstantVelocityMovement; layer_Param : access AllBinaryGameLayer'Class) is
+      layer : AllBinaryGameLayer_Access := AllBinaryGameLayer_Access (layer_Param);
    begin
         layer.moveDXYZ (This.velocityProperties.getVelocityXBasicDecimalP.getScaled, This.velocityProperties.getVelocityYBasicDecimalP.getScaled, This.velocityProperties.getVelocityZBasicDecimalP.getScaled);
    end process;
@@ -81,12 +86,14 @@ package body org.allbinary.physics.movement.BasicConstantVelocityMovement_Packag
         return This.velocityProperties;
    end getVelocityProperties;
 
-   procedure setVelocityProperties (This : in out BasicConstantVelocityMovement; velocityProperties : BasicVelocityProperties_Access) is
+   procedure setVelocityProperties (This : in out BasicConstantVelocityMovement; velocityProperties_Param : access BasicVelocityProperties'Class) is
+      velocityProperties : BasicVelocityProperties_Access := BasicVelocityProperties_Access (velocityProperties_Param);
    begin
         This.velocityProperties := velocityProperties;
    end setVelocityProperties;
 
-   procedure setSpeedBasicDecimal (This : in out BasicConstantVelocityMovement; speedBasicDecimal : BasicDecimal_Access) is
+   procedure setSpeedBasicDecimal (This : in out BasicConstantVelocityMovement; speedBasicDecimal_Param : access BasicDecimal'Class) is
+      speedBasicDecimal : BasicDecimal_Access := BasicDecimal_Access (speedBasicDecimal_Param);
    begin
         This.speedBasicDecimal := speedBasicDecimal;
    end setSpeedBasicDecimal;

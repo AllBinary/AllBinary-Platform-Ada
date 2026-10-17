@@ -60,16 +60,16 @@ package org.allbinary.game.media.graphics.geography.map.racetrack.PathFinderGrap
       logUtil : LogUtil_Access;
    end record;
 
-   procedure Initialize (This : in out PathFinderGraphHackVisitor'Class; geographicMapInterface : BasicGeographicMap_Access; edgeMinimum : Integer; minPathWeight : Integer; maxPathWeight : Integer);
-   function Create (geographicMapInterface : BasicGeographicMap_Access; edgeMinimum : Integer; minPathWeight : Integer; maxPathWeight : Integer) return PathFinderGraphHackVisitor_Access;
-   procedure visit (This : in out PathFinderGraphHackVisitor; graph : SimpleWeightedGraph_Access; startPathFindingNodeList : BasicArrayList_Access; endPathFindingNodeList : BasicArrayList_Access);
-   procedure fixStart (This : in out PathFinderGraphHackVisitor; graph : SimpleWeightedGraph_Access; startPathFindingNodeList : BasicArrayList_Access);
-   procedure fixEnd (This : in out PathFinderGraphHackVisitor; graph : SimpleWeightedGraph_Access; endPathFindingNodeList : BasicArrayList_Access);
-   procedure fixOverPassEdges (This : in out PathFinderGraphHackVisitor; graph : SimpleWeightedGraph_Access);
-   procedure fixPath (This : in out PathFinderGraphHackVisitor; startPathFindingNodeList : BasicArrayList_Access; endPathFindingNodeList : BasicArrayList_Access; pathList : BasicArrayList_Access);
-   procedure removeOverPassEdges (This : in out PathFinderGraphHackVisitor; pathList : BasicArrayList_Access);
-   function isValid (This : in out PathFinderGraphHackVisitor; graphPath : GraphPath_Access) return Boolean;
-   procedure isValid (This : in out PathFinderGraphHackVisitor; graphPath : GraphPath_Access);
+   procedure Initialize (This : in out PathFinderGraphHackVisitor'Class; geographicMapInterface_Param : access BasicGeographicMap'Class; edgeMinimum : Integer; minPathWeight : Integer; maxPathWeight : Integer);
+   function Create (geographicMapInterface_Param : access BasicGeographicMap'Class; edgeMinimum : Integer; minPathWeight : Integer; maxPathWeight : Integer) return PathFinderGraphHackVisitor_Access;
+   procedure visit (This : in out PathFinderGraphHackVisitor; graph_Param : access SimpleWeightedGraph'Class; startPathFindingNodeList_Param : access BasicArrayList'Class; endPathFindingNodeList_Param : access BasicArrayList'Class);
+   procedure fixStart (This : in out PathFinderGraphHackVisitor; graph_Param : access SimpleWeightedGraph'Class; startPathFindingNodeList_Param : access BasicArrayList'Class);
+   procedure fixEnd (This : in out PathFinderGraphHackVisitor; graph_Param : access SimpleWeightedGraph'Class; endPathFindingNodeList_Param : access BasicArrayList'Class);
+   procedure fixOverPassEdges (This : in out PathFinderGraphHackVisitor; graph_Param : access SimpleWeightedGraph'Class);
+   procedure fixPath (This : in out PathFinderGraphHackVisitor; startPathFindingNodeList_Param : access BasicArrayList'Class; endPathFindingNodeList_Param : access BasicArrayList'Class; pathList_Param : access BasicArrayList'Class);
+   procedure removeOverPassEdges (This : in out PathFinderGraphHackVisitor; pathList_Param : access BasicArrayList'Class);
+   function isValid (This : in out PathFinderGraphHackVisitor; graphPath_Param : access GraphPath'Class) return Boolean;
+   procedure isValid (This : in out PathFinderGraphHackVisitor; graphPath_Param : access GraphPath'Class);
 
 end org.allbinary.game.media.graphics.geography.map.racetrack.PathFinderGraphHackVisitor_Package;
 

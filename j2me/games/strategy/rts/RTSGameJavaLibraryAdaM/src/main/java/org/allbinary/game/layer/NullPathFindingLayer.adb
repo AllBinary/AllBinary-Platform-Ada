@@ -60,7 +60,8 @@ package body org.allbinary.game.layer.NullPathFindingLayer_Package is
    end getHudPaintable;
 
    --  throws Exception
-   procedure handleCost (This : in out NullPathFindingLayer; ownerLayer : PathFindingLayerInterface_Access) is
+   procedure handleCost (This : in out NullPathFindingLayer; ownerLayer_Param : access PathFindingLayerInterface'Class) is
+      ownerLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (ownerLayer_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end handleCost;
@@ -76,29 +77,35 @@ package body org.allbinary.game.layer.NullPathFindingLayer_Package is
    end getRTSLayer2LogHelper;
 
    --  throws Exception
-   procedure setTarget (This : in out NullPathFindingLayer; targetGameLayer : PathFindingLayerInterface_Access) is
+   procedure setTarget (This : in out NullPathFindingLayer; targetGameLayer_Param : access PathFindingLayerInterface'Class) is
+      targetGameLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (targetGameLayer_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end setTarget;
 
    --  throws Exception
-   procedure init (This : in out NullPathFindingLayer; geographicMapCellHistory : GeographicMapCellHistory_Access; geographicMapCellPositionBasicArrayList : BasicArrayList_Access) is
+   procedure init (This : in out NullPathFindingLayer; geographicMapCellHistory_Param : access GeographicMapCellHistory'Class; geographicMapCellPositionBasicArrayList_Param : access BasicArrayList'Class) is
+      geographicMapCellHistory : GeographicMapCellHistory_Access := GeographicMapCellHistory_Access (geographicMapCellHistory_Param);
+      geographicMapCellPositionBasicArrayList : BasicArrayList_Access := BasicArrayList_Access (geographicMapCellPositionBasicArrayList_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end init;
 
-   function getMoveOutOfBuildAreaPath (This : in out NullPathFindingLayer; geographicMapCellPosition : GeographicMapCellPosition_Access) return BasicArrayList_Access is
+   function getMoveOutOfBuildAreaPath (This : in out NullPathFindingLayer; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return BasicArrayList_Access is
+      geographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end getMoveOutOfBuildAreaPath;
 
    --  throws Exception
-   procedure setClosestGeographicMapCellHistory (This : in out NullPathFindingLayer; pathsList : BasicArrayList_Access) is
+   procedure setClosestGeographicMapCellHistory (This : in out NullPathFindingLayer; pathsList_Param : access BasicArrayList'Class) is
+      pathsList : BasicArrayList_Access := BasicArrayList_Access (pathsList_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end setClosestGeographicMapCellHistory;
 
-   procedure teleportTo (This : in out NullPathFindingLayer; geographicMapCellPosition : GeographicMapCellPosition_Access) is
+   procedure teleportTo (This : in out NullPathFindingLayer; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is
+      geographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end teleportTo;
@@ -143,7 +150,9 @@ package body org.allbinary.game.layer.NullPathFindingLayer_Package is
    end trackToDXY;
 
    --  throws Exception
-   function buildingChase (This : in out NullPathFindingLayer; allbinaryLayer : AllBinaryLayer_Access; cellPosition : GeographicMapCellPosition_Access) return Boolean is
+   function buildingChase (This : in out NullPathFindingLayer; allbinaryLayer_Param : access AllBinaryLayer'Class; cellPosition_Param : access GeographicMapCellPosition'Class) return Boolean is
+      allbinaryLayer : AllBinaryLayer_Access := AllBinaryLayer_Access (allbinaryLayer_Param);
+      cellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (cellPosition_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end buildingChase;
@@ -216,15 +225,15 @@ package body org.allbinary.game.layer.NullPathFindingLayer_Package is
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end getSourceId;
 
-   procedure getMoveOutOfBuildAreaPath (This : in out NullPathFindingLayer; geographicMapCellPosition : GeographicMapCellPosition_Access) is
-      Java_Result : constant BasicArrayList_Access := NullPathFindingLayer'Class (This).getMoveOutOfBuildAreaPath (geographicMapCellPosition);
+   procedure getMoveOutOfBuildAreaPath (This : in out NullPathFindingLayer; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is
+      Java_Result : constant BasicArrayList_Access := NullPathFindingLayer'Class (This).getMoveOutOfBuildAreaPath (geographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getMoveOutOfBuildAreaPath;
 
-   procedure buildingChase (This : in out NullPathFindingLayer; allbinaryLayer : AllBinaryLayer_Access; cellPosition : GeographicMapCellPosition_Access) is
-      Java_Result : constant Boolean := NullPathFindingLayer'Class (This).buildingChase (allbinaryLayer, cellPosition);
+   procedure buildingChase (This : in out NullPathFindingLayer; allbinaryLayer_Param : access AllBinaryLayer'Class; cellPosition_Param : access GeographicMapCellPosition'Class) is
+      Java_Result : constant Boolean := NullPathFindingLayer'Class (This).buildingChase (allbinaryLayer_Param, cellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

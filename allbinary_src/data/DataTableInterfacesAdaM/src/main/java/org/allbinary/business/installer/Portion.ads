@@ -35,8 +35,8 @@ package org.allbinary.business.installer.Portion_Package is
       total : Integer;
    end record;
 
-   procedure Initialize (This : in out Portion'Class; hashMap : HashMap_Access);
-   function Create (hashMap : HashMap_Access) return Portion_Access;
+   procedure Initialize (This : in out Portion'Class; hashMap_Param : access HashMap'Class);
+   function Create (hashMap_Param : access HashMap'Class) return Portion_Access;
    function getCurrent (This : in out Portion) return Integer;
    function getTotal (This : in out Portion) return Integer;
 

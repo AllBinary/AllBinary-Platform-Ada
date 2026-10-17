@@ -24,17 +24,18 @@ package body org.allbinary.logic.math.vector.MathVector_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out MathVector'Class; magnitudeBasicDecimal : BasicDecimal_Access; direction : Integer) is
+   procedure Initialize (This : in out MathVector'Class; magnitudeBasicDecimal_Param : access BasicDecimal'Class; direction : Integer) is
+      magnitudeBasicDecimal : BasicDecimal_Access := BasicDecimal_Access (magnitudeBasicDecimal_Param);
    begin
       Initialize_Fields (This);
         This.magnitudeBasicDecimal := magnitudeBasicDecimal;
         This.direction := direction;
    end Initialize;
 
-   function Create (magnitudeBasicDecimal : BasicDecimal_Access; direction : Integer) return MathVector_Access is
+   function Create (magnitudeBasicDecimal_Param : access BasicDecimal'Class; direction : Integer) return MathVector_Access is
       This : constant MathVector_Access := new MathVector;
    begin
-      MathVector_Package.Initialize (This.all, magnitudeBasicDecimal, direction);
+      MathVector_Package.Initialize (This.all, magnitudeBasicDecimal_Param, direction);
       return This;
    end Create;
 

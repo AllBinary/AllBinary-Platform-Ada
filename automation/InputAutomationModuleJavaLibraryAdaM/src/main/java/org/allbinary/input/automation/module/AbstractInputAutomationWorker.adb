@@ -30,21 +30,23 @@ package body org.allbinary.input.automation.module.AbstractInputAutomationWorker
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AbstractInputAutomationWorker'Class; inputAutomationActionInterface : InputAutomationActionInterface_Access) is
+   procedure Initialize (This : in out AbstractInputAutomationWorker'Class; inputAutomationActionInterface_Param : access InputAutomationActionInterface'Class) is
+      inputAutomationActionInterface : InputAutomationActionInterface_Access := InputAutomationActionInterface_Access (inputAutomationActionInterface_Param);
    begin
       Initialize_Fields (This);
         null;
    end Initialize;
 
-   function Create (inputAutomationActionInterface : InputAutomationActionInterface_Access) return AbstractInputAutomationWorker_Access is
+   function Create (inputAutomationActionInterface_Param : access InputAutomationActionInterface'Class) return AbstractInputAutomationWorker_Access is
       This : constant AbstractInputAutomationWorker_Access := new AbstractInputAutomationWorker;
    begin
-      AbstractInputAutomationWorker_Package.Initialize (This.all, inputAutomationActionInterface);
+      AbstractInputAutomationWorker_Package.Initialize (This.all, inputAutomationActionInterface_Param);
       return This;
    end Create;
 
    --  throws Exception
-   procedure setThread (This : in out AbstractInputAutomationWorker; thread : Thread_Access) is
+   procedure setThread (This : in out AbstractInputAutomationWorker; thread_Param : access Thread'Class) is
+      thread : Thread_Access := Thread_Access (thread_Param);
    begin
         null;
    end setThread;
@@ -72,7 +74,7 @@ package body org.allbinary.input.automation.module.AbstractInputAutomationWorker
    begin
         if not (This.isAnyDataWorkerRunning) then
             This.captureThread := Thread_Package.Create (This.getCaptureWorker);
-            This.logUtil.putF (To_Unbounded_String ("Starting CaptureWorkers - Need more images - Thread State: ") & This.captureThread.getState.toString, This'Unchecked_Access, To_Unbounded_String ("startCaptureWorkers"));
+            This.logUtil.putF (To_Unbounded_String ("Starting CaptureWorkers - Need more images - Thread State: ") & This.captureThread.getState.toString, AbstractInputAutomationWorker_Access'(This'Unchecked_Access), To_Unbounded_String ("startCaptureWorkers"));
             This.captureThread.start;
         end if;
    end startDataWorkers;
@@ -81,7 +83,7 @@ package body org.allbinary.input.automation.module.AbstractInputAutomationWorker
    procedure waitForDataWorkers (This : in out AbstractInputAutomationWorker) is
    begin
         while This.isAnyDataWorkerRunning loop
-            This.logUtil.putF (To_Unbounded_String ("Waiting"), This'Unchecked_Access, This.commonStrings.RUN);
+            This.logUtil.putF (To_Unbounded_String ("Waiting"), AbstractInputAutomationWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
             Java_Sleep (250);
         end loop;
    end waitForDataWorkers;
@@ -102,24 +104,24 @@ package body org.allbinary.input.automation.module.AbstractInputAutomationWorker
       timeHelper : TimeDelayHelper_Access;
    begin
         begin
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.RUN);
+            This.logUtil.putF (This.commonStrings.START, AbstractInputAutomationWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
             This.setRunning (True);
             timeHelper := TimeDelayHelper_Package.Create (1000);
             while This.isRunning loop
                 timeHelper.setStartTimeTNT;
                 This.process;
                 This.index := This.index + 1;
-                This.logUtil.putF (Java_Image ((CommonLabels_Package.getInstance.ELAPSED) + (timeHelper.getElapsedTNT)) & To_Unbounded_String (" Index: ") & Java_Image (This.index), This'Unchecked_Access, This.commonStrings.RUN);
+                This.logUtil.putF (Java_Image ((CommonLabels_Package.getInstance.ELAPSED) + (timeHelper.getElapsedTNT)) & To_Unbounded_String (" Index: ") & Java_Image (This.index), AbstractInputAutomationWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
             end loop;
             This.stopDataWorkers;
             This.waitForDataWorkers;
-            This.logUtil.putF (This.commonStrings.END_Id, This'Unchecked_Access, This.commonStrings.RUN);
+            This.logUtil.putF (This.commonStrings.END_Id, AbstractInputAutomationWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.RUN, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, AbstractInputAutomationWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN, e);
                 end;
         end;
    end run;
@@ -129,7 +131,8 @@ package body org.allbinary.input.automation.module.AbstractInputAutomationWorker
         return This.inputAutomationActionInterface;
    end getInputAutomationActionInterface;
 
-   procedure setInputAutomationActionInterface (This : in out AbstractInputAutomationWorker; inputAutomationActionInterface : InputAutomationActionInterface_Access) is
+   procedure setInputAutomationActionInterface (This : in out AbstractInputAutomationWorker; inputAutomationActionInterface_Param : access InputAutomationActionInterface'Class) is
+      inputAutomationActionInterface : InputAutomationActionInterface_Access := InputAutomationActionInterface_Access (inputAutomationActionInterface_Param);
    begin
         This.inputAutomationActionInterface := inputAutomationActionInterface;
    end setInputAutomationActionInterface;
@@ -139,7 +142,8 @@ package body org.allbinary.input.automation.module.AbstractInputAutomationWorker
         return This.captureWorkerInterface;
    end getCaptureWorker;
 
-   procedure setCaptureWorker (This : in out AbstractInputAutomationWorker; captureWorkerInterface : CaptureWorkerInterface_Access) is
+   procedure setCaptureWorker (This : in out AbstractInputAutomationWorker; captureWorkerInterface_Param : access CaptureWorkerInterface'Class) is
+      captureWorkerInterface : CaptureWorkerInterface_Access := CaptureWorkerInterface_Access (captureWorkerInterface_Param);
    begin
         This.captureWorkerInterface := captureWorkerInterface;
    end setCaptureWorker;
@@ -149,7 +153,8 @@ package body org.allbinary.input.automation.module.AbstractInputAutomationWorker
         return This.imageComparisonWorker;
    end getImageComparisonWorker;
 
-   procedure setImageComparisonWorker (This : in out AbstractInputAutomationWorker; imageComparisonWorker : ImageComparisonWorker_Access) is
+   procedure setImageComparisonWorker (This : in out AbstractInputAutomationWorker; imageComparisonWorker_Param : access ImageComparisonWorker'Class) is
+      imageComparisonWorker : ImageComparisonWorker_Access := ImageComparisonWorker_Access (imageComparisonWorker_Param);
    begin
         This.imageComparisonWorker := imageComparisonWorker;
    end setImageComparisonWorker;
@@ -159,7 +164,8 @@ package body org.allbinary.input.automation.module.AbstractInputAutomationWorker
         return This.motionRectanglesWorker;
    end getMotionRectanglesWorker;
 
-   procedure setMotionRectanglesWorker (This : in out AbstractInputAutomationWorker; motionRectanglesWorker : MotionRectanglesWorker_Access) is
+   procedure setMotionRectanglesWorker (This : in out AbstractInputAutomationWorker; motionRectanglesWorker_Param : access MotionRectanglesWorker'Class) is
+      motionRectanglesWorker : MotionRectanglesWorker_Access := MotionRectanglesWorker_Access (motionRectanglesWorker_Param);
    begin
         This.motionRectanglesWorker := motionRectanglesWorker;
    end setMotionRectanglesWorker;

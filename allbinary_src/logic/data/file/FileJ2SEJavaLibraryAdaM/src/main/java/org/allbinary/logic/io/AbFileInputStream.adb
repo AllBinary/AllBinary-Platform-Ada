@@ -33,27 +33,29 @@ package body org.allbinary.logic.io.AbFileInputStream_Package is
       return This;
    end Create;
 
-   procedure Initialize (This : in out AbFileInputStream'Class; file : AbFile_Access) is
+   procedure Initialize (This : in out AbFileInputStream'Class; file_Param : access AbFile'Class) is
+      file : AbFile_Access := AbFile_Access (file_Param);
    begin
         FileInputStream_Package.Initialize (This, AbFileNativeUtil_Package.get (file));
    end Initialize;
 
-   function Create (file : AbFile_Access) return AbFileInputStream_Access is
+   function Create (file_Param : access AbFile'Class) return AbFileInputStream_Access is
       This : constant AbFileInputStream_Access := new AbFileInputStream;
    begin
-      AbFileInputStream_Package.Initialize (This.all, file);
+      AbFileInputStream_Package.Initialize (This.all, file_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out AbFileInputStream'Class; file : File_Access) is
+   procedure Initialize (This : in out AbFileInputStream'Class; file_Param : access File'Class) is
+      file : File_Access := File_Access (file_Param);
    begin
         FileInputStream_Package.Initialize (This, file);
    end Initialize;
 
-   function Create (file : File_Access) return AbFileInputStream_Access is
+   function Create (file_Param : access File'Class) return AbFileInputStream_Access is
       This : constant AbFileInputStream_Access := new AbFileInputStream;
    begin
-      AbFileInputStream_Package.Initialize (This.all, file);
+      AbFileInputStream_Package.Initialize (This.all, file_Param);
       return This;
    end Create;
 

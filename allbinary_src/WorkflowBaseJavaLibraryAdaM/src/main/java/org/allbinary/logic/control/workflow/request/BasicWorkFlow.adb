@@ -43,7 +43,9 @@ package body org.allbinary.logic.control.workflow.request.BasicWorkFlow_Package 
       return This;
    end Create;
 
-   procedure Initialize (This : in out BasicWorkFlow'Class; hashMap : HashMap_Access; pageContext : PageContext_Access) is
+   procedure Initialize (This : in out BasicWorkFlow'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
       weblisketSession : WeblisketSession_Access;
       requestHashMap : HashMap_Access;
    begin
@@ -55,14 +57,15 @@ package body org.allbinary.logic.control.workflow.request.BasicWorkFlow_Package 
         This.workFlowDoc := DomDocumentHelper_Package.create (Unbounded_String (requestHashMap.get (WorkFlowData_Package.getInstance.DATA)));
    end Initialize;
 
-   function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return BasicWorkFlow_Access is
+   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return BasicWorkFlow_Access is
       This : constant BasicWorkFlow_Access := new BasicWorkFlow;
    begin
-      BasicWorkFlow_Package.Initialize (This.all, hashMap, pageContext);
+      BasicWorkFlow_Package.Initialize (This.all, hashMap_Param, pageContext_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out BasicWorkFlow'Class; hashMap : HashMap_Access) is
+   procedure Initialize (This : in out BasicWorkFlow'Class; hashMap_Param : access HashMap'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
    begin
       Initialize_Fields (This);
         This.workFlowName := Unbounded_String (hashMap.get (WorkFlowData_Package.getInstance.NAME));
@@ -70,10 +73,10 @@ package body org.allbinary.logic.control.workflow.request.BasicWorkFlow_Package 
         This.workFlowDoc := DomDocumentHelper_Package.create (Unbounded_String (hashMap.get (WorkFlowData_Package.getInstance.DATA)));
    end Initialize;
 
-   function Create (hashMap : HashMap_Access) return BasicWorkFlow_Access is
+   function Create (hashMap_Param : access HashMap'Class) return BasicWorkFlow_Access is
       This : constant BasicWorkFlow_Access := new BasicWorkFlow;
    begin
-      BasicWorkFlow_Package.Initialize (This.all, hashMap);
+      BasicWorkFlow_Package.Initialize (This.all, hashMap_Param);
       return This;
    end Create;
 
@@ -125,7 +128,8 @@ package body org.allbinary.logic.control.workflow.request.BasicWorkFlow_Package 
         return hashMap;
    end toHashMap;
 
-   function toXmlNode (This : in out BasicWorkFlow; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out BasicWorkFlow; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       hashMap : HashMap_Access;
       keySet : Set_Access;
       node : Node_Access;
@@ -153,7 +157,7 @@ package body org.allbinary.logic.control.workflow.request.BasicWorkFlow_Package 
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("toXmlNode()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, BasicWorkFlow_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode()"), e);
             end if;
             return null;
                 end;
@@ -170,7 +174,7 @@ package body org.allbinary.logic.control.workflow.request.BasicWorkFlow_Package 
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("toXmlDoc()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, BasicWorkFlow_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlDoc()"), e);
             end if;
             return null;
                 end;
@@ -192,7 +196,7 @@ package body org.allbinary.logic.control.workflow.request.BasicWorkFlow_Package 
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to validate"), This'Unchecked_Access, This.commonStrings.IS_VALID, e);
+                This.logUtil.put (To_Unbounded_String ("Failed to validate"), BasicWorkFlow_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
             end if;
             return False;
                 end;
@@ -214,7 +218,7 @@ package body org.allbinary.logic.control.workflow.request.BasicWorkFlow_Package 
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), This'Unchecked_Access, To_Unbounded_String ("validationInfo()"), e);
+                This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), BasicWorkFlow_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
             end if;
             return To_Unbounded_String ("Error Getting Validation Info");
                 end;
@@ -226,20 +230,21 @@ package body org.allbinary.logic.control.workflow.request.BasicWorkFlow_Package 
         return null;
    end toValidationInfoDoc;
 
-   function toValidationInfoNode (This : in out BasicWorkFlow; document : Document_Access) return Node_Access is
+   function toValidationInfoNode (This : in out BasicWorkFlow; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
    begin
         return null;
    end toValidationInfoNode;
 
-   procedure toXmlNode (This : in out BasicWorkFlow; document : Document_Access) is
-      Java_Result : constant Node_Access := BasicWorkFlow'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out BasicWorkFlow; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := BasicWorkFlow'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toXmlNode;
 
-   procedure toValidationInfoNode (This : in out BasicWorkFlow; document : Document_Access) is
-      Java_Result : constant Node_Access := BasicWorkFlow'Class (This).toValidationInfoNode (document);
+   procedure toValidationInfoNode (This : in out BasicWorkFlow; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := BasicWorkFlow'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

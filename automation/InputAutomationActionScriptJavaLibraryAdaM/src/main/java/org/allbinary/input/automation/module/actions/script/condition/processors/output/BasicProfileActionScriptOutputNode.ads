@@ -38,12 +38,12 @@ package org.allbinary.input.automation.module.actions.script.condition.processor
 
    type BasicProfileActionScriptOutputNode is new Java_Object with null record;
 
-   procedure Initialize (This : in out BasicProfileActionScriptOutputNode'Class; node : Node_Access);
-   function Create (node : Node_Access) return BasicProfileActionScriptOutputNode_Access;
+   procedure Initialize (This : in out BasicProfileActionScriptOutputNode'Class; node_Param : access Node'Class);
+   function Create (node_Param : access Node'Class) return BasicProfileActionScriptOutputNode_Access;
    procedure Initialize (This : in out BasicProfileActionScriptOutputNode'Class);
    function Create return BasicProfileActionScriptOutputNode_Access;
-   function toXmlNode (This : in out BasicProfileActionScriptOutputNode; document : Document_Access) return Node_Access;
-   procedure toXmlNode (This : in out BasicProfileActionScriptOutputNode; document : Document_Access);
+   function toXmlNode (This : in out BasicProfileActionScriptOutputNode; document_Param : access Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out BasicProfileActionScriptOutputNode; document_Param : access Document'Class);
 
 end org.allbinary.input.automation.module.actions.script.condition.processors.output.BasicProfileActionScriptOutputNode_Package;
 

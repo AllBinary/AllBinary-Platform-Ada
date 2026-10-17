@@ -29,7 +29,8 @@ package body org.allbinary.image.opengles.OpenGLESGL10Image_Package is
 --          This.regionRectangleVertexFloatBuffer := ByteBuffer_Package.allocateDirect (((4) * (4)) * (3)).order (ByteOrder_Package.nativeOrder).asFloatBuffer;
 --          This.openGLESImageProperties := This.openGLESImageProperties;
 --          
---     procedure drawRegion (This : in out ; gl : GL10_Access; viewHeight : Integer; x_src : Float; y_src : Float; width : Float; height : Float; x : Integer; y : Integer; z : Integer) is
+--     procedure drawRegion (This : in out ; gl_Param : access GL10'Class; viewHeight : Integer; x_src : Float; y_src : Float; width : Float; height : Float; x : Integer; y : Integer; z : Integer) is
+--        gl : GL10_Access := GL10_Access (gl_Param);
 --        imageWidth : Integer;
 --        imageHeight : Integer;
 --        u_center : Float;
@@ -57,10 +58,10 @@ package body org.allbinary.image.opengles.OpenGLESGL10Image_Package is
 --              This.glUtil.rotateUVs (This.regionTextureRectangleFloatArray, -(This.openGLESImageProperties.angle), u_center, v_center);
 --              gl.glPushMatrix;
 --              imageProcessor := This.imageProcessor;
---              This.openGLESImageTranslate.translate (gl, This'Unchecked_Access, x, -(y));
+--              This.openGLESImageTranslate.translate (gl, OpenGLESGL10Image_Access'(This'Unchecked_Access), x, -(y));
 --              imageProcessor.scale (gl, This.openGLESImageProperties.scaleX, This.openGLESImageProperties.scaleY);
 --              imageProcessor.colorMask (gl, This.openGLESImageProperties.redf, This.openGLESImageProperties.greenf, This.openGLESImageProperties.bluef, This.openGLESImageProperties.alphaf);
---              This.openGLESImageTranslate.translate2 (gl, This'Unchecked_Access);
+--              This.openGLESImageTranslate.translate2 (gl, OpenGLESGL10Image_Access'(This'Unchecked_Access));
 --              This.regionRectangleVertexFloatBuffer.put (This.regionRectangleFloatArray);
 --              This.glUtil.position (This.regionRectangleVertexFloatBuffer, 0);
 --              gl.glVertexPointer (3, GL10.GL_FLOAT, 0, This.regionRectangleVertexFloatBuffer);
@@ -78,7 +79,8 @@ package body org.allbinary.image.opengles.OpenGLESGL10Image_Package is
 --              gl.glPopMatrix;
 --     end drawRegion;
 --          
---     procedure draw (This : in out ; gl : GL10_Access; x : Integer; y : Integer; z : Integer) is
+--     procedure draw (This : in out ; gl_Param : access GL10'Class; x : Integer; y : Integer; z : Integer) is
+--        gl : GL10_Access := GL10_Access (gl_Param);
 --        width : Integer;
 --        height : Integer;
 --        imageProcessor : OpenGLESImageProcessor_Access;
@@ -100,11 +102,11 @@ package body org.allbinary.image.opengles.OpenGLESGL10Image_Package is
 --              This.regionTextureRectangleFloatArray (6) := 1;
 --              This.regionTextureRectangleFloatArray (7) := 0;
 --              gl.glPushMatrix;
---              This.openGLESImageTranslate.translate (gl, This'Unchecked_Access, x, -(y));
+--              This.openGLESImageTranslate.translate (gl, OpenGLESGL10Image_Access'(This'Unchecked_Access), x, -(y));
 --              imageProcessor := This.imageProcessor;
 --              imageProcessor.scale (gl, This.openGLESImageProperties.scaleX, This.openGLESImageProperties.scaleY);
 --              imageProcessor.colorMask (gl, This.openGLESImageProperties.redf, This.openGLESImageProperties.greenf, This.openGLESImageProperties.bluef, This.openGLESImageProperties.alphaf);
---              This.openGLESImageTranslate.translate2 (gl, This'Unchecked_Access);
+--              This.openGLESImageTranslate.translate2 (gl, OpenGLESGL10Image_Access'(This'Unchecked_Access));
 --              This.regionRectangleVertexFloatBuffer.put (This.regionRectangleFloatArray);
 --              This.glUtil.position (This.regionRectangleVertexFloatBuffer, 0);
 --              gl.glVertexPointer (3, GL10.GL_FLOAT, 0, This.regionRectangleVertexFloatBuffer);
@@ -128,17 +130,20 @@ package body org.allbinary.image.opengles.OpenGLESGL10Image_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out OpenGLESGL10Image'Class; image : Image_Access; bitmapFactory : PlatformBitmapBaseFactory_Access; textureFactory : PlatformTextureBaseFactory_Access) is
+   procedure Initialize (This : in out OpenGLESGL10Image'Class; image_Param : access Image'Class; bitmapFactory_Param : access PlatformBitmapBaseFactory'Class; textureFactory_Param : access PlatformTextureBaseFactory'Class) is
+      image : Image_Access := Image_Access (image_Param);
+      bitmapFactory : PlatformBitmapBaseFactory_Access := PlatformBitmapBaseFactory_Access (bitmapFactory_Param);
+      textureFactory : PlatformTextureBaseFactory_Access := PlatformTextureBaseFactory_Access (textureFactory_Param);
    begin
         OpenGLESImage_Package.Initialize (This, image, bitmapFactory, textureFactory);
         Initialize_Fields (This);
         This.initVertices;
    end Initialize;
 
-   function Create (image : Image_Access; bitmapFactory : PlatformBitmapBaseFactory_Access; textureFactory : PlatformTextureBaseFactory_Access) return OpenGLESGL10Image_Access is
+   function Create (image_Param : access Image'Class; bitmapFactory_Param : access PlatformBitmapBaseFactory'Class; textureFactory_Param : access PlatformTextureBaseFactory'Class) return OpenGLESGL10Image_Access is
       This : constant OpenGLESGL10Image_Access := new OpenGLESGL10Image;
    begin
-      OpenGLESGL10Image_Package.Initialize (This.all, image, bitmapFactory, textureFactory);
+      OpenGLESGL10Image_Package.Initialize (This.all, image_Param, bitmapFactory_Param, textureFactory_Param);
       return This;
    end Create;
 
@@ -155,24 +160,27 @@ package body org.allbinary.image.opengles.OpenGLESGL10Image_Package is
         This.textureVertexFloatBuffer.rewind;
    end initVertices;
 
-   procedure set (This : in out OpenGLESGL10Image; gl : GL_Access) is
+   procedure set (This : in out OpenGLESGL10Image; gl_Param : access GL'Class) is
+      gl : GL_Access := GL_Access (gl_Param);
       gl10 : GL10_Access;
    begin
         gl10 := GL10_Access (gl);
         if OpenGLESImage (This).initTexture (gl10) then
-            This.textureFactory.load (gl10, GL10.GL_TEXTURE_2D, 0, This'Unchecked_Access, 0, True);
+            This.textureFactory.load (gl10, GL10.GL_TEXTURE_2D, 0, OpenGLESGL10Image_Access'(This'Unchecked_Access), 0, True);
             gl10.glDisable (GL10.GL_TEXTURE_2D);
             This.openGLESImageDraw := This.realOpenGLESImageDraw;
-            OpenGLLogUtil_Package.getInstance.logError (gl10, This'Unchecked_Access);
+            OpenGLLogUtil_Package.getInstance.logError (gl10, OpenGLESGL10Image_Access'(This'Unchecked_Access));
         end if;
    end set;
 
-   procedure drawRegion (This : in out OpenGLESGL10Image; gl : GL10_Access; viewHeight : Integer; x_src : Float; y_src : Float; width : Float; height : Float; x : Integer; y : Integer; z : Integer) is
+   procedure drawRegion (This : in out OpenGLESGL10Image; gl_Param : access GL10'Class; viewHeight : Integer; x_src : Float; y_src : Float; width : Float; height : Float; x : Integer; y : Integer; z : Integer) is
+      gl : GL10_Access := GL10_Access (gl_Param);
    begin
         This.openGLESImageDraw.drawRegion (gl, viewHeight, x_src, y_src, width, height, x, y, z);
    end drawRegion;
 
-   procedure draw (This : in out OpenGLESGL10Image; gl : GL10_Access; x : Integer; y : Integer; z : Integer) is
+   procedure draw (This : in out OpenGLESGL10Image; gl_Param : access GL10'Class; x : Integer; y : Integer; z : Integer) is
+      gl : GL10_Access := GL10_Access (gl_Param);
    begin
         This.openGLESImageDraw.draw (gl, x, y, z);
    end draw;

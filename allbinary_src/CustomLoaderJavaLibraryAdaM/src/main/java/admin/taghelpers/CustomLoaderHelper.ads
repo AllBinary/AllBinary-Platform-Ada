@@ -44,8 +44,8 @@ package admin.taghelpers.CustomLoaderHelper_Package is
       commonStrings : CommonStrings_Access;
    end record;
 
-   procedure Initialize (This : in out CustomLoaderHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access);
-   function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return CustomLoaderHelper_Access;
+   procedure Initialize (This : in out CustomLoaderHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
+   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return CustomLoaderHelper_Access;
    procedure Initialize (This : in out CustomLoaderHelper'Class);
    function Create return CustomLoaderHelper_Access;
    function getWebappPath (This : in out CustomLoaderHelper) return Unbounded_String;

@@ -58,12 +58,12 @@ package org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntity_P
 
    procedure Initialize (This : in out StoreFrontsEntity'Class);
    function Create return StoreFrontsEntity_Access;
-   procedure insert (This : in out StoreFrontsEntity; values : BasicArrayList_Access);
+   procedure insert (This : in out StoreFrontsEntity; values_Param : access BasicArrayList'Class);
    procedure delete (This : in out StoreFrontsEntity; value : Unbounded_String);
    function getStoreFrontInterface (This : in out StoreFrontsEntity; name : Unbounded_String) return StoreFront_Access;
    procedure getStoreFrontInterface (This : in out StoreFrontsEntity; name : Unbounded_String);
    function getStoreFrontNames (This : in out StoreFrontsEntity) return BasicArrayList_Access;
-   procedure update (This : in out StoreFrontsEntity; updatedValues : HashMap_Access);
+   procedure update (This : in out StoreFrontsEntity; updatedValues_Param : access HashMap'Class);
    function createTableStatement (This : in out StoreFrontsEntity) return Unbounded_String;
    function createTable (This : in out StoreFrontsEntity) return Unbounded_String;
    function dropTable (This : in out StoreFrontsEntity) return Unbounded_String;

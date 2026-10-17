@@ -26,7 +26,9 @@ package body org.allbinary.logic.communication.log.Log_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out Log'Class; specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String; exception_Id : Java_Object_Access) is
+   procedure Initialize (This : in out Log'Class; specialMessage : Unbounded_String; anyType_Param : access Java_Object'Class; functionName : Unbounded_String; exception_Id_Param : access Java_Object'Class) is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      exception_Id : Java_Object_Access := Java_Object_Access (exception_Id_Param);
    begin
       Initialize_Fields (This);
         This.specialMessage := specialMessage;
@@ -35,10 +37,10 @@ package body org.allbinary.logic.communication.log.Log_Package is
         This.exception_Id := exception_Id;
    end Initialize;
 
-   function Create (specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String; exception_Id : Java_Object_Access) return Log_Access is
+   function Create (specialMessage : Unbounded_String; anyType_Param : access Java_Object'Class; functionName : Unbounded_String; exception_Id_Param : access Java_Object'Class) return Log_Access is
       This : constant Log_Access := new Log;
    begin
-      Log_Package.Initialize (This.all, specialMessage, anyType, functionName, exception_Id);
+      Log_Package.Initialize (This.all, specialMessage, anyType_Param, functionName, exception_Id_Param);
       return This;
    end Create;
 
@@ -68,8 +70,8 @@ package body org.allbinary.logic.communication.log.Log_Package is
    begin
         className := CommonStrings_Package.getInstance.EMPTY;
         clazz := This.anyType.all'Tag;
-        if (clazz.getName) /= (Null_Unbounded_String) then
-            className := clazz.getName;
+        if (To_Unbounded_String (Ada.Tags.Expanded_Name (clazz))) /= (Null_Unbounded_String) then
+            className := To_Unbounded_String (Ada.Tags.Expanded_Name (clazz));
         end if;
         return This.logFormatUtil.get (className, This.functionName, This.specialMessage, This.exception_Id);
    end toString;

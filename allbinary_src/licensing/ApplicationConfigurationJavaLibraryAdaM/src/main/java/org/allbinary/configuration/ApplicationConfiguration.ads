@@ -62,7 +62,7 @@ package org.allbinary.configuration.ApplicationConfiguration_Package is
    function getInstance return ApplicationConfiguration_Access;
    procedure read (This : in out ApplicationConfiguration);
    procedure write (This : in out ApplicationConfiguration);
-   procedure update (This : in out ApplicationConfiguration; gameFeature : Feature_Access);
+   procedure update (This : in out ApplicationConfiguration; gameFeature_Param : access Feature'Class);
    procedure setFullscreen (This : in out ApplicationConfiguration; fullscreen : Boolean);
    function isFullscreen (This : in out ApplicationConfiguration) return Boolean;
    procedure setShowTitleBar (This : in out ApplicationConfiguration; showTitleBar : Boolean);

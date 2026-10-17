@@ -25,7 +25,8 @@ package body org.allbinary.animation.vector.RectangleAdjustedAnimation_Package i
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out RectangleAdjustedAnimation'Class; width : Integer; height : Integer; offsetX : Integer; offsetY : Integer; basicColor : BasicColor_Access) is
+   procedure Initialize (This : in out RectangleAdjustedAnimation'Class; width : Integer; height : Integer; offsetX : Integer; offsetY : Integer; basicColor_Param : access BasicColor'Class) is
+      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
       Animation_Package.Initialize (This);
       Initialize_Fields (This);
@@ -36,10 +37,10 @@ package body org.allbinary.animation.vector.RectangleAdjustedAnimation_Package i
         This.setBasicColorP (basicColor);
    end Initialize;
 
-   function Create (width : Integer; height : Integer; offsetX : Integer; offsetY : Integer; basicColor : BasicColor_Access) return RectangleAdjustedAnimation_Access is
+   function Create (width : Integer; height : Integer; offsetX : Integer; offsetY : Integer; basicColor_Param : access BasicColor'Class) return RectangleAdjustedAnimation_Access is
       This : constant RectangleAdjustedAnimation_Access := new RectangleAdjustedAnimation;
    begin
-      RectangleAdjustedAnimation_Package.Initialize (This.all, width, height, offsetX, offsetY, basicColor);
+      RectangleAdjustedAnimation_Package.Initialize (This.all, width, height, offsetX, offsetY, basicColor_Param);
       return This;
    end Create;
 
@@ -48,7 +49,8 @@ package body org.allbinary.animation.vector.RectangleAdjustedAnimation_Package i
         null;
    end nextFrame;
 
-   procedure paintXY (This : in out RectangleAdjustedAnimation; graphics : Graphics_Access; x : Integer; y : Integer) is
+   procedure paintXY (This : in out RectangleAdjustedAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.basicSetColorUtil.setBasicColorP3 (graphics, This.getBasicColorP, This.getColor);
         graphics.drawRect ((x) + (This.offsetX), (y) + (This.offsetY), This.width, This.height);

@@ -38,8 +38,8 @@ package org.allbinary.graphics.paint.PaintableComposite_Package is
 
    procedure Initialize (This : in out PaintableComposite'Class; paintableArray : PaintableInterface_Access_Array_Access);
    function Create (paintableArray : PaintableInterface_Access_Array_Access) return PaintableComposite_Access;
-   procedure paint (This : in out PaintableComposite; graphics : Graphics_Access);
-   procedure paintThreed (This : in out PaintableComposite; graphics : Graphics_Access);
+   procedure paint (This : in out PaintableComposite; graphics_Param : access Graphics'Class);
+   procedure paintThreed (This : in out PaintableComposite; graphics_Param : access Graphics'Class);
 
 end org.allbinary.graphics.paint.PaintableComposite_Package;
 

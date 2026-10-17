@@ -86,11 +86,11 @@ package org.allbinary.canvas.RunnableCanvas_Package is
       notified : Boolean;
    end record;
 
-   procedure Initialize (This : in out RunnableCanvas'Class; commandListener : CommandListener_Access; childNameList : BasicArrayList_Access; hasParam : Boolean);
-   function Create (commandListener : CommandListener_Access; childNameList : BasicArrayList_Access; hasParam : Boolean) return RunnableCanvas_Access;
-   procedure initCommands (This : in out RunnableCanvas; cmdListener : CommandListener_Access);
+   procedure Initialize (This : in out RunnableCanvas'Class; commandListener_Param : access CommandListener'Class; childNameList_Param : access BasicArrayList'Class; hasParam : Boolean);
+   function Create (commandListener_Param : access CommandListener'Class; childNameList_Param : access BasicArrayList'Class; hasParam : Boolean) return RunnableCanvas_Access;
+   procedure initCommands (This : in out RunnableCanvas; cmdListener_Param : access CommandListener'Class);
    function isMainCanvas (This : in out RunnableCanvas) return Boolean;
-   procedure setThread (This : in out RunnableCanvas; thread_Case : Thread_Access);
+   procedure setThread (This : in out RunnableCanvas; thread_Case_Param : access Thread'Class);
    procedure setRunning (This : in out RunnableCanvas; running : Boolean);
    function isRunning (This : in out RunnableCanvas) return Boolean;
    function getLoopTimeHelperP (This : in out RunnableCanvas) return TimeDelayHelper_Access;

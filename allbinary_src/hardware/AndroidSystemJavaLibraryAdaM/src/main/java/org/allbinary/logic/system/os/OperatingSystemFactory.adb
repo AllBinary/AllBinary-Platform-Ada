@@ -54,13 +54,13 @@ package body org.allbinary.logic.system.os.OperatingSystemFactory_Package is
             if not (This.hasDetected) then
                 This.hasDetected := True;
                 if ((Index (osName, To_String (OperatingSystems_Package.getInstance.ANDROID)) - 1)) >= (0) then
-                    This.logUtil.putF (To_Unbounded_String ("Found a Android OS"), This'Unchecked_Access, commonStrings.GET_INSTANCE);
+                    This.logUtil.putF (To_Unbounded_String ("Found a Android OS"), OperatingSystemFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);
                     This.genericOperatingSystem := AndroidOperatingSystemFactory_Package.getInstance.getOperatingSystemInstance;
-                    This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Operating System Info: ")).append (This.genericOperatingSystem.toString).toString, This'Unchecked_Access, commonStrings.GET_INSTANCE);
+                    This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Operating System Info: ")).append (This.genericOperatingSystem.toString).toString, OperatingSystemFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);
                 elsif ((Index (osName, To_String (OperatingSystems_Package.getInstance.HARMONY)) - 1)) >= (0) then
-                    This.logUtil.putF (To_Unbounded_String ("Found a Harmony OS"), This'Unchecked_Access, commonStrings.GET_INSTANCE);
+                    This.logUtil.putF (To_Unbounded_String ("Found a Harmony OS"), OperatingSystemFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);
                     This.genericOperatingSystem := AndroidOperatingSystemFactory_Package.getInstance.getOperatingSystemInstance;
-                    This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Operating System Info: ")).append (This.genericOperatingSystem.toString).toString, This'Unchecked_Access, commonStrings.GET_INSTANCE);
+                    This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Operating System Info: ")).append (This.genericOperatingSystem.toString).toString, OperatingSystemFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);
                 else
                     Java_Throw (Java_New_Exception ("Exception", StringMaker_Package.Create.append (To_Unbounded_String ("OS Not Supported: ")).append (osName).toString));
                 end if;
@@ -71,7 +71,7 @@ package body org.allbinary.logic.system.os.OperatingSystemFactory_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             This.genericOperatingSystem := NoOperatingSystem_Package.NO_OPERATING_SYSTEM;
-            This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.GET_INSTANCE, e);
+            This.logUtil.put (commonStrings.EXCEPTION_Id, OperatingSystemFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE, e);
                 end;
         end;
         return This.genericOperatingSystem;

@@ -72,18 +72,18 @@ package org.allbinary.logic.visual.transform.template.customizer.bodies.title.Ti
 
    procedure Initialize (This : in out TitleBodyValidation'Class);
    function Create return TitleBodyValidation_Access;
-   procedure Initialize (This : in out TitleBodyValidation'Class; document : Document_Access);
-   function Create (document : Document_Access) return TitleBodyValidation_Access;
-   procedure Initialize (This : in out TitleBodyValidation'Class; hashMap : HashMap_Access);
-   function Create (hashMap : HashMap_Access) return TitleBodyValidation_Access;
-   procedure getFormData (This : in out TitleBodyValidation; hashMap : HashMap_Access);
+   procedure Initialize (This : in out TitleBodyValidation'Class; document_Param : access Document'Class);
+   function Create (document_Param : access Document'Class) return TitleBodyValidation_Access;
+   procedure Initialize (This : in out TitleBodyValidation'Class; hashMap_Param : access HashMap'Class);
+   function Create (hashMap_Param : access HashMap'Class) return TitleBodyValidation_Access;
+   procedure getFormData (This : in out TitleBodyValidation; hashMap_Param : access HashMap'Class);
    function isValid (This : in out TitleBodyValidation) return Boolean;
    function validationInfo (This : in out TitleBodyValidation) return Unbounded_String;
    function toValidationInfoDoc (This : in out TitleBodyValidation) return Document_Access;
-   function toValidationInfoNode (This : in out TitleBodyValidation; document : Document_Access) return Node_Access;
-   procedure toValidationInfoNode (This : in out TitleBodyValidation; document : Document_Access);
-   function toXmlNode (This : in out TitleBodyValidation; document : Document_Access) return Node_Access;
-   procedure toXmlNode (This : in out TitleBodyValidation; document : Document_Access);
+   function toValidationInfoNode (This : in out TitleBodyValidation; document_Param : access Document'Class) return Node_Access;
+   procedure toValidationInfoNode (This : in out TitleBodyValidation; document_Param : access Document'Class);
+   function toXmlNode (This : in out TitleBodyValidation; document_Param : access Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out TitleBodyValidation; document_Param : access Document'Class);
 
 end org.allbinary.logic.visual.transform.template.customizer.bodies.title.TitleBodyValidation_Package;
 

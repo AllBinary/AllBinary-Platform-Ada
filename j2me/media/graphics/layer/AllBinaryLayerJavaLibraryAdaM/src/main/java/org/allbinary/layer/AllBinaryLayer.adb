@@ -18,7 +18,7 @@ package body org.allbinary.layer.AllBinaryLayer_Package is
    procedure Initialize_Fields (This : in out AllBinaryLayer'Class) is
    begin
       null;
-      This.viewPositionEvent := ViewPositionEvent_Package.Create (This'Unchecked_Access);
+      This.viewPositionEvent := ViewPositionEvent_Package.Create (AllBinaryLayer_Access'(This'Unchecked_Access));
       This.halfWidth := 0;
       This.halfHeight := 0;
       
@@ -26,7 +26,9 @@ package body org.allbinary.layer.AllBinaryLayer_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AllBinaryLayer'Class; name : Unbounded_String; rectangle : Rectangle_Access; viewPosition : ViewPositionBase_Access) is
+   procedure Initialize (This : in out AllBinaryLayer'Class; name : Unbounded_String; rectangle_Param : access Rectangle'Class; viewPosition_Param : access ViewPositionBase'Class) is
+      rectangle : Rectangle_Access := Rectangle_Access (rectangle_Param);
+      viewPosition : ViewPositionBase_Access := ViewPositionBase_Access (viewPosition_Param);
       localName : Unbounded_String;
       point : GPoint_Access;
    begin
@@ -36,7 +38,7 @@ package body org.allbinary.layer.AllBinaryLayer_Package is
         if (name) = (Null_Unbounded_String) then
             localName := To_Unbounded_String (Ada.Tags.Expanded_Name (This.all'Tag));
         else
-            localName := StringMaker_Package.Create.append (name).append (CommonSeps_Package.getInstance.COLON).append (Integer_Package.toHexString (TsUtil_Package.getInstance.hashCode (This'Unchecked_Access))).toString;
+            localName := StringMaker_Package.Create.append (name).append (CommonSeps_Package.getInstance.COLON).append (Integer_Package.toHexString (TsUtil_Package.getInstance.hashCode (AllBinaryLayer_Access'(This'Unchecked_Access)))).toString;
         end if;
         This.name := localName;
         point := rectangle.getPoint;
@@ -44,23 +46,25 @@ package body org.allbinary.layer.AllBinaryLayer_Package is
         This.setHalfWidth ((Java_Shift_Right_Arithmetic (This.getWidth, 1)));
         This.setHalfHeight ((Java_Shift_Right_Arithmetic (This.getHeight, 1)));
         This.viewPosition := viewPosition;
-        This.viewPosition.setAllbinaryLayer (This'Unchecked_Access);
+        This.viewPosition.setAllbinaryLayer (AllBinaryLayer_Access'(This'Unchecked_Access));
    end Initialize;
 
-   function Create (name : Unbounded_String; rectangle : Rectangle_Access; viewPosition : ViewPositionBase_Access) return AllBinaryLayer_Access is
+   function Create (name : Unbounded_String; rectangle_Param : access Rectangle'Class; viewPosition_Param : access ViewPositionBase'Class) return AllBinaryLayer_Access is
       This : constant AllBinaryLayer_Access := new AllBinaryLayer;
    begin
-      AllBinaryLayer_Package.Initialize (This.all, name, rectangle, viewPosition);
+      AllBinaryLayer_Package.Initialize (This.all, name, rectangle_Param, viewPosition_Param);
       return This;
    end Create;
 
    --  throws Exception
-   procedure onChangeEvent (This : in out AllBinaryLayer; layerManagerEvent : ViewPositionEvent_Access) is
+   procedure onChangeEvent (This : in out AllBinaryLayer; layerManagerEvent_Param : access ViewPositionEvent'Class) is
+      layerManagerEvent : ViewPositionEvent_Access := ViewPositionEvent_Access (layerManagerEvent_Param);
    begin
         null;
    end onChangeEvent;
 
-   procedure paintThreed (This : in out AllBinaryLayer; graphics : Graphics_Access) is
+   procedure paintThreed (This : in out AllBinaryLayer; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         null;
    end paintThreed;
@@ -115,7 +119,8 @@ package body org.allbinary.layer.AllBinaryLayer_Package is
         return This.viewPosition;
    end getViewPosition;
 
-   procedure setViewPosition (This : in out AllBinaryLayer; viewPosition : ViewPositionBase_Access) is
+   procedure setViewPosition (This : in out AllBinaryLayer; viewPosition_Param : access ViewPositionBase'Class) is
+      viewPosition : ViewPositionBase_Access := ViewPositionBase_Access (viewPosition_Param);
    begin
         This.viewPosition := viewPosition;
    end setViewPosition;
@@ -160,7 +165,8 @@ package body org.allbinary.layer.AllBinaryLayer_Package is
         return -(1);
    end getMultiPlayerType;
 
-   procedure toStringAppend (This : in out AllBinaryLayer; stringBuffer : StringMaker_Access) is
+   procedure toStringAppend (This : in out AllBinaryLayer; stringBuffer_Param : access StringMaker'Class) is
+      stringBuffer : StringMaker_Access := StringMaker_Access (stringBuffer_Param);
       commonSeps : CommonSeps_Access;
       positionStrings : PositionStrings_Access;
       commonLabels : CommonLabels_Access;

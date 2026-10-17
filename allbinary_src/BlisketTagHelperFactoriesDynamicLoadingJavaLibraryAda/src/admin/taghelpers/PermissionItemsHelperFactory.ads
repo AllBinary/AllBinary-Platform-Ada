@@ -41,8 +41,8 @@ package admin.taghelpers.PermissionItemsHelperFactory_Package is
 
    procedure Initialize (This : in out PermissionItemsHelperFactory'Class);
    function Create return PermissionItemsHelperFactory_Access;
-   function getInstance (This : in out PermissionItemsHelperFactory; hashMap : HashMap_Access; pageContext : PageContext_Access) return Java_Object_Access;
-   procedure getInstance (This : in out PermissionItemsHelperFactory; hashMap : HashMap_Access; pageContext : PageContext_Access);
+   function getInstance (This : in out PermissionItemsHelperFactory; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return Java_Object_Access;
+   procedure getInstance (This : in out PermissionItemsHelperFactory; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
 
 end admin.taghelpers.PermissionItemsHelperFactory_Package;
 

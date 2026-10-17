@@ -41,8 +41,8 @@ package org.allbinary.media.graphics.geography.map.racetrack.RaceTracksPathPrint
 
    procedure Initialize (This : in out RaceTracksPathPrinter'Class);
    function Create return RaceTracksPathPrinter_Access;
-   procedure printPath (This : in out RaceTracksPathPrinter; list : BasicArrayList_Access);
-   procedure printPaths (This : in out RaceTracksPathPrinter; list : BasicArrayList_Access);
+   procedure printPath (This : in out RaceTracksPathPrinter; list_Param : access BasicArrayList'Class);
+   procedure printPaths (This : in out RaceTracksPathPrinter; list_Param : access BasicArrayList'Class);
 
 end org.allbinary.media.graphics.geography.map.racetrack.RaceTracksPathPrinter_Package;
 

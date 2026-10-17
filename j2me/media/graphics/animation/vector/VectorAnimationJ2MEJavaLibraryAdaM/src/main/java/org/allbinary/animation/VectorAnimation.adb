@@ -23,7 +23,9 @@ package body org.allbinary.animation.VectorAnimation_Package is
    end Initialize_Fields;
 
 
-   function createVectorAnimation (currentPoints2 : Integer_Array_Access_Array_Access; basicColor : BasicColor_Access; animationBehavior : AnimationBehavior_Access) return VectorAnimation_Access is
+   function createVectorAnimation (currentPoints2 : Integer_Array_Access_Array_Access; basicColor_Param : access BasicColor'Class; animationBehavior_Param : access AnimationBehavior'Class) return VectorAnimation_Access is
+      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
+      animationBehavior : AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
       currentPoints : Integer_Array_Access_Array_Access_Array_Access;
       size : Integer;
       index : Integer;
@@ -37,7 +39,9 @@ package body org.allbinary.animation.VectorAnimation_Package is
         return VectorAnimation_Package.Create (currentPoints, basicColor, animationBehavior);
    end createVectorAnimation;
 
-   procedure Initialize (This : in out VectorAnimation'Class; currentPoints : Integer_Array_Access_Array_Access_Array_Access; basicColor : BasicColor_Access; animationBehavior : AnimationBehavior_Access) is
+   procedure Initialize (This : in out VectorAnimation'Class; currentPoints : Integer_Array_Access_Array_Access_Array_Access; basicColor_Param : access BasicColor'Class; animationBehavior_Param : access AnimationBehavior'Class) is
+      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
+      animationBehavior : AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
    begin
         IndexedAnimation_Package.Initialize (This, animationBehavior);
         Initialize_Fields (This);
@@ -45,14 +49,15 @@ package body org.allbinary.animation.VectorAnimation_Package is
         This.setBasicColorP (basicColor);
    end Initialize;
 
-   function Create (currentPoints : Integer_Array_Access_Array_Access_Array_Access; basicColor : BasicColor_Access; animationBehavior : AnimationBehavior_Access) return VectorAnimation_Access is
+   function Create (currentPoints : Integer_Array_Access_Array_Access_Array_Access; basicColor_Param : access BasicColor'Class; animationBehavior_Param : access AnimationBehavior'Class) return VectorAnimation_Access is
       This : constant VectorAnimation_Access := new VectorAnimation;
    begin
-      VectorAnimation_Package.Initialize (This.all, currentPoints, basicColor, animationBehavior);
+      VectorAnimation_Package.Initialize (This.all, currentPoints, basicColor_Param, animationBehavior_Param);
       return This;
    end Create;
 
-   procedure setBasicColorP (This : in out VectorAnimation; basicColor : BasicColor_Access) is
+   procedure setBasicColorP (This : in out VectorAnimation; basicColor_Param : access BasicColor'Class) is
+      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
       changed : Boolean;
    begin
         changed := False;
@@ -65,7 +70,8 @@ package body org.allbinary.animation.VectorAnimation_Package is
         end if;
    end setBasicColorP;
 
-   procedure changeBasicColor (This : in out VectorAnimation; basicColor : BasicColor_Access) is
+   procedure changeBasicColor (This : in out VectorAnimation; basicColor_Param : access BasicColor'Class) is
+      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
       changed : Boolean;
    begin
         changed := False;
@@ -137,7 +143,8 @@ package body org.allbinary.animation.VectorAnimation_Package is
         This.circularIndexUtil.previous;
    end previousFrame;
 
-   procedure paintVectors (This : in out VectorAnimation; graphics : Graphics_Access; x : Integer; y : Integer) is
+   procedure paintVectors (This : in out VectorAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       nextPointX : Integer;
       nextPointY : Integer;
       nextPoint : Integer_Array_Access;
@@ -170,12 +177,13 @@ package body org.allbinary.animation.VectorAnimation_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("paintVectors"), e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, VectorAnimation_Access'(This'Unchecked_Access), To_Unbounded_String ("paintVectors"), e);
                 end;
         end;
    end paintVectors;
 
-   procedure paintXY (This : in out VectorAnimation; graphics : Graphics_Access; x : Integer; y : Integer) is
+   procedure paintXY (This : in out VectorAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.basicSetColorUtil.setBasicColorP (graphics, This.basicColor);
         This.paintVectors (graphics, x, y);
@@ -202,8 +210,8 @@ package body org.allbinary.animation.VectorAnimation_Package is
         This.circularIndexUtil := CircularIndexUtil_Package.createInstance (currentPoints'Length);
    end setPoints;
 
-   procedure createVectorAnimation (currentPoints2 : Integer_Array_Access_Array_Access; basicColor : BasicColor_Access; animationBehavior : AnimationBehavior_Access) is
-      Java_Result : constant VectorAnimation_Access := createVectorAnimation (currentPoints2, basicColor, animationBehavior);
+   procedure createVectorAnimation (currentPoints2 : Integer_Array_Access_Array_Access; basicColor_Param : access BasicColor'Class; animationBehavior_Param : access AnimationBehavior'Class) is
+      Java_Result : constant VectorAnimation_Access := createVectorAnimation (currentPoints2, basicColor_Param, animationBehavior_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

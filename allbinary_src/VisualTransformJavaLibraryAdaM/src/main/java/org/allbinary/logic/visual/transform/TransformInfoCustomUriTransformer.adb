@@ -21,7 +21,9 @@ package body org.allbinary.logic.visual.transform.TransformInfoCustomUriTransfor
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out TransformInfoCustomUriTransformer'Class; abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access) is
+   procedure Initialize (This : in out TransformInfoCustomUriTransformer'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
       transformInfoObjectConfigInterface : TransformInfoObjectConfigInterface_Access;
    begin
         BasicTransformer_Package.Initialize (This, abeClientInformation, transformInfoInterface);
@@ -29,10 +31,10 @@ package body org.allbinary.logic.visual.transform.TransformInfoCustomUriTransfor
         This.setURIResolver (URIResolver_Access (CustomUriResolver_Package.Create (transformInfoObjectConfigInterface.getImportUriPath, BasicUriResolver_Access (This.getURIResolver))));
    end Initialize;
 
-   function Create (abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access) return TransformInfoCustomUriTransformer_Access is
+   function Create (abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) return TransformInfoCustomUriTransformer_Access is
       This : constant TransformInfoCustomUriTransformer_Access := new TransformInfoCustomUriTransformer;
    begin
-      TransformInfoCustomUriTransformer_Package.Initialize (This.all, abeClientInformation, transformInfoInterface);
+      TransformInfoCustomUriTransformer_Package.Initialize (This.all, abeClientInformation_Param, transformInfoInterface_Param);
       return This;
    end Create;
 

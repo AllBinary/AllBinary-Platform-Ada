@@ -33,15 +33,16 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamily
       return This;
    end Create;
 
-   procedure Initialize (This : in out FontFamilyView'Class; node : Node_Access) is
+   procedure Initialize (This : in out FontFamilyView'Class; node_Param : access Node'Class) is
+      node : Node_Access := Node_Access (node_Param);
    begin
         CssPropertyView_Package.Initialize (This, node);
    end Initialize;
 
-   function Create (node : Node_Access) return FontFamilyView_Access is
+   function Create (node_Param : access Node'Class) return FontFamilyView_Access is
       This : constant FontFamilyView_Access := new FontFamilyView;
    begin
-      FontFamilyView_Package.Initialize (This.all, node);
+      FontFamilyView_Package.Initialize (This.all, node_Param);
       return This;
    end Create;
 

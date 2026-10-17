@@ -46,7 +46,8 @@ package body org.allbinary.media.audio.Sound_Package is
         return This.player;
    end getPlayerP;
 
-   procedure setPlayerP (This : in out Sound; player : Player_Access) is
+   procedure setPlayerP (This : in out Sound; player_Param : access Player'Class) is
+      player : Player_Access := Player_Access (player_Param);
    begin
         This.player := player;
    end setPlayerP;
@@ -73,7 +74,7 @@ package body org.allbinary.media.audio.Sound_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            PreLogUtil_Package.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.RUN);
+            PreLogUtil_Package.put (commonStrings.EXCEPTION_Id, Sound_Access'(This'Unchecked_Access), commonStrings.RUN);
                 end;
         end;
    end run;

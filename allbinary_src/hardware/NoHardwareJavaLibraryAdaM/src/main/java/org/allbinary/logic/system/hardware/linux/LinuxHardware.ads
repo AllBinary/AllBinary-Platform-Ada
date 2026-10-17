@@ -90,10 +90,10 @@ package org.allbinary.logic.system.hardware.linux.LinuxHardware_Package is
    function getComponent (This : in out LinuxHardware; index : Integer) return HardwareComponentInterface_Access;
    procedure getComponent (This : in out LinuxHardware; index : Integer);
    function toString (This : in out LinuxHardware) return Unbounded_String;
-   function compareTo (This : in out LinuxHardware; hardwareInterface : HardwareInterface_Access) return Boolean;
-   procedure compareTo (This : in out LinuxHardware; hardwareInterface : HardwareInterface_Access);
-   function difference (This : in out LinuxHardware; hardwareInterface : HardwareInterface_Access) return ABHashtable_Access;
-   procedure difference (This : in out LinuxHardware; hardwareInterface : HardwareInterface_Access);
+   function compareTo (This : in out LinuxHardware; hardwareInterface_Param : access HardwareInterface'Class) return Boolean;
+   procedure compareTo (This : in out LinuxHardware; hardwareInterface_Param : access HardwareInterface'Class);
+   function difference (This : in out LinuxHardware; hardwareInterface_Param : access HardwareInterface'Class) return ABHashtable_Access;
+   procedure difference (This : in out LinuxHardware; hardwareInterface_Param : access HardwareInterface'Class);
    function isNextHardware (This : in out LinuxHardware; nextLine : Unbounded_String) return Boolean;
    procedure isNextHardware (This : in out LinuxHardware; nextLine : Unbounded_String);
 

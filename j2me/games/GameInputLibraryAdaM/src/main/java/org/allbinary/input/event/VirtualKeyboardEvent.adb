@@ -21,15 +21,16 @@ package body org.allbinary.input.event.VirtualKeyboardEvent_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out VirtualKeyboardEvent'Class; anyType : Java_Object_Access) is
+   procedure Initialize (This : in out VirtualKeyboardEvent'Class; anyType_Param : access Java_Object'Class) is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         AllBinaryEventObject_Package.Initialize (This, anyType);
    end Initialize;
 
-   function Create (anyType : Java_Object_Access) return VirtualKeyboardEvent_Access is
+   function Create (anyType_Param : access Java_Object'Class) return VirtualKeyboardEvent_Access is
       This : constant VirtualKeyboardEvent_Access := new VirtualKeyboardEvent;
    begin
-      VirtualKeyboardEvent_Package.Initialize (This.all, anyType);
+      VirtualKeyboardEvent_Package.Initialize (This.all, anyType_Param);
       return This;
    end Create;
 

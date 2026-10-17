@@ -34,9 +34,9 @@ package body org.allbinary.logic.system.security.licensing.MobileClientInformati
         end if;
         commonStrings := CommonStrings_Package.getInstance;
         if This.isHardSale then
-            This.logUtil.putF (To_Unbounded_String ("Use Hard Coded Selling"), This'Unchecked_Access, commonStrings.CONSTRUCTOR);
+            This.logUtil.putF (To_Unbounded_String ("Use Hard Coded Selling"), MobileClientInformation_Access'(This'Unchecked_Access), commonStrings.CONSTRUCTOR);
         else
-            This.logUtil.putF (To_Unbounded_String ("Don't Use Hard Coded Selling"), This'Unchecked_Access, commonStrings.CONSTRUCTOR);
+            This.logUtil.putF (To_Unbounded_String ("Don't Use Hard Coded Selling"), MobileClientInformation_Access'(This'Unchecked_Access), commonStrings.CONSTRUCTOR);
         end if;
    end Initialize;
 

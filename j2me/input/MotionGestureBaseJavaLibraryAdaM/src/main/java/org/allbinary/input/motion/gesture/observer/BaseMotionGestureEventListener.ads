@@ -31,8 +31,8 @@ package org.allbinary.input.motion.gesture.observer.BaseMotionGestureEventListen
    type BaseMotionGestureEventListener_Access is access all BaseMotionGestureEventListener'Class;
    type BaseMotionGestureEventListener_Access_Array is array (Natural range <>) of BaseMotionGestureEventListener_Access;
    type BaseMotionGestureEventListener_Access_Array_Access is access all BaseMotionGestureEventListener_Access_Array;
-   procedure onMotionGestureEvent (This : in out BaseMotionGestureEventListener; motionGestureEvent : MotionGestureEvent_Access) is abstract;
-   procedure onScrolledMotionGestureEvent (This : in out BaseMotionGestureEventListener; motionGestureEvent : MotionGestureEvent_Access) is abstract;
+   procedure onMotionGestureEvent (This : in out BaseMotionGestureEventListener; motionGestureEvent_Param : access MotionGestureEvent'Class) is abstract;
+   procedure onScrolledMotionGestureEvent (This : in out BaseMotionGestureEventListener; motionGestureEvent_Param : access MotionGestureEvent'Class) is abstract;
 
 end org.allbinary.input.motion.gesture.observer.BaseMotionGestureEventListener_Package;
 

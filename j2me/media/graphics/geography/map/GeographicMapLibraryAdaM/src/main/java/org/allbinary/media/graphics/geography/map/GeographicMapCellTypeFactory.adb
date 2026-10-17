@@ -65,7 +65,8 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFac
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end getEmptyType;
 
-   function isPath (This : in out GeographicMapCellTypeFactory; cellType : GeographicMapCellType_Access) return Boolean is
+   function isPath (This : in out GeographicMapCellTypeFactory; cellType_Param : access GeographicMapCellType'Class) return Boolean is
+      cellType : GeographicMapCellType_Access := GeographicMapCellType_Access (cellType_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end isPath;
@@ -77,8 +78,8 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFac
       null;
    end get;
 
-   procedure isPath (This : in out GeographicMapCellTypeFactory; cellType : GeographicMapCellType_Access) is
-      Java_Result : constant Boolean := GeographicMapCellTypeFactory'Class (This).isPath (cellType);
+   procedure isPath (This : in out GeographicMapCellTypeFactory; cellType_Param : access GeographicMapCellType'Class) is
+      Java_Result : constant Boolean := GeographicMapCellTypeFactory'Class (This).isPath (cellType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

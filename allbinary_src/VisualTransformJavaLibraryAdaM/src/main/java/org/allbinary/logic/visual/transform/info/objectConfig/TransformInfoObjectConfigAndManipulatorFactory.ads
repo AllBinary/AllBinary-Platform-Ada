@@ -58,12 +58,12 @@ package org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObje
    procedure Initialize (This : in out TransformInfoObjectConfigAndManipulatorFactory'Class);
    function Create return TransformInfoObjectConfigAndManipulatorFactory_Access;
    function getInstance return TransformInfoObjectConfigAndManipulatorFactory_Access;
-   function getInstance (This : in out TransformInfoObjectConfigAndManipulatorFactory; abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access; objectConfigFileAbPath : AbPath_Access) return TransformInfoObjectConfigInterface_Access;
-   procedure getInstance (This : in out TransformInfoObjectConfigAndManipulatorFactory; abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access; objectConfigFileAbPath : AbPath_Access);
-   function getInstance (This : in out TransformInfoObjectConfigAndManipulatorFactory; abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access) return TransformInfoObjectConfigInterface_Access;
-   procedure getInstance (This : in out TransformInfoObjectConfigAndManipulatorFactory; abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access);
-   function getInstance (This : in out TransformInfoObjectConfigAndManipulatorFactory; abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access; document : Document_Access) return TransformInfoObjectConfigInterface_Access;
-   procedure getInstance (This : in out TransformInfoObjectConfigAndManipulatorFactory; abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access; document : Document_Access);
+   function getInstance (This : in out TransformInfoObjectConfigAndManipulatorFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; objectConfigFileAbPath_Param : access AbPath'Class) return TransformInfoObjectConfigInterface_Access;
+   procedure getInstance (This : in out TransformInfoObjectConfigAndManipulatorFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; objectConfigFileAbPath_Param : access AbPath'Class);
+   function getInstance (This : in out TransformInfoObjectConfigAndManipulatorFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) return TransformInfoObjectConfigInterface_Access;
+   procedure getInstance (This : in out TransformInfoObjectConfigAndManipulatorFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
+   function getInstance (This : in out TransformInfoObjectConfigAndManipulatorFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; document_Param : access Document'Class) return TransformInfoObjectConfigInterface_Access;
+   procedure getInstance (This : in out TransformInfoObjectConfigAndManipulatorFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; document_Param : access Document'Class);
 
 end org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigAndManipulatorFactory_Package;
 

@@ -48,7 +48,8 @@ package body org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingle
         return CurrentlyPressedTouchButtonSingletonDebug_Package.instanceC;
    end getInstance;
 
-   procedure appendTouchButtonInput (This : in out CurrentlyPressedTouchButtonSingletonDebug; append : Unbounded_String; touchButtonInput : TouchButtonInput_Access) is
+   procedure appendTouchButtonInput (This : in out CurrentlyPressedTouchButtonSingletonDebug; append : Unbounded_String; touchButtonInput_Param : access TouchButtonInput'Class) is
+      touchButtonInput : TouchButtonInput_Access := TouchButtonInput_Access (touchButtonInput_Param);
       stringBuffer : StringMaker_Access;
    begin
         stringBuffer := StringMaker_Package.Create;
@@ -76,27 +77,32 @@ package body org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingle
         This.append (This.RELEASED_AND_NOT_FIRED);
    end releaseAndNotFired;
 
-   procedure releaseAndFired (This : in out CurrentlyPressedTouchButtonSingletonDebug; touchButtonInput : TouchButtonInput_Access) is
+   procedure releaseAndFired (This : in out CurrentlyPressedTouchButtonSingletonDebug; touchButtonInput_Param : access TouchButtonInput'Class) is
+      touchButtonInput : TouchButtonInput_Access := TouchButtonInput_Access (touchButtonInput_Param);
    begin
         This.appendTouchButtonInput (This.RELEASED_AND_FIRED, touchButtonInput);
    end releaseAndFired;
 
-   procedure releaseAndFired2 (This : in out CurrentlyPressedTouchButtonSingletonDebug; touchButtonInput : TouchButtonInput_Access) is
+   procedure releaseAndFired2 (This : in out CurrentlyPressedTouchButtonSingletonDebug; touchButtonInput_Param : access TouchButtonInput'Class) is
+      touchButtonInput : TouchButtonInput_Access := TouchButtonInput_Access (touchButtonInput_Param);
    begin
         This.appendTouchButtonInput (This.RELEASED_AND_FIRED_2, touchButtonInput);
    end releaseAndFired2;
 
-   procedure releaseAndFiredAssociated (This : in out CurrentlyPressedTouchButtonSingletonDebug; touchButtonInput : TouchButtonInput_Access) is
+   procedure releaseAndFiredAssociated (This : in out CurrentlyPressedTouchButtonSingletonDebug; touchButtonInput_Param : access TouchButtonInput'Class) is
+      touchButtonInput : TouchButtonInput_Access := TouchButtonInput_Access (touchButtonInput_Param);
    begin
         This.appendTouchButtonInput (This.ASSOCIATED_RELEASED_AND_FIRED, touchButtonInput);
    end releaseAndFiredAssociated;
 
-   procedure pressedAndFired (This : in out CurrentlyPressedTouchButtonSingletonDebug; touchButtonInput : TouchButtonInput_Access) is
+   procedure pressedAndFired (This : in out CurrentlyPressedTouchButtonSingletonDebug; touchButtonInput_Param : access TouchButtonInput'Class) is
+      touchButtonInput : TouchButtonInput_Access := TouchButtonInput_Access (touchButtonInput_Param);
    begin
         This.appendTouchButtonInput (This.PRESSED_AND_FIRED, touchButtonInput);
    end pressedAndFired;
 
-   procedure pressedAndNotFired (This : in out CurrentlyPressedTouchButtonSingletonDebug; touchButtonInput : TouchButtonInput_Access) is
+   procedure pressedAndNotFired (This : in out CurrentlyPressedTouchButtonSingletonDebug; touchButtonInput_Param : access TouchButtonInput'Class) is
+      touchButtonInput : TouchButtonInput_Access := TouchButtonInput_Access (touchButtonInput_Param);
    begin
         This.appendTouchButtonInput (This.PRESSED_AND_NOT_FIRED, touchButtonInput);
    end pressedAndNotFired;
@@ -110,7 +116,8 @@ package body org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingle
         return touchButtonInput;
    end removeAt;
 
-   function remove (This : in out CurrentlyPressedTouchButtonSingletonDebug; touchButtonInput : TouchButtonInput_Access) return Boolean is
+   function remove (This : in out CurrentlyPressedTouchButtonSingletonDebug; touchButtonInput_Param : access TouchButtonInput'Class) return Boolean is
+      touchButtonInput : TouchButtonInput_Access := TouchButtonInput_Access (touchButtonInput_Param);
       isRemoved : Boolean;
    begin
         isRemoved := CurrentlyPressedTouchButtonSingleton (This).remove (touchButtonInput);
@@ -119,7 +126,8 @@ package body org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingle
         return isRemoved;
    end remove;
 
-   procedure add (This : in out CurrentlyPressedTouchButtonSingletonDebug; touchButtonInput : TouchButtonInput_Access) is
+   procedure add (This : in out CurrentlyPressedTouchButtonSingletonDebug; touchButtonInput_Param : access TouchButtonInput'Class) is
+      touchButtonInput : TouchButtonInput_Access := TouchButtonInput_Access (touchButtonInput_Param);
    begin
         CurrentlyPressedTouchButtonSingleton (This).add (touchButtonInput);
         This.listString := This.list.toString;
@@ -138,8 +146,8 @@ package body org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingle
       null;
    end removeAt;
 
-   procedure remove (This : in out CurrentlyPressedTouchButtonSingletonDebug; touchButtonInput : TouchButtonInput_Access) is
-      Java_Result : constant Boolean := CurrentlyPressedTouchButtonSingletonDebug'Class (This).remove (touchButtonInput);
+   procedure remove (This : in out CurrentlyPressedTouchButtonSingletonDebug; touchButtonInput_Param : access TouchButtonInput'Class) is
+      Java_Result : constant Boolean := CurrentlyPressedTouchButtonSingletonDebug'Class (This).remove (touchButtonInput_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

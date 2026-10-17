@@ -44,7 +44,8 @@ package body org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterfa
         return ArtificialIntelligenceInterfaceFactoryInterfaceFactory_Package.SINGLETON;
    end getInstance;
 
-   function getInstanceFromCollection (This : in out ArtificialIntelligenceInterfaceFactoryInterfaceFactory; hashtable : ABHashtable_Access) return ArtificialIntelligenceInterfaceFactoryInterface_Access is
+   function getInstanceFromCollection (This : in out ArtificialIntelligenceInterfaceFactoryInterfaceFactory; hashtable_Param : access ABHashtable'Class) return ArtificialIntelligenceInterfaceFactoryInterface_Access is
+      hashtable : ABHashtable_Access := ABHashtable_Access (hashtable_Param);
       typeInteger : Integer;
       type_Id : Integer;
       artificialIntelligenceInterfaceFactoryInterface : ArtificialIntelligenceInterfaceFactoryInterface_Access;
@@ -55,13 +56,14 @@ package body org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterfa
         return artificialIntelligenceInterfaceFactoryInterface;
    end getInstanceFromCollection;
 
-   procedure add (This : in out ArtificialIntelligenceInterfaceFactoryInterfaceFactory; artificialIntelligenceInterfaceFactoryInterface : ArtificialIntelligenceInterfaceFactoryInterface_Access) is
+   procedure add (This : in out ArtificialIntelligenceInterfaceFactoryInterfaceFactory; artificialIntelligenceInterfaceFactoryInterface_Param : access ArtificialIntelligenceInterfaceFactoryInterface'Class) is
+      artificialIntelligenceInterfaceFactoryInterface : ArtificialIntelligenceInterfaceFactoryInterface_Access := ArtificialIntelligenceInterfaceFactoryInterface_Access (artificialIntelligenceInterfaceFactoryInterface_Param);
    begin
         This.list.add (artificialIntelligenceInterfaceFactoryInterface);
    end add;
 
-   procedure getInstanceFromCollection (This : in out ArtificialIntelligenceInterfaceFactoryInterfaceFactory; hashtable : ABHashtable_Access) is
-      Java_Result : constant ArtificialIntelligenceInterfaceFactoryInterface_Access := ArtificialIntelligenceInterfaceFactoryInterfaceFactory'Class (This).getInstanceFromCollection (hashtable);
+   procedure getInstanceFromCollection (This : in out ArtificialIntelligenceInterfaceFactoryInterfaceFactory; hashtable_Param : access ABHashtable'Class) is
+      Java_Result : constant ArtificialIntelligenceInterfaceFactoryInterface_Access := ArtificialIntelligenceInterfaceFactoryInterfaceFactory'Class (This).getInstanceFromCollection (hashtable_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

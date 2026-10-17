@@ -45,8 +45,8 @@ package views.admin.storefront.StoreFrontComponent_Package is
       newStoreFrontInterface : StoreFrontInterface_Access;
    end record;
 
-   procedure Initialize (This : in out StoreFrontComponent'Class; transformInfoInterface : TransformInfoInterface_Access);
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return StoreFrontComponent_Access;
+   procedure Initialize (This : in out StoreFrontComponent'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return StoreFrontComponent_Access;
    function view (This : in out StoreFrontComponent) return Unbounded_String;
 
 end views.admin.storefront.StoreFrontComponent_Package;

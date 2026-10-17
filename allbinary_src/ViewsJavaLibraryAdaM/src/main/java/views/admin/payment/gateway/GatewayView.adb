@@ -22,20 +22,22 @@ package body views.admin.payment.gateway.GatewayView_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out GatewayView'Class; transformInfoInterface : TransformInfoInterface_Access) is
+   procedure Initialize (This : in out GatewayView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         PaymentGatewayViewAbstract_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return GatewayView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return GatewayView_Access is
       This : constant GatewayView_Access := new GatewayView;
    begin
-      GatewayView_Package.Initialize (This.all, transformInfoInterface);
+      GatewayView_Package.Initialize (This.all, transformInfoInterface_Param);
       return This;
    end Create;
 
-   procedure getFormData (This : in out GatewayView; request : HttpServletRequest_Access) is
+   procedure getFormData (This : in out GatewayView; request_Param : access HttpServletRequest'Class) is
+      request : HttpServletRequest_Access := HttpServletRequest_Access (request_Param);
    begin
         PaymentGatewayViewAbstract (This).getFormData (request);
         if StringValidationUtil_Package.getInstance.isEmpty (This.getPaymentGatewayPrimaryKey.getName) then
@@ -56,7 +58,7 @@ package body views.admin.payment.gateway.GatewayView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("edit()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, GatewayView_Access'(This'Unchecked_Access), To_Unbounded_String ("edit()"), e);
             end if;
             Java_Throw (e);
                 end;

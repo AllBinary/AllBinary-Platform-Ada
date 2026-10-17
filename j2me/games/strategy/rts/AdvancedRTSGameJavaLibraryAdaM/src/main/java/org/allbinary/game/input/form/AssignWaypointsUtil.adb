@@ -40,7 +40,9 @@ package body org.allbinary.game.input.form.AssignWaypointsUtil_Package is
         return AssignWaypointsUtil_Package.instance;
    end getInstance;
 
-   procedure set (This : in out AssignWaypointsUtil; unitLayer : UnitLayer_Access; ownerAdvancedRTSGameLayer : AdvancedRTSGameLayer_Access) is
+   procedure set (This : in out AssignWaypointsUtil; unitLayer_Param : access UnitLayer'Class; ownerAdvancedRTSGameLayer_Param : access AdvancedRTSGameLayer'Class) is
+      unitLayer : UnitLayer_Access := UnitLayer_Access (unitLayer_Param);
+      ownerAdvancedRTSGameLayer : AdvancedRTSGameLayer_Access := AdvancedRTSGameLayer_Access (ownerAdvancedRTSGameLayer_Param);
       list : BasicArrayList_Access;
       unitWaypointBehavior : UnitWaypointBehavior_Access;
       waypointLayer : RTSLayer_Access;
@@ -66,7 +68,7 @@ package body org.allbinary.game.input.form.AssignWaypointsUtil_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("set"), e);
+            This.logUtil.put (commonStrings.EXCEPTION_Id, AssignWaypointsUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("set"), e);
                 end;
         end;
    end set;

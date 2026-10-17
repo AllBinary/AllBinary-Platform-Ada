@@ -52,9 +52,9 @@ package org.allbinary.game.layer.waypoint.WorkWaypoint_Package is
    type WorkWaypoint is new Waypoint with null record;
    ID : Integer;
 
-   procedure Initialize (This : in out WorkWaypoint'Class; ownerLayer : PathFindingLayerInterface_Access);
-   function Create (ownerLayer : PathFindingLayerInterface_Access) return WorkWaypoint_Access;
-   procedure visit (This : in out WorkWaypoint; unitLayer : UnitLayer_Access);
+   procedure Initialize (This : in out WorkWaypoint'Class; ownerLayer_Param : access PathFindingLayerInterface'Class);
+   function Create (ownerLayer_Param : access PathFindingLayerInterface'Class) return WorkWaypoint_Access;
+   procedure visit (This : in out WorkWaypoint; unitLayer_Param : access UnitLayer'Class);
    function getType (This : in out WorkWaypoint) return Integer;
 
 end org.allbinary.game.layer.waypoint.WorkWaypoint_Package;

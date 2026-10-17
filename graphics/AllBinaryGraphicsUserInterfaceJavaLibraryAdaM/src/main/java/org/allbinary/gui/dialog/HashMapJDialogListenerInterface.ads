@@ -29,7 +29,7 @@ package org.allbinary.gui.dialog.HashMapJDialogListenerInterface_Package is
    type HashMapJDialogListenerInterface_Access is access all HashMapJDialogListenerInterface'Class;
    type HashMapJDialogListenerInterface_Access_Array is array (Natural range <>) of HashMapJDialogListenerInterface_Access;
    type HashMapJDialogListenerInterface_Access_Array_Access is access all HashMapJDialogListenerInterface_Access_Array;
-   procedure onHashMap (This : in out HashMapJDialogListenerInterface; hashMap : HashMap_Access) is abstract;
+   procedure onHashMap (This : in out HashMapJDialogListenerInterface; hashMap_Param : access HashMap'Class) is abstract;
 
 end org.allbinary.gui.dialog.HashMapJDialogListenerInterface_Package;
 

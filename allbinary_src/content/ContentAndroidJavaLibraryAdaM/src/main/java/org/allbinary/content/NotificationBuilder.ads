@@ -43,8 +43,8 @@ package org.allbinary.content.NotificationBuilder_Package is
 
    procedure Initialize (This : in out NotificationBuilder'Class);
    function Create return NotificationBuilder_Access;
-   function build (This : in out NotificationBuilder; context : Context_Access; command : Command_Access; message : Unbounded_String; integer_Id : Integer; pendingIntent : PendingIntent_Access) return Parcelable_Access;
-   procedure build (This : in out NotificationBuilder; context : Context_Access; command : Command_Access; message : Unbounded_String; integer_Id : Integer; pendingIntent : PendingIntent_Access);
+   function build (This : in out NotificationBuilder; context_Param : access Context'Class; command_Param : access Command'Class; message : Unbounded_String; integer_Id : Integer; pendingIntent_Param : access PendingIntent'Class) return Parcelable_Access;
+   procedure build (This : in out NotificationBuilder; context_Param : access Context'Class; command_Param : access Command'Class; message : Unbounded_String; integer_Id : Integer; pendingIntent_Param : access PendingIntent'Class);
 
 end org.allbinary.content.NotificationBuilder_Package;
 

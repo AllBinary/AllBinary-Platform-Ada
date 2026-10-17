@@ -36,8 +36,8 @@ package org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntityInterf
    type AffiliateSalesEntityInterface_Access_Array is array (Natural range <>) of AffiliateSalesEntityInterface_Access;
    type AffiliateSalesEntityInterface_Access_Array_Access is access all AffiliateSalesEntityInterface_Access_Array;
    procedure delete (This : in out AffiliateSalesEntityInterface; value : Unbounded_String) is abstract;
-   procedure insert (This : in out AffiliateSalesEntityInterface; values : BasicArrayList_Access) is abstract;
-   procedure update (This : in out AffiliateSalesEntityInterface; updatedValues : HashMap_Access) is abstract;
+   procedure insert (This : in out AffiliateSalesEntityInterface; values_Param : access BasicArrayList'Class) is abstract;
+   procedure update (This : in out AffiliateSalesEntityInterface; updatedValues_Param : access HashMap'Class) is abstract;
 
 end org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntityInterface_Package;
 

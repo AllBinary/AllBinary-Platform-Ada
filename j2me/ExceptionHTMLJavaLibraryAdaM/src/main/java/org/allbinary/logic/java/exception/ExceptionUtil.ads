@@ -40,8 +40,8 @@ package org.allbinary.logic.java.exception_Id.ExceptionUtil_Package is
    procedure Initialize (This : in out ExceptionUtil'Class);
    function Create return ExceptionUtil_Access;
    function getInstance return ExceptionUtil_Access;
-   function getStackTrace (This : in out ExceptionUtil; e : Java_Throwable) return Unbounded_String;
-   procedure getStackTrace (This : in out ExceptionUtil; e : Java_Throwable);
+   function getStackTrace (This : in out ExceptionUtil; e_Param : access Java_Throwable_Object'Class) return Unbounded_String;
+   procedure getStackTrace (This : in out ExceptionUtil; e_Param : access Java_Throwable_Object'Class);
 
 end org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 

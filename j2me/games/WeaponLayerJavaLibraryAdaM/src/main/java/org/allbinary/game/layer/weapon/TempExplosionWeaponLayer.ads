@@ -41,9 +41,9 @@ package org.allbinary.game.layer.weapon.TempExplosionWeaponLayer_Package is
       timeDelayHelper : TimeDelayHelper_Access;
    end record;
 
-   procedure Initialize (This : in out TempExplosionWeaponLayer'Class; name : Unbounded_String; movement : Movement_Access; animationInterface : Animation_Access; rectangle : Rectangle_Access; viewPosition : ViewPositionBase_Access; timeDelay : Integer);
-   function Create (name : Unbounded_String; movement : Movement_Access; animationInterface : Animation_Access; rectangle : Rectangle_Access; viewPosition : ViewPositionBase_Access; timeDelay : Integer) return TempExplosionWeaponLayer_Access;
-   procedure processTick (This : in out TempExplosionWeaponLayer; allBinaryLayerManager : AllBinaryLayerManager_Access);
+   procedure Initialize (This : in out TempExplosionWeaponLayer'Class; name : Unbounded_String; movement_Param : access Movement'Class; animationInterface_Param : access Animation'Class; rectangle_Param : access Rectangle'Class; viewPosition_Param : access ViewPositionBase'Class; timeDelay : Integer);
+   function Create (name : Unbounded_String; movement_Param : access Movement'Class; animationInterface_Param : access Animation'Class; rectangle_Param : access Rectangle'Class; viewPosition_Param : access ViewPositionBase'Class; timeDelay : Integer) return TempExplosionWeaponLayer_Access;
+   procedure processTick (This : in out TempExplosionWeaponLayer; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class);
 
 end org.allbinary.game.layer.weapon.TempExplosionWeaponLayer_Package;
 

@@ -52,17 +52,17 @@ package org.allbinary.input.automation.robot.InputRobot_Package is
    end record;
    NAME : Unbounded_String;
 
-   procedure Initialize (This : in out InputRobot'Class; graphicsDevice : GraphicsDevice_Access);
-   function Create (graphicsDevice : GraphicsDevice_Access) return InputRobot_Access;
+   procedure Initialize (This : in out InputRobot'Class; graphicsDevice_Param : access GraphicsDevice'Class);
+   function Create (graphicsDevice_Param : access GraphicsDevice'Class) return InputRobot_Access;
    function getName (This : in out InputRobot) return Unbounded_String;
    function getHelpSet (This : in out InputRobot) return HelpSet_Access;
    function getMousePoint (This : in out InputRobot) return Point_Access;
-   procedure mouseMoveToTarget (This : in out InputRobot; rectangle : Rectangle_Access; x : Integer; y : Integer);
-   procedure mouseMove (This : in out InputRobot; point : Point_Access);
+   procedure mouseMoveToTarget (This : in out InputRobot; rectangle_Param : access Rectangle'Class; x : Integer; y : Integer);
+   procedure mouseMove (This : in out InputRobot; point_Param : access Point'Class);
    procedure mouseMove (This : in out InputRobot; x : Integer; y : Integer);
-   procedure mouseMoveToTarget (This : in out InputRobot; rectangle : Rectangle_Access);
-   function createScreenCapture (This : in out InputRobot; screenRect : Rectangle_Access) return BufferedImage_Access;
-   procedure createScreenCapture (This : in out InputRobot; screenRect : Rectangle_Access);
+   procedure mouseMoveToTarget (This : in out InputRobot; rectangle_Param : access Rectangle'Class);
+   function createScreenCapture (This : in out InputRobot; screenRect_Param : access Rectangle'Class) return BufferedImage_Access;
+   procedure createScreenCapture (This : in out InputRobot; screenRect_Param : access Rectangle'Class);
    procedure delay_Id (This : in out InputRobot; ms : Integer);
    function getAutoDelay (This : in out InputRobot) return Integer;
    function getPixelColor (This : in out InputRobot; x : Integer; y : Integer) return Color_Access;

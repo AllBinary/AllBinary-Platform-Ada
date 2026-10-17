@@ -37,7 +37,7 @@ package body org.allbinary.logic.system.security.crypt.jcehelper.BasicCrypt_Pack
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            PreLogUtil_Package.putOE (commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("AbCrypt(alg,key)"), e);
+            PreLogUtil_Package.putOE (commonStrings.EXCEPTION_Id, BasicCrypt_Access'(This'Unchecked_Access), To_Unbounded_String ("AbCrypt(alg,key)"), e);
                 end;
         end;
         This.key := key;
@@ -59,7 +59,7 @@ package body org.allbinary.logic.system.security.crypt.jcehelper.BasicCrypt_Pack
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            PreLogUtil_Package.putOE (To_Unbounded_String ("Encrypt Failed"), This'Unchecked_Access, To_Unbounded_String ("encrypt"), e);
+            PreLogUtil_Package.putOE (To_Unbounded_String ("Encrypt Failed"), BasicCrypt_Access'(This'Unchecked_Access), To_Unbounded_String ("encrypt"), e);
             return NullUtil_Package.getInstance.NULL_BYTE_ARRAY;
                 end;
         end;
@@ -74,7 +74,7 @@ package body org.allbinary.logic.system.security.crypt.jcehelper.BasicCrypt_Pack
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            PreLogUtil_Package.putOE (To_Unbounded_String ("decrypt Failed"), This'Unchecked_Access, To_Unbounded_String ("decrypt"), e);
+            PreLogUtil_Package.putOE (To_Unbounded_String ("decrypt Failed"), BasicCrypt_Access'(This'Unchecked_Access), To_Unbounded_String ("decrypt"), e);
             return NullUtil_Package.getInstance.NULL_BYTE_ARRAY;
                 end;
         end;

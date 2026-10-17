@@ -68,7 +68,7 @@ package body org.allbinary.logic.system.os.android.AndroidOperatingSystemFactory
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.put (To_Unbounded_String ("Failed to get OperatingSystem returning NoOperatingSystem"), This'Unchecked_Access, commonStrings.GET_INSTANCE, e);
+            This.logUtil.put (To_Unbounded_String ("Failed to get OperatingSystem returning NoOperatingSystem"), AndroidOperatingSystemFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE, e);
             return NoOperatingSystem_Package.NO_OPERATING_SYSTEM;
                 end;
         end;

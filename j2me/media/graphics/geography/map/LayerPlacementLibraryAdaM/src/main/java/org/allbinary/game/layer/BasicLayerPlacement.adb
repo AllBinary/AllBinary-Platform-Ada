@@ -24,7 +24,8 @@ package body org.allbinary.game.layer.BasicLayerPlacement_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BasicLayerPlacement'Class; layerType : LayerPlacementType_Access; width : Integer; height : Integer) is
+   procedure Initialize (This : in out BasicLayerPlacement'Class; layerType_Param : access LayerPlacementType'Class; width : Integer; height : Integer) is
+      layerType : LayerPlacementType_Access := LayerPlacementType_Access (layerType_Param);
    begin
       Initialize_Fields (This);
         This.layerType := layerType;
@@ -32,10 +33,10 @@ package body org.allbinary.game.layer.BasicLayerPlacement_Package is
         This.height := height;
    end Initialize;
 
-   function Create (layerType : LayerPlacementType_Access; width : Integer; height : Integer) return BasicLayerPlacement_Access is
+   function Create (layerType_Param : access LayerPlacementType'Class; width : Integer; height : Integer) return BasicLayerPlacement_Access is
       This : constant BasicLayerPlacement_Access := new BasicLayerPlacement;
    begin
-      BasicLayerPlacement_Package.Initialize (This.all, layerType, width, height);
+      BasicLayerPlacement_Package.Initialize (This.all, layerType_Param, width, height);
       return This;
    end Create;
 
@@ -54,7 +55,8 @@ package body org.allbinary.game.layer.BasicLayerPlacement_Package is
         return This.layerType;
    end getLayerType;
 
-   procedure setLayerType (This : in out BasicLayerPlacement; layerType : LayerPlacementType_Access) is
+   procedure setLayerType (This : in out BasicLayerPlacement; layerType_Param : access LayerPlacementType'Class) is
+      layerType : LayerPlacementType_Access := LayerPlacementType_Access (layerType_Param);
    begin
         This.layerType := layerType;
    end setLayerType;

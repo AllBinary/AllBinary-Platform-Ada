@@ -35,7 +35,7 @@ package org.allbinary.input.automation.module.generic_Id.configuration.profile.G
    function getName (This : in out GenericProfileDataWorkerTypeInterface) return Unbounded_String is abstract;
    procedure setName (This : in out GenericProfileDataWorkerTypeInterface; name : Unbounded_String) is abstract;
    function toString (This : in out GenericProfileDataWorkerTypeInterface) return Unbounded_String is abstract;
-   function toXmlNode (This : in out GenericProfileDataWorkerTypeInterface; document : Document_Access) return Node_Access is abstract;
+   function toXmlNode (This : in out GenericProfileDataWorkerTypeInterface; document_Param : access Document'Class) return Node_Access is abstract;
 
 end org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerTypeInterface_Package;
 

@@ -34,8 +34,8 @@ package org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package 
 
    type MyCanvasEvent is new EventObject with null record;
 
-   procedure Initialize (This : in out MyCanvasEvent'Class; source : Java_Object_Access);
-   function Create (source : Java_Object_Access) return MyCanvasEvent_Access;
+   procedure Initialize (This : in out MyCanvasEvent'Class; source_Param : access Java_Object'Class);
+   function Create (source_Param : access Java_Object'Class) return MyCanvasEvent_Access;
    function getSource (This : in out MyCanvasEvent) return Java_Object_Access;
    function toString (This : in out MyCanvasEvent) return Unbounded_String;
    function getCommand (This : in out MyCanvasEvent) return Unbounded_String;

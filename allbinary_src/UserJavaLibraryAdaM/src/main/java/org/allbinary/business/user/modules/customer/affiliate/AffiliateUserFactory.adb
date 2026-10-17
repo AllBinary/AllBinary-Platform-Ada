@@ -41,13 +41,14 @@ package body org.allbinary.business.user.modules.customer.affiliate.AffiliateUse
    end getInstance;
 
    --  throws Exception
-   function getInstance (This : in out AffiliateUserFactory; hashMap : HashMap_Access) return UserInterface_Access is
+   function getInstance (This : in out AffiliateUserFactory; hashMap_Param : access HashMap'Class) return UserInterface_Access is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
    begin
         return AffiliateUser_Package.Create (hashMap);
    end getInstance;
 
-   procedure getInstance (This : in out AffiliateUserFactory; hashMap : HashMap_Access) is
-      Java_Result : constant UserInterface_Access := AffiliateUserFactory'Class (This).getInstance (hashMap);
+   procedure getInstance (This : in out AffiliateUserFactory; hashMap_Param : access HashMap'Class) is
+      Java_Result : constant UserInterface_Access := AffiliateUserFactory'Class (This).getInstance (hashMap_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

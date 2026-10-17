@@ -35,26 +35,30 @@ package body admin.taghelpers.AuthenticationRequestHelperFactory_Package is
    end Create;
 
    --  throws LicensingException
-   function getInstance (This : in out AuthenticationRequestHelperFactory; hashMap : HashMap_Access; pageContext : PageContext_Access) return Java_Object_Access is
+   function getInstance (This : in out AuthenticationRequestHelperFactory; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return Java_Object_Access is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
    begin
         return HelperFactory_Package.getInstance (AuthenticationRequestHelperFactory_Package.FACTORYNAME, AuthenticationRequestHelperFactory_Package.CLASSNAME, hashMap, pageContext);
    end getInstance;
 
    --  throws LicensingException
-   function getInstance (This : in out AuthenticationRequestHelperFactory; hashMap : HashMap_Access; httpServletRequest : HttpServletRequest_Access) return Java_Object_Access is
+   function getInstance (This : in out AuthenticationRequestHelperFactory; hashMap_Param : access HashMap'Class; httpServletRequest_Param : access HttpServletRequest'Class) return Java_Object_Access is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+      httpServletRequest : HttpServletRequest_Access := HttpServletRequest_Access (httpServletRequest_Param);
    begin
         return HelperFactory_Package.getInstance (AuthenticationRequestHelperFactory_Package.FACTORYNAME, AuthenticationRequestHelperFactory_Package.CLASSNAME, hashMap, httpServletRequest);
    end getInstance;
 
-   procedure getInstance (This : in out AuthenticationRequestHelperFactory; hashMap : HashMap_Access; pageContext : PageContext_Access) is
-      Java_Result : constant Java_Object_Access := AuthenticationRequestHelperFactory'Class (This).getInstance (hashMap, pageContext);
+   procedure getInstance (This : in out AuthenticationRequestHelperFactory; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+      Java_Result : constant Java_Object_Access := AuthenticationRequestHelperFactory'Class (This).getInstance (hashMap_Param, pageContext_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
-   procedure getInstance (This : in out AuthenticationRequestHelperFactory; hashMap : HashMap_Access; httpServletRequest : HttpServletRequest_Access) is
-      Java_Result : constant Java_Object_Access := AuthenticationRequestHelperFactory'Class (This).getInstance (hashMap, httpServletRequest);
+   procedure getInstance (This : in out AuthenticationRequestHelperFactory; hashMap_Param : access HashMap'Class; httpServletRequest_Param : access HttpServletRequest'Class) is
+      Java_Result : constant Java_Object_Access := AuthenticationRequestHelperFactory'Class (This).getInstance (hashMap_Param, httpServletRequest_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

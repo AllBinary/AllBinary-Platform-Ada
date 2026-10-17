@@ -38,8 +38,8 @@ package org.allbinary.input.automation.module.generic_Id.constraints.NoMotionRec
 
    procedure Initialize (This : in out NoMotionRectangleConstraints'Class);
    function Create return NoMotionRectangleConstraints_Access;
-   function isValid (This : in out NoMotionRectangleConstraints; frame : Long_Long_Integer; bufferedImage : BufferedImage_Access; rectangle : Rectangle_Access) return Boolean;
-   procedure isValid (This : in out NoMotionRectangleConstraints; frame : Long_Long_Integer; bufferedImage : BufferedImage_Access; rectangle : Rectangle_Access);
+   function isValid (This : in out NoMotionRectangleConstraints; frame : Long_Long_Integer; bufferedImage_Param : access BufferedImage'Class; rectangle_Param : access Rectangle'Class) return Boolean;
+   procedure isValid (This : in out NoMotionRectangleConstraints; frame : Long_Long_Integer; bufferedImage_Param : access BufferedImage'Class; rectangle_Param : access Rectangle'Class);
 
 end org.allbinary.input.automation.module.generic_Id.constraints.NoMotionRectangleConstraints_Package;
 

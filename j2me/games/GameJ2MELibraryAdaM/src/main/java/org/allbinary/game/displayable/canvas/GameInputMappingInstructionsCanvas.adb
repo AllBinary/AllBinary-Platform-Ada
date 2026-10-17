@@ -26,29 +26,33 @@ package body org.allbinary.game.displayable.canvas.GameInputMappingInstructionsC
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out GameInputMappingInstructionsCanvas'Class; commandListener : CommandListener_Access; allBinaryGameLayerManager : AllBinaryGameLayerManager_Access) is
+   procedure Initialize (This : in out GameInputMappingInstructionsCanvas'Class; commandListener_Param : access CommandListener'Class; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class) is
+      commandListener : CommandListener_Access := CommandListener_Access (commandListener_Param);
+      allBinaryGameLayerManager : AllBinaryGameLayerManager_Access := AllBinaryGameLayerManager_Access (allBinaryGameLayerManager_Param);
    begin
         GameCommandCanvas_Package.Initialize (This, commandListener, GameInputMappingInstructionsCanvas_Package.NAME, allBinaryGameLayerManager.getBackgroundBasicColor, allBinaryGameLayerManager.getForegroundBasicColor);
         Initialize_Fields (This);
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+        This.logUtil.putF (This.commonStrings.START, GameInputMappingInstructionsCanvas_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         This.colorFillPaintable := ColorFillPaintableFactory_Package.getInstance.getInstance (allBinaryGameLayerManager.getBackgroundBasicColor, False);
    end Initialize;
 
-   function Create (commandListener : CommandListener_Access; allBinaryGameLayerManager : AllBinaryGameLayerManager_Access) return GameInputMappingInstructionsCanvas_Access is
+   function Create (commandListener_Param : access CommandListener'Class; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class) return GameInputMappingInstructionsCanvas_Access is
       This : constant GameInputMappingInstructionsCanvas_Access := new GameInputMappingInstructionsCanvas;
    begin
-      GameInputMappingInstructionsCanvas_Package.Initialize (This.all, commandListener, allBinaryGameLayerManager);
+      GameInputMappingInstructionsCanvas_Package.Initialize (This.all, commandListener_Param, allBinaryGameLayerManager_Param);
       return This;
    end Create;
 
-   procedure initCommands (This : in out GameInputMappingInstructionsCanvas; cmdListener : CommandListener_Access) is
+   procedure initCommands (This : in out GameInputMappingInstructionsCanvas; cmdListener_Param : access CommandListener'Class) is
+      cmdListener : CommandListener_Access := CommandListener_Access (cmdListener_Param);
    begin
         This.removeAllCommands;
         This.addCommand (GameInputMappingInstructionsCanvas_Package.CLOSE);
         This.setCommandListener (cmdListener);
    end initCommands;
 
-   procedure paint (This : in out GameInputMappingInstructionsCanvas; graphics : Graphics_Access) is
+   procedure paint (This : in out GameInputMappingInstructionsCanvas; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       halfWidth : Integer;
       beginWidth : Integer;
    begin

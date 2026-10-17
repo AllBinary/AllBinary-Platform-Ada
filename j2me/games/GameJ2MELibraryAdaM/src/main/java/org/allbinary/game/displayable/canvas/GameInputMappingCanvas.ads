@@ -85,23 +85,23 @@ package org.allbinary.game.displayable.canvas.GameInputMappingCanvas_Package is
    DISPLAY : Command_Access;
    DEFAULT : Command_Access;
 
-   procedure Initialize (This : in out GameInputMappingCanvas'Class; abeClientInformation : AbeClientInformationInterface_Access; commandListener : CommandListener_Access; allBinaryGameLayerManager : AllBinaryGameLayerManager_Access; helpPaintable : HelpPaintable_Access);
-   function Create (abeClientInformation : AbeClientInformationInterface_Access; commandListener : CommandListener_Access; allBinaryGameLayerManager : AllBinaryGameLayerManager_Access; helpPaintable : HelpPaintable_Access) return GameInputMappingCanvas_Access;
+   procedure Initialize (This : in out GameInputMappingCanvas'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; commandListener_Param : access CommandListener'Class; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class; helpPaintable_Param : access HelpPaintable'Class);
+   function Create (abeClientInformation_Param : access AbeClientInformationInterface'Class; commandListener_Param : access CommandListener'Class; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class; helpPaintable_Param : access HelpPaintable'Class) return GameInputMappingCanvas_Access;
    procedure close (This : in out GameInputMappingCanvas);
-   procedure initCommands (This : in out GameInputMappingCanvas; cmdListener : CommandListener_Access);
+   procedure initCommands (This : in out GameInputMappingCanvas; cmdListener_Param : access CommandListener'Class);
    procedure keyPressed (This : in out GameInputMappingCanvas; keyCode : Integer);
    procedure keyReleased (This : in out GameInputMappingCanvas; keyCode : Integer);
    procedure keyRepeated (This : in out GameInputMappingCanvas; keyCode : Integer);
    procedure keyPressedByDevice (This : in out GameInputMappingCanvas; keyCode : Integer; deviceId : Integer);
    procedure addGameKey (This : in out GameInputMappingCanvas; keyCode : Integer; repeated : Boolean);
-   procedure processInputMapping (This : in out GameInputMappingCanvas; gameKey : GameKey_Access; input : Input_Access);
-   procedure setSelectedAction (This : in out GameInputMappingCanvas; gameKey : GameKey_Access);
-   procedure gameActionCrud (This : in out GameInputMappingCanvas; gameKey : GameKey_Access; input : Input_Access);
-   procedure addNewMapping (This : in out GameInputMappingCanvas; gameKey : GameKey_Access; input : Input_Access);
+   procedure processInputMapping (This : in out GameInputMappingCanvas; gameKey_Param : access GameKey'Class; input_Param : access Input'Class);
+   procedure setSelectedAction (This : in out GameInputMappingCanvas; gameKey_Param : access GameKey'Class);
+   procedure gameActionCrud (This : in out GameInputMappingCanvas; gameKey_Param : access GameKey'Class; input_Param : access Input'Class);
+   procedure addNewMapping (This : in out GameInputMappingCanvas; gameKey_Param : access GameKey'Class; input_Param : access Input'Class);
    procedure deleteCurrentMapping (This : in out GameInputMappingCanvas);
    procedure setDefault (This : in out GameInputMappingCanvas);
    procedure update (This : in out GameInputMappingCanvas);
-   procedure paint (This : in out GameInputMappingCanvas; graphics : Graphics_Access);
+   procedure paint (This : in out GameInputMappingCanvas; graphics_Param : access Graphics'Class);
 
 end org.allbinary.game.displayable.canvas.GameInputMappingCanvas_Package;
 

@@ -63,11 +63,11 @@ package views.business.context.modules.storefront.customizer.bodies.generic_Id.G
    end record;
    NAME : Unbounded_String;
 
-   procedure Initialize (This : in out GenericBodyCustomizerView'Class; transformInfoInterface : TransformInfoInterface_Access);
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return GenericBodyCustomizerView_Access;
+   procedure Initialize (This : in out GenericBodyCustomizerView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return GenericBodyCustomizerView_Access;
    procedure addDomNodeInterfaces (This : in out GenericBodyCustomizerView);
-   function toXmlNode (This : in out GenericBodyCustomizerView; document : Document_Access) return Node_Access;
-   procedure toXmlNode (This : in out GenericBodyCustomizerView; document : Document_Access);
+   function toXmlNode (This : in out GenericBodyCustomizerView; document_Param : access Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out GenericBodyCustomizerView; document_Param : access Document'Class);
    function view (This : in out GenericBodyCustomizerView) return Unbounded_String;
 
 end views.business.context.modules.storefront.customizer.bodies.generic_Id.GenericBodyCustomizerView_Package;

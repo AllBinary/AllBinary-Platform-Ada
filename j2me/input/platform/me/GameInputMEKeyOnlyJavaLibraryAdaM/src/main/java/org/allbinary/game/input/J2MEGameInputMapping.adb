@@ -34,9 +34,10 @@ package body org.allbinary.game.input.J2MEGameInputMapping_Package is
    end Create;
 
    --  throws Exception
-   procedure init (This : in out J2MEGameInputMapping; abeClientInformation : AbeClientInformationInterface_Access) is
+   procedure init (This : in out J2MEGameInputMapping; abeClientInformation_Param : access AbeClientInformationInterface'Class) is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
    begin
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.INIT);
+        This.logUtil.putF (This.commonStrings.START, J2MEGameInputMapping_Access'(This'Unchecked_Access), This.commonStrings.INIT);
         J2MEKeyFactory_Package.getInstance.init;
         PersistentInputMapping (This).init (abeClientInformation);
         if ((This.getTotalMapped) = (0)) or else (This.isDefaultNew) then
@@ -45,7 +46,8 @@ package body org.allbinary.game.input.J2MEGameInputMapping_Package is
         end if;
    end init;
 
-   function isDelete (This : in out J2MEGameInputMapping; input : Input_Access) return Boolean is
+   function isDelete (This : in out J2MEGameInputMapping; input_Param : access Input'Class) return Boolean is
+      input : Input_Access := Input_Access (input_Param);
    begin
         if (input) = (GameKeyFactory_Package.getInstance.GAME_D) then
             return True;
@@ -54,20 +56,21 @@ package body org.allbinary.game.input.J2MEGameInputMapping_Package is
         end if;
    end isDelete;
 
-   function isSystemInput (This : in out J2MEGameInputMapping; input : Input_Access) return Boolean is
+   function isSystemInput (This : in out J2MEGameInputMapping; input_Param : access Input'Class) return Boolean is
+      input : Input_Access := Input_Access (input_Param);
    begin
         return False;
    end isSystemInput;
 
-   procedure isDelete (This : in out J2MEGameInputMapping; input : Input_Access) is
-      Java_Result : constant Boolean := J2MEGameInputMapping'Class (This).isDelete (input);
+   procedure isDelete (This : in out J2MEGameInputMapping; input_Param : access Input'Class) is
+      Java_Result : constant Boolean := J2MEGameInputMapping'Class (This).isDelete (input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isDelete;
 
-   procedure isSystemInput (This : in out J2MEGameInputMapping; input : Input_Access) is
-      Java_Result : constant Boolean := J2MEGameInputMapping'Class (This).isSystemInput (input);
+   procedure isSystemInput (This : in out J2MEGameInputMapping; input_Param : access Input'Class) is
+      Java_Result : constant Boolean := J2MEGameInputMapping'Class (This).isSystemInput (input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

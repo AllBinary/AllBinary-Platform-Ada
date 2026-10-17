@@ -25,21 +25,25 @@ package body org.allbinary.game.displayable.canvas.PopupMenuInputProcessor_Packa
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out PopupMenuInputProcessor'Class; gameKeyEventList : BasicArrayList_Access; playerInputId : Integer; gameCanvas : MyCanvas_Access; rectangle : Rectangle_Access) is
+   procedure Initialize (This : in out PopupMenuInputProcessor'Class; gameKeyEventList_Param : access BasicArrayList'Class; playerInputId : Integer; gameCanvas_Param : access MyCanvas'Class; rectangle_Param : access Rectangle'Class) is
+      gameKeyEventList : BasicArrayList_Access := BasicArrayList_Access (gameKeyEventList_Param);
+      gameCanvas : MyCanvas_Access := MyCanvas_Access (gameCanvas_Param);
+      rectangle : Rectangle_Access := Rectangle_Access (rectangle_Param);
    begin
         BasicMenuInputProcessor_Package.Initialize (This, gameKeyEventList, playerInputId, gameCanvas);
         Initialize_Fields (This);
         This.rectangle := rectangle;
    end Initialize;
 
-   function Create (gameKeyEventList : BasicArrayList_Access; playerInputId : Integer; gameCanvas : MyCanvas_Access; rectangle : Rectangle_Access) return PopupMenuInputProcessor_Access is
+   function Create (gameKeyEventList_Param : access BasicArrayList'Class; playerInputId : Integer; gameCanvas_Param : access MyCanvas'Class; rectangle_Param : access Rectangle'Class) return PopupMenuInputProcessor_Access is
       This : constant PopupMenuInputProcessor_Access := new PopupMenuInputProcessor;
    begin
-      PopupMenuInputProcessor_Package.Initialize (This.all, gameKeyEventList, playerInputId, gameCanvas, rectangle);
+      PopupMenuInputProcessor_Package.Initialize (This.all, gameKeyEventList_Param, playerInputId, gameCanvas_Param, rectangle_Param);
       return This;
    end Create;
 
-   procedure init (This : in out PopupMenuInputProcessor; rectangle : Rectangle_Access) is
+   procedure init (This : in out PopupMenuInputProcessor; rectangle_Param : access Rectangle'Class) is
+      rectangle : Rectangle_Access := Rectangle_Access (rectangle_Param);
    begin
         This.rectangle := rectangle;
    end init;
@@ -91,7 +95,7 @@ package body org.allbinary.game.displayable.canvas.PopupMenuInputProcessor_Packa
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, GameInputStrings_Package.getInstance.PROCESS_INPUT, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, PopupMenuInputProcessor_Access'(This'Unchecked_Access), GameInputStrings_Package.getInstance.PROCESS_INPUT, e);
             return -(1);
                 end;
         end;
@@ -112,7 +116,8 @@ package body org.allbinary.game.displayable.canvas.PopupMenuInputProcessor_Packa
    end processMotionInputs;
 
    --  throws Exception
-   procedure processMotionInput (This : in out PopupMenuInputProcessor; motionGestureEvent : MotionGestureEvent_Access) is
+   procedure processMotionInput (This : in out PopupMenuInputProcessor; motionGestureEvent_Param : access MotionGestureEvent'Class) is
+      motionGestureEvent : MotionGestureEvent_Access := MotionGestureEvent_Access (motionGestureEvent_Param);
       touchMotionGestureFactory : TouchMotionGestureFactory_Access;
       motionGestureInput : MotionGestureInput_Access;
       point : GPoint_Access;
@@ -120,7 +125,7 @@ package body org.allbinary.game.displayable.canvas.PopupMenuInputProcessor_Packa
       gameCanvas : AllBinaryGameCanvas_Access;
    begin
         if (motionGestureEvent) = (null) then
-            This.logUtil.putF (To_Unbounded_String ("Exception: Bug"), This'Unchecked_Access, This.gameInputStrings.PROCESS_MOTION_INPUT);
+            This.logUtil.putF (To_Unbounded_String ("Exception: Bug"), PopupMenuInputProcessor_Access'(This'Unchecked_Access), This.gameInputStrings.PROCESS_MOTION_INPUT);
             return;
         end if;
         touchMotionGestureFactory := TouchMotionGestureFactory_Package.getInstance;

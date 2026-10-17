@@ -40,7 +40,7 @@ package org.allbinary.physics.movement.NoBasicConstantVelocityMovement_Package i
 
    procedure Initialize (This : in out NoBasicConstantVelocityMovement'Class);
    function Create return NoBasicConstantVelocityMovement_Access;
-   procedure process (This : in out NoBasicConstantVelocityMovement; layer : AllBinaryGameLayer_Access);
+   procedure process (This : in out NoBasicConstantVelocityMovement; layer_Param : access AllBinaryGameLayer'Class);
 
 end org.allbinary.physics.movement.NoBasicConstantVelocityMovement_Package;
 

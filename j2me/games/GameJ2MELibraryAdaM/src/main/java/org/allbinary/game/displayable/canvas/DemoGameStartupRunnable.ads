@@ -42,8 +42,8 @@ package org.allbinary.game.displayable.canvas.DemoGameStartupRunnable_Package is
    end record;
    TYPE_Id : Integer;
 
-   procedure Initialize (This : in out DemoGameStartupRunnable'Class; demoCanvas : DemoCanvas_Access);
-   function Create (demoCanvas : DemoCanvas_Access) return DemoGameStartupRunnable_Access;
+   procedure Initialize (This : in out DemoGameStartupRunnable'Class; demoCanvas_Param : access DemoCanvas'Class);
+   function Create (demoCanvas_Param : access DemoCanvas'Class) return DemoGameStartupRunnable_Access;
    procedure run (This : in out DemoGameStartupRunnable);
    function getType (This : in out DemoGameStartupRunnable) return Integer;
 

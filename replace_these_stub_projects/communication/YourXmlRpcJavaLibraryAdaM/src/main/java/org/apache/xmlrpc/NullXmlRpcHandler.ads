@@ -41,8 +41,8 @@ package org.apache.xmlrpc.NullXmlRpcHandler_Package is
 
    procedure Initialize (This : in out NullXmlRpcHandler'Class);
    function Create return NullXmlRpcHandler_Access;
-   function execute (This : in out NullXmlRpcHandler; method : Unbounded_String; params : BasicArrayList_Access) return Java_Object_Access;
-   procedure execute (This : in out NullXmlRpcHandler; method : Unbounded_String; params : BasicArrayList_Access);
+   function execute (This : in out NullXmlRpcHandler; method : Unbounded_String; params_Param : access BasicArrayList'Class) return Java_Object_Access;
+   procedure execute (This : in out NullXmlRpcHandler; method : Unbounded_String; params_Param : access BasicArrayList'Class);
 
 end org.apache.xmlrpc.NullXmlRpcHandler_Package;
 

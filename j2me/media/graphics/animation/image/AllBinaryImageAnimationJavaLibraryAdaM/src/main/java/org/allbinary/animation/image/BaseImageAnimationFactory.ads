@@ -60,15 +60,15 @@ package org.allbinary.animation.image.BaseImageAnimationFactory_Package is
       scaleProperties : ScaleProperties_Access;
    end record;
 
-   procedure Initialize (This : in out BaseImageAnimationFactory'Class; image : Image_Access; sequenceArray : Integer_Array_Access; width : Integer; height : Integer; dx : Integer; dy : Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access);
-   function Create (image : Image_Access; sequenceArray : Integer_Array_Access; width : Integer; height : Integer; dx : Integer; dy : Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access) return BaseImageAnimationFactory_Access;
-   function createFactoryBase (image : Image_Access; sequenceArray : Integer_Array_Access; width : Integer; height : Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access) return BaseImageAnimationFactory_Access;
-   procedure createFactoryBase (image : Image_Access; sequenceArray : Integer_Array_Access; width : Integer; height : Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access);
+   procedure Initialize (This : in out BaseImageAnimationFactory'Class; image_Param : access Image'Class; sequenceArray : Integer_Array_Access; width : Integer; height : Integer; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class);
+   function Create (image_Param : access Image'Class; sequenceArray : Integer_Array_Access; width : Integer; height : Integer; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return BaseImageAnimationFactory_Access;
+   function createFactoryBase (image_Param : access Image'Class; sequenceArray : Integer_Array_Access; width : Integer; height : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return BaseImageAnimationFactory_Access;
+   procedure createFactoryBase (image_Param : access Image'Class; sequenceArray : Integer_Array_Access; width : Integer; height : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class);
    function getInstance (This : in out BaseImageAnimationFactory; instanceId : Integer) return Animation_Access;
    procedure getInstance (This : in out BaseImageAnimationFactory; instanceId : Integer);
    function getImage (This : in out BaseImageAnimationFactory) return Image_Access;
    function getSequenceArray (This : in out BaseImageAnimationFactory) return Integer_Array_Access;
-   procedure setInitialScale (This : in out BaseImageAnimationFactory; scaleProperties : ScaleProperties_Access);
+   procedure setInitialScale (This : in out BaseImageAnimationFactory; scaleProperties_Param : access ScaleProperties'Class);
    function getAnimationFactoryInitializationVisitorP (This : in out BaseImageAnimationFactory) return AnimationFactoryInitializationVisitor_Access;
    function getScalePropertiesP (This : in out BaseImageAnimationFactory) return ScaleProperties_Access;
    function toString (This : in out BaseImageAnimationFactory) return Unbounded_String;

@@ -24,7 +24,8 @@ package body views.generic_Id.shipping.ShippingMethodsView_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ShippingMethodsView'Class; transformInfoInterface : TransformInfoInterface_Access) is
+   procedure Initialize (This : in out ShippingMethodsView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
@@ -32,15 +33,16 @@ package body views.generic_Id.shipping.ShippingMethodsView_Package is
         This.shippingMethods := ShippingMethods_Package.Create (This.abeClientInformation, This.storeFrontInterface);
    end Initialize;
 
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return ShippingMethodsView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return ShippingMethodsView_Access is
       This : constant ShippingMethodsView_Access := new ShippingMethodsView;
    begin
-      ShippingMethodsView_Package.Initialize (This.all, transformInfoInterface);
+      ShippingMethodsView_Package.Initialize (This.all, transformInfoInterface_Param);
       return This;
    end Create;
 
    --  throws Exception
-   function toXmlNode (This : in out ShippingMethodsView; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out ShippingMethodsView; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       shippingMethodsNode : Node_Access;
       order : OrderInterface_Access;
       basket : BasketInterface_Access;
@@ -96,7 +98,7 @@ package body views.generic_Id.shipping.ShippingMethodsView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.XSLLOGGINGERROR) then
-                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("toXmlNode"), e);
+                This.logUtil.put (This.commonStrings.FAILURE, ShippingMethodsView_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode"), e);
             end if;
             Java_Throw (e);
                 end;
@@ -105,7 +107,7 @@ package body views.generic_Id.shipping.ShippingMethodsView_Package is
 
    procedure addDomNodeInterfaces (This : in out ShippingMethodsView) is
    begin
-        This.addDomNodeInterface (DomNodeInterface_Access (This'Unchecked_Access));
+        This.addDomNodeInterface (DomNodeInterface_Access (ShippingMethodsView_Access'(This'Unchecked_Access)));
    end addDomNodeInterfaces;
 
    function view (This : in out ShippingMethodsView) return Unbounded_String is
@@ -121,15 +123,15 @@ package body views.generic_Id.shipping.ShippingMethodsView_Package is
                 begin
             error := To_Unbounded_String ("Failed to view ShippingMethods");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("view()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, ShippingMethodsView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
             end if;
             return error;
                 end;
         end;
    end view;
 
-   procedure toXmlNode (This : in out ShippingMethodsView; document : Document_Access) is
-      Java_Result : constant Node_Access := ShippingMethodsView'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out ShippingMethodsView; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := ShippingMethodsView'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

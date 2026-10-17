@@ -44,7 +44,7 @@ package org.allbinary.game.layer.building.event.BuildingEventHandler_Package is
    procedure Initialize (This : in out BuildingEventHandler'Class);
    function Create return BuildingEventHandler_Access;
    function getInstance return BuildingEventHandler_Access;
-   procedure process (This : in out BuildingEventHandler; eventObject : AllBinaryEventObject_Access; eventListenerInterface : EventListenerInterface_Access);
+   procedure process (This : in out BuildingEventHandler; eventObject_Param : access AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface'Class);
 
 end org.allbinary.game.layer.building.event.BuildingEventHandler_Package;
 

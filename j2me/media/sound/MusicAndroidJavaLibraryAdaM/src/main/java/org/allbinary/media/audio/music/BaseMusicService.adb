@@ -31,22 +31,23 @@ package body org.allbinary.media.audio.music.BaseMusicService_Package is
    end Create;
 
 
-   function onBind (This : in out BaseMusicService; intent : Intent_Access) return IBinder_Access is
+   function onBind (This : in out BaseMusicService; intent_Param : access Intent'Class) return IBinder_Access is
+      intent : Intent_Access := Intent_Access (intent_Param);
    begin
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStateStrings.BIND);
+        This.logUtil.putF (This.commonStrings.START, BaseMusicService_Access'(This'Unchecked_Access), This.commonStateStrings.BIND);
         return null;
    end onBind;
 
    procedure onCreate (This : in out BaseMusicService) is
    begin
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStateStrings.CREATE);
+        This.logUtil.putF (This.commonStrings.START, BaseMusicService_Access'(This'Unchecked_Access), This.commonStateStrings.CREATE);
    end onCreate;
 
    procedure onDestroy (This : in out BaseMusicService) is
    begin
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStateStrings.DESTROY);
+        This.logUtil.putF (This.commonStrings.START, BaseMusicService_Access'(This'Unchecked_Access), This.commonStateStrings.DESTROY);
         if (This.player) /= (NullAndroidCanvas_Package.NULL_MEDIA_PLAYER) then
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStateStrings.PAUSE);
+            This.logUtil.putF (This.commonStrings.START, BaseMusicService_Access'(This'Unchecked_Access), This.commonStateStrings.PAUSE);
             This.player.stop;
             This.player.reset;
             This.player.release;
@@ -56,7 +57,7 @@ package body org.allbinary.media.audio.music.BaseMusicService_Package is
    procedure pause (This : in out BaseMusicService) is
    begin
         if (This.player) /= (NullAndroidCanvas_Package.NULL_MEDIA_PLAYER) then
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStateStrings.PAUSE);
+            This.logUtil.putF (This.commonStrings.START, BaseMusicService_Access'(This'Unchecked_Access), This.commonStateStrings.PAUSE);
             This.player.pause;
         end if;
    end pause;
@@ -64,43 +65,46 @@ package body org.allbinary.media.audio.music.BaseMusicService_Package is
    procedure resume (This : in out BaseMusicService) is
    begin
         if ((This.player) /= (NullAndroidCanvas_Package.NULL_MEDIA_PLAYER)) and then (not (This.player.isPlaying)) then
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStateStrings.RESUME);
+            This.logUtil.putF (This.commonStrings.START, BaseMusicService_Access'(This'Unchecked_Access), This.commonStateStrings.RESUME);
             This.player.start;
         end if;
    end resume;
 
    procedure start (This : in out BaseMusicService) is
    begin
-        This.player := MediaPlayer_Package.create (This'Unchecked_Access, This.songId);
+        This.player := MediaPlayer_Package.create (BaseMusicService_Access'(This'Unchecked_Access), This.songId);
         This.player.setVolume (((Float (This.leftVolume))) / (100.0), ((Float (This.rightVolume))) / (100.0));
         This.player.setLooping (False);
         This.player.start;
    end start;
 
-   procedure onStart (This : in out BaseMusicService; intent : Intent_Access; startid : Integer) is
+   procedure onStart (This : in out BaseMusicService; intent_Param : access Intent'Class; startid : Integer) is
+      intent : Intent_Access := Intent_Access (intent_Param);
    begin
         This.onStartCommandIntent (intent);
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStateStrings.START);
+        This.logUtil.putF (This.commonStrings.START, BaseMusicService_Access'(This'Unchecked_Access), This.commonStateStrings.START);
    end onStart;
 
-   function onStartCommand (This : in out BaseMusicService; intent : Intent_Access; flags : Integer; startId : Integer) return Integer is
+   function onStartCommand (This : in out BaseMusicService; intent_Param : access Intent'Class; flags : Integer; startId : Integer) return Integer is
+      intent : Intent_Access := Intent_Access (intent_Param);
    begin
         This.onStartCommandIntent (intent);
         return Service_Package.START_STICKY;
    end onStartCommand;
 
-   procedure onStartCommandIntent (This : in out BaseMusicService; intent : Intent_Access) is
+   procedure onStartCommandIntent (This : in out BaseMusicService; intent_Param : access Intent'Class) is
+      intent : Intent_Access := Intent_Access (intent_Param);
       musicStrings : MusicStrings_Access;
       command : Integer;
       player : MediaPlayer_Access;
       runnable : Runnable_Access;
       thread : Thread_Access;
    begin
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStateStrings.ON_START_COMMAND);
+        This.logUtil.putF (This.commonStrings.START, BaseMusicService_Access'(This'Unchecked_Access), This.commonStateStrings.ON_START_COMMAND);
         musicStrings := MusicStrings_Package.getInstance;
         if (intent) /= (null) then
             command := intent.getIntExtra (This.commonStateStrings.ON_START_COMMAND, -(1));
-            This.logUtil.putF ((CommonLabels_Package.getInstance.COMMAND_LABEL) + (command), This'Unchecked_Access, This.commonStateStrings.ON_START_COMMAND);
+            This.logUtil.putF ((CommonLabels_Package.getInstance.COMMAND_LABEL) + (command), BaseMusicService_Access'(This'Unchecked_Access), This.commonStateStrings.ON_START_COMMAND);
             if (command) = (1) then
                 This.pause;
                 return;
@@ -119,9 +123,9 @@ package body org.allbinary.media.audio.music.BaseMusicService_Package is
             Java_Nothing;
             if ((This.player) /= (NullAndroidCanvas_Package.NULL_MEDIA_PLAYER)) and then (This.player.isPlaying) then
                 player := This.player;
-                This.logUtil.putF (This.ALREADY_PLAYING, This'Unchecked_Access, This.commonStateStrings.ON_START_COMMAND);
+                This.logUtil.putF (This.ALREADY_PLAYING, BaseMusicService_Access'(This'Unchecked_Access), This.commonStateStrings.ON_START_COMMAND);
                 --  Java nested class MusicRunnable: move it to its own package
-                runnable := MusicRunnable_Package.Create (This'Unchecked_Access);
+                runnable := MusicRunnable_Package.Create (BaseMusicService_Access'(This'Unchecked_Access));
                 thread := Thread_Package.Create (runnable);
                 thread.start;
                 return;
@@ -130,15 +134,15 @@ package body org.allbinary.media.audio.music.BaseMusicService_Package is
         end if;
    end onStartCommandIntent;
 
-   procedure onBind (This : in out BaseMusicService; intent : Intent_Access) is
-      Java_Result : constant IBinder_Access := BaseMusicService'Class (This).onBind (intent);
+   procedure onBind (This : in out BaseMusicService; intent_Param : access Intent'Class) is
+      Java_Result : constant IBinder_Access := BaseMusicService'Class (This).onBind (intent_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end onBind;
 
-   procedure onStartCommand (This : in out BaseMusicService; intent : Intent_Access; flags : Integer; startId : Integer) is
-      Java_Result : constant Integer := BaseMusicService'Class (This).onStartCommand (intent, flags, startId);
+   procedure onStartCommand (This : in out BaseMusicService; intent_Param : access Intent'Class; flags : Integer; startId : Integer) is
+      Java_Result : constant Integer := BaseMusicService'Class (This).onStartCommand (intent_Param, flags, startId);
       pragma Unreferenced (Java_Result);
    begin
       null;

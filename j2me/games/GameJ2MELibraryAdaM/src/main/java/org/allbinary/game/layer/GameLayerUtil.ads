@@ -39,8 +39,8 @@ package org.allbinary.game.layer.GameLayerUtil_Package is
 
    procedure Initialize (This : in out GameLayerUtil'Class);
    function Create return GameLayerUtil_Access;
-   function isOnScreen (layer : AllBinaryLayer_Access) return Boolean;
-   procedure isOnScreen (layer : AllBinaryLayer_Access);
+   function isOnScreen (layer_Param : access AllBinaryLayer'Class) return Boolean;
+   procedure isOnScreen (layer_Param : access AllBinaryLayer'Class);
    function isInside (rectX1 : Integer; rectY1 : Integer; rectX2 : Integer; rectY2 : Integer; rect2X1 : Integer; rect2Y1 : Integer; rect2X2 : Integer; rect2Y2 : Integer) return Boolean;
    procedure isInside (rectX1 : Integer; rectY1 : Integer; rectX2 : Integer; rectY2 : Integer; rect2X1 : Integer; rect2Y1 : Integer; rect2X2 : Integer; rect2Y2 : Integer);
 

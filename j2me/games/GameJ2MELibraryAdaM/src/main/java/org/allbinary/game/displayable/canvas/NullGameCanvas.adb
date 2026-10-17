@@ -46,7 +46,8 @@ package body org.allbinary.game.displayable.canvas.NullGameCanvas_Package is
    end getInstance;
 
    --  throws Exception
-   function createCanvas (gameLayerManager : AllBinaryGameLayerManager_Access) return NullGameCanvas_Access is
+   function createCanvas (gameLayerManager_Param : access AllBinaryGameLayerManager'Class) return NullGameCanvas_Access is
+      gameLayerManager : AllBinaryGameLayerManager_Access := AllBinaryGameLayerManager_Access (gameLayerManager_Param);
       nullGameCanvas : NullGameCanvas_Access;
    begin
         nullGameCanvas := NullGameCanvas_Package.Create (gameLayerManager);
@@ -55,17 +56,18 @@ package body org.allbinary.game.displayable.canvas.NullGameCanvas_Package is
         return nullGameCanvas;
    end createCanvas;
 
-   procedure Initialize (This : in out NullGameCanvas'Class; gameLayerManager : AllBinaryGameLayerManager_Access) is
+   procedure Initialize (This : in out NullGameCanvas'Class; gameLayerManager_Param : access AllBinaryGameLayerManager'Class) is
+      gameLayerManager : AllBinaryGameLayerManager_Access := AllBinaryGameLayerManager_Access (gameLayerManager_Param);
    begin
         AllBinaryGameCanvas_Package.Initialize (This, NullCommandListener_Package.NULL_COMMAND_LISTENER, gameLayerManager, NoHighScoresFactory_Package.getInstance, BasicBuildGameInitializerFactory_Package.NULL_BASE_BUILD_GMAE_INITIALIZER_FACTORY, False);
         Initialize_Fields (This);
         AllBinaryGameCanvas (This).setWait (1200);
    end Initialize;
 
-   function Create (gameLayerManager : AllBinaryGameLayerManager_Access) return NullGameCanvas_Access is
+   function Create (gameLayerManager_Param : access AllBinaryGameLayerManager'Class) return NullGameCanvas_Access is
       This : constant NullGameCanvas_Access := new NullGameCanvas;
    begin
-      NullGameCanvas_Package.Initialize (This.all, gameLayerManager);
+      NullGameCanvas_Package.Initialize (This.all, gameLayerManager_Param);
       return This;
    end Create;
 
@@ -94,7 +96,8 @@ package body org.allbinary.game.displayable.canvas.NullGameCanvas_Package is
         This.setPaused (False);
    end unPause;
 
-   procedure initCommands (This : in out NullGameCanvas; cmdListener : CommandListener_Access) is
+   procedure initCommands (This : in out NullGameCanvas; cmdListener_Param : access CommandListener'Class) is
+      cmdListener : CommandListener_Access := CommandListener_Access (cmdListener_Param);
    begin
         This.removeAllCommands;
         This.setCommandListener (cmdListener);
@@ -106,7 +109,8 @@ package body org.allbinary.game.displayable.canvas.NullGameCanvas_Package is
         null;
    end buildGameInit;
 
-   procedure draw (This : in out NullGameCanvas; graphics : Graphics_Access) is
+   procedure draw (This : in out NullGameCanvas; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         null;
    end draw;
@@ -114,14 +118,14 @@ package body org.allbinary.game.displayable.canvas.NullGameCanvas_Package is
    procedure run (This : in out NullGameCanvas) is
    begin
         begin
-            This.logUtil.putF (This.commonStrings.START_RUNNABLE, This'Unchecked_Access, This.commonStrings.RUN);
-            This.logUtil.putF (This.commonStrings.END_RUNNABLE, This'Unchecked_Access, This.commonStrings.RUN);
+            This.logUtil.putF (This.commonStrings.START_RUNNABLE, NullGameCanvas_Access'(This'Unchecked_Access), This.commonStrings.RUN);
+            This.logUtil.putF (This.commonStrings.END_RUNNABLE, NullGameCanvas_Access'(This'Unchecked_Access), This.commonStrings.RUN);
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.RUN, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, NullGameCanvas_Access'(This'Unchecked_Access), This.commonStrings.RUN, e);
                 end;
         end;
    end run;
@@ -131,8 +135,8 @@ package body org.allbinary.game.displayable.canvas.NullGameCanvas_Package is
         return NullGameCanvas_Package.TYPE_Id;
    end getType;
 
-   procedure createCanvas (gameLayerManager : AllBinaryGameLayerManager_Access) is
-      Java_Result : constant NullGameCanvas_Access := createCanvas (gameLayerManager);
+   procedure createCanvas (gameLayerManager_Param : access AllBinaryGameLayerManager'Class) is
+      Java_Result : constant NullGameCanvas_Access := createCanvas (gameLayerManager_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

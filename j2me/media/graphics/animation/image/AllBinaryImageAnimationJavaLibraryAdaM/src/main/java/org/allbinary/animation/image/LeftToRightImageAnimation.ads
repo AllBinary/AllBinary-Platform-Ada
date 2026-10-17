@@ -42,13 +42,13 @@ package org.allbinary.animation.image.LeftToRightImageAnimation_Package is
       anchor : Integer;
    end record;
 
-   procedure Initialize (This : in out LeftToRightImageAnimation'Class; image : Image_Access; sequenceArray : Integer_Array_Access; animationBehavior : AnimationBehavior_Access);
-   function Create (image : Image_Access; sequenceArray : Integer_Array_Access; animationBehavior : AnimationBehavior_Access) return LeftToRightImageAnimation_Access;
+   procedure Initialize (This : in out LeftToRightImageAnimation'Class; image_Param : access Image'Class; sequenceArray : Integer_Array_Access; animationBehavior_Param : access AnimationBehavior'Class);
+   function Create (image_Param : access Image'Class; sequenceArray : Integer_Array_Access; animationBehavior_Param : access AnimationBehavior'Class) return LeftToRightImageAnimation_Access;
    procedure nextFrame (This : in out LeftToRightImageAnimation);
    procedure previousFrame (This : in out LeftToRightImageAnimation);
    procedure setFrame (This : in out LeftToRightImageAnimation; index : Integer);
    procedure update (This : in out LeftToRightImageAnimation);
-   procedure paintXY (This : in out LeftToRightImageAnimation; graphics : Graphics_Access; x : Integer; y : Integer);
+   procedure paintXY (This : in out LeftToRightImageAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
 
 end org.allbinary.animation.image.LeftToRightImageAnimation_Package;
 

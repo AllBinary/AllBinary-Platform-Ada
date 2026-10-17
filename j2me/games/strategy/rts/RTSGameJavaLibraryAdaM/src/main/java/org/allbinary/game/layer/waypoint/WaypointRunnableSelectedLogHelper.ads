@@ -47,8 +47,8 @@ package org.allbinary.game.layer.waypoint.WaypointRunnableSelectedLogHelper_Pack
    procedure Initialize (This : in out WaypointRunnableSelectedLogHelper'Class);
    function Create return WaypointRunnableSelectedLogHelper_Access;
    function getInstance return WaypointRunnableSelectedLogHelper_Access;
-   procedure start (This : in out WaypointRunnableSelectedLogHelper; pathFindingLayerInterface : PathFindingLayerInterface_Access);
-   procedure end_Id (This : in out WaypointRunnableSelectedLogHelper; pathFindingLayerInterface : PathFindingLayerInterface_Access);
+   procedure start (This : in out WaypointRunnableSelectedLogHelper; pathFindingLayerInterface_Param : access PathFindingLayerInterface'Class);
+   procedure end_Id (This : in out WaypointRunnableSelectedLogHelper; pathFindingLayerInterface_Param : access PathFindingLayerInterface'Class);
 
 end org.allbinary.game.layer.waypoint.WaypointRunnableSelectedLogHelper_Package;
 

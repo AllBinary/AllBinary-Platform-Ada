@@ -26,7 +26,9 @@ package body org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Pack
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out MotionGestureEvent'Class; source : Java_Object_Access; id : Integer; motionGesture : MotionGestureInput_Access) is
+   procedure Initialize (This : in out MotionGestureEvent'Class; source_Param : access Java_Object'Class; id : Integer; motionGesture_Param : access MotionGestureInput'Class) is
+      source : Java_Object_Access := Java_Object_Access (source_Param);
+      motionGesture : MotionGestureInput_Access := MotionGestureInput_Access (motionGesture_Param);
    begin
         AllBinaryEventObject_Package.Initialize (This, source);
         Initialize_Fields (This);
@@ -34,10 +36,10 @@ package body org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Pack
         This.setMotionGesture (motionGesture);
    end Initialize;
 
-   function Create (source : Java_Object_Access; id : Integer; motionGesture : MotionGestureInput_Access) return MotionGestureEvent_Access is
+   function Create (source_Param : access Java_Object'Class; id : Integer; motionGesture_Param : access MotionGestureInput'Class) return MotionGestureEvent_Access is
       This : constant MotionGestureEvent_Access := new MotionGestureEvent;
    begin
-      MotionGestureEvent_Package.Initialize (This.all, source, id, motionGesture);
+      MotionGestureEvent_Package.Initialize (This.all, source_Param, id, motionGesture_Param);
       return This;
    end Create;
 
@@ -46,7 +48,8 @@ package body org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Pack
         return This.motionGesture;
    end getMotionGesture;
 
-   procedure setMotionGesture (This : in out MotionGestureEvent; motionGesture : MotionGestureInput_Access) is
+   procedure setMotionGesture (This : in out MotionGestureEvent; motionGesture_Param : access MotionGestureInput'Class) is
+      motionGesture : MotionGestureInput_Access := MotionGestureInput_Access (motionGesture_Param);
    begin
         This.motionGesture := motionGesture;
    end setMotionGesture;
@@ -56,7 +59,8 @@ package body org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Pack
         return This.previousPoint;
    end getPreviousPoint;
 
-   procedure setPreviousPoint (This : in out MotionGestureEvent; previousPoint : GPoint_Access) is
+   procedure setPreviousPoint (This : in out MotionGestureEvent; previousPoint_Param : access GPoint'Class) is
+      previousPoint : GPoint_Access := GPoint_Access (previousPoint_Param);
    begin
         This.previousPoint := previousPoint;
    end setPreviousPoint;
@@ -66,7 +70,8 @@ package body org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Pack
         return This.currentPoint;
    end getCurrentPoint;
 
-   procedure setCurrentPoint (This : in out MotionGestureEvent; currentPoint : GPoint_Access) is
+   procedure setCurrentPoint (This : in out MotionGestureEvent; currentPoint_Param : access GPoint'Class) is
+      currentPoint : GPoint_Access := GPoint_Access (currentPoint_Param);
    begin
         This.currentPoint := currentPoint;
    end setCurrentPoint;
@@ -83,7 +88,7 @@ package body org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Pack
         stringBuffer.append (MotionGestureEvent_Package.PREVIOUS);
         stringBuffer.append (stringUtil.toString (This.previousPoint));
         stringBuffer.append (MotionGestureEvent_Package.HASHCODE);
-        stringBuffer.appendint (Integer (TsUtil_Package.getInstance.hashCode_Case (This'Unchecked_Access)));
+        stringBuffer.appendint (Integer (TsUtil_Package.getInstance.hashCode_Case (MotionGestureEvent_Access'(This'Unchecked_Access))));
         return stringBuffer.toString;
    end toString;
 

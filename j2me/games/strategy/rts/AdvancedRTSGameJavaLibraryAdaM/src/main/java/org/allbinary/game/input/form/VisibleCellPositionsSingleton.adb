@@ -36,8 +36,8 @@ package body org.allbinary.game.input.form.VisibleCellPositionsSingleton_Package
    procedure Initialize (This : in out VisibleCellPositionsSingleton'Class) is
    begin
       Initialize_Fields (This);
-        LocalPlayerBuildingEventHandler_Package.getInstance.addListenerInterface (This'Unchecked_Access);
-        ScrollMapEventHandler_Package.getInstance.addListenerInterface (This'Unchecked_Access);
+        LocalPlayerBuildingEventHandler_Package.getInstance.addListenerInterface (VisibleCellPositionsSingleton_Access'(This'Unchecked_Access));
+        ScrollMapEventHandler_Package.getInstance.addListenerInterface (VisibleCellPositionsSingleton_Access'(This'Unchecked_Access));
    end Initialize;
 
    function Create return VisibleCellPositionsSingleton_Access is
@@ -47,7 +47,8 @@ package body org.allbinary.game.input.form.VisibleCellPositionsSingleton_Package
       return This;
    end Create;
 
-   procedure init (This : in out VisibleCellPositionsSingleton; simpleTiledLayer : SimpleTiledLayer_Access) is
+   procedure init (This : in out VisibleCellPositionsSingleton; simpleTiledLayer_Param : access SimpleTiledLayer'Class) is
+      simpleTiledLayer : SimpleTiledLayer_Access := SimpleTiledLayer_Access (simpleTiledLayer_Param);
       rows : Integer;
       columns : Integer;
    begin
@@ -61,24 +62,28 @@ package body org.allbinary.game.input.form.VisibleCellPositionsSingleton_Package
         This.setSimpleTiledLayer (simpleTiledLayer);
    end init;
 
-   procedure onEvent (This : in out VisibleCellPositionsSingleton; eventObject : AllBinaryEventObject_Access) is
+   procedure onEvent (This : in out VisibleCellPositionsSingleton; eventObject_Param : access AllBinaryEventObject'Class) is
+      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
    begin
-        ForcedLogUtil_Package.log (EventStrings_Package.getInstance.PERFORMANCE_MESSAGE, This'Unchecked_Access);
+        ForcedLogUtil_Package.log (EventStrings_Package.getInstance.PERFORMANCE_MESSAGE, VisibleCellPositionsSingleton_Access'(This'Unchecked_Access));
    end onEvent;
 
    --  throws Exception
-   procedure onBuildingEvent (This : in out VisibleCellPositionsSingleton; event : RTSLayerEvent_Access) is
+   procedure onBuildingEvent (This : in out VisibleCellPositionsSingleton; event_Param : access RTSLayerEvent'Class) is
+      event : RTSLayerEvent_Access := RTSLayerEvent_Access (event_Param);
    begin
         This.paintSimpleTiledLayer := This.simpleTiledLayer;
    end onBuildingEvent;
 
    --  throws Exception
-   procedure onMoveEvent (This : in out VisibleCellPositionsSingleton; scrollMapEvent : ScrollMapEvent_Access) is
+   procedure onMoveEvent (This : in out VisibleCellPositionsSingleton; scrollMapEvent_Param : access ScrollMapEvent'Class) is
+      scrollMapEvent : ScrollMapEvent_Access := ScrollMapEvent_Access (scrollMapEvent_Param);
    begin
         This.move (scrollMapEvent.getDx, scrollMapEvent.getDy);
    end onMoveEvent;
 
-   procedure addStationaryCellPositions (This : in out VisibleCellPositionsSingleton; list : BasicArrayList_Access) is
+   procedure addStationaryCellPositions (This : in out VisibleCellPositionsSingleton; list_Param : access BasicArrayList'Class) is
+      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
       cellPosition : CellPosition_Access;
       index : Integer;
    begin
@@ -88,7 +93,8 @@ package body org.allbinary.game.input.form.VisibleCellPositionsSingleton_Package
         end loop;
    end addStationaryCellPositions;
 
-   procedure removeStationaryCellPositions (This : in out VisibleCellPositionsSingleton; list : BasicArrayList_Access) is
+   procedure removeStationaryCellPositions (This : in out VisibleCellPositionsSingleton; list_Param : access BasicArrayList'Class) is
+      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
       cellPosition : CellPosition_Access;
       index : Integer;
    begin
@@ -128,7 +134,8 @@ package body org.allbinary.game.input.form.VisibleCellPositionsSingleton_Package
         end if;
    end shouldProcess;
 
-   procedure addCellPositions (This : in out VisibleCellPositionsSingleton; list : BasicArrayList_Access) is
+   procedure addCellPositions (This : in out VisibleCellPositionsSingleton; list_Param : access BasicArrayList'Class) is
+      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
       cellPosition : CellPosition_Access;
       index : Integer;
    begin
@@ -138,7 +145,8 @@ package body org.allbinary.game.input.form.VisibleCellPositionsSingleton_Package
         end loop;
    end addCellPositions;
 
-   function isVisible (This : in out VisibleCellPositionsSingleton; cellPosition : CellPosition_Access) return Boolean is
+   function isVisible (This : in out VisibleCellPositionsSingleton; cellPosition_Param : access CellPosition'Class) return Boolean is
+      cellPosition : CellPosition_Access := CellPosition_Access (cellPosition_Param);
    begin
         if (This.visibleCellPositions (cellPosition.getRow) (cellPosition.getColumn)) > (0) then
             return True;
@@ -152,12 +160,14 @@ package body org.allbinary.game.input.form.VisibleCellPositionsSingleton_Package
         This.getSimpleTiledLayer.moveDXY (dx, dy);
    end move;
 
-   procedure paint (This : in out VisibleCellPositionsSingleton; graphics : Graphics_Access) is
+   procedure paint (This : in out VisibleCellPositionsSingleton; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.paintSimpleTiledLayer.paint (graphics, This.currentlyVisibleCellPositions);
    end paint;
 
-   procedure setSimpleTiledLayer (This : in out VisibleCellPositionsSingleton; simpleTiledLayer : SimpleTiledLayer_Access) is
+   procedure setSimpleTiledLayer (This : in out VisibleCellPositionsSingleton; simpleTiledLayer_Param : access SimpleTiledLayer'Class) is
+      simpleTiledLayer : SimpleTiledLayer_Access := SimpleTiledLayer_Access (simpleTiledLayer_Param);
    begin
         This.simpleTiledLayer := simpleTiledLayer;
    end setSimpleTiledLayer;
@@ -167,8 +177,8 @@ package body org.allbinary.game.input.form.VisibleCellPositionsSingleton_Package
         return This.simpleTiledLayer;
    end getSimpleTiledLayer;
 
-   procedure isVisible (This : in out VisibleCellPositionsSingleton; cellPosition : CellPosition_Access) is
-      Java_Result : constant Boolean := VisibleCellPositionsSingleton'Class (This).isVisible (cellPosition);
+   procedure isVisible (This : in out VisibleCellPositionsSingleton; cellPosition_Param : access CellPosition'Class) is
+      Java_Result : constant Boolean := VisibleCellPositionsSingleton'Class (This).isVisible (cellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -23,7 +23,9 @@ package body org.allbinary.logic.control.crypt.file.CryptFileWriter_Package is
    end Create;
 
    --  throws Exception
-   procedure write (This : in out CryptFileWriter; fileAbPath : AbPath_Access; document : Document_Access) is
+   procedure write (This : in out CryptFileWriter; fileAbPath_Param : access AbPath'Class; document_Param : access Document'Class) is
+      fileAbPath : AbPath_Access := AbPath_Access (fileAbPath_Param);
+      document : Document_Access := Document_Access (document_Param);
    begin
         null;
    end write;

@@ -35,7 +35,7 @@ package org.allbinary.android.view.AllBinaryRenderer_Package is
    procedure Initialize (This : in out AllBinaryRenderer'Class);
    function Create return AllBinaryRenderer_Access;
    function getInstance return AllBinaryRenderer_Access;
-   procedure setRunnable (This : in out AllBinaryRenderer; runnable : Runnable_Access);
+   procedure setRunnable (This : in out AllBinaryRenderer; runnable_Param : access Runnable'Class);
    procedure clearRunnable (This : in out AllBinaryRenderer);
 
 end org.allbinary.android.view.AllBinaryRenderer_Package;

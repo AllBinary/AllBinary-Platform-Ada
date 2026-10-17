@@ -25,17 +25,18 @@ package body org.allbinary.animation.image.ImageArrayAnimation_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ImageArrayAnimation'Class; imageArray : Image_Access_Array_Access; animationBehavior : AnimationBehavior_Access) is
+   procedure Initialize (This : in out ImageArrayAnimation'Class; imageArray : Image_Access_Array_Access; animationBehavior_Param : access AnimationBehavior'Class) is
+      animationBehavior : AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
    begin
         IndexedAnimation_Package.Initialize (This, animationBehavior);
         Initialize_Fields (This);
         This.setImageArray (imageArray);
    end Initialize;
 
-   function Create (imageArray : Image_Access_Array_Access; animationBehavior : AnimationBehavior_Access) return ImageArrayAnimation_Access is
+   function Create (imageArray : Image_Access_Array_Access; animationBehavior_Param : access AnimationBehavior'Class) return ImageArrayAnimation_Access is
       This : constant ImageArrayAnimation_Access := new ImageArrayAnimation;
    begin
-      ImageArrayAnimation_Package.Initialize (This.all, imageArray, animationBehavior);
+      ImageArrayAnimation_Package.Initialize (This.all, imageArray, animationBehavior_Param);
       return This;
    end Create;
 
@@ -97,7 +98,8 @@ package body org.allbinary.animation.image.ImageArrayAnimation_Package is
         This.circularIndexUtil := CircularIndexUtil_Package.createInstance (This.totalFrames);
    end setImageArray;
 
-   procedure paintXY (This : in out ImageArrayAnimation; graphics : Graphics_Access; x : Integer; y : Integer) is
+   procedure paintXY (This : in out ImageArrayAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         graphics.drawImage (This.imageArray (This.circularIndexUtil.getIndex), x, y, This.anchor);
    end paintXY;

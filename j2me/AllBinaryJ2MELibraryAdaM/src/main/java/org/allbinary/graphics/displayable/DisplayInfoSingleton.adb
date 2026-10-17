@@ -47,7 +47,7 @@ package body org.allbinary.graphics.displayable.DisplayInfoSingleton_Package is
       This.LAST_HEIGHT := To_Unbounded_String (" LastHeight: ");
       This.PORTRAIT := To_Unbounded_String ("Portrait");
       This.LANDSCAPE := To_Unbounded_String ("Landscape");
-      This.displayChangeEvent := DisplayChangeEvent_Package.Create (This'Unchecked_Access);
+      This.displayChangeEvent := DisplayChangeEvent_Package.Create (DisplayInfoSingleton_Access'(This'Unchecked_Access));
       This.FIRE_METHOD_NAME := To_Unbounded_String ("fire");
       This.REASON := To_Unbounded_String ("reason: ");
       This.UPDATE_FROM_ORIENTATION_CHANGE := To_Unbounded_String ("Updating from Orientation Change ");
@@ -130,11 +130,11 @@ package body org.allbinary.graphics.displayable.DisplayInfoSingleton_Package is
       operatingSystemInterface : GenericOperatingSystem_Access;
    begin
         stringMaker := StringMaker_Package.Create;
-        This.logUtil.putF (stringMaker.append (CommonLabels_Package.getInstance.START_LABEL).append (reason_Case).toString, This'Unchecked_Access, This.SET_LAST_SIZE_METHOD_NAME);
+        This.logUtil.putF (stringMaker.append (CommonLabels_Package.getInstance.START_LABEL).append (reason_Case).toString, DisplayInfoSingleton_Access'(This'Unchecked_Access), This.SET_LAST_SIZE_METHOD_NAME);
         aFullWidth := aLastWidth;
         aFullHeight := aLastHeight;
         stringMaker.delete (0, stringMaker.length);
-        This.logUtil.putF (stringMaker.append (This.FULL_WIDTH).appendint (aFullWidth).append (This.FULL_HEIGHT).appendint (aFullHeight).append (This.toString).toString, This'Unchecked_Access, This.SET_LAST_SIZE_METHOD_NAME);
+        This.logUtil.putF (stringMaker.append (This.FULL_WIDTH).appendint (aFullWidth).append (This.FULL_HEIGHT).appendint (aFullHeight).append (This.toString).toString, DisplayInfoSingleton_Access'(This'Unchecked_Access), This.SET_LAST_SIZE_METHOD_NAME);
         operatingSystemInterface := OperatingSystemFactory_Package.getInstance.getOperatingSystemInstance;
         if operatingSystemInterface.isOverScan then
             aLastWidth := ((aLastWidth) * (operatingSystemInterface.getOverScanXPercent)) / (100);
@@ -146,7 +146,7 @@ package body org.allbinary.graphics.displayable.DisplayInfoSingleton_Package is
                     This.displayRatio := (This.scaleLargestTo) / (Float (aLastHeight));
                     This.ratio := (Float (aLastHeight)) / (This.scaleLargestTo);
                     stringMaker.delete (0, stringMaker.length);
-                    This.logUtil.putF (stringMaker.append (This.ADJUSTING_FOR_SCALING_IN_PORTRAIT).appendfloat (This.displayRatio).toString, This'Unchecked_Access, This.SET_LAST_SIZE_METHOD_NAME);
+                    This.logUtil.putF (stringMaker.append (This.ADJUSTING_FOR_SCALING_IN_PORTRAIT).appendfloat (This.displayRatio).toString, DisplayInfoSingleton_Access'(This'Unchecked_Access), This.SET_LAST_SIZE_METHOD_NAME);
                     aLastWidth := Integer (((Float (aLastWidth)) * (This.displayRatio)));
                     aLastHeight := Integer (((Float (aLastHeight)) * (This.displayRatio)));
                     This.scalableListener.scale (This.ratio);
@@ -159,7 +159,7 @@ package body org.allbinary.graphics.displayable.DisplayInfoSingleton_Package is
                     This.displayRatio := (This.scaleLargestTo) / (Float (aLastWidth));
                     This.ratio := (Float (aLastWidth)) / (This.scaleLargestTo);
                     stringMaker.delete (0, stringMaker.length);
-                    This.logUtil.putF (stringMaker.append (This.ADJUSTING_FOR_SCALING_IN_LANDSCAPE).appendfloat (This.displayRatio).toString, This'Unchecked_Access, This.SET_LAST_SIZE_METHOD_NAME);
+                    This.logUtil.putF (stringMaker.append (This.ADJUSTING_FOR_SCALING_IN_LANDSCAPE).appendfloat (This.displayRatio).toString, DisplayInfoSingleton_Access'(This'Unchecked_Access), This.SET_LAST_SIZE_METHOD_NAME);
                     aLastWidth := Integer (((Float (aLastWidth)) * (This.displayRatio)));
                     aLastHeight := Integer (((Float (aLastHeight)) * (This.displayRatio)));
                     This.scalableListener.scale (This.ratio);
@@ -170,7 +170,7 @@ package body org.allbinary.graphics.displayable.DisplayInfoSingleton_Package is
             end if;
         end if;
         stringMaker.delete (0, stringMaker.length);
-        This.logUtil.putF (stringMaker.append (This.LAST_WIDTH).appendint (aLastWidth).append (This.LAST_HEIGHT).appendint (aLastHeight).toString, This'Unchecked_Access, This.SET_LAST_SIZE_METHOD_NAME);
+        This.logUtil.putF (stringMaker.append (This.LAST_WIDTH).appendint (aLastWidth).append (This.LAST_HEIGHT).appendint (aLastHeight).toString, DisplayInfoSingleton_Access'(This'Unchecked_Access), This.SET_LAST_SIZE_METHOD_NAME);
         This.xOffset := (aFullWidth) - (aLastWidth);
         This.yOffset := (aFullHeight) - (aLastHeight);
         This.left := This.scalableListener.getLeft (This.xOffset);
@@ -203,9 +203,9 @@ package body org.allbinary.graphics.displayable.DisplayInfoSingleton_Package is
       stringMaker : StringMaker_Access;
    begin
         stringMaker := StringMaker_Package.Create;
-        This.logUtil.putF (stringMaker.append (This.REASON).append (reason_Case).toString, This'Unchecked_Access, This.FIRE_METHOD_NAME);
+        This.logUtil.putF (stringMaker.append (This.REASON).append (reason_Case).toString, DisplayInfoSingleton_Access'(This'Unchecked_Access), This.FIRE_METHOD_NAME);
         stringMaker.delete (0, stringMaker.length);
-        This.logUtil.putF (This.toStringAppend (stringMaker), This'Unchecked_Access, This.FIRE_METHOD_NAME);
+        This.logUtil.putF (This.toStringAppend (stringMaker), DisplayInfoSingleton_Access'(This'Unchecked_Access), This.FIRE_METHOD_NAME);
         This.list.add (reason_Case);
    end add;
 
@@ -221,7 +221,7 @@ package body org.allbinary.graphics.displayable.DisplayInfoSingleton_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            PreLogUtil_Package.putOE (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.FIRE_METHOD_NAME, e);
+            PreLogUtil_Package.putOE (This.commonStrings.EXCEPTION_Id, DisplayInfoSingleton_Access'(This'Unchecked_Access), This.FIRE_METHOD_NAME, e);
                 end;
         end;
    end process;
@@ -240,12 +240,13 @@ package body org.allbinary.graphics.displayable.DisplayInfoSingleton_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            PreLogUtil_Package.putOE (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.FIRE_METHOD_NAME, e);
+            PreLogUtil_Package.putOE (This.commonStrings.EXCEPTION_Id, DisplayInfoSingleton_Access'(This'Unchecked_Access), This.FIRE_METHOD_NAME, e);
                 end;
         end;
    end processForced;
 
-   procedure update (This : in out DisplayInfoSingleton; displayable : Displayable_Access; reason_Case : Unbounded_String) is
+   procedure update (This : in out DisplayInfoSingleton; displayable_Param : access Displayable'Class; reason_Case : Unbounded_String) is
+      displayable : Displayable_Access := Displayable_Access (displayable_Param);
       aLastWidth : Integer;
       aLastHeight : Integer;
       aFullWidth : Integer;
@@ -260,13 +261,13 @@ package body org.allbinary.graphics.displayable.DisplayInfoSingleton_Package is
         aFullWidth := aLastWidth;
         aFullHeight := aLastHeight;
         stringMaker := StringMaker_Package.Create;
-        This.logUtil.putF (stringMaker.append (CommonLabels_Package.getInstance.START_LABEL).append (reason_Case).append (This.LAST_WIDTH).appendint (aLastWidth).append (This.LAST_HEIGHT).appendint (aLastHeight).append (This.commonSeps.SPACE).append (This.toString).toString, This'Unchecked_Access, This.commonStrings.UPDATE);
+        This.logUtil.putF (stringMaker.append (CommonLabels_Package.getInstance.START_LABEL).append (reason_Case).append (This.LAST_WIDTH).appendint (aLastWidth).append (This.LAST_HEIGHT).appendint (aLastHeight).append (This.commonSeps.SPACE).append (This.toString).toString, DisplayInfoSingleton_Access'(This'Unchecked_Access), This.commonStrings.UPDATE);
         if ((aLastWidth) > (0)) and then ((aLastHeight) > (0)) then
             features := Features_Package.getInstance;
             openGLFeatureFactory := OpenGLFeatureFactory_Package.getInstance;
             if ((not (features.isDefault (openGLFeatureFactory.OPENGL))) or else ((This.last_Case (This.WIDTH)) /= (aLastWidth))) or else ((This.last_Case (This.HEIGHT)) /= (aLastHeight)) then
                 stringMaker.delete (0, stringMaker.length);
-                This.logUtil.putF (stringMaker.append (This.UPDATE_FROM_ORIENTATION_CHANGE).toString, This'Unchecked_Access, This.commonStrings.UPDATE);
+                This.logUtil.putF (stringMaker.append (This.UPDATE_FROM_ORIENTATION_CHANGE).toString, DisplayInfoSingleton_Access'(This'Unchecked_Access), This.commonStrings.UPDATE);
                 operatingSystemInterface := OperatingSystemFactory_Package.getInstance.getOperatingSystemInstance;
                 if operatingSystemInterface.isOverScan then
                     aLastWidth := ((aLastWidth) * (operatingSystemInterface.getOverScanXPercent)) / (100);
@@ -278,7 +279,7 @@ package body org.allbinary.graphics.displayable.DisplayInfoSingleton_Package is
                             This.displayRatio := (This.scaleLargestTo) / (Float (aLastHeight));
                             This.ratio := (Float (aLastHeight)) / (This.scaleLargestTo);
                             stringMaker.delete (0, stringMaker.length);
-                            This.logUtil.putF (stringMaker.append (This.ADJUSTING_FOR_SCALING_IN_PORTRAIT).appendfloat (This.displayRatio).toString, This'Unchecked_Access, This.commonStrings.UPDATE);
+                            This.logUtil.putF (stringMaker.append (This.ADJUSTING_FOR_SCALING_IN_PORTRAIT).appendfloat (This.displayRatio).toString, DisplayInfoSingleton_Access'(This'Unchecked_Access), This.commonStrings.UPDATE);
                             aLastWidth := Integer (((Float (aLastWidth)) * (This.displayRatio)));
                             aLastHeight := Integer (((Float (aLastHeight)) * (This.displayRatio)));
                             This.scalableListener.scale (This.ratio);
@@ -291,7 +292,7 @@ package body org.allbinary.graphics.displayable.DisplayInfoSingleton_Package is
                             This.displayRatio := (This.scaleLargestTo) / (Float (aLastWidth));
                             This.ratio := (Float (aLastWidth)) / (This.scaleLargestTo);
                             stringMaker.delete (0, stringMaker.length);
-                            This.logUtil.putF (stringMaker.append (This.ADJUSTING_FOR_SCALING_IN_LANDSCAPE).appendfloat (This.displayRatio).toString, This'Unchecked_Access, This.commonStrings.UPDATE);
+                            This.logUtil.putF (stringMaker.append (This.ADJUSTING_FOR_SCALING_IN_LANDSCAPE).appendfloat (This.displayRatio).toString, DisplayInfoSingleton_Access'(This'Unchecked_Access), This.commonStrings.UPDATE);
                             aLastWidth := Integer (((Float (aLastWidth)) * (This.displayRatio)));
                             aLastHeight := Integer (((Float (aLastHeight)) * (This.displayRatio)));
                             This.scalableListener.scale (This.ratio);
@@ -302,7 +303,7 @@ package body org.allbinary.graphics.displayable.DisplayInfoSingleton_Package is
                     end if;
                 end if;
                 stringMaker.delete (0, stringMaker.length);
-                This.logUtil.putF (stringMaker.append (This.UPDATE_FROM_ORIENTATION_CHANGE).append (This.LAST_WIDTH).appendint (aLastWidth).append (This.LAST_HEIGHT).appendint (aLastHeight).toString, This'Unchecked_Access, This.commonStrings.UPDATE);
+                This.logUtil.putF (stringMaker.append (This.UPDATE_FROM_ORIENTATION_CHANGE).append (This.LAST_WIDTH).appendint (aLastWidth).append (This.LAST_HEIGHT).appendint (aLastHeight).toString, DisplayInfoSingleton_Access'(This'Unchecked_Access), This.commonStrings.UPDATE);
                 This.xOffset := (aFullWidth) - (aLastWidth);
                 This.yOffset := (aFullHeight) - (aLastHeight);
                 This.left := This.scalableListener.getLeft (This.xOffset);
@@ -326,7 +327,8 @@ package body org.allbinary.graphics.displayable.DisplayInfoSingleton_Package is
         return This.toStringAppend (stringBuffer);
    end toString;
 
-   function toStringAppend (This : in out DisplayInfoSingleton; stringBuffer : StringMaker_Access) return Unbounded_String is
+   function toStringAppend (This : in out DisplayInfoSingleton; stringBuffer_Param : access StringMaker'Class) return Unbounded_String is
+      stringBuffer : StringMaker_Access := StringMaker_Access (stringBuffer_Param);
    begin
         stringBuffer.append (This.DISPLAY_INFO);
         stringBuffer.append (This.FULL);
@@ -415,7 +417,8 @@ package body org.allbinary.graphics.displayable.DisplayInfoSingleton_Package is
         This.lastHalf (This.CUSTOM_HEIGHT) := (Java_Shift_Right_Arithmetic (This.last_Case (This.CUSTOM_HEIGHT), 1));
    end setCustom;
 
-   procedure setScalableListener (This : in out DisplayInfoSingleton; scalableListener : BaseScalable_Access) is
+   procedure setScalableListener (This : in out DisplayInfoSingleton; scalableListener_Param : access BaseScalable'Class) is
+      scalableListener : BaseScalable_Access := BaseScalable_Access (scalableListener_Param);
    begin
         This.scalableListener := scalableListener;
    end setScalableListener;
@@ -457,8 +460,8 @@ package body org.allbinary.graphics.displayable.DisplayInfoSingleton_Package is
       null;
    end isPortraitWH;
 
-   procedure toStringAppend (This : in out DisplayInfoSingleton; stringBuffer : StringMaker_Access) is
-      Java_Result : constant Unbounded_String := DisplayInfoSingleton'Class (This).toStringAppend (stringBuffer);
+   procedure toStringAppend (This : in out DisplayInfoSingleton; stringBuffer_Param : access StringMaker'Class) is
+      Java_Result : constant Unbounded_String := DisplayInfoSingleton'Class (This).toStringAppend (stringBuffer_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

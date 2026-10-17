@@ -40,7 +40,8 @@ package body org.allbinary.media.image.ImageToRotationImageArrayUtil_Package is
    end Create;
 
    --  throws Exception
-   function generate (This : in out ImageToRotationImageArrayUtil; image : Image_Access; angleIncrement : Integer; totalAngle : Integer) return Image_Access_Array_Access is
+   function generate (This : in out ImageToRotationImageArrayUtil; image_Param : access Image'Class; angleIncrement : Integer; totalAngle : Integer) return Image_Access_Array_Access is
+      image : Image_Access := Image_Access (image_Param);
       imageRotationUtil : ImageRotationUtil_Access;
       totalFrames : Integer;
       imageArray : Image_Access_Array_Access;
@@ -56,8 +57,8 @@ package body org.allbinary.media.image.ImageToRotationImageArrayUtil_Package is
         return imageArray;
    end generate;
 
-   procedure generate (This : in out ImageToRotationImageArrayUtil; image : Image_Access; angleIncrement : Integer; totalAngle : Integer) is
-      Java_Result : constant Image_Access_Array_Access := ImageToRotationImageArrayUtil'Class (This).generate (image, angleIncrement, totalAngle);
+   procedure generate (This : in out ImageToRotationImageArrayUtil; image_Param : access Image'Class; angleIncrement : Integer; totalAngle : Integer) is
+      Java_Result : constant Image_Access_Array_Access := ImageToRotationImageArrayUtil'Class (This).generate (image_Param, angleIncrement, totalAngle);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -44,11 +44,11 @@ package org.allbinary.util.HashtableUtil_Package is
    procedure Initialize (This : in out HashtableUtil'Class);
    function Create return HashtableUtil_Access;
    function getInstance return HashtableUtil_Access;
-   procedure putAll (This : in out HashtableUtil; fromHashtable : ABHashtable_Access; hashtable : ABHashtable_Access);
-   function getKeysAsArray (This : in out HashtableUtil; hashtable : ABHashtable_Access) return Java_Object_Access_Array_Access;
-   procedure getKeysAsArray (This : in out HashtableUtil; hashtable : ABHashtable_Access);
-   function getKeysAsList (This : in out HashtableUtil; hashtable : ABHashtable_Access) return BasicArrayList_Access;
-   procedure getKeysAsList (This : in out HashtableUtil; hashtable : ABHashtable_Access);
+   procedure putAll (This : in out HashtableUtil; fromHashtable_Param : access ABHashtable'Class; hashtable_Param : access ABHashtable'Class);
+   function getKeysAsArray (This : in out HashtableUtil; hashtable_Param : access ABHashtable'Class) return Java_Object_Access_Array_Access;
+   procedure getKeysAsArray (This : in out HashtableUtil; hashtable_Param : access ABHashtable'Class);
+   function getKeysAsList (This : in out HashtableUtil; hashtable_Param : access ABHashtable'Class) return BasicArrayList_Access;
+   procedure getKeysAsList (This : in out HashtableUtil; hashtable_Param : access ABHashtable'Class);
 
 end org.allbinary.util.HashtableUtil_Package;
 

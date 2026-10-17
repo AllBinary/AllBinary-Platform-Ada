@@ -45,7 +45,7 @@ package org.allbinary.logic.system.security.licensing.AbeClientInformationInterf
    function getNumberOfLicenseServers (This : in out AbeClientInformationInterface) return Integer is abstract;
    function toHashtable (This : in out AbeClientInformationInterface) return ABHashtable_Access is abstract;
    function isSameId (This : in out AbeClientInformationInterface; alicenseId : Unbounded_String) return Boolean is abstract;
-   function isLargerOrDifferentServerList (This : in out AbeClientInformationInterface; vector : BasicArrayList_Access) return Boolean is abstract;
+   function isLargerOrDifferentServerList (This : in out AbeClientInformationInterface; vector_Param : access BasicArrayList'Class) return Boolean is abstract;
    function isHardSale (This : in out AbeClientInformationInterface) return Boolean is abstract;
    function toShortString (This : in out AbeClientInformationInterface) return Unbounded_String is abstract;
 

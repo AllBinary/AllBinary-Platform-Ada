@@ -68,7 +68,8 @@ package body org.allbinary.business.user.commerce.money.payment.types.PaymentTyp
       return This;
    end Create;
 
-   procedure add (This : in out PaymentTypeUtil; paymentType : PaymentType_Access) is
+   procedure add (This : in out PaymentTypeUtil; paymentType_Param : access PaymentType'Class) is
+      paymentType : PaymentType_Access := PaymentType_Access (paymentType_Param);
    begin
         This.paymentTypeVector.add (paymentType);
    end add;
@@ -102,7 +103,7 @@ package body org.allbinary.business.user.commerce.money.payment.types.PaymentTyp
       index : Integer;
    begin
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PAYMENT) then
-            This.logUtil.putF (To_Unbounded_String ("initDefault Payment: ") & This.defaultName, This'Unchecked_Access, To_Unbounded_String ("initDefault"));
+            This.logUtil.putF (To_Unbounded_String ("initDefault Payment: ") & This.defaultName, PaymentTypeUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("initDefault"));
         end if;
         if StringValidationUtil_Package.getInstance.isEmpty (This.defaultName) then
             stringBuffer := StringMaker_Package.Create;
@@ -120,7 +121,7 @@ package body org.allbinary.business.user.commerce.money.payment.types.PaymentTyp
                 defaultPaymentGatewayNode := DomSearchHelper_Package.getNode (EntryData_Package.getInstance.DEFAULT, node.getChildNodes);
                 defaultPaymentGatewayNodeValue := DomNodeHelper_Package.getTextNodeValue (defaultPaymentGatewayNode);
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PAYMENT) then
-                    This.logUtil.putF (To_Unbounded_String ("DefaultPaymentGatewayNodeValue: ") & defaultPaymentGatewayNodeValue, This'Unchecked_Access, To_Unbounded_String ("initDefault"));
+                    This.logUtil.putF (To_Unbounded_String ("DefaultPaymentGatewayNodeValue: ") & defaultPaymentGatewayNodeValue, PaymentTypeUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("initDefault"));
                 end if;
                 if not (StringValidationUtil_Package.getInstance.isEmpty (defaultPaymentGatewayNodeValue)) then
                     This.defaultName := defaultPaymentGatewayNodeValue;
@@ -133,7 +134,7 @@ package body org.allbinary.business.user.commerce.money.payment.types.PaymentTyp
    function getDefault (This : in out PaymentTypeUtil; storeName : Unbounded_String) return PaymentType_Access is
    begin
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PAYMENT) then
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("getDefault"));
+            This.logUtil.putF (This.commonStrings.START, PaymentTypeUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("getDefault"));
         end if;
         This.initDefault (storeName);
         if not (StringValidationUtil_Package.getInstance.isEmpty (This.defaultName)) then
@@ -142,12 +143,14 @@ package body org.allbinary.business.user.commerce.money.payment.types.PaymentTyp
         Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Default: ") & This.defaultName));
    end getDefault;
 
-   function isContain (This : in out PaymentTypeUtil; paymentType : PaymentType_Access) return Boolean is
+   function isContain (This : in out PaymentTypeUtil; paymentType_Param : access PaymentType'Class) return Boolean is
+      paymentType : PaymentType_Access := PaymentType_Access (paymentType_Param);
    begin
         return This.paymentTypeVector.contains (paymentType);
    end isContain;
 
-   function difference (This : in out PaymentTypeUtil; a_PaymentTypeVector : BasicArrayList_Access) return BasicArrayList_Access is
+   function difference (This : in out PaymentTypeUtil; a_PaymentTypeVector_Param : access BasicArrayList'Class) return BasicArrayList_Access is
+      a_PaymentTypeVector : BasicArrayList_Access := BasicArrayList_Access (a_PaymentTypeVector_Param);
       diff : BasicArrayList_Access;
       size : Integer;
       paymentType : PaymentType_Access;
@@ -178,15 +181,15 @@ package body org.allbinary.business.user.commerce.money.payment.types.PaymentTyp
       null;
    end getDefault;
 
-   procedure isContain (This : in out PaymentTypeUtil; paymentType : PaymentType_Access) is
-      Java_Result : constant Boolean := PaymentTypeUtil'Class (This).isContain (paymentType);
+   procedure isContain (This : in out PaymentTypeUtil; paymentType_Param : access PaymentType'Class) is
+      Java_Result : constant Boolean := PaymentTypeUtil'Class (This).isContain (paymentType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isContain;
 
-   procedure difference (This : in out PaymentTypeUtil; a_PaymentTypeVector : BasicArrayList_Access) is
-      Java_Result : constant BasicArrayList_Access := PaymentTypeUtil'Class (This).difference (a_PaymentTypeVector);
+   procedure difference (This : in out PaymentTypeUtil; a_PaymentTypeVector_Param : access BasicArrayList'Class) is
+      Java_Result : constant BasicArrayList_Access := PaymentTypeUtil'Class (This).difference (a_PaymentTypeVector_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

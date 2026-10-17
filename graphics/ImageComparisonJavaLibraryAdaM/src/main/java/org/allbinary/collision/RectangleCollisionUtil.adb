@@ -34,7 +34,9 @@ package body org.allbinary.collision.RectangleCollisionUtil_Package is
       return This;
    end Create;
 
-   function isCollision (rectangle : Rectangle_Access; point : GPoint_Access) return Boolean is
+   function isCollision (rectangle_Param : access Rectangle'Class; point_Param : access GPoint'Class) return Boolean is
+      rectangle : Rectangle_Access := Rectangle_Access (rectangle_Param);
+      point : GPoint_Access := GPoint_Access (point_Param);
    begin
         if ((((point.getX) > (((Integer (rectangle.x)) + (rectangle.getWidth)))) or else ((point.getY) > (((Integer (rectangle.y)) + (rectangle.getHeight))))) or else ((point.getX) < (rectangle.x))) or else ((point.getY) < (rectangle.y)) then
             return False;
@@ -43,7 +45,9 @@ package body org.allbinary.collision.RectangleCollisionUtil_Package is
         end if;
    end isCollision;
 
-   function isCollision (rectangle1 : Rectangle_Access; rectangle2 : Rectangle_Access) return Boolean is
+   function isCollision (rectangle1_Param : access Rectangle'Class; rectangle2_Param : access Rectangle'Class) return Boolean is
+      rectangle1 : Rectangle_Access := Rectangle_Access (rectangle1_Param);
+      rectangle2 : Rectangle_Access := Rectangle_Access (rectangle2_Param);
    begin
         return RectangleCollisionUtil_Package.isCollision (rectangle1.x, rectangle1.y, (rectangle1.x) + (rectangle1.width), (rectangle1.y) + (rectangle1.height), rectangle2.x, rectangle2.y, (rectangle2.x) + (rectangle2.width), (rectangle2.y) + (rectangle2.height));
    end isCollision;
@@ -57,15 +61,15 @@ package body org.allbinary.collision.RectangleCollisionUtil_Package is
         end if;
    end isCollision;
 
-   procedure isCollision (rectangle : Rectangle_Access; point : GPoint_Access) is
-      Java_Result : constant Boolean := isCollision (rectangle, point);
+   procedure isCollision (rectangle_Param : access Rectangle'Class; point_Param : access GPoint'Class) is
+      Java_Result : constant Boolean := isCollision (rectangle_Param, point_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isCollision;
 
-   procedure isCollision (rectangle1 : Rectangle_Access; rectangle2 : Rectangle_Access) is
-      Java_Result : constant Boolean := isCollision (rectangle1, rectangle2);
+   procedure isCollision (rectangle1_Param : access Rectangle'Class; rectangle2_Param : access Rectangle'Class) is
+      Java_Result : constant Boolean := isCollision (rectangle1_Param, rectangle2_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

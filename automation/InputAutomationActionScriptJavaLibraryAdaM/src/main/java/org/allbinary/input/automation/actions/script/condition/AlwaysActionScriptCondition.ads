@@ -57,8 +57,8 @@ package org.allbinary.input.automation.actions.script.condition.AlwaysActionScri
    end record;
    NAME : Unbounded_String;
 
-   procedure Initialize (This : in out AlwaysActionScriptCondition'Class; node : Node_Access);
-   function Create (node : Node_Access) return AlwaysActionScriptCondition_Access;
+   procedure Initialize (This : in out AlwaysActionScriptCondition'Class; node_Param : access Node'Class);
+   function Create (node_Param : access Node'Class) return AlwaysActionScriptCondition_Access;
    procedure Initialize (This : in out AlwaysActionScriptCondition'Class);
    function Create return AlwaysActionScriptCondition_Access;
    procedure init (This : in out AlwaysActionScriptCondition);
@@ -66,8 +66,8 @@ package org.allbinary.input.automation.actions.script.condition.AlwaysActionScri
    procedure setIsOn (This : in out AlwaysActionScriptCondition; isOn : Boolean);
    procedure showDialog (This : in out AlwaysActionScriptCondition);
    function toHashMap (This : in out AlwaysActionScriptCondition) return HashMap_Access;
-   function toXmlNode (This : in out AlwaysActionScriptCondition; document : Document_Access) return Node_Access;
-   procedure toXmlNode (This : in out AlwaysActionScriptCondition; document : Document_Access);
+   function toXmlNode (This : in out AlwaysActionScriptCondition; document_Param : access Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out AlwaysActionScriptCondition; document_Param : access Document'Class);
    function shouldProcess (This : in out AlwaysActionScriptCondition; frame : Long_Long_Integer) return Boolean;
    procedure shouldProcess (This : in out AlwaysActionScriptCondition; frame : Long_Long_Integer);
    procedure log (This : in out AlwaysActionScriptCondition);

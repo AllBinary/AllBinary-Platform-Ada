@@ -41,8 +41,8 @@ package org.allbinary.logic.control.workflow.WorkFlowWrapper_Package is
       anyType : Java_Object_Access;
    end record;
 
-   procedure Initialize (This : in out WorkFlowWrapper'Class; anyType : Java_Object_Access);
-   function Create (anyType : Java_Object_Access) return WorkFlowWrapper_Access;
+   procedure Initialize (This : in out WorkFlowWrapper'Class; anyType_Param : access Java_Object'Class);
+   function Create (anyType_Param : access Java_Object'Class) return WorkFlowWrapper_Access;
    function getWorkFlowObject (This : in out WorkFlowWrapper) return Java_Object_Access;
    function getName (This : in out WorkFlowWrapper) return Unbounded_String;
    function getStoreName (This : in out WorkFlowWrapper) return Unbounded_String;

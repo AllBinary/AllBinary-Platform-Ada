@@ -41,7 +41,8 @@ package body org.allbinary.media.graphics.geography.map.event.GeographicMapCellP
       return This;
    end Create;
 
-   procedure addListener (This : in out GeographicMapCellPositionEventHandler; miniMapLayer : MiniMapLayer_Access) is
+   procedure addListener (This : in out GeographicMapCellPositionEventHandler; miniMapLayer_Param : access MiniMapLayer'Class) is
+      miniMapLayer : MiniMapLayer_Access := MiniMapLayer_Access (miniMapLayer_Param);
    begin
         if not (This.list.contains (miniMapLayer)) then
             This.list.add (miniMapLayer);
@@ -54,14 +55,16 @@ package body org.allbinary.media.graphics.geography.map.event.GeographicMapCellP
         BasicEventHandler (This).removeAllListeners;
    end removeAllListeners;
 
-   procedure removeListener (This : in out GeographicMapCellPositionEventHandler; eventListenerInterface : EventListenerInterface_Access) is
+   procedure removeListener (This : in out GeographicMapCellPositionEventHandler; eventListenerInterface_Param : access EventListenerInterface'Class) is
+      eventListenerInterface : EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
    begin
         This.list.remove (eventListenerInterface);
         BasicEventHandler (This).removeListener (eventListenerInterface);
    end removeListener;
 
    --  throws Exception
-   procedure fireEvent (This : in out GeographicMapCellPositionEventHandler; eventObject : AllBinaryEventObject_Access) is
+   procedure fireEvent (This : in out GeographicMapCellPositionEventHandler; eventObject_Param : access AllBinaryEventObject'Class) is
+      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
       miniMapLayer : MiniMapLayer_Access;
       index : Integer;
    begin
@@ -75,7 +78,7 @@ package body org.allbinary.media.graphics.geography.map.event.GeographicMapCellP
                     declare
                         e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                     begin
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, EventStrings_Package.getInstance.FIRE_EVENT, e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, GeographicMapCellPositionEventHandler_Access'(This'Unchecked_Access), EventStrings_Package.getInstance.FIRE_EVENT, e);
                     end;
             end;
         end loop;
@@ -83,7 +86,8 @@ package body org.allbinary.media.graphics.geography.map.event.GeographicMapCellP
    end fireEvent;
 
    --  throws Exception
-   procedure fireRemoveEvent (This : in out GeographicMapCellPositionEventHandler; eventObject : AllBinaryEventObject_Access) is
+   procedure fireRemoveEvent (This : in out GeographicMapCellPositionEventHandler; eventObject_Param : access AllBinaryEventObject'Class) is
+      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
       list : BasicArrayList_Access;
       miniMapLayer : MiniMapLayer_Access;
       index : Integer;
@@ -102,7 +106,7 @@ package body org.allbinary.media.graphics.geography.map.event.GeographicMapCellP
                     declare
                         e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                     begin
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, EventStrings_Package.getInstance.FIRE_EVENT, e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, GeographicMapCellPositionEventHandler_Access'(This'Unchecked_Access), EventStrings_Package.getInstance.FIRE_EVENT, e);
                     end;
             end;
         end loop;
@@ -119,14 +123,16 @@ package body org.allbinary.media.graphics.geography.map.event.GeographicMapCellP
                     declare
                         e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                     begin
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, EventStrings_Package.getInstance.FIRE_EVENT, e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, GeographicMapCellPositionEventHandler_Access'(This'Unchecked_Access), EventStrings_Package.getInstance.FIRE_EVENT, e);
                     end;
             end;
         end loop;
    end fireRemoveEvent;
 
    --  throws Exception
-   procedure process (This : in out GeographicMapCellPositionEventHandler; eventObject : AllBinaryEventObject_Access; eventListenerInterface : EventListenerInterface_Access) is
+   procedure process (This : in out GeographicMapCellPositionEventHandler; eventObject_Param : access AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface'Class) is
+      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
+      eventListenerInterface : EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
       geographicMapCellPositionEventListenerInterface : GeographicMapCellPositionEventListenerInterface_Access;
    begin
         geographicMapCellPositionEventListenerInterface := (GeographicMapCellPositionEventListenerInterface_Access (eventListenerInterface));

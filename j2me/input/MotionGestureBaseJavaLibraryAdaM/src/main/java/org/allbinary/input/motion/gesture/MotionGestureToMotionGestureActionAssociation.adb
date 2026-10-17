@@ -23,17 +23,19 @@ package body org.allbinary.input.motion.gesture.MotionGestureToMotionGestureActi
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out MotionGestureToMotionGestureActionAssociation'Class; list : BasicArrayList_Access; commandAction : CompleteMotionGestureInputEvent_Access) is
+   procedure Initialize (This : in out MotionGestureToMotionGestureActionAssociation'Class; list_Param : access BasicArrayList'Class; commandAction_Param : access CompleteMotionGestureInputEvent'Class) is
+      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
+      commandAction : CompleteMotionGestureInputEvent_Access := CompleteMotionGestureInputEvent_Access (commandAction_Param);
    begin
       Initialize_Fields (This);
         This.list := list;
         This.motionGestureAction := commandAction;
    end Initialize;
 
-   function Create (list : BasicArrayList_Access; commandAction : CompleteMotionGestureInputEvent_Access) return MotionGestureToMotionGestureActionAssociation_Access is
+   function Create (list_Param : access BasicArrayList'Class; commandAction_Param : access CompleteMotionGestureInputEvent'Class) return MotionGestureToMotionGestureActionAssociation_Access is
       This : constant MotionGestureToMotionGestureActionAssociation_Access := new MotionGestureToMotionGestureActionAssociation;
    begin
-      MotionGestureToMotionGestureActionAssociation_Package.Initialize (This.all, list, commandAction);
+      MotionGestureToMotionGestureActionAssociation_Package.Initialize (This.all, list_Param, commandAction_Param);
       return This;
    end Create;
 
@@ -42,7 +44,8 @@ package body org.allbinary.input.motion.gesture.MotionGestureToMotionGestureActi
         return This.list;
    end getMotionGesture;
 
-   procedure setMotionGestures (This : in out MotionGestureToMotionGestureActionAssociation; list : BasicArrayList_Access) is
+   procedure setMotionGestures (This : in out MotionGestureToMotionGestureActionAssociation; list_Param : access BasicArrayList'Class) is
+      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
    begin
         This.list := list;
    end setMotionGestures;
@@ -52,12 +55,14 @@ package body org.allbinary.input.motion.gesture.MotionGestureToMotionGestureActi
         return This.motionGestureAction;
    end getCommandAction;
 
-   procedure setMotionGestureAction (This : in out MotionGestureToMotionGestureActionAssociation; commandAction : CompleteMotionGestureInputEvent_Access) is
+   procedure setMotionGestureAction (This : in out MotionGestureToMotionGestureActionAssociation; commandAction_Param : access CompleteMotionGestureInputEvent'Class) is
+      commandAction : CompleteMotionGestureInputEvent_Access := CompleteMotionGestureInputEvent_Access (commandAction_Param);
    begin
         This.motionGestureAction := commandAction;
    end setMotionGestureAction;
 
-   function isMotionGestureArrayEquals (This : in out MotionGestureToMotionGestureActionAssociation; aList : BasicArrayList_Access) return Boolean is
+   function isMotionGestureArrayEquals (This : in out MotionGestureToMotionGestureActionAssociation; aList_Param : access BasicArrayList'Class) return Boolean is
+      aList : BasicArrayList_Access := BasicArrayList_Access (aList_Param);
       size : Integer;
       i : Integer;
    begin
@@ -73,8 +78,8 @@ package body org.allbinary.input.motion.gesture.MotionGestureToMotionGestureActi
         return True;
    end isMotionGestureArrayEquals;
 
-   procedure isMotionGestureArrayEquals (This : in out MotionGestureToMotionGestureActionAssociation; aList : BasicArrayList_Access) is
-      Java_Result : constant Boolean := MotionGestureToMotionGestureActionAssociation'Class (This).isMotionGestureArrayEquals (aList);
+   procedure isMotionGestureArrayEquals (This : in out MotionGestureToMotionGestureActionAssociation; aList_Param : access BasicArrayList'Class) is
+      Java_Result : constant Boolean := MotionGestureToMotionGestureActionAssociation'Class (This).isMotionGestureArrayEquals (aList_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

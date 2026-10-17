@@ -22,21 +22,23 @@ package body org.allbinary.business.category.CategoriesView_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CategoriesView'Class; categoryInterface : CategoryInterface_Access) is
+   procedure Initialize (This : in out CategoriesView'Class; categoryInterface_Param : access CategoryInterface'Class) is
+      categoryInterface : CategoryInterface_Access := CategoryInterface_Access (categoryInterface_Param);
    begin
       Initialize_Fields (This);
         This.categoryInterface := categoryInterface;
    end Initialize;
 
-   function Create (categoryInterface : CategoryInterface_Access) return CategoriesView_Access is
+   function Create (categoryInterface_Param : access CategoryInterface'Class) return CategoriesView_Access is
       This : constant CategoriesView_Access := new CategoriesView;
    begin
-      CategoriesView_Package.Initialize (This.all, categoryInterface);
+      CategoriesView_Package.Initialize (This.all, categoryInterface_Param);
       return This;
    end Create;
 
    --  throws Exception
-   function toXmlNode (This : in out CategoriesView; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out CategoriesView; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       node : Node_Access;
       childArray : Java_Object_Access_Array_Access;
       size : Integer;
@@ -55,8 +57,8 @@ package body org.allbinary.business.category.CategoriesView_Package is
         return node;
    end toXmlNode;
 
-   procedure toXmlNode (This : in out CategoriesView; document : Document_Access) is
-      Java_Result : constant Node_Access := CategoriesView'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out CategoriesView; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := CategoriesView'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

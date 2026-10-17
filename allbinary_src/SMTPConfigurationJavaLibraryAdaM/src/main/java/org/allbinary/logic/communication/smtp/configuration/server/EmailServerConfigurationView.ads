@@ -50,13 +50,13 @@ package org.allbinary.logic.communication.smtp.configuration.server.EmailServerC
       emailServerConfigurationInterface : EmailServerConfigurationInterface_Access;
    end record;
 
-   procedure Initialize (This : in out EmailServerConfigurationView'Class; node : Node_Access);
-   function Create (node : Node_Access) return EmailServerConfigurationView_Access;
-   procedure Initialize (This : in out EmailServerConfigurationView'Class; emailServerConfigurationInterface : EmailServerConfigurationInterface_Access);
-   function Create (emailServerConfigurationInterface : EmailServerConfigurationInterface_Access) return EmailServerConfigurationView_Access;
+   procedure Initialize (This : in out EmailServerConfigurationView'Class; node_Param : access Node'Class);
+   function Create (node_Param : access Node'Class) return EmailServerConfigurationView_Access;
+   procedure Initialize (This : in out EmailServerConfigurationView'Class; emailServerConfigurationInterface_Param : access EmailServerConfigurationInterface'Class);
+   function Create (emailServerConfigurationInterface_Param : access EmailServerConfigurationInterface'Class) return EmailServerConfigurationView_Access;
    function getEmailConfigurationInterface (This : in out EmailServerConfigurationView) return EmailServerConfigurationInterface_Access;
-   function toXmlNode (This : in out EmailServerConfigurationView; document : Document_Access) return Node_Access;
-   procedure toXmlNode (This : in out EmailServerConfigurationView; document : Document_Access);
+   function toXmlNode (This : in out EmailServerConfigurationView; document_Param : access Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out EmailServerConfigurationView; document_Param : access Document'Class);
 
 end org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationView_Package;
 

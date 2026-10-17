@@ -21,15 +21,18 @@ package body org.allbinary.game.multiplayer.layer.MultiPlayerGameLayer_Package i
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out MultiPlayerGameLayer'Class; remoteInfo : RemoteInfo_Access; groupInterface : Group_Access_Array_Access; name : Unbounded_String; layerInfo : Rectangle_Access; viewPosition : ViewPositionBase_Access) is
+   procedure Initialize (This : in out MultiPlayerGameLayer'Class; remoteInfo_Param : access RemoteInfo'Class; groupInterface : Group_Access_Array_Access; name : Unbounded_String; layerInfo_Param : access Rectangle'Class; viewPosition_Param : access ViewPositionBase'Class) is
+      remoteInfo : RemoteInfo_Access := RemoteInfo_Access (remoteInfo_Param);
+      layerInfo : Rectangle_Access := Rectangle_Access (layerInfo_Param);
+      viewPosition : ViewPositionBase_Access := ViewPositionBase_Access (viewPosition_Param);
    begin
         CollidableDestroyableDamageableLayer_Package.Initialize (This, groupInterface, name, layerInfo, viewPosition);
    end Initialize;
 
-   function Create (remoteInfo : RemoteInfo_Access; groupInterface : Group_Access_Array_Access; name : Unbounded_String; layerInfo : Rectangle_Access; viewPosition : ViewPositionBase_Access) return MultiPlayerGameLayer_Access is
+   function Create (remoteInfo_Param : access RemoteInfo'Class; groupInterface : Group_Access_Array_Access; name : Unbounded_String; layerInfo_Param : access Rectangle'Class; viewPosition_Param : access ViewPositionBase'Class) return MultiPlayerGameLayer_Access is
       This : constant MultiPlayerGameLayer_Access := new MultiPlayerGameLayer;
    begin
-      MultiPlayerGameLayer_Package.Initialize (This.all, remoteInfo, groupInterface, name, layerInfo, viewPosition);
+      MultiPlayerGameLayer_Package.Initialize (This.all, remoteInfo_Param, groupInterface, name, layerInfo_Param, viewPosition_Param);
       return This;
    end Create;
 

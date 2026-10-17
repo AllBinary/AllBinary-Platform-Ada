@@ -54,8 +54,8 @@ package org.allbinary.logic.string_Id.StringUtil_Package is
    function getArrayInstance (This : in out StringUtil) return Unbounded_String_Array_Access;
    function count (This : in out StringUtil; string_Id : Unbounded_String; aChar : Character) return Integer;
    procedure count (This : in out StringUtil; string_Id : Unbounded_String; aChar : Character);
-   function toString (This : in out StringUtil; anyType : Java_Object_Access) return Unbounded_String;
-   procedure toString (This : in out StringUtil; anyType : Java_Object_Access);
+   function toString (This : in out StringUtil; anyType_Param : access Java_Object'Class) return Unbounded_String;
+   procedure toString (This : in out StringUtil; anyType_Param : access Java_Object'Class);
 
 end org.allbinary.logic.string_Id.StringUtil_Package;
 

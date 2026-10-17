@@ -41,8 +41,8 @@ package org.allbinary.media.graphics.geography.map.racetrack.threed.AllBinaryThr
    procedure Initialize (This : in out AllBinaryThreedTiledLayerFactory'Class);
    function Create return AllBinaryThreedTiledLayerFactory_Access;
    function getInstance return AllBinaryThreedTiledLayerFactory_Access;
-   function getInstance (This : in out AllBinaryThreedTiledLayerFactory; raceTrackInfo : RaceTrackInfo_Access; raceTrackData : RaceTrackData_Access) return AllBinaryTiledLayer_Access;
-   procedure getInstance (This : in out AllBinaryThreedTiledLayerFactory; raceTrackInfo : RaceTrackInfo_Access; raceTrackData : RaceTrackData_Access);
+   function getInstance (This : in out AllBinaryThreedTiledLayerFactory; raceTrackInfo_Param : access RaceTrackInfo'Class; raceTrackData_Param : access RaceTrackData'Class) return AllBinaryTiledLayer_Access;
+   procedure getInstance (This : in out AllBinaryThreedTiledLayerFactory; raceTrackInfo_Param : access RaceTrackInfo'Class; raceTrackData_Param : access RaceTrackData'Class);
 
 end org.allbinary.media.graphics.geography.map.racetrack.threed.AllBinaryThreedTiledLayerFactory_Package;
 

@@ -43,7 +43,7 @@ package org.allbinary.input.motion.gesture.observer.ScrolledMotionGesturesHandle
    procedure Initialize (This : in out ScrolledMotionGesturesHandler'Class);
    function Create return ScrolledMotionGesturesHandler_Access;
    function getInstance return ScrolledMotionGesturesHandler_Access;
-   procedure process (This : in out ScrolledMotionGesturesHandler; eventObject : AllBinaryEventObject_Access; eventListenerInterface : EventListenerInterface_Access);
+   procedure process (This : in out ScrolledMotionGesturesHandler; eventObject_Param : access AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface'Class);
 
 end org.allbinary.input.motion.gesture.observer.ScrolledMotionGesturesHandler_Package;
 

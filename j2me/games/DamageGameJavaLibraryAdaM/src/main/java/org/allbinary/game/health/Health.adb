@@ -73,7 +73,7 @@ package body org.allbinary.game.health.Health_Package is
             stringBuffer.appendint (ahealth);
             stringBuffer.append (CommonSeps_Package.getInstance.SPACE);
             stringBuffer.append (This.toString);
-            ForcedLogUtil_Package.log (stringBuffer.toString, This'Unchecked_Access);
+            ForcedLogUtil_Package.log (stringBuffer.toString, Health_Access'(This'Unchecked_Access));
             return;
         end if;
         health := (This.getHealth) - (ahealth);
@@ -118,7 +118,8 @@ package body org.allbinary.game.health.Health_Package is
         return This.health;
    end getHealth;
 
-   procedure addListener (This : in out Health; healthGraphic : HealthListenerInterface_Access) is
+   procedure addListener (This : in out Health; healthGraphic_Param : access HealthListenerInterface'Class) is
+      healthGraphic : HealthListenerInterface_Access := HealthListenerInterface_Access (healthGraphic_Param);
    begin
         This.healthListenerInterface := healthGraphic;
    end addListener;

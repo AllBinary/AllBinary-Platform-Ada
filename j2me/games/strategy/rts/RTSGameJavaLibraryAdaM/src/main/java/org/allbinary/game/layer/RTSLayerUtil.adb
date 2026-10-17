@@ -41,7 +41,8 @@ package body org.allbinary.game.layer.RTSLayerUtil_Package is
         return RTSLayerUtil_Package.instance;
    end getInstance;
 
-   function createWeaponProperties (This : in out RTSLayerUtil; weaponProperties : WeaponProperties_Access; currentLevel : Integer; lastLevel : Integer) return WeaponProperties_Access is
+   function createWeaponProperties (This : in out RTSLayerUtil; weaponProperties_Param : access WeaponProperties'Class; currentLevel : Integer; lastLevel : Integer) return WeaponProperties_Access is
+      weaponProperties : WeaponProperties_Access := WeaponProperties_Access (weaponProperties_Param);
       reloadTime : Long_Long_Integer;
       newWeaponProperties : WeaponProperties_Access;
    begin
@@ -55,7 +56,8 @@ package body org.allbinary.game.layer.RTSLayerUtil_Package is
         return newWeaponProperties;
    end createWeaponProperties;
 
-   procedure downgrade (This : in out RTSLayerUtil; rtsLayer : RTSLayer_Access) is
+   procedure downgrade (This : in out RTSLayerUtil; rtsLayer_Param : access RTSLayer'Class) is
+      rtsLayer : RTSLayer_Access := RTSLayer_Access (rtsLayer_Param);
       partInterfaceArray : PartInterface_Access_Array_Access;
       size : Integer;
       partInterface : BasicWeaponPart_Access;
@@ -73,7 +75,8 @@ package body org.allbinary.game.layer.RTSLayerUtil_Package is
         rtsLayer.select_Id;
    end downgrade;
 
-   procedure upgrade (This : in out RTSLayerUtil; rtsLayer : RTSLayer_Access) is
+   procedure upgrade (This : in out RTSLayerUtil; rtsLayer_Param : access RTSLayer'Class) is
+      rtsLayer : RTSLayer_Access := RTSLayer_Access (rtsLayer_Param);
       partInterfaceArray : PartInterface_Access_Array_Access;
       size : Integer;
       partInterface : BasicWeaponPart_Access;
@@ -96,7 +99,8 @@ package body org.allbinary.game.layer.RTSLayerUtil_Package is
         return (((((cost) * (cost)) * (cost))) / (((cost) * (1000))));
    end getCostExponential;
 
-   function getWeaponPropertiesCost (This : in out RTSLayerUtil; weaponProperties : WeaponProperties_Access) return Integer is
+   function getWeaponPropertiesCost (This : in out RTSLayerUtil; weaponProperties_Param : access WeaponProperties'Class) return Integer is
+      weaponProperties : WeaponProperties_Access := WeaponProperties_Access (weaponProperties_Param);
       cost : Long_Long_Integer;
    begin
         cost := (((weaponProperties.getDamage) + (weaponProperties.getRange)) + ((Java_Shift_Right_Arithmetic (((This.MAX_RELOAD_TIME) / (weaponProperties.getReloadTime)), 1))));
@@ -104,7 +108,8 @@ package body org.allbinary.game.layer.RTSLayerUtil_Package is
         return Integer (cost);
    end getWeaponPropertiesCost;
 
-   function getCost (This : in out RTSLayerUtil; rtsLayer : RTSLayer_Access) return Integer is
+   function getCost (This : in out RTSLayerUtil; rtsLayer_Param : access RTSLayer'Class) return Integer is
+      rtsLayer : RTSLayer_Access := RTSLayer_Access (rtsLayer_Param);
       total : Integer;
       partInterfaceArray : PartInterface_Access_Array_Access;
       size : Integer;
@@ -125,7 +130,8 @@ package body org.allbinary.game.layer.RTSLayerUtil_Package is
         return total;
    end getCost;
 
-   function getDowngradeCost (This : in out RTSLayerUtil; rtsLayer : RTSLayer_Access) return Integer is
+   function getDowngradeCost (This : in out RTSLayerUtil; rtsLayer_Param : access RTSLayer'Class) return Integer is
+      rtsLayer : RTSLayer_Access := RTSLayer_Access (rtsLayer_Param);
       partInterfaceArray : PartInterface_Access_Array_Access;
       size : Integer;
       downgradeCost : Integer;
@@ -150,11 +156,12 @@ package body org.allbinary.game.layer.RTSLayerUtil_Package is
             downgradeCost := (downgradeCost) + (((currentWeaponCost) - (downgradeWeaponCost)));
         end loop;
         downgradeCost := ((downgradeCost) * (9)) / (10);
-        This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Total Cost: ")).appendint (downgradeCost).toString, This'Unchecked_Access, To_Unbounded_String ("getDowngradeCost"));
+        This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Total Cost: ")).appendint (downgradeCost).toString, RTSLayerUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("getDowngradeCost"));
         return downgradeCost;
    end getDowngradeCost;
 
-   function getUpgradeCost (This : in out RTSLayerUtil; rtsLayer : RTSLayer_Access) return Integer is
+   function getUpgradeCost (This : in out RTSLayerUtil; rtsLayer_Param : access RTSLayer'Class) return Integer is
+      rtsLayer : RTSLayer_Access := RTSLayer_Access (rtsLayer_Param);
       upgradeCost : Integer;
       partInterfaceArray : PartInterface_Access_Array_Access;
       size : Integer;
@@ -178,12 +185,13 @@ package body org.allbinary.game.layer.RTSLayerUtil_Package is
             currentWeaponCost := This.getWeaponPropertiesCost (weaponProperties);
             upgradeCost := (upgradeCost) + (((upgradedWeaponCost) - (currentWeaponCost)));
         end loop;
-        This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Total Cost: ")).appendint (upgradeCost).toString, This'Unchecked_Access, To_Unbounded_String ("getUpgradeCost"));
+        This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Total Cost: ")).appendint (upgradeCost).toString, RTSLayerUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("getUpgradeCost"));
         return upgradeCost;
    end getUpgradeCost;
 
    --  throws Exception
-   procedure destroyAndClear (This : in out RTSLayerUtil; list : BasicArrayList_Access) is
+   procedure destroyAndClear (This : in out RTSLayerUtil; list_Param : access BasicArrayList'Class) is
+      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
       rtsLayer : RTSLayer_Access;
       index : Integer;
    begin
@@ -195,7 +203,8 @@ package body org.allbinary.game.layer.RTSLayerUtil_Package is
         list.clear;
    end destroyAndClear;
 
-   function createFakeRTSLayerHashtable (This : in out RTSLayerUtil; baseRaceTrackGeographicMap : BaseRaceTrackGeographicMap_Access) return ABHashtable_Access is
+   function createFakeRTSLayerHashtable (This : in out RTSLayerUtil; baseRaceTrackGeographicMap_Param : access BaseRaceTrackGeographicMap'Class) return ABHashtable_Access is
+      baseRaceTrackGeographicMap : BaseRaceTrackGeographicMap_Access := BaseRaceTrackGeographicMap_Access (baseRaceTrackGeographicMap_Param);
       hashtable : ABHashtable_Access;
       layerManager : FakeLayerManager_Access;
    begin
@@ -208,8 +217,8 @@ package body org.allbinary.game.layer.RTSLayerUtil_Package is
         return hashtable;
    end createFakeRTSLayerHashtable;
 
-   procedure createWeaponProperties (This : in out RTSLayerUtil; weaponProperties : WeaponProperties_Access; currentLevel : Integer; lastLevel : Integer) is
-      Java_Result : constant WeaponProperties_Access := RTSLayerUtil'Class (This).createWeaponProperties (weaponProperties, currentLevel, lastLevel);
+   procedure createWeaponProperties (This : in out RTSLayerUtil; weaponProperties_Param : access WeaponProperties'Class; currentLevel : Integer; lastLevel : Integer) is
+      Java_Result : constant WeaponProperties_Access := RTSLayerUtil'Class (This).createWeaponProperties (weaponProperties_Param, currentLevel, lastLevel);
       pragma Unreferenced (Java_Result);
    begin
       null;
@@ -222,36 +231,36 @@ package body org.allbinary.game.layer.RTSLayerUtil_Package is
       null;
    end getCostExponential;
 
-   procedure getWeaponPropertiesCost (This : in out RTSLayerUtil; weaponProperties : WeaponProperties_Access) is
-      Java_Result : constant Integer := RTSLayerUtil'Class (This).getWeaponPropertiesCost (weaponProperties);
+   procedure getWeaponPropertiesCost (This : in out RTSLayerUtil; weaponProperties_Param : access WeaponProperties'Class) is
+      Java_Result : constant Integer := RTSLayerUtil'Class (This).getWeaponPropertiesCost (weaponProperties_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getWeaponPropertiesCost;
 
-   procedure getCost (This : in out RTSLayerUtil; rtsLayer : RTSLayer_Access) is
-      Java_Result : constant Integer := RTSLayerUtil'Class (This).getCost (rtsLayer);
+   procedure getCost (This : in out RTSLayerUtil; rtsLayer_Param : access RTSLayer'Class) is
+      Java_Result : constant Integer := RTSLayerUtil'Class (This).getCost (rtsLayer_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getCost;
 
-   procedure getDowngradeCost (This : in out RTSLayerUtil; rtsLayer : RTSLayer_Access) is
-      Java_Result : constant Integer := RTSLayerUtil'Class (This).getDowngradeCost (rtsLayer);
+   procedure getDowngradeCost (This : in out RTSLayerUtil; rtsLayer_Param : access RTSLayer'Class) is
+      Java_Result : constant Integer := RTSLayerUtil'Class (This).getDowngradeCost (rtsLayer_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getDowngradeCost;
 
-   procedure getUpgradeCost (This : in out RTSLayerUtil; rtsLayer : RTSLayer_Access) is
-      Java_Result : constant Integer := RTSLayerUtil'Class (This).getUpgradeCost (rtsLayer);
+   procedure getUpgradeCost (This : in out RTSLayerUtil; rtsLayer_Param : access RTSLayer'Class) is
+      Java_Result : constant Integer := RTSLayerUtil'Class (This).getUpgradeCost (rtsLayer_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getUpgradeCost;
 
-   procedure createFakeRTSLayerHashtable (This : in out RTSLayerUtil; baseRaceTrackGeographicMap : BaseRaceTrackGeographicMap_Access) is
-      Java_Result : constant ABHashtable_Access := RTSLayerUtil'Class (This).createFakeRTSLayerHashtable (baseRaceTrackGeographicMap);
+   procedure createFakeRTSLayerHashtable (This : in out RTSLayerUtil; baseRaceTrackGeographicMap_Param : access BaseRaceTrackGeographicMap'Class) is
+      Java_Result : constant ABHashtable_Access := RTSLayerUtil'Class (This).createFakeRTSLayerHashtable (baseRaceTrackGeographicMap_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

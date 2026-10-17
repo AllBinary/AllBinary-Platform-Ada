@@ -38,12 +38,12 @@ package org.allbinary.input.automation.actions.script.condition.processors.Basic
 
    type BasicProfileActionScriptProcessorNode is new Java_Object with null record;
 
-   procedure Initialize (This : in out BasicProfileActionScriptProcessorNode'Class; node : Node_Access);
-   function Create (node : Node_Access) return BasicProfileActionScriptProcessorNode_Access;
+   procedure Initialize (This : in out BasicProfileActionScriptProcessorNode'Class; node_Param : access Node'Class);
+   function Create (node_Param : access Node'Class) return BasicProfileActionScriptProcessorNode_Access;
    procedure Initialize (This : in out BasicProfileActionScriptProcessorNode'Class);
    function Create return BasicProfileActionScriptProcessorNode_Access;
-   function toXmlNode (This : in out BasicProfileActionScriptProcessorNode; document : Document_Access) return Node_Access;
-   procedure toXmlNode (This : in out BasicProfileActionScriptProcessorNode; document : Document_Access);
+   function toXmlNode (This : in out BasicProfileActionScriptProcessorNode; document_Param : access Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out BasicProfileActionScriptProcessorNode; document_Param : access Document'Class);
 
 end org.allbinary.input.automation.actions.script.condition.processors.BasicProfileActionScriptProcessorNode_Package;
 

@@ -38,7 +38,8 @@ package body org.allbinary.game.layer.special.AnalogInputBuilder_Package is
         return AnalogInputBuilder_Package.instance;
    end getInstance;
 
-   procedure disable (This : in out AnalogInputBuilder; inputProcessorArray : GameInputProcessor_Access_Array_Access; collidableDestroyableDamageableLayer : CollidableDestroyableDamageableLayer_Access) is
+   procedure disable (This : in out AnalogInputBuilder; inputProcessorArray : GameInputProcessor_Access_Array_Access; collidableDestroyableDamageableLayer_Param : access CollidableDestroyableDamageableLayer'Class) is
+      collidableDestroyableDamageableLayer : CollidableDestroyableDamageableLayer_Access := CollidableDestroyableDamageableLayer_Access (collidableDestroyableDamageableLayer_Param);
    begin
         inputProcessorArray (Canvas_Package.UP) := SpecialUpGameInputProcessor_Package.Create (collidableDestroyableDamageableLayer);
         inputProcessorArray (Canvas_Package.DOWN) := SpecialDownGameInputProcessor_Package.Create (collidableDestroyableDamageableLayer);
@@ -48,7 +49,8 @@ package body org.allbinary.game.layer.special.AnalogInputBuilder_Package is
         inputProcessorArray (Canvas_Package.KEY_NUM5) := Special3GameInputProcessor_Package.Create (collidableDestroyableDamageableLayer);
    end disable;
 
-   procedure enable (This : in out AnalogInputBuilder; inputProcessorArray : GameInputProcessor_Access_Array_Access; collidableDestroyableDamageableLayer : CollidableDestroyableDamageableLayer_Access) is
+   procedure enable (This : in out AnalogInputBuilder; inputProcessorArray : GameInputProcessor_Access_Array_Access; collidableDestroyableDamageableLayer_Param : access CollidableDestroyableDamageableLayer'Class) is
+      collidableDestroyableDamageableLayer : CollidableDestroyableDamageableLayer_Access := CollidableDestroyableDamageableLayer_Access (collidableDestroyableDamageableLayer_Param);
    begin
         inputProcessorArray (Canvas_Package.UP) := SpecialAnalogUpGameInputProcessor_Package.Create (collidableDestroyableDamageableLayer);
         inputProcessorArray (Canvas_Package.DOWN) := SpecialAnalogDownGameInputProcessor_Package.Create (collidableDestroyableDamageableLayer);

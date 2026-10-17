@@ -36,31 +36,33 @@ package body org.allbinary.logic.visual.theme.ThemesValidation_Package is
       return This;
    end Create;
 
-   procedure Initialize (This : in out ThemesValidation'Class; node : Node_Access) is
+   procedure Initialize (This : in out ThemesValidation'Class; node_Param : access Node'Class) is
+      node : Node_Access := Node_Access (node_Param);
    begin
       Validation_Package.Initialize (This);
       Initialize_Fields (This);
         null;
    end Initialize;
 
-   function Create (node : Node_Access) return ThemesValidation_Access is
+   function Create (node_Param : access Node'Class) return ThemesValidation_Access is
       This : constant ThemesValidation_Access := new ThemesValidation;
    begin
-      ThemesValidation_Package.Initialize (This.all, node);
+      ThemesValidation_Package.Initialize (This.all, node_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out ThemesValidation'Class; hashMap : HashMap_Access) is
+   procedure Initialize (This : in out ThemesValidation'Class; hashMap_Param : access HashMap'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
    begin
       Validation_Package.Initialize (This);
       Initialize_Fields (This);
         null;
    end Initialize;
 
-   function Create (hashMap : HashMap_Access) return ThemesValidation_Access is
+   function Create (hashMap_Param : access HashMap'Class) return ThemesValidation_Access is
       This : constant ThemesValidation_Access := new ThemesValidation;
    begin
-      ThemesValidation_Package.Initialize (This.all, hashMap);
+      ThemesValidation_Package.Initialize (This.all, hashMap_Param);
       return This;
    end Create;
 
@@ -79,13 +81,15 @@ package body org.allbinary.logic.visual.theme.ThemesValidation_Package is
         return null;
    end toValidationInfoDoc;
 
-   function toValidationInfoNode (This : in out ThemesValidation; document : Document_Access) return Node_Access is
+   function toValidationInfoNode (This : in out ThemesValidation; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
    begin
         return null;
    end toValidationInfoNode;
 
    --  throws Exception
-   function toXmlNode (This : in out ThemesValidation; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out ThemesValidation; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       node : Node_Access;
       size : Integer;
       themeDomNodeInterface : DomNodeInterface_Access;
@@ -100,15 +104,15 @@ package body org.allbinary.logic.visual.theme.ThemesValidation_Package is
         return node;
    end toXmlNode;
 
-   procedure toValidationInfoNode (This : in out ThemesValidation; document : Document_Access) is
-      Java_Result : constant Node_Access := ThemesValidation'Class (This).toValidationInfoNode (document);
+   procedure toValidationInfoNode (This : in out ThemesValidation; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := ThemesValidation'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toValidationInfoNode;
 
-   procedure toXmlNode (This : in out ThemesValidation; document : Document_Access) is
-      Java_Result : constant Node_Access := ThemesValidation'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out ThemesValidation; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := ThemesValidation'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

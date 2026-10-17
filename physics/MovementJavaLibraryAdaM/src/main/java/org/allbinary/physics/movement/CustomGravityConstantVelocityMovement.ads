@@ -43,9 +43,9 @@ package org.allbinary.physics.movement.CustomGravityConstantVelocityMovement_Pac
       gravityUtil : GravityUtil_Access;
    end record;
 
-   procedure Initialize (This : in out CustomGravityConstantVelocityMovement'Class; speedBasicDecimal : BasicDecimal_Access; customGravity : Integer);
-   function Create (speedBasicDecimal : BasicDecimal_Access; customGravity : Integer) return CustomGravityConstantVelocityMovement_Access;
-   procedure process (This : in out CustomGravityConstantVelocityMovement; layer : AllBinaryGameLayer_Access);
+   procedure Initialize (This : in out CustomGravityConstantVelocityMovement'Class; speedBasicDecimal_Param : access BasicDecimal'Class; customGravity : Integer);
+   function Create (speedBasicDecimal_Param : access BasicDecimal'Class; customGravity : Integer) return CustomGravityConstantVelocityMovement_Access;
+   procedure process (This : in out CustomGravityConstantVelocityMovement; layer_Param : access AllBinaryGameLayer'Class);
 
 end org.allbinary.physics.movement.CustomGravityConstantVelocityMovement_Package;
 

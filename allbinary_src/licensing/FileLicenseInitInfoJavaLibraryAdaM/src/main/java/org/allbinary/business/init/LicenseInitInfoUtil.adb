@@ -50,7 +50,8 @@ package body org.allbinary.business.init.LicenseInitInfoUtil_Package is
    end setFilePath;
 
    --  throws Exception
-   procedure write (This : in out LicenseInitInfoUtil; initData : LicenseInitInfo_Access) is
+   procedure write (This : in out LicenseInitInfoUtil; initData_Param : access LicenseInitInfo'Class) is
+      initData : LicenseInitInfo_Access := LicenseInitInfo_Access (initData_Param);
       tsUtil : TsUtil_Access;
       dataOutputStream : AbDataOutputStream_Access;
       licenseIdCrypted : Short_Short_Integer_Array_Access;
@@ -78,7 +79,7 @@ package body org.allbinary.business.init.LicenseInitInfoUtil_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (To_Unbounded_String ("Command Failed: ") & This.INITFILENAME, This'Unchecked_Access, To_Unbounded_String ("write"), e);
+            This.logUtil.put (To_Unbounded_String ("Command Failed: ") & This.INITFILENAME, LicenseInitInfoUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("write"), e);
             FileStreamFactory_Package.getInstance.delete (This.filePath, This.INITFILENAME);
             Java_Throw (e);
                 end;
@@ -110,7 +111,7 @@ package body org.allbinary.business.init.LicenseInitInfoUtil_Package is
             This.filePath := (URLGLOBALS.getMainPath) + (PATH_GLOBALS.getInstance.INIT_PATH);
         end if;
         begin
-            This.logUtil.putF (To_Unbounded_String ("LicenseInitInfo File: ") & This.INITFILENAME, This'Unchecked_Access, METHOD_NAME);
+            This.logUtil.putF (To_Unbounded_String ("LicenseInitInfo File: ") & This.INITFILENAME, LicenseInitInfoUtil_Access'(This'Unchecked_Access), METHOD_NAME);
             fileStreamFactory := FileStreamFactory_Package.getInstance;
             iFile := fileStreamFactory.getFileInputStreamInstance (This.filePath, This.INITFILENAME);
             if (iFile) /= (null) then
@@ -126,7 +127,7 @@ package body org.allbinary.business.init.LicenseInitInfoUtil_Package is
                     decodedByteArray := DatabaseEncoder_Package.decode (iData.readUTF);
                     licenseServerDecoded := Java_New_String (decodedByteArray);
                     initInfo.setServer (WeakCrypt_Package.Create (3).decrypt (licenseServerDecoded), index);
-                    This.logUtil.putF (NEXT_FILE & Java_Image (initInfo.getServer (index)), This'Unchecked_Access, METHOD_NAME);
+                    This.logUtil.putF (NEXT_FILE & Java_Image (initInfo.getServer (index)), LicenseInitInfoUtil_Access'(This'Unchecked_Access), METHOD_NAME);
                 end loop;
                 return initInfo;
             else
@@ -138,13 +139,13 @@ package body org.allbinary.business.init.LicenseInitInfoUtil_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             begin
-                This.logUtil.put (To_Unbounded_String ("Command Failed: ") & This.INITFILENAME, This'Unchecked_Access, METHOD_NAME, e);
+                This.logUtil.put (To_Unbounded_String ("Command Failed: ") & This.INITFILENAME, LicenseInitInfoUtil_Access'(This'Unchecked_Access), METHOD_NAME, e);
             exception
                 when Java_Occurrence : others =>
                     declare
                         e2 : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                     begin
-                This.logUtil.put (To_Unbounded_String ("LicenseInitInfo Read Retry: ") & This.INITFILENAME, This'Unchecked_Access, To_Unbounded_String ("readAgain()"), e2);
+                This.logUtil.put (To_Unbounded_String ("LicenseInitInfo Read Retry: ") & This.INITFILENAME, LicenseInitInfoUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("readAgain()"), e2);
                     end;
             end;
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("LicenseInitInfo Read Error: ") & This.INITFILENAME));

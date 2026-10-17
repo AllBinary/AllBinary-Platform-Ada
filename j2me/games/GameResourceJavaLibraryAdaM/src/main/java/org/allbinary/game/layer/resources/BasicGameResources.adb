@@ -54,7 +54,7 @@ package body org.allbinary.game.layer.resources.BasicGameResources_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.INIT, e);
+            This.logUtil.put (commonStrings.EXCEPTION_Id, BasicGameResources_Access'(This'Unchecked_Access), commonStrings.INIT, e);
                 end;
         end;
    end init;

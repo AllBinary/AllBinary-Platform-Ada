@@ -41,7 +41,10 @@ package body org.allbinary.logic.visual.transform.template.TransformTemplateFact
    end Create;
 
    --  throws Exception
-   function getInstance (This : in out TransformTemplateFactory; abeClientInformation : AbeClientInformationInterface_Access; templateName : Unbounded_String; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return TransformTemplateInterface_Access is
+   function getInstance (This : in out TransformTemplateFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; templateName : Unbounded_String; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return TransformTemplateInterface_Access is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      propertiesHashMap : HashMap_Access := HashMap_Access (propertiesHashMap_Param);
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
       transformInfoEntity : TransformInfoEntity_Access;
       transformInfoInterface : TransformInfoInterface_Access;
       error : Unbounded_String;
@@ -57,15 +60,15 @@ package body org.allbinary.logic.visual.transform.template.TransformTemplateFact
                 begin
             error := To_Unbounded_String ("Failed To Get Instance");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORYERROR) then
-                This.logUtil.put (error & templateName & To_Unbounded_String ("->TemplateFactory"), This'Unchecked_Access, To_Unbounded_String ("getInstance(viewName, HashMap, PageContext)"), e);
+                This.logUtil.put (error & templateName & To_Unbounded_String ("->TemplateFactory"), TransformTemplateFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getInstance(viewName, HashMap, PageContext)"), e);
             end if;
             Java_Throw (e);
                 end;
         end;
    end getInstance;
 
-   procedure getInstance (This : in out TransformTemplateFactory; abeClientInformation : AbeClientInformationInterface_Access; templateName : Unbounded_String; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) is
-      Java_Result : constant TransformTemplateInterface_Access := TransformTemplateFactory'Class (This).getInstance (abeClientInformation, templateName, propertiesHashMap, pageContext);
+   procedure getInstance (This : in out TransformTemplateFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; templateName : Unbounded_String; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+      Java_Result : constant TransformTemplateInterface_Access := TransformTemplateFactory'Class (This).getInstance (abeClientInformation_Param, templateName, propertiesHashMap_Param, pageContext_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

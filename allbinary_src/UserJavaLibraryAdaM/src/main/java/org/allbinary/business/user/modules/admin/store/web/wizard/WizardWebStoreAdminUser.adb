@@ -33,25 +33,28 @@ package body org.allbinary.business.user.modules.admin.store.web.wizard.WizardWe
       return This;
    end Create;
 
-   procedure Initialize (This : in out WizardWebStoreAdminUser'Class; userHashMap : HashMap_Access) is
+   procedure Initialize (This : in out WizardWebStoreAdminUser'Class; userHashMap_Param : access HashMap'Class) is
+      userHashMap : HashMap_Access := HashMap_Access (userHashMap_Param);
    begin
         User_Package.Initialize (This, userHashMap);
    end Initialize;
 
-   function Create (userHashMap : HashMap_Access) return WizardWebStoreAdminUser_Access is
+   function Create (userHashMap_Param : access HashMap'Class) return WizardWebStoreAdminUser_Access is
       This : constant WizardWebStoreAdminUser_Access := new WizardWebStoreAdminUser;
    begin
-      WizardWebStoreAdminUser_Package.Initialize (This.all, userHashMap);
+      WizardWebStoreAdminUser_Package.Initialize (This.all, userHashMap_Param);
       return This;
    end Create;
 
-   procedure validateSession (This : in out WizardWebStoreAdminUser; weblisketSession : WeblisketSessionInterface_Access) is
+   procedure validateSession (This : in out WizardWebStoreAdminUser; weblisketSession_Param : access WeblisketSessionInterface'Class) is
+      weblisketSession : WeblisketSessionInterface_Access := WeblisketSessionInterface_Access (weblisketSession_Param);
    begin
         User (This).validateSession (weblisketSession);
         This.updateSession (weblisketSession);
    end validateSession;
 
-   procedure updateSession (This : in out WizardWebStoreAdminUser; weblisketSession : WeblisketSessionInterface_Access) is
+   procedure updateSession (This : in out WizardWebStoreAdminUser; weblisketSession_Param : access WeblisketSessionInterface'Class) is
+      weblisketSession : WeblisketSessionInterface_Access := WeblisketSessionInterface_Access (weblisketSession_Param);
    begin
         weblisketSession.setStoreName (This.getPermissions);
    end updateSession;

@@ -41,8 +41,8 @@ package org.allbinary.animation.TimedVectorAnimation_Package is
       timeElapsedHelper : TimeDelayHelper_Access;
    end record;
 
-   procedure Initialize (This : in out TimedVectorAnimation'Class; currentPoints : Integer_Array_Access_Array_Access_Array_Access; basicColor : BasicColor_Access; animationBehavior : AnimationBehavior_Access);
-   function Create (currentPoints : Integer_Array_Access_Array_Access_Array_Access; basicColor : BasicColor_Access; animationBehavior : AnimationBehavior_Access) return TimedVectorAnimation_Access;
+   procedure Initialize (This : in out TimedVectorAnimation'Class; currentPoints : Integer_Array_Access_Array_Access_Array_Access; basicColor_Param : access BasicColor'Class; animationBehavior_Param : access AnimationBehavior'Class);
+   function Create (currentPoints : Integer_Array_Access_Array_Access_Array_Access; basicColor_Param : access BasicColor'Class; animationBehavior_Param : access AnimationBehavior'Class) return TimedVectorAnimation_Access;
    procedure nextFrame (This : in out TimedVectorAnimation);
 
 end org.allbinary.animation.TimedVectorAnimation_Package;

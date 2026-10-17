@@ -44,10 +44,10 @@ package admin.taghelpers.AuthenticationHelperFactory_Package is
 
    procedure Initialize (This : in out AuthenticationHelperFactory'Class);
    function Create return AuthenticationHelperFactory_Access;
-   function getInstance (This : in out AuthenticationHelperFactory; hashMap : HashMap_Access; pageContext : PageContext_Access) return Java_Object_Access;
-   procedure getInstance (This : in out AuthenticationHelperFactory; hashMap : HashMap_Access; pageContext : PageContext_Access);
-   function getInstance (This : in out AuthenticationHelperFactory; hashMap : HashMap_Access; httpServletRequest : HttpServletRequest_Access) return Java_Object_Access;
-   procedure getInstance (This : in out AuthenticationHelperFactory; hashMap : HashMap_Access; httpServletRequest : HttpServletRequest_Access);
+   function getInstance (This : in out AuthenticationHelperFactory; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return Java_Object_Access;
+   procedure getInstance (This : in out AuthenticationHelperFactory; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
+   function getInstance (This : in out AuthenticationHelperFactory; hashMap_Param : access HashMap'Class; httpServletRequest_Param : access HttpServletRequest'Class) return Java_Object_Access;
+   procedure getInstance (This : in out AuthenticationHelperFactory; hashMap_Param : access HashMap'Class; httpServletRequest_Param : access HttpServletRequest'Class);
 
 end admin.taghelpers.AuthenticationHelperFactory_Package;
 

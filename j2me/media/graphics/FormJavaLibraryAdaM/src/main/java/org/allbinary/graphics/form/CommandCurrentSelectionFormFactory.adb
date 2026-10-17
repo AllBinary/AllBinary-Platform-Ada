@@ -34,7 +34,11 @@ package body org.allbinary.graphics.form.CommandCurrentSelectionFormFactory_Pack
 
 
    --  throws Exception
-   function getInstance (title : Unbounded_String; items : ABCustomItem_Access_Array_Access; rectangle : Rectangle_Access; formType : FormType_Access; border : Integer; moveForSmallScreen : Boolean; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return ScrollSelectionForm_Access is
+   function getInstance (title : Unbounded_String; items : ABCustomItem_Access_Array_Access; rectangle_Param : access Rectangle'Class; formType_Param : access FormType'Class; border : Integer; moveForSmallScreen : Boolean; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return ScrollSelectionForm_Access is
+      rectangle : Rectangle_Access := Rectangle_Access (rectangle_Param);
+      formType : FormType_Access := FormType_Access (formType_Param);
+      backgroundBasicColor : BasicColor_Access := BasicColor_Access (backgroundBasicColor_Param);
+      foregroundBasicColor : BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
       scrollSelectionForm : ScrollSelectionForm_Access;
    begin
         if Features_Package.getInstance.isFeature (TouchFeatureFactory_Package.getInstance.TOUCH_ENABLED) then
@@ -46,8 +50,8 @@ package body org.allbinary.graphics.form.CommandCurrentSelectionFormFactory_Pack
         end if;
    end getInstance;
 
-   procedure getInstance (title : Unbounded_String; items : ABCustomItem_Access_Array_Access; rectangle : Rectangle_Access; formType : FormType_Access; border : Integer; moveForSmallScreen : Boolean; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) is
-      Java_Result : constant ScrollSelectionForm_Access := getInstance (title, items, rectangle, formType, border, moveForSmallScreen, backgroundBasicColor, foregroundBasicColor);
+   procedure getInstance (title : Unbounded_String; items : ABCustomItem_Access_Array_Access; rectangle_Param : access Rectangle'Class; formType_Param : access FormType'Class; border : Integer; moveForSmallScreen : Boolean; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) is
+      Java_Result : constant ScrollSelectionForm_Access := getInstance (title, items, rectangle_Param, formType_Param, border, moveForSmallScreen, backgroundBasicColor_Param, foregroundBasicColor_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -37,10 +37,10 @@ package org.allbinary.logic.io.file.directory.DirectoryFileVisitor_Package is
 
    procedure Initialize (This : in out DirectoryFileVisitor'Class);
    function Create return DirectoryFileVisitor_Access;
-   function accept_Id (This : in out DirectoryFileVisitor; arg0 : File_Access) return Boolean;
-   procedure accept_Id (This : in out DirectoryFileVisitor; arg0 : File_Access);
-   function visit (This : in out DirectoryFileVisitor; anyType : Java_Object_Access) return Java_Object_Access;
-   procedure visit (This : in out DirectoryFileVisitor; anyType : Java_Object_Access);
+   function accept_Id (This : in out DirectoryFileVisitor; arg0_Param : access File'Class) return Boolean;
+   procedure accept_Id (This : in out DirectoryFileVisitor; arg0_Param : access File'Class);
+   function visit (This : in out DirectoryFileVisitor; anyType_Param : access Java_Object'Class) return Java_Object_Access;
+   procedure visit (This : in out DirectoryFileVisitor; anyType_Param : access Java_Object'Class);
 
 end org.allbinary.logic.io.file.directory.DirectoryFileVisitor_Package;
 

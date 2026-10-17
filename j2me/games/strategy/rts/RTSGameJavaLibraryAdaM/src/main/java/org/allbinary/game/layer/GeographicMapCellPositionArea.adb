@@ -30,22 +30,24 @@ package body org.allbinary.game.layer.GeographicMapCellPositionArea_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out GeographicMapCellPositionArea'Class; layerInterface : AllBinaryLayer_Access) is
+   procedure Initialize (This : in out GeographicMapCellPositionArea'Class; layerInterface_Param : access AllBinaryLayer'Class) is
+      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
    begin
       GeographicMapCellPositionAreaBase_Package.Initialize (This);
       Initialize_Fields (This);
         This.layerInterface := layerInterface;
    end Initialize;
 
-   function Create (layerInterface : AllBinaryLayer_Access) return GeographicMapCellPositionArea_Access is
+   function Create (layerInterface_Param : access AllBinaryLayer'Class) return GeographicMapCellPositionArea_Access is
       This : constant GeographicMapCellPositionArea_Access := new GeographicMapCellPositionArea;
    begin
-      GeographicMapCellPositionArea_Package.Initialize (This.all, layerInterface);
+      GeographicMapCellPositionArea_Package.Initialize (This.all, layerInterface_Param);
       return This;
    end Create;
 
    --  throws Exception
-   procedure update (This : in out GeographicMapCellPositionArea; geographicMapInterface : BasicGeographicMap_Access) is
+   procedure update (This : in out GeographicMapCellPositionArea; geographicMapInterface_Param : access BasicGeographicMap'Class) is
+      geographicMapInterface : BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
    begin
         This.occupyingGeographicMapCellPositionList := This.layerCoveringCellPositionsUtil.getAllXY (geographicMapInterface, This.layerInterface, This.layerInterface.getXP, This.layerInterface.getYP, This.reusableOccupyingGeographicMapCellPositionList);
         This.surroundingGeographicMapCellPositionList := This.cellPositionsUtil.getAllSurrounding (geographicMapInterface, This.occupyingGeographicMapCellPositionList, This.reusableSurroundingGeographicMapCellPositionList);

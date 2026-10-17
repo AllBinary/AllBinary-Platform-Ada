@@ -49,13 +49,13 @@ package body org.allbinary.logic.system.os.OperatingSystemFactory_Package is
         begin
             osString := StringMaker_Package.Create.append (To_Unbounded_String ("OperatingSystem Info: ")).append (This.genericOperatingSystem.toString).toString;
             Ada.Text_IO.Put_Line (Java_Image (osString));
-            This.logUtil.putF (osString, This'Unchecked_Access, commonStrings.GET_INSTANCE);
+            This.logUtil.putF (osString, OperatingSystemFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.GET_INSTANCE, e);
+            This.logUtil.put (commonStrings.EXCEPTION_Id, OperatingSystemFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE, e);
                 end;
         end;
         return This.genericOperatingSystem;

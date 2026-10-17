@@ -24,7 +24,7 @@ package org.bouncycastle.jce.provider.BouncyCastleProvider_Package is
 
    procedure Initialize (This : in out BouncyCastleProvider'Class);
    function Create return BouncyCastleProvider_Access;
-   procedure setParameter (This : in out BouncyCastleProvider; parameterName : Unbounded_String; parameter : Java_Object_Access);
+   procedure setParameter (This : in out BouncyCastleProvider; parameterName : Unbounded_String; parameter_Param : access Java_Object'Class);
 
 end org.bouncycastle.jce.provider.BouncyCastleProvider_Package;
 

@@ -39,13 +39,17 @@ package body org.allbinary.data.tree.dom.AbXslHelper_Package is
    end getInstance;
 
    --  throws Exception
-   function translate (This : in out AbXslHelper; xslFile : AbFile_Access; xmlFile : AbFile_Access) return Unbounded_String is
+   function translate (This : in out AbXslHelper; xslFile_Param : access AbFile'Class; xmlFile_Param : access AbFile'Class) return Unbounded_String is
+      xslFile : AbFile_Access := AbFile_Access (xslFile_Param);
+      xmlFile : AbFile_Access := AbFile_Access (xmlFile_Param);
    begin
         return This.translate (xslFile.getAbsolutePath, xmlFile.getAbsolutePath);
    end translate;
 
    --  throws Exception
-   function translate (This : in out AbXslHelper; xslPath : AbPath_Access; xmlPath : AbPath_Access) return Unbounded_String is
+   function translate (This : in out AbXslHelper; xslPath_Param : access AbPath'Class; xmlPath_Param : access AbPath'Class) return Unbounded_String is
+      xslPath : AbPath_Access := AbPath_Access (xslPath_Param);
+      xmlPath : AbPath_Access := AbPath_Access (xmlPath_Param);
    begin
         return This.translate (xslPath.getPath, xmlPath.getPath);
    end translate;
@@ -67,15 +71,15 @@ package body org.allbinary.data.tree.dom.AbXslHelper_Package is
         end;
    end translate;
 
-   procedure translate (This : in out AbXslHelper; xslFile : AbFile_Access; xmlFile : AbFile_Access) is
-      Java_Result : constant Unbounded_String := AbXslHelper'Class (This).translate (xslFile, xmlFile);
+   procedure translate (This : in out AbXslHelper; xslFile_Param : access AbFile'Class; xmlFile_Param : access AbFile'Class) is
+      Java_Result : constant Unbounded_String := AbXslHelper'Class (This).translate (xslFile_Param, xmlFile_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end translate;
 
-   procedure translate (This : in out AbXslHelper; xslPath : AbPath_Access; xmlPath : AbPath_Access) is
-      Java_Result : constant Unbounded_String := AbXslHelper'Class (This).translate (xslPath, xmlPath);
+   procedure translate (This : in out AbXslHelper; xslPath_Param : access AbPath'Class; xmlPath_Param : access AbPath'Class) is
+      Java_Result : constant Unbounded_String := AbXslHelper'Class (This).translate (xslPath_Param, xmlPath_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

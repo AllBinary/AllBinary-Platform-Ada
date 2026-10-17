@@ -27,7 +27,7 @@ package body org.allbinary.logic.communication.http.AcceptableResponse_Package i
       acceptableResponseUtil : AcceptableResponseUtil_Access;
    begin
       Initialize_Fields (This);
-        This.logUtil.putF (tagName, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+        This.logUtil.putF (tagName, AcceptableResponse_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         acceptableResponseUtil := AcceptableResponseUtil_Package.getInstance;
         acceptableResponseUtil.candidateVector.addAt (index, candidate);
         acceptableResponseUtil.tagNameVector.addAt (index, tagName);

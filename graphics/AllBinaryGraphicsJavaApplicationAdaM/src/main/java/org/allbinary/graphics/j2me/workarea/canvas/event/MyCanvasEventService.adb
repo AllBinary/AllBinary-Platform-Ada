@@ -34,18 +34,21 @@ package body org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventServ
       return This;
    end Create;
 
-   procedure addListener (listener : MyCanvasEventListener_Access) is
+   procedure addListener (listener_Param : access MyCanvasEventListener'Class) is
+      listener : MyCanvasEventListener_Access := MyCanvasEventListener_Access (listener_Param);
    begin
         MyCanvasEventService_Package.listenerList.add (Ada.Tags.Tag (listener.all'Tag), EventListener_Access (listener));
    end addListener;
 
-   procedure removeListener (listener : MyCanvasEventListener_Access) is
+   procedure removeListener (listener_Param : access MyCanvasEventListener'Class) is
+      listener : MyCanvasEventListener_Access := MyCanvasEventListener_Access (listener_Param);
    begin
         MyCanvasEventService_Package.listenerList.remove (Ada.Tags.Tag (listener.all'Tag), EventListener_Access (listener));
    end removeListener;
 
    --  throws Exception
-   procedure fire (evt : MyCanvasEvent_Access) is
+   procedure fire (evt_Param : access MyCanvasEvent'Class) is
+      evt : MyCanvasEvent_Access := MyCanvasEvent_Access (evt_Param);
       listeners : Java_Object_Access_Array_Access;
       i : Integer;
    begin

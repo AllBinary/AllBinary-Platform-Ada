@@ -48,7 +48,9 @@ package body org.allbinary.media.graphics.geography.map.racetrack.drop.RaceTrack
    end Create;
 
    --  throws Exception
-   procedure update (This : in out RaceTrackRandomDropCellPositionGenerator; allBinaryGameLayerManager : AllBinaryGameLayerManager_Access; geographicMapInterface : BasicGeographicMap_Access) is
+   procedure update (This : in out RaceTrackRandomDropCellPositionGenerator; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class; geographicMapInterface_Param : access BasicGeographicMap'Class) is
+      allBinaryGameLayerManager : AllBinaryGameLayerManager_Access := AllBinaryGameLayerManager_Access (allBinaryGameLayerManager_Param);
+      geographicMapInterface : BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
       tiledLayer : AllBinaryTiledLayer_Access;
    begin
         RaceTrackDropCellPositionGenerator (This).update (allBinaryGameLayerManager, geographicMapInterface);
@@ -58,7 +60,8 @@ package body org.allbinary.media.graphics.geography.map.racetrack.drop.RaceTrack
    end update;
 
    --  throws Exception
-   procedure drop (This : in out RaceTrackRandomDropCellPositionGenerator; allBinaryLayerManager : AllBinaryLayerManager_Access; index : Integer) is
+   procedure drop (This : in out RaceTrackRandomDropCellPositionGenerator; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class; index : Integer) is
+      allBinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
       geographicMapCellPosition : GeographicMapCellPosition_Access;
       point : GPoint_Access;
       randomCell : Integer;

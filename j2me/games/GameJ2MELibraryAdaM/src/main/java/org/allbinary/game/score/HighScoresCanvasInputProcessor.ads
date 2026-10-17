@@ -44,14 +44,14 @@ package org.allbinary.game.score.HighScoresCanvasInputProcessor_Package is
       highScoresCanvas : HighScoresCanvas_Access;
    end record;
 
-   procedure Initialize (This : in out HighScoresCanvasInputProcessor'Class; highScoresCanvas : HighScoresCanvas_Access);
-   function Create (highScoresCanvas : HighScoresCanvas_Access) return HighScoresCanvasInputProcessor_Access;
+   procedure Initialize (This : in out HighScoresCanvasInputProcessor'Class; highScoresCanvas_Param : access HighScoresCanvas'Class);
+   function Create (highScoresCanvas_Param : access HighScoresCanvas'Class) return HighScoresCanvasInputProcessor_Access;
    procedure open (This : in out HighScoresCanvasInputProcessor);
    procedure close (This : in out HighScoresCanvasInputProcessor);
-   procedure onPressGameKeyEvent (This : in out HighScoresCanvasInputProcessor; gameKeyEvent : GameKeyEvent_Access);
-   procedure onDownGameKeyEvent (This : in out HighScoresCanvasInputProcessor; gameKeyEvent : GameKeyEvent_Access);
-   procedure onUpGameKeyEvent (This : in out HighScoresCanvasInputProcessor; gameKeyEvent : GameKeyEvent_Access);
-   procedure paint (This : in out HighScoresCanvasInputProcessor; graphics : Graphics_Access);
+   procedure onPressGameKeyEvent (This : in out HighScoresCanvasInputProcessor; gameKeyEvent_Param : access GameKeyEvent'Class);
+   procedure onDownGameKeyEvent (This : in out HighScoresCanvasInputProcessor; gameKeyEvent_Param : access GameKeyEvent'Class);
+   procedure onUpGameKeyEvent (This : in out HighScoresCanvasInputProcessor; gameKeyEvent_Param : access GameKeyEvent'Class);
+   procedure paint (This : in out HighScoresCanvasInputProcessor; graphics_Param : access Graphics'Class);
    function getHighScoresCanvas (This : in out HighScoresCanvasInputProcessor) return HighScoresCanvas_Access;
 
 end org.allbinary.game.score.HighScoresCanvasInputProcessor_Package;

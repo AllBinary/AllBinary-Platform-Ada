@@ -21,20 +21,23 @@ package body org.allbinary.game.layer.special.SpecialDownGameInputProcessor_Pack
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out SpecialDownGameInputProcessor'Class; collidableDestroyableDamageableLayer : CollidableDestroyableDamageableLayer_Access) is
+   procedure Initialize (This : in out SpecialDownGameInputProcessor'Class; collidableDestroyableDamageableLayer_Param : access CollidableDestroyableDamageableLayer'Class) is
+      collidableDestroyableDamageableLayer : CollidableDestroyableDamageableLayer_Access := CollidableDestroyableDamageableLayer_Access (collidableDestroyableDamageableLayer_Param);
    begin
         SpecialGameInputProcessor_Package.Initialize (This, collidableDestroyableDamageableLayer);
    end Initialize;
 
-   function Create (collidableDestroyableDamageableLayer : CollidableDestroyableDamageableLayer_Access) return SpecialDownGameInputProcessor_Access is
+   function Create (collidableDestroyableDamageableLayer_Param : access CollidableDestroyableDamageableLayer'Class) return SpecialDownGameInputProcessor_Access is
       This : constant SpecialDownGameInputProcessor_Access := new SpecialDownGameInputProcessor;
    begin
-      SpecialDownGameInputProcessor_Package.Initialize (This.all, collidableDestroyableDamageableLayer);
+      SpecialDownGameInputProcessor_Package.Initialize (This.all, collidableDestroyableDamageableLayer_Param);
       return This;
    end Create;
 
    --  throws Exception
-   procedure processEvent (This : in out SpecialDownGameInputProcessor; allbinaryLayerManager : AllBinaryLayerManager_Access; gameKeyEvent : GameKeyEvent_Access) is
+   procedure processEvent (This : in out SpecialDownGameInputProcessor; allbinaryLayerManager_Param : access AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent'Class) is
+      allbinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allbinaryLayerManager_Param);
+      gameKeyEvent : GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
    begin
         This.collidableDestroyableDamageableLayer.down;
    end processEvent;

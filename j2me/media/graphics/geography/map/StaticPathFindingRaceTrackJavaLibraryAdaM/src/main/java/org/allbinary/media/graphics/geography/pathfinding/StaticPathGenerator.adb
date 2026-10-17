@@ -26,7 +26,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.StaticPathGenera
    procedure Initialize (This : in out StaticPathGenerator'Class) is
    begin
       Initialize_Fields (This);
-        PreLogUtil_Package.put (To_Unbounded_String ("Using Static Path Finding"), This'Unchecked_Access, CommonStrings_Package.getInstance.CONSTRUCTOR);
+        PreLogUtil_Package.put (To_Unbounded_String ("Using Static Path Finding"), StaticPathGenerator_Access'(This'Unchecked_Access), CommonStrings_Package.getInstance.CONSTRUCTOR);
    end Initialize;
 
    function Create return StaticPathGenerator_Access is
@@ -37,13 +37,16 @@ package body org.allbinary.media.graphics.geography.pathfinding.StaticPathGenera
    end Create;
 
    --  throws Exception
-   procedure init (This : in out StaticPathGenerator; geographicMapInterface : Java_Object_Access; totalPaths : Integer) is
+   procedure init (This : in out StaticPathGenerator; geographicMapInterface_Param : access Java_Object'Class; totalPaths : Integer) is
+      geographicMapInterface : Java_Object_Access := Java_Object_Access (geographicMapInterface_Param);
    begin
         null;
    end init;
 
    --  throws Exception
-   function getGeographicMapCellPositionListFromBasicGeographicMapCellPositionList (This : in out StaticPathGenerator; geographicMapCellPositionFactory : BasicGeographicMapCellPositionFactory_Access; pathList : BasicArrayList_Access) return BasicArrayList_Access is
+   function getGeographicMapCellPositionListFromBasicGeographicMapCellPositionList (This : in out StaticPathGenerator; geographicMapCellPositionFactory_Param : access BasicGeographicMapCellPositionFactory'Class; pathList_Param : access BasicArrayList'Class) return BasicArrayList_Access is
+      geographicMapCellPositionFactory : BasicGeographicMapCellPositionFactory_Access := BasicGeographicMapCellPositionFactory_Access (geographicMapCellPositionFactory_Param);
+      pathList : BasicArrayList_Access := BasicArrayList_Access (pathList_Param);
       list : BasicArrayList_Access;
       size : Integer;
       basicGeographicMapCellPosition : CellPosition_Access;
@@ -63,7 +66,10 @@ package body org.allbinary.media.graphics.geography.pathfinding.StaticPathGenera
    end getGeographicMapCellPositionListFromBasicGeographicMapCellPositionList;
 
    --  throws Exception
-   function createList (This : in out StaticPathGenerator; geographicMapInterface : BasicGeographicMap_Access; geographicMapCellHistory : GeographicMapCellHistory_Access; pathFindingInfo : PathFindingInfo_Access; totalPaths : Integer) return BasicArrayList_Access is
+   function createList (This : in out StaticPathGenerator; geographicMapInterface_Param : access BasicGeographicMap'Class; geographicMapCellHistory_Param : access GeographicMapCellHistory'Class; pathFindingInfo_Param : access PathFindingInfo'Class; totalPaths : Integer) return BasicArrayList_Access is
+      geographicMapInterface : BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
+      geographicMapCellHistory : GeographicMapCellHistory_Access := GeographicMapCellHistory_Access (geographicMapCellHistory_Param);
+      pathFindingInfo : PathFindingInfo_Access := PathFindingInfo_Access (pathFindingInfo_Param);
       commonStrings : CommonStrings_Access;
       pathCacheFactory : PathCacheFactory_Access;
       mapIdInteger : Integer;
@@ -96,28 +102,28 @@ package body org.allbinary.media.graphics.geography.pathfinding.StaticPathGenera
                 pathCacheFactory.add (mapIdInteger, list);
                 pathCacheFactory.remove (smallIntegerSingletonFactory.getAt (id));
             end if;
-            This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Using Cached Path(s): ")).append (StringUtil_Package.getInstance.toString (list)).toString, This'Unchecked_Access, commonStrings.GET_INSTANCE);
+            This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Using Cached Path(s): ")).append (StringUtil_Package.getInstance.toString (list)).toString, StaticPathGenerator_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);
             return list;
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.GET_INSTANCE, e);
+            This.logUtil.put (commonStrings.EXCEPTION_Id, StaticPathGenerator_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE, e);
             return BasicArrayListD_Package.Create;
                 end;
         end;
    end createList;
 
-   procedure getGeographicMapCellPositionListFromBasicGeographicMapCellPositionList (This : in out StaticPathGenerator; geographicMapCellPositionFactory : BasicGeographicMapCellPositionFactory_Access; pathList : BasicArrayList_Access) is
-      Java_Result : constant BasicArrayList_Access := StaticPathGenerator'Class (This).getGeographicMapCellPositionListFromBasicGeographicMapCellPositionList (geographicMapCellPositionFactory, pathList);
+   procedure getGeographicMapCellPositionListFromBasicGeographicMapCellPositionList (This : in out StaticPathGenerator; geographicMapCellPositionFactory_Param : access BasicGeographicMapCellPositionFactory'Class; pathList_Param : access BasicArrayList'Class) is
+      Java_Result : constant BasicArrayList_Access := StaticPathGenerator'Class (This).getGeographicMapCellPositionListFromBasicGeographicMapCellPositionList (geographicMapCellPositionFactory_Param, pathList_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getGeographicMapCellPositionListFromBasicGeographicMapCellPositionList;
 
-   procedure createList (This : in out StaticPathGenerator; geographicMapInterface : BasicGeographicMap_Access; geographicMapCellHistory : GeographicMapCellHistory_Access; pathFindingInfo : PathFindingInfo_Access; totalPaths : Integer) is
-      Java_Result : constant BasicArrayList_Access := StaticPathGenerator'Class (This).createList (geographicMapInterface, geographicMapCellHistory, pathFindingInfo, totalPaths);
+   procedure createList (This : in out StaticPathGenerator; geographicMapInterface_Param : access BasicGeographicMap'Class; geographicMapCellHistory_Param : access GeographicMapCellHistory'Class; pathFindingInfo_Param : access PathFindingInfo'Class; totalPaths : Integer) is
+      Java_Result : constant BasicArrayList_Access := StaticPathGenerator'Class (This).createList (geographicMapInterface_Param, geographicMapCellHistory_Param, pathFindingInfo_Param, totalPaths);
       pragma Unreferenced (Java_Result);
    begin
       null;

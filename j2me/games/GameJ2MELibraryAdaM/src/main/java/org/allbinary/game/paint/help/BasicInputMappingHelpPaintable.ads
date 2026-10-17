@@ -57,11 +57,11 @@ package org.allbinary.game.paint.help.BasicInputMappingHelpPaintable_Package is
       NONE : GameKey_Access;
    end record;
 
-   procedure Initialize (This : in out BasicInputMappingHelpPaintable'Class; gameInputMappingArray : GameInputMapping_Access_Array_Access; basicColor : BasicColor_Access);
-   function Create (gameInputMappingArray : GameInputMapping_Access_Array_Access; basicColor : BasicColor_Access) return BasicInputMappingHelpPaintable_Access;
-   procedure update (This : in out BasicInputMappingHelpPaintable; selectedGameKey : GameKey_Access; selectedInput : Input_Access);
-   function get (This : in out BasicInputMappingHelpPaintable; keyList : BasicArrayList_Access) return Unbounded_String;
-   procedure get (This : in out BasicInputMappingHelpPaintable; keyList : BasicArrayList_Access);
+   procedure Initialize (This : in out BasicInputMappingHelpPaintable'Class; gameInputMappingArray : GameInputMapping_Access_Array_Access; basicColor_Param : access BasicColor'Class);
+   function Create (gameInputMappingArray : GameInputMapping_Access_Array_Access; basicColor_Param : access BasicColor'Class) return BasicInputMappingHelpPaintable_Access;
+   procedure update (This : in out BasicInputMappingHelpPaintable; selectedGameKey_Param : access GameKey'Class; selectedInput_Param : access Input'Class);
+   function get (This : in out BasicInputMappingHelpPaintable; keyList_Param : access BasicArrayList'Class) return Unbounded_String;
+   procedure get (This : in out BasicInputMappingHelpPaintable; keyList_Param : access BasicArrayList'Class);
 
 end org.allbinary.game.paint.help.BasicInputMappingHelpPaintable_Package;
 

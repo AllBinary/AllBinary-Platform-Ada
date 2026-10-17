@@ -48,8 +48,8 @@ package org.allbinary.game.ag.layer.pickup.points.PointsLayer_Package is
 
    procedure Initialize (This : in out PointsLayer'Class; points : Integer);
    function Create (points : Integer) return PointsLayer_Access;
-   procedure paint (This : in out PointsLayer; graphics : Graphics_Access);
-   procedure visit (This : in out PointsLayer; scoreableInterface : ScoreableInterface_Access);
+   procedure paint (This : in out PointsLayer; graphics_Param : access Graphics'Class);
+   procedure visit (This : in out PointsLayer; scoreableInterface_Param : access ScoreableInterface'Class);
 
 end org.allbinary.game.ag.layer.pickup.points.PointsLayer_Package;
 

@@ -43,7 +43,8 @@ package body views.generic_Id.inventory.InventorySearchUtil_Package is
    end getInstance;
 
    --  throws Exception
-   function getBasicItemIdColumn (This : in out InventorySearchUtil; searchRequest : SearchRequest_Access) return BasicArrayList_Access is
+   function getBasicItemIdColumn (This : in out InventorySearchUtil; searchRequest_Param : access SearchRequest'Class) return BasicArrayList_Access is
+      searchRequest : SearchRequest_Access := SearchRequest_Access (searchRequest_Param);
       inventoryEntityInterface : InventoryEntity_Access;
       storeFrontInterface : StoreFrontInterface_Access;
       inventorySearchUtil : InventoryColumnUtil_Access;
@@ -59,7 +60,7 @@ package body views.generic_Id.inventory.InventorySearchUtil_Package is
         inventorySearchUtil := InventoryColumnUtil_Package.getInstance;
         column := inventorySearchUtil.getColumnWhereLike (inventoryEntityInterface, storeFrontInterface.getCategoryPath, This.basicItemData.ID);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PRODUCTSEARCHLOGGING) then
-            This.logUtil.putF (To_Unbounded_String ("Number Of Items Found: ") & Java_Image (column.size), This'Unchecked_Access, To_Unbounded_String ("search"));
+            This.logUtil.putF (To_Unbounded_String ("Number Of Items Found: ") & Java_Image (column.size), InventorySearchUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("search"));
         end if;
         subStoreVector := storeFrontInterface.getSubStores;
         size := subStoreVector.size;
@@ -69,25 +70,30 @@ package body views.generic_Id.inventory.InventorySearchUtil_Package is
             column.addAllList (substoreIdColumn);
         end loop;
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PRODUCTSEARCHLOGGING) then
-            This.logUtil.putF (To_Unbounded_String ("Number Of Items Found Including SubStores: ") & Java_Image (column.size), This'Unchecked_Access, To_Unbounded_String ("search"));
+            This.logUtil.putF (To_Unbounded_String ("Number Of Items Found Including SubStores: ") & Java_Image (column.size), InventorySearchUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("search"));
         end if;
         return column;
    end getBasicItemIdColumn;
 
    --  throws Exception
-   function getNoResults (This : in out InventorySearchUtil; viewDocumentInterface : TransformDocumentInterface_Access; inventoryNode : Node_Access) return Unbounded_String is
+   function getNoResults (This : in out InventorySearchUtil; viewDocumentInterface_Param : access TransformDocumentInterface'Class; inventoryNode_Param : access Node'Class) return Unbounded_String is
+      viewDocumentInterface : TransformDocumentInterface_Access := TransformDocumentInterface_Access (viewDocumentInterface_Param);
+      inventoryNode : Node_Access := Node_Access (inventoryNode_Param);
       success : Unbounded_String;
    begin
         inventoryNode.appendChild (ModDomHelper_Package.createNameValueNodes (viewDocumentInterface.getDoc, SearchData_Package.TOTAL_NUMBER_PAGES, This.commonPhoneStrings.ZERO));
         inventoryNode.appendChild (ModDomHelper_Package.createNameValueNodes (viewDocumentInterface.getDoc, SearchData_Package.TOTAL_NUMBER_ITEMS, This.commonPhoneStrings.ZERO));
         success := XmlDocumentHelper_Package.toString (viewDocumentInterface.getDoc);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PRODUCTSEARCHLOGGING) then
-            This.logUtil.putF (To_Unbounded_String ("No Results Xml: ") & success, This'Unchecked_Access, To_Unbounded_String ("search"));
+            This.logUtil.putF (To_Unbounded_String ("No Results Xml: ") & success, InventorySearchUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("search"));
         end if;
         return success;
    end getNoResults;
 
-   function search (This : in out InventorySearchUtil; abeClientInformation : AbeClientInformationInterface_Access; searchRequest : SearchRequest_Access; column : BasicArrayList_Access) return Unbounded_String_Array_Access is
+   function search (This : in out InventorySearchUtil; abeClientInformation_Param : access AbeClientInformationInterface'Class; searchRequest_Param : access SearchRequest'Class; column_Param : access BasicArrayList'Class) return Unbounded_String_Array_Access is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      searchRequest : SearchRequest_Access := SearchRequest_Access (searchRequest_Param);
+      column : BasicArrayList_Access := BasicArrayList_Access (column_Param);
       inventoryEntityInterface : InventoryEntity_Access;
       searchParams : SearchParams_Access;
       startPage : Integer;
@@ -235,29 +241,29 @@ package body views.generic_Id.inventory.InventorySearchUtil_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PRODUCTSEARCHLOGGINGERROR) then
-                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("search"), e);
+                This.logUtil.put (This.commonStrings.FAILURE, InventorySearchUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("search"), e);
             end if;
             return null;
                 end;
         end;
    end search;
 
-   procedure getBasicItemIdColumn (This : in out InventorySearchUtil; searchRequest : SearchRequest_Access) is
-      Java_Result : constant BasicArrayList_Access := InventorySearchUtil'Class (This).getBasicItemIdColumn (searchRequest);
+   procedure getBasicItemIdColumn (This : in out InventorySearchUtil; searchRequest_Param : access SearchRequest'Class) is
+      Java_Result : constant BasicArrayList_Access := InventorySearchUtil'Class (This).getBasicItemIdColumn (searchRequest_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getBasicItemIdColumn;
 
-   procedure getNoResults (This : in out InventorySearchUtil; viewDocumentInterface : TransformDocumentInterface_Access; inventoryNode : Node_Access) is
-      Java_Result : constant Unbounded_String := InventorySearchUtil'Class (This).getNoResults (viewDocumentInterface, inventoryNode);
+   procedure getNoResults (This : in out InventorySearchUtil; viewDocumentInterface_Param : access TransformDocumentInterface'Class; inventoryNode_Param : access Node'Class) is
+      Java_Result : constant Unbounded_String := InventorySearchUtil'Class (This).getNoResults (viewDocumentInterface_Param, inventoryNode_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getNoResults;
 
-   procedure search (This : in out InventorySearchUtil; abeClientInformation : AbeClientInformationInterface_Access; searchRequest : SearchRequest_Access; column : BasicArrayList_Access) is
-      Java_Result : constant Unbounded_String_Array_Access := InventorySearchUtil'Class (This).search (abeClientInformation, searchRequest, column);
+   procedure search (This : in out InventorySearchUtil; abeClientInformation_Param : access AbeClientInformationInterface'Class; searchRequest_Param : access SearchRequest'Class; column_Param : access BasicArrayList'Class) is
+      Java_Result : constant Unbounded_String_Array_Access := InventorySearchUtil'Class (This).search (abeClientInformation_Param, searchRequest_Param, column_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

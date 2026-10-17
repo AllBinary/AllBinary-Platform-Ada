@@ -45,10 +45,10 @@ package org.allbinary.game.layer.waypoint.WaypointLayerInterface_Package is
    type WaypointLayerInterface_Access is access all WaypointLayerInterface'Class;
    type WaypointLayerInterface_Access_Array is array (Natural range <>) of WaypointLayerInterface_Access;
    type WaypointLayerInterface_Access_Array_Access is access all WaypointLayerInterface_Access_Array;
-   procedure init (This : in out WaypointLayerInterface; geographicMapCellHistory : GeographicMapCellHistory_Access; geographicMapCellPositionBasicArrayList : BasicArrayList_Access) is abstract;
-   function getMoveOutOfBuildAreaPath (This : in out WaypointLayerInterface; geographicMapCellPosition : GeographicMapCellPosition_Access) return BasicArrayList_Access is abstract;
-   procedure setClosestGeographicMapCellHistory (This : in out WaypointLayerInterface; pathsList : BasicArrayList_Access) is abstract;
-   procedure teleportTo (This : in out WaypointLayerInterface; geographicMapCellPosition : GeographicMapCellPosition_Access) is abstract;
+   procedure init (This : in out WaypointLayerInterface; geographicMapCellHistory_Param : access GeographicMapCellHistory'Class; geographicMapCellPositionBasicArrayList_Param : access BasicArrayList'Class) is abstract;
+   function getMoveOutOfBuildAreaPath (This : in out WaypointLayerInterface; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return BasicArrayList_Access is abstract;
+   procedure setClosestGeographicMapCellHistory (This : in out WaypointLayerInterface; pathsList_Param : access BasicArrayList'Class) is abstract;
+   procedure teleportTo (This : in out WaypointLayerInterface; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is abstract;
    procedure setLoad (This : in out WaypointLayerInterface; resource : Integer) is abstract;
    function getSurroundingGeographicMapCellPositionList (This : in out WaypointLayerInterface) return BasicArrayList_Access is abstract;
    function isSelected (This : in out WaypointLayerInterface) return Boolean is abstract;
@@ -56,7 +56,7 @@ package org.allbinary.game.layer.waypoint.WaypointLayerInterface_Package is
    function isShowMoreCaptionStates (This : in out WaypointLayerInterface) return Boolean is abstract;
    procedure trackTo (This : in out WaypointLayerInterface; reason : Unbounded_String) is abstract;
    procedure trackToDXY (This : in out WaypointLayerInterface; dx : Integer; dy : Integer) is abstract;
-   function buildingChase (This : in out WaypointLayerInterface; allbinaryLayer : AllBinaryLayer_Access; cellPosition : GeographicMapCellPosition_Access) return Boolean is abstract;
+   function buildingChase (This : in out WaypointLayerInterface; allbinaryLayer_Param : access AllBinaryLayer'Class; cellPosition_Param : access GeographicMapCellPosition'Class) return Boolean is abstract;
    function getTrackingEvent (This : in out WaypointLayerInterface) return TrackingEvent_Access is abstract;
    procedure allStop (This : in out WaypointLayerInterface) is abstract;
    function isWaypointListEmptyOrOnlyTargets (This : in out WaypointLayerInterface) return Boolean is abstract;

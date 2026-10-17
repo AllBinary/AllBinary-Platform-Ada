@@ -50,8 +50,8 @@ package org.allbinary.media.image.ImageJ2MEScaleUtil_Package is
    function getInstance return ImageJ2MEScaleUtil_Access;
    function scaleArray (This : in out ImageJ2MEScaleUtil; images : Image_Access_Array_Access; width : Integer; height : Integer) return Image_Access_Array_Access;
    procedure scaleArray (This : in out ImageJ2MEScaleUtil; images : Image_Access_Array_Access; width : Integer; height : Integer);
-   function scale (This : in out ImageJ2MEScaleUtil; image : Image_Access; width : Integer; height : Integer) return Image_Access;
-   procedure scale (This : in out ImageJ2MEScaleUtil; image : Image_Access; width : Integer; height : Integer);
+   function scale (This : in out ImageJ2MEScaleUtil; image_Param : access Image'Class; width : Integer; height : Integer) return Image_Access;
+   procedure scale (This : in out ImageJ2MEScaleUtil; image_Param : access Image'Class; width : Integer; height : Integer);
 
 end org.allbinary.media.image.ImageJ2MEScaleUtil_Package;
 

@@ -30,7 +30,10 @@ package body org.allbinary.game.score.RecordStoreHighScores_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out RecordStoreHighScores'Class; abeClientInformation : AbeClientInformationInterface_Access; gameInfo : GameInfo_Access; name : Unbounded_String; heading : Unbounded_String; columnTwoHeading : Unbounded_String; recordComparatorInterface : RecordComparator_Access) is
+   procedure Initialize (This : in out RecordStoreHighScores'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; gameInfo_Param : access GameInfo'Class; name : Unbounded_String; heading : Unbounded_String; columnTwoHeading : Unbounded_String; recordComparatorInterface_Param : access RecordComparator'Class) is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      gameInfo : GameInfo_Access := GameInfo_Access (gameInfo_Param);
+      recordComparatorInterface : RecordComparator_Access := RecordComparator_Access (recordComparatorInterface_Param);
    begin
         HighScores_Package.Initialize (This, name, heading, columnTwoHeading);
         Initialize_Fields (This);
@@ -40,14 +43,17 @@ package body org.allbinary.game.score.RecordStoreHighScores_Package is
         This.load;
    end Initialize;
 
-   function Create (abeClientInformation : AbeClientInformationInterface_Access; gameInfo : GameInfo_Access; name : Unbounded_String; heading : Unbounded_String; columnTwoHeading : Unbounded_String; recordComparatorInterface : RecordComparator_Access) return RecordStoreHighScores_Access is
+   function Create (abeClientInformation_Param : access AbeClientInformationInterface'Class; gameInfo_Param : access GameInfo'Class; name : Unbounded_String; heading : Unbounded_String; columnTwoHeading : Unbounded_String; recordComparatorInterface_Param : access RecordComparator'Class) return RecordStoreHighScores_Access is
       This : constant RecordStoreHighScores_Access := new RecordStoreHighScores;
    begin
-      RecordStoreHighScores_Package.Initialize (This.all, abeClientInformation, gameInfo, name, heading, columnTwoHeading, recordComparatorInterface);
+      RecordStoreHighScores_Package.Initialize (This.all, abeClientInformation_Param, gameInfo_Param, name, heading, columnTwoHeading, recordComparatorInterface_Param);
       return This;
    end Create;
 
-   function getInstance (abeClientInformation : AbeClientInformationInterface_Access; gameInfo : GameInfo_Access; highScoreName : Unbounded_String; heading : Unbounded_String; columnTwoHeading : Unbounded_String; recordComparatorInterface : RecordComparator_Access) return HighScores_Access is
+   function getInstance (abeClientInformation_Param : access AbeClientInformationInterface'Class; gameInfo_Param : access GameInfo'Class; highScoreName : Unbounded_String; heading : Unbounded_String; columnTwoHeading : Unbounded_String; recordComparatorInterface_Param : access RecordComparator'Class) return HighScores_Access is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      gameInfo : GameInfo_Access := GameInfo_Access (gameInfo_Param);
+      recordComparatorInterface : RecordComparator_Access := RecordComparator_Access (recordComparatorInterface_Param);
       highScoresCanBeNull : Java_Object_Access;
       highScores : HighScores_Access;
    begin
@@ -60,21 +66,23 @@ package body org.allbinary.game.score.RecordStoreHighScores_Package is
         return HighScores_Access (highScoresCanBeNull);
    end getInstance;
 
-   function getRecordId (This : in out RecordStoreHighScores; abeClientInformation : AbeClientInformationInterface_Access) return Unbounded_String is
+   function getRecordId (This : in out RecordStoreHighScores; abeClientInformation_Param : access AbeClientInformationInterface'Class) return Unbounded_String is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
    begin
         return This.platformRecordIdUtil.getRecordId (abeClientInformation, StringMaker_Package.Create.append (CommonSeps_Package.getInstance.UNDERSCORE).append (This.getName).append (This.RECORD_ID).toString);
    end getRecordId;
 
-   procedure addHighScore (This : in out RecordStoreHighScores; newHighScore : HighScore_Access) is
+   procedure addHighScore (This : in out RecordStoreHighScores; newHighScore_Param : access HighScore'Class) is
+      newHighScore : HighScore_Access := HighScore_Access (newHighScore_Param);
       recordStore : RecordStore_Access;
       highScoreBytes : Short_Short_Integer_Array_Access;
       recordId : Integer;
    begin
         recordStore := NullRecordStore_Package.NULL_RECORD_STORE;
         begin
-            This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Adding HighScore: ")).appendlong (Long_Long_Integer (newHighScore.getScore)).toString, This'Unchecked_Access, This.commonStrings.ADD);
+            This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Adding HighScore: ")).appendlong (Long_Long_Integer (newHighScore.getScore)).toString, RecordStoreHighScores_Access'(This'Unchecked_Access), This.commonStrings.ADD);
             if This.isTooManyHighScores then
-                This.logUtil.putF (To_Unbounded_String ("Removing Lowest Score"), This'Unchecked_Access, This.commonStrings.ADD);
+                This.logUtil.putF (To_Unbounded_String ("Removing Lowest Score"), RecordStoreHighScores_Access'(This'Unchecked_Access), This.commonStrings.ADD);
                 This.removeLowestHighScore;
             end if;
             recordStore := RecordStore_Package.openRecordStore (This.getRecordId (This.abeClientInformation), True);
@@ -86,14 +94,14 @@ package body org.allbinary.game.score.RecordStoreHighScores_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.ADD, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, RecordStoreHighScores_Access'(This'Unchecked_Access), This.commonStrings.ADD, e);
                 end;
         end;
         --  finally
         begin
             begin
                 if (recordStore) /= (null) then
-                    PreLogUtil_Package.put (To_Unbounded_String ("Closing RecordStore"), This'Unchecked_Access, This.commonStrings.ADD);
+                    PreLogUtil_Package.put (To_Unbounded_String ("Closing RecordStore"), RecordStoreHighScores_Access'(This'Unchecked_Access), This.commonStrings.ADD);
                     recordStore.closeRecordStore;
                 end if;
             exception
@@ -101,7 +109,7 @@ package body org.allbinary.game.score.RecordStoreHighScores_Package is
                     declare
                         e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                     begin
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.ADD, e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, RecordStoreHighScores_Access'(This'Unchecked_Access), This.commonStrings.ADD, e);
                     end;
             end;
         end;
@@ -144,7 +152,7 @@ package body org.allbinary.game.score.RecordStoreHighScores_Package is
                 end if;
             end loop;
             if (bestHighScore.getId) /= (-(1)) then
-                This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Removing Lowest HighScore: ")).appendlong (Long_Long_Integer (bestHighScore.getScore)).toString, This'Unchecked_Access, This.commonStrings.LOAD);
+                This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Removing Lowest HighScore: ")).appendlong (Long_Long_Integer (bestHighScore.getScore)).toString, RecordStoreHighScores_Access'(This'Unchecked_Access), This.commonStrings.LOAD);
                 recordStore.deleteRecord (bestHighScore.getId);
             end if;
         exception
@@ -152,14 +160,14 @@ package body org.allbinary.game.score.RecordStoreHighScores_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("removeLowestHighScore"), e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, RecordStoreHighScores_Access'(This'Unchecked_Access), To_Unbounded_String ("removeLowestHighScore"), e);
                 end;
         end;
         --  finally
         begin
             begin
                 if (recordStore) /= (null) then
-                    PreLogUtil_Package.put (To_Unbounded_String ("Closing RecordStore"), This'Unchecked_Access, To_Unbounded_String ("removeLowestHighScore"));
+                    PreLogUtil_Package.put (To_Unbounded_String ("Closing RecordStore"), RecordStoreHighScores_Access'(This'Unchecked_Access), To_Unbounded_String ("removeLowestHighScore"));
                     recordStore.closeRecordStore;
                 end if;
             exception
@@ -167,7 +175,7 @@ package body org.allbinary.game.score.RecordStoreHighScores_Package is
                     declare
                         e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                     begin
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("removeLowestHighScore"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, RecordStoreHighScores_Access'(This'Unchecked_Access), To_Unbounded_String ("removeLowestHighScore"), e);
                     end;
             end;
         end;
@@ -223,7 +231,7 @@ package body org.allbinary.game.score.RecordStoreHighScores_Package is
                             declare
                                 e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                             begin
-                        This.logUtil.put (To_Unbounded_String ("EOF"), This'Unchecked_Access, This.commonStrings.LOAD, e);
+                        This.logUtil.put (To_Unbounded_String ("EOF"), RecordStoreHighScores_Access'(This'Unchecked_Access), This.commonStrings.LOAD, e);
                         Java_Throw (e);
                             end;
                     end;
@@ -234,14 +242,14 @@ package body org.allbinary.game.score.RecordStoreHighScores_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (To_Unbounded_String ("No High Scores"), This'Unchecked_Access, This.commonStrings.LOAD, e);
+            This.logUtil.put (To_Unbounded_String ("No High Scores"), RecordStoreHighScores_Access'(This'Unchecked_Access), This.commonStrings.LOAD, e);
                 end;
         end;
         --  finally
         begin
             begin
                 if (recordStore) /= (null) then
-                    PreLogUtil_Package.put (To_Unbounded_String ("Closing RecordStore"), This'Unchecked_Access, This.commonStrings.LOAD);
+                    PreLogUtil_Package.put (To_Unbounded_String ("Closing RecordStore"), RecordStoreHighScores_Access'(This'Unchecked_Access), This.commonStrings.LOAD);
                     recordStore.closeRecordStore;
                 end if;
             exception
@@ -249,7 +257,7 @@ package body org.allbinary.game.score.RecordStoreHighScores_Package is
                     declare
                         e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                     begin
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.LOAD, e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, RecordStoreHighScores_Access'(This'Unchecked_Access), This.commonStrings.LOAD, e);
                     end;
             end;
         end;
@@ -260,13 +268,14 @@ package body org.allbinary.game.score.RecordStoreHighScores_Package is
         if ((This.getList) /= (null)) and then ((This.getList.size) < (This.MAXHIGHSCORES)) then
             return False;
         else
-            This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("HighScores RecordStore Max Reached: ")).appendint (This.MAXHIGHSCORES).toString, This'Unchecked_Access, To_Unbounded_String ("isTooManyHighScores"));
+            This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("HighScores RecordStore Max Reached: ")).appendint (This.MAXHIGHSCORES).toString, RecordStoreHighScores_Access'(This'Unchecked_Access), To_Unbounded_String ("isTooManyHighScores"));
             return True;
         end if;
    end isTooManyHighScores;
 
    --  throws Exception
-   function isBestScore (This : in out RecordStoreHighScores; newHighScore : HighScore_Access) return Boolean is
+   function isBestScore (This : in out RecordStoreHighScores; newHighScore_Param : access HighScore'Class) return Boolean is
+      newHighScore : HighScore_Access := HighScore_Access (newHighScore_Param);
       list : BasicArrayList_Access;
       size : Integer;
       highScore : HighScore_Access;
@@ -274,7 +283,7 @@ package body org.allbinary.game.score.RecordStoreHighScores_Package is
    begin
         begin
             if not (This.isTooManyHighScores) then
-                This.logUtil.putF (To_Unbounded_String ("Slot Available for a High Score"), This'Unchecked_Access, To_Unbounded_String ("isBestScore"));
+                This.logUtil.putF (To_Unbounded_String ("Slot Available for a High Score"), RecordStoreHighScores_Access'(This'Unchecked_Access), To_Unbounded_String ("isBestScore"));
                 return True;
             else
                 list := This.getList;
@@ -282,19 +291,19 @@ package body org.allbinary.game.score.RecordStoreHighScores_Package is
                 for index in 0 .. (size) - 1 loop
                     highScore := HighScore_Access (list.objectArray (index));
                     if (This.recordComparatorInterface.compare (newHighScore.getAsBytes, highScore.getAsBytes)) = (RecordComparator_Package.FOLLOWS) then
-                        This.logUtil.putF (To_Unbounded_String ("Obtained a High Score"), This'Unchecked_Access, To_Unbounded_String ("isBestScore"));
+                        This.logUtil.putF (To_Unbounded_String ("Obtained a High Score"), RecordStoreHighScores_Access'(This'Unchecked_Access), To_Unbounded_String ("isBestScore"));
                         return True;
                     end if;
                 end loop;
             end if;
-            This.logUtil.putF (To_Unbounded_String ("Not a High Score"), This'Unchecked_Access, To_Unbounded_String ("isBestScore"));
+            This.logUtil.putF (To_Unbounded_String ("Not a High Score"), RecordStoreHighScores_Access'(This'Unchecked_Access), To_Unbounded_String ("isBestScore"));
             return False;
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.ADD, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, RecordStoreHighScores_Access'(This'Unchecked_Access), This.commonStrings.ADD, e);
             Java_Throw (e);
                 end;
         end;
@@ -319,22 +328,22 @@ package body org.allbinary.game.score.RecordStoreHighScores_Package is
         return stringBuffer.toString;
    end toString;
 
-   procedure getInstance (abeClientInformation : AbeClientInformationInterface_Access; gameInfo : GameInfo_Access; highScoreName : Unbounded_String; heading : Unbounded_String; columnTwoHeading : Unbounded_String; recordComparatorInterface : RecordComparator_Access) is
-      Java_Result : constant HighScores_Access := getInstance (abeClientInformation, gameInfo, highScoreName, heading, columnTwoHeading, recordComparatorInterface);
+   procedure getInstance (abeClientInformation_Param : access AbeClientInformationInterface'Class; gameInfo_Param : access GameInfo'Class; highScoreName : Unbounded_String; heading : Unbounded_String; columnTwoHeading : Unbounded_String; recordComparatorInterface_Param : access RecordComparator'Class) is
+      Java_Result : constant HighScores_Access := getInstance (abeClientInformation_Param, gameInfo_Param, highScoreName, heading, columnTwoHeading, recordComparatorInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
-   procedure getRecordId (This : in out RecordStoreHighScores; abeClientInformation : AbeClientInformationInterface_Access) is
-      Java_Result : constant Unbounded_String := RecordStoreHighScores'Class (This).getRecordId (abeClientInformation);
+   procedure getRecordId (This : in out RecordStoreHighScores; abeClientInformation_Param : access AbeClientInformationInterface'Class) is
+      Java_Result : constant Unbounded_String := RecordStoreHighScores'Class (This).getRecordId (abeClientInformation_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getRecordId;
 
-   procedure isBestScore (This : in out RecordStoreHighScores; newHighScore : HighScore_Access) is
-      Java_Result : constant Boolean := RecordStoreHighScores'Class (This).isBestScore (newHighScore);
+   procedure isBestScore (This : in out RecordStoreHighScores; newHighScore_Param : access HighScore'Class) is
+      Java_Result : constant Boolean := RecordStoreHighScores'Class (This).isBestScore (newHighScore_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

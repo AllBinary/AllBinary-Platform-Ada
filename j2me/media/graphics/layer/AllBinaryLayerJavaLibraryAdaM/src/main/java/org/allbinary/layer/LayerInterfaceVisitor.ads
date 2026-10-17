@@ -29,7 +29,7 @@ package org.allbinary.layer.LayerInterfaceVisitor_Package is
    type LayerInterfaceVisitor_Access is access all LayerInterfaceVisitor'Class;
    type LayerInterfaceVisitor_Access_Array is array (Natural range <>) of LayerInterfaceVisitor_Access;
    type LayerInterfaceVisitor_Access_Array_Access is access all LayerInterfaceVisitor_Access_Array;
-   procedure visit (This : in out LayerInterfaceVisitor; layerInterface : AllBinaryLayer_Access) is abstract;
+   procedure visit (This : in out LayerInterfaceVisitor; layerInterface_Param : access AllBinaryLayer'Class) is abstract;
 
 end org.allbinary.layer.LayerInterfaceVisitor_Package;
 

@@ -22,7 +22,8 @@ package body org.allbinary.business.context.configuration.ContextConfigurationVi
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ContextConfigurationView'Class; node : Node_Access) is
+   procedure Initialize (This : in out ContextConfigurationView'Class; node_Param : access Node'Class) is
+      node : Node_Access := Node_Access (node_Param);
       childNodeList : NodeList_Access;
       emailConfigurationNode : Node_Access;
       emailServerConfigurationView : EmailServerConfigurationView_Access;
@@ -35,23 +36,24 @@ package body org.allbinary.business.context.configuration.ContextConfigurationVi
         This.contextConfigurationInterface.setEmailServerConfigurationInterface (EmailServerConfigurationInterface_Access (emailServerConfigurationView.getEmailConfigurationInterface));
    end Initialize;
 
-   function Create (node : Node_Access) return ContextConfigurationView_Access is
+   function Create (node_Param : access Node'Class) return ContextConfigurationView_Access is
       This : constant ContextConfigurationView_Access := new ContextConfigurationView;
    begin
-      ContextConfigurationView_Package.Initialize (This.all, node);
+      ContextConfigurationView_Package.Initialize (This.all, node_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out ContextConfigurationView'Class; contextConfigurationInterface : ContextConfigurationInterface_Access) is
+   procedure Initialize (This : in out ContextConfigurationView'Class; contextConfigurationInterface_Param : access ContextConfigurationInterface'Class) is
+      contextConfigurationInterface : ContextConfigurationInterface_Access := ContextConfigurationInterface_Access (contextConfigurationInterface_Param);
    begin
       Initialize_Fields (This);
         This.contextConfigurationInterface := contextConfigurationInterface;
    end Initialize;
 
-   function Create (contextConfigurationInterface : ContextConfigurationInterface_Access) return ContextConfigurationView_Access is
+   function Create (contextConfigurationInterface_Param : access ContextConfigurationInterface'Class) return ContextConfigurationView_Access is
       This : constant ContextConfigurationView_Access := new ContextConfigurationView;
    begin
-      ContextConfigurationView_Package.Initialize (This.all, contextConfigurationInterface);
+      ContextConfigurationView_Package.Initialize (This.all, contextConfigurationInterface_Param);
       return This;
    end Create;
 
@@ -61,7 +63,8 @@ package body org.allbinary.business.context.configuration.ContextConfigurationVi
    end getContextConfigurationInterface;
 
    --  throws Exception
-   function toXmlNode (This : in out ContextConfigurationView; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out ContextConfigurationView; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       node : Node_Access;
       emailServerConfigurationView : EmailServerConfigurationView_Access;
    begin
@@ -71,8 +74,8 @@ package body org.allbinary.business.context.configuration.ContextConfigurationVi
         return node;
    end toXmlNode;
 
-   procedure toXmlNode (This : in out ContextConfigurationView; document : Document_Access) is
-      Java_Result : constant Node_Access := ContextConfigurationView'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out ContextConfigurationView; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := ContextConfigurationView'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

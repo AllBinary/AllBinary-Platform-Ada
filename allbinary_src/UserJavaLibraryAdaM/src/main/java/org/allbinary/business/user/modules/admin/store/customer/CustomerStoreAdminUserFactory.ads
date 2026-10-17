@@ -40,8 +40,8 @@ package org.allbinary.business.user.modules.admin.store.customer.CustomerStoreAd
    procedure Initialize (This : in out CustomerStoreAdminUserFactory'Class);
    function Create return CustomerStoreAdminUserFactory_Access;
    function getInstance (This : in out CustomerStoreAdminUserFactory) return UserInterface_Access;
-   function getInstance (This : in out CustomerStoreAdminUserFactory; hashMap : HashMap_Access) return UserInterface_Access;
-   procedure getInstance (This : in out CustomerStoreAdminUserFactory; hashMap : HashMap_Access);
+   function getInstance (This : in out CustomerStoreAdminUserFactory; hashMap_Param : access HashMap'Class) return UserInterface_Access;
+   procedure getInstance (This : in out CustomerStoreAdminUserFactory; hashMap_Param : access HashMap'Class);
 
 end org.allbinary.business.user.modules.admin.store.customer.CustomerStoreAdminUserFactory_Package;
 

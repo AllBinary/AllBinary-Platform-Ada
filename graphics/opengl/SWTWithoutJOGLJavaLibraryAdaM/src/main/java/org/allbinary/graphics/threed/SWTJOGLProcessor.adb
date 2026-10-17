@@ -20,7 +20,8 @@ package body org.allbinary.graphics.threed.SWTJOGLProcessor_Package is
       null;
       This.glHolder := GLHolder_Package.Create  --  Java anonymous class body: implement it as a named type
 --          
---     procedure run (This : in out ; renderer : Java_Object_Access) is
+--     procedure run (This : in out ; renderer_Param : access Java_Object'Class) is
+--        renderer : Java_Object_Access := Java_Object_Access (renderer_Param);
 --     begin
 --              null;
 --     end run;
@@ -45,7 +46,9 @@ package body org.allbinary.graphics.threed.SWTJOGLProcessor_Package is
         return SWTJOGLProcessor_Package.instance;
    end getInstance;
 
-   procedure init (This : in out SWTJOGLProcessor; display : Java_Object_Access; comp : Java_Object_Access) is
+   procedure init (This : in out SWTJOGLProcessor; display_Param : access Java_Object'Class; comp_Param : access Java_Object'Class) is
+      display : Java_Object_Access := Java_Object_Access (display_Param);
+      comp : Java_Object_Access := Java_Object_Access (comp_Param);
    begin
         null;
    end init;
@@ -55,7 +58,8 @@ package body org.allbinary.graphics.threed.SWTJOGLProcessor_Package is
         return This.glHolder.isCreated;
    end isHolderCreated;
 
-   procedure setRenderer (This : in out SWTJOGLProcessor; renderer : Java_Object_Access) is
+   procedure setRenderer (This : in out SWTJOGLProcessor; renderer_Param : access Java_Object'Class) is
+      renderer : Java_Object_Access := Java_Object_Access (renderer_Param);
    begin
         null;
    end setRenderer;
@@ -75,7 +79,8 @@ package body org.allbinary.graphics.threed.SWTJOGLProcessor_Package is
         null;
    end onSurfaceCreated;
 
-   procedure onSurfaceChangedForEvent (This : in out SWTJOGLProcessor; event : Java_Object_Access) is
+   procedure onSurfaceChangedForEvent (This : in out SWTJOGLProcessor; event_Param : access Java_Object'Class) is
+      event : Java_Object_Access := Java_Object_Access (event_Param);
    begin
         null;
    end onSurfaceChangedForEvent;
@@ -95,7 +100,8 @@ package body org.allbinary.graphics.threed.SWTJOGLProcessor_Package is
         null;
    end addListener;
 
-   procedure addListeners (This : in out SWTJOGLProcessor; midlet : MIDlet_Access) is
+   procedure addListeners (This : in out SWTJOGLProcessor; midlet_Param : access MIDlet'Class) is
+      midlet : MIDlet_Access := MIDlet_Access (midlet_Param);
    begin
         null;
    end addListeners;
@@ -115,54 +121,59 @@ package body org.allbinary.graphics.threed.SWTJOGLProcessor_Package is
         null;
    end setCustom;
 
-   procedure setRatioProcessor (This : in out SWTJOGLProcessor; ratioProcessor : RatioProcessor_Access) is
+   procedure setRatioProcessor (This : in out SWTJOGLProcessor; ratioProcessor_Param : access RatioProcessor'Class) is
+      ratioProcessor : RatioProcessor_Access := RatioProcessor_Access (ratioProcessor_Param);
    begin
         null;
    end setRatioProcessor;
 
-   function charWidth (This : in out SWTJOGLProcessor; font : Font_Access; ch : Character) return Integer is
+   function charWidth (This : in out SWTJOGLProcessor; font_Param : access Font'Class; ch : Character) return Integer is
+      font : Font_Access := Font_Access (font_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end charWidth;
 
-   function charsWidth (This : in out SWTJOGLProcessor; font : Font_Access; ch : Character_Array_Access; offset : Integer; length : Integer) return Integer is
+   function charsWidth (This : in out SWTJOGLProcessor; font_Param : access Font'Class; ch : Character_Array_Access; offset : Integer; length : Integer) return Integer is
+      font : Font_Access := Font_Access (font_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end charsWidth;
 
-   function stringWidth (This : in out SWTJOGLProcessor; font : Font_Access; str : Unbounded_String) return Integer is
+   function stringWidth (This : in out SWTJOGLProcessor; font_Param : access Font'Class; str : Unbounded_String) return Integer is
+      font : Font_Access := Font_Access (font_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end stringWidth;
 
-   function substringWidth (This : in out SWTJOGLProcessor; font : Font_Access; str : Unbounded_String; offset : Integer; len : Integer) return Integer is
+   function substringWidth (This : in out SWTJOGLProcessor; font_Param : access Font'Class; str : Unbounded_String; offset : Integer; len : Integer) return Integer is
+      font : Font_Access := Font_Access (font_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end substringWidth;
 
-   procedure charWidth (This : in out SWTJOGLProcessor; font : Font_Access; ch : Character) is
-      Java_Result : constant Integer := SWTJOGLProcessor'Class (This).charWidth (font, ch);
+   procedure charWidth (This : in out SWTJOGLProcessor; font_Param : access Font'Class; ch : Character) is
+      Java_Result : constant Integer := SWTJOGLProcessor'Class (This).charWidth (font_Param, ch);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end charWidth;
 
-   procedure charsWidth (This : in out SWTJOGLProcessor; font : Font_Access; ch : Character_Array_Access; offset : Integer; length : Integer) is
-      Java_Result : constant Integer := SWTJOGLProcessor'Class (This).charsWidth (font, ch, offset, length);
+   procedure charsWidth (This : in out SWTJOGLProcessor; font_Param : access Font'Class; ch : Character_Array_Access; offset : Integer; length : Integer) is
+      Java_Result : constant Integer := SWTJOGLProcessor'Class (This).charsWidth (font_Param, ch, offset, length);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end charsWidth;
 
-   procedure stringWidth (This : in out SWTJOGLProcessor; font : Font_Access; str : Unbounded_String) is
-      Java_Result : constant Integer := SWTJOGLProcessor'Class (This).stringWidth (font, str);
+   procedure stringWidth (This : in out SWTJOGLProcessor; font_Param : access Font'Class; str : Unbounded_String) is
+      Java_Result : constant Integer := SWTJOGLProcessor'Class (This).stringWidth (font_Param, str);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end stringWidth;
 
-   procedure substringWidth (This : in out SWTJOGLProcessor; font : Font_Access; str : Unbounded_String; offset : Integer; len : Integer) is
-      Java_Result : constant Integer := SWTJOGLProcessor'Class (This).substringWidth (font, str, offset, len);
+   procedure substringWidth (This : in out SWTJOGLProcessor; font_Param : access Font'Class; str : Unbounded_String; offset : Integer; len : Integer) is
+      Java_Result : constant Integer := SWTJOGLProcessor'Class (This).substringWidth (font_Param, str, offset, len);
       pragma Unreferenced (Java_Result);
    begin
       null;

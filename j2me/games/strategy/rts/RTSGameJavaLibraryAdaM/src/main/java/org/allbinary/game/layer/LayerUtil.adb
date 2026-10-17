@@ -33,7 +33,8 @@ package body org.allbinary.game.layer.LayerUtil_Package is
    end Create;
 
 
-   function toString (hashtable_Case : ABHashtable_Access; x : Integer; y : Integer; z : Integer) return Unbounded_String is
+   function toString (hashtable_Case_Param : access ABHashtable'Class; x : Integer; y : Integer; z : Integer) return Unbounded_String is
+      hashtable_Case : ABHashtable_Access := ABHashtable_Access (hashtable_Case_Param);
       commonSeps : CommonSeps_Access;
       positionStrings : PositionStrings_Access;
       stringBuffer : StringMaker_Access;
@@ -55,8 +56,8 @@ package body org.allbinary.game.layer.LayerUtil_Package is
         return stringBuffer.toString;
    end toString;
 
-   procedure toString (hashtable_Case : ABHashtable_Access; x : Integer; y : Integer; z : Integer) is
-      Java_Result : constant Unbounded_String := toString (hashtable_Case, x, y, z);
+   procedure toString (hashtable_Case_Param : access ABHashtable'Class; x : Integer; y : Integer; z : Integer) is
+      Java_Result : constant Unbounded_String := toString (hashtable_Case_Param, x, y, z);
       pragma Unreferenced (Java_Result);
    begin
       null;

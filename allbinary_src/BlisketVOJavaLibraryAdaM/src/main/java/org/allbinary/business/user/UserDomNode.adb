@@ -22,21 +22,23 @@ package body org.allbinary.business.user.UserDomNode_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out UserDomNode'Class; dataMappingInterface : TableMappingInterface_Access) is
+   procedure Initialize (This : in out UserDomNode'Class; dataMappingInterface_Param : access TableMappingInterface'Class) is
+      dataMappingInterface : TableMappingInterface_Access := TableMappingInterface_Access (dataMappingInterface_Param);
    begin
       Initialize_Fields (This);
         This.dataMappingInterface := dataMappingInterface;
    end Initialize;
 
-   function Create (dataMappingInterface : TableMappingInterface_Access) return UserDomNode_Access is
+   function Create (dataMappingInterface_Param : access TableMappingInterface'Class) return UserDomNode_Access is
       This : constant UserDomNode_Access := new UserDomNode;
    begin
-      UserDomNode_Package.Initialize (This.all, dataMappingInterface);
+      UserDomNode_Package.Initialize (This.all, dataMappingInterface_Param);
       return This;
    end Create;
 
    --  throws Exception
-   function toXmlNode (This : in out UserDomNode; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out UserDomNode; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       EMPTY_STRING : Unbounded_String;
       hashMap : HashMap_Access;
    begin
@@ -60,8 +62,8 @@ package body org.allbinary.business.user.UserDomNode_Package is
         return Null_Unbounded_String;
    end view;
 
-   procedure toXmlNode (This : in out UserDomNode; document : Document_Access) is
-      Java_Result : constant Node_Access := UserDomNode'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out UserDomNode; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := UserDomNode'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

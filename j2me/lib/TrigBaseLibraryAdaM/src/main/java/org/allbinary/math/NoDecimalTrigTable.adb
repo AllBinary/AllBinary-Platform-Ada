@@ -1230,7 +1230,7 @@ package body org.allbinary.math.NoDecimalTrigTable_Package is
         METHOD_NAME := To_Unbounded_String ("antiTanDebug");
         TARGET_ANGLE := To_Unbounded_String (" Targeting angle: ");
         stringMaker := StringMaker_Package.Create;
-        PreLogUtil_Package.put (stringMaker.append (To_Unbounded_String ("screenX: ")).appendint (screenX).append (To_Unbounded_String (" screenY: ")).appendint (screenY).append (To_Unbounded_String (" targetX: ")).appendint (targetX).append (To_Unbounded_String (" targetY: ")).appendint (targetY).toString, This'Unchecked_Access, METHOD_NAME);
+        PreLogUtil_Package.put (stringMaker.append (To_Unbounded_String ("screenX: ")).appendint (screenX).append (To_Unbounded_String (" screenY: ")).appendint (screenY).append (To_Unbounded_String (" targetX: ")).appendint (targetX).append (To_Unbounded_String (" targetY: ")).appendint (targetY).toString, NoDecimalTrigTable_Access'(This'Unchecked_Access), METHOD_NAME);
         targetX2 := -(targetX);
         targetY2 := -(targetY);
         screenX2 := -(screenX);
@@ -1253,7 +1253,7 @@ package body org.allbinary.math.NoDecimalTrigTable_Package is
                 angleOfTarget := This.antiTan (dx (index), dy (index2));
                 angle := angleFactory.getAt (Integer (angleOfTarget));
                 stringMaker.delete (0, stringMaker.length);
-                PreLogUtil_Package.put (stringMaker.append (CommonLabels_Package.getInstance.INDEX_LABEL).appendint (index).append (To_Unbounded_String (" index2: ")).appendint (index2).append (PositionStrings_Package.getInstance.DX_LABEL).appendint (dx (index)).append (PositionStrings_Package.getInstance.DY_LABEL).appendint (dy (index2)).append (TARGET_ANGLE).appendshort (angleOfTarget).append (CommonSeps_Package.getInstance.EQUALS).appendshort (Short_Integer (angle.getValue)).toString, This'Unchecked_Access, METHOD_NAME);
+                PreLogUtil_Package.put (stringMaker.append (CommonLabels_Package.getInstance.INDEX_LABEL).appendint (index).append (To_Unbounded_String (" index2: ")).appendint (index2).append (PositionStrings_Package.getInstance.DX_LABEL).appendint (dx (index)).append (PositionStrings_Package.getInstance.DY_LABEL).appendint (dy (index2)).append (TARGET_ANGLE).appendshort (angleOfTarget).append (CommonSeps_Package.getInstance.EQUALS).appendshort (Short_Integer (angle.getValue)).toString, NoDecimalTrigTable_Access'(This'Unchecked_Access), METHOD_NAME);
             end loop;
         end loop;
         angleOfTarget := This.antiTan (dx (0), dy (0));

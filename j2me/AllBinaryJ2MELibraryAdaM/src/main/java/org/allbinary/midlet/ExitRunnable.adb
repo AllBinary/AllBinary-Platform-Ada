@@ -26,7 +26,9 @@ package body org.allbinary.midlet.ExitRunnable_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ExitRunnable'Class; midlet : AllBinaryMidlet_Access; processor : Processor_Access; isProgress : Boolean) is
+   procedure Initialize (This : in out ExitRunnable'Class; midlet_Param : access AllBinaryMidlet'Class; processor_Param : access Processor'Class; isProgress : Boolean) is
+      midlet : AllBinaryMidlet_Access := AllBinaryMidlet_Access (midlet_Param);
+      processor : Processor_Access := Processor_Access (processor_Param);
    begin
       Initialize_Fields (This);
         This.midlet := midlet;
@@ -34,28 +36,28 @@ package body org.allbinary.midlet.ExitRunnable_Package is
         This.processor := processor;
    end Initialize;
 
-   function Create (midlet : AllBinaryMidlet_Access; processor : Processor_Access; isProgress : Boolean) return ExitRunnable_Access is
+   function Create (midlet_Param : access AllBinaryMidlet'Class; processor_Param : access Processor'Class; isProgress : Boolean) return ExitRunnable_Access is
       This : constant ExitRunnable_Access := new ExitRunnable;
    begin
-      ExitRunnable_Package.Initialize (This.all, midlet, processor, isProgress);
+      ExitRunnable_Package.Initialize (This.all, midlet_Param, processor_Param, isProgress);
       return This;
    end Create;
 
    procedure run (This : in out ExitRunnable) is
    begin
         begin
-            This.logUtil.putF (This.commonStrings.START_RUNNABLE, This'Unchecked_Access, This.commonStrings.RUN);
+            This.logUtil.putF (This.commonStrings.START_RUNNABLE, ExitRunnable_Access'(This'Unchecked_Access), This.commonStrings.RUN);
             This.midlet.destroyAppInRunnable (False, This.isProgress);
             This.midlet.setDisplay (NullCanvas_Package.NULL_CANVAS);
             This.midlet.notifyDestroyed;
-            This.logUtil.putF (This.commonStrings.END_RUNNABLE, This'Unchecked_Access, This.commonStrings.RUN);
+            This.logUtil.putF (This.commonStrings.END_RUNNABLE, ExitRunnable_Access'(This'Unchecked_Access), This.commonStrings.RUN);
             This.processor.process;
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.RUN, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, ExitRunnable_Access'(This'Unchecked_Access), This.commonStrings.RUN, e);
             begin
                 This.processor.process;
             exception
@@ -63,7 +65,7 @@ package body org.allbinary.midlet.ExitRunnable_Package is
                     declare
                         e2 : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                     begin
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.RUN, e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, ExitRunnable_Access'(This'Unchecked_Access), This.commonStrings.RUN, e);
                     end;
             end;
                 end;

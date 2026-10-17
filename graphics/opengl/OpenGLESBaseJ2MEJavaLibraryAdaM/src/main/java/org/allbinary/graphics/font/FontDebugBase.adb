@@ -27,17 +27,23 @@ package body org.allbinary.graphics.font.FontDebugBase_Package is
         return FontDebugBase_Package.instanceBase;
    end getInstance;
 
-   procedure debugMetrics (This : in out FontDebugBase; currentFont : Font_Access; convertedTextSize : Float; displayMetrics : Java_Object_Access; stringBuffer : StringMaker_Access) is
+   procedure debugMetrics (This : in out FontDebugBase; currentFont_Param : access Font'Class; convertedTextSize : Float; displayMetrics_Param : access Java_Object'Class; stringBuffer_Param : access StringMaker'Class) is
+      currentFont : Font_Access := Font_Access (currentFont_Param);
+      displayMetrics : Java_Object_Access := Java_Object_Access (displayMetrics_Param);
+      stringBuffer : StringMaker_Access := StringMaker_Access (stringBuffer_Param);
    begin
         null;
    end debugMetrics;
 
-   procedure debugDpi (This : in out FontDebugBase; densityDpi : Integer; stringBuffer : StringMaker_Access) is
+   procedure debugDpi (This : in out FontDebugBase; densityDpi : Integer; stringBuffer_Param : access StringMaker'Class) is
+      stringBuffer : StringMaker_Access := StringMaker_Access (stringBuffer_Param);
    begin
         null;
    end debugDpi;
 
-   procedure debugDimension (This : in out FontDebugBase; currentFont : Font_Access; convertedTextSize : Float; longestDimensionTotalPixels : Integer; stringBuffer : StringMaker_Access) is
+   procedure debugDimension (This : in out FontDebugBase; currentFont_Param : access Font'Class; convertedTextSize : Float; longestDimensionTotalPixels : Integer; stringBuffer_Param : access StringMaker'Class) is
+      currentFont : Font_Access := Font_Access (currentFont_Param);
+      stringBuffer : StringMaker_Access := StringMaker_Access (stringBuffer_Param);
    begin
         null;
    end debugDimension;

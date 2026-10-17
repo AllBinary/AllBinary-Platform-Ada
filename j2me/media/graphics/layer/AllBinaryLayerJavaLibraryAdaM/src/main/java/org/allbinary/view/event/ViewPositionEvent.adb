@@ -21,15 +21,16 @@ package body org.allbinary.view.event.ViewPositionEvent_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ViewPositionEvent'Class; anyType : Java_Object_Access) is
+   procedure Initialize (This : in out ViewPositionEvent'Class; anyType_Param : access Java_Object'Class) is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         AllBinaryEventObject_Package.Initialize (This, anyType);
    end Initialize;
 
-   function Create (anyType : Java_Object_Access) return ViewPositionEvent_Access is
+   function Create (anyType_Param : access Java_Object'Class) return ViewPositionEvent_Access is
       This : constant ViewPositionEvent_Access := new ViewPositionEvent;
    begin
-      ViewPositionEvent_Package.Initialize (This.all, anyType);
+      ViewPositionEvent_Package.Initialize (This.all, anyType_Param);
       return This;
    end Create;
 

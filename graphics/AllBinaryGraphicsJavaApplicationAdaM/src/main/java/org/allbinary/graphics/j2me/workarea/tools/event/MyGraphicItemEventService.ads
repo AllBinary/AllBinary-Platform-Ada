@@ -41,9 +41,9 @@ package org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventServi
 
    procedure Initialize (This : in out MyGraphicItemEventService'Class);
    function Create return MyGraphicItemEventService_Access;
-   procedure addListener (listener : MyGraphicItemEventListener_Access);
-   procedure removeListener (listener : MyGraphicItemEventListener_Access);
-   procedure fire (evt : MyGraphicItemEvent_Access);
+   procedure addListener (listener_Param : access MyGraphicItemEventListener'Class);
+   procedure removeListener (listener_Param : access MyGraphicItemEventListener'Class);
+   procedure fire (evt_Param : access MyGraphicItemEvent'Class);
 
 end org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventService_Package;
 

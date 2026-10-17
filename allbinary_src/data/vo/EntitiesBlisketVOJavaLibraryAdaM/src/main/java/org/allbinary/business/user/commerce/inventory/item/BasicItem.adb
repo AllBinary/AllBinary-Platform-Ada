@@ -54,11 +54,12 @@ package body org.allbinary.business.user.commerce.inventory.item.BasicItem_Packa
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BasicItem'Class; itemHashMap : HashMap_Access) is
+   procedure Initialize (This : in out BasicItem'Class; itemHashMap_Param : access HashMap'Class) is
+      itemHashMap : HashMap_Access := HashMap_Access (itemHashMap_Param);
    begin
       Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PRODUCTSEARCHLOGGING) then
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("Constructor(HashMap)"));
+            This.logUtil.putF (This.commonStrings.START, BasicItem_Access'(This'Unchecked_Access), To_Unbounded_String ("Constructor(HashMap)"));
         end if;
         This.itemId := Unbounded_String (itemHashMap.get (This.basicItemData.ID));
         This.number := Unbounded_String (itemHashMap.get (This.basicItemData.NUMBER));
@@ -91,10 +92,10 @@ package body org.allbinary.business.user.commerce.inventory.item.BasicItem_Packa
         This.specials := Unbounded_String (itemHashMap.get (This.basicItemData.SPECIALS));
    end Initialize;
 
-   function Create (itemHashMap : HashMap_Access) return BasicItem_Access is
+   function Create (itemHashMap_Param : access HashMap'Class) return BasicItem_Access is
       This : constant BasicItem_Access := new BasicItem;
    begin
-      BasicItem_Package.Initialize (This.all, itemHashMap);
+      BasicItem_Package.Initialize (This.all, itemHashMap_Param);
       return This;
    end Create;
 
@@ -103,7 +104,7 @@ package body org.allbinary.business.user.commerce.inventory.item.BasicItem_Packa
    begin
       Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PRODUCTSEARCHLOGGING) then
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+            This.logUtil.putF (This.commonStrings.START, BasicItem_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
         EMPTY := StringUtil_Package.getInstance.EMPTY_STRING;
         This.itemId := ProductIdGenerator_Package.Create.getNext;
@@ -244,7 +245,8 @@ package body org.allbinary.business.user.commerce.inventory.item.BasicItem_Packa
         This.lastModified := value;
    end setLastModified;
 
-   procedure setPrice (This : in out BasicItem; value : Money_Access) is
+   procedure setPrice (This : in out BasicItem; value_Param : access Money'Class) is
+      value : Money_Access := Money_Access (value_Param);
    begin
         This.price := value;
    end setPrice;
@@ -465,7 +467,7 @@ package body org.allbinary.business.user.commerce.inventory.item.BasicItem_Packa
       time : Unbounded_String;
    begin
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PRODUCTSEARCHLOGGING) then
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("toHashMap"));
+            This.logUtil.putF (This.commonStrings.START, BasicItem_Access'(This'Unchecked_Access), To_Unbounded_String ("toHashMap"));
         end if;
         hashMap := StdUtil_Package.getInstance.createHashMap;
         hashMap.put (This.basicItemData.ID, This.itemId);
@@ -507,7 +509,7 @@ package body org.allbinary.business.user.commerce.inventory.item.BasicItem_Packa
       time : Unbounded_String;
    begin
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PRODUCTSEARCHLOGGING) then
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("toVector"));
+            This.logUtil.putF (This.commonStrings.START, BasicItem_Access'(This'Unchecked_Access), To_Unbounded_String ("toVector"));
         end if;
         values := BasicArrayListD_Package.Create;
         values.add (This.itemId);

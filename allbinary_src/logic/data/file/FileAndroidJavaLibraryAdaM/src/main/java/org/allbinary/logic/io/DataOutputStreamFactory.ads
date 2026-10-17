@@ -40,8 +40,8 @@ package org.allbinary.logic.io.DataOutputStreamFactory_Package is
    procedure Initialize (This : in out DataOutputStreamFactory'Class);
    function Create return DataOutputStreamFactory_Access;
    function getInstance return DataOutputStreamFactory_Access;
-   function getInstanceForAbFile (This : in out DataOutputStreamFactory; file : AbFile_Access) return AbDataOutputStream_Access;
-   procedure getInstanceForAbFile (This : in out DataOutputStreamFactory; file : AbFile_Access);
+   function getInstanceForAbFile (This : in out DataOutputStreamFactory; file_Param : access AbFile'Class) return AbDataOutputStream_Access;
+   procedure getInstanceForAbFile (This : in out DataOutputStreamFactory; file_Param : access AbFile'Class);
    function getInstance (This : in out DataOutputStreamFactory; filePath : Unbounded_String; fileName : Unbounded_String) return AbDataOutputStream_Access;
    procedure getInstance (This : in out DataOutputStreamFactory; filePath : Unbounded_String; fileName : Unbounded_String);
 

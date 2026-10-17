@@ -23,17 +23,19 @@ package body views.admin.payment.gateway.PaymentGatewayComponent_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out PaymentGatewayComponent'Class; transformInfoInterface : TransformInfoInterface_Access; paymentGatewayInterface : PaymentGatewayInterface_Access) is
+   procedure Initialize (This : in out PaymentGatewayComponent'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; paymentGatewayInterface_Param : access PaymentGatewayInterface'Class) is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+      paymentGatewayInterface : PaymentGatewayInterface_Access := PaymentGatewayInterface_Access (paymentGatewayInterface_Param);
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
         This.paymentGatewayInterface := paymentGatewayInterface;
    end Initialize;
 
-   function Create (transformInfoInterface : TransformInfoInterface_Access; paymentGatewayInterface : PaymentGatewayInterface_Access) return PaymentGatewayComponent_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class; paymentGatewayInterface_Param : access PaymentGatewayInterface'Class) return PaymentGatewayComponent_Access is
       This : constant PaymentGatewayComponent_Access := new PaymentGatewayComponent;
    begin
-      PaymentGatewayComponent_Package.Initialize (This.all, transformInfoInterface, paymentGatewayInterface);
+      PaymentGatewayComponent_Package.Initialize (This.all, transformInfoInterface_Param, paymentGatewayInterface_Param);
       return This;
    end Create;
 
@@ -62,7 +64,7 @@ package body views.admin.payment.gateway.PaymentGatewayComponent_Package is
                 begin
             error := To_Unbounded_String ("Failed to view payment gateway");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("view()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, PaymentGatewayComponent_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
             end if;
             return error;
                 end;

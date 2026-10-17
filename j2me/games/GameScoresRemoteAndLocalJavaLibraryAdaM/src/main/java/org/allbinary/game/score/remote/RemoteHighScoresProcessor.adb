@@ -38,13 +38,16 @@ package body org.allbinary.game.score.remote.RemoteHighScoresProcessor_Package i
    end Create;
 
    --  throws Exception
-   procedure process (This : in out RemoteHighScoresProcessor; remoteHighScores : RemoteHighScores_Access; abeClientInformation : AbeClientInformationInterface_Access; gameInfo : GameInfo_Access) is
+   procedure process (This : in out RemoteHighScoresProcessor; remoteHighScores_Param : access RemoteHighScores'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; gameInfo_Param : access GameInfo'Class) is
+      remoteHighScores : RemoteHighScores_Access := RemoteHighScores_Access (remoteHighScores_Param);
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      gameInfo : GameInfo_Access := GameInfo_Access (gameInfo_Param);
       gameInfoData : GameInfoData_Access;
       hashtable : ABHashtable_Access;
       displayInfoSingleton : DisplayInfoSingleton_Access;
       resultHashtable : ABHashtable_Access;
    begin
-        This.logUtil.putF (To_Unbounded_String ("Begin Remote HighScores Retrieval"), This'Unchecked_Access, This.commonStrings.PROCESS);
+        This.logUtil.putF (To_Unbounded_String ("Begin Remote HighScores Retrieval"), RemoteHighScoresProcessor_Access'(This'Unchecked_Access), This.commonStrings.PROCESS);
         gameInfoData := GameInfoData_Package.getInstance;
         hashtable := abeClientInformation.toHashtable;
         HashtableUtil_Package.getInstance.putAll (gameInfo.toHashtable, hashtable);

@@ -71,12 +71,12 @@ package org.allbinary.input.automation.module.generic_Id.GenericInputAutomationW
       genericProfile : GenericProfile_Access;
    end record;
 
-   procedure Initialize (This : in out GenericInputAutomationWorker'Class; inputAutomationActionInterface : InputAutomationActionInterface_Access; genericProfile : GenericProfile_Access; motionRectangleConstraintsInterface : MotionRectangleConstraintsInterface_Access; imageComparatorConstraintsInterface : ImageComparatorConstraintsInterface_Access);
-   function Create (inputAutomationActionInterface : InputAutomationActionInterface_Access; genericProfile : GenericProfile_Access; motionRectangleConstraintsInterface : MotionRectangleConstraintsInterface_Access; imageComparatorConstraintsInterface : ImageComparatorConstraintsInterface_Access) return GenericInputAutomationWorker_Access;
+   procedure Initialize (This : in out GenericInputAutomationWorker'Class; inputAutomationActionInterface_Param : access InputAutomationActionInterface'Class; genericProfile_Param : access GenericProfile'Class; motionRectangleConstraintsInterface_Param : access MotionRectangleConstraintsInterface'Class; imageComparatorConstraintsInterface_Param : access ImageComparatorConstraintsInterface'Class);
+   function Create (inputAutomationActionInterface_Param : access InputAutomationActionInterface'Class; genericProfile_Param : access GenericProfile'Class; motionRectangleConstraintsInterface_Param : access MotionRectangleConstraintsInterface'Class; imageComparatorConstraintsInterface_Param : access ImageComparatorConstraintsInterface'Class) return GenericInputAutomationWorker_Access;
    procedure processDataWorkerResults (This : in out GenericInputAutomationWorker);
    procedure process (This : in out GenericInputAutomationWorker);
    function getGenericProfile (This : in out GenericInputAutomationWorker) return GenericProfile_Access;
-   procedure setGenericProfile (This : in out GenericInputAutomationWorker; genericProfile : GenericProfile_Access);
+   procedure setGenericProfile (This : in out GenericInputAutomationWorker; genericProfile_Param : access GenericProfile'Class);
    function getFrame (This : in out GenericInputAutomationWorker) return Long_Long_Integer;
    procedure setFrame (This : in out GenericInputAutomationWorker; frame : Long_Long_Integer);
 

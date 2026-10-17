@@ -67,11 +67,11 @@ package org.allbinary.business.installer.InitializerDatabase_Package is
    MIN : Integer;
    MINPASSWORD : Integer;
 
-   procedure Initialize (This : in out InitializerDatabase'Class; abeClientInformation : AbeClientInformationInterface_Access; map : Map_Access);
-   function Create (abeClientInformation : AbeClientInformationInterface_Access; map : Map_Access) return InitializerDatabase_Access;
-   procedure Initialize (This : in out InitializerDatabase'Class; abeClientInformation : AbeClientInformationInterface_Access; initHashMap : HashMap_Access);
-   function Create (abeClientInformation : AbeClientInformationInterface_Access; initHashMap : HashMap_Access) return InitializerDatabase_Access;
-   procedure getFormData (This : in out InitializerDatabase; abeClientInformation : AbeClientInformationInterface_Access; hashMap : HashMap_Access);
+   procedure Initialize (This : in out InitializerDatabase'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; map_Param : access Map'Class);
+   function Create (abeClientInformation_Param : access AbeClientInformationInterface'Class; map_Param : access Map'Class) return InitializerDatabase_Access;
+   procedure Initialize (This : in out InitializerDatabase'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; initHashMap_Param : access HashMap'Class);
+   function Create (abeClientInformation_Param : access AbeClientInformationInterface'Class; initHashMap_Param : access HashMap'Class) return InitializerDatabase_Access;
+   procedure getFormData (This : in out InitializerDatabase; abeClientInformation_Param : access AbeClientInformationInterface'Class; hashMap_Param : access HashMap'Class);
    function isJdbcDriverValid (This : in out InitializerDatabase; jdbcDriverClassPathString : Unbounded_String) return Boolean;
    procedure isJdbcDriverValid (This : in out InitializerDatabase; jdbcDriverClassPathString : Unbounded_String);
    function isValid (This : in out InitializerDatabase) return Boolean;

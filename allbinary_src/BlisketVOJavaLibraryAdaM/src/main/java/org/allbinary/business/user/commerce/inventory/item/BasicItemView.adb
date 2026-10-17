@@ -26,22 +26,25 @@ package body org.allbinary.business.user.commerce.inventory.item.BasicItemView_P
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BasicItemView'Class; itemInterface : ItemInterface_Access; vector : BasicArrayList_Access) is
+   procedure Initialize (This : in out BasicItemView'Class; itemInterface_Param : access ItemInterface'Class; vector_Param : access BasicArrayList'Class) is
+      itemInterface : ItemInterface_Access := ItemInterface_Access (itemInterface_Param);
+      vector : BasicArrayList_Access := BasicArrayList_Access (vector_Param);
    begin
       Initialize_Fields (This);
         This.itemInterface := itemInterface;
         This.vector := vector;
    end Initialize;
 
-   function Create (itemInterface : ItemInterface_Access; vector : BasicArrayList_Access) return BasicItemView_Access is
+   function Create (itemInterface_Param : access ItemInterface'Class; vector_Param : access BasicArrayList'Class) return BasicItemView_Access is
       This : constant BasicItemView_Access := new BasicItemView;
    begin
-      BasicItemView_Package.Initialize (This.all, itemInterface, vector);
+      BasicItemView_Package.Initialize (This.all, itemInterface_Param, vector_Param);
       return This;
    end Create;
 
    --  throws Exception
-   function toXmlNode (This : in out BasicItemView; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out BasicItemView; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       hashMap : HashMap_Access;
       EMPTY_STRING : Unbounded_String;
       stringUtil : StringUtil_Access;
@@ -58,7 +61,7 @@ package body org.allbinary.business.user.commerce.inventory.item.BasicItemView_P
       customNode : Node_Access;
    begin
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PRODUCTSEARCHLOGGING) then
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("toXmlNode"));
+            This.logUtil.putF (This.commonStrings.START, BasicItemView_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode"));
         end if;
         hashMap := This.itemInterface.toHashMap;
         EMPTY_STRING := StringUtil_Package.getInstance.EMPTY_STRING;
@@ -95,8 +98,8 @@ package body org.allbinary.business.user.commerce.inventory.item.BasicItemView_P
         return Null_Unbounded_String;
    end view;
 
-   procedure toXmlNode (This : in out BasicItemView; document : Document_Access) is
-      Java_Result : constant Node_Access := BasicItemView'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out BasicItemView; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := BasicItemView'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

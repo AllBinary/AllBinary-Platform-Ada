@@ -39,13 +39,14 @@ package body org.allbinary.graphics.form.ItemIndexDx_Package is
    end getInstance;
 
    --  throws Exception
-   function getDx (This : in out ItemIndexDx; index : Integer; item : ABCustomItem_Access; dx : Integer; dy : Integer) return Integer is
+   function getDx (This : in out ItemIndexDx; index : Integer; item_Param : access ABCustomItem'Class; dx : Integer; dy : Integer) return Integer is
+      item : ABCustomItem_Access := ABCustomItem_Access (item_Param);
    begin
         return 0;
    end getDx;
 
-   procedure getDx (This : in out ItemIndexDx; index : Integer; item : ABCustomItem_Access; dx : Integer; dy : Integer) is
-      Java_Result : constant Integer := ItemIndexDx'Class (This).getDx (index, item, dx, dy);
+   procedure getDx (This : in out ItemIndexDx; index : Integer; item_Param : access ABCustomItem'Class; dx : Integer; dy : Integer) is
+      Java_Result : constant Integer := ItemIndexDx'Class (This).getDx (index, item_Param, dx, dy);
       pragma Unreferenced (Java_Result);
    begin
       null;

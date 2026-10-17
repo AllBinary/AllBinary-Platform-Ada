@@ -36,7 +36,8 @@ package body org.allbinary.thirdparty.store.ThirdPartyStore_Package is
       return This;
    end Create;
 
-   procedure authorize (This : in out ThirdPartyStore; clientInformationInterface : AbeClientInformationInterface_Access) is
+   procedure authorize (This : in out ThirdPartyStore; clientInformationInterface_Param : access AbeClientInformationInterface'Class) is
+      clientInformationInterface : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (clientInformationInterface_Param);
    begin
         null;
    end authorize;

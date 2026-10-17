@@ -45,10 +45,10 @@ package org.allbinary.opengles.GLUtil_Package is
    procedure makeFloatBuffer3 (This : in out GLUtil; p_a : Float; p_b : Float; p_c : Float);
    function makeFloatBuffer4 (This : in out GLUtil; p_a : Float; p_b : Float; p_c : Float; p_d : Float) return FloatBuffer_Access;
    procedure makeFloatBuffer4 (This : in out GLUtil; p_a : Float; p_b : Float; p_c : Float; p_d : Float);
-   function makeFloatBuffer (This : in out GLUtil; byteBuffer : ByteBuffer_Access) return FloatBuffer_Access;
-   procedure makeFloatBuffer (This : in out GLUtil; byteBuffer : ByteBuffer_Access);
-   function position (This : in out GLUtil; buffer : Buffer_Access; newPosition : Integer) return Buffer_Access;
-   procedure position (This : in out GLUtil; buffer : Buffer_Access; newPosition : Integer);
+   function makeFloatBuffer (This : in out GLUtil; byteBuffer_Param : access ByteBuffer'Class) return FloatBuffer_Access;
+   procedure makeFloatBuffer (This : in out GLUtil; byteBuffer_Param : access ByteBuffer'Class);
+   function position (This : in out GLUtil; buffer_Param : access Buffer'Class; newPosition : Integer) return Buffer_Access;
+   procedure position (This : in out GLUtil; buffer_Param : access Buffer'Class; newPosition : Integer);
    procedure rotateUVs (This : in out GLUtil; uvs : Float_Array_Access; angleDegrees : Float; pivotU : Float; pivotV : Float);
 
 end org.allbinary.opengles.GLUtil_Package;

@@ -43,7 +43,9 @@ package body org.allbinary.input.event.VirtualKeyboardEventHandler_Package is
    end getInstance;
 
    --  throws Exception
-   procedure process (This : in out VirtualKeyboardEventHandler; eventObject : AllBinaryEventObject_Access; eventListenerInterface : EventListenerInterface_Access) is
+   procedure process (This : in out VirtualKeyboardEventHandler; eventObject_Param : access AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface'Class) is
+      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
+      eventListenerInterface : EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
       virtualKeyboardEventListenerInterface : VirtualKeyboardEventListenerInterface_Access;
    begin
         virtualKeyboardEventListenerInterface := VirtualKeyboardEventListenerInterface_Access (eventListenerInterface);
@@ -60,7 +62,7 @@ package body org.allbinary.input.event.VirtualKeyboardEventHandler_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("open"), e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, VirtualKeyboardEventHandler_Access'(This'Unchecked_Access), To_Unbounded_String ("open"), e);
                 end;
         end;
    end open;
@@ -76,7 +78,7 @@ package body org.allbinary.input.event.VirtualKeyboardEventHandler_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.CLOSE, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, VirtualKeyboardEventHandler_Access'(This'Unchecked_Access), This.commonStrings.CLOSE, e);
                 end;
         end;
    end close;

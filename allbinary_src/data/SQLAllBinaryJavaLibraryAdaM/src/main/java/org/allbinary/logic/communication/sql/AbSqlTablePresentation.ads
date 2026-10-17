@@ -34,8 +34,8 @@ package org.allbinary.logic.communication.sql.AbSqlTablePresentation_Package is
 
    type AbSqlTablePresentation is new AbSqlBasic with null record;
 
-   procedure Initialize (This : in out AbSqlTablePresentation'Class; databaseConnectionInfoInterface : DbConnectionInfo_Access);
-   function Create (databaseConnectionInfoInterface : DbConnectionInfo_Access) return AbSqlTablePresentation_Access;
+   procedure Initialize (This : in out AbSqlTablePresentation'Class; databaseConnectionInfoInterface_Param : access DbConnectionInfo'Class);
+   function Create (databaseConnectionInfoInterface_Param : access DbConnectionInfo'Class) return AbSqlTablePresentation_Access;
 
 end org.allbinary.logic.communication.sql.AbSqlTablePresentation_Package;
 

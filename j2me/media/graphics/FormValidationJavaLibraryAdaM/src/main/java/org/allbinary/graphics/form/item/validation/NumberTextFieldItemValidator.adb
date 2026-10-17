@@ -25,7 +25,8 @@ package body org.allbinary.graphics.form.item.validation.NumberTextFieldItemVali
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out NumberTextFieldItemValidator'Class; textFieldItem : ABTextFieldItem_Access; maxChars : Integer; min : Integer; max : Integer) is
+   procedure Initialize (This : in out NumberTextFieldItemValidator'Class; textFieldItem_Param : access ABTextFieldItem'Class; maxChars : Integer; min : Integer; max : Integer) is
+      textFieldItem : ABTextFieldItem_Access := ABTextFieldItem_Access (textFieldItem_Param);
    begin
       ValidatorBase_Package.Initialize (This);
       Initialize_Fields (This);
@@ -35,10 +36,10 @@ package body org.allbinary.graphics.form.item.validation.NumberTextFieldItemVali
         This.maxChars := maxChars;
    end Initialize;
 
-   function Create (textFieldItem : ABTextFieldItem_Access; maxChars : Integer; min : Integer; max : Integer) return NumberTextFieldItemValidator_Access is
+   function Create (textFieldItem_Param : access ABTextFieldItem'Class; maxChars : Integer; min : Integer; max : Integer) return NumberTextFieldItemValidator_Access is
       This : constant NumberTextFieldItemValidator_Access := new NumberTextFieldItemValidator;
    begin
-      NumberTextFieldItemValidator_Package.Initialize (This.all, textFieldItem, maxChars, min, max);
+      NumberTextFieldItemValidator_Package.Initialize (This.all, textFieldItem_Param, maxChars, min, max);
       return This;
    end Create;
 

@@ -30,7 +30,10 @@ package body org.allbinary.game.layer.CollidableCompositeLayer_Package is
         return CollidableCompositeLayer_Access (CollidableCompositeLayer_Package.NULL_COLLIDABLE_COMPOSITE_LAYER);
    end getNullInstance;
 
-   procedure Initialize (This : in out CollidableCompositeLayer'Class; name : Unbounded_String; layerInfo : Rectangle_Access; viewPosition : ViewPositionBase_Access; collidableBaseBehaviorFactory : CollidableBaseBehaviorFactory_Access) is
+   procedure Initialize (This : in out CollidableCompositeLayer'Class; name : Unbounded_String; layerInfo_Param : access Rectangle'Class; viewPosition_Param : access ViewPositionBase'Class; collidableBaseBehaviorFactory_Param : access CollidableBaseBehaviorFactory'Class) is
+      layerInfo : Rectangle_Access := Rectangle_Access (layerInfo_Param);
+      viewPosition : ViewPositionBase_Access := ViewPositionBase_Access (viewPosition_Param);
+      collidableBaseBehaviorFactory : CollidableBaseBehaviorFactory_Access := CollidableBaseBehaviorFactory_Access (collidableBaseBehaviorFactory_Param);
    begin
         AllBinaryGameLayer_Package.Initialize (This, name, layerInfo, viewPosition);
         Initialize_Fields (This);
@@ -39,16 +42,16 @@ package body org.allbinary.game.layer.CollidableCompositeLayer_Package is
         end if;
    end Initialize;
 
-   function Create (name : Unbounded_String; layerInfo : Rectangle_Access; viewPosition : ViewPositionBase_Access; collidableBaseBehaviorFactory : CollidableBaseBehaviorFactory_Access) return CollidableCompositeLayer_Access is
+   function Create (name : Unbounded_String; layerInfo_Param : access Rectangle'Class; viewPosition_Param : access ViewPositionBase'Class; collidableBaseBehaviorFactory_Param : access CollidableBaseBehaviorFactory'Class) return CollidableCompositeLayer_Access is
       This : constant CollidableCompositeLayer_Access := new CollidableCompositeLayer;
    begin
-      CollidableCompositeLayer_Package.Initialize (This.all, name, layerInfo, viewPosition, collidableBaseBehaviorFactory);
+      CollidableCompositeLayer_Package.Initialize (This.all, name, layerInfo_Param, viewPosition_Param, collidableBaseBehaviorFactory_Param);
       return This;
    end Create;
 
    function getArtificialIntelligenceInterface (This : in out CollidableCompositeLayer) return ArtificialIntelligenceInterface_Access is
    begin
-        ForcedLogUtil_Package.log (This.commonStrings.NOT_IMPLEMENTED, This'Unchecked_Access);
+        ForcedLogUtil_Package.log (This.commonStrings.NOT_IMPLEMENTED, CollidableCompositeLayer_Access'(This'Unchecked_Access));
         return ArtificialIntelligence_Package.getInstance;
    end getArtificialIntelligenceInterface;
 
@@ -57,7 +60,8 @@ package body org.allbinary.game.layer.CollidableCompositeLayer_Package is
         return This.collidableInferface;
    end getCollidableInferface;
 
-   procedure setCollidableInferface (This : in out CollidableCompositeLayer; collidableInferface : CollidableBaseBehavior_Access) is
+   procedure setCollidableInferface (This : in out CollidableCompositeLayer; collidableInferface_Param : access CollidableBaseBehavior'Class) is
+      collidableInferface : CollidableBaseBehavior_Access := CollidableBaseBehavior_Access (collidableInferface_Param);
    begin
         This.collidableInferface := collidableInferface;
    end setCollidableInferface;
@@ -67,7 +71,8 @@ package body org.allbinary.game.layer.CollidableCompositeLayer_Package is
         return True;
    end implmentsCollidableInterface;
 
-   procedure toStringAppend (This : in out CollidableCompositeLayer; stringBuffer : StringMaker_Access) is
+   procedure toStringAppend (This : in out CollidableCompositeLayer; stringBuffer_Param : access StringMaker'Class) is
+      stringBuffer : StringMaker_Access := StringMaker_Access (stringBuffer_Param);
       commonSeps : CommonSeps_Access;
    begin
         commonSeps := CommonSeps_Package.getInstance;

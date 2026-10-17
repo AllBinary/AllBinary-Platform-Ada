@@ -38,7 +38,8 @@ package body org.allbinary.logic.communication.smtp.EmailsNotUsed_Package is
    end Create;
 
    --  throws Exception
-   function toXmlNode (This : in out EmailsNotUsed; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out EmailsNotUsed; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       node : Node_Access;
       size : Integer;
       email : Email_Access;
@@ -48,7 +49,7 @@ package body org.allbinary.logic.communication.smtp.EmailsNotUsed_Package is
    begin
         begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PAYMENT) then
-                This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("toXmlNode"));
+                This.logUtil.putF (This.commonStrings.START, EmailsNotUsed_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode"));
             end if;
             node := document.createElement (EmailData_Package.NAME);
             size := This.emailInfoVector.size;
@@ -60,7 +61,7 @@ package body org.allbinary.logic.communication.smtp.EmailsNotUsed_Package is
                 end if;
             end loop;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PAYMENT) then
-                This.logUtil.putF (This.commonStrings.END_Id, This'Unchecked_Access, To_Unbounded_String ("toXmlNode()"));
+                This.logUtil.putF (This.commonStrings.END_Id, EmailsNotUsed_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode()"));
             end if;
             return node;
         exception
@@ -69,7 +70,7 @@ package body org.allbinary.logic.communication.smtp.EmailsNotUsed_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGINGERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("toXmlNode()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, EmailsNotUsed_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode()"), e);
             end if;
             error := To_Unbounded_String ("Error Processing Order.  Please contact us if error persists.<p/>");
             return BasicErrorNodeUtil_Package.get (document, error);
@@ -77,8 +78,8 @@ package body org.allbinary.logic.communication.smtp.EmailsNotUsed_Package is
         end;
    end toXmlNode;
 
-   procedure toXmlNode (This : in out EmailsNotUsed; document : Document_Access) is
-      Java_Result : constant Node_Access := EmailsNotUsed'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out EmailsNotUsed; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := EmailsNotUsed'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

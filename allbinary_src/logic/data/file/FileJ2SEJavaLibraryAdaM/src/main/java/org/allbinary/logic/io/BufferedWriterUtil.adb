@@ -52,7 +52,7 @@ package body org.allbinary.logic.io.BufferedWriterUtil_Package is
    begin
         abFile := AbFile_Package.createAbFile (path);
         if abFile.exists then
-            This.logUtil.putF (This.REMOVING_OLD & path, This'Unchecked_Access, This.commonStrings.CREATE);
+            This.logUtil.putF (This.REMOVING_OLD & path, BufferedWriterUtil_Access'(This'Unchecked_Access), This.commonStrings.CREATE);
             abFile.delete;
         else
             name := AbPathData_Package.getInstance.removeNameFromPath (path);
@@ -61,24 +61,25 @@ package body org.allbinary.logic.io.BufferedWriterUtil_Package is
                 null;
             else
                 stringBuilder := StringMaker_Package.Create;
-                This.logUtil.putF (stringBuilder.append (This.commonStrings.CREATE).append (This.commonLabels.COLON_SEP).append (name).toString, This'Unchecked_Access, This.commonStrings.CREATE);
+                This.logUtil.putF (stringBuilder.append (This.commonStrings.CREATE).append (This.commonLabels.COLON_SEP).append (name).toString, BufferedWriterUtil_Access'(This'Unchecked_Access), This.commonStrings.CREATE);
                 result := abFileDirectory.mkdirs;
                 stringBuilder.delete (0, stringBuilder.length);
-                This.logUtil.putF (stringBuilder.append (This.commonLabels.RESULT_U).appendboolean (result).toString, This'Unchecked_Access, This.commonStrings.CREATE);
+                This.logUtil.putF (stringBuilder.append (This.commonLabels.RESULT_U).appendboolean (result).toString, BufferedWriterUtil_Access'(This'Unchecked_Access), This.commonStrings.CREATE);
             end if;
         end if;
         This.write (abFile, data);
    end overwrite;
 
    --  throws Exception
-   procedure overwrite (This : in out BufferedWriterUtil; abFile : AbFile_Access; data : Unbounded_String) is
+   procedure overwrite (This : in out BufferedWriterUtil; abFile_Param : access AbFile'Class; data : Unbounded_String) is
+      abFile : AbFile_Access := AbFile_Access (abFile_Param);
       name : Unbounded_String;
       abFileDirectory : AbFile_Access;
       stringBuilder : StringMaker_Access;
       result : Boolean;
    begin
         if abFile.exists then
-            This.logUtil.putF (This.REMOVING_OLD & Java_Image (abFile.getPath), This'Unchecked_Access, This.commonStrings.CREATE);
+            This.logUtil.putF (This.REMOVING_OLD & Java_Image (abFile.getPath), BufferedWriterUtil_Access'(This'Unchecked_Access), This.commonStrings.CREATE);
             abFile.delete;
         else
             name := AbPathData_Package.getInstance.removeNameFromPath (abFile.getAbsolutePath);
@@ -87,17 +88,18 @@ package body org.allbinary.logic.io.BufferedWriterUtil_Package is
                 null;
             else
                 stringBuilder := StringMaker_Package.Create;
-                This.logUtil.putF (stringBuilder.append (This.commonStrings.CREATE).append (This.commonLabels.COLON_SEP).append (name).toString, This'Unchecked_Access, This.commonStrings.CREATE);
+                This.logUtil.putF (stringBuilder.append (This.commonStrings.CREATE).append (This.commonLabels.COLON_SEP).append (name).toString, BufferedWriterUtil_Access'(This'Unchecked_Access), This.commonStrings.CREATE);
                 result := abFileDirectory.mkdirs;
                 stringBuilder.delete (0, stringBuilder.length);
-                This.logUtil.putF (stringBuilder.append (This.commonLabels.RESULT_U).appendboolean (result).toString, This'Unchecked_Access, This.commonStrings.CREATE);
+                This.logUtil.putF (stringBuilder.append (This.commonLabels.RESULT_U).appendboolean (result).toString, BufferedWriterUtil_Access'(This'Unchecked_Access), This.commonStrings.CREATE);
             end if;
         end if;
         This.write (abFile, data);
    end overwrite;
 
    --  throws Exception
-   procedure write (This : in out BufferedWriterUtil; abFile : AbFile_Access; data : Unbounded_String) is
+   procedure write (This : in out BufferedWriterUtil; abFile_Param : access AbFile'Class; data : Unbounded_String) is
+      abFile : AbFile_Access := AbFile_Access (abFile_Param);
       fileOut : BufferedWriter_Access;
    begin
         fileOut := BufferedWriter_Package.Create (FileWriter_Package.Create (AbFileNativeUtil_Package.get (abFile)));

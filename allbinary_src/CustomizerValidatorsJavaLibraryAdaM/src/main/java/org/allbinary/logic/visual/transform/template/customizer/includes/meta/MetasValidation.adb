@@ -50,17 +50,18 @@ package body org.allbinary.logic.visual.transform.template.customizer.includes.m
       return This;
    end Create;
 
-   procedure Initialize (This : in out MetasValidation'Class; document : Document_Access) is
+   procedure Initialize (This : in out MetasValidation'Class; document_Param : access Document'Class) is
+      document : Document_Access := Document_Access (document_Param);
    begin
       Validation_Package.Initialize (This);
       Initialize_Fields (This);
         Java_Throw (Java_New_Exception ("Exception", CommonStrings_Package.getInstance.NOT_IMPLEMENTED));
    end Initialize;
 
-   function Create (document : Document_Access) return MetasValidation_Access is
+   function Create (document_Param : access Document'Class) return MetasValidation_Access is
       This : constant MetasValidation_Access := new MetasValidation;
    begin
-      MetasValidation_Package.Initialize (This.all, document);
+      MetasValidation_Package.Initialize (This.all, document_Param);
       return This;
    end Create;
 
@@ -76,7 +77,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.includes.m
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to validate form"), This'Unchecked_Access, This.commonStrings.IS_VALID, e);
+                This.logUtil.put (To_Unbounded_String ("Failed to validate form"), MetasValidation_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
             end if;
             return False;
                 end;
@@ -95,7 +96,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.includes.m
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), This'Unchecked_Access, To_Unbounded_String ("validationInfo()"), e);
+                This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), MetasValidation_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
             end if;
             return To_Unbounded_String ("Error Validating Form");
                 end;
@@ -107,13 +108,15 @@ package body org.allbinary.logic.visual.transform.template.customizer.includes.m
         return null;
    end toValidationInfoDoc;
 
-   function toValidationInfoNode (This : in out MetasValidation; document : Document_Access) return Node_Access is
+   function toValidationInfoNode (This : in out MetasValidation; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
    begin
         return null;
    end toValidationInfoNode;
 
    --  throws Exception
-   function toXmlNode (This : in out MetasValidation; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out MetasValidation; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       node : Node_Access;
       metaArray : MetaValidation_Access_Array_Access;
       size : Integer;
@@ -130,15 +133,15 @@ package body org.allbinary.logic.visual.transform.template.customizer.includes.m
         return node;
    end toXmlNode;
 
-   procedure toValidationInfoNode (This : in out MetasValidation; document : Document_Access) is
-      Java_Result : constant Node_Access := MetasValidation'Class (This).toValidationInfoNode (document);
+   procedure toValidationInfoNode (This : in out MetasValidation; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := MetasValidation'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toValidationInfoNode;
 
-   procedure toXmlNode (This : in out MetasValidation; document : Document_Access) is
-      Java_Result : constant Node_Access := MetasValidation'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out MetasValidation; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := MetasValidation'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

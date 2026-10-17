@@ -46,10 +46,10 @@ package org.allbinary.logic.visual.transform.data.TransformStoreDocument_Package
       logUtil : LogUtil_Access;
    end record;
 
-   procedure Initialize (This : in out TransformStoreDocument'Class; pageContext : PageContext_Access; weblisketSession : WeblisketSession_Access);
-   function Create (pageContext : PageContext_Access; weblisketSession : WeblisketSession_Access) return TransformStoreDocument_Access;
-   procedure Initialize (This : in out TransformStoreDocument'Class; searchRequest : SearchRequest_Access);
-   function Create (searchRequest : SearchRequest_Access) return TransformStoreDocument_Access;
+   procedure Initialize (This : in out TransformStoreDocument'Class; pageContext_Param : access PageContext'Class; weblisketSession_Param : access WeblisketSession'Class);
+   function Create (pageContext_Param : access PageContext'Class; weblisketSession_Param : access WeblisketSession'Class) return TransformStoreDocument_Access;
+   procedure Initialize (This : in out TransformStoreDocument'Class; searchRequest_Param : access SearchRequest'Class);
+   function Create (searchRequest_Param : access SearchRequest'Class) return TransformStoreDocument_Access;
 
 end org.allbinary.logic.visual.transform.data.TransformStoreDocument_Package;
 

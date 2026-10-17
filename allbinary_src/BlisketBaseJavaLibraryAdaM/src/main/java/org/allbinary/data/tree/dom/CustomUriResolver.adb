@@ -25,17 +25,18 @@ package body org.allbinary.data.tree.dom.CustomUriResolver_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CustomUriResolver'Class; path : Unbounded_String; basicURIResolver : BasicUriResolver_Access) is
+   procedure Initialize (This : in out CustomUriResolver'Class; path : Unbounded_String; basicURIResolver_Param : access BasicUriResolver'Class) is
+      basicURIResolver : BasicUriResolver_Access := BasicUriResolver_Access (basicURIResolver_Param);
    begin
       Initialize_Fields (This);
         This.path := path;
         This.basicURIResolver := basicURIResolver;
    end Initialize;
 
-   function Create (path : Unbounded_String; basicURIResolver : BasicUriResolver_Access) return CustomUriResolver_Access is
+   function Create (path : Unbounded_String; basicURIResolver_Param : access BasicUriResolver'Class) return CustomUriResolver_Access is
       This : constant CustomUriResolver_Access := new CustomUriResolver;
    begin
-      CustomUriResolver_Package.Initialize (This.all, path, basicURIResolver);
+      CustomUriResolver_Package.Initialize (This.all, path, basicURIResolver_Param);
       return This;
    end Create;
 

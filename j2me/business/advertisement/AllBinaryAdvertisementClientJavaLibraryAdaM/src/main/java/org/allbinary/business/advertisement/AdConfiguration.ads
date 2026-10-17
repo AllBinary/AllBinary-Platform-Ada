@@ -42,7 +42,7 @@ package org.allbinary.business.advertisement.AdConfiguration_Package is
    procedure Initialize (This : in out AdConfiguration'Class; advertIdArray : Java_Object_Access_Array_Access);
    function Create (advertIdArray : Java_Object_Access_Array_Access) return AdConfiguration_Access;
    function getValidAdSpots (This : in out AdConfiguration) return Direction_Access_Array_Access;
-   procedure process (This : in out AdConfiguration; gameState : GameState_Access);
+   procedure process (This : in out AdConfiguration; gameState_Param : access GameState'Class);
    procedure processDemo (This : in out AdConfiguration; state : Integer);
    procedure setShowAds (This : in out AdConfiguration);
    procedure setToggleAds (This : in out AdConfiguration; showAds : Boolean);

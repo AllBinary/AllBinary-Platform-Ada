@@ -48,8 +48,8 @@ package org.allbinary.game.ag.layer.pickup.life.LifeLayer_Package is
 
    procedure Initialize (This : in out LifeLayer'Class);
    function Create return LifeLayer_Access;
-   procedure paint (This : in out LifeLayer; graphics : Graphics_Access);
-   procedure visit (This : in out LifeLayer; lifeInterface : Life_Access);
+   procedure paint (This : in out LifeLayer; graphics_Param : access Graphics'Class);
+   procedure visit (This : in out LifeLayer; lifeInterface_Param : access Life'Class);
 
 end org.allbinary.game.ag.layer.pickup.life.LifeLayer_Package;
 

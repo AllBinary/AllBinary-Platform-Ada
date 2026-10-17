@@ -40,8 +40,8 @@ package org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreFactory_
    procedure Initialize (This : in out TransformInfoHttpStoreFactory'Class);
    function Create return TransformInfoHttpStoreFactory_Access;
    function getInstance return TransformInfoHttpStoreFactory_Access;
-   function getInstance (This : in out TransformInfoHttpStoreFactory; databaseHashMap : HashMap_Access; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return TransformInfoInterface_Access;
-   procedure getInstance (This : in out TransformInfoHttpStoreFactory; databaseHashMap : HashMap_Access; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access);
+   function getInstance (This : in out TransformInfoHttpStoreFactory; databaseHashMap_Param : access HashMap'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return TransformInfoInterface_Access;
+   procedure getInstance (This : in out TransformInfoHttpStoreFactory; databaseHashMap_Param : access HashMap'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
 
 end org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreFactory_Package;
 

@@ -27,7 +27,9 @@ package body org.allbinary.game.layer.geographic.map.MiniMapLayer_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out MiniMapLayer'Class; geographicMapInterface : BasicGeographicMap_Access; viewPosition : ViewPositionBase_Access) is
+   procedure Initialize (This : in out MiniMapLayer'Class; geographicMapInterface_Param : access BasicGeographicMap'Class; viewPosition_Param : access ViewPositionBase'Class) is
+      geographicMapInterface : BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
+      viewPosition : ViewPositionBase_Access := ViewPositionBase_Access (viewPosition_Param);
    begin
         AllBinaryLayer_Package.Initialize (This, StringUtil_Package.getInstance.EMPTY_STRING, Rectangle_Package.Create (PointFactory_Package.getInstance.createXY (0, viewPosition.getY), geographicMapInterface.getAllBinaryTiledLayer.getWidth, geographicMapInterface.getAllBinaryTiledLayer.getHeight), viewPosition);
         Initialize_Fields (This);
@@ -37,14 +39,14 @@ package body org.allbinary.game.layer.geographic.map.MiniMapLayer_Package is
         This.list := BasicArrayListD_Package.Create;
         This.basicColorList := BasicArrayListD_Package.Create;
         This.positionList := BasicArrayListD_Package.Create;
-        GeographicMapCellPositionEventHandler_Package.getInstance.addListener (This'Unchecked_Access);
+        GeographicMapCellPositionEventHandler_Package.getInstance.addListener (MiniMapLayer_Access'(This'Unchecked_Access));
         This.init;
    end Initialize;
 
-   function Create (geographicMapInterface : BasicGeographicMap_Access; viewPosition : ViewPositionBase_Access) return MiniMapLayer_Access is
+   function Create (geographicMapInterface_Param : access BasicGeographicMap'Class; viewPosition_Param : access ViewPositionBase'Class) return MiniMapLayer_Access is
       This : constant MiniMapLayer_Access := new MiniMapLayer;
    begin
-      MiniMapLayer_Package.Initialize (This.all, geographicMapInterface, viewPosition);
+      MiniMapLayer_Package.Initialize (This.all, geographicMapInterface_Param, viewPosition_Param);
       return This;
    end Create;
 
@@ -54,13 +56,15 @@ package body org.allbinary.game.layer.geographic.map.MiniMapLayer_Package is
         This.allBinaryTiledLayer.setPosition (This.x, This.y, This.z);
    end init;
 
-   procedure onEvent (This : in out MiniMapLayer; eventObject : AllBinaryEventObject_Access) is
+   procedure onEvent (This : in out MiniMapLayer; eventObject_Param : access AllBinaryEventObject'Class) is
+      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
    begin
-        ForcedLogUtil_Package.log (EventStrings_Package.getInstance.PERFORMANCE_MESSAGE, This'Unchecked_Access);
+        ForcedLogUtil_Package.log (EventStrings_Package.getInstance.PERFORMANCE_MESSAGE, MiniMapLayer_Access'(This'Unchecked_Access));
    end onEvent;
 
    --  throws Exception
-   procedure onRemoveGeographicMapCellPositionEvent (This : in out MiniMapLayer; geographicMapCellPositionEvent : GeographicMapCellPositionEvent_Access) is
+   procedure onRemoveGeographicMapCellPositionEvent (This : in out MiniMapLayer; geographicMapCellPositionEvent_Param : access GeographicMapCellPositionEvent'Class) is
+      geographicMapCellPositionEvent : GeographicMapCellPositionEvent_Access := GeographicMapCellPositionEvent_Access (geographicMapCellPositionEvent_Param);
       colorCompositeInterface : ColorCompositeInterface_Access;
       index : Integer;
    begin
@@ -74,7 +78,8 @@ package body org.allbinary.game.layer.geographic.map.MiniMapLayer_Package is
    end onRemoveGeographicMapCellPositionEvent;
 
    --  throws Exception
-   procedure onGeographicMapCellPositionEvent (This : in out MiniMapLayer; geographicMapCellPositionEvent : GeographicMapCellPositionEvent_Access) is
+   procedure onGeographicMapCellPositionEvent (This : in out MiniMapLayer; geographicMapCellPositionEvent_Param : access GeographicMapCellPositionEvent'Class) is
+      geographicMapCellPositionEvent : GeographicMapCellPositionEvent_Access := GeographicMapCellPositionEvent_Access (geographicMapCellPositionEvent_Param);
       colorCompositeInterface : ColorCompositeInterface_Access;
       layerIndex : Integer;
       size : Integer;
@@ -108,7 +113,8 @@ package body org.allbinary.game.layer.geographic.map.MiniMapLayer_Package is
         end if;
    end onGeographicMapCellPositionEvent;
 
-   procedure paintDots (This : in out MiniMapLayer; graphics : Graphics_Access) is
+   procedure paintDots (This : in out MiniMapLayer; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       localPositionList : BasicArrayList_Access;
       localBasicColorList : BasicArrayList_Access;
       length : Integer;
@@ -131,7 +137,8 @@ package body org.allbinary.game.layer.geographic.map.MiniMapLayer_Package is
         end loop;
    end paintDots;
 
-   procedure paint (This : in out MiniMapLayer; graphics : Graphics_Access) is
+   procedure paint (This : in out MiniMapLayer; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.allBinaryTiledLayer.paint (graphics);
         This.paintDots (graphics);

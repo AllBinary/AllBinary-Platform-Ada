@@ -50,9 +50,9 @@ package org.allbinary.game.ag.layer.pickup.FallingPickupLayer_Package is
    type FallingPickupLayer is new PickupLayer and TickableInterface with null record;
    NAME : Unbounded_String;
 
-   procedure Initialize (This : in out FallingPickupLayer'Class; remoteInfo : RemoteInfo_Access);
-   function Create (remoteInfo : RemoteInfo_Access) return FallingPickupLayer_Access;
-   procedure processTick (This : in out FallingPickupLayer; allBinaryLayerManager : AllBinaryLayerManager_Access);
+   procedure Initialize (This : in out FallingPickupLayer'Class; remoteInfo_Param : access RemoteInfo'Class);
+   function Create (remoteInfo_Param : access RemoteInfo'Class) return FallingPickupLayer_Access;
+   procedure processTick (This : in out FallingPickupLayer; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class);
    function implmentsTickableInterface (This : in out FallingPickupLayer) return Boolean;
 
 end org.allbinary.game.ag.layer.pickup.FallingPickupLayer_Package;

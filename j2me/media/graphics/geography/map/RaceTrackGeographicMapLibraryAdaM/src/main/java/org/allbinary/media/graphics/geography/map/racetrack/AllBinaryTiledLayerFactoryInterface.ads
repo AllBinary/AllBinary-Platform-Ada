@@ -20,8 +20,8 @@ package org.allbinary.media.graphics.geography.map.racetrack.AllBinaryTiledLayer
    type AllBinaryTiledLayerFactoryInterface_Access is access all AllBinaryTiledLayerFactoryInterface'Class;
    type AllBinaryTiledLayerFactoryInterface_Access_Array is array (Natural range <>) of AllBinaryTiledLayerFactoryInterface_Access;
    type AllBinaryTiledLayerFactoryInterface_Access_Array_Access is access all AllBinaryTiledLayerFactoryInterface_Access_Array;
-   function getInstance (This : in out AllBinaryTiledLayerFactoryInterface; raceTrackInfo : RaceTrackInfo_Access; raceTrackData : RaceTrackData_Access) return AllBinaryTiledLayer_Access is abstract;
-   function getMiniInstance (This : in out AllBinaryTiledLayerFactoryInterface; raceTrackData : RaceTrackData_Access) return AllBinaryTiledLayer_Access is abstract;
+   function getInstance (This : in out AllBinaryTiledLayerFactoryInterface; raceTrackInfo_Param : access RaceTrackInfo'Class; raceTrackData_Param : access RaceTrackData'Class) return AllBinaryTiledLayer_Access is abstract;
+   function getMiniInstance (This : in out AllBinaryTiledLayerFactoryInterface; raceTrackData_Param : access RaceTrackData'Class) return AllBinaryTiledLayer_Access is abstract;
 
 end org.allbinary.media.graphics.geography.map.racetrack.AllBinaryTiledLayerFactoryInterface_Package;
 

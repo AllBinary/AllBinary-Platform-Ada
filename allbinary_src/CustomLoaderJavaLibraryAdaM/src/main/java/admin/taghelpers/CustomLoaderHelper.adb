@@ -23,16 +23,18 @@ package body admin.taghelpers.CustomLoaderHelper_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CustomLoaderHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access) is
+   procedure Initialize (This : in out CustomLoaderHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
    begin
       Initialize_Fields (This);
         null;
    end Initialize;
 
-   function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return CustomLoaderHelper_Access is
+   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return CustomLoaderHelper_Access is
       This : constant CustomLoaderHelper_Access := new CustomLoaderHelper;
    begin
-      CustomLoaderHelper_Package.Initialize (This.all, hashMap, pageContext);
+      CustomLoaderHelper_Package.Initialize (This.all, hashMap_Param, pageContext_Param);
       return This;
    end Create;
 
@@ -78,7 +80,7 @@ package body admin.taghelpers.CustomLoaderHelper_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("setWebappPath()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, CustomLoaderHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("setWebappPath()"), e);
             end if;
                 end;
         end;

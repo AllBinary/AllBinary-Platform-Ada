@@ -60,11 +60,11 @@ package org.allbinary.game.configuration.persistance.BasicPersitance_Package is
 
    procedure Initialize (This : in out BasicPersitance'Class; recordId : Unbounded_String);
    function Create (recordId : Unbounded_String) return BasicPersitance_Access;
-   procedure deleteRecoreStore (This : in out BasicPersitance; abeClientInformation : AbeClientInformationInterface_Access);
-   procedure deleteAll (This : in out BasicPersitance; abeClientInformation : AbeClientInformationInterface_Access);
-   procedure delete (This : in out BasicPersitance; abeClientInformation : AbeClientInformationInterface_Access; deleteId : Integer);
-   function getRecordId (This : in out BasicPersitance; abeClientInformation : AbeClientInformationInterface_Access) return Unbounded_String;
-   procedure getRecordId (This : in out BasicPersitance; abeClientInformation : AbeClientInformationInterface_Access);
+   procedure deleteRecoreStore (This : in out BasicPersitance; abeClientInformation_Param : access AbeClientInformationInterface'Class);
+   procedure deleteAll (This : in out BasicPersitance; abeClientInformation_Param : access AbeClientInformationInterface'Class);
+   procedure delete (This : in out BasicPersitance; abeClientInformation_Param : access AbeClientInformationInterface'Class; deleteId : Integer);
+   function getRecordId (This : in out BasicPersitance; abeClientInformation_Param : access AbeClientInformationInterface'Class) return Unbounded_String;
+   procedure getRecordId (This : in out BasicPersitance; abeClientInformation_Param : access AbeClientInformationInterface'Class);
    function getList (This : in out BasicPersitance) return BasicArrayList_Access;
    function getIds (This : in out BasicPersitance) return BasicArrayList_Access;
    procedure clear (This : in out BasicPersitance);

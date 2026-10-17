@@ -40,13 +40,14 @@ package body org.allbinary.game.media.graphics.geography.map.racetrack.SimplePat
       return This;
    end Create;
 
-   function getInstance (This : in out SimplePathFinderGraphVisitorFactory; geographicMapInterface : BasicGeographicMap_Access) return PathFinderGraphVisitorBase_Access is
+   function getInstance (This : in out SimplePathFinderGraphVisitorFactory; geographicMapInterface_Param : access BasicGeographicMap'Class) return PathFinderGraphVisitorBase_Access is
+      geographicMapInterface : BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
    begin
         return BasePathFinderGraphVisitor_Package.Create (geographicMapInterface, This.edgeMinimum, This.minPathWeight, This.maxPathWeight);
    end getInstance;
 
-   procedure getInstance (This : in out SimplePathFinderGraphVisitorFactory; geographicMapInterface : BasicGeographicMap_Access) is
-      Java_Result : constant PathFinderGraphVisitorBase_Access := SimplePathFinderGraphVisitorFactory'Class (This).getInstance (geographicMapInterface);
+   procedure getInstance (This : in out SimplePathFinderGraphVisitorFactory; geographicMapInterface_Param : access BasicGeographicMap'Class) is
+      Java_Result : constant PathFinderGraphVisitorBase_Access := SimplePathFinderGraphVisitorFactory'Class (This).getInstance (geographicMapInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

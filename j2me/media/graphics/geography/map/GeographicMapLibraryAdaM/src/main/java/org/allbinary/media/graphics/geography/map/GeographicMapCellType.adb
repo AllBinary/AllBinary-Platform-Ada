@@ -33,7 +33,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellType_Pa
             geographicMapCellTypeFactory := GeographicMapCellTypeFactory_Package.getInstance;
             geographicMapCellTypeArray := geographicMapCellTypeFactory.getGeographicMapCellTypeArray;
             if ((geographicMapCellTypeArray (type_Id)) = (null)) or else ((reset) = (1)) then
-                geographicMapCellTypeArray (type_Id) := This'Unchecked_Access;
+                geographicMapCellTypeArray (type_Id) := GeographicMapCellType_Access'(This'Unchecked_Access);
             else
                 if (reset) /= (-(1)) then
                     Java_Throw (Java_New_Exception ("RuntimeException"));

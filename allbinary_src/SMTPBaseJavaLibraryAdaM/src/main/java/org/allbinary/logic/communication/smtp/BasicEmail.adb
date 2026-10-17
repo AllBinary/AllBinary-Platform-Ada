@@ -22,7 +22,8 @@ package body org.allbinary.logic.communication.smtp.BasicEmail_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BasicEmail'Class; emailInfo : EmailInfo_Access; to : Unbounded_String) is
+   procedure Initialize (This : in out BasicEmail'Class; emailInfo_Param : access EmailInfo'Class; to : Unbounded_String) is
+      emailInfo : EmailInfo_Access := EmailInfo_Access (emailInfo_Param);
       basicEmailInfo : BasicEmailInfo_Access;
    begin
       Initialize_Fields (This);
@@ -30,10 +31,10 @@ package body org.allbinary.logic.communication.smtp.BasicEmail_Package is
         This.email := AbEmail_Package.Create (basicEmailInfo.getEmailServerConfigurationInterface.getSmtpServer, basicEmailInfo.getEmailServerConfigurationInterface.getAccountName, to, basicEmailInfo.getSubject, basicEmailInfo.getTextBody, emailInfo.getHtmlAttachment, emailInfo.getContentBase);
    end Initialize;
 
-   function Create (emailInfo : EmailInfo_Access; to : Unbounded_String) return BasicEmail_Access is
+   function Create (emailInfo_Param : access EmailInfo'Class; to : Unbounded_String) return BasicEmail_Access is
       This : constant BasicEmail_Access := new BasicEmail;
    begin
-      BasicEmail_Package.Initialize (This.all, emailInfo, to);
+      BasicEmail_Package.Initialize (This.all, emailInfo_Param, to);
       return This;
    end Create;
 
@@ -65,7 +66,8 @@ package body org.allbinary.logic.communication.smtp.BasicEmail_Package is
    end toHashMap;
 
    --  throws Exception
-   function toXmlNode (This : in out BasicEmail; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out BasicEmail; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
    begin
         return This.email.toXmlNode (document);
    end toXmlNode;
@@ -76,8 +78,8 @@ package body org.allbinary.logic.communication.smtp.BasicEmail_Package is
         return This.email.toXmlDoc;
    end toXmlDoc;
 
-   procedure toXmlNode (This : in out BasicEmail; document : Document_Access) is
-      Java_Result : constant Node_Access := BasicEmail'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out BasicEmail; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := BasicEmail'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -21,51 +21,58 @@ package body org.allbinary.business.category.properties.root.store.theme.RootSto
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out RootStoreThemeCategoryProperties'Class; transformInfoInterface : TransformInfoInterface_Access) is
+   procedure Initialize (This : in out RootStoreThemeCategoryProperties'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         RootStoreCategoryProperties_Package.Initialize (This, transformInfoInterface);
    end Initialize;
 
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return RootStoreThemeCategoryProperties_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return RootStoreThemeCategoryProperties_Access is
       This : constant RootStoreThemeCategoryProperties_Access := new RootStoreThemeCategoryProperties;
    begin
-      RootStoreThemeCategoryProperties_Package.Initialize (This.all, transformInfoInterface);
+      RootStoreThemeCategoryProperties_Package.Initialize (This.all, transformInfoInterface_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out RootStoreThemeCategoryProperties'Class; transformInfoInterface : TransformInfoInterface_Access; abPath : AbPath_Access) is
+   procedure Initialize (This : in out RootStoreThemeCategoryProperties'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; abPath_Param : access AbPath'Class) is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+      abPath : AbPath_Access := AbPath_Access (abPath_Param);
    begin
         RootStoreCategoryProperties_Package.Initialize (This, transformInfoInterface, abPath);
    end Initialize;
 
-   function Create (transformInfoInterface : TransformInfoInterface_Access; abPath : AbPath_Access) return RootStoreThemeCategoryProperties_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class; abPath_Param : access AbPath'Class) return RootStoreThemeCategoryProperties_Access is
       This : constant RootStoreThemeCategoryProperties_Access := new RootStoreThemeCategoryProperties;
    begin
-      RootStoreThemeCategoryProperties_Package.Initialize (This.all, transformInfoInterface, abPath);
+      RootStoreThemeCategoryProperties_Package.Initialize (This.all, transformInfoInterface_Param, abPath_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out RootStoreThemeCategoryProperties'Class; transformInfoInterface : TransformInfoInterface_Access; node : Node_Access) is
+   procedure Initialize (This : in out RootStoreThemeCategoryProperties'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; node_Param : access Node'Class) is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+      node : Node_Access := Node_Access (node_Param);
    begin
         RootStoreCategoryProperties_Package.Initialize (This, transformInfoInterface, node);
    end Initialize;
 
-   function Create (transformInfoInterface : TransformInfoInterface_Access; node : Node_Access) return RootStoreThemeCategoryProperties_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class; node_Param : access Node'Class) return RootStoreThemeCategoryProperties_Access is
       This : constant RootStoreThemeCategoryProperties_Access := new RootStoreThemeCategoryProperties;
    begin
-      RootStoreThemeCategoryProperties_Package.Initialize (This.all, transformInfoInterface, node);
+      RootStoreThemeCategoryProperties_Package.Initialize (This.all, transformInfoInterface_Param, node_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out RootStoreThemeCategoryProperties'Class; transformInfoInterface : TransformInfoInterface_Access; categoryPropertiesHashMap : HashMap_Access) is
+   procedure Initialize (This : in out RootStoreThemeCategoryProperties'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; categoryPropertiesHashMap_Param : access HashMap'Class) is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+      categoryPropertiesHashMap : HashMap_Access := HashMap_Access (categoryPropertiesHashMap_Param);
    begin
         RootStoreCategoryProperties_Package.Initialize (This, transformInfoInterface, categoryPropertiesHashMap);
    end Initialize;
 
-   function Create (transformInfoInterface : TransformInfoInterface_Access; categoryPropertiesHashMap : HashMap_Access) return RootStoreThemeCategoryProperties_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class; categoryPropertiesHashMap_Param : access HashMap'Class) return RootStoreThemeCategoryProperties_Access is
       This : constant RootStoreThemeCategoryProperties_Access := new RootStoreThemeCategoryProperties;
    begin
-      RootStoreThemeCategoryProperties_Package.Initialize (This.all, transformInfoInterface, categoryPropertiesHashMap);
+      RootStoreThemeCategoryProperties_Package.Initialize (This.all, transformInfoInterface_Param, categoryPropertiesHashMap_Param);
       return This;
    end Create;
 

@@ -43,8 +43,8 @@ package admin.taghelpers.PaymentGatewayHelperFactory_Package is
 
    procedure Initialize (This : in out PaymentGatewayHelperFactory'Class);
    function Create return PaymentGatewayHelperFactory_Access;
-   function getInstance (This : in out PaymentGatewayHelperFactory; hashMap : HashMap_Access; pageContext : PageContext_Access) return Java_Object_Access;
-   procedure getInstance (This : in out PaymentGatewayHelperFactory; hashMap : HashMap_Access; pageContext : PageContext_Access);
+   function getInstance (This : in out PaymentGatewayHelperFactory; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return Java_Object_Access;
+   procedure getInstance (This : in out PaymentGatewayHelperFactory; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
 
 end admin.taghelpers.PaymentGatewayHelperFactory_Package;
 

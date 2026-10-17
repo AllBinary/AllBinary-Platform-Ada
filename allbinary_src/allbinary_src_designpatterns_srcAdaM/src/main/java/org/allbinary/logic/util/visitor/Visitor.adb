@@ -34,7 +34,8 @@ package body org.allbinary.logic.util.visitor.Visitor_Package is
    end Create;
 
 
-   function visit (This : in out Visitor; anyType : Java_Object_Access) return Java_Object_Access is
+   function visit (This : in out Visitor; anyType_Param : access Java_Object'Class) return Java_Object_Access is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         return This.nullUtil.NULL_OBJECT;
    end visit;
@@ -44,8 +45,8 @@ package body org.allbinary.logic.util.visitor.Visitor_Package is
         return Visitor_Package.instance;
    end getInstance;
 
-   procedure visit (This : in out Visitor; anyType : Java_Object_Access) is
-      Java_Result : constant Java_Object_Access := Visitor'Class (This).visit (anyType);
+   procedure visit (This : in out Visitor; anyType_Param : access Java_Object'Class) is
+      Java_Result : constant Java_Object_Access := Visitor'Class (This).visit (anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

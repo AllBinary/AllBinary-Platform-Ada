@@ -48,10 +48,10 @@ package org.allbinary.logic.visual.dhtml.style.css.property.CssPropertiesValidat
 
    procedure Initialize (This : in out CssPropertiesValidationFactory'Class);
    function Create return CssPropertiesValidationFactory_Access;
-   function getInstance (nodeList : NodeList_Access) return BasicArrayList_Access;
-   procedure getInstance (nodeList : NodeList_Access);
-   function getInstance (hashMap : HashMap_Access) return BasicArrayList_Access;
-   procedure getInstance (hashMap : HashMap_Access);
+   function getInstance (nodeList_Param : access NodeList'Class) return BasicArrayList_Access;
+   procedure getInstance (nodeList_Param : access NodeList'Class);
+   function getInstance (hashMap_Param : access HashMap'Class) return BasicArrayList_Access;
+   procedure getInstance (hashMap_Param : access HashMap'Class);
 
 end org.allbinary.logic.visual.dhtml.style.css.property.CssPropertiesValidationFactory_Package;
 

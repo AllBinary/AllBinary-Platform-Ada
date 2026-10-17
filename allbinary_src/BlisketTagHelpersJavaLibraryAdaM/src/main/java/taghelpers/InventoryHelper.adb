@@ -29,7 +29,9 @@ package body taghelpers.InventoryHelper_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out InventoryHelper'Class; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) is
+   procedure Initialize (This : in out InventoryHelper'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+      propertiesHashMap : HashMap_Access := HashMap_Access (propertiesHashMap_Param);
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
       storeName : Unbounded_String;
       xslFile : Unbounded_String;
       storeFrontInterface : StoreFrontInterface_Access;
@@ -51,10 +53,10 @@ package body taghelpers.InventoryHelper_Package is
         This.getFormData;
    end Initialize;
 
-   function Create (propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return InventoryHelper_Access is
+   function Create (propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return InventoryHelper_Access is
       This : constant InventoryHelper_Access := new InventoryHelper;
    begin
-      InventoryHelper_Package.Initialize (This.all, propertiesHashMap, pageContext);
+      InventoryHelper_Package.Initialize (This.all, propertiesHashMap_Param, pageContext_Param);
       return This;
    end Create;
 
@@ -72,7 +74,7 @@ package body taghelpers.InventoryHelper_Package is
             inventoryViewSearchInterface := InventoryViewFactory_Package.getInstance (This.searchRequest);
             result := inventoryViewSearchInterface.getProduct (This.id);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (To_Unbounded_String ("Successfull Inventory View Summary"), This'Unchecked_Access, To_Unbounded_String ("viewSummary()"));
+                This.logUtil.putF (To_Unbounded_String ("Successfull Inventory View Summary"), InventoryHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("viewSummary()"));
             end if;
             return result;
         exception
@@ -82,7 +84,7 @@ package body taghelpers.InventoryHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to View Summary");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("viewSummary()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, InventoryHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("viewSummary()"), e);
             end if;
             return error & To_Unbounded_String ("<br>") & To_Unbounded_String ("Exception: ") & Java_Image (e) & To_Unbounded_String ("<br>");
                 end;
@@ -105,7 +107,7 @@ package body taghelpers.InventoryHelper_Package is
             inventoryViewSearchInterface := InventoryViewFactory_Package.getInstance (This.searchRequest);
             result := inventoryViewSearchInterface.searchSingleDynamicPage;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (To_Unbounded_String ("Successful Inventory Dynamic Search"), This'Unchecked_Access, To_Unbounded_String ("searchSingleDynamicPage()"));
+                This.logUtil.putF (To_Unbounded_String ("Successful Inventory Dynamic Search"), InventoryHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("searchSingleDynamicPage()"));
             end if;
             return result;
         exception
@@ -115,7 +117,7 @@ package body taghelpers.InventoryHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to search Inventory by keyword");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("searchSingleDynamicPage()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, InventoryHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("searchSingleDynamicPage()"), e);
             end if;
             return error & To_Unbounded_String ("<br>") & To_Unbounded_String ("Exception: ") & Java_Image (e) & To_Unbounded_String ("<br>");
                 end;

@@ -49,10 +49,10 @@ package org.allbinary.business.user.UserDomNode_Package is
       dataMappingInterface : TableMappingInterface_Access;
    end record;
 
-   procedure Initialize (This : in out UserDomNode'Class; dataMappingInterface : TableMappingInterface_Access);
-   function Create (dataMappingInterface : TableMappingInterface_Access) return UserDomNode_Access;
-   function toXmlNode (This : in out UserDomNode; document : Document_Access) return Node_Access;
-   procedure toXmlNode (This : in out UserDomNode; document : Document_Access);
+   procedure Initialize (This : in out UserDomNode'Class; dataMappingInterface_Param : access TableMappingInterface'Class);
+   function Create (dataMappingInterface_Param : access TableMappingInterface'Class) return UserDomNode_Access;
+   function toXmlNode (This : in out UserDomNode; document_Param : access Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out UserDomNode; document_Param : access Document'Class);
    function toXmlDoc (This : in out UserDomNode) return Document_Access;
    function view (This : in out UserDomNode) return Unbounded_String;
 

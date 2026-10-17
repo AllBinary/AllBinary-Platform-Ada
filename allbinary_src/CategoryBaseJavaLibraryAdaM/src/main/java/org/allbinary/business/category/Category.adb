@@ -29,40 +29,45 @@ package body org.allbinary.business.category.Category_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out Category'Class; categoryPropertiesFactoryInterface : CategoryPropertiesFactoryInterface_Access) is
+   procedure Initialize (This : in out Category'Class; categoryPropertiesFactoryInterface_Param : access CategoryPropertiesFactoryInterface'Class) is
+      categoryPropertiesFactoryInterface : CategoryPropertiesFactoryInterface_Access := CategoryPropertiesFactoryInterface_Access (categoryPropertiesFactoryInterface_Param);
    begin
       Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY) then
-            This.logUtil.putF (This.commonStrings.CONSTRUCTOR, This'Unchecked_Access, To_Unbounded_String ("Category(CategoryPropertiesFactoryInterface)"));
+            This.logUtil.putF (This.commonStrings.CONSTRUCTOR, Category_Access'(This'Unchecked_Access), To_Unbounded_String ("Category(CategoryPropertiesFactoryInterface)"));
         end if;
         This.categoryPropertiesInterface := categoryPropertiesFactoryInterface.getInstance;
-        This.categoryHierarchyInterface := CategoryHierarchyInterface_Access (CategoryHierarchy_Package.Create (This'Unchecked_Access, This'Unchecked_Access));
+        This.categoryHierarchyInterface := CategoryHierarchyInterface_Access (CategoryHierarchy_Package.Create (Category_Access'(This'Unchecked_Access), Category_Access'(This'Unchecked_Access)));
         This.log;
    end Initialize;
 
-   function Create (categoryPropertiesFactoryInterface : CategoryPropertiesFactoryInterface_Access) return Category_Access is
+   function Create (categoryPropertiesFactoryInterface_Param : access CategoryPropertiesFactoryInterface'Class) return Category_Access is
       This : constant Category_Access := new Category;
    begin
-      Category_Package.Initialize (This.all, categoryPropertiesFactoryInterface);
+      Category_Package.Initialize (This.all, categoryPropertiesFactoryInterface_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out Category'Class; categoryPropertiesFactoryInterface : CategoryPropertiesFactoryInterface_Access; level : Integer) is
+   procedure Initialize (This : in out Category'Class; categoryPropertiesFactoryInterface_Param : access CategoryPropertiesFactoryInterface'Class; level : Integer) is
+      categoryPropertiesFactoryInterface : CategoryPropertiesFactoryInterface_Access := CategoryPropertiesFactoryInterface_Access (categoryPropertiesFactoryInterface_Param);
    begin
       Initialize_Fields (This);
         This.categoryPropertiesInterface := categoryPropertiesFactoryInterface.getInstance;
-        This.categoryHierarchyInterface := CategoryHierarchyInterface_Access (CategoryHierarchy_Package.Create (This'Unchecked_Access, This'Unchecked_Access, level));
+        This.categoryHierarchyInterface := CategoryHierarchyInterface_Access (CategoryHierarchy_Package.Create (Category_Access'(This'Unchecked_Access), Category_Access'(This'Unchecked_Access), level));
         This.log;
    end Initialize;
 
-   function Create (categoryPropertiesFactoryInterface : CategoryPropertiesFactoryInterface_Access; level : Integer) return Category_Access is
+   function Create (categoryPropertiesFactoryInterface_Param : access CategoryPropertiesFactoryInterface'Class; level : Integer) return Category_Access is
       This : constant Category_Access := new Category;
    begin
-      Category_Package.Initialize (This.all, categoryPropertiesFactoryInterface, level);
+      Category_Package.Initialize (This.all, categoryPropertiesFactoryInterface_Param, level);
       return This;
    end Create;
 
-   procedure Initialize (This : in out Category'Class; rootCategoryInterface : CategoryInterface_Access; parentCategoryInterface : CategoryInterface_Access; categoryPropertiesFactoryInterface : CategoryPropertiesFactoryInterface_Access) is
+   procedure Initialize (This : in out Category'Class; rootCategoryInterface_Param : access CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface'Class; categoryPropertiesFactoryInterface_Param : access CategoryPropertiesFactoryInterface'Class) is
+      rootCategoryInterface : CategoryInterface_Access := CategoryInterface_Access (rootCategoryInterface_Param);
+      parentCategoryInterface : CategoryInterface_Access := CategoryInterface_Access (parentCategoryInterface_Param);
+      categoryPropertiesFactoryInterface : CategoryPropertiesFactoryInterface_Access := CategoryPropertiesFactoryInterface_Access (categoryPropertiesFactoryInterface_Param);
    begin
       Initialize_Fields (This);
         This.categoryPropertiesInterface := CategoryPropertiesInterface_Access (categoryPropertiesFactoryInterface.getInstance);
@@ -70,10 +75,10 @@ package body org.allbinary.business.category.Category_Package is
         This.log;
    end Initialize;
 
-   function Create (rootCategoryInterface : CategoryInterface_Access; parentCategoryInterface : CategoryInterface_Access; categoryPropertiesFactoryInterface : CategoryPropertiesFactoryInterface_Access) return Category_Access is
+   function Create (rootCategoryInterface_Param : access CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface'Class; categoryPropertiesFactoryInterface_Param : access CategoryPropertiesFactoryInterface'Class) return Category_Access is
       This : constant Category_Access := new Category;
    begin
-      Category_Package.Initialize (This.all, rootCategoryInterface, parentCategoryInterface, categoryPropertiesFactoryInterface);
+      Category_Package.Initialize (This.all, rootCategoryInterface_Param, parentCategoryInterface_Param, categoryPropertiesFactoryInterface_Param);
       return This;
    end Create;
 
@@ -118,21 +123,23 @@ package body org.allbinary.business.category.Category_Package is
         return This.categoryPropertiesInterface.getPath (This.categoryHierarchyInterface);
    end getPath;
 
-   function addChildProperty (This : in out Category; categoryPropertiesInterface : CategoryPropertiesInterface_Access) return Boolean is
+   function addChildProperty (This : in out Category; categoryPropertiesInterface_Param : access CategoryPropertiesInterface'Class) return Boolean is
+      categoryPropertiesInterface : CategoryPropertiesInterface_Access := CategoryPropertiesInterface_Access (categoryPropertiesInterface_Param);
    begin
         This.typeVector.add (This.PROPERTIES);
         return This.childCategoryVector.add (categoryPropertiesInterface);
    end addChildProperty;
 
-   function addChild (This : in out Category; categoryInterface : CategoryInterface_Access) return Boolean is
+   function addChild (This : in out Category; categoryInterface_Param : access CategoryInterface'Class) return Boolean is
+      categoryInterface : CategoryInterface_Access := CategoryInterface_Access (categoryInterface_Param);
       childCategoryHierarchyInterface : CategoryHierarchyInterface_Access;
    begin
         This.removeDuplicateChild (categoryInterface);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY) then
-            This.logUtil.putF (To_Unbounded_String ("adding"), This'Unchecked_Access, To_Unbounded_String ("addChild"));
+            This.logUtil.putF (To_Unbounded_String ("adding"), Category_Access'(This'Unchecked_Access), To_Unbounded_String ("addChild"));
         end if;
         childCategoryHierarchyInterface := categoryInterface.getHierarchy;
-        childCategoryHierarchyInterface.setParent (This'Unchecked_Access);
+        childCategoryHierarchyInterface.setParent (Category_Access'(This'Unchecked_Access));
         childCategoryHierarchyInterface.setRoot (This.getHierarchy.getRoot);
         categoryInterface.setHierarchy (childCategoryHierarchyInterface);
         This.typeVector.add (This.CATEGORY);
@@ -144,7 +151,8 @@ package body org.allbinary.business.category.Category_Package is
         return This.childCategoryVector;
    end getChildNodes;
 
-   function removeChild (This : in out Category; categoryInterface : CategoryInterface_Access) return Boolean is
+   function removeChild (This : in out Category; categoryInterface_Param : access CategoryInterface'Class) return Boolean is
+      categoryInterface : CategoryInterface_Access := CategoryInterface_Access (categoryInterface_Param);
       removalVector : BasicArrayList_Access;
       bool_return : Boolean;
       size : Integer;
@@ -169,7 +177,8 @@ package body org.allbinary.business.category.Category_Package is
         return bool_return;
    end removeChild;
 
-   procedure removal (This : in out Category; removalVector : BasicArrayList_Access) is
+   procedure removal (This : in out Category; removalVector_Param : access BasicArrayList'Class) is
+      removalVector : BasicArrayList_Access := BasicArrayList_Access (removalVector_Param);
       removalSize : Integer;
       anyType : Java_Object_Access;
       objectIndex : Integer;
@@ -184,7 +193,8 @@ package body org.allbinary.business.category.Category_Package is
         end loop;
    end removal;
 
-   function removeDuplicateChild (This : in out Category; categoryInterface : CategoryInterface_Access) return Boolean is
+   function removeDuplicateChild (This : in out Category; categoryInterface_Param : access CategoryInterface'Class) return Boolean is
+      categoryInterface : CategoryInterface_Access := CategoryInterface_Access (categoryInterface_Param);
       removalVector : BasicArrayList_Access;
       bool_return : Boolean;
       size : Integer;
@@ -237,7 +247,8 @@ package body org.allbinary.business.category.Category_Package is
         return This.categoryPropertiesInterface;
    end getProperties;
 
-   procedure setProperties (This : in out Category; categoryPropertiesInterface : CategoryPropertiesInterface_Access) is
+   procedure setProperties (This : in out Category; categoryPropertiesInterface_Param : access CategoryPropertiesInterface'Class) is
+      categoryPropertiesInterface : CategoryPropertiesInterface_Access := CategoryPropertiesInterface_Access (categoryPropertiesInterface_Param);
    begin
         This.categoryPropertiesInterface := categoryPropertiesInterface;
    end setProperties;
@@ -247,7 +258,8 @@ package body org.allbinary.business.category.Category_Package is
         return This.categoryHierarchyInterface;
    end getHierarchy;
 
-   procedure setHierarchy (This : in out Category; categoryHierarchyInterface : CategoryHierarchyInterface_Access) is
+   procedure setHierarchy (This : in out Category; categoryHierarchyInterface_Param : access CategoryHierarchyInterface'Class) is
+      categoryHierarchyInterface : CategoryHierarchyInterface_Access := CategoryHierarchyInterface_Access (categoryHierarchyInterface_Param);
    begin
         This.categoryHierarchyInterface := categoryHierarchyInterface;
    end setHierarchy;
@@ -288,7 +300,8 @@ package body org.allbinary.business.category.Category_Package is
    end toValidationInfoDoc;
 
    --  throws Exception
-   function toValidationInfoNode (This : in out Category; document : Document_Access) return Node_Access is
+   function toValidationInfoNode (This : in out Category; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
    begin
         return null;
    end toValidationInfoNode;
@@ -328,40 +341,40 @@ package body org.allbinary.business.category.Category_Package is
             stringBuffer.append (This.getPath.toString);
             stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "File Path: "));
             stringBuffer.append (This.getFilePath.toString);
-            This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("log()"));
+            This.logUtil.putF (stringBuffer.toString, Category_Access'(This'Unchecked_Access), To_Unbounded_String ("log()"));
         end if;
    end log;
 
-   procedure addChildProperty (This : in out Category; categoryPropertiesInterface : CategoryPropertiesInterface_Access) is
-      Java_Result : constant Boolean := Category'Class (This).addChildProperty (categoryPropertiesInterface);
+   procedure addChildProperty (This : in out Category; categoryPropertiesInterface_Param : access CategoryPropertiesInterface'Class) is
+      Java_Result : constant Boolean := Category'Class (This).addChildProperty (categoryPropertiesInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end addChildProperty;
 
-   procedure addChild (This : in out Category; categoryInterface : CategoryInterface_Access) is
-      Java_Result : constant Boolean := Category'Class (This).addChild (categoryInterface);
+   procedure addChild (This : in out Category; categoryInterface_Param : access CategoryInterface'Class) is
+      Java_Result : constant Boolean := Category'Class (This).addChild (categoryInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end addChild;
 
-   procedure removeChild (This : in out Category; categoryInterface : CategoryInterface_Access) is
-      Java_Result : constant Boolean := Category'Class (This).removeChild (categoryInterface);
+   procedure removeChild (This : in out Category; categoryInterface_Param : access CategoryInterface'Class) is
+      Java_Result : constant Boolean := Category'Class (This).removeChild (categoryInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end removeChild;
 
-   procedure removeDuplicateChild (This : in out Category; categoryInterface : CategoryInterface_Access) is
-      Java_Result : constant Boolean := Category'Class (This).removeDuplicateChild (categoryInterface);
+   procedure removeDuplicateChild (This : in out Category; categoryInterface_Param : access CategoryInterface'Class) is
+      Java_Result : constant Boolean := Category'Class (This).removeDuplicateChild (categoryInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end removeDuplicateChild;
 
-   procedure toValidationInfoNode (This : in out Category; document : Document_Access) is
-      Java_Result : constant Node_Access := Category'Class (This).toValidationInfoNode (document);
+   procedure toValidationInfoNode (This : in out Category; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := Category'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -37,7 +37,7 @@ package org.allbinary.logic.system.security.licensing.LicenseInterfaceSingleton_
    procedure Initialize (This : in out LicenseInterfaceSingleton'Class);
    function Create return LicenseInterfaceSingleton_Access;
    function getInstance return AbeLicenseInterface_Access;
-   procedure init (licenseInterface : AbeLicenseInterface_Access);
+   procedure init (licenseInterface_Param : access AbeLicenseInterface'Class);
 
 end org.allbinary.logic.system.security.licensing.LicenseInterfaceSingleton_Package;
 

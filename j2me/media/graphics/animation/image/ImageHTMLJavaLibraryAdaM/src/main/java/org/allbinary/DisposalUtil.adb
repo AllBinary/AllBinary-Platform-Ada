@@ -38,7 +38,8 @@ package body org.allbinary.DisposalUtil_Package is
         return DisposalUtil_Package.instance;
    end getInstance;
 
-   procedure dispose (This : in out DisposalUtil; resource : Resource_Access) is
+   procedure dispose (This : in out DisposalUtil; resource_Param : access Resource'Class) is
+      resource : Resource_Access := Resource_Access (resource_Param);
    begin
         if not (resource.isDisposed) then
             resource.dispose;

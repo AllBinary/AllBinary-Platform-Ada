@@ -42,7 +42,8 @@ package body org.allbinary.logic.system.loader.AbeFactory_Package is
    end Create;
 
    --  throws LicensingException
-   function getInstance (This : in out AbeFactory; abeClientInformation : AbeClientInformationInterface_Access; className : Unbounded_String) return Java_Object_Access is
+   function getInstance (This : in out AbeFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; className : Unbounded_String) return Java_Object_Access is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
    begin
         begin
             return This.getClass (abeClientInformation, className).newInstance;
@@ -52,7 +53,7 @@ package body org.allbinary.logic.system.loader.AbeFactory_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.LOADERERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failure for: ") & className, This'Unchecked_Access, To_Unbounded_String ("getInstance(classname)"), e);
+                This.logUtil.put (To_Unbounded_String ("Failure for: ") & className, AbeFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getInstance(classname)"), e);
             end if;
             Java_Throw (e);
                 end;
@@ -60,7 +61,8 @@ package body org.allbinary.logic.system.loader.AbeFactory_Package is
    end getInstance;
 
    --  throws LicensingException
-   function getInstance (This : in out AbeFactory; abeClientInformation : AbeClientInformationInterface_Access; className : Unbounded_String; classes : Ada_Tags_Tag_Array_Access; params : Java_Object_Access_Array_Access) return Java_Object_Access is
+   function getInstance (This : in out AbeFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; className : Unbounded_String; classes : Ada_Tags_Tag_Array_Access; params : Java_Object_Access_Array_Access) return Java_Object_Access is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
       constructor : Constructor_Access;
       parent : ClassLoader_Access;
       myClass : Ada.Tags.Tag;
@@ -91,7 +93,7 @@ package body org.allbinary.logic.system.loader.AbeFactory_Package is
                 stringBuffer.append (className);
                 stringBuffer.append (CommonSeps_Package.getInstance.SPACE);
                 stringBuffer.append (ConstructorUtil_Package.view (constructor, CommonSeps_Package.getInstance.NEW_LINE));
-                This.logUtil.put (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("getInstance(className,params)"), e);
+                This.logUtil.put (stringBuffer.toString, AbeFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getInstance(className,params)"), e);
             end if;
             Java_Throw (e);
                 end;
@@ -99,7 +101,8 @@ package body org.allbinary.logic.system.loader.AbeFactory_Package is
    end getInstance;
 
    --  throws LicensingException
-   function getClass (This : in out AbeFactory; abeClientInformation : AbeClientInformationInterface_Access; className : Unbounded_String) return Ada.Tags.Tag is
+   function getClass (This : in out AbeFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; className : Unbounded_String) return Ada.Tags.Tag is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
       parent : ClassLoader_Access;
       c : Ada.Tags.Tag;
       loader : ClassLoader_Access;
@@ -120,29 +123,29 @@ package body org.allbinary.logic.system.loader.AbeFactory_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.LOADERERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failure for: ") & className, This'Unchecked_Access, To_Unbounded_String ("getClass(className)"), e);
+                This.logUtil.put (To_Unbounded_String ("Failure for: ") & className, AbeFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getClass(className)"), e);
             end if;
             Java_Throw (e);
                 end;
         end;
    end getClass;
 
-   procedure getInstance (This : in out AbeFactory; abeClientInformation : AbeClientInformationInterface_Access; className : Unbounded_String) is
-      Java_Result : constant Java_Object_Access := AbeFactory'Class (This).getInstance (abeClientInformation, className);
+   procedure getInstance (This : in out AbeFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; className : Unbounded_String) is
+      Java_Result : constant Java_Object_Access := AbeFactory'Class (This).getInstance (abeClientInformation_Param, className);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
-   procedure getInstance (This : in out AbeFactory; abeClientInformation : AbeClientInformationInterface_Access; className : Unbounded_String; classes : Ada_Tags_Tag_Array_Access; params : Java_Object_Access_Array_Access) is
-      Java_Result : constant Java_Object_Access := AbeFactory'Class (This).getInstance (abeClientInformation, className, classes, params);
+   procedure getInstance (This : in out AbeFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; className : Unbounded_String; classes : Ada_Tags_Tag_Array_Access; params : Java_Object_Access_Array_Access) is
+      Java_Result : constant Java_Object_Access := AbeFactory'Class (This).getInstance (abeClientInformation_Param, className, classes, params);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
-   procedure getClass (This : in out AbeFactory; abeClientInformation : AbeClientInformationInterface_Access; className : Unbounded_String) is
-      Java_Result : constant Ada.Tags.Tag := AbeFactory'Class (This).getClass (abeClientInformation, className);
+   procedure getClass (This : in out AbeFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; className : Unbounded_String) is
+      Java_Result : constant Ada.Tags.Tag := AbeFactory'Class (This).getClass (abeClientInformation_Param, className);
       pragma Unreferenced (Java_Result);
    begin
       null;

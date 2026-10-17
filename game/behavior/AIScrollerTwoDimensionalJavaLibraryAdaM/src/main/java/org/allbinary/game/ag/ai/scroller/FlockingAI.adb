@@ -22,7 +22,10 @@ package body org.allbinary.game.ag.ai.scroller.FlockingAI_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out FlockingAI'Class; hashtable : ABHashtable_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) is
+   procedure Initialize (This : in out FlockingAI'Class; hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) is
+      hashtable : ABHashtable_Access := ABHashtable_Access (hashtable_Param);
+      ownerLayerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (ownerLayerInterface_Param);
+      gameInput : GameInput_Access := GameInput_Access (gameInput_Param);
       allowedDistance : Integer;
    begin
         BasicAI_Package.Initialize (This, ownerLayerInterface, gameInput);
@@ -31,15 +34,16 @@ package body org.allbinary.game.ag.ai.scroller.FlockingAI_Package is
         This.allowedDistance := allowedDistance.intValue;
    end Initialize;
 
-   function Create (hashtable : ABHashtable_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return FlockingAI_Access is
+   function Create (hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return FlockingAI_Access is
       This : constant FlockingAI_Access := new FlockingAI;
    begin
-      FlockingAI_Package.Initialize (This.all, hashtable, ownerLayerInterface, gameInput);
+      FlockingAI_Package.Initialize (This.all, hashtable_Param, ownerLayerInterface_Param, gameInput_Param);
       return This;
    end Create;
 
    --  throws Exception
-   procedure processAI (This : in out FlockingAI; allBinaryLayerManager : AllBinaryLayerManager_Access) is
+   procedure processAI (This : in out FlockingAI; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class) is
+      allBinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
       maxDistance : Integer;
       farAllbinaryLayer : AllBinaryLayer_Access;
       groupLayerManagerListener : GroupLayerManagerListener_Access;
@@ -86,7 +90,8 @@ package body org.allbinary.game.ag.ai.scroller.FlockingAI_Package is
         end if;
    end processAI;
 
-   function getXYDistance (This : in out FlockingAI; allBinaryLayer : AllBinaryLayer_Access) return Integer is
+   function getXYDistance (This : in out FlockingAI; allBinaryLayer_Param : access AllBinaryLayer'Class) return Integer is
+      allBinaryLayer : AllBinaryLayer_Access := AllBinaryLayer_Access (allBinaryLayer_Param);
       ownerLayerInterface : AllBinaryLayer_Access;
       xTotalDistance : Integer;
       yTotalDistance : Integer;
@@ -101,8 +106,8 @@ package body org.allbinary.game.ag.ai.scroller.FlockingAI_Package is
         return totalDistance;
    end getXYDistance;
 
-   procedure getXYDistance (This : in out FlockingAI; allBinaryLayer : AllBinaryLayer_Access) is
-      Java_Result : constant Integer := FlockingAI'Class (This).getXYDistance (allBinaryLayer);
+   procedure getXYDistance (This : in out FlockingAI; allBinaryLayer_Param : access AllBinaryLayer'Class) is
+      Java_Result : constant Integer := FlockingAI'Class (This).getXYDistance (allBinaryLayer_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

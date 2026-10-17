@@ -61,7 +61,7 @@ package body org.allbinary.logic.system.security.crypt.jcehelper.KeySpecFactory_
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            PreLogUtil_Package.putOE (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.GET_INSTANCE, e);
+            PreLogUtil_Package.putOE (commonStrings.EXCEPTION_Id, KeySpecFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE, e);
             Java_Throw (Java_New_Exception ("RuntimeException"));
                 end;
         end;

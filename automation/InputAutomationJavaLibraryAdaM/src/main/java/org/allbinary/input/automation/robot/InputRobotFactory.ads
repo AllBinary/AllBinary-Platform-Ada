@@ -64,11 +64,11 @@ package org.allbinary.input.automation.robot.InputRobotFactory_Package is
    procedure Initialize (This : in out InputRobotFactory'Class);
    function Create return InputRobotFactory_Access;
    function getInstance return InputRobotFactory_Access;
-   procedure addListener (This : in out InputRobotFactory; helpSetListenerInterface : HelpSetListener_Access);
-   procedure add (This : in out InputRobotFactory; inputRobotInterface : InputRobotInterface_Access);
+   procedure addListener (This : in out InputRobotFactory; helpSetListenerInterface_Param : access HelpSetListener'Class);
+   procedure add (This : in out InputRobotFactory; inputRobotInterface_Param : access InputRobotInterface'Class);
    procedure loadLibraries (This : in out InputRobotFactory);
-   procedure loadLibraries (collection : Collection_Access);
-   procedure loadLibrary (inputRobotInterface : InputRobotInterface_Access);
+   procedure loadLibraries (collection_Param : access Collection'Class);
+   procedure loadLibrary (inputRobotInterface_Param : access InputRobotInterface'Class);
    procedure unloadLibraries (This : in out InputRobotFactory);
    function get (This : in out InputRobotFactory) return ABHashtable_Access;
    function get (This : in out InputRobotFactory; name : Unbounded_String) return InputRobotInterface_Access;

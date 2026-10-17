@@ -72,11 +72,11 @@ package org.allbinary.game.layer.unit.CollidableUnitBehavior_Package is
 
    procedure Initialize (This : in out CollidableUnitBehavior'Class; collidable : Boolean);
    function Create (collidable : Boolean) return CollidableUnitBehavior_Access;
-   procedure collideNone (This : in out CollidableUnitBehavior; ownerLayer : CollidableCompositeLayer_Access; collidableInterfaceCompositeInterface : CollidableCompositeLayer_Access);
-   function steer (This : in out CollidableUnitBehavior; ownerLayer : CollidableCompositeLayer_Access; collidableInterfaceCompositeInterface : CollidableCompositeLayer_Access) return Boolean;
-   procedure steer (This : in out CollidableUnitBehavior; ownerLayer : CollidableCompositeLayer_Access; collidableInterfaceCompositeInterface : CollidableCompositeLayer_Access);
-   procedure chase (This : in out CollidableUnitBehavior; ownerLayer : CollidableCompositeLayer_Access; collidableInterfaceCompositeInterface : CollidableCompositeLayer_Access);
-   procedure collideUnit (This : in out CollidableUnitBehavior; ownerLayer : CollidableCompositeLayer_Access; unitLayer : UnitLayer_Access);
+   procedure collideNone (This : in out CollidableUnitBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableCompositeLayer'Class);
+   function steer (This : in out CollidableUnitBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableCompositeLayer'Class) return Boolean;
+   procedure steer (This : in out CollidableUnitBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableCompositeLayer'Class);
+   procedure chase (This : in out CollidableUnitBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableCompositeLayer'Class);
+   procedure collideUnit (This : in out CollidableUnitBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; unitLayer_Param : access UnitLayer'Class);
 
 end org.allbinary.game.layer.unit.CollidableUnitBehavior_Package;
 
@@ -137,8 +137,8 @@ package org.allbinary.game.layer.unit.SimpleSteeringVisitor_Package is
 
    procedure Initialize (This : in out SimpleSteeringVisitor'Class);
    function Create return SimpleSteeringVisitor_Access;
-   function visit (This : in out SimpleSteeringVisitor; anyType : Java_Object_Access) return Java_Object_Access;
-   procedure visit (This : in out SimpleSteeringVisitor; anyType : Java_Object_Access);
+   function visit (This : in out SimpleSteeringVisitor; anyType_Param : access Java_Object'Class) return Java_Object_Access;
+   procedure visit (This : in out SimpleSteeringVisitor; anyType_Param : access Java_Object'Class);
 
 end org.allbinary.game.layer.unit.SimpleSteeringVisitor_Package;
 

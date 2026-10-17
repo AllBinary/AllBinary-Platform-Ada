@@ -66,7 +66,7 @@ package body tags.ValidationTransformTag_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.IS_VALID, e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, ValidationTransformTag_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
             end if;
             Java_Throw (e);
                 end;
@@ -90,7 +90,7 @@ package body tags.ValidationTransformTag_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("validationInfo()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, ValidationTransformTag_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
             end if;
             Java_Throw (e);
                 end;
@@ -112,7 +112,7 @@ package body tags.ValidationTransformTag_Package is
                 stringBuffer.append (This.getObjectFile);
                 stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "Request URI: "));
                 stringBuffer.append (request.getRequestURI);
-                This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, This.tagStrings.DO_START_TAG);
+                This.logUtil.putF (stringBuffer.toString, ValidationTransformTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
             end if;
             This.setHelper;
             if This.isValid then
@@ -123,7 +123,7 @@ package body tags.ValidationTransformTag_Package is
                     stringBuffer.append (This.getObjectFile);
                     stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "Logic includes body if true="));
                     stringBuffer.appendboolean (This.logic);
-                    This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, This.tagStrings.DO_START_TAG);
+                    This.logUtil.putF (stringBuffer.toString, ValidationTransformTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
                 end if;
                 if This.logic then
                     return EVAL_BODY_INCLUDE;
@@ -139,7 +139,7 @@ package body tags.ValidationTransformTag_Package is
                     stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "isValid()=false"));
                     stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "Logic skips body if true="));
                     stringBuffer.appendboolean (This.logic);
-                    This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, This.tagStrings.DO_START_TAG);
+                    This.logUtil.putF (stringBuffer.toString, ValidationTransformTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
                 end if;
                 if This.logic then
                     return SKIP_BODY;
@@ -161,7 +161,7 @@ package body tags.ValidationTransformTag_Package is
    function doEndTag (This : in out ValidationTransformTag) return Integer is
    begin
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
-            This.logUtil.putF (To_Unbounded_String ("Tag Ended"), This'Unchecked_Access, To_Unbounded_String ("doEndTag"));
+            This.logUtil.putF (To_Unbounded_String ("Tag Ended"), ValidationTransformTag_Access'(This'Unchecked_Access), To_Unbounded_String ("doEndTag"));
         end if;
         This.logic := True;
         return TransformTag (This).doEndTag;

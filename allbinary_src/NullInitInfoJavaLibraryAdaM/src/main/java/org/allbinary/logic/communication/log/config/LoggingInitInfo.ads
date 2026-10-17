@@ -45,7 +45,7 @@ package org.allbinary.logic.communication.log.config.LoggingInitInfo_Package is
    procedure setHasRead (value : Boolean);
    procedure updateIfNeeded;
    function isValid (This : in out LoggingInitInfo) return Boolean;
-   procedure set (logConfigInfoList : BasicArrayList_Access);
+   procedure set (logConfigInfoList_Param : access BasicArrayList'Class);
    function get return BasicArrayList_Access;
    function getTypeList return BasicArrayList_Access;
    function getNumberOfLogConfigs (This : in out LoggingInitInfo) return Integer;

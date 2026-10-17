@@ -32,7 +32,7 @@ package body org.allbinary.direction.Direction_Package is
         This.otherName := otherName;
         This.value := value;
         This.frameFactor := frameFactor;
-        Direction_Package.directionArray (value) := This'Unchecked_Access;
+        Direction_Package.directionArray (value) := Direction_Access'(This'Unchecked_Access);
    end Initialize;
 
    function Create (name : Unbounded_String; otherName : Unbounded_String; value : Integer; frameFactor : Integer) return Direction_Access is

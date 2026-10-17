@@ -50,9 +50,9 @@ package org.allbinary.physics.movement.ConstantVelocityNotifyViewChangeMovement_
 
    procedure Initialize (This : in out ConstantVelocityNotifyViewChangeMovement'Class);
    function Create return ConstantVelocityNotifyViewChangeMovement_Access;
-   procedure init (This : in out ConstantVelocityNotifyViewChangeMovement; speedBasicDecimal : BasicDecimal_Access; angle : Integer; otherAngle : Integer);
-   procedure moveOutsideRadius (This : in out ConstantVelocityNotifyViewChangeMovement; layer : AllBinaryLayer_Access; radius : Long_Long_Integer; angle : Integer; otherAngle : Integer);
-   procedure process (This : in out ConstantVelocityNotifyViewChangeMovement; layer : AllBinaryGameLayer_Access);
+   procedure init (This : in out ConstantVelocityNotifyViewChangeMovement; speedBasicDecimal_Param : access BasicDecimal'Class; angle : Integer; otherAngle : Integer);
+   procedure moveOutsideRadius (This : in out ConstantVelocityNotifyViewChangeMovement; layer_Param : access AllBinaryLayer'Class; radius : Long_Long_Integer; angle : Integer; otherAngle : Integer);
+   procedure process (This : in out ConstantVelocityNotifyViewChangeMovement; layer_Param : access AllBinaryGameLayer'Class);
    procedure stop (This : in out ConstantVelocityNotifyViewChangeMovement);
 
 end org.allbinary.physics.movement.ConstantVelocityNotifyViewChangeMovement_Package;

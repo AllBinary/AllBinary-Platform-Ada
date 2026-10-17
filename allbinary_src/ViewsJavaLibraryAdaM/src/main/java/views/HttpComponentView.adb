@@ -26,21 +26,22 @@ package body views.HttpComponentView_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out HttpComponentView'Class; transformInfoInterface : TransformInfoInterface_Access) is
+   procedure Initialize (This : in out HttpComponentView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         TransformInfoHttpComposite_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (To_Unbounded_String ("View Name: ") & transformInfoInterface.getName, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+            This.logUtil.putF (To_Unbounded_String ("View Name: ") & transformInfoInterface.getName, HttpComponentView_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
         This.domNodeInterfaceVector := BasicArrayListD_Package.Create;
         This.setTransformDocumentInterface (TransformHttpRequestDocumentFactory_Package.getInstance (This.getPageContext, This.getWeblisketSession));
    end Initialize;
 
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return HttpComponentView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return HttpComponentView_Access is
       This : constant HttpComponentView_Access := new HttpComponentView;
    begin
-      HttpComponentView_Package.Initialize (This.all, transformInfoInterface);
+      HttpComponentView_Package.Initialize (This.all, transformInfoInterface_Param);
       return This;
    end Create;
 
@@ -54,12 +55,14 @@ package body views.HttpComponentView_Package is
         return This.transformDocumentInterface;
    end getTransformDocumentInterface;
 
-   procedure setTransformDocumentInterface (This : in out HttpComponentView; transformDocumentInterface : TransformDocumentInterface_Access) is
+   procedure setTransformDocumentInterface (This : in out HttpComponentView; transformDocumentInterface_Param : access TransformDocumentInterface'Class) is
+      transformDocumentInterface : TransformDocumentInterface_Access := TransformDocumentInterface_Access (transformDocumentInterface_Param);
    begin
         This.transformDocumentInterface := transformDocumentInterface;
    end setTransformDocumentInterface;
 
-   procedure addDomNodeInterface (This : in out HttpComponentView; domNodeInterface : DomNodeInterface_Access) is
+   procedure addDomNodeInterface (This : in out HttpComponentView; domNodeInterface_Param : access DomNodeInterface'Class) is
+      domNodeInterface : DomNodeInterface_Access := DomNodeInterface_Access (domNodeInterface_Param);
    begin
         This.domNodeInterfaceVector.add (domNodeInterface);
    end addDomNodeInterface;
@@ -83,7 +86,7 @@ package body views.HttpComponentView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("toXmlDoc()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, HttpComponentView_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlDoc()"), e);
             end if;
             Java_Throw (e);
                 end;
@@ -123,7 +126,7 @@ package body views.HttpComponentView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("view()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, HttpComponentView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
             end if;
             Java_Throw (e);
                 end;

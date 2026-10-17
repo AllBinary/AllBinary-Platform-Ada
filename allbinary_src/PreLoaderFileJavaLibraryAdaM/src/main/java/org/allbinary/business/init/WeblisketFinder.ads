@@ -60,8 +60,8 @@ package org.allbinary.business.init.WeblisketFinder_Package is
    function getInstance return WeblisketFinder_Access;
    function findAll (This : in out WeblisketFinder; path : Unbounded_String) return BasicArrayList_Access;
    procedure findAll (This : in out WeblisketFinder; path : Unbounded_String);
-   function getInstallationPath (This : in out WeblisketFinder; file : AbFile_Access) return Unbounded_String;
-   procedure getInstallationPath (This : in out WeblisketFinder; file : AbFile_Access);
+   function getInstallationPath (This : in out WeblisketFinder; file_Param : access AbFile'Class) return Unbounded_String;
+   procedure getInstallationPath (This : in out WeblisketFinder; file_Param : access AbFile'Class);
    procedure main (args : Unbounded_String_Array_Access);
 
 end org.allbinary.business.init.WeblisketFinder_Package;

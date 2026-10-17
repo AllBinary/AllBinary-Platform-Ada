@@ -39,7 +39,7 @@ package org.allbinary.graphics.ScreenListenerHandler_Package is
    procedure Initialize (This : in out ScreenListenerHandler'Class);
    function Create return ScreenListenerHandler_Access;
    function getInstance return ScreenListenerHandler_Access;
-   procedure setListener (This : in out ScreenListenerHandler; screenListenerInterface : ScreenListenerInterface_Access);
+   procedure setListener (This : in out ScreenListenerHandler; screenListenerInterface_Param : access ScreenListenerInterface'Class);
    procedure fireWithState (This : in out ScreenListenerHandler; isFullScreen : Boolean);
    procedure fire (This : in out ScreenListenerHandler);
 

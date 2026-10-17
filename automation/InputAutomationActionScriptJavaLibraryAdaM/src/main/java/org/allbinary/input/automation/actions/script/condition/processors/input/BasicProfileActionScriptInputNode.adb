@@ -21,17 +21,18 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BasicProfileActionScriptInputNode'Class; node : Node_Access) is
+   procedure Initialize (This : in out BasicProfileActionScriptInputNode'Class; node_Param : access Node'Class) is
+      node : Node_Access := Node_Access (node_Param);
       actionNode : Node_Access;
    begin
       Initialize_Fields (This);
         actionNode := DomSearchHelper_Package.getNode (GenericProfileActionScriptInputData_Package.NAME, node.getChildNodes);
    end Initialize;
 
-   function Create (node : Node_Access) return BasicProfileActionScriptInputNode_Access is
+   function Create (node_Param : access Node'Class) return BasicProfileActionScriptInputNode_Access is
       This : constant BasicProfileActionScriptInputNode_Access := new BasicProfileActionScriptInputNode;
    begin
-      BasicProfileActionScriptInputNode_Package.Initialize (This.all, node);
+      BasicProfileActionScriptInputNode_Package.Initialize (This.all, node_Param);
       return This;
    end Create;
 
@@ -49,15 +50,16 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
    end Create;
 
    --  throws Exception
-   function toXmlNode (This : in out BasicProfileActionScriptInputNode; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out BasicProfileActionScriptInputNode; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       node : Node_Access;
    begin
         node := document.createElement (GenericProfileActionScriptInputData_Package.NAME);
         return node;
    end toXmlNode;
 
-   procedure toXmlNode (This : in out BasicProfileActionScriptInputNode; document : Document_Access) is
-      Java_Result : constant Node_Access := BasicProfileActionScriptInputNode'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out BasicProfileActionScriptInputNode; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := BasicProfileActionScriptInputNode'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

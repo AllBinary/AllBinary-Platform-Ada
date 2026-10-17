@@ -104,19 +104,19 @@ package org.allbinary.game.input.SelectedRTSLayersPlayerGameInput_Package is
       downgradeGameNotificationEvent : GameNotificationEvent_Access;
    end record;
 
-   procedure Initialize (This : in out SelectedRTSLayersPlayerGameInput'Class; towerInfoPaintable : RTSLayerInfoPaintable_Access; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; list : BasicArrayList_Access; playerInputId : Integer; selectRTSLayerVisitorFactoryInterface : SelectRTSLayerVisitorFactoryInterface_Access);
-   function Create (towerInfoPaintable : RTSLayerInfoPaintable_Access; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; list : BasicArrayList_Access; playerInputId : Integer; selectRTSLayerVisitorFactoryInterface : SelectRTSLayerVisitorFactoryInterface_Access) return SelectedRTSLayersPlayerGameInput_Access;
-   procedure setAllBinaryGameLayerManager (This : in out SelectedRTSLayersPlayerGameInput; allBinaryGameLayerManager : AllBinaryGameLayerManager_Access);
-   function isSelected (This : in out SelectedRTSLayersPlayerGameInput; rtsLayer : RTSLayer_Access) return Boolean;
-   procedure isSelected (This : in out SelectedRTSLayersPlayerGameInput; rtsLayer : RTSLayer_Access);
+   procedure Initialize (This : in out SelectedRTSLayersPlayerGameInput'Class; towerInfoPaintable_Param : access RTSLayerInfoPaintable'Class; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; list_Param : access BasicArrayList'Class; playerInputId : Integer; selectRTSLayerVisitorFactoryInterface_Param : access SelectRTSLayerVisitorFactoryInterface'Class);
+   function Create (towerInfoPaintable_Param : access RTSLayerInfoPaintable'Class; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; list_Param : access BasicArrayList'Class; playerInputId : Integer; selectRTSLayerVisitorFactoryInterface_Param : access SelectRTSLayerVisitorFactoryInterface'Class) return SelectedRTSLayersPlayerGameInput_Access;
+   procedure setAllBinaryGameLayerManager (This : in out SelectedRTSLayersPlayerGameInput; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class);
+   function isSelected (This : in out SelectedRTSLayersPlayerGameInput; rtsLayer_Param : access RTSLayer'Class) return Boolean;
+   procedure isSelected (This : in out SelectedRTSLayersPlayerGameInput; rtsLayer_Param : access RTSLayer'Class);
    procedure upgrade (This : in out SelectedRTSLayersPlayerGameInput);
    procedure downgrade (This : in out SelectedRTSLayersPlayerGameInput);
    procedure initInputProcessors (This : in out SelectedRTSLayersPlayerGameInput);
    procedure processInputKey (This : in out SelectedRTSLayersPlayerGameInput; key : Integer);
-   procedure processInput (This : in out SelectedRTSLayersPlayerGameInput; layerManager : AllBinaryLayerManager_Access);
+   procedure processInput (This : in out SelectedRTSLayersPlayerGameInput; layerManager_Param : access AllBinaryLayerManager'Class);
    function getSelectedBasicArrayList (This : in out SelectedRTSLayersPlayerGameInput) return BasicArrayList_Access;
-   procedure addSelectedRTSLayer (This : in out SelectedRTSLayersPlayerGameInput; selectedLayer : RTSLayer_Access);
-   procedure setSelectedRTSLayer (This : in out SelectedRTSLayersPlayerGameInput; selectedLayer : CollidableDestroyableDamageableLayer_Access);
+   procedure addSelectedRTSLayer (This : in out SelectedRTSLayersPlayerGameInput; selectedLayer_Param : access RTSLayer'Class);
+   procedure setSelectedRTSLayer (This : in out SelectedRTSLayersPlayerGameInput; selectedLayer_Param : access CollidableDestroyableDamageableLayer'Class);
    function getLastSelectedRtsLayer (This : in out SelectedRTSLayersPlayerGameInput) return CollidableDestroyableDamageableLayer_Access;
    procedure selectAllPreselected (This : in out SelectedRTSLayersPlayerGameInput);
    procedure deselectAllPreselected (This : in out SelectedRTSLayersPlayerGameInput);

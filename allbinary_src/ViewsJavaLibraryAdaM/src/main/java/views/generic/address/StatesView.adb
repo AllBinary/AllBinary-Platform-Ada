@@ -36,7 +36,8 @@ package body views.generic_Id.address.StatesView_Package is
       return This;
    end Create;
 
-   function toXmlNode (This : in out StatesView; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out StatesView; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       node : Node_Access;
       statesFile : Unbounded_String;
       lineReader : LineReader_Access;
@@ -57,15 +58,15 @@ package body views.generic_Id.address.StatesView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("toXmlNode"), e);
+                This.logUtil.put (This.commonStrings.FAILURE, StatesView_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode"), e);
             end if;
             return null;
                 end;
         end;
    end toXmlNode;
 
-   procedure toXmlNode (This : in out StatesView; document : Document_Access) is
-      Java_Result : constant Node_Access := StatesView'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out StatesView; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := StatesView'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

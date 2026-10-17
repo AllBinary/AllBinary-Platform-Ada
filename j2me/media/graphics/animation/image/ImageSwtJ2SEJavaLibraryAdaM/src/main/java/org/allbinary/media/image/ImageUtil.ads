@@ -79,16 +79,16 @@ package org.allbinary.media.image.ImageUtil_Package is
    procedure createBufferedImage2 (This : in out ImageUtil; bufferedImageArray : Image_Access_Array_Access; percent : Float; scale : Boolean);
    function createBufferedImage3 (This : in out ImageUtil; bufferedImageArray : Image_Access_Array_Access; width : Integer; height : Integer; scale : Boolean) return Image_Access_Array_Access;
    procedure createBufferedImage3 (This : in out ImageUtil; bufferedImageArray : Image_Access_Array_Access; width : Integer; height : Integer; scale : Boolean);
-   function createBufferedImage4 (This : in out ImageUtil; bufferedImage : Image_Access; newWidth : Integer; newHeight : Integer) return Image_Access;
-   procedure createBufferedImage4 (This : in out ImageUtil; bufferedImage : Image_Access; newWidth : Integer; newHeight : Integer);
-   function createBufferedImage5 (This : in out ImageUtil; bufferedImage : Image_Access; newWidth : Integer; newHeight : Integer; scale : Boolean) return Image_Access;
-   procedure createBufferedImage5 (This : in out ImageUtil; bufferedImage : Image_Access; newWidth : Integer; newHeight : Integer; scale : Boolean);
-   function createBufferedImage6 (This : in out ImageUtil; bufferedImage : Image_Access; newWidth : Integer; newHeight : Integer; scale : Boolean; allowTranslate : Boolean) return Image_Access;
-   procedure createBufferedImage6 (This : in out ImageUtil; bufferedImage : Image_Access; newWidth : Integer; newHeight : Integer; scale : Boolean; allowTranslate : Boolean);
-   function drawTransformedImage (This : in out ImageUtil; image : Image_Access; parent : Composite_Access; dx : Integer; dy : Integer; width : Integer; height : Integer) return Canvas_Access;
-   procedure drawTransformedImage (This : in out ImageUtil; image : Image_Access; parent : Composite_Access; dx : Integer; dy : Integer; width : Integer; height : Integer);
-   function toString (This : in out ImageUtil; bufferedImage : Image_Access) return Unbounded_String;
-   procedure toString (This : in out ImageUtil; bufferedImage : Image_Access);
+   function createBufferedImage4 (This : in out ImageUtil; bufferedImage_Param : access Image'Class; newWidth : Integer; newHeight : Integer) return Image_Access;
+   procedure createBufferedImage4 (This : in out ImageUtil; bufferedImage_Param : access Image'Class; newWidth : Integer; newHeight : Integer);
+   function createBufferedImage5 (This : in out ImageUtil; bufferedImage_Param : access Image'Class; newWidth : Integer; newHeight : Integer; scale : Boolean) return Image_Access;
+   procedure createBufferedImage5 (This : in out ImageUtil; bufferedImage_Param : access Image'Class; newWidth : Integer; newHeight : Integer; scale : Boolean);
+   function createBufferedImage6 (This : in out ImageUtil; bufferedImage_Param : access Image'Class; newWidth : Integer; newHeight : Integer; scale : Boolean; allowTranslate : Boolean) return Image_Access;
+   procedure createBufferedImage6 (This : in out ImageUtil; bufferedImage_Param : access Image'Class; newWidth : Integer; newHeight : Integer; scale : Boolean; allowTranslate : Boolean);
+   function drawTransformedImage (This : in out ImageUtil; image_Param : access Image'Class; parent_Param : access Composite'Class; dx : Integer; dy : Integer; width : Integer; height : Integer) return Canvas_Access;
+   procedure drawTransformedImage (This : in out ImageUtil; image_Param : access Image'Class; parent_Param : access Composite'Class; dx : Integer; dy : Integer; width : Integer; height : Integer);
+   function toString (This : in out ImageUtil; bufferedImage_Param : access Image'Class) return Unbounded_String;
+   procedure toString (This : in out ImageUtil; bufferedImage_Param : access Image'Class);
 
 end org.allbinary.media.image.ImageUtil_Package;
 

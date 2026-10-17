@@ -35,7 +35,8 @@ package body org.allbinary.media.image.comparison.ChangedPixelsUtil_Package is
    end Create;
 
    --  throws Exception
-   function generateBufferedImageChacheables (imageComparisonInfo : ImageComparisonResult_Access) return BufferedImageCacheable_Access_Array_Access is
+   function generateBufferedImageChacheables (imageComparisonInfo_Param : access ImageComparisonResult'Class) return BufferedImageCacheable_Access_Array_Access is
+      imageComparisonInfo : ImageComparisonResult_Access := ImageComparisonResult_Access (imageComparisonInfo_Param);
       bufferedImageCacheables : BufferedImageCacheable_Access_Array_Access;
       originalBufferedImage : BufferedImage_Access;
       bufferedImageInfo : BufferedImageInfo_Access;
@@ -70,8 +71,8 @@ package body org.allbinary.media.image.comparison.ChangedPixelsUtil_Package is
         return bufferedImageCacheables;
    end generateBufferedImageChacheables;
 
-   procedure generateBufferedImageChacheables (imageComparisonInfo : ImageComparisonResult_Access) is
-      Java_Result : constant BufferedImageCacheable_Access_Array_Access := generateBufferedImageChacheables (imageComparisonInfo);
+   procedure generateBufferedImageChacheables (imageComparisonInfo_Param : access ImageComparisonResult'Class) is
+      Java_Result : constant BufferedImageCacheable_Access_Array_Access := generateBufferedImageChacheables (imageComparisonInfo_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

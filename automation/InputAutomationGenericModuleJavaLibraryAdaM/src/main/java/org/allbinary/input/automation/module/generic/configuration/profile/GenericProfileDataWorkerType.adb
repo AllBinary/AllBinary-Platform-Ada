@@ -26,7 +26,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    begin
       Initialize_Fields (This);
         This.setName (name);
-        GenericProfileDataWorkerType_Package.hashMap.put (This.getName, This'Unchecked_Access);
+        GenericProfileDataWorkerType_Package.hashMap.put (This.getName, GenericProfileDataWorkerType_Access'(This'Unchecked_Access));
    end Initialize;
 
    function Create (name : Unbounded_String) return GenericProfileDataWorkerType_Access is
@@ -47,7 +47,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    end setName;
 
    --  throws Exception
-   function toXmlNode (This : in out GenericProfileDataWorkerType; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out GenericProfileDataWorkerType; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       node : Node_Access;
    begin
         node := ModDomHelper_Package.createTextNode (document, GenericProfileDataWorkerData_Package.NAME, This.name);
@@ -59,22 +60,23 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         return To_Unbounded_String ("GenericProfileDataWorkerType: ") & This.getName;
    end toString;
 
-   function getInstance (node : Node_Access) return GenericProfileDataWorkerType_Access is
+   function getInstance (node_Param : access Node'Class) return GenericProfileDataWorkerType_Access is
+      node : Node_Access := Node_Access (node_Param);
       name : Unbounded_String;
    begin
         name := DomNodeHelper_Package.getTextNodeValue (node);
         return GenericProfileDataWorkerType_Access (GenericProfileDataWorkerType_Package.hashMap.get (name));
    end getInstance;
 
-   procedure toXmlNode (This : in out GenericProfileDataWorkerType; document : Document_Access) is
-      Java_Result : constant Node_Access := GenericProfileDataWorkerType'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out GenericProfileDataWorkerType; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := GenericProfileDataWorkerType'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toXmlNode;
 
-   procedure getInstance (node : Node_Access) is
-      Java_Result : constant GenericProfileDataWorkerType_Access := getInstance (node);
+   procedure getInstance (node_Param : access Node'Class) is
+      Java_Result : constant GenericProfileDataWorkerType_Access := getInstance (node_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

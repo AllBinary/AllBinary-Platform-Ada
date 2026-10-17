@@ -56,16 +56,16 @@ package org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package is
       valueTotalDigits : Integer;
    end record;
 
-   procedure Initialize (This : in out NumberStringHud'Class; prependString : Unbounded_String; max : Integer; location : Integer; direction : Integer; bufferZone : Integer; basicColor : BasicColor_Access);
-   function Create (prependString : Unbounded_String; max : Integer; location : Integer; direction : Integer; bufferZone : Integer; basicColor : BasicColor_Access) return NumberStringHud_Access;
-   procedure updateMeasurement (This : in out NumberStringHud; graphics : Graphics_Access);
+   procedure Initialize (This : in out NumberStringHud'Class; prependString : Unbounded_String; max : Integer; location : Integer; direction : Integer; bufferZone : Integer; basicColor_Param : access BasicColor'Class);
+   function Create (prependString : Unbounded_String; max : Integer; location : Integer; direction : Integer; bufferZone : Integer; basicColor_Param : access BasicColor'Class) return NumberStringHud_Access;
+   procedure updateMeasurement (This : in out NumberStringHud; graphics_Param : access Graphics'Class);
    function get (This : in out NumberStringHud) return Integer;
    procedure add (This : in out NumberStringHud; value : Integer);
    procedure set (This : in out NumberStringHud; value : Integer);
    procedure reduce (This : in out NumberStringHud; value : Integer);
-   procedure paint (This : in out NumberStringHud; graphics : Graphics_Access);
-   procedure paintXY (This : in out NumberStringHud; graphics : Graphics_Access; x : Integer; y : Integer);
-   procedure paintThreed (This : in out NumberStringHud; graphics : Graphics_Access);
+   procedure paint (This : in out NumberStringHud; graphics_Param : access Graphics'Class);
+   procedure paintXY (This : in out NumberStringHud; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
+   procedure paintThreed (This : in out NumberStringHud; graphics_Param : access Graphics'Class);
 
 end org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package;
 

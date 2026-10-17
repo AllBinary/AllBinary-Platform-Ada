@@ -23,26 +23,28 @@ package body org.allbinary.business.context.modules.storefront.StoreFrontView_Pa
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out StoreFrontView'Class; storeFrontInterface : StoreFrontInterface_Access) is
+   procedure Initialize (This : in out StoreFrontView'Class; storeFrontInterface_Param : access StoreFrontInterface'Class) is
+      storeFrontInterface : StoreFrontInterface_Access := StoreFrontInterface_Access (storeFrontInterface_Param);
       commonStrings : CommonStrings_Access;
    begin
       Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.putF (To_Unbounded_String ("Constructing: StoreFrontView for: ") & storeFrontInterface.getName, This'Unchecked_Access, commonStrings.GET_INSTANCE);
+            This.logUtil.putF (To_Unbounded_String ("Constructing: StoreFrontView for: ") & storeFrontInterface.getName, StoreFrontView_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);
         end if;
         This.storeFrontInterface := storeFrontInterface;
    end Initialize;
 
-   function Create (storeFrontInterface : StoreFrontInterface_Access) return StoreFrontView_Access is
+   function Create (storeFrontInterface_Param : access StoreFrontInterface'Class) return StoreFrontView_Access is
       This : constant StoreFrontView_Access := new StoreFrontView;
    begin
-      StoreFrontView_Package.Initialize (This.all, storeFrontInterface);
+      StoreFrontView_Package.Initialize (This.all, storeFrontInterface_Param);
       return This;
    end Create;
 
    --  throws Exception
-   function toXmlNode (This : in out StoreFrontView; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out StoreFrontView; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       hashMap : HashMap_Access;
       storeFrontData : StoreFrontData_Access;
       node : Node_Access;
@@ -58,8 +60,8 @@ package body org.allbinary.business.context.modules.storefront.StoreFrontView_Pa
         return node;
    end toXmlNode;
 
-   procedure toXmlNode (This : in out StoreFrontView; document : Document_Access) is
-      Java_Result : constant Node_Access := StoreFrontView'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out StoreFrontView; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := StoreFrontView'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

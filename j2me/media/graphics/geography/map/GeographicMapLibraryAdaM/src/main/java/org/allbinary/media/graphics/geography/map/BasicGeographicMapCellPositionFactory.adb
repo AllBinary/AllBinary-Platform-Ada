@@ -28,7 +28,8 @@ package body org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPo
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BasicGeographicMapCellPositionFactory'Class; geographicMapInterface : BasicGeographicMap_Access) is
+   procedure Initialize (This : in out BasicGeographicMapCellPositionFactory'Class; geographicMapInterface_Param : access BasicGeographicMap'Class) is
+      geographicMapInterface : BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
    begin
       Initialize_Fields (This);
         This.geographicMapInterface := geographicMapInterface;
@@ -40,10 +41,10 @@ package body org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPo
         This.init;
    end Initialize;
 
-   function Create (geographicMapInterface : BasicGeographicMap_Access) return BasicGeographicMapCellPositionFactory_Access is
+   function Create (geographicMapInterface_Param : access BasicGeographicMap'Class) return BasicGeographicMapCellPositionFactory_Access is
       This : constant BasicGeographicMapCellPositionFactory_Access := new BasicGeographicMapCellPositionFactory;
    begin
-      BasicGeographicMapCellPositionFactory_Package.Initialize (This.all, geographicMapInterface);
+      BasicGeographicMapCellPositionFactory_Package.Initialize (This.all, geographicMapInterface_Param);
       return This;
    end Create;
 
@@ -70,7 +71,8 @@ package body org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPo
    end init;
 
    --  throws Exception
-   procedure visit (This : in out BasicGeographicMapCellPositionFactory; geographicMapCelPositionFactoryInitVisitorInterface : GeographicMapCellPositionFactoryInitVisitorInterface_Access) is
+   procedure visit (This : in out BasicGeographicMapCellPositionFactory; geographicMapCelPositionFactoryInitVisitorInterface_Param : access GeographicMapCellPositionFactoryInitVisitorInterface'Class) is
+      geographicMapCelPositionFactoryInitVisitorInterface : GeographicMapCellPositionFactoryInitVisitorInterface_Access := GeographicMapCellPositionFactoryInitVisitorInterface_Access (geographicMapCelPositionFactoryInitVisitorInterface_Param);
       tiledLayer : AllBinaryTiledLayer_Access;
       columns : Integer;
       rows : Integer;
@@ -96,7 +98,7 @@ package body org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPo
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonSeps := CommonSeps_Package.getInstance;
-            This.logUtil.put (StringMaker_Package.Create.append (commonSeps.BRACKET_OPEN).appendint (rows).append (commonSeps.BRACKET_CLOSE).append (commonSeps.BRACKET_OPEN).appendint (columns).append (commonSeps.BRACKET_CLOSE).toString, This'Unchecked_Access, To_Unbounded_String ("visit"), e);
+            This.logUtil.put (StringMaker_Package.Create.append (commonSeps.BRACKET_OPEN).appendint (rows).append (commonSeps.BRACKET_CLOSE).append (commonSeps.BRACKET_OPEN).appendint (columns).append (commonSeps.BRACKET_CLOSE).toString, BasicGeographicMapCellPositionFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("visit"), e);
             Java_Throw (e);
                 end;
         end;
@@ -109,7 +111,8 @@ package body org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPo
    end getAt;
 
    --  throws Exception
-   function getInstance (This : in out BasicGeographicMapCellPositionFactory; anotherMapGeographicMapCellPosition : GeographicMapCellPosition_Access) return GeographicMapCellPosition_Access is
+   function getInstance (This : in out BasicGeographicMapCellPositionFactory; anotherMapGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return GeographicMapCellPosition_Access is
+      anotherMapGeographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (anotherMapGeographicMapCellPosition_Param);
    begin
         return This.getAt (anotherMapGeographicMapCellPosition.getColumn, anotherMapGeographicMapCellPosition.getRow);
    end getInstance;
@@ -143,8 +146,8 @@ package body org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPo
       null;
    end getAt;
 
-   procedure getInstance (This : in out BasicGeographicMapCellPositionFactory; anotherMapGeographicMapCellPosition : GeographicMapCellPosition_Access) is
-      Java_Result : constant GeographicMapCellPosition_Access := BasicGeographicMapCellPositionFactory'Class (This).getInstance (anotherMapGeographicMapCellPosition);
+   procedure getInstance (This : in out BasicGeographicMapCellPositionFactory; anotherMapGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is
+      Java_Result : constant GeographicMapCellPosition_Access := BasicGeographicMapCellPositionFactory'Class (This).getInstance (anotherMapGeographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

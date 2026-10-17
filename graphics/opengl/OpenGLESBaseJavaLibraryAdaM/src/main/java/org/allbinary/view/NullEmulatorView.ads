@@ -37,9 +37,9 @@ package org.allbinary.view.NullEmulatorView_Package is
 
    procedure Initialize (This : in out NullEmulatorView'Class);
    function Create return NullEmulatorView_Access;
-   procedure setMidlet (This : in out NullEmulatorView; midlet : MIDlet_Access);
-   procedure onEmulatorInitComplete (This : in out NullEmulatorView; midletActivity : Java_Object_Access);
-   procedure onSetDisplayable (This : in out NullEmulatorView; displayable : Displayable_Access);
+   procedure setMidlet (This : in out NullEmulatorView; midlet_Param : access MIDlet'Class);
+   procedure onEmulatorInitComplete (This : in out NullEmulatorView; midletActivity_Param : access Java_Object'Class);
+   procedure onSetDisplayable (This : in out NullEmulatorView; displayable_Param : access Displayable'Class);
 
 end org.allbinary.view.NullEmulatorView_Package;
 

@@ -47,7 +47,8 @@ package body admin.tags.MultipartRequestParamForwardTag_Package is
         This.command := command;
    end setCommand;
 
-   procedure setParamVector (This : in out MultipartRequestParamForwardTag; paramVector : BasicArrayList_Access) is
+   procedure setParamVector (This : in out MultipartRequestParamForwardTag; paramVector_Param : access BasicArrayList'Class) is
+      paramVector : BasicArrayList_Access := BasicArrayList_Access (paramVector_Param);
    begin
         This.paramVector := paramVector;
    end setParamVector;
@@ -60,7 +61,7 @@ package body admin.tags.MultipartRequestParamForwardTag_Package is
    begin
         begin
             parentTag := HelperTag_Access (This.getParent);
-            ParentInventoryTagHelper_Package.getInstance.isValid (This'Unchecked_Access, parentTag);
+            ParentInventoryTagHelper_Package.getInstance.isValid (MultipartRequestParamForwardTag_Access'(This'Unchecked_Access), parentTag);
             hashMap := StdUtil_Package.getInstance.createHashMap;
             hashMap.put (AbTagData_Package.PARENT, parentTag);
             multipartRequestParamForwardHelper := MultipartRequestParamForwardHelper_Package.Create (parentTag, This.page, This.command, This.paramVector, This.pageContext);

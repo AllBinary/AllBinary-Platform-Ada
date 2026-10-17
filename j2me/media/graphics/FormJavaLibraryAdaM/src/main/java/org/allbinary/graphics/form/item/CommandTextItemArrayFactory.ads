@@ -54,10 +54,10 @@ package org.allbinary.graphics.form.item.CommandTextItemArrayFactory_Package is
       visitorInterface : Visitor_Access;
    end record;
 
-   procedure Initialize (This : in out CommandTextItemArrayFactory'Class; visitorInterface : Visitor_Access);
-   function Create (visitorInterface : Visitor_Access) return CommandTextItemArrayFactory_Access;
-   function getInstance (This : in out CommandTextItemArrayFactory; vector : Java_Object_Access; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return ABCustomItem_Access_Array_Access;
-   procedure getInstance (This : in out CommandTextItemArrayFactory; vector : Java_Object_Access; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access);
+   procedure Initialize (This : in out CommandTextItemArrayFactory'Class; visitorInterface_Param : access Visitor'Class);
+   function Create (visitorInterface_Param : access Visitor'Class) return CommandTextItemArrayFactory_Access;
+   function getInstance (This : in out CommandTextItemArrayFactory; vector_Param : access Java_Object'Class; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return ABCustomItem_Access_Array_Access;
+   procedure getInstance (This : in out CommandTextItemArrayFactory; vector_Param : access Java_Object'Class; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class);
 
 end org.allbinary.graphics.form.item.CommandTextItemArrayFactory_Package;
 

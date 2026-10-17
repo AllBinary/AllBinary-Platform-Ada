@@ -21,15 +21,17 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreNoM
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out TransformInfoHttpStoreNoManipulation'Class; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) is
+   procedure Initialize (This : in out TransformInfoHttpStoreNoManipulation'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+      propertiesHashMap : HashMap_Access := HashMap_Access (propertiesHashMap_Param);
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
    begin
         TransformInfoHttpStore_Package.Initialize (This, propertiesHashMap, pageContext);
    end Initialize;
 
-   function Create (propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return TransformInfoHttpStoreNoManipulation_Access is
+   function Create (propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return TransformInfoHttpStoreNoManipulation_Access is
       This : constant TransformInfoHttpStoreNoManipulation_Access := new TransformInfoHttpStoreNoManipulation;
    begin
-      TransformInfoHttpStoreNoManipulation_Package.Initialize (This.all, propertiesHashMap, pageContext);
+      TransformInfoHttpStoreNoManipulation_Package.Initialize (This.all, propertiesHashMap_Param, pageContext_Param);
       return This;
    end Create;
 
@@ -37,7 +39,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreNoM
    procedure setObjectConfigFile (This : in out TransformInfoHttpStoreNoManipulation; value : Unbounded_String) is
    begin
         This.setObjectConfigFileName (value);
-        This.setObjectConfigInterface (TransformInfoObjectConfigNoManipulationFactory_Package.getInstance.getInstance (This'Unchecked_Access, This.getObjectConfigFilePath));
+        This.setObjectConfigInterface (TransformInfoObjectConfigNoManipulationFactory_Package.getInstance.getInstance (TransformInfoHttpStoreNoManipulation_Access'(This'Unchecked_Access), This.getObjectConfigFilePath));
    end setObjectConfigFile;
 
    --  throws Exception

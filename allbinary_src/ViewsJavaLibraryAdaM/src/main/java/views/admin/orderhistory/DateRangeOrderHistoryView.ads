@@ -99,17 +99,17 @@ package views.admin.orderhistory.DateRangeOrderHistoryView_Package is
       MAXLEN : Integer;
    end record;
 
-   procedure Initialize (This : in out DateRangeOrderHistoryView'Class; transformInfoInterface : TransformInfoInterface_Access);
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return DateRangeOrderHistoryView_Access;
+   procedure Initialize (This : in out DateRangeOrderHistoryView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return DateRangeOrderHistoryView_Access;
    procedure getFormData (This : in out DateRangeOrderHistoryView);
    procedure addDomNodeInterfaces (This : in out DateRangeOrderHistoryView);
    function view (This : in out DateRangeOrderHistoryView) return Unbounded_String;
-   function toXmlNode (This : in out DateRangeOrderHistoryView; document : Document_Access) return Node_Access;
-   procedure toXmlNode (This : in out DateRangeOrderHistoryView; document : Document_Access);
+   function toXmlNode (This : in out DateRangeOrderHistoryView; document_Param : access Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out DateRangeOrderHistoryView; document_Param : access Document'Class);
    function isValid (This : in out DateRangeOrderHistoryView) return Boolean;
    function toValidationInfoDoc (This : in out DateRangeOrderHistoryView) return Document_Access;
-   function toValidationInfoNode (This : in out DateRangeOrderHistoryView; document : Document_Access) return Node_Access;
-   procedure toValidationInfoNode (This : in out DateRangeOrderHistoryView; document : Document_Access);
+   function toValidationInfoNode (This : in out DateRangeOrderHistoryView; document_Param : access Document'Class) return Node_Access;
+   procedure toValidationInfoNode (This : in out DateRangeOrderHistoryView; document_Param : access Document'Class);
    function validationInfo (This : in out DateRangeOrderHistoryView) return Unbounded_String;
 
 end views.admin.orderhistory.DateRangeOrderHistoryView_Package;

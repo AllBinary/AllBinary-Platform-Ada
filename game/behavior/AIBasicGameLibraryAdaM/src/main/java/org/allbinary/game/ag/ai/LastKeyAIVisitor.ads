@@ -46,8 +46,8 @@ package org.allbinary.game.ag.ai.LastKeyAIVisitor_Package is
 
    procedure Initialize (This : in out LastKeyAIVisitor'Class);
    function Create return LastKeyAIVisitor_Access;
-   function visit (This : in out LastKeyAIVisitor; anyType : Java_Object_Access) return Java_Object_Access;
-   procedure visit (This : in out LastKeyAIVisitor; anyType : Java_Object_Access);
+   function visit (This : in out LastKeyAIVisitor; anyType_Param : access Java_Object'Class) return Java_Object_Access;
+   procedure visit (This : in out LastKeyAIVisitor; anyType_Param : access Java_Object'Class);
 
 end org.allbinary.game.ag.ai.LastKeyAIVisitor_Package;
 

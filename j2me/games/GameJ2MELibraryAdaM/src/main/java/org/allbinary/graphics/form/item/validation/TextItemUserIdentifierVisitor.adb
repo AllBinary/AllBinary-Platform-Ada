@@ -36,7 +36,8 @@ package body org.allbinary.graphics.form.item.validation.TextItemUserIdentifierV
       return This;
    end Create;
 
-   function visit (This : in out TextItemUserIdentifierVisitor; anyType : Java_Object_Access) return Java_Object_Access is
+   function visit (This : in out TextItemUserIdentifierVisitor; anyType_Param : access Java_Object'Class) return Java_Object_Access is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
       value : Unbounded_String;
       charValue : Character;
       stringValidationUtil : StringValidationUtil_Access;
@@ -59,7 +60,7 @@ package body org.allbinary.graphics.form.item.validation.TextItemUserIdentifierV
                             e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                         begin
                     commonStrings := CommonStrings_Package.getInstance;
-                    This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.VISIT, e);
+                    This.logUtil.put (commonStrings.EXCEPTION_Id, TextItemUserIdentifierVisitor_Access'(This'Unchecked_Access), commonStrings.VISIT, e);
                         end;
                 end;
                 return BooleanFactory_Package.getInstance.FALSE;
@@ -76,8 +77,8 @@ package body org.allbinary.graphics.form.item.validation.TextItemUserIdentifierV
         return ((((value) > (64)) and then ((value) < (91)))) or else ((((value) > (96)) and then ((value) < (123))));
    end isLetter;
 
-   procedure visit (This : in out TextItemUserIdentifierVisitor; anyType : Java_Object_Access) is
-      Java_Result : constant Java_Object_Access := TextItemUserIdentifierVisitor'Class (This).visit (anyType);
+   procedure visit (This : in out TextItemUserIdentifierVisitor; anyType_Param : access Java_Object'Class) is
+      Java_Result : constant Java_Object_Access := TextItemUserIdentifierVisitor'Class (This).visit (anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

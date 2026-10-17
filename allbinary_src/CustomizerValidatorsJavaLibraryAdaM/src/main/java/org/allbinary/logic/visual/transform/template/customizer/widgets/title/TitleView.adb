@@ -37,7 +37,8 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.ti
       return This;
    end Create;
 
-   procedure Initialize (This : in out TitleView'Class; node : Node_Access) is
+   procedure Initialize (This : in out TitleView'Class; node_Param : access Node'Class) is
+      node : Node_Access := Node_Access (node_Param);
       titleTextNode : Node_Access;
       valueNode : Node_Access;
    begin
@@ -49,30 +50,31 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.ti
             This.title := TitleView_Package.NAME;
         end if;
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (To_Unbounded_String ("Title: ") & Java_Image (This.getTitle), This'Unchecked_Access, To_Unbounded_String ("Consructor()"));
+            This.logUtil.putF (To_Unbounded_String ("Title: ") & Java_Image (This.getTitle), TitleView_Access'(This'Unchecked_Access), To_Unbounded_String ("Consructor()"));
         end if;
    end Initialize;
 
-   function Create (node : Node_Access) return TitleView_Access is
+   function Create (node_Param : access Node'Class) return TitleView_Access is
       This : constant TitleView_Access := new TitleView;
    begin
-      TitleView_Package.Initialize (This.all, node);
+      TitleView_Package.Initialize (This.all, node_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out TitleView'Class; hashMap : HashMap_Access) is
+   procedure Initialize (This : in out TitleView'Class; hashMap_Param : access HashMap'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
    begin
       Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (To_Unbounded_String ("HashMap: ") & hashMap.toString, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+            This.logUtil.putF (To_Unbounded_String ("HashMap: ") & hashMap.toString, TitleView_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
         This.getFormData (hashMap);
    end Initialize;
 
-   function Create (hashMap : HashMap_Access) return TitleView_Access is
+   function Create (hashMap_Param : access HashMap'Class) return TitleView_Access is
       This : constant TitleView_Access := new TitleView;
    begin
-      TitleView_Package.Initialize (This.all, hashMap);
+      TitleView_Package.Initialize (This.all, hashMap_Param);
       return This;
    end Create;
 
@@ -81,7 +83,8 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.ti
         return This.title;
    end getTitle;
 
-   procedure getFormData (This : in out TitleView; hashMap : HashMap_Access) is
+   procedure getFormData (This : in out TitleView; hashMap_Param : access HashMap'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
    begin
         This.title := Unbounded_String (hashMap.get (TitleData_Package.getInstance.TEXT));
         if StringValidationUtil_Package.getInstance.isEmpty (This.title) then
@@ -98,18 +101,19 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.ti
    end toHashMap;
 
    --  throws Exception
-   function toXmlNode (This : in out TitleView; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out TitleView; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       hashMap : HashMap_Access;
    begin
         hashMap := This.toHashMap;
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (To_Unbounded_String ("TitleView HashMap: ") & hashMap.toString, This'Unchecked_Access, To_Unbounded_String ("toXmlNode()"));
+            This.logUtil.putF (To_Unbounded_String ("TitleView HashMap: ") & hashMap.toString, TitleView_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode()"));
         end if;
         return ModDomHelper_Package.createNameValueNodes (document, TitleData_Package.getInstance.NAME, hashMap);
    end toXmlNode;
 
-   procedure toXmlNode (This : in out TitleView; document : Document_Access) is
-      Java_Result : constant Node_Access := TitleView'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out TitleView; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := TitleView'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

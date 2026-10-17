@@ -63,18 +63,18 @@ package views.business.context.modules.storefront.customizer.CustomizerUtil_Pack
    procedure Initialize (This : in out CustomizerUtil'Class);
    function Create return CustomizerUtil_Access;
    function getInstance return CustomizerUtil_Access;
-   function getTransformInfoInterfaceToCustomize (This : in out CustomizerUtil; customizerTransformInfoInterface : TransformInfoInterface_Access; transformInfoInterface : TransformInfoInterface_Access) return TransformInfoInterface_Access;
-   procedure getTransformInfoInterfaceToCustomize (This : in out CustomizerUtil; customizerTransformInfoInterface : TransformInfoInterface_Access; transformInfoInterface : TransformInfoInterface_Access);
-   function getTransformInfoObjectConfigComponentNodesToCustomize (This : in out CustomizerUtil; customizerTransformInfoInterface : TransformInfoInterface_Access; transformInfoInterface : TransformInfoInterface_Access) return BasicArrayList_Access;
-   procedure getTransformInfoObjectConfigComponentNodesToCustomize (This : in out CustomizerUtil; customizerTransformInfoInterface : TransformInfoInterface_Access; transformInfoInterface : TransformInfoInterface_Access);
-   function getTransformInfoObjectConfigComponentNodes (This : in out CustomizerUtil; transformInfoInterface : TransformInfoInterface_Access) return BasicArrayList_Access;
-   procedure getTransformInfoObjectConfigComponentNodes (This : in out CustomizerUtil; transformInfoInterface : TransformInfoInterface_Access);
-   function getTransformInfoObjectConfigGroupComponentNodes (This : in out CustomizerUtil; transformInfoInterface : TransformInfoInterface_Access) return BasicArrayList_Access;
-   procedure getTransformInfoObjectConfigGroupComponentNodes (This : in out CustomizerUtil; transformInfoInterface : TransformInfoInterface_Access);
-   procedure insert (This : in out CustomizerUtil; transformInfoInterface : TransformInfoInterface_Access; domNodeInterface : DomNodeInterface_Access);
-   procedure write (This : in out CustomizerUtil; specifiedTransformInfoInterface : TransformInfoInterface_Access; documentString : Unbounded_String);
-   function getViewDataForComponentsInObjectConfig (This : in out CustomizerUtil; transformInfoInterface : TransformInfoInterface_Access) return Document_Access;
-   procedure getViewDataForComponentsInObjectConfig (This : in out CustomizerUtil; transformInfoInterface : TransformInfoInterface_Access);
+   function getTransformInfoInterfaceToCustomize (This : in out CustomizerUtil; customizerTransformInfoInterface_Param : access TransformInfoInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) return TransformInfoInterface_Access;
+   procedure getTransformInfoInterfaceToCustomize (This : in out CustomizerUtil; customizerTransformInfoInterface_Param : access TransformInfoInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
+   function getTransformInfoObjectConfigComponentNodesToCustomize (This : in out CustomizerUtil; customizerTransformInfoInterface_Param : access TransformInfoInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) return BasicArrayList_Access;
+   procedure getTransformInfoObjectConfigComponentNodesToCustomize (This : in out CustomizerUtil; customizerTransformInfoInterface_Param : access TransformInfoInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
+   function getTransformInfoObjectConfigComponentNodes (This : in out CustomizerUtil; transformInfoInterface_Param : access TransformInfoInterface'Class) return BasicArrayList_Access;
+   procedure getTransformInfoObjectConfigComponentNodes (This : in out CustomizerUtil; transformInfoInterface_Param : access TransformInfoInterface'Class);
+   function getTransformInfoObjectConfigGroupComponentNodes (This : in out CustomizerUtil; transformInfoInterface_Param : access TransformInfoInterface'Class) return BasicArrayList_Access;
+   procedure getTransformInfoObjectConfigGroupComponentNodes (This : in out CustomizerUtil; transformInfoInterface_Param : access TransformInfoInterface'Class);
+   procedure insert (This : in out CustomizerUtil; transformInfoInterface_Param : access TransformInfoInterface'Class; domNodeInterface_Param : access DomNodeInterface'Class);
+   procedure write (This : in out CustomizerUtil; specifiedTransformInfoInterface_Param : access TransformInfoInterface'Class; documentString : Unbounded_String);
+   function getViewDataForComponentsInObjectConfig (This : in out CustomizerUtil; transformInfoInterface_Param : access TransformInfoInterface'Class) return Document_Access;
+   procedure getViewDataForComponentsInObjectConfig (This : in out CustomizerUtil; transformInfoInterface_Param : access TransformInfoInterface'Class);
 
 end views.business.context.modules.storefront.customizer.CustomizerUtil_Package;
 

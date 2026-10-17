@@ -54,7 +54,8 @@ package body org.allbinary.game.ag.layer.weapon.mine.MineCountedPickedUpLayerInt
    end getTotal;
 
    --  throws Exception
-   function getNextInstance (This : in out MineCountedPickedUpLayerInterfaceFactory; hashtable : ABHashtable_Access; x : Integer; y : Integer; z : Integer) return AllBinaryLayer_Access is
+   function getNextInstance (This : in out MineCountedPickedUpLayerInterfaceFactory; hashtable_Param : access ABHashtable'Class; x : Integer; y : Integer; z : Integer) return AllBinaryLayer_Access is
+      hashtable : ABHashtable_Access := ABHashtable_Access (hashtable_Param);
       sourceLayerInterface : AllBinaryLayer_Access;
       angle : Integer;
       scoreableInterface : ScoreableInterface_Access;
@@ -65,8 +66,8 @@ package body org.allbinary.game.ag.layer.weapon.mine.MineCountedPickedUpLayerInt
         return This.weaponLayerCircularStaticPool.getInstanceWeaponLayer (sourceLayerInterface, x, y, z, Integer (angle.intValue), 0, This.weaponProperties, scoreableInterface);
    end getNextInstance;
 
-   procedure getNextInstance (This : in out MineCountedPickedUpLayerInterfaceFactory; hashtable : ABHashtable_Access; x : Integer; y : Integer; z : Integer) is
-      Java_Result : constant AllBinaryLayer_Access := MineCountedPickedUpLayerInterfaceFactory'Class (This).getNextInstance (hashtable, x, y, z);
+   procedure getNextInstance (This : in out MineCountedPickedUpLayerInterfaceFactory; hashtable_Param : access ABHashtable'Class; x : Integer; y : Integer; z : Integer) is
+      Java_Result : constant AllBinaryLayer_Access := MineCountedPickedUpLayerInterfaceFactory'Class (This).getNextInstance (hashtable_Param, x, y, z);
       pragma Unreferenced (Java_Result);
    begin
       null;

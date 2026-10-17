@@ -43,10 +43,10 @@ package org.allbinary.game.layer.AllBinaryJ2METiledLayer_Package is
       font2 : Font_Access;
    end record;
 
-   procedure Initialize (This : in out AllBinaryJ2METiledLayer'Class; dataId : Integer; tiledLayer : TiledLayer_Access; mapTwoDArray : Integer_Array_Access_Array_Access; debugColor : Integer);
-   function Create (dataId : Integer; tiledLayer : TiledLayer_Access; mapTwoDArray : Integer_Array_Access_Array_Access; debugColor : Integer) return AllBinaryJ2METiledLayer_Access;
-   procedure paint (This : in out AllBinaryJ2METiledLayer; graphics : Graphics_Access);
-   procedure paintDebug (This : in out AllBinaryJ2METiledLayer; graphics : Graphics_Access);
+   procedure Initialize (This : in out AllBinaryJ2METiledLayer'Class; dataId : Integer; tiledLayer_Param : access TiledLayer'Class; mapTwoDArray : Integer_Array_Access_Array_Access; debugColor : Integer);
+   function Create (dataId : Integer; tiledLayer_Param : access TiledLayer'Class; mapTwoDArray : Integer_Array_Access_Array_Access; debugColor : Integer) return AllBinaryJ2METiledLayer_Access;
+   procedure paint (This : in out AllBinaryJ2METiledLayer; graphics_Param : access Graphics'Class);
+   procedure paintDebug (This : in out AllBinaryJ2METiledLayer; graphics_Param : access Graphics'Class);
    procedure moveDXY (This : in out AllBinaryJ2METiledLayer; dx : Integer; dy : Integer);
    procedure setPosition (This : in out AllBinaryJ2METiledLayer; x : Integer; y : Integer; z : Integer);
    function getTiledLayer (This : in out AllBinaryJ2METiledLayer) return TiledLayer_Access;

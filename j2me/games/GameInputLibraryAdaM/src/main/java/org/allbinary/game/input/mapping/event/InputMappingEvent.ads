@@ -37,9 +37,9 @@ package org.allbinary.game.input.mapping.event.InputMappingEvent_Package is
       inputToGameKeyMapping : InputToGameKeyMapping_Access;
    end record;
 
-   procedure Initialize (This : in out InputMappingEvent'Class; anyType : Java_Object_Access);
-   function Create (anyType : Java_Object_Access) return InputMappingEvent_Access;
-   procedure setInputToGameKeyMapping (This : in out InputMappingEvent; inputToGameKeyMapping : InputToGameKeyMapping_Access);
+   procedure Initialize (This : in out InputMappingEvent'Class; anyType_Param : access Java_Object'Class);
+   function Create (anyType_Param : access Java_Object'Class) return InputMappingEvent_Access;
+   procedure setInputToGameKeyMapping (This : in out InputMappingEvent; inputToGameKeyMapping_Param : access InputToGameKeyMapping'Class);
    function getInputToGameKeyMapping (This : in out InputMappingEvent) return InputToGameKeyMapping_Access;
 
 end org.allbinary.game.input.mapping.event.InputMappingEvent_Package;

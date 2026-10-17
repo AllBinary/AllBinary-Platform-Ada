@@ -57,21 +57,21 @@ package org.allbinary.game.ai.path.BasicAIProcessor_Package is
       geographicMapDirectionUtil : GeographicMapDirectionUtil_Access;
    end record;
 
-   procedure Initialize (This : in out BasicAIProcessor'Class; name : Unbounded_String; geographicMapCellHistory : GeographicMapCellHistory_Access; geographicMapCellPathHistoryInfo : GeographicMapCellPathHistoryInfo_Access; chosenPathList : BasicArrayList_Access; angleInfo : AngleInfo_Access; seed : Integer);
-   function Create (name : Unbounded_String; geographicMapCellHistory : GeographicMapCellHistory_Access; geographicMapCellPathHistoryInfo : GeographicMapCellPathHistoryInfo_Access; chosenPathList : BasicArrayList_Access; angleInfo : AngleInfo_Access; seed : Integer) return BasicAIProcessor_Access;
-   procedure setNewPath (This : in out BasicAIProcessor; geographicMapCellHistory : GeographicMapCellHistory_Access; chosenPathList : BasicArrayList_Access);
+   procedure Initialize (This : in out BasicAIProcessor'Class; name : Unbounded_String; geographicMapCellHistory_Param : access GeographicMapCellHistory'Class; geographicMapCellPathHistoryInfo_Param : access GeographicMapCellPathHistoryInfo'Class; chosenPathList_Param : access BasicArrayList'Class; angleInfo_Param : access AngleInfo'Class; seed : Integer);
+   function Create (name : Unbounded_String; geographicMapCellHistory_Param : access GeographicMapCellHistory'Class; geographicMapCellPathHistoryInfo_Param : access GeographicMapCellPathHistoryInfo'Class; chosenPathList_Param : access BasicArrayList'Class; angleInfo_Param : access AngleInfo'Class; seed : Integer) return BasicAIProcessor_Access;
+   procedure setNewPath (This : in out BasicAIProcessor; geographicMapCellHistory_Param : access GeographicMapCellHistory'Class; chosenPathList_Param : access BasicArrayList'Class);
    procedure init (This : in out BasicAIProcessor);
-   function goTowardNextChosenOnPathPosition (This : in out BasicAIProcessor; currentGeographicMapCellPosition : GeographicMapCellPosition_Access) return Integer;
-   procedure goTowardNextChosenOnPathPosition (This : in out BasicAIProcessor; currentGeographicMapCellPosition : GeographicMapCellPosition_Access);
+   function goTowardNextChosenOnPathPosition (This : in out BasicAIProcessor; currentGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return Integer;
+   procedure goTowardNextChosenOnPathPosition (This : in out BasicAIProcessor; currentGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class);
    procedure update (This : in out BasicAIProcessor);
-   function processAI (This : in out BasicAIProcessor; myManager : AllBinaryLayerManager_Access; currentGeographicMapCellPosition : GeographicMapCellPosition_Access) return Integer;
-   procedure processAI (This : in out BasicAIProcessor; myManager : AllBinaryLayerManager_Access; currentGeographicMapCellPosition : GeographicMapCellPosition_Access);
+   function processAI (This : in out BasicAIProcessor; myManager_Param : access AllBinaryLayerManager'Class; currentGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return Integer;
+   procedure processAI (This : in out BasicAIProcessor; myManager_Param : access AllBinaryLayerManager'Class; currentGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class);
    function getName (This : in out BasicAIProcessor) return Unbounded_String;
    procedure setName (This : in out BasicAIProcessor; name : Unbounded_String);
    function getGeographicMapCellPathHistoryInfo (This : in out BasicAIProcessor) return GeographicMapCellPathHistoryInfo_Access;
-   procedure setGeographicMapCellPathHistoryInfo (This : in out BasicAIProcessor; geographicMapCellPathHistoryInfo : GeographicMapCellPathHistoryInfo_Access);
+   procedure setGeographicMapCellPathHistoryInfo (This : in out BasicAIProcessor; geographicMapCellPathHistoryInfo_Param : access GeographicMapCellPathHistoryInfo'Class);
    function getGeographicMapCellHistory (This : in out BasicAIProcessor) return GeographicMapCellHistory_Access;
-   procedure setGeographicMapCellHistory (This : in out BasicAIProcessor; geographicMapCellHistory : GeographicMapCellHistory_Access);
+   procedure setGeographicMapCellHistory (This : in out BasicAIProcessor; geographicMapCellHistory_Param : access GeographicMapCellHistory'Class);
 
 end org.allbinary.game.ai.path.BasicAIProcessor_Package;
 

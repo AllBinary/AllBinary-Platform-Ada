@@ -45,9 +45,9 @@ package org.allbinary.game.collision.layer.CollidableInterfaceLayerProcessor_Pac
 
    procedure Initialize (This : in out CollidableInterfaceLayerProcessor'Class);
    function Create return CollidableInterfaceLayerProcessor_Access;
-   procedure processAt (This : in out CollidableInterfaceLayerProcessor; allBinaryLayerManager : AllBinaryLayerManager_Access; layerInterface : AllBinaryLayer_Access; index : Integer);
-   function isProcessorLayer (This : in out CollidableInterfaceLayerProcessor; layerInterface : AllBinaryLayer_Access) return Boolean;
-   procedure isProcessorLayer (This : in out CollidableInterfaceLayerProcessor; layerInterface : AllBinaryLayer_Access);
+   procedure processAt (This : in out CollidableInterfaceLayerProcessor; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class; layerInterface_Param : access AllBinaryLayer'Class; index : Integer);
+   function isProcessorLayer (This : in out CollidableInterfaceLayerProcessor; layerInterface_Param : access AllBinaryLayer'Class) return Boolean;
+   procedure isProcessorLayer (This : in out CollidableInterfaceLayerProcessor; layerInterface_Param : access AllBinaryLayer'Class);
 
 end org.allbinary.game.collision.layer.CollidableInterfaceLayerProcessor_Package;
 

@@ -35,7 +35,7 @@ package body org.allbinary.game.configuration.GameConfiguration_Package is
         This.value := This.getDefaultValue;
         This.setMinValue (minValue);
         This.setMaxValue (maxValue);
-        GameConfigurationSingleton_Package.getInstance.getHashtable.put (This.getName, This'Unchecked_Access);
+        GameConfigurationSingleton_Package.getInstance.getHashtable.put (This.getName, GameConfiguration_Access'(This'Unchecked_Access));
    end Initialize;
 
    function Create (name : Unbounded_String; defaultValue : Integer; minValue : Integer; maxValue : Integer) return GameConfiguration_Access is
@@ -52,7 +52,7 @@ package body org.allbinary.game.configuration.GameConfiguration_Package is
         if (This.value) /= (value) then
             oldValue := This.value;
             This.value := value;
-            GameFeatureEventHandler_Package.getInstance.fireEvent (GameFeatureEvent_Package.Create (This'Unchecked_Access, StringMaker_Package.Create.append (This.name).append (To_Unbounded_String (" value: from: ")).appendint (Integer (oldValue.intValue)).append (To_Unbounded_String (" to ")).appendint (Integer (This.value.intValue)).toString));
+            GameFeatureEventHandler_Package.getInstance.fireEvent (GameFeatureEvent_Package.Create (GameConfiguration_Access'(This'Unchecked_Access), StringMaker_Package.Create.append (This.name).append (To_Unbounded_String (" value: from: ")).appendint (Integer (oldValue.intValue)).append (To_Unbounded_String (" to ")).appendint (Integer (This.value.intValue)).toString));
         end if;
    end setValue;
 

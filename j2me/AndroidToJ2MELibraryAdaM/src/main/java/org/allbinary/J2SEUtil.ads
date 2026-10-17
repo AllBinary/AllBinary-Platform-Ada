@@ -38,12 +38,12 @@ package org.allbinary.J2SEUtil_Package is
    procedure Initialize (This : in out J2SEUtil'Class);
    function Create return J2SEUtil_Access;
    function getInstance return J2SEUtil_Access;
-   function getHashMapAsArray (This : in out J2SEUtil; hashMap : HashMap_Access) return Java_Object_Access_Array_Access;
-   procedure getHashMapAsArray (This : in out J2SEUtil; hashMap : HashMap_Access);
-   function getMapAsArray (This : in out J2SEUtil; map : Map_Access) return Java_Object_Access_Array_Access;
-   procedure getMapAsArray (This : in out J2SEUtil; map : Map_Access);
-   function getSetAsArray (This : in out J2SEUtil; set : Set_Access) return Java_Object_Access_Array_Access;
-   procedure getSetAsArray (This : in out J2SEUtil; set : Set_Access);
+   function getHashMapAsArray (This : in out J2SEUtil; hashMap_Param : access HashMap'Class) return Java_Object_Access_Array_Access;
+   procedure getHashMapAsArray (This : in out J2SEUtil; hashMap_Param : access HashMap'Class);
+   function getMapAsArray (This : in out J2SEUtil; map_Param : access Map'Class) return Java_Object_Access_Array_Access;
+   procedure getMapAsArray (This : in out J2SEUtil; map_Param : access Map'Class);
+   function getSetAsArray (This : in out J2SEUtil; set_Param : access Set'Class) return Java_Object_Access_Array_Access;
+   procedure getSetAsArray (This : in out J2SEUtil; set_Param : access Set'Class);
 
 end org.allbinary.J2SEUtil_Package;
 

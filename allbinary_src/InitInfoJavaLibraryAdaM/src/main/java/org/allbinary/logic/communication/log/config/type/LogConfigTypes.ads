@@ -53,8 +53,8 @@ package org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Pack
    procedure Initialize (This : in out LogConfigTypes'Class);
    function Create return LogConfigTypes_Access;
    procedure init;
-   function getInstance (node : Node_Access) return LogConfigType_Access;
-   procedure getInstance (node : Node_Access);
+   function getInstance (node_Param : access Node'Class) return LogConfigType_Access;
+   procedure getInstance (node_Param : access Node'Class);
 
 end org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 

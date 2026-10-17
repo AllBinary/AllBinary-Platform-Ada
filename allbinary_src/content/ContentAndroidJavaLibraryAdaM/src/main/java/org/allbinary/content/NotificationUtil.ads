@@ -61,7 +61,7 @@ package org.allbinary.content.NotificationUtil_Package is
    procedure Initialize (This : in out NotificationUtil'Class);
    function Create return NotificationUtil_Access;
    function getInstance return NotificationUtil_Access;
-   procedure notify (This : in out NotificationUtil; command : Command_Access; resource : Unbounded_String; message : Unbounded_String);
+   procedure notify (This : in out NotificationUtil; command_Param : access Command'Class; resource : Unbounded_String; message : Unbounded_String);
 
 end org.allbinary.content.NotificationUtil_Package;
 

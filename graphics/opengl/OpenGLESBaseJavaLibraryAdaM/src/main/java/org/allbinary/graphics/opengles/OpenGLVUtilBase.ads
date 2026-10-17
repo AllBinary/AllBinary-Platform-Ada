@@ -34,9 +34,9 @@ package org.allbinary.graphics.opengles.OpenGLVUtilBase_Package is
 
    procedure Initialize (This : in out OpenGLVUtilBase'Class);
    function Create return OpenGLVUtilBase_Access;
-   procedure glTexEnvix (This : in out OpenGLVUtilBase; gl : GL10_Access; target : Integer; pname : Integer; param : Integer);
-   procedure glTexParameterix (This : in out OpenGLVUtilBase; gl : GL10_Access; target : Integer; pname : Integer; param : Integer);
-   procedure glGenerateMipmap (This : in out OpenGLVUtilBase; gl : GL10_Access; textureId : Integer; target : Integer; generateMipMap : Boolean);
+   procedure glTexEnvix (This : in out OpenGLVUtilBase; gl_Param : access GL10'Class; target : Integer; pname : Integer; param : Integer);
+   procedure glTexParameterix (This : in out OpenGLVUtilBase; gl_Param : access GL10'Class; target : Integer; pname : Integer; param : Integer);
+   procedure glGenerateMipmap (This : in out OpenGLVUtilBase; gl_Param : access GL10'Class; textureId : Integer; target : Integer; generateMipMap : Boolean);
 
 end org.allbinary.graphics.opengles.OpenGLVUtilBase_Package;
 

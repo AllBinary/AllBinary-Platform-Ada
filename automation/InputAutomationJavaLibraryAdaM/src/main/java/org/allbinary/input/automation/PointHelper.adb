@@ -34,7 +34,8 @@ package body org.allbinary.input.automation.PointHelper_Package is
       return This;
    end Create;
 
-   function getCenterPoint (rectangle : Rectangle_Access) return Point_Access is
+   function getCenterPoint (rectangle_Param : access Rectangle'Class) return Point_Access is
+      rectangle : Rectangle_Access := Rectangle_Access (rectangle_Param);
       x : Long_Float;
       y : Long_Float;
    begin
@@ -43,8 +44,8 @@ package body org.allbinary.input.automation.PointHelper_Package is
         return PointFactory_Package.getInstance (Integer (x), Integer (y));
    end getCenterPoint;
 
-   procedure getCenterPoint (rectangle : Rectangle_Access) is
-      Java_Result : constant Point_Access := getCenterPoint (rectangle);
+   procedure getCenterPoint (rectangle_Param : access Rectangle'Class) is
+      Java_Result : constant Point_Access := getCenterPoint (rectangle_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

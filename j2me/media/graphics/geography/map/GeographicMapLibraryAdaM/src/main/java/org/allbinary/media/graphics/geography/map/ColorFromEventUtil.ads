@@ -46,8 +46,8 @@ package org.allbinary.media.graphics.geography.map.ColorFromEventUtil_Package is
    procedure Initialize (This : in out ColorFromEventUtil'Class);
    function Create return ColorFromEventUtil_Access;
    function getInstance return ColorFromEventUtil_Access;
-   function getForegroundColor (This : in out ColorFromEventUtil; gameCanvasInterface : AllBinaryGameCanvas_Access) return BasicColor_Access;
-   procedure getForegroundColor (This : in out ColorFromEventUtil; gameCanvasInterface : AllBinaryGameCanvas_Access);
+   function getForegroundColor (This : in out ColorFromEventUtil; gameCanvasInterface_Param : access AllBinaryGameCanvas'Class) return BasicColor_Access;
+   procedure getForegroundColor (This : in out ColorFromEventUtil; gameCanvasInterface_Param : access AllBinaryGameCanvas'Class);
 
 end org.allbinary.media.graphics.geography.map.ColorFromEventUtil_Package;
 

@@ -78,12 +78,12 @@ package org.allbinary.logic.visual.dhtml.style.css.CssElementView_Package is
 
    procedure Initialize (This : in out CssElementView'Class);
    function Create return CssElementView_Access;
-   procedure Initialize (This : in out CssElementView'Class; node : Node_Access);
-   function Create (node : Node_Access) return CssElementView_Access;
+   procedure Initialize (This : in out CssElementView'Class; node_Param : access Node'Class);
+   function Create (node_Param : access Node'Class) return CssElementView_Access;
    function getValue (This : in out CssElementView) return Unbounded_String;
    function toHashMap (This : in out CssElementView) return HashMap_Access;
-   function toXmlNode (This : in out CssElementView; document : Document_Access) return Node_Access;
-   procedure toXmlNode (This : in out CssElementView; document : Document_Access);
+   function toXmlNode (This : in out CssElementView; document_Param : access Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out CssElementView; document_Param : access Document'Class);
 
 end org.allbinary.logic.visual.dhtml.style.css.CssElementView_Package;
 

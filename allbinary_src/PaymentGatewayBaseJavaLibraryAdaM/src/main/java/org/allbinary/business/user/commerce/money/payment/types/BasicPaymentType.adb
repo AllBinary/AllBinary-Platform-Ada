@@ -38,7 +38,9 @@ package body org.allbinary.business.user.commerce.money.payment.types.BasicPayme
       return This;
    end Create;
 
-   procedure Initialize (This : in out BasicPaymentType'Class; paymentMethod : Unbounded_String; paymentGatewayInterfaceFactoryInterface : PaymentGatewayInterfaceFactoryInterface_Access; paymentGatewayDomNodeFactoryInterface : PaymentGatewayDomNodeFactoryInterface_Access) is
+   procedure Initialize (This : in out BasicPaymentType'Class; paymentMethod : Unbounded_String; paymentGatewayInterfaceFactoryInterface_Param : access PaymentGatewayInterfaceFactoryInterface'Class; paymentGatewayDomNodeFactoryInterface_Param : access PaymentGatewayDomNodeFactoryInterface'Class) is
+      paymentGatewayInterfaceFactoryInterface : PaymentGatewayInterfaceFactoryInterface_Access := PaymentGatewayInterfaceFactoryInterface_Access (paymentGatewayInterfaceFactoryInterface_Param);
+      paymentGatewayDomNodeFactoryInterface : PaymentGatewayDomNodeFactoryInterface_Access := PaymentGatewayDomNodeFactoryInterface_Access (paymentGatewayDomNodeFactoryInterface_Param);
    begin
       Initialize_Fields (This);
         This.init (paymentMethod);
@@ -46,10 +48,10 @@ package body org.allbinary.business.user.commerce.money.payment.types.BasicPayme
         This.paymentGatewayDomNodeFactoryInterface := paymentGatewayDomNodeFactoryInterface;
    end Initialize;
 
-   function Create (paymentMethod : Unbounded_String; paymentGatewayInterfaceFactoryInterface : PaymentGatewayInterfaceFactoryInterface_Access; paymentGatewayDomNodeFactoryInterface : PaymentGatewayDomNodeFactoryInterface_Access) return BasicPaymentType_Access is
+   function Create (paymentMethod : Unbounded_String; paymentGatewayInterfaceFactoryInterface_Param : access PaymentGatewayInterfaceFactoryInterface'Class; paymentGatewayDomNodeFactoryInterface_Param : access PaymentGatewayDomNodeFactoryInterface'Class) return BasicPaymentType_Access is
       This : constant BasicPaymentType_Access := new BasicPaymentType;
    begin
-      BasicPaymentType_Package.Initialize (This.all, paymentMethod, paymentGatewayInterfaceFactoryInterface, paymentGatewayDomNodeFactoryInterface);
+      BasicPaymentType_Package.Initialize (This.all, paymentMethod, paymentGatewayInterfaceFactoryInterface_Param, paymentGatewayDomNodeFactoryInterface_Param);
       return This;
    end Create;
 
@@ -66,7 +68,7 @@ package body org.allbinary.business.user.commerce.money.payment.types.BasicPayme
         replace := Replace_Package.Create (hashMap);
         This.name := replace.all_Id (paymentMethod);
         This.value := paymentMethod;
-        BasicPaymentTypeUtil_Package.getInstance.add (This'Unchecked_Access);
+        BasicPaymentTypeUtil_Package.getInstance.add (BasicPaymentType_Access'(This'Unchecked_Access));
    end init;
 
    function getName (This : in out BasicPaymentType) return Unbounded_String is

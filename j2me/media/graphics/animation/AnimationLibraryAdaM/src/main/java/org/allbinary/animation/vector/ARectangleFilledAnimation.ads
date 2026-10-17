@@ -29,7 +29,7 @@ package org.allbinary.animation.vector.ARectangleFilledAnimation_Package is
    procedure Initialize (This : in out ARectangleFilledAnimation'Class);
    function Create return ARectangleFilledAnimation_Access;
    procedure nextFrame (This : in out ARectangleFilledAnimation);
-   procedure paintXY (This : in out ARectangleFilledAnimation; graphics : Graphics_Access; unusedX : Integer; unusedY : Integer);
+   procedure paintXY (This : in out ARectangleFilledAnimation; graphics_Param : access Graphics'Class; unusedX : Integer; unusedY : Integer);
 
 end org.allbinary.animation.vector.ARectangleFilledAnimation_Package;
 

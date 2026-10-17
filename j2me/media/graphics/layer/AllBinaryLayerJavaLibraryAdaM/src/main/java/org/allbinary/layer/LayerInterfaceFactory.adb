@@ -47,25 +47,27 @@ package body org.allbinary.layer.LayerInterfaceFactory_Package is
    end init;
 
    --  throws Exception
-   function getNexInstance (This : in out LayerInterfaceFactory; hashtable : ABHashtable_Access; x : Integer; y : Integer; z : Integer) return AllBinaryLayer_Access is
+   function getNexInstance (This : in out LayerInterfaceFactory; hashtable_Param : access ABHashtable'Class; x : Integer; y : Integer; z : Integer) return AllBinaryLayer_Access is
+      hashtable : ABHashtable_Access := ABHashtable_Access (hashtable_Param);
       commonStrings : CommonStrings_Access;
       typeInteger : Integer;
       layerInterfaceFactoryInterface : LayerInterfaceFactoryInterface_Access;
    begin
         commonStrings := CommonStrings_Package.getInstance;
-        This.logUtil.putF (StringMaker_Package.Create.append (This.HASHTABLE_LABEL).append (StringUtil_Package.getInstance.toString (hashtable)).toString, This'Unchecked_Access, commonStrings.GET_INSTANCE);
+        This.logUtil.putF (StringMaker_Package.Create.append (This.HASHTABLE_LABEL).append (StringUtil_Package.getInstance.toString (hashtable)).toString, LayerInterfaceFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);
         typeInteger := Integer (hashtable.get (Java_Object_Access (Layer_Package.ID)));
         layerInterfaceFactoryInterface := LayerInterfaceFactoryInterface_Access (This.list.objectArray ((typeInteger.intValue) - (1)));
         return layerInterfaceFactoryInterface.getNextInstance (hashtable, x, y, z);
    end getNexInstance;
 
-   procedure add (This : in out LayerInterfaceFactory; layerInterfaceFactoryInterface : LayerInterfaceFactoryInterface_Access) is
+   procedure add (This : in out LayerInterfaceFactory; layerInterfaceFactoryInterface_Param : access LayerInterfaceFactoryInterface'Class) is
+      layerInterfaceFactoryInterface : LayerInterfaceFactoryInterface_Access := LayerInterfaceFactoryInterface_Access (layerInterfaceFactoryInterface_Param);
    begin
         This.list.add (layerInterfaceFactoryInterface);
    end add;
 
-   procedure getNexInstance (This : in out LayerInterfaceFactory; hashtable : ABHashtable_Access; x : Integer; y : Integer; z : Integer) is
-      Java_Result : constant AllBinaryLayer_Access := LayerInterfaceFactory'Class (This).getNexInstance (hashtable, x, y, z);
+   procedure getNexInstance (This : in out LayerInterfaceFactory; hashtable_Param : access ABHashtable'Class; x : Integer; y : Integer; z : Integer) is
+      Java_Result : constant AllBinaryLayer_Access := LayerInterfaceFactory'Class (This).getNexInstance (hashtable_Param, x, y, z);
       pragma Unreferenced (Java_Result);
    begin
       null;

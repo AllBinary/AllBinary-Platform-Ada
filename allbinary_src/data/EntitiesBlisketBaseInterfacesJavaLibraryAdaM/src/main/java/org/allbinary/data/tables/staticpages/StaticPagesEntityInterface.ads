@@ -37,8 +37,8 @@ package org.allbinary.data.tables.staticpages.StaticPagesEntityInterface_Package
    type StaticPagesEntityInterface_Access_Array_Access is access all StaticPagesEntityInterface_Access_Array;
    function getFile (This : in out StaticPagesEntityInterface; store : Unbounded_String; keywords : Unbounded_String) return Unbounded_String is abstract;
    procedure delete (This : in out StaticPagesEntityInterface; value : Unbounded_String) is abstract;
-   procedure insert (This : in out StaticPagesEntityInterface; values : BasicArrayList_Access) is abstract;
-   procedure update (This : in out StaticPagesEntityInterface; updatedValues : HashMap_Access) is abstract;
+   procedure insert (This : in out StaticPagesEntityInterface; values_Param : access BasicArrayList'Class) is abstract;
+   procedure update (This : in out StaticPagesEntityInterface; updatedValues_Param : access HashMap'Class) is abstract;
 
 end org.allbinary.data.tables.staticpages.StaticPagesEntityInterface_Package;
 

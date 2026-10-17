@@ -27,7 +27,8 @@ package body org.allbinary.game.configuration.feature.MultiPlayerGameFeatureFact
       return This;
    end Create;
 
-   procedure addCommands (This : in out MultiPlayerGameFeatureFactory; anyType : Java_Object_Access) is
+   procedure addCommands (This : in out MultiPlayerGameFeatureFactory; anyType_Param : access Java_Object'Class) is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
       gameCommandsFactory : GameCommandsFactory_Access;
       canvas : Canvas_Access;
    begin

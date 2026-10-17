@@ -44,13 +44,13 @@ package org.allbinary.input.automation.actions.script.condition.processors.Basic
 
    type BasicProfileActionScriptProcessor is new ProfileActionScriptItem and ProfileActionScriptProcessorInterface with null record;
 
-   procedure Initialize (This : in out BasicProfileActionScriptProcessor'Class; label : Unbounded_String; node : Node_Access);
-   function Create (label : Unbounded_String; node : Node_Access) return BasicProfileActionScriptProcessor_Access;
+   procedure Initialize (This : in out BasicProfileActionScriptProcessor'Class; label : Unbounded_String; node_Param : access Node'Class);
+   function Create (label : Unbounded_String; node_Param : access Node'Class) return BasicProfileActionScriptProcessor_Access;
    procedure Initialize (This : in out BasicProfileActionScriptProcessor'Class; label : Unbounded_String);
    function Create (label : Unbounded_String) return BasicProfileActionScriptProcessor_Access;
-   procedure actionPerformed (This : in out BasicProfileActionScriptProcessor; actionEvent : ActionEvent_Access);
-   function toXmlNode (This : in out BasicProfileActionScriptProcessor; document : Document_Access) return Node_Access;
-   procedure toXmlNode (This : in out BasicProfileActionScriptProcessor; document : Document_Access);
+   procedure actionPerformed (This : in out BasicProfileActionScriptProcessor; actionEvent_Param : access ActionEvent'Class);
+   function toXmlNode (This : in out BasicProfileActionScriptProcessor; document_Param : access Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out BasicProfileActionScriptProcessor; document_Param : access Document'Class);
 
 end org.allbinary.input.automation.actions.script.condition.processors.BasicProfileActionScriptProcessor_Package;
 

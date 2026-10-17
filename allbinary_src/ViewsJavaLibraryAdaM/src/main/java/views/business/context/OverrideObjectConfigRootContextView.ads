@@ -63,8 +63,8 @@ package views.business.context.OverrideObjectConfigRootContextView_Package is
       logUtil : LogUtil_Access;
    end record;
 
-   procedure Initialize (This : in out OverrideObjectConfigRootContextView'Class; transformInfoInterface : TransformInfoInterface_Access);
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return OverrideObjectConfigRootContextView_Access;
+   procedure Initialize (This : in out OverrideObjectConfigRootContextView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return OverrideObjectConfigRootContextView_Access;
    function view (This : in out OverrideObjectConfigRootContextView) return Unbounded_String;
 
 end views.business.context.OverrideObjectConfigRootContextView_Package;

@@ -37,10 +37,10 @@ package org.allbinary.logic.io.file.directory.DirectoryBooleanFileVisitor_Packag
 
    procedure Initialize (This : in out DirectoryBooleanFileVisitor'Class);
    function Create return DirectoryBooleanFileVisitor_Access;
-   function visit (This : in out DirectoryBooleanFileVisitor; anyType : Java_Object_Access) return Java_Object_Access;
-   procedure visit (This : in out DirectoryBooleanFileVisitor; anyType : Java_Object_Access);
-   function visit (This : in out DirectoryBooleanFileVisitor; file : AbFile_Access) return Boolean;
-   procedure visit (This : in out DirectoryBooleanFileVisitor; file : AbFile_Access);
+   function visit (This : in out DirectoryBooleanFileVisitor; anyType_Param : access Java_Object'Class) return Java_Object_Access;
+   procedure visit (This : in out DirectoryBooleanFileVisitor; anyType_Param : access Java_Object'Class);
+   function visit (This : in out DirectoryBooleanFileVisitor; file_Param : access AbFile'Class) return Boolean;
+   procedure visit (This : in out DirectoryBooleanFileVisitor; file_Param : access AbFile'Class);
 
 end org.allbinary.logic.io.file.directory.DirectoryBooleanFileVisitor_Package;
 

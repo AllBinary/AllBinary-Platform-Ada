@@ -34,8 +34,8 @@ package org.allbinary.business.advertisement.GameAdStateFactory_Package is
    function Create return GameAdStateFactory_Access;
    function getInstance return GameAdStateFactory_Access;
    function getCurrentInstance (This : in out GameAdStateFactory) return GameAdState_Access;
-   function getInstanceForApp (This : in out GameAdStateFactory; softwareInformation : SoftwareInformation_Access) return GameAdStateBase_Access;
-   procedure getInstanceForApp (This : in out GameAdStateFactory; softwareInformation : SoftwareInformation_Access);
+   function getInstanceForApp (This : in out GameAdStateFactory; softwareInformation_Param : access SoftwareInformation'Class) return GameAdStateBase_Access;
+   procedure getInstanceForApp (This : in out GameAdStateFactory; softwareInformation_Param : access SoftwareInformation'Class);
    function isEnabled (This : in out GameAdStateFactory) return Boolean;
 
 end org.allbinary.business.advertisement.GameAdStateFactory_Package;

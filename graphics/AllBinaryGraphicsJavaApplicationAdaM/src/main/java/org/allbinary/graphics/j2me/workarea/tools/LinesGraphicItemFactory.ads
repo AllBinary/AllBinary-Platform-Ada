@@ -38,8 +38,8 @@ package org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItemFactory_Packa
 
    procedure Initialize (This : in out LinesGraphicItemFactory'Class);
    function Create return LinesGraphicItemFactory_Access;
-   function getInstance (This : in out LinesGraphicItemFactory; canvasJPanel : CanvasJPanel_Access) return GraphicItemInterface_Access;
-   procedure getInstance (This : in out LinesGraphicItemFactory; canvasJPanel : CanvasJPanel_Access);
+   function getInstance (This : in out LinesGraphicItemFactory; canvasJPanel_Param : access CanvasJPanel'Class) return GraphicItemInterface_Access;
+   procedure getInstance (This : in out LinesGraphicItemFactory; canvasJPanel_Param : access CanvasJPanel'Class);
 
 end org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItemFactory_Package;
 

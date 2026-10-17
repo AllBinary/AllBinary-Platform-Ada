@@ -42,7 +42,7 @@ package body org.allbinary.data.tables.advertisement.campaign.internal.Advertise
         begin
             AbSqlBean (This).deleteWhere (StoreFrontData_Package.getInstance.NAME, value);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.putF (This.commonStrings.SUCCESS, This'Unchecked_Access, This.commonStrings.delete);
+                This.logUtil.putF (This.commonStrings.SUCCESS, AdvertisementCampaignInternalEntity_Access'(This'Unchecked_Access), This.commonStrings.delete);
             end if;
         exception
             when Java_Occurrence : others =>
@@ -50,7 +50,7 @@ package body org.allbinary.data.tables.advertisement.campaign.internal.Advertise
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, This.commonStrings.delete, e);
+                This.logUtil.put (This.commonStrings.FAILURE, AdvertisementCampaignInternalEntity_Access'(This'Unchecked_Access), This.commonStrings.delete, e);
             end if;
                 end;
         end;
@@ -93,7 +93,8 @@ package body org.allbinary.data.tables.advertisement.campaign.internal.Advertise
         end if;
    end get;
 
-   procedure update (This : in out AdvertisementCampaignInternalEntity; updatedValues : HashMap_Access) is
+   procedure update (This : in out AdvertisementCampaignInternalEntity; updatedValues_Param : access HashMap'Class) is
+      updatedValues : HashMap_Access := HashMap_Access (updatedValues_Param);
    begin
         AbSqlBean (This).updateWhere (EntryData_Package.getInstance.getInstance.ID, Unbounded_String (updatedValues.get (EntryData_Package.getInstance.getInstance.ID)), updatedValues);
    end update;

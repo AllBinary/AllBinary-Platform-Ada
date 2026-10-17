@@ -61,8 +61,8 @@ package org.allbinary.log.LOGGING_Package is
 
    procedure Initialize (This : in out LOGGING'Class; value : Unbounded_String);
    function Create (value : Unbounded_String) return LOGGING_Access;
-   function contains (logType : LOGGING_Access) return Boolean;
-   procedure contains (logType : LOGGING_Access);
+   function contains (logType_Param : access LOGGING'Class) return Boolean;
+   procedure contains (logType_Param : access LOGGING'Class);
    function toString (This : in out LOGGING) return Unbounded_String;
 
 end org.allbinary.log.LOGGING_Package;

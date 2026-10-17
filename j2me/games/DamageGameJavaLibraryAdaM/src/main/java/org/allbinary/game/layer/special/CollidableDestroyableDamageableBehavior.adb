@@ -35,7 +35,9 @@ package body org.allbinary.game.layer.special.CollidableDestroyableDamageableBeh
       return This;
    end Create;
 
-   function isCollision (This : in out CollidableDestroyableDamageableBehavior; ownerLayer : CollidableCompositeLayer_Access; collisionLayer : CollidableCompositeLayer_Access) return Boolean is
+   function isCollision (This : in out CollidableDestroyableDamageableBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collisionLayer_Param : access CollidableCompositeLayer'Class) return Boolean is
+      ownerLayer : CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (ownerLayer_Param);
+      collisionLayer : CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (collisionLayer_Param);
    begin
         if (ownerLayer.getGroupInterface (0)) /= (collisionLayer.getGroupInterface (0)) then
             return CollidableBaseBehavior (This).isCollision (ownerLayer, collisionLayer);
@@ -44,7 +46,9 @@ package body org.allbinary.game.layer.special.CollidableDestroyableDamageableBeh
    end isCollision;
 
    --  throws Exception
-   procedure collide (This : in out CollidableDestroyableDamageableBehavior; ownerLayer : CollidableCompositeLayer_Access; collidableInterfaceCompositeInterface : CollidableCompositeLayer_Access) is
+   procedure collide (This : in out CollidableDestroyableDamageableBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableCompositeLayer'Class) is
+      ownerLayer : CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (ownerLayer_Param);
+      collidableInterfaceCompositeInterface : CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (collidableInterfaceCompositeInterface_Param);
       ownerCollidableDestroyableDamageableLayer : CollidableDestroyableDamageableLayer_Access;
       collidableDestroyableDamageableLayer : CollidableDestroyableDamageableLayer_Access;
    begin
@@ -53,27 +57,31 @@ package body org.allbinary.game.layer.special.CollidableDestroyableDamageableBeh
         ownerCollidableDestroyableDamageableLayer.damage (collidableDestroyableDamageableLayer.getDamage (0), 0);
    end collide;
 
-   function isCollisionInterface (This : in out CollidableDestroyableDamageableBehavior; ownerLayer : CollidableCompositeLayer_Access; collidableInterfaceCompositeInterface : CollidableInterfaceCompositeInterface_Access) return Boolean is
+   function isCollisionInterface (This : in out CollidableDestroyableDamageableBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableInterfaceCompositeInterface'Class) return Boolean is
+      ownerLayer : CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (ownerLayer_Param);
+      collidableInterfaceCompositeInterface : CollidableInterfaceCompositeInterface_Access := CollidableInterfaceCompositeInterface_Access (collidableInterfaceCompositeInterface_Param);
    begin
-        ForcedLogUtil_Package.log (To_Unbounded_String ("No Longer Used"), This'Unchecked_Access);
+        ForcedLogUtil_Package.log (To_Unbounded_String ("No Longer Used"), CollidableDestroyableDamageableBehavior_Access'(This'Unchecked_Access));
         return False;
    end isCollisionInterface;
 
    --  throws Exception
-   procedure collideInterface (This : in out CollidableDestroyableDamageableBehavior; ownerLayer : CollidableCompositeLayer_Access; collidableInterfaceCompositeInterface : CollidableInterfaceCompositeInterface_Access) is
+   procedure collideInterface (This : in out CollidableDestroyableDamageableBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableInterfaceCompositeInterface'Class) is
+      ownerLayer : CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (ownerLayer_Param);
+      collidableInterfaceCompositeInterface : CollidableInterfaceCompositeInterface_Access := CollidableInterfaceCompositeInterface_Access (collidableInterfaceCompositeInterface_Param);
    begin
-        ForcedLogUtil_Package.log (To_Unbounded_String ("No Longer Used"), This'Unchecked_Access);
+        ForcedLogUtil_Package.log (To_Unbounded_String ("No Longer Used"), CollidableDestroyableDamageableBehavior_Access'(This'Unchecked_Access));
    end collideInterface;
 
-   procedure isCollision (This : in out CollidableDestroyableDamageableBehavior; ownerLayer : CollidableCompositeLayer_Access; collisionLayer : CollidableCompositeLayer_Access) is
-      Java_Result : constant Boolean := CollidableDestroyableDamageableBehavior'Class (This).isCollision (ownerLayer, collisionLayer);
+   procedure isCollision (This : in out CollidableDestroyableDamageableBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collisionLayer_Param : access CollidableCompositeLayer'Class) is
+      Java_Result : constant Boolean := CollidableDestroyableDamageableBehavior'Class (This).isCollision (ownerLayer_Param, collisionLayer_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isCollision;
 
-   procedure isCollisionInterface (This : in out CollidableDestroyableDamageableBehavior; ownerLayer : CollidableCompositeLayer_Access; collidableInterfaceCompositeInterface : CollidableInterfaceCompositeInterface_Access) is
-      Java_Result : constant Boolean := CollidableDestroyableDamageableBehavior'Class (This).isCollisionInterface (ownerLayer, collidableInterfaceCompositeInterface);
+   procedure isCollisionInterface (This : in out CollidableDestroyableDamageableBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableInterfaceCompositeInterface'Class) is
+      Java_Result : constant Boolean := CollidableDestroyableDamageableBehavior'Class (This).isCollisionInterface (ownerLayer_Param, collidableInterfaceCompositeInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

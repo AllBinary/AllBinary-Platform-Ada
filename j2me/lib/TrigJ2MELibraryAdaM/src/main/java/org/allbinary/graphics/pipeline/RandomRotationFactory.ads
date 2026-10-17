@@ -45,8 +45,8 @@ package org.allbinary.graphics.pipeline.RandomRotationFactory_Package is
    procedure Initialize (This : in out RandomRotationFactory'Class);
    function Create return RandomRotationFactory_Access;
    function getInstance return RandomRotationFactory_Access;
-   function getInstanceList (This : in out RandomRotationFactory; vector : BasicArrayList_Access; howMuch : Integer) return BasicArrayList_Access;
-   procedure getInstanceList (This : in out RandomRotationFactory; vector : BasicArrayList_Access; howMuch : Integer);
+   function getInstanceList (This : in out RandomRotationFactory; vector_Param : access BasicArrayList'Class; howMuch : Integer) return BasicArrayList_Access;
+   procedure getInstanceList (This : in out RandomRotationFactory; vector_Param : access BasicArrayList'Class; howMuch : Integer);
    function getNextRandomAngle (This : in out RandomRotationFactory; howMuch : Integer) return Integer;
    procedure getNextRandomAngle (This : in out RandomRotationFactory; howMuch : Integer);
 

@@ -43,8 +43,8 @@ package org.allbinary.animation.compound.CompoundRotationAnimationInterfaceFacto
 
    type CompoundRotationAnimationInterfaceFactory is new CompoundAnimationInterfaceFactory with null record;
 
-   procedure Initialize (This : in out CompoundRotationAnimationInterfaceFactory'Class; basicAnimationInterfaceFactoryInterfaceArray : AnimationInterfaceFactoryInterface_Access_Array_Access; animationBehaviorFactory : AnimationBehaviorFactory_Access);
-   function Create (basicAnimationInterfaceFactoryInterfaceArray : AnimationInterfaceFactoryInterface_Access_Array_Access; animationBehaviorFactory : AnimationBehaviorFactory_Access) return CompoundRotationAnimationInterfaceFactory_Access;
+   procedure Initialize (This : in out CompoundRotationAnimationInterfaceFactory'Class; basicAnimationInterfaceFactoryInterfaceArray : AnimationInterfaceFactoryInterface_Access_Array_Access; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class);
+   function Create (basicAnimationInterfaceFactoryInterfaceArray : AnimationInterfaceFactoryInterface_Access_Array_Access; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return CompoundRotationAnimationInterfaceFactory_Access;
    function createArray (This : in out CompoundRotationAnimationInterfaceFactory; size : Integer) return Animation_Access_Array_Access;
    procedure createArray (This : in out CompoundRotationAnimationInterfaceFactory; size : Integer);
    function createAnimation (This : in out CompoundRotationAnimationInterfaceFactory; animationInterfaceArray : Animation_Access_Array_Access) return Animation_Access;

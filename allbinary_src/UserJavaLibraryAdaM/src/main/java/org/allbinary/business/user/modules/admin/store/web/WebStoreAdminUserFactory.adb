@@ -41,13 +41,14 @@ package body org.allbinary.business.user.modules.admin.store.web.WebStoreAdminUs
    end getInstance;
 
    --  throws Exception
-   function getInstance (This : in out WebStoreAdminUserFactory; hashMap : HashMap_Access) return UserInterface_Access is
+   function getInstance (This : in out WebStoreAdminUserFactory; hashMap_Param : access HashMap'Class) return UserInterface_Access is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
    begin
         return WebStoreAdminUser_Package.Create (hashMap);
    end getInstance;
 
-   procedure getInstance (This : in out WebStoreAdminUserFactory; hashMap : HashMap_Access) is
-      Java_Result : constant UserInterface_Access := WebStoreAdminUserFactory'Class (This).getInstance (hashMap);
+   procedure getInstance (This : in out WebStoreAdminUserFactory; hashMap_Param : access HashMap'Class) is
+      Java_Result : constant UserInterface_Access := WebStoreAdminUserFactory'Class (This).getInstance (hashMap_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

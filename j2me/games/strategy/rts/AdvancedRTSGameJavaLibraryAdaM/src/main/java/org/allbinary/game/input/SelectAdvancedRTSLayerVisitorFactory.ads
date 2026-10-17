@@ -40,8 +40,8 @@ package org.allbinary.game.input.SelectAdvancedRTSLayerVisitorFactory_Package is
    procedure Initialize (This : in out SelectAdvancedRTSLayerVisitorFactory'Class);
    function Create return SelectAdvancedRTSLayerVisitorFactory_Access;
    function getInstance return SelectAdvancedRTSLayerVisitorFactory_Access;
-   function create (This : in out SelectAdvancedRTSLayerVisitorFactory; selectedRTSLayersPlayerGameInput : SelectedRTSLayersPlayerGameInput_Access) return Visitor_Access;
-   procedure create (This : in out SelectAdvancedRTSLayerVisitorFactory; selectedRTSLayersPlayerGameInput : SelectedRTSLayersPlayerGameInput_Access);
+   function create (This : in out SelectAdvancedRTSLayerVisitorFactory; selectedRTSLayersPlayerGameInput_Param : access SelectedRTSLayersPlayerGameInput'Class) return Visitor_Access;
+   procedure create (This : in out SelectAdvancedRTSLayerVisitorFactory; selectedRTSLayersPlayerGameInput_Param : access SelectedRTSLayersPlayerGameInput'Class);
 
 end org.allbinary.game.input.SelectAdvancedRTSLayerVisitorFactory_Package;
 

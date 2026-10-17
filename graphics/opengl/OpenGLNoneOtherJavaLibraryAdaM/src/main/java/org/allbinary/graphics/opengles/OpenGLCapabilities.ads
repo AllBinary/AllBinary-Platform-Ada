@@ -49,7 +49,7 @@ package org.allbinary.graphics.opengles.OpenGLCapabilities_Package is
    procedure Initialize (This : in out OpenGLCapabilities'Class);
    function Create return OpenGLCapabilities_Access;
    function getInstance return OpenGLCapabilities_Access;
-   procedure initCapabilities (This : in out OpenGLCapabilities; gl : Java_Object_Access);
+   procedure initCapabilities (This : in out OpenGLCapabilities; gl_Param : access Java_Object'Class);
    function isGlExtensionDrawTexture (This : in out OpenGLCapabilities) return Boolean;
    function getGlVersion (This : in out OpenGLCapabilities) return Unbounded_String;
    function isVertexBufferObjectSupport (This : in out OpenGLCapabilities) return Boolean;

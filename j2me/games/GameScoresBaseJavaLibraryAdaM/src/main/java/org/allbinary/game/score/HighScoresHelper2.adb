@@ -36,7 +36,8 @@ package body org.allbinary.game.score.HighScoresHelper2_Package is
    end Create;
 
 
-   procedure setSelectedHighScores (This : in out HighScoresHelper2; selectedHighScores : HighScores_Access) is
+   procedure setSelectedHighScores (This : in out HighScoresHelper2; selectedHighScores_Param : access HighScores'Class) is
+      selectedHighScores : HighScores_Access := HighScores_Access (selectedHighScores_Param);
    begin
         This.selectedHighScores := selectedHighScores;
    end setSelectedHighScores;

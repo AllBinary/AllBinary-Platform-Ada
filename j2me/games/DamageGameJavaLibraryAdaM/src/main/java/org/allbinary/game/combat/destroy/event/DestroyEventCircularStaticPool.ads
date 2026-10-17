@@ -45,9 +45,9 @@ package org.allbinary.game.combat.destroy.event.DestroyEventCircularStaticPool_P
    procedure Initialize (This : in out DestroyEventCircularStaticPool'Class);
    function Create return DestroyEventCircularStaticPool_Access;
    function getInstance return DestroyEventCircularStaticPool_Access;
-   procedure init (This : in out DestroyEventCircularStaticPool; combatGameCanvas : AllBinaryGameCanvas_Access);
-   function getInstanceForLayer (This : in out DestroyEventCircularStaticPool; layerInterface : AllBinaryLayer_Access) return DestroyedEvent_Access;
-   procedure getInstanceForLayer (This : in out DestroyEventCircularStaticPool; layerInterface : AllBinaryLayer_Access);
+   procedure init (This : in out DestroyEventCircularStaticPool; combatGameCanvas_Param : access AllBinaryGameCanvas'Class);
+   function getInstanceForLayer (This : in out DestroyEventCircularStaticPool; layerInterface_Param : access AllBinaryLayer'Class) return DestroyedEvent_Access;
+   procedure getInstanceForLayer (This : in out DestroyEventCircularStaticPool; layerInterface_Param : access AllBinaryLayer'Class);
 
 end org.allbinary.game.combat.destroy.event.DestroyEventCircularStaticPool_Package;
 

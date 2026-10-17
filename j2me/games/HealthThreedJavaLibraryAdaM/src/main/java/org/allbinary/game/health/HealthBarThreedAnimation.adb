@@ -24,7 +24,8 @@ package body org.allbinary.game.health.HealthBarThreedAnimation_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out HealthBarThreedAnimation'Class; layerInterface : AllBinaryLayer_Access; location : Integer) is
+   procedure Initialize (This : in out HealthBarThreedAnimation'Class; layerInterface_Param : access AllBinaryLayer'Class; location : Integer) is
+      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
    begin
         HealthBarAnimation_Package.Initialize (This, layerInterface, location);
         Initialize_Fields (This);
@@ -36,10 +37,10 @@ package body org.allbinary.game.health.HealthBarThreedAnimation_Package is
         This.rectangle.setTexturesEnabled (False);
    end Initialize;
 
-   function Create (layerInterface : AllBinaryLayer_Access; location : Integer) return HealthBarThreedAnimation_Access is
+   function Create (layerInterface_Param : access AllBinaryLayer'Class; location : Integer) return HealthBarThreedAnimation_Access is
       This : constant HealthBarThreedAnimation_Access := new HealthBarThreedAnimation;
    begin
-      HealthBarThreedAnimation_Package.Initialize (This.all, layerInterface, location);
+      HealthBarThreedAnimation_Package.Initialize (This.all, layerInterface_Param, location);
       return This;
    end Create;
 
@@ -96,7 +97,8 @@ package body org.allbinary.game.health.HealthBarThreedAnimation_Package is
         This.updateSize;
    end onHealthChange;
 
-   procedure paintThreedXYZ (This : in out HealthBarThreedAnimation; graphics : Graphics_Access; x : Integer; y : Integer; z : Integer) is
+   procedure paintThreedXYZ (This : in out HealthBarThreedAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer; z : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       openGLESGraphics : OpenGLESGraphics_Access;
       gl : GL10_Access;
       viewPosition : ViewPositionBase_Access;

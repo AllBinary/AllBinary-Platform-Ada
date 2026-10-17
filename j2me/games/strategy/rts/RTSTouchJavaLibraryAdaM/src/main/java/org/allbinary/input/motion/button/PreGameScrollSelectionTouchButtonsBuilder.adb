@@ -45,7 +45,7 @@ package body org.allbinary.input.motion.button.PreGameScrollSelectionTouchButton
       START : TouchButton_Access;
    begin
         begin
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.GET_LIST);
+            This.logUtil.putF (This.commonStrings.START, PreGameScrollSelectionTouchButtonsBuilder_Access'(This'Unchecked_Access), This.commonStrings.GET_LIST);
             list := BasicArrayListD_Package.Create;
             touchButtonLocationHelper := TouchButtonLocationHelper_Package.Create;
             commonButtons := CommonButtons_Package.getInstance;
@@ -62,7 +62,7 @@ package body org.allbinary.input.motion.button.PreGameScrollSelectionTouchButton
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.GET_LIST, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, PreGameScrollSelectionTouchButtonsBuilder_Access'(This'Unchecked_Access), This.commonStrings.GET_LIST, e);
             return BasicArrayListUtil_Package.getInstance.getImmutableInstance;
                 end;
         end;

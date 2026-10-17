@@ -24,17 +24,19 @@ package body admin.taghelpers.WorkFlowRequestHelper_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out WorkFlowRequestHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access) is
+   procedure Initialize (This : in out WorkFlowRequestHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
    begin
       ModifyTable_Package.Initialize (This);
       Initialize_Fields (This);
         This.workFlowInterface := NewWorkFlowFactory_Package.getInstance.getInstance (This.abeClientInformation, hashMap, pageContext);
    end Initialize;
 
-   function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return WorkFlowRequestHelper_Access is
+   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return WorkFlowRequestHelper_Access is
       This : constant WorkFlowRequestHelper_Access := new WorkFlowRequestHelper;
    begin
-      WorkFlowRequestHelper_Package.Initialize (This.all, hashMap, pageContext);
+      WorkFlowRequestHelper_Package.Initialize (This.all, hashMap_Param, pageContext_Param);
       return This;
    end Create;
 
@@ -49,7 +51,7 @@ package body admin.taghelpers.WorkFlowRequestHelper_Package is
             WorkFlowEntityFactory_Package.getInstance.create2.delete (This.workFlowInterface.getName, stringUtil.EMPTY_STRING);
             success := To_Unbounded_String ("Successfully Removed the workflow with ") & Java_Image (WorkFlowData_Package.getInstance.NAME) & To_Unbounded_String ("= ") & This.workFlowInterface.getName & To_Unbounded_String (" from ");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, To_Unbounded_String ("delete()"));
+                This.logUtil.putF (success, WorkFlowRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("delete()"));
             end if;
             return success;
         exception
@@ -60,7 +62,7 @@ package body admin.taghelpers.WorkFlowRequestHelper_Package is
             begin
                 error := To_Unbounded_String ("Failed to remove workflow with ") & Java_Image (WorkFlowData_Package.getInstance.NAME) & To_Unbounded_String ("= ") & This.workFlowInterface.getName & To_Unbounded_String (" from ");
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                    This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("delete()"), e);
+                    This.logUtil.put (This.commonStrings.EXCEPTION_Id, WorkFlowRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("delete()"), e);
                 end if;
                 Java_Throw (Java_New_Exception ("Exception", e));
             exception
@@ -70,7 +72,7 @@ package body admin.taghelpers.WorkFlowRequestHelper_Package is
                     begin
                 error := To_Unbounded_String ("Failed to get data from workflowinterface to set error string");
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                    This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("delete()"), e2);
+                    This.logUtil.put (This.commonStrings.EXCEPTION_Id, WorkFlowRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("delete()"), e2);
                 end if;
                 return error;
                     end;
@@ -86,7 +88,7 @@ package body admin.taghelpers.WorkFlowRequestHelper_Package is
         begin
             success := To_Unbounded_String ("New User Successfully added to the Users Table");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, To_Unbounded_String ("add()"));
+                This.logUtil.putF (success, WorkFlowRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("add()"));
             end if;
             return success;
         exception
@@ -96,7 +98,7 @@ package body admin.taghelpers.WorkFlowRequestHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to add User");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("add()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, WorkFlowRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("add()"), e);
             end if;
             return error;
                 end;
@@ -110,7 +112,7 @@ package body admin.taghelpers.WorkFlowRequestHelper_Package is
         begin
             success := To_Unbounded_String ("Updated WorkFlow Successfully");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, To_Unbounded_String ("update()"));
+                This.logUtil.putF (success, WorkFlowRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("update()"));
             end if;
             return success;
         exception
@@ -120,7 +122,7 @@ package body admin.taghelpers.WorkFlowRequestHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to update WorkFlow");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("update()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, WorkFlowRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("update()"), e);
             end if;
             return error;
                 end;

@@ -24,7 +24,9 @@ package body admin.taghelpers.BasicTextEmailHelper_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BasicTextEmailHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access) is
+   procedure Initialize (This : in out BasicTextEmailHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
    begin
       TagHelper_Package.Initialize (This);
       Initialize_Fields (This);
@@ -32,10 +34,10 @@ package body admin.taghelpers.BasicTextEmailHelper_Package is
         This.hashMap := hashMap;
    end Initialize;
 
-   function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return BasicTextEmailHelper_Access is
+   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return BasicTextEmailHelper_Access is
       This : constant BasicTextEmailHelper_Access := new BasicTextEmailHelper;
    begin
-      BasicTextEmailHelper_Package.Initialize (This.all, hashMap, pageContext);
+      BasicTextEmailHelper_Package.Initialize (This.all, hashMap_Param, pageContext_Param);
       return This;
    end Create;
 

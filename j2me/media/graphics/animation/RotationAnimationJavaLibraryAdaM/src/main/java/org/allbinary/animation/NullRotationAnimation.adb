@@ -9,25 +9,31 @@ package body org.allbinary.animation.NullRotationAnimation_Package is
    end Initialize_Fields;
 
 
-   function createTotalAngle (angleInfo : AngleInfo_Access; totalAngle : Short_Integer; animationBehavior : AnimationBehavior_Access) return NullRotationAnimation_Access is
+   function createTotalAngle (angleInfo_Param : access AngleInfo'Class; totalAngle : Short_Integer; animationBehavior_Param : access AnimationBehavior'Class) return NullRotationAnimation_Access is
+      angleInfo : AngleInfo_Access := AngleInfo_Access (angleInfo_Param);
+      animationBehavior : AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
    begin
         return NullRotationAnimation_Package.Create (angleInfo, CircularIndexUtil_Package.createInstance ((totalAngle) / (angleInfo.getAngleIncrementInfo.getAngleIncrement)), animationBehavior);
    end createTotalAngle;
 
-   function createQuarter (animationBehavior : AnimationBehavior_Access) return NullRotationAnimation_Access is
+   function createQuarter (animationBehavior_Param : access AnimationBehavior'Class) return NullRotationAnimation_Access is
+      animationBehavior : AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
    begin
         return NullRotationAnimation_Package.Create (AngleInfo_Package.getInstance (AngleFactory_Package.getInstance.QUARTER_TOTAL_ANGLE), CircularIndexUtil_Package.createInstance (4), animationBehavior);
    end createQuarter;
 
-   procedure Initialize (This : in out NullRotationAnimation'Class; angleInfo : AngleInfo_Access; circularIndexUtil : CircularIndexUtil_Access; animationBehavior : AnimationBehavior_Access) is
+   procedure Initialize (This : in out NullRotationAnimation'Class; angleInfo_Param : access AngleInfo'Class; circularIndexUtil_Param : access CircularIndexUtil'Class; animationBehavior_Param : access AnimationBehavior'Class) is
+      angleInfo : AngleInfo_Access := AngleInfo_Access (angleInfo_Param);
+      circularIndexUtil : CircularIndexUtil_Access := CircularIndexUtil_Access (circularIndexUtil_Param);
+      animationBehavior : AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
    begin
         RotationAnimation_Package.Initialize (This, angleInfo, circularIndexUtil, animationBehavior);
    end Initialize;
 
-   function Create (angleInfo : AngleInfo_Access; circularIndexUtil : CircularIndexUtil_Access; animationBehavior : AnimationBehavior_Access) return NullRotationAnimation_Access is
+   function Create (angleInfo_Param : access AngleInfo'Class; circularIndexUtil_Param : access CircularIndexUtil'Class; animationBehavior_Param : access AnimationBehavior'Class) return NullRotationAnimation_Access is
       This : constant NullRotationAnimation_Access := new NullRotationAnimation;
    begin
-      NullRotationAnimation_Package.Initialize (This.all, angleInfo, circularIndexUtil, animationBehavior);
+      NullRotationAnimation_Package.Initialize (This.all, angleInfo_Param, circularIndexUtil_Param, animationBehavior_Param);
       return This;
    end Create;
 
@@ -37,15 +43,15 @@ package body org.allbinary.animation.NullRotationAnimation_Package is
         return 0;
    end getAnimationSize;
 
-   procedure createTotalAngle (angleInfo : AngleInfo_Access; totalAngle : Short_Integer; animationBehavior : AnimationBehavior_Access) is
-      Java_Result : constant NullRotationAnimation_Access := createTotalAngle (angleInfo, totalAngle, animationBehavior);
+   procedure createTotalAngle (angleInfo_Param : access AngleInfo'Class; totalAngle : Short_Integer; animationBehavior_Param : access AnimationBehavior'Class) is
+      Java_Result : constant NullRotationAnimation_Access := createTotalAngle (angleInfo_Param, totalAngle, animationBehavior_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createTotalAngle;
 
-   procedure createQuarter (animationBehavior : AnimationBehavior_Access) is
-      Java_Result : constant NullRotationAnimation_Access := createQuarter (animationBehavior);
+   procedure createQuarter (animationBehavior_Param : access AnimationBehavior'Class) is
+      Java_Result : constant NullRotationAnimation_Access := createQuarter (animationBehavior_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

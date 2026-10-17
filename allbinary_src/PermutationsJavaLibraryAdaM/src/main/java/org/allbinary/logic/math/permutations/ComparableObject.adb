@@ -33,18 +33,19 @@ package body org.allbinary.logic.math.permutations.ComparableObject_Package is
    end Create;
 
 
-   function compareTo (This : in out ComparableObject; anyType : Java_Object_Access) return Integer is
+   function compareTo (This : in out ComparableObject; anyType_Param : access Java_Object'Class) return Integer is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
-        if (TsUtil_Package.getInstance.hashCode (This'Unchecked_Access)) < (TsUtil_Package.getInstance.hashCode (anyType)) then
+        if (TsUtil_Package.getInstance.hashCode (ComparableObject_Access'(This'Unchecked_Access))) < (TsUtil_Package.getInstance.hashCode (anyType)) then
             return -(1);
-        elsif (TsUtil_Package.getInstance.hashCode (This'Unchecked_Access)) > (TsUtil_Package.getInstance.hashCode (anyType)) then
+        elsif (TsUtil_Package.getInstance.hashCode (ComparableObject_Access'(This'Unchecked_Access))) > (TsUtil_Package.getInstance.hashCode (anyType)) then
             return 1;
         end if;
         return 0;
    end compareTo;
 
-   procedure compareTo (This : in out ComparableObject; anyType : Java_Object_Access) is
-      Java_Result : constant Integer := ComparableObject'Class (This).compareTo (anyType);
+   procedure compareTo (This : in out ComparableObject; anyType_Param : access Java_Object'Class) is
+      Java_Result : constant Integer := ComparableObject'Class (This).compareTo (anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

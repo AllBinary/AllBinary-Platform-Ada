@@ -52,7 +52,8 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ImageUnifierJPanel'Class; imageProcessorInput : ImageProcessorInput_Access) is
+   procedure Initialize (This : in out ImageUnifierJPanel'Class; imageProcessorInput_Param : access ImageProcessorInput'Class) is
+      imageProcessorInput : ImageProcessorInput_Access := ImageProcessorInput_Access (imageProcessorInput_Param);
    begin
       JPanel_Package.Initialize (This);
       Initialize_Fields (This);
@@ -60,10 +61,10 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
         This.setImageProcessorInput (imageProcessorInput);
    end Initialize;
 
-   function Create (imageProcessorInput : ImageProcessorInput_Access) return ImageUnifierJPanel_Access is
+   function Create (imageProcessorInput_Param : access ImageProcessorInput'Class) return ImageUnifierJPanel_Access is
       This : constant ImageUnifierJPanel_Access := new ImageUnifierJPanel;
    begin
-      ImageUnifierJPanel_Package.Initialize (This.all, imageProcessorInput);
+      ImageUnifierJPanel_Package.Initialize (This.all, imageProcessorInput_Param);
       return This;
    end Create;
 
@@ -101,7 +102,7 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.INIT, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, ImageUnifierJPanel_Access'(This'Unchecked_Access), This.commonStrings.INIT, e);
                 end;
         end;
    end init;
@@ -143,7 +144,7 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("updateImage"), e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, ImageUnifierJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("updateImage"), e);
                 end;
         end;
    end updateImage;
@@ -175,7 +176,7 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("updateImageWithFudgedImages"), e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, ImageUnifierJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("updateImageWithFudgedImages"), e);
                 end;
         end;
    end updateImageWithFudgedImages;
@@ -247,7 +248,8 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
         This.jButton1.setText (To_Unbounded_String ("Save"));
         This.jButton1.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt : ActionEvent_Access) is
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
+--        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.jButton1ActionPerformed (evt);
 --     end actionPerformed;
@@ -255,7 +257,8 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
         This.upJButton.setText (To_Unbounded_String ("Up"));
         This.upJButton.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt : ActionEvent_Access) is
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
+--        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.upJButtonActionPerformed (evt);
 --     end actionPerformed;
@@ -263,7 +266,8 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
         This.downJButton.setText (To_Unbounded_String ("Down"));
         This.downJButton.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt : ActionEvent_Access) is
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
+--        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.downJButtonActionPerformed (evt);
 --     end actionPerformed;
@@ -271,7 +275,8 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
         This.fudgeItJButton.setText (To_Unbounded_String ("Fudge It!"));
         This.fudgeItJButton.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt : ActionEvent_Access) is
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
+--        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.fudgeItJButtonActionPerformed (evt);
 --     end actionPerformed;
@@ -280,26 +285,30 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
         This.columnsJTextField.setText (commonPhoneStrings.TWO);
         This.columnsJTextField.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt : ActionEvent_Access) is
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
+--        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.columnsJTextFieldActionPerformed (evt);
 --     end actionPerformed;
 );
         This.columnsJTextField.addPropertyChangeListener (PropertyChangeListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure propertyChange (This : in out ; evt : PropertyChangeEvent_Access) is
+--     procedure propertyChange (This : in out ; evt_Param : access PropertyChangeEvent'Class) is
+--        evt : PropertyChangeEvent_Access := PropertyChangeEvent_Access (evt_Param);
 --     begin
 --                  This.columnsJTextFieldPropertyChange (evt);
 --     end propertyChange;
 );
         This.columnsJTextField.addKeyListener (KeyAdapter_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure keyPressed (This : in out ; evt : KeyEvent_Access) is
+--     procedure keyPressed (This : in out ; evt_Param : access KeyEvent'Class) is
+--        evt : KeyEvent_Access := KeyEvent_Access (evt_Param);
 --     begin
 --                  This.columnsJTextFieldKeyPressed (evt);
 --     end keyPressed;
 --              
---     procedure keyTyped (This : in out ; evt : KeyEvent_Access) is
+--     procedure keyTyped (This : in out ; evt_Param : access KeyEvent'Class) is
+--        evt : KeyEvent_Access := KeyEvent_Access (evt_Param);
 --     begin
 --                  This.columnsJTextFieldKeyTyped (evt);
 --     end keyTyped;
@@ -308,7 +317,8 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
         This.rowsJTextField.setText (commonPhoneStrings.TWO);
         This.rowsJTextField.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt : ActionEvent_Access) is
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
+--        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.rowsJTextFieldActionPerformed (evt);
 --     end actionPerformed;
@@ -317,7 +327,8 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
         This.cellWidthJTextField.setText (To_Unbounded_String ("200"));
         This.cellWidthJTextField.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt : ActionEvent_Access) is
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
+--        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.cellWidthJTextFieldActionPerformed (evt);
 --     end actionPerformed;
@@ -326,7 +337,8 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
         This.cellHeightJTextField.setText (To_Unbounded_String ("150"));
         This.cellHeightJTextField.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt : ActionEvent_Access) is
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
+--        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.cellHeightJTextFieldActionPerformed (evt);
 --     end actionPerformed;
@@ -338,7 +350,8 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
         This.jButton2.setText (This.commonStrings.UPDATE);
         This.jButton2.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt : ActionEvent_Access) is
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
+--        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.jButton2ActionPerformed (evt);
 --     end actionPerformed;
@@ -346,7 +359,8 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
         This.jButtonOrder.setText (To_Unbounded_String ("Order"));
         This.jButtonOrder.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt : ActionEvent_Access) is
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
+--        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.jButtonOrderActionPerformed (evt);
 --     end actionPerformed;
@@ -355,58 +369,68 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
         This.jPanel1.setLayout (jPanel1Layout);
         jPanel1Layout.setHorizontalGroup (jPanel1Layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (javax_Package.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup.addContainerGap.addGroup (jPanel1Layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.TRAILING).addComponent (This.jButton1, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 151, Short_Package.MAX_VALUE).addGroup (jPanel1Layout.createSequentialGroup.addComponent (This.upJButton, javax_Package.swing.GroupLayout.PREFERRED_SIZE, 71, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short_Package.MAX_VALUE).addComponent (This.downJButton, javax_Package.swing.GroupLayout.PREFERRED_SIZE, 70, javax_Package.swing.GroupLayout.PREFERRED_SIZE)).addComponent (This.fudgeItJButton, javax_Package.swing.GroupLayout.Alignment.LEADING, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 151, Short_Package.MAX_VALUE).addGroup (javax_Package.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup.addComponent (This.jLabel3).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED, 99, javax_Package.swing.GroupLayout.PREFERRED_SIZE)).addGroup (javax_Package.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup.addComponent (This.jLabel4).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED, 96, javax_Package.swing.GroupLayout.PREFERRED_SIZE)).addComponent (This.avgRatioJTextField, javax_Package.swing.GroupLayout.Alignment.LEADING, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 151, Short_Package.MAX_VALUE).addComponent (This.jLabel6, javax_Package.swing.GroupLayout.Alignment.LEADING, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 151, Short_Package.MAX_VALUE).addComponent (This.cellRatioJTextField, javax_Package.swing.GroupLayout.Alignment.LEADING, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 151, Short_Package.MAX_VALUE).addComponent (This.jLabel5, javax_Package.swing.GroupLayout.Alignment.LEADING, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 151, Short_Package.MAX_VALUE).addComponent (This.cellHeightJTextField, javax_Package.swing.GroupLayout.Alignment.LEADING, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 151, Short_Package.MAX_VALUE).addComponent (This.cellWidthJTextField, javax_Package.swing.GroupLayout.Alignment.LEADING, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 151, Short_Package.MAX_VALUE).addComponent (This.jButton2, javax_Package.swing.GroupLayout.Alignment.LEADING, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 151, Short_Package.MAX_VALUE).addGroup (javax_Package.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup.addGroup (jPanel1Layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addComponent (This.jLabel2).addComponent (This.jLabel1)).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addGroup (jPanel1Layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addComponent (This.rowsJTextField, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 103, Short_Package.MAX_VALUE).addGroup (jPanel1Layout.createSequentialGroup.addComponent (This.columnsJTextField, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 102, Short_Package.MAX_VALUE).addGap (1, 1, 1)))).addComponent (This.jButtonOrder, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 151, Short_Package.MAX_VALUE)).addContainerGap));
         jPanel1Layout.setVerticalGroup (jPanel1Layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (jPanel1Layout.createSequentialGroup.addContainerGap.addComponent (This.jButton1).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addGroup (jPanel1Layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.upJButton).addComponent (This.downJButton)).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.jButtonOrder).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.fudgeItJButton).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addGroup (jPanel1Layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.jLabel2).addComponent (This.columnsJTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE)).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addGroup (jPanel1Layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.jLabel1).addComponent (This.rowsJTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE)).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.jLabel3).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.cellWidthJTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.jLabel4).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.cellHeightJTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.jButton2).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.jLabel5).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED, javax_Package.swing.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE).addComponent (This.cellRatioJTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addGap (7, 7, 7).addComponent (This.jLabel6).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.avgRatioJTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addGap (66, 66, 66)));
-        layout := GroupLayout_Package.Create (This'Unchecked_Access);
+        layout := GroupLayout_Package.Create (ImageUnifierJPanel_Access'(This'Unchecked_Access));
         This.setLayout (layout);
         layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addComponent (This.jScrollPane1, javax_Package.swing.GroupLayout.PREFERRED_SIZE, 84, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.jPanel1, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.jScrollPane2, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 527, Short_Package.MAX_VALUE)));
         layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (javax_Package.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup.addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.TRAILING).addComponent (This.jPanel1, javax_Package.swing.GroupLayout.Alignment.LEADING, 0, 445, Short_Package.MAX_VALUE).addComponent (This.jScrollPane2, javax_Package.swing.GroupLayout.Alignment.LEADING, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 445, Short_Package.MAX_VALUE).addComponent (This.jScrollPane1, javax_Package.swing.GroupLayout.Alignment.LEADING, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 445, Short_Package.MAX_VALUE)).addContainerGap));
    end initComponents;
 
-   procedure jButton2ActionPerformed (This : in out ImageUnifierJPanel; evt : ActionEvent_Access) is
+   procedure jButton2ActionPerformed (This : in out ImageUnifierJPanel; evt_Param : access ActionEvent'Class) is
+      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         This.updateOnPropertiesChange;
    end jButton2ActionPerformed;
 
-   procedure columnsJTextFieldKeyPressed (This : in out ImageUnifierJPanel; evt : KeyEvent_Access) is
+   procedure columnsJTextFieldKeyPressed (This : in out ImageUnifierJPanel; evt_Param : access KeyEvent'Class) is
+      evt : KeyEvent_Access := KeyEvent_Access (evt_Param);
    begin
         null;
    end columnsJTextFieldKeyPressed;
 
-   procedure columnsJTextFieldKeyTyped (This : in out ImageUnifierJPanel; evt : KeyEvent_Access) is
+   procedure columnsJTextFieldKeyTyped (This : in out ImageUnifierJPanel; evt_Param : access KeyEvent'Class) is
+      evt : KeyEvent_Access := KeyEvent_Access (evt_Param);
    begin
         null;
    end columnsJTextFieldKeyTyped;
 
-   procedure columnsJTextFieldPropertyChange (This : in out ImageUnifierJPanel; evt : PropertyChangeEvent_Access) is
+   procedure columnsJTextFieldPropertyChange (This : in out ImageUnifierJPanel; evt_Param : access PropertyChangeEvent'Class) is
+      evt : PropertyChangeEvent_Access := PropertyChangeEvent_Access (evt_Param);
    begin
         null;
    end columnsJTextFieldPropertyChange;
 
-   procedure fudgeItJButtonActionPerformed (This : in out ImageUnifierJPanel; evt : ActionEvent_Access) is
+   procedure fudgeItJButtonActionPerformed (This : in out ImageUnifierJPanel; evt_Param : access ActionEvent'Class) is
+      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         This.updateImageWithFudgedImages;
    end fudgeItJButtonActionPerformed;
 
-   procedure cellHeightJTextFieldActionPerformed (This : in out ImageUnifierJPanel; evt : ActionEvent_Access) is
+   procedure cellHeightJTextFieldActionPerformed (This : in out ImageUnifierJPanel; evt_Param : access ActionEvent'Class) is
+      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         This.updateOnPropertiesChange;
    end cellHeightJTextFieldActionPerformed;
 
-   procedure cellWidthJTextFieldActionPerformed (This : in out ImageUnifierJPanel; evt : ActionEvent_Access) is
+   procedure cellWidthJTextFieldActionPerformed (This : in out ImageUnifierJPanel; evt_Param : access ActionEvent'Class) is
+      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         This.updateOnPropertiesChange;
    end cellWidthJTextFieldActionPerformed;
 
-   procedure columnsJTextFieldActionPerformed (This : in out ImageUnifierJPanel; evt : ActionEvent_Access) is
+   procedure columnsJTextFieldActionPerformed (This : in out ImageUnifierJPanel; evt_Param : access ActionEvent'Class) is
+      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         This.updateOnPropertiesChange;
    end columnsJTextFieldActionPerformed;
 
-   procedure rowsJTextFieldActionPerformed (This : in out ImageUnifierJPanel; evt : ActionEvent_Access) is
+   procedure rowsJTextFieldActionPerformed (This : in out ImageUnifierJPanel; evt_Param : access ActionEvent'Class) is
+      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         This.updateOnPropertiesChange;
    end rowsJTextFieldActionPerformed;
 
-   procedure jButton1ActionPerformed (This : in out ImageUnifierJPanel; evt : ActionEvent_Access) is
+   procedure jButton1ActionPerformed (This : in out ImageUnifierJPanel; evt_Param : access ActionEvent'Class) is
+      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
       fileArray : File_Access_Array_Access;
       file : File_Access;
       filePath : Unbounded_String;
@@ -419,7 +443,7 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
             filePath := file.getAbsolutePath;
             extensionIndex := (Index (filePath, To_String (This.imageStrings.PNG_EXTENSION)) - 1);
             filePath := StringMaker_Package.Create.append (Unbounded_Slice (filePath, (0) + 1, extensionIndex)).append (CommonSeps_Package.getInstance.UNDERSCORE).appendint (Integer (This.imageUnifierProperties.getColumns)).append (To_Unbounded_String ("_By_")).appendint (Integer (This.imageUnifierProperties.getRows)).append (To_Unbounded_String ("_Unified")).append (This.imageStrings.PNG_EXTENSION).toString;
-            This.logUtil.putF (To_Unbounded_String ("New File Path: ") & filePath, This'Unchecked_Access, StringUtil_Package.getInstance.EMPTY_STRING);
+            This.logUtil.putF (To_Unbounded_String ("New File Path: ") & filePath, ImageUnifierJPanel_Access'(This'Unchecked_Access), StringUtil_Package.getInstance.EMPTY_STRING);
             outputFile := File_Package.Create (filePath);
             ImagePersistanceUtil_Package.getInstance.saveWithBatik (FileWrapperUtil_Package.wrapFile (outputFile), This.result);
         exception
@@ -427,12 +451,13 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("jButton1ActionPerformed"), e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, ImageUnifierJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("jButton1ActionPerformed"), e);
                 end;
         end;
    end jButton1ActionPerformed;
 
-   procedure downJButtonActionPerformed (This : in out ImageUnifierJPanel; evt : ActionEvent_Access) is
+   procedure downJButtonActionPerformed (This : in out ImageUnifierJPanel; evt_Param : access ActionEvent'Class) is
+      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
       index : Integer;
       defaultListModel : DefaultListModel_Access;
       indexedImageIcon : ImageIconUnique_Access;
@@ -447,7 +472,8 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
         end if;
    end downJButtonActionPerformed;
 
-   procedure upJButtonActionPerformed (This : in out ImageUnifierJPanel; evt : ActionEvent_Access) is
+   procedure upJButtonActionPerformed (This : in out ImageUnifierJPanel; evt_Param : access ActionEvent'Class) is
+      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
       index : Integer;
       defaultListModel : DefaultListModel_Access;
       indexedImageIcon : ImageIconUnique_Access;
@@ -462,7 +488,8 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
         end if;
    end upJButtonActionPerformed;
 
-   procedure jButtonOrderActionPerformed (This : in out ImageUnifierJPanel; evt : ActionEvent_Access) is
+   procedure jButtonOrderActionPerformed (This : in out ImageUnifierJPanel; evt_Param : access ActionEvent'Class) is
+      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
       defaultListModel : DefaultListModel_Access;
       size : Integer;
       last : Integer;
@@ -487,7 +514,8 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
         return This.imageProcessorInput;
    end getImageProcessorInput;
 
-   procedure setImageProcessorInput (This : in out ImageUnifierJPanel; imageProcessorInput : ImageProcessorInput_Access) is
+   procedure setImageProcessorInput (This : in out ImageUnifierJPanel; imageProcessorInput_Param : access ImageProcessorInput'Class) is
+      imageProcessorInput : ImageProcessorInput_Access := ImageProcessorInput_Access (imageProcessorInput_Param);
    begin
         This.imageProcessorInput := imageProcessorInput;
         This.init;

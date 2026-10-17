@@ -47,10 +47,10 @@ package org.allbinary.game.layer.item.RTSLayerTextAnimation_Package is
       fontHeight : Integer;
    end record;
 
-   procedure Initialize (This : in out RTSLayerTextAnimation'Class; text : Unbounded_String; image : Image_Access);
-   function Create (text : Unbounded_String; image : Image_Access) return RTSLayerTextAnimation_Access;
-   procedure updateMeasurement (This : in out RTSLayerTextAnimation; graphics : Graphics_Access);
-   procedure paintXY (This : in out RTSLayerTextAnimation; graphics : Graphics_Access; x : Integer; y : Integer);
+   procedure Initialize (This : in out RTSLayerTextAnimation'Class; text : Unbounded_String; image_Param : access Image'Class);
+   function Create (text : Unbounded_String; image_Param : access Image'Class) return RTSLayerTextAnimation_Access;
+   procedure updateMeasurement (This : in out RTSLayerTextAnimation; graphics_Param : access Graphics'Class);
+   procedure paintXY (This : in out RTSLayerTextAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
 
 end org.allbinary.game.layer.item.RTSLayerTextAnimation_Package;
 

@@ -22,16 +22,17 @@ package body org.allbinary.logic.io.BufferedLineReader_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BufferedLineReader'Class; file : AbFile_Access) is
+   procedure Initialize (This : in out BufferedLineReader'Class; file_Param : access AbFile'Class) is
+      file : AbFile_Access := AbFile_Access (file_Param);
    begin
       Initialize_Fields (This);
         This.tmpIn := BufferedReader_Package.Create (FileReader_Package.Create (AbFileNativeUtil_Package.get (file)));
    end Initialize;
 
-   function Create (file : AbFile_Access) return BufferedLineReader_Access is
+   function Create (file_Param : access AbFile'Class) return BufferedLineReader_Access is
       This : constant BufferedLineReader_Access := new BufferedLineReader;
    begin
-      BufferedLineReader_Package.Initialize (This.all, file);
+      BufferedLineReader_Package.Initialize (This.all, file_Param);
       return This;
    end Create;
 

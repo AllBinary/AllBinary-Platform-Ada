@@ -30,7 +30,8 @@ package body org.allbinary.game.displayable.canvas.GameCanvasInputProcessor_Pack
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out GameCanvasInputProcessor'Class; allBinaryGameCanvas : AllBinaryGameCanvas_Access) is
+   procedure Initialize (This : in out GameCanvasInputProcessor'Class; allBinaryGameCanvas_Param : access AllBinaryGameCanvas'Class) is
+      allBinaryGameCanvas : AllBinaryGameCanvas_Access := AllBinaryGameCanvas_Access (allBinaryGameCanvas_Param);
    begin
       InputProcessor_Package.Initialize (This);
       Initialize_Fields (This);
@@ -38,10 +39,10 @@ package body org.allbinary.game.displayable.canvas.GameCanvasInputProcessor_Pack
         This.inputToGameKeyMapping.init (This.allBinaryGameCanvas);
    end Initialize;
 
-   function Create (allBinaryGameCanvas : AllBinaryGameCanvas_Access) return GameCanvasInputProcessor_Access is
+   function Create (allBinaryGameCanvas_Param : access AllBinaryGameCanvas'Class) return GameCanvasInputProcessor_Access is
       This : constant GameCanvasInputProcessor_Access := new GameCanvasInputProcessor;
    begin
-      GameCanvasInputProcessor_Package.Initialize (This.all, allBinaryGameCanvas);
+      GameCanvasInputProcessor_Package.Initialize (This.all, allBinaryGameCanvas_Param);
       return This;
    end Create;
 
@@ -57,7 +58,7 @@ package body org.allbinary.game.displayable.canvas.GameCanvasInputProcessor_Pack
                 This.downGameKeyEventHandler.fireEvent (gameKeyEvent);
                 This.downGameKeyEventHandler.getInstanceForDevice (deviceId).fireEvent (gameKeyEvent);
             else
-                This.logUtil.putF (StringMaker_Package.Create.append (This.gameInputStrings.NO_KEY).appendint (keyCode).toString, This'Unchecked_Access, This.gameInputStrings.ADD_KEY_EVENT);
+                This.logUtil.putF (StringMaker_Package.Create.append (This.gameInputStrings.NO_KEY).appendint (keyCode).toString, GameCanvasInputProcessor_Access'(This'Unchecked_Access), This.gameInputStrings.ADD_KEY_EVENT);
             end if;
             keyCodeAsInteger := This.smallIntegerSingletonFactory.getAtNoThrow (keyCode);
             This.downKeyEventHandler.fireEventI (keyCodeAsInteger);
@@ -67,17 +68,19 @@ package body org.allbinary.game.displayable.canvas.GameCanvasInputProcessor_Pack
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (To_Unbounded_String ("Key Event Error"), This'Unchecked_Access, This.gameInputStrings.ADD_KEY_EVENT, e);
+            This.logUtil.put (To_Unbounded_String ("Key Event Error"), GameCanvasInputProcessor_Access'(This'Unchecked_Access), This.gameInputStrings.ADD_KEY_EVENT, e);
                 end;
         end;
    end keyPressedByDevice;
 
-   procedure keyReleasedByDevice (This : in out GameCanvasInputProcessor; canvas : Canvas_Access; keyCode : Integer; deviceId : Integer) is
+   procedure keyReleasedByDevice (This : in out GameCanvasInputProcessor; canvas_Param : access Canvas'Class; keyCode : Integer; deviceId : Integer) is
+      canvas : Canvas_Access := Canvas_Access (canvas_Param);
    begin
         This.removeGameKeyEvent (canvas, keyCode, deviceId, False);
    end keyReleasedByDevice;
 
-   procedure removeGameKeyEvent (This : in out GameCanvasInputProcessor; canvas : Canvas_Access; keyCode : Integer; deviceId : Integer; repeated : Boolean) is
+   procedure removeGameKeyEvent (This : in out GameCanvasInputProcessor; canvas_Param : access Canvas'Class; keyCode : Integer; deviceId : Integer; repeated : Boolean) is
+      canvas : Canvas_Access := Canvas_Access (canvas_Param);
       gameKey : GameKey_Access;
       gameKeyEventSourceInterface : GameKeyEventSourceInterface_Access;
       gameKeyEvent : GameKeyEvent_Access;
@@ -90,14 +93,14 @@ package body org.allbinary.game.displayable.canvas.GameCanvasInputProcessor_Pack
                 This.upGameKeyEventHandler.fireEvent (gameKeyEvent);
                 This.upGameKeyEventHandler.getInstanceForDevice (deviceId).fireEvent (gameKeyEvent);
             else
-                This.logUtil.putF (StringMaker_Package.Create.append (This.gameInputStrings.NO_KEY).appendint (keyCode).toString, This'Unchecked_Access, This.gameInputStrings.REMOVE_KEY_EVENT);
+                This.logUtil.putF (StringMaker_Package.Create.append (This.gameInputStrings.NO_KEY).appendint (keyCode).toString, GameCanvasInputProcessor_Access'(This'Unchecked_Access), This.gameInputStrings.REMOVE_KEY_EVENT);
             end if;
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (To_Unbounded_String ("Key Event Error"), This'Unchecked_Access, This.gameInputStrings.REMOVE_KEY_EVENT, e);
+            This.logUtil.put (To_Unbounded_String ("Key Event Error"), GameCanvasInputProcessor_Access'(This'Unchecked_Access), This.gameInputStrings.REMOVE_KEY_EVENT, e);
                 end;
         end;
    end removeGameKeyEvent;

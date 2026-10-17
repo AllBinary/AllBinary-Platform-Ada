@@ -29,7 +29,10 @@ package body org.allbinary.media.graphics.geography.map.SimpleGeographicMap_Pack
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out SimpleGeographicMap'Class; id : Integer; name : Unbounded_String; cellTypeIdToGeographicMapCellType : Integer_Array_Access; tiledLayer : AllBinaryTiledLayer_Access; foregroundBasicColor : BasicColor_Access; backgroundBasicColor : BasicColor_Access) is
+   procedure Initialize (This : in out SimpleGeographicMap'Class; id : Integer; name : Unbounded_String; cellTypeIdToGeographicMapCellType : Integer_Array_Access; tiledLayer_Param : access AllBinaryTiledLayer'Class; foregroundBasicColor_Param : access BasicColor'Class; backgroundBasicColor_Param : access BasicColor'Class) is
+      tiledLayer : AllBinaryTiledLayer_Access := AllBinaryTiledLayer_Access (tiledLayer_Param);
+      foregroundBasicColor : BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
+      backgroundBasicColor : BasicColor_Access := BasicColor_Access (backgroundBasicColor_Param);
    begin
       Initialize_Fields (This);
         This.id := id;
@@ -40,10 +43,10 @@ package body org.allbinary.media.graphics.geography.map.SimpleGeographicMap_Pack
         This.setForegroundBasicColor (foregroundBasicColor);
    end Initialize;
 
-   function Create (id : Integer; name : Unbounded_String; cellTypeIdToGeographicMapCellType : Integer_Array_Access; tiledLayer : AllBinaryTiledLayer_Access; foregroundBasicColor : BasicColor_Access; backgroundBasicColor : BasicColor_Access) return SimpleGeographicMap_Access is
+   function Create (id : Integer; name : Unbounded_String; cellTypeIdToGeographicMapCellType : Integer_Array_Access; tiledLayer_Param : access AllBinaryTiledLayer'Class; foregroundBasicColor_Param : access BasicColor'Class; backgroundBasicColor_Param : access BasicColor'Class) return SimpleGeographicMap_Access is
       This : constant SimpleGeographicMap_Access := new SimpleGeographicMap;
    begin
-      SimpleGeographicMap_Package.Initialize (This.all, id, name, cellTypeIdToGeographicMapCellType, tiledLayer, foregroundBasicColor, backgroundBasicColor);
+      SimpleGeographicMap_Package.Initialize (This.all, id, name, cellTypeIdToGeographicMapCellType, tiledLayer_Param, foregroundBasicColor_Param, backgroundBasicColor_Param);
       return This;
    end Create;
 
@@ -68,7 +71,8 @@ package body org.allbinary.media.graphics.geography.map.SimpleGeographicMap_Pack
    end getAllBinaryTiledLayer;
 
    --  throws Exception
-   function getCellTypeAt (This : in out SimpleGeographicMap; cellPosition : GeographicMapCellPosition_Access) return GeographicMapCellType_Access is
+   function getCellTypeAt (This : in out SimpleGeographicMap; cellPosition_Param : access GeographicMapCellPosition'Class) return GeographicMapCellType_Access is
+      cellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (cellPosition_Param);
       i_column : Integer;
       i_row : Integer;
       cellTypeId : Integer;
@@ -92,7 +96,8 @@ package body org.allbinary.media.graphics.geography.map.SimpleGeographicMap_Pack
         return This.foregroundBasicColor;
    end getForegroundBasicColor;
 
-   procedure setForegroundBasicColor (This : in out SimpleGeographicMap; foregroundBasicColor : BasicColor_Access) is
+   procedure setForegroundBasicColor (This : in out SimpleGeographicMap; foregroundBasicColor_Param : access BasicColor'Class) is
+      foregroundBasicColor : BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
    begin
         This.foregroundBasicColor := foregroundBasicColor;
    end setForegroundBasicColor;
@@ -102,13 +107,14 @@ package body org.allbinary.media.graphics.geography.map.SimpleGeographicMap_Pack
         return This.backgroundBasicColor;
    end getBackgroundBasicColor;
 
-   procedure setBackgroundBasicColor (This : in out SimpleGeographicMap; backgroundBasicColor : BasicColor_Access) is
+   procedure setBackgroundBasicColor (This : in out SimpleGeographicMap; backgroundBasicColor_Param : access BasicColor'Class) is
+      backgroundBasicColor : BasicColor_Access := BasicColor_Access (backgroundBasicColor_Param);
    begin
         This.backgroundBasicColor := backgroundBasicColor;
    end setBackgroundBasicColor;
 
-   procedure getCellTypeAt (This : in out SimpleGeographicMap; cellPosition : GeographicMapCellPosition_Access) is
-      Java_Result : constant GeographicMapCellType_Access := SimpleGeographicMap'Class (This).getCellTypeAt (cellPosition);
+   procedure getCellTypeAt (This : in out SimpleGeographicMap; cellPosition_Param : access GeographicMapCellPosition'Class) is
+      Java_Result : constant GeographicMapCellType_Access := SimpleGeographicMap'Class (This).getCellTypeAt (cellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

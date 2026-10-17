@@ -31,7 +31,9 @@ package body admin.taghelpers.BasketRequestHelper_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BasketRequestHelper'Class; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) is
+   procedure Initialize (This : in out BasketRequestHelper'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+      propertiesHashMap : HashMap_Access := HashMap_Access (propertiesHashMap_Param);
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
       storeName : Unbounded_String;
    begin
       TagHelper_Package.Initialize (This);
@@ -49,10 +51,10 @@ package body admin.taghelpers.BasketRequestHelper_Package is
         This.getFormData;
    end Initialize;
 
-   function Create (propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return BasketRequestHelper_Access is
+   function Create (propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return BasketRequestHelper_Access is
       This : constant BasketRequestHelper_Access := new BasketRequestHelper;
    begin
-      BasketRequestHelper_Package.Initialize (This.all, propertiesHashMap, pageContext);
+      BasketRequestHelper_Package.Initialize (This.all, propertiesHashMap_Param, pageContext_Param);
       return This;
    end Create;
 
@@ -74,7 +76,7 @@ package body admin.taghelpers.BasketRequestHelper_Package is
                 basket.addItem (This.id, This.num);
             end if;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (To_Unbounded_String ("Successfully added item to Basket"), This'Unchecked_Access, To_Unbounded_String ("addItemToBasket()"));
+                This.logUtil.putF (To_Unbounded_String ("Successfully added item to Basket"), BasketRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("addItemToBasket()"));
             end if;
             return True;
         exception
@@ -83,7 +85,7 @@ package body admin.taghelpers.BasketRequestHelper_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("addItemToBasket()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, BasketRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("addItemToBasket()"), e);
             end if;
             return False;
                 end;
@@ -99,7 +101,7 @@ package body admin.taghelpers.BasketRequestHelper_Package is
                 basket.removeItem (This.id);
             end if;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (To_Unbounded_String ("Successfully removed item from Basket"), This'Unchecked_Access, To_Unbounded_String ("removeItemFromBasket()"));
+                This.logUtil.putF (To_Unbounded_String ("Successfully removed item from Basket"), BasketRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("removeItemFromBasket()"));
             end if;
             return True;
         exception
@@ -108,7 +110,7 @@ package body admin.taghelpers.BasketRequestHelper_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("removeItemFromBasket()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, BasketRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("removeItemFromBasket()"), e);
             end if;
             return False;
                 end;
@@ -124,7 +126,7 @@ package body admin.taghelpers.BasketRequestHelper_Package is
                 basket.adjustItem (This.id, This.num);
             end if;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (To_Unbounded_String ("Successfull Adjusted Basket"), This'Unchecked_Access, To_Unbounded_String ("adjustBasket()"));
+                This.logUtil.putF (To_Unbounded_String ("Successfull Adjusted Basket"), BasketRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("adjustBasket()"));
             end if;
             return True;
         exception
@@ -133,7 +135,7 @@ package body admin.taghelpers.BasketRequestHelper_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("adjustBasket()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, BasketRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("adjustBasket()"), e);
             end if;
             return False;
                 end;

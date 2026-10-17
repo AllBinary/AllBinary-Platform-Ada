@@ -24,7 +24,9 @@ package body org.allbinary.animation.VectorAnimationInterfaceFactory_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out VectorAnimationInterfaceFactory'Class; currentPoints : Integer_Array_Access_Array_Access_Array_Access; basicColor : BasicColor_Access; animationBehaviorFactory : AnimationBehaviorFactory_Access) is
+   procedure Initialize (This : in out VectorAnimationInterfaceFactory'Class; currentPoints : Integer_Array_Access_Array_Access_Array_Access; basicColor_Param : access BasicColor'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) is
+      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
+      animationBehaviorFactory : AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
    begin
       Initialize_Fields (This);
         This.currentPoints := currentPoints;
@@ -32,10 +34,10 @@ package body org.allbinary.animation.VectorAnimationInterfaceFactory_Package is
         This.animationBehaviorFactory := animationBehaviorFactory;
    end Initialize;
 
-   function Create (currentPoints : Integer_Array_Access_Array_Access_Array_Access; basicColor : BasicColor_Access; animationBehaviorFactory : AnimationBehaviorFactory_Access) return VectorAnimationInterfaceFactory_Access is
+   function Create (currentPoints : Integer_Array_Access_Array_Access_Array_Access; basicColor_Param : access BasicColor'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return VectorAnimationInterfaceFactory_Access is
       This : constant VectorAnimationInterfaceFactory_Access := new VectorAnimationInterfaceFactory;
    begin
-      VectorAnimationInterfaceFactory_Package.Initialize (This.all, currentPoints, basicColor, animationBehaviorFactory);
+      VectorAnimationInterfaceFactory_Package.Initialize (This.all, currentPoints, basicColor_Param, animationBehaviorFactory_Param);
       return This;
    end Create;
 
@@ -45,7 +47,8 @@ package body org.allbinary.animation.VectorAnimationInterfaceFactory_Package is
         return VectorAnimation_Package.Create (This.currentPoints, This.getBasicColorP, This.animationBehaviorFactory.getOrCreateInstance);
    end getInstance;
 
-   procedure setBasicColorP (This : in out VectorAnimationInterfaceFactory; basicColor : BasicColor_Access) is
+   procedure setBasicColorP (This : in out VectorAnimationInterfaceFactory; basicColor_Param : access BasicColor'Class) is
+      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         This.basicColor := basicColor;
    end setBasicColorP;
@@ -55,7 +58,8 @@ package body org.allbinary.animation.VectorAnimationInterfaceFactory_Package is
         return This.basicColor;
    end getBasicColorP;
 
-   procedure setInitialScale (This : in out VectorAnimationInterfaceFactory; scaleProperties : ScaleProperties_Access) is
+   procedure setInitialScale (This : in out VectorAnimationInterfaceFactory; scaleProperties_Param : access ScaleProperties'Class) is
+      scaleProperties : ScaleProperties_Access := ScaleProperties_Access (scaleProperties_Param);
    begin
         null;
    end setInitialScale;

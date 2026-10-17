@@ -25,7 +25,9 @@ package body org.allbinary.input.automation.module.InputAutomationModuleFactoryF
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out InputAutomationModuleFactoryFactory'Class; inputAutomationModuleConfigurations : InputAutomationModuleConfigurations_Access; helpSetListenerInterface : HelpSetListener_Access) is
+   procedure Initialize (This : in out InputAutomationModuleFactoryFactory'Class; inputAutomationModuleConfigurations_Param : access InputAutomationModuleConfigurations'Class; helpSetListenerInterface_Param : access HelpSetListener'Class) is
+      inputAutomationModuleConfigurations : InputAutomationModuleConfigurations_Access := InputAutomationModuleConfigurations_Access (inputAutomationModuleConfigurations_Param);
+      helpSetListenerInterface : HelpSetListener_Access := HelpSetListener_Access (helpSetListenerInterface_Param);
       collection : Collection_Access;
       iterator : Iterator_Access;
       inputAutomationModuleConfiguration : InputAutomationModuleConfiguration_Access;
@@ -42,17 +44,18 @@ package body org.allbinary.input.automation.module.InputAutomationModuleFactoryF
             This.add (inputAutomationModuleConfiguration);
         end loop;
         This.defaultListModelHelper.initDefaultModelList;
-        This.logUtil.putF (To_Unbounded_String ("Loaded ") & Java_Image (This.hashMap.size) & To_Unbounded_String ("/") & Java_Image (This.defaultListModelHelper.getListModel.getSize) & To_Unbounded_String (" Input Automation Modules"), This'Unchecked_Access, To_Unbounded_String ("Contructor"));
+        This.logUtil.putF (To_Unbounded_String ("Loaded ") & Java_Image (This.hashMap.size) & To_Unbounded_String ("/") & Java_Image (This.defaultListModelHelper.getListModel.getSize) & To_Unbounded_String (" Input Automation Modules"), InputAutomationModuleFactoryFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("Contructor"));
    end Initialize;
 
-   function Create (inputAutomationModuleConfigurations : InputAutomationModuleConfigurations_Access; helpSetListenerInterface : HelpSetListener_Access) return InputAutomationModuleFactoryFactory_Access is
+   function Create (inputAutomationModuleConfigurations_Param : access InputAutomationModuleConfigurations'Class; helpSetListenerInterface_Param : access HelpSetListener'Class) return InputAutomationModuleFactoryFactory_Access is
       This : constant InputAutomationModuleFactoryFactory_Access := new InputAutomationModuleFactoryFactory;
    begin
-      InputAutomationModuleFactoryFactory_Package.Initialize (This.all, inputAutomationModuleConfigurations, helpSetListenerInterface);
+      InputAutomationModuleFactoryFactory_Package.Initialize (This.all, inputAutomationModuleConfigurations_Param, helpSetListenerInterface_Param);
       return This;
    end Create;
 
-   procedure add (This : in out InputAutomationModuleFactoryFactory; inputAutomationModuleConfiguration : InputAutomationModuleConfiguration_Access) is
+   procedure add (This : in out InputAutomationModuleFactoryFactory; inputAutomationModuleConfiguration_Param : access InputAutomationModuleConfiguration'Class) is
+      inputAutomationModuleConfiguration : InputAutomationModuleConfiguration_Access := InputAutomationModuleConfiguration_Access (inputAutomationModuleConfiguration_Param);
       inputAutomationModuleInterface : InputAutomationModuleFactoryInterface_Access;
       helpSet : HelpSet_Access;
       helpSetEvent : HelpSetEvent_Access;
@@ -62,7 +65,7 @@ package body org.allbinary.input.automation.module.InputAutomationModuleFactoryF
         This.defaultListModelHelper.add (inputAutomationModuleConfiguration.getName);
         helpSet := inputAutomationModuleInterface.getHelpSet;
         if not (JavaHelpSetNotifier_Package.isNotified (helpSet)) then
-            helpSetEvent := HelpSetEvent_Package.Create (This'Unchecked_Access, helpSet, HelpSetEvent_Package.HELPSET_ADDED);
+            helpSetEvent := HelpSetEvent_Package.Create (InputAutomationModuleFactoryFactory_Access'(This'Unchecked_Access), helpSet, HelpSetEvent_Package.HELPSET_ADDED);
             This.helpSetListenerInterface.helpSetAdded (helpSetEvent);
         end if;
    end add;
@@ -77,10 +80,10 @@ package body org.allbinary.input.automation.module.InputAutomationModuleFactoryF
       inputAutomationModuleFactoryInterface : InputAutomationModuleFactoryInterface_Access;
    begin
         commonStrings := CommonStrings_Package.getInstance;
-        This.logUtil.putF (To_Unbounded_String ("Getting Module: ") & moduleName, This'Unchecked_Access, commonStrings.GET_INSTANCE);
+        This.logUtil.putF (To_Unbounded_String ("Getting Module: ") & moduleName, InputAutomationModuleFactoryFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);
         inputAutomationModuleFactoryInterface := InputAutomationModuleFactoryInterface_Access (This.hashMap.get (moduleName));
         if (inputAutomationModuleFactoryInterface) = (null) then
-            This.logUtil.putF (To_Unbounded_String ("Module: ") & moduleName & To_Unbounded_String (" was null"), This'Unchecked_Access, commonStrings.GET_INSTANCE);
+            This.logUtil.putF (To_Unbounded_String ("Module: ") & moduleName & To_Unbounded_String (" was null"), InputAutomationModuleFactoryFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);
         end if;
         return inputAutomationModuleFactoryInterface;
    end getInstance;

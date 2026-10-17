@@ -40,27 +40,27 @@ package bundle.input.automation.ServiceReferenceMap_Package is
       serviceReference : ServiceReference_Access;
    end record;
 
-   procedure Initialize (This : in out ServiceReferenceMap'Class; serviceReference : ServiceReference_Access);
-   function Create (serviceReference : ServiceReference_Access) return ServiceReferenceMap_Access;
+   procedure Initialize (This : in out ServiceReferenceMap'Class; serviceReference_Param : access ServiceReference'Class);
+   function Create (serviceReference_Param : access ServiceReference'Class) return ServiceReferenceMap_Access;
    function size (This : in out ServiceReferenceMap) return Integer;
    function isEmpty (This : in out ServiceReferenceMap) return Boolean;
-   function containsKey (This : in out ServiceReferenceMap; key : Java_Object_Access) return Boolean;
-   procedure containsKey (This : in out ServiceReferenceMap; key : Java_Object_Access);
-   function containsValue (This : in out ServiceReferenceMap; value : Java_Object_Access) return Boolean;
-   procedure containsValue (This : in out ServiceReferenceMap; value : Java_Object_Access);
-   function get (This : in out ServiceReferenceMap; key : Java_Object_Access) return Java_Object_Access;
-   procedure get (This : in out ServiceReferenceMap; key : Java_Object_Access);
-   function put (This : in out ServiceReferenceMap; key : Java_Object_Access; value : Java_Object_Access) return Java_Object_Access;
-   procedure put (This : in out ServiceReferenceMap; key : Java_Object_Access; value : Java_Object_Access);
-   function remove (This : in out ServiceReferenceMap; key : Java_Object_Access) return Java_Object_Access;
-   procedure remove (This : in out ServiceReferenceMap; key : Java_Object_Access);
-   procedure putAll (This : in out ServiceReferenceMap; m : Map_Access);
+   function containsKey (This : in out ServiceReferenceMap; key_Param : access Java_Object'Class) return Boolean;
+   procedure containsKey (This : in out ServiceReferenceMap; key_Param : access Java_Object'Class);
+   function containsValue (This : in out ServiceReferenceMap; value_Param : access Java_Object'Class) return Boolean;
+   procedure containsValue (This : in out ServiceReferenceMap; value_Param : access Java_Object'Class);
+   function get (This : in out ServiceReferenceMap; key_Param : access Java_Object'Class) return Java_Object_Access;
+   procedure get (This : in out ServiceReferenceMap; key_Param : access Java_Object'Class);
+   function put (This : in out ServiceReferenceMap; key_Param : access Java_Object'Class; value_Param : access Java_Object'Class) return Java_Object_Access;
+   procedure put (This : in out ServiceReferenceMap; key_Param : access Java_Object'Class; value_Param : access Java_Object'Class);
+   function remove (This : in out ServiceReferenceMap; key_Param : access Java_Object'Class) return Java_Object_Access;
+   procedure remove (This : in out ServiceReferenceMap; key_Param : access Java_Object'Class);
+   procedure putAll (This : in out ServiceReferenceMap; m_Param : access Map'Class);
    procedure clear (This : in out ServiceReferenceMap);
    function keySet (This : in out ServiceReferenceMap) return Set_Access;
    function values (This : in out ServiceReferenceMap) return Collection_Access;
    function entrySet (This : in out ServiceReferenceMap) return Set_Access;
-   function toString (map : Map_Access) return Unbounded_String;
-   procedure toString (map : Map_Access);
+   function toString (map_Param : access Map'Class) return Unbounded_String;
+   procedure toString (map_Param : access Map'Class);
 
 end bundle.input.automation.ServiceReferenceMap_Package;
 

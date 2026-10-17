@@ -38,8 +38,8 @@ package org.allbinary.logic.io.file.FileFactory_Package is
    function getInstance return FileFactory_Access;
    function getInstance (This : in out FileFactory; filePath : Unbounded_String) return AbFile_Access;
    procedure getInstance (This : in out FileFactory; filePath : Unbounded_String);
-   function getInstance (This : in out FileFactory; file : AbFile_Access; childFilePath : Unbounded_String) return AbFile_Access;
-   procedure getInstance (This : in out FileFactory; file : AbFile_Access; childFilePath : Unbounded_String);
+   function getInstance (This : in out FileFactory; file_Param : access AbFile'Class; childFilePath : Unbounded_String) return AbFile_Access;
+   procedure getInstance (This : in out FileFactory; file_Param : access AbFile'Class; childFilePath : Unbounded_String);
    function isFile (This : in out FileFactory; path : Unbounded_String) return Boolean;
    procedure isFile (This : in out FileFactory; path : Unbounded_String);
 

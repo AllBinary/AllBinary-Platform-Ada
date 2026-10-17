@@ -33,8 +33,8 @@ package org.allbinary.layer.LayerProcessorInterface_Package is
    type LayerProcessorInterface_Access_Array is array (Natural range <>) of LayerProcessorInterface_Access;
    type LayerProcessorInterface_Access_Array_Access is access all LayerProcessorInterface_Access_Array;
    function getLayerManager (This : in out LayerProcessorInterface) return LayerManager_Access is abstract;
-   procedure processAt (This : in out LayerProcessorInterface; allBinaryLayerManager : AllBinaryLayerManager_Access; layerInterface : AllBinaryLayer_Access; index : Integer) is abstract;
-   function isProcessorLayer (This : in out LayerProcessorInterface; layerInterface : AllBinaryLayer_Access) return Boolean is abstract;
+   procedure processAt (This : in out LayerProcessorInterface; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class; layerInterface_Param : access AllBinaryLayer'Class; index : Integer) is abstract;
+   function isProcessorLayer (This : in out LayerProcessorInterface; layerInterface_Param : access AllBinaryLayer'Class) return Boolean is abstract;
 
 end org.allbinary.layer.LayerProcessorInterface_Package;
 

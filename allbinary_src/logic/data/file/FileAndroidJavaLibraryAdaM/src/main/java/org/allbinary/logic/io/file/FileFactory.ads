@@ -40,16 +40,16 @@ package org.allbinary.logic.io.file.FileFactory_Package is
    end record;
    SINGLETON : FileFactory_Access;
 
-   procedure Initialize (This : in out FileFactory'Class; context : Context_Access);
-   function Create (context : Context_Access) return FileFactory_Access;
+   procedure Initialize (This : in out FileFactory'Class; context_Param : access Context'Class);
+   function Create (context_Param : access Context'Class) return FileFactory_Access;
    function getInstance return FileFactory_Access;
    function isFile (This : in out FileFactory; path : Unbounded_String) return Boolean;
    procedure isFile (This : in out FileFactory; path : Unbounded_String);
    function getContext (This : in out FileFactory) return Context_Access;
    function getFile (This : in out FileFactory; filePath : Unbounded_String) return AbFile_Access;
    procedure getFile (This : in out FileFactory; filePath : Unbounded_String);
-   function getInstance (This : in out FileFactory; file : AbFile_Access; childFilePath : Unbounded_String) return AbFile_Access;
-   procedure getInstance (This : in out FileFactory; file : AbFile_Access; childFilePath : Unbounded_String);
+   function getInstance (This : in out FileFactory; file_Param : access AbFile'Class; childFilePath : Unbounded_String) return AbFile_Access;
+   procedure getInstance (This : in out FileFactory; file_Param : access AbFile'Class; childFilePath : Unbounded_String);
 
 end org.allbinary.logic.io.file.FileFactory_Package;
 

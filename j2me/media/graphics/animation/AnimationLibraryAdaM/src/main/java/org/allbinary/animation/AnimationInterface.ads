@@ -32,7 +32,7 @@ package org.allbinary.animation.AnimationInterface_Package is
    type AnimationInterface_Access_Array is array (Natural range <>) of AnimationInterface_Access;
    type AnimationInterface_Access_Array_Access is access all AnimationInterface_Access_Array;
    procedure nextFrame (This : in out AnimationInterface) is abstract;
-   procedure paintThreedXYZ (This : in out AnimationInterface; graphics : Graphics_Access; x : Integer; y : Integer; z : Integer) is abstract;
+   procedure paintThreedXYZ (This : in out AnimationInterface; graphics_Param : access Graphics'Class; x : Integer; y : Integer; z : Integer) is abstract;
 
 end org.allbinary.animation.AnimationInterface_Package;
 

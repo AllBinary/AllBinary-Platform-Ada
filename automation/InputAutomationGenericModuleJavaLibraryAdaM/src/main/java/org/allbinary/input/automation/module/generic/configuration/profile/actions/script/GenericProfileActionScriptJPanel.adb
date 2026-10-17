@@ -31,7 +31,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    begin
       JPanel_Package.Initialize (This);
       Initialize_Fields (This);
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+        This.logUtil.putF (This.commonStrings.START, GenericProfileActionScriptJPanel_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         This.initComponents;
    end Initialize;
 
@@ -48,7 +48,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         defaultTreeModel := DefaultTreeModel_Package.Create (This.getGenericProfileActionScript);
         This.getActionScriptJTree.setModel (defaultTreeModel);
         This.repaint;
-        This.logUtil.putF (To_Unbounded_String ("Updated UI"), This'Unchecked_Access, To_Unbounded_String ("updateJTree"));
+        This.logUtil.putF (To_Unbounded_String ("Updated UI"), GenericProfileActionScriptJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("updateJTree"));
    end updateJTree;
 
    function getGenericProfileActionScript (This : in out GenericProfileActionScriptJPanel) return GenericProfileActionScript_Access is
@@ -56,7 +56,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         return This.genericProfileActionScript;
    end getGenericProfileActionScript;
 
-   procedure setGenericProfileActionScript (This : in out GenericProfileActionScriptJPanel; genericProfileActionScript : GenericProfileActionScript_Access) is
+   procedure setGenericProfileActionScript (This : in out GenericProfileActionScriptJPanel; genericProfileActionScript_Param : access GenericProfileActionScript'Class) is
+      genericProfileActionScript : GenericProfileActionScript_Access := GenericProfileActionScript_Access (genericProfileActionScript_Param);
    begin
         This.genericProfileActionScript := genericProfileActionScript;
    end setGenericProfileActionScript;
@@ -66,7 +67,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         return This.actionScriptJTree;
    end getActionScriptJTree;
 
-   procedure setActionScriptJTree (This : in out GenericProfileActionScriptJPanel; actionScriptJTree : JTree_Access) is
+   procedure setActionScriptJTree (This : in out GenericProfileActionScriptJPanel; actionScriptJTree_Param : access JTree'Class) is
+      actionScriptJTree : JTree_Access := JTree_Access (actionScriptJTree_Param);
    begin
         This.actionScriptJTree := actionScriptJTree;
    end setActionScriptJTree;
@@ -79,12 +81,14 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         This.actionScriptJTree.setPreferredSize (Dimension_Package.Create (500, 500));
         This.actionScriptJTree.addMouseListener (MouseAdapter_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure mouseClicked (This : in out ; evt : MouseEvent_Access) is
+--     procedure mouseClicked (This : in out ; evt_Param : access MouseEvent'Class) is
+--        evt : MouseEvent_Access := MouseEvent_Access (evt_Param);
 --     begin
 --                  This.actionScriptJTreeMouseClicked (evt);
 --     end mouseClicked;
 --              
---     procedure mouseReleased (This : in out ; evt : MouseEvent_Access) is
+--     procedure mouseReleased (This : in out ; evt_Param : access MouseEvent'Class) is
+--        evt : MouseEvent_Access := MouseEvent_Access (evt_Param);
 --     begin
 --                  This.actionScriptJTreeMouseReleased (evt);
 --     end mouseReleased;
@@ -93,7 +97,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         This.add (This.jScrollPane1);
    end initComponents;
 
-   procedure actionScriptJTreeMouseReleased (This : in out GenericProfileActionScriptJPanel; evt : MouseEvent_Access) is
+   procedure actionScriptJTreeMouseReleased (This : in out GenericProfileActionScriptJPanel; evt_Param : access MouseEvent'Class) is
+      evt : MouseEvent_Access := MouseEvent_Access (evt_Param);
       button : Integer;
       treePath : TreePath_Access;
       anyType : Java_Object_Access;
@@ -114,7 +119,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         end if;
    end actionScriptJTreeMouseReleased;
 
-   procedure actionScriptJTreeMouseClicked (This : in out GenericProfileActionScriptJPanel; evt : MouseEvent_Access) is
+   procedure actionScriptJTreeMouseClicked (This : in out GenericProfileActionScriptJPanel; evt_Param : access MouseEvent'Class) is
+      evt : MouseEvent_Access := MouseEvent_Access (evt_Param);
    begin
         null;
    end actionScriptJTreeMouseClicked;

@@ -43,7 +43,8 @@ package body org.allbinary.android.input.motion.TrackballGameInputMotionEventPro
       return This;
    end Create;
 
-   procedure process (This : in out TrackballGameInputMotionEventProcessor; motionEvent : MotionEvent_Access) is
+   procedure process (This : in out TrackballGameInputMotionEventProcessor; motionEvent_Param : access MotionEvent'Class) is
+      motionEvent : MotionEvent_Access := MotionEvent_Access (motionEvent_Param);
       x : Float;
       y : Float;
    begin
@@ -65,7 +66,7 @@ package body org.allbinary.android.input.motion.TrackballGameInputMotionEventPro
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.PROCESS, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, TrackballGameInputMotionEventProcessor_Access'(This'Unchecked_Access), This.commonStrings.PROCESS, e);
                 end;
         end;
    end process;

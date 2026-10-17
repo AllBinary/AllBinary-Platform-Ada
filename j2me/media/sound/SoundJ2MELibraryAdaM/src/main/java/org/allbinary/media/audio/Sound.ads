@@ -46,7 +46,7 @@ package org.allbinary.media.audio.Sound_Package is
    function Create (resource : Unbounded_String) return Sound_Access;
    function getResource (This : in out Sound) return Unbounded_String;
    function getPlayerP (This : in out Sound) return Player_Access;
-   procedure setPlayerP (This : in out Sound; player : Player_Access);
+   procedure setPlayerP (This : in out Sound; player_Param : access Player'Class);
    procedure init (This : in out Sound);
    function getDuration (This : in out Sound) return Integer;
    procedure run (This : in out Sound);

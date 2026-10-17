@@ -47,8 +47,8 @@ package org.allbinary.graphics.form.item.validation.TextItemUserIdentifierVisito
 
    procedure Initialize (This : in out TextItemUserIdentifierVisitor'Class);
    function Create return TextItemUserIdentifierVisitor_Access;
-   function visit (This : in out TextItemUserIdentifierVisitor; anyType : Java_Object_Access) return Java_Object_Access;
-   procedure visit (This : in out TextItemUserIdentifierVisitor; anyType : Java_Object_Access);
+   function visit (This : in out TextItemUserIdentifierVisitor; anyType_Param : access Java_Object'Class) return Java_Object_Access;
+   procedure visit (This : in out TextItemUserIdentifierVisitor; anyType_Param : access Java_Object'Class);
    function isLetter (This : in out TextItemUserIdentifierVisitor; charValue : Character) return Boolean;
    procedure isLetter (This : in out TextItemUserIdentifierVisitor; charValue : Character);
 

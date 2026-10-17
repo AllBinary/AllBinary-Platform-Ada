@@ -58,14 +58,14 @@ package org.allbinary.media.audio.BasicPlayer_Package is
    procedure getControl (This : in out BasicPlayer; controlType : Unbounded_String);
    function getControls (This : in out BasicPlayer) return Control_Access_Array_Access;
    procedure close (This : in out BasicPlayer);
-   procedure addPlayerListener (This : in out BasicPlayer; playerListener : PlayerListener_Access);
-   procedure removePlayerListener (This : in out BasicPlayer; playerListener : PlayerListener_Access);
+   procedure addPlayerListener (This : in out BasicPlayer; playerListener_Param : access PlayerListener'Class);
+   procedure removePlayerListener (This : in out BasicPlayer; playerListener_Param : access PlayerListener'Class);
    function getState (This : in out BasicPlayer) return Integer;
    procedure setState (This : in out BasicPlayer; state : Integer);
    function getDuration (This : in out BasicPlayer) return Long_Long_Integer;
    function getMediaTime (This : in out BasicPlayer) return Long_Long_Integer;
    function getTimeBase (This : in out BasicPlayer) return TimeBase_Access;
-   procedure setTimeBase (This : in out BasicPlayer; timeBase : TimeBase_Access);
+   procedure setTimeBase (This : in out BasicPlayer; timeBase_Param : access TimeBase'Class);
    procedure deallocate (This : in out BasicPlayer);
    procedure prefetch (This : in out BasicPlayer);
    procedure realize (This : in out BasicPlayer);

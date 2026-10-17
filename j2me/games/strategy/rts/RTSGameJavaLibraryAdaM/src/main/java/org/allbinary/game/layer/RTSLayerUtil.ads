@@ -70,23 +70,23 @@ package org.allbinary.game.layer.RTSLayerUtil_Package is
    procedure Initialize (This : in out RTSLayerUtil'Class);
    function Create return RTSLayerUtil_Access;
    function getInstance return RTSLayerUtil_Access;
-   function createWeaponProperties (This : in out RTSLayerUtil; weaponProperties : WeaponProperties_Access; currentLevel : Integer; lastLevel : Integer) return WeaponProperties_Access;
-   procedure createWeaponProperties (This : in out RTSLayerUtil; weaponProperties : WeaponProperties_Access; currentLevel : Integer; lastLevel : Integer);
-   procedure downgrade (This : in out RTSLayerUtil; rtsLayer : RTSLayer_Access);
-   procedure upgrade (This : in out RTSLayerUtil; rtsLayer : RTSLayer_Access);
+   function createWeaponProperties (This : in out RTSLayerUtil; weaponProperties_Param : access WeaponProperties'Class; currentLevel : Integer; lastLevel : Integer) return WeaponProperties_Access;
+   procedure createWeaponProperties (This : in out RTSLayerUtil; weaponProperties_Param : access WeaponProperties'Class; currentLevel : Integer; lastLevel : Integer);
+   procedure downgrade (This : in out RTSLayerUtil; rtsLayer_Param : access RTSLayer'Class);
+   procedure upgrade (This : in out RTSLayerUtil; rtsLayer_Param : access RTSLayer'Class);
    function getCostExponential (This : in out RTSLayerUtil; cost : Long_Long_Integer) return Long_Long_Integer;
    procedure getCostExponential (This : in out RTSLayerUtil; cost : Long_Long_Integer);
-   function getWeaponPropertiesCost (This : in out RTSLayerUtil; weaponProperties : WeaponProperties_Access) return Integer;
-   procedure getWeaponPropertiesCost (This : in out RTSLayerUtil; weaponProperties : WeaponProperties_Access);
-   function getCost (This : in out RTSLayerUtil; rtsLayer : RTSLayer_Access) return Integer;
-   procedure getCost (This : in out RTSLayerUtil; rtsLayer : RTSLayer_Access);
-   function getDowngradeCost (This : in out RTSLayerUtil; rtsLayer : RTSLayer_Access) return Integer;
-   procedure getDowngradeCost (This : in out RTSLayerUtil; rtsLayer : RTSLayer_Access);
-   function getUpgradeCost (This : in out RTSLayerUtil; rtsLayer : RTSLayer_Access) return Integer;
-   procedure getUpgradeCost (This : in out RTSLayerUtil; rtsLayer : RTSLayer_Access);
-   procedure destroyAndClear (This : in out RTSLayerUtil; list : BasicArrayList_Access);
-   function createFakeRTSLayerHashtable (This : in out RTSLayerUtil; baseRaceTrackGeographicMap : BaseRaceTrackGeographicMap_Access) return ABHashtable_Access;
-   procedure createFakeRTSLayerHashtable (This : in out RTSLayerUtil; baseRaceTrackGeographicMap : BaseRaceTrackGeographicMap_Access);
+   function getWeaponPropertiesCost (This : in out RTSLayerUtil; weaponProperties_Param : access WeaponProperties'Class) return Integer;
+   procedure getWeaponPropertiesCost (This : in out RTSLayerUtil; weaponProperties_Param : access WeaponProperties'Class);
+   function getCost (This : in out RTSLayerUtil; rtsLayer_Param : access RTSLayer'Class) return Integer;
+   procedure getCost (This : in out RTSLayerUtil; rtsLayer_Param : access RTSLayer'Class);
+   function getDowngradeCost (This : in out RTSLayerUtil; rtsLayer_Param : access RTSLayer'Class) return Integer;
+   procedure getDowngradeCost (This : in out RTSLayerUtil; rtsLayer_Param : access RTSLayer'Class);
+   function getUpgradeCost (This : in out RTSLayerUtil; rtsLayer_Param : access RTSLayer'Class) return Integer;
+   procedure getUpgradeCost (This : in out RTSLayerUtil; rtsLayer_Param : access RTSLayer'Class);
+   procedure destroyAndClear (This : in out RTSLayerUtil; list_Param : access BasicArrayList'Class);
+   function createFakeRTSLayerHashtable (This : in out RTSLayerUtil; baseRaceTrackGeographicMap_Param : access BaseRaceTrackGeographicMap'Class) return ABHashtable_Access;
+   procedure createFakeRTSLayerHashtable (This : in out RTSLayerUtil; baseRaceTrackGeographicMap_Param : access BaseRaceTrackGeographicMap'Class);
 
 end org.allbinary.game.layer.RTSLayerUtil_Package;
 

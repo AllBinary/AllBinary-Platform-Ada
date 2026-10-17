@@ -31,7 +31,8 @@ package body org.allbinary.input.automation.actions.script.JTreeInterfaceFactory
         return JTreeInterfaceFactory_Package.instance;
    end getInstance;
 
-   procedure set (This : in out JTreeInterfaceFactory; jTreeInterface : JTreeInterface_Access) is
+   procedure set (This : in out JTreeInterfaceFactory; jTreeInterface_Param : access JTreeInterface'Class) is
+      jTreeInterface : JTreeInterface_Access := JTreeInterface_Access (jTreeInterface_Param);
    begin
         This.jTreeInterface := jTreeInterface;
    end set;

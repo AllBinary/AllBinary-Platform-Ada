@@ -45,10 +45,10 @@ package org.allbinary.game.ag.ai.scroller.RandomPatrolAI_Package is
       changedDirection : Boolean;
    end record;
 
-   procedure Initialize (This : in out RandomPatrolAI'Class; hashtable : ABHashtable_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access);
-   function Create (hashtable : ABHashtable_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return RandomPatrolAI_Access;
+   procedure Initialize (This : in out RandomPatrolAI'Class; hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class);
+   function Create (hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return RandomPatrolAI_Access;
    procedure updateRandomDistance (This : in out RandomPatrolAI);
-   procedure processAI (This : in out RandomPatrolAI; allBinaryLayerManager : AllBinaryLayerManager_Access);
+   procedure processAI (This : in out RandomPatrolAI; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class);
    procedure nextDirection (This : in out RandomPatrolAI);
 
 end org.allbinary.game.ag.ai.scroller.RandomPatrolAI_Package;

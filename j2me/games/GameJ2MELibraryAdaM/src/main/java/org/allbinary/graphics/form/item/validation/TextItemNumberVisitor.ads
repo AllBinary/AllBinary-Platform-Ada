@@ -47,8 +47,8 @@ package org.allbinary.graphics.form.item.validation.TextItemNumberVisitor_Packag
 
    procedure Initialize (This : in out TextItemNumberVisitor'Class);
    function Create return TextItemNumberVisitor_Access;
-   function visit (This : in out TextItemNumberVisitor; anyType : Java_Object_Access) return Java_Object_Access;
-   procedure visit (This : in out TextItemNumberVisitor; anyType : Java_Object_Access);
+   function visit (This : in out TextItemNumberVisitor; anyType_Param : access Java_Object'Class) return Java_Object_Access;
+   procedure visit (This : in out TextItemNumberVisitor; anyType_Param : access Java_Object'Class);
 
 end org.allbinary.graphics.form.item.validation.TextItemNumberVisitor_Package;
 

@@ -21,19 +21,21 @@ package body org.allbinary.game.health.HealthBarTwodAnimation_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out HealthBarTwodAnimation'Class; layerInterface : AllBinaryLayer_Access; location : Integer) is
+   procedure Initialize (This : in out HealthBarTwodAnimation'Class; layerInterface_Param : access AllBinaryLayer'Class; location : Integer) is
+      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
    begin
         HealthBarAnimation_Package.Initialize (This, layerInterface, location);
    end Initialize;
 
-   function Create (layerInterface : AllBinaryLayer_Access; location : Integer) return HealthBarTwodAnimation_Access is
+   function Create (layerInterface_Param : access AllBinaryLayer'Class; location : Integer) return HealthBarTwodAnimation_Access is
       This : constant HealthBarTwodAnimation_Access := new HealthBarTwodAnimation;
    begin
-      HealthBarTwodAnimation_Package.Initialize (This.all, layerInterface, location);
+      HealthBarTwodAnimation_Package.Initialize (This.all, layerInterface_Param, location);
       return This;
    end Create;
 
-   procedure paintXY (This : in out HealthBarTwodAnimation; graphics : Graphics_Access; x : Integer; y : Integer) is
+   procedure paintXY (This : in out HealthBarTwodAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       ax : Integer;
    begin
         ax := This.allbinaryLayer.getViewPosition.getX;

@@ -66,7 +66,7 @@ package body org.allbinary.data.tree.dom.BasicUriResolver_Package is
                 stringBuffer.append (This.uriResolverStrings.URL_GLOBAL);
                 stringBuffer.append (This.uriResolverStrings.REQUIRED_EXTENSION);
                 stringBuffer.append (This.extension);
-                This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, This.uriResolverStrings.RESOLVE);
+                This.logUtil.putF (stringBuffer.toString, BasicUriResolver_Access'(This'Unchecked_Access), This.uriResolverStrings.RESOLVE);
             end if;
             return StreamSource_Package.Create (CryptFileReader_Package.Create (TransformInfoTemplateData_Package.getInstance.UNCRYPTED_EXTENSION, TransformInfoTemplateData_Package.getInstance.ENCRYPTED_EXTENSION).getInputStream (abPath));
         exception

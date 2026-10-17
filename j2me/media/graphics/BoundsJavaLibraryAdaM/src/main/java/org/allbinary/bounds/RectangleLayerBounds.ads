@@ -35,9 +35,9 @@ package org.allbinary.bounds.RectangleLayerBounds_Package is
 
    type RectangleLayerBounds is new LayerBounds with null record;
 
-   procedure Initialize (This : in out RectangleLayerBounds'Class; rectangle : Rectangle_Access);
-   function Create (rectangle : Rectangle_Access) return RectangleLayerBounds_Access;
-   procedure visit (This : in out RectangleLayerBounds; boundsVisitorInterface : BoundsVisitorInterface_Access);
+   procedure Initialize (This : in out RectangleLayerBounds'Class; rectangle_Param : access Rectangle'Class);
+   function Create (rectangle_Param : access Rectangle'Class) return RectangleLayerBounds_Access;
+   procedure visit (This : in out RectangleLayerBounds; boundsVisitorInterface_Param : access BoundsVisitorInterface'Class);
 
 end org.allbinary.bounds.RectangleLayerBounds_Package;
 

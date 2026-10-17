@@ -64,13 +64,13 @@ package org.allbinary.animation.text.TextAnimation_Package is
       textChangeListener : TextChangeListener_Access;
    end record;
 
-   procedure Initialize (This : in out TextAnimation'Class; text : Unbounded_String; animationBehavior : AnimationBehavior_Access);
-   function Create (text : Unbounded_String; animationBehavior : AnimationBehavior_Access) return TextAnimation_Access;
-   procedure updateMeasurement (This : in out TextAnimation; graphics : Graphics_Access);
+   procedure Initialize (This : in out TextAnimation'Class; text : Unbounded_String; animationBehavior_Param : access AnimationBehavior'Class);
+   function Create (text : Unbounded_String; animationBehavior_Param : access AnimationBehavior'Class) return TextAnimation_Access;
+   procedure updateMeasurement (This : in out TextAnimation; graphics_Param : access Graphics'Class);
    procedure nextFrame (This : in out TextAnimation);
-   procedure paintXY (This : in out TextAnimation; graphics : Graphics_Access; x : Integer; y : Integer);
-   procedure paintXYNoUpdate (This : in out TextAnimation; graphics : Graphics_Access; x : Integer; y : Integer);
-   procedure setTextWithOnMeasure (This : in out TextAnimation; text : Unbounded_String; textChangeListener : TextChangeListener_Access);
+   procedure paintXY (This : in out TextAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
+   procedure paintXYNoUpdate (This : in out TextAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
+   procedure setTextWithOnMeasure (This : in out TextAnimation; text : Unbounded_String; textChangeListener_Param : access TextChangeListener'Class);
    procedure setText (This : in out TextAnimation; text : Unbounded_String);
    function getTextArray (This : in out TextAnimation) return Unbounded_String_Array_Access;
    function getFontHeight (This : in out TextAnimation) return Integer;

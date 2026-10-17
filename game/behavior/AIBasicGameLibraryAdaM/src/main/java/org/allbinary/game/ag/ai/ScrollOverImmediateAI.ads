@@ -41,9 +41,9 @@ package org.allbinary.game.ag.ai.ScrollOverImmediateAI_Package is
 
    type ScrollOverImmediateAI is new BasicAI with null record;
 
-   procedure Initialize (This : in out ScrollOverImmediateAI'Class; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access);
-   function Create (ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return ScrollOverImmediateAI_Access;
-   procedure processAI (This : in out ScrollOverImmediateAI; allBinaryLayerManager : AllBinaryLayerManager_Access);
+   procedure Initialize (This : in out ScrollOverImmediateAI'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class);
+   function Create (ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return ScrollOverImmediateAI_Access;
+   procedure processAI (This : in out ScrollOverImmediateAI; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class);
 
 end org.allbinary.game.ag.ai.ScrollOverImmediateAI_Package;
 

@@ -23,7 +23,9 @@ package body org.allbinary.animation.image.LeftToRightImageAnimation_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out LeftToRightImageAnimation'Class; image : Image_Access; sequenceArray : Integer_Array_Access; animationBehavior : AnimationBehavior_Access) is
+   procedure Initialize (This : in out LeftToRightImageAnimation'Class; image_Param : access Image'Class; sequenceArray : Integer_Array_Access; animationBehavior_Param : access AnimationBehavior'Class) is
+      image : Image_Access := Image_Access (image_Param);
+      animationBehavior : AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
    begin
         ImageSegmentAnimation_Package.Initialize (This, image, sequenceArray, animationBehavior);
         Initialize_Fields (This);
@@ -33,10 +35,10 @@ package body org.allbinary.animation.image.LeftToRightImageAnimation_Package is
         end if;
    end Initialize;
 
-   function Create (image : Image_Access; sequenceArray : Integer_Array_Access; animationBehavior : AnimationBehavior_Access) return LeftToRightImageAnimation_Access is
+   function Create (image_Param : access Image'Class; sequenceArray : Integer_Array_Access; animationBehavior_Param : access AnimationBehavior'Class) return LeftToRightImageAnimation_Access is
       This : constant LeftToRightImageAnimation_Access := new LeftToRightImageAnimation;
    begin
-      LeftToRightImageAnimation_Package.Initialize (This.all, image, sequenceArray, animationBehavior);
+      LeftToRightImageAnimation_Package.Initialize (This.all, image_Param, sequenceArray, animationBehavior_Param);
       return This;
    end Create;
 
@@ -71,7 +73,8 @@ package body org.allbinary.animation.image.LeftToRightImageAnimation_Package is
         This.currentWidth := ((This.getDrawWidth) * (This.getFrame)) / (This.getSize);
    end update;
 
-   procedure paintXY (This : in out LeftToRightImageAnimation; graphics : Graphics_Access; x : Integer; y : Integer) is
+   procedure paintXY (This : in out LeftToRightImageAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         graphics.drawRegion (This.getImage, This.getStartX, This.getStartY, This.currentWidth, This.getDrawHeight, Sprite_Package.TRANS_NONE, x, y, This.anchor);
    end paintXY;

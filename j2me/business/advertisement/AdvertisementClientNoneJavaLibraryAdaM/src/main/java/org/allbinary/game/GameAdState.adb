@@ -21,21 +21,23 @@ package body org.allbinary.game.GameAdState_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out GameAdState'Class; adConfiguration : AdConfiguration_Access) is
+   procedure Initialize (This : in out GameAdState'Class; adConfiguration_Param : access AdConfiguration'Class) is
+      adConfiguration : AdConfiguration_Access := AdConfiguration_Access (adConfiguration_Param);
    begin
         GameAdStateBase_Package.Initialize (This, adConfiguration);
-        VirtualKeyboardEventHandler_Package.getInstance.addListenerInterface (This'Unchecked_Access);
+        VirtualKeyboardEventHandler_Package.getInstance.addListenerInterface (GameAdState_Access'(This'Unchecked_Access));
    end Initialize;
 
-   function Create (adConfiguration : AdConfiguration_Access) return GameAdState_Access is
+   function Create (adConfiguration_Param : access AdConfiguration'Class) return GameAdState_Access is
       This : constant GameAdState_Access := new GameAdState;
    begin
-      GameAdState_Package.Initialize (This.all, adConfiguration);
+      GameAdState_Package.Initialize (This.all, adConfiguration_Param);
       return This;
    end Create;
 
    --  throws Exception
-   procedure onVirtualKeyboardEvent (This : in out GameAdState; virtualKeyboardEvent : VirtualKeyboardEvent_Access) is
+   procedure onVirtualKeyboardEvent (This : in out GameAdState; virtualKeyboardEvent_Param : access VirtualKeyboardEvent'Class) is
+      virtualKeyboardEvent : VirtualKeyboardEvent_Access := VirtualKeyboardEvent_Access (virtualKeyboardEvent_Param);
    begin
         null;
    end onVirtualKeyboardEvent;

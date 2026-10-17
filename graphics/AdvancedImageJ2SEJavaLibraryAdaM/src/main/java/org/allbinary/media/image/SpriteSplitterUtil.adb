@@ -48,7 +48,9 @@ package body org.allbinary.media.image.SpriteSplitterUtil_Package is
    end getInstance;
 
    --  throws Exception
-   procedure process (This : in out SpriteSplitterUtil; imageProcessorInput : ImageProcessorInput_Access; totalFrames : Integer; totalAnimations : Integer; widthReduction : Integer; heightReduction : Integer; increaseWidth : Integer; increaseHeight : Integer; spriteType : Unbounded_String; visitor : ImageProcessedVisitor_Access) is
+   procedure process (This : in out SpriteSplitterUtil; imageProcessorInput_Param : access ImageProcessorInput'Class; totalFrames : Integer; totalAnimations : Integer; widthReduction : Integer; heightReduction : Integer; increaseWidth : Integer; increaseHeight : Integer; spriteType : Unbounded_String; visitor_Param : access ImageProcessedVisitor'Class) is
+      imageProcessorInput : ImageProcessorInput_Access := ImageProcessorInput_Access (imageProcessorInput_Param);
+      visitor : ImageProcessedVisitor_Access := ImageProcessedVisitor_Access (visitor_Param);
       bufferedImage : BufferedImage_Access;
       generatedBufferedImageArray : BufferedImage_Access_Array_Access_Array_Access;
       bufferedImageArray : BufferedImage_Access_Array_Access;
@@ -74,15 +76,15 @@ package body org.allbinary.media.image.SpriteSplitterUtil_Package is
         bufferedImageArray := imageProcessorInput.getBufferedImageArray;
         for index in 0 .. (bufferedImageArray'Length) - 1 loop
             bufferedImage := bufferedImageArray (index);
-            This.logUtil.putF (spriteType, This'Unchecked_Access, This.commonStrings.RUN);
+            This.logUtil.putF (spriteType, SpriteSplitterUtil_Access'(This'Unchecked_Access), This.commonStrings.RUN);
             if (spriteType) = (This.HORIZONTAL_SPRITE) then
                 cellHeight := (bufferedImage.getHeight) / (totalAnimations);
                 cellWidth := (bufferedImage.getWidth) / (totalFrames);
                 columns := totalFrames;
                 rows := totalAnimations;
                 generatedBufferedImageArray := new BufferedImage_Access_Array_Access_Array'(0 .. (rows) - 1 => new BufferedImage_Access_Array'(0 .. (columns) - 1 => null));
-                This.logUtil.putF (To_Unbounded_String ("Processing Individual Cells columns: ") & Java_Image (columns) & To_Unbounded_String (" rows: ") & Java_Image (rows), This'Unchecked_Access, This.commonStrings.RUN);
-                This.logUtil.putF (To_Unbounded_String ("Processing Individual Cells cellHeight: ") & Java_Image (cellHeight) & To_Unbounded_String (" cellWidth: ") & Java_Image (cellWidth), This'Unchecked_Access, This.commonStrings.RUN);
+                This.logUtil.putF (To_Unbounded_String ("Processing Individual Cells columns: ") & Java_Image (columns) & To_Unbounded_String (" rows: ") & Java_Image (rows), SpriteSplitterUtil_Access'(This'Unchecked_Access), This.commonStrings.RUN);
+                This.logUtil.putF (To_Unbounded_String ("Processing Individual Cells cellHeight: ") & Java_Image (cellHeight) & To_Unbounded_String (" cellWidth: ") & Java_Image (cellWidth), SpriteSplitterUtil_Access'(This'Unchecked_Access), This.commonStrings.RUN);
                 imageUtil := ImageUtil_Package.getInstance;
                 nameEnding := Null_Unbounded_String;
                 x := 0;
@@ -99,7 +101,7 @@ package body org.allbinary.media.image.SpriteSplitterUtil_Package is
                         visitor.visit (generatedBufferedImageArray (index2) (index3), nameEnding, index);
                     end loop;
                 end loop;
-                This.logUtil.putF (To_Unbounded_String ("Processing Rows from Cells"), This'Unchecked_Access, This.commonStrings.RUN);
+                This.logUtil.putF (To_Unbounded_String ("Processing Rows from Cells"), SpriteSplitterUtil_Access'(This'Unchecked_Access), This.commonStrings.RUN);
                 imageUnifierProperties := ImageUnifierProperties_Package.Create;
                 imageUnifierProperties.setRows (To_Unbounded_String (Java_Image (1)));
                 imageUnifierProperties.setColumns (To_Unbounded_String (Java_Image (columns)));
@@ -124,7 +126,7 @@ package body org.allbinary.media.image.SpriteSplitterUtil_Package is
                 columns := totalAnimations;
                 rows := totalFrames2;
                 generatedBufferedImageArray := new BufferedImage_Access_Array_Access_Array'(0 .. (rows) - 1 => new BufferedImage_Access_Array'(0 .. (columns) - 1 => null));
-                This.logUtil.putF (To_Unbounded_String ("Processing Individual Cells for each Direction"), This'Unchecked_Access, This.commonStrings.RUN);
+                This.logUtil.putF (To_Unbounded_String ("Processing Individual Cells for each Direction"), SpriteSplitterUtil_Access'(This'Unchecked_Access), This.commonStrings.RUN);
                 nameEnding := Null_Unbounded_String;
                 x := 0;
                 y := 0;
@@ -145,7 +147,7 @@ package body org.allbinary.media.image.SpriteSplitterUtil_Package is
                 imageUnifierProperties.setColumns (To_Unbounded_String (Java_Image (columns)));
                 imageUnifierCell := ImageUnifierCell_Package.Create ((To_Unbounded_String (Java_Image ((cellWidth) - (((2) * (widthReduction)))))) + (increaseWidth), To_Unbounded_String (Java_Image (((cellHeight) - (((2) * (heightReduction)))) + (increaseHeight))));
                 imageUnifierProperties.setImageUnifierCell (imageUnifierCell);
-                This.logUtil.putF (To_Unbounded_String ("Processing Rows from Cells for each Direction"), This'Unchecked_Access, This.commonStrings.RUN);
+                This.logUtil.putF (To_Unbounded_String ("Processing Rows from Cells for each Direction"), SpriteSplitterUtil_Access'(This'Unchecked_Access), This.commonStrings.RUN);
                 for index2 in 0 .. (rows) - 1 loop
                     y := (cellHeight) * (index2);
                     tempBufferedImageArray := new BufferedImage_Access_Array'(0 .. (columns) - 1 => null);

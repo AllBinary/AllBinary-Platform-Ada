@@ -42,9 +42,9 @@ package org.allbinary.physics.movement.SimpleGravityVelocityMovement_Package is
       gravityUtil : GravityUtil_Access;
    end record;
 
-   procedure Initialize (This : in out SimpleGravityVelocityMovement'Class; speedBasicDecimal : BasicDecimal_Access);
-   function Create (speedBasicDecimal : BasicDecimal_Access) return SimpleGravityVelocityMovement_Access;
-   procedure process (This : in out SimpleGravityVelocityMovement; layer : AllBinaryGameLayer_Access);
+   procedure Initialize (This : in out SimpleGravityVelocityMovement'Class; speedBasicDecimal_Param : access BasicDecimal'Class);
+   function Create (speedBasicDecimal_Param : access BasicDecimal'Class) return SimpleGravityVelocityMovement_Access;
+   procedure process (This : in out SimpleGravityVelocityMovement; layer_Param : access AllBinaryGameLayer'Class);
 
 end org.allbinary.physics.movement.SimpleGravityVelocityMovement_Package;
 

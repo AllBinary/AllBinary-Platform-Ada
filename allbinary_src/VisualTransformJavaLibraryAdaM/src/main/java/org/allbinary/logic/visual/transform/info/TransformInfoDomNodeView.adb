@@ -21,27 +21,29 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoDomNodeView_
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out TransformInfoDomNodeView'Class; transformInfoInterface : TransformInfoInterface_Access; mapping : Unbounded_String) is
+   procedure Initialize (This : in out TransformInfoDomNodeView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; mapping : Unbounded_String) is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         TransformInfoDomNode_Package.Initialize (This, transformInfoInterface, mapping);
    end Initialize;
 
-   function Create (transformInfoInterface : TransformInfoInterface_Access; mapping : Unbounded_String) return TransformInfoDomNodeView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class; mapping : Unbounded_String) return TransformInfoDomNodeView_Access is
       This : constant TransformInfoDomNodeView_Access := new TransformInfoDomNodeView;
    begin
-      TransformInfoDomNodeView_Package.Initialize (This.all, transformInfoInterface, mapping);
+      TransformInfoDomNodeView_Package.Initialize (This.all, transformInfoInterface_Param, mapping);
       return This;
    end Create;
 
-   procedure Initialize (This : in out TransformInfoDomNodeView'Class; transformInfoInterface : TransformInfoInterface_Access) is
+   procedure Initialize (This : in out TransformInfoDomNodeView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         TransformInfoDomNode_Package.Initialize (This, transformInfoInterface);
    end Initialize;
 
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return TransformInfoDomNodeView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return TransformInfoDomNodeView_Access is
       This : constant TransformInfoDomNodeView_Access := new TransformInfoDomNodeView;
    begin
-      TransformInfoDomNodeView_Package.Initialize (This.all, transformInfoInterface);
+      TransformInfoDomNodeView_Package.Initialize (This.all, transformInfoInterface_Param);
       return This;
    end Create;
 
@@ -70,7 +72,8 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoDomNodeView_
    end Create;
 
    --  throws Exception
-   function toXmlNode (This : in out TransformInfoDomNodeView; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out TransformInfoDomNodeView; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       transformInfoData : TransformInfoData_Access;
       subViewNode : Node_Access;
       viewNameAttr : Attr_Access;
@@ -91,8 +94,8 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoDomNodeView_
         return subViewNode;
    end toXmlNode;
 
-   procedure toXmlNode (This : in out TransformInfoDomNodeView; document : Document_Access) is
-      Java_Result : constant Node_Access := TransformInfoDomNodeView'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out TransformInfoDomNodeView; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := TransformInfoDomNodeView'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -50,16 +50,16 @@ package org.allbinary.game.displayable.canvas.BaseGameBehavior_Package is
    function Create return BaseGameBehavior_Access;
    function getInstance return DemoGameBehavior_Access;
    procedure init (This : in out BaseGameBehavior);
-   procedure pause (This : in out BaseGameBehavior; allBinaryGameCanvas : AllBinaryGameCanvas_Access);
-   procedure unPause (This : in out BaseGameBehavior; allBinaryGameCanvas : AllBinaryGameCanvas_Access);
-   procedure updateTouch (This : in out BaseGameBehavior; allBinaryGameCanvas : AllBinaryGameCanvas_Access);
-   procedure updateScreenButtonPaintable (This : in out BaseGameBehavior; allBinaryGameCanvas : AllBinaryGameCanvas_Access);
-   procedure setGameState (This : in out BaseGameBehavior; allBinaryGameCanvas : AllBinaryGameCanvas_Access);
-   procedure removeAllGameKeyInputListeners (This : in out BaseGameBehavior; allBinaryGameCanvas : AllBinaryGameCanvas_Access);
-   procedure updateEndGameProcessor (This : in out BaseGameBehavior; allBinaryGameCanvas : AllBinaryGameCanvas_Access);
-   procedure buildGame (This : in out BaseGameBehavior; allBinaryGameCanvas : AllBinaryGameCanvas_Access);
-   procedure run (This : in out BaseGameBehavior; allBinaryGameCanvas : AllBinaryGameCanvas_Access);
-   procedure setHighScore (This : in out BaseGameBehavior; abeClientInformation : AbeClientInformationInterface_Access; allBinaryGameCanvas : AllBinaryGameCanvas_Access; name : Unbounded_String; score : Long_Long_Integer; autoSubmit : Boolean; isLast : Boolean);
+   procedure pause (This : in out BaseGameBehavior; allBinaryGameCanvas_Param : access AllBinaryGameCanvas'Class);
+   procedure unPause (This : in out BaseGameBehavior; allBinaryGameCanvas_Param : access AllBinaryGameCanvas'Class);
+   procedure updateTouch (This : in out BaseGameBehavior; allBinaryGameCanvas_Param : access AllBinaryGameCanvas'Class);
+   procedure updateScreenButtonPaintable (This : in out BaseGameBehavior; allBinaryGameCanvas_Param : access AllBinaryGameCanvas'Class);
+   procedure setGameState (This : in out BaseGameBehavior; allBinaryGameCanvas_Param : access AllBinaryGameCanvas'Class);
+   procedure removeAllGameKeyInputListeners (This : in out BaseGameBehavior; allBinaryGameCanvas_Param : access AllBinaryGameCanvas'Class);
+   procedure updateEndGameProcessor (This : in out BaseGameBehavior; allBinaryGameCanvas_Param : access AllBinaryGameCanvas'Class);
+   procedure buildGame (This : in out BaseGameBehavior; allBinaryGameCanvas_Param : access AllBinaryGameCanvas'Class);
+   procedure run (This : in out BaseGameBehavior; allBinaryGameCanvas_Param : access AllBinaryGameCanvas'Class);
+   procedure setHighScore (This : in out BaseGameBehavior; abeClientInformation_Param : access AbeClientInformationInterface'Class; allBinaryGameCanvas_Param : access AllBinaryGameCanvas'Class; name : Unbounded_String; score : Long_Long_Integer; autoSubmit : Boolean; isLast : Boolean);
 
 end org.allbinary.game.displayable.canvas.BaseGameBehavior_Package;
 

@@ -30,7 +30,7 @@ package body org.allbinary.logic.visual.media.MediaData_Package is
         This.name := a_Name;
         This.extension := To_Unbounded_String (".") & This.name;
         This.type_Id := MediaTypeData_Package.getInstance.NOT_RESIZABLE_MEDIA;
-        MediaData_Package.hashMap.put (a_Name, This'Unchecked_Access);
+        MediaData_Package.hashMap.put (a_Name, MediaData_Access'(This'Unchecked_Access));
    end Initialize;
 
    function Create (a_Name : Unbounded_String) return MediaData_Access is
@@ -55,9 +55,10 @@ package body org.allbinary.logic.visual.media.MediaData_Package is
         return This.extension;
    end getExtension;
 
-   function isConvertableTo (This : in out MediaData; mediaData : MediaData_Access) return Boolean is
+   function isConvertableTo (This : in out MediaData; mediaData_Param : access MediaData'Class) return Boolean is
+      mediaData : MediaData_Access := MediaData_Access (mediaData_Param);
    begin
-        if ((This'Unchecked_Access) = (MediaDataFactory_Package.getInstance.GIF)) and then ((mediaData) = (MediaDataFactory_Package.getInstance.JPG)) then
+        if ((MediaData_Access'(This'Unchecked_Access)) = (MediaDataFactory_Package.getInstance.GIF)) and then ((mediaData) = (MediaDataFactory_Package.getInstance.JPG)) then
             return True;
         end if;
         return False;
@@ -90,8 +91,8 @@ package body org.allbinary.logic.visual.media.MediaData_Package is
         return MediaData_Package.hashMap;
    end toHashMap;
 
-   procedure isConvertableTo (This : in out MediaData; mediaData : MediaData_Access) is
-      Java_Result : constant Boolean := MediaData'Class (This).isConvertableTo (mediaData);
+   procedure isConvertableTo (This : in out MediaData; mediaData_Param : access MediaData'Class) is
+      Java_Result : constant Boolean := MediaData'Class (This).isConvertableTo (mediaData_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

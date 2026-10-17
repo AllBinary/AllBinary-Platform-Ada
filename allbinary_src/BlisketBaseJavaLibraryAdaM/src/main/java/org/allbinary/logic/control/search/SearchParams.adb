@@ -27,7 +27,8 @@ package body org.allbinary.logic.control.search.SearchParams_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out SearchParams'Class; request : HttpServletRequest_Access) is
+   procedure Initialize (This : in out SearchParams'Class; request_Param : access HttpServletRequest'Class) is
+      request : HttpServletRequest_Access := HttpServletRequest_Access (request_Param);
       page : Unbounded_String;
       index : Integer;
       columnName : Unbounded_String;
@@ -52,10 +53,10 @@ package body org.allbinary.logic.control.search.SearchParams_Package is
         end loop;
    end Initialize;
 
-   function Create (request : HttpServletRequest_Access) return SearchParams_Access is
+   function Create (request_Param : access HttpServletRequest'Class) return SearchParams_Access is
       This : constant SearchParams_Access := new SearchParams;
    begin
-      SearchParams_Package.Initialize (This.all, request);
+      SearchParams_Package.Initialize (This.all, request_Param);
       return This;
    end Create;
 
@@ -147,7 +148,8 @@ package body org.allbinary.logic.control.search.SearchParams_Package is
    end getEndPageInt;
 
    --  throws Exception
-   function getParamsNode (This : in out SearchParams; document : Document_Access) return Node_Access is
+   function getParamsNode (This : in out SearchParams; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       paramsNode : Node_Access;
    begin
         paramsNode := ModDomHelper_Package.createNameValueNodes (document, SearchData_Package.PARAMS, SearchData_Package.PARAMS);
@@ -159,7 +161,8 @@ package body org.allbinary.logic.control.search.SearchParams_Package is
    end getParamsNode;
 
    --  throws Exception
-   function getFieldsNode (This : in out SearchParams; document : Document_Access) return Node_Access is
+   function getFieldsNode (This : in out SearchParams; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       fieldsNode : Node_Access;
       set : Set_Access;
       searchValueArray : Java_Object_Access_Array_Access;
@@ -181,53 +184,56 @@ package body org.allbinary.logic.control.search.SearchParams_Package is
    end getFieldsNode;
 
    --  throws Exception
-   function getOrderNode (This : in out SearchParams; document : Document_Access) return Node_Access is
+   function getOrderNode (This : in out SearchParams; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
    begin
         return ModDomHelper_Package.createNameValueNodes (document, SearchData_Package.ORDER, ToDomHelper_Package.convertNull (This.getOrder));
    end getOrderNode;
 
    --  throws Exception
-   function getSortByNode (This : in out SearchParams; document : Document_Access) return Node_Access is
+   function getSortByNode (This : in out SearchParams; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
    begin
         return ModDomHelper_Package.createNameValueNodes (document, SearchData_Package.SORTBY, ToDomHelper_Package.convertNull (This.getSortBy));
    end getSortByNode;
 
    --  throws Exception
-   function getLengthNode (This : in out SearchParams; document : Document_Access) return Node_Access is
+   function getLengthNode (This : in out SearchParams; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
    begin
         return ModDomHelper_Package.createNameValueNodes (document, SearchData_Package.LENGTH, ToDomHelper_Package.convertNull (This.getLength));
    end getLengthNode;
 
-   procedure getParamsNode (This : in out SearchParams; document : Document_Access) is
-      Java_Result : constant Node_Access := SearchParams'Class (This).getParamsNode (document);
+   procedure getParamsNode (This : in out SearchParams; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := SearchParams'Class (This).getParamsNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getParamsNode;
 
-   procedure getFieldsNode (This : in out SearchParams; document : Document_Access) is
-      Java_Result : constant Node_Access := SearchParams'Class (This).getFieldsNode (document);
+   procedure getFieldsNode (This : in out SearchParams; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := SearchParams'Class (This).getFieldsNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getFieldsNode;
 
-   procedure getOrderNode (This : in out SearchParams; document : Document_Access) is
-      Java_Result : constant Node_Access := SearchParams'Class (This).getOrderNode (document);
+   procedure getOrderNode (This : in out SearchParams; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := SearchParams'Class (This).getOrderNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getOrderNode;
 
-   procedure getSortByNode (This : in out SearchParams; document : Document_Access) is
-      Java_Result : constant Node_Access := SearchParams'Class (This).getSortByNode (document);
+   procedure getSortByNode (This : in out SearchParams; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := SearchParams'Class (This).getSortByNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getSortByNode;
 
-   procedure getLengthNode (This : in out SearchParams; document : Document_Access) is
-      Java_Result : constant Node_Access := SearchParams'Class (This).getLengthNode (document);
+   procedure getLengthNode (This : in out SearchParams; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := SearchParams'Class (This).getLengthNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

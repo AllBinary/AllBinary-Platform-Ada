@@ -60,7 +60,7 @@ package org.allbinary.business.context.modules.storefront.StoreFrontInterface_Pa
    function getPackageLocation (This : in out StoreFrontInterface) return Unbounded_String is abstract;
    function getInventoryControl (This : in out StoreFrontInterface) return Unbounded_String is abstract;
    function getContextConfigurationInterface (This : in out StoreFrontInterface) return ContextConfigurationInterface_Access is abstract;
-   procedure setContextConfigurationInterface (This : in out StoreFrontInterface; contextConfigurationInterface : ContextConfigurationInterface_Access) is abstract;
+   procedure setContextConfigurationInterface (This : in out StoreFrontInterface; contextConfigurationInterface_Param : access ContextConfigurationInterface'Class) is abstract;
    function getFtp (This : in out StoreFrontInterface) return Unbounded_String is abstract;
    function getFtpPath (This : in out StoreFrontInterface) return Unbounded_String is abstract;
    function getFtpUserName (This : in out StoreFrontInterface) return Unbounded_String is abstract;

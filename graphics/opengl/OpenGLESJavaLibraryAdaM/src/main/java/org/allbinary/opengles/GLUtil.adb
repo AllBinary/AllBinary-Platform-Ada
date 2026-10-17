@@ -68,7 +68,8 @@ package body org.allbinary.opengles.GLUtil_Package is
         return buffer;
    end makeFloatBuffer4;
 
-   function makeFloatBuffer (This : in out GLUtil; byteBuffer : ByteBuffer_Access) return FloatBuffer_Access is
+   function makeFloatBuffer (This : in out GLUtil; byteBuffer_Param : access ByteBuffer'Class) return FloatBuffer_Access is
+      byteBuffer : ByteBuffer_Access := ByteBuffer_Access (byteBuffer_Param);
       b : ByteBuffer_Access;
       buffer : FloatBuffer_Access;
       unsigned : Integer;
@@ -88,7 +89,8 @@ package body org.allbinary.opengles.GLUtil_Package is
         return buffer;
    end makeFloatBuffer;
 
-   function position (This : in out GLUtil; buffer : Buffer_Access; newPosition : Integer) return Buffer_Access is
+   function position (This : in out GLUtil; buffer_Param : access Buffer'Class; newPosition : Integer) return Buffer_Access is
+      buffer : Buffer_Access := Buffer_Access (buffer_Param);
    begin
         return buffer.position (newPosition);
    end position;
@@ -136,15 +138,15 @@ package body org.allbinary.opengles.GLUtil_Package is
       null;
    end makeFloatBuffer4;
 
-   procedure makeFloatBuffer (This : in out GLUtil; byteBuffer : ByteBuffer_Access) is
-      Java_Result : constant FloatBuffer_Access := GLUtil'Class (This).makeFloatBuffer (byteBuffer);
+   procedure makeFloatBuffer (This : in out GLUtil; byteBuffer_Param : access ByteBuffer'Class) is
+      Java_Result : constant FloatBuffer_Access := GLUtil'Class (This).makeFloatBuffer (byteBuffer_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end makeFloatBuffer;
 
-   procedure position (This : in out GLUtil; buffer : Buffer_Access; newPosition : Integer) is
-      Java_Result : constant Buffer_Access := GLUtil'Class (This).position (buffer, newPosition);
+   procedure position (This : in out GLUtil; buffer_Param : access Buffer'Class; newPosition : Integer) is
+      Java_Result : constant Buffer_Access := GLUtil'Class (This).position (buffer_Param, newPosition);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -49,7 +49,8 @@ package body org.allbinary.input.motion.button.TouchButtonFactory_Package is
         This.toggle (False, This.LIST);
    end defaultList;
 
-   procedure toggle (This : in out TouchButtonFactory; save : Boolean; list_Case : BasicArrayList_Access) is
+   procedure toggle (This : in out TouchButtonFactory; save : Boolean; list_Case_Param : access BasicArrayList'Class) is
+      list_Case : BasicArrayList_Access := BasicArrayList_Access (list_Case_Param);
    begin
         if (list_Case) /= (BasicArrayListUtil_Package.getInstance.getImmutableInstance) then
             This.savedList := list_Case;
@@ -73,7 +74,8 @@ package body org.allbinary.input.motion.button.TouchButtonFactory_Package is
    end toggle;
 
    --  throws Exception
-   procedure setList (This : in out TouchButtonFactory; list_Case : BasicArrayList_Access) is
+   procedure setList (This : in out TouchButtonFactory; list_Case_Param : access BasicArrayList'Class) is
+      list_Case : BasicArrayList_Access := BasicArrayList_Access (list_Case_Param);
    begin
         if (list_Case) = (null) then
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Null List")));

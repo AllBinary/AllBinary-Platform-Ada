@@ -44,16 +44,16 @@ package body org.allbinary.input.automation.robot.InputRobotFactory_Package is
             inputRobotInterface := null;
             for i in 0 .. (screens'Length) - 1 loop
                 inputRobotInterface := InputRobotInterface_Access (InputRobot_Package.Create (screens (i)));
-                This.logUtil.putF (To_Unbounded_String ("Adding Robot: ") & inputRobotInterface.getName, This'Unchecked_Access, To_Unbounded_String ("getRobots"));
+                This.logUtil.putF (To_Unbounded_String ("Adding Robot: ") & inputRobotInterface.getName, InputRobotFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getRobots"));
                 This.get.put (inputRobotInterface.getName, inputRobotInterface);
             end loop;
-            This.logUtil.putF (To_Unbounded_String ("Number Of Robots: ") & Java_Image (This.hashtable.size), This'Unchecked_Access, To_Unbounded_String ("getRobots"));
+            This.logUtil.putF (To_Unbounded_String ("Number Of Robots: ") & Java_Image (This.hashtable.size), InputRobotFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getRobots"));
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.putF (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+            This.logUtil.putF (This.commonStrings.EXCEPTION_Id, InputRobotFactory_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
                 end;
         end;
    end Initialize;
@@ -65,30 +65,32 @@ package body org.allbinary.input.automation.robot.InputRobotFactory_Package is
       return This;
    end Create;
 
-   procedure addListener (This : in out InputRobotFactory; helpSetListenerInterface : HelpSetListener_Access) is
+   procedure addListener (This : in out InputRobotFactory; helpSetListenerInterface_Param : access HelpSetListener'Class) is
+      helpSetListenerInterface : HelpSetListener_Access := HelpSetListener_Access (helpSetListenerInterface_Param);
    begin
         This.helpSetListenerInterface := helpSetListenerInterface;
    end addListener;
 
    --  throws Exception
-   procedure add (This : in out InputRobotFactory; inputRobotInterface : InputRobotInterface_Access) is
+   procedure add (This : in out InputRobotFactory; inputRobotInterface_Param : access InputRobotInterface'Class) is
+      inputRobotInterface : InputRobotInterface_Access := InputRobotInterface_Access (inputRobotInterface_Param);
       helpSet : HelpSet_Access;
       helpSetEvent : HelpSetEvent_Access;
    begin
-        This.logUtil.putF (To_Unbounded_String ("Adding InputRobotInterface: ") & inputRobotInterface.getName, This'Unchecked_Access, To_Unbounded_String ("add"));
+        This.logUtil.putF (To_Unbounded_String ("Adding InputRobotInterface: ") & inputRobotInterface.getName, InputRobotFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("add"));
         This.get.put (inputRobotInterface.getName, inputRobotInterface);
         helpSet := inputRobotInterface.getHelpSet;
         if (This.helpSetListenerInterface) /= (null) then
             if (helpSet) /= (null) then
                 if not (JavaHelpSetNotifier_Package.isNotified (helpSet)) then
-                    helpSetEvent := HelpSetEvent_Package.Create (This'Unchecked_Access, helpSet, HelpSetEvent_Package.HELPSET_ADDED);
+                    helpSetEvent := HelpSetEvent_Package.Create (InputRobotFactory_Access'(This'Unchecked_Access), helpSet, HelpSetEvent_Package.HELPSET_ADDED);
                     This.helpSetListenerInterface.helpSetAdded (helpSetEvent);
                 end if;
             else
-                This.logUtil.putF (To_Unbounded_String ("Null HelpSet For: ") & inputRobotInterface.getName, This'Unchecked_Access, To_Unbounded_String ("add"));
+                This.logUtil.putF (To_Unbounded_String ("Null HelpSet For: ") & inputRobotInterface.getName, InputRobotFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("add"));
             end if;
         else
-            This.logUtil.putF (To_Unbounded_String ("No HelpSet Listener"), This'Unchecked_Access, To_Unbounded_String ("add"));
+            This.logUtil.putF (To_Unbounded_String ("No HelpSet Listener"), InputRobotFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("add"));
         end if;
    end add;
 
@@ -101,7 +103,7 @@ package body org.allbinary.input.automation.robot.InputRobotFactory_Package is
       index : Integer;
    begin
         set := This.get.keySet;
-        This.logUtil.putF (To_Unbounded_String ("Loading Libraries"), This'Unchecked_Access, To_Unbounded_String ("loadLibraries"));
+        This.logUtil.putF (To_Unbounded_String ("Loading Libraries"), InputRobotFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("loadLibraries"));
         nameArray := set.toArray;
         size := nameArray'Length;
         for index in 0 .. (size) - 1 loop
@@ -111,7 +113,8 @@ package body org.allbinary.input.automation.robot.InputRobotFactory_Package is
    end loadLibraries;
 
    --  throws Exception
-   procedure loadLibraries (collection : Collection_Access) is
+   procedure loadLibraries (collection_Param : access Collection'Class) is
+      collection : Collection_Access := Collection_Access (collection_Param);
       logUtil : LogUtil_Access;
       iterator : Iterator_Access;
    begin
@@ -124,7 +127,8 @@ package body org.allbinary.input.automation.robot.InputRobotFactory_Package is
    end loadLibraries;
 
    --  throws Exception
-   procedure loadLibrary (inputRobotInterface : InputRobotInterface_Access) is
+   procedure loadLibrary (inputRobotInterface_Param : access InputRobotInterface'Class) is
+      inputRobotInterface : InputRobotInterface_Access := InputRobotInterface_Access (inputRobotInterface_Param);
       logUtil : LogUtil_Access;
       securedNativeLibraryInterface : SecuredNativeLibraryInterface_Access;
    begin
@@ -145,7 +149,7 @@ package body org.allbinary.input.automation.robot.InputRobotFactory_Package is
       securedNativeLibraryInterface : SecuredNativeLibraryInterface_Access;
       index : Integer;
    begin
-        This.logUtil.putF (To_Unbounded_String ("Unloading Libraries"), This'Unchecked_Access, To_Unbounded_String ("unloadLibraries"));
+        This.logUtil.putF (To_Unbounded_String ("Unloading Libraries"), InputRobotFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("unloadLibraries"));
         set := This.get.keySet;
         inputRobotInterface := null;
         inputRobotArray := set.toArray;
@@ -153,7 +157,7 @@ package body org.allbinary.input.automation.robot.InputRobotFactory_Package is
         for index in 0 .. (size) - 1 loop
             inputRobotInterface := This.get (Unbounded_String (inputRobotArray (index)));
             if InterfaceUtil_Package.isImplemented (SecuredNativeLibraryInterface_Package.SecuredNativeLibraryInterface'Tag, inputRobotInterface) then
-                This.logUtil.putF (To_Unbounded_String ("Unloading Library: ") & inputRobotInterface.getName, This'Unchecked_Access, To_Unbounded_String ("unloadLibraries"));
+                This.logUtil.putF (To_Unbounded_String ("Unloading Library: ") & inputRobotInterface.getName, InputRobotFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("unloadLibraries"));
                 securedNativeLibraryInterface := SecuredNativeLibraryInterface_Access (inputRobotInterface);
                 securedNativeLibraryInterface.unload;
             end if;
@@ -168,7 +172,7 @@ package body org.allbinary.input.automation.robot.InputRobotFactory_Package is
 
    function get (This : in out InputRobotFactory; name : Unbounded_String) return InputRobotInterface_Access is
    begin
-        This.logUtil.putF (To_Unbounded_String ("Getting Robot: ") & name, This'Unchecked_Access, To_Unbounded_String ("getRobots"));
+        This.logUtil.putF (To_Unbounded_String ("Getting Robot: ") & name, InputRobotFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getRobots"));
         return InputRobotInterface_Access (This.hashtable.get (name));
    end get;
 

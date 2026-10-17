@@ -38,8 +38,8 @@ package org.allbinary.logic.java.jar.JarUtil_Package is
       jarURL : URL_Access;
    end record;
 
-   procedure Initialize (This : in out JarUtil'Class; jarURL : URL_Access);
-   function Create (jarURL : URL_Access) return JarUtil_Access;
+   procedure Initialize (This : in out JarUtil'Class; jarURL_Param : access URL'Class);
+   function Create (jarURL_Param : access URL'Class) return JarUtil_Access;
    procedure show (This : in out JarUtil);
    procedure main (args : Unbounded_String_Array_Access);
 

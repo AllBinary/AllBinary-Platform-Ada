@@ -41,7 +41,8 @@ package body org.allbinary.game.layer.pickup.PickupLayerCircularStaticPool_Packa
    end getInstance;
 
    --  throws Exception
-   function getInstanceXYZ (This : in out PickupLayerCircularStaticPool; pickedUpLayerInterfaceFactoryInterface : PickedUpLayerInterfaceFactoryInterface_Access; x : Integer; y : Integer; z : Integer) return PickedUpLayerInterface_Access is
+   function getInstanceXYZ (This : in out PickupLayerCircularStaticPool; pickedUpLayerInterfaceFactoryInterface_Param : access PickedUpLayerInterfaceFactoryInterface'Class; x : Integer; y : Integer; z : Integer) return PickedUpLayerInterface_Access is
+      pickedUpLayerInterfaceFactoryInterface : PickedUpLayerInterfaceFactoryInterface_Access := PickedUpLayerInterfaceFactoryInterface_Access (pickedUpLayerInterfaceFactoryInterface_Param);
       pickupLayer : PickupLayer_Access;
    begin
         pickupLayer := PickupLayer_Access (This.getNextInstance);
@@ -50,8 +51,8 @@ package body org.allbinary.game.layer.pickup.PickupLayerCircularStaticPool_Packa
         return pickupLayer;
    end getInstanceXYZ;
 
-   procedure getInstanceXYZ (This : in out PickupLayerCircularStaticPool; pickedUpLayerInterfaceFactoryInterface : PickedUpLayerInterfaceFactoryInterface_Access; x : Integer; y : Integer; z : Integer) is
-      Java_Result : constant PickedUpLayerInterface_Access := PickupLayerCircularStaticPool'Class (This).getInstanceXYZ (pickedUpLayerInterfaceFactoryInterface, x, y, z);
+   procedure getInstanceXYZ (This : in out PickupLayerCircularStaticPool; pickedUpLayerInterfaceFactoryInterface_Param : access PickedUpLayerInterfaceFactoryInterface'Class; x : Integer; y : Integer; z : Integer) is
+      Java_Result : constant PickedUpLayerInterface_Access := PickupLayerCircularStaticPool'Class (This).getInstanceXYZ (pickedUpLayerInterfaceFactoryInterface_Param, x, y, z);
       pragma Unreferenced (Java_Result);
    begin
       null;

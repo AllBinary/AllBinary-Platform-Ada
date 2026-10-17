@@ -39,7 +39,7 @@ package org.allbinary.game.physics.FrictionProperties_Package is
 
    procedure Initialize (This : in out FrictionProperties'Class);
    function Create return FrictionProperties_Access;
-   procedure friction (This : in out FrictionProperties; velocityProperties : VelocityProperties_Access; nominator : Integer);
+   procedure friction (This : in out FrictionProperties; velocityProperties_Param : access VelocityProperties'Class; nominator : Integer);
 
 end org.allbinary.game.physics.FrictionProperties_Package;
 

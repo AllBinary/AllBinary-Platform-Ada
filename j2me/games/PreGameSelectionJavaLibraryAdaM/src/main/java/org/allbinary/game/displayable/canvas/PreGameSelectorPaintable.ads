@@ -45,10 +45,10 @@ package org.allbinary.game.displayable.canvas.PreGameSelectorPaintable_Package i
       preGameScrollSelectionForm : PreGameScrollSelectionForm_Access;
    end record;
 
-   procedure Initialize (This : in out PreGameSelectorPaintable'Class; title : Unbounded_String; preGameScrollSelectionForm : PreGameScrollSelectionForm_Access);
-   function Create (title : Unbounded_String; preGameScrollSelectionForm : PreGameScrollSelectionForm_Access) return PreGameSelectorPaintable_Access;
+   procedure Initialize (This : in out PreGameSelectorPaintable'Class; title : Unbounded_String; preGameScrollSelectionForm_Param : access PreGameScrollSelectionForm'Class);
+   function Create (title : Unbounded_String; preGameScrollSelectionForm_Param : access PreGameScrollSelectionForm'Class) return PreGameSelectorPaintable_Access;
    procedure update (This : in out PreGameSelectorPaintable);
-   procedure paint (This : in out PreGameSelectorPaintable; graphics : Graphics_Access);
+   procedure paint (This : in out PreGameSelectorPaintable; graphics_Param : access Graphics'Class);
    function getPreGameSelectionForm (This : in out PreGameSelectorPaintable) return PreGameScrollSelectionForm_Access;
 
 end org.allbinary.game.displayable.canvas.PreGameSelectorPaintable_Package;

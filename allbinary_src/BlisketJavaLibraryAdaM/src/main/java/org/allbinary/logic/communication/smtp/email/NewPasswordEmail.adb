@@ -26,7 +26,9 @@ package body org.allbinary.logic.communication.smtp.email.NewPasswordEmail_Packa
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out NewPasswordEmail'Class; abeClientInformation : AbeClientInformationInterface_Access; userInterface : UserInterface_Access; newPassword : Unbounded_String) is
+   procedure Initialize (This : in out NewPasswordEmail'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; userInterface_Param : access UserInterface'Class; newPassword : Unbounded_String) is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      userInterface : UserInterface_Access := UserInterface_Access (userInterface_Param);
    begin
       Initialize_Fields (This);
         This.abeClientInformation := abeClientInformation;
@@ -34,10 +36,10 @@ package body org.allbinary.logic.communication.smtp.email.NewPasswordEmail_Packa
         This.newPassword := newPassword;
    end Initialize;
 
-   function Create (abeClientInformation : AbeClientInformationInterface_Access; userInterface : UserInterface_Access; newPassword : Unbounded_String) return NewPasswordEmail_Access is
+   function Create (abeClientInformation_Param : access AbeClientInformationInterface'Class; userInterface_Param : access UserInterface'Class; newPassword : Unbounded_String) return NewPasswordEmail_Access is
       This : constant NewPasswordEmail_Access := new NewPasswordEmail;
    begin
-      NewPasswordEmail_Package.Initialize (This.all, abeClientInformation, userInterface, newPassword);
+      NewPasswordEmail_Package.Initialize (This.all, abeClientInformation_Param, userInterface_Param, newPassword);
       return This;
    end Create;
 
@@ -58,7 +60,7 @@ package body org.allbinary.logic.communication.smtp.email.NewPasswordEmail_Packa
    begin
         begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
-                This.logUtil.putF (To_Unbounded_String ("notifyStoreAdmin"), This'Unchecked_Access, To_Unbounded_String ("notifyStoreAdmin"));
+                This.logUtil.putF (To_Unbounded_String ("notifyStoreAdmin"), NewPasswordEmail_Access'(This'Unchecked_Access), To_Unbounded_String ("notifyStoreAdmin"));
             end if;
             emailSubject := To_Unbounded_String ("New Password For User: ") & Java_Image (This.userInterface.getUserName);
             emailBody := To_Unbounded_String ("New Password: ") & This.newPassword;
@@ -72,7 +74,7 @@ package body org.allbinary.logic.communication.smtp.email.NewPasswordEmail_Packa
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGINGERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("emailAdmin"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, NewPasswordEmail_Access'(This'Unchecked_Access), To_Unbounded_String ("emailAdmin"), e);
             end if;
                 end;
         end;
@@ -88,7 +90,7 @@ package body org.allbinary.logic.communication.smtp.email.NewPasswordEmail_Packa
    begin
         begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
-                This.logUtil.putF (To_Unbounded_String ("Email User"), This'Unchecked_Access, To_Unbounded_String ("notifyUser()"));
+                This.logUtil.putF (To_Unbounded_String ("Email User"), NewPasswordEmail_Access'(This'Unchecked_Access), To_Unbounded_String ("notifyUser()"));
             end if;
             subject := To_Unbounded_String ("New Password");
             body_Id := To_Unbounded_String ("New Password: ") & This.newPassword;
@@ -102,7 +104,7 @@ package body org.allbinary.logic.communication.smtp.email.NewPasswordEmail_Packa
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGINGERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("notifyUser"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, NewPasswordEmail_Access'(This'Unchecked_Access), To_Unbounded_String ("notifyUser"), e);
             end if;
             Java_Throw (e);
                 end;

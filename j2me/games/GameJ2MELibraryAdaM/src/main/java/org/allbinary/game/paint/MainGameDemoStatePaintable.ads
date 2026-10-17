@@ -37,9 +37,9 @@ package org.allbinary.game.paint.MainGameDemoStatePaintable_Package is
       menuPaintableInterface : Paintable_Access;
    end record;
 
-   procedure Initialize (This : in out MainGameDemoStatePaintable'Class; ownershipPaintableInterface : Paintable_Access; menuPaintableInterface : Paintable_Access);
-   function Create (ownershipPaintableInterface : Paintable_Access; menuPaintableInterface : Paintable_Access) return MainGameDemoStatePaintable_Access;
-   procedure paint (This : in out MainGameDemoStatePaintable; graphics : Graphics_Access);
+   procedure Initialize (This : in out MainGameDemoStatePaintable'Class; ownershipPaintableInterface_Param : access Paintable'Class; menuPaintableInterface_Param : access Paintable'Class);
+   function Create (ownershipPaintableInterface_Param : access Paintable'Class; menuPaintableInterface_Param : access Paintable'Class) return MainGameDemoStatePaintable_Access;
+   procedure paint (This : in out MainGameDemoStatePaintable; graphics_Param : access Graphics'Class);
    function getOwnershipPaintableInterface (This : in out MainGameDemoStatePaintable) return Paintable_Access;
    function getMenuPaintableInterface (This : in out MainGameDemoStatePaintable) return Paintable_Access;
 

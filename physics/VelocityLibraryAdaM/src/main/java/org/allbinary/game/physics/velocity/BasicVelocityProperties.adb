@@ -64,7 +64,10 @@ package body org.allbinary.game.physics.velocity.BasicVelocityProperties_Package
         return This.velocityZBasicDecimal;
    end getVelocityZBasicDecimalP;
 
-   procedure setVelocityWithBigDecimalAndDirection (This : in out BasicVelocityProperties; magnitudeBasicDecimal : BasicDecimal_Access; direction : Direction_Access; otherDirection : Direction_Access) is
+   procedure setVelocityWithBigDecimalAndDirection (This : in out BasicVelocityProperties; magnitudeBasicDecimal_Param : access BasicDecimal'Class; direction_Param : access Direction'Class; otherDirection_Param : access Direction'Class) is
+      magnitudeBasicDecimal : BasicDecimal_Access := BasicDecimal_Access (magnitudeBasicDecimal_Param);
+      direction : Direction_Access := Direction_Access (direction_Param);
+      otherDirection : Direction_Access := Direction_Access (otherDirection_Param);
       angle : Angle_Access;
       otherAngle : Angle_Access;
    begin
@@ -73,7 +76,9 @@ package body org.allbinary.game.physics.velocity.BasicVelocityProperties_Package
         This.setVelocityWithBigDecimal (magnitudeBasicDecimal, angle, otherAngle);
    end setVelocityWithBigDecimalAndDirection;
 
-   procedure setVelocityWithDirection (This : in out BasicVelocityProperties; magnitude : Long_Long_Integer; direction : Direction_Access; otherDirection : Direction_Access) is
+   procedure setVelocityWithDirection (This : in out BasicVelocityProperties; magnitude : Long_Long_Integer; direction_Param : access Direction'Class; otherDirection_Param : access Direction'Class) is
+      direction : Direction_Access := Direction_Access (direction_Param);
+      otherDirection : Direction_Access := Direction_Access (otherDirection_Param);
       angle : Angle_Access;
       otherAngle : Angle_Access;
    begin
@@ -82,7 +87,10 @@ package body org.allbinary.game.physics.velocity.BasicVelocityProperties_Package
         This.setVelocity (magnitude, angle, otherAngle);
    end setVelocityWithDirection;
 
-   procedure addVelocityWithBigDecimalAndDirection (This : in out BasicVelocityProperties; magnitudeBasicDecimal : BasicDecimal_Access; direction : Direction_Access; otherDirection : Direction_Access) is
+   procedure addVelocityWithBigDecimalAndDirection (This : in out BasicVelocityProperties; magnitudeBasicDecimal_Param : access BasicDecimal'Class; direction_Param : access Direction'Class; otherDirection_Param : access Direction'Class) is
+      magnitudeBasicDecimal : BasicDecimal_Access := BasicDecimal_Access (magnitudeBasicDecimal_Param);
+      direction : Direction_Access := Direction_Access (direction_Param);
+      otherDirection : Direction_Access := Direction_Access (otherDirection_Param);
       angle : Angle_Access;
       otherAngle : Angle_Access;
    begin
@@ -91,7 +99,9 @@ package body org.allbinary.game.physics.velocity.BasicVelocityProperties_Package
         This.addVelocityWithBigDecimal (magnitudeBasicDecimal, angle, otherAngle);
    end addVelocityWithBigDecimalAndDirection;
 
-   procedure addVelocityWithDirection (This : in out BasicVelocityProperties; magnitude : Long_Long_Integer; direction : Direction_Access; otherDirection : Direction_Access) is
+   procedure addVelocityWithDirection (This : in out BasicVelocityProperties; magnitude : Long_Long_Integer; direction_Param : access Direction'Class; otherDirection_Param : access Direction'Class) is
+      direction : Direction_Access := Direction_Access (direction_Param);
+      otherDirection : Direction_Access := Direction_Access (otherDirection_Param);
       angle : Angle_Access;
       otherAngle : Angle_Access;
    begin
@@ -100,26 +110,36 @@ package body org.allbinary.game.physics.velocity.BasicVelocityProperties_Package
         This.addVelocity (magnitude, angle, otherAngle);
    end addVelocityWithDirection;
 
-   procedure setVelocityWithBigDecimal (This : in out BasicVelocityProperties; magnitudeBasicDecimal : BasicDecimal_Access; angle : Angle_Access; otherAngle : Angle_Access) is
+   procedure setVelocityWithBigDecimal (This : in out BasicVelocityProperties; magnitudeBasicDecimal_Param : access BasicDecimal'Class; angle_Param : access Angle'Class; otherAngle_Param : access Angle'Class) is
+      magnitudeBasicDecimal : BasicDecimal_Access := BasicDecimal_Access (magnitudeBasicDecimal_Param);
+      angle : Angle_Access := Angle_Access (angle_Param);
+      otherAngle : Angle_Access := Angle_Access (otherAngle_Param);
       magnitude : Long_Long_Integer;
    begin
         magnitude := magnitudeBasicDecimal.getUnscaled;
         This.setVelocity (magnitude, angle, otherAngle);
    end setVelocityWithBigDecimal;
 
-   procedure addVelocityWithBigDecimal (This : in out BasicVelocityProperties; magnitudeBasicDecimal : BasicDecimal_Access; angle : Angle_Access; otherAngle : Angle_Access) is
+   procedure addVelocityWithBigDecimal (This : in out BasicVelocityProperties; magnitudeBasicDecimal_Param : access BasicDecimal'Class; angle_Param : access Angle'Class; otherAngle_Param : access Angle'Class) is
+      magnitudeBasicDecimal : BasicDecimal_Access := BasicDecimal_Access (magnitudeBasicDecimal_Param);
+      angle : Angle_Access := Angle_Access (angle_Param);
+      otherAngle : Angle_Access := Angle_Access (otherAngle_Param);
       magnitude : Long_Long_Integer;
    begin
         magnitude := magnitudeBasicDecimal.getUnscaled;
         This.addVelocity (magnitude, angle, otherAngle);
    end addVelocityWithBigDecimal;
 
-   procedure setVelocity (This : in out BasicVelocityProperties; magnitude : Long_Long_Integer; angle : Angle_Access; otherAngle : Angle_Access) is
+   procedure setVelocity (This : in out BasicVelocityProperties; magnitude : Long_Long_Integer; angle_Param : access Angle'Class; otherAngle_Param : access Angle'Class) is
+      angle : Angle_Access := Angle_Access (angle_Param);
+      otherAngle : Angle_Access := Angle_Access (otherAngle_Param);
    begin
         This.setVelocityi (magnitude, Integer (angle.getValue), Integer (otherAngle.getValue));
    end setVelocity;
 
-   procedure addVelocity (This : in out BasicVelocityProperties; magnitude : Long_Long_Integer; angle : Angle_Access; otherAngle : Angle_Access) is
+   procedure addVelocity (This : in out BasicVelocityProperties; magnitude : Long_Long_Integer; angle_Param : access Angle'Class; otherAngle_Param : access Angle'Class) is
+      angle : Angle_Access := Angle_Access (angle_Param);
+      otherAngle : Angle_Access := Angle_Access (otherAngle_Param);
    begin
         This.addVelocityi (magnitude, Integer (angle.getValue), Integer (otherAngle.getValue));
    end addVelocity;

@@ -48,7 +48,7 @@ package org.allbinary.media.image.ImageArrayRotationUtil_Package is
    procedure Initialize (This : in out ImageArrayRotationUtil'Class);
    function Create return ImageArrayRotationUtil_Access;
    function getInstance return ImageArrayRotationUtil_Access;
-   procedure process (This : in out ImageArrayRotationUtil; imageProcessorInput : ImageProcessorInput_Access; input : Unbounded_String; visitor : ImageProcessedVisitor_Access);
+   procedure process (This : in out ImageArrayRotationUtil; imageProcessorInput_Param : access ImageProcessorInput'Class; input : Unbounded_String; visitor_Param : access ImageProcessedVisitor'Class);
 
 end org.allbinary.media.image.ImageArrayRotationUtil_Package;
 

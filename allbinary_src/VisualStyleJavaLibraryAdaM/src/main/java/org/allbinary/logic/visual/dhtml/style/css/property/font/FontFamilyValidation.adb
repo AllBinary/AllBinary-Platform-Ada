@@ -35,16 +35,17 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamily
       return This;
    end Create;
 
-   procedure Initialize (This : in out FontFamilyValidation'Class; node : Node_Access) is
+   procedure Initialize (This : in out FontFamilyValidation'Class; node_Param : access Node'Class) is
+      node : Node_Access := Node_Access (node_Param);
    begin
         FontFamilyView_Package.Initialize (This, node);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (node : Node_Access) return FontFamilyValidation_Access is
+   function Create (node_Param : access Node'Class) return FontFamilyValidation_Access is
       This : constant FontFamilyValidation_Access := new FontFamilyValidation;
    begin
-      FontFamilyValidation_Package.Initialize (This.all, node);
+      FontFamilyValidation_Package.Initialize (This.all, node_Param);
       return This;
    end Create;
 
@@ -55,10 +56,10 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamily
         begin
             valid := True;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (To_Unbounded_String ("FontFamilyValidation"), This'Unchecked_Access, This.commonStrings.IS_VALID);
+                This.logUtil.putF (To_Unbounded_String ("FontFamilyValidation"), FontFamilyValidation_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
             end if;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (To_Unbounded_String ("CssValidation: ") & Java_Image (valid), This'Unchecked_Access, This.commonStrings.IS_VALID);
+                This.logUtil.putF (To_Unbounded_String ("CssValidation: ") & Java_Image (valid), FontFamilyValidation_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
             end if;
             return valid;
         exception
@@ -67,7 +68,7 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamily
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to validate data"), This'Unchecked_Access, This.commonStrings.IS_VALID, e);
+                This.logUtil.put (To_Unbounded_String ("Failed to validate data"), FontFamilyValidation_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
             end if;
             return False;
                 end;
@@ -88,7 +89,7 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamily
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to generate validation info error"), This'Unchecked_Access, To_Unbounded_String ("validationInfo()"), e);
+                This.logUtil.put (To_Unbounded_String ("Failed to generate validation info error"), FontFamilyValidation_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
             end if;
             return To_Unbounded_String ("Error Validating Data");
                 end;
@@ -102,13 +103,14 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamily
    end toValidationInfoDoc;
 
    --  throws Exception
-   function toValidationInfoNode (This : in out FontFamilyValidation; document : Document_Access) return Node_Access is
+   function toValidationInfoNode (This : in out FontFamilyValidation; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
    begin
         return null;
    end toValidationInfoNode;
 
-   procedure toValidationInfoNode (This : in out FontFamilyValidation; document : Document_Access) is
-      Java_Result : constant Node_Access := FontFamilyValidation'Class (This).toValidationInfoNode (document);
+   procedure toValidationInfoNode (This : in out FontFamilyValidation; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := FontFamilyValidation'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

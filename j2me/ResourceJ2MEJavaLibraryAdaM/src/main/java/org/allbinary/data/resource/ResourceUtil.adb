@@ -42,7 +42,7 @@ package body org.allbinary.data.resource.ResourceUtil_Package is
 
    procedure setLoadingPaths (This : in out ResourceUtil; path : Unbounded_String; ext : Unbounded_String) is
    begin
-        This.logUtil.putF (CommonStrings_Package.getInstance.NOT_IMPLEMENTED, This'Unchecked_Access, To_Unbounded_String ("setLoadingPaths"));
+        This.logUtil.putF (CommonStrings_Package.getInstance.NOT_IMPLEMENTED, ResourceUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("setLoadingPaths"));
    end setLoadingPaths;
 
    --  throws Exception

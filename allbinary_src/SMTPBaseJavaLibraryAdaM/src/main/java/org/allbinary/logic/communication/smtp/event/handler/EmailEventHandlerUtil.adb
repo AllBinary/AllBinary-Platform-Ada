@@ -41,7 +41,10 @@ package body org.allbinary.logic.communication.smtp.event.handler.EmailEventHand
    end Create;
 
    --  throws Exception
-   function getEventHandler (This : in out EmailEventHandlerUtil; abeClientInformation : AbeClientInformationInterface_Access; userEmailEventNameData : UserEmailEventNameData_Access; userVector : BasicArrayList_Access) return UserEmailEventHandler_Access is
+   function getEventHandler (This : in out EmailEventHandlerUtil; abeClientInformation_Param : access AbeClientInformationInterface'Class; userEmailEventNameData_Param : access UserEmailEventNameData'Class; userVector_Param : access BasicArrayList'Class) return UserEmailEventHandler_Access is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      userEmailEventNameData : UserEmailEventNameData_Access := UserEmailEventNameData_Access (userEmailEventNameData_Param);
+      userVector : BasicArrayList_Access := BasicArrayList_Access (userVector_Param);
       stringBuffer : StringMaker_Access;
       userEmailEventHandler : UserEmailEventHandler_Access;
       size : Integer;
@@ -54,7 +57,7 @@ package body org.allbinary.logic.communication.smtp.event.handler.EmailEventHand
             stringBuffer.append (To_Unbounded_String ("Returning UserEmailEventHandler for "));
             stringBuffer.appendint (userVector.size);
             stringBuffer.append (To_Unbounded_String (" users."));
-            This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("getEventHandler"));
+            This.logUtil.putF (stringBuffer.toString, EmailEventHandlerUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("getEventHandler"));
         end if;
         userEmailEventHandler := UserEmailEventHandler_Package.Create;
         userEmailEventHandler.addListener (LogUserEmailEventListenerModule_Package.Create);
@@ -68,7 +71,10 @@ package body org.allbinary.logic.communication.smtp.event.handler.EmailEventHand
    end getEventHandler;
 
    --  throws Exception
-   function getUserEmailEventListenerVector (abeClientInformation : AbeClientInformationInterface_Access; userEmailEventNameData : UserEmailEventNameData_Access; userInterface : UserInterface_Access) return BasicArrayList_Access is
+   function getUserEmailEventListenerVector (abeClientInformation_Param : access AbeClientInformationInterface'Class; userEmailEventNameData_Param : access UserEmailEventNameData'Class; userInterface_Param : access UserInterface'Class) return BasicArrayList_Access is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      userEmailEventNameData : UserEmailEventNameData_Access := UserEmailEventNameData_Access (userEmailEventNameData_Param);
+      userInterface : UserInterface_Access := UserInterface_Access (userInterface_Param);
       userConfigurationInterface : UserConfigurationInterface_Access;
       userEmailConfigurationInterface : UserEmailConfigurationInterface_Access;
       userEmailEventsConfigurationInterface : UserEmailEventsConfigurationInterface_Access;
@@ -84,15 +90,15 @@ package body org.allbinary.logic.communication.smtp.event.handler.EmailEventHand
         return vector;
    end getUserEmailEventListenerVector;
 
-   procedure getEventHandler (This : in out EmailEventHandlerUtil; abeClientInformation : AbeClientInformationInterface_Access; userEmailEventNameData : UserEmailEventNameData_Access; userVector : BasicArrayList_Access) is
-      Java_Result : constant UserEmailEventHandler_Access := EmailEventHandlerUtil'Class (This).getEventHandler (abeClientInformation, userEmailEventNameData, userVector);
+   procedure getEventHandler (This : in out EmailEventHandlerUtil; abeClientInformation_Param : access AbeClientInformationInterface'Class; userEmailEventNameData_Param : access UserEmailEventNameData'Class; userVector_Param : access BasicArrayList'Class) is
+      Java_Result : constant UserEmailEventHandler_Access := EmailEventHandlerUtil'Class (This).getEventHandler (abeClientInformation_Param, userEmailEventNameData_Param, userVector_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getEventHandler;
 
-   procedure getUserEmailEventListenerVector (abeClientInformation : AbeClientInformationInterface_Access; userEmailEventNameData : UserEmailEventNameData_Access; userInterface : UserInterface_Access) is
-      Java_Result : constant BasicArrayList_Access := getUserEmailEventListenerVector (abeClientInformation, userEmailEventNameData, userInterface);
+   procedure getUserEmailEventListenerVector (abeClientInformation_Param : access AbeClientInformationInterface'Class; userEmailEventNameData_Param : access UserEmailEventNameData'Class; userInterface_Param : access UserInterface'Class) is
+      Java_Result : constant BasicArrayList_Access := getUserEmailEventListenerVector (abeClientInformation_Param, userEmailEventNameData_Param, userInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

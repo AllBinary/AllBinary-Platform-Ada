@@ -33,8 +33,8 @@ package org.allbinary.AppletUtil_Package is
 
    procedure Initialize (This : in out AppletUtil'Class);
    function Create return AppletUtil_Access;
-   function isAppletLoader (anyType : Java_Object_Access) return Boolean;
-   procedure isAppletLoader (anyType : Java_Object_Access);
+   function isAppletLoader (anyType_Param : access Java_Object'Class) return Boolean;
+   procedure isAppletLoader (anyType_Param : access Java_Object'Class);
 
 end org.allbinary.AppletUtil_Package;
 

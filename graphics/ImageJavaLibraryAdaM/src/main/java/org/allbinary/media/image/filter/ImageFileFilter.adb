@@ -34,7 +34,8 @@ package body org.allbinary.media.image.filter.ImageFileFilter_Package is
    end Create;
 
 
-   function accept_Id (This : in out ImageFileFilter; f : File_Access) return Boolean is
+   function accept_Id (This : in out ImageFileFilter; f_Param : access File'Class) return Boolean is
+      f : File_Access := File_Access (f_Param);
       s : Unbounded_String;
       i : Integer;
       ext : Unbounded_String;
@@ -58,8 +59,8 @@ package body org.allbinary.media.image.filter.ImageFileFilter_Package is
         return To_Unbounded_String ("Accepts .jpg and .jpeg files");
    end getDescription;
 
-   procedure accept_Id (This : in out ImageFileFilter; f : File_Access) is
-      Java_Result : constant Boolean := ImageFileFilter'Class (This).accept_Id (f);
+   procedure accept_Id (This : in out ImageFileFilter; f_Param : access File'Class) is
+      Java_Result : constant Boolean := ImageFileFilter'Class (This).accept_Id (f_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

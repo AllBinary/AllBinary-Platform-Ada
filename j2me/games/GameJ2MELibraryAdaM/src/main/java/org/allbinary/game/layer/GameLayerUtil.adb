@@ -34,7 +34,8 @@ package body org.allbinary.game.layer.GameLayerUtil_Package is
       return This;
    end Create;
 
-   function isOnScreen (layer : AllBinaryLayer_Access) return Boolean is
+   function isOnScreen (layer_Param : access AllBinaryLayer'Class) return Boolean is
+      layer : AllBinaryLayer_Access := AllBinaryLayer_Access (layer_Param);
       displayInfo : DisplayInfoSingleton_Access;
       viewPosition : ViewPositionBase_Access;
    begin
@@ -52,8 +53,8 @@ package body org.allbinary.game.layer.GameLayerUtil_Package is
         end if;
    end isInside;
 
-   procedure isOnScreen (layer : AllBinaryLayer_Access) is
-      Java_Result : constant Boolean := isOnScreen (layer);
+   procedure isOnScreen (layer_Param : access AllBinaryLayer'Class) is
+      Java_Result : constant Boolean := isOnScreen (layer_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

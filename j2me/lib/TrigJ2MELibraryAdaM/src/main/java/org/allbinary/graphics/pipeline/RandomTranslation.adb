@@ -34,7 +34,8 @@ package body org.allbinary.graphics.pipeline.RandomTranslation_Package is
 
 
    --  throws Exception
-   function getInstance (vector : BasicArrayList_Access; howMuch : Integer) return BasicArrayList_Access is
+   function getInstance (vector_Param : access BasicArrayList'Class; howMuch : Integer) return BasicArrayList_Access is
+      vector : BasicArrayList_Access := BasicArrayList_Access (vector_Param);
       myRandomFactory : MyRandomFactory_Access;
       x : Integer;
       y : Integer;
@@ -49,8 +50,8 @@ package body org.allbinary.graphics.pipeline.RandomTranslation_Package is
         return graphicsPipe.getMatrix;
    end getInstance;
 
-   procedure getInstance (vector : BasicArrayList_Access; howMuch : Integer) is
-      Java_Result : constant BasicArrayList_Access := getInstance (vector, howMuch);
+   procedure getInstance (vector_Param : access BasicArrayList'Class; howMuch : Integer) is
+      Java_Result : constant BasicArrayList_Access := getInstance (vector_Param, howMuch);
       pragma Unreferenced (Java_Result);
    begin
       null;

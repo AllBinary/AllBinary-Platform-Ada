@@ -22,16 +22,17 @@ package body org.allbinary.logic.communication.ftp.configuration.FtpConfiguratio
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out FtpConfigurationMapping'Class; ftpConfigurationInterface : FtpConfigurationInterface_Access) is
+   procedure Initialize (This : in out FtpConfigurationMapping'Class; ftpConfigurationInterface_Param : access FtpConfigurationInterface'Class) is
+      ftpConfigurationInterface : FtpConfigurationInterface_Access := FtpConfigurationInterface_Access (ftpConfigurationInterface_Param);
    begin
       Initialize_Fields (This);
         This.ftpConfigurationInterface := ftpConfigurationInterface;
    end Initialize;
 
-   function Create (ftpConfigurationInterface : FtpConfigurationInterface_Access) return FtpConfigurationMapping_Access is
+   function Create (ftpConfigurationInterface_Param : access FtpConfigurationInterface'Class) return FtpConfigurationMapping_Access is
       This : constant FtpConfigurationMapping_Access := new FtpConfigurationMapping;
    begin
-      FtpConfigurationMapping_Package.Initialize (This.all, ftpConfigurationInterface);
+      FtpConfigurationMapping_Package.Initialize (This.all, ftpConfigurationInterface_Param);
       return This;
    end Create;
 

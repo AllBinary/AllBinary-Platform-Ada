@@ -36,7 +36,7 @@ package org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterface_Pa
    type ArtificialIntelligenceInterfaceFactoryInterface_Access is access all ArtificialIntelligenceInterfaceFactoryInterface'Class;
    type ArtificialIntelligenceInterfaceFactoryInterface_Access_Array is array (Natural range <>) of ArtificialIntelligenceInterfaceFactoryInterface_Access;
    type ArtificialIntelligenceInterfaceFactoryInterface_Access_Array_Access is access all ArtificialIntelligenceInterfaceFactoryInterface_Access_Array;
-   function getInstance (This : in out ArtificialIntelligenceInterfaceFactoryInterface; hashtable : ABHashtable_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return ArtificialIntelligenceInterface_Access is abstract;
+   function getInstance (This : in out ArtificialIntelligenceInterfaceFactoryInterface; hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return ArtificialIntelligenceInterface_Access is abstract;
 
 end org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterface_Package;
 

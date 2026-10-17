@@ -23,101 +23,113 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out TransformInfoHttp'Class; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access; crud : Boolean) is
+   procedure Initialize (This : in out TransformInfoHttp'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class; crud : Boolean) is
+      propertiesHashMap : HashMap_Access := HashMap_Access (propertiesHashMap_Param);
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
    begin
         TransformInfo_Package.Initialize (This);
         Initialize_Fields (This);
         This.abContext := AbContext_Package.Create (propertiesHashMap, pageContext);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (To_Unbounded_String ("Properties HashMap: ") & propertiesHashMap.toString, This'Unchecked_Access, To_Unbounded_String ("Constructor(HashMap, PageContext, boolean)"));
+            This.logUtil.putF (To_Unbounded_String ("Properties HashMap: ") & propertiesHashMap.toString, TransformInfoHttp_Access'(This'Unchecked_Access), To_Unbounded_String ("Constructor(HashMap, PageContext, boolean)"));
         end if;
         This.override (propertiesHashMap);
    end Initialize;
 
-   function Create (propertiesHashMap : HashMap_Access; pageContext : PageContext_Access; crud : Boolean) return TransformInfoHttp_Access is
+   function Create (propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class; crud : Boolean) return TransformInfoHttp_Access is
       This : constant TransformInfoHttp_Access := new TransformInfoHttp;
    begin
-      TransformInfoHttp_Package.Initialize (This.all, propertiesHashMap, pageContext, crud);
+      TransformInfoHttp_Package.Initialize (This.all, propertiesHashMap_Param, pageContext_Param, crud);
       return This;
    end Create;
 
-   procedure Initialize (This : in out TransformInfoHttp'Class; request : HttpServletRequest_Access; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) is
+   procedure Initialize (This : in out TransformInfoHttp'Class; request_Param : access HttpServletRequest'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+      request : HttpServletRequest_Access := HttpServletRequest_Access (request_Param);
+      propertiesHashMap : HashMap_Access := HashMap_Access (propertiesHashMap_Param);
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
    begin
         TransformInfo_Package.Initialize (This);
         Initialize_Fields (This);
         This.abContext := AbContext_Package.Create (propertiesHashMap, pageContext);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (To_Unbounded_String ("Properties HashMap: ") & propertiesHashMap.toString, This'Unchecked_Access, To_Unbounded_String ("Constructor(HttpServletRequest, HashMap, PageContext)"));
+            This.logUtil.putF (To_Unbounded_String ("Properties HashMap: ") & propertiesHashMap.toString, TransformInfoHttp_Access'(This'Unchecked_Access), To_Unbounded_String ("Constructor(HttpServletRequest, HashMap, PageContext)"));
         end if;
         This.set (RequestParams_Package.Create (HttpServletRequest_Access (request)).toHashMap);
         This.override (propertiesHashMap);
    end Initialize;
 
-   function Create (request : HttpServletRequest_Access; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return TransformInfoHttp_Access is
+   function Create (request_Param : access HttpServletRequest'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return TransformInfoHttp_Access is
       This : constant TransformInfoHttp_Access := new TransformInfoHttp;
    begin
-      TransformInfoHttp_Package.Initialize (This.all, request, propertiesHashMap, pageContext);
+      TransformInfoHttp_Package.Initialize (This.all, request_Param, propertiesHashMap_Param, pageContext_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out TransformInfoHttp'Class; databaseHashMap : HashMap_Access; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) is
+   procedure Initialize (This : in out TransformInfoHttp'Class; databaseHashMap_Param : access HashMap'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+      databaseHashMap : HashMap_Access := HashMap_Access (databaseHashMap_Param);
+      propertiesHashMap : HashMap_Access := HashMap_Access (propertiesHashMap_Param);
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
    begin
         TransformInfo_Package.Initialize (This);
         Initialize_Fields (This);
         This.abContext := AbContext_Package.Create (propertiesHashMap, pageContext);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (To_Unbounded_String ("Properties HashMap: ") & propertiesHashMap.toString, This'Unchecked_Access, To_Unbounded_String ("Constructor(HashMap, HashMap, PageContext)"));
+            This.logUtil.putF (To_Unbounded_String ("Properties HashMap: ") & propertiesHashMap.toString, TransformInfoHttp_Access'(This'Unchecked_Access), To_Unbounded_String ("Constructor(HashMap, HashMap, PageContext)"));
         end if;
         This.set (databaseHashMap);
    end Initialize;
 
-   function Create (databaseHashMap : HashMap_Access; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return TransformInfoHttp_Access is
+   function Create (databaseHashMap_Param : access HashMap'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return TransformInfoHttp_Access is
       This : constant TransformInfoHttp_Access := new TransformInfoHttp;
    begin
-      TransformInfoHttp_Package.Initialize (This.all, databaseHashMap, propertiesHashMap, pageContext);
+      TransformInfoHttp_Package.Initialize (This.all, databaseHashMap_Param, propertiesHashMap_Param, pageContext_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out TransformInfoHttp'Class; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) is
+   procedure Initialize (This : in out TransformInfoHttp'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+      propertiesHashMap : HashMap_Access := HashMap_Access (propertiesHashMap_Param);
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
    begin
         TransformInfo_Package.Initialize (This);
         Initialize_Fields (This);
         This.abContext := AbContext_Package.Create (propertiesHashMap, pageContext);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (To_Unbounded_String ("Properties HashMap: ") & propertiesHashMap.toString, This'Unchecked_Access, To_Unbounded_String ("Constructor(HashMap, PageContext)"));
+            This.logUtil.putF (To_Unbounded_String ("Properties HashMap: ") & propertiesHashMap.toString, TransformInfoHttp_Access'(This'Unchecked_Access), To_Unbounded_String ("Constructor(HashMap, PageContext)"));
         end if;
         This.set (propertiesHashMap);
    end Initialize;
 
-   function Create (propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return TransformInfoHttp_Access is
+   function Create (propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return TransformInfoHttp_Access is
       This : constant TransformInfoHttp_Access := new TransformInfoHttp;
    begin
-      TransformInfoHttp_Package.Initialize (This.all, propertiesHashMap, pageContext);
+      TransformInfoHttp_Package.Initialize (This.all, propertiesHashMap_Param, pageContext_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out TransformInfoHttp'Class; parentViewOfThisTransformInfoInterface : TransformInfoHttp_Access) is
+   procedure Initialize (This : in out TransformInfoHttp'Class; parentViewOfThisTransformInfoInterface_Param : access TransformInfoHttp'Class) is
+      parentViewOfThisTransformInfoInterface : TransformInfoHttp_Access := TransformInfoHttp_Access (parentViewOfThisTransformInfoInterface_Param);
    begin
         TransformInfo_Package.Initialize (This);
         Initialize_Fields (This);
         This.abContext := AbContext_Package.Create (parentViewOfThisTransformInfoInterface.getPropertiesHashMap, parentViewOfThisTransformInfoInterface.getPageContext);
    end Initialize;
 
-   function Create (parentViewOfThisTransformInfoInterface : TransformInfoHttp_Access) return TransformInfoHttp_Access is
+   function Create (parentViewOfThisTransformInfoInterface_Param : access TransformInfoHttp'Class) return TransformInfoHttp_Access is
       This : constant TransformInfoHttp_Access := new TransformInfoHttp;
    begin
-      TransformInfoHttp_Package.Initialize (This.all, parentViewOfThisTransformInfoInterface);
+      TransformInfoHttp_Package.Initialize (This.all, parentViewOfThisTransformInfoInterface_Param);
       return This;
    end Create;
 
    --  throws Exception
-   procedure set (This : in out TransformInfoHttp; hashMap : HashMap_Access) is
+   procedure set (This : in out TransformInfoHttp; hashMap_Param : access HashMap'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
       transformInfoData : TransformInfoData_Access;
       stringValidationUtil : StringValidationUtil_Access;
       objectConfigString : Unbounded_String;
    begin
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (To_Unbounded_String ("Properties HashMap: ") & hashMap.toString, This'Unchecked_Access, To_Unbounded_String ("set()"));
+            This.logUtil.putF (To_Unbounded_String ("Properties HashMap: ") & hashMap.toString, TransformInfoHttp_Access'(This'Unchecked_Access), To_Unbounded_String ("set()"));
         end if;
         transformInfoData := TransformInfoData_Package.getInstance;
         This.setName (Unbounded_String (hashMap.get (transformInfoData.NAME)));
@@ -129,7 +141,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package
         if stringValidationUtil.isValidRequired (objectConfigString, 10, AbSqlData_Package.MAXBLOB) then
             This.setObjectConfig (objectConfigString);
         else
-            This.setObjectConfig (TransformInfoObjectConfig_Package.Create (This'Unchecked_Access).toString);
+            This.setObjectConfig (TransformInfoObjectConfig_Package.Create (TransformInfoHttp_Access'(This'Unchecked_Access)).toString);
         end if;
         if not (stringValidationUtil.isEmpty (Unbounded_String (hashMap.get (transformInfoData.OBJECTCONFIGFILENAME)))) then
             This.setObjectConfigFile (Unbounded_String (hashMap.get (transformInfoData.OBJECTCONFIGFILENAME)));
@@ -139,7 +151,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package
         This.setDataFile (Unbounded_String (hashMap.get (transformInfoData.DATAFILENAME)));
         This.setData (Unbounded_String (hashMap.get (transformInfoData.DATA)));
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORY) then
-            This.logUtil.putF (This.log, This'Unchecked_Access, To_Unbounded_String ("set()"));
+            This.logUtil.putF (This.log, TransformInfoHttp_Access'(This'Unchecked_Access), To_Unbounded_String ("set()"));
         end if;
    end set;
 

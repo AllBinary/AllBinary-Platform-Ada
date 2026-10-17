@@ -33,7 +33,8 @@ package body org.allbinary.media.graphics.geography.map.racetrack.RaceTracksPath
    end Create;
 
 
-   procedure printPath (This : in out RaceTracksPathPrinter; list : BasicArrayList_Access) is
+   procedure printPath (This : in out RaceTracksPathPrinter; list_Param : access BasicArrayList'Class) is
+      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
       size : Integer;
       anyType : Java_Object_Access;
       index : Integer;
@@ -41,11 +42,12 @@ package body org.allbinary.media.graphics.geography.map.racetrack.RaceTracksPath
         size := list.size;
         for index in 0 .. (size) - 1 loop
             anyType := list.get (index);
-            PreLogUtil_Package.put (StringMaker_Package.Create.append (To_Unbounded_String ("pathList.add(cellPositionFactory.getInstance")).append (anyType.toString).append (To_Unbounded_String (");")).toString, This'Unchecked_Access, To_Unbounded_String ("printPath"));
+            PreLogUtil_Package.put (StringMaker_Package.Create.append (To_Unbounded_String ("pathList.add(cellPositionFactory.getInstance")).append (anyType.toString).append (To_Unbounded_String (");")).toString, RaceTracksPathPrinter_Access'(This'Unchecked_Access), To_Unbounded_String ("printPath"));
         end loop;
    end printPath;
 
-   procedure printPaths (This : in out RaceTracksPathPrinter; list : BasicArrayList_Access) is
+   procedure printPaths (This : in out RaceTracksPathPrinter; list_Param : access BasicArrayList'Class) is
+      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
       size : Integer;
       index : Integer;
    begin

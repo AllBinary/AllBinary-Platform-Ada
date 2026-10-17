@@ -46,12 +46,12 @@ package org.allbinary.game.layer.special.CollidableDestroyableDamageableBehavior
 
    procedure Initialize (This : in out CollidableDestroyableDamageableBehavior'Class; collidable : Boolean);
    function Create (collidable : Boolean) return CollidableDestroyableDamageableBehavior_Access;
-   function isCollision (This : in out CollidableDestroyableDamageableBehavior; ownerLayer : CollidableCompositeLayer_Access; collisionLayer : CollidableCompositeLayer_Access) return Boolean;
-   procedure isCollision (This : in out CollidableDestroyableDamageableBehavior; ownerLayer : CollidableCompositeLayer_Access; collisionLayer : CollidableCompositeLayer_Access);
-   procedure collide (This : in out CollidableDestroyableDamageableBehavior; ownerLayer : CollidableCompositeLayer_Access; collidableInterfaceCompositeInterface : CollidableCompositeLayer_Access);
-   function isCollisionInterface (This : in out CollidableDestroyableDamageableBehavior; ownerLayer : CollidableCompositeLayer_Access; collidableInterfaceCompositeInterface : CollidableInterfaceCompositeInterface_Access) return Boolean;
-   procedure isCollisionInterface (This : in out CollidableDestroyableDamageableBehavior; ownerLayer : CollidableCompositeLayer_Access; collidableInterfaceCompositeInterface : CollidableInterfaceCompositeInterface_Access);
-   procedure collideInterface (This : in out CollidableDestroyableDamageableBehavior; ownerLayer : CollidableCompositeLayer_Access; collidableInterfaceCompositeInterface : CollidableInterfaceCompositeInterface_Access);
+   function isCollision (This : in out CollidableDestroyableDamageableBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collisionLayer_Param : access CollidableCompositeLayer'Class) return Boolean;
+   procedure isCollision (This : in out CollidableDestroyableDamageableBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collisionLayer_Param : access CollidableCompositeLayer'Class);
+   procedure collide (This : in out CollidableDestroyableDamageableBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableCompositeLayer'Class);
+   function isCollisionInterface (This : in out CollidableDestroyableDamageableBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableInterfaceCompositeInterface'Class) return Boolean;
+   procedure isCollisionInterface (This : in out CollidableDestroyableDamageableBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableInterfaceCompositeInterface'Class);
+   procedure collideInterface (This : in out CollidableDestroyableDamageableBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableInterfaceCompositeInterface'Class);
 
 end org.allbinary.game.layer.special.CollidableDestroyableDamageableBehavior_Package;
 

@@ -31,14 +31,14 @@ package body org.allbinary.logic.string_Id.StringMaker_Package is
         This.ensureCapacity ((This.currentLength) + (stringLength));
         Java_Get_Chars (string_Id, 0, stringLength, This.charArray, This.currentLength);
         This.currentLength := (This.currentLength) + (stringLength);
-        return This'Unchecked_Access;
+        return StringMaker_Access'(This'Unchecked_Access);
    end append;
 
    function appendchar (This : in out StringMaker; c : Character) return StringMaker_Access is
    begin
         This.ensureCapacity ((This.currentLength) + (1));
         This.charArray (Java_Post_Increment (This.currentLength)) := c;
-        return This'Unchecked_Access;
+        return StringMaker_Access'(This'Unchecked_Access);
    end appendchar;
 
    function appendCharArray (This : in out StringMaker; charArray : Character_Array_Access; start : Integer; end_Id : Integer) return StringMaker_Access is
@@ -48,37 +48,37 @@ package body org.allbinary.logic.string_Id.StringMaker_Package is
         for index in start .. (end_Id) - 1 loop
             This.charArray (Java_Post_Increment (This.currentLength)) := charArray (index);
         end loop;
-        return This'Unchecked_Access;
+        return StringMaker_Access'(This'Unchecked_Access);
    end appendCharArray;
 
    function appendbyte (This : in out StringMaker; b : Short_Short_Integer) return StringMaker_Access is
    begin
         This.append (To_Unbounded_String (Java_Image (b)));
-        return This'Unchecked_Access;
+        return StringMaker_Access'(This'Unchecked_Access);
    end appendbyte;
 
    function appendshort (This : in out StringMaker; b : Short_Integer) return StringMaker_Access is
    begin
         This.append (To_Unbounded_String (Java_Image (b)));
-        return This'Unchecked_Access;
+        return StringMaker_Access'(This'Unchecked_Access);
    end appendshort;
 
    function appendint (This : in out StringMaker; i : Integer) return StringMaker_Access is
    begin
         This.append (To_Unbounded_String (Java_Image (i)));
-        return This'Unchecked_Access;
+        return StringMaker_Access'(This'Unchecked_Access);
    end appendint;
 
    function appendlong (This : in out StringMaker; l : Long_Long_Integer) return StringMaker_Access is
    begin
         This.append (To_Unbounded_String (Java_Image (l)));
-        return This'Unchecked_Access;
+        return StringMaker_Access'(This'Unchecked_Access);
    end appendlong;
 
    function appendfloat (This : in out StringMaker; f : Float) return StringMaker_Access is
    begin
         This.append (To_Unbounded_String (Java_Image (f)));
-        return This'Unchecked_Access;
+        return StringMaker_Access'(This'Unchecked_Access);
    end appendfloat;
 
    function appendboolean (This : in out StringMaker; bool : Boolean) return StringMaker_Access is
@@ -97,7 +97,7 @@ package body org.allbinary.logic.string_Id.StringMaker_Package is
             This.charArray (Java_Post_Increment (This.currentLength)) := 's';
             This.charArray (Java_Post_Increment (This.currentLength)) := 'e';
         end if;
-        return This'Unchecked_Access;
+        return StringMaker_Access'(This'Unchecked_Access);
    end appendboolean;
 
    procedure ensureCapacity (This : in out StringMaker; minSize : Integer) is
@@ -127,7 +127,7 @@ package body org.allbinary.logic.string_Id.StringMaker_Package is
    function delete (This : in out StringMaker; start : Integer; end_Id : Integer) return StringMaker_Access is
    begin
         This.currentLength := (This.currentLength) - (((end_Id) - (start)));
-        return This'Unchecked_Access;
+        return StringMaker_Access'(This'Unchecked_Access);
    end delete;
 
    function length (This : in out StringMaker) return Integer is

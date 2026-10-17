@@ -43,10 +43,10 @@ package org.allbinary.business.category.store.theme.StoreThemeCategoriesView_Pac
       categoryInterface : StoreThemeCategoryInterface_Access;
    end record;
 
-   procedure Initialize (This : in out StoreThemeCategoriesView'Class; categoryInterface : StoreThemeCategoryInterface_Access);
-   function Create (categoryInterface : StoreThemeCategoryInterface_Access) return StoreThemeCategoriesView_Access;
-   function toXmlNode (This : in out StoreThemeCategoriesView; document : Document_Access) return Node_Access;
-   procedure toXmlNode (This : in out StoreThemeCategoriesView; document : Document_Access);
+   procedure Initialize (This : in out StoreThemeCategoriesView'Class; categoryInterface_Param : access StoreThemeCategoryInterface'Class);
+   function Create (categoryInterface_Param : access StoreThemeCategoryInterface'Class) return StoreThemeCategoriesView_Access;
+   function toXmlNode (This : in out StoreThemeCategoriesView; document_Param : access Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out StoreThemeCategoriesView; document_Param : access Document'Class);
 
 end org.allbinary.business.category.store.theme.StoreThemeCategoriesView_Package;
 

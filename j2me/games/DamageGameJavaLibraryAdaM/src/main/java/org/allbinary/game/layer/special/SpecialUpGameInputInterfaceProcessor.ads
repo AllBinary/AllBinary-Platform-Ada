@@ -37,9 +37,9 @@ package org.allbinary.game.layer.special.SpecialUpGameInputInterfaceProcessor_Pa
 
    type SpecialUpGameInputInterfaceProcessor is new SpecialGameInputInterfaceProcessor with null record;
 
-   procedure Initialize (This : in out SpecialUpGameInputInterfaceProcessor'Class; collidableDestroyableDamageableLayer : SpecialGameInputInterface_Access);
-   function Create (collidableDestroyableDamageableLayer : SpecialGameInputInterface_Access) return SpecialUpGameInputInterfaceProcessor_Access;
-   procedure processEvent (This : in out SpecialUpGameInputInterfaceProcessor; allbinaryLayerManager : AllBinaryLayerManager_Access; gameKeyEvent : GameKeyEvent_Access);
+   procedure Initialize (This : in out SpecialUpGameInputInterfaceProcessor'Class; collidableDestroyableDamageableLayer_Param : access SpecialGameInputInterface'Class);
+   function Create (collidableDestroyableDamageableLayer_Param : access SpecialGameInputInterface'Class) return SpecialUpGameInputInterfaceProcessor_Access;
+   procedure processEvent (This : in out SpecialUpGameInputInterfaceProcessor; allbinaryLayerManager_Param : access AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent'Class);
 
 end org.allbinary.game.layer.special.SpecialUpGameInputInterfaceProcessor_Package;
 

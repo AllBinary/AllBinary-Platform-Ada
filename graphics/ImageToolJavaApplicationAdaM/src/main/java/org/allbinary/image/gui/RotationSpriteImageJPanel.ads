@@ -71,14 +71,14 @@ package org.allbinary.image.gui.RotationSpriteImageJPanel_Package is
       writeOverOriginalJCheckBox : JCheckBox_Access;
    end record;
 
-   procedure Initialize (This : in out RotationSpriteImageJPanel'Class; imageProcessorInput : ImageProcessorInput_Access);
-   function Create (imageProcessorInput : ImageProcessorInput_Access) return RotationSpriteImageJPanel_Access;
+   procedure Initialize (This : in out RotationSpriteImageJPanel'Class; imageProcessorInput_Param : access ImageProcessorInput'Class);
+   function Create (imageProcessorInput_Param : access ImageProcessorInput'Class) return RotationSpriteImageJPanel_Access;
    procedure process (This : in out RotationSpriteImageJPanel);
    procedure initComponents (This : in out RotationSpriteImageJPanel);
-   procedure generateJButtonActionPerformed (This : in out RotationSpriteImageJPanel; evt : ActionEvent_Access);
-   procedure totalAngleJComboBoxActionPerformed (This : in out RotationSpriteImageJPanel; evt : ActionEvent_Access);
+   procedure generateJButtonActionPerformed (This : in out RotationSpriteImageJPanel; evt_Param : access ActionEvent'Class);
+   procedure totalAngleJComboBoxActionPerformed (This : in out RotationSpriteImageJPanel; evt_Param : access ActionEvent'Class);
    function getImageProcessorInput (This : in out RotationSpriteImageJPanel) return ImageProcessorInput_Access;
-   procedure setImageProcessorInput (This : in out RotationSpriteImageJPanel; imageProcessorInput : ImageProcessorInput_Access);
+   procedure setImageProcessorInput (This : in out RotationSpriteImageJPanel; imageProcessorInput_Param : access ImageProcessorInput'Class);
 
 end org.allbinary.image.gui.RotationSpriteImageJPanel_Package;
 

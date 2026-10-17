@@ -57,16 +57,16 @@ package org.allbinary.media.image.ImageSwtRotationUtil_Package is
    procedure Initialize (This : in out ImageSwtRotationUtil'Class);
    function Create return ImageSwtRotationUtil_Access;
    function getInstance return ImageSwtRotationUtil_Access;
-   function getRotatedImage (This : in out ImageSwtRotationUtil; bufferedImage : Image_Access; totalAngle : Integer) return Image_Access;
-   procedure getRotatedImage (This : in out ImageSwtRotationUtil; bufferedImage : Image_Access; totalAngle : Integer);
-   function getRotatedImage2 (This : in out ImageSwtRotationUtil; bufferedImage : Image_Access; newBufferedImage : Image_Access; gc : GC_Access; angle : Float) return Image_Access;
-   procedure getRotatedImage2 (This : in out ImageSwtRotationUtil; bufferedImage : Image_Access; newBufferedImage : Image_Access; gc : GC_Access; angle : Float);
-   function rotateImage (This : in out ImageSwtRotationUtil; originalSwtImage : Image_Access; newSwtImage : Image_Access; gc : GC_Access; totalAngle : Integer) return Image_Access;
-   procedure rotateImage (This : in out ImageSwtRotationUtil; originalSwtImage : Image_Access; newSwtImage : Image_Access; gc : GC_Access; totalAngle : Integer);
-   function getRotatedImageSWT (This : in out ImageSwtRotationUtil; bufferedImage : Image_Access; newSwtImage : Image_Access; gc : GC_Access; totalAngle : Integer) return Image_Access;
-   procedure getRotatedImageSWT (This : in out ImageSwtRotationUtil; bufferedImage : Image_Access; newSwtImage : Image_Access; gc : GC_Access; totalAngle : Integer);
-   function getRotatedImages (This : in out ImageSwtRotationUtil; bufferedImage : Image_Access; numberOfFrames : Integer; totalAngle : Integer) return Image_Access_Array_Access;
-   procedure getRotatedImages (This : in out ImageSwtRotationUtil; bufferedImage : Image_Access; numberOfFrames : Integer; totalAngle : Integer);
+   function getRotatedImage (This : in out ImageSwtRotationUtil; bufferedImage_Param : access Image'Class; totalAngle : Integer) return Image_Access;
+   procedure getRotatedImage (This : in out ImageSwtRotationUtil; bufferedImage_Param : access Image'Class; totalAngle : Integer);
+   function getRotatedImage2 (This : in out ImageSwtRotationUtil; bufferedImage_Param : access Image'Class; newBufferedImage_Param : access Image'Class; gc_Param : access GC'Class; angle : Float) return Image_Access;
+   procedure getRotatedImage2 (This : in out ImageSwtRotationUtil; bufferedImage_Param : access Image'Class; newBufferedImage_Param : access Image'Class; gc_Param : access GC'Class; angle : Float);
+   function rotateImage (This : in out ImageSwtRotationUtil; originalSwtImage_Param : access Image'Class; newSwtImage_Param : access Image'Class; gc_Param : access GC'Class; totalAngle : Integer) return Image_Access;
+   procedure rotateImage (This : in out ImageSwtRotationUtil; originalSwtImage_Param : access Image'Class; newSwtImage_Param : access Image'Class; gc_Param : access GC'Class; totalAngle : Integer);
+   function getRotatedImageSWT (This : in out ImageSwtRotationUtil; bufferedImage_Param : access Image'Class; newSwtImage_Param : access Image'Class; gc_Param : access GC'Class; totalAngle : Integer) return Image_Access;
+   procedure getRotatedImageSWT (This : in out ImageSwtRotationUtil; bufferedImage_Param : access Image'Class; newSwtImage_Param : access Image'Class; gc_Param : access GC'Class; totalAngle : Integer);
+   function getRotatedImages (This : in out ImageSwtRotationUtil; bufferedImage_Param : access Image'Class; numberOfFrames : Integer; totalAngle : Integer) return Image_Access_Array_Access;
+   procedure getRotatedImages (This : in out ImageSwtRotationUtil; bufferedImage_Param : access Image'Class; numberOfFrames : Integer; totalAngle : Integer);
    function createSpriteImage (This : in out ImageSwtRotationUtil; bufferedImageArray : Image_Access_Array_Access) return Image_Access;
    procedure createSpriteImage (This : in out ImageSwtRotationUtil; bufferedImageArray : Image_Access_Array_Access);
 

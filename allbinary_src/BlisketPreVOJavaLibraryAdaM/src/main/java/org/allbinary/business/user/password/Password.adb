@@ -54,11 +54,11 @@ package body org.allbinary.business.user.password.Password_Package is
         begin
             valid := True;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VALIDATION) then
-                This.logUtil.putF (To_Unbounded_String ("Password: ") & This.password, This'Unchecked_Access, commonStrings.IS_VALID);
+                This.logUtil.putF (To_Unbounded_String ("Password: ") & This.password, Password_Access'(This'Unchecked_Access), commonStrings.IS_VALID);
             end if;
             if not (StringValidationUtil_Package.getInstance.isValidRequired (This.password, 6, UserData_Package.MAXLEN)) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VALIDATION) then
-                    This.logUtil.putF (To_Unbounded_String ("Password is invalid"), This'Unchecked_Access, commonStrings.IS_VALID);
+                    This.logUtil.putF (To_Unbounded_String ("Password is invalid"), Password_Access'(This'Unchecked_Access), commonStrings.IS_VALID);
                 end if;
                 valid := False;
             end if;

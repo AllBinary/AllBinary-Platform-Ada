@@ -47,8 +47,8 @@ package org.allbinary.thread.ConcurrentImageLoadingProcessor_Package is
       runnable : ABRunnable_Access;
    end record;
 
-   procedure Initialize (This : in out ConcurrentImageLoadingProcessor'Class; imageCache : ImageCache_Access);
-   function Create (imageCache : ImageCache_Access) return ConcurrentImageLoadingProcessor_Access;
+   procedure Initialize (This : in out ConcurrentImageLoadingProcessor'Class; imageCache_Param : access ImageCache'Class);
+   function Create (imageCache_Param : access ImageCache'Class) return ConcurrentImageLoadingProcessor_Access;
    procedure runTask (This : in out ConcurrentImageLoadingProcessor);
 
 end org.allbinary.thread.ConcurrentImageLoadingProcessor_Package;
@@ -87,8 +87,8 @@ package org.allbinary.thread.ImageCacheRunnable_Package is
       imageCache : ImageCache_Access;
    end record;
 
-   procedure Initialize (This : in out ImageCacheRunnable'Class; imageCache : ImageCache_Access);
-   function Create (imageCache : ImageCache_Access) return ImageCacheRunnable_Access;
+   procedure Initialize (This : in out ImageCacheRunnable'Class; imageCache_Param : access ImageCache'Class);
+   function Create (imageCache_Param : access ImageCache'Class) return ImageCacheRunnable_Access;
    procedure run (This : in out ImageCacheRunnable);
 
 end org.allbinary.thread.ImageCacheRunnable_Package;

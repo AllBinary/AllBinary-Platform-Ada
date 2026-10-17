@@ -46,9 +46,9 @@ package org.allbinary.game.part.weapon.BasicWeaponPartCircularPool_Package is
 
    procedure Initialize (This : in out BasicWeaponPartCircularPool'Class);
    function Create return BasicWeaponPartCircularPool_Access;
-   procedure init (This : in out BasicWeaponPartCircularPool; basicWeaponPartFactoryInterface : BasicWeaponPartFactoryInterface_Access);
-   function getInstance (This : in out BasicWeaponPartCircularPool; sourceLayerInterface : AllBinaryLayer_Access; weaponProperties : WeaponProperties_Access; scoreableInterface : ScoreableInterface_Access; relativeRelationship : RelativeRelationship_Access) return BasicWeaponPart_Access;
-   procedure getInstance (This : in out BasicWeaponPartCircularPool; sourceLayerInterface : AllBinaryLayer_Access; weaponProperties : WeaponProperties_Access; scoreableInterface : ScoreableInterface_Access; relativeRelationship : RelativeRelationship_Access);
+   procedure init (This : in out BasicWeaponPartCircularPool; basicWeaponPartFactoryInterface_Param : access BasicWeaponPartFactoryInterface'Class);
+   function getInstance (This : in out BasicWeaponPartCircularPool; sourceLayerInterface_Param : access AllBinaryLayer'Class; weaponProperties_Param : access WeaponProperties'Class; scoreableInterface_Param : access ScoreableInterface'Class; relativeRelationship_Param : access RelativeRelationship'Class) return BasicWeaponPart_Access;
+   procedure getInstance (This : in out BasicWeaponPartCircularPool; sourceLayerInterface_Param : access AllBinaryLayer'Class; weaponProperties_Param : access WeaponProperties'Class; scoreableInterface_Param : access ScoreableInterface'Class; relativeRelationship_Param : access RelativeRelationship'Class);
 
 end org.allbinary.game.part.weapon.BasicWeaponPartCircularPool_Package;
 

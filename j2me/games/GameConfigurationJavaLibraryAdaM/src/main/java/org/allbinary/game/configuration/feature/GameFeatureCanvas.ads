@@ -35,7 +35,7 @@ package org.allbinary.game.configuration.feature.GameFeatureCanvas_Package is
 
    procedure Initialize (This : in out GameFeatureCanvas'Class);
    function Create return GameFeatureCanvas_Access;
-   procedure paint (This : in out GameFeatureCanvas; graphics : Graphics_Access);
+   procedure paint (This : in out GameFeatureCanvas; graphics_Param : access Graphics'Class);
 
 end org.allbinary.game.configuration.feature.GameFeatureCanvas_Package;
 

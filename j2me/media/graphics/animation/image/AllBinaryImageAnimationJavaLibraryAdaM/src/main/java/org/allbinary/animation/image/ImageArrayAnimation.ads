@@ -49,8 +49,8 @@ package org.allbinary.animation.image.ImageArrayAnimation_Package is
       anchor : Integer;
    end record;
 
-   procedure Initialize (This : in out ImageArrayAnimation'Class; imageArray : Image_Access_Array_Access; animationBehavior : AnimationBehavior_Access);
-   function Create (imageArray : Image_Access_Array_Access; animationBehavior : AnimationBehavior_Access) return ImageArrayAnimation_Access;
+   procedure Initialize (This : in out ImageArrayAnimation'Class; imageArray : Image_Access_Array_Access; animationBehavior_Param : access AnimationBehavior'Class);
+   function Create (imageArray : Image_Access_Array_Access; animationBehavior_Param : access AnimationBehavior'Class) return ImageArrayAnimation_Access;
    function getAnimationSize (This : in out ImageArrayAnimation) return Integer;
    procedure nextFrame (This : in out ImageArrayAnimation);
    procedure previousFrame (This : in out ImageArrayAnimation);
@@ -63,7 +63,7 @@ package org.allbinary.animation.image.ImageArrayAnimation_Package is
    procedure getImage (This : in out ImageArrayAnimation; index : Integer);
    function getImageArray (This : in out ImageArrayAnimation) return Image_Access_Array_Access;
    procedure setImageArray (This : in out ImageArrayAnimation; imageArray : Image_Access_Array_Access);
-   procedure paintXY (This : in out ImageArrayAnimation; graphics : Graphics_Access; x : Integer; y : Integer);
+   procedure paintXY (This : in out ImageArrayAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
 
 end org.allbinary.animation.image.ImageArrayAnimation_Package;
 

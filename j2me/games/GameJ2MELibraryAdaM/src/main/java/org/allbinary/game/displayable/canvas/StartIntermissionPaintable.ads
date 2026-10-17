@@ -78,12 +78,12 @@ package org.allbinary.game.displayable.canvas.StartIntermissionPaintable_Package
       EMPTY_STRING : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out StartIntermissionPaintable'Class; gameCanvas : AllBinaryGameCanvas_Access; stringArray : Unbounded_String_Array_Access; basicColor : BasicColor_Access; font : Font_Access);
-   function Create (gameCanvas : AllBinaryGameCanvas_Access; stringArray : Unbounded_String_Array_Access; basicColor : BasicColor_Access; font : Font_Access) return StartIntermissionPaintable_Access;
-   procedure updateMeasurement (This : in out StartIntermissionPaintable; graphics : Graphics_Access);
-   procedure paint (This : in out StartIntermissionPaintable; graphics : Graphics_Access);
+   procedure Initialize (This : in out StartIntermissionPaintable'Class; gameCanvas_Param : access AllBinaryGameCanvas'Class; stringArray : Unbounded_String_Array_Access; basicColor_Param : access BasicColor'Class; font_Param : access Font'Class);
+   function Create (gameCanvas_Param : access AllBinaryGameCanvas'Class; stringArray : Unbounded_String_Array_Access; basicColor_Param : access BasicColor'Class; font_Param : access Font'Class) return StartIntermissionPaintable_Access;
+   procedure updateMeasurement (This : in out StartIntermissionPaintable; graphics_Param : access Graphics'Class);
+   procedure paint (This : in out StartIntermissionPaintable; graphics_Param : access Graphics'Class);
    procedure update (This : in out StartIntermissionPaintable);
-   procedure setBasicColorP (This : in out StartIntermissionPaintable; basicColor : BasicColor_Access);
+   procedure setBasicColorP (This : in out StartIntermissionPaintable; basicColor_Param : access BasicColor'Class);
    function getBasicColorP (This : in out StartIntermissionPaintable) return BasicColor_Access;
 
 end org.allbinary.game.displayable.canvas.StartIntermissionPaintable_Package;

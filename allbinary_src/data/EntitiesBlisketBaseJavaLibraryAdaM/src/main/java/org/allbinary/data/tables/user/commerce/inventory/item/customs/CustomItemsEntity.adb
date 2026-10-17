@@ -38,12 +38,13 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.customs.Cust
       return This;
    end Create;
 
-   procedure insert (This : in out CustomItemsEntity; values : BasicArrayList_Access) is
+   procedure insert (This : in out CustomItemsEntity; values_Param : access BasicArrayList'Class) is
+      values : BasicArrayList_Access := BasicArrayList_Access (values_Param);
    begin
         begin
             AbSqlBean (This).insert (values);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.putF (This.commonStrings.SUCCESS, This'Unchecked_Access, INSERT);
+                This.logUtil.putF (This.commonStrings.SUCCESS, CustomItemsEntity_Access'(This'Unchecked_Access), INSERT);
             end if;
         exception
             when Java_Occurrence : others =>
@@ -51,7 +52,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.customs.Cust
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, INSERT, e);
+                This.logUtil.put (This.commonStrings.FAILURE, CustomItemsEntity_Access'(This'Unchecked_Access), INSERT, e);
             end if;
                 end;
         end;
@@ -62,7 +63,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.customs.Cust
         begin
             AbSqlBean (This).deleteWhere (This.basicItemData.ID, value);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.putF (This.commonStrings.SUCCESS, This'Unchecked_Access, This.commonStrings.delete);
+                This.logUtil.putF (This.commonStrings.SUCCESS, CustomItemsEntity_Access'(This'Unchecked_Access), This.commonStrings.delete);
             end if;
         exception
             when Java_Occurrence : others =>
@@ -70,7 +71,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.customs.Cust
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, This.commonStrings.delete, e);
+                This.logUtil.put (This.commonStrings.FAILURE, CustomItemsEntity_Access'(This'Unchecked_Access), This.commonStrings.delete, e);
             end if;
                 end;
         end;
@@ -89,7 +90,8 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.customs.Cust
         return AbSqlBean (This).createTable (This.createTableStatement);
    end createTable;
 
-   procedure update (This : in out CustomItemsEntity; updatedValues : HashMap_Access) is
+   procedure update (This : in out CustomItemsEntity; updatedValues_Param : access HashMap'Class) is
+      updatedValues : HashMap_Access := HashMap_Access (updatedValues_Param);
    begin
         AbSqlBean (This).updateWhere (This.basicItemData.ID, Unbounded_String (updatedValues.get (This.basicItemData.ID)), updatedValues);
    end update;

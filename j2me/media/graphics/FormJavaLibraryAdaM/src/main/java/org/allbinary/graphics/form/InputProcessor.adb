@@ -22,17 +22,18 @@ package body org.allbinary.graphics.form.InputProcessor_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out InputProcessor'Class; playerGameInputCompositeInterface : PlayerGameInputCompositeInterface_Access) is
+   procedure Initialize (This : in out InputProcessor'Class; playerGameInputCompositeInterface_Param : access PlayerGameInputCompositeInterface'Class) is
+      playerGameInputCompositeInterface : PlayerGameInputCompositeInterface_Access := PlayerGameInputCompositeInterface_Access (playerGameInputCompositeInterface_Param);
    begin
       Processor_Package.Initialize (This);
       Initialize_Fields (This);
         This.playerGameInputCompositeInterface := playerGameInputCompositeInterface;
    end Initialize;
 
-   function Create (playerGameInputCompositeInterface : PlayerGameInputCompositeInterface_Access) return InputProcessor_Access is
+   function Create (playerGameInputCompositeInterface_Param : access PlayerGameInputCompositeInterface'Class) return InputProcessor_Access is
       This : constant InputProcessor_Access := new InputProcessor;
    begin
-      InputProcessor_Package.Initialize (This.all, playerGameInputCompositeInterface);
+      InputProcessor_Package.Initialize (This.all, playerGameInputCompositeInterface_Param);
       return This;
    end Create;
 

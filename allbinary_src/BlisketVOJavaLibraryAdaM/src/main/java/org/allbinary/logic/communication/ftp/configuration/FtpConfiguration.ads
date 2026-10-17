@@ -41,8 +41,8 @@ package org.allbinary.logic.communication.ftp.configuration.FtpConfiguration_Pac
 
    procedure Initialize (This : in out FtpConfiguration'Class);
    function Create return FtpConfiguration_Access;
-   procedure Initialize (This : in out FtpConfiguration'Class; hashMap : HashMap_Access);
-   function Create (hashMap : HashMap_Access) return FtpConfiguration_Access;
+   procedure Initialize (This : in out FtpConfiguration'Class; hashMap_Param : access HashMap'Class);
+   function Create (hashMap_Param : access HashMap'Class) return FtpConfiguration_Access;
    function getServer (This : in out FtpConfiguration) return Unbounded_String;
    function getPath (This : in out FtpConfiguration) return Unbounded_String;
    function getUserName (This : in out FtpConfiguration) return Unbounded_String;

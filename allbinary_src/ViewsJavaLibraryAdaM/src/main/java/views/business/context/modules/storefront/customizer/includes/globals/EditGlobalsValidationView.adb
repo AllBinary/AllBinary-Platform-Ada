@@ -22,16 +22,17 @@ package body views.business.context.modules.storefront.customizer.includes.globa
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out EditGlobalsValidationView'Class; transformInfoInterface : TransformInfoInterface_Access) is
+   procedure Initialize (This : in out EditGlobalsValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         GlobalsView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return EditGlobalsValidationView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return EditGlobalsValidationView_Access is
       This : constant EditGlobalsValidationView_Access := new EditGlobalsValidationView;
    begin
-      EditGlobalsValidationView_Package.Initialize (This.all, transformInfoInterface);
+      EditGlobalsValidationView_Package.Initialize (This.all, transformInfoInterface_Param);
       return This;
    end Create;
 
@@ -47,7 +48,7 @@ package body views.business.context.modules.storefront.customizer.includes.globa
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to validate"), This'Unchecked_Access, This.commonStrings.IS_VALID, e);
+                This.logUtil.put (To_Unbounded_String ("Failed to validate"), EditGlobalsValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
             end if;
             return False;
                 end;
@@ -66,7 +67,7 @@ package body views.business.context.modules.storefront.customizer.includes.globa
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), This'Unchecked_Access, To_Unbounded_String ("validationInfo()"), e);
+                This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), EditGlobalsValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
             end if;
             return To_Unbounded_String ("Error Getting Validation Info");
                 end;
@@ -78,13 +79,14 @@ package body views.business.context.modules.storefront.customizer.includes.globa
         return null;
    end toValidationInfoDoc;
 
-   function toValidationInfoNode (This : in out EditGlobalsValidationView; document : Document_Access) return Node_Access is
+   function toValidationInfoNode (This : in out EditGlobalsValidationView; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
    begin
         return null;
    end toValidationInfoNode;
 
-   procedure toValidationInfoNode (This : in out EditGlobalsValidationView; document : Document_Access) is
-      Java_Result : constant Node_Access := EditGlobalsValidationView'Class (This).toValidationInfoNode (document);
+   procedure toValidationInfoNode (This : in out EditGlobalsValidationView; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := EditGlobalsValidationView'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

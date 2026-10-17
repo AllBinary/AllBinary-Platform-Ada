@@ -36,7 +36,10 @@ package body org.allbinary.game.layer.weapon.WeaponLayerCircularPool_Package is
    end Create;
 
    --  throws Exception
-   function getInstanceWeaponLayer (This : in out WeaponLayerCircularPool; sourceLayerInterface : AllBinaryLayer_Access; x : Integer; y : Integer; z : Integer; angle : Integer; otherAngle : Integer; weaponProperties : WeaponProperties_Access; scoreable : ScoreableInterface_Access) return WeaponLayer_Access is
+   function getInstanceWeaponLayer (This : in out WeaponLayerCircularPool; sourceLayerInterface_Param : access AllBinaryLayer'Class; x : Integer; y : Integer; z : Integer; angle : Integer; otherAngle : Integer; weaponProperties_Param : access WeaponProperties'Class; scoreable_Param : access ScoreableInterface'Class) return WeaponLayer_Access is
+      sourceLayerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (sourceLayerInterface_Param);
+      weaponProperties : WeaponProperties_Access := WeaponProperties_Access (weaponProperties_Param);
+      scoreable : ScoreableInterface_Access := ScoreableInterface_Access (scoreable_Param);
       weaponLayer : WeaponLayer_Access;
    begin
         weaponLayer := WeaponLayer_Access (AllBinaryLayerCircularPool (This).getNextInstance);
@@ -45,8 +48,8 @@ package body org.allbinary.game.layer.weapon.WeaponLayerCircularPool_Package is
         return weaponLayer;
    end getInstanceWeaponLayer;
 
-   procedure getInstanceWeaponLayer (This : in out WeaponLayerCircularPool; sourceLayerInterface : AllBinaryLayer_Access; x : Integer; y : Integer; z : Integer; angle : Integer; otherAngle : Integer; weaponProperties : WeaponProperties_Access; scoreable : ScoreableInterface_Access) is
-      Java_Result : constant WeaponLayer_Access := WeaponLayerCircularPool'Class (This).getInstanceWeaponLayer (sourceLayerInterface, x, y, z, angle, otherAngle, weaponProperties, scoreable);
+   procedure getInstanceWeaponLayer (This : in out WeaponLayerCircularPool; sourceLayerInterface_Param : access AllBinaryLayer'Class; x : Integer; y : Integer; z : Integer; angle : Integer; otherAngle : Integer; weaponProperties_Param : access WeaponProperties'Class; scoreable_Param : access ScoreableInterface'Class) is
+      Java_Result : constant WeaponLayer_Access := WeaponLayerCircularPool'Class (This).getInstanceWeaponLayer (sourceLayerInterface_Param, x, y, z, angle, otherAngle, weaponProperties_Param, scoreable_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

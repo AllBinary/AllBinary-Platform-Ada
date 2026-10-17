@@ -38,8 +38,8 @@ package org.allbinary.input.automation.configuration.InputAutomationConfiguratio
 
    procedure Initialize (This : in out InputAutomationConfigurationUtil'Class);
    function Create return InputAutomationConfigurationUtil_Access;
-   function getChangeEvent (inputAutomationModuleInterface : InputAutomationModuleFactoryInterface_Access) return InputAutomationConfigurationModuleChangeEvent_Access;
-   procedure getChangeEvent (inputAutomationModuleInterface : InputAutomationModuleFactoryInterface_Access);
+   function getChangeEvent (inputAutomationModuleInterface_Param : access InputAutomationModuleFactoryInterface'Class) return InputAutomationConfigurationModuleChangeEvent_Access;
+   procedure getChangeEvent (inputAutomationModuleInterface_Param : access InputAutomationModuleFactoryInterface'Class);
 
 end org.allbinary.input.automation.configuration.InputAutomationConfigurationUtil_Package;
 

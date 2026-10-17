@@ -43,8 +43,8 @@ package org.allbinary.graphics.opengles.renderer.AllBinaryRendererBase3_Package 
 
    procedure Initialize (This : in out AllBinaryRendererBase3'Class);
    function Create return AllBinaryRendererBase3_Access;
-   procedure update (This : in out AllBinaryRendererBase3; gl : GL10_Access);
-   procedure add (This : in out AllBinaryRendererBase3; image : Image_Access);
+   procedure update (This : in out AllBinaryRendererBase3; gl_Param : access GL10'Class);
+   procedure add (This : in out AllBinaryRendererBase3; image_Param : access Image'Class);
 
 end org.allbinary.graphics.opengles.renderer.AllBinaryRendererBase3_Package;
 

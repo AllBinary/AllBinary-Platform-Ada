@@ -39,12 +39,14 @@ package body org.allbinary.game.layer.building.BuildingPropertiesFactory_Package
         return BuildingPropertiesFactory_Package.instance;
    end getInstance;
 
-   function getEfficiencyPerLevel (This : in out BuildingPropertiesFactory; buildingLayer : BuildingLayer_Access) return Integer is
+   function getEfficiencyPerLevel (This : in out BuildingPropertiesFactory; buildingLayer_Param : access BuildingLayer'Class) return Integer is
+      buildingLayer : BuildingLayer_Access := BuildingLayer_Access (buildingLayer_Param);
    begin
         return ((10000) / (buildingLayer.getMaxLevel)) + ((10000) rem (buildingLayer.getMaxLevel));
    end getEfficiencyPerLevel;
 
-   function getDamageFloaters (This : in out BuildingPropertiesFactory; buildingLayer : BuildingLayer_Access) return DamageFloaters_Access is
+   function getDamageFloaters (This : in out BuildingPropertiesFactory; buildingLayer_Param : access BuildingLayer'Class) return DamageFloaters_Access is
+      buildingLayer : BuildingLayer_Access := BuildingLayer_Access (buildingLayer_Param);
       damageFloaters : DamageFloaters_Access;
    begin
         damageFloaters := DamageFloaters_Package.getInstance;
@@ -58,7 +60,8 @@ package body org.allbinary.game.layer.building.BuildingPropertiesFactory_Package
    end getDamageFloaters;
 
    --  throws Exception
-   function getHealthBar (This : in out BuildingPropertiesFactory; buildingLayer : BuildingLayer_Access) return Paintable_Access is
+   function getHealthBar (This : in out BuildingPropertiesFactory; buildingLayer_Param : access BuildingLayer'Class) return Paintable_Access is
+      buildingLayer : BuildingLayer_Access := BuildingLayer_Access (buildingLayer_Param);
       healthBar : Paintable_Access;
    begin
         healthBar := NullPaintable_Package.getInstance;
@@ -73,34 +76,35 @@ package body org.allbinary.game.layer.building.BuildingPropertiesFactory_Package
         return StdUtil_Package.getInstance.createHashtable;
    end getHashtable;
 
-   function getTrackingEvent (This : in out BuildingPropertiesFactory; buildingLayer : BuildingLayer_Access) return TrackingEvent_Access is
+   function getTrackingEvent (This : in out BuildingPropertiesFactory; buildingLayer_Param : access BuildingLayer'Class) return TrackingEvent_Access is
+      buildingLayer : BuildingLayer_Access := BuildingLayer_Access (buildingLayer_Param);
    begin
         return TrackingEvent_Package.Create (buildingLayer);
    end getTrackingEvent;
 
-   procedure getEfficiencyPerLevel (This : in out BuildingPropertiesFactory; buildingLayer : BuildingLayer_Access) is
-      Java_Result : constant Integer := BuildingPropertiesFactory'Class (This).getEfficiencyPerLevel (buildingLayer);
+   procedure getEfficiencyPerLevel (This : in out BuildingPropertiesFactory; buildingLayer_Param : access BuildingLayer'Class) is
+      Java_Result : constant Integer := BuildingPropertiesFactory'Class (This).getEfficiencyPerLevel (buildingLayer_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getEfficiencyPerLevel;
 
-   procedure getDamageFloaters (This : in out BuildingPropertiesFactory; buildingLayer : BuildingLayer_Access) is
-      Java_Result : constant DamageFloaters_Access := BuildingPropertiesFactory'Class (This).getDamageFloaters (buildingLayer);
+   procedure getDamageFloaters (This : in out BuildingPropertiesFactory; buildingLayer_Param : access BuildingLayer'Class) is
+      Java_Result : constant DamageFloaters_Access := BuildingPropertiesFactory'Class (This).getDamageFloaters (buildingLayer_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getDamageFloaters;
 
-   procedure getHealthBar (This : in out BuildingPropertiesFactory; buildingLayer : BuildingLayer_Access) is
-      Java_Result : constant Paintable_Access := BuildingPropertiesFactory'Class (This).getHealthBar (buildingLayer);
+   procedure getHealthBar (This : in out BuildingPropertiesFactory; buildingLayer_Param : access BuildingLayer'Class) is
+      Java_Result : constant Paintable_Access := BuildingPropertiesFactory'Class (This).getHealthBar (buildingLayer_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getHealthBar;
 
-   procedure getTrackingEvent (This : in out BuildingPropertiesFactory; buildingLayer : BuildingLayer_Access) is
-      Java_Result : constant TrackingEvent_Access := BuildingPropertiesFactory'Class (This).getTrackingEvent (buildingLayer);
+   procedure getTrackingEvent (This : in out BuildingPropertiesFactory; buildingLayer_Param : access BuildingLayer'Class) is
+      Java_Result : constant TrackingEvent_Access := BuildingPropertiesFactory'Class (This).getTrackingEvent (buildingLayer_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

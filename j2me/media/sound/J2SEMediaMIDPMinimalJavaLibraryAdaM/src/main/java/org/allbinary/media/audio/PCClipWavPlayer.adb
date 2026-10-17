@@ -24,7 +24,8 @@ package body org.allbinary.media.audio.PCClipWavPlayer_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out PCClipWavPlayer'Class; inputStream : InputStream_Access) is
+   procedure Initialize (This : in out PCClipWavPlayer'Class; inputStream_Param : access InputStream'Class) is
+      inputStream : InputStream_Access := InputStream_Access (inputStream_Param);
       audioInputStream : AudioInputStream_Access;
       clip : Clip_Access;
    begin
@@ -36,7 +37,7 @@ package body org.allbinary.media.audio.PCClipWavPlayer_Package is
             audioInputStream := AudioSystem_Package.getAudioInputStream (inputStream);
             clip := This.create (audioInputStream);
             if (clip) = (null) then
-                This.logUtil.put (To_Unbounded_String ("Clip was null"), This'Unchecked_Access, This.commonStrings.CONSTRUCTOR, Java_New_Exception ("Exception"));
+                This.logUtil.put (To_Unbounded_String ("Clip was null"), PCClipWavPlayer_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR, Java_New_Exception ("Exception"));
                 Java_Throw (Java_New_Exception ("RuntimeException"));
             end if;
         exception
@@ -44,17 +45,17 @@ package body org.allbinary.media.audio.PCClipWavPlayer_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, PCClipWavPlayer_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR, e);
                 end;
         end;
         This.audioInputStream := audioInputStream;
         This.clip := clip;
    end Initialize;
 
-   function Create (inputStream : InputStream_Access) return PCClipWavPlayer_Access is
+   function Create (inputStream_Param : access InputStream'Class) return PCClipWavPlayer_Access is
       This : constant PCClipWavPlayer_Access := new PCClipWavPlayer;
    begin
-      PCClipWavPlayer_Package.Initialize (This.all, inputStream);
+      PCClipWavPlayer_Package.Initialize (This.all, inputStream_Param);
       return This;
    end Create;
 
@@ -71,7 +72,7 @@ package body org.allbinary.media.audio.PCClipWavPlayer_Package is
 --                          declare
 --                              e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
 --                          begin
---                      PreLogUtil_Package.putOE (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.PROCESS, e);
+--                      PreLogUtil_Package.putOE (This.commonStrings.EXCEPTION_Id, PCClipWavPlayer_Access'(This'Unchecked_Access), This.commonStrings.PROCESS, e);
 --                          end;
 --                  end;
 --     end run;
@@ -105,7 +106,7 @@ package body org.allbinary.media.audio.PCClipWavPlayer_Package is
 --                          declare
 --                              e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
 --                          begin
---                      PreLogUtil_Package.putOE (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.PROCESS, e);
+--                      PreLogUtil_Package.putOE (This.commonStrings.EXCEPTION_Id, PCClipWavPlayer_Access'(This'Unchecked_Access), This.commonStrings.PROCESS, e);
 --                          end;
 --                  end;
 --     end run;
@@ -122,11 +123,12 @@ package body org.allbinary.media.audio.PCClipWavPlayer_Package is
    end start2;
 
    --  throws Exception
-   function create (This : in out PCClipWavPlayer; audioInputStream : AudioInputStream_Access) return Clip_Access is
+   function create (This : in out PCClipWavPlayer; audioInputStream_Param : access AudioInputStream'Class) return Clip_Access is
+      audioInputStream : AudioInputStream_Access := AudioInputStream_Access (audioInputStream_Param);
       clip : Clip_Access;
    begin
         clip := AudioSystem_Package.getClip;
-        clip.addLineListener (This'Unchecked_Access);
+        clip.addLineListener (PCClipWavPlayer_Access'(This'Unchecked_Access));
         clip.open (audioInputStream);
         return clip;
    end create;
@@ -145,7 +147,7 @@ package body org.allbinary.media.audio.PCClipWavPlayer_Package is
 --                          declare
 --                              e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
 --                          begin
---                      PreLogUtil_Package.putOE (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.PROCESS, e);
+--                      PreLogUtil_Package.putOE (This.commonStrings.EXCEPTION_Id, PCClipWavPlayer_Access'(This'Unchecked_Access), This.commonStrings.PROCESS, e);
 --                          end;
 --                  end;
 --     end run;
@@ -196,7 +198,8 @@ package body org.allbinary.media.audio.PCClipWavPlayer_Package is
         return (This.clip.getMicrosecondLength) / (1000);
    end getDuration;
 
-   procedure update (This : in out PCClipWavPlayer; event : LineEvent_Access) is
+   procedure update (This : in out PCClipWavPlayer; event_Param : access LineEvent'Class) is
+      event : LineEvent_Access := LineEvent_Access (event_Param);
       size : Integer;
       listener : PlayerListener_Access;
       index : Integer;
@@ -205,13 +208,13 @@ package body org.allbinary.media.audio.PCClipWavPlayer_Package is
             size := This.listenersList.size;
             for index in 0 .. (size) - 1 loop
                 listener := PlayerListener_Access (This.listenersList.get (size));
-                listener.playerUpdate (This'Unchecked_Access, PlayerListener_Package.END_OF_MEDIA, null);
+                listener.playerUpdate (PCClipWavPlayer_Access'(This'Unchecked_Access), PlayerListener_Package.END_OF_MEDIA, null);
             end loop;
         end if;
    end update;
 
-   procedure create (This : in out PCClipWavPlayer; audioInputStream : AudioInputStream_Access) is
-      Java_Result : constant Clip_Access := PCClipWavPlayer'Class (This).create (audioInputStream);
+   procedure create (This : in out PCClipWavPlayer; audioInputStream_Param : access AudioInputStream'Class) is
+      Java_Result : constant Clip_Access := PCClipWavPlayer'Class (This).create (audioInputStream_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

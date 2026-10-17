@@ -21,15 +21,16 @@ package body org.allbinary.media.graphics.geography.map.CachingGeographicMapCell
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CachingGeographicMapCellPositionFactory'Class; geographicMapInterface : BasicGeographicMap_Access) is
+   procedure Initialize (This : in out CachingGeographicMapCellPositionFactory'Class; geographicMapInterface_Param : access BasicGeographicMap'Class) is
+      geographicMapInterface : BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
    begin
         BasicGeographicMapCellPositionFactory_Package.Initialize (This, geographicMapInterface);
    end Initialize;
 
-   function Create (geographicMapInterface : BasicGeographicMap_Access) return CachingGeographicMapCellPositionFactory_Access is
+   function Create (geographicMapInterface_Param : access BasicGeographicMap'Class) return CachingGeographicMapCellPositionFactory_Access is
       This : constant CachingGeographicMapCellPositionFactory_Access := new CachingGeographicMapCellPositionFactory;
    begin
-      CachingGeographicMapCellPositionFactory_Package.Initialize (This.all, geographicMapInterface);
+      CachingGeographicMapCellPositionFactory_Package.Initialize (This.all, geographicMapInterface_Param);
       return This;
    end Create;
 

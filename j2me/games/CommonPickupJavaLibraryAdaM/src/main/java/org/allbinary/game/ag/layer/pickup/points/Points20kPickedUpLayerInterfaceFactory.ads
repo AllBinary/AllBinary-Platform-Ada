@@ -60,7 +60,7 @@ package org.allbinary.game.ag.layer.pickup.points.Points20kPickedUpLayerInterfac
    procedure init;
    function getTotal (This : in out Points20kPickedUpLayerInterfaceFactory) return Integer;
    function getInstance return PickedUpLayerInterfaceFactoryInterface_Access;
-   procedure process (This : in out Points20kPickedUpLayerInterfaceFactory; sourceLayerInterface : AllBinaryLayer_Access);
+   procedure process (This : in out Points20kPickedUpLayerInterfaceFactory; sourceLayerInterface_Param : access AllBinaryLayer'Class);
 
 end org.allbinary.game.ag.layer.pickup.points.Points20kPickedUpLayerInterfaceFactory_Package;
 

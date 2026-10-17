@@ -34,8 +34,8 @@ package org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent_Pack
 
    type MyGraphicItemEvent is new EventObject with null record;
 
-   procedure Initialize (This : in out MyGraphicItemEvent'Class; source : Java_Object_Access);
-   function Create (source : Java_Object_Access) return MyGraphicItemEvent_Access;
+   procedure Initialize (This : in out MyGraphicItemEvent'Class; source_Param : access Java_Object'Class);
+   function Create (source_Param : access Java_Object'Class) return MyGraphicItemEvent_Access;
    function getSource (This : in out MyGraphicItemEvent) return Java_Object_Access;
    function toString (This : in out MyGraphicItemEvent) return Unbounded_String;
    function getCommand (This : in out MyGraphicItemEvent) return Unbounded_String;

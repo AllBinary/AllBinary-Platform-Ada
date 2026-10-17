@@ -31,7 +31,7 @@ package org.allbinary.game.input.CompleteMotionGestureInputEventListenerInterfac
    type CompleteMotionGestureInputEventListenerInterface_Access is access all CompleteMotionGestureInputEventListenerInterface'Class;
    type CompleteMotionGestureInputEventListenerInterface_Access_Array is array (Natural range <>) of CompleteMotionGestureInputEventListenerInterface_Access;
    type CompleteMotionGestureInputEventListenerInterface_Access_Array_Access is access all CompleteMotionGestureInputEventListenerInterface_Access_Array;
-   procedure onCompleteMotionGestureInputEvent (This : in out CompleteMotionGestureInputEventListenerInterface; completeMotionGestureInputEvent : CompleteMotionGestureInputEvent_Access) is abstract;
+   procedure onCompleteMotionGestureInputEvent (This : in out CompleteMotionGestureInputEventListenerInterface; completeMotionGestureInputEvent_Param : access CompleteMotionGestureInputEvent'Class) is abstract;
 
 end org.allbinary.game.input.CompleteMotionGestureInputEventListenerInterface_Package;
 

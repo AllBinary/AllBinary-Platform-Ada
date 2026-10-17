@@ -22,23 +22,24 @@ package body org.allbinary.game.ag.layer.weapon.mine.MineLayer_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out MineLayer'Class; viewPosition : ViewPositionBase_Access) is
+   procedure Initialize (This : in out MineLayer'Class; viewPosition_Param : access ViewPositionBase'Class) is
+      viewPosition : ViewPositionBase_Access := ViewPositionBase_Access (viewPosition_Param);
    begin
         SimpleWeaponLayer_Package.Initialize (This, MineLayer_Package.NAME, RemoteInfo_Package.REMOTE_INFO, -(1), NoMovementFactory_Package.getInstance.getMovmentInstance, FeaturedAnimationInterfaceFactoryInterfaceFactory_Package.getInstance.get (MineWeaponResources_Package.getInstance.RESOURCE).getInstance (0), SimpleWeaponLayer_Package.createDestroyed, Rectangle_Package.Create (PointFactory_Package.getInstance.ZERO_ZERO, 10, 10), viewPosition);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (viewPosition : ViewPositionBase_Access) return MineLayer_Access is
+   function Create (viewPosition_Param : access ViewPositionBase'Class) return MineLayer_Access is
       This : constant MineLayer_Access := new MineLayer;
    begin
-      MineLayer_Package.Initialize (This.all, viewPosition);
+      MineLayer_Package.Initialize (This.all, viewPosition_Param);
       return This;
    end Create;
 
    procedure initXYZ (This : in out MineLayer; x : Integer; y : Integer; z : Integer) is
    begin
         This.setPosition ((x) + (5), (y) + (5), z);
-        This.viewPositionEventHandler.addListener (AllBinaryLayer_Access (This'Unchecked_Access));
+        This.viewPositionEventHandler.addListener (AllBinaryLayer_Access (MineLayer_Access'(This'Unchecked_Access)));
         SecondaryPlayerQueueFactory_Package.getInstance.add (DropWeaponSound_Package.getInstance);
    end initXYZ;
 
@@ -57,7 +58,7 @@ package body org.allbinary.game.ag.layer.weapon.mine.MineLayer_Package is
    begin
         SimpleWeaponLayer (This).setDestroyed (destroyed);
         if This.isDestroyed then
-            This.viewPositionEventHandler.removeListener (This'Unchecked_Access);
+            This.viewPositionEventHandler.removeListener (MineLayer_Access'(This'Unchecked_Access));
         end if;
    end setDestroyed;
 

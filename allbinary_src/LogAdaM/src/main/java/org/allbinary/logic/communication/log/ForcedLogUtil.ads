@@ -37,7 +37,7 @@ package org.allbinary.logic.communication.log.ForcedLogUtil_Package is
 
    procedure Initialize (This : in out ForcedLogUtil'Class);
    function Create return ForcedLogUtil_Access;
-   procedure log (message : Unbounded_String; anyType : Java_Object_Access);
+   procedure log (message : Unbounded_String; anyType_Param : access Java_Object'Class);
 
 end org.allbinary.logic.communication.log.ForcedLogUtil_Package;
 

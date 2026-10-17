@@ -56,10 +56,10 @@ package org.allbinary.game.combat.damage.AnimationDamageFloaters_Package is
       dy : Integer;
    end record;
 
-   procedure Initialize (This : in out AnimationDamageFloaters'Class; layerInterface : AllBinaryLayer_Access; animationInterfaceArray : IndexedAnimation_Access_Array_Access; dx : Integer; dy : Integer);
-   function Create (layerInterface : AllBinaryLayer_Access; animationInterfaceArray : IndexedAnimation_Access_Array_Access; dx : Integer; dy : Integer) return AnimationDamageFloaters_Access;
+   procedure Initialize (This : in out AnimationDamageFloaters'Class; layerInterface_Param : access AllBinaryLayer'Class; animationInterfaceArray : IndexedAnimation_Access_Array_Access; dx : Integer; dy : Integer);
+   function Create (layerInterface_Param : access AllBinaryLayer'Class; animationInterfaceArray : IndexedAnimation_Access_Array_Access; dx : Integer; dy : Integer) return AnimationDamageFloaters_Access;
    procedure add (This : in out AnimationDamageFloaters; damage : Integer);
-   procedure paint (This : in out AnimationDamageFloaters; graphics : Graphics_Access);
+   procedure paint (This : in out AnimationDamageFloaters; graphics_Param : access Graphics'Class);
 
 end org.allbinary.game.combat.damage.AnimationDamageFloaters_Package;
 

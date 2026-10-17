@@ -42,7 +42,9 @@ package body views.generic_Id.inventory.InventorySearchProductUtil_Package is
    end getInstance;
 
    --  throws Exception
-   function getProduct (This : in out InventorySearchProductUtil; abeClientInformation : AbeClientInformationInterface_Access; searchRequest : SearchRequest_Access; product : Unbounded_String) return Unbounded_String is
+   function getProduct (This : in out InventorySearchProductUtil; abeClientInformation_Param : access AbeClientInformationInterface'Class; searchRequest_Param : access SearchRequest'Class; product : Unbounded_String) return Unbounded_String is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      searchRequest : SearchRequest_Access := SearchRequest_Access (searchRequest_Param);
       inventoryEntityInterface : InventoryEntity_Access;
       itemInterface : ItemInterface_Access;
       viewDocumentInterface : TransformDocumentInterface_Access;
@@ -67,15 +69,15 @@ package body views.generic_Id.inventory.InventorySearchProductUtil_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PRODUCTSEARCHLOGGINGERROR) then
-                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("getProduct"), e);
+                This.logUtil.put (This.commonStrings.FAILURE, InventorySearchProductUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("getProduct"), e);
             end if;
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Failed to getProduct")));
                 end;
         end;
    end getProduct;
 
-   procedure getProduct (This : in out InventorySearchProductUtil; abeClientInformation : AbeClientInformationInterface_Access; searchRequest : SearchRequest_Access; product : Unbounded_String) is
-      Java_Result : constant Unbounded_String := InventorySearchProductUtil'Class (This).getProduct (abeClientInformation, searchRequest, product);
+   procedure getProduct (This : in out InventorySearchProductUtil; abeClientInformation_Param : access AbeClientInformationInterface'Class; searchRequest_Param : access SearchRequest'Class; product : Unbounded_String) is
+      Java_Result : constant Unbounded_String := InventorySearchProductUtil'Class (This).getProduct (abeClientInformation_Param, searchRequest_Param, product);
       pragma Unreferenced (Java_Result);
    begin
       null;

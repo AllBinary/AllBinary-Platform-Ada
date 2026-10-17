@@ -21,15 +21,17 @@ package body org.allbinary.graphics.form.item.SelectableTextItem_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out SelectableTextItem'Class; label : Unbounded_String; layout : Integer; altText : Unbounded_String; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) is
+   procedure Initialize (This : in out SelectableTextItem'Class; label : Unbounded_String; layout : Integer; altText : Unbounded_String; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) is
+      backgroundBasicColor : BasicColor_Access := BasicColor_Access (backgroundBasicColor_Param);
+      foregroundBasicColor : BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
    begin
         ABTextItem_Package.Initialize (This, label, layout, altText, backgroundBasicColor, foregroundBasicColor);
    end Initialize;
 
-   function Create (label : Unbounded_String; layout : Integer; altText : Unbounded_String; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return SelectableTextItem_Access is
+   function Create (label : Unbounded_String; layout : Integer; altText : Unbounded_String; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return SelectableTextItem_Access is
       This : constant SelectableTextItem_Access := new SelectableTextItem;
    begin
-      SelectableTextItem_Package.Initialize (This.all, label, layout, altText, backgroundBasicColor, foregroundBasicColor);
+      SelectableTextItem_Package.Initialize (This.all, label, layout, altText, backgroundBasicColor_Param, foregroundBasicColor_Param);
       return This;
    end Create;
 
@@ -38,7 +40,8 @@ package body org.allbinary.graphics.form.item.SelectableTextItem_Package is
         return True;
    end isFocusable;
 
-   procedure paintXY (This : in out SelectableTextItem; graphics : Graphics_Access; x : Integer; y : Integer) is
+   procedure paintXY (This : in out SelectableTextItem; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       stringComponent : ABStringComponent_Access;
    begin
         This.myFontProcessor.process (graphics);

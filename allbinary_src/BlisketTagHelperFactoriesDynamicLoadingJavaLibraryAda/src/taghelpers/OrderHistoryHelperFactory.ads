@@ -41,8 +41,8 @@ package taghelpers.OrderHistoryHelperFactory_Package is
 
    procedure Initialize (This : in out OrderHistoryHelperFactory'Class);
    function Create return OrderHistoryHelperFactory_Access;
-   function getInstance (hashMap : HashMap_Access; pageContext : PageContext_Access) return Java_Object_Access;
-   procedure getInstance (hashMap : HashMap_Access; pageContext : PageContext_Access);
+   function getInstance (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return Java_Object_Access;
+   procedure getInstance (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
 
 end taghelpers.OrderHistoryHelperFactory_Package;
 

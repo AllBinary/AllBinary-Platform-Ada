@@ -36,7 +36,8 @@ package body org.allbinary.layer.BasicLayerProcessor_Package is
       return This;
    end Create;
 
-   procedure add (This : in out BasicLayerProcessor; layerInterface : AllBinaryLayer_Access) is
+   procedure add (This : in out BasicLayerProcessor; layerInterface_Param : access AllBinaryLayer'Class) is
+      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
    begin
         if not (This.list.contains (layerInterface)) then
             This.list.add (layerInterface);
@@ -44,7 +45,8 @@ package body org.allbinary.layer.BasicLayerProcessor_Package is
    end add;
 
    --  throws Exception
-   procedure process (This : in out BasicLayerProcessor; allBinaryLayerManager : AllBinaryLayerManager_Access) is
+   procedure process (This : in out BasicLayerProcessor; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class) is
+      allBinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
    begin
         Java_Throw (Java_New_Exception ("Exception", CommonStrings_Package.getInstance.NOT_IMPLEMENTED));
    end process;

@@ -56,11 +56,11 @@ package org.allbinary.game.part.weapon.StraightMultiProjectileWeaponPart_Package
       noDecimalTrigTable : NoDecimalTrigTable_Access;
    end record;
 
-   procedure Initialize (This : in out StraightMultiProjectileWeaponPart'Class; animationInterface : Animation_Access; sourceLayerInterface : AllBinaryLayer_Access; weaponLayerCircularStaticPool : WeaponLayerCircularPool_Access; total : Integer; weaponProperties : WeaponProperties_Access; scoreableInterface : ScoreableInterface_Access; relativeRelationship : RelativeRelationship_Access);
-   function Create (animationInterface : Animation_Access; sourceLayerInterface : AllBinaryLayer_Access; weaponLayerCircularStaticPool : WeaponLayerCircularPool_Access; total : Integer; weaponProperties : WeaponProperties_Access; scoreableInterface : ScoreableInterface_Access; relativeRelationship : RelativeRelationship_Access) return StraightMultiProjectileWeaponPart_Access;
-   function createStraightMultiProjectileWeaponPart (animationInterface : Animation_Access; weaponLayerCircularStaticPool : WeaponLayerCircularPool_Access) return StraightMultiProjectileWeaponPart_Access;
-   procedure createStraightMultiProjectileWeaponPart (animationInterface : Animation_Access; weaponLayerCircularStaticPool : WeaponLayerCircularPool_Access);
-   procedure processScore (This : in out StraightMultiProjectileWeaponPart; allbinaryLayerManager : AllBinaryLayerManager_Access; angle : Short_Integer; otherAngle : Short_Integer; weaponProperties : WeaponProperties_Access; scoreableInterface : ScoreableInterface_Access);
+   procedure Initialize (This : in out StraightMultiProjectileWeaponPart'Class; animationInterface_Param : access Animation'Class; sourceLayerInterface_Param : access AllBinaryLayer'Class; weaponLayerCircularStaticPool_Param : access WeaponLayerCircularPool'Class; total : Integer; weaponProperties_Param : access WeaponProperties'Class; scoreableInterface_Param : access ScoreableInterface'Class; relativeRelationship_Param : access RelativeRelationship'Class);
+   function Create (animationInterface_Param : access Animation'Class; sourceLayerInterface_Param : access AllBinaryLayer'Class; weaponLayerCircularStaticPool_Param : access WeaponLayerCircularPool'Class; total : Integer; weaponProperties_Param : access WeaponProperties'Class; scoreableInterface_Param : access ScoreableInterface'Class; relativeRelationship_Param : access RelativeRelationship'Class) return StraightMultiProjectileWeaponPart_Access;
+   function createStraightMultiProjectileWeaponPart (animationInterface_Param : access Animation'Class; weaponLayerCircularStaticPool_Param : access WeaponLayerCircularPool'Class) return StraightMultiProjectileWeaponPart_Access;
+   procedure createStraightMultiProjectileWeaponPart (animationInterface_Param : access Animation'Class; weaponLayerCircularStaticPool_Param : access WeaponLayerCircularPool'Class);
+   procedure processScore (This : in out StraightMultiProjectileWeaponPart; allbinaryLayerManager_Param : access AllBinaryLayerManager'Class; angle : Short_Integer; otherAngle : Short_Integer; weaponProperties_Param : access WeaponProperties'Class; scoreableInterface_Param : access ScoreableInterface'Class);
 
 end org.allbinary.game.part.weapon.StraightMultiProjectileWeaponPart_Package;
 

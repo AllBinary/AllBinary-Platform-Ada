@@ -23,26 +23,29 @@ package body org.allbinary.logic.io.file.visitor.BooleanFileVisitor_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BooleanFileVisitor'Class; filterStringBasicArrayList : BasicArrayList_Access) is
+   procedure Initialize (This : in out BooleanFileVisitor'Class; filterStringBasicArrayList_Param : access BasicArrayList'Class) is
+      filterStringBasicArrayList : BasicArrayList_Access := BasicArrayList_Access (filterStringBasicArrayList_Param);
    begin
       Initialize_Fields (This);
         This.setFilterStringBasicArrayList (filterStringBasicArrayList);
-        PreLogUtil_Package.put (To_Unbounded_String ("Filter BasicArrayList: ") & This.getFilterStringBasicArrayList.toString, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+        PreLogUtil_Package.put (To_Unbounded_String ("Filter BasicArrayList: ") & This.getFilterStringBasicArrayList.toString, BooleanFileVisitor_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
    end Initialize;
 
-   function Create (filterStringBasicArrayList : BasicArrayList_Access) return BooleanFileVisitor_Access is
+   function Create (filterStringBasicArrayList_Param : access BasicArrayList'Class) return BooleanFileVisitor_Access is
       This : constant BooleanFileVisitor_Access := new BooleanFileVisitor;
    begin
-      BooleanFileVisitor_Package.Initialize (This.all, filterStringBasicArrayList);
+      BooleanFileVisitor_Package.Initialize (This.all, filterStringBasicArrayList_Param);
       return This;
    end Create;
 
-   function visit (This : in out BooleanFileVisitor; anyType : Java_Object_Access) return Java_Object_Access is
+   function visit (This : in out BooleanFileVisitor; anyType_Param : access Java_Object'Class) return Java_Object_Access is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         return Java_Object_Access (This.visit (AbFile_Access (anyType)));
    end visit;
 
-   function visit (This : in out BooleanFileVisitor; file : AbFile_Access) return Boolean is
+   function visit (This : in out BooleanFileVisitor; file_Param : access AbFile'Class) return Boolean is
+      file : AbFile_Access := AbFile_Access (file_Param);
       list : BasicArrayList_Access;
       size : Integer;
       nextFileFilterString : Unbounded_String;
@@ -65,32 +68,34 @@ package body org.allbinary.logic.io.file.visitor.BooleanFileVisitor_Package is
         return This.filterStringBasicArrayList;
    end getFilterStringBasicArrayList;
 
-   procedure setFilterStringBasicArrayList (This : in out BooleanFileVisitor; filterStringBasicArrayList : BasicArrayList_Access) is
+   procedure setFilterStringBasicArrayList (This : in out BooleanFileVisitor; filterStringBasicArrayList_Param : access BasicArrayList'Class) is
+      filterStringBasicArrayList : BasicArrayList_Access := BasicArrayList_Access (filterStringBasicArrayList_Param);
    begin
         This.filterStringBasicArrayList := filterStringBasicArrayList;
    end setFilterStringBasicArrayList;
 
-   function visit (This : in out BooleanFileVisitor; file : AbFile_Access; fileNameString : Unbounded_String) return Boolean is
+   function visit (This : in out BooleanFileVisitor; file_Param : access AbFile'Class; fileNameString : Unbounded_String) return Boolean is
+      file : AbFile_Access := AbFile_Access (file_Param);
    begin
         return False;
    end visit;
 
-   procedure visit (This : in out BooleanFileVisitor; anyType : Java_Object_Access) is
-      Java_Result : constant Java_Object_Access := BooleanFileVisitor'Class (This).visit (anyType);
+   procedure visit (This : in out BooleanFileVisitor; anyType_Param : access Java_Object'Class) is
+      Java_Result : constant Java_Object_Access := BooleanFileVisitor'Class (This).visit (anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end visit;
 
-   procedure visit (This : in out BooleanFileVisitor; file : AbFile_Access) is
-      Java_Result : constant Boolean := BooleanFileVisitor'Class (This).visit (file);
+   procedure visit (This : in out BooleanFileVisitor; file_Param : access AbFile'Class) is
+      Java_Result : constant Boolean := BooleanFileVisitor'Class (This).visit (file_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end visit;
 
-   procedure visit (This : in out BooleanFileVisitor; file : AbFile_Access; fileNameString : Unbounded_String) is
-      Java_Result : constant Boolean := BooleanFileVisitor'Class (This).visit (file, fileNameString);
+   procedure visit (This : in out BooleanFileVisitor; file_Param : access AbFile'Class; fileNameString : Unbounded_String) is
+      Java_Result : constant Boolean := BooleanFileVisitor'Class (This).visit (file_Param, fileNameString);
       pragma Unreferenced (Java_Result);
    begin
       null;

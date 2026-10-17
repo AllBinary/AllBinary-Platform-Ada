@@ -24,17 +24,18 @@ package body org.allbinary.game.displayable.canvas.CheatGameInputProcessor_Packa
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CheatGameInputProcessor'Class; gameCanvas : AllBinaryGameCanvas_Access) is
+   procedure Initialize (This : in out CheatGameInputProcessor'Class; gameCanvas_Param : access AllBinaryGameCanvas'Class) is
+      gameCanvas : AllBinaryGameCanvas_Access := AllBinaryGameCanvas_Access (gameCanvas_Param);
    begin
         PlayerGameInput_Package.Initialize (This, BasicArrayListD_Package.Create, BasicArrayListD_Package.Create, -(1));
         Initialize_Fields (This);
         This.gameCanvas := gameCanvas;
    end Initialize;
 
-   function Create (gameCanvas : AllBinaryGameCanvas_Access) return CheatGameInputProcessor_Access is
+   function Create (gameCanvas_Param : access AllBinaryGameCanvas'Class) return CheatGameInputProcessor_Access is
       This : constant CheatGameInputProcessor_Access := new CheatGameInputProcessor;
    begin
-      CheatGameInputProcessor_Package.Initialize (This.all, gameCanvas);
+      CheatGameInputProcessor_Package.Initialize (This.all, gameCanvas_Param);
       return This;
    end Create;
 
@@ -86,7 +87,7 @@ package body org.allbinary.game.displayable.canvas.CheatGameInputProcessor_Packa
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.UPDATE, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, CheatGameInputProcessor_Access'(This'Unchecked_Access), This.commonStrings.UPDATE, e);
                 end;
         end;
    end update;

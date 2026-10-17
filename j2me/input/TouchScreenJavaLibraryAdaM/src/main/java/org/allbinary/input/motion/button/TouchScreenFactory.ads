@@ -57,7 +57,7 @@ package org.allbinary.input.motion.button.TouchScreenFactory_Package is
    function isTouch (This : in out TouchScreenFactory) return Boolean;
    procedure setMultiTouchDistinct (This : in out TouchScreenFactory; multiTouchDistinct : Boolean);
    function isMultiTouchDistinct (This : in out TouchScreenFactory) return Boolean;
-   procedure setTouchScreenType (This : in out TouchScreenFactory; touchScreenType : TouchScreenType_Access);
+   procedure setTouchScreenType (This : in out TouchScreenFactory; touchScreenType_Param : access TouchScreenType'Class);
    function getTouchScreenType (This : in out TouchScreenFactory) return TouchScreenType_Access;
    function toString (This : in out TouchScreenFactory) return Unbounded_String;
 

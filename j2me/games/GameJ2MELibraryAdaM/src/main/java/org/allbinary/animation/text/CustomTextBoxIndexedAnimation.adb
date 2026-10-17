@@ -25,37 +25,42 @@ package body org.allbinary.animation.text.CustomTextBoxIndexedAnimation_Package 
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CustomTextBoxIndexedAnimation'Class; customTextBox : CustomTextBox_Access) is
+   procedure Initialize (This : in out CustomTextBoxIndexedAnimation'Class; customTextBox_Param : access CustomTextBox'Class) is
+      customTextBox : CustomTextBox_Access := CustomTextBox_Access (customTextBox_Param);
    begin
         IndexedAnimation_Package.Initialize (This, AnimationBehavior_Package.getInstance);
         Initialize_Fields (This);
         This.customTextBox := customTextBox;
    end Initialize;
 
-   function Create (customTextBox : CustomTextBox_Access) return CustomTextBoxIndexedAnimation_Access is
+   function Create (customTextBox_Param : access CustomTextBox'Class) return CustomTextBoxIndexedAnimation_Access is
       This : constant CustomTextBoxIndexedAnimation_Access := new CustomTextBoxIndexedAnimation;
    begin
-      CustomTextBoxIndexedAnimation_Package.Initialize (This.all, customTextBox);
+      CustomTextBoxIndexedAnimation_Package.Initialize (This.all, customTextBox_Param);
       return This;
    end Create;
 
-   procedure setBasicColorP (This : in out CustomTextBoxIndexedAnimation; basicColor : BasicColor_Access) is
+   procedure setBasicColorP (This : in out CustomTextBoxIndexedAnimation; basicColor_Param : access BasicColor'Class) is
+      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         This.customTextBox.getTextFieldItem.setForegroundBasicColorP (basicColor);
    end setBasicColorP;
 
-   procedure setBackgroundBasicColorP (This : in out CustomTextBoxIndexedAnimation; basicColor : BasicColor_Access) is
+   procedure setBackgroundBasicColorP (This : in out CustomTextBoxIndexedAnimation; basicColor_Param : access BasicColor'Class) is
+      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         This.customTextBox.getTextFieldItem.setBackgroundBasicColorP (basicColor);
    end setBackgroundBasicColorP;
 
-   procedure setTextWithOnMeasure (This : in out CustomTextBoxIndexedAnimation; text : Unbounded_String; textChangeListener : TextChangeListener_Access) is
+   procedure setTextWithOnMeasure (This : in out CustomTextBoxIndexedAnimation; text : Unbounded_String; textChangeListener_Param : access TextChangeListener'Class) is
+      textChangeListener : TextChangeListener_Access := TextChangeListener_Access (textChangeListener_Param);
    begin
         This.setText (text);
         This.textChangeListener := textChangeListener;
    end setTextWithOnMeasure;
 
-   procedure updateMeasurement (This : in out CustomTextBoxIndexedAnimation; graphics : Graphics_Access) is
+   procedure updateMeasurement (This : in out CustomTextBoxIndexedAnimation; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       font : Font_Access;
    begin
         font := graphics.getFont;
@@ -87,12 +92,14 @@ package body org.allbinary.animation.text.CustomTextBoxIndexedAnimation_Package 
         return This.customTextBox.getTextFieldItem.getFontHeight;
    end getFontHeight;
 
-   procedure paintXY (This : in out CustomTextBoxIndexedAnimation; graphics : Graphics_Access; x : Integer; y : Integer) is
+   procedure paintXY (This : in out CustomTextBoxIndexedAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.customTextBox.paintXY (graphics, x, y);
    end paintXY;
 
-   procedure paintThreedXYZ (This : in out CustomTextBoxIndexedAnimation; graphics : Graphics_Access; x : Integer; y : Integer; z : Integer) is
+   procedure paintThreedXYZ (This : in out CustomTextBoxIndexedAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer; z : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         null;
    end paintThreedXYZ;

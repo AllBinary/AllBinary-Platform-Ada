@@ -38,7 +38,11 @@ package body org.allbinary.game.layer.LinePathAnimation_Package is
         return LinePathAnimation_Package.instance;
    end getInstance;
 
-   procedure paint (This : in out LinePathAnimation; graphics : Graphics_Access; point : GPoint_Access; nextPoint : GPoint_Access; tiledLayer : Layer_Access) is
+   procedure paint (This : in out LinePathAnimation; graphics_Param : access Graphics'Class; point_Param : access GPoint'Class; nextPoint_Param : access GPoint'Class; tiledLayer_Param : access Layer'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+      point : GPoint_Access := GPoint_Access (point_Param);
+      nextPoint : GPoint_Access := GPoint_Access (nextPoint_Param);
+      tiledLayer : Layer_Access := Layer_Access (tiledLayer_Param);
    begin
         graphics.drawLine (nextPoint.getX, nextPoint.getY, point.getX, point.getY);
    end paint;

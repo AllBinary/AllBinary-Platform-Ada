@@ -40,7 +40,8 @@ package body org.allbinary.globals.Globals_Package is
       return This;
    end Create;
 
-   procedure init (This : in out Globals; classLoader : ClassLoader_Access; pathString : Unbounded_String) is
+   procedure init (This : in out Globals; classLoader_Param : access ClassLoader'Class; pathString : Unbounded_String) is
+      classLoader : ClassLoader_Access := ClassLoader_Access (classLoader_Param);
       commonStrings : CommonStrings_Access;
       appUrlGlobals : AppUrlGlobals_Access;
       stringBuffer : StringMaker_Access;
@@ -56,7 +57,7 @@ package body org.allbinary.globals.Globals_Package is
         stringBuffer.append (pathString);
         stringBuffer.append (To_Unbounded_String (" ClassLoader: "));
         stringBuffer.append (To_Unbounded_String (Ada.Tags.Expanded_Name (classLoader.all'Tag)));
-        This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, commonStrings.INIT);
+        This.logUtil.putF (stringBuffer.toString, Globals_Access'(This'Unchecked_Access), commonStrings.INIT);
         stringValidationUtil := StringValidationUtil_Package.getInstance;
         if stringValidationUtil.isEmpty (pathString) then
             stringBuffer.delete (0, stringBuffer.length);
@@ -66,12 +67,12 @@ package body org.allbinary.globals.Globals_Package is
             stringBuffer.append (CommonSeps_Package.getInstance.EQUALS);
             stringBuffer.append (CommonSeps_Package.getInstance.SPACE);
             stringBuffer.append (URLGLOBALS.getWebappPath);
-            This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, commonStrings.INIT);
+            This.logUtil.putF (stringBuffer.toString, Globals_Access'(This'Unchecked_Access), commonStrings.INIT);
         end if;
         stringBuffer.delete (0, stringBuffer.length);
         stringBuffer.append (To_Unbounded_String ("Webapp Path Set To: "));
         stringBuffer.append (URLGLOBALS.getWebappPath);
-        This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, commonStrings.INIT);
+        This.logUtil.putF (stringBuffer.toString, Globals_Access'(This'Unchecked_Access), commonStrings.INIT);
    end init;
 
 begin

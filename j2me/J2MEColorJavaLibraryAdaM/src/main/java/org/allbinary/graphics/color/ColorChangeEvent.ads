@@ -37,9 +37,9 @@ package org.allbinary.graphics.color.ColorChangeEvent_Package is
       basicColor : BasicColor_Access;
    end record;
 
-   procedure Initialize (This : in out ColorChangeEvent'Class; anyType : Java_Object_Access);
-   function Create (anyType : Java_Object_Access) return ColorChangeEvent_Access;
-   procedure setBasicColorP (This : in out ColorChangeEvent; basicColor : BasicColor_Access);
+   procedure Initialize (This : in out ColorChangeEvent'Class; anyType_Param : access Java_Object'Class);
+   function Create (anyType_Param : access Java_Object'Class) return ColorChangeEvent_Access;
+   procedure setBasicColorP (This : in out ColorChangeEvent; basicColor_Param : access BasicColor'Class);
    function getBasicColorP (This : in out ColorChangeEvent) return BasicColor_Access;
 
 end org.allbinary.graphics.color.ColorChangeEvent_Package;

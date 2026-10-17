@@ -86,7 +86,8 @@ package body org.allbinary.input.motion.button.TouchScreenFactory_Package is
         return This.multiTouchDistinct;
    end isMultiTouchDistinct;
 
-   procedure setTouchScreenType (This : in out TouchScreenFactory; touchScreenType : TouchScreenType_Access) is
+   procedure setTouchScreenType (This : in out TouchScreenFactory; touchScreenType_Param : access TouchScreenType'Class) is
+      touchScreenType : TouchScreenType_Access := TouchScreenType_Access (touchScreenType_Param);
    begin
         This.touchScreenType := touchScreenType;
    end setTouchScreenType;

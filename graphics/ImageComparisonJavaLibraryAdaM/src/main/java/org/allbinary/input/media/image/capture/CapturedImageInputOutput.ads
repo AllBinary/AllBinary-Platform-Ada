@@ -60,7 +60,7 @@ package org.allbinary.input.media.image.capture.CapturedImageInputOutput_Package
    procedure Initialize (This : in out CapturedImageInputOutput'Class);
    function Create return CapturedImageInputOutput_Access;
    procedure save (This : in out CapturedImageInputOutput; frame : Long_Long_Integer);
-   procedure save (This : in out CapturedImageInputOutput; bufferedImage : BufferedImage_Access; frame : Long_Long_Integer);
+   procedure save (This : in out CapturedImageInputOutput; bufferedImage_Param : access BufferedImage'Class; frame : Long_Long_Integer);
 
 end org.allbinary.input.media.image.capture.CapturedImageInputOutput_Package;
 

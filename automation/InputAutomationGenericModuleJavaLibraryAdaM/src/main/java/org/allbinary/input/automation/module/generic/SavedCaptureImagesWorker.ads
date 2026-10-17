@@ -71,9 +71,9 @@ package org.allbinary.input.automation.module.generic_Id.SavedCaptureImagesWorke
    end record;
    index : Long_Long_Integer;
 
-   procedure Initialize (This : in out SavedCaptureImagesWorker'Class; savedCaptureGenericProfileDataWorkerType : SavedCaptureGenericProfileDataWorkerType_Access);
-   function Create (savedCaptureGenericProfileDataWorkerType : SavedCaptureGenericProfileDataWorkerType_Access) return SavedCaptureImagesWorker_Access;
-   procedure setThread (This : in out SavedCaptureImagesWorker; thread : Thread_Access);
+   procedure Initialize (This : in out SavedCaptureImagesWorker'Class; savedCaptureGenericProfileDataWorkerType_Param : access SavedCaptureGenericProfileDataWorkerType'Class);
+   function Create (savedCaptureGenericProfileDataWorkerType_Param : access SavedCaptureGenericProfileDataWorkerType'Class) return SavedCaptureImagesWorker_Access;
+   procedure setThread (This : in out SavedCaptureImagesWorker; thread_Param : access Thread'Class);
    function isRunning (This : in out SavedCaptureImagesWorker) return Boolean;
    procedure setRunning (This : in out SavedCaptureImagesWorker; running : Boolean);
    procedure run (This : in out SavedCaptureImagesWorker);

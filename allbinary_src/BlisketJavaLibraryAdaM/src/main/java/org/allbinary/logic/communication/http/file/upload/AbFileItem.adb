@@ -88,7 +88,7 @@ package body org.allbinary.logic.communication.http.file.upload.AbFileItem_Packa
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("getString"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, AbFileItem_Access'(This'Unchecked_Access), To_Unbounded_String ("getString"), e);
             end if;
             return StringUtil_Package.getInstance.EMPTY_STRING;
                 end;
@@ -96,13 +96,15 @@ package body org.allbinary.logic.communication.http.file.upload.AbFileItem_Packa
    end getString;
 
    --  throws Exception
-   procedure write (This : in out AbFileItem; file : File_Access) is
+   procedure write (This : in out AbFileItem; file_Param : access File'Class) is
+      file : File_Access := File_Access (file_Param);
    begin
         Java_Throw (Java_New_Exception ("Exception", This.commonStrings.NOT_IMPLEMENTED));
    end write;
 
    --  throws Exception
-   procedure write (This : in out AbFileItem; file : AbFile_Access) is
+   procedure write (This : in out AbFileItem; file_Param : access AbFile'Class) is
+      file : AbFile_Access := AbFile_Access (file_Param);
    begin
         Java_Throw (Java_New_Exception ("Exception", This.commonStrings.NOT_IMPLEMENTED));
    end write;
@@ -147,7 +149,8 @@ package body org.allbinary.logic.communication.http.file.upload.AbFileItem_Packa
         Java_Throw (Java_New_Exception ("RuntimeException", This.commonStrings.NOT_IMPLEMENTED));
    end getHeaders;
 
-   procedure setHeaders (This : in out AbFileItem; fih : FileItemHeaders_Access) is
+   procedure setHeaders (This : in out AbFileItem; fih_Param : access FileItemHeaders'Class) is
+      fih : FileItemHeaders_Access := FileItemHeaders_Access (fih_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException", This.commonStrings.NOT_IMPLEMENTED));
    end setHeaders;

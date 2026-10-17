@@ -34,22 +34,25 @@ package body views.admin.inventory.InventoryUploadMediaUtil_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out InventoryUploadMediaUtil'Class; storeFrontInterface : StoreFrontInterface_Access; itemInterface : ItemInterface_Access) is
+   procedure Initialize (This : in out InventoryUploadMediaUtil'Class; storeFrontInterface_Param : access StoreFrontInterface'Class; itemInterface_Param : access ItemInterface'Class) is
+      storeFrontInterface : StoreFrontInterface_Access := StoreFrontInterface_Access (storeFrontInterface_Param);
+      itemInterface : ItemInterface_Access := ItemInterface_Access (itemInterface_Param);
    begin
       Initialize_Fields (This);
         This.storeFrontInterface := storeFrontInterface;
         This.itemInterface := itemInterface;
    end Initialize;
 
-   function Create (storeFrontInterface : StoreFrontInterface_Access; itemInterface : ItemInterface_Access) return InventoryUploadMediaUtil_Access is
+   function Create (storeFrontInterface_Param : access StoreFrontInterface'Class; itemInterface_Param : access ItemInterface'Class) return InventoryUploadMediaUtil_Access is
       This : constant InventoryUploadMediaUtil_Access := new InventoryUploadMediaUtil;
    begin
-      InventoryUploadMediaUtil_Package.Initialize (This.all, storeFrontInterface, itemInterface);
+      InventoryUploadMediaUtil_Package.Initialize (This.all, storeFrontInterface_Param, itemInterface_Param);
       return This;
    end Create;
 
    --  throws Exception
-   function saveFiles (This : in out InventoryUploadMediaUtil; byteArray : Short_Short_Integer_Array_Access; fileName : Unbounded_String; mediaData : MediaData_Access) return ItemInterface_Access is
+   function saveFiles (This : in out InventoryUploadMediaUtil; byteArray : Short_Short_Integer_Array_Access; fileName : Unbounded_String; mediaData_Param : access MediaData'Class) return ItemInterface_Access is
+      mediaData : MediaData_Access := MediaData_Access (mediaData_Param);
       fileUtil : FileUtil_Access;
       stringBuffer : StringMaker_Access;
       fullPath : Unbounded_String;
@@ -66,7 +69,7 @@ package body views.admin.inventory.InventoryUploadMediaUtil_Package is
       commonStrings : CommonStrings_Access;
    begin
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY) then
-            This.logUtil.putF (To_Unbounded_String ("Start FileName: ") & fileName, This'Unchecked_Access, To_Unbounded_String ("saveFiles()"));
+            This.logUtil.putF (To_Unbounded_String ("Start FileName: ") & fileName, InventoryUploadMediaUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("saveFiles()"));
         end if;
         if StringValidationUtil_Package.getInstance.isEmpty (fileName) then
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Image File Name Was Null")));
@@ -88,7 +91,7 @@ package body views.admin.inventory.InventoryUploadMediaUtil_Package is
         stringBuffer.append (mediaData.getName);
         originalImageFile := AbFile_Package.createAbFile (stringBuffer.toString);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY) then
-            This.logUtil.putF (To_Unbounded_String ("Saving Original Image: ") & Java_Image (originalImageFile), This'Unchecked_Access, To_Unbounded_String ("saveFiles()"));
+            This.logUtil.putF (To_Unbounded_String ("Saving Original Image: ") & Java_Image (originalImageFile), InventoryUploadMediaUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("saveFiles()"));
         end if;
         originalImageFile.createNewFile;
         fileUtil.write (ByteArrayInputStream_Package.Create (byteArray), originalImageFile);
@@ -100,7 +103,7 @@ package body views.admin.inventory.InventoryUploadMediaUtil_Package is
             stringBuffer.append (mediaData.getName);
             stringBuffer.append (To_Unbounded_String (" supported: "));
             stringBuffer.appendboolean (isMediaSupported);
-            This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("saveFiles()"));
+            This.logUtil.putF (stringBuffer.toString, InventoryUploadMediaUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("saveFiles()"));
         end if;
         defaultMediaData := MediaData_Package.getDefault;
         This.setFileNames (fileName);
@@ -114,11 +117,11 @@ package body views.admin.inventory.InventoryUploadMediaUtil_Package is
                 stringBuffer.appendboolean (uploadMedia.isSupported (mediaData.getName));
                 stringBuffer.append (To_Unbounded_String (" WriterMedia: "));
                 stringBuffer.appendboolean (isMediaResizable);
-                This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("saveFiles()"));
+                This.logUtil.putF (stringBuffer.toString, InventoryUploadMediaUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("saveFiles()"));
             end if;
             if isMediaResizable then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY) then
-                    This.logUtil.putF (To_Unbounded_String ("Saving Small Image: ") & Java_Image (This.itemInterface.getSmallImage), This'Unchecked_Access, To_Unbounded_String ("saveFiles()"));
+                    This.logUtil.putF (To_Unbounded_String ("Saving Small Image: ") & Java_Image (This.itemInterface.getSmallImage), InventoryUploadMediaUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("saveFiles()"));
                 end if;
                 This.mediaUtil.saveImageFile (originalImageFile, This.itemInterface.getSmallImage, fullPath, mediaData, This.SMALLWIDTH, This.SMALLHEIGHT);
                 This.mediaUtil.saveImageFile (originalImageFile, This.itemInterface.getMediumImage, fullPath, mediaData, This.MEDIUMWIDTH, This.MEDIUMHEIGHT);
@@ -133,11 +136,11 @@ package body views.admin.inventory.InventoryUploadMediaUtil_Package is
                     stringBuffer.append (mediaData.getName);
                     stringBuffer.append (To_Unbounded_String (" if Convertable is it: "));
                     stringBuffer.appendboolean (isConvertable);
-                    This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("saveFiles()"));
+                    This.logUtil.putF (stringBuffer.toString, InventoryUploadMediaUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("saveFiles()"));
                 end if;
                 if isConvertable then
                     if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY) then
-                        This.logUtil.putF (To_Unbounded_String ("Saving Small Image: ") & Java_Image (This.itemInterface.getSmallImage), This'Unchecked_Access, To_Unbounded_String ("saveFiles()"));
+                        This.logUtil.putF (To_Unbounded_String ("Saving Small Image: ") & Java_Image (This.itemInterface.getSmallImage), InventoryUploadMediaUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("saveFiles()"));
                     end if;
                     This.mediaUtil.saveImageFile (originalImageFile, This.itemInterface.getSmallImage, fullPath, defaultMediaData, This.SMALLWIDTH, This.SMALLHEIGHT);
                     This.mediaUtil.saveImageFile (originalImageFile, This.itemInterface.getMediumImage, fullPath, defaultMediaData, This.MEDIUMWIDTH, This.MEDIUMHEIGHT);
@@ -157,7 +160,7 @@ package body views.admin.inventory.InventoryUploadMediaUtil_Package is
         end if;
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY) then
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.putF (commonStrings.END_Id, This'Unchecked_Access, To_Unbounded_String ("saveFiles()"));
+            This.logUtil.putF (commonStrings.END_Id, InventoryUploadMediaUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("saveFiles()"));
         end if;
         return This.itemInterface;
    end saveFiles;
@@ -192,8 +195,8 @@ package body views.admin.inventory.InventoryUploadMediaUtil_Package is
         This.itemInterface.setLargeImage (newImageFileName);
    end setFileNames;
 
-   procedure saveFiles (This : in out InventoryUploadMediaUtil; byteArray : Short_Short_Integer_Array_Access; fileName : Unbounded_String; mediaData : MediaData_Access) is
-      Java_Result : constant ItemInterface_Access := InventoryUploadMediaUtil'Class (This).saveFiles (byteArray, fileName, mediaData);
+   procedure saveFiles (This : in out InventoryUploadMediaUtil; byteArray : Short_Short_Integer_Array_Access; fileName : Unbounded_String; mediaData_Param : access MediaData'Class) is
+      Java_Result : constant ItemInterface_Access := InventoryUploadMediaUtil'Class (This).saveFiles (byteArray, fileName, mediaData_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

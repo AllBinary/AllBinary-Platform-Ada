@@ -51,7 +51,8 @@ package body org.allbinary.logic.system.security.licensing.SetLicenseInitInfo_Pa
         end if;
    end getLicenseInitInfo;
 
-   procedure createNewLicenseInitInfo (This : in out SetLicenseInitInfo; licenceServerVector : BasicArrayList_Access) is
+   procedure createNewLicenseInitInfo (This : in out SetLicenseInitInfo; licenceServerVector_Param : access BasicArrayList'Class) is
+      licenceServerVector : BasicArrayList_Access := BasicArrayList_Access (licenceServerVector_Param);
       licenseInitInfo : LicenseInitInfo_Access;
       file : File_Access;
       reader : FileReader_Access;

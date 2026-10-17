@@ -22,7 +22,7 @@ package body org.allbinary.game.paint.PressStartMenuPaintable_Package is
       This.PRESS_START := To_Unbounded_String ("Press Screen To Start");
       This.KEY_START := To_Unbounded_String ("Press or Click F2 To Begin");
       This.MENU_START := To_Unbounded_String ("Press Start From The Menu To Begin");
-      This.myFontProcessor := UpdateMyFontProcessor_Package.Create (This'Unchecked_Access);
+      This.myFontProcessor := UpdateMyFontProcessor_Package.Create (PressStartMenuPaintable_Access'(This'Unchecked_Access));
       This.startString := StringUtil_Package.getInstance.EMPTY_STRING;
       This.timeDelayHelper := TimeDelayHelper_Package.Create (1100);
       This.flash := False;
@@ -38,7 +38,7 @@ package body org.allbinary.game.paint.PressStartMenuPaintable_Package is
       Initialize_Fields (This);
         if TouchScreenFactory_Package.getInstance.isTouch then
             This.startString := This.PRESS_START;
-        elsif AppletUtil_Package.isAppletLoader (This'Unchecked_Access) then
+        elsif AppletUtil_Package.isAppletLoader (PressStartMenuPaintable_Access'(This'Unchecked_Access)) then
             This.startString := This.KEY_START;
         else
             This.startString := This.MENU_START;
@@ -52,7 +52,8 @@ package body org.allbinary.game.paint.PressStartMenuPaintable_Package is
       return This;
    end Create;
 
-   procedure updateMeasurement (This : in out PressStartMenuPaintable; graphics : Graphics_Access) is
+   procedure updateMeasurement (This : in out PressStartMenuPaintable; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       font : Font_Access;
    begin
         font := graphics.getFont;
@@ -61,7 +62,8 @@ package body org.allbinary.game.paint.PressStartMenuPaintable_Package is
         This.myFontProcessor := MyFontProcessor_Package.getInstance;
    end updateMeasurement;
 
-   procedure paint (This : in out PressStartMenuPaintable; graphics : Graphics_Access) is
+   procedure paint (This : in out PressStartMenuPaintable; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         if This.timeDelayHelper.isTimeTNT then
             if This.isFlash then

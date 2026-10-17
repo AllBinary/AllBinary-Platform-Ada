@@ -23,16 +23,17 @@ package body org.allbinary.android.input.api3.ShowVirtualKeyboardRunnable_Packag
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ShowVirtualKeyboardRunnable'Class; activity : Activity_Access) is
+   procedure Initialize (This : in out ShowVirtualKeyboardRunnable'Class; activity_Param : access Activity'Class) is
+      activity : Activity_Access := Activity_Access (activity_Param);
    begin
       Initialize_Fields (This);
         This.activity := activity;
    end Initialize;
 
-   function Create (activity : Activity_Access) return ShowVirtualKeyboardRunnable_Access is
+   function Create (activity_Param : access Activity'Class) return ShowVirtualKeyboardRunnable_Access is
       This : constant ShowVirtualKeyboardRunnable_Access := new ShowVirtualKeyboardRunnable;
    begin
-      ShowVirtualKeyboardRunnable_Package.Initialize (This.all, activity);
+      ShowVirtualKeyboardRunnable_Package.Initialize (This.all, activity_Param);
       return This;
    end Create;
 
@@ -46,7 +47,7 @@ package body org.allbinary.android.input.api3.ShowVirtualKeyboardRunnable_Packag
             inputMethodManager := InputMethodManager_Access (This.activity.getSystemService (Context_Package.INPUT_METHOD_SERVICE));
             viewCompositeInterface := ViewCompositeInterface_Access (This.activity);
             if (viewCompositeInterface) = (null) then
-                ForcedLogUtil_Package.log (To_Unbounded_String ("Activity Null"), This'Unchecked_Access);
+                ForcedLogUtil_Package.log (To_Unbounded_String ("Activity Null"), ShowVirtualKeyboardRunnable_Access'(This'Unchecked_Access));
             end if;
             view := viewCompositeInterface.getView;
             inputMethodManager.toggleSoftInputFromWindow (view.getWindowToken, InputMethodManager_Package.SHOW_FORCED, 0);
@@ -56,7 +57,7 @@ package body org.allbinary.android.input.api3.ShowVirtualKeyboardRunnable_Packag
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.RUN, e);
+            This.logUtil.put (commonStrings.EXCEPTION_Id, ShowVirtualKeyboardRunnable_Access'(This'Unchecked_Access), commonStrings.RUN, e);
                 end;
         end;
    end run;

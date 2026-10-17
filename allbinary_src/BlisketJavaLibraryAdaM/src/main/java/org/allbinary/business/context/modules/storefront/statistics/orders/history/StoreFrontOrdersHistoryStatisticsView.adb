@@ -22,21 +22,23 @@ package body org.allbinary.business.context.modules.storefront.statistics.orders
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out StoreFrontOrdersHistoryStatisticsView'Class; storeFrontOrdersHistoryStatisticsInterface : StoreFrontOrdersHistoryStatisticsInterface_Access) is
+   procedure Initialize (This : in out StoreFrontOrdersHistoryStatisticsView'Class; storeFrontOrdersHistoryStatisticsInterface_Param : access StoreFrontOrdersHistoryStatisticsInterface'Class) is
+      storeFrontOrdersHistoryStatisticsInterface : StoreFrontOrdersHistoryStatisticsInterface_Access := StoreFrontOrdersHistoryStatisticsInterface_Access (storeFrontOrdersHistoryStatisticsInterface_Param);
    begin
       Initialize_Fields (This);
         This.storeFrontOrdersHistoryStatisticsInterface := storeFrontOrdersHistoryStatisticsInterface;
    end Initialize;
 
-   function Create (storeFrontOrdersHistoryStatisticsInterface : StoreFrontOrdersHistoryStatisticsInterface_Access) return StoreFrontOrdersHistoryStatisticsView_Access is
+   function Create (storeFrontOrdersHistoryStatisticsInterface_Param : access StoreFrontOrdersHistoryStatisticsInterface'Class) return StoreFrontOrdersHistoryStatisticsView_Access is
       This : constant StoreFrontOrdersHistoryStatisticsView_Access := new StoreFrontOrdersHistoryStatisticsView;
    begin
-      StoreFrontOrdersHistoryStatisticsView_Package.Initialize (This.all, storeFrontOrdersHistoryStatisticsInterface);
+      StoreFrontOrdersHistoryStatisticsView_Package.Initialize (This.all, storeFrontOrdersHistoryStatisticsInterface_Param);
       return This;
    end Create;
 
    --  throws Exception
-   function toXmlNode (This : in out StoreFrontOrdersHistoryStatisticsView; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out StoreFrontOrdersHistoryStatisticsView; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       hashMap : HashMap_Access;
       node : Node_Access;
    begin
@@ -45,8 +47,8 @@ package body org.allbinary.business.context.modules.storefront.statistics.orders
         return node;
    end toXmlNode;
 
-   procedure toXmlNode (This : in out StoreFrontOrdersHistoryStatisticsView; document : Document_Access) is
-      Java_Result : constant Node_Access := StoreFrontOrdersHistoryStatisticsView'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out StoreFrontOrdersHistoryStatisticsView; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := StoreFrontOrdersHistoryStatisticsView'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -35,7 +35,8 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
    end Create;
 
    --  throws Exception
-   function getInstance (node : Node_Access) return ProfileActionScriptInputInterface_Access is
+   function getInstance (node_Param : access Node'Class) return ProfileActionScriptInputInterface_Access is
+      node : Node_Access := Node_Access (node_Param);
       profileActionScriptInputInterface : ProfileActionScriptInputInterface_Access;
    begin
         profileActionScriptInputInterface := null;
@@ -49,8 +50,8 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
         return profileActionScriptInputInterface;
    end getInstance;
 
-   procedure getInstance (node : Node_Access) is
-      Java_Result : constant ProfileActionScriptInputInterface_Access := getInstance (node);
+   procedure getInstance (node_Param : access Node'Class) is
+      Java_Result : constant ProfileActionScriptInputInterface_Access := getInstance (node_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

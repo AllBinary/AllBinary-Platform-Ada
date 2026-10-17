@@ -21,15 +21,17 @@ package body org.allbinary.animation.image.RightToLeftImageAnimationFactory_Pack
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out RightToLeftImageAnimationFactory'Class; image : Image_Access; dx : Integer; dy : Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access) is
+   procedure Initialize (This : in out RightToLeftImageAnimationFactory'Class; image_Param : access Image'Class; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) is
+      image : Image_Access := Image_Access (image_Param);
+      animationBehaviorFactory : AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
    begin
         BaseImageAnimationFactory_Package.Initialize (This, image, PrimitiveIntUtil_Package.getArrayInstance, image.getWidth, image.getHeight, dx, dy, animationBehaviorFactory);
    end Initialize;
 
-   function Create (image : Image_Access; dx : Integer; dy : Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access) return RightToLeftImageAnimationFactory_Access is
+   function Create (image_Param : access Image'Class; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return RightToLeftImageAnimationFactory_Access is
       This : constant RightToLeftImageAnimationFactory_Access := new RightToLeftImageAnimationFactory;
    begin
-      RightToLeftImageAnimationFactory_Package.Initialize (This.all, image, dx, dy, animationBehaviorFactory);
+      RightToLeftImageAnimationFactory_Package.Initialize (This.all, image_Param, dx, dy, animationBehaviorFactory_Param);
       return This;
    end Create;
 
@@ -39,7 +41,7 @@ package body org.allbinary.animation.image.RightToLeftImageAnimationFactory_Pack
    begin
         scaledImage := This.animationFactoryImageScaleUtil.createImage (This.getImage, This.animationFactoryInitializationVisitor.width, This.animationFactoryInitializationVisitor.height, This.scaleProperties.scaleWidth, This.scaleProperties.scaleHeight);
         if ((This.animationFactoryInitializationVisitor.dx) /= (0)) or else ((This.animationFactoryInitializationVisitor.dy) /= (0)) then
-            This.animationFactoryImageScaleUtil.processAdjust (This'Unchecked_Access);
+            This.animationFactoryImageScaleUtil.processAdjust (RightToLeftImageAnimationFactory_Access'(This'Unchecked_Access));
             return AdjustedRightToLeftImageAnimation_Package.Create (scaledImage, This.animationFactoryInitializationVisitor.dx, This.animationFactoryInitializationVisitor.dy, This.animationBehaviorFactory.getOrCreateInstance);
         else
             return RightToLeftImageAnimation_Package.Create (scaledImage, This.animationBehaviorFactory.getOrCreateInstance);

@@ -36,7 +36,8 @@ package body org.allbinary.layer.AllBinaryLayerCircularPool_Package is
    end Create;
 
    --  throws Exception
-   procedure initAllBinaryLayerCircularPool (This : in out AllBinaryLayerCircularPool; allbinaryLayerFactoryInterface : AllBinaryLayerFactoryInterface_Access; total : Integer) is
+   procedure initAllBinaryLayerCircularPool (This : in out AllBinaryLayerCircularPool; allbinaryLayerFactoryInterface_Param : access AllBinaryLayerFactoryInterface'Class; total : Integer) is
+      allbinaryLayerFactoryInterface : AllBinaryLayerFactoryInterface_Access := AllBinaryLayerFactoryInterface_Access (allbinaryLayerFactoryInterface_Param);
       localIndex : Integer;
    begin
         This.circularIndexUtil := CircularIndexUtil_Package.createInstance (total);

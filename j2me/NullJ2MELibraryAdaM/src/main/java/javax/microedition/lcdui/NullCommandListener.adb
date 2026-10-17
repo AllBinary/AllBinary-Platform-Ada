@@ -21,7 +21,9 @@ package body javax.microedition.lcdui.NullCommandListener_Package is
    end Create;
 
 
-   procedure commandAction (This : in out NullCommandListener; c : Command_Access; d : Displayable_Access) is
+   procedure commandAction (This : in out NullCommandListener; c_Param : access Command'Class; d_Param : access Displayable'Class) is
+      c : Command_Access := Command_Access (c_Param);
+      d : Displayable_Access := Displayable_Access (d_Param);
    begin
         null;
    end commandAction;

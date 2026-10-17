@@ -23,17 +23,19 @@ package body taghelpers.transform.info.TransformInfoRequestHelper_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out TransformInfoRequestHelper'Class; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) is
+   procedure Initialize (This : in out TransformInfoRequestHelper'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+      propertiesHashMap : HashMap_Access := HashMap_Access (propertiesHashMap_Param);
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
    begin
       ModifyTable_Package.Initialize (This);
       Initialize_Fields (This);
         This.transformInfoInterface := TransformInfoHttpStoreNoManipulation_Package.Create (propertiesHashMap, pageContext);
    end Initialize;
 
-   function Create (propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return TransformInfoRequestHelper_Access is
+   function Create (propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return TransformInfoRequestHelper_Access is
       This : constant TransformInfoRequestHelper_Access := new TransformInfoRequestHelper;
    begin
-      TransformInfoRequestHelper_Package.Initialize (This.all, propertiesHashMap, pageContext);
+      TransformInfoRequestHelper_Package.Initialize (This.all, propertiesHashMap_Param, pageContext_Param);
       return This;
    end Create;
 
@@ -47,7 +49,7 @@ package body taghelpers.transform.info.TransformInfoRequestHelper_Package is
             hashMapData := This.transformInfoInterface.toHashMap;
             TransformInfoEntityBuilder_Package.getInstance.update (hashMapData);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, To_Unbounded_String ("update()"));
+                This.logUtil.putF (success, TransformInfoRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("update()"));
             end if;
             return success;
         exception
@@ -57,7 +59,7 @@ package body taghelpers.transform.info.TransformInfoRequestHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to update storefronts table");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("update()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, TransformInfoRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("update()"), e);
             end if;
             return error;
                 end;
@@ -74,7 +76,7 @@ package body taghelpers.transform.info.TransformInfoRequestHelper_Package is
             values := This.transformInfoInterface.toVector;
             TransformInfoEntityBuilder_Package.getInstance.insert (values);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, To_Unbounded_String ("insert()"));
+                This.logUtil.putF (success, TransformInfoRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("insert()"));
             end if;
             return success;
         exception
@@ -84,7 +86,7 @@ package body taghelpers.transform.info.TransformInfoRequestHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to add storefronts table");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("insert()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, TransformInfoRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("insert()"), e);
             end if;
             return error;
                 end;
@@ -99,7 +101,7 @@ package body taghelpers.transform.info.TransformInfoRequestHelper_Package is
             success := To_Unbounded_String ("Delete Successfully");
             TransformInfoEntityBuilder_Package.getInstance.delete (Unbounded_String (This.transformInfoInterface.getKey));
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, To_Unbounded_String ("delete()"));
+                This.logUtil.putF (success, TransformInfoRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("delete()"));
             end if;
             return success;
         exception
@@ -109,7 +111,7 @@ package body taghelpers.transform.info.TransformInfoRequestHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to delete storefronts table");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("delete()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, TransformInfoRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("delete()"), e);
             end if;
             return error;
                 end;

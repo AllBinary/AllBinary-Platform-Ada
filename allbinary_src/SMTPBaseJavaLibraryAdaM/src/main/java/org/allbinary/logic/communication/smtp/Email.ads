@@ -82,13 +82,13 @@ package org.allbinary.logic.communication.smtp.Email_Package is
    procedure Initialize (This : in out Email'Class; from : Unbounded_String; to : Unbounded_String; subject : Unbounded_String; server : Unbounded_String; textBody : Unbounded_String; htmlAttachment : Unbounded_String; contentBase : Unbounded_String; isDebug : Boolean);
    function Create (from : Unbounded_String; to : Unbounded_String; subject : Unbounded_String; server : Unbounded_String; textBody : Unbounded_String; htmlAttachment : Unbounded_String; contentBase : Unbounded_String; isDebug : Boolean) return Email_Access;
    procedure init (This : in out Email; from : Unbounded_String; to : Unbounded_String; subject : Unbounded_String; server : Unbounded_String; textBody : Unbounded_String; htmlAttachment : Unbounded_String; contentBase : Unbounded_String);
-   procedure init (This : in out Email; server : Unbounded_String; authenticator : Authenticator_Access; addresses_from : InternetAddress_Access_Array_Access; addresses_to : InternetAddress_Access_Array_Access; addresses_cc : InternetAddress_Access_Array_Access; addresses_bcc : InternetAddress_Access_Array_Access; subject : Unbounded_String; mimeBodyParts : MimeBodyPart_Access_Array_Access);
+   procedure init (This : in out Email; server : Unbounded_String; authenticator_Param : access Authenticator'Class; addresses_from : InternetAddress_Access_Array_Access; addresses_to : InternetAddress_Access_Array_Access; addresses_cc : InternetAddress_Access_Array_Access; addresses_bcc : InternetAddress_Access_Array_Access; subject : Unbounded_String; mimeBodyParts : MimeBodyPart_Access_Array_Access);
    function getMimeMessage (This : in out Email) return MimeMessage_Access;
    function getDebugInfo (This : in out Email) return Unbounded_String;
    function log (This : in out Email) return Unbounded_String;
    function toHashMap (This : in out Email) return HashMap_Access;
-   function toXmlNode (This : in out Email; document : Document_Access) return Node_Access;
-   procedure toXmlNode (This : in out Email; document : Document_Access);
+   function toXmlNode (This : in out Email; document_Param : access Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out Email; document_Param : access Document'Class);
    function toXmlDoc (This : in out Email) return Document_Access;
 
 end org.allbinary.logic.communication.smtp.Email_Package;

@@ -94,8 +94,8 @@ package org.allbinary.business.user.commerce.inventory.item.BasicItem_Package is
       lastModified : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out BasicItem'Class; itemHashMap : HashMap_Access);
-   function Create (itemHashMap : HashMap_Access) return BasicItem_Access;
+   procedure Initialize (This : in out BasicItem'Class; itemHashMap_Param : access HashMap'Class);
+   function Create (itemHashMap_Param : access HashMap'Class) return BasicItem_Access;
    procedure Initialize (This : in out BasicItem'Class);
    function Create return BasicItem_Access;
    procedure setId (This : in out BasicItem; itemId : Unbounded_String);
@@ -118,7 +118,7 @@ package org.allbinary.business.user.commerce.inventory.item.BasicItem_Package is
    procedure setLargeImage (This : in out BasicItem; value : Unbounded_String);
    procedure setTimeEntered (This : in out BasicItem; value : Unbounded_String);
    procedure setLastModified (This : in out BasicItem; value : Unbounded_String);
-   procedure setPrice (This : in out BasicItem; value : Money_Access);
+   procedure setPrice (This : in out BasicItem; value_Param : access Money'Class);
    procedure setComment (This : in out BasicItem; value : Unbounded_String);
    procedure setCustoms (This : in out BasicItem; value : Unbounded_String);
    procedure setDownloads (This : in out BasicItem; value : Unbounded_String);

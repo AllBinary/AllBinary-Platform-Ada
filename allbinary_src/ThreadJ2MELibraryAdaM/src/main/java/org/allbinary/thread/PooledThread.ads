@@ -48,8 +48,8 @@ package org.allbinary.thread.PooledThread_Package is
       INTERRUPT_EXCEPTION : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out PooledThread'Class; threadPool : ThreadPool_Access);
-   function Create (threadPool : ThreadPool_Access) return PooledThread_Access;
+   procedure Initialize (This : in out PooledThread'Class; threadPool_Param : access ThreadPool'Class);
+   function Create (threadPool_Param : access ThreadPool'Class) return PooledThread_Access;
    procedure run (This : in out PooledThread);
 
 end org.allbinary.thread.PooledThread_Package;

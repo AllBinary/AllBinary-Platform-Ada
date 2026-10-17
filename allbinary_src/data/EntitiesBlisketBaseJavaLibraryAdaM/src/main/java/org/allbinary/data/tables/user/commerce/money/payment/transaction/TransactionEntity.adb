@@ -46,7 +46,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.transaction.T
             whereHashMap.put (UserData_Package.USERNAME, userName);
             AbSqlBean (This).deleteWhere (whereHashMap);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.putF (This.commonStrings.SUCCESS, This'Unchecked_Access, To_Unbounded_String ("remove"));
+                This.logUtil.putF (This.commonStrings.SUCCESS, TransactionEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("remove"));
             end if;
         exception
             when Java_Occurrence : others =>
@@ -54,13 +54,14 @@ package body org.allbinary.data.tables.user.commerce.money.payment.transaction.T
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("remove"), e);
+                This.logUtil.put (This.commonStrings.FAILURE, TransactionEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("remove"), e);
             end if;
                 end;
         end;
    end remove;
 
-   procedure add (This : in out TransactionEntity; userName : Unbounded_String; orderNumber : Unbounded_String; paymentTransactionInterface : PaymentTransactionInterface_Access) is
+   procedure add (This : in out TransactionEntity; userName : Unbounded_String; orderNumber : Unbounded_String; paymentTransactionInterface_Param : access PaymentTransactionInterface'Class) is
+      paymentTransactionInterface : PaymentTransactionInterface_Access := PaymentTransactionInterface_Access (paymentTransactionInterface_Param);
       values : BasicArrayList_Access;
       calendar : Calendar_Access;
       time : Unbounded_String;
@@ -76,7 +77,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.transaction.T
             values.add (time);
             AbSqlBean (This).insert (values);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.putF (This.commonStrings.SUCCESS, This'Unchecked_Access, To_Unbounded_String ("add"));
+                This.logUtil.putF (This.commonStrings.SUCCESS, TransactionEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("add"));
             end if;
         exception
             when Java_Occurrence : others =>
@@ -84,7 +85,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.transaction.T
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("add"), e);
+                This.logUtil.put (This.commonStrings.FAILURE, TransactionEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("add"), e);
             end if;
                 end;
         end;

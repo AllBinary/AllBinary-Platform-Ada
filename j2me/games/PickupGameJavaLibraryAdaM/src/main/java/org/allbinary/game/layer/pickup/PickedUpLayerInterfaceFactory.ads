@@ -42,8 +42,8 @@ package org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactory_Package is
       animationInterface : Animation_Access;
    end record;
 
-   procedure Initialize (This : in out PickedUpLayerInterfaceFactory'Class; pickeUpLayerType : PickedUpLayerType_Access; iconLayer : IconLayer_Access; animationInterface : Animation_Access);
-   function Create (pickeUpLayerType : PickedUpLayerType_Access; iconLayer : IconLayer_Access; animationInterface : Animation_Access) return PickedUpLayerInterfaceFactory_Access;
+   procedure Initialize (This : in out PickedUpLayerInterfaceFactory'Class; pickeUpLayerType_Param : access PickedUpLayerType'Class; iconLayer_Param : access IconLayer'Class; animationInterface_Param : access Animation'Class);
+   function Create (pickeUpLayerType_Param : access PickedUpLayerType'Class; iconLayer_Param : access IconLayer'Class; animationInterface_Param : access Animation'Class) return PickedUpLayerInterfaceFactory_Access;
    function getIconLayer (This : in out PickedUpLayerInterfaceFactory) return AllBinaryLayer_Access;
    function getAnimationInterface (This : in out PickedUpLayerInterfaceFactory) return Animation_Access;
    function getPickedUpLayerType (This : in out PickedUpLayerInterfaceFactory) return PickedUpLayerType_Access;

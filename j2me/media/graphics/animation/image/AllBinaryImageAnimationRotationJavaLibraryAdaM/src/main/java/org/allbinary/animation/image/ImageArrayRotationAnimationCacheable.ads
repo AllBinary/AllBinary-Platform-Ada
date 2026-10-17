@@ -41,8 +41,8 @@ package org.allbinary.animation.image.ImageArrayRotationAnimationCacheable_Packa
 
    type ImageArrayRotationAnimationCacheable is new AdjustedImageArrayRotationAnimation and CacheableInterface with null record;
 
-   procedure Initialize (This : in out ImageArrayRotationAnimationCacheable'Class; anyType : Java_Object_Access; animationBehavior : AnimationBehavior_Access);
-   function Create (anyType : Java_Object_Access; animationBehavior : AnimationBehavior_Access) return ImageArrayRotationAnimationCacheable_Access;
+   procedure Initialize (This : in out ImageArrayRotationAnimationCacheable'Class; anyType_Param : access Java_Object'Class; animationBehavior_Param : access AnimationBehavior'Class);
+   function Create (anyType_Param : access Java_Object'Class; animationBehavior_Param : access AnimationBehavior'Class) return ImageArrayRotationAnimationCacheable_Access;
    function getKey (This : in out ImageArrayRotationAnimationCacheable) return Java_Object_Access;
    function toString (This : in out ImageArrayRotationAnimationCacheable) return Unbounded_String;
 

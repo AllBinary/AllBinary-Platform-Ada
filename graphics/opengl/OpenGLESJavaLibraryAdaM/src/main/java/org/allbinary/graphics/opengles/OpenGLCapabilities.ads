@@ -100,9 +100,9 @@ package org.allbinary.graphics.opengles.OpenGLCapabilities_Package is
    function getInstance return OpenGLCapabilities_Access;
    function isInitialized (This : in out OpenGLCapabilities) return Boolean;
    procedure requireInitialization (This : in out OpenGLCapabilities);
-   procedure initCapabilities (This : in out OpenGLCapabilities; gl : GL10_Access);
-   function isExtension (This : in out OpenGLCapabilities; gameFeature : OpenGLFeature_Access) return Boolean;
-   procedure isExtension (This : in out OpenGLCapabilities; gameFeature : OpenGLFeature_Access);
+   procedure initCapabilities (This : in out OpenGLCapabilities; gl_Param : access GL10'Class);
+   function isExtension (This : in out OpenGLCapabilities; gameFeature_Param : access OpenGLFeature'Class) return Boolean;
+   procedure isExtension (This : in out OpenGLCapabilities; gameFeature_Param : access OpenGLFeature'Class);
    function isGlExtensionDrawTexture (This : in out OpenGLCapabilities) return Boolean;
    function isGlExtensionGPUShader100 (This : in out OpenGLCapabilities) return Boolean;
    function isGlExtensionGPUShader4 (This : in out OpenGLCapabilities) return Boolean;

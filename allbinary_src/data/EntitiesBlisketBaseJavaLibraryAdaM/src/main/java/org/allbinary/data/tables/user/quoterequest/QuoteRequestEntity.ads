@@ -60,7 +60,7 @@ package org.allbinary.data.tables.user.quoterequest.QuoteRequestEntity_Package i
 
    procedure Initialize (This : in out QuoteRequestEntity'Class);
    function Create return QuoteRequestEntity_Access;
-   procedure insert (This : in out QuoteRequestEntity; values : BasicArrayList_Access);
+   procedure insert (This : in out QuoteRequestEntity; values_Param : access BasicArrayList'Class);
    function get (This : in out QuoteRequestEntity; userName : Unbounded_String; id : Integer) return QuoteRequest_Access;
    procedure get (This : in out QuoteRequestEntity; userName : Unbounded_String; id : Integer);
    function getIds (This : in out QuoteRequestEntity; userName : Unbounded_String) return BasicArrayList_Access;
@@ -69,7 +69,7 @@ package org.allbinary.data.tables.user.quoterequest.QuoteRequestEntity_Package i
    function createTableStatement (This : in out QuoteRequestEntity) return Unbounded_String;
    function createTable (This : in out QuoteRequestEntity) return Unbounded_String;
    function dropTable (This : in out QuoteRequestEntity) return Unbounded_String;
-   procedure update (This : in out QuoteRequestEntity; userName : Unbounded_String; updatedValues : HashMap_Access);
+   procedure update (This : in out QuoteRequestEntity; userName : Unbounded_String; updatedValues_Param : access HashMap'Class);
 
 end org.allbinary.data.tables.user.quoterequest.QuoteRequestEntity_Package;
 

@@ -41,7 +41,9 @@ package body org.allbinary.logic.control.workflow.DbWorkFlowFactory_Package is
    end Create;
 
    --  throws Exception, LicensingException
-   function getInstance (This : in out DbWorkFlowFactory; abeClientInformation : AbeClientInformationInterface_Access; hashMap : HashMap_Access) return WorkFlowInterface_Access is
+   function getInstance (This : in out DbWorkFlowFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; hashMap_Param : access HashMap'Class) return WorkFlowInterface_Access is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
       className : Unbounded_String;
       params : Java_Object_Access_Array_Access;
       classes : Ada_Tags_Tag_Array_Access;
@@ -63,15 +65,15 @@ package body org.allbinary.logic.control.workflow.DbWorkFlowFactory_Package is
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORYERROR) then
                 commonStrings := CommonStrings_Package.getInstance;
-                This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("getInstance(HashMap)"), e);
+                This.logUtil.put (commonStrings.EXCEPTION_Id, DbWorkFlowFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getInstance(HashMap)"), e);
             end if;
             Java_Throw (e);
                 end;
         end;
    end getInstance;
 
-   procedure getInstance (This : in out DbWorkFlowFactory; abeClientInformation : AbeClientInformationInterface_Access; hashMap : HashMap_Access) is
-      Java_Result : constant WorkFlowInterface_Access := DbWorkFlowFactory'Class (This).getInstance (abeClientInformation, hashMap);
+   procedure getInstance (This : in out DbWorkFlowFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; hashMap_Param : access HashMap'Class) is
+      Java_Result : constant WorkFlowInterface_Access := DbWorkFlowFactory'Class (This).getInstance (abeClientInformation_Param, hashMap_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -36,29 +36,31 @@ package body org.allbinary.business.category.properties.CategoryPropertiesFactor
       return This;
    end Create;
 
-   procedure Initialize (This : in out CategoryPropertiesFactory'Class; node : Node_Access) is
+   procedure Initialize (This : in out CategoryPropertiesFactory'Class; node_Param : access Node'Class) is
+      node : Node_Access := Node_Access (node_Param);
    begin
       Initialize_Fields (This);
         This.categoryPropertiesInterface := CategoryPropertiesInterface_Access (CategoryProperties_Package.Create (node));
    end Initialize;
 
-   function Create (node : Node_Access) return CategoryPropertiesFactory_Access is
+   function Create (node_Param : access Node'Class) return CategoryPropertiesFactory_Access is
       This : constant CategoryPropertiesFactory_Access := new CategoryPropertiesFactory;
    begin
-      CategoryPropertiesFactory_Package.Initialize (This.all, node);
+      CategoryPropertiesFactory_Package.Initialize (This.all, node_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out CategoryPropertiesFactory'Class; categoryPropertiesHashMap : HashMap_Access) is
+   procedure Initialize (This : in out CategoryPropertiesFactory'Class; categoryPropertiesHashMap_Param : access HashMap'Class) is
+      categoryPropertiesHashMap : HashMap_Access := HashMap_Access (categoryPropertiesHashMap_Param);
    begin
       Initialize_Fields (This);
         This.categoryPropertiesInterface := CategoryPropertiesInterface_Access (CategoryProperties_Package.Create (categoryPropertiesHashMap));
    end Initialize;
 
-   function Create (categoryPropertiesHashMap : HashMap_Access) return CategoryPropertiesFactory_Access is
+   function Create (categoryPropertiesHashMap_Param : access HashMap'Class) return CategoryPropertiesFactory_Access is
       This : constant CategoryPropertiesFactory_Access := new CategoryPropertiesFactory;
    begin
-      CategoryPropertiesFactory_Package.Initialize (This.all, categoryPropertiesHashMap);
+      CategoryPropertiesFactory_Package.Initialize (This.all, categoryPropertiesHashMap_Param);
       return This;
    end Create;
 
@@ -74,7 +76,7 @@ package body org.allbinary.business.category.properties.CategoryPropertiesFactor
                 begin
             commonStrings := CommonStrings_Package.getInstance;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.ENTITYFACTORYERROR) then
-                This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.GET_INSTANCE, e);
+                This.logUtil.put (commonStrings.EXCEPTION_Id, CategoryPropertiesFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE, e);
             end if;
             return null;
                 end;

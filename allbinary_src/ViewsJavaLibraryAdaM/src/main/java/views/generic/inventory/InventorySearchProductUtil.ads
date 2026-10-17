@@ -69,8 +69,8 @@ package views.generic_Id.inventory.InventorySearchProductUtil_Package is
    procedure Initialize (This : in out InventorySearchProductUtil'Class);
    function Create return InventorySearchProductUtil_Access;
    function getInstance return InventorySearchProductUtil_Access;
-   function getProduct (This : in out InventorySearchProductUtil; abeClientInformation : AbeClientInformationInterface_Access; searchRequest : SearchRequest_Access; product : Unbounded_String) return Unbounded_String;
-   procedure getProduct (This : in out InventorySearchProductUtil; abeClientInformation : AbeClientInformationInterface_Access; searchRequest : SearchRequest_Access; product : Unbounded_String);
+   function getProduct (This : in out InventorySearchProductUtil; abeClientInformation_Param : access AbeClientInformationInterface'Class; searchRequest_Param : access SearchRequest'Class; product : Unbounded_String) return Unbounded_String;
+   procedure getProduct (This : in out InventorySearchProductUtil; abeClientInformation_Param : access AbeClientInformationInterface'Class; searchRequest_Param : access SearchRequest'Class; product : Unbounded_String);
 
 end views.generic_Id.inventory.InventorySearchProductUtil_Package;
 

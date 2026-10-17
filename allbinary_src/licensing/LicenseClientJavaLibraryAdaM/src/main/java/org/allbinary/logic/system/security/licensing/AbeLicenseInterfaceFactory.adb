@@ -46,7 +46,8 @@ package body org.allbinary.logic.system.security.licensing.AbeLicenseInterfaceFa
    end Create;
 
    --  throws LicensingException
-   function getLicenseInstance (This : in out AbeLicenseInterfaceFactory; abeClientInformation : AbeClientInformationInterface_Access) return AbeLicenseInterface_Access is
+   function getLicenseInstance (This : in out AbeLicenseInterfaceFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class) return AbeLicenseInterface_Access is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
    begin
         if This.isTimeToGetKey then
             return This.get (abeClientInformation);
@@ -56,16 +57,17 @@ package body org.allbinary.logic.system.security.licensing.AbeLicenseInterfaceFa
    end getLicenseInstance;
 
    --  throws LicensingException
-   function get (This : in out AbeLicenseInterfaceFactory; abeClientInformation : AbeClientInformationInterface_Access) return AbeLicenseInterface_Access is
+   function get (This : in out AbeLicenseInterfaceFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class) return AbeLicenseInterface_Access is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
       licenseClient : AbeLicenseClient_Access;
    begin
         begin
-            This.logUtil.putF (To_Unbounded_String ("Getting Keys"), This'Unchecked_Access, This.commonStrings.GET);
+            This.logUtil.putF (To_Unbounded_String ("Getting Keys"), AbeLicenseInterfaceFactory_Access'(This'Unchecked_Access), This.commonStrings.GET);
             This.abeLicenseInterface := AbeNoLicense_Package.getInstance;
             licenseClient := AbeLicenseClient_Package.Create;
             This.abeLicenseInterface := licenseClient.get (abeClientInformation);
             if (This.abeLicenseInterface) /= (null) then
-                This.logUtil.putF (To_Unbounded_String ("Default Key: ") & Java_Image (This.abeLicenseInterface.getKey (AbeClientInformationData_Package.getInstance.KEY)), This'Unchecked_Access, This.commonStrings.GET);
+                This.logUtil.putF (To_Unbounded_String ("Default Key: ") & Java_Image (This.abeLicenseInterface.getKey (AbeClientInformationData_Package.getInstance.KEY)), AbeLicenseInterfaceFactory_Access'(This'Unchecked_Access), This.commonStrings.GET);
             end if;
             return This.abeLicenseInterface;
         exception
@@ -73,7 +75,7 @@ package body org.allbinary.logic.system.security.licensing.AbeLicenseInterfaceFa
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (To_Unbounded_String ("Licensing IO Error"), This'Unchecked_Access, This.commonStrings.GET, e);
+            This.logUtil.put (To_Unbounded_String ("Licensing IO Error"), AbeLicenseInterfaceFactory_Access'(This'Unchecked_Access), This.commonStrings.GET, e);
             Java_Throw (Java_New_Exception ("LicensingException", To_Unbounded_String ("License Server Connection Error")));
                 end;
         end;
@@ -104,15 +106,15 @@ package body org.allbinary.logic.system.security.licensing.AbeLicenseInterfaceFa
         return This.check;
    end isCheck;
 
-   procedure getLicenseInstance (This : in out AbeLicenseInterfaceFactory; abeClientInformation : AbeClientInformationInterface_Access) is
-      Java_Result : constant AbeLicenseInterface_Access := AbeLicenseInterfaceFactory'Class (This).getLicenseInstance (abeClientInformation);
+   procedure getLicenseInstance (This : in out AbeLicenseInterfaceFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class) is
+      Java_Result : constant AbeLicenseInterface_Access := AbeLicenseInterfaceFactory'Class (This).getLicenseInstance (abeClientInformation_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getLicenseInstance;
 
-   procedure get (This : in out AbeLicenseInterfaceFactory; abeClientInformation : AbeClientInformationInterface_Access) is
-      Java_Result : constant AbeLicenseInterface_Access := AbeLicenseInterfaceFactory'Class (This).get (abeClientInformation);
+   procedure get (This : in out AbeLicenseInterfaceFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class) is
+      Java_Result : constant AbeLicenseInterface_Access := AbeLicenseInterfaceFactory'Class (This).get (abeClientInformation_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

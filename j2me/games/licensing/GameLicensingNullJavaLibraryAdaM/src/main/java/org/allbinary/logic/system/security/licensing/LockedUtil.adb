@@ -43,13 +43,14 @@ package body org.allbinary.logic.system.security.licensing.LockedUtil_Package is
         return True;
    end isLocked;
 
-   function isLockedFeature (This : in out LockedUtil; lockableFeatrue : LockableFeature_Access) return Boolean is
+   function isLockedFeature (This : in out LockedUtil; lockableFeatrue_Param : access LockableFeature'Class) return Boolean is
+      lockableFeatrue : LockableFeature_Access := LockableFeature_Access (lockableFeatrue_Param);
    begin
         return True;
    end isLockedFeature;
 
-   procedure isLockedFeature (This : in out LockedUtil; lockableFeatrue : LockableFeature_Access) is
-      Java_Result : constant Boolean := LockedUtil'Class (This).isLockedFeature (lockableFeatrue);
+   procedure isLockedFeature (This : in out LockedUtil; lockableFeatrue_Param : access LockableFeature'Class) is
+      Java_Result : constant Boolean := LockedUtil'Class (This).isLockedFeature (lockableFeatrue_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

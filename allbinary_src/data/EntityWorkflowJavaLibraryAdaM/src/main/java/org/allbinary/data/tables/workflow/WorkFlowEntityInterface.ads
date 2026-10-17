@@ -42,8 +42,8 @@ package org.allbinary.data.tables.workflow.WorkFlowEntityInterface_Package is
    function get (This : in out WorkFlowEntityInterface; storeName : Unbounded_String) return BasicArrayList_Access is abstract;
    function get (This : in out WorkFlowEntityInterface; name : Unbounded_String; storeName : Unbounded_String) return WorkFlowInterface_Access is abstract;
    procedure delete (This : in out WorkFlowEntityInterface; name : Unbounded_String; storeName : Unbounded_String) is abstract;
-   procedure insert (This : in out WorkFlowEntityInterface; values : BasicArrayList_Access) is abstract;
-   procedure update (This : in out WorkFlowEntityInterface; updatedValues : HashMap_Access) is abstract;
+   procedure insert (This : in out WorkFlowEntityInterface; values_Param : access BasicArrayList'Class) is abstract;
+   procedure update (This : in out WorkFlowEntityInterface; updatedValues_Param : access HashMap'Class) is abstract;
 
 end org.allbinary.data.tables.workflow.WorkFlowEntityInterface_Package;
 

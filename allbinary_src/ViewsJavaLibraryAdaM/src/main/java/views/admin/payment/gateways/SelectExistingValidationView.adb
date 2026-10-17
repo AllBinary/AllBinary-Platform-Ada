@@ -21,15 +21,16 @@ package body views.admin.payment.gateways.SelectExistingValidationView_Package i
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out SelectExistingValidationView'Class; transformInfoInterface : TransformInfoInterface_Access) is
+   procedure Initialize (This : in out SelectExistingValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
    end Initialize;
 
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return SelectExistingValidationView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return SelectExistingValidationView_Access is
       This : constant SelectExistingValidationView_Access := new SelectExistingValidationView;
    begin
-      SelectExistingValidationView_Package.Initialize (This.all, transformInfoInterface);
+      SelectExistingValidationView_Package.Initialize (This.all, transformInfoInterface_Param);
       return This;
    end Create;
 
@@ -43,7 +44,8 @@ package body views.admin.payment.gateways.SelectExistingValidationView_Package i
         return null;
    end toValidationInfoDoc;
 
-   function toValidationInfoNode (This : in out SelectExistingValidationView; document : Document_Access) return Node_Access is
+   function toValidationInfoNode (This : in out SelectExistingValidationView; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
    begin
         return null;
    end toValidationInfoNode;
@@ -59,7 +61,8 @@ package body views.admin.payment.gateways.SelectExistingValidationView_Package i
         return null;
    end toXmlDoc;
 
-   function toXmlNode (This : in out SelectExistingValidationView; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out SelectExistingValidationView; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
    begin
         return null;
    end toXmlNode;
@@ -70,15 +73,15 @@ package body views.admin.payment.gateways.SelectExistingValidationView_Package i
         return SelectExistingView_Package.Create (This.getTransformInfoInterface).view;
    end view;
 
-   procedure toValidationInfoNode (This : in out SelectExistingValidationView; document : Document_Access) is
-      Java_Result : constant Node_Access := SelectExistingValidationView'Class (This).toValidationInfoNode (document);
+   procedure toValidationInfoNode (This : in out SelectExistingValidationView; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := SelectExistingValidationView'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toValidationInfoNode;
 
-   procedure toXmlNode (This : in out SelectExistingValidationView; document : Document_Access) is
-      Java_Result : constant Node_Access := SelectExistingValidationView'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out SelectExistingValidationView; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := SelectExistingValidationView'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

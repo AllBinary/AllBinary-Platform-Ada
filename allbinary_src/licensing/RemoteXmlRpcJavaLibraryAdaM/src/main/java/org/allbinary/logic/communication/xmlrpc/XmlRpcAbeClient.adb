@@ -43,7 +43,8 @@ package body org.allbinary.logic.communication.xmlrpc.XmlRpcAbeClient_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out XmlRpcAbeClient'Class; clientInfo : AbeClientInformationInterface_Access; remoteMethod : Unbounded_String) is
+   procedure Initialize (This : in out XmlRpcAbeClient'Class; clientInfo_Param : access AbeClientInformationInterface'Class; remoteMethod : Unbounded_String) is
+      clientInfo : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (clientInfo_Param);
       stringBuffer : StringMaker_Access;
    begin
       Initialize_Fields (This);
@@ -63,25 +64,27 @@ package body org.allbinary.logic.communication.xmlrpc.XmlRpcAbeClient_Package is
         stringBuffer.appendint (This.getServer);
         stringBuffer.append (This.SEP);
         stringBuffer.append (clientInfo.getLicenseServer (This.getServer));
-        This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+        This.logUtil.putF (stringBuffer.toString, XmlRpcAbeClient_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
    end Initialize;
 
-   function Create (clientInfo : AbeClientInformationInterface_Access; remoteMethod : Unbounded_String) return XmlRpcAbeClient_Access is
+   function Create (clientInfo_Param : access AbeClientInformationInterface'Class; remoteMethod : Unbounded_String) return XmlRpcAbeClient_Access is
       This : constant XmlRpcAbeClient_Access := new XmlRpcAbeClient;
    begin
-      XmlRpcAbeClient_Package.Initialize (This.all, clientInfo, remoteMethod);
+      XmlRpcAbeClient_Package.Initialize (This.all, clientInfo_Param, remoteMethod);
       return This;
    end Create;
 
    --  throws Exception
-   function get (This : in out XmlRpcAbeClient; anyType : Java_Object_Access) return Java_Object_Access is
+   function get (This : in out XmlRpcAbeClient; anyType_Param : access Java_Object'Class) return Java_Object_Access is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
-        ForcedLogUtil_Package.log (This.commonStrings.NOT_IMPLEMENTED, This'Unchecked_Access);
+        ForcedLogUtil_Package.log (This.commonStrings.NOT_IMPLEMENTED, XmlRpcAbeClient_Access'(This'Unchecked_Access));
         return NullUtil_Package.getInstance.NULL_OBJECT;
    end get;
 
    --  throws Exception
-   function tryAnother (This : in out XmlRpcAbeClient; anyType : Java_Object_Access) return Java_Object_Access is
+   function tryAnother (This : in out XmlRpcAbeClient; anyType_Param : access Java_Object'Class) return Java_Object_Access is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         if (This.getServer) < (This.getMaxServers) then
             This.setServer ((This.getServer) + (1));
@@ -106,7 +109,8 @@ package body org.allbinary.logic.communication.xmlrpc.XmlRpcAbeClient_Package is
         return This.client;
    end getClient;
 
-   procedure setClient (This : in out XmlRpcAbeClient; client : XmlRpcClient_Access) is
+   procedure setClient (This : in out XmlRpcAbeClient; client_Param : access XmlRpcClient'Class) is
+      client : XmlRpcClient_Access := XmlRpcClient_Access (client_Param);
    begin
         This.client := client;
    end setClient;
@@ -156,15 +160,15 @@ package body org.allbinary.logic.communication.xmlrpc.XmlRpcAbeClient_Package is
         return This.remoteMethod;
    end getRemoteMethod;
 
-   procedure get (This : in out XmlRpcAbeClient; anyType : Java_Object_Access) is
-      Java_Result : constant Java_Object_Access := XmlRpcAbeClient'Class (This).get (anyType);
+   procedure get (This : in out XmlRpcAbeClient; anyType_Param : access Java_Object'Class) is
+      Java_Result : constant Java_Object_Access := XmlRpcAbeClient'Class (This).get (anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end get;
 
-   procedure tryAnother (This : in out XmlRpcAbeClient; anyType : Java_Object_Access) is
-      Java_Result : constant Java_Object_Access := XmlRpcAbeClient'Class (This).tryAnother (anyType);
+   procedure tryAnother (This : in out XmlRpcAbeClient; anyType_Param : access Java_Object'Class) is
+      Java_Result : constant Java_Object_Access := XmlRpcAbeClient'Class (This).tryAnother (anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

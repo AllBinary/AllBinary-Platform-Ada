@@ -48,8 +48,8 @@ package views.business.context.HttpContextView_Package is
       commonStrings : CommonStrings_Access;
    end record;
 
-   procedure Initialize (This : in out HttpContextView'Class; transformInfoInterface : TransformInfoInterface_Access);
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return HttpContextView_Access;
+   procedure Initialize (This : in out HttpContextView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return HttpContextView_Access;
    function view (This : in out HttpContextView) return Unbounded_String;
 
 end views.business.context.HttpContextView_Package;

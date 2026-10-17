@@ -38,7 +38,8 @@ package body org.allbinary.logic.system.security.licensing.client.AbeLicenseClie
    end Create;
 
    --  throws Exception
-   function get (This : in out AbeLicenseClient; abeClientInformation : AbeClientInformationInterface_Access) return AbeLicenseInterface_Access is
+   function get (This : in out AbeLicenseClient; abeClientInformation_Param : access AbeClientInformationInterface'Class) return AbeLicenseInterface_Access is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
       xmlRpcAbeLicenseClient : XmlRpcAbeClient_Access;
       abeLicenseInterface : AbeLicenseInterface_Access;
       licenseId : Unbounded_String;
@@ -49,7 +50,7 @@ package body org.allbinary.logic.system.security.licensing.client.AbeLicenseClie
       initInfo : LicenseInitInfo_Access;
    begin
         begin
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.GET);
+            This.logUtil.putF (This.commonStrings.START, AbeLicenseClient_Access'(This'Unchecked_Access), This.commonStrings.GET);
             xmlRpcAbeLicenseClient := XmlRpcAbeLicenseRetrievalClient_Package.Create (abeClientInformation);
             abeLicenseInterface := AbeLicenseInterface_Access (xmlRpcAbeLicenseClient.get (null));
             licenseId := abeLicenseInterface.getLicenseId;
@@ -70,7 +71,7 @@ package body org.allbinary.logic.system.security.licensing.client.AbeLicenseClie
                 LicenseInitInfoUtil_Package.getInstance.write (initInfo);
                 abeClientInformation.init;
             end if;
-            This.logUtil.putF (This.commonStrings.END_Id, This'Unchecked_Access, This.commonStrings.GET);
+            This.logUtil.putF (This.commonStrings.END_Id, AbeLicenseClient_Access'(This'Unchecked_Access), This.commonStrings.GET);
             return abeLicenseInterface;
         exception
             when Java_Occurrence : others =>
@@ -82,8 +83,8 @@ package body org.allbinary.logic.system.security.licensing.client.AbeLicenseClie
         end;
    end get;
 
-   procedure get (This : in out AbeLicenseClient; abeClientInformation : AbeClientInformationInterface_Access) is
-      Java_Result : constant AbeLicenseInterface_Access := AbeLicenseClient'Class (This).get (abeClientInformation);
+   procedure get (This : in out AbeLicenseClient; abeClientInformation_Param : access AbeClientInformationInterface'Class) is
+      Java_Result : constant AbeLicenseInterface_Access := AbeLicenseClient'Class (This).get (abeClientInformation_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

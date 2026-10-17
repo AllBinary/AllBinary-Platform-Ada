@@ -41,24 +41,28 @@ package body org.allbinary.logic.io.path.PathUtil_Package is
       return This;
    end Create;
 
-   function getExtensionWithAbFilePath (This : in out PathUtil; abFilePath : AbFilePath_Access) return Unbounded_String is
+   function getExtensionWithAbFilePath (This : in out PathUtil; abFilePath_Param : access AbFilePath'Class) return Unbounded_String is
+      abFilePath : AbFilePath_Access := AbFilePath_Access (abFilePath_Param);
    begin
         return This.abPathData.getExtension (abFilePath.toString);
    end getExtensionWithAbFilePath;
 
-   function getExtensionWithAbPath (This : in out PathUtil; abPath : AbPath_Access) return Unbounded_String is
+   function getExtensionWithAbPath (This : in out PathUtil; abPath_Param : access AbPath'Class) return Unbounded_String is
+      abPath : AbPath_Access := AbPath_Access (abPath_Param);
    begin
         return This.abPathData.getExtension (abPath.toString);
    end getExtensionWithAbPath;
 
    --  throws Exception
-   function getWithoutExtensionWithAbFilePath (This : in out PathUtil; abFilePath : AbFilePath_Access) return Unbounded_String is
+   function getWithoutExtensionWithAbFilePath (This : in out PathUtil; abFilePath_Param : access AbFilePath'Class) return Unbounded_String is
+      abFilePath : AbFilePath_Access := AbFilePath_Access (abFilePath_Param);
    begin
         return This.getWithoutExtension (abFilePath.toString);
    end getWithoutExtensionWithAbFilePath;
 
    --  throws Exception
-   function getWithoutExtensionWithAbPath (This : in out PathUtil; abPath : AbPath_Access) return Unbounded_String is
+   function getWithoutExtensionWithAbPath (This : in out PathUtil; abPath_Param : access AbPath'Class) return Unbounded_String is
+      abPath : AbPath_Access := AbPath_Access (abPath_Param);
    begin
         return This.getWithoutExtension (abPath.toString);
    end getWithoutExtensionWithAbPath;
@@ -161,29 +165,29 @@ package body org.allbinary.logic.io.path.PathUtil_Package is
         end if;
    end removeNameFromPath;
 
-   procedure getExtensionWithAbFilePath (This : in out PathUtil; abFilePath : AbFilePath_Access) is
-      Java_Result : constant Unbounded_String := PathUtil'Class (This).getExtensionWithAbFilePath (abFilePath);
+   procedure getExtensionWithAbFilePath (This : in out PathUtil; abFilePath_Param : access AbFilePath'Class) is
+      Java_Result : constant Unbounded_String := PathUtil'Class (This).getExtensionWithAbFilePath (abFilePath_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getExtensionWithAbFilePath;
 
-   procedure getExtensionWithAbPath (This : in out PathUtil; abPath : AbPath_Access) is
-      Java_Result : constant Unbounded_String := PathUtil'Class (This).getExtensionWithAbPath (abPath);
+   procedure getExtensionWithAbPath (This : in out PathUtil; abPath_Param : access AbPath'Class) is
+      Java_Result : constant Unbounded_String := PathUtil'Class (This).getExtensionWithAbPath (abPath_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getExtensionWithAbPath;
 
-   procedure getWithoutExtensionWithAbFilePath (This : in out PathUtil; abFilePath : AbFilePath_Access) is
-      Java_Result : constant Unbounded_String := PathUtil'Class (This).getWithoutExtensionWithAbFilePath (abFilePath);
+   procedure getWithoutExtensionWithAbFilePath (This : in out PathUtil; abFilePath_Param : access AbFilePath'Class) is
+      Java_Result : constant Unbounded_String := PathUtil'Class (This).getWithoutExtensionWithAbFilePath (abFilePath_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getWithoutExtensionWithAbFilePath;
 
-   procedure getWithoutExtensionWithAbPath (This : in out PathUtil; abPath : AbPath_Access) is
-      Java_Result : constant Unbounded_String := PathUtil'Class (This).getWithoutExtensionWithAbPath (abPath);
+   procedure getWithoutExtensionWithAbPath (This : in out PathUtil; abPath_Param : access AbPath'Class) is
+      Java_Result : constant Unbounded_String := PathUtil'Class (This).getWithoutExtensionWithAbPath (abPath_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

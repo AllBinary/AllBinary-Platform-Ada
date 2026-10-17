@@ -48,10 +48,10 @@ package org.allbinary.business.user.NewUserFactory_Package is
    procedure Initialize (This : in out NewUserFactory'Class);
    function Create return NewUserFactory_Access;
    function getInstance return UserInterface_Access;
-   function getInstance (transformInfoInterface : TransformInfoInterface_Access) return UserInterface_Access;
-   procedure getInstance (transformInfoInterface : TransformInfoInterface_Access);
-   function getInstance (httpServletRequest : HttpServletRequest_Access; propertiesHashMap : HashMap_Access) return UserInterface_Access;
-   procedure getInstance (httpServletRequest : HttpServletRequest_Access; propertiesHashMap : HashMap_Access);
+   function getInstance (transformInfoInterface_Param : access TransformInfoInterface'Class) return UserInterface_Access;
+   procedure getInstance (transformInfoInterface_Param : access TransformInfoInterface'Class);
+   function getInstance (httpServletRequest_Param : access HttpServletRequest'Class; propertiesHashMap_Param : access HashMap'Class) return UserInterface_Access;
+   procedure getInstance (httpServletRequest_Param : access HttpServletRequest'Class; propertiesHashMap_Param : access HashMap'Class);
 
 end org.allbinary.business.user.NewUserFactory_Package;
 

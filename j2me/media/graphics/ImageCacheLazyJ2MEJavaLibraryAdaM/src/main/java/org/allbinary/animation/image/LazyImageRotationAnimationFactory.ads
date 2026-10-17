@@ -49,11 +49,11 @@ package org.allbinary.animation.image.LazyImageRotationAnimationFactory_Package 
       scaleProperties : ScaleProperties_Access;
    end record;
 
-   procedure Initialize (This : in out LazyImageRotationAnimationFactory'Class; layoutIndex : Integer; associatedLazyAnimationId : Integer; animationInterfaceFactoryInterface : BaseImageAnimationFactory_Access);
-   function Create (layoutIndex : Integer; associatedLazyAnimationId : Integer; animationInterfaceFactoryInterface : BaseImageAnimationFactory_Access) return LazyImageRotationAnimationFactory_Access;
+   procedure Initialize (This : in out LazyImageRotationAnimationFactory'Class; layoutIndex : Integer; associatedLazyAnimationId : Integer; animationInterfaceFactoryInterface_Param : access BaseImageAnimationFactory'Class);
+   function Create (layoutIndex : Integer; associatedLazyAnimationId : Integer; animationInterfaceFactoryInterface_Param : access BaseImageAnimationFactory'Class) return LazyImageRotationAnimationFactory_Access;
    function getInstance (This : in out LazyImageRotationAnimationFactory; instanceId : Integer) return Animation_Access;
    procedure getInstance (This : in out LazyImageRotationAnimationFactory; instanceId : Integer);
-   procedure setInitialScale (This : in out LazyImageRotationAnimationFactory; scaleProperties : ScaleProperties_Access);
+   procedure setInitialScale (This : in out LazyImageRotationAnimationFactory; scaleProperties_Param : access ScaleProperties'Class);
 
 end org.allbinary.animation.image.LazyImageRotationAnimationFactory_Package;
 

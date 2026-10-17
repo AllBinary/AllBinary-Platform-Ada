@@ -46,9 +46,9 @@ package org.allbinary.image.gui.ImageJPanel_Package is
       bufferedImage : BufferedImage_Access;
    end record;
 
-   procedure Initialize (This : in out ImageJPanel'Class; bufferedImage : BufferedImage_Access);
-   function Create (bufferedImage : BufferedImage_Access) return ImageJPanel_Access;
-   procedure paint (This : in out ImageJPanel; graphics : Graphics_Access);
+   procedure Initialize (This : in out ImageJPanel'Class; bufferedImage_Param : access BufferedImage'Class);
+   function Create (bufferedImage_Param : access BufferedImage'Class) return ImageJPanel_Access;
+   procedure paint (This : in out ImageJPanel; graphics_Param : access Graphics'Class);
    procedure initComponents (This : in out ImageJPanel);
 
 end org.allbinary.image.gui.ImageJPanel_Package;

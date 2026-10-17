@@ -41,7 +41,7 @@ package org.allbinary.game.rts.technology.event.TechEventHandler_Package is
    procedure Initialize (This : in out TechEventHandler'Class);
    function Create return TechEventHandler_Access;
    function getInstance return TechEventHandler_Access;
-   procedure process (This : in out TechEventHandler; eventObject : AllBinaryEventObject_Access; eventListenerInterface : EventListenerInterface_Access);
+   procedure process (This : in out TechEventHandler; eventObject_Param : access AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface'Class);
 
 end org.allbinary.game.rts.technology.event.TechEventHandler_Package;
 

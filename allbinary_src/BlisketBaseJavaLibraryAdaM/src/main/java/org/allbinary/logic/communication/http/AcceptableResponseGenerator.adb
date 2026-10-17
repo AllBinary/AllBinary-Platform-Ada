@@ -41,7 +41,8 @@ package body org.allbinary.logic.communication.http.AcceptableResponseGenerator_
    end Create;
 
    --  throws Exception
-   function get (This : in out AcceptableResponseGenerator; httpServletRequest : HttpServletRequest_Access) return Unbounded_String is
+   function get (This : in out AcceptableResponseGenerator; httpServletRequest_Param : access HttpServletRequest'Class) return Unbounded_String is
+      httpServletRequest : HttpServletRequest_Access := HttpServletRequest_Access (httpServletRequest_Param);
       commonStrings : CommonStrings_Access;
       acceptableResponseUtil : AcceptableResponseUtil_Access;
       acceptable : Unbounded_String;
@@ -55,7 +56,7 @@ package body org.allbinary.logic.communication.http.AcceptableResponseGenerator_
             acceptable := httpServletRequest.getHeader (To_Unbounded_String ("accept"));
             result := acceptableResponseUtil.getTagName (0);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTP) then
-                This.logUtil.putF (To_Unbounded_String ("Request Type: ") & acceptable, This'Unchecked_Access, commonStrings.GET);
+                This.logUtil.putF (To_Unbounded_String ("Request Type: ") & acceptable, AcceptableResponseGenerator_Access'(This'Unchecked_Access), commonStrings.GET);
             end if;
             if (acceptable) /= (Null_Unbounded_String) then
                 size := acceptableResponseUtil.size;
@@ -66,7 +67,7 @@ package body org.allbinary.logic.communication.http.AcceptableResponseGenerator_
                 end loop;
             end if;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTP) then
-                This.logUtil.putF (To_Unbounded_String ("Response Type: ") & result, This'Unchecked_Access, commonStrings.GET);
+                This.logUtil.putF (To_Unbounded_String ("Response Type: ") & result, AcceptableResponseGenerator_Access'(This'Unchecked_Access), commonStrings.GET);
             end if;
             return result;
         exception
@@ -75,15 +76,15 @@ package body org.allbinary.logic.communication.http.AcceptableResponseGenerator_
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPERROR) then
-                This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.GET, e);
+                This.logUtil.put (commonStrings.EXCEPTION_Id, AcceptableResponseGenerator_Access'(This'Unchecked_Access), commonStrings.GET, e);
             end if;
             Java_Throw (e);
                 end;
         end;
    end get;
 
-   procedure get (This : in out AcceptableResponseGenerator; httpServletRequest : HttpServletRequest_Access) is
-      Java_Result : constant Unbounded_String := AcceptableResponseGenerator'Class (This).get (httpServletRequest);
+   procedure get (This : in out AcceptableResponseGenerator; httpServletRequest_Param : access HttpServletRequest'Class) is
+      Java_Result : constant Unbounded_String := AcceptableResponseGenerator'Class (This).get (httpServletRequest_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -51,11 +51,11 @@ package org.allbinary.android.input.motion.event.AnalogControllerConfigurationEv
    procedure Initialize (This : in out AnalogControllerConfigurationEventHandler'Class);
    function Create return AnalogControllerConfigurationEventHandler_Access;
    function getInstance return AnalogControllerConfigurationEventHandler_Access;
-   procedure addListener (This : in out AnalogControllerConfigurationEventHandler; analogControllerConfigurationEventListenerInterface : AnalogControllerConfigurationEventListenerInterface_Access);
+   procedure addListener (This : in out AnalogControllerConfigurationEventHandler; analogControllerConfigurationEventListenerInterface_Param : access AnalogControllerConfigurationEventListenerInterface'Class);
    procedure removeAllListeners (This : in out AnalogControllerConfigurationEventHandler);
-   procedure removeListener (This : in out AnalogControllerConfigurationEventHandler; eventListenerInterface : EventListenerInterface_Access);
-   procedure fireEvent (This : in out AnalogControllerConfigurationEventHandler; eventObject : AllBinaryEventObject_Access);
-   procedure process (This : in out AnalogControllerConfigurationEventHandler; eventObject : AllBinaryEventObject_Access; eventListenerInterface : EventListenerInterface_Access);
+   procedure removeListener (This : in out AnalogControllerConfigurationEventHandler; eventListenerInterface_Param : access EventListenerInterface'Class);
+   procedure fireEvent (This : in out AnalogControllerConfigurationEventHandler; eventObject_Param : access AllBinaryEventObject'Class);
+   procedure process (This : in out AnalogControllerConfigurationEventHandler; eventObject_Param : access AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface'Class);
 
 end org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventHandler_Package;
 

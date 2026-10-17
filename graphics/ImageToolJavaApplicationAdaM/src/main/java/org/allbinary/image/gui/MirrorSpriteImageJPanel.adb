@@ -36,19 +36,20 @@ package body org.allbinary.image.gui.MirrorSpriteImageJPanel_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out MirrorSpriteImageJPanel'Class; imageProcessorInput : ImageProcessorInput_Access) is
+   procedure Initialize (This : in out MirrorSpriteImageJPanel'Class; imageProcessorInput_Param : access ImageProcessorInput'Class) is
+      imageProcessorInput : ImageProcessorInput_Access := ImageProcessorInput_Access (imageProcessorInput_Param);
    begin
         JPanel_Package.Initialize (This);
         Initialize_Fields (This);
-        This.logUtil.putF (To_Unbounded_String ("Starting"), This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+        This.logUtil.putF (To_Unbounded_String ("Starting"), MirrorSpriteImageJPanel_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         This.initComponents;
         This.imageProcessorInput := imageProcessorInput;
    end Initialize;
 
-   function Create (imageProcessorInput : ImageProcessorInput_Access) return MirrorSpriteImageJPanel_Access is
+   function Create (imageProcessorInput_Param : access ImageProcessorInput'Class) return MirrorSpriteImageJPanel_Access is
       This : constant MirrorSpriteImageJPanel_Access := new MirrorSpriteImageJPanel;
    begin
-      MirrorSpriteImageJPanel_Package.Initialize (This.all, imageProcessorInput);
+      MirrorSpriteImageJPanel_Package.Initialize (This.all, imageProcessorInput_Param);
       return This;
    end Create;
 
@@ -81,18 +82,18 @@ package body org.allbinary.image.gui.MirrorSpriteImageJPanel_Package is
 --                              filePath := file.getAbsolutePath;
 --                              extensionIndex := (Index (filePath, To_String (This.imageStrings.PNG_EXTENSION)) - 1);
 --                              filePath := Unbounded_Slice (filePath, (0) + 1, extensionIndex) & To_Unbounded_String ("_mirror") & Java_Image (This.imageStrings.PNG_EXTENSION);
---                              logUtil.putF (To_Unbounded_String ("Renamed File: ") & filePath, This'Unchecked_Access, This.commonStrings.RUN);
+--                              logUtil.putF (To_Unbounded_String ("Renamed File: ") & filePath, MirrorSpriteImageJPanel_Access'(This'Unchecked_Access), This.commonStrings.RUN);
 --                              file := File_Package.Create (filePath);
 --                          end if;
 --                          isWritten := ImageIO_Package.write (RenderedImage_Access (This.result), This.imageStrings.PNG, file);
---                          logUtil.putF (To_Unbounded_String ("File: ") & Java_Image (file) & To_Unbounded_String (" Wrote: ") & Java_Image (isWritten), This'Unchecked_Access, This.commonStrings.RUN);
+--                          logUtil.putF (To_Unbounded_String ("File: ") & Java_Image (file) & To_Unbounded_String (" Wrote: ") & Java_Image (isWritten), MirrorSpriteImageJPanel_Access'(This'Unchecked_Access), This.commonStrings.RUN);
 --                      end loop;
 --                  exception
 --                      when Java_Occurrence : others =>
 --                          declare
 --                              e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
 --                          begin
---                      logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.RUN, e);
+--                      logUtil.put (This.commonStrings.EXCEPTION_Id, MirrorSpriteImageJPanel_Access'(This'Unchecked_Access), This.commonStrings.RUN, e);
 --                          end;
 --                  end;
 --     end run;
@@ -108,7 +109,8 @@ package body org.allbinary.image.gui.MirrorSpriteImageJPanel_Package is
         This.jLayeredPane1 := JLayeredPane_Package.Create;
         This.jPanel1 := JPanel_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure paint (This : in out ; graphics : Graphics_Access) is
+--     procedure paint (This : in out ; graphics_Param : access Graphics'Class) is
+--        graphics : Graphics_Access := Graphics_Access (graphics_Param);
 --     begin
 --                  if (This.result) /= (null) then
 --                      graphics.drawImage (This.result, 0, 0, This.result.getWidth (null), This.result.getHeight (null), null);
@@ -132,7 +134,8 @@ package body org.allbinary.image.gui.MirrorSpriteImageJPanel_Package is
         This.imageHeightIsFrameSizeJCheckBox.setEnabled (False);
         This.imageHeightIsFrameSizeJCheckBox.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt : ActionEvent_Access) is
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
+--        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.imageHeightIsFrameSizeJCheckBoxActionPerformed (evt);
 --     end actionPerformed;
@@ -146,7 +149,8 @@ package body org.allbinary.image.gui.MirrorSpriteImageJPanel_Package is
         This.generateJButton.setText (To_Unbounded_String ("Generate"));
         This.generateJButton.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt : ActionEvent_Access) is
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
+--        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.generateJButtonActionPerformed (evt);
 --     end actionPerformed;
@@ -160,18 +164,20 @@ package body org.allbinary.image.gui.MirrorSpriteImageJPanel_Package is
         This.jPanel3.setLayout (jPanel3Layout);
         jPanel3Layout.setHorizontalGroup (jPanel3Layout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (jPanel3Layout.createSequentialGroup.add (This.jLabel2).addContainerGap (448, Short_Package.MAX_VALUE)));
         jPanel3Layout.setVerticalGroup (jPanel3Layout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (This.jLabel2));
-        layout := GroupLayout_Package.Create (This'Unchecked_Access);
+        layout := GroupLayout_Package.Create (MirrorSpriteImageJPanel_Access'(This'Unchecked_Access));
         This.setLayout (layout);
         layout.setHorizontalGroup (layout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (org_Package.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup.addContainerGap.add (This.jPanel3, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE).addContainerGap).add (This.jPanel1, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE).add (layout.createSequentialGroup.add (This.jPanel2, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE).addContainerGap (org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE)));
         layout.setVerticalGroup (layout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (layout.createSequentialGroup.add (This.jPanel2, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 25, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE).addPreferredGap (org_Package.jdesktop.layout.LayoutStyle.RELATED).add (This.jPanel3, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE).addPreferredGap (org_Package.jdesktop.layout.LayoutStyle.RELATED).add (This.jPanel1, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE)));
    end initComponents;
 
-   procedure generateJButtonActionPerformed (This : in out MirrorSpriteImageJPanel; evt : ActionEvent_Access) is
+   procedure generateJButtonActionPerformed (This : in out MirrorSpriteImageJPanel; evt_Param : access ActionEvent'Class) is
+      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         This.process;
    end generateJButtonActionPerformed;
 
-   procedure imageHeightIsFrameSizeJCheckBoxActionPerformed (This : in out MirrorSpriteImageJPanel; evt : ActionEvent_Access) is
+   procedure imageHeightIsFrameSizeJCheckBoxActionPerformed (This : in out MirrorSpriteImageJPanel; evt_Param : access ActionEvent'Class) is
+      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         null;
    end imageHeightIsFrameSizeJCheckBoxActionPerformed;
@@ -181,7 +187,8 @@ package body org.allbinary.image.gui.MirrorSpriteImageJPanel_Package is
         return This.imageProcessorInput;
    end getImageProcessorInput;
 
-   procedure setImageProcessorInput (This : in out MirrorSpriteImageJPanel; imageProcessorInput : ImageProcessorInput_Access) is
+   procedure setImageProcessorInput (This : in out MirrorSpriteImageJPanel; imageProcessorInput_Param : access ImageProcessorInput'Class) is
+      imageProcessorInput : ImageProcessorInput_Access := ImageProcessorInput_Access (imageProcessorInput_Param);
    begin
         This.imageProcessorInput := imageProcessorInput;
    end setImageProcessorInput;

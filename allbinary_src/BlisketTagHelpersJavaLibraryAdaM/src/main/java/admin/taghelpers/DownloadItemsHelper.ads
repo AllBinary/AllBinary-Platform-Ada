@@ -45,8 +45,8 @@ package admin.taghelpers.DownloadItemsHelper_Package is
       portion : Portion_Access;
    end record;
 
-   procedure Initialize (This : in out DownloadItemsHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access);
-   function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return DownloadItemsHelper_Access;
+   procedure Initialize (This : in out DownloadItemsHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
+   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return DownloadItemsHelper_Access;
    function create (This : in out DownloadItemsHelper) return Unbounded_String;
    function drop (This : in out DownloadItemsHelper) return Unbounded_String;
    function restore (This : in out DownloadItemsHelper) return Unbounded_String;

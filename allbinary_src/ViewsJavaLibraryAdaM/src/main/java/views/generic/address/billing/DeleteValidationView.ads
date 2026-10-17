@@ -48,13 +48,13 @@ package views.generic_Id.address.billing.DeleteValidationView_Package is
       value : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out DeleteValidationView'Class; transformInfoInterface : TransformInfoInterface_Access);
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return DeleteValidationView_Access;
+   procedure Initialize (This : in out DeleteValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return DeleteValidationView_Access;
    function isValid (This : in out DeleteValidationView) return Boolean;
    function validationInfo (This : in out DeleteValidationView) return Unbounded_String;
    function toValidationInfoDoc (This : in out DeleteValidationView) return Document_Access;
-   function toValidationInfoNode (This : in out DeleteValidationView; document : Document_Access) return Node_Access;
-   procedure toValidationInfoNode (This : in out DeleteValidationView; document : Document_Access);
+   function toValidationInfoNode (This : in out DeleteValidationView; document_Param : access Document'Class) return Node_Access;
+   procedure toValidationInfoNode (This : in out DeleteValidationView; document_Param : access Document'Class);
 
 end views.generic_Id.address.billing.DeleteValidationView_Package;
 

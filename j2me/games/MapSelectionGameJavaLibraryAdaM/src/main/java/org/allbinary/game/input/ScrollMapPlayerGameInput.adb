@@ -25,11 +25,13 @@ package body org.allbinary.game.input.ScrollMapPlayerGameInput_Package is
       
       This.maxBottom := 0;
       This.maxRight := 0;
-      This.scrollMapEvent := ScrollMapEvent_Package.Create (This'Unchecked_Access);
+      This.scrollMapEvent := ScrollMapEvent_Package.Create (ScrollMapPlayerGameInput_Access'(This'Unchecked_Access));
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ScrollMapPlayerGameInput'Class; geographicMapInterface : BasicGeographicMap_Access; list : BasicArrayList_Access; playerInputId : Integer) is
+   procedure Initialize (This : in out ScrollMapPlayerGameInput'Class; geographicMapInterface_Param : access BasicGeographicMap'Class; list_Param : access BasicArrayList'Class; playerInputId : Integer) is
+      geographicMapInterface : BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
+      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
    begin
         PlayerGameInput_Package.Initialize (This, list, BasicArrayListD_Package.Create, playerInputId);
         Initialize_Fields (This);
@@ -39,10 +41,10 @@ package body org.allbinary.game.input.ScrollMapPlayerGameInput_Package is
         This.init;
    end Initialize;
 
-   function Create (geographicMapInterface : BasicGeographicMap_Access; list : BasicArrayList_Access; playerInputId : Integer) return ScrollMapPlayerGameInput_Access is
+   function Create (geographicMapInterface_Param : access BasicGeographicMap'Class; list_Param : access BasicArrayList'Class; playerInputId : Integer) return ScrollMapPlayerGameInput_Access is
       This : constant ScrollMapPlayerGameInput_Access := new ScrollMapPlayerGameInput;
    begin
-      ScrollMapPlayerGameInput_Package.Initialize (This.all, geographicMapInterface, list, playerInputId);
+      ScrollMapPlayerGameInput_Package.Initialize (This.all, geographicMapInterface_Param, list_Param, playerInputId);
       return This;
    end Create;
 
@@ -89,13 +91,13 @@ package body org.allbinary.game.input.ScrollMapPlayerGameInput_Package is
         terrainTiledLayer := This.geographicMapInterface.getAllBinaryTiledLayer;
         displayInfo := DisplayInfoSingleton_Package.getInstance;
         if (anchor) = (Graphics_Package.TOP) then
-            This.logUtil.putF (To_Unbounded_String ("Top"), This'Unchecked_Access, To_Unbounded_String ("scrollY"));
+            This.logUtil.putF (To_Unbounded_String ("Top"), ScrollMapPlayerGameInput_Access'(This'Unchecked_Access), To_Unbounded_String ("scrollY"));
         elsif (anchor) = (Graphics_Package.BOTTOM) then
-            This.logUtil.putF (To_Unbounded_String ("Bottom"), This'Unchecked_Access, To_Unbounded_String ("scrollY"));
+            This.logUtil.putF (To_Unbounded_String ("Bottom"), ScrollMapPlayerGameInput_Access'(This'Unchecked_Access), To_Unbounded_String ("scrollY"));
             diffY := ((terrainTiledLayer.getHeight) - (displayInfo.getLastHeight));
             This.move (0, diffY);
         elsif (anchor) = (Graphics_Package.VCENTER) then
-            This.logUtil.putF (To_Unbounded_String ("Center"), This'Unchecked_Access, To_Unbounded_String ("scrollY"));
+            This.logUtil.putF (To_Unbounded_String ("Center"), ScrollMapPlayerGameInput_Access'(This'Unchecked_Access), To_Unbounded_String ("scrollY"));
             diffY := (((terrainTiledLayer.getHeight) - (displayInfo.getLastHeight))) / (2);
             This.move (0, diffY);
         else
@@ -145,10 +147,10 @@ package body org.allbinary.game.input.ScrollMapPlayerGameInput_Package is
 
    procedure initInputProcessors (This : in out ScrollMapPlayerGameInput) is
    begin
-        This.inputProcessorArray (Canvas_Package.UP) := ScrollMapUpGameInputProcessor_Package.Create (This'Unchecked_Access);
-        This.inputProcessorArray (Canvas_Package.DOWN) := ScrollMapDownGameInputProcessor_Package.Create (This'Unchecked_Access);
-        This.inputProcessorArray (Canvas_Package.KEY_NUM9) := ScrollMapRightGameInputProcessor_Package.Create (This'Unchecked_Access);
-        This.inputProcessorArray (Canvas_Package.KEY_NUM7) := ScrollMapLeftGameInputProcessor_Package.Create (This'Unchecked_Access);
+        This.inputProcessorArray (Canvas_Package.UP) := ScrollMapUpGameInputProcessor_Package.Create (ScrollMapPlayerGameInput_Access'(This'Unchecked_Access));
+        This.inputProcessorArray (Canvas_Package.DOWN) := ScrollMapDownGameInputProcessor_Package.Create (ScrollMapPlayerGameInput_Access'(This'Unchecked_Access));
+        This.inputProcessorArray (Canvas_Package.KEY_NUM9) := ScrollMapRightGameInputProcessor_Package.Create (ScrollMapPlayerGameInput_Access'(This'Unchecked_Access));
+        This.inputProcessorArray (Canvas_Package.KEY_NUM7) := ScrollMapLeftGameInputProcessor_Package.Create (ScrollMapPlayerGameInput_Access'(This'Unchecked_Access));
         GameInputProcessorUtil_Package.init (This.inputProcessorArray);
    end initInputProcessors;
 
@@ -159,7 +161,8 @@ package body org.allbinary.game.input.ScrollMapPlayerGameInput_Package is
    end processInputKey;
 
    --  throws Exception
-   procedure processInput (This : in out ScrollMapPlayerGameInput; layerManager : AllBinaryLayerManager_Access) is
+   procedure processInput (This : in out ScrollMapPlayerGameInput; layerManager_Param : access AllBinaryLayerManager'Class) is
+      layerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
       size : Integer;
       key : Integer;
       gameKeyEvent : GameKeyEvent_Access;
@@ -183,7 +186,7 @@ package body org.allbinary.game.input.ScrollMapPlayerGameInput_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.gameInputStrings.PROCESS_INPUT, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, ScrollMapPlayerGameInput_Access'(This'Unchecked_Access), This.gameInputStrings.PROCESS_INPUT, e);
                 end;
         end;
    end processInput;

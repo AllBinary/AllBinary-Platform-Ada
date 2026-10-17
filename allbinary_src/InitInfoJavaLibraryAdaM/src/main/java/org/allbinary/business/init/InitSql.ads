@@ -93,17 +93,17 @@ package org.allbinary.business.init.InitSql_Package is
       INSERT_END : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out InitSql'Class; databaseConnectionInfoInterface : DbConnectionInfo_Access);
-   function Create (databaseConnectionInfoInterface : DbConnectionInfo_Access) return InitSql_Access;
+   procedure Initialize (This : in out InitSql'Class; databaseConnectionInfoInterface_Param : access DbConnectionInfo'Class);
+   function Create (databaseConnectionInfoInterface_Param : access DbConnectionInfo'Class) return InitSql_Access;
    procedure setTable (This : in out InitSql; tableName : Unbounded_String);
-   procedure setDatabaseConnectionInfoInterface (This : in out InitSql; databaseConnectionInfoInterface : DbConnectionInfo_Access);
+   procedure setDatabaseConnectionInfoInterface (This : in out InitSql; databaseConnectionInfoInterface_Param : access DbConnectionInfo'Class);
    function createTable (This : in out InitSql; tableData : Unbounded_String) return Boolean;
    procedure createTable (This : in out InitSql; tableData : Unbounded_String);
    function dropTable (This : in out InitSql) return Boolean;
-   function getRow (This : in out InitSql; keysAndValues : HashMap_Access) return HashMap_Access;
-   procedure getRow (This : in out InitSql; keysAndValues : HashMap_Access);
-   procedure updateWhere (This : in out InitSql; key : Unbounded_String; value : Unbounded_String; updatedKeyValuePairs : HashMap_Access);
-   procedure insert_Case (This : in out InitSql; values : BasicArrayList_Access);
+   function getRow (This : in out InitSql; keysAndValues_Param : access HashMap'Class) return HashMap_Access;
+   procedure getRow (This : in out InitSql; keysAndValues_Param : access HashMap'Class);
+   procedure updateWhere (This : in out InitSql; key : Unbounded_String; value : Unbounded_String; updatedKeyValuePairs_Param : access HashMap'Class);
+   procedure insert_Case (This : in out InitSql; values_Param : access BasicArrayList'Class);
    function getValue (This : in out InitSql; value : Unbounded_String) return Unbounded_String;
    procedure getValue (This : in out InitSql; value : Unbounded_String);
    function executeSQLStatement (This : in out InitSql; statement : Unbounded_String) return ResultSet_Access;

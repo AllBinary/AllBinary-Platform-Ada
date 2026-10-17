@@ -23,17 +23,18 @@ package body org.allbinary.game.combat.destroy.DestroyableSimpleBehavior_Package
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out DestroyableSimpleBehavior'Class; ownerLayer : CollidableCompositeLayer_Access) is
+   procedure Initialize (This : in out DestroyableSimpleBehavior'Class; ownerLayer_Param : access CollidableCompositeLayer'Class) is
+      ownerLayer : CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (ownerLayer_Param);
    begin
       DestroyableBaseBehavior_Package.Initialize (This);
       Initialize_Fields (This);
         This.ownerLayer := ownerLayer;
    end Initialize;
 
-   function Create (ownerLayer : CollidableCompositeLayer_Access) return DestroyableSimpleBehavior_Access is
+   function Create (ownerLayer_Param : access CollidableCompositeLayer'Class) return DestroyableSimpleBehavior_Access is
       This : constant DestroyableSimpleBehavior_Access := new DestroyableSimpleBehavior;
    begin
-      DestroyableSimpleBehavior_Package.Initialize (This.all, ownerLayer);
+      DestroyableSimpleBehavior_Package.Initialize (This.all, ownerLayer_Param);
       return This;
    end Create;
 

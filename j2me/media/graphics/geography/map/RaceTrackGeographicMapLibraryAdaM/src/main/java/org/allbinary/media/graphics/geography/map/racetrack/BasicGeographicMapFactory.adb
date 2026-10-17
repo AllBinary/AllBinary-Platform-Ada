@@ -34,13 +34,18 @@ package body org.allbinary.media.graphics.geography.map.racetrack.BasicGeographi
 
 
    --  throws Exception
-   function getInstance (This : in out BasicGeographicMapFactory; raceTrackInfo : RaceTrackInfo_Access; raceTrackData : RaceTrackData_Access; tiledLayerFactoryInterface : AllBinaryTiledLayerFactoryInterface_Access; geographicMapCellPositionFactoryInterface : GeographicMapCellPositionFactoryInterface_Access; geographicMapCellTypeFactory : GeographicMapCellTypeFactory_Access) return BasicGeographicMap_Access is
+   function getInstance (This : in out BasicGeographicMapFactory; raceTrackInfo_Param : access RaceTrackInfo'Class; raceTrackData_Param : access RaceTrackData'Class; tiledLayerFactoryInterface_Param : access AllBinaryTiledLayerFactoryInterface'Class; geographicMapCellPositionFactoryInterface_Param : access GeographicMapCellPositionFactoryInterface'Class; geographicMapCellTypeFactory_Param : access GeographicMapCellTypeFactory'Class) return BasicGeographicMap_Access is
+      raceTrackInfo : RaceTrackInfo_Access := RaceTrackInfo_Access (raceTrackInfo_Param);
+      raceTrackData : RaceTrackData_Access := RaceTrackData_Access (raceTrackData_Param);
+      tiledLayerFactoryInterface : AllBinaryTiledLayerFactoryInterface_Access := AllBinaryTiledLayerFactoryInterface_Access (tiledLayerFactoryInterface_Param);
+      geographicMapCellPositionFactoryInterface : GeographicMapCellPositionFactoryInterface_Access := GeographicMapCellPositionFactoryInterface_Access (geographicMapCellPositionFactoryInterface_Param);
+      geographicMapCellTypeFactory : GeographicMapCellTypeFactory_Access := GeographicMapCellTypeFactory_Access (geographicMapCellTypeFactory_Param);
    begin
         return BasicGeographicMap_Package.Create (SmallIntegerSingletonFactory_Package.getInstance.getAt (((raceTrackInfo.getId.intValue) + (100)) + (1)), raceTrackInfo.getName, raceTrackData.getCellTypeIdToGeographicMapCellTypeArray, tiledLayerFactoryInterface.getMiniInstance (raceTrackData), BasicColorFactory_Package.getInstance.CLEAR_COLOR, BasicColorFactory_Package.getInstance.CLEAR_COLOR, geographicMapCellPositionFactoryInterface, GeographicMapCellPositionBaseFactory_Package.Create, geographicMapCellTypeFactory);
    end getInstance;
 
-   procedure getInstance (This : in out BasicGeographicMapFactory; raceTrackInfo : RaceTrackInfo_Access; raceTrackData : RaceTrackData_Access; tiledLayerFactoryInterface : AllBinaryTiledLayerFactoryInterface_Access; geographicMapCellPositionFactoryInterface : GeographicMapCellPositionFactoryInterface_Access; geographicMapCellTypeFactory : GeographicMapCellTypeFactory_Access) is
-      Java_Result : constant BasicGeographicMap_Access := BasicGeographicMapFactory'Class (This).getInstance (raceTrackInfo, raceTrackData, tiledLayerFactoryInterface, geographicMapCellPositionFactoryInterface, geographicMapCellTypeFactory);
+   procedure getInstance (This : in out BasicGeographicMapFactory; raceTrackInfo_Param : access RaceTrackInfo'Class; raceTrackData_Param : access RaceTrackData'Class; tiledLayerFactoryInterface_Param : access AllBinaryTiledLayerFactoryInterface'Class; geographicMapCellPositionFactoryInterface_Param : access GeographicMapCellPositionFactoryInterface'Class; geographicMapCellTypeFactory_Param : access GeographicMapCellTypeFactory'Class) is
+      Java_Result : constant BasicGeographicMap_Access := BasicGeographicMapFactory'Class (This).getInstance (raceTrackInfo_Param, raceTrackData_Param, tiledLayerFactoryInterface_Param, geographicMapCellPositionFactoryInterface_Param, geographicMapCellTypeFactory_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -22,7 +22,10 @@ package body org.allbinary.animation.VectorBaseRotationAnimation_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out VectorBaseRotationAnimation'Class; angleInfo : AngleInfo_Access; currentPoints : Integer_Array_Access_Array_Access_Array_Access; basicColor : BasicColor_Access; animationBehavior : AnimationBehavior_Access) is
+   procedure Initialize (This : in out VectorBaseRotationAnimation'Class; angleInfo_Param : access AngleInfo'Class; currentPoints : Integer_Array_Access_Array_Access_Array_Access; basicColor_Param : access BasicColor'Class; animationBehavior_Param : access AnimationBehavior'Class) is
+      angleInfo : AngleInfo_Access := AngleInfo_Access (angleInfo_Param);
+      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
+      animationBehavior : AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
    begin
         RotationAnimation_Package.Initialize (This, angleInfo, CircularIndexUtil_Package.createInstance ((360) / (angleInfo.getAngleIncrementInfo.getAngleIncrement)), animationBehavior);
         Initialize_Fields (This);
@@ -30,10 +33,10 @@ package body org.allbinary.animation.VectorBaseRotationAnimation_Package is
         This.setBasicColorP (basicColor);
    end Initialize;
 
-   function Create (angleInfo : AngleInfo_Access; currentPoints : Integer_Array_Access_Array_Access_Array_Access; basicColor : BasicColor_Access; animationBehavior : AnimationBehavior_Access) return VectorBaseRotationAnimation_Access is
+   function Create (angleInfo_Param : access AngleInfo'Class; currentPoints : Integer_Array_Access_Array_Access_Array_Access; basicColor_Param : access BasicColor'Class; animationBehavior_Param : access AnimationBehavior'Class) return VectorBaseRotationAnimation_Access is
       This : constant VectorBaseRotationAnimation_Access := new VectorBaseRotationAnimation;
    begin
-      VectorBaseRotationAnimation_Package.Initialize (This.all, angleInfo, currentPoints, basicColor, animationBehavior);
+      VectorBaseRotationAnimation_Package.Initialize (This.all, angleInfo_Param, currentPoints, basicColor_Param, animationBehavior_Param);
       return This;
    end Create;
 
@@ -78,7 +81,8 @@ package body org.allbinary.animation.VectorBaseRotationAnimation_Package is
         return PrimitiveIntUtil_Package.getArrayInstance;
    end getSequence;
 
-   procedure paintXY (This : in out VectorBaseRotationAnimation; graphics : Graphics_Access; x : Integer; y : Integer) is
+   procedure paintXY (This : in out VectorBaseRotationAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       nextPointX : Integer;
       nextPointY : Integer;
       nextPoint : Integer_Array_Access;
@@ -112,7 +116,7 @@ package body org.allbinary.animation.VectorBaseRotationAnimation_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("paintVectors"), e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, VectorBaseRotationAnimation_Access'(This'Unchecked_Access), To_Unbounded_String ("paintVectors"), e);
                 end;
         end;
    end paintXY;

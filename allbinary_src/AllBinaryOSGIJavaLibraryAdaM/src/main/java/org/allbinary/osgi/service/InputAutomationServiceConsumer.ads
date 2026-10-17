@@ -55,16 +55,16 @@ package org.allbinary.osgi.service.InputAutomationServiceConsumer_Package is
       osgiServiceVisitorInterface : OSGIServiceVisitorInterface_Access;
    end record;
 
-   procedure Initialize (This : in out InputAutomationServiceConsumer'Class; registryName : Unbounded_String; bundleContext : BundleContext_Access; osgiServiceVisitorInterface : OSGIServiceVisitorInterface_Access);
-   function Create (registryName : Unbounded_String; bundleContext : BundleContext_Access; osgiServiceVisitorInterface : OSGIServiceVisitorInterface_Access) return InputAutomationServiceConsumer_Access;
+   procedure Initialize (This : in out InputAutomationServiceConsumer'Class; registryName : Unbounded_String; bundleContext_Param : access BundleContext'Class; osgiServiceVisitorInterface_Param : access OSGIServiceVisitorInterface'Class);
+   function Create (registryName : Unbounded_String; bundleContext_Param : access BundleContext'Class; osgiServiceVisitorInterface_Param : access OSGIServiceVisitorInterface'Class) return InputAutomationServiceConsumer_Access;
    procedure process (This : in out InputAutomationServiceConsumer);
    function getServiceReferences (This : in out InputAutomationServiceConsumer) return ServiceReference_Access_Array_Access;
    function getBundleContext (This : in out InputAutomationServiceConsumer) return BundleContext_Access;
-   procedure setBundleContext (This : in out InputAutomationServiceConsumer; aBundleContext : BundleContext_Access);
+   procedure setBundleContext (This : in out InputAutomationServiceConsumer; aBundleContext_Param : access BundleContext'Class);
    function getRegistryName (This : in out InputAutomationServiceConsumer) return Unbounded_String;
    procedure setRegistryName (This : in out InputAutomationServiceConsumer; registryName : Unbounded_String);
    function getOsgiServiceVisitorInterface (This : in out InputAutomationServiceConsumer) return OSGIServiceVisitorInterface_Access;
-   procedure setOsgiServiceVisitorInterface (This : in out InputAutomationServiceConsumer; osgiServiceVisitorInterface : OSGIServiceVisitorInterface_Access);
+   procedure setOsgiServiceVisitorInterface (This : in out InputAutomationServiceConsumer; osgiServiceVisitorInterface_Param : access OSGIServiceVisitorInterface'Class);
 
 end org.allbinary.osgi.service.InputAutomationServiceConsumer_Package;
 

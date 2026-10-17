@@ -51,12 +51,14 @@ package body org.allbinary.animation.Animation_Package is
         null;
    end nextFrame;
 
-   procedure paintXY (This : in out Animation; graphics : Graphics_Access; x : Integer; y : Integer) is
+   procedure paintXY (This : in out Animation; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.basicSetColorUtil.setBasicColorP3 (graphics, This.getBasicColorP, This.getColor);
    end paintXY;
 
-   procedure paintThreedXYZ (This : in out Animation; graphics : Graphics_Access; x : Integer; y : Integer; z : Integer) is
+   procedure paintThreedXYZ (This : in out Animation; graphics_Param : access Graphics'Class; x : Integer; y : Integer; z : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         null;
    end paintThreedXYZ;
@@ -71,13 +73,15 @@ package body org.allbinary.animation.Animation_Package is
         return This.basicColor;
    end getBasicColorP;
 
-   procedure setBasicColorP (This : in out Animation; basicColor : BasicColor_Access) is
+   procedure setBasicColorP (This : in out Animation; basicColor_Param : access BasicColor'Class) is
+      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         This.basicColor := basicColor;
         This.colorP := This.basicColor.intValue;
    end setBasicColorP;
 
-   procedure setBackgroundBasicColorP (This : in out Animation; basicColor : BasicColor_Access) is
+   procedure setBackgroundBasicColorP (This : in out Animation; basicColor_Param : access BasicColor'Class) is
+      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         null;
    end setBackgroundBasicColorP;
@@ -87,7 +91,8 @@ package body org.allbinary.animation.Animation_Package is
         return This.changeBasicColorP;
    end getChangeBasicColor;
 
-   procedure changeBasicColor (This : in out Animation; basicColor : BasicColor_Access) is
+   procedure changeBasicColor (This : in out Animation; basicColor_Param : access BasicColor'Class) is
+      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         This.changeBasicColorP := basicColor;
         This.changeColorP := This.changeBasicColorP.intValue;
@@ -114,7 +119,8 @@ package body org.allbinary.animation.Animation_Package is
    end setMaxScale;
 
    --  throws Exception
-   procedure set (This : in out Animation; gl : GL_Access) is
+   procedure set (This : in out Animation; gl_Param : access GL'Class) is
+      gl : GL_Access := GL_Access (gl_Param);
    begin
         null;
    end set;

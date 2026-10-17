@@ -96,16 +96,16 @@ package org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package is
    procedure Initialize (This : in out CurrentDisplayableFactory'Class);
    function Create return CurrentDisplayableFactory_Access;
    function getInstance return CurrentDisplayableFactory_Access;
-   procedure setMyCanvas (This : in out CurrentDisplayableFactory; displayable : MyCanvas_Access);
-   procedure setDisplayable (This : in out CurrentDisplayableFactory; displayable : Displayable_Access);
-   procedure setOpenGlReadydisplayable (This : in out CurrentDisplayableFactory; openGlReadydisplayable : Displayable_Access);
+   procedure setMyCanvas (This : in out CurrentDisplayableFactory; displayable_Param : access MyCanvas'Class);
+   procedure setDisplayable (This : in out CurrentDisplayableFactory; displayable_Param : access Displayable'Class);
+   procedure setOpenGlReadydisplayable (This : in out CurrentDisplayableFactory; openGlReadydisplayable_Param : access Displayable'Class);
    function getOpenGlReadydisplayable (This : in out CurrentDisplayableFactory) return Displayable_Access;
-   procedure setRunnable (This : in out CurrentDisplayableFactory; runnable_Case : GameRunnable_Access);
+   procedure setRunnable (This : in out CurrentDisplayableFactory; runnable_Case_Param : access GameRunnable'Class);
    procedure clearRunnable (This : in out CurrentDisplayableFactory);
    procedure update (This : in out CurrentDisplayableFactory);
    function getDisplayable (This : in out CurrentDisplayableFactory) return Displayable_Access;
    function getUsedRunnable (This : in out CurrentDisplayableFactory) return GameRunnable_Access;
-   procedure setUsedRunnable (This : in out CurrentDisplayableFactory; usedRunnable : GameRunnable_Access);
+   procedure setUsedRunnable (This : in out CurrentDisplayableFactory; usedRunnable_Param : access GameRunnable'Class);
 
 end org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package;
 

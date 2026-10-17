@@ -68,8 +68,8 @@ package admin.taghelpers.CustomItemsRequestHelper_Package is
       lastModified : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out CustomItemsRequestHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access);
-   function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return CustomItemsRequestHelper_Access;
+   procedure Initialize (This : in out CustomItemsRequestHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
+   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return CustomItemsRequestHelper_Access;
    procedure getFormData (This : in out CustomItemsRequestHelper);
    function getHashMap (This : in out CustomItemsRequestHelper) return HashMap_Access;
    function insert (This : in out CustomItemsRequestHelper) return Unbounded_String;

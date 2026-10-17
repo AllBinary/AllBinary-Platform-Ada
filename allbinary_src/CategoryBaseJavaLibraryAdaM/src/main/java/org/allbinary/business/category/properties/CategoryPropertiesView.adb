@@ -22,21 +22,23 @@ package body org.allbinary.business.category.properties.CategoryPropertiesView_P
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CategoryPropertiesView'Class; categoryPropertiesInterface : CategoryPropertiesInterface_Access) is
+   procedure Initialize (This : in out CategoryPropertiesView'Class; categoryPropertiesInterface_Param : access CategoryPropertiesInterface'Class) is
+      categoryPropertiesInterface : CategoryPropertiesInterface_Access := CategoryPropertiesInterface_Access (categoryPropertiesInterface_Param);
    begin
       Initialize_Fields (This);
         This.categoryPropertiesInterface := categoryPropertiesInterface;
    end Initialize;
 
-   function Create (categoryPropertiesInterface : CategoryPropertiesInterface_Access) return CategoryPropertiesView_Access is
+   function Create (categoryPropertiesInterface_Param : access CategoryPropertiesInterface'Class) return CategoryPropertiesView_Access is
       This : constant CategoryPropertiesView_Access := new CategoryPropertiesView;
    begin
-      CategoryPropertiesView_Package.Initialize (This.all, categoryPropertiesInterface);
+      CategoryPropertiesView_Package.Initialize (This.all, categoryPropertiesInterface_Param);
       return This;
    end Create;
 
    --  throws Exception
-   function toXmlNode (This : in out CategoryPropertiesView; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out CategoryPropertiesView; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       categoryNode : Node_Access;
       newCategoryNode : Element_Access;
    begin
@@ -46,8 +48,8 @@ package body org.allbinary.business.category.properties.CategoryPropertiesView_P
         return categoryNode;
    end toXmlNode;
 
-   procedure toXmlNode (This : in out CategoryPropertiesView; document : Document_Access) is
-      Java_Result : constant Node_Access := CategoryPropertiesView'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out CategoryPropertiesView; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := CategoryPropertiesView'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

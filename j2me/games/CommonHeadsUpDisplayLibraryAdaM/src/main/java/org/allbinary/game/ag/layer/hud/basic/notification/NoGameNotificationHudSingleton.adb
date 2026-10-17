@@ -43,7 +43,7 @@ package body org.allbinary.game.ag.layer.hud.basic.notification.NoGameNotificati
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.CONSTRUCTOR, e);
+            This.logUtil.put (commonStrings.EXCEPTION_Id, NoGameNotificationHudSingleton_Access'(This'Unchecked_Access), commonStrings.CONSTRUCTOR, e);
                 end;
         end;
    end Initialize;

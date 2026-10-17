@@ -45,13 +45,13 @@ package org.allbinary.animation.VectorAnimationInterfaceFactory_Package is
       animationBehaviorFactory : AnimationBehaviorFactory_Access;
    end record;
 
-   procedure Initialize (This : in out VectorAnimationInterfaceFactory'Class; currentPoints : Integer_Array_Access_Array_Access_Array_Access; basicColor : BasicColor_Access; animationBehaviorFactory : AnimationBehaviorFactory_Access);
-   function Create (currentPoints : Integer_Array_Access_Array_Access_Array_Access; basicColor : BasicColor_Access; animationBehaviorFactory : AnimationBehaviorFactory_Access) return VectorAnimationInterfaceFactory_Access;
+   procedure Initialize (This : in out VectorAnimationInterfaceFactory'Class; currentPoints : Integer_Array_Access_Array_Access_Array_Access; basicColor_Param : access BasicColor'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class);
+   function Create (currentPoints : Integer_Array_Access_Array_Access_Array_Access; basicColor_Param : access BasicColor'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return VectorAnimationInterfaceFactory_Access;
    function getInstance (This : in out VectorAnimationInterfaceFactory; instanceId : Integer) return Animation_Access;
    procedure getInstance (This : in out VectorAnimationInterfaceFactory; instanceId : Integer);
-   procedure setBasicColorP (This : in out VectorAnimationInterfaceFactory; basicColor : BasicColor_Access);
+   procedure setBasicColorP (This : in out VectorAnimationInterfaceFactory; basicColor_Param : access BasicColor'Class);
    function getBasicColorP (This : in out VectorAnimationInterfaceFactory) return BasicColor_Access;
-   procedure setInitialScale (This : in out VectorAnimationInterfaceFactory; scaleProperties : ScaleProperties_Access);
+   procedure setInitialScale (This : in out VectorAnimationInterfaceFactory; scaleProperties_Param : access ScaleProperties'Class);
 
 end org.allbinary.animation.VectorAnimationInterfaceFactory_Package;
 

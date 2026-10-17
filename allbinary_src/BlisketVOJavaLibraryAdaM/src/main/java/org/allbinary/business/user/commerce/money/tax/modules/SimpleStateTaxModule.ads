@@ -85,10 +85,10 @@ package org.allbinary.business.user.commerce.money.tax.modules.SimpleStateTaxMod
 
    procedure Initialize (This : in out SimpleStateTaxModule'Class);
    function Create return SimpleStateTaxModule_Access;
-   function getTaxRate (This : in out SimpleStateTaxModule; streetAddress : StreetAddress_Access; storeFrontInterface : StoreFrontInterface_Access) return Float;
-   procedure getTaxRate (This : in out SimpleStateTaxModule; streetAddress : StreetAddress_Access; storeFrontInterface : StoreFrontInterface_Access);
-   function isValid (This : in out SimpleStateTaxModule; streetAddress : StreetAddress_Access; storeFrontInterface : StoreFrontInterface_Access) return Boolean;
-   procedure isValid (This : in out SimpleStateTaxModule; streetAddress : StreetAddress_Access; storeFrontInterface : StoreFrontInterface_Access);
+   function getTaxRate (This : in out SimpleStateTaxModule; streetAddress_Param : access StreetAddress'Class; storeFrontInterface_Param : access StoreFrontInterface'Class) return Float;
+   procedure getTaxRate (This : in out SimpleStateTaxModule; streetAddress_Param : access StreetAddress'Class; storeFrontInterface_Param : access StoreFrontInterface'Class);
+   function isValid (This : in out SimpleStateTaxModule; streetAddress_Param : access StreetAddress'Class; storeFrontInterface_Param : access StoreFrontInterface'Class) return Boolean;
+   procedure isValid (This : in out SimpleStateTaxModule; streetAddress_Param : access StreetAddress'Class; storeFrontInterface_Param : access StoreFrontInterface'Class);
 
 end org.allbinary.business.user.commerce.money.tax.modules.SimpleStateTaxModule_Package;
 

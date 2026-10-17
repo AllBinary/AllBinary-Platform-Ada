@@ -55,10 +55,10 @@ package org.allbinary.business.user.commerce.inventory.item.download.Downloadabl
       downloadableItem : DownloadableItem_Access;
    end record;
 
-   procedure Initialize (This : in out DownloadableItemView'Class; downloadableItem : DownloadableItem_Access);
-   function Create (downloadableItem : DownloadableItem_Access) return DownloadableItemView_Access;
-   function toXmlNode (This : in out DownloadableItemView; document : Document_Access) return Node_Access;
-   procedure toXmlNode (This : in out DownloadableItemView; document : Document_Access);
+   procedure Initialize (This : in out DownloadableItemView'Class; downloadableItem_Param : access DownloadableItem'Class);
+   function Create (downloadableItem_Param : access DownloadableItem'Class) return DownloadableItemView_Access;
+   function toXmlNode (This : in out DownloadableItemView; document_Param : access Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out DownloadableItemView; document_Param : access Document'Class);
    function toXmlDoc (This : in out DownloadableItemView) return Document_Access;
    function view (This : in out DownloadableItemView) return Unbounded_String;
 

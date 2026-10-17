@@ -22,17 +22,18 @@ package body org.allbinary.game.configuration.event.GameFeatureEvent_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out GameFeatureEvent'Class; anyType : Java_Object_Access; whatChanged : Unbounded_String) is
+   procedure Initialize (This : in out GameFeatureEvent'Class; anyType_Param : access Java_Object'Class; whatChanged : Unbounded_String) is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         AllBinaryEventObject_Package.Initialize (This, anyType);
         Initialize_Fields (This);
         This.whatChanged := whatChanged;
    end Initialize;
 
-   function Create (anyType : Java_Object_Access; whatChanged : Unbounded_String) return GameFeatureEvent_Access is
+   function Create (anyType_Param : access Java_Object'Class; whatChanged : Unbounded_String) return GameFeatureEvent_Access is
       This : constant GameFeatureEvent_Access := new GameFeatureEvent;
    begin
-      GameFeatureEvent_Package.Initialize (This.all, anyType, whatChanged);
+      GameFeatureEvent_Package.Initialize (This.all, anyType_Param, whatChanged);
       return This;
    end Create;
 

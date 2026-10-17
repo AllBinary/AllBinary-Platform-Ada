@@ -47,7 +47,8 @@ package body org.allbinary.game.displayable.canvas.BaseGameBehavior_Package is
         gameAdState.playingAdState;
    end init;
 
-   procedure pause (This : in out BaseGameBehavior; allBinaryGameCanvas : AllBinaryGameCanvas_Access) is
+   procedure pause (This : in out BaseGameBehavior; allBinaryGameCanvas_Param : access AllBinaryGameCanvas'Class) is
+      allBinaryGameCanvas : AllBinaryGameCanvas_Access := AllBinaryGameCanvas_Access (allBinaryGameCanvas_Param);
       features : Features_Access;
       currentDisplayableFactory : CurrentDisplayableFactory_Access;
    begin
@@ -58,7 +59,8 @@ package body org.allbinary.game.displayable.canvas.BaseGameBehavior_Package is
         end if;
    end pause;
 
-   procedure unPause (This : in out BaseGameBehavior; allBinaryGameCanvas : AllBinaryGameCanvas_Access) is
+   procedure unPause (This : in out BaseGameBehavior; allBinaryGameCanvas_Param : access AllBinaryGameCanvas'Class) is
+      allBinaryGameCanvas : AllBinaryGameCanvas_Access := AllBinaryGameCanvas_Access (allBinaryGameCanvas_Param);
       currentDisplayableFactory : CurrentDisplayableFactory_Access;
    begin
         if Features_Package.getInstance.isDefault (OpenGLFeatureFactory_Package.getInstance.OPENGL_AS_GAME_THREAD) then
@@ -69,48 +71,57 @@ package body org.allbinary.game.displayable.canvas.BaseGameBehavior_Package is
    end unPause;
 
    --  throws Exception
-   procedure updateTouch (This : in out BaseGameBehavior; allBinaryGameCanvas : AllBinaryGameCanvas_Access) is
+   procedure updateTouch (This : in out BaseGameBehavior; allBinaryGameCanvas_Param : access AllBinaryGameCanvas'Class) is
+      allBinaryGameCanvas : AllBinaryGameCanvas_Access := AllBinaryGameCanvas_Access (allBinaryGameCanvas_Param);
    begin
         allBinaryGameCanvas.updateTouch2;
    end updateTouch;
 
    --  throws Exception
-   procedure updateScreenButtonPaintable (This : in out BaseGameBehavior; allBinaryGameCanvas : AllBinaryGameCanvas_Access) is
+   procedure updateScreenButtonPaintable (This : in out BaseGameBehavior; allBinaryGameCanvas_Param : access AllBinaryGameCanvas'Class) is
+      allBinaryGameCanvas : AllBinaryGameCanvas_Access := AllBinaryGameCanvas_Access (allBinaryGameCanvas_Param);
    begin
         allBinaryGameCanvas.updateScreenButtonPaintable2;
    end updateScreenButtonPaintable;
 
    --  throws Exception
-   procedure setGameState (This : in out BaseGameBehavior; allBinaryGameCanvas : AllBinaryGameCanvas_Access) is
+   procedure setGameState (This : in out BaseGameBehavior; allBinaryGameCanvas_Param : access AllBinaryGameCanvas'Class) is
+      allBinaryGameCanvas : AllBinaryGameCanvas_Access := AllBinaryGameCanvas_Access (allBinaryGameCanvas_Param);
    begin
         allBinaryGameCanvas.updateGameState;
    end setGameState;
 
-   procedure removeAllGameKeyInputListeners (This : in out BaseGameBehavior; allBinaryGameCanvas : AllBinaryGameCanvas_Access) is
+   procedure removeAllGameKeyInputListeners (This : in out BaseGameBehavior; allBinaryGameCanvas_Param : access AllBinaryGameCanvas'Class) is
+      allBinaryGameCanvas : AllBinaryGameCanvas_Access := AllBinaryGameCanvas_Access (allBinaryGameCanvas_Param);
    begin
         allBinaryGameCanvas.removeAllGameKeyInputListeners2;
    end removeAllGameKeyInputListeners;
 
    --  throws Exception
-   procedure updateEndGameProcessor (This : in out BaseGameBehavior; allBinaryGameCanvas : AllBinaryGameCanvas_Access) is
+   procedure updateEndGameProcessor (This : in out BaseGameBehavior; allBinaryGameCanvas_Param : access AllBinaryGameCanvas'Class) is
+      allBinaryGameCanvas : AllBinaryGameCanvas_Access := AllBinaryGameCanvas_Access (allBinaryGameCanvas_Param);
    begin
         allBinaryGameCanvas.updateEndGameProcessor2;
    end updateEndGameProcessor;
 
    --  throws Exception
-   procedure buildGame (This : in out BaseGameBehavior; allBinaryGameCanvas : AllBinaryGameCanvas_Access) is
+   procedure buildGame (This : in out BaseGameBehavior; allBinaryGameCanvas_Param : access AllBinaryGameCanvas'Class) is
+      allBinaryGameCanvas : AllBinaryGameCanvas_Access := AllBinaryGameCanvas_Access (allBinaryGameCanvas_Param);
    begin
         allBinaryGameCanvas.buildGame2;
    end buildGame;
 
    --  throws Exception
-   procedure run (This : in out BaseGameBehavior; allBinaryGameCanvas : AllBinaryGameCanvas_Access) is
+   procedure run (This : in out BaseGameBehavior; allBinaryGameCanvas_Param : access AllBinaryGameCanvas'Class) is
+      allBinaryGameCanvas : AllBinaryGameCanvas_Access := AllBinaryGameCanvas_Access (allBinaryGameCanvas_Param);
    begin
         allBinaryGameCanvas.run2;
    end run;
 
    --  throws Exception
-   procedure setHighScore (This : in out BaseGameBehavior; abeClientInformation : AbeClientInformationInterface_Access; allBinaryGameCanvas : AllBinaryGameCanvas_Access; name : Unbounded_String; score : Long_Long_Integer; autoSubmit : Boolean; isLast : Boolean) is
+   procedure setHighScore (This : in out BaseGameBehavior; abeClientInformation_Param : access AbeClientInformationInterface'Class; allBinaryGameCanvas_Param : access AllBinaryGameCanvas'Class; name : Unbounded_String; score : Long_Long_Integer; autoSubmit : Boolean; isLast : Boolean) is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      allBinaryGameCanvas : AllBinaryGameCanvas_Access := AllBinaryGameCanvas_Access (allBinaryGameCanvas_Param);
    begin
         allBinaryGameCanvas.setHighScore2 (abeClientInformation, name, score, autoSubmit, isLast);
    end setHighScore;

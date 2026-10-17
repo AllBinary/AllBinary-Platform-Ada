@@ -52,13 +52,13 @@ package org.allbinary.business.context.configuration.ContextConfigurationView_Pa
       contextConfigurationInterface : ContextConfigurationInterface_Access;
    end record;
 
-   procedure Initialize (This : in out ContextConfigurationView'Class; node : Node_Access);
-   function Create (node : Node_Access) return ContextConfigurationView_Access;
-   procedure Initialize (This : in out ContextConfigurationView'Class; contextConfigurationInterface : ContextConfigurationInterface_Access);
-   function Create (contextConfigurationInterface : ContextConfigurationInterface_Access) return ContextConfigurationView_Access;
+   procedure Initialize (This : in out ContextConfigurationView'Class; node_Param : access Node'Class);
+   function Create (node_Param : access Node'Class) return ContextConfigurationView_Access;
+   procedure Initialize (This : in out ContextConfigurationView'Class; contextConfigurationInterface_Param : access ContextConfigurationInterface'Class);
+   function Create (contextConfigurationInterface_Param : access ContextConfigurationInterface'Class) return ContextConfigurationView_Access;
    function getContextConfigurationInterface (This : in out ContextConfigurationView) return ContextConfigurationInterface_Access;
-   function toXmlNode (This : in out ContextConfigurationView; document : Document_Access) return Node_Access;
-   procedure toXmlNode (This : in out ContextConfigurationView; document : Document_Access);
+   function toXmlNode (This : in out ContextConfigurationView; document_Param : access Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out ContextConfigurationView; document_Param : access Document'Class);
 
 end org.allbinary.business.context.configuration.ContextConfigurationView_Package;
 

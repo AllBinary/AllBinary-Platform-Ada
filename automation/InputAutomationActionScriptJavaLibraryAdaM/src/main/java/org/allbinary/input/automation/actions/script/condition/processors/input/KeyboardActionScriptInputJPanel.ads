@@ -79,26 +79,26 @@ package org.allbinary.input.automation.actions.script.condition.processors.input
       titleJLabel : JLabel_Access;
    end record;
 
-   procedure Initialize (This : in out KeyboardActionScriptInputJPanel'Class; keyActionScriptInputInterface : KeyboardActionScriptInputInterface_Access);
-   function Create (keyActionScriptInputInterface : KeyboardActionScriptInputInterface_Access) return KeyboardActionScriptInputJPanel_Access;
+   procedure Initialize (This : in out KeyboardActionScriptInputJPanel'Class; keyActionScriptInputInterface_Param : access KeyboardActionScriptInputInterface'Class);
+   function Create (keyActionScriptInputInterface_Param : access KeyboardActionScriptInputInterface'Class) return KeyboardActionScriptInputJPanel_Access;
    procedure set (This : in out KeyboardActionScriptInputJPanel);
    procedure updateInputType (This : in out KeyboardActionScriptInputJPanel);
    function getSelectedKey (This : in out KeyboardActionScriptInputJPanel) return Integer;
    procedure updateKeys (This : in out KeyboardActionScriptInputJPanel);
    procedure update (This : in out KeyboardActionScriptInputJPanel);
    function getKeyActionJDialog (This : in out KeyboardActionScriptInputJPanel) return JDialog_Access;
-   procedure setKeyActionJDialog (This : in out KeyboardActionScriptInputJPanel; keyActionJDialog : JDialog_Access);
+   procedure setKeyActionJDialog (This : in out KeyboardActionScriptInputJPanel; keyActionJDialog_Param : access JDialog'Class);
    procedure initComponents (This : in out KeyboardActionScriptInputJPanel);
    procedure prependText (This : in out KeyboardActionScriptInputJPanel; integer_Id : Integer);
-   procedure keyIntegerJComboBoxActionPerformed (This : in out KeyboardActionScriptInputJPanel; evt : ActionEvent_Access);
-   procedure sequenceJRadioButtonActionPerformed (This : in out KeyboardActionScriptInputJPanel; evt : ActionEvent_Access);
-   procedure simultaneousJRadioButtonActionPerformed (This : in out KeyboardActionScriptInputJPanel; evt : ActionEvent_Access);
-   procedure keyNameJComboBoxActionPerformed (This : in out KeyboardActionScriptInputJPanel; evt : ActionEvent_Access);
-   procedure okJButtonActionPerformed (This : in out KeyboardActionScriptInputJPanel; evt : ActionEvent_Access);
-   procedure keyActionJButtonActionPerformed (This : in out KeyboardActionScriptInputJPanel; evt : ActionEvent_Access);
-   procedure normalJRadioButtonActionPerformed (This : in out KeyboardActionScriptInputJPanel; evt : ActionEvent_Access);
-   procedure releaseJRadioButtonActionPerformed (This : in out KeyboardActionScriptInputJPanel; evt : ActionEvent_Access);
-   procedure pressJRadioButtonActionPerformed (This : in out KeyboardActionScriptInputJPanel; evt : ActionEvent_Access);
+   procedure keyIntegerJComboBoxActionPerformed (This : in out KeyboardActionScriptInputJPanel; evt_Param : access ActionEvent'Class);
+   procedure sequenceJRadioButtonActionPerformed (This : in out KeyboardActionScriptInputJPanel; evt_Param : access ActionEvent'Class);
+   procedure simultaneousJRadioButtonActionPerformed (This : in out KeyboardActionScriptInputJPanel; evt_Param : access ActionEvent'Class);
+   procedure keyNameJComboBoxActionPerformed (This : in out KeyboardActionScriptInputJPanel; evt_Param : access ActionEvent'Class);
+   procedure okJButtonActionPerformed (This : in out KeyboardActionScriptInputJPanel; evt_Param : access ActionEvent'Class);
+   procedure keyActionJButtonActionPerformed (This : in out KeyboardActionScriptInputJPanel; evt_Param : access ActionEvent'Class);
+   procedure normalJRadioButtonActionPerformed (This : in out KeyboardActionScriptInputJPanel; evt_Param : access ActionEvent'Class);
+   procedure releaseJRadioButtonActionPerformed (This : in out KeyboardActionScriptInputJPanel; evt_Param : access ActionEvent'Class);
+   procedure pressJRadioButtonActionPerformed (This : in out KeyboardActionScriptInputJPanel; evt_Param : access ActionEvent'Class);
 
 end org.allbinary.input.automation.actions.script.condition.processors.input.KeyboardActionScriptInputJPanel_Package;
 

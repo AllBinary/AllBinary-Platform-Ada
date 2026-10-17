@@ -44,8 +44,8 @@ package org.allbinary.game.layer.resources.OnDemandResources_Package is
    function Create return OnDemandResources_Access;
    procedure waitFor (This : in out OnDemandResources);
    procedure init (This : in out OnDemandResources);
-   function initAt (This : in out OnDemandResources; imageCache : ImageCache_Access; resourceAnimationInterfaceFactoryInterfaceFactory : BaseResourceAnimationInterfaceFactoryInterfaceFactory_Access; portion : Integer; loadingString : Unbounded_String; index : Integer) return Integer;
-   procedure initAt (This : in out OnDemandResources; imageCache : ImageCache_Access; resourceAnimationInterfaceFactoryInterfaceFactory : BaseResourceAnimationInterfaceFactoryInterfaceFactory_Access; portion : Integer; loadingString : Unbounded_String; index : Integer);
+   function initAt (This : in out OnDemandResources; imageCache_Param : access ImageCache'Class; resourceAnimationInterfaceFactoryInterfaceFactory_Param : access BaseResourceAnimationInterfaceFactoryInterfaceFactory'Class; portion : Integer; loadingString : Unbounded_String; index : Integer) return Integer;
+   procedure initAt (This : in out OnDemandResources; imageCache_Param : access ImageCache'Class; resourceAnimationInterfaceFactoryInterfaceFactory_Param : access BaseResourceAnimationInterfaceFactoryInterfaceFactory'Class; portion : Integer; loadingString : Unbounded_String; index : Integer);
 
 end org.allbinary.game.layer.resources.OnDemandResources_Package;
 

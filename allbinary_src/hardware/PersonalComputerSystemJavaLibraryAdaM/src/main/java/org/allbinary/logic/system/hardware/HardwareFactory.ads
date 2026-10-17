@@ -44,8 +44,8 @@ package org.allbinary.logic.system.hardware.HardwareFactory_Package is
    procedure Initialize (This : in out HardwareFactory'Class);
    function Create return HardwareFactory_Access;
    function getInstance return HardwareFactory_Access;
-   function getInstance (os : GenericOperatingSystem_Access) return HardwareInterface_Access;
-   procedure getInstance (os : GenericOperatingSystem_Access);
+   function getInstance (os_Param : access GenericOperatingSystem'Class) return HardwareInterface_Access;
+   procedure getInstance (os_Param : access GenericOperatingSystem'Class);
 
 end org.allbinary.logic.system.hardware.HardwareFactory_Package;
 

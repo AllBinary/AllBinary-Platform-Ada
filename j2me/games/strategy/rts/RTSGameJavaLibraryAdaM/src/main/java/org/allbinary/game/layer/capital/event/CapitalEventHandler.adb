@@ -35,7 +35,9 @@ package body org.allbinary.game.layer.capital.event.CapitalEventHandler_Package 
    end Create;
 
    --  throws Exception
-   procedure process (This : in out CapitalEventHandler; eventObject : AllBinaryEventObject_Access; eventListenerInterface : EventListenerInterface_Access) is
+   procedure process (This : in out CapitalEventHandler; eventObject_Param : access AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface'Class) is
+      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
+      eventListenerInterface : EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
       capitalEventListenerInterface : CapitalEventListenerInterface_Access;
    begin
         capitalEventListenerInterface := (CapitalEventListenerInterface_Access (eventListenerInterface));

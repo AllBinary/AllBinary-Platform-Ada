@@ -27,7 +27,9 @@ package body admin.taghelpers.StaticPagesRequestHelper_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out StaticPagesRequestHelper'Class; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) is
+   procedure Initialize (This : in out StaticPagesRequestHelper'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+      propertiesHashMap : HashMap_Access := HashMap_Access (propertiesHashMap_Param);
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
    begin
         AbContext_Package.Initialize (This, propertiesHashMap, pageContext);
         Initialize_Fields (This);
@@ -36,10 +38,10 @@ package body admin.taghelpers.StaticPagesRequestHelper_Package is
         This.getFormData;
    end Initialize;
 
-   function Create (propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return StaticPagesRequestHelper_Access is
+   function Create (propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return StaticPagesRequestHelper_Access is
       This : constant StaticPagesRequestHelper_Access := new StaticPagesRequestHelper;
    begin
-      StaticPagesRequestHelper_Package.Initialize (This.all, propertiesHashMap, pageContext);
+      StaticPagesRequestHelper_Package.Initialize (This.all, propertiesHashMap_Param, pageContext_Param);
       return This;
    end Create;
 
@@ -63,7 +65,7 @@ package body admin.taghelpers.StaticPagesRequestHelper_Package is
    begin
         begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
-                This.logUtil.putF (To_Unbounded_String ("Generated Static Pages Notification Email"), This'Unchecked_Access, To_Unbounded_String ("email"));
+                This.logUtil.putF (To_Unbounded_String ("Generated Static Pages Notification Email"), StaticPagesRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("email"));
             end if;
             storeFrontInterface := StoreFrontFactory_Package.getInstance (This.storeName);
             adminEmailSubject := To_Unbounded_String ("Generated Static Pages Email Notification");
@@ -82,7 +84,7 @@ package body admin.taghelpers.StaticPagesRequestHelper_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGINGERROR) then
-                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("email"), e);
+                This.logUtil.put (This.commonStrings.FAILURE, StaticPagesRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("email"), e);
             end if;
                 end;
         end;
@@ -100,7 +102,7 @@ package body admin.taghelpers.StaticPagesRequestHelper_Package is
             success := ProductListingFactory_Package.getInstance (searchRequest).generateAll (This.storeName);
             This.email;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, To_Unbounded_String ("generateStaticPages()"));
+                This.logUtil.putF (success, StaticPagesRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("generateStaticPages()"));
             end if;
             return success;
         exception
@@ -110,7 +112,7 @@ package body admin.taghelpers.StaticPagesRequestHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to generate staticpages table");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("generateStaticPages()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, StaticPagesRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("generateStaticPages()"), e);
             end if;
             return error;
                 end;
@@ -131,7 +133,7 @@ package body admin.taghelpers.StaticPagesRequestHelper_Package is
             FileUtil_Package.getInstance.copy (fromAbPath, toAbPath);
             success := To_Unbounded_String ("Made Public");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, To_Unbounded_String ("makePublic()"));
+                This.logUtil.putF (success, StaticPagesRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("makePublic()"));
             end if;
             return success;
         exception
@@ -141,7 +143,7 @@ package body admin.taghelpers.StaticPagesRequestHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to makePublic");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("makePublic()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, StaticPagesRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("makePublic()"), e);
             end if;
             return error;
                 end;

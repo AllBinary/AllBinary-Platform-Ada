@@ -42,9 +42,11 @@ package body org.allbinary.game.score.NoHighScoresFactory_Package is
       return This;
    end Create;
 
-   procedure fetchHighScores (This : in out NoHighScoresFactory; gameInfo : GameInfo_Access; highScoresResultsListener : HighScoresResultsListener_Access) is
+   procedure fetchHighScores (This : in out NoHighScoresFactory; gameInfo_Param : access GameInfo'Class; highScoresResultsListener_Param : access HighScoresResultsListener'Class) is
+      gameInfo : GameInfo_Access := GameInfo_Access (gameInfo_Param);
+      highScoresResultsListener : HighScoresResultsListener_Access := HighScoresResultsListener_Access (highScoresResultsListener_Param);
    begin
-        This.logUtil.putF (To_Unbounded_String ("Getting No HighScores"), This'Unchecked_Access, To_Unbounded_String ("fetchHighScores"));
+        This.logUtil.putF (To_Unbounded_String ("Getting No HighScores"), NoHighScoresFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("fetchHighScores"));
         highScoresResultsListener.setHighScoresArray (This.NO_HIGH_SCORES);
    end fetchHighScores;
 

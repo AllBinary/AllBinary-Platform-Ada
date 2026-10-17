@@ -39,12 +39,12 @@ package org.allbinary.game.graphics.hud.HudGraphicsPosition_Package is
    end record;
    NULL_HUD_GRAPHICS_POSITION : HudGraphicsPosition_Access;
 
-   procedure Initialize (This : in out HudGraphicsPosition'Class; point : GPoint_Access; anchor : Integer);
-   function Create (point : GPoint_Access; anchor : Integer) return HudGraphicsPosition_Access;
+   procedure Initialize (This : in out HudGraphicsPosition'Class; point_Param : access GPoint'Class; anchor : Integer);
+   function Create (point_Param : access GPoint'Class; anchor : Integer) return HudGraphicsPosition_Access;
    function getAnchor (This : in out HudGraphicsPosition) return Integer;
    procedure setAnchor (This : in out HudGraphicsPosition; anchor : Integer);
    function getPoint (This : in out HudGraphicsPosition) return GPoint_Access;
-   procedure setPoint (This : in out HudGraphicsPosition; point : GPoint_Access);
+   procedure setPoint (This : in out HudGraphicsPosition; point_Param : access GPoint'Class);
 
 end org.allbinary.game.graphics.hud.HudGraphicsPosition_Package;
 

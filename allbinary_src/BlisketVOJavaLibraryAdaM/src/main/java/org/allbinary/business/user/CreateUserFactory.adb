@@ -35,7 +35,8 @@ package body org.allbinary.business.user.CreateUserFactory_Package is
    end Create;
 
    --  throws Exception
-   function getInstance (hashMap : HashMap_Access) return UserInterface_Access is
+   function getInstance (hashMap_Param : access HashMap'Class) return UserInterface_Access is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
       roleString : Unbounded_String;
       role : UserRole_Access;
    begin
@@ -52,8 +53,8 @@ package body org.allbinary.business.user.CreateUserFactory_Package is
         end if;
    end getInstance;
 
-   procedure getInstance (hashMap : HashMap_Access) is
-      Java_Result : constant UserInterface_Access := getInstance (hashMap);
+   procedure getInstance (hashMap_Param : access HashMap'Class) is
+      Java_Result : constant UserInterface_Access := getInstance (hashMap_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

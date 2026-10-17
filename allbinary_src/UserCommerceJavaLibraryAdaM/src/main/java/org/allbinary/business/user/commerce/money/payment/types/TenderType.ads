@@ -35,8 +35,8 @@ package org.allbinary.business.user.commerce.money.payment.types.TenderType_Pack
 
    procedure Initialize (This : in out TenderType'Class; name : Unbounded_String);
    function Create (name : Unbounded_String) return TenderType_Access;
-   function isEqual (This : in out TenderType; tenderType : TenderType_Access) return Boolean;
-   procedure isEqual (This : in out TenderType; tenderType : TenderType_Access);
+   function isEqual (This : in out TenderType; tenderType_Param : access TenderType'Class) return Boolean;
+   procedure isEqual (This : in out TenderType; tenderType_Param : access TenderType'Class);
    function toString (This : in out TenderType) return Unbounded_String;
 
 end org.allbinary.business.user.commerce.money.payment.types.TenderType_Package;

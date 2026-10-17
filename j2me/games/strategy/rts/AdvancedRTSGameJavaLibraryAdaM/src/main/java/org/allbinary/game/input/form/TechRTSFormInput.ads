@@ -83,8 +83,8 @@ package org.allbinary.game.input.form.TechRTSFormInput_Package is
 
    procedure Initialize (This : in out TechRTSFormInput'Class; groupInterface : Group_Access_Array_Access);
    function Create (groupInterface : Group_Access_Array_Access) return TechRTSFormInput_Access;
-   procedure setAllBinaryGameLayerManager (This : in out TechRTSFormInput; allBinaryGameLayerManager : AllBinaryGameLayerManager_Access);
-   procedure processGameSpecific (This : in out TechRTSFormInput; associatedRtsLayer : CollidableDestroyableDamageableLayer_Access; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; layerManager : AllBinaryLayerManager_Access; item : ABCustomItem_Access; itemIndex : Integer);
+   procedure setAllBinaryGameLayerManager (This : in out TechRTSFormInput; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class);
+   procedure processGameSpecific (This : in out TechRTSFormInput; associatedRtsLayer_Param : access CollidableDestroyableDamageableLayer'Class; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; layerManager_Param : access AllBinaryLayerManager'Class; item_Param : access ABCustomItem'Class; itemIndex : Integer);
 
 end org.allbinary.game.input.form.TechRTSFormInput_Package;
 

@@ -55,7 +55,7 @@ package body org.allbinary.logic.visual.transform.info.dom.TransformInfoProperti
             transformInfosChildNodeList := transformInfosNode.getChildNodes;
             transformInfoNodeVector := DomSearchHelper_Package.getAllNodes (TransformInfoData_Package.getInstance.NAME, transformInfosChildNodeList);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (To_Unbounded_String ("Size: ") & Java_Image (transformInfoNodeVector.size), This'Unchecked_Access, To_Unbounded_String ("toTransformInfoPropertiesHashMap()"));
+                This.logUtil.putF (To_Unbounded_String ("Size: ") & Java_Image (transformInfoNodeVector.size), TransformInfoPropertiesDocument_Access'(This'Unchecked_Access), To_Unbounded_String ("toTransformInfoPropertiesHashMap()"));
             end if;
             size := transformInfoNodeVector.size;
             node := null;
@@ -73,7 +73,7 @@ package body org.allbinary.logic.visual.transform.info.dom.TransformInfoProperti
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
                 commonStrings := CommonStrings_Package.getInstance;
-                This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("toTransformInfoPropertiesHashMap()"), e);
+                This.logUtil.put (commonStrings.EXCEPTION_Id, TransformInfoPropertiesDocument_Access'(This'Unchecked_Access), To_Unbounded_String ("toTransformInfoPropertiesHashMap()"), e);
             end if;
             return null;
                 end;

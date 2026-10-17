@@ -39,7 +39,7 @@ package org.allbinary.game.midlet.GameMidletStateFactory_Package is
    function Create return GameMidletStateFactory_Access;
    function getInstance return GameMidletStateFactory_Access;
    function getCurrentGameState (This : in out GameMidletStateFactory) return GameState_Access;
-   procedure setCurrentGameState (This : in out GameMidletStateFactory; currentGameState : GameState_Access);
+   procedure setCurrentGameState (This : in out GameMidletStateFactory; currentGameState_Param : access GameState'Class);
 
 end org.allbinary.game.midlet.GameMidletStateFactory_Package;
 

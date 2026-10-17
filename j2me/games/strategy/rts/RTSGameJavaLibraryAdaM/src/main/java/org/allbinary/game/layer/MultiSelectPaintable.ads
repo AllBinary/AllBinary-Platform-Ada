@@ -59,10 +59,10 @@ package org.allbinary.game.layer.MultiSelectPaintable_Package is
 
    procedure Initialize (This : in out MultiSelectPaintable'Class);
    function Create return MultiSelectPaintable_Access;
-   procedure updateMeasurement (This : in out MultiSelectPaintable; graphics : Graphics_Access);
-   procedure update (This : in out MultiSelectPaintable; list : BasicArrayList_Access);
+   procedure updateMeasurement (This : in out MultiSelectPaintable; graphics_Param : access Graphics'Class);
+   procedure update (This : in out MultiSelectPaintable; list_Param : access BasicArrayList'Class);
    procedure clear (This : in out MultiSelectPaintable);
-   procedure paint (This : in out MultiSelectPaintable; graphics : Graphics_Access);
+   procedure paint (This : in out MultiSelectPaintable; graphics_Param : access Graphics'Class);
 
 end org.allbinary.game.layer.MultiSelectPaintable_Package;
 

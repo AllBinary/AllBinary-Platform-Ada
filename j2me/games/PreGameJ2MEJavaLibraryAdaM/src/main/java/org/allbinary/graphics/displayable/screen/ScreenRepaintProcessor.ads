@@ -37,8 +37,8 @@ package org.allbinary.graphics.displayable.screen.ScreenRepaintProcessor_Package
       displayable : Displayable_Access;
    end record;
 
-   procedure Initialize (This : in out ScreenRepaintProcessor'Class; displayable : Displayable_Access);
-   function Create (displayable : Displayable_Access) return ScreenRepaintProcessor_Access;
+   procedure Initialize (This : in out ScreenRepaintProcessor'Class; displayable_Param : access Displayable'Class);
+   function Create (displayable_Param : access Displayable'Class) return ScreenRepaintProcessor_Access;
    procedure process (This : in out ScreenRepaintProcessor);
 
 end org.allbinary.graphics.displayable.screen.ScreenRepaintProcessor_Package;

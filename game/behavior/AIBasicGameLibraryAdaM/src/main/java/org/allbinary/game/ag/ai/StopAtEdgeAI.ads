@@ -45,9 +45,9 @@ package org.allbinary.game.ag.ai.StopAtEdgeAI_Package is
 
    type StopAtEdgeAI is new BasicAI with null record;
 
-   procedure Initialize (This : in out StopAtEdgeAI'Class; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access);
-   function Create (ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return StopAtEdgeAI_Access;
-   procedure processAI (This : in out StopAtEdgeAI; allBinaryLayerManager : AllBinaryLayerManager_Access);
+   procedure Initialize (This : in out StopAtEdgeAI'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class);
+   function Create (ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return StopAtEdgeAI_Access;
+   procedure processAI (This : in out StopAtEdgeAI; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class);
 
 end org.allbinary.game.ag.ai.StopAtEdgeAI_Package;
 

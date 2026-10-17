@@ -51,13 +51,13 @@ package org.allbinary.business.user.commerce.inventory.item.BasicItemValidation_
       itemInterface : ItemInterface_Access;
    end record;
 
-   procedure Initialize (This : in out BasicItemValidation'Class; itemInterface : ItemInterface_Access);
-   function Create (itemInterface : ItemInterface_Access) return BasicItemValidation_Access;
+   procedure Initialize (This : in out BasicItemValidation'Class; itemInterface_Param : access ItemInterface'Class);
+   function Create (itemInterface_Param : access ItemInterface'Class) return BasicItemValidation_Access;
    function isValid (This : in out BasicItemValidation) return Boolean;
    function validationInfo (This : in out BasicItemValidation) return Unbounded_String;
    function toValidationInfoDoc (This : in out BasicItemValidation) return Document_Access;
-   function toValidationInfoNode (This : in out BasicItemValidation; document : Document_Access) return Node_Access;
-   procedure toValidationInfoNode (This : in out BasicItemValidation; document : Document_Access);
+   function toValidationInfoNode (This : in out BasicItemValidation; document_Param : access Document'Class) return Node_Access;
+   procedure toValidationInfoNode (This : in out BasicItemValidation; document_Param : access Document'Class);
 
 end org.allbinary.business.user.commerce.inventory.item.BasicItemValidation_Package;
 

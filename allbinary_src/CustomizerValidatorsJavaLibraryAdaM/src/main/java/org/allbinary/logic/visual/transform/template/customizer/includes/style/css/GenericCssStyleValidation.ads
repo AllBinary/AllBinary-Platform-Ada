@@ -58,18 +58,18 @@ package org.allbinary.logic.visual.transform.template.customizer.includes.style.
 
    procedure Initialize (This : in out GenericCssStyleValidation'Class);
    function Create return GenericCssStyleValidation_Access;
-   procedure Initialize (This : in out GenericCssStyleValidation'Class; document : Document_Access);
-   function Create (document : Document_Access) return GenericCssStyleValidation_Access;
-   procedure Initialize (This : in out GenericCssStyleValidation'Class; hashMap : HashMap_Access);
-   function Create (hashMap : HashMap_Access) return GenericCssStyleValidation_Access;
-   procedure getFormData (This : in out GenericCssStyleValidation; hashMap : HashMap_Access);
+   procedure Initialize (This : in out GenericCssStyleValidation'Class; document_Param : access Document'Class);
+   function Create (document_Param : access Document'Class) return GenericCssStyleValidation_Access;
+   procedure Initialize (This : in out GenericCssStyleValidation'Class; hashMap_Param : access HashMap'Class);
+   function Create (hashMap_Param : access HashMap'Class) return GenericCssStyleValidation_Access;
+   procedure getFormData (This : in out GenericCssStyleValidation; hashMap_Param : access HashMap'Class);
    function isValid (This : in out GenericCssStyleValidation) return Boolean;
    function validationInfo (This : in out GenericCssStyleValidation) return Unbounded_String;
    function toValidationInfoDoc (This : in out GenericCssStyleValidation) return Document_Access;
-   function toValidationInfoNode (This : in out GenericCssStyleValidation; document : Document_Access) return Node_Access;
-   procedure toValidationInfoNode (This : in out GenericCssStyleValidation; document : Document_Access);
-   function toXmlNode (This : in out GenericCssStyleValidation; document : Document_Access) return Node_Access;
-   procedure toXmlNode (This : in out GenericCssStyleValidation; document : Document_Access);
+   function toValidationInfoNode (This : in out GenericCssStyleValidation; document_Param : access Document'Class) return Node_Access;
+   procedure toValidationInfoNode (This : in out GenericCssStyleValidation; document_Param : access Document'Class);
+   function toXmlNode (This : in out GenericCssStyleValidation; document_Param : access Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out GenericCssStyleValidation; document_Param : access Document'Class);
 
 end org.allbinary.logic.visual.transform.template.customizer.includes.style.css.GenericCssStyleValidation_Package;
 

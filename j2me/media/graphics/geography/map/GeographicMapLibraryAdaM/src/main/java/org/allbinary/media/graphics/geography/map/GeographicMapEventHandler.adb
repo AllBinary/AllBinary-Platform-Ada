@@ -41,7 +41,8 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapEventHandle
       return This;
    end Create;
 
-   procedure addListener (This : in out GeographicMapEventHandler; gameLayer : AllBinaryGameLayer_Access) is
+   procedure addListener (This : in out GeographicMapEventHandler; gameLayer_Param : access AllBinaryGameLayer'Class) is
+      gameLayer : AllBinaryGameLayer_Access := AllBinaryGameLayer_Access (gameLayer_Param);
    begin
         if not (This.list.contains (gameLayer)) then
             This.list.add (gameLayer);
@@ -54,7 +55,8 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapEventHandle
         BasicEventHandler (This).removeAllListeners;
    end removeAllListeners;
 
-   procedure removeListener (This : in out GeographicMapEventHandler; eventListenerInterface : EventListenerInterface_Access) is
+   procedure removeListener (This : in out GeographicMapEventHandler; eventListenerInterface_Param : access EventListenerInterface'Class) is
+      eventListenerInterface : EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
    begin
         This.list.remove (eventListenerInterface);
         BasicEventHandler (This).removeListener (eventListenerInterface);
@@ -74,7 +76,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapEventHandle
                     declare
                         e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                     begin
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, EventStrings_Package.getInstance.FIRE_EVENT, e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, GeographicMapEventHandler_Access'(This'Unchecked_Access), EventStrings_Package.getInstance.FIRE_EVENT, e);
                     end;
             end;
         end loop;

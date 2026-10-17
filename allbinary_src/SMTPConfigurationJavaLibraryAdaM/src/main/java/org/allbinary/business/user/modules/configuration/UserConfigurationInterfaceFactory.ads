@@ -58,10 +58,10 @@ package org.allbinary.business.user.modules.configuration.UserConfigurationInter
 
    procedure Initialize (This : in out UserConfigurationInterfaceFactory'Class);
    function Create return UserConfigurationInterfaceFactory_Access;
-   function getInstance (document : Document_Access) return UserConfigurationInterface_Access;
-   procedure getInstance (document : Document_Access);
-   function getInstance (userRole : UserRole_Access) return UserConfigurationInterface_Access;
-   procedure getInstance (userRole : UserRole_Access);
+   function getInstance (document_Param : access Document'Class) return UserConfigurationInterface_Access;
+   procedure getInstance (document_Param : access Document'Class);
+   function getInstance (userRole_Param : access UserRole'Class) return UserConfigurationInterface_Access;
+   procedure getInstance (userRole_Param : access UserRole'Class);
    function getInstance return UserConfigurationInterface_Access;
 
 end org.allbinary.business.user.modules.configuration.UserConfigurationInterfaceFactory_Package;

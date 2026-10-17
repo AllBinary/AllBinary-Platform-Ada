@@ -24,7 +24,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellHistory
       
       This.MISSED_INFO := To_Unbounded_String ("Missed");
       This.animation := TextAnimation_Package.Create (This.MISSED_INFO, AnimationBehavior_Package.getInstance);
-      This.myFontProcessor := UpdateMyFontProcessor_Package.Create (This'Unchecked_Access);
+      This.myFontProcessor := UpdateMyFontProcessor_Package.Create (GeographicMapCellHistory_Access'(This'Unchecked_Access));
       This.totalVisited := 0;
       This.halfWidth := 0;
       This.fontHeight := 0;
@@ -47,7 +47,8 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellHistory
       return This;
    end Create;
 
-   procedure updateMeasurement (This : in out GeographicMapCellHistory; graphics : Graphics_Access) is
+   procedure updateMeasurement (This : in out GeographicMapCellHistory; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       font : Font_Access;
    begin
         font := graphics.getFont;
@@ -70,7 +71,8 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellHistory
         return This.list.size;
    end getSize;
 
-   procedure trackAll (This : in out GeographicMapCellHistory; list : BasicArrayList_Access) is
+   procedure trackAll (This : in out GeographicMapCellHistory; list_Param : access BasicArrayList'Class) is
+      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
       size : Integer;
       geographicMapCellPosition : GeographicMapCellPosition_Access;
       index : Integer;
@@ -85,7 +87,8 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellHistory
         end loop;
    end trackAll;
 
-   procedure track (This : in out GeographicMapCellHistory; geographicMapCellPosition : GeographicMapCellPosition_Access) is
+   procedure track (This : in out GeographicMapCellHistory; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is
+      geographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
    begin
         if not (This.list.contains (geographicMapCellPosition)) then
             This.list.add (geographicMapCellPosition);
@@ -103,7 +106,8 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellHistory
         return This.visitedList;
    end getVisited;
 
-   function getAfterIfNotLast (This : in out GeographicMapCellHistory; geographicMapCellPosition : GeographicMapCellPosition_Access) return GeographicMapCellPosition_Access is
+   function getAfterIfNotLast (This : in out GeographicMapCellHistory; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return GeographicMapCellPosition_Access is
+      geographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
       localList : BasicArrayList_Access;
       index : Integer;
    begin
@@ -153,7 +157,8 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellHistory
         return 0;
    end getFirstUnvisitedIndex;
 
-   function getInPathButNotTracked (This : in out GeographicMapCellHistory; pathList : BasicArrayList_Access) return BasicArrayList_Access is
+   function getInPathButNotTracked (This : in out GeographicMapCellHistory; pathList_Param : access BasicArrayList'Class) return BasicArrayList_Access is
+      pathList : BasicArrayList_Access := BasicArrayList_Access (pathList_Param);
       inPathButNotTrackedList : BasicArrayList_Access;
       localList : BasicArrayList_Access;
       size : Integer;
@@ -173,7 +178,8 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellHistory
         return inPathButNotTrackedList;
    end getInPathButNotTracked;
 
-   function isVisited (This : in out GeographicMapCellHistory; geographicMapCellPosition : GeographicMapCellPosition_Access) return Boolean is
+   function isVisited (This : in out GeographicMapCellHistory; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return Boolean is
+      geographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
       index : Integer;
       value : Boolean;
    begin
@@ -189,7 +195,8 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellHistory
         return False;
    end isVisited;
 
-   function visit (This : in out GeographicMapCellHistory; geographicMapCellPosition : GeographicMapCellPosition_Access) return Boolean is
+   function visit (This : in out GeographicMapCellHistory; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return Boolean is
+      geographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
       index : Integer;
       value : Boolean;
       TRUE : Boolean;
@@ -231,7 +238,8 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellHistory
    end isAllVisited2;
 
    --  throws Exception
-   function isPortionVisited (This : in out GeographicMapCellHistory; basicDecimal : BasicDecimal_Access) return Boolean is
+   function isPortionVisited (This : in out GeographicMapCellHistory; basicDecimal_Param : access BasicDecimal'Class) return Boolean is
+      basicDecimal : BasicDecimal_Access := BasicDecimal_Access (basicDecimal_Param);
       size : Integer;
       numberRequired : Integer;
       numberNotVisited : Integer;
@@ -262,7 +270,10 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellHistory
         This.totalVisited := 0;
    end reset;
 
-   procedure paintNotVisitedRelativeToPoint (This : in out GeographicMapCellHistory; graphics : Graphics_Access; tiledLayer : AllBinaryTiledLayer_Access; point : GPoint_Access) is
+   procedure paintNotVisitedRelativeToPoint (This : in out GeographicMapCellHistory; graphics_Param : access Graphics'Class; tiledLayer_Param : access AllBinaryTiledLayer'Class; point_Param : access GPoint'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+      tiledLayer : AllBinaryTiledLayer_Access := AllBinaryTiledLayer_Access (tiledLayer_Param);
+      point : GPoint_Access := GPoint_Access (point_Param);
       x : Integer;
       y : Integer;
       height : Integer;
@@ -276,7 +287,9 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellHistory
         This.animation.paintXY (graphics, (x) + (This.halfWidth), (y) + ((height)));
    end paintNotVisitedRelativeToPoint;
 
-   procedure paintNotVisited (This : in out GeographicMapCellHistory; graphics : Graphics_Access; geographicMapInterface : BasicGeographicMap_Access) is
+   procedure paintNotVisited (This : in out GeographicMapCellHistory; graphics_Param : access Graphics'Class; geographicMapInterface_Param : access BasicGeographicMap'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+      geographicMapInterface : BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
       localVisitedList : BasicArrayList_Access;
       size : Integer;
       geographicMapCellPosition : GeographicMapCellPosition_Access;
@@ -305,7 +318,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellHistory
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("paintNotVisited"), e);
+            This.logUtil.put (commonStrings.EXCEPTION_Id, GeographicMapCellHistory_Access'(This'Unchecked_Access), To_Unbounded_String ("paintNotVisited"), e);
                 end;
         end;
    end paintNotVisited;
@@ -317,36 +330,36 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellHistory
         This.totalVisited := 0;
    end init;
 
-   procedure getAfterIfNotLast (This : in out GeographicMapCellHistory; geographicMapCellPosition : GeographicMapCellPosition_Access) is
-      Java_Result : constant GeographicMapCellPosition_Access := GeographicMapCellHistory'Class (This).getAfterIfNotLast (geographicMapCellPosition);
+   procedure getAfterIfNotLast (This : in out GeographicMapCellHistory; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is
+      Java_Result : constant GeographicMapCellPosition_Access := GeographicMapCellHistory'Class (This).getAfterIfNotLast (geographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getAfterIfNotLast;
 
-   procedure getInPathButNotTracked (This : in out GeographicMapCellHistory; pathList : BasicArrayList_Access) is
-      Java_Result : constant BasicArrayList_Access := GeographicMapCellHistory'Class (This).getInPathButNotTracked (pathList);
+   procedure getInPathButNotTracked (This : in out GeographicMapCellHistory; pathList_Param : access BasicArrayList'Class) is
+      Java_Result : constant BasicArrayList_Access := GeographicMapCellHistory'Class (This).getInPathButNotTracked (pathList_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInPathButNotTracked;
 
-   procedure isVisited (This : in out GeographicMapCellHistory; geographicMapCellPosition : GeographicMapCellPosition_Access) is
-      Java_Result : constant Boolean := GeographicMapCellHistory'Class (This).isVisited (geographicMapCellPosition);
+   procedure isVisited (This : in out GeographicMapCellHistory; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is
+      Java_Result : constant Boolean := GeographicMapCellHistory'Class (This).isVisited (geographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isVisited;
 
-   procedure visit (This : in out GeographicMapCellHistory; geographicMapCellPosition : GeographicMapCellPosition_Access) is
-      Java_Result : constant Boolean := GeographicMapCellHistory'Class (This).visit (geographicMapCellPosition);
+   procedure visit (This : in out GeographicMapCellHistory; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is
+      Java_Result : constant Boolean := GeographicMapCellHistory'Class (This).visit (geographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end visit;
 
-   procedure isPortionVisited (This : in out GeographicMapCellHistory; basicDecimal : BasicDecimal_Access) is
-      Java_Result : constant Boolean := GeographicMapCellHistory'Class (This).isPortionVisited (basicDecimal);
+   procedure isPortionVisited (This : in out GeographicMapCellHistory; basicDecimal_Param : access BasicDecimal'Class) is
+      Java_Result : constant Boolean := GeographicMapCellHistory'Class (This).isPortionVisited (basicDecimal_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

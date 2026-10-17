@@ -29,7 +29,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
         Initialize_Fields (This);
         This.setTableName (This.tableName);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-            This.logUtil.putF (This.commonStrings.CONSTRUCTOR, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+            This.logUtil.putF (This.commonStrings.CONSTRUCTOR, PaymentGatewayEntity_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
    end Initialize;
 
@@ -40,14 +40,15 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
       return This;
    end Create;
 
-   procedure add (This : in out PaymentGatewayEntity; paymentGatewayInterface : PaymentGatewayInterface_Access) is
+   procedure add (This : in out PaymentGatewayEntity; paymentGatewayInterface_Param : access PaymentGatewayInterface'Class) is
+      paymentGatewayInterface : PaymentGatewayInterface_Access := PaymentGatewayInterface_Access (paymentGatewayInterface_Param);
       vector : BasicArrayList_Access;
       calendar : Calendar_Access;
       time : Unbounded_String;
    begin
         begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("add"));
+                This.logUtil.putF (This.commonStrings.START, PaymentGatewayEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("add"));
             end if;
             vector := BasicArrayListD_Package.Create;
             vector.add (PaymentGatewayIdGenerator_Package.Create.getNext);
@@ -58,7 +59,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
             vector.add (time);
             AbSqlBean (This).insert (vector);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.putF (This.commonStrings.END_Id, This'Unchecked_Access, To_Unbounded_String ("add"));
+                This.logUtil.putF (This.commonStrings.END_Id, PaymentGatewayEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("add"));
             end if;
         exception
             when Java_Occurrence : others =>
@@ -66,13 +67,14 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("add"), e);
+                This.logUtil.put (This.commonStrings.FAILURE, PaymentGatewayEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("add"), e);
             end if;
                 end;
         end;
    end add;
 
-   procedure update (This : in out PaymentGatewayEntity; paymentGatewayInterface : PaymentGatewayInterface_Access) is
+   procedure update (This : in out PaymentGatewayEntity; paymentGatewayInterface_Param : access PaymentGatewayInterface'Class) is
+      paymentGatewayInterface : PaymentGatewayInterface_Access := PaymentGatewayInterface_Access (paymentGatewayInterface_Param);
       calendar : Calendar_Access;
       time : Unbounded_String;
       whereKeyValuePairs : HashMap_Access;
@@ -91,7 +93,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
             updateHashMap := PaymentGatewayEncryptedMapping_Package.Create (paymentGatewayInterface).toHashMap;
             AbSqlBean (This).updateWhere (whereKeyValuePairs, updateHashMap);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.putF (This.commonStrings.SUCCESS, This'Unchecked_Access, To_Unbounded_String ("update"));
+                This.logUtil.putF (This.commonStrings.SUCCESS, PaymentGatewayEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("update"));
             end if;
         exception
             when Java_Occurrence : others =>
@@ -99,13 +101,14 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("update"), e);
+                This.logUtil.put (This.commonStrings.FAILURE, PaymentGatewayEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("update"), e);
             end if;
                 end;
         end;
    end update;
 
-   function getPaymentGatewayInterface (This : in out PaymentGatewayEntity; storeName : Unbounded_String; paymentType : BasicPaymentType_Access) return PaymentGatewayInterface_Access is
+   function getPaymentGatewayInterface (This : in out PaymentGatewayEntity; storeName : Unbounded_String; paymentType_Param : access BasicPaymentType'Class) return PaymentGatewayInterface_Access is
+      paymentType : BasicPaymentType_Access := BasicPaymentType_Access (paymentType_Param);
       paymentGatewayHashMap : HashMap_Access;
       whereKeyAndValue : HashMap_Access;
       userName : Unbounded_String;
@@ -154,7 +157,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
                 paymentGatewayHashMap.put (PaymentGatewayData_Package.SPECIAL9.toString, superCrypt.decrypt (special9));
                 paymentGatewayInterface := PaymentGatewayInterfaceFactory_Package.Create.getInstance (paymentGatewayHashMap);
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                    This.logUtil.putF (This.commonStrings.SUCCESS, This'Unchecked_Access, To_Unbounded_String ("getPaymentGatewayInterface()"));
+                    This.logUtil.putF (This.commonStrings.SUCCESS, PaymentGatewayEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("getPaymentGatewayInterface()"));
                 end if;
                 return paymentGatewayInterface;
             else
@@ -166,7 +169,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.put (To_Unbounded_String ("Command Failed for paymentType: ") & paymentType.getName, This'Unchecked_Access, To_Unbounded_String ("getPaymentGatewayInterface"), e);
+                This.logUtil.put (To_Unbounded_String ("Command Failed for paymentType: ") & paymentType.getName, PaymentGatewayEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("getPaymentGatewayInterface"), e);
             end if;
             return null;
                 end;
@@ -193,7 +196,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
                     paymentGatewayVector.add (paymentType);
                 end loop;
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                    This.logUtil.putF (This.commonStrings.SUCCESS, This'Unchecked_Access, To_Unbounded_String ("findPaymentTypeVectorByStore()"));
+                    This.logUtil.putF (This.commonStrings.SUCCESS, PaymentGatewayEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("findPaymentTypeVectorByStore()"));
                 end if;
                 return paymentGatewayVector;
             else
@@ -205,14 +208,15 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("findPaymentTypeVectorByStore"), e);
+                This.logUtil.put (This.commonStrings.FAILURE, PaymentGatewayEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("findPaymentTypeVectorByStore"), e);
             end if;
             return null;
                 end;
         end;
    end findPaymentTypeVectorByStore;
 
-   procedure remove (This : in out PaymentGatewayEntity; storeName : Unbounded_String; paymentType : BasicPaymentType_Access) is
+   procedure remove (This : in out PaymentGatewayEntity; storeName : Unbounded_String; paymentType_Param : access BasicPaymentType'Class) is
+      paymentType : BasicPaymentType_Access := BasicPaymentType_Access (paymentType_Param);
       whereHashMap : HashMap_Access;
    begin
         begin
@@ -221,7 +225,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
             whereHashMap.put (PaymentGatewayData_Package.NAME.toString, paymentType.getName);
             AbSqlBean (This).deleteWhere (whereHashMap);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.putF (This.commonStrings.SUCCESS, This'Unchecked_Access, To_Unbounded_String ("remove"));
+                This.logUtil.putF (This.commonStrings.SUCCESS, PaymentGatewayEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("remove"));
             end if;
         exception
             when Java_Occurrence : others =>
@@ -229,7 +233,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("remove"), e);
+                This.logUtil.put (This.commonStrings.FAILURE, PaymentGatewayEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("remove"), e);
             end if;
                 end;
         end;
@@ -328,8 +332,8 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
         return AbSqlBean (This).dropTable;
    end dropTable;
 
-   procedure getPaymentGatewayInterface (This : in out PaymentGatewayEntity; storeName : Unbounded_String; paymentType : BasicPaymentType_Access) is
-      Java_Result : constant PaymentGatewayInterface_Access := PaymentGatewayEntity'Class (This).getPaymentGatewayInterface (storeName, paymentType);
+   procedure getPaymentGatewayInterface (This : in out PaymentGatewayEntity; storeName : Unbounded_String; paymentType_Param : access BasicPaymentType'Class) is
+      Java_Result : constant PaymentGatewayInterface_Access := PaymentGatewayEntity'Class (This).getPaymentGatewayInterface (storeName, paymentType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

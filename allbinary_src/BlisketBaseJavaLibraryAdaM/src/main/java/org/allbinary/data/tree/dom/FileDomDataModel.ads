@@ -45,10 +45,10 @@ package org.allbinary.data.tree.dom.FileDomDataModel_Package is
       file : AbFile_Access;
    end record;
 
-   procedure Initialize (This : in out FileDomDataModel'Class; file : AbFile_Access);
-   function Create (file : AbFile_Access) return FileDomDataModel_Access;
-   function toXmlNode (This : in out FileDomDataModel; document : Document_Access) return Node_Access;
-   procedure toXmlNode (This : in out FileDomDataModel; document : Document_Access);
+   procedure Initialize (This : in out FileDomDataModel'Class; file_Param : access AbFile'Class);
+   function Create (file_Param : access AbFile'Class) return FileDomDataModel_Access;
+   function toXmlNode (This : in out FileDomDataModel; document_Param : access Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out FileDomDataModel; document_Param : access Document'Class);
 
 end org.allbinary.data.tree.dom.FileDomDataModel_Package;
 

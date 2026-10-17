@@ -34,7 +34,8 @@ package body org.allbinary.logic.system.hardware.components.linux.MachineAccessC
       return This;
    end Create;
 
-   function compareTo (This : in out MachineAccessControlAddress; componentInterface : HardwareComponentInterface_Access) return Boolean is
+   function compareTo (This : in out MachineAccessControlAddress; componentInterface_Param : access HardwareComponentInterface'Class) return Boolean is
+      componentInterface : HardwareComponentInterface_Access := HardwareComponentInterface_Access (componentInterface_Param);
    begin
         return True;
    end compareTo;
@@ -44,8 +45,8 @@ package body org.allbinary.logic.system.hardware.components.linux.MachineAccessC
         return StringUtil_Package.getInstance.EMPTY_STRING;
    end toString;
 
-   procedure compareTo (This : in out MachineAccessControlAddress; componentInterface : HardwareComponentInterface_Access) is
-      Java_Result : constant Boolean := MachineAccessControlAddress'Class (This).compareTo (componentInterface);
+   procedure compareTo (This : in out MachineAccessControlAddress; componentInterface_Param : access HardwareComponentInterface'Class) is
+      Java_Result : constant Boolean := MachineAccessControlAddress'Class (This).compareTo (componentInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

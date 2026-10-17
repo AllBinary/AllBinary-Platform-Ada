@@ -20,7 +20,8 @@ package body org.allbinary.animation.NullAnimationFactory_Package is
       null;
       This.NULL_ANIMATION := Animation_Package.Create  --  Java anonymous class body: implement it as a named type
 --          
---     procedure paintXY (This : in out ; graphics : Graphics_Access; x : Integer; y : Integer) is
+--     procedure paintXY (This : in out ; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is
+--        graphics : Graphics_Access := Graphics_Access (graphics_Param);
 --     begin
 --              null;
 --     end paintXY;
@@ -53,12 +54,14 @@ package body org.allbinary.animation.NullAnimationFactory_Package is
    end getInstance;
 
    --  throws Exception
-   function getInstanceAnimation (This : in out NullAnimationFactory; animationInterface : Animation_Access) return Animation_Access is
+   function getInstanceAnimation (This : in out NullAnimationFactory; animationInterface_Param : access Animation'Class) return Animation_Access is
+      animationInterface : Animation_Access := Animation_Access (animationInterface_Param);
    begin
         return This.NULL_ANIMATION;
    end getInstanceAnimation;
 
-   procedure setInitialScale (This : in out NullAnimationFactory; scaleProperties : ScaleProperties_Access) is
+   procedure setInitialScale (This : in out NullAnimationFactory; scaleProperties_Param : access ScaleProperties'Class) is
+      scaleProperties : ScaleProperties_Access := ScaleProperties_Access (scaleProperties_Param);
    begin
         null;
    end setInitialScale;
@@ -70,8 +73,8 @@ package body org.allbinary.animation.NullAnimationFactory_Package is
       null;
    end getInstance;
 
-   procedure getInstanceAnimation (This : in out NullAnimationFactory; animationInterface : Animation_Access) is
-      Java_Result : constant Animation_Access := NullAnimationFactory'Class (This).getInstanceAnimation (animationInterface);
+   procedure getInstanceAnimation (This : in out NullAnimationFactory; animationInterface_Param : access Animation'Class) is
+      Java_Result : constant Animation_Access := NullAnimationFactory'Class (This).getInstanceAnimation (animationInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

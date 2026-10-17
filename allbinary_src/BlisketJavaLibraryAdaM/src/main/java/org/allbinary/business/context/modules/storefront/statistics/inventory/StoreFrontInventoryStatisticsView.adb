@@ -22,21 +22,23 @@ package body org.allbinary.business.context.modules.storefront.statistics.invent
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out StoreFrontInventoryStatisticsView'Class; storeFrontInventoryStatisticsInterface : StoreFrontInventoryStatisticsInterface_Access) is
+   procedure Initialize (This : in out StoreFrontInventoryStatisticsView'Class; storeFrontInventoryStatisticsInterface_Param : access StoreFrontInventoryStatisticsInterface'Class) is
+      storeFrontInventoryStatisticsInterface : StoreFrontInventoryStatisticsInterface_Access := StoreFrontInventoryStatisticsInterface_Access (storeFrontInventoryStatisticsInterface_Param);
    begin
       Initialize_Fields (This);
         This.storeFrontInventoryStatisticsInterface := storeFrontInventoryStatisticsInterface;
    end Initialize;
 
-   function Create (storeFrontInventoryStatisticsInterface : StoreFrontInventoryStatisticsInterface_Access) return StoreFrontInventoryStatisticsView_Access is
+   function Create (storeFrontInventoryStatisticsInterface_Param : access StoreFrontInventoryStatisticsInterface'Class) return StoreFrontInventoryStatisticsView_Access is
       This : constant StoreFrontInventoryStatisticsView_Access := new StoreFrontInventoryStatisticsView;
    begin
-      StoreFrontInventoryStatisticsView_Package.Initialize (This.all, storeFrontInventoryStatisticsInterface);
+      StoreFrontInventoryStatisticsView_Package.Initialize (This.all, storeFrontInventoryStatisticsInterface_Param);
       return This;
    end Create;
 
    --  throws Exception
-   function toXmlNode (This : in out StoreFrontInventoryStatisticsView; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out StoreFrontInventoryStatisticsView; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       hashMap : HashMap_Access;
       node : Node_Access;
    begin
@@ -45,8 +47,8 @@ package body org.allbinary.business.context.modules.storefront.statistics.invent
         return node;
    end toXmlNode;
 
-   procedure toXmlNode (This : in out StoreFrontInventoryStatisticsView; document : Document_Access) is
-      Java_Result : constant Node_Access := StoreFrontInventoryStatisticsView'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out StoreFrontInventoryStatisticsView; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := StoreFrontInventoryStatisticsView'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

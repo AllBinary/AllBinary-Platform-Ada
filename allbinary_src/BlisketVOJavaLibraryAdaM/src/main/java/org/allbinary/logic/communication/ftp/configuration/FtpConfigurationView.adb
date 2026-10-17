@@ -22,7 +22,8 @@ package body org.allbinary.logic.communication.ftp.configuration.FtpConfiguratio
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out FtpConfigurationView'Class; node : Node_Access) is
+   procedure Initialize (This : in out FtpConfigurationView'Class; node_Param : access Node'Class) is
+      node : Node_Access := Node_Access (node_Param);
       chileNodeList : NodeList_Access;
       server : Unbounded_String;
       userName : Unbounded_String;
@@ -42,28 +43,30 @@ package body org.allbinary.logic.communication.ftp.configuration.FtpConfiguratio
         This.getFtpConfigurationInterface.setPath (path);
    end Initialize;
 
-   function Create (node : Node_Access) return FtpConfigurationView_Access is
+   function Create (node_Param : access Node'Class) return FtpConfigurationView_Access is
       This : constant FtpConfigurationView_Access := new FtpConfigurationView;
    begin
-      FtpConfigurationView_Package.Initialize (This.all, node);
+      FtpConfigurationView_Package.Initialize (This.all, node_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out FtpConfigurationView'Class; ftpConfigurationInterface : FtpConfigurationInterface_Access) is
+   procedure Initialize (This : in out FtpConfigurationView'Class; ftpConfigurationInterface_Param : access FtpConfigurationInterface'Class) is
+      ftpConfigurationInterface : FtpConfigurationInterface_Access := FtpConfigurationInterface_Access (ftpConfigurationInterface_Param);
    begin
       Initialize_Fields (This);
         This.setFtpConfigurationInterface (ftpConfigurationInterface);
    end Initialize;
 
-   function Create (ftpConfigurationInterface : FtpConfigurationInterface_Access) return FtpConfigurationView_Access is
+   function Create (ftpConfigurationInterface_Param : access FtpConfigurationInterface'Class) return FtpConfigurationView_Access is
       This : constant FtpConfigurationView_Access := new FtpConfigurationView;
    begin
-      FtpConfigurationView_Package.Initialize (This.all, ftpConfigurationInterface);
+      FtpConfigurationView_Package.Initialize (This.all, ftpConfigurationInterface_Param);
       return This;
    end Create;
 
    --  throws Exception
-   function toXmlNode (This : in out FtpConfigurationView; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out FtpConfigurationView; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       ftpConfigurationMapping : FtpConfigurationMapping_Access;
       hashMap : HashMap_Access;
       node : Node_Access;
@@ -79,13 +82,14 @@ package body org.allbinary.logic.communication.ftp.configuration.FtpConfiguratio
         return This.ftpConfigurationInterface;
    end getFtpConfigurationInterface;
 
-   procedure setFtpConfigurationInterface (This : in out FtpConfigurationView; ftpConfigurationInterface : FtpConfigurationInterface_Access) is
+   procedure setFtpConfigurationInterface (This : in out FtpConfigurationView; ftpConfigurationInterface_Param : access FtpConfigurationInterface'Class) is
+      ftpConfigurationInterface : FtpConfigurationInterface_Access := FtpConfigurationInterface_Access (ftpConfigurationInterface_Param);
    begin
         This.ftpConfigurationInterface := ftpConfigurationInterface;
    end setFtpConfigurationInterface;
 
-   procedure toXmlNode (This : in out FtpConfigurationView; document : Document_Access) is
-      Java_Result : constant Node_Access := FtpConfigurationView'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out FtpConfigurationView; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := FtpConfigurationView'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

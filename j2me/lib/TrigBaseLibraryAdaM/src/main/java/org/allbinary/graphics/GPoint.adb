@@ -24,7 +24,8 @@ package body org.allbinary.graphics.GPoint_Package is
    end Initialize_Fields;
 
 
-   function getInstance (point : GPoint_Access) return GPoint_Access is
+   function getInstance (point_Param : access GPoint'Class) return GPoint_Access is
+      point : GPoint_Access := GPoint_Access (point_Param);
    begin
         return GPoint_Package.Create (point.getX, point.getY, point.getZ);
    end getInstance;
@@ -97,8 +98,8 @@ package body org.allbinary.graphics.GPoint_Package is
         return stringBuffer.toString;
    end toStringStatic;
 
-   procedure getInstance (point : GPoint_Access) is
-      Java_Result : constant GPoint_Access := getInstance (point);
+   procedure getInstance (point_Param : access GPoint'Class) is
+      Java_Result : constant GPoint_Access := getInstance (point_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

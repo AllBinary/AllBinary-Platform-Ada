@@ -47,10 +47,10 @@ package org.allbinary.media.graphics.geography.map.GeographicMapCellPositionTrac
 
    procedure Initialize (This : in out GeographicMapCellPositionTracking'Class);
    function Create return GeographicMapCellPositionTracking_Access;
-   function getCurrentOverCellType (This : in out GeographicMapCellPositionTracking; geographicMap : BasicGeographicMap_Access) return GeographicMapCellType_Access;
-   procedure getCurrentOverCellType (This : in out GeographicMapCellPositionTracking; geographicMap : BasicGeographicMap_Access);
-   function updateStart (This : in out GeographicMapCellPositionTracking; gameCanvasInterface : AllBinaryGameCanvasInterface_Access; layer : AllBinaryLayer_Access) return Boolean;
-   procedure updateStart (This : in out GeographicMapCellPositionTracking; gameCanvasInterface : AllBinaryGameCanvasInterface_Access; layer : AllBinaryLayer_Access);
+   function getCurrentOverCellType (This : in out GeographicMapCellPositionTracking; geographicMap_Param : access BasicGeographicMap'Class) return GeographicMapCellType_Access;
+   procedure getCurrentOverCellType (This : in out GeographicMapCellPositionTracking; geographicMap_Param : access BasicGeographicMap'Class);
+   function updateStart (This : in out GeographicMapCellPositionTracking; gameCanvasInterface_Param : access AllBinaryGameCanvasInterface'Class; layer_Param : access AllBinaryLayer'Class) return Boolean;
+   procedure updateStart (This : in out GeographicMapCellPositionTracking; gameCanvasInterface_Param : access AllBinaryGameCanvasInterface'Class; layer_Param : access AllBinaryLayer'Class);
    function updateEnd (This : in out GeographicMapCellPositionTracking) return Boolean;
    function getPreviousGeographicMapCellPosition (This : in out GeographicMapCellPositionTracking) return GeographicMapCellPosition_Access;
    function getCurrentGeographicMapCellPosition (This : in out GeographicMapCellPositionTracking) return GeographicMapCellPosition_Access;

@@ -21,7 +21,8 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpSearch_P
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out TransformInfoHttpSearch'Class; searchRequest : SearchRequest_Access) is
+   procedure Initialize (This : in out TransformInfoHttpSearch'Class; searchRequest_Param : access SearchRequest'Class) is
+      searchRequest : SearchRequest_Access := SearchRequest_Access (searchRequest_Param);
       dataFileName : Unbounded_String;
    begin
         TransformInfoHttp_Package.Initialize (This, searchRequest.getPropertiesHashMap, searchRequest.getPageContext);
@@ -34,10 +35,10 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpSearch_P
         This.setTemplateFile (dataFileName);
    end Initialize;
 
-   function Create (searchRequest : SearchRequest_Access) return TransformInfoHttpSearch_Access is
+   function Create (searchRequest_Param : access SearchRequest'Class) return TransformInfoHttpSearch_Access is
       This : constant TransformInfoHttpSearch_Access := new TransformInfoHttpSearch;
    begin
-      TransformInfoHttpSearch_Package.Initialize (This.all, searchRequest);
+      TransformInfoHttpSearch_Package.Initialize (This.all, searchRequest_Param);
       return This;
    end Create;
 

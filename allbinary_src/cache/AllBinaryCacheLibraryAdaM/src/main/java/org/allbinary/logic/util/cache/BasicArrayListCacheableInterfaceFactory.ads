@@ -36,8 +36,8 @@ package org.allbinary.logic.util.cache.BasicArrayListCacheableInterfaceFactory_P
 
    procedure Initialize (This : in out BasicArrayListCacheableInterfaceFactory'Class);
    function Create return BasicArrayListCacheableInterfaceFactory_Access;
-   function getInstance (This : in out BasicArrayListCacheableInterfaceFactory; key : Java_Object_Access) return CacheableInterface_Access;
-   procedure getInstance (This : in out BasicArrayListCacheableInterfaceFactory; key : Java_Object_Access);
+   function getInstance (This : in out BasicArrayListCacheableInterfaceFactory; key_Param : access Java_Object'Class) return CacheableInterface_Access;
+   procedure getInstance (This : in out BasicArrayListCacheableInterfaceFactory; key_Param : access Java_Object'Class);
 
 end org.allbinary.logic.util.cache.BasicArrayListCacheableInterfaceFactory_Package;
 

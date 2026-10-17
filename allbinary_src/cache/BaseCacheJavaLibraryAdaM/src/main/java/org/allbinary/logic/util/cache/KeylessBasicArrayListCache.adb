@@ -51,7 +51,7 @@ package body org.allbinary.logic.util.cache.KeylessBasicArrayListCache_Package i
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.GET, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, KeylessBasicArrayListCache_Access'(This'Unchecked_Access), This.commonStrings.GET, e);
             return This.basicArrayListUtil.getImmutableInstance;
                 end;
         end;

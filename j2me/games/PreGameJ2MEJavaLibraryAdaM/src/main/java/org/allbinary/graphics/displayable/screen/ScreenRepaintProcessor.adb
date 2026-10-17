@@ -22,17 +22,18 @@ package body org.allbinary.graphics.displayable.screen.ScreenRepaintProcessor_Pa
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ScreenRepaintProcessor'Class; displayable : Displayable_Access) is
+   procedure Initialize (This : in out ScreenRepaintProcessor'Class; displayable_Param : access Displayable'Class) is
+      displayable : Displayable_Access := Displayable_Access (displayable_Param);
    begin
       Processor_Package.Initialize (This);
       Initialize_Fields (This);
         This.displayable := displayable;
    end Initialize;
 
-   function Create (displayable : Displayable_Access) return ScreenRepaintProcessor_Access is
+   function Create (displayable_Param : access Displayable'Class) return ScreenRepaintProcessor_Access is
       This : constant ScreenRepaintProcessor_Access := new ScreenRepaintProcessor;
    begin
-      ScreenRepaintProcessor_Package.Initialize (This.all, displayable);
+      ScreenRepaintProcessor_Package.Initialize (This.all, displayable_Param);
       return This;
    end Create;
 

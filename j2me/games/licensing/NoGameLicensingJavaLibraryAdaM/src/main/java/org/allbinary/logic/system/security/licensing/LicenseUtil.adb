@@ -53,13 +53,14 @@ package body org.allbinary.logic.system.security.licensing.LicenseUtil_Package i
         null;
    end setRunning;
 
-   function shouldWait (This : in out LicenseUtil; commandListener : CommandListener_Access) return Boolean is
+   function shouldWait (This : in out LicenseUtil; commandListener_Param : access CommandListener'Class) return Boolean is
+      commandListener : CommandListener_Access := CommandListener_Access (commandListener_Param);
    begin
         return This.isRunning;
    end shouldWait;
 
-   procedure shouldWait (This : in out LicenseUtil; commandListener : CommandListener_Access) is
-      Java_Result : constant Boolean := LicenseUtil'Class (This).shouldWait (commandListener);
+   procedure shouldWait (This : in out LicenseUtil; commandListener_Param : access CommandListener'Class) is
+      Java_Result : constant Boolean := LicenseUtil'Class (This).shouldWait (commandListener_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

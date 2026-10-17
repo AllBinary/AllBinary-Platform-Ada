@@ -33,7 +33,8 @@ package body org.allbinary.game.layer.waypoint.event.WaypointEventHandlerFactory
    end Create;
 
 
-   function getInstance (groupInterface : Group_Access) return WaypointEventHandler_Access is
+   function getInstance (groupInterface_Param : access Group'Class) return WaypointEventHandler_Access is
+      groupInterface : Group_Access := Group_Access (groupInterface_Param);
    begin
         return WaypointEventHandlerFactory_Package.eventHandlerArray (Integer (groupInterface.getGroupId));
    end getInstance;
@@ -46,8 +47,8 @@ package body org.allbinary.game.layer.waypoint.event.WaypointEventHandlerFactory
         end loop;
    end removeAll;
 
-   procedure getInstance (groupInterface : Group_Access) is
-      Java_Result : constant WaypointEventHandler_Access := getInstance (groupInterface);
+   procedure getInstance (groupInterface_Param : access Group'Class) is
+      Java_Result : constant WaypointEventHandler_Access := getInstance (groupInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

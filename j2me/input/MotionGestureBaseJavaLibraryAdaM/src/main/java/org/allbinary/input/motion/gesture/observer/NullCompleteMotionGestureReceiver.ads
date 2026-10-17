@@ -42,7 +42,7 @@ package org.allbinary.input.motion.gesture.observer.NullCompleteMotionGestureRec
 
    procedure Initialize (This : in out NullCompleteMotionGestureReceiver'Class);
    function Create return NullCompleteMotionGestureReceiver_Access;
-   procedure onMotionGestureCompleted (This : in out NullCompleteMotionGestureReceiver; list : BasicArrayList_Access);
+   procedure onMotionGestureCompleted (This : in out NullCompleteMotionGestureReceiver; list_Param : access BasicArrayList'Class);
 
 end org.allbinary.input.motion.gesture.observer.NullCompleteMotionGestureReceiver_Package;
 

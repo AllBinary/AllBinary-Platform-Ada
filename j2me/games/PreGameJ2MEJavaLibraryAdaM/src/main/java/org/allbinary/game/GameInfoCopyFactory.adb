@@ -33,25 +33,27 @@ package body org.allbinary.game.GameInfoCopyFactory_Package is
    end Create;
 
 
-   function getInstanceMaxLevel (gameInfo : GameInfo_Access; maxLevel : Integer) return GameInfo_Access is
+   function getInstanceMaxLevel (gameInfo_Param : access GameInfo'Class; maxLevel : Integer) return GameInfo_Access is
+      gameInfo : GameInfo_Access := GameInfo_Access (gameInfo_Param);
    begin
         return GameInfo_Package.Create (gameInfo.getGameType, gameInfo.getGameMode, gameInfo.getPlayerType, maxLevel, gameInfo.getCurrentLevel);
    end getInstanceMaxLevel;
 
-   function getInstance (gameInfo : GameInfo_Access) return GameInfo_Access is
+   function getInstance (gameInfo_Param : access GameInfo'Class) return GameInfo_Access is
+      gameInfo : GameInfo_Access := GameInfo_Access (gameInfo_Param);
    begin
         return GameInfo_Package.Create (gameInfo.getGameType, gameInfo.getGameMode, gameInfo.getPlayerType, gameInfo.getHighestLevel, gameInfo.getCurrentLevel);
    end getInstance;
 
-   procedure getInstanceMaxLevel (gameInfo : GameInfo_Access; maxLevel : Integer) is
-      Java_Result : constant GameInfo_Access := getInstanceMaxLevel (gameInfo, maxLevel);
+   procedure getInstanceMaxLevel (gameInfo_Param : access GameInfo'Class; maxLevel : Integer) is
+      Java_Result : constant GameInfo_Access := getInstanceMaxLevel (gameInfo_Param, maxLevel);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstanceMaxLevel;
 
-   procedure getInstance (gameInfo : GameInfo_Access) is
-      Java_Result : constant GameInfo_Access := getInstance (gameInfo);
+   procedure getInstance (gameInfo_Param : access GameInfo'Class) is
+      Java_Result : constant GameInfo_Access := getInstance (gameInfo_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

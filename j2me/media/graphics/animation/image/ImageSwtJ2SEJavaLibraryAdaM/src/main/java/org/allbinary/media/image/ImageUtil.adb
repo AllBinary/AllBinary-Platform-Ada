@@ -35,13 +35,13 @@ package body org.allbinary.media.image.ImageUtil_Package is
    begin
       Initialize_Fields (This);
         begin
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+            This.logUtil.putF (This.commonStrings.START, ImageUtil_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, ImageUtil_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR, e);
                 end;
         end;
    end Initialize;
@@ -123,19 +123,22 @@ package body org.allbinary.media.image.ImageUtil_Package is
    end createBufferedImage3;
 
    --  throws Exception
-   function createBufferedImage4 (This : in out ImageUtil; bufferedImage : Image_Access; newWidth : Integer; newHeight : Integer) return Image_Access is
+   function createBufferedImage4 (This : in out ImageUtil; bufferedImage_Param : access Image'Class; newWidth : Integer; newHeight : Integer) return Image_Access is
+      bufferedImage : Image_Access := Image_Access (bufferedImage_Param);
    begin
         return This.createBufferedImage5 (bufferedImage, newWidth, newHeight, True);
    end createBufferedImage4;
 
    --  throws Exception
-   function createBufferedImage5 (This : in out ImageUtil; bufferedImage : Image_Access; newWidth : Integer; newHeight : Integer; scale : Boolean) return Image_Access is
+   function createBufferedImage5 (This : in out ImageUtil; bufferedImage_Param : access Image'Class; newWidth : Integer; newHeight : Integer; scale : Boolean) return Image_Access is
+      bufferedImage : Image_Access := Image_Access (bufferedImage_Param);
    begin
         return This.createBufferedImage6 (bufferedImage, newWidth, newHeight, scale, False);
    end createBufferedImage5;
 
    --  throws Exception
-   function createBufferedImage6 (This : in out ImageUtil; bufferedImage : Image_Access; newWidth : Integer; newHeight : Integer; scale : Boolean; allowTranslate : Boolean) return Image_Access is
+   function createBufferedImage6 (This : in out ImageUtil; bufferedImage_Param : access Image'Class; newWidth : Integer; newHeight : Integer; scale : Boolean; allowTranslate : Boolean) return Image_Access is
+      bufferedImage : Image_Access := Image_Access (bufferedImage_Param);
       imageData : ImageData_Access;
       width : Float;
       height : Float;
@@ -164,13 +167,13 @@ package body org.allbinary.media.image.ImageUtil_Package is
             ratioX := widthRatio;
             ratioY := heightRatio;
         end if;
-        This.logUtil.putF (StringMaker_Package.Create.appendfloat (width).append (This.commonSeps.FORWARD_SLASH).appendfloat (height).append (This.commonSeps.COLON).appendint (newWidth).append (This.commonSeps.FORWARD_SLASH).appendint (newHeight).append (This.commonSeps.COLON).appendfloat (widthRatio).append (This.commonSeps.FORWARD_SLASH).appendfloat (heightRatio).toString, This'Unchecked_Access, This.CREATE_BUFFERED_IMAGE);
+        This.logUtil.putF (StringMaker_Package.Create.appendfloat (width).append (This.commonSeps.FORWARD_SLASH).appendfloat (height).append (This.commonSeps.COLON).appendint (newWidth).append (This.commonSeps.FORWARD_SLASH).appendint (newHeight).append (This.commonSeps.COLON).appendfloat (widthRatio).append (This.commonSeps.FORWARD_SLASH).appendfloat (heightRatio).toString, ImageUtil_Access'(This'Unchecked_Access), This.CREATE_BUFFERED_IMAGE);
         dx := 0.0;
         dy := 0.0;
         if (not (scale)) and then (allowTranslate) then
             dx := (((Float (newWidth)) - (width))) / (2.0);
             dy := (((Float (newHeight)) - (height))) / (2.0);
-            This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Translate dx: ")).appendfloat (dx).append (To_Unbounded_String (" dy: ")).appendfloat (dy).toString, This'Unchecked_Access, This.CREATE_BUFFERED_IMAGE);
+            This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Translate dx: ")).appendfloat (dx).append (To_Unbounded_String (" dy: ")).appendfloat (dy).toString, ImageUtil_Access'(This'Unchecked_Access), This.CREATE_BUFFERED_IMAGE);
         end if;
         newBufferedImage := Image_Package.Create (BareMain_Package.shell.getDisplay, newWidth, newHeight);
         gc := GC_Package.Create (newBufferedImage);
@@ -185,13 +188,16 @@ package body org.allbinary.media.image.ImageUtil_Package is
         return newBufferedImage;
    end createBufferedImage6;
 
-   function drawTransformedImage (This : in out ImageUtil; image : Image_Access; parent : Composite_Access; dx : Integer; dy : Integer; width : Integer; height : Integer) return Canvas_Access is
+   function drawTransformedImage (This : in out ImageUtil; image_Param : access Image'Class; parent_Param : access Composite'Class; dx : Integer; dy : Integer; width : Integer; height : Integer) return Canvas_Access is
+      image : Image_Access := Image_Access (image_Param);
+      parent : Composite_Access := Composite_Access (parent_Param);
       imageCanvas : Canvas_Access;
    begin
         imageCanvas := Canvas_Package.Create (parent, SWT_Package.NONE);
         imageCanvas.addPaintListener (PaintListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure paintControl (This : in out ; event : PaintEvent_Access) is
+--     procedure paintControl (This : in out ; event_Param : access PaintEvent'Class) is
+--        event : PaintEvent_Access := PaintEvent_Access (event_Param);
 --        gc : GC_Access;
 --        affineTransform : Transform_Access;
 --     begin
@@ -206,7 +212,8 @@ package body org.allbinary.media.image.ImageUtil_Package is
         return imageCanvas;
    end drawTransformedImage;
 
-   function toString (This : in out ImageUtil; bufferedImage : Image_Access) return Unbounded_String is
+   function toString (This : in out ImageUtil; bufferedImage_Param : access Image'Class) return Unbounded_String is
+      bufferedImage : Image_Access := Image_Access (bufferedImage_Param);
       commonLabels : CommonLabels_Access;
       stringBuffer : StringMaker_Access;
       imageData : ImageData_Access;
@@ -252,36 +259,36 @@ package body org.allbinary.media.image.ImageUtil_Package is
       null;
    end createBufferedImage3;
 
-   procedure createBufferedImage4 (This : in out ImageUtil; bufferedImage : Image_Access; newWidth : Integer; newHeight : Integer) is
-      Java_Result : constant Image_Access := ImageUtil'Class (This).createBufferedImage4 (bufferedImage, newWidth, newHeight);
+   procedure createBufferedImage4 (This : in out ImageUtil; bufferedImage_Param : access Image'Class; newWidth : Integer; newHeight : Integer) is
+      Java_Result : constant Image_Access := ImageUtil'Class (This).createBufferedImage4 (bufferedImage_Param, newWidth, newHeight);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createBufferedImage4;
 
-   procedure createBufferedImage5 (This : in out ImageUtil; bufferedImage : Image_Access; newWidth : Integer; newHeight : Integer; scale : Boolean) is
-      Java_Result : constant Image_Access := ImageUtil'Class (This).createBufferedImage5 (bufferedImage, newWidth, newHeight, scale);
+   procedure createBufferedImage5 (This : in out ImageUtil; bufferedImage_Param : access Image'Class; newWidth : Integer; newHeight : Integer; scale : Boolean) is
+      Java_Result : constant Image_Access := ImageUtil'Class (This).createBufferedImage5 (bufferedImage_Param, newWidth, newHeight, scale);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createBufferedImage5;
 
-   procedure createBufferedImage6 (This : in out ImageUtil; bufferedImage : Image_Access; newWidth : Integer; newHeight : Integer; scale : Boolean; allowTranslate : Boolean) is
-      Java_Result : constant Image_Access := ImageUtil'Class (This).createBufferedImage6 (bufferedImage, newWidth, newHeight, scale, allowTranslate);
+   procedure createBufferedImage6 (This : in out ImageUtil; bufferedImage_Param : access Image'Class; newWidth : Integer; newHeight : Integer; scale : Boolean; allowTranslate : Boolean) is
+      Java_Result : constant Image_Access := ImageUtil'Class (This).createBufferedImage6 (bufferedImage_Param, newWidth, newHeight, scale, allowTranslate);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createBufferedImage6;
 
-   procedure drawTransformedImage (This : in out ImageUtil; image : Image_Access; parent : Composite_Access; dx : Integer; dy : Integer; width : Integer; height : Integer) is
-      Java_Result : constant Canvas_Access := ImageUtil'Class (This).drawTransformedImage (image, parent, dx, dy, width, height);
+   procedure drawTransformedImage (This : in out ImageUtil; image_Param : access Image'Class; parent_Param : access Composite'Class; dx : Integer; dy : Integer; width : Integer; height : Integer) is
+      Java_Result : constant Canvas_Access := ImageUtil'Class (This).drawTransformedImage (image_Param, parent_Param, dx, dy, width, height);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end drawTransformedImage;
 
-   procedure toString (This : in out ImageUtil; bufferedImage : Image_Access) is
-      Java_Result : constant Unbounded_String := ImageUtil'Class (This).toString (bufferedImage);
+   procedure toString (This : in out ImageUtil; bufferedImage_Param : access Image'Class) is
+      Java_Result : constant Unbounded_String := ImageUtil'Class (This).toString (bufferedImage_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

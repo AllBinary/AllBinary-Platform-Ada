@@ -49,7 +49,8 @@ package body org.allbinary.game.layer.GeographicMapCellPositionAreaBase_Package 
    end getSurroundingGeographicMapCellPositionList;
 
    --  throws Exception
-   procedure update (This : in out GeographicMapCellPositionAreaBase; geographicMapInterface : BasicGeographicMap_Access) is
+   procedure update (This : in out GeographicMapCellPositionAreaBase; geographicMapInterface_Param : access BasicGeographicMap'Class) is
+      geographicMapInterface : BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end update;

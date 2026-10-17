@@ -21,7 +21,8 @@ package body org.bouncycastle.jce.provider.BouncyCastleProvider_Package is
       return This;
    end Create;
 
-   procedure setParameter (This : in out BouncyCastleProvider; parameterName : Unbounded_String; parameter : Java_Object_Access) is
+   procedure setParameter (This : in out BouncyCastleProvider; parameterName : Unbounded_String; parameter_Param : access Java_Object'Class) is
+      parameter : Java_Object_Access := Java_Object_Access (parameter_Param);
    begin
         null;
    end setParameter;

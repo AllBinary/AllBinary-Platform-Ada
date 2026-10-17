@@ -22,16 +22,17 @@ package body org.allbinary.layer.AllBinaryLayerFactory_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AllBinaryLayerFactory'Class; rectangle : Rectangle_Access) is
+   procedure Initialize (This : in out AllBinaryLayerFactory'Class; rectangle_Param : access Rectangle'Class) is
+      rectangle : Rectangle_Access := Rectangle_Access (rectangle_Param);
    begin
       Initialize_Fields (This);
         This.rectangle := rectangle;
    end Initialize;
 
-   function Create (rectangle : Rectangle_Access) return AllBinaryLayerFactory_Access is
+   function Create (rectangle_Param : access Rectangle'Class) return AllBinaryLayerFactory_Access is
       This : constant AllBinaryLayerFactory_Access := new AllBinaryLayerFactory;
    begin
-      AllBinaryLayerFactory_Package.Initialize (This.all, rectangle);
+      AllBinaryLayerFactory_Package.Initialize (This.all, rectangle_Param);
       return This;
    end Create;
 

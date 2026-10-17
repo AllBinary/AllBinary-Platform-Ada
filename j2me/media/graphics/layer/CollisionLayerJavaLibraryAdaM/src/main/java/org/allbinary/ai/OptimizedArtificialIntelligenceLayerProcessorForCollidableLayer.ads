@@ -42,9 +42,9 @@ package org.allbinary.ai.OptimizedArtificialIntelligenceLayerProcessorForCollida
 
    procedure Initialize (This : in out OptimizedArtificialIntelligenceLayerProcessorForCollidableLayer'Class);
    function Create return OptimizedArtificialIntelligenceLayerProcessorForCollidableLayer_Access;
-   procedure processAt (This : in out OptimizedArtificialIntelligenceLayerProcessorForCollidableLayer; allBinaryLayerManager : AllBinaryLayerManager_Access; layerInterface : AllBinaryLayer_Access; index : Integer);
-   function isProcessorLayer (This : in out OptimizedArtificialIntelligenceLayerProcessorForCollidableLayer; layerInterface : AllBinaryLayer_Access) return Boolean;
-   procedure isProcessorLayer (This : in out OptimizedArtificialIntelligenceLayerProcessorForCollidableLayer; layerInterface : AllBinaryLayer_Access);
+   procedure processAt (This : in out OptimizedArtificialIntelligenceLayerProcessorForCollidableLayer; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class; layerInterface_Param : access AllBinaryLayer'Class; index : Integer);
+   function isProcessorLayer (This : in out OptimizedArtificialIntelligenceLayerProcessorForCollidableLayer; layerInterface_Param : access AllBinaryLayer'Class) return Boolean;
+   procedure isProcessorLayer (This : in out OptimizedArtificialIntelligenceLayerProcessorForCollidableLayer; layerInterface_Param : access AllBinaryLayer'Class);
 
 end org.allbinary.ai.OptimizedArtificialIntelligenceLayerProcessorForCollidableLayer_Package;
 

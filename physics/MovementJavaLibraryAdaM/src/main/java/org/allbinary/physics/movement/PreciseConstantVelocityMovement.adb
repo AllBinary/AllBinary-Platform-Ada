@@ -13,26 +13,30 @@ package body org.allbinary.physics.movement.PreciseConstantVelocityMovement_Pack
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out PreciseConstantVelocityMovement'Class; basicDecimal : BasicDecimal_Access; velocityProperties : BasicVelocityProperties_Access) is
+   procedure Initialize (This : in out PreciseConstantVelocityMovement'Class; basicDecimal_Param : access BasicDecimal'Class; velocityProperties_Param : access BasicVelocityProperties'Class) is
+      basicDecimal : BasicDecimal_Access := BasicDecimal_Access (basicDecimal_Param);
+      velocityProperties : BasicVelocityProperties_Access := BasicVelocityProperties_Access (velocityProperties_Param);
    begin
         BasicConstantVelocityMovement_Package.Initialize (This, basicDecimal, velocityProperties);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (basicDecimal : BasicDecimal_Access; velocityProperties : BasicVelocityProperties_Access) return PreciseConstantVelocityMovement_Access is
+   function Create (basicDecimal_Param : access BasicDecimal'Class; velocityProperties_Param : access BasicVelocityProperties'Class) return PreciseConstantVelocityMovement_Access is
       This : constant PreciseConstantVelocityMovement_Access := new PreciseConstantVelocityMovement;
    begin
-      PreciseConstantVelocityMovement_Package.Initialize (This.all, basicDecimal, velocityProperties);
+      PreciseConstantVelocityMovement_Package.Initialize (This.all, basicDecimal_Param, velocityProperties_Param);
       return This;
    end Create;
 
-   procedure init (This : in out PreciseConstantVelocityMovement; speedBasicDecimal : BasicDecimal_Access; angle : Integer; otherAngle : Integer) is
+   procedure init (This : in out PreciseConstantVelocityMovement; speedBasicDecimal_Param : access BasicDecimal'Class; angle : Integer; otherAngle : Integer) is
+      speedBasicDecimal : BasicDecimal_Access := BasicDecimal_Access (speedBasicDecimal_Param);
    begin
         null;
    end init;
 
    --  throws Exception
-   procedure process (This : in out PreciseConstantVelocityMovement; layer : AllBinaryGameLayer_Access) is
+   procedure process (This : in out PreciseConstantVelocityMovement; layer_Param : access AllBinaryGameLayer'Class) is
+      layer : AllBinaryGameLayer_Access := AllBinaryGameLayer_Access (layer_Param);
       mathUtil : MathUtil_Access;
       velocityProperties : BasicVelocityProperties_Access;
    begin

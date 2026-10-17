@@ -53,7 +53,7 @@ package body org.allbinary.game.input.PlatformInputMappingFactory_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.GET_INSTANCE, e);
+            This.logUtil.put (commonStrings.EXCEPTION_Id, PlatformInputMappingFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE, e);
                 end;
         end;
         return This.inputToGameKeyMapping;

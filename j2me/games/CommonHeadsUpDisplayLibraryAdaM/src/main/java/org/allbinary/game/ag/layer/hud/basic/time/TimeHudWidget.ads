@@ -49,15 +49,15 @@ package org.allbinary.game.ag.layer.hud.basic.time.TimeHudWidget_Package is
       timer : Timer_Access;
    end record;
 
-   procedure Initialize (This : in out TimeHudWidget'Class; location : Integer; direction : Integer; bufferZone : Integer; basicColor : BasicColor_Access; timer : Timer_Access);
-   function Create (location : Integer; direction : Integer; bufferZone : Integer; basicColor : BasicColor_Access; timer : Timer_Access) return TimeHudWidget_Access;
-   function getInstance (location : Integer; direction : Integer; basicColor : BasicColor_Access; timer : Timer_Access) return TimeHudWidget_Access;
-   procedure getInstance (location : Integer; direction : Integer; basicColor : BasicColor_Access; timer : Timer_Access);
-   procedure updateMeasurement (This : in out TimeHudWidget; graphics : Graphics_Access);
+   procedure Initialize (This : in out TimeHudWidget'Class; location : Integer; direction : Integer; bufferZone : Integer; basicColor_Param : access BasicColor'Class; timer_Param : access Timer'Class);
+   function Create (location : Integer; direction : Integer; bufferZone : Integer; basicColor_Param : access BasicColor'Class; timer_Param : access Timer'Class) return TimeHudWidget_Access;
+   function getInstance (location : Integer; direction : Integer; basicColor_Param : access BasicColor'Class; timer_Param : access Timer'Class) return TimeHudWidget_Access;
+   procedure getInstance (location : Integer; direction : Integer; basicColor_Param : access BasicColor'Class; timer_Param : access Timer'Class);
+   procedure updateMeasurement (This : in out TimeHudWidget; graphics_Param : access Graphics'Class);
    procedure update (This : in out TimeHudWidget);
    procedure set (This : in out TimeHudWidget);
    function getTimer (This : in out TimeHudWidget) return Timer_Access;
-   procedure paint (This : in out TimeHudWidget; graphics : Graphics_Access);
+   procedure paint (This : in out TimeHudWidget; graphics_Param : access Graphics'Class);
 
 end org.allbinary.game.ag.layer.hud.basic.time.TimeHudWidget_Package;
 

@@ -50,7 +50,8 @@ package body org.allbinary.media.audio.AllBinaryMediaManager_Package is
    end update;
 
    --  throws Exception
-   procedure init (soundsFactoryInterface : SoundsFactoryInterface_Access) is
+   procedure init (soundsFactoryInterface_Param : access SoundsFactoryInterface'Class) is
+      soundsFactoryInterface : SoundsFactoryInterface_Access := SoundsFactoryInterface_Access (soundsFactoryInterface_Param);
       logUtil : LogUtil_Access;
       commonString : CommonStrings_Access;
    begin
@@ -62,14 +63,16 @@ package body org.allbinary.media.audio.AllBinaryMediaManager_Package is
    end init;
 
    --  throws Exception
-   procedure shutdown (soundsFactoryInterface : SoundsFactoryInterface_Access) is
+   procedure shutdown (soundsFactoryInterface_Param : access SoundsFactoryInterface'Class) is
+      soundsFactoryInterface : SoundsFactoryInterface_Access := SoundsFactoryInterface_Access (soundsFactoryInterface_Param);
    begin
         Sounds_Package.Create (soundsFactoryInterface).stopAll;
         Sounds_Package.Create (soundsFactoryInterface).closeAll;
         TsUtil_Package.getInstance.gc;
    end shutdown;
 
-   function createPlayerFromInputStream (stream : InputStream_Access; type_Id : Unbounded_String) return Player_Access is
+   function createPlayerFromInputStream (stream_Param : access InputStream'Class; type_Id : Unbounded_String) return Player_Access is
+      stream : InputStream_Access := InputStream_Access (stream_Param);
       logUtil : LogUtil_Access;
       commonString : CommonStrings_Access;
    begin
@@ -104,8 +107,8 @@ package body org.allbinary.media.audio.AllBinaryMediaManager_Package is
         return StringUtil_Package.getInstance.getArrayInstance;
    end getSupportedProtocols;
 
-   procedure createPlayerFromInputStream (stream : InputStream_Access; type_Id : Unbounded_String) is
-      Java_Result : constant Player_Access := createPlayerFromInputStream (stream, type_Id);
+   procedure createPlayerFromInputStream (stream_Param : access InputStream'Class; type_Id : Unbounded_String) is
+      Java_Result : constant Player_Access := createPlayerFromInputStream (stream_Param, type_Id);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -52,7 +52,7 @@ package org.allbinary.media.audio.PlayerQueue_Package is
 
    procedure Initialize (This : in out PlayerQueue'Class; max : Integer);
    function Create (max : Integer) return PlayerQueue_Access;
-   procedure add (This : in out PlayerQueue; sound : Sound_Access);
+   procedure add (This : in out PlayerQueue; sound_Param : access Sound'Class);
    function process (This : in out PlayerQueue) return Boolean;
    procedure clear (This : in out PlayerQueue);
    function toString (This : in out PlayerQueue) return Unbounded_String;

@@ -53,11 +53,11 @@ package org.allbinary.graphics.j2me.dialog.NewWorkAreaJDialog_Package is
       nameJTextField : JTextField_Access;
    end record;
 
-   procedure Initialize (This : in out NewWorkAreaJDialog'Class; parent : MyFrame_Access; modal : Boolean; dimension : Dimension_Access; newName : Unbounded_String);
-   function Create (parent : MyFrame_Access; modal : Boolean; dimension : Dimension_Access; newName : Unbounded_String) return NewWorkAreaJDialog_Access;
+   procedure Initialize (This : in out NewWorkAreaJDialog'Class; parent_Param : access MyFrame'Class; modal : Boolean; dimension_Param : access Dimension'Class; newName : Unbounded_String);
+   function Create (parent_Param : access MyFrame'Class; modal : Boolean; dimension_Param : access Dimension'Class; newName : Unbounded_String) return NewWorkAreaJDialog_Access;
    procedure disposeNewDialog (This : in out NewWorkAreaJDialog);
    procedure initComponents (This : in out NewWorkAreaJDialog);
-   procedure closeDialog (This : in out NewWorkAreaJDialog; evt : WindowEvent_Access);
+   procedure closeDialog (This : in out NewWorkAreaJDialog; evt_Param : access WindowEvent'Class);
    procedure main (args : Unbounded_String_Array_Access);
 
 end org.allbinary.graphics.j2me.dialog.NewWorkAreaJDialog_Package;

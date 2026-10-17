@@ -50,7 +50,8 @@ package body org.allbinary.media.image.ImageUnifierUtil_Package is
         return gd.getDefaultConfiguration;
    end getDefaultConfiguration;
 
-   function getImage (This : in out ImageUnifierUtil; bufferedImageArray : BufferedImage_Access_Array_Access; imageUnifierProperties : ImageUnifierProperties_Access) return BufferedImage_Access is
+   function getImage (This : in out ImageUnifierUtil; bufferedImageArray : BufferedImage_Access_Array_Access; imageUnifierProperties_Param : access ImageUnifierProperties'Class) return BufferedImage_Access is
+      imageUnifierProperties : ImageUnifierProperties_Access := ImageUnifierProperties_Access (imageUnifierProperties_Param);
       newBufferedImage : BufferedImage_Access;
       commonLabels : CommonLabels_Access;
       g : Graphics2D_Access;
@@ -63,14 +64,14 @@ package body org.allbinary.media.image.ImageUnifierUtil_Package is
    begin
         newBufferedImage := This.imageUtil.create (imageUnifierProperties.getWidth, imageUnifierProperties.getHeight);
         commonLabels := CommonLabels_Package.getInstance;
-        This.logUtil.putF (To_Unbounded_String ("Setting Image - ") & Java_Image (commonLabels.WIDTH_LABEL) & Java_Image (newBufferedImage.getWidth) & Java_Image (commonLabels.HEIGHT_LABEL) & Java_Image (newBufferedImage.getHeight), This'Unchecked_Access, To_Unbounded_String ("getImage"));
+        This.logUtil.putF (To_Unbounded_String ("Setting Image - ") & Java_Image (commonLabels.WIDTH_LABEL) & Java_Image (newBufferedImage.getWidth) & Java_Image (commonLabels.HEIGHT_LABEL) & Java_Image (newBufferedImage.getHeight), ImageUnifierUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("getImage"));
         g := newBufferedImage.createGraphics;
         columnIndex := 0;
         rowIndex := 0;
         for index in 0 .. (bufferedImageArray'Length) - 1 loop
             x := (imageUnifierProperties.getImageUnifierCell.getWidth.intValue) * (Java_Post_Increment (columnIndex));
             y := (imageUnifierProperties.getImageUnifierCell.getHeight.intValue) * (rowIndex);
-            This.logUtil.putF (To_Unbounded_String ("Adding Image: ") & Java_Image (index) & To_Unbounded_String (" x: ") & Java_Image (x) & To_Unbounded_String (" y: ") & Java_Image (y), This'Unchecked_Access, To_Unbounded_String ("getImage"));
+            This.logUtil.putF (To_Unbounded_String ("Adding Image: ") & Java_Image (index) & To_Unbounded_String (" x: ") & Java_Image (x) & To_Unbounded_String (" y: ") & Java_Image (y), ImageUnifierUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("getImage"));
             g.drawImage (bufferedImageArray (index), x, y, imageUnifierProperties.getImageUnifierCell.getWidth.intValue, imageUnifierProperties.getImageUnifierCell.getHeight.intValue, null);
             totalColumnsMinusOne := ((imageUnifierProperties.getColumns.intValue) - (1));
             if (columnIndex) > (totalColumnsMinusOne) then
@@ -82,8 +83,8 @@ package body org.allbinary.media.image.ImageUnifierUtil_Package is
         return newBufferedImage;
    end getImage;
 
-   procedure getImage (This : in out ImageUnifierUtil; bufferedImageArray : BufferedImage_Access_Array_Access; imageUnifierProperties : ImageUnifierProperties_Access) is
-      Java_Result : constant BufferedImage_Access := ImageUnifierUtil'Class (This).getImage (bufferedImageArray, imageUnifierProperties);
+   procedure getImage (This : in out ImageUnifierUtil; bufferedImageArray : BufferedImage_Access_Array_Access; imageUnifierProperties_Param : access ImageUnifierProperties'Class) is
+      Java_Result : constant BufferedImage_Access := ImageUnifierUtil'Class (This).getImage (bufferedImageArray, imageUnifierProperties_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

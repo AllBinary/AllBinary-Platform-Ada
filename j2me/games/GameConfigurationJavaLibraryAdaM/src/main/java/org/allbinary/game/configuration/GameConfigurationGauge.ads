@@ -33,8 +33,8 @@ package org.allbinary.game.configuration.GameConfigurationGauge_Package is
 
    type GameConfigurationGauge is new Gauge with null record;
 
-   procedure Initialize (This : in out GameConfigurationGauge'Class; gameConfiguration : GameConfiguration_Access);
-   function Create (gameConfiguration : GameConfiguration_Access) return GameConfigurationGauge_Access;
+   procedure Initialize (This : in out GameConfigurationGauge'Class; gameConfiguration_Param : access GameConfiguration'Class);
+   function Create (gameConfiguration_Param : access GameConfiguration'Class) return GameConfigurationGauge_Access;
 
 end org.allbinary.game.configuration.GameConfigurationGauge_Package;
 

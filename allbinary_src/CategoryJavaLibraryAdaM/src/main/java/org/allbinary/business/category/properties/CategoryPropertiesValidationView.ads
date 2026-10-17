@@ -45,13 +45,13 @@ package org.allbinary.business.category.properties.CategoryPropertiesValidationV
       logUtil : LogUtil_Access;
    end record;
 
-   procedure Initialize (This : in out CategoryPropertiesValidationView'Class; categoryPropertiesInterface : CategoryPropertiesInterface_Access);
-   function Create (categoryPropertiesInterface : CategoryPropertiesInterface_Access) return CategoryPropertiesValidationView_Access;
+   procedure Initialize (This : in out CategoryPropertiesValidationView'Class; categoryPropertiesInterface_Param : access CategoryPropertiesInterface'Class);
+   function Create (categoryPropertiesInterface_Param : access CategoryPropertiesInterface'Class) return CategoryPropertiesValidationView_Access;
    function isValid (This : in out CategoryPropertiesValidationView) return Boolean;
    function validationInfo (This : in out CategoryPropertiesValidationView) return Unbounded_String;
    function toValidationInfoDoc (This : in out CategoryPropertiesValidationView) return Document_Access;
-   function toValidationInfoNode (This : in out CategoryPropertiesValidationView; document : Document_Access) return Node_Access;
-   procedure toValidationInfoNode (This : in out CategoryPropertiesValidationView; document : Document_Access);
+   function toValidationInfoNode (This : in out CategoryPropertiesValidationView; document_Param : access Document'Class) return Node_Access;
+   procedure toValidationInfoNode (This : in out CategoryPropertiesValidationView; document_Param : access Document'Class);
 
 end org.allbinary.business.category.properties.CategoryPropertiesValidationView_Package;
 

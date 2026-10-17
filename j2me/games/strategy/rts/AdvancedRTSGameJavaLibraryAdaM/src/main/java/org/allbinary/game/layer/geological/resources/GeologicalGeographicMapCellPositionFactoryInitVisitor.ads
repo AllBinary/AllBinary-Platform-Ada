@@ -40,7 +40,7 @@ package org.allbinary.game.layer.geological.resources.GeologicalGeographicMapCel
 
    procedure Initialize (This : in out GeologicalGeographicMapCellPositionFactoryInitVisitor'Class);
    function Create return GeologicalGeographicMapCellPositionFactoryInitVisitor_Access;
-   procedure visit (This : in out GeologicalGeographicMapCellPositionFactoryInitVisitor; tiledLayer : AllBinaryTiledLayer_Access; cellPosition : GeographicMapCellPosition_Access);
+   procedure visit (This : in out GeologicalGeographicMapCellPositionFactoryInitVisitor; tiledLayer_Param : access AllBinaryTiledLayer'Class; cellPosition_Param : access GeographicMapCellPosition'Class);
 
 end org.allbinary.game.layer.geological.resources.GeologicalGeographicMapCellPositionFactoryInitVisitor_Package;
 

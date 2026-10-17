@@ -52,7 +52,7 @@ package org.allbinary.logic.communication.http.request.session.WeblisketSessionI
    procedure setAuthenticated (This : in out WeblisketSessionInterface; value : Boolean) is abstract;
    procedure setPassword (This : in out WeblisketSessionInterface; password : Unbounded_String) is abstract;
    procedure setPaymentMethod (This : in out WeblisketSessionInterface; value : Unbounded_String) is abstract;
-   procedure setRole (This : in out WeblisketSessionInterface; aRole : UserRole_Access) is abstract;
+   procedure setRole (This : in out WeblisketSessionInterface; aRole_Param : access UserRole'Class) is abstract;
    procedure setStoreName (This : in out WeblisketSessionInterface; value : Unbounded_String) is abstract;
    procedure setTimeout (This : in out WeblisketSessionInterface; value : Unbounded_String) is abstract;
    procedure setUserName (This : in out WeblisketSessionInterface; userName : Unbounded_String) is abstract;

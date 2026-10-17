@@ -29,7 +29,8 @@ package body org.allbinary.graphics.opengles.OpenGLLogUtil_Package is
         return OpenGLLogUtil_Package.instance;
    end getInstance;
 
-   procedure logError (This : in out OpenGLLogUtil; gl : GL10_Access) is
+   procedure logError (This : in out OpenGLLogUtil; gl_Param : access GL10'Class) is
+      gl : GL10_Access := GL10_Access (gl_Param);
       error : Integer;
       stringBuffer : StringMaker_Access;
       maxTextureSize : Integer_Array_Access;
@@ -46,14 +47,16 @@ package body org.allbinary.graphics.opengles.OpenGLLogUtil_Package is
                 stringBuffer.appendint (maxTextureSize (0));
             end if;
             if (error) = (1280) then
-                PreLogUtil_Package.put (stringBuffer.toString, This'Unchecked_Access, OpenGLStrings_Package.getInstance.SET);
+                PreLogUtil_Package.put (stringBuffer.toString, OpenGLLogUtil_Access'(This'Unchecked_Access), OpenGLStrings_Package.getInstance.SET);
             else
-                ForcedLogUtil_Package.log (stringBuffer.toString, This'Unchecked_Access);
+                ForcedLogUtil_Package.log (stringBuffer.toString, OpenGLLogUtil_Access'(This'Unchecked_Access));
             end if;
         end if;
    end logError;
 
-   procedure logError (This : in out OpenGLLogUtil; gl : GL10_Access; image_Case : Image_Access) is
+   procedure logError (This : in out OpenGLLogUtil; gl_Param : access GL10'Class; image_Case_Param : access Image'Class) is
+      gl : GL10_Access := GL10_Access (gl_Param);
+      image_Case : Image_Access := Image_Access (image_Case_Param);
       error : Integer;
       stringBuffer : StringMaker_Access;
       maxTextureSize : Integer_Array_Access;
@@ -71,7 +74,7 @@ package body org.allbinary.graphics.opengles.OpenGLLogUtil_Package is
             end if;
             stringBuffer.append (This.IMAGE);
             stringBuffer.append (image_Case.toString);
-            PreLogUtil_Package.put (stringBuffer.toString, This'Unchecked_Access, This.LOG_ERROR);
+            PreLogUtil_Package.put (stringBuffer.toString, OpenGLLogUtil_Access'(This'Unchecked_Access), This.LOG_ERROR);
         end if;
    end logError;
 

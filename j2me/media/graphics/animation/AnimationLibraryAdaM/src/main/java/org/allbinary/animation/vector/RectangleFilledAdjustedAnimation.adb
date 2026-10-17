@@ -23,7 +23,8 @@ package body org.allbinary.animation.vector.RectangleFilledAdjustedAnimation_Pac
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out RectangleFilledAdjustedAnimation'Class; width : Integer; height : Integer; offsetX : Integer; offsetY : Integer; basicColor : BasicColor_Access) is
+   procedure Initialize (This : in out RectangleFilledAdjustedAnimation'Class; width : Integer; height : Integer; offsetX : Integer; offsetY : Integer; basicColor_Param : access BasicColor'Class) is
+      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         RectangleFilledAnimation_Package.Initialize (This, width, height, basicColor);
         Initialize_Fields (This);
@@ -32,10 +33,10 @@ package body org.allbinary.animation.vector.RectangleFilledAdjustedAnimation_Pac
         This.setBasicColorP (basicColor);
    end Initialize;
 
-   function Create (width : Integer; height : Integer; offsetX : Integer; offsetY : Integer; basicColor : BasicColor_Access) return RectangleFilledAdjustedAnimation_Access is
+   function Create (width : Integer; height : Integer; offsetX : Integer; offsetY : Integer; basicColor_Param : access BasicColor'Class) return RectangleFilledAdjustedAnimation_Access is
       This : constant RectangleFilledAdjustedAnimation_Access := new RectangleFilledAdjustedAnimation;
    begin
-      RectangleFilledAdjustedAnimation_Package.Initialize (This.all, width, height, offsetX, offsetY, basicColor);
+      RectangleFilledAdjustedAnimation_Package.Initialize (This.all, width, height, offsetX, offsetY, basicColor_Param);
       return This;
    end Create;
 
@@ -44,7 +45,8 @@ package body org.allbinary.animation.vector.RectangleFilledAdjustedAnimation_Pac
         null;
    end nextFrame;
 
-   procedure paintXY (This : in out RectangleFilledAdjustedAnimation; graphics : Graphics_Access; x : Integer; y : Integer) is
+   procedure paintXY (This : in out RectangleFilledAdjustedAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.basicSetColorUtil.setBasicColorP3 (graphics, This.getBasicColorP, This.getColor);
         RectangleFilledAnimation (This).paintXY (graphics, (x) + (This.offsetX), (y) + (This.offsetY));

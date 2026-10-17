@@ -76,8 +76,8 @@ package admin.taghelpers.OrderHelper_Package is
       request : HttpServletRequest_Access;
    end record;
 
-   procedure Initialize (This : in out OrderHelper'Class; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access);
-   function Create (propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return OrderHelper_Access;
+   procedure Initialize (This : in out OrderHelper'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
+   function Create (propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return OrderHelper_Access;
    function setPaymentGateway (This : in out OrderHelper) return Boolean;
    function process (This : in out OrderHelper) return Unbounded_String;
 

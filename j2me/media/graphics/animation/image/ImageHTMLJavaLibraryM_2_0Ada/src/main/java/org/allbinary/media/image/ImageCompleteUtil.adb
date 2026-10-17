@@ -41,13 +41,16 @@ package body org.allbinary.media.image.ImageCompleteUtil_Package is
    end getInstance;
 
    --  throws Exception
-   procedure waitForImage (This : in out ImageCompleteUtil; image : Image_Access; name : Unbounded_String) is
+   procedure waitForImage (This : in out ImageCompleteUtil; image_Param : access Image'Class; name : Unbounded_String) is
+      image : Image_Access := Image_Access (image_Param);
    begin
         null;
    end waitForImage;
 
    --  throws Exception
-   function isReady_Case (This : in out ImageCompleteUtil; image : Image_Access; name : Unbounded_String; timeDelayHelper : TimeDelayHelper_Access) return Boolean is
+   function isReady_Case (This : in out ImageCompleteUtil; image_Param : access Image'Class; name : Unbounded_String; timeDelayHelper_Param : access TimeDelayHelper'Class) return Boolean is
+      image : Image_Access := Image_Access (image_Param);
+      timeDelayHelper : TimeDelayHelper_Access := TimeDelayHelper_Access (timeDelayHelper_Param);
       playnImage : PlaynImage_Access;
       playnCoreImage : CoreImage_Access;
       commonStrings : CommonStrings_Access;
@@ -61,11 +64,11 @@ package body org.allbinary.media.image.ImageCompleteUtil_Package is
         if not (image.isReady_Case) then
             image.init (image.getImage);
             if not (image.isReady_Case) then
-                PreLogUtil_Package.put (To_Unbounded_String ("Waiting for Not Ready Image: ") & image.getName, This'Unchecked_Access, This.ISREADY);
+                PreLogUtil_Package.put (To_Unbounded_String ("Waiting for Not Ready Image: ") & image.getName, ImageCompleteUtil_Access'(This'Unchecked_Access), This.ISREADY);
             end if;
         end if;
         commonStrings := CommonStrings_Package.getInstance;
-        PreLogUtil_Package.put (This.COMPLETE & image.getName, This'Unchecked_Access, commonStrings.SUCCESS);
+        PreLogUtil_Package.put (This.COMPLETE & image.getName, ImageCompleteUtil_Access'(This'Unchecked_Access), commonStrings.SUCCESS);
         return True;
    end isReady_Case;
 
@@ -81,8 +84,8 @@ package body org.allbinary.media.image.ImageCompleteUtil_Package is
         null;
    end waitForAll;
 
-   procedure isReady_Case (This : in out ImageCompleteUtil; image : Image_Access; name : Unbounded_String; timeDelayHelper : TimeDelayHelper_Access) is
-      Java_Result : constant Boolean := ImageCompleteUtil'Class (This).isReady_Case (image, name, timeDelayHelper);
+   procedure isReady_Case (This : in out ImageCompleteUtil; image_Param : access Image'Class; name : Unbounded_String; timeDelayHelper_Param : access TimeDelayHelper'Class) is
+      Java_Result : constant Boolean := ImageCompleteUtil'Class (This).isReady_Case (image_Param, name, timeDelayHelper_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

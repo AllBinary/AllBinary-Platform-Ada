@@ -29,7 +29,8 @@ package body org.allbinary.business.category.properties.root.store.RootStoreCate
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out RootStoreCategoryProperties'Class; transformInfoInterface : TransformInfoInterface_Access) is
+   procedure Initialize (This : in out RootStoreCategoryProperties'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
       Initialize_Fields (This);
         This.transformInfoInterface := transformInfoInterface;
@@ -40,14 +41,16 @@ package body org.allbinary.business.category.properties.root.store.RootStoreCate
         This.log;
    end Initialize;
 
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return RootStoreCategoryProperties_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return RootStoreCategoryProperties_Access is
       This : constant RootStoreCategoryProperties_Access := new RootStoreCategoryProperties;
    begin
-      RootStoreCategoryProperties_Package.Initialize (This.all, transformInfoInterface);
+      RootStoreCategoryProperties_Package.Initialize (This.all, transformInfoInterface_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out RootStoreCategoryProperties'Class; transformInfoInterface : TransformInfoInterface_Access; categoryAbPath : AbPath_Access) is
+   procedure Initialize (This : in out RootStoreCategoryProperties'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; categoryAbPath_Param : access AbPath'Class) is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+      categoryAbPath : AbPath_Access := AbPath_Access (categoryAbPath_Param);
    begin
       Initialize_Fields (This);
         This.transformInfoInterface := transformInfoInterface;
@@ -61,14 +64,16 @@ package body org.allbinary.business.category.properties.root.store.RootStoreCate
         This.log;
    end Initialize;
 
-   function Create (transformInfoInterface : TransformInfoInterface_Access; categoryAbPath : AbPath_Access) return RootStoreCategoryProperties_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class; categoryAbPath_Param : access AbPath'Class) return RootStoreCategoryProperties_Access is
       This : constant RootStoreCategoryProperties_Access := new RootStoreCategoryProperties;
    begin
-      RootStoreCategoryProperties_Package.Initialize (This.all, transformInfoInterface, categoryAbPath);
+      RootStoreCategoryProperties_Package.Initialize (This.all, transformInfoInterface_Param, categoryAbPath_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out RootStoreCategoryProperties'Class; transformInfoInterface : TransformInfoInterface_Access; node : Node_Access) is
+   procedure Initialize (This : in out RootStoreCategoryProperties'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; node_Param : access Node'Class) is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+      node : Node_Access := Node_Access (node_Param);
       categoryPath : Unbounded_String;
    begin
       Initialize_Fields (This);
@@ -84,14 +89,16 @@ package body org.allbinary.business.category.properties.root.store.RootStoreCate
         This.log;
    end Initialize;
 
-   function Create (transformInfoInterface : TransformInfoInterface_Access; node : Node_Access) return RootStoreCategoryProperties_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class; node_Param : access Node'Class) return RootStoreCategoryProperties_Access is
       This : constant RootStoreCategoryProperties_Access := new RootStoreCategoryProperties;
    begin
-      RootStoreCategoryProperties_Package.Initialize (This.all, transformInfoInterface, node);
+      RootStoreCategoryProperties_Package.Initialize (This.all, transformInfoInterface_Param, node_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out RootStoreCategoryProperties'Class; transformInfoInterface : TransformInfoInterface_Access; categoryPropertiesHashMap : HashMap_Access) is
+   procedure Initialize (This : in out RootStoreCategoryProperties'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; categoryPropertiesHashMap_Param : access HashMap'Class) is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+      categoryPropertiesHashMap : HashMap_Access := HashMap_Access (categoryPropertiesHashMap_Param);
       categoryPath : Unbounded_String;
    begin
       Initialize_Fields (This);
@@ -107,10 +114,10 @@ package body org.allbinary.business.category.properties.root.store.RootStoreCate
         This.log;
    end Initialize;
 
-   function Create (transformInfoInterface : TransformInfoInterface_Access; categoryPropertiesHashMap : HashMap_Access) return RootStoreCategoryProperties_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class; categoryPropertiesHashMap_Param : access HashMap'Class) return RootStoreCategoryProperties_Access is
       This : constant RootStoreCategoryProperties_Access := new RootStoreCategoryProperties;
    begin
-      RootStoreCategoryProperties_Package.Initialize (This.all, transformInfoInterface, categoryPropertiesHashMap);
+      RootStoreCategoryProperties_Package.Initialize (This.all, transformInfoInterface_Param, categoryPropertiesHashMap_Param);
       return This;
    end Create;
 
@@ -144,12 +151,14 @@ package body org.allbinary.business.category.properties.root.store.RootStoreCate
         return Java_Object_Access (This.getValue);
    end getKey;
 
-   procedure setPath (This : in out RootStoreCategoryProperties; path : AbPath_Access) is
+   procedure setPath (This : in out RootStoreCategoryProperties; path_Param : access AbPath'Class) is
+      path : AbPath_Access := AbPath_Access (path_Param);
    begin
         This.abPath := path;
    end setPath;
 
-   procedure setRootFilePath (This : in out RootStoreCategoryProperties; value : AbPath_Access) is
+   procedure setRootFilePath (This : in out RootStoreCategoryProperties; value_Param : access AbPath'Class) is
+      value : AbPath_Access := AbPath_Access (value_Param);
    begin
         This.fileAbPath := value;
    end setRootFilePath;
@@ -170,7 +179,8 @@ package body org.allbinary.business.category.properties.root.store.RootStoreCate
         return This.webAppAbPath;
    end getWebAppPath;
 
-   function getPath (This : in out RootStoreCategoryProperties; categoryHierarchyInterface : CategoryHierarchyInterface_Access) return AbPath_Access is
+   function getPath (This : in out RootStoreCategoryProperties; categoryHierarchyInterface_Param : access CategoryHierarchyInterface'Class) return AbPath_Access is
+      categoryHierarchyInterface : CategoryHierarchyInterface_Access := CategoryHierarchyInterface_Access (categoryHierarchyInterface_Param);
    begin
         return This.abPath;
    end getPath;
@@ -213,7 +223,8 @@ package body org.allbinary.business.category.properties.root.store.RootStoreCate
    end toValidationInfoDoc;
 
    --  throws Exception
-   function toValidationInfoNode (This : in out RootStoreCategoryProperties; document : Document_Access) return Node_Access is
+   function toValidationInfoNode (This : in out RootStoreCategoryProperties; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
    begin
         return null;
    end toValidationInfoNode;
@@ -227,19 +238,19 @@ package body org.allbinary.business.category.properties.root.store.RootStoreCate
    procedure log (This : in out RootStoreCategoryProperties) is
    begin
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY) then
-            This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("filePath = ")).append (This.fileAbPath.toString).append (To_Unbounded_String ("" & ASCII.LF & "path = ")).append (This.abPath.toString).append (To_Unbounded_String ("" & ASCII.LF & "category = ")).append (This.category).toString, This'Unchecked_Access, To_Unbounded_String ("log()"));
+            This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("filePath = ")).append (This.fileAbPath.toString).append (To_Unbounded_String ("" & ASCII.LF & "path = ")).append (This.abPath.toString).append (To_Unbounded_String ("" & ASCII.LF & "category = ")).append (This.category).toString, RootStoreCategoryProperties_Access'(This'Unchecked_Access), To_Unbounded_String ("log()"));
         end if;
    end log;
 
-   procedure getPath (This : in out RootStoreCategoryProperties; categoryHierarchyInterface : CategoryHierarchyInterface_Access) is
-      Java_Result : constant AbPath_Access := RootStoreCategoryProperties'Class (This).getPath (categoryHierarchyInterface);
+   procedure getPath (This : in out RootStoreCategoryProperties; categoryHierarchyInterface_Param : access CategoryHierarchyInterface'Class) is
+      Java_Result : constant AbPath_Access := RootStoreCategoryProperties'Class (This).getPath (categoryHierarchyInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getPath;
 
-   procedure toValidationInfoNode (This : in out RootStoreCategoryProperties; document : Document_Access) is
-      Java_Result : constant Node_Access := RootStoreCategoryProperties'Class (This).toValidationInfoNode (document);
+   procedure toValidationInfoNode (This : in out RootStoreCategoryProperties; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := RootStoreCategoryProperties'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -50,10 +50,10 @@ package org.allbinary.input.automation.robot.osgi.InputAutomationRobotOSGIServic
 
    procedure Initialize (This : in out InputAutomationRobotOSGIServiceVisitor'Class);
    function Create return InputAutomationRobotOSGIServiceVisitor_Access;
-   function visit (This : in out InputAutomationRobotOSGIServiceVisitor; anyType : Java_Object_Access) return Java_Object_Access;
-   procedure visit (This : in out InputAutomationRobotOSGIServiceVisitor; anyType : Java_Object_Access);
-   function visit (This : in out InputAutomationRobotOSGIServiceVisitor; osgiServiceInterface : OSGIServiceInterface_Access) return Boolean;
-   procedure visit (This : in out InputAutomationRobotOSGIServiceVisitor; osgiServiceInterface : OSGIServiceInterface_Access);
+   function visit (This : in out InputAutomationRobotOSGIServiceVisitor; anyType_Param : access Java_Object'Class) return Java_Object_Access;
+   procedure visit (This : in out InputAutomationRobotOSGIServiceVisitor; anyType_Param : access Java_Object'Class);
+   function visit (This : in out InputAutomationRobotOSGIServiceVisitor; osgiServiceInterface_Param : access OSGIServiceInterface'Class) return Boolean;
+   procedure visit (This : in out InputAutomationRobotOSGIServiceVisitor; osgiServiceInterface_Param : access OSGIServiceInterface'Class);
 
 end org.allbinary.input.automation.robot.osgi.InputAutomationRobotOSGIServiceVisitor_Package;
 

@@ -38,9 +38,9 @@ package org.allbinary.time.TimeUtil_Package is
    procedure Initialize (This : in out TimeUtil'Class);
    function Create return TimeUtil_Access;
    function getInstance return TimeUtil_Access;
-   procedure setCalendar (This : in out TimeUtil; calendar : Calendar_Access; yearString : Unbounded_String; monthString : Unbounded_String; dayString : Unbounded_String; hourString : Unbounded_String);
-   procedure setCalendar (This : in out TimeUtil; calendar : Calendar_Access; yearString : Unbounded_String; monthString : Unbounded_String; dayString : Unbounded_String; hourString : Unbounded_String; minuteString : Unbounded_String; secondString : Unbounded_String);
-   procedure setExpirationCalendar (This : in out TimeUtil; calendar : Calendar_Access; yearsString : Unbounded_String; monthsString : Unbounded_String; daysString : Unbounded_String; hoursString : Unbounded_String; minutesString : Unbounded_String; secondsString : Unbounded_String);
+   procedure setCalendar (This : in out TimeUtil; calendar_Param : access Calendar'Class; yearString : Unbounded_String; monthString : Unbounded_String; dayString : Unbounded_String; hourString : Unbounded_String);
+   procedure setCalendar (This : in out TimeUtil; calendar_Param : access Calendar'Class; yearString : Unbounded_String; monthString : Unbounded_String; dayString : Unbounded_String; hourString : Unbounded_String; minuteString : Unbounded_String; secondString : Unbounded_String);
+   procedure setExpirationCalendar (This : in out TimeUtil; calendar_Param : access Calendar'Class; yearsString : Unbounded_String; monthsString : Unbounded_String; daysString : Unbounded_String; hoursString : Unbounded_String; minutesString : Unbounded_String; secondsString : Unbounded_String);
    function getTotalTime (This : in out TimeUtil; yearString : Unbounded_String; monthString : Unbounded_String; dayString : Unbounded_String; hourString : Unbounded_String; minuteString : Unbounded_String; secondString : Unbounded_String) return Long_Long_Integer;
    procedure getTotalTime (This : in out TimeUtil; yearString : Unbounded_String; monthString : Unbounded_String; dayString : Unbounded_String; hourString : Unbounded_String; minuteString : Unbounded_String; secondString : Unbounded_String);
 

@@ -38,7 +38,8 @@ package body org.allbinary.graphics.paint.LocationPaintable_Package is
         return LocationPaintable_Package.instance;
    end getInstance;
 
-   procedure paintXY (This : in out LocationPaintable; graphics : Graphics_Access; x : Integer; y : Integer) is
+   procedure paintXY (This : in out LocationPaintable; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         null;
    end paintXY;

@@ -50,14 +50,14 @@ package org.allbinary.logic.communication.ftp.configuration.FtpConfigurationView
       ftpConfigurationInterface : FtpConfigurationInterface_Access;
    end record;
 
-   procedure Initialize (This : in out FtpConfigurationView'Class; node : Node_Access);
-   function Create (node : Node_Access) return FtpConfigurationView_Access;
-   procedure Initialize (This : in out FtpConfigurationView'Class; ftpConfigurationInterface : FtpConfigurationInterface_Access);
-   function Create (ftpConfigurationInterface : FtpConfigurationInterface_Access) return FtpConfigurationView_Access;
-   function toXmlNode (This : in out FtpConfigurationView; document : Document_Access) return Node_Access;
-   procedure toXmlNode (This : in out FtpConfigurationView; document : Document_Access);
+   procedure Initialize (This : in out FtpConfigurationView'Class; node_Param : access Node'Class);
+   function Create (node_Param : access Node'Class) return FtpConfigurationView_Access;
+   procedure Initialize (This : in out FtpConfigurationView'Class; ftpConfigurationInterface_Param : access FtpConfigurationInterface'Class);
+   function Create (ftpConfigurationInterface_Param : access FtpConfigurationInterface'Class) return FtpConfigurationView_Access;
+   function toXmlNode (This : in out FtpConfigurationView; document_Param : access Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out FtpConfigurationView; document_Param : access Document'Class);
    function getFtpConfigurationInterface (This : in out FtpConfigurationView) return FtpConfigurationInterface_Access;
-   procedure setFtpConfigurationInterface (This : in out FtpConfigurationView; ftpConfigurationInterface : FtpConfigurationInterface_Access);
+   procedure setFtpConfigurationInterface (This : in out FtpConfigurationView; ftpConfigurationInterface_Param : access FtpConfigurationInterface'Class);
 
 end org.allbinary.logic.communication.ftp.configuration.FtpConfigurationView_Package;
 

@@ -36,7 +36,8 @@ package body org.allbinary.game.input.InputPersistance_Package is
    end Create;
 
    --  throws Exception
-   procedure loadAll (This : in out InputPersistance; abeClientInformation : AbeClientInformationInterface_Access) is
+   procedure loadAll (This : in out InputPersistance; abeClientInformation_Param : access AbeClientInformationInterface'Class) is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
       recordStore : RecordStore_Access;
       recordEnum : RecordEnumeration_Access;
       hashtable : ABHashtable_Access;
@@ -53,7 +54,7 @@ package body org.allbinary.game.input.InputPersistance_Package is
         while recordEnum.hasNextElement loop
             id := recordEnum.nextRecordId;
             stringBuffer.delete (0, stringBuffer.length);
-            This.logUtil.putF (stringBuffer.append (This.persistanceStrings.LOADING_ID).appendint (id).toString, This'Unchecked_Access, This.persistanceStrings.LOAD_ALL);
+            This.logUtil.putF (stringBuffer.append (This.persistanceStrings.LOADING_ID).appendint (id).toString, InputPersistance_Access'(This'Unchecked_Access), This.persistanceStrings.LOAD_ALL);
             hashtable := StdUtil_Package.getInstance.createHashtable;
             This.valueList.add (hashtable);
             This.idList.add (smallIntegerSingletonFactory.getAt (id));
@@ -62,7 +63,9 @@ package body org.allbinary.game.input.InputPersistance_Package is
    end loadAll;
 
    --  throws Exception
-   procedure save (This : in out InputPersistance; abeClientInformation : AbeClientInformationInterface_Access; hashtable : ABHashtable_Access) is
+   procedure save (This : in out InputPersistance; abeClientInformation_Param : access AbeClientInformationInterface'Class; hashtable_Param : access ABHashtable'Class) is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      hashtable : ABHashtable_Access := ABHashtable_Access (hashtable_Param);
       recordStore : RecordStore_Access;
       gameActionInput : Input_Access;
       list : BasicArrayList_Access;
@@ -72,7 +75,7 @@ package body org.allbinary.game.input.InputPersistance_Package is
       index2 : Integer;
       index : Integer;
    begin
-        PreLogUtil_Package.put (StringMaker_Package.Create.append (This.persistanceStrings.NOT_SAVING).append (StringUtil_Package.getInstance.toString (hashtable)).toString, This'Unchecked_Access, This.commonStrings.SAVE);
+        PreLogUtil_Package.put (StringMaker_Package.Create.append (This.persistanceStrings.NOT_SAVING).append (StringUtil_Package.getInstance.toString (hashtable)).toString, InputPersistance_Access'(This'Unchecked_Access), This.commonStrings.SAVE);
         recordStore := RecordStore_Package.openRecordStore (This.getRecordId (abeClientInformation), True);
         gameActionInput := null;
         list := null;

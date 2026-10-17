@@ -43,7 +43,8 @@ package body org.allbinary.business.user.address.StreetAddress_Package is
       return This;
    end Create;
 
-   procedure Initialize (This : in out StreetAddress'Class; node : Node_Access) is
+   procedure Initialize (This : in out StreetAddress'Class; node_Param : access Node'Class) is
+      node : Node_Access := Node_Access (node_Param);
       nameNode : Node_Access;
       streetNode : Node_Access;
       cityNode : Node_Access;
@@ -67,14 +68,15 @@ package body org.allbinary.business.user.address.StreetAddress_Package is
         This.log;
    end Initialize;
 
-   function Create (node : Node_Access) return StreetAddress_Access is
+   function Create (node_Param : access Node'Class) return StreetAddress_Access is
       This : constant StreetAddress_Access := new StreetAddress;
    begin
-      StreetAddress_Package.Initialize (This.all, node);
+      StreetAddress_Package.Initialize (This.all, node_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out StreetAddress'Class; streetAddress : StreetAddress_Access) is
+   procedure Initialize (This : in out StreetAddress'Class; streetAddress_Param : access StreetAddress'Class) is
+      streetAddress : StreetAddress_Access := StreetAddress_Access (streetAddress_Param);
    begin
       Initialize_Fields (This);
         This.id := streetAddress.getId;
@@ -88,14 +90,15 @@ package body org.allbinary.business.user.address.StreetAddress_Package is
         This.log;
    end Initialize;
 
-   function Create (streetAddress : StreetAddress_Access) return StreetAddress_Access is
+   function Create (streetAddress_Param : access StreetAddress'Class) return StreetAddress_Access is
       This : constant StreetAddress_Access := new StreetAddress;
    begin
-      StreetAddress_Package.Initialize (This.all, streetAddress);
+      StreetAddress_Package.Initialize (This.all, streetAddress_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out StreetAddress'Class; request : HttpServletRequest_Access) is
+   procedure Initialize (This : in out StreetAddress'Class; request_Param : access HttpServletRequest'Class) is
+      request : HttpServletRequest_Access := HttpServletRequest_Access (request_Param);
    begin
       Initialize_Fields (This);
         This.setId (request.getParameter (StreetAddressData_Package.ID));
@@ -108,10 +111,10 @@ package body org.allbinary.business.user.address.StreetAddress_Package is
         This.log;
    end Initialize;
 
-   function Create (request : HttpServletRequest_Access) return StreetAddress_Access is
+   function Create (request_Param : access HttpServletRequest'Class) return StreetAddress_Access is
       This : constant StreetAddress_Access := new StreetAddress;
    begin
-      StreetAddress_Package.Initialize (This.all, request);
+      StreetAddress_Package.Initialize (This.all, request_Param);
       return This;
    end Create;
 
@@ -134,7 +137,8 @@ package body org.allbinary.business.user.address.StreetAddress_Package is
       return This;
    end Create;
 
-   procedure Initialize (This : in out StreetAddress'Class; address : HashMap_Access) is
+   procedure Initialize (This : in out StreetAddress'Class; address_Param : access HashMap'Class) is
+      address : HashMap_Access := HashMap_Access (address_Param);
       def : Unbounded_String;
    begin
       Initialize_Fields (This);
@@ -154,17 +158,17 @@ package body org.allbinary.business.user.address.StreetAddress_Package is
         This.log;
    end Initialize;
 
-   function Create (address : HashMap_Access) return StreetAddress_Access is
+   function Create (address_Param : access HashMap'Class) return StreetAddress_Access is
       This : constant StreetAddress_Access := new StreetAddress;
    begin
-      StreetAddress_Package.Initialize (This.all, address);
+      StreetAddress_Package.Initialize (This.all, address_Param);
       return This;
    end Create;
 
    procedure log (This : in out StreetAddress) is
    begin
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-            This.logUtil.putF (To_Unbounded_String ("Created Address: " & ASCII.LF & "") & Java_Image (This.toHashMap), This'Unchecked_Access, To_Unbounded_String ("log"));
+            This.logUtil.putF (To_Unbounded_String ("Created Address: " & ASCII.LF & "") & Java_Image (This.toHashMap), StreetAddress_Access'(This'Unchecked_Access), To_Unbounded_String ("log"));
         end if;
    end log;
 
@@ -302,7 +306,8 @@ package body org.allbinary.business.user.address.StreetAddress_Package is
         return null;
    end toValidationInfoDoc;
 
-   function toValidationInfoNode (This : in out StreetAddress; document : Document_Access) return Node_Access is
+   function toValidationInfoNode (This : in out StreetAddress; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       node : Node_Access;
       commonStrings : CommonStrings_Access;
    begin
@@ -317,7 +322,7 @@ package body org.allbinary.business.user.address.StreetAddress_Package is
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
                 commonStrings := CommonStrings_Package.getInstance;
-                This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("toValidationInfoNode"), e);
+                This.logUtil.put (commonStrings.EXCEPTION_Id, StreetAddress_Access'(This'Unchecked_Access), To_Unbounded_String ("toValidationInfoNode"), e);
             end if;
             return null;
                 end;
@@ -339,7 +344,8 @@ package body org.allbinary.business.user.address.StreetAddress_Package is
    end toHashMap;
 
    --  throws Exception
-   function toXmlNode (This : in out StreetAddress; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out StreetAddress; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       stringUtil : StringUtil_Access;
       hashMap : HashMap_Access;
       keySet : Set_Access;
@@ -364,15 +370,15 @@ package body org.allbinary.business.user.address.StreetAddress_Package is
         return node;
    end toXmlNode;
 
-   procedure toValidationInfoNode (This : in out StreetAddress; document : Document_Access) is
-      Java_Result : constant Node_Access := StreetAddress'Class (This).toValidationInfoNode (document);
+   procedure toValidationInfoNode (This : in out StreetAddress; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := StreetAddress'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toValidationInfoNode;
 
-   procedure toXmlNode (This : in out StreetAddress; document : Document_Access) is
-      Java_Result : constant Node_Access := StreetAddress'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out StreetAddress; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := StreetAddress'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -51,7 +51,8 @@ package body org.allbinary.input.media.image.capture.ScreenCaptureImagesWorker_P
    end setRunning;
 
    --  throws Exception
-   procedure setThread (This : in out ScreenCaptureImagesWorker; thread : Thread_Access) is
+   procedure setThread (This : in out ScreenCaptureImagesWorker; thread_Param : access Thread'Class) is
+      thread : Thread_Access := Thread_Access (thread_Param);
    begin
         null;
    end setThread;
@@ -63,7 +64,7 @@ package body org.allbinary.input.media.image.capture.ScreenCaptureImagesWorker_P
       capturedImageEvent : CapturedImageWorkerResultsEvent_Access;
    begin
         begin
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.RUN);
+            This.logUtil.putF (This.commonStrings.START, ScreenCaptureImagesWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
             This.setRunning (True);
             timeHelper := TimeDelayHelper_Package.Create (1000);
             while This.isRunning loop
@@ -72,18 +73,18 @@ package body org.allbinary.input.media.image.capture.ScreenCaptureImagesWorker_P
                 frame := index;
                 ScreenCaptureImagesWorker_Package.index := ScreenCaptureImagesWorker_Package.index + 1;
                 CapturedBufferedImagesCacheSingleton_Package.getInstance.add (BufferedImageFrameCacheable_Package.Create (bufferedImage, frame));
-                capturedImageEvent := CapturedImageWorkerResultsEvent_Package.Create (This'Unchecked_Access, frame, bufferedImage);
+                capturedImageEvent := CapturedImageWorkerResultsEvent_Package.Create (ScreenCaptureImagesWorker_Access'(This'Unchecked_Access), frame, bufferedImage);
                 This.fireEvent (capturedImageEvent);
-                This.logUtil.putF ((CommonLabels_Package.getInstance.ELAPSED) + (timeHelper.getElapsedTNT), This'Unchecked_Access, This.commonStrings.RUN);
+                This.logUtil.putF ((CommonLabels_Package.getInstance.ELAPSED) + (timeHelper.getElapsedTNT), ScreenCaptureImagesWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
                 This.setRunning (False);
             end loop;
-            This.logUtil.putF (This.commonStrings.END_Id, This'Unchecked_Access, This.commonStrings.RUN);
+            This.logUtil.putF (This.commonStrings.END_Id, ScreenCaptureImagesWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.RUN, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, ScreenCaptureImagesWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN, e);
                 end;
         end;
    end run;

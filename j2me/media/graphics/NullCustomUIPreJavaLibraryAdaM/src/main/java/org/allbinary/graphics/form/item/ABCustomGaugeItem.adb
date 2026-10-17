@@ -9,15 +9,17 @@ package body org.allbinary.graphics.form.item.ABCustomGaugeItem_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ABCustomGaugeItem'Class; label : Unbounded_String; maxValue : Integer; initialValue : Integer; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) is
+   procedure Initialize (This : in out ABCustomGaugeItem'Class; label : Unbounded_String; maxValue : Integer; initialValue : Integer; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) is
+      backgroundBasicColor : BasicColor_Access := BasicColor_Access (backgroundBasicColor_Param);
+      foregroundBasicColor : BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
    begin
         ABCustomItem_Package.Initialize (This, label, backgroundBasicColor, foregroundBasicColor);
    end Initialize;
 
-   function Create (label : Unbounded_String; maxValue : Integer; initialValue : Integer; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return ABCustomGaugeItem_Access is
+   function Create (label : Unbounded_String; maxValue : Integer; initialValue : Integer; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return ABCustomGaugeItem_Access is
       This : constant ABCustomGaugeItem_Access := new ABCustomGaugeItem;
    begin
-      ABCustomGaugeItem_Package.Initialize (This.all, label, maxValue, initialValue, backgroundBasicColor, foregroundBasicColor);
+      ABCustomGaugeItem_Package.Initialize (This.all, label, maxValue, initialValue, backgroundBasicColor_Param, foregroundBasicColor_Param);
       return This;
    end Create;
 

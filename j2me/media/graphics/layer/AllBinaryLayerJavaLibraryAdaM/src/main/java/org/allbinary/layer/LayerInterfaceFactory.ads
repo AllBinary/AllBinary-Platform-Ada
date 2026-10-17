@@ -59,9 +59,9 @@ package org.allbinary.layer.LayerInterfaceFactory_Package is
    function Create return LayerInterfaceFactory_Access;
    function getInstance return LayerInterfaceFactory_Access;
    procedure init (This : in out LayerInterfaceFactory);
-   function getNexInstance (This : in out LayerInterfaceFactory; hashtable : ABHashtable_Access; x : Integer; y : Integer; z : Integer) return AllBinaryLayer_Access;
-   procedure getNexInstance (This : in out LayerInterfaceFactory; hashtable : ABHashtable_Access; x : Integer; y : Integer; z : Integer);
-   procedure add (This : in out LayerInterfaceFactory; layerInterfaceFactoryInterface : LayerInterfaceFactoryInterface_Access);
+   function getNexInstance (This : in out LayerInterfaceFactory; hashtable_Param : access ABHashtable'Class; x : Integer; y : Integer; z : Integer) return AllBinaryLayer_Access;
+   procedure getNexInstance (This : in out LayerInterfaceFactory; hashtable_Param : access ABHashtable'Class; x : Integer; y : Integer; z : Integer);
+   procedure add (This : in out LayerInterfaceFactory; layerInterfaceFactoryInterface_Param : access LayerInterfaceFactoryInterface'Class);
 
 end org.allbinary.layer.LayerInterfaceFactory_Package;
 

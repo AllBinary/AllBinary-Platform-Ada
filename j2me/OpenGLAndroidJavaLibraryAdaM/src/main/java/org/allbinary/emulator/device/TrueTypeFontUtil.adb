@@ -54,7 +54,7 @@ package body org.allbinary.emulator.device.TrueTypeFontUtil_Package is
             commonStrings := CommonStrings_Package.getInstance;
             file := ResourceUtil_Package.getInstance.getContext.getFilesDir;
             path := (file.getAbsolutePath) + (CanvasStrings_Package.getInstance.FONT_ATLAS);
-            This.logUtil.putF (path, This'Unchecked_Access, commonStrings.CONSTRUCTOR);
+            This.logUtil.putF (path, TrueTypeFontUtil_Access'(This'Unchecked_Access), commonStrings.CONSTRUCTOR);
             fos := FileOutputStream_Package.Create (path);
             bitmap := (AndroidImageInterface_Access (This.fontImage.openGLBitmap.getImage)).getBitmap;
             bitmap.compress (Bitmap_Package.CompressFormat.PNG, 100, fos);
@@ -64,12 +64,14 @@ package body org.allbinary.emulator.device.TrueTypeFontUtil_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            PreLogUtil_Package.putOE (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.EXCEPTION_Id, e);
+            PreLogUtil_Package.putOE (commonStrings.EXCEPTION_Id, TrueTypeFontUtil_Access'(This'Unchecked_Access), commonStrings.EXCEPTION_Id, e);
                 end;
         end;
    end saveFontAtlasAsFile;
 
-   function getFontBitmapGL (This : in out TrueTypeFontUtil; gl : GL10_Access; filename : Unbounded_String; cellSize : Integer; basicColor : BasicColor_Access) return Image_Access is
+   function getFontBitmapGL (This : in out TrueTypeFontUtil; gl_Param : access GL10'Class; filename : Unbounded_String; cellSize : Integer; basicColor_Param : access BasicColor'Class) return Image_Access is
+      gl : GL10_Access := GL10_Access (gl_Param);
+      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
       cellsPerRow2 : Integer;
       cellsPerRow3 : Integer;
       cellsPerRow4 : Integer;
@@ -210,8 +212,8 @@ package body org.allbinary.emulator.device.TrueTypeFontUtil_Package is
         return This.U_characterWidth;
    end getFontWidths;
 
-   procedure getFontBitmapGL (This : in out TrueTypeFontUtil; gl : GL10_Access; filename : Unbounded_String; cellSize : Integer; basicColor : BasicColor_Access) is
-      Java_Result : constant Image_Access := TrueTypeFontUtil'Class (This).getFontBitmapGL (gl, filename, cellSize, basicColor);
+   procedure getFontBitmapGL (This : in out TrueTypeFontUtil; gl_Param : access GL10'Class; filename : Unbounded_String; cellSize : Integer; basicColor_Param : access BasicColor'Class) is
+      Java_Result : constant Image_Access := TrueTypeFontUtil'Class (This).getFontBitmapGL (gl_Param, filename, cellSize, basicColor_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -38,13 +38,13 @@ package org.allbinary.animation.SingletonAnimationInterfaceFactory_Package is
       animationInterface : Animation_Access;
    end record;
 
-   procedure Initialize (This : in out SingletonAnimationInterfaceFactory'Class; animationInterface : Animation_Access);
-   function Create (animationInterface : Animation_Access) return SingletonAnimationInterfaceFactory_Access;
+   procedure Initialize (This : in out SingletonAnimationInterfaceFactory'Class; animationInterface_Param : access Animation'Class);
+   function Create (animationInterface_Param : access Animation'Class) return SingletonAnimationInterfaceFactory_Access;
    function getInstance (This : in out SingletonAnimationInterfaceFactory; instanceId : Integer) return Animation_Access;
    procedure getInstance (This : in out SingletonAnimationInterfaceFactory; instanceId : Integer);
-   function getInstanceAnimation (This : in out SingletonAnimationInterfaceFactory; animationInterface : Animation_Access) return Animation_Access;
-   procedure getInstanceAnimation (This : in out SingletonAnimationInterfaceFactory; animationInterface : Animation_Access);
-   procedure setInitialScale (This : in out SingletonAnimationInterfaceFactory; scaleProperties : ScaleProperties_Access);
+   function getInstanceAnimation (This : in out SingletonAnimationInterfaceFactory; animationInterface_Param : access Animation'Class) return Animation_Access;
+   procedure getInstanceAnimation (This : in out SingletonAnimationInterfaceFactory; animationInterface_Param : access Animation'Class);
+   procedure setInitialScale (This : in out SingletonAnimationInterfaceFactory; scaleProperties_Param : access ScaleProperties'Class);
 
 end org.allbinary.animation.SingletonAnimationInterfaceFactory_Package;
 

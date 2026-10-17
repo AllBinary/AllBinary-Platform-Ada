@@ -21,15 +21,16 @@ package body org.allbinary.input.automation.robot.osgi.InputAutomationRobotServi
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out InputAutomationRobotServiceConsumer'Class; bundleContext : BundleContext_Access) is
+   procedure Initialize (This : in out InputAutomationRobotServiceConsumer'Class; bundleContext_Param : access BundleContext'Class) is
+      bundleContext : BundleContext_Access := BundleContext_Access (bundleContext_Param);
    begin
         InputAutomationServiceConsumer_Package.Initialize (This, InputAutomationRobotServiceInterface_Package.InputAutomationRobotServiceInterface'Tag.getName, bundleContext, InputAutomationRobotOSGIServiceVisitor_Package.Create);
    end Initialize;
 
-   function Create (bundleContext : BundleContext_Access) return InputAutomationRobotServiceConsumer_Access is
+   function Create (bundleContext_Param : access BundleContext'Class) return InputAutomationRobotServiceConsumer_Access is
       This : constant InputAutomationRobotServiceConsumer_Access := new InputAutomationRobotServiceConsumer;
    begin
-      InputAutomationRobotServiceConsumer_Package.Initialize (This.all, bundleContext);
+      InputAutomationRobotServiceConsumer_Package.Initialize (This.all, bundleContext_Param);
       return This;
    end Create;
 

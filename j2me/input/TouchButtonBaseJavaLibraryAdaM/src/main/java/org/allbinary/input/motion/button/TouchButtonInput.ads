@@ -56,7 +56,7 @@ package org.allbinary.input.motion.button.TouchButtonInput_Package is
 
    procedure Initialize (This : in out TouchButtonInput'Class; id : Integer; name : Unbounded_String);
    function Create (id : Integer; name : Unbounded_String) return TouchButtonInput_Access;
-   procedure update (This : in out TouchButtonInput; inputToGameKeyMapping : InputToGameKeyMapping_Access);
+   procedure update (This : in out TouchButtonInput; inputToGameKeyMapping_Param : access InputToGameKeyMapping'Class);
    function getSourceId (This : in out TouchButtonInput) return Integer;
    function getGameKeyEvent (This : in out TouchButtonInput) return GameKeyEvent_Access;
 

@@ -34,8 +34,8 @@ package org.allbinary.graphics.form.item.validation.PasswordValidator_Package is
 
    type PasswordValidator is new TextFieldItemValidator with null record;
 
-   procedure Initialize (This : in out PasswordValidator'Class; textFieldItem : ABTextFieldItem_Access; min : Integer; max : Integer; allowOnEmpty : Boolean);
-   function Create (textFieldItem : ABTextFieldItem_Access; min : Integer; max : Integer; allowOnEmpty : Boolean) return PasswordValidator_Access;
+   procedure Initialize (This : in out PasswordValidator'Class; textFieldItem_Param : access ABTextFieldItem'Class; min : Integer; max : Integer; allowOnEmpty : Boolean);
+   function Create (textFieldItem_Param : access ABTextFieldItem'Class; min : Integer; max : Integer; allowOnEmpty : Boolean) return PasswordValidator_Access;
 
 end org.allbinary.graphics.form.item.validation.PasswordValidator_Package;
 

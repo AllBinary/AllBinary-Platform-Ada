@@ -44,10 +44,10 @@ package org.allbinary.business.context.modules.storefront.statistics.inventory.S
       storeFrontInventoryStatisticsInterface : StoreFrontInventoryStatisticsInterface_Access;
    end record;
 
-   procedure Initialize (This : in out StoreFrontInventoryStatisticsView'Class; storeFrontInventoryStatisticsInterface : StoreFrontInventoryStatisticsInterface_Access);
-   function Create (storeFrontInventoryStatisticsInterface : StoreFrontInventoryStatisticsInterface_Access) return StoreFrontInventoryStatisticsView_Access;
-   function toXmlNode (This : in out StoreFrontInventoryStatisticsView; document : Document_Access) return Node_Access;
-   procedure toXmlNode (This : in out StoreFrontInventoryStatisticsView; document : Document_Access);
+   procedure Initialize (This : in out StoreFrontInventoryStatisticsView'Class; storeFrontInventoryStatisticsInterface_Param : access StoreFrontInventoryStatisticsInterface'Class);
+   function Create (storeFrontInventoryStatisticsInterface_Param : access StoreFrontInventoryStatisticsInterface'Class) return StoreFrontInventoryStatisticsView_Access;
+   function toXmlNode (This : in out StoreFrontInventoryStatisticsView; document_Param : access Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out StoreFrontInventoryStatisticsView; document_Param : access Document'Class);
 
 end org.allbinary.business.context.modules.storefront.statistics.inventory.StoreFrontInventoryStatisticsView_Package;
 

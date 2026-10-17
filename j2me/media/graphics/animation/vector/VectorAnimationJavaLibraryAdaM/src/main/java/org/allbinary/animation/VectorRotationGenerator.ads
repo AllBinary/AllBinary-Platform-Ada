@@ -60,12 +60,12 @@ package org.allbinary.animation.VectorRotationGenerator_Package is
    procedure Initialize (This : in out VectorRotationGenerator'Class);
    function Create return VectorRotationGenerator_Access;
    function getInstance return VectorRotationGenerator_Access;
-   function getInstance (This : in out VectorRotationGenerator; vectorRotationInfo : VectorInfo_Access) return Integer_Array_Access_Array_Access_Array_Access;
-   procedure getInstance (This : in out VectorRotationGenerator; vectorRotationInfo : VectorInfo_Access);
+   function getInstance (This : in out VectorRotationGenerator; vectorRotationInfo_Param : access VectorInfo'Class) return Integer_Array_Access_Array_Access_Array_Access;
+   procedure getInstance (This : in out VectorRotationGenerator; vectorRotationInfo_Param : access VectorInfo'Class);
    function getInstanceFrames (This : in out VectorRotationGenerator; width : Integer; height : Integer; points : Integer_Array_Access_Array_Access; frames : Integer) return Integer_Array_Access_Array_Access_Array_Access;
    procedure getInstanceFrames (This : in out VectorRotationGenerator; width : Integer; height : Integer; points : Integer_Array_Access_Array_Access; frames : Integer);
-   function getListAtAngle (This : in out VectorRotationGenerator; width : Integer; height : Integer; pointBasicArrayList : BasicArrayList_Access; angle : Angle_Access) return BasicArrayList_Access;
-   procedure getListAtAngle (This : in out VectorRotationGenerator; width : Integer; height : Integer; pointBasicArrayList : BasicArrayList_Access; angle : Angle_Access);
+   function getListAtAngle (This : in out VectorRotationGenerator; width : Integer; height : Integer; pointBasicArrayList_Param : access BasicArrayList'Class; angle_Param : access Angle'Class) return BasicArrayList_Access;
+   procedure getListAtAngle (This : in out VectorRotationGenerator; width : Integer; height : Integer; pointBasicArrayList_Param : access BasicArrayList'Class; angle_Param : access Angle'Class);
 
 end org.allbinary.animation.VectorRotationGenerator_Package;
 

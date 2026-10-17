@@ -57,9 +57,9 @@ package org.allbinary.input.automation.module.InputAutomationModuleFactoryFactor
       helpSetListenerInterface : HelpSetListener_Access;
    end record;
 
-   procedure Initialize (This : in out InputAutomationModuleFactoryFactory'Class; inputAutomationModuleConfigurations : InputAutomationModuleConfigurations_Access; helpSetListenerInterface : HelpSetListener_Access);
-   function Create (inputAutomationModuleConfigurations : InputAutomationModuleConfigurations_Access; helpSetListenerInterface : HelpSetListener_Access) return InputAutomationModuleFactoryFactory_Access;
-   procedure add (This : in out InputAutomationModuleFactoryFactory; inputAutomationModuleConfiguration : InputAutomationModuleConfiguration_Access);
+   procedure Initialize (This : in out InputAutomationModuleFactoryFactory'Class; inputAutomationModuleConfigurations_Param : access InputAutomationModuleConfigurations'Class; helpSetListenerInterface_Param : access HelpSetListener'Class);
+   function Create (inputAutomationModuleConfigurations_Param : access InputAutomationModuleConfigurations'Class; helpSetListenerInterface_Param : access HelpSetListener'Class) return InputAutomationModuleFactoryFactory_Access;
+   procedure add (This : in out InputAutomationModuleFactoryFactory; inputAutomationModuleConfiguration_Param : access InputAutomationModuleConfiguration'Class);
    function getListModel (This : in out InputAutomationModuleFactoryFactory) return ListModel_Access;
    function getInstance (This : in out InputAutomationModuleFactoryFactory; moduleName : Unbounded_String) return InputAutomationModuleFactoryInterface_Access;
    procedure getInstance (This : in out InputAutomationModuleFactoryFactory; moduleName : Unbounded_String);

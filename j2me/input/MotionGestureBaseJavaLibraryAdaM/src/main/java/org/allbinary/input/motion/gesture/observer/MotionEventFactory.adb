@@ -23,7 +23,8 @@ package body org.allbinary.input.motion.gesture.observer.MotionEventFactory_Pack
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out MotionEventFactory'Class; source : Java_Object_Access; id : Integer) is
+   procedure Initialize (This : in out MotionEventFactory'Class; source_Param : access Java_Object'Class; id : Integer) is
+      source : Java_Object_Access := Java_Object_Access (source_Param);
    begin
       Initialize_Fields (This);
         This.source := source;
@@ -31,10 +32,10 @@ package body org.allbinary.input.motion.gesture.observer.MotionEventFactory_Pack
         MotionEventFactory_Package.index := TouchMotionGestureFactory_Package.getInstance.LAST_MOTION.getId;
    end Initialize;
 
-   function Create (source : Java_Object_Access; id : Integer) return MotionEventFactory_Access is
+   function Create (source_Param : access Java_Object'Class; id : Integer) return MotionEventFactory_Access is
       This : constant MotionEventFactory_Access := new MotionEventFactory;
    begin
-      MotionEventFactory_Package.Initialize (This.all, source, id);
+      MotionEventFactory_Package.Initialize (This.all, source_Param, id);
       return This;
    end Create;
 

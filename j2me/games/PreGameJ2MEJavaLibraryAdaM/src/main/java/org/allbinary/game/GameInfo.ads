@@ -64,8 +64,8 @@ package org.allbinary.game.GameInfo_Package is
    NONE : GameInfo_Access;
    LEVEL_NAME : Unbounded_String;
 
-   procedure Initialize (This : in out GameInfo'Class; gameType : GameType_Access; gameMode : GameMode_Access; playerType : PlayerType_Access; highestLevel : Integer; currentLevel : Integer);
-   function Create (gameType : GameType_Access; gameMode : GameMode_Access; playerType : PlayerType_Access; highestLevel : Integer; currentLevel : Integer) return GameInfo_Access;
+   procedure Initialize (This : in out GameInfo'Class; gameType_Param : access GameType'Class; gameMode_Param : access GameMode'Class; playerType_Param : access PlayerType'Class; highestLevel : Integer; currentLevel : Integer);
+   function Create (gameType_Param : access GameType'Class; gameMode_Param : access GameMode'Class; playerType_Param : access PlayerType'Class; highestLevel : Integer; currentLevel : Integer) return GameInfo_Access;
    function getGameType (This : in out GameInfo) return GameType_Access;
    function getGameMode (This : in out GameInfo) return GameMode_Access;
    function getPlayerType (This : in out GameInfo) return PlayerType_Access;

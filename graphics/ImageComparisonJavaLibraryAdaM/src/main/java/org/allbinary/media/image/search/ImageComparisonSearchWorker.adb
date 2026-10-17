@@ -27,7 +27,8 @@ package body org.allbinary.media.image.search.ImageComparisonSearchWorker_Packag
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ImageComparisonSearchWorker'Class; imageSearchConstraintsInterface : ImageComparisonSearchConstraintsInterface_Access) is
+   procedure Initialize (This : in out ImageComparisonSearchWorker'Class; imageSearchConstraintsInterface_Param : access ImageComparisonSearchConstraintsInterface'Class) is
+      imageSearchConstraintsInterface : ImageComparisonSearchConstraintsInterface_Access := ImageComparisonSearchConstraintsInterface_Access (imageSearchConstraintsInterface_Param);
    begin
       BasicEventHandler_Package.Initialize (This);
       Initialize_Fields (This);
@@ -35,20 +36,22 @@ package body org.allbinary.media.image.search.ImageComparisonSearchWorker_Packag
         This.imageSearchConstraintsInterface := imageSearchConstraintsInterface;
    end Initialize;
 
-   function Create (imageSearchConstraintsInterface : ImageComparisonSearchConstraintsInterface_Access) return ImageComparisonSearchWorker_Access is
+   function Create (imageSearchConstraintsInterface_Param : access ImageComparisonSearchConstraintsInterface'Class) return ImageComparisonSearchWorker_Access is
       This : constant ImageComparisonSearchWorker_Access := new ImageComparisonSearchWorker;
    begin
-      ImageComparisonSearchWorker_Package.Initialize (This.all, imageSearchConstraintsInterface);
+      ImageComparisonSearchWorker_Package.Initialize (This.all, imageSearchConstraintsInterface_Param);
       return This;
    end Create;
 
-   procedure onImageComparisonResultsEvent (This : in out ImageComparisonSearchWorker; imageComparisonResultsEvent : ImageComparisonResultsEvent_Access) is
+   procedure onImageComparisonResultsEvent (This : in out ImageComparisonSearchWorker; imageComparisonResultsEvent_Param : access ImageComparisonResultsEvent'Class) is
+      imageComparisonResultsEvent : ImageComparisonResultsEvent_Access := ImageComparisonResultsEvent_Access (imageComparisonResultsEvent_Param);
    begin
         This.imageComparisonInfoVector.add (imageComparisonResultsEvent.getImageComparisonResult);
         This.run;
    end onImageComparisonResultsEvent;
 
-   procedure onEvent (This : in out ImageComparisonSearchWorker; allBinaryEventObject : AllBinaryEventObject_Access) is
+   procedure onEvent (This : in out ImageComparisonSearchWorker; allBinaryEventObject_Param : access AllBinaryEventObject'Class) is
+      allBinaryEventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (allBinaryEventObject_Param);
    begin
         This.onImageComparisonResultsEvent (ImageComparisonResultsEvent_Access (allBinaryEventObject));
    end onEvent;
@@ -69,24 +72,24 @@ package body org.allbinary.media.image.search.ImageComparisonSearchWorker_Packag
       latestBufferedImage : BufferedImage_Access;
    begin
         begin
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.RUN);
+            This.logUtil.putF (This.commonStrings.START, ImageComparisonSearchWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
             This.setRunning (True);
             timeHelper := TimeDelayHelper_Package.Create (1000);
             timeHelper.setStartTimeTNT;
             imageComparisonInfo := ImageComparisonResult_Access (This.imageComparisonInfoVector.get (0));
-            This.logUtil.putF (imageComparisonInfo.toString, This'Unchecked_Access, This.commonStrings.RUN);
+            This.logUtil.putF (imageComparisonInfo.toString, ImageComparisonSearchWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
             latestBufferedImage := imageComparisonInfo.getBufferedImages (1);
             This.imageComparisonInfoVector.remove (imageComparisonInfo);
             This.index := This.index + 1;
-            This.logUtil.putF ((CommonLabels_Package.getInstance.ELAPSED) + (timeHelper.getElapsedTNT), This'Unchecked_Access, This.commonStrings.RUN);
+            This.logUtil.putF ((CommonLabels_Package.getInstance.ELAPSED) + (timeHelper.getElapsedTNT), ImageComparisonSearchWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
             This.setRunning (False);
-            This.logUtil.putF (This.commonStrings.END_Id, This'Unchecked_Access, This.commonStrings.RUN);
+            This.logUtil.putF (This.commonStrings.END_Id, ImageComparisonSearchWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.RUN, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, ImageComparisonSearchWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN, e);
                 end;
         end;
    end run;

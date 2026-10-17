@@ -46,7 +46,8 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathCacheFactory
         return This.hashtable.size;
    end getSize;
 
-   procedure add (This : in out PathCacheFactory; pathId : Integer; list : BasicArrayList_Access) is
+   procedure add (This : in out PathCacheFactory; pathId : Integer; list_Param : access BasicArrayList'Class) is
+      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
    begin
         This.hashtable.put (pathId, list);
    end add;

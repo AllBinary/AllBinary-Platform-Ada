@@ -27,7 +27,9 @@ package body admin.taghelpers.OrderHistoryRequestHelper_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out OrderHistoryRequestHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access) is
+   procedure Initialize (This : in out OrderHistoryRequestHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
    begin
       TagHelper_Package.Initialize (This);
       Initialize_Fields (This);
@@ -35,10 +37,10 @@ package body admin.taghelpers.OrderHistoryRequestHelper_Package is
         This.getFormData;
    end Initialize;
 
-   function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return OrderHistoryRequestHelper_Access is
+   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return OrderHistoryRequestHelper_Access is
       This : constant OrderHistoryRequestHelper_Access := new OrderHistoryRequestHelper;
    begin
-      OrderHistoryRequestHelper_Package.Initialize (This.all, hashMap, pageContext);
+      OrderHistoryRequestHelper_Package.Initialize (This.all, hashMap_Param, pageContext_Param);
       return This;
    end Create;
 
@@ -64,7 +66,7 @@ package body admin.taghelpers.OrderHistoryRequestHelper_Package is
             success := To_Unbounded_String ("Status successfully set to: ") & This.status;
             OrderHistoryEntityFactory_Package.getInstance.setStatus (This.id, This.status);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (To_Unbounded_String ("Success"), This'Unchecked_Access, To_Unbounded_String ("setOrderStatus()"));
+                This.logUtil.putF (To_Unbounded_String ("Success"), OrderHistoryRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("setOrderStatus()"));
             end if;
             return success;
         exception
@@ -74,7 +76,7 @@ package body admin.taghelpers.OrderHistoryRequestHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to set order status");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("setOrderStatus()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, OrderHistoryRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("setOrderStatus()"), e);
             end if;
             return error;
                 end;
@@ -96,7 +98,7 @@ package body admin.taghelpers.OrderHistoryRequestHelper_Package is
             orderHistory := OrderHistoryEntityFactory_Package.getInstance.getOrder (This.id);
             OrderStatusEmail_Package.Create (This.abeClientInformation, orderHistory).process;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (To_Unbounded_String ("Success"), This'Unchecked_Access, To_Unbounded_String ("setOrderStatus()"));
+                This.logUtil.putF (To_Unbounded_String ("Success"), OrderHistoryRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("setOrderStatus()"));
             end if;
             return success;
         exception
@@ -106,7 +108,7 @@ package body admin.taghelpers.OrderHistoryRequestHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to view order table");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("setOrderStatus(newStatus)"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, OrderHistoryRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("setOrderStatus(newStatus)"), e);
             end if;
             return error;
                 end;

@@ -57,8 +57,8 @@ package org.allbinary.game.input.motion.action.GameKeyFromMotionGestureEventList
 
    procedure Initialize (This : in out GameKeyFromMotionGestureEventListener'Class);
    function Create return GameKeyFromMotionGestureEventListener_Access;
-   procedure onEvent (This : in out GameKeyFromMotionGestureEventListener; eventObject : AllBinaryEventObject_Access);
-   procedure onCompleteMotionGestureInputEvent (This : in out GameKeyFromMotionGestureEventListener; completeMotionGestureInputEvent : CompleteMotionGestureInputEvent_Access);
+   procedure onEvent (This : in out GameKeyFromMotionGestureEventListener; eventObject_Param : access AllBinaryEventObject'Class);
+   procedure onCompleteMotionGestureInputEvent (This : in out GameKeyFromMotionGestureEventListener; completeMotionGestureInputEvent_Param : access CompleteMotionGestureInputEvent'Class);
 
 end org.allbinary.game.input.motion.action.GameKeyFromMotionGestureEventListener_Package;
 

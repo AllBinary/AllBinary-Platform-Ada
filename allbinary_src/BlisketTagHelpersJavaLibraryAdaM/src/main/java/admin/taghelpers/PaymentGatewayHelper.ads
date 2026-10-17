@@ -58,8 +58,8 @@ package admin.taghelpers.PaymentGatewayHelper_Package is
       portion : Portion_Access;
    end record;
 
-   procedure Initialize (This : in out PaymentGatewayHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access);
-   function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return PaymentGatewayHelper_Access;
+   procedure Initialize (This : in out PaymentGatewayHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
+   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return PaymentGatewayHelper_Access;
    function insert (This : in out PaymentGatewayHelper) return Unbounded_String;
    function update (This : in out PaymentGatewayHelper) return Unbounded_String;
    function delete (This : in out PaymentGatewayHelper) return Unbounded_String;

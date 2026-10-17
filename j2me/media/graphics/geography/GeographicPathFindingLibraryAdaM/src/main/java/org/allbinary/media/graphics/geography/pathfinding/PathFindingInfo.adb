@@ -25,7 +25,10 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out PathFindingInfo'Class; pathFindingNodeCostInfoFactoryInterface : PathFindingNodeCostInfoFactoryBase_Access; startPathFindingNodeList : BasicArrayList_Access; endPathFindingNodeList : BasicArrayList_Access) is
+   procedure Initialize (This : in out PathFindingInfo'Class; pathFindingNodeCostInfoFactoryInterface_Param : access PathFindingNodeCostInfoFactoryBase'Class; startPathFindingNodeList_Param : access BasicArrayList'Class; endPathFindingNodeList_Param : access BasicArrayList'Class) is
+      pathFindingNodeCostInfoFactoryInterface : PathFindingNodeCostInfoFactoryBase_Access := PathFindingNodeCostInfoFactoryBase_Access (pathFindingNodeCostInfoFactoryInterface_Param);
+      startPathFindingNodeList : BasicArrayList_Access := BasicArrayList_Access (startPathFindingNodeList_Param);
+      endPathFindingNodeList : BasicArrayList_Access := BasicArrayList_Access (endPathFindingNodeList_Param);
    begin
       Initialize_Fields (This);
         This.pathFindingNodeCostInfoFactoryInterface := pathFindingNodeCostInfoFactoryInterface;
@@ -33,10 +36,10 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_
         This.endPathFindingNodeList := endPathFindingNodeList;
    end Initialize;
 
-   function Create (pathFindingNodeCostInfoFactoryInterface : PathFindingNodeCostInfoFactoryBase_Access; startPathFindingNodeList : BasicArrayList_Access; endPathFindingNodeList : BasicArrayList_Access) return PathFindingInfo_Access is
+   function Create (pathFindingNodeCostInfoFactoryInterface_Param : access PathFindingNodeCostInfoFactoryBase'Class; startPathFindingNodeList_Param : access BasicArrayList'Class; endPathFindingNodeList_Param : access BasicArrayList'Class) return PathFindingInfo_Access is
       This : constant PathFindingInfo_Access := new PathFindingInfo;
    begin
-      PathFindingInfo_Package.Initialize (This.all, pathFindingNodeCostInfoFactoryInterface, startPathFindingNodeList, endPathFindingNodeList);
+      PathFindingInfo_Package.Initialize (This.all, pathFindingNodeCostInfoFactoryInterface_Param, startPathFindingNodeList_Param, endPathFindingNodeList_Param);
       return This;
    end Create;
 
@@ -55,17 +58,20 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_
         return This.pathFinder;
    end getPathFinder;
 
-   procedure addStartPathFindingNode (This : in out PathFindingInfo; startPathFindingNode : PathFindingNode_Access) is
+   procedure addStartPathFindingNode (This : in out PathFindingInfo; startPathFindingNode_Param : access PathFindingNode'Class) is
+      startPathFindingNode : PathFindingNode_Access := PathFindingNode_Access (startPathFindingNode_Param);
    begin
         This.startPathFindingNodeList.add (startPathFindingNode);
    end addStartPathFindingNode;
 
-   procedure addEndPathFindingNode (This : in out PathFindingInfo; endPathFindingNode : PathFindingNode_Access) is
+   procedure addEndPathFindingNode (This : in out PathFindingInfo; endPathFindingNode_Param : access PathFindingNode'Class) is
+      endPathFindingNode : PathFindingNode_Access := PathFindingNode_Access (endPathFindingNode_Param);
    begin
         This.endPathFindingNodeList.add (endPathFindingNode);
    end addEndPathFindingNode;
 
-   procedure setPathFinder (This : in out PathFindingInfo; pathFinder : GeographicPathFinderBase_Access) is
+   procedure setPathFinder (This : in out PathFindingInfo; pathFinder_Param : access GeographicPathFinderBase'Class) is
+      pathFinder : GeographicPathFinderBase_Access := GeographicPathFinderBase_Access (pathFinder_Param);
    begin
         This.pathFinder := pathFinder;
    end setPathFinder;

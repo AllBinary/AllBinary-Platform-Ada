@@ -46,11 +46,11 @@ package org.allbinary.animation.vector.LineAnimation_Package is
       line : Integer_Array_Access_Array_Access;
    end record;
 
-   procedure Initialize (This : in out LineAnimation'Class; basicColor : BasicColor_Access);
-   function Create (basicColor : BasicColor_Access) return LineAnimation_Access;
+   procedure Initialize (This : in out LineAnimation'Class; basicColor_Param : access BasicColor'Class);
+   function Create (basicColor_Param : access BasicColor'Class) return LineAnimation_Access;
    procedure init (This : in out LineAnimation; x : Integer; y : Integer);
    procedure setPosition (This : in out LineAnimation; x : Integer; y : Integer; z : Integer);
-   procedure paintXY (This : in out LineAnimation; graphics : Graphics_Access; x : Integer; y : Integer);
+   procedure paintXY (This : in out LineAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
    procedure nextFrame (This : in out LineAnimation);
 
 end org.allbinary.animation.vector.LineAnimation_Package;

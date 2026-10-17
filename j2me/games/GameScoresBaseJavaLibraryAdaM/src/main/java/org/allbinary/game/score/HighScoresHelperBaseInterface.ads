@@ -30,7 +30,7 @@ package org.allbinary.game.score.HighScoresHelperBaseInterface_Package is
    type HighScoresHelperBaseInterface_Access is access all HighScoresHelperBaseInterface'Class;
    type HighScoresHelperBaseInterface_Access_Array is array (Natural range <>) of HighScoresHelperBaseInterface_Access;
    type HighScoresHelperBaseInterface_Access_Array_Access is access all HighScoresHelperBaseInterface_Access_Array;
-   procedure setSelectedHighScores (This : in out HighScoresHelperBaseInterface; selectedHighScores : HighScores_Access) is abstract;
+   procedure setSelectedHighScores (This : in out HighScoresHelperBaseInterface; selectedHighScores_Param : access HighScores'Class) is abstract;
    function getHighScoresArray (This : in out HighScoresHelperBaseInterface) return HighScores_Access_Array_Access is abstract;
    function getSelectedHighScores (This : in out HighScoresHelperBaseInterface) return HighScores_Access is abstract;
 

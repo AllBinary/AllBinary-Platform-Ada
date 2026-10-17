@@ -56,8 +56,8 @@ package org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographic
    function getStartType (This : in out RaceTrackGeographicMapCellTypeFactory) return Integer;
    function getEndType (This : in out RaceTrackGeographicMapCellTypeFactory) return Integer;
    function getEmptyType (This : in out RaceTrackGeographicMapCellTypeFactory) return Integer;
-   function isPath (This : in out RaceTrackGeographicMapCellTypeFactory; cellType : GeographicMapCellType_Access) return Boolean;
-   procedure isPath (This : in out RaceTrackGeographicMapCellTypeFactory; cellType : GeographicMapCellType_Access);
+   function isPath (This : in out RaceTrackGeographicMapCellTypeFactory; cellType_Param : access GeographicMapCellType'Class) return Boolean;
+   procedure isPath (This : in out RaceTrackGeographicMapCellTypeFactory; cellType_Param : access GeographicMapCellType'Class);
 
 end org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellTypeFactory_Package;
 

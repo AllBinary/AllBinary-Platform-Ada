@@ -32,9 +32,9 @@ package org.allbinary.graphics.form.item.CustomCustomItem_Package is
       myFontProcessor : MyFontProcessor_Access;
    end record;
 
-   procedure Initialize (This : in out CustomCustomItem'Class; label : Unbounded_String; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access);
-   function Create (label : Unbounded_String; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return CustomCustomItem_Access;
-   procedure updateMeasurement (This : in out CustomCustomItem; graphics : Graphics_Access);
+   procedure Initialize (This : in out CustomCustomItem'Class; label : Unbounded_String; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class);
+   function Create (label : Unbounded_String; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return CustomCustomItem_Access;
+   procedure updateMeasurement (This : in out CustomCustomItem; graphics_Param : access Graphics'Class);
 
 end org.allbinary.graphics.form.item.CustomCustomItem_Package;
 

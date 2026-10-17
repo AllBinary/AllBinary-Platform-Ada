@@ -34,8 +34,8 @@ package org.allbinary.game.input.event.GameKeyEventUtil_Package is
 
    procedure Initialize (This : in out GameKeyEventUtil'Class);
    function Create return GameKeyEventUtil_Access;
-   function getKey (anyType : Java_Object_Access) return Integer;
-   procedure getKey (anyType : Java_Object_Access);
+   function getKey (anyType_Param : access Java_Object'Class) return Integer;
+   procedure getKey (anyType_Param : access Java_Object'Class);
 
 end org.allbinary.game.input.event.GameKeyEventUtil_Package;
 

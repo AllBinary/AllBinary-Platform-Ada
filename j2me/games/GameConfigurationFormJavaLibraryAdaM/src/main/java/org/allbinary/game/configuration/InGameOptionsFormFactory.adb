@@ -43,7 +43,11 @@ package body org.allbinary.game.configuration.InGameOptionsFormFactory_Package i
         return InGameOptionsFormFactory_Access (InGameOptionsFormFactory_Package.instance);
    end getInstance;
 
-   procedure init (This : in out InGameOptionsFormFactory; commandListener : CommandListener_Access; initInterface : Init_Access; title : Unbounded_String; backgrounBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) is
+   procedure init (This : in out InGameOptionsFormFactory; commandListener_Param : access CommandListener'Class; initInterface_Param : access Init'Class; title : Unbounded_String; backgrounBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) is
+      commandListener : CommandListener_Access := CommandListener_Access (commandListener_Param);
+      initInterface : Init_Access := Init_Access (initInterface_Param);
+      backgrounBasicColor : BasicColor_Access := BasicColor_Access (backgrounBasicColor_Param);
+      foregroundBasicColor : BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
       commonStrings : CommonStrings_Access;
    begin
         begin
@@ -57,7 +61,7 @@ package body org.allbinary.game.configuration.InGameOptionsFormFactory_Package i
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.INIT, e);
+            This.logUtil.put (commonStrings.EXCEPTION_Id, InGameOptionsFormFactory_Access'(This'Unchecked_Access), commonStrings.INIT, e);
                 end;
         end;
    end init;

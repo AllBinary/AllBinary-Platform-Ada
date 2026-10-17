@@ -48,11 +48,11 @@ package org.allbinary.business.user.commerce.shipping.modules.NoShippingModuleVi
    function Create return NoShippingModuleView_Access;
    function isValid (This : in out NoShippingModuleView) return Boolean;
    function toValidationInfoDoc (This : in out NoShippingModuleView) return Document_Access;
-   function toValidationInfoNode (This : in out NoShippingModuleView; document : Document_Access) return Node_Access;
-   procedure toValidationInfoNode (This : in out NoShippingModuleView; document : Document_Access);
+   function toValidationInfoNode (This : in out NoShippingModuleView; document_Param : access Document'Class) return Node_Access;
+   procedure toValidationInfoNode (This : in out NoShippingModuleView; document_Param : access Document'Class);
    function toXmlDoc (This : in out NoShippingModuleView) return Document_Access;
-   function toXmlNode (This : in out NoShippingModuleView; document : Document_Access) return Node_Access;
-   procedure toXmlNode (This : in out NoShippingModuleView; document : Document_Access);
+   function toXmlNode (This : in out NoShippingModuleView; document_Param : access Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out NoShippingModuleView; document_Param : access Document'Class);
    function validationInfo (This : in out NoShippingModuleView) return Unbounded_String;
    function view (This : in out NoShippingModuleView) return Unbounded_String;
 

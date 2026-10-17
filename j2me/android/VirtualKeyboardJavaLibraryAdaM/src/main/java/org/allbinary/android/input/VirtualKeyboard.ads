@@ -42,8 +42,8 @@ package org.allbinary.android.input.VirtualKeyboard_Package is
 
    procedure Initialize (This : in out VirtualKeyboard'Class);
    function Create return VirtualKeyboard_Access;
-   procedure onEvent (This : in out VirtualKeyboard; eventObject : AllBinaryEventObject_Access);
-   procedure onVirtualKeyboardEvent (This : in out VirtualKeyboard; virtualKeyboardEvent : VirtualKeyboardEvent_Access);
+   procedure onEvent (This : in out VirtualKeyboard; eventObject_Param : access AllBinaryEventObject'Class);
+   procedure onVirtualKeyboardEvent (This : in out VirtualKeyboard; virtualKeyboardEvent_Param : access VirtualKeyboardEvent'Class);
    procedure forceHide (This : in out VirtualKeyboard);
    procedure hide (This : in out VirtualKeyboard);
 

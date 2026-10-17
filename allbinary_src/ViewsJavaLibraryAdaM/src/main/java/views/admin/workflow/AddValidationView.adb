@@ -23,17 +23,18 @@ package body views.admin.workflow.AddValidationView_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AddValidationView'Class; transformInfoInterface : TransformInfoInterface_Access) is
+   procedure Initialize (This : in out AddValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         WorkFlowView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
         This.workFlowInterface := NewWorkFlowFactory_Package.getInstance.getInstance (This.abeClientInformation, This.getPropertiesHashMap, This.getPageContext);
    end Initialize;
 
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return AddValidationView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return AddValidationView_Access is
       This : constant AddValidationView_Access := new AddValidationView;
    begin
-      AddValidationView_Package.Initialize (This.all, transformInfoInterface);
+      AddValidationView_Package.Initialize (This.all, transformInfoInterface_Param);
       return This;
    end Create;
 
@@ -47,7 +48,7 @@ package body views.admin.workflow.AddValidationView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to validate"), This'Unchecked_Access, This.commonStrings.IS_VALID, e);
+                This.logUtil.put (To_Unbounded_String ("Failed to validate"), AddValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
             end if;
             return False;
                 end;
@@ -61,7 +62,7 @@ package body views.admin.workflow.AddValidationView_Package is
             stringBuffer := StringMaker_Package.Create;
             if (WorkFlowEntityFactory_Package.getInstance.create2.get (This.workFlowInterface.getName, This.getTransformInfoInterface.getStoreName)) /= (null) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                    This.logUtil.putF (To_Unbounded_String ("Workflow already exist"), This'Unchecked_Access, To_Unbounded_String ("validationInfo()"));
+                    This.logUtil.putF (To_Unbounded_String ("Workflow already exist"), AddValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"));
                 end if;
                 stringBuffer.append (To_Unbounded_String ("The WorkFlow name you selected is already in use.<br/>  Please select another Name.<br />"));
             end if;
@@ -72,7 +73,7 @@ package body views.admin.workflow.AddValidationView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), This'Unchecked_Access, To_Unbounded_String ("validationInfo()"), e);
+                This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), AddValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
             end if;
             return To_Unbounded_String ("Error Getting Validation Info");
                 end;
@@ -84,13 +85,14 @@ package body views.admin.workflow.AddValidationView_Package is
         return null;
    end toValidationInfoDoc;
 
-   function toValidationInfoNode (This : in out AddValidationView; document : Document_Access) return Node_Access is
+   function toValidationInfoNode (This : in out AddValidationView; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
    begin
         return null;
    end toValidationInfoNode;
 
-   procedure toValidationInfoNode (This : in out AddValidationView; document : Document_Access) is
-      Java_Result : constant Node_Access := AddValidationView'Class (This).toValidationInfoNode (document);
+   procedure toValidationInfoNode (This : in out AddValidationView; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := AddValidationView'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

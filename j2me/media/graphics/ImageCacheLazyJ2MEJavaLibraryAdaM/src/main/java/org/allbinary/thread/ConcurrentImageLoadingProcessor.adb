@@ -23,17 +23,18 @@ package body org.allbinary.thread.ConcurrentImageLoadingProcessor_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ConcurrentImageLoadingProcessor'Class; imageCache : ImageCache_Access) is
+   procedure Initialize (This : in out ConcurrentImageLoadingProcessor'Class; imageCache_Param : access ImageCache'Class) is
+      imageCache : ImageCache_Access := ImageCache_Access (imageCache_Param);
    begin
       BaseImageLoadingProcessor_Package.Initialize (This);
       Initialize_Fields (This);
         This.runnable := ImageCacheRunnable_Package.Create (imageCache);
    end Initialize;
 
-   function Create (imageCache : ImageCache_Access) return ConcurrentImageLoadingProcessor_Access is
+   function Create (imageCache_Param : access ImageCache'Class) return ConcurrentImageLoadingProcessor_Access is
       This : constant ConcurrentImageLoadingProcessor_Access := new ConcurrentImageLoadingProcessor;
    begin
-      ConcurrentImageLoadingProcessor_Package.Initialize (This.all, imageCache);
+      ConcurrentImageLoadingProcessor_Package.Initialize (This.all, imageCache_Param);
       return This;
    end Create;
 
@@ -56,17 +57,18 @@ package body org.allbinary.thread.ImageCacheRunnable_Package is
    end Initialize_Fields;
 
     
-   procedure Initialize (This : in out ImageCacheRunnable'Class; imageCache : ImageCache_Access) is
+   procedure Initialize (This : in out ImageCacheRunnable'Class; imageCache_Param : access ImageCache'Class) is
+      imageCache : ImageCache_Access := ImageCache_Access (imageCache_Param);
    begin
       ABRunnable_Package.Initialize (This);
       Initialize_Fields (This);
             This.imageCache := imageCache;
    end Initialize;
 
-   function Create (imageCache : ImageCache_Access) return ImageCacheRunnable_Access is
+   function Create (imageCache_Param : access ImageCache'Class) return ImageCacheRunnable_Access is
       This : constant ImageCacheRunnable_Access := new ImageCacheRunnable;
    begin
-      ImageCacheRunnable_Package.Initialize (This.all, imageCache);
+      ImageCacheRunnable_Package.Initialize (This.all, imageCache_Param);
       return This;
    end Create;
     
@@ -93,7 +95,7 @@ package body org.allbinary.thread.ImageCacheRunnable_Package is
                     begin
                 This.setRunning (False);
                 commonStrings := CommonStrings_Package.getInstance;
-                logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.RUN, e);
+                logUtil.put (commonStrings.EXCEPTION_Id, ConcurrentImageLoadingProcessor_Access'(This'Unchecked_Access), commonStrings.RUN, e);
                     end;
             end;
    end run;

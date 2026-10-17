@@ -32,10 +32,10 @@ package org.allbinary.logic.math.permutations.IntPermutationVisitor_Package is
 
    procedure Initialize (This : in out IntPermutationVisitor'Class; data : Integer_Array_Access);
    function Create (data : Integer_Array_Access) return IntPermutationVisitor_Access;
-   function visit (This : in out IntPermutationVisitor; anyType : Java_Object_Access) return Java_Object_Access;
-   procedure visit (This : in out IntPermutationVisitor; anyType : Java_Object_Access);
+   function visit (This : in out IntPermutationVisitor; anyType_Param : access Java_Object'Class) return Java_Object_Access;
+   procedure visit (This : in out IntPermutationVisitor; anyType_Param : access Java_Object'Class);
    procedure print (This : in out IntPermutationVisitor; data : Integer_Array_Access);
-   procedure print (This : in out IntPermutationVisitor; data : Integer_Array_Access; stringBuilder : StringMaker_Access);
+   procedure print (This : in out IntPermutationVisitor; data : Integer_Array_Access; stringBuilder_Param : access StringMaker'Class);
 
 end org.allbinary.logic.math.permutations.IntPermutationVisitor_Package;
 

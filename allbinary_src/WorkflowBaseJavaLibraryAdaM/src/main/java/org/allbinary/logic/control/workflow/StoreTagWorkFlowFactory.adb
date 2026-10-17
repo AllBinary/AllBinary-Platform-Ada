@@ -41,7 +41,10 @@ package body org.allbinary.logic.control.workflow.StoreTagWorkFlowFactory_Packag
    end Create;
 
    --  throws Exception, LicensingException
-   function getInstance (This : in out StoreTagWorkFlowFactory; abeClientInformation : AbeClientInformationInterface_Access; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return StoreWorkFlowInterface_Access is
+   function getInstance (This : in out StoreTagWorkFlowFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return StoreWorkFlowInterface_Access is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      propertiesHashMap : HashMap_Access := HashMap_Access (propertiesHashMap_Param);
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
       workFlowClassName : Unbounded_String;
       stringBuffer : StringMaker_Access;
       commonStrings : CommonStrings_Access;
@@ -57,7 +60,7 @@ package body org.allbinary.logic.control.workflow.StoreTagWorkFlowFactory_Packag
                 stringBuffer.append (To_Unbounded_String ("->"));
                 stringBuffer.append (To_Unbounded_String (Ada.Tags.Expanded_Name (StoreTagWorkFlowFactory_Package.instance.all'Tag)));
                 commonStrings := CommonStrings_Package.getInstance;
-                This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, commonStrings.GET_INSTANCE);
+                This.logUtil.putF (stringBuffer.toString, StoreTagWorkFlowFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);
             end if;
             params := new Java_Object_Access_Array'(0 .. (2) - 1 => null);
             classes := new Ada_Tags_Tag_Array'(0 .. (2) - 1 => null);
@@ -79,15 +82,15 @@ package body org.allbinary.logic.control.workflow.StoreTagWorkFlowFactory_Packag
                 stringBuffer.append (To_Unbounded_String ("->"));
                 stringBuffer.append (To_Unbounded_String (Ada.Tags.Expanded_Name (StoreTagWorkFlowFactory_Package.instance.all'Tag)));
                 commonStrings := CommonStrings_Package.getInstance;
-                This.logUtil.put (stringBuffer.toString, This'Unchecked_Access, commonStrings.GET_INSTANCE, e);
+                This.logUtil.put (stringBuffer.toString, StoreTagWorkFlowFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE, e);
             end if;
             Java_Throw (e);
                 end;
         end;
    end getInstance;
 
-   procedure getInstance (This : in out StoreTagWorkFlowFactory; abeClientInformation : AbeClientInformationInterface_Access; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) is
-      Java_Result : constant StoreWorkFlowInterface_Access := StoreTagWorkFlowFactory'Class (This).getInstance (abeClientInformation, propertiesHashMap, pageContext);
+   procedure getInstance (This : in out StoreTagWorkFlowFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+      Java_Result : constant StoreWorkFlowInterface_Access := StoreTagWorkFlowFactory'Class (This).getInstance (abeClientInformation_Param, propertiesHashMap_Param, pageContext_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

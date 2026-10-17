@@ -23,20 +23,22 @@ package body taghelpers.ValidationViewHelper_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ValidationViewHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access) is
+   procedure Initialize (This : in out ValidationViewHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
    begin
         ViewHelper_Package.Initialize (This, hashMap, pageContext);
         Initialize_Fields (This);
         This.viewInterface := ValidationComponentInterface_Access (This.getViewObject);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPER) then
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+            This.logUtil.putF (This.commonStrings.START, ValidationViewHelper_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
    end Initialize;
 
-   function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return ValidationViewHelper_Access is
+   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return ValidationViewHelper_Access is
       This : constant ValidationViewHelper_Access := new ValidationViewHelper;
    begin
-      ValidationViewHelper_Package.Initialize (This.all, hashMap, pageContext);
+      ValidationViewHelper_Package.Initialize (This.all, hashMap_Param, pageContext_Param);
       return This;
    end Create;
 
@@ -44,7 +46,7 @@ package body taghelpers.ValidationViewHelper_Package is
    begin
         begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPER) then
-                This.logUtil.putF (To_Unbounded_String ("Started"), This'Unchecked_Access, This.commonStrings.IS_VALID);
+                This.logUtil.putF (To_Unbounded_String ("Started"), ValidationViewHelper_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
             end if;
             return This.viewInterface.isValid;
         exception
@@ -53,7 +55,7 @@ package body taghelpers.ValidationViewHelper_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.IS_VALID, e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, ValidationViewHelper_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
             end if;
             return False;
                 end;
@@ -70,7 +72,7 @@ package body taghelpers.ValidationViewHelper_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("validationInfo()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, ValidationViewHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
             end if;
             return To_Unbounded_String ("Unknown Validation Error");
                 end;
@@ -87,14 +89,15 @@ package body taghelpers.ValidationViewHelper_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("toValidationInfoDoc()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, ValidationViewHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("toValidationInfoDoc()"), e);
             end if;
             return null;
                 end;
         end;
    end toValidationInfoDoc;
 
-   function toValidationInfoNode (This : in out ValidationViewHelper; document : Document_Access) return Node_Access is
+   function toValidationInfoNode (This : in out ValidationViewHelper; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
    begin
         begin
             return This.viewInterface.toValidationInfoNode (document);
@@ -104,15 +107,15 @@ package body taghelpers.ValidationViewHelper_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("toValidationInfoNode()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, ValidationViewHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("toValidationInfoNode()"), e);
             end if;
             return null;
                 end;
         end;
    end toValidationInfoNode;
 
-   procedure toValidationInfoNode (This : in out ValidationViewHelper; document : Document_Access) is
-      Java_Result : constant Node_Access := ValidationViewHelper'Class (This).toValidationInfoNode (document);
+   procedure toValidationInfoNode (This : in out ValidationViewHelper; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := ValidationViewHelper'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

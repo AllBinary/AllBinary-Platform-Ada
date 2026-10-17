@@ -31,7 +31,7 @@ package body org.allbinary.input.motion.button.TouchButtonInput_Package is
         Input_Package.Initialize (This, id, name);
         Initialize_Fields (This);
         inputFactory := InputFactory_Package.getInstance;
-        inputFactory.add (This.getId, This'Unchecked_Access);
+        inputFactory.add (This.getId, TouchButtonInput_Access'(This'Unchecked_Access));
    end Initialize;
 
    function Create (id : Integer; name : Unbounded_String) return TouchButtonInput_Access is
@@ -41,20 +41,21 @@ package body org.allbinary.input.motion.button.TouchButtonInput_Package is
       return This;
    end Create;
 
-   procedure update (This : in out TouchButtonInput; inputToGameKeyMapping : InputToGameKeyMapping_Access) is
+   procedure update (This : in out TouchButtonInput; inputToGameKeyMapping_Param : access InputToGameKeyMapping'Class) is
+      inputToGameKeyMapping : InputToGameKeyMapping_Access := InputToGameKeyMapping_Access (inputToGameKeyMapping_Param);
       gameKey : GameKey_Access;
       commonStrings : CommonStrings_Access;
    begin
         begin
             gameKey := inputToGameKeyMapping.getInstance (This.getId);
-            This.gameKeyEvent := This.gameKeyEventFactory.getInstanceForInput (This'Unchecked_Access, gameKey);
+            This.gameKeyEvent := This.gameKeyEventFactory.getInstanceForInput (TouchButtonInput_Access'(This'Unchecked_Access), gameKey);
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.UPDATE, e);
+            This.logUtil.put (commonStrings.EXCEPTION_Id, TouchButtonInput_Access'(This'Unchecked_Access), commonStrings.UPDATE, e);
                 end;
         end;
    end update;

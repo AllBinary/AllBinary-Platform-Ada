@@ -43,7 +43,7 @@ package org.allbinary.game.tracking.TrackingEventHandler_Package is
    procedure Initialize (This : in out TrackingEventHandler'Class);
    function Create return TrackingEventHandler_Access;
    function getInstance return TrackingEventHandler_Access;
-   procedure process (This : in out TrackingEventHandler; eventObject : AllBinaryEventObject_Access; eventListenerInterface : EventListenerInterface_Access);
+   procedure process (This : in out TrackingEventHandler; eventObject_Param : access AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface'Class);
 
 end org.allbinary.game.tracking.TrackingEventHandler_Package;
 

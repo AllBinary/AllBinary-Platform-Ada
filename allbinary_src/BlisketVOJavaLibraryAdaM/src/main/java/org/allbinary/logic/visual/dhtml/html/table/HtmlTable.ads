@@ -73,7 +73,7 @@ package org.allbinary.logic.visual.dhtml.html.table.HtmlTable_Package is
 
    procedure Initialize (This : in out HtmlTable'Class; before : Unbounded_String; cellpadding_Case : Unbounded_String; cellspacing_Case : Unbounded_String; after : Unbounded_String);
    function Create (before : Unbounded_String; cellpadding_Case : Unbounded_String; cellspacing_Case : Unbounded_String; after : Unbounded_String) return HtmlTable_Access;
-   procedure addRow (This : in out HtmlTable; htmlRow : HtmlRow_Access);
+   procedure addRow (This : in out HtmlTable; htmlRow_Param : access HtmlRow'Class);
    function toString (This : in out HtmlTable) return Unbounded_String;
 
 end org.allbinary.logic.visual.dhtml.html.table.HtmlTable_Package;

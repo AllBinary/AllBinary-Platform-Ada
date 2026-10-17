@@ -31,7 +31,7 @@ package org.allbinary.logic.visual.transform.info.objectConfig.generator.Transfo
    type TransformInfoObjectConfigGeneratorFactoryInterface_Access is access all TransformInfoObjectConfigGeneratorFactoryInterface'Class;
    type TransformInfoObjectConfigGeneratorFactoryInterface_Access_Array is array (Natural range <>) of TransformInfoObjectConfigGeneratorFactoryInterface_Access;
    type TransformInfoObjectConfigGeneratorFactoryInterface_Access_Array_Access is access all TransformInfoObjectConfigGeneratorFactoryInterface_Access_Array;
-   function getInstance (This : in out TransformInfoObjectConfigGeneratorFactoryInterface; transformInfoInterface : TransformInfoInterface_Access) return TransformInfoObjectConfigGenerator_Access is abstract;
+   function getInstance (This : in out TransformInfoObjectConfigGeneratorFactoryInterface; transformInfoInterface_Param : access TransformInfoInterface'Class) return TransformInfoObjectConfigGenerator_Access is abstract;
 
 end org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactoryInterface_Package;
 

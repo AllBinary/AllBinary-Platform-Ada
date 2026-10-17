@@ -37,8 +37,8 @@ package org.allbinary.data.tables.generator.IdGeneratorEntityInterface_Package i
    type IdGeneratorEntityInterface_Access_Array_Access is access all IdGeneratorEntityInterface_Access_Array;
    function get (This : in out IdGeneratorEntityInterface; name : Unbounded_String) return Long_Long_Integer is abstract;
    procedure deleteWhere (This : in out IdGeneratorEntityInterface; key : Unbounded_String; value : Unbounded_String) is abstract;
-   procedure insert (This : in out IdGeneratorEntityInterface; values : BasicArrayList_Access) is abstract;
-   procedure update (This : in out IdGeneratorEntityInterface; updatedValues : HashMap_Access) is abstract;
+   procedure insert (This : in out IdGeneratorEntityInterface; values_Param : access BasicArrayList'Class) is abstract;
+   procedure update (This : in out IdGeneratorEntityInterface; updatedValues_Param : access HashMap'Class) is abstract;
 
 end org.allbinary.data.tables.generator.IdGeneratorEntityInterface_Package;
 

@@ -36,8 +36,8 @@ package org.allbinary.midlet.MidletExitProcessor_Package is
       midlet : MIDlet_Access;
    end record;
 
-   procedure Initialize (This : in out MidletExitProcessor'Class; midlet : MIDlet_Access);
-   function Create (midlet : MIDlet_Access) return MidletExitProcessor_Access;
+   procedure Initialize (This : in out MidletExitProcessor'Class; midlet_Param : access MIDlet'Class);
+   function Create (midlet_Param : access MIDlet'Class) return MidletExitProcessor_Access;
    procedure process (This : in out MidletExitProcessor);
 
 end org.allbinary.midlet.MidletExitProcessor_Package;

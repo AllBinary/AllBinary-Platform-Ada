@@ -31,7 +31,7 @@ package body org.allbinary.logic.communication.smtp.configuration.server.EmailSe
       Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.putF (commonStrings.START, This'Unchecked_Access, commonStrings.CONSTRUCTOR);
+            This.logUtil.putF (commonStrings.START, EmailServerConfiguration_Access'(This'Unchecked_Access), commonStrings.CONSTRUCTOR);
         end if;
         This.setSmtpServer (StringUtil_Package.getInstance.EMPTY_STRING);
    end Initialize;
@@ -43,13 +43,14 @@ package body org.allbinary.logic.communication.smtp.configuration.server.EmailSe
       return This;
    end Create;
 
-   procedure Initialize (This : in out EmailServerConfiguration'Class; hashMap : HashMap_Access) is
+   procedure Initialize (This : in out EmailServerConfiguration'Class; hashMap_Param : access HashMap'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
       commonStrings : CommonStrings_Access;
    begin
       Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.putF (commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("EmailServerConfiguration(HashMap)"));
+            This.logUtil.putF (commonStrings.START, EmailServerConfiguration_Access'(This'Unchecked_Access), To_Unbounded_String ("EmailServerConfiguration(HashMap)"));
         end if;
         This.setAccountName (Unbounded_String (hashMap.get (EmailServerConfigurationData_Package.ACCOUNT)));
         This.setPassword (Unbounded_String (hashMap.get (EmailServerConfigurationData_Package.PASSWORD)));
@@ -57,10 +58,10 @@ package body org.allbinary.logic.communication.smtp.configuration.server.EmailSe
         This.log;
    end Initialize;
 
-   function Create (hashMap : HashMap_Access) return EmailServerConfiguration_Access is
+   function Create (hashMap_Param : access HashMap'Class) return EmailServerConfiguration_Access is
       This : constant EmailServerConfiguration_Access := new EmailServerConfiguration;
    begin
-      EmailServerConfiguration_Package.Initialize (This.all, hashMap);
+      EmailServerConfiguration_Package.Initialize (This.all, hashMap_Param);
       return This;
    end Create;
 
@@ -70,7 +71,7 @@ package body org.allbinary.logic.communication.smtp.configuration.server.EmailSe
       Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.putF (commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("EmailServerConfiguration(HashMap)"));
+            This.logUtil.putF (commonStrings.START, EmailServerConfiguration_Access'(This'Unchecked_Access), To_Unbounded_String ("EmailServerConfiguration(HashMap)"));
         end if;
         This.setAccountName (account);
         This.setPassword (password);
@@ -118,7 +119,7 @@ package body org.allbinary.logic.communication.smtp.configuration.server.EmailSe
    procedure log (This : in out EmailServerConfiguration) is
    begin
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
-            This.logUtil.putF (This.toString, This'Unchecked_Access, To_Unbounded_String ("EmailServerConfiguration"));
+            This.logUtil.putF (This.toString, EmailServerConfiguration_Access'(This'Unchecked_Access), To_Unbounded_String ("EmailServerConfiguration"));
         end if;
    end log;
 

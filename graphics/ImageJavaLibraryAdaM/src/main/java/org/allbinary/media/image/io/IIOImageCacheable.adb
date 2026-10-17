@@ -41,7 +41,8 @@ package body org.allbinary.media.image.io.IIOImageCacheable_Package is
         return This.key;
    end getKey;
 
-   procedure setBufferedImage (This : in out IIOImageCacheable; bufferedImage : BufferedImage_Access) is
+   procedure setBufferedImage (This : in out IIOImageCacheable; bufferedImage_Param : access BufferedImage'Class) is
+      bufferedImage : BufferedImage_Access := BufferedImage_Access (bufferedImage_Param);
    begin
         This.setIioImage (IIOImage_Package.Create (bufferedImage, null, null));
    end setBufferedImage;
@@ -51,7 +52,8 @@ package body org.allbinary.media.image.io.IIOImageCacheable_Package is
         return This.iioImage;
    end getIioImage;
 
-   procedure setIioImage (This : in out IIOImageCacheable; iioImage : IIOImage_Access) is
+   procedure setIioImage (This : in out IIOImageCacheable; iioImage_Param : access IIOImage'Class) is
+      iioImage : IIOImage_Access := IIOImage_Access (iioImage_Param);
    begin
         This.iioImage := iioImage;
    end setIioImage;

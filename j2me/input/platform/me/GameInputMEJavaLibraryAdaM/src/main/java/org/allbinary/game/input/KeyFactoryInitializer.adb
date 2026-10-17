@@ -37,7 +37,7 @@ package body org.allbinary.game.input.KeyFactoryInitializer_Package is
 
    procedure init (This : in out KeyFactoryInitializer) is
    begin
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.INIT);
+        This.logUtil.putF (This.commonStrings.START, KeyFactoryInitializer_Access'(This'Unchecked_Access), This.commonStrings.INIT);
    end init;
 
 end org.allbinary.game.input.KeyFactoryInitializer_Package;

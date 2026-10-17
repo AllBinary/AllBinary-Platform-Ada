@@ -36,8 +36,8 @@ package org.allbinary.game.layer.capital.event.CapitalEvent_Package is
       value : Integer;
    end record;
 
-   procedure Initialize (This : in out CapitalEvent'Class; anyType : Java_Object_Access);
-   function Create (anyType : Java_Object_Access) return CapitalEvent_Access;
+   procedure Initialize (This : in out CapitalEvent'Class; anyType_Param : access Java_Object'Class);
+   function Create (anyType_Param : access Java_Object'Class) return CapitalEvent_Access;
    function toString (This : in out CapitalEvent) return Unbounded_String;
    function getValue (This : in out CapitalEvent) return Integer;
    procedure setValue (This : in out CapitalEvent; value : Integer);

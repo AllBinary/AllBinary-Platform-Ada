@@ -56,13 +56,13 @@ package org.allbinary.game.configuration.LoadGameForm_Package is
       areChoices : Boolean;
    end record;
 
-   procedure Initialize (This : in out LoadGameForm'Class; commandListener : CommandListener_Access; title : Unbounded_String; backgrounBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access);
-   function Create (commandListener : CommandListener_Access; title : Unbounded_String; backgrounBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return LoadGameForm_Access;
-   procedure initCommands (This : in out LoadGameForm; cmdListener : CommandListener_Access);
+   procedure Initialize (This : in out LoadGameForm'Class; commandListener_Param : access CommandListener'Class; title : Unbounded_String; backgrounBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class);
+   function Create (commandListener_Param : access CommandListener'Class; title : Unbounded_String; backgrounBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return LoadGameForm_Access;
+   procedure initCommands (This : in out LoadGameForm; cmdListener_Param : access CommandListener'Class);
    procedure update (This : in out LoadGameForm);
-   procedure add (This : in out LoadGameForm; list : BasicArrayList_Access; name : Unbounded_String; option : Integer);
-   function getChoiceGroup (This : in out LoadGameForm; list : BasicArrayList_Access; name : Unbounded_String; option : Integer) return ChoiceGroup_Access;
-   procedure getChoiceGroup (This : in out LoadGameForm; list : BasicArrayList_Access; name : Unbounded_String; option : Integer);
+   procedure add (This : in out LoadGameForm; list_Param : access BasicArrayList'Class; name : Unbounded_String; option : Integer);
+   function getChoiceGroup (This : in out LoadGameForm; list_Param : access BasicArrayList'Class; name : Unbounded_String; option : Integer) return ChoiceGroup_Access;
+   procedure getChoiceGroup (This : in out LoadGameForm; list_Param : access BasicArrayList'Class; name : Unbounded_String; option : Integer);
    function getSelectedId (This : in out LoadGameForm) return Integer;
    function getSelectedText (This : in out LoadGameForm) return Integer;
 

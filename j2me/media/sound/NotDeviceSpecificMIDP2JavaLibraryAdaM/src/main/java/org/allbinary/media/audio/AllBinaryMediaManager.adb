@@ -50,7 +50,8 @@ package body org.allbinary.media.audio.AllBinaryMediaManager_Package is
    end update;
 
    --  throws Exception
-   procedure init (soundsFactoryInterface : SoundsFactoryInterface_Access) is
+   procedure init (soundsFactoryInterface_Param : access SoundsFactoryInterface'Class) is
+      soundsFactoryInterface : SoundsFactoryInterface_Access := SoundsFactoryInterface_Access (soundsFactoryInterface_Param);
       logUtil : LogUtil_Access;
       commonString : CommonStrings_Access;
    begin
@@ -62,7 +63,8 @@ package body org.allbinary.media.audio.AllBinaryMediaManager_Package is
    end init;
 
    --  throws Exception
-   procedure shutdown (soundsFactoryInterface : SoundsFactoryInterface_Access) is
+   procedure shutdown (soundsFactoryInterface_Param : access SoundsFactoryInterface'Class) is
+      soundsFactoryInterface : SoundsFactoryInterface_Access := SoundsFactoryInterface_Access (soundsFactoryInterface_Param);
    begin
         Sounds_Package.Create (soundsFactoryInterface).stopAll;
         Sounds_Package.Create (soundsFactoryInterface).closeAll;

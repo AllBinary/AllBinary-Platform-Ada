@@ -40,13 +40,17 @@ package body org.allbinary.game.layer.waypoint.WaypointCellPositionHistory_Packa
         return WaypointCellPositionHistory_Package.SINGLETON;
    end getInstance;
 
-   procedure add (This : in out WaypointCellPositionHistory; cellPosition : CellPosition_Access; layerInterface : AllBinaryLayer_Access) is
+   procedure add (This : in out WaypointCellPositionHistory; cellPosition_Param : access CellPosition'Class; layerInterface_Param : access AllBinaryLayer'Class) is
+      cellPosition : CellPosition_Access := CellPosition_Access (cellPosition_Param);
+      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
    begin
         This.positionList.add (cellPosition);
         This.layerList.add (layerInterface);
    end add;
 
-   procedure addList (This : in out WaypointCellPositionHistory; list : BasicArrayList_Access; layerInterface : AllBinaryLayer_Access) is
+   procedure addList (This : in out WaypointCellPositionHistory; list_Param : access BasicArrayList'Class; layerInterface_Param : access AllBinaryLayer'Class) is
+      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
+      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
       index : Integer;
    begin
         for index in reverse 0 .. (list.size) - (1) loop
@@ -54,7 +58,8 @@ package body org.allbinary.game.layer.waypoint.WaypointCellPositionHistory_Packa
         end loop;
    end addList;
 
-   procedure remove (This : in out WaypointCellPositionHistory; cellPosition : CellPosition_Access) is
+   procedure remove (This : in out WaypointCellPositionHistory; cellPosition_Param : access CellPosition'Class) is
+      cellPosition : CellPosition_Access := CellPosition_Access (cellPosition_Param);
       index : Integer;
    begin
         index := This.positionList.indexOf (cellPosition);
@@ -64,7 +69,8 @@ package body org.allbinary.game.layer.waypoint.WaypointCellPositionHistory_Packa
         end if;
    end remove;
 
-   procedure removeLayer (This : in out WaypointCellPositionHistory; layerInterface : AllBinaryLayer_Access) is
+   procedure removeLayer (This : in out WaypointCellPositionHistory; layerInterface_Param : access AllBinaryLayer'Class) is
+      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
       index : Integer;
    begin
         index := 0;
@@ -83,12 +89,14 @@ package body org.allbinary.game.layer.waypoint.WaypointCellPositionHistory_Packa
         This.layerList.clear;
    end clear;
 
-   function isCellPositionWithDrop (This : in out WaypointCellPositionHistory; cellPosition : CellPosition_Access) return Boolean is
+   function isCellPositionWithDrop (This : in out WaypointCellPositionHistory; cellPosition_Param : access CellPosition'Class) return Boolean is
+      cellPosition : CellPosition_Access := CellPosition_Access (cellPosition_Param);
    begin
         return This.positionList.contains (cellPosition);
    end isCellPositionWithDrop;
 
-   function anyCellPositionWithDrop (This : in out WaypointCellPositionHistory; list : BasicArrayList_Access) return Boolean is
+   function anyCellPositionWithDrop (This : in out WaypointCellPositionHistory; list_Param : access BasicArrayList'Class) return Boolean is
+      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
       index : Integer;
    begin
         for index in reverse 0 .. (list.size) - (1) loop
@@ -99,7 +107,8 @@ package body org.allbinary.game.layer.waypoint.WaypointCellPositionHistory_Packa
         return False;
    end anyCellPositionWithDrop;
 
-   function getLayerInterface (This : in out WaypointCellPositionHistory; cellPosition : CellPosition_Access) return AllBinaryLayer_Access is
+   function getLayerInterface (This : in out WaypointCellPositionHistory; cellPosition_Param : access CellPosition'Class) return AllBinaryLayer_Access is
+      cellPosition : CellPosition_Access := CellPosition_Access (cellPosition_Param);
       index : Integer;
    begin
         index := This.positionList.indexOf (cellPosition);
@@ -110,22 +119,22 @@ package body org.allbinary.game.layer.waypoint.WaypointCellPositionHistory_Packa
         end if;
    end getLayerInterface;
 
-   procedure isCellPositionWithDrop (This : in out WaypointCellPositionHistory; cellPosition : CellPosition_Access) is
-      Java_Result : constant Boolean := WaypointCellPositionHistory'Class (This).isCellPositionWithDrop (cellPosition);
+   procedure isCellPositionWithDrop (This : in out WaypointCellPositionHistory; cellPosition_Param : access CellPosition'Class) is
+      Java_Result : constant Boolean := WaypointCellPositionHistory'Class (This).isCellPositionWithDrop (cellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isCellPositionWithDrop;
 
-   procedure anyCellPositionWithDrop (This : in out WaypointCellPositionHistory; list : BasicArrayList_Access) is
-      Java_Result : constant Boolean := WaypointCellPositionHistory'Class (This).anyCellPositionWithDrop (list);
+   procedure anyCellPositionWithDrop (This : in out WaypointCellPositionHistory; list_Param : access BasicArrayList'Class) is
+      Java_Result : constant Boolean := WaypointCellPositionHistory'Class (This).anyCellPositionWithDrop (list_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end anyCellPositionWithDrop;
 
-   procedure getLayerInterface (This : in out WaypointCellPositionHistory; cellPosition : CellPosition_Access) is
-      Java_Result : constant AllBinaryLayer_Access := WaypointCellPositionHistory'Class (This).getLayerInterface (cellPosition);
+   procedure getLayerInterface (This : in out WaypointCellPositionHistory; cellPosition_Param : access CellPosition'Class) is
+      Java_Result : constant AllBinaryLayer_Access := WaypointCellPositionHistory'Class (This).getLayerInterface (cellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

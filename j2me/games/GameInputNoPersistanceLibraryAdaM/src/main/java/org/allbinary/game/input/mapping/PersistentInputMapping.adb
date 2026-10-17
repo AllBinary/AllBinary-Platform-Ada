@@ -24,7 +24,7 @@ package body org.allbinary.game.input.mapping.PersistentInputMapping_Package is
       This.inputMapping := InputToGameKeyMapping_Package.Create;
       This.inputMappingEventListenerInterface := NullInputMappingEventListener_Package.NULL_INPUT_MAPPING_EVENT_LISTENER;
       
-      This.inputMappingEvent := InputMappingEvent_Package.Create (This'Unchecked_Access);
+      This.inputMappingEvent := InputMappingEvent_Package.Create (PersistentInputMapping_Access'(This'Unchecked_Access));
    end Initialize_Fields;
 
 
@@ -65,7 +65,8 @@ package body org.allbinary.game.input.mapping.PersistentInputMapping_Package is
    end getDefault;
 
    --  throws Exception
-   procedure setDefault (This : in out PersistentInputMapping; abeClientInformation : AbeClientInformationInterface_Access) is
+   procedure setDefault (This : in out PersistentInputMapping; abeClientInformation_Param : access AbeClientInformationInterface'Class) is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
    begin
         This.getInputMapping.removeAll;
         This.getInputMapping.addMapping (This.getDefault);
@@ -73,14 +74,16 @@ package body org.allbinary.game.input.mapping.PersistentInputMapping_Package is
    end setDefault;
 
    --  throws Exception
-   procedure update (This : in out PersistentInputMapping; abeClientInformation : AbeClientInformationInterface_Access) is
+   procedure update (This : in out PersistentInputMapping; abeClientInformation_Param : access AbeClientInformationInterface'Class) is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
    begin
         This.inputPersistance.deleteAll (abeClientInformation);
         This.save (abeClientInformation);
    end update;
 
    --  throws Exception
-   procedure save (This : in out PersistentInputMapping; abeClientInformation : AbeClientInformationInterface_Access) is
+   procedure save (This : in out PersistentInputMapping; abeClientInformation_Param : access AbeClientInformationInterface'Class) is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
    begin
         This.inputPersistance.save (abeClientInformation, This.getInputMapping.getHashtable);
         This.inputMappingEvent.setInputToGameKeyMapping (This.getInputMapping);
@@ -90,7 +93,8 @@ package body org.allbinary.game.input.mapping.PersistentInputMapping_Package is
    end save;
 
    --  throws Exception
-   procedure init (This : in out PersistentInputMapping; abeClientInformation : AbeClientInformationInterface_Access) is
+   procedure init (This : in out PersistentInputMapping; abeClientInformation_Param : access AbeClientInformationInterface'Class) is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
       list : BasicArrayList_Access;
       totalMappedTo : Integer;
       size : Integer;
@@ -101,7 +105,7 @@ package body org.allbinary.game.input.mapping.PersistentInputMapping_Package is
       index : Integer;
       stringBuffer : StringMaker_Access;
    begin
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.INIT);
+        This.logUtil.putF (This.commonStrings.START, PersistentInputMapping_Access'(This'Unchecked_Access), This.commonStrings.INIT);
         begin
             This.inputPersistance.loadAll (abeClientInformation);
         exception
@@ -109,7 +113,7 @@ package body org.allbinary.game.input.mapping.PersistentInputMapping_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            PreLogUtil_Package.putOE (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.INIT, e);
+            PreLogUtil_Package.putOE (This.commonStrings.EXCEPTION_Id, PersistentInputMapping_Access'(This'Unchecked_Access), This.commonStrings.INIT, e);
             This.inputPersistance.deleteRecoreStore (abeClientInformation);
             This.setDefault (abeClientInformation);
             This.inputPersistance.loadAll (abeClientInformation);
@@ -137,10 +141,11 @@ package body org.allbinary.game.input.mapping.PersistentInputMapping_Package is
         stringBuffer.appendint (This.getTotalMapped);
         stringBuffer.append (To_Unbounded_String (" to: "));
         stringBuffer.appendint (totalMappedTo);
-        This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, This.commonStrings.INIT);
+        This.logUtil.putF (stringBuffer.toString, PersistentInputMapping_Access'(This'Unchecked_Access), This.commonStrings.INIT);
    end init;
 
-   procedure setInputMappingEventListenerInterface (This : in out PersistentInputMapping; inputMappingEventListenerInterface : InputMappingEventListenerInterface_Access) is
+   procedure setInputMappingEventListenerInterface (This : in out PersistentInputMapping; inputMappingEventListenerInterface_Param : access InputMappingEventListenerInterface'Class) is
+      inputMappingEventListenerInterface : InputMappingEventListenerInterface_Access := InputMappingEventListenerInterface_Access (inputMappingEventListenerInterface_Param);
    begin
         This.inputMappingEventListenerInterface := inputMappingEventListenerInterface;
    end setInputMappingEventListenerInterface;
@@ -156,26 +161,28 @@ package body org.allbinary.game.input.mapping.PersistentInputMapping_Package is
    end getInputMapping;
 
    --  throws Exception
-   function isDelete (This : in out PersistentInputMapping; input : Input_Access) return Boolean is
+   function isDelete (This : in out PersistentInputMapping; input_Param : access Input'Class) return Boolean is
+      input : Input_Access := Input_Access (input_Param);
    begin
         Java_Throw (Java_New_Exception ("Exception", This.commonStrings.NOT_IMPLEMENTED));
    end isDelete;
 
    --  throws Exception
-   function isSystemInput (This : in out PersistentInputMapping; input : Input_Access) return Boolean is
+   function isSystemInput (This : in out PersistentInputMapping; input_Param : access Input'Class) return Boolean is
+      input : Input_Access := Input_Access (input_Param);
    begin
         Java_Throw (Java_New_Exception ("Exception", This.commonStrings.NOT_IMPLEMENTED));
    end isSystemInput;
 
-   procedure isDelete (This : in out PersistentInputMapping; input : Input_Access) is
-      Java_Result : constant Boolean := PersistentInputMapping'Class (This).isDelete (input);
+   procedure isDelete (This : in out PersistentInputMapping; input_Param : access Input'Class) is
+      Java_Result : constant Boolean := PersistentInputMapping'Class (This).isDelete (input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isDelete;
 
-   procedure isSystemInput (This : in out PersistentInputMapping; input : Input_Access) is
-      Java_Result : constant Boolean := PersistentInputMapping'Class (This).isSystemInput (input);
+   procedure isSystemInput (This : in out PersistentInputMapping; input_Param : access Input'Class) is
+      Java_Result : constant Boolean := PersistentInputMapping'Class (This).isSystemInput (input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

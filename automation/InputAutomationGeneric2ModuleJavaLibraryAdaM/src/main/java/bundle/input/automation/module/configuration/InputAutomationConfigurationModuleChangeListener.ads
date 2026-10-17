@@ -30,8 +30,8 @@ package bundle.input.automation.module.configuration.InputAutomationConfiguratio
    type InputAutomationConfigurationModuleChangeListener_Access is access all InputAutomationConfigurationModuleChangeListener'Class;
    type InputAutomationConfigurationModuleChangeListener_Access_Array is array (Natural range <>) of InputAutomationConfigurationModuleChangeListener_Access;
    type InputAutomationConfigurationModuleChangeListener_Access_Array_Access is access all InputAutomationConfigurationModuleChangeListener_Access_Array;
-   procedure onAdd (This : in out InputAutomationConfigurationModuleChangeListener; inputAutomationConfigurationChangeEvent : InputAutomationConfigurationModuleChangeEvent_Access) is abstract;
-   procedure onRemove (This : in out InputAutomationConfigurationModuleChangeListener; inputAutomationConfigurationChangeEvent : InputAutomationConfigurationModuleChangeEvent_Access) is abstract;
+   procedure onAdd (This : in out InputAutomationConfigurationModuleChangeListener; inputAutomationConfigurationChangeEvent_Param : access InputAutomationConfigurationModuleChangeEvent'Class) is abstract;
+   procedure onRemove (This : in out InputAutomationConfigurationModuleChangeListener; inputAutomationConfigurationChangeEvent_Param : access InputAutomationConfigurationModuleChangeEvent'Class) is abstract;
 
 end bundle.input.automation.module.configuration.InputAutomationConfigurationModuleChangeListener_Package;
 

@@ -23,16 +23,17 @@ package body org.allbinary.logic.control.contraints.size.TwoDimensionalConstrain
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out TwoDimensionalConstraint'Class; node : Node_Access) is
+   procedure Initialize (This : in out TwoDimensionalConstraint'Class; node_Param : access Node'Class) is
+      node : Node_Access := Node_Access (node_Param);
    begin
       Initialize_Fields (This);
         null;
    end Initialize;
 
-   function Create (node : Node_Access) return TwoDimensionalConstraint_Access is
+   function Create (node_Param : access Node'Class) return TwoDimensionalConstraint_Access is
       This : constant TwoDimensionalConstraint_Access := new TwoDimensionalConstraint;
    begin
-      TwoDimensionalConstraint_Package.Initialize (This.all, node);
+      TwoDimensionalConstraint_Package.Initialize (This.all, node_Param);
       return This;
    end Create;
 
@@ -46,12 +47,14 @@ package body org.allbinary.logic.control.contraints.size.TwoDimensionalConstrain
         return This.widthSizeConstraintInterface;
    end getWidth;
 
-   procedure setHeight (This : in out TwoDimensionalConstraint; heightSizeConstraintInterface : SizeConstraintInterface_Access) is
+   procedure setHeight (This : in out TwoDimensionalConstraint; heightSizeConstraintInterface_Param : access SizeConstraintInterface'Class) is
+      heightSizeConstraintInterface : SizeConstraintInterface_Access := SizeConstraintInterface_Access (heightSizeConstraintInterface_Param);
    begin
         This.heightSizeConstraintInterface := heightSizeConstraintInterface;
    end setHeight;
 
-   procedure setWidth (This : in out TwoDimensionalConstraint; widthSizeConstraintInterface : SizeConstraintInterface_Access) is
+   procedure setWidth (This : in out TwoDimensionalConstraint; widthSizeConstraintInterface_Param : access SizeConstraintInterface'Class) is
+      widthSizeConstraintInterface : SizeConstraintInterface_Access := SizeConstraintInterface_Access (widthSizeConstraintInterface_Param);
    begin
         This.widthSizeConstraintInterface := widthSizeConstraintInterface;
    end setWidth;

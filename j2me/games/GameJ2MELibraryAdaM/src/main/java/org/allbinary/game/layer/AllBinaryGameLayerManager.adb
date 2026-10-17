@@ -33,7 +33,10 @@ package body org.allbinary.game.layer.AllBinaryGameLayerManager_Package is
         return AllBinaryGameLayerManager_Access (AllBinaryGameLayerManager_Package.NULL_ALLBINARY_LAYER_MANAGER);
    end getNullInstance;
 
-   procedure Initialize (This : in out AllBinaryGameLayerManager'Class; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access; gameInfo : GameInfo_Access) is
+   procedure Initialize (This : in out AllBinaryGameLayerManager'Class; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class; gameInfo_Param : access GameInfo'Class) is
+      backgroundBasicColor : BasicColor_Access := BasicColor_Access (backgroundBasicColor_Param);
+      foregroundBasicColor : BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
+      gameInfo : GameInfo_Access := GameInfo_Access (gameInfo_Param);
       itemColorFactory : ItemColorFactory_Access;
    begin
       AllBinaryLayerManager_Package.Initialize (This);
@@ -46,16 +49,16 @@ package body org.allbinary.game.layer.AllBinaryGameLayerManager_Package is
         This.gameInfo := gameInfo;
    end Initialize;
 
-   function Create (backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access; gameInfo : GameInfo_Access) return AllBinaryGameLayerManager_Access is
+   function Create (backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class; gameInfo_Param : access GameInfo'Class) return AllBinaryGameLayerManager_Access is
       This : constant AllBinaryGameLayerManager_Access := new AllBinaryGameLayerManager;
    begin
-      AllBinaryGameLayerManager_Package.Initialize (This.all, backgroundBasicColor, foregroundBasicColor, gameInfo);
+      AllBinaryGameLayerManager_Package.Initialize (This.all, backgroundBasicColor_Param, foregroundBasicColor_Param, gameInfo_Param);
       return This;
    end Create;
 
    function getLayerManager (This : in out AllBinaryGameLayerManager) return AllBinaryLayerManager_Access is
    begin
-        return This'Unchecked_Access;
+        return AllBinaryGameLayerManager_Access'(This'Unchecked_Access);
    end getLayerManager;
 
    procedure init (This : in out AllBinaryGameLayerManager) is
@@ -68,7 +71,8 @@ package body org.allbinary.game.layer.AllBinaryGameLayerManager_Package is
         return This.backgroundBasicColor;
    end getBackgroundBasicColor;
 
-   procedure setBackgroundBasicColor (This : in out AllBinaryGameLayerManager; backgroundBasicColor : BasicColor_Access) is
+   procedure setBackgroundBasicColor (This : in out AllBinaryGameLayerManager; backgroundBasicColor_Param : access BasicColor'Class) is
+      backgroundBasicColor : BasicColor_Access := BasicColor_Access (backgroundBasicColor_Param);
    begin
         This.backgroundBasicColor := backgroundBasicColor;
         ItemColorFactory_Package.getInstance.INVERT_PAINT := This.backgroundBasicColor.intValue;
@@ -79,7 +83,8 @@ package body org.allbinary.game.layer.AllBinaryGameLayerManager_Package is
         return This.foregroundBasicColor;
    end getForegroundBasicColor;
 
-   procedure setForegroundBasicColor (This : in out AllBinaryGameLayerManager; foregroundBasicColor : BasicColor_Access) is
+   procedure setForegroundBasicColor (This : in out AllBinaryGameLayerManager; foregroundBasicColor_Param : access BasicColor'Class) is
+      foregroundBasicColor : BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
    begin
         This.foregroundBasicColor := foregroundBasicColor;
         ItemColorFactory_Package.getInstance.PAINT := This.foregroundBasicColor.intValue;
@@ -90,12 +95,14 @@ package body org.allbinary.game.layer.AllBinaryGameLayerManager_Package is
         return This.gameInfo;
    end getGameInfo;
 
-   procedure setGameInfo (This : in out AllBinaryGameLayerManager; gameInfo : GameInfo_Access) is
+   procedure setGameInfo (This : in out AllBinaryGameLayerManager; gameInfo_Param : access GameInfo'Class) is
+      gameInfo : GameInfo_Access := GameInfo_Access (gameInfo_Param);
    begin
         This.gameInfo := gameInfo;
    end setGameInfo;
 
-   procedure setLayerProcessorList (This : in out AllBinaryGameLayerManager; list : BasicArrayList_Access) is
+   procedure setLayerProcessorList (This : in out AllBinaryGameLayerManager; list_Param : access BasicArrayList'Class) is
+      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
       layerProcessorInterfaceArray : LayerProcessor_Access_Array_Access;
       size : Integer;
       index : Integer;
@@ -108,7 +115,8 @@ package body org.allbinary.game.layer.AllBinaryGameLayerManager_Package is
         This.setLayerProcessorArray (layerProcessorInterfaceArray);
    end setLayerProcessorList;
 
-   procedure setPlayerGameInputCompositeInterface (This : in out AllBinaryGameLayerManager; playerGameInputCompositeInterface : PlayerGameInputCompositeInterface_Access) is
+   procedure setPlayerGameInputCompositeInterface (This : in out AllBinaryGameLayerManager; playerGameInputCompositeInterface_Param : access PlayerGameInputCompositeInterface'Class) is
+      playerGameInputCompositeInterface : PlayerGameInputCompositeInterface_Access := PlayerGameInputCompositeInterface_Access (playerGameInputCompositeInterface_Param);
    begin
         This.playerGameInputCompositeInterface := playerGameInputCompositeInterface;
    end setPlayerGameInputCompositeInterface;

@@ -47,8 +47,8 @@ package org.allbinary.graphics.j2me.workarea.WorkAreaDom_Package is
    NAME : Unbounded_String;
    FRAMES : Unbounded_String;
 
-   procedure Initialize (This : in out WorkAreaDom'Class; document : Document_Access);
-   function Create (document : Document_Access) return WorkAreaDom_Access;
+   procedure Initialize (This : in out WorkAreaDom'Class; document_Param : access Document'Class);
+   function Create (document_Param : access Document'Class) return WorkAreaDom_Access;
    function getName (This : in out WorkAreaDom) return Unbounded_String;
    function getCanvasNodes (This : in out WorkAreaDom) return BasicArrayList_Access;
 

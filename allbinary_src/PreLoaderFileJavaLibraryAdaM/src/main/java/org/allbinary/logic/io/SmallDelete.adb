@@ -65,7 +65,7 @@ package body org.allbinary.logic.io.SmallDelete_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.IDLOGGING) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("deleteAtStart"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, SmallDelete_Access'(This'Unchecked_Access), To_Unbounded_String ("deleteAtStart"), e);
             end if;
             return False;
                 end;
@@ -100,7 +100,7 @@ package body org.allbinary.logic.io.SmallDelete_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.IDLOGGING) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("deleteAtStart"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, SmallDelete_Access'(This'Unchecked_Access), To_Unbounded_String ("deleteAtStart"), e);
             end if;
             return False;
                 end;

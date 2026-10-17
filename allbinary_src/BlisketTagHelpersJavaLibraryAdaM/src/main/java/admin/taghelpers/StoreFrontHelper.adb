@@ -24,7 +24,9 @@ package body admin.taghelpers.StoreFrontHelper_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out StoreFrontHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access) is
+   procedure Initialize (This : in out StoreFrontHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
       storeName : Unbounded_String;
       stringUtil : StringUtil_Access;
    begin
@@ -43,10 +45,10 @@ package body admin.taghelpers.StoreFrontHelper_Package is
         end if;
    end Initialize;
 
-   function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return StoreFrontHelper_Access is
+   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return StoreFrontHelper_Access is
       This : constant StoreFrontHelper_Access := new StoreFrontHelper;
    begin
-      StoreFrontHelper_Package.Initialize (This.all, hashMap, pageContext);
+      StoreFrontHelper_Package.Initialize (This.all, hashMap_Param, pageContext_Param);
       return This;
    end Create;
 

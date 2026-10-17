@@ -41,7 +41,7 @@ package org.allbinary.emulator.swt.SWTProcessor_Package is
    procedure Initialize (This : in out SWTProcessor'Class);
    function Create return SWTProcessor_Access;
    function getInstance return SWTProcessor_Access;
-   procedure process (This : in out SWTProcessor; display : Display_Access);
+   procedure process (This : in out SWTProcessor; display_Param : access Display'Class);
 
 end org.allbinary.emulator.swt.SWTProcessor_Package;
 

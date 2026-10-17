@@ -43,7 +43,7 @@ package org.allbinary.logic.io.BufferedIOUtil_Package is
 
    procedure Initialize (This : in out BufferedIOUtil'Class);
    function Create return BufferedIOUtil_Access;
-   procedure copy (backupFile : AbFile_Access; backupFileBak : AbFile_Access);
+   procedure copy (backupFile_Param : access AbFile'Class; backupFileBak_Param : access AbFile'Class);
 
 end org.allbinary.logic.io.BufferedIOUtil_Package;
 

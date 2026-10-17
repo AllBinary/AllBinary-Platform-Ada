@@ -78,23 +78,23 @@ package org.allbinary.logic.control.workflow.request.BasicWorkFlow_Package is
 
    procedure Initialize (This : in out BasicWorkFlow'Class);
    function Create return BasicWorkFlow_Access;
-   procedure Initialize (This : in out BasicWorkFlow'Class; hashMap : HashMap_Access; pageContext : PageContext_Access);
-   function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return BasicWorkFlow_Access;
-   procedure Initialize (This : in out BasicWorkFlow'Class; hashMap : HashMap_Access);
-   function Create (hashMap : HashMap_Access) return BasicWorkFlow_Access;
+   procedure Initialize (This : in out BasicWorkFlow'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
+   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return BasicWorkFlow_Access;
+   procedure Initialize (This : in out BasicWorkFlow'Class; hashMap_Param : access HashMap'Class);
+   function Create (hashMap_Param : access HashMap'Class) return BasicWorkFlow_Access;
    function getName (This : in out BasicWorkFlow) return Unbounded_String;
    function getStoreName (This : in out BasicWorkFlow) return Unbounded_String;
    function getKey (This : in out BasicWorkFlow) return Java_Object_Access;
    function toVector (This : in out BasicWorkFlow) return BasicArrayList_Access;
    function toHashMap (This : in out BasicWorkFlow) return HashMap_Access;
-   function toXmlNode (This : in out BasicWorkFlow; document : Document_Access) return Node_Access;
-   procedure toXmlNode (This : in out BasicWorkFlow; document : Document_Access);
+   function toXmlNode (This : in out BasicWorkFlow; document_Param : access Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out BasicWorkFlow; document_Param : access Document'Class);
    function toXmlDoc (This : in out BasicWorkFlow) return Document_Access;
    function isValid (This : in out BasicWorkFlow) return Boolean;
    function validationInfo (This : in out BasicWorkFlow) return Unbounded_String;
    function toValidationInfoDoc (This : in out BasicWorkFlow) return Document_Access;
-   function toValidationInfoNode (This : in out BasicWorkFlow; document : Document_Access) return Node_Access;
-   procedure toValidationInfoNode (This : in out BasicWorkFlow; document : Document_Access);
+   function toValidationInfoNode (This : in out BasicWorkFlow; document_Param : access Document'Class) return Node_Access;
+   procedure toValidationInfoNode (This : in out BasicWorkFlow; document_Param : access Document'Class);
 
 end org.allbinary.logic.control.workflow.request.BasicWorkFlow_Package;
 

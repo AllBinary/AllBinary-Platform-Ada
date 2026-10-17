@@ -36,8 +36,8 @@ package org.allbinary.game.displayable.canvas.GameProcessor_Package is
       gameCanvas : AllBinaryGameCanvas_Access;
    end record;
 
-   procedure Initialize (This : in out GameProcessor'Class; gameCanvas : AllBinaryGameCanvas_Access);
-   function Create (gameCanvas : AllBinaryGameCanvas_Access) return GameProcessor_Access;
+   procedure Initialize (This : in out GameProcessor'Class; gameCanvas_Param : access AllBinaryGameCanvas'Class);
+   function Create (gameCanvas_Param : access AllBinaryGameCanvas'Class) return GameProcessor_Access;
    procedure process (This : in out GameProcessor);
 
 end org.allbinary.game.displayable.canvas.GameProcessor_Package;

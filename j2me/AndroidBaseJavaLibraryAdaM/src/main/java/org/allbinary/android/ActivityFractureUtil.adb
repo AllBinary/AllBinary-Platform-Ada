@@ -34,12 +34,14 @@ package body org.allbinary.android.ActivityFractureUtil_Package is
 
 
    --  throws Exception
-   procedure process (This : in out ActivityFractureUtil; activity : Activity_Access) is
+   procedure process (This : in out ActivityFractureUtil; activity_Param : access Activity'Class) is
+      activity : Activity_Access := Activity_Access (activity_Param);
    begin
         null;
    end process;
 
-   procedure setFullScreen (This : in out ActivityFractureUtil; activity : Activity_Access) is
+   procedure setFullScreen (This : in out ActivityFractureUtil; activity_Param : access Activity'Class) is
+      activity : Activity_Access := Activity_Access (activity_Param);
    begin
         null;
    end setFullScreen;

@@ -27,7 +27,9 @@ package body org.allbinary.animation.image.TweenedImageAnimation_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out TweenedImageAnimation'Class; image : Image_Access; dx : Integer; dy : Integer; totalFrames : Integer; animationBehavior : AnimationBehavior_Access) is
+   procedure Initialize (This : in out TweenedImageAnimation'Class; image_Param : access Image'Class; dx : Integer; dy : Integer; totalFrames : Integer; animationBehavior_Param : access AnimationBehavior'Class) is
+      image : Image_Access := Image_Access (image_Param);
+      animationBehavior : AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
    begin
         IndexedAnimation_Package.Initialize (This, animationBehavior);
         Initialize_Fields (This);
@@ -38,10 +40,10 @@ package body org.allbinary.animation.image.TweenedImageAnimation_Package is
         This.circularIndexUtil := CircularIndexUtil_Package.createInstance (This.totalFrames);
    end Initialize;
 
-   function Create (image : Image_Access; dx : Integer; dy : Integer; totalFrames : Integer; animationBehavior : AnimationBehavior_Access) return TweenedImageAnimation_Access is
+   function Create (image_Param : access Image'Class; dx : Integer; dy : Integer; totalFrames : Integer; animationBehavior_Param : access AnimationBehavior'Class) return TweenedImageAnimation_Access is
       This : constant TweenedImageAnimation_Access := new TweenedImageAnimation;
    begin
-      TweenedImageAnimation_Package.Initialize (This.all, image, dx, dy, totalFrames, animationBehavior);
+      TweenedImageAnimation_Package.Initialize (This.all, image_Param, dx, dy, totalFrames, animationBehavior_Param);
       return This;
    end Create;
 
@@ -86,7 +88,8 @@ package body org.allbinary.animation.image.TweenedImageAnimation_Package is
         return PrimitiveIntUtil_Package.getArrayInstance;
    end getSequence;
 
-   procedure paintXY (This : in out TweenedImageAnimation; graphics : Graphics_Access; x : Integer; y : Integer) is
+   procedure paintXY (This : in out TweenedImageAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       frame : Integer;
       currentX : Integer;
       currentY : Integer;

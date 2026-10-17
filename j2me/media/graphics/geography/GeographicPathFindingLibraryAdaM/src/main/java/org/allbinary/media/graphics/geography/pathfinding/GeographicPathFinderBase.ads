@@ -41,10 +41,10 @@ package org.allbinary.media.graphics.geography.pathfinding.GeographicPathFinderB
 
    procedure Initialize (This : in out GeographicPathFinderBase'Class);
    function Create return GeographicPathFinderBase_Access;
-   function searchTotalPath (This : in out GeographicPathFinderBase; startPathFindingNodeList : BasicArrayList_Access; endPathFindingNodeList : BasicArrayList_Access; totalPaths : Integer) return BasicArrayList_Access;
-   procedure searchTotalPath (This : in out GeographicPathFinderBase; startPathFindingNodeList : BasicArrayList_Access; endPathFindingNodeList : BasicArrayList_Access; totalPaths : Integer);
-   function searchTotalPathN (This : in out GeographicPathFinderBase; startPathFindingNodeList : BasicArrayList_Access; endPathFindingNodeList : BasicArrayList_Access; totalPaths : Integer; multipassState : MultipassState_Access) return BasicArrayList_Access;
-   procedure searchTotalPathN (This : in out GeographicPathFinderBase; startPathFindingNodeList : BasicArrayList_Access; endPathFindingNodeList : BasicArrayList_Access; totalPaths : Integer; multipassState : MultipassState_Access);
+   function searchTotalPath (This : in out GeographicPathFinderBase; startPathFindingNodeList_Param : access BasicArrayList'Class; endPathFindingNodeList_Param : access BasicArrayList'Class; totalPaths : Integer) return BasicArrayList_Access;
+   procedure searchTotalPath (This : in out GeographicPathFinderBase; startPathFindingNodeList_Param : access BasicArrayList'Class; endPathFindingNodeList_Param : access BasicArrayList'Class; totalPaths : Integer);
+   function searchTotalPathN (This : in out GeographicPathFinderBase; startPathFindingNodeList_Param : access BasicArrayList'Class; endPathFindingNodeList_Param : access BasicArrayList'Class; totalPaths : Integer; multipassState_Param : access MultipassState'Class) return BasicArrayList_Access;
+   procedure searchTotalPathN (This : in out GeographicPathFinderBase; startPathFindingNodeList_Param : access BasicArrayList'Class; endPathFindingNodeList_Param : access BasicArrayList'Class; totalPaths : Integer; multipassState_Param : access MultipassState'Class);
 
 end org.allbinary.media.graphics.geography.pathfinding.GeographicPathFinderBase_Package;
 

@@ -70,16 +70,16 @@ package org.allbinary.game.configuration.feature.Features_Package is
    procedure Initialize (This : in out Features'Class);
    function Create return Features_Access;
    function getInstance return Features_Access;
-   procedure addDefault (This : in out Features; gameFeature : Feature_Access);
-   procedure add (This : in out Features; gameFeature : Feature_Access);
-   procedure removeDefault (This : in out Features; gameFeature : Feature_Access);
-   procedure remove (This : in out Features; gameFeature : Feature_Access);
+   procedure addDefault (This : in out Features; gameFeature_Param : access Feature'Class);
+   procedure add (This : in out Features; gameFeature_Param : access Feature'Class);
+   procedure removeDefault (This : in out Features; gameFeature_Param : access Feature'Class);
+   procedure remove (This : in out Features; gameFeature_Param : access Feature'Class);
    procedure init (This : in out Features);
-   function isDefault (This : in out Features; gameFeature : Feature_Access) return Boolean;
-   procedure isDefault (This : in out Features; gameFeature : Feature_Access);
-   function isFeature (This : in out Features; gameFeature : Feature_Access) return Boolean;
-   procedure isFeature (This : in out Features; gameFeature : Feature_Access);
-   procedure toggle (This : in out Features; gameFeature : Feature_Access);
+   function isDefault (This : in out Features; gameFeature_Param : access Feature'Class) return Boolean;
+   procedure isDefault (This : in out Features; gameFeature_Param : access Feature'Class);
+   function isFeature (This : in out Features; gameFeature_Param : access Feature'Class) return Boolean;
+   procedure isFeature (This : in out Features; gameFeature_Param : access Feature'Class);
+   procedure toggle (This : in out Features; gameFeature_Param : access Feature'Class);
 
 end org.allbinary.game.configuration.feature.Features_Package;
 

@@ -44,8 +44,8 @@ package org.allbinary.logic.system.os.android.AndroidSystemProperties_Package is
    end record;
    SINGLETON : AndroidSystemProperties_Access;
 
-   procedure Initialize (This : in out AndroidSystemProperties'Class; context : Context_Access);
-   function Create (context : Context_Access) return AndroidSystemProperties_Access;
+   procedure Initialize (This : in out AndroidSystemProperties'Class; context_Param : access Context'Class);
+   function Create (context_Param : access Context'Class) return AndroidSystemProperties_Access;
    function getInstance return AndroidSystemProperties_Access;
    function getDeviceId (This : in out AndroidSystemProperties) return Unbounded_String;
    function getDeviceSoftwareVersion (This : in out AndroidSystemProperties) return Unbounded_String;

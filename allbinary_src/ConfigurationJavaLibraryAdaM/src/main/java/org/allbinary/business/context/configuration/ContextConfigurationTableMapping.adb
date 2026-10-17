@@ -22,16 +22,17 @@ package body org.allbinary.business.context.configuration.ContextConfigurationTa
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ContextConfigurationTableMapping'Class; contextConfigurationInterface : ContextConfigurationInterface_Access) is
+   procedure Initialize (This : in out ContextConfigurationTableMapping'Class; contextConfigurationInterface_Param : access ContextConfigurationInterface'Class) is
+      contextConfigurationInterface : ContextConfigurationInterface_Access := ContextConfigurationInterface_Access (contextConfigurationInterface_Param);
    begin
       Initialize_Fields (This);
         This.contextConfigurationInterface := contextConfigurationInterface;
    end Initialize;
 
-   function Create (contextConfigurationInterface : ContextConfigurationInterface_Access) return ContextConfigurationTableMapping_Access is
+   function Create (contextConfigurationInterface_Param : access ContextConfigurationInterface'Class) return ContextConfigurationTableMapping_Access is
       This : constant ContextConfigurationTableMapping_Access := new ContextConfigurationTableMapping;
    begin
-      ContextConfigurationTableMapping_Package.Initialize (This.all, contextConfigurationInterface);
+      ContextConfigurationTableMapping_Package.Initialize (This.all, contextConfigurationInterface_Param);
       return This;
    end Create;
 

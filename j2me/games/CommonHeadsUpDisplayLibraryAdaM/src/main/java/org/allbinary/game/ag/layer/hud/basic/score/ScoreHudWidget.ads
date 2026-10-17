@@ -39,11 +39,11 @@ package org.allbinary.game.ag.layer.hud.basic.score.ScoreHudWidget_Package is
 
    type ScoreHudWidget is new NumberStringHud with null record;
 
-   procedure Initialize (This : in out ScoreHudWidget'Class; maxscore : Integer; location : Integer; direction : Integer; bufferZone : Integer; basicColor : BasicColor_Access);
-   function Create (maxscore : Integer; location : Integer; direction : Integer; bufferZone : Integer; basicColor : BasicColor_Access) return ScoreHudWidget_Access;
+   procedure Initialize (This : in out ScoreHudWidget'Class; maxscore : Integer; location : Integer; direction : Integer; bufferZone : Integer; basicColor_Param : access BasicColor'Class);
+   function Create (maxscore : Integer; location : Integer; direction : Integer; bufferZone : Integer; basicColor_Param : access BasicColor'Class) return ScoreHudWidget_Access;
    function getInstance (maxscore : Integer; location : Integer; direction : Integer) return ScoreHudWidget_Access;
    procedure getInstance (maxscore : Integer; location : Integer; direction : Integer);
-   procedure updateMeasurement (This : in out ScoreHudWidget; graphics : Graphics_Access);
+   procedure updateMeasurement (This : in out ScoreHudWidget; graphics_Param : access Graphics'Class);
 
 end org.allbinary.game.ag.layer.hud.basic.score.ScoreHudWidget_Package;
 

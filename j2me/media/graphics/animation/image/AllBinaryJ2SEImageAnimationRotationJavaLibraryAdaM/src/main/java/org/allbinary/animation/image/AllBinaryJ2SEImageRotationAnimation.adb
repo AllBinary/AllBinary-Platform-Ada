@@ -38,7 +38,11 @@ package body org.allbinary.animation.image.AllBinaryJ2SEImageRotationAnimation_P
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AllBinaryJ2SEImageRotationAnimation'Class; originalImage : Image_Access; image : Image_Access; angleInfo : AngleInfo_Access; totalAngle : Short_Integer; animationBehavior : AnimationBehavior_Access) is
+   procedure Initialize (This : in out AllBinaryJ2SEImageRotationAnimation'Class; originalImage_Param : access Image'Class; image_Param : access Image'Class; angleInfo_Param : access AngleInfo'Class; totalAngle : Short_Integer; animationBehavior_Param : access AnimationBehavior'Class) is
+      originalImage : Image_Access := Image_Access (originalImage_Param);
+      image : Image_Access := Image_Access (image_Param);
+      angleInfo : AngleInfo_Access := AngleInfo_Access (angleInfo_Param);
+      animationBehavior : AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
    begin
         ImageBaseRotationAnimation_Package.Initialize (This, image, angleInfo, totalAngle, animationBehavior);
         Initialize_Fields (This);
@@ -49,14 +53,15 @@ package body org.allbinary.animation.image.AllBinaryJ2SEImageRotationAnimation_P
         This.twoImages (1) := ImageCopyUtil_Package.getInstance.createImageForRotation (image);
    end Initialize;
 
-   function Create (originalImage : Image_Access; image : Image_Access; angleInfo : AngleInfo_Access; totalAngle : Short_Integer; animationBehavior : AnimationBehavior_Access) return AllBinaryJ2SEImageRotationAnimation_Access is
+   function Create (originalImage_Param : access Image'Class; image_Param : access Image'Class; angleInfo_Param : access AngleInfo'Class; totalAngle : Short_Integer; animationBehavior_Param : access AnimationBehavior'Class) return AllBinaryJ2SEImageRotationAnimation_Access is
       This : constant AllBinaryJ2SEImageRotationAnimation_Access := new AllBinaryJ2SEImageRotationAnimation;
    begin
-      AllBinaryJ2SEImageRotationAnimation_Package.Initialize (This.all, originalImage, image, angleInfo, totalAngle, animationBehavior);
+      AllBinaryJ2SEImageRotationAnimation_Package.Initialize (This.all, originalImage_Param, image_Param, angleInfo_Param, totalAngle, animationBehavior_Param);
       return This;
    end Create;
 
-   procedure setBasicColorP (This : in out AllBinaryJ2SEImageRotationAnimation; basicColor : BasicColor_Access) is
+   procedure setBasicColorP (This : in out AllBinaryJ2SEImageRotationAnimation; basicColor_Param : access BasicColor'Class) is
+      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
       changed : Boolean;
    begin
         changed := False;
@@ -70,7 +75,8 @@ package body org.allbinary.animation.image.AllBinaryJ2SEImageRotationAnimation_P
         end if;
    end setBasicColorP;
 
-   procedure changeBasicColor (This : in out AllBinaryJ2SEImageRotationAnimation; basicColor : BasicColor_Access) is
+   procedure changeBasicColor (This : in out AllBinaryJ2SEImageRotationAnimation; basicColor_Param : access BasicColor'Class) is
+      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
       changed : Boolean;
    begin
         changed := False;
@@ -155,7 +161,8 @@ package body org.allbinary.animation.image.AllBinaryJ2SEImageRotationAnimation_P
         end if;
    end swap;
 
-   procedure paintXY (This : in out AllBinaryJ2SEImageRotationAnimation; graphics : Graphics_Access; x : Integer; y : Integer) is
+   procedure paintXY (This : in out AllBinaryJ2SEImageRotationAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         graphics.drawImage (This.imageToShow, x, y, This.anchor);
    end paintXY;

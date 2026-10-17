@@ -33,7 +33,13 @@ package body org.allbinary.game.input.RTSPlayerGameInput_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out RTSPlayerGameInput'Class; gameCanvas : AllBinaryGameCanvas_Access; inputList : BasicArrayList_Access; playerInputId : Integer; towerInfoPaintable : RTSLayerInfoPaintable_Access; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; layerPositionFinderInterface : LayerPositionFinderInterface_Access; selectRTSLayerVisitorFactoryInterface : SelectRTSLayerVisitorFactoryInterface_Access) is
+   procedure Initialize (This : in out RTSPlayerGameInput'Class; gameCanvas_Param : access AllBinaryGameCanvas'Class; inputList_Param : access BasicArrayList'Class; playerInputId : Integer; towerInfoPaintable_Param : access RTSLayerInfoPaintable'Class; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; layerPositionFinderInterface_Param : access LayerPositionFinderInterface'Class; selectRTSLayerVisitorFactoryInterface_Param : access SelectRTSLayerVisitorFactoryInterface'Class) is
+      gameCanvas : AllBinaryGameCanvas_Access := AllBinaryGameCanvas_Access (gameCanvas_Param);
+      inputList : BasicArrayList_Access := BasicArrayList_Access (inputList_Param);
+      towerInfoPaintable : RTSLayerInfoPaintable_Access := RTSLayerInfoPaintable_Access (towerInfoPaintable_Param);
+      rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access := RTSPlayerLayerInterface_Access (rtsPlayerLayerInterface_Param);
+      layerPositionFinderInterface : LayerPositionFinderInterface_Access := LayerPositionFinderInterface_Access (layerPositionFinderInterface_Param);
+      selectRTSLayerVisitorFactoryInterface : SelectRTSLayerVisitorFactoryInterface_Access := SelectRTSLayerVisitorFactoryInterface_Access (selectRTSLayerVisitorFactoryInterface_Param);
       geographicMapCompositeInterface : GeographicMapCompositeInterface_Access;
       geographicMapInterface : BasicGeographicMap_Access;
    begin
@@ -54,15 +60,16 @@ package body org.allbinary.game.input.RTSPlayerGameInput_Package is
         This.layerPositionFinderInterface := layerPositionFinderInterface;
    end Initialize;
 
-   function Create (gameCanvas : AllBinaryGameCanvas_Access; inputList : BasicArrayList_Access; playerInputId : Integer; towerInfoPaintable : RTSLayerInfoPaintable_Access; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; layerPositionFinderInterface : LayerPositionFinderInterface_Access; selectRTSLayerVisitorFactoryInterface : SelectRTSLayerVisitorFactoryInterface_Access) return RTSPlayerGameInput_Access is
+   function Create (gameCanvas_Param : access AllBinaryGameCanvas'Class; inputList_Param : access BasicArrayList'Class; playerInputId : Integer; towerInfoPaintable_Param : access RTSLayerInfoPaintable'Class; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; layerPositionFinderInterface_Param : access LayerPositionFinderInterface'Class; selectRTSLayerVisitorFactoryInterface_Param : access SelectRTSLayerVisitorFactoryInterface'Class) return RTSPlayerGameInput_Access is
       This : constant RTSPlayerGameInput_Access := new RTSPlayerGameInput;
    begin
-      RTSPlayerGameInput_Package.Initialize (This.all, gameCanvas, inputList, playerInputId, towerInfoPaintable, rtsPlayerLayerInterface, layerPositionFinderInterface, selectRTSLayerVisitorFactoryInterface);
+      RTSPlayerGameInput_Package.Initialize (This.all, gameCanvas_Param, inputList_Param, playerInputId, towerInfoPaintable_Param, rtsPlayerLayerInterface_Param, layerPositionFinderInterface_Param, selectRTSLayerVisitorFactoryInterface_Param);
       return This;
    end Create;
 
    --  throws Exception
-   procedure setAllBinaryGameLayerManager (This : in out RTSPlayerGameInput; allBinaryGameLayerManager : AllBinaryGameLayerManager_Access) is
+   procedure setAllBinaryGameLayerManager (This : in out RTSPlayerGameInput; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class) is
+      allBinaryGameLayerManager : AllBinaryGameLayerManager_Access := AllBinaryGameLayerManager_Access (allBinaryGameLayerManager_Param);
    begin
         This.selectedRTSLayerPlayerGameInput.setAllBinaryGameLayerManager (allBinaryGameLayerManager);
         if (This.selectedRtsFormInput) /= (NullRTSFormInputFactory_Package.getInstance) then
@@ -70,17 +77,18 @@ package body org.allbinary.game.input.RTSPlayerGameInput_Package is
         end if;
    end setAllBinaryGameLayerManager;
 
-   procedure onDisplayChangeEvent (This : in out RTSPlayerGameInput; displayChangeEvent : DisplayChangeEvent_Access) is
+   procedure onDisplayChangeEvent (This : in out RTSPlayerGameInput; displayChangeEvent_Param : access DisplayChangeEvent'Class) is
+      displayChangeEvent : DisplayChangeEvent_Access := DisplayChangeEvent_Access (displayChangeEvent_Param);
    begin
         begin
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("onDisplayChangeEvent"));
+            This.logUtil.putF (This.commonStrings.START, RTSPlayerGameInput_Access'(This'Unchecked_Access), To_Unbounded_String ("onDisplayChangeEvent"));
             This.getRTSLayerInfoPaintable.update;
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("onDisplayChangeEvent"), e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, RTSPlayerGameInput_Access'(This'Unchecked_Access), To_Unbounded_String ("onDisplayChangeEvent"), e);
                 end;
         end;
    end onDisplayChangeEvent;
@@ -99,11 +107,11 @@ package body org.allbinary.game.input.RTSPlayerGameInput_Package is
 
    procedure initInputProcessors (This : in out RTSPlayerGameInput) is
    begin
-        This.inputProcessorArray (Canvas_Package.LEFT) := RTSPlayerLeftGameInputProcessor_Package.Create (This'Unchecked_Access);
+        This.inputProcessorArray (Canvas_Package.LEFT) := RTSPlayerLeftGameInputProcessor_Package.Create (RTSPlayerGameInput_Access'(This'Unchecked_Access));
         This.inputProcessorArray (Canvas_Package.KEY_NUM0) := This.inputProcessorArray (Canvas_Package.LEFT);
-        This.inputProcessorArray (Canvas_Package.RIGHT) := RTSPlayerRightGameInputProcessor_Package.Create (This'Unchecked_Access);
+        This.inputProcessorArray (Canvas_Package.RIGHT) := RTSPlayerRightGameInputProcessor_Package.Create (RTSPlayerGameInput_Access'(This'Unchecked_Access));
         This.inputProcessorArray (Canvas_Package.KEY_POUND) := This.inputProcessorArray (Canvas_Package.RIGHT);
-        This.removeInputProcessorArray (Canvas_Package.KEY_NUM1) := RTSPlayerFireGameInputProcessor_Package.Create (This'Unchecked_Access);
+        This.removeInputProcessorArray (Canvas_Package.KEY_NUM1) := RTSPlayerFireGameInputProcessor_Package.Create (RTSPlayerGameInput_Access'(This'Unchecked_Access));
         This.removeInputProcessorArray (Canvas_Package.KEY_NUM3) := This.removeInputProcessorArray (Canvas_Package.KEY_NUM1);
         This.removeInputProcessorArray (Canvas_Package.KEY_NUM3) := This.removeInputProcessorArray (Canvas_Package.KEY_NUM1);
         This.removeInputProcessorArray (Canvas_Package.LEFT) := This.removeInputProcessorArray (Canvas_Package.KEY_NUM1);
@@ -115,7 +123,8 @@ package body org.allbinary.game.input.RTSPlayerGameInput_Package is
    end initInputProcessors;
 
    --  throws Exception
-   procedure processInput (This : in out RTSPlayerGameInput; layerManager : AllBinaryLayerManager_Access) is
+   procedure processInput (This : in out RTSPlayerGameInput; layerManager_Param : access AllBinaryLayerManager'Class) is
+      layerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
       size : Integer;
       key : Integer;
       gameKeyEvent : GameKeyEvent_Access;
@@ -143,19 +152,21 @@ package body org.allbinary.game.input.RTSPlayerGameInput_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.gameInputStrings.PROCESS_INPUT, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, RTSPlayerGameInput_Access'(This'Unchecked_Access), This.gameInputStrings.PROCESS_INPUT, e);
                 end;
         end;
    end processInput;
 
    --  throws Exception
-   procedure processMotionInput (This : in out RTSPlayerGameInput; layerManager : AllBinaryLayerManager_Access) is
+   procedure processMotionInput (This : in out RTSPlayerGameInput; layerManager_Param : access AllBinaryLayerManager'Class) is
+      layerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
    begin
         null;
    end processMotionInput;
 
    --  throws Exception
-   procedure select_Id (This : in out RTSPlayerGameInput; motionGestureEvent : MotionGestureEvent_Access) is
+   procedure select_Id (This : in out RTSPlayerGameInput; motionGestureEvent_Param : access MotionGestureEvent'Class) is
+      motionGestureEvent : MotionGestureEvent_Access := MotionGestureEvent_Access (motionGestureEvent_Param);
       point : GPoint_Access;
       geographicMapCompositeInterface : GeographicMapCompositeInterface_Access;
       geographicMapInterface : BasicGeographicMap_Access;
@@ -186,17 +197,20 @@ package body org.allbinary.game.input.RTSPlayerGameInput_Package is
             This.setSelectedRTSLayer (foundRTSLayer, geographicMapCellPosition);
         else
             commonLabels := CommonLabels_Package.getInstance;
-            This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Off Of Map -")).append (commonLabels.WIDTH_LABEL).appendint (Integer (allBinaryTiledLayer.getWidth)).append (commonLabels.HEIGHT_LABEL).appendint (Integer (allBinaryTiledLayer.getHeight)).toString, This'Unchecked_Access, To_Unbounded_String ("select"));
+            This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Off Of Map -")).append (commonLabels.WIDTH_LABEL).appendint (Integer (allBinaryTiledLayer.getWidth)).append (commonLabels.HEIGHT_LABEL).appendint (Integer (allBinaryTiledLayer.getHeight)).toString, RTSPlayerGameInput_Access'(This'Unchecked_Access), To_Unbounded_String ("select"));
         end if;
    end select_Id;
 
    --  throws Exception
-   procedure setSelectedRTSLayer (This : in out RTSPlayerGameInput; rtsLayer : CollidableDestroyableDamageableLayer_Access; geographicMapCellPosition : GeographicMapCellPosition_Access) is
+   procedure setSelectedRTSLayer (This : in out RTSPlayerGameInput; rtsLayer_Param : access CollidableDestroyableDamageableLayer'Class; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is
+      rtsLayer : CollidableDestroyableDamageableLayer_Access := CollidableDestroyableDamageableLayer_Access (rtsLayer_Param);
+      geographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
    begin
         This.getSelectedBuildingPlayerGameInput.setSelectedRTSLayer (rtsLayer);
    end setSelectedRTSLayer;
 
-   procedure paint (This : in out RTSPlayerGameInput; graphics : Graphics_Access) is
+   procedure paint (This : in out RTSPlayerGameInput; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       geographicMapCellPosition : GeographicMapCellPosition_Access;
       geographicMapCompositeInterface : GeographicMapCompositeInterface_Access;
       geographicMapInterface : BasicGeographicMap_Access;
@@ -246,9 +260,10 @@ package body org.allbinary.game.input.RTSPlayerGameInput_Package is
         return This.selectedRtsFormInput;
    end getSelectedRtsFormInput;
 
-   procedure setSelectedRtsFormInput (This : in out RTSPlayerGameInput; selectedRtsFormInput : RTSFormInput_Access) is
+   procedure setSelectedRtsFormInput (This : in out RTSPlayerGameInput; selectedRtsFormInput_Param : access RTSFormInput'Class) is
+      selectedRtsFormInput : RTSFormInput_Access := RTSFormInput_Access (selectedRtsFormInput_Param);
    begin
-        This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("RTSFormInput: ")).append (StringUtil_Package.getInstance.toString (selectedRtsFormInput)).toString, This'Unchecked_Access, To_Unbounded_String ("setSelectedRtsFormInput"));
+        This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("RTSFormInput: ")).append (StringUtil_Package.getInstance.toString (selectedRtsFormInput)).toString, RTSPlayerGameInput_Access'(This'Unchecked_Access), To_Unbounded_String ("setSelectedRtsFormInput"));
         This.selectedRtsFormInput := selectedRtsFormInput;
    end setSelectedRtsFormInput;
 

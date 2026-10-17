@@ -31,7 +31,7 @@ package org.allbinary.media.audio.TimeBaseInterface_Package is
    type TimeBaseInterface_Access_Array is array (Natural range <>) of TimeBaseInterface_Access;
    type TimeBaseInterface_Access_Array_Access is access all TimeBaseInterface_Access_Array;
    function getTimeBase (This : in out TimeBaseInterface) return TimeBase_Access is abstract;
-   procedure setTimeBase (This : in out TimeBaseInterface; timeBase : TimeBase_Access) is abstract;
+   procedure setTimeBase (This : in out TimeBaseInterface; timeBase_Param : access TimeBase'Class) is abstract;
 
 end org.allbinary.media.audio.TimeBaseInterface_Package;
 

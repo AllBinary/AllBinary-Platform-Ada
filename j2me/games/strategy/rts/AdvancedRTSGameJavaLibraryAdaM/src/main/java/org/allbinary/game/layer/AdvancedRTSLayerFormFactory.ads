@@ -48,10 +48,10 @@ package org.allbinary.game.layer.AdvancedRTSLayerFormFactory_Package is
       scrollSelectionForm : ScrollSelectionForm_Access;
    end record;
 
-   procedure Initialize (This : in out AdvancedRTSLayerFormFactory'Class; label : Unbounded_String; itemArrayFactoryInterface : ItemArraySingletonFactoryInterface_Access);
-   function Create (label : Unbounded_String; itemArrayFactoryInterface : ItemArraySingletonFactoryInterface_Access) return AdvancedRTSLayerFormFactory_Access;
-   function getInstance (This : in out AdvancedRTSLayerFormFactory; rtsLayer : RTSLayer_Access) return ScrollSelectionForm_Access;
-   procedure getInstance (This : in out AdvancedRTSLayerFormFactory; rtsLayer : RTSLayer_Access);
+   procedure Initialize (This : in out AdvancedRTSLayerFormFactory'Class; label : Unbounded_String; itemArrayFactoryInterface_Param : access ItemArraySingletonFactoryInterface'Class);
+   function Create (label : Unbounded_String; itemArrayFactoryInterface_Param : access ItemArraySingletonFactoryInterface'Class) return AdvancedRTSLayerFormFactory_Access;
+   function getInstance (This : in out AdvancedRTSLayerFormFactory; rtsLayer_Param : access RTSLayer'Class) return ScrollSelectionForm_Access;
+   procedure getInstance (This : in out AdvancedRTSLayerFormFactory; rtsLayer_Param : access RTSLayer'Class);
 
 end org.allbinary.game.layer.AdvancedRTSLayerFormFactory_Package;
 

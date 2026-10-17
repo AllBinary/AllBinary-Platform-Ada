@@ -39,7 +39,8 @@ package body org.allbinary.logic.communication.log.LogUtil_Package is
       return This;
    end Create;
 
-   procedure putL (This : in out LogUtil; log : Log_Access) is
+   procedure putL (This : in out LogUtil; log_Param : access Log'Class) is
+      log : Log_Access := Log_Access (log_Param);
       specialMessage : Unbounded_String;
       anyType : Java_Object_Access;
       functionName : Unbounded_String;
@@ -52,7 +53,8 @@ package body org.allbinary.logic.communication.log.LogUtil_Package is
         This.put (specialMessage, anyType, functionName, exception_Id);
    end putL;
 
-   procedure putF (This : in out LogUtil; specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String) is
+   procedure putF (This : in out LogUtil; specialMessage : Unbounded_String; anyType_Param : access Java_Object'Class; functionName : Unbounded_String) is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         FileLog_Package.put (specialMessage, anyType, functionName);
    end putF;
@@ -62,7 +64,9 @@ package body org.allbinary.logic.communication.log.LogUtil_Package is
         FileLog_Package.put (specialMessage, className, functionName);
    end putFS;
 
-   procedure put (This : in out LogUtil; specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String; exception_Id : Java_Object_Access) is
+   procedure put (This : in out LogUtil; specialMessage : Unbounded_String; anyType_Param : access Java_Object'Class; functionName : Unbounded_String; exception_Id_Param : access Java_Object'Class) is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      exception_Id : Java_Object_Access := Java_Object_Access (exception_Id_Param);
    begin
         FileLog_Package.put (specialMessage, anyType, functionName, Java_Throwable (exception_Id));
    end put;

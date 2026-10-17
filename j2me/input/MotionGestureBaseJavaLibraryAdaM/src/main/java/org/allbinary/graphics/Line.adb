@@ -25,7 +25,9 @@ package body org.allbinary.graphics.Line_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out Line'Class; p1 : GPoint_Access; p2 : GPoint_Access) is
+   procedure Initialize (This : in out Line'Class; p1_Param : access GPoint'Class; p2_Param : access GPoint'Class) is
+      p1 : GPoint_Access := GPoint_Access (p1_Param);
+      p2 : GPoint_Access := GPoint_Access (p2_Param);
    begin
       Initialize_Fields (This);
         This.p1 := PointFactory_Package.getInstance.ZERO_ZERO;
@@ -34,10 +36,10 @@ package body org.allbinary.graphics.Line_Package is
         This.setP2 (p2);
    end Initialize;
 
-   function Create (p1 : GPoint_Access; p2 : GPoint_Access) return Line_Access is
+   function Create (p1_Param : access GPoint'Class; p2_Param : access GPoint'Class) return Line_Access is
       This : constant Line_Access := new Line;
    begin
-      Line_Package.Initialize (This.all, p1, p2);
+      Line_Package.Initialize (This.all, p1_Param, p2_Param);
       return This;
    end Create;
 
@@ -72,13 +74,15 @@ package body org.allbinary.graphics.Line_Package is
         return This.p2;
    end getP2;
 
-   procedure setP1 (This : in out Line; p1 : GPoint_Access) is
+   procedure setP1 (This : in out Line; p1_Param : access GPoint'Class) is
+      p1 : GPoint_Access := GPoint_Access (p1_Param);
    begin
         This.p1 := p1;
         This.update;
    end setP1;
 
-   procedure setP2 (This : in out Line; p2 : GPoint_Access) is
+   procedure setP2 (This : in out Line; p2_Param : access GPoint'Class) is
+      p2 : GPoint_Access := GPoint_Access (p2_Param);
    begin
         This.p2 := p2;
         This.update;

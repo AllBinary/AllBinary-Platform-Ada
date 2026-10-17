@@ -37,8 +37,8 @@ package org.allbinary.animation.text.CustomTextBox2_Package is
 
    type CustomTextBox2 is new CustomTextBox with null record;
 
-   procedure Initialize (This : in out CustomTextBox2'Class; cmdListener : CommandListener_Access; label : Unbounded_String; text : Unbounded_String; maxSize : Integer; constraints : Integer; font : Font_Access; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access);
-   function Create (cmdListener : CommandListener_Access; label : Unbounded_String; text : Unbounded_String; maxSize : Integer; constraints : Integer; font : Font_Access; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return CustomTextBox2_Access;
+   procedure Initialize (This : in out CustomTextBox2'Class; cmdListener_Param : access CommandListener'Class; label : Unbounded_String; text : Unbounded_String; maxSize : Integer; constraints : Integer; font_Param : access Font'Class; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class);
+   function Create (cmdListener_Param : access CommandListener'Class; label : Unbounded_String; text : Unbounded_String; maxSize : Integer; constraints : Integer; font_Param : access Font'Class; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return CustomTextBox2_Access;
 
 end org.allbinary.animation.text.CustomTextBox2_Package;
 

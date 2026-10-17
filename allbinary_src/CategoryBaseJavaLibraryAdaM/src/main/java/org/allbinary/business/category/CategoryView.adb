@@ -23,16 +23,17 @@ package body org.allbinary.business.category.CategoryView_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CategoryView'Class; categoryInterface : CategoryInterface_Access) is
+   procedure Initialize (This : in out CategoryView'Class; categoryInterface_Param : access CategoryInterface'Class) is
+      categoryInterface : CategoryInterface_Access := CategoryInterface_Access (categoryInterface_Param);
    begin
       Initialize_Fields (This);
         This.categoryInterface := categoryInterface;
    end Initialize;
 
-   function Create (categoryInterface : CategoryInterface_Access) return CategoryView_Access is
+   function Create (categoryInterface_Param : access CategoryInterface'Class) return CategoryView_Access is
       This : constant CategoryView_Access := new CategoryView;
    begin
-      CategoryView_Package.Initialize (This.all, categoryInterface);
+      CategoryView_Package.Initialize (This.all, categoryInterface_Param);
       return This;
    end Create;
 
@@ -42,7 +43,8 @@ package body org.allbinary.business.category.CategoryView_Package is
    end getCategoryInterface;
 
    --  throws Exception
-   function toXmlNode (This : in out CategoryView; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out CategoryView; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       node : Node_Access;
       childCategoryVector : BasicArrayList_Access;
       size : Integer;
@@ -56,7 +58,7 @@ package body org.allbinary.business.category.CategoryView_Package is
         node := document.createElement (CategoryData_Package.getInstance.NAME);
         childCategoryVector := This.categoryInterface.getChildNodes;
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY) then
-            This.logUtil.putF (To_Unbounded_String ("Number Of Children: ") & Java_Image (childCategoryVector.size), This'Unchecked_Access, To_Unbounded_String ("toXmlNode"));
+            This.logUtil.putF (To_Unbounded_String ("Number Of Children: ") & Java_Image (childCategoryVector.size), CategoryView_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode"));
         end if;
         size := childCategoryVector.size;
         for i in 0 .. (size) - 1 loop
@@ -77,8 +79,8 @@ package body org.allbinary.business.category.CategoryView_Package is
         return node;
    end toXmlNode;
 
-   procedure toXmlNode (This : in out CategoryView; document : Document_Access) is
-      Java_Result : constant Node_Access := CategoryView'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out CategoryView; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := CategoryView'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

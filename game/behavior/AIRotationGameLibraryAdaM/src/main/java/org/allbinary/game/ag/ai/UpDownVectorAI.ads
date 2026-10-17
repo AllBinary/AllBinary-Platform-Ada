@@ -48,9 +48,9 @@ package org.allbinary.game.ag.ai.UpDownVectorAI_Package is
       index : Integer;
    end record;
 
-   procedure Initialize (This : in out UpDownVectorAI'Class; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access);
-   function Create (ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return UpDownVectorAI_Access;
-   procedure processAI (This : in out UpDownVectorAI; allBinaryLayerManager : AllBinaryLayerManager_Access);
+   procedure Initialize (This : in out UpDownVectorAI'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class);
+   function Create (ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return UpDownVectorAI_Access;
+   procedure processAI (This : in out UpDownVectorAI; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class);
 
 end org.allbinary.game.ag.ai.UpDownVectorAI_Package;
 

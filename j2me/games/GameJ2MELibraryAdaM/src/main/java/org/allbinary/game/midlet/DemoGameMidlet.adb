@@ -21,15 +21,16 @@ package body org.allbinary.game.midlet.DemoGameMidlet_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out DemoGameMidlet'Class; clientInformationFactory : ClientInformationFactory_Access) is
+   procedure Initialize (This : in out DemoGameMidlet'Class; clientInformationFactory_Param : access ClientInformationFactory'Class) is
+      clientInformationFactory : ClientInformationFactory_Access := ClientInformationFactory_Access (clientInformationFactory_Param);
    begin
         GameMidlet_Package.Initialize (This, clientInformationFactory);
    end Initialize;
 
-   function Create (clientInformationFactory : ClientInformationFactory_Access) return DemoGameMidlet_Access is
+   function Create (clientInformationFactory_Param : access ClientInformationFactory'Class) return DemoGameMidlet_Access is
       This : constant DemoGameMidlet_Access := new DemoGameMidlet;
    begin
-      DemoGameMidlet_Package.Initialize (This.all, clientInformationFactory);
+      DemoGameMidlet_Package.Initialize (This.all, clientInformationFactory_Param);
       return This;
    end Create;
 
@@ -53,12 +54,13 @@ package body org.allbinary.game.midlet.DemoGameMidlet_Package is
    --  throws Exception
    function createDemoGameCanvasRunnableInterface (This : in out DemoGameMidlet) return GameCanvasRunnableInterface_Access is
    begin
-        This.logUtil.putF (This.commonStrings.NOT_IMPLEMENTED, This'Unchecked_Access, This.commonStrings.CREATE);
+        This.logUtil.putF (This.commonStrings.NOT_IMPLEMENTED, DemoGameMidlet_Access'(This'Unchecked_Access), This.commonStrings.CREATE);
         return NullGameCanvasRunnable_Package.NULL_GAME_CANVAS_RUNNABLE;
    end createDemoGameCanvasRunnableInterface;
 
    --  throws Exception
-   function createGameCanvasRunnable (This : in out DemoGameMidlet; allBinaryGameLayerManager : AllBinaryGameLayerManager_Access) return GameCanvasRunnableInterface_Access is
+   function createGameCanvasRunnable (This : in out DemoGameMidlet; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class) return GameCanvasRunnableInterface_Access is
+      allBinaryGameLayerManager : AllBinaryGameLayerManager_Access := AllBinaryGameLayerManager_Access (allBinaryGameLayerManager_Param);
    begin
         Java_Throw (Java_New_Exception ("Exception", This.commonStrings.NOT_IMPLEMENTED));
    end createGameCanvasRunnable;
@@ -83,10 +85,10 @@ package body org.allbinary.game.midlet.DemoGameMidlet_Package is
    procedure setDemo (This : in out DemoGameMidlet) is
       progressCanvas : ProgressCanvas_Access;
    begin
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("setDemo"));
+        This.logUtil.putF (This.commonStrings.START, DemoGameMidlet_Access'(This'Unchecked_Access), To_Unbounded_String ("setDemo"));
         progressCanvas := ProgressCanvasFactory_Package.getInstance;
         progressCanvas.start;
-        PrimaryThreadPool_Package.getInstance.runTask (DemoRunnable_Package.Create (This'Unchecked_Access));
+        PrimaryThreadPool_Package.getInstance.runTask (DemoRunnable_Package.Create (DemoGameMidlet_Access'(This'Unchecked_Access)));
    end setDemo;
 
    --  throws Exception
@@ -96,13 +98,13 @@ package body org.allbinary.game.midlet.DemoGameMidlet_Package is
       hashtable : ABHashtable_Access;
    begin
         CREATE_GAME := To_Unbounded_String ("createGame");
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, CREATE_GAME);
+        This.logUtil.putF (This.commonStrings.START, DemoGameMidlet_Access'(This'Unchecked_Access), CREATE_GAME);
         progressCanvas := ProgressCanvasFactory_Package.getInstance;
         progressCanvas.start;
         hashtable := This.getStartStateHashtable;
         This.setStartStateHashtable (StdUtil_Package.getInstance.NULL_TABLE);
-        PrimaryThreadPool_Package.getInstance.runTask (CreateGameRunnable_Package.Create (This'Unchecked_Access, hashtable));
-        This.logUtil.putF (This.commonStrings.END_Id, This'Unchecked_Access, CREATE_GAME);
+        PrimaryThreadPool_Package.getInstance.runTask (CreateGameRunnable_Package.Create (DemoGameMidlet_Access'(This'Unchecked_Access), hashtable));
+        This.logUtil.putF (This.commonStrings.END_Id, DemoGameMidlet_Access'(This'Unchecked_Access), CREATE_GAME);
    end createGame;
 
    function isReady (This : in out DemoGameMidlet) return Boolean is
@@ -110,8 +112,8 @@ package body org.allbinary.game.midlet.DemoGameMidlet_Package is
         return True;
    end isReady;
 
-   procedure createGameCanvasRunnable (This : in out DemoGameMidlet; allBinaryGameLayerManager : AllBinaryGameLayerManager_Access) is
-      Java_Result : constant GameCanvasRunnableInterface_Access := DemoGameMidlet'Class (This).createGameCanvasRunnable (allBinaryGameLayerManager);
+   procedure createGameCanvasRunnable (This : in out DemoGameMidlet; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class) is
+      Java_Result : constant GameCanvasRunnableInterface_Access := DemoGameMidlet'Class (This).createGameCanvasRunnable (allBinaryGameLayerManager_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

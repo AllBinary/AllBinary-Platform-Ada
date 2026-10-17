@@ -34,12 +34,14 @@ package body org.allbinary.logic.io.file.directory.DirectoryBooleanFileVisitor_P
       return This;
    end Create;
 
-   function visit (This : in out DirectoryBooleanFileVisitor; anyType : Java_Object_Access) return Java_Object_Access is
+   function visit (This : in out DirectoryBooleanFileVisitor; anyType_Param : access Java_Object'Class) return Java_Object_Access is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         return Java_Object_Access (This.visit (AbFile_Access (anyType)));
    end visit;
 
-   function visit (This : in out DirectoryBooleanFileVisitor; file : AbFile_Access) return Boolean is
+   function visit (This : in out DirectoryBooleanFileVisitor; file_Param : access AbFile'Class) return Boolean is
+      file : AbFile_Access := AbFile_Access (file_Param);
    begin
         if file.isDirectory then
             return True;
@@ -47,15 +49,15 @@ package body org.allbinary.logic.io.file.directory.DirectoryBooleanFileVisitor_P
         return False;
    end visit;
 
-   procedure visit (This : in out DirectoryBooleanFileVisitor; anyType : Java_Object_Access) is
-      Java_Result : constant Java_Object_Access := DirectoryBooleanFileVisitor'Class (This).visit (anyType);
+   procedure visit (This : in out DirectoryBooleanFileVisitor; anyType_Param : access Java_Object'Class) is
+      Java_Result : constant Java_Object_Access := DirectoryBooleanFileVisitor'Class (This).visit (anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end visit;
 
-   procedure visit (This : in out DirectoryBooleanFileVisitor; file : AbFile_Access) is
-      Java_Result : constant Boolean := DirectoryBooleanFileVisitor'Class (This).visit (file);
+   procedure visit (This : in out DirectoryBooleanFileVisitor; file_Param : access AbFile'Class) is
+      Java_Result : constant Boolean := DirectoryBooleanFileVisitor'Class (This).visit (file_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

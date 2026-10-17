@@ -31,7 +31,7 @@ package org.allbinary.game.terrain.TerrainEventListenerInterface_Package is
    type TerrainEventListenerInterface_Access is access all TerrainEventListenerInterface'Class;
    type TerrainEventListenerInterface_Access_Array is array (Natural range <>) of TerrainEventListenerInterface_Access;
    type TerrainEventListenerInterface_Access_Array_Access is access all TerrainEventListenerInterface_Access_Array;
-   procedure onTerrainEvent (This : in out TerrainEventListenerInterface; trackingEvent : TerrainEvent_Access) is abstract;
+   procedure onTerrainEvent (This : in out TerrainEventListenerInterface; trackingEvent_Param : access TerrainEvent'Class) is abstract;
 
 end org.allbinary.game.terrain.TerrainEventListenerInterface_Package;
 

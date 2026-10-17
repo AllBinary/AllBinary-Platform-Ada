@@ -56,7 +56,8 @@ package body org.allbinary.game.layer.drop.DropLayerFactory_Package is
         return PickedUpLayerInterfaceFactoryInterface_Access (This.basicArrayListUtil.getRandom (This.list));
    end getRandomInstance;
 
-   procedure add (This : in out DropLayerFactory; layerInterfaceFactoryInterface : PickedUpLayerInterfaceFactoryInterface_Access) is
+   procedure add (This : in out DropLayerFactory; layerInterfaceFactoryInterface_Param : access PickedUpLayerInterfaceFactoryInterface'Class) is
+      layerInterfaceFactoryInterface : PickedUpLayerInterfaceFactoryInterface_Access := PickedUpLayerInterfaceFactoryInterface_Access (layerInterfaceFactoryInterface_Param);
    begin
         This.list.add (layerInterfaceFactoryInterface);
    end add;

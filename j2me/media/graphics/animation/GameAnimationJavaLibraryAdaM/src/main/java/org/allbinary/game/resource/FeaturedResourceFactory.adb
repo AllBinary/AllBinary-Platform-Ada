@@ -62,7 +62,7 @@ package body org.allbinary.game.resource.FeaturedResourceFactory_Package is
             featureInterface := GameFeatureControlledInterface_Access (This.list.objectArray (index));
             isLoadingLevel := featureInterface.isLoadingLevel (level);
             isFeature := featureInterface.isFeature;
-            This.logUtil.putF (StringMaker_Package.Create.append (This.GAME_FEATURE_CONTROLLED).append (featureInterface.toString).append (This.IS_LOADING_LEVEL_LABEL).append (ResourceLoadingLevelFactory_Package.getInstance.getLevelString (level)).append (CommonSeps_Package.getInstance.COLON_SEP).appendboolean (isLoadingLevel).append (This.IS_FEATURE).appendboolean (isFeature).toString, This'Unchecked_Access, This.commonStrings.INIT);
+            This.logUtil.putF (StringMaker_Package.Create.append (This.GAME_FEATURE_CONTROLLED).append (featureInterface.toString).append (This.IS_LOADING_LEVEL_LABEL).append (ResourceLoadingLevelFactory_Package.getInstance.getLevelString (level)).append (CommonSeps_Package.getInstance.COLON_SEP).appendboolean (isLoadingLevel).append (This.IS_FEATURE).appendboolean (isFeature).toString, FeaturedResourceFactory_Access'(This'Unchecked_Access), This.commonStrings.INIT);
             if (isLoadingLevel) and then (isFeature) then
                 featureInterface.init (level);
             end if;
@@ -74,7 +74,7 @@ package body org.allbinary.game.resource.FeaturedResourceFactory_Package is
         stringBuffer.appendboolean (features.isFeature (graphicsFeatureFactory.VECTOR_GRAPHICS));
         stringBuffer.append (This.IMAGE_LABEL);
         stringBuffer.appendboolean (features.isFeature (graphicsFeatureFactory.IMAGE_GRAPHICS));
-        This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, This.commonStrings.INIT);
+        This.logUtil.putF (stringBuffer.toString, FeaturedResourceFactory_Access'(This'Unchecked_Access), This.commonStrings.INIT);
         if features.isFeature (graphicsFeatureFactory.IMAGE_GRAPHICS) then
             stringBuffer.delete (0, stringBuffer.length);
             stringBuffer.append (This.IMAGE_GRAPHICS_ARRAY);
@@ -85,7 +85,7 @@ package body org.allbinary.game.resource.FeaturedResourceFactory_Package is
             stringBuffer.appendboolean (features.isFeature (graphicsFeatureFactory.SPRITE_QUARTER_ROTATION_GRAPHICS));
             stringBuffer.append (This.SPRITE_FULL);
             stringBuffer.appendboolean (features.isFeature (graphicsFeatureFactory.SPRITE_FULL_GRAPHICS));
-            This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, This.commonStrings.INIT);
+            This.logUtil.putF (stringBuffer.toString, FeaturedResourceFactory_Access'(This'Unchecked_Access), This.commonStrings.INIT);
         end if;
    end init;
 
@@ -94,9 +94,10 @@ package body org.allbinary.game.resource.FeaturedResourceFactory_Package is
         This.list.clear;
    end clear;
 
-   procedure add (This : in out FeaturedResourceFactory; featureInterface : GameFeatureControlledInterface_Access) is
+   procedure add (This : in out FeaturedResourceFactory; featureInterface_Param : access GameFeatureControlledInterface'Class) is
+      featureInterface : GameFeatureControlledInterface_Access := GameFeatureControlledInterface_Access (featureInterface_Param);
    begin
-        This.logUtil.putF (StringMaker_Package.Create.append (CommonLabels_Package.getInstance.START_LABEL).append (StringUtil_Package.getInstance.toString (featureInterface)).toString, This'Unchecked_Access, This.commonStrings.ADD);
+        This.logUtil.putF (StringMaker_Package.Create.append (CommonLabels_Package.getInstance.START_LABEL).append (StringUtil_Package.getInstance.toString (featureInterface)).toString, FeaturedResourceFactory_Access'(This'Unchecked_Access), This.commonStrings.ADD);
         This.list.add (featureInterface);
    end add;
 

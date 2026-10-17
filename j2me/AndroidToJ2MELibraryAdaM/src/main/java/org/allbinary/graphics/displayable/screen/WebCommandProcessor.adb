@@ -42,14 +42,17 @@ package body org.allbinary.graphics.displayable.screen.WebCommandProcessor_Packa
         return WebCommandProcessor_Package.instance;
    end getInstance;
 
-   procedure process (This : in out WebCommandProcessor; midletCommandListener : CommandListener_Access; command : Command_Access; canvas : Canvas_Access) is
+   procedure process (This : in out WebCommandProcessor; midletCommandListener_Param : access CommandListener'Class; command_Param : access Command'Class; canvas_Param : access Canvas'Class) is
+      midletCommandListener : CommandListener_Access := CommandListener_Access (midletCommandListener_Param);
+      command : Command_Access := Command_Access (command_Param);
+      canvas : Canvas_Access := Canvas_Access (canvas_Param);
       context : Context_Access;
       intent : Intent_Access;
       commonStrings : CommonStrings_Access;
    begin
         begin
             context := Context_Access (This.aboutCommandProcessor.getContext);
-            intent := Intent_Package.Create (context, TsUtil_Package.getInstance.getClassClassLoader (This'Unchecked_Access).loadClass (This.WEB_VIEW_ACTIVITY));
+            intent := Intent_Package.Create (context, TsUtil_Package.getInstance.getClassClassLoader (WebCommandProcessor_Access'(This'Unchecked_Access)).loadClass (This.WEB_VIEW_ACTIVITY));
             intent.putExtra (This.aboutCommandProcessor.URL, Unbounded_String (This.list.removeAt (0)));
             intent.setFlags (Intent_Package.FLAG_ACTIVITY_NEW_TASK);
             context.startActivity (intent);
@@ -59,7 +62,7 @@ package body org.allbinary.graphics.displayable.screen.WebCommandProcessor_Packa
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("process"), e);
+            This.logUtil.put (commonStrings.EXCEPTION_Id, WebCommandProcessor_Access'(This'Unchecked_Access), To_Unbounded_String ("process"), e);
                 end;
         end;
    end process;

@@ -38,10 +38,10 @@ package org.allbinary.business.user.modules.admin.store.web.view.editor.ViewEdit
 
    procedure Initialize (This : in out ViewEditorWebStoreAdminUser'Class);
    function Create return ViewEditorWebStoreAdminUser_Access;
-   procedure Initialize (This : in out ViewEditorWebStoreAdminUser'Class; userHashMap : HashMap_Access);
-   function Create (userHashMap : HashMap_Access) return ViewEditorWebStoreAdminUser_Access;
-   procedure validateSession (This : in out ViewEditorWebStoreAdminUser; weblisketSession : WeblisketSessionInterface_Access);
-   procedure updateSession (This : in out ViewEditorWebStoreAdminUser; weblisketSession : WeblisketSessionInterface_Access);
+   procedure Initialize (This : in out ViewEditorWebStoreAdminUser'Class; userHashMap_Param : access HashMap'Class);
+   function Create (userHashMap_Param : access HashMap'Class) return ViewEditorWebStoreAdminUser_Access;
+   procedure validateSession (This : in out ViewEditorWebStoreAdminUser; weblisketSession_Param : access WeblisketSessionInterface'Class);
+   procedure updateSession (This : in out ViewEditorWebStoreAdminUser; weblisketSession_Param : access WeblisketSessionInterface'Class);
 
 end org.allbinary.business.user.modules.admin.store.web.view.editor.ViewEditorWebStoreAdminUser_Package;
 

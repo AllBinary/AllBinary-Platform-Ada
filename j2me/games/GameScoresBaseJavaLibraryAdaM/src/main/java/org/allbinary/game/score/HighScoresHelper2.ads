@@ -41,7 +41,7 @@ package org.allbinary.game.score.HighScoresHelper2_Package is
 
    procedure Initialize (This : in out HighScoresHelper2'Class);
    function Create return HighScoresHelper2_Access;
-   procedure setSelectedHighScores (This : in out HighScoresHelper2; selectedHighScores : HighScores_Access);
+   procedure setSelectedHighScores (This : in out HighScoresHelper2; selectedHighScores_Param : access HighScores'Class);
    function getSelectedHighScores (This : in out HighScoresHelper2) return HighScores_Access;
    procedure setHighScoresArray (This : in out HighScoresHelper2; highScoresArrayP : HighScores_Access_Array_Access);
    procedure selectHighScores (This : in out HighScoresHelper2);

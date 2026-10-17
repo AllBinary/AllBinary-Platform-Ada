@@ -23,17 +23,21 @@ package body org.allbinary.animation.image.AllBinaryAdjustedAndroidImageRotation
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AllBinaryAdjustedAndroidImageRotationAnimation'Class; originalImage : Image_Access; image : Image_Access; angleInfo : AngleInfo_Access; totalAngle : Short_Integer; dx : Integer; dy : Integer; animationBehavior : AnimationBehavior_Access) is
+   procedure Initialize (This : in out AllBinaryAdjustedAndroidImageRotationAnimation'Class; originalImage_Param : access Image'Class; image_Param : access Image'Class; angleInfo_Param : access AngleInfo'Class; totalAngle : Short_Integer; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior'Class) is
+      originalImage : Image_Access := Image_Access (originalImage_Param);
+      image : Image_Access := Image_Access (image_Param);
+      angleInfo : AngleInfo_Access := AngleInfo_Access (angleInfo_Param);
+      animationBehavior : AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
    begin
         AllBinaryFlickerAndroidImageRotationAnimation_Package.Initialize (This, originalImage, image, angleInfo, totalAngle, animationBehavior);
         Initialize_Fields (This);
         This.init (dx, dy);
    end Initialize;
 
-   function Create (originalImage : Image_Access; image : Image_Access; angleInfo : AngleInfo_Access; totalAngle : Short_Integer; dx : Integer; dy : Integer; animationBehavior : AnimationBehavior_Access) return AllBinaryAdjustedAndroidImageRotationAnimation_Access is
+   function Create (originalImage_Param : access Image'Class; image_Param : access Image'Class; angleInfo_Param : access AngleInfo'Class; totalAngle : Short_Integer; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior'Class) return AllBinaryAdjustedAndroidImageRotationAnimation_Access is
       This : constant AllBinaryAdjustedAndroidImageRotationAnimation_Access := new AllBinaryAdjustedAndroidImageRotationAnimation;
    begin
-      AllBinaryAdjustedAndroidImageRotationAnimation_Package.Initialize (This.all, originalImage, image, angleInfo, totalAngle, dx, dy, animationBehavior);
+      AllBinaryAdjustedAndroidImageRotationAnimation_Package.Initialize (This.all, originalImage_Param, image_Param, angleInfo_Param, totalAngle, dx, dy, animationBehavior_Param);
       return This;
    end Create;
 
@@ -64,7 +68,8 @@ package body org.allbinary.animation.image.AllBinaryAdjustedAndroidImageRotation
         return This.dy;
    end getDy;
 
-   procedure paintXY (This : in out AllBinaryAdjustedAndroidImageRotationAnimation; graphics : Graphics_Access; x : Integer; y : Integer) is
+   procedure paintXY (This : in out AllBinaryAdjustedAndroidImageRotationAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         AllBinaryFlickerAndroidImageRotationAnimation (This).paintXY (graphics, (x) + (This.dx), (y) + (This.dy));
    end paintXY;

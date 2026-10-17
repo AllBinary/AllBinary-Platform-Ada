@@ -48,7 +48,8 @@ package body org.allbinary.logic.visual.dhtml.style.css.CssElementView_Package i
       return This;
    end Create;
 
-   procedure Initialize (This : in out CssElementView'Class; node : Node_Access) is
+   procedure Initialize (This : in out CssElementView'Class; node_Param : access Node'Class) is
+      node : Node_Access := Node_Access (node_Param);
       valueNode : Node_Access;
       titleValueNode : Node_Access;
       stringUtil : StringUtil_Access;
@@ -74,11 +75,11 @@ package body org.allbinary.logic.visual.dhtml.style.css.CssElementView_Package i
                 This.description_Case := StringUtil_Package.getInstance.EMPTY_STRING;
             end if;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Value: ")).append (This.value).append (To_Unbounded_String ("" & ASCII.LF & "Title: ")).append (This.title_Case).append (To_Unbounded_String ("" & ASCII.LF & "Description: ")).append (This.description_Case).toString, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+                This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Value: ")).append (This.value).append (To_Unbounded_String ("" & ASCII.LF & "Title: ")).append (This.title_Case).append (To_Unbounded_String ("" & ASCII.LF & "Description: ")).append (This.description_Case).toString, CssElementView_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
             end if;
             cssElementStyleNodeVector := DomSearchHelper_Package.getAllNodes (CssElementData_Package.getInstance.NAME, node.getChildNodes);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (To_Unbounded_String ("Child Css Elements: ") & Java_Image (cssElementStyleNodeVector.size), This'Unchecked_Access, To_Unbounded_String ("CssElementView()"));
+                This.logUtil.putF (To_Unbounded_String ("Child Css Elements: ") & Java_Image (cssElementStyleNodeVector.size), CssElementView_Access'(This'Unchecked_Access), To_Unbounded_String ("CssElementView()"));
             end if;
             This.cssElementVector := CssElementsValidationFactory_Package.getInstance (cssElementStyleNodeVector);
             nodeList := node.getChildNodes;
@@ -89,17 +90,17 @@ package body org.allbinary.logic.visual.dhtml.style.css.CssElementView_Package i
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (StringMaker_Package.Create.append (To_Unbounded_String ("Value: ")).append (This.value).append (To_Unbounded_String ("" & ASCII.LF & "Title: ")).append (This.title_Case).append (To_Unbounded_String ("" & ASCII.LF & "Description: ")).append (This.description_Case).toString, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR, e);
+                This.logUtil.put (StringMaker_Package.Create.append (To_Unbounded_String ("Value: ")).append (This.value).append (To_Unbounded_String ("" & ASCII.LF & "Title: ")).append (This.title_Case).append (To_Unbounded_String ("" & ASCII.LF & "Description: ")).append (This.description_Case).toString, CssElementView_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR, e);
             end if;
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("CssElementView")));
                 end;
         end;
    end Initialize;
 
-   function Create (node : Node_Access) return CssElementView_Access is
+   function Create (node_Param : access Node'Class) return CssElementView_Access is
       This : constant CssElementView_Access := new CssElementView;
    begin
-      CssElementView_Package.Initialize (This.all, node);
+      CssElementView_Package.Initialize (This.all, node_Param);
       return This;
    end Create;
 
@@ -119,7 +120,8 @@ package body org.allbinary.logic.visual.dhtml.style.css.CssElementView_Package i
    end toHashMap;
 
    --  throws Exception
-   function toXmlNode (This : in out CssElementView; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out CssElementView; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       hashMap : HashMap_Access;
       node : Node_Access;
       size : Integer;
@@ -130,7 +132,7 @@ package body org.allbinary.logic.visual.dhtml.style.css.CssElementView_Package i
    begin
         hashMap := This.toHashMap;
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (To_Unbounded_String ("CssView HashMap: ") & hashMap.toString, This'Unchecked_Access, To_Unbounded_String ("toXmlNode"));
+            This.logUtil.putF (To_Unbounded_String ("CssView HashMap: ") & hashMap.toString, CssElementView_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode"));
         end if;
         node := ModDomHelper_Package.createNodeWithValueNodes (document, CssElementData_Package.getInstance.NAME, hashMap);
         size := This.cssPropertyVector.size;
@@ -146,8 +148,8 @@ package body org.allbinary.logic.visual.dhtml.style.css.CssElementView_Package i
         return node;
    end toXmlNode;
 
-   procedure toXmlNode (This : in out CssElementView; document : Document_Access) is
-      Java_Result : constant Node_Access := CssElementView'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out CssElementView; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := CssElementView'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

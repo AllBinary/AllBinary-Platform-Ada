@@ -35,13 +35,15 @@ package body taghelpers.StoreTagWorkFlowHelperFactory_Package is
    end Create;
 
    --  throws Exception, LicensingException
-   function getInstance (This : in out StoreTagWorkFlowHelperFactory; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return Java_Object_Access is
+   function getInstance (This : in out StoreTagWorkFlowHelperFactory; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return Java_Object_Access is
+      propertiesHashMap : HashMap_Access := HashMap_Access (propertiesHashMap_Param);
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
    begin
         return HelperFactory_Package.getInstance (FACTORYNAME, CLASSNAME, propertiesHashMap, pageContext);
    end getInstance;
 
-   procedure getInstance (This : in out StoreTagWorkFlowHelperFactory; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) is
-      Java_Result : constant Java_Object_Access := StoreTagWorkFlowHelperFactory'Class (This).getInstance (propertiesHashMap, pageContext);
+   procedure getInstance (This : in out StoreTagWorkFlowHelperFactory; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+      Java_Result : constant Java_Object_Access := StoreTagWorkFlowHelperFactory'Class (This).getInstance (propertiesHashMap_Param, pageContext_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

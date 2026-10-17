@@ -22,16 +22,17 @@ package body org.allbinary.logic.communication.smtp.configuration.server.EmailSe
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out EmailServerConfigurationMapping'Class; emailServerConfigurationInterface : EmailServerConfigurationInterface_Access) is
+   procedure Initialize (This : in out EmailServerConfigurationMapping'Class; emailServerConfigurationInterface_Param : access EmailServerConfigurationInterface'Class) is
+      emailServerConfigurationInterface : EmailServerConfigurationInterface_Access := EmailServerConfigurationInterface_Access (emailServerConfigurationInterface_Param);
    begin
       Initialize_Fields (This);
         This.emailServerConfigurationInterface := emailServerConfigurationInterface;
    end Initialize;
 
-   function Create (emailServerConfigurationInterface : EmailServerConfigurationInterface_Access) return EmailServerConfigurationMapping_Access is
+   function Create (emailServerConfigurationInterface_Param : access EmailServerConfigurationInterface'Class) return EmailServerConfigurationMapping_Access is
       This : constant EmailServerConfigurationMapping_Access := new EmailServerConfigurationMapping;
    begin
-      EmailServerConfigurationMapping_Package.Initialize (This.all, emailServerConfigurationInterface);
+      EmailServerConfigurationMapping_Package.Initialize (This.all, emailServerConfigurationInterface_Param);
       return This;
    end Create;
 

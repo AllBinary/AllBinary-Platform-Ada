@@ -37,7 +37,9 @@ package body org.allbinary.servlet.ImageServlet_Package is
 
 
    --  throws ServletException, IOException
-   procedure processRequest (This : in out ImageServlet; request : HttpServletRequest_Access; response : HttpServletResponse_Access) is
+   procedure processRequest (This : in out ImageServlet; request_Param : access HttpServletRequest'Class; response_Param : access HttpServletResponse'Class) is
+      request : HttpServletRequest_Access := HttpServletRequest_Access (request_Param);
+      response : HttpServletResponse_Access := HttpServletResponse_Access (response_Param);
       inputStream : InputStream_Access;
       requestURI : Unbounded_String;
       file : AbFile_Access;
@@ -60,7 +62,7 @@ package body org.allbinary.servlet.ImageServlet_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("processRequest()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, ImageServlet_Access'(This'Unchecked_Access), To_Unbounded_String ("processRequest()"), e);
             end if;
                 end;
         end;
@@ -74,13 +76,17 @@ package body org.allbinary.servlet.ImageServlet_Package is
    end processRequest;
 
    --  throws ServletException, IOException
-   procedure doGet (This : in out ImageServlet; request : HttpServletRequest_Access; response : HttpServletResponse_Access) is
+   procedure doGet (This : in out ImageServlet; request_Param : access HttpServletRequest'Class; response_Param : access HttpServletResponse'Class) is
+      request : HttpServletRequest_Access := HttpServletRequest_Access (request_Param);
+      response : HttpServletResponse_Access := HttpServletResponse_Access (response_Param);
    begin
         This.processRequest (request, response);
    end doGet;
 
    --  throws ServletException, IOException
-   procedure doPost (This : in out ImageServlet; request : HttpServletRequest_Access; response : HttpServletResponse_Access) is
+   procedure doPost (This : in out ImageServlet; request_Param : access HttpServletRequest'Class; response_Param : access HttpServletResponse'Class) is
+      request : HttpServletRequest_Access := HttpServletRequest_Access (request_Param);
+      response : HttpServletResponse_Access := HttpServletResponse_Access (response_Param);
    begin
         This.processRequest (request, response);
    end doPost;

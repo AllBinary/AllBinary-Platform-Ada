@@ -31,7 +31,7 @@ package org.allbinary.android.activity.KeyInputViewCompositeInterface_Package is
    type KeyInputViewCompositeInterface_Access is access all KeyInputViewCompositeInterface'Class;
    type KeyInputViewCompositeInterface_Access_Array is array (Natural range <>) of KeyInputViewCompositeInterface_Access;
    type KeyInputViewCompositeInterface_Access_Array_Access is access all KeyInputViewCompositeInterface_Access_Array;
-   procedure setKeyInputView (This : in out KeyInputViewCompositeInterface; keyInputView : View_Access) is abstract;
+   procedure setKeyInputView (This : in out KeyInputViewCompositeInterface; keyInputView_Param : access View'Class) is abstract;
 
 end org.allbinary.android.activity.KeyInputViewCompositeInterface_Package;
 

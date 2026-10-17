@@ -95,7 +95,7 @@ package body org.allbinary.logic.system.security.licensing.LicenseClientAndServe
                         stringBuffer.append (abeLicenseInterface.toString);
                     end if;
                     stringBuffer.append (END_Id);
-                    This.logUtil.putF (RESULT & stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("test"));
+                    This.logUtil.putF (RESULT & stringBuffer.toString, LicenseClientAndServerTest_Access'(This'Unchecked_Access), To_Unbounded_String ("test"));
                     stringBuffer.delete (0, stringBuffer.length);
                 exception
                     when Java_Occurrence : others =>
@@ -103,17 +103,17 @@ package body org.allbinary.logic.system.security.licensing.LicenseClientAndServe
                             e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                         begin
                     list.add (serverName);
-                    This.logUtil.put (To_Unbounded_String ("Test Error: ") & stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("test"), e);
+                    This.logUtil.put (To_Unbounded_String ("Test Error: ") & stringBuffer.toString, LicenseClientAndServerTest_Access'(This'Unchecked_Access), To_Unbounded_String ("test"), e);
                         end;
                 end;
             end loop;
-            This.logUtil.putF (To_Unbounded_String ("Total Servers Failed: ") & Java_Image (list.size) & To_Unbounded_String (" Failed Servers: ") & list.toString, This'Unchecked_Access, To_Unbounded_String ("test"));
+            This.logUtil.putF (To_Unbounded_String ("Total Servers Failed: ") & Java_Image (list.size) & To_Unbounded_String (" Failed Servers: ") & list.toString, LicenseClientAndServerTest_Access'(This'Unchecked_Access), To_Unbounded_String ("test"));
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (To_Unbounded_String ("Test Error: ") & stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("test"), e);
+            This.logUtil.put (To_Unbounded_String ("Test Error: ") & stringBuffer.toString, LicenseClientAndServerTest_Access'(This'Unchecked_Access), To_Unbounded_String ("test"), e);
                 end;
         end;
    end test;

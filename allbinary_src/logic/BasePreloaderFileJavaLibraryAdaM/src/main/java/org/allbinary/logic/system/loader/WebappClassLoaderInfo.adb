@@ -34,7 +34,8 @@ package body org.allbinary.logic.system.loader.WebappClassLoaderInfo_Package is
       return This;
    end Create;
 
-   procedure setLoader (classLoader : ClassLoader_Access) is
+   procedure setLoader (classLoader_Param : access ClassLoader'Class) is
+      classLoader : ClassLoader_Access := ClassLoader_Access (classLoader_Param);
    begin
         WebappClassLoaderInfo_Package.classLoader := classLoader;
    end setLoader;

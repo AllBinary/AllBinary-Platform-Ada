@@ -34,13 +34,14 @@ package body org.allbinary.media.image.cache.BufferedImageCacheableFactory_Packa
       return This;
    end Create;
 
-   function getInstance (This : in out BufferedImageCacheableFactory; key : Java_Object_Access) return CacheableInterface_Access is
+   function getInstance (This : in out BufferedImageCacheableFactory; key_Param : access Java_Object'Class) return CacheableInterface_Access is
+      key : Java_Object_Access := Java_Object_Access (key_Param);
    begin
         return BufferedImageCacheable_Package.Create (BufferedImageInfo_Access (key));
    end getInstance;
 
-   procedure getInstance (This : in out BufferedImageCacheableFactory; key : Java_Object_Access) is
-      Java_Result : constant CacheableInterface_Access := BufferedImageCacheableFactory'Class (This).getInstance (key);
+   procedure getInstance (This : in out BufferedImageCacheableFactory; key_Param : access Java_Object'Class) is
+      Java_Result : constant CacheableInterface_Access := BufferedImageCacheableFactory'Class (This).getInstance (key_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

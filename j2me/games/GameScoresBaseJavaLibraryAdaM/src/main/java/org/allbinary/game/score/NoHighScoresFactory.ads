@@ -47,7 +47,7 @@ package org.allbinary.game.score.NoHighScoresFactory_Package is
    procedure Initialize (This : in out NoHighScoresFactory'Class);
    function Create return NoHighScoresFactory_Access;
    function getInstance return NoHighScoresFactory_Access;
-   procedure fetchHighScores (This : in out NoHighScoresFactory; gameInfo : GameInfo_Access; highScoresResultsListener : HighScoresResultsListener_Access);
+   procedure fetchHighScores (This : in out NoHighScoresFactory; gameInfo_Param : access GameInfo'Class; highScoresResultsListener_Param : access HighScoresResultsListener'Class);
    function createHighScoresHelper (This : in out NoHighScoresFactory) return HighScoresHelperBaseInterface_Access;
 
 end org.allbinary.game.score.NoHighScoresFactory_Package;

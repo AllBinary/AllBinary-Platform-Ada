@@ -42,13 +42,13 @@ package org.allbinary.media.image.comparison.motion.MotionRectangles_Package is
       MAX_PIXEL_DISTANCE_THRESHOLD : Integer;
    end record;
 
-   procedure Initialize (This : in out MotionRectangles'Class; name : Unbounded_String; imageComparisonResult : ImageComparisonResult_Access);
-   function Create (name : Unbounded_String; imageComparisonResult : ImageComparisonResult_Access) return MotionRectangles_Access;
+   procedure Initialize (This : in out MotionRectangles'Class; name : Unbounded_String; imageComparisonResult_Param : access ImageComparisonResult'Class);
+   function Create (name : Unbounded_String; imageComparisonResult_Param : access ImageComparisonResult'Class) return MotionRectangles_Access;
    function getVector (This : in out MotionRectangles) return BasicArrayList_Access;
-   procedure setVector (This : in out MotionRectangles; rectangleVector : BasicArrayList_Access);
+   procedure setVector (This : in out MotionRectangles; rectangleVector_Param : access BasicArrayList'Class);
    function getName (This : in out MotionRectangles) return Unbounded_String;
    function getImageComparisonResult (This : in out MotionRectangles) return ImageComparisonResult_Access;
-   procedure setImageComparisonResult (This : in out MotionRectangles; imageComparisonResult : ImageComparisonResult_Access);
+   procedure setImageComparisonResult (This : in out MotionRectangles; imageComparisonResult_Param : access ImageComparisonResult'Class);
 
 end org.allbinary.media.image.comparison.motion.MotionRectangles_Package;
 

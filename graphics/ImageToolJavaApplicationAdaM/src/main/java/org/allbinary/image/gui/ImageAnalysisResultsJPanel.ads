@@ -70,7 +70,7 @@ package org.allbinary.image.gui.ImageAnalysisResultsJPanel_Package is
    procedure Initialize (This : in out ImageAnalysisResultsJPanel'Class; imageAnalysisResultsArray : ImageAnalysisResults_Access_Array_Access);
    function Create (imageAnalysisResultsArray : ImageAnalysisResults_Access_Array_Access) return ImageAnalysisResultsJPanel_Access;
    procedure initComponents (This : in out ImageAnalysisResultsJPanel);
-   procedure updateImageColorRangeResults (This : in out ImageAnalysisResultsJPanel; imageAnalysisResults : ImageAnalysisResults_Access);
+   procedure updateImageColorRangeResults (This : in out ImageAnalysisResultsJPanel; imageAnalysisResults_Param : access ImageAnalysisResults'Class);
 
 end org.allbinary.image.gui.ImageAnalysisResultsJPanel_Package;
 

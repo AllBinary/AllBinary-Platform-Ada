@@ -62,13 +62,13 @@ package org.allbinary.game.configuration.feature.GameFeatureUtil_Package is
    procedure Initialize (This : in out GameFeatureUtil'Class);
    function Create return GameFeatureUtil_Access;
    function getInstance return GameFeatureUtil_Access;
-   procedure setDefault (This : in out GameFeatureUtil; choiceGroup : ChoiceGroup_Access);
-   procedure updateMultiple (This : in out GameFeatureUtil; choiceGroup : ChoiceGroup_Access);
-   procedure updateExclusiveForChoiceGroup (This : in out GameFeatureUtil; choiceGroup : ChoiceGroup_Access);
+   procedure setDefault (This : in out GameFeatureUtil; choiceGroup_Param : access ChoiceGroup'Class);
+   procedure updateMultiple (This : in out GameFeatureUtil; choiceGroup_Param : access ChoiceGroup'Class);
+   procedure updateExclusiveForChoiceGroup (This : in out GameFeatureUtil; choiceGroup_Param : access ChoiceGroup'Class);
    function isExclusive (This : in out GameFeatureUtil; itemLabel : Unbounded_String) return Boolean;
    procedure isExclusive (This : in out GameFeatureUtil; itemLabel : Unbounded_String);
    procedure updateExclusive (This : in out GameFeatureUtil; selectedChoiceLabel : Unbounded_String);
-   procedure updateExclusiveList (This : in out GameFeatureUtil; gameFeature : Feature_Access; list : BasicArrayList_Access);
+   procedure updateExclusiveList (This : in out GameFeatureUtil; gameFeature_Param : access Feature'Class; list_Param : access BasicArrayList'Class);
 
 end org.allbinary.game.configuration.feature.GameFeatureUtil_Package;
 

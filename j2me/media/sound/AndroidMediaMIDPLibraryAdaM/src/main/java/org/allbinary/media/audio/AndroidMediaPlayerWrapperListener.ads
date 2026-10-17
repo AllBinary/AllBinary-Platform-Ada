@@ -39,8 +39,8 @@ package org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package is
       mOnCompletionListener : OnCompletionListener_Access;
    end record;
 
-   procedure Initialize (This : in out AndroidMediaPlayerWrapperListener'Class; androidMediaPlayerWrapper : AndroidMediaPlayerWrapper_Access);
-   function Create (androidMediaPlayerWrapper : AndroidMediaPlayerWrapper_Access) return AndroidMediaPlayerWrapperListener_Access;
+   procedure Initialize (This : in out AndroidMediaPlayerWrapperListener'Class; androidMediaPlayerWrapper_Param : access AndroidMediaPlayerWrapper'Class);
+   function Create (androidMediaPlayerWrapper_Param : access AndroidMediaPlayerWrapper'Class) return AndroidMediaPlayerWrapperListener_Access;
 
 end org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package;
 
@@ -77,7 +77,7 @@ package org.allbinary.media.audio.MediaPlayerOnBufferingUpdateListener_Package i
 
    procedure Initialize (This : in out MediaPlayerOnBufferingUpdateListener'Class);
    function Create return MediaPlayerOnBufferingUpdateListener_Access;
-   procedure onBufferingUpdate (This : in out MediaPlayerOnBufferingUpdateListener; mediaPlayer : MediaPlayer_Access; i : Integer);
+   procedure onBufferingUpdate (This : in out MediaPlayerOnBufferingUpdateListener; mediaPlayer_Param : access MediaPlayer'Class; i : Integer);
 
 end org.allbinary.media.audio.MediaPlayerOnBufferingUpdateListener_Package;
 
@@ -114,7 +114,7 @@ package org.allbinary.media.audio.MediaPlayerOnPreparedListener_Package is
 
    procedure Initialize (This : in out MediaPlayerOnPreparedListener'Class);
    function Create return MediaPlayerOnPreparedListener_Access;
-   procedure onPrepared (This : in out MediaPlayerOnPreparedListener; mp : MediaPlayer_Access);
+   procedure onPrepared (This : in out MediaPlayerOnPreparedListener; mp_Param : access MediaPlayer'Class);
 
 end org.allbinary.media.audio.MediaPlayerOnPreparedListener_Package;
 
@@ -151,8 +151,8 @@ package org.allbinary.media.audio.MediaPlayerOnErrorListener_Package is
 
    procedure Initialize (This : in out MediaPlayerOnErrorListener'Class);
    function Create return MediaPlayerOnErrorListener_Access;
-   function onError (This : in out MediaPlayerOnErrorListener; mp : MediaPlayer_Access; what : Integer; extra : Integer) return Boolean;
-   procedure onError (This : in out MediaPlayerOnErrorListener; mp : MediaPlayer_Access; what : Integer; extra : Integer);
+   function onError (This : in out MediaPlayerOnErrorListener; mp_Param : access MediaPlayer'Class; what : Integer; extra : Integer) return Boolean;
+   procedure onError (This : in out MediaPlayerOnErrorListener; mp_Param : access MediaPlayer'Class; what : Integer; extra : Integer);
 
 end org.allbinary.media.audio.MediaPlayerOnErrorListener_Package;
 
@@ -189,7 +189,7 @@ package org.allbinary.media.audio.MediaPlayerOnCompletionListener_Package is
 
    procedure Initialize (This : in out MediaPlayerOnCompletionListener'Class);
    function Create return MediaPlayerOnCompletionListener_Access;
-   procedure onCompletion (This : in out MediaPlayerOnCompletionListener; mp : MediaPlayer_Access);
+   procedure onCompletion (This : in out MediaPlayerOnCompletionListener; mp_Param : access MediaPlayer'Class);
 
 end org.allbinary.media.audio.MediaPlayerOnCompletionListener_Package;
 
@@ -227,9 +227,9 @@ package org.allbinary.media.audio.AndroidMediaPlayerOnBufferingUpdateListener_Pa
       androidMediaPlayerWrapperListener : AndroidMediaPlayerWrapperListener_Access;
    end record;
 
-   procedure Initialize (This : in out AndroidMediaPlayerOnBufferingUpdateListener'Class; androidMediaPlayerWrapperListener : AndroidMediaPlayerWrapperListener_Access);
-   function Create (androidMediaPlayerWrapperListener : AndroidMediaPlayerWrapperListener_Access) return AndroidMediaPlayerOnBufferingUpdateListener_Access;
-   procedure onBufferingUpdate (This : in out AndroidMediaPlayerOnBufferingUpdateListener; mediaPlayer : MediaPlayer_Access; i : Integer);
+   procedure Initialize (This : in out AndroidMediaPlayerOnBufferingUpdateListener'Class; androidMediaPlayerWrapperListener_Param : access AndroidMediaPlayerWrapperListener'Class);
+   function Create (androidMediaPlayerWrapperListener_Param : access AndroidMediaPlayerWrapperListener'Class) return AndroidMediaPlayerOnBufferingUpdateListener_Access;
+   procedure onBufferingUpdate (This : in out AndroidMediaPlayerOnBufferingUpdateListener; mediaPlayer_Param : access MediaPlayer'Class; i : Integer);
 
 end org.allbinary.media.audio.AndroidMediaPlayerOnBufferingUpdateListener_Package;
 
@@ -267,9 +267,9 @@ package org.allbinary.media.audio.AndroidMediaPlayerOnPreparedListener_Package i
       androidMediaPlayerWrapperListener : AndroidMediaPlayerWrapperListener_Access;
    end record;
 
-   procedure Initialize (This : in out AndroidMediaPlayerOnPreparedListener'Class; androidMediaPlayerWrapperListener : AndroidMediaPlayerWrapperListener_Access);
-   function Create (androidMediaPlayerWrapperListener : AndroidMediaPlayerWrapperListener_Access) return AndroidMediaPlayerOnPreparedListener_Access;
-   procedure onPrepared (This : in out AndroidMediaPlayerOnPreparedListener; mp : MediaPlayer_Access);
+   procedure Initialize (This : in out AndroidMediaPlayerOnPreparedListener'Class; androidMediaPlayerWrapperListener_Param : access AndroidMediaPlayerWrapperListener'Class);
+   function Create (androidMediaPlayerWrapperListener_Param : access AndroidMediaPlayerWrapperListener'Class) return AndroidMediaPlayerOnPreparedListener_Access;
+   procedure onPrepared (This : in out AndroidMediaPlayerOnPreparedListener; mp_Param : access MediaPlayer'Class);
 
 end org.allbinary.media.audio.AndroidMediaPlayerOnPreparedListener_Package;
 
@@ -307,10 +307,10 @@ package org.allbinary.media.audio.AndroidMediaPlayerOnErrorListener_Package is
       androidMediaPlayerWrapperListener : AndroidMediaPlayerWrapperListener_Access;
    end record;
 
-   procedure Initialize (This : in out AndroidMediaPlayerOnErrorListener'Class; androidMediaPlayerWrapperListener : AndroidMediaPlayerWrapperListener_Access);
-   function Create (androidMediaPlayerWrapperListener : AndroidMediaPlayerWrapperListener_Access) return AndroidMediaPlayerOnErrorListener_Access;
-   function onError (This : in out AndroidMediaPlayerOnErrorListener; mp : MediaPlayer_Access; what : Integer; extra : Integer) return Boolean;
-   procedure onError (This : in out AndroidMediaPlayerOnErrorListener; mp : MediaPlayer_Access; what : Integer; extra : Integer);
+   procedure Initialize (This : in out AndroidMediaPlayerOnErrorListener'Class; androidMediaPlayerWrapperListener_Param : access AndroidMediaPlayerWrapperListener'Class);
+   function Create (androidMediaPlayerWrapperListener_Param : access AndroidMediaPlayerWrapperListener'Class) return AndroidMediaPlayerOnErrorListener_Access;
+   function onError (This : in out AndroidMediaPlayerOnErrorListener; mp_Param : access MediaPlayer'Class; what : Integer; extra : Integer) return Boolean;
+   procedure onError (This : in out AndroidMediaPlayerOnErrorListener; mp_Param : access MediaPlayer'Class; what : Integer; extra : Integer);
 
 end org.allbinary.media.audio.AndroidMediaPlayerOnErrorListener_Package;
 
@@ -348,9 +348,9 @@ package org.allbinary.media.audio.AndroidMediaPlayerOnCompletionListener_Package
       androidMediaPlayerWrapperListener : AndroidMediaPlayerWrapperListener_Access;
    end record;
 
-   procedure Initialize (This : in out AndroidMediaPlayerOnCompletionListener'Class; androidMediaPlayerWrapperListener : AndroidMediaPlayerWrapperListener_Access);
-   function Create (androidMediaPlayerWrapperListener : AndroidMediaPlayerWrapperListener_Access) return AndroidMediaPlayerOnCompletionListener_Access;
-   procedure onCompletion (This : in out AndroidMediaPlayerOnCompletionListener; mp : MediaPlayer_Access);
+   procedure Initialize (This : in out AndroidMediaPlayerOnCompletionListener'Class; androidMediaPlayerWrapperListener_Param : access AndroidMediaPlayerWrapperListener'Class);
+   function Create (androidMediaPlayerWrapperListener_Param : access AndroidMediaPlayerWrapperListener'Class) return AndroidMediaPlayerOnCompletionListener_Access;
+   procedure onCompletion (This : in out AndroidMediaPlayerOnCompletionListener; mp_Param : access MediaPlayer'Class);
 
 end org.allbinary.media.audio.AndroidMediaPlayerOnCompletionListener_Package;
 

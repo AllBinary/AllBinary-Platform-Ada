@@ -23,23 +23,27 @@ package body org.allbinary.graphics.form.item.CustomTextBox_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CustomTextBox'Class; cmdListener : CommandListener_Access; label : Unbounded_String; text : Unbounded_String; maxSize : Integer; constraints : Integer; font : Font_Access; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) is
+   procedure Initialize (This : in out CustomTextBox'Class; cmdListener_Param : access CommandListener'Class; label : Unbounded_String; text : Unbounded_String; maxSize : Integer; constraints : Integer; font_Param : access Font'Class; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) is
+      cmdListener : CommandListener_Access := CommandListener_Access (cmdListener_Param);
+      font : Font_Access := Font_Access (font_Param);
+      backgroundBasicColor : BasicColor_Access := BasicColor_Access (backgroundBasicColor_Param);
+      foregroundBasicColor : BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
       stringUtil : StringUtil_Access;
       textFieldItem : ABTextFieldItem_Access;
    begin
         GameCommandCanvas_Package.Initialize (This, cmdListener, label, backgroundBasicColor, foregroundBasicColor);
         Initialize_Fields (This);
         stringUtil := StringUtil_Package.getInstance;
-        textFieldItem := ABTextFieldItem_Package.Create (This'Unchecked_Access, TextItemVisitor_Package.Create, stringUtil.EMPTY_STRING, stringUtil.EMPTY_STRING, maxSize, 0, stringUtil.EMPTY_STRING, font, backgroundBasicColor, foregroundBasicColor);
+        textFieldItem := ABTextFieldItem_Package.Create (CustomTextBox_Access'(This'Unchecked_Access), TextItemVisitor_Package.Create, stringUtil.EMPTY_STRING, stringUtil.EMPTY_STRING, maxSize, 0, stringUtil.EMPTY_STRING, font, backgroundBasicColor, foregroundBasicColor);
         textFieldItem.setString (text);
         This.textFieldItem := textFieldItem;
         This.setTitle (label);
    end Initialize;
 
-   function Create (cmdListener : CommandListener_Access; label : Unbounded_String; text : Unbounded_String; maxSize : Integer; constraints : Integer; font : Font_Access; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return CustomTextBox_Access is
+   function Create (cmdListener_Param : access CommandListener'Class; label : Unbounded_String; text : Unbounded_String; maxSize : Integer; constraints : Integer; font_Param : access Font'Class; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return CustomTextBox_Access is
       This : constant CustomTextBox_Access := new CustomTextBox;
    begin
-      CustomTextBox_Package.Initialize (This.all, cmdListener, label, text, maxSize, constraints, font, backgroundBasicColor, foregroundBasicColor);
+      CustomTextBox_Package.Initialize (This.all, cmdListener_Param, label, text, maxSize, constraints, font_Param, backgroundBasicColor_Param, foregroundBasicColor_Param);
       return This;
    end Create;
 
@@ -50,7 +54,7 @@ package body org.allbinary.graphics.form.item.CustomTextBox_Package is
 
    procedure onEventRaw (This : in out CustomTextBox; keyCode : Integer; deviceId : Integer; repeated : Boolean) is
    begin
-        This.logUtil.putF (StringMaker_Package.Create.append (This.commonStrings.START).appendint (keyCode).toString, This'Unchecked_Access, To_Unbounded_String ("onEvent"));
+        This.logUtil.putF (StringMaker_Package.Create.append (This.commonStrings.START).appendint (keyCode).toString, CustomTextBox_Access'(This'Unchecked_Access), To_Unbounded_String ("onEvent"));
         This.keyPressedByDevice (keyCode, deviceId);
    end onEventRaw;
 
@@ -74,7 +78,7 @@ package body org.allbinary.graphics.form.item.CustomTextBox_Package is
       input : Input_Access;
    begin
         begin
-            This.logUtil.putF (StringMaker_Package.Create.append (CommonSeps_Package.getInstance.SPACE).appendint (keyCode).toString, This'Unchecked_Access, This.gameInputStrings.KEY_PRESSED);
+            This.logUtil.putF (StringMaker_Package.Create.append (CommonSeps_Package.getInstance.SPACE).appendint (keyCode).toString, CustomTextBox_Access'(This'Unchecked_Access), This.gameInputStrings.KEY_PRESSED);
             platformKeyFactory := PlatformKeyFactory_Package.getInstance;
             input := This.inputFactory.getInstanceById (keyCode);
             if platformKeyFactory.isSubmission (input) then
@@ -87,7 +91,7 @@ package body org.allbinary.graphics.form.item.CustomTextBox_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.gameInputStrings.KEY_PRESSED, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, CustomTextBox_Access'(This'Unchecked_Access), This.gameInputStrings.KEY_PRESSED, e);
                 end;
         end;
    end keyPressedByDevice;
@@ -97,7 +101,8 @@ package body org.allbinary.graphics.form.item.CustomTextBox_Package is
         null;
    end keyReleasedByDevice;
 
-   procedure paint (This : in out CustomTextBox; graphics : Graphics_Access) is
+   procedure paint (This : in out CustomTextBox; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         graphics.setColor (This.backgroundColor);
         graphics.fillRect (0, 0, This.displayInfo.getLastWidth, This.displayInfo.getLastHeight);
@@ -109,7 +114,8 @@ package body org.allbinary.graphics.form.item.CustomTextBox_Package is
         GameCommandCanvas (This).paint (graphics);
    end paint;
 
-   procedure paintXY (This : in out CustomTextBox; graphics : Graphics_Access; x : Integer; y : Integer) is
+   procedure paintXY (This : in out CustomTextBox; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.textFieldItem.paintXY (graphics, x, y);
    end paintXY;

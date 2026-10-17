@@ -41,20 +41,21 @@ package body org.allbinary.game.media.graphics.geography.map.racetrack.PathFindi
    end Create;
 
    --  throws Exception
-   function getInstancePathFindingInfo (This : in out PathFindingInfoFactory; geographicMapInterface : BasicGeographicMap_Access; graphArray : Integer_Array_Access_Array_Access) return PathFindingInfo_Access is
+   function getInstancePathFindingInfo (This : in out PathFindingInfoFactory; geographicMapInterface_Param : access BasicGeographicMap'Class; graphArray : Integer_Array_Access_Array_Access) return PathFindingInfo_Access is
+      geographicMapInterface : BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
       commonStrings : CommonStrings_Access;
       pathFindingInfo : PathFindingInfo_Access;
    begin
         commonStrings := CommonStrings_Package.getInstance;
-        PreLogUtil_Package.put (commonStrings.START, This'Unchecked_Access, commonStrings.GET_INSTANCE);
+        PreLogUtil_Package.put (commonStrings.START, PathFindingInfoFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);
         pathFindingInfo := PathFindingInfo_Package.Create (PathFindingNodeCostInfoFactoryBase_Package.Create, BasicArrayListS_Package.Create (1), BasicArrayListS_Package.Create (1));
         RaceTrackRoadsGeographicMapCellHistoryFactory_Package.getInstance.init;
         This.init (geographicMapInterface, pathFindingInfo, graphArray);
         return pathFindingInfo;
    end getInstancePathFindingInfo;
 
-   procedure getInstancePathFindingInfo (This : in out PathFindingInfoFactory; geographicMapInterface : BasicGeographicMap_Access; graphArray : Integer_Array_Access_Array_Access) is
-      Java_Result : constant PathFindingInfo_Access := PathFindingInfoFactory'Class (This).getInstancePathFindingInfo (geographicMapInterface, graphArray);
+   procedure getInstancePathFindingInfo (This : in out PathFindingInfoFactory; geographicMapInterface_Param : access BasicGeographicMap'Class; graphArray : Integer_Array_Access_Array_Access) is
+      Java_Result : constant PathFindingInfo_Access := PathFindingInfoFactory'Class (This).getInstancePathFindingInfo (geographicMapInterface_Param, graphArray);
       pragma Unreferenced (Java_Result);
    begin
       null;

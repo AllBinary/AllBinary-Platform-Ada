@@ -48,22 +48,26 @@ package body org.allbinary.util.ABHashtable_Package is
         return Hashtable (This).elements;
    end elements;
 
-   function contains (This : in out ABHashtable; value : Java_Object_Access) return Boolean is
+   function contains (This : in out ABHashtable; value_Param : access Java_Object'Class) return Boolean is
+      value : Java_Object_Access := Java_Object_Access (value_Param);
    begin
         return Hashtable (This).contains (value);
    end contains;
 
-   function containsValue (This : in out ABHashtable; value : Java_Object_Access) return Boolean is
+   function containsValue (This : in out ABHashtable; value_Param : access Java_Object'Class) return Boolean is
+      value : Java_Object_Access := Java_Object_Access (value_Param);
    begin
         return Hashtable (This).containsValue (value);
    end containsValue;
 
-   function containsKey (This : in out ABHashtable; key : Java_Object_Access) return Boolean is
+   function containsKey (This : in out ABHashtable; key_Param : access Java_Object'Class) return Boolean is
+      key : Java_Object_Access := Java_Object_Access (key_Param);
    begin
         return Hashtable (This).containsKey (key);
    end containsKey;
 
-   function get (This : in out ABHashtable; key : Java_Object_Access) return Java_Object_Access is
+   function get (This : in out ABHashtable; key_Param : access Java_Object'Class) return Java_Object_Access is
+      key : Java_Object_Access := Java_Object_Access (key_Param);
    begin
         return Hashtable (This).get (key);
    end get;
@@ -83,7 +87,8 @@ package body org.allbinary.util.ABHashtable_Package is
         return Hashtable (This).toString;
    end toString;
 
-   function equals (This : in out ABHashtable; obj : Java_Object_Access) return Boolean is
+   function equals (This : in out ABHashtable; obj_Param : access Java_Object'Class) return Boolean is
+      obj : Java_Object_Access := Java_Object_Access (obj_Param);
    begin
         return Hashtable (This).equals (obj);
    end equals;
@@ -93,36 +98,36 @@ package body org.allbinary.util.ABHashtable_Package is
         return Hashtable (This).hashCode;
    end hashCode;
 
-   procedure contains (This : in out ABHashtable; value : Java_Object_Access) is
-      Java_Result : constant Boolean := ABHashtable'Class (This).contains (value);
+   procedure contains (This : in out ABHashtable; value_Param : access Java_Object'Class) is
+      Java_Result : constant Boolean := ABHashtable'Class (This).contains (value_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end contains;
 
-   procedure containsValue (This : in out ABHashtable; value : Java_Object_Access) is
-      Java_Result : constant Boolean := ABHashtable'Class (This).containsValue (value);
+   procedure containsValue (This : in out ABHashtable; value_Param : access Java_Object'Class) is
+      Java_Result : constant Boolean := ABHashtable'Class (This).containsValue (value_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end containsValue;
 
-   procedure containsKey (This : in out ABHashtable; key : Java_Object_Access) is
-      Java_Result : constant Boolean := ABHashtable'Class (This).containsKey (key);
+   procedure containsKey (This : in out ABHashtable; key_Param : access Java_Object'Class) is
+      Java_Result : constant Boolean := ABHashtable'Class (This).containsKey (key_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end containsKey;
 
-   procedure get (This : in out ABHashtable; key : Java_Object_Access) is
-      Java_Result : constant Java_Object_Access := ABHashtable'Class (This).get (key);
+   procedure get (This : in out ABHashtable; key_Param : access Java_Object'Class) is
+      Java_Result : constant Java_Object_Access := ABHashtable'Class (This).get (key_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end get;
 
-   procedure equals (This : in out ABHashtable; obj : Java_Object_Access) is
-      Java_Result : constant Boolean := ABHashtable'Class (This).equals (obj);
+   procedure equals (This : in out ABHashtable; obj_Param : access Java_Object'Class) is
+      Java_Result : constant Boolean := ABHashtable'Class (This).equals (obj_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

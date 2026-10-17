@@ -38,22 +38,26 @@ package body org.allbinary.image.opengles.OpenGLESImageProcessor_Package is
         return OpenGLESImageProcessor_Package.instance;
    end getInstance;
 
-   procedure translate (This : in out OpenGLESImageProcessor; gl : GL10_Access; translateX : Float; translateY : Float) is
+   procedure translate (This : in out OpenGLESImageProcessor; gl_Param : access GL10'Class; translateX : Float; translateY : Float) is
+      gl : GL10_Access := GL10_Access (gl_Param);
    begin
         null;
    end translate;
 
-   procedure rotate (This : in out OpenGLESImageProcessor; gl : GL10_Access; angle : Float) is
+   procedure rotate (This : in out OpenGLESImageProcessor; gl_Param : access GL10'Class; angle : Float) is
+      gl : GL10_Access := GL10_Access (gl_Param);
    begin
         null;
    end rotate;
 
-   procedure scale (This : in out OpenGLESImageProcessor; gl : GL10_Access; scaleX : Float; scaleY : Float) is
+   procedure scale (This : in out OpenGLESImageProcessor; gl_Param : access GL10'Class; scaleX : Float; scaleY : Float) is
+      gl : GL10_Access := GL10_Access (gl_Param);
    begin
         null;
    end scale;
 
-   procedure colorMask (This : in out OpenGLESImageProcessor; gl : GL10_Access; red : Float; green : Float; blue : Float; alpha : Float) is
+   procedure colorMask (This : in out OpenGLESImageProcessor; gl_Param : access GL10'Class; red : Float; green : Float; blue : Float; alpha : Float) is
+      gl : GL10_Access := GL10_Access (gl_Param);
    begin
         null;
    end colorMask;

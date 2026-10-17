@@ -43,7 +43,7 @@ package org.allbinary.game.displayable.canvas.OverlayPaintable_Package is
    procedure Initialize (This : in out OverlayPaintable'Class);
    function Create return OverlayPaintable_Access;
    procedure update (This : in out OverlayPaintable);
-   procedure paint (This : in out OverlayPaintable; graphics : Graphics_Access);
+   procedure paint (This : in out OverlayPaintable; graphics_Param : access Graphics'Class);
 
 end org.allbinary.game.displayable.canvas.OverlayPaintable_Package;
 

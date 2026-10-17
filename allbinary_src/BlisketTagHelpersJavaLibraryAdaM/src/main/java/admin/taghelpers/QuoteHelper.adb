@@ -26,7 +26,9 @@ package body admin.taghelpers.QuoteHelper_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out QuoteHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access) is
+   procedure Initialize (This : in out QuoteHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
       storeName : Unbounded_String;
    begin
       BasicTable_Package.Initialize (This);
@@ -41,15 +43,16 @@ package body admin.taghelpers.QuoteHelper_Package is
         This.portion := Portion_Package.Create (hashMap);
    end Initialize;
 
-   function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return QuoteHelper_Access is
+   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return QuoteHelper_Access is
       This : constant QuoteHelper_Access := new QuoteHelper;
    begin
-      QuoteHelper_Package.Initialize (This.all, hashMap, pageContext);
+      QuoteHelper_Package.Initialize (This.all, hashMap_Param, pageContext_Param);
       return This;
    end Create;
 
    --  throws Exception
-   procedure emailUser (This : in out QuoteHelper; quoteRequest : QuoteRequest_Access) is
+   procedure emailUser (This : in out QuoteHelper; quoteRequest_Param : access QuoteRequest'Class) is
+      quoteRequest : QuoteRequest_Access := QuoteRequest_Access (quoteRequest_Param);
       user : UserInterface_Access;
       userEmailSubject : Unbounded_String;
       stringBuffer : StringMaker_Access;
@@ -72,7 +75,8 @@ package body admin.taghelpers.QuoteHelper_Package is
    end emailUser;
 
    --  throws Exception
-   procedure emailAdmins (This : in out QuoteHelper; quoteRequest : QuoteRequest_Access) is
+   procedure emailAdmins (This : in out QuoteHelper; quoteRequest_Param : access QuoteRequest'Class) is
+      quoteRequest : QuoteRequest_Access := QuoteRequest_Access (quoteRequest_Param);
       adminEmailSubject : Unbounded_String;
       stringBuffer : StringMaker_Access;
       adminEmailTextBody : Unbounded_String;
@@ -141,7 +145,7 @@ package body admin.taghelpers.QuoteHelper_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGINGERROR) then
-                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("email"), e);
+                This.logUtil.put (This.commonStrings.FAILURE, QuoteHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("email"), e);
             end if;
             return To_Unbounded_String ("Thank You For Your Business.<p>");
                 end;
@@ -155,7 +159,7 @@ package body admin.taghelpers.QuoteHelper_Package is
         begin
             success := QuoteRequestEntityFactory_Package.getInstance.getQuoteRequestEntityInstance.dropTable;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, This.commonStrings.DROP);
+                This.logUtil.putF (success, QuoteHelper_Access'(This'Unchecked_Access), This.commonStrings.DROP);
             end if;
             return success;
         exception
@@ -165,7 +169,7 @@ package body admin.taghelpers.QuoteHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to drop QuoteRequest table");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.DROP, e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, QuoteHelper_Access'(This'Unchecked_Access), This.commonStrings.DROP, e);
             end if;
             return error;
                 end;
@@ -179,7 +183,7 @@ package body admin.taghelpers.QuoteHelper_Package is
         begin
             success := QuoteRequestEntityFactory_Package.getInstance.getQuoteRequestEntityInstance.createTable;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, To_Unbounded_String ("create()"));
+                This.logUtil.putF (success, QuoteHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("create()"));
             end if;
             return success;
         exception
@@ -189,7 +193,7 @@ package body admin.taghelpers.QuoteHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to create new QuoteRequest table");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("create()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, QuoteHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("create()"), e);
             end if;
             return error;
                 end;
@@ -205,7 +209,7 @@ package body admin.taghelpers.QuoteHelper_Package is
             success := To_Unbounded_String ("Restore Successful");
             result := AbSqlTableUtil_Package.getInstance.restoreTable (QuoteRequestEntityFactory_Package.getInstance.getQuoteRequestEntityInstance, This.portion);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, To_Unbounded_String ("restore()"));
+                This.logUtil.putF (success, QuoteHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("restore()"));
             end if;
             return result;
         exception
@@ -215,7 +219,7 @@ package body admin.taghelpers.QuoteHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to restore backup");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("restore()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, QuoteHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("restore()"), e);
             end if;
             return error;
                 end;
@@ -231,7 +235,7 @@ package body admin.taghelpers.QuoteHelper_Package is
             success := To_Unbounded_String ("Restore Successful");
             result := AbSqlTableUtil_Package.getInstance.backupTable (QuoteRequestEntityFactory_Package.getInstance.getQuoteRequestEntityInstance);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, To_Unbounded_String ("backup()"));
+                This.logUtil.putF (success, QuoteHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("backup()"));
             end if;
             return result;
         exception
@@ -241,7 +245,7 @@ package body admin.taghelpers.QuoteHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to make backup");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("backup()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, QuoteHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("backup()"), e);
             end if;
             return error;
                 end;

@@ -52,7 +52,7 @@ package body org.allbinary.business.init.db.DbInitInfo_Package is
    begin
         url := DbConnectionInfo (This).getUrl;
         if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.PRELOADER) then
-            PreLogUtil_Package.put (Java_Image (This.httpData.URL_LABEL) & url, This'Unchecked_Access, This.GET_URL);
+            PreLogUtil_Package.put (Java_Image (This.httpData.URL_LABEL) & url, DbInitInfo_Access'(This'Unchecked_Access), This.GET_URL);
         end if;
         return url;
    end getUrl;
@@ -105,7 +105,7 @@ package body org.allbinary.business.init.db.DbInitInfo_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.PRELOADERERROR) then
-                PreLogUtil_Package.putOE (To_Unbounded_String ("Failed Write: ") & FILEABPATH.toString, This'Unchecked_Access, To_Unbounded_String ("write"), e);
+                PreLogUtil_Package.putOE (To_Unbounded_String ("Failed Write: ") & FILEABPATH.toString, DbInitInfo_Access'(This'Unchecked_Access), To_Unbounded_String ("write"), e);
             end if;
                 end;
         end;
@@ -156,7 +156,7 @@ package body org.allbinary.business.init.db.DbInitInfo_Package is
             else
                 This.hasRead := False;
                 if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.PRELOADER) then
-                    PreLogUtil_Package.put (To_Unbounded_String ("Not a File - Failed Loading: ") & FILEABPATH.toString, This'Unchecked_Access, This.commonStrings.LOAD);
+                    PreLogUtil_Package.put (To_Unbounded_String ("Not a File - Failed Loading: ") & FILEABPATH.toString, DbInitInfo_Access'(This'Unchecked_Access), This.commonStrings.LOAD);
                 end if;
             end if;
         exception
@@ -165,7 +165,7 @@ package body org.allbinary.business.init.db.DbInitInfo_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.PRELOADERERROR) then
-                PreLogUtil_Package.putOE (To_Unbounded_String ("Failed Loading: ") & FILEABPATH.toString, This'Unchecked_Access, This.commonStrings.LOAD, e);
+                PreLogUtil_Package.putOE (To_Unbounded_String ("Failed Loading: ") & FILEABPATH.toString, DbInitInfo_Access'(This'Unchecked_Access), This.commonStrings.LOAD, e);
             end if;
                 end;
         end;
@@ -189,7 +189,7 @@ package body org.allbinary.business.init.db.DbInitInfo_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.PRELOADERERROR) then
-                PreLogUtil_Package.putOE (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("updateIfNeeded"), e);
+                PreLogUtil_Package.putOE (This.commonStrings.EXCEPTION_Id, DbInitInfo_Access'(This'Unchecked_Access), To_Unbounded_String ("updateIfNeeded"), e);
             end if;
                 end;
         end;
@@ -199,7 +199,7 @@ package body org.allbinary.business.init.db.DbInitInfo_Package is
    begin
         This.updateIfNeeded;
         if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.PRELOADER) then
-            PreLogUtil_Package.put (To_Unbounded_String ("Name: ") & DbConnectionInfo (This).getName, This'Unchecked_Access, To_Unbounded_String ("getName"));
+            PreLogUtil_Package.put (To_Unbounded_String ("Name: ") & DbConnectionInfo (This).getName, DbInitInfo_Access'(This'Unchecked_Access), To_Unbounded_String ("getName"));
         end if;
         return DbConnectionInfo (This).getName;
    end getName;
@@ -208,7 +208,7 @@ package body org.allbinary.business.init.db.DbInitInfo_Package is
    begin
         This.updateIfNeeded;
         if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.PRELOADER) then
-            PreLogUtil_Package.put (To_Unbounded_String ("Name: ") & Java_Image (DbConnectionInfo (This).getUserName), This'Unchecked_Access, To_Unbounded_String ("getUserName"));
+            PreLogUtil_Package.put (To_Unbounded_String ("Name: ") & Java_Image (DbConnectionInfo (This).getUserName), DbInitInfo_Access'(This'Unchecked_Access), To_Unbounded_String ("getUserName"));
         end if;
         return DbConnectionInfo (This).getUserName;
    end getUserName;

@@ -69,12 +69,12 @@ package org.allbinary.game.score.HighScoresPaintable_Package is
 
    procedure Initialize (This : in out HighScoresPaintable'Class);
    function Create return HighScoresPaintable_Access;
-   procedure updateMeasurement (This : in out HighScoresPaintable; graphics : Graphics_Access);
-   procedure onEvent (This : in out HighScoresPaintable; eventObject : AllBinaryEventObject_Access);
-   procedure paint (This : in out HighScoresPaintable; graphics : Graphics_Access);
-   procedure setBasicColorP (This : in out HighScoresPaintable; basicColor : BasicColor_Access);
+   procedure updateMeasurement (This : in out HighScoresPaintable; graphics_Param : access Graphics'Class);
+   procedure onEvent (This : in out HighScoresPaintable; eventObject_Param : access AllBinaryEventObject'Class);
+   procedure paint (This : in out HighScoresPaintable; graphics_Param : access Graphics'Class);
+   procedure setBasicColorP (This : in out HighScoresPaintable; basicColor_Param : access BasicColor'Class);
    function getBasicColorP (This : in out HighScoresPaintable) return BasicColor_Access;
-   procedure setHighScores (This : in out HighScoresPaintable; highScores : HighScores_Access);
+   procedure setHighScores (This : in out HighScoresPaintable; highScores_Param : access HighScores'Class);
 
 end org.allbinary.game.score.HighScoresPaintable_Package;
 

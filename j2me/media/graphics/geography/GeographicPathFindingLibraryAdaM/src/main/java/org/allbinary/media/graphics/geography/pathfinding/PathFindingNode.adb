@@ -23,7 +23,9 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out PathFindingNode'Class; parent : Java_Object_Access; geographicMapCellPosition : GeographicMapCellPosition_Access) is
+   procedure Initialize (This : in out PathFindingNode'Class; parent_Param : access Java_Object'Class; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is
+      parent : Java_Object_Access := Java_Object_Access (parent_Param);
+      geographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
    begin
       Initialize_Fields (This);
         This.parent := parent;
@@ -33,10 +35,10 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_
         end if;
    end Initialize;
 
-   function Create (parent : Java_Object_Access; geographicMapCellPosition : GeographicMapCellPosition_Access) return PathFindingNode_Access is
+   function Create (parent_Param : access Java_Object'Class; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return PathFindingNode_Access is
       This : constant PathFindingNode_Access := new PathFindingNode;
    begin
-      PathFindingNode_Package.Initialize (This.all, parent, geographicMapCellPosition);
+      PathFindingNode_Package.Initialize (This.all, parent_Param, geographicMapCellPosition_Param);
       return This;
    end Create;
 
@@ -45,7 +47,8 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_
         return PathFindingNode_Access (This.parent);
    end getParentP;
 
-   procedure setGeographicMapCellPositionP (This : in out PathFindingNode; geographicMapCellPosition : GeographicMapCellPosition_Access) is
+   procedure setGeographicMapCellPositionP (This : in out PathFindingNode; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is
+      geographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
    begin
         This.geographicMapCellPosition := geographicMapCellPosition;
    end setGeographicMapCellPositionP;

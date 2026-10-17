@@ -29,7 +29,10 @@ package body org.allbinary.media.graphics.geography.map.racetrack.RaceTrackInfo_
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out RaceTrackInfo'Class; id : Integer; name : Unbounded_String; raceTrackFrictionProperties : RaceTrackFrictionProperties_Access; foregroundBasicColor : BasicColor_Access; backgroundBasicColor : BasicColor_Access; qualifyTime : Integer; worstContinuePosition : Integer; totalLaps : Integer) is
+   procedure Initialize (This : in out RaceTrackInfo'Class; id : Integer; name : Unbounded_String; raceTrackFrictionProperties_Param : access RaceTrackFrictionProperties'Class; foregroundBasicColor_Param : access BasicColor'Class; backgroundBasicColor_Param : access BasicColor'Class; qualifyTime : Integer; worstContinuePosition : Integer; totalLaps : Integer) is
+      raceTrackFrictionProperties : RaceTrackFrictionProperties_Access := RaceTrackFrictionProperties_Access (raceTrackFrictionProperties_Param);
+      foregroundBasicColor : BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
+      backgroundBasicColor : BasicColor_Access := BasicColor_Access (backgroundBasicColor_Param);
    begin
       Initialize_Fields (This);
         This.id := id;
@@ -42,10 +45,10 @@ package body org.allbinary.media.graphics.geography.map.racetrack.RaceTrackInfo_
         This.totalLaps := totalLaps;
    end Initialize;
 
-   function Create (id : Integer; name : Unbounded_String; raceTrackFrictionProperties : RaceTrackFrictionProperties_Access; foregroundBasicColor : BasicColor_Access; backgroundBasicColor : BasicColor_Access; qualifyTime : Integer; worstContinuePosition : Integer; totalLaps : Integer) return RaceTrackInfo_Access is
+   function Create (id : Integer; name : Unbounded_String; raceTrackFrictionProperties_Param : access RaceTrackFrictionProperties'Class; foregroundBasicColor_Param : access BasicColor'Class; backgroundBasicColor_Param : access BasicColor'Class; qualifyTime : Integer; worstContinuePosition : Integer; totalLaps : Integer) return RaceTrackInfo_Access is
       This : constant RaceTrackInfo_Access := new RaceTrackInfo;
    begin
-      RaceTrackInfo_Package.Initialize (This.all, id, name, raceTrackFrictionProperties, foregroundBasicColor, backgroundBasicColor, qualifyTime, worstContinuePosition, totalLaps);
+      RaceTrackInfo_Package.Initialize (This.all, id, name, raceTrackFrictionProperties_Param, foregroundBasicColor_Param, backgroundBasicColor_Param, qualifyTime, worstContinuePosition, totalLaps);
       return This;
    end Create;
 
@@ -104,7 +107,8 @@ package body org.allbinary.media.graphics.geography.map.racetrack.RaceTrackInfo_
         return This.foregroundBasicColor;
    end getForegroundBasicColor;
 
-   procedure setForegroundBasicColor (This : in out RaceTrackInfo; foregroundBasicColor : BasicColor_Access) is
+   procedure setForegroundBasicColor (This : in out RaceTrackInfo; foregroundBasicColor_Param : access BasicColor'Class) is
+      foregroundBasicColor : BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
    begin
         This.foregroundBasicColor := foregroundBasicColor;
    end setForegroundBasicColor;
@@ -114,7 +118,8 @@ package body org.allbinary.media.graphics.geography.map.racetrack.RaceTrackInfo_
         return This.backgroundBasicColor;
    end getBackgroundBasicColor;
 
-   procedure setBackgroundBasicColor (This : in out RaceTrackInfo; backgroundBasicColor : BasicColor_Access) is
+   procedure setBackgroundBasicColor (This : in out RaceTrackInfo; backgroundBasicColor_Param : access BasicColor'Class) is
+      backgroundBasicColor : BasicColor_Access := BasicColor_Access (backgroundBasicColor_Param);
    begin
         This.backgroundBasicColor := backgroundBasicColor;
    end setBackgroundBasicColor;
@@ -124,7 +129,8 @@ package body org.allbinary.media.graphics.geography.map.racetrack.RaceTrackInfo_
         return This.raceTrackFrictionProperties;
    end getRaceTrackFrictionProperties;
 
-   procedure setRaceTrackFrictionProperties (This : in out RaceTrackInfo; raceTrackFrictionProperties : RaceTrackFrictionProperties_Access) is
+   procedure setRaceTrackFrictionProperties (This : in out RaceTrackInfo; raceTrackFrictionProperties_Param : access RaceTrackFrictionProperties'Class) is
+      raceTrackFrictionProperties : RaceTrackFrictionProperties_Access := RaceTrackFrictionProperties_Access (raceTrackFrictionProperties_Param);
    begin
         This.raceTrackFrictionProperties := raceTrackFrictionProperties;
    end setRaceTrackFrictionProperties;

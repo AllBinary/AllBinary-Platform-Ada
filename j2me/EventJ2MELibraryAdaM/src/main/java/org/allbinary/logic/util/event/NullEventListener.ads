@@ -36,7 +36,7 @@ package org.allbinary.logic.util.event.NullEventListener_Package is
 
    procedure Initialize (This : in out NullEventListener'Class);
    function Create return NullEventListener_Access;
-   procedure onEvent (This : in out NullEventListener; eventObject : AllBinaryEventObject_Access);
+   procedure onEvent (This : in out NullEventListener; eventObject_Param : access AllBinaryEventObject'Class);
 
 end org.allbinary.logic.util.event.NullEventListener_Package;
 

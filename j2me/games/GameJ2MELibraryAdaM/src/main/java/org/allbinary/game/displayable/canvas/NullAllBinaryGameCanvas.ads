@@ -40,11 +40,11 @@ package org.allbinary.game.displayable.canvas.NullAllBinaryGameCanvas_Package is
    procedure Initialize (This : in out NullAllBinaryGameCanvas'Class);
    function Create return NullAllBinaryGameCanvas_Access;
    function getLayerManager (This : in out NullAllBinaryGameCanvas) return AllBinaryGameLayerManager_Access;
-   procedure addCommand (This : in out NullAllBinaryGameCanvas; cmd : Command_Access);
+   procedure addCommand (This : in out NullAllBinaryGameCanvas; cmd_Param : access Command'Class);
    function getHeight (This : in out NullAllBinaryGameCanvas) return Integer;
    function getWidth (This : in out NullAllBinaryGameCanvas) return Integer;
-   procedure removeCommand (This : in out NullAllBinaryGameCanvas; cmd : Command_Access);
-   procedure setCommandListener (This : in out NullAllBinaryGameCanvas; l : CommandListener_Access);
+   procedure removeCommand (This : in out NullAllBinaryGameCanvas; cmd_Param : access Command'Class);
+   procedure setCommandListener (This : in out NullAllBinaryGameCanvas; l_Param : access CommandListener'Class);
 
 end org.allbinary.game.displayable.canvas.NullAllBinaryGameCanvas_Package;
 

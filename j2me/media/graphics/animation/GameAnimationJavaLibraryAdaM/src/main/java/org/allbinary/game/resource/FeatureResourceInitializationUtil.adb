@@ -45,7 +45,7 @@ package body org.allbinary.game.resource.FeatureResourceInitializationUtil_Packa
       featuredResourceFactory : FeaturedResourceFactory_Access;
    begin
         commonStrings := CommonStrings_Package.getInstance;
-        This.logUtil.putF (commonStrings.START, This'Unchecked_Access, commonStrings.INIT);
+        This.logUtil.putF (commonStrings.START, FeatureResourceInitializationUtil_Access'(This'Unchecked_Access), commonStrings.INIT);
         featuredResourceFactory := FeaturedAnimationInterfaceFactoryInterfaceFactory_Package.getInstance;
         featuredResourceFactory.init (level);
         FeaturedResourceRelativeRelationshipFactory_Package.getInstance.init (level);

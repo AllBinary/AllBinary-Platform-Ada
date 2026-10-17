@@ -72,24 +72,26 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
       return This;
    end Create;
 
-   procedure Initialize (This : in out StoreFront'Class; request : HttpServletRequest_Access) is
+   procedure Initialize (This : in out StoreFront'Class; request_Param : access HttpServletRequest'Class) is
+      request : HttpServletRequest_Access := HttpServletRequest_Access (request_Param);
    begin
       Initialize_Fields (This);
         This.getFormData (RequestParams_Package.Create (request).toHashMap);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
-            This.logUtil.putF (To_Unbounded_String ("TWB- needs update for adding and updating context configuration - currently defaults to admin context config"), This'Unchecked_Access, To_Unbounded_String ("StoreFront"));
+            This.logUtil.putF (To_Unbounded_String ("TWB- needs update for adding and updating context configuration - currently defaults to admin context config"), StoreFront_Access'(This'Unchecked_Access), To_Unbounded_String ("StoreFront"));
         end if;
         This.setContextConfigurationInterface (ContextConfigurationInterfaceFactory_Package.getInstance.getInstance (To_Unbounded_String ("Admin")));
    end Initialize;
 
-   function Create (request : HttpServletRequest_Access) return StoreFront_Access is
+   function Create (request_Param : access HttpServletRequest'Class) return StoreFront_Access is
       This : constant StoreFront_Access := new StoreFront;
    begin
-      StoreFront_Package.Initialize (This.all, request);
+      StoreFront_Package.Initialize (This.all, request_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out StoreFront'Class; hashMap : HashMap_Access) is
+   procedure Initialize (This : in out StoreFront'Class; hashMap_Param : access HashMap'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
       domDocumentString : Unbounded_String;
       document : Document_Access;
    begin
@@ -102,10 +104,10 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
         end if;
    end Initialize;
 
-   function Create (hashMap : HashMap_Access) return StoreFront_Access is
+   function Create (hashMap_Param : access HashMap'Class) return StoreFront_Access is
       This : constant StoreFront_Access := new StoreFront;
    begin
-      StoreFront_Package.Initialize (This.all, hashMap);
+      StoreFront_Package.Initialize (This.all, hashMap_Param);
       return This;
    end Create;
 
@@ -119,23 +121,27 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
    end isColumn;
 
    --  throws Exception
-   function createPath (This : in out StoreFront; key : Unbounded_String; hashMap : HashMap_Access) return AbPath_Access is
+   function createPath (This : in out StoreFront; key : Unbounded_String; hashMap_Param : access HashMap'Class) return AbPath_Access is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
    begin
         return AbPath_Package.Create (This.create (This.EMPTY_STRING, key, hashMap), StringUtil_Package.getInstance.EMPTY_STRING);
    end createPath;
 
    --  throws Exception
-   function createPath (This : in out StoreFront; append : Unbounded_String; key : Unbounded_String; hashMap : HashMap_Access) return AbPath_Access is
+   function createPath (This : in out StoreFront; append : Unbounded_String; key : Unbounded_String; hashMap_Param : access HashMap'Class) return AbPath_Access is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
    begin
         return AbPath_Package.Create (This.create (append, key, hashMap), StringUtil_Package.getInstance.EMPTY_STRING);
    end createPath;
 
-   function get (This : in out StoreFront; key : Unbounded_String; hashMap : HashMap_Access) return Unbounded_String is
+   function get (This : in out StoreFront; key : Unbounded_String; hashMap_Param : access HashMap'Class) return Unbounded_String is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
    begin
         return This.create (This.EMPTY_STRING, key, hashMap);
    end get;
 
-   function create (This : in out StoreFront; append : Unbounded_String; key : Unbounded_String; hashMap : HashMap_Access) return Unbounded_String is
+   function create (This : in out StoreFront; append : Unbounded_String; key : Unbounded_String; hashMap_Param : access HashMap'Class) return Unbounded_String is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
       path : Unbounded_String;
    begin
         path := Unbounded_String (hashMap.get (key));
@@ -151,7 +157,8 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
    end create;
 
    --  throws Exception
-   procedure getFormData (This : in out StoreFront; storeHashMap : HashMap_Access) is
+   procedure getFormData (This : in out StoreFront; storeHashMap_Param : access HashMap'Class) is
+      storeHashMap : HashMap_Access := HashMap_Access (storeHashMap_Param);
       storeFrontData : StoreFrontData_Access;
    begin
         storeFrontData := StoreFrontData_Package.getInstance;
@@ -411,7 +418,7 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), This'Unchecked_Access, To_Unbounded_String ("validationInfo()"), e);
+                This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), StoreFront_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
             end if;
             return To_Unbounded_String ("Error Validating Form");
                 end;
@@ -846,7 +853,7 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("install()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, StoreFront_Access'(This'Unchecked_Access), To_Unbounded_String ("install()"), e);
             end if;
             Java_Throw (e);
                 end;
@@ -854,13 +861,16 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
    end install;
 
    --  throws Exception
-   procedure installViews (This : in out StoreFront; fromDirectoryAbPath : AbPath_Access; toDirectoryAbPath : AbPath_Access; current : Integer; total : Integer) is
+   procedure installViews (This : in out StoreFront; fromDirectoryAbPath_Param : access AbPath'Class; toDirectoryAbPath_Param : access AbPath'Class; current : Integer; total : Integer) is
+      fromDirectoryAbPath : AbPath_Access := AbPath_Access (fromDirectoryAbPath_Param);
+      toDirectoryAbPath : AbPath_Access := AbPath_Access (toDirectoryAbPath_Param);
    begin
         FileUtil_Package.getInstance.copyDirectoryPortion (fromDirectoryAbPath, toDirectoryAbPath, True, False, current, total);
    end installViews;
 
    --  throws Exception
-   procedure installResources (This : in out StoreFront; fromDirectoryAbPath : AbPath_Access; current : Integer; total : Integer) is
+   procedure installResources (This : in out StoreFront; fromDirectoryAbPath_Param : access AbPath'Class; current : Integer; total : Integer) is
+      fromDirectoryAbPath : AbPath_Access := AbPath_Access (fromDirectoryAbPath_Param);
       stringBuffer : StringMaker_Access;
       installCategoryAbPath : AbPath_Access;
       categoryAbPath : AbPath_Access;
@@ -881,7 +891,8 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
    end installResources;
 
    --  throws Exception
-   procedure installMedia (This : in out StoreFront; fromDirectoryAbPath : AbPath_Access; current : Integer; total : Integer) is
+   procedure installMedia (This : in out StoreFront; fromDirectoryAbPath_Param : access AbPath'Class; current : Integer; total : Integer) is
+      fromDirectoryAbPath : AbPath_Access := AbPath_Access (fromDirectoryAbPath_Param);
       stringBuffer : StringMaker_Access;
       viewStoreImagesDirectoryAbPath : AbPath_Access;
       storeAbPath : AbPath_Access;
@@ -990,7 +1001,8 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
         return This.contextConfigurationInterface;
    end getContextConfigurationInterface;
 
-   procedure setContextConfigurationInterface (This : in out StoreFront; contextConfigurationInterface : ContextConfigurationInterface_Access) is
+   procedure setContextConfigurationInterface (This : in out StoreFront; contextConfigurationInterface_Param : access ContextConfigurationInterface'Class) is
+      contextConfigurationInterface : ContextConfigurationInterface_Access := ContextConfigurationInterface_Access (contextConfigurationInterface_Param);
    begin
         This.contextConfigurationInterface := contextConfigurationInterface;
    end setContextConfigurationInterface;
@@ -1002,29 +1014,29 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
       null;
    end isColumn;
 
-   procedure createPath (This : in out StoreFront; key : Unbounded_String; hashMap : HashMap_Access) is
-      Java_Result : constant AbPath_Access := StoreFront'Class (This).createPath (key, hashMap);
+   procedure createPath (This : in out StoreFront; key : Unbounded_String; hashMap_Param : access HashMap'Class) is
+      Java_Result : constant AbPath_Access := StoreFront'Class (This).createPath (key, hashMap_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createPath;
 
-   procedure createPath (This : in out StoreFront; append : Unbounded_String; key : Unbounded_String; hashMap : HashMap_Access) is
-      Java_Result : constant AbPath_Access := StoreFront'Class (This).createPath (append, key, hashMap);
+   procedure createPath (This : in out StoreFront; append : Unbounded_String; key : Unbounded_String; hashMap_Param : access HashMap'Class) is
+      Java_Result : constant AbPath_Access := StoreFront'Class (This).createPath (append, key, hashMap_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createPath;
 
-   procedure get (This : in out StoreFront; key : Unbounded_String; hashMap : HashMap_Access) is
-      Java_Result : constant Unbounded_String := StoreFront'Class (This).get (key, hashMap);
+   procedure get (This : in out StoreFront; key : Unbounded_String; hashMap_Param : access HashMap'Class) is
+      Java_Result : constant Unbounded_String := StoreFront'Class (This).get (key, hashMap_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end get;
 
-   procedure create (This : in out StoreFront; append : Unbounded_String; key : Unbounded_String; hashMap : HashMap_Access) is
-      Java_Result : constant Unbounded_String := StoreFront'Class (This).create (append, key, hashMap);
+   procedure create (This : in out StoreFront; append : Unbounded_String; key : Unbounded_String; hashMap_Param : access HashMap'Class) is
+      Java_Result : constant Unbounded_String := StoreFront'Class (This).create (append, key, hashMap_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

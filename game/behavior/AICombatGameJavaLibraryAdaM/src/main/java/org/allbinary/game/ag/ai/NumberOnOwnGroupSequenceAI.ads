@@ -45,9 +45,9 @@ package org.allbinary.game.ag.ai.NumberOnOwnGroupSequenceAI_Package is
       numberOnSameTeam : Integer_Array_Access;
    end record;
 
-   procedure Initialize (This : in out NumberOnOwnGroupSequenceAI'Class; numberOnSameTeam : Integer_Array_Access; artificialIntelligenceInterface : ArtificialIntelligenceInterface_Access_Array_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access);
-   function Create (numberOnSameTeam : Integer_Array_Access; artificialIntelligenceInterface : ArtificialIntelligenceInterface_Access_Array_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return NumberOnOwnGroupSequenceAI_Access;
-   procedure processAI (This : in out NumberOnOwnGroupSequenceAI; allBinaryLayerManager : AllBinaryLayerManager_Access);
+   procedure Initialize (This : in out NumberOnOwnGroupSequenceAI'Class; numberOnSameTeam : Integer_Array_Access; artificialIntelligenceInterface : ArtificialIntelligenceInterface_Access_Array_Access; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class);
+   function Create (numberOnSameTeam : Integer_Array_Access; artificialIntelligenceInterface : ArtificialIntelligenceInterface_Access_Array_Access; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return NumberOnOwnGroupSequenceAI_Access;
+   procedure processAI (This : in out NumberOnOwnGroupSequenceAI; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class);
 
 end org.allbinary.game.ag.ai.NumberOnOwnGroupSequenceAI_Package;
 

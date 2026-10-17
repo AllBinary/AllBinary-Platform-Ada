@@ -11,17 +11,19 @@ package body org.allbinary.graphics.form.ABCustomForm_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ABCustomForm'Class; title : Unbounded_String; items : ABCustomItem_Access_Array_Access; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) is
+   procedure Initialize (This : in out ABCustomForm'Class; title : Unbounded_String; items : ABCustomItem_Access_Array_Access; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) is
+      backgroundBasicColor : BasicColor_Access := BasicColor_Access (backgroundBasicColor_Param);
+      foregroundBasicColor : BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
    begin
       CustomScreen_Package.Initialize (This);
       Initialize_Fields (This);
         null;
    end Initialize;
 
-   function Create (title : Unbounded_String; items : ABCustomItem_Access_Array_Access; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return ABCustomForm_Access is
+   function Create (title : Unbounded_String; items : ABCustomItem_Access_Array_Access; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return ABCustomForm_Access is
       This : constant ABCustomForm_Access := new ABCustomForm;
    begin
-      ABCustomForm_Package.Initialize (This.all, title, items, backgroundBasicColor, foregroundBasicColor);
+      ABCustomForm_Package.Initialize (This.all, title, items, backgroundBasicColor_Param, foregroundBasicColor_Param);
       return This;
    end Create;
 
@@ -55,17 +57,20 @@ package body org.allbinary.graphics.form.ABCustomForm_Package is
         null;
    end delete;
 
-   function append (This : in out ABCustomForm; item : ABCustomItem_Access) return Integer is
+   function append (This : in out ABCustomForm; item_Param : access ABCustomItem'Class) return Integer is
+      item : ABCustomItem_Access := ABCustomItem_Access (item_Param);
    begin
         return -(1);
    end append;
 
-   procedure insert (This : in out ABCustomForm; itemNum : Integer; item : ABCustomItem_Access) is
+   procedure insert (This : in out ABCustomForm; itemNum : Integer; item_Param : access ABCustomItem'Class) is
+      item : ABCustomItem_Access := ABCustomItem_Access (item_Param);
    begin
         null;
    end insert;
 
-   procedure set (This : in out ABCustomForm; itemNum : Integer; item : ABCustomItem_Access) is
+   procedure set (This : in out ABCustomForm; itemNum : Integer; item_Param : access ABCustomItem'Class) is
+      item : ABCustomItem_Access := ABCustomItem_Access (item_Param);
    begin
         null;
    end set;
@@ -80,7 +85,8 @@ package body org.allbinary.graphics.form.ABCustomForm_Package is
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end getWidth;
 
-   procedure paint (This : in out ABCustomForm; graphics : Graphics_Access) is
+   procedure paint (This : in out ABCustomForm; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         null;
    end paint;
@@ -90,8 +96,8 @@ package body org.allbinary.graphics.form.ABCustomForm_Package is
         return StringUtil_Package.getInstance.EMPTY_STRING;
    end getTitle;
 
-   procedure append (This : in out ABCustomForm; item : ABCustomItem_Access) is
-      Java_Result : constant Integer := ABCustomForm'Class (This).append (item);
+   procedure append (This : in out ABCustomForm; item_Param : access ABCustomItem'Class) is
+      Java_Result : constant Integer := ABCustomForm'Class (This).append (item_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

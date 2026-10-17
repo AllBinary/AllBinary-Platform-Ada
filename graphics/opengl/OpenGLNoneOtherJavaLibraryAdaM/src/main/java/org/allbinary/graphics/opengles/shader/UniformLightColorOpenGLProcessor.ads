@@ -34,9 +34,9 @@ package org.allbinary.graphics.opengles.shader.UniformLightColorOpenGLProcessor_
 
    type UniformLightColorOpenGLProcessor is new OpenGLObject3dProcessor with null record;
 
-   procedure Initialize (This : in out UniformLightColorOpenGLProcessor'Class; shaderComposite : ShaderComposite_Access; handleIndex : Integer);
-   function Create (shaderComposite : ShaderComposite_Access; handleIndex : Integer) return UniformLightColorOpenGLProcessor_Access;
-   procedure process (This : in out UniformLightColorOpenGLProcessor; gl : GL10_Access; unused : Java_Object_Access);
+   procedure Initialize (This : in out UniformLightColorOpenGLProcessor'Class; shaderComposite_Param : access ShaderComposite'Class; handleIndex : Integer);
+   function Create (shaderComposite_Param : access ShaderComposite'Class; handleIndex : Integer) return UniformLightColorOpenGLProcessor_Access;
+   procedure process (This : in out UniformLightColorOpenGLProcessor; gl_Param : access GL10'Class; unused_Param : access Java_Object'Class);
 
 end org.allbinary.graphics.opengles.shader.UniformLightColorOpenGLProcessor_Package;
 

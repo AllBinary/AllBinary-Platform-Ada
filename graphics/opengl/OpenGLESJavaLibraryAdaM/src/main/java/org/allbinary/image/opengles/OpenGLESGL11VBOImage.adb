@@ -27,7 +27,10 @@ package body org.allbinary.image.opengles.OpenGLESGL11VBOImage_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out OpenGLESGL11VBOImage'Class; image : Image_Access; bitmapFactory : PlatformBitmapBaseFactory_Access; textureFactory : PlatformTextureBaseFactory_Access) is
+   procedure Initialize (This : in out OpenGLESGL11VBOImage'Class; image_Param : access Image'Class; bitmapFactory_Param : access PlatformBitmapBaseFactory'Class; textureFactory_Param : access PlatformTextureBaseFactory'Class) is
+      image : Image_Access := Image_Access (image_Param);
+      bitmapFactory : PlatformBitmapBaseFactory_Access := PlatformBitmapBaseFactory_Access (bitmapFactory_Param);
+      textureFactory : PlatformTextureBaseFactory_Access := PlatformTextureBaseFactory_Access (textureFactory_Param);
    begin
         OpenGLESImage_Package.Initialize (This, image, bitmapFactory, textureFactory);
         Initialize_Fields (This);
@@ -36,10 +39,10 @@ package body org.allbinary.image.opengles.OpenGLESGL11VBOImage_Package is
         This.regionTextureVertexFloatBuffer.put (FloatBuffer_Package.wrap (This.regionTextureRectangleFloatArray));
    end Initialize;
 
-   function Create (image : Image_Access; bitmapFactory : PlatformBitmapBaseFactory_Access; textureFactory : PlatformTextureBaseFactory_Access) return OpenGLESGL11VBOImage_Access is
+   function Create (image_Param : access Image'Class; bitmapFactory_Param : access PlatformBitmapBaseFactory'Class; textureFactory_Param : access PlatformTextureBaseFactory'Class) return OpenGLESGL11VBOImage_Access is
       This : constant OpenGLESGL11VBOImage_Access := new OpenGLESGL11VBOImage;
    begin
-      OpenGLESGL11VBOImage_Package.Initialize (This.all, image, bitmapFactory, textureFactory);
+      OpenGLESGL11VBOImage_Package.Initialize (This.all, image_Param, bitmapFactory_Param, textureFactory_Param);
       return This;
    end Create;
 
@@ -56,18 +59,20 @@ package body org.allbinary.image.opengles.OpenGLESGL11VBOImage_Package is
         This.textureVertexFloatBuffer.rewind;
    end initVertices;
 
-   procedure set (This : in out OpenGLESGL11VBOImage; gl : GL_Access) is
+   procedure set (This : in out OpenGLESGL11VBOImage; gl_Param : access GL'Class) is
+      gl : GL_Access := GL_Access (gl_Param);
       gl10 : GL10_Access;
    begin
         gl10 := GL10_Access (gl);
         if OpenGLESImage (This).initTexture (gl10) then
-            This.textureFactory.load (gl10, GL10.GL_TEXTURE_2D, 0, This'Unchecked_Access, 0, True);
+            This.textureFactory.load (gl10, GL10.GL_TEXTURE_2D, 0, OpenGLESGL11VBOImage_Access'(This'Unchecked_Access), 0, True);
             gl10.glDisable (GL10.GL_TEXTURE_2D);
-            OpenGLLogUtil_Package.getInstance.logError (gl10, This'Unchecked_Access);
+            OpenGLLogUtil_Package.getInstance.logError (gl10, OpenGLESGL11VBOImage_Access'(This'Unchecked_Access));
         end if;
    end set;
 
-   procedure drawRegion (This : in out OpenGLESGL11VBOImage; gl : GL10_Access; viewHeight : Integer; x_src : Float; y_src : Float; width : Float; height : Float; x : Integer; y : Integer; z : Integer) is
+   procedure drawRegion (This : in out OpenGLESGL11VBOImage; gl_Param : access GL10'Class; viewHeight : Integer; x_src : Float; y_src : Float; width : Float; height : Float; x : Integer; y : Integer; z : Integer) is
+      gl : GL10_Access := GL10_Access (gl_Param);
    begin
         This.regionRectangleFloatArray (0) := Float (x);
         This.regionRectangleFloatArray (7) := Float ((viewHeight) - (y));
@@ -99,7 +104,8 @@ package body org.allbinary.image.opengles.OpenGLESGL11VBOImage_Package is
         gl.glDisable (GL10.GL_TEXTURE_2D);
    end drawRegion;
 
-   procedure draw (This : in out OpenGLESGL11VBOImage; gl : GL10_Access; x : Integer; y : Integer; z : Integer) is
+   procedure draw (This : in out OpenGLESGL11VBOImage; gl_Param : access GL10'Class; x : Integer; y : Integer; z : Integer) is
+      gl : GL10_Access := GL10_Access (gl_Param);
    begin
         This.regionRectangleFloatArray (0) := Float (x);
         This.regionRectangleFloatArray (7) := (DisplayInfoSingleton_Package.getInstance.getLastHeight) - (y);

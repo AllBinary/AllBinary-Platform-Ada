@@ -59,7 +59,9 @@ package body org.allbinary.game.input.mapping.InputMapping_Package is
         This.mappedList.clear;
    end removeAll;
 
-   procedure remove (This : in out InputMapping; input : Input_Access; mappedToInput : Input_Access) is
+   procedure remove (This : in out InputMapping; input_Param : access Input'Class; mappedToInput_Param : access Input'Class) is
+      input : Input_Access := Input_Access (input_Param);
+      mappedToInput : Input_Access := Input_Access (mappedToInput_Param);
       stringBuffer : StringMaker_Access;
       stringUtil : StringUtil_Access;
       list : BasicArrayList_Access;
@@ -70,7 +72,7 @@ package body org.allbinary.game.input.mapping.InputMapping_Package is
         stringBuffer.append (stringUtil.toString (input));
         stringBuffer.append (To_Unbounded_String (" == "));
         stringBuffer.append (stringUtil.toString (mappedToInput));
-        This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("InputMapping::remove"));
+        This.logUtil.putF (stringBuffer.toString, InputMapping_Access'(This'Unchecked_Access), To_Unbounded_String ("InputMapping::remove"));
         list := This.getMappedInput (input);
         if list.contains (mappedToInput) then
             list.remove (mappedToInput);
@@ -80,24 +82,27 @@ package body org.allbinary.game.input.mapping.InputMapping_Package is
             stringBuffer.append (stringUtil.toString (input));
             stringBuffer.append (To_Unbounded_String (" == "));
             stringBuffer.append (stringUtil.toString (mappedToInput));
-            This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("InputMapping::remove"));
+            This.logUtil.putF (stringBuffer.toString, InputMapping_Access'(This'Unchecked_Access), To_Unbounded_String ("InputMapping::remove"));
         else
             stringBuffer.delete (0, stringBuffer.length);
             stringBuffer.append (To_Unbounded_String ("Not Deleted: "));
             stringBuffer.append (stringUtil.toString (input));
             stringBuffer.append (To_Unbounded_String (" == "));
             stringBuffer.append (stringUtil.toString (mappedToInput));
-            This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("InputMapping::remove"));
+            This.logUtil.putF (stringBuffer.toString, InputMapping_Access'(This'Unchecked_Access), To_Unbounded_String ("InputMapping::remove"));
         end if;
    end remove;
 
    --  throws Exception
-   procedure addMapping (This : in out InputMapping; inputToGameKeyMapping : InputToGameKeyMapping_Access) is
+   procedure addMapping (This : in out InputMapping; inputToGameKeyMapping_Param : access InputToGameKeyMapping'Class) is
+      inputToGameKeyMapping : InputToGameKeyMapping_Access := InputToGameKeyMapping_Access (inputToGameKeyMapping_Param);
    begin
         Java_Throw (Java_New_Exception ("Exception", This.commonStrings.NOT_IMPLEMENTED));
    end addMapping;
 
-   procedure add (This : in out InputMapping; input : Input_Access; mappedToInput : Input_Access) is
+   procedure add (This : in out InputMapping; input_Param : access Input'Class; mappedToInput_Param : access Input'Class) is
+      input : Input_Access := Input_Access (input_Param);
+      mappedToInput : Input_Access := Input_Access (mappedToInput_Param);
       list : BasicArrayList_Access;
    begin
         list := This.getMappedInput (input);
@@ -107,12 +112,14 @@ package body org.allbinary.game.input.mapping.InputMapping_Package is
         end if;
    end add;
 
-   function isMapped (This : in out InputMapping; input : Input_Access) return Boolean is
+   function isMapped (This : in out InputMapping; input_Param : access Input'Class) return Boolean is
+      input : Input_Access := Input_Access (input_Param);
    begin
         return This.mappedList.contains (input);
    end isMapped;
 
-   function getMappedInput (This : in out InputMapping; id : Input_Access) return BasicArrayList_Access is
+   function getMappedInput (This : in out InputMapping; id_Param : access Input'Class) return BasicArrayList_Access is
+      id : Input_Access := Input_Access (id_Param);
       mappingInputCanBeNullList : Java_Object_Access;
       list : BasicArrayList_Access;
    begin
@@ -130,15 +137,15 @@ package body org.allbinary.game.input.mapping.InputMapping_Package is
         return This.hashtable;
    end getHashtable;
 
-   procedure isMapped (This : in out InputMapping; input : Input_Access) is
-      Java_Result : constant Boolean := InputMapping'Class (This).isMapped (input);
+   procedure isMapped (This : in out InputMapping; input_Param : access Input'Class) is
+      Java_Result : constant Boolean := InputMapping'Class (This).isMapped (input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isMapped;
 
-   procedure getMappedInput (This : in out InputMapping; id : Input_Access) is
-      Java_Result : constant BasicArrayList_Access := InputMapping'Class (This).getMappedInput (id);
+   procedure getMappedInput (This : in out InputMapping; id_Param : access Input'Class) is
+      Java_Result : constant BasicArrayList_Access := InputMapping'Class (This).getMappedInput (id_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

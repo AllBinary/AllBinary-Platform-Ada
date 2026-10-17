@@ -54,17 +54,20 @@ package body org.allbinary.util.ABVector_Package is
         return Vector (This).isEmpty;
    end isEmpty;
 
-   function contains (This : in out ABVector; obj : Java_Object_Access) return Boolean is
+   function contains (This : in out ABVector; obj_Param : access Java_Object'Class) return Boolean is
+      obj : Java_Object_Access := Java_Object_Access (obj_Param);
    begin
         return Vector (This).contains (obj);
    end contains;
 
-   function indexOf (This : in out ABVector; obj : Java_Object_Access) return Integer is
+   function indexOf (This : in out ABVector; obj_Param : access Java_Object'Class) return Integer is
+      obj : Java_Object_Access := Java_Object_Access (obj_Param);
    begin
         return Vector (This).indexOf (obj);
    end indexOf;
 
-   function lastIndexOf (This : in out ABVector; obj : Java_Object_Access) return Integer is
+   function lastIndexOf (This : in out ABVector; obj_Param : access Java_Object'Class) return Integer is
+      obj : Java_Object_Access := Java_Object_Access (obj_Param);
    begin
         return Vector (This).lastIndexOf (obj);
    end lastIndexOf;
@@ -84,7 +87,8 @@ package body org.allbinary.util.ABVector_Package is
         return Vector (This).lastElement;
    end lastElement;
 
-   procedure setElementAt (This : in out ABVector; obj : Java_Object_Access; index : Integer) is
+   procedure setElementAt (This : in out ABVector; obj_Param : access Java_Object'Class; index : Integer) is
+      obj : Java_Object_Access := Java_Object_Access (obj_Param);
    begin
         Vector (This).setElementAt (obj, index);
    end setElementAt;
@@ -94,17 +98,20 @@ package body org.allbinary.util.ABVector_Package is
         Vector (This).removeElementAt (index);
    end removeElementAt;
 
-   procedure addElement (This : in out ABVector; obj : Java_Object_Access) is
+   procedure addElement (This : in out ABVector; obj_Param : access Java_Object'Class) is
+      obj : Java_Object_Access := Java_Object_Access (obj_Param);
    begin
         Vector (This).addElement (obj);
    end addElement;
 
-   procedure insertElementAt (This : in out ABVector; obj : Java_Object_Access; index : Integer) is
+   procedure insertElementAt (This : in out ABVector; obj_Param : access Java_Object'Class; index : Integer) is
+      obj : Java_Object_Access := Java_Object_Access (obj_Param);
    begin
         Vector (This).insertElementAt (obj, index);
    end insertElementAt;
 
-   function removeElement (This : in out ABVector; obj : Java_Object_Access) return Boolean is
+   function removeElement (This : in out ABVector; obj_Param : access Java_Object'Class) return Boolean is
+      obj : Java_Object_Access := Java_Object_Access (obj_Param);
    begin
         return Vector (This).removeElement (obj);
    end removeElement;
@@ -124,22 +131,26 @@ package body org.allbinary.util.ABVector_Package is
         return Vector (This).toArray;
    end toArray;
 
-   function set (This : in out ABVector; index : Integer; element : Java_Object_Access) return Java_Object_Access is
+   function set (This : in out ABVector; index : Integer; element_Param : access Java_Object'Class) return Java_Object_Access is
+      element : Java_Object_Access := Java_Object_Access (element_Param);
    begin
         return Vector (This).set (index, element);
    end set;
 
-   function add (This : in out ABVector; element : Java_Object_Access) return Boolean is
+   function add (This : in out ABVector; element_Param : access Java_Object'Class) return Boolean is
+      element : Java_Object_Access := Java_Object_Access (element_Param);
    begin
         return Vector (This).add (element);
    end add;
 
-   function remove (This : in out ABVector; obj : Java_Object_Access) return Boolean is
+   function remove (This : in out ABVector; obj_Param : access Java_Object'Class) return Boolean is
+      obj : Java_Object_Access := Java_Object_Access (obj_Param);
    begin
         return Vector (This).remove (obj);
    end remove;
 
-   procedure add (This : in out ABVector; index : Integer; element : Java_Object_Access) is
+   procedure add (This : in out ABVector; index : Integer; element_Param : access Java_Object'Class) is
+      element : Java_Object_Access := Java_Object_Access (element_Param);
    begin
         Vector (This).add (index, element);
    end add;
@@ -154,7 +165,8 @@ package body org.allbinary.util.ABVector_Package is
         Vector (This).clear;
    end clear;
 
-   function equals (This : in out ABVector; obj : Java_Object_Access) return Boolean is
+   function equals (This : in out ABVector; obj_Param : access Java_Object'Class) return Boolean is
+      obj : Java_Object_Access := Java_Object_Access (obj_Param);
    begin
         return Vector (This).equals (obj);
    end equals;
@@ -174,22 +186,22 @@ package body org.allbinary.util.ABVector_Package is
         Vector (This).removeRange (fromIndex, toIndex);
    end removeRange;
 
-   procedure contains (This : in out ABVector; obj : Java_Object_Access) is
-      Java_Result : constant Boolean := ABVector'Class (This).contains (obj);
+   procedure contains (This : in out ABVector; obj_Param : access Java_Object'Class) is
+      Java_Result : constant Boolean := ABVector'Class (This).contains (obj_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end contains;
 
-   procedure indexOf (This : in out ABVector; obj : Java_Object_Access) is
-      Java_Result : constant Integer := ABVector'Class (This).indexOf (obj);
+   procedure indexOf (This : in out ABVector; obj_Param : access Java_Object'Class) is
+      Java_Result : constant Integer := ABVector'Class (This).indexOf (obj_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end indexOf;
 
-   procedure lastIndexOf (This : in out ABVector; obj : Java_Object_Access) is
-      Java_Result : constant Integer := ABVector'Class (This).lastIndexOf (obj);
+   procedure lastIndexOf (This : in out ABVector; obj_Param : access Java_Object'Class) is
+      Java_Result : constant Integer := ABVector'Class (This).lastIndexOf (obj_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
@@ -202,29 +214,29 @@ package body org.allbinary.util.ABVector_Package is
       null;
    end elementAt;
 
-   procedure removeElement (This : in out ABVector; obj : Java_Object_Access) is
-      Java_Result : constant Boolean := ABVector'Class (This).removeElement (obj);
+   procedure removeElement (This : in out ABVector; obj_Param : access Java_Object'Class) is
+      Java_Result : constant Boolean := ABVector'Class (This).removeElement (obj_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end removeElement;
 
-   procedure set (This : in out ABVector; index : Integer; element : Java_Object_Access) is
-      Java_Result : constant Java_Object_Access := ABVector'Class (This).set (index, element);
+   procedure set (This : in out ABVector; index : Integer; element_Param : access Java_Object'Class) is
+      Java_Result : constant Java_Object_Access := ABVector'Class (This).set (index, element_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end set;
 
-   procedure add (This : in out ABVector; element : Java_Object_Access) is
-      Java_Result : constant Boolean := ABVector'Class (This).add (element);
+   procedure add (This : in out ABVector; element_Param : access Java_Object'Class) is
+      Java_Result : constant Boolean := ABVector'Class (This).add (element_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end add;
 
-   procedure remove (This : in out ABVector; obj : Java_Object_Access) is
-      Java_Result : constant Boolean := ABVector'Class (This).remove (obj);
+   procedure remove (This : in out ABVector; obj_Param : access Java_Object'Class) is
+      Java_Result : constant Boolean := ABVector'Class (This).remove (obj_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
@@ -237,8 +249,8 @@ package body org.allbinary.util.ABVector_Package is
       null;
    end remove;
 
-   procedure equals (This : in out ABVector; obj : Java_Object_Access) is
-      Java_Result : constant Boolean := ABVector'Class (This).equals (obj);
+   procedure equals (This : in out ABVector; obj_Param : access Java_Object'Class) is
+      Java_Result : constant Boolean := ABVector'Class (This).equals (obj_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

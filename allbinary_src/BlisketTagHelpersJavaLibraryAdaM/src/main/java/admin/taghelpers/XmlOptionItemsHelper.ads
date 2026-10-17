@@ -45,8 +45,8 @@ package admin.taghelpers.XmlOptionItemsHelper_Package is
       portion : Portion_Access;
    end record;
 
-   procedure Initialize (This : in out XmlOptionItemsHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access);
-   function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return XmlOptionItemsHelper_Access;
+   procedure Initialize (This : in out XmlOptionItemsHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
+   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return XmlOptionItemsHelper_Access;
    function create (This : in out XmlOptionItemsHelper) return Unbounded_String;
    function drop (This : in out XmlOptionItemsHelper) return Unbounded_String;
    function restore (This : in out XmlOptionItemsHelper) return Unbounded_String;

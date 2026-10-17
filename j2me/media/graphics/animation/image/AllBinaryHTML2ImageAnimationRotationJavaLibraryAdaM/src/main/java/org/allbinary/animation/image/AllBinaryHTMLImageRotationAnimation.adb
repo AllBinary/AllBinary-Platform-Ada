@@ -29,7 +29,11 @@ package body org.allbinary.animation.image.AllBinaryHTMLImageRotationAnimation_P
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AllBinaryHTMLImageRotationAnimation'Class; originalImage : Image_Access; image : Image_Access; angleInfo : AngleInfo_Access; totalAngle : Short_Integer; animationBehavior : AnimationBehavior_Access) is
+   procedure Initialize (This : in out AllBinaryHTMLImageRotationAnimation'Class; originalImage_Param : access Image'Class; image_Param : access Image'Class; angleInfo_Param : access AngleInfo'Class; totalAngle : Short_Integer; animationBehavior_Param : access AnimationBehavior'Class) is
+      originalImage : Image_Access := Image_Access (originalImage_Param);
+      image : Image_Access := Image_Access (image_Param);
+      angleInfo : AngleInfo_Access := AngleInfo_Access (angleInfo_Param);
+      animationBehavior : AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
    begin
         ImageBaseRotationAnimation_Package.Initialize (This, image, angleInfo, totalAngle, animationBehavior);
         Initialize_Fields (This);
@@ -41,14 +45,15 @@ package body org.allbinary.animation.image.AllBinaryHTMLImageRotationAnimation_P
         This.canvasSurfaceArray (1) := This.getCanvasSurface (This.twoImages (1));
    end Initialize;
 
-   function Create (originalImage : Image_Access; image : Image_Access; angleInfo : AngleInfo_Access; totalAngle : Short_Integer; animationBehavior : AnimationBehavior_Access) return AllBinaryHTMLImageRotationAnimation_Access is
+   function Create (originalImage_Param : access Image'Class; image_Param : access Image'Class; angleInfo_Param : access AngleInfo'Class; totalAngle : Short_Integer; animationBehavior_Param : access AnimationBehavior'Class) return AllBinaryHTMLImageRotationAnimation_Access is
       This : constant AllBinaryHTMLImageRotationAnimation_Access := new AllBinaryHTMLImageRotationAnimation;
    begin
-      AllBinaryHTMLImageRotationAnimation_Package.Initialize (This.all, originalImage, image, angleInfo, totalAngle, animationBehavior);
+      AllBinaryHTMLImageRotationAnimation_Package.Initialize (This.all, originalImage_Param, image_Param, angleInfo_Param, totalAngle, animationBehavior_Param);
       return This;
    end Create;
 
-   function getCanvasSurface (This : in out AllBinaryHTMLImageRotationAnimation; image : Image_Access) return Canvas_Access is
+   function getCanvasSurface (This : in out AllBinaryHTMLImageRotationAnimation; image_Param : access Image'Class) return Canvas_Access is
+      image : Image_Access := Image_Access (image_Param);
       htmlImage : PlaynMutableImage_Access;
       canvasImage : ImageImpl_Access;
       playN : PlayN_Access;
@@ -62,7 +67,8 @@ package body org.allbinary.animation.image.AllBinaryHTMLImageRotationAnimation_P
         return canvas;
    end getCanvasSurface;
 
-   procedure setBasicColorP (This : in out AllBinaryHTMLImageRotationAnimation; basicColor : BasicColor_Access) is
+   procedure setBasicColorP (This : in out AllBinaryHTMLImageRotationAnimation; basicColor_Param : access BasicColor'Class) is
+      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
       changed : Boolean;
    begin
         changed := False;
@@ -129,13 +135,14 @@ package body org.allbinary.animation.image.AllBinaryHTMLImageRotationAnimation_P
         end if;
    end swap;
 
-   procedure paintXY (This : in out AllBinaryHTMLImageRotationAnimation; graphics : Graphics_Access; x : Integer; y : Integer) is
+   procedure paintXY (This : in out AllBinaryHTMLImageRotationAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         graphics.drawImage (This.imageToShow, x, y, This.anchor);
    end paintXY;
 
-   procedure getCanvasSurface (This : in out AllBinaryHTMLImageRotationAnimation; image : Image_Access) is
-      Java_Result : constant Canvas_Access := AllBinaryHTMLImageRotationAnimation'Class (This).getCanvasSurface (image);
+   procedure getCanvasSurface (This : in out AllBinaryHTMLImageRotationAnimation; image_Param : access Image'Class) is
+      Java_Result : constant Canvas_Access := AllBinaryHTMLImageRotationAnimation'Class (This).getCanvasSurface (image_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -72,7 +72,7 @@ package body org.allbinary.logic.system.hardware.linux.PCComponentFactory_Packag
                 begin
             commonStrings := CommonStrings_Package.getInstance;
             if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.FACTORYERROR) then
-                This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.GET_INSTANCE, e);
+                This.logUtil.put (commonStrings.EXCEPTION_Id, PCComponentFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE, e);
             end if;
             return Unknown_Package.Create (commonStrings.EXCEPTION_Id);
                 end;

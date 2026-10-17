@@ -42,7 +42,8 @@ package body org.allbinary.animation.image.ScaleProcessor_Package is
         return ScaleProcessor_Package.instanceC;
    end getInstance;
 
-   procedure update (This : in out ScaleProcessor; originalImage : Image_Access; originalImageArray : Image_Access_Array_Access; ximageToShowArray : Image_Access_Array_Access; unused : Integer; scaleX : Float; scaleY : Float; maxScaleX : Float; maxScaleY : Float) is
+   procedure update (This : in out ScaleProcessor; originalImage_Param : access Image'Class; originalImageArray : Image_Access_Array_Access; ximageToShowArray : Image_Access_Array_Access; unused : Integer; scaleX : Float; scaleY : Float; maxScaleX : Float; maxScaleY : Float) is
+      originalImage : Image_Access := Image_Access (originalImage_Param);
    begin
         begin
             This.imageScaleUtil.scale2 (originalImage, originalImageArray, ximageToShowArray, unused, scaleX, scaleY, maxScaleX, maxScaleY);
@@ -51,7 +52,7 @@ package body org.allbinary.animation.image.ScaleProcessor_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.UPDATE, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, ScaleProcessor_Access'(This'Unchecked_Access), This.commonStrings.UPDATE, e);
                 end;
         end;
    end update;

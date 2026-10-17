@@ -46,16 +46,17 @@ package body tags.transform.info.TransformInfoTag_Package is
       return This;
    end Create;
 
-   procedure Initialize (This : in out TransformInfoTag'Class; tagHelperFactoryInterface : TagHelperFactoryInterface_Access) is
+   procedure Initialize (This : in out TransformInfoTag'Class; tagHelperFactoryInterface_Param : access TagHelperFactoryInterface'Class) is
+      tagHelperFactoryInterface : TagHelperFactoryInterface_Access := TagHelperFactoryInterface_Access (tagHelperFactoryInterface_Param);
    begin
         ModifyTag_Package.Initialize (This, tagHelperFactoryInterface);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (tagHelperFactoryInterface : TagHelperFactoryInterface_Access) return TransformInfoTag_Access is
+   function Create (tagHelperFactoryInterface_Param : access TagHelperFactoryInterface'Class) return TransformInfoTag_Access is
       This : constant TransformInfoTag_Access := new TransformInfoTag;
    begin
-      TransformInfoTag_Package.Initialize (This.all, tagHelperFactoryInterface);
+      TransformInfoTag_Package.Initialize (This.all, tagHelperFactoryInterface_Param);
       return This;
    end Create;
 
@@ -124,7 +125,7 @@ package body tags.transform.info.TransformInfoTag_Package is
         This.type_Id := value;
         This.getPropertiesHashMap.put (OutputTypeData_Package.getInstance.NAME, This.type_Id);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
-            This.logUtil.putF (To_Unbounded_String ("TransformInfoTag type set: ") & This.type_Id, This'Unchecked_Access, To_Unbounded_String ("setType"));
+            This.logUtil.putF (To_Unbounded_String ("TransformInfoTag type set: ") & This.type_Id, TransformInfoTag_Access'(This'Unchecked_Access), To_Unbounded_String ("setType"));
         end if;
    end setType;
 

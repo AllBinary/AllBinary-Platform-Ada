@@ -33,7 +33,7 @@ package org.allbinary.logic.util.cache.CacheInterface_Package is
    type CacheInterface_Access is access all CacheInterface'Class;
    type CacheInterface_Access_Array is array (Natural range <>) of CacheInterface_Access;
    type CacheInterface_Access_Array_Access is access all CacheInterface_Access_Array;
-   procedure add (This : in out CacheInterface; cacheableInterface : CacheableInterface_Access) is abstract;
+   procedure add (This : in out CacheInterface; cacheableInterface_Param : access CacheableInterface'Class) is abstract;
    procedure addArray (This : in out CacheInterface; cacheableInterfaces : CacheableInterface_Access_Array_Access) is abstract;
    procedure clear (This : in out CacheInterface) is abstract;
 

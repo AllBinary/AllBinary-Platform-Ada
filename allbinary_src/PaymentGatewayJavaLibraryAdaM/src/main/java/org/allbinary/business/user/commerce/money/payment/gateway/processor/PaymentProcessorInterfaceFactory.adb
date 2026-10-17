@@ -41,7 +41,8 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.processo
    end Create;
 
    --  throws Exception
-   function getInstance (This : in out PaymentProcessorInterfaceFactory; transformInfoInterface : TransformInfoInterface_Access) return PaymentProcessorInterface_Access is
+   function getInstance (This : in out PaymentProcessorInterfaceFactory; transformInfoInterface_Param : access TransformInfoInterface'Class) return PaymentProcessorInterface_Access is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
       paymentTransactionInterface : PaymentTransactionInterface_Access;
       gatewayName : Unbounded_String;
       paymentType : PaymentType_Access;
@@ -64,15 +65,15 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.processo
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PAYMENTERROR) then
                 commonStrings := CommonStrings_Package.getInstance;
-                This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.GET_INSTANCE, e);
+                This.logUtil.put (commonStrings.EXCEPTION_Id, PaymentProcessorInterfaceFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE, e);
             end if;
             Java_Throw (e);
                 end;
         end;
    end getInstance;
 
-   procedure getInstance (This : in out PaymentProcessorInterfaceFactory; transformInfoInterface : TransformInfoInterface_Access) is
-      Java_Result : constant PaymentProcessorInterface_Access := PaymentProcessorInterfaceFactory'Class (This).getInstance (transformInfoInterface);
+   procedure getInstance (This : in out PaymentProcessorInterfaceFactory; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+      Java_Result : constant PaymentProcessorInterface_Access := PaymentProcessorInterfaceFactory'Class (This).getInstance (transformInfoInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

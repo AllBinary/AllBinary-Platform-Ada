@@ -36,8 +36,8 @@ package org.allbinary.data.tables.user.commerce.inventory.item.permissions.Permi
    type PermissionItemsEntityInterface_Access_Array is array (Natural range <>) of PermissionItemsEntityInterface_Access;
    type PermissionItemsEntityInterface_Access_Array_Access is access all PermissionItemsEntityInterface_Access_Array;
    procedure delete (This : in out PermissionItemsEntityInterface; value : Unbounded_String) is abstract;
-   procedure insert (This : in out PermissionItemsEntityInterface; values : BasicArrayList_Access) is abstract;
-   procedure update (This : in out PermissionItemsEntityInterface; updatedValues : HashMap_Access) is abstract;
+   procedure insert (This : in out PermissionItemsEntityInterface; values_Param : access BasicArrayList'Class) is abstract;
+   procedure update (This : in out PermissionItemsEntityInterface; updatedValues_Param : access HashMap'Class) is abstract;
 
 end org.allbinary.data.tables.user.commerce.inventory.item.permissions.PermissionItemsEntityInterface_Package;
 

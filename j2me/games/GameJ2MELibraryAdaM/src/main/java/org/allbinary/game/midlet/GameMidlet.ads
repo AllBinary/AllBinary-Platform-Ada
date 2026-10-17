@@ -235,8 +235,8 @@ package org.allbinary.game.midlet.GameMidlet_Package is
       startedBefore : Boolean;
    end record;
 
-   procedure Initialize (This : in out GameMidlet'Class; clientInformationFactory : ClientInformationFactory_Access);
-   function Create (clientInformationFactory : ClientInformationFactory_Access) return GameMidlet_Access;
+   procedure Initialize (This : in out GameMidlet'Class; clientInformationFactory_Param : access ClientInformationFactory'Class);
+   function Create (clientInformationFactory_Param : access ClientInformationFactory'Class) return GameMidlet_Access;
    procedure init (This : in out GameMidlet);
    procedure setDemo (This : in out GameMidlet);
    procedure createGame (This : in out GameMidlet);
@@ -249,9 +249,9 @@ package org.allbinary.game.midlet.GameMidlet_Package is
    procedure destroyAppInRunnable (This : in out GameMidlet; unconditional : Boolean; isProgress : Boolean);
    procedure destroyApp (This : in out GameMidlet; unconditional : Boolean);
    procedure startApp (This : in out GameMidlet);
-   procedure commandAction (This : in out GameMidlet; command : Command_Access; displayable_Case : Displayable_Access);
+   procedure commandAction (This : in out GameMidlet; command_Param : access Command'Class; displayable_Case_Param : access Displayable'Class);
    procedure updateFullScreen (This : in out GameMidlet);
-   procedure onEvent (This : in out GameMidlet; eventObject : AllBinaryEventObject_Access);
+   procedure onEvent (This : in out GameMidlet; eventObject_Param : access AllBinaryEventObject'Class);
    function getInputMappingInstructionsCanvas (This : in out GameMidlet) return MyCanvas_Access;
    function getInputMappingCanvas (This : in out GameMidlet) return MyCanvas_Access;
    function getAboutCanvas (This : in out GameMidlet) return MyCanvas_Access;
@@ -260,12 +260,12 @@ package org.allbinary.game.midlet.GameMidlet_Package is
    procedure startGameCanvasRunnableInterface (This : in out GameMidlet);
    procedure stopGameCanvasRunnableInterface (This : in out GameMidlet);
    function getGameCanvasRunnableInterface (This : in out GameMidlet) return GameCanvasRunnableInterface_Access;
-   procedure setGameCanvasRunnableInterface (This : in out GameMidlet; gameCanvasRunnableInterface : GameCanvasRunnableInterface_Access);
+   procedure setGameCanvasRunnableInterface (This : in out GameMidlet; gameCanvasRunnableInterface_Param : access GameCanvasRunnableInterface'Class);
    function createGameLayerManager (This : in out GameMidlet) return AllBinaryGameLayerManager_Access;
    function getGameOptionsForm (This : in out GameMidlet) return CommandForm_Access;
    procedure save (This : in out GameMidlet);
    function getCurrentStateHashtable (This : in out GameMidlet) return ABHashtable_Access;
-   procedure setLoadGameForm (This : in out GameMidlet; loadGameForm : LoadGameForm_Access);
+   procedure setLoadGameForm (This : in out GameMidlet; loadGameForm_Param : access LoadGameForm'Class);
    function getLoadGameForm (This : in out GameMidlet) return CommandForm_Access;
    procedure setResized (This : in out GameMidlet; resized : Boolean);
    function isResized (This : in out GameMidlet) return Boolean;

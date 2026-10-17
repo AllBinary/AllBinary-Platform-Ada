@@ -38,12 +38,12 @@ package org.allbinary.logic.control.contraints.size.TwoDimensionalConstraint_Pac
       heightSizeConstraintInterface : SizeConstraintInterface_Access;
    end record;
 
-   procedure Initialize (This : in out TwoDimensionalConstraint'Class; node : Node_Access);
-   function Create (node : Node_Access) return TwoDimensionalConstraint_Access;
+   procedure Initialize (This : in out TwoDimensionalConstraint'Class; node_Param : access Node'Class);
+   function Create (node_Param : access Node'Class) return TwoDimensionalConstraint_Access;
    function getHeight (This : in out TwoDimensionalConstraint) return SizeConstraintInterface_Access;
    function getWidth (This : in out TwoDimensionalConstraint) return SizeConstraintInterface_Access;
-   procedure setHeight (This : in out TwoDimensionalConstraint; heightSizeConstraintInterface : SizeConstraintInterface_Access);
-   procedure setWidth (This : in out TwoDimensionalConstraint; widthSizeConstraintInterface : SizeConstraintInterface_Access);
+   procedure setHeight (This : in out TwoDimensionalConstraint; heightSizeConstraintInterface_Param : access SizeConstraintInterface'Class);
+   procedure setWidth (This : in out TwoDimensionalConstraint; widthSizeConstraintInterface_Param : access SizeConstraintInterface'Class);
 
 end org.allbinary.logic.control.contraints.size.TwoDimensionalConstraint_Package;
 

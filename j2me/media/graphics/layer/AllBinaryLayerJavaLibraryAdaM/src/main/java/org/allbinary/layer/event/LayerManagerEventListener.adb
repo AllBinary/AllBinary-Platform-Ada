@@ -33,19 +33,22 @@ package body org.allbinary.layer.event.LayerManagerEventListener_Package is
    end Create;
 
 
-   procedure onEvent (This : in out LayerManagerEventListener; eventObject : AllBinaryEventObject_Access) is
+   procedure onEvent (This : in out LayerManagerEventListener; eventObject_Param : access AllBinaryEventObject'Class) is
+      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
    begin
         null;
    end onEvent;
 
    --  throws Exception
-   procedure onCreateLayerManagerEvent (This : in out LayerManagerEventListener; layerManagerEvent : LayerManagerEvent_Access) is
+   procedure onCreateLayerManagerEvent (This : in out LayerManagerEventListener; layerManagerEvent_Param : access LayerManagerEvent'Class) is
+      layerManagerEvent : LayerManagerEvent_Access := LayerManagerEvent_Access (layerManagerEvent_Param);
    begin
         null;
    end onCreateLayerManagerEvent;
 
    --  throws Exception
-   procedure onDeleteLayerManagerEvent (This : in out LayerManagerEventListener; layerManagerEvent : LayerManagerEvent_Access) is
+   procedure onDeleteLayerManagerEvent (This : in out LayerManagerEventListener; layerManagerEvent_Param : access LayerManagerEvent'Class) is
+      layerManagerEvent : LayerManagerEvent_Access := LayerManagerEvent_Access (layerManagerEvent_Param);
    begin
         null;
    end onDeleteLayerManagerEvent;

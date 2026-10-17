@@ -49,7 +49,7 @@ package org.allbinary.game.score.HighScoresHelperBase_Package is
    procedure setHighScoresArray (This : in out HighScoresHelperBase; highScoresArrayP : HighScores_Access_Array_Access);
    function getNextHighScores (This : in out HighScoresHelperBase) return HighScores_Access;
    function isAnyHighScores (This : in out HighScoresHelperBase) return Boolean;
-   procedure setSelectedHighScores (This : in out HighScoresHelperBase; selectedHighScores : HighScores_Access);
+   procedure setSelectedHighScores (This : in out HighScoresHelperBase; selectedHighScores_Param : access HighScores'Class);
    function getSelectedHighScores (This : in out HighScoresHelperBase) return HighScores_Access;
    function getHighScoresArray (This : in out HighScoresHelperBase) return HighScores_Access_Array_Access;
    procedure selectHighScores (This : in out HighScoresHelperBase);

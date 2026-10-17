@@ -57,15 +57,15 @@ package org.allbinary.logic.visual.transform.template.customizer.includes.global
 
    procedure Initialize (This : in out GlobalsValidation'Class; storeName : Unbounded_String);
    function Create (storeName : Unbounded_String) return GlobalsValidation_Access;
-   procedure Initialize (This : in out GlobalsValidation'Class; document : Document_Access);
-   function Create (document : Document_Access) return GlobalsValidation_Access;
+   procedure Initialize (This : in out GlobalsValidation'Class; document_Param : access Document'Class);
+   function Create (document_Param : access Document'Class) return GlobalsValidation_Access;
    function isValid (This : in out GlobalsValidation) return Boolean;
    function validationInfo (This : in out GlobalsValidation) return Unbounded_String;
    function toValidationInfoDoc (This : in out GlobalsValidation) return Document_Access;
-   function toValidationInfoNode (This : in out GlobalsValidation; document : Document_Access) return Node_Access;
-   procedure toValidationInfoNode (This : in out GlobalsValidation; document : Document_Access);
-   function toXmlNode (This : in out GlobalsValidation; document : Document_Access) return Node_Access;
-   procedure toXmlNode (This : in out GlobalsValidation; document : Document_Access);
+   function toValidationInfoNode (This : in out GlobalsValidation; document_Param : access Document'Class) return Node_Access;
+   procedure toValidationInfoNode (This : in out GlobalsValidation; document_Param : access Document'Class);
+   function toXmlNode (This : in out GlobalsValidation; document_Param : access Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out GlobalsValidation; document_Param : access Document'Class);
 
 end org.allbinary.logic.visual.transform.template.customizer.includes.globals.GlobalsValidation_Package;
 

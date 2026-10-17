@@ -38,43 +38,46 @@ package body org.allbinary.J2SEUtil_Package is
         return J2SEUtil_Package.instance;
    end getInstance;
 
-   function getHashMapAsArray (This : in out J2SEUtil; hashMap : HashMap_Access) return Java_Object_Access_Array_Access is
+   function getHashMapAsArray (This : in out J2SEUtil; hashMap_Param : access HashMap'Class) return Java_Object_Access_Array_Access is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
       objectArray : Java_Object_Access_Array_Access;
    begin
         objectArray := hashMap.keySet.toArray;
         return objectArray;
    end getHashMapAsArray;
 
-   function getMapAsArray (This : in out J2SEUtil; map : Map_Access) return Java_Object_Access_Array_Access is
+   function getMapAsArray (This : in out J2SEUtil; map_Param : access Map'Class) return Java_Object_Access_Array_Access is
+      map : Map_Access := Map_Access (map_Param);
       objectArray : Java_Object_Access_Array_Access;
    begin
         objectArray := map.keySet.toArray;
         return objectArray;
    end getMapAsArray;
 
-   function getSetAsArray (This : in out J2SEUtil; set : Set_Access) return Java_Object_Access_Array_Access is
+   function getSetAsArray (This : in out J2SEUtil; set_Param : access Set'Class) return Java_Object_Access_Array_Access is
+      set : Set_Access := Set_Access (set_Param);
       objectArray : Java_Object_Access_Array_Access;
    begin
         objectArray := set.toArray;
         return objectArray;
    end getSetAsArray;
 
-   procedure getHashMapAsArray (This : in out J2SEUtil; hashMap : HashMap_Access) is
-      Java_Result : constant Java_Object_Access_Array_Access := J2SEUtil'Class (This).getHashMapAsArray (hashMap);
+   procedure getHashMapAsArray (This : in out J2SEUtil; hashMap_Param : access HashMap'Class) is
+      Java_Result : constant Java_Object_Access_Array_Access := J2SEUtil'Class (This).getHashMapAsArray (hashMap_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getHashMapAsArray;
 
-   procedure getMapAsArray (This : in out J2SEUtil; map : Map_Access) is
-      Java_Result : constant Java_Object_Access_Array_Access := J2SEUtil'Class (This).getMapAsArray (map);
+   procedure getMapAsArray (This : in out J2SEUtil; map_Param : access Map'Class) is
+      Java_Result : constant Java_Object_Access_Array_Access := J2SEUtil'Class (This).getMapAsArray (map_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getMapAsArray;
 
-   procedure getSetAsArray (This : in out J2SEUtil; set : Set_Access) is
-      Java_Result : constant Java_Object_Access_Array_Access := J2SEUtil'Class (This).getSetAsArray (set);
+   procedure getSetAsArray (This : in out J2SEUtil; set_Param : access Set'Class) is
+      Java_Result : constant Java_Object_Access_Array_Access := J2SEUtil'Class (This).getSetAsArray (set_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

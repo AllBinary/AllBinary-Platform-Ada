@@ -29,7 +29,8 @@ package body views.admin.inventory.listings.ProductListing_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ProductListing'Class; searchRequest : SearchRequest_Access) is
+   procedure Initialize (This : in out ProductListing'Class; searchRequest_Param : access SearchRequest'Class) is
+      searchRequest : SearchRequest_Access := SearchRequest_Access (searchRequest_Param);
    begin
       Initialize_Fields (This);
         This.searchRequest := searchRequest;
@@ -38,15 +39,16 @@ package body views.admin.inventory.listings.ProductListing_Package is
         This.inventory_Case := InventoryEntity_Package.Create;
    end Initialize;
 
-   function Create (searchRequest : SearchRequest_Access) return ProductListing_Access is
+   function Create (searchRequest_Param : access SearchRequest'Class) return ProductListing_Access is
       This : constant ProductListing_Access := new ProductListing;
    begin
-      ProductListing_Package.Initialize (This.all, searchRequest);
+      ProductListing_Package.Initialize (This.all, searchRequest_Param);
       return This;
    end Create;
 
    --  throws Exception
-   function getHashSet (This : in out ProductListing; storeFront : StoreFrontInterface_Access) return HashSet_Access is
+   function getHashSet (This : in out ProductListing; storeFront_Param : access StoreFrontInterface'Class) return HashSet_Access is
+      storeFront : StoreFrontInterface_Access := StoreFrontInterface_Access (storeFront_Param);
       inventoryColumnUtil : InventoryColumnUtil_Access;
       keywords : BasicArrayList_Access;
       subStoreVector : BasicArrayList_Access;
@@ -77,7 +79,7 @@ package body views.admin.inventory.listings.ProductListing_Package is
       idOutData : AbDataOutputStream_Access;
    begin
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.STATICPAGEGENERATIONLOGGING) then
-            This.logUtil.putF (To_Unbounded_String ("Creating File: ") & file, This'Unchecked_Access, To_Unbounded_String ("generateAll()"));
+            This.logUtil.putF (To_Unbounded_String ("Creating File: ") & file, ProductListing_Access'(This'Unchecked_Access), To_Unbounded_String ("generateAll()"));
         end if;
         newFile := AbFile_Package.createAbFile (file);
         if newFile.exists then
@@ -90,7 +92,7 @@ package body views.admin.inventory.listings.ProductListing_Package is
             idOutData.flush;
             StreamUtil_Package.getInstance.close (idOutData);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.STATICPAGEGENERATIONLOGGING) then
-                This.logUtil.putF (To_Unbounded_String ("Wrote Total Bytes: ") & Java_Image (newFile.length), This'Unchecked_Access, To_Unbounded_String ("generateAll()"));
+                This.logUtil.putF (To_Unbounded_String ("Wrote Total Bytes: ") & Java_Image (newFile.length), ProductListing_Access'(This'Unchecked_Access), To_Unbounded_String ("generateAll()"));
             end if;
         else
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Could Not Create: ") & file));
@@ -98,7 +100,10 @@ package body views.admin.inventory.listings.ProductListing_Package is
    end savePage;
 
    --  throws Exception
-   procedure create (This : in out ProductListing; keywordData : Unbounded_String; keywordFilenameHashMap : HashMap_Access; vector : BasicArrayList_Access; staticPath : AbPath_Access) is
+   procedure create (This : in out ProductListing; keywordData : Unbounded_String; keywordFilenameHashMap_Param : access HashMap'Class; vector_Param : access BasicArrayList'Class; staticPath_Param : access AbPath'Class) is
+      keywordFilenameHashMap : HashMap_Access := HashMap_Access (keywordFilenameHashMap_Param);
+      vector : BasicArrayList_Access := BasicArrayList_Access (vector_Param);
+      staticPath : AbPath_Access := AbPath_Access (staticPath_Param);
       stringBuffer : StringMaker_Access;
       hashMap : HashMap_Access;
       pageName : Unbounded_String;
@@ -127,7 +132,7 @@ package body views.admin.inventory.listings.ProductListing_Package is
                 exit;
             end if;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.STATICPAGEGENERATIONLOGGING) then
-                This.logUtil.putF (To_Unbounded_String ("Saving Listing: ") & Java_Image (index), This'Unchecked_Access, To_Unbounded_String ("generateAll()"));
+                This.logUtil.putF (To_Unbounded_String ("Saving Listing: ") & Java_Image (index), ProductListing_Access'(This'Unchecked_Access), To_Unbounded_String ("generateAll()"));
             end if;
             indexStr := StringUtil_Package.getInstance.EMPTY_STRING;
             if (index) > (0) then
@@ -148,7 +153,9 @@ package body views.admin.inventory.listings.ProductListing_Package is
         end loop;
    end create;
 
-   procedure addStaticPageInfoToDatabase (This : in out ProductListing; storeFront : StoreFrontInterface_Access; keywordFilenameHashMap : HashMap_Access) is
+   procedure addStaticPageInfoToDatabase (This : in out ProductListing; storeFront_Param : access StoreFrontInterface'Class; keywordFilenameHashMap_Param : access HashMap'Class) is
+      storeFront : StoreFrontInterface_Access := StoreFrontInterface_Access (storeFront_Param);
+      keywordFilenameHashMap : HashMap_Access := HashMap_Access (keywordFilenameHashMap_Param);
       keywordHashSet : Set_Access;
       keywordArray : Java_Object_Access_Array_Access;
       size : Integer;
@@ -194,7 +201,7 @@ package body views.admin.inventory.listings.ProductListing_Package is
             stringBuffer.append (storeFront.getStaticPath);
             staticPath := AbPath_Package.Create (stringBuffer.toString, StringUtil_Package.getInstance.EMPTY_STRING);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.STATICPAGEGENERATIONLOGGING) then
-                This.logUtil.putF (To_Unbounded_String ("Store Static Pages Path: ") & Java_Image (staticPath), This'Unchecked_Access, To_Unbounded_String ("generateAll()"));
+                This.logUtil.putF (To_Unbounded_String ("Store Static Pages Path: ") & Java_Image (staticPath), ProductListing_Access'(This'Unchecked_Access), To_Unbounded_String ("generateAll()"));
             end if;
             keywordHashSet := This.getHashSet (storeFront);
             keywordArray := keywordHashSet.toArray;
@@ -273,8 +280,8 @@ package body views.admin.inventory.listings.ProductListing_Package is
         end;
    end generateAll;
 
-   procedure getHashSet (This : in out ProductListing; storeFront : StoreFrontInterface_Access) is
-      Java_Result : constant HashSet_Access := ProductListing'Class (This).getHashSet (storeFront);
+   procedure getHashSet (This : in out ProductListing; storeFront_Param : access StoreFrontInterface'Class) is
+      Java_Result : constant HashSet_Access := ProductListing'Class (This).getHashSet (storeFront_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

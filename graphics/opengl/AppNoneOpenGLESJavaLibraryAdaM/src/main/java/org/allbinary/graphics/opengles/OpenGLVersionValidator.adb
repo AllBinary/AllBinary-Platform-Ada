@@ -49,7 +49,9 @@ package body org.allbinary.graphics.opengles.OpenGLVersionValidator_Package is
         return False;
    end isAvailable;
 
-   procedure setShaderComposite (This : in out OpenGLVersionValidator; shaderComposite : ShaderComposite_Access; anyType : Java_Object_Access) is
+   procedure setShaderComposite (This : in out OpenGLVersionValidator; shaderComposite_Param : access ShaderComposite'Class; anyType_Param : access Java_Object'Class) is
+      shaderComposite : ShaderComposite_Access := ShaderComposite_Access (shaderComposite_Param);
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         null;
    end setShaderComposite;

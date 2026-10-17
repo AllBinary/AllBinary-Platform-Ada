@@ -22,17 +22,18 @@ package body org.allbinary.animation.compound.SimultaneousCompoundRotationAnimat
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out SimultaneousCompoundRotationAnimation'Class; animationInterfaceArray : RotationAnimation_Access_Array_Access; animationBehavior : AnimationBehavior_Access) is
+   procedure Initialize (This : in out SimultaneousCompoundRotationAnimation'Class; animationInterfaceArray : RotationAnimation_Access_Array_Access; animationBehavior_Param : access AnimationBehavior'Class) is
+      animationBehavior : AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
    begin
         RotationAnimation_Package.Initialize (This, AngleInfo_Package.getInstance (AngleFactory_Package.getInstance.QUARTER_TOTAL_ANGLE), CircularIndexUtil_Package.createInstance (4), animationBehavior);
         Initialize_Fields (This);
         This.animationInterfaceArray := animationInterfaceArray;
    end Initialize;
 
-   function Create (animationInterfaceArray : RotationAnimation_Access_Array_Access; animationBehavior : AnimationBehavior_Access) return SimultaneousCompoundRotationAnimation_Access is
+   function Create (animationInterfaceArray : RotationAnimation_Access_Array_Access; animationBehavior_Param : access AnimationBehavior'Class) return SimultaneousCompoundRotationAnimation_Access is
       This : constant SimultaneousCompoundRotationAnimation_Access := new SimultaneousCompoundRotationAnimation;
    begin
-      SimultaneousCompoundRotationAnimation_Package.Initialize (This.all, animationInterfaceArray, animationBehavior);
+      SimultaneousCompoundRotationAnimation_Package.Initialize (This.all, animationInterfaceArray, animationBehavior_Param);
       return This;
    end Create;
 
@@ -108,7 +109,8 @@ package body org.allbinary.animation.compound.SimultaneousCompoundRotationAnimat
         return PrimitiveIntUtil_Package.getArrayInstance;
    end getSequence;
 
-   procedure paintXY (This : in out SimultaneousCompoundRotationAnimation; graphics : Graphics_Access; x : Integer; y : Integer) is
+   procedure paintXY (This : in out SimultaneousCompoundRotationAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       index : Integer;
    begin
         index := This.animationInterfaceArray'Length;
@@ -117,7 +119,8 @@ package body org.allbinary.animation.compound.SimultaneousCompoundRotationAnimat
         end loop;
    end paintXY;
 
-   procedure paintThreedXYZ (This : in out SimultaneousCompoundRotationAnimation; graphics : Graphics_Access; x : Integer; y : Integer; z : Integer) is
+   procedure paintThreedXYZ (This : in out SimultaneousCompoundRotationAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer; z : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       index : Integer;
    begin
         index := This.animationInterfaceArray'Length;
@@ -126,7 +129,8 @@ package body org.allbinary.animation.compound.SimultaneousCompoundRotationAnimat
         end loop;
    end paintThreedXYZ;
 
-   procedure setFrameByDirection (This : in out SimultaneousCompoundRotationAnimation; direction : Direction_Access) is
+   procedure setFrameByDirection (This : in out SimultaneousCompoundRotationAnimation; direction_Param : access Direction'Class) is
+      direction : Direction_Access := Direction_Access (direction_Param);
       index : Integer;
    begin
         index := This.animationInterfaceArray'Length;
@@ -135,7 +139,8 @@ package body org.allbinary.animation.compound.SimultaneousCompoundRotationAnimat
         end loop;
    end setFrameByDirection;
 
-   procedure setFrameToAngle (This : in out SimultaneousCompoundRotationAnimation; angle : Angle_Access) is
+   procedure setFrameToAngle (This : in out SimultaneousCompoundRotationAnimation; angle_Param : access Angle'Class) is
+      angle : Angle_Access := Angle_Access (angle_Param);
       index : Integer;
    begin
         index := This.animationInterfaceArray'Length;
@@ -144,7 +149,8 @@ package body org.allbinary.animation.compound.SimultaneousCompoundRotationAnimat
         end loop;
    end setFrameToAngle;
 
-   procedure adjustFrameToAngle (This : in out SimultaneousCompoundRotationAnimation; newAngle : Angle_Access) is
+   procedure adjustFrameToAngle (This : in out SimultaneousCompoundRotationAnimation; newAngle_Param : access Angle'Class) is
+      newAngle : Angle_Access := Angle_Access (newAngle_Param);
    begin
         This.adjustFrame (newAngle.getValue);
    end adjustFrameToAngle;
@@ -174,7 +180,8 @@ package body org.allbinary.animation.compound.SimultaneousCompoundRotationAnimat
    end setAnimationInterfaceArray;
 
    --  throws Exception
-   procedure set (This : in out SimultaneousCompoundRotationAnimation; gl : GL_Access) is
+   procedure set (This : in out SimultaneousCompoundRotationAnimation; gl_Param : access GL'Class) is
+      gl : GL_Access := GL_Access (gl_Param);
       index : Integer;
    begin
         index := This.animationInterfaceArray'Length;

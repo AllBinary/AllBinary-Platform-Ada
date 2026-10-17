@@ -44,14 +44,14 @@ package org.allbinary.game.layer.hud.event.GameNotificationEvent_Package is
       removeable : Boolean;
    end record;
 
-   procedure Initialize (This : in out GameNotificationEvent'Class; anyType : Java_Object_Access; string_Id : Unbounded_String; seconds : Integer; basicColor : BasicColor_Access; permanent : Boolean);
-   function Create (anyType : Java_Object_Access; string_Id : Unbounded_String; seconds : Integer; basicColor : BasicColor_Access; permanent : Boolean) return GameNotificationEvent_Access;
+   procedure Initialize (This : in out GameNotificationEvent'Class; anyType_Param : access Java_Object'Class; string_Id : Unbounded_String; seconds : Integer; basicColor_Param : access BasicColor'Class; permanent : Boolean);
+   function Create (anyType_Param : access Java_Object'Class; string_Id : Unbounded_String; seconds : Integer; basicColor_Param : access BasicColor'Class; permanent : Boolean) return GameNotificationEvent_Access;
    function getString (This : in out GameNotificationEvent) return Unbounded_String;
    function getSeconds (This : in out GameNotificationEvent) return Integer;
    function getBasicColorP (This : in out GameNotificationEvent) return BasicColor_Access;
    function getPermanent (This : in out GameNotificationEvent) return Boolean;
    procedure setString (This : in out GameNotificationEvent; string_Id : Unbounded_String);
-   procedure setBasicColorP (This : in out GameNotificationEvent; basicColor : BasicColor_Access);
+   procedure setBasicColorP (This : in out GameNotificationEvent; basicColor_Param : access BasicColor'Class);
 
 end org.allbinary.game.layer.hud.event.GameNotificationEvent_Package;
 

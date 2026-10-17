@@ -62,7 +62,8 @@ package body org.allbinary.business.context.modules.storefronts.BasicStoreFront_
       return This;
    end Create;
 
-   procedure Initialize (This : in out BasicStoreFront'Class; storeHashMap : HashMap_Access) is
+   procedure Initialize (This : in out BasicStoreFront'Class; storeHashMap_Param : access HashMap'Class) is
+      storeHashMap : HashMap_Access := HashMap_Access (storeHashMap_Param);
       storeFrontData : StoreFrontData_Access;
    begin
       Initialize_Fields (This);
@@ -97,10 +98,10 @@ package body org.allbinary.business.context.modules.storefronts.BasicStoreFront_
         This.lastModified := Unbounded_String (storeHashMap.get (EntryData_Package.getInstance.LASTMODIFIED));
    end Initialize;
 
-   function Create (storeHashMap : HashMap_Access) return BasicStoreFront_Access is
+   function Create (storeHashMap_Param : access HashMap'Class) return BasicStoreFront_Access is
       This : constant BasicStoreFront_Access := new BasicStoreFront;
    begin
-      BasicStoreFront_Package.Initialize (This.all, storeHashMap);
+      BasicStoreFront_Package.Initialize (This.all, storeHashMap_Param);
       return This;
    end Create;
 

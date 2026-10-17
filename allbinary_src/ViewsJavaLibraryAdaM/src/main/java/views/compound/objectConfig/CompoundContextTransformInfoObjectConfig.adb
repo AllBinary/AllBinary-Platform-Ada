@@ -22,44 +22,51 @@ package body views.compound.objectConfig.CompoundContextTransformInfoObjectConfi
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CompoundContextTransformInfoObjectConfig'Class; abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access) is
+   procedure Initialize (This : in out CompoundContextTransformInfoObjectConfig'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         GenericStoreTransformInfoObjectConfig_Package.Initialize (This, abeClientInformation, transformInfoInterface);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access) return CompoundContextTransformInfoObjectConfig_Access is
+   function Create (abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) return CompoundContextTransformInfoObjectConfig_Access is
       This : constant CompoundContextTransformInfoObjectConfig_Access := new CompoundContextTransformInfoObjectConfig;
    begin
-      CompoundContextTransformInfoObjectConfig_Package.Initialize (This.all, abeClientInformation, transformInfoInterface);
+      CompoundContextTransformInfoObjectConfig_Package.Initialize (This.all, abeClientInformation_Param, transformInfoInterface_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out CompoundContextTransformInfoObjectConfig'Class; abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access; document : Document_Access) is
+   procedure Initialize (This : in out CompoundContextTransformInfoObjectConfig'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; document_Param : access Document'Class) is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+      document : Document_Access := Document_Access (document_Param);
    begin
         GenericStoreTransformInfoObjectConfig_Package.Initialize (This, abeClientInformation, transformInfoInterface, document);
         Initialize_Fields (This);
         This.setDocument (This.generate (This.toXmlDoc));
    end Initialize;
 
-   function Create (abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access; document : Document_Access) return CompoundContextTransformInfoObjectConfig_Access is
+   function Create (abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; document_Param : access Document'Class) return CompoundContextTransformInfoObjectConfig_Access is
       This : constant CompoundContextTransformInfoObjectConfig_Access := new CompoundContextTransformInfoObjectConfig;
    begin
-      CompoundContextTransformInfoObjectConfig_Package.Initialize (This.all, abeClientInformation, transformInfoInterface, document);
+      CompoundContextTransformInfoObjectConfig_Package.Initialize (This.all, abeClientInformation_Param, transformInfoInterface_Param, document_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out CompoundContextTransformInfoObjectConfig'Class; abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access; name : Unbounded_String; type_Id : Unbounded_String) is
+   procedure Initialize (This : in out CompoundContextTransformInfoObjectConfig'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; name : Unbounded_String; type_Id : Unbounded_String) is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         GenericStoreTransformInfoObjectConfig_Package.Initialize (This, abeClientInformation, transformInfoInterface, name, type_Id);
         Initialize_Fields (This);
         This.setDocument (This.generate (This.toXmlDoc));
    end Initialize;
 
-   function Create (abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access; name : Unbounded_String; type_Id : Unbounded_String) return CompoundContextTransformInfoObjectConfig_Access is
+   function Create (abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; name : Unbounded_String; type_Id : Unbounded_String) return CompoundContextTransformInfoObjectConfig_Access is
       This : constant CompoundContextTransformInfoObjectConfig_Access := new CompoundContextTransformInfoObjectConfig;
    begin
-      CompoundContextTransformInfoObjectConfig_Package.Initialize (This.all, abeClientInformation, transformInfoInterface, name, type_Id);
+      CompoundContextTransformInfoObjectConfig_Package.Initialize (This.all, abeClientInformation_Param, transformInfoInterface_Param, name, type_Id);
       return This;
    end Create;
 
@@ -94,7 +101,7 @@ package body views.compound.objectConfig.CompoundContextTransformInfoObjectConfi
         rootComponentInterface := TransformFactory_Package.getInstance.getInstance (This.abeClientInformation, stringBuffer.toString, This.getTransformInfoInterface);
         viewVector := This.getTransformDomNodes;
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (To_Unbounded_String ("Root View Called with: ") & Java_Image (viewVector.size), This'Unchecked_Access, To_Unbounded_String ("get(transformInfoInterface)"));
+            This.logUtil.putF (To_Unbounded_String ("Root View Called with: ") & Java_Image (viewVector.size), CompoundContextTransformInfoObjectConfig_Access'(This'Unchecked_Access), To_Unbounded_String ("get(transformInfoInterface)"));
         end if;
         rootView := rootComponentInterface.view;
         startXMLHeader := To_Unbounded_String ("<xsl:text disable-output-escaping=""yes"" ><![CDATA[");
@@ -117,13 +124,13 @@ package body views.compound.objectConfig.CompoundContextTransformInfoObjectConfi
                 stringBuffer.append (templateKey);
                 stringBuffer.append (To_Unbounded_String (" with "));
                 stringBuffer.append (templateValue);
-                This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("get()"));
+                This.logUtil.putF (stringBuffer.toString, CompoundContextTransformInfoObjectConfig_Access'(This'Unchecked_Access), To_Unbounded_String ("get()"));
             end if;
             replace := Replace_Package.Create (templateKey, templateValue);
             rootView := replace.all_Id (rootView);
         end loop;
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (To_Unbounded_String ("End: Result of a compound view: ") & rootView, This'Unchecked_Access, To_Unbounded_String ("get()"));
+            This.logUtil.putF (To_Unbounded_String ("End: Result of a compound view: ") & rootView, CompoundContextTransformInfoObjectConfig_Access'(This'Unchecked_Access), To_Unbounded_String ("get()"));
         end if;
         return rootView;
    end get;
@@ -136,7 +143,7 @@ package body views.compound.objectConfig.CompoundContextTransformInfoObjectConfi
         completeTemplateViewBytes := This.get.getBytes;
         bais := ByteArrayInputStream_Package.Create (completeTemplateViewBytes);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (To_Unbounded_String ("Template: ") & Java_New_String (completeTemplateViewBytes).toString, This'Unchecked_Access, To_Unbounded_String ("createInputStream()"));
+            This.logUtil.putF (To_Unbounded_String ("Template: ") & Java_New_String (completeTemplateViewBytes).toString, CompoundContextTransformInfoObjectConfig_Access'(This'Unchecked_Access), To_Unbounded_String ("createInputStream()"));
         end if;
         return bais;
    end createInputStream;

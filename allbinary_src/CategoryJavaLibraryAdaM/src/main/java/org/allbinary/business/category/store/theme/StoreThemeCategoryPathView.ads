@@ -46,10 +46,10 @@ package org.allbinary.business.category.store.theme.StoreThemeCategoryPathView_P
 
    type StoreThemeCategoryPathView is new CategoryView and DomNodeInterface with null record;
 
-   procedure Initialize (This : in out StoreThemeCategoryPathView'Class; categoryInterface : StoreThemeCategoryInterface_Access);
-   function Create (categoryInterface : StoreThemeCategoryInterface_Access) return StoreThemeCategoryPathView_Access;
-   function toXmlNode (This : in out StoreThemeCategoryPathView; document : Document_Access) return Node_Access;
-   procedure toXmlNode (This : in out StoreThemeCategoryPathView; document : Document_Access);
+   procedure Initialize (This : in out StoreThemeCategoryPathView'Class; categoryInterface_Param : access StoreThemeCategoryInterface'Class);
+   function Create (categoryInterface_Param : access StoreThemeCategoryInterface'Class) return StoreThemeCategoryPathView_Access;
+   function toXmlNode (This : in out StoreThemeCategoryPathView; document_Param : access Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out StoreThemeCategoryPathView; document_Param : access Document'Class);
 
 end org.allbinary.business.category.store.theme.StoreThemeCategoryPathView_Package;
 

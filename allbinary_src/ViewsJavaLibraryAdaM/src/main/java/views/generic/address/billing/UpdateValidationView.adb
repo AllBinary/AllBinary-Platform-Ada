@@ -21,15 +21,16 @@ package body views.generic_Id.address.billing.UpdateValidationView_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out UpdateValidationView'Class; transformInfoInterface : TransformInfoInterface_Access) is
+   procedure Initialize (This : in out UpdateValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         BillingAddressView_Package.Initialize (This, transformInfoInterface);
    end Initialize;
 
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return UpdateValidationView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return UpdateValidationView_Access is
       This : constant UpdateValidationView_Access := new UpdateValidationView;
    begin
-      UpdateValidationView_Package.Initialize (This.all, transformInfoInterface);
+      UpdateValidationView_Package.Initialize (This.all, transformInfoInterface_Param);
       return This;
    end Create;
 
@@ -53,13 +54,14 @@ package body views.generic_Id.address.billing.UpdateValidationView_Package is
         return null;
    end toValidationInfoDoc;
 
-   function toValidationInfoNode (This : in out UpdateValidationView; document : Document_Access) return Node_Access is
+   function toValidationInfoNode (This : in out UpdateValidationView; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
    begin
         return null;
    end toValidationInfoNode;
 
-   procedure toValidationInfoNode (This : in out UpdateValidationView; document : Document_Access) is
-      Java_Result : constant Node_Access := UpdateValidationView'Class (This).toValidationInfoNode (document);
+   procedure toValidationInfoNode (This : in out UpdateValidationView; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := UpdateValidationView'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

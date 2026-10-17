@@ -45,9 +45,9 @@ package org.allbinary.game.ag.ai.tactical.HorizontalManeuverAI_Package is
       currentSpeed : Integer;
    end record;
 
-   procedure Initialize (This : in out HorizontalManeuverAI'Class; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access);
-   function Create (ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return HorizontalManeuverAI_Access;
-   procedure processAI (This : in out HorizontalManeuverAI; allBinaryLayerManager : AllBinaryLayerManager_Access);
+   procedure Initialize (This : in out HorizontalManeuverAI'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class);
+   function Create (ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return HorizontalManeuverAI_Access;
+   procedure processAI (This : in out HorizontalManeuverAI; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class);
    procedure reverse_Id (This : in out HorizontalManeuverAI);
    procedure accelerate (This : in out HorizontalManeuverAI);
    procedure drop (This : in out HorizontalManeuverAI);

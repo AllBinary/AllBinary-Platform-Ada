@@ -50,9 +50,9 @@ package org.allbinary.logic.communication.http.request.session.BasicWeblisketSes
       pageContext : PageContext_Access;
    end record;
 
-   procedure Initialize (This : in out BasicWeblisketSession'Class; pageContext : PageContext_Access);
-   function Create (pageContext : PageContext_Access) return BasicWeblisketSession_Access;
-   procedure setRole (This : in out BasicWeblisketSession; aRole : BasicUserRole_Access);
+   procedure Initialize (This : in out BasicWeblisketSession'Class; pageContext_Param : access PageContext'Class);
+   function Create (pageContext_Param : access PageContext'Class) return BasicWeblisketSession_Access;
+   procedure setRole (This : in out BasicWeblisketSession; aRole_Param : access BasicUserRole'Class);
    function getRole (This : in out BasicWeblisketSession) return BasicUserRole_Access;
    procedure setPassword (This : in out BasicWeblisketSession; password : Unbounded_String);
    procedure setUserName (This : in out BasicWeblisketSession; userName : Unbounded_String);

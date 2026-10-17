@@ -42,11 +42,11 @@ package org.allbinary.game.input.J2MEGameInputMapping_Package is
 
    procedure Initialize (This : in out J2MEGameInputMapping'Class);
    function Create return J2MEGameInputMapping_Access;
-   procedure init (This : in out J2MEGameInputMapping; abeClientInformation : AbeClientInformationInterface_Access);
-   function isDelete (This : in out J2MEGameInputMapping; input : Input_Access) return Boolean;
-   procedure isDelete (This : in out J2MEGameInputMapping; input : Input_Access);
-   function isSystemInput (This : in out J2MEGameInputMapping; input : Input_Access) return Boolean;
-   procedure isSystemInput (This : in out J2MEGameInputMapping; input : Input_Access);
+   procedure init (This : in out J2MEGameInputMapping; abeClientInformation_Param : access AbeClientInformationInterface'Class);
+   function isDelete (This : in out J2MEGameInputMapping; input_Param : access Input'Class) return Boolean;
+   procedure isDelete (This : in out J2MEGameInputMapping; input_Param : access Input'Class);
+   function isSystemInput (This : in out J2MEGameInputMapping; input_Param : access Input'Class) return Boolean;
+   procedure isSystemInput (This : in out J2MEGameInputMapping; input_Param : access Input'Class);
 
 end org.allbinary.game.input.J2MEGameInputMapping_Package;
 

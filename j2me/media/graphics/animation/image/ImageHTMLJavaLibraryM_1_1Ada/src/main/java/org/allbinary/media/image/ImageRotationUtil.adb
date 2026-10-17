@@ -39,7 +39,9 @@ package body org.allbinary.media.image.ImageRotationUtil_Package is
       return This;
    end Create;
 
-   function rotateImage (This : in out ImageRotationUtil; originalImage : Image_Access; image : Image_Access; totalAngle : Integer) return Image_Access is
+   function rotateImage (This : in out ImageRotationUtil; originalImage_Param : access Image'Class; image_Param : access Image'Class; totalAngle : Integer) return Image_Access is
+      originalImage : Image_Access := Image_Access (originalImage_Param);
+      image : Image_Access := Image_Access (image_Param);
       htmlImage : PlaynMutableImage_Access;
       canvasImage : CanvasImage_Access;
       canvasSurface : CanvasSurface_Access;
@@ -58,7 +60,10 @@ package body org.allbinary.media.image.ImageRotationUtil_Package is
         end if;
    end rotateImage;
 
-   function rotateImageCanvasSurfaceClear (This : in out ImageRotationUtil; originalImage : Image_Access; image : Image_Access; canvasSurface : CanvasSurface_Access; totalAngle : Integer) return Image_Access is
+   function rotateImageCanvasSurfaceClear (This : in out ImageRotationUtil; originalImage_Param : access Image'Class; image_Param : access Image'Class; canvasSurface_Param : access CanvasSurface'Class; totalAngle : Integer) return Image_Access is
+      originalImage : Image_Access := Image_Access (originalImage_Param);
+      image : Image_Access := Image_Access (image_Param);
+      canvasSurface : CanvasSurface_Access := CanvasSurface_Access (canvasSurface_Param);
    begin
         if image.isMutable then
             canvasSurface.translate ((-(originalImage.getWidth)) / (2), (-(originalImage.getHeight)) / (2));
@@ -70,7 +75,10 @@ package body org.allbinary.media.image.ImageRotationUtil_Package is
         end if;
    end rotateImageCanvasSurfaceClear;
 
-   function rotateImageCanvasSurface (This : in out ImageRotationUtil; originalImage : Image_Access; image : Image_Access; canvasSurface : CanvasSurface_Access; totalAngle : Integer) return Image_Access is
+   function rotateImageCanvasSurface (This : in out ImageRotationUtil; originalImage_Param : access Image'Class; image_Param : access Image'Class; canvasSurface_Param : access CanvasSurface'Class; totalAngle : Integer) return Image_Access is
+      originalImage : Image_Access := Image_Access (originalImage_Param);
+      image : Image_Access := Image_Access (image_Param);
+      canvasSurface : CanvasSurface_Access := CanvasSurface_Access (canvasSurface_Param);
    begin
         if image.isMutable then
             canvasSurface.rotate (Float (Ada.Numerics.Long_Elementary_Functions.ToRadians (totalAngle)));
@@ -80,7 +88,10 @@ package body org.allbinary.media.image.ImageRotationUtil_Package is
         end if;
    end rotateImageCanvasSurface;
 
-   procedure drawImage (This : in out ImageRotationUtil; originalImage : Image_Access; image : Image_Access; canvasSurface : CanvasSurface_Access) is
+   procedure drawImage (This : in out ImageRotationUtil; originalImage_Param : access Image'Class; image_Param : access Image'Class; canvasSurface_Param : access CanvasSurface'Class) is
+      originalImage : Image_Access := Image_Access (originalImage_Param);
+      image : Image_Access := Image_Access (image_Param);
+      canvasSurface : CanvasSurface_Access := CanvasSurface_Access (canvasSurface_Param);
       originalPlayNImage : Image_Access;
       originalHTMLImage : PlaynImmutableImage_Access;
    begin
@@ -96,7 +107,8 @@ package body org.allbinary.media.image.ImageRotationUtil_Package is
    end drawImage;
 
    --  throws Exception
-   function createRotatedImage (This : in out ImageRotationUtil; originalImage : Image_Access; rotationInDegrees : Integer) return Image_Access is
+   function createRotatedImage (This : in out ImageRotationUtil; originalImage_Param : access Image'Class; rotationInDegrees : Integer) return Image_Access is
+      originalImage : Image_Access := Image_Access (originalImage_Param);
       image : Image_Access;
       rotatedImage : Image_Access;
    begin
@@ -108,29 +120,29 @@ package body org.allbinary.media.image.ImageRotationUtil_Package is
         return rotatedImage;
    end createRotatedImage;
 
-   procedure rotateImage (This : in out ImageRotationUtil; originalImage : Image_Access; image : Image_Access; totalAngle : Integer) is
-      Java_Result : constant Image_Access := ImageRotationUtil'Class (This).rotateImage (originalImage, image, totalAngle);
+   procedure rotateImage (This : in out ImageRotationUtil; originalImage_Param : access Image'Class; image_Param : access Image'Class; totalAngle : Integer) is
+      Java_Result : constant Image_Access := ImageRotationUtil'Class (This).rotateImage (originalImage_Param, image_Param, totalAngle);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end rotateImage;
 
-   procedure rotateImageCanvasSurfaceClear (This : in out ImageRotationUtil; originalImage : Image_Access; image : Image_Access; canvasSurface : CanvasSurface_Access; totalAngle : Integer) is
-      Java_Result : constant Image_Access := ImageRotationUtil'Class (This).rotateImageCanvasSurfaceClear (originalImage, image, canvasSurface, totalAngle);
+   procedure rotateImageCanvasSurfaceClear (This : in out ImageRotationUtil; originalImage_Param : access Image'Class; image_Param : access Image'Class; canvasSurface_Param : access CanvasSurface'Class; totalAngle : Integer) is
+      Java_Result : constant Image_Access := ImageRotationUtil'Class (This).rotateImageCanvasSurfaceClear (originalImage_Param, image_Param, canvasSurface_Param, totalAngle);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end rotateImageCanvasSurfaceClear;
 
-   procedure rotateImageCanvasSurface (This : in out ImageRotationUtil; originalImage : Image_Access; image : Image_Access; canvasSurface : CanvasSurface_Access; totalAngle : Integer) is
-      Java_Result : constant Image_Access := ImageRotationUtil'Class (This).rotateImageCanvasSurface (originalImage, image, canvasSurface, totalAngle);
+   procedure rotateImageCanvasSurface (This : in out ImageRotationUtil; originalImage_Param : access Image'Class; image_Param : access Image'Class; canvasSurface_Param : access CanvasSurface'Class; totalAngle : Integer) is
+      Java_Result : constant Image_Access := ImageRotationUtil'Class (This).rotateImageCanvasSurface (originalImage_Param, image_Param, canvasSurface_Param, totalAngle);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end rotateImageCanvasSurface;
 
-   procedure createRotatedImage (This : in out ImageRotationUtil; originalImage : Image_Access; rotationInDegrees : Integer) is
-      Java_Result : constant Image_Access := ImageRotationUtil'Class (This).createRotatedImage (originalImage, rotationInDegrees);
+   procedure createRotatedImage (This : in out ImageRotationUtil; originalImage_Param : access Image'Class; rotationInDegrees : Integer) is
+      Java_Result : constant Image_Access := ImageRotationUtil'Class (This).createRotatedImage (originalImage_Param, rotationInDegrees);
       pragma Unreferenced (Java_Result);
    begin
       null;

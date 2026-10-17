@@ -36,13 +36,15 @@ package body org.allbinary.game.configuration.persistance.KeyValuePersistance_Pa
    end Create;
 
    --  throws Exception
-   procedure loadAll (This : in out KeyValuePersistance; abeClientInformation : AbeClientInformationInterface_Access) is
+   procedure loadAll (This : in out KeyValuePersistance; abeClientInformation_Param : access AbeClientInformationInterface'Class) is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
    begin
         This.loadAllSize (abeClientInformation, 1);
    end loadAll;
 
    --  throws Exception
-   procedure loadAllSize (This : in out KeyValuePersistance; abeClientInformation : AbeClientInformationInterface_Access; size : Integer) is
+   procedure loadAllSize (This : in out KeyValuePersistance; abeClientInformation_Param : access AbeClientInformationInterface'Class; size : Integer) is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
       recordStore : RecordStore_Access;
       recordEnum : RecordEnumeration_Access;
       hashtable : ABHashtable_Access;
@@ -71,7 +73,7 @@ package body org.allbinary.game.configuration.persistance.KeyValuePersistance_Pa
             while recordEnum.hasNextElement loop
                 id := recordEnum.nextRecordId;
                 stringBuffer.delete (0, stringBuffer.length);
-                This.logUtil.putF (stringBuffer.append (This.persistanceStrings.LOADING_ID).appendint (id).toString, This'Unchecked_Access, This.persistanceStrings.LOAD_ALL);
+                This.logUtil.putF (stringBuffer.append (This.persistanceStrings.LOADING_ID).appendint (id).toString, KeyValuePersistance_Access'(This'Unchecked_Access), This.persistanceStrings.LOAD_ALL);
                 recordAsBytes := This.tsUtil.getRecord (recordStore, id);
                 if (recordAsBytes) /= (null) then
                     byteArrayInputStream := ByteArrayInputStream_Package.Create (recordAsBytes);
@@ -98,14 +100,16 @@ package body org.allbinary.game.configuration.persistance.KeyValuePersistance_Pa
         --  finally
         begin
             if (recordStore) /= (null) then
-                PreLogUtil_Package.put (This.persistanceStrings.CLOSING_RECORDSTORE, This'Unchecked_Access, This.persistanceStrings.LOAD_ALL);
+                PreLogUtil_Package.put (This.persistanceStrings.CLOSING_RECORDSTORE, KeyValuePersistance_Access'(This'Unchecked_Access), This.persistanceStrings.LOAD_ALL);
                 recordStore.closeRecordStore;
             end if;
         end;
    end loadAllSize;
 
    --  throws Exception
-   procedure save (This : in out KeyValuePersistance; abeClientInformation : AbeClientInformationInterface_Access; hashtable : ABHashtable_Access) is
+   procedure save (This : in out KeyValuePersistance; abeClientInformation_Param : access AbeClientInformationInterface'Class; hashtable_Param : access ABHashtable'Class) is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      hashtable : ABHashtable_Access := ABHashtable_Access (hashtable_Param);
       recordStore : RecordStore_Access;
       byteArrayOutputStream : ByteArrayOutputStream_Access;
       outputStream : DataOutputStream_Access;
@@ -120,7 +124,7 @@ package body org.allbinary.game.configuration.persistance.KeyValuePersistance_Pa
    begin
         recordStore := NullRecordStore_Package.NULL_RECORD_STORE;
         begin
-            This.logUtil.putF (StringMaker_Package.Create.append (This.persistanceStrings.SAVING).append (StringUtil_Package.getInstance.toString (hashtable)).toString, This'Unchecked_Access, This.commonStrings.SAVE);
+            This.logUtil.putF (StringMaker_Package.Create.append (This.persistanceStrings.SAVING).append (StringUtil_Package.getInstance.toString (hashtable)).toString, KeyValuePersistance_Access'(This'Unchecked_Access), This.commonStrings.SAVE);
             recordStore := RecordStore_Package.openRecordStore (This.getRecordId (abeClientInformation), True);
             byteArrayOutputStream := ByteArrayOutputStream_Package.Create;
             outputStream := DataOutputStream_Package.Create (byteArrayOutputStream);
@@ -150,7 +154,7 @@ package body org.allbinary.game.configuration.persistance.KeyValuePersistance_Pa
         --  finally
         begin
             if (recordStore) /= (null) then
-                PreLogUtil_Package.put (This.persistanceStrings.CLOSING_RECORDSTORE, This'Unchecked_Access, This.commonStrings.SAVE);
+                PreLogUtil_Package.put (This.persistanceStrings.CLOSING_RECORDSTORE, KeyValuePersistance_Access'(This'Unchecked_Access), This.commonStrings.SAVE);
                 recordStore.closeRecordStore;
             end if;
         end;

@@ -62,10 +62,10 @@ package org.allbinary.logic.system.security.licensing.client.XmlRpcAbeLicenseRet
       logUtil : LogUtil_Access;
    end record;
 
-   procedure Initialize (This : in out XmlRpcAbeLicenseRetrievalClient'Class; clientInfo : AbeClientInformationInterface_Access);
-   function Create (clientInfo : AbeClientInformationInterface_Access) return XmlRpcAbeLicenseRetrievalClient_Access;
-   function get (This : in out XmlRpcAbeLicenseRetrievalClient; anyType : Java_Object_Access; cryptInterface : CryptInterface_Access) return Java_Object_Access;
-   procedure get (This : in out XmlRpcAbeLicenseRetrievalClient; anyType : Java_Object_Access; cryptInterface : CryptInterface_Access);
+   procedure Initialize (This : in out XmlRpcAbeLicenseRetrievalClient'Class; clientInfo_Param : access AbeClientInformationInterface'Class);
+   function Create (clientInfo_Param : access AbeClientInformationInterface'Class) return XmlRpcAbeLicenseRetrievalClient_Access;
+   function get (This : in out XmlRpcAbeLicenseRetrievalClient; anyType_Param : access Java_Object'Class; cryptInterface_Param : access CryptInterface'Class) return Java_Object_Access;
+   procedure get (This : in out XmlRpcAbeLicenseRetrievalClient; anyType_Param : access Java_Object'Class; cryptInterface_Param : access CryptInterface'Class);
 
 end org.allbinary.logic.system.security.licensing.client.XmlRpcAbeLicenseRetrievalClient_Package;
 

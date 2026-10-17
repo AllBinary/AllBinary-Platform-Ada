@@ -25,7 +25,7 @@ package body org.allbinary.game.displayable.canvas.StartIntermissionPaintable_Pa
       
       
       
-      This.updateMyFontProcessor := UpdateMyFontProcessor_Package.Create (This'Unchecked_Access);
+      This.updateMyFontProcessor := UpdateMyFontProcessor_Package.Create (StartIntermissionPaintable_Access'(This'Unchecked_Access));
       This.myFontProcessor := This.updateMyFontProcessor;
       This.basicColor := BasicColorFactory_Package.getInstance.BLACK;
       
@@ -38,7 +38,10 @@ package body org.allbinary.game.displayable.canvas.StartIntermissionPaintable_Pa
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out StartIntermissionPaintable'Class; gameCanvas : AllBinaryGameCanvas_Access; stringArray : Unbounded_String_Array_Access; basicColor : BasicColor_Access; font : Font_Access) is
+   procedure Initialize (This : in out StartIntermissionPaintable'Class; gameCanvas_Param : access AllBinaryGameCanvas'Class; stringArray : Unbounded_String_Array_Access; basicColor_Param : access BasicColor'Class; font_Param : access Font'Class) is
+      gameCanvas : AllBinaryGameCanvas_Access := AllBinaryGameCanvas_Access (gameCanvas_Param);
+      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
+      font : Font_Access := Font_Access (font_Param);
    begin
       InitUpdatePaintable_Package.Initialize (This);
       Initialize_Fields (This);
@@ -51,14 +54,15 @@ package body org.allbinary.game.displayable.canvas.StartIntermissionPaintable_Pa
         This.font := font;
    end Initialize;
 
-   function Create (gameCanvas : AllBinaryGameCanvas_Access; stringArray : Unbounded_String_Array_Access; basicColor : BasicColor_Access; font : Font_Access) return StartIntermissionPaintable_Access is
+   function Create (gameCanvas_Param : access AllBinaryGameCanvas'Class; stringArray : Unbounded_String_Array_Access; basicColor_Param : access BasicColor'Class; font_Param : access Font'Class) return StartIntermissionPaintable_Access is
       This : constant StartIntermissionPaintable_Access := new StartIntermissionPaintable;
    begin
-      StartIntermissionPaintable_Package.Initialize (This.all, gameCanvas, stringArray, basicColor, font);
+      StartIntermissionPaintable_Package.Initialize (This.all, gameCanvas_Param, stringArray, basicColor_Param, font_Param);
       return This;
    end Create;
 
-   procedure updateMeasurement (This : in out StartIntermissionPaintable; graphics : Graphics_Access) is
+   procedure updateMeasurement (This : in out StartIntermissionPaintable; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       font : Font_Access;
    begin
         font := graphics.getFont;
@@ -66,7 +70,8 @@ package body org.allbinary.game.displayable.canvas.StartIntermissionPaintable_Pa
         This.myFontProcessor := MyFontProcessor_Package.getInstance;
    end updateMeasurement;
 
-   procedure paint (This : in out StartIntermissionPaintable; graphics : Graphics_Access) is
+   procedure paint (This : in out StartIntermissionPaintable; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       existingFont : Font_Access;
       displayInfo : DisplayInfoSingleton_Access;
       beginWidth : Integer;
@@ -100,7 +105,8 @@ package body org.allbinary.game.displayable.canvas.StartIntermissionPaintable_Pa
         end loop;
    end update;
 
-   procedure setBasicColorP (This : in out StartIntermissionPaintable; basicColor : BasicColor_Access) is
+   procedure setBasicColorP (This : in out StartIntermissionPaintable; basicColor_Param : access BasicColor'Class) is
+      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         This.basicColor := basicColor;
    end setBasicColorP;

@@ -23,7 +23,9 @@ package body org.allbinary.gui.swing.workers.JListSwingWorker_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out JListSwingWorker'Class; jList : JList_Access; listModel : ListModel_Access) is
+   procedure Initialize (This : in out JListSwingWorker'Class; jList_Param : access JList'Class; listModel_Param : access ListModel'Class) is
+      jList : JList_Access := JList_Access (jList_Param);
+      listModel : ListModel_Access := ListModel_Access (listModel_Param);
    begin
       SwingWorker_Package.Initialize (This);
       Initialize_Fields (This);
@@ -31,10 +33,10 @@ package body org.allbinary.gui.swing.workers.JListSwingWorker_Package is
         This.setListModel (listModel);
    end Initialize;
 
-   function Create (jList : JList_Access; listModel : ListModel_Access) return JListSwingWorker_Access is
+   function Create (jList_Param : access JList'Class; listModel_Param : access ListModel'Class) return JListSwingWorker_Access is
       This : constant JListSwingWorker_Access := new JListSwingWorker;
    begin
-      JListSwingWorker_Package.Initialize (This.all, jList, listModel);
+      JListSwingWorker_Package.Initialize (This.all, jList_Param, listModel_Param);
       return This;
    end Create;
 
@@ -53,7 +55,8 @@ package body org.allbinary.gui.swing.workers.JListSwingWorker_Package is
         return This.jList;
    end getJList;
 
-   procedure setJList (This : in out JListSwingWorker; jList : JList_Access) is
+   procedure setJList (This : in out JListSwingWorker; jList_Param : access JList'Class) is
+      jList : JList_Access := JList_Access (jList_Param);
    begin
         This.jList := jList;
    end setJList;
@@ -63,7 +66,8 @@ package body org.allbinary.gui.swing.workers.JListSwingWorker_Package is
         return This.listModel;
    end getListModel;
 
-   procedure setListModel (This : in out JListSwingWorker; listModel : ListModel_Access) is
+   procedure setListModel (This : in out JListSwingWorker; listModel_Param : access ListModel'Class) is
+      listModel : ListModel_Access := ListModel_Access (listModel_Param);
    begin
         This.listModel := listModel;
    end setListModel;

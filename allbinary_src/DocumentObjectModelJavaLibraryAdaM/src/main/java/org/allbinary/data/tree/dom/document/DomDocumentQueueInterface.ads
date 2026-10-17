@@ -30,7 +30,7 @@ package org.allbinary.data.tree.dom.document.DomDocumentQueueInterface_Package i
    type DomDocumentQueueInterface_Access is access all DomDocumentQueueInterface'Class;
    type DomDocumentQueueInterface_Access_Array is array (Natural range <>) of DomDocumentQueueInterface_Access;
    type DomDocumentQueueInterface_Access_Array_Access is access all DomDocumentQueueInterface_Access_Array;
-   function offer (This : in out DomDocumentQueueInterface; domDocumentMappingInterface : DomDocumentMappingInterface_Access) return Boolean is abstract;
+   function offer (This : in out DomDocumentQueueInterface; domDocumentMappingInterface_Param : access DomDocumentMappingInterface'Class) return Boolean is abstract;
    function remove (This : in out DomDocumentQueueInterface) return DomDocumentMappingInterface_Access is abstract;
 
 end org.allbinary.data.tree.dom.document.DomDocumentQueueInterface_Package;

@@ -53,8 +53,8 @@ package org.allbinary.game.layer.AdvancedRTSProperties_Package is
       waypointBehaviorBase : TickableInterface_Access;
    end record;
 
-   procedure Initialize (This : in out AdvancedRTSProperties'Class; shakeListener : ShakeAnimationListener_Access; vibration : AllBinaryVibrationME_Access; duration : Integer; waypointBehaviorBase : TickableInterface_Access);
-   function Create (shakeListener : ShakeAnimationListener_Access; vibration : AllBinaryVibrationME_Access; duration : Integer; waypointBehaviorBase : TickableInterface_Access) return AdvancedRTSProperties_Access;
+   procedure Initialize (This : in out AdvancedRTSProperties'Class; shakeListener_Param : access ShakeAnimationListener'Class; vibration_Param : access AllBinaryVibrationME'Class; duration : Integer; waypointBehaviorBase_Param : access TickableInterface'Class);
+   function Create (shakeListener_Param : access ShakeAnimationListener'Class; vibration_Param : access AllBinaryVibrationME'Class; duration : Integer; waypointBehaviorBase_Param : access TickableInterface'Class) return AdvancedRTSProperties_Access;
    function createPropertiesSimulated return AdvancedRTSProperties_Access;
    function createProperties return AdvancedRTSProperties_Access;
 

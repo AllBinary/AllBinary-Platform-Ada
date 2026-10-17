@@ -60,7 +60,7 @@ package org.allbinary.business.init.InitInfo_Package is
    function Create return InitInfo_Access;
    function getInstance return InitInfo_Access;
    procedure set (This : in out InitInfo);
-   procedure set (This : in out InitInfo; hashMap : HashMap_Access);
+   procedure set (This : in out InitInfo; hashMap_Param : access HashMap'Class);
    procedure get (This : in out InitInfo);
    procedure setHasRead (This : in out InitInfo; value : Boolean);
    procedure updateIfNeeded (This : in out InitInfo);
@@ -69,12 +69,12 @@ package org.allbinary.business.init.InitInfo_Package is
    function getTestHtmlPath (This : in out InitInfo) return Unbounded_String;
    function getMainPath (This : in out InitInfo) return Unbounded_String;
    procedure setTesting (This : in out InitInfo; value : Unbounded_String);
-   procedure setTestHtmlPath (This : in out InitInfo; value : AbPath_Access);
-   procedure setMainPath (This : in out InitInfo; value : AbPath_Access);
-   function isMainPathValid (This : in out InitInfo; abPath : AbPath_Access) return Boolean;
-   procedure isMainPathValid (This : in out InitInfo; abPath : AbPath_Access);
-   function isTestHtmlPathValid (This : in out InitInfo; abPath : AbPath_Access) return Boolean;
-   procedure isTestHtmlPathValid (This : in out InitInfo; abPath : AbPath_Access);
+   procedure setTestHtmlPath (This : in out InitInfo; value_Param : access AbPath'Class);
+   procedure setMainPath (This : in out InitInfo; value_Param : access AbPath'Class);
+   function isMainPathValid (This : in out InitInfo; abPath_Param : access AbPath'Class) return Boolean;
+   procedure isMainPathValid (This : in out InitInfo; abPath_Param : access AbPath'Class);
+   function isTestHtmlPathValid (This : in out InitInfo; abPath_Param : access AbPath'Class) return Boolean;
+   procedure isTestHtmlPathValid (This : in out InitInfo; abPath_Param : access AbPath'Class);
    function isTestingValid (This : in out InitInfo; testing_Case : Unbounded_String) return Boolean;
    procedure isTestingValid (This : in out InitInfo; testing_Case : Unbounded_String);
    function toHashMap (This : in out InitInfo) return HashMap_Access;

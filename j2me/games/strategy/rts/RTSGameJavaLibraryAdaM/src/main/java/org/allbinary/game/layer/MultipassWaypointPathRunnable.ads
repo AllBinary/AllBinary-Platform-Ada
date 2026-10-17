@@ -118,8 +118,8 @@ package org.allbinary.game.layer.FirstRunnable_Package is
       multipassWaypointPathRunnable : MultipassWaypointPathRunnable_Access;
    end record;
 
-   procedure Initialize (This : in out FirstRunnable'Class; multipassWaypointPathRunnable : MultipassWaypointPathRunnable_Access);
-   function Create (multipassWaypointPathRunnable : MultipassWaypointPathRunnable_Access) return FirstRunnable_Access;
+   procedure Initialize (This : in out FirstRunnable'Class; multipassWaypointPathRunnable_Param : access MultipassWaypointPathRunnable'Class);
+   function Create (multipassWaypointPathRunnable_Param : access MultipassWaypointPathRunnable'Class) return FirstRunnable_Access;
    procedure run (This : in out FirstRunnable);
 
 end org.allbinary.game.layer.FirstRunnable_Package;
@@ -165,8 +165,8 @@ package org.allbinary.game.layer.SecondRunnable_Package is
       multipassWaypointPathRunnable : MultipassWaypointPathRunnable_Access;
    end record;
 
-   procedure Initialize (This : in out SecondRunnable'Class; multipassWaypointPathRunnable : MultipassWaypointPathRunnable_Access);
-   function Create (multipassWaypointPathRunnable : MultipassWaypointPathRunnable_Access) return SecondRunnable_Access;
+   procedure Initialize (This : in out SecondRunnable'Class; multipassWaypointPathRunnable_Param : access MultipassWaypointPathRunnable'Class);
+   function Create (multipassWaypointPathRunnable_Param : access MultipassWaypointPathRunnable'Class) return SecondRunnable_Access;
    procedure run (This : in out SecondRunnable);
 
 end org.allbinary.game.layer.SecondRunnable_Package;
@@ -212,8 +212,8 @@ package org.allbinary.game.layer.EndRunnable_Package is
       multipassWaypointPathRunnable : MultipassWaypointPathRunnable_Access;
    end record;
 
-   procedure Initialize (This : in out EndRunnable'Class; multipassWaypointPathRunnable : MultipassWaypointPathRunnable_Access);
-   function Create (multipassWaypointPathRunnable : MultipassWaypointPathRunnable_Access) return EndRunnable_Access;
+   procedure Initialize (This : in out EndRunnable'Class; multipassWaypointPathRunnable_Param : access MultipassWaypointPathRunnable'Class);
+   function Create (multipassWaypointPathRunnable_Param : access MultipassWaypointPathRunnable'Class) return EndRunnable_Access;
    procedure run (This : in out EndRunnable);
 
 end org.allbinary.game.layer.EndRunnable_Package;

@@ -21,20 +21,23 @@ package body org.allbinary.game.layer.special.SpecialUpGameInputInterfaceProcess
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out SpecialUpGameInputInterfaceProcessor'Class; collidableDestroyableDamageableLayer : SpecialGameInputInterface_Access) is
+   procedure Initialize (This : in out SpecialUpGameInputInterfaceProcessor'Class; collidableDestroyableDamageableLayer_Param : access SpecialGameInputInterface'Class) is
+      collidableDestroyableDamageableLayer : SpecialGameInputInterface_Access := SpecialGameInputInterface_Access (collidableDestroyableDamageableLayer_Param);
    begin
         SpecialGameInputInterfaceProcessor_Package.Initialize (This, collidableDestroyableDamageableLayer);
    end Initialize;
 
-   function Create (collidableDestroyableDamageableLayer : SpecialGameInputInterface_Access) return SpecialUpGameInputInterfaceProcessor_Access is
+   function Create (collidableDestroyableDamageableLayer_Param : access SpecialGameInputInterface'Class) return SpecialUpGameInputInterfaceProcessor_Access is
       This : constant SpecialUpGameInputInterfaceProcessor_Access := new SpecialUpGameInputInterfaceProcessor;
    begin
-      SpecialUpGameInputInterfaceProcessor_Package.Initialize (This.all, collidableDestroyableDamageableLayer);
+      SpecialUpGameInputInterfaceProcessor_Package.Initialize (This.all, collidableDestroyableDamageableLayer_Param);
       return This;
    end Create;
 
    --  throws Exception
-   procedure processEvent (This : in out SpecialUpGameInputInterfaceProcessor; allbinaryLayerManager : AllBinaryLayerManager_Access; gameKeyEvent : GameKeyEvent_Access) is
+   procedure processEvent (This : in out SpecialUpGameInputInterfaceProcessor; allbinaryLayerManager_Param : access AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent'Class) is
+      allbinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allbinaryLayerManager_Param);
+      gameKeyEvent : GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
    begin
         This.specialGameInputInterface.up;
    end processEvent;

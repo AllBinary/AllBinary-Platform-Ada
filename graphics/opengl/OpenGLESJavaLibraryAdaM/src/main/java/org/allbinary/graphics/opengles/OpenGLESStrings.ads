@@ -36,13 +36,13 @@ package org.allbinary.graphics.opengles.OpenGLESStrings_Package is
 
    procedure Initialize (This : in out OpenGLESStrings'Class);
    function Create return OpenGLESStrings_Access;
-   procedure set (This : in out OpenGLESStrings; gl : GL10_Access);
-   procedure initFont (This : in out OpenGLESStrings; gl : GL10_Access; width : Integer; height : Integer);
-   procedure update (This : in out OpenGLESStrings; gl : GL10_Access; width : Integer; height : Integer);
-   procedure drawChar (This : in out OpenGLESStrings; gl : GL10_Access; graphics : Graphics_Access; character_Id : Character; x : Integer; y : Integer; anchor : Integer);
-   procedure drawChars (This : in out OpenGLESStrings; gl : GL10_Access; graphics : Graphics_Access; data : Character_Array_Access; offset : Integer; length : Integer; x : Integer; y : Integer; anchor : Integer);
-   procedure drawString (This : in out OpenGLESStrings; gl : GL10_Access; graphics : Graphics_Access; string_Id : Unbounded_String; x : Integer; y : Integer; anchor : Integer);
-   procedure drawSubstring (This : in out OpenGLESStrings; gl : GL10_Access; graphics : Graphics_Access; string_Id : Unbounded_String; offset : Integer; len : Integer; x : Integer; y : Integer; anchor : Integer);
+   procedure set (This : in out OpenGLESStrings; gl_Param : access GL10'Class);
+   procedure initFont (This : in out OpenGLESStrings; gl_Param : access GL10'Class; width : Integer; height : Integer);
+   procedure update (This : in out OpenGLESStrings; gl_Param : access GL10'Class; width : Integer; height : Integer);
+   procedure drawChar (This : in out OpenGLESStrings; gl_Param : access GL10'Class; graphics_Param : access Graphics'Class; character_Id : Character; x : Integer; y : Integer; anchor : Integer);
+   procedure drawChars (This : in out OpenGLESStrings; gl_Param : access GL10'Class; graphics_Param : access Graphics'Class; data : Character_Array_Access; offset : Integer; length : Integer; x : Integer; y : Integer; anchor : Integer);
+   procedure drawString (This : in out OpenGLESStrings; gl_Param : access GL10'Class; graphics_Param : access Graphics'Class; string_Id : Unbounded_String; x : Integer; y : Integer; anchor : Integer);
+   procedure drawSubstring (This : in out OpenGLESStrings; gl_Param : access GL10'Class; graphics_Param : access Graphics'Class; string_Id : Unbounded_String; offset : Integer; len : Integer; x : Integer; y : Integer; anchor : Integer);
    function charWidth (This : in out OpenGLESStrings; ch : Character) return Integer;
    procedure charWidth (This : in out OpenGLESStrings; ch : Character);
    function charsWidth (This : in out OpenGLESStrings; ch : Character_Array_Access; offset : Integer; length : Integer) return Integer;

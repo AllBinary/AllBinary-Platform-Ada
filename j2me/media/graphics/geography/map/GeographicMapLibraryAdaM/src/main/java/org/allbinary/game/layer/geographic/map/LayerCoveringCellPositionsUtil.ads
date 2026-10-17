@@ -47,10 +47,10 @@ package org.allbinary.game.layer.geographic.map.LayerCoveringCellPositionsUtil_P
    procedure Initialize (This : in out LayerCoveringCellPositionsUtil'Class);
    function Create return LayerCoveringCellPositionsUtil_Access;
    function getInstance return LayerCoveringCellPositionsUtil_Access;
-   function getAllXY (This : in out LayerCoveringCellPositionsUtil; geographicMapInterface : BasicGeographicMap_Access; layerInterface : AllBinaryLayer_Access; x : Integer; y : Integer; reusableList : BasicArrayList_Access) return BasicArrayList_Access;
-   procedure getAllXY (This : in out LayerCoveringCellPositionsUtil; geographicMapInterface : BasicGeographicMap_Access; layerInterface : AllBinaryLayer_Access; x : Integer; y : Integer; reusableList : BasicArrayList_Access);
-   function getAll (This : in out LayerCoveringCellPositionsUtil; geographicMapInterface : BasicGeographicMap_Access; topLeftGeographicMapCellPosition : GeographicMapCellPosition_Access; layerInterface : AllBinaryLayer_Access; reusableList : BasicArrayList_Access) return BasicArrayList_Access;
-   procedure getAll (This : in out LayerCoveringCellPositionsUtil; geographicMapInterface : BasicGeographicMap_Access; topLeftGeographicMapCellPosition : GeographicMapCellPosition_Access; layerInterface : AllBinaryLayer_Access; reusableList : BasicArrayList_Access);
+   function getAllXY (This : in out LayerCoveringCellPositionsUtil; geographicMapInterface_Param : access BasicGeographicMap'Class; layerInterface_Param : access AllBinaryLayer'Class; x : Integer; y : Integer; reusableList_Param : access BasicArrayList'Class) return BasicArrayList_Access;
+   procedure getAllXY (This : in out LayerCoveringCellPositionsUtil; geographicMapInterface_Param : access BasicGeographicMap'Class; layerInterface_Param : access AllBinaryLayer'Class; x : Integer; y : Integer; reusableList_Param : access BasicArrayList'Class);
+   function getAll (This : in out LayerCoveringCellPositionsUtil; geographicMapInterface_Param : access BasicGeographicMap'Class; topLeftGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class; layerInterface_Param : access AllBinaryLayer'Class; reusableList_Param : access BasicArrayList'Class) return BasicArrayList_Access;
+   procedure getAll (This : in out LayerCoveringCellPositionsUtil; geographicMapInterface_Param : access BasicGeographicMap'Class; topLeftGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class; layerInterface_Param : access AllBinaryLayer'Class; reusableList_Param : access BasicArrayList'Class);
 
 end org.allbinary.game.layer.geographic.map.LayerCoveringCellPositionsUtil_Package;
 

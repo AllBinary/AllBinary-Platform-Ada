@@ -57,11 +57,11 @@ package org.allbinary.data.tables.user.commerce.inventory.item.options.BasicOpti
 
    procedure Initialize (This : in out BasicOptionItemsEntity'Class);
    function Create return BasicOptionItemsEntity_Access;
-   procedure insert (This : in out BasicOptionItemsEntity; values : BasicArrayList_Access);
+   procedure insert (This : in out BasicOptionItemsEntity; values_Param : access BasicArrayList'Class);
    procedure delete (This : in out BasicOptionItemsEntity; value : Unbounded_String);
    function createTableStatement (This : in out BasicOptionItemsEntity) return Unbounded_String;
    function createTable (This : in out BasicOptionItemsEntity) return Unbounded_String;
-   procedure update (This : in out BasicOptionItemsEntity; updatedValues : HashMap_Access);
+   procedure update (This : in out BasicOptionItemsEntity; updatedValues_Param : access HashMap'Class);
    function dropTable (This : in out BasicOptionItemsEntity) return Unbounded_String;
 
 end org.allbinary.data.tables.user.commerce.inventory.item.options.BasicOptionItemsEntity_Package;

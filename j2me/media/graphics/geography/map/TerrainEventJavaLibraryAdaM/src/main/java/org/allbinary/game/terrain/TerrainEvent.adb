@@ -22,17 +22,18 @@ package body org.allbinary.game.terrain.TerrainEvent_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out TerrainEvent'Class; basicTerrainInfo : Java_Object_Access) is
+   procedure Initialize (This : in out TerrainEvent'Class; basicTerrainInfo_Param : access Java_Object'Class) is
+      basicTerrainInfo : Java_Object_Access := Java_Object_Access (basicTerrainInfo_Param);
    begin
         AllBinaryEventObject_Package.Initialize (This, basicTerrainInfo);
         Initialize_Fields (This);
         This.setBasicTerrainInfo (This.basicTerrainInfo);
    end Initialize;
 
-   function Create (basicTerrainInfo : Java_Object_Access) return TerrainEvent_Access is
+   function Create (basicTerrainInfo_Param : access Java_Object'Class) return TerrainEvent_Access is
       This : constant TerrainEvent_Access := new TerrainEvent;
    begin
-      TerrainEvent_Package.Initialize (This.all, basicTerrainInfo);
+      TerrainEvent_Package.Initialize (This.all, basicTerrainInfo_Param);
       return This;
    end Create;
 
@@ -51,12 +52,14 @@ package body org.allbinary.game.terrain.TerrainEvent_Package is
         return This.basicTerrainInfo;
    end getBasicTerrainInfo;
 
-   procedure setBasicTerrainInfo (This : in out TerrainEvent; basicTerrainInfo : BasicTerrainInfo_Access) is
+   procedure setBasicTerrainInfo (This : in out TerrainEvent; basicTerrainInfo_Param : access BasicTerrainInfo'Class) is
+      basicTerrainInfo : BasicTerrainInfo_Access := BasicTerrainInfo_Access (basicTerrainInfo_Param);
    begin
         This.basicTerrainInfo := basicTerrainInfo;
    end setBasicTerrainInfo;
 
-   procedure setBasicTerrainInfoForCircularStaticPool (This : in out TerrainEvent; basicTerrainInfo : BasicTerrainInfo_Access) is
+   procedure setBasicTerrainInfoForCircularStaticPool (This : in out TerrainEvent; basicTerrainInfo_Param : access BasicTerrainInfo'Class) is
+      basicTerrainInfo : BasicTerrainInfo_Access := BasicTerrainInfo_Access (basicTerrainInfo_Param);
    begin
         This.basicTerrainInfo := basicTerrainInfo;
    end setBasicTerrainInfoForCircularStaticPool;

@@ -63,7 +63,7 @@ package body org.allbinary.logic.communication.sql.connection.pool.SqlConnection
         if (This.connectionHashMap) = (null) then
             This.connectionHashMap := This.stdUtil.createHashMap;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGPOOL) then
-                This.logUtil.putF (This.FIRST_NEW_CONNECTION_CREATED & url, This'Unchecked_Access, This.METHOD_GET);
+                This.logUtil.putF (This.FIRST_NEW_CONNECTION_CREATED & url, SqlConnectionPool_Access'(This'Unchecked_Access), This.METHOD_GET);
             end if;
             return DriverManager_Package.getConnection (url);
         else
@@ -76,12 +76,12 @@ package body org.allbinary.logic.communication.sql.connection.pool.SqlConnection
                     stringBuffer.append (This.NEW_CONNECTION_FOR);
                     stringBuffer.append (url);
                     stringBuffer.append (This.CREATED);
-                    This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, This.METHOD_GET);
+                    This.logUtil.putF (stringBuffer.toString, SqlConnectionPool_Access'(This'Unchecked_Access), This.METHOD_GET);
                 end if;
                 return DriverManager_Package.getConnection (url);
             elsif (connectionVector.size) = (0) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGPOOL) then
-                    This.logUtil.putF (StringMaker_Package.Create.append (This.NEW_CONNECTION_FOR).append (url).append (This.CREATED).toString, This'Unchecked_Access, This.METHOD_GET);
+                    This.logUtil.putF (StringMaker_Package.Create.append (This.NEW_CONNECTION_FOR).append (url).append (This.CREATED).toString, SqlConnectionPool_Access'(This'Unchecked_Access), This.METHOD_GET);
                 end if;
                 return DriverManager_Package.getConnection (url);
             else
@@ -98,8 +98,8 @@ package body org.allbinary.logic.communication.sql.connection.pool.SqlConnection
                             stringBuffer.append (url);
                             stringBuffer.append (This.IS_Id);
                             stringBuffer.appendint (connectionVector.size);
-                            This.logUtil.putF (This.NUMBER_OF_SQL_CONNECTION_VECTORS & Java_Image (This.connectionHashMap.size), This'Unchecked_Access, This.METHOD_GET);
-                            This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, This.METHOD_GET);
+                            This.logUtil.putF (This.NUMBER_OF_SQL_CONNECTION_VECTORS & Java_Image (This.connectionHashMap.size), SqlConnectionPool_Access'(This'Unchecked_Access), This.METHOD_GET);
+                            This.logUtil.putF (stringBuffer.toString, SqlConnectionPool_Access'(This'Unchecked_Access), This.METHOD_GET);
                         end if;
                         return Connection_Access (sqlConnection);
                     end if;
@@ -111,13 +111,14 @@ package body org.allbinary.logic.communication.sql.connection.pool.SqlConnection
             stringBuffer.append (This.NEW_CONNECTION_FOR);
             stringBuffer.append (url);
             stringBuffer.append (This.CREATED);
-            This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, This.METHOD_GET);
+            This.logUtil.putF (stringBuffer.toString, SqlConnectionPool_Access'(This'Unchecked_Access), This.METHOD_GET);
         end if;
         return DriverManager_Package.getConnection (url);
    end get;
 
    --  throws SQLException
-   procedure add (This : in out SqlConnectionPool; url : Unbounded_String; sqlConnection : Connection_Access) is
+   procedure add (This : in out SqlConnectionPool; url : Unbounded_String; sqlConnection_Param : access Connection'Class) is
+      sqlConnection : Connection_Access := Connection_Access (sqlConnection_Param);
       connectionVector : BasicArrayList_Access;
       stringBuffer : StringMaker_Access;
    begin
@@ -141,12 +142,12 @@ package body org.allbinary.logic.communication.sql.connection.pool.SqlConnection
                 stringBuffer.append (url);
                 stringBuffer.append (This.IS_Id);
                 stringBuffer.appendint (connectionVector.size);
-                This.logUtil.putF (This.NUMBER_OF_SQL_CONNECTION_VECTORS & Java_Image (This.connectionHashMap.size), This'Unchecked_Access, This.METHOD_ADD);
-                This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, This.METHOD_ADD);
+                This.logUtil.putF (This.NUMBER_OF_SQL_CONNECTION_VECTORS & Java_Image (This.connectionHashMap.size), SqlConnectionPool_Access'(This'Unchecked_Access), This.METHOD_ADD);
+                This.logUtil.putF (stringBuffer.toString, SqlConnectionPool_Access'(This'Unchecked_Access), This.METHOD_ADD);
             end if;
         end if;
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGPOOL) then
-            This.logUtil.putF (This.CONNECTION_ALLREADY_CLOSED, This'Unchecked_Access, This.METHOD_ADD);
+            This.logUtil.putF (This.CONNECTION_ALLREADY_CLOSED, SqlConnectionPool_Access'(This'Unchecked_Access), This.METHOD_ADD);
         end if;
    end add;
 

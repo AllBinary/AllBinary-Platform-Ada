@@ -48,11 +48,11 @@ package org.allbinary.game.input.CompleteMotionGestureInputEvent_Package is
       motionGestureInput : MotionGestureInput_Access;
    end record;
 
-   procedure Initialize (This : in out CompleteMotionGestureInputEvent'Class; name : Unbounded_String; motionGestureInput : MotionGestureInput_Access);
-   function Create (name : Unbounded_String; motionGestureInput : MotionGestureInput_Access) return CompleteMotionGestureInputEvent_Access;
+   procedure Initialize (This : in out CompleteMotionGestureInputEvent'Class; name : Unbounded_String; motionGestureInput_Param : access MotionGestureInput'Class);
+   function Create (name : Unbounded_String; motionGestureInput_Param : access MotionGestureInput'Class) return CompleteMotionGestureInputEvent_Access;
    procedure setName (This : in out CompleteMotionGestureInputEvent; name : Unbounded_String);
    function getName (This : in out CompleteMotionGestureInputEvent) return Unbounded_String;
-   procedure setMotionGestureInput (This : in out CompleteMotionGestureInputEvent; motionGestureInput : MotionGestureInput_Access);
+   procedure setMotionGestureInput (This : in out CompleteMotionGestureInputEvent; motionGestureInput_Param : access MotionGestureInput'Class);
    function getMotionGestureInput (This : in out CompleteMotionGestureInputEvent) return MotionGestureInput_Access;
 
 end org.allbinary.game.input.CompleteMotionGestureInputEvent_Package;

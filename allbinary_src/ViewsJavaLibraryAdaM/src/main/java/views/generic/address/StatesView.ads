@@ -56,8 +56,8 @@ package views.generic_Id.address.StatesView_Package is
 
    procedure Initialize (This : in out StatesView'Class);
    function Create return StatesView_Access;
-   function toXmlNode (This : in out StatesView; document : Document_Access) return Node_Access;
-   procedure toXmlNode (This : in out StatesView; document : Document_Access);
+   function toXmlNode (This : in out StatesView; document_Param : access Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out StatesView; document_Param : access Document'Class);
 
 end views.generic_Id.address.StatesView_Package;
 

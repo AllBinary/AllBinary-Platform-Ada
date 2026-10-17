@@ -65,20 +65,22 @@ package body org.allbinary.logic.java.anyType.InterfaceUtil_Package is
         return null;
    end getClass;
 
-   function isImplemented (clazz : Ada.Tags.Tag; anyType : Java_Object_Access) return Boolean is
+   function isImplemented (clazz : Ada.Tags.Tag; anyType_Param : access Java_Object'Class) return Boolean is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
       classes : Ada_Tags_Tag_Array_Access;
       index : Integer;
    begin
         classes := anyType.all'Tag.getInterfaces;
         for index in 0 .. (classes'Length) - 1 loop
-            if (clazz.getName.compareTo (classes (index).getName)) = (0) then
+            if (To_Unbounded_String (Ada.Tags.Expanded_Name (clazz)).compareTo (classes (index).getName)) = (0) then
                 return True;
             end if;
         end loop;
         return False;
    end isImplemented;
 
-   function isImplemented (className : Unbounded_String; anyType : Java_Object_Access) return Boolean is
+   function isImplemented (className : Unbounded_String; anyType_Param : access Java_Object'Class) return Boolean is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
       classes : Ada_Tags_Tag_Array_Access;
       index : Integer;
    begin
@@ -91,7 +93,8 @@ package body org.allbinary.logic.java.anyType.InterfaceUtil_Package is
         return False;
    end isImplemented;
 
-   function isImplementedView (clazz : Ada.Tags.Tag; anyType : Java_Object_Access) return Unbounded_String is
+   function isImplementedView (clazz : Ada.Tags.Tag; anyType_Param : access Java_Object'Class) return Unbounded_String is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
       stringBuffer : StringMaker_Access;
       classes : Ada_Tags_Tag_Array_Access;
       index : Integer;
@@ -100,7 +103,7 @@ package body org.allbinary.logic.java.anyType.InterfaceUtil_Package is
         classes := anyType.all'Tag.getInterfaces;
         stringBuffer.append (To_Unbounded_String ("isImplementedView: " & ASCII.LF & ""));
         for index in 0 .. (classes'Length) - 1 loop
-            stringBuffer.append (clazz.getName);
+            stringBuffer.append (To_Unbounded_String (Ada.Tags.Expanded_Name (clazz)));
             stringBuffer.append (To_Unbounded_String (" should be = "));
             stringBuffer.append (classes (index).getName);
             stringBuffer.append (classes (index).getName);
@@ -123,22 +126,22 @@ package body org.allbinary.logic.java.anyType.InterfaceUtil_Package is
       null;
    end getClass;
 
-   procedure isImplemented (clazz : Ada.Tags.Tag; anyType : Java_Object_Access) is
-      Java_Result : constant Boolean := isImplemented (clazz, anyType);
+   procedure isImplemented (clazz : Ada.Tags.Tag; anyType_Param : access Java_Object'Class) is
+      Java_Result : constant Boolean := isImplemented (clazz, anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isImplemented;
 
-   procedure isImplemented (className : Unbounded_String; anyType : Java_Object_Access) is
-      Java_Result : constant Boolean := isImplemented (className, anyType);
+   procedure isImplemented (className : Unbounded_String; anyType_Param : access Java_Object'Class) is
+      Java_Result : constant Boolean := isImplemented (className, anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isImplemented;
 
-   procedure isImplementedView (clazz : Ada.Tags.Tag; anyType : Java_Object_Access) is
-      Java_Result : constant Unbounded_String := isImplementedView (clazz, anyType);
+   procedure isImplementedView (clazz : Ada.Tags.Tag; anyType_Param : access Java_Object'Class) is
+      Java_Result : constant Unbounded_String := isImplementedView (clazz, anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

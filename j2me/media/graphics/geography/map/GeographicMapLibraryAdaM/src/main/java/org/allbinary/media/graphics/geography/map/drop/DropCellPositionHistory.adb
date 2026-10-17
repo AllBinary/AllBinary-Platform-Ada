@@ -41,13 +41,17 @@ package body org.allbinary.media.graphics.geography.map.drop.DropCellPositionHis
         return DropCellPositionHistory_Package.SINGLETON;
    end getInstance;
 
-   procedure add (This : in out DropCellPositionHistory; cellPosition : CellPosition_Access; layerInterface : AllBinaryLayer_Access) is
+   procedure add (This : in out DropCellPositionHistory; cellPosition_Param : access CellPosition'Class; layerInterface_Param : access AllBinaryLayer'Class) is
+      cellPosition : CellPosition_Access := CellPosition_Access (cellPosition_Param);
+      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
    begin
         This.positionList.add (cellPosition);
         This.layerList.add (layerInterface);
    end add;
 
-   procedure addAll (This : in out DropCellPositionHistory; list : BasicArrayList_Access; layerInterface : AllBinaryLayer_Access) is
+   procedure addAll (This : in out DropCellPositionHistory; list_Param : access BasicArrayList'Class; layerInterface_Param : access AllBinaryLayer'Class) is
+      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
+      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
       index : Integer;
    begin
         for index in reverse 0 .. (list.size) - (1) loop
@@ -55,7 +59,8 @@ package body org.allbinary.media.graphics.geography.map.drop.DropCellPositionHis
         end loop;
    end addAll;
 
-   procedure remove (This : in out DropCellPositionHistory; cellPosition : CellPosition_Access) is
+   procedure remove (This : in out DropCellPositionHistory; cellPosition_Param : access CellPosition'Class) is
+      cellPosition : CellPosition_Access := CellPosition_Access (cellPosition_Param);
       index : Integer;
    begin
         index := This.positionList.indexOf (cellPosition);
@@ -65,7 +70,8 @@ package body org.allbinary.media.graphics.geography.map.drop.DropCellPositionHis
         end if;
    end remove;
 
-   procedure removeAll (This : in out DropCellPositionHistory; layerInterface : AllBinaryLayer_Access) is
+   procedure removeAll (This : in out DropCellPositionHistory; layerInterface_Param : access AllBinaryLayer'Class) is
+      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
       index : Integer;
    begin
         index := 0;
@@ -84,12 +90,14 @@ package body org.allbinary.media.graphics.geography.map.drop.DropCellPositionHis
         This.layerList.clear;
    end clear;
 
-   function isCellPositionWithDrop (This : in out DropCellPositionHistory; cellPosition : CellPosition_Access) return Boolean is
+   function isCellPositionWithDrop (This : in out DropCellPositionHistory; cellPosition_Param : access CellPosition'Class) return Boolean is
+      cellPosition : CellPosition_Access := CellPosition_Access (cellPosition_Param);
    begin
         return This.positionList.contains (cellPosition);
    end isCellPositionWithDrop;
 
-   function anyCellPositionWithDrop (This : in out DropCellPositionHistory; list : BasicArrayList_Access) return Boolean is
+   function anyCellPositionWithDrop (This : in out DropCellPositionHistory; list_Param : access BasicArrayList'Class) return Boolean is
+      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
       index : Integer;
    begin
         for index in reverse 0 .. (list.size) - (1) loop
@@ -100,7 +108,8 @@ package body org.allbinary.media.graphics.geography.map.drop.DropCellPositionHis
         return False;
    end anyCellPositionWithDrop;
 
-   function getCellPositionWithDrop (This : in out DropCellPositionHistory; list : BasicArrayList_Access) return CellPosition_Access is
+   function getCellPositionWithDrop (This : in out DropCellPositionHistory; list_Param : access BasicArrayList'Class) return CellPosition_Access is
+      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
       cellPosition : CellPosition_Access;
       index : Integer;
    begin
@@ -114,7 +123,8 @@ package body org.allbinary.media.graphics.geography.map.drop.DropCellPositionHis
         return This.cellPositionFactory.NONE;
    end getCellPositionWithDrop;
 
-   function getLayerInterface (This : in out DropCellPositionHistory; cellPosition : CellPosition_Access) return AllBinaryLayer_Access is
+   function getLayerInterface (This : in out DropCellPositionHistory; cellPosition_Param : access CellPosition'Class) return AllBinaryLayer_Access is
+      cellPosition : CellPosition_Access := CellPosition_Access (cellPosition_Param);
       index : Integer;
    begin
         index := This.positionList.indexOf (cellPosition);
@@ -125,29 +135,29 @@ package body org.allbinary.media.graphics.geography.map.drop.DropCellPositionHis
         end if;
    end getLayerInterface;
 
-   procedure isCellPositionWithDrop (This : in out DropCellPositionHistory; cellPosition : CellPosition_Access) is
-      Java_Result : constant Boolean := DropCellPositionHistory'Class (This).isCellPositionWithDrop (cellPosition);
+   procedure isCellPositionWithDrop (This : in out DropCellPositionHistory; cellPosition_Param : access CellPosition'Class) is
+      Java_Result : constant Boolean := DropCellPositionHistory'Class (This).isCellPositionWithDrop (cellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isCellPositionWithDrop;
 
-   procedure anyCellPositionWithDrop (This : in out DropCellPositionHistory; list : BasicArrayList_Access) is
-      Java_Result : constant Boolean := DropCellPositionHistory'Class (This).anyCellPositionWithDrop (list);
+   procedure anyCellPositionWithDrop (This : in out DropCellPositionHistory; list_Param : access BasicArrayList'Class) is
+      Java_Result : constant Boolean := DropCellPositionHistory'Class (This).anyCellPositionWithDrop (list_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end anyCellPositionWithDrop;
 
-   procedure getCellPositionWithDrop (This : in out DropCellPositionHistory; list : BasicArrayList_Access) is
-      Java_Result : constant CellPosition_Access := DropCellPositionHistory'Class (This).getCellPositionWithDrop (list);
+   procedure getCellPositionWithDrop (This : in out DropCellPositionHistory; list_Param : access BasicArrayList'Class) is
+      Java_Result : constant CellPosition_Access := DropCellPositionHistory'Class (This).getCellPositionWithDrop (list_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getCellPositionWithDrop;
 
-   procedure getLayerInterface (This : in out DropCellPositionHistory; cellPosition : CellPosition_Access) is
-      Java_Result : constant AllBinaryLayer_Access := DropCellPositionHistory'Class (This).getLayerInterface (cellPosition);
+   procedure getLayerInterface (This : in out DropCellPositionHistory; cellPosition_Param : access CellPosition'Class) is
+      Java_Result : constant AllBinaryLayer_Access := DropCellPositionHistory'Class (This).getLayerInterface (cellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

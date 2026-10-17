@@ -49,13 +49,13 @@ package admin.taghelpers.InventoryItemViewParentTagHelper_Package is
    procedure Initialize (This : in out InventoryItemViewParentTagHelper'Class);
    function Create return InventoryItemViewParentTagHelper_Access;
    function getInstance return InventoryItemViewParentTagHelper_Access;
-   function getInventoryItemView (This : in out InventoryItemViewParentTagHelper; inventoryTag : HelperTag_Access) return InventoryItemView_Access;
-   procedure getInventoryItemView (This : in out InventoryItemViewParentTagHelper; inventoryTag : HelperTag_Access);
-   function getDownloadableInventoryItemView (This : in out InventoryItemViewParentTagHelper; inventoryTag : HelperTag_Access) return DownloadableInventoryItemView_Access;
-   procedure getDownloadableInventoryItemView (This : in out InventoryItemViewParentTagHelper; inventoryTag : HelperTag_Access);
-   function getRequestMapInterface (This : in out InventoryItemViewParentTagHelper; inventoryTag : HelperTag_Access) return RequestMapInterface_Access;
-   procedure getRequestMapInterface (This : in out InventoryItemViewParentTagHelper; inventoryTag : HelperTag_Access);
-   procedure checkForValidationViewHelper (This : in out InventoryItemViewParentTagHelper; helperObject : Java_Object_Access);
+   function getInventoryItemView (This : in out InventoryItemViewParentTagHelper; inventoryTag_Param : access HelperTag'Class) return InventoryItemView_Access;
+   procedure getInventoryItemView (This : in out InventoryItemViewParentTagHelper; inventoryTag_Param : access HelperTag'Class);
+   function getDownloadableInventoryItemView (This : in out InventoryItemViewParentTagHelper; inventoryTag_Param : access HelperTag'Class) return DownloadableInventoryItemView_Access;
+   procedure getDownloadableInventoryItemView (This : in out InventoryItemViewParentTagHelper; inventoryTag_Param : access HelperTag'Class);
+   function getRequestMapInterface (This : in out InventoryItemViewParentTagHelper; inventoryTag_Param : access HelperTag'Class) return RequestMapInterface_Access;
+   procedure getRequestMapInterface (This : in out InventoryItemViewParentTagHelper; inventoryTag_Param : access HelperTag'Class);
+   procedure checkForValidationViewHelper (This : in out InventoryItemViewParentTagHelper; helperObject_Param : access Java_Object'Class);
 
 end admin.taghelpers.InventoryItemViewParentTagHelper_Package;
 

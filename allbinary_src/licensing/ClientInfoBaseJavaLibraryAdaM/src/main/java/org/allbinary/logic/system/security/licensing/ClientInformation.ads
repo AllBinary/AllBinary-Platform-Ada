@@ -82,13 +82,13 @@ package org.allbinary.logic.system.security.licensing.ClientInformation_Package 
    function toHashtable (This : in out ClientInformation) return ABHashtable_Access;
    function isSameId (This : in out ClientInformation; alicenseId : Unbounded_String) return Boolean;
    procedure isSameId (This : in out ClientInformation; alicenseId : Unbounded_String);
-   function isLargerOrDifferentServerList (This : in out ClientInformation; list : BasicArrayList_Access) return Boolean;
-   procedure isLargerOrDifferentServerList (This : in out ClientInformation; list : BasicArrayList_Access);
+   function isLargerOrDifferentServerList (This : in out ClientInformation; list_Param : access BasicArrayList'Class) return Boolean;
+   procedure isLargerOrDifferentServerList (This : in out ClientInformation; list_Param : access BasicArrayList'Class);
    procedure setHardSale (This : in out ClientInformation; hardSale : Boolean);
    function isHardSale (This : in out ClientInformation) return Boolean;
-   procedure setOperatingSystemInterface (This : in out ClientInformation; operatingSystemInterface : GenericOperatingSystem_Access);
+   procedure setOperatingSystemInterface (This : in out ClientInformation; operatingSystemInterface_Param : access GenericOperatingSystem'Class);
    procedure setLicenseId (This : in out ClientInformation; licenseId : Unbounded_String);
-   procedure setLicenseServers (This : in out ClientInformation; licenseServers : BasicArrayList_Access);
+   procedure setLicenseServers (This : in out ClientInformation; licenseServers_Param : access BasicArrayList'Class);
    function toShortString (This : in out ClientInformation) return Unbounded_String;
 
 end org.allbinary.logic.system.security.licensing.ClientInformation_Package;

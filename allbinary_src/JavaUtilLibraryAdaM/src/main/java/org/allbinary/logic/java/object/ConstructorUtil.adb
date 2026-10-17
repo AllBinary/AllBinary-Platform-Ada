@@ -49,7 +49,8 @@ package body org.allbinary.logic.java.anyType.ConstructorUtil_Package is
         return stringBuffer.toString;
    end viewAll;
 
-   function view (constructor : Constructor_Access; lineBreak : Unbounded_String) return Unbounded_String is
+   function view (constructor_Param : access Constructor'Class; lineBreak : Unbounded_String) return Unbounded_String is
+      constructor : Constructor_Access := Constructor_Access (constructor_Param);
       commonSeps : CommonSeps_Access;
       stringBuffer : StringMaker_Access;
       classes : Ada_Tags_Tag_Array_Access;
@@ -80,8 +81,8 @@ package body org.allbinary.logic.java.anyType.ConstructorUtil_Package is
       null;
    end viewAll;
 
-   procedure view (constructor : Constructor_Access; lineBreak : Unbounded_String) is
-      Java_Result : constant Unbounded_String := view (constructor, lineBreak);
+   procedure view (constructor_Param : access Constructor'Class; lineBreak : Unbounded_String) is
+      Java_Result : constant Unbounded_String := view (constructor_Param, lineBreak);
       pragma Unreferenced (Java_Result);
    begin
       null;

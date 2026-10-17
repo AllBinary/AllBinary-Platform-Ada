@@ -43,9 +43,9 @@ package org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_P
 
    procedure Initialize (This : in out MyCanvasEventService'Class);
    function Create return MyCanvasEventService_Access;
-   procedure addListener (listener : MyCanvasEventListener_Access);
-   procedure removeListener (listener : MyCanvasEventListener_Access);
-   procedure fire (evt : MyCanvasEvent_Access);
+   procedure addListener (listener_Param : access MyCanvasEventListener'Class);
+   procedure removeListener (listener_Param : access MyCanvasEventListener'Class);
+   procedure fire (evt_Param : access MyCanvasEvent'Class);
 
 end org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package;
 

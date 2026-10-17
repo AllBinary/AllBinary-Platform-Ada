@@ -48,9 +48,9 @@ package org.allbinary.bundle.logic.system.loader.CryptServiceFactory_Package is
 
    procedure Initialize (This : in out CryptServiceFactory'Class);
    function Create return CryptServiceFactory_Access;
-   function getService (This : in out CryptServiceFactory; bundle : Bundle_Access; registration : ServiceRegistration_Access) return Java_Object_Access;
-   procedure getService (This : in out CryptServiceFactory; bundle : Bundle_Access; registration : ServiceRegistration_Access);
-   procedure ungetService (This : in out CryptServiceFactory; bundle : Bundle_Access; registration : ServiceRegistration_Access; service : Java_Object_Access);
+   function getService (This : in out CryptServiceFactory; bundle_Param : access Bundle'Class; registration_Param : access ServiceRegistration'Class) return Java_Object_Access;
+   procedure getService (This : in out CryptServiceFactory; bundle_Param : access Bundle'Class; registration_Param : access ServiceRegistration'Class);
+   procedure ungetService (This : in out CryptServiceFactory; bundle_Param : access Bundle'Class; registration_Param : access ServiceRegistration'Class; service_Param : access Java_Object'Class);
 
 end org.allbinary.bundle.logic.system.loader.CryptServiceFactory_Package;
 

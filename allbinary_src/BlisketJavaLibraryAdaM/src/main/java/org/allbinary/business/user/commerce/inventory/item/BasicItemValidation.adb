@@ -25,17 +25,18 @@ package body org.allbinary.business.user.commerce.inventory.item.BasicItemValida
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BasicItemValidation'Class; itemInterface : ItemInterface_Access) is
+   procedure Initialize (This : in out BasicItemValidation'Class; itemInterface_Param : access ItemInterface'Class) is
+      itemInterface : ItemInterface_Access := ItemInterface_Access (itemInterface_Param);
    begin
       Validation_Package.Initialize (This);
       Initialize_Fields (This);
         This.itemInterface := itemInterface;
    end Initialize;
 
-   function Create (itemInterface : ItemInterface_Access) return BasicItemValidation_Access is
+   function Create (itemInterface_Param : access ItemInterface'Class) return BasicItemValidation_Access is
       This : constant BasicItemValidation_Access := new BasicItemValidation;
    begin
-      BasicItemValidation_Package.Initialize (This.all, itemInterface);
+      BasicItemValidation_Package.Initialize (This.all, itemInterface_Param);
       return This;
    end Create;
 
@@ -117,7 +118,7 @@ package body org.allbinary.business.user.commerce.inventory.item.BasicItemValida
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to validate form"), This'Unchecked_Access, This.commonStrings.IS_VALID, e);
+                This.logUtil.put (To_Unbounded_String ("Failed to validate form"), BasicItemValidation_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
             end if;
             return False;
                 end;
@@ -204,7 +205,7 @@ package body org.allbinary.business.user.commerce.inventory.item.BasicItemValida
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), This'Unchecked_Access, To_Unbounded_String ("validationInfo()"), e);
+                This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), BasicItemValidation_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
             end if;
             return To_Unbounded_String ("Error Validating Form");
                 end;
@@ -216,13 +217,14 @@ package body org.allbinary.business.user.commerce.inventory.item.BasicItemValida
         return null;
    end toValidationInfoDoc;
 
-   function toValidationInfoNode (This : in out BasicItemValidation; document : Document_Access) return Node_Access is
+   function toValidationInfoNode (This : in out BasicItemValidation; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
    begin
         return null;
    end toValidationInfoNode;
 
-   procedure toValidationInfoNode (This : in out BasicItemValidation; document : Document_Access) is
-      Java_Result : constant Node_Access := BasicItemValidation'Class (This).toValidationInfoNode (document);
+   procedure toValidationInfoNode (This : in out BasicItemValidation; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := BasicItemValidation'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

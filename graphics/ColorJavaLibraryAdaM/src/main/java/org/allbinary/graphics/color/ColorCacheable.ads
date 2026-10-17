@@ -37,11 +37,11 @@ package org.allbinary.graphics.color.ColorCacheable_Package is
       color : Color_Access;
    end record;
 
-   procedure Initialize (This : in out ColorCacheable'Class; key : Java_Object_Access);
-   function Create (key : Java_Object_Access) return ColorCacheable_Access;
+   procedure Initialize (This : in out ColorCacheable'Class; key_Param : access Java_Object'Class);
+   function Create (key_Param : access Java_Object'Class) return ColorCacheable_Access;
    function getKey (This : in out ColorCacheable) return Java_Object_Access;
    function getColor (This : in out ColorCacheable) return Color_Access;
-   procedure setColor (This : in out ColorCacheable; color : Color_Access);
+   procedure setColor (This : in out ColorCacheable; color_Param : access Color'Class);
 
 end org.allbinary.graphics.color.ColorCacheable_Package;
 

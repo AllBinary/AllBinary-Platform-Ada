@@ -62,11 +62,11 @@ package views.generic_Id.address.shipping.ShippingAddressesView_Package is
       streetAddressList : BasicArrayList_Access;
    end record;
 
-   procedure Initialize (This : in out ShippingAddressesView'Class; transformInfoInterface : TransformInfoInterface_Access);
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return ShippingAddressesView_Access;
+   procedure Initialize (This : in out ShippingAddressesView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return ShippingAddressesView_Access;
    function getRequest (This : in out ShippingAddressesView) return HttpServletRequest_Access;
-   function toXmlNode (This : in out ShippingAddressesView; document : Document_Access) return Node_Access;
-   procedure toXmlNode (This : in out ShippingAddressesView; document : Document_Access);
+   function toXmlNode (This : in out ShippingAddressesView; document_Param : access Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out ShippingAddressesView; document_Param : access Document'Class);
    procedure addDomNodeInterfaces (This : in out ShippingAddressesView);
    function view (This : in out ShippingAddressesView) return Unbounded_String;
 

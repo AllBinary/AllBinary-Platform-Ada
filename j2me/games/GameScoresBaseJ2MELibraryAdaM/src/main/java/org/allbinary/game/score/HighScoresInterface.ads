@@ -32,9 +32,9 @@ package org.allbinary.game.score.HighScoresInterface_Package is
    type HighScoresInterface_Access_Array is array (Natural range <>) of HighScoresInterface_Access;
    type HighScoresInterface_Access_Array_Access is access all HighScoresInterface_Access_Array;
    function getList (This : in out HighScoresInterface) return BasicArrayList_Access is abstract;
-   procedure addHighScore (This : in out HighScoresInterface; newHighScore : HighScore_Access) is abstract;
+   procedure addHighScore (This : in out HighScoresInterface; newHighScore_Param : access HighScore'Class) is abstract;
    function getTotal (This : in out HighScoresInterface) return Integer is abstract;
-   function isBestScore (This : in out HighScoresInterface; newHighScore : HighScore_Access) return Boolean is abstract;
+   function isBestScore (This : in out HighScoresInterface; newHighScore_Param : access HighScore'Class) return Boolean is abstract;
 
 end org.allbinary.game.score.HighScoresInterface_Package;
 

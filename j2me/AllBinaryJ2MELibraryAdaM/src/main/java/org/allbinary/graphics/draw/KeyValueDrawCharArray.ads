@@ -49,8 +49,8 @@ package org.allbinary.graphics.draw.KeyValueDrawCharArray_Package is
 
    procedure Initialize (This : in out KeyValueDrawCharArray'Class; label_Case : Unbounded_String; x : Integer);
    function Create (label_Case : Unbounded_String; x : Integer) return KeyValueDrawCharArray_Access;
-   procedure updateMeasurement (This : in out KeyValueDrawCharArray; graphics : Graphics_Access);
-   procedure paint (This : in out KeyValueDrawCharArray; graphics : Graphics_Access; y : Integer);
+   procedure updateMeasurement (This : in out KeyValueDrawCharArray; graphics_Param : access Graphics'Class);
+   procedure paint (This : in out KeyValueDrawCharArray; graphics_Param : access Graphics'Class; y : Integer);
    procedure update (This : in out KeyValueDrawCharArray; value : Character_Array_Access; len : Integer);
 
 end org.allbinary.graphics.draw.KeyValueDrawCharArray_Package;

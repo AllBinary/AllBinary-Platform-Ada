@@ -69,13 +69,13 @@ package org.allbinary.game.ag.ai.scroller.PacePatrolAI_Package is
       isFollowLimitedByTerrain : Boolean;
    end record;
 
-   procedure Initialize (This : in out PacePatrolAI'Class; hashtable : ABHashtable_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access);
-   function Create (hashtable : ABHashtable_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return PacePatrolAI_Access;
-   procedure processAI (This : in out PacePatrolAI; allBinaryLayerManager : AllBinaryLayerManager_Access);
+   procedure Initialize (This : in out PacePatrolAI'Class; hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class);
+   function Create (hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return PacePatrolAI_Access;
+   procedure processAI (This : in out PacePatrolAI; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class);
    function setFiringDirectionForTargetIfInRange (This : in out PacePatrolAI) return Direction_Access;
    procedure disable (This : in out PacePatrolAI);
-   procedure onEvent (This : in out PacePatrolAI; eventObject : AllBinaryEventObject_Access);
-   procedure onMovement (This : in out PacePatrolAI; trackingEvent : TrackingEvent_Access);
+   procedure onEvent (This : in out PacePatrolAI; eventObject_Param : access AllBinaryEventObject'Class);
+   procedure onMovement (This : in out PacePatrolAI; trackingEvent_Param : access TrackingEvent'Class);
    function getFiringDistance (This : in out PacePatrolAI) return Integer;
    procedure setFiringDistance (This : in out PacePatrolAI; firingDistance : Integer);
 

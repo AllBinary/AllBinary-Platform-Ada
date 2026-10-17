@@ -30,17 +30,17 @@ package org.allbinary.logic.system.security.licensing.InApplicationPurchaseFacto
    procedure Initialize (This : in out InApplicationPurchaseFactory'Class);
    function Create return InApplicationPurchaseFactory_Access;
    function getInstance return InApplicationPurchaseFactory_Access;
-   procedure init (This : in out InApplicationPurchaseFactory; anyType : Java_Object_Access; stateObject : Java_Object_Access);
-   procedure onCreate (This : in out InApplicationPurchaseFactory; anyType : Java_Object_Access; stateObject : Java_Object_Access);
+   procedure init (This : in out InApplicationPurchaseFactory; anyType_Param : access Java_Object'Class; stateObject_Param : access Java_Object'Class);
+   procedure onCreate (This : in out InApplicationPurchaseFactory; anyType_Param : access Java_Object'Class; stateObject_Param : access Java_Object'Class);
    procedure onStart (This : in out InApplicationPurchaseFactory);
-   procedure onResult (This : in out InApplicationPurchaseFactory; requestCode : Integer; resultCode : Integer; data : Java_Object_Access);
-   procedure onSaveState (This : in out InApplicationPurchaseFactory; anyType : Java_Object_Access);
+   procedure onResult (This : in out InApplicationPurchaseFactory; requestCode : Integer; resultCode : Integer; data_Param : access Java_Object'Class);
+   procedure onSaveState (This : in out InApplicationPurchaseFactory; anyType_Param : access Java_Object'Class);
    procedure onStop (This : in out InApplicationPurchaseFactory);
    procedure onDestroy (This : in out InApplicationPurchaseFactory);
-   procedure purchase (This : in out InApplicationPurchaseFactory; lockableFeature : LockableFeature_Access);
-   function isPurchased (This : in out InApplicationPurchaseFactory; lockableFeature : LockableFeature_Access) return Boolean;
-   procedure isPurchased (This : in out InApplicationPurchaseFactory; lockableFeature : LockableFeature_Access);
-   procedure add (This : in out InApplicationPurchaseFactory; lockableFeature : LockableFeature_Access);
+   procedure purchase (This : in out InApplicationPurchaseFactory; lockableFeature_Param : access LockableFeature'Class);
+   function isPurchased (This : in out InApplicationPurchaseFactory; lockableFeature_Param : access LockableFeature'Class) return Boolean;
+   procedure isPurchased (This : in out InApplicationPurchaseFactory; lockableFeature_Param : access LockableFeature'Class);
+   procedure add (This : in out InApplicationPurchaseFactory; lockableFeature_Param : access LockableFeature'Class);
    function getUserName (This : in out InApplicationPurchaseFactory) return Unbounded_String;
    function isEnabled (This : in out InApplicationPurchaseFactory) return Boolean;
 

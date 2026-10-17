@@ -38,10 +38,10 @@ package org.allbinary.business.user.modules.admin.AdminUser_Package is
 
    procedure Initialize (This : in out AdminUser'Class);
    function Create return AdminUser_Access;
-   procedure Initialize (This : in out AdminUser'Class; userHashMap : HashMap_Access);
-   function Create (userHashMap : HashMap_Access) return AdminUser_Access;
-   procedure validateSession (This : in out AdminUser; weblisketSession : WeblisketSessionInterface_Access);
-   procedure updateSession (This : in out AdminUser; weblisketSession : WeblisketSessionInterface_Access);
+   procedure Initialize (This : in out AdminUser'Class; userHashMap_Param : access HashMap'Class);
+   function Create (userHashMap_Param : access HashMap'Class) return AdminUser_Access;
+   procedure validateSession (This : in out AdminUser; weblisketSession_Param : access WeblisketSessionInterface'Class);
+   procedure updateSession (This : in out AdminUser; weblisketSession_Param : access WeblisketSessionInterface'Class);
 
 end org.allbinary.business.user.modules.admin.AdminUser_Package;
 

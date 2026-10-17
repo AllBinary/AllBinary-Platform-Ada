@@ -32,10 +32,10 @@ package org.allbinary.logic.util.event.handler.BasicEventHandlerInterface_Packag
    type BasicEventHandlerInterface_Access is access all BasicEventHandlerInterface'Class;
    type BasicEventHandlerInterface_Access_Array is array (Natural range <>) of BasicEventHandlerInterface_Access;
    type BasicEventHandlerInterface_Access_Array_Access is access all BasicEventHandlerInterface_Access_Array;
-   procedure addListenerInterface (This : in out BasicEventHandlerInterface; eventListenerInterface : EventListenerInterface_Access) is abstract;
-   procedure fireEvent (This : in out BasicEventHandlerInterface; eventObject : AllBinaryEventObject_Access) is abstract;
+   procedure addListenerInterface (This : in out BasicEventHandlerInterface; eventListenerInterface_Param : access EventListenerInterface'Class) is abstract;
+   procedure fireEvent (This : in out BasicEventHandlerInterface; eventObject_Param : access AllBinaryEventObject'Class) is abstract;
    procedure removeAllListeners (This : in out BasicEventHandlerInterface) is abstract;
-   procedure removeListener (This : in out BasicEventHandlerInterface; eventListenerInterface : EventListenerInterface_Access) is abstract;
+   procedure removeListener (This : in out BasicEventHandlerInterface; eventListenerInterface_Param : access EventListenerInterface'Class) is abstract;
 
 end org.allbinary.logic.util.event.handler.BasicEventHandlerInterface_Package;
 

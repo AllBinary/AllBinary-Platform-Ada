@@ -57,7 +57,7 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
       Initialize_Fields (This);
         This.initComponents;
         url := This.all'Tag.getResource (To_Unbounded_String ("/help/Help.hs"));
-        This.logUtil.putF (To_Unbounded_String ("URL: ") & Java_Image (url), This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+        This.logUtil.putF (To_Unbounded_String ("URL: ") & Java_Image (url), InputAutomationJFrame_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         This.helpSet := JavaHelpUtil_Package.getInstance.getHelpSet (url);
         url := This.all'Tag.getResource (To_Unbounded_String ("/resources/allbinaryicon8bit.jpg"));
         imageIcon := ImageIcon_Package.Create (url);
@@ -72,12 +72,14 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
       return This;
    end Create;
 
-   procedure helpSetAdded (This : in out InputAutomationJFrame; helpSetEvent : HelpSetEvent_Access) is
+   procedure helpSetAdded (This : in out InputAutomationJFrame; helpSetEvent_Param : access HelpSetEvent'Class) is
+      helpSetEvent : HelpSetEvent_Access := HelpSetEvent_Access (helpSetEvent_Param);
    begin
         This.helpSet.add (helpSetEvent.getHelpSet);
    end helpSetAdded;
 
-   procedure helpSetRemoved (This : in out InputAutomationJFrame; helpSetEvent : HelpSetEvent_Access) is
+   procedure helpSetRemoved (This : in out InputAutomationJFrame; helpSetEvent_Param : access HelpSetEvent'Class) is
+      helpSetEvent : HelpSetEvent_Access := HelpSetEvent_Access (helpSetEvent_Param);
    begin
         This.helpSet.remove (helpSetEvent.getHelpSet);
    end helpSetRemoved;
@@ -95,7 +97,7 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
         else
             This.inputAutomationModuleConfigurations := InputAutomationModuleConfigurations_Package.Create (inputAutomationModuleConfigurationList);
         end if;
-        This.inputAutomationModuleFactory := InputAutomationModuleFactoryFactory_Package.Create (This.inputAutomationModuleConfigurations, This'Unchecked_Access);
+        This.inputAutomationModuleFactory := InputAutomationModuleFactoryFactory_Package.Create (This.inputAutomationModuleConfigurations, InputAutomationJFrame_Access'(This'Unchecked_Access));
         (JListSwingWorker_Package.Create (This.inputAutomationModuleJList, This.inputAutomationModuleFactory.getListModel)).execute;
         This.gameRobotJTabbedPane.setEnabledAt (1, False);
         This.gameRobotJTabbedPane.setSelectedIndex (0);
@@ -137,24 +139,28 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
         This.setResizable (False);
         This.addWindowFocusListener (WindowFocusListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure windowGainedFocus (This : in out ; evt : WindowEvent_Access) is
+--     procedure windowGainedFocus (This : in out ; evt_Param : access WindowEvent'Class) is
+--        evt : WindowEvent_Access := WindowEvent_Access (evt_Param);
 --     begin
 --                  This.formWindowGainedFocus (evt);
 --     end windowGainedFocus;
 --              
---     procedure windowLostFocus (This : in out ; evt : WindowEvent_Access) is
+--     procedure windowLostFocus (This : in out ; evt_Param : access WindowEvent'Class) is
+--        evt : WindowEvent_Access := WindowEvent_Access (evt_Param);
 --     begin
 --                  This.formWindowLostFocus (evt);
 --     end windowLostFocus;
 );
         This.addFocusListener (FocusAdapter_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure focusGained (This : in out ; evt : FocusEvent_Access) is
+--     procedure focusGained (This : in out ; evt_Param : access FocusEvent'Class) is
+--        evt : FocusEvent_Access := FocusEvent_Access (evt_Param);
 --     begin
 --                  This.formFocusGained (evt);
 --     end focusGained;
 --              
---     procedure focusLost (This : in out ; evt : FocusEvent_Access) is
+--     procedure focusLost (This : in out ; evt_Param : access FocusEvent'Class) is
+--        evt : FocusEvent_Access := FocusEvent_Access (evt_Param);
 --     begin
 --                  This.formFocusLost (evt);
 --     end focusLost;
@@ -163,7 +169,8 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
         This.inputAutomationModuleJList.setMinimumSize (Dimension_Package.Create (200, 0));
         This.inputAutomationModuleJList.addListSelectionListener (ListSelectionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure valueChanged (This : in out ; evt : ListSelectionEvent_Access) is
+--     procedure valueChanged (This : in out ; evt_Param : access ListSelectionEvent'Class) is
+--        evt : ListSelectionEvent_Access := ListSelectionEvent_Access (evt_Param);
 --     begin
 --                  This.inputAutomationModuleJListValueChanged (evt);
 --     end valueChanged;
@@ -184,7 +191,8 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
         This.startJMenuItem.setText (This.commonStrings.START);
         This.startJMenuItem.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt : ActionEvent_Access) is
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
+--        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.startJMenuItemActionPerformed (evt);
 --     end actionPerformed;
@@ -193,7 +201,8 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
         This.stopJMenuItem.setText (To_Unbounded_String ("Stop"));
         This.stopJMenuItem.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt : ActionEvent_Access) is
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
+--        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.stopJMenuItemActionPerformed (evt);
 --     end actionPerformed;
@@ -203,7 +212,8 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
         This.optionsJMenu.setText (To_Unbounded_String ("Options"));
         This.optionsJMenu.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt : ActionEvent_Access) is
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
+--        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.optionsJMenuActionPerformed (evt);
 --     end actionPerformed;
@@ -213,7 +223,8 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
         This.stopOnFocusJCheckBoxMenuItem.setLabel (To_Unbounded_String ("Stop Module On Focus"));
         This.stopOnFocusJCheckBoxMenuItem.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt : ActionEvent_Access) is
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
+--        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.stopOnFocusJCheckBoxMenuItemActionPerformed (evt);
 --     end actionPerformed;
@@ -224,7 +235,8 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
         This.helpJMenuItem.setText (To_Unbounded_String ("Help"));
         This.helpJMenuItem.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt : ActionEvent_Access) is
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
+--        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.helpJMenuItemActionPerformed (evt);
 --     end actionPerformed;
@@ -233,7 +245,8 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
         This.updatesJMenuItem.setText (To_Unbounded_String ("Updates"));
         This.updatesJMenuItem.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt : ActionEvent_Access) is
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
+--        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.updatesJMenuItemActionPerformed (evt);
 --     end actionPerformed;
@@ -242,7 +255,8 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
         This.subscriptionJMenuItem.setText (To_Unbounded_String ("Subscription"));
         This.subscriptionJMenuItem.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt : ActionEvent_Access) is
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
+--        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.subscriptionJMenuItemActionPerformed (evt);
 --     end actionPerformed;
@@ -251,7 +265,8 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
         This.modulesJMenuItem.setText (To_Unbounded_String ("Module Manager"));
         This.modulesJMenuItem.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt : ActionEvent_Access) is
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
+--        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.modulesJMenuItemActionPerformed (evt);
 --     end actionPerformed;
@@ -260,7 +275,8 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
         This.aboutJMenuItem.setText (To_Unbounded_String ("About"));
         This.aboutJMenuItem.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt : ActionEvent_Access) is
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
+--        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.aboutJMenuItemActionPerformed (evt);
 --     end actionPerformed;
@@ -275,7 +291,8 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
         This.pack;
    end initComponents;
 
-   procedure subscriptionJMenuItemActionPerformed (This : in out InputAutomationJFrame; evt : ActionEvent_Access) is
+   procedure subscriptionJMenuItemActionPerformed (This : in out InputAutomationJFrame; evt_Param : access ActionEvent'Class) is
+      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         begin
             Desktop_Package.getDesktop.browse (This.uri);
@@ -284,12 +301,13 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("subscriptionJMenuItemActionPerformed"), e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, InputAutomationJFrame_Access'(This'Unchecked_Access), To_Unbounded_String ("subscriptionJMenuItemActionPerformed"), e);
                 end;
         end;
    end subscriptionJMenuItemActionPerformed;
 
-   procedure updatesJMenuItemActionPerformed (This : in out InputAutomationJFrame; evt : ActionEvent_Access) is
+   procedure updatesJMenuItemActionPerformed (This : in out InputAutomationJFrame; evt_Param : access ActionEvent'Class) is
+      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         begin
             Desktop_Package.getDesktop.browse (This.uri);
@@ -298,20 +316,22 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("updatesJMenuItemActionPerformed"), e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, InputAutomationJFrame_Access'(This'Unchecked_Access), To_Unbounded_String ("updatesJMenuItemActionPerformed"), e);
                 end;
         end;
    end updatesJMenuItemActionPerformed;
 
-   procedure aboutJMenuItemActionPerformed (This : in out InputAutomationJFrame; evt : ActionEvent_Access) is
+   procedure aboutJMenuItemActionPerformed (This : in out InputAutomationJFrame; evt_Param : access ActionEvent'Class) is
+      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
       textJDialog : JDialog_Access;
    begin
         textJDialog := BasicTextJDialog_Package.Create (To_Unbounded_String ("Copyright (c) 2002-2007 AllBinary"));
         textJDialog.setVisible (True);
-        textJDialog.setLocationRelativeTo (This'Unchecked_Access);
+        textJDialog.setLocationRelativeTo (InputAutomationJFrame_Access'(This'Unchecked_Access));
    end aboutJMenuItemActionPerformed;
 
-   procedure modulesJMenuItemActionPerformed (This : in out InputAutomationJFrame; evt : ActionEvent_Access) is
+   procedure modulesJMenuItemActionPerformed (This : in out InputAutomationJFrame; evt_Param : access ActionEvent'Class) is
+      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         begin
             DesktopBundle_Package.Create.start;
@@ -320,52 +340,60 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("modulesJMenuItemActionPerformed"), e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, InputAutomationJFrame_Access'(This'Unchecked_Access), To_Unbounded_String ("modulesJMenuItemActionPerformed"), e);
                 end;
         end;
    end modulesJMenuItemActionPerformed;
 
-   procedure helpJMenuItemActionPerformed (This : in out InputAutomationJFrame; evt : ActionEvent_Access) is
+   procedure helpJMenuItemActionPerformed (This : in out InputAutomationJFrame; evt_Param : access ActionEvent'Class) is
+      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         JavaHelpUtil_Package.getInstance.show (This.helpSet);
    end helpJMenuItemActionPerformed;
 
-   procedure stopOnFocusJCheckBoxMenuItemActionPerformed (This : in out InputAutomationJFrame; evt : ActionEvent_Access) is
+   procedure stopOnFocusJCheckBoxMenuItemActionPerformed (This : in out InputAutomationJFrame; evt_Param : access ActionEvent'Class) is
+      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         null;
    end stopOnFocusJCheckBoxMenuItemActionPerformed;
 
-   procedure optionsJMenuActionPerformed (This : in out InputAutomationJFrame; evt : ActionEvent_Access) is
+   procedure optionsJMenuActionPerformed (This : in out InputAutomationJFrame; evt_Param : access ActionEvent'Class) is
+      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         null;
    end optionsJMenuActionPerformed;
 
-   procedure formWindowLostFocus (This : in out InputAutomationJFrame; evt : WindowEvent_Access) is
+   procedure formWindowLostFocus (This : in out InputAutomationJFrame; evt_Param : access WindowEvent'Class) is
+      evt : WindowEvent_Access := WindowEvent_Access (evt_Param);
    begin
-        This.logUtil.putF (To_Unbounded_String ("Nothing"), This'Unchecked_Access, To_Unbounded_String ("focusLost"));
+        This.logUtil.putF (To_Unbounded_String ("Nothing"), InputAutomationJFrame_Access'(This'Unchecked_Access), To_Unbounded_String ("focusLost"));
    end formWindowLostFocus;
 
-   procedure formWindowGainedFocus (This : in out InputAutomationJFrame; evt : WindowEvent_Access) is
+   procedure formWindowGainedFocus (This : in out InputAutomationJFrame; evt_Param : access WindowEvent'Class) is
+      evt : WindowEvent_Access := WindowEvent_Access (evt_Param);
    begin
         if This.stopOnFocusJCheckBoxMenuItem.isSelected then
-            This.logUtil.putF (To_Unbounded_String ("Stopping"), This'Unchecked_Access, To_Unbounded_String ("focusGained"));
+            This.logUtil.putF (To_Unbounded_String ("Stopping"), InputAutomationJFrame_Access'(This'Unchecked_Access), To_Unbounded_String ("focusGained"));
             if (This.runnableInterface) /= (null) then
                 This.runnableInterface.setRunning (False);
             end if;
         end if;
    end formWindowGainedFocus;
 
-   procedure formFocusLost (This : in out InputAutomationJFrame; evt : FocusEvent_Access) is
+   procedure formFocusLost (This : in out InputAutomationJFrame; evt_Param : access FocusEvent'Class) is
+      evt : FocusEvent_Access := FocusEvent_Access (evt_Param);
    begin
         null;
    end formFocusLost;
 
-   procedure formFocusGained (This : in out InputAutomationJFrame; evt : FocusEvent_Access) is
+   procedure formFocusGained (This : in out InputAutomationJFrame; evt_Param : access FocusEvent'Class) is
+      evt : FocusEvent_Access := FocusEvent_Access (evt_Param);
    begin
         null;
    end formFocusGained;
 
-   procedure inputAutomationModuleJListValueChanged (This : in out InputAutomationJFrame; evt : ListSelectionEvent_Access) is
+   procedure inputAutomationModuleJListValueChanged (This : in out InputAutomationJFrame; evt_Param : access ListSelectionEvent'Class) is
+      evt : ListSelectionEvent_Access := ListSelectionEvent_Access (evt_Param);
       gameAutomationRobotModuleNameString : Unbounded_String;
       layout : GroupLayout_Access;
    begin
@@ -378,9 +406,9 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
                 layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGap (0, 395, Short_Package.MAX_VALUE).addComponent (This.inputAutomationModuleInterface.getConfigurationJPanel, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE));
                 layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGap (0, 256, Short_Package.MAX_VALUE).addComponent (This.inputAutomationModuleInterface.getConfigurationJPanel, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE));
                 This.gameRobotJTabbedPane.setEnabledAt (1, True);
-                This.logUtil.putF (To_Unbounded_String ("Setting Module: ") & gameAutomationRobotModuleNameString & To_Unbounded_String (" and Configuration JPanel"), This'Unchecked_Access, To_Unbounded_String ("gameAutomationRobotModuleJListValueChanged"));
+                This.logUtil.putF (To_Unbounded_String ("Setting Module: ") & gameAutomationRobotModuleNameString & To_Unbounded_String (" and Configuration JPanel"), InputAutomationJFrame_Access'(This'Unchecked_Access), To_Unbounded_String ("gameAutomationRobotModuleJListValueChanged"));
             else
-                This.logUtil.putF (To_Unbounded_String ("Module name was null"), This'Unchecked_Access, To_Unbounded_String ("gameAutomationRobotModuleJListValueChanged"));
+                This.logUtil.putF (To_Unbounded_String ("Module name was null"), InputAutomationJFrame_Access'(This'Unchecked_Access), To_Unbounded_String ("gameAutomationRobotModuleJListValueChanged"));
                 This.gameRobotJTabbedPane.setEnabledAt (1, False);
             end if;
         exception
@@ -388,25 +416,27 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("gameAutomationRobotModuleJListValueChanged"), e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, InputAutomationJFrame_Access'(This'Unchecked_Access), To_Unbounded_String ("gameAutomationRobotModuleJListValueChanged"), e);
                 end;
         end;
    end inputAutomationModuleJListValueChanged;
 
-   procedure stopJMenuItemActionPerformed (This : in out InputAutomationJFrame; evt : ActionEvent_Access) is
+   procedure stopJMenuItemActionPerformed (This : in out InputAutomationJFrame; evt_Param : access ActionEvent'Class) is
+      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         if (This.runnableInterface) /= (null) then
             This.runnableInterface.setRunning (False);
         else
             This.noModuleSelectedJDialog.setVisible (True);
-            This.noModuleSelectedJDialog.setLocationRelativeTo (This'Unchecked_Access);
+            This.noModuleSelectedJDialog.setLocationRelativeTo (InputAutomationJFrame_Access'(This'Unchecked_Access));
         end if;
    end stopJMenuItemActionPerformed;
 
-   procedure startJMenuItemActionPerformed (This : in out InputAutomationJFrame; evt : ActionEvent_Access) is
+   procedure startJMenuItemActionPerformed (This : in out InputAutomationJFrame; evt_Param : access ActionEvent'Class) is
+      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         begin
-            This.logUtil.putF (To_Unbounded_String ("Starting"), This'Unchecked_Access, To_Unbounded_String ("startJMenuItemActionPerformed"));
+            This.logUtil.putF (To_Unbounded_String ("Starting"), InputAutomationJFrame_Access'(This'Unchecked_Access), To_Unbounded_String ("startJMenuItemActionPerformed"));
             if (This.inputAutomationModuleInterface) /= (null) then
                 This.runnableInterface := This.inputAutomationModuleInterface.getInstance;
                 if (This.runnableInterface) /= (null) then
@@ -414,21 +444,21 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
                     This.thread.setPriority ((Thread_Package.MIN_PRIORITY) + (1));
                     This.thread.start;
                 else
-                    This.logUtil.putF (To_Unbounded_String ("Runnnable was null"), This'Unchecked_Access, To_Unbounded_String ("startJMenuItemActionPerformed"));
+                    This.logUtil.putF (To_Unbounded_String ("Runnnable was null"), InputAutomationJFrame_Access'(This'Unchecked_Access), To_Unbounded_String ("startJMenuItemActionPerformed"));
                     This.noModuleSelectedJDialog.setVisible (True);
-                    This.noModuleSelectedJDialog.setLocationRelativeTo (This'Unchecked_Access);
+                    This.noModuleSelectedJDialog.setLocationRelativeTo (InputAutomationJFrame_Access'(This'Unchecked_Access));
                 end if;
             else
-                This.logUtil.putF (To_Unbounded_String ("InputAutomationModuleInterface was null"), This'Unchecked_Access, To_Unbounded_String ("startJMenuItemActionPerformed"));
+                This.logUtil.putF (To_Unbounded_String ("InputAutomationModuleInterface was null"), InputAutomationJFrame_Access'(This'Unchecked_Access), To_Unbounded_String ("startJMenuItemActionPerformed"));
                 This.noModuleSelectedJDialog.setVisible (True);
-                This.noModuleSelectedJDialog.setLocationRelativeTo (This'Unchecked_Access);
+                This.noModuleSelectedJDialog.setLocationRelativeTo (InputAutomationJFrame_Access'(This'Unchecked_Access));
             end if;
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("startJMenuItemActionPerformed"), e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, InputAutomationJFrame_Access'(This'Unchecked_Access), To_Unbounded_String ("startJMenuItemActionPerformed"), e);
                 end;
         end;
    end startJMenuItemActionPerformed;
@@ -443,7 +473,8 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
         InputAutomationJFrame_Package.INPUTAUTOMATION_JFRAME.setVisible (False);
    end destroy;
 
-   procedure create (inputAutomationBundleActivatorListenerInterface : InputAutomationBundleActivatorListenerInterface_Access) is
+   procedure create (inputAutomationBundleActivatorListenerInterface_Param : access InputAutomationBundleActivatorListenerInterface'Class) is
+      inputAutomationBundleActivatorListenerInterface : InputAutomationBundleActivatorListenerInterface_Access := InputAutomationBundleActivatorListenerInterface_Access (inputAutomationBundleActivatorListenerInterface_Param);
       appUrlGlobals : AppUrlGlobals_Access;
    begin
         LogConfigTypeFactory_Package.getInstance;
@@ -460,7 +491,7 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
 --                  logUtil := LogUtil_Package.getInstance;
 --                  commonStrings := CommonStrings_Package.getInstance;
 --                  begin
---                      logUtil.putF (To_Unbounded_String ("Running"), This'Unchecked_Access, commonStrings.RUN);
+--                      logUtil.putF (To_Unbounded_String ("Running"), InputAutomationJFrame_Access'(This'Unchecked_Access), commonStrings.RUN);
 --                      INPUTAUTOMATION_JFRAME := InputAutomationJFrame_Package.Create;
 --                      InputRobotFactory_Package.getInstance.addListener (InputAutomationJFrame_Package.getInstance);
 --                      if (inputAutomationBundleActivatorListenerInterface) /= (null) then
@@ -473,7 +504,7 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
 --                          declare
 --                              e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
 --                          begin
---                      logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.RUN, e);
+--                      logUtil.put (commonStrings.EXCEPTION_Id, InputAutomationJFrame_Access'(This'Unchecked_Access), commonStrings.RUN, e);
 --                          end;
 --                  end;
 --     end run;
@@ -491,45 +522,49 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
         return This.automationModuleConfigurationJPanel;
    end getAutomationModuleConfigurationJPanel;
 
-   procedure setAutomationModuleConfigurationJPanel (This : in out InputAutomationJFrame; automationModuleConfigurationJPanel : JPanel_Access) is
+   procedure setAutomationModuleConfigurationJPanel (This : in out InputAutomationJFrame; automationModuleConfigurationJPanel_Param : access JPanel'Class) is
+      automationModuleConfigurationJPanel : JPanel_Access := JPanel_Access (automationModuleConfigurationJPanel_Param);
    begin
         This.automationModuleConfigurationJPanel := automationModuleConfigurationJPanel;
    end setAutomationModuleConfigurationJPanel;
 
-   procedure onAdd (This : in out InputAutomationJFrame; inputAutomationRobotChangeEvent : InputAutomationRobotChangeEvent_Access) is
+   procedure onAdd (This : in out InputAutomationJFrame; inputAutomationRobotChangeEvent_Param : access InputAutomationRobotChangeEvent'Class) is
+      inputAutomationRobotChangeEvent : InputAutomationRobotChangeEvent_Access := InputAutomationRobotChangeEvent_Access (inputAutomationRobotChangeEvent_Param);
    begin
         begin
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("onAdd"));
+            This.logUtil.putF (This.commonStrings.START, InputAutomationJFrame_Access'(This'Unchecked_Access), To_Unbounded_String ("onAdd"));
             InputRobotFactory_Package.getInstance.add (inputAutomationRobotChangeEvent.getInputAutomationRobotInterfaceWrapper.getInputRobotInterface);
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("onAdd"), e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, InputAutomationJFrame_Access'(This'Unchecked_Access), To_Unbounded_String ("onAdd"), e);
                 end;
         end;
    end onAdd;
 
-   procedure onRemove (This : in out InputAutomationJFrame; inputAutomationRobotChangeEvent : InputAutomationRobotChangeEvent_Access) is
+   procedure onRemove (This : in out InputAutomationJFrame; inputAutomationRobotChangeEvent_Param : access InputAutomationRobotChangeEvent'Class) is
+      inputAutomationRobotChangeEvent : InputAutomationRobotChangeEvent_Access := InputAutomationRobotChangeEvent_Access (inputAutomationRobotChangeEvent_Param);
    begin
         begin
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("onRemove"));
+            This.logUtil.putF (This.commonStrings.START, InputAutomationJFrame_Access'(This'Unchecked_Access), To_Unbounded_String ("onRemove"));
             InputRobotFactory_Package.getInstance.add (inputAutomationRobotChangeEvent.getInputAutomationRobotInterfaceWrapper.getInputRobotInterface);
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("onRemove"), e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, InputAutomationJFrame_Access'(This'Unchecked_Access), To_Unbounded_String ("onRemove"), e);
                 end;
         end;
    end onRemove;
 
-   procedure onAdd (This : in out InputAutomationJFrame; inputAutomationConfigurationChangeEvent : InputAutomationConfigurationModuleChangeEvent_Access) is
+   procedure onAdd (This : in out InputAutomationJFrame; inputAutomationConfigurationChangeEvent_Param : access InputAutomationConfigurationModuleChangeEvent'Class) is
+      inputAutomationConfigurationChangeEvent : InputAutomationConfigurationModuleChangeEvent_Access := InputAutomationConfigurationModuleChangeEvent_Access (inputAutomationConfigurationChangeEvent_Param);
    begin
         begin
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("onAdd"));
+            This.logUtil.putF (This.commonStrings.START, InputAutomationJFrame_Access'(This'Unchecked_Access), To_Unbounded_String ("onAdd"));
             This.inputAutomationModuleConfigurations.add (inputAutomationConfigurationChangeEvent.getInputAutomationModuleConfiguration);
             This.init;
         exception
@@ -537,12 +572,13 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("onAdd"), e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, InputAutomationJFrame_Access'(This'Unchecked_Access), To_Unbounded_String ("onAdd"), e);
                 end;
         end;
    end onAdd;
 
-   procedure onRemove (This : in out InputAutomationJFrame; inputAutomationConfigurationChangeEvent : InputAutomationConfigurationModuleChangeEvent_Access) is
+   procedure onRemove (This : in out InputAutomationJFrame; inputAutomationConfigurationChangeEvent_Param : access InputAutomationConfigurationModuleChangeEvent'Class) is
+      inputAutomationConfigurationChangeEvent : InputAutomationConfigurationModuleChangeEvent_Access := InputAutomationConfigurationModuleChangeEvent_Access (inputAutomationConfigurationChangeEvent_Param);
       inputAutomationConfiguration : InputAutomationConfiguration_Access;
       inputAutomationModuleConfigurationList : List_Access;
       logUtil : LogUtil_Access;
@@ -550,13 +586,13 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
       inputAutomationModuleConfigurations : InputAutomationModuleConfigurations_Access;
    begin
         begin
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("onRemove"));
+            This.logUtil.putF (This.commonStrings.START, InputAutomationJFrame_Access'(This'Unchecked_Access), To_Unbounded_String ("onRemove"));
             inputAutomationConfiguration := InputAutomationConfigurationFactory_Package.getInstance.inputAutomationConfiguration;
             inputAutomationModuleConfigurationList := inputAutomationConfiguration.getInputAutomationModuleConfigurationList;
             if (inputAutomationModuleConfigurationList) = (null) then
                 logUtil := LogUtil_Package.getInstance;
                 commonStrings := CommonStrings_Package.getInstance;
-                logUtil.putF (To_Unbounded_String ("inputAutomationModuleConfigurationList: ") & Java_Image (inputAutomationModuleConfigurationList), This'Unchecked_Access, commonStrings.INIT);
+                logUtil.putF (To_Unbounded_String ("inputAutomationModuleConfigurationList: ") & Java_Image (inputAutomationModuleConfigurationList), InputAutomationJFrame_Access'(This'Unchecked_Access), commonStrings.INIT);
                 Java_Throw (Java_New_Exception ("Exception"));
             end if;
             inputAutomationModuleConfigurations := InputAutomationModuleConfigurations_Package.Create (inputAutomationConfiguration.getInputAutomationModuleConfigurationList);
@@ -567,7 +603,7 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("onRemove"), e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, InputAutomationJFrame_Access'(This'Unchecked_Access), To_Unbounded_String ("onRemove"), e);
                 end;
         end;
    end onRemove;

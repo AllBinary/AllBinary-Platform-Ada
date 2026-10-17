@@ -45,23 +45,24 @@ package body org.allbinary.business.init.WeblisketFinder_Package is
    function findAll (This : in out WeblisketFinder; path : Unbounded_String) return BasicArrayList_Access is
    begin
         begin
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("findAll"));
+            This.logUtil.putF (This.commonStrings.START, WeblisketFinder_Access'(This'Unchecked_Access), To_Unbounded_String ("findAll"));
             return This.subDirectory.search (WeblisketFinder_Package.KEY, AbFile_Package.createAbFile (path));
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("findAll"), e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, WeblisketFinder_Access'(This'Unchecked_Access), To_Unbounded_String ("findAll"), e);
             if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.PRELOADERERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("findAll"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, WeblisketFinder_Access'(This'Unchecked_Access), To_Unbounded_String ("findAll"), e);
             end if;
             return null;
                 end;
         end;
    end findAll;
 
-   function getInstallationPath (This : in out WeblisketFinder; file : AbFile_Access) return Unbounded_String is
+   function getInstallationPath (This : in out WeblisketFinder; file_Param : access AbFile'Class) return Unbounded_String is
+      file : AbFile_Access := AbFile_Access (file_Param);
       filePath : Unbounded_String;
       end_Id : Integer;
    begin
@@ -78,7 +79,7 @@ package body org.allbinary.business.init.WeblisketFinder_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PRELOADERERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("getInstallationPath"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, WeblisketFinder_Access'(This'Unchecked_Access), To_Unbounded_String ("getInstallationPath"), e);
             end if;
             return Null_Unbounded_String;
                 end;
@@ -102,8 +103,8 @@ package body org.allbinary.business.init.WeblisketFinder_Package is
       null;
    end findAll;
 
-   procedure getInstallationPath (This : in out WeblisketFinder; file : AbFile_Access) is
-      Java_Result : constant Unbounded_String := WeblisketFinder'Class (This).getInstallationPath (file);
+   procedure getInstallationPath (This : in out WeblisketFinder; file_Param : access AbFile'Class) is
+      Java_Result : constant Unbounded_String := WeblisketFinder'Class (This).getInstallationPath (file_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

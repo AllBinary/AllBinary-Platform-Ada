@@ -76,10 +76,10 @@ package views.admin.customizers.CustomizersView_Package is
       customizersVector : BasicArrayList_Access;
    end record;
 
-   procedure Initialize (This : in out CustomizersView'Class; transformInfoInterface : TransformInfoInterface_Access);
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return CustomizersView_Access;
-   function toXmlNode (This : in out CustomizersView; document : Document_Access) return Node_Access;
-   procedure toXmlNode (This : in out CustomizersView; document : Document_Access);
+   procedure Initialize (This : in out CustomizersView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return CustomizersView_Access;
+   function toXmlNode (This : in out CustomizersView; document_Param : access Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out CustomizersView; document_Param : access Document'Class);
    procedure addDomNodeInterfaces (This : in out CustomizersView);
    function view (This : in out CustomizersView) return Unbounded_String;
 

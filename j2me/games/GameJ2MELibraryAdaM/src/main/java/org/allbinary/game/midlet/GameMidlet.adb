@@ -49,7 +49,8 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out GameMidlet'Class; clientInformationFactory : ClientInformationFactory_Access) is
+   procedure Initialize (This : in out GameMidlet'Class; clientInformationFactory_Param : access ClientInformationFactory'Class) is
+      clientInformationFactory : ClientInformationFactory_Access := ClientInformationFactory_Access (clientInformationFactory_Param);
       progressCanvas : ProgressCanvas_Access;
    begin
         ProgressMidlet_Package.Initialize (This, clientInformationFactory);
@@ -57,17 +58,17 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
         SmallIntegerSingletonFactory_Package.getInstance.initWithRange (16#291#, 6);
         This.loadGameForm := CommandForm_Package.getNullCommandForm;
         progressCanvas := ProgressCanvasFactory_Package.getInstance;
-        progressCanvas.init (This'Unchecked_Access);
+        progressCanvas.init (GameMidlet_Access'(This'Unchecked_Access));
         GameFeatureEventHandler_Package.getInstance.addListenerInterface (ChangedGameFeatureListener_Package.getInstance);
         GamePersistanceSingleton_Package.getInstance.clear;
         This.debugInterface := DebugFactory_Package.getInstance;
         This.init;
    end Initialize;
 
-   function Create (clientInformationFactory : ClientInformationFactory_Access) return GameMidlet_Access is
+   function Create (clientInformationFactory_Param : access ClientInformationFactory'Class) return GameMidlet_Access is
       This : constant GameMidlet_Access := new GameMidlet;
    begin
-      GameMidlet_Package.Initialize (This.all, clientInformationFactory);
+      GameMidlet_Package.Initialize (This.all, clientInformationFactory_Param);
       return This;
    end Create;
 
@@ -109,11 +110,11 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
 
    procedure pauseAppBackground (This : in out GameMidlet; background : Boolean) is
    begin
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.PAUSE_APP_BACKGROUND);
+        This.logUtil.putF (This.commonStrings.START, GameMidlet_Access'(This'Unchecked_Access), This.PAUSE_APP_BACKGROUND);
         if (This.allbinaryGameCanvasRunnableInterface) /= (NullGameCanvasRunnable_Package.NULL_GAME_CANVAS_RUNNABLE) then
             This.allbinaryGameCanvasRunnableInterface.pause;
         else
-            This.logUtil.putF (To_Unbounded_String ("<<<<<< Null"), This'Unchecked_Access, This.PAUSE_APP_BACKGROUND);
+            This.logUtil.putF (To_Unbounded_String ("<<<<<< Null"), GameMidlet_Access'(This'Unchecked_Access), This.PAUSE_APP_BACKGROUND);
         end if;
         AllBinarySensorManager_Package.getInstance.shutdown;
    end pauseAppBackground;
@@ -129,13 +130,13 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
    procedure unPauseAppBackground (This : in out GameMidlet; background : Boolean) is
       gameCanvasRunnableInterface : GameCanvasRunnableInterface_Access;
    begin
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.UN_PAUSE_APP_BACKGROUND);
+        This.logUtil.putF (This.commonStrings.START, GameMidlet_Access'(This'Unchecked_Access), This.UN_PAUSE_APP_BACKGROUND);
         AllBinarySensorManager_Package.getInstance.init;
         gameCanvasRunnableInterface := This.allbinaryGameCanvasRunnableInterface;
         if (gameCanvasRunnableInterface) /= (NullGameCanvasRunnable_Package.NULL_GAME_CANVAS_RUNNABLE) then
             gameCanvasRunnableInterface.unPause;
         else
-            This.logUtil.putF (To_Unbounded_String ("<<<<<< Null"), This'Unchecked_Access, This.UN_PAUSE_APP_BACKGROUND);
+            This.logUtil.putF (To_Unbounded_String ("<<<<<< Null"), GameMidlet_Access'(This'Unchecked_Access), This.UN_PAUSE_APP_BACKGROUND);
         end if;
    end unPauseAppBackground;
 
@@ -159,7 +160,7 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
    begin
         METHOD_NAME := To_Unbounded_String ("GameMidlet::destroyApp");
         begin
-            PreLogUtil_Package.put (GameStatisticsFactory_Package.getInstance.toString, This'Unchecked_Access, METHOD_NAME);
+            PreLogUtil_Package.put (GameStatisticsFactory_Package.getInstance.toString, GameMidlet_Access'(This'Unchecked_Access), METHOD_NAME);
             gameAdState := This.gameAdStateFactory.getCurrentInstance;
             gameAdState.getAdvertisements.stopAll;
             if not (This.isDestroyed) then
@@ -167,19 +168,19 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
                 This.setGameCanvasRunnableInterface (NullGameCanvasRunnable_Package.NULL_GAME_CANVAS_RUNNABLE);
                 This.mediaShutdown;
             else
-                This.logUtil.putF (To_Unbounded_String ("Midlet Managment Error: Midlet Should Only Be Destroyed Once"), This'Unchecked_Access, METHOD_NAME);
+                This.logUtil.putF (To_Unbounded_String ("Midlet Managment Error: Midlet Should Only Be Destroyed Once"), GameMidlet_Access'(This'Unchecked_Access), METHOD_NAME);
             end if;
             ProgressMidlet (This).destroyApp (True);
-            PreLogUtil_Package.put (This.commonStrings.END_Id, This'Unchecked_Access, METHOD_NAME);
+            PreLogUtil_Package.put (This.commonStrings.END_Id, GameMidlet_Access'(This'Unchecked_Access), METHOD_NAME);
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, METHOD_NAME, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, GameMidlet_Access'(This'Unchecked_Access), METHOD_NAME, e);
                 end;
         end;
-        This.logUtil.putF (This.commonStrings.END_Id, This'Unchecked_Access, METHOD_NAME);
+        This.logUtil.putF (This.commonStrings.END_Id, GameMidlet_Access'(This'Unchecked_Access), METHOD_NAME);
    end destroyApp;
 
    --  throws MIDletStateChangeException
@@ -192,17 +193,17 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
             gameAdState := This.gameAdStateFactory.getCurrentInstance;
             gameAdState.getAdvertisements.startAll;
             START_APP := To_Unbounded_String ("startApp");
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, START_APP);
+            This.logUtil.putF (This.commonStrings.START, GameMidlet_Access'(This'Unchecked_Access), START_APP);
             gameCanvasRunnableInterface := This.allbinaryGameCanvasRunnableInterface;
             if (gameCanvasRunnableInterface) = (NullGameCanvasRunnable_Package.NULL_GAME_CANVAS_RUNNABLE) then
                 This.gameMidletStateFactory.setCurrentGameState (This.gameStateFactory.NO_GAME_STATE);
                 This.setDemo;
             else
-                This.logUtil.putF (To_Unbounded_String ("GameCanvasRunnableInterface is available"), This'Unchecked_Access, START_APP);
+                This.logUtil.putF (To_Unbounded_String ("GameCanvasRunnableInterface is available"), GameMidlet_Access'(This'Unchecked_Access), START_APP);
                 if (gameCanvasRunnableInterface) = (This.getCurrentDisplayable) then
                     This.unPauseAppBackground (False);
                 else
-                    This.logUtil.putF (To_Unbounded_String ("GameCanvasRunnableInterface is not current displayable"), This'Unchecked_Access, START_APP);
+                    This.logUtil.putF (To_Unbounded_String ("GameCanvasRunnableInterface is not current displayable"), GameMidlet_Access'(This'Unchecked_Access), START_APP);
                 end if;
             end if;
         exception
@@ -210,14 +211,16 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("startApp"), e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, GameMidlet_Access'(This'Unchecked_Access), To_Unbounded_String ("startApp"), e);
             This.destroyApp (False);
             This.notifyDestroyed;
                 end;
         end;
    end startApp;
 
-   procedure commandAction (This : in out GameMidlet; command : Command_Access; displayable_Case : Displayable_Access) is
+   procedure commandAction (This : in out GameMidlet; command_Param : access Command'Class; displayable_Case_Param : access Displayable'Class) is
+      command : Command_Access := Command_Access (command_Param);
+      displayable_Case : Displayable_Access := Displayable_Access (displayable_Case_Param);
       displayableAsString : Unbounded_String;
       label : Unbounded_String;
       gameCommandsFactory : GameCommandsFactory_Access;
@@ -253,7 +256,7 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
             if (command) /= (null) then
                 label := command.getLabel;
             end if;
-            PreLogUtil_Package.put (StringMaker_Package.Create.append (This.COMMAND_NAME).append (label).append (This.DISPLAYABLE).append (displayableAsString).toString, This'Unchecked_Access, This.COMMAND_ACTION);
+            PreLogUtil_Package.put (StringMaker_Package.Create.append (This.COMMAND_NAME).append (label).append (This.DISPLAYABLE).append (displayableAsString).toString, GameMidlet_Access'(This'Unchecked_Access), This.COMMAND_ACTION);
             gameCommandsFactory := GameCommandsFactory_Package.getInstance;
             allbinaryGameCanvasRunnableInterface := This.allbinaryGameCanvasRunnableInterface;
             gameCanvasRunnableInterface := allbinaryGameCanvasRunnableInterface;
@@ -271,24 +274,24 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
                 if (GameMidletEventHandler_Package.getInstance.getEventListenerInterfaceListP.size) = (0) then
                     This.exitProgress (True);
                 end if;
-                GameMidletEventHandler_Package.getInstance.fireEvent (DemoGameMidletEvent_Package.Create (This'Unchecked_Access, DemoGameMidletStateFactory_Package.getInstance.NONE));
+                GameMidletEventHandler_Package.getInstance.fireEvent (DemoGameMidletEvent_Package.Create (GameMidlet_Access'(This'Unchecked_Access), DemoGameMidletStateFactory_Package.getInstance.NONE));
             elsif (command) = (gameCommandsFactory.EXIT_WITHOUT_PROGRESS_COMMAND) then
                 This.exitProgress (False);
             elsif (((command) = (gameCommandsFactory.START_COMMAND)) or else ((command) = (gameCommandsFactory.RESTART_COMMAND))) or else ((command) = (gameCommandsFactory.CONTINUE_COMMAND)) then
                 if ((This.gameMidletStateFactory.getCurrentGameState) /= (This.gameStateFactory.PLAYING_GAME_STATE)) or else ((command) = (gameCommandsFactory.RESTART_COMMAND)) then
                     if This.gameStartTimeHelper.isTimeTNT then
                         if ((command) = (gameCommandsFactory.START_COMMAND)) and then (This.isDemoLoading) then
-                            This.logUtil.putF (To_Unbounded_String ("Trying to Start Game Before Loading Complete"), This'Unchecked_Access, This.midletStrings.COMMAND_ACTION);
+                            This.logUtil.putF (To_Unbounded_String ("Trying to Start Game Before Loading Complete"), GameMidlet_Access'(This'Unchecked_Access), This.midletStrings.COMMAND_ACTION);
                         else
                             This.startedBefore := True;
                             This.createGame;
                             This.gameMidletStateFactory.setCurrentGameState (This.gameStateFactory.PLAYING_GAME_STATE);
                         end if;
                     else
-                        This.logUtil.putF (To_Unbounded_String ("Starting Game Too Often"), This'Unchecked_Access, This.midletStrings.COMMAND_ACTION);
+                        This.logUtil.putF (To_Unbounded_String ("Starting Game Too Often"), GameMidlet_Access'(This'Unchecked_Access), This.midletStrings.COMMAND_ACTION);
                     end if;
                 else
-                    This.logUtil.putF (To_Unbounded_String ("Already in playing state"), This'Unchecked_Access, This.COMMAND_ACTION);
+                    This.logUtil.putF (To_Unbounded_String ("Already in playing state"), GameMidlet_Access'(This'Unchecked_Access), This.COMMAND_ACTION);
                 end if;
             elsif (command) = (gameCommandsFactory.BUY_COMMAND) then
                 inApplicationPurchaseFactory := InApplicationPurchaseFactory_Package.getInstance;
@@ -374,7 +377,7 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
                 progressCanvas.addNormalPortion (50, To_Unbounded_String ("In Game Options"));
                 layerManager := This.createGameLayerManager;
                 inGameOptionsFormFactory := InGameOptionsFormFactory_Package.getInstance;
-                inGameOptionsFormFactory.init (This'Unchecked_Access, InGameFeatures_Package.Create, To_Unbounded_String ("Options In Game"), layerManager.getBackgroundBasicColor, layerManager.getForegroundBasicColor);
+                inGameOptionsFormFactory.init (GameMidlet_Access'(This'Unchecked_Access), InGameFeatures_Package.Create, To_Unbounded_String ("Options In Game"), layerManager.getBackgroundBasicColor, layerManager.getForegroundBasicColor);
                 inGameOptionsForm := inGameOptionsFormFactory.get;
                 inGameOptionsForm.setItemStateListener (allbinaryGameCanvasRunnableInterface);
                 This.commandAction (gameCommandsFactory.SET_MENU_DISPLAYABLE, inGameOptionsForm);
@@ -398,7 +401,7 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
                 stringBuffer.appendboolean (This.fullScreenUtil.isScreenChange (This.isFullScreen));
                 stringBuffer.append (To_Unbounded_String (" isResized: "));
                 stringBuffer.appendboolean (This.isResized);
-                PreLogUtil_Package.put (stringBuffer.toString, This'Unchecked_Access, This.COMMAND_ACTION);
+                PreLogUtil_Package.put (stringBuffer.toString, GameMidlet_Access'(This'Unchecked_Access), This.COMMAND_ACTION);
                 if (This.isResized) or else (This.fullScreenUtil.isScreenChange (This.isFullScreen)) then
                     This.updateFullScreen;
                 end if;
@@ -410,7 +413,7 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
                 keyValuePersistance.loadAll (This.abeClientInformation);
                 if (This.getLoadGameForm) = (CommandForm_Package.getNullCommandForm) then
                     layerManager := This.createGameLayerManager;
-                    This.setLoadGameForm (LoadGameForm_Package.Create (This'Unchecked_Access, To_Unbounded_String ("Load Game"), layerManager.getBackgroundBasicColor, layerManager.getForegroundBasicColor));
+                    This.setLoadGameForm (LoadGameForm_Package.Create (GameMidlet_Access'(This'Unchecked_Access), To_Unbounded_String ("Load Game"), layerManager.getBackgroundBasicColor, layerManager.getForegroundBasicColor));
                 else
                     This.getLoadGameForm.update;
                 end if;
@@ -423,9 +426,9 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
                     This.setStartStateHashtable (keyValuePersistance.get (index));
                     menuListener := This.getLoadGameForm;
                     menuListener.close;
-                    PreLogUtil_Package.put (BasicMotionGesturesHandler_Package.getInstance.toString, This'Unchecked_Access, This.COMMAND_ACTION);
+                    PreLogUtil_Package.put (BasicMotionGesturesHandler_Package.getInstance.toString, GameMidlet_Access'(This'Unchecked_Access), This.COMMAND_ACTION);
                     This.commandAction (gameCommandsFactory.START_COMMAND, NullCanvas_Package.NULL_CANVAS);
-                    PreLogUtil_Package.put (BasicMotionGesturesHandler_Package.getInstance.toString, This'Unchecked_Access, This.COMMAND_ACTION);
+                    PreLogUtil_Package.put (BasicMotionGesturesHandler_Package.getInstance.toString, GameMidlet_Access'(This'Unchecked_Access), This.COMMAND_ACTION);
                 end if;
             elsif (command) = (gameCommandsFactory.DELETE_FILE) then
                 loadGameForm := LoadGameForm_Access (This.getLoadGameForm);
@@ -443,7 +446,7 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
                 keyValuePersistance.save (This.abeClientInformation, This.getCurrentStateHashtable);
                 This.unPauseAppBackground (False);
             elsif (command) = (HighScoreUtil_Package.SUBMIT_TEXTBOX_COMMAND) then
-                This.logUtil.putF (To_Unbounded_String ("Submitted Score"), This'Unchecked_Access, This.COMMAND_ACTION);
+                This.logUtil.putF (To_Unbounded_String ("Submitted Score"), GameMidlet_Access'(This'Unchecked_Access), This.COMMAND_ACTION);
                 if (displayable_Case.all in HighScoreTextBox_Package.HighScoreTextBox'Class) then
                     highScoreTextBox := HighScoreTextBox_Access (displayable_Case);
                     highScoreTextBox.submitted := True;
@@ -451,9 +454,9 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
                 allbinaryGameCanvasRunnableInterface.setHighScoreSubmitted (True);
                 This.commandAction (gameCommandsFactory.CLOSE_AND_SHOW_GAME_CANVAS, displayable_Case);
             elsif (command) = (gameCommandsFactory.DISPLAY_ABOUT) then
-                This.aboutCommandProcessor.process (This'Unchecked_Access, gameCommandsFactory.SET_MENU_DISPLAYABLE, This.getAboutCanvas);
+                This.aboutCommandProcessor.process (GameMidlet_Access'(This'Unchecked_Access), gameCommandsFactory.SET_MENU_DISPLAYABLE, This.getAboutCanvas);
             elsif (command) = (gameCommandsFactory.OPEN_WEB_URL) then
-                This.webCommandProcessor.process (This'Unchecked_Access, gameCommandsFactory.OPEN_WEB_URL, NullCanvas_Package.NULL_CANVAS);
+                This.webCommandProcessor.process (GameMidlet_Access'(This'Unchecked_Access), gameCommandsFactory.OPEN_WEB_URL, NullCanvas_Package.NULL_CANVAS);
             elsif (command) = (gameCommandsFactory.TOGGLE_KEYBOARD) then
                 virtualKeyboardEventHandler := VirtualKeyboardEventHandler_Package.getInstance;
                 virtualKeyboardEventHandler.fireEvent (virtualKeyboardEventHandler.SHOW_EVENT);
@@ -472,7 +475,7 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (StringMaker_Package.Create.append (This.commonStrings.EXCEPTION_LABEL).append (command.getLabel).toString, This'Unchecked_Access, This.midletStrings.COMMAND_ACTION, e);
+            This.logUtil.put (StringMaker_Package.Create.append (This.commonStrings.EXCEPTION_LABEL).append (command.getLabel).toString, GameMidlet_Access'(This'Unchecked_Access), This.midletStrings.COMMAND_ACTION, e);
             if (command) /= (GameCommandsFactory_Package.getInstance.EXIT_COMMAND) then
                 This.exitProgress (False);
             end if;
@@ -495,27 +498,28 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
         end if;
    end updateFullScreen;
 
-   procedure onEvent (This : in out GameMidlet; eventObject : AllBinaryEventObject_Access) is
+   procedure onEvent (This : in out GameMidlet; eventObject_Param : access AllBinaryEventObject'Class) is
+      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
    begin
-        ForcedLogUtil_Package.log (EventStrings_Package.getInstance.PERFORMANCE_MESSAGE, This'Unchecked_Access);
+        ForcedLogUtil_Package.log (EventStrings_Package.getInstance.PERFORMANCE_MESSAGE, GameMidlet_Access'(This'Unchecked_Access));
    end onEvent;
 
    --  throws Exception
    function getInputMappingInstructionsCanvas (This : in out GameMidlet) return MyCanvas_Access is
    begin
-        return GameInputMappingInstructionsCanvas_Package.Create (This'Unchecked_Access, This.createGameLayerManager);
+        return GameInputMappingInstructionsCanvas_Package.Create (GameMidlet_Access'(This'Unchecked_Access), This.createGameLayerManager);
    end getInputMappingInstructionsCanvas;
 
    --  throws Exception
    function getInputMappingCanvas (This : in out GameMidlet) return MyCanvas_Access is
    begin
-        return GameInputMappingCanvas_Package.Create (This.abeClientInformation, This'Unchecked_Access, This.createGameLayerManager, This.getHelpPaintable);
+        return GameInputMappingCanvas_Package.Create (This.abeClientInformation, GameMidlet_Access'(This'Unchecked_Access), This.createGameLayerManager, This.getHelpPaintable);
    end getInputMappingCanvas;
 
    --  throws Exception
    function getAboutCanvas (This : in out GameMidlet) return MyCanvas_Access is
    begin
-        return BasicPaintablesCanvas_Package.Create (This'Unchecked_Access, CanvasStrings_Package.getInstance.ABOUT, This.createGameLayerManager, AboutPaintableFactory_Package.getInstance.paintableArray);
+        return BasicPaintablesCanvas_Package.Create (GameMidlet_Access'(This'Unchecked_Access), CanvasStrings_Package.getInstance.ABOUT, This.createGameLayerManager, AboutPaintableFactory_Package.getInstance.paintableArray);
    end getAboutCanvas;
 
    --  throws Exception
@@ -536,7 +540,7 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
    begin
         threadFactoryUtil := ThreadFactoryUtil_Package.getInstance;
         This.thread := threadFactoryUtil.getInstanceGameCanvasRunnable (This.allbinaryGameCanvasRunnableInterface);
-        This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Thread Priority: ")).appendint (Integer (This.thread.getPriority)).toString, This'Unchecked_Access, To_Unbounded_String ("startGameCanvasRunnableInterface"));
+        This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Thread Priority: ")).appendint (Integer (This.thread.getPriority)).toString, GameMidlet_Access'(This'Unchecked_Access), To_Unbounded_String ("startGameCanvasRunnableInterface"));
         This.allbinaryGameCanvasRunnableInterface.setThread (This.thread);
         threadFactoryUtil.start (This.thread);
    end startGameCanvasRunnableInterface;
@@ -546,16 +550,16 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
       gameCanvasRunnableInterface : GameCanvasRunnableInterface_Access;
       progressCanvas : ProgressCanvas_Access;
    begin
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.gameStrings.STOP_GAME_CANVAS_RUNNABLE_INTERFACE);
+        This.logUtil.putF (This.commonStrings.START, GameMidlet_Access'(This'Unchecked_Access), This.gameStrings.STOP_GAME_CANVAS_RUNNABLE_INTERFACE);
         GameNotificationEventHandler_Package.getInstance.removeAllListeners;
         ColorChangeEventHandler_Package.getInstance.removeAllListeners;
         GameEventHandlerUtil_Package.removeAllListeners;
         gameCanvasRunnableInterface := This.allbinaryGameCanvasRunnableInterface;
         if (gameCanvasRunnableInterface) /= (NullGameCanvasRunnable_Package.NULL_GAME_CANVAS_RUNNABLE) then
-            This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Set Running False: ")).append (gameCanvasRunnableInterface.toString).toString, This'Unchecked_Access, This.gameStrings.STOP_GAME_CANVAS_RUNNABLE_INTERFACE);
+            This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Set Running False: ")).append (gameCanvasRunnableInterface.toString).toString, GameMidlet_Access'(This'Unchecked_Access), This.gameStrings.STOP_GAME_CANVAS_RUNNABLE_INTERFACE);
             gameCanvasRunnableInterface.setRunning (False);
         else
-            This.logUtil.putF (To_Unbounded_String ("StopGame - Could Not Stop"), This'Unchecked_Access, This.gameStrings.STOP_GAME_CANVAS_RUNNABLE_INTERFACE);
+            This.logUtil.putF (To_Unbounded_String ("StopGame - Could Not Stop"), GameMidlet_Access'(This'Unchecked_Access), This.gameStrings.STOP_GAME_CANVAS_RUNNABLE_INTERFACE);
         end if;
         ThreadUtil_Package.getInstance.join (This.thread);
         progressCanvas := ProgressCanvasFactory_Package.getInstance;
@@ -564,7 +568,7 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
         else
             progressCanvas.addNormalPortion (50, To_Unbounded_String ("Stopped Main Runnable"));
         end if;
-        This.logUtil.putF (This.commonStrings.END_Id, This'Unchecked_Access, This.gameStrings.STOP_GAME_CANVAS_RUNNABLE_INTERFACE);
+        This.logUtil.putF (This.commonStrings.END_Id, GameMidlet_Access'(This'Unchecked_Access), This.gameStrings.STOP_GAME_CANVAS_RUNNABLE_INTERFACE);
    end stopGameCanvasRunnableInterface;
 
    function getGameCanvasRunnableInterface (This : in out GameMidlet) return GameCanvasRunnableInterface_Access is
@@ -572,7 +576,8 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
         return This.allbinaryGameCanvasRunnableInterface;
    end getGameCanvasRunnableInterface;
 
-   procedure setGameCanvasRunnableInterface (This : in out GameMidlet; gameCanvasRunnableInterface : GameCanvasRunnableInterface_Access) is
+   procedure setGameCanvasRunnableInterface (This : in out GameMidlet; gameCanvasRunnableInterface_Param : access GameCanvasRunnableInterface'Class) is
+      gameCanvasRunnableInterface : GameCanvasRunnableInterface_Access := GameCanvasRunnableInterface_Access (gameCanvasRunnableInterface_Param);
    begin
         This.allbinaryGameCanvasRunnableInterface := gameCanvasRunnableInterface;
    end setGameCanvasRunnableInterface;
@@ -588,14 +593,14 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
       layerManager : AllBinaryGameLayerManager_Access;
    begin
         layerManager := This.createGameLayerManager;
-        return GameOptionsFormFactory_Package.getInstance.init (This'Unchecked_Access, To_Unbounded_String ("Game Options"), layerManager.getBackgroundBasicColor, layerManager.getForegroundBasicColor);
+        return GameOptionsFormFactory_Package.getInstance.init (GameMidlet_Access'(This'Unchecked_Access), To_Unbounded_String ("Game Options"), layerManager.getBackgroundBasicColor, layerManager.getForegroundBasicColor);
    end getGameOptionsForm;
 
    --  throws Exception
    procedure save (This : in out GameMidlet) is
       hashtable : ABHashtable_Access;
    begin
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.SAVE);
+        This.logUtil.putF (This.commonStrings.START, GameMidlet_Access'(This'Unchecked_Access), This.commonStrings.SAVE);
         hashtable := This.getCurrentStateHashtable;
         GamePersistanceSingleton_Package.getInstance.save (This.abeClientInformation, hashtable);
    end save;
@@ -607,7 +612,7 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
       enumeration : Enumeration_Access;
       key : Java_Object_Access;
    begin
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("getCurrentStateHashtable"));
+        This.logUtil.putF (This.commonStrings.START, GameMidlet_Access'(This'Unchecked_Access), To_Unbounded_String ("getCurrentStateHashtable"));
         hashtable := StdUtil_Package.getInstance.createHashtable;
         if (This.allbinaryGameCanvasRunnableInterface) /= (NullGameCanvasRunnable_Package.NULL_GAME_CANVAS_RUNNABLE) then
             currentHashtable := This.allbinaryGameCanvasRunnableInterface.getCurrentStateHashtable;
@@ -621,7 +626,8 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
         return hashtable;
    end getCurrentStateHashtable;
 
-   procedure setLoadGameForm (This : in out GameMidlet; loadGameForm : LoadGameForm_Access) is
+   procedure setLoadGameForm (This : in out GameMidlet; loadGameForm_Param : access LoadGameForm'Class) is
+      loadGameForm : LoadGameForm_Access := LoadGameForm_Access (loadGameForm_Param);
    begin
         This.loadGameForm := loadGameForm;
    end setLoadGameForm;

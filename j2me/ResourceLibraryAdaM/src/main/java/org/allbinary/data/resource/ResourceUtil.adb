@@ -42,12 +42,13 @@ package body org.allbinary.data.resource.ResourceUtil_Package is
 
    procedure setLoadingPaths (This : in out ResourceUtil; path : Unbounded_String; ext : Unbounded_String) is
    begin
-        This.logUtil.putF (CommonStrings_Package.getInstance.NOT_IMPLEMENTED, This'Unchecked_Access, To_Unbounded_String ("setLoadingPaths"));
+        This.logUtil.putF (CommonStrings_Package.getInstance.NOT_IMPLEMENTED, ResourceUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("setLoadingPaths"));
    end setLoadingPaths;
 
-   procedure setClassLoader (This : in out ResourceUtil; classLoader : ClassLoader_Access) is
+   procedure setClassLoader (This : in out ResourceUtil; classLoader_Param : access ClassLoader'Class) is
+      classLoader : ClassLoader_Access := ClassLoader_Access (classLoader_Param);
    begin
-        This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Resource Loader: ")).append (To_Unbounded_String (Ada.Tags.Expanded_Name (classLoader.all'Tag))).toString, This'Unchecked_Access, To_Unbounded_String ("setClassLoader"));
+        This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Resource Loader: ")).append (To_Unbounded_String (Ada.Tags.Expanded_Name (classLoader.all'Tag))).toString, ResourceUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("setClassLoader"));
         ResourceUtil_Package.classLoader := classLoader;
    end setClassLoader;
 

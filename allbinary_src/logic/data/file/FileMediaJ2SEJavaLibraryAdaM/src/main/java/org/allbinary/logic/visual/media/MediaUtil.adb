@@ -29,7 +29,9 @@ package body org.allbinary.logic.visual.media.MediaUtil_Package is
    end Create;
 
    --  throws Exception
-   procedure saveImageFile (This : in out MediaUtil; originalImageFile : AbFile_Access; newImageFileName : Unbounded_String; category : Unbounded_String; mediaData : MediaData_Access; newWidth : Integer; newHeight : Integer) is
+   procedure saveImageFile (This : in out MediaUtil; originalImageFile_Param : access AbFile'Class; newImageFileName : Unbounded_String; category : Unbounded_String; mediaData_Param : access MediaData'Class; newWidth : Integer; newHeight : Integer) is
+      originalImageFile : AbFile_Access := AbFile_Access (originalImageFile_Param);
+      mediaData : MediaData_Access := MediaData_Access (mediaData_Param);
       bufferedImage : BufferedImage_Access;
       hashMap : HashMap_Access;
       imageFile : AbFile_Access;
@@ -48,7 +50,7 @@ package body org.allbinary.logic.visual.media.MediaUtil_Package is
         end if;
         if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
             hashMap := This.getImageBufferPropertyHashMap (bufferedImage);
-            This.logUtil.putF (To_Unbounded_String ("Image Properties: ") & hashMap.toString, This'Unchecked_Access, To_Unbounded_String ("saveImageFile()"));
+            This.logUtil.putF (To_Unbounded_String ("Image Properties: ") & hashMap.toString, MediaUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("saveImageFile()"));
         end if;
         imageFile := AbFile_Package.createAbFile (category & newImageFileName);
         imageFile.createNewFile;
@@ -77,11 +79,12 @@ package body org.allbinary.logic.visual.media.MediaUtil_Package is
             stringBuffer.appendlong (Long_Long_Integer (originalImageFile.length));
             stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "New File Length: "));
             stringBuffer.appendlong (Long_Long_Integer (imageFile.length));
-            This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("saveImageFile()"));
+            This.logUtil.putF (stringBuffer.toString, MediaUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("saveImageFile()"));
         end if;
    end saveImageFile;
 
-   function getImageBufferPropertyHashMap (bufferedImage : BufferedImage_Access) return HashMap_Access is
+   function getImageBufferPropertyHashMap (bufferedImage_Param : access BufferedImage'Class) return HashMap_Access is
+      bufferedImage : BufferedImage_Access := BufferedImage_Access (bufferedImage_Param);
       hashMap : HashMap_Access;
       propertyStringArray : Unbounded_String_Array_Access;
       propertyObject : Java_Object_Access;
@@ -98,8 +101,8 @@ package body org.allbinary.logic.visual.media.MediaUtil_Package is
         return hashMap;
    end getImageBufferPropertyHashMap;
 
-   procedure getImageBufferPropertyHashMap (bufferedImage : BufferedImage_Access) is
-      Java_Result : constant HashMap_Access := getImageBufferPropertyHashMap (bufferedImage);
+   procedure getImageBufferPropertyHashMap (bufferedImage_Param : access BufferedImage'Class) is
+      Java_Result : constant HashMap_Access := getImageBufferPropertyHashMap (bufferedImage_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

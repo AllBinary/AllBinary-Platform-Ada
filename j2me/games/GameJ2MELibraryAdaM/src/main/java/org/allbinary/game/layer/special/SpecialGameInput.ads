@@ -45,14 +45,14 @@ package org.allbinary.game.layer.special.SpecialGameInput_Package is
    procedure left (This : in out SpecialGameInput);
    procedure strafeLeft (This : in out SpecialGameInput);
    procedure strafeRight (This : in out SpecialGameInput);
-   procedure fire (This : in out SpecialGameInput; layerManager : AllBinaryLayerManager_Access; gameKeyEvent : GameKeyEvent_Access);
-   procedure special1 (This : in out SpecialGameInput; layerManager : AllBinaryLayerManager_Access; gameKeyEvent : GameKeyEvent_Access);
-   procedure special2 (This : in out SpecialGameInput; layerManager : AllBinaryLayerManager_Access; gameKeyEvent : GameKeyEvent_Access);
-   procedure special3 (This : in out SpecialGameInput; layerManager : AllBinaryLayerManager_Access; gameKeyEvent : GameKeyEvent_Access);
-   procedure special4 (This : in out SpecialGameInput; layerManager : AllBinaryLayerManager_Access; gameKeyEvent : GameKeyEvent_Access);
-   procedure special5 (This : in out SpecialGameInput; layerManager : AllBinaryLayerManager_Access; gameKeyEvent : GameKeyEvent_Access);
-   procedure paint (This : in out SpecialGameInput; graphics : Graphics_Access);
-   procedure paintThreed (This : in out SpecialGameInput; graphics : Graphics_Access);
+   procedure fire (This : in out SpecialGameInput; layerManager_Param : access AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent'Class);
+   procedure special1 (This : in out SpecialGameInput; layerManager_Param : access AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent'Class);
+   procedure special2 (This : in out SpecialGameInput; layerManager_Param : access AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent'Class);
+   procedure special3 (This : in out SpecialGameInput; layerManager_Param : access AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent'Class);
+   procedure special4 (This : in out SpecialGameInput; layerManager_Param : access AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent'Class);
+   procedure special5 (This : in out SpecialGameInput; layerManager_Param : access AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent'Class);
+   procedure paint (This : in out SpecialGameInput; graphics_Param : access Graphics'Class);
+   procedure paintThreed (This : in out SpecialGameInput; graphics_Param : access Graphics'Class);
 
 end org.allbinary.game.layer.special.SpecialGameInput_Package;
 

@@ -89,15 +89,15 @@ package org.allbinary.game.graphics.hud.BasicHud_1_Package is
       offsetY : Integer;
    end record;
 
-   procedure Initialize (This : in out BasicHud_1'Class; location : Integer; direction : Integer; bufferZone : Integer; basicColor : BasicColor_Access);
-   function Create (location : Integer; direction : Integer; bufferZone : Integer; basicColor : BasicColor_Access) return BasicHud_1_Access;
-   procedure updateMeasurement (This : in out BasicHud_1; graphics : Graphics_Access);
+   procedure Initialize (This : in out BasicHud_1'Class; location : Integer; direction : Integer; bufferZone : Integer; basicColor_Param : access BasicColor'Class);
+   function Create (location : Integer; direction : Integer; bufferZone : Integer; basicColor_Param : access BasicColor'Class) return BasicHud_1_Access;
+   procedure updateMeasurement (This : in out BasicHud_1; graphics_Param : access Graphics'Class);
    function getLocation (This : in out BasicHud_1) return Integer;
    function getDirection (This : in out BasicHud_1) return Integer;
    function getHudGraphicsPositionWH (This : in out BasicHud_1; width : Integer; height : Integer; maxWidth : Integer; maxHeight : Integer) return HudGraphicsPosition_Access;
    procedure getHudGraphicsPositionWH (This : in out BasicHud_1; width : Integer; height : Integer; maxWidth : Integer; maxHeight : Integer);
-   procedure onEvent (This : in out BasicHud_1; eventObject : AllBinaryEventObject_Access);
-   procedure onDisplayChangeEvent (This : in out BasicHud_1; displayChangeEvent : DisplayChangeEvent_Access);
+   procedure onEvent (This : in out BasicHud_1; eventObject_Param : access AllBinaryEventObject'Class);
+   procedure onDisplayChangeEvent (This : in out BasicHud_1; displayChangeEvent_Param : access DisplayChangeEvent'Class);
    function getPoint (This : in out BasicHud_1; x : Integer; y : Integer) return GPoint_Access;
    procedure getPoint (This : in out BasicHud_1; x : Integer; y : Integer);
    function getBufferZone (This : in out BasicHud_1) return Integer;
@@ -108,16 +108,16 @@ package org.allbinary.game.graphics.hud.BasicHud_1_Package is
    function getColor (This : in out BasicHud_1) return Integer;
    function getX (This : in out BasicHud_1) return Integer;
    procedure setX (This : in out BasicHud_1; x : Integer);
-   procedure setBasicColorP (This : in out BasicHud_1; basicColor : BasicColor_Access);
+   procedure setBasicColorP (This : in out BasicHud_1; basicColor_Param : access BasicColor'Class);
    function getBasicColorP (This : in out BasicHud_1) return BasicColor_Access;
    procedure setY (This : in out BasicHud_1; y : Integer);
    function getY (This : in out BasicHud_1) return Integer;
-   procedure paintSSO (This : in out BasicHud_1; graphics : Graphics_Access; string_Id : Unbounded_String; string2 : Unbounded_String; offset : Integer);
-   procedure paintSSOO (This : in out BasicHud_1; graphics : Graphics_Access; string_Id : Unbounded_String; string2 : Unbounded_String; offset : Integer; offset2 : Integer);
-   procedure paintDXY (This : in out BasicHud_1; graphics : Graphics_Access; charArray : Character_Array_Access; offset : Integer; len : Integer; charArray2 : Character_Array_Access; offset2 : Integer; len2 : Integer; xOffset : Integer; xOffset2 : Integer);
-   procedure paintDX (This : in out BasicHud_1; graphics : Graphics_Access; charArray : Character_Array_Access; offset : Integer; len : Integer; charArray2 : Character_Array_Access; offset2 : Integer; len2 : Integer; xOffset : Integer);
-   procedure paintOffsetAndLength (This : in out BasicHud_1; graphics : Graphics_Access; charArray : Character_Array_Access; offset : Integer; len : Integer);
-   procedure paintString (This : in out BasicHud_1; graphics : Graphics_Access; string_Id : Unbounded_String);
+   procedure paintSSO (This : in out BasicHud_1; graphics_Param : access Graphics'Class; string_Id : Unbounded_String; string2 : Unbounded_String; offset : Integer);
+   procedure paintSSOO (This : in out BasicHud_1; graphics_Param : access Graphics'Class; string_Id : Unbounded_String; string2 : Unbounded_String; offset : Integer; offset2 : Integer);
+   procedure paintDXY (This : in out BasicHud_1; graphics_Param : access Graphics'Class; charArray : Character_Array_Access; offset : Integer; len : Integer; charArray2 : Character_Array_Access; offset2 : Integer; len2 : Integer; xOffset : Integer; xOffset2 : Integer);
+   procedure paintDX (This : in out BasicHud_1; graphics_Param : access Graphics'Class; charArray : Character_Array_Access; offset : Integer; len : Integer; charArray2 : Character_Array_Access; offset2 : Integer; len2 : Integer; xOffset : Integer);
+   procedure paintOffsetAndLength (This : in out BasicHud_1; graphics_Param : access Graphics'Class; charArray : Character_Array_Access; offset : Integer; len : Integer);
+   procedure paintString (This : in out BasicHud_1; graphics_Param : access Graphics'Class; string_Id : Unbounded_String);
 
 end org.allbinary.game.graphics.hud.BasicHud_1_Package;
 

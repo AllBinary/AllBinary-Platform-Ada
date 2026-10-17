@@ -54,10 +54,10 @@ package org.allbinary.logic.visual.transform.generator.TransformsGeneratorUtil_P
    procedure Initialize (This : in out TransformsGeneratorUtil'Class);
    function Create return TransformsGeneratorUtil_Access;
    function getInstance return TransformsGeneratorUtil_Access;
-   function generateComponentsFromObjectConfig (This : in out TransformsGeneratorUtil; abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access; group : Unbounded_String) return Unbounded_String;
-   procedure generateComponentsFromObjectConfig (This : in out TransformsGeneratorUtil; abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access; group : Unbounded_String);
-   function generateComponentsFromObjectConfig (This : in out TransformsGeneratorUtil; abeClientInformation : AbeClientInformationInterface_Access; transformInfoObjectConfigInterface : TransformInfoObjectConfigInterface_Access; transformInfoInterface : TransformInfoInterface_Access; group : Unbounded_String) return Unbounded_String;
-   procedure generateComponentsFromObjectConfig (This : in out TransformsGeneratorUtil; abeClientInformation : AbeClientInformationInterface_Access; transformInfoObjectConfigInterface : TransformInfoObjectConfigInterface_Access; transformInfoInterface : TransformInfoInterface_Access; group : Unbounded_String);
+   function generateComponentsFromObjectConfig (This : in out TransformsGeneratorUtil; abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; group : Unbounded_String) return Unbounded_String;
+   procedure generateComponentsFromObjectConfig (This : in out TransformsGeneratorUtil; abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; group : Unbounded_String);
+   function generateComponentsFromObjectConfig (This : in out TransformsGeneratorUtil; abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoObjectConfigInterface_Param : access TransformInfoObjectConfigInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; group : Unbounded_String) return Unbounded_String;
+   procedure generateComponentsFromObjectConfig (This : in out TransformsGeneratorUtil; abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoObjectConfigInterface_Param : access TransformInfoObjectConfigInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; group : Unbounded_String);
 
 end org.allbinary.logic.visual.transform.generator.TransformsGeneratorUtil_Package;
 

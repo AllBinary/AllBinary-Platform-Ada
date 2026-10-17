@@ -37,9 +37,9 @@ package org.allbinary.graphics.paint.Paintable_Package is
 
    procedure Initialize (This : in out Paintable'Class);
    function Create return Paintable_Access;
-   procedure setBasicColorP (This : in out Paintable; basicColor : BasicColor_Access);
-   procedure paint (This : in out Paintable; graphics : Graphics_Access);
-   procedure paintThreed (This : in out Paintable; graphics : Graphics_Access);
+   procedure setBasicColorP (This : in out Paintable; basicColor_Param : access BasicColor'Class);
+   procedure paint (This : in out Paintable; graphics_Param : access Graphics'Class);
+   procedure paintThreed (This : in out Paintable; graphics_Param : access Graphics'Class);
 
 end org.allbinary.graphics.paint.Paintable_Package;
 

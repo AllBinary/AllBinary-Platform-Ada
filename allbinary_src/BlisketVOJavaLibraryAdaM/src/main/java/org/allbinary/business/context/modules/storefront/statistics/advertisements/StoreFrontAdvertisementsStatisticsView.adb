@@ -22,21 +22,23 @@ package body org.allbinary.business.context.modules.storefront.statistics.advert
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out StoreFrontAdvertisementsStatisticsView'Class; storeFrontAdvertisementsStatisticsInterface : StoreFrontAdvertisementsStatisticsInterface_Access) is
+   procedure Initialize (This : in out StoreFrontAdvertisementsStatisticsView'Class; storeFrontAdvertisementsStatisticsInterface_Param : access StoreFrontAdvertisementsStatisticsInterface'Class) is
+      storeFrontAdvertisementsStatisticsInterface : StoreFrontAdvertisementsStatisticsInterface_Access := StoreFrontAdvertisementsStatisticsInterface_Access (storeFrontAdvertisementsStatisticsInterface_Param);
    begin
       Initialize_Fields (This);
         This.storeFrontAdvertisementsStatisticsInterface := storeFrontAdvertisementsStatisticsInterface;
    end Initialize;
 
-   function Create (storeFrontAdvertisementsStatisticsInterface : StoreFrontAdvertisementsStatisticsInterface_Access) return StoreFrontAdvertisementsStatisticsView_Access is
+   function Create (storeFrontAdvertisementsStatisticsInterface_Param : access StoreFrontAdvertisementsStatisticsInterface'Class) return StoreFrontAdvertisementsStatisticsView_Access is
       This : constant StoreFrontAdvertisementsStatisticsView_Access := new StoreFrontAdvertisementsStatisticsView;
    begin
-      StoreFrontAdvertisementsStatisticsView_Package.Initialize (This.all, storeFrontAdvertisementsStatisticsInterface);
+      StoreFrontAdvertisementsStatisticsView_Package.Initialize (This.all, storeFrontAdvertisementsStatisticsInterface_Param);
       return This;
    end Create;
 
    --  throws Exception
-   function toXmlNode (This : in out StoreFrontAdvertisementsStatisticsView; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out StoreFrontAdvertisementsStatisticsView; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       hashMap : HashMap_Access;
       node : Node_Access;
    begin
@@ -45,8 +47,8 @@ package body org.allbinary.business.context.modules.storefront.statistics.advert
         return node;
    end toXmlNode;
 
-   procedure toXmlNode (This : in out StoreFrontAdvertisementsStatisticsView; document : Document_Access) is
-      Java_Result : constant Node_Access := StoreFrontAdvertisementsStatisticsView'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out StoreFrontAdvertisementsStatisticsView; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := StoreFrontAdvertisementsStatisticsView'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

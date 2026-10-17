@@ -58,16 +58,16 @@ package org.allbinary.business.user.commerce.inventory.item.Item_Package is
       special : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out Item'Class; itemHashMap : HashMap_Access);
-   function Create (itemHashMap : HashMap_Access) return Item_Access;
+   procedure Initialize (This : in out Item'Class; itemHashMap_Param : access HashMap'Class);
+   function Create (itemHashMap_Param : access HashMap'Class) return Item_Access;
    procedure Initialize (This : in out Item'Class);
    function Create return Item_Access;
-   procedure setData (This : in out Item; itemHashMap : HashMap_Access);
+   procedure setData (This : in out Item; itemHashMap_Param : access HashMap'Class);
    procedure setGroup (This : in out Item; value : Unbounded_String);
    procedure setTax (This : in out Item; value : Unbounded_String);
    procedure setShippingType (This : in out Item; value : Unbounded_String);
    procedure setShippingCost (This : in out Item; value : Unbounded_String);
-   procedure setShippingAddress (This : in out Item; value : StreetAddress_Access);
+   procedure setShippingAddress (This : in out Item; value_Param : access StreetAddress'Class);
    procedure setSpecial (This : in out Item; value : Unbounded_String);
    function getGroup (This : in out Item) return Unbounded_String;
    function getTax (This : in out Item) return Unbounded_String;

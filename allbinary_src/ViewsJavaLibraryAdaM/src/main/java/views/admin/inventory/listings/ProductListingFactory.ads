@@ -40,8 +40,8 @@ package views.admin.inventory.listings.ProductListingFactory_Package is
 
    procedure Initialize (This : in out ProductListingFactory'Class);
    function Create return ProductListingFactory_Access;
-   function getInstance (searchRequest : SearchRequest_Access) return ProductListingInterface_Access;
-   procedure getInstance (searchRequest : SearchRequest_Access);
+   function getInstance (searchRequest_Param : access SearchRequest'Class) return ProductListingInterface_Access;
+   procedure getInstance (searchRequest_Param : access SearchRequest'Class);
 
 end views.admin.inventory.listings.ProductListingFactory_Package;
 

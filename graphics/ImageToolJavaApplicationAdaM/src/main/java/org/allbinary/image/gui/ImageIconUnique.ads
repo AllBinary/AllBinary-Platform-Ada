@@ -35,8 +35,8 @@ package org.allbinary.image.gui.ImageIconUnique_Package is
       id : Integer;
    end record;
 
-   procedure Initialize (This : in out ImageIconUnique'Class; bufferedImage : BufferedImage_Access; index : Integer);
-   function Create (bufferedImage : BufferedImage_Access; index : Integer) return ImageIconUnique_Access;
+   procedure Initialize (This : in out ImageIconUnique'Class; bufferedImage_Param : access BufferedImage'Class; index : Integer);
+   function Create (bufferedImage_Param : access BufferedImage'Class; index : Integer) return ImageIconUnique_Access;
    function getId (This : in out ImageIconUnique) return Integer;
    procedure setId (This : in out ImageIconUnique; id : Integer);
 

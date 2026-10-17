@@ -80,8 +80,8 @@ package org.allbinary.logic.communication.sql.AbSqlBasic_Package is
       LOAD_JDBC_DRIVER_FAILED_LABEL : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out AbSqlBasic'Class; databaseConnectionInfoInterface : DbConnectionInfo_Access);
-   function Create (databaseConnectionInfoInterface : DbConnectionInfo_Access) return AbSqlBasic_Access;
+   procedure Initialize (This : in out AbSqlBasic'Class; databaseConnectionInfoInterface_Param : access DbConnectionInfo'Class);
+   function Create (databaseConnectionInfoInterface_Param : access DbConnectionInfo'Class) return AbSqlBasic_Access;
    function executeSQLStatement (This : in out AbSqlBasic; statement : Unbounded_String) return ResultSet_Access;
    procedure executeSQLStatement (This : in out AbSqlBasic; statement : Unbounded_String);
    function create (This : in out AbSqlBasic; databaseName : Unbounded_String) return Unbounded_String;
@@ -89,7 +89,7 @@ package org.allbinary.logic.communication.sql.AbSqlBasic_Package is
    procedure createConnection (This : in out AbSqlBasic);
    procedure initialize (This : in out AbSqlBasic);
    function getDatabaseConnectionInfoInterface (This : in out AbSqlBasic) return DatabaseConnectionInfoInterface_Access;
-   procedure setDatabaseConnectionInfoInterface (This : in out AbSqlBasic; databaseConnectionInfoInterface : DbConnectionInfo_Access);
+   procedure setDatabaseConnectionInfoInterface (This : in out AbSqlBasic; databaseConnectionInfoInterface_Param : access DbConnectionInfo'Class);
 
 end org.allbinary.logic.communication.sql.AbSqlBasic_Package;
 

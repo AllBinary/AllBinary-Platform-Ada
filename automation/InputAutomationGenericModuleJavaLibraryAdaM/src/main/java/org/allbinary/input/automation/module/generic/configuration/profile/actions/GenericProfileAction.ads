@@ -57,17 +57,17 @@ package org.allbinary.input.automation.module.generic_Id.configuration.profile.a
       genericProfileActionJPanel : GenericProfileActionJPanel_Access;
    end record;
 
-   procedure Initialize (This : in out GenericProfileAction'Class; genericProfileActionJPanel : GenericProfileActionJPanel_Access; node : Node_Access);
-   function Create (genericProfileActionJPanel : GenericProfileActionJPanel_Access; node : Node_Access) return GenericProfileAction_Access;
+   procedure Initialize (This : in out GenericProfileAction'Class; genericProfileActionJPanel_Param : access GenericProfileActionJPanel'Class; node_Param : access Node'Class);
+   function Create (genericProfileActionJPanel_Param : access GenericProfileActionJPanel'Class; node_Param : access Node'Class) return GenericProfileAction_Access;
    procedure Initialize (This : in out GenericProfileAction'Class; name : Unbounded_String);
    function Create (name : Unbounded_String) return GenericProfileAction_Access;
    function getName (This : in out GenericProfileAction) return Unbounded_String;
    procedure setName (This : in out GenericProfileAction; name : Unbounded_String);
    function toHashMap (This : in out GenericProfileAction) return HashMap_Access;
-   function toXmlNode (This : in out GenericProfileAction; document : Document_Access) return Node_Access;
-   procedure toXmlNode (This : in out GenericProfileAction; document : Document_Access);
+   function toXmlNode (This : in out GenericProfileAction; document_Param : access Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out GenericProfileAction; document_Param : access Document'Class);
    function getGenericProfileActionScript (This : in out GenericProfileAction) return GenericProfileActionScript_Access;
-   procedure setGenericProfileActionScript (This : in out GenericProfileAction; genericProfileActionScript : GenericProfileActionScript_Access);
+   procedure setGenericProfileActionScript (This : in out GenericProfileAction; genericProfileActionScript_Param : access GenericProfileActionScript'Class);
 
 end org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileAction_Package;
 

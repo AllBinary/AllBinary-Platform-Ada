@@ -44,16 +44,17 @@ package body org.allbinary.business.init.InitSql_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out InitSql'Class; databaseConnectionInfoInterface : DbConnectionInfo_Access) is
+   procedure Initialize (This : in out InitSql'Class; databaseConnectionInfoInterface_Param : access DbConnectionInfo'Class) is
+      databaseConnectionInfoInterface : DbConnectionInfo_Access := DbConnectionInfo_Access (databaseConnectionInfoInterface_Param);
    begin
       Initialize_Fields (This);
         This.setDatabaseConnectionInfoInterface (databaseConnectionInfoInterface);
    end Initialize;
 
-   function Create (databaseConnectionInfoInterface : DbConnectionInfo_Access) return InitSql_Access is
+   function Create (databaseConnectionInfoInterface_Param : access DbConnectionInfo'Class) return InitSql_Access is
       This : constant InitSql_Access := new InitSql;
    begin
-      InitSql_Package.Initialize (This.all, databaseConnectionInfoInterface);
+      InitSql_Package.Initialize (This.all, databaseConnectionInfoInterface_Param);
       return This;
    end Create;
 
@@ -62,7 +63,8 @@ package body org.allbinary.business.init.InitSql_Package is
         This.tableName := tableName;
    end setTable;
 
-   procedure setDatabaseConnectionInfoInterface (This : in out InitSql; databaseConnectionInfoInterface : DbConnectionInfo_Access) is
+   procedure setDatabaseConnectionInfoInterface (This : in out InitSql; databaseConnectionInfoInterface_Param : access DbConnectionInfo'Class) is
+      databaseConnectionInfoInterface : DbConnectionInfo_Access := DbConnectionInfo_Access (databaseConnectionInfoInterface_Param);
    begin
         This.databaseConnectionInfoInterface := databaseConnectionInfoInterface;
    end setDatabaseConnectionInfoInterface;
@@ -110,7 +112,8 @@ package body org.allbinary.business.init.InitSql_Package is
         end;
    end dropTable;
 
-   function getRow (This : in out InitSql; keysAndValues : HashMap_Access) return HashMap_Access is
+   function getRow (This : in out InitSql; keysAndValues_Param : access HashMap'Class) return HashMap_Access is
+      keysAndValues : HashMap_Access := HashMap_Access (keysAndValues_Param);
       stringBuffer : StringMaker_Access;
       result : HashMap_Access;
       set : Set_Access;
@@ -183,7 +186,8 @@ package body org.allbinary.business.init.InitSql_Package is
         end;
    end getRow;
 
-   procedure updateWhere (This : in out InitSql; key : Unbounded_String; value : Unbounded_String; updatedKeyValuePairs : HashMap_Access) is
+   procedure updateWhere (This : in out InitSql; key : Unbounded_String; value : Unbounded_String; updatedKeyValuePairs_Param : access HashMap'Class) is
+      updatedKeyValuePairs : HashMap_Access := HashMap_Access (updatedKeyValuePairs_Param);
       stringBuffer : StringMaker_Access;
       columnArray : Java_Object_Access_Array_Access;
       size : Integer;
@@ -238,7 +242,8 @@ package body org.allbinary.business.init.InitSql_Package is
         end;
    end updateWhere;
 
-   procedure insert_Case (This : in out InitSql; values : BasicArrayList_Access) is
+   procedure insert_Case (This : in out InitSql; values_Param : access BasicArrayList'Class) is
+      values : BasicArrayList_Access := BasicArrayList_Access (values_Param);
       stringBuffer : StringMaker_Access;
       size : Integer;
       value : Unbounded_String;
@@ -381,8 +386,8 @@ package body org.allbinary.business.init.InitSql_Package is
       null;
    end createTable;
 
-   procedure getRow (This : in out InitSql; keysAndValues : HashMap_Access) is
-      Java_Result : constant HashMap_Access := InitSql'Class (This).getRow (keysAndValues);
+   procedure getRow (This : in out InitSql; keysAndValues_Param : access HashMap'Class) is
+      Java_Result : constant HashMap_Access := InitSql'Class (This).getRow (keysAndValues_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

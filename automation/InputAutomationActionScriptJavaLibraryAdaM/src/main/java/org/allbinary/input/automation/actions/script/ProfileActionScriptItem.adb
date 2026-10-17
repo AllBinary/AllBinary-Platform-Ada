@@ -24,18 +24,19 @@ package body org.allbinary.input.automation.actions.script.ProfileActionScriptIt
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ProfileActionScriptItem'Class; label : Unbounded_String; node : Node_Access) is
+   procedure Initialize (This : in out ProfileActionScriptItem'Class; label : Unbounded_String; node_Param : access Node'Class) is
+      node : Node_Access := Node_Access (node_Param);
    begin
         DefaultMutableTreeNode_Package.Initialize (This, label);
         Initialize_Fields (This);
         This.init;
-        This.logUtil.putF (To_Unbounded_String ("Label: ") & label, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+        This.logUtil.putF (To_Unbounded_String ("Label: ") & label, ProfileActionScriptItem_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
    end Initialize;
 
-   function Create (label : Unbounded_String; node : Node_Access) return ProfileActionScriptItem_Access is
+   function Create (label : Unbounded_String; node_Param : access Node'Class) return ProfileActionScriptItem_Access is
       This : constant ProfileActionScriptItem_Access := new ProfileActionScriptItem;
    begin
-      ProfileActionScriptItem_Package.Initialize (This.all, label, node);
+      ProfileActionScriptItem_Package.Initialize (This.all, label, node_Param);
       return This;
    end Create;
 
@@ -44,7 +45,7 @@ package body org.allbinary.input.automation.actions.script.ProfileActionScriptIt
         DefaultMutableTreeNode_Package.Initialize (This, label);
         Initialize_Fields (This);
         This.init;
-        This.logUtil.putF (To_Unbounded_String ("Label: ") & label, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+        This.logUtil.putF (To_Unbounded_String ("Label: ") & label, ProfileActionScriptItem_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
    end Initialize;
 
    function Create (label : Unbounded_String) return ProfileActionScriptItem_Access is
@@ -61,8 +62,8 @@ package body org.allbinary.input.automation.actions.script.ProfileActionScriptIt
         This.setJPopupMenu (JPopupMenu_Package.Create);
         jMenuItemEdit := JMenuItem_Package.Create (EDIT);
         jMenuItemDelete := JMenuItem_Package.Create (DELETE);
-        jMenuItemEdit.addActionListener (This'Unchecked_Access);
-        jMenuItemDelete.addActionListener (This'Unchecked_Access);
+        jMenuItemEdit.addActionListener (ProfileActionScriptItem_Access'(This'Unchecked_Access));
+        jMenuItemDelete.addActionListener (ProfileActionScriptItem_Access'(This'Unchecked_Access));
         This.getJPopupMenu.add (jMenuItemEdit);
         This.getJPopupMenu.add (jMenuItemDelete);
    end init;
@@ -83,14 +84,16 @@ package body org.allbinary.input.automation.actions.script.ProfileActionScriptIt
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end showDialog;
 
-   procedure actionPerformed (This : in out ProfileActionScriptItem; actionEvent : ActionEvent_Access) is
+   procedure actionPerformed (This : in out ProfileActionScriptItem; actionEvent_Param : access ActionEvent'Class) is
+      actionEvent : ActionEvent_Access := ActionEvent_Access (actionEvent_Param);
    begin
         if (actionEvent.getActionCommand.compareTo (ProfileActionScriptItem_Package.EDIT)) = (0) then
             This.showDialog;
         end if;
    end actionPerformed;
 
-   procedure setJPopupMenu (This : in out ProfileActionScriptItem; jPopupMenu : JPopupMenu_Access) is
+   procedure setJPopupMenu (This : in out ProfileActionScriptItem; jPopupMenu_Param : access JPopupMenu'Class) is
+      jPopupMenu : JPopupMenu_Access := JPopupMenu_Access (jPopupMenu_Param);
    begin
         This.jPopupMenu := jPopupMenu;
    end setJPopupMenu;

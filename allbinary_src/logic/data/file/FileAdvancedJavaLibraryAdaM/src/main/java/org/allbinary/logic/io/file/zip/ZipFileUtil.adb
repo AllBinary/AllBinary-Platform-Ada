@@ -40,7 +40,8 @@ package body org.allbinary.logic.io.file.zip.ZipFileUtil_Package is
         return ZipFileUtil_Package.instance;
    end getInstance;
 
-   procedure create (This : in out ZipFileUtil; outFilename : Unbounded_String; fileBasicArrayList : BasicArrayList_Access) is
+   procedure create (This : in out ZipFileUtil; outFilename : Unbounded_String; fileBasicArrayList_Param : access BasicArrayList'Class) is
+      fileBasicArrayList : BasicArrayList_Access := BasicArrayList_Access (fileBasicArrayList_Param);
       zipFile : AbFile_Access;
       outputStream : ZipOutputStream_Access;
       streamUtil : StreamUtil_Access;
@@ -74,7 +75,7 @@ package body org.allbinary.logic.io.file.zip.ZipFileUtil_Package is
                     stringBuffer.appendint (current);
                     stringBuffer.append (To_Unbounded_String (" Creating Zip File Entry: "));
                     stringBuffer.append (file.getPath);
-                    This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("create()"));
+                    This.logUtil.putF (stringBuffer.toString, ZipFileUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("create()"));
                     begin
                         fileInputStream := AbFileInputStream_Package.Create (file);
                         outputStream.putNextEntry (ZipEntry_Package.Create (file.getPath));
@@ -86,7 +87,7 @@ package body org.allbinary.logic.io.file.zip.ZipFileUtil_Package is
                             declare
                                 e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                             begin
-                        This.logUtil.putF (To_Unbounded_String ("Skipping File (Probably Local): ") & Java_Image (file.getPath), This'Unchecked_Access, To_Unbounded_String ("create()"));
+                        This.logUtil.putF (To_Unbounded_String ("Skipping File (Probably Local): ") & Java_Image (file.getPath), ZipFileUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("create()"));
                             end;
                     end;
                 end if;
@@ -98,13 +99,14 @@ package body org.allbinary.logic.io.file.zip.ZipFileUtil_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("create"), e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, ZipFileUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("create"), e);
                 end;
         end;
    end create;
 
    --  throws Exception
-   procedure unzip (This : in out ZipFileUtil; path : Unbounded_String; zipFile : AbFile_Access; fileName : Unbounded_String) is
+   procedure unzip (This : in out ZipFileUtil; path : Unbounded_String; zipFile_Param : access AbFile'Class; fileName : Unbounded_String) is
+      zipFile : AbFile_Access := AbFile_Access (zipFile_Param);
       buffer : Short_Short_Integer_Array_Access;
       inputStream : ZipInputStream_Access;
       zipEntry : ZipEntry_Access;
@@ -136,7 +138,7 @@ package body org.allbinary.logic.io.file.zip.ZipFileUtil_Package is
                     stringBuffer.appendboolean (entryFile.isDirectory);
                     stringBuffer.append (To_Unbounded_String (" getParent: "));
                     stringBuffer.append (entryFile.getParent);
-                    This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("unzip"));
+                    This.logUtil.putF (stringBuffer.toString, ZipFileUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("unzip"));
                     dataOutputStream := DataOutputStreamFactory_Package.getInstance.getInstanceForAbFile (entryFile);
                     fileUtil.write (inputStream, dataOutputStream, buffer);
                 end if;

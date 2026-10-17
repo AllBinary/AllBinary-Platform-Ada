@@ -32,9 +32,9 @@ package org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostIn
    type PathFindingNodeCostInfoFactoryInterface_Access is access all PathFindingNodeCostInfoFactoryInterface'Class;
    type PathFindingNodeCostInfoFactoryInterface_Access_Array is array (Natural range <>) of PathFindingNodeCostInfoFactoryInterface_Access;
    type PathFindingNodeCostInfoFactoryInterface_Access_Array_Access is access all PathFindingNodeCostInfoFactoryInterface_Access_Array;
-   function getInstance (This : in out PathFindingNodeCostInfoFactoryInterface; comingFromGeographicMapCellPosition : GeographicMapCellPosition_Access; geographicMapCellPosition : GeographicMapCellPosition_Access; costFromStart : Long_Long_Integer; costToEnd : Long_Long_Integer) return PathFindingNodeCostInfo_Access is abstract;
-   function getInstance (This : in out PathFindingNodeCostInfoFactoryInterface; comingFromGeographicMapCellPosition : GeographicMapCellPosition_Access; geographicMapCellPosition : GeographicMapCellPosition_Access) return PathFindingNodeCostInfo_Access is abstract;
-   function getTotalCost (This : in out PathFindingNodeCostInfoFactoryInterface; comingFromGeographicMapCellPosition : GeographicMapCellPosition_Access; geographicMapCellPosition : GeographicMapCellPosition_Access) return Long_Long_Integer is abstract;
+   function getInstance (This : in out PathFindingNodeCostInfoFactoryInterface; comingFromGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class; costFromStart : Long_Long_Integer; costToEnd : Long_Long_Integer) return PathFindingNodeCostInfo_Access is abstract;
+   function getInstance (This : in out PathFindingNodeCostInfoFactoryInterface; comingFromGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return PathFindingNodeCostInfo_Access is abstract;
+   function getTotalCost (This : in out PathFindingNodeCostInfoFactoryInterface; comingFromGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return Long_Long_Integer is abstract;
 
 end org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoFactoryInterface_Package;
 

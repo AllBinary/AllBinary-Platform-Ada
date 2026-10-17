@@ -25,7 +25,9 @@ package body admin.taghelpers.QuoteRequestHelper_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out QuoteRequestHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access) is
+   procedure Initialize (This : in out QuoteRequestHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
       request : HttpServletRequest_Access;
       storeName : Unbounded_String;
    begin
@@ -40,10 +42,10 @@ package body admin.taghelpers.QuoteRequestHelper_Package is
         end if;
    end Initialize;
 
-   function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return QuoteRequestHelper_Access is
+   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return QuoteRequestHelper_Access is
       This : constant QuoteRequestHelper_Access := new QuoteRequestHelper;
    begin
-      QuoteRequestHelper_Package.Initialize (This.all, hashMap, pageContext);
+      QuoteRequestHelper_Package.Initialize (This.all, hashMap_Param, pageContext_Param);
       return This;
    end Create;
 
@@ -67,7 +69,7 @@ package body admin.taghelpers.QuoteRequestHelper_Package is
             QuoteRequestEntityFactory_Package.getInstance.getQuoteRequestEntityInstance.insert (values);
             success := To_Unbounded_String ("New QuoteRequest Successfully added to the QuoteRequest Table");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, To_Unbounded_String ("add()"));
+                This.logUtil.putF (success, QuoteRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("add()"));
             end if;
             return success;
         exception
@@ -77,7 +79,7 @@ package body admin.taghelpers.QuoteRequestHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to add QuoteRequest");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("add()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, QuoteRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("add()"), e);
             end if;
             return error;
                 end;
@@ -94,7 +96,7 @@ package body admin.taghelpers.QuoteRequestHelper_Package is
             QuoteRequestEntityFactory_Package.getInstance.getQuoteRequestEntityInstance.update (This.quoteRequest.getUserName, values);
             success := To_Unbounded_String ("New QuoteRequest Successfully updated");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, To_Unbounded_String ("update()"));
+                This.logUtil.putF (success, QuoteRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("update()"));
             end if;
             return success;
         exception
@@ -104,7 +106,7 @@ package body admin.taghelpers.QuoteRequestHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to update QuoteRequest");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("update()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, QuoteRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("update()"), e);
             end if;
             return error;
                 end;

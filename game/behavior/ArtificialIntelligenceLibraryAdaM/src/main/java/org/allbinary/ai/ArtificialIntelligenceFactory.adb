@@ -34,13 +34,14 @@ package body org.allbinary.ai.ArtificialIntelligenceFactory_Package is
 
 
    --  throws Exception
-   function getInstance (This : in out ArtificialIntelligenceFactory; anyType : Java_Object_Access) return ArtificialIntelligence_Access is
+   function getInstance (This : in out ArtificialIntelligenceFactory; anyType_Param : access Java_Object'Class) return ArtificialIntelligence_Access is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end getInstance;
 
-   procedure getInstance (This : in out ArtificialIntelligenceFactory; anyType : Java_Object_Access) is
-      Java_Result : constant ArtificialIntelligence_Access := ArtificialIntelligenceFactory'Class (This).getInstance (anyType);
+   procedure getInstance (This : in out ArtificialIntelligenceFactory; anyType_Param : access Java_Object'Class) is
+      Java_Result : constant ArtificialIntelligence_Access := ArtificialIntelligenceFactory'Class (This).getInstance (anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

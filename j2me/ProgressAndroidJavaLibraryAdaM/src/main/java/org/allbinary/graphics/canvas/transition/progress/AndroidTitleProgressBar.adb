@@ -18,29 +18,32 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidTitleProgr
    procedure Initialize_Fields (This : in out AndroidTitleProgressBar'Class) is
    begin
       null;
-      This.showTitleProgressBarRunnable := ShowTitleProgressBarRunnable_Package.Create (This'Unchecked_Access);
-      This.dismissTitleProgressBarRunnable := DismissTitleProgressBarRunnable_Package.Create (This'Unchecked_Access);
-      This.progressDialogPortionSetProgressRunnable := TitleProgressBarPortionSetProgressRunnable_Package.Create (This'Unchecked_Access);
-      This.progressDialogSetProgressRunnable := TitleProgressBarSetProgressRunnable_Package.Create (This'Unchecked_Access);
+      This.showTitleProgressBarRunnable := ShowTitleProgressBarRunnable_Package.Create (AndroidTitleProgressBar_Access'(This'Unchecked_Access));
+      This.dismissTitleProgressBarRunnable := DismissTitleProgressBarRunnable_Package.Create (AndroidTitleProgressBar_Access'(This'Unchecked_Access));
+      This.progressDialogPortionSetProgressRunnable := TitleProgressBarPortionSetProgressRunnable_Package.Create (AndroidTitleProgressBar_Access'(This'Unchecked_Access));
+      This.progressDialogSetProgressRunnable := TitleProgressBarSetProgressRunnable_Package.Create (AndroidTitleProgressBar_Access'(This'Unchecked_Access));
       This.progressActivity := NullProgressActivity_Package.NULL_PROGRESS_ACTIVITY;
       This.portion := 0;
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AndroidTitleProgressBar'Class; title : Unbounded_String; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) is
+   procedure Initialize (This : in out AndroidTitleProgressBar'Class; title : Unbounded_String; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) is
+      backgroundBasicColor : BasicColor_Access := BasicColor_Access (backgroundBasicColor_Param);
+      foregroundBasicColor : BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
    begin
         ProgressCanvas_Package.Initialize (This, title, backgroundBasicColor, foregroundBasicColor);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (title : Unbounded_String; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return AndroidTitleProgressBar_Access is
+   function Create (title : Unbounded_String; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return AndroidTitleProgressBar_Access is
       This : constant AndroidTitleProgressBar_Access := new AndroidTitleProgressBar;
    begin
-      AndroidTitleProgressBar_Package.Initialize (This.all, title, backgroundBasicColor, foregroundBasicColor);
+      AndroidTitleProgressBar_Package.Initialize (This.all, title, backgroundBasicColor_Param, foregroundBasicColor_Param);
       return This;
    end Create;
 
-   procedure init (This : in out AndroidTitleProgressBar; activity : ProgressActivityInterface_Access) is
+   procedure init (This : in out AndroidTitleProgressBar; activity_Param : access ProgressActivityInterface'Class) is
+      activity : ProgressActivityInterface_Access := ProgressActivityInterface_Access (activity_Param);
    begin
         This.progressActivity := activity;
    end init;
@@ -57,7 +60,7 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidTitleProgr
    procedure start (This : in out AndroidTitleProgressBar) is
    begin
         begin
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.START_METHOD_NAME);
+            This.logUtil.putF (This.commonStrings.START, AndroidTitleProgressBar_Access'(This'Unchecked_Access), This.commonStrings.START_METHOD_NAME);
             ProgressCanvas (This).start;
             This.progressActivity.runOnUiThread (This.showTitleProgressBarRunnable);
         exception
@@ -65,7 +68,7 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidTitleProgr
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.START_METHOD_NAME, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, AndroidTitleProgressBar_Access'(This'Unchecked_Access), This.commonStrings.START_METHOD_NAME, e);
                 end;
         end;
    end start;
@@ -73,7 +76,7 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidTitleProgr
    procedure end_Id (This : in out AndroidTitleProgressBar) is
    begin
         begin
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.END_METHOD_NAME);
+            This.logUtil.putF (This.commonStrings.START, AndroidTitleProgressBar_Access'(This'Unchecked_Access), This.commonStrings.END_METHOD_NAME);
             This.progressActivity.runOnUiThread (This.dismissTitleProgressBarRunnable);
             ProgressCanvas (This).end_Id;
         exception
@@ -81,7 +84,7 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidTitleProgr
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.END_METHOD_NAME, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, AndroidTitleProgressBar_Access'(This'Unchecked_Access), This.commonStrings.END_METHOD_NAME, e);
                 end;
         end;
    end end_Id;
@@ -97,7 +100,7 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidTitleProgr
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.ADD_PORTION, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, AndroidTitleProgressBar_Access'(This'Unchecked_Access), This.ADD_PORTION, e);
                 end;
         end;
    end addPortion;
@@ -113,7 +116,7 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidTitleProgr
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.ADD_PORTION, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, AndroidTitleProgressBar_Access'(This'Unchecked_Access), This.ADD_PORTION, e);
                 end;
         end;
    end addNormalPortion;
@@ -128,7 +131,7 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidTitleProgr
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("setValue"), e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, AndroidTitleProgressBar_Access'(This'Unchecked_Access), To_Unbounded_String ("setValue"), e);
                 end;
         end;
    end setValue;
@@ -138,7 +141,8 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidTitleProgr
         null;
    end waitUntilDisplayed;
 
-   procedure paint (This : in out AndroidTitleProgressBar; graphics : Graphics_Access) is
+   procedure paint (This : in out AndroidTitleProgressBar; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         null;
    end paint;
@@ -155,16 +159,17 @@ package body org.allbinary.graphics.canvas.transition.progress.TitleProgressBarS
    end Initialize_Fields;
 
     
-   procedure Initialize (This : in out TitleProgressBarSetProgressRunnable'Class; androidTitleProgressBar : AndroidTitleProgressBar_Access) is
+   procedure Initialize (This : in out TitleProgressBarSetProgressRunnable'Class; androidTitleProgressBar_Param : access AndroidTitleProgressBar'Class) is
+      androidTitleProgressBar : AndroidTitleProgressBar_Access := AndroidTitleProgressBar_Access (androidTitleProgressBar_Param);
    begin
       Initialize_Fields (This);
             This.androidTitleProgressBar := androidTitleProgressBar;
    end Initialize;
 
-   function Create (androidTitleProgressBar : AndroidTitleProgressBar_Access) return TitleProgressBarSetProgressRunnable_Access is
+   function Create (androidTitleProgressBar_Param : access AndroidTitleProgressBar'Class) return TitleProgressBarSetProgressRunnable_Access is
       This : constant TitleProgressBarSetProgressRunnable_Access := new TitleProgressBarSetProgressRunnable;
    begin
-      TitleProgressBarSetProgressRunnable_Package.Initialize (This.all, androidTitleProgressBar);
+      TitleProgressBarSetProgressRunnable_Package.Initialize (This.all, androidTitleProgressBar_Param);
       return This;
    end Create;
     
@@ -183,7 +188,7 @@ package body org.allbinary.graphics.canvas.transition.progress.TitleProgressBarS
                     declare
                         e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                     begin
-                logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.RUN, e);
+                logUtil.put (commonStrings.EXCEPTION_Id, AndroidTitleProgressBar_Access'(This'Unchecked_Access), commonStrings.RUN, e);
                     end;
             end;
    end run;
@@ -200,16 +205,17 @@ package body org.allbinary.graphics.canvas.transition.progress.TitleProgressBarP
    end Initialize_Fields;
 
     
-   procedure Initialize (This : in out TitleProgressBarPortionSetProgressRunnable'Class; androidTitleProgressBar : AndroidTitleProgressBar_Access) is
+   procedure Initialize (This : in out TitleProgressBarPortionSetProgressRunnable'Class; androidTitleProgressBar_Param : access AndroidTitleProgressBar'Class) is
+      androidTitleProgressBar : AndroidTitleProgressBar_Access := AndroidTitleProgressBar_Access (androidTitleProgressBar_Param);
    begin
       Initialize_Fields (This);
             This.androidTitleProgressBar := androidTitleProgressBar;
    end Initialize;
 
-   function Create (androidTitleProgressBar : AndroidTitleProgressBar_Access) return TitleProgressBarPortionSetProgressRunnable_Access is
+   function Create (androidTitleProgressBar_Param : access AndroidTitleProgressBar'Class) return TitleProgressBarPortionSetProgressRunnable_Access is
       This : constant TitleProgressBarPortionSetProgressRunnable_Access := new TitleProgressBarPortionSetProgressRunnable;
    begin
-      TitleProgressBarPortionSetProgressRunnable_Package.Initialize (This.all, androidTitleProgressBar);
+      TitleProgressBarPortionSetProgressRunnable_Package.Initialize (This.all, androidTitleProgressBar_Param);
       return This;
    end Create;
     
@@ -228,7 +234,7 @@ package body org.allbinary.graphics.canvas.transition.progress.TitleProgressBarP
                     declare
                         e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                     begin
-                logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.RUN, e);
+                logUtil.put (commonStrings.EXCEPTION_Id, AndroidTitleProgressBar_Access'(This'Unchecked_Access), commonStrings.RUN, e);
                     end;
             end;
    end run;
@@ -245,16 +251,17 @@ package body org.allbinary.graphics.canvas.transition.progress.ShowTitleProgress
    end Initialize_Fields;
 
     
-   procedure Initialize (This : in out ShowTitleProgressBarRunnable'Class; androidTitleProgressBar : AndroidTitleProgressBar_Access) is
+   procedure Initialize (This : in out ShowTitleProgressBarRunnable'Class; androidTitleProgressBar_Param : access AndroidTitleProgressBar'Class) is
+      androidTitleProgressBar : AndroidTitleProgressBar_Access := AndroidTitleProgressBar_Access (androidTitleProgressBar_Param);
    begin
       Initialize_Fields (This);
             This.androidTitleProgressBar := androidTitleProgressBar;
    end Initialize;
 
-   function Create (androidTitleProgressBar : AndroidTitleProgressBar_Access) return ShowTitleProgressBarRunnable_Access is
+   function Create (androidTitleProgressBar_Param : access AndroidTitleProgressBar'Class) return ShowTitleProgressBarRunnable_Access is
       This : constant ShowTitleProgressBarRunnable_Access := new ShowTitleProgressBarRunnable;
    begin
-      ShowTitleProgressBarRunnable_Package.Initialize (This.all, androidTitleProgressBar);
+      ShowTitleProgressBarRunnable_Package.Initialize (This.all, androidTitleProgressBar_Param);
       return This;
    end Create;
     
@@ -273,7 +280,7 @@ package body org.allbinary.graphics.canvas.transition.progress.ShowTitleProgress
                     declare
                         e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                     begin
-                logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.RUN, e);
+                logUtil.put (commonStrings.EXCEPTION_Id, AndroidTitleProgressBar_Access'(This'Unchecked_Access), commonStrings.RUN, e);
                     end;
             end;
    end run;
@@ -290,16 +297,17 @@ package body org.allbinary.graphics.canvas.transition.progress.DismissTitleProgr
    end Initialize_Fields;
 
     
-   procedure Initialize (This : in out DismissTitleProgressBarRunnable'Class; androidTitleProgressBar : AndroidTitleProgressBar_Access) is
+   procedure Initialize (This : in out DismissTitleProgressBarRunnable'Class; androidTitleProgressBar_Param : access AndroidTitleProgressBar'Class) is
+      androidTitleProgressBar : AndroidTitleProgressBar_Access := AndroidTitleProgressBar_Access (androidTitleProgressBar_Param);
    begin
       Initialize_Fields (This);
             This.androidTitleProgressBar := androidTitleProgressBar;
    end Initialize;
 
-   function Create (androidTitleProgressBar : AndroidTitleProgressBar_Access) return DismissTitleProgressBarRunnable_Access is
+   function Create (androidTitleProgressBar_Param : access AndroidTitleProgressBar'Class) return DismissTitleProgressBarRunnable_Access is
       This : constant DismissTitleProgressBarRunnable_Access := new DismissTitleProgressBarRunnable;
    begin
-      DismissTitleProgressBarRunnable_Package.Initialize (This.all, androidTitleProgressBar);
+      DismissTitleProgressBarRunnable_Package.Initialize (This.all, androidTitleProgressBar_Param);
       return This;
    end Create;
     
@@ -316,7 +324,7 @@ package body org.allbinary.graphics.canvas.transition.progress.DismissTitleProgr
                     declare
                         e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                     begin
-                logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.RUN, e);
+                logUtil.put (commonStrings.EXCEPTION_Id, AndroidTitleProgressBar_Access'(This'Unchecked_Access), commonStrings.RUN, e);
                     end;
             end;
    end run;

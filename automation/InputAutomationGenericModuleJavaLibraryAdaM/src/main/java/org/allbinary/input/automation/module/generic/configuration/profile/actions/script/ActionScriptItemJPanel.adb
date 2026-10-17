@@ -45,7 +45,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         return This.newActionScriptInputJPanel;
    end getNewActionScriptInputJPanel;
 
-   procedure setNewActionScriptInputJPanel (This : in out ActionScriptItemJPanel; newActionScriptInputJPanel : JPanel_Access) is
+   procedure setNewActionScriptInputJPanel (This : in out ActionScriptItemJPanel; newActionScriptInputJPanel_Param : access JPanel'Class) is
+      newActionScriptInputJPanel : JPanel_Access := JPanel_Access (newActionScriptInputJPanel_Param);
    begin
         This.newActionScriptInputJPanel := newActionScriptInputJPanel;
    end setNewActionScriptInputJPanel;
@@ -55,7 +56,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         return This.removeJPanel;
    end getRemoveJPanel;
 
-   procedure setRemoveJPanel (This : in out ActionScriptItemJPanel; removeJPanel : JPanel_Access) is
+   procedure setRemoveJPanel (This : in out ActionScriptItemJPanel; removeJPanel_Param : access JPanel'Class) is
+      removeJPanel : JPanel_Access := JPanel_Access (removeJPanel_Param);
    begin
         This.removeJPanel := removeJPanel;
    end setRemoveJPanel;
@@ -65,7 +67,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         return This.scriptItemJPanel;
    end getScriptItemJPanel;
 
-   procedure setScriptItemJPanel (This : in out ActionScriptItemJPanel; scriptItemJPanel : JPanel_Access) is
+   procedure setScriptItemJPanel (This : in out ActionScriptItemJPanel; scriptItemJPanel_Param : access JPanel'Class) is
+      scriptItemJPanel : JPanel_Access := JPanel_Access (scriptItemJPanel_Param);
    begin
         This.scriptItemJPanel := scriptItemJPanel;
    end setScriptItemJPanel;
@@ -75,7 +78,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         return This.newActionScriptConditionJPanel;
    end getNewActionScriptConditionJPanel;
 
-   procedure setNewActionScriptConditionJPanel (This : in out ActionScriptItemJPanel; newActionScriptConditionJPanel : JPanel_Access) is
+   procedure setNewActionScriptConditionJPanel (This : in out ActionScriptItemJPanel; newActionScriptConditionJPanel_Param : access JPanel'Class) is
+      newActionScriptConditionJPanel : JPanel_Access := JPanel_Access (newActionScriptConditionJPanel_Param);
    begin
         This.newActionScriptConditionJPanel := newActionScriptConditionJPanel;
    end setNewActionScriptConditionJPanel;
@@ -85,7 +89,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         return This.childActionScriptConditionJPanel;
    end getChildActionScriptConditionJPanel;
 
-   procedure setChildActionScriptConditionJPanel (This : in out ActionScriptItemJPanel; childActionScriptConditionJPanel : JPanel_Access) is
+   procedure setChildActionScriptConditionJPanel (This : in out ActionScriptItemJPanel; childActionScriptConditionJPanel_Param : access JPanel'Class) is
+      childActionScriptConditionJPanel : JPanel_Access := JPanel_Access (childActionScriptConditionJPanel_Param);
    begin
         This.childActionScriptConditionJPanel := childActionScriptConditionJPanel;
    end setChildActionScriptConditionJPanel;
@@ -108,7 +113,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         This.scriptItemJPanel.setLayout (GridLayout_Package.Create (1, 1));
         This.removeJPanel.setLayout (GridLayout_Package.Create (1, 1));
         This.removeJPanel.setMinimumSize (Dimension_Package.Create (30, 20));
-        layout := GroupLayout_Package.Create (This'Unchecked_Access);
+        layout := GroupLayout_Package.Create (ActionScriptItemJPanel_Access'(This'Unchecked_Access));
         This.setLayout (layout);
         layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addComponent (This.scriptItemJPanel, javax_Package.swing.GroupLayout.PREFERRED_SIZE, 167, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.removeJPanel, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 56, Short_Package.MAX_VALUE)).addComponent (This.newActionScriptInputJPanel, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 229, Short_Package.MAX_VALUE).addComponent (This.newActionScriptConditionJPanel, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 229, Short_Package.MAX_VALUE).addComponent (This.childActionScriptConditionJPanel, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE));
         layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addComponent (This.scriptItemJPanel, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 31, Short_Package.MAX_VALUE).addComponent (This.removeJPanel, javax_Package.swing.GroupLayout.Alignment.TRAILING, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 31, Short_Package.MAX_VALUE)).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.childActionScriptConditionJPanel, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.newActionScriptConditionJPanel, javax_Package.swing.GroupLayout.PREFERRED_SIZE, 28, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.newActionScriptInputJPanel, javax_Package.swing.GroupLayout.PREFERRED_SIZE, 30, javax_Package.swing.GroupLayout.PREFERRED_SIZE)));

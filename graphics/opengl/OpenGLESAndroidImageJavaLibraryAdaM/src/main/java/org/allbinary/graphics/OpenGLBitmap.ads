@@ -25,8 +25,8 @@ package org.allbinary.graphics.OpenGLBitmap_Package is
       bitmap : Bitmap_Access;
    end record;
 
-   procedure Initialize (This : in out OpenGLBitmap'Class; bitmap : Java_Object_Access);
-   function Create (bitmap : Java_Object_Access) return OpenGLBitmap_Access;
+   procedure Initialize (This : in out OpenGLBitmap'Class; bitmap_Param : access Java_Object'Class);
+   function Create (bitmap_Param : access Java_Object'Class) return OpenGLBitmap_Access;
    procedure getPixels (This : in out OpenGLBitmap; pixels : Integer_Array_Access; offset : Integer; stride : Integer; x : Integer; y : Integer; width : Integer; height : Integer);
    procedure setPixels (This : in out OpenGLBitmap; pixels : Integer_Array_Access; offset : Integer; stride : Integer; x : Integer; y : Integer; width : Integer; height : Integer);
    function getWidth (This : in out OpenGLBitmap) return Integer;

@@ -49,8 +49,8 @@ package org.allbinary.animation.image.ImageRotationAnimationFactory_Package is
       angleIncrement : Short_Integer;
    end record;
 
-   procedure Initialize (This : in out ImageRotationAnimationFactory'Class; image : Image_Access; width : Integer; height : Integer; dx : Integer; dy : Integer; angleIncrement : Short_Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access);
-   function Create (image : Image_Access; width : Integer; height : Integer; dx : Integer; dy : Integer; angleIncrement : Short_Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access) return ImageRotationAnimationFactory_Access;
+   procedure Initialize (This : in out ImageRotationAnimationFactory'Class; image_Param : access Image'Class; width : Integer; height : Integer; dx : Integer; dy : Integer; angleIncrement : Short_Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class);
+   function Create (image_Param : access Image'Class; width : Integer; height : Integer; dx : Integer; dy : Integer; angleIncrement : Short_Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return ImageRotationAnimationFactory_Access;
    function getInstance (This : in out ImageRotationAnimationFactory; instanceId : Integer) return Animation_Access;
    procedure getInstance (This : in out ImageRotationAnimationFactory; instanceId : Integer);
    function getAngleIncrementP (This : in out ImageRotationAnimationFactory) return Short_Integer;

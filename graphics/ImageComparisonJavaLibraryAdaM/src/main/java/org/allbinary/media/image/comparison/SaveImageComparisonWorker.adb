@@ -38,13 +38,15 @@ package body org.allbinary.media.image.comparison.SaveImageComparisonWorker_Pack
       return This;
    end Create;
 
-   procedure onImageComparisonResultsEvent (This : in out SaveImageComparisonWorker; imageComparisonResultsEvent : ImageComparisonResultsEvent_Access) is
+   procedure onImageComparisonResultsEvent (This : in out SaveImageComparisonWorker; imageComparisonResultsEvent_Param : access ImageComparisonResultsEvent'Class) is
+      imageComparisonResultsEvent : ImageComparisonResultsEvent_Access := ImageComparisonResultsEvent_Access (imageComparisonResultsEvent_Param);
    begin
         This.imageComparisonInfoVector.add (imageComparisonResultsEvent);
         This.run;
    end onImageComparisonResultsEvent;
 
-   procedure onEvent (This : in out SaveImageComparisonWorker; allBinaryEventObject : AllBinaryEventObject_Access) is
+   procedure onEvent (This : in out SaveImageComparisonWorker; allBinaryEventObject_Param : access AllBinaryEventObject'Class) is
+      allBinaryEventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (allBinaryEventObject_Param);
    begin
         This.onImageComparisonResultsEvent (ImageComparisonResultsEvent_Access (allBinaryEventObject));
    end onEvent;
@@ -65,23 +67,23 @@ package body org.allbinary.media.image.comparison.SaveImageComparisonWorker_Pack
       imageComparisonInfo : ImageComparisonResult_Access;
    begin
         begin
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.RUN);
+            This.logUtil.putF (This.commonStrings.START, SaveImageComparisonWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
             This.setRunning (True);
             timeHelper := TimeDelayHelper_Package.Create (1000);
             timeHelper.setStartTimeTNT;
             imageComparisonResultsEvent := ImageComparisonResultsEvent_Access (This.imageComparisonInfoVector.get (0));
             imageComparisonInfo := imageComparisonResultsEvent.getImageComparisonResult;
-            This.logUtil.putF (imageComparisonInfo.toString, This'Unchecked_Access, This.commonStrings.RUN);
+            This.logUtil.putF (imageComparisonInfo.toString, SaveImageComparisonWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
             ComparisonImageInputOutput_Package.Create.save (imageComparisonInfo, imageComparisonInfo.getFrameTwo);
             This.imageComparisonInfoVector.remove (imageComparisonInfo);
-            This.logUtil.putF ((CommonLabels_Package.getInstance.ELAPSED) + (timeHelper.getElapsedTNT), This'Unchecked_Access, This.commonStrings.RUN);
-            This.logUtil.putF (This.commonStrings.END_Id, This'Unchecked_Access, This.commonStrings.RUN);
+            This.logUtil.putF ((CommonLabels_Package.getInstance.ELAPSED) + (timeHelper.getElapsedTNT), SaveImageComparisonWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
+            This.logUtil.putF (This.commonStrings.END_Id, SaveImageComparisonWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.RUN, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, SaveImageComparisonWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN, e);
                 end;
         end;
    end run;

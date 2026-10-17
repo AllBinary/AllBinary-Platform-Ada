@@ -23,22 +23,25 @@ package body org.allbinary.logic.system.security.licensing.registration.XmlRpcRe
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out XmlRpcRemoteLicenseRegistrationClient'Class; clientInfo : AbeClientInformationInterface_Access) is
+   procedure Initialize (This : in out XmlRpcRemoteLicenseRegistrationClient'Class; clientInfo_Param : access AbeClientInformationInterface'Class) is
+      clientInfo : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (clientInfo_Param);
    begin
         XmlRpcAbeClient_Package.Initialize (This, clientInfo, To_Unbounded_String ("LicenseRegistrationServer.process"));
         Initialize_Fields (This);
         This.setServer (0);
    end Initialize;
 
-   function Create (clientInfo : AbeClientInformationInterface_Access) return XmlRpcRemoteLicenseRegistrationClient_Access is
+   function Create (clientInfo_Param : access AbeClientInformationInterface'Class) return XmlRpcRemoteLicenseRegistrationClient_Access is
       This : constant XmlRpcRemoteLicenseRegistrationClient_Access := new XmlRpcRemoteLicenseRegistrationClient;
    begin
-      XmlRpcRemoteLicenseRegistrationClient_Package.Initialize (This.all, clientInfo);
+      XmlRpcRemoteLicenseRegistrationClient_Package.Initialize (This.all, clientInfo_Param);
       return This;
    end Create;
 
    --  throws Exception
-   function get (This : in out XmlRpcRemoteLicenseRegistrationClient; anyType : Java_Object_Access; cryptInterface : CryptInterface_Access) return Java_Object_Access is
+   function get (This : in out XmlRpcRemoteLicenseRegistrationClient; anyType_Param : access Java_Object'Class; cryptInterface_Param : access CryptInterface'Class) return Java_Object_Access is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      cryptInterface : CryptInterface_Access := CryptInterface_Access (cryptInterface_Param);
       server : Unbounded_String;
       stringBuffer : StringMaker_Access;
       param : BasicArrayList_Access;
@@ -55,7 +58,7 @@ package body org.allbinary.logic.system.security.licensing.registration.XmlRpcRe
             stringBuffer.appendint (Integer (This.getServer));
             stringBuffer.append (SEP_Package);
             stringBuffer.append (server);
-            This.logUtil.putF (Java_Image (CommonLabels_Package.getInstance.START_LABEL) & stringBuffer.toString, This'Unchecked_Access, This.commonStrings.GET);
+            This.logUtil.putF (Java_Image (CommonLabels_Package.getInstance.START_LABEL) & stringBuffer.toString, XmlRpcRemoteLicenseRegistrationClient_Access'(This'Unchecked_Access), This.commonStrings.GET);
             param := BasicArrayListD_Package.Create;
             serverUrl := This.getClientInfo.getLicenseServer (This.getServer);
             index := serverUrl.lastIndexOf (To_Unbounded_String ("/"));
@@ -64,10 +67,10 @@ package body org.allbinary.logic.system.security.licensing.registration.XmlRpcRe
             This.setClient (xmlRpcClient);
             xmlRpcClient.setBasicAuthentication (null, null);
             hashtable := ABHashtable_Access (anyType);
-            This.logUtil.putF (Java_Image (CLIENT_INFO) & hashtable.toString, This'Unchecked_Access, This.commonStrings.GET);
+            This.logUtil.putF (Java_Image (CLIENT_INFO) & hashtable.toString, XmlRpcRemoteLicenseRegistrationClient_Access'(This'Unchecked_Access), This.commonStrings.GET);
             param.add (hashtable);
             result := xmlRpcClient.execute (This.getRemoteMethod, param, cryptInterface);
-            This.logUtil.putF (Java_Image (RESULT) & result.toString, This'Unchecked_Access, This.commonStrings.GET);
+            This.logUtil.putF (Java_Image (RESULT) & result.toString, XmlRpcRemoteLicenseRegistrationClient_Access'(This'Unchecked_Access), This.commonStrings.GET);
             This.isOnline := True;
             return result;
         exception
@@ -75,7 +78,7 @@ package body org.allbinary.logic.system.security.licensing.registration.XmlRpcRe
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.putF ((TRYING_OTHER_SERVERS) + (ExceptionUtil_Package.getInstance.getStackTrace (e)), This'Unchecked_Access, This.commonStrings.GET);
+            This.logUtil.putF ((TRYING_OTHER_SERVERS) + (ExceptionUtil_Package.getInstance.getStackTrace (e)), XmlRpcRemoteLicenseRegistrationClient_Access'(This'Unchecked_Access), This.commonStrings.GET);
             if not (Java_Get_Message (e).startsWith (HOST_NOT_RESOLVED)) then
                 return This.tryAnother (anyType);
             else
@@ -85,8 +88,8 @@ package body org.allbinary.logic.system.security.licensing.registration.XmlRpcRe
         end;
    end get;
 
-   procedure get (This : in out XmlRpcRemoteLicenseRegistrationClient; anyType : Java_Object_Access; cryptInterface : CryptInterface_Access) is
-      Java_Result : constant Java_Object_Access := XmlRpcRemoteLicenseRegistrationClient'Class (This).get (anyType, cryptInterface);
+   procedure get (This : in out XmlRpcRemoteLicenseRegistrationClient; anyType_Param : access Java_Object'Class; cryptInterface_Param : access CryptInterface'Class) is
+      Java_Result : constant Java_Object_Access := XmlRpcRemoteLicenseRegistrationClient'Class (This).get (anyType_Param, cryptInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

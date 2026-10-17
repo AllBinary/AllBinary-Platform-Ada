@@ -22,16 +22,17 @@ package body org.allbinary.business.category.properties.CategoryPropertiesValida
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CategoryPropertiesValidationView'Class; categoryPropertiesInterface : CategoryPropertiesInterface_Access) is
+   procedure Initialize (This : in out CategoryPropertiesValidationView'Class; categoryPropertiesInterface_Param : access CategoryPropertiesInterface'Class) is
+      categoryPropertiesInterface : CategoryPropertiesInterface_Access := CategoryPropertiesInterface_Access (categoryPropertiesInterface_Param);
    begin
         CategoryPropertiesView_Package.Initialize (This, categoryPropertiesInterface);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (categoryPropertiesInterface : CategoryPropertiesInterface_Access) return CategoryPropertiesValidationView_Access is
+   function Create (categoryPropertiesInterface_Param : access CategoryPropertiesInterface'Class) return CategoryPropertiesValidationView_Access is
       This : constant CategoryPropertiesValidationView_Access := new CategoryPropertiesValidationView;
    begin
-      CategoryPropertiesValidationView_Package.Initialize (This.all, categoryPropertiesInterface);
+      CategoryPropertiesValidationView_Package.Initialize (This.all, categoryPropertiesInterface_Param);
       return This;
    end Create;
 
@@ -55,7 +56,7 @@ package body org.allbinary.business.category.properties.CategoryPropertiesValida
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to generate validation info error"), This'Unchecked_Access, To_Unbounded_String ("validationInfo()"), e);
+                This.logUtil.put (To_Unbounded_String ("Failed to generate validation info error"), CategoryPropertiesValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
             end if;
             return To_Unbounded_String ("Error Validating Data");
                 end;
@@ -69,13 +70,14 @@ package body org.allbinary.business.category.properties.CategoryPropertiesValida
    end toValidationInfoDoc;
 
    --  throws Exception
-   function toValidationInfoNode (This : in out CategoryPropertiesValidationView; document : Document_Access) return Node_Access is
+   function toValidationInfoNode (This : in out CategoryPropertiesValidationView; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
    begin
         return null;
    end toValidationInfoNode;
 
-   procedure toValidationInfoNode (This : in out CategoryPropertiesValidationView; document : Document_Access) is
-      Java_Result : constant Node_Access := CategoryPropertiesValidationView'Class (This).toValidationInfoNode (document);
+   procedure toValidationInfoNode (This : in out CategoryPropertiesValidationView; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := CategoryPropertiesValidationView'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

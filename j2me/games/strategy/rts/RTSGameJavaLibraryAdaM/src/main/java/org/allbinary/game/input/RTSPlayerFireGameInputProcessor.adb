@@ -21,20 +21,23 @@ package body org.allbinary.game.input.RTSPlayerFireGameInputProcessor_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out RTSPlayerFireGameInputProcessor'Class; rtsPlayerGameInput : RTSPlayerGameInput_Access) is
+   procedure Initialize (This : in out RTSPlayerFireGameInputProcessor'Class; rtsPlayerGameInput_Param : access RTSPlayerGameInput'Class) is
+      rtsPlayerGameInput : RTSPlayerGameInput_Access := RTSPlayerGameInput_Access (rtsPlayerGameInput_Param);
    begin
         RTSPlayerGameInputProcessor_Package.Initialize (This, rtsPlayerGameInput);
    end Initialize;
 
-   function Create (rtsPlayerGameInput : RTSPlayerGameInput_Access) return RTSPlayerFireGameInputProcessor_Access is
+   function Create (rtsPlayerGameInput_Param : access RTSPlayerGameInput'Class) return RTSPlayerFireGameInputProcessor_Access is
       This : constant RTSPlayerFireGameInputProcessor_Access := new RTSPlayerFireGameInputProcessor;
    begin
-      RTSPlayerFireGameInputProcessor_Package.Initialize (This.all, rtsPlayerGameInput);
+      RTSPlayerFireGameInputProcessor_Package.Initialize (This.all, rtsPlayerGameInput_Param);
       return This;
    end Create;
 
    --  throws Exception
-   procedure processEvent (This : in out RTSPlayerFireGameInputProcessor; allbinaryLayerManager : AllBinaryLayerManager_Access; gameKeyEvent : GameKeyEvent_Access) is
+   procedure processEvent (This : in out RTSPlayerFireGameInputProcessor; allbinaryLayerManager_Param : access AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent'Class) is
+      allbinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allbinaryLayerManager_Param);
+      gameKeyEvent : GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
    begin
         This.rtsPlayerGameInput.addForRemoval (gameKeyEvent);
    end processEvent;

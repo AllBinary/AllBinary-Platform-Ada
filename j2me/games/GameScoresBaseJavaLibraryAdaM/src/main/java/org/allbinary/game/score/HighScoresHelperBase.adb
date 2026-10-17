@@ -40,10 +40,10 @@ package body org.allbinary.game.score.HighScoresHelperBase_Package is
    begin
         if (highScoresArrayP) /= (null) then
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.putF (StringMaker_Package.Create.append (commonStrings.START).appendint (highScoresArrayP'Length).toString, This'Unchecked_Access, To_Unbounded_String ("setHighScoresArray"));
+            This.logUtil.putF (StringMaker_Package.Create.append (commonStrings.START).appendint (highScoresArrayP'Length).toString, HighScoresHelperBase_Access'(This'Unchecked_Access), To_Unbounded_String ("setHighScoresArray"));
         else
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.putF (commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("setHighScoresArray"));
+            This.logUtil.putF (commonStrings.START, HighScoresHelperBase_Access'(This'Unchecked_Access), To_Unbounded_String ("setHighScoresArray"));
         end if;
         This.highScoresArrayP := highScoresArrayP;
    end setHighScoresArray;
@@ -58,7 +58,8 @@ package body org.allbinary.game.score.HighScoresHelperBase_Package is
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end isAnyHighScores;
 
-   procedure setSelectedHighScores (This : in out HighScoresHelperBase; selectedHighScores : HighScores_Access) is
+   procedure setSelectedHighScores (This : in out HighScoresHelperBase; selectedHighScores_Param : access HighScores'Class) is
+      selectedHighScores : HighScores_Access := HighScores_Access (selectedHighScores_Param);
    begin
         null;
    end setSelectedHighScores;

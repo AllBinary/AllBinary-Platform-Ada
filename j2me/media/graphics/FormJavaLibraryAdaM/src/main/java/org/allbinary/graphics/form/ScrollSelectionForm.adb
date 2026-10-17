@@ -29,7 +29,10 @@ package body org.allbinary.graphics.form.ScrollSelectionForm_Package is
    end Initialize_Fields;
 
 
-   function createForm (title : Unbounded_String; items : ABCustomItem_Access_Array_Access; formPaintableFactory : ItemPaintableFactory_Access; border : Integer; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return PaintableForm_Access is
+   function createForm (title : Unbounded_String; items : ABCustomItem_Access_Array_Access; formPaintableFactory_Param : access ItemPaintableFactory'Class; border : Integer; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return PaintableForm_Access is
+      formPaintableFactory : ItemPaintableFactory_Access := ItemPaintableFactory_Access (formPaintableFactory_Param);
+      backgroundBasicColor : BasicColor_Access := BasicColor_Access (backgroundBasicColor_Param);
+      foregroundBasicColor : BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
       commonStrings : CommonStrings_Access;
       logUtil : LogUtil_Access;
    begin
@@ -71,7 +74,10 @@ package body org.allbinary.graphics.form.ScrollSelectionForm_Package is
         return ScrollSelectionForm_Access (ScrollSelectionForm_Package.NULL_SCROLL_SELECTION_HORIZONTAL_FORM);
    end getNullScrollSelectionFormHorizontal;
 
-   procedure Initialize (This : in out ScrollSelectionForm'Class; title : Unbounded_String; items : ABCustomItem_Access_Array_Access; formPaintableFactory : ItemPaintableFactory_Access; border : Integer; adjustedExtraBorder : Integer; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) is
+   procedure Initialize (This : in out ScrollSelectionForm'Class; title : Unbounded_String; items : ABCustomItem_Access_Array_Access; formPaintableFactory_Param : access ItemPaintableFactory'Class; border : Integer; adjustedExtraBorder : Integer; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) is
+      formPaintableFactory : ItemPaintableFactory_Access := ItemPaintableFactory_Access (formPaintableFactory_Param);
+      backgroundBasicColor : BasicColor_Access := BasicColor_Access (backgroundBasicColor_Param);
+      foregroundBasicColor : BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
    begin
         PaintableForm_Package.Initialize (This, title, items, backgroundBasicColor, foregroundBasicColor);
         Initialize_Fields (This);
@@ -79,31 +85,33 @@ package body org.allbinary.graphics.form.ScrollSelectionForm_Package is
         This.buttonBasicColor := foregroundBasicColor;
         This.border := border;
         This.halfBorder := (Java_Shift_Right_Arithmetic (border, 1));
-        This.paintable := formPaintableFactory.getInstanceItemPaintable (This'Unchecked_Access);
+        This.paintable := formPaintableFactory.getInstanceItemPaintable (ScrollSelectionForm_Access'(This'Unchecked_Access));
    end Initialize;
 
-   function Create (title : Unbounded_String; items : ABCustomItem_Access_Array_Access; formPaintableFactory : ItemPaintableFactory_Access; border : Integer; adjustedExtraBorder : Integer; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return ScrollSelectionForm_Access is
+   function Create (title : Unbounded_String; items : ABCustomItem_Access_Array_Access; formPaintableFactory_Param : access ItemPaintableFactory'Class; border : Integer; adjustedExtraBorder : Integer; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return ScrollSelectionForm_Access is
       This : constant ScrollSelectionForm_Access := new ScrollSelectionForm;
    begin
-      ScrollSelectionForm_Package.Initialize (This.all, title, items, formPaintableFactory, border, adjustedExtraBorder, backgroundBasicColor, foregroundBasicColor);
+      ScrollSelectionForm_Package.Initialize (This.all, title, items, formPaintableFactory_Param, border, adjustedExtraBorder, backgroundBasicColor_Param, foregroundBasicColor_Param);
       return This;
    end Create;
 
    --  throws Exception
-   procedure init (This : in out ScrollSelectionForm; rectangle : Rectangle_Access; formType : FormType_Access) is
+   procedure init (This : in out ScrollSelectionForm; rectangle_Param : access Rectangle'Class; formType_Param : access FormType'Class) is
+      rectangle : Rectangle_Access := Rectangle_Access (rectangle_Param);
+      formType : FormType_Access := FormType_Access (formType_Param);
       formTypeFactory : FormTypeFactory_Access;
    begin
         PaintableForm (This).init (rectangle, formType);
         formTypeFactory := FormTypeFactory_Package.getInstance;
         if (formType) = (formTypeFactory.HORIZONTAL_FORM) then
-            This.scrollSelectionFormFormTypeItemIndexPaintable := ScrollSelectionFormHorizontalPaintable_Package.Create (This'Unchecked_Access);
-            This.formTypeItemIndexDx := ScrollSelectionFormHorizontalDx_Package.Create (This'Unchecked_Access);
+            This.scrollSelectionFormFormTypeItemIndexPaintable := ScrollSelectionFormHorizontalPaintable_Package.Create (ScrollSelectionForm_Access'(This'Unchecked_Access));
+            This.formTypeItemIndexDx := ScrollSelectionFormHorizontalDx_Package.Create (ScrollSelectionForm_Access'(This'Unchecked_Access));
         elsif (formType) = (formTypeFactory.VERTICAL_CENTER_FORM) then
-            This.scrollSelectionFormFormTypeItemIndexPaintable := ScrollSelectionFormVerticalPaintable_Package.Create (This'Unchecked_Access);
-            This.formTypeItemIndexDx := ScrollSelectionFormVericalDx_Package.Create (This'Unchecked_Access);
+            This.scrollSelectionFormFormTypeItemIndexPaintable := ScrollSelectionFormVerticalPaintable_Package.Create (ScrollSelectionForm_Access'(This'Unchecked_Access));
+            This.formTypeItemIndexDx := ScrollSelectionFormVericalDx_Package.Create (ScrollSelectionForm_Access'(This'Unchecked_Access));
         elsif (formType) = (formTypeFactory.TEMP_HORIZONTAL_FORM) then
-            This.scrollSelectionFormFormTypeItemIndexPaintable := ScrollSelectionFormTempHorizontalPaintable_Package.Create (This'Unchecked_Access);
-            This.formTypeItemIndexDx := ScrollSelectionFormTempHorizontalDx_Package.Create (This'Unchecked_Access);
+            This.scrollSelectionFormFormTypeItemIndexPaintable := ScrollSelectionFormTempHorizontalPaintable_Package.Create (ScrollSelectionForm_Access'(This'Unchecked_Access));
+            This.formTypeItemIndexDx := ScrollSelectionFormTempHorizontalDx_Package.Create (ScrollSelectionForm_Access'(This'Unchecked_Access));
         elsif (formType) = (formTypeFactory.NULL_FORM_TYPE) then
             null;
         else
@@ -111,47 +119,58 @@ package body org.allbinary.graphics.form.ScrollSelectionForm_Package is
         end if;
    end init;
 
-   function paintItemHorizontal (This : in out ScrollSelectionForm; graphics : Graphics_Access; index : Integer; item : ABCustomItem_Access; x : Integer; y : Integer) return Integer is
+   function paintItemHorizontal (This : in out ScrollSelectionForm; graphics_Param : access Graphics'Class; index : Integer; item_Param : access ABCustomItem'Class; x : Integer; y : Integer) return Integer is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+      item : ABCustomItem_Access := ABCustomItem_Access (item_Param);
       width : Integer;
    begin
         width := item.getMinimumWidth;
         return ((x) + (width)) + (This.border);
    end paintItemHorizontal;
 
-   function paintItemVertical (This : in out ScrollSelectionForm; graphics : Graphics_Access; index : Integer; item : ABCustomItem_Access; x : Integer; y : Integer) return Integer is
+   function paintItemVertical (This : in out ScrollSelectionForm; graphics_Param : access Graphics'Class; index : Integer; item_Param : access ABCustomItem'Class; x : Integer; y : Integer) return Integer is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+      item : ABCustomItem_Access := ABCustomItem_Access (item_Param);
       height : Integer;
    begin
         height := item.getMinimumHeight;
         return ((y) + (height)) + (This.border);
    end paintItemVertical;
 
-   function paintItemTempHorizontal (This : in out ScrollSelectionForm; graphics : Graphics_Access; index : Integer; item : ABCustomItem_Access; x : Integer; y : Integer) return Integer is
+   function paintItemTempHorizontal (This : in out ScrollSelectionForm; graphics_Param : access Graphics'Class; index : Integer; item_Param : access ABCustomItem'Class; x : Integer; y : Integer) return Integer is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+      item : ABCustomItem_Access := ABCustomItem_Access (item_Param);
    begin
         return 0;
    end paintItemTempHorizontal;
 
-   function getSelectedIndexForPointHorizontalDx (This : in out ScrollSelectionForm; index : Integer; item : ABCustomItem_Access; dx : Integer; dy : Integer) return Integer is
+   function getSelectedIndexForPointHorizontalDx (This : in out ScrollSelectionForm; index : Integer; item_Param : access ABCustomItem'Class; dx : Integer; dy : Integer) return Integer is
+      item : ABCustomItem_Access := ABCustomItem_Access (item_Param);
    begin
         return (dx) - (This.halfBorder);
    end getSelectedIndexForPointHorizontalDx;
 
-   function getSelectedIndexForPointVerticalDx (This : in out ScrollSelectionForm; index : Integer; item : ABCustomItem_Access; dx : Integer; dy : Integer) return Integer is
+   function getSelectedIndexForPointVerticalDx (This : in out ScrollSelectionForm; index : Integer; item_Param : access ABCustomItem'Class; dx : Integer; dy : Integer) return Integer is
+      item : ABCustomItem_Access := ABCustomItem_Access (item_Param);
    begin
         return (dx) + (This.getDiffX (item));
    end getSelectedIndexForPointVerticalDx;
 
-   function getSelectedIndexForPointTempHorizontalDx (This : in out ScrollSelectionForm; index : Integer; item : ABCustomItem_Access; dx : Integer; dy : Integer) return Integer is
+   function getSelectedIndexForPointTempHorizontalDx (This : in out ScrollSelectionForm; index : Integer; item_Param : access ABCustomItem'Class; dx : Integer; dy : Integer) return Integer is
+      item : ABCustomItem_Access := ABCustomItem_Access (item_Param);
    begin
         return (dx) + (This.getDiffX (item));
    end getSelectedIndexForPointTempHorizontalDx;
 
-   function append (This : in out ScrollSelectionForm; item : ABCustomItem_Access) return Integer is
+   function append (This : in out ScrollSelectionForm; item_Param : access ABCustomItem'Class) return Integer is
+      item : ABCustomItem_Access := ABCustomItem_Access (item_Param);
    begin
         return PaintableForm (This).append (item);
    end append;
 
    --  throws Exception
-   function getSelectedItem (This : in out ScrollSelectionForm; point : GPoint_Access) return ABCustomItem_Access is
+   function getSelectedItem (This : in out ScrollSelectionForm; point_Param : access GPoint'Class) return ABCustomItem_Access is
+      point : GPoint_Access := GPoint_Access (point_Param);
       index : Integer;
    begin
         index := This.getSelectedIndexForPoint (point);
@@ -163,7 +182,8 @@ package body org.allbinary.graphics.form.ScrollSelectionForm_Package is
    end getSelectedItem;
 
    --  throws Exception
-   function getItemIndex (This : in out ScrollSelectionForm; item : ABCustomItem_Access) return Integer is
+   function getItemIndex (This : in out ScrollSelectionForm; item_Param : access ABCustomItem'Class) return Integer is
+      item : ABCustomItem_Access := ABCustomItem_Access (item_Param);
       nextItem : ABCustomItem_Access;
       size : Integer;
       index : Integer;
@@ -185,7 +205,8 @@ package body org.allbinary.graphics.form.ScrollSelectionForm_Package is
    end getStartIndex;
 
    --  throws Exception
-   function getSelectedIndexForPoint (This : in out ScrollSelectionForm; point : GPoint_Access) return Integer is
+   function getSelectedIndexForPoint (This : in out ScrollSelectionForm; point_Param : access GPoint'Class) return Integer is
+      point : GPoint_Access := GPoint_Access (point_Param);
       start : Integer;
       size : Integer;
       dx : Integer;
@@ -211,7 +232,7 @@ package body org.allbinary.graphics.form.ScrollSelectionForm_Package is
         stringBuffer.append (CommonSeps_Package.getInstance.SPACE);
         stringBuffer.append (commonLabels.TOTAL_LABEL);
         stringBuffer.appendint (size);
-        This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, ScrollSelectionForm_Package.GET_SELECTED_INDEX);
+        This.logUtil.putF (stringBuffer.toString, ScrollSelectionForm_Access'(This'Unchecked_Access), ScrollSelectionForm_Package.GET_SELECTED_INDEX);
         item := null;
         width := 0;
         height := 0;
@@ -228,7 +249,7 @@ package body org.allbinary.graphics.form.ScrollSelectionForm_Package is
                 stringBuffer.append (CommonSeps_Package.getInstance.SPACE);
                 stringBuffer.append (commonLabels.INDEX_LABEL);
                 stringBuffer.appendint (index);
-                This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, ScrollSelectionForm_Package.GET_SELECTED_INDEX);
+                This.logUtil.putF (stringBuffer.toString, ScrollSelectionForm_Access'(This'Unchecked_Access), ScrollSelectionForm_Package.GET_SELECTED_INDEX);
                 return index;
             end if;
             if (This.formType) = (formTypeFactory.HORIZONTAL_FORM) then
@@ -289,17 +310,20 @@ package body org.allbinary.graphics.form.ScrollSelectionForm_Package is
         return -(1);
    end processInputKey;
 
-   function isInForm (This : in out ScrollSelectionForm; point : GPoint_Access) return Boolean is
+   function isInForm (This : in out ScrollSelectionForm; point_Param : access GPoint'Class) return Boolean is
+      point : GPoint_Access := GPoint_Access (point_Param);
    begin
         if This.rectangleCollisionUtil.isInside (This.x, (This.y) - (This.halfBorder), (This.rectangle.getMaxX) + (This.border), (This.rectangle.getMaxY) + (This.border), point.getX, point.getY) then
-            This.logUtil.putF (StringMaker_Package.Create.append (StringUtil_Package.getInstance.toString (point)).append (ScrollSelectionForm_Package.INSIDE_FORM).toString, This'Unchecked_Access, ScrollSelectionForm_Package.IS_IN_FORM);
+            This.logUtil.putF (StringMaker_Package.Create.append (StringUtil_Package.getInstance.toString (point)).append (ScrollSelectionForm_Package.INSIDE_FORM).toString, ScrollSelectionForm_Access'(This'Unchecked_Access), ScrollSelectionForm_Package.IS_IN_FORM);
             return True;
         end if;
         return False;
    end isInForm;
 
    --  throws Exception
-   function paintItem (This : in out ScrollSelectionForm; graphics : Graphics_Access; index : Integer; item : ABCustomItem_Access; x : Integer; y : Integer) return Integer is
+   function paintItem (This : in out ScrollSelectionForm; graphics_Param : access Graphics'Class; index : Integer; item_Param : access ABCustomItem'Class; x : Integer; y : Integer) return Integer is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+      item : ABCustomItem_Access := ABCustomItem_Access (item_Param);
       width : Integer;
       height : Integer;
       adjustedBorder : Integer;
@@ -314,14 +338,17 @@ package body org.allbinary.graphics.form.ScrollSelectionForm_Package is
    end paintItem;
 
    --  throws Exception
-   function paintUnselectedItem (This : in out ScrollSelectionForm; graphics : Graphics_Access; index : Integer; item : ABCustomItem_Access; x : Integer; y : Integer) return Integer is
+   function paintUnselectedItem (This : in out ScrollSelectionForm; graphics_Param : access Graphics'Class; index : Integer; item_Param : access ABCustomItem'Class; x : Integer; y : Integer) return Integer is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+      item : ABCustomItem_Access := ABCustomItem_Access (item_Param);
    begin
         graphics.setColor (This.getButtonBasicColor.intValue);
         item.paintUnselected (graphics, x, y);
         return This.scrollSelectionFormFormTypeItemIndexPaintable.paint (graphics, index, item, x, y);
    end paintUnselectedItem;
 
-   function getDiffX (This : in out ScrollSelectionForm; item : ABCustomItem_Access) return Integer is
+   function getDiffX (This : in out ScrollSelectionForm; item_Param : access ABCustomItem'Class) return Integer is
+      item : ABCustomItem_Access := ABCustomItem_Access (item_Param);
    begin
         return 0;
    end getDiffX;
@@ -336,7 +363,8 @@ package body org.allbinary.graphics.form.ScrollSelectionForm_Package is
         return This.y;
    end getDy;
 
-   procedure setButtonBasicColor (This : in out ScrollSelectionForm; buttonBasicColor : BasicColor_Access) is
+   procedure setButtonBasicColor (This : in out ScrollSelectionForm; buttonBasicColor_Param : access BasicColor'Class) is
+      buttonBasicColor : BasicColor_Access := BasicColor_Access (buttonBasicColor_Param);
    begin
         This.buttonBasicColor := buttonBasicColor;
    end setButtonBasicColor;
@@ -346,78 +374,78 @@ package body org.allbinary.graphics.form.ScrollSelectionForm_Package is
         return This.buttonBasicColor;
    end getButtonBasicColor;
 
-   procedure createForm (title : Unbounded_String; items : ABCustomItem_Access_Array_Access; formPaintableFactory : ItemPaintableFactory_Access; border : Integer; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) is
-      Java_Result : constant PaintableForm_Access := createForm (title, items, formPaintableFactory, border, backgroundBasicColor, foregroundBasicColor);
+   procedure createForm (title : Unbounded_String; items : ABCustomItem_Access_Array_Access; formPaintableFactory_Param : access ItemPaintableFactory'Class; border : Integer; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) is
+      Java_Result : constant PaintableForm_Access := createForm (title, items, formPaintableFactory_Param, border, backgroundBasicColor_Param, foregroundBasicColor_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createForm;
 
-   procedure paintItemHorizontal (This : in out ScrollSelectionForm; graphics : Graphics_Access; index : Integer; item : ABCustomItem_Access; x : Integer; y : Integer) is
-      Java_Result : constant Integer := ScrollSelectionForm'Class (This).paintItemHorizontal (graphics, index, item, x, y);
+   procedure paintItemHorizontal (This : in out ScrollSelectionForm; graphics_Param : access Graphics'Class; index : Integer; item_Param : access ABCustomItem'Class; x : Integer; y : Integer) is
+      Java_Result : constant Integer := ScrollSelectionForm'Class (This).paintItemHorizontal (graphics_Param, index, item_Param, x, y);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end paintItemHorizontal;
 
-   procedure paintItemVertical (This : in out ScrollSelectionForm; graphics : Graphics_Access; index : Integer; item : ABCustomItem_Access; x : Integer; y : Integer) is
-      Java_Result : constant Integer := ScrollSelectionForm'Class (This).paintItemVertical (graphics, index, item, x, y);
+   procedure paintItemVertical (This : in out ScrollSelectionForm; graphics_Param : access Graphics'Class; index : Integer; item_Param : access ABCustomItem'Class; x : Integer; y : Integer) is
+      Java_Result : constant Integer := ScrollSelectionForm'Class (This).paintItemVertical (graphics_Param, index, item_Param, x, y);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end paintItemVertical;
 
-   procedure paintItemTempHorizontal (This : in out ScrollSelectionForm; graphics : Graphics_Access; index : Integer; item : ABCustomItem_Access; x : Integer; y : Integer) is
-      Java_Result : constant Integer := ScrollSelectionForm'Class (This).paintItemTempHorizontal (graphics, index, item, x, y);
+   procedure paintItemTempHorizontal (This : in out ScrollSelectionForm; graphics_Param : access Graphics'Class; index : Integer; item_Param : access ABCustomItem'Class; x : Integer; y : Integer) is
+      Java_Result : constant Integer := ScrollSelectionForm'Class (This).paintItemTempHorizontal (graphics_Param, index, item_Param, x, y);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end paintItemTempHorizontal;
 
-   procedure getSelectedIndexForPointHorizontalDx (This : in out ScrollSelectionForm; index : Integer; item : ABCustomItem_Access; dx : Integer; dy : Integer) is
-      Java_Result : constant Integer := ScrollSelectionForm'Class (This).getSelectedIndexForPointHorizontalDx (index, item, dx, dy);
+   procedure getSelectedIndexForPointHorizontalDx (This : in out ScrollSelectionForm; index : Integer; item_Param : access ABCustomItem'Class; dx : Integer; dy : Integer) is
+      Java_Result : constant Integer := ScrollSelectionForm'Class (This).getSelectedIndexForPointHorizontalDx (index, item_Param, dx, dy);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getSelectedIndexForPointHorizontalDx;
 
-   procedure getSelectedIndexForPointVerticalDx (This : in out ScrollSelectionForm; index : Integer; item : ABCustomItem_Access; dx : Integer; dy : Integer) is
-      Java_Result : constant Integer := ScrollSelectionForm'Class (This).getSelectedIndexForPointVerticalDx (index, item, dx, dy);
+   procedure getSelectedIndexForPointVerticalDx (This : in out ScrollSelectionForm; index : Integer; item_Param : access ABCustomItem'Class; dx : Integer; dy : Integer) is
+      Java_Result : constant Integer := ScrollSelectionForm'Class (This).getSelectedIndexForPointVerticalDx (index, item_Param, dx, dy);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getSelectedIndexForPointVerticalDx;
 
-   procedure getSelectedIndexForPointTempHorizontalDx (This : in out ScrollSelectionForm; index : Integer; item : ABCustomItem_Access; dx : Integer; dy : Integer) is
-      Java_Result : constant Integer := ScrollSelectionForm'Class (This).getSelectedIndexForPointTempHorizontalDx (index, item, dx, dy);
+   procedure getSelectedIndexForPointTempHorizontalDx (This : in out ScrollSelectionForm; index : Integer; item_Param : access ABCustomItem'Class; dx : Integer; dy : Integer) is
+      Java_Result : constant Integer := ScrollSelectionForm'Class (This).getSelectedIndexForPointTempHorizontalDx (index, item_Param, dx, dy);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getSelectedIndexForPointTempHorizontalDx;
 
-   procedure append (This : in out ScrollSelectionForm; item : ABCustomItem_Access) is
-      Java_Result : constant Integer := ScrollSelectionForm'Class (This).append (item);
+   procedure append (This : in out ScrollSelectionForm; item_Param : access ABCustomItem'Class) is
+      Java_Result : constant Integer := ScrollSelectionForm'Class (This).append (item_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end append;
 
-   procedure getSelectedItem (This : in out ScrollSelectionForm; point : GPoint_Access) is
-      Java_Result : constant ABCustomItem_Access := ScrollSelectionForm'Class (This).getSelectedItem (point);
+   procedure getSelectedItem (This : in out ScrollSelectionForm; point_Param : access GPoint'Class) is
+      Java_Result : constant ABCustomItem_Access := ScrollSelectionForm'Class (This).getSelectedItem (point_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getSelectedItem;
 
-   procedure getItemIndex (This : in out ScrollSelectionForm; item : ABCustomItem_Access) is
-      Java_Result : constant Integer := ScrollSelectionForm'Class (This).getItemIndex (item);
+   procedure getItemIndex (This : in out ScrollSelectionForm; item_Param : access ABCustomItem'Class) is
+      Java_Result : constant Integer := ScrollSelectionForm'Class (This).getItemIndex (item_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getItemIndex;
 
-   procedure getSelectedIndexForPoint (This : in out ScrollSelectionForm; point : GPoint_Access) is
-      Java_Result : constant Integer := ScrollSelectionForm'Class (This).getSelectedIndexForPoint (point);
+   procedure getSelectedIndexForPoint (This : in out ScrollSelectionForm; point_Param : access GPoint'Class) is
+      Java_Result : constant Integer := ScrollSelectionForm'Class (This).getSelectedIndexForPoint (point_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
@@ -430,29 +458,29 @@ package body org.allbinary.graphics.form.ScrollSelectionForm_Package is
       null;
    end processInputKey;
 
-   procedure isInForm (This : in out ScrollSelectionForm; point : GPoint_Access) is
-      Java_Result : constant Boolean := ScrollSelectionForm'Class (This).isInForm (point);
+   procedure isInForm (This : in out ScrollSelectionForm; point_Param : access GPoint'Class) is
+      Java_Result : constant Boolean := ScrollSelectionForm'Class (This).isInForm (point_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isInForm;
 
-   procedure paintItem (This : in out ScrollSelectionForm; graphics : Graphics_Access; index : Integer; item : ABCustomItem_Access; x : Integer; y : Integer) is
-      Java_Result : constant Integer := ScrollSelectionForm'Class (This).paintItem (graphics, index, item, x, y);
+   procedure paintItem (This : in out ScrollSelectionForm; graphics_Param : access Graphics'Class; index : Integer; item_Param : access ABCustomItem'Class; x : Integer; y : Integer) is
+      Java_Result : constant Integer := ScrollSelectionForm'Class (This).paintItem (graphics_Param, index, item_Param, x, y);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end paintItem;
 
-   procedure paintUnselectedItem (This : in out ScrollSelectionForm; graphics : Graphics_Access; index : Integer; item : ABCustomItem_Access; x : Integer; y : Integer) is
-      Java_Result : constant Integer := ScrollSelectionForm'Class (This).paintUnselectedItem (graphics, index, item, x, y);
+   procedure paintUnselectedItem (This : in out ScrollSelectionForm; graphics_Param : access Graphics'Class; index : Integer; item_Param : access ABCustomItem'Class; x : Integer; y : Integer) is
+      Java_Result : constant Integer := ScrollSelectionForm'Class (This).paintUnselectedItem (graphics_Param, index, item_Param, x, y);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end paintUnselectedItem;
 
-   procedure getDiffX (This : in out ScrollSelectionForm; item : ABCustomItem_Access) is
-      Java_Result : constant Integer := ScrollSelectionForm'Class (This).getDiffX (item);
+   procedure getDiffX (This : in out ScrollSelectionForm; item_Param : access ABCustomItem'Class) is
+      Java_Result : constant Integer := ScrollSelectionForm'Class (This).getDiffX (item_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
@@ -478,28 +506,31 @@ package body org.allbinary.graphics.form.ScrollSelectionFormHorizontalPaintable_
    end Initialize_Fields;
 
     
-   procedure Initialize (This : in out ScrollSelectionFormHorizontalPaintable'Class; scrollSelectionForm : ScrollSelectionForm_Access) is
+   procedure Initialize (This : in out ScrollSelectionFormHorizontalPaintable'Class; scrollSelectionForm_Param : access ScrollSelectionForm'Class) is
+      scrollSelectionForm : ScrollSelectionForm_Access := ScrollSelectionForm_Access (scrollSelectionForm_Param);
    begin
       ItemIndexPaintable_Package.Initialize (This);
       Initialize_Fields (This);
             This.scrollSelectionForm := scrollSelectionForm;
    end Initialize;
 
-   function Create (scrollSelectionForm : ScrollSelectionForm_Access) return ScrollSelectionFormHorizontalPaintable_Access is
+   function Create (scrollSelectionForm_Param : access ScrollSelectionForm'Class) return ScrollSelectionFormHorizontalPaintable_Access is
       This : constant ScrollSelectionFormHorizontalPaintable_Access := new ScrollSelectionFormHorizontalPaintable;
    begin
-      ScrollSelectionFormHorizontalPaintable_Package.Initialize (This.all, scrollSelectionForm);
+      ScrollSelectionFormHorizontalPaintable_Package.Initialize (This.all, scrollSelectionForm_Param);
       return This;
    end Create;
     
    --  throws Exception
-   function paint (This : in out ScrollSelectionFormHorizontalPaintable; graphics : Graphics_Access; index : Integer; item : ABCustomItem_Access; dx : Integer; dy : Integer) return Integer is
+   function paint (This : in out ScrollSelectionFormHorizontalPaintable; graphics_Param : access Graphics'Class; index : Integer; item_Param : access ABCustomItem'Class; dx : Integer; dy : Integer) return Integer is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+      item : ABCustomItem_Access := ABCustomItem_Access (item_Param);
    begin
             return This.scrollSelectionForm.paintItemHorizontal (graphics, index, item, dx, dy);
    end paint;
 
-   procedure paint (This : in out ScrollSelectionFormHorizontalPaintable; graphics : Graphics_Access; index : Integer; item : ABCustomItem_Access; dx : Integer; dy : Integer) is
-      Java_Result : constant Integer := ScrollSelectionFormHorizontalPaintable'Class (This).paint (graphics, index, item, dx, dy);
+   procedure paint (This : in out ScrollSelectionFormHorizontalPaintable; graphics_Param : access Graphics'Class; index : Integer; item_Param : access ABCustomItem'Class; dx : Integer; dy : Integer) is
+      Java_Result : constant Integer := ScrollSelectionFormHorizontalPaintable'Class (This).paint (graphics_Param, index, item_Param, dx, dy);
       pragma Unreferenced (Java_Result);
    begin
       null;
@@ -517,28 +548,31 @@ package body org.allbinary.graphics.form.ScrollSelectionFormVerticalPaintable_Pa
    end Initialize_Fields;
 
     
-   procedure Initialize (This : in out ScrollSelectionFormVerticalPaintable'Class; scrollSelectionForm : ScrollSelectionForm_Access) is
+   procedure Initialize (This : in out ScrollSelectionFormVerticalPaintable'Class; scrollSelectionForm_Param : access ScrollSelectionForm'Class) is
+      scrollSelectionForm : ScrollSelectionForm_Access := ScrollSelectionForm_Access (scrollSelectionForm_Param);
    begin
       ItemIndexPaintable_Package.Initialize (This);
       Initialize_Fields (This);
             This.scrollSelectionForm := scrollSelectionForm;
    end Initialize;
 
-   function Create (scrollSelectionForm : ScrollSelectionForm_Access) return ScrollSelectionFormVerticalPaintable_Access is
+   function Create (scrollSelectionForm_Param : access ScrollSelectionForm'Class) return ScrollSelectionFormVerticalPaintable_Access is
       This : constant ScrollSelectionFormVerticalPaintable_Access := new ScrollSelectionFormVerticalPaintable;
    begin
-      ScrollSelectionFormVerticalPaintable_Package.Initialize (This.all, scrollSelectionForm);
+      ScrollSelectionFormVerticalPaintable_Package.Initialize (This.all, scrollSelectionForm_Param);
       return This;
    end Create;
     
    --  throws Exception
-   function paint (This : in out ScrollSelectionFormVerticalPaintable; graphics : Graphics_Access; index : Integer; item : ABCustomItem_Access; dx : Integer; dy : Integer) return Integer is
+   function paint (This : in out ScrollSelectionFormVerticalPaintable; graphics_Param : access Graphics'Class; index : Integer; item_Param : access ABCustomItem'Class; dx : Integer; dy : Integer) return Integer is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+      item : ABCustomItem_Access := ABCustomItem_Access (item_Param);
    begin
             return This.scrollSelectionForm.paintItemVertical (graphics, index, item, dx, dy);
    end paint;
 
-   procedure paint (This : in out ScrollSelectionFormVerticalPaintable; graphics : Graphics_Access; index : Integer; item : ABCustomItem_Access; dx : Integer; dy : Integer) is
-      Java_Result : constant Integer := ScrollSelectionFormVerticalPaintable'Class (This).paint (graphics, index, item, dx, dy);
+   procedure paint (This : in out ScrollSelectionFormVerticalPaintable; graphics_Param : access Graphics'Class; index : Integer; item_Param : access ABCustomItem'Class; dx : Integer; dy : Integer) is
+      Java_Result : constant Integer := ScrollSelectionFormVerticalPaintable'Class (This).paint (graphics_Param, index, item_Param, dx, dy);
       pragma Unreferenced (Java_Result);
    begin
       null;
@@ -556,28 +590,31 @@ package body org.allbinary.graphics.form.ScrollSelectionFormTempHorizontalPainta
    end Initialize_Fields;
 
     
-   procedure Initialize (This : in out ScrollSelectionFormTempHorizontalPaintable'Class; scrollSelectionForm : ScrollSelectionForm_Access) is
+   procedure Initialize (This : in out ScrollSelectionFormTempHorizontalPaintable'Class; scrollSelectionForm_Param : access ScrollSelectionForm'Class) is
+      scrollSelectionForm : ScrollSelectionForm_Access := ScrollSelectionForm_Access (scrollSelectionForm_Param);
    begin
       ItemIndexPaintable_Package.Initialize (This);
       Initialize_Fields (This);
             This.scrollSelectionForm := scrollSelectionForm;
    end Initialize;
 
-   function Create (scrollSelectionForm : ScrollSelectionForm_Access) return ScrollSelectionFormTempHorizontalPaintable_Access is
+   function Create (scrollSelectionForm_Param : access ScrollSelectionForm'Class) return ScrollSelectionFormTempHorizontalPaintable_Access is
       This : constant ScrollSelectionFormTempHorizontalPaintable_Access := new ScrollSelectionFormTempHorizontalPaintable;
    begin
-      ScrollSelectionFormTempHorizontalPaintable_Package.Initialize (This.all, scrollSelectionForm);
+      ScrollSelectionFormTempHorizontalPaintable_Package.Initialize (This.all, scrollSelectionForm_Param);
       return This;
    end Create;
     
    --  throws Exception
-   function paint (This : in out ScrollSelectionFormTempHorizontalPaintable; graphics : Graphics_Access; index : Integer; item : ABCustomItem_Access; dx : Integer; dy : Integer) return Integer is
+   function paint (This : in out ScrollSelectionFormTempHorizontalPaintable; graphics_Param : access Graphics'Class; index : Integer; item_Param : access ABCustomItem'Class; dx : Integer; dy : Integer) return Integer is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+      item : ABCustomItem_Access := ABCustomItem_Access (item_Param);
    begin
             return This.scrollSelectionForm.paintItemTempHorizontal (graphics, index, item, dx, dy);
    end paint;
 
-   procedure paint (This : in out ScrollSelectionFormTempHorizontalPaintable; graphics : Graphics_Access; index : Integer; item : ABCustomItem_Access; dx : Integer; dy : Integer) is
-      Java_Result : constant Integer := ScrollSelectionFormTempHorizontalPaintable'Class (This).paint (graphics, index, item, dx, dy);
+   procedure paint (This : in out ScrollSelectionFormTempHorizontalPaintable; graphics_Param : access Graphics'Class; index : Integer; item_Param : access ABCustomItem'Class; dx : Integer; dy : Integer) is
+      Java_Result : constant Integer := ScrollSelectionFormTempHorizontalPaintable'Class (This).paint (graphics_Param, index, item_Param, dx, dy);
       pragma Unreferenced (Java_Result);
    begin
       null;
@@ -595,28 +632,30 @@ package body org.allbinary.graphics.form.ScrollSelectionFormHorizontalDx_Package
    end Initialize_Fields;
 
     
-   procedure Initialize (This : in out ScrollSelectionFormHorizontalDx'Class; multipleScrollSelectionForm : ScrollSelectionForm_Access) is
+   procedure Initialize (This : in out ScrollSelectionFormHorizontalDx'Class; multipleScrollSelectionForm_Param : access ScrollSelectionForm'Class) is
+      multipleScrollSelectionForm : ScrollSelectionForm_Access := ScrollSelectionForm_Access (multipleScrollSelectionForm_Param);
    begin
       ItemIndexDx_Package.Initialize (This);
       Initialize_Fields (This);
             This.scrollSelectionForm := multipleScrollSelectionForm;
    end Initialize;
 
-   function Create (multipleScrollSelectionForm : ScrollSelectionForm_Access) return ScrollSelectionFormHorizontalDx_Access is
+   function Create (multipleScrollSelectionForm_Param : access ScrollSelectionForm'Class) return ScrollSelectionFormHorizontalDx_Access is
       This : constant ScrollSelectionFormHorizontalDx_Access := new ScrollSelectionFormHorizontalDx;
    begin
-      ScrollSelectionFormHorizontalDx_Package.Initialize (This.all, multipleScrollSelectionForm);
+      ScrollSelectionFormHorizontalDx_Package.Initialize (This.all, multipleScrollSelectionForm_Param);
       return This;
    end Create;
     
    --  throws Exception
-   function getDx (This : in out ScrollSelectionFormHorizontalDx; index : Integer; item : ABCustomItem_Access; dx : Integer; dy : Integer) return Integer is
+   function getDx (This : in out ScrollSelectionFormHorizontalDx; index : Integer; item_Param : access ABCustomItem'Class; dx : Integer; dy : Integer) return Integer is
+      item : ABCustomItem_Access := ABCustomItem_Access (item_Param);
    begin
             return This.scrollSelectionForm.getSelectedIndexForPointHorizontalDx (index, item, dx, dy);
    end getDx;
 
-   procedure getDx (This : in out ScrollSelectionFormHorizontalDx; index : Integer; item : ABCustomItem_Access; dx : Integer; dy : Integer) is
-      Java_Result : constant Integer := ScrollSelectionFormHorizontalDx'Class (This).getDx (index, item, dx, dy);
+   procedure getDx (This : in out ScrollSelectionFormHorizontalDx; index : Integer; item_Param : access ABCustomItem'Class; dx : Integer; dy : Integer) is
+      Java_Result : constant Integer := ScrollSelectionFormHorizontalDx'Class (This).getDx (index, item_Param, dx, dy);
       pragma Unreferenced (Java_Result);
    begin
       null;
@@ -634,28 +673,30 @@ package body org.allbinary.graphics.form.ScrollSelectionFormVericalDx_Package is
    end Initialize_Fields;
 
     
-   procedure Initialize (This : in out ScrollSelectionFormVericalDx'Class; multipleScrollSelectionForm : ScrollSelectionForm_Access) is
+   procedure Initialize (This : in out ScrollSelectionFormVericalDx'Class; multipleScrollSelectionForm_Param : access ScrollSelectionForm'Class) is
+      multipleScrollSelectionForm : ScrollSelectionForm_Access := ScrollSelectionForm_Access (multipleScrollSelectionForm_Param);
    begin
       ItemIndexDx_Package.Initialize (This);
       Initialize_Fields (This);
             This.scrollSelectionForm := multipleScrollSelectionForm;
    end Initialize;
 
-   function Create (multipleScrollSelectionForm : ScrollSelectionForm_Access) return ScrollSelectionFormVericalDx_Access is
+   function Create (multipleScrollSelectionForm_Param : access ScrollSelectionForm'Class) return ScrollSelectionFormVericalDx_Access is
       This : constant ScrollSelectionFormVericalDx_Access := new ScrollSelectionFormVericalDx;
    begin
-      ScrollSelectionFormVericalDx_Package.Initialize (This.all, multipleScrollSelectionForm);
+      ScrollSelectionFormVericalDx_Package.Initialize (This.all, multipleScrollSelectionForm_Param);
       return This;
    end Create;
     
    --  throws Exception
-   function getDx (This : in out ScrollSelectionFormVericalDx; index : Integer; item : ABCustomItem_Access; dx : Integer; dy : Integer) return Integer is
+   function getDx (This : in out ScrollSelectionFormVericalDx; index : Integer; item_Param : access ABCustomItem'Class; dx : Integer; dy : Integer) return Integer is
+      item : ABCustomItem_Access := ABCustomItem_Access (item_Param);
    begin
             return This.scrollSelectionForm.getSelectedIndexForPointVerticalDx (index, item, dx, dy);
    end getDx;
 
-   procedure getDx (This : in out ScrollSelectionFormVericalDx; index : Integer; item : ABCustomItem_Access; dx : Integer; dy : Integer) is
-      Java_Result : constant Integer := ScrollSelectionFormVericalDx'Class (This).getDx (index, item, dx, dy);
+   procedure getDx (This : in out ScrollSelectionFormVericalDx; index : Integer; item_Param : access ABCustomItem'Class; dx : Integer; dy : Integer) is
+      Java_Result : constant Integer := ScrollSelectionFormVericalDx'Class (This).getDx (index, item_Param, dx, dy);
       pragma Unreferenced (Java_Result);
    begin
       null;
@@ -673,28 +714,30 @@ package body org.allbinary.graphics.form.ScrollSelectionFormTempHorizontalDx_Pac
    end Initialize_Fields;
 
     
-   procedure Initialize (This : in out ScrollSelectionFormTempHorizontalDx'Class; multipleScrollSelectionForm : ScrollSelectionForm_Access) is
+   procedure Initialize (This : in out ScrollSelectionFormTempHorizontalDx'Class; multipleScrollSelectionForm_Param : access ScrollSelectionForm'Class) is
+      multipleScrollSelectionForm : ScrollSelectionForm_Access := ScrollSelectionForm_Access (multipleScrollSelectionForm_Param);
    begin
       ItemIndexDx_Package.Initialize (This);
       Initialize_Fields (This);
             This.scrollSelectionForm := multipleScrollSelectionForm;
    end Initialize;
 
-   function Create (multipleScrollSelectionForm : ScrollSelectionForm_Access) return ScrollSelectionFormTempHorizontalDx_Access is
+   function Create (multipleScrollSelectionForm_Param : access ScrollSelectionForm'Class) return ScrollSelectionFormTempHorizontalDx_Access is
       This : constant ScrollSelectionFormTempHorizontalDx_Access := new ScrollSelectionFormTempHorizontalDx;
    begin
-      ScrollSelectionFormTempHorizontalDx_Package.Initialize (This.all, multipleScrollSelectionForm);
+      ScrollSelectionFormTempHorizontalDx_Package.Initialize (This.all, multipleScrollSelectionForm_Param);
       return This;
    end Create;
     
    --  throws Exception
-   function getDx (This : in out ScrollSelectionFormTempHorizontalDx; index : Integer; item : ABCustomItem_Access; dx : Integer; dy : Integer) return Integer is
+   function getDx (This : in out ScrollSelectionFormTempHorizontalDx; index : Integer; item_Param : access ABCustomItem'Class; dx : Integer; dy : Integer) return Integer is
+      item : ABCustomItem_Access := ABCustomItem_Access (item_Param);
    begin
             return This.scrollSelectionForm.getSelectedIndexForPointTempHorizontalDx (index, item, dx, dy);
    end getDx;
 
-   procedure getDx (This : in out ScrollSelectionFormTempHorizontalDx; index : Integer; item : ABCustomItem_Access; dx : Integer; dy : Integer) is
-      Java_Result : constant Integer := ScrollSelectionFormTempHorizontalDx'Class (This).getDx (index, item, dx, dy);
+   procedure getDx (This : in out ScrollSelectionFormTempHorizontalDx; index : Integer; item_Param : access ABCustomItem'Class; dx : Integer; dy : Integer) is
+      Java_Result : constant Integer := ScrollSelectionFormTempHorizontalDx'Class (This).getDx (index, item_Param, dx, dy);
       pragma Unreferenced (Java_Result);
    begin
       null;

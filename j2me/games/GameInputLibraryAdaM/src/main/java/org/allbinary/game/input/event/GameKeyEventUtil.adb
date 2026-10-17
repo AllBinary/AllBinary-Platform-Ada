@@ -34,15 +34,16 @@ package body org.allbinary.game.input.event.GameKeyEventUtil_Package is
       return This;
    end Create;
 
-   function getKey (anyType : Java_Object_Access) return Integer is
+   function getKey (anyType_Param : access Java_Object'Class) return Integer is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
       gameKeyEvent : GameKeyEvent_Access;
    begin
         gameKeyEvent := GameKeyEvent_Access (anyType);
         return gameKeyEvent.getKey;
    end getKey;
 
-   procedure getKey (anyType : Java_Object_Access) is
-      Java_Result : constant Integer := getKey (anyType);
+   procedure getKey (anyType_Param : access Java_Object'Class) is
+      Java_Result : constant Integer := getKey (anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

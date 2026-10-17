@@ -50,7 +50,7 @@ package org.allbinary.canvas.AndroidGameStatistics_Package is
 
    procedure Initialize (This : in out AndroidGameStatistics'Class);
    function Create return AndroidGameStatistics_Access;
-   procedure initView (This : in out AndroidGameStatistics; view : View_Access);
+   procedure initView (This : in out AndroidGameStatistics; view_Param : access View'Class);
    procedure process (This : in out AndroidGameStatistics);
    procedure nextOnDraw (This : in out AndroidGameStatistics);
    function toStringArray (This : in out AndroidGameStatistics) return Unbounded_String_Array_Access;

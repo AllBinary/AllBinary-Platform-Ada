@@ -28,7 +28,9 @@ package body org.allbinary.graphics.opengles.EnableFacesShaderOpenGLProcessor_Pa
       return This;
    end Create;
 
-   procedure process (This : in out EnableFacesShaderOpenGLProcessor; gl : GL10_Access; anyType : Java_Object_Access) is
+   procedure process (This : in out EnableFacesShaderOpenGLProcessor; gl_Param : access GL10'Class; anyType_Param : access Java_Object'Class) is
+      gl : GL10_Access := GL10_Access (gl_Param);
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         null;
    end process;

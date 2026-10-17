@@ -40,8 +40,8 @@ package org.allbinary.input.motion.button.TouchButtonsListBuilder_Package is
 
    procedure Initialize (This : in out TouchButtonsListBuilder'Class);
    function Create return TouchButtonsListBuilder_Access;
-   procedure addList (This : in out TouchButtonsListBuilder; list : BasicArrayList_Access);
-   procedure add (This : in out TouchButtonsListBuilder; baseTouchInput : BaseTouchInput_Access);
+   procedure addList (This : in out TouchButtonsListBuilder; list_Param : access BasicArrayList'Class);
+   procedure add (This : in out TouchButtonsListBuilder; baseTouchInput_Param : access BaseTouchInput'Class);
 
 end org.allbinary.input.motion.button.TouchButtonsListBuilder_Package;
 

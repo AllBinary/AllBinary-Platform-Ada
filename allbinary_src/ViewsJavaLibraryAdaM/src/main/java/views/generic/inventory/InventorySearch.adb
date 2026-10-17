@@ -25,17 +25,18 @@ package body views.generic_Id.inventory.InventorySearch_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out InventorySearch'Class; searchRequest : SearchRequest_Access) is
+   procedure Initialize (This : in out InventorySearch'Class; searchRequest_Param : access SearchRequest'Class) is
+      searchRequest : SearchRequest_Access := SearchRequest_Access (searchRequest_Param);
    begin
         null;
         Initialize_Fields (This);
         This.searchRequest := searchRequest;
    end Initialize;
 
-   function Create (searchRequest : SearchRequest_Access) return InventorySearch_Access is
+   function Create (searchRequest_Param : access SearchRequest'Class) return InventorySearch_Access is
       This : constant InventorySearch_Access := new InventorySearch;
    begin
-      InventorySearch_Package.Initialize (This.all, searchRequest);
+      InventorySearch_Package.Initialize (This.all, searchRequest_Param);
       return This;
    end Create;
 
@@ -73,7 +74,7 @@ package body views.generic_Id.inventory.InventorySearch_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PRODUCTSEARCHLOGGING) then
-                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("searchSingleStaticPage"), e);
+                This.logUtil.put (This.commonStrings.FAILURE, InventorySearch_Access'(This'Unchecked_Access), To_Unbounded_String ("searchSingleStaticPage"), e);
             end if;
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Failed retrieve Single Product Page Static")));
                 end;
@@ -93,7 +94,7 @@ package body views.generic_Id.inventory.InventorySearch_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PRODUCTSEARCHLOGGINGERROR) then
-                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("searchSingleDynamicPage"), e);
+                This.logUtil.put (This.commonStrings.FAILURE, InventorySearch_Access'(This'Unchecked_Access), To_Unbounded_String ("searchSingleDynamicPage"), e);
             end if;
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Failed retrieve Single Product Page Dynamically")));
                 end;

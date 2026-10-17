@@ -24,7 +24,9 @@ package body org.allbinary.business.category.hierarchy.CategoryHierarchy_Package
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CategoryHierarchy'Class; rootCategoryInterface : CategoryInterface_Access; parentCategoryInterface : CategoryInterface_Access) is
+   procedure Initialize (This : in out CategoryHierarchy'Class; rootCategoryInterface_Param : access CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface'Class) is
+      rootCategoryInterface : CategoryInterface_Access := CategoryInterface_Access (rootCategoryInterface_Param);
+      parentCategoryInterface : CategoryInterface_Access := CategoryInterface_Access (parentCategoryInterface_Param);
    begin
       Initialize_Fields (This);
         This.level := 0;
@@ -32,14 +34,16 @@ package body org.allbinary.business.category.hierarchy.CategoryHierarchy_Package
         This.setParent (parentCategoryInterface);
    end Initialize;
 
-   function Create (rootCategoryInterface : CategoryInterface_Access; parentCategoryInterface : CategoryInterface_Access) return CategoryHierarchy_Access is
+   function Create (rootCategoryInterface_Param : access CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface'Class) return CategoryHierarchy_Access is
       This : constant CategoryHierarchy_Access := new CategoryHierarchy;
    begin
-      CategoryHierarchy_Package.Initialize (This.all, rootCategoryInterface, parentCategoryInterface);
+      CategoryHierarchy_Package.Initialize (This.all, rootCategoryInterface_Param, parentCategoryInterface_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out CategoryHierarchy'Class; rootCategoryInterface : CategoryInterface_Access; parentCategoryInterface : CategoryInterface_Access; level : Integer) is
+   procedure Initialize (This : in out CategoryHierarchy'Class; rootCategoryInterface_Param : access CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface'Class; level : Integer) is
+      rootCategoryInterface : CategoryInterface_Access := CategoryInterface_Access (rootCategoryInterface_Param);
+      parentCategoryInterface : CategoryInterface_Access := CategoryInterface_Access (parentCategoryInterface_Param);
    begin
       Initialize_Fields (This);
         This.level := level;
@@ -47,14 +51,17 @@ package body org.allbinary.business.category.hierarchy.CategoryHierarchy_Package
         This.setParent (parentCategoryInterface);
    end Initialize;
 
-   function Create (rootCategoryInterface : CategoryInterface_Access; parentCategoryInterface : CategoryInterface_Access; level : Integer) return CategoryHierarchy_Access is
+   function Create (rootCategoryInterface_Param : access CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface'Class; level : Integer) return CategoryHierarchy_Access is
       This : constant CategoryHierarchy_Access := new CategoryHierarchy;
    begin
-      CategoryHierarchy_Package.Initialize (This.all, rootCategoryInterface, parentCategoryInterface, level);
+      CategoryHierarchy_Package.Initialize (This.all, rootCategoryInterface_Param, parentCategoryInterface_Param, level);
       return This;
    end Create;
 
-   procedure Initialize (This : in out CategoryHierarchy'Class; rootCategoryInterface : CategoryInterface_Access; parentCategoryInterface : CategoryInterface_Access; categoryPropertiesHashMap : HashMap_Access) is
+   procedure Initialize (This : in out CategoryHierarchy'Class; rootCategoryInterface_Param : access CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface'Class; categoryPropertiesHashMap_Param : access HashMap'Class) is
+      rootCategoryInterface : CategoryInterface_Access := CategoryInterface_Access (rootCategoryInterface_Param);
+      parentCategoryInterface : CategoryInterface_Access := CategoryInterface_Access (parentCategoryInterface_Param);
+      categoryPropertiesHashMap : HashMap_Access := HashMap_Access (categoryPropertiesHashMap_Param);
       levelString : Unbounded_String;
    begin
       Initialize_Fields (This);
@@ -64,10 +71,10 @@ package body org.allbinary.business.category.hierarchy.CategoryHierarchy_Package
         This.setParent (parentCategoryInterface);
    end Initialize;
 
-   function Create (rootCategoryInterface : CategoryInterface_Access; parentCategoryInterface : CategoryInterface_Access; categoryPropertiesHashMap : HashMap_Access) return CategoryHierarchy_Access is
+   function Create (rootCategoryInterface_Param : access CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface'Class; categoryPropertiesHashMap_Param : access HashMap'Class) return CategoryHierarchy_Access is
       This : constant CategoryHierarchy_Access := new CategoryHierarchy;
    begin
-      CategoryHierarchy_Package.Initialize (This.all, rootCategoryInterface, parentCategoryInterface, categoryPropertiesHashMap);
+      CategoryHierarchy_Package.Initialize (This.all, rootCategoryInterface_Param, parentCategoryInterface_Param, categoryPropertiesHashMap_Param);
       return This;
    end Create;
 
@@ -86,12 +93,14 @@ package body org.allbinary.business.category.hierarchy.CategoryHierarchy_Package
         This.level := level;
    end setLevel;
 
-   procedure setParent (This : in out CategoryHierarchy; categoryInterface : CategoryInterface_Access) is
+   procedure setParent (This : in out CategoryHierarchy; categoryInterface_Param : access CategoryInterface'Class) is
+      categoryInterface : CategoryInterface_Access := CategoryInterface_Access (categoryInterface_Param);
    begin
         This.parentCategoryInterface := categoryInterface;
    end setParent;
 
-   procedure setRoot (This : in out CategoryHierarchy; categoryInterface : CategoryInterface_Access) is
+   procedure setRoot (This : in out CategoryHierarchy; categoryInterface_Param : access CategoryInterface'Class) is
+      categoryInterface : CategoryInterface_Access := CategoryInterface_Access (categoryInterface_Param);
    begin
         This.rootCategoryInterface := categoryInterface;
    end setRoot;

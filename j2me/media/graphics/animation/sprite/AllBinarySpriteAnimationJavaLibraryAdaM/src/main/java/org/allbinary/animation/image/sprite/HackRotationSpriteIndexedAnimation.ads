@@ -47,12 +47,12 @@ package org.allbinary.animation.image.sprite.HackRotationSpriteIndexedAnimation_
       image : Image_Access;
    end record;
 
-   procedure Initialize (This : in out HackRotationSpriteIndexedAnimation'Class; sprite : Sprite_Access; image : Image_Access; angleInfo : AngleInfo_Access; animationBehavior : AnimationBehavior_Access);
-   function Create (sprite : Sprite_Access; image : Image_Access; angleInfo : AngleInfo_Access; animationBehavior : AnimationBehavior_Access) return HackRotationSpriteIndexedAnimation_Access;
+   procedure Initialize (This : in out HackRotationSpriteIndexedAnimation'Class; sprite_Param : access Sprite'Class; image_Param : access Image'Class; angleInfo_Param : access AngleInfo'Class; animationBehavior_Param : access AnimationBehavior'Class);
+   function Create (sprite_Param : access Sprite'Class; image_Param : access Image'Class; angleInfo_Param : access AngleInfo'Class; animationBehavior_Param : access AnimationBehavior'Class) return HackRotationSpriteIndexedAnimation_Access;
    function getAnimationSize (This : in out HackRotationSpriteIndexedAnimation) return Integer;
-   procedure paintFrame (This : in out HackRotationSpriteIndexedAnimation; g : Graphics_Access; frame : Integer; x : Integer; y : Integer);
-   procedure paintXY (This : in out HackRotationSpriteIndexedAnimation; g : Graphics_Access; x : Integer; y : Integer);
-   procedure paint (This : in out HackRotationSpriteIndexedAnimation; g : Graphics_Access);
+   procedure paintFrame (This : in out HackRotationSpriteIndexedAnimation; g_Param : access Graphics'Class; frame : Integer; x : Integer; y : Integer);
+   procedure paintXY (This : in out HackRotationSpriteIndexedAnimation; g_Param : access Graphics'Class; x : Integer; y : Integer);
+   procedure paint (This : in out HackRotationSpriteIndexedAnimation; g_Param : access Graphics'Class);
    procedure nextRotation (This : in out HackRotationSpriteIndexedAnimation);
    procedure previousRotation (This : in out HackRotationSpriteIndexedAnimation);
    function getSize (This : in out HackRotationSpriteIndexedAnimation) return Integer;

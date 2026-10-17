@@ -37,8 +37,8 @@ package org.allbinary.media.audio.music.MusicManagerFactory_Package is
 
    procedure Initialize (This : in out MusicManagerFactory'Class);
    function Create return MusicManagerFactory_Access;
-   function createMusicManager (soundList : BasicArrayList_Access) return MusicManager_Access;
-   procedure createMusicManager (soundList : BasicArrayList_Access);
+   function createMusicManager (soundList_Param : access BasicArrayList'Class) return MusicManager_Access;
+   procedure createMusicManager (soundList_Param : access BasicArrayList'Class);
 
 end org.allbinary.media.audio.music.MusicManagerFactory_Package;
 

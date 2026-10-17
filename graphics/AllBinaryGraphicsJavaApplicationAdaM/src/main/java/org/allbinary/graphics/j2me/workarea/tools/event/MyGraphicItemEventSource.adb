@@ -24,21 +24,23 @@ package body org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out MyGraphicItemEventSource'Class; command : Unbounded_String; treeNode : MutableTreeNode_Access) is
+   procedure Initialize (This : in out MyGraphicItemEventSource'Class; command : Unbounded_String; treeNode_Param : access MutableTreeNode'Class) is
+      treeNode : MutableTreeNode_Access := MutableTreeNode_Access (treeNode_Param);
    begin
       Initialize_Fields (This);
         This.command := command;
         This.treeNode := treeNode;
    end Initialize;
 
-   function Create (command : Unbounded_String; treeNode : MutableTreeNode_Access) return MyGraphicItemEventSource_Access is
+   function Create (command : Unbounded_String; treeNode_Param : access MutableTreeNode'Class) return MyGraphicItemEventSource_Access is
       This : constant MyGraphicItemEventSource_Access := new MyGraphicItemEventSource;
    begin
-      MyGraphicItemEventSource_Package.Initialize (This.all, command, treeNode);
+      MyGraphicItemEventSource_Package.Initialize (This.all, command, treeNode_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out MyGraphicItemEventSource'Class; command : Unbounded_String; angle : Long_Float; treeNode : MutableTreeNode_Access) is
+   procedure Initialize (This : in out MyGraphicItemEventSource'Class; command : Unbounded_String; angle : Long_Float; treeNode_Param : access MutableTreeNode'Class) is
+      treeNode : MutableTreeNode_Access := MutableTreeNode_Access (treeNode_Param);
    begin
       Initialize_Fields (This);
         This.command := command;
@@ -46,10 +48,10 @@ package body org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent
         This.setAngle (angle);
    end Initialize;
 
-   function Create (command : Unbounded_String; angle : Long_Float; treeNode : MutableTreeNode_Access) return MyGraphicItemEventSource_Access is
+   function Create (command : Unbounded_String; angle : Long_Float; treeNode_Param : access MutableTreeNode'Class) return MyGraphicItemEventSource_Access is
       This : constant MyGraphicItemEventSource_Access := new MyGraphicItemEventSource;
    begin
-      MyGraphicItemEventSource_Package.Initialize (This.all, command, angle, treeNode);
+      MyGraphicItemEventSource_Package.Initialize (This.all, command, angle, treeNode_Param);
       return This;
    end Create;
 

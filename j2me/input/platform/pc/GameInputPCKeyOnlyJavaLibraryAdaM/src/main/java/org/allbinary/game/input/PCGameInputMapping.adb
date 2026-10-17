@@ -34,9 +34,10 @@ package body org.allbinary.game.input.PCGameInputMapping_Package is
    end Create;
 
    --  throws Exception
-   procedure init (This : in out PCGameInputMapping; abeClientInformation : AbeClientInformationInterface_Access) is
+   procedure init (This : in out PCGameInputMapping; abeClientInformation_Param : access AbeClientInformationInterface'Class) is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
    begin
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.INIT);
+        This.logUtil.putF (This.commonStrings.START, PCGameInputMapping_Access'(This'Unchecked_Access), This.commonStrings.INIT);
         PCKeyFactory_Package.getInstance;
         PersistentInputMapping (This).init (abeClientInformation);
         if ((This.getTotalMapped) = (0)) or else (This.isDefaultNew) then
@@ -45,7 +46,8 @@ package body org.allbinary.game.input.PCGameInputMapping_Package is
         end if;
    end init;
 
-   function isDelete (This : in out PCGameInputMapping; input : Input_Access) return Boolean is
+   function isDelete (This : in out PCGameInputMapping; input_Param : access Input'Class) return Boolean is
+      input : Input_Access := Input_Access (input_Param);
    begin
         if (input) = (PCKeyFactory_Package.getInstance.DEL) then
             return True;
@@ -54,20 +56,21 @@ package body org.allbinary.game.input.PCGameInputMapping_Package is
         end if;
    end isDelete;
 
-   function isSystemInput (This : in out PCGameInputMapping; input : Input_Access) return Boolean is
+   function isSystemInput (This : in out PCGameInputMapping; input_Param : access Input'Class) return Boolean is
+      input : Input_Access := Input_Access (input_Param);
    begin
         return False;
    end isSystemInput;
 
-   procedure isDelete (This : in out PCGameInputMapping; input : Input_Access) is
-      Java_Result : constant Boolean := PCGameInputMapping'Class (This).isDelete (input);
+   procedure isDelete (This : in out PCGameInputMapping; input_Param : access Input'Class) is
+      Java_Result : constant Boolean := PCGameInputMapping'Class (This).isDelete (input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isDelete;
 
-   procedure isSystemInput (This : in out PCGameInputMapping; input : Input_Access) is
-      Java_Result : constant Boolean := PCGameInputMapping'Class (This).isSystemInput (input);
+   procedure isSystemInput (This : in out PCGameInputMapping; input_Param : access Input'Class) is
+      Java_Result : constant Boolean := PCGameInputMapping'Class (This).isSystemInput (input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

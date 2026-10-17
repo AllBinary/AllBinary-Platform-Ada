@@ -76,7 +76,8 @@ package body org.allbinary.media.image.ImagesRatioUtil_Package is
    end getAverage;
 
    --  throws Exception
-   function fudge (This : in out ImagesRatioUtil; bufferedImage : BufferedImage_Access; ratio : Long_Float) return BufferedImage_Access is
+   function fudge (This : in out ImagesRatioUtil; bufferedImage_Param : access BufferedImage'Class; ratio : Long_Float) return BufferedImage_Access is
+      bufferedImage : BufferedImage_Access := BufferedImage_Access (bufferedImage_Param);
       imageRatio : Long_Float;
       point : Point_Access;
       newHeight : Integer;
@@ -102,13 +103,13 @@ package body org.allbinary.media.image.ImagesRatioUtil_Package is
             point.y := (((newHeight) - (bufferedImage.getHeight))) / (2);
         end if;
         commonLabels := CommonLabels_Package.getInstance;
-        This.logUtil.putF (Java_Image ((commonLabels.WIDTH_LABEL) + (bufferedImage.getWidth)) & To_Unbounded_String (" newWidth: ") & Java_Image (newWidth) & Java_Image (commonLabels.HEIGHT_LABEL) & Java_Image (bufferedImage.getHeight) & To_Unbounded_String (" newHeight: ") & Java_Image (newHeight) & To_Unbounded_String (" needed ratio: ") & Java_Image (((Long_Float (newWidth)) / (Long_Float (newHeight)))), This'Unchecked_Access, To_Unbounded_String ("fudge"));
+        This.logUtil.putF (Java_Image ((commonLabels.WIDTH_LABEL) + (bufferedImage.getWidth)) & To_Unbounded_String (" newWidth: ") & Java_Image (newWidth) & Java_Image (commonLabels.HEIGHT_LABEL) & Java_Image (bufferedImage.getHeight) & To_Unbounded_String (" newHeight: ") & Java_Image (newHeight) & To_Unbounded_String (" needed ratio: ") & Java_Image (((Long_Float (newWidth)) / (Long_Float (newHeight)))), ImagesRatioUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("fudge"));
         newBufferedImage := This.imageUtil.create (newWidth, newHeight);
         g := newBufferedImage.createGraphics;
         if (point.x) > (0) then
             firstColumnBufferedImage := bufferedImage.getSubimage (0, 0, 1, bufferedImage.getHeight);
             lastColumnBufferedImage := bufferedImage.getSubimage ((bufferedImage.getWidth) - (1), 0, 1, bufferedImage.getHeight);
-            This.logUtil.putF (To_Unbounded_String ("Draw some columns to fill in gap"), This'Unchecked_Access, To_Unbounded_String ("fudge"));
+            This.logUtil.putF (To_Unbounded_String ("Draw some columns to fill in gap"), ImagesRatioUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("fudge"));
             for index in 0 .. (point.x) - 1 loop
                 g.drawImage (firstColumnBufferedImage, index, 0, null);
                 g.drawImage (lastColumnBufferedImage, (newWidth) - (index), 0, null);
@@ -117,7 +118,7 @@ package body org.allbinary.media.image.ImagesRatioUtil_Package is
         if (point.y) > (0) then
             firstRowBufferedImage := bufferedImage.getSubimage (0, 0, bufferedImage.getWidth, 1);
             lastRowBufferedImage := bufferedImage.getSubimage (0, (bufferedImage.getHeight) - (1), bufferedImage.getWidth, 1);
-            This.logUtil.putF (To_Unbounded_String ("Draw some rows to fill in gap"), This'Unchecked_Access, To_Unbounded_String ("fudge"));
+            This.logUtil.putF (To_Unbounded_String ("Draw some rows to fill in gap"), ImagesRatioUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("fudge"));
             for index in 0 .. (point.y) - 1 loop
                 g.drawImage (firstRowBufferedImage, 0, index, null);
                 g.drawImage (lastRowBufferedImage, 0, (newHeight) - (index), null);
@@ -158,8 +159,8 @@ package body org.allbinary.media.image.ImagesRatioUtil_Package is
       null;
    end getAverage;
 
-   procedure fudge (This : in out ImagesRatioUtil; bufferedImage : BufferedImage_Access; ratio : Long_Float) is
-      Java_Result : constant BufferedImage_Access := ImagesRatioUtil'Class (This).fudge (bufferedImage, ratio);
+   procedure fudge (This : in out ImagesRatioUtil; bufferedImage_Param : access BufferedImage'Class; ratio : Long_Float) is
+      Java_Result : constant BufferedImage_Access := ImagesRatioUtil'Class (This).fudge (bufferedImage_Param, ratio);
       pragma Unreferenced (Java_Result);
    begin
       null;

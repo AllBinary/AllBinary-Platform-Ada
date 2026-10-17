@@ -23,7 +23,8 @@ package body org.allbinary.game.paint.help.BasicInputMappingHelpPaintable_Packag
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BasicInputMappingHelpPaintable'Class; gameInputMappingArray : GameInputMapping_Access_Array_Access; basicColor : BasicColor_Access) is
+   procedure Initialize (This : in out BasicInputMappingHelpPaintable'Class; gameInputMappingArray : GameInputMapping_Access_Array_Access; basicColor_Param : access BasicColor'Class) is
+      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         HelpPaintable_Package.Initialize (This, To_Unbounded_String ("Help Screen"), BasicColorFactory_Package.getInstance.BLACK, basicColor);
         Initialize_Fields (This);
@@ -31,14 +32,16 @@ package body org.allbinary.game.paint.help.BasicInputMappingHelpPaintable_Packag
         This.update (This.NONE, This.NONE);
    end Initialize;
 
-   function Create (gameInputMappingArray : GameInputMapping_Access_Array_Access; basicColor : BasicColor_Access) return BasicInputMappingHelpPaintable_Access is
+   function Create (gameInputMappingArray : GameInputMapping_Access_Array_Access; basicColor_Param : access BasicColor'Class) return BasicInputMappingHelpPaintable_Access is
       This : constant BasicInputMappingHelpPaintable_Access := new BasicInputMappingHelpPaintable;
    begin
-      BasicInputMappingHelpPaintable_Package.Initialize (This.all, gameInputMappingArray, basicColor);
+      BasicInputMappingHelpPaintable_Package.Initialize (This.all, gameInputMappingArray, basicColor_Param);
       return This;
    end Create;
 
-   procedure update (This : in out BasicInputMappingHelpPaintable; selectedGameKey : GameKey_Access; selectedInput : Input_Access) is
+   procedure update (This : in out BasicInputMappingHelpPaintable; selectedGameKey_Param : access GameKey'Class; selectedInput_Param : access Input'Class) is
+      selectedGameKey : GameKey_Access := GameKey_Access (selectedGameKey_Param);
+      selectedInput : Input_Access := Input_Access (selectedInput_Param);
       gameKeyMapping : PersistentInputMapping_Access;
       EQUAL : Unbounded_String;
       stringMaker : StringMaker_Access;
@@ -67,7 +70,8 @@ package body org.allbinary.game.paint.help.BasicInputMappingHelpPaintable_Packag
         HelpPaintable (This).setInputInfoP (keyInfo);
    end update;
 
-   function get (This : in out BasicInputMappingHelpPaintable; keyList : BasicArrayList_Access) return Unbounded_String is
+   function get (This : in out BasicInputMappingHelpPaintable; keyList_Param : access BasicArrayList'Class) return Unbounded_String is
+      keyList : BasicArrayList_Access := BasicArrayList_Access (keyList_Param);
       commonSeps : CommonSeps_Access;
       stringBuffer : StringMaker_Access;
       AND_Id : Unbounded_String;
@@ -99,8 +103,8 @@ package body org.allbinary.game.paint.help.BasicInputMappingHelpPaintable_Packag
         return stringBuffer.toString;
    end get;
 
-   procedure get (This : in out BasicInputMappingHelpPaintable; keyList : BasicArrayList_Access) is
-      Java_Result : constant Unbounded_String := BasicInputMappingHelpPaintable'Class (This).get (keyList);
+   procedure get (This : in out BasicInputMappingHelpPaintable; keyList_Param : access BasicArrayList'Class) is
+      Java_Result : constant Unbounded_String := BasicInputMappingHelpPaintable'Class (This).get (keyList_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

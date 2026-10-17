@@ -43,8 +43,8 @@ package admin.taghelpers.XmlOptionItemsHelperFactory_Package is
 
    procedure Initialize (This : in out XmlOptionItemsHelperFactory'Class);
    function Create return XmlOptionItemsHelperFactory_Access;
-   function getInstance (This : in out XmlOptionItemsHelperFactory; hashMap : HashMap_Access; pageContext : PageContext_Access) return Java_Object_Access;
-   procedure getInstance (This : in out XmlOptionItemsHelperFactory; hashMap : HashMap_Access; pageContext : PageContext_Access);
+   function getInstance (This : in out XmlOptionItemsHelperFactory; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return Java_Object_Access;
+   procedure getInstance (This : in out XmlOptionItemsHelperFactory; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
 
 end admin.taghelpers.XmlOptionItemsHelperFactory_Package;
 

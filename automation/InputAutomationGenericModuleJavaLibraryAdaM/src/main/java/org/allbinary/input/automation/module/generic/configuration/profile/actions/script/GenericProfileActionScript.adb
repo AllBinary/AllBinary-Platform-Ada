@@ -25,7 +25,9 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out GenericProfileActionScript'Class; genericProfileActionJPanel : GenericProfileActionJPanel_Access; node : Node_Access) is
+   procedure Initialize (This : in out GenericProfileActionScript'Class; genericProfileActionJPanel_Param : access GenericProfileActionJPanel'Class; node_Param : access Node'Class) is
+      genericProfileActionJPanel : GenericProfileActionJPanel_Access := GenericProfileActionJPanel_Access (genericProfileActionJPanel_Param);
+      node : Node_Access := Node_Access (node_Param);
       actionScriptNode : Node_Access;
       nodeList : NodeList_Access;
       actionConditionNode : Node_Access;
@@ -49,14 +51,15 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         end if;
    end Initialize;
 
-   function Create (genericProfileActionJPanel : GenericProfileActionJPanel_Access; node : Node_Access) return GenericProfileActionScript_Access is
+   function Create (genericProfileActionJPanel_Param : access GenericProfileActionJPanel'Class; node_Param : access Node'Class) return GenericProfileActionScript_Access is
       This : constant GenericProfileActionScript_Access := new GenericProfileActionScript;
    begin
-      GenericProfileActionScript_Package.Initialize (This.all, genericProfileActionJPanel, node);
+      GenericProfileActionScript_Package.Initialize (This.all, genericProfileActionJPanel_Param, node_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out GenericProfileActionScript'Class; genericProfileActionJPanel : GenericProfileActionJPanel_Access) is
+   procedure Initialize (This : in out GenericProfileActionScript'Class; genericProfileActionJPanel_Param : access GenericProfileActionJPanel'Class) is
+      genericProfileActionJPanel : GenericProfileActionJPanel_Access := GenericProfileActionJPanel_Access (genericProfileActionJPanel_Param);
    begin
       DefaultMutableTreeNode_Package.Initialize (This);
       Initialize_Fields (This);
@@ -64,23 +67,25 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         This.setProfileActionConditionInterfaceVector (BasicArrayListD_Package.Create);
    end Initialize;
 
-   function Create (genericProfileActionJPanel : GenericProfileActionJPanel_Access) return GenericProfileActionScript_Access is
+   function Create (genericProfileActionJPanel_Param : access GenericProfileActionJPanel'Class) return GenericProfileActionScript_Access is
       This : constant GenericProfileActionScript_Access := new GenericProfileActionScript;
    begin
-      GenericProfileActionScript_Package.Initialize (This.all, genericProfileActionJPanel);
+      GenericProfileActionScript_Package.Initialize (This.all, genericProfileActionJPanel_Param);
       return This;
    end Create;
 
-   procedure addCondition (This : in out GenericProfileActionScript; profileActionScriptNodeInterface : ProfileActionScriptNodeInterface_Access) is
+   procedure addCondition (This : in out GenericProfileActionScript; profileActionScriptNodeInterface_Param : access ProfileActionScriptNodeInterface'Class) is
+      profileActionScriptNodeInterface : ProfileActionScriptNodeInterface_Access := ProfileActionScriptNodeInterface_Access (profileActionScriptNodeInterface_Param);
    begin
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("addCondition"));
+        This.logUtil.putF (This.commonStrings.START, GenericProfileActionScript_Access'(This'Unchecked_Access), To_Unbounded_String ("addCondition"));
         This.getProfileActionConditionInterfaceVector.add (profileActionScriptNodeInterface);
         This.add (profileActionScriptNodeInterface);
    end addCondition;
 
-   procedure removeCondition (This : in out GenericProfileActionScript; profileActionScriptNodeInterface : ProfileActionScriptNodeInterface_Access) is
+   procedure removeCondition (This : in out GenericProfileActionScript; profileActionScriptNodeInterface_Param : access ProfileActionScriptNodeInterface'Class) is
+      profileActionScriptNodeInterface : ProfileActionScriptNodeInterface_Access := ProfileActionScriptNodeInterface_Access (profileActionScriptNodeInterface_Param);
    begin
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("removeCondition"));
+        This.logUtil.putF (This.commonStrings.START, GenericProfileActionScript_Access'(This'Unchecked_Access), To_Unbounded_String ("removeCondition"));
         This.getProfileActionConditionInterfaceVector.remove (profileActionScriptNodeInterface);
         This.remove (profileActionScriptNodeInterface);
    end removeCondition;
@@ -89,7 +94,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
       hashMap : HashMap_Access;
    begin
         hashMap := StdUtil_Package.getInstance.createHashMap;
-        This.logUtil.putF (To_Unbounded_String ("HashMap: ") & hashMap.toString, This'Unchecked_Access, To_Unbounded_String ("toHashMap()"));
+        This.logUtil.putF (To_Unbounded_String ("HashMap: ") & hashMap.toString, GenericProfileActionScript_Access'(This'Unchecked_Access), To_Unbounded_String ("toHashMap()"));
         return hashMap;
    end toHashMap;
 
@@ -98,13 +103,15 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         return This.profileActionConditionInterfaceVector;
    end getProfileActionConditionInterfaceVector;
 
-   procedure setProfileActionConditionInterfaceVector (This : in out GenericProfileActionScript; profileActionConditionInterfaceVector : BasicArrayList_Access) is
+   procedure setProfileActionConditionInterfaceVector (This : in out GenericProfileActionScript; profileActionConditionInterfaceVector_Param : access BasicArrayList'Class) is
+      profileActionConditionInterfaceVector : BasicArrayList_Access := BasicArrayList_Access (profileActionConditionInterfaceVector_Param);
    begin
         This.profileActionConditionInterfaceVector := profileActionConditionInterfaceVector;
    end setProfileActionConditionInterfaceVector;
 
    --  throws Exception
-   function toXmlNode (This : in out GenericProfileActionScript; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out GenericProfileActionScript; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       node : Node_Access;
       vector : BasicArrayList_Access;
       size : Integer;
@@ -121,8 +128,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         return node;
    end toXmlNode;
 
-   procedure toXmlNode (This : in out GenericProfileActionScript; document : Document_Access) is
-      Java_Result : constant Node_Access := GenericProfileActionScript'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out GenericProfileActionScript; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := GenericProfileActionScript'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

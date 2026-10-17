@@ -32,33 +32,34 @@ package body org.allbinary.graphics.displayable.MyCanvas_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out MyCanvas'Class; name : Unbounded_String; childNameList : BasicArrayList_Access) is
+   procedure Initialize (This : in out MyCanvas'Class; name : Unbounded_String; childNameList_Param : access BasicArrayList'Class) is
+      childNameList : BasicArrayList_Access := BasicArrayList_Access (childNameList_Param);
    begin
       Canvas_Package.Initialize (This);
       Initialize_Fields (This);
-        This.logUtil.putF (This.commonStrings.CONSTRUCTOR, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
-        This.displayInfo.update (This'Unchecked_Access, This.canvasStrings.CONSTRUCTOR);
+        This.logUtil.putF (This.commonStrings.CONSTRUCTOR, MyCanvas_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
+        This.displayInfo.update (MyCanvas_Access'(This'Unchecked_Access), This.canvasStrings.CONSTRUCTOR);
         This.name := name;
         This.childNameList := childNameList;
         This.commandStack := StdUtil_Package.getInstance.createStack;
    end Initialize;
 
-   function Create (name : Unbounded_String; childNameList : BasicArrayList_Access) return MyCanvas_Access is
+   function Create (name : Unbounded_String; childNameList_Param : access BasicArrayList'Class) return MyCanvas_Access is
       This : constant MyCanvas_Access := new MyCanvas;
    begin
-      MyCanvas_Package.Initialize (This.all, name, childNameList);
+      MyCanvas_Package.Initialize (This.all, name, childNameList_Param);
       return This;
    end Create;
 
    procedure setFullScreenMode (This : in out MyCanvas; mode : Boolean) is
    begin
         Canvas (This).setFullScreenMode (mode);
-        This.displayInfo.update (This'Unchecked_Access, This.canvasStrings.SET_FULL_SCREEN_MODE);
+        This.displayInfo.update (MyCanvas_Access'(This'Unchecked_Access), This.canvasStrings.SET_FULL_SCREEN_MODE);
    end setFullScreenMode;
 
    procedure sizeChanged (This : in out MyCanvas; w : Integer; h : Integer) is
    begin
-        This.displayInfo.update (This'Unchecked_Access, This.canvasStrings.SIZE_CHANGED);
+        This.displayInfo.update (MyCanvas_Access'(This'Unchecked_Access), This.canvasStrings.SIZE_CHANGED);
    end sizeChanged;
 
    function getCommandStack (This : in out MyCanvas) return ABStack_Access is
@@ -66,12 +67,14 @@ package body org.allbinary.graphics.displayable.MyCanvas_Package is
         return This.commandStack;
    end getCommandStack;
 
-   function isCommand (This : in out MyCanvas; command : Command_Access) return Boolean is
+   function isCommand (This : in out MyCanvas; command_Param : access Command'Class) return Boolean is
+      command : Command_Access := Command_Access (command_Param);
    begin
         return This.commandStack.contains (command);
    end isCommand;
 
-   procedure addCommand (This : in out MyCanvas; command : Command_Access) is
+   procedure addCommand (This : in out MyCanvas; command_Param : access Command'Class) is
+      command : Command_Access := Command_Access (command_Param);
    begin
         if not (This.commandStack.contains (command)) then
             This.commandStack.push (command);
@@ -79,7 +82,8 @@ package body org.allbinary.graphics.displayable.MyCanvas_Package is
         end if;
    end addCommand;
 
-   procedure removeCommand (This : in out MyCanvas; command : Command_Access) is
+   procedure removeCommand (This : in out MyCanvas; command_Param : access Command'Class) is
+      command : Command_Access := Command_Access (command_Param);
    begin
         This.commandStack.removeElement (command);
         Canvas (This).removeCommand (command);
@@ -95,7 +99,8 @@ package body org.allbinary.graphics.displayable.MyCanvas_Package is
         end loop;
    end removeAllCommands;
 
-   procedure setCommandListener (This : in out MyCanvas; l : CommandListener_Access) is
+   procedure setCommandListener (This : in out MyCanvas; l_Param : access CommandListener'Class) is
+      l : CommandListener_Access := CommandListener_Access (l_Param);
    begin
         Canvas (This).setCommandListener (l);
         This.commandListener := l;
@@ -118,7 +123,7 @@ package body org.allbinary.graphics.displayable.MyCanvas_Package is
 
    procedure pause (This : in out MyCanvas) is
    begin
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.canvasStrings.PAUSE);
+        This.logUtil.putF (This.commonStrings.START, MyCanvas_Access'(This'Unchecked_Access), This.canvasStrings.PAUSE);
         This.removePauseCommand;
         This.addCommand (MyCommandsFactory_Package.getInstance.RESUME_COMMAND);
         This.setPaused (True);
@@ -126,7 +131,7 @@ package body org.allbinary.graphics.displayable.MyCanvas_Package is
 
    procedure unPause (This : in out MyCanvas) is
    begin
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.canvasStrings.UN_PAUSE);
+        This.logUtil.putF (This.commonStrings.START, MyCanvas_Access'(This'Unchecked_Access), This.canvasStrings.UN_PAUSE);
         This.removeCommand (MyCommandsFactory_Package.getInstance.RESUME_COMMAND);
         This.addCommand (MyCommandsFactory_Package.getInstance.PAUSE_COMMAND);
         This.setPaused (False);
@@ -138,24 +143,27 @@ package body org.allbinary.graphics.displayable.MyCanvas_Package is
         This.displayInfo.process;
    end process;
 
-   procedure paint (This : in out MyCanvas; graphics : Graphics_Access) is
+   procedure paint (This : in out MyCanvas; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         null;
    end paint;
 
-   procedure draw (This : in out MyCanvas; graphics : Graphics_Access) is
+   procedure draw (This : in out MyCanvas; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         null;
    end draw;
 
-   function hasChild (This : in out MyCanvas; displayable : MyCanvas_Access) return Boolean is
+   function hasChild (This : in out MyCanvas; displayable_Param : access MyCanvas'Class) return Boolean is
+      displayable : MyCanvas_Access := MyCanvas_Access (displayable_Param);
    begin
         return This.childNameList.contains (displayable.name);
    end hasChild;
 
    procedure destroy (This : in out MyCanvas) is
    begin
-        This.logUtil.putF (To_Unbounded_String ("Destroyed MyCanvas"), This'Unchecked_Access, To_Unbounded_String ("destroy"));
+        This.logUtil.putF (To_Unbounded_String ("Destroyed MyCanvas"), MyCanvas_Access'(This'Unchecked_Access), To_Unbounded_String ("destroy"));
    end destroy;
 
    procedure setPaused (This : in out MyCanvas; isPaused : Boolean) is
@@ -193,20 +201,21 @@ package body org.allbinary.graphics.displayable.MyCanvas_Package is
         This.touchME.pointerReleased (x, y);
    end pointerReleased;
 
-   procedure nextSong (This : in out MyCanvas; nextSongSound : Sound_Access; leftVolume : Integer; rightVolume : Integer) is
+   procedure nextSong (This : in out MyCanvas; nextSongSound_Param : access Sound'Class; leftVolume : Integer; rightVolume : Integer) is
+      nextSongSound : Sound_Access := Sound_Access (nextSongSound_Param);
    begin
         null;
    end nextSong;
 
-   procedure isCommand (This : in out MyCanvas; command : Command_Access) is
-      Java_Result : constant Boolean := MyCanvas'Class (This).isCommand (command);
+   procedure isCommand (This : in out MyCanvas; command_Param : access Command'Class) is
+      Java_Result : constant Boolean := MyCanvas'Class (This).isCommand (command_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isCommand;
 
-   procedure hasChild (This : in out MyCanvas; displayable : MyCanvas_Access) is
-      Java_Result : constant Boolean := MyCanvas'Class (This).hasChild (displayable);
+   procedure hasChild (This : in out MyCanvas; displayable_Param : access MyCanvas'Class) is
+      Java_Result : constant Boolean := MyCanvas'Class (This).hasChild (displayable_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

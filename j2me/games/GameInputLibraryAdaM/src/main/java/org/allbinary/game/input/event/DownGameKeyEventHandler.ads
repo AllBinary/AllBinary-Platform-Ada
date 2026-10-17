@@ -48,8 +48,8 @@ package org.allbinary.game.input.event.DownGameKeyEventHandler_Package is
    function getInstanceForPlayer (This : in out DownGameKeyEventHandler; playerInputId : Integer) return DownGameKeyEventHandlerBase_Access;
    procedure getInstanceForPlayer (This : in out DownGameKeyEventHandler; playerInputId : Integer);
    procedure removeAllListeners (This : in out DownGameKeyEventHandler);
-   procedure removeListenerSingleThreaded (This : in out DownGameKeyEventHandler; eventListenerInterface : EventListenerInterface_Access);
-   procedure removeListener (This : in out DownGameKeyEventHandler; eventListenerInterface : EventListenerInterface_Access);
+   procedure removeListenerSingleThreaded (This : in out DownGameKeyEventHandler; eventListenerInterface_Param : access EventListenerInterface'Class);
+   procedure removeListener (This : in out DownGameKeyEventHandler; eventListenerInterface_Param : access EventListenerInterface'Class);
 
 end org.allbinary.game.input.event.DownGameKeyEventHandler_Package;
 

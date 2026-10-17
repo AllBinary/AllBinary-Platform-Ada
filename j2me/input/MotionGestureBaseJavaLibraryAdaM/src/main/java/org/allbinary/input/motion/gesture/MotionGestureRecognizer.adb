@@ -52,7 +52,7 @@ package body org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package 
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.CONSTRUCTOR, e);
+            This.logUtil.put (commonStrings.EXCEPTION_Id, MotionGestureRecognizer_Access'(This'Unchecked_Access), commonStrings.CONSTRUCTOR, e);
                 end;
         end;
         This.motionGesturesHandler := BasicMotionGesturesHandler_Access (motionGesturesHandler);
@@ -68,7 +68,8 @@ package body org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package 
    end Create;
 
    --  throws Exception
-   function processPressedMotionEvent (This : in out MotionGestureRecognizer; current : GPoint_Access; deviceId : Integer; button : Integer) return Boolean is
+   function processPressedMotionEvent (This : in out MotionGestureRecognizer; current_Param : access GPoint'Class; deviceId : Integer; button : Integer) return Boolean is
+      current : GPoint_Access := GPoint_Access (current_Param);
       event : MotionGestureEvent_Access;
    begin
         This.intermediate := This.origin;
@@ -81,7 +82,8 @@ package body org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package 
    end processPressedMotionEvent;
 
    --  throws Exception
-   function processReleasedMotionEvent (This : in out MotionGestureRecognizer; current : GPoint_Access; deviceId : Integer; button : Integer) return Boolean is
+   function processReleasedMotionEvent (This : in out MotionGestureRecognizer; current_Param : access GPoint'Class; deviceId : Integer; button : Integer) return Boolean is
+      current : GPoint_Access := GPoint_Access (current_Param);
       event : MotionGestureEvent_Access;
    begin
         event := This.motionEventCircularPool.getInstance (TouchMotionGestureFactory_Package.getInstance.RELEASED);
@@ -92,7 +94,8 @@ package body org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package 
    end processReleasedMotionEvent;
 
    --  throws Exception
-   procedure processDraggedMotionEvent (This : in out MotionGestureRecognizer; current : GPoint_Access; deviceId : Integer; buttonMask : Integer) is
+   procedure processDraggedMotionEvent (This : in out MotionGestureRecognizer; current_Param : access GPoint'Class; deviceId : Integer; buttonMask : Integer) is
+      current : GPoint_Access := GPoint_Access (current_Param);
       minimumMotionGesture : Integer;
       gradient : Long_Float;
       absGradient : Long_Float;
@@ -165,7 +168,8 @@ package body org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package 
    end processDraggedMotionEvent;
 
    --  throws Exception
-   function processMovedMotionEvent (This : in out MotionGestureRecognizer; current : GPoint_Access; deviceId : Integer; button : Integer) return Boolean is
+   function processMovedMotionEvent (This : in out MotionGestureRecognizer; current_Param : access GPoint'Class; deviceId : Integer; button : Integer) return Boolean is
+      current : GPoint_Access := GPoint_Access (current_Param);
       event : MotionGestureEvent_Access;
    begin
         event := This.motionEventCircularPool.getInstance (TouchMotionGestureFactory_Package.getInstance.NO_MOTION);
@@ -176,7 +180,8 @@ package body org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package 
    end processMovedMotionEvent;
 
    --  throws Exception
-   function processScrolledMotionEvent (This : in out MotionGestureRecognizer; current : GPoint_Access; deviceId : Integer; button : Integer) return Boolean is
+   function processScrolledMotionEvent (This : in out MotionGestureRecognizer; current_Param : access GPoint'Class; deviceId : Integer; button : Integer) return Boolean is
+      current : GPoint_Access := GPoint_Access (current_Param);
       touchMotionGestureFactory : TouchMotionGestureFactory_Access;
       newMotionGesture : MotionGestureInput_Access;
       event : MotionGestureEvent_Access;
@@ -200,29 +205,29 @@ package body org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package 
         return This.motionGesturesHandler;
    end getMotionGesturesHandler;
 
-   procedure processPressedMotionEvent (This : in out MotionGestureRecognizer; current : GPoint_Access; deviceId : Integer; button : Integer) is
-      Java_Result : constant Boolean := MotionGestureRecognizer'Class (This).processPressedMotionEvent (current, deviceId, button);
+   procedure processPressedMotionEvent (This : in out MotionGestureRecognizer; current_Param : access GPoint'Class; deviceId : Integer; button : Integer) is
+      Java_Result : constant Boolean := MotionGestureRecognizer'Class (This).processPressedMotionEvent (current_Param, deviceId, button);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end processPressedMotionEvent;
 
-   procedure processReleasedMotionEvent (This : in out MotionGestureRecognizer; current : GPoint_Access; deviceId : Integer; button : Integer) is
-      Java_Result : constant Boolean := MotionGestureRecognizer'Class (This).processReleasedMotionEvent (current, deviceId, button);
+   procedure processReleasedMotionEvent (This : in out MotionGestureRecognizer; current_Param : access GPoint'Class; deviceId : Integer; button : Integer) is
+      Java_Result : constant Boolean := MotionGestureRecognizer'Class (This).processReleasedMotionEvent (current_Param, deviceId, button);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end processReleasedMotionEvent;
 
-   procedure processMovedMotionEvent (This : in out MotionGestureRecognizer; current : GPoint_Access; deviceId : Integer; button : Integer) is
-      Java_Result : constant Boolean := MotionGestureRecognizer'Class (This).processMovedMotionEvent (current, deviceId, button);
+   procedure processMovedMotionEvent (This : in out MotionGestureRecognizer; current_Param : access GPoint'Class; deviceId : Integer; button : Integer) is
+      Java_Result : constant Boolean := MotionGestureRecognizer'Class (This).processMovedMotionEvent (current_Param, deviceId, button);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end processMovedMotionEvent;
 
-   procedure processScrolledMotionEvent (This : in out MotionGestureRecognizer; current : GPoint_Access; deviceId : Integer; button : Integer) is
-      Java_Result : constant Boolean := MotionGestureRecognizer'Class (This).processScrolledMotionEvent (current, deviceId, button);
+   procedure processScrolledMotionEvent (This : in out MotionGestureRecognizer; current_Param : access GPoint'Class; deviceId : Integer; button : Integer) is
+      Java_Result : constant Boolean := MotionGestureRecognizer'Class (This).processScrolledMotionEvent (current_Param, deviceId, button);
       pragma Unreferenced (Java_Result);
    begin
       null;

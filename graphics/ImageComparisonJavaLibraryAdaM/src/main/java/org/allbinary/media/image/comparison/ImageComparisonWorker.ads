@@ -69,12 +69,12 @@ package org.allbinary.media.image.comparison.ImageComparisonWorker_Package is
       index2 : Integer;
    end record;
 
-   procedure Initialize (This : in out ImageComparisonWorker'Class; imageComparatorConstraintsInterface : ImageComparatorConstraintsInterface_Access);
-   function Create (imageComparatorConstraintsInterface : ImageComparatorConstraintsInterface_Access) return ImageComparisonWorker_Access;
+   procedure Initialize (This : in out ImageComparisonWorker'Class; imageComparatorConstraintsInterface_Param : access ImageComparatorConstraintsInterface'Class);
+   function Create (imageComparatorConstraintsInterface_Param : access ImageComparatorConstraintsInterface'Class) return ImageComparisonWorker_Access;
    function isRunning (This : in out ImageComparisonWorker) return Boolean;
    procedure setRunning (This : in out ImageComparisonWorker; running : Boolean);
-   procedure onCaptureEvent (This : in out ImageComparisonWorker; capturedImageWorkerResultsEvent : CapturedImageWorkerResultsEvent_Access);
-   procedure onEvent (This : in out ImageComparisonWorker; allBinaryEventObject : AllBinaryEventObject_Access);
+   procedure onCaptureEvent (This : in out ImageComparisonWorker; capturedImageWorkerResultsEvent_Param : access CapturedImageWorkerResultsEvent'Class);
+   procedure onEvent (This : in out ImageComparisonWorker; allBinaryEventObject_Param : access AllBinaryEventObject'Class);
    procedure run (This : in out ImageComparisonWorker);
 
 end org.allbinary.media.image.comparison.ImageComparisonWorker_Package;

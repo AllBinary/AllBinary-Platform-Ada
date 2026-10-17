@@ -23,23 +23,24 @@ package body org.allbinary.logic.communication.smtp.info.StoreEmailInfo_Package 
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out StoreEmailInfo'Class; storeFrontInterface : StoreFrontInterface_Access; subject : Unbounded_String; textBody : Unbounded_String) is
+   procedure Initialize (This : in out StoreEmailInfo'Class; storeFrontInterface_Param : access StoreFrontInterface'Class; subject : Unbounded_String; textBody : Unbounded_String) is
+      storeFrontInterface : StoreFrontInterface_Access := StoreFrontInterface_Access (storeFrontInterface_Param);
       commonStrings : CommonStrings_Access;
    begin
         BasicEmailInfo_Package.Initialize (This, subject, textBody);
         Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.putF (commonStrings.START, This'Unchecked_Access, commonStrings.CONSTRUCTOR);
+            This.logUtil.putF (commonStrings.START, StoreEmailInfo_Access'(This'Unchecked_Access), commonStrings.CONSTRUCTOR);
         end if;
         This.storeFrontInterface := storeFrontInterface;
         This.init;
    end Initialize;
 
-   function Create (storeFrontInterface : StoreFrontInterface_Access; subject : Unbounded_String; textBody : Unbounded_String) return StoreEmailInfo_Access is
+   function Create (storeFrontInterface_Param : access StoreFrontInterface'Class; subject : Unbounded_String; textBody : Unbounded_String) return StoreEmailInfo_Access is
       This : constant StoreEmailInfo_Access := new StoreEmailInfo;
    begin
-      StoreEmailInfo_Package.Initialize (This.all, storeFrontInterface, subject, textBody);
+      StoreEmailInfo_Package.Initialize (This.all, storeFrontInterface_Param, subject, textBody);
       return This;
    end Create;
 

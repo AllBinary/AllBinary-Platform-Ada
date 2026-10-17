@@ -23,17 +23,18 @@ package body org.allbinary.media.image.comparison.motion.MotionRectangle_Package
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out MotionRectangle'Class; rectangle : Rectangle_Access) is
+   procedure Initialize (This : in out MotionRectangle'Class; rectangle_Param : access Rectangle'Class) is
+      rectangle : Rectangle_Access := Rectangle_Access (rectangle_Param);
    begin
       Initialize_Fields (This);
         This.setRectangle (rectangle);
         This.setPixelDeltaVector (BasicArrayListD_Package.Create);
    end Initialize;
 
-   function Create (rectangle : Rectangle_Access) return MotionRectangle_Access is
+   function Create (rectangle_Param : access Rectangle'Class) return MotionRectangle_Access is
       This : constant MotionRectangle_Access := new MotionRectangle;
    begin
-      MotionRectangle_Package.Initialize (This.all, rectangle);
+      MotionRectangle_Package.Initialize (This.all, rectangle_Param);
       return This;
    end Create;
 
@@ -42,7 +43,8 @@ package body org.allbinary.media.image.comparison.motion.MotionRectangle_Package
         return This.rectangle;
    end getRectangle;
 
-   procedure setRectangle (This : in out MotionRectangle; rectangle : Rectangle_Access) is
+   procedure setRectangle (This : in out MotionRectangle; rectangle_Param : access Rectangle'Class) is
+      rectangle : Rectangle_Access := Rectangle_Access (rectangle_Param);
    begin
         This.rectangle := rectangle;
    end setRectangle;
@@ -52,7 +54,8 @@ package body org.allbinary.media.image.comparison.motion.MotionRectangle_Package
         return This.pixelDeltaVector;
    end getPixelDeltaVector;
 
-   procedure setPixelDeltaVector (This : in out MotionRectangle; pixelDeltaVector : BasicArrayList_Access) is
+   procedure setPixelDeltaVector (This : in out MotionRectangle; pixelDeltaVector_Param : access BasicArrayList'Class) is
+      pixelDeltaVector : BasicArrayList_Access := BasicArrayList_Access (pixelDeltaVector_Param);
    begin
         This.pixelDeltaVector := pixelDeltaVector;
    end setPixelDeltaVector;

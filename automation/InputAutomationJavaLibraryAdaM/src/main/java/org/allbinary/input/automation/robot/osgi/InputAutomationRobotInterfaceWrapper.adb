@@ -22,16 +22,17 @@ package body org.allbinary.input.automation.robot.osgi.InputAutomationRobotInter
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out InputAutomationRobotInterfaceWrapper'Class; inputRobotInterface : InputRobotInterface_Access) is
+   procedure Initialize (This : in out InputAutomationRobotInterfaceWrapper'Class; inputRobotInterface_Param : access InputRobotInterface'Class) is
+      inputRobotInterface : InputRobotInterface_Access := InputRobotInterface_Access (inputRobotInterface_Param);
    begin
       Initialize_Fields (This);
         This.setInputRobotInterface (inputRobotInterface);
    end Initialize;
 
-   function Create (inputRobotInterface : InputRobotInterface_Access) return InputAutomationRobotInterfaceWrapper_Access is
+   function Create (inputRobotInterface_Param : access InputRobotInterface'Class) return InputAutomationRobotInterfaceWrapper_Access is
       This : constant InputAutomationRobotInterfaceWrapper_Access := new InputAutomationRobotInterfaceWrapper;
    begin
-      InputAutomationRobotInterfaceWrapper_Package.Initialize (This.all, inputRobotInterface);
+      InputAutomationRobotInterfaceWrapper_Package.Initialize (This.all, inputRobotInterface_Param);
       return This;
    end Create;
 
@@ -40,7 +41,8 @@ package body org.allbinary.input.automation.robot.osgi.InputAutomationRobotInter
         return This.inputRobotInterface;
    end getInputRobotInterface;
 
-   procedure setInputRobotInterface (This : in out InputAutomationRobotInterfaceWrapper; inputRobotInterface : InputRobotInterface_Access) is
+   procedure setInputRobotInterface (This : in out InputAutomationRobotInterfaceWrapper; inputRobotInterface_Param : access InputRobotInterface'Class) is
+      inputRobotInterface : InputRobotInterface_Access := InputRobotInterface_Access (inputRobotInterface_Param);
    begin
         This.inputRobotInterface := inputRobotInterface;
    end setInputRobotInterface;

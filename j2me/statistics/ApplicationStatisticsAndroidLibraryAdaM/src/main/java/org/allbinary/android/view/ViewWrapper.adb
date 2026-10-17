@@ -22,17 +22,18 @@ package body org.allbinary.android.view.ViewWrapper_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ViewWrapper'Class; view : View_Access) is
+   procedure Initialize (This : in out ViewWrapper'Class; view_Param : access View'Class) is
+      view : View_Access := View_Access (view_Param);
    begin
       BaseViewWrapper_Package.Initialize (This);
       Initialize_Fields (This);
         This.view := view;
    end Initialize;
 
-   function Create (view : View_Access) return ViewWrapper_Access is
+   function Create (view_Param : access View'Class) return ViewWrapper_Access is
       This : constant ViewWrapper_Access := new ViewWrapper;
    begin
-      ViewWrapper_Package.Initialize (This.all, view);
+      ViewWrapper_Package.Initialize (This.all, view_Param);
       return This;
    end Create;
 

@@ -54,15 +54,15 @@ package org.allbinary.game.layer.weapon.CollidableDamageWeaponBehavior_Package i
 
    procedure Initialize (This : in out CollidableDamageWeaponBehavior'Class; collidable : Boolean);
    function Create (collidable : Boolean) return CollidableDamageWeaponBehavior_Access;
-   procedure init (This : in out CollidableDamageWeaponBehavior; sourceLayerInterface : AllBinaryLayer_Access);
-   function isCollision (This : in out CollidableDamageWeaponBehavior; ownerLayer : CollidableCompositeLayer_Access; collisionLayer : CollidableCompositeLayer_Access) return Boolean;
-   procedure isCollision (This : in out CollidableDamageWeaponBehavior; ownerLayer : CollidableCompositeLayer_Access; collisionLayer : CollidableCompositeLayer_Access);
-   procedure collide (This : in out CollidableDamageWeaponBehavior; ownerLayer : CollidableCompositeLayer_Access; collisionLayer : CollidableCompositeLayer_Access);
-   function isCollisionInterface (This : in out CollidableDamageWeaponBehavior; ownerLayer : CollidableCompositeLayer_Access; collidableInterfaceCompositeInterface : CollidableInterfaceCompositeInterface_Access) return Boolean;
-   procedure isCollisionInterface (This : in out CollidableDamageWeaponBehavior; ownerLayer : CollidableCompositeLayer_Access; collidableInterfaceCompositeInterface : CollidableInterfaceCompositeInterface_Access);
-   procedure collideInterface (This : in out CollidableDamageWeaponBehavior; ownerLayer : CollidableCompositeLayer_Access; collidableInterfaceCompositeInterface : CollidableInterfaceCompositeInterface_Access);
-   function getCollisionTypeWith (This : in out CollidableDamageWeaponBehavior; layerInterface : AllBinaryLayer_Access) return CollisionType_Access;
-   procedure getCollisionTypeWith (This : in out CollidableDamageWeaponBehavior; layerInterface : AllBinaryLayer_Access);
+   procedure init (This : in out CollidableDamageWeaponBehavior; sourceLayerInterface_Param : access AllBinaryLayer'Class);
+   function isCollision (This : in out CollidableDamageWeaponBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collisionLayer_Param : access CollidableCompositeLayer'Class) return Boolean;
+   procedure isCollision (This : in out CollidableDamageWeaponBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collisionLayer_Param : access CollidableCompositeLayer'Class);
+   procedure collide (This : in out CollidableDamageWeaponBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collisionLayer_Param : access CollidableCompositeLayer'Class);
+   function isCollisionInterface (This : in out CollidableDamageWeaponBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableInterfaceCompositeInterface'Class) return Boolean;
+   procedure isCollisionInterface (This : in out CollidableDamageWeaponBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableInterfaceCompositeInterface'Class);
+   procedure collideInterface (This : in out CollidableDamageWeaponBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableInterfaceCompositeInterface'Class);
+   function getCollisionTypeWith (This : in out CollidableDamageWeaponBehavior; layerInterface_Param : access AllBinaryLayer'Class) return CollisionType_Access;
+   procedure getCollisionTypeWith (This : in out CollidableDamageWeaponBehavior; layerInterface_Param : access AllBinaryLayer'Class);
    function isCollided (This : in out CollidableDamageWeaponBehavior) return Boolean;
    procedure setCollided (This : in out CollidableDamageWeaponBehavior; collided : Boolean);
 

@@ -114,19 +114,19 @@ package org.allbinary.game.input.form.BuildingRTSFormInput_Package is
 
    procedure Initialize (This : in out BuildingRTSFormInput'Class; groupInterface : Group_Access_Array_Access; isUnitProducer : Boolean);
    function Create (groupInterface : Group_Access_Array_Access; isUnitProducer : Boolean) return BuildingRTSFormInput_Access;
-   procedure setAllBinaryGameLayerManager (This : in out BuildingRTSFormInput; allBinaryGameLayerManager : AllBinaryGameLayerManager_Access);
-   procedure processGameSpecific (This : in out BuildingRTSFormInput; associatedRtsLayer : CollidableDestroyableDamageableLayer_Access; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; layerManager : AllBinaryLayerManager_Access; item : ABCustomItem_Access; itemIndex : Integer);
+   procedure setAllBinaryGameLayerManager (This : in out BuildingRTSFormInput; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class);
+   procedure processGameSpecific (This : in out BuildingRTSFormInput; associatedRtsLayer_Param : access CollidableDestroyableDamageableLayer'Class; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; layerManager_Param : access AllBinaryLayerManager'Class; item_Param : access ABCustomItem'Class; itemIndex : Integer);
    function isPositionBlocked (This : in out BuildingRTSFormInput) return Boolean;
-   function isDemoLocked (This : in out BuildingRTSFormInput; item : ABCustomItem_Access) return Boolean;
-   procedure isDemoLocked (This : in out BuildingRTSFormInput; item : ABCustomItem_Access);
-   procedure buildFromMotionInput (This : in out BuildingRTSFormInput; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; layerManager : AllBinaryLayerManager_Access; item : ABCustomItem_Access; itemIndex : Integer);
-   function attemptBuild (This : in out BuildingRTSFormInput; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; layerManager : AllBinaryLayerManager_Access; layerInterface : RTSLayer_Access; itemIndex : Integer) return Boolean;
-   procedure attemptBuild (This : in out BuildingRTSFormInput; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; layerManager : AllBinaryLayerManager_Access; layerInterface : RTSLayer_Access; itemIndex : Integer);
-   function isBuildAttemptValid (This : in out BuildingRTSFormInput; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; layerInterface : RTSLayer_Access) return Boolean;
-   procedure isBuildAttemptValid (This : in out BuildingRTSFormInput; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; layerInterface : RTSLayer_Access);
-   procedure add (This : in out BuildingRTSFormInput; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; layerManager : AllBinaryLayerManager_Access; layerInterface : RTSLayer_Access);
-   function isSurroundingCellsOffMap (This : in out BuildingRTSFormInput; layerInterface : RTSLayer_Access) return Boolean;
-   procedure isSurroundingCellsOffMap (This : in out BuildingRTSFormInput; layerInterface : RTSLayer_Access);
+   function isDemoLocked (This : in out BuildingRTSFormInput; item_Param : access ABCustomItem'Class) return Boolean;
+   procedure isDemoLocked (This : in out BuildingRTSFormInput; item_Param : access ABCustomItem'Class);
+   procedure buildFromMotionInput (This : in out BuildingRTSFormInput; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; layerManager_Param : access AllBinaryLayerManager'Class; item_Param : access ABCustomItem'Class; itemIndex : Integer);
+   function attemptBuild (This : in out BuildingRTSFormInput; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; layerManager_Param : access AllBinaryLayerManager'Class; layerInterface_Param : access RTSLayer'Class; itemIndex : Integer) return Boolean;
+   procedure attemptBuild (This : in out BuildingRTSFormInput; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; layerManager_Param : access AllBinaryLayerManager'Class; layerInterface_Param : access RTSLayer'Class; itemIndex : Integer);
+   function isBuildAttemptValid (This : in out BuildingRTSFormInput; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; layerInterface_Param : access RTSLayer'Class) return Boolean;
+   procedure isBuildAttemptValid (This : in out BuildingRTSFormInput; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; layerInterface_Param : access RTSLayer'Class);
+   procedure add (This : in out BuildingRTSFormInput; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; layerManager_Param : access AllBinaryLayerManager'Class; layerInterface_Param : access RTSLayer'Class);
+   function isSurroundingCellsOffMap (This : in out BuildingRTSFormInput; layerInterface_Param : access RTSLayer'Class) return Boolean;
+   procedure isSurroundingCellsOffMap (This : in out BuildingRTSFormInput; layerInterface_Param : access RTSLayer'Class);
 
 end org.allbinary.game.input.form.BuildingRTSFormInput_Package;
 

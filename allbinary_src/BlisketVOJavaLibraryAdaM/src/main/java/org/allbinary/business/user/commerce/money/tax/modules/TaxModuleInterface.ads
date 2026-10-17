@@ -32,8 +32,8 @@ package org.allbinary.business.user.commerce.money.tax.modules.TaxModuleInterfac
    type TaxModuleInterface_Access is access all TaxModuleInterface'Class;
    type TaxModuleInterface_Access_Array is array (Natural range <>) of TaxModuleInterface_Access;
    type TaxModuleInterface_Access_Array_Access is access all TaxModuleInterface_Access_Array;
-   function getTaxRate (This : in out TaxModuleInterface; streetAddress : StreetAddress_Access; storeFrontInterface : StoreFrontInterface_Access) return Float is abstract;
-   function isValid (This : in out TaxModuleInterface; streetAddress : StreetAddress_Access; storeFrontInterface : StoreFrontInterface_Access) return Boolean is abstract;
+   function getTaxRate (This : in out TaxModuleInterface; streetAddress_Param : access StreetAddress'Class; storeFrontInterface_Param : access StoreFrontInterface'Class) return Float is abstract;
+   function isValid (This : in out TaxModuleInterface; streetAddress_Param : access StreetAddress'Class; storeFrontInterface_Param : access StoreFrontInterface'Class) return Boolean is abstract;
 
 end org.allbinary.business.user.commerce.money.tax.modules.TaxModuleInterface_Package;
 

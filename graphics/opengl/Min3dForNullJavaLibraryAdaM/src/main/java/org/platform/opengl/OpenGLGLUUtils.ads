@@ -29,10 +29,10 @@ package org.platform.opengl.OpenGLGLUUtils_Package is
    procedure Initialize (This : in out OpenGLGLUUtils'Class);
    function Create return OpenGLGLUUtils_Access;
    function getInstance return OpenGLGLUUtils_Access;
-   function makeByteBuffer (This : in out OpenGLGLUUtils; bmp : OpenGLBitmap_Access; flip : Boolean) return ByteBuffer_Access;
-   procedure makeByteBuffer (This : in out OpenGLGLUUtils; bmp : OpenGLBitmap_Access; flip : Boolean);
-   procedure texImage2D (This : in out OpenGLGLUUtils; gl : GL10_Access; glVersion : Unbounded_String; target : Integer; level : Integer; generateMipMap : Boolean; openGLESImage : OpenGLESImage_Access; border : Integer; flip : Boolean);
-   procedure texImage2D (This : in out OpenGLGLUUtils; gl : GL10_Access; glVersion : Unbounded_String; target : Integer; level : Integer; generateMipMap : Boolean; bitmap : OpenGLBitmap_Access; border : Integer; flip : Boolean);
+   function makeByteBuffer (This : in out OpenGLGLUUtils; bmp_Param : access OpenGLBitmap'Class; flip : Boolean) return ByteBuffer_Access;
+   procedure makeByteBuffer (This : in out OpenGLGLUUtils; bmp_Param : access OpenGLBitmap'Class; flip : Boolean);
+   procedure texImage2D (This : in out OpenGLGLUUtils; gl_Param : access GL10'Class; glVersion : Unbounded_String; target : Integer; level : Integer; generateMipMap : Boolean; openGLESImage_Param : access OpenGLESImage'Class; border : Integer; flip : Boolean);
+   procedure texImage2D (This : in out OpenGLGLUUtils; gl_Param : access GL10'Class; glVersion : Unbounded_String; target : Integer; level : Integer; generateMipMap : Boolean; bitmap_Param : access OpenGLBitmap'Class; border : Integer; flip : Boolean);
 
 end org.platform.opengl.OpenGLGLUUtils_Package;
 

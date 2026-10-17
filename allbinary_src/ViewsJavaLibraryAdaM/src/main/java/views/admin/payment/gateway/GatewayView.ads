@@ -48,9 +48,9 @@ package views.admin.payment.gateway.GatewayView_Package is
       logUtil : LogUtil_Access;
    end record;
 
-   procedure Initialize (This : in out GatewayView'Class; transformInfoInterface : TransformInfoInterface_Access);
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return GatewayView_Access;
-   procedure getFormData (This : in out GatewayView; request : HttpServletRequest_Access);
+   procedure Initialize (This : in out GatewayView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return GatewayView_Access;
+   procedure getFormData (This : in out GatewayView; request_Param : access HttpServletRequest'Class);
    function view (This : in out GatewayView) return Unbounded_String;
 
 end views.admin.payment.gateway.GatewayView_Package;

@@ -37,7 +37,8 @@ package body org.allbinary.business.user.commerce.shipping.modules.PickUpShippin
       return This;
    end Create;
 
-   function getCost (This : in out PickUpShippingModule; order : OrderInterface_Access) return Money_Access is
+   function getCost (This : in out PickUpShippingModule; order_Param : access OrderInterface'Class) return Money_Access is
+      order : OrderInterface_Access := OrderInterface_Access (order_Param);
    begin
         return Money_Package.Create;
    end getCost;
@@ -52,8 +53,8 @@ package body org.allbinary.business.user.commerce.shipping.modules.PickUpShippin
         return This.name;
    end getName;
 
-   procedure getCost (This : in out PickUpShippingModule; order : OrderInterface_Access) is
-      Java_Result : constant Money_Access := PickUpShippingModule'Class (This).getCost (order);
+   procedure getCost (This : in out PickUpShippingModule; order_Param : access OrderInterface'Class) is
+      Java_Result : constant Money_Access := PickUpShippingModule'Class (This).getCost (order_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

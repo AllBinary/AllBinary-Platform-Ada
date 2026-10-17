@@ -48,7 +48,8 @@ package body org.allbinary.graphics.j2me.workarea.properties.PropertiesJPanel_Pa
       return This;
    end Create;
 
-   procedure set (This : in out PropertiesJPanel; panel : JPanel_Access) is
+   procedure set (This : in out PropertiesJPanel; panel_Param : access JPanel'Class) is
+      panel : JPanel_Access := JPanel_Access (panel_Param);
    begin
         This.workAreaPropertiesJPanel.add (panel);
         This.repaint;

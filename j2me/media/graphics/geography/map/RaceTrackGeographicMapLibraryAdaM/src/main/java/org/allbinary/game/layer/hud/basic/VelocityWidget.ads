@@ -58,14 +58,14 @@ package org.allbinary.game.layer.hud.basic.VelocityWidget_Package is
       offset2 : Integer;
    end record;
 
-   procedure Initialize (This : in out VelocityWidget'Class; powerOfTenVelocity : Integer; location : Integer; direction : Integer; basicColor : BasicColor_Access);
-   function Create (powerOfTenVelocity : Integer; location : Integer; direction : Integer; basicColor : BasicColor_Access) return VelocityWidget_Access;
-   procedure updateMeasurement (This : in out VelocityWidget; graphics : Graphics_Access);
+   procedure Initialize (This : in out VelocityWidget'Class; powerOfTenVelocity : Integer; location : Integer; direction : Integer; basicColor_Param : access BasicColor'Class);
+   function Create (powerOfTenVelocity : Integer; location : Integer; direction : Integer; basicColor_Param : access BasicColor'Class) return VelocityWidget_Access;
+   procedure updateMeasurement (This : in out VelocityWidget; graphics_Param : access Graphics'Class);
    function get (This : in out VelocityWidget) return Integer;
    procedure add (This : in out VelocityWidget; value : Integer);
    procedure set (This : in out VelocityWidget; value : Integer);
    procedure reduce (This : in out VelocityWidget; value : Integer);
-   procedure paint (This : in out VelocityWidget; graphics : Graphics_Access);
+   procedure paint (This : in out VelocityWidget; graphics_Param : access Graphics'Class);
 
 end org.allbinary.game.layer.hud.basic.VelocityWidget_Package;
 

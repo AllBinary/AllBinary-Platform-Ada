@@ -25,7 +25,8 @@ package body org.allbinary.time.StupidTimer_Package is
    end Create;
 
 
-   function visitBool (This : in out StupidTimer; visitorInterface : Visitor_Access) return Boolean is
+   function visitBool (This : in out StupidTimer; visitorInterface_Param : access Visitor'Class) return Boolean is
+      visitorInterface : Visitor_Access := Visitor_Access (visitorInterface_Param);
       result : Boolean;
       result2 : Boolean;
    begin
@@ -35,22 +36,24 @@ package body org.allbinary.time.StupidTimer_Package is
    end visitBool;
 
    --  throws Exception
-   procedure visit (This : in out StupidTimer; visitorInterface : Visitor_Access; timeDelayHelper : TimeDelayHelper_Access) is
+   procedure visit (This : in out StupidTimer; visitorInterface_Param : access Visitor'Class; timeDelayHelper_Param : access TimeDelayHelper'Class) is
+      visitorInterface : Visitor_Access := Visitor_Access (visitorInterface_Param);
+      timeDelayHelper : TimeDelayHelper_Access := TimeDelayHelper_Access (timeDelayHelper_Param);
       tookTooLong : Boolean;
       WAITING_FOR : Unbounded_String;
       index : Integer;
    begin
         tookTooLong := False;
         WAITING_FOR := To_Unbounded_String ("Waiting for: ");
-        PreLogUtil_Package.put (StringMaker_Package.Create.append (WAITING_FOR).append (StringUtil_Package.getInstance.toString (visitorInterface)).toString, This'Unchecked_Access, This.commonStrings.VISIT);
+        PreLogUtil_Package.put (StringMaker_Package.Create.append (WAITING_FOR).append (StringUtil_Package.getInstance.toString (visitorInterface)).toString, StupidTimer_Access'(This'Unchecked_Access), This.commonStrings.VISIT);
         index := 0;
         while This.visitBool (visitorInterface) loop
             if ((index) rem (10)) = (0) then
-                PreLogUtil_Package.put (StringMaker_Package.Create.append (WAITING_FOR).appendint (index).toString, This'Unchecked_Access, This.commonStrings.VISIT);
+                PreLogUtil_Package.put (StringMaker_Package.Create.append (WAITING_FOR).appendint (index).toString, StupidTimer_Access'(This'Unchecked_Access), This.commonStrings.VISIT);
             end if;
             index := index + 1;
             begin  --  synchronized
-                This.threadObjectUtil.waitObjectFor (This'Unchecked_Access, 1800);
+                This.threadObjectUtil.waitObjectFor (StupidTimer_Access'(This'Unchecked_Access), 1800);
             end;
             if timeDelayHelper.isTimeTNT then
                 tookTooLong := True;
@@ -58,9 +61,9 @@ package body org.allbinary.time.StupidTimer_Package is
             end if;
         end loop;
         if tookTooLong then
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.VISIT, Java_New_Exception ("Exception", StringMaker_Package.Create.append (To_Unbounded_String ("Took Too Long: ")).append (StringUtil_Package.getInstance.toString (visitorInterface)).toString));
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, StupidTimer_Access'(This'Unchecked_Access), This.commonStrings.VISIT, Java_New_Exception ("Exception", StringMaker_Package.Create.append (To_Unbounded_String ("Took Too Long: ")).append (StringUtil_Package.getInstance.toString (visitorInterface)).toString));
         else
-            PreLogUtil_Package.put (timeDelayHelper.toString, This'Unchecked_Access, This.commonStrings.VISIT);
+            PreLogUtil_Package.put (timeDelayHelper.toString, StupidTimer_Access'(This'Unchecked_Access), This.commonStrings.VISIT);
         end if;
    end visit;
 
@@ -68,12 +71,12 @@ package body org.allbinary.time.StupidTimer_Package is
    procedure stopWaiting (This : in out StupidTimer) is
    begin
         begin  --  synchronized
-            This.threadObjectUtil.notifyObject (This'Unchecked_Access);
+            This.threadObjectUtil.notifyObject (StupidTimer_Access'(This'Unchecked_Access));
         end;
    end stopWaiting;
 
-   procedure visitBool (This : in out StupidTimer; visitorInterface : Visitor_Access) is
-      Java_Result : constant Boolean := StupidTimer'Class (This).visitBool (visitorInterface);
+   procedure visitBool (This : in out StupidTimer; visitorInterface_Param : access Visitor'Class) is
+      Java_Result : constant Boolean := StupidTimer'Class (This).visitBool (visitorInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -25,17 +25,19 @@ package body org.allbinary.game.displayable.canvas.CommandRunnable_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CommandRunnable'Class; commandFormInputProcessor : CommandFormInputProcessor_Access; command : Command_Access) is
+   procedure Initialize (This : in out CommandRunnable'Class; commandFormInputProcessor_Param : access CommandFormInputProcessor'Class; command_Param : access Command'Class) is
+      commandFormInputProcessor : CommandFormInputProcessor_Access := CommandFormInputProcessor_Access (commandFormInputProcessor_Param);
+      command : Command_Access := Command_Access (command_Param);
    begin
       Initialize_Fields (This);
         This.commandFormInputProcessor := commandFormInputProcessor;
         This.command := command;
    end Initialize;
 
-   function Create (commandFormInputProcessor : CommandFormInputProcessor_Access; command : Command_Access) return CommandRunnable_Access is
+   function Create (commandFormInputProcessor_Param : access CommandFormInputProcessor'Class; command_Param : access Command'Class) return CommandRunnable_Access is
       This : constant CommandRunnable_Access := new CommandRunnable;
    begin
-      CommandRunnable_Package.Initialize (This.all, commandFormInputProcessor, command);
+      CommandRunnable_Package.Initialize (This.all, commandFormInputProcessor_Param, command_Param);
       return This;
    end Create;
 
@@ -44,17 +46,17 @@ package body org.allbinary.game.displayable.canvas.CommandRunnable_Package is
       commandListener : CommandListener_Access;
    begin
         begin
-            This.logUtil.putF (This.commonStrings.START_RUNNABLE, This'Unchecked_Access, This.commonStrings.RUN);
+            This.logUtil.putF (This.commonStrings.START_RUNNABLE, CommandRunnable_Access'(This'Unchecked_Access), This.commonStrings.RUN);
             canvas := This.commandFormInputProcessor.getCanvas;
             commandListener := canvas.getCustomCommandListener;
             commandListener.commandAction (This.command, canvas);
-            This.logUtil.putF (This.commonStrings.END_RUNNABLE, This'Unchecked_Access, This.commonStrings.RUN);
+            This.logUtil.putF (This.commonStrings.END_RUNNABLE, CommandRunnable_Access'(This'Unchecked_Access), This.commonStrings.RUN);
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.RUN, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, CommandRunnable_Access'(This'Unchecked_Access), This.commonStrings.RUN, e);
                 end;
         end;
    end run;

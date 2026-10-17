@@ -50,7 +50,8 @@ package body org.allbinary.game.view.TileLayerPositionIntoViewPosition_Package i
         return (ViewPosition (This).getZ) - (This.tiledLayer.getZP);
    end getZ;
 
-   procedure setTiledLayer (This : in out TileLayerPositionIntoViewPosition; tiledLayer : AllBinaryTiledLayer_Access) is
+   procedure setTiledLayer (This : in out TileLayerPositionIntoViewPosition; tiledLayer_Param : access AllBinaryTiledLayer'Class) is
+      tiledLayer : AllBinaryTiledLayer_Access := AllBinaryTiledLayer_Access (tiledLayer_Param);
    begin
         This.tiledLayer := tiledLayer;
    end setTiledLayer;

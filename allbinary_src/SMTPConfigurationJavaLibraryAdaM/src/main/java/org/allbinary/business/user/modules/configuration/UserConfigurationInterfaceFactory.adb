@@ -35,7 +35,8 @@ package body org.allbinary.business.user.modules.configuration.UserConfiguration
    end Create;
 
    --  throws Exception
-   function getInstance (document : Document_Access) return UserConfigurationInterface_Access is
+   function getInstance (document_Param : access Document'Class) return UserConfigurationInterface_Access is
+      document : Document_Access := Document_Access (document_Param);
       configurationNode : Node_Access;
    begin
         configurationNode := DomSearchHelper_Package.getNode (UserConfigurationData_Package.NAME, document.getChildNodes);
@@ -43,7 +44,8 @@ package body org.allbinary.business.user.modules.configuration.UserConfiguration
    end getInstance;
 
    --  throws Exception
-   function getInstance (userRole : UserRole_Access) return UserConfigurationInterface_Access is
+   function getInstance (userRole_Param : access UserRole'Class) return UserConfigurationInterface_Access is
+      userRole : UserRole_Access := UserRole_Access (userRole_Param);
       abPath : AbPath_Access;
       documentString : Unbounded_String;
       document : Document_Access;
@@ -60,15 +62,15 @@ package body org.allbinary.business.user.modules.configuration.UserConfiguration
         return UserConfiguration_Package.Create;
    end getInstance;
 
-   procedure getInstance (document : Document_Access) is
-      Java_Result : constant UserConfigurationInterface_Access := getInstance (document);
+   procedure getInstance (document_Param : access Document'Class) is
+      Java_Result : constant UserConfigurationInterface_Access := getInstance (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
-   procedure getInstance (userRole : UserRole_Access) is
-      Java_Result : constant UserConfigurationInterface_Access := getInstance (userRole);
+   procedure getInstance (userRole_Param : access UserRole'Class) is
+      Java_Result : constant UserConfigurationInterface_Access := getInstance (userRole_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

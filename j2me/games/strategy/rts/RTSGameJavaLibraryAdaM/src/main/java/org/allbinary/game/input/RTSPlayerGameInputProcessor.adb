@@ -22,17 +22,18 @@ package body org.allbinary.game.input.RTSPlayerGameInputProcessor_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out RTSPlayerGameInputProcessor'Class; rtsPlayerGameInput : RTSPlayerGameInput_Access) is
+   procedure Initialize (This : in out RTSPlayerGameInputProcessor'Class; rtsPlayerGameInput_Param : access RTSPlayerGameInput'Class) is
+      rtsPlayerGameInput : RTSPlayerGameInput_Access := RTSPlayerGameInput_Access (rtsPlayerGameInput_Param);
    begin
       GameInputProcessor_Package.Initialize (This);
       Initialize_Fields (This);
         This.rtsPlayerGameInput := rtsPlayerGameInput;
    end Initialize;
 
-   function Create (rtsPlayerGameInput : RTSPlayerGameInput_Access) return RTSPlayerGameInputProcessor_Access is
+   function Create (rtsPlayerGameInput_Param : access RTSPlayerGameInput'Class) return RTSPlayerGameInputProcessor_Access is
       This : constant RTSPlayerGameInputProcessor_Access := new RTSPlayerGameInputProcessor;
    begin
-      RTSPlayerGameInputProcessor_Package.Initialize (This.all, rtsPlayerGameInput);
+      RTSPlayerGameInputProcessor_Package.Initialize (This.all, rtsPlayerGameInput_Param);
       return This;
    end Create;
 

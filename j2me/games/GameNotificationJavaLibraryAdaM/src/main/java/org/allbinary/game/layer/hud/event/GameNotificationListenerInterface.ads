@@ -31,7 +31,7 @@ package org.allbinary.game.layer.hud.event.GameNotificationListenerInterface_Pac
    type GameNotificationListenerInterface_Access is access all GameNotificationListenerInterface'Class;
    type GameNotificationListenerInterface_Access_Array is array (Natural range <>) of GameNotificationListenerInterface_Access;
    type GameNotificationListenerInterface_Access_Array_Access is access all GameNotificationListenerInterface_Access_Array;
-   procedure onGameNotificationEvent (This : in out GameNotificationListenerInterface; gameNotificationEvent : GameNotificationEvent_Access) is abstract;
+   procedure onGameNotificationEvent (This : in out GameNotificationListenerInterface; gameNotificationEvent_Param : access GameNotificationEvent'Class) is abstract;
 
 end org.allbinary.game.layer.hud.event.GameNotificationListenerInterface_Package;
 

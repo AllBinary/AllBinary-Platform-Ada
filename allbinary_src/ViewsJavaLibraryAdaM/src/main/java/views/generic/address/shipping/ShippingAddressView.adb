@@ -24,7 +24,8 @@ package body views.generic_Id.address.shipping.ShippingAddressView_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ShippingAddressView'Class; transformInfoInterface : TransformInfoInterface_Access) is
+   procedure Initialize (This : in out ShippingAddressView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
       httpTransformInfoInterface : TransformInfoHttpInterface_Access;
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
@@ -33,10 +34,10 @@ package body views.generic_Id.address.shipping.ShippingAddressView_Package is
         This.request := HttpServletRequest_Access (httpTransformInfoInterface.getPageContext.getRequest);
    end Initialize;
 
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return ShippingAddressView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return ShippingAddressView_Access is
       This : constant ShippingAddressView_Access := new ShippingAddressView;
    begin
-      ShippingAddressView_Package.Initialize (This.all, transformInfoInterface);
+      ShippingAddressView_Package.Initialize (This.all, transformInfoInterface_Param);
       return This;
    end Create;
 
@@ -46,7 +47,8 @@ package body views.generic_Id.address.shipping.ShippingAddressView_Package is
    end getRequest;
 
    --  throws Exception
-   function toXmlNode (This : in out ShippingAddressView; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out ShippingAddressView; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       formNode : Node_Access;
    begin
         begin
@@ -59,7 +61,7 @@ package body views.generic_Id.address.shipping.ShippingAddressView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.XSLLOGGINGERROR) then
-                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("toXmlNode"), e);
+                This.logUtil.put (This.commonStrings.FAILURE, ShippingAddressView_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode"), e);
             end if;
             Java_Throw (e);
                 end;
@@ -68,7 +70,7 @@ package body views.generic_Id.address.shipping.ShippingAddressView_Package is
 
    procedure addDomNodeInterfaces (This : in out ShippingAddressView) is
    begin
-        This.addDomNodeInterface (DomNodeInterface_Access (This'Unchecked_Access));
+        This.addDomNodeInterface (DomNodeInterface_Access (ShippingAddressView_Access'(This'Unchecked_Access)));
         This.addDomNodeInterface (DomNodeInterface_Access (StatesView_Package.Create));
    end addDomNodeInterfaces;
 
@@ -84,15 +86,15 @@ package body views.generic_Id.address.shipping.ShippingAddressView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("view()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, ShippingAddressView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
             end if;
             Java_Throw (e);
                 end;
         end;
    end view;
 
-   procedure toXmlNode (This : in out ShippingAddressView; document : Document_Access) is
-      Java_Result : constant Node_Access := ShippingAddressView'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out ShippingAddressView; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := ShippingAddressView'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

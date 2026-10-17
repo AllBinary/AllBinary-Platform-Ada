@@ -30,7 +30,7 @@ package org.allbinary.game.layer.pickup.PickupCompositeInterface_Package is
    type PickupCompositeInterface_Access_Array is array (Natural range <>) of PickupCompositeInterface_Access;
    type PickupCompositeInterface_Access_Array_Access is access all PickupCompositeInterface_Access_Array;
    function getPickupBehavior (This : in out PickupCompositeInterface) return PickupBehavior_Access is abstract;
-   procedure setPickupBehavior (This : in out PickupCompositeInterface; pickupBehavior : PickupBehavior_Access) is abstract;
+   procedure setPickupBehavior (This : in out PickupCompositeInterface; pickupBehavior_Param : access PickupBehavior'Class) is abstract;
 
 end org.allbinary.game.layer.pickup.PickupCompositeInterface_Package;
 

@@ -102,12 +102,12 @@ package views.generic_Id.inventory.InventorySearchUtil_Package is
    procedure Initialize (This : in out InventorySearchUtil'Class);
    function Create return InventorySearchUtil_Access;
    function getInstance return InventorySearchUtil_Access;
-   function getBasicItemIdColumn (This : in out InventorySearchUtil; searchRequest : SearchRequest_Access) return BasicArrayList_Access;
-   procedure getBasicItemIdColumn (This : in out InventorySearchUtil; searchRequest : SearchRequest_Access);
-   function getNoResults (This : in out InventorySearchUtil; viewDocumentInterface : TransformDocumentInterface_Access; inventoryNode : Node_Access) return Unbounded_String;
-   procedure getNoResults (This : in out InventorySearchUtil; viewDocumentInterface : TransformDocumentInterface_Access; inventoryNode : Node_Access);
-   function search (This : in out InventorySearchUtil; abeClientInformation : AbeClientInformationInterface_Access; searchRequest : SearchRequest_Access; column : BasicArrayList_Access) return Unbounded_String_Array_Access;
-   procedure search (This : in out InventorySearchUtil; abeClientInformation : AbeClientInformationInterface_Access; searchRequest : SearchRequest_Access; column : BasicArrayList_Access);
+   function getBasicItemIdColumn (This : in out InventorySearchUtil; searchRequest_Param : access SearchRequest'Class) return BasicArrayList_Access;
+   procedure getBasicItemIdColumn (This : in out InventorySearchUtil; searchRequest_Param : access SearchRequest'Class);
+   function getNoResults (This : in out InventorySearchUtil; viewDocumentInterface_Param : access TransformDocumentInterface'Class; inventoryNode_Param : access Node'Class) return Unbounded_String;
+   procedure getNoResults (This : in out InventorySearchUtil; viewDocumentInterface_Param : access TransformDocumentInterface'Class; inventoryNode_Param : access Node'Class);
+   function search (This : in out InventorySearchUtil; abeClientInformation_Param : access AbeClientInformationInterface'Class; searchRequest_Param : access SearchRequest'Class; column_Param : access BasicArrayList'Class) return Unbounded_String_Array_Access;
+   procedure search (This : in out InventorySearchUtil; abeClientInformation_Param : access AbeClientInformationInterface'Class; searchRequest_Param : access SearchRequest'Class; column_Param : access BasicArrayList'Class);
 
 end views.generic_Id.inventory.InventorySearchUtil_Package;
 

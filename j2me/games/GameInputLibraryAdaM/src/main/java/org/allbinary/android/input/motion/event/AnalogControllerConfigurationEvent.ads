@@ -33,8 +33,8 @@ package org.allbinary.android.input.motion.event.AnalogControllerConfigurationEv
 
    type AnalogControllerConfigurationEvent is new AllBinaryEventObject with null record;
 
-   procedure Initialize (This : in out AnalogControllerConfigurationEvent'Class; anyType : Java_Object_Access);
-   function Create (anyType : Java_Object_Access) return AnalogControllerConfigurationEvent_Access;
+   procedure Initialize (This : in out AnalogControllerConfigurationEvent'Class; anyType_Param : access Java_Object'Class);
+   function Create (anyType_Param : access Java_Object'Class) return AnalogControllerConfigurationEvent_Access;
 
 end org.allbinary.android.input.motion.event.AnalogControllerConfigurationEvent_Package;
 

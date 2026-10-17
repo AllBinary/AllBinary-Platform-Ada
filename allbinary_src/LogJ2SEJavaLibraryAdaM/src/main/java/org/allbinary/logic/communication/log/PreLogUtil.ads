@@ -39,10 +39,10 @@ package org.allbinary.logic.communication.log.PreLogUtil_Package is
 
    procedure Initialize (This : in out PreLogUtil'Class);
    function Create return PreLogUtil_Access;
-   procedure put (specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String);
-   procedure putOE (specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String; exception_Id : Java_Object_Access);
+   procedure put (specialMessage : Unbounded_String; anyType_Param : access Java_Object'Class; functionName : Unbounded_String);
+   procedure putOE (specialMessage : Unbounded_String; anyType_Param : access Java_Object'Class; functionName : Unbounded_String; exception_Id_Param : access Java_Object'Class);
    procedure putS (specialMessage : Unbounded_String; className : Unbounded_String; functionName : Unbounded_String);
-   procedure putSE (specialMessage : Unbounded_String; className : Unbounded_String; functionName : Unbounded_String; exception_Id : Java_Object_Access);
+   procedure putSE (specialMessage : Unbounded_String; className : Unbounded_String; functionName : Unbounded_String; exception_Id_Param : access Java_Object'Class);
 
 end org.allbinary.logic.communication.log.PreLogUtil_Package;
 

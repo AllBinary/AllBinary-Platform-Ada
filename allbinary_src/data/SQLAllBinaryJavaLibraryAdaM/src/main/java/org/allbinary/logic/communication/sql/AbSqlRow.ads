@@ -68,24 +68,24 @@ package org.allbinary.logic.communication.sql.AbSqlRow_Package is
       INSERT_END : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out AbSqlRow'Class; databaseConnectionInfoInterface : DbConnectionInfo_Access);
-   function Create (databaseConnectionInfoInterface : DbConnectionInfo_Access) return AbSqlRow_Access;
+   procedure Initialize (This : in out AbSqlRow'Class; databaseConnectionInfoInterface_Param : access DbConnectionInfo'Class);
+   function Create (databaseConnectionInfoInterface_Param : access DbConnectionInfo'Class) return AbSqlRow_Access;
    function getValue (This : in out AbSqlRow; value : Unbounded_String) return Unbounded_String;
    procedure getValue (This : in out AbSqlRow; value : Unbounded_String);
-   procedure updateWhere (This : in out AbSqlRow; key : Unbounded_String; value : Unbounded_String; updatedKeyValuePairs : HashMap_Access);
-   procedure updateWhere (This : in out AbSqlRow; whereKeyValuePairs : HashMap_Access; updatedKeyValuePairs : HashMap_Access);
+   procedure updateWhere (This : in out AbSqlRow; key : Unbounded_String; value : Unbounded_String; updatedKeyValuePairs_Param : access HashMap'Class);
+   procedure updateWhere (This : in out AbSqlRow; whereKeyValuePairs_Param : access HashMap'Class; updatedKeyValuePairs_Param : access HashMap'Class);
    procedure deleteWhere (This : in out AbSqlRow; key : Unbounded_String; value : Unbounded_String);
-   procedure deleteWhere (This : in out AbSqlRow; keysAndValues : HashMap_Access);
-   procedure insert (This : in out AbSqlRow; values : BasicArrayList_Access);
-   function getRow (This : in out AbSqlRow; keysAndValues : HashMap_Access) return HashMap_Access;
-   procedure getRow (This : in out AbSqlRow; keysAndValues : HashMap_Access);
-   function getRows (This : in out AbSqlRow; keysAndValues : HashMap_Access) return BasicArrayList_Access;
-   procedure getRows (This : in out AbSqlRow; keysAndValues : HashMap_Access);
-   function getRows (This : in out AbSqlRow; keysAndValues : HashMap_Access; more : Unbounded_String) return BasicArrayList_Access;
-   procedure getRows (This : in out AbSqlRow; keysAndValues : HashMap_Access; more : Unbounded_String);
+   procedure deleteWhere (This : in out AbSqlRow; keysAndValues_Param : access HashMap'Class);
+   procedure insert (This : in out AbSqlRow; values_Param : access BasicArrayList'Class);
+   function getRow (This : in out AbSqlRow; keysAndValues_Param : access HashMap'Class) return HashMap_Access;
+   procedure getRow (This : in out AbSqlRow; keysAndValues_Param : access HashMap'Class);
+   function getRows (This : in out AbSqlRow; keysAndValues_Param : access HashMap'Class) return BasicArrayList_Access;
+   procedure getRows (This : in out AbSqlRow; keysAndValues_Param : access HashMap'Class);
+   function getRows (This : in out AbSqlRow; keysAndValues_Param : access HashMap'Class; more : Unbounded_String) return BasicArrayList_Access;
+   procedure getRows (This : in out AbSqlRow; keysAndValues_Param : access HashMap'Class; more : Unbounded_String);
    function getAllRows (This : in out AbSqlRow) return BasicArrayList_Access;
-   function getRowsWhereBetween (This : in out AbSqlRow; whereKeyValuePairs : HashMap_Access; betweenColumn : Unbounded_String; smallest : Unbounded_String; largest : Unbounded_String) return BasicArrayList_Access;
-   procedure getRowsWhereBetween (This : in out AbSqlRow; whereKeyValuePairs : HashMap_Access; betweenColumn : Unbounded_String; smallest : Unbounded_String; largest : Unbounded_String);
+   function getRowsWhereBetween (This : in out AbSqlRow; whereKeyValuePairs_Param : access HashMap'Class; betweenColumn : Unbounded_String; smallest : Unbounded_String; largest : Unbounded_String) return BasicArrayList_Access;
+   procedure getRowsWhereBetween (This : in out AbSqlRow; whereKeyValuePairs_Param : access HashMap'Class; betweenColumn : Unbounded_String; smallest : Unbounded_String; largest : Unbounded_String);
    function getRowsWhereBetween (This : in out AbSqlRow; betweenColumn : Unbounded_String; smallest : Unbounded_String; largest : Unbounded_String) return BasicArrayList_Access;
    procedure getRowsWhereBetween (This : in out AbSqlRow; betweenColumn : Unbounded_String; smallest : Unbounded_String; largest : Unbounded_String);
 

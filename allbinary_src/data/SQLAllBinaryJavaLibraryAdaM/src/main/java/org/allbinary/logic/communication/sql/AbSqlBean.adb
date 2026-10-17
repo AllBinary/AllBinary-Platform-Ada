@@ -24,16 +24,17 @@ package body org.allbinary.logic.communication.sql.AbSqlBean_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AbSqlBean'Class; databaseConnectionInfoInterface : DbConnectionInfo_Access) is
+   procedure Initialize (This : in out AbSqlBean'Class; databaseConnectionInfoInterface_Param : access DbConnectionInfo'Class) is
+      databaseConnectionInfoInterface : DbConnectionInfo_Access := DbConnectionInfo_Access (databaseConnectionInfoInterface_Param);
    begin
         AbSqlRow_Package.Initialize (This, databaseConnectionInfoInterface);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (databaseConnectionInfoInterface : DbConnectionInfo_Access) return AbSqlBean_Access is
+   function Create (databaseConnectionInfoInterface_Param : access DbConnectionInfo'Class) return AbSqlBean_Access is
       This : constant AbSqlBean_Access := new AbSqlBean;
    begin
-      AbSqlBean_Package.Initialize (This.all, databaseConnectionInfoInterface);
+      AbSqlBean_Package.Initialize (This.all, databaseConnectionInfoInterface_Param);
       return This;
    end Create;
 
@@ -65,7 +66,7 @@ package body org.allbinary.logic.communication.sql.AbSqlBean_Package is
                     stringBuffer.append (sqlStatement);
                     stringBuffer.append (This.sqlStrings.FIELD_VALUE);
                     stringBuffer.append (field);
-                    This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, This.METHOD_GET_FIELD);
+                    This.logUtil.putF (stringBuffer.toString, AbSqlBean_Access'(This'Unchecked_Access), This.METHOD_GET_FIELD);
                 end if;
                 return field;
             end loop;
@@ -76,14 +77,15 @@ package body org.allbinary.logic.communication.sql.AbSqlBean_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
-                This.logUtil.put (Java_Image (This.FAILED_SQL_STATEMENT) & sqlStatement, This'Unchecked_Access, This.METHOD_GET_FIELD, e);
+                This.logUtil.put (Java_Image (This.FAILED_SQL_STATEMENT) & sqlStatement, AbSqlBean_Access'(This'Unchecked_Access), This.METHOD_GET_FIELD, e);
             end if;
             return Java_Image (This.FAILED_SQL_STATEMENT) & sqlStatement;
                 end;
         end;
    end getField;
 
-   function getField (This : in out AbSqlBean; keysAndValues : HashMap_Access; requestedField : Unbounded_String) return Unbounded_String is
+   function getField (This : in out AbSqlBean; keysAndValues_Param : access HashMap'Class; requestedField : Unbounded_String) return Unbounded_String is
+      keysAndValues : HashMap_Access := HashMap_Access (keysAndValues_Param);
       stringBuffer : StringMaker_Access;
       field : Unbounded_String;
       set : Set_Access;
@@ -129,7 +131,7 @@ package body org.allbinary.logic.communication.sql.AbSqlBean_Package is
                     stringBuffer.append (sqlStatement);
                     stringBuffer.append (This.sqlStrings.FIELD_VALUE);
                     stringBuffer.append (field);
-                    This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, This.METHOD_GET_FIELD);
+                    This.logUtil.putF (stringBuffer.toString, AbSqlBean_Access'(This'Unchecked_Access), This.METHOD_GET_FIELD);
                 end if;
                 return field;
             end loop;
@@ -141,14 +143,15 @@ package body org.allbinary.logic.communication.sql.AbSqlBean_Package is
                 begin
             sqlStatement := stringBuffer.toString;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
-                This.logUtil.put (Java_Image (This.FAILED_SQL_STATEMENT) & sqlStatement, This'Unchecked_Access, This.METHOD_GET_FIELD, e);
+                This.logUtil.put (Java_Image (This.FAILED_SQL_STATEMENT) & sqlStatement, AbSqlBean_Access'(This'Unchecked_Access), This.METHOD_GET_FIELD, e);
             end if;
             return Java_Image (This.FAILED_SQL_STATEMENT) & sqlStatement;
                 end;
         end;
    end getField;
 
-   function isSubsetOfEntry (This : in out AbSqlBean; key : Unbounded_String; value : Unbounded_String; columnsAndValues : HashMap_Access) return Unbounded_String is
+   function isSubsetOfEntry (This : in out AbSqlBean; key : Unbounded_String; value : Unbounded_String; columnsAndValues_Param : access HashMap'Class) return Unbounded_String is
+      columnsAndValues : HashMap_Access := HashMap_Access (columnsAndValues_Param);
       stringBuffer : StringMaker_Access;
       keyArray : Java_Object_Access_Array_Access;
       size : Integer;
@@ -205,7 +208,7 @@ package body org.allbinary.logic.communication.sql.AbSqlBean_Package is
                 begin
             sqlStatement := stringBuffer.toString;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
-                This.logUtil.put (Java_Image (This.FAILED_SQL_STATEMENT) & sqlStatement, This'Unchecked_Access, This.METHOD_IS_SUBSET_OF_ENTRY, e);
+                This.logUtil.put (Java_Image (This.FAILED_SQL_STATEMENT) & sqlStatement, AbSqlBean_Access'(This'Unchecked_Access), This.METHOD_IS_SUBSET_OF_ENTRY, e);
             end if;
             return Java_Image (This.FAILED_SQL_STATEMENT) & sqlStatement;
                 end;
@@ -219,15 +222,15 @@ package body org.allbinary.logic.communication.sql.AbSqlBean_Package is
       null;
    end getField;
 
-   procedure getField (This : in out AbSqlBean; keysAndValues : HashMap_Access; requestedField : Unbounded_String) is
-      Java_Result : constant Unbounded_String := AbSqlBean'Class (This).getField (keysAndValues, requestedField);
+   procedure getField (This : in out AbSqlBean; keysAndValues_Param : access HashMap'Class; requestedField : Unbounded_String) is
+      Java_Result : constant Unbounded_String := AbSqlBean'Class (This).getField (keysAndValues_Param, requestedField);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getField;
 
-   procedure isSubsetOfEntry (This : in out AbSqlBean; key : Unbounded_String; value : Unbounded_String; columnsAndValues : HashMap_Access) is
-      Java_Result : constant Unbounded_String := AbSqlBean'Class (This).isSubsetOfEntry (key, value, columnsAndValues);
+   procedure isSubsetOfEntry (This : in out AbSqlBean; key : Unbounded_String; value : Unbounded_String; columnsAndValues_Param : access HashMap'Class) is
+      Java_Result : constant Unbounded_String := AbSqlBean'Class (This).isSubsetOfEntry (key, value, columnsAndValues_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

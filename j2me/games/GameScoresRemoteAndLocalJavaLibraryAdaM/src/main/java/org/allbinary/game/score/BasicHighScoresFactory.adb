@@ -30,7 +30,9 @@ package body org.allbinary.game.score.BasicHighScoresFactory_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BasicHighScoresFactory'Class; abeClientInformation : AbeClientInformationInterface_Access; softwareInformation : SoftwareInformation_Access) is
+   procedure Initialize (This : in out BasicHighScoresFactory'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; softwareInformation_Param : access SoftwareInformation'Class) is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      softwareInformation : SoftwareInformation_Access := SoftwareInformation_Access (softwareInformation_Param);
    begin
       HighScoresBase_Package.Initialize (This);
       Initialize_Fields (This);
@@ -38,20 +40,24 @@ package body org.allbinary.game.score.BasicHighScoresFactory_Package is
         This.softwareInformation := softwareInformation;
    end Initialize;
 
-   function Create (abeClientInformation : AbeClientInformationInterface_Access; softwareInformation : SoftwareInformation_Access) return BasicHighScoresFactory_Access is
+   function Create (abeClientInformation_Param : access AbeClientInformationInterface'Class; softwareInformation_Param : access SoftwareInformation'Class) return BasicHighScoresFactory_Access is
       This : constant BasicHighScoresFactory_Access := new BasicHighScoresFactory;
    begin
-      BasicHighScoresFactory_Package.Initialize (This.all, abeClientInformation, softwareInformation);
+      BasicHighScoresFactory_Package.Initialize (This.all, abeClientInformation_Param, softwareInformation_Param);
       return This;
    end Create;
 
-   procedure fetchHighScores (This : in out BasicHighScoresFactory; gameInfo : GameInfo_Access; highScoresResultsListener : HighScoresResultsListener_Access) is
+   procedure fetchHighScores (This : in out BasicHighScoresFactory; gameInfo_Param : access GameInfo'Class; highScoresResultsListener_Param : access HighScoresResultsListener'Class) is
+      gameInfo : GameInfo_Access := GameInfo_Access (gameInfo_Param);
+      highScoresResultsListener : HighScoresResultsListener_Access := HighScoresResultsListener_Access (highScoresResultsListener_Param);
    begin
-        This.logUtil.putF (To_Unbounded_String ("Getting Remote/Local HighScores"), This'Unchecked_Access, This.FETCH);
+        This.logUtil.putF (To_Unbounded_String ("Getting Remote/Local HighScores"), BasicHighScoresFactory_Access'(This'Unchecked_Access), This.FETCH);
         This.fetchHighScoresPreload (gameInfo, highScoresResultsListener, True);
    end fetchHighScores;
 
-   procedure fetchHighScoresPreload (This : in out BasicHighScoresFactory; gameInfo : GameInfo_Access; highScoresResultsListener : HighScoresResultsListener_Access; preload : Boolean) is
+   procedure fetchHighScoresPreload (This : in out BasicHighScoresFactory; gameInfo_Param : access GameInfo'Class; highScoresResultsListener_Param : access HighScoresResultsListener'Class; preload : Boolean) is
+      gameInfo : GameInfo_Access := GameInfo_Access (gameInfo_Param);
+      highScoresResultsListener : HighScoresResultsListener_Access := HighScoresResultsListener_Access (highScoresResultsListener_Param);
    begin
         SecondaryThreadPool_Package.getInstance.runTask (ARunnable_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
@@ -63,7 +69,7 @@ package body org.allbinary.game.score.BasicHighScoresFactory_Package is
 --     begin
 --                  logUtil := LogUtil_Package.getInstance;
 --                  begin
---                      logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.FETCH);
+--                      logUtil.putF (This.commonStrings.START, BasicHighScoresFactory_Access'(This'Unchecked_Access), This.FETCH);
 --                      This.highScoresArray (0) := RecordStoreHighScores_Package.getInstance (This.abeClientInformation, gameInfo, This.TOP, This.PERSONAL_HIGH_SCORES, This.SCORES, ScoreComparator_Package.Create (True));
 --                      gameType := gameInfo.getGameType;
 --                      gameTypeFactory := GameTypeFactory_Package.getInstance;
@@ -74,7 +80,7 @@ package body org.allbinary.game.score.BasicHighScoresFactory_Package is
 --                          gameInfo2 := BasicHighScoresGameInfoFactory_Package.getInstance.MULTI_PLAYER_SERVER;
 --                      end if;
 --                      This.highScoresArray (1) := RemoteHighScores_Package.getInstancePreload (This.abeClientInformation, This.softwareInformation, gameInfo2, This.WORLD_TOP_SCORES, This.SCORES, BooleanFactory_Package.getInstance.FALSE, preload);
---                      logUtil.putF (This.commonStrings.END_Id, This'Unchecked_Access, This.FETCH);
+--                      logUtil.putF (This.commonStrings.END_Id, BasicHighScoresFactory_Access'(This'Unchecked_Access), This.FETCH);
 --                      LastFetchHighScoresFactory_Package.getInstance.highScoresArray := This.highScoresArray;
 --                      highScoresResultsListener.setHighScoresArray (This.highScoresArray);
 --                  exception
@@ -82,7 +88,7 @@ package body org.allbinary.game.score.BasicHighScoresFactory_Package is
 --                          declare
 --                              e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
 --                          begin
---                      logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.FETCH, e);
+--                      logUtil.put (This.commonStrings.EXCEPTION_Id, BasicHighScoresFactory_Access'(This'Unchecked_Access), This.FETCH, e);
 --                          end;
 --                  end;
 --     end run;

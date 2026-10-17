@@ -69,9 +69,9 @@ package org.allbinary.logic.visual.transform.BasicTransformer_Package is
       abeClientInformation : AbeClientInformationInterface_Access;
    end record;
 
-   procedure Initialize (This : in out BasicTransformer'Class; abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access);
-   function Create (abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access) return BasicTransformer_Access;
-   procedure setEncryptedTemplateFileAsInputStream (This : in out BasicTransformer; file : AbFile_Access);
+   procedure Initialize (This : in out BasicTransformer'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
+   function Create (abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) return BasicTransformer_Access;
+   procedure setEncryptedTemplateFileAsInputStream (This : in out BasicTransformer; file_Param : access AbFile'Class);
    procedure setEncryptedTemplateAsInputStream (This : in out BasicTransformer);
    procedure setTemplateAsInputStream (This : in out BasicTransformer);
 

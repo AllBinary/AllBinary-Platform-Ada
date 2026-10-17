@@ -27,78 +27,91 @@ package body org.allbinary.input.motion.gesture.observer.ReleaseControlledMotion
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ReleaseControlledMotionGestureListener'Class; signed : CompleteMotionGestureListenerInterface_Access) is
+   procedure Initialize (This : in out ReleaseControlledMotionGestureListener'Class; signed_Param : access CompleteMotionGestureListenerInterface'Class) is
+      signed : CompleteMotionGestureListenerInterface_Access := CompleteMotionGestureListenerInterface_Access (signed_Param);
    begin
       Initialize_Fields (This);
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+        This.logUtil.putF (This.commonStrings.START, ReleaseControlledMotionGestureListener_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         This.signed := signed;
    end Initialize;
 
-   function Create (signed : CompleteMotionGestureListenerInterface_Access) return ReleaseControlledMotionGestureListener_Access is
+   function Create (signed_Param : access CompleteMotionGestureListenerInterface'Class) return ReleaseControlledMotionGestureListener_Access is
       This : constant ReleaseControlledMotionGestureListener_Access := new ReleaseControlledMotionGestureListener;
    begin
-      ReleaseControlledMotionGestureListener_Package.Initialize (This.all, signed);
+      ReleaseControlledMotionGestureListener_Package.Initialize (This.all, signed_Param);
       return This;
    end Create;
 
-   procedure onEvent (This : in out ReleaseControlledMotionGestureListener; eventObject : AllBinaryEventObject_Access) is
+   procedure onEvent (This : in out ReleaseControlledMotionGestureListener; eventObject_Param : access AllBinaryEventObject'Class) is
+      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
    begin
-        ForcedLogUtil_Package.log (This.commonStrings.NOT_IMPLEMENTED, This'Unchecked_Access);
+        ForcedLogUtil_Package.log (This.commonStrings.NOT_IMPLEMENTED, ReleaseControlledMotionGestureListener_Access'(This'Unchecked_Access));
    end onEvent;
 
-   procedure onUpMotionGestureEvent (This : in out ReleaseControlledMotionGestureListener; ev : MotionGestureEvent_Access) is
+   procedure onUpMotionGestureEvent (This : in out ReleaseControlledMotionGestureListener; ev_Param : access MotionGestureEvent'Class) is
+      ev : MotionGestureEvent_Access := MotionGestureEvent_Access (ev_Param);
    begin
         This.onMotionGestureEvent (ev);
    end onUpMotionGestureEvent;
 
-   procedure onDownMotionGestureEvent (This : in out ReleaseControlledMotionGestureListener; ev : MotionGestureEvent_Access) is
+   procedure onDownMotionGestureEvent (This : in out ReleaseControlledMotionGestureListener; ev_Param : access MotionGestureEvent'Class) is
+      ev : MotionGestureEvent_Access := MotionGestureEvent_Access (ev_Param);
    begin
         This.onMotionGestureEvent (ev);
    end onDownMotionGestureEvent;
 
-   procedure onLeftMotionGestureEvent (This : in out ReleaseControlledMotionGestureListener; ev : MotionGestureEvent_Access) is
+   procedure onLeftMotionGestureEvent (This : in out ReleaseControlledMotionGestureListener; ev_Param : access MotionGestureEvent'Class) is
+      ev : MotionGestureEvent_Access := MotionGestureEvent_Access (ev_Param);
    begin
         This.onMotionGestureEvent (ev);
    end onLeftMotionGestureEvent;
 
-   procedure onRightMotionGestureEvent (This : in out ReleaseControlledMotionGestureListener; ev : MotionGestureEvent_Access) is
+   procedure onRightMotionGestureEvent (This : in out ReleaseControlledMotionGestureListener; ev_Param : access MotionGestureEvent'Class) is
+      ev : MotionGestureEvent_Access := MotionGestureEvent_Access (ev_Param);
    begin
         This.onMotionGestureEvent (ev);
    end onRightMotionGestureEvent;
 
-   procedure onDiagonalDownRightMotionGestureEvent (This : in out ReleaseControlledMotionGestureListener; ev : MotionGestureEvent_Access) is
+   procedure onDiagonalDownRightMotionGestureEvent (This : in out ReleaseControlledMotionGestureListener; ev_Param : access MotionGestureEvent'Class) is
+      ev : MotionGestureEvent_Access := MotionGestureEvent_Access (ev_Param);
    begin
         This.onMotionGestureEvent (ev);
    end onDiagonalDownRightMotionGestureEvent;
 
-   procedure onDiagonalDownLeftMotionGestureEvent (This : in out ReleaseControlledMotionGestureListener; ev : MotionGestureEvent_Access) is
+   procedure onDiagonalDownLeftMotionGestureEvent (This : in out ReleaseControlledMotionGestureListener; ev_Param : access MotionGestureEvent'Class) is
+      ev : MotionGestureEvent_Access := MotionGestureEvent_Access (ev_Param);
    begin
         This.onMotionGestureEvent (ev);
    end onDiagonalDownLeftMotionGestureEvent;
 
-   procedure onDiagonalUpRightMotionGestureEvent (This : in out ReleaseControlledMotionGestureListener; ev : MotionGestureEvent_Access) is
+   procedure onDiagonalUpRightMotionGestureEvent (This : in out ReleaseControlledMotionGestureListener; ev_Param : access MotionGestureEvent'Class) is
+      ev : MotionGestureEvent_Access := MotionGestureEvent_Access (ev_Param);
    begin
         This.onMotionGestureEvent (ev);
    end onDiagonalUpRightMotionGestureEvent;
 
-   procedure onDiagonalUpLeftMotionGestureEvent (This : in out ReleaseControlledMotionGestureListener; ev : MotionGestureEvent_Access) is
+   procedure onDiagonalUpLeftMotionGestureEvent (This : in out ReleaseControlledMotionGestureListener; ev_Param : access MotionGestureEvent'Class) is
+      ev : MotionGestureEvent_Access := MotionGestureEvent_Access (ev_Param);
    begin
         This.onMotionGestureEvent (ev);
    end onDiagonalUpLeftMotionGestureEvent;
 
-   procedure onPressedMotionGestureEvent (This : in out ReleaseControlledMotionGestureListener; ev : MotionGestureEvent_Access) is
+   procedure onPressedMotionGestureEvent (This : in out ReleaseControlledMotionGestureListener; ev_Param : access MotionGestureEvent'Class) is
+      ev : MotionGestureEvent_Access := MotionGestureEvent_Access (ev_Param);
    begin
         This.isMouseGestureOccurring := True;
         This.currentMotionGesture := TouchMotionGestureFactory_Package.getInstance.NO_MOTION;
         This.onMotionGestureEvent (ev);
    end onPressedMotionGestureEvent;
 
-   procedure onScrolledMotionGestureEvent (This : in out ReleaseControlledMotionGestureListener; motionGestureEvent : MotionGestureEvent_Access) is
+   procedure onScrolledMotionGestureEvent (This : in out ReleaseControlledMotionGestureListener; motionGestureEvent_Param : access MotionGestureEvent'Class) is
+      motionGestureEvent : MotionGestureEvent_Access := MotionGestureEvent_Access (motionGestureEvent_Param);
    begin
         null;
    end onScrolledMotionGestureEvent;
 
-   procedure released (This : in out ReleaseControlledMotionGestureListener; ev : MotionGestureEvent_Access) is
+   procedure released (This : in out ReleaseControlledMotionGestureListener; ev_Param : access MotionGestureEvent'Class) is
+      ev : MotionGestureEvent_Access := MotionGestureEvent_Access (ev_Param);
    begin
         begin
             if (This.isMouseGestureOccurring) = (False) then
@@ -112,12 +125,13 @@ package body org.allbinary.input.motion.gesture.observer.ReleaseControlledMotion
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (StringMaker_Package.Create.append (This.commonStrings.EXCEPTION_LABEL).append (StringUtil_Package.getInstance.toString (ev.getMotionGesture)).toString, This'Unchecked_Access, To_Unbounded_String ("release"), e);
+            This.logUtil.put (StringMaker_Package.Create.append (This.commonStrings.EXCEPTION_LABEL).append (StringUtil_Package.getInstance.toString (ev.getMotionGesture)).toString, ReleaseControlledMotionGestureListener_Access'(This'Unchecked_Access), To_Unbounded_String ("release"), e);
                 end;
         end;
    end released;
 
-   procedure onMotionGestureEvent (This : in out ReleaseControlledMotionGestureListener; ev : MotionGestureEvent_Access) is
+   procedure onMotionGestureEvent (This : in out ReleaseControlledMotionGestureListener; ev_Param : access MotionGestureEvent'Class) is
+      ev : MotionGestureEvent_Access := MotionGestureEvent_Access (ev_Param);
       motionGestureInput : MotionGestureInput_Access;
    begin
         if (This.isMouseGestureOccurring) = (False) then

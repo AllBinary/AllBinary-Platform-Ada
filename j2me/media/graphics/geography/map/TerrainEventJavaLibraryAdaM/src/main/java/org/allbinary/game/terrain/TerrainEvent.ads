@@ -40,12 +40,12 @@ package org.allbinary.game.terrain.TerrainEvent_Package is
       basicTerrainInfo : BasicTerrainInfo_Access;
    end record;
 
-   procedure Initialize (This : in out TerrainEvent'Class; basicTerrainInfo : Java_Object_Access);
-   function Create (basicTerrainInfo : Java_Object_Access) return TerrainEvent_Access;
+   procedure Initialize (This : in out TerrainEvent'Class; basicTerrainInfo_Param : access Java_Object'Class);
+   function Create (basicTerrainInfo_Param : access Java_Object'Class) return TerrainEvent_Access;
    function toString (This : in out TerrainEvent) return Unbounded_String;
    function getBasicTerrainInfo (This : in out TerrainEvent) return BasicTerrainInfo_Access;
-   procedure setBasicTerrainInfo (This : in out TerrainEvent; basicTerrainInfo : BasicTerrainInfo_Access);
-   procedure setBasicTerrainInfoForCircularStaticPool (This : in out TerrainEvent; basicTerrainInfo : BasicTerrainInfo_Access);
+   procedure setBasicTerrainInfo (This : in out TerrainEvent; basicTerrainInfo_Param : access BasicTerrainInfo'Class);
+   procedure setBasicTerrainInfoForCircularStaticPool (This : in out TerrainEvent; basicTerrainInfo_Param : access BasicTerrainInfo'Class);
 
 end org.allbinary.game.terrain.TerrainEvent_Package;
 

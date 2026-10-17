@@ -52,8 +52,8 @@ package org.allbinary.animation.image.TweenedImageAnimation_Package is
       anchor : Integer;
    end record;
 
-   procedure Initialize (This : in out TweenedImageAnimation'Class; image : Image_Access; dx : Integer; dy : Integer; totalFrames : Integer; animationBehavior : AnimationBehavior_Access);
-   function Create (image : Image_Access; dx : Integer; dy : Integer; totalFrames : Integer; animationBehavior : AnimationBehavior_Access) return TweenedImageAnimation_Access;
+   procedure Initialize (This : in out TweenedImageAnimation'Class; image_Param : access Image'Class; dx : Integer; dy : Integer; totalFrames : Integer; animationBehavior_Param : access AnimationBehavior'Class);
+   function Create (image_Param : access Image'Class; dx : Integer; dy : Integer; totalFrames : Integer; animationBehavior_Param : access AnimationBehavior'Class) return TweenedImageAnimation_Access;
    function getAnimationSize (This : in out TweenedImageAnimation) return Integer;
    procedure nextFrame (This : in out TweenedImageAnimation);
    procedure previousFrame (This : in out TweenedImageAnimation);
@@ -62,7 +62,7 @@ package org.allbinary.animation.image.TweenedImageAnimation_Package is
    function getSize (This : in out TweenedImageAnimation) return Integer;
    procedure setSequence (This : in out TweenedImageAnimation; sequence : Integer_Array_Access);
    function getSequence (This : in out TweenedImageAnimation) return Integer_Array_Access;
-   procedure paintXY (This : in out TweenedImageAnimation; graphics : Graphics_Access; x : Integer; y : Integer);
+   procedure paintXY (This : in out TweenedImageAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
    procedure close (This : in out TweenedImageAnimation);
    procedure finalize (This : in out TweenedImageAnimation);
 

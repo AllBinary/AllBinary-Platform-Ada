@@ -34,7 +34,7 @@ package org.allbinary.input.motion.button.TouchButtonVisitor_Package is
 
    procedure Initialize (This : in out TouchButtonVisitor'Class);
    function Create return TouchButtonVisitor_Access;
-   procedure process (This : in out TouchButtonVisitor; touchButtonInput : TouchButtonInput_Access; string_Id : Unbounded_String);
+   procedure process (This : in out TouchButtonVisitor; touchButtonInput_Param : access TouchButtonInput'Class; string_Id : Unbounded_String);
 
 end org.allbinary.input.motion.button.TouchButtonVisitor_Package;
 

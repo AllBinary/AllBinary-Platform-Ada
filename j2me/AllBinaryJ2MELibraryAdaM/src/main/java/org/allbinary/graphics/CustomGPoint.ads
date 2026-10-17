@@ -39,8 +39,8 @@ package org.allbinary.graphics.CustomGPoint_Package is
 
    procedure Initialize (This : in out CustomGPoint'Class; x : Integer; y : Integer; z : Integer);
    function Create (x : Integer; y : Integer; z : Integer) return CustomGPoint_Access;
-   function getInstance (point : GPoint_Access) return CustomGPoint_Access;
-   procedure getInstance (point : GPoint_Access);
+   function getInstance (point_Param : access GPoint'Class) return CustomGPoint_Access;
+   procedure getInstance (point_Param : access GPoint'Class);
    function getInstance3 (x : Integer; y : Integer) return CustomGPoint_Access;
    procedure getInstance3 (x : Integer; y : Integer);
    procedure setX (This : in out CustomGPoint; x : Integer);

@@ -46,7 +46,8 @@ package body org.allbinary.animation.AnimationInterfaceFactoryInterfaceComposite
         return This.animationInterfaceFactoryInterfaceArray;
    end getAnimationInterfaceFactoryInterfaceArray;
 
-   procedure setInitialScale (This : in out AnimationInterfaceFactoryInterfaceComposite; scaleProperties : ScaleProperties_Access) is
+   procedure setInitialScale (This : in out AnimationInterfaceFactoryInterfaceComposite; scaleProperties_Param : access ScaleProperties'Class) is
+      scaleProperties : ScaleProperties_Access := ScaleProperties_Access (scaleProperties_Param);
    begin
         null;
    end setInitialScale;

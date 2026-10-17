@@ -47,8 +47,8 @@ package org.allbinary.game.combat.damage.DamageUtil_Package is
    procedure Initialize (This : in out DamageUtil'Class);
    function Create return DamageUtil_Access;
    function getInstance return DamageUtil_Access;
-   procedure process (This : in out DamageUtil; damageableInterface : DamageableInterface_Access; damageableInterface2 : DamageableInterface_Access);
-   procedure debugDamage (This : in out DamageUtil; collidableInterfaceCompositeInterface1 : CollidableCompositeLayer_Access; collidableInterfaceCompositeInterface : CollidableCompositeLayer_Access);
+   procedure process (This : in out DamageUtil; damageableInterface_Param : access DamageableInterface'Class; damageableInterface2_Param : access DamageableInterface'Class);
+   procedure debugDamage (This : in out DamageUtil; collidableInterfaceCompositeInterface1_Param : access CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableCompositeLayer'Class);
 
 end org.allbinary.game.combat.damage.DamageUtil_Package;
 

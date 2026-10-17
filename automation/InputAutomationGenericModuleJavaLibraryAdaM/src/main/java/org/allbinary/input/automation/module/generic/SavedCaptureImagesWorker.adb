@@ -26,7 +26,8 @@ package body org.allbinary.input.automation.module.generic_Id.SavedCaptureImages
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out SavedCaptureImagesWorker'Class; savedCaptureGenericProfileDataWorkerType : SavedCaptureGenericProfileDataWorkerType_Access) is
+   procedure Initialize (This : in out SavedCaptureImagesWorker'Class; savedCaptureGenericProfileDataWorkerType_Param : access SavedCaptureGenericProfileDataWorkerType'Class) is
+      savedCaptureGenericProfileDataWorkerType : SavedCaptureGenericProfileDataWorkerType_Access := SavedCaptureGenericProfileDataWorkerType_Access (savedCaptureGenericProfileDataWorkerType_Param);
    begin
       BasicEventHandler_Package.Initialize (This);
       Initialize_Fields (This);
@@ -35,15 +36,16 @@ package body org.allbinary.input.automation.module.generic_Id.SavedCaptureImages
         SavedCaptureImagesWorker_Package.index := ProcessingFrameIndexFactory_Package.next;
    end Initialize;
 
-   function Create (savedCaptureGenericProfileDataWorkerType : SavedCaptureGenericProfileDataWorkerType_Access) return SavedCaptureImagesWorker_Access is
+   function Create (savedCaptureGenericProfileDataWorkerType_Param : access SavedCaptureGenericProfileDataWorkerType'Class) return SavedCaptureImagesWorker_Access is
       This : constant SavedCaptureImagesWorker_Access := new SavedCaptureImagesWorker;
    begin
-      SavedCaptureImagesWorker_Package.Initialize (This.all, savedCaptureGenericProfileDataWorkerType);
+      SavedCaptureImagesWorker_Package.Initialize (This.all, savedCaptureGenericProfileDataWorkerType_Param);
       return This;
    end Create;
 
    --  throws Exception
-   procedure setThread (This : in out SavedCaptureImagesWorker; thread : Thread_Access) is
+   procedure setThread (This : in out SavedCaptureImagesWorker; thread_Param : access Thread'Class) is
+      thread : Thread_Access := Thread_Access (thread_Param);
    begin
         null;
    end setThread;
@@ -68,7 +70,7 @@ package body org.allbinary.input.automation.module.generic_Id.SavedCaptureImages
       capturedImageEvent : CapturedImageWorkerResultsEvent_Access;
    begin
         begin
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.RUN);
+            This.logUtil.putF (This.commonStrings.START, SavedCaptureImagesWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
             This.setRunning (True);
             timeHelper := TimeDelayHelper_Package.Create (1000);
             while This.isRunning loop
@@ -79,27 +81,27 @@ package body org.allbinary.input.automation.module.generic_Id.SavedCaptureImages
                 filePathStringBuffer.append (LongUtil_Package.fillIn (frame.toString));
                 filePathStringBuffer.append (MediaDataFactory_Package.getInstance.JPG.getExtension);
                 filePath := filePathStringBuffer.toString;
-                This.logUtil.putF (To_Unbounded_String ("Loading Image File Path: ") & filePath, This'Unchecked_Access, This.commonStrings.RUN);
+                This.logUtil.putF (To_Unbounded_String ("Loading Image File Path: ") & filePath, SavedCaptureImagesWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
                 file := File_Package.Create (filePath);
                 if file.isFile then
                     bufferedImage := ImageIO_Package.read (file);
                     SavedCaptureImagesWorker_Package.index := SavedCaptureImagesWorker_Package.index + 1;
                     CapturedBufferedImagesCacheSingleton_Package.getInstance.add (BufferedImageFrameCacheable_Package.Create (bufferedImage, frame));
-                    capturedImageEvent := CapturedImageWorkerResultsEvent_Package.Create (This'Unchecked_Access, frame, bufferedImage);
+                    capturedImageEvent := CapturedImageWorkerResultsEvent_Package.Create (SavedCaptureImagesWorker_Access'(This'Unchecked_Access), frame, bufferedImage);
                     This.fireEvent (capturedImageEvent);
                 else
-                    This.logUtil.putF (To_Unbounded_String ("Could Not Load File: ") & filePath, This'Unchecked_Access, This.commonStrings.RUN);
+                    This.logUtil.putF (To_Unbounded_String ("Could Not Load File: ") & filePath, SavedCaptureImagesWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
                 end if;
-                This.logUtil.putF ((CommonLabels_Package.getInstance.ELAPSED) + (timeHelper.getElapsedTNT), This'Unchecked_Access, This.commonStrings.RUN);
+                This.logUtil.putF ((CommonLabels_Package.getInstance.ELAPSED) + (timeHelper.getElapsedTNT), SavedCaptureImagesWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
                 This.setRunning (False);
             end loop;
-            This.logUtil.putF (This.commonStrings.END_Id, This'Unchecked_Access, This.commonStrings.RUN);
+            This.logUtil.putF (This.commonStrings.END_Id, SavedCaptureImagesWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.RUN, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, SavedCaptureImagesWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN, e);
                 end;
         end;
    end run;

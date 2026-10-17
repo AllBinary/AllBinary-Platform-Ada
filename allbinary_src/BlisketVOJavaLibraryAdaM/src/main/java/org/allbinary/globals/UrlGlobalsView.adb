@@ -35,7 +35,8 @@ package body org.allbinary.globals.UrlGlobalsView_Package is
    end Create;
 
    --  throws Exception
-   function toXmlNode (This : in out UrlGlobalsView; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out UrlGlobalsView; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       hashMap : HashMap_Access;
       node : Node_Access;
    begin
@@ -45,8 +46,8 @@ package body org.allbinary.globals.UrlGlobalsView_Package is
         return node;
    end toXmlNode;
 
-   procedure toXmlNode (This : in out UrlGlobalsView; document : Document_Access) is
-      Java_Result : constant Node_Access := UrlGlobalsView'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out UrlGlobalsView; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := UrlGlobalsView'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

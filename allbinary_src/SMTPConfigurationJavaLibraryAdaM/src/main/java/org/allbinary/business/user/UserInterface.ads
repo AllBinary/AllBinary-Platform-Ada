@@ -55,7 +55,7 @@ package org.allbinary.business.user.UserInterface_Package is
    procedure setOtherContact (This : in out UserInterface; value : Unbounded_String) is abstract;
    procedure setElectronicContact (This : in out UserInterface; value : Unbounded_String) is abstract;
    procedure setFax (This : in out UserInterface; value : Unbounded_String) is abstract;
-   procedure setRole (This : in out UserInterface; aRole : UserRole_Access) is abstract;
+   procedure setRole (This : in out UserInterface; aRole_Param : access UserRole'Class) is abstract;
    procedure setEncryption (This : in out UserInterface; value : Unbounded_String) is abstract;
    procedure setSecret (This : in out UserInterface; value : Unbounded_String) is abstract;
    procedure setPassword (This : in out UserInterface; value : Unbounded_String) is abstract;
@@ -84,10 +84,10 @@ package org.allbinary.business.user.UserInterface_Package is
    function getPassword (This : in out UserInterface) return Unbounded_String is abstract;
    function getPermissions (This : in out UserInterface) return Unbounded_String is abstract;
    function getUserConfigurationInterface (This : in out UserInterface) return UserConfigurationInterface_Access is abstract;
-   procedure setUserConfigurationInterface (This : in out UserInterface; userConfigurationInterface : UserConfigurationInterface_Access) is abstract;
+   procedure setUserConfigurationInterface (This : in out UserInterface; userConfigurationInterface_Param : access UserConfigurationInterface'Class) is abstract;
    function toPasswordHashMap (This : in out UserInterface) return HashMap_Access is abstract;
-   procedure validateSession (This : in out UserInterface; weblisketSession : WeblisketSessionInterface_Access) is abstract;
-   procedure updateSession (This : in out UserInterface; weblisketSession : WeblisketSessionInterface_Access) is abstract;
+   procedure validateSession (This : in out UserInterface; weblisketSession_Param : access WeblisketSessionInterface'Class) is abstract;
+   procedure updateSession (This : in out UserInterface; weblisketSession_Param : access WeblisketSessionInterface'Class) is abstract;
    function isSessionValid (This : in out UserInterface) return Boolean is abstract;
 
 end org.allbinary.business.user.UserInterface_Package;

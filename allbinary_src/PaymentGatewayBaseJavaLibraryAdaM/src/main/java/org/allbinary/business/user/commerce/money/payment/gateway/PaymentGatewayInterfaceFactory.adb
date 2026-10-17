@@ -36,13 +36,14 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentG
    end Create;
 
    --  throws Exception
-   function getInstance (This : in out PaymentGatewayInterfaceFactory; httpServletRequest : HttpServletRequest_Access) return PaymentGatewayInterface_Access is
+   function getInstance (This : in out PaymentGatewayInterfaceFactory; httpServletRequest_Param : access HttpServletRequest'Class) return PaymentGatewayInterface_Access is
+      httpServletRequest : HttpServletRequest_Access := HttpServletRequest_Access (httpServletRequest_Param);
       commonStrings : CommonStrings_Access;
    begin
         commonStrings := CommonStrings_Package.getInstance;
         begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PAYMENT) then
-                This.logUtil.putF (To_Unbounded_String ("Getting"), This'Unchecked_Access, commonStrings.GET_INSTANCE);
+                This.logUtil.putF (To_Unbounded_String ("Getting"), PaymentGatewayInterfaceFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);
             end if;
             return This.getInstance (RequestParams_Package.Create (httpServletRequest).toHashMap);
         exception
@@ -51,7 +52,7 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentG
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PAYMENTERROR) then
-                This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("getInstance(HttpServletRequest)"), e);
+                This.logUtil.put (commonStrings.EXCEPTION_Id, PaymentGatewayInterfaceFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getInstance(HttpServletRequest)"), e);
             end if;
             Java_Throw (e);
                 end;
@@ -59,7 +60,8 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentG
    end getInstance;
 
    --  throws Exception
-   function getInstance (This : in out PaymentGatewayInterfaceFactory; paymentType : BasicPaymentType_Access) return PaymentGatewayInterface_Access is
+   function getInstance (This : in out PaymentGatewayInterfaceFactory; paymentType_Param : access BasicPaymentType'Class) return PaymentGatewayInterface_Access is
+      paymentType : BasicPaymentType_Access := BasicPaymentType_Access (paymentType_Param);
       hashMap : HashMap_Access;
    begin
         hashMap := StdUtil_Package.getInstance.createHashMap;
@@ -68,7 +70,8 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentG
    end getInstance;
 
    --  throws Exception
-   function getInstance (This : in out PaymentGatewayInterfaceFactory; hashMap : HashMap_Access) return PaymentGatewayInterface_Access is
+   function getInstance (This : in out PaymentGatewayInterfaceFactory; hashMap_Param : access HashMap'Class) return PaymentGatewayInterface_Access is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
       commonStrings : CommonStrings_Access;
       gatewayName : Unbounded_String;
       paymentType : BasicPaymentType_Access;
@@ -79,7 +82,7 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentG
             gatewayName := Unbounded_String (hashMap.get (PaymentGatewayData_Package.NAME.toString));
             paymentType := BasicPaymentTypeUtil_Package.getInstance.get (gatewayName);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PAYMENT) then
-                This.logUtil.putF (To_Unbounded_String ("Getting PaymentGatewayInterface for PaymentType: ") & paymentType.getName & To_Unbounded_String (" with: ") & Java_Image (hashMap), This'Unchecked_Access, commonStrings.GET_INSTANCE);
+                This.logUtil.putF (To_Unbounded_String ("Getting PaymentGatewayInterface for PaymentType: ") & paymentType.getName & To_Unbounded_String (" with: ") & Java_Image (hashMap), PaymentGatewayInterfaceFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);
             end if;
             paymentGatewayInterfaceFactoryInterface := paymentType.getPaymentGatewayInterfaceFactoryInterface;
             return paymentGatewayInterfaceFactoryInterface.getInstance (hashMap);
@@ -89,29 +92,29 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentG
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PAYMENTERROR) then
-                This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.GET_INSTANCE, e);
+                This.logUtil.put (commonStrings.EXCEPTION_Id, PaymentGatewayInterfaceFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE, e);
             end if;
             Java_Throw (e);
                 end;
         end;
    end getInstance;
 
-   procedure getInstance (This : in out PaymentGatewayInterfaceFactory; httpServletRequest : HttpServletRequest_Access) is
-      Java_Result : constant PaymentGatewayInterface_Access := PaymentGatewayInterfaceFactory'Class (This).getInstance (httpServletRequest);
+   procedure getInstance (This : in out PaymentGatewayInterfaceFactory; httpServletRequest_Param : access HttpServletRequest'Class) is
+      Java_Result : constant PaymentGatewayInterface_Access := PaymentGatewayInterfaceFactory'Class (This).getInstance (httpServletRequest_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
-   procedure getInstance (This : in out PaymentGatewayInterfaceFactory; paymentType : BasicPaymentType_Access) is
-      Java_Result : constant PaymentGatewayInterface_Access := PaymentGatewayInterfaceFactory'Class (This).getInstance (paymentType);
+   procedure getInstance (This : in out PaymentGatewayInterfaceFactory; paymentType_Param : access BasicPaymentType'Class) is
+      Java_Result : constant PaymentGatewayInterface_Access := PaymentGatewayInterfaceFactory'Class (This).getInstance (paymentType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
-   procedure getInstance (This : in out PaymentGatewayInterfaceFactory; hashMap : HashMap_Access) is
-      Java_Result : constant PaymentGatewayInterface_Access := PaymentGatewayInterfaceFactory'Class (This).getInstance (hashMap);
+   procedure getInstance (This : in out PaymentGatewayInterfaceFactory; hashMap_Param : access HashMap'Class) is
+      Java_Result : constant PaymentGatewayInterface_Access := PaymentGatewayInterfaceFactory'Class (This).getInstance (hashMap_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

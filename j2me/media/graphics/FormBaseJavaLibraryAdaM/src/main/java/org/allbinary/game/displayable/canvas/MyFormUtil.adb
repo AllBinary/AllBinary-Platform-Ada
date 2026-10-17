@@ -41,7 +41,8 @@ package body org.allbinary.game.displayable.canvas.MyFormUtil_Package is
         return MyFormUtil_Package.instance;
    end getInstance;
 
-   procedure updateMeasurement (This : in out MyFormUtil; graphics : Graphics_Access) is
+   procedure updateMeasurement (This : in out MyFormUtil; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       font : Font_Access;
       displayInfo : DisplayInfoSingleton_Access;
       features : Features_Access;

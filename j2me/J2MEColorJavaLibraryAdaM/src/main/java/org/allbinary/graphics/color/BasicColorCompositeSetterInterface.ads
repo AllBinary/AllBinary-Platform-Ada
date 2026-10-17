@@ -33,7 +33,7 @@ package org.allbinary.graphics.color.BasicColorCompositeSetterInterface_Package 
    type BasicColorCompositeSetterInterface_Access is access all BasicColorCompositeSetterInterface'Class;
    type BasicColorCompositeSetterInterface_Access_Array is array (Natural range <>) of BasicColorCompositeSetterInterface_Access;
    type BasicColorCompositeSetterInterface_Access_Array_Access is access all BasicColorCompositeSetterInterface_Access_Array;
-   procedure setBasicColorP (This : in out BasicColorCompositeSetterInterface; basicColor : BasicColor_Access) is abstract;
+   procedure setBasicColorP (This : in out BasicColorCompositeSetterInterface; basicColor_Param : access BasicColor'Class) is abstract;
 
 end org.allbinary.graphics.color.BasicColorCompositeSetterInterface_Package;
 

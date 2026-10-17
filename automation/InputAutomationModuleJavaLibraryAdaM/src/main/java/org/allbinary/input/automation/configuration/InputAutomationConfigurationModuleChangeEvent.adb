@@ -22,16 +22,17 @@ package body org.allbinary.input.automation.configuration.InputAutomationConfigu
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out InputAutomationConfigurationModuleChangeEvent'Class; inputAutomationModuleConfiguration : InputAutomationModuleConfiguration_Access) is
+   procedure Initialize (This : in out InputAutomationConfigurationModuleChangeEvent'Class; inputAutomationModuleConfiguration_Param : access InputAutomationModuleConfiguration'Class) is
+      inputAutomationModuleConfiguration : InputAutomationModuleConfiguration_Access := InputAutomationModuleConfiguration_Access (inputAutomationModuleConfiguration_Param);
    begin
       Initialize_Fields (This);
         This.setInputAutomationModuleConfiguration (inputAutomationModuleConfiguration);
    end Initialize;
 
-   function Create (inputAutomationModuleConfiguration : InputAutomationModuleConfiguration_Access) return InputAutomationConfigurationModuleChangeEvent_Access is
+   function Create (inputAutomationModuleConfiguration_Param : access InputAutomationModuleConfiguration'Class) return InputAutomationConfigurationModuleChangeEvent_Access is
       This : constant InputAutomationConfigurationModuleChangeEvent_Access := new InputAutomationConfigurationModuleChangeEvent;
    begin
-      InputAutomationConfigurationModuleChangeEvent_Package.Initialize (This.all, inputAutomationModuleConfiguration);
+      InputAutomationConfigurationModuleChangeEvent_Package.Initialize (This.all, inputAutomationModuleConfiguration_Param);
       return This;
    end Create;
 
@@ -40,7 +41,8 @@ package body org.allbinary.input.automation.configuration.InputAutomationConfigu
         return This.inputAutomationModuleConfiguration;
    end getInputAutomationModuleConfiguration;
 
-   procedure setInputAutomationModuleConfiguration (This : in out InputAutomationConfigurationModuleChangeEvent; inputAutomationModuleConfiguration : InputAutomationModuleConfiguration_Access) is
+   procedure setInputAutomationModuleConfiguration (This : in out InputAutomationConfigurationModuleChangeEvent; inputAutomationModuleConfiguration_Param : access InputAutomationModuleConfiguration'Class) is
+      inputAutomationModuleConfiguration : InputAutomationModuleConfiguration_Access := InputAutomationModuleConfiguration_Access (inputAutomationModuleConfiguration_Param);
    begin
         This.inputAutomationModuleConfiguration := inputAutomationModuleConfiguration;
    end setInputAutomationModuleConfiguration;

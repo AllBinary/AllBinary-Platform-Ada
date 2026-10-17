@@ -45,8 +45,8 @@ package org.allbinary.logic.system.security.AbKeys_Package is
    procedure Initialize (This : in out AbKeys'Class);
    function Create return AbKeys_Access;
    function getInstance return AbKeys_Access;
-   function getKey (This : in out AbKeys; abeClientInformation : AbeClientInformationInterface_Access; keyName : Unbounded_String) return Unbounded_String;
-   procedure getKey (This : in out AbKeys; abeClientInformation : AbeClientInformationInterface_Access; keyName : Unbounded_String);
+   function getKey (This : in out AbKeys; abeClientInformation_Param : access AbeClientInformationInterface'Class; keyName : Unbounded_String) return Unbounded_String;
+   procedure getKey (This : in out AbKeys; abeClientInformation_Param : access AbeClientInformationInterface'Class; keyName : Unbounded_String);
 
 end org.allbinary.logic.system.security.AbKeys_Package;
 

@@ -40,7 +40,9 @@ package body org.allbinary.media.image.ImageRotationUtil_Package is
       return This;
    end Create;
 
-   procedure rotateImage (This : in out ImageRotationUtil; originalImage : Image_Access; image : Image_Access; totalAngle : Integer) is
+   procedure rotateImage (This : in out ImageRotationUtil; originalImage_Param : access Image'Class; image_Param : access Image'Class; totalAngle : Integer) is
+      originalImage : Image_Access := Image_Access (originalImage_Param);
+      image : Image_Access := Image_Access (image_Param);
       j2seImage : J2SEMutableImage_Access;
       newBufferedImage : BufferedImage_Access;
       originalAwtImage : Image_Access;
@@ -59,12 +61,13 @@ package body org.allbinary.media.image.ImageRotationUtil_Package is
             end if;
             This.imageJ2SERotationUtil.rotateImage (originalAwtImage, newBufferedImage, totalAngle);
         else
-            PreLogUtil_Package.putOE (To_Unbounded_String ("Not Mutable"), This'Unchecked_Access, To_Unbounded_String ("getRotatedImage"), Java_New_Exception ("Exception"));
+            PreLogUtil_Package.putOE (To_Unbounded_String ("Not Mutable"), ImageRotationUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("getRotatedImage"), Java_New_Exception ("Exception"));
         end if;
    end rotateImage;
 
    --  throws Exception
-   function createRotatedImage (This : in out ImageRotationUtil; originalImage : Image_Access; rotationInDegrees : Integer) return Image_Access is
+   function createRotatedImage (This : in out ImageRotationUtil; originalImage_Param : access Image'Class; rotationInDegrees : Integer) return Image_Access is
+      originalImage : Image_Access := Image_Access (originalImage_Param);
       image : Image_Access;
       originalAwtImage : Image_Access;
       originalJ2SEImage : J2SEImmutableImage_Access;
@@ -91,8 +94,8 @@ package body org.allbinary.media.image.ImageRotationUtil_Package is
         end if;
    end createRotatedImage;
 
-   procedure createRotatedImage (This : in out ImageRotationUtil; originalImage : Image_Access; rotationInDegrees : Integer) is
-      Java_Result : constant Image_Access := ImageRotationUtil'Class (This).createRotatedImage (originalImage, rotationInDegrees);
+   procedure createRotatedImage (This : in out ImageRotationUtil; originalImage_Param : access Image'Class; rotationInDegrees : Integer) is
+      Java_Result : constant Image_Access := ImageRotationUtil'Class (This).createRotatedImage (originalImage_Param, rotationInDegrees);
       pragma Unreferenced (Java_Result);
    begin
       null;

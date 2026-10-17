@@ -42,7 +42,9 @@ package body org.allbinary.init.crypt.jcehelper.BasicCryptUtil_Package is
    end getInstance;
 
    --  throws Exception
-   function getDecryptedInputStream (This : in out BasicCryptUtil; inputStream : InputStream_Access; cryptInterface : CryptInterface_Access) return InputStream_Access is
+   function getDecryptedInputStream (This : in out BasicCryptUtil; inputStream_Param : access InputStream'Class; cryptInterface_Param : access CryptInterface'Class) return InputStream_Access is
+      inputStream : InputStream_Access := InputStream_Access (inputStream_Param);
+      cryptInterface : CryptInterface_Access := CryptInterface_Access (cryptInterface_Param);
       buffer : ByteArrayOutputStream_Access;
       ch : Integer;
       decrypted : Short_Short_Integer_Array_Access;
@@ -67,8 +69,8 @@ package body org.allbinary.init.crypt.jcehelper.BasicCryptUtil_Package is
         return ByteArrayInputStream_Package.Create (This.tsUtil.getByteArray (decryptedString));
    end getDecryptedInputStream;
 
-   procedure getDecryptedInputStream (This : in out BasicCryptUtil; inputStream : InputStream_Access; cryptInterface : CryptInterface_Access) is
-      Java_Result : constant InputStream_Access := BasicCryptUtil'Class (This).getDecryptedInputStream (inputStream, cryptInterface);
+   procedure getDecryptedInputStream (This : in out BasicCryptUtil; inputStream_Param : access InputStream'Class; cryptInterface_Param : access CryptInterface'Class) is
+      Java_Result : constant InputStream_Access := BasicCryptUtil'Class (This).getDecryptedInputStream (inputStream_Param, cryptInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

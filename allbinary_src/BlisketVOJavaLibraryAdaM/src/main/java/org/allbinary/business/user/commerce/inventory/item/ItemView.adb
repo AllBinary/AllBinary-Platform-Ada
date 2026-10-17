@@ -23,22 +23,25 @@ package body org.allbinary.business.user.commerce.inventory.item.ItemView_Packag
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ItemView'Class; itemInterface : OrderItemInterface_Access; vector : BasicArrayList_Access) is
+   procedure Initialize (This : in out ItemView'Class; itemInterface_Param : access OrderItemInterface'Class; vector_Param : access BasicArrayList'Class) is
+      itemInterface : OrderItemInterface_Access := OrderItemInterface_Access (itemInterface_Param);
+      vector : BasicArrayList_Access := BasicArrayList_Access (vector_Param);
    begin
       Initialize_Fields (This);
         This.itemInterface := itemInterface;
         This.vector := vector;
    end Initialize;
 
-   function Create (itemInterface : OrderItemInterface_Access; vector : BasicArrayList_Access) return ItemView_Access is
+   function Create (itemInterface_Param : access OrderItemInterface'Class; vector_Param : access BasicArrayList'Class) return ItemView_Access is
       This : constant ItemView_Access := new ItemView;
    begin
-      ItemView_Package.Initialize (This.all, itemInterface, vector);
+      ItemView_Package.Initialize (This.all, itemInterface_Param, vector_Param);
       return This;
    end Create;
 
    --  throws Exception
-   function toXmlNode (This : in out ItemView; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out ItemView; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       hashMap : HashMap_Access;
       keySet : Set_Access;
       node : Node_Access;
@@ -70,8 +73,8 @@ package body org.allbinary.business.user.commerce.inventory.item.ItemView_Packag
         return node;
    end toXmlNode;
 
-   procedure toXmlNode (This : in out ItemView; document : Document_Access) is
-      Java_Result : constant Node_Access := ItemView'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out ItemView; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := ItemView'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

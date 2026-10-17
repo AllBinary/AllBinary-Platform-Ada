@@ -22,19 +22,20 @@ package body views.business.context.modules.storefront.generator.GeneratorStoreF
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out GeneratorStoreFrontContextView'Class; transformInfoInterface : TransformInfoInterface_Access) is
+   procedure Initialize (This : in out GeneratorStoreFrontContextView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (To_Unbounded_String ("View Name: ") & transformInfoInterface.getName, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+            This.logUtil.putF (To_Unbounded_String ("View Name: ") & transformInfoInterface.getName, GeneratorStoreFrontContextView_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
    end Initialize;
 
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return GeneratorStoreFrontContextView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return GeneratorStoreFrontContextView_Access is
       This : constant GeneratorStoreFrontContextView_Access := new GeneratorStoreFrontContextView;
    begin
-      GeneratorStoreFrontContextView_Package.Initialize (This.all, transformInfoInterface);
+      GeneratorStoreFrontContextView_Package.Initialize (This.all, transformInfoInterface_Param);
       return This;
    end Create;
 
@@ -61,7 +62,7 @@ package body views.business.context.modules.storefront.generator.GeneratorStoreF
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("view()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, GeneratorStoreFrontContextView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
             end if;
             Java_Throw (e);
                 end;

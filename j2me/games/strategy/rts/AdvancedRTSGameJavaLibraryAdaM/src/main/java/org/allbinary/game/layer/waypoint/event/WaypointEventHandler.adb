@@ -35,7 +35,9 @@ package body org.allbinary.game.layer.waypoint.event.WaypointEventHandler_Packag
    end Create;
 
    --  throws Exception
-   procedure process (This : in out WaypointEventHandler; eventObject : AllBinaryEventObject_Access; eventListenerInterface : EventListenerInterface_Access) is
+   procedure process (This : in out WaypointEventHandler; eventObject_Param : access AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface'Class) is
+      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
+      eventListenerInterface : EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
       waypointEventListenerInterface : WaypointEventListenerInterface_Access;
    begin
         waypointEventListenerInterface := (WaypointEventListenerInterface_Access (eventListenerInterface));

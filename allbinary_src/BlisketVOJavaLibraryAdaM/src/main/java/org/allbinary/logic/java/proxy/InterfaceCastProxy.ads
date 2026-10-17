@@ -36,12 +36,12 @@ package org.allbinary.logic.java.proxy.InterfaceCastProxy_Package is
       anyType : Java_Object_Access;
    end record;
 
-   procedure Initialize (This : in out InterfaceCastProxy'Class; anyType : Java_Object_Access);
-   function Create (anyType : Java_Object_Access) return InterfaceCastProxy_Access;
-   function newInstance (anyType : Java_Object_Access) return Java_Object_Access;
-   procedure newInstance (anyType : Java_Object_Access);
-   function invoke (This : in out InterfaceCastProxy; proxyObject : Java_Object_Access; proxyMethod : Method_Access; proxyArgs : Java_Object_Access_Array_Access) return Java_Object_Access;
-   procedure invoke (This : in out InterfaceCastProxy; proxyObject : Java_Object_Access; proxyMethod : Method_Access; proxyArgs : Java_Object_Access_Array_Access);
+   procedure Initialize (This : in out InterfaceCastProxy'Class; anyType_Param : access Java_Object'Class);
+   function Create (anyType_Param : access Java_Object'Class) return InterfaceCastProxy_Access;
+   function newInstance (anyType_Param : access Java_Object'Class) return Java_Object_Access;
+   procedure newInstance (anyType_Param : access Java_Object'Class);
+   function invoke (This : in out InterfaceCastProxy; proxyObject_Param : access Java_Object'Class; proxyMethod_Param : access Method'Class; proxyArgs : Java_Object_Access_Array_Access) return Java_Object_Access;
+   procedure invoke (This : in out InterfaceCastProxy; proxyObject_Param : access Java_Object'Class; proxyMethod_Param : access Method'Class; proxyArgs : Java_Object_Access_Array_Access);
 
 end org.allbinary.logic.java.proxy.InterfaceCastProxy_Package;
 

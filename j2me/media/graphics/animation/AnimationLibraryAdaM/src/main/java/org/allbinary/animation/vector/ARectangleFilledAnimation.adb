@@ -29,7 +29,8 @@ package body org.allbinary.animation.vector.ARectangleFilledAnimation_Package is
         null;
    end nextFrame;
 
-   procedure paintXY (This : in out ARectangleFilledAnimation; graphics : Graphics_Access; unusedX : Integer; unusedY : Integer) is
+   procedure paintXY (This : in out ARectangleFilledAnimation; graphics_Param : access Graphics'Class; unusedX : Integer; unusedY : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         RectangleFilledAnimation (This).paintXY (graphics, This.x, This.y);
    end paintXY;

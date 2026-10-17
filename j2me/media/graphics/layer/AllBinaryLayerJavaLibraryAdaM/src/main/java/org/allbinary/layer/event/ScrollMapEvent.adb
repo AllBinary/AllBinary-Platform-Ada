@@ -23,16 +23,17 @@ package body org.allbinary.layer.event.ScrollMapEvent_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ScrollMapEvent'Class; anyType : Java_Object_Access) is
+   procedure Initialize (This : in out ScrollMapEvent'Class; anyType_Param : access Java_Object'Class) is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         AllBinaryEventObject_Package.Initialize (This, anyType);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (anyType : Java_Object_Access) return ScrollMapEvent_Access is
+   function Create (anyType_Param : access Java_Object'Class) return ScrollMapEvent_Access is
       This : constant ScrollMapEvent_Access := new ScrollMapEvent;
    begin
-      ScrollMapEvent_Package.Initialize (This.all, anyType);
+      ScrollMapEvent_Package.Initialize (This.all, anyType_Param);
       return This;
    end Create;
 

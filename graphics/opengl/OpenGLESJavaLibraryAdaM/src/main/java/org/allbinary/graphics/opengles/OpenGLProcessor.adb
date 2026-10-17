@@ -23,7 +23,8 @@ package body org.allbinary.graphics.opengles.OpenGLProcessor_Package is
    end Create;
 
 
-   procedure process (This : in out OpenGLProcessor; gl : GL10_Access) is
+   procedure process (This : in out OpenGLProcessor; gl_Param : access GL10'Class) is
+      gl : GL10_Access := GL10_Access (gl_Param);
    begin
         null;
    end process;

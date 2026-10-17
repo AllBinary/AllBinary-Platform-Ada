@@ -26,22 +26,24 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationNewBundle
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out InputAutomationNewBundleRunnable'Class; inputAutomationBundleActivator : InputAutomationBundleActivator_Access) is
+   procedure Initialize (This : in out InputAutomationNewBundleRunnable'Class; inputAutomationBundleActivator_Param : access InputAutomationBundleActivator'Class) is
+      inputAutomationBundleActivator : InputAutomationBundleActivator_Access := InputAutomationBundleActivator_Access (inputAutomationBundleActivator_Param);
    begin
       Initialize_Fields (This);
         This.inputAutomationBundleActivator := inputAutomationBundleActivator;
         This.fileBasicArrayList := BasicArrayListD_Package.Create;
    end Initialize;
 
-   function Create (inputAutomationBundleActivator : InputAutomationBundleActivator_Access) return InputAutomationNewBundleRunnable_Access is
+   function Create (inputAutomationBundleActivator_Param : access InputAutomationBundleActivator'Class) return InputAutomationNewBundleRunnable_Access is
       This : constant InputAutomationNewBundleRunnable_Access := new InputAutomationNewBundleRunnable;
    begin
-      InputAutomationNewBundleRunnable_Package.Initialize (This.all, inputAutomationBundleActivator);
+      InputAutomationNewBundleRunnable_Package.Initialize (This.all, inputAutomationBundleActivator_Param);
       return This;
    end Create;
 
    --  throws Exception
-   procedure setThread (This : in out InputAutomationNewBundleRunnable; thread : Thread_Access) is
+   procedure setThread (This : in out InputAutomationNewBundleRunnable; thread_Param : access Thread'Class) is
+      thread : Thread_Access := Thread_Access (thread_Param);
    begin
         null;
    end setThread;
@@ -63,7 +65,7 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationNewBundle
       bundle : Bundle_Access;
       index : Integer;
    begin
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("updateModules"));
+        This.logUtil.putF (This.commonStrings.START, InputAutomationNewBundleRunnable_Access'(This'Unchecked_Access), To_Unbounded_String ("updateModules"));
         list := This.findNewModules;
         size := list.size;
         bundle := null;
@@ -87,10 +89,10 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationNewBundle
       symbolicName : Unbounded_String;
       index : Integer;
    begin
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("getAllJarSymbolicNameHashMap"));
+        This.logUtil.putF (This.commonStrings.START, InputAutomationNewBundleRunnable_Access'(This'Unchecked_Access), To_Unbounded_String ("getAllJarSymbolicNameHashMap"));
         hashMap := StdUtil_Package.getInstance.createHashMap;
         jarFileBasicArrayList := This.getJarModuleFileBasicArrayList;
-        This.logUtil.putF (To_Unbounded_String ("Jar Module Files: ") & Java_Image (jarFileBasicArrayList), This'Unchecked_Access, To_Unbounded_String ("getAllJarSymbolicNameHashMap"));
+        This.logUtil.putF (To_Unbounded_String ("Jar Module Files: ") & Java_Image (jarFileBasicArrayList), InputAutomationNewBundleRunnable_Access'(This'Unchecked_Access), To_Unbounded_String ("getAllJarSymbolicNameHashMap"));
         size := jarFileBasicArrayList.size;
         file_Case := null;
         for index in 0 .. (size) - 1 loop
@@ -118,16 +120,16 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationNewBundle
       path : Unbounded_String;
       file_Case : File_Access;
    begin
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("getJarModuleFileBasicArrayList"));
+        This.logUtil.putF (This.commonStrings.START, InputAutomationNewBundleRunnable_Access'(This'Unchecked_Access), To_Unbounded_String ("getJarModuleFileBasicArrayList"));
         baseJarPath := Java_Get_Property (JAR_DIR_PROP);
         if baseJarPath.startsWith (InputAutomationNewBundleRunnable_Package.FILE) then
             baseJarPath := Unbounded_Slice (baseJarPath, (InputAutomationNewBundleRunnable_Package.FILE.length) + 1, Length (baseJarPath));
         end if;
         jarFileFilter := BasicFileFilterUtil_Package.getInstance (To_Unbounded_String (".jar"));
         path := baseJarPath & Java_Image (InputAutomationNewBundleRunnable_Package.INPUT_AUTMATION_MODULE_BUNDLE_JAR_PATH);
-        This.logUtil.putF (To_Unbounded_String ("Path: ") & path, This'Unchecked_Access, To_Unbounded_String ("getJarModuleFileBasicArrayList"));
+        This.logUtil.putF (To_Unbounded_String ("Path: ") & path, InputAutomationNewBundleRunnable_Access'(This'Unchecked_Access), To_Unbounded_String ("getJarModuleFileBasicArrayList"));
         file_Case := File_Package.Create (path);
-        This.logUtil.putF (To_Unbounded_String ("File: ") & Java_Image (file_Case.getAbsolutePath) & To_Unbounded_String (" isDirectory: ") & Java_Image (file_Case.isDirectory), This'Unchecked_Access, To_Unbounded_String ("getJarModuleFileBasicArrayList"));
+        This.logUtil.putF (To_Unbounded_String ("File: ") & Java_Image (file_Case.getAbsolutePath) & To_Unbounded_String (" isDirectory: ") & Java_Image (file_Case.isDirectory), InputAutomationNewBundleRunnable_Access'(This'Unchecked_Access), To_Unbounded_String ("getJarModuleFileBasicArrayList"));
         return SubDirectory_Package.getInstance.search (jarFileFilter, FileWrapperUtil_Package.wrapFile (file_Case));
    end getJarModuleFileBasicArrayList;
 
@@ -139,12 +141,12 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationNewBundle
       bundle : Bundle_Access;
       index : Integer;
    begin
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("getInstalledJarSymbolicNameBasicArrayList"));
+        This.logUtil.putF (This.commonStrings.START, InputAutomationNewBundleRunnable_Access'(This'Unchecked_Access), To_Unbounded_String ("getInstalledJarSymbolicNameBasicArrayList"));
         vector := BasicArrayListD_Package.Create;
         bundleContext := InputAutomationBundleActivator_Package.getBundleContext;
         bundleArray := bundleContext.getBundles;
         if (bundleArray) /= (null) then
-            This.logUtil.putF (To_Unbounded_String ("bundleArray: ") & Java_Image (bundleArray'Length), This'Unchecked_Access, To_Unbounded_String ("getInputAutomationModuleServices"));
+            This.logUtil.putF (To_Unbounded_String ("bundleArray: ") & Java_Image (bundleArray'Length), InputAutomationNewBundleRunnable_Access'(This'Unchecked_Access), To_Unbounded_String ("getInputAutomationModuleServices"));
             for index in 0 .. (bundleArray'Length) - 1 loop
                 bundle := bundleArray (index);
                 vector.add (bundle.getSymbolicName);
@@ -160,7 +162,7 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationNewBundle
       nextSymbolicName : Unbounded_String;
       index : Integer;
    begin
-        This.logUtil.putF (Java_Image (CommonLabels_Package.getInstance.START) & symbolicName, This'Unchecked_Access, To_Unbounded_String ("isInstalled"));
+        This.logUtil.putF (Java_Image (CommonLabels_Package.getInstance.START) & symbolicName, InputAutomationNewBundleRunnable_Access'(This'Unchecked_Access), To_Unbounded_String ("isInstalled"));
         list := This.getInstalledJarSymbolicNameBasicArrayList;
         size := list.size;
         nextSymbolicName := Null_Unbounded_String;
@@ -183,10 +185,10 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationNewBundle
       symbolicName : Unbounded_String;
       index : Integer;
    begin
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("findNewModules"));
+        This.logUtil.putF (This.commonStrings.START, InputAutomationNewBundleRunnable_Access'(This'Unchecked_Access), To_Unbounded_String ("findNewModules"));
         vector := BasicArrayListD_Package.Create;
         hashMap := This.getAllJarSymbolicNameHashMap;
-        This.logUtil.putF (To_Unbounded_String ("All: ") & Java_Image (hashMap), This'Unchecked_Access, To_Unbounded_String ("findNewModules"));
+        This.logUtil.putF (To_Unbounded_String ("All: ") & Java_Image (hashMap), InputAutomationNewBundleRunnable_Access'(This'Unchecked_Access), To_Unbounded_String ("findNewModules"));
         set := hashMap.keySet;
         symbolicNameArray := set.toArray;
         size := symbolicNameArray'Length;
@@ -200,10 +202,11 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationNewBundle
    end findNewModules;
 
    --  throws Exception
-   function install (This : in out InputAutomationNewBundleRunnable; url : URL_Access) return Bundle_Access is
+   function install (This : in out InputAutomationNewBundleRunnable; url_Param : access URL'Class) return Bundle_Access is
+      url : URL_Access := URL_Access (url_Param);
       bundleContext : BundleContext_Access;
    begin
-        This.logUtil.putF ((CommonLabels_Package.getInstance.START) + (url), This'Unchecked_Access, To_Unbounded_String ("install"));
+        This.logUtil.putF ((CommonLabels_Package.getInstance.START) + (url), InputAutomationNewBundleRunnable_Access'(This'Unchecked_Access), To_Unbounded_String ("install"));
         bundleContext := InputAutomationBundleActivator_Package.getBundleContext;
         return bundleContext.installBundle (url.toString);
    end install;
@@ -212,22 +215,22 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationNewBundle
       timeHelper : TimeDelayHelper_Access;
    begin
         begin
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.RUN);
+            This.logUtil.putF (This.commonStrings.START, InputAutomationNewBundleRunnable_Access'(This'Unchecked_Access), This.commonStrings.RUN);
             This.setRunning (True);
             timeHelper := TimeDelayHelper_Package.Create (1000);
             while This.isRunning loop
                 timeHelper.setStartTimeTNT;
-                This.logUtil.putF ((CommonLabels_Package.getInstance.ELAPSED) + (timeHelper.getElapsedTNT), This'Unchecked_Access, This.commonStrings.RUN);
+                This.logUtil.putF ((CommonLabels_Package.getInstance.ELAPSED) + (timeHelper.getElapsedTNT), InputAutomationNewBundleRunnable_Access'(This'Unchecked_Access), This.commonStrings.RUN);
                 This.updateModules;
                 exit;
             end loop;
-            This.logUtil.putF (This.commonStrings.END_Id, This'Unchecked_Access, This.commonStrings.RUN);
+            This.logUtil.putF (This.commonStrings.END_Id, InputAutomationNewBundleRunnable_Access'(This'Unchecked_Access), This.commonStrings.RUN);
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.RUN, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, InputAutomationNewBundleRunnable_Access'(This'Unchecked_Access), This.commonStrings.RUN, e);
                 end;
         end;
    end run;
@@ -239,8 +242,8 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationNewBundle
       null;
    end isInstalled;
 
-   procedure install (This : in out InputAutomationNewBundleRunnable; url : URL_Access) is
-      Java_Result : constant Bundle_Access := InputAutomationNewBundleRunnable'Class (This).install (url);
+   procedure install (This : in out InputAutomationNewBundleRunnable; url_Param : access URL'Class) is
+      Java_Result : constant Bundle_Access := InputAutomationNewBundleRunnable'Class (This).install (url_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -23,7 +23,7 @@ package body org.allbinary.game.graphics.hud.BasicHud_1_Package is
       This.canvasStrings := CanvasStrings_Package.getInstance;
       This.basicSetColorUtil := BasicColorSetUtil_Package.getInstance;
       This.displayInfo := DisplayInfoSingleton_Package.getInstance;
-      This.updateMyFontProcessor := UpdateMyFontProcessor_Package.Create (This'Unchecked_Access);
+      This.updateMyFontProcessor := UpdateMyFontProcessor_Package.Create (BasicHud_1_Access'(This'Unchecked_Access));
       This.myFontProcessor := This.updateMyFontProcessor;
       This.location := 0;
       This.direction := 0;
@@ -39,7 +39,8 @@ package body org.allbinary.game.graphics.hud.BasicHud_1_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BasicHud_1'Class; location : Integer; direction : Integer; bufferZone : Integer; basicColor : BasicColor_Access) is
+   procedure Initialize (This : in out BasicHud_1'Class; location : Integer; direction : Integer; bufferZone : Integer; basicColor_Param : access BasicColor'Class) is
+      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
       Initialize_Fields (This);
         This.setLocation (location);
@@ -50,14 +51,15 @@ package body org.allbinary.game.graphics.hud.BasicHud_1_Package is
         This.color := basicColor.intValue;
    end Initialize;
 
-   function Create (location : Integer; direction : Integer; bufferZone : Integer; basicColor : BasicColor_Access) return BasicHud_1_Access is
+   function Create (location : Integer; direction : Integer; bufferZone : Integer; basicColor_Param : access BasicColor'Class) return BasicHud_1_Access is
       This : constant BasicHud_1_Access := new BasicHud_1;
    begin
-      BasicHud_1_Package.Initialize (This.all, location, direction, bufferZone, basicColor);
+      BasicHud_1_Package.Initialize (This.all, location, direction, bufferZone, basicColor_Param);
       return This;
    end Create;
 
-   procedure updateMeasurement (This : in out BasicHud_1; graphics : Graphics_Access) is
+   procedure updateMeasurement (This : in out BasicHud_1; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       commonStrings : CommonStrings_Access;
    begin
         begin
@@ -70,7 +72,7 @@ package body org.allbinary.game.graphics.hud.BasicHud_1_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.canvasStrings.ON_DISPLAY_CHANGE_EVENT, e);
+            This.logUtil.put (commonStrings.EXCEPTION_Id, BasicHud_1_Access'(This'Unchecked_Access), This.canvasStrings.ON_DISPLAY_CHANGE_EVENT, e);
                 end;
         end;
         This.myFontProcessor := MyFontProcessor_Package.getInstance;
@@ -129,12 +131,14 @@ package body org.allbinary.game.graphics.hud.BasicHud_1_Package is
         return HudGraphicsPosition_Package.Create (This.getPoint (x, y), anchor);
    end getHudGraphicsPositionWH;
 
-   procedure onEvent (This : in out BasicHud_1; eventObject : AllBinaryEventObject_Access) is
+   procedure onEvent (This : in out BasicHud_1; eventObject_Param : access AllBinaryEventObject'Class) is
+      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
    begin
-        ForcedLogUtil_Package.log (EventStrings_Package.getInstance.PERFORMANCE_MESSAGE, This'Unchecked_Access);
+        ForcedLogUtil_Package.log (EventStrings_Package.getInstance.PERFORMANCE_MESSAGE, BasicHud_1_Access'(This'Unchecked_Access));
    end onEvent;
 
-   procedure onDisplayChangeEvent (This : in out BasicHud_1; displayChangeEvent : DisplayChangeEvent_Access) is
+   procedure onDisplayChangeEvent (This : in out BasicHud_1; displayChangeEvent_Param : access DisplayChangeEvent'Class) is
+      displayChangeEvent : DisplayChangeEvent_Access := DisplayChangeEvent_Access (displayChangeEvent_Param);
    begin
         This.myFontProcessor := This.updateMyFontProcessor;
    end onDisplayChangeEvent;
@@ -184,7 +188,8 @@ package body org.allbinary.game.graphics.hud.BasicHud_1_Package is
         This.x := x;
    end setX;
 
-   procedure setBasicColorP (This : in out BasicHud_1; basicColor : BasicColor_Access) is
+   procedure setBasicColorP (This : in out BasicHud_1; basicColor_Param : access BasicColor'Class) is
+      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         This.basicColor := basicColor;
    end setBasicColorP;
@@ -204,7 +209,8 @@ package body org.allbinary.game.graphics.hud.BasicHud_1_Package is
         return This.y;
    end getY;
 
-   procedure paintSSO (This : in out BasicHud_1; graphics : Graphics_Access; string_Id : Unbounded_String; string2 : Unbounded_String; offset : Integer) is
+   procedure paintSSO (This : in out BasicHud_1; graphics_Param : access Graphics'Class; string_Id : Unbounded_String; string2 : Unbounded_String; offset : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.myFontProcessor.process (graphics);
         This.basicSetColorUtil.setBasicColorP (graphics, This.getBasicColorP);
@@ -212,7 +218,8 @@ package body org.allbinary.game.graphics.hud.BasicHud_1_Package is
         graphics.drawString (string2, (This.x) + (offset), This.getY, This.hudGraphicsPosition.getAnchor);
    end paintSSO;
 
-   procedure paintSSOO (This : in out BasicHud_1; graphics : Graphics_Access; string_Id : Unbounded_String; string2 : Unbounded_String; offset : Integer; offset2 : Integer) is
+   procedure paintSSOO (This : in out BasicHud_1; graphics_Param : access Graphics'Class; string_Id : Unbounded_String; string2 : Unbounded_String; offset : Integer; offset2 : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.myFontProcessor.process (graphics);
         graphics.setColor (This.getColor);
@@ -220,7 +227,8 @@ package body org.allbinary.game.graphics.hud.BasicHud_1_Package is
         graphics.drawString (string2, (This.x) + (offset2), This.getY, This.hudGraphicsPosition.getAnchor);
    end paintSSOO;
 
-   procedure paintDXY (This : in out BasicHud_1; graphics : Graphics_Access; charArray : Character_Array_Access; offset : Integer; len : Integer; charArray2 : Character_Array_Access; offset2 : Integer; len2 : Integer; xOffset : Integer; xOffset2 : Integer) is
+   procedure paintDXY (This : in out BasicHud_1; graphics_Param : access Graphics'Class; charArray : Character_Array_Access; offset : Integer; len : Integer; charArray2 : Character_Array_Access; offset2 : Integer; len2 : Integer; xOffset : Integer; xOffset2 : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       y : Integer;
    begin
         This.myFontProcessor.process (graphics);
@@ -230,7 +238,8 @@ package body org.allbinary.game.graphics.hud.BasicHud_1_Package is
         graphics.drawChars (charArray2, offset2, len2, (This.x) + (xOffset2), y, This.hudGraphicsPosition.getAnchor);
    end paintDXY;
 
-   procedure paintDX (This : in out BasicHud_1; graphics : Graphics_Access; charArray : Character_Array_Access; offset : Integer; len : Integer; charArray2 : Character_Array_Access; offset2 : Integer; len2 : Integer; xOffset : Integer) is
+   procedure paintDX (This : in out BasicHud_1; graphics_Param : access Graphics'Class; charArray : Character_Array_Access; offset : Integer; len : Integer; charArray2 : Character_Array_Access; offset2 : Integer; len2 : Integer; xOffset : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       y : Integer;
    begin
         This.myFontProcessor.process (graphics);
@@ -240,7 +249,8 @@ package body org.allbinary.game.graphics.hud.BasicHud_1_Package is
         graphics.drawChars (charArray2, offset2, len2, (This.x) + (xOffset), y, This.hudGraphicsPosition.getAnchor);
    end paintDX;
 
-   procedure paintOffsetAndLength (This : in out BasicHud_1; graphics : Graphics_Access; charArray : Character_Array_Access; offset : Integer; len : Integer) is
+   procedure paintOffsetAndLength (This : in out BasicHud_1; graphics_Param : access Graphics'Class; charArray : Character_Array_Access; offset : Integer; len : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       y : Integer;
    begin
         This.myFontProcessor.process (graphics);
@@ -249,7 +259,8 @@ package body org.allbinary.game.graphics.hud.BasicHud_1_Package is
         graphics.drawChars (charArray, offset, len, This.x, y, This.hudGraphicsPosition.getAnchor);
    end paintOffsetAndLength;
 
-   procedure paintString (This : in out BasicHud_1; graphics : Graphics_Access; string_Id : Unbounded_String) is
+   procedure paintString (This : in out BasicHud_1; graphics_Param : access Graphics'Class; string_Id : Unbounded_String) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       y : Integer;
    begin
         This.myFontProcessor.process (graphics);

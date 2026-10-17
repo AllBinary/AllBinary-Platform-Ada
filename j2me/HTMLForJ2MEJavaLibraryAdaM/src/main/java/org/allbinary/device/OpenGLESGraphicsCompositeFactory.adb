@@ -39,7 +39,8 @@ package body org.allbinary.device.OpenGLESGraphicsCompositeFactory_Package is
         return OpenGLESGraphicsCompositeFactory_Package.instance;
    end getInstance;
 
-   procedure set (This : in out OpenGLESGraphicsCompositeFactory; openGLESGraphicsFactory : OpenGLESGraphicsFactory_Access) is
+   procedure set (This : in out OpenGLESGraphicsCompositeFactory; openGLESGraphicsFactory_Param : access OpenGLESGraphicsFactory'Class) is
+      openGLESGraphicsFactory : OpenGLESGraphicsFactory_Access := OpenGLESGraphicsFactory_Access (openGLESGraphicsFactory_Param);
    begin
         This.openGLESGraphicsFactory := openGLESGraphicsFactory;
    end set;

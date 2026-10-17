@@ -98,7 +98,7 @@ package body org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeF
    procedure Initialize (This : in out LogConfigTypeFactory'Class) is
    begin
       Initialize_Fields (This);
-        PreLogUtil_Package.put (To_Unbounded_String ("FreeBlisket"), This'Unchecked_Access, CommonStrings_Package.getInstance.CONSTRUCTOR);
+        PreLogUtil_Package.put (To_Unbounded_String ("FreeBlisket"), LogConfigTypeFactory_Access'(This'Unchecked_Access), CommonStrings_Package.getInstance.CONSTRUCTOR);
    end Initialize;
 
    function Create return LogConfigTypeFactory_Access is

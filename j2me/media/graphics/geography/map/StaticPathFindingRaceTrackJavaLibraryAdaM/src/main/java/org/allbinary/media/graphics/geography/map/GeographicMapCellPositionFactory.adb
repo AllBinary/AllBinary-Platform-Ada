@@ -36,7 +36,8 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellPositio
 
 
    --  throws Exception
-   function getInstance (This : in out GeographicMapCellPositionFactory; geographicMapInterface : BasicGeographicMap_Access) return BasicGeographicMapCellPositionFactory_Access is
+   function getInstance (This : in out GeographicMapCellPositionFactory; geographicMapInterface_Param : access BasicGeographicMap'Class) return BasicGeographicMapCellPositionFactory_Access is
+      geographicMapInterface : BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
       commonStrings : CommonStrings_Access;
       allBinaryTiledLayer : AllBinaryTiledLayer_Access;
       geographicMapCellPositionFactoryCanBeNull : Java_Object_Access;
@@ -45,12 +46,12 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellPositio
         allBinaryTiledLayer := geographicMapInterface.getAllBinaryTiledLayer;
         geographicMapCellPositionFactoryCanBeNull := GeographicMapCellPositionFactory_Package.hashtable.get (allBinaryTiledLayer.getDataId);
         if (geographicMapCellPositionFactoryCanBeNull) = (null) then
-            This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Creating GeographicMapCellPositionFactory for TileLayer: ")).appendint (Integer (allBinaryTiledLayer.getDataId.intValue)).toString, This'Unchecked_Access, commonStrings.GET_INSTANCE);
+            This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Creating GeographicMapCellPositionFactory for TileLayer: ")).appendint (Integer (allBinaryTiledLayer.getDataId.intValue)).toString, GeographicMapCellPositionFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);
             geographicMapCellPositionFactoryCanBeNull := BasicGeographicMapCellPositionFactory_Package.Create (geographicMapInterface);
             GeographicMapCellPositionFactory_Package.hashtable.put (allBinaryTiledLayer.getDataId, geographicMapCellPositionFactoryCanBeNull);
             return BasicGeographicMapCellPositionFactory_Access (geographicMapCellPositionFactoryCanBeNull);
         else
-            This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Reusing GeographicMapCellPositionFactory for TileLayer: ")).appendint (Integer (allBinaryTiledLayer.getDataId.intValue)).toString, This'Unchecked_Access, commonStrings.GET_INSTANCE);
+            This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Reusing GeographicMapCellPositionFactory for TileLayer: ")).appendint (Integer (allBinaryTiledLayer.getDataId.intValue)).toString, GeographicMapCellPositionFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);
             return BasicGeographicMapCellPositionFactory_Access (geographicMapCellPositionFactoryCanBeNull);
         end if;
    end getInstance;
@@ -60,8 +61,8 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellPositio
         return GeographicMapCellPositionFactory_Package.hashtable;
    end getHashtable;
 
-   procedure getInstance (This : in out GeographicMapCellPositionFactory; geographicMapInterface : BasicGeographicMap_Access) is
-      Java_Result : constant BasicGeographicMapCellPositionFactory_Access := GeographicMapCellPositionFactory'Class (This).getInstance (geographicMapInterface);
+   procedure getInstance (This : in out GeographicMapCellPositionFactory; geographicMapInterface_Param : access BasicGeographicMap'Class) is
+      Java_Result : constant BasicGeographicMapCellPositionFactory_Access := GeographicMapCellPositionFactory'Class (This).getInstance (geographicMapInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

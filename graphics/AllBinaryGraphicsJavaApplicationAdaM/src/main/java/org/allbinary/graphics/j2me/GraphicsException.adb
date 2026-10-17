@@ -23,13 +23,14 @@ package body org.allbinary.graphics.j2me.GraphicsException_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out GraphicsException'Class; msg : Unbounded_String; obj : Java_Object_Access; method : Unbounded_String) is
+   procedure Initialize (This : in out GraphicsException'Class; msg : Unbounded_String; obj_Param : access Java_Object'Class; method : Unbounded_String) is
+      obj : Java_Object_Access := Java_Object_Access (obj_Param);
    begin
         Exception_Package.Initialize (This, msg);
         Initialize_Fields (This);
         begin
             This.guiLog.showDialog (msg);
-            This.logUtil.put (msg, obj, method, This'Unchecked_Access);
+            This.logUtil.put (msg, obj, method, GraphicsException_Access'(This'Unchecked_Access));
         exception
             when Java_Occurrence : others =>
                 declare
@@ -40,10 +41,10 @@ package body org.allbinary.graphics.j2me.GraphicsException_Package is
         end;
    end Initialize;
 
-   function Create (msg : Unbounded_String; obj : Java_Object_Access; method : Unbounded_String) return GraphicsException_Access is
+   function Create (msg : Unbounded_String; obj_Param : access Java_Object'Class; method : Unbounded_String) return GraphicsException_Access is
       This : constant GraphicsException_Access := new GraphicsException;
    begin
-      GraphicsException_Package.Initialize (This.all, msg, obj, method);
+      GraphicsException_Package.Initialize (This.all, msg, obj_Param, method);
       return This;
    end Create;
 
@@ -53,7 +54,7 @@ package body org.allbinary.graphics.j2me.GraphicsException_Package is
         Initialize_Fields (This);
         begin
             This.guiLog.showDialog (msg);
-            This.logUtil.put (msg, className, method, This'Unchecked_Access);
+            This.logUtil.put (msg, className, method, GraphicsException_Access'(This'Unchecked_Access));
         exception
             when Java_Occurrence : others =>
                 declare

@@ -33,7 +33,8 @@ package body org.allbinary.android.activity.NullProgressActivity_Package is
    end Create;
 
 
-   procedure runOnUiThread (This : in out NullProgressActivity; action : Runnable_Access) is
+   procedure runOnUiThread (This : in out NullProgressActivity; action_Param : access Runnable'Class) is
+      action : Runnable_Access := Runnable_Access (action_Param);
    begin
         null;
    end runOnUiThread;

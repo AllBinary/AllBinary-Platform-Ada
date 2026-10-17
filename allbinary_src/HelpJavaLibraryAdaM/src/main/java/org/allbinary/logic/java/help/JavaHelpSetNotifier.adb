@@ -39,7 +39,8 @@ package body org.allbinary.logic.java.help.JavaHelpSetNotifier_Package is
         return JavaHelpSetNotifier_Package.vector;
    end get;
 
-   function isNotified (helpSet : HelpSet_Access) return Boolean is
+   function isNotified (helpSet_Param : access HelpSet'Class) return Boolean is
+      helpSet : HelpSet_Access := HelpSet_Access (helpSet_Param);
       isNotified : Boolean;
       url : URL_Access;
       size : Integer;
@@ -61,8 +62,8 @@ package body org.allbinary.logic.java.help.JavaHelpSetNotifier_Package is
         return isNotified;
    end isNotified;
 
-   procedure isNotified (helpSet : HelpSet_Access) is
-      Java_Result : constant Boolean := isNotified (helpSet);
+   procedure isNotified (helpSet_Param : access HelpSet'Class) is
+      Java_Result : constant Boolean := isNotified (helpSet_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

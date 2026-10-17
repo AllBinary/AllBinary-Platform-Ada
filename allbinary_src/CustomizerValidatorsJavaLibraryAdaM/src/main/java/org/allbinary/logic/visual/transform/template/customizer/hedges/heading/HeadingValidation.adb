@@ -39,7 +39,8 @@ package body org.allbinary.logic.visual.transform.template.customizer.hedges.hea
       return This;
    end Create;
 
-   procedure Initialize (This : in out HeadingValidation'Class; document : Document_Access) is
+   procedure Initialize (This : in out HeadingValidation'Class; document_Param : access Document'Class) is
+      document : Document_Access := Document_Access (document_Param);
       headingNodeList : NodeList_Access;
       titleNode : Node_Access;
       logoNode : Node_Access;
@@ -53,29 +54,31 @@ package body org.allbinary.logic.visual.transform.template.customizer.hedges.hea
         This.logo := LogoValidation_Package.Create (logoNode);
    end Initialize;
 
-   function Create (document : Document_Access) return HeadingValidation_Access is
+   function Create (document_Param : access Document'Class) return HeadingValidation_Access is
       This : constant HeadingValidation_Access := new HeadingValidation;
    begin
-      HeadingValidation_Package.Initialize (This.all, document);
+      HeadingValidation_Package.Initialize (This.all, document_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out HeadingValidation'Class; hashMap : HashMap_Access) is
+   procedure Initialize (This : in out HeadingValidation'Class; hashMap_Param : access HashMap'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
    begin
       Validation_Package.Initialize (This);
       Initialize_Fields (This);
         This.getFormData (hashMap);
    end Initialize;
 
-   function Create (hashMap : HashMap_Access) return HeadingValidation_Access is
+   function Create (hashMap_Param : access HashMap'Class) return HeadingValidation_Access is
       This : constant HeadingValidation_Access := new HeadingValidation;
    begin
-      HeadingValidation_Package.Initialize (This.all, hashMap);
+      HeadingValidation_Package.Initialize (This.all, hashMap_Param);
       return This;
    end Create;
 
    --  throws Exception
-   procedure getFormData (This : in out HeadingValidation; hashMap : HashMap_Access) is
+   procedure getFormData (This : in out HeadingValidation; hashMap_Param : access HashMap'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
    begin
         This.title := TitleValidation_Package.Create (hashMap);
         This.logo := LogoValidation_Package.Create (hashMap);
@@ -91,7 +94,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.hedges.hea
             titleValid := True;
             logoValid := True;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.IS_VALID);
+                This.logUtil.putF (This.commonStrings.START, HeadingValidation_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
             end if;
             if not (This.title.isValid.booleanValue) then
                 titleValid := False;
@@ -105,7 +108,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.hedges.hea
                 valid := False;
             end if;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (To_Unbounded_String ("HeadingValidation: ") & Java_Image (valid), This'Unchecked_Access, This.commonStrings.IS_VALID);
+                This.logUtil.putF (To_Unbounded_String ("HeadingValidation: ") & Java_Image (valid), HeadingValidation_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
             end if;
             return valid;
         exception
@@ -114,7 +117,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.hedges.hea
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to validate form"), This'Unchecked_Access, This.commonStrings.IS_VALID, e);
+                This.logUtil.put (To_Unbounded_String ("Failed to validate form"), HeadingValidation_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
             end if;
             return False;
                 end;
@@ -151,7 +154,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.hedges.hea
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), This'Unchecked_Access, To_Unbounded_String ("validationInfo()"), e);
+                This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), HeadingValidation_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
             end if;
             return To_Unbounded_String ("Error Validating Form");
                 end;
@@ -163,13 +166,15 @@ package body org.allbinary.logic.visual.transform.template.customizer.hedges.hea
         return null;
    end toValidationInfoDoc;
 
-   function toValidationInfoNode (This : in out HeadingValidation; document : Document_Access) return Node_Access is
+   function toValidationInfoNode (This : in out HeadingValidation; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
    begin
         return null;
    end toValidationInfoNode;
 
    --  throws Exception
-   function toXmlNode (This : in out HeadingValidation; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out HeadingValidation; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       node : Node_Access;
    begin
         node := document.createElement (HeadingData_Package.NAME);
@@ -178,15 +183,15 @@ package body org.allbinary.logic.visual.transform.template.customizer.hedges.hea
         return node;
    end toXmlNode;
 
-   procedure toValidationInfoNode (This : in out HeadingValidation; document : Document_Access) is
-      Java_Result : constant Node_Access := HeadingValidation'Class (This).toValidationInfoNode (document);
+   procedure toValidationInfoNode (This : in out HeadingValidation; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := HeadingValidation'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toValidationInfoNode;
 
-   procedure toXmlNode (This : in out HeadingValidation; document : Document_Access) is
-      Java_Result : constant Node_Access := HeadingValidation'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out HeadingValidation; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := HeadingValidation'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

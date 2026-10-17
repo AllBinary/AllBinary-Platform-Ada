@@ -57,10 +57,10 @@ package org.allbinary.graphics.j2me.workarea.tools.PointsDomUtil_Package is
    procedure Initialize (This : in out PointsDomUtil'Class);
    function Create return PointsDomUtil_Access;
    function getInstance return PointsDomUtil_Access;
-   function toDom (This : in out PointsDomUtil; canvasDom : CanvasDom_Access; pointVector : BasicArrayList_Access) return Node_Access;
-   procedure toDom (This : in out PointsDomUtil; canvasDom : CanvasDom_Access; pointVector : BasicArrayList_Access);
-   function getPointNode (This : in out PointsDomUtil; point : GPoint_Access; pointName : Unbounded_String) return Node_Access;
-   procedure getPointNode (This : in out PointsDomUtil; point : GPoint_Access; pointName : Unbounded_String);
+   function toDom (This : in out PointsDomUtil; canvasDom_Param : access CanvasDom'Class; pointVector_Param : access BasicArrayList'Class) return Node_Access;
+   procedure toDom (This : in out PointsDomUtil; canvasDom_Param : access CanvasDom'Class; pointVector_Param : access BasicArrayList'Class);
+   function getPointNode (This : in out PointsDomUtil; point_Param : access GPoint'Class; pointName : Unbounded_String) return Node_Access;
+   procedure getPointNode (This : in out PointsDomUtil; point_Param : access GPoint'Class; pointName : Unbounded_String);
 
 end org.allbinary.graphics.j2me.workarea.tools.PointsDomUtil_Package;
 

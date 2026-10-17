@@ -33,13 +33,14 @@ package body org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package i
    end Create;
 
 
-   function createBitmap (This : in out PlatformBitmapBaseFactory; image : Image_Access) return PlatformBitmapBase_Access is
+   function createBitmap (This : in out PlatformBitmapBaseFactory; image_Param : access Image'Class) return PlatformBitmapBase_Access is
+      image : Image_Access := Image_Access (image_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end createBitmap;
 
-   procedure createBitmap (This : in out PlatformBitmapBaseFactory; image : Image_Access) is
-      Java_Result : constant PlatformBitmapBase_Access := PlatformBitmapBaseFactory'Class (This).createBitmap (image);
+   procedure createBitmap (This : in out PlatformBitmapBaseFactory; image_Param : access Image'Class) is
+      Java_Result : constant PlatformBitmapBase_Access := PlatformBitmapBaseFactory'Class (This).createBitmap (image_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

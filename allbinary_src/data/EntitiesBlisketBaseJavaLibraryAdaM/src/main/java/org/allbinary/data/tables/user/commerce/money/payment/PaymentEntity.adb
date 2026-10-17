@@ -61,7 +61,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity
             whereKeyAndValue.put (PaymentData_Package.ID, index.toString);
             AbSqlBean (This).updateWhere (whereKeyAndValue, updateKeyAndValue);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.putF (This.commonStrings.SUCCESS, This'Unchecked_Access, To_Unbounded_String ("setDefault"));
+                This.logUtil.putF (This.commonStrings.SUCCESS, PaymentEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("setDefault"));
             end if;
         exception
             when Java_Occurrence : others =>
@@ -69,7 +69,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("setDefault"), e);
+                This.logUtil.put (This.commonStrings.FAILURE, PaymentEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("setDefault"), e);
             end if;
                 end;
         end;
@@ -104,7 +104,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, This.commonStrings.GET, e);
+                This.logUtil.put (This.commonStrings.FAILURE, PaymentEntity_Access'(This'Unchecked_Access), This.commonStrings.GET, e);
             end if;
             return null;
                 end;
@@ -125,7 +125,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity
             if (paymentHashMap) /= (null) then
                 payment := Payment_Package.Create (paymentHashMap);
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                    This.logUtil.putF (This.commonStrings.SUCCESS, This'Unchecked_Access, To_Unbounded_String ("getDefault"));
+                    This.logUtil.putF (This.commonStrings.SUCCESS, PaymentEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("getDefault"));
                 end if;
                 return PaymentInterface_Access (payment);
             else
@@ -137,7 +137,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("getDefault"), e);
+                This.logUtil.put (This.commonStrings.FAILURE, PaymentEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("getDefault"), e);
             end if;
             return null;
                 end;
@@ -153,7 +153,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity
             whereHashMap.put (PaymentData_Package.ID, Unbounded_String (index.toString));
             AbSqlBean (This).deleteWhere (whereHashMap);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.putF (This.commonStrings.SUCCESS, This'Unchecked_Access, To_Unbounded_String ("remove"));
+                This.logUtil.putF (This.commonStrings.SUCCESS, PaymentEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("remove"));
             end if;
         exception
             when Java_Occurrence : others =>
@@ -161,13 +161,14 @@ package body org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("remove"), e);
+                This.logUtil.put (This.commonStrings.FAILURE, PaymentEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("remove"), e);
             end if;
                 end;
         end;
    end remove;
 
-   procedure add (This : in out PaymentEntity; userName : Unbounded_String; paymentInterface : PaymentInterface_Access) is
+   procedure add (This : in out PaymentEntity; userName : Unbounded_String; paymentInterface_Param : access PaymentInterface'Class) is
+      paymentInterface : PaymentInterface_Access := PaymentInterface_Access (paymentInterface_Param);
       vector : BasicArrayList_Access;
       random : Integer;
       calendar : Calendar_Access;
@@ -189,7 +190,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity
             vector.add (time);
             AbSqlBean (This).insert (vector);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.putF (This.commonStrings.SUCCESS, This'Unchecked_Access, To_Unbounded_String ("add"));
+                This.logUtil.putF (This.commonStrings.SUCCESS, PaymentEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("add"));
             end if;
         exception
             when Java_Occurrence : others =>
@@ -197,7 +198,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("add"), e);
+                This.logUtil.put (This.commonStrings.FAILURE, PaymentEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("add"), e);
             end if;
                 end;
         end;

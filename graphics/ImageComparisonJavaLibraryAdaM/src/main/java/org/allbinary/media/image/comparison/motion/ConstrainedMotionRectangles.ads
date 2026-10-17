@@ -48,11 +48,11 @@ package org.allbinary.media.image.comparison.motion.ConstrainedMotionRectangles_
    end record;
    NAME : Unbounded_String;
 
-   procedure Initialize (This : in out ConstrainedMotionRectangles'Class; motionRectangleConstraintsInterface : MotionRectangleConstraintsInterface_Access; motionRectangles : MotionRectangles_Access);
-   function Create (motionRectangleConstraintsInterface : MotionRectangleConstraintsInterface_Access; motionRectangles : MotionRectangles_Access) return ConstrainedMotionRectangles_Access;
-   procedure applyMotionRectangleConstraints (This : in out ConstrainedMotionRectangles; motionRectangles : MotionRectangles_Access);
+   procedure Initialize (This : in out ConstrainedMotionRectangles'Class; motionRectangleConstraintsInterface_Param : access MotionRectangleConstraintsInterface'Class; motionRectangles_Param : access MotionRectangles'Class);
+   function Create (motionRectangleConstraintsInterface_Param : access MotionRectangleConstraintsInterface'Class; motionRectangles_Param : access MotionRectangles'Class) return ConstrainedMotionRectangles_Access;
+   procedure applyMotionRectangleConstraints (This : in out ConstrainedMotionRectangles; motionRectangles_Param : access MotionRectangles'Class);
    function getMotionRectangleConstraintsInterface (This : in out ConstrainedMotionRectangles) return MotionRectangleConstraintsInterface_Access;
-   procedure setMotionRectangleConstraintsInterface (This : in out ConstrainedMotionRectangles; motionRectangleConstraintsInterface : MotionRectangleConstraintsInterface_Access);
+   procedure setMotionRectangleConstraintsInterface (This : in out ConstrainedMotionRectangles; motionRectangleConstraintsInterface_Param : access MotionRectangleConstraintsInterface'Class);
 
 end org.allbinary.media.image.comparison.motion.ConstrainedMotionRectangles_Package;
 

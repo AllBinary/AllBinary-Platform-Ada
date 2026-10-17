@@ -41,20 +41,21 @@ package body bundle.input.automation.InputAutomationBundleActivator_Package is
    end getBundleContext;
 
    --  throws Exception
-   procedure start (This : in out InputAutomationBundleActivator; bundleContext : BundleContext_Access) is
+   procedure start (This : in out InputAutomationBundleActivator; bundleContext_Param : access BundleContext'Class) is
+      bundleContext : BundleContext_Access := BundleContext_Access (bundleContext_Param);
    begin
         begin
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.START);
+            This.logUtil.putF (This.commonStrings.START, InputAutomationBundleActivator_Access'(This'Unchecked_Access), This.commonStrings.START);
             bundleContext := bundleContext;
-            InputAutomationBundleActivator_Package.moduleManagementThread := Thread_Package.Create (InputAutomationNewBundleRunnable_Package.Create (This'Unchecked_Access));
+            InputAutomationBundleActivator_Package.moduleManagementThread := Thread_Package.Create (InputAutomationNewBundleRunnable_Package.Create (InputAutomationBundleActivator_Access'(This'Unchecked_Access)));
             InputAutomationBundleActivator_Package.moduleManagementThread.start;
-            InputAutomationJFrame_Package.create (This'Unchecked_Access);
+            InputAutomationJFrame_Package.create (InputAutomationBundleActivator_Access'(This'Unchecked_Access));
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.START, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, InputAutomationBundleActivator_Access'(This'Unchecked_Access), This.commonStrings.START, e);
             Java_Throw (e);
                 end;
         end;
@@ -75,13 +76,14 @@ package body bundle.input.automation.InputAutomationBundleActivator_Package is
    end useServices;
 
    --  throws Exception
-   procedure stop (This : in out InputAutomationBundleActivator; context : BundleContext_Access) is
+   procedure stop (This : in out InputAutomationBundleActivator; context_Param : access BundleContext'Class) is
+      context : BundleContext_Access := BundleContext_Access (context_Param);
    begin
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("stop"));
+        This.logUtil.putF (This.commonStrings.START, InputAutomationBundleActivator_Access'(This'Unchecked_Access), To_Unbounded_String ("stop"));
         if (InputAutomationJFrame_Package.getInstance) /= (null) then
             InputAutomationJFrame_Package.destroy;
         else
-            This.logUtil.putF (To_Unbounded_String ("Nothing to stop"), This'Unchecked_Access, To_Unbounded_String ("stop"));
+            This.logUtil.putF (To_Unbounded_String ("Nothing to stop"), InputAutomationBundleActivator_Access'(This'Unchecked_Access), To_Unbounded_String ("stop"));
         end if;
    end stop;
 

@@ -72,19 +72,19 @@ package org.allbinary.logic.visual.transform.template.customizer.widgets.logo.Lo
 
    procedure Initialize (This : in out LogoValidation'Class);
    function Create return LogoValidation_Access;
-   procedure Initialize (This : in out LogoValidation'Class; node : Node_Access);
-   function Create (node : Node_Access) return LogoValidation_Access;
-   procedure Initialize (This : in out LogoValidation'Class; hashMap : HashMap_Access);
-   function Create (hashMap : HashMap_Access) return LogoValidation_Access;
-   procedure getFormData (This : in out LogoValidation; hashMap : HashMap_Access);
+   procedure Initialize (This : in out LogoValidation'Class; node_Param : access Node'Class);
+   function Create (node_Param : access Node'Class) return LogoValidation_Access;
+   procedure Initialize (This : in out LogoValidation'Class; hashMap_Param : access HashMap'Class);
+   function Create (hashMap_Param : access HashMap'Class) return LogoValidation_Access;
+   procedure getFormData (This : in out LogoValidation; hashMap_Param : access HashMap'Class);
    function isValid (This : in out LogoValidation) return Boolean;
    function validationInfo (This : in out LogoValidation) return Unbounded_String;
    function toValidationInfoDoc (This : in out LogoValidation) return Document_Access;
-   function toValidationInfoNode (This : in out LogoValidation; document : Document_Access) return Node_Access;
-   procedure toValidationInfoNode (This : in out LogoValidation; document : Document_Access);
+   function toValidationInfoNode (This : in out LogoValidation; document_Param : access Document'Class) return Node_Access;
+   procedure toValidationInfoNode (This : in out LogoValidation; document_Param : access Document'Class);
    function toHashMap (This : in out LogoValidation) return HashMap_Access;
-   function toXmlNode (This : in out LogoValidation; document : Document_Access) return Node_Access;
-   procedure toXmlNode (This : in out LogoValidation; document : Document_Access);
+   function toXmlNode (This : in out LogoValidation; document_Param : access Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out LogoValidation; document_Param : access Document'Class);
    procedure processLogoFile (This : in out LogoValidation);
 
 end org.allbinary.logic.visual.transform.template.customizer.widgets.logo.LogoValidation_Package;

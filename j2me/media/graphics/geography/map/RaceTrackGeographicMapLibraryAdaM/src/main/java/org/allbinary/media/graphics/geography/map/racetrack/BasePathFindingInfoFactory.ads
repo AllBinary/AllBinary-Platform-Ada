@@ -58,11 +58,11 @@ package org.allbinary.media.graphics.geography.map.racetrack.BasePathFindingInfo
 
    procedure Initialize (This : in out BasePathFindingInfoFactory'Class);
    function Create return BasePathFindingInfoFactory_Access;
-   procedure init (This : in out BasePathFindingInfoFactory; geographicMapInterface : BasicGeographicMap_Access; pathFindingInfo : PathFindingInfo_Access; mapArray : Integer_Array_Access_Array_Access);
-   procedure addStartPathFindingNode (This : in out BasePathFindingInfoFactory; pathFindingInfo : PathFindingInfo_Access; startGeographicMapCellPosition : GeographicMapCellPosition_Access);
-   procedure addEndPathFindingNode (This : in out BasePathFindingInfoFactory; pathFindingInfo : PathFindingInfo_Access; endGeographicMapCellPosition : GeographicMapCellPosition_Access);
-   function getInstancePathFindingInfo (This : in out BasePathFindingInfoFactory; geographicMapInterface : BasicGeographicMap_Access; graphArray : Integer_Array_Access_Array_Access) return PathFindingInfo_Access;
-   procedure getInstancePathFindingInfo (This : in out BasePathFindingInfoFactory; geographicMapInterface : BasicGeographicMap_Access; graphArray : Integer_Array_Access_Array_Access);
+   procedure init (This : in out BasePathFindingInfoFactory; geographicMapInterface_Param : access BasicGeographicMap'Class; pathFindingInfo_Param : access PathFindingInfo'Class; mapArray : Integer_Array_Access_Array_Access);
+   procedure addStartPathFindingNode (This : in out BasePathFindingInfoFactory; pathFindingInfo_Param : access PathFindingInfo'Class; startGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class);
+   procedure addEndPathFindingNode (This : in out BasePathFindingInfoFactory; pathFindingInfo_Param : access PathFindingInfo'Class; endGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class);
+   function getInstancePathFindingInfo (This : in out BasePathFindingInfoFactory; geographicMapInterface_Param : access BasicGeographicMap'Class; graphArray : Integer_Array_Access_Array_Access) return PathFindingInfo_Access;
+   procedure getInstancePathFindingInfo (This : in out BasePathFindingInfoFactory; geographicMapInterface_Param : access BasicGeographicMap'Class; graphArray : Integer_Array_Access_Array_Access);
 
 end org.allbinary.media.graphics.geography.map.racetrack.BasePathFindingInfoFactory_Package;
 

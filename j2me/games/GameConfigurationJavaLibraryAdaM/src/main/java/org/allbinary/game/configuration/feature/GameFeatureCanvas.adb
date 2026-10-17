@@ -35,7 +35,8 @@ package body org.allbinary.game.configuration.feature.GameFeatureCanvas_Package 
       return This;
    end Create;
 
-   procedure paint (This : in out GameFeatureCanvas; graphics : Graphics_Access) is
+   procedure paint (This : in out GameFeatureCanvas; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         null;
    end paint;

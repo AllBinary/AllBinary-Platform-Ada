@@ -62,17 +62,17 @@ package org.allbinary.animation.resource.BaseResourceAnimationInterfaceFactoryIn
       initialized : Boolean;
    end record;
 
-   procedure Initialize (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory'Class; name : Unbounded_String; hashtable : ABHashtable_Access; rectangleHashtable : ABHashtable_Access; rectangleArrayHashtable : ABHashtable_Access);
-   function Create (name : Unbounded_String; hashtable : ABHashtable_Access; rectangleHashtable : ABHashtable_Access; rectangleArrayHashtable : ABHashtable_Access) return BaseResourceAnimationInterfaceFactoryInterfaceFactory_Access;
+   procedure Initialize (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory'Class; name : Unbounded_String; hashtable_Param : access ABHashtable'Class; rectangleHashtable_Param : access ABHashtable'Class; rectangleArrayHashtable_Param : access ABHashtable'Class);
+   function Create (name : Unbounded_String; hashtable_Param : access ABHashtable'Class; rectangleHashtable_Param : access ABHashtable'Class; rectangleArrayHashtable_Param : access ABHashtable'Class) return BaseResourceAnimationInterfaceFactoryInterfaceFactory_Access;
    function getName (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory) return Unbounded_String;
    procedure init (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory; level : Integer);
-   procedure initImageCache (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory; imageCache : ImageCache_Access; level : Integer);
-   procedure add (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory; resource : Unbounded_String; animationInterfaceFactoryInterface : BasicAnimationInterfaceFactoryInterface_Access);
+   procedure initImageCache (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory; imageCache_Param : access ImageCache'Class; level : Integer);
+   procedure add (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory; resource : Unbounded_String; animationInterfaceFactoryInterface_Param : access BasicAnimationInterfaceFactoryInterface'Class);
    function getBasicAnimationInterfaceFactoryInstance (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory; resource : Unbounded_String) return BasicAnimationInterfaceFactoryInterface_Access;
    procedure getBasicAnimationInterfaceFactoryInstance (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory; resource : Unbounded_String);
    function getRectangle (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory; resource : Unbounded_String) return Rectangle_Access;
    procedure getRectangle (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory; resource : Unbounded_String);
-   procedure addRectangle (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory; resource : Unbounded_String; rectangle : Rectangle_Access);
+   procedure addRectangle (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory; resource : Unbounded_String; rectangle_Param : access Rectangle'Class);
    function getRectangleArrayOfArrays (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory; resource : Unbounded_String) return Rectangle_Access_Array_Access_Array_Access;
    procedure getRectangleArrayOfArrays (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory; resource : Unbounded_String);
    procedure addRectangleArrayOfArrays (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory; resource : Unbounded_String; rectangleArrayOfArrays : Rectangle_Access_Array_Access_Array_Access);

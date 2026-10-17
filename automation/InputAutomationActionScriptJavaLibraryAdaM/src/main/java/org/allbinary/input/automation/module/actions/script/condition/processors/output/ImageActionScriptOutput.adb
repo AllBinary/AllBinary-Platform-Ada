@@ -26,7 +26,8 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ImageActionScriptOutput'Class; node : Node_Access) is
+   procedure Initialize (This : in out ImageActionScriptOutput'Class; node_Param : access Node'Class) is
+      node : Node_Access := Node_Access (node_Param);
       actionNode : Node_Access;
       nodeList : NodeList_Access;
       childNode : Node_Access;
@@ -35,7 +36,7 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
    begin
         BasicProfileActionScriptOutput_Package.Initialize (This, NAME, node);
         Initialize_Fields (This);
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+        This.logUtil.putF (This.commonStrings.START, ImageActionScriptOutput_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         actionNode := DomSearchHelper_Package.getNode (ImageActionScriptOutputData_Package.NAME, node.getChildNodes);
         if (actionNode) /= (null) then
             nodeList := actionNode.getChildNodes;
@@ -57,13 +58,13 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Action Script Output Node Null")));
         end if;
         This.setAllowsChildren (False);
-        This.actionScriptOutputJPanel := ImageActionScriptOutputJPanel_Package.Create (This'Unchecked_Access);
+        This.actionScriptOutputJPanel := ImageActionScriptOutputJPanel_Package.Create (ImageActionScriptOutput_Access'(This'Unchecked_Access));
    end Initialize;
 
-   function Create (node : Node_Access) return ImageActionScriptOutput_Access is
+   function Create (node_Param : access Node'Class) return ImageActionScriptOutput_Access is
       This : constant ImageActionScriptOutput_Access := new ImageActionScriptOutput;
    begin
-      ImageActionScriptOutput_Package.Initialize (This.all, node);
+      ImageActionScriptOutput_Package.Initialize (This.all, node_Param);
       return This;
    end Create;
 
@@ -73,7 +74,7 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
         Initialize_Fields (This);
         This.setImageTypes (ImageTypes_Package.Create);
         This.setAllowsChildren (False);
-        This.actionScriptOutputJPanel := ImageActionScriptOutputJPanel_Package.Create (This'Unchecked_Access);
+        This.actionScriptOutputJPanel := ImageActionScriptOutputJPanel_Package.Create (ImageActionScriptOutput_Access'(This'Unchecked_Access));
    end Initialize;
 
    function Create return ImageActionScriptOutput_Access is
@@ -94,12 +95,13 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
         hashMap := StdUtil_Package.getInstance.createHashMap;
         hashMap.put (ImageActionScriptOutputData_Package.DISPLAY, To_Unbounded_String (Java_Image (This.isDisplay)));
         hashMap.put (ImageActionScriptOutputData_Package.SAVE, To_Unbounded_String (Java_Image (This.isSaved)));
-        This.logUtil.putF (To_Unbounded_String ("HashMap: ") & hashMap.toString, This'Unchecked_Access, To_Unbounded_String ("toHashMap()"));
+        This.logUtil.putF (To_Unbounded_String ("HashMap: ") & hashMap.toString, ImageActionScriptOutput_Access'(This'Unchecked_Access), To_Unbounded_String ("toHashMap()"));
         return hashMap;
    end toHashMap;
 
    --  throws Exception
-   function toXmlNode (This : in out ImageActionScriptOutput; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out ImageActionScriptOutput; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       node : Node_Access;
       newNode : Node_Access;
    begin
@@ -113,7 +115,7 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
    --  throws Exception
    procedure process (This : in out ImageActionScriptOutput; frame : Long_Long_Integer) is
    begin
-        ImageActionScriptOutputProcessor_Package.process (This'Unchecked_Access, frame);
+        ImageActionScriptOutputProcessor_Package.process (ImageActionScriptOutput_Access'(This'Unchecked_Access), frame);
    end process;
 
    procedure showDialog (This : in out ImageActionScriptOutput) is
@@ -156,7 +158,7 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
 
    procedure log (This : in out ImageActionScriptOutput) is
    begin
-        This.logUtil.putF (This.future_toString, This'Unchecked_Access, To_Unbounded_String ("log"));
+        This.logUtil.putF (This.future_toString, ImageActionScriptOutput_Access'(This'Unchecked_Access), To_Unbounded_String ("log"));
    end log;
 
    function getImageTypes (This : in out ImageActionScriptOutput) return ImageTypes_Access is
@@ -164,13 +166,14 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
         return This.imageTypes;
    end getImageTypes;
 
-   procedure setImageTypes (This : in out ImageActionScriptOutput; imageTypes : ImageTypes_Access) is
+   procedure setImageTypes (This : in out ImageActionScriptOutput; imageTypes_Param : access ImageTypes'Class) is
+      imageTypes : ImageTypes_Access := ImageTypes_Access (imageTypes_Param);
    begin
         This.imageTypes := imageTypes;
    end setImageTypes;
 
-   procedure toXmlNode (This : in out ImageActionScriptOutput; document : Document_Access) is
-      Java_Result : constant Node_Access := ImageActionScriptOutput'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out ImageActionScriptOutput; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := ImageActionScriptOutput'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

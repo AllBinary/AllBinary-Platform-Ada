@@ -37,24 +37,28 @@ package body org.allbinary.game.configuration.event.BaseChangedGameFeatureListen
    end Create;
 
 
-   procedure onEvent (This : in out BaseChangedGameFeatureListener; eventObject : AllBinaryEventObject_Access) is
+   procedure onEvent (This : in out BaseChangedGameFeatureListener; eventObject_Param : access AllBinaryEventObject'Class) is
+      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
    begin
-        ForcedLogUtil_Package.log (CommonStrings_Package.getInstance.NOT_IMPLEMENTED, This'Unchecked_Access);
+        ForcedLogUtil_Package.log (CommonStrings_Package.getInstance.NOT_IMPLEMENTED, BaseChangedGameFeatureListener_Access'(This'Unchecked_Access));
    end onEvent;
 
-   procedure onGameFeatureChange (This : in out BaseChangedGameFeatureListener; gameFeatureEvent : GameFeatureEvent_Access) is
+   procedure onGameFeatureChange (This : in out BaseChangedGameFeatureListener; gameFeatureEvent_Param : access GameFeatureEvent'Class) is
+      gameFeatureEvent : GameFeatureEvent_Access := GameFeatureEvent_Access (gameFeatureEvent_Param);
    begin
-        This.logUtil.putF (StringMaker_Package.Create.append (This.gameFeatureUtil.GAME_FEATURE_CHANGED).append (gameFeatureEvent.getWhatChanged).toString, This'Unchecked_Access, This.gameFeatureUtil.ON_GAME_FEATURE_CHANGE);
+        This.logUtil.putF (StringMaker_Package.Create.append (This.gameFeatureUtil.GAME_FEATURE_CHANGED).append (gameFeatureEvent.getWhatChanged).toString, BaseChangedGameFeatureListener_Access'(This'Unchecked_Access), This.gameFeatureUtil.ON_GAME_FEATURE_CHANGE);
         This.list.add (gameFeatureEvent.getGameOption);
         This.setChanged (True);
    end onGameFeatureChange;
 
-   procedure add (This : in out BaseChangedGameFeatureListener; gameFeature : Feature_Access) is
+   procedure add (This : in out BaseChangedGameFeatureListener; gameFeature_Param : access Feature'Class) is
+      gameFeature : Feature_Access := Feature_Access (gameFeature_Param);
    begin
         This.list.add (gameFeature);
    end add;
 
-   procedure remove (This : in out BaseChangedGameFeatureListener; gameFeature : Feature_Access) is
+   procedure remove (This : in out BaseChangedGameFeatureListener; gameFeature_Param : access Feature'Class) is
+      gameFeature : Feature_Access := Feature_Access (gameFeature_Param);
    begin
         This.list.remove (gameFeature);
    end remove;
@@ -67,7 +71,8 @@ package body org.allbinary.game.configuration.event.BaseChangedGameFeatureListen
         end if;
    end setChanged;
 
-   function isChangedFeature (This : in out BaseChangedGameFeatureListener; gameFeature : Feature_Access) return Boolean is
+   function isChangedFeature (This : in out BaseChangedGameFeatureListener; gameFeature_Param : access Feature'Class) return Boolean is
+      gameFeature : Feature_Access := Feature_Access (gameFeature_Param);
       isChanged : Boolean;
       stringBuffer : StringMaker_Access;
    begin
@@ -79,7 +84,7 @@ package body org.allbinary.game.configuration.event.BaseChangedGameFeatureListen
         stringBuffer.appendboolean (Features_Package.getInstance.isFeature (gameFeature));
         stringBuffer.append (To_Unbounded_String (" isChanged: "));
         stringBuffer.appendboolean (isChanged);
-        This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("isChanged"));
+        This.logUtil.putF (stringBuffer.toString, BaseChangedGameFeatureListener_Access'(This'Unchecked_Access), To_Unbounded_String ("isChanged"));
         return isChanged;
    end isChangedFeature;
 
@@ -88,8 +93,8 @@ package body org.allbinary.game.configuration.event.BaseChangedGameFeatureListen
         return This.changed;
    end isChanged;
 
-   procedure isChangedFeature (This : in out BaseChangedGameFeatureListener; gameFeature : Feature_Access) is
-      Java_Result : constant Boolean := BaseChangedGameFeatureListener'Class (This).isChangedFeature (gameFeature);
+   procedure isChangedFeature (This : in out BaseChangedGameFeatureListener; gameFeature_Param : access Feature'Class) is
+      Java_Result : constant Boolean := BaseChangedGameFeatureListener'Class (This).isChangedFeature (gameFeature_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

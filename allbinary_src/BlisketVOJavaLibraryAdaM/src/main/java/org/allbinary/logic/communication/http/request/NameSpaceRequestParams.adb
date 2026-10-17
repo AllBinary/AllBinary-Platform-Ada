@@ -27,7 +27,7 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
         RequestParams_Package.Initialize (This);
         Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
-            This.logUtil.putF (To_Unbounded_String ("Constructing empty"), This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+            This.logUtil.putF (To_Unbounded_String ("Constructing empty"), NameSpaceRequestParams_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
    end Initialize;
 
@@ -38,40 +38,44 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
       return This;
    end Create;
 
-   procedure Initialize (This : in out NameSpaceRequestParams'Class; httpServletRequest : HttpServletRequest_Access) is
+   procedure Initialize (This : in out NameSpaceRequestParams'Class; httpServletRequest_Param : access HttpServletRequest'Class) is
+      httpServletRequest : HttpServletRequest_Access := HttpServletRequest_Access (httpServletRequest_Param);
    begin
         RequestParams_Package.Initialize (This, httpServletRequest);
         Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
-            This.logUtil.putF (To_Unbounded_String ("Constructing from HttpServletRequest"), This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+            This.logUtil.putF (To_Unbounded_String ("Constructing from HttpServletRequest"), NameSpaceRequestParams_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
    end Initialize;
 
-   function Create (httpServletRequest : HttpServletRequest_Access) return NameSpaceRequestParams_Access is
+   function Create (httpServletRequest_Param : access HttpServletRequest'Class) return NameSpaceRequestParams_Access is
       This : constant NameSpaceRequestParams_Access := new NameSpaceRequestParams;
    begin
-      NameSpaceRequestParams_Package.Initialize (This.all, httpServletRequest);
+      NameSpaceRequestParams_Package.Initialize (This.all, httpServletRequest_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out NameSpaceRequestParams'Class; pageContext : PageContext_Access) is
+   procedure Initialize (This : in out NameSpaceRequestParams'Class; pageContext_Param : access PageContext'Class) is
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
    begin
         RequestParams_Package.Initialize (This, pageContext);
         Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
-            This.logUtil.putF (To_Unbounded_String ("Constructing from PageContext"), This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+            This.logUtil.putF (To_Unbounded_String ("Constructing from PageContext"), NameSpaceRequestParams_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
    end Initialize;
 
-   function Create (pageContext : PageContext_Access) return NameSpaceRequestParams_Access is
+   function Create (pageContext_Param : access PageContext'Class) return NameSpaceRequestParams_Access is
       This : constant NameSpaceRequestParams_Access := new NameSpaceRequestParams;
    begin
-      NameSpaceRequestParams_Package.Initialize (This.all, pageContext);
+      NameSpaceRequestParams_Package.Initialize (This.all, pageContext_Param);
       return This;
    end Create;
 
    --  throws Exception
-   function createPackageNode (This : in out NameSpaceRequestParams; document : Document_Access; packageName : Unbounded_String; packagePropertiesHashMap : HashMap_Access) return Node_Access is
+   function createPackageNode (This : in out NameSpaceRequestParams; document_Param : access Document'Class; packageName : Unbounded_String; packagePropertiesHashMap_Param : access HashMap'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
+      packagePropertiesHashMap : HashMap_Access := HashMap_Access (packagePropertiesHashMap_Param);
       node : Node_Access;
       propertyKeySet : Set_Access;
       propertyKeySetArray : Java_Object_Access_Array_Access;
@@ -95,7 +99,10 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
    end createPackageNode;
 
    --  throws Exception
-   function createPackageMultiNode (This : in out NameSpaceRequestParams; document : Document_Access; nameSpaceRequestParam : NameSpaceRequestParam_Access; packageName : Unbounded_String; packagePropertiesHashMap : HashMap_Access) return Node_Access is
+   function createPackageMultiNode (This : in out NameSpaceRequestParams; document_Param : access Document'Class; nameSpaceRequestParam_Param : access NameSpaceRequestParam'Class; packageName : Unbounded_String; packagePropertiesHashMap_Param : access HashMap'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
+      nameSpaceRequestParam : NameSpaceRequestParam_Access := NameSpaceRequestParam_Access (nameSpaceRequestParam_Param);
+      packagePropertiesHashMap : HashMap_Access := HashMap_Access (packagePropertiesHashMap_Param);
       beginIndex : Integer;
       indexValue : Unbounded_String;
       multiElementPackage : Unbounded_String;
@@ -113,7 +120,7 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
             selectedValue := propertyValue;
         end if;
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
-            This.logUtil.putF (To_Unbounded_String ("" & ASCII.LF & "Appending Multinode Element: ") & multiElementPackage & To_Unbounded_String ("[") & indexValue & To_Unbounded_String ("] ") & selectedValue, This'Unchecked_Access, To_Unbounded_String ("createPackageMultiNode"));
+            This.logUtil.putF (To_Unbounded_String ("" & ASCII.LF & "Appending Multinode Element: ") & multiElementPackage & To_Unbounded_String ("[") & indexValue & To_Unbounded_String ("] ") & selectedValue, NameSpaceRequestParams_Access'(This'Unchecked_Access), To_Unbounded_String ("createPackageMultiNode"));
         end if;
         nextNode := ModDomHelper_Package.createNameValueNodes (document, multiElementPackage, selectedValue);
         indexNode := ModDomHelper_Package.createTextNode (document, DomData_Package.INDEX, indexValue);
@@ -122,31 +129,36 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
    end createPackageMultiNode;
 
    --  throws Exception
-   function getRootNode (This : in out NameSpaceRequestParams; rootElementPackage : Unbounded_String; packagePropertiesHashMap : HashMap_Access; document : Document_Access) return Node_Access is
+   function getRootNode (This : in out NameSpaceRequestParams; rootElementPackage : Unbounded_String; packagePropertiesHashMap_Param : access HashMap'Class; document_Param : access Document'Class) return Node_Access is
+      packagePropertiesHashMap : HashMap_Access := HashMap_Access (packagePropertiesHashMap_Param);
+      document : Document_Access := Document_Access (document_Param);
       rootNode : Node_Access;
       node : Node_Access;
    begin
         rootNode := DomSearchHelper_Package.getNodeNoThrow (rootElementPackage, document.getChildNodes);
         if (rootNode) = (null) then
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
-                This.logUtil.putF (To_Unbounded_String ("" & ASCII.LF & "Appending Document Root: ") & To_Unbounded_String ("" & ASCII.LF & "ElementName: ") & rootElementPackage & To_Unbounded_String ("" & ASCII.LF & "Properties: ") & packagePropertiesHashMap.toString, This'Unchecked_Access, To_Unbounded_String ("getRootNode"));
+                This.logUtil.putF (To_Unbounded_String ("" & ASCII.LF & "Appending Document Root: ") & To_Unbounded_String ("" & ASCII.LF & "ElementName: ") & rootElementPackage & To_Unbounded_String ("" & ASCII.LF & "Properties: ") & packagePropertiesHashMap.toString, NameSpaceRequestParams_Access'(This'Unchecked_Access), To_Unbounded_String ("getRootNode"));
             end if;
             node := This.createPackageNode (document, rootElementPackage, packagePropertiesHashMap);
             document.appendChild (node);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
-                This.logUtil.putF (To_Unbounded_String ("" & ASCII.LF & "Appended Document Created: ") & XmlDocumentHelper_Package.toString (document), This'Unchecked_Access, To_Unbounded_String ("getRootNode"));
+                This.logUtil.putF (To_Unbounded_String ("" & ASCII.LF & "Appended Document Created: ") & XmlDocumentHelper_Package.toString (document), NameSpaceRequestParams_Access'(This'Unchecked_Access), To_Unbounded_String ("getRootNode"));
             end if;
             return node;
         else
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
-                This.logUtil.putF (To_Unbounded_String ("" & ASCII.LF & "Using Existing Root Node"), This'Unchecked_Access, To_Unbounded_String ("getRootNode"));
+                This.logUtil.putF (To_Unbounded_String ("" & ASCII.LF & "Using Existing Root Node"), NameSpaceRequestParams_Access'(This'Unchecked_Access), To_Unbounded_String ("getRootNode"));
             end if;
             return rootNode;
         end if;
    end getRootNode;
 
    --  throws Exception
-   function addNewProperties (This : in out NameSpaceRequestParams; document : Document_Access; node : Node_Access; nextPackagePropertiesHashMap : HashMap_Access) return Node_Access is
+   function addNewProperties (This : in out NameSpaceRequestParams; document_Param : access Document'Class; node_Param : access Node'Class; nextPackagePropertiesHashMap_Param : access HashMap'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
+      node : Node_Access := Node_Access (node_Param);
+      nextPackagePropertiesHashMap : HashMap_Access := HashMap_Access (nextPackagePropertiesHashMap_Param);
       propertyNameSet : Set_Access;
       propertyNameSetArray : Java_Object_Access_Array_Access;
       size : Integer;
@@ -158,7 +170,7 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
       index : Integer;
    begin
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
-            This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("" & ASCII.LF & "Adding Any New Properties: ")).append (nextPackagePropertiesHashMap.toString).append (To_Unbounded_String ("" & ASCII.LF & "to node: ")).append (node.getNodeName).toString, This'Unchecked_Access, To_Unbounded_String ("addNewProperties"));
+            This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("" & ASCII.LF & "Adding Any New Properties: ")).append (nextPackagePropertiesHashMap.toString).append (To_Unbounded_String ("" & ASCII.LF & "to node: ")).append (node.getNodeName).toString, NameSpaceRequestParams_Access'(This'Unchecked_Access), To_Unbounded_String ("addNewProperties"));
         end if;
         propertyNameSet := nextPackagePropertiesHashMap.keySet;
         propertyNameSetArray := propertyNameSet.toArray;
@@ -170,17 +182,17 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
             if (valueNode) /= (null) then
                 existingElementNodeTextNodeValue := DomNodeHelper_Package.getTextNodeValue (valueNode);
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
-                    This.logUtil.putF (To_Unbounded_String ("" & ASCII.LF & "If property: """) & nextPropertyName & To_Unbounded_String (" is the same as:" & ASCII.LF & "") & To_Unbounded_String ("Node: ") & Java_Image (node.getNodeName) & To_Unbounded_String (" then: ") & propertyValue & To_Unbounded_String ("==") & existingElementNodeTextNodeValue, This'Unchecked_Access, To_Unbounded_String ("addNewProperties"));
+                    This.logUtil.putF (To_Unbounded_String ("" & ASCII.LF & "If property: """) & nextPropertyName & To_Unbounded_String (" is the same as:" & ASCII.LF & "") & To_Unbounded_String ("Node: ") & Java_Image (node.getNodeName) & To_Unbounded_String (" then: ") & propertyValue & To_Unbounded_String ("==") & existingElementNodeTextNodeValue, NameSpaceRequestParams_Access'(This'Unchecked_Access), To_Unbounded_String ("addNewProperties"));
                 end if;
                 if (propertyValue.compareTo (existingElementNodeTextNodeValue)) /= (0) then
                     if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
-                        This.logUtil.putF (To_Unbounded_String ("At least one Property from NameSpaceRequest Package was different from Node"), This'Unchecked_Access, To_Unbounded_String ("addNewProperties"));
+                        This.logUtil.putF (To_Unbounded_String ("At least one Property from NameSpaceRequest Package was different from Node"), NameSpaceRequestParams_Access'(This'Unchecked_Access), To_Unbounded_String ("addNewProperties"));
                     end if;
                     Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Property Modifications Should Not Occur")));
                 end if;
             else
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
-                    This.logUtil.putF (To_Unbounded_String ("Adding a new Property: ") & nextPropertyName & To_Unbounded_String ("=") & propertyValue, This'Unchecked_Access, To_Unbounded_String ("addNewProperties"));
+                    This.logUtil.putF (To_Unbounded_String ("Adding a new Property: ") & nextPropertyName & To_Unbounded_String ("=") & propertyValue, NameSpaceRequestParams_Access'(This'Unchecked_Access), To_Unbounded_String ("addNewProperties"));
                 end if;
                 newPropertyNode := ModDomHelper_Package.createTextNode (document, nextPropertyName, propertyValue);
                 node.appendChild (newPropertyNode);
@@ -190,13 +202,15 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
    end addNewProperties;
 
    --  throws Exception
-   function isElementValueTextNodeEqual (This : in out NameSpaceRequestParams; nextPackagePropertiesHashMap : HashMap_Access; node : Node_Access) return Boolean is
+   function isElementValueTextNodeEqual (This : in out NameSpaceRequestParams; nextPackagePropertiesHashMap_Param : access HashMap'Class; node_Param : access Node'Class) return Boolean is
+      nextPackagePropertiesHashMap : HashMap_Access := HashMap_Access (nextPackagePropertiesHashMap_Param);
+      node : Node_Access := Node_Access (node_Param);
       propertyValue : Unbounded_String;
       valueNode : Node_Access;
       existingElementNodeTextNodeValue : Unbounded_String;
    begin
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
-            This.logUtil.putF (To_Unbounded_String ("" & ASCII.LF & "Comparing the value property in: ") & nextPackagePropertiesHashMap.toString & To_Unbounded_String ("" & ASCII.LF & "to node child leaves of node: ") & Java_Image (node.getNodeName), This'Unchecked_Access, To_Unbounded_String ("isElementValueTextNodeEqual"));
+            This.logUtil.putF (To_Unbounded_String ("" & ASCII.LF & "Comparing the value property in: ") & nextPackagePropertiesHashMap.toString & To_Unbounded_String ("" & ASCII.LF & "to node child leaves of node: ") & Java_Image (node.getNodeName), NameSpaceRequestParams_Access'(This'Unchecked_Access), To_Unbounded_String ("isElementValueTextNodeEqual"));
         end if;
         propertyValue := Unbounded_String (nextPackagePropertiesHashMap.get (DomData_Package.VALUE));
         valueNode := DomSearchHelper_Package.getNodeNoThrow (DomData_Package.VALUE, node.getChildNodes);
@@ -204,7 +218,7 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
             existingElementNodeTextNodeValue := DomNodeHelper_Package.getTextNodeValue (valueNode);
             if (propertyValue.compareTo (existingElementNodeTextNodeValue)) = (0) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
-                    This.logUtil.putF (To_Unbounded_String ("Value Node is the same"), This'Unchecked_Access, To_Unbounded_String ("isElementValueTextNodeEqual"));
+                    This.logUtil.putF (To_Unbounded_String ("Value Node is the same"), NameSpaceRequestParams_Access'(This'Unchecked_Access), To_Unbounded_String ("isElementValueTextNodeEqual"));
                 end if;
                 return True;
             end if;
@@ -215,13 +229,15 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
    end isElementValueTextNodeEqual;
 
    --  throws Exception
-   function isElementValueTextNodeUnique (This : in out NameSpaceRequestParams; nextPackagePropertiesHashMap : HashMap_Access; elementNodeVector : BasicArrayList_Access) return Integer is
+   function isElementValueTextNodeUnique (This : in out NameSpaceRequestParams; nextPackagePropertiesHashMap_Param : access HashMap'Class; elementNodeVector_Param : access BasicArrayList'Class) return Integer is
+      nextPackagePropertiesHashMap : HashMap_Access := HashMap_Access (nextPackagePropertiesHashMap_Param);
+      elementNodeVector : BasicArrayList_Access := BasicArrayList_Access (elementNodeVector_Param);
       size : Integer;
       existingElementNode : Node_Access;
       index : Integer;
    begin
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
-            This.logUtil.putF (To_Unbounded_String ("" & ASCII.LF & "Comparing Properties of: ") & Java_Image (elementNodeVector.size) & To_Unbounded_String (" Nodes"), This'Unchecked_Access, To_Unbounded_String ("isElementValueTextNodeUnique"));
+            This.logUtil.putF (To_Unbounded_String ("" & ASCII.LF & "Comparing Properties of: ") & Java_Image (elementNodeVector.size) & To_Unbounded_String (" Nodes"), NameSpaceRequestParams_Access'(This'Unchecked_Access), To_Unbounded_String ("isElementValueTextNodeUnique"));
         end if;
         size := elementNodeVector.size;
         for index in 0 .. (size) - 1 loop
@@ -234,7 +250,10 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
    end isElementValueTextNodeUnique;
 
    --  throws Exception
-   function addChildren (This : in out NameSpaceRequestParams; document : Document_Access; rootNode : Node_Access; nameSpaceRequestParam : NameSpaceRequestParam_Access) return Document_Access is
+   function addChildren (This : in out NameSpaceRequestParams; document_Param : access Document'Class; rootNode_Param : access Node'Class; nameSpaceRequestParam_Param : access NameSpaceRequestParam'Class) return Document_Access is
+      document : Document_Access := Document_Access (document_Param);
+      rootNode : Node_Access := Node_Access (rootNode_Param);
+      nameSpaceRequestParam : NameSpaceRequestParam_Access := NameSpaceRequestParam_Access (nameSpaceRequestParam_Param);
       node : Node_Access;
       packageVector : BasicArrayList_Access;
       size : Integer;
@@ -252,12 +271,12 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
         for index in 1 .. (size) - 1 loop
             nextPackageName := Unbounded_String (packageVector.get (index));
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
-                This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("" & ASCII.LF & "Trying to Add Child to Node: ")).append (node.getNodeName).append (To_Unbounded_String ("" & ASCII.LF & "with new PackageName: ")).append (nextPackageName).toString, This'Unchecked_Access, To_Unbounded_String ("addChildren"));
+                This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("" & ASCII.LF & "Trying to Add Child to Node: ")).append (node.getNodeName).append (To_Unbounded_String ("" & ASCII.LF & "with new PackageName: ")).append (nextPackageName).toString, NameSpaceRequestParams_Access'(This'Unchecked_Access), To_Unbounded_String ("addChildren"));
             end if;
             nextPackagePropertiesHashMap := nameSpaceRequestParam.getPackageProperties (index);
             elementNodeVector := DomSearchHelper_Package.getAllNodesNoThrow (nextPackageName, node.getChildNodes);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
-                This.logUtil.putF (To_Unbounded_String ("" & ASCII.LF & "Document Contains ") & Java_Image (elementNodeVector.size) & To_Unbounded_String (" Node(s) With Same Name"), This'Unchecked_Access, To_Unbounded_String ("addChildren"));
+                This.logUtil.putF (To_Unbounded_String ("" & ASCII.LF & "Document Contains ") & Java_Image (elementNodeVector.size) & To_Unbounded_String (" Node(s) With Same Name"), NameSpaceRequestParams_Access'(This'Unchecked_Access), To_Unbounded_String ("addChildren"));
             end if;
             isElementValueTextNodeUniqueIndex := This.isElementValueTextNodeUnique (nextPackagePropertiesHashMap, elementNodeVector);
             if ((((elementNodeVector.size) = (0)) or else ((isElementValueTextNodeUniqueIndex) = (-(1))))) and then (not (nextPackageName.endsWith (CommonSeps_Package.getInstance.BRACKET_CLOSE))) then
@@ -265,27 +284,27 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
                 node.appendChild (nextNode);
                 node := nextNode;
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
-                    This.logUtil.putF (To_Unbounded_String ("" & ASCII.LF & "Appended Package: ") & Java_Image (node.getNodeName), This'Unchecked_Access, To_Unbounded_String ("addChildren"));
-                    This.logUtil.putF (To_Unbounded_String ("" & ASCII.LF & "Appended Document Created: ") & XmlDocumentHelper_Package.toString (document), This'Unchecked_Access, To_Unbounded_String ("addChildren"));
+                    This.logUtil.putF (To_Unbounded_String ("" & ASCII.LF & "Appended Package: ") & Java_Image (node.getNodeName), NameSpaceRequestParams_Access'(This'Unchecked_Access), To_Unbounded_String ("addChildren"));
+                    This.logUtil.putF (To_Unbounded_String ("" & ASCII.LF & "Appended Document Created: ") & XmlDocumentHelper_Package.toString (document), NameSpaceRequestParams_Access'(This'Unchecked_Access), To_Unbounded_String ("addChildren"));
                 end if;
             elsif nextPackageName.endsWith (CommonSeps_Package.getInstance.BRACKET_CLOSE) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
-                    This.logUtil.putF (To_Unbounded_String ("Package is MultiNode: just append"), This'Unchecked_Access, To_Unbounded_String ("addChildren"));
+                    This.logUtil.putF (To_Unbounded_String ("Package is MultiNode: just append"), NameSpaceRequestParams_Access'(This'Unchecked_Access), To_Unbounded_String ("addChildren"));
                 end if;
                 nextNode := This.createPackageMultiNode (document, nameSpaceRequestParam, nextPackageName, nextPackagePropertiesHashMap);
                 node.appendChild (nextNode);
                 node := nextNode;
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
-                    This.logUtil.putF (To_Unbounded_String ("" & ASCII.LF & "Appended Multinode Element: ") & XmlDocumentHelper_Package.toString (document), This'Unchecked_Access, To_Unbounded_String ("addChildren"));
+                    This.logUtil.putF (To_Unbounded_String ("" & ASCII.LF & "Appended Multinode Element: ") & XmlDocumentHelper_Package.toString (document), NameSpaceRequestParams_Access'(This'Unchecked_Access), To_Unbounded_String ("addChildren"));
                 end if;
             else
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
-                    This.logUtil.putF (To_Unbounded_String ("Value Node already exists: Now compare (properties to leaf nodes)"), This'Unchecked_Access, To_Unbounded_String ("addChildren"));
+                    This.logUtil.putF (To_Unbounded_String ("Value Node already exists: Now compare (properties to leaf nodes)"), NameSpaceRequestParams_Access'(This'Unchecked_Access), To_Unbounded_String ("addChildren"));
                 end if;
                 nodeNameDuplicateNode := Node_Access (elementNodeVector.get (isElementValueTextNodeUniqueIndex));
                 node := This.addNewProperties (document, nodeNameDuplicateNode, nextPackagePropertiesHashMap);
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
-                    This.logUtil.putF (To_Unbounded_String ("" & ASCII.LF & "Duplicate Node Found: Moving to next child ^"), This'Unchecked_Access, To_Unbounded_String ("addChildre"));
+                    This.logUtil.putF (To_Unbounded_String ("" & ASCII.LF & "Duplicate Node Found: Moving to next child ^"), NameSpaceRequestParams_Access'(This'Unchecked_Access), To_Unbounded_String ("addChildre"));
                 end if;
             end if;
         end loop;
@@ -293,7 +312,8 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
    end addChildren;
 
    --  throws Exception
-   function addNameSpace (This : in out NameSpaceRequestParams; key : Unbounded_String; value : Unbounded_String; document : Document_Access) return Document_Access is
+   function addNameSpace (This : in out NameSpaceRequestParams; key : Unbounded_String; value : Unbounded_String; document_Param : access Document'Class) return Document_Access is
+      document : Document_Access := Document_Access (document_Param);
       nameSpaceRequestParam : NameSpaceRequestParam_Access;
       packageVector : BasicArrayList_Access;
       size : Integer;
@@ -303,7 +323,7 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
       index : Integer;
    begin
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
-            This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("NameSpace key: ")).append (key).append (To_Unbounded_String (" Value: ")).append (value).toString, This'Unchecked_Access, To_Unbounded_String ("addNameSpace"));
+            This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("NameSpace key: ")).append (key).append (To_Unbounded_String (" Value: ")).append (value).toString, NameSpaceRequestParams_Access'(This'Unchecked_Access), To_Unbounded_String ("addNameSpace"));
         end if;
         nameSpaceRequestParam := NameSpaceRequestParam_Package.Create (key, value);
         packageVector := nameSpaceRequestParam.getPackages;
@@ -339,20 +359,20 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
         keyArray := keys.toArray;
         keySize := keyArray'Length;
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
-            This.logUtil.putF (To_Unbounded_String ("NameSpace Request Size: ") & Java_Image (keys.size), This'Unchecked_Access, To_Unbounded_String ("toHashMap"));
+            This.logUtil.putF (To_Unbounded_String ("NameSpace Request Size: ") & Java_Image (keys.size), NameSpaceRequestParams_Access'(This'Unchecked_Access), To_Unbounded_String ("toHashMap"));
         end if;
         for i in 0 .. (keySize) - 1 loop
             key := Unbounded_String (keyArray (i));
             anyType := This.getMap.get (key);
             className := Unbounded_String (To_Unbounded_String (Ada.Tags.Expanded_Name (anyType.all'Tag)));
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
-                This.logUtil.putF (To_Unbounded_String ("Request Param Class: ") & className, This'Unchecked_Access, To_Unbounded_String ("toHashMap"));
+                This.logUtil.putF (To_Unbounded_String ("Request Param Class: ") & className, NameSpaceRequestParams_Access'(This'Unchecked_Access), To_Unbounded_String ("toHashMap"));
             end if;
             if (This.getMap.get (key).all in String_Package.String'Class) then
                 value := Unbounded_String (This.getMap.get (key));
                 if ((Index (key, To_String (NameSpaceRequestParamData_Package.NAME)) - 1)) < (0) then
                     if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
-                        This.logUtil.putF (To_Unbounded_String ("Not NameSpace key: ") & key & To_Unbounded_String (" Value: ") & value, This'Unchecked_Access, To_Unbounded_String ("toHashMap()"));
+                        This.logUtil.putF (To_Unbounded_String ("Not NameSpace key: ") & key & To_Unbounded_String (" Value: ") & value, NameSpaceRequestParams_Access'(This'Unchecked_Access), To_Unbounded_String ("toHashMap()"));
                     end if;
                     hashMap.put (Java_New_String (key), Java_New_String (value));
                 else
@@ -362,7 +382,7 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
                 values := Unbounded_String_Array_Access (This.getMap.get (key));
                 if ((Index (key, To_String (NameSpaceRequestParamData_Package.NAME)) - 1)) < (0) then
                     if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
-                        This.logUtil.putF (To_Unbounded_String ("Not NameSpace key: ") & key & To_Unbounded_String (" Value: ") & Java_Image (values (0)), This'Unchecked_Access, To_Unbounded_String ("toHashMap()"));
+                        This.logUtil.putF (To_Unbounded_String ("Not NameSpace key: ") & key & To_Unbounded_String (" Value: ") & Java_Image (values (0)), NameSpaceRequestParams_Access'(This'Unchecked_Access), To_Unbounded_String ("toHashMap()"));
                     end if;
                     hashMap.put (Java_New_String (key), Java_New_String (values (0)));
                 else
@@ -371,63 +391,63 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
             end if;
         end loop;
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
-            This.logUtil.putF (To_Unbounded_String ("NameSpaceRequestParams: ") & This.getMap.toString & To_Unbounded_String ("" & ASCII.LF & "toHashMap(): ") & hashMap.toString & To_Unbounded_String ("" & ASCII.LF & "Document Created: ") & XmlDocumentHelper_Package.toString (document), This'Unchecked_Access, To_Unbounded_String ("toHashMap()"));
+            This.logUtil.putF (To_Unbounded_String ("NameSpaceRequestParams: ") & This.getMap.toString & To_Unbounded_String ("" & ASCII.LF & "toHashMap(): ") & hashMap.toString & To_Unbounded_String ("" & ASCII.LF & "Document Created: ") & XmlDocumentHelper_Package.toString (document), NameSpaceRequestParams_Access'(This'Unchecked_Access), To_Unbounded_String ("toHashMap()"));
         end if;
         hashMap.put (NameSpaceRequestParamData_Package.DOCUMENT, document);
         return hashMap;
    end toHashMap;
 
-   procedure createPackageNode (This : in out NameSpaceRequestParams; document : Document_Access; packageName : Unbounded_String; packagePropertiesHashMap : HashMap_Access) is
-      Java_Result : constant Node_Access := NameSpaceRequestParams'Class (This).createPackageNode (document, packageName, packagePropertiesHashMap);
+   procedure createPackageNode (This : in out NameSpaceRequestParams; document_Param : access Document'Class; packageName : Unbounded_String; packagePropertiesHashMap_Param : access HashMap'Class) is
+      Java_Result : constant Node_Access := NameSpaceRequestParams'Class (This).createPackageNode (document_Param, packageName, packagePropertiesHashMap_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createPackageNode;
 
-   procedure createPackageMultiNode (This : in out NameSpaceRequestParams; document : Document_Access; nameSpaceRequestParam : NameSpaceRequestParam_Access; packageName : Unbounded_String; packagePropertiesHashMap : HashMap_Access) is
-      Java_Result : constant Node_Access := NameSpaceRequestParams'Class (This).createPackageMultiNode (document, nameSpaceRequestParam, packageName, packagePropertiesHashMap);
+   procedure createPackageMultiNode (This : in out NameSpaceRequestParams; document_Param : access Document'Class; nameSpaceRequestParam_Param : access NameSpaceRequestParam'Class; packageName : Unbounded_String; packagePropertiesHashMap_Param : access HashMap'Class) is
+      Java_Result : constant Node_Access := NameSpaceRequestParams'Class (This).createPackageMultiNode (document_Param, nameSpaceRequestParam_Param, packageName, packagePropertiesHashMap_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createPackageMultiNode;
 
-   procedure getRootNode (This : in out NameSpaceRequestParams; rootElementPackage : Unbounded_String; packagePropertiesHashMap : HashMap_Access; document : Document_Access) is
-      Java_Result : constant Node_Access := NameSpaceRequestParams'Class (This).getRootNode (rootElementPackage, packagePropertiesHashMap, document);
+   procedure getRootNode (This : in out NameSpaceRequestParams; rootElementPackage : Unbounded_String; packagePropertiesHashMap_Param : access HashMap'Class; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := NameSpaceRequestParams'Class (This).getRootNode (rootElementPackage, packagePropertiesHashMap_Param, document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getRootNode;
 
-   procedure addNewProperties (This : in out NameSpaceRequestParams; document : Document_Access; node : Node_Access; nextPackagePropertiesHashMap : HashMap_Access) is
-      Java_Result : constant Node_Access := NameSpaceRequestParams'Class (This).addNewProperties (document, node, nextPackagePropertiesHashMap);
+   procedure addNewProperties (This : in out NameSpaceRequestParams; document_Param : access Document'Class; node_Param : access Node'Class; nextPackagePropertiesHashMap_Param : access HashMap'Class) is
+      Java_Result : constant Node_Access := NameSpaceRequestParams'Class (This).addNewProperties (document_Param, node_Param, nextPackagePropertiesHashMap_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end addNewProperties;
 
-   procedure isElementValueTextNodeEqual (This : in out NameSpaceRequestParams; nextPackagePropertiesHashMap : HashMap_Access; node : Node_Access) is
-      Java_Result : constant Boolean := NameSpaceRequestParams'Class (This).isElementValueTextNodeEqual (nextPackagePropertiesHashMap, node);
+   procedure isElementValueTextNodeEqual (This : in out NameSpaceRequestParams; nextPackagePropertiesHashMap_Param : access HashMap'Class; node_Param : access Node'Class) is
+      Java_Result : constant Boolean := NameSpaceRequestParams'Class (This).isElementValueTextNodeEqual (nextPackagePropertiesHashMap_Param, node_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isElementValueTextNodeEqual;
 
-   procedure isElementValueTextNodeUnique (This : in out NameSpaceRequestParams; nextPackagePropertiesHashMap : HashMap_Access; elementNodeVector : BasicArrayList_Access) is
-      Java_Result : constant Integer := NameSpaceRequestParams'Class (This).isElementValueTextNodeUnique (nextPackagePropertiesHashMap, elementNodeVector);
+   procedure isElementValueTextNodeUnique (This : in out NameSpaceRequestParams; nextPackagePropertiesHashMap_Param : access HashMap'Class; elementNodeVector_Param : access BasicArrayList'Class) is
+      Java_Result : constant Integer := NameSpaceRequestParams'Class (This).isElementValueTextNodeUnique (nextPackagePropertiesHashMap_Param, elementNodeVector_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isElementValueTextNodeUnique;
 
-   procedure addChildren (This : in out NameSpaceRequestParams; document : Document_Access; rootNode : Node_Access; nameSpaceRequestParam : NameSpaceRequestParam_Access) is
-      Java_Result : constant Document_Access := NameSpaceRequestParams'Class (This).addChildren (document, rootNode, nameSpaceRequestParam);
+   procedure addChildren (This : in out NameSpaceRequestParams; document_Param : access Document'Class; rootNode_Param : access Node'Class; nameSpaceRequestParam_Param : access NameSpaceRequestParam'Class) is
+      Java_Result : constant Document_Access := NameSpaceRequestParams'Class (This).addChildren (document_Param, rootNode_Param, nameSpaceRequestParam_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end addChildren;
 
-   procedure addNameSpace (This : in out NameSpaceRequestParams; key : Unbounded_String; value : Unbounded_String; document : Document_Access) is
-      Java_Result : constant Document_Access := NameSpaceRequestParams'Class (This).addNameSpace (key, value, document);
+   procedure addNameSpace (This : in out NameSpaceRequestParams; key : Unbounded_String; value : Unbounded_String; document_Param : access Document'Class) is
+      Java_Result : constant Document_Access := NameSpaceRequestParams'Class (This).addNameSpace (key, value, document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

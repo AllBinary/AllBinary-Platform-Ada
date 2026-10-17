@@ -48,7 +48,7 @@ package org.allbinary.logic.io.file.AbFileInterface_Package is
    function lastModified (This : in out AbFileInterface) return Long_Long_Integer is abstract;
    function length (This : in out AbFileInterface) return Long_Long_Integer is abstract;
    function list (This : in out AbFileInterface) return Unbounded_String_Array_Access is abstract;
-   function listWithFilter (This : in out AbFileInterface; filter : FilenameFilter_Access) return Unbounded_String_Array_Access is abstract;
+   function listWithFilter (This : in out AbFileInterface; filter_Param : access FilenameFilter'Class) return Unbounded_String_Array_Access is abstract;
    function mkdir (This : in out AbFileInterface) return Boolean is abstract;
    function mkdirs (This : in out AbFileInterface) return Boolean is abstract;
    function setLastModified (This : in out AbFileInterface; time : Long_Long_Integer) return Boolean is abstract;

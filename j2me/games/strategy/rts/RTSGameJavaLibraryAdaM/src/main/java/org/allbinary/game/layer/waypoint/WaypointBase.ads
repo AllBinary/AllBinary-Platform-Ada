@@ -62,21 +62,21 @@ package org.allbinary.game.layer.waypoint.WaypointBase_Package is
    end record;
    NULL_WAYPOINT_BASE : WaypointBase_Access;
 
-   procedure Initialize (This : in out WaypointBase'Class; sound : Sound_Access);
-   function Create (sound : Sound_Access) return WaypointBase_Access;
+   procedure Initialize (This : in out WaypointBase'Class; sound_Param : access Sound'Class);
+   function Create (sound_Param : access Sound'Class) return WaypointBase_Access;
    function getSound (This : in out WaypointBase) return Sound_Access;
-   procedure setAllBinaryGameLayerManager (This : in out WaypointBase; allBinaryGameLayerManager : AllBinaryGameLayerManager_Access);
+   procedure setAllBinaryGameLayerManager (This : in out WaypointBase; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class);
    function getConnectedWaypointList (This : in out WaypointBase) return BasicArrayList_Access;
-   procedure onEvent (This : in out WaypointBase; eventObject : AllBinaryEventObject_Access);
-   function getPathFindingInfo (This : in out WaypointBase; geographicMapCellPosition : GeographicMapCellPosition_Access) return PathFindingInfo_Access;
-   procedure getPathFindingInfo (This : in out WaypointBase; geographicMapCellPosition : GeographicMapCellPosition_Access);
-   function getPathsList (This : in out WaypointBase; geographicMapCellPosition : GeographicMapCellPosition_Access; pathFindingInfo : PathFindingInfo_Access; multipassState : MultipassState_Access) return BasicArrayList_Access;
-   procedure getPathsList (This : in out WaypointBase; geographicMapCellPosition : GeographicMapCellPosition_Access; pathFindingInfo : PathFindingInfo_Access; multipassState : MultipassState_Access);
-   function getPathsListRunnable (This : in out WaypointBase; geographicMapCellPosition : GeographicMapCellPosition_Access) return BasicArrayList_Access;
-   procedure getPathsListRunnable (This : in out WaypointBase; geographicMapCellPosition : GeographicMapCellPosition_Access);
-   function getPathsListFromCacheOnly (This : in out WaypointBase; geographicMapCellPosition : GeographicMapCellPosition_Access) return BasicArrayList_Access;
-   procedure getPathsListFromCacheOnly (This : in out WaypointBase; geographicMapCellPosition : GeographicMapCellPosition_Access);
-   procedure visit (This : in out WaypointBase; unitLayer : PathFindingLayerInterface_Access);
+   procedure onEvent (This : in out WaypointBase; eventObject_Param : access AllBinaryEventObject'Class);
+   function getPathFindingInfo (This : in out WaypointBase; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return PathFindingInfo_Access;
+   procedure getPathFindingInfo (This : in out WaypointBase; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class);
+   function getPathsList (This : in out WaypointBase; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class; pathFindingInfo_Param : access PathFindingInfo'Class; multipassState_Param : access MultipassState'Class) return BasicArrayList_Access;
+   procedure getPathsList (This : in out WaypointBase; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class; pathFindingInfo_Param : access PathFindingInfo'Class; multipassState_Param : access MultipassState'Class);
+   function getPathsListRunnable (This : in out WaypointBase; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return BasicArrayList_Access;
+   procedure getPathsListRunnable (This : in out WaypointBase; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class);
+   function getPathsListFromCacheOnly (This : in out WaypointBase; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return BasicArrayList_Access;
+   procedure getPathsListFromCacheOnly (This : in out WaypointBase; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class);
+   procedure visit (This : in out WaypointBase; unitLayer_Param : access PathFindingLayerInterface'Class);
    procedure reset (This : in out WaypointBase);
    function getType (This : in out WaypointBase) return Integer;
 

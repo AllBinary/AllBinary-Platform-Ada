@@ -43,8 +43,8 @@ package admin.taghelpers.AdminConfigurationRequestHelperFactory_Package is
 
    procedure Initialize (This : in out AdminConfigurationRequestHelperFactory'Class);
    function Create return AdminConfigurationRequestHelperFactory_Access;
-   function getInstance (This : in out AdminConfigurationRequestHelperFactory; hashMap : HashMap_Access; pageContext : PageContext_Access) return Java_Object_Access;
-   procedure getInstance (This : in out AdminConfigurationRequestHelperFactory; hashMap : HashMap_Access; pageContext : PageContext_Access);
+   function getInstance (This : in out AdminConfigurationRequestHelperFactory; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return Java_Object_Access;
+   procedure getInstance (This : in out AdminConfigurationRequestHelperFactory; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
 
 end admin.taghelpers.AdminConfigurationRequestHelperFactory_Package;
 

@@ -59,7 +59,8 @@ package body org.allbinary.image.ChoiceGroupImageUtil_Package is
         end if;
    end init;
 
-   procedure update (This : in out ChoiceGroupImageUtil; gl : GL_Access) is
+   procedure update (This : in out ChoiceGroupImageUtil; gl_Param : access GL'Class) is
+      gl : GL_Access := GL_Access (gl_Param);
       features : Features_Access;
       choiceGroupFactory : ChoiceGroupImageFactory_Access;
       imageArray : Image_Access_Array_Access;
@@ -80,7 +81,8 @@ package body org.allbinary.image.ChoiceGroupImageUtil_Package is
         choiceGroupFactory.init (imageArray);
    end update;
 
-   procedure update (This : in out ChoiceGroupImageUtil; graphics : Graphics_Access) is
+   procedure update (This : in out ChoiceGroupImageUtil; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       features : Features_Access;
       choiceGroupFactory : ChoiceGroupImageFactory_Access;
       imageArray : Image_Access_Array_Access;

@@ -22,19 +22,23 @@ package body org.allbinary.logic.communication.http.request.session.WeblisketSes
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out WeblisketSession'Class; hashMap : HashMap_Access; pageContext : PageContext_Access) is
+   procedure Initialize (This : in out WeblisketSession'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
    begin
         Initialize (This, hashMap, HttpServletRequest_Access (pageContext.getRequest));
    end Initialize;
 
-   function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return WeblisketSession_Access is
+   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return WeblisketSession_Access is
       This : constant WeblisketSession_Access := new WeblisketSession;
    begin
-      WeblisketSession_Package.Initialize (This.all, hashMap, pageContext);
+      WeblisketSession_Package.Initialize (This.all, hashMap_Param, pageContext_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out WeblisketSession'Class; hashMap : HashMap_Access; httpServletRequest : HttpServletRequest_Access) is
+   procedure Initialize (This : in out WeblisketSession'Class; hashMap_Param : access HashMap'Class; httpServletRequest_Param : access HttpServletRequest'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+      httpServletRequest : HttpServletRequest_Access := HttpServletRequest_Access (httpServletRequest_Param);
       propertiesHashMap : HashMap_Access;
       request : HttpServletRequest_Access;
    begin
@@ -47,10 +51,10 @@ package body org.allbinary.logic.communication.http.request.session.WeblisketSes
         end if;
    end Initialize;
 
-   function Create (hashMap : HashMap_Access; httpServletRequest : HttpServletRequest_Access) return WeblisketSession_Access is
+   function Create (hashMap_Param : access HashMap'Class; httpServletRequest_Param : access HttpServletRequest'Class) return WeblisketSession_Access is
       This : constant WeblisketSession_Access := new WeblisketSession;
    begin
-      WeblisketSession_Package.Initialize (This.all, hashMap, httpServletRequest);
+      WeblisketSession_Package.Initialize (This.all, hashMap_Param, httpServletRequest_Param);
       return This;
    end Create;
 
@@ -79,7 +83,8 @@ package body org.allbinary.logic.communication.http.request.session.WeblisketSes
         This.session.setAttribute (WeblisketSessionData_Package.AUTHENTICATED, BooleanFactory_Package.getInstance.TRUE_STRING);
    end setAuthenticated;
 
-   procedure setRole (This : in out WeblisketSession; aRole : UserRole_Access) is
+   procedure setRole (This : in out WeblisketSession; aRole_Param : access UserRole'Class) is
+      aRole : UserRole_Access := UserRole_Access (aRole_Param);
    begin
         This.session.setAttribute (UserRoleData_Package.NAME.toString, aRole);
    end setRole;

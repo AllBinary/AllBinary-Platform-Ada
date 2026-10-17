@@ -21,15 +21,16 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategoryPathV
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out StoreThemeCategoryPathValidationView'Class; categoryInterface : StoreThemeCategoryInterface_Access) is
+   procedure Initialize (This : in out StoreThemeCategoryPathValidationView'Class; categoryInterface_Param : access StoreThemeCategoryInterface'Class) is
+      categoryInterface : StoreThemeCategoryInterface_Access := StoreThemeCategoryInterface_Access (categoryInterface_Param);
    begin
         StoreThemeCategoryPathView_Package.Initialize (This, StoreThemeCategoryInterface_Access (categoryInterface));
    end Initialize;
 
-   function Create (categoryInterface : StoreThemeCategoryInterface_Access) return StoreThemeCategoryPathValidationView_Access is
+   function Create (categoryInterface_Param : access StoreThemeCategoryInterface'Class) return StoreThemeCategoryPathValidationView_Access is
       This : constant StoreThemeCategoryPathValidationView_Access := new StoreThemeCategoryPathValidationView;
    begin
-      StoreThemeCategoryPathValidationView_Package.Initialize (This.all, categoryInterface);
+      StoreThemeCategoryPathValidationView_Package.Initialize (This.all, categoryInterface_Param);
       return This;
    end Create;
 
@@ -46,7 +47,8 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategoryPathV
    end toValidationInfoDoc;
 
    --  throws Exception
-   function toValidationInfoNode (This : in out StoreThemeCategoryPathValidationView; document : Document_Access) return Node_Access is
+   function toValidationInfoNode (This : in out StoreThemeCategoryPathValidationView; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
    begin
         return null;
    end toValidationInfoNode;
@@ -57,8 +59,8 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategoryPathV
         return To_Unbounded_String ("Error");
    end validationInfo;
 
-   procedure toValidationInfoNode (This : in out StoreThemeCategoryPathValidationView; document : Document_Access) is
-      Java_Result : constant Node_Access := StoreThemeCategoryPathValidationView'Class (This).toValidationInfoNode (document);
+   procedure toValidationInfoNode (This : in out StoreThemeCategoryPathValidationView; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := StoreThemeCategoryPathValidationView'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

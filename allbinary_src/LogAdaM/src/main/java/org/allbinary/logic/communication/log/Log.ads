@@ -41,8 +41,8 @@ package org.allbinary.logic.communication.log.Log_Package is
       exception_Id : Java_Object_Access;
    end record;
 
-   procedure Initialize (This : in out Log'Class; specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String; exception_Id : Java_Object_Access);
-   function Create (specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String; exception_Id : Java_Object_Access) return Log_Access;
+   procedure Initialize (This : in out Log'Class; specialMessage : Unbounded_String; anyType_Param : access Java_Object'Class; functionName : Unbounded_String; exception_Id_Param : access Java_Object'Class);
+   function Create (specialMessage : Unbounded_String; anyType_Param : access Java_Object'Class; functionName : Unbounded_String; exception_Id_Param : access Java_Object'Class) return Log_Access;
    function getSpecialMessage (This : in out Log) return Unbounded_String;
    function getObject (This : in out Log) return Java_Object_Access;
    function getFunctionName (This : in out Log) return Unbounded_String;

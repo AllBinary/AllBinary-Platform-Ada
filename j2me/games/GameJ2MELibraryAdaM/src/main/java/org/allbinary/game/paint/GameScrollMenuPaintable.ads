@@ -51,11 +51,11 @@ package org.allbinary.game.paint.GameScrollMenuPaintable_Package is
 
    type GameScrollMenuPaintable is new BasicGameDemoPaintable and ColorChangeListener with null record;
 
-   procedure Initialize (This : in out GameScrollMenuPaintable'Class; mainDemoStatePaintable : Paintable_Access; ownershipPaintable : Paintable_Access; helpPaintableInterface : Paintable_Access; basicColor : BasicColor_Access);
-   function Create (mainDemoStatePaintable : Paintable_Access; ownershipPaintable : Paintable_Access; helpPaintableInterface : Paintable_Access; basicColor : BasicColor_Access) return GameScrollMenuPaintable_Access;
+   procedure Initialize (This : in out GameScrollMenuPaintable'Class; mainDemoStatePaintable_Param : access Paintable'Class; ownershipPaintable_Param : access Paintable'Class; helpPaintableInterface_Param : access Paintable'Class; basicColor_Param : access BasicColor'Class);
+   function Create (mainDemoStatePaintable_Param : access Paintable'Class; ownershipPaintable_Param : access Paintable'Class; helpPaintableInterface_Param : access Paintable'Class; basicColor_Param : access BasicColor'Class) return GameScrollMenuPaintable_Access;
    procedure setState (This : in out GameScrollMenuPaintable; state : Integer);
-   procedure onEvent (This : in out GameScrollMenuPaintable; eventObject : AllBinaryEventObject_Access);
-   procedure setColor (This : in out GameScrollMenuPaintable; basicColor : BasicColor_Access);
+   procedure onEvent (This : in out GameScrollMenuPaintable; eventObject_Param : access AllBinaryEventObject'Class);
+   procedure setColor (This : in out GameScrollMenuPaintable; basicColor_Param : access BasicColor'Class);
 
 end org.allbinary.game.paint.GameScrollMenuPaintable_Package;
 

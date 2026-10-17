@@ -33,13 +33,14 @@ package body org.allbinary.media.audio.music.MusicManagerFactory_Package is
    end Create;
 
 
-   function createMusicManager (soundList : BasicArrayList_Access) return MusicManager_Access is
+   function createMusicManager (soundList_Param : access BasicArrayList'Class) return MusicManager_Access is
+      soundList : BasicArrayList_Access := BasicArrayList_Access (soundList_Param);
    begin
         return MusicManager_Package.Create (MusicService_Package.MusicService'Tag, soundList);
    end createMusicManager;
 
-   procedure createMusicManager (soundList : BasicArrayList_Access) is
-      Java_Result : constant MusicManager_Access := createMusicManager (soundList);
+   procedure createMusicManager (soundList_Param : access BasicArrayList'Class) is
+      Java_Result : constant MusicManager_Access := createMusicManager (soundList_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

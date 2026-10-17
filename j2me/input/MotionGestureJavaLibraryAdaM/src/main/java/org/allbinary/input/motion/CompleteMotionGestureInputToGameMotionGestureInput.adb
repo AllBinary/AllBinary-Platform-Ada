@@ -47,7 +47,7 @@ package body org.allbinary.input.motion.CompleteMotionGestureInputToGameMotionGe
    begin
         commonStrings := CommonStrings_Package.getInstance;
         begin
-            PreLogUtil_Package.put (To_Unbounded_String ("Compound Motion Gestures"), This'Unchecked_Access, commonStrings.INIT);
+            PreLogUtil_Package.put (To_Unbounded_String ("Compound Motion Gestures"), CompleteMotionGestureInputToGameMotionGestureInput_Access'(This'Unchecked_Access), commonStrings.INIT);
             motionGestureConfiguration := MotionGestureConfigurationFactory_Package.getInstance;
             touchMotionGestureFactory := TouchMotionGestureFactory_Package.getInstance;
             list := BasicArrayListD_Package.Create;
@@ -82,7 +82,7 @@ package body org.allbinary.input.motion.CompleteMotionGestureInputToGameMotionGe
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.INIT, e);
+            This.logUtil.put (commonStrings.EXCEPTION_Id, CompleteMotionGestureInputToGameMotionGestureInput_Access'(This'Unchecked_Access), commonStrings.INIT, e);
                 end;
         end;
    end init;

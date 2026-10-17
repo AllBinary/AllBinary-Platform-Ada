@@ -22,7 +22,9 @@ package body org.allbinary.animation.image.ImageRotationAnimationFactory_Package
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ImageRotationAnimationFactory'Class; image : Image_Access; width : Integer; height : Integer; dx : Integer; dy : Integer; angleIncrement : Short_Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access) is
+   procedure Initialize (This : in out ImageRotationAnimationFactory'Class; image_Param : access Image'Class; width : Integer; height : Integer; dx : Integer; dy : Integer; angleIncrement : Short_Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) is
+      image : Image_Access := Image_Access (image_Param);
+      animationBehaviorFactory : AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
    begin
         BaseImageAnimationFactory_Package.Initialize (This, image, PrimitiveIntUtil_Package.getArrayInstance, width, height, 0, 0, animationBehaviorFactory);
         Initialize_Fields (This);
@@ -31,10 +33,10 @@ package body org.allbinary.animation.image.ImageRotationAnimationFactory_Package
         This.animationFactoryInitializationVisitor.dy := dy;
    end Initialize;
 
-   function Create (image : Image_Access; width : Integer; height : Integer; dx : Integer; dy : Integer; angleIncrement : Short_Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access) return ImageRotationAnimationFactory_Access is
+   function Create (image_Param : access Image'Class; width : Integer; height : Integer; dx : Integer; dy : Integer; angleIncrement : Short_Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return ImageRotationAnimationFactory_Access is
       This : constant ImageRotationAnimationFactory_Access := new ImageRotationAnimationFactory;
    begin
-      ImageRotationAnimationFactory_Package.Initialize (This.all, image, width, height, dx, dy, angleIncrement, animationBehaviorFactory);
+      ImageRotationAnimationFactory_Package.Initialize (This.all, image_Param, width, height, dx, dy, angleIncrement, animationBehaviorFactory_Param);
       return This;
    end Create;
 
@@ -42,7 +44,7 @@ package body org.allbinary.animation.image.ImageRotationAnimationFactory_Package
    function getInstance (This : in out ImageRotationAnimationFactory; instanceId : Integer) return Animation_Access is
    begin
         if ((This.animationFactoryInitializationVisitor.dx) /= (0)) or else ((This.animationFactoryInitializationVisitor.dy) /= (0)) then
-            This.animationFactoryImageScaleUtil.processAdjust (This'Unchecked_Access);
+            This.animationFactoryImageScaleUtil.processAdjust (ImageRotationAnimationFactory_Access'(This'Unchecked_Access));
             return AdjustedImageBaseRotationAnimation_Package.Create (This.getImage, AngleInfo_Package.getInstance (This.angleIncrement), AngleFactory_Package.getInstance.TOTAL_ANGLE, This.animationFactoryInitializationVisitor.dx, This.animationFactoryInitializationVisitor.dy, This.animationBehaviorFactory.getOrCreateInstance);
         else
             return ImageBaseRotationAnimation_Package.Create (This.getImage, AngleInfo_Package.getInstance (This.angleIncrement), AngleFactory_Package.getInstance.TOTAL_ANGLE, This.animationBehaviorFactory.getOrCreateInstance);

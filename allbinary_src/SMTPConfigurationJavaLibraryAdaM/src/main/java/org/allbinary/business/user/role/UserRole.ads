@@ -38,8 +38,8 @@ package org.allbinary.business.user.role.UserRole_Package is
       userFactoryInterface : UserFactoryInterface_Access;
    end record;
 
-   procedure Initialize (This : in out UserRole'Class; aBasicUserRole : BasicUserRole_Access; aUserFactoryInterface : UserFactoryInterface_Access);
-   function Create (aBasicUserRole : BasicUserRole_Access; aUserFactoryInterface : UserFactoryInterface_Access) return UserRole_Access;
+   procedure Initialize (This : in out UserRole'Class; aBasicUserRole_Param : access BasicUserRole'Class; aUserFactoryInterface_Param : access UserFactoryInterface'Class);
+   function Create (aBasicUserRole_Param : access BasicUserRole'Class; aUserFactoryInterface_Param : access UserFactoryInterface'Class) return UserRole_Access;
    function toString (This : in out UserRole) return Unbounded_String;
    function getBasicUserRole (This : in out UserRole) return BasicUserRole_Access;
    function getUserFactory (This : in out UserRole) return UserFactoryInterface_Access;

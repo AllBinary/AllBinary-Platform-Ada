@@ -35,9 +35,9 @@ package org.allbinary.graphics.threed.GLHolder_Package is
 
    procedure Initialize (This : in out GLHolder'Class);
    function Create return GLHolder_Access;
-   procedure runOnSurfaceCreated (This : in out GLHolder; renderer : Java_Object_Access);
-   procedure runOnSurfaceChanged (This : in out GLHolder; renderer : Java_Object_Access; width : Integer; height : Integer);
-   procedure run (This : in out GLHolder; renderer : Java_Object_Access);
+   procedure runOnSurfaceCreated (This : in out GLHolder; renderer_Param : access Java_Object'Class);
+   procedure runOnSurfaceChanged (This : in out GLHolder; renderer_Param : access Java_Object'Class; width : Integer; height : Integer);
+   procedure run (This : in out GLHolder; renderer_Param : access Java_Object'Class);
 
 end org.allbinary.graphics.threed.GLHolder_Package;
 

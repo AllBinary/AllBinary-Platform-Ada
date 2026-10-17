@@ -61,9 +61,9 @@ package org.allbinary.data.tables.user.commerce.inventory.item.downloads.Downloa
 
    procedure Initialize (This : in out DownloadItemsEntity'Class);
    function Create return DownloadItemsEntity_Access;
-   procedure insert (This : in out DownloadItemsEntity; values : BasicArrayList_Access);
+   procedure insert (This : in out DownloadItemsEntity; values_Param : access BasicArrayList'Class);
    procedure delete (This : in out DownloadItemsEntity; value : Unbounded_String);
-   procedure update (This : in out DownloadItemsEntity; updatedValues : HashMap_Access);
+   procedure update (This : in out DownloadItemsEntity; updatedValues_Param : access HashMap'Class);
    function getForItem (This : in out DownloadItemsEntity; id : Unbounded_String) return BasicArrayList_Access;
    procedure getForItem (This : in out DownloadItemsEntity; id : Unbounded_String);
    function getForItem (This : in out DownloadItemsEntity; id : Unbounded_String; downloadItemId : Unbounded_String) return BasicArrayList_Access;

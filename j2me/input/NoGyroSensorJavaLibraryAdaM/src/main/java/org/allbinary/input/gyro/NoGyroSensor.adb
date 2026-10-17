@@ -25,7 +25,7 @@ package body org.allbinary.input.gyro.NoGyroSensor_Package is
    begin
       AllBinaryOrientationSensor_Package.Initialize (This);
       Initialize_Fields (This);
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+        This.logUtil.putF (This.commonStrings.START, NoGyroSensor_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
    end Initialize;
 
    function Create return NoGyroSensor_Access is

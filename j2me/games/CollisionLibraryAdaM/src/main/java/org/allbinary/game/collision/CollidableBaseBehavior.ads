@@ -59,17 +59,17 @@ package org.allbinary.game.collision.CollidableBaseBehavior_Package is
    procedure update (This : in out CollidableBaseBehavior);
    function getName (This : in out CollidableBaseBehavior) return Unbounded_String;
    procedure setCollidable (This : in out CollidableBaseBehavior; collidable : Boolean);
-   function isCollidable (This : in out CollidableBaseBehavior; ownerLayer : CollidableCompositeLayer_Access) return Boolean;
-   procedure isCollidable (This : in out CollidableBaseBehavior; ownerLayer : CollidableCompositeLayer_Access);
-   procedure collide (This : in out CollidableBaseBehavior; ownerLayer : CollidableCompositeLayer_Access; allbinaryCollidableLayer : CollidableCompositeLayer_Access);
-   function isCollision (This : in out CollidableBaseBehavior; ownerLayer : CollidableCompositeLayer_Access; collisionLayer : CollidableCompositeLayer_Access) return Boolean;
-   procedure isCollision (This : in out CollidableBaseBehavior; ownerLayer : CollidableCompositeLayer_Access; collisionLayer : CollidableCompositeLayer_Access);
-   function isCollisionInterface (This : in out CollidableBaseBehavior; ownerLayer : CollidableCompositeLayer_Access; collidableInterfaceCompositeInterface : CollidableInterfaceCompositeInterface_Access) return Boolean;
-   procedure isCollisionInterface (This : in out CollidableBaseBehavior; ownerLayer : CollidableCompositeLayer_Access; collidableInterfaceCompositeInterface : CollidableInterfaceCompositeInterface_Access);
-   procedure collideInterface (This : in out CollidableBaseBehavior; ownerLayer : CollidableCompositeLayer_Access; collidableInterfaceCompositeInterface : CollidableInterfaceCompositeInterface_Access);
-   procedure paint (This : in out CollidableBaseBehavior; ownerLayer : CollidableCompositeLayer_Access; graphics : Graphics_Access);
-   function getCollisionTypeWith (This : in out CollidableBaseBehavior; layerInterface : AllBinaryLayer_Access) return CollisionType_Access;
-   procedure getCollisionTypeWith (This : in out CollidableBaseBehavior; layerInterface : AllBinaryLayer_Access);
+   function isCollidable (This : in out CollidableBaseBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class) return Boolean;
+   procedure isCollidable (This : in out CollidableBaseBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class);
+   procedure collide (This : in out CollidableBaseBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; allbinaryCollidableLayer_Param : access CollidableCompositeLayer'Class);
+   function isCollision (This : in out CollidableBaseBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collisionLayer_Param : access CollidableCompositeLayer'Class) return Boolean;
+   procedure isCollision (This : in out CollidableBaseBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collisionLayer_Param : access CollidableCompositeLayer'Class);
+   function isCollisionInterface (This : in out CollidableBaseBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableInterfaceCompositeInterface'Class) return Boolean;
+   procedure isCollisionInterface (This : in out CollidableBaseBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableInterfaceCompositeInterface'Class);
+   procedure collideInterface (This : in out CollidableBaseBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableInterfaceCompositeInterface'Class);
+   procedure paint (This : in out CollidableBaseBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; graphics_Param : access Graphics'Class);
+   function getCollisionTypeWith (This : in out CollidableBaseBehavior; layerInterface_Param : access AllBinaryLayer'Class) return CollisionType_Access;
+   procedure getCollisionTypeWith (This : in out CollidableBaseBehavior; layerInterface_Param : access AllBinaryLayer'Class);
 
 end org.allbinary.game.collision.CollidableBaseBehavior_Package;
 

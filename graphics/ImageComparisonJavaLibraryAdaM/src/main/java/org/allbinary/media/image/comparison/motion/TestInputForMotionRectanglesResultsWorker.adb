@@ -44,13 +44,15 @@ package body org.allbinary.media.image.comparison.motion.TestInputForMotionRecta
         return This.motionRectanglesVector;
    end getMotionRectanglesVector;
 
-   procedure onMotionRectanglesImageComparisonResultsEvent (This : in out TestInputForMotionRectanglesResultsWorker; motionRectanglesImageComparisonResultsEvent : MotionRectanglesResultsEvent_Access) is
+   procedure onMotionRectanglesImageComparisonResultsEvent (This : in out TestInputForMotionRectanglesResultsWorker; motionRectanglesImageComparisonResultsEvent_Param : access MotionRectanglesResultsEvent'Class) is
+      motionRectanglesImageComparisonResultsEvent : MotionRectanglesResultsEvent_Access := MotionRectanglesResultsEvent_Access (motionRectanglesImageComparisonResultsEvent_Param);
    begin
         This.getMotionRectanglesVector.add (motionRectanglesImageComparisonResultsEvent.getMotionRectangles);
         This.run;
    end onMotionRectanglesImageComparisonResultsEvent;
 
-   procedure onEvent (This : in out TestInputForMotionRectanglesResultsWorker; allBinaryEventObject : AllBinaryEventObject_Access) is
+   procedure onEvent (This : in out TestInputForMotionRectanglesResultsWorker; allBinaryEventObject_Param : access AllBinaryEventObject'Class) is
+      allBinaryEventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (allBinaryEventObject_Param);
    begin
         This.onMotionRectanglesImageComparisonResultsEvent (MotionRectanglesResultsEvent_Access (allBinaryEventObject));
    end onEvent;
@@ -78,7 +80,7 @@ package body org.allbinary.media.image.comparison.motion.TestInputForMotionRecta
       index : Integer;
    begin
         begin
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.RUN);
+            This.logUtil.putF (This.commonStrings.START, TestInputForMotionRectanglesResultsWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
             This.setRunning (True);
             timeHelper := TimeDelayHelper_Package.Create (1000);
             timeHelper.setStartTimeTNT;
@@ -123,14 +125,14 @@ package body org.allbinary.media.image.comparison.motion.TestInputForMotionRecta
             end if;
             This.index := This.index + 1;
             This.getMotionRectanglesVector.remove (motionRectangles);
-            This.logUtil.putF ((CommonLabels_Package.getInstance.ELAPSED) + (timeHelper.getElapsedTNT), This'Unchecked_Access, This.commonStrings.RUN);
-            This.logUtil.putF (This.commonStrings.END_Id, This'Unchecked_Access, This.commonStrings.RUN);
+            This.logUtil.putF ((CommonLabels_Package.getInstance.ELAPSED) + (timeHelper.getElapsedTNT), TestInputForMotionRectanglesResultsWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
+            This.logUtil.putF (This.commonStrings.END_Id, TestInputForMotionRectanglesResultsWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.RUN, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, TestInputForMotionRectanglesResultsWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN, e);
                 end;
         end;
    end run;

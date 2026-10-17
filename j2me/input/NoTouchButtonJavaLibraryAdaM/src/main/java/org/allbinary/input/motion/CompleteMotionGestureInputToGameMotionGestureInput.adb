@@ -41,7 +41,7 @@ package body org.allbinary.input.motion.CompleteMotionGestureInputToGameMotionGe
 
    procedure init (This : in out CompleteMotionGestureInputToGameMotionGestureInput) is
    begin
-        PreLogUtil_Package.put (To_Unbounded_String ("No Touch Button = No Compound Motion Gestures"), This'Unchecked_Access, This.commonStrings.INIT);
+        PreLogUtil_Package.put (To_Unbounded_String ("No Touch Button = No Compound Motion Gestures"), CompleteMotionGestureInputToGameMotionGestureInput_Access'(This'Unchecked_Access), This.commonStrings.INIT);
    end init;
 
 begin

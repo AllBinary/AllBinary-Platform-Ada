@@ -45,7 +45,7 @@ package body org.allbinary.input.motion.button.UpgradeDowngradeTouchButtonsBuild
       DOWN : TouchButton_Access;
    begin
         begin
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+            This.logUtil.putF (This.commonStrings.START, UpgradeDowngradeTouchButtonsBuilder_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
             list := BasicArrayListD_Package.Create;
             touchButtonLocationHelper := TouchButtonLocationHelper_Package.Create;
             cellPositionFactory := CellPositionFactory_Package.getInstance;
@@ -63,7 +63,7 @@ package body org.allbinary.input.motion.button.UpgradeDowngradeTouchButtonsBuild
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, UpgradeDowngradeTouchButtonsBuilder_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR, e);
             return BasicArrayListUtil_Package.getInstance.getImmutableInstance;
                 end;
         end;

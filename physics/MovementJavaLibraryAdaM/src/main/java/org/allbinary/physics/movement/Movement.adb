@@ -34,13 +34,15 @@ package body org.allbinary.physics.movement.Movement_Package is
       return This;
    end Create;
 
-   procedure init (This : in out Movement; speedBasicDecimal : BasicDecimal_Access; angle : Integer; otherAngle : Integer) is
+   procedure init (This : in out Movement; speedBasicDecimal_Param : access BasicDecimal'Class; angle : Integer; otherAngle : Integer) is
+      speedBasicDecimal : BasicDecimal_Access := BasicDecimal_Access (speedBasicDecimal_Param);
    begin
         null;
    end init;
 
    --  throws Exception
-   procedure process (This : in out Movement; layer : AllBinaryGameLayer_Access) is
+   procedure process (This : in out Movement; layer_Param : access AllBinaryGameLayer'Class) is
+      layer : AllBinaryGameLayer_Access := AllBinaryGameLayer_Access (layer_Param);
    begin
         null;
    end process;

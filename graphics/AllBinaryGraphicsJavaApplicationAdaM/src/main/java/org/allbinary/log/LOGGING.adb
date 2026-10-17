@@ -36,7 +36,8 @@ package body org.allbinary.log.LOGGING_Package is
       return This;
    end Create;
 
-   function contains (logType : LOGGING_Access) return Boolean is
+   function contains (logType_Param : access LOGGING'Class) return Boolean is
+      logType : LOGGING_Access := LOGGING_Access (logType_Param);
    begin
         return LOGGING.logging.contains (logType.toString);
    end contains;
@@ -46,8 +47,8 @@ package body org.allbinary.log.LOGGING_Package is
         return This.name;
    end toString;
 
-   procedure contains (logType : LOGGING_Access) is
-      Java_Result : constant Boolean := contains (logType);
+   procedure contains (logType_Param : access LOGGING'Class) is
+      Java_Result : constant Boolean := contains (logType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

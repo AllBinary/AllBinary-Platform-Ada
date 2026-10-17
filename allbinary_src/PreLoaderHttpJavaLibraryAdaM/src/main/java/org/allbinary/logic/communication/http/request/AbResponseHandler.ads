@@ -49,11 +49,11 @@ package org.allbinary.logic.communication.http.request.AbResponseHandler_Package
 
    procedure Initialize (This : in out AbResponseHandler'Class);
    function Create return AbResponseHandler_Access;
-   procedure sendJspTagRedirect (pageContext : PageContext_Access; e : Java_Throwable);
-   procedure sendServletRedirect (pageContext : PageContext_Access; e : Java_Throwable);
-   procedure sendJspTagLicensingRedirect (pageContext : PageContext_Access; e : Java_Throwable);
-   procedure sendServletLicensingRedirect (pageContext : PageContext_Access; e : Java_Throwable);
-   procedure sendRedirect (pageContext : PageContext_Access; page : Unbounded_String);
+   procedure sendJspTagRedirect (pageContext_Param : access PageContext'Class; e_Param : access Java_Throwable_Object'Class);
+   procedure sendServletRedirect (pageContext_Param : access PageContext'Class; e_Param : access Java_Throwable_Object'Class);
+   procedure sendJspTagLicensingRedirect (pageContext_Param : access PageContext'Class; e_Param : access Java_Throwable_Object'Class);
+   procedure sendServletLicensingRedirect (pageContext_Param : access PageContext'Class; e_Param : access Java_Throwable_Object'Class);
+   procedure sendRedirect (pageContext_Param : access PageContext'Class; page : Unbounded_String);
 
 end org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
 

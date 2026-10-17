@@ -99,8 +99,8 @@ package admin.taghelpers.UpdateOrderHelper_Package is
       storeCancelComment : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out UpdateOrderHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access);
-   function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return UpdateOrderHelper_Access;
+   procedure Initialize (This : in out UpdateOrderHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
+   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return UpdateOrderHelper_Access;
    procedure getFormData (This : in out UpdateOrderHelper);
    function update (This : in out UpdateOrderHelper) return Unbounded_String;
 

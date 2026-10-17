@@ -24,7 +24,8 @@ package body org.allbinary.input.automation.actions.script.condition.BasicProfil
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BasicProfileActionScriptCondition'Class; label : Unbounded_String; node : Node_Access) is
+   procedure Initialize (This : in out BasicProfileActionScriptCondition'Class; label : Unbounded_String; node_Param : access Node'Class) is
+      node : Node_Access := Node_Access (node_Param);
       nodeList : NodeList_Access;
       actionItemNode : Node_Access;
       index : Integer;
@@ -47,15 +48,16 @@ package body org.allbinary.input.automation.actions.script.condition.BasicProfil
         end loop;
    end Initialize;
 
-   function Create (label : Unbounded_String; node : Node_Access) return BasicProfileActionScriptCondition_Access is
+   function Create (label : Unbounded_String; node_Param : access Node'Class) return BasicProfileActionScriptCondition_Access is
       This : constant BasicProfileActionScriptCondition_Access := new BasicProfileActionScriptCondition;
    begin
-      BasicProfileActionScriptCondition_Package.Initialize (This.all, label, node);
+      BasicProfileActionScriptCondition_Package.Initialize (This.all, label, node_Param);
       return This;
    end Create;
 
    --  throws Exception
-   procedure addProcessorNodes (This : in out BasicProfileActionScriptCondition; node : Node_Access) is
+   procedure addProcessorNodes (This : in out BasicProfileActionScriptCondition; node_Param : access Node'Class) is
+      node : Node_Access := Node_Access (node_Param);
       nodeList : NodeList_Access;
       processorActionItemNode : Node_Access;
       index : Integer;
@@ -104,9 +106,9 @@ package body org.allbinary.input.automation.actions.script.condition.BasicProfil
         jMenuItemColorAt := JMenuItem_Package.Create (NEW_COLOR_AT);
         jMenuItemAlways := JMenuItem_Package.Create (NEW_ALWAYS);
         jMenuItemTimeInterval := JMenuItem_Package.Create (NEW_TIME_INTERVAL);
-        jMenuItemColorAt.addActionListener (This'Unchecked_Access);
-        jMenuItemAlways.addActionListener (This'Unchecked_Access);
-        jMenuItemTimeInterval.addActionListener (This'Unchecked_Access);
+        jMenuItemColorAt.addActionListener (BasicProfileActionScriptCondition_Access'(This'Unchecked_Access));
+        jMenuItemAlways.addActionListener (BasicProfileActionScriptCondition_Access'(This'Unchecked_Access));
+        jMenuItemTimeInterval.addActionListener (BasicProfileActionScriptCondition_Access'(This'Unchecked_Access));
         jMenu.add (jMenuItemColorAt);
         jMenu.add (jMenuItemAlways);
         jMenu.add (jMenuItemTimeInterval);
@@ -123,9 +125,9 @@ package body org.allbinary.input.automation.actions.script.condition.BasicProfil
         jMenuItemKey := JMenuItem_Package.Create (NEW_KEY_INPUT);
         jMenuItemMouse := JMenuItem_Package.Create (NEW_MOUSE_INPUT);
         jMenuItemJoystick := JMenuItem_Package.Create (NEW_JOYSTICK_INPUT);
-        jMenuItemKey.addActionListener (This'Unchecked_Access);
-        jMenuItemMouse.addActionListener (This'Unchecked_Access);
-        jMenuItemJoystick.addActionListener (This'Unchecked_Access);
+        jMenuItemKey.addActionListener (BasicProfileActionScriptCondition_Access'(This'Unchecked_Access));
+        jMenuItemMouse.addActionListener (BasicProfileActionScriptCondition_Access'(This'Unchecked_Access));
+        jMenuItemJoystick.addActionListener (BasicProfileActionScriptCondition_Access'(This'Unchecked_Access));
         jMenu.add (jMenuItemKey);
         jMenu.add (jMenuItemMouse);
         jMenu.add (jMenuItemJoystick);
@@ -138,41 +140,46 @@ package body org.allbinary.input.automation.actions.script.condition.BasicProfil
    begin
         jMenu := JMenu_Package.Create (NEW_OUTPUT);
         jMenuItemImage := JMenuItem_Package.Create (NEW_IMAGE_OUTPUT);
-        jMenuItemImage.addActionListener (This'Unchecked_Access);
+        jMenuItemImage.addActionListener (BasicProfileActionScriptCondition_Access'(This'Unchecked_Access));
         jMenu.add (jMenuItemImage);
         return jMenu;
    end getOutputJPopupMenu;
 
-   procedure addProcessor (This : in out BasicProfileActionScriptCondition; profileActionProcessorInterface : ProfileActionScriptProcessorInterface_Access) is
+   procedure addProcessor (This : in out BasicProfileActionScriptCondition; profileActionProcessorInterface_Param : access ProfileActionScriptProcessorInterface'Class) is
+      profileActionProcessorInterface : ProfileActionScriptProcessorInterface_Access := ProfileActionScriptProcessorInterface_Access (profileActionProcessorInterface_Param);
    begin
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("addInput"));
+        This.logUtil.putF (This.commonStrings.START, BasicProfileActionScriptCondition_Access'(This'Unchecked_Access), To_Unbounded_String ("addInput"));
         This.getProfileActionProcessorInterfaceVector.add (profileActionProcessorInterface);
         This.add (profileActionProcessorInterface);
    end addProcessor;
 
-   procedure removeProcessor (This : in out BasicProfileActionScriptCondition; profileActionProcessorInterface : ProfileActionScriptProcessorInterface_Access) is
+   procedure removeProcessor (This : in out BasicProfileActionScriptCondition; profileActionProcessorInterface_Param : access ProfileActionScriptProcessorInterface'Class) is
+      profileActionProcessorInterface : ProfileActionScriptProcessorInterface_Access := ProfileActionScriptProcessorInterface_Access (profileActionProcessorInterface_Param);
    begin
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("removeInput"));
+        This.logUtil.putF (This.commonStrings.START, BasicProfileActionScriptCondition_Access'(This'Unchecked_Access), To_Unbounded_String ("removeInput"));
         This.getProfileActionProcessorInterfaceVector.remove (profileActionProcessorInterface);
         This.remove (profileActionProcessorInterface);
    end removeProcessor;
 
-   procedure removeCondition (This : in out BasicProfileActionScriptCondition; profileActionScriptNodeInterface : ProfileActionScriptNodeInterface_Access) is
+   procedure removeCondition (This : in out BasicProfileActionScriptCondition; profileActionScriptNodeInterface_Param : access ProfileActionScriptNodeInterface'Class) is
+      profileActionScriptNodeInterface : ProfileActionScriptNodeInterface_Access := ProfileActionScriptNodeInterface_Access (profileActionScriptNodeInterface_Param);
    begin
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("removeCondition"));
+        This.logUtil.putF (This.commonStrings.START, BasicProfileActionScriptCondition_Access'(This'Unchecked_Access), To_Unbounded_String ("removeCondition"));
         This.getProfileActionConditionInterfaceVector.remove (profileActionScriptNodeInterface);
         This.remove (profileActionScriptNodeInterface);
    end removeCondition;
 
-   procedure addCondition (This : in out BasicProfileActionScriptCondition; profileActionScriptNodeInterface : ProfileActionScriptNodeInterface_Access) is
+   procedure addCondition (This : in out BasicProfileActionScriptCondition; profileActionScriptNodeInterface_Param : access ProfileActionScriptNodeInterface'Class) is
+      profileActionScriptNodeInterface : ProfileActionScriptNodeInterface_Access := ProfileActionScriptNodeInterface_Access (profileActionScriptNodeInterface_Param);
    begin
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("addCondition"));
+        This.logUtil.putF (This.commonStrings.START, BasicProfileActionScriptCondition_Access'(This'Unchecked_Access), To_Unbounded_String ("addCondition"));
         This.getProfileActionConditionInterfaceVector.add (profileActionScriptNodeInterface);
         This.add (profileActionScriptNodeInterface);
    end addCondition;
 
    --  throws Exception
-   function toXmlNode (This : in out BasicProfileActionScriptCondition; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out BasicProfileActionScriptCondition; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       node : Node_Access;
       profileActionConditionInterfaceVector : BasicArrayList_Access;
       size : Integer;
@@ -203,12 +210,14 @@ package body org.allbinary.input.automation.actions.script.condition.BasicProfil
         return This.profileActionConditionInterfaceVector;
    end getProfileActionConditionInterfaceVector;
 
-   procedure setProfileActionConditionInterfaceVector (This : in out BasicProfileActionScriptCondition; profileActionConditionInterfaceVector : BasicArrayList_Access) is
+   procedure setProfileActionConditionInterfaceVector (This : in out BasicProfileActionScriptCondition; profileActionConditionInterfaceVector_Param : access BasicArrayList'Class) is
+      profileActionConditionInterfaceVector : BasicArrayList_Access := BasicArrayList_Access (profileActionConditionInterfaceVector_Param);
    begin
         This.profileActionConditionInterfaceVector := profileActionConditionInterfaceVector;
    end setProfileActionConditionInterfaceVector;
 
-   procedure actionPerformed (This : in out BasicProfileActionScriptCondition; actionEvent : ActionEvent_Access) is
+   procedure actionPerformed (This : in out BasicProfileActionScriptCondition; actionEvent_Param : access ActionEvent'Class) is
+      actionEvent : ActionEvent_Access := ActionEvent_Access (actionEvent_Param);
       profileActionScriptNodeInterface : ProfileActionScriptNodeInterface_Access;
    begin
         begin
@@ -216,7 +225,7 @@ package body org.allbinary.input.automation.actions.script.condition.BasicProfil
             if (actionEvent.getActionCommand.compareTo (DELETE)) = (0) then
                 if (This.getParent.all in ProfileActionScriptNodeInterface_Package.ProfileActionScriptNodeInterface'Class) then
                     profileActionScriptNodeInterface := ProfileActionScriptNodeInterface_Access (This.getParent);
-                    profileActionScriptNodeInterface.removeCondition (This'Unchecked_Access);
+                    profileActionScriptNodeInterface.removeCondition (BasicProfileActionScriptCondition_Access'(This'Unchecked_Access));
                     JTreeInterfaceFactory_Package.getInstance.getJTreeInterface.updateJTree;
                 end if;
             elsif (actionEvent.getActionCommand.compareTo (NEW_COLOR_AT)) = (0) then
@@ -243,7 +252,7 @@ package body org.allbinary.input.automation.actions.script.condition.BasicProfil
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (To_Unbounded_String ("Error"), This'Unchecked_Access, To_Unbounded_String ("actionPerformed"), e);
+            This.logUtil.put (To_Unbounded_String ("Error"), BasicProfileActionScriptCondition_Access'(This'Unchecked_Access), To_Unbounded_String ("actionPerformed"), e);
                 end;
         end;
    end actionPerformed;
@@ -253,7 +262,8 @@ package body org.allbinary.input.automation.actions.script.condition.BasicProfil
         return This.profileActionProcessorInterfaceVector;
    end getProfileActionProcessorInterfaceVector;
 
-   procedure setProfileActionProcessorInterfaceVector (This : in out BasicProfileActionScriptCondition; profileActionProcessorInterfaceVector : BasicArrayList_Access) is
+   procedure setProfileActionProcessorInterfaceVector (This : in out BasicProfileActionScriptCondition; profileActionProcessorInterfaceVector_Param : access BasicArrayList'Class) is
+      profileActionProcessorInterfaceVector : BasicArrayList_Access := BasicArrayList_Access (profileActionProcessorInterfaceVector_Param);
    begin
         This.profileActionProcessorInterfaceVector := profileActionProcessorInterfaceVector;
    end setProfileActionProcessorInterfaceVector;
@@ -262,7 +272,7 @@ package body org.allbinary.input.automation.actions.script.condition.BasicProfil
       treePath : TreePath_Access;
    begin
         JTreeInterfaceFactory_Package.getInstance.getJTreeInterface.updateJTree;
-        treePath := TreePath_Package.Create (This'Unchecked_Access);
+        treePath := TreePath_Package.Create (BasicProfileActionScriptCondition_Access'(This'Unchecked_Access));
         JTreeInterfaceFactory_Package.getInstance.getJTreeInterface.getActionScriptJTree.expandPath (treePath);
    end updateTree;
 
@@ -291,7 +301,7 @@ package body org.allbinary.input.automation.actions.script.condition.BasicProfil
       profileActionScriptProcessorInterface : ProfileActionScriptProcessorInterface_Access;
       index : Integer;
    begin
-        This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Start - Processing ")).appendint (This.getProfileActionProcessorInterfaceVector.size).append (To_Unbounded_String (" inputs")).toString, This'Unchecked_Access, This.commonStrings.PROCESS);
+        This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Start - Processing ")).appendint (This.getProfileActionProcessorInterfaceVector.size).append (To_Unbounded_String (" inputs")).toString, BasicProfileActionScriptCondition_Access'(This'Unchecked_Access), This.commonStrings.PROCESS);
         profileActionProcessorInterfaceVector := This.getProfileActionProcessorInterfaceVector;
         size := profileActionProcessorInterfaceVector.size;
         for index in 0 .. (size) - 1 loop
@@ -300,8 +310,8 @@ package body org.allbinary.input.automation.actions.script.condition.BasicProfil
         end loop;
    end process;
 
-   procedure toXmlNode (This : in out BasicProfileActionScriptCondition; document : Document_Access) is
-      Java_Result : constant Node_Access := BasicProfileActionScriptCondition'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out BasicProfileActionScriptCondition; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := BasicProfileActionScriptCondition'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

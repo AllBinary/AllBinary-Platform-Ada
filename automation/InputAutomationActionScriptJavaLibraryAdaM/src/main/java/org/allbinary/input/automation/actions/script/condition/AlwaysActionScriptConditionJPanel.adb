@@ -31,20 +31,21 @@ package body org.allbinary.input.automation.actions.script.condition.AlwaysActio
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AlwaysActionScriptConditionJPanel'Class; alwaysActionScriptConditionInterface : AlwaysActionScriptConditionInterface_Access) is
+   procedure Initialize (This : in out AlwaysActionScriptConditionJPanel'Class; alwaysActionScriptConditionInterface_Param : access AlwaysActionScriptConditionInterface'Class) is
+      alwaysActionScriptConditionInterface : AlwaysActionScriptConditionInterface_Access := AlwaysActionScriptConditionInterface_Access (alwaysActionScriptConditionInterface_Param);
    begin
       JPanel_Package.Initialize (This);
       Initialize_Fields (This);
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+        This.logUtil.putF (This.commonStrings.START, AlwaysActionScriptConditionJPanel_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         This.initComponents;
         This.alwaysActionScriptConditionInterface := alwaysActionScriptConditionInterface;
         This.set;
    end Initialize;
 
-   function Create (alwaysActionScriptConditionInterface : AlwaysActionScriptConditionInterface_Access) return AlwaysActionScriptConditionJPanel_Access is
+   function Create (alwaysActionScriptConditionInterface_Param : access AlwaysActionScriptConditionInterface'Class) return AlwaysActionScriptConditionJPanel_Access is
       This : constant AlwaysActionScriptConditionJPanel_Access := new AlwaysActionScriptConditionJPanel;
    begin
-      AlwaysActionScriptConditionJPanel_Package.Initialize (This.all, alwaysActionScriptConditionInterface);
+      AlwaysActionScriptConditionJPanel_Package.Initialize (This.all, alwaysActionScriptConditionInterface_Param);
       return This;
    end Create;
 
@@ -73,7 +74,8 @@ package body org.allbinary.input.automation.actions.script.condition.AlwaysActio
         return This.alwaysActionJDialog;
    end getAlwaysActionJDialog;
 
-   procedure setAlwaysActionJDialog (This : in out AlwaysActionScriptConditionJPanel; alwaysActionJDialog : JDialog_Access) is
+   procedure setAlwaysActionJDialog (This : in out AlwaysActionScriptConditionJPanel; alwaysActionJDialog_Param : access JDialog'Class) is
+      alwaysActionJDialog : JDialog_Access := JDialog_Access (alwaysActionJDialog_Param);
    begin
         This.alwaysActionJDialog := alwaysActionJDialog;
    end setAlwaysActionJDialog;
@@ -94,7 +96,8 @@ package body org.allbinary.input.automation.actions.script.condition.AlwaysActio
         This.okJButton.setText (To_Unbounded_String ("OK"));
         This.okJButton.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt : ActionEvent_Access) is
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
+--        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.okJButtonActionPerformed (evt);
 --     end actionPerformed;
@@ -109,25 +112,28 @@ package body org.allbinary.input.automation.actions.script.condition.AlwaysActio
         This.alwaysActionJButton.setText (To_Unbounded_String ("Edit"));
         This.alwaysActionJButton.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt : ActionEvent_Access) is
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
+--        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.alwaysActionJButtonActionPerformed (evt);
 --     end actionPerformed;
 );
         This.jLabel1.setText (To_Unbounded_String ("Always:"));
-        layout := GroupLayout_Package.Create (This'Unchecked_Access);
+        layout := GroupLayout_Package.Create (AlwaysActionScriptConditionJPanel_Access'(This'Unchecked_Access));
         This.setLayout (layout);
         layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addComponent (This.jLabel1).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short_Package.MAX_VALUE).addComponent (This.alwaysActionJButton)));
         layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.jLabel1).addComponent (This.alwaysActionJButton)));
    end initComponents;
 
-   procedure okJButtonActionPerformed (This : in out AlwaysActionScriptConditionJPanel; evt : ActionEvent_Access) is
+   procedure okJButtonActionPerformed (This : in out AlwaysActionScriptConditionJPanel; evt_Param : access ActionEvent'Class) is
+      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         This.update;
         This.getAlwaysActionJDialog.setVisible (False);
    end okJButtonActionPerformed;
 
-   procedure alwaysActionJButtonActionPerformed (This : in out AlwaysActionScriptConditionJPanel; evt : ActionEvent_Access) is
+   procedure alwaysActionJButtonActionPerformed (This : in out AlwaysActionScriptConditionJPanel; evt_Param : access ActionEvent'Class) is
+      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         This.getAlwaysActionJDialog.setVisible (True);
    end alwaysActionJButtonActionPerformed;

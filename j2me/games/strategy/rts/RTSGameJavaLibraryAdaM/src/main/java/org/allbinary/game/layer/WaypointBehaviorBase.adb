@@ -49,7 +49,8 @@ package body org.allbinary.game.layer.WaypointBehaviorBase_Package is
    end isRunning;
 
    --  throws Exception
-   procedure processTick (This : in out WaypointBehaviorBase; allBinaryLayerManager : AllBinaryLayerManager_Access) is
+   procedure processTick (This : in out WaypointBehaviorBase; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class) is
+      allBinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
    begin
         null;
    end processTick;
@@ -64,7 +65,8 @@ package body org.allbinary.game.layer.WaypointBehaviorBase_Package is
         return This.waypoint;
    end getWaypoint;
 
-   procedure setWaypoint (This : in out WaypointBehaviorBase; waypoint : WaypointBase_Access) is
+   procedure setWaypoint (This : in out WaypointBehaviorBase; waypoint_Param : access WaypointBase'Class) is
+      waypoint : WaypointBase_Access := WaypointBase_Access (waypoint_Param);
    begin
         This.waypoint := waypoint;
    end setWaypoint;
@@ -84,7 +86,8 @@ package body org.allbinary.game.layer.WaypointBehaviorBase_Package is
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end isWaypointListEmptyOrOnlyTargets;
 
-   function isInSensorRange (This : in out WaypointBehaviorBase; layerInterface : CollidableDestroyableDamageableLayer_Access; targetDistance : Integer) return Boolean is
+   function isInSensorRange (This : in out WaypointBehaviorBase; layerInterface_Param : access CollidableDestroyableDamageableLayer'Class; targetDistance : Integer) return Boolean is
+      layerInterface : CollidableDestroyableDamageableLayer_Access := CollidableDestroyableDamageableLayer_Access (layerInterface_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end isInSensorRange;
@@ -129,7 +132,8 @@ package body org.allbinary.game.layer.WaypointBehaviorBase_Package is
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end needToMove;
 
-   procedure setWaypointPathsList (This : in out WaypointBehaviorBase; waypointPathsList : BasicArrayList_Access) is
+   procedure setWaypointPathsList (This : in out WaypointBehaviorBase; waypointPathsList_Param : access BasicArrayList'Class) is
+      waypointPathsList : BasicArrayList_Access := BasicArrayList_Access (waypointPathsList_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end setWaypointPathsList;
@@ -140,13 +144,15 @@ package body org.allbinary.game.layer.WaypointBehaviorBase_Package is
    end getWaypointPathsList;
 
    --  throws Exception
-   procedure setTarget (This : in out WaypointBehaviorBase; layerInterface : PathFindingLayerInterface_Access) is
+   procedure setTarget (This : in out WaypointBehaviorBase; layerInterface_Param : access PathFindingLayerInterface'Class) is
+      layerInterface : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (layerInterface_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end setTarget;
 
    --  throws Exception
-   procedure setTargetWithDistance (This : in out WaypointBehaviorBase; layerInterface : PathFindingLayerInterface_Access; anotherTargetDistance : Integer) is
+   procedure setTargetWithDistance (This : in out WaypointBehaviorBase; layerInterface_Param : access PathFindingLayerInterface'Class; anotherTargetDistance : Integer) is
+      layerInterface : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (layerInterface_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end setTargetWithDistance;
@@ -163,8 +169,8 @@ package body org.allbinary.game.layer.WaypointBehaviorBase_Package is
         null;
    end updatePathOnTargetMove;
 
-   procedure isInSensorRange (This : in out WaypointBehaviorBase; layerInterface : CollidableDestroyableDamageableLayer_Access; targetDistance : Integer) is
-      Java_Result : constant Boolean := WaypointBehaviorBase'Class (This).isInSensorRange (layerInterface, targetDistance);
+   procedure isInSensorRange (This : in out WaypointBehaviorBase; layerInterface_Param : access CollidableDestroyableDamageableLayer'Class; targetDistance : Integer) is
+      Java_Result : constant Boolean := WaypointBehaviorBase'Class (This).isInSensorRange (layerInterface_Param, targetDistance);
       pragma Unreferenced (Java_Result);
    begin
       null;

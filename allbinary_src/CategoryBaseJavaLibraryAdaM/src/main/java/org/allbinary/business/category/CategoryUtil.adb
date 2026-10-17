@@ -34,14 +34,16 @@ package body org.allbinary.business.category.CategoryUtil_Package is
       return This;
    end Create;
 
-   function getPathLevel (categoryPath : AbPath_Access) return Integer is
+   function getPathLevel (categoryPath_Param : access AbPath'Class) return Integer is
+      categoryPath : AbPath_Access := AbPath_Access (categoryPath_Param);
       count : Integer;
    begin
         count := StringUtils_Package.countMatches (categoryPath.toString, AbPathData_Package.getInstance.SEPARATOR);
         return count;
    end getPathLevel;
 
-   function getNameFromNode (node : Node_Access) return Unbounded_String is
+   function getNameFromNode (node_Param : access Node'Class) return Unbounded_String is
+      node : Node_Access := Node_Access (node_Param);
       attributes : NamedNodeMap_Access;
       attrNode : Attr_Access;
       labelNode : Node_Access;
@@ -59,15 +61,15 @@ package body org.allbinary.business.category.CategoryUtil_Package is
         return StringUtil_Package.getInstance.EMPTY_STRING;
    end getNameFromNode;
 
-   procedure getPathLevel (categoryPath : AbPath_Access) is
-      Java_Result : constant Integer := getPathLevel (categoryPath);
+   procedure getPathLevel (categoryPath_Param : access AbPath'Class) is
+      Java_Result : constant Integer := getPathLevel (categoryPath_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getPathLevel;
 
-   procedure getNameFromNode (node : Node_Access) is
-      Java_Result : constant Unbounded_String := getNameFromNode (node);
+   procedure getNameFromNode (node_Param : access Node'Class) is
+      Java_Result : constant Unbounded_String := getNameFromNode (node_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

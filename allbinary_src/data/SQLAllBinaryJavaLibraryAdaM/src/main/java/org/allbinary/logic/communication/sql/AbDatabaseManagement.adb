@@ -33,29 +33,31 @@ package body org.allbinary.logic.communication.sql.AbDatabaseManagement_Package 
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AbDatabaseManagement'Class; databaseConnectionInfoInterface : DatabaseConnectionInfoInterface_Access) is
+   procedure Initialize (This : in out AbDatabaseManagement'Class; databaseConnectionInfoInterface_Param : access DatabaseConnectionInfoInterface'Class) is
+      databaseConnectionInfoInterface : DatabaseConnectionInfoInterface_Access := DatabaseConnectionInfoInterface_Access (databaseConnectionInfoInterface_Param);
    begin
         AbSqlBean_Package.Initialize (This, DbConnectionInfo_Access (databaseConnectionInfoInterface));
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (databaseConnectionInfoInterface : DatabaseConnectionInfoInterface_Access) return AbDatabaseManagement_Access is
+   function Create (databaseConnectionInfoInterface_Param : access DatabaseConnectionInfoInterface'Class) return AbDatabaseManagement_Access is
       This : constant AbDatabaseManagement_Access := new AbDatabaseManagement;
    begin
-      AbDatabaseManagement_Package.Initialize (This.all, databaseConnectionInfoInterface);
+      AbDatabaseManagement_Package.Initialize (This.all, databaseConnectionInfoInterface_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out AbDatabaseManagement'Class; connectionInfo : DbConnectionInfo_Access) is
+   procedure Initialize (This : in out AbDatabaseManagement'Class; connectionInfo_Param : access DbConnectionInfo'Class) is
+      connectionInfo : DbConnectionInfo_Access := DbConnectionInfo_Access (connectionInfo_Param);
    begin
         AbSqlBean_Package.Initialize (This, connectionInfo);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (connectionInfo : DbConnectionInfo_Access) return AbDatabaseManagement_Access is
+   function Create (connectionInfo_Param : access DbConnectionInfo'Class) return AbDatabaseManagement_Access is
       This : constant AbDatabaseManagement_Access := new AbDatabaseManagement;
    begin
-      AbDatabaseManagement_Package.Initialize (This.all, connectionInfo);
+      AbDatabaseManagement_Package.Initialize (This.all, connectionInfo_Param);
       return This;
    end Create;
 
@@ -70,7 +72,7 @@ package body org.allbinary.logic.communication.sql.AbDatabaseManagement_Package 
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.FAILED, This'Unchecked_Access, This.GET_HOST_NAME, e);
+            This.logUtil.put (This.FAILED, AbDatabaseManagement_Access'(This'Unchecked_Access), This.GET_HOST_NAME, e);
             return Null_Unbounded_String;
                 end;
         end;
@@ -113,7 +115,7 @@ package body org.allbinary.logic.communication.sql.AbDatabaseManagement_Package 
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.UNABLE_TO_CREATE_USER & userName, This'Unchecked_Access, This.METHOD_ADD_USER, e);
+            This.logUtil.put (This.UNABLE_TO_CREATE_USER & userName, AbDatabaseManagement_Access'(This'Unchecked_Access), This.METHOD_ADD_USER, e);
             return False;
                 end;
         end;
@@ -133,7 +135,7 @@ package body org.allbinary.logic.communication.sql.AbDatabaseManagement_Package 
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.UNABLE_TO_CREATE_DATABASE & db, This'Unchecked_Access, This.METHOD_ADD_DB, e);
+            This.logUtil.put (This.UNABLE_TO_CREATE_DATABASE & db, AbDatabaseManagement_Access'(This'Unchecked_Access), This.METHOD_ADD_DB, e);
             return False;
                 end;
         end;

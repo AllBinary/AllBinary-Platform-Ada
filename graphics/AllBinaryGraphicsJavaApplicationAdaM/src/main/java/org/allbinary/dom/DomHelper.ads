@@ -59,21 +59,21 @@ package org.allbinary.dom.DomHelper_Package is
    function Create return DomHelper_Access;
    function getInstance return DomHelper_Access;
    function createDocument (This : in out DomHelper) return Document_Access;
-   function createDocument (This : in out DomHelper; xmlFile : File_Access) return Document_Access;
-   procedure createDocument (This : in out DomHelper; xmlFile : File_Access);
-   function toString (This : in out DomHelper; document : Document_Access) return Unbounded_String;
-   procedure toString (This : in out DomHelper; document : Document_Access);
-   procedure save (This : in out DomHelper; file : File_Access; document : Document_Access);
-   function getChildNodeList (This : in out DomHelper; nodeName : Unbounded_String; nodeList : NodeList_Access) return NodeList_Access;
-   procedure getChildNodeList (This : in out DomHelper; nodeName : Unbounded_String; nodeList : NodeList_Access);
-   function getChildrenWithoutTextNodes (This : in out DomHelper; nodeName : Unbounded_String; nodeList : NodeList_Access) return BasicArrayList_Access;
-   procedure getChildrenWithoutTextNodes (This : in out DomHelper; nodeName : Unbounded_String; nodeList : NodeList_Access);
-   function getWithoutTextNodes (This : in out DomHelper; nodeList : NodeList_Access) return BasicArrayList_Access;
-   procedure getWithoutTextNodes (This : in out DomHelper; nodeList : NodeList_Access);
-   function searchNodeList (This : in out DomHelper; nodeName : Unbounded_String; nodeList : NodeList_Access) return Node_Access;
-   procedure searchNodeList (This : in out DomHelper; nodeName : Unbounded_String; nodeList : NodeList_Access);
-   function searchNodeList (This : in out DomHelper; nodeName : Unbounded_String; nodeList : BasicArrayList_Access) return Node_Access;
-   procedure searchNodeList (This : in out DomHelper; nodeName : Unbounded_String; nodeList : BasicArrayList_Access);
+   function createDocument (This : in out DomHelper; xmlFile_Param : access File'Class) return Document_Access;
+   procedure createDocument (This : in out DomHelper; xmlFile_Param : access File'Class);
+   function toString (This : in out DomHelper; document_Param : access Document'Class) return Unbounded_String;
+   procedure toString (This : in out DomHelper; document_Param : access Document'Class);
+   procedure save (This : in out DomHelper; file_Param : access File'Class; document_Param : access Document'Class);
+   function getChildNodeList (This : in out DomHelper; nodeName : Unbounded_String; nodeList_Param : access NodeList'Class) return NodeList_Access;
+   procedure getChildNodeList (This : in out DomHelper; nodeName : Unbounded_String; nodeList_Param : access NodeList'Class);
+   function getChildrenWithoutTextNodes (This : in out DomHelper; nodeName : Unbounded_String; nodeList_Param : access NodeList'Class) return BasicArrayList_Access;
+   procedure getChildrenWithoutTextNodes (This : in out DomHelper; nodeName : Unbounded_String; nodeList_Param : access NodeList'Class);
+   function getWithoutTextNodes (This : in out DomHelper; nodeList_Param : access NodeList'Class) return BasicArrayList_Access;
+   procedure getWithoutTextNodes (This : in out DomHelper; nodeList_Param : access NodeList'Class);
+   function searchNodeList (This : in out DomHelper; nodeName : Unbounded_String; nodeList_Param : access NodeList'Class) return Node_Access;
+   procedure searchNodeList (This : in out DomHelper; nodeName : Unbounded_String; nodeList_Param : access NodeList'Class);
+   function searchNodeList (This : in out DomHelper; nodeName : Unbounded_String; nodeList_Param : access BasicArrayList'Class) return Node_Access;
+   procedure searchNodeList (This : in out DomHelper; nodeName : Unbounded_String; nodeList_Param : access BasicArrayList'Class);
 
 end org.allbinary.dom.DomHelper_Package;
 

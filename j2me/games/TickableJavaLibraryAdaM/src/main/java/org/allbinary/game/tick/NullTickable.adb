@@ -40,7 +40,8 @@ package body org.allbinary.game.tick.NullTickable_Package is
    end getInstance;
 
    --  throws Exception
-   procedure processTick (This : in out NullTickable; allBinaryLayerManager : AllBinaryLayerManager_Access) is
+   procedure processTick (This : in out NullTickable; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class) is
+      allBinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
    begin
         null;
    end processTick;

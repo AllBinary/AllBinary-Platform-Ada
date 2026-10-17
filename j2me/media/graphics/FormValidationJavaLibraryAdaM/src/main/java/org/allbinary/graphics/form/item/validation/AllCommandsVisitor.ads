@@ -37,8 +37,8 @@ package org.allbinary.graphics.form.item.validation.AllCommandsVisitor_Package i
 
    procedure Initialize (This : in out AllCommandsVisitor'Class);
    function Create return AllCommandsVisitor_Access;
-   function visit (This : in out AllCommandsVisitor; anyType : Java_Object_Access) return Java_Object_Access;
-   procedure visit (This : in out AllCommandsVisitor; anyType : Java_Object_Access);
+   function visit (This : in out AllCommandsVisitor; anyType_Param : access Java_Object'Class) return Java_Object_Access;
+   procedure visit (This : in out AllCommandsVisitor; anyType_Param : access Java_Object'Class);
 
 end org.allbinary.graphics.form.item.validation.AllCommandsVisitor_Package;
 

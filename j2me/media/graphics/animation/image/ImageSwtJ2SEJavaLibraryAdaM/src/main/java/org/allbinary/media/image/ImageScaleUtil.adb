@@ -46,13 +46,17 @@ package body org.allbinary.media.image.ImageScaleUtil_Package is
    end Create;
 
    --  throws Exception
-   function createImage2 (This : in out ImageScaleUtil; imageCache : ImageCache_Access; originalImage : Image_Access; scaleNominatorX : Float; scaleDenominatorX : Float; scaleNominatorY : Float; scaleDenominatorY : Float; cached : Boolean) return Image_Access is
+   function createImage2 (This : in out ImageScaleUtil; imageCache_Param : access ImageCache'Class; originalImage_Param : access Image'Class; scaleNominatorX : Float; scaleDenominatorX : Float; scaleNominatorY : Float; scaleDenominatorY : Float; cached : Boolean) return Image_Access is
+      imageCache : ImageCache_Access := ImageCache_Access (imageCache_Param);
+      originalImage : Image_Access := Image_Access (originalImage_Param);
    begin
         return This.createImage3 (imageCache, originalImage, scaleNominatorX, scaleDenominatorX, scaleNominatorY, scaleDenominatorY, cached, True);
    end createImage2;
 
    --  throws Exception
-   function createImage3 (This : in out ImageScaleUtil; imageCache : ImageCache_Access; originalImage : Image_Access; scaleNominatorX : Float; scaleDenominatorX : Float; scaleNominatorY : Float; scaleDenominatorY : Float; cached : Boolean; mutable : Boolean) return Image_Access is
+   function createImage3 (This : in out ImageScaleUtil; imageCache_Param : access ImageCache'Class; originalImage_Param : access Image'Class; scaleNominatorX : Float; scaleDenominatorX : Float; scaleNominatorY : Float; scaleDenominatorY : Float; cached : Boolean; mutable : Boolean) return Image_Access is
+      imageCache : ImageCache_Access := ImageCache_Access (imageCache_Param);
+      originalImage : Image_Access := Image_Access (originalImage_Param);
       width : Integer;
       height : Integer;
       scaleX : Float;
@@ -60,7 +64,7 @@ package body org.allbinary.media.image.ImageScaleUtil_Package is
       scaledImage : Image_Access;
    begin
         if not (This.features.isFeature (This.gameFeatureFactory.POST_IMAGE_LOADING_MODIFICATION)) then
-            This.logUtil.putF (This.NO_COPY, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+            This.logUtil.putF (This.NO_COPY, ImageScaleUtil_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
             return originalImage;
         end if;
         width := originalImage.getWidth;
@@ -72,13 +76,15 @@ package body org.allbinary.media.image.ImageScaleUtil_Package is
    end createImage3;
 
    --  throws Exception
-   procedure scale2 (This : in out ImageScaleUtil; originalImage : Image_Access; originalImageArray : Image_Access_Array_Access; ximageToShowArray : Image_Access_Array_Access; unused : Integer; scaleX : Float; scaleY : Float; maxScaleX : Float; maxScaleY : Float) is
+   procedure scale2 (This : in out ImageScaleUtil; originalImage_Param : access Image'Class; originalImageArray : Image_Access_Array_Access; ximageToShowArray : Image_Access_Array_Access; unused : Integer; scaleX : Float; scaleY : Float; maxScaleX : Float; maxScaleY : Float) is
+      originalImage : Image_Access := Image_Access (originalImage_Param);
    begin
         This.scale (originalImage, originalImageArray, ximageToShowArray, unused, scaleX, scaleY, maxScaleX, maxScaleY, True);
    end scale2;
 
    --  throws Exception
-   procedure scale (This : in out ImageScaleUtil; originalImage : Image_Access; originalImageArray : Image_Access_Array_Access; ximageToShowArray : Image_Access_Array_Access; unused : Integer; scaleX : Float; scaleY : Float; maxScaleX : Float; maxScaleY : Float; mutable : Boolean) is
+   procedure scale (This : in out ImageScaleUtil; originalImage_Param : access Image'Class; originalImageArray : Image_Access_Array_Access; ximageToShowArray : Image_Access_Array_Access; unused : Integer; scaleX : Float; scaleY : Float; maxScaleX : Float; maxScaleY : Float; mutable : Boolean) is
+      originalImage : Image_Access := Image_Access (originalImage_Param);
       width : Integer;
       height : Integer;
       scaledImage : Image_Access;
@@ -89,15 +95,15 @@ package body org.allbinary.media.image.ImageScaleUtil_Package is
         originalImageArray (0) := scaledImage;
    end scale;
 
-   procedure createImage2 (This : in out ImageScaleUtil; imageCache : ImageCache_Access; originalImage : Image_Access; scaleNominatorX : Float; scaleDenominatorX : Float; scaleNominatorY : Float; scaleDenominatorY : Float; cached : Boolean) is
-      Java_Result : constant Image_Access := ImageScaleUtil'Class (This).createImage2 (imageCache, originalImage, scaleNominatorX, scaleDenominatorX, scaleNominatorY, scaleDenominatorY, cached);
+   procedure createImage2 (This : in out ImageScaleUtil; imageCache_Param : access ImageCache'Class; originalImage_Param : access Image'Class; scaleNominatorX : Float; scaleDenominatorX : Float; scaleNominatorY : Float; scaleDenominatorY : Float; cached : Boolean) is
+      Java_Result : constant Image_Access := ImageScaleUtil'Class (This).createImage2 (imageCache_Param, originalImage_Param, scaleNominatorX, scaleDenominatorX, scaleNominatorY, scaleDenominatorY, cached);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createImage2;
 
-   procedure createImage3 (This : in out ImageScaleUtil; imageCache : ImageCache_Access; originalImage : Image_Access; scaleNominatorX : Float; scaleDenominatorX : Float; scaleNominatorY : Float; scaleDenominatorY : Float; cached : Boolean; mutable : Boolean) is
-      Java_Result : constant Image_Access := ImageScaleUtil'Class (This).createImage3 (imageCache, originalImage, scaleNominatorX, scaleDenominatorX, scaleNominatorY, scaleDenominatorY, cached, mutable);
+   procedure createImage3 (This : in out ImageScaleUtil; imageCache_Param : access ImageCache'Class; originalImage_Param : access Image'Class; scaleNominatorX : Float; scaleDenominatorX : Float; scaleNominatorY : Float; scaleDenominatorY : Float; cached : Boolean; mutable : Boolean) is
+      Java_Result : constant Image_Access := ImageScaleUtil'Class (This).createImage3 (imageCache_Param, originalImage_Param, scaleNominatorX, scaleDenominatorX, scaleNominatorY, scaleDenominatorY, cached, mutable);
       pragma Unreferenced (Java_Result);
    begin
       null;

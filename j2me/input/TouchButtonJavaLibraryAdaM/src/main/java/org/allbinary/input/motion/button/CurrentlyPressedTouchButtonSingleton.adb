@@ -50,7 +50,8 @@ package body org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingle
         return TouchButtonInput_Access (This.list.removeAt (index));
    end removeAt;
 
-   function remove (This : in out CurrentlyPressedTouchButtonSingleton; touchButtonInput : TouchButtonInput_Access) return Boolean is
+   function remove (This : in out CurrentlyPressedTouchButtonSingleton; touchButtonInput_Param : access TouchButtonInput'Class) return Boolean is
+      touchButtonInput : TouchButtonInput_Access := TouchButtonInput_Access (touchButtonInput_Param);
    begin
         return This.list.remove (touchButtonInput);
    end remove;
@@ -60,12 +61,14 @@ package body org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingle
         return TouchButtonInput_Access (This.list.objectArray (index));
    end get;
 
-   function contains (This : in out CurrentlyPressedTouchButtonSingleton; touchButtonInput : TouchButtonInput_Access) return Boolean is
+   function contains (This : in out CurrentlyPressedTouchButtonSingleton; touchButtonInput_Param : access TouchButtonInput'Class) return Boolean is
+      touchButtonInput : TouchButtonInput_Access := TouchButtonInput_Access (touchButtonInput_Param);
    begin
         return This.list.contains (touchButtonInput);
    end contains;
 
-   procedure add (This : in out CurrentlyPressedTouchButtonSingleton; touchButtonInput : TouchButtonInput_Access) is
+   procedure add (This : in out CurrentlyPressedTouchButtonSingleton; touchButtonInput_Param : access TouchButtonInput'Class) is
+      touchButtonInput : TouchButtonInput_Access := TouchButtonInput_Access (touchButtonInput_Param);
    begin
         This.list.add (touchButtonInput);
    end add;
@@ -77,8 +80,8 @@ package body org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingle
       null;
    end removeAt;
 
-   procedure remove (This : in out CurrentlyPressedTouchButtonSingleton; touchButtonInput : TouchButtonInput_Access) is
-      Java_Result : constant Boolean := CurrentlyPressedTouchButtonSingleton'Class (This).remove (touchButtonInput);
+   procedure remove (This : in out CurrentlyPressedTouchButtonSingleton; touchButtonInput_Param : access TouchButtonInput'Class) is
+      Java_Result : constant Boolean := CurrentlyPressedTouchButtonSingleton'Class (This).remove (touchButtonInput_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
@@ -91,8 +94,8 @@ package body org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingle
       null;
    end get;
 
-   procedure contains (This : in out CurrentlyPressedTouchButtonSingleton; touchButtonInput : TouchButtonInput_Access) is
-      Java_Result : constant Boolean := CurrentlyPressedTouchButtonSingleton'Class (This).contains (touchButtonInput);
+   procedure contains (This : in out CurrentlyPressedTouchButtonSingleton; touchButtonInput_Param : access TouchButtonInput'Class) is
+      Java_Result : constant Boolean := CurrentlyPressedTouchButtonSingleton'Class (This).contains (touchButtonInput_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -38,7 +38,7 @@ package org.allbinary.logic.MEUtil_Package is
    procedure Initialize (This : in out MEUtil'Class);
    function Create return MEUtil_Access;
    function getInstance return MEUtil_Access;
-   procedure appendItem (This : in out MEUtil; form : CommandForm_Access; item : Item_Access);
+   procedure appendItem (This : in out MEUtil; form_Param : access CommandForm'Class; item_Param : access Item'Class);
 
 end org.allbinary.logic.MEUtil_Package;
 

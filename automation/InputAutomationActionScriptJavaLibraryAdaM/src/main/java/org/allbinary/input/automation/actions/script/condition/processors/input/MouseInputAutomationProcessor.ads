@@ -42,7 +42,7 @@ package org.allbinary.input.automation.actions.script.condition.processors.input
 
    procedure Initialize (This : in out MouseInputAutomationProcessor'Class);
    function Create return MouseInputAutomationProcessor_Access;
-   procedure process (mouseActionScriptInputInterface : MouseActionScriptInputInterface_Access);
+   procedure process (mouseActionScriptInputInterface_Param : access MouseActionScriptInputInterface'Class);
 
 end org.allbinary.input.automation.actions.script.condition.processors.input.MouseInputAutomationProcessor_Package;
 

@@ -49,9 +49,9 @@ package org.allbinary.game.ag.ai.MultiKeyPressesAI_Package is
       gameTickTimeDelayHelper : GameTickTimeDelayHelper_Access;
    end record;
 
-   procedure Initialize (This : in out MultiKeyPressesAI'Class; hashtable : ABHashtable_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access);
-   function Create (hashtable : ABHashtable_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return MultiKeyPressesAI_Access;
-   procedure processAI (This : in out MultiKeyPressesAI; allBinaryLayerManager : AllBinaryLayerManager_Access);
+   procedure Initialize (This : in out MultiKeyPressesAI'Class; hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class);
+   function Create (hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return MultiKeyPressesAI_Access;
+   procedure processAI (This : in out MultiKeyPressesAI; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class);
    procedure update (This : in out MultiKeyPressesAI);
    procedure toggle (This : in out MultiKeyPressesAI);
    procedure disable (This : in out MultiKeyPressesAI);

@@ -21,19 +21,21 @@ package body org.allbinary.bounds.RectangleLayerBounds_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out RectangleLayerBounds'Class; rectangle : Rectangle_Access) is
+   procedure Initialize (This : in out RectangleLayerBounds'Class; rectangle_Param : access Rectangle'Class) is
+      rectangle : Rectangle_Access := Rectangle_Access (rectangle_Param);
    begin
         LayerBounds_Package.Initialize (This, rectangle);
    end Initialize;
 
-   function Create (rectangle : Rectangle_Access) return RectangleLayerBounds_Access is
+   function Create (rectangle_Param : access Rectangle'Class) return RectangleLayerBounds_Access is
       This : constant RectangleLayerBounds_Access := new RectangleLayerBounds;
    begin
-      RectangleLayerBounds_Package.Initialize (This.all, rectangle);
+      RectangleLayerBounds_Package.Initialize (This.all, rectangle_Param);
       return This;
    end Create;
 
-   procedure visit (This : in out RectangleLayerBounds; boundsVisitorInterface : BoundsVisitorInterface_Access) is
+   procedure visit (This : in out RectangleLayerBounds; boundsVisitorInterface_Param : access BoundsVisitorInterface'Class) is
+      boundsVisitorInterface : BoundsVisitorInterface_Access := BoundsVisitorInterface_Access (boundsVisitorInterface_Param);
    begin
         if (boundsVisitorInterface.getX) > (This.rectangle.getMaxX) then
             boundsVisitorInterface.maxX;

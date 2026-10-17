@@ -22,7 +22,8 @@ package body org.allbinary.logic.communication.smtp.configuration.server.EmailSe
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out EmailServerConfigurationView'Class; node : Node_Access) is
+   procedure Initialize (This : in out EmailServerConfigurationView'Class; node_Param : access Node'Class) is
+      node : Node_Access := Node_Access (node_Param);
       childNodeList : NodeList_Access;
       server : Unbounded_String;
       accountName : Unbounded_String;
@@ -36,23 +37,24 @@ package body org.allbinary.logic.communication.smtp.configuration.server.EmailSe
         This.emailServerConfigurationInterface := EmailServerConfigurationInterface_Access (EmailServerConfiguration_Package.Create (accountName, password, server));
    end Initialize;
 
-   function Create (node : Node_Access) return EmailServerConfigurationView_Access is
+   function Create (node_Param : access Node'Class) return EmailServerConfigurationView_Access is
       This : constant EmailServerConfigurationView_Access := new EmailServerConfigurationView;
    begin
-      EmailServerConfigurationView_Package.Initialize (This.all, node);
+      EmailServerConfigurationView_Package.Initialize (This.all, node_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out EmailServerConfigurationView'Class; emailServerConfigurationInterface : EmailServerConfigurationInterface_Access) is
+   procedure Initialize (This : in out EmailServerConfigurationView'Class; emailServerConfigurationInterface_Param : access EmailServerConfigurationInterface'Class) is
+      emailServerConfigurationInterface : EmailServerConfigurationInterface_Access := EmailServerConfigurationInterface_Access (emailServerConfigurationInterface_Param);
    begin
       Initialize_Fields (This);
         This.emailServerConfigurationInterface := emailServerConfigurationInterface;
    end Initialize;
 
-   function Create (emailServerConfigurationInterface : EmailServerConfigurationInterface_Access) return EmailServerConfigurationView_Access is
+   function Create (emailServerConfigurationInterface_Param : access EmailServerConfigurationInterface'Class) return EmailServerConfigurationView_Access is
       This : constant EmailServerConfigurationView_Access := new EmailServerConfigurationView;
    begin
-      EmailServerConfigurationView_Package.Initialize (This.all, emailServerConfigurationInterface);
+      EmailServerConfigurationView_Package.Initialize (This.all, emailServerConfigurationInterface_Param);
       return This;
    end Create;
 
@@ -62,7 +64,8 @@ package body org.allbinary.logic.communication.smtp.configuration.server.EmailSe
    end getEmailConfigurationInterface;
 
    --  throws Exception
-   function toXmlNode (This : in out EmailServerConfigurationView; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out EmailServerConfigurationView; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       emailConfigurationMapping : EmailServerConfigurationMapping_Access;
       hashMap : HashMap_Access;
       node : Node_Access;
@@ -73,8 +76,8 @@ package body org.allbinary.logic.communication.smtp.configuration.server.EmailSe
         return node;
    end toXmlNode;
 
-   procedure toXmlNode (This : in out EmailServerConfigurationView; document : Document_Access) is
-      Java_Result : constant Node_Access := EmailServerConfigurationView'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out EmailServerConfigurationView; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := EmailServerConfigurationView'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

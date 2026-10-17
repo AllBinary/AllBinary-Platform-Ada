@@ -37,10 +37,10 @@ package org.allbinary.logic.VectorUtil_Package is
    procedure Initialize (This : in out VectorUtil'Class);
    function Create return VectorUtil_Access;
    function getInstance return VectorUtil_Access;
-   function getSize (This : in out VectorUtil; anyType : Java_Object_Access) return Integer;
-   procedure getSize (This : in out VectorUtil; anyType : Java_Object_Access);
-   function elementAt (This : in out VectorUtil; anyType : Java_Object_Access; index : Integer) return Java_Object_Access;
-   procedure elementAt (This : in out VectorUtil; anyType : Java_Object_Access; index : Integer);
+   function getSize (This : in out VectorUtil; anyType_Param : access Java_Object'Class) return Integer;
+   procedure getSize (This : in out VectorUtil; anyType_Param : access Java_Object'Class);
+   function elementAt (This : in out VectorUtil; anyType_Param : access Java_Object'Class; index : Integer) return Java_Object_Access;
+   procedure elementAt (This : in out VectorUtil; anyType_Param : access Java_Object'Class; index : Integer);
 
 end org.allbinary.logic.VectorUtil_Package;
 

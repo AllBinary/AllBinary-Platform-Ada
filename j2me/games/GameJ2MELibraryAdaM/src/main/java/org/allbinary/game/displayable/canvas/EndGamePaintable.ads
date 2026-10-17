@@ -37,9 +37,9 @@ package org.allbinary.game.displayable.canvas.EndGamePaintable_Package is
       gameCanvas : AllBinaryGameCanvas_Access;
    end record;
 
-   procedure Initialize (This : in out EndGamePaintable'Class; gameCanvas : AllBinaryGameCanvas_Access);
-   function Create (gameCanvas : AllBinaryGameCanvas_Access) return EndGamePaintable_Access;
-   procedure paint (This : in out EndGamePaintable; graphics : Graphics_Access);
+   procedure Initialize (This : in out EndGamePaintable'Class; gameCanvas_Param : access AllBinaryGameCanvas'Class);
+   function Create (gameCanvas_Param : access AllBinaryGameCanvas'Class) return EndGamePaintable_Access;
+   procedure paint (This : in out EndGamePaintable; graphics_Param : access Graphics'Class);
 
 end org.allbinary.game.displayable.canvas.EndGamePaintable_Package;
 

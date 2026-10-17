@@ -39,7 +39,9 @@ package body org.allbinary.business.user.commerce.shipping.ShippingMethodsFactor
         SHIPPINGMETHODSFILEPATHSTRING := stringBuffer.toString;
    end Initializer;
 
-   procedure Initialize (This : in out ShippingMethodsFactory'Class; abeClientInformation : AbeClientInformationInterface_Access; storeFrontInterface : StoreFrontInterface_Access) is
+   procedure Initialize (This : in out ShippingMethodsFactory'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; storeFrontInterface_Param : access StoreFrontInterface'Class) is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      storeFrontInterface : StoreFrontInterface_Access := StoreFrontInterface_Access (storeFrontInterface_Param);
       stringBuffer : StringMaker_Access;
       sep : Unbounded_String;
       abPath : AbPath_Access;
@@ -89,10 +91,10 @@ package body org.allbinary.business.user.commerce.shipping.ShippingMethodsFactor
         end if;
    end Initialize;
 
-   function Create (abeClientInformation : AbeClientInformationInterface_Access; storeFrontInterface : StoreFrontInterface_Access) return ShippingMethodsFactory_Access is
+   function Create (abeClientInformation_Param : access AbeClientInformationInterface'Class; storeFrontInterface_Param : access StoreFrontInterface'Class) return ShippingMethodsFactory_Access is
       This : constant ShippingMethodsFactory_Access := new ShippingMethodsFactory;
    begin
-      ShippingMethodsFactory_Package.Initialize (This.all, abeClientInformation, storeFrontInterface);
+      ShippingMethodsFactory_Package.Initialize (This.all, abeClientInformation_Param, storeFrontInterface_Param);
       return This;
    end Create;
 

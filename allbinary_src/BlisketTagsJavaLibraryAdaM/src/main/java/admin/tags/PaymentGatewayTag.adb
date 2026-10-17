@@ -55,7 +55,7 @@ package body admin.tags.PaymentGatewayTag_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (To_Unbounded_String ("LicensingException"), This'Unchecked_Access, This.commonStrings.PROCESS, e);
+            This.logUtil.put (To_Unbounded_String ("LicensingException"), PaymentGatewayTag_Access'(This'Unchecked_Access), This.commonStrings.PROCESS, e);
             Java_Throw (e);
                 end;
         end;

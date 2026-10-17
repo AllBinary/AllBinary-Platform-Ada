@@ -26,7 +26,8 @@ package body org.allbinary.media.graphics.geography.map.platform.BasicPlatormGeo
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BasicPlatormGeographicMapCellTypeFactory'Class; tileTypeToTileIdsMap : ABHashtable_Access; maxTileId : Integer) is
+   procedure Initialize (This : in out BasicPlatormGeographicMapCellTypeFactory'Class; tileTypeToTileIdsMap_Param : access ABHashtable'Class; maxTileId : Integer) is
+      tileTypeToTileIdsMap : ABHashtable_Access := ABHashtable_Access (tileTypeToTileIdsMap_Param);
       commonStrings : CommonStrings_Access;
       BLOCK_CELL_TYPE : BasicPlatormGeographicMapCellType_Access;
       JUMP_THRU_CELL_TYPE : BasicPlatormGeographicMapCellType_Access;
@@ -42,7 +43,7 @@ package body org.allbinary.media.graphics.geography.map.platform.BasicPlatormGeo
       GeographicMapCellTypeFactory_Package.Initialize (This);
       Initialize_Fields (This);
         commonStrings := CommonStrings_Package.getInstance;
-        This.logUtil.putF (commonStrings.START, This'Unchecked_Access, commonStrings.INIT);
+        This.logUtil.putF (commonStrings.START, BasicPlatormGeographicMapCellTypeFactory_Access'(This'Unchecked_Access), commonStrings.INIT);
         This.maxTileId := maxTileId;
         GeographicMapCellType_Package.Create (0, 0);
         BLOCK_CELL_TYPE := BasicPlatormGeographicMapCellType_Package.createType (1);
@@ -57,7 +58,7 @@ package body org.allbinary.media.graphics.geography.map.platform.BasicPlatormGeo
         basicPlatormGeographicMapCellType := null;
         while This.enumerationUtil.hasMoreElements (enumeration) loop
             key := Unbounded_String (This.enumerationUtil.nextElement (enumeration));
-            This.logUtil.putF (key, This'Unchecked_Access, commonStrings.INIT);
+            This.logUtil.putF (key, BasicPlatormGeographicMapCellTypeFactory_Access'(This'Unchecked_Access), commonStrings.INIT);
             idsWithTypeList := BasicArrayList_Access (tileTypeToTileIdsMap.get (key));
             basicPlatormGeographicMapCellType := BasicPlatormGeographicMapCellType_Package.Create (idsWithTypeList);
             if (key = PLATFORM) then
@@ -77,10 +78,10 @@ package body org.allbinary.media.graphics.geography.map.platform.BasicPlatormGeo
         GeographicMapCellType_Package.Create ((This.maxTileId) - (2), 0);
    end Initialize;
 
-   function Create (tileTypeToTileIdsMap : ABHashtable_Access; maxTileId : Integer) return BasicPlatormGeographicMapCellTypeFactory_Access is
+   function Create (tileTypeToTileIdsMap_Param : access ABHashtable'Class; maxTileId : Integer) return BasicPlatormGeographicMapCellTypeFactory_Access is
       This : constant BasicPlatormGeographicMapCellTypeFactory_Access := new BasicPlatormGeographicMapCellTypeFactory;
    begin
-      BasicPlatormGeographicMapCellTypeFactory_Package.Initialize (This.all, tileTypeToTileIdsMap, maxTileId);
+      BasicPlatormGeographicMapCellTypeFactory_Package.Initialize (This.all, tileTypeToTileIdsMap_Param, maxTileId);
       return This;
    end Create;
 
@@ -99,7 +100,8 @@ package body org.allbinary.media.graphics.geography.map.platform.BasicPlatormGeo
         return 0;
    end getEmptyType;
 
-   function isPath (This : in out BasicPlatormGeographicMapCellTypeFactory; cellType : GeographicMapCellType_Access) return Boolean is
+   function isPath (This : in out BasicPlatormGeographicMapCellTypeFactory; cellType_Param : access GeographicMapCellType'Class) return Boolean is
+      cellType : GeographicMapCellType_Access := GeographicMapCellType_Access (cellType_Param);
    begin
         if (cellType.getType) = (0) then
             return True;
@@ -107,8 +109,8 @@ package body org.allbinary.media.graphics.geography.map.platform.BasicPlatormGeo
         return False;
    end isPath;
 
-   procedure isPath (This : in out BasicPlatormGeographicMapCellTypeFactory; cellType : GeographicMapCellType_Access) is
-      Java_Result : constant Boolean := BasicPlatormGeographicMapCellTypeFactory'Class (This).isPath (cellType);
+   procedure isPath (This : in out BasicPlatormGeographicMapCellTypeFactory; cellType_Param : access GeographicMapCellType'Class) is
+      Java_Result : constant Boolean := BasicPlatormGeographicMapCellTypeFactory'Class (This).isPath (cellType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

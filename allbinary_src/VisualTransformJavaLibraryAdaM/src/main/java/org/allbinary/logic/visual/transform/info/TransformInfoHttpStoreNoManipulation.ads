@@ -36,8 +36,8 @@ package org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreNoManipu
 
    type TransformInfoHttpStoreNoManipulation is new TransformInfoHttpStore with null record;
 
-   procedure Initialize (This : in out TransformInfoHttpStoreNoManipulation'Class; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access);
-   function Create (propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return TransformInfoHttpStoreNoManipulation_Access;
+   procedure Initialize (This : in out TransformInfoHttpStoreNoManipulation'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
+   function Create (propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return TransformInfoHttpStoreNoManipulation_Access;
    procedure setObjectConfigFile (This : in out TransformInfoHttpStoreNoManipulation; value : Unbounded_String);
    procedure setObjectConfig (This : in out TransformInfoHttpStoreNoManipulation; value : Unbounded_String);
 

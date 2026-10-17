@@ -28,7 +28,7 @@ package body org.allbinary.game.input.form.BuildingAdvancedRTSFormInput_Package 
         BuildingRTSFormInput_Package.Initialize (This, groupInterface, isUnitProducer);
         Initialize_Fields (This);
         basicColorFactory := BasicColorFactory_Package.getInstance;
-        This.atLeastOneHouseGameNotificationEvent := GameNotificationEvent_Package.Create (This'Unchecked_Access, To_Unbounded_String ("Build At Least One House First"), SmallIntegerSingletonFactory_Package.getInstance.getAt (2), basicColorFactory.WHITE, BooleanFactory_Package.getInstance.FALSE);
+        This.atLeastOneHouseGameNotificationEvent := GameNotificationEvent_Package.Create (BuildingAdvancedRTSFormInput_Access'(This'Unchecked_Access), To_Unbounded_String ("Build At Least One House First"), SmallIntegerSingletonFactory_Package.getInstance.getAt (2), basicColorFactory.WHITE, BooleanFactory_Package.getInstance.FALSE);
    end Initialize;
 
    function Create (groupInterface : Group_Access_Array_Access; isUnitProducer : Boolean) return BuildingAdvancedRTSFormInput_Access is
@@ -39,7 +39,8 @@ package body org.allbinary.game.input.form.BuildingAdvancedRTSFormInput_Package 
    end Create;
 
    --  throws Exception
-   procedure setAllBinaryGameLayerManager (This : in out BuildingAdvancedRTSFormInput; allBinaryGameLayerManager : AllBinaryGameLayerManager_Access) is
+   procedure setAllBinaryGameLayerManager (This : in out BuildingAdvancedRTSFormInput; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class) is
+      allBinaryGameLayerManager : AllBinaryGameLayerManager_Access := AllBinaryGameLayerManager_Access (allBinaryGameLayerManager_Param);
       geographicMapCompositeInterface : GeographicMapCompositeInterface_Access;
       geographicMapInterface : BasicGeographicMap_Access;
    begin
@@ -59,7 +60,9 @@ package body org.allbinary.game.input.form.BuildingAdvancedRTSFormInput_Package 
    end isPositionBlocked;
 
    --  throws Exception
-   function isBuildAttemptValid (This : in out BuildingAdvancedRTSFormInput; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; layerInterface : RTSLayer_Access) return Boolean is
+   function isBuildAttemptValid (This : in out BuildingAdvancedRTSFormInput; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; layerInterface_Param : access RTSLayer'Class) return Boolean is
+      rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access := RTSPlayerLayerInterface_Access (rtsPlayerLayerInterface_Param);
+      layerInterface : RTSLayer_Access := RTSLayer_Access (layerInterface_Param);
       advancedRTSPlayerLayerInterface : AdvancedRTSPlayerLayerInterface_Access;
       advancedPlayerOwnedRTSLayers : AdvancedPlayerOwnedRTSLayers_Access;
       totalHouses : Integer;
@@ -78,7 +81,10 @@ package body org.allbinary.game.input.form.BuildingAdvancedRTSFormInput_Package 
    end isBuildAttemptValid;
 
    --  throws Exception
-   procedure add (This : in out BuildingAdvancedRTSFormInput; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; layerManager : AllBinaryLayerManager_Access; layerInterface : RTSLayer_Access) is
+   procedure add (This : in out BuildingAdvancedRTSFormInput; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; layerManager_Param : access AllBinaryLayerManager'Class; layerInterface_Param : access RTSLayer'Class) is
+      rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access := RTSPlayerLayerInterface_Access (rtsPlayerLayerInterface_Param);
+      layerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
+      layerInterface : RTSLayer_Access := RTSLayer_Access (layerInterface_Param);
    begin
         This.BUILD_BUILDING_RTS_LAYER_EVENT.setRtsLayer (layerInterface);
         BuildingEventHandler_Package.getInstance.fireEvent (This.BUILD_BUILDING_RTS_LAYER_EVENT);
@@ -88,8 +94,8 @@ package body org.allbinary.game.input.form.BuildingAdvancedRTSFormInput_Package 
         BuildingRTSFormInput (This).add (rtsPlayerLayerInterface, layerManager, layerInterface);
    end add;
 
-   procedure isBuildAttemptValid (This : in out BuildingAdvancedRTSFormInput; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; layerInterface : RTSLayer_Access) is
-      Java_Result : constant Boolean := BuildingAdvancedRTSFormInput'Class (This).isBuildAttemptValid (rtsPlayerLayerInterface, layerInterface);
+   procedure isBuildAttemptValid (This : in out BuildingAdvancedRTSFormInput; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; layerInterface_Param : access RTSLayer'Class) is
+      Java_Result : constant Boolean := BuildingAdvancedRTSFormInput'Class (This).isBuildAttemptValid (rtsPlayerLayerInterface_Param, layerInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -41,7 +41,7 @@ package body org.allbinary.logic.system.security.licensing.registration.Registra
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.CONSTRUCTOR, e);
+            This.logUtil.put (commonStrings.EXCEPTION_Id, RegistrationConfiguration_Access'(This'Unchecked_Access), commonStrings.CONSTRUCTOR, e);
                 end;
         end;
    end Initialize;
@@ -68,7 +68,7 @@ package body org.allbinary.logic.system.security.licensing.registration.Registra
         fileInputStream := fileInputStreamFactory.getFileInputStreamInstance (StringUtil_Package.getInstance.EMPTY_STRING, This.FILE);
         dataInputStream := DataInputStream_Package.Create (fileInputStream);
         This.setRegistrationCode (dataInputStream.readUTF);
-        PreLogUtil_Package.put (StringMaker_Package.Create.append (To_Unbounded_String ("Read Configuration: ")).append (This.toString).toString, This'Unchecked_Access, To_Unbounded_String ("read"));
+        PreLogUtil_Package.put (StringMaker_Package.Create.append (To_Unbounded_String ("Read Configuration: ")).append (This.toString).toString, RegistrationConfiguration_Access'(This'Unchecked_Access), To_Unbounded_String ("read"));
    end read;
 
    --  throws Exception
@@ -79,7 +79,7 @@ package body org.allbinary.logic.system.security.licensing.registration.Registra
    begin
         dataOutputStream := null;
         begin
-            This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Write Configuration: ")).append (This.toString).toString, This'Unchecked_Access, To_Unbounded_String ("write"));
+            This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Write Configuration: ")).append (This.toString).toString, RegistrationConfiguration_Access'(This'Unchecked_Access), To_Unbounded_String ("write"));
             fileInputStreamFactory := FileStreamFactory_Package.getInstance;
             fileOutputStream := fileInputStreamFactory.getFileOutputStreamInstance (StringUtil_Package.getInstance.EMPTY_STRING, This.FILE);
             dataOutputStream := AbDataOutputStream_Package.Create (fileOutputStream);

@@ -41,10 +41,10 @@ package org.allbinary.animation.image.AdjustedImageBaseRotationAnimation_Package
       dy : Integer;
    end record;
 
-   procedure Initialize (This : in out AdjustedImageBaseRotationAnimation'Class; image : Image_Access; angleInfo : AngleInfo_Access; totalAngle : Short_Integer; dx : Integer; dy : Integer; animationBehavior : AnimationBehavior_Access);
-   function Create (image : Image_Access; angleInfo : AngleInfo_Access; totalAngle : Short_Integer; dx : Integer; dy : Integer; animationBehavior : AnimationBehavior_Access) return AdjustedImageBaseRotationAnimation_Access;
+   procedure Initialize (This : in out AdjustedImageBaseRotationAnimation'Class; image_Param : access Image'Class; angleInfo_Param : access AngleInfo'Class; totalAngle : Short_Integer; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior'Class);
+   function Create (image_Param : access Image'Class; angleInfo_Param : access AngleInfo'Class; totalAngle : Short_Integer; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior'Class) return AdjustedImageBaseRotationAnimation_Access;
    procedure init (This : in out AdjustedImageBaseRotationAnimation; dx : Integer; dy : Integer);
-   procedure paintXY (This : in out AdjustedImageBaseRotationAnimation; graphics : Graphics_Access; x : Integer; y : Integer);
+   procedure paintXY (This : in out AdjustedImageBaseRotationAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
 
 end org.allbinary.animation.image.AdjustedImageBaseRotationAnimation_Package;
 

@@ -40,7 +40,8 @@ package body org.allbinary.logic.io.CloudStreamUtil_Package is
    end getInstance;
 
    --  throws Exception
-   function getFile (This : in out CloudStreamUtil; file : AbFile_Access) return InputStream_Access is
+   function getFile (This : in out CloudStreamUtil; file_Param : access AbFile'Class) return InputStream_Access is
+      file : AbFile_Access := AbFile_Access (file_Param);
       inputStream : InputStream_Access;
       available : Integer;
    begin
@@ -48,14 +49,15 @@ package body org.allbinary.logic.io.CloudStreamUtil_Package is
         available := inputStream.available;
         if (available) > (0) then
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (To_Unbounded_String ("Cloud File Bytes: ") & Java_Image (available), This'Unchecked_Access, To_Unbounded_String ("processRequest()"));
+                This.logUtil.putF (To_Unbounded_String ("Cloud File Bytes: ") & Java_Image (available), CloudStreamUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("processRequest()"));
             end if;
         end if;
         return inputStream;
    end getFile;
 
    --  throws Exception
-   function getFileAnyWhere (This : in out CloudStreamUtil; file : AbFile_Access) return InputStream_Access is
+   function getFileAnyWhere (This : in out CloudStreamUtil; file_Param : access AbFile'Class) return InputStream_Access is
+      file : AbFile_Access := AbFile_Access (file_Param);
       inputStream : InputStream_Access;
       available : Integer;
    begin
@@ -63,14 +65,14 @@ package body org.allbinary.logic.io.CloudStreamUtil_Package is
         available := inputStream.available;
         if (available) > (0) then
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (To_Unbounded_String ("Local File Bytes: ") & Java_Image (available), This'Unchecked_Access, To_Unbounded_String ("processRequest()"));
+                This.logUtil.putF (To_Unbounded_String ("Local File Bytes: ") & Java_Image (available), CloudStreamUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("processRequest()"));
             end if;
         else
             inputStream := AbFileInputStream_Package.Create (file);
             available := inputStream.available;
             if (available) > (0) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                    This.logUtil.putF (To_Unbounded_String ("Cloud File Bytes: ") & Java_Image (available), This'Unchecked_Access, To_Unbounded_String ("processRequest()"));
+                    This.logUtil.putF (To_Unbounded_String ("Cloud File Bytes: ") & Java_Image (available), CloudStreamUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("processRequest()"));
                 end if;
             end if;
         end if;
@@ -78,7 +80,8 @@ package body org.allbinary.logic.io.CloudStreamUtil_Package is
    end getFileAnyWhere;
 
    --  throws Exception
-   function getFileLocal (This : in out CloudStreamUtil; file : AbFile_Access) return InputStream_Access is
+   function getFileLocal (This : in out CloudStreamUtil; file_Param : access AbFile'Class) return InputStream_Access is
+      file : AbFile_Access := AbFile_Access (file_Param);
       inputStream : InputStream_Access;
       available : Integer;
    begin
@@ -86,28 +89,28 @@ package body org.allbinary.logic.io.CloudStreamUtil_Package is
         available := inputStream.available;
         if (available) > (0) then
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (To_Unbounded_String ("Local File Bytes: ") & Java_Image (available), This'Unchecked_Access, To_Unbounded_String ("processRequest()"));
+                This.logUtil.putF (To_Unbounded_String ("Local File Bytes: ") & Java_Image (available), CloudStreamUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("processRequest()"));
             end if;
         end if;
         return inputStream;
    end getFileLocal;
 
-   procedure getFile (This : in out CloudStreamUtil; file : AbFile_Access) is
-      Java_Result : constant InputStream_Access := CloudStreamUtil'Class (This).getFile (file);
+   procedure getFile (This : in out CloudStreamUtil; file_Param : access AbFile'Class) is
+      Java_Result : constant InputStream_Access := CloudStreamUtil'Class (This).getFile (file_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getFile;
 
-   procedure getFileAnyWhere (This : in out CloudStreamUtil; file : AbFile_Access) is
-      Java_Result : constant InputStream_Access := CloudStreamUtil'Class (This).getFileAnyWhere (file);
+   procedure getFileAnyWhere (This : in out CloudStreamUtil; file_Param : access AbFile'Class) is
+      Java_Result : constant InputStream_Access := CloudStreamUtil'Class (This).getFileAnyWhere (file_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getFileAnyWhere;
 
-   procedure getFileLocal (This : in out CloudStreamUtil; file : AbFile_Access) is
-      Java_Result : constant InputStream_Access := CloudStreamUtil'Class (This).getFileLocal (file);
+   procedure getFileLocal (This : in out CloudStreamUtil; file_Param : access AbFile'Class) is
+      Java_Result : constant InputStream_Access := CloudStreamUtil'Class (This).getFileLocal (file_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -26,16 +26,17 @@ package body org.allbinary.logic.visual.transform.AbTransformer_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AbTransformer'Class; transformInfoInterface : TransformInfoInterface_Access) is
+   procedure Initialize (This : in out AbTransformer'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
       Initialize_Fields (This);
         This.transformInfoInterface := transformInfoInterface;
    end Initialize;
 
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return AbTransformer_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return AbTransformer_Access is
       This : constant AbTransformer_Access := new AbTransformer;
    begin
-      AbTransformer_Package.Initialize (This.all, transformInfoInterface);
+      AbTransformer_Package.Initialize (This.all, transformInfoInterface_Param);
       return This;
    end Create;
 
@@ -44,12 +45,14 @@ package body org.allbinary.logic.visual.transform.AbTransformer_Package is
         return This.transformInfoInterface;
    end getTransformInfoInterface;
 
-   procedure setInputStream (This : in out AbTransformer; inputStream : InputStream_Access) is
+   procedure setInputStream (This : in out AbTransformer; inputStream_Param : access InputStream'Class) is
+      inputStream : InputStream_Access := InputStream_Access (inputStream_Param);
    begin
         This.inputStream := inputStream;
    end setInputStream;
 
-   procedure setURIResolver (This : in out AbTransformer; uriResolver : URIResolver_Access) is
+   procedure setURIResolver (This : in out AbTransformer; uriResolver_Param : access URIResolver'Class) is
+      uriResolver : URIResolver_Access := URIResolver_Access (uriResolver_Param);
    begin
         This.uriResolver := uriResolver;
    end setURIResolver;
@@ -76,14 +79,14 @@ package body org.allbinary.logic.visual.transform.AbTransformer_Package is
    begin
         begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.XMLLOGGING) then
-                This.logUtil.putF (To_Unbounded_String ("xml: " & ASCII.LF & "") & xmlDocumentStr, This'Unchecked_Access, To_Unbounded_String ("translate(String xmlDocumentStr)"));
+                This.logUtil.putF (To_Unbounded_String ("xml: " & ASCII.LF & "") & xmlDocumentStr, AbTransformer_Access'(This'Unchecked_Access), To_Unbounded_String ("translate(String xmlDocumentStr)"));
             end if;
             if (This.getURIResolver) = (null) then
                 Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No URIResolver")));
             end if;
             result := XslHelper_Package.getInstance.translate (This.getURIResolver, StreamSource_Package.Create (This.getInputStream), StreamSource_Package.Create (StringBufferInputStream_Package.Create (xmlDocumentStr)));
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.XSLLOGGING) then
-                This.logUtil.putF (To_Unbounded_String ("translated xml: ") & result, This'Unchecked_Access, To_Unbounded_String ("translate(String xmlDocumentStr)"));
+                This.logUtil.putF (To_Unbounded_String ("translated xml: ") & result, AbTransformer_Access'(This'Unchecked_Access), To_Unbounded_String ("translate(String xmlDocumentStr)"));
             end if;
             transformInfoObjectConfigGeneratorInterface := TransformInfoObjectConfigGeneratorFactory_Package.getInstance.getInstance (This.getTransformInfoInterface);
             return transformInfoObjectConfigGeneratorInterface.process (result);
@@ -93,7 +96,7 @@ package body org.allbinary.logic.visual.transform.AbTransformer_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (This.transformInfoInterface.log, This'Unchecked_Access, To_Unbounded_String ("translate(document)"), e);
+                This.logUtil.put (This.transformInfoInterface.log, AbTransformer_Access'(This'Unchecked_Access), To_Unbounded_String ("translate(document)"), e);
             end if;
             Java_Throw (e);
                 end;

@@ -30,7 +30,8 @@ package body org.allbinary.business.user.quoterequest.QuoteRequest_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out QuoteRequest'Class; userName : Unbounded_String; request : HttpServletRequest_Access) is
+   procedure Initialize (This : in out QuoteRequest'Class; userName : Unbounded_String; request_Param : access HttpServletRequest'Class) is
+      request : HttpServletRequest_Access := HttpServletRequest_Access (request_Param);
       quoteRequestData : QuoteRequestData_Access;
    begin
       Initialize_Fields (This);
@@ -43,18 +44,19 @@ package body org.allbinary.business.user.quoterequest.QuoteRequest_Package is
         This.setTimeFrame (Unbounded_String (request.getParameter (quoteRequestData.TIMEFRAME)));
         This.setComments (Unbounded_String (request.getParameter (quoteRequestData.COMMENTS)));
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPER) then
-            This.logUtil.putF (To_Unbounded_String ("Created with: ") & Java_Image (This.toHashMap), This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+            This.logUtil.putF (To_Unbounded_String ("Created with: ") & Java_Image (This.toHashMap), QuoteRequest_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
    end Initialize;
 
-   function Create (userName : Unbounded_String; request : HttpServletRequest_Access) return QuoteRequest_Access is
+   function Create (userName : Unbounded_String; request_Param : access HttpServletRequest'Class) return QuoteRequest_Access is
       This : constant QuoteRequest_Access := new QuoteRequest;
    begin
-      QuoteRequest_Package.Initialize (This.all, userName, request);
+      QuoteRequest_Package.Initialize (This.all, userName, request_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out QuoteRequest'Class; hashMap : HashMap_Access) is
+   procedure Initialize (This : in out QuoteRequest'Class; hashMap_Param : access HashMap'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
       quoteRequestData : QuoteRequestData_Access;
    begin
       Initialize_Fields (This);
@@ -67,14 +69,14 @@ package body org.allbinary.business.user.quoterequest.QuoteRequest_Package is
         This.setTimeFrame (Unbounded_String (hashMap.get (quoteRequestData.TIMEFRAME)));
         This.setComments (Unbounded_String (hashMap.get (quoteRequestData.COMMENTS)));
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPER) then
-            This.logUtil.putF (To_Unbounded_String ("Created with: ") & Java_Image (This.toHashMap), This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+            This.logUtil.putF (To_Unbounded_String ("Created with: ") & Java_Image (This.toHashMap), QuoteRequest_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
    end Initialize;
 
-   function Create (hashMap : HashMap_Access) return QuoteRequest_Access is
+   function Create (hashMap_Param : access HashMap'Class) return QuoteRequest_Access is
       This : constant QuoteRequest_Access := new QuoteRequest;
    begin
-      QuoteRequest_Package.Initialize (This.all, hashMap);
+      QuoteRequest_Package.Initialize (This.all, hashMap_Param);
       return This;
    end Create;
 
@@ -108,7 +110,7 @@ package body org.allbinary.business.user.quoterequest.QuoteRequest_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to validate form"), This'Unchecked_Access, This.commonStrings.IS_VALID, e);
+                This.logUtil.put (To_Unbounded_String ("Failed to validate form"), QuoteRequest_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
             end if;
             return False;
                 end;
@@ -145,7 +147,7 @@ package body org.allbinary.business.user.quoterequest.QuoteRequest_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), This'Unchecked_Access, To_Unbounded_String ("validationInfo()"), e);
+                This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), QuoteRequest_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
             end if;
             return To_Unbounded_String ("Error Validating Form");
                 end;

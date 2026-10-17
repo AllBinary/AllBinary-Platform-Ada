@@ -21,20 +21,23 @@ package body org.allbinary.game.input.SelectedRTSLayersPlayerUpgradeGameInputPro
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out SelectedRTSLayersPlayerUpgradeGameInputProcessor'Class; selectedRTSLayersPlayerGameInput : SelectedRTSLayersPlayerGameInput_Access) is
+   procedure Initialize (This : in out SelectedRTSLayersPlayerUpgradeGameInputProcessor'Class; selectedRTSLayersPlayerGameInput_Param : access SelectedRTSLayersPlayerGameInput'Class) is
+      selectedRTSLayersPlayerGameInput : SelectedRTSLayersPlayerGameInput_Access := SelectedRTSLayersPlayerGameInput_Access (selectedRTSLayersPlayerGameInput_Param);
    begin
         SelectedRTSLayersPlayerGameInputProcessor_Package.Initialize (This, selectedRTSLayersPlayerGameInput);
    end Initialize;
 
-   function Create (selectedRTSLayersPlayerGameInput : SelectedRTSLayersPlayerGameInput_Access) return SelectedRTSLayersPlayerUpgradeGameInputProcessor_Access is
+   function Create (selectedRTSLayersPlayerGameInput_Param : access SelectedRTSLayersPlayerGameInput'Class) return SelectedRTSLayersPlayerUpgradeGameInputProcessor_Access is
       This : constant SelectedRTSLayersPlayerUpgradeGameInputProcessor_Access := new SelectedRTSLayersPlayerUpgradeGameInputProcessor;
    begin
-      SelectedRTSLayersPlayerUpgradeGameInputProcessor_Package.Initialize (This.all, selectedRTSLayersPlayerGameInput);
+      SelectedRTSLayersPlayerUpgradeGameInputProcessor_Package.Initialize (This.all, selectedRTSLayersPlayerGameInput_Param);
       return This;
    end Create;
 
    --  throws Exception
-   procedure processEvent (This : in out SelectedRTSLayersPlayerUpgradeGameInputProcessor; allbinaryLayerManager : AllBinaryLayerManager_Access; gameKeyEvent : GameKeyEvent_Access) is
+   procedure processEvent (This : in out SelectedRTSLayersPlayerUpgradeGameInputProcessor; allbinaryLayerManager_Param : access AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent'Class) is
+      allbinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allbinaryLayerManager_Param);
+      gameKeyEvent : GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
    begin
         This.selectedRTSLayersPlayerGameInput.upgrade;
    end processEvent;

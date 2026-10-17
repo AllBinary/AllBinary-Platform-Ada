@@ -98,14 +98,17 @@ package body org.allbinary.log.FileLog_Package is
         end;
    end createLogFileBackup;
 
-   function put (specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String) return Unbounded_String is
+   function put (specialMessage : Unbounded_String; anyType_Param : access Java_Object'Class; functionName : Unbounded_String) return Unbounded_String is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         return FileLog_Package.put (specialMessage, anyType, functionName, null);
    end put;
 
-   function put (specialMessage_Param : Unbounded_String; anyType : Java_Object_Access; functionName_Param : Unbounded_String; exception_Id : Java_Throwable) return Unbounded_String is
+   function put (specialMessage_Param : Unbounded_String; anyType_Param : access Java_Object'Class; functionName_Param : Unbounded_String; exception_Id_Param : access Java_Throwable_Object'Class) return Unbounded_String is
       specialMessage : Unbounded_String := specialMessage_Param;
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
       functionName : Unbounded_String := functionName_Param;
+      exception_Id : Java_Throwable := Java_Throwable (exception_Id_Param);
       length : Long_Long_Integer;
       className : Unbounded_String;
       message : Unbounded_String;
@@ -153,9 +156,10 @@ package body org.allbinary.log.FileLog_Package is
         return FileLog_Package.put (specialMessage, className, functionName, null);
    end put;
 
-   function put (specialMessage_Param : Unbounded_String; className : Unbounded_String; functionName_Param : Unbounded_String; exception_Id : Java_Throwable) return Unbounded_String is
+   function put (specialMessage_Param : Unbounded_String; className : Unbounded_String; functionName_Param : Unbounded_String; exception_Id_Param : access Java_Throwable_Object'Class) return Unbounded_String is
       specialMessage : Unbounded_String := specialMessage_Param;
       functionName : Unbounded_String := functionName_Param;
+      exception_Id : Java_Throwable := Java_Throwable (exception_Id_Param);
       length : Long_Long_Integer;
       message : Unbounded_String;
    begin
@@ -198,15 +202,15 @@ package body org.allbinary.log.FileLog_Package is
         return (FileLog_Package.logPath) + (FileLog_Package.fileName);
    end getFilePath;
 
-   procedure put (specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String) is
-      Java_Result : constant Unbounded_String := put (specialMessage, anyType, functionName);
+   procedure put (specialMessage : Unbounded_String; anyType_Param : access Java_Object'Class; functionName : Unbounded_String) is
+      Java_Result : constant Unbounded_String := put (specialMessage, anyType_Param, functionName);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end put;
 
-   procedure put (specialMessage_Param : Unbounded_String; anyType : Java_Object_Access; functionName_Param : Unbounded_String; exception_Id : Java_Throwable) is
-      Java_Result : constant Unbounded_String := put (specialMessage_Param, anyType, functionName_Param, exception_Id);
+   procedure put (specialMessage_Param : Unbounded_String; anyType_Param : access Java_Object'Class; functionName_Param : Unbounded_String; exception_Id_Param : access Java_Throwable_Object'Class) is
+      Java_Result : constant Unbounded_String := put (specialMessage_Param, anyType_Param, functionName_Param, exception_Id_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
@@ -219,8 +223,8 @@ package body org.allbinary.log.FileLog_Package is
       null;
    end put;
 
-   procedure put (specialMessage_Param : Unbounded_String; className : Unbounded_String; functionName_Param : Unbounded_String; exception_Id : Java_Throwable) is
-      Java_Result : constant Unbounded_String := put (specialMessage_Param, className, functionName_Param, exception_Id);
+   procedure put (specialMessage_Param : Unbounded_String; className : Unbounded_String; functionName_Param : Unbounded_String; exception_Id_Param : access Java_Throwable_Object'Class) is
+      Java_Result : constant Unbounded_String := put (specialMessage_Param, className, functionName_Param, exception_Id_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -28,7 +28,10 @@ package body org.allbinary.animation.image.LazyImageRotationAnimation_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out LazyImageRotationAnimation'Class; layoutIndex : Integer; instanceId : Integer; scaleProperties : ScaleProperties_Access; animationInterfaceFactoryInterface : BaseImageAnimationFactory_Access; animationBehavior : AnimationBehavior_Access) is
+   procedure Initialize (This : in out LazyImageRotationAnimation'Class; layoutIndex : Integer; instanceId : Integer; scaleProperties_Param : access ScaleProperties'Class; animationInterfaceFactoryInterface_Param : access BaseImageAnimationFactory'Class; animationBehavior_Param : access AnimationBehavior'Class) is
+      scaleProperties : ScaleProperties_Access := ScaleProperties_Access (scaleProperties_Param);
+      animationInterfaceFactoryInterface : BaseImageAnimationFactory_Access := BaseImageAnimationFactory_Access (animationInterfaceFactoryInterface_Param);
+      animationBehavior : AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
       imageCache : ImageCache_Access;
    begin
         RotationAnimation_Package.Initialize (This, AngleInfo_Package.getInstance (AngleFactory_Package.getInstance.QUARTER_TOTAL_ANGLE), CircularIndexUtil_Package.createInstance (4), animationBehavior);
@@ -37,17 +40,17 @@ package body org.allbinary.animation.image.LazyImageRotationAnimation_Package is
         This.instanceId := instanceId;
         This.animationInterfaceFactoryInterface := animationInterfaceFactoryInterface;
         imageCache := ImageCacheFactory_Package.getInstance;
-        imageCache.add (This'Unchecked_Access);
+        imageCache.add (LazyImageRotationAnimation_Access'(This'Unchecked_Access));
         This.scaleProperties := scaleProperties;
         This.NULL_INDEX_ANIMATION := IndexedAnimation_Access (NullRotationAnimationFactory_Package.getFactoryInstance.getInstance (0));
         --  Java nested class ActualRotationAnimation: move it to its own package
-        This.animation := ActualRotationAnimation_Package.Create (This'Unchecked_Access);
+        This.animation := ActualRotationAnimation_Package.Create (LazyImageRotationAnimation_Access'(This'Unchecked_Access));
    end Initialize;
 
-   function Create (layoutIndex : Integer; instanceId : Integer; scaleProperties : ScaleProperties_Access; animationInterfaceFactoryInterface : BaseImageAnimationFactory_Access; animationBehavior : AnimationBehavior_Access) return LazyImageRotationAnimation_Access is
+   function Create (layoutIndex : Integer; instanceId : Integer; scaleProperties_Param : access ScaleProperties'Class; animationInterfaceFactoryInterface_Param : access BaseImageAnimationFactory'Class; animationBehavior_Param : access AnimationBehavior'Class) return LazyImageRotationAnimation_Access is
       This : constant LazyImageRotationAnimation_Access := new LazyImageRotationAnimation;
    begin
-      LazyImageRotationAnimation_Package.Initialize (This.all, layoutIndex, instanceId, scaleProperties, animationInterfaceFactoryInterface, animationBehavior);
+      LazyImageRotationAnimation_Package.Initialize (This.all, layoutIndex, instanceId, scaleProperties_Param, animationInterfaceFactoryInterface_Param, animationBehavior_Param);
       return This;
    end Create;
 
@@ -64,7 +67,7 @@ package body org.allbinary.animation.image.LazyImageRotationAnimation_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, LazyImageRotationAnimation_Package.SET_REAL_ANIMATION, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, LazyImageRotationAnimation_Access'(This'Unchecked_Access), LazyImageRotationAnimation_Package.SET_REAL_ANIMATION, e);
                 end;
         end;
    end setRealAnimation;
@@ -80,7 +83,8 @@ package body org.allbinary.animation.image.LazyImageRotationAnimation_Package is
    end getAnimationBehavior;
 
    --  throws Exception
-   procedure set (This : in out LazyImageRotationAnimation; gl : GL_Access) is
+   procedure set (This : in out LazyImageRotationAnimation; gl_Param : access GL'Class) is
+      gl : GL_Access := GL_Access (gl_Param);
    begin
         This.animation.set (gl);
    end set;
@@ -147,7 +151,8 @@ package body org.allbinary.animation.image.LazyImageRotationAnimation_Package is
         rotationAnimation.previousRotationZ;
    end previousRotationZ;
 
-   procedure changeBasicColor (This : in out LazyImageRotationAnimation; basicColor : BasicColor_Access) is
+   procedure changeBasicColor (This : in out LazyImageRotationAnimation; basicColor_Param : access BasicColor'Class) is
+      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         This.animation.changeBasicColor (basicColor);
    end changeBasicColor;
@@ -244,7 +249,8 @@ package body org.allbinary.animation.image.LazyImageRotationAnimation_Package is
         return This.animation.getWidth;
    end getWidth;
 
-   procedure paintXY (This : in out LazyImageRotationAnimation; graphics : Graphics_Access; x : Integer; y : Integer) is
+   procedure paintXY (This : in out LazyImageRotationAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         begin
             This.animation.paintXY (graphics, x, y);
@@ -253,12 +259,13 @@ package body org.allbinary.animation.image.LazyImageRotationAnimation_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.PROCESS, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, LazyImageRotationAnimation_Access'(This'Unchecked_Access), This.commonStrings.PROCESS, e);
                 end;
         end;
    end paintXY;
 
-   procedure paintThreedXYZ (This : in out LazyImageRotationAnimation; graphics : Graphics_Access; x : Integer; y : Integer; z : Integer) is
+   procedure paintThreedXYZ (This : in out LazyImageRotationAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer; z : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         begin
             This.animation.paintThreedXYZ (graphics, x, y, z);
@@ -267,7 +274,7 @@ package body org.allbinary.animation.image.LazyImageRotationAnimation_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.PROCESS, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, LazyImageRotationAnimation_Access'(This'Unchecked_Access), This.commonStrings.PROCESS, e);
                 end;
         end;
    end paintThreedXYZ;

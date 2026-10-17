@@ -141,24 +141,24 @@ package org.allbinary.game.input.HumanRTSPlayerGameInput_Package is
       multiSelectPaintable : MultiSelectPaintable_Access;
    end record;
 
-   procedure Initialize (This : in out HumanRTSPlayerGameInput'Class; gameCanvas : AllBinaryGameCanvas_Access; inputList : BasicArrayList_Access; playerInputId : Integer; towerInfoPaintable : RTSLayerInfoPaintable_Access; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; layerPositionFinderInterface : LayerPositionFinderInterface_Access; selectRTSLayerVisitorFactoryInterface : SelectRTSLayerVisitorFactoryInterface_Access; touchButtonsBuilderFactory : TouchButtonsBuilderFactory_Access);
-   function Create (gameCanvas : AllBinaryGameCanvas_Access; inputList : BasicArrayList_Access; playerInputId : Integer; towerInfoPaintable : RTSLayerInfoPaintable_Access; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; layerPositionFinderInterface : LayerPositionFinderInterface_Access; selectRTSLayerVisitorFactoryInterface : SelectRTSLayerVisitorFactoryInterface_Access; touchButtonsBuilderFactory : TouchButtonsBuilderFactory_Access) return HumanRTSPlayerGameInput_Access;
-   procedure setAllBinaryGameLayerManager (This : in out HumanRTSPlayerGameInput; allBinaryGameLayerManager : AllBinaryGameLayerManager_Access);
-   function processDraggingMotionInput (This : in out HumanRTSPlayerGameInput; layerManager : AllBinaryLayerManager_Access) return Boolean;
-   procedure processDraggingMotionInput (This : in out HumanRTSPlayerGameInput; layerManager : AllBinaryLayerManager_Access);
+   procedure Initialize (This : in out HumanRTSPlayerGameInput'Class; gameCanvas_Param : access AllBinaryGameCanvas'Class; inputList_Param : access BasicArrayList'Class; playerInputId : Integer; towerInfoPaintable_Param : access RTSLayerInfoPaintable'Class; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; layerPositionFinderInterface_Param : access LayerPositionFinderInterface'Class; selectRTSLayerVisitorFactoryInterface_Param : access SelectRTSLayerVisitorFactoryInterface'Class; touchButtonsBuilderFactory_Param : access TouchButtonsBuilderFactory'Class);
+   function Create (gameCanvas_Param : access AllBinaryGameCanvas'Class; inputList_Param : access BasicArrayList'Class; playerInputId : Integer; towerInfoPaintable_Param : access RTSLayerInfoPaintable'Class; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; layerPositionFinderInterface_Param : access LayerPositionFinderInterface'Class; selectRTSLayerVisitorFactoryInterface_Param : access SelectRTSLayerVisitorFactoryInterface'Class; touchButtonsBuilderFactory_Param : access TouchButtonsBuilderFactory'Class) return HumanRTSPlayerGameInput_Access;
+   procedure setAllBinaryGameLayerManager (This : in out HumanRTSPlayerGameInput; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class);
+   function processDraggingMotionInput (This : in out HumanRTSPlayerGameInput; layerManager_Param : access AllBinaryLayerManager'Class) return Boolean;
+   procedure processDraggingMotionInput (This : in out HumanRTSPlayerGameInput; layerManager_Param : access AllBinaryLayerManager'Class);
    procedure makeSelection (This : in out HumanRTSPlayerGameInput);
-   procedure processSelectionBoxMotionInput (This : in out HumanRTSPlayerGameInput; layerManager : AllBinaryLayerManager_Access);
-   procedure processMotionInput (This : in out HumanRTSPlayerGameInput; layerManager : AllBinaryLayerManager_Access);
-   procedure setSelectedRtsFormInput (This : in out HumanRTSPlayerGameInput; selectedRtsFormInput : RTSFormInput_Access);
-   procedure updateFormForLayer (This : in out HumanRTSPlayerGameInput; rtsLayer : RTSLayer_Access);
-   procedure updateForm (This : in out HumanRTSPlayerGameInput; scrollSelectionForm : ScrollSelectionForm_Access; rtfFormInput : RTSFormInput_Access);
-   procedure setSelectedRTSLayer (This : in out HumanRTSPlayerGameInput; rtSLayer : CollidableDestroyableDamageableLayer_Access; geographicMapCellPosition : GeographicMapCellPosition_Access);
+   procedure processSelectionBoxMotionInput (This : in out HumanRTSPlayerGameInput; layerManager_Param : access AllBinaryLayerManager'Class);
+   procedure processMotionInput (This : in out HumanRTSPlayerGameInput; layerManager_Param : access AllBinaryLayerManager'Class);
+   procedure setSelectedRtsFormInput (This : in out HumanRTSPlayerGameInput; selectedRtsFormInput_Param : access RTSFormInput'Class);
+   procedure updateFormForLayer (This : in out HumanRTSPlayerGameInput; rtsLayer_Param : access RTSLayer'Class);
+   procedure updateForm (This : in out HumanRTSPlayerGameInput; scrollSelectionForm_Param : access ScrollSelectionForm'Class; rtfFormInput_Param : access RTSFormInput'Class);
+   procedure setSelectedRTSLayer (This : in out HumanRTSPlayerGameInput; rtSLayer_Param : access CollidableDestroyableDamageableLayer'Class; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class);
    procedure updatePaintable (This : in out HumanRTSPlayerGameInput);
-   procedure paint (This : in out HumanRTSPlayerGameInput; graphics : Graphics_Access);
-   procedure onMotionGestureEvent (This : in out HumanRTSPlayerGameInput; motionGestureEvent : MotionGestureEvent_Access);
-   procedure onScrolledMotionGestureEvent (This : in out HumanRTSPlayerGameInput; motionGestureEvent : MotionGestureEvent_Access);
+   procedure paint (This : in out HumanRTSPlayerGameInput; graphics_Param : access Graphics'Class);
+   procedure onMotionGestureEvent (This : in out HumanRTSPlayerGameInput; motionGestureEvent_Param : access MotionGestureEvent'Class);
+   procedure onScrolledMotionGestureEvent (This : in out HumanRTSPlayerGameInput; motionGestureEvent_Param : access MotionGestureEvent'Class);
    function getSelectedRtsLayer (This : in out HumanRTSPlayerGameInput) return CollidableDestroyableDamageableLayer_Access;
-   procedure setSelectedRtsLayer (This : in out HumanRTSPlayerGameInput; selectedRtsLayer : CollidableDestroyableDamageableLayer_Access);
+   procedure setSelectedRtsLayer (This : in out HumanRTSPlayerGameInput; selectedRtsLayer_Param : access CollidableDestroyableDamageableLayer'Class);
 
 end org.allbinary.game.input.HumanRTSPlayerGameInput_Package;
 

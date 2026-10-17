@@ -14,16 +14,18 @@ package body org.allbinary.graphics.form.item.ABStringComponent_Package is
         return BasicColorFactory_Package.getInstance.WHITE;
    end getBackgroundBasicColor;
 
-   procedure Initialize (This : in out ABStringComponent'Class; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) is
+   procedure Initialize (This : in out ABStringComponent'Class; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) is
+      backgroundBasicColor : BasicColor_Access := BasicColor_Access (backgroundBasicColor_Param);
+      foregroundBasicColor : BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
    begin
       Initialize_Fields (This);
         null;
    end Initialize;
 
-   function Create (backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return ABStringComponent_Access is
+   function Create (backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return ABStringComponent_Access is
       This : constant ABStringComponent_Access := new ABStringComponent;
    begin
-      ABStringComponent_Package.Initialize (This.all, backgroundBasicColor, foregroundBasicColor);
+      ABStringComponent_Package.Initialize (This.all, backgroundBasicColor_Param, foregroundBasicColor_Param);
       return This;
    end Create;
 
@@ -32,7 +34,8 @@ package body org.allbinary.graphics.form.item.ABStringComponent_Package is
         return BasicColorFactory_Package.getInstance.WHITE;
    end getForegroundBasicColor;
 
-   procedure setForegroundBasicColor (This : in out ABStringComponent; foregroundBasicColor : BasicColor_Access) is
+   procedure setForegroundBasicColor (This : in out ABStringComponent; foregroundBasicColor_Param : access BasicColor'Class) is
+      foregroundBasicColor : BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
    begin
         null;
    end setForegroundBasicColor;

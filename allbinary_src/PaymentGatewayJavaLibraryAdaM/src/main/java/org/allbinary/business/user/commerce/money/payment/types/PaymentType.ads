@@ -50,10 +50,10 @@ package org.allbinary.business.user.commerce.money.payment.types.PaymentType_Pac
       paymentProcessorInterfaceFactoryInterface : PaymentProcessorInterfaceFactoryInterface_Access;
    end record;
 
-   procedure Initialize (This : in out PaymentType'Class; basicPaymentType : BasicPaymentType_Access);
-   function Create (basicPaymentType : BasicPaymentType_Access) return PaymentType_Access;
-   procedure Initialize (This : in out PaymentType'Class; basicPaymentType : BasicPaymentType_Access; paymentTransactionInterfaceFactoryInterface : PaymentTransactionInterfaceFactoryInterface_Access; paymentProcessorInterfaceFactoryInterface : PaymentProcessorInterfaceFactoryInterface_Access);
-   function Create (basicPaymentType : BasicPaymentType_Access; paymentTransactionInterfaceFactoryInterface : PaymentTransactionInterfaceFactoryInterface_Access; paymentProcessorInterfaceFactoryInterface : PaymentProcessorInterfaceFactoryInterface_Access) return PaymentType_Access;
+   procedure Initialize (This : in out PaymentType'Class; basicPaymentType_Param : access BasicPaymentType'Class);
+   function Create (basicPaymentType_Param : access BasicPaymentType'Class) return PaymentType_Access;
+   procedure Initialize (This : in out PaymentType'Class; basicPaymentType_Param : access BasicPaymentType'Class; paymentTransactionInterfaceFactoryInterface_Param : access PaymentTransactionInterfaceFactoryInterface'Class; paymentProcessorInterfaceFactoryInterface_Param : access PaymentProcessorInterfaceFactoryInterface'Class);
+   function Create (basicPaymentType_Param : access BasicPaymentType'Class; paymentTransactionInterfaceFactoryInterface_Param : access PaymentTransactionInterfaceFactoryInterface'Class; paymentProcessorInterfaceFactoryInterface_Param : access PaymentProcessorInterfaceFactoryInterface'Class) return PaymentType_Access;
    function getPaymentTransactionInterfaceFactoryInterface (This : in out PaymentType) return PaymentTransactionInterfaceFactoryInterface_Access;
    function getPaymentProcessorInterfaceFactoryInterface (This : in out PaymentType) return PaymentProcessorInterfaceFactoryInterface_Access;
    function toVector (This : in out PaymentType) return BasicArrayList_Access;

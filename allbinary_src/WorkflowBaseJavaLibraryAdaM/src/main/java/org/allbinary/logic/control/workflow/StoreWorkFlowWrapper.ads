@@ -39,8 +39,8 @@ package org.allbinary.logic.control.workflow.StoreWorkFlowWrapper_Package is
       logUtil : LogUtil_Access;
    end record;
 
-   procedure Initialize (This : in out StoreWorkFlowWrapper'Class; anyType : Java_Object_Access);
-   function Create (anyType : Java_Object_Access) return StoreWorkFlowWrapper_Access;
+   procedure Initialize (This : in out StoreWorkFlowWrapper'Class; anyType_Param : access Java_Object'Class);
+   function Create (anyType_Param : access Java_Object'Class) return StoreWorkFlowWrapper_Access;
    function getStoreName (This : in out StoreWorkFlowWrapper) return Unbounded_String;
 
 end org.allbinary.logic.control.workflow.StoreWorkFlowWrapper_Package;

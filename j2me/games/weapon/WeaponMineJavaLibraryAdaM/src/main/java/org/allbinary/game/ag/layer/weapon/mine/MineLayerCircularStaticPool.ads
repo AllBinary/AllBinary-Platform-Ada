@@ -40,7 +40,7 @@ package org.allbinary.game.ag.layer.weapon.mine.MineLayerCircularStaticPool_Pack
 
    procedure Initialize (This : in out MineLayerCircularStaticPool'Class);
    function Create return MineLayerCircularStaticPool_Access;
-   procedure init (viewPositionFactoryInterface : ViewPositionFactoryInterface_Access);
+   procedure init (viewPositionFactoryInterface_Param : access ViewPositionFactoryInterface'Class);
    function getInstance return WeaponLayerCircularPool_Access;
 
 end org.allbinary.game.ag.layer.weapon.mine.MineLayerCircularStaticPool_Package;

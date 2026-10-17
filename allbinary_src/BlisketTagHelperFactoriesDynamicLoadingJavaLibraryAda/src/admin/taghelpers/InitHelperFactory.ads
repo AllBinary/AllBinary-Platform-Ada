@@ -41,8 +41,8 @@ package admin.taghelpers.InitHelperFactory_Package is
 
    procedure Initialize (This : in out InitHelperFactory'Class);
    function Create return InitHelperFactory_Access;
-   function getInstance (This : in out InitHelperFactory; hashMap : HashMap_Access; pageContext : PageContext_Access) return Java_Object_Access;
-   procedure getInstance (This : in out InitHelperFactory; hashMap : HashMap_Access; pageContext : PageContext_Access);
+   function getInstance (This : in out InitHelperFactory; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return Java_Object_Access;
+   procedure getInstance (This : in out InitHelperFactory; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
 
 end admin.taghelpers.InitHelperFactory_Package;
 

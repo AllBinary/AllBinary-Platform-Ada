@@ -40,8 +40,8 @@ package org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntityIn
    function get (This : in out AdvertisementAreasEntityInterface; storeName : Unbounded_String) return BasicArrayList_Access is abstract;
    function get (This : in out AdvertisementAreasEntityInterface; storeName : Unbounded_String; advertisementAreaName : Unbounded_String) return AdvertisementAreaInterface_Access is abstract;
    procedure delete (This : in out AdvertisementAreasEntityInterface; value : Unbounded_String) is abstract;
-   procedure insert (This : in out AdvertisementAreasEntityInterface; values : BasicArrayList_Access) is abstract;
-   procedure update (This : in out AdvertisementAreasEntityInterface; updatedValues : HashMap_Access) is abstract;
+   procedure insert (This : in out AdvertisementAreasEntityInterface; values_Param : access BasicArrayList'Class) is abstract;
+   procedure update (This : in out AdvertisementAreasEntityInterface; updatedValues_Param : access HashMap'Class) is abstract;
 
 end org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntityInterface_Package;
 

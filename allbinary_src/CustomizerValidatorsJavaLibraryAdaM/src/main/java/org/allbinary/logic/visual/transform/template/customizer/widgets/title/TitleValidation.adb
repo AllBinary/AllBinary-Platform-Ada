@@ -35,29 +35,31 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.ti
       return This;
    end Create;
 
-   procedure Initialize (This : in out TitleValidation'Class; node : Node_Access) is
+   procedure Initialize (This : in out TitleValidation'Class; node_Param : access Node'Class) is
+      node : Node_Access := Node_Access (node_Param);
    begin
         TitleView_Package.Initialize (This, node);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (node : Node_Access) return TitleValidation_Access is
+   function Create (node_Param : access Node'Class) return TitleValidation_Access is
       This : constant TitleValidation_Access := new TitleValidation;
    begin
-      TitleValidation_Package.Initialize (This.all, node);
+      TitleValidation_Package.Initialize (This.all, node_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out TitleValidation'Class; hashMap : HashMap_Access) is
+   procedure Initialize (This : in out TitleValidation'Class; hashMap_Param : access HashMap'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
    begin
         TitleView_Package.Initialize (This, hashMap);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (hashMap : HashMap_Access) return TitleValidation_Access is
+   function Create (hashMap_Param : access HashMap'Class) return TitleValidation_Access is
       This : constant TitleValidation_Access := new TitleValidation;
    begin
-      TitleValidation_Package.Initialize (This.all, hashMap);
+      TitleValidation_Package.Initialize (This.all, hashMap_Param);
       return This;
    end Create;
 
@@ -66,14 +68,14 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.ti
    begin
         begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (To_Unbounded_String ("TitleValidation"), This'Unchecked_Access, This.commonStrings.IS_VALID);
+                This.logUtil.putF (To_Unbounded_String ("TitleValidation"), TitleValidation_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
             end if;
             valid := True;
             if not (StringValidationUtil_Package.getInstance.isValidRequired (This.getTitle, 1, TitleData_Package.getInstance.MAXLEN)) then
                 valid := False;
             end if;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (To_Unbounded_String ("TitleValidation: ") & Java_Image (valid), This'Unchecked_Access, This.commonStrings.IS_VALID);
+                This.logUtil.putF (To_Unbounded_String ("TitleValidation: ") & Java_Image (valid), TitleValidation_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
             end if;
             return valid;
         exception
@@ -82,7 +84,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.ti
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to validate form"), This'Unchecked_Access, This.commonStrings.IS_VALID, e);
+                This.logUtil.put (To_Unbounded_String ("Failed to validate form"), TitleValidation_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
             end if;
             return False;
                 end;
@@ -102,7 +104,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.ti
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), This'Unchecked_Access, To_Unbounded_String ("validationInfo()"), e);
+                This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), TitleValidation_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
             end if;
             return To_Unbounded_String ("Error Validating Form");
                 end;
@@ -114,13 +116,14 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.ti
         return null;
    end toValidationInfoDoc;
 
-   function toValidationInfoNode (This : in out TitleValidation; document : Document_Access) return Node_Access is
+   function toValidationInfoNode (This : in out TitleValidation; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
    begin
         return null;
    end toValidationInfoNode;
 
-   procedure toValidationInfoNode (This : in out TitleValidation; document : Document_Access) is
-      Java_Result : constant Node_Access := TitleValidation'Class (This).toValidationInfoNode (document);
+   procedure toValidationInfoNode (This : in out TitleValidation; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := TitleValidation'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

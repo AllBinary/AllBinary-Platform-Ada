@@ -25,7 +25,8 @@ package body org.allbinary.logic.math.permutations.ObjectPermutationVisitor_Pack
       return This;
    end Create;
 
-   function visit (This : in out ObjectPermutationVisitor; anyType : Java_Object_Access) return Java_Object_Access is
+   function visit (This : in out ObjectPermutationVisitor; anyType_Param : access Java_Object'Class) return Java_Object_Access is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         This.stringBuilder.delete (0, This.stringBuilder.length);
         This.print (This.data, This.stringBuilder);
@@ -39,7 +40,8 @@ package body org.allbinary.logic.math.permutations.ObjectPermutationVisitor_Pack
         This.print (data, stringBuilder);
    end print;
 
-   procedure print (This : in out ObjectPermutationVisitor; data : Java_Object_Access_Array_Access; stringBuilder : StringMaker_Access) is
+   procedure print (This : in out ObjectPermutationVisitor; data : Java_Object_Access_Array_Access; stringBuilder_Param : access StringMaker'Class) is
+      stringBuilder : StringMaker_Access := StringMaker_Access (stringBuilder_Param);
       tsUtil : TsUtil_Access;
       size : Integer;
       i : Integer;
@@ -53,8 +55,8 @@ package body org.allbinary.logic.math.permutations.ObjectPermutationVisitor_Pack
         Ada.Text_IO.Put_Line (Java_Image (stringBuilder.toString));
    end print;
 
-   procedure visit (This : in out ObjectPermutationVisitor; anyType : Java_Object_Access) is
-      Java_Result : constant Java_Object_Access := ObjectPermutationVisitor'Class (This).visit (anyType);
+   procedure visit (This : in out ObjectPermutationVisitor; anyType_Param : access Java_Object'Class) is
+      Java_Result : constant Java_Object_Access := ObjectPermutationVisitor'Class (This).visit (anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -52,7 +52,8 @@ package body org.allbinary.logic.communication.log.LogFormatUtil_Package is
       return This;
    end Create;
 
-   function get (This : in out LogFormatUtil; className : Unbounded_String; functionName : Unbounded_String; specialMessage : Unbounded_String; exception_Id : Java_Object_Access) return Unbounded_String is
+   function get (This : in out LogFormatUtil; className : Unbounded_String; functionName : Unbounded_String; specialMessage : Unbounded_String; exception_Id_Param : access Java_Object'Class) return Unbounded_String is
+      exception_Id : Java_Object_Access := Java_Object_Access (exception_Id_Param);
       stringBuffer : StringMaker_Access;
    begin
         stringBuffer := This.getF (className, functionName);
@@ -90,7 +91,8 @@ package body org.allbinary.logic.communication.log.LogFormatUtil_Package is
         return stringBuffer;
    end getF;
 
-   function getO (This : in out LogFormatUtil; exception_Id : Java_Object_Access) return Unbounded_String is
+   function getO (This : in out LogFormatUtil; exception_Id_Param : access Java_Object'Class) return Unbounded_String is
+      exception_Id : Java_Object_Access := Java_Object_Access (exception_Id_Param);
       stringBuffer : StringMaker_Access;
       exceptionAsString : Unbounded_String;
    begin
@@ -115,8 +117,8 @@ package body org.allbinary.logic.communication.log.LogFormatUtil_Package is
         end if;
    end getO;
 
-   procedure get (This : in out LogFormatUtil; className : Unbounded_String; functionName : Unbounded_String; specialMessage : Unbounded_String; exception_Id : Java_Object_Access) is
-      Java_Result : constant Unbounded_String := LogFormatUtil'Class (This).get (className, functionName, specialMessage, exception_Id);
+   procedure get (This : in out LogFormatUtil; className : Unbounded_String; functionName : Unbounded_String; specialMessage : Unbounded_String; exception_Id_Param : access Java_Object'Class) is
+      Java_Result : constant Unbounded_String := LogFormatUtil'Class (This).get (className, functionName, specialMessage, exception_Id_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
@@ -136,8 +138,8 @@ package body org.allbinary.logic.communication.log.LogFormatUtil_Package is
       null;
    end getF;
 
-   procedure getO (This : in out LogFormatUtil; exception_Id : Java_Object_Access) is
-      Java_Result : constant Unbounded_String := LogFormatUtil'Class (This).getO (exception_Id);
+   procedure getO (This : in out LogFormatUtil; exception_Id_Param : access Java_Object'Class) is
+      Java_Result : constant Unbounded_String := LogFormatUtil'Class (This).getO (exception_Id_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -22,21 +22,23 @@ package body org.allbinary.game.displayable.canvas.GameCanvasNonBotPaintable_Pac
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out GameCanvasNonBotPaintable'Class; gameCanvas : AllBinaryGameCanvas_Access) is
+   procedure Initialize (This : in out GameCanvasNonBotPaintable'Class; gameCanvas_Param : access AllBinaryGameCanvas'Class) is
+      gameCanvas : AllBinaryGameCanvas_Access := AllBinaryGameCanvas_Access (gameCanvas_Param);
    begin
       Paintable_Package.Initialize (This);
       Initialize_Fields (This);
         This.gameCanvas := gameCanvas;
    end Initialize;
 
-   function Create (gameCanvas : AllBinaryGameCanvas_Access) return GameCanvasNonBotPaintable_Access is
+   function Create (gameCanvas_Param : access AllBinaryGameCanvas'Class) return GameCanvasNonBotPaintable_Access is
       This : constant GameCanvasNonBotPaintable_Access := new GameCanvasNonBotPaintable;
    begin
-      GameCanvasNonBotPaintable_Package.Initialize (This.all, gameCanvas);
+      GameCanvasNonBotPaintable_Package.Initialize (This.all, gameCanvas_Param);
       return This;
    end Create;
 
-   procedure paint (This : in out GameCanvasNonBotPaintable; graphics : Graphics_Access) is
+   procedure paint (This : in out GameCanvasNonBotPaintable; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.gameCanvas.nonBotPaint (graphics);
    end paint;

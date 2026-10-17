@@ -23,17 +23,18 @@ package body org.allbinary.game.displayable.canvas.DemoGameStartupRunnable_Packa
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out DemoGameStartupRunnable'Class; demoCanvas : DemoCanvas_Access) is
+   procedure Initialize (This : in out DemoGameStartupRunnable'Class; demoCanvas_Param : access DemoCanvas'Class) is
+      demoCanvas : DemoCanvas_Access := DemoCanvas_Access (demoCanvas_Param);
    begin
       ABRunnable_Package.Initialize (This);
       Initialize_Fields (This);
         This.demoCanvas := demoCanvas;
    end Initialize;
 
-   function Create (demoCanvas : DemoCanvas_Access) return DemoGameStartupRunnable_Access is
+   function Create (demoCanvas_Param : access DemoCanvas'Class) return DemoGameStartupRunnable_Access is
       This : constant DemoGameStartupRunnable_Access := new DemoGameStartupRunnable;
    begin
-      DemoGameStartupRunnable_Package.Initialize (This.all, demoCanvas);
+      DemoGameStartupRunnable_Package.Initialize (This.all, demoCanvas_Param);
       return This;
    end Create;
 
@@ -53,7 +54,7 @@ package body org.allbinary.game.displayable.canvas.DemoGameStartupRunnable_Packa
                 begin
             This.setRunning (False);
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.RUN, e);
+            This.logUtil.put (commonStrings.EXCEPTION_Id, DemoGameStartupRunnable_Access'(This'Unchecked_Access), commonStrings.RUN, e);
                 end;
         end;
    end run;

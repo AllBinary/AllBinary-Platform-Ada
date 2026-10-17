@@ -43,11 +43,11 @@ package org.apache.commons.fileupload.FileItemUtil_Package is
    function getInstance return FileItemUtil_Access;
    function getString (This : in out FileItemUtil; byteArray : Short_Short_Integer_Array_Access) return Unbounded_String;
    procedure getString (This : in out FileItemUtil; byteArray : Short_Short_Integer_Array_Access);
-   function getString (This : in out FileItemUtil; fileItem : FileItemStream_Access) return Unbounded_String;
-   procedure getString (This : in out FileItemUtil; fileItem : FileItemStream_Access);
-   function getBytes (This : in out FileItemUtil; fileItem : FileItemStream_Access) return Short_Short_Integer_Array_Access;
-   procedure getBytes (This : in out FileItemUtil; fileItem : FileItemStream_Access);
-   procedure write (This : in out FileItemUtil; fileItem : FileItem_Access; file : AbFile_Access);
+   function getString (This : in out FileItemUtil; fileItem_Param : access FileItemStream'Class) return Unbounded_String;
+   procedure getString (This : in out FileItemUtil; fileItem_Param : access FileItemStream'Class);
+   function getBytes (This : in out FileItemUtil; fileItem_Param : access FileItemStream'Class) return Short_Short_Integer_Array_Access;
+   procedure getBytes (This : in out FileItemUtil; fileItem_Param : access FileItemStream'Class);
+   procedure write (This : in out FileItemUtil; fileItem_Param : access FileItem'Class; file_Param : access AbFile'Class);
 
 end org.apache.commons.fileupload.FileItemUtil_Package;
 

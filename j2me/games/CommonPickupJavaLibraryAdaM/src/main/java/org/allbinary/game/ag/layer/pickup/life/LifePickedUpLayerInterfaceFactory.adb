@@ -52,7 +52,8 @@ package body org.allbinary.game.ag.layer.pickup.life.LifePickedUpLayerInterfaceF
    end getInstance;
 
    --  throws Exception
-   procedure process (This : in out LifePickedUpLayerInterfaceFactory; sourceLayerInterface : AllBinaryLayer_Access) is
+   procedure process (This : in out LifePickedUpLayerInterfaceFactory; sourceLayerInterface_Param : access AllBinaryLayer'Class) is
+      sourceLayerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (sourceLayerInterface_Param);
    begin
         This.pool.visit (sourceLayerInterface);
    end process;

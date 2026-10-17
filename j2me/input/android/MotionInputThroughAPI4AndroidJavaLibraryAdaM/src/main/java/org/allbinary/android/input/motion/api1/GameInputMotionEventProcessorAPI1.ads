@@ -50,7 +50,7 @@ package org.allbinary.android.input.motion.api1.GameInputMotionEventProcessorAPI
    procedure Initialize (This : in out GameInputMotionEventProcessorAPI1'Class);
    function Create return GameInputMotionEventProcessorAPI1_Access;
    function getInstance return GameInputMotionEventProcessorAPI1_Access;
-   procedure process (This : in out GameInputMotionEventProcessorAPI1; motionEvent : MotionEvent_Access);
+   procedure process (This : in out GameInputMotionEventProcessorAPI1; motionEvent_Param : access MotionEvent'Class);
 
 end org.allbinary.android.input.motion.api1.GameInputMotionEventProcessorAPI1_Package;
 

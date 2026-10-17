@@ -34,7 +34,10 @@ package body org.allbinary.game.ag.ai.KeyPressesAIFactory_Package is
 
 
    --  throws Exception
-   function getInstance (This : in out KeyPressesAIFactory; hashtable : ABHashtable_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return ArtificialIntelligenceInterface_Access is
+   function getInstance (This : in out KeyPressesAIFactory; hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return ArtificialIntelligenceInterface_Access is
+      hashtable : ABHashtable_Access := ABHashtable_Access (hashtable_Param);
+      ownerLayerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (ownerLayerInterface_Param);
+      gameInput : GameInput_Access := GameInput_Access (gameInput_Param);
       isSingleKeyProcessing : Boolean;
    begin
         isSingleKeyProcessing := InputFeatureFactory_Package.getInstance.isSingleKeyProcessing;
@@ -45,8 +48,8 @@ package body org.allbinary.game.ag.ai.KeyPressesAIFactory_Package is
         end if;
    end getInstance;
 
-   procedure getInstance (This : in out KeyPressesAIFactory; hashtable : ABHashtable_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) is
-      Java_Result : constant ArtificialIntelligenceInterface_Access := KeyPressesAIFactory'Class (This).getInstance (hashtable, ownerLayerInterface, gameInput);
+   procedure getInstance (This : in out KeyPressesAIFactory; hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) is
+      Java_Result : constant ArtificialIntelligenceInterface_Access := KeyPressesAIFactory'Class (This).getInstance (hashtable_Param, ownerLayerInterface_Param, gameInput_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

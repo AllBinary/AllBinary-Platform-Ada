@@ -56,7 +56,7 @@ package body org.allbinary.graphics.CellPositionFactory_Package is
         stringBuffer.appendint (columns);
         stringBuffer.append (To_Unbounded_String (" rows: "));
         stringBuffer.appendint (rows);
-        This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, commonStrings.INIT);
+        This.logUtil.putF (stringBuffer.toString, CellPositionFactory_Access'(This'Unchecked_Access), commonStrings.INIT);
         This.cellPositionArray := new CellPosition_Access_Array_Access_Array'(0 .. (columns) - 1 => new CellPosition_Access_Array'(0 .. (rows) - 1 => null));
         This.columns := columns;
         This.rows := rows;
@@ -78,7 +78,7 @@ package body org.allbinary.graphics.CellPositionFactory_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.put (StringMaker_Package.Create.append (To_Unbounded_String ("columns: ")).appendint (This.getColumns).append (To_Unbounded_String (" rows: ")).appendint (This.getRows).append (To_Unbounded_String (" col: ")).appendint (i_column).append (To_Unbounded_String (" row: ")).appendint (i_row).toString, This'Unchecked_Access, commonStrings.GET_INSTANCE, e);
+            This.logUtil.put (StringMaker_Package.Create.append (To_Unbounded_String ("columns: ")).appendint (This.getColumns).append (To_Unbounded_String (" rows: ")).appendint (This.getRows).append (To_Unbounded_String (" col: ")).appendint (i_column).append (To_Unbounded_String (" row: ")).appendint (i_row).toString, CellPositionFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE, e);
             return This.NONE;
                 end;
         end;

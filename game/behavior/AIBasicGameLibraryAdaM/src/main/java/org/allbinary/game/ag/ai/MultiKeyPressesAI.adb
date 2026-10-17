@@ -23,22 +23,26 @@ package body org.allbinary.game.ag.ai.MultiKeyPressesAI_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out MultiKeyPressesAI'Class; hashtable : ABHashtable_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) is
+   procedure Initialize (This : in out MultiKeyPressesAI'Class; hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) is
+      hashtable : ABHashtable_Access := ABHashtable_Access (hashtable_Param);
+      ownerLayerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (ownerLayerInterface_Param);
+      gameInput : GameInput_Access := GameInput_Access (gameInput_Param);
    begin
         KeyPressesAI_Package.Initialize (This, hashtable, ownerLayerInterface, gameInput);
         Initialize_Fields (This);
         This.update;
    end Initialize;
 
-   function Create (hashtable : ABHashtable_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return MultiKeyPressesAI_Access is
+   function Create (hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return MultiKeyPressesAI_Access is
       This : constant MultiKeyPressesAI_Access := new MultiKeyPressesAI;
    begin
-      MultiKeyPressesAI_Package.Initialize (This.all, hashtable, ownerLayerInterface, gameInput);
+      MultiKeyPressesAI_Package.Initialize (This.all, hashtable_Param, ownerLayerInterface_Param, gameInput_Param);
       return This;
    end Create;
 
    --  throws Exception
-   procedure processAI (This : in out MultiKeyPressesAI; allBinaryLayerManager : AllBinaryLayerManager_Access) is
+   procedure processAI (This : in out MultiKeyPressesAI; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class) is
+      allBinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
    begin
         null;
    end processAI;
@@ -58,14 +62,14 @@ package body org.allbinary.game.ag.ai.MultiKeyPressesAI_Package is
             for index in 0 .. (size) - 1 loop
                 key := keys (index).intValue;
                 if (key) /= (-(1)) then
-                    gameInput.add (This.gameKeyEventFactory.getInstanceForKey (This'Unchecked_Access, key));
+                    gameInput.add (This.gameKeyEventFactory.getInstanceForKey (MultiKeyPressesAI_Access'(This'Unchecked_Access), key));
                 end if;
             end loop;
         else
             for index in 0 .. (size) - 1 loop
                 key := keys (index).intValue;
                 if (key) /= (-(1)) then
-                    gameInput.addForRemoval (This.gameKeyEventFactory.getInstanceForKey (This'Unchecked_Access, key));
+                    gameInput.addForRemoval (This.gameKeyEventFactory.getInstanceForKey (MultiKeyPressesAI_Access'(This'Unchecked_Access), key));
                 end if;
             end loop;
         end if;

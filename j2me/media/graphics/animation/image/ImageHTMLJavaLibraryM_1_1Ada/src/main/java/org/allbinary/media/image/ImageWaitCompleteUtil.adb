@@ -39,7 +39,8 @@ package body org.allbinary.media.image.ImageWaitCompleteUtil_Package is
    end Create;
 
    --  throws Exception
-   procedure waitForImage (This : in out ImageWaitCompleteUtil; image : Image_Access; name : Unbounded_String) is
+   procedure waitForImage (This : in out ImageWaitCompleteUtil; image_Param : access Image'Class; name : Unbounded_String) is
+      image : Image_Access := Image_Access (image_Param);
    begin
         This.timeDelayHelper.setStartTimeTNT;
         This.waitForATime (image, name, This.timeDelayHelper);
@@ -54,7 +55,9 @@ package body org.allbinary.media.image.ImageWaitCompleteUtil_Package is
    end handleTimeout;
 
    --  throws Exception
-   procedure waitForATime (This : in out ImageWaitCompleteUtil; image : Image_Access; name : Unbounded_String; timeDelayHelper : TimeDelayHelper_Access) is
+   procedure waitForATime (This : in out ImageWaitCompleteUtil; image_Param : access Image'Class; name : Unbounded_String; timeDelayHelper_Param : access TimeDelayHelper'Class) is
+      image : Image_Access := Image_Access (image_Param);
+      timeDelayHelper : TimeDelayHelper_Access := TimeDelayHelper_Access (timeDelayHelper_Param);
       playnImage : PlaynImage_Access;
       playnCoreImage : Image_Access;
    begin
@@ -81,7 +84,7 @@ package body org.allbinary.media.image.ImageWaitCompleteUtil_Package is
         hashtable := GameFeatureImageCacheFactory_Package.getInstance.getHashtableP;
         objectArray := HashtableUtil_Package.getInstance.getKeysAsArray (hashtable);
         size := objectArray'Length;
-        PreLogUtil_Package.put (To_Unbounded_String ("Image Total: ") & Java_Image (size), This'Unchecked_Access, To_Unbounded_String ("waitForAll"));
+        PreLogUtil_Package.put (To_Unbounded_String ("Image Total: ") & Java_Image (size), ImageWaitCompleteUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("waitForAll"));
         for index in 0 .. (size) - 1 loop
             This.waitForATime (Image_Access (hashtable.get (objectArray (index))), Unbounded_String (objectArray (index)), This.allTimeDelayHelper);
         end loop;

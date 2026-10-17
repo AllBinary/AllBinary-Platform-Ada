@@ -44,8 +44,8 @@ package org.allbinary.logic.communication.smtp.configuration.user.event.UserEmai
       userEmailEventConfigurationInterface : UserEmailEventConfigurationInterface_Access;
    end record;
 
-   procedure Initialize (This : in out UserEmailEventConfigurationMapping'Class; userEmailEventConfigurationInterface : UserEmailEventConfigurationInterface_Access);
-   function Create (userEmailEventConfigurationInterface : UserEmailEventConfigurationInterface_Access) return UserEmailEventConfigurationMapping_Access;
+   procedure Initialize (This : in out UserEmailEventConfigurationMapping'Class; userEmailEventConfigurationInterface_Param : access UserEmailEventConfigurationInterface'Class);
+   function Create (userEmailEventConfigurationInterface_Param : access UserEmailEventConfigurationInterface'Class) return UserEmailEventConfigurationMapping_Access;
    function toHashMap (This : in out UserEmailEventConfigurationMapping) return HashMap_Access;
    function getKey (This : in out UserEmailEventConfigurationMapping) return Java_Object_Access;
    function toVector (This : in out UserEmailEventConfigurationMapping) return BasicArrayList_Access;

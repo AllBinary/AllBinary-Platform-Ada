@@ -40,8 +40,8 @@ package org.allbinary.logic.java.anyType.ConstructorUtil_Package is
    function Create return ConstructorUtil_Access;
    function viewAll (myClass : Ada.Tags.Tag; lineBreak : Unbounded_String) return Unbounded_String;
    procedure viewAll (myClass : Ada.Tags.Tag; lineBreak : Unbounded_String);
-   function view (constructor : Constructor_Access; lineBreak : Unbounded_String) return Unbounded_String;
-   procedure view (constructor : Constructor_Access; lineBreak : Unbounded_String);
+   function view (constructor_Param : access Constructor'Class; lineBreak : Unbounded_String) return Unbounded_String;
+   procedure view (constructor_Param : access Constructor'Class; lineBreak : Unbounded_String);
 
 end org.allbinary.logic.java.anyType.ConstructorUtil_Package;
 

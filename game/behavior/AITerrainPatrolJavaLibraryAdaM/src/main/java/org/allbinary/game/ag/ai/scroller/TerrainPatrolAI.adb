@@ -24,7 +24,10 @@ package body org.allbinary.game.ag.ai.scroller.TerrainPatrolAI_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out TerrainPatrolAI'Class; hashtable : ABHashtable_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) is
+   procedure Initialize (This : in out TerrainPatrolAI'Class; hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) is
+      hashtable : ABHashtable_Access := ABHashtable_Access (hashtable_Param);
+      ownerLayerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (ownerLayerInterface_Param);
+      gameInput : GameInput_Access := GameInput_Access (gameInput_Param);
    begin
         PacePatrolAI_Package.Initialize (This, hashtable, ownerLayerInterface, gameInput);
         Initialize_Fields (This);
@@ -32,10 +35,10 @@ package body org.allbinary.game.ag.ai.scroller.TerrainPatrolAI_Package is
         This.terrainEventListener.onTerrainEvent (TerrainEventCircularStaticPool_Package.getInstance.getNext (This.CLIFF));
    end Initialize;
 
-   function Create (hashtable : ABHashtable_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return TerrainPatrolAI_Access is
+   function Create (hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return TerrainPatrolAI_Access is
       This : constant TerrainPatrolAI_Access := new TerrainPatrolAI;
    begin
-      TerrainPatrolAI_Package.Initialize (This.all, hashtable, ownerLayerInterface, gameInput);
+      TerrainPatrolAI_Package.Initialize (This.all, hashtable_Param, ownerLayerInterface_Param, gameInput_Param);
       return This;
    end Create;
 
@@ -62,7 +65,7 @@ package body org.allbinary.game.ag.ai.scroller.TerrainPatrolAI_Package is
             if (angle) = (This.DOWN) then
                 This.nextDirection;
                 if not (This.isFollowLimitedByTerrain) then
-                    This.logUtil.putF (To_Unbounded_String ("Following Limited"), This'Unchecked_Access, To_Unbounded_String ("onTerrainEvent"));
+                    This.logUtil.putF (To_Unbounded_String ("Following Limited"), TerrainPatrolAI_Access'(This'Unchecked_Access), To_Unbounded_String ("onTerrainEvent"));
                     This.isFollowLimitedByTerrain := True;
                 end if;
             end if;

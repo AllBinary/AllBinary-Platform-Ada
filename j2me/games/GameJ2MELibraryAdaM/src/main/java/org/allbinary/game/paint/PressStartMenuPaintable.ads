@@ -67,8 +67,8 @@ package org.allbinary.game.paint.PressStartMenuPaintable_Package is
 
    procedure Initialize (This : in out PressStartMenuPaintable'Class);
    function Create return PressStartMenuPaintable_Access;
-   procedure updateMeasurement (This : in out PressStartMenuPaintable; graphics : Graphics_Access);
-   procedure paint (This : in out PressStartMenuPaintable; graphics : Graphics_Access);
+   procedure updateMeasurement (This : in out PressStartMenuPaintable; graphics_Param : access Graphics'Class);
+   procedure paint (This : in out PressStartMenuPaintable; graphics_Param : access Graphics'Class);
    procedure setFlash (This : in out PressStartMenuPaintable; flash : Boolean);
    function isFlash (This : in out PressStartMenuPaintable) return Boolean;
 

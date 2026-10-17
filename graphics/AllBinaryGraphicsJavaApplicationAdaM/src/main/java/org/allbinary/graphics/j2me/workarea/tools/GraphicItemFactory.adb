@@ -53,7 +53,8 @@ package body org.allbinary.graphics.j2me.workarea.tools.GraphicItemFactory_Packa
    end getInstance;
 
    --  throws Exception
-   function getInstance (This : in out GraphicItemFactory; graphicItemNodeList : BasicArrayList_Access) return HashMap_Access is
+   function getInstance (This : in out GraphicItemFactory; graphicItemNodeList_Param : access BasicArrayList'Class) return HashMap_Access is
+      graphicItemNodeList : BasicArrayList_Access := BasicArrayList_Access (graphicItemNodeList_Param);
       numberOfItems : Integer;
       graphicItemHashMap : HashMap_Access;
       graphicItem : GraphicItemInterface_Access;
@@ -78,8 +79,8 @@ package body org.allbinary.graphics.j2me.workarea.tools.GraphicItemFactory_Packa
       null;
    end getInstance;
 
-   procedure getInstance (This : in out GraphicItemFactory; graphicItemNodeList : BasicArrayList_Access) is
-      Java_Result : constant HashMap_Access := GraphicItemFactory'Class (This).getInstance (graphicItemNodeList);
+   procedure getInstance (This : in out GraphicItemFactory; graphicItemNodeList_Param : access BasicArrayList'Class) is
+      Java_Result : constant HashMap_Access := GraphicItemFactory'Class (This).getInstance (graphicItemNodeList_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

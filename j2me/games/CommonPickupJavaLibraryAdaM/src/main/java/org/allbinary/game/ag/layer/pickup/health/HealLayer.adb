@@ -33,17 +33,19 @@ package body org.allbinary.game.ag.layer.pickup.health.HealLayer_Package is
       return This;
    end Create;
 
-   procedure paint (This : in out HealLayer; graphics : Graphics_Access) is
+   procedure paint (This : in out HealLayer; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         null;
    end paint;
 
-   procedure visit (This : in out HealLayer; healthInterface : HealthInterface_Access) is
+   procedure visit (This : in out HealLayer; healthInterface_Param : access HealthInterface'Class) is
+      healthInterface : HealthInterface_Access := HealthInterface_Access (healthInterface_Param);
    begin
         if healthInterface.isAlive then
             healthInterface.healMax;
         else
-            This.logUtil.putF (To_Unbounded_String ("Heal attempt on dead: Does not currently occur"), This'Unchecked_Access, To_Unbounded_String ("visit"));
+            This.logUtil.putF (To_Unbounded_String ("Heal attempt on dead: Does not currently occur"), HealLayer_Access'(This'Unchecked_Access), To_Unbounded_String ("visit"));
         end if;
    end visit;
 

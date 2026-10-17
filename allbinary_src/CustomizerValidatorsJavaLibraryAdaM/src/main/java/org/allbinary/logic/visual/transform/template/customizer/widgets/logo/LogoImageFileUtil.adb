@@ -24,22 +24,24 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.lo
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out LogoImageFileUtil'Class; imageAbPath : AbPath_Access; imageFile : Unbounded_String) is
+   procedure Initialize (This : in out LogoImageFileUtil'Class; imageAbPath_Param : access AbPath'Class; imageFile : Unbounded_String) is
+      imageAbPath : AbPath_Access := AbPath_Access (imageAbPath_Param);
    begin
       Initialize_Fields (This);
         This.fileName := imageFile;
         This.imageFileAbPath := imageAbPath;
    end Initialize;
 
-   function Create (imageAbPath : AbPath_Access; imageFile : Unbounded_String) return LogoImageFileUtil_Access is
+   function Create (imageAbPath_Param : access AbPath'Class; imageFile : Unbounded_String) return LogoImageFileUtil_Access is
       This : constant LogoImageFileUtil_Access := new LogoImageFileUtil;
    begin
-      LogoImageFileUtil_Package.Initialize (This.all, imageAbPath, imageFile);
+      LogoImageFileUtil_Package.Initialize (This.all, imageAbPath_Param, imageFile);
       return This;
    end Create;
 
    --  throws Exception
-   procedure saveFiles (This : in out LogoImageFileUtil; fileItem : FileItem_Access) is
+   procedure saveFiles (This : in out LogoImageFileUtil; fileItem_Param : access FileItem'Class) is
+      fileItem : FileItem_Access := FileItem_Access (fileItem_Param);
       originalImageFile : AbFile_Access;
    begin
         if (This.fileName) = (Null_Unbounded_String) then

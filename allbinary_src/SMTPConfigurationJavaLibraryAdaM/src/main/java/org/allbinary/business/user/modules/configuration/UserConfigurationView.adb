@@ -22,7 +22,8 @@ package body org.allbinary.business.user.modules.configuration.UserConfiguration
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out UserConfigurationView'Class; node : Node_Access) is
+   procedure Initialize (This : in out UserConfigurationView'Class; node_Param : access Node'Class) is
+      node : Node_Access := Node_Access (node_Param);
       childNodeList : NodeList_Access;
       emailConfigurationNode : Node_Access;
       userEmailConfigurationView : UserEmailConfigurationView_Access;
@@ -47,23 +48,24 @@ package body org.allbinary.business.user.modules.configuration.UserConfiguration
         This.userConfigurationInterface.setTimeLastModified (timeLastModifiedView.getTimeLastModified);
    end Initialize;
 
-   function Create (node : Node_Access) return UserConfigurationView_Access is
+   function Create (node_Param : access Node'Class) return UserConfigurationView_Access is
       This : constant UserConfigurationView_Access := new UserConfigurationView;
    begin
-      UserConfigurationView_Package.Initialize (This.all, node);
+      UserConfigurationView_Package.Initialize (This.all, node_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out UserConfigurationView'Class; userConfigurationInterface : UserConfigurationInterface_Access) is
+   procedure Initialize (This : in out UserConfigurationView'Class; userConfigurationInterface_Param : access UserConfigurationInterface'Class) is
+      userConfigurationInterface : UserConfigurationInterface_Access := UserConfigurationInterface_Access (userConfigurationInterface_Param);
    begin
       Initialize_Fields (This);
         This.userConfigurationInterface := userConfigurationInterface;
    end Initialize;
 
-   function Create (userConfigurationInterface : UserConfigurationInterface_Access) return UserConfigurationView_Access is
+   function Create (userConfigurationInterface_Param : access UserConfigurationInterface'Class) return UserConfigurationView_Access is
       This : constant UserConfigurationView_Access := new UserConfigurationView;
    begin
-      UserConfigurationView_Package.Initialize (This.all, userConfigurationInterface);
+      UserConfigurationView_Package.Initialize (This.all, userConfigurationInterface_Param);
       return This;
    end Create;
 
@@ -73,7 +75,8 @@ package body org.allbinary.business.user.modules.configuration.UserConfiguration
    end getUserConfigurationInterface;
 
    --  throws Exception
-   function toXmlNode (This : in out UserConfigurationView; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out UserConfigurationView; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       node : Node_Access;
       userEmailConfigurationView : UserEmailConfigurationView_Access;
       timeCreatedView : TimeCreatedView_Access;
@@ -89,8 +92,8 @@ package body org.allbinary.business.user.modules.configuration.UserConfiguration
         return node;
    end toXmlNode;
 
-   procedure toXmlNode (This : in out UserConfigurationView; document : Document_Access) is
-      Java_Result : constant Node_Access := UserConfigurationView'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out UserConfigurationView; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := UserConfigurationView'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

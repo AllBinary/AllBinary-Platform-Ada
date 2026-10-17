@@ -38,10 +38,10 @@ package org.allbinary.business.user.modules.admin.store.order.adjust.AdjustOrder
 
    procedure Initialize (This : in out AdjustOrderStoreAdminUser'Class);
    function Create return AdjustOrderStoreAdminUser_Access;
-   procedure Initialize (This : in out AdjustOrderStoreAdminUser'Class; userHashMap : HashMap_Access);
-   function Create (userHashMap : HashMap_Access) return AdjustOrderStoreAdminUser_Access;
-   procedure validateSession (This : in out AdjustOrderStoreAdminUser; weblisketSession : WeblisketSessionInterface_Access);
-   procedure updateSession (This : in out AdjustOrderStoreAdminUser; weblisketSession : WeblisketSessionInterface_Access);
+   procedure Initialize (This : in out AdjustOrderStoreAdminUser'Class; userHashMap_Param : access HashMap'Class);
+   function Create (userHashMap_Param : access HashMap'Class) return AdjustOrderStoreAdminUser_Access;
+   procedure validateSession (This : in out AdjustOrderStoreAdminUser; weblisketSession_Param : access WeblisketSessionInterface'Class);
+   procedure updateSession (This : in out AdjustOrderStoreAdminUser; weblisketSession_Param : access WeblisketSessionInterface'Class);
 
 end org.allbinary.business.user.modules.admin.store.order.adjust.AdjustOrderStoreAdminUser_Package;
 

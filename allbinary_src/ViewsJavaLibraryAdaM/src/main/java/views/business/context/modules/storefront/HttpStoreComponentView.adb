@@ -23,20 +23,21 @@ package body views.business.context.modules.storefront.HttpStoreComponentView_Pa
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out HttpStoreComponentView'Class; transformInfoInterface : TransformInfoInterface_Access) is
+   procedure Initialize (This : in out HttpStoreComponentView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         HttpComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (To_Unbounded_String ("View Name: ") & transformInfoInterface.getName, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+            This.logUtil.putF (To_Unbounded_String ("View Name: ") & transformInfoInterface.getName, HttpStoreComponentView_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
         This.setTransformDocumentInterface (TransformStoreDocumentFactory_Package.getInstance (This.getPageContext, This.getWeblisketSession));
    end Initialize;
 
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return HttpStoreComponentView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return HttpStoreComponentView_Access is
       This : constant HttpStoreComponentView_Access := new HttpStoreComponentView;
    begin
-      HttpStoreComponentView_Package.Initialize (This.all, transformInfoInterface);
+      HttpStoreComponentView_Package.Initialize (This.all, transformInfoInterface_Param);
       return This;
    end Create;
 
@@ -47,7 +48,7 @@ package body views.business.context.modules.storefront.HttpStoreComponentView_Pa
    begin
         begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("view"));
+                This.logUtil.putF (This.commonStrings.START, HttpStoreComponentView_Access'(This'Unchecked_Access), To_Unbounded_String ("view"));
             end if;
             This.toXmlDoc;
             success := XmlDocumentHelper_Package.toString (This.getDoc);
@@ -59,7 +60,7 @@ package body views.business.context.modules.storefront.HttpStoreComponentView_Pa
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("view"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, HttpStoreComponentView_Access'(This'Unchecked_Access), To_Unbounded_String ("view"), e);
             end if;
             Java_Throw (e);
                 end;

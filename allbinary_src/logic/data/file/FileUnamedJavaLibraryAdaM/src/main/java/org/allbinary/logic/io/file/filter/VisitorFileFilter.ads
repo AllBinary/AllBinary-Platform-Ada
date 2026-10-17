@@ -41,12 +41,12 @@ package org.allbinary.logic.io.file.filter.VisitorFileFilter_Package is
       booleanVisitorInterface : VisitorInterface_Access;
    end record;
 
-   procedure Initialize (This : in out VisitorFileFilter'Class; booleanVisitorInterface : VisitorInterface_Access);
-   function Create (booleanVisitorInterface : VisitorInterface_Access) return VisitorFileFilter_Access;
-   function accept_Id (This : in out VisitorFileFilter; file : File_Access) return Boolean;
-   procedure accept_Id (This : in out VisitorFileFilter; file : File_Access);
-   function accept_Id (This : in out VisitorFileFilter; file : AbFile_Access) return Boolean;
-   procedure accept_Id (This : in out VisitorFileFilter; file : AbFile_Access);
+   procedure Initialize (This : in out VisitorFileFilter'Class; booleanVisitorInterface_Param : access VisitorInterface'Class);
+   function Create (booleanVisitorInterface_Param : access VisitorInterface'Class) return VisitorFileFilter_Access;
+   function accept_Id (This : in out VisitorFileFilter; file_Param : access File'Class) return Boolean;
+   procedure accept_Id (This : in out VisitorFileFilter; file_Param : access File'Class);
+   function accept_Id (This : in out VisitorFileFilter; file_Param : access AbFile'Class) return Boolean;
+   procedure accept_Id (This : in out VisitorFileFilter; file_Param : access AbFile'Class);
 
 end org.allbinary.logic.io.file.filter.VisitorFileFilter_Package;
 

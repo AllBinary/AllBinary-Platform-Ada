@@ -71,17 +71,17 @@ package org.allbinary.business.advertisement.Advertisement_Package is
    function getFramedLink (This : in out Advertisement) return Unbounded_String;
    procedure setFramedLink (This : in out Advertisement; framedLink : Unbounded_String);
    function getListPrice (This : in out Advertisement) return Money_Access;
-   procedure setListPrice (This : in out Advertisement; listPrice : Money_Access);
+   procedure setListPrice (This : in out Advertisement; listPrice_Param : access Money'Class);
    function getOurPrice (This : in out Advertisement) return Money_Access;
-   procedure setOurPrice (This : in out Advertisement; ourPrice : Money_Access);
+   procedure setOurPrice (This : in out Advertisement; ourPrice_Param : access Money'Class);
    function getRank (This : in out Advertisement) return Integer;
    procedure setRank (This : in out Advertisement; rank : Integer);
    function getImage (This : in out Advertisement) return AdvertisementImageInterface_Access;
-   procedure setImage (This : in out Advertisement; image : AdvertisementImageInterface_Access);
+   procedure setImage (This : in out Advertisement; image_Param : access AdvertisementImageInterface'Class);
    function getProduct (This : in out Advertisement) return AdvertisementProductInterface_Access;
-   procedure setProduct (This : in out Advertisement; product : AdvertisementProductInterface_Access);
+   procedure setProduct (This : in out Advertisement; product_Param : access AdvertisementProductInterface'Class);
    function getThumbnail (This : in out Advertisement) return AdvertisementThumbnailInterface_Access;
-   procedure setThumbnail (This : in out Advertisement; thumbnail : AdvertisementThumbnailInterface_Access);
+   procedure setThumbnail (This : in out Advertisement; thumbnail_Param : access AdvertisementThumbnailInterface'Class);
    function getDisplayInBrowserContraintsInterface (This : in out Advertisement) return DisplayInBrowserContraintsInterface_Access;
 
 end org.allbinary.business.advertisement.Advertisement_Package;

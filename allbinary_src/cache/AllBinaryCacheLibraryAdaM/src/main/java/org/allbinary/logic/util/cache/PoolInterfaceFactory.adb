@@ -35,13 +35,16 @@ package body org.allbinary.logic.util.cache.PoolInterfaceFactory_Package is
    end Create;
 
    --  throws Exception
-   function getInstance (cacheableInterfaceFactoryInterface : CacheableInterfaceFactoryInterface_Access; poolType : PoolType_Access; cachePolicy : CachePolicy_Access) return PoolInterface_Access is
+   function getInstance (cacheableInterfaceFactoryInterface_Param : access CacheableInterfaceFactoryInterface'Class; poolType_Param : access PoolType'Class; cachePolicy_Param : access CachePolicy'Class) return PoolInterface_Access is
+      cacheableInterfaceFactoryInterface : CacheableInterfaceFactoryInterface_Access := CacheableInterfaceFactoryInterface_Access (cacheableInterfaceFactoryInterface_Param);
+      poolType : PoolType_Access := PoolType_Access (poolType_Param);
+      cachePolicy : CachePolicy_Access := CachePolicy_Access (cachePolicy_Param);
    begin
         Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such PoolType: ") & poolType.toString));
    end getInstance;
 
-   procedure getInstance (cacheableInterfaceFactoryInterface : CacheableInterfaceFactoryInterface_Access; poolType : PoolType_Access; cachePolicy : CachePolicy_Access) is
-      Java_Result : constant PoolInterface_Access := getInstance (cacheableInterfaceFactoryInterface, poolType, cachePolicy);
+   procedure getInstance (cacheableInterfaceFactoryInterface_Param : access CacheableInterfaceFactoryInterface'Class; poolType_Param : access PoolType'Class; cachePolicy_Param : access CachePolicy'Class) is
+      Java_Result : constant PoolInterface_Access := getInstance (cacheableInterfaceFactoryInterface_Param, poolType_Param, cachePolicy_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

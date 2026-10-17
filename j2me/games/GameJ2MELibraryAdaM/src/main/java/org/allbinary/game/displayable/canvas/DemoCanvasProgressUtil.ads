@@ -42,8 +42,8 @@ package org.allbinary.game.displayable.canvas.DemoCanvasProgressUtil_Package is
 
    procedure Initialize (This : in out DemoCanvasProgressUtil'Class);
    function Create return DemoCanvasProgressUtil_Access;
-   procedure showProgress (demoCanvas : DemoCanvas_Access);
-   procedure showProgressOptionallyInTheBackground (demoCanvas : DemoCanvas_Access; background : Boolean);
+   procedure showProgress (demoCanvas_Param : access DemoCanvas'Class);
+   procedure showProgressOptionallyInTheBackground (demoCanvas_Param : access DemoCanvas'Class; background : Boolean);
 
 end org.allbinary.game.displayable.canvas.DemoCanvasProgressUtil_Package;
 

@@ -36,8 +36,8 @@ package org.allbinary.game.layer.capital.HudCapital_Package is
       capitalGraphic : NumberStringHud_Access;
    end record;
 
-   procedure Initialize (This : in out HudCapital'Class; moneyGraphic : NumberStringHud_Access);
-   function Create (moneyGraphic : NumberStringHud_Access) return HudCapital_Access;
+   procedure Initialize (This : in out HudCapital'Class; moneyGraphic_Param : access NumberStringHud'Class);
+   function Create (moneyGraphic_Param : access NumberStringHud'Class) return HudCapital_Access;
    procedure removeMoney (This : in out HudCapital; points : Integer);
    function getTotalMoney (This : in out HudCapital) return Integer;
    procedure addMoney (This : in out HudCapital; points : Integer);

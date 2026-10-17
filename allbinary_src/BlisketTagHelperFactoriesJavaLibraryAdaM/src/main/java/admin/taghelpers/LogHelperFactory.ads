@@ -43,8 +43,8 @@ package admin.taghelpers.LogHelperFactory_Package is
 
    procedure Initialize (This : in out LogHelperFactory'Class);
    function Create return LogHelperFactory_Access;
-   function getInstance (This : in out LogHelperFactory; hashMap : HashMap_Access; pageContext : PageContext_Access) return Java_Object_Access;
-   procedure getInstance (This : in out LogHelperFactory; hashMap : HashMap_Access; pageContext : PageContext_Access);
+   function getInstance (This : in out LogHelperFactory; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return Java_Object_Access;
+   procedure getInstance (This : in out LogHelperFactory; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
 
 end admin.taghelpers.LogHelperFactory_Package;
 

@@ -57,17 +57,18 @@ package body org.allbinary.data.tables.generator.IdGeneratorEntity_Package is
         return Long_Long_Integer'Value (To_String (value_Case));
    end get;
 
-   procedure insert (This : in out IdGeneratorEntity; values : BasicArrayList_Access) is
+   procedure insert (This : in out IdGeneratorEntity; values_Param : access BasicArrayList'Class) is
+      values : BasicArrayList_Access := BasicArrayList_Access (values_Param);
    begin
         begin
             AbSqlBean (This).insert (values);
-            This.logUtil.putF (This.commonStrings.SUCCESS, This'Unchecked_Access, INSERT);
+            This.logUtil.putF (This.commonStrings.SUCCESS, IdGeneratorEntity_Access'(This'Unchecked_Access), INSERT);
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, INSERT, e);
+            This.logUtil.put (This.commonStrings.FAILURE, IdGeneratorEntity_Access'(This'Unchecked_Access), INSERT, e);
                 end;
         end;
    end insert;
@@ -76,13 +77,13 @@ package body org.allbinary.data.tables.generator.IdGeneratorEntity_Package is
    begin
         begin
             AbSqlBean (This).deleteWhere (This.NAME, value_Case);
-            This.logUtil.putF (This.commonStrings.SUCCESS, This'Unchecked_Access, This.commonStrings.delete);
+            This.logUtil.putF (This.commonStrings.SUCCESS, IdGeneratorEntity_Access'(This'Unchecked_Access), This.commonStrings.delete);
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, This.commonStrings.delete, e);
+            This.logUtil.put (This.commonStrings.FAILURE, IdGeneratorEntity_Access'(This'Unchecked_Access), This.commonStrings.delete, e);
                 end;
         end;
    end delete;
@@ -96,7 +97,8 @@ package body org.allbinary.data.tables.generator.IdGeneratorEntity_Package is
         This.update (map);
    end update;
 
-   procedure update (This : in out IdGeneratorEntity; hashMap : HashMap_Access) is
+   procedure update (This : in out IdGeneratorEntity; hashMap_Param : access HashMap'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
    begin
         AbSqlBean (This).updateWhere (This.NAME, Unbounded_String (hashMap.get (This.NAME)), hashMap);
    end update;

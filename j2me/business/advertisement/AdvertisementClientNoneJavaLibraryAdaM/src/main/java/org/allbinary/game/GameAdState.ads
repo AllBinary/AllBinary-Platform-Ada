@@ -41,9 +41,9 @@ package org.allbinary.game.GameAdState_Package is
 
    type GameAdState is new GameAdStateBase and VirtualKeyboardEventListenerInterface with null record;
 
-   procedure Initialize (This : in out GameAdState'Class; adConfiguration : AdConfiguration_Access);
-   function Create (adConfiguration : AdConfiguration_Access) return GameAdState_Access;
-   procedure onVirtualKeyboardEvent (This : in out GameAdState; virtualKeyboardEvent : VirtualKeyboardEvent_Access);
+   procedure Initialize (This : in out GameAdState'Class; adConfiguration_Param : access AdConfiguration'Class);
+   function Create (adConfiguration_Param : access AdConfiguration'Class) return GameAdState_Access;
+   procedure onVirtualKeyboardEvent (This : in out GameAdState; virtualKeyboardEvent_Param : access VirtualKeyboardEvent'Class);
 
 end org.allbinary.game.GameAdState_Package;
 

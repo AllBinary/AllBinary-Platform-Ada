@@ -22,17 +22,18 @@ package body org.allbinary.game.displayable.canvas.InitGameProcessor_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out InitGameProcessor'Class; gameCanvas : AllBinaryGameCanvas_Access) is
+   procedure Initialize (This : in out InitGameProcessor'Class; gameCanvas_Param : access AllBinaryGameCanvas'Class) is
+      gameCanvas : AllBinaryGameCanvas_Access := AllBinaryGameCanvas_Access (gameCanvas_Param);
    begin
       Processor_Package.Initialize (This);
       Initialize_Fields (This);
         This.gameCanvas := gameCanvas;
    end Initialize;
 
-   function Create (gameCanvas : AllBinaryGameCanvas_Access) return InitGameProcessor_Access is
+   function Create (gameCanvas_Param : access AllBinaryGameCanvas'Class) return InitGameProcessor_Access is
       This : constant InitGameProcessor_Access := new InitGameProcessor;
    begin
-      InitGameProcessor_Package.Initialize (This.all, gameCanvas);
+      InitGameProcessor_Package.Initialize (This.all, gameCanvas_Param);
       return This;
    end Create;
 

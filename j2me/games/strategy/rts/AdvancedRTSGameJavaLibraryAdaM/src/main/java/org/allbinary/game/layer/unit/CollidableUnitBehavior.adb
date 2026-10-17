@@ -37,7 +37,9 @@ package body org.allbinary.game.layer.unit.CollidableUnitBehavior_Package is
    end Create;
 
    --  throws Exception
-   procedure collideNone (This : in out CollidableUnitBehavior; ownerLayer : CollidableCompositeLayer_Access; collidableInterfaceCompositeInterface : CollidableCompositeLayer_Access) is
+   procedure collideNone (This : in out CollidableUnitBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableCompositeLayer'Class) is
+      ownerLayer : CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (ownerLayer_Param);
+      collidableInterfaceCompositeInterface : CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (collidableInterfaceCompositeInterface_Param);
       rtsLayer : AdvancedRTSGameLayer_Access;
    begin
         This.chase (ownerLayer, collidableInterfaceCompositeInterface);
@@ -48,7 +50,9 @@ package body org.allbinary.game.layer.unit.CollidableUnitBehavior_Package is
    end collideNone;
 
    --  throws Exception
-   function steer (This : in out CollidableUnitBehavior; ownerLayer : CollidableCompositeLayer_Access; collidableInterfaceCompositeInterface : CollidableCompositeLayer_Access) return Boolean is
+   function steer (This : in out CollidableUnitBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableCompositeLayer'Class) return Boolean is
+      ownerLayer : CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (ownerLayer_Param);
+      collidableInterfaceCompositeInterface : CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (collidableInterfaceCompositeInterface_Param);
       ownerUnitLayer : UnitLayer_Access;
       unitLayer : UnitLayer_Access;
       angleInfo2 : AngleInfo_Access;
@@ -70,7 +74,9 @@ package body org.allbinary.game.layer.unit.CollidableUnitBehavior_Package is
    end steer;
 
    --  throws Exception
-   procedure chase (This : in out CollidableUnitBehavior; ownerLayer : CollidableCompositeLayer_Access; collidableInterfaceCompositeInterface : CollidableCompositeLayer_Access) is
+   procedure chase (This : in out CollidableUnitBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableCompositeLayer'Class) is
+      ownerLayer : CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (ownerLayer_Param);
+      collidableInterfaceCompositeInterface : CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (collidableInterfaceCompositeInterface_Param);
       rtsLayer : AdvancedRTSGameLayer_Access;
       ownerUnitLayer : UnitLayer_Access;
       list : BasicArrayList_Access;
@@ -89,7 +95,9 @@ package body org.allbinary.game.layer.unit.CollidableUnitBehavior_Package is
    end chase;
 
    --  throws Exception
-   procedure collideUnit (This : in out CollidableUnitBehavior; ownerLayer : CollidableCompositeLayer_Access; unitLayer : UnitLayer_Access) is
+   procedure collideUnit (This : in out CollidableUnitBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; unitLayer_Param : access UnitLayer'Class) is
+      ownerLayer : CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (ownerLayer_Param);
+      unitLayer : UnitLayer_Access := UnitLayer_Access (unitLayer_Param);
       ownerUnitLayer : UnitLayer_Access;
       partialPositionList : BasicArrayList_Access;
       geographicMapCompositeInterface : GeographicMapCompositeInterface_Access;
@@ -150,8 +158,8 @@ package body org.allbinary.game.layer.unit.CollidableUnitBehavior_Package is
         end if;
    end collideUnit;
 
-   procedure steer (This : in out CollidableUnitBehavior; ownerLayer : CollidableCompositeLayer_Access; collidableInterfaceCompositeInterface : CollidableCompositeLayer_Access) is
-      Java_Result : constant Boolean := CollidableUnitBehavior'Class (This).steer (ownerLayer, collidableInterfaceCompositeInterface);
+   procedure steer (This : in out CollidableUnitBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableCompositeLayer'Class) is
+      Java_Result : constant Boolean := CollidableUnitBehavior'Class (This).steer (ownerLayer_Param, collidableInterfaceCompositeInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
@@ -181,7 +189,8 @@ package body org.allbinary.game.layer.unit.SimpleSteeringVisitor_Package is
    end Create;
 
     
-   function visit (This : in out SimpleSteeringVisitor; anyType : Java_Object_Access) return Java_Object_Access is
+   function visit (This : in out SimpleSteeringVisitor; anyType_Param : access Java_Object'Class) return Java_Object_Access is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
       logUtil : LogUtil_Access;
       ownerLayer : CollidableCompositeLayer_Access;
       allbinaryLayer : CollidableCompositeLayer_Access;
@@ -207,14 +216,14 @@ package body org.allbinary.game.layer.unit.SimpleSteeringVisitor_Package is
                         e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                     begin
                 commonStrings := CommonStrings_Package.getInstance;
-                logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("visit"), e);
+                logUtil.put (commonStrings.EXCEPTION_Id, CollidableUnitBehavior_Access'(This'Unchecked_Access), To_Unbounded_String ("visit"), e);
                 return NullUtil_Package.getInstance.NULL_OBJECT;
                     end;
             end;
    end visit;
 
-   procedure visit (This : in out SimpleSteeringVisitor; anyType : Java_Object_Access) is
-      Java_Result : constant Java_Object_Access := SimpleSteeringVisitor'Class (This).visit (anyType);
+   procedure visit (This : in out SimpleSteeringVisitor; anyType_Param : access Java_Object'Class) is
+      Java_Result : constant Java_Object_Access := SimpleSteeringVisitor'Class (This).visit (anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

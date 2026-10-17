@@ -45,14 +45,16 @@ package body org.allbinary.logic.communication.smtp.queue.BasicEmailQueue_Packag
    end getInstance;
 
    --  throws Exception
-   function offer (This : in out BasicEmailQueue; emailInterface : EmailInterface_Access) return Boolean is
+   function offer (This : in out BasicEmailQueue; emailInterface_Param : access EmailInterface'Class) return Boolean is
+      emailInterface : EmailInterface_Access := EmailInterface_Access (emailInterface_Param);
    begin
         This.offer (Java_Object_Access (emailInterface));
         This.post (emailInterface);
         return True;
    end offer;
 
-   procedure remove (This : in out BasicEmailQueue; emailInterface : EmailInterface_Access) is
+   procedure remove (This : in out BasicEmailQueue; emailInterface_Param : access EmailInterface'Class) is
+      emailInterface : EmailInterface_Access := EmailInterface_Access (emailInterface_Param);
    begin
         This.remove (Java_Object_Access (emailInterface));
    end remove;
@@ -63,7 +65,8 @@ package body org.allbinary.logic.communication.smtp.queue.BasicEmailQueue_Packag
    end remove;
 
    --  throws Exception
-   procedure post (This : in out BasicEmailQueue; emailInterface : EmailInterface_Access) is
+   procedure post (This : in out BasicEmailQueue; emailInterface_Param : access EmailInterface'Class) is
+      emailInterface : EmailInterface_Access := EmailInterface_Access (emailInterface_Param);
    begin
         if This.send (emailInterface) then
             This.remove (emailInterface);
@@ -87,15 +90,16 @@ package body org.allbinary.logic.communication.smtp.queue.BasicEmailQueue_Packag
         end loop;
    end processAllUnsent;
 
-   function send (This : in out BasicEmailQueue; emailInterface : EmailInterface_Access) return Boolean is
+   function send (This : in out BasicEmailQueue; emailInterface_Param : access EmailInterface'Class) return Boolean is
+      emailInterface : EmailInterface_Access := EmailInterface_Access (emailInterface_Param);
    begin
         begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
-                This.logUtil.putF (To_Unbounded_String ("Sending: ") & Java_Image (emailInterface.log), This'Unchecked_Access, To_Unbounded_String ("send"));
+                This.logUtil.putF (To_Unbounded_String ("Sending: ") & Java_Image (emailInterface.log), BasicEmailQueue_Access'(This'Unchecked_Access), To_Unbounded_String ("send"));
             end if;
             Transport_Package.send (emailInterface.getMimeMessage);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
-                This.logUtil.putF (To_Unbounded_String ("Email Send Debug: ") & Java_Image (emailInterface.getDebugInfo), This'Unchecked_Access, To_Unbounded_String ("send"));
+                This.logUtil.putF (To_Unbounded_String ("Email Send Debug: ") & Java_Image (emailInterface.getDebugInfo), BasicEmailQueue_Access'(This'Unchecked_Access), To_Unbounded_String ("send"));
             end if;
             return True;
         exception
@@ -104,22 +108,22 @@ package body org.allbinary.logic.communication.smtp.queue.BasicEmailQueue_Packag
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
-                This.logUtil.put (To_Unbounded_String ("Failed Email Send Debug: ") & Java_Image (emailInterface.getDebugInfo), This'Unchecked_Access, To_Unbounded_String ("send"), e);
+                This.logUtil.put (To_Unbounded_String ("Failed Email Send Debug: ") & Java_Image (emailInterface.getDebugInfo), BasicEmailQueue_Access'(This'Unchecked_Access), To_Unbounded_String ("send"), e);
             end if;
             return False;
                 end;
         end;
    end send;
 
-   procedure offer (This : in out BasicEmailQueue; emailInterface : EmailInterface_Access) is
-      Java_Result : constant Boolean := BasicEmailQueue'Class (This).offer (emailInterface);
+   procedure offer (This : in out BasicEmailQueue; emailInterface_Param : access EmailInterface'Class) is
+      Java_Result : constant Boolean := BasicEmailQueue'Class (This).offer (emailInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end offer;
 
-   procedure send (This : in out BasicEmailQueue; emailInterface : EmailInterface_Access) is
-      Java_Result : constant Boolean := BasicEmailQueue'Class (This).send (emailInterface);
+   procedure send (This : in out BasicEmailQueue; emailInterface_Param : access EmailInterface'Class) is
+      Java_Result : constant Boolean := BasicEmailQueue'Class (This).send (emailInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

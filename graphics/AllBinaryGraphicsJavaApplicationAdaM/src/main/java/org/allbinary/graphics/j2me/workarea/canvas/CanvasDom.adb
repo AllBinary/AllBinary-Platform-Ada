@@ -26,7 +26,8 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CanvasDom'Class; canvasNode : Node_Access) is
+   procedure Initialize (This : in out CanvasDom'Class; canvasNode_Param : access Node'Class) is
+      canvasNode : Node_Access := Node_Access (canvasNode_Param);
       name : Unbounded_String;
       angleNode : Node_Access;
       angleTextNode : Node_Access;
@@ -100,14 +101,15 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package is
         end if;
    end Initialize;
 
-   function Create (canvasNode : Node_Access) return CanvasDom_Access is
+   function Create (canvasNode_Param : access Node'Class) return CanvasDom_Access is
       This : constant CanvasDom_Access := new CanvasDom;
    begin
-      CanvasDom_Package.Initialize (This.all, canvasNode);
+      CanvasDom_Package.Initialize (This.all, canvasNode_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out CanvasDom'Class; canvasJPanel : CanvasJPanel_Access) is
+   procedure Initialize (This : in out CanvasDom'Class; canvasJPanel_Param : access CanvasJPanel'Class) is
+      canvasJPanel : CanvasJPanel_Access := CanvasJPanel_Access (canvasJPanel_Param);
    begin
       Initialize_Fields (This);
         This.angle := canvasJPanel.getAngle;
@@ -117,10 +119,10 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package is
         This.angle := canvasJPanel.getAngle;
    end Initialize;
 
-   function Create (canvasJPanel : CanvasJPanel_Access) return CanvasDom_Access is
+   function Create (canvasJPanel_Param : access CanvasJPanel'Class) return CanvasDom_Access is
       This : constant CanvasDom_Access := new CanvasDom;
    begin
-      CanvasDom_Package.Initialize (This.all, canvasJPanel);
+      CanvasDom_Package.Initialize (This.all, canvasJPanel_Param);
       return This;
    end Create;
 
@@ -151,7 +153,8 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package is
         This.grid_Case.grid_Case := PointFactory_Package.getInstance.createXY (gridX, gridY);
    end setGrid;
 
-   function getPointNode (This : in out CanvasDom; point : GPoint_Access; pointName : Unbounded_String) return Node_Access is
+   function getPointNode (This : in out CanvasDom; point_Param : access GPoint'Class; pointName : Unbounded_String) return Node_Access is
+      point : GPoint_Access := GPoint_Access (point_Param);
       document : Document_Access;
       pointNode : Node_Access;
       xNode : Node_Access;
@@ -242,7 +245,7 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package is
             item := GraphicItemInterface_Access (This.graphicItemHashMap.get (graphicItemArray (index)));
             if (item.getName) = (LinesGraphicItem_Package.getStaticName) then
                 if item.isValid then
-                    graphicItemNode.appendChild (item.toDom (This'Unchecked_Access));
+                    graphicItemNode.appendChild (item.toDom (CanvasDom_Access'(This'Unchecked_Access)));
                 end if;
             end if;
         end loop;
@@ -255,7 +258,8 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package is
         return This.dimension;
    end getDimension;
 
-   procedure setDimension (This : in out CanvasDom; dimension : IntegerDimension_Access) is
+   procedure setDimension (This : in out CanvasDom; dimension_Param : access IntegerDimension'Class) is
+      dimension : IntegerDimension_Access := IntegerDimension_Access (dimension_Param);
    begin
         This.dimension := dimension;
    end setDimension;
@@ -265,8 +269,8 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package is
         return This.grid_Case;
    end getGrid;
 
-   procedure getPointNode (This : in out CanvasDom; point : GPoint_Access; pointName : Unbounded_String) is
-      Java_Result : constant Node_Access := CanvasDom'Class (This).getPointNode (point, pointName);
+   procedure getPointNode (This : in out CanvasDom; point_Param : access GPoint'Class; pointName : Unbounded_String) is
+      Java_Result : constant Node_Access := CanvasDom'Class (This).getPointNode (point_Param, pointName);
       pragma Unreferenced (Java_Result);
    begin
       null;

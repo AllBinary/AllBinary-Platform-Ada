@@ -38,17 +38,25 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
         return ImageModifierUtil_Package.instance;
    end getInstanceOrCreate;
 
-   procedure setColor (This : in out ImageModifierUtil; unusedOriginalImage : Image_Access; image : Image_Access; imageIndex : Integer; basicColor : BasicColor_Access) is
+   procedure setColor (This : in out ImageModifierUtil; unusedOriginalImage_Param : access Image'Class; image_Param : access Image'Class; imageIndex : Integer; basicColor_Param : access BasicColor'Class) is
+      unusedOriginalImage : Image_Access := Image_Access (unusedOriginalImage_Param);
+      image : Image_Access := Image_Access (image_Param);
+      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         null;
    end setColor;
 
-   procedure changeColor (This : in out ImageModifierUtil; unusedOriginalImage : Image_Access; image : Image_Access; imageIndex : Integer; basicColor : BasicColor_Access) is
+   procedure changeColor (This : in out ImageModifierUtil; unusedOriginalImage_Param : access Image'Class; image_Param : access Image'Class; imageIndex : Integer; basicColor_Param : access BasicColor'Class) is
+      unusedOriginalImage : Image_Access := Image_Access (unusedOriginalImage_Param);
+      image : Image_Access := Image_Access (image_Param);
+      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         null;
    end changeColor;
 
-   procedure setAlpha (This : in out ImageModifierUtil; originalImage : Image_Access; image : Image_Access; imageIndex : Integer; alphaInt : Integer) is
+   procedure setAlpha (This : in out ImageModifierUtil; originalImage_Param : access Image'Class; image_Param : access Image'Class; imageIndex : Integer; alphaInt : Integer) is
+      originalImage : Image_Access := Image_Access (originalImage_Param);
+      image : Image_Access := Image_Access (image_Param);
    begin
         null;
    end setAlpha;
@@ -58,7 +66,8 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
         return originalImageArray;
    end getImageArray;
 
-   procedure handleImage (This : in out ImageModifierUtil; imageArray : Image_Access_Array_Access; index : Integer; image : Image_Access) is
+   procedure handleImage (This : in out ImageModifierUtil; imageArray : Image_Access_Array_Access; index : Integer; image_Param : access Image'Class) is
+      image : Image_Access := Image_Access (image_Param);
    begin
         null;
    end handleImage;

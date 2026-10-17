@@ -45,8 +45,8 @@ package org.allbinary.business.user.role.UserRoleB_Package is
    type UserRoleB is new UserRole with null record;
    roleVector : BasicArrayList_Access;
 
-   procedure Initialize (This : in out UserRoleB'Class; aBasicUserRole : BasicUserRole_Access; aUserFactoryInterface : UserFactoryInterface_Access);
-   function Create (aBasicUserRole : BasicUserRole_Access; aUserFactoryInterface : UserFactoryInterface_Access) return UserRoleB_Access;
+   procedure Initialize (This : in out UserRoleB'Class; aBasicUserRole_Param : access BasicUserRole'Class; aUserFactoryInterface_Param : access UserFactoryInterface'Class);
+   function Create (aBasicUserRole_Param : access BasicUserRole'Class; aUserFactoryInterface_Param : access UserFactoryInterface'Class) return UserRoleB_Access;
    function getRole (role : Unbounded_String) return UserRole_Access;
    procedure getRole (role : Unbounded_String);
    function getAll return BasicArrayList_Access;

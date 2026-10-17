@@ -41,7 +41,9 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoObjectFactor
    end Create;
 
    --  throws Exception
-   function getInstance (This : in out TransformInfoObjectFactory; abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access) return TransformInterface_Access is
+   function getInstance (This : in out TransformInfoObjectFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) return TransformInterface_Access is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
       commonStrings : CommonStrings_Access;
       params : Java_Object_Access_Array_Access;
       classes : Ada_Tags_Tag_Array_Access;
@@ -52,7 +54,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoObjectFactor
         begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORY) then
                 commonStrings := CommonStrings_Package.getInstance;
-                This.logUtil.putF (To_Unbounded_String ("Creating View: ") & transformInfoInterface.getName, This'Unchecked_Access, commonStrings.GET_INSTANCE);
+                This.logUtil.putF (To_Unbounded_String ("Creating View: ") & transformInfoInterface.getName, TransformInfoObjectFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);
             end if;
             params := new Java_Object_Access_Array'(0 .. (1) - 1 => null);
             classes := new Ada_Tags_Tag_Array'(0 .. (1) - 1 => null);
@@ -83,15 +85,15 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoObjectFactor
             end if;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORYERROR) then
                 commonStrings := CommonStrings_Package.getInstance;
-                This.logUtil.put (error, This'Unchecked_Access, commonStrings.GET_INSTANCE, e);
+                This.logUtil.put (error, TransformInfoObjectFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE, e);
             end if;
             Java_Throw (e);
                 end;
         end;
    end getInstance;
 
-   procedure getInstance (This : in out TransformInfoObjectFactory; abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access) is
-      Java_Result : constant TransformInterface_Access := TransformInfoObjectFactory'Class (This).getInstance (abeClientInformation, transformInfoInterface);
+   procedure getInstance (This : in out TransformInfoObjectFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+      Java_Result : constant TransformInterface_Access := TransformInfoObjectFactory'Class (This).getInstance (abeClientInformation_Param, transformInfoInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

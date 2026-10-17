@@ -60,8 +60,8 @@ package org.allbinary.java.runtime.process.git.GitProcessHelper_Package is
    procedure trackedFiles (This : in out GitProcessHelper; rootAsString : Unbounded_String; pathspec : Unbounded_String);
    function trackedFiles (This : in out GitProcessHelper; rootAsString : Unbounded_String; pathspec : Unbounded_String; suffix : Unbounded_String) return List_Access;
    procedure trackedFiles (This : in out GitProcessHelper; rootAsString : Unbounded_String; pathspec : Unbounded_String; suffix : Unbounded_String);
-   function isTracked (This : in out GitProcessHelper; file : AbFile_Access) return Boolean;
-   procedure isTracked (This : in out GitProcessHelper; file : AbFile_Access);
+   function isTracked (This : in out GitProcessHelper; file_Param : access AbFile'Class) return Boolean;
+   procedure isTracked (This : in out GitProcessHelper; file_Param : access AbFile'Class);
 
 end org.allbinary.java.runtime.process.git.GitProcessHelper_Package;
 

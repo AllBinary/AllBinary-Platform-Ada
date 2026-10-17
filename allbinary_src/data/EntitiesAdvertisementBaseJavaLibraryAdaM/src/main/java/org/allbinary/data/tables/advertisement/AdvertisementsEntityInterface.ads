@@ -36,8 +36,8 @@ package org.allbinary.data.tables.advertisement.AdvertisementsEntityInterface_Pa
    type AdvertisementsEntityInterface_Access_Array is array (Natural range <>) of AdvertisementsEntityInterface_Access;
    type AdvertisementsEntityInterface_Access_Array_Access is access all AdvertisementsEntityInterface_Access_Array;
    procedure delete (This : in out AdvertisementsEntityInterface; value : Unbounded_String) is abstract;
-   procedure insert (This : in out AdvertisementsEntityInterface; values : BasicArrayList_Access) is abstract;
-   procedure update (This : in out AdvertisementsEntityInterface; updatedValues : HashMap_Access) is abstract;
+   procedure insert (This : in out AdvertisementsEntityInterface; values_Param : access BasicArrayList'Class) is abstract;
+   procedure update (This : in out AdvertisementsEntityInterface; updatedValues_Param : access HashMap'Class) is abstract;
 
 end org.allbinary.data.tables.advertisement.AdvertisementsEntityInterface_Package;
 

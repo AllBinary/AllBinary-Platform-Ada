@@ -55,7 +55,7 @@ package org.allbinary.business.init.LicenseInitInfo_Package is
    procedure setServer (This : in out LicenseInitInfo; value : Unbounded_String; index : Integer);
    procedure addServer (This : in out LicenseInitInfo; value : Unbounded_String);
    function getServerList (This : in out LicenseInitInfo) return BasicArrayList_Access;
-   procedure setServerList (This : in out LicenseInitInfo; servers : BasicArrayList_Access);
+   procedure setServerList (This : in out LicenseInitInfo; servers_Param : access BasicArrayList'Class);
 
 end org.allbinary.business.init.LicenseInitInfo_Package;
 

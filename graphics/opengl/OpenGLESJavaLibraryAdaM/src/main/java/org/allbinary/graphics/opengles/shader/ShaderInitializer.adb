@@ -39,13 +39,14 @@ package body org.allbinary.graphics.opengles.shader.ShaderInitializer_Package is
         return ShaderInitializer_Package.instance;
    end getInstance;
 
-   function init (This : in out ShaderInitializer; gl : GL10_Access; shader : Shader_Access_Array_Access; attributeArray : Unbounded_String_Array_Access) return Integer is
+   function init (This : in out ShaderInitializer; gl_Param : access GL10'Class; shader : Shader_Access_Array_Access; attributeArray : Unbounded_String_Array_Access) return Integer is
+      gl : GL10_Access := GL10_Access (gl_Param);
    begin
         return -(1);
    end init;
 
-   procedure init (This : in out ShaderInitializer; gl : GL10_Access; shader : Shader_Access_Array_Access; attributeArray : Unbounded_String_Array_Access) is
-      Java_Result : constant Integer := ShaderInitializer'Class (This).init (gl, shader, attributeArray);
+   procedure init (This : in out ShaderInitializer; gl_Param : access GL10'Class; shader : Shader_Access_Array_Access; attributeArray : Unbounded_String_Array_Access) is
+      Java_Result : constant Integer := ShaderInitializer'Class (This).init (gl_Param, shader, attributeArray);
       pragma Unreferenced (Java_Result);
    begin
       null;

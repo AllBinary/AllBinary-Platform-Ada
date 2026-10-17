@@ -34,7 +34,8 @@ package body org.allbinary.thread.ABRunnable_Package is
    end Create;
 
 
-   procedure setThread (This : in out ABRunnable; thread : Thread_Access) is
+   procedure setThread (This : in out ABRunnable; thread_Param : access Thread'Class) is
+      thread : Thread_Access := Thread_Access (thread_Param);
    begin
         null;
    end setThread;

@@ -42,7 +42,8 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.lo
       return This;
    end Create;
 
-   procedure Initialize (This : in out LogoValidation'Class; node : Node_Access) is
+   procedure Initialize (This : in out LogoValidation'Class; node_Param : access Node'Class) is
+      node : Node_Access := Node_Access (node_Param);
    begin
       Validation_Package.Initialize (This);
       Initialize_Fields (This);
@@ -51,14 +52,15 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.lo
         This.logoFile := DomSearchHelper_Package.getNode (LogoData_Package.getInstance.IMAGEFILENAME, node.getChildNodes).getNodeValue;
    end Initialize;
 
-   function Create (node : Node_Access) return LogoValidation_Access is
+   function Create (node_Param : access Node'Class) return LogoValidation_Access is
       This : constant LogoValidation_Access := new LogoValidation;
    begin
-      LogoValidation_Package.Initialize (This.all, node);
+      LogoValidation_Package.Initialize (This.all, node_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out LogoValidation'Class; hashMap : HashMap_Access) is
+   procedure Initialize (This : in out LogoValidation'Class; hashMap_Param : access HashMap'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
    begin
       Validation_Package.Initialize (This);
       Initialize_Fields (This);
@@ -66,15 +68,16 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.lo
         This.getFormData (hashMap);
    end Initialize;
 
-   function Create (hashMap : HashMap_Access) return LogoValidation_Access is
+   function Create (hashMap_Param : access HashMap'Class) return LogoValidation_Access is
       This : constant LogoValidation_Access := new LogoValidation;
    begin
-      LogoValidation_Package.Initialize (This.all, hashMap);
+      LogoValidation_Package.Initialize (This.all, hashMap_Param);
       return This;
    end Create;
 
    --  throws Exception
-   procedure getFormData (This : in out LogoValidation; hashMap : HashMap_Access) is
+   procedure getFormData (This : in out LogoValidation; hashMap_Param : access HashMap'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
       stringBuffer : StringMaker_Access;
    begin
         This.logoFileItem := FileItem_Access (hashMap.get (LogoData_Package.getInstance.IMAGE));
@@ -88,7 +91,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.lo
             stringBuffer.append (hashMap.toString);
             stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "LogoFileName: "));
             stringBuffer.append (This.logoFile);
-            This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("getFormData()"));
+            This.logUtil.putF (stringBuffer.toString, LogoValidation_Access'(This'Unchecked_Access), To_Unbounded_String ("getFormData()"));
         end if;
    end getFormData;
 
@@ -100,17 +103,17 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.lo
             valid := True;
             fileData := FileData_Package.getInstance;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (To_Unbounded_String ("LogoValidation"), This'Unchecked_Access, This.commonStrings.IS_VALID);
+                This.logUtil.putF (To_Unbounded_String ("LogoValidation"), LogoValidation_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
             end if;
             if not (StringValidationUtil_Package.getInstance.isValidRequired (This.logoAbPath.toString, 0, 512)) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                    This.logUtil.putF (To_Unbounded_String ("logoPath is invalid: ") & This.logoAbPath.toString, This'Unchecked_Access, This.commonStrings.IS_VALID);
+                    This.logUtil.putF (To_Unbounded_String ("logoPath is invalid: ") & This.logoAbPath.toString, LogoValidation_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
                 end if;
                 return False;
             end if;
             if not (StringValidationUtil_Package.getInstance.isValidRequired (This.logoFile, fileData.MINLEN, fileData.MAXLEN)) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                    This.logUtil.putF (To_Unbounded_String ("logoFile is invalid: ") & This.logoFile, This'Unchecked_Access, This.commonStrings.IS_VALID);
+                    This.logUtil.putF (To_Unbounded_String ("logoFile is invalid: ") & This.logoFile, LogoValidation_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
                 end if;
                 return False;
             end if;
@@ -120,13 +123,13 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.lo
                 end if;
                 if ((This.logoFileItem.getSize) > (fileData.MAXIMAGEFILESIZE)) or else ((This.logoFileItem.getSize) < (fileData.MINIMAGEFILESIZE)) then
                     if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                        This.logUtil.putF (To_Unbounded_String ("Image File Is Not The Right Size. ") & Java_Image (fileData.MINIMAGEFILESIZE) & To_Unbounded_String ("< > ") & Java_Image (fileData.MAXIMAGEFILESIZE), This'Unchecked_Access, This.commonStrings.IS_VALID);
+                        This.logUtil.putF (To_Unbounded_String ("Image File Is Not The Right Size. ") & Java_Image (fileData.MINIMAGEFILESIZE) & To_Unbounded_String ("< > ") & Java_Image (fileData.MAXIMAGEFILESIZE), LogoValidation_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
                     end if;
                     return False;
                 end if;
             end if;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (To_Unbounded_String ("Logo Validation: ") & Java_Image (valid), This'Unchecked_Access, This.commonStrings.IS_VALID);
+                This.logUtil.putF (To_Unbounded_String ("Logo Validation: ") & Java_Image (valid), LogoValidation_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
             end if;
             return valid;
         exception
@@ -135,7 +138,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.lo
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to validate form"), This'Unchecked_Access, This.commonStrings.IS_VALID, e);
+                This.logUtil.put (To_Unbounded_String ("Failed to validate form"), LogoValidation_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
             end if;
             return False;
                 end;
@@ -155,7 +158,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.lo
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), This'Unchecked_Access, To_Unbounded_String ("validationInfo()"), e);
+                This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), LogoValidation_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
             end if;
             return To_Unbounded_String ("Error Validating Form");
                 end;
@@ -167,7 +170,8 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.lo
         return null;
    end toValidationInfoDoc;
 
-   function toValidationInfoNode (This : in out LogoValidation; document : Document_Access) return Node_Access is
+   function toValidationInfoNode (This : in out LogoValidation; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
    begin
         return null;
    end toValidationInfoNode;
@@ -190,7 +194,8 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.lo
    end toHashMap;
 
    --  throws Exception
-   function toXmlNode (This : in out LogoValidation; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out LogoValidation; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       hashMap : HashMap_Access;
    begin
         hashMap := This.toHashMap;
@@ -206,20 +211,20 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.lo
             stringBuffer.append (To_Unbounded_String ("Processing logoFile: "));
             stringBuffer.append (This.logoAbPath.toString);
             stringBuffer.append (This.logoFile);
-            This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("processLogoFile()"));
+            This.logUtil.putF (stringBuffer.toString, LogoValidation_Access'(This'Unchecked_Access), To_Unbounded_String ("processLogoFile()"));
         end if;
         LogoImageFileUtil_Package.Create (This.logoAbPath, This.logoFile).saveFiles (This.logoFileItem);
    end processLogoFile;
 
-   procedure toValidationInfoNode (This : in out LogoValidation; document : Document_Access) is
-      Java_Result : constant Node_Access := LogoValidation'Class (This).toValidationInfoNode (document);
+   procedure toValidationInfoNode (This : in out LogoValidation; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := LogoValidation'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toValidationInfoNode;
 
-   procedure toXmlNode (This : in out LogoValidation; document : Document_Access) is
-      Java_Result : constant Node_Access := LogoValidation'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out LogoValidation; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := LogoValidation'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

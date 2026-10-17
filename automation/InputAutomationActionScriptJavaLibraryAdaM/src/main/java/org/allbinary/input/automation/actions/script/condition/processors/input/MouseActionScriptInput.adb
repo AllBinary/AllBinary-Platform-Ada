@@ -25,7 +25,8 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out MouseActionScriptInput'Class; node : Node_Access) is
+   procedure Initialize (This : in out MouseActionScriptInput'Class; node_Param : access Node'Class) is
+      node : Node_Access := Node_Access (node_Param);
       actionNode : Node_Access;
       nodeList : NodeList_Access;
       childNode : Node_Access;
@@ -41,7 +42,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
    begin
         BasicProfileActionScriptInput_Package.Initialize (This, NAME, node);
         Initialize_Fields (This);
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+        This.logUtil.putF (This.commonStrings.START, MouseActionScriptInput_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         This.point := Point_Package.Create;
         actionNode := DomSearchHelper_Package.getNode (MouseActionScriptInputData_Package.NAME, node.getChildNodes);
         if (actionNode) /= (null) then
@@ -68,13 +69,13 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Action Script Input Node Null")));
         end if;
         This.setAllowsChildren (False);
-        This.mouseActionScriptInputJPanel := MouseActionScriptInputJPanel_Package.Create (This'Unchecked_Access);
+        This.mouseActionScriptInputJPanel := MouseActionScriptInputJPanel_Package.Create (MouseActionScriptInput_Access'(This'Unchecked_Access));
    end Initialize;
 
-   function Create (node : Node_Access) return MouseActionScriptInput_Access is
+   function Create (node_Param : access Node'Class) return MouseActionScriptInput_Access is
       This : constant MouseActionScriptInput_Access := new MouseActionScriptInput;
    begin
-      MouseActionScriptInput_Package.Initialize (This.all, node);
+      MouseActionScriptInput_Package.Initialize (This.all, node_Param);
       return This;
    end Create;
 
@@ -84,7 +85,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
         Initialize_Fields (This);
         This.point := Point_Package.Create;
         This.setAllowsChildren (False);
-        This.mouseActionScriptInputJPanel := MouseActionScriptInputJPanel_Package.Create (This'Unchecked_Access);
+        This.mouseActionScriptInputJPanel := MouseActionScriptInputJPanel_Package.Create (MouseActionScriptInput_Access'(This'Unchecked_Access));
    end Initialize;
 
    function Create return MouseActionScriptInput_Access is
@@ -94,7 +95,8 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
       return This;
    end Create;
 
-   procedure setPoint (This : in out MouseActionScriptInput; point : Point_Access) is
+   procedure setPoint (This : in out MouseActionScriptInput; point_Param : access Point'Class) is
+      point : Point_Access := Point_Access (point_Param);
    begin
         This.point := point;
    end setPoint;
@@ -124,12 +126,13 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
    begin
         hashMap := StdUtil_Package.getInstance.createHashMap;
         hashMap.put (MouseActionScriptInputData_Package.BUTTONS, To_Unbounded_String (Java_Image (This.getButtonClicks)));
-        This.logUtil.putF (To_Unbounded_String ("HashMap: ") & hashMap.toString, This'Unchecked_Access, To_Unbounded_String ("toHashMap()"));
+        This.logUtil.putF (To_Unbounded_String ("HashMap: ") & hashMap.toString, MouseActionScriptInput_Access'(This'Unchecked_Access), To_Unbounded_String ("toHashMap()"));
         return hashMap;
    end toHashMap;
 
    --  throws Exception
-   function toXmlNode (This : in out MouseActionScriptInput; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out MouseActionScriptInput; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       node : Node_Access;
       mouseNode : Node_Access;
       hashMap : HashMap_Access;
@@ -147,7 +150,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
    --  throws Exception
    procedure process (This : in out MouseActionScriptInput; frame : Long_Long_Integer) is
    begin
-        MouseInputAutomationProcessor_Package.process (This'Unchecked_Access);
+        MouseInputAutomationProcessor_Package.process (MouseActionScriptInput_Access'(This'Unchecked_Access));
    end process;
 
    procedure log (This : in out MouseActionScriptInput) is
@@ -174,11 +177,11 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
         else
             buttonStringBuffer.append (booleanFactory.FALSE_STRING);
         end if;
-        This.logUtil.putF (To_Unbounded_String ("Input Type: ") & This.getInputRobotInterface.getName & To_Unbounded_String (" Point: ") & Java_Image (This.getPoint) & To_Unbounded_String (" Buttons Clicked: ") & buttonStringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("log"));
+        This.logUtil.putF (To_Unbounded_String ("Input Type: ") & This.getInputRobotInterface.getName & To_Unbounded_String (" Point: ") & Java_Image (This.getPoint) & To_Unbounded_String (" Buttons Clicked: ") & buttonStringBuffer.toString, MouseActionScriptInput_Access'(This'Unchecked_Access), To_Unbounded_String ("log"));
    end log;
 
-   procedure toXmlNode (This : in out MouseActionScriptInput; document : Document_Access) is
-      Java_Result : constant Node_Access := MouseActionScriptInput'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out MouseActionScriptInput; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := MouseActionScriptInput'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

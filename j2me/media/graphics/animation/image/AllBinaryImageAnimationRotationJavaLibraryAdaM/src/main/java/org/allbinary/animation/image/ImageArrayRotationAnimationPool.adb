@@ -21,15 +21,16 @@ package body org.allbinary.animation.image.ImageArrayRotationAnimationPool_Packa
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ImageArrayRotationAnimationPool'Class; cacheableInterfaceFactoryInterface : CacheableInterfaceFactoryInterface_Access) is
+   procedure Initialize (This : in out ImageArrayRotationAnimationPool'Class; cacheableInterfaceFactoryInterface_Param : access CacheableInterfaceFactoryInterface'Class) is
+      cacheableInterfaceFactoryInterface : CacheableInterfaceFactoryInterface_Access := CacheableInterfaceFactoryInterface_Access (cacheableInterfaceFactoryInterface_Param);
    begin
         BasicArrayListResetablePool_Package.Initialize (This, cacheableInterfaceFactoryInterface);
    end Initialize;
 
-   function Create (cacheableInterfaceFactoryInterface : CacheableInterfaceFactoryInterface_Access) return ImageArrayRotationAnimationPool_Access is
+   function Create (cacheableInterfaceFactoryInterface_Param : access CacheableInterfaceFactoryInterface'Class) return ImageArrayRotationAnimationPool_Access is
       This : constant ImageArrayRotationAnimationPool_Access := new ImageArrayRotationAnimationPool;
    begin
-      ImageArrayRotationAnimationPool_Package.Initialize (This.all, cacheableInterfaceFactoryInterface);
+      ImageArrayRotationAnimationPool_Package.Initialize (This.all, cacheableInterfaceFactoryInterface_Param);
       return This;
    end Create;
 
@@ -39,7 +40,8 @@ package body org.allbinary.animation.image.ImageArrayRotationAnimationPool_Packa
    end getInstance;
 
    --  throws Exception
-   function remove (This : in out ImageArrayRotationAnimationPool; key : Java_Object_Access) return CacheableInterface_Access is
+   function remove (This : in out ImageArrayRotationAnimationPool; key_Param : access Java_Object'Class) return CacheableInterface_Access is
+      key : Java_Object_Access := Java_Object_Access (key_Param);
       cacheableInterface : CacheableInterface_Access;
       allBinaryImageRotationAnimationInfo : ImageArrayRotationAnimationInfo_Access;
       imageArrayRotationAnimationCacheable : ImageArrayRotationAnimationCacheable_Access;
@@ -51,8 +53,8 @@ package body org.allbinary.animation.image.ImageArrayRotationAnimationPool_Packa
         return cacheableInterface;
    end remove;
 
-   procedure remove (This : in out ImageArrayRotationAnimationPool; key : Java_Object_Access) is
-      Java_Result : constant CacheableInterface_Access := ImageArrayRotationAnimationPool'Class (This).remove (key);
+   procedure remove (This : in out ImageArrayRotationAnimationPool; key_Param : access Java_Object'Class) is
+      Java_Result : constant CacheableInterface_Access := ImageArrayRotationAnimationPool'Class (This).remove (key_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

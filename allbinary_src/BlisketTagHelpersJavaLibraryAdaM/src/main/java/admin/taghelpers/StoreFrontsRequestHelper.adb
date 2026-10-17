@@ -29,7 +29,9 @@ package body admin.taghelpers.StoreFrontsRequestHelper_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out StoreFrontsRequestHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access) is
+   procedure Initialize (This : in out StoreFrontsRequestHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
    begin
       ModifyTable_Package.Initialize (This);
       Initialize_Fields (This);
@@ -40,10 +42,10 @@ package body admin.taghelpers.StoreFrontsRequestHelper_Package is
         This.getFormData;
    end Initialize;
 
-   function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return StoreFrontsRequestHelper_Access is
+   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return StoreFrontsRequestHelper_Access is
       This : constant StoreFrontsRequestHelper_Access := new StoreFrontsRequestHelper;
    begin
-      StoreFrontsRequestHelper_Package.Initialize (This.all, hashMap, pageContext);
+      StoreFrontsRequestHelper_Package.Initialize (This.all, hashMap_Param, pageContext_Param);
       return This;
    end Create;
 
@@ -64,7 +66,7 @@ package body admin.taghelpers.StoreFrontsRequestHelper_Package is
             hashMapData := This.modifyingStoreFrontInterface.toHashMap;
             StoreFrontsEntityFactory_Package.getInstance.getStoreFrontsEntityInstance.update (hashMapData);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, To_Unbounded_String ("update()"));
+                This.logUtil.putF (success, StoreFrontsRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("update()"));
             end if;
             return success;
         exception
@@ -74,7 +76,7 @@ package body admin.taghelpers.StoreFrontsRequestHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to update storefronts table");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("update()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, StoreFrontsRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("update()"), e);
             end if;
             return error;
                 end;
@@ -135,7 +137,7 @@ package body admin.taghelpers.StoreFrontsRequestHelper_Package is
             success := stringBuffer.toString;
             This.modifyingStoreFrontInterface.install (This.portion.getCurrent.intValue, This.portion.getTotal.intValue);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, To_Unbounded_String ("install()"));
+                This.logUtil.putF (success, StoreFrontsRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("install()"));
             end if;
             return success;
         exception
@@ -145,7 +147,7 @@ package body admin.taghelpers.StoreFrontsRequestHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to Install storefront");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("install()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, StoreFrontsRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("install()"), e);
             end if;
             return error;
                 end;
@@ -162,7 +164,7 @@ package body admin.taghelpers.StoreFrontsRequestHelper_Package is
             values := This.modifyingStoreFrontInterface.toVector;
             StoreFrontsEntityFactory_Package.getInstance.getStoreFrontsEntityInstance.insert (values);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, To_Unbounded_String ("insert()"));
+                This.logUtil.putF (success, StoreFrontsRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("insert()"));
             end if;
             return success;
         exception
@@ -172,7 +174,7 @@ package body admin.taghelpers.StoreFrontsRequestHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to add storefront");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("insert()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, StoreFrontsRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("insert()"), e);
             end if;
             return error;
                 end;
@@ -187,7 +189,7 @@ package body admin.taghelpers.StoreFrontsRequestHelper_Package is
             success := To_Unbounded_String ("Delete Successfully");
             StoreFrontsEntityFactory_Package.getInstance.getStoreFrontsEntityInstance.delete (This.storeName);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, To_Unbounded_String ("delete()"));
+                This.logUtil.putF (success, StoreFrontsRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("delete()"));
             end if;
             return success;
         exception
@@ -197,7 +199,7 @@ package body admin.taghelpers.StoreFrontsRequestHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to delete storefronts table");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("delete()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, StoreFrontsRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("delete()"), e);
             end if;
             return error;
                 end;

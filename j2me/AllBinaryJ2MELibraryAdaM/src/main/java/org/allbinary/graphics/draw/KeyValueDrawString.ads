@@ -48,8 +48,8 @@ package org.allbinary.graphics.draw.KeyValueDrawString_Package is
 
    procedure Initialize (This : in out KeyValueDrawString'Class; label_Case : Unbounded_String; x : Integer);
    function Create (label_Case : Unbounded_String; x : Integer) return KeyValueDrawString_Access;
-   procedure updateMeasurement (This : in out KeyValueDrawString; graphics : Graphics_Access);
-   procedure paint (This : in out KeyValueDrawString; graphics : Graphics_Access; y : Integer);
+   procedure updateMeasurement (This : in out KeyValueDrawString; graphics_Param : access Graphics'Class);
+   procedure paint (This : in out KeyValueDrawString; graphics_Param : access Graphics'Class; y : Integer);
    procedure update (This : in out KeyValueDrawString; value : Unbounded_String);
 
 end org.allbinary.graphics.draw.KeyValueDrawString_Package;

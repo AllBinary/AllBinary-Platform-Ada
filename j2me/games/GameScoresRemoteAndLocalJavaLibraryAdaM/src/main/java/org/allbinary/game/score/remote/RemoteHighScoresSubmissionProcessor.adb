@@ -37,14 +37,17 @@ package body org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessor
       return This;
    end Create;
 
-   procedure process (This : in out RemoteHighScoresSubmissionProcessor; remoteHighScores : RemoteHighScores_Access; abeClientInformation : AbeClientInformationInterface_Access; highScore : HighScore_Access) is
+   procedure process (This : in out RemoteHighScoresSubmissionProcessor; remoteHighScores_Param : access RemoteHighScores'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; highScore_Param : access HighScore'Class) is
+      remoteHighScores : RemoteHighScores_Access := RemoteHighScores_Access (remoteHighScores_Param);
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      highScore : HighScore_Access := HighScore_Access (highScore_Param);
       gameInfoData : GameInfoData_Access;
       hashtable : ABHashtable_Access;
       displayInfoSingleton : DisplayInfoSingleton_Access;
       resultHashtable : ABHashtable_Access;
    begin
         begin
-            This.logUtil.putF (To_Unbounded_String ("Begin Remote HighScores Submission"), This'Unchecked_Access, This.commonStrings.PROCESS);
+            This.logUtil.putF (To_Unbounded_String ("Begin Remote HighScores Submission"), RemoteHighScoresSubmissionProcessor_Access'(This'Unchecked_Access), This.commonStrings.PROCESS);
             gameInfoData := GameInfoData_Package.getInstance;
             hashtable := abeClientInformation.toHashtable;
             HashtableUtil_Package.getInstance.putAll (highScore.getGameInfo.toHashtable, hashtable);
@@ -65,7 +68,7 @@ package body org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessor
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.PROCESS, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, RemoteHighScoresSubmissionProcessor_Access'(This'Unchecked_Access), This.commonStrings.PROCESS, e);
                 end;
         end;
    end process;

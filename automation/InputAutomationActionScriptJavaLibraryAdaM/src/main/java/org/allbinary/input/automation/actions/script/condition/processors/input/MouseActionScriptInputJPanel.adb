@@ -41,12 +41,13 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out MouseActionScriptInputJPanel'Class; mouseActionScriptInputInterface : MouseActionScriptInputInterface_Access) is
+   procedure Initialize (This : in out MouseActionScriptInputJPanel'Class; mouseActionScriptInputInterface_Param : access MouseActionScriptInputInterface'Class) is
+      mouseActionScriptInputInterface : MouseActionScriptInputInterface_Access := MouseActionScriptInputInterface_Access (mouseActionScriptInputInterface_Param);
       defaultComboBoxModel : DefaultComboBoxModel_Access;
    begin
       JPanel_Package.Initialize (This);
       Initialize_Fields (This);
-        This.logUtil.putF ((CommonLabels_Package.getInstance.START) + (mouseActionScriptInputInterface), This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+        This.logUtil.putF ((CommonLabels_Package.getInstance.START) + (mouseActionScriptInputInterface), MouseActionScriptInputJPanel_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         This.initComponents;
         This.mouseActionScriptInputInterface := mouseActionScriptInputInterface;
         defaultComboBoxModel := DefaultComboBoxModel_Package.Create;
@@ -57,10 +58,10 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
         This.set;
    end Initialize;
 
-   function Create (mouseActionScriptInputInterface : MouseActionScriptInputInterface_Access) return MouseActionScriptInputJPanel_Access is
+   function Create (mouseActionScriptInputInterface_Param : access MouseActionScriptInputInterface'Class) return MouseActionScriptInputJPanel_Access is
       This : constant MouseActionScriptInputJPanel_Access := new MouseActionScriptInputJPanel;
    begin
-      MouseActionScriptInputJPanel_Package.Initialize (This.all, mouseActionScriptInputInterface);
+      MouseActionScriptInputJPanel_Package.Initialize (This.all, mouseActionScriptInputInterface_Param);
       return This;
    end Create;
 
@@ -104,27 +105,27 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
    begin
         This.updateInputType;
         This.mouseActionScriptInputInterface.setTime (To_Unbounded_String (Java_Image (This.mouseDelayJTextField.getText)));
-        This.logUtil.putF (To_Unbounded_String ("Button State: ") & Java_Image (This.mouseActionScriptInputInterface.getButtonClicks), This'Unchecked_Access, To_Unbounded_String ("update"));
+        This.logUtil.putF (To_Unbounded_String ("Button State: ") & Java_Image (This.mouseActionScriptInputInterface.getButtonClicks), MouseActionScriptInputJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("update"));
         if This.button1JCheckBox.isSelected then
             if ((Java_And (This.mouseActionScriptInputInterface.getButtonClicks, InputEvent_Package.BUTTON1_MASK))) = (0) then
                 This.mouseActionScriptInputInterface.setButtonClicks (Java_Or (This.mouseActionScriptInputInterface.getButtonClicks, InputEvent_Package.BUTTON1_MASK));
-                This.logUtil.putF (To_Unbounded_String ("Button 1 Selected: ") & Java_Image (This.mouseActionScriptInputInterface.getButtonClicks), This'Unchecked_Access, To_Unbounded_String ("update"));
+                This.logUtil.putF (To_Unbounded_String ("Button 1 Selected: ") & Java_Image (This.mouseActionScriptInputInterface.getButtonClicks), MouseActionScriptInputJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("update"));
             end if;
         else
             if ((Java_And (This.mouseActionScriptInputInterface.getButtonClicks, InputEvent_Package.BUTTON1_MASK))) /= (0) then
                 This.mouseActionScriptInputInterface.setButtonClicks (Java_Xor (This.mouseActionScriptInputInterface.getButtonClicks, InputEvent_Package.BUTTON1_MASK));
-                This.logUtil.putF (To_Unbounded_String ("Button 1 Deselected: ") & Java_Image (This.mouseActionScriptInputInterface.getButtonClicks), This'Unchecked_Access, To_Unbounded_String ("update"));
+                This.logUtil.putF (To_Unbounded_String ("Button 1 Deselected: ") & Java_Image (This.mouseActionScriptInputInterface.getButtonClicks), MouseActionScriptInputJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("update"));
             end if;
         end if;
         if This.button2JCheckBox.isSelected then
             if ((Java_And (This.mouseActionScriptInputInterface.getButtonClicks, InputEvent_Package.BUTTON2_MASK))) = (0) then
                 This.mouseActionScriptInputInterface.setButtonClicks (Java_Or (This.mouseActionScriptInputInterface.getButtonClicks, InputEvent_Package.BUTTON2_MASK));
-                This.logUtil.putF (To_Unbounded_String ("Button 2 Selected: ") & Java_Image (This.mouseActionScriptInputInterface.getButtonClicks), This'Unchecked_Access, To_Unbounded_String ("update"));
+                This.logUtil.putF (To_Unbounded_String ("Button 2 Selected: ") & Java_Image (This.mouseActionScriptInputInterface.getButtonClicks), MouseActionScriptInputJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("update"));
             end if;
         else
             if ((Java_And (This.mouseActionScriptInputInterface.getButtonClicks, InputEvent_Package.BUTTON2_MASK))) /= (0) then
                 This.mouseActionScriptInputInterface.setButtonClicks (Java_Xor (This.mouseActionScriptInputInterface.getButtonClicks, InputEvent_Package.BUTTON2_MASK));
-                This.logUtil.putF (To_Unbounded_String ("Button 2 Deselected: ") & Java_Image (This.mouseActionScriptInputInterface.getButtonClicks), This'Unchecked_Access, To_Unbounded_String ("update"));
+                This.logUtil.putF (To_Unbounded_String ("Button 2 Deselected: ") & Java_Image (This.mouseActionScriptInputInterface.getButtonClicks), MouseActionScriptInputJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("update"));
             end if;
         end if;
         mouseXString := This.mouseXJTextField.getText;
@@ -143,7 +144,8 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
         return This.mouseActionJDialog;
    end getMouseActionJDialog;
 
-   procedure setMouseActionJDialog (This : in out MouseActionScriptInputJPanel; mouseActionJDialog : JDialog_Access) is
+   procedure setMouseActionJDialog (This : in out MouseActionScriptInputJPanel; mouseActionJDialog_Param : access JDialog'Class) is
+      mouseActionJDialog : JDialog_Access := JDialog_Access (mouseActionJDialog_Param);
    begin
         This.mouseActionJDialog := mouseActionJDialog;
    end setMouseActionJDialog;
@@ -174,7 +176,8 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
         This.okJButton.setText (To_Unbounded_String ("OK"));
         This.okJButton.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt : ActionEvent_Access) is
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
+--        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.okJButtonActionPerformed (evt);
 --     end actionPerformed;
@@ -189,7 +192,8 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
         This.button2JCheckBox.setMargin (Insets_Package.Create (0, 0, 0, 0));
         This.button2JCheckBox.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt : ActionEvent_Access) is
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
+--        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.button2JCheckBoxActionPerformed (evt);
 --     end actionPerformed;
@@ -209,24 +213,27 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
         This.mouseActionJButton.setText (To_Unbounded_String ("Edit"));
         This.mouseActionJButton.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt : ActionEvent_Access) is
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
+--        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.mouseActionJButtonActionPerformed (evt);
 --     end actionPerformed;
 );
         This.jLabel1.setText (To_Unbounded_String ("Mouse:"));
-        layout := GroupLayout_Package.Create (This'Unchecked_Access);
+        layout := GroupLayout_Package.Create (MouseActionScriptInputJPanel_Access'(This'Unchecked_Access));
         This.setLayout (layout);
         layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addComponent (This.jLabel1).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short_Package.MAX_VALUE).addComponent (This.mouseActionJButton)));
         layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.jLabel1).addComponent (This.mouseActionJButton)));
    end initComponents;
 
-   procedure button2JCheckBoxActionPerformed (This : in out MouseActionScriptInputJPanel; evt : ActionEvent_Access) is
+   procedure button2JCheckBoxActionPerformed (This : in out MouseActionScriptInputJPanel; evt_Param : access ActionEvent'Class) is
+      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         null;
    end button2JCheckBoxActionPerformed;
 
-   procedure okJButtonActionPerformed (This : in out MouseActionScriptInputJPanel; evt : ActionEvent_Access) is
+   procedure okJButtonActionPerformed (This : in out MouseActionScriptInputJPanel; evt_Param : access ActionEvent'Class) is
+      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         begin
             This.update;
@@ -236,12 +243,13 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("okButtonActionPerformed"), e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, MouseActionScriptInputJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("okButtonActionPerformed"), e);
                 end;
         end;
    end okJButtonActionPerformed;
 
-   procedure mouseActionJButtonActionPerformed (This : in out MouseActionScriptInputJPanel; evt : ActionEvent_Access) is
+   procedure mouseActionJButtonActionPerformed (This : in out MouseActionScriptInputJPanel; evt_Param : access ActionEvent'Class) is
+      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         This.getMouseActionJDialog.setVisible (True);
    end mouseActionJButtonActionPerformed;

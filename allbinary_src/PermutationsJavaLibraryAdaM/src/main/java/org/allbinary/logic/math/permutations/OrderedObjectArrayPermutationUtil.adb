@@ -88,7 +88,8 @@ package body org.allbinary.logic.math.permutations.OrderedObjectArrayPermutation
         return temp;
    end factorial;
 
-   procedure generate (This : in out OrderedObjectArrayPermutationUtil; data : Java_Object_Access_Array_Access; visitor : Visitor_Access) is
+   procedure generate (This : in out OrderedObjectArrayPermutationUtil; data : Java_Object_Access_Array_Access; visitor_Param : access Visitor'Class) is
+      visitor : Visitor_Access := Visitor_Access (visitor_Param);
       iterations : Long_Long_Integer;
       count : Long_Long_Integer;
    begin
@@ -97,7 +98,7 @@ package body org.allbinary.logic.math.permutations.OrderedObjectArrayPermutation
         Ada.Text_IO.Put_Line (Java_Image (iterations));
         for count in 0 .. ((iterations) - (1)) - 1 loop
             This.getNext (data);
-            visitor.visit (This'Unchecked_Access);
+            visitor.visit (OrderedObjectArrayPermutationUtil_Access'(This'Unchecked_Access));
         end loop;
         Ada.Text_IO.Put_Line (Java_Image (This.FINISHED));
    end generate;

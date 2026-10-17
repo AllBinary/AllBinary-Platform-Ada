@@ -25,10 +25,10 @@ package org.allbinary.graphics.form.item.ABTextItem_Package is
 
    type ABTextItem is new CustomCustomItem and ABCustomItemInterface with null record;
 
-   procedure Initialize (This : in out ABTextItem'Class; label : Unbounded_String; layout : Integer; altText : Unbounded_String; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access);
-   function Create (label : Unbounded_String; layout : Integer; altText : Unbounded_String; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return ABTextItem_Access;
+   procedure Initialize (This : in out ABTextItem'Class; label : Unbounded_String; layout : Integer; altText : Unbounded_String; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class);
+   function Create (label : Unbounded_String; layout : Integer; altText : Unbounded_String; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return ABTextItem_Access;
    procedure keyPressed (This : in out ABTextItem; keyCode : Integer);
-   procedure paintUnselected (This : in out ABTextItem; graphics : Graphics_Access; x : Integer; y : Integer);
+   procedure paintUnselected (This : in out ABTextItem; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
    function getLabelStringComponent (This : in out ABTextItem) return ABStringComponent_Access;
 
 end org.allbinary.graphics.form.item.ABTextItem_Package;

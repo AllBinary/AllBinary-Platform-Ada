@@ -57,9 +57,9 @@ package org.allbinary.logic.java.help.JavaHelpUtil_Package is
    function getInstance return JavaHelpUtil_Access;
    function getHelpSet (This : in out JavaHelpUtil; filePath : Unbounded_String) return HelpSet_Access;
    procedure getHelpSet (This : in out JavaHelpUtil; filePath : Unbounded_String);
-   function getHelpSet (This : in out JavaHelpUtil; url : URL_Access) return HelpSet_Access;
-   procedure getHelpSet (This : in out JavaHelpUtil; url : URL_Access);
-   procedure show (This : in out JavaHelpUtil; helpSet : HelpSet_Access);
+   function getHelpSet (This : in out JavaHelpUtil; url_Param : access URL'Class) return HelpSet_Access;
+   procedure getHelpSet (This : in out JavaHelpUtil; url_Param : access URL'Class);
+   procedure show (This : in out JavaHelpUtil; helpSet_Param : access HelpSet'Class);
    procedure main (args : Unbounded_String_Array_Access);
 
 end org.allbinary.logic.java.help.JavaHelpUtil_Package;

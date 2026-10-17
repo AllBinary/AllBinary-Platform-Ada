@@ -33,7 +33,8 @@ package body org.allbinary.game.midlet.DemoSetup_Package is
    end Create;
 
 
-   procedure init (This : in out DemoSetup; gameMidlet : GameMidlet_Access) is
+   procedure init (This : in out DemoSetup; gameMidlet_Param : access GameMidlet'Class) is
+      gameMidlet : GameMidlet_Access := GameMidlet_Access (gameMidlet_Param);
    begin
         null;
    end init;

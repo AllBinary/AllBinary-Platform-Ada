@@ -44,16 +44,16 @@ package org.allbinary.logic.visual.transform.info.TransformInfoDomNodeView_Packa
 
    type TransformInfoDomNodeView is new TransformInfoDomNode and DomNodeInterface with null record;
 
-   procedure Initialize (This : in out TransformInfoDomNodeView'Class; transformInfoInterface : TransformInfoInterface_Access; mapping : Unbounded_String);
-   function Create (transformInfoInterface : TransformInfoInterface_Access; mapping : Unbounded_String) return TransformInfoDomNodeView_Access;
-   procedure Initialize (This : in out TransformInfoDomNodeView'Class; transformInfoInterface : TransformInfoInterface_Access);
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return TransformInfoDomNodeView_Access;
+   procedure Initialize (This : in out TransformInfoDomNodeView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; mapping : Unbounded_String);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class; mapping : Unbounded_String) return TransformInfoDomNodeView_Access;
+   procedure Initialize (This : in out TransformInfoDomNodeView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return TransformInfoDomNodeView_Access;
    procedure Initialize (This : in out TransformInfoDomNodeView'Class; name : Unbounded_String; mappedName : Unbounded_String);
    function Create (name : Unbounded_String; mappedName : Unbounded_String) return TransformInfoDomNodeView_Access;
    procedure Initialize (This : in out TransformInfoDomNodeView'Class; name : Unbounded_String);
    function Create (name : Unbounded_String) return TransformInfoDomNodeView_Access;
-   function toXmlNode (This : in out TransformInfoDomNodeView; document : Document_Access) return Node_Access;
-   procedure toXmlNode (This : in out TransformInfoDomNodeView; document : Document_Access);
+   function toXmlNode (This : in out TransformInfoDomNodeView; document_Param : access Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out TransformInfoDomNodeView; document_Param : access Document'Class);
 
 end org.allbinary.logic.visual.transform.info.TransformInfoDomNodeView_Package;
 

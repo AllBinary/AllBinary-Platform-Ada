@@ -21,15 +21,16 @@ package body org.allbinary.game.configuration.GameConfigurationGauge_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out GameConfigurationGauge'Class; gameConfiguration : GameConfiguration_Access) is
+   procedure Initialize (This : in out GameConfigurationGauge'Class; gameConfiguration_Param : access GameConfiguration'Class) is
+      gameConfiguration : GameConfiguration_Access := GameConfiguration_Access (gameConfiguration_Param);
    begin
         Gauge_Package.Initialize (This, gameConfiguration.getName, gameConfiguration.isModifiable.booleanValue, (gameConfiguration.getMaxValue.intValue) - (gameConfiguration.getMinValue.intValue), (gameConfiguration.getValue.intValue) - (gameConfiguration.getMinValue.intValue));
    end Initialize;
 
-   function Create (gameConfiguration : GameConfiguration_Access) return GameConfigurationGauge_Access is
+   function Create (gameConfiguration_Param : access GameConfiguration'Class) return GameConfigurationGauge_Access is
       This : constant GameConfigurationGauge_Access := new GameConfigurationGauge;
    begin
-      GameConfigurationGauge_Package.Initialize (This.all, gameConfiguration);
+      GameConfigurationGauge_Package.Initialize (This.all, gameConfiguration_Param);
       return This;
    end Create;
 

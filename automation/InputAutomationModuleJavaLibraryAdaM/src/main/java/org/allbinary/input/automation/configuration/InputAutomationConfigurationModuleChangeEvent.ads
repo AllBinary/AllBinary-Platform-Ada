@@ -35,10 +35,10 @@ package org.allbinary.input.automation.configuration.InputAutomationConfiguratio
       inputAutomationModuleConfiguration : InputAutomationModuleConfiguration_Access;
    end record;
 
-   procedure Initialize (This : in out InputAutomationConfigurationModuleChangeEvent'Class; inputAutomationModuleConfiguration : InputAutomationModuleConfiguration_Access);
-   function Create (inputAutomationModuleConfiguration : InputAutomationModuleConfiguration_Access) return InputAutomationConfigurationModuleChangeEvent_Access;
+   procedure Initialize (This : in out InputAutomationConfigurationModuleChangeEvent'Class; inputAutomationModuleConfiguration_Param : access InputAutomationModuleConfiguration'Class);
+   function Create (inputAutomationModuleConfiguration_Param : access InputAutomationModuleConfiguration'Class) return InputAutomationConfigurationModuleChangeEvent_Access;
    function getInputAutomationModuleConfiguration (This : in out InputAutomationConfigurationModuleChangeEvent) return InputAutomationModuleConfiguration_Access;
-   procedure setInputAutomationModuleConfiguration (This : in out InputAutomationConfigurationModuleChangeEvent; inputAutomationModuleConfiguration : InputAutomationModuleConfiguration_Access);
+   procedure setInputAutomationModuleConfiguration (This : in out InputAutomationConfigurationModuleChangeEvent; inputAutomationModuleConfiguration_Param : access InputAutomationModuleConfiguration'Class);
 
 end org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package;
 

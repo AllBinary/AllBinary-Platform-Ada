@@ -62,8 +62,8 @@ package admin.taghelpers.StoreFrontsHelper_Package is
    CLASS : Unbounded_String;
    TEXT : Unbounded_String;
 
-   procedure Initialize (This : in out StoreFrontsHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access);
-   function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return StoreFrontsHelper_Access;
+   procedure Initialize (This : in out StoreFrontsHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
+   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return StoreFrontsHelper_Access;
    function drop (This : in out StoreFrontsHelper) return Unbounded_String;
    function create (This : in out StoreFrontsHelper) return Unbounded_String;
    function restore (This : in out StoreFrontsHelper) return Unbounded_String;

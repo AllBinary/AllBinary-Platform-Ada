@@ -23,7 +23,8 @@ package body org.allbinary.game.configuration.feature.GameFeatureItemStateListen
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out GameFeatureItemStateListener'Class; gameOptionsForm : GameOptionsForm_Access) is
+   procedure Initialize (This : in out GameFeatureItemStateListener'Class; gameOptionsForm_Param : access GameOptionsForm'Class) is
+      gameOptionsForm : GameOptionsForm_Access := GameOptionsForm_Access (gameOptionsForm_Param);
       gameFeatureFactory : GameFeatureFactory_Access;
    begin
       Initialize_Fields (This);
@@ -39,28 +40,30 @@ package body org.allbinary.game.configuration.feature.GameFeatureItemStateListen
         GameFeatureItemStateListener_Package.add (gameFeatureFactory.TICKABLE_LAYER_PROCESSOR);
    end Initialize;
 
-   function Create (gameOptionsForm : GameOptionsForm_Access) return GameFeatureItemStateListener_Access is
+   function Create (gameOptionsForm_Param : access GameOptionsForm'Class) return GameFeatureItemStateListener_Access is
       This : constant GameFeatureItemStateListener_Access := new GameFeatureItemStateListener;
    begin
-      GameFeatureItemStateListener_Package.Initialize (This.all, gameOptionsForm);
+      GameFeatureItemStateListener_Package.Initialize (This.all, gameOptionsForm_Param);
       return This;
    end Create;
 
-   procedure add (gameFeature : GameFeature_Access) is
+   procedure add (gameFeature_Param : access GameFeature'Class) is
+      gameFeature : GameFeature_Access := GameFeature_Access (gameFeature_Param);
    begin
         if not (GameFeatureItemStateListener_Package.toggleList.contains (gameFeature)) then
             GameFeatureItemStateListener_Package.toggleList.add (gameFeature);
         end if;
    end add;
 
-   procedure itemStateChanged (This : in out GameFeatureItemStateListener; item : Item_Access) is
+   procedure itemStateChanged (This : in out GameFeatureItemStateListener; item_Param : access Item'Class) is
+      item : Item_Access := Item_Access (item_Param);
       itemLabel : Unbounded_String;
       gameFeatureUtil : GameFeatureUtil_Access;
       commonStrings : CommonStrings_Access;
    begin
         begin
             itemLabel := item.getLabel;
-            This.logUtil.putF (StringMaker_Package.Create.append (CommonLabels_Package.getInstance.ITEM_LABEL).append (itemLabel).toString, This'Unchecked_Access, To_Unbounded_String ("itemStateChanged"));
+            This.logUtil.putF (StringMaker_Package.Create.append (CommonLabels_Package.getInstance.ITEM_LABEL).append (itemLabel).toString, GameFeatureItemStateListener_Access'(This'Unchecked_Access), To_Unbounded_String ("itemStateChanged"));
             if (item.all in GameConfigurationGauge_Package.GameConfigurationGauge'Class) then
                 GameConfigurationUtil_Package.getInstance.change (This.gameOptionsForm, GameConfigurationGauge_Access (item));
             elsif (item.all in ChoiceGroup_Package.ChoiceGroup'Class) then
@@ -77,7 +80,7 @@ package body org.allbinary.game.configuration.feature.GameFeatureItemStateListen
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("itemStateChanged"), e);
+            This.logUtil.put (commonStrings.EXCEPTION_Id, GameFeatureItemStateListener_Access'(This'Unchecked_Access), To_Unbounded_String ("itemStateChanged"), e);
                 end;
         end;
    end itemStateChanged;

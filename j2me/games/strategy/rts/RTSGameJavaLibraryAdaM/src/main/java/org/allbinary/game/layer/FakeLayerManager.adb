@@ -22,16 +22,17 @@ package body org.allbinary.game.layer.FakeLayerManager_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out FakeLayerManager'Class; gameInfo : GameInfo_Access) is
+   procedure Initialize (This : in out FakeLayerManager'Class; gameInfo_Param : access GameInfo'Class) is
+      gameInfo : GameInfo_Access := GameInfo_Access (gameInfo_Param);
    begin
         AllBinaryGameLayerManager_Package.Initialize (This, BasicColorFactory_Package.getInstance.BLACK, BasicColorFactory_Package.getInstance.WHITE, gameInfo);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (gameInfo : GameInfo_Access) return FakeLayerManager_Access is
+   function Create (gameInfo_Param : access GameInfo'Class) return FakeLayerManager_Access is
       This : constant FakeLayerManager_Access := new FakeLayerManager;
    begin
-      FakeLayerManager_Package.Initialize (This.all, gameInfo);
+      FakeLayerManager_Package.Initialize (This.all, gameInfo_Param);
       return This;
    end Create;
 

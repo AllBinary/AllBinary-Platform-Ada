@@ -57,7 +57,7 @@ package body org.allbinary.logic.system.hardware.android.AndroidHardware_Package
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (To_Unbounded_String ("Hardware Data: ") & This.toString, This'Unchecked_Access, This.commonStrings.INIT, e);
+            This.logUtil.put (To_Unbounded_String ("Hardware Data: ") & This.toString, AndroidHardware_Access'(This'Unchecked_Access), This.commonStrings.INIT, e);
             Java_Throw (e);
                 end;
         end;
@@ -78,7 +78,7 @@ package body org.allbinary.logic.system.hardware.android.AndroidHardware_Package
         This.componentInterfaceVector := BasicArrayListD_Package.Create;
         pciFile := FileReader_Package.Create (filePath);
         lineNumberReader := LineNumberReader_Package.Create (pciFile);
-        This.logUtil.putF (To_Unbounded_String ("File Found"), This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+        This.logUtil.putF (To_Unbounded_String ("File Found"), AndroidHardware_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         nextLine := lineNumberReader.readLine;
         while (nextLine) /= (Null_Unbounded_String) loop
             nextLine := lineNumberReader.readLine;
@@ -108,12 +108,14 @@ package body org.allbinary.logic.system.hardware.android.AndroidHardware_Package
         return stringBuilder.toString;
    end toString;
 
-   function compareTo (This : in out AndroidHardware; hardwareInterface : HardwareInterface_Access) return Boolean is
+   function compareTo (This : in out AndroidHardware; hardwareInterface_Param : access HardwareInterface'Class) return Boolean is
+      hardwareInterface : HardwareInterface_Access := HardwareInterface_Access (hardwareInterface_Param);
    begin
         return True;
    end compareTo;
 
-   function difference (This : in out AndroidHardware; hardwareInterface : HardwareInterface_Access) return ABHashtable_Access is
+   function difference (This : in out AndroidHardware; hardwareInterface_Param : access HardwareInterface'Class) return ABHashtable_Access is
+      hardwareInterface : HardwareInterface_Access := HardwareInterface_Access (hardwareInterface_Param);
    begin
         return StdUtil_Package.getInstance.NULL_TABLE;
    end difference;
@@ -132,15 +134,15 @@ package body org.allbinary.logic.system.hardware.android.AndroidHardware_Package
       null;
    end getComponent;
 
-   procedure compareTo (This : in out AndroidHardware; hardwareInterface : HardwareInterface_Access) is
-      Java_Result : constant Boolean := AndroidHardware'Class (This).compareTo (hardwareInterface);
+   procedure compareTo (This : in out AndroidHardware; hardwareInterface_Param : access HardwareInterface'Class) is
+      Java_Result : constant Boolean := AndroidHardware'Class (This).compareTo (hardwareInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end compareTo;
 
-   procedure difference (This : in out AndroidHardware; hardwareInterface : HardwareInterface_Access) is
-      Java_Result : constant ABHashtable_Access := AndroidHardware'Class (This).difference (hardwareInterface);
+   procedure difference (This : in out AndroidHardware; hardwareInterface_Param : access HardwareInterface'Class) is
+      Java_Result : constant ABHashtable_Access := AndroidHardware'Class (This).difference (hardwareInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

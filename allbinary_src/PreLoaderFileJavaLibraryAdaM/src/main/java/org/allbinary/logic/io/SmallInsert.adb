@@ -54,7 +54,7 @@ package body org.allbinary.logic.io.SmallInsert_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.IDLOGGING) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("insertAtBeginning"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, SmallInsert_Access'(This'Unchecked_Access), To_Unbounded_String ("insertAtBeginning"), e);
             end if;
             return False;
                 end;
@@ -89,7 +89,7 @@ package body org.allbinary.logic.io.SmallInsert_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.IDLOGGING) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("after"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, SmallInsert_Access'(This'Unchecked_Access), To_Unbounded_String ("after"), e);
             end if;
             return False;
                 end;
@@ -111,7 +111,7 @@ package body org.allbinary.logic.io.SmallInsert_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.IDLOGGING) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("insertAtEnd"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, SmallInsert_Access'(This'Unchecked_Access), To_Unbounded_String ("insertAtEnd"), e);
             end if;
             return False;
                 end;

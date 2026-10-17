@@ -22,16 +22,17 @@ package body org.allbinary.business.user.modules.configuration.UserConfiguration
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out UserConfigurationDomDocumentMapping'Class; userConfigurationInterface : UserConfigurationInterface_Access) is
+   procedure Initialize (This : in out UserConfigurationDomDocumentMapping'Class; userConfigurationInterface_Param : access UserConfigurationInterface'Class) is
+      userConfigurationInterface : UserConfigurationInterface_Access := UserConfigurationInterface_Access (userConfigurationInterface_Param);
    begin
       Initialize_Fields (This);
         This.userConfigurationInterface := userConfigurationInterface;
    end Initialize;
 
-   function Create (userConfigurationInterface : UserConfigurationInterface_Access) return UserConfigurationDomDocumentMapping_Access is
+   function Create (userConfigurationInterface_Param : access UserConfigurationInterface'Class) return UserConfigurationDomDocumentMapping_Access is
       This : constant UserConfigurationDomDocumentMapping_Access := new UserConfigurationDomDocumentMapping;
    begin
-      UserConfigurationDomDocumentMapping_Package.Initialize (This.all, userConfigurationInterface);
+      UserConfigurationDomDocumentMapping_Package.Initialize (This.all, userConfigurationInterface_Param);
       return This;
    end Create;
 

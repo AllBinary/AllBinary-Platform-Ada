@@ -25,16 +25,17 @@ package body org.allbinary.media.audio.Sounds_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out Sounds'Class; soundsFactoryInterface : SoundsFactoryInterface_Access) is
+   procedure Initialize (This : in out Sounds'Class; soundsFactoryInterface_Param : access SoundsFactoryInterface'Class) is
+      soundsFactoryInterface : SoundsFactoryInterface_Access := SoundsFactoryInterface_Access (soundsFactoryInterface_Param);
    begin
       Initialize_Fields (This);
         This.soundsFactoryInterface := soundsFactoryInterface;
    end Initialize;
 
-   function Create (soundsFactoryInterface : SoundsFactoryInterface_Access) return Sounds_Access is
+   function Create (soundsFactoryInterface_Param : access SoundsFactoryInterface'Class) return Sounds_Access is
       This : constant Sounds_Access := new Sounds;
    begin
-      Sounds_Package.Initialize (This.all, soundsFactoryInterface);
+      Sounds_Package.Initialize (This.all, soundsFactoryInterface_Param);
       return This;
    end Create;
 
@@ -50,7 +51,7 @@ package body org.allbinary.media.audio.Sounds_Package is
       soundInterface : Sound_Access;
       i : Integer;
    begin
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.INIT);
+        This.logUtil.putF (This.commonStrings.START, Sounds_Access'(This'Unchecked_Access), This.commonStrings.INIT);
         commonLabels := CommonLabels_Package.getInstance;
         progressCanvas := ProgressCanvasFactory_Package.getInstance;
         This.soundsFactoryInterface.init;
@@ -69,13 +70,13 @@ package body org.allbinary.media.audio.Sounds_Package is
                 stringBuffer.append (indexString);
                 stringBuffer.append (This.soundStrings.SOUND);
                 stringBuffer.append (To_Unbounded_String (Ada.Tags.Expanded_Name (soundInterface.all'Tag)));
-                This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, This.commonStrings.INIT);
+                This.logUtil.putF (stringBuffer.toString, Sounds_Access'(This'Unchecked_Access), This.commonStrings.INIT);
                 soundInterface.init;
                 progressCanvas.addNormalPortion (100, StringMaker_Package.Create.append (This.soundStrings.INIT_SOUND).append (indexString).toString);
             end if;
         end loop;
         This.soundsFactoryInterface.setInitialized (True);
-        This.logUtil.putF (This.commonStrings.END_Id, This'Unchecked_Access, This.commonStrings.INIT);
+        This.logUtil.putF (This.commonStrings.END_Id, Sounds_Access'(This'Unchecked_Access), This.commonStrings.INIT);
    end init;
 
    --  throws Exception
@@ -85,7 +86,7 @@ package body org.allbinary.media.audio.Sounds_Package is
       player : Player_Access;
       index : Integer;
    begin
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.soundStrings.STOP_ALL);
+        This.logUtil.putF (This.commonStrings.START, Sounds_Access'(This'Unchecked_Access), This.soundStrings.STOP_ALL);
         soundInterfaceArray := This.soundsFactoryInterface.getSoundInterfaceArray;
         progressCanvas := ProgressCanvasFactory_Package.getInstance;
         player := null;
@@ -107,7 +108,7 @@ package body org.allbinary.media.audio.Sounds_Package is
       player : Player_Access;
       index : Integer;
    begin
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.soundStrings.CLOSE_ALL);
+        This.logUtil.putF (This.commonStrings.START, Sounds_Access'(This'Unchecked_Access), This.soundStrings.CLOSE_ALL);
         soundInterfaceArray := This.soundsFactoryInterface.getSoundInterfaceArray;
         progressCanvas := ProgressCanvasFactory_Package.getInstance;
         player := null;

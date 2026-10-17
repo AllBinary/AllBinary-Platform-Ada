@@ -33,7 +33,9 @@ package body org.allbinary.media.image.search.ImageComparisonSearch_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ImageComparisonSearch'Class; bufferedImage : BufferedImage_Access; bufferedImage2 : BufferedImage_Access; tolerance : Integer) is
+   procedure Initialize (This : in out ImageComparisonSearch'Class; bufferedImage_Param : access BufferedImage'Class; bufferedImage2_Param : access BufferedImage'Class; tolerance : Integer) is
+      bufferedImage : BufferedImage_Access := BufferedImage_Access (bufferedImage_Param);
+      bufferedImage2 : BufferedImage_Access := BufferedImage_Access (bufferedImage2_Param);
       imageUtil : ImageUtil_Access;
    begin
       Initialize_Fields (This);
@@ -61,16 +63,16 @@ package body org.allbinary.media.image.search.ImageComparisonSearch_Package is
         end if;
         if (not (This.isSameWidth)) or else (not (This.isSameHeight)) then
             imageUtil := ImageUtil_Package.getInstance;
-            This.logUtil.putF (To_Unbounded_String ("Images were not the same size? Most likely a resolution change."), This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
-            This.logUtil.putF (To_Unbounded_String ("1: ") & imageUtil.toString (bufferedImage), This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
-            This.logUtil.putF (To_Unbounded_String ("2: ") & imageUtil.toString (bufferedImage2), This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+            This.logUtil.putF (To_Unbounded_String ("Images were not the same size? Most likely a resolution change."), ImageComparisonSearch_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
+            This.logUtil.putF (To_Unbounded_String ("1: ") & imageUtil.toString (bufferedImage), ImageComparisonSearch_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
+            This.logUtil.putF (To_Unbounded_String ("2: ") & imageUtil.toString (bufferedImage2), ImageComparisonSearch_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
    end Initialize;
 
-   function Create (bufferedImage : BufferedImage_Access; bufferedImage2 : BufferedImage_Access; tolerance : Integer) return ImageComparisonSearch_Access is
+   function Create (bufferedImage_Param : access BufferedImage'Class; bufferedImage2_Param : access BufferedImage'Class; tolerance : Integer) return ImageComparisonSearch_Access is
       This : constant ImageComparisonSearch_Access := new ImageComparisonSearch;
    begin
-      ImageComparisonSearch_Package.Initialize (This.all, bufferedImage, bufferedImage2, tolerance);
+      ImageComparisonSearch_Package.Initialize (This.all, bufferedImage_Param, bufferedImage2_Param, tolerance);
       return This;
    end Create;
 
@@ -82,7 +84,8 @@ package body org.allbinary.media.image.search.ImageComparisonSearch_Package is
         return This.matchingPercent;
    end getMatchingPercent;
 
-   procedure add (This : in out ImageComparisonSearch; pixel : PixelDelta_Access) is
+   procedure add (This : in out ImageComparisonSearch; pixel_Param : access PixelDelta'Class) is
+      pixel : PixelDelta_Access := PixelDelta_Access (pixel_Param);
    begin
         This.nonMatchingPixelVector.add (pixel);
    end add;

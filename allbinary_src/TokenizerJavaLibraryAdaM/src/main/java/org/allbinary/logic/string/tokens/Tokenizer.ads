@@ -52,10 +52,10 @@ package org.allbinary.logic.string_Id.tokens.Tokenizer_Package is
    procedure setEndSep (This : in out Tokenizer; endSep : Unbounded_String);
    function getInsideSep (This : in out Tokenizer; string_Id : Unbounded_String) return BasicArrayList_Access;
    procedure getInsideSep (This : in out Tokenizer; string_Id : Unbounded_String);
-   function getTokensFromString (This : in out Tokenizer; string_Id : Unbounded_String; tokenVector : BasicArrayList_Access) return BasicArrayList_Access;
-   procedure getTokensFromString (This : in out Tokenizer; string_Id : Unbounded_String; tokenVector : BasicArrayList_Access);
-   function getTokens (This : in out Tokenizer; stringVector : BasicArrayList_Access) return ABHashtable_Access;
-   procedure getTokens (This : in out Tokenizer; stringVector : BasicArrayList_Access);
+   function getTokensFromString (This : in out Tokenizer; string_Id : Unbounded_String; tokenVector_Param : access BasicArrayList'Class) return BasicArrayList_Access;
+   procedure getTokensFromString (This : in out Tokenizer; string_Id : Unbounded_String; tokenVector_Param : access BasicArrayList'Class);
+   function getTokens (This : in out Tokenizer; stringVector_Param : access BasicArrayList'Class) return ABHashtable_Access;
+   procedure getTokens (This : in out Tokenizer; stringVector_Param : access BasicArrayList'Class);
 
 end org.allbinary.logic.string_Id.tokens.Tokenizer_Package;
 

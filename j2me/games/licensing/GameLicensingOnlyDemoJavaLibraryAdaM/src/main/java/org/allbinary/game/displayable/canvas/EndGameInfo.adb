@@ -38,7 +38,9 @@ package body org.allbinary.game.displayable.canvas.EndGameInfo_Package is
    end Create;
 
 
-   procedure update (This : in out EndGameInfo; gameInfo : GameInfo_Access; myCanvas : MyCanvas_Access) is
+   procedure update (This : in out EndGameInfo; gameInfo_Param : access GameInfo'Class; myCanvas_Param : access MyCanvas'Class) is
+      gameInfo : GameInfo_Access := GameInfo_Access (gameInfo_Param);
+      myCanvas : MyCanvas_Access := MyCanvas_Access (myCanvas_Param);
    begin
         if gameInfo.isLastLevel then
             This.setWinStr (This.TEASER_DEMO_GAME_END_LAST_LEVEL);

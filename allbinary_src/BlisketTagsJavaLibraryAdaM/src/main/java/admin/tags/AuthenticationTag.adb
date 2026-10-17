@@ -65,7 +65,8 @@ package body admin.tags.AuthenticationTag_Package is
         This.newPassword := value;
    end setNewPassword;
 
-   procedure setRoles (This : in out AuthenticationTag; values : BasicArrayList_Access) is
+   procedure setRoles (This : in out AuthenticationTag; values_Param : access BasicArrayList'Class) is
+      values : BasicArrayList_Access := BasicArrayList_Access (values_Param);
    begin
         This.roles := values;
    end setRoles;
@@ -327,13 +328,13 @@ package body admin.tags.AuthenticationTag_Package is
                 stringBuffer := StringMaker_Package.Create;
                 stringBuffer.append (To_Unbounded_String (" Request URI: "));
                 stringBuffer.append (request.getRequestURI);
-                This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, This.tagStrings.DO_START_TAG);
+                This.logUtil.putF (stringBuffer.toString, AuthenticationTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
             end if;
             if (This.command) /= (Null_Unbounded_String) then
                 This.propertiesHashMap := StdUtil_Package.getInstance.createHashMap;
                 if (This.command.compareTo (org_Package.allbinary.globals.GLOBALS2.NEWPASSWORD)) = (0) then
                     if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
-                        This.logUtil.putF (To_Unbounded_String ("New Password"), This'Unchecked_Access, This.tagStrings.DO_START_TAG);
+                        This.logUtil.putF (To_Unbounded_String ("New Password"), AuthenticationTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
                     end if;
                     if not (This.newPassword) then
                         This.pageContext.getOut.print (To_Unbounded_String ("New Password Request Failed.<p/>"));
@@ -344,7 +345,7 @@ package body admin.tags.AuthenticationTag_Package is
                     end if;
                 elsif (This.command.compareTo (org_Package.allbinary.globals.GLOBALS2.CHANGEPASSWORD)) = (0) then
                     if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
-                        This.logUtil.putF (To_Unbounded_String ("Change Password"), This'Unchecked_Access, This.tagStrings.DO_START_TAG);
+                        This.logUtil.putF (To_Unbounded_String ("Change Password"), AuthenticationTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
                     end if;
                     if not (This.changePassword) then
                         This.pageContext.getOut.print (To_Unbounded_String ("Password Change Attempt Failed.<p/>"));
@@ -355,14 +356,14 @@ package body admin.tags.AuthenticationTag_Package is
                     end if;
                 elsif (This.command.compareTo (WeblisketSessionData_Package.INVALIDATESESSION)) = (0) then
                     if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
-                        This.logUtil.putF (To_Unbounded_String ("INVALIDATESESSION"), This'Unchecked_Access, This.tagStrings.DO_START_TAG);
+                        This.logUtil.putF (To_Unbounded_String ("INVALIDATESESSION"), AuthenticationTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
                     end if;
                     return This.invalidateSession;
                 else
                     if This.isSessionOld then
                         if This.processInvalidation then
                             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
-                                This.logUtil.putF (To_Unbounded_String ("Processing Invalidation"), This'Unchecked_Access, This.tagStrings.DO_START_TAG);
+                                This.logUtil.putF (To_Unbounded_String ("Processing Invalidation"), AuthenticationTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
                             end if;
                             This.pageContext.getOut.print (To_Unbounded_String ("Please login again.<p>"));
                             if (This.command.compareTo (org_Package.allbinary.globals.GLOBALS2.PROCESSBODYIFAUTHENTICATED)) = (0) then
@@ -372,7 +373,7 @@ package body admin.tags.AuthenticationTag_Package is
                             end if;
                         else
                             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
-                                This.logUtil.putF (To_Unbounded_String ("Preparing session for invalidation"), This'Unchecked_Access, This.tagStrings.DO_START_TAG);
+                                This.logUtil.putF (To_Unbounded_String ("Preparing session for invalidation"), AuthenticationTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
                             end if;
                             if (This.command.compareTo (org_Package.allbinary.globals.GLOBALS2.PROCESSBODYIFAUTHENTICATED)) = (0) then
                                 return TagSupport_Package.SKIP_BODY;
@@ -383,7 +384,7 @@ package body admin.tags.AuthenticationTag_Package is
                     end if;
                     if ((((((This.userName) = (Null_Unbounded_String)) or else ((This.userName.compareTo (stringUtil.EMPTY_STRING)) = (0)))) and then ((((This.password) = (Null_Unbounded_String)) or else ((This.password.compareTo (stringUtil.EMPTY_STRING)) = (0))))) and then ((This.roles) /= (null))) and then (This.isAuthenticationSessionValid) then
                         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
-                            This.logUtil.putF (To_Unbounded_String ("Authenticated session is valid"), This'Unchecked_Access, This.tagStrings.DO_START_TAG);
+                            This.logUtil.putF (To_Unbounded_String ("Authenticated session is valid"), AuthenticationTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
                         end if;
                         if (This.command.compareTo (org_Package.allbinary.globals.GLOBALS2.PROCESSBODYIFAUTHENTICATED)) = (0) then
                             return TagSupport_Package.EVAL_BODY_INCLUDE;
@@ -393,11 +394,11 @@ package body admin.tags.AuthenticationTag_Package is
                     end if;
                     if (((This.userName) /= (Null_Unbounded_String)) and then ((This.password) /= (Null_Unbounded_String))) and then (This.processIfNewLogin) then
                         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
-                            This.logUtil.putF (To_Unbounded_String ("Processing new login."), This'Unchecked_Access, This.tagStrings.DO_START_TAG);
+                            This.logUtil.putF (To_Unbounded_String ("Processing new login."), AuthenticationTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
                         end if;
                         if This.isRoleValid then
                             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
-                                This.logUtil.putF (To_Unbounded_String ("Role is valid - Processing new login"), This'Unchecked_Access, This.tagStrings.DO_START_TAG);
+                                This.logUtil.putF (To_Unbounded_String ("Role is valid - Processing new login"), AuthenticationTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
                             end if;
                             This.pageContext.getOut.print (This.validRole);
                             if (This.command.compareTo (org_Package.allbinary.globals.GLOBALS2.PROCESSBODYIFAUTHENTICATED)) = (0) then
@@ -407,7 +408,7 @@ package body admin.tags.AuthenticationTag_Package is
                             end if;
                         else
                             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
-                                This.logUtil.putF (To_Unbounded_String ("Role is not valid - Processing new login"), This'Unchecked_Access, This.tagStrings.DO_START_TAG);
+                                This.logUtil.putF (To_Unbounded_String ("Role is not valid - Processing new login"), AuthenticationTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
                             end if;
                             This.pageContext.getOut.print (This.invalidRole);
                             if (This.command.compareTo (org_Package.allbinary.globals.GLOBALS2.PROCESSBODYIFAUTHENTICATED)) = (0) then
@@ -418,14 +419,14 @@ package body admin.tags.AuthenticationTag_Package is
                         end if;
                     else
                         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
-                            This.logUtil.putF (To_Unbounded_String ("Invalid Login"), This'Unchecked_Access, This.tagStrings.DO_START_TAG);
+                            This.logUtil.putF (To_Unbounded_String ("Invalid Login"), AuthenticationTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
                         end if;
                         if ((((This.userName) /= (Null_Unbounded_String)) and then ((This.userName.compareTo (stringUtil.EMPTY_STRING)) /= (0))) and then ((This.password) /= (Null_Unbounded_String))) and then ((This.password.compareTo (stringUtil.EMPTY_STRING)) /= (0)) then
                             This.pageContext.getOut.print (To_Unbounded_String ("Sorry your username and/or password is invalid.<p/>"));
                         end if;
                     end if;
                     if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
-                        This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Major authentication error - userName: ")).append (This.userName).append (To_Unbounded_String (" Password: ")).append (This.password).append (To_Unbounded_String (" Command: ")).append (This.command).toString, This'Unchecked_Access, This.tagStrings.DO_START_TAG);
+                        This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Major authentication error - userName: ")).append (This.userName).append (To_Unbounded_String (" Password: ")).append (This.password).append (To_Unbounded_String (" Command: ")).append (This.command).toString, AuthenticationTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
                     end if;
                     if (This.command.compareTo (org_Package.allbinary.globals.GLOBALS2.PROCESSBODYIFAUTHENTICATED)) = (0) then
                         return TagSupport_Package.SKIP_BODY;

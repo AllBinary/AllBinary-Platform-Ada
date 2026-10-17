@@ -52,7 +52,8 @@ package body org.allbinary.game.ag.layer.pickup.points.Points20kPickedUpLayerInt
    end getInstance;
 
    --  throws Exception
-   procedure process (This : in out Points20kPickedUpLayerInterfaceFactory; sourceLayerInterface : AllBinaryLayer_Access) is
+   procedure process (This : in out Points20kPickedUpLayerInterfaceFactory; sourceLayerInterface_Param : access AllBinaryLayer'Class) is
+      sourceLayerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (sourceLayerInterface_Param);
    begin
         This.pool.visit (sourceLayerInterface);
    end process;

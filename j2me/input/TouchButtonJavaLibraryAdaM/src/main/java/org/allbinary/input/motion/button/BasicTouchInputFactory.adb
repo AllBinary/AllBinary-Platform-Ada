@@ -72,7 +72,8 @@ package body org.allbinary.input.motion.button.BasicTouchInputFactory_Package is
       return This;
    end Create;
 
-   procedure init (This : in out BasicTouchInputFactory; inputToGameKeyMapping : InputToGameKeyMapping_Access) is
+   procedure init (This : in out BasicTouchInputFactory; inputToGameKeyMapping_Param : access InputToGameKeyMapping'Class) is
+      inputToGameKeyMapping : InputToGameKeyMapping_Access := InputToGameKeyMapping_Access (inputToGameKeyMapping_Param);
    begin
         if not (This.initialized) then
             This.initialized := True;
@@ -93,16 +94,19 @@ package body org.allbinary.input.motion.button.BasicTouchInputFactory_Package is
         end if;
    end init;
 
-   procedure updateAll (This : in out BasicTouchInputFactory; inputToGameKeyMapping : InputToGameKeyMapping_Access) is
+   procedure updateAll (This : in out BasicTouchInputFactory; inputToGameKeyMapping_Param : access InputToGameKeyMapping'Class) is
+      inputToGameKeyMapping : InputToGameKeyMapping_Access := InputToGameKeyMapping_Access (inputToGameKeyMapping_Param);
    begin
         This.updateAllFromList (This.list, inputToGameKeyMapping);
    end updateAll;
 
-   procedure updateAllFromList (This : in out BasicTouchInputFactory; list : BasicArrayList_Access; inputToGameKeyMapping : InputToGameKeyMapping_Access) is
+   procedure updateAllFromList (This : in out BasicTouchInputFactory; list_Param : access BasicArrayList'Class; inputToGameKeyMapping_Param : access InputToGameKeyMapping'Class) is
+      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
+      inputToGameKeyMapping : InputToGameKeyMapping_Access := InputToGameKeyMapping_Access (inputToGameKeyMapping_Param);
       touchButtonInput : TouchButtonInput_Access;
       index : Integer;
    begin
-        This.logUtil.putF (StringMaker_Package.Create.append (CommonLabels_Package.getInstance.START_LABEL).appendint (list.size).toString, This'Unchecked_Access, To_Unbounded_String ("updateAll"));
+        This.logUtil.putF (StringMaker_Package.Create.append (CommonLabels_Package.getInstance.START_LABEL).appendint (list.size).toString, BasicTouchInputFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("updateAll"));
         touchButtonInput := null;
         for index in reverse 0 .. (list.size) - (1) loop
             touchButtonInput := TouchButtonInput_Access (list.objectArray (index));

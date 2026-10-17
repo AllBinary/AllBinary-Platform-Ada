@@ -44,12 +44,14 @@ package body org.allbinary.animation.caption.CaptionAnimationHelperBase_Package 
         null;
    end tick;
 
-   procedure update (This : in out CaptionAnimationHelperBase; message : Unbounded_String; basicColor : BasicColor_Access) is
+   procedure update (This : in out CaptionAnimationHelperBase; message : Unbounded_String; basicColor_Param : access BasicColor'Class) is
+      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         null;
    end update;
 
-   procedure paintXY (This : in out CaptionAnimationHelperBase; graphics : Graphics_Access; x : Integer; y : Integer) is
+   procedure paintXY (This : in out CaptionAnimationHelperBase; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         null;
    end paintXY;

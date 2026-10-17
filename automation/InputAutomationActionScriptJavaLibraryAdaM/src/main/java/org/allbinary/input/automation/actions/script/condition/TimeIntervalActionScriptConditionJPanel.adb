@@ -31,20 +31,21 @@ package body org.allbinary.input.automation.actions.script.condition.TimeInterva
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out TimeIntervalActionScriptConditionJPanel'Class; timeIntervalActionScriptConditionInterface : TimeIntervalActionScriptConditionInterface_Access) is
+   procedure Initialize (This : in out TimeIntervalActionScriptConditionJPanel'Class; timeIntervalActionScriptConditionInterface_Param : access TimeIntervalActionScriptConditionInterface'Class) is
+      timeIntervalActionScriptConditionInterface : TimeIntervalActionScriptConditionInterface_Access := TimeIntervalActionScriptConditionInterface_Access (timeIntervalActionScriptConditionInterface_Param);
    begin
       JPanel_Package.Initialize (This);
       Initialize_Fields (This);
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+        This.logUtil.putF (This.commonStrings.START, TimeIntervalActionScriptConditionJPanel_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         This.initComponents;
         This.timeIntervalActionScriptConditionInterface := timeIntervalActionScriptConditionInterface;
         This.set;
    end Initialize;
 
-   function Create (timeIntervalActionScriptConditionInterface : TimeIntervalActionScriptConditionInterface_Access) return TimeIntervalActionScriptConditionJPanel_Access is
+   function Create (timeIntervalActionScriptConditionInterface_Param : access TimeIntervalActionScriptConditionInterface'Class) return TimeIntervalActionScriptConditionJPanel_Access is
       This : constant TimeIntervalActionScriptConditionJPanel_Access := new TimeIntervalActionScriptConditionJPanel;
    begin
-      TimeIntervalActionScriptConditionJPanel_Package.Initialize (This.all, timeIntervalActionScriptConditionInterface);
+      TimeIntervalActionScriptConditionJPanel_Package.Initialize (This.all, timeIntervalActionScriptConditionInterface_Param);
       return This;
    end Create;
 
@@ -65,7 +66,8 @@ package body org.allbinary.input.automation.actions.script.condition.TimeInterva
         return This.timeIntervalJTextField;
    end getTimeIntervalJTextField;
 
-   procedure setTimeIntervalJTextField (This : in out TimeIntervalActionScriptConditionJPanel; timeIntervalJTextField : JTextField_Access) is
+   procedure setTimeIntervalJTextField (This : in out TimeIntervalActionScriptConditionJPanel; timeIntervalJTextField_Param : access JTextField'Class) is
+      timeIntervalJTextField : JTextField_Access := JTextField_Access (timeIntervalJTextField_Param);
    begin
         This.timeIntervalJTextField := timeIntervalJTextField;
    end setTimeIntervalJTextField;
@@ -75,7 +77,8 @@ package body org.allbinary.input.automation.actions.script.condition.TimeInterva
         return This.timeIntervalActionJDialog;
    end getTimeIntervalActionJDialog;
 
-   procedure setTimeIntervalActionJDialog (This : in out TimeIntervalActionScriptConditionJPanel; timeIntervalActionJDialog : JDialog_Access) is
+   procedure setTimeIntervalActionJDialog (This : in out TimeIntervalActionScriptConditionJPanel; timeIntervalActionJDialog_Param : access JDialog'Class) is
+      timeIntervalActionJDialog : JDialog_Access := JDialog_Access (timeIntervalActionJDialog_Param);
    begin
         This.timeIntervalActionJDialog := timeIntervalActionJDialog;
    end setTimeIntervalActionJDialog;
@@ -96,7 +99,8 @@ package body org.allbinary.input.automation.actions.script.condition.TimeInterva
         This.okJButton.setText (To_Unbounded_String ("OK"));
         This.okJButton.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt : ActionEvent_Access) is
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
+--        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.okJButtonActionPerformed (evt);
 --     end actionPerformed;
@@ -110,25 +114,28 @@ package body org.allbinary.input.automation.actions.script.condition.TimeInterva
         This.timeIntervalActionJButton.setText (To_Unbounded_String ("Edit"));
         This.timeIntervalActionJButton.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt : ActionEvent_Access) is
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
+--        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.timeIntervalActionJButtonActionPerformed (evt);
 --     end actionPerformed;
 );
         This.jLabel1.setText (To_Unbounded_String ("Time Interval:"));
-        layout := GroupLayout_Package.Create (This'Unchecked_Access);
+        layout := GroupLayout_Package.Create (TimeIntervalActionScriptConditionJPanel_Access'(This'Unchecked_Access));
         This.setLayout (layout);
         layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addComponent (This.jLabel1).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED, javax_Package.swing.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE).addComponent (This.timeIntervalActionJButton)));
         layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.jLabel1).addComponent (This.timeIntervalActionJButton)));
    end initComponents;
 
-   procedure okJButtonActionPerformed (This : in out TimeIntervalActionScriptConditionJPanel; evt : ActionEvent_Access) is
+   procedure okJButtonActionPerformed (This : in out TimeIntervalActionScriptConditionJPanel; evt_Param : access ActionEvent'Class) is
+      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         This.update;
         This.getTimeIntervalActionJDialog.setVisible (False);
    end okJButtonActionPerformed;
 
-   procedure timeIntervalActionJButtonActionPerformed (This : in out TimeIntervalActionScriptConditionJPanel; evt : ActionEvent_Access) is
+   procedure timeIntervalActionJButtonActionPerformed (This : in out TimeIntervalActionScriptConditionJPanel; evt_Param : access ActionEvent'Class) is
+      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         This.getTimeIntervalActionJDialog.setVisible (True);
    end timeIntervalActionJButtonActionPerformed;

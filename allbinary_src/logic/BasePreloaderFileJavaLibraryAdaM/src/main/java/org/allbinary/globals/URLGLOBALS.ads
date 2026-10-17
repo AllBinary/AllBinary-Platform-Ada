@@ -36,7 +36,7 @@ package org.allbinary.globals.URLGLOBALS_Package is
 
    procedure Initialize (This : in out URLGLOBALS'Class);
    function Create return URLGLOBALS_Access;
-   procedure init (urlGlobalsInterface : UrlGlobalsInterface_Access);
+   procedure init (urlGlobalsInterface_Param : access UrlGlobalsInterface'Class);
    function isTestingMode return Boolean;
    function getWebappPath return Unbounded_String;
    function getTestHtmlPath return Unbounded_String;

@@ -40,7 +40,8 @@ package body org.allbinary.emulator.swt.SWTProcessor_Package is
       return This;
    end Create;
 
-   procedure process (This : in out SWTProcessor; display : Display_Access) is
+   procedure process (This : in out SWTProcessor; display_Param : access Display'Class) is
+      display : Display_Access := Display_Access (display_Param);
    begin
         display.sleep;
    end process;

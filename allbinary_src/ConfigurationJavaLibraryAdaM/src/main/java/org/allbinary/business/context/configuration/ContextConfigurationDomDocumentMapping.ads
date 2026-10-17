@@ -45,8 +45,8 @@ package org.allbinary.business.context.configuration.ContextConfigurationDomDocu
       contextConfigurationInterface : ContextConfigurationInterface_Access;
    end record;
 
-   procedure Initialize (This : in out ContextConfigurationDomDocumentMapping'Class; contextConfigurationInterface : ContextConfigurationInterface_Access);
-   function Create (contextConfigurationInterface : ContextConfigurationInterface_Access) return ContextConfigurationDomDocumentMapping_Access;
+   procedure Initialize (This : in out ContextConfigurationDomDocumentMapping'Class; contextConfigurationInterface_Param : access ContextConfigurationInterface'Class);
+   function Create (contextConfigurationInterface_Param : access ContextConfigurationInterface'Class) return ContextConfigurationDomDocumentMapping_Access;
    function toXmlDoc (This : in out ContextConfigurationDomDocumentMapping) return Document_Access;
    function toDomDocumentString (This : in out ContextConfigurationDomDocumentMapping) return Unbounded_String;
 

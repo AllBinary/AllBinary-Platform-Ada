@@ -42,10 +42,11 @@ package body org.allbinary.bundle.logic.preloader.AllBinaryPreloaderActivator_Pa
    end getBundleContext;
 
    --  throws Exception
-   procedure start (This : in out AllBinaryPreloaderActivator; context : BundleContext_Access) is
+   procedure start (This : in out AllBinaryPreloaderActivator; context_Param : access BundleContext'Class) is
+      context : BundleContext_Access := BundleContext_Access (context_Param);
    begin
         begin
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("start"));
+            This.logUtil.putF (This.commonStrings.START, AllBinaryPreloaderActivator_Access'(This'Unchecked_Access), To_Unbounded_String ("start"));
             AllBinaryPreloaderActivator_Package.context := context;
             This.registerAsService;
         exception
@@ -53,7 +54,7 @@ package body org.allbinary.bundle.logic.preloader.AllBinaryPreloaderActivator_Pa
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("start"), e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, AllBinaryPreloaderActivator_Access'(This'Unchecked_Access), To_Unbounded_String ("start"), e);
             Java_Throw (e);
                 end;
         end;
@@ -75,9 +76,10 @@ package body org.allbinary.bundle.logic.preloader.AllBinaryPreloaderActivator_Pa
    end registerAsService;
 
    --  throws Exception
-   procedure stop (This : in out AllBinaryPreloaderActivator; context : BundleContext_Access) is
+   procedure stop (This : in out AllBinaryPreloaderActivator; context_Param : access BundleContext'Class) is
+      context : BundleContext_Access := BundleContext_Access (context_Param);
    begin
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("stop"));
+        This.logUtil.putF (This.commonStrings.START, AllBinaryPreloaderActivator_Access'(This'Unchecked_Access), To_Unbounded_String ("stop"));
    end stop;
 
 begin

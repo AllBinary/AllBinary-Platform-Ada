@@ -33,13 +33,14 @@ package body org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItemFactory_
    end Create;
 
 
-   function getInstance (This : in out LinesGraphicItemFactory; canvasJPanel : CanvasJPanel_Access) return GraphicItemInterface_Access is
+   function getInstance (This : in out LinesGraphicItemFactory; canvasJPanel_Param : access CanvasJPanel'Class) return GraphicItemInterface_Access is
+      canvasJPanel : CanvasJPanel_Access := CanvasJPanel_Access (canvasJPanel_Param);
    begin
         return LinesGraphicItem_Package.Create;
    end getInstance;
 
-   procedure getInstance (This : in out LinesGraphicItemFactory; canvasJPanel : CanvasJPanel_Access) is
-      Java_Result : constant GraphicItemInterface_Access := LinesGraphicItemFactory'Class (This).getInstance (canvasJPanel);
+   procedure getInstance (This : in out LinesGraphicItemFactory; canvasJPanel_Param : access CanvasJPanel'Class) is
+      Java_Result : constant GraphicItemInterface_Access := LinesGraphicItemFactory'Class (This).getInstance (canvasJPanel_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

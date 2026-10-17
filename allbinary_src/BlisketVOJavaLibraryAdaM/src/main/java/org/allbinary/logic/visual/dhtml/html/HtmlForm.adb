@@ -56,12 +56,14 @@ package body org.allbinary.logic.visual.dhtml.html.HtmlForm_Package is
         This.method_Case := This.GET;
    end setGet;
 
-   procedure addInput (This : in out HtmlForm; htmlInput : HtmlInput_Access) is
+   procedure addInput (This : in out HtmlForm; htmlInput_Param : access HtmlInput'Class) is
+      htmlInput : HtmlInput_Access := HtmlInput_Access (htmlInput_Param);
    begin
         This.inputs.add (htmlInput);
    end addInput;
 
-   procedure addTable (This : in out HtmlForm; htmlTable : HtmlTable_Access) is
+   procedure addTable (This : in out HtmlForm; htmlTable_Param : access HtmlTable'Class) is
+      htmlTable : HtmlTable_Access := HtmlTable_Access (htmlTable_Param);
    begin
         This.inputs.add (htmlTable);
    end addTable;

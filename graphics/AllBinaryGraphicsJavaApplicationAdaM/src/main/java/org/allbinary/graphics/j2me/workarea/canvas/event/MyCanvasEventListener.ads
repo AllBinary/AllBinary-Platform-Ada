@@ -29,13 +29,13 @@ package org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventListener_
    type MyCanvasEventListener_Access is access all MyCanvasEventListener'Class;
    type MyCanvasEventListener_Access_Array is array (Natural range <>) of MyCanvasEventListener_Access;
    type MyCanvasEventListener_Access_Array_Access is access all MyCanvasEventListener_Access_Array;
-   procedure delete (This : in out MyCanvasEventListener; evt : MyCanvasEvent_Access) is abstract;
-   procedure duplicate (This : in out MyCanvasEventListener; evt : MyCanvasEvent_Access) is abstract;
-   procedure select_Id (This : in out MyCanvasEventListener; evt : MyCanvasEvent_Access) is abstract;
-   procedure rotate (This : in out MyCanvasEventListener; evt : MyCanvasEvent_Access) is abstract;
-   procedure explode (This : in out MyCanvasEventListener; evt : MyCanvasEvent_Access) is abstract;
-   procedure autoExplode (This : in out MyCanvasEventListener; evt : MyCanvasEvent_Access) is abstract;
-   procedure center (This : in out MyCanvasEventListener; evt : MyCanvasEvent_Access) is abstract;
+   procedure delete (This : in out MyCanvasEventListener; evt_Param : access MyCanvasEvent'Class) is abstract;
+   procedure duplicate (This : in out MyCanvasEventListener; evt_Param : access MyCanvasEvent'Class) is abstract;
+   procedure select_Id (This : in out MyCanvasEventListener; evt_Param : access MyCanvasEvent'Class) is abstract;
+   procedure rotate (This : in out MyCanvasEventListener; evt_Param : access MyCanvasEvent'Class) is abstract;
+   procedure explode (This : in out MyCanvasEventListener; evt_Param : access MyCanvasEvent'Class) is abstract;
+   procedure autoExplode (This : in out MyCanvasEventListener; evt_Param : access MyCanvasEvent'Class) is abstract;
+   procedure center (This : in out MyCanvasEventListener; evt_Param : access MyCanvasEvent'Class) is abstract;
 
 end org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventListener_Package;
 

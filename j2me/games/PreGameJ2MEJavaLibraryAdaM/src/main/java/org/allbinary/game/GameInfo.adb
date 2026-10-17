@@ -31,7 +31,10 @@ package body org.allbinary.game.GameInfo_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out GameInfo'Class; gameType : GameType_Access; gameMode : GameMode_Access; playerType : PlayerType_Access; highestLevel : Integer; currentLevel : Integer) is
+   procedure Initialize (This : in out GameInfo'Class; gameType_Param : access GameType'Class; gameMode_Param : access GameMode'Class; playerType_Param : access PlayerType'Class; highestLevel : Integer; currentLevel : Integer) is
+      gameType : GameType_Access := GameType_Access (gameType_Param);
+      gameMode : GameMode_Access := GameMode_Access (gameMode_Param);
+      playerType : PlayerType_Access := PlayerType_Access (playerType_Param);
    begin
       Initialize_Fields (This);
         This.gameType := gameType;
@@ -41,10 +44,10 @@ package body org.allbinary.game.GameInfo_Package is
         This.playerType := playerType;
    end Initialize;
 
-   function Create (gameType : GameType_Access; gameMode : GameMode_Access; playerType : PlayerType_Access; highestLevel : Integer; currentLevel : Integer) return GameInfo_Access is
+   function Create (gameType_Param : access GameType'Class; gameMode_Param : access GameMode'Class; playerType_Param : access PlayerType'Class; highestLevel : Integer; currentLevel : Integer) return GameInfo_Access is
       This : constant GameInfo_Access := new GameInfo;
    begin
-      GameInfo_Package.Initialize (This.all, gameType, gameMode, playerType, highestLevel, currentLevel);
+      GameInfo_Package.Initialize (This.all, gameType_Param, gameMode_Param, playerType_Param, highestLevel, currentLevel);
       return This;
    end Create;
 
@@ -81,7 +84,7 @@ package body org.allbinary.game.GameInfo_Package is
    procedure setCurrentLevel (This : in out GameInfo; currentLevel : Integer) is
    begin
         This.currentLevel := currentLevel;
-        This.logUtil.putF (StringMaker_Package.Create.append (This.NEW_LEVEL).appendint (This.getCurrentLevel).toString, This'Unchecked_Access, This.SET_CURRENT_LEVEL);
+        This.logUtil.putF (StringMaker_Package.Create.append (This.NEW_LEVEL).appendint (This.getCurrentLevel).toString, GameInfo_Access'(This'Unchecked_Access), This.SET_CURRENT_LEVEL);
    end setCurrentLevel;
 
    procedure nextGameLevel (This : in out GameInfo) is
@@ -89,7 +92,7 @@ package body org.allbinary.game.GameInfo_Package is
         if (This.getCurrentLevel) < (This.getHighestLevel) then
             This.currentLevel := This.currentLevel + 1;
         end if;
-        This.logUtil.putF (StringMaker_Package.Create.append (CommonLabels_Package.getInstance.NEXT).append (CommonSeps_Package.getInstance.SPACE).append (This.NEW_LEVEL).appendint (This.getCurrentLevel).toString, This'Unchecked_Access, This.NEXT_GAME_LEVEL);
+        This.logUtil.putF (StringMaker_Package.Create.append (CommonLabels_Package.getInstance.NEXT).append (CommonSeps_Package.getInstance.SPACE).append (This.NEW_LEVEL).appendint (This.getCurrentLevel).toString, GameInfo_Access'(This'Unchecked_Access), This.NEXT_GAME_LEVEL);
    end nextGameLevel;
 
    procedure previousGameLevel (This : in out GameInfo) is

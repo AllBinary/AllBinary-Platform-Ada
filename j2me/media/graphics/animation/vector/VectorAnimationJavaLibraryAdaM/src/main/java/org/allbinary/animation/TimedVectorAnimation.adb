@@ -22,16 +22,18 @@ package body org.allbinary.animation.TimedVectorAnimation_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out TimedVectorAnimation'Class; currentPoints : Integer_Array_Access_Array_Access_Array_Access; basicColor : BasicColor_Access; animationBehavior : AnimationBehavior_Access) is
+   procedure Initialize (This : in out TimedVectorAnimation'Class; currentPoints : Integer_Array_Access_Array_Access_Array_Access; basicColor_Param : access BasicColor'Class; animationBehavior_Param : access AnimationBehavior'Class) is
+      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
+      animationBehavior : AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
    begin
         VectorAnimation_Package.Initialize (This, currentPoints, basicColor, animationBehavior);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (currentPoints : Integer_Array_Access_Array_Access_Array_Access; basicColor : BasicColor_Access; animationBehavior : AnimationBehavior_Access) return TimedVectorAnimation_Access is
+   function Create (currentPoints : Integer_Array_Access_Array_Access_Array_Access; basicColor_Param : access BasicColor'Class; animationBehavior_Param : access AnimationBehavior'Class) return TimedVectorAnimation_Access is
       This : constant TimedVectorAnimation_Access := new TimedVectorAnimation;
    begin
-      TimedVectorAnimation_Package.Initialize (This.all, currentPoints, basicColor, animationBehavior);
+      TimedVectorAnimation_Package.Initialize (This.all, currentPoints, basicColor_Param, animationBehavior_Param);
       return This;
    end Create;
 

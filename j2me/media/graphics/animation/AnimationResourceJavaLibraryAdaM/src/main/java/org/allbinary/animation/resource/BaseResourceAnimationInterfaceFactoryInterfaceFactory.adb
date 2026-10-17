@@ -28,7 +28,10 @@ package body org.allbinary.animation.resource.BaseResourceAnimationInterfaceFact
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory'Class; name : Unbounded_String; hashtable : ABHashtable_Access; rectangleHashtable : ABHashtable_Access; rectangleArrayHashtable : ABHashtable_Access) is
+   procedure Initialize (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory'Class; name : Unbounded_String; hashtable_Param : access ABHashtable'Class; rectangleHashtable_Param : access ABHashtable'Class; rectangleArrayHashtable_Param : access ABHashtable'Class) is
+      hashtable : ABHashtable_Access := ABHashtable_Access (hashtable_Param);
+      rectangleHashtable : ABHashtable_Access := ABHashtable_Access (rectangleHashtable_Param);
+      rectangleArrayHashtable : ABHashtable_Access := ABHashtable_Access (rectangleArrayHashtable_Param);
    begin
       Initialize_Fields (This);
         This.hashtable := hashtable;
@@ -37,10 +40,10 @@ package body org.allbinary.animation.resource.BaseResourceAnimationInterfaceFact
         This.name := name;
    end Initialize;
 
-   function Create (name : Unbounded_String; hashtable : ABHashtable_Access; rectangleHashtable : ABHashtable_Access; rectangleArrayHashtable : ABHashtable_Access) return BaseResourceAnimationInterfaceFactoryInterfaceFactory_Access is
+   function Create (name : Unbounded_String; hashtable_Param : access ABHashtable'Class; rectangleHashtable_Param : access ABHashtable'Class; rectangleArrayHashtable_Param : access ABHashtable'Class) return BaseResourceAnimationInterfaceFactoryInterfaceFactory_Access is
       This : constant BaseResourceAnimationInterfaceFactoryInterfaceFactory_Access := new BaseResourceAnimationInterfaceFactoryInterfaceFactory;
    begin
-      BaseResourceAnimationInterfaceFactoryInterfaceFactory_Package.Initialize (This.all, name, hashtable, rectangleHashtable, rectangleArrayHashtable);
+      BaseResourceAnimationInterfaceFactoryInterfaceFactory_Package.Initialize (This.all, name, hashtable_Param, rectangleHashtable_Param, rectangleArrayHashtable_Param);
       return This;
    end Create;
 
@@ -54,18 +57,20 @@ package body org.allbinary.animation.resource.BaseResourceAnimationInterfaceFact
       commonStrings : CommonStrings_Access;
    begin
         commonStrings := CommonStrings_Package.getInstance;
-        This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Available List of Animations: ")).append (This.hashtable.toString).toString, This'Unchecked_Access, commonStrings.INIT);
+        This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Available List of Animations: ")).append (This.hashtable.toString).toString, BaseResourceAnimationInterfaceFactoryInterfaceFactory_Access'(This'Unchecked_Access), commonStrings.INIT);
         This.setInitialized (True);
    end init;
 
    --  throws Exception
-   procedure initImageCache (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory; imageCache : ImageCache_Access; level : Integer) is
+   procedure initImageCache (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory; imageCache_Param : access ImageCache'Class; level : Integer) is
+      imageCache : ImageCache_Access := ImageCache_Access (imageCache_Param);
    begin
         null;
    end initImageCache;
 
    --  throws Exception
-   procedure add (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory; resource : Unbounded_String; animationInterfaceFactoryInterface : BasicAnimationInterfaceFactoryInterface_Access) is
+   procedure add (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory; resource : Unbounded_String; animationInterfaceFactoryInterface_Param : access BasicAnimationInterfaceFactoryInterface'Class) is
+      animationInterfaceFactoryInterface : BasicAnimationInterfaceFactoryInterface_Access := BasicAnimationInterfaceFactoryInterface_Access (animationInterfaceFactoryInterface_Param);
    begin
         if This.hashtable.containsKey (Java_Object_Access (resource)) then
             Java_Throw (Java_New_Exception ("Exception", StringMaker_Package.Create.append (To_Unbounded_String ("Resource Already Created: ")).append (resource).toString));
@@ -96,7 +101,8 @@ package body org.allbinary.animation.resource.BaseResourceAnimationInterfaceFact
    end getRectangle;
 
    --  throws Exception
-   procedure addRectangle (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory; resource : Unbounded_String; rectangle : Rectangle_Access) is
+   procedure addRectangle (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory; resource : Unbounded_String; rectangle_Param : access Rectangle'Class) is
+      rectangle : Rectangle_Access := Rectangle_Access (rectangle_Param);
    begin
         This.rectangleHashtable.put (resource, rectangle);
    end addRectangle;

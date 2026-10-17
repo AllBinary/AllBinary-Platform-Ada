@@ -43,7 +43,7 @@ package body org.allbinary.logic.io.LineReader_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (To_Unbounded_String ("File: ") & fileName, This'Unchecked_Access, To_Unbounded_String ("LineReader"), e);
+            This.logUtil.put (To_Unbounded_String ("File: ") & fileName, LineReader_Access'(This'Unchecked_Access), To_Unbounded_String ("LineReader"), e);
             begin
                 null;
             end;
@@ -72,7 +72,7 @@ package body org.allbinary.logic.io.LineReader_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("hasNext"), e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, LineReader_Access'(This'Unchecked_Access), To_Unbounded_String ("hasNext"), e);
             begin
                 null;
             end;
@@ -99,7 +99,7 @@ package body org.allbinary.logic.io.LineReader_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("next"), e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, LineReader_Access'(This'Unchecked_Access), To_Unbounded_String ("next"), e);
             begin
                 null;
             end;

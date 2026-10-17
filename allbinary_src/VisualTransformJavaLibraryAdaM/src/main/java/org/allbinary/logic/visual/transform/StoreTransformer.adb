@@ -21,16 +21,18 @@ package body org.allbinary.logic.visual.transform.StoreTransformer_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out StoreTransformer'Class; abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access) is
+   procedure Initialize (This : in out StoreTransformer'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         BasicTransformer_Package.Initialize (This, abeClientInformation, transformInfoInterface);
         This.setURIResolver (URIResolver_Access (StoreUriResolver_Package.Create (This.getTransformInfoInterface, BasicUriResolver_Access (This.getURIResolver))));
    end Initialize;
 
-   function Create (abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access) return StoreTransformer_Access is
+   function Create (abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) return StoreTransformer_Access is
       This : constant StoreTransformer_Access := new StoreTransformer;
    begin
-      StoreTransformer_Package.Initialize (This.all, abeClientInformation, transformInfoInterface);
+      StoreTransformer_Package.Initialize (This.all, abeClientInformation_Param, transformInfoInterface_Param);
       return This;
    end Create;
 

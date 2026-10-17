@@ -39,8 +39,8 @@ package org.allbinary.animation.special.SpecialAnimation_Package is
    type SpecialAnimation is new IndexedAnimation and SpecialAnimationInterface with null record;
    NULL_SPECIAL_ANIMATION : SpecialAnimation_Access;
 
-   procedure Initialize (This : in out SpecialAnimation'Class; animationBehavior : AnimationBehavior_Access);
-   function Create (animationBehavior : AnimationBehavior_Access) return SpecialAnimation_Access;
+   procedure Initialize (This : in out SpecialAnimation'Class; animationBehavior_Param : access AnimationBehavior'Class);
+   function Create (animationBehavior_Param : access AnimationBehavior'Class) return SpecialAnimation_Access;
    function getInstance return SpecialAnimation_Access;
    procedure nextFrame (This : in out SpecialAnimation);
    procedure setLastFrame (This : in out SpecialAnimation);

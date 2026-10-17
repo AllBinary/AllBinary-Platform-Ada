@@ -31,7 +31,7 @@ package org.allbinary.game.input.mapping.event.InputMappingEventListenerInterfac
    type InputMappingEventListenerInterface_Access is access all InputMappingEventListenerInterface'Class;
    type InputMappingEventListenerInterface_Access_Array is array (Natural range <>) of InputMappingEventListenerInterface_Access;
    type InputMappingEventListenerInterface_Access_Array_Access is access all InputMappingEventListenerInterface_Access_Array;
-   procedure onInputMappingEvent (This : in out InputMappingEventListenerInterface; inputMappingEvent : InputMappingEvent_Access) is abstract;
+   procedure onInputMappingEvent (This : in out InputMappingEventListenerInterface; inputMappingEvent_Param : access InputMappingEvent'Class) is abstract;
 
 end org.allbinary.game.input.mapping.event.InputMappingEventListenerInterface_Package;
 

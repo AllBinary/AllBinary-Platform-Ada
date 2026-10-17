@@ -49,8 +49,8 @@ package org.allbinary.business.user.commerce.money.payment.gateway.transaction.P
    procedure Initialize (This : in out PaymentTransactionInterfaceFactory'Class);
    function Create return PaymentTransactionInterfaceFactory_Access;
    function getInstance return PaymentTransactionInterfaceFactory_Access;
-   function getInstance (This : in out PaymentTransactionInterfaceFactory; orderReview : OrderHistory_Access) return PaymentTransactionInterface_Access;
-   procedure getInstance (This : in out PaymentTransactionInterfaceFactory; orderReview : OrderHistory_Access);
+   function getInstance (This : in out PaymentTransactionInterfaceFactory; orderReview_Param : access OrderHistory'Class) return PaymentTransactionInterface_Access;
+   procedure getInstance (This : in out PaymentTransactionInterfaceFactory; orderReview_Param : access OrderHistory'Class);
 
 end org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterfaceFactory_Package;
 

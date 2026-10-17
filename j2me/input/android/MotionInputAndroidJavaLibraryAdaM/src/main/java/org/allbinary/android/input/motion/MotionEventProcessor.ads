@@ -35,7 +35,7 @@ package org.allbinary.android.input.motion.MotionEventProcessor_Package is
 
    procedure Initialize (This : in out MotionEventProcessor'Class);
    function Create return MotionEventProcessor_Access;
-   procedure process (This : in out MotionEventProcessor; motionEvent : MotionEvent_Access);
+   procedure process (This : in out MotionEventProcessor; motionEvent_Param : access MotionEvent'Class);
 
 end org.allbinary.android.input.motion.MotionEventProcessor_Package;
 

@@ -34,7 +34,8 @@ package body org.allbinary.device.LoadTextures_Package is
 
 
    --  throws Exception
-   procedure load (This : in out LoadTextures; gl : GL10_Access) is
+   procedure load (This : in out LoadTextures; gl_Param : access GL10'Class) is
+      gl : GL10_Access := GL10_Access (gl_Param);
    begin
         null;
    end load;

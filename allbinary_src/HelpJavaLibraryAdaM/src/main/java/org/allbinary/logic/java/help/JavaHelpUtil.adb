@@ -63,7 +63,8 @@ package body org.allbinary.logic.java.help.JavaHelpUtil_Package is
         end;
    end getHelpSet;
 
-   function getHelpSet (This : in out JavaHelpUtil; url : URL_Access) return HelpSet_Access is
+   function getHelpSet (This : in out JavaHelpUtil; url_Param : access URL'Class) return HelpSet_Access is
+      url : URL_Access := URL_Access (url_Param);
    begin
         begin
             return HelpSet_Package.Create (null, url);
@@ -78,7 +79,8 @@ package body org.allbinary.logic.java.help.JavaHelpUtil_Package is
         end;
    end getHelpSet;
 
-   procedure show (This : in out JavaHelpUtil; helpSet : HelpSet_Access) is
+   procedure show (This : in out JavaHelpUtil; helpSet_Param : access HelpSet'Class) is
+      helpSet : HelpSet_Access := HelpSet_Access (helpSet_Param);
       helpBroker : HelpBroker_Access;
    begin
         begin
@@ -120,8 +122,8 @@ package body org.allbinary.logic.java.help.JavaHelpUtil_Package is
       null;
    end getHelpSet;
 
-   procedure getHelpSet (This : in out JavaHelpUtil; url : URL_Access) is
-      Java_Result : constant HelpSet_Access := JavaHelpUtil'Class (This).getHelpSet (url);
+   procedure getHelpSet (This : in out JavaHelpUtil; url_Param : access URL'Class) is
+      Java_Result : constant HelpSet_Access := JavaHelpUtil'Class (This).getHelpSet (url_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

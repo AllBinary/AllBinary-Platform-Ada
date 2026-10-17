@@ -22,16 +22,17 @@ package body views.generic_Id.address.shipping.AddTaxValidationView_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AddTaxValidationView'Class; transformInfoInterface : TransformInfoInterface_Access) is
+   procedure Initialize (This : in out AddTaxValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         ShippingAddressView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return AddTaxValidationView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return AddTaxValidationView_Access is
       This : constant AddTaxValidationView_Access := new AddTaxValidationView;
    begin
-      AddTaxValidationView_Package.Initialize (This.all, transformInfoInterface);
+      AddTaxValidationView_Package.Initialize (This.all, transformInfoInterface_Param);
       return This;
    end Create;
 
@@ -74,7 +75,7 @@ package body views.generic_Id.address.shipping.AddTaxValidationView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to validate"), This'Unchecked_Access, This.commonStrings.IS_VALID, e);
+                This.logUtil.put (To_Unbounded_String ("Failed to validate"), AddTaxValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
             end if;
             return False;
                 end;
@@ -119,7 +120,7 @@ package body views.generic_Id.address.shipping.AddTaxValidationView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (To_Unbounded_String ("Failed to create validateInfo"), This'Unchecked_Access, To_Unbounded_String ("validationInfo()"), e);
+                This.logUtil.put (To_Unbounded_String ("Failed to create validateInfo"), AddTaxValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
             end if;
             return To_Unbounded_String ("Error Creating ValidationInfo");
                 end;
@@ -131,13 +132,14 @@ package body views.generic_Id.address.shipping.AddTaxValidationView_Package is
         return null;
    end toValidationInfoDoc;
 
-   function toValidationInfoNode (This : in out AddTaxValidationView; document : Document_Access) return Node_Access is
+   function toValidationInfoNode (This : in out AddTaxValidationView; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
    begin
         return null;
    end toValidationInfoNode;
 
-   procedure toValidationInfoNode (This : in out AddTaxValidationView; document : Document_Access) is
-      Java_Result : constant Node_Access := AddTaxValidationView'Class (This).toValidationInfoNode (document);
+   procedure toValidationInfoNode (This : in out AddTaxValidationView; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := AddTaxValidationView'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

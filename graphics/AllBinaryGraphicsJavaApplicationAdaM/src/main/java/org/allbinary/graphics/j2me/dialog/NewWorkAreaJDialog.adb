@@ -26,7 +26,9 @@ package body org.allbinary.graphics.j2me.dialog.NewWorkAreaJDialog_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out NewWorkAreaJDialog'Class; parent : MyFrame_Access; modal : Boolean; dimension : Dimension_Access; newName : Unbounded_String) is
+   procedure Initialize (This : in out NewWorkAreaJDialog'Class; parent_Param : access MyFrame'Class; modal : Boolean; dimension_Param : access Dimension'Class; newName : Unbounded_String) is
+      parent : MyFrame_Access := MyFrame_Access (parent_Param);
+      dimension : Dimension_Access := Dimension_Access (dimension_Param);
       submitButton : JButton_Access;
    begin
         JDialog_Package.Initialize (This, Frame_Access (parent), modal);
@@ -41,7 +43,8 @@ package body org.allbinary.graphics.j2me.dialog.NewWorkAreaJDialog_Package is
             submitButton := JButton_Package.Create (To_Unbounded_String ("Ok"));
             submitButton.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --                  
---     procedure actionPerformed (This : in out ; evt : ActionEvent_Access) is
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
+--        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                      begin
 --                          This.disposeNewDialog;
@@ -77,10 +80,10 @@ package body org.allbinary.graphics.j2me.dialog.NewWorkAreaJDialog_Package is
         end;
    end Initialize;
 
-   function Create (parent : MyFrame_Access; modal : Boolean; dimension : Dimension_Access; newName : Unbounded_String) return NewWorkAreaJDialog_Access is
+   function Create (parent_Param : access MyFrame'Class; modal : Boolean; dimension_Param : access Dimension'Class; newName : Unbounded_String) return NewWorkAreaJDialog_Access is
       This : constant NewWorkAreaJDialog_Access := new NewWorkAreaJDialog;
    begin
-      NewWorkAreaJDialog_Package.Initialize (This.all, parent, modal, dimension, newName);
+      NewWorkAreaJDialog_Package.Initialize (This.all, parent_Param, modal, dimension_Param, newName);
       return This;
    end Create;
 
@@ -96,7 +99,7 @@ package body org.allbinary.graphics.j2me.dialog.NewWorkAreaJDialog_Package is
             canvasHeight := This.ySizeJTextField.getText;
             newName := This.nameJTextField.getText;
             if (newName) = (Null_Unbounded_String) then
-                Java_Throw (Java_New_Exception ("GraphicsException", To_Unbounded_String ("No Name"), This'Unchecked_Access, To_Unbounded_String ("disposeNewDialog")));
+                Java_Throw (Java_New_Exception ("GraphicsException", To_Unbounded_String ("No Name"), NewWorkAreaJDialog_Access'(This'Unchecked_Access), To_Unbounded_String ("disposeNewDialog")));
             end if;
             workAreaJPanel := WorkAreaJPanel_Package.Create (newName, This.dimension, canvasWidth.intValue, canvasHeight.intValue);
             workAreaJPanel.setLayout (GridLayout_Package.Create (1, 1));
@@ -116,7 +119,8 @@ package body org.allbinary.graphics.j2me.dialog.NewWorkAreaJDialog_Package is
    begin
         This.addWindowListener (WindowAdapter_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure windowClosing (This : in out ; evt : WindowEvent_Access) is
+--     procedure windowClosing (This : in out ; evt_Param : access WindowEvent'Class) is
+--        evt : WindowEvent_Access := WindowEvent_Access (evt_Param);
 --     begin
 --                  This.closeDialog (evt);
 --     end windowClosing;
@@ -124,7 +128,8 @@ package body org.allbinary.graphics.j2me.dialog.NewWorkAreaJDialog_Package is
         This.pack;
    end initComponents;
 
-   procedure closeDialog (This : in out NewWorkAreaJDialog; evt : WindowEvent_Access) is
+   procedure closeDialog (This : in out NewWorkAreaJDialog; evt_Param : access WindowEvent'Class) is
+      evt : WindowEvent_Access := WindowEvent_Access (evt_Param);
    begin
         This.setVisible (False);
         This.dispose;

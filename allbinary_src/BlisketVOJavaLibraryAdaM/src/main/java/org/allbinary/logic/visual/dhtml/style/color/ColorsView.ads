@@ -52,10 +52,10 @@ package org.allbinary.logic.visual.dhtml.style.color.ColorsView_Package is
 
    procedure Initialize (This : in out ColorsView'Class);
    function Create return ColorsView_Access;
-   function getColorNode (This : in out ColorsView; document : Document_Access; redIndex : Integer; greenIndex : Integer; blueIndex : Integer) return Node_Access;
-   procedure getColorNode (This : in out ColorsView; document : Document_Access; redIndex : Integer; greenIndex : Integer; blueIndex : Integer);
-   function toXmlNode (This : in out ColorsView; document : Document_Access) return Node_Access;
-   procedure toXmlNode (This : in out ColorsView; document : Document_Access);
+   function getColorNode (This : in out ColorsView; document_Param : access Document'Class; redIndex : Integer; greenIndex : Integer; blueIndex : Integer) return Node_Access;
+   procedure getColorNode (This : in out ColorsView; document_Param : access Document'Class; redIndex : Integer; greenIndex : Integer; blueIndex : Integer);
+   function toXmlNode (This : in out ColorsView; document_Param : access Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out ColorsView; document_Param : access Document'Class);
 
 end org.allbinary.logic.visual.dhtml.style.color.ColorsView_Package;
 

@@ -86,23 +86,23 @@ package org.allbinary.game.layer.waypoint.Waypoint_Package is
       paths : BasicArrayList_Access_Array_Access_Array_Access;
    end record;
 
-   procedure Initialize (This : in out Waypoint'Class; ownerLayer : PathFindingLayerInterface_Access; sound : Sound_Access);
-   function Create (ownerLayer : PathFindingLayerInterface_Access; sound : Sound_Access) return Waypoint_Access;
-   procedure setAllBinaryGameLayerManager (This : in out Waypoint; allBinaryGameLayerManager : AllBinaryGameLayerManager_Access);
+   procedure Initialize (This : in out Waypoint'Class; ownerLayer_Param : access PathFindingLayerInterface'Class; sound_Param : access Sound'Class);
+   function Create (ownerLayer_Param : access PathFindingLayerInterface'Class; sound_Param : access Sound'Class) return Waypoint_Access;
+   procedure setAllBinaryGameLayerManager (This : in out Waypoint; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class);
    procedure releaseCachedPaths (This : in out Waypoint);
-   function getPathsListFromCacheOnly (This : in out Waypoint; geographicMapCellPosition : GeographicMapCellPosition_Access) return BasicArrayList_Access;
-   procedure getPathsListFromCacheOnly (This : in out Waypoint; geographicMapCellPosition : GeographicMapCellPosition_Access);
-   function getPathsListRunnable (This : in out Waypoint; geographicMapCellPosition : GeographicMapCellPosition_Access) return BasicArrayList_Access;
-   procedure getPathsListRunnable (This : in out Waypoint; geographicMapCellPosition : GeographicMapCellPosition_Access);
-   function getEndGeographicMapCellPosition (This : in out Waypoint; startGeographicMapCellPosition : GeographicMapCellPosition_Access) return GeographicMapCellPosition_Access;
-   procedure getEndGeographicMapCellPosition (This : in out Waypoint; startGeographicMapCellPosition : GeographicMapCellPosition_Access);
-   function createPaths (This : in out Waypoint; startGeographicMapCellPosition : GeographicMapCellPosition_Access) return BasicArrayList_Access;
-   procedure createPaths (This : in out Waypoint; startGeographicMapCellPosition : GeographicMapCellPosition_Access);
-   procedure onEvent (This : in out Waypoint; eventObject : AllBinaryEventObject_Access);
-   procedure onBuildingEvent (This : in out Waypoint; event : RTSLayerEvent_Access);
+   function getPathsListFromCacheOnly (This : in out Waypoint; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return BasicArrayList_Access;
+   procedure getPathsListFromCacheOnly (This : in out Waypoint; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class);
+   function getPathsListRunnable (This : in out Waypoint; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return BasicArrayList_Access;
+   procedure getPathsListRunnable (This : in out Waypoint; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class);
+   function getEndGeographicMapCellPosition (This : in out Waypoint; startGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return GeographicMapCellPosition_Access;
+   procedure getEndGeographicMapCellPosition (This : in out Waypoint; startGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class);
+   function createPaths (This : in out Waypoint; startGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return BasicArrayList_Access;
+   procedure createPaths (This : in out Waypoint; startGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class);
+   procedure onEvent (This : in out Waypoint; eventObject_Param : access AllBinaryEventObject'Class);
+   procedure onBuildingEvent (This : in out Waypoint; event_Param : access RTSLayerEvent'Class);
    procedure clearPaths (This : in out Waypoint);
    procedure reset (This : in out Waypoint);
-   procedure visit (This : in out Waypoint; unitLayer : PathFindingLayerInterface_Access);
+   procedure visit (This : in out Waypoint; unitLayer_Param : access PathFindingLayerInterface'Class);
 
 end org.allbinary.game.layer.waypoint.Waypoint_Package;
 

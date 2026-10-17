@@ -22,16 +22,17 @@ package body org.allbinary.animation.vector.LineAnimationFactory_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out LineAnimationFactory'Class; basicColor : BasicColor_Access) is
+   procedure Initialize (This : in out LineAnimationFactory'Class; basicColor_Param : access BasicColor'Class) is
+      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
       Initialize_Fields (This);
         This.basicColor := basicColor;
    end Initialize;
 
-   function Create (basicColor : BasicColor_Access) return LineAnimationFactory_Access is
+   function Create (basicColor_Param : access BasicColor'Class) return LineAnimationFactory_Access is
       This : constant LineAnimationFactory_Access := new LineAnimationFactory;
    begin
-      LineAnimationFactory_Package.Initialize (This.all, basicColor);
+      LineAnimationFactory_Package.Initialize (This.all, basicColor_Param);
       return This;
    end Create;
 
@@ -41,7 +42,8 @@ package body org.allbinary.animation.vector.LineAnimationFactory_Package is
         return LineAnimation_Package.Create (This.basicColor);
    end getInstance;
 
-   procedure setInitialScale (This : in out LineAnimationFactory; scaleProperties : ScaleProperties_Access) is
+   procedure setInitialScale (This : in out LineAnimationFactory; scaleProperties_Param : access ScaleProperties'Class) is
+      scaleProperties : ScaleProperties_Access := ScaleProperties_Access (scaleProperties_Param);
    begin
         null;
    end setInitialScale;

@@ -34,25 +34,28 @@ package body org.allbinary.input.automation.module.generic_Id.constraints.NoImag
       return This;
    end Create;
 
-   function isColorAllowed (This : in out NoImageComparatorConstraints; frame : Integer; point : GPoint_Access; color : Color_Access) return Boolean is
+   function isColorAllowed (This : in out NoImageComparatorConstraints; frame : Integer; point_Param : access GPoint'Class; color_Param : access Color'Class) return Boolean is
+      point : GPoint_Access := GPoint_Access (point_Param);
+      color : Color_Access := Color_Access (color_Param);
    begin
         return True;
    end isColorAllowed;
 
-   function isImageValid (This : in out NoImageComparatorConstraints; bufferedImage : BufferedImage_Access) return Boolean is
+   function isImageValid (This : in out NoImageComparatorConstraints; bufferedImage_Param : access BufferedImage'Class) return Boolean is
+      bufferedImage : BufferedImage_Access := BufferedImage_Access (bufferedImage_Param);
    begin
         return True;
    end isImageValid;
 
-   procedure isColorAllowed (This : in out NoImageComparatorConstraints; frame : Integer; point : GPoint_Access; color : Color_Access) is
-      Java_Result : constant Boolean := NoImageComparatorConstraints'Class (This).isColorAllowed (frame, point, color);
+   procedure isColorAllowed (This : in out NoImageComparatorConstraints; frame : Integer; point_Param : access GPoint'Class; color_Param : access Color'Class) is
+      Java_Result : constant Boolean := NoImageComparatorConstraints'Class (This).isColorAllowed (frame, point_Param, color_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isColorAllowed;
 
-   procedure isImageValid (This : in out NoImageComparatorConstraints; bufferedImage : BufferedImage_Access) is
-      Java_Result : constant Boolean := NoImageComparatorConstraints'Class (This).isImageValid (bufferedImage);
+   procedure isImageValid (This : in out NoImageComparatorConstraints; bufferedImage_Param : access BufferedImage'Class) is
+      Java_Result : constant Boolean := NoImageComparatorConstraints'Class (This).isImageValid (bufferedImage_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

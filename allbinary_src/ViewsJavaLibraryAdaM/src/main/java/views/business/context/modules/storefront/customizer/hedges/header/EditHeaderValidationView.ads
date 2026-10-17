@@ -50,13 +50,13 @@ package views.business.context.modules.storefront.customizer.hedges.header.EditH
       logUtil : LogUtil_Access;
    end record;
 
-   procedure Initialize (This : in out EditHeaderValidationView'Class; transformInfoInterface : TransformInfoInterface_Access);
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return EditHeaderValidationView_Access;
+   procedure Initialize (This : in out EditHeaderValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return EditHeaderValidationView_Access;
    function isValid (This : in out EditHeaderValidationView) return Boolean;
    function validationInfo (This : in out EditHeaderValidationView) return Unbounded_String;
    function toValidationInfoDoc (This : in out EditHeaderValidationView) return Document_Access;
-   function toValidationInfoNode (This : in out EditHeaderValidationView; document : Document_Access) return Node_Access;
-   procedure toValidationInfoNode (This : in out EditHeaderValidationView; document : Document_Access);
+   function toValidationInfoNode (This : in out EditHeaderValidationView; document_Param : access Document'Class) return Node_Access;
+   procedure toValidationInfoNode (This : in out EditHeaderValidationView; document_Param : access Document'Class);
 
 end views.business.context.modules.storefront.customizer.hedges.header.EditHeaderValidationView_Package;
 

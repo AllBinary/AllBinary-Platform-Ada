@@ -31,7 +31,7 @@ package org.allbinary.input.automation.module.generic_Id.configuration.GenericMo
    type GenericModuleConfigurationInterface_Access_Array is array (Natural range <>) of GenericModuleConfigurationInterface_Access;
    type GenericModuleConfigurationInterface_Access_Array_Access is access all GenericModuleConfigurationInterface_Access_Array;
    function getSelectedGenericProfile (This : in out GenericModuleConfigurationInterface) return GenericProfile_Access is abstract;
-   procedure setSelectedGenericProfile (This : in out GenericModuleConfigurationInterface; selectedGenericProfile : GenericProfile_Access) is abstract;
+   procedure setSelectedGenericProfile (This : in out GenericModuleConfigurationInterface; selectedGenericProfile_Param : access GenericProfile'Class) is abstract;
 
 end org.allbinary.input.automation.module.generic_Id.configuration.GenericModuleConfigurationInterface_Package;
 

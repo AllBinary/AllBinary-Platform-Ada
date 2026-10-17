@@ -24,19 +24,25 @@ package body org.allbinary.animation.image.AllBinaryAndroidImageRotationAnimatio
 
 
    --  throws Exception
-   function createFactory (image : Image_Access; width : Integer; height : Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access) return AllBinaryAndroidImageRotationAnimationFactory_Access is
+   function createFactory (image_Param : access Image'Class; width : Integer; height : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return AllBinaryAndroidImageRotationAnimationFactory_Access is
+      image : Image_Access := Image_Access (image_Param);
+      animationBehaviorFactory : AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
    begin
         return AllBinaryAndroidImageRotationAnimationFactory_Package.Create (image, width, height, Short_Integer (((AngleFactory_Package.getInstance.TOTAL_ANGLE) / (GameConfigurationCentral_Package.getInstance.getGameControlFidelity))), animationBehaviorFactory, False);
    end createFactory;
 
    --  throws Exception
-   function createFactoryA (image : Image_Access; width : Integer; height : Integer; angleIncrement : Short_Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access) return AllBinaryAndroidImageRotationAnimationFactory_Access is
+   function createFactoryA (image_Param : access Image'Class; width : Integer; height : Integer; angleIncrement : Short_Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return AllBinaryAndroidImageRotationAnimationFactory_Access is
+      image : Image_Access := Image_Access (image_Param);
+      animationBehaviorFactory : AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
    begin
         return AllBinaryAndroidImageRotationAnimationFactory_Package.Create (image, width, height, angleIncrement, animationBehaviorFactory, False);
    end createFactoryA;
 
    --  throws Exception
-   function createFactoryU (image : Image_Access; animationBehaviorFactory : AnimationBehaviorFactory_Access) return AllBinaryAndroidImageRotationAnimationFactory_Access is
+   function createFactoryU (image_Param : access Image'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return AllBinaryAndroidImageRotationAnimationFactory_Access is
+      image : Image_Access := Image_Access (image_Param);
+      animationBehaviorFactory : AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
       androidImageRotationAnimationFactory : AllBinaryAndroidImageRotationAnimationFactory_Access;
    begin
         androidImageRotationAnimationFactory := AllBinaryAndroidImageRotationAnimationFactory_Package.Create (image, image.getWidth, image.getHeight, Short_Integer (((AngleFactory_Package.getInstance.TOTAL_ANGLE) / (GameConfigurationCentral_Package.getInstance.getGameControlFidelity))), animationBehaviorFactory, False);
@@ -45,7 +51,9 @@ package body org.allbinary.animation.image.AllBinaryAndroidImageRotationAnimatio
    end createFactoryU;
 
    --  throws Exception
-   function createFactoryDXYU (image : Image_Access; dx : Integer; dy : Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access) return AllBinaryAndroidImageRotationAnimationFactory_Access is
+   function createFactoryDXYU (image_Param : access Image'Class; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return AllBinaryAndroidImageRotationAnimationFactory_Access is
+      image : Image_Access := Image_Access (image_Param);
+      animationBehaviorFactory : AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
       androidImageRotationAnimationFactory : AllBinaryAndroidImageRotationAnimationFactory_Access;
    begin
         androidImageRotationAnimationFactory := AllBinaryAndroidImageRotationAnimationFactory_Package.Create (image, image.getWidth, image.getHeight, Short_Integer (((AngleFactory_Package.getInstance.TOTAL_ANGLE) / (GameConfigurationCentral_Package.getInstance.getGameControlFidelity))), animationBehaviorFactory, False);
@@ -54,7 +62,9 @@ package body org.allbinary.animation.image.AllBinaryAndroidImageRotationAnimatio
    end createFactoryDXYU;
 
    --  throws Exception
-   function createFactoryADXY (image : Image_Access; width : Integer; height : Integer; dx : Integer; dy : Integer; angleIncrement : Short_Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access; resizeCanvasForRotation : Boolean) return AllBinaryAndroidImageRotationAnimationFactory_Access is
+   function createFactoryADXY (image_Param : access Image'Class; width : Integer; height : Integer; dx : Integer; dy : Integer; angleIncrement : Short_Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class; resizeCanvasForRotation : Boolean) return AllBinaryAndroidImageRotationAnimationFactory_Access is
+      image : Image_Access := Image_Access (image_Param);
+      animationBehaviorFactory : AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
       androidImageRotationAnimationFactory : AllBinaryAndroidImageRotationAnimationFactory_Access;
    begin
         androidImageRotationAnimationFactory := AllBinaryAndroidImageRotationAnimationFactory_Package.Create (image, width, height, angleIncrement, animationBehaviorFactory, resizeCanvasForRotation);
@@ -70,7 +80,9 @@ package body org.allbinary.animation.image.AllBinaryAndroidImageRotationAnimatio
         This.animationFactoryInitializationVisitor.originalDy := dy;
    end init;
 
-   procedure Initialize (This : in out AllBinaryAndroidImageRotationAnimationFactory'Class; image : Image_Access; width : Integer; height : Integer; angleIncrement : Short_Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access; resizeCanvasForRotation : Boolean) is
+   procedure Initialize (This : in out AllBinaryAndroidImageRotationAnimationFactory'Class; image_Param : access Image'Class; width : Integer; height : Integer; angleIncrement : Short_Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class; resizeCanvasForRotation : Boolean) is
+      image : Image_Access := Image_Access (image_Param);
+      animationBehaviorFactory : AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
    begin
         BaseImageAnimationFactory_Package.Initialize (This, image, PrimitiveIntUtil_Package.getArrayInstance, width, height, 0, 0, animationBehaviorFactory);
         Initialize_Fields (This);
@@ -78,10 +90,10 @@ package body org.allbinary.animation.image.AllBinaryAndroidImageRotationAnimatio
         This.resizeCanvasForRotation := resizeCanvasForRotation;
    end Initialize;
 
-   function Create (image : Image_Access; width : Integer; height : Integer; angleIncrement : Short_Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access; resizeCanvasForRotation : Boolean) return AllBinaryAndroidImageRotationAnimationFactory_Access is
+   function Create (image_Param : access Image'Class; width : Integer; height : Integer; angleIncrement : Short_Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class; resizeCanvasForRotation : Boolean) return AllBinaryAndroidImageRotationAnimationFactory_Access is
       This : constant AllBinaryAndroidImageRotationAnimationFactory_Access := new AllBinaryAndroidImageRotationAnimationFactory;
    begin
-      AllBinaryAndroidImageRotationAnimationFactory_Package.Initialize (This.all, image, width, height, angleIncrement, animationBehaviorFactory, resizeCanvasForRotation);
+      AllBinaryAndroidImageRotationAnimationFactory_Package.Initialize (This.all, image_Param, width, height, angleIncrement, animationBehaviorFactory_Param, resizeCanvasForRotation);
       return This;
    end Create;
 
@@ -107,43 +119,43 @@ package body org.allbinary.animation.image.AllBinaryAndroidImageRotationAnimatio
         scaledImage := This.animationFactoryImageScaleUtil.createImage (canvasImage, This.animationFactoryInitializationVisitor.width, This.animationFactoryInitializationVisitor.height, This.scaleProperties.scaleWidth, This.scaleProperties.scaleHeight);
         copyOfScaledImage := ImageCopyUtil_Package.getInstance.createImage (scaledImage);
         if ((This.animationFactoryInitializationVisitor.dx) /= (0)) or else ((This.animationFactoryInitializationVisitor.dy) /= (0)) then
-            This.animationFactoryImageScaleUtil.processAdjust (This'Unchecked_Access);
+            This.animationFactoryImageScaleUtil.processAdjust (AllBinaryAndroidImageRotationAnimationFactory_Access'(This'Unchecked_Access));
             return AllBinaryAdjustedAndroidImageRotationAnimation_Package.Create (scaledImage, copyOfScaledImage, AngleInfo_Package.getInstance (This.angleIncrement), AngleFactory_Package.getInstance.TOTAL_ANGLE, This.animationFactoryInitializationVisitor.dx, This.animationFactoryInitializationVisitor.dy, This.animationBehaviorFactory.getOrCreateInstance);
         else
             return AllBinaryFlickerAndroidImageRotationAnimation_Package.Create (scaledImage, copyOfScaledImage, AngleInfo_Package.getInstance (This.angleIncrement), AngleFactory_Package.getInstance.TOTAL_ANGLE, This.animationBehaviorFactory.getOrCreateInstance);
         end if;
    end getInstance;
 
-   procedure createFactory (image : Image_Access; width : Integer; height : Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access) is
-      Java_Result : constant AllBinaryAndroidImageRotationAnimationFactory_Access := createFactory (image, width, height, animationBehaviorFactory);
+   procedure createFactory (image_Param : access Image'Class; width : Integer; height : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) is
+      Java_Result : constant AllBinaryAndroidImageRotationAnimationFactory_Access := createFactory (image_Param, width, height, animationBehaviorFactory_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createFactory;
 
-   procedure createFactoryA (image : Image_Access; width : Integer; height : Integer; angleIncrement : Short_Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access) is
-      Java_Result : constant AllBinaryAndroidImageRotationAnimationFactory_Access := createFactoryA (image, width, height, angleIncrement, animationBehaviorFactory);
+   procedure createFactoryA (image_Param : access Image'Class; width : Integer; height : Integer; angleIncrement : Short_Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) is
+      Java_Result : constant AllBinaryAndroidImageRotationAnimationFactory_Access := createFactoryA (image_Param, width, height, angleIncrement, animationBehaviorFactory_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createFactoryA;
 
-   procedure createFactoryU (image : Image_Access; animationBehaviorFactory : AnimationBehaviorFactory_Access) is
-      Java_Result : constant AllBinaryAndroidImageRotationAnimationFactory_Access := createFactoryU (image, animationBehaviorFactory);
+   procedure createFactoryU (image_Param : access Image'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) is
+      Java_Result : constant AllBinaryAndroidImageRotationAnimationFactory_Access := createFactoryU (image_Param, animationBehaviorFactory_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createFactoryU;
 
-   procedure createFactoryDXYU (image : Image_Access; dx : Integer; dy : Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access) is
-      Java_Result : constant AllBinaryAndroidImageRotationAnimationFactory_Access := createFactoryDXYU (image, dx, dy, animationBehaviorFactory);
+   procedure createFactoryDXYU (image_Param : access Image'Class; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) is
+      Java_Result : constant AllBinaryAndroidImageRotationAnimationFactory_Access := createFactoryDXYU (image_Param, dx, dy, animationBehaviorFactory_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createFactoryDXYU;
 
-   procedure createFactoryADXY (image : Image_Access; width : Integer; height : Integer; dx : Integer; dy : Integer; angleIncrement : Short_Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access; resizeCanvasForRotation : Boolean) is
-      Java_Result : constant AllBinaryAndroidImageRotationAnimationFactory_Access := createFactoryADXY (image, width, height, dx, dy, angleIncrement, animationBehaviorFactory, resizeCanvasForRotation);
+   procedure createFactoryADXY (image_Param : access Image'Class; width : Integer; height : Integer; dx : Integer; dy : Integer; angleIncrement : Short_Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class; resizeCanvasForRotation : Boolean) is
+      Java_Result : constant AllBinaryAndroidImageRotationAnimationFactory_Access := createFactoryADXY (image_Param, width, height, dx, dy, angleIncrement, animationBehaviorFactory_Param, resizeCanvasForRotation);
       pragma Unreferenced (Java_Result);
    begin
       null;

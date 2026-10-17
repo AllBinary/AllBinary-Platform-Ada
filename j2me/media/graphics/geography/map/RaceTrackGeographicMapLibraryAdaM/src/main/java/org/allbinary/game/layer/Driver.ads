@@ -39,14 +39,14 @@ package org.allbinary.game.layer.Driver_Package is
    end record;
    NULL_DRIVER : Driver_Access;
 
-   procedure Initialize (This : in out Driver'Class; turnSpeed : Integer; trackPathSelectionSkill : Integer; aggression : Aggression_Access);
-   function Create (turnSpeed : Integer; trackPathSelectionSkill : Integer; aggression : Aggression_Access) return Driver_Access;
+   procedure Initialize (This : in out Driver'Class; turnSpeed : Integer; trackPathSelectionSkill : Integer; aggression_Param : access Aggression'Class);
+   function Create (turnSpeed : Integer; trackPathSelectionSkill : Integer; aggression_Param : access Aggression'Class) return Driver_Access;
    function getTurnSpeed (This : in out Driver) return Integer;
    procedure setTurnSpeed (This : in out Driver; turnSpeed : Integer);
    function getTrackPathSelectionSkill (This : in out Driver) return Integer;
    procedure setTrackPathSelectionSkill (This : in out Driver; trackPathSelectionSkill : Integer);
    function getAggression (This : in out Driver) return Aggression_Access;
-   procedure setAggression (This : in out Driver; aggression : Aggression_Access);
+   procedure setAggression (This : in out Driver; aggression_Param : access Aggression'Class);
 
 end org.allbinary.game.layer.Driver_Package;
 

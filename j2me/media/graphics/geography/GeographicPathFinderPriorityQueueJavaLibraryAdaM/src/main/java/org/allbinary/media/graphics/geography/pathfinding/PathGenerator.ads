@@ -45,17 +45,17 @@ package org.allbinary.media.graphics.geography.pathfinding.PathGenerator_Package
    procedure Initialize (This : in out PathGenerator'Class);
    function Create return PathGenerator_Access;
    function getInstance return PathGenerator_Access;
-   procedure init (This : in out PathGenerator; geographicMapInterface : Java_Object_Access; totalPaths : Integer);
-   function getInstanceNoCache (This : in out PathGenerator; geographicMapInterface : BasicGeographicMap_Access; pathFindingInfo : PathFindingInfo_Access; totalPaths : Integer) return BasicArrayList_Access;
-   procedure getInstanceNoCache (This : in out PathGenerator; geographicMapInterface : BasicGeographicMap_Access; pathFindingInfo : PathFindingInfo_Access; totalPaths : Integer);
-   function createList (This : in out PathGenerator; geographicMapInterface : BasicGeographicMap_Access; geographicMapCellHistory : GeographicMapCellHistory_Access; pathFindingInfo : PathFindingInfo_Access; totalPaths : Integer) return BasicArrayList_Access;
-   procedure createList (This : in out PathGenerator; geographicMapInterface : BasicGeographicMap_Access; geographicMapCellHistory : GeographicMapCellHistory_Access; pathFindingInfo : PathFindingInfo_Access; totalPaths : Integer);
-   function create (This : in out PathGenerator; geographicMapInterface : BasicGeographicMap_Access; pathFindingInfo : PathFindingInfo_Access; totalPaths : Integer) return BasicArrayList_Access;
-   procedure create (This : in out PathGenerator; geographicMapInterface : BasicGeographicMap_Access; pathFindingInfo : PathFindingInfo_Access; totalPaths : Integer);
-   function createN (This : in out PathGenerator; geographicMapInterface : BasicGeographicMap_Access; pathFindingInfo : PathFindingInfo_Access; totalPaths : Integer; multipassState : MultipassState_Access) return BasicArrayList_Access;
-   procedure createN (This : in out PathGenerator; geographicMapInterface : BasicGeographicMap_Access; pathFindingInfo : PathFindingInfo_Access; totalPaths : Integer; multipassState : MultipassState_Access);
-   function isValid (This : in out PathGenerator; pathList : BasicArrayList_Access; geographicMapCellHistory : GeographicMapCellHistory_Access) return Boolean;
-   procedure isValid (This : in out PathGenerator; pathList : BasicArrayList_Access; geographicMapCellHistory : GeographicMapCellHistory_Access);
+   procedure init (This : in out PathGenerator; geographicMapInterface_Param : access Java_Object'Class; totalPaths : Integer);
+   function getInstanceNoCache (This : in out PathGenerator; geographicMapInterface_Param : access BasicGeographicMap'Class; pathFindingInfo_Param : access PathFindingInfo'Class; totalPaths : Integer) return BasicArrayList_Access;
+   procedure getInstanceNoCache (This : in out PathGenerator; geographicMapInterface_Param : access BasicGeographicMap'Class; pathFindingInfo_Param : access PathFindingInfo'Class; totalPaths : Integer);
+   function createList (This : in out PathGenerator; geographicMapInterface_Param : access BasicGeographicMap'Class; geographicMapCellHistory_Param : access GeographicMapCellHistory'Class; pathFindingInfo_Param : access PathFindingInfo'Class; totalPaths : Integer) return BasicArrayList_Access;
+   procedure createList (This : in out PathGenerator; geographicMapInterface_Param : access BasicGeographicMap'Class; geographicMapCellHistory_Param : access GeographicMapCellHistory'Class; pathFindingInfo_Param : access PathFindingInfo'Class; totalPaths : Integer);
+   function create (This : in out PathGenerator; geographicMapInterface_Param : access BasicGeographicMap'Class; pathFindingInfo_Param : access PathFindingInfo'Class; totalPaths : Integer) return BasicArrayList_Access;
+   procedure create (This : in out PathGenerator; geographicMapInterface_Param : access BasicGeographicMap'Class; pathFindingInfo_Param : access PathFindingInfo'Class; totalPaths : Integer);
+   function createN (This : in out PathGenerator; geographicMapInterface_Param : access BasicGeographicMap'Class; pathFindingInfo_Param : access PathFindingInfo'Class; totalPaths : Integer; multipassState_Param : access MultipassState'Class) return BasicArrayList_Access;
+   procedure createN (This : in out PathGenerator; geographicMapInterface_Param : access BasicGeographicMap'Class; pathFindingInfo_Param : access PathFindingInfo'Class; totalPaths : Integer; multipassState_Param : access MultipassState'Class);
+   function isValid (This : in out PathGenerator; pathList_Param : access BasicArrayList'Class; geographicMapCellHistory_Param : access GeographicMapCellHistory'Class) return Boolean;
+   procedure isValid (This : in out PathGenerator; pathList_Param : access BasicArrayList'Class; geographicMapCellHistory_Param : access GeographicMapCellHistory'Class);
 
 end org.allbinary.media.graphics.geography.pathfinding.PathGenerator_Package;
 

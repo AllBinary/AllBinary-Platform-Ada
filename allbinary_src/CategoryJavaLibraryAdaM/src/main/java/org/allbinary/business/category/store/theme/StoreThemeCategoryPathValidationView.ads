@@ -39,12 +39,12 @@ package org.allbinary.business.category.store.theme.StoreThemeCategoryPathValida
 
    type StoreThemeCategoryPathValidationView is new StoreThemeCategoryPathView and ValidationInterface with null record;
 
-   procedure Initialize (This : in out StoreThemeCategoryPathValidationView'Class; categoryInterface : StoreThemeCategoryInterface_Access);
-   function Create (categoryInterface : StoreThemeCategoryInterface_Access) return StoreThemeCategoryPathValidationView_Access;
+   procedure Initialize (This : in out StoreThemeCategoryPathValidationView'Class; categoryInterface_Param : access StoreThemeCategoryInterface'Class);
+   function Create (categoryInterface_Param : access StoreThemeCategoryInterface'Class) return StoreThemeCategoryPathValidationView_Access;
    function isValid (This : in out StoreThemeCategoryPathValidationView) return Boolean;
    function toValidationInfoDoc (This : in out StoreThemeCategoryPathValidationView) return Document_Access;
-   function toValidationInfoNode (This : in out StoreThemeCategoryPathValidationView; document : Document_Access) return Node_Access;
-   procedure toValidationInfoNode (This : in out StoreThemeCategoryPathValidationView; document : Document_Access);
+   function toValidationInfoNode (This : in out StoreThemeCategoryPathValidationView; document_Param : access Document'Class) return Node_Access;
+   procedure toValidationInfoNode (This : in out StoreThemeCategoryPathValidationView; document_Param : access Document'Class);
    function validationInfo (This : in out StoreThemeCategoryPathValidationView) return Unbounded_String;
 
 end org.allbinary.business.category.store.theme.StoreThemeCategoryPathValidationView_Package;

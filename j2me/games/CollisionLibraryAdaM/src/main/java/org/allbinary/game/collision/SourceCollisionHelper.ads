@@ -36,10 +36,10 @@ package org.allbinary.game.collision.SourceCollisionHelper_Package is
 
    type SourceCollisionHelper is new CollisionHelper with null record;
 
-   procedure Initialize (This : in out SourceCollisionHelper'Class; layerInterface : AllBinaryLayer_Access);
-   function Create (layerInterface : AllBinaryLayer_Access) return SourceCollisionHelper_Access;
-   function isCollidable (This : in out SourceCollisionHelper; layerInterface : CollidableCompositeLayer_Access) return Boolean;
-   procedure isCollidable (This : in out SourceCollisionHelper; layerInterface : CollidableCompositeLayer_Access);
+   procedure Initialize (This : in out SourceCollisionHelper'Class; layerInterface_Param : access AllBinaryLayer'Class);
+   function Create (layerInterface_Param : access AllBinaryLayer'Class) return SourceCollisionHelper_Access;
+   function isCollidable (This : in out SourceCollisionHelper; layerInterface_Param : access CollidableCompositeLayer'Class) return Boolean;
+   procedure isCollidable (This : in out SourceCollisionHelper; layerInterface_Param : access CollidableCompositeLayer'Class);
 
 end org.allbinary.game.collision.SourceCollisionHelper_Package;
 

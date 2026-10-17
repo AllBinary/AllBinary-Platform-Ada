@@ -38,12 +38,14 @@ package body org.allbinary.image.opengles.OpenGLESImageDraw_Package is
         return OpenGLESImageDraw_Package.instance;
    end getInstance;
 
-   procedure drawRegion (This : in out OpenGLESImageDraw; gl : GL10_Access; viewHeight : Integer; x_src : Float; y_src : Float; width : Float; height : Float; x : Integer; y : Integer; z : Integer) is
+   procedure drawRegion (This : in out OpenGLESImageDraw; gl_Param : access GL10'Class; viewHeight : Integer; x_src : Float; y_src : Float; width : Float; height : Float; x : Integer; y : Integer; z : Integer) is
+      gl : GL10_Access := GL10_Access (gl_Param);
    begin
         null;
    end drawRegion;
 
-   procedure draw (This : in out OpenGLESImageDraw; gl : GL10_Access; x : Integer; y : Integer; z : Integer) is
+   procedure draw (This : in out OpenGLESImageDraw; gl_Param : access GL10'Class; x : Integer; y : Integer; z : Integer) is
+      gl : GL10_Access := GL10_Access (gl_Param);
    begin
         null;
    end draw;

@@ -64,8 +64,8 @@ package org.allbinary.image.ImageCacheBase_Package is
 
    procedure Initialize (This : in out ImageCacheBase'Class);
    function Create return ImageCacheBase_Access;
-   function getImage (This : in out ImageCacheBase; resourceId : Java_Object_Access) return Image_Access;
-   procedure getImage (This : in out ImageCacheBase; resourceId : Java_Object_Access);
+   function getImage (This : in out ImageCacheBase; resourceId_Param : access Java_Object'Class) return Image_Access;
+   procedure getImage (This : in out ImageCacheBase; resourceId_Param : access Java_Object'Class);
    procedure releaseAll (This : in out ImageCacheBase);
    function getIndexWH (This : in out ImageCacheBase; width : Integer; height : Integer) return Integer;
    procedure getIndexWH (This : in out ImageCacheBase; width : Integer; height : Integer);
@@ -73,15 +73,15 @@ package org.allbinary.image.ImageCacheBase_Package is
    procedure getFromAvailable (This : in out ImageCacheBase; foundIndex : Integer; width : Integer; height : Integer);
    function get (This : in out ImageCacheBase; caller : Unbounded_String; width : Integer; height : Integer) return Image_Access;
    procedure get (This : in out ImageCacheBase; caller : Unbounded_String; width : Integer; height : Integer);
-   function getWithKey (This : in out ImageCacheBase; key : Java_Object_Access) return Image_Access;
-   procedure getWithKey (This : in out ImageCacheBase; key : Java_Object_Access);
+   function getWithKey (This : in out ImageCacheBase; key_Param : access Java_Object'Class) return Image_Access;
+   procedure getWithKey (This : in out ImageCacheBase; key_Param : access Java_Object'Class);
    function createImage (This : in out ImageCacheBase; caller : Unbounded_String; width : Integer; height : Integer) return Image_Access;
    procedure createImage (This : in out ImageCacheBase; caller : Unbounded_String; width : Integer; height : Integer);
-   function createImageFromInputStream (This : in out ImageCacheBase; key : Java_Object_Access; inputStream : InputStream_Access) return Image_Access;
-   procedure createImageFromInputStream (This : in out ImageCacheBase; key : Java_Object_Access; inputStream : InputStream_Access);
+   function createImageFromInputStream (This : in out ImageCacheBase; key_Param : access Java_Object'Class; inputStream_Param : access InputStream'Class) return Image_Access;
+   procedure createImageFromInputStream (This : in out ImageCacheBase; key_Param : access Java_Object'Class; inputStream_Param : access InputStream'Class);
    function toString (This : in out ImageCacheBase) return Unbounded_String;
    function getHashtableP (This : in out ImageCacheBase) return ABHashtable_Access;
-   procedure init (This : in out ImageCacheBase; image : Image_Access);
+   procedure init (This : in out ImageCacheBase; image_Param : access Image'Class);
    procedure initProgress (This : in out ImageCacheBase);
 
 end org.allbinary.image.ImageCacheBase_Package;

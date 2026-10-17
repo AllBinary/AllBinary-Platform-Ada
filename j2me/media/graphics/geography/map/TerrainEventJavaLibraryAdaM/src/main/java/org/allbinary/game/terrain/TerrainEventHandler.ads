@@ -56,13 +56,13 @@ package org.allbinary.game.terrain.TerrainEventHandler_Package is
    procedure Initialize (This : in out TerrainEventHandler'Class);
    function Create return TerrainEventHandler_Access;
    procedure init;
-   function getInstance (anyType : Java_Object_Access) return TerrainEventHandler_Access;
-   procedure getInstance (anyType : Java_Object_Access);
-   procedure addListener (This : in out TerrainEventHandler; terrainEventListener : TerrainEventListener_Access);
+   function getInstance (anyType_Param : access Java_Object'Class) return TerrainEventHandler_Access;
+   procedure getInstance (anyType_Param : access Java_Object'Class);
+   procedure addListener (This : in out TerrainEventHandler; terrainEventListener_Param : access TerrainEventListener'Class);
    procedure removeAllListeners (This : in out TerrainEventHandler);
-   procedure removeListener (This : in out TerrainEventHandler; eventListenerInterface : EventListenerInterface_Access);
-   procedure fireEvent (This : in out TerrainEventHandler; eventObject : AllBinaryEventObject_Access);
-   procedure process (This : in out TerrainEventHandler; eventObject : AllBinaryEventObject_Access; eventListenerInterface : EventListenerInterface_Access);
+   procedure removeListener (This : in out TerrainEventHandler; eventListenerInterface_Param : access EventListenerInterface'Class);
+   procedure fireEvent (This : in out TerrainEventHandler; eventObject_Param : access AllBinaryEventObject'Class);
+   procedure process (This : in out TerrainEventHandler; eventObject_Param : access AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface'Class);
 
 end org.allbinary.game.terrain.TerrainEventHandler_Package;
 

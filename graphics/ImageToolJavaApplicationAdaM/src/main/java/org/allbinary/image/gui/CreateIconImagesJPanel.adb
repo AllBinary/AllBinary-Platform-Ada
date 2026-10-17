@@ -25,7 +25,8 @@ package body org.allbinary.image.gui.CreateIconImagesJPanel_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CreateIconImagesJPanel'Class; imageProcessorInput : ImageProcessorInput_Access) is
+   procedure Initialize (This : in out CreateIconImagesJPanel'Class; imageProcessorInput_Param : access ImageProcessorInput'Class) is
+      imageProcessorInput : ImageProcessorInput_Access := ImageProcessorInput_Access (imageProcessorInput_Param);
       numberStringArray : Unbounded_String_Array_Access;
       index : Integer;
       araster : Raster_Access;
@@ -47,10 +48,10 @@ package body org.allbinary.image.gui.CreateIconImagesJPanel_Package is
         end if;
    end Initialize;
 
-   function Create (imageProcessorInput : ImageProcessorInput_Access) return CreateIconImagesJPanel_Access is
+   function Create (imageProcessorInput_Param : access ImageProcessorInput'Class) return CreateIconImagesJPanel_Access is
       This : constant CreateIconImagesJPanel_Access := new CreateIconImagesJPanel;
    begin
-      CreateIconImagesJPanel_Package.Initialize (This.all, imageProcessorInput);
+      CreateIconImagesJPanel_Package.Initialize (This.all, imageProcessorInput_Param);
       return This;
    end Create;
 
@@ -120,7 +121,7 @@ package body org.allbinary.image.gui.CreateIconImagesJPanel_Package is
 --                          declare
 --                              e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
 --                          begin
---                      logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.RUN, e);
+--                      logUtil.put (This.commonStrings.EXCEPTION_Id, CreateIconImagesJPanel_Access'(This'Unchecked_Access), This.commonStrings.RUN, e);
 --                          end;
 --                  end;
 --     end run;
@@ -132,7 +133,8 @@ package body org.allbinary.image.gui.CreateIconImagesJPanel_Package is
         return This.imageProcessorInput;
    end getImageProcessorInput;
 
-   procedure setImageProcessorInput (This : in out CreateIconImagesJPanel; imageProcessorInput : ImageProcessorInput_Access) is
+   procedure setImageProcessorInput (This : in out CreateIconImagesJPanel; imageProcessorInput_Param : access ImageProcessorInput'Class) is
+      imageProcessorInput : ImageProcessorInput_Access := ImageProcessorInput_Access (imageProcessorInput_Param);
    begin
         This.imageProcessorInput := imageProcessorInput;
    end setImageProcessorInput;
@@ -144,18 +146,20 @@ package body org.allbinary.image.gui.CreateIconImagesJPanel_Package is
         This.aboveJButton.setText (To_Unbounded_String ("Process"));
         This.aboveJButton.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt : ActionEvent_Access) is
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
+--        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.aboveJButtonActionPerformed (evt);
 --     end actionPerformed;
 );
-        layout := GroupLayout_Package.Create (This'Unchecked_Access);
+        layout := GroupLayout_Package.Create (CreateIconImagesJPanel_Access'(This'Unchecked_Access));
         This.setLayout (layout);
         layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addComponent (This.aboveJButton).addGap (0, 335, Short_Package.MAX_VALUE)));
         layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addContainerGap.addComponent (This.aboveJButton).addContainerGap (286, Short_Package.MAX_VALUE)));
    end initComponents;
 
-   procedure aboveJButtonActionPerformed (This : in out CreateIconImagesJPanel; evt : ActionEvent_Access) is
+   procedure aboveJButtonActionPerformed (This : in out CreateIconImagesJPanel; evt_Param : access ActionEvent'Class) is
+      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         This.process;
    end aboveJButtonActionPerformed;

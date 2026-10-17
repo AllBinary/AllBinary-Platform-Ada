@@ -53,9 +53,9 @@ package org.allbinary.game.configuration.feature.GameFeatureItemCommandListener_
       gameOptionsForm : GameOptionsForm_Access;
    end record;
 
-   procedure Initialize (This : in out GameFeatureItemCommandListener'Class; gameOptionsForm : GameOptionsForm_Access);
-   function Create (gameOptionsForm : GameOptionsForm_Access) return GameFeatureItemCommandListener_Access;
-   procedure commandAction (This : in out GameFeatureItemCommandListener; command : Command_Access; item : Item_Access);
+   procedure Initialize (This : in out GameFeatureItemCommandListener'Class; gameOptionsForm_Param : access GameOptionsForm'Class);
+   function Create (gameOptionsForm_Param : access GameOptionsForm'Class) return GameFeatureItemCommandListener_Access;
+   procedure commandAction (This : in out GameFeatureItemCommandListener; command_Param : access Command'Class; item_Param : access Item'Class);
 
 end org.allbinary.game.configuration.feature.GameFeatureItemCommandListener_Package;
 

@@ -23,16 +23,17 @@ package body org.allbinary.game.configuration.event.GameInitializedEvent_Package
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out GameInitializedEvent'Class; anyType : Java_Object_Access) is
+   procedure Initialize (This : in out GameInitializedEvent'Class; anyType_Param : access Java_Object'Class) is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         AllBinaryEventObject_Package.Initialize (This, anyType);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (anyType : Java_Object_Access) return GameInitializedEvent_Access is
+   function Create (anyType_Param : access Java_Object'Class) return GameInitializedEvent_Access is
       This : constant GameInitializedEvent_Access := new GameInitializedEvent;
    begin
-      GameInitializedEvent_Package.Initialize (This.all, anyType);
+      GameInitializedEvent_Package.Initialize (This.all, anyType_Param);
       return This;
    end Create;
 
@@ -47,7 +48,8 @@ package body org.allbinary.game.configuration.event.GameInitializedEvent_Package
         return This.level;
    end getLevel;
 
-   procedure setResourceLoadingLevel (This : in out GameInitializedEvent; resourceLoadingLevel : ResourceLoadingLevel_Access) is
+   procedure setResourceLoadingLevel (This : in out GameInitializedEvent; resourceLoadingLevel_Param : access ResourceLoadingLevel'Class) is
+      resourceLoadingLevel : ResourceLoadingLevel_Access := ResourceLoadingLevel_Access (resourceLoadingLevel_Param);
    begin
         This.resourceLoadingLevel := resourceLoadingLevel;
         This.level := This.resourceLoadingLevel.getLevel;

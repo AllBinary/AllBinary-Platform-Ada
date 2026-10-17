@@ -23,20 +23,22 @@ package body views.generic_Id.user.UsersView_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out UsersView'Class; transformInfoInterface : TransformInfoInterface_Access) is
+   procedure Initialize (This : in out UsersView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return UsersView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return UsersView_Access is
       This : constant UsersView_Access := new UsersView;
    begin
-      UsersView_Package.Initialize (This.all, transformInfoInterface);
+      UsersView_Package.Initialize (This.all, transformInfoInterface_Param);
       return This;
    end Create;
 
-   function toXmlNode (This : in out UsersView; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out UsersView; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       usersNode : Node_Access;
       size : Integer;
       userInterface : User_Access;
@@ -52,7 +54,7 @@ package body views.generic_Id.user.UsersView_Package is
                     node := UserDomNode_Package.Create (userInterface).toXmlNode (document);
                     usersNode.appendChild (node);
                 else
-                    This.logUtil.putF (To_Unbounded_String ("UserHelper"), This'Unchecked_Access, To_Unbounded_String ("toXmlNode"));
+                    This.logUtil.putF (To_Unbounded_String ("UserHelper"), UsersView_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode"));
                 end if;
             end loop;
             return usersNode;
@@ -62,7 +64,7 @@ package body views.generic_Id.user.UsersView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.XSLLOGGINGERROR) then
-                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("toXmlNode"), e);
+                This.logUtil.put (This.commonStrings.FAILURE, UsersView_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode"), e);
             end if;
             return null;
                 end;
@@ -71,7 +73,7 @@ package body views.generic_Id.user.UsersView_Package is
 
    procedure addDomNodeInterfaces (This : in out UsersView) is
    begin
-        This.addDomNodeInterface (DomNodeInterface_Access (This'Unchecked_Access));
+        This.addDomNodeInterface (DomNodeInterface_Access (UsersView_Access'(This'Unchecked_Access)));
    end addDomNodeInterfaces;
 
    --  throws Exception
@@ -86,15 +88,15 @@ package body views.generic_Id.user.UsersView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("view()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, UsersView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
             end if;
             Java_Throw (e);
                 end;
         end;
    end view;
 
-   procedure toXmlNode (This : in out UsersView; document : Document_Access) is
-      Java_Result : constant Node_Access := UsersView'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out UsersView; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := UsersView'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

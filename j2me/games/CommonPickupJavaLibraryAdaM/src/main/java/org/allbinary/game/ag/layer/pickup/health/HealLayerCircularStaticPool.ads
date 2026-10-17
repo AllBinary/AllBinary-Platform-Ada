@@ -42,9 +42,9 @@ package org.allbinary.game.ag.layer.pickup.health.HealLayerCircularStaticPool_Pa
 
    type HealLayerCircularStaticPool is new AllBinaryLayerCircularPool with null record;
 
-   procedure Initialize (This : in out HealLayerCircularStaticPool'Class; allbinaryLayerFactoryInterface : AllBinaryLayerFactoryInterface_Access; total : Integer);
-   function Create (allbinaryLayerFactoryInterface : AllBinaryLayerFactoryInterface_Access; total : Integer) return HealLayerCircularStaticPool_Access;
-   procedure visit (This : in out HealLayerCircularStaticPool; sourceLayerInterface : AllBinaryLayer_Access);
+   procedure Initialize (This : in out HealLayerCircularStaticPool'Class; allbinaryLayerFactoryInterface_Param : access AllBinaryLayerFactoryInterface'Class; total : Integer);
+   function Create (allbinaryLayerFactoryInterface_Param : access AllBinaryLayerFactoryInterface'Class; total : Integer) return HealLayerCircularStaticPool_Access;
+   procedure visit (This : in out HealLayerCircularStaticPool; sourceLayerInterface_Param : access AllBinaryLayer'Class);
 
 end org.allbinary.game.ag.layer.pickup.health.HealLayerCircularStaticPool_Package;
 

@@ -35,7 +35,11 @@ package body org.allbinary.logic.control.workflow.RequestWorkFlowFactory_Package
    end Create;
 
    --  throws Exception, LicensingException
-   function getInstance (request : ServletRequest_Access; response : ServletResponse_Access; servletConfig : ServletConfig_Access; servletContext : ServletContext_Access) return WorkFlowInterface_Access is
+   function getInstance (request_Param : access ServletRequest'Class; response_Param : access ServletResponse'Class; servletConfig_Param : access ServletConfig'Class; servletContext_Param : access ServletContext'Class) return WorkFlowInterface_Access is
+      request : ServletRequest_Access := ServletRequest_Access (request_Param);
+      response : ServletResponse_Access := ServletResponse_Access (response_Param);
+      servletConfig : ServletConfig_Access := ServletConfig_Access (servletConfig_Param);
+      servletContext : ServletContext_Access := ServletContext_Access (servletContext_Param);
       httpRequest : HttpServletRequest_Access;
       requestCommand : Unbounded_String;
       index : Integer;
@@ -51,7 +55,9 @@ package body org.allbinary.logic.control.workflow.RequestWorkFlowFactory_Package
    end getInstance;
 
    --  throws Exception, LicensingException
-   function getInstance (hashMap : HashMap_Access; pageContext : PageContext_Access) return WorkFlowInterface_Access is
+   function getInstance (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return WorkFlowInterface_Access is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
       workFlowName : Unbounded_String;
       weblisketSession : WeblisketSession_Access;
       storeName : Unbounded_String;
@@ -62,15 +68,15 @@ package body org.allbinary.logic.control.workflow.RequestWorkFlowFactory_Package
         return WorkFlowEntityFactory_Package.getInstance.create2.get (workFlowName, storeName);
    end getInstance;
 
-   procedure getInstance (request : ServletRequest_Access; response : ServletResponse_Access; servletConfig : ServletConfig_Access; servletContext : ServletContext_Access) is
-      Java_Result : constant WorkFlowInterface_Access := getInstance (request, response, servletConfig, servletContext);
+   procedure getInstance (request_Param : access ServletRequest'Class; response_Param : access ServletResponse'Class; servletConfig_Param : access ServletConfig'Class; servletContext_Param : access ServletContext'Class) is
+      Java_Result : constant WorkFlowInterface_Access := getInstance (request_Param, response_Param, servletConfig_Param, servletContext_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
-   procedure getInstance (hashMap : HashMap_Access; pageContext : PageContext_Access) is
-      Java_Result : constant WorkFlowInterface_Access := getInstance (hashMap, pageContext);
+   procedure getInstance (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+      Java_Result : constant WorkFlowInterface_Access := getInstance (hashMap_Param, pageContext_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

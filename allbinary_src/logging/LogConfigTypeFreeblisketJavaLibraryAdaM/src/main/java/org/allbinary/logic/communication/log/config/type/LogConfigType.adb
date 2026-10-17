@@ -29,7 +29,7 @@ package body org.allbinary.logic.communication.log.config.type_Id.LogConfigType_
       Initialize_Fields (This);
         This.name := name;
         This.description := description;
-        LogConfigType_Package.availableLogConfigTypes.add (This'Unchecked_Access);
+        LogConfigType_Package.availableLogConfigTypes.add (LogConfigType_Access'(This'Unchecked_Access));
    end Initialize;
 
    function Create (name : Unbounded_String; description : Unbounded_String) return LogConfigType_Access is

@@ -23,7 +23,9 @@ package body org.allbinary.animation.image.AllBinaryHTMLImageRotationAnimationFa
 
 
    --  throws Exception
-   function createFactoryADXY (image : Image_Access; width : Integer; height : Integer; dx : Integer; dy : Integer; angleIncrement : Short_Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access) return AllBinaryHTMLImageRotationAnimationFactory_Access is
+   function createFactoryADXY (image_Param : access Image'Class; width : Integer; height : Integer; dx : Integer; dy : Integer; angleIncrement : Short_Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return AllBinaryHTMLImageRotationAnimationFactory_Access is
+      image : Image_Access := Image_Access (image_Param);
+      animationBehaviorFactory : AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
       htmlImageRotationAnimationFactory : AllBinaryHTMLImageRotationAnimationFactory_Access;
    begin
         htmlImageRotationAnimationFactory := AllBinaryHTMLImageRotationAnimationFactory_Package.Create (image, width, height, angleIncrement, animationBehaviorFactory);
@@ -31,17 +33,19 @@ package body org.allbinary.animation.image.AllBinaryHTMLImageRotationAnimationFa
         return htmlImageRotationAnimationFactory;
    end createFactoryADXY;
 
-   procedure Initialize (This : in out AllBinaryHTMLImageRotationAnimationFactory'Class; image : Image_Access; width : Integer; height : Integer; angleIncrement : Short_Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access) is
+   procedure Initialize (This : in out AllBinaryHTMLImageRotationAnimationFactory'Class; image_Param : access Image'Class; width : Integer; height : Integer; angleIncrement : Short_Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) is
+      image : Image_Access := Image_Access (image_Param);
+      animationBehaviorFactory : AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
    begin
         BaseImageAnimationFactory_Package.Initialize (This, image, PrimitiveIntUtil_Package.getArrayInstance, width, height, 0, 0, animationBehaviorFactory);
         Initialize_Fields (This);
         This.angleIncrement := angleIncrement;
    end Initialize;
 
-   function Create (image : Image_Access; width : Integer; height : Integer; angleIncrement : Short_Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access) return AllBinaryHTMLImageRotationAnimationFactory_Access is
+   function Create (image_Param : access Image'Class; width : Integer; height : Integer; angleIncrement : Short_Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return AllBinaryHTMLImageRotationAnimationFactory_Access is
       This : constant AllBinaryHTMLImageRotationAnimationFactory_Access := new AllBinaryHTMLImageRotationAnimationFactory;
    begin
-      AllBinaryHTMLImageRotationAnimationFactory_Package.Initialize (This.all, image, width, height, angleIncrement, animationBehaviorFactory);
+      AllBinaryHTMLImageRotationAnimationFactory_Package.Initialize (This.all, image_Param, width, height, angleIncrement, animationBehaviorFactory_Param);
       return This;
    end Create;
 
@@ -61,7 +65,7 @@ package body org.allbinary.animation.image.AllBinaryHTMLImageRotationAnimationFa
         scaledImage := This.animationFactoryImageScaleUtil.createImage (This.getImage, This.animationFactoryInitializationVisitor.width, This.animationFactoryInitializationVisitor.height, This.scaleProperties.scaleWidth, This.scaleProperties.scaleHeight);
         copyOfScaledImage := ImageCopyUtil_Package.getInstance.createImage (scaledImage);
         if ((This.animationFactoryInitializationVisitor.dx) /= (0)) or else ((This.animationFactoryInitializationVisitor.dy) /= (0)) then
-            This.animationFactoryImageScaleUtil.processAdjust (This'Unchecked_Access);
+            This.animationFactoryImageScaleUtil.processAdjust (AllBinaryHTMLImageRotationAnimationFactory_Access'(This'Unchecked_Access));
             return AllBinaryAdjustedHTMLImageRotationAnimation_Package.Create (scaledImage, copyOfScaledImage, AngleInfo_Package.getInstance (This.getAngleIncrement), AngleFactory_Package.getInstance.TOTAL_ANGLE, This.animationFactoryInitializationVisitor.dx, This.animationFactoryInitializationVisitor.dy, This.animationBehaviorFactory.getOrCreateInstance);
         else
             return AllBinaryHTMLImageRotationAnimation_Package.Create (scaledImage, copyOfScaledImage, AngleInfo_Package.getInstance (This.angleIncrement), AngleFactory_Package.getInstance.TOTAL_ANGLE, This.animationBehaviorFactory.getOrCreateInstance);
@@ -73,8 +77,8 @@ package body org.allbinary.animation.image.AllBinaryHTMLImageRotationAnimationFa
         return This.angleIncrement;
    end getAngleIncrement;
 
-   procedure createFactoryADXY (image : Image_Access; width : Integer; height : Integer; dx : Integer; dy : Integer; angleIncrement : Short_Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access) is
-      Java_Result : constant AllBinaryHTMLImageRotationAnimationFactory_Access := createFactoryADXY (image, width, height, dx, dy, angleIncrement, animationBehaviorFactory);
+   procedure createFactoryADXY (image_Param : access Image'Class; width : Integer; height : Integer; dx : Integer; dy : Integer; angleIncrement : Short_Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) is
+      Java_Result : constant AllBinaryHTMLImageRotationAnimationFactory_Access := createFactoryADXY (image_Param, width, height, dx, dy, angleIncrement, animationBehaviorFactory_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

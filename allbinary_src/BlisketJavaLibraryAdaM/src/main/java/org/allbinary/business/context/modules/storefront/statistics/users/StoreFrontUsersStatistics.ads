@@ -54,10 +54,10 @@ package org.allbinary.business.context.modules.storefront.statistics.users.Store
       totalUsersByRoleHashMap : HashMap_Access;
    end record;
 
-   procedure Initialize (This : in out StoreFrontUsersStatistics'Class; storeFrontInterface : StoreFrontInterface_Access);
-   function Create (storeFrontInterface : StoreFrontInterface_Access) return StoreFrontUsersStatistics_Access;
-   function getNewTotal (This : in out StoreFrontUsersStatistics; userRole : UserRole_Access) return Long_Long_Integer;
-   procedure getNewTotal (This : in out StoreFrontUsersStatistics; userRole : UserRole_Access);
+   procedure Initialize (This : in out StoreFrontUsersStatistics'Class; storeFrontInterface_Param : access StoreFrontInterface'Class);
+   function Create (storeFrontInterface_Param : access StoreFrontInterface'Class) return StoreFrontUsersStatistics_Access;
+   function getNewTotal (This : in out StoreFrontUsersStatistics; userRole_Param : access UserRole'Class) return Long_Long_Integer;
+   procedure getNewTotal (This : in out StoreFrontUsersStatistics; userRole_Param : access UserRole'Class);
    function getNumberOfUsers (This : in out StoreFrontUsersStatistics) return Long_Long_Integer;
    function getNumberOfUsersByRole (This : in out StoreFrontUsersStatistics; role : Unbounded_String) return Long_Long_Integer;
    procedure getNumberOfUsersByRole (This : in out StoreFrontUsersStatistics; role : Unbounded_String);

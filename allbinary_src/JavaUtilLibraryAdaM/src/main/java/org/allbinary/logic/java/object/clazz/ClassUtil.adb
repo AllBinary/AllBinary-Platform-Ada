@@ -34,7 +34,8 @@ package body org.allbinary.logic.java.anyType.clazz.ClassUtil_Package is
       return This;
    end Create;
 
-   function viewAll (anyType : Java_Object_Access; lineBreak : Unbounded_String) return Unbounded_String is
+   function viewAll (anyType_Param : access Java_Object'Class; lineBreak : Unbounded_String) return Unbounded_String is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         if (anyType) /= (null) then
             return ClassUtil_Package.viewAll (anyType.all'Tag, lineBreak);
@@ -53,7 +54,7 @@ package body org.allbinary.logic.java.anyType.clazz.ClassUtil_Package is
             classes := myClass.getClasses;
             stringBuffer.append (lineBreak);
             stringBuffer.append (To_Unbounded_String ("Class: "));
-            stringBuffer.append (myClass.getName);
+            stringBuffer.append (To_Unbounded_String (Ada.Tags.Expanded_Name (myClass)));
             stringBuffer.append (To_Unbounded_String (" uses "));
             stringBuffer.appendint (classes'Length);
             stringBuffer.append (To_Unbounded_String (" other classes"));
@@ -77,8 +78,8 @@ package body org.allbinary.logic.java.anyType.clazz.ClassUtil_Package is
         end if;
    end viewAll;
 
-   procedure viewAll (anyType : Java_Object_Access; lineBreak : Unbounded_String) is
-      Java_Result : constant Unbounded_String := viewAll (anyType, lineBreak);
+   procedure viewAll (anyType_Param : access Java_Object'Class; lineBreak : Unbounded_String) is
+      Java_Result : constant Unbounded_String := viewAll (anyType_Param, lineBreak);
       pragma Unreferenced (Java_Result);
    begin
       null;

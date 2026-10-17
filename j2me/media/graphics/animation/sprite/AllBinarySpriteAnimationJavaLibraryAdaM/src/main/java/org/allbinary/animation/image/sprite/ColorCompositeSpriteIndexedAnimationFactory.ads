@@ -51,12 +51,12 @@ package org.allbinary.animation.image.sprite.ColorCompositeSpriteIndexedAnimatio
       basicColorArray : BasicColor_Access_Array_Access;
    end record;
 
-   procedure Initialize (This : in out ColorCompositeSpriteIndexedAnimationFactory'Class; image : Image_Access; basicColorArray : BasicColor_Access_Array_Access; width : Integer; height : Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access);
-   function Create (image : Image_Access; basicColorArray : BasicColor_Access_Array_Access; width : Integer; height : Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access) return ColorCompositeSpriteIndexedAnimationFactory_Access;
+   procedure Initialize (This : in out ColorCompositeSpriteIndexedAnimationFactory'Class; image_Param : access Image'Class; basicColorArray : BasicColor_Access_Array_Access; width : Integer; height : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class);
+   function Create (image_Param : access Image'Class; basicColorArray : BasicColor_Access_Array_Access; width : Integer; height : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return ColorCompositeSpriteIndexedAnimationFactory_Access;
    function getInstance (This : in out ColorCompositeSpriteIndexedAnimationFactory; instanceId : Integer) return Animation_Access;
    procedure getInstance (This : in out ColorCompositeSpriteIndexedAnimationFactory; instanceId : Integer);
-   function getInstanceAnimation (This : in out ColorCompositeSpriteIndexedAnimationFactory; animationInterface : Animation_Access) return Animation_Access;
-   procedure getInstanceAnimation (This : in out ColorCompositeSpriteIndexedAnimationFactory; animationInterface : Animation_Access);
+   function getInstanceAnimation (This : in out ColorCompositeSpriteIndexedAnimationFactory; animationInterface_Param : access Animation'Class) return Animation_Access;
+   procedure getInstanceAnimation (This : in out ColorCompositeSpriteIndexedAnimationFactory; animationInterface_Param : access Animation'Class);
 
 end org.allbinary.animation.image.sprite.ColorCompositeSpriteIndexedAnimationFactory_Package;
 

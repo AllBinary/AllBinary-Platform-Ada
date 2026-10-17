@@ -43,7 +43,7 @@ package org.allbinary.layer.event.ScrollMapEventHandler_Package is
    procedure Initialize (This : in out ScrollMapEventHandler'Class);
    function Create return ScrollMapEventHandler_Access;
    function getInstance return ScrollMapEventHandler_Access;
-   procedure process (This : in out ScrollMapEventHandler; eventObject : AllBinaryEventObject_Access; eventListenerInterface : EventListenerInterface_Access);
+   procedure process (This : in out ScrollMapEventHandler; eventObject_Param : access AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface'Class);
 
 end org.allbinary.layer.event.ScrollMapEventHandler_Package;
 

@@ -40,7 +40,9 @@ package body org.allbinary.graphics.opengles.shader.ShaderUpdater_Package is
         return ShaderUpdater_Package.instance;
    end getInstance;
 
-   procedure onSurfaceCreated (This : in out ShaderUpdater; gl : GL10_Access; eglConfig : EGLConfig_Access) is
+   procedure onSurfaceCreated (This : in out ShaderUpdater; gl_Param : access GL10'Class; eglConfig_Param : access EGLConfig'Class) is
+      gl : GL10_Access := GL10_Access (gl_Param);
+      eglConfig : EGLConfig_Access := EGLConfig_Access (eglConfig_Param);
    begin
         null;
    end onSurfaceCreated;

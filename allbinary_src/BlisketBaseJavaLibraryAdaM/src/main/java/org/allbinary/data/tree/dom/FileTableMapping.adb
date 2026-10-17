@@ -22,16 +22,17 @@ package body org.allbinary.data.tree.dom.FileTableMapping_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out FileTableMapping'Class; file : AbFile_Access) is
+   procedure Initialize (This : in out FileTableMapping'Class; file_Param : access AbFile'Class) is
+      file : AbFile_Access := AbFile_Access (file_Param);
    begin
       Initialize_Fields (This);
         This.file := file;
    end Initialize;
 
-   function Create (file : AbFile_Access) return FileTableMapping_Access is
+   function Create (file_Param : access AbFile'Class) return FileTableMapping_Access is
       This : constant FileTableMapping_Access := new FileTableMapping;
    begin
-      FileTableMapping_Package.Initialize (This.all, file);
+      FileTableMapping_Package.Initialize (This.all, file_Param);
       return This;
    end Create;
 

@@ -28,7 +28,7 @@ package body org.allbinary.logic.communication.smtp.event.UserEmailEventNameData
       Initialize_Fields (This);
         This.eventHandlerName := eventHandlerName;
         This.initNextId;
-        UserEmailEventNameData_Package.userNameEvenNameHashMap.put (This.eventHandlerName, This'Unchecked_Access);
+        UserEmailEventNameData_Package.userNameEvenNameHashMap.put (This.eventHandlerName, UserEmailEventNameData_Access'(This'Unchecked_Access));
    end Initialize;
 
    function Create (eventHandlerName : Unbounded_String) return UserEmailEventNameData_Access is

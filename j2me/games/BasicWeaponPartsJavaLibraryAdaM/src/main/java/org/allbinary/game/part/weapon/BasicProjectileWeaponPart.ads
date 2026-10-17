@@ -52,11 +52,11 @@ package org.allbinary.game.part.weapon.BasicProjectileWeaponPart_Package is
       weaponLayerCircularStaticPool : WeaponLayerCircularPool_Access;
    end record;
 
-   procedure Initialize (This : in out BasicProjectileWeaponPart'Class; animationInterface : Animation_Access; sourceLayerInterface : AllBinaryLayer_Access; weaponLayerCircularStaticPool : WeaponLayerCircularPool_Access; weaponProperties : WeaponProperties_Access; scoreableInterface : ScoreableInterface_Access; relativeRelationship : RelativeRelationship_Access);
-   function Create (animationInterface : Animation_Access; sourceLayerInterface : AllBinaryLayer_Access; weaponLayerCircularStaticPool : WeaponLayerCircularPool_Access; weaponProperties : WeaponProperties_Access; scoreableInterface : ScoreableInterface_Access; relativeRelationship : RelativeRelationship_Access) return BasicProjectileWeaponPart_Access;
-   function createBasicProjectileWeaponPart (animationInterface : Animation_Access; weaponLayerCircularStaticPool : WeaponLayerCircularPool_Access) return BasicProjectileWeaponPart_Access;
-   procedure createBasicProjectileWeaponPart (animationInterface : Animation_Access; weaponLayerCircularStaticPool : WeaponLayerCircularPool_Access);
-   procedure processScore (This : in out BasicProjectileWeaponPart; allbinaryLayerManager : AllBinaryLayerManager_Access; angle : Short_Integer; otherAngle : Short_Integer; weaponProperties : WeaponProperties_Access; scoreableInterface : ScoreableInterface_Access);
+   procedure Initialize (This : in out BasicProjectileWeaponPart'Class; animationInterface_Param : access Animation'Class; sourceLayerInterface_Param : access AllBinaryLayer'Class; weaponLayerCircularStaticPool_Param : access WeaponLayerCircularPool'Class; weaponProperties_Param : access WeaponProperties'Class; scoreableInterface_Param : access ScoreableInterface'Class; relativeRelationship_Param : access RelativeRelationship'Class);
+   function Create (animationInterface_Param : access Animation'Class; sourceLayerInterface_Param : access AllBinaryLayer'Class; weaponLayerCircularStaticPool_Param : access WeaponLayerCircularPool'Class; weaponProperties_Param : access WeaponProperties'Class; scoreableInterface_Param : access ScoreableInterface'Class; relativeRelationship_Param : access RelativeRelationship'Class) return BasicProjectileWeaponPart_Access;
+   function createBasicProjectileWeaponPart (animationInterface_Param : access Animation'Class; weaponLayerCircularStaticPool_Param : access WeaponLayerCircularPool'Class) return BasicProjectileWeaponPart_Access;
+   procedure createBasicProjectileWeaponPart (animationInterface_Param : access Animation'Class; weaponLayerCircularStaticPool_Param : access WeaponLayerCircularPool'Class);
+   procedure processScore (This : in out BasicProjectileWeaponPart; allbinaryLayerManager_Param : access AllBinaryLayerManager'Class; angle : Short_Integer; otherAngle : Short_Integer; weaponProperties_Param : access WeaponProperties'Class; scoreableInterface_Param : access ScoreableInterface'Class);
 
 end org.allbinary.game.part.weapon.BasicProjectileWeaponPart_Package;
 

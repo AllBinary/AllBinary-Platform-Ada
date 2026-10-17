@@ -50,7 +50,8 @@ package body org.allbinary.image.ImageCacheBase_Package is
       return This;
    end Create;
 
-   function getImage (This : in out ImageCacheBase; resourceId : Java_Object_Access) return Image_Access is
+   function getImage (This : in out ImageCacheBase; resourceId_Param : access Java_Object'Class) return Image_Access is
+      resourceId : Java_Object_Access := Java_Object_Access (resourceId_Param);
       imageCanBeNull : Java_Object_Access;
    begin
         imageCanBeNull := This.hashtable.get (resourceId);
@@ -67,7 +68,7 @@ package body org.allbinary.image.ImageCacheBase_Package is
             This.availableListOfList (index).clear;
             This.availableListOfList (index).addAllList (This.listOfList (index));
         end loop;
-        This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("ImageCache: ")).append (This.toString).toString, This'Unchecked_Access, To_Unbounded_String ("releaseAll"));
+        This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("ImageCache: ")).append (This.toString).toString, ImageCacheBase_Access'(This'Unchecked_Access), To_Unbounded_String ("releaseAll"));
    end releaseAll;
 
    function getIndexWH (This : in out ImageCacheBase; width : Integer; height : Integer) return Integer is
@@ -105,7 +106,8 @@ package body org.allbinary.image.ImageCacheBase_Package is
    end get;
 
    --  throws Exception
-   function getWithKey (This : in out ImageCacheBase; key : Java_Object_Access) return Image_Access is
+   function getWithKey (This : in out ImageCacheBase; key_Param : access Java_Object'Class) return Image_Access is
+      key : Java_Object_Access := Java_Object_Access (key_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end getWithKey;
@@ -117,7 +119,9 @@ package body org.allbinary.image.ImageCacheBase_Package is
    end createImage;
 
    --  throws Exception
-   function createImageFromInputStream (This : in out ImageCacheBase; key : Java_Object_Access; inputStream : InputStream_Access) return Image_Access is
+   function createImageFromInputStream (This : in out ImageCacheBase; key_Param : access Java_Object'Class; inputStream_Param : access InputStream'Class) return Image_Access is
+      key : Java_Object_Access := Java_Object_Access (key_Param);
+      inputStream : InputStream_Access := InputStream_Access (inputStream_Param);
    begin
         return This.imageFactory.createImageFromInputStream (key, inputStream);
    end createImageFromInputStream;
@@ -154,7 +158,8 @@ package body org.allbinary.image.ImageCacheBase_Package is
         return This.hashtable;
    end getHashtableP;
 
-   procedure init (This : in out ImageCacheBase; image : Image_Access) is
+   procedure init (This : in out ImageCacheBase; image_Param : access Image'Class) is
+      image : Image_Access := Image_Access (image_Param);
    begin
         null;
    end init;
@@ -164,8 +169,8 @@ package body org.allbinary.image.ImageCacheBase_Package is
         null;
    end initProgress;
 
-   procedure getImage (This : in out ImageCacheBase; resourceId : Java_Object_Access) is
-      Java_Result : constant Image_Access := ImageCacheBase'Class (This).getImage (resourceId);
+   procedure getImage (This : in out ImageCacheBase; resourceId_Param : access Java_Object'Class) is
+      Java_Result : constant Image_Access := ImageCacheBase'Class (This).getImage (resourceId_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
@@ -192,8 +197,8 @@ package body org.allbinary.image.ImageCacheBase_Package is
       null;
    end get;
 
-   procedure getWithKey (This : in out ImageCacheBase; key : Java_Object_Access) is
-      Java_Result : constant Image_Access := ImageCacheBase'Class (This).getWithKey (key);
+   procedure getWithKey (This : in out ImageCacheBase; key_Param : access Java_Object'Class) is
+      Java_Result : constant Image_Access := ImageCacheBase'Class (This).getWithKey (key_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
@@ -206,8 +211,8 @@ package body org.allbinary.image.ImageCacheBase_Package is
       null;
    end createImage;
 
-   procedure createImageFromInputStream (This : in out ImageCacheBase; key : Java_Object_Access; inputStream : InputStream_Access) is
-      Java_Result : constant Image_Access := ImageCacheBase'Class (This).createImageFromInputStream (key, inputStream);
+   procedure createImageFromInputStream (This : in out ImageCacheBase; key_Param : access Java_Object'Class; inputStream_Param : access InputStream'Class) is
+      Java_Result : constant Image_Access := ImageCacheBase'Class (This).createImageFromInputStream (key_Param, inputStream_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

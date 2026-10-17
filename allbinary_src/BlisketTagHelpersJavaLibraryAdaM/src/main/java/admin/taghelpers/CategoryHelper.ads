@@ -45,8 +45,8 @@ package admin.taghelpers.CategoryHelper_Package is
       portion : Portion_Access;
    end record;
 
-   procedure Initialize (This : in out CategoryHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access);
-   function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return CategoryHelper_Access;
+   procedure Initialize (This : in out CategoryHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
+   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return CategoryHelper_Access;
    function drop (This : in out CategoryHelper) return Unbounded_String;
    function create (This : in out CategoryHelper) return Unbounded_String;
    function restore (This : in out CategoryHelper) return Unbounded_String;

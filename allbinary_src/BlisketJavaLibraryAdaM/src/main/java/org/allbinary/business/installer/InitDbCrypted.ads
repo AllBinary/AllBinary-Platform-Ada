@@ -99,8 +99,8 @@ package org.allbinary.business.installer.InitDbCrypted_Package is
       SQL_FILE : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out InitDbCrypted'Class; databaseConnectionInfoInterface : DatabaseConnectionInfoInterface_Access);
-   function Create (databaseConnectionInfoInterface : DatabaseConnectionInfoInterface_Access) return InitDbCrypted_Access;
+   procedure Initialize (This : in out InitDbCrypted'Class; databaseConnectionInfoInterface_Param : access DatabaseConnectionInfoInterface'Class);
+   function Create (databaseConnectionInfoInterface_Param : access DatabaseConnectionInfoInterface'Class) return InitDbCrypted_Access;
    function addUsers (This : in out InitDbCrypted) return Boolean;
    function addDatabases (This : in out InitDbCrypted) return Boolean;
    function addTables (This : in out InitDbCrypted) return Boolean;

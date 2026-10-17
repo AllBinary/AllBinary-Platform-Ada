@@ -22,21 +22,25 @@ package body org.allbinary.game.media.graphics.geography.map.racetrack.PathFinde
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out PathFinderGraphHackVisitor'Class; geographicMapInterface : BasicGeographicMap_Access; edgeMinimum : Integer; minPathWeight : Integer; maxPathWeight : Integer) is
+   procedure Initialize (This : in out PathFinderGraphHackVisitor'Class; geographicMapInterface_Param : access BasicGeographicMap'Class; edgeMinimum : Integer; minPathWeight : Integer; maxPathWeight : Integer) is
+      geographicMapInterface : BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
    begin
         BasePathFinderGraphVisitor_Package.Initialize (This, geographicMapInterface, edgeMinimum, minPathWeight, maxPathWeight);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (geographicMapInterface : BasicGeographicMap_Access; edgeMinimum : Integer; minPathWeight : Integer; maxPathWeight : Integer) return PathFinderGraphHackVisitor_Access is
+   function Create (geographicMapInterface_Param : access BasicGeographicMap'Class; edgeMinimum : Integer; minPathWeight : Integer; maxPathWeight : Integer) return PathFinderGraphHackVisitor_Access is
       This : constant PathFinderGraphHackVisitor_Access := new PathFinderGraphHackVisitor;
    begin
-      PathFinderGraphHackVisitor_Package.Initialize (This.all, geographicMapInterface, edgeMinimum, minPathWeight, maxPathWeight);
+      PathFinderGraphHackVisitor_Package.Initialize (This.all, geographicMapInterface_Param, edgeMinimum, minPathWeight, maxPathWeight);
       return This;
    end Create;
 
    --  throws Exception
-   procedure visit (This : in out PathFinderGraphHackVisitor; graph : SimpleWeightedGraph_Access; startPathFindingNodeList : BasicArrayList_Access; endPathFindingNodeList : BasicArrayList_Access) is
+   procedure visit (This : in out PathFinderGraphHackVisitor; graph_Param : access SimpleWeightedGraph'Class; startPathFindingNodeList_Param : access BasicArrayList'Class; endPathFindingNodeList_Param : access BasicArrayList'Class) is
+      graph : SimpleWeightedGraph_Access := SimpleWeightedGraph_Access (graph_Param);
+      startPathFindingNodeList : BasicArrayList_Access := BasicArrayList_Access (startPathFindingNodeList_Param);
+      endPathFindingNodeList : BasicArrayList_Access := BasicArrayList_Access (endPathFindingNodeList_Param);
    begin
         This.fixStart (graph, startPathFindingNodeList);
         This.fixEnd (graph, endPathFindingNodeList);
@@ -44,7 +48,9 @@ package body org.allbinary.game.media.graphics.geography.map.racetrack.PathFinde
    end visit;
 
    --  throws Exception
-   procedure fixStart (This : in out PathFinderGraphHackVisitor; graph : SimpleWeightedGraph_Access; startPathFindingNodeList : BasicArrayList_Access) is
+   procedure fixStart (This : in out PathFinderGraphHackVisitor; graph_Param : access SimpleWeightedGraph'Class; startPathFindingNodeList_Param : access BasicArrayList'Class) is
+      graph : SimpleWeightedGraph_Access := SimpleWeightedGraph_Access (graph_Param);
+      startPathFindingNodeList : BasicArrayList_Access := BasicArrayList_Access (startPathFindingNodeList_Param);
       geographicMapCellPositionFactory : BasicGeographicMapCellPositionFactory_Access;
       tiledLayer : AllBinaryTiledLayer_Access;
       startPathFindingNode : PathFindingNode_Access;
@@ -71,7 +77,9 @@ package body org.allbinary.game.media.graphics.geography.map.racetrack.PathFinde
    end fixStart;
 
    --  throws Exception
-   procedure fixEnd (This : in out PathFinderGraphHackVisitor; graph : SimpleWeightedGraph_Access; endPathFindingNodeList : BasicArrayList_Access) is
+   procedure fixEnd (This : in out PathFinderGraphHackVisitor; graph_Param : access SimpleWeightedGraph'Class; endPathFindingNodeList_Param : access BasicArrayList'Class) is
+      graph : SimpleWeightedGraph_Access := SimpleWeightedGraph_Access (graph_Param);
+      endPathFindingNodeList : BasicArrayList_Access := BasicArrayList_Access (endPathFindingNodeList_Param);
       geographicMapCellPositionFactory : BasicGeographicMapCellPositionFactory_Access;
       tiledLayer : AllBinaryTiledLayer_Access;
       endPathFindingNode : PathFindingNode_Access;
@@ -99,7 +107,8 @@ package body org.allbinary.game.media.graphics.geography.map.racetrack.PathFinde
    end fixEnd;
 
    --  throws Exception
-   procedure fixOverPassEdges (This : in out PathFinderGraphHackVisitor; graph : SimpleWeightedGraph_Access) is
+   procedure fixOverPassEdges (This : in out PathFinderGraphHackVisitor; graph_Param : access SimpleWeightedGraph'Class) is
+      graph : SimpleWeightedGraph_Access := SimpleWeightedGraph_Access (graph_Param);
       geographicMapCellPositionFactory : BasicGeographicMapCellPositionFactory_Access;
       raceTrackGeographicMap : RaceTrackGeographicMap_Access;
       CellPositionArray : CellPosition_Access_Array_Access;
@@ -114,7 +123,7 @@ package body org.allbinary.game.media.graphics.geography.map.racetrack.PathFinde
         CellPositionArray := raceTrackGeographicMap.getRaceTrackData.getOverPassGeographicMapCellPositionArray;
         for index in reverse 0 .. (CellPositionArray'Length) - (1) loop
             overPassGeographicMapCellPosition := CellPositionArray (index);
-            This.logUtil.putF (To_Unbounded_String ("Fixing Over Pass: ") & Java_Image (overPassGeographicMapCellPosition.getColumn) & To_Unbounded_String (", ") & Java_Image (overPassGeographicMapCellPosition.getRow), This'Unchecked_Access, To_Unbounded_String ("fixOverPassEdges"));
+            This.logUtil.putF (To_Unbounded_String ("Fixing Over Pass: ") & Java_Image (overPassGeographicMapCellPosition.getColumn) & To_Unbounded_String (", ") & Java_Image (overPassGeographicMapCellPosition.getRow), PathFinderGraphHackVisitor_Access'(This'Unchecked_Access), To_Unbounded_String ("fixOverPassEdges"));
             underPassGeographicMapCellPosition := geographicMapCellPositionFactory.getAt (overPassGeographicMapCellPosition.getColumn, overPassGeographicMapCellPosition.getRow);
             rightUnderPassGeographicMapCellPosition := geographicMapCellPositionFactory.getAt ((overPassGeographicMapCellPosition.getColumn) + (1), overPassGeographicMapCellPosition.getRow);
             leftUnderPassGeographicMapCellPosition := geographicMapCellPositionFactory.getAt ((overPassGeographicMapCellPosition.getColumn) - (1), overPassGeographicMapCellPosition.getRow);
@@ -127,7 +136,10 @@ package body org.allbinary.game.media.graphics.geography.map.racetrack.PathFinde
    end fixOverPassEdges;
 
    --  throws Exception
-   procedure fixPath (This : in out PathFinderGraphHackVisitor; startPathFindingNodeList : BasicArrayList_Access; endPathFindingNodeList : BasicArrayList_Access; pathList : BasicArrayList_Access) is
+   procedure fixPath (This : in out PathFinderGraphHackVisitor; startPathFindingNodeList_Param : access BasicArrayList'Class; endPathFindingNodeList_Param : access BasicArrayList'Class; pathList_Param : access BasicArrayList'Class) is
+      startPathFindingNodeList : BasicArrayList_Access := BasicArrayList_Access (startPathFindingNodeList_Param);
+      endPathFindingNodeList : BasicArrayList_Access := BasicArrayList_Access (endPathFindingNodeList_Param);
+      pathList : BasicArrayList_Access := BasicArrayList_Access (pathList_Param);
       endPathFindingNode : PathFindingNode_Access;
       startPathFindingNode : PathFindingNode_Access;
       index : Integer;
@@ -146,7 +158,8 @@ package body org.allbinary.game.media.graphics.geography.map.racetrack.PathFinde
    end fixPath;
 
    --  throws Exception
-   procedure removeOverPassEdges (This : in out PathFinderGraphHackVisitor; pathList : BasicArrayList_Access) is
+   procedure removeOverPassEdges (This : in out PathFinderGraphHackVisitor; pathList_Param : access BasicArrayList'Class) is
+      pathList : BasicArrayList_Access := BasicArrayList_Access (pathList_Param);
       geographicMapCellPositionFactory : BasicGeographicMapCellPositionFactory_Access;
       raceTrackGeographicMap : RaceTrackGeographicMap_Access;
       CellPositionArray : CellPosition_Access_Array_Access;
@@ -168,7 +181,8 @@ package body org.allbinary.game.media.graphics.geography.map.racetrack.PathFinde
         end loop;
    end removeOverPassEdges;
 
-   function isValid (This : in out PathFinderGraphHackVisitor; graphPath : GraphPath_Access) return Boolean is
+   function isValid (This : in out PathFinderGraphHackVisitor; graphPath_Param : access GraphPath'Class) return Boolean is
+      graphPath : GraphPath_Access := GraphPath_Access (graphPath_Param);
    begin
         if (((graphPath.getEdgeList.size) > (This.edgeMinimum)) and then ((graphPath.getWeight) < (This.maxPathWeight))) and then ((graphPath.getWeight) > (This.minPathWeight)) then
             return True;
@@ -177,8 +191,8 @@ package body org.allbinary.game.media.graphics.geography.map.racetrack.PathFinde
         end if;
    end isValid;
 
-   procedure isValid (This : in out PathFinderGraphHackVisitor; graphPath : GraphPath_Access) is
-      Java_Result : constant Boolean := PathFinderGraphHackVisitor'Class (This).isValid (graphPath);
+   procedure isValid (This : in out PathFinderGraphHackVisitor; graphPath_Param : access GraphPath'Class) is
+      Java_Result : constant Boolean := PathFinderGraphHackVisitor'Class (This).isValid (graphPath_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

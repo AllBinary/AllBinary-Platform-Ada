@@ -45,7 +45,8 @@ package body org.allbinary.animation.vector.VectorCenterGenerator_Package is
    end Create;
 
    --  throws Exception
-   procedure calculate (This : in out VectorCenterGenerator; hashMap : HashMap_Access) is
+   procedure calculate (This : in out VectorCenterGenerator; hashMap_Param : access HashMap'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
       graphicItemArray : Java_Object_Access_Array_Access;
       size : Integer;
       item : GraphicItemInterface_Access;
@@ -65,7 +66,7 @@ package body org.allbinary.animation.vector.VectorCenterGenerator_Package is
                 This.getInstance (item.getPointsInterface.getPoints);
             end if;
         end loop;
-        This.logUtil.putF (To_Unbounded_String ("minX: ") & Java_Image (This.minX) & To_Unbounded_String (" minY: ") & Java_Image (This.minY) & To_Unbounded_String (" maxX: ") & Java_Image (This.maxX) & To_Unbounded_String (" maxY: ") & Java_Image (This.maxY), This'Unchecked_Access, This.commonStrings.GET_INSTANCE);
+        This.logUtil.putF (To_Unbounded_String ("minX: ") & Java_Image (This.minX) & To_Unbounded_String (" minY: ") & Java_Image (This.minY) & To_Unbounded_String (" maxX: ") & Java_Image (This.maxX) & To_Unbounded_String (" maxY: ") & Java_Image (This.maxY), VectorCenterGenerator_Access'(This'Unchecked_Access), This.commonStrings.GET_INSTANCE);
         This.setWidth ((This.maxX) - (This.minX));
         This.setHeight ((This.maxY) - (This.minY));
         max := This.getWidth;
@@ -75,7 +76,7 @@ package body org.allbinary.animation.vector.VectorCenterGenerator_Package is
         middle := (max) / (2);
         commonLabels := CommonLabels_Package.getInstance;
         s := StringMaker_Package.Create.append (commonLabels.WIDTH_LABEL).appendint (This.getWidth).append (commonLabels.HEIGHT_LABEL).appendint (This.getHeight).append (To_Unbounded_String (" max: ")).appendint (max).append (To_Unbounded_String (" middle: ")).appendint (middle).toString;
-        This.logUtil.putF (s, This'Unchecked_Access, This.commonStrings.GET_INSTANCE);
+        This.logUtil.putF (s, VectorCenterGenerator_Access'(This'Unchecked_Access), This.commonStrings.GET_INSTANCE);
         currentMiddleX := (This.minX) + ((This.getWidth) / (2));
         currentMiddleY := (This.minY) + ((This.getHeight) / (2));
         This.dx := (middle) - (currentMiddleX);
@@ -83,7 +84,8 @@ package body org.allbinary.animation.vector.VectorCenterGenerator_Package is
    end calculate;
 
    --  throws Exception
-   procedure transform (This : in out VectorCenterGenerator; hashMap : HashMap_Access) is
+   procedure transform (This : in out VectorCenterGenerator; hashMap_Param : access HashMap'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
       graphicItemArray : Java_Object_Access_Array_Access;
       size : Integer;
       item : GraphicItemInterface_Access;
@@ -92,7 +94,7 @@ package body org.allbinary.animation.vector.VectorCenterGenerator_Package is
       index : Integer;
    begin
         This.calculate (hashMap);
-        This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String (" dx: ")).appendint (This.dx).append (To_Unbounded_String (" dy: ")).appendint (This.dy).toString, This'Unchecked_Access, This.commonStrings.GET_INSTANCE);
+        This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String (" dx: ")).appendint (This.dx).append (To_Unbounded_String (" dy: ")).appendint (This.dy).toString, VectorCenterGenerator_Access'(This'Unchecked_Access), This.commonStrings.GET_INSTANCE);
         graphicItemArray := hashMap.keySet.toArray;
         size := graphicItemArray'Length;
         for index in 0 .. (size) - 1 loop
@@ -105,7 +107,8 @@ package body org.allbinary.animation.vector.VectorCenterGenerator_Package is
    end transform;
 
    --  throws Exception
-   procedure getInstance (This : in out VectorCenterGenerator; pointVector : BasicArrayList_Access) is
+   procedure getInstance (This : in out VectorCenterGenerator; pointVector_Param : access BasicArrayList'Class) is
+      pointVector : BasicArrayList_Access := BasicArrayList_Access (pointVector_Param);
       size : Integer;
       point : GPoint_Access;
       index : Integer;
@@ -132,14 +135,15 @@ package body org.allbinary.animation.vector.VectorCenterGenerator_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.GET_INSTANCE, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, VectorCenterGenerator_Access'(This'Unchecked_Access), This.commonStrings.GET_INSTANCE, e);
             Java_Throw (e);
                 end;
         end;
    end getInstance;
 
    --  throws Exception
-   function translate (list : BasicArrayList_Access; x : Integer; y : Integer) return BasicArrayList_Access is
+   function translate (list_Param : access BasicArrayList'Class; x : Integer; y : Integer) return BasicArrayList_Access is
+      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
       graphicsPipe : BasicGraphicsPipeline_Access;
    begin
         graphicsPipe := BasicGraphicsPipeline_Package.Create (list);
@@ -168,8 +172,8 @@ package body org.allbinary.animation.vector.VectorCenterGenerator_Package is
         This.height := height;
    end setHeight;
 
-   procedure translate (list : BasicArrayList_Access; x : Integer; y : Integer) is
-      Java_Result : constant BasicArrayList_Access := translate (list, x, y);
+   procedure translate (list_Param : access BasicArrayList'Class; x : Integer; y : Integer) is
+      Java_Result : constant BasicArrayList_Access := translate (list_Param, x, y);
       pragma Unreferenced (Java_Result);
    begin
       null;

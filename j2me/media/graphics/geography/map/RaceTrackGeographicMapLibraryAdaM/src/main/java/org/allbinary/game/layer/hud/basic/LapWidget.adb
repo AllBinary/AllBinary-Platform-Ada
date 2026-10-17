@@ -24,7 +24,8 @@ package body org.allbinary.game.layer.hud.basic.LapWidget_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out LapWidget'Class; location : Integer; direction : Integer; basicColor : BasicColor_Access) is
+   procedure Initialize (This : in out LapWidget'Class; location : Integer; direction : Integer; basicColor_Param : access BasicColor'Class) is
+      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         BasicHud_Package.Initialize (This, location, direction, 2, basicColor);
         Initialize_Fields (This);
@@ -32,14 +33,15 @@ package body org.allbinary.game.layer.hud.basic.LapWidget_Package is
         This.updateMaxWidth := 40;
    end Initialize;
 
-   function Create (location : Integer; direction : Integer; basicColor : BasicColor_Access) return LapWidget_Access is
+   function Create (location : Integer; direction : Integer; basicColor_Param : access BasicColor'Class) return LapWidget_Access is
       This : constant LapWidget_Access := new LapWidget;
    begin
-      LapWidget_Package.Initialize (This.all, location, direction, basicColor);
+      LapWidget_Package.Initialize (This.all, location, direction, basicColor_Param);
       return This;
    end Create;
 
-   procedure update (This : in out LapWidget; lapInfo : LapInfo_Access) is
+   procedure update (This : in out LapWidget; lapInfo_Param : access LapInfo'Class) is
+      lapInfo : LapInfo_Access := LapInfo_Access (lapInfo_Param);
       stringBuffer : StringMaker_Access;
    begin
         stringBuffer := StringMaker_Package.Create;
@@ -51,7 +53,8 @@ package body org.allbinary.game.layer.hud.basic.LapWidget_Package is
         This.string_Id := stringBuffer.toString;
    end update;
 
-   procedure paint (This : in out LapWidget; graphics : Graphics_Access) is
+   procedure paint (This : in out LapWidget; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         BasicHud (This).paintString (graphics, This.string_Id);
    end paint;

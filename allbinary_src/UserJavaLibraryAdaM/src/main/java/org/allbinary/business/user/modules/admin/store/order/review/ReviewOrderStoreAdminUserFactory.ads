@@ -40,8 +40,8 @@ package org.allbinary.business.user.modules.admin.store.order.review.ReviewOrder
    procedure Initialize (This : in out ReviewOrderStoreAdminUserFactory'Class);
    function Create return ReviewOrderStoreAdminUserFactory_Access;
    function getInstance (This : in out ReviewOrderStoreAdminUserFactory) return UserInterface_Access;
-   function getInstance (This : in out ReviewOrderStoreAdminUserFactory; hashMap : HashMap_Access) return UserInterface_Access;
-   procedure getInstance (This : in out ReviewOrderStoreAdminUserFactory; hashMap : HashMap_Access);
+   function getInstance (This : in out ReviewOrderStoreAdminUserFactory; hashMap_Param : access HashMap'Class) return UserInterface_Access;
+   procedure getInstance (This : in out ReviewOrderStoreAdminUserFactory; hashMap_Param : access HashMap'Class);
 
 end org.allbinary.business.user.modules.admin.store.order.review.ReviewOrderStoreAdminUserFactory_Package;
 

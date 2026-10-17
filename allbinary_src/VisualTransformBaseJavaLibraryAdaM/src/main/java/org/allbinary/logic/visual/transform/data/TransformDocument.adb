@@ -35,7 +35,7 @@ package body org.allbinary.logic.visual.transform.data.TransformDocument_Package
             This.baseNode := allbinaryNode;
             This.document.appendChild (This.baseNode);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.putF (This.log, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+                This.logUtil.putF (This.log, TransformDocument_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
             end if;
         exception
             when Java_Occurrence : others =>
@@ -43,7 +43,7 @@ package body org.allbinary.logic.visual.transform.data.TransformDocument_Package
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR, e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, TransformDocument_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR, e);
             end if;
             Java_Throw (e);
                 end;

@@ -44,8 +44,8 @@ package org.allbinary.logic.communication.smtp.configuration.user.event.UserEmai
 
    procedure Initialize (This : in out UserEmailEventConfiguration'Class);
    function Create return UserEmailEventConfiguration_Access;
-   procedure Initialize (This : in out UserEmailEventConfiguration'Class; hashMap : HashMap_Access);
-   function Create (hashMap : HashMap_Access) return UserEmailEventConfiguration_Access;
+   procedure Initialize (This : in out UserEmailEventConfiguration'Class; hashMap_Param : access HashMap'Class);
+   function Create (hashMap_Param : access HashMap'Class) return UserEmailEventConfiguration_Access;
    function getName (This : in out UserEmailEventConfiguration) return Unbounded_String;
    procedure setName (This : in out UserEmailEventConfiguration; name : Unbounded_String);
    function getEventListenerClassPath (This : in out UserEmailEventConfiguration) return Unbounded_String;

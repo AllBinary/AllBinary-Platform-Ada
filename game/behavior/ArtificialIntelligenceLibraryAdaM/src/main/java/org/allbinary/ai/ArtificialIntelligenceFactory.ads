@@ -35,8 +35,8 @@ package org.allbinary.ai.ArtificialIntelligenceFactory_Package is
 
    procedure Initialize (This : in out ArtificialIntelligenceFactory'Class);
    function Create return ArtificialIntelligenceFactory_Access;
-   function getInstance (This : in out ArtificialIntelligenceFactory; anyType : Java_Object_Access) return ArtificialIntelligence_Access;
-   procedure getInstance (This : in out ArtificialIntelligenceFactory; anyType : Java_Object_Access);
+   function getInstance (This : in out ArtificialIntelligenceFactory; anyType_Param : access Java_Object'Class) return ArtificialIntelligence_Access;
+   procedure getInstance (This : in out ArtificialIntelligenceFactory; anyType_Param : access Java_Object'Class);
 
 end org.allbinary.ai.ArtificialIntelligenceFactory_Package;
 

@@ -28,7 +28,7 @@ package body tags.PropertiesTag_Package is
       CommandTag_Package.Initialize (This);
       Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+            This.logUtil.putF (This.commonStrings.START, PropertiesTag_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
         This.propertiesHashMap := StdUtil_Package.getInstance.createHashMap;
    end Initialize;
@@ -48,7 +48,7 @@ package body tags.PropertiesTag_Package is
    function doEndTag (This : in out PropertiesTag) return Integer is
    begin
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
-            This.logUtil.putF (To_Unbounded_String ("Tag Ended"), This'Unchecked_Access, To_Unbounded_String ("doEndTag"));
+            This.logUtil.putF (To_Unbounded_String ("Tag Ended"), PropertiesTag_Access'(This'Unchecked_Access), To_Unbounded_String ("doEndTag"));
         end if;
         This.propertiesHashMap := StdUtil_Package.getInstance.createHashMap;
         return EVAL_PAGE;

@@ -51,13 +51,13 @@ package org.allbinary.media.image.comparison.ImageComparator_Package is
       imageComparatorConstraintsInterface : ImageComparatorConstraintsInterface_Access;
    end record;
 
-   procedure Initialize (This : in out ImageComparator'Class; imageComparatorConstraintsInterface : ImageComparatorConstraintsInterface_Access);
-   function Create (imageComparatorConstraintsInterface : ImageComparatorConstraintsInterface_Access) return ImageComparator_Access;
-   procedure process (This : in out ImageComparator; imageComparisonInfo : ImageComparisonResult_Access; point : GPoint_Access);
-   function compare (This : in out ImageComparator; bufferedImage1 : BufferedImage_Access; bufferedImage2 : BufferedImage_Access; frameOne : Long_Long_Integer; frameTwo : Long_Long_Integer; tolerance : Integer) return ImageComparisonResult_Access;
-   procedure compare (This : in out ImageComparator; bufferedImage1 : BufferedImage_Access; bufferedImage2 : BufferedImage_Access; frameOne : Long_Long_Integer; frameTwo : Long_Long_Integer; tolerance : Integer);
-   function compare (This : in out ImageComparator; bufferedImage1 : BufferedImage_Access; bufferedImage2 : BufferedImage_Access; frameOne : Long_Long_Integer; frameTwo : Long_Long_Integer; tolerance : Integer; name : Unbounded_String) return ImageComparisonResult_Access;
-   procedure compare (This : in out ImageComparator; bufferedImage1 : BufferedImage_Access; bufferedImage2 : BufferedImage_Access; frameOne : Long_Long_Integer; frameTwo : Long_Long_Integer; tolerance : Integer; name : Unbounded_String);
+   procedure Initialize (This : in out ImageComparator'Class; imageComparatorConstraintsInterface_Param : access ImageComparatorConstraintsInterface'Class);
+   function Create (imageComparatorConstraintsInterface_Param : access ImageComparatorConstraintsInterface'Class) return ImageComparator_Access;
+   procedure process (This : in out ImageComparator; imageComparisonInfo_Param : access ImageComparisonResult'Class; point_Param : access GPoint'Class);
+   function compare (This : in out ImageComparator; bufferedImage1_Param : access BufferedImage'Class; bufferedImage2_Param : access BufferedImage'Class; frameOne : Long_Long_Integer; frameTwo : Long_Long_Integer; tolerance : Integer) return ImageComparisonResult_Access;
+   procedure compare (This : in out ImageComparator; bufferedImage1_Param : access BufferedImage'Class; bufferedImage2_Param : access BufferedImage'Class; frameOne : Long_Long_Integer; frameTwo : Long_Long_Integer; tolerance : Integer);
+   function compare (This : in out ImageComparator; bufferedImage1_Param : access BufferedImage'Class; bufferedImage2_Param : access BufferedImage'Class; frameOne : Long_Long_Integer; frameTwo : Long_Long_Integer; tolerance : Integer; name : Unbounded_String) return ImageComparisonResult_Access;
+   procedure compare (This : in out ImageComparator; bufferedImage1_Param : access BufferedImage'Class; bufferedImage2_Param : access BufferedImage'Class; frameOne : Long_Long_Integer; frameTwo : Long_Long_Integer; tolerance : Integer; name : Unbounded_String);
 
 end org.allbinary.media.image.comparison.ImageComparator_Package;
 

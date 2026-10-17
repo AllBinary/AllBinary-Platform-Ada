@@ -40,10 +40,11 @@ package body org.allbinary.image.opengles.OpenGLImageSpecificFactory_Package is
         return OpenGLImageSpecificFactory_Package.instance;
    end getInstance;
 
-   procedure setImageFactory (This : in out OpenGLImageSpecificFactory; imageFactory : OpenGLImageFactory_Access) is
+   procedure setImageFactory (This : in out OpenGLImageSpecificFactory; imageFactory_Param : access OpenGLImageFactory'Class) is
+      imageFactory : OpenGLImageFactory_Access := OpenGLImageFactory_Access (imageFactory_Param);
    begin
         This.imageFactory := imageFactory;
-        PreLogUtil_Package.put (StringMaker_Package.Create.append (To_Unbounded_String ("Selected Image Factory: ")).append (StringUtil_Package.getInstance.toString (This.imageFactory)).toString, This'Unchecked_Access, To_Unbounded_String ("setImageFactory"));
+        PreLogUtil_Package.put (StringMaker_Package.Create.append (To_Unbounded_String ("Selected Image Factory: ")).append (StringUtil_Package.getInstance.toString (This.imageFactory)).toString, OpenGLImageSpecificFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("setImageFactory"));
    end setImageFactory;
 
    function getImageFactory (This : in out OpenGLImageSpecificFactory) return OpenGLImageFactory_Access is

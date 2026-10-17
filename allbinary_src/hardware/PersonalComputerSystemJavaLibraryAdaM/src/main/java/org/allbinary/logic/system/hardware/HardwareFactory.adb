@@ -40,7 +40,8 @@ package body org.allbinary.logic.system.hardware.HardwareFactory_Package is
    end Create;
 
    --  throws Exception
-   function getInstance (os : GenericOperatingSystem_Access) return HardwareInterface_Access is
+   function getInstance (os_Param : access GenericOperatingSystem'Class) return HardwareInterface_Access is
+      os : GenericOperatingSystem_Access := GenericOperatingSystem_Access (os_Param);
       operatingSystems : OperatingSystems_Access;
    begin
         begin
@@ -61,8 +62,8 @@ package body org.allbinary.logic.system.hardware.HardwareFactory_Package is
         end;
    end getInstance;
 
-   procedure getInstance (os : GenericOperatingSystem_Access) is
-      Java_Result : constant HardwareInterface_Access := getInstance (os);
+   procedure getInstance (os_Param : access GenericOperatingSystem'Class) is
+      Java_Result : constant HardwareInterface_Access := getInstance (os_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

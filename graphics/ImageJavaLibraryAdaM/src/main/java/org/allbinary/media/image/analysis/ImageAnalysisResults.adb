@@ -43,7 +43,8 @@ package body org.allbinary.media.image.analysis.ImageAnalysisResults_Package is
         return This.imageColorRangeResults;
    end getImageColorRangeResults;
 
-   procedure setImageColorRangeResults (This : in out ImageAnalysisResults; imageColorRangeResults : ImageColorRangeResults_Access) is
+   procedure setImageColorRangeResults (This : in out ImageAnalysisResults; imageColorRangeResults_Param : access ImageColorRangeResults'Class) is
+      imageColorRangeResults : ImageColorRangeResults_Access := ImageColorRangeResults_Access (imageColorRangeResults_Param);
    begin
         This.imageColorRangeResults := imageColorRangeResults;
    end setImageColorRangeResults;
@@ -63,7 +64,8 @@ package body org.allbinary.media.image.analysis.ImageAnalysisResults_Package is
         return This.imageColorResults;
    end getImageColorResults;
 
-   procedure setImageColorResults (This : in out ImageAnalysisResults; imageColorResults : ImageColorResults_Access) is
+   procedure setImageColorResults (This : in out ImageAnalysisResults; imageColorResults_Param : access ImageColorResults'Class) is
+      imageColorResults : ImageColorResults_Access := ImageColorResults_Access (imageColorResults_Param);
    begin
         This.imageColorResults := imageColorResults;
    end setImageColorResults;

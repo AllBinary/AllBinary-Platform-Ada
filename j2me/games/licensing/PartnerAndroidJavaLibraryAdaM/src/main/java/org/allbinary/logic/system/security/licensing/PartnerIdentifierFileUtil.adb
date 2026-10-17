@@ -67,7 +67,7 @@ package body org.allbinary.logic.system.security.licensing.PartnerIdentifierFile
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.GET, e);
+            This.logUtil.put (commonStrings.EXCEPTION_Id, PartnerIdentifierFileUtil_Access'(This'Unchecked_Access), commonStrings.GET, e);
             return StringUtil_Package.getInstance.NULL_STRING;
                 end;
         end;

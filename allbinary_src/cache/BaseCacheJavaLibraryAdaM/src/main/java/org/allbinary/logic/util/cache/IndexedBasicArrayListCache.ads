@@ -56,8 +56,8 @@ package org.allbinary.logic.util.cache.IndexedBasicArrayListCache_Package is
    function getAt (This : in out IndexedBasicArrayListCache; index : Integer) return Java_Object_Access;
    procedure getAt (This : in out IndexedBasicArrayListCache; index : Integer);
    procedure addDefault (This : in out IndexedBasicArrayListCache);
-   procedure addObject (This : in out IndexedBasicArrayListCache; anyType : Java_Object_Access);
-   procedure add (This : in out IndexedBasicArrayListCache; cacheableInterface : CacheableInterface_Access);
+   procedure addObject (This : in out IndexedBasicArrayListCache; anyType_Param : access Java_Object'Class);
+   procedure add (This : in out IndexedBasicArrayListCache; cacheableInterface_Param : access CacheableInterface'Class);
    procedure addArray (This : in out IndexedBasicArrayListCache; cacheableInterfaces : CacheableInterface_Access_Array_Access);
    procedure clear (This : in out IndexedBasicArrayListCache);
 

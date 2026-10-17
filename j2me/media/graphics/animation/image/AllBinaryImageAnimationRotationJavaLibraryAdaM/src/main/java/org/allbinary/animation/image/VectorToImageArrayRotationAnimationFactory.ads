@@ -62,13 +62,13 @@ package org.allbinary.animation.image.VectorToImageArrayRotationAnimationFactory
       angleIncrement : Integer;
    end record;
 
-   procedure Initialize (This : in out VectorToImageArrayRotationAnimationFactory'Class; vectorInfo : VectorInfo_Access; basicColor : BasicColor_Access; animationBehaviorFactory : AnimationBehaviorFactory_Access);
-   function Create (vectorInfo : VectorInfo_Access; basicColor : BasicColor_Access; animationBehaviorFactory : AnimationBehaviorFactory_Access) return VectorToImageArrayRotationAnimationFactory_Access;
+   procedure Initialize (This : in out VectorToImageArrayRotationAnimationFactory'Class; vectorInfo_Param : access VectorInfo'Class; basicColor_Param : access BasicColor'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class);
+   function Create (vectorInfo_Param : access VectorInfo'Class; basicColor_Param : access BasicColor'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return VectorToImageArrayRotationAnimationFactory_Access;
    procedure init (This : in out VectorToImageArrayRotationAnimationFactory);
    function getInstance (This : in out VectorToImageArrayRotationAnimationFactory; instanceId : Integer) return Animation_Access;
    procedure getInstance (This : in out VectorToImageArrayRotationAnimationFactory; instanceId : Integer);
    function getAngleIncrement (This : in out VectorToImageArrayRotationAnimationFactory) return Integer;
-   procedure setInitialScale (This : in out VectorToImageArrayRotationAnimationFactory; scaleProperties : ScaleProperties_Access);
+   procedure setInitialScale (This : in out VectorToImageArrayRotationAnimationFactory; scaleProperties_Param : access ScaleProperties'Class);
 
 end org.allbinary.animation.image.VectorToImageArrayRotationAnimationFactory_Package;
 

@@ -27,7 +27,7 @@ package body tags.workflow.processing.basic.BasicWorkFlowTag_Package is
       StoreWorkFlowTag_Package.Initialize (This);
       Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+            This.logUtil.putF (This.commonStrings.START, BasicWorkFlowTag_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
    end Initialize;
 
@@ -43,7 +43,7 @@ package body tags.workflow.processing.basic.BasicWorkFlowTag_Package is
    begin
         begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
-                This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.tagStrings.DO_START_TAG);
+                This.logUtil.putF (This.commonStrings.START, BasicWorkFlowTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
             end if;
             This.getPropertiesHashMap.put (DynamicObjectData_Package.NAME, To_Unbounded_String ("workflows.template.data.BasicStoreWorkFlow"));
             return StoreWorkFlowTag (This).doStartTag;

@@ -42,16 +42,16 @@ package views.admin.payment.gateways.SelectNewValidationView_Package is
 
    type SelectNewValidationView is new HttpStoreComponentView and ValidationComponentInterface with null record;
 
-   procedure Initialize (This : in out SelectNewValidationView'Class; transformInfoInterface : TransformInfoInterface_Access);
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return SelectNewValidationView_Access;
+   procedure Initialize (This : in out SelectNewValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return SelectNewValidationView_Access;
    function isValid (This : in out SelectNewValidationView) return Boolean;
    function toValidationInfoDoc (This : in out SelectNewValidationView) return Document_Access;
-   function toValidationInfoNode (This : in out SelectNewValidationView; document : Document_Access) return Node_Access;
-   procedure toValidationInfoNode (This : in out SelectNewValidationView; document : Document_Access);
+   function toValidationInfoNode (This : in out SelectNewValidationView; document_Param : access Document'Class) return Node_Access;
+   procedure toValidationInfoNode (This : in out SelectNewValidationView; document_Param : access Document'Class);
    function validationInfo (This : in out SelectNewValidationView) return Unbounded_String;
    function toXmlDoc (This : in out SelectNewValidationView) return Document_Access;
-   function toXmlNode (This : in out SelectNewValidationView; document : Document_Access) return Node_Access;
-   procedure toXmlNode (This : in out SelectNewValidationView; document : Document_Access);
+   function toXmlNode (This : in out SelectNewValidationView; document_Param : access Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out SelectNewValidationView; document_Param : access Document'Class);
    function view (This : in out SelectNewValidationView) return Unbounded_String;
 
 end views.admin.payment.gateways.SelectNewValidationView_Package;

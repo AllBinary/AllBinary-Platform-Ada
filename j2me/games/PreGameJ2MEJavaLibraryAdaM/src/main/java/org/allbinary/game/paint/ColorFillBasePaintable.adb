@@ -23,21 +23,23 @@ package body org.allbinary.game.paint.ColorFillBasePaintable_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ColorFillBasePaintable'Class; basicColor : BasicColor_Access) is
+   procedure Initialize (This : in out ColorFillBasePaintable'Class; basicColor_Param : access BasicColor'Class) is
+      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
       Paintable_Package.Initialize (This);
       Initialize_Fields (This);
         This.setBasicColorP (basicColor);
    end Initialize;
 
-   function Create (basicColor : BasicColor_Access) return ColorFillBasePaintable_Access is
+   function Create (basicColor_Param : access BasicColor'Class) return ColorFillBasePaintable_Access is
       This : constant ColorFillBasePaintable_Access := new ColorFillBasePaintable;
    begin
-      ColorFillBasePaintable_Package.Initialize (This.all, basicColor);
+      ColorFillBasePaintable_Package.Initialize (This.all, basicColor_Param);
       return This;
    end Create;
 
-   procedure setBasicColorP (This : in out ColorFillBasePaintable; basicColor : BasicColor_Access) is
+   procedure setBasicColorP (This : in out ColorFillBasePaintable; basicColor_Param : access BasicColor'Class) is
+      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         This.basicColor := basicColor;
         This.setColor (This.getBasicColorP.intValue);
@@ -58,7 +60,8 @@ package body org.allbinary.game.paint.ColorFillBasePaintable_Package is
         This.colorP := color;
    end setColor;
 
-   procedure paint (This : in out ColorFillBasePaintable; graphics : Graphics_Access) is
+   procedure paint (This : in out ColorFillBasePaintable; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         null;
    end paint;

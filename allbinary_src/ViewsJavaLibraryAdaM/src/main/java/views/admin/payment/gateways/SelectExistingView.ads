@@ -48,8 +48,8 @@ package views.admin.payment.gateways.SelectExistingView_Package is
       logUtil : LogUtil_Access;
    end record;
 
-   procedure Initialize (This : in out SelectExistingView'Class; transformInfoInterface : TransformInfoInterface_Access);
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return SelectExistingView_Access;
+   procedure Initialize (This : in out SelectExistingView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return SelectExistingView_Access;
    function view (This : in out SelectExistingView) return Unbounded_String;
 
 end views.admin.payment.gateways.SelectExistingView_Package;

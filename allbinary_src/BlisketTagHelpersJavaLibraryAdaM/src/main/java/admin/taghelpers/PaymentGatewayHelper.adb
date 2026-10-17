@@ -25,7 +25,9 @@ package body admin.taghelpers.PaymentGatewayHelper_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out PaymentGatewayHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access) is
+   procedure Initialize (This : in out PaymentGatewayHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
    begin
       BasicTable_Package.Initialize (This);
       Initialize_Fields (This);
@@ -39,17 +41,17 @@ package body admin.taghelpers.PaymentGatewayHelper_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PAYMENTERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR, e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, PaymentGatewayHelper_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR, e);
             end if;
             Java_Throw (e);
                 end;
         end;
    end Initialize;
 
-   function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return PaymentGatewayHelper_Access is
+   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return PaymentGatewayHelper_Access is
       This : constant PaymentGatewayHelper_Access := new PaymentGatewayHelper;
    begin
-      PaymentGatewayHelper_Package.Initialize (This.all, hashMap, pageContext);
+      PaymentGatewayHelper_Package.Initialize (This.all, hashMap_Param, pageContext_Param);
       return This;
    end Create;
 
@@ -64,7 +66,7 @@ package body admin.taghelpers.PaymentGatewayHelper_Package is
             PaymentGatewayEntityFactory_Package.getInstance.add (paymentGatewayInterface);
             success := To_Unbounded_String ("Successfully Added New Payment Gateway");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, To_Unbounded_String ("insert()"));
+                This.logUtil.putF (success, PaymentGatewayHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("insert()"));
             end if;
             return success & To_Unbounded_String ("<br/>");
         exception
@@ -74,7 +76,7 @@ package body admin.taghelpers.PaymentGatewayHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to add");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("add()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, PaymentGatewayHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("add()"), e);
             end if;
             return error & To_Unbounded_String ("<br>") & To_Unbounded_String ("Exception: ") & Java_Image (e) & To_Unbounded_String ("<br>");
                 end;
@@ -96,12 +98,12 @@ package body admin.taghelpers.PaymentGatewayHelper_Package is
                 stringBuffer.append (paymentGatewayInterface.getName);
                 stringBuffer.append (To_Unbounded_String (" HashMap="));
                 stringBuffer.append (paymentGatewayInterface.toHashMap (True).toString);
-                This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("update()"));
+                This.logUtil.putF (stringBuffer.toString, PaymentGatewayHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("update()"));
             end if;
             PaymentGatewayEntityFactory_Package.getInstance.update (paymentGatewayInterface);
             success := To_Unbounded_String ("Successfully Updated Payment Gateway information");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, To_Unbounded_String ("update()"));
+                This.logUtil.putF (success, PaymentGatewayHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("update()"));
             end if;
             return success & To_Unbounded_String ("<br/>");
         exception
@@ -111,7 +113,7 @@ package body admin.taghelpers.PaymentGatewayHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to update payment gateway information");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("update()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, PaymentGatewayHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("update()"), e);
             end if;
             return error & To_Unbounded_String ("<br/>") & To_Unbounded_String ("Exception: ") & Java_Image (e) & To_Unbounded_String ("<br/>");
                 end;
@@ -139,7 +141,7 @@ package body admin.taghelpers.PaymentGatewayHelper_Package is
             stringBuffer.append (gatewayName);
             success := stringBuffer.toString;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, To_Unbounded_String ("delete()"));
+                This.logUtil.putF (success, PaymentGatewayHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("delete()"));
             end if;
             return success & To_Unbounded_String ("<br/>");
         exception
@@ -149,7 +151,7 @@ package body admin.taghelpers.PaymentGatewayHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to remove payment gateway from table");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("remove()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, PaymentGatewayHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("remove()"), e);
             end if;
             return error & To_Unbounded_String ("<br/>") & To_Unbounded_String ("Exception: ") & Java_Image (e) & To_Unbounded_String ("<br>");
                 end;
@@ -163,7 +165,7 @@ package body admin.taghelpers.PaymentGatewayHelper_Package is
         begin
             success := PaymentGatewayEntityFactory_Package.getInstance.dropTable;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, This.commonStrings.DROP);
+                This.logUtil.putF (success, PaymentGatewayHelper_Access'(This'Unchecked_Access), This.commonStrings.DROP);
             end if;
             return success;
         exception
@@ -173,7 +175,7 @@ package body admin.taghelpers.PaymentGatewayHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to drop payment transaction result table");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.DROP, e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, PaymentGatewayHelper_Access'(This'Unchecked_Access), This.commonStrings.DROP, e);
             end if;
             return error;
                 end;
@@ -187,7 +189,7 @@ package body admin.taghelpers.PaymentGatewayHelper_Package is
         begin
             success := PaymentGatewayEntityFactory_Package.getInstance.createTable;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, To_Unbounded_String ("create()"));
+                This.logUtil.putF (success, PaymentGatewayHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("create()"));
             end if;
             return success;
         exception
@@ -197,7 +199,7 @@ package body admin.taghelpers.PaymentGatewayHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to create payment transaction result table");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("create()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, PaymentGatewayHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("create()"), e);
             end if;
             return error;
                 end;
@@ -213,7 +215,7 @@ package body admin.taghelpers.PaymentGatewayHelper_Package is
             success := To_Unbounded_String ("Restore Successful");
             result := AbSqlTableUtil_Package.getInstance.restoreTable (PaymentGatewayEntityFactory_Package.getInstance, This.portion);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, To_Unbounded_String ("restore()"));
+                This.logUtil.putF (success, PaymentGatewayHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("restore()"));
             end if;
             return result;
         exception
@@ -223,7 +225,7 @@ package body admin.taghelpers.PaymentGatewayHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to restore backup");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("restore()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, PaymentGatewayHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("restore()"), e);
             end if;
             return error;
                 end;
@@ -239,7 +241,7 @@ package body admin.taghelpers.PaymentGatewayHelper_Package is
             success := To_Unbounded_String ("Restore Successful");
             result := AbSqlTableUtil_Package.getInstance.backupTable (PaymentGatewayEntityFactory_Package.getInstance);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, To_Unbounded_String ("backup()"));
+                This.logUtil.putF (success, PaymentGatewayHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("backup()"));
             end if;
             return result;
         exception
@@ -249,7 +251,7 @@ package body admin.taghelpers.PaymentGatewayHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to make backup");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("backup()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, PaymentGatewayHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("backup()"), e);
             end if;
             return error;
                 end;

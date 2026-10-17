@@ -37,7 +37,9 @@ package body org.allbinary.media.graphics.geography.map.drop.AnyRandomDropCellPo
 
 
    --  throws Exception
-   procedure update (This : in out AnyRandomDropCellPositionGenerator; allBinaryGameLayerManager : AllBinaryGameLayerManager_Access; geographicMapInterface : BasicGeographicMap_Access) is
+   procedure update (This : in out AnyRandomDropCellPositionGenerator; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class; geographicMapInterface_Param : access BasicGeographicMap'Class) is
+      allBinaryGameLayerManager : AllBinaryGameLayerManager_Access := AllBinaryGameLayerManager_Access (allBinaryGameLayerManager_Param);
+      geographicMapInterface : BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
       basicGeographicMapCellPositionFactory : BasicGeographicMapCellPositionFactory_Access;
       randomFactory : MyRandomFactory_Access;
       tiledLayer : AllBinaryTiledLayer_Access;
@@ -67,7 +69,8 @@ package body org.allbinary.media.graphics.geography.map.drop.AnyRandomDropCellPo
    end update;
 
    --  throws Exception
-   procedure processTick (This : in out AnyRandomDropCellPositionGenerator; allBinaryLayerManager : AllBinaryLayerManager_Access) is
+   procedure processTick (This : in out AnyRandomDropCellPositionGenerator; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class) is
+      allBinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
    begin
         null;
    end processTick;

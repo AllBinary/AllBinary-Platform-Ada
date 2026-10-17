@@ -86,7 +86,7 @@ package body org.allbinary.logic.system.os.env.RuntimeEnvironmentVariables_Packa
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.OSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("get()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, RuntimeEnvironmentVariables_Access'(This'Unchecked_Access), To_Unbounded_String ("get()"), e);
             end if;
             return null;
                 end;
@@ -103,7 +103,7 @@ package body org.allbinary.logic.system.os.env.RuntimeEnvironmentVariables_Packa
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.OSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("getTempDir()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, RuntimeEnvironmentVariables_Access'(This'Unchecked_Access), To_Unbounded_String ("getTempDir()"), e);
             end if;
             return Null_Unbounded_String;
                 end;
@@ -120,7 +120,7 @@ package body org.allbinary.logic.system.os.env.RuntimeEnvironmentVariables_Packa
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.OSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("getLibraryPath()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, RuntimeEnvironmentVariables_Access'(This'Unchecked_Access), To_Unbounded_String ("getLibraryPath()"), e);
             end if;
             return Null_Unbounded_String;
                 end;
@@ -137,7 +137,7 @@ package body org.allbinary.logic.system.os.env.RuntimeEnvironmentVariables_Packa
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.OSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("getClassPath()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, RuntimeEnvironmentVariables_Access'(This'Unchecked_Access), To_Unbounded_String ("getClassPath()"), e);
             end if;
             return Null_Unbounded_String;
                 end;
@@ -156,7 +156,7 @@ package body org.allbinary.logic.system.os.env.RuntimeEnvironmentVariables_Packa
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.OSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("updateLibraryPath()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, RuntimeEnvironmentVariables_Access'(This'Unchecked_Access), To_Unbounded_String ("updateLibraryPath()"), e);
             end if;
                 end;
         end;
@@ -172,7 +172,7 @@ package body org.allbinary.logic.system.os.env.RuntimeEnvironmentVariables_Packa
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.OSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("getUserHome()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, RuntimeEnvironmentVariables_Access'(This'Unchecked_Access), To_Unbounded_String ("getUserHome()"), e);
             end if;
             return Null_Unbounded_String;
                 end;
@@ -189,7 +189,7 @@ package body org.allbinary.logic.system.os.env.RuntimeEnvironmentVariables_Packa
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.OSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("getUserDir()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, RuntimeEnvironmentVariables_Access'(This'Unchecked_Access), To_Unbounded_String ("getUserDir()"), e);
             end if;
             return Null_Unbounded_String;
                 end;
@@ -206,7 +206,7 @@ package body org.allbinary.logic.system.os.env.RuntimeEnvironmentVariables_Packa
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.OSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("get()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, RuntimeEnvironmentVariables_Access'(This'Unchecked_Access), To_Unbounded_String ("get()"), e);
             end if;
                 end;
         end;
@@ -240,7 +240,7 @@ package body org.allbinary.logic.system.os.env.RuntimeEnvironmentVariables_Packa
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.OSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("setVariable()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, RuntimeEnvironmentVariables_Access'(This'Unchecked_Access), To_Unbounded_String ("setVariable()"), e);
             end if;
                 end;
         end;

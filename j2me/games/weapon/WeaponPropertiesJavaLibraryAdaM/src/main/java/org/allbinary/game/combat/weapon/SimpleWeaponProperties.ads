@@ -37,7 +37,7 @@ package org.allbinary.game.combat.weapon.SimpleWeaponProperties_Package is
 
    procedure Initialize (This : in out SimpleWeaponProperties'Class);
    function Create return SimpleWeaponProperties_Access;
-   procedure set (This : in out SimpleWeaponProperties; simpleWeaponProperties : SimpleWeaponProperties_Access);
+   procedure set (This : in out SimpleWeaponProperties; simpleWeaponProperties_Param : access SimpleWeaponProperties'Class);
    procedure setDamage (This : in out SimpleWeaponProperties; damage : Integer);
    function getDamage (This : in out SimpleWeaponProperties) return Integer;
    procedure setDissipation (This : in out SimpleWeaponProperties; dissipation : Short_Integer);

@@ -34,7 +34,8 @@ package body org.allbinary.util.ABStack_Package is
    end Create;
 
 
-   function push (This : in out ABStack; item : Java_Object_Access) return Java_Object_Access is
+   function push (This : in out ABStack; item_Param : access Java_Object'Class) return Java_Object_Access is
+      item : Java_Object_Access := Java_Object_Access (item_Param);
    begin
         return Stack (This).push (item);
    end push;
@@ -54,32 +55,34 @@ package body org.allbinary.util.ABStack_Package is
         return Stack (This).empty;
    end empty;
 
-   function search (This : in out ABStack; obj : Java_Object_Access) return Integer is
+   function search (This : in out ABStack; obj_Param : access Java_Object'Class) return Integer is
+      obj : Java_Object_Access := Java_Object_Access (obj_Param);
    begin
         return Stack (This).search (obj);
    end search;
 
-   function removeElement (This : in out ABStack; obj : Java_Object_Access) return Boolean is
+   function removeElement (This : in out ABStack; obj_Param : access Java_Object'Class) return Boolean is
+      obj : Java_Object_Access := Java_Object_Access (obj_Param);
    begin
         return Stack (This).removeElement (obj);
    end removeElement;
 
-   procedure push (This : in out ABStack; item : Java_Object_Access) is
-      Java_Result : constant Java_Object_Access := ABStack'Class (This).push (item);
+   procedure push (This : in out ABStack; item_Param : access Java_Object'Class) is
+      Java_Result : constant Java_Object_Access := ABStack'Class (This).push (item_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end push;
 
-   procedure search (This : in out ABStack; obj : Java_Object_Access) is
-      Java_Result : constant Integer := ABStack'Class (This).search (obj);
+   procedure search (This : in out ABStack; obj_Param : access Java_Object'Class) is
+      Java_Result : constant Integer := ABStack'Class (This).search (obj_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end search;
 
-   procedure removeElement (This : in out ABStack; obj : Java_Object_Access) is
-      Java_Result : constant Boolean := ABStack'Class (This).removeElement (obj);
+   procedure removeElement (This : in out ABStack; obj_Param : access Java_Object'Class) is
+      Java_Result : constant Boolean := ABStack'Class (This).removeElement (obj_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

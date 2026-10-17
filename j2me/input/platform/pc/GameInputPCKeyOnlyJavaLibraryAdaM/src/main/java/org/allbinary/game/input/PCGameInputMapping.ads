@@ -41,11 +41,11 @@ package org.allbinary.game.input.PCGameInputMapping_Package is
 
    procedure Initialize (This : in out PCGameInputMapping'Class);
    function Create return PCGameInputMapping_Access;
-   procedure init (This : in out PCGameInputMapping; abeClientInformation : AbeClientInformationInterface_Access);
-   function isDelete (This : in out PCGameInputMapping; input : Input_Access) return Boolean;
-   procedure isDelete (This : in out PCGameInputMapping; input : Input_Access);
-   function isSystemInput (This : in out PCGameInputMapping; input : Input_Access) return Boolean;
-   procedure isSystemInput (This : in out PCGameInputMapping; input : Input_Access);
+   procedure init (This : in out PCGameInputMapping; abeClientInformation_Param : access AbeClientInformationInterface'Class);
+   function isDelete (This : in out PCGameInputMapping; input_Param : access Input'Class) return Boolean;
+   procedure isDelete (This : in out PCGameInputMapping; input_Param : access Input'Class);
+   function isSystemInput (This : in out PCGameInputMapping; input_Param : access Input'Class) return Boolean;
+   procedure isSystemInput (This : in out PCGameInputMapping; input_Param : access Input'Class);
 
 end org.allbinary.game.input.PCGameInputMapping_Package;
 

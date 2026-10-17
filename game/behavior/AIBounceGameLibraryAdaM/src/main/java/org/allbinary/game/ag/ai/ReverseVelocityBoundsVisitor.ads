@@ -45,8 +45,8 @@ package org.allbinary.game.ag.ai.ReverseVelocityBoundsVisitor_Package is
       layerInterface : LayerInterface_Access;
    end record;
 
-   procedure Initialize (This : in out ReverseVelocityBoundsVisitor'Class; layerInterface : LayerInterface_Access);
-   function Create (layerInterface : LayerInterface_Access) return ReverseVelocityBoundsVisitor_Access;
+   procedure Initialize (This : in out ReverseVelocityBoundsVisitor'Class; layerInterface_Param : access LayerInterface'Class);
+   function Create (layerInterface_Param : access LayerInterface'Class) return ReverseVelocityBoundsVisitor_Access;
    function getX (This : in out ReverseVelocityBoundsVisitor) return Integer;
    function getY (This : in out ReverseVelocityBoundsVisitor) return Integer;
    procedure minX (This : in out ReverseVelocityBoundsVisitor);

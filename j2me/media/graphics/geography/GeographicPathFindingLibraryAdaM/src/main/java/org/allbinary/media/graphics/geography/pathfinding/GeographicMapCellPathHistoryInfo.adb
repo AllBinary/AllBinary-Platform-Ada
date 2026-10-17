@@ -43,7 +43,8 @@ package body org.allbinary.media.graphics.geography.pathfinding.GeographicMapCel
         return This.previousGeographicMapCellPosition;
    end getPreviousGeographicMapCellPosition;
 
-   procedure setPreviousGeographicMapCellPosition (This : in out GeographicMapCellPathHistoryInfo; previousGeographicMapCellPosition : GeographicMapCellPosition_Access) is
+   procedure setPreviousGeographicMapCellPosition (This : in out GeographicMapCellPathHistoryInfo; previousGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is
+      previousGeographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (previousGeographicMapCellPosition_Param);
    begin
         This.previousGeographicMapCellPosition := previousGeographicMapCellPosition;
    end setPreviousGeographicMapCellPosition;
@@ -53,7 +54,8 @@ package body org.allbinary.media.graphics.geography.pathfinding.GeographicMapCel
         return This.previousOnPathGeographicMapCellPosition;
    end getPreviousOnPathGeographicMapCellPosition;
 
-   procedure setPreviousOnPathGeographicMapCellPosition (This : in out GeographicMapCellPathHistoryInfo; previousOnPathGeographicMapCellPosition : GeographicMapCellPosition_Access) is
+   procedure setPreviousOnPathGeographicMapCellPosition (This : in out GeographicMapCellPathHistoryInfo; previousOnPathGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is
+      previousOnPathGeographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (previousOnPathGeographicMapCellPosition_Param);
    begin
         This.previousOnPathGeographicMapCellPosition := previousOnPathGeographicMapCellPosition;
    end setPreviousOnPathGeographicMapCellPosition;
@@ -63,7 +65,8 @@ package body org.allbinary.media.graphics.geography.pathfinding.GeographicMapCel
         return This.nextUnvisitedOnPathGeographicMapCellPosition;
    end getNextUnvisitedOnPathGeographicMapCellPosition;
 
-   procedure setNextUnvisitedOnPathGeographicMapCellPosition (This : in out GeographicMapCellPathHistoryInfo; nextUnvisitedOnPathGeographicMapCellPosition : GeographicMapCellPosition_Access) is
+   procedure setNextUnvisitedOnPathGeographicMapCellPosition (This : in out GeographicMapCellPathHistoryInfo; nextUnvisitedOnPathGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is
+      nextUnvisitedOnPathGeographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (nextUnvisitedOnPathGeographicMapCellPosition_Param);
    begin
         This.nextUnvisitedOnPathGeographicMapCellPosition := nextUnvisitedOnPathGeographicMapCellPosition;
    end setNextUnvisitedOnPathGeographicMapCellPosition;
@@ -73,7 +76,8 @@ package body org.allbinary.media.graphics.geography.pathfinding.GeographicMapCel
         return This.nextOnPathGeographicMapCellPosition;
    end getNextOnPathGeographicMapCellPosition;
 
-   procedure setNextOnPathGeographicMapCellPosition (This : in out GeographicMapCellPathHistoryInfo; nextOnPathGeographicMapCellPosition : GeographicMapCellPosition_Access) is
+   procedure setNextOnPathGeographicMapCellPosition (This : in out GeographicMapCellPathHistoryInfo; nextOnPathGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is
+      nextOnPathGeographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (nextOnPathGeographicMapCellPosition_Param);
    begin
         This.nextOnPathGeographicMapCellPosition := nextOnPathGeographicMapCellPosition;
    end setNextOnPathGeographicMapCellPosition;
@@ -83,7 +87,8 @@ package body org.allbinary.media.graphics.geography.pathfinding.GeographicMapCel
         return This.nextChosenOnPathGeographicMapCellPosition;
    end getNextChosenOnPathGeographicMapCellPosition;
 
-   procedure setNextChosenOnPathGeographicMapCellPosition (This : in out GeographicMapCellPathHistoryInfo; nextChosenOnPathGeographicMapCellPosition : GeographicMapCellPosition_Access) is
+   procedure setNextChosenOnPathGeographicMapCellPosition (This : in out GeographicMapCellPathHistoryInfo; nextChosenOnPathGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is
+      nextChosenOnPathGeographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (nextChosenOnPathGeographicMapCellPosition_Param);
    begin
         This.nextChosenOnPathGeographicMapCellPosition := nextChosenOnPathGeographicMapCellPosition;
    end setNextChosenOnPathGeographicMapCellPosition;

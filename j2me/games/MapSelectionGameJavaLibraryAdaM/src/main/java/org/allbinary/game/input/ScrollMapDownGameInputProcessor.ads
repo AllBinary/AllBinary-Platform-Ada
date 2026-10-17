@@ -37,9 +37,9 @@ package org.allbinary.game.input.ScrollMapDownGameInputProcessor_Package is
 
    type ScrollMapDownGameInputProcessor is new ScrollMapGameInputProcessor with null record;
 
-   procedure Initialize (This : in out ScrollMapDownGameInputProcessor'Class; scrollMapPlayerGameInput : ScrollMapPlayerGameInput_Access);
-   function Create (scrollMapPlayerGameInput : ScrollMapPlayerGameInput_Access) return ScrollMapDownGameInputProcessor_Access;
-   procedure processEvent (This : in out ScrollMapDownGameInputProcessor; allbinaryLayerManager : AllBinaryLayerManager_Access; gameKeyEvent : GameKeyEvent_Access);
+   procedure Initialize (This : in out ScrollMapDownGameInputProcessor'Class; scrollMapPlayerGameInput_Param : access ScrollMapPlayerGameInput'Class);
+   function Create (scrollMapPlayerGameInput_Param : access ScrollMapPlayerGameInput'Class) return ScrollMapDownGameInputProcessor_Access;
+   procedure processEvent (This : in out ScrollMapDownGameInputProcessor; allbinaryLayerManager_Param : access AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent'Class);
 
 end org.allbinary.game.input.ScrollMapDownGameInputProcessor_Package;
 

@@ -41,7 +41,7 @@ package body org.allbinary.midlet.AllBinaryMidlet_Package is
    begin
       MIDlet_Package.Initialize (This);
       Initialize_Fields (This);
-        This.logUtil.putF (This.commonStrings.CONSTRUCTOR, This'Unchecked_Access, To_Unbounded_String ("AllBinaryMidlet::AllBinaryMidlet"));
+        This.logUtil.putF (This.commonStrings.CONSTRUCTOR, AllBinaryMidlet_Access'(This'Unchecked_Access), To_Unbounded_String ("AllBinaryMidlet::AllBinaryMidlet"));
    end Initialize;
 
    function Create return AllBinaryMidlet_Access is
@@ -51,7 +51,8 @@ package body org.allbinary.midlet.AllBinaryMidlet_Package is
       return This;
    end Create;
 
-   procedure setDisplay (This : in out AllBinaryMidlet; newDisplay : Displayable_Access) is
+   procedure setDisplay (This : in out AllBinaryMidlet; newDisplay_Param : access Displayable'Class) is
+      newDisplay : Displayable_Access := Displayable_Access (newDisplay_Param);
       title : Unbounded_String;
       display : Display_Access;
    begin
@@ -59,9 +60,9 @@ package body org.allbinary.midlet.AllBinaryMidlet_Package is
         if (newDisplay) /= (NullCanvas_Package.NULL_CANVAS) then
             title := newDisplay.getTitle;
             if (title) /= (Null_Unbounded_String) then
-                This.logUtil.putF (StringMaker_Package.Create.append (This.SETTING_U).append (title).append (This.U_DISPLAY_U).append (StringUtil_Package.getInstance.toString (newDisplay)).toString, This'Unchecked_Access, This.SET_DISPLAY);
+                This.logUtil.putF (StringMaker_Package.Create.append (This.SETTING_U).append (title).append (This.U_DISPLAY_U).append (StringUtil_Package.getInstance.toString (newDisplay)).toString, AllBinaryMidlet_Access'(This'Unchecked_Access), This.SET_DISPLAY);
             else
-                This.logUtil.putF (StringMaker_Package.Create.append (This.SETTING_NO_TITLE).append (StringUtil_Package.getInstance.toString (newDisplay)).toString, This'Unchecked_Access, This.SET_DISPLAY);
+                This.logUtil.putF (StringMaker_Package.Create.append (This.SETTING_NO_TITLE).append (StringUtil_Package.getInstance.toString (newDisplay)).toString, AllBinaryMidlet_Access'(This'Unchecked_Access), This.SET_DISPLAY);
             end if;
         end if;
         display := This.getDisplay;
@@ -70,12 +71,12 @@ package body org.allbinary.midlet.AllBinaryMidlet_Package is
 
    function getDisplay (This : in out AllBinaryMidlet) return Display_Access is
    begin
-        return Display_Package.getDisplay (This'Unchecked_Access);
+        return Display_Package.getDisplay (AllBinaryMidlet_Access'(This'Unchecked_Access));
    end getDisplay;
 
    function getCurrentDisplayable (This : in out AllBinaryMidlet) return Displayable_Access is
    begin
-        return Display_Package.getDisplay (This'Unchecked_Access).getCurrent;
+        return Display_Package.getDisplay (AllBinaryMidlet_Access'(This'Unchecked_Access)).getCurrent;
    end getCurrentDisplayable;
 
    procedure setDestroyed (This : in out AllBinaryMidlet; destroyed : Boolean) is
@@ -91,12 +92,12 @@ package body org.allbinary.midlet.AllBinaryMidlet_Package is
    --  throws MIDletStateChangeException
    procedure startApp (This : in out AllBinaryMidlet) is
    begin
-        ForcedLogUtil_Package.log (EventStrings_Package.getInstance.PERFORMANCE_MESSAGE, This'Unchecked_Access);
+        ForcedLogUtil_Package.log (EventStrings_Package.getInstance.PERFORMANCE_MESSAGE, AllBinaryMidlet_Access'(This'Unchecked_Access));
    end startApp;
 
    procedure pauseApp (This : in out AllBinaryMidlet) is
    begin
-        ForcedLogUtil_Package.log (EventStrings_Package.getInstance.PERFORMANCE_MESSAGE, This'Unchecked_Access);
+        ForcedLogUtil_Package.log (EventStrings_Package.getInstance.PERFORMANCE_MESSAGE, AllBinaryMidlet_Access'(This'Unchecked_Access));
    end pauseApp;
 
    procedure destroyAppInRunnable (This : in out AllBinaryMidlet; unconditional : Boolean; isProgress : Boolean) is
@@ -109,41 +110,44 @@ package body org.allbinary.midlet.AllBinaryMidlet_Package is
    begin
         METHOD_NAME := To_Unbounded_String ("AllBinaryMidlet::destroyApp");
         begin
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, METHOD_NAME);
-            PreLogUtil_Package.put (Memory_Package.getInfo, This'Unchecked_Access, METHOD_NAME);
+            This.logUtil.putF (This.commonStrings.START, AllBinaryMidlet_Access'(This'Unchecked_Access), METHOD_NAME);
+            PreLogUtil_Package.put (Memory_Package.getInfo, AllBinaryMidlet_Access'(This'Unchecked_Access), METHOD_NAME);
             This.setDestroyed (True);
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, METHOD_NAME, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, AllBinaryMidlet_Access'(This'Unchecked_Access), METHOD_NAME, e);
                 end;
         end;
    end destroyApp;
 
    --  throws Exception
-   procedure setStartStateHashtable (This : in out AllBinaryMidlet; hashtable : ABHashtable_Access) is
+   procedure setStartStateHashtable (This : in out AllBinaryMidlet; hashtable_Param : access ABHashtable'Class) is
+      hashtable : ABHashtable_Access := ABHashtable_Access (hashtable_Param);
    begin
-        This.logUtil.putF (StringMaker_Package.Create.append (CommonLabels_Package.getInstance.START_LABEL).append (StringUtil_Package.getInstance.toString (hashtable)).toString, This'Unchecked_Access, To_Unbounded_String ("setStartStateHashtable"));
+        This.logUtil.putF (StringMaker_Package.Create.append (CommonLabels_Package.getInstance.START_LABEL).append (StringUtil_Package.getInstance.toString (hashtable)).toString, AllBinaryMidlet_Access'(This'Unchecked_Access), To_Unbounded_String ("setStartStateHashtable"));
         This.hashtable := hashtable;
    end setStartStateHashtable;
 
    --  throws Exception
    function getStartStateHashtable (This : in out AllBinaryMidlet) return ABHashtable_Access is
    begin
-        This.logUtil.putF (StringMaker_Package.Create.append (CommonLabels_Package.getInstance.START_LABEL).append (StringUtil_Package.getInstance.toString (This.hashtable)).toString, This'Unchecked_Access, To_Unbounded_String ("getStartStateHashtable"));
+        This.logUtil.putF (StringMaker_Package.Create.append (CommonLabels_Package.getInstance.START_LABEL).append (StringUtil_Package.getInstance.toString (This.hashtable)).toString, AllBinaryMidlet_Access'(This'Unchecked_Access), To_Unbounded_String ("getStartStateHashtable"));
         return This.hashtable;
    end getStartStateHashtable;
 
    --  throws Exception
    function getCurrentStateHashtable (This : in out AllBinaryMidlet) return ABHashtable_Access is
    begin
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("getStateHashtable"));
+        This.logUtil.putF (This.commonStrings.START, AllBinaryMidlet_Access'(This'Unchecked_Access), To_Unbounded_String ("getStateHashtable"));
         return StdUtil_Package.getInstance.NULL_TABLE;
    end getCurrentStateHashtable;
 
-   procedure commandAction (This : in out AllBinaryMidlet; command : Command_Access; displayable : Displayable_Access) is
+   procedure commandAction (This : in out AllBinaryMidlet; command_Param : access Command'Class; displayable_Param : access Displayable'Class) is
+      command : Command_Access := Command_Access (command_Param);
+      displayable : Displayable_Access := Displayable_Access (displayable_Param);
    begin
         null;
    end commandAction;

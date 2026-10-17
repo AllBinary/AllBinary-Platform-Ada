@@ -49,7 +49,7 @@ package org.allbinary.logic.math.permutations.OrderedObjectArrayPermutationUtil_
    procedure swap (This : in out OrderedObjectArrayPermutationUtil; data : Java_Object_Access_Array_Access; a : Integer; b : Integer);
    function factorial (This : in out OrderedObjectArrayPermutationUtil; dataLength : Integer) return Long_Long_Integer;
    procedure factorial (This : in out OrderedObjectArrayPermutationUtil; dataLength : Integer);
-   procedure generate (This : in out OrderedObjectArrayPermutationUtil; data : Java_Object_Access_Array_Access; visitor : Visitor_Access);
+   procedure generate (This : in out OrderedObjectArrayPermutationUtil; data : Java_Object_Access_Array_Access; visitor_Param : access Visitor'Class);
    procedure main (args : Unbounded_String_Array_Access);
 
 end org.allbinary.logic.math.permutations.OrderedObjectArrayPermutationUtil_Package;

@@ -33,7 +33,8 @@ package body org.allbinary.graphics.form.ItemPaintable_Package is
    end Create;
 
 
-   procedure paint (This : in out ItemPaintable; graphics : Graphics_Access; currentIndex : Integer; x : Integer; y : Integer) is
+   procedure paint (This : in out ItemPaintable; graphics_Param : access Graphics'Class; currentIndex : Integer; x : Integer; y : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         null;
    end paint;

@@ -42,7 +42,8 @@ package body org.allbinary.media.image.analysis.ImageColorRangeResults_Package i
         return This.colorRangeInterface;
    end getColorRangeInterface;
 
-   procedure setColorRangeInterface (This : in out ImageColorRangeResults; colorRangeInterface : ColorRangeInterface_Access) is
+   procedure setColorRangeInterface (This : in out ImageColorRangeResults; colorRangeInterface_Param : access ColorRangeInterface'Class) is
+      colorRangeInterface : ColorRangeInterface_Access := ColorRangeInterface_Access (colorRangeInterface_Param);
    begin
         This.colorRangeInterface := colorRangeInterface;
    end setColorRangeInterface;

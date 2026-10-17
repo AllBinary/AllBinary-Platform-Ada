@@ -57,7 +57,7 @@ package body org.allbinary.game.layer.WaypointPathRunnable_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.RUN, e);
+            This.logUtil.put (commonStrings.EXCEPTION_Id, WaypointPathRunnable_Access'(This'Unchecked_Access), commonStrings.RUN, e);
             This.setRunning (False);
                 end;
         end;

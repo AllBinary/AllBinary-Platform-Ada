@@ -42,8 +42,8 @@ package org.allbinary.logic.io.FileStreamFactory_Package is
    end record;
    SINGLETON : Java_Object_Access;
 
-   procedure Initialize (This : in out FileStreamFactory'Class; context : Context_Access);
-   function Create (context : Context_Access) return FileStreamFactory_Access;
+   procedure Initialize (This : in out FileStreamFactory'Class; context_Param : access Context'Class);
+   function Create (context_Param : access Context'Class) return FileStreamFactory_Access;
    function getInstance return FileStreamFactory_Access;
    function getFileInputStreamInstance (This : in out FileStreamFactory; path : Unbounded_String; fileName : Unbounded_String) return AbFileInputStream_Access;
    procedure getFileInputStreamInstance (This : in out FileStreamFactory; path : Unbounded_String; fileName : Unbounded_String);

@@ -37,10 +37,10 @@ package org.allbinary.game.layer.VehicleProperties_Package is
       vehicleFrictionProperties : VehicleFrictionProperties_Access;
    end record;
 
-   procedure Initialize (This : in out VehicleProperties'Class; velocityProperties : VelocityProperties_Access; vehicleFrictionProperties : VehicleFrictionProperties_Access);
-   function Create (velocityProperties : VelocityProperties_Access; vehicleFrictionProperties : VehicleFrictionProperties_Access) return VehicleProperties_Access;
+   procedure Initialize (This : in out VehicleProperties'Class; velocityProperties_Param : access VelocityProperties'Class; vehicleFrictionProperties_Param : access VehicleFrictionProperties'Class);
+   function Create (velocityProperties_Param : access VelocityProperties'Class; vehicleFrictionProperties_Param : access VehicleFrictionProperties'Class) return VehicleProperties_Access;
    function getVehicleFrictionProperties (This : in out VehicleProperties) return VehicleFrictionProperties_Access;
-   procedure setVehicleFrictionProperties (This : in out VehicleProperties; vehicleFrictionProperties : VehicleFrictionProperties_Access);
+   procedure setVehicleFrictionProperties (This : in out VehicleProperties; vehicleFrictionProperties_Param : access VehicleFrictionProperties'Class);
    function getVelocityProperties (This : in out VehicleProperties) return VelocityProperties_Access;
 
 end org.allbinary.game.layer.VehicleProperties_Package;

@@ -36,7 +36,7 @@ package body org.allbinary.input.automation.module.generic_Id.InputAutomationGen
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, InputAutomationGenericModuleServiceFactory_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR, e);
                 end;
         end;
    end Initialize;

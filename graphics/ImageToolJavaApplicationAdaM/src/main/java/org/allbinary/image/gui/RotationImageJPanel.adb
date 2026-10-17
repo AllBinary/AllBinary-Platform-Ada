@@ -35,7 +35,8 @@ package body org.allbinary.image.gui.RotationImageJPanel_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out RotationImageJPanel'Class; imageProcessorInput : ImageProcessorInput_Access) is
+   procedure Initialize (This : in out RotationImageJPanel'Class; imageProcessorInput_Param : access ImageProcessorInput'Class) is
+      imageProcessorInput : ImageProcessorInput_Access := ImageProcessorInput_Access (imageProcessorInput_Param);
    begin
         JPanel_Package.Initialize (This);
         Initialize_Fields (This);
@@ -43,10 +44,10 @@ package body org.allbinary.image.gui.RotationImageJPanel_Package is
         This.imageProcessorInput := imageProcessorInput;
    end Initialize;
 
-   function Create (imageProcessorInput : ImageProcessorInput_Access) return RotationImageJPanel_Access is
+   function Create (imageProcessorInput_Param : access ImageProcessorInput'Class) return RotationImageJPanel_Access is
       This : constant RotationImageJPanel_Access := new RotationImageJPanel;
    begin
-      RotationImageJPanel_Package.Initialize (This.all, imageProcessorInput);
+      RotationImageJPanel_Package.Initialize (This.all, imageProcessorInput_Param);
       return This;
    end Create;
 
@@ -61,13 +62,13 @@ package body org.allbinary.image.gui.RotationImageJPanel_Package is
 --                  logUtil := LogUtil_Package.getInstance;
 --                  begin
 --                      angleAsString := Unbounded_String (This.totalAngleJComboBox.getSelectedItem);
---                      ImageArrayRotationUtil_Package.getInstance.process (This.getImageProcessorInput, angleAsString, This'Unchecked_Access);
+--                      ImageArrayRotationUtil_Package.getInstance.process (This.getImageProcessorInput, angleAsString, RotationImageJPanel_Access'(This'Unchecked_Access));
 --                  exception
 --                      when Java_Occurrence : others =>
 --                          declare
 --                              e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
 --                          begin
---                      logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.RUN, e);
+--                      logUtil.put (This.commonStrings.EXCEPTION_Id, RotationImageJPanel_Access'(This'Unchecked_Access), This.commonStrings.RUN, e);
 --                          end;
 --                  end;
 --     end run;
@@ -82,7 +83,8 @@ package body org.allbinary.image.gui.RotationImageJPanel_Package is
    begin
         This.jPanel1 := JPanel_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure paint (This : in out ; graphics : Graphics_Access) is
+--     procedure paint (This : in out ; graphics_Param : access Graphics'Class) is
+--        graphics : Graphics_Access := Graphics_Access (graphics_Param);
 --     begin
 --                  if (This.result) /= (null) then
 --                      graphics.drawImage (This.result, 0, 0, This.result.getWidth (null), This.result.getHeight (null), null);
@@ -104,7 +106,8 @@ package body org.allbinary.image.gui.RotationImageJPanel_Package is
         This.generateJButton.setText (To_Unbounded_String ("Generate"));
         This.generateJButton.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt : ActionEvent_Access) is
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
+--        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.generateJButtonActionPerformed (evt);
 --     end actionPerformed;
@@ -112,7 +115,8 @@ package body org.allbinary.image.gui.RotationImageJPanel_Package is
         This.totalAngleJComboBox.setModel (DefaultComboBoxModel_Package.Create (new Unbounded_String_Array'(This.commonStrings.UP, This.commonStrings.DOWN, To_Unbounded_String ("-90"), To_Unbounded_String ("90"))));
         This.totalAngleJComboBox.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt : ActionEvent_Access) is
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
+--        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.totalAngleJComboBoxActionPerformed (evt);
 --     end actionPerformed;
@@ -128,18 +132,20 @@ package body org.allbinary.image.gui.RotationImageJPanel_Package is
         This.jPanel3.setLayout (jPanel3Layout);
         jPanel3Layout.setHorizontalGroup (jPanel3Layout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (jPanel3Layout.createSequentialGroup.add (This.jLabel2).addContainerGap (377, Short_Package.MAX_VALUE)));
         jPanel3Layout.setVerticalGroup (jPanel3Layout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (This.jLabel2));
-        layout := GroupLayout_Package.Create (This'Unchecked_Access);
+        layout := GroupLayout_Package.Create (RotationImageJPanel_Access'(This'Unchecked_Access));
         This.setLayout (layout);
         layout.setHorizontalGroup (layout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (org_Package.jdesktop.layout.GroupLayout.TRAILING, This.jPanel2, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE).add (layout.createSequentialGroup.addContainerGap.add (This.jPanel3, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE).addContainerGap).add (This.jPanel1, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE));
         layout.setVerticalGroup (layout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (layout.createSequentialGroup.add (This.jPanel2, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE).addPreferredGap (org_Package.jdesktop.layout.LayoutStyle.UNRELATED).add (This.jPanel3, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE).addPreferredGap (org_Package.jdesktop.layout.LayoutStyle.RELATED).add (This.jPanel1, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE)));
    end initComponents;
 
-   procedure generateJButtonActionPerformed (This : in out RotationImageJPanel; evt : ActionEvent_Access) is
+   procedure generateJButtonActionPerformed (This : in out RotationImageJPanel; evt_Param : access ActionEvent'Class) is
+      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         This.process;
    end generateJButtonActionPerformed;
 
-   procedure totalAngleJComboBoxActionPerformed (This : in out RotationImageJPanel; evt : ActionEvent_Access) is
+   procedure totalAngleJComboBoxActionPerformed (This : in out RotationImageJPanel; evt_Param : access ActionEvent'Class) is
+      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         null;
    end totalAngleJComboBoxActionPerformed;
@@ -149,13 +155,15 @@ package body org.allbinary.image.gui.RotationImageJPanel_Package is
         return This.imageProcessorInput;
    end getImageProcessorInput;
 
-   procedure setImageProcessorInput (This : in out RotationImageJPanel; imageProcessorInput : ImageProcessorInput_Access) is
+   procedure setImageProcessorInput (This : in out RotationImageJPanel; imageProcessorInput_Param : access ImageProcessorInput'Class) is
+      imageProcessorInput : ImageProcessorInput_Access := ImageProcessorInput_Access (imageProcessorInput_Param);
    begin
         This.imageProcessorInput := imageProcessorInput;
    end setImageProcessorInput;
 
    --  throws IOException
-   procedure visit (This : in out RotationImageJPanel; generatedBufferedImage : BufferedImage_Access; name : Unbounded_String; index : Integer) is
+   procedure visit (This : in out RotationImageJPanel; generatedBufferedImage_Param : access BufferedImage'Class; name : Unbounded_String; index : Integer) is
+      generatedBufferedImage : BufferedImage_Access := BufferedImage_Access (generatedBufferedImage_Param);
       file : File_Access;
       filePath : Unbounded_String;
       extensionIndex : Integer;
@@ -171,7 +179,7 @@ package body org.allbinary.image.gui.RotationImageJPanel_Package is
             file := File_Package.Create (filePath);
         end if;
         isWritten := ImageIO_Package.write (RenderedImage_Access (This.result), This.imageStrings.PNG, file);
-        This.logUtil.putF (To_Unbounded_String ("File: ") & Java_Image (file) & To_Unbounded_String (" Wrote: ") & Java_Image (isWritten), This'Unchecked_Access, This.commonStrings.RUN);
+        This.logUtil.putF (To_Unbounded_String ("File: ") & Java_Image (file) & To_Unbounded_String (" Wrote: ") & Java_Image (isWritten), RotationImageJPanel_Access'(This'Unchecked_Access), This.commonStrings.RUN);
    end visit;
 
 end org.allbinary.image.gui.RotationImageJPanel_Package;

@@ -34,7 +34,7 @@ package org.allbinary.data.tables.user.commerce.money.payment.transaction.Transa
    type TransactionResultEntityInterface_Access_Array_Access is access all TransactionResultEntityInterface_Access_Array;
    function getTransactionResultInterface (This : in out TransactionResultEntityInterface; orderNumber : Unbounded_String) return TransactionResultInterface_Access is abstract;
    procedure remove (This : in out TransactionResultEntityInterface; userName : Unbounded_String; orderNumber : Unbounded_String) is abstract;
-   procedure add (This : in out TransactionResultEntityInterface; userName : Unbounded_String; orderNumber : Unbounded_String; resultInterface : TransactionResultInterface_Access) is abstract;
+   procedure add (This : in out TransactionResultEntityInterface; userName : Unbounded_String; orderNumber : Unbounded_String; resultInterface_Param : access TransactionResultInterface'Class) is abstract;
 
 end org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionResultEntityInterface_Package;
 

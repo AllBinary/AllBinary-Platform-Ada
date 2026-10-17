@@ -38,7 +38,8 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.CssProperty_Pac
       return This;
    end Create;
 
-   procedure Initialize (This : in out CssProperty'Class; node : Node_Access) is
+   procedure Initialize (This : in out CssProperty'Class; node_Param : access Node'Class) is
+      node : Node_Access := Node_Access (node_Param);
       propertyNode : Node_Access;
       propertyValuesNode : Node_Access;
    begin
@@ -46,16 +47,16 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.CssProperty_Pac
         propertyNode := DomSearchHelper_Package.getNode (DomData_Package.VALUE, node.getChildNodes);
         This.propertyName := DomNodeHelper_Package.getTextNodeValue (propertyNode);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.STYLE) then
-            This.logUtil.putF (To_Unbounded_String ("Name: ") & This.getName, This'Unchecked_Access, To_Unbounded_String ("CssProperty()"));
+            This.logUtil.putF (To_Unbounded_String ("Name: ") & This.getName, CssProperty_Access'(This'Unchecked_Access), To_Unbounded_String ("CssProperty()"));
         end if;
         propertyValuesNode := DomSearchHelper_Package.getNode (CssPropertyData_Package.getInstance.VALUES, node.getChildNodes);
         This.cssPropertyValues := CssPropertyValues_Package.Create (propertyValuesNode);
    end Initialize;
 
-   function Create (node : Node_Access) return CssProperty_Access is
+   function Create (node_Param : access Node'Class) return CssProperty_Access is
       This : constant CssProperty_Access := new CssProperty;
    begin
-      CssProperty_Package.Initialize (This.all, node);
+      CssProperty_Package.Initialize (This.all, node_Param);
       return This;
    end Create;
 
@@ -73,21 +74,22 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.CssProperty_Pac
    end toHashMap;
 
    --  throws Exception
-   function toXmlNode (This : in out CssProperty; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out CssProperty; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       hashMap : HashMap_Access;
       node : Node_Access;
    begin
         hashMap := This.toHashMap;
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (To_Unbounded_String ("CssView HashMap: ") & hashMap.toString, This'Unchecked_Access, To_Unbounded_String ("toXmlNode()"));
+            This.logUtil.putF (To_Unbounded_String ("CssView HashMap: ") & hashMap.toString, CssProperty_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode()"));
         end if;
         node := ModDomHelper_Package.createNameValueNodes (document, CssPropertyData_Package.getInstance.NAME, This.propertyName);
         node.appendChild (This.cssPropertyValues.toXmlNode (document));
         return node;
    end toXmlNode;
 
-   procedure toXmlNode (This : in out CssProperty; document : Document_Access) is
-      Java_Result : constant Node_Access := CssProperty'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out CssProperty; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := CssProperty'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -23,16 +23,17 @@ package body org.allbinary.android.input.api3.HideVirtualKeyboardRunnable_Packag
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out HideVirtualKeyboardRunnable'Class; activity : Activity_Access) is
+   procedure Initialize (This : in out HideVirtualKeyboardRunnable'Class; activity_Param : access Activity'Class) is
+      activity : Activity_Access := Activity_Access (activity_Param);
    begin
       Initialize_Fields (This);
         This.activity := activity;
    end Initialize;
 
-   function Create (activity : Activity_Access) return HideVirtualKeyboardRunnable_Access is
+   function Create (activity_Param : access Activity'Class) return HideVirtualKeyboardRunnable_Access is
       This : constant HideVirtualKeyboardRunnable_Access := new HideVirtualKeyboardRunnable;
    begin
-      HideVirtualKeyboardRunnable_Package.Initialize (This.all, activity);
+      HideVirtualKeyboardRunnable_Package.Initialize (This.all, activity_Param);
       return This;
    end Create;
 
@@ -48,11 +49,11 @@ package body org.allbinary.android.input.api3.HideVirtualKeyboardRunnable_Packag
             inputMethodManager := InputMethodManager_Access (This.activity.getSystemService (Context_Package.INPUT_METHOD_SERVICE));
             viewCompositeInterface := ViewCompositeInterface_Access (This.activity);
             if (viewCompositeInterface) = (null) then
-                ForcedLogUtil_Package.log (To_Unbounded_String ("Activity Null"), This'Unchecked_Access);
+                ForcedLogUtil_Package.log (To_Unbounded_String ("Activity Null"), HideVirtualKeyboardRunnable_Access'(This'Unchecked_Access));
             end if;
             view := viewCompositeInterface.getView;
             if (view.getWindowToken) = (null) then
-                This.logUtil.putF (To_Unbounded_String ("Unable to hide virtual keyboard as window token is null - This usually happens during loading when the view is not attached to a window"), This'Unchecked_Access, commonStrings.RUN);
+                This.logUtil.putF (To_Unbounded_String ("Unable to hide virtual keyboard as window token is null - This usually happens during loading when the view is not attached to a window"), HideVirtualKeyboardRunnable_Access'(This'Unchecked_Access), commonStrings.RUN);
                 return;
             end if;
             token := view.getWindowToken;
@@ -62,7 +63,7 @@ package body org.allbinary.android.input.api3.HideVirtualKeyboardRunnable_Packag
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.RUN, e);
+            This.logUtil.put (commonStrings.EXCEPTION_Id, HideVirtualKeyboardRunnable_Access'(This'Unchecked_Access), commonStrings.RUN, e);
                 end;
         end;
    end run;

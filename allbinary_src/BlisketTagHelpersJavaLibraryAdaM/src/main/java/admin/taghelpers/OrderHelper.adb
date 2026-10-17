@@ -27,7 +27,9 @@ package body admin.taghelpers.OrderHelper_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out OrderHelper'Class; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) is
+   procedure Initialize (This : in out OrderHelper'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+      propertiesHashMap : HashMap_Access := HashMap_Access (propertiesHashMap_Param);
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
       storeName : Unbounded_String;
    begin
       TagHelper_Package.Initialize (This);
@@ -42,10 +44,10 @@ package body admin.taghelpers.OrderHelper_Package is
         This.weblisketSession := WeblisketSession_Package.Create (This.propertiesHashMap, This.pageContext);
    end Initialize;
 
-   function Create (propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return OrderHelper_Access is
+   function Create (propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return OrderHelper_Access is
       This : constant OrderHelper_Access := new OrderHelper;
    begin
-      OrderHelper_Package.Initialize (This.all, propertiesHashMap, pageContext);
+      OrderHelper_Package.Initialize (This.all, propertiesHashMap_Param, pageContext_Param);
       return This;
    end Create;
 
@@ -85,7 +87,7 @@ package body admin.taghelpers.OrderHelper_Package is
                 stringBuffer.append (orderInterface.getId);
                 stringBuffer.append (To_Unbounded_String (" to: "));
                 stringBuffer.append (orderInterface.getPaymentMethod);
-                This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("setPaymentGateway()"));
+                This.logUtil.putF (stringBuffer.toString, OrderHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("setPaymentGateway()"));
             end if;
             return paymentGatewayBoolean;
         exception
@@ -111,7 +113,7 @@ package body admin.taghelpers.OrderHelper_Package is
                     stringBuffer.append (To_Unbounded_String (" Exception Getting"));
                         end;
                 end;
-                This.logUtil.put (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("setPaymentGateway()"), e);
+                This.logUtil.put (stringBuffer.toString, OrderHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("setPaymentGateway()"), e);
             end if;
             return False;
                 end;
@@ -129,7 +131,7 @@ package body admin.taghelpers.OrderHelper_Package is
             order.setStoreName (This.storeFrontInterface.getName);
             result := OrderProcessorUtil_Package.getInstance.process (This.weblisketSession.getUserName, Order_Access (order));
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (To_Unbounded_String ("Successfully Processed Order: ") & result, This'Unchecked_Access, To_Unbounded_String ("processOrder()"));
+                This.logUtil.putF (To_Unbounded_String ("Successfully Processed Order: ") & result, OrderHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("processOrder()"));
             end if;
             return result;
         exception
@@ -151,7 +153,7 @@ package body admin.taghelpers.OrderHelper_Package is
             end;
             error := stringBuffer.toString;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.PROCESS, e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, OrderHelper_Access'(This'Unchecked_Access), This.commonStrings.PROCESS, e);
             end if;
             return error;
                 end;

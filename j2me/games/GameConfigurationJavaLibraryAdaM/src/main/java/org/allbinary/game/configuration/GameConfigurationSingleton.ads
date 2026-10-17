@@ -50,7 +50,7 @@ package org.allbinary.game.configuration.GameConfigurationSingleton_Package is
    function getInstanceByName (This : in out GameConfigurationSingleton; name : Unbounded_String) return GameConfiguration_Access;
    procedure getInstanceByName (This : in out GameConfigurationSingleton; name : Unbounded_String);
    function getOptionsBasicArrayList (This : in out GameConfigurationSingleton) return BasicArrayList_Access;
-   procedure add (This : in out GameConfigurationSingleton; gameConfiguration : GameConfiguration_Access);
+   procedure add (This : in out GameConfigurationSingleton; gameConfiguration_Param : access GameConfiguration'Class);
    function getHashtable (This : in out GameConfigurationSingleton) return ABHashtable_Access;
 
 end org.allbinary.game.configuration.GameConfigurationSingleton_Package;

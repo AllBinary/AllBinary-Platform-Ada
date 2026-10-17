@@ -31,7 +31,7 @@ package org.allbinary.game.rts.technology.event.TechEventListenerInterface_Packa
    type TechEventListenerInterface_Access is access all TechEventListenerInterface'Class;
    type TechEventListenerInterface_Access_Array is array (Natural range <>) of TechEventListenerInterface_Access;
    type TechEventListenerInterface_Access_Array_Access is access all TechEventListenerInterface_Access_Array;
-   procedure onTechEvent (This : in out TechEventListenerInterface; event : AllBinaryEventObject_Access) is abstract;
+   procedure onTechEvent (This : in out TechEventListenerInterface; event_Param : access AllBinaryEventObject'Class) is abstract;
 
 end org.allbinary.game.rts.technology.event.TechEventListenerInterface_Package;
 

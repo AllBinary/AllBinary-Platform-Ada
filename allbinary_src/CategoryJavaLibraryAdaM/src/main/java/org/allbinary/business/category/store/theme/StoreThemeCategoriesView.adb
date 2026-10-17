@@ -22,21 +22,23 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategoriesVie
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out StoreThemeCategoriesView'Class; categoryInterface : StoreThemeCategoryInterface_Access) is
+   procedure Initialize (This : in out StoreThemeCategoriesView'Class; categoryInterface_Param : access StoreThemeCategoryInterface'Class) is
+      categoryInterface : StoreThemeCategoryInterface_Access := StoreThemeCategoryInterface_Access (categoryInterface_Param);
    begin
       Initialize_Fields (This);
         This.categoryInterface := categoryInterface;
    end Initialize;
 
-   function Create (categoryInterface : StoreThemeCategoryInterface_Access) return StoreThemeCategoriesView_Access is
+   function Create (categoryInterface_Param : access StoreThemeCategoryInterface'Class) return StoreThemeCategoriesView_Access is
       This : constant StoreThemeCategoriesView_Access := new StoreThemeCategoriesView;
    begin
-      StoreThemeCategoriesView_Package.Initialize (This.all, categoryInterface);
+      StoreThemeCategoriesView_Package.Initialize (This.all, categoryInterface_Param);
       return This;
    end Create;
 
    --  throws Exception
-   function toXmlNode (This : in out StoreThemeCategoriesView; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out StoreThemeCategoriesView; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       node : Node_Access;
       childArray : Java_Object_Access_Array_Access;
       size : Integer;
@@ -55,8 +57,8 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategoriesVie
         return node;
    end toXmlNode;
 
-   procedure toXmlNode (This : in out StoreThemeCategoriesView; document : Document_Access) is
-      Java_Result : constant Node_Access := StoreThemeCategoriesView'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out StoreThemeCategoriesView; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := StoreThemeCategoriesView'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

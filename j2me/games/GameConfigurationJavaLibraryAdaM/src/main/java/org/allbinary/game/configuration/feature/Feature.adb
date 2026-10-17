@@ -26,8 +26,8 @@ package body org.allbinary.game.configuration.feature.Feature_Package is
    begin
       Initialize_Fields (This);
         This.name := name;
-        Feature_Package.add (name, This'Unchecked_Access);
-        ChangedGameFeatureListener_Package.getInstance.add (This'Unchecked_Access);
+        Feature_Package.add (name, Feature_Access'(This'Unchecked_Access));
+        ChangedGameFeatureListener_Package.getInstance.add (Feature_Access'(This'Unchecked_Access));
    end Initialize;
 
    function Create (name : Unbounded_String) return Feature_Access is
@@ -42,7 +42,8 @@ package body org.allbinary.game.configuration.feature.Feature_Package is
         return Feature_Access (Feature_Package.hashtable.get (name));
    end getInstance;
 
-   procedure add (name : Unbounded_String; gameFeature : Feature_Access) is
+   procedure add (name : Unbounded_String; gameFeature_Param : access Feature'Class) is
+      gameFeature : Feature_Access := Feature_Access (gameFeature_Param);
    begin
         Feature_Package.hashtable.put (name, gameFeature);
    end add;

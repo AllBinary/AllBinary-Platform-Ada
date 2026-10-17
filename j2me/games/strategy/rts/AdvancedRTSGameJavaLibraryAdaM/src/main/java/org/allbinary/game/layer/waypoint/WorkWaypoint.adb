@@ -21,20 +21,22 @@ package body org.allbinary.game.layer.waypoint.WorkWaypoint_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out WorkWaypoint'Class; ownerLayer : PathFindingLayerInterface_Access) is
+   procedure Initialize (This : in out WorkWaypoint'Class; ownerLayer_Param : access PathFindingLayerInterface'Class) is
+      ownerLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (ownerLayer_Param);
    begin
         Waypoint_Package.Initialize (This, ownerLayer, WorkSound_Package.getInstance);
    end Initialize;
 
-   function Create (ownerLayer : PathFindingLayerInterface_Access) return WorkWaypoint_Access is
+   function Create (ownerLayer_Param : access PathFindingLayerInterface'Class) return WorkWaypoint_Access is
       This : constant WorkWaypoint_Access := new WorkWaypoint;
    begin
-      WorkWaypoint_Package.Initialize (This.all, ownerLayer);
+      WorkWaypoint_Package.Initialize (This.all, ownerLayer_Param);
       return This;
    end Create;
 
    --  throws Exception
-   procedure visit (This : in out WorkWaypoint; unitLayer : UnitLayer_Access) is
+   procedure visit (This : in out WorkWaypoint; unitLayer_Param : access UnitLayer'Class) is
+      unitLayer : UnitLayer_Access := UnitLayer_Access (unitLayer_Param);
       size : Integer;
       occupyList : BasicArrayList_Access;
       outOfResources : Boolean;

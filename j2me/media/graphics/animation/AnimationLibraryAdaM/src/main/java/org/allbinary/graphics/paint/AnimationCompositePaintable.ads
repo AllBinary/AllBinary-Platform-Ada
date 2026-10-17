@@ -37,10 +37,10 @@ package org.allbinary.graphics.paint.AnimationCompositePaintable_Package is
       animationInterface : Animation_Access;
    end record;
 
-   procedure Initialize (This : in out AnimationCompositePaintable'Class; animationInterface : Animation_Access);
-   function Create (animationInterface : Animation_Access) return AnimationCompositePaintable_Access;
-   procedure paint (This : in out AnimationCompositePaintable; graphics : Graphics_Access);
-   procedure paintThreed (This : in out AnimationCompositePaintable; graphics : Graphics_Access);
+   procedure Initialize (This : in out AnimationCompositePaintable'Class; animationInterface_Param : access Animation'Class);
+   function Create (animationInterface_Param : access Animation'Class) return AnimationCompositePaintable_Access;
+   procedure paint (This : in out AnimationCompositePaintable; graphics_Param : access Graphics'Class);
+   procedure paintThreed (This : in out AnimationCompositePaintable; graphics_Param : access Graphics'Class);
 
 end org.allbinary.graphics.paint.AnimationCompositePaintable_Package;
 

@@ -23,17 +23,18 @@ package body org.allbinary.media.image.comparison.motion.MotionRectanglesResults
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out MotionRectanglesResultsFrameCacheable'Class; motionRectangles : MotionRectangles_Access; frame : Long_Long_Integer) is
+   procedure Initialize (This : in out MotionRectanglesResultsFrameCacheable'Class; motionRectangles_Param : access MotionRectangles'Class; frame : Long_Long_Integer) is
+      motionRectangles : MotionRectangles_Access := MotionRectangles_Access (motionRectangles_Param);
    begin
       Initialize_Fields (This);
         This.frame := frame;
         This.setMotionRectangles (motionRectangles);
    end Initialize;
 
-   function Create (motionRectangles : MotionRectangles_Access; frame : Long_Long_Integer) return MotionRectanglesResultsFrameCacheable_Access is
+   function Create (motionRectangles_Param : access MotionRectangles'Class; frame : Long_Long_Integer) return MotionRectanglesResultsFrameCacheable_Access is
       This : constant MotionRectanglesResultsFrameCacheable_Access := new MotionRectanglesResultsFrameCacheable;
    begin
-      MotionRectanglesResultsFrameCacheable_Package.Initialize (This.all, motionRectangles, frame);
+      MotionRectanglesResultsFrameCacheable_Package.Initialize (This.all, motionRectangles_Param, frame);
       return This;
    end Create;
 
@@ -47,7 +48,8 @@ package body org.allbinary.media.image.comparison.motion.MotionRectanglesResults
         return This.motionRectangles;
    end getMotionRectangles;
 
-   procedure setMotionRectangles (This : in out MotionRectanglesResultsFrameCacheable; motionRectangles : MotionRectangles_Access) is
+   procedure setMotionRectangles (This : in out MotionRectanglesResultsFrameCacheable; motionRectangles_Param : access MotionRectangles'Class) is
+      motionRectangles : MotionRectangles_Access := MotionRectangles_Access (motionRectangles_Param);
    begin
         This.motionRectangles := motionRectangles;
    end setMotionRectangles;

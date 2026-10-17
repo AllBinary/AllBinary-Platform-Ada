@@ -44,7 +44,8 @@ package body org.allbinary.game.configuration.feature.GameFeatureUtil_Package is
    end getInstance;
 
    --  throws Exception
-   procedure setDefault (This : in out GameFeatureUtil; choiceGroup : ChoiceGroup_Access) is
+   procedure setDefault (This : in out GameFeatureUtil; choiceGroup_Param : access ChoiceGroup'Class) is
+      choiceGroup : ChoiceGroup_Access := ChoiceGroup_Access (choiceGroup_Param);
       stringBuffer : StringMaker_Access;
       METHOD_NAME : Unbounded_String;
       SELECTED_ARRAY_RETURN : Unbounded_String;
@@ -65,7 +66,7 @@ package body org.allbinary.game.configuration.feature.GameFeatureUtil_Package is
         total := choiceGroup.getSelectedFlags (selectedArray_return);
         stringBuffer.append (To_Unbounded_String ("Multiple Total Choices: "));
         stringBuffer.appendint (total);
-        This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, METHOD_NAME);
+        This.logUtil.putF (stringBuffer.toString, GameFeatureUtil_Access'(This'Unchecked_Access), METHOD_NAME);
         features := Features_Package.getInstance;
         for index in 0 .. (selectedArray_return'Length) - 1 loop
             isSelected := selectedArray_return (index);
@@ -74,7 +75,7 @@ package body org.allbinary.game.configuration.feature.GameFeatureUtil_Package is
             stringBuffer.appendint (index);
             stringBuffer.append (SELECTED_SEP);
             stringBuffer.appendboolean (isSelected);
-            This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, METHOD_NAME);
+            This.logUtil.putF (stringBuffer.toString, GameFeatureUtil_Access'(This'Unchecked_Access), METHOD_NAME);
             selectedChoiceLabel := choiceGroup.getString (index);
             gameFeature := Feature_Package.getInstance (selectedChoiceLabel);
             if features.isDefault (gameFeature) then
@@ -88,7 +89,8 @@ package body org.allbinary.game.configuration.feature.GameFeatureUtil_Package is
    end setDefault;
 
    --  throws Exception
-   procedure updateMultiple (This : in out GameFeatureUtil; choiceGroup : ChoiceGroup_Access) is
+   procedure updateMultiple (This : in out GameFeatureUtil; choiceGroup_Param : access ChoiceGroup'Class) is
+      choiceGroup : ChoiceGroup_Access := ChoiceGroup_Access (choiceGroup_Param);
       stringBuffer : StringMaker_Access;
       METHOD_NAME : Unbounded_String;
       SELECTED_ARRAY_RETURN : Unbounded_String;
@@ -109,7 +111,7 @@ package body org.allbinary.game.configuration.feature.GameFeatureUtil_Package is
         total := choiceGroup.getSelectedFlags (selectedArray_return);
         stringBuffer.append (To_Unbounded_String ("Multiple Total Choices: "));
         stringBuffer.appendint (total);
-        This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, METHOD_NAME);
+        This.logUtil.putF (stringBuffer.toString, GameFeatureUtil_Access'(This'Unchecked_Access), METHOD_NAME);
         features := Features_Package.getInstance;
         for index in 0 .. (selectedArray_return'Length) - 1 loop
             isSelected := selectedArray_return (index);
@@ -118,7 +120,7 @@ package body org.allbinary.game.configuration.feature.GameFeatureUtil_Package is
             stringBuffer.appendint (index);
             stringBuffer.append (SELECTED_SEP);
             stringBuffer.appendboolean (isSelected);
-            This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, METHOD_NAME);
+            This.logUtil.putF (stringBuffer.toString, GameFeatureUtil_Access'(This'Unchecked_Access), METHOD_NAME);
             selectedChoiceLabel := choiceGroup.getString (index);
             gameFeature := Feature_Package.getInstance (selectedChoiceLabel);
             if (not (isSelected)) and then (features.isFeature (gameFeature)) then
@@ -130,7 +132,8 @@ package body org.allbinary.game.configuration.feature.GameFeatureUtil_Package is
    end updateMultiple;
 
    --  throws Exception
-   procedure updateExclusiveForChoiceGroup (This : in out GameFeatureUtil; choiceGroup : ChoiceGroup_Access) is
+   procedure updateExclusiveForChoiceGroup (This : in out GameFeatureUtil; choiceGroup_Param : access ChoiceGroup'Class) is
+      choiceGroup : ChoiceGroup_Access := ChoiceGroup_Access (choiceGroup_Param);
       stringBuffer : StringMaker_Access;
       METHOD_NAME : Unbounded_String;
       SELECTED_ARRAY_RETURN : Unbounded_String;
@@ -149,7 +152,7 @@ package body org.allbinary.game.configuration.feature.GameFeatureUtil_Package is
         total := choiceGroup.getSelectedFlags (selectedArray_return);
         stringBuffer.append (To_Unbounded_String ("Exclusive Total Choices: 1=="));
         stringBuffer.appendint (total);
-        This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, METHOD_NAME);
+        This.logUtil.putF (stringBuffer.toString, GameFeatureUtil_Access'(This'Unchecked_Access), METHOD_NAME);
         for index in 0 .. (selectedArray_return'Length) - 1 loop
             isSelected := selectedArray_return (index);
             stringBuffer.delete (0, stringBuffer.length);
@@ -157,7 +160,7 @@ package body org.allbinary.game.configuration.feature.GameFeatureUtil_Package is
             stringBuffer.appendint (index);
             stringBuffer.append (SELECTED_SEP);
             stringBuffer.appendboolean (isSelected);
-            This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, METHOD_NAME);
+            This.logUtil.putF (stringBuffer.toString, GameFeatureUtil_Access'(This'Unchecked_Access), METHOD_NAME);
             if isSelected then
                 selectedChoiceLabel := choiceGroup.getString (index);
                 This.updateExclusive (selectedChoiceLabel);
@@ -190,7 +193,7 @@ package body org.allbinary.game.configuration.feature.GameFeatureUtil_Package is
       size : Integer;
       index : Integer;
    begin
-        This.logUtil.putF (StringMaker_Package.Create.append (CommonLabels_Package.getInstance.ITEM_LABEL).append (selectedChoiceLabel).toString, This'Unchecked_Access, To_Unbounded_String ("updateExclusive"));
+        This.logUtil.putF (StringMaker_Package.Create.append (CommonLabels_Package.getInstance.ITEM_LABEL).append (selectedChoiceLabel).toString, GameFeatureUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("updateExclusive"));
         gameFeature := Feature_Package.getInstance (selectedChoiceLabel);
         hashtable := GameFeatureChoiceGroups_Package.getExclusiveInstance.get;
         objectArray := HashtableUtil_Package.getInstance.getKeysAsArray (hashtable);
@@ -205,7 +208,9 @@ package body org.allbinary.game.configuration.feature.GameFeatureUtil_Package is
    end updateExclusive;
 
    --  throws Exception
-   procedure updateExclusiveList (This : in out GameFeatureUtil; gameFeature : Feature_Access; list : BasicArrayList_Access) is
+   procedure updateExclusiveList (This : in out GameFeatureUtil; gameFeature_Param : access Feature'Class; list_Param : access BasicArrayList'Class) is
+      gameFeature : Feature_Access := Feature_Access (gameFeature_Param);
+      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
       features : Features_Access;
       addIndex : Integer;
       size : Integer;

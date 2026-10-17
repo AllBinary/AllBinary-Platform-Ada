@@ -59,7 +59,7 @@ package body org.allbinary.data.tables.user.address.StreetAddressesEntity_Packag
             whereHashMap.put (StreetAddressData_Package.ID, Unbounded_String (index.toString));
             AbSqlBean (This).deleteWhere (whereHashMap);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.putF (This.commonStrings.SUCCESS, This'Unchecked_Access, To_Unbounded_String ("remove"));
+                This.logUtil.putF (This.commonStrings.SUCCESS, StreetAddressesEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("remove"));
             end if;
         exception
             when Java_Occurrence : others =>
@@ -67,18 +67,20 @@ package body org.allbinary.data.tables.user.address.StreetAddressesEntity_Packag
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("remove"), e);
+                This.logUtil.put (This.commonStrings.FAILURE, StreetAddressesEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("remove"), e);
             end if;
                 end;
         end;
    end remove;
 
-   procedure add (This : in out StreetAddressesEntity; address : StreetAddress_Access) is
+   procedure add (This : in out StreetAddressesEntity; address_Param : access StreetAddress'Class) is
+      address : StreetAddress_Access := StreetAddress_Access (address_Param);
    begin
         This.add (address, TableDataFactory_Package.getInstance.INTEGER_MAX_VALUE_STRING);
    end add;
 
-   procedure add (This : in out StreetAddressesEntity; address : StreetAddress_Access; index : Unbounded_String) is
+   procedure add (This : in out StreetAddressesEntity; address_Param : access StreetAddress'Class; index : Unbounded_String) is
+      address : StreetAddress_Access := StreetAddress_Access (address_Param);
       values : BasicArrayList_Access;
       calendar : Calendar_Access;
       time : Unbounded_String;
@@ -100,7 +102,7 @@ package body org.allbinary.data.tables.user.address.StreetAddressesEntity_Packag
             AbSqlBean (This).insert (values);
             This.setDefault (This.getLastId);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.putF (This.commonStrings.SUCCESS, This'Unchecked_Access, To_Unbounded_String ("add"));
+                This.logUtil.putF (This.commonStrings.SUCCESS, StreetAddressesEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("add"));
             end if;
         exception
             when Java_Occurrence : others =>
@@ -108,13 +110,14 @@ package body org.allbinary.data.tables.user.address.StreetAddressesEntity_Packag
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("add"), e);
+                This.logUtil.put (This.commonStrings.FAILURE, StreetAddressesEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("add"), e);
             end if;
                 end;
         end;
    end add;
 
-   procedure update (This : in out StreetAddressesEntity; address : StreetAddress_Access) is
+   procedure update (This : in out StreetAddressesEntity; address_Param : access StreetAddress'Class) is
+      address : StreetAddress_Access := StreetAddress_Access (address_Param);
       addressHashMap : HashMap_Access;
       whereKeyValuePairs : HashMap_Access;
    begin
@@ -126,7 +129,7 @@ package body org.allbinary.data.tables.user.address.StreetAddressesEntity_Packag
             AbSqlBean (This).updateWhere (whereKeyValuePairs, addressHashMap);
             This.setDefault (address.getId);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.putF (This.commonStrings.SUCCESS, This'Unchecked_Access, To_Unbounded_String ("update"));
+                This.logUtil.putF (This.commonStrings.SUCCESS, StreetAddressesEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("update"));
             end if;
         exception
             when Java_Occurrence : others =>
@@ -134,7 +137,7 @@ package body org.allbinary.data.tables.user.address.StreetAddressesEntity_Packag
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("add"), e);
+                This.logUtil.put (This.commonStrings.FAILURE, StreetAddressesEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("add"), e);
             end if;
                 end;
         end;
@@ -174,7 +177,7 @@ package body org.allbinary.data.tables.user.address.StreetAddressesEntity_Packag
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, This.commonStrings.GET, e);
+                This.logUtil.put (This.commonStrings.FAILURE, StreetAddressesEntity_Access'(This'Unchecked_Access), This.commonStrings.GET, e);
             end if;
             return null;
                 end;
@@ -201,7 +204,7 @@ package body org.allbinary.data.tables.user.address.StreetAddressesEntity_Packag
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, This.commonStrings.GET, e);
+                This.logUtil.put (This.commonStrings.FAILURE, StreetAddressesEntity_Access'(This'Unchecked_Access), This.commonStrings.GET, e);
             end if;
             return null;
                 end;
@@ -222,12 +225,12 @@ package body org.allbinary.data.tables.user.address.StreetAddressesEntity_Packag
             if (addressHashMap) /= (null) then
                 streetAddress := StreetAddress_Package.Create (addressHashMap);
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                    This.logUtil.putF (This.commonStrings.SUCCESS, This'Unchecked_Access, To_Unbounded_String ("getDefault"));
+                    This.logUtil.putF (This.commonStrings.SUCCESS, StreetAddressesEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("getDefault"));
                 end if;
                 return streetAddress;
             else
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                    This.logUtil.putF (To_Unbounded_String ("No Default Address Found"), This'Unchecked_Access, To_Unbounded_String ("getDefault"));
+                    This.logUtil.putF (To_Unbounded_String ("No Default Address Found"), StreetAddressesEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("getDefault"));
                 end if;
                 return null;
             end if;
@@ -237,7 +240,7 @@ package body org.allbinary.data.tables.user.address.StreetAddressesEntity_Packag
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("getDefault"), e);
+                This.logUtil.put (This.commonStrings.FAILURE, StreetAddressesEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("getDefault"), e);
             end if;
             return null;
                 end;
@@ -263,7 +266,7 @@ package body org.allbinary.data.tables.user.address.StreetAddressesEntity_Packag
             updateKeyAndValue.put (StreetAddressData_Package.DEFAULT, StreetAddressData_Package.DEFAULT);
             AbSqlBean (This).updateWhere (whereKeyAndValue, updateKeyAndValue);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.putF (This.commonStrings.SUCCESS, This'Unchecked_Access, To_Unbounded_String ("setDefault"));
+                This.logUtil.putF (This.commonStrings.SUCCESS, StreetAddressesEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("setDefault"));
             end if;
         exception
             when Java_Occurrence : others =>
@@ -271,7 +274,7 @@ package body org.allbinary.data.tables.user.address.StreetAddressesEntity_Packag
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("setShippingAddress"), e);
+                This.logUtil.put (This.commonStrings.FAILURE, StreetAddressesEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("setShippingAddress"), e);
             end if;
                 end;
         end;

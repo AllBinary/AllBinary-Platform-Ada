@@ -96,11 +96,11 @@ package org.allbinary.business.installer.Initializer_Package is
    MIN : Integer;
    MINPASSWORD : Integer;
 
-   procedure Initialize (This : in out Initializer'Class; map : Map_Access);
-   function Create (map : Map_Access) return Initializer_Access;
-   procedure Initialize (This : in out Initializer'Class; initHashMap : HashMap_Access);
-   function Create (initHashMap : HashMap_Access) return Initializer_Access;
-   procedure getFormData (This : in out Initializer; hashMap : HashMap_Access);
+   procedure Initialize (This : in out Initializer'Class; map_Param : access Map'Class);
+   function Create (map_Param : access Map'Class) return Initializer_Access;
+   procedure Initialize (This : in out Initializer'Class; initHashMap_Param : access HashMap'Class);
+   function Create (initHashMap_Param : access HashMap'Class) return Initializer_Access;
+   procedure getFormData (This : in out Initializer; hashMap_Param : access HashMap'Class);
    function isJdbcDriverValid (This : in out Initializer; jdbcDriverClassPathString : Unbounded_String) return Boolean;
    procedure isJdbcDriverValid (This : in out Initializer; jdbcDriverClassPathString : Unbounded_String);
    function isValid (This : in out Initializer) return Boolean;

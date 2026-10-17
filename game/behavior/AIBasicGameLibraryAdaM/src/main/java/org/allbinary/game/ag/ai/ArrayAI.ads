@@ -43,9 +43,9 @@ package org.allbinary.game.ag.ai.ArrayAI_Package is
       artificialIntelligenceInterfaceArray : ArtificialIntelligenceInterface_Access_Array_Access;
    end record;
 
-   procedure Initialize (This : in out ArrayAI'Class; artificialIntelligenceInterface : ArtificialIntelligenceInterface_Access_Array_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access);
-   function Create (artificialIntelligenceInterface : ArtificialIntelligenceInterface_Access_Array_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return ArrayAI_Access;
-   procedure processAI (This : in out ArrayAI; allBinaryLayerManager : AllBinaryLayerManager_Access);
+   procedure Initialize (This : in out ArrayAI'Class; artificialIntelligenceInterface : ArtificialIntelligenceInterface_Access_Array_Access; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class);
+   function Create (artificialIntelligenceInterface : ArtificialIntelligenceInterface_Access_Array_Access; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return ArrayAI_Access;
+   procedure processAI (This : in out ArrayAI; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class);
    function getArtificialIntelligenceInterface (This : in out ArrayAI) return ArtificialIntelligenceInterface_Access_Array_Access;
 
 end org.allbinary.game.ag.ai.ArrayAI_Package;

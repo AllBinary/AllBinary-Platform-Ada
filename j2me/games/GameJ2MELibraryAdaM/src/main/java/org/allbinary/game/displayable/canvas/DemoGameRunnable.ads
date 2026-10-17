@@ -45,8 +45,8 @@ package org.allbinary.game.displayable.canvas.DemoGameRunnable_Package is
       gameTickTimeDelayHelper : GameTickTimeDelayHelper_Access;
    end record;
 
-   procedure Initialize (This : in out DemoGameRunnable'Class; demoCanvas : DemoCanvas_Access);
-   function Create (demoCanvas : DemoCanvas_Access) return DemoGameRunnable_Access;
+   procedure Initialize (This : in out DemoGameRunnable'Class; demoCanvas_Param : access DemoCanvas'Class);
+   function Create (demoCanvas_Param : access DemoCanvas'Class) return DemoGameRunnable_Access;
    procedure run (This : in out DemoGameRunnable);
    procedure processLoopSleep (This : in out DemoGameRunnable);
 

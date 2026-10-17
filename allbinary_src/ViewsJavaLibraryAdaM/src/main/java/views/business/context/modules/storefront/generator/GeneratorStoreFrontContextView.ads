@@ -45,8 +45,8 @@ package views.business.context.modules.storefront.generator.GeneratorStoreFrontC
       logUtil : LogUtil_Access;
    end record;
 
-   procedure Initialize (This : in out GeneratorStoreFrontContextView'Class; transformInfoInterface : TransformInfoInterface_Access);
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return GeneratorStoreFrontContextView_Access;
+   procedure Initialize (This : in out GeneratorStoreFrontContextView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return GeneratorStoreFrontContextView_Access;
    function view (This : in out GeneratorStoreFrontContextView; group : Unbounded_String) return Unbounded_String;
    procedure view (This : in out GeneratorStoreFrontContextView; group : Unbounded_String);
    function view (This : in out GeneratorStoreFrontContextView) return Unbounded_String;

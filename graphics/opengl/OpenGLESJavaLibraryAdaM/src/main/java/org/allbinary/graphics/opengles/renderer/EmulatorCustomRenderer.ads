@@ -48,7 +48,7 @@ package org.allbinary.graphics.opengles.renderer.EmulatorCustomRenderer_Package 
 
    procedure Initialize (This : in out EmulatorCustomRenderer'Class);
    function Create return EmulatorCustomRenderer_Access;
-   procedure onSurfaceCreated (This : in out EmulatorCustomRenderer; gl : GL10_Access; eglConfig : EGLConfig_Access);
+   procedure onSurfaceCreated (This : in out EmulatorCustomRenderer; gl_Param : access GL10'Class; eglConfig_Param : access EGLConfig'Class);
 
 end org.allbinary.graphics.opengles.renderer.EmulatorCustomRenderer_Package;
 

@@ -46,7 +46,8 @@ package body org.allbinary.game.input.event.RawKeyEventHandler_Package is
         This.eventListenerInterfaceList := BasicArrayListD_Package.Create;
    end removeAllListeners;
 
-   procedure addListeners (This : in out RawKeyEventHandler; vector : BasicArrayList_Access) is
+   procedure addListeners (This : in out RawKeyEventHandler; vector_Param : access BasicArrayList'Class) is
+      vector : BasicArrayList_Access := BasicArrayList_Access (vector_Param);
       eventListenerInterface : RawKeyEventListener_Access;
       size : Integer;
       index : Integer;
@@ -59,26 +60,30 @@ package body org.allbinary.game.input.event.RawKeyEventHandler_Package is
         end loop;
    end addListeners;
 
-   procedure addListenerSingleThreaded (This : in out RawKeyEventHandler; eventListenerInterface : RawKeyEventListener_Access) is
+   procedure addListenerSingleThreaded (This : in out RawKeyEventHandler; eventListenerInterface_Param : access RawKeyEventListener'Class) is
+      eventListenerInterface : RawKeyEventListener_Access := RawKeyEventListener_Access (eventListenerInterface_Param);
    begin
         if not (This.eventListenerInterfaceList.contains (eventListenerInterface)) then
             This.eventListenerInterfaceList.add (eventListenerInterface);
         end if;
    end addListenerSingleThreaded;
 
-   procedure addListener (This : in out RawKeyEventHandler; eventListenerInterface : RawKeyEventListener_Access) is
+   procedure addListener (This : in out RawKeyEventHandler; eventListenerInterface_Param : access RawKeyEventListener'Class) is
+      eventListenerInterface : RawKeyEventListener_Access := RawKeyEventListener_Access (eventListenerInterface_Param);
    begin
         if not (This.eventListenerInterfaceList.contains (eventListenerInterface)) then
             This.eventListenerInterfaceList.add (eventListenerInterface);
         end if;
    end addListener;
 
-   procedure removeListenerSingleThreaded (This : in out RawKeyEventHandler; eventListenerInterface : RawKeyEventListener_Access) is
+   procedure removeListenerSingleThreaded (This : in out RawKeyEventHandler; eventListenerInterface_Param : access RawKeyEventListener'Class) is
+      eventListenerInterface : RawKeyEventListener_Access := RawKeyEventListener_Access (eventListenerInterface_Param);
    begin
         This.eventListenerInterfaceList.remove (eventListenerInterface);
    end removeListenerSingleThreaded;
 
-   procedure removeListener (This : in out RawKeyEventHandler; eventListenerInterface : RawKeyEventListener_Access) is
+   procedure removeListener (This : in out RawKeyEventHandler; eventListenerInterface_Param : access RawKeyEventListener'Class) is
+      eventListenerInterface : RawKeyEventListener_Access := RawKeyEventListener_Access (eventListenerInterface_Param);
    begin
         This.eventListenerInterfaceList.remove (eventListenerInterface);
    end removeListener;
@@ -101,7 +106,7 @@ package body org.allbinary.game.input.event.RawKeyEventHandler_Package is
                         e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                     begin
                 commonStrings := CommonStrings_Package.getInstance;
-                This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, EventStrings_Package.getInstance.FIRE_EVENT, e);
+                This.logUtil.put (commonStrings.EXCEPTION_Id, RawKeyEventHandler_Access'(This'Unchecked_Access), EventStrings_Package.getInstance.FIRE_EVENT, e);
                     end;
             end;
             index := index + 1;
@@ -109,7 +114,8 @@ package body org.allbinary.game.input.event.RawKeyEventHandler_Package is
    end fireEvent;
 
    --  throws Exception
-   procedure process (This : in out RawKeyEventHandler; keyCode : Integer; deviceId : Integer; repeated : Boolean; eventListenerInterface : RawKeyEventListener_Access) is
+   procedure process (This : in out RawKeyEventHandler; keyCode : Integer; deviceId : Integer; repeated : Boolean; eventListenerInterface_Param : access RawKeyEventListener'Class) is
+      eventListenerInterface : RawKeyEventListener_Access := RawKeyEventListener_Access (eventListenerInterface_Param);
    begin
         eventListenerInterface.onEventRaw (keyCode, deviceId, repeated);
    end process;
@@ -141,7 +147,7 @@ package body org.allbinary.game.input.event.RawKeyEventHandler_Package is
                         e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                     begin
                 commonStrings := CommonStrings_Package.getInstance;
-                This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.TOSTRING, e);
+                This.logUtil.put (commonStrings.EXCEPTION_Id, RawKeyEventHandler_Access'(This'Unchecked_Access), commonStrings.TOSTRING, e);
                     end;
             end;
             index := index + 1;

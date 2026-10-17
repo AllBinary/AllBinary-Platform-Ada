@@ -74,8 +74,8 @@ package admin.taghelpers.UserHelper_Package is
       portion : Portion_Access;
    end record;
 
-   procedure Initialize (This : in out UserHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access);
-   function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return UserHelper_Access;
+   procedure Initialize (This : in out UserHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
+   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return UserHelper_Access;
    function delete (This : in out UserHelper) return Unbounded_String;
    function insert (This : in out UserHelper) return Unbounded_String;
    function update (This : in out UserHelper) return Unbounded_String;

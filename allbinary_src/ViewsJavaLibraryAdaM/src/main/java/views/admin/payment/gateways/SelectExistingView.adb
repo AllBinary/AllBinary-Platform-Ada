@@ -22,16 +22,17 @@ package body views.admin.payment.gateways.SelectExistingView_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out SelectExistingView'Class; transformInfoInterface : TransformInfoInterface_Access) is
+   procedure Initialize (This : in out SelectExistingView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         PaymentGatewayViewAbstract_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return SelectExistingView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return SelectExistingView_Access is
       This : constant SelectExistingView_Access := new SelectExistingView;
    begin
-      SelectExistingView_Package.Initialize (This.all, transformInfoInterface);
+      SelectExistingView_Package.Initialize (This.all, transformInfoInterface_Param);
       return This;
    end Create;
 
@@ -50,7 +51,7 @@ package body views.admin.payment.gateways.SelectExistingView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("view"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, SelectExistingView_Access'(This'Unchecked_Access), To_Unbounded_String ("view"), e);
             end if;
             Java_Throw (e);
                 end;

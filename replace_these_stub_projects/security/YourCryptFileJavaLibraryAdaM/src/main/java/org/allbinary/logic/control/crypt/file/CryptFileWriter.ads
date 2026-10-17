@@ -25,7 +25,7 @@ package org.allbinary.logic.control.crypt.file.CryptFileWriter_Package is
 
    procedure Initialize (This : in out CryptFileWriter'Class; decryptedExtension : Unbounded_String; encryptedExtension : Unbounded_String);
    function Create (decryptedExtension : Unbounded_String; encryptedExtension : Unbounded_String) return CryptFileWriter_Access;
-   procedure write (This : in out CryptFileWriter; fileAbPath : AbPath_Access; document : Document_Access);
+   procedure write (This : in out CryptFileWriter; fileAbPath_Param : access AbPath'Class; document_Param : access Document'Class);
 
 end org.allbinary.logic.control.crypt.file.CryptFileWriter_Package;
 

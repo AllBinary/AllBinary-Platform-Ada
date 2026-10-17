@@ -29,7 +29,9 @@ package body org.allbinary.business.installer.InitializerDatabase_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out InitializerDatabase'Class; abeClientInformation : AbeClientInformationInterface_Access; map : Map_Access) is
+   procedure Initialize (This : in out InitializerDatabase'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; map_Param : access Map'Class) is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      map : Map_Access := Map_Access (map_Param);
       stringBuffer : StringMaker_Access;
       hashMap : HashMap_Access;
       keys : Set_Access;
@@ -54,32 +56,36 @@ package body org.allbinary.business.installer.InitializerDatabase_Package is
             stringBuffer.append (key);
             stringBuffer.append (To_Unbounded_String (" Value: "));
             stringBuffer.append (values (0));
-            This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("getFormData()"));
+            This.logUtil.putF (stringBuffer.toString, InitializerDatabase_Access'(This'Unchecked_Access), To_Unbounded_String ("getFormData()"));
         end loop;
         This.getFormData (abeClientInformation, hashMap);
    end Initialize;
 
-   function Create (abeClientInformation : AbeClientInformationInterface_Access; map : Map_Access) return InitializerDatabase_Access is
+   function Create (abeClientInformation_Param : access AbeClientInformationInterface'Class; map_Param : access Map'Class) return InitializerDatabase_Access is
       This : constant InitializerDatabase_Access := new InitializerDatabase;
    begin
-      InitializerDatabase_Package.Initialize (This.all, abeClientInformation, map);
+      InitializerDatabase_Package.Initialize (This.all, abeClientInformation_Param, map_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out InitializerDatabase'Class; abeClientInformation : AbeClientInformationInterface_Access; initHashMap : HashMap_Access) is
+   procedure Initialize (This : in out InitializerDatabase'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; initHashMap_Param : access HashMap'Class) is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      initHashMap : HashMap_Access := HashMap_Access (initHashMap_Param);
    begin
       Initialize_Fields (This);
         This.getFormData (abeClientInformation, initHashMap);
    end Initialize;
 
-   function Create (abeClientInformation : AbeClientInformationInterface_Access; initHashMap : HashMap_Access) return InitializerDatabase_Access is
+   function Create (abeClientInformation_Param : access AbeClientInformationInterface'Class; initHashMap_Param : access HashMap'Class) return InitializerDatabase_Access is
       This : constant InitializerDatabase_Access := new InitializerDatabase;
    begin
-      InitializerDatabase_Package.Initialize (This.all, abeClientInformation, initHashMap);
+      InitializerDatabase_Package.Initialize (This.all, abeClientInformation_Param, initHashMap_Param);
       return This;
    end Create;
 
-   procedure getFormData (This : in out InitializerDatabase; abeClientInformation : AbeClientInformationInterface_Access; hashMap : HashMap_Access) is
+   procedure getFormData (This : in out InitializerDatabase; abeClientInformation_Param : access AbeClientInformationInterface'Class; hashMap_Param : access HashMap'Class) is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
       initializerData : InitializerData_Access;
       dbConnectionInfo : DbConnectionInfo_Access;
       adminDbName : Unbounded_String;
@@ -107,7 +113,7 @@ package body org.allbinary.business.installer.InitializerDatabase_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (To_Unbounded_String ("Unable to get form data"), This'Unchecked_Access, To_Unbounded_String ("getFormData()"), e);
+            This.logUtil.put (To_Unbounded_String ("Unable to get form data"), InitializerDatabase_Access'(This'Unchecked_Access), To_Unbounded_String ("getFormData()"), e);
                 end;
         end;
    end getFormData;
@@ -125,7 +131,7 @@ package body org.allbinary.business.installer.InitializerDatabase_Package is
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PRELOADERERROR) then
                 commonStrings := CommonStrings_Package.getInstance;
-                This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.IS_VALID, e);
+                This.logUtil.put (commonStrings.EXCEPTION_Id, InitializerDatabase_Access'(This'Unchecked_Access), commonStrings.IS_VALID, e);
             end if;
             return False;
                 end;
@@ -196,7 +202,7 @@ package body org.allbinary.business.installer.InitializerDatabase_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (To_Unbounded_String ("Unable to Create Users"), This'Unchecked_Access, To_Unbounded_String ("createUsers()"), e);
+            This.logUtil.put (To_Unbounded_String ("Unable to Create Users"), InitializerDatabase_Access'(This'Unchecked_Access), To_Unbounded_String ("createUsers()"), e);
             return False;
                 end;
         end;
@@ -212,7 +218,7 @@ package body org.allbinary.business.installer.InitializerDatabase_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (To_Unbounded_String ("Unable to Create Databases"), This'Unchecked_Access, To_Unbounded_String ("createDatabases()"), e);
+            This.logUtil.put (To_Unbounded_String ("Unable to Create Databases"), InitializerDatabase_Access'(This'Unchecked_Access), To_Unbounded_String ("createDatabases()"), e);
             return False;
                 end;
         end;
@@ -228,7 +234,7 @@ package body org.allbinary.business.installer.InitializerDatabase_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (To_Unbounded_String ("Unable to Create Tables"), This'Unchecked_Access, To_Unbounded_String ("createTables()"), e);
+            This.logUtil.put (To_Unbounded_String ("Unable to Create Tables"), InitializerDatabase_Access'(This'Unchecked_Access), To_Unbounded_String ("createTables()"), e);
             return False;
                 end;
         end;

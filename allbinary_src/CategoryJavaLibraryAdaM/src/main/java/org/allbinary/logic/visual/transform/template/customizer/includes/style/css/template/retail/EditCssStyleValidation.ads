@@ -49,17 +49,17 @@ package org.allbinary.logic.visual.transform.template.customizer.includes.style.
 
    procedure Initialize (This : in out EditCssStyleValidation'Class);
    function Create return EditCssStyleValidation_Access;
-   procedure Initialize (This : in out EditCssStyleValidation'Class; document : Document_Access);
-   function Create (document : Document_Access) return EditCssStyleValidation_Access;
-   procedure Initialize (This : in out EditCssStyleValidation'Class; hashMap : HashMap_Access);
-   function Create (hashMap : HashMap_Access) return EditCssStyleValidation_Access;
+   procedure Initialize (This : in out EditCssStyleValidation'Class; document_Param : access Document'Class);
+   function Create (document_Param : access Document'Class) return EditCssStyleValidation_Access;
+   procedure Initialize (This : in out EditCssStyleValidation'Class; hashMap_Param : access HashMap'Class);
+   function Create (hashMap_Param : access HashMap'Class) return EditCssStyleValidation_Access;
    function isValid (This : in out EditCssStyleValidation) return Boolean;
    function validationInfo (This : in out EditCssStyleValidation) return Unbounded_String;
    function toValidationInfoDoc (This : in out EditCssStyleValidation) return Document_Access;
-   function toValidationInfoNode (This : in out EditCssStyleValidation; document : Document_Access) return Node_Access;
-   procedure toValidationInfoNode (This : in out EditCssStyleValidation; document : Document_Access);
-   function toXmlNode (This : in out EditCssStyleValidation; document : Document_Access) return Node_Access;
-   procedure toXmlNode (This : in out EditCssStyleValidation; document : Document_Access);
+   function toValidationInfoNode (This : in out EditCssStyleValidation; document_Param : access Document'Class) return Node_Access;
+   procedure toValidationInfoNode (This : in out EditCssStyleValidation; document_Param : access Document'Class);
+   function toXmlNode (This : in out EditCssStyleValidation; document_Param : access Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out EditCssStyleValidation; document_Param : access Document'Class);
 
 end org.allbinary.logic.visual.transform.template.customizer.includes.style.css.template.retail.EditCssStyleValidation_Package;
 

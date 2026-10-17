@@ -84,20 +84,20 @@ package org.allbinary.image.gui.SpriteSplitterImageJPanel_Package is
       writeOverOriginalJCheckBox : JCheckBox_Access;
    end record;
 
-   procedure Initialize (This : in out SpriteSplitterImageJPanel'Class; imageProcessorInput : ImageProcessorInput_Access);
-   function Create (imageProcessorInput : ImageProcessorInput_Access) return SpriteSplitterImageJPanel_Access;
+   procedure Initialize (This : in out SpriteSplitterImageJPanel'Class; imageProcessorInput_Param : access ImageProcessorInput'Class);
+   function Create (imageProcessorInput_Param : access ImageProcessorInput'Class) return SpriteSplitterImageJPanel_Access;
    procedure process (This : in out SpriteSplitterImageJPanel);
    procedure initComponents (This : in out SpriteSplitterImageJPanel);
-   procedure writeOverOriginalJCheckBoxActionPerformed (This : in out SpriteSplitterImageJPanel; evt : ActionEvent_Access);
-   procedure generateJButtonActionPerformed (This : in out SpriteSplitterImageJPanel; evt : ActionEvent_Access);
-   procedure spriteTypeJComboBoxActionPerformed (This : in out SpriteSplitterImageJPanel; evt : ActionEvent_Access);
-   procedure totalAnimationsJComboBoxActionPerformed (This : in out SpriteSplitterImageJPanel; evt : ActionEvent_Access);
-   procedure totalFramesJComboBoxActionPerformed (This : in out SpriteSplitterImageJPanel; evt : ActionEvent_Access);
-   procedure widthReductionTextFieldActionPerformed (This : in out SpriteSplitterImageJPanel; evt : ActionEvent_Access);
-   procedure increaseWidthTextFieldActionPerformed (This : in out SpriteSplitterImageJPanel; evt : ActionEvent_Access);
+   procedure writeOverOriginalJCheckBoxActionPerformed (This : in out SpriteSplitterImageJPanel; evt_Param : access ActionEvent'Class);
+   procedure generateJButtonActionPerformed (This : in out SpriteSplitterImageJPanel; evt_Param : access ActionEvent'Class);
+   procedure spriteTypeJComboBoxActionPerformed (This : in out SpriteSplitterImageJPanel; evt_Param : access ActionEvent'Class);
+   procedure totalAnimationsJComboBoxActionPerformed (This : in out SpriteSplitterImageJPanel; evt_Param : access ActionEvent'Class);
+   procedure totalFramesJComboBoxActionPerformed (This : in out SpriteSplitterImageJPanel; evt_Param : access ActionEvent'Class);
+   procedure widthReductionTextFieldActionPerformed (This : in out SpriteSplitterImageJPanel; evt_Param : access ActionEvent'Class);
+   procedure increaseWidthTextFieldActionPerformed (This : in out SpriteSplitterImageJPanel; evt_Param : access ActionEvent'Class);
    function getImageProcessorInput (This : in out SpriteSplitterImageJPanel) return ImageProcessorInput_Access;
-   procedure setImageProcessorInput (This : in out SpriteSplitterImageJPanel; imageProcessorInput : ImageProcessorInput_Access);
-   procedure visit (This : in out SpriteSplitterImageJPanel; generatedBufferedImage : BufferedImage_Access; name : Unbounded_String; index : Integer);
+   procedure setImageProcessorInput (This : in out SpriteSplitterImageJPanel; imageProcessorInput_Param : access ImageProcessorInput'Class);
+   procedure visit (This : in out SpriteSplitterImageJPanel; generatedBufferedImage_Param : access BufferedImage'Class; name : Unbounded_String; index : Integer);
 
 end org.allbinary.image.gui.SpriteSplitterImageJPanel_Package;
 

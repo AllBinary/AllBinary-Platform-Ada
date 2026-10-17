@@ -50,10 +50,10 @@ package org.allbinary.game.ag.ai.BoundBounceAI_Package is
       boundsVisitorInterface : BoundsVisitorInterface_Access;
    end record;
 
-   procedure Initialize (This : in out BoundBounceAI'Class; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access; layerBounds : LayerBounds_Access; boundsVisitorInterface : BoundsVisitorInterface_Access);
-   function Create (ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access; layerBounds : LayerBounds_Access; boundsVisitorInterface : BoundsVisitorInterface_Access) return BoundBounceAI_Access;
-   procedure paint (This : in out BoundBounceAI; graphics : Graphics_Access);
-   procedure processAI (This : in out BoundBounceAI; allBinaryLayerManager : AllBinaryLayerManager_Access);
+   procedure Initialize (This : in out BoundBounceAI'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class; layerBounds_Param : access LayerBounds'Class; boundsVisitorInterface_Param : access BoundsVisitorInterface'Class);
+   function Create (ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class; layerBounds_Param : access LayerBounds'Class; boundsVisitorInterface_Param : access BoundsVisitorInterface'Class) return BoundBounceAI_Access;
+   procedure paint (This : in out BoundBounceAI; graphics_Param : access Graphics'Class);
+   procedure processAI (This : in out BoundBounceAI; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class);
 
 end org.allbinary.game.ag.ai.BoundBounceAI_Package;
 

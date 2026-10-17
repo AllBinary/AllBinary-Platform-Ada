@@ -65,16 +65,16 @@ package org.allbinary.logic.communication.http.request.session.WeblisketSession_
       session : HttpSession_Access;
    end record;
 
-   procedure Initialize (This : in out WeblisketSession'Class; hashMap : HashMap_Access; pageContext : PageContext_Access);
-   function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return WeblisketSession_Access;
-   procedure Initialize (This : in out WeblisketSession'Class; hashMap : HashMap_Access; httpServletRequest : HttpServletRequest_Access);
-   function Create (hashMap : HashMap_Access; httpServletRequest : HttpServletRequest_Access) return WeblisketSession_Access;
+   procedure Initialize (This : in out WeblisketSession'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
+   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return WeblisketSession_Access;
+   procedure Initialize (This : in out WeblisketSession'Class; hashMap_Param : access HashMap'Class; httpServletRequest_Param : access HttpServletRequest'Class);
+   function Create (hashMap_Param : access HashMap'Class; httpServletRequest_Param : access HttpServletRequest'Class) return WeblisketSession_Access;
    function getId (This : in out WeblisketSession) return Unbounded_String;
    procedure setPassword (This : in out WeblisketSession; password : Unbounded_String);
    procedure setUserName (This : in out WeblisketSession; userName : Unbounded_String);
    procedure setPaymentMethod (This : in out WeblisketSession; value : Unbounded_String);
    procedure setAuthenticated (This : in out WeblisketSession);
-   procedure setRole (This : in out WeblisketSession; aRole : UserRole_Access);
+   procedure setRole (This : in out WeblisketSession; aRole_Param : access UserRole'Class);
    procedure setAttempts (This : in out WeblisketSession; value : Integer);
    procedure setTimeout (This : in out WeblisketSession; value : Unbounded_String);
    procedure setStoreName (This : in out WeblisketSession; value : Unbounded_String);

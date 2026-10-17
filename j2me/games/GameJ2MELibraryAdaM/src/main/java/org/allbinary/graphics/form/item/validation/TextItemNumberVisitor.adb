@@ -36,7 +36,8 @@ package body org.allbinary.graphics.form.item.validation.TextItemNumberVisitor_P
       return This;
    end Create;
 
-   function visit (This : in out TextItemNumberVisitor; anyType : Java_Object_Access) return Java_Object_Access is
+   function visit (This : in out TextItemNumberVisitor; anyType_Param : access Java_Object'Class) return Java_Object_Access is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
       value : Unbounded_String;
       stringValidationUtil : StringValidationUtil_Access;
       commonStrings : CommonStrings_Access;
@@ -55,7 +56,7 @@ package body org.allbinary.graphics.form.item.validation.TextItemNumberVisitor_P
                             e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                         begin
                     commonStrings := CommonStrings_Package.getInstance;
-                    This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.VISIT, e);
+                    This.logUtil.put (commonStrings.EXCEPTION_Id, TextItemNumberVisitor_Access'(This'Unchecked_Access), commonStrings.VISIT, e);
                         end;
                 end;
                 return BooleanFactory_Package.getInstance.FALSE;
@@ -65,8 +66,8 @@ package body org.allbinary.graphics.form.item.validation.TextItemNumberVisitor_P
         end if;
    end visit;
 
-   procedure visit (This : in out TextItemNumberVisitor; anyType : Java_Object_Access) is
-      Java_Result : constant Java_Object_Access := TextItemNumberVisitor'Class (This).visit (anyType);
+   procedure visit (This : in out TextItemNumberVisitor; anyType_Param : access Java_Object'Class) is
+      Java_Result : constant Java_Object_Access := TextItemNumberVisitor'Class (This).visit (anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -46,7 +46,7 @@ package body org.allbinary.input.motion.button.BasicTouchButtonsBuilder_Package 
       RIGHT : TouchButton_Access;
    begin
         begin
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+            This.logUtil.putF (This.commonStrings.START, BasicTouchButtonsBuilder_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
             list := BasicArrayListD_Package.Create;
             commonButtons := CommonButtons_Package.getInstance;
             touchButtonLocationHelper := TouchButtonLocationHelper_Package.Create;
@@ -65,7 +65,7 @@ package body org.allbinary.input.motion.button.BasicTouchButtonsBuilder_Package 
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.GET_LIST, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, BasicTouchButtonsBuilder_Access'(This'Unchecked_Access), This.commonStrings.GET_LIST, e);
             return BasicArrayListUtil_Package.getInstance.getImmutableInstance;
                 end;
         end;

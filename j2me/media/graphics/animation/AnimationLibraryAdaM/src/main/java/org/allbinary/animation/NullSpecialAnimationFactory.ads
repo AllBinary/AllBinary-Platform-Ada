@@ -44,9 +44,9 @@ package org.allbinary.animation.NullSpecialAnimationFactory_Package is
    function getFactoryInstance return NullSpecialAnimationFactory_Access;
    function getInstance (This : in out NullSpecialAnimationFactory; instanceId : Integer) return Animation_Access;
    procedure getInstance (This : in out NullSpecialAnimationFactory; instanceId : Integer);
-   function getInstanceAnimation (This : in out NullSpecialAnimationFactory; animationInterface : Animation_Access) return Animation_Access;
-   procedure getInstanceAnimation (This : in out NullSpecialAnimationFactory; animationInterface : Animation_Access);
-   procedure setInitialScale (This : in out NullSpecialAnimationFactory; scaleProperties : ScaleProperties_Access);
+   function getInstanceAnimation (This : in out NullSpecialAnimationFactory; animationInterface_Param : access Animation'Class) return Animation_Access;
+   procedure getInstanceAnimation (This : in out NullSpecialAnimationFactory; animationInterface_Param : access Animation'Class);
+   procedure setInitialScale (This : in out NullSpecialAnimationFactory; scaleProperties_Param : access ScaleProperties'Class);
 
 end org.allbinary.animation.NullSpecialAnimationFactory_Package;
 

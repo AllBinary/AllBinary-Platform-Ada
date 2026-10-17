@@ -64,23 +64,23 @@ package org.allbinary.game.part.CountedLayerInterfaceFactoryPart_Package is
    end record;
    NULL_COUNTED_LAYER_INTERFACE_FACTORY : CountedLayerInterfaceFactoryPart_Access;
 
-   procedure Initialize (This : in out CountedLayerInterfaceFactoryPart'Class; total : Integer; countedPickedUpLayerInterfaceFactory : CountedPickedUpLayerInterfaceFactory_Access);
-   function Create (total : Integer; countedPickedUpLayerInterfaceFactory : CountedPickedUpLayerInterfaceFactory_Access) return CountedLayerInterfaceFactoryPart_Access;
-   procedure updateMeasurement (This : in out CountedLayerInterfaceFactoryPart; graphics : Graphics_Access);
-   procedure init (This : in out CountedLayerInterfaceFactoryPart; total : Integer; countedPickedUpLayerInterfaceFactory : CountedPickedUpLayerInterfaceFactory_Access);
-   function getInstance (This : in out CountedLayerInterfaceFactoryPart; hashtable : ABHashtable_Access; x : Integer; y : Integer; z : Integer) return AllBinaryLayer_Access;
-   procedure getInstance (This : in out CountedLayerInterfaceFactoryPart; hashtable : ABHashtable_Access; x : Integer; y : Integer; z : Integer);
+   procedure Initialize (This : in out CountedLayerInterfaceFactoryPart'Class; total : Integer; countedPickedUpLayerInterfaceFactory_Param : access CountedPickedUpLayerInterfaceFactory'Class);
+   function Create (total : Integer; countedPickedUpLayerInterfaceFactory_Param : access CountedPickedUpLayerInterfaceFactory'Class) return CountedLayerInterfaceFactoryPart_Access;
+   procedure updateMeasurement (This : in out CountedLayerInterfaceFactoryPart; graphics_Param : access Graphics'Class);
+   procedure init (This : in out CountedLayerInterfaceFactoryPart; total : Integer; countedPickedUpLayerInterfaceFactory_Param : access CountedPickedUpLayerInterfaceFactory'Class);
+   function getInstance (This : in out CountedLayerInterfaceFactoryPart; hashtable_Param : access ABHashtable'Class; x : Integer; y : Integer; z : Integer) return AllBinaryLayer_Access;
+   procedure getInstance (This : in out CountedLayerInterfaceFactoryPart; hashtable_Param : access ABHashtable'Class; x : Integer; y : Integer; z : Integer);
    function getTotal (This : in out CountedLayerInterfaceFactoryPart) return Integer;
    procedure setTotal (This : in out CountedLayerInterfaceFactoryPart; total : Integer);
-   procedure paint (This : in out CountedLayerInterfaceFactoryPart; graphics : Graphics_Access);
-   procedure paintThreed (This : in out CountedLayerInterfaceFactoryPart; graphics : Graphics_Access);
+   procedure paint (This : in out CountedLayerInterfaceFactoryPart; graphics_Param : access Graphics'Class);
+   procedure paintThreed (This : in out CountedLayerInterfaceFactoryPart; graphics_Param : access Graphics'Class);
    function getAnimationInterface (This : in out CountedLayerInterfaceFactoryPart) return Animation_Access;
-   procedure setAnimationInterface (This : in out CountedLayerInterfaceFactoryPart; animationInterface : Animation_Access);
+   procedure setAnimationInterface (This : in out CountedLayerInterfaceFactoryPart; animationInterface_Param : access Animation'Class);
    function getXOffset (This : in out CountedLayerInterfaceFactoryPart) return Integer;
    procedure setXOffset (This : in out CountedLayerInterfaceFactoryPart; totalStringWidth : Integer);
    function getTotalString (This : in out CountedLayerInterfaceFactoryPart) return Character_Array_Access;
    function getCountedPickedUpLayerInterfaceFactory (This : in out CountedLayerInterfaceFactoryPart) return CountedPickedUpLayerInterfaceFactory_Access;
-   procedure setCountedPickedUpLayerInterfaceFactory (This : in out CountedLayerInterfaceFactoryPart; countedPickedUpLayerInterfaceFactory : CountedPickedUpLayerInterfaceFactory_Access);
+   procedure setCountedPickedUpLayerInterfaceFactory (This : in out CountedLayerInterfaceFactoryPart; countedPickedUpLayerInterfaceFactory_Param : access CountedPickedUpLayerInterfaceFactory'Class);
 
 end org.allbinary.game.part.CountedLayerInterfaceFactoryPart_Package;
 

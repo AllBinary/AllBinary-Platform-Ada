@@ -42,13 +42,15 @@ package body org.allbinary.game.configuration.persistance.BasicPersitance_Packag
    end Create;
 
    --  throws Exception
-   procedure deleteRecoreStore (This : in out BasicPersitance; abeClientInformation : AbeClientInformationInterface_Access) is
+   procedure deleteRecoreStore (This : in out BasicPersitance; abeClientInformation_Param : access AbeClientInformationInterface'Class) is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
    begin
         RecordStore_Package.deleteRecordStore (This.getRecordId (abeClientInformation));
    end deleteRecoreStore;
 
    --  throws Exception
-   procedure deleteAll (This : in out BasicPersitance; abeClientInformation : AbeClientInformationInterface_Access) is
+   procedure deleteAll (This : in out BasicPersitance; abeClientInformation_Param : access AbeClientInformationInterface'Class) is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
       size : Integer;
       integer_Id : Integer;
       index : Integer;
@@ -62,12 +64,13 @@ package body org.allbinary.game.configuration.persistance.BasicPersitance_Packag
    end deleteAll;
 
    --  throws Exception
-   procedure delete (This : in out BasicPersitance; abeClientInformation : AbeClientInformationInterface_Access; deleteId : Integer) is
+   procedure delete (This : in out BasicPersitance; abeClientInformation_Param : access AbeClientInformationInterface'Class; deleteId : Integer) is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
       recordStore : RecordStore_Access;
    begin
         recordStore := NullRecordStore_Package.NULL_RECORD_STORE;
         begin
-            This.logUtil.putF (StringMaker_Package.Create.append (This.persistanceStrings.DELETING_WITH_ID).appendint (deleteId).toString, This'Unchecked_Access, This.commonStrings.delete);
+            This.logUtil.putF (StringMaker_Package.Create.append (This.persistanceStrings.DELETING_WITH_ID).appendint (deleteId).toString, BasicPersitance_Access'(This'Unchecked_Access), This.commonStrings.delete);
             recordStore := RecordStore_Package.openRecordStore (This.getRecordId (abeClientInformation), True);
             recordStore.deleteRecord (deleteId);
         exception
@@ -81,13 +84,14 @@ package body org.allbinary.game.configuration.persistance.BasicPersitance_Packag
         --  finally
         begin
             if (recordStore) /= (null) then
-                PreLogUtil_Package.put (This.persistanceStrings.CLOSING_RECORDSTORE, This'Unchecked_Access, This.commonStrings.delete);
+                PreLogUtil_Package.put (This.persistanceStrings.CLOSING_RECORDSTORE, BasicPersitance_Access'(This'Unchecked_Access), This.commonStrings.delete);
                 recordStore.closeRecordStore;
             end if;
         end;
    end delete;
 
-   function getRecordId (This : in out BasicPersitance; abeClientInformation : AbeClientInformationInterface_Access) return Unbounded_String is
+   function getRecordId (This : in out BasicPersitance; abeClientInformation_Param : access AbeClientInformationInterface'Class) return Unbounded_String is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
    begin
         return This.platformRecordIdUtil.getRecordId (abeClientInformation, This.recordId);
    end getRecordId;
@@ -108,8 +112,8 @@ package body org.allbinary.game.configuration.persistance.BasicPersitance_Packag
         This.idList.clear;
    end clear;
 
-   procedure getRecordId (This : in out BasicPersitance; abeClientInformation : AbeClientInformationInterface_Access) is
-      Java_Result : constant Unbounded_String := BasicPersitance'Class (This).getRecordId (abeClientInformation);
+   procedure getRecordId (This : in out BasicPersitance; abeClientInformation_Param : access AbeClientInformationInterface'Class) is
+      Java_Result : constant Unbounded_String := BasicPersitance'Class (This).getRecordId (abeClientInformation_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

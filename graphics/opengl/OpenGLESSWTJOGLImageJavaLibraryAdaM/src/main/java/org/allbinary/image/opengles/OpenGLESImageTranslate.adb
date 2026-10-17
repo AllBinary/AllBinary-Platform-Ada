@@ -38,12 +38,16 @@ package body org.allbinary.image.opengles.OpenGLESImageTranslate_Package is
         return OpenGLESImageTranslate_Package.instance;
    end getInstance;
 
-   procedure translate (This : in out OpenGLESImageTranslate; gl : GL10_Access; openGLESImage : OpenGLESImage_Access; x : Float; y : Float) is
+   procedure translate (This : in out OpenGLESImageTranslate; gl_Param : access GL10'Class; openGLESImage_Param : access OpenGLESImage'Class; x : Float; y : Float) is
+      gl : GL10_Access := GL10_Access (gl_Param);
+      openGLESImage : OpenGLESImage_Access := OpenGLESImage_Access (openGLESImage_Param);
    begin
         openGLESImage.imageProcessor.translate (gl, x, y);
    end translate;
 
-   procedure translate2 (This : in out OpenGLESImageTranslate; gl : GL10_Access; openGLESImage : OpenGLESImage_Access) is
+   procedure translate2 (This : in out OpenGLESImageTranslate; gl_Param : access GL10'Class; openGLESImage_Param : access OpenGLESImage'Class) is
+      gl : GL10_Access := GL10_Access (gl_Param);
+      openGLESImage : OpenGLESImage_Access := OpenGLESImage_Access (openGLESImage_Param);
    begin
         null;
    end translate2;

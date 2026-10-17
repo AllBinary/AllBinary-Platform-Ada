@@ -38,7 +38,8 @@ package body org.allbinary.business.user.commerce.money.payment.Payment_Package 
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out Payment'Class; payment : HashMap_Access) is
+   procedure Initialize (This : in out Payment'Class; payment_Param : access HashMap'Class) is
+      payment : HashMap_Access := HashMap_Access (payment_Param);
       def : Unbounded_String;
    begin
       Initialize_Fields (This);
@@ -66,14 +67,15 @@ package body org.allbinary.business.user.commerce.money.payment.Payment_Package 
         This.magneticInkCheckReader := Unbounded_String (payment.get (PaymentData_Package.MAGNETICINKCHECKREADER));
    end Initialize;
 
-   function Create (payment : HashMap_Access) return Payment_Access is
+   function Create (payment_Param : access HashMap'Class) return Payment_Access is
       This : constant Payment_Access := new Payment;
    begin
-      Payment_Package.Initialize (This.all, payment);
+      Payment_Package.Initialize (This.all, payment_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out Payment'Class; request : ServletRequest_Access) is
+   procedure Initialize (This : in out Payment'Class; request_Param : access ServletRequest'Class) is
+      request : ServletRequest_Access := ServletRequest_Access (request_Param);
    begin
       Initialize_Fields (This);
         This.name := request.getParameter (PaymentData_Package.NAME);
@@ -92,10 +94,10 @@ package body org.allbinary.business.user.commerce.money.payment.Payment_Package 
         This.magneticInkCheckReader := request.getParameter (PaymentData_Package.MAGNETICINKCHECKREADER);
    end Initialize;
 
-   function Create (request : ServletRequest_Access) return Payment_Access is
+   function Create (request_Param : access ServletRequest'Class) return Payment_Access is
       This : constant Payment_Access := new Payment;
    begin
-      Payment_Package.Initialize (This.all, request);
+      Payment_Package.Initialize (This.all, request_Param);
       return This;
    end Create;
 
@@ -321,7 +323,8 @@ package body org.allbinary.business.user.commerce.money.payment.Payment_Package 
    end toHashMap;
 
    --  throws Exception
-   function toXmlNode (This : in out Payment; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out Payment; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       hashMap : HashMap_Access;
       node : Node_Access;
    begin
@@ -345,7 +348,8 @@ package body org.allbinary.business.user.commerce.money.payment.Payment_Package 
         return null;
    end toValidationInfoDoc;
 
-   function toValidationInfoNode (This : in out Payment; document : Document_Access) return Node_Access is
+   function toValidationInfoNode (This : in out Payment; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
    begin
         return null;
    end toValidationInfoNode;
@@ -355,15 +359,15 @@ package body org.allbinary.business.user.commerce.money.payment.Payment_Package 
         return Null_Unbounded_String;
    end validationInfo;
 
-   procedure toXmlNode (This : in out Payment; document : Document_Access) is
-      Java_Result : constant Node_Access := Payment'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out Payment; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := Payment'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toXmlNode;
 
-   procedure toValidationInfoNode (This : in out Payment; document : Document_Access) is
-      Java_Result : constant Node_Access := Payment'Class (This).toValidationInfoNode (document);
+   procedure toValidationInfoNode (This : in out Payment; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := Payment'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

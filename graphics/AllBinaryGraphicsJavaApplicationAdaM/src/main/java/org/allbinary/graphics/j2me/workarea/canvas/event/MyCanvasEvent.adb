@@ -21,15 +21,16 @@ package body org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Pac
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out MyCanvasEvent'Class; source : Java_Object_Access) is
+   procedure Initialize (This : in out MyCanvasEvent'Class; source_Param : access Java_Object'Class) is
+      source : Java_Object_Access := Java_Object_Access (source_Param);
    begin
         EventObject_Package.Initialize (This, source);
    end Initialize;
 
-   function Create (source : Java_Object_Access) return MyCanvasEvent_Access is
+   function Create (source_Param : access Java_Object'Class) return MyCanvasEvent_Access is
       This : constant MyCanvasEvent_Access := new MyCanvasEvent;
    begin
-      MyCanvasEvent_Package.Initialize (This.all, source);
+      MyCanvasEvent_Package.Initialize (This.all, source_Param);
       return This;
    end Create;
 

@@ -22,26 +22,30 @@ package body org.allbinary.game.midlet.DemoGameMidletEvent_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out DemoGameMidletEvent'Class; anyType : Java_Object_Access; demoGameMidletState : DemoGameMidletState_Access) is
+   procedure Initialize (This : in out DemoGameMidletEvent'Class; anyType_Param : access Java_Object'Class; demoGameMidletState_Param : access DemoGameMidletState'Class) is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      demoGameMidletState : DemoGameMidletState_Access := DemoGameMidletState_Access (demoGameMidletState_Param);
    begin
         AllBinaryEventObject_Package.Initialize (This, anyType);
         Initialize_Fields (This);
         This.demoGameMidletState := demoGameMidletState;
    end Initialize;
 
-   function Create (anyType : Java_Object_Access; demoGameMidletState : DemoGameMidletState_Access) return DemoGameMidletEvent_Access is
+   function Create (anyType_Param : access Java_Object'Class; demoGameMidletState_Param : access DemoGameMidletState'Class) return DemoGameMidletEvent_Access is
       This : constant DemoGameMidletEvent_Access := new DemoGameMidletEvent;
    begin
-      DemoGameMidletEvent_Package.Initialize (This.all, anyType, demoGameMidletState);
+      DemoGameMidletEvent_Package.Initialize (This.all, anyType_Param, demoGameMidletState_Param);
       return This;
    end Create;
 
-   procedure init (This : in out DemoGameMidletEvent; anyType : Java_Object_Access) is
+   procedure init (This : in out DemoGameMidletEvent; anyType_Param : access Java_Object'Class) is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         This.setSource (anyType);
    end init;
 
-   procedure setDemoGameMidletState (This : in out DemoGameMidletEvent; demoGameMidletState : DemoGameMidletState_Access) is
+   procedure setDemoGameMidletState (This : in out DemoGameMidletEvent; demoGameMidletState_Param : access DemoGameMidletState'Class) is
+      demoGameMidletState : DemoGameMidletState_Access := DemoGameMidletState_Access (demoGameMidletState_Param);
    begin
         This.demoGameMidletState := demoGameMidletState;
    end setDemoGameMidletState;

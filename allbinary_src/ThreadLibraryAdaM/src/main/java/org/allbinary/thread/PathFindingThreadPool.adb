@@ -38,22 +38,26 @@ package body org.allbinary.thread.PathFindingThreadPool_Package is
       return This;
    end Create;
 
-   procedure runTaskWithPriority (This : in out PathFindingThreadPool; task_Id : PriorityRunnable_Access) is
+   procedure runTaskWithPriority (This : in out PathFindingThreadPool; task_Id_Param : access PriorityRunnable'Class) is
+      task_Id : PriorityRunnable_Access := PriorityRunnable_Access (task_Id_Param);
    begin
         ThreadPool (This).runTaskWithPriority (task_Id);
    end runTaskWithPriority;
 
-   procedure runTask (This : in out PathFindingThreadPool; task_Id : Runnable_Access) is
+   procedure runTask (This : in out PathFindingThreadPool; task_Id_Param : access Runnable'Class) is
+      task_Id : Runnable_Access := Runnable_Access (task_Id_Param);
    begin
         ThreadPool (This).runTask (task_Id);
    end runTask;
 
-   procedure startTask (This : in out PathFindingThreadPool; task_Id : Runnable_Access) is
+   procedure startTask (This : in out PathFindingThreadPool; task_Id_Param : access Runnable'Class) is
+      task_Id : Runnable_Access := Runnable_Access (task_Id_Param);
    begin
         null;
    end startTask;
 
-   procedure completedTask (This : in out PathFindingThreadPool; task_Id : Runnable_Access) is
+   procedure completedTask (This : in out PathFindingThreadPool; task_Id_Param : access Runnable'Class) is
+      task_Id : Runnable_Access := Runnable_Access (task_Id_Param);
    begin
         null;
    end completedTask;

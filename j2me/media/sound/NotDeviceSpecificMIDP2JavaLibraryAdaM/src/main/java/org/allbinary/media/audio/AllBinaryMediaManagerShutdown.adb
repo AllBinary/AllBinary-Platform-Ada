@@ -34,7 +34,8 @@ package body org.allbinary.media.audio.AllBinaryMediaManagerShutdown_Package is
 
 
    --  throws Exception
-   procedure shutdown (soundsFactoryInterface : SoundsFactoryInterface_Access) is
+   procedure shutdown (soundsFactoryInterface_Param : access SoundsFactoryInterface'Class) is
+      soundsFactoryInterface : SoundsFactoryInterface_Access := SoundsFactoryInterface_Access (soundsFactoryInterface_Param);
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
    begin

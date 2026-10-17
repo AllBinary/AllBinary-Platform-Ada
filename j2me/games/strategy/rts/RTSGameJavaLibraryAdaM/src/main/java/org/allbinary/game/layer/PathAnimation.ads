@@ -69,11 +69,11 @@ package org.allbinary.game.layer.PathAnimation_Package is
       endColor : BasicColor_Access;
    end record;
 
-   procedure Initialize (This : in out PathAnimation'Class; pathFindingLayer : PathFindingLayerInterface_Access; linePathAnimation : LinePathAnimation_Access);
-   function Create (pathFindingLayer : PathFindingLayerInterface_Access; linePathAnimation : LinePathAnimation_Access) return PathAnimation_Access;
-   procedure setAllBinaryGameLayerManager (This : in out PathAnimation; allBinaryGameLayerManager : AllBinaryGameLayerManager_Access);
+   procedure Initialize (This : in out PathAnimation'Class; pathFindingLayer_Param : access PathFindingLayerInterface'Class; linePathAnimation_Param : access LinePathAnimation'Class);
+   function Create (pathFindingLayer_Param : access PathFindingLayerInterface'Class; linePathAnimation_Param : access LinePathAnimation'Class) return PathAnimation_Access;
+   procedure setAllBinaryGameLayerManager (This : in out PathAnimation; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class);
    procedure nextFrame (This : in out PathAnimation);
-   procedure paintXY (This : in out PathAnimation; graphics : Graphics_Access; x : Integer; y : Integer);
+   procedure paintXY (This : in out PathAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
 
 end org.allbinary.game.layer.PathAnimation_Package;
 

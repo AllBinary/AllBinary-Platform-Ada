@@ -38,9 +38,10 @@ package body org.allbinary.logic.system.hardware.components.interfaces.NoHardwar
         return NoHardwareComponent_Package.instance;
    end getInstance;
 
-   function compareTo (This : in out NoHardwareComponent; componentInterface : HardwareComponentInterface_Access) return Boolean is
+   function compareTo (This : in out NoHardwareComponent; componentInterface_Param : access HardwareComponentInterface'Class) return Boolean is
+      componentInterface : HardwareComponentInterface_Access := HardwareComponentInterface_Access (componentInterface_Param);
    begin
-        if (This'Unchecked_Access) = (componentInterface) then
+        if (NoHardwareComponent_Access'(This'Unchecked_Access)) = (componentInterface) then
             return True;
         end if;
         return False;
@@ -51,8 +52,8 @@ package body org.allbinary.logic.system.hardware.components.interfaces.NoHardwar
         return StringUtil_Package.getInstance.NULL_STRING;
    end toString;
 
-   procedure compareTo (This : in out NoHardwareComponent; componentInterface : HardwareComponentInterface_Access) is
-      Java_Result : constant Boolean := NoHardwareComponent'Class (This).compareTo (componentInterface);
+   procedure compareTo (This : in out NoHardwareComponent; componentInterface_Param : access HardwareComponentInterface'Class) is
+      Java_Result : constant Boolean := NoHardwareComponent'Class (This).compareTo (componentInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -35,8 +35,8 @@ package org.allbinary.logic.util.cache.NoCacheableFactory_Package is
 
    procedure Initialize (This : in out NoCacheableFactory'Class);
    function Create return NoCacheableFactory_Access;
-   function getInstance (This : in out NoCacheableFactory; key : Java_Object_Access) return CacheableInterface_Access;
-   procedure getInstance (This : in out NoCacheableFactory; key : Java_Object_Access);
+   function getInstance (This : in out NoCacheableFactory; key_Param : access Java_Object'Class) return CacheableInterface_Access;
+   procedure getInstance (This : in out NoCacheableFactory; key_Param : access Java_Object'Class);
 
 end org.allbinary.logic.util.cache.NoCacheableFactory_Package;
 

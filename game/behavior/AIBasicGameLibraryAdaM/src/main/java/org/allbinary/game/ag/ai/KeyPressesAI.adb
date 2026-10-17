@@ -23,7 +23,10 @@ package body org.allbinary.game.ag.ai.KeyPressesAI_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out KeyPressesAI'Class; hashtable : ABHashtable_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) is
+   procedure Initialize (This : in out KeyPressesAI'Class; hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) is
+      hashtable : ABHashtable_Access := ABHashtable_Access (hashtable_Param);
+      ownerLayerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (ownerLayerInterface_Param);
+      gameInput : GameInput_Access := GameInput_Access (gameInput_Param);
       objectArray : Java_Object_Access_Array_Access;
       size : Integer;
       index : Integer;
@@ -38,15 +41,16 @@ package body org.allbinary.game.ag.ai.KeyPressesAI_Package is
         end loop;
    end Initialize;
 
-   function Create (hashtable : ABHashtable_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return KeyPressesAI_Access is
+   function Create (hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return KeyPressesAI_Access is
       This : constant KeyPressesAI_Access := new KeyPressesAI;
    begin
-      KeyPressesAI_Package.Initialize (This.all, hashtable, ownerLayerInterface, gameInput);
+      KeyPressesAI_Package.Initialize (This.all, hashtable_Param, ownerLayerInterface_Param, gameInput_Param);
       return This;
    end Create;
 
    --  throws Exception
-   procedure processAI (This : in out KeyPressesAI; allBinaryLayerManager : AllBinaryLayerManager_Access) is
+   procedure processAI (This : in out KeyPressesAI; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class) is
+      allBinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
       index : Integer;
    begin
         if This.on then

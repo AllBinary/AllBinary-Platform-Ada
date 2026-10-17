@@ -34,8 +34,8 @@ package org.allbinary.business.category.store.theme.ThemeComparator_Package is
 
    procedure Initialize (This : in out ThemeComparator'Class);
    function Create return ThemeComparator_Access;
-   function compare (This : in out ThemeComparator; anyType : Java_Object_Access; object2 : Java_Object_Access) return Integer;
-   procedure compare (This : in out ThemeComparator; anyType : Java_Object_Access; object2 : Java_Object_Access);
+   function compare (This : in out ThemeComparator; anyType_Param : access Java_Object'Class; object2_Param : access Java_Object'Class) return Integer;
+   procedure compare (This : in out ThemeComparator; anyType_Param : access Java_Object'Class; object2_Param : access Java_Object'Class);
 
 end org.allbinary.business.category.store.theme.ThemeComparator_Package;
 

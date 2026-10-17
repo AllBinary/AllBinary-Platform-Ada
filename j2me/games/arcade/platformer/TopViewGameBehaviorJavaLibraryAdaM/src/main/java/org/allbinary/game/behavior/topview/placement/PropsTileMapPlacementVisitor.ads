@@ -47,7 +47,7 @@ package org.allbinary.game.behavior.topview.placement.PropsTileMapPlacementVisit
 
    procedure Initialize (This : in out PropsTileMapPlacementVisitor'Class);
    function Create return PropsTileMapPlacementVisitor_Access;
-   procedure visit (This : in out PropsTileMapPlacementVisitor; lastMap : TiledMap_Access; mapData : Integer_Array_Access_Array_Access);
+   procedure visit (This : in out PropsTileMapPlacementVisitor; lastMap_Param : access TiledMap'Class; mapData : Integer_Array_Access_Array_Access);
    procedure visit2 (This : in out PropsTileMapPlacementVisitor; mapArray : Integer_Array_Access_Array_Access; mapData : Integer_Array_Access_Array_Access; index : Integer; index2 : Integer);
 
 end org.allbinary.game.behavior.topview.placement.PropsTileMapPlacementVisitor_Package;

@@ -41,15 +41,15 @@ package body org.allbinary.game.input.form.BuildingRTSFormInput_Package is
         This.isUnitProducer := isUnitProducer;
         smallIntegerSingletonFactory := SmallIntegerSingletonFactory_Package.getInstance;
         basicColorFactory := BasicColorFactory_Package.getInstance;
-        This.buildOnPathGameNotificationEvent := GameNotificationEvent_Package.Create (This'Unchecked_Access, RTSGameStrings_Package.getInstance.BUILD_ON_PATH, smallIntegerSingletonFactory.getAt (2), basicColorFactory.PINK, BooleanFactory_Package.getInstance.FALSE);
-        This.spotTakenGameNotificationEvent := GameNotificationEvent_Package.Create (This'Unchecked_Access, RTSGameStrings_Package.getInstance.SPOT_TAKEN, smallIntegerSingletonFactory.getAt (2), basicColorFactory.PINK, BooleanFactory_Package.getInstance.FALSE);
-        This.selectBuildSpotGameNotificationEvent := GameNotificationEvent_Package.Create (This'Unchecked_Access, RTSGameStrings_Package.getInstance.SELECT_BUILD_SPOT, smallIntegerSingletonFactory.getAt (2), basicColorFactory.PINK, BooleanFactory_Package.getInstance.FALSE);
-        This.roadCollisionGameNotificationEvent := GameNotificationEvent_Package.Create (This'Unchecked_Access, RTSGameStrings_Package.getInstance.ROAD_COLLISION, smallIntegerSingletonFactory.getAt (2), basicColorFactory.PINK, BooleanFactory_Package.getInstance.FALSE);
-        This.noMoneyGameNotificationEvent := GameNotificationEvent_Package.Create (This'Unchecked_Access, RTSGameStrings_Package.getInstance.NO_MONEY, smallIntegerSingletonFactory.getAt (2), basicColorFactory.PINK, BooleanFactory_Package.getInstance.FALSE);
-        This.buildingCollisionGameNotificationEvent := GameNotificationEvent_Package.Create (This'Unchecked_Access, RTSGameStrings_Package.getInstance.BUILDING_COLLISION, smallIntegerSingletonFactory.getAt (2), basicColorFactory.PINK, BooleanFactory_Package.getInstance.FALSE);
-        This.structureToCloseCollisionGameNotificationEvent := GameNotificationEvent_Package.Create (This'Unchecked_Access, RTSGameStrings_Package.getInstance.STRUCTURE_TO_CLOSE, smallIntegerSingletonFactory.getAt (2), basicColorFactory.PINK, BooleanFactory_Package.getInstance.FALSE);
-        This.buildingGameNotificationEvent := GameNotificationEvent_Package.Create (This'Unchecked_Access, RTSGameStrings_Package.getInstance.BUILDING, smallIntegerSingletonFactory.getAt (2), basicColorFactory.PINK, BooleanFactory_Package.getInstance.FALSE);
-        This.mapEdgeGameNotificationEvent := GameNotificationEvent_Package.Create (This'Unchecked_Access, RTSGameStrings_Package.getInstance.MAP_EDGE, smallIntegerSingletonFactory.getAt (2), basicColorFactory.PINK, BooleanFactory_Package.getInstance.FALSE);
+        This.buildOnPathGameNotificationEvent := GameNotificationEvent_Package.Create (BuildingRTSFormInput_Access'(This'Unchecked_Access), RTSGameStrings_Package.getInstance.BUILD_ON_PATH, smallIntegerSingletonFactory.getAt (2), basicColorFactory.PINK, BooleanFactory_Package.getInstance.FALSE);
+        This.spotTakenGameNotificationEvent := GameNotificationEvent_Package.Create (BuildingRTSFormInput_Access'(This'Unchecked_Access), RTSGameStrings_Package.getInstance.SPOT_TAKEN, smallIntegerSingletonFactory.getAt (2), basicColorFactory.PINK, BooleanFactory_Package.getInstance.FALSE);
+        This.selectBuildSpotGameNotificationEvent := GameNotificationEvent_Package.Create (BuildingRTSFormInput_Access'(This'Unchecked_Access), RTSGameStrings_Package.getInstance.SELECT_BUILD_SPOT, smallIntegerSingletonFactory.getAt (2), basicColorFactory.PINK, BooleanFactory_Package.getInstance.FALSE);
+        This.roadCollisionGameNotificationEvent := GameNotificationEvent_Package.Create (BuildingRTSFormInput_Access'(This'Unchecked_Access), RTSGameStrings_Package.getInstance.ROAD_COLLISION, smallIntegerSingletonFactory.getAt (2), basicColorFactory.PINK, BooleanFactory_Package.getInstance.FALSE);
+        This.noMoneyGameNotificationEvent := GameNotificationEvent_Package.Create (BuildingRTSFormInput_Access'(This'Unchecked_Access), RTSGameStrings_Package.getInstance.NO_MONEY, smallIntegerSingletonFactory.getAt (2), basicColorFactory.PINK, BooleanFactory_Package.getInstance.FALSE);
+        This.buildingCollisionGameNotificationEvent := GameNotificationEvent_Package.Create (BuildingRTSFormInput_Access'(This'Unchecked_Access), RTSGameStrings_Package.getInstance.BUILDING_COLLISION, smallIntegerSingletonFactory.getAt (2), basicColorFactory.PINK, BooleanFactory_Package.getInstance.FALSE);
+        This.structureToCloseCollisionGameNotificationEvent := GameNotificationEvent_Package.Create (BuildingRTSFormInput_Access'(This'Unchecked_Access), RTSGameStrings_Package.getInstance.STRUCTURE_TO_CLOSE, smallIntegerSingletonFactory.getAt (2), basicColorFactory.PINK, BooleanFactory_Package.getInstance.FALSE);
+        This.buildingGameNotificationEvent := GameNotificationEvent_Package.Create (BuildingRTSFormInput_Access'(This'Unchecked_Access), RTSGameStrings_Package.getInstance.BUILDING, smallIntegerSingletonFactory.getAt (2), basicColorFactory.PINK, BooleanFactory_Package.getInstance.FALSE);
+        This.mapEdgeGameNotificationEvent := GameNotificationEvent_Package.Create (BuildingRTSFormInput_Access'(This'Unchecked_Access), RTSGameStrings_Package.getInstance.MAP_EDGE, smallIntegerSingletonFactory.getAt (2), basicColorFactory.PINK, BooleanFactory_Package.getInstance.FALSE);
    end Initialize;
 
    function Create (groupInterface : Group_Access_Array_Access; isUnitProducer : Boolean) return BuildingRTSFormInput_Access is
@@ -60,7 +60,8 @@ package body org.allbinary.game.input.form.BuildingRTSFormInput_Package is
    end Create;
 
    --  throws Exception
-   procedure setAllBinaryGameLayerManager (This : in out BuildingRTSFormInput; allBinaryGameLayerManager : AllBinaryGameLayerManager_Access) is
+   procedure setAllBinaryGameLayerManager (This : in out BuildingRTSFormInput; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class) is
+      allBinaryGameLayerManager : AllBinaryGameLayerManager_Access := AllBinaryGameLayerManager_Access (allBinaryGameLayerManager_Param);
       geographicMapCompositeInterface : GeographicMapCompositeInterface_Access;
       geographicMapInterface : BasicGeographicMap_Access;
    begin
@@ -79,7 +80,11 @@ package body org.allbinary.game.input.form.BuildingRTSFormInput_Package is
    end setAllBinaryGameLayerManager;
 
    --  throws Exception
-   procedure processGameSpecific (This : in out BuildingRTSFormInput; associatedRtsLayer : CollidableDestroyableDamageableLayer_Access; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; layerManager : AllBinaryLayerManager_Access; item : ABCustomItem_Access; itemIndex : Integer) is
+   procedure processGameSpecific (This : in out BuildingRTSFormInput; associatedRtsLayer_Param : access CollidableDestroyableDamageableLayer'Class; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; layerManager_Param : access AllBinaryLayerManager'Class; item_Param : access ABCustomItem'Class; itemIndex : Integer) is
+      associatedRtsLayer : CollidableDestroyableDamageableLayer_Access := CollidableDestroyableDamageableLayer_Access (associatedRtsLayer_Param);
+      rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access := RTSPlayerLayerInterface_Access (rtsPlayerLayerInterface_Param);
+      layerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
+      item : ABCustomItem_Access := ABCustomItem_Access (item_Param);
    begin
         RTSFormInput (This).process (layerManager);
         This.buildFromMotionInput (rtsPlayerLayerInterface, layerManager, item, itemIndex);
@@ -90,7 +95,8 @@ package body org.allbinary.game.input.form.BuildingRTSFormInput_Package is
         return This.dropCellPositionHistory.isCellPositionWithDrop (This.getSelectedGeographicCellPosition);
    end isPositionBlocked;
 
-   function isDemoLocked (This : in out BuildingRTSFormInput; item : ABCustomItem_Access) return Boolean is
+   function isDemoLocked (This : in out BuildingRTSFormInput; item_Param : access ABCustomItem'Class) return Boolean is
+      item : ABCustomItem_Access := ABCustomItem_Access (item_Param);
       factoryItem : LayerInterfaceFactoryImageItem_Access;
       layerInterfaceFactoryInterface : DemoLockedWithCostLayerInterfaceFactoryInterface_Access;
    begin
@@ -104,7 +110,10 @@ package body org.allbinary.game.input.form.BuildingRTSFormInput_Package is
    end isDemoLocked;
 
    --  throws Exception
-   procedure buildFromMotionInput (This : in out BuildingRTSFormInput; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; layerManager : AllBinaryLayerManager_Access; item : ABCustomItem_Access; itemIndex : Integer) is
+   procedure buildFromMotionInput (This : in out BuildingRTSFormInput; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; layerManager_Param : access AllBinaryLayerManager'Class; item_Param : access ABCustomItem'Class; itemIndex : Integer) is
+      rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access := RTSPlayerLayerInterface_Access (rtsPlayerLayerInterface_Param);
+      layerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
+      item : ABCustomItem_Access := ABCustomItem_Access (item_Param);
       commonStrings : CommonStrings_Access;
       geographicMapCompositeInterface : GeographicMapCompositeInterface_Access;
       geographicMapInterface : BasicGeographicMap_Access;
@@ -115,7 +124,7 @@ package body org.allbinary.game.input.form.BuildingRTSFormInput_Package is
       cellPoint : GPoint_Access;
    begin
         commonStrings := CommonStrings_Package.getInstance;
-        This.logUtil.putF (commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("buildFromMotionInput"));
+        This.logUtil.putF (commonStrings.START, BuildingRTSFormInput_Access'(This'Unchecked_Access), To_Unbounded_String ("buildFromMotionInput"));
         if (layerManager) = (null) then
             Java_Throw (Java_New_Exception ("RuntimeException"));
         end if;
@@ -163,7 +172,10 @@ package body org.allbinary.game.input.form.BuildingRTSFormInput_Package is
    end buildFromMotionInput;
 
    --  throws Exception
-   function attemptBuild (This : in out BuildingRTSFormInput; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; layerManager : AllBinaryLayerManager_Access; layerInterface : RTSLayer_Access; itemIndex : Integer) return Boolean is
+   function attemptBuild (This : in out BuildingRTSFormInput; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; layerManager_Param : access AllBinaryLayerManager'Class; layerInterface_Param : access RTSLayer'Class; itemIndex : Integer) return Boolean is
+      rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access := RTSPlayerLayerInterface_Access (rtsPlayerLayerInterface_Param);
+      layerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
+      layerInterface : RTSLayer_Access := RTSLayer_Access (layerInterface_Param);
       geographicMapCellPositionArea : GeographicMapCellPositionAreaBase_Access;
       occupyList : BasicArrayList_Access;
       geographicMapCellType : GeographicMapCellType_Access;
@@ -175,7 +187,7 @@ package body org.allbinary.game.input.form.BuildingRTSFormInput_Package is
       capital : Capital_Access;
       stringBuffer : StringMaker_Access;
    begin
-        This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Layer: ")).append (StringUtil_Package.getInstance.toString (layerInterface)).toString, This'Unchecked_Access, To_Unbounded_String ("attemptBuild"));
+        This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Layer: ")).append (StringUtil_Package.getInstance.toString (layerInterface)).toString, BuildingRTSFormInput_Access'(This'Unchecked_Access), To_Unbounded_String ("attemptBuild"));
         geographicMapCellPositionArea := layerInterface.geographicMapCellPositionAreaBase;
         occupyList := geographicMapCellPositionArea.getOccupyingGeographicMapCellPositionList;
         if not (This.isBuildAttemptValid (rtsPlayerLayerInterface, layerInterface)) then
@@ -204,7 +216,7 @@ package body org.allbinary.game.input.form.BuildingRTSFormInput_Package is
         stringBuffer.appendint (cost);
         stringBuffer.append (To_Unbounded_String (" with "));
         stringBuffer.appendint (Integer (capital.getTotalMoney));
-        This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("attemptBuild"));
+        This.logUtil.putF (stringBuffer.toString, BuildingRTSFormInput_Access'(This'Unchecked_Access), To_Unbounded_String ("attemptBuild"));
         if (cost) <= (capital.getTotalMoney) then
             layerInterface.construct (rtsPlayerLayerInterface);
             This.newUnconstructedRTSLayerInterfaceArray (itemIndex) := CollidableDestroyableDamageableLayer_Package.getNullInstance;
@@ -221,7 +233,9 @@ package body org.allbinary.game.input.form.BuildingRTSFormInput_Package is
    end attemptBuild;
 
    --  throws Exception
-   function isBuildAttemptValid (This : in out BuildingRTSFormInput; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; layerInterface : RTSLayer_Access) return Boolean is
+   function isBuildAttemptValid (This : in out BuildingRTSFormInput; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; layerInterface_Param : access RTSLayer'Class) return Boolean is
+      rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access := RTSPlayerLayerInterface_Access (rtsPlayerLayerInterface_Param);
+      layerInterface : RTSLayer_Access := RTSLayer_Access (layerInterface_Param);
       geographicMapCellPositionArea : GeographicMapCellPositionAreaBase_Access;
       occupyList : BasicArrayList_Access;
    begin
@@ -253,7 +267,10 @@ package body org.allbinary.game.input.form.BuildingRTSFormInput_Package is
    end isBuildAttemptValid;
 
    --  throws Exception
-   procedure add (This : in out BuildingRTSFormInput; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; layerManager : AllBinaryLayerManager_Access; layerInterface : RTSLayer_Access) is
+   procedure add (This : in out BuildingRTSFormInput; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; layerManager_Param : access AllBinaryLayerManager'Class; layerInterface_Param : access RTSLayer'Class) is
+      rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access := RTSPlayerLayerInterface_Access (rtsPlayerLayerInterface_Param);
+      layerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
+      layerInterface : RTSLayer_Access := RTSLayer_Access (layerInterface_Param);
       geographicMapCellPositionArea : GeographicMapCellPositionAreaBase_Access;
       occupyList : BasicArrayList_Access;
       rtsPlayerGameInput : RTSPlayerGameInput_Access;
@@ -270,7 +287,8 @@ package body org.allbinary.game.input.form.BuildingRTSFormInput_Package is
         end if;
    end add;
 
-   function isSurroundingCellsOffMap (This : in out BuildingRTSFormInput; layerInterface : RTSLayer_Access) return Boolean is
+   function isSurroundingCellsOffMap (This : in out BuildingRTSFormInput; layerInterface_Param : access RTSLayer'Class) return Boolean is
+      layerInterface : RTSLayer_Access := RTSLayer_Access (layerInterface_Param);
       geographicMapCellPositionArea : GeographicMapCellPositionAreaBase_Access;
       occupyList : BasicArrayList_Access;
       surroundList : BasicArrayList_Access;
@@ -291,7 +309,7 @@ package body org.allbinary.game.input.form.BuildingRTSFormInput_Package is
         stringBuffer.appendint (surroundSize);
         stringBuffer.append (To_Unbounded_String (" surroundList: "));
         stringBuffer.append (StringUtil_Package.getInstance.toString (surroundList));
-        This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("isSurroundingCellsOffMap"));
+        This.logUtil.putF (stringBuffer.toString, BuildingRTSFormInput_Access'(This'Unchecked_Access), To_Unbounded_String ("isSurroundingCellsOffMap"));
         isSurroundOffMap := False;
         if ((occupySize) = (1)) and then ((surroundSize) /= (8)) then
             isSurroundOffMap := True;
@@ -305,29 +323,29 @@ package body org.allbinary.game.input.form.BuildingRTSFormInput_Package is
         end if;
    end isSurroundingCellsOffMap;
 
-   procedure isDemoLocked (This : in out BuildingRTSFormInput; item : ABCustomItem_Access) is
-      Java_Result : constant Boolean := BuildingRTSFormInput'Class (This).isDemoLocked (item);
+   procedure isDemoLocked (This : in out BuildingRTSFormInput; item_Param : access ABCustomItem'Class) is
+      Java_Result : constant Boolean := BuildingRTSFormInput'Class (This).isDemoLocked (item_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isDemoLocked;
 
-   procedure attemptBuild (This : in out BuildingRTSFormInput; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; layerManager : AllBinaryLayerManager_Access; layerInterface : RTSLayer_Access; itemIndex : Integer) is
-      Java_Result : constant Boolean := BuildingRTSFormInput'Class (This).attemptBuild (rtsPlayerLayerInterface, layerManager, layerInterface, itemIndex);
+   procedure attemptBuild (This : in out BuildingRTSFormInput; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; layerManager_Param : access AllBinaryLayerManager'Class; layerInterface_Param : access RTSLayer'Class; itemIndex : Integer) is
+      Java_Result : constant Boolean := BuildingRTSFormInput'Class (This).attemptBuild (rtsPlayerLayerInterface_Param, layerManager_Param, layerInterface_Param, itemIndex);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end attemptBuild;
 
-   procedure isBuildAttemptValid (This : in out BuildingRTSFormInput; rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access; layerInterface : RTSLayer_Access) is
-      Java_Result : constant Boolean := BuildingRTSFormInput'Class (This).isBuildAttemptValid (rtsPlayerLayerInterface, layerInterface);
+   procedure isBuildAttemptValid (This : in out BuildingRTSFormInput; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; layerInterface_Param : access RTSLayer'Class) is
+      Java_Result : constant Boolean := BuildingRTSFormInput'Class (This).isBuildAttemptValid (rtsPlayerLayerInterface_Param, layerInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isBuildAttemptValid;
 
-   procedure isSurroundingCellsOffMap (This : in out BuildingRTSFormInput; layerInterface : RTSLayer_Access) is
-      Java_Result : constant Boolean := BuildingRTSFormInput'Class (This).isSurroundingCellsOffMap (layerInterface);
+   procedure isSurroundingCellsOffMap (This : in out BuildingRTSFormInput; layerInterface_Param : access RTSLayer'Class) is
+      Java_Result : constant Boolean := BuildingRTSFormInput'Class (This).isSurroundingCellsOffMap (layerInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

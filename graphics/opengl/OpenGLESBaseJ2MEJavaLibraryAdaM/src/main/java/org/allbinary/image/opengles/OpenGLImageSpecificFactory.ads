@@ -45,7 +45,7 @@ package org.allbinary.image.opengles.OpenGLImageSpecificFactory_Package is
    procedure Initialize (This : in out OpenGLImageSpecificFactory'Class);
    function Create return OpenGLImageSpecificFactory_Access;
    function getInstance return OpenGLImageSpecificFactory_Access;
-   procedure setImageFactory (This : in out OpenGLImageSpecificFactory; imageFactory : OpenGLImageFactory_Access);
+   procedure setImageFactory (This : in out OpenGLImageSpecificFactory; imageFactory_Param : access OpenGLImageFactory'Class);
    function getImageFactory (This : in out OpenGLImageSpecificFactory) return OpenGLImageFactory_Access;
 
 end org.allbinary.image.opengles.OpenGLImageSpecificFactory_Package;

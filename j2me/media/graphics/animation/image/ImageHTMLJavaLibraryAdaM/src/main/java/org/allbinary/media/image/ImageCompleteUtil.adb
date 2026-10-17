@@ -41,14 +41,17 @@ package body org.allbinary.media.image.ImageCompleteUtil_Package is
    end getInstance;
 
    --  throws Exception
-   procedure waitForImage (This : in out ImageCompleteUtil; image : Image_Access; name : Unbounded_String) is
+   procedure waitForImage (This : in out ImageCompleteUtil; image_Param : access Image'Class; name : Unbounded_String) is
+      image : Image_Access := Image_Access (image_Param);
    begin
         This.timeDelayHelper.setStartTime;
         This.waitForATime (image, name, This.timeDelayHelper);
    end waitForImage;
 
    --  throws Exception
-   function isReady (This : in out ImageCompleteUtil; image : Image_Access; name : Unbounded_String; timeDelayHelper : TimeDelayHelper_Access) return Boolean is
+   function isReady (This : in out ImageCompleteUtil; image_Param : access Image'Class; name : Unbounded_String; timeDelayHelper_Param : access TimeDelayHelper'Class) return Boolean is
+      image : Image_Access := Image_Access (image_Param);
+      timeDelayHelper : TimeDelayHelper_Access := TimeDelayHelper_Access (timeDelayHelper_Param);
       playnImage : PlaynImage_Access;
    begin
         playnImage := PlaynImage_Access (image);
@@ -62,7 +65,9 @@ package body org.allbinary.media.image.ImageCompleteUtil_Package is
    end isReady;
 
    --  throws Exception
-   procedure waitForATime (This : in out ImageCompleteUtil; image : Image_Access; name : Unbounded_String; timeDelayHelper : TimeDelayHelper_Access) is
+   procedure waitForATime (This : in out ImageCompleteUtil; image_Param : access Image'Class; name : Unbounded_String; timeDelayHelper_Param : access TimeDelayHelper'Class) is
+      image : Image_Access := Image_Access (image_Param);
+      timeDelayHelper : TimeDelayHelper_Access := TimeDelayHelper_Access (timeDelayHelper_Param);
       playnImage : PlaynImage_Access;
    begin
         playnImage := PlaynImage_Access (image);
@@ -84,14 +89,14 @@ package body org.allbinary.media.image.ImageCompleteUtil_Package is
         hashtable := GameFeatureImageCacheFactory_Package.getInstance.getHashtable;
         objectArray := HashtableUtil_Package.getInstance.getKeysAsArray (hashtable);
         size := objectArray'Length;
-        PreLogUtil_Package.put (To_Unbounded_String ("Total: ") & Java_Image (size), This'Unchecked_Access, To_Unbounded_String ("waitForAll"));
+        PreLogUtil_Package.put (To_Unbounded_String ("Total: ") & Java_Image (size), ImageCompleteUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("waitForAll"));
         for index in 0 .. (size) - 1 loop
             This.waitForATime (Image_Access (hashtable.get (objectArray (index))), Unbounded_String (objectArray (index)), This.allTimeDelayHelper);
         end loop;
    end waitForAll;
 
-   procedure isReady (This : in out ImageCompleteUtil; image : Image_Access; name : Unbounded_String; timeDelayHelper : TimeDelayHelper_Access) is
-      Java_Result : constant Boolean := ImageCompleteUtil'Class (This).isReady (image, name, timeDelayHelper);
+   procedure isReady (This : in out ImageCompleteUtil; image_Param : access Image'Class; name : Unbounded_String; timeDelayHelper_Param : access TimeDelayHelper'Class) is
+      Java_Result : constant Boolean := ImageCompleteUtil'Class (This).isReady (image_Param, name, timeDelayHelper_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -48,10 +48,10 @@ package views.admin.workflow.WorkFlowView_Package is
       workFlowInterface : WorkFlowInterface_Access;
    end record;
 
-   procedure Initialize (This : in out WorkFlowView'Class; transformInfoInterface : TransformInfoInterface_Access);
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return WorkFlowView_Access;
-   function toXmlNode (This : in out WorkFlowView; document : Document_Access) return Node_Access;
-   procedure toXmlNode (This : in out WorkFlowView; document : Document_Access);
+   procedure Initialize (This : in out WorkFlowView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return WorkFlowView_Access;
+   function toXmlNode (This : in out WorkFlowView; document_Param : access Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out WorkFlowView; document_Param : access Document'Class);
    procedure addDomNodeInterfaces (This : in out WorkFlowView);
    function view (This : in out WorkFlowView) return Unbounded_String;
 

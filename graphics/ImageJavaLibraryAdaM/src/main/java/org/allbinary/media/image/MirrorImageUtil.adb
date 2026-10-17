@@ -41,14 +41,14 @@ package body org.allbinary.media.image.MirrorImageUtil_Package is
       return This;
    end Create;
 
-   function getImage (This : in out MirrorImageUtil; bufferedImage_Param : BufferedImage_Access; verticle : Boolean; horizontal : Boolean) return BufferedImage_Access is
-      bufferedImage : BufferedImage_Access := bufferedImage_Param;
+   function getImage (This : in out MirrorImageUtil; bufferedImage_Param : access BufferedImage'Class; verticle : Boolean; horizontal : Boolean) return BufferedImage_Access is
+      bufferedImage : BufferedImage_Access := BufferedImage_Access (bufferedImage_Param);
       newBufferedImage : BufferedImage_Access;
       g : Graphics2D_Access;
       tx : AffineTransform_Access;
       op : AffineTransformOp_Access;
    begin
-        This.logUtil.putF (To_Unbounded_String ("Starting"), This'Unchecked_Access, To_Unbounded_String ("getImage"));
+        This.logUtil.putF (To_Unbounded_String ("Starting"), MirrorImageUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("getImage"));
         newBufferedImage := This.imageUtil.create (bufferedImage.getWidth (null), bufferedImage.getHeight (null));
         g := newBufferedImage.createGraphics;
         if verticle then
@@ -68,7 +68,8 @@ package body org.allbinary.media.image.MirrorImageUtil_Package is
         return newBufferedImage;
    end getImage;
 
-   function getImages (This : in out MirrorImageUtil; bufferedImage : BufferedImage_Access; verticle : Boolean; horizontal : Boolean) return BufferedImage_Access_Array_Access is
+   function getImages (This : in out MirrorImageUtil; bufferedImage_Param : access BufferedImage'Class; verticle : Boolean; horizontal : Boolean) return BufferedImage_Access_Array_Access is
+      bufferedImage : BufferedImage_Access := BufferedImage_Access (bufferedImage_Param);
       width : Integer;
       height : Integer;
       cellHeight : Integer;
@@ -92,7 +93,7 @@ package body org.allbinary.media.image.MirrorImageUtil_Package is
         if horizontal then
             numberOfFrames := (numberOfFrames) * (2);
         end if;
-        This.logUtil.putF (To_Unbounded_String ("numberOfFramesPerOrientation: ") & Java_Image (numberOfFramesPerOrientation) & To_Unbounded_String (" numberOfFrames: ") & Java_Image (numberOfFrames), This'Unchecked_Access, To_Unbounded_String ("getImages"));
+        This.logUtil.putF (To_Unbounded_String ("numberOfFramesPerOrientation: ") & Java_Image (numberOfFramesPerOrientation) & To_Unbounded_String (" numberOfFrames: ") & Java_Image (numberOfFrames), MirrorImageUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("getImages"));
         bufferedImageArray := new BufferedImage_Access_Array'(0 .. (numberOfFrames) - 1 => null);
         y := 0;
         for index in 0 .. (numberOfFramesPerOrientation) - 1 loop
@@ -105,15 +106,15 @@ package body org.allbinary.media.image.MirrorImageUtil_Package is
         return bufferedImageArray;
    end getImages;
 
-   procedure getImage (This : in out MirrorImageUtil; bufferedImage_Param : BufferedImage_Access; verticle : Boolean; horizontal : Boolean) is
+   procedure getImage (This : in out MirrorImageUtil; bufferedImage_Param : access BufferedImage'Class; verticle : Boolean; horizontal : Boolean) is
       Java_Result : constant BufferedImage_Access := MirrorImageUtil'Class (This).getImage (bufferedImage_Param, verticle, horizontal);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getImage;
 
-   procedure getImages (This : in out MirrorImageUtil; bufferedImage : BufferedImage_Access; verticle : Boolean; horizontal : Boolean) is
-      Java_Result : constant BufferedImage_Access_Array_Access := MirrorImageUtil'Class (This).getImages (bufferedImage, verticle, horizontal);
+   procedure getImages (This : in out MirrorImageUtil; bufferedImage_Param : access BufferedImage'Class; verticle : Boolean; horizontal : Boolean) is
+      Java_Result : constant BufferedImage_Access_Array_Access := MirrorImageUtil'Class (This).getImages (bufferedImage_Param, verticle, horizontal);
       pragma Unreferenced (Java_Result);
    begin
       null;

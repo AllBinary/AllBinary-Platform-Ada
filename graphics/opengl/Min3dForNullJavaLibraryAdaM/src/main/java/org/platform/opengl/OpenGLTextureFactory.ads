@@ -30,7 +30,7 @@ package org.platform.opengl.OpenGLTextureFactory_Package is
    procedure Initialize (This : in out OpenGLTextureFactory'Class);
    function Create return OpenGLTextureFactory_Access;
    function getInstance return OpenGLTextureFactory_Access;
-   procedure load (This : in out OpenGLTextureFactory; gl : GL10_Access; target : Integer; level : Integer; image : Image_Access; border : Integer; flip : Boolean);
+   procedure load (This : in out OpenGLTextureFactory; gl_Param : access GL10'Class; target : Integer; level : Integer; image_Param : access Image'Class; border : Integer; flip : Boolean);
 
 end org.platform.opengl.OpenGLTextureFactory_Package;
 

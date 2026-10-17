@@ -22,12 +22,14 @@ package body org.allbinary.game.terrain.TerrainEventListener_Package is
    end Create;
 
 
-   procedure onEvent (This : in out TerrainEventListener; eventObject : AllBinaryEventObject_Access) is
+   procedure onEvent (This : in out TerrainEventListener; eventObject_Param : access AllBinaryEventObject'Class) is
+      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
    begin
-        ForcedLogUtil_Package.log (EventStrings_Package.getInstance.PERFORMANCE_MESSAGE, This'Unchecked_Access);
+        ForcedLogUtil_Package.log (EventStrings_Package.getInstance.PERFORMANCE_MESSAGE, TerrainEventListener_Access'(This'Unchecked_Access));
    end onEvent;
 
-   procedure onTerrainEvent (This : in out TerrainEventListener; terrainEvent : TerrainEvent_Access) is
+   procedure onTerrainEvent (This : in out TerrainEventListener; terrainEvent_Param : access TerrainEvent'Class) is
+      terrainEvent : TerrainEvent_Access := TerrainEvent_Access (terrainEvent_Param);
    begin
         This.list.clear;
         This.list.add (terrainEvent);

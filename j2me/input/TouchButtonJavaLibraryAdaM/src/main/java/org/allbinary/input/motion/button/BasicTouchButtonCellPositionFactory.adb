@@ -49,7 +49,7 @@ package body org.allbinary.input.motion.button.BasicTouchButtonCellPositionFacto
       cellPositionFactory : CellPositionFactory_Access;
    begin
       Initialize_Fields (This);
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+        This.logUtil.putF (This.commonStrings.START, BasicTouchButtonCellPositionFactory_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         touchButtonLocationHelper := TouchButtonLocationHelper_Package.Create;
         cellPositionFactory := CellPositionFactory_Package.getInstance;
         cellPositionFactory.init (touchButtonLocationHelper.getTotalColumns, touchButtonLocationHelper.getTotalRows);

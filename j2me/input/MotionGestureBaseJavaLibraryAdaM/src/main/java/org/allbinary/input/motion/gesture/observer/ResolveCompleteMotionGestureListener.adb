@@ -27,7 +27,7 @@ package body org.allbinary.input.motion.gesture.observer.ResolveCompleteMotionGe
    begin
       Initialize_Fields (This);
         commonStrings := CommonStrings_Package.getInstance;
-        This.logUtil.putF (To_Unbounded_String ("MotionGesture to CompleteMotionGesture Reciever"), This'Unchecked_Access, commonStrings.CONSTRUCTOR);
+        This.logUtil.putF (To_Unbounded_String ("MotionGesture to CompleteMotionGesture Reciever"), ResolveCompleteMotionGestureListener_Access'(This'Unchecked_Access), commonStrings.CONSTRUCTOR);
         CompleteMotionGestureInputEventHandler_Package.getInstance.addListener (GameKeyFromMotionGestureEventListener_Package.Create);
    end Initialize;
 
@@ -39,7 +39,8 @@ package body org.allbinary.input.motion.gesture.observer.ResolveCompleteMotionGe
    end Create;
 
    --  throws Exception
-   procedure onMotionGestureCompleted (This : in out ResolveCompleteMotionGestureListener; list : BasicArrayList_Access) is
+   procedure onMotionGestureCompleted (This : in out ResolveCompleteMotionGestureListener; list_Param : access BasicArrayList'Class) is
+      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
       configuration : MotionGestureConfiguration_Access;
       commandActionsList : BasicArrayList_Access;
       size : Integer;

@@ -24,7 +24,9 @@ package body org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package i
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out LivesHudWidget'Class; animationInterface : Animation_Access; lifeInterface : Life_Access; location : Integer; direction : Integer) is
+   procedure Initialize (This : in out LivesHudWidget'Class; animationInterface_Param : access Animation'Class; lifeInterface_Param : access Life'Class; location : Integer; direction : Integer) is
+      animationInterface : Animation_Access := Animation_Access (animationInterface_Param);
+      lifeInterface : Life_Access := Life_Access (lifeInterface_Param);
       size : Integer;
    begin
         BasicHud_Package.Initialize (This, location, direction, 2, BasicColorFactory_Package.getInstance.WHITE);
@@ -37,14 +39,15 @@ package body org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package i
         This.updateMaxHeight := 16;
    end Initialize;
 
-   function Create (animationInterface : Animation_Access; lifeInterface : Life_Access; location : Integer; direction : Integer) return LivesHudWidget_Access is
+   function Create (animationInterface_Param : access Animation'Class; lifeInterface_Param : access Life'Class; location : Integer; direction : Integer) return LivesHudWidget_Access is
       This : constant LivesHudWidget_Access := new LivesHudWidget;
    begin
-      LivesHudWidget_Package.Initialize (This.all, animationInterface, lifeInterface, location, direction);
+      LivesHudWidget_Package.Initialize (This.all, animationInterface_Param, lifeInterface_Param, location, direction);
       return This;
    end Create;
 
-   procedure updateMeasurement (This : in out LivesHudWidget; graphics : Graphics_Access) is
+   procedure updateMeasurement (This : in out LivesHudWidget; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       maxLives : Integer;
       index : Integer;
    begin
@@ -55,7 +58,8 @@ package body org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package i
         end loop;
    end updateMeasurement;
 
-   procedure onDisplayChangeEvent (This : in out LivesHudWidget; displayChangeEvent : DisplayChangeEvent_Access) is
+   procedure onDisplayChangeEvent (This : in out LivesHudWidget; displayChangeEvent_Param : access DisplayChangeEvent'Class) is
+      displayChangeEvent : DisplayChangeEvent_Access := DisplayChangeEvent_Access (displayChangeEvent_Param);
    begin
         BasicHud (This).onDisplayChangeEvent (displayChangeEvent);
         This.myFontProcessor := This.updateMyFontProcessor;
@@ -67,7 +71,8 @@ package body org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package i
         This.myFontProcessor := This.updateMyFontProcessor;
    end setX;
 
-   procedure paint (This : in out LivesHudWidget; graphics : Graphics_Access) is
+   procedure paint (This : in out LivesHudWidget; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       index : Integer;
    begin
         This.myFontProcessor.process (graphics);
@@ -77,7 +82,8 @@ package body org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package i
         end loop;
    end paint;
 
-   procedure paintThreed (This : in out LivesHudWidget; graphics : Graphics_Access) is
+   procedure paintThreed (This : in out LivesHudWidget; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         null;
    end paintThreed;

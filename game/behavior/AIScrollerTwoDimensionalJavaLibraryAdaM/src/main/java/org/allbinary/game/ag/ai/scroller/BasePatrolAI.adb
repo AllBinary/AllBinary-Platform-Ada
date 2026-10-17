@@ -26,7 +26,10 @@ package body org.allbinary.game.ag.ai.scroller.BasePatrolAI_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BasePatrolAI'Class; hashtable : ABHashtable_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) is
+   procedure Initialize (This : in out BasePatrolAI'Class; hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) is
+      hashtable : ABHashtable_Access := ABHashtable_Access (hashtable_Param);
+      ownerLayerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (ownerLayerInterface_Param);
+      gameInput : GameInput_Access := GameInput_Access (gameInput_Param);
    begin
         BasicAI_Package.Initialize (This, ownerLayerInterface, gameInput);
         Initialize_Fields (This);
@@ -34,10 +37,10 @@ package body org.allbinary.game.ag.ai.scroller.BasePatrolAI_Package is
         This.currentDistance := This.maxDistance.intValue;
    end Initialize;
 
-   function Create (hashtable : ABHashtable_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return BasePatrolAI_Access is
+   function Create (hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return BasePatrolAI_Access is
       This : constant BasePatrolAI_Access := new BasePatrolAI;
    begin
-      BasePatrolAI_Package.Initialize (This.all, hashtable, ownerLayerInterface, gameInput);
+      BasePatrolAI_Package.Initialize (This.all, hashtable_Param, ownerLayerInterface_Param, gameInput_Param);
       return This;
    end Create;
 

@@ -43,7 +43,8 @@ package body org.allbinary.layer.event.LayerManagerEventHandler_Package is
       return This;
    end Create;
 
-   procedure addListener (This : in out LayerManagerEventHandler; layerManagerEventListener : LayerManagerEventListener_Access) is
+   procedure addListener (This : in out LayerManagerEventHandler; layerManagerEventListener_Param : access LayerManagerEventListener'Class) is
+      layerManagerEventListener : LayerManagerEventListener_Access := LayerManagerEventListener_Access (layerManagerEventListener_Param);
    begin
         if not (This.list.contains (layerManagerEventListener)) then
             This.list.add (layerManagerEventListener);
@@ -56,14 +57,16 @@ package body org.allbinary.layer.event.LayerManagerEventHandler_Package is
         BasicEventHandler (This).removeAllListeners;
    end removeAllListeners;
 
-   procedure removeListener (This : in out LayerManagerEventHandler; eventListenerInterface : EventListenerInterface_Access) is
+   procedure removeListener (This : in out LayerManagerEventHandler; eventListenerInterface_Param : access EventListenerInterface'Class) is
+      eventListenerInterface : EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
    begin
         This.list.remove (eventListenerInterface);
         BasicEventHandler (This).removeListener (eventListenerInterface);
    end removeListener;
 
    --  throws Exception
-   procedure fireEvent (This : in out LayerManagerEventHandler; eventObject : AllBinaryEventObject_Access) is
+   procedure fireEvent (This : in out LayerManagerEventHandler; eventObject_Param : access AllBinaryEventObject'Class) is
+      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
       layerManagerEventListener : LayerManagerEventListener_Access;
       index : Integer;
    begin
@@ -77,7 +80,7 @@ package body org.allbinary.layer.event.LayerManagerEventHandler_Package is
                     declare
                         e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                     begin
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, EventStrings_Package.getInstance.FIRE_EVENT, e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, LayerManagerEventHandler_Access'(This'Unchecked_Access), EventStrings_Package.getInstance.FIRE_EVENT, e);
                     end;
             end;
         end loop;
@@ -85,7 +88,8 @@ package body org.allbinary.layer.event.LayerManagerEventHandler_Package is
    end fireEvent;
 
    --  throws Exception
-   procedure fireDeleteEvent (This : in out LayerManagerEventHandler; eventObject : AllBinaryEventObject_Access) is
+   procedure fireDeleteEvent (This : in out LayerManagerEventHandler; eventObject_Param : access AllBinaryEventObject'Class) is
+      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
       layerManagerEventListener : LayerManagerEventListener_Access;
       index : Integer;
       eventListenerInterfaceList : BasicArrayList_Access;
@@ -102,7 +106,7 @@ package body org.allbinary.layer.event.LayerManagerEventHandler_Package is
                     declare
                         e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                     begin
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, EventStrings_Package.getInstance.FIRE_EVENT, e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, LayerManagerEventHandler_Access'(This'Unchecked_Access), EventStrings_Package.getInstance.FIRE_EVENT, e);
                     end;
             end;
         end loop;
@@ -120,7 +124,7 @@ package body org.allbinary.layer.event.LayerManagerEventHandler_Package is
                     declare
                         e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                     begin
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, EventStrings_Package.getInstance.FIRE_EVENT, e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, LayerManagerEventHandler_Access'(This'Unchecked_Access), EventStrings_Package.getInstance.FIRE_EVENT, e);
                     end;
             end;
             index := index + 1;
@@ -128,7 +132,9 @@ package body org.allbinary.layer.event.LayerManagerEventHandler_Package is
    end fireDeleteEvent;
 
    --  throws Exception
-   procedure process (This : in out LayerManagerEventHandler; eventObject : AllBinaryEventObject_Access; eventListenerInterface : EventListenerInterface_Access) is
+   procedure process (This : in out LayerManagerEventHandler; eventObject_Param : access AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface'Class) is
+      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
+      eventListenerInterface : EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
       layerManagerEventListenerInterface : LayerManagerEventListenerInterface_Access;
    begin
         layerManagerEventListenerInterface := (LayerManagerEventListenerInterface_Access (eventListenerInterface));

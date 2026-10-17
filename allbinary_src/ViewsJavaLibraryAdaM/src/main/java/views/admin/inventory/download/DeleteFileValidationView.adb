@@ -22,17 +22,18 @@ package body views.admin.inventory.download.DeleteFileValidationView_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out DeleteFileValidationView'Class; transformInfoInterface : TransformInfoInterface_Access) is
+   procedure Initialize (This : in out DeleteFileValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         DownloadableInventoryItemView_Package.Initialize (This, transformInfoInterface, StringUtil_Package.getInstance.EMPTY_STRING);
         Initialize_Fields (This);
         This.getFormData;
    end Initialize;
 
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return DeleteFileValidationView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return DeleteFileValidationView_Access is
       This : constant DeleteFileValidationView_Access := new DeleteFileValidationView;
    begin
-      DeleteFileValidationView_Package.Initialize (This.all, transformInfoInterface);
+      DeleteFileValidationView_Package.Initialize (This.all, transformInfoInterface_Param);
       return This;
    end Create;
 
@@ -83,7 +84,8 @@ package body views.admin.inventory.download.DeleteFileValidationView_Package is
         return null;
    end toValidationInfoDoc;
 
-   function toValidationInfoNode (This : in out DeleteFileValidationView; document : Document_Access) return Node_Access is
+   function toValidationInfoNode (This : in out DeleteFileValidationView; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
    begin
         return null;
    end toValidationInfoNode;
@@ -120,8 +122,8 @@ package body views.admin.inventory.download.DeleteFileValidationView_Package is
         end;
    end validationInfo;
 
-   procedure toValidationInfoNode (This : in out DeleteFileValidationView; document : Document_Access) is
-      Java_Result : constant Node_Access := DeleteFileValidationView'Class (This).toValidationInfoNode (document);
+   procedure toValidationInfoNode (This : in out DeleteFileValidationView; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := DeleteFileValidationView'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

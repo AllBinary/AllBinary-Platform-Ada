@@ -64,12 +64,12 @@ package body org.allbinary.input.AllBinarySensor_Package is
 
    procedure shutdown (This : in out AllBinarySensor) is
    begin
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("shutdown"));
+        This.logUtil.putF (This.commonStrings.START, AllBinarySensor_Access'(This'Unchecked_Access), To_Unbounded_String ("shutdown"));
    end shutdown;
 
    procedure onSensorChange (This : in out AllBinarySensor) is
    begin
-        ForcedLogUtil_Package.log (This.commonStrings.NOT_IMPLEMENTED, This'Unchecked_Access);
+        ForcedLogUtil_Package.log (This.commonStrings.NOT_IMPLEMENTED, AllBinarySensor_Access'(This'Unchecked_Access));
    end onSensorChange;
 
 begin

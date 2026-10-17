@@ -24,35 +24,39 @@ package body org.allbinary.business.user.commerce.money.payment.types.PaymentTyp
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out PaymentType'Class; basicPaymentType : BasicPaymentType_Access) is
+   procedure Initialize (This : in out PaymentType'Class; basicPaymentType_Param : access BasicPaymentType'Class) is
+      basicPaymentType : BasicPaymentType_Access := BasicPaymentType_Access (basicPaymentType_Param);
    begin
       Initialize_Fields (This);
         This.basicPaymentType := basicPaymentType;
         This.paymentTransactionInterfaceFactoryInterface := null;
         This.paymentProcessorInterfaceFactoryInterface := null;
-        PaymentTypeUtil_Package.getInstance.add (This'Unchecked_Access);
+        PaymentTypeUtil_Package.getInstance.add (PaymentType_Access'(This'Unchecked_Access));
    end Initialize;
 
-   function Create (basicPaymentType : BasicPaymentType_Access) return PaymentType_Access is
+   function Create (basicPaymentType_Param : access BasicPaymentType'Class) return PaymentType_Access is
       This : constant PaymentType_Access := new PaymentType;
    begin
-      PaymentType_Package.Initialize (This.all, basicPaymentType);
+      PaymentType_Package.Initialize (This.all, basicPaymentType_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out PaymentType'Class; basicPaymentType : BasicPaymentType_Access; paymentTransactionInterfaceFactoryInterface : PaymentTransactionInterfaceFactoryInterface_Access; paymentProcessorInterfaceFactoryInterface : PaymentProcessorInterfaceFactoryInterface_Access) is
+   procedure Initialize (This : in out PaymentType'Class; basicPaymentType_Param : access BasicPaymentType'Class; paymentTransactionInterfaceFactoryInterface_Param : access PaymentTransactionInterfaceFactoryInterface'Class; paymentProcessorInterfaceFactoryInterface_Param : access PaymentProcessorInterfaceFactoryInterface'Class) is
+      basicPaymentType : BasicPaymentType_Access := BasicPaymentType_Access (basicPaymentType_Param);
+      paymentTransactionInterfaceFactoryInterface : PaymentTransactionInterfaceFactoryInterface_Access := PaymentTransactionInterfaceFactoryInterface_Access (paymentTransactionInterfaceFactoryInterface_Param);
+      paymentProcessorInterfaceFactoryInterface : PaymentProcessorInterfaceFactoryInterface_Access := PaymentProcessorInterfaceFactoryInterface_Access (paymentProcessorInterfaceFactoryInterface_Param);
    begin
       Initialize_Fields (This);
         This.basicPaymentType := basicPaymentType;
         This.paymentTransactionInterfaceFactoryInterface := paymentTransactionInterfaceFactoryInterface;
         This.paymentProcessorInterfaceFactoryInterface := paymentProcessorInterfaceFactoryInterface;
-        PaymentTypeUtil_Package.getInstance.add (This'Unchecked_Access);
+        PaymentTypeUtil_Package.getInstance.add (PaymentType_Access'(This'Unchecked_Access));
    end Initialize;
 
-   function Create (basicPaymentType : BasicPaymentType_Access; paymentTransactionInterfaceFactoryInterface : PaymentTransactionInterfaceFactoryInterface_Access; paymentProcessorInterfaceFactoryInterface : PaymentProcessorInterfaceFactoryInterface_Access) return PaymentType_Access is
+   function Create (basicPaymentType_Param : access BasicPaymentType'Class; paymentTransactionInterfaceFactoryInterface_Param : access PaymentTransactionInterfaceFactoryInterface'Class; paymentProcessorInterfaceFactoryInterface_Param : access PaymentProcessorInterfaceFactoryInterface'Class) return PaymentType_Access is
       This : constant PaymentType_Access := new PaymentType;
    begin
-      PaymentType_Package.Initialize (This.all, basicPaymentType, paymentTransactionInterfaceFactoryInterface, paymentProcessorInterfaceFactoryInterface);
+      PaymentType_Package.Initialize (This.all, basicPaymentType_Param, paymentTransactionInterfaceFactoryInterface_Param, paymentProcessorInterfaceFactoryInterface_Param);
       return This;
    end Create;
 

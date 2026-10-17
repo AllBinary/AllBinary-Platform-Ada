@@ -36,12 +36,12 @@ package org.allbinary.logic.io.file.visitor.IncludeFileExtensionsBooleanFileVisi
 
    type IncludeFileExtensionsBooleanFileVisitor is new BooleanFileVisitor with null record;
 
-   procedure Initialize (This : in out IncludeFileExtensionsBooleanFileVisitor'Class; filterStringBasicArrayList : BasicArrayList_Access);
-   function Create (filterStringBasicArrayList : BasicArrayList_Access) return IncludeFileExtensionsBooleanFileVisitor_Access;
-   function visit (This : in out IncludeFileExtensionsBooleanFileVisitor; file : AbFile_Access) return Boolean;
-   procedure visit (This : in out IncludeFileExtensionsBooleanFileVisitor; file : AbFile_Access);
-   function visit (This : in out IncludeFileExtensionsBooleanFileVisitor; file : AbFile_Access; fileNameString : Unbounded_String) return Boolean;
-   procedure visit (This : in out IncludeFileExtensionsBooleanFileVisitor; file : AbFile_Access; fileNameString : Unbounded_String);
+   procedure Initialize (This : in out IncludeFileExtensionsBooleanFileVisitor'Class; filterStringBasicArrayList_Param : access BasicArrayList'Class);
+   function Create (filterStringBasicArrayList_Param : access BasicArrayList'Class) return IncludeFileExtensionsBooleanFileVisitor_Access;
+   function visit (This : in out IncludeFileExtensionsBooleanFileVisitor; file_Param : access AbFile'Class) return Boolean;
+   procedure visit (This : in out IncludeFileExtensionsBooleanFileVisitor; file_Param : access AbFile'Class);
+   function visit (This : in out IncludeFileExtensionsBooleanFileVisitor; file_Param : access AbFile'Class; fileNameString : Unbounded_String) return Boolean;
+   procedure visit (This : in out IncludeFileExtensionsBooleanFileVisitor; file_Param : access AbFile'Class; fileNameString : Unbounded_String);
 
 end org.allbinary.logic.io.file.visitor.IncludeFileExtensionsBooleanFileVisitor_Package;
 

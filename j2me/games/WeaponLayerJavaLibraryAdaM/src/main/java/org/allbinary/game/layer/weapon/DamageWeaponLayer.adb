@@ -21,16 +21,22 @@ package body org.allbinary.game.layer.weapon.DamageWeaponLayer_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out DamageWeaponLayer'Class; name : Unbounded_String; remoteInfo : RemoteInfo_Access; movement : Movement_Access; animationInterface : Animation_Access; destroyedAnimationInterface : Animation_Access; rectangle : Rectangle_Access; viewPosition : ViewPositionBase_Access; username : Unbounded_String; actorSessionId : Integer; id : Integer; multiPlayerType : Integer) is
+   procedure Initialize (This : in out DamageWeaponLayer'Class; name : Unbounded_String; remoteInfo_Param : access RemoteInfo'Class; movement_Param : access Movement'Class; animationInterface_Param : access Animation'Class; destroyedAnimationInterface_Param : access Animation'Class; rectangle_Param : access Rectangle'Class; viewPosition_Param : access ViewPositionBase'Class; username : Unbounded_String; actorSessionId : Integer; id : Integer; multiPlayerType : Integer) is
+      remoteInfo : RemoteInfo_Access := RemoteInfo_Access (remoteInfo_Param);
+      movement : Movement_Access := Movement_Access (movement_Param);
+      animationInterface : Animation_Access := Animation_Access (animationInterface_Param);
+      destroyedAnimationInterface : Animation_Access := Animation_Access (destroyedAnimationInterface_Param);
+      rectangle : Rectangle_Access := Rectangle_Access (rectangle_Param);
+      viewPosition : ViewPositionBase_Access := ViewPositionBase_Access (viewPosition_Param);
    begin
         WeaponLayer_Package.Initialize (This, name, remoteInfo, multiPlayerType, movement, animationInterface, destroyedAnimationInterface, rectangle, viewPosition);
         This.setCollidableInferface (CollidableDamageWeaponBehavior_Package.Create (True));
    end Initialize;
 
-   function Create (name : Unbounded_String; remoteInfo : RemoteInfo_Access; movement : Movement_Access; animationInterface : Animation_Access; destroyedAnimationInterface : Animation_Access; rectangle : Rectangle_Access; viewPosition : ViewPositionBase_Access; username : Unbounded_String; actorSessionId : Integer; id : Integer; multiPlayerType : Integer) return DamageWeaponLayer_Access is
+   function Create (name : Unbounded_String; remoteInfo_Param : access RemoteInfo'Class; movement_Param : access Movement'Class; animationInterface_Param : access Animation'Class; destroyedAnimationInterface_Param : access Animation'Class; rectangle_Param : access Rectangle'Class; viewPosition_Param : access ViewPositionBase'Class; username : Unbounded_String; actorSessionId : Integer; id : Integer; multiPlayerType : Integer) return DamageWeaponLayer_Access is
       This : constant DamageWeaponLayer_Access := new DamageWeaponLayer;
    begin
-      DamageWeaponLayer_Package.Initialize (This.all, name, remoteInfo, movement, animationInterface, destroyedAnimationInterface, rectangle, viewPosition, username, actorSessionId, id, multiPlayerType);
+      DamageWeaponLayer_Package.Initialize (This.all, name, remoteInfo_Param, movement_Param, animationInterface_Param, destroyedAnimationInterface_Param, rectangle_Param, viewPosition_Param, username, actorSessionId, id, multiPlayerType);
       return This;
    end Create;
 

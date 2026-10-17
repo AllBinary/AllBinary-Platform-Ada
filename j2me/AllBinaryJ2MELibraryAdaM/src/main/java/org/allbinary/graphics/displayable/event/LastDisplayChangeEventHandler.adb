@@ -41,7 +41,9 @@ package body org.allbinary.graphics.displayable.event.LastDisplayChangeEventHand
    end Create;
 
    --  throws Exception
-   procedure process (This : in out LastDisplayChangeEventHandler; eventObject : AllBinaryEventObject_Access; eventListenerInterface : EventListenerInterface_Access) is
+   procedure process (This : in out LastDisplayChangeEventHandler; eventObject_Param : access AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface'Class) is
+      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
+      eventListenerInterface : EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
       displayChangeEventListener : DisplayChangeEventListener_Access;
    begin
         displayChangeEventListener := (DisplayChangeEventListener_Access (eventListenerInterface));

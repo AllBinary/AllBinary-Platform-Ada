@@ -54,12 +54,13 @@ package body org.allbinary.media.image.comparison.motion.MotionRectanglesImageIn
             motionRectangles := motionRectanglesResultsFrameCacheable.getMotionRectangles;
             This.save (motionRectangles, frame);
         else
-            This.logUtil.putF (To_Unbounded_String ("No Motion Rectangle Results for Frame: ") & Java_Image (frame), This'Unchecked_Access, commonStrings.SAVE);
+            This.logUtil.putF (To_Unbounded_String ("No Motion Rectangle Results for Frame: ") & Java_Image (frame), MotionRectanglesImageInputOutput_Access'(This'Unchecked_Access), commonStrings.SAVE);
         end if;
    end save;
 
    --  throws Exception
-   procedure save (This : in out MotionRectanglesImageInputOutput; motionRectangles : MotionRectangles_Access; frame : Long_Long_Integer) is
+   procedure save (This : in out MotionRectanglesImageInputOutput; motionRectangles_Param : access MotionRectangles'Class; frame : Long_Long_Integer) is
+      motionRectangles : MotionRectangles_Access := MotionRectangles_Access (motionRectangles_Param);
       commonStrings : CommonStrings_Access;
       filePathStringBuffer : StringMaker_Access;
       filePathStringBuffer1 : StringMaker_Access;
@@ -96,9 +97,9 @@ package body org.allbinary.media.image.comparison.motion.MotionRectanglesImageIn
         filePathStringBuffer3 := StringMaker_Package.Create;
         filePathStringBuffer3.append (filePathStringBuffer.toString);
         filePathStringBuffer3.append (MediaDataFactory_Package.getInstance.JPG.getExtension);
-        This.logUtil.putF (To_Unbounded_String ("Motion Image File Path 1: ") & filePathStringBuffer1.toString, This'Unchecked_Access, commonStrings.SAVE);
-        This.logUtil.putF (To_Unbounded_String ("Motion Image File Path 2: ") & filePathStringBuffer2.toString, This'Unchecked_Access, commonStrings.SAVE);
-        This.logUtil.putF (To_Unbounded_String ("Motion Image File Path 2: ") & filePathStringBuffer3.toString, This'Unchecked_Access, commonStrings.SAVE);
+        This.logUtil.putF (To_Unbounded_String ("Motion Image File Path 1: ") & filePathStringBuffer1.toString, MotionRectanglesImageInputOutput_Access'(This'Unchecked_Access), commonStrings.SAVE);
+        This.logUtil.putF (To_Unbounded_String ("Motion Image File Path 2: ") & filePathStringBuffer2.toString, MotionRectanglesImageInputOutput_Access'(This'Unchecked_Access), commonStrings.SAVE);
+        This.logUtil.putF (To_Unbounded_String ("Motion Image File Path 2: ") & filePathStringBuffer3.toString, MotionRectanglesImageInputOutput_Access'(This'Unchecked_Access), commonStrings.SAVE);
         bufferedImageCacheables := new BufferedImageCacheable_Access_Array'(0 .. (This.NUMBER_OF_IMAGES) - 1 => null);
         imageComparisonInfo := motionRectangles.getImageComparisonResult;
         originalBufferedImage := imageComparisonInfo.getBufferedImages (0);

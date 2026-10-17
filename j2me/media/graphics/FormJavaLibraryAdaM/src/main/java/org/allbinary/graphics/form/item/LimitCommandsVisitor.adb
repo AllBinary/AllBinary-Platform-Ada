@@ -38,7 +38,8 @@ package body org.allbinary.graphics.form.item.LimitCommandsVisitor_Package is
       return This;
    end Create;
 
-   function visit (This : in out LimitCommandsVisitor; anyType : Java_Object_Access) return Java_Object_Access is
+   function visit (This : in out LimitCommandsVisitor; anyType_Param : access Java_Object'Class) return Java_Object_Access is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
       command : Command_Access;
       booleanFactory : BooleanFactory_Access;
    begin
@@ -51,8 +52,8 @@ package body org.allbinary.graphics.form.item.LimitCommandsVisitor_Package is
         end if;
    end visit;
 
-   procedure visit (This : in out LimitCommandsVisitor; anyType : Java_Object_Access) is
-      Java_Result : constant Java_Object_Access := LimitCommandsVisitor'Class (This).visit (anyType);
+   procedure visit (This : in out LimitCommandsVisitor; anyType_Param : access Java_Object'Class) is
+      Java_Result : constant Java_Object_Access := LimitCommandsVisitor'Class (This).visit (anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

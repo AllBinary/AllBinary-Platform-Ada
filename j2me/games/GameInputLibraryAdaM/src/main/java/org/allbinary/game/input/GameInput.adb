@@ -26,7 +26,9 @@ package body org.allbinary.game.input.GameInput_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out GameInput'Class; gameKeyEventList : BasicArrayList_Access; removalGameKeyEventList : BasicArrayList_Access) is
+   procedure Initialize (This : in out GameInput'Class; gameKeyEventList_Param : access BasicArrayList'Class; removalGameKeyEventList_Param : access BasicArrayList'Class) is
+      gameKeyEventList : BasicArrayList_Access := BasicArrayList_Access (gameKeyEventList_Param);
+      removalGameKeyEventList : BasicArrayList_Access := BasicArrayList_Access (removalGameKeyEventList_Param);
    begin
       Initialize_Fields (This);
         This.gameKeyEventList := gameKeyEventList;
@@ -34,14 +36,15 @@ package body org.allbinary.game.input.GameInput_Package is
         This.isRemoveDuplicateKeyPresses := Features_Package.getInstance.isFeature (InputFeatureFactory_Package.getInstance.REMOVE_DUPLICATE_KEY_PRESSES);
    end Initialize;
 
-   function Create (gameKeyEventList : BasicArrayList_Access; removalGameKeyEventList : BasicArrayList_Access) return GameInput_Access is
+   function Create (gameKeyEventList_Param : access BasicArrayList'Class; removalGameKeyEventList_Param : access BasicArrayList'Class) return GameInput_Access is
       This : constant GameInput_Access := new GameInput;
    begin
-      GameInput_Package.Initialize (This.all, gameKeyEventList, removalGameKeyEventList);
+      GameInput_Package.Initialize (This.all, gameKeyEventList_Param, removalGameKeyEventList_Param);
       return This;
    end Create;
 
-   procedure add (This : in out GameInput; gameKeyEvent : GameKeyEvent_Access) is
+   procedure add (This : in out GameInput; gameKeyEvent_Param : access GameKeyEvent'Class) is
+      gameKeyEvent : GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
    begin
         if (This.isRemoveDuplicateKeyPresses) and then (This.gameKeyEventList.contains (gameKeyEvent)) then
             return;
@@ -49,16 +52,18 @@ package body org.allbinary.game.input.GameInput_Package is
         if (gameKeyEvent) /= (null) then
             This.gameKeyEventList.add (gameKeyEvent);
         else
-            This.logUtil.putF (To_Unbounded_String ("Danger Passed Null GameKeyEvent"), This'Unchecked_Access, This.commonStrings.ADD);
+            This.logUtil.putF (To_Unbounded_String ("Danger Passed Null GameKeyEvent"), GameInput_Access'(This'Unchecked_Access), This.commonStrings.ADD);
         end if;
    end add;
 
-   procedure addForRemoval (This : in out GameInput; gameKeyEvent : GameKeyEvent_Access) is
+   procedure addForRemoval (This : in out GameInput; gameKeyEvent_Param : access GameKeyEvent'Class) is
+      gameKeyEvent : GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
    begin
         This.removalGameKeyEventList.add (gameKeyEvent);
    end addForRemoval;
 
-   function isForRemoval (This : in out GameInput; gameKeyEvent : GameKeyEvent_Access) return Boolean is
+   function isForRemoval (This : in out GameInput; gameKeyEvent_Param : access GameKeyEvent'Class) return Boolean is
+      gameKeyEvent : GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
    begin
         return This.removalGameKeyEventList.contains (gameKeyEvent);
    end isForRemoval;
@@ -117,8 +122,8 @@ package body org.allbinary.game.input.GameInput_Package is
         return This.gameKeyEventList;
    end getGameKeyEventList;
 
-   procedure isForRemoval (This : in out GameInput; gameKeyEvent : GameKeyEvent_Access) is
-      Java_Result : constant Boolean := GameInput'Class (This).isForRemoval (gameKeyEvent);
+   procedure isForRemoval (This : in out GameInput; gameKeyEvent_Param : access GameKeyEvent'Class) is
+      Java_Result : constant Boolean := GameInput'Class (This).isForRemoval (gameKeyEvent_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

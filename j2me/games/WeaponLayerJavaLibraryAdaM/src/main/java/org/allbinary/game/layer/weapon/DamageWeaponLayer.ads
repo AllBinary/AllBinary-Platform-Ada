@@ -43,8 +43,8 @@ package org.allbinary.game.layer.weapon.DamageWeaponLayer_Package is
 
    type DamageWeaponLayer is new WeaponLayer with null record;
 
-   procedure Initialize (This : in out DamageWeaponLayer'Class; name : Unbounded_String; remoteInfo : RemoteInfo_Access; movement : Movement_Access; animationInterface : Animation_Access; destroyedAnimationInterface : Animation_Access; rectangle : Rectangle_Access; viewPosition : ViewPositionBase_Access; username : Unbounded_String; actorSessionId : Integer; id : Integer; multiPlayerType : Integer);
-   function Create (name : Unbounded_String; remoteInfo : RemoteInfo_Access; movement : Movement_Access; animationInterface : Animation_Access; destroyedAnimationInterface : Animation_Access; rectangle : Rectangle_Access; viewPosition : ViewPositionBase_Access; username : Unbounded_String; actorSessionId : Integer; id : Integer; multiPlayerType : Integer) return DamageWeaponLayer_Access;
+   procedure Initialize (This : in out DamageWeaponLayer'Class; name : Unbounded_String; remoteInfo_Param : access RemoteInfo'Class; movement_Param : access Movement'Class; animationInterface_Param : access Animation'Class; destroyedAnimationInterface_Param : access Animation'Class; rectangle_Param : access Rectangle'Class; viewPosition_Param : access ViewPositionBase'Class; username : Unbounded_String; actorSessionId : Integer; id : Integer; multiPlayerType : Integer);
+   function Create (name : Unbounded_String; remoteInfo_Param : access RemoteInfo'Class; movement_Param : access Movement'Class; animationInterface_Param : access Animation'Class; destroyedAnimationInterface_Param : access Animation'Class; rectangle_Param : access Rectangle'Class; viewPosition_Param : access ViewPositionBase'Class; username : Unbounded_String; actorSessionId : Integer; id : Integer; multiPlayerType : Integer) return DamageWeaponLayer_Access;
 
 end org.allbinary.game.layer.weapon.DamageWeaponLayer_Package;
 

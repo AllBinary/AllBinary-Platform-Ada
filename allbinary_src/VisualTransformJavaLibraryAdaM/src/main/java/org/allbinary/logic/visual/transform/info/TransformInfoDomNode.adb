@@ -24,7 +24,8 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Pack
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out TransformInfoDomNode'Class; node : Node_Access) is
+   procedure Initialize (This : in out TransformInfoDomNode'Class; node_Param : access Node'Class) is
+      node : Node_Access := Node_Access (node_Param);
       transformInfoData : TransformInfoData_Access;
       attributes : NamedNodeMap_Access;
       attrNode : Attr_Access;
@@ -43,7 +44,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Pack
    begin
       Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (To_Unbounded_String ("Constructing TransformInfo From TransformInfoDomNode: ") & Java_Image (node.getNodeName), This'Unchecked_Access, To_Unbounded_String ("TransformInfoDomNode(Node node)"));
+            This.logUtil.putF (To_Unbounded_String ("Constructing TransformInfo From TransformInfoDomNode: ") & Java_Image (node.getNodeName), TransformInfoDomNode_Access'(This'Unchecked_Access), To_Unbounded_String ("TransformInfoDomNode(Node node)"));
         end if;
         transformInfoData := TransformInfoData_Package.getInstance;
         attributes := node.getAttributes;
@@ -58,7 +59,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Pack
                 stringBuffer.append (To_Unbounded_String (" with "));
                 stringBuffer.appendint (Integer (nodeList.getLength));
                 stringBuffer.append (To_Unbounded_String (" children"));
-                This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("TransformInfoObjectConfigComponent(Node node)"));
+                This.logUtil.putF (stringBuffer.toString, TransformInfoDomNode_Access'(This'Unchecked_Access), To_Unbounded_String ("TransformInfoObjectConfigComponent(Node node)"));
             end if;
             objectFileNameNode := DomSearchHelper_Package.getNode (transformInfoData.OBJECTFILENAME, nodeList);
             objectFileName := DomNodeHelper_Package.getTextNodeValue (objectFileNameNode);
@@ -77,7 +78,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Pack
                 stringBuffer.append (To_Unbounded_String (" with "));
                 stringBuffer.appendint (Integer (nodeList.getLength));
                 stringBuffer.append (To_Unbounded_String (" children"));
-                This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("TransformInfoObjectConfigComponent(Node node)"));
+                This.logUtil.putF (stringBuffer.toString, TransformInfoDomNode_Access'(This'Unchecked_Access), To_Unbounded_String ("TransformInfoObjectConfigComponent(Node node)"));
             end if;
             This.transformInfoInterface := TransformInfoInterface_Access (TransformInfo_Package.Create (name));
         end if;
@@ -89,38 +90,40 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Pack
         end if;
    end Initialize;
 
-   function Create (node : Node_Access) return TransformInfoDomNode_Access is
+   function Create (node_Param : access Node'Class) return TransformInfoDomNode_Access is
       This : constant TransformInfoDomNode_Access := new TransformInfoDomNode;
    begin
-      TransformInfoDomNode_Package.Initialize (This.all, node);
+      TransformInfoDomNode_Package.Initialize (This.all, node_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out TransformInfoDomNode'Class; transformInfoInterface : TransformInfoInterface_Access) is
+   procedure Initialize (This : in out TransformInfoDomNode'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
       Initialize_Fields (This);
         This.transformInfoInterface := transformInfoInterface;
         This.mappedName := transformInfoInterface.getName;
    end Initialize;
 
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return TransformInfoDomNode_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return TransformInfoDomNode_Access is
       This : constant TransformInfoDomNode_Access := new TransformInfoDomNode;
    begin
-      TransformInfoDomNode_Package.Initialize (This.all, transformInfoInterface);
+      TransformInfoDomNode_Package.Initialize (This.all, transformInfoInterface_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out TransformInfoDomNode'Class; transformInfoInterface : TransformInfoInterface_Access; mappedName : Unbounded_String) is
+   procedure Initialize (This : in out TransformInfoDomNode'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; mappedName : Unbounded_String) is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
       Initialize_Fields (This);
         This.transformInfoInterface := transformInfoInterface;
         This.mappedName := mappedName;
    end Initialize;
 
-   function Create (transformInfoInterface : TransformInfoInterface_Access; mappedName : Unbounded_String) return TransformInfoDomNode_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class; mappedName : Unbounded_String) return TransformInfoDomNode_Access is
       This : constant TransformInfoDomNode_Access := new TransformInfoDomNode;
    begin
-      TransformInfoDomNode_Package.Initialize (This.all, transformInfoInterface, mappedName);
+      TransformInfoDomNode_Package.Initialize (This.all, transformInfoInterface_Param, mappedName);
       return This;
    end Create;
 
@@ -158,7 +161,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Pack
         stringBuffer.append (To_Unbounded_String ("""/>"));
         key := stringBuffer.toString;
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (To_Unbounded_String ("Component Key: ") & key, This'Unchecked_Access, To_Unbounded_String ("getReplaceKey()"));
+            This.logUtil.putF (To_Unbounded_String ("Component Key: ") & key, TransformInfoDomNode_Access'(This'Unchecked_Access), To_Unbounded_String ("getReplaceKey()"));
         end if;
         return key;
    end getReplaceKey;

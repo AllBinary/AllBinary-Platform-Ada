@@ -55,8 +55,8 @@ package org.allbinary.game.ag.ai.NumberOnOwnGroupSequenceAIFactory_Package is
 
    procedure Initialize (This : in out NumberOnOwnGroupSequenceAIFactory'Class);
    function Create return NumberOnOwnGroupSequenceAIFactory_Access;
-   function getInstance (This : in out NumberOnOwnGroupSequenceAIFactory; hashtable : ABHashtable_Access; artificialIntelligenceInterface : ArtificialIntelligenceInterface_Access_Array_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return ArtificialIntelligenceInterface_Access;
-   procedure getInstance (This : in out NumberOnOwnGroupSequenceAIFactory; hashtable : ABHashtable_Access; artificialIntelligenceInterface : ArtificialIntelligenceInterface_Access_Array_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access);
+   function getInstance (This : in out NumberOnOwnGroupSequenceAIFactory; hashtable_Param : access ABHashtable'Class; artificialIntelligenceInterface : ArtificialIntelligenceInterface_Access_Array_Access; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return ArtificialIntelligenceInterface_Access;
+   procedure getInstance (This : in out NumberOnOwnGroupSequenceAIFactory; hashtable_Param : access ABHashtable'Class; artificialIntelligenceInterface : ArtificialIntelligenceInterface_Access_Array_Access; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class);
 
 end org.allbinary.game.ag.ai.NumberOnOwnGroupSequenceAIFactory_Package;
 

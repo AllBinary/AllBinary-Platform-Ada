@@ -39,12 +39,12 @@ package org.allbinary.business.category.store.theme.StoreThemeCategoryValidation
 
    type StoreThemeCategoryValidationView is new StoreThemeCategoryView and ValidationInterface with null record;
 
-   procedure Initialize (This : in out StoreThemeCategoryValidationView'Class; categoryInterface : StoreThemeCategoryInterface_Access);
-   function Create (categoryInterface : StoreThemeCategoryInterface_Access) return StoreThemeCategoryValidationView_Access;
+   procedure Initialize (This : in out StoreThemeCategoryValidationView'Class; categoryInterface_Param : access StoreThemeCategoryInterface'Class);
+   function Create (categoryInterface_Param : access StoreThemeCategoryInterface'Class) return StoreThemeCategoryValidationView_Access;
    function isValid (This : in out StoreThemeCategoryValidationView) return Boolean;
    function toValidationInfoDoc (This : in out StoreThemeCategoryValidationView) return Document_Access;
-   function toValidationInfoNode (This : in out StoreThemeCategoryValidationView; document : Document_Access) return Node_Access;
-   procedure toValidationInfoNode (This : in out StoreThemeCategoryValidationView; document : Document_Access);
+   function toValidationInfoNode (This : in out StoreThemeCategoryValidationView; document_Param : access Document'Class) return Node_Access;
+   procedure toValidationInfoNode (This : in out StoreThemeCategoryValidationView; document_Param : access Document'Class);
    function validationInfo (This : in out StoreThemeCategoryValidationView) return Unbounded_String;
 
 end org.allbinary.business.category.store.theme.StoreThemeCategoryValidationView_Package;

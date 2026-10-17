@@ -53,7 +53,7 @@ package org.allbinary.graphics.displayable.screen.WebCommandProcessor_Package is
    procedure Initialize (This : in out WebCommandProcessor'Class);
    function Create return WebCommandProcessor_Access;
    function getInstance return WebCommandProcessor_Access;
-   procedure process (This : in out WebCommandProcessor; midletCommandListener : CommandListener_Access; command : Command_Access; canvas : Canvas_Access);
+   procedure process (This : in out WebCommandProcessor; midletCommandListener_Param : access CommandListener'Class; command_Param : access Command'Class; canvas_Param : access Canvas'Class);
 
 end org.allbinary.graphics.displayable.screen.WebCommandProcessor_Package;
 

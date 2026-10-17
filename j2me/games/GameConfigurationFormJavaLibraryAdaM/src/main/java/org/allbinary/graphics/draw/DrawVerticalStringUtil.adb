@@ -43,7 +43,8 @@ package body org.allbinary.graphics.draw.DrawVerticalStringUtil_Package is
         return DrawVerticalStringUtil_Package.instance;
    end getInstance;
 
-   procedure updateMeasurement (This : in out DrawVerticalStringUtil; graphics : Graphics_Access; string_Id : Unbounded_String) is
+   procedure updateMeasurement (This : in out DrawVerticalStringUtil; graphics_Param : access Graphics'Class; string_Id : Unbounded_String) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       openGLFeatureUtil : OpenGLFeatureUtil_Access;
       font : Font_Access;
       size : Integer;
@@ -77,7 +78,8 @@ package body org.allbinary.graphics.draw.DrawVerticalStringUtil_Package is
         This.offsetXArray := offsetXArray;
    end updateMeasurement;
 
-   procedure paintVerticle (This : in out DrawVerticalStringUtil; graphics : Graphics_Access; string_Id : Unbounded_String; x : Integer; y : Integer; anchor : Integer) is
+   procedure paintVerticle (This : in out DrawVerticalStringUtil; graphics_Param : access Graphics'Class; string_Id : Unbounded_String; x : Integer; y : Integer; anchor : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       size : Integer;
       aChar : Character;
       index : Integer;
@@ -90,7 +92,8 @@ package body org.allbinary.graphics.draw.DrawVerticalStringUtil_Package is
         end loop;
    end paintVerticle;
 
-   procedure drawCenterString (This : in out DrawVerticalStringUtil; graphics : Graphics_Access; string_Id : Unbounded_String; offset : Integer; length : Integer; x : Integer; y : Integer) is
+   procedure drawCenterString (This : in out DrawVerticalStringUtil; graphics_Param : access Graphics'Class; string_Id : Unbounded_String; offset : Integer; length : Integer; x : Integer; y : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       width : Integer;
    begin
         width := (Java_Shift_Right_Arithmetic (graphics.getFont.substringWidth (string_Id, offset, length), 1));
@@ -101,12 +104,13 @@ package body org.allbinary.graphics.draw.DrawVerticalStringUtil_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            PreLogUtil_Package.put (StringMaker_Package.Create.append (To_Unbounded_String ("Exception: stringLength: ")).appendint (Length (string_Id)).append (To_Unbounded_String (" offset: ")).appendint (offset).append (To_Unbounded_String (" currentLength: ")).appendint (length).toString, This'Unchecked_Access, To_Unbounded_String ("drawCenterString"));
+            PreLogUtil_Package.put (StringMaker_Package.Create.append (To_Unbounded_String ("Exception: stringLength: ")).appendint (Length (string_Id)).append (To_Unbounded_String (" offset: ")).appendint (offset).append (To_Unbounded_String (" currentLength: ")).appendint (length).toString, DrawVerticalStringUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("drawCenterString"));
                 end;
         end;
    end drawCenterString;
 
-   procedure drawCenterStrings (This : in out DrawVerticalStringUtil; graphics : Graphics_Access; stringArray : Unbounded_String_Array_Access; maxWidth : Integer; x : Integer; y : Integer) is
+   procedure drawCenterStrings (This : in out DrawVerticalStringUtil; graphics_Param : access Graphics'Class; stringArray : Unbounded_String_Array_Access; maxWidth : Integer; x : Integer; y : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       extraLines : Integer;
       string_Id : Unbounded_String;
       width : Integer;

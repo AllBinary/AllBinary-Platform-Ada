@@ -41,8 +41,8 @@ package org.allbinary.animation.compound.CompoundIndexedAnimationInterfaceFactor
 
    type CompoundIndexedAnimationInterfaceFactory is new CompoundAnimationInterfaceFactory with null record;
 
-   procedure Initialize (This : in out CompoundIndexedAnimationInterfaceFactory'Class; basicAnimationInterfaceFactoryInterfaceArray : AnimationInterfaceFactoryInterface_Access_Array_Access; animationBehaviorFactory : AnimationBehaviorFactory_Access);
-   function Create (basicAnimationInterfaceFactoryInterfaceArray : AnimationInterfaceFactoryInterface_Access_Array_Access; animationBehaviorFactory : AnimationBehaviorFactory_Access) return CompoundIndexedAnimationInterfaceFactory_Access;
+   procedure Initialize (This : in out CompoundIndexedAnimationInterfaceFactory'Class; basicAnimationInterfaceFactoryInterfaceArray : AnimationInterfaceFactoryInterface_Access_Array_Access; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class);
+   function Create (basicAnimationInterfaceFactoryInterfaceArray : AnimationInterfaceFactoryInterface_Access_Array_Access; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return CompoundIndexedAnimationInterfaceFactory_Access;
    function createArray (This : in out CompoundIndexedAnimationInterfaceFactory; size : Integer) return Animation_Access_Array_Access;
    procedure createArray (This : in out CompoundIndexedAnimationInterfaceFactory; size : Integer);
    function createAnimation (This : in out CompoundIndexedAnimationInterfaceFactory; animationArray : Animation_Access_Array_Access) return Animation_Access;

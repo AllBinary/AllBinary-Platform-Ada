@@ -40,7 +40,10 @@ package body org.allbinary.game.configuration.GameOptionsFormFactory_Package is
         return GameOptionsFormFactory_Package.instance;
    end getInstance;
 
-   function init (This : in out GameOptionsFormFactory; commandListener : CommandListener_Access; title : Unbounded_String; backgrounBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return CommandForm_Access is
+   function init (This : in out GameOptionsFormFactory; commandListener_Param : access CommandListener'Class; title : Unbounded_String; backgrounBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return CommandForm_Access is
+      commandListener : CommandListener_Access := CommandListener_Access (commandListener_Param);
+      backgrounBasicColor : BasicColor_Access := BasicColor_Access (backgrounBasicColor_Param);
+      foregroundBasicColor : BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
       commonStrings : CommonStrings_Access;
    begin
         begin
@@ -51,14 +54,14 @@ package body org.allbinary.game.configuration.GameOptionsFormFactory_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.INIT, e);
+            This.logUtil.put (commonStrings.EXCEPTION_Id, GameOptionsFormFactory_Access'(This'Unchecked_Access), commonStrings.INIT, e);
             return CommandForm_Package.getNullCommandForm;
                 end;
         end;
    end init;
 
-   procedure init (This : in out GameOptionsFormFactory; commandListener : CommandListener_Access; title : Unbounded_String; backgrounBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) is
-      Java_Result : constant CommandForm_Access := GameOptionsFormFactory'Class (This).init (commandListener, title, backgrounBasicColor, foregroundBasicColor);
+   procedure init (This : in out GameOptionsFormFactory; commandListener_Param : access CommandListener'Class; title : Unbounded_String; backgrounBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) is
+      Java_Result : constant CommandForm_Access := GameOptionsFormFactory'Class (This).init (commandListener_Param, title, backgrounBasicColor_Param, foregroundBasicColor_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

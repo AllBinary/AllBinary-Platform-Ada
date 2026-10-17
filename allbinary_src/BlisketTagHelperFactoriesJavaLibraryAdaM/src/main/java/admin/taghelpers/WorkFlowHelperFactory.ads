@@ -43,8 +43,8 @@ package admin.taghelpers.WorkFlowHelperFactory_Package is
 
    procedure Initialize (This : in out WorkFlowHelperFactory'Class);
    function Create return WorkFlowHelperFactory_Access;
-   function getInstance (This : in out WorkFlowHelperFactory; hashMap : HashMap_Access; pageContext : PageContext_Access) return Java_Object_Access;
-   procedure getInstance (This : in out WorkFlowHelperFactory; hashMap : HashMap_Access; pageContext : PageContext_Access);
+   function getInstance (This : in out WorkFlowHelperFactory; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return Java_Object_Access;
+   procedure getInstance (This : in out WorkFlowHelperFactory; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
 
 end admin.taghelpers.WorkFlowHelperFactory_Package;
 

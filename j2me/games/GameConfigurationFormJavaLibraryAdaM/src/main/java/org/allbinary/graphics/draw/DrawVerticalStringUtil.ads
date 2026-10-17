@@ -59,10 +59,10 @@ package org.allbinary.graphics.draw.DrawVerticalStringUtil_Package is
    procedure Initialize (This : in out DrawVerticalStringUtil'Class);
    function Create return DrawVerticalStringUtil_Access;
    function getInstance return DrawVerticalStringUtil_Access;
-   procedure updateMeasurement (This : in out DrawVerticalStringUtil; graphics : Graphics_Access; string_Id : Unbounded_String);
-   procedure paintVerticle (This : in out DrawVerticalStringUtil; graphics : Graphics_Access; string_Id : Unbounded_String; x : Integer; y : Integer; anchor : Integer);
-   procedure drawCenterString (This : in out DrawVerticalStringUtil; graphics : Graphics_Access; string_Id : Unbounded_String; offset : Integer; length : Integer; x : Integer; y : Integer);
-   procedure drawCenterStrings (This : in out DrawVerticalStringUtil; graphics : Graphics_Access; stringArray : Unbounded_String_Array_Access; maxWidth : Integer; x : Integer; y : Integer);
+   procedure updateMeasurement (This : in out DrawVerticalStringUtil; graphics_Param : access Graphics'Class; string_Id : Unbounded_String);
+   procedure paintVerticle (This : in out DrawVerticalStringUtil; graphics_Param : access Graphics'Class; string_Id : Unbounded_String; x : Integer; y : Integer; anchor : Integer);
+   procedure drawCenterString (This : in out DrawVerticalStringUtil; graphics_Param : access Graphics'Class; string_Id : Unbounded_String; offset : Integer; length : Integer; x : Integer; y : Integer);
+   procedure drawCenterStrings (This : in out DrawVerticalStringUtil; graphics_Param : access Graphics'Class; stringArray : Unbounded_String_Array_Access; maxWidth : Integer; x : Integer; y : Integer);
 
 end org.allbinary.graphics.draw.DrawVerticalStringUtil_Package;
 

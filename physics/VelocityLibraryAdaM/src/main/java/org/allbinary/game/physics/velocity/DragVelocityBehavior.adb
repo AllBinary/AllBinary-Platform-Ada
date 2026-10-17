@@ -34,7 +34,8 @@ package body org.allbinary.game.physics.velocity.DragVelocityBehavior_Package is
    end Create;
 
 
-   procedure reduce (This : in out DragVelocityBehavior; velocityProperties : BasicVelocityProperties_Access; nominator : Integer; denominator : Integer) is
+   procedure reduce (This : in out DragVelocityBehavior; velocityProperties_Param : access BasicVelocityProperties'Class; nominator : Integer; denominator : Integer) is
+      velocityProperties : BasicVelocityProperties_Access := BasicVelocityProperties_Access (velocityProperties_Param);
       basicDecimal : BasicDecimal_Access;
    begin
         if (velocityProperties.getVelocityXBasicDecimalP.getUnscaled) /= (0) then
@@ -49,7 +50,8 @@ package body org.allbinary.game.physics.velocity.DragVelocityBehavior_Package is
         end if;
    end reduce;
 
-   procedure reduceX (This : in out DragVelocityBehavior; velocityProperties : BasicVelocityProperties_Access; nominator : Integer; denominator : Integer) is
+   procedure reduceX (This : in out DragVelocityBehavior; velocityProperties_Param : access BasicVelocityProperties'Class; nominator : Integer; denominator : Integer) is
+      velocityProperties : BasicVelocityProperties_Access := BasicVelocityProperties_Access (velocityProperties_Param);
       basicDecimal : BasicDecimal_Access;
    begin
         basicDecimal := velocityProperties.getVelocityXBasicDecimalP;
@@ -59,7 +61,8 @@ package body org.allbinary.game.physics.velocity.DragVelocityBehavior_Package is
         end if;
    end reduceX;
 
-   procedure reduceY (This : in out DragVelocityBehavior; velocityProperties : BasicVelocityProperties_Access; nominator : Integer; denominator : Integer) is
+   procedure reduceY (This : in out DragVelocityBehavior; velocityProperties_Param : access BasicVelocityProperties'Class; nominator : Integer; denominator : Integer) is
+      velocityProperties : BasicVelocityProperties_Access := BasicVelocityProperties_Access (velocityProperties_Param);
       basicDecimal : BasicDecimal_Access;
    begin
         if (velocityProperties.getVelocityYBasicDecimalP.getUnscaled) /= (0) then

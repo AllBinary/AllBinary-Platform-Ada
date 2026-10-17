@@ -38,8 +38,8 @@ package org.allbinary.graphics.pipeline.RandomTranslation_Package is
 
    procedure Initialize (This : in out RandomTranslation'Class);
    function Create return RandomTranslation_Access;
-   function getInstance (vector : BasicArrayList_Access; howMuch : Integer) return BasicArrayList_Access;
-   procedure getInstance (vector : BasicArrayList_Access; howMuch : Integer);
+   function getInstance (vector_Param : access BasicArrayList'Class; howMuch : Integer) return BasicArrayList_Access;
+   procedure getInstance (vector_Param : access BasicArrayList'Class; howMuch : Integer);
 
 end org.allbinary.graphics.pipeline.RandomTranslation_Package;
 

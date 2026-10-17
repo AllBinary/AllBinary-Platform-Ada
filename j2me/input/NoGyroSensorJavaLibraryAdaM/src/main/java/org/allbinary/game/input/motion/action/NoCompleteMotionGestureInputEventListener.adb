@@ -34,12 +34,14 @@ package body org.allbinary.game.input.motion.action.NoCompleteMotionGestureInput
       return This;
    end Create;
 
-   procedure onEvent (This : in out NoCompleteMotionGestureInputEventListener; eventObject : AllBinaryEventObject_Access) is
+   procedure onEvent (This : in out NoCompleteMotionGestureInputEventListener; eventObject_Param : access AllBinaryEventObject'Class) is
+      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
    begin
-        ForcedLogUtil_Package.log (EventStrings_Package.getInstance.PERFORMANCE_MESSAGE, This'Unchecked_Access);
+        ForcedLogUtil_Package.log (EventStrings_Package.getInstance.PERFORMANCE_MESSAGE, NoCompleteMotionGestureInputEventListener_Access'(This'Unchecked_Access));
    end onEvent;
 
-   procedure onCompleteMotionGestureInputEvent (This : in out NoCompleteMotionGestureInputEventListener; completeMotionGestureInputEvent : CompleteMotionGestureInputEvent_Access) is
+   procedure onCompleteMotionGestureInputEvent (This : in out NoCompleteMotionGestureInputEventListener; completeMotionGestureInputEvent_Param : access CompleteMotionGestureInputEvent'Class) is
+      completeMotionGestureInputEvent : CompleteMotionGestureInputEvent_Access := CompleteMotionGestureInputEvent_Access (completeMotionGestureInputEvent_Param);
    begin
         null;
    end onCompleteMotionGestureInputEvent;

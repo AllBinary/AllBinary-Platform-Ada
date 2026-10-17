@@ -36,7 +36,10 @@ package body admin.taghelpers.HelperFactory_Package is
    end Create;
 
    --  throws LicensingException
-   function getInstance (abeClientInformation : AbeClientInformationInterface_Access; factoryName : Unbounded_String; className : Unbounded_String; hashMap : HashMap_Access; httpServletRequest : HttpServletRequest_Access) return Java_Object_Access is
+   function getInstance (abeClientInformation_Param : access AbeClientInformationInterface'Class; factoryName : Unbounded_String; className : Unbounded_String; hashMap_Param : access HashMap'Class; httpServletRequest_Param : access HttpServletRequest'Class) return Java_Object_Access is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+      httpServletRequest : HttpServletRequest_Access := HttpServletRequest_Access (httpServletRequest_Param);
       logUtil : LogUtil_Access;
       params : Java_Object_Access_Array_Access;
       classes : Ada_Tags_Tag_Array_Access;
@@ -70,7 +73,10 @@ package body admin.taghelpers.HelperFactory_Package is
    end getInstance;
 
    --  throws LicensingException
-   function getInstance (abeClientInformation : AbeClientInformationInterface_Access; factoryName : Unbounded_String; className : Unbounded_String; hashMap : HashMap_Access; pageContext : PageContext_Access) return Java_Object_Access is
+   function getInstance (abeClientInformation_Param : access AbeClientInformationInterface'Class; factoryName : Unbounded_String; className : Unbounded_String; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return Java_Object_Access is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
       logUtil : LogUtil_Access;
       params : Java_Object_Access_Array_Access;
       classes : Ada_Tags_Tag_Array_Access;
@@ -105,7 +111,11 @@ package body admin.taghelpers.HelperFactory_Package is
    end getInstance;
 
    --  throws LicensingException
-   function getInstance (abeClientInformation : AbeClientInformationInterface_Access; factoryName : Unbounded_String; className : Unbounded_String; hashMap : HashMap_Access; specialhashMap : HashMap_Access; pageContext : PageContext_Access) return Java_Object_Access is
+   function getInstance (abeClientInformation_Param : access AbeClientInformationInterface'Class; factoryName : Unbounded_String; className : Unbounded_String; hashMap_Param : access HashMap'Class; specialhashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return Java_Object_Access is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+      specialhashMap : HashMap_Access := HashMap_Access (specialhashMap_Param);
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
       logUtil : LogUtil_Access;
       params : Java_Object_Access_Array_Access;
       classes : Ada_Tags_Tag_Array_Access;
@@ -142,7 +152,8 @@ package body admin.taghelpers.HelperFactory_Package is
    end getInstance;
 
    --  throws LicensingException
-   function getInstance (abeClientInformation : AbeClientInformationInterface_Access; factoryName : Unbounded_String; className : Unbounded_String) return Java_Object_Access is
+   function getInstance (abeClientInformation_Param : access AbeClientInformationInterface'Class; factoryName : Unbounded_String; className : Unbounded_String) return Java_Object_Access is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
       logUtil : LogUtil_Access;
       anyType : Java_Object_Access;
       commonStrings : CommonStrings_Access;
@@ -165,29 +176,29 @@ package body admin.taghelpers.HelperFactory_Package is
         end;
    end getInstance;
 
-   procedure getInstance (abeClientInformation : AbeClientInformationInterface_Access; factoryName : Unbounded_String; className : Unbounded_String; hashMap : HashMap_Access; httpServletRequest : HttpServletRequest_Access) is
-      Java_Result : constant Java_Object_Access := getInstance (abeClientInformation, factoryName, className, hashMap, httpServletRequest);
+   procedure getInstance (abeClientInformation_Param : access AbeClientInformationInterface'Class; factoryName : Unbounded_String; className : Unbounded_String; hashMap_Param : access HashMap'Class; httpServletRequest_Param : access HttpServletRequest'Class) is
+      Java_Result : constant Java_Object_Access := getInstance (abeClientInformation_Param, factoryName, className, hashMap_Param, httpServletRequest_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
-   procedure getInstance (abeClientInformation : AbeClientInformationInterface_Access; factoryName : Unbounded_String; className : Unbounded_String; hashMap : HashMap_Access; pageContext : PageContext_Access) is
-      Java_Result : constant Java_Object_Access := getInstance (abeClientInformation, factoryName, className, hashMap, pageContext);
+   procedure getInstance (abeClientInformation_Param : access AbeClientInformationInterface'Class; factoryName : Unbounded_String; className : Unbounded_String; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+      Java_Result : constant Java_Object_Access := getInstance (abeClientInformation_Param, factoryName, className, hashMap_Param, pageContext_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
-   procedure getInstance (abeClientInformation : AbeClientInformationInterface_Access; factoryName : Unbounded_String; className : Unbounded_String; hashMap : HashMap_Access; specialhashMap : HashMap_Access; pageContext : PageContext_Access) is
-      Java_Result : constant Java_Object_Access := getInstance (abeClientInformation, factoryName, className, hashMap, specialhashMap, pageContext);
+   procedure getInstance (abeClientInformation_Param : access AbeClientInformationInterface'Class; factoryName : Unbounded_String; className : Unbounded_String; hashMap_Param : access HashMap'Class; specialhashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+      Java_Result : constant Java_Object_Access := getInstance (abeClientInformation_Param, factoryName, className, hashMap_Param, specialhashMap_Param, pageContext_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
-   procedure getInstance (abeClientInformation : AbeClientInformationInterface_Access; factoryName : Unbounded_String; className : Unbounded_String) is
-      Java_Result : constant Java_Object_Access := getInstance (abeClientInformation, factoryName, className);
+   procedure getInstance (abeClientInformation_Param : access AbeClientInformationInterface'Class; factoryName : Unbounded_String; className : Unbounded_String) is
+      Java_Result : constant Java_Object_Access := getInstance (abeClientInformation_Param, factoryName, className);
       pragma Unreferenced (Java_Result);
    begin
       null;

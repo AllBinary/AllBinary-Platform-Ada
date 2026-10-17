@@ -71,16 +71,16 @@ package org.allbinary.business.category.properties.CategoryProperties_Package is
 
    procedure Initialize (This : in out CategoryProperties'Class; name : Unbounded_String);
    function Create (name : Unbounded_String) return CategoryProperties_Access;
-   procedure Initialize (This : in out CategoryProperties'Class; node : Node_Access);
-   function Create (node : Node_Access) return CategoryProperties_Access;
-   procedure Initialize (This : in out CategoryProperties'Class; categoryPropertiesHashMap : HashMap_Access);
-   function Create (categoryPropertiesHashMap : HashMap_Access) return CategoryProperties_Access;
+   procedure Initialize (This : in out CategoryProperties'Class; node_Param : access Node'Class);
+   function Create (node_Param : access Node'Class) return CategoryProperties_Access;
+   procedure Initialize (This : in out CategoryProperties'Class; categoryPropertiesHashMap_Param : access HashMap'Class);
+   function Create (categoryPropertiesHashMap_Param : access HashMap'Class) return CategoryProperties_Access;
    function isRealRoot (This : in out CategoryProperties) return Boolean;
    function isRoot (This : in out CategoryProperties) return Boolean;
    function getKey (This : in out CategoryProperties) return Java_Object_Access;
    function getValue (This : in out CategoryProperties) return Unbounded_String;
-   function getPath (This : in out CategoryProperties; categoryHierarchyInterface : CategoryHierarchyInterface_Access) return AbPath_Access;
-   procedure getPath (This : in out CategoryProperties; categoryHierarchyInterface : CategoryHierarchyInterface_Access);
+   function getPath (This : in out CategoryProperties; categoryHierarchyInterface_Param : access CategoryHierarchyInterface'Class) return AbPath_Access;
+   procedure getPath (This : in out CategoryProperties; categoryHierarchyInterface_Param : access CategoryHierarchyInterface'Class);
    function getFileName (This : in out CategoryProperties) return Unbounded_String;
    function getWebAppPath (This : in out CategoryProperties) return AbPath_Access;
    procedure setValue (This : in out CategoryProperties; value : Unbounded_String);
@@ -88,8 +88,8 @@ package org.allbinary.business.category.properties.CategoryProperties_Package is
    function toHashMap (This : in out CategoryProperties) return HashMap_Access;
    function toVector (This : in out CategoryProperties) return BasicArrayList_Access;
    function toValidationInfoDoc (This : in out CategoryProperties) return Document_Access;
-   function toValidationInfoNode (This : in out CategoryProperties; document : Document_Access) return Node_Access;
-   procedure toValidationInfoNode (This : in out CategoryProperties; document : Document_Access);
+   function toValidationInfoNode (This : in out CategoryProperties; document_Param : access Document'Class) return Node_Access;
+   procedure toValidationInfoNode (This : in out CategoryProperties; document_Param : access Document'Class);
    function validationInfo (This : in out CategoryProperties) return Unbounded_String;
 
 end org.allbinary.business.category.properties.CategoryProperties_Package;

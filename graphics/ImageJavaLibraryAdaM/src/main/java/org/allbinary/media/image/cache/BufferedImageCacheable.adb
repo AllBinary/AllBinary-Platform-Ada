@@ -23,17 +23,18 @@ package body org.allbinary.media.image.cache.BufferedImageCacheable_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BufferedImageCacheable'Class; key : BufferedImageInfo_Access) is
+   procedure Initialize (This : in out BufferedImageCacheable'Class; key_Param : access BufferedImageInfo'Class) is
+      key : BufferedImageInfo_Access := BufferedImageInfo_Access (key_Param);
    begin
       Initialize_Fields (This);
         This.key := key;
         This.setBufferedImage (BufferedImage_Package.Create (key.getWidth, key.getHeight, key.getType));
    end Initialize;
 
-   function Create (key : BufferedImageInfo_Access) return BufferedImageCacheable_Access is
+   function Create (key_Param : access BufferedImageInfo'Class) return BufferedImageCacheable_Access is
       This : constant BufferedImageCacheable_Access := new BufferedImageCacheable;
    begin
-      BufferedImageCacheable_Package.Initialize (This.all, key);
+      BufferedImageCacheable_Package.Initialize (This.all, key_Param);
       return This;
    end Create;
 
@@ -47,7 +48,8 @@ package body org.allbinary.media.image.cache.BufferedImageCacheable_Package is
         return This.bufferedImage;
    end getBufferedImage;
 
-   procedure setBufferedImage (This : in out BufferedImageCacheable; bufferedImage : BufferedImage_Access) is
+   procedure setBufferedImage (This : in out BufferedImageCacheable; bufferedImage_Param : access BufferedImage'Class) is
+      bufferedImage : BufferedImage_Access := BufferedImage_Access (bufferedImage_Param);
    begin
         This.bufferedImage := bufferedImage;
    end setBufferedImage;

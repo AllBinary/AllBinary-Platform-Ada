@@ -39,11 +39,11 @@ package org.allbinary.media.image.comparison.motion.MotionRectanglesResultsFrame
       frame : Long_Long_Integer;
    end record;
 
-   procedure Initialize (This : in out MotionRectanglesResultsFrameCacheable'Class; motionRectangles : MotionRectangles_Access; frame : Long_Long_Integer);
-   function Create (motionRectangles : MotionRectangles_Access; frame : Long_Long_Integer) return MotionRectanglesResultsFrameCacheable_Access;
+   procedure Initialize (This : in out MotionRectanglesResultsFrameCacheable'Class; motionRectangles_Param : access MotionRectangles'Class; frame : Long_Long_Integer);
+   function Create (motionRectangles_Param : access MotionRectangles'Class; frame : Long_Long_Integer) return MotionRectanglesResultsFrameCacheable_Access;
    function getKey (This : in out MotionRectanglesResultsFrameCacheable) return Java_Object_Access;
    function getMotionRectangles (This : in out MotionRectanglesResultsFrameCacheable) return MotionRectangles_Access;
-   procedure setMotionRectangles (This : in out MotionRectanglesResultsFrameCacheable; motionRectangles : MotionRectangles_Access);
+   procedure setMotionRectangles (This : in out MotionRectanglesResultsFrameCacheable; motionRectangles_Param : access MotionRectangles'Class);
    function toString (This : in out MotionRectanglesResultsFrameCacheable) return Unbounded_String;
 
 end org.allbinary.media.image.comparison.motion.MotionRectanglesResultsFrameCacheable_Package;

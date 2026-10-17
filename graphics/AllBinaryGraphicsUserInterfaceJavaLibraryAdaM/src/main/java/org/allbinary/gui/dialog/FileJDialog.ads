@@ -44,14 +44,14 @@ package org.allbinary.gui.dialog.FileJDialog_Package is
 
    procedure Initialize (This : in out FileJDialog'Class);
    function Create return FileJDialog_Access;
-   procedure Initialize (This : in out FileJDialog'Class; parent : Frame_Access; modal : Boolean);
-   function Create (parent : Frame_Access; modal : Boolean) return FileJDialog_Access;
-   procedure addFinishedListener (This : in out FileJDialog; finishedListenerInterface : FileJDialogListenerInterface_Access);
+   procedure Initialize (This : in out FileJDialog'Class; parent_Param : access Frame'Class; modal : Boolean);
+   function Create (parent_Param : access Frame'Class; modal : Boolean) return FileJDialog_Access;
+   procedure addFinishedListener (This : in out FileJDialog; finishedListenerInterface_Param : access FileJDialogListenerInterface'Class);
    procedure initComponents (This : in out FileJDialog);
-   procedure jFileChooser1ActionPerformed (This : in out FileJDialog; evt : ActionEvent_Access);
+   procedure jFileChooser1ActionPerformed (This : in out FileJDialog; evt_Param : access ActionEvent'Class);
    procedure main (args : Unbounded_String_Array_Access);
    function getJFileChooser1 (This : in out FileJDialog) return JFileChooser_Access;
-   procedure setJFileChooser1 (This : in out FileJDialog; jFileChooser1 : JFileChooser_Access);
+   procedure setJFileChooser1 (This : in out FileJDialog; jFileChooser1_Param : access JFileChooser'Class);
 
 end org.allbinary.gui.dialog.FileJDialog_Package;
 

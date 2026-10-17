@@ -33,22 +33,22 @@ package org.allbinary.game.input.PlatformKeyFactory_Package is
    function getInstance return PlatformKeyFactory_Access;
    function getString (This : in out PlatformKeyFactory; keyCode : Integer) return Unbounded_String;
    procedure getString (This : in out PlatformKeyFactory; keyCode : Integer);
-   function isSubmission (This : in out PlatformKeyFactory; input : Input_Access) return Boolean;
-   procedure isSubmission (This : in out PlatformKeyFactory; input : Input_Access);
-   function isDelete (This : in out PlatformKeyFactory; input : Input_Access) return Boolean;
-   procedure isDelete (This : in out PlatformKeyFactory; input : Input_Access);
-   function isBackSpace (This : in out PlatformKeyFactory; input : Input_Access) return Boolean;
-   procedure isBackSpace (This : in out PlatformKeyFactory; input : Input_Access);
-   function isLeft (This : in out PlatformKeyFactory; input : Input_Access) return Boolean;
-   procedure isLeft (This : in out PlatformKeyFactory; input : Input_Access);
-   function isRight (This : in out PlatformKeyFactory; input : Input_Access) return Boolean;
-   procedure isRight (This : in out PlatformKeyFactory; input : Input_Access);
-   function isUp (This : in out PlatformKeyFactory; input : Input_Access) return Boolean;
-   procedure isUp (This : in out PlatformKeyFactory; input : Input_Access);
-   function isDown (This : in out PlatformKeyFactory; input : Input_Access) return Boolean;
-   procedure isDown (This : in out PlatformKeyFactory; input : Input_Access);
-   function isEnter (This : in out PlatformKeyFactory; input : Input_Access) return Boolean;
-   procedure isEnter (This : in out PlatformKeyFactory; input : Input_Access);
+   function isSubmission (This : in out PlatformKeyFactory; input_Param : access Input'Class) return Boolean;
+   procedure isSubmission (This : in out PlatformKeyFactory; input_Param : access Input'Class);
+   function isDelete (This : in out PlatformKeyFactory; input_Param : access Input'Class) return Boolean;
+   procedure isDelete (This : in out PlatformKeyFactory; input_Param : access Input'Class);
+   function isBackSpace (This : in out PlatformKeyFactory; input_Param : access Input'Class) return Boolean;
+   procedure isBackSpace (This : in out PlatformKeyFactory; input_Param : access Input'Class);
+   function isLeft (This : in out PlatformKeyFactory; input_Param : access Input'Class) return Boolean;
+   procedure isLeft (This : in out PlatformKeyFactory; input_Param : access Input'Class);
+   function isRight (This : in out PlatformKeyFactory; input_Param : access Input'Class) return Boolean;
+   procedure isRight (This : in out PlatformKeyFactory; input_Param : access Input'Class);
+   function isUp (This : in out PlatformKeyFactory; input_Param : access Input'Class) return Boolean;
+   procedure isUp (This : in out PlatformKeyFactory; input_Param : access Input'Class);
+   function isDown (This : in out PlatformKeyFactory; input_Param : access Input'Class) return Boolean;
+   procedure isDown (This : in out PlatformKeyFactory; input_Param : access Input'Class);
+   function isEnter (This : in out PlatformKeyFactory; input_Param : access Input'Class) return Boolean;
+   procedure isEnter (This : in out PlatformKeyFactory; input_Param : access Input'Class);
 
 end org.allbinary.game.input.PlatformKeyFactory_Package;
 

@@ -46,8 +46,8 @@ package org.allbinary.graphics.opengles.shader.CompositeShaderUpdater_Package is
    procedure Initialize (This : in out CompositeShaderUpdater'Class; uniformBlockArray : Unbounded_String_Array_Access; uniformArray : Unbounded_String_Array_Access; attributeArray : Unbounded_String_Array_Access; attributeHandleArray : Integer_Array_Access);
    function Create (uniformBlockArray : Unbounded_String_Array_Access; uniformArray : Unbounded_String_Array_Access; attributeArray : Unbounded_String_Array_Access; attributeHandleArray : Integer_Array_Access) return CompositeShaderUpdater_Access;
    function getInstance return CompositeShaderUpdater_Access;
-   procedure onSurfaceCreated (This : in out CompositeShaderUpdater; gl : GL10_Access; eglConfig : EGLConfig_Access; programHandle : Integer);
-   procedure onSurfaceDestroyed (This : in out CompositeShaderUpdater; gl : GL10_Access);
+   procedure onSurfaceCreated (This : in out CompositeShaderUpdater; gl_Param : access GL10'Class; eglConfig_Param : access EGLConfig'Class; programHandle : Integer);
+   procedure onSurfaceDestroyed (This : in out CompositeShaderUpdater; gl_Param : access GL10'Class);
 
 end org.allbinary.graphics.opengles.shader.CompositeShaderUpdater_Package;
 

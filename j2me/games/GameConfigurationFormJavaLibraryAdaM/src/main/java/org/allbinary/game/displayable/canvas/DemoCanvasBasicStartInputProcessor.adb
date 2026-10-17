@@ -21,15 +21,17 @@ package body org.allbinary.game.displayable.canvas.DemoCanvasBasicStartInputProc
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out DemoCanvasBasicStartInputProcessor'Class; gameKeyEventList : BasicArrayList_Access; gameCanvas : RunnableCanvas_Access) is
+   procedure Initialize (This : in out DemoCanvasBasicStartInputProcessor'Class; gameKeyEventList_Param : access BasicArrayList'Class; gameCanvas_Param : access RunnableCanvas'Class) is
+      gameKeyEventList : BasicArrayList_Access := BasicArrayList_Access (gameKeyEventList_Param);
+      gameCanvas : RunnableCanvas_Access := RunnableCanvas_Access (gameCanvas_Param);
    begin
         BasicMenuInputProcessor_Package.Initialize (This, gameKeyEventList, -(1), gameCanvas);
    end Initialize;
 
-   function Create (gameKeyEventList : BasicArrayList_Access; gameCanvas : RunnableCanvas_Access) return DemoCanvasBasicStartInputProcessor_Access is
+   function Create (gameKeyEventList_Param : access BasicArrayList'Class; gameCanvas_Param : access RunnableCanvas'Class) return DemoCanvasBasicStartInputProcessor_Access is
       This : constant DemoCanvasBasicStartInputProcessor_Access := new DemoCanvasBasicStartInputProcessor;
    begin
-      DemoCanvasBasicStartInputProcessor_Package.Initialize (This.all, gameKeyEventList, gameCanvas);
+      DemoCanvasBasicStartInputProcessor_Package.Initialize (This.all, gameKeyEventList_Param, gameCanvas_Param);
       return This;
    end Create;
 
@@ -45,7 +47,7 @@ package body org.allbinary.game.displayable.canvas.DemoCanvasBasicStartInputProc
         gameKeyEvent := null;
         for index in 0 .. (size) - 1 loop
             gameKeyEvent := GameKeyEvent_Access (list.objectArray (index));
-            This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Start GameKey: ")).append (StringUtil_Package.getInstance.toString (gameKeyEvent)).toString, This'Unchecked_Access, GameInputStrings_Package.getInstance.PROCESS_INPUT);
+            This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Start GameKey: ")).append (StringUtil_Package.getInstance.toString (gameKeyEvent)).toString, DemoCanvasBasicStartInputProcessor_Access'(This'Unchecked_Access), GameInputStrings_Package.getInstance.PROCESS_INPUT);
         end loop;
         This.getCanvas.getCustomCommandListener.commandAction (GameCommandsFactory_Package.getInstance.START_COMMAND, NullCanvas_Package.NULL_CANVAS);
         return size;

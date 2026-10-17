@@ -45,7 +45,9 @@ package body org.allbinary.game.configuration.GameConfigurationUtil_Package is
    end getInstance;
 
    --  throws Exception
-   procedure change (This : in out GameConfigurationUtil; gameOptionsForm : GameOptionsForm_Access; gauge : GameConfigurationGauge_Access) is
+   procedure change (This : in out GameConfigurationUtil; gameOptionsForm_Param : access GameOptionsForm'Class; gauge_Param : access GameConfigurationGauge'Class) is
+      gameOptionsForm : GameOptionsForm_Access := GameOptionsForm_Access (gameOptionsForm_Param);
+      gauge : GameConfigurationGauge_Access := GameConfigurationGauge_Access (gauge_Param);
       gameConfigurationSingleton : GameConfigurationSingleton_Access;
       gameConfiguration : GameConfiguration_Access;
    begin
@@ -56,7 +58,8 @@ package body org.allbinary.game.configuration.GameConfigurationUtil_Package is
    end change;
 
    --  throws Exception
-   procedure update (This : in out GameConfigurationUtil; gauge : GameConfigurationGauge_Access) is
+   procedure update (This : in out GameConfigurationUtil; gauge_Param : access GameConfigurationGauge'Class) is
+      gauge : GameConfigurationGauge_Access := GameConfigurationGauge_Access (gauge_Param);
       gameConfigurationSingleton : GameConfigurationSingleton_Access;
       gameConfiguration : GameConfiguration_Access;
       smallIntegerSingletonFactory : SmallIntegerSingletonFactory_Access;
@@ -74,12 +77,13 @@ package body org.allbinary.game.configuration.GameConfigurationUtil_Package is
         stringBuffer.appendint (Integer (gameConfiguration.getValue.intValue));
         stringBuffer.append (This.TO);
         stringBuffer.appendint (Integer (value.intValue));
-        This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, This.commonStrings.UPDATE);
+        This.logUtil.putF (stringBuffer.toString, GameConfigurationUtil_Access'(This'Unchecked_Access), This.commonStrings.UPDATE);
         gameConfiguration.setValue (value);
    end update;
 
    --  throws Exception
-   procedure setDefault (This : in out GameConfigurationUtil; gauge : GameConfigurationGauge_Access) is
+   procedure setDefault (This : in out GameConfigurationUtil; gauge_Param : access GameConfigurationGauge'Class) is
+      gauge : GameConfigurationGauge_Access := GameConfigurationGauge_Access (gauge_Param);
       gameConfigurationSingleton : GameConfigurationSingleton_Access;
       gameConfiguration : GameConfiguration_Access;
       stringBuffer : StringMaker_Access;
@@ -91,13 +95,15 @@ package body org.allbinary.game.configuration.GameConfigurationUtil_Package is
         stringBuffer.append (gameConfiguration.getName);
         stringBuffer.append (This.TO);
         stringBuffer.appendint (Integer (gameConfiguration.getDefaultValue.intValue));
-        This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("setDefault"));
+        This.logUtil.putF (stringBuffer.toString, GameConfigurationUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("setDefault"));
         gauge.setValue ((gameConfiguration.getDefaultValue.intValue) - (gameConfiguration.getMinValue.intValue));
         gameConfiguration.setValue (gameConfiguration.getDefaultValue);
    end setDefault;
 
    --  throws Exception
-   procedure updateChallange (This : in out GameConfigurationUtil; gameOptionsForm : GameOptionsForm_Access; gameConfiguration : GameConfiguration_Access) is
+   procedure updateChallange (This : in out GameConfigurationUtil; gameOptionsForm_Param : access GameOptionsForm'Class; gameConfiguration_Param : access GameConfiguration'Class) is
+      gameOptionsForm : GameOptionsForm_Access := GameOptionsForm_Access (gameOptionsForm_Param);
+      gameConfiguration : GameConfiguration_Access := GameConfiguration_Access (gameConfiguration_Param);
       gameConfigurationSingleton : GameConfigurationSingleton_Access;
       gameConfigurationCentral : GameConfigurationCentral_Access;
       size : Integer;
@@ -110,7 +116,7 @@ package body org.allbinary.game.configuration.GameConfigurationUtil_Package is
         gameConfigurationSingleton := GameConfigurationSingleton_Package.getInstance;
         gameConfigurationCentral := GameConfigurationCentral_Package.getInstance;
         if (gameConfiguration) = (gameConfigurationCentral.CHALLENGE_LEVEL) then
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("updateChallange"));
+            This.logUtil.putF (This.commonStrings.START, GameConfigurationUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("updateChallange"));
             gameConfigurationCentral.COLLIDE_DAMAGE.setValue (gameConfiguration.getValue);
             gameConfigurationCentral.ATTACK_CHALLENGE_LEVEL.setValue (gameConfiguration.getValue);
             gameConfigurationCentral.DURABILITY_CHALLENGE_LEVEL.setValue (gameConfiguration.getValue);
@@ -139,7 +145,7 @@ package body org.allbinary.game.configuration.GameConfigurationUtil_Package is
    procedure updateCompetitionValue (This : in out GameConfigurationUtil) is
       gameConfigurationCentral : GameConfigurationCentral_Access;
    begin
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("updateCompetitionValue"));
+        This.logUtil.putF (This.commonStrings.START, GameConfigurationUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("updateCompetitionValue"));
         gameConfigurationCentral := GameConfigurationCentral_Package.getInstance;
         This.COMPETITION_VALUE := (((gameConfigurationCentral.COLLIDE_DAMAGE.getValue.intValue) + (gameConfigurationCentral.ATTACK_CHALLENGE_LEVEL.getValue.intValue)) + (gameConfigurationCentral.DURABILITY_CHALLENGE_LEVEL.getValue.intValue)) + (gameConfigurationCentral.SPEED_CHALLENGE_LEVEL.getValue.intValue);
         This.COMPETITION_VALUE := (Java_Shift_Right_Arithmetic (This.COMPETITION_VALUE, 2));

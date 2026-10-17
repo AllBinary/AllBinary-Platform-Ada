@@ -39,8 +39,8 @@ package org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserC
       mountedLink : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out DisplayInBrowserContraints'Class; node : Node_Access);
-   function Create (node : Node_Access) return DisplayInBrowserContraints_Access;
+   procedure Initialize (This : in out DisplayInBrowserContraints'Class; node_Param : access Node'Class);
+   function Create (node_Param : access Node'Class) return DisplayInBrowserContraints_Access;
    function isMountable (This : in out DisplayInBrowserContraints) return Boolean;
    procedure setMountable (This : in out DisplayInBrowserContraints; mountable : Boolean);
    function isFrameable (This : in out DisplayInBrowserContraints) return Boolean;

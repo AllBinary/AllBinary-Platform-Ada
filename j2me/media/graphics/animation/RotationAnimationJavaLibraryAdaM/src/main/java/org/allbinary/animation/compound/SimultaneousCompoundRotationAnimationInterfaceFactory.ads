@@ -43,8 +43,8 @@ package org.allbinary.animation.compound.SimultaneousCompoundRotationAnimationIn
 
    type SimultaneousCompoundRotationAnimationInterfaceFactory is new CompoundAnimationInterfaceFactory with null record;
 
-   procedure Initialize (This : in out SimultaneousCompoundRotationAnimationInterfaceFactory'Class; basicAnimationInterfaceFactoryInterfaceArray : AnimationInterfaceFactoryInterface_Access_Array_Access; animationBehaviorFactory : AnimationBehaviorFactory_Access);
-   function Create (basicAnimationInterfaceFactoryInterfaceArray : AnimationInterfaceFactoryInterface_Access_Array_Access; animationBehaviorFactory : AnimationBehaviorFactory_Access) return SimultaneousCompoundRotationAnimationInterfaceFactory_Access;
+   procedure Initialize (This : in out SimultaneousCompoundRotationAnimationInterfaceFactory'Class; basicAnimationInterfaceFactoryInterfaceArray : AnimationInterfaceFactoryInterface_Access_Array_Access; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class);
+   function Create (basicAnimationInterfaceFactoryInterfaceArray : AnimationInterfaceFactoryInterface_Access_Array_Access; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return SimultaneousCompoundRotationAnimationInterfaceFactory_Access;
    function createArray (This : in out SimultaneousCompoundRotationAnimationInterfaceFactory; size : Integer) return Animation_Access_Array_Access;
    procedure createArray (This : in out SimultaneousCompoundRotationAnimationInterfaceFactory; size : Integer);
    function createAnimation (This : in out SimultaneousCompoundRotationAnimationInterfaceFactory; animationInterfaceArray : Animation_Access_Array_Access) return Animation_Access;

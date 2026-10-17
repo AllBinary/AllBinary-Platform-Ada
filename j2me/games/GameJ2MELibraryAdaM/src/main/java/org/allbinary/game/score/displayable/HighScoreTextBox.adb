@@ -26,7 +26,15 @@ package body org.allbinary.game.score.displayable.HighScoreTextBox_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out HighScoreTextBox'Class; highScoresFactoryInterface : HighScoresFactoryInterface_Access; highScoresHelper : HighScoresHelperBaseInterface_Access; abeClientInformation : AbeClientInformationInterface_Access; gameInfo : GameInfo_Access; cmdListener : CommandListener_Access; name : Unbounded_String; highScore : HighScore_Access; backgrounBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) is
+   procedure Initialize (This : in out HighScoreTextBox'Class; highScoresFactoryInterface_Param : access HighScoresFactoryInterface'Class; highScoresHelper_Param : access HighScoresHelperBaseInterface'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; gameInfo_Param : access GameInfo'Class; cmdListener_Param : access CommandListener'Class; name : Unbounded_String; highScore_Param : access HighScore'Class; backgrounBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) is
+      highScoresFactoryInterface : HighScoresFactoryInterface_Access := HighScoresFactoryInterface_Access (highScoresFactoryInterface_Param);
+      highScoresHelper : HighScoresHelperBaseInterface_Access := HighScoresHelperBaseInterface_Access (highScoresHelper_Param);
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      gameInfo : GameInfo_Access := GameInfo_Access (gameInfo_Param);
+      cmdListener : CommandListener_Access := CommandListener_Access (cmdListener_Param);
+      highScore : HighScore_Access := HighScore_Access (highScore_Param);
+      backgrounBasicColor : BasicColor_Access := BasicColor_Access (backgrounBasicColor_Param);
+      foregroundBasicColor : BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
       operatingSystemInterface : GenericOperatingSystem_Access;
       username : Unbounded_String;
    begin
@@ -44,17 +52,18 @@ package body org.allbinary.game.score.displayable.HighScoreTextBox_Package is
         end if;
    end Initialize;
 
-   function Create (highScoresFactoryInterface : HighScoresFactoryInterface_Access; highScoresHelper : HighScoresHelperBaseInterface_Access; abeClientInformation : AbeClientInformationInterface_Access; gameInfo : GameInfo_Access; cmdListener : CommandListener_Access; name : Unbounded_String; highScore : HighScore_Access; backgrounBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return HighScoreTextBox_Access is
+   function Create (highScoresFactoryInterface_Param : access HighScoresFactoryInterface'Class; highScoresHelper_Param : access HighScoresHelperBaseInterface'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; gameInfo_Param : access GameInfo'Class; cmdListener_Param : access CommandListener'Class; name : Unbounded_String; highScore_Param : access HighScore'Class; backgrounBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return HighScoreTextBox_Access is
       This : constant HighScoreTextBox_Access := new HighScoreTextBox;
    begin
-      HighScoreTextBox_Package.Initialize (This.all, highScoresFactoryInterface, highScoresHelper, abeClientInformation, gameInfo, cmdListener, name, highScore, backgrounBasicColor, foregroundBasicColor);
+      HighScoreTextBox_Package.Initialize (This.all, highScoresFactoryInterface_Param, highScoresHelper_Param, abeClientInformation_Param, gameInfo_Param, cmdListener_Param, name, highScore_Param, backgrounBasicColor_Param, foregroundBasicColor_Param);
       return This;
    end Create;
 
-   procedure initCommands (This : in out HighScoreTextBox; cmdListener : CommandListener_Access) is
+   procedure initCommands (This : in out HighScoreTextBox; cmdListener_Param : access CommandListener'Class) is
+      cmdListener : CommandListener_Access := CommandListener_Access (cmdListener_Param);
    begin
         This.removeAllCommands;
-        PostGameCommandFactory_Package.getInstance.addCommands (This'Unchecked_Access);
+        PostGameCommandFactory_Package.getInstance.addCommands (HighScoreTextBox_Access'(This'Unchecked_Access));
         This.addCommand (HighScoreUtil_Package.SUBMIT_TEXTBOX_COMMAND);
         This.setCommandListener (cmdListener);
    end initCommands;
@@ -71,7 +80,7 @@ package body org.allbinary.game.score.displayable.HighScoreTextBox_Package is
    begin
         This.virtualKeyboardEventHandler.close;
         This.paintable := This.pleaseWait;
-        This.repaintBehavior.onChangeRepaint (This'Unchecked_Access);
+        This.repaintBehavior.onChangeRepaint (HighScoreTextBox_Access'(This'Unchecked_Access));
         CustomTextBox (This).close;
         This.removeCommand (HighScoreUtil_Package.SUBMIT_TEXTBOX_COMMAND);
         This.update;
@@ -81,7 +90,7 @@ package body org.allbinary.game.score.displayable.HighScoreTextBox_Package is
             null;
         end if;
         This.paintable := NullPaintable_Package.getInstance;
-        This.repaintBehavior.onChangeRepaint (This'Unchecked_Access);
+        This.repaintBehavior.onChangeRepaint (HighScoreTextBox_Access'(This'Unchecked_Access));
    end close;
 
    --  throws Exception
@@ -93,7 +102,8 @@ package body org.allbinary.game.score.displayable.HighScoreTextBox_Package is
         CustomTextBox (This).update;
    end update;
 
-   procedure paint (This : in out HighScoreTextBox; graphics : Graphics_Access) is
+   procedure paint (This : in out HighScoreTextBox; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         CustomTextBox (This).paint (graphics);
         This.paintable.paint (graphics);
@@ -106,7 +116,7 @@ package body org.allbinary.game.score.displayable.HighScoreTextBox_Package is
 
    procedure submit (This : in out HighScoreTextBox) is
    begin
-        This.highScoreUtil.submit (This'Unchecked_Access);
+        This.highScoreUtil.submit (HighScoreTextBox_Access'(This'Unchecked_Access));
    end submit;
 
 end org.allbinary.game.score.displayable.HighScoreTextBox_Package;

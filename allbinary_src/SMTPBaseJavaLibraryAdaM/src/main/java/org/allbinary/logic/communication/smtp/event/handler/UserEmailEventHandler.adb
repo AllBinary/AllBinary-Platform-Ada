@@ -38,14 +38,17 @@ package body org.allbinary.logic.communication.smtp.event.handler.UserEmailEvent
    end Create;
 
    --  throws Exception
-   procedure receiveEmailInfo (This : in out UserEmailEventHandler; userEmailEventNameData : UserEmailEventNameData_Access; emailInfo : EmailInfo_Access) is
+   procedure receiveEmailInfo (This : in out UserEmailEventHandler; userEmailEventNameData_Param : access UserEmailEventNameData'Class; emailInfo_Param : access EmailInfo'Class) is
+      userEmailEventNameData : UserEmailEventNameData_Access := UserEmailEventNameData_Access (userEmailEventNameData_Param);
+      emailInfo : EmailInfo_Access := EmailInfo_Access (emailInfo_Param);
    begin
         This.userEmailEventNameData := userEmailEventNameData;
         This.emailInfo := emailInfo;
         This.fireEmailEvent;
    end receiveEmailInfo;
 
-   procedure addListener (This : in out UserEmailEventHandler; vector : BasicArrayList_Access) is
+   procedure addListener (This : in out UserEmailEventHandler; vector_Param : access BasicArrayList'Class) is
+      vector : BasicArrayList_Access := BasicArrayList_Access (vector_Param);
       size : Integer;
       userEmailEventListenerInterface : UserEmailEventListenerInterface_Access;
       index : Integer;
@@ -57,12 +60,14 @@ package body org.allbinary.logic.communication.smtp.event.handler.UserEmailEvent
         end loop;
    end addListener;
 
-   procedure addListener (This : in out UserEmailEventHandler; emailEventListenerInterface : UserEmailEventListenerInterface_Access) is
+   procedure addListener (This : in out UserEmailEventHandler; emailEventListenerInterface_Param : access UserEmailEventListenerInterface'Class) is
+      emailEventListenerInterface : UserEmailEventListenerInterface_Access := UserEmailEventListenerInterface_Access (emailEventListenerInterface_Param);
    begin
         This.emailVector.add (emailEventListenerInterface);
    end addListener;
 
-   procedure removeListener (This : in out UserEmailEventHandler; emailEventListenerInterface : UserEmailEventListenerInterface_Access) is
+   procedure removeListener (This : in out UserEmailEventHandler; emailEventListenerInterface_Param : access UserEmailEventListenerInterface'Class) is
+      emailEventListenerInterface : UserEmailEventListenerInterface_Access := UserEmailEventListenerInterface_Access (emailEventListenerInterface_Param);
    begin
         This.emailVector.remove (emailEventListenerInterface);
    end removeListener;
@@ -74,7 +79,7 @@ package body org.allbinary.logic.communication.smtp.event.handler.UserEmailEvent
       emailEventListenerInterface : UserEmailEventListenerInterface_Access;
       index : Integer;
    begin
-        emailEvent := EmailEvent_Package.Create (This'Unchecked_Access, This.userEmailEventNameData, This.emailInfo, 0);
+        emailEvent := EmailEvent_Package.Create (UserEmailEventHandler_Access'(This'Unchecked_Access), This.userEmailEventNameData, This.emailInfo, 0);
         size := This.emailVector.size;
         for index in 0 .. (size) - 1 loop
             emailEventListenerInterface := UserEmailEventListenerInterface_Access (This.emailVector.get (index));

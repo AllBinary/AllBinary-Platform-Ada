@@ -27,7 +27,9 @@ package body org.allbinary.game.ai.BasicAI_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BasicAI'Class; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) is
+   procedure Initialize (This : in out BasicAI'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) is
+      ownerLayerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (ownerLayerInterface_Param);
+      gameInput : GameInput_Access := GameInput_Access (gameInput_Param);
    begin
       ArtificialIntelligence_Package.Initialize (This);
       Initialize_Fields (This);
@@ -35,15 +37,16 @@ package body org.allbinary.game.ai.BasicAI_Package is
         This.gameInput := gameInput;
    end Initialize;
 
-   function Create (ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return BasicAI_Access is
+   function Create (ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return BasicAI_Access is
       This : constant BasicAI_Access := new BasicAI;
    begin
-      BasicAI_Package.Initialize (This.all, ownerLayerInterface, gameInput);
+      BasicAI_Package.Initialize (This.all, ownerLayerInterface_Param, gameInput_Param);
       return This;
    end Create;
 
    --  throws Exception
-   procedure processAI (This : in out BasicAI; allBinaryLayerManager : AllBinaryLayerManager_Access) is
+   procedure processAI (This : in out BasicAI; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class) is
+      allBinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
    begin
         Java_Throw (Java_New_Exception ("Exception", This.commonStrings.NOT_IMPLEMENTED));
    end processAI;
@@ -52,7 +55,7 @@ package body org.allbinary.game.ai.BasicAI_Package is
    procedure processKeyAI (This : in out BasicAI; key : Integer) is
    begin
         if (key) /= (-(1)) then
-            This.gameInput.add (This.gameKeyEventFactory.getInstanceForKey (This'Unchecked_Access, key));
+            This.gameInput.add (This.gameKeyEventFactory.getInstanceForKey (BasicAI_Access'(This'Unchecked_Access), key));
         end if;
    end processKeyAI;
 

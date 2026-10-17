@@ -27,12 +27,12 @@ package org.allbinary.animation.NullRotationAnimation_Package is
 
    type NullRotationAnimation is new RotationAnimation with null record;
 
-   procedure Initialize (This : in out NullRotationAnimation'Class; angleInfo : AngleInfo_Access; circularIndexUtil : CircularIndexUtil_Access; animationBehavior : AnimationBehavior_Access);
-   function Create (angleInfo : AngleInfo_Access; circularIndexUtil : CircularIndexUtil_Access; animationBehavior : AnimationBehavior_Access) return NullRotationAnimation_Access;
-   function createTotalAngle (angleInfo : AngleInfo_Access; totalAngle : Short_Integer; animationBehavior : AnimationBehavior_Access) return NullRotationAnimation_Access;
-   procedure createTotalAngle (angleInfo : AngleInfo_Access; totalAngle : Short_Integer; animationBehavior : AnimationBehavior_Access);
-   function createQuarter (animationBehavior : AnimationBehavior_Access) return NullRotationAnimation_Access;
-   procedure createQuarter (animationBehavior : AnimationBehavior_Access);
+   procedure Initialize (This : in out NullRotationAnimation'Class; angleInfo_Param : access AngleInfo'Class; circularIndexUtil_Param : access CircularIndexUtil'Class; animationBehavior_Param : access AnimationBehavior'Class);
+   function Create (angleInfo_Param : access AngleInfo'Class; circularIndexUtil_Param : access CircularIndexUtil'Class; animationBehavior_Param : access AnimationBehavior'Class) return NullRotationAnimation_Access;
+   function createTotalAngle (angleInfo_Param : access AngleInfo'Class; totalAngle : Short_Integer; animationBehavior_Param : access AnimationBehavior'Class) return NullRotationAnimation_Access;
+   procedure createTotalAngle (angleInfo_Param : access AngleInfo'Class; totalAngle : Short_Integer; animationBehavior_Param : access AnimationBehavior'Class);
+   function createQuarter (animationBehavior_Param : access AnimationBehavior'Class) return NullRotationAnimation_Access;
+   procedure createQuarter (animationBehavior_Param : access AnimationBehavior'Class);
    function getAnimationSize (This : in out NullRotationAnimation) return Integer;
 
 end org.allbinary.animation.NullRotationAnimation_Package;

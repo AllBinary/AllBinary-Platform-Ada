@@ -22,16 +22,17 @@ package body views.business.context.modules.storefront.generator.PreviewGenerato
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out PreviewGeneratorStoreFrontContextView'Class; transformInfoInterface : TransformInfoInterface_Access) is
+   procedure Initialize (This : in out PreviewGeneratorStoreFrontContextView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         GeneratorStoreFrontContextView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return PreviewGeneratorStoreFrontContextView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return PreviewGeneratorStoreFrontContextView_Access is
       This : constant PreviewGeneratorStoreFrontContextView_Access := new PreviewGeneratorStoreFrontContextView;
    begin
-      PreviewGeneratorStoreFrontContextView_Package.Initialize (This.all, transformInfoInterface);
+      PreviewGeneratorStoreFrontContextView_Package.Initialize (This.all, transformInfoInterface_Param);
       return This;
    end Create;
 
@@ -49,7 +50,7 @@ package body views.business.context.modules.storefront.generator.PreviewGenerato
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("view()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, PreviewGeneratorStoreFrontContextView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
             end if;
             Java_Throw (e);
                 end;

@@ -49,11 +49,11 @@ package org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package is
 
    procedure Initialize (This : in out WaypointInfoHudPaintable'Class);
    function Create return WaypointInfoHudPaintable_Access;
-   procedure updateMeasurement (This : in out WaypointInfoHudPaintable; graphics : Graphics_Access);
+   procedure updateMeasurement (This : in out WaypointInfoHudPaintable; graphics_Param : access Graphics'Class);
    procedure updateSelectionInfo (This : in out WaypointInfoHudPaintable);
-   procedure setRtsLayer (This : in out WaypointInfoHudPaintable; rtsLayer : RTSLayer_Access);
+   procedure setRtsLayer (This : in out WaypointInfoHudPaintable; rtsLayer_Param : access RTSLayer'Class);
    function getRtsLayer (This : in out WaypointInfoHudPaintable) return PathFindingLayerInterface_Access;
-   procedure paint (This : in out WaypointInfoHudPaintable; graphics : Graphics_Access);
+   procedure paint (This : in out WaypointInfoHudPaintable; graphics_Param : access Graphics'Class);
 
 end org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package;
 

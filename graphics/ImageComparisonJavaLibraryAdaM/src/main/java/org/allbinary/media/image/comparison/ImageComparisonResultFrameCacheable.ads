@@ -39,13 +39,13 @@ package org.allbinary.media.image.comparison.ImageComparisonResultFrameCacheable
       imageComparisonResult : ImageComparisonResult_Access;
    end record;
 
-   procedure Initialize (This : in out ImageComparisonResultFrameCacheable'Class; imageComparisonResult : ImageComparisonResult_Access; frame : Long_Long_Integer);
-   function Create (imageComparisonResult : ImageComparisonResult_Access; frame : Long_Long_Integer) return ImageComparisonResultFrameCacheable_Access;
+   procedure Initialize (This : in out ImageComparisonResultFrameCacheable'Class; imageComparisonResult_Param : access ImageComparisonResult'Class; frame : Long_Long_Integer);
+   function Create (imageComparisonResult_Param : access ImageComparisonResult'Class; frame : Long_Long_Integer) return ImageComparisonResultFrameCacheable_Access;
    function getKey (This : in out ImageComparisonResultFrameCacheable) return Java_Object_Access;
    function getFrame (This : in out ImageComparisonResultFrameCacheable) return Long_Long_Integer;
    procedure setFrame (This : in out ImageComparisonResultFrameCacheable; frame : Long_Long_Integer);
    function getImageComparisonResult (This : in out ImageComparisonResultFrameCacheable) return ImageComparisonResult_Access;
-   procedure setImageComparisonResult (This : in out ImageComparisonResultFrameCacheable; imageComparisonResult : ImageComparisonResult_Access);
+   procedure setImageComparisonResult (This : in out ImageComparisonResultFrameCacheable; imageComparisonResult_Param : access ImageComparisonResult'Class);
    function toString (This : in out ImageComparisonResultFrameCacheable) return Unbounded_String;
 
 end org.allbinary.media.image.comparison.ImageComparisonResultFrameCacheable_Package;

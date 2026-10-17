@@ -55,9 +55,9 @@ package org.allbinary.animation.NullRotationAnimationFactory_Package is
    function getFactoryInstance return NullRotationAnimationFactory_Access;
    function getInstance (This : in out NullRotationAnimationFactory; instanceId : Integer) return Animation_Access;
    procedure getInstance (This : in out NullRotationAnimationFactory; instanceId : Integer);
-   function getInstanceAnimation (This : in out NullRotationAnimationFactory; animationInterface : Animation_Access) return Animation_Access;
-   procedure getInstanceAnimation (This : in out NullRotationAnimationFactory; animationInterface : Animation_Access);
-   procedure setInitialScale (This : in out NullRotationAnimationFactory; scaleProperties : ScaleProperties_Access);
+   function getInstanceAnimation (This : in out NullRotationAnimationFactory; animationInterface_Param : access Animation'Class) return Animation_Access;
+   procedure getInstanceAnimation (This : in out NullRotationAnimationFactory; animationInterface_Param : access Animation'Class);
+   procedure setInitialScale (This : in out NullRotationAnimationFactory; scaleProperties_Param : access ScaleProperties'Class);
 
 end org.allbinary.animation.NullRotationAnimationFactory_Package;
 
@@ -97,7 +97,7 @@ package org.allbinary.animation.NullRotationAnimation2_Package is
 
    procedure Initialize (This : in out NullRotationAnimation2'Class);
    function Create return NullRotationAnimation2_Access;
-   procedure paintXY (This : in out NullRotationAnimation2; graphics : Graphics_Access; x : Integer; y : Integer);
+   procedure paintXY (This : in out NullRotationAnimation2; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
 
 end org.allbinary.animation.NullRotationAnimation2_Package;
 

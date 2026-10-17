@@ -24,17 +24,18 @@ package body views.generic_Id.address.billing.BillingAddressView_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BillingAddressView'Class; transformInfoInterface : TransformInfoInterface_Access) is
+   procedure Initialize (This : in out BillingAddressView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
         This.request := HttpServletRequest_Access (This.getPageContext.getRequest);
    end Initialize;
 
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return BillingAddressView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return BillingAddressView_Access is
       This : constant BillingAddressView_Access := new BillingAddressView;
    begin
-      BillingAddressView_Package.Initialize (This.all, transformInfoInterface);
+      BillingAddressView_Package.Initialize (This.all, transformInfoInterface_Param);
       return This;
    end Create;
 
@@ -44,7 +45,8 @@ package body views.generic_Id.address.billing.BillingAddressView_Package is
    end getRequest;
 
    --  throws Exception
-   function toXmlNode (This : in out BillingAddressView; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out BillingAddressView; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       formNode : Node_Access;
    begin
         begin
@@ -57,7 +59,7 @@ package body views.generic_Id.address.billing.BillingAddressView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.XSLLOGGINGERROR) then
-                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("toXmlNode"), e);
+                This.logUtil.put (This.commonStrings.FAILURE, BillingAddressView_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode"), e);
             end if;
             Java_Throw (e);
                 end;
@@ -66,7 +68,7 @@ package body views.generic_Id.address.billing.BillingAddressView_Package is
 
    procedure addDomNodeInterfaces (This : in out BillingAddressView) is
    begin
-        This.addDomNodeInterface (DomNodeInterface_Access (This'Unchecked_Access));
+        This.addDomNodeInterface (DomNodeInterface_Access (BillingAddressView_Access'(This'Unchecked_Access)));
         This.addDomNodeInterface (DomNodeInterface_Access (StatesView_Package.Create));
    end addDomNodeInterfaces;
 
@@ -82,15 +84,15 @@ package body views.generic_Id.address.billing.BillingAddressView_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("view()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, BillingAddressView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
             end if;
             Java_Throw (e);
                 end;
         end;
    end view;
 
-   procedure toXmlNode (This : in out BillingAddressView; document : Document_Access) is
-      Java_Result : constant Node_Access := BillingAddressView'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out BillingAddressView; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := BillingAddressView'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

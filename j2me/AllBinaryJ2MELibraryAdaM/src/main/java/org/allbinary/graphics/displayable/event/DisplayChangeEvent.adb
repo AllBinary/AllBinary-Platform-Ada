@@ -21,15 +21,16 @@ package body org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out DisplayChangeEvent'Class; anyType : Java_Object_Access) is
+   procedure Initialize (This : in out DisplayChangeEvent'Class; anyType_Param : access Java_Object'Class) is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         AllBinaryEventObject_Package.Initialize (This, anyType);
    end Initialize;
 
-   function Create (anyType : Java_Object_Access) return DisplayChangeEvent_Access is
+   function Create (anyType_Param : access Java_Object'Class) return DisplayChangeEvent_Access is
       This : constant DisplayChangeEvent_Access := new DisplayChangeEvent;
    begin
-      DisplayChangeEvent_Package.Initialize (This.all, anyType);
+      DisplayChangeEvent_Package.Initialize (This.all, anyType_Param);
       return This;
    end Create;
 

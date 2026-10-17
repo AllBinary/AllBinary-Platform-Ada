@@ -22,17 +22,19 @@ package body org.allbinary.media.image.search.ImageComparisonSearchResultsEvent_
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ImageComparisonSearchResultsEvent'Class; anyType : Java_Object_Access; imageComparisonSearch : ImageComparisonSearch_Access) is
+   procedure Initialize (This : in out ImageComparisonSearchResultsEvent'Class; anyType_Param : access Java_Object'Class; imageComparisonSearch_Param : access ImageComparisonSearch'Class) is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      imageComparisonSearch : ImageComparisonSearch_Access := ImageComparisonSearch_Access (imageComparisonSearch_Param);
    begin
         AllBinaryEventObject_Package.Initialize (This, anyType);
         Initialize_Fields (This);
         This.setImageComparisonSearch (imageComparisonSearch);
    end Initialize;
 
-   function Create (anyType : Java_Object_Access; imageComparisonSearch : ImageComparisonSearch_Access) return ImageComparisonSearchResultsEvent_Access is
+   function Create (anyType_Param : access Java_Object'Class; imageComparisonSearch_Param : access ImageComparisonSearch'Class) return ImageComparisonSearchResultsEvent_Access is
       This : constant ImageComparisonSearchResultsEvent_Access := new ImageComparisonSearchResultsEvent;
    begin
-      ImageComparisonSearchResultsEvent_Package.Initialize (This.all, anyType, imageComparisonSearch);
+      ImageComparisonSearchResultsEvent_Package.Initialize (This.all, anyType_Param, imageComparisonSearch_Param);
       return This;
    end Create;
 
@@ -41,7 +43,8 @@ package body org.allbinary.media.image.search.ImageComparisonSearchResultsEvent_
         return This.imageComparisonSearch;
    end getImageComparisonSearch;
 
-   procedure setImageComparisonSearch (This : in out ImageComparisonSearchResultsEvent; imageComparisonSearch : ImageComparisonSearch_Access) is
+   procedure setImageComparisonSearch (This : in out ImageComparisonSearchResultsEvent; imageComparisonSearch_Param : access ImageComparisonSearch'Class) is
+      imageComparisonSearch : ImageComparisonSearch_Access := ImageComparisonSearch_Access (imageComparisonSearch_Param);
    begin
         This.imageComparisonSearch := imageComparisonSearch;
    end setImageComparisonSearch;

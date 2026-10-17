@@ -59,13 +59,13 @@ package org.allbinary.image.ImageCache_Package is
 
    procedure Initialize (This : in out ImageCache'Class);
    function Create return ImageCache_Access;
-   procedure addListener (This : in out ImageCache; renderer : Java_Object_Access);
-   function getIndex (This : in out ImageCache; key : Java_Object_Access) return Integer;
-   procedure getIndex (This : in out ImageCache; key : Java_Object_Access);
+   procedure addListener (This : in out ImageCache; renderer_Param : access Java_Object'Class);
+   function getIndex (This : in out ImageCache; key_Param : access Java_Object'Class) return Integer;
+   procedure getIndex (This : in out ImageCache; key_Param : access Java_Object'Class);
    function get (This : in out ImageCache; caller : Unbounded_String; width : Integer; height : Integer) return Image_Access;
    procedure get (This : in out ImageCache; caller : Unbounded_String; width : Integer; height : Integer);
-   function getWithKey (This : in out ImageCache; key : Java_Object_Access) return Image_Access;
-   procedure getWithKey (This : in out ImageCache; key : Java_Object_Access);
+   function getWithKey (This : in out ImageCache; key_Param : access Java_Object'Class) return Image_Access;
+   procedure getWithKey (This : in out ImageCache; key_Param : access Java_Object'Class);
    procedure loadImageForAnimation (This : in out ImageCache);
    procedure progressEnded (This : in out ImageCache);
    procedure runTask (This : in out ImageCache);

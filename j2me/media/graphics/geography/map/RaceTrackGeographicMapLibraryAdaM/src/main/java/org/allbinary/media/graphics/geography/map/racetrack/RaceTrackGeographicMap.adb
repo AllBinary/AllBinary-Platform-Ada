@@ -22,17 +22,24 @@ package body org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeogr
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out RaceTrackGeographicMap'Class; raceTrackInfo : RaceTrackInfo_Access; raceTrackData : RaceTrackData_Access; tiledLayerFactoryInterface : AllBinaryTiledLayerFactoryInterface_Access; geographicMapCellPositionFactoryInterface : GeographicMapCellPositionFactoryInterface_Access; geographicMapCellPositionBaseFactory : GeographicMapCellPositionBaseFactory_Access; geographicMapCellTypeFactory : GeographicMapCellTypeFactory_Access; customMapGeneratorBaseFactory : CustomMapGeneratorBaseFactory_Access) is
+   procedure Initialize (This : in out RaceTrackGeographicMap'Class; raceTrackInfo_Param : access RaceTrackInfo'Class; raceTrackData_Param : access RaceTrackData'Class; tiledLayerFactoryInterface_Param : access AllBinaryTiledLayerFactoryInterface'Class; geographicMapCellPositionFactoryInterface_Param : access GeographicMapCellPositionFactoryInterface'Class; geographicMapCellPositionBaseFactory_Param : access GeographicMapCellPositionBaseFactory'Class; geographicMapCellTypeFactory_Param : access GeographicMapCellTypeFactory'Class; customMapGeneratorBaseFactory_Param : access CustomMapGeneratorBaseFactory'Class) is
+      raceTrackInfo : RaceTrackInfo_Access := RaceTrackInfo_Access (raceTrackInfo_Param);
+      raceTrackData : RaceTrackData_Access := RaceTrackData_Access (raceTrackData_Param);
+      tiledLayerFactoryInterface : AllBinaryTiledLayerFactoryInterface_Access := AllBinaryTiledLayerFactoryInterface_Access (tiledLayerFactoryInterface_Param);
+      geographicMapCellPositionFactoryInterface : GeographicMapCellPositionFactoryInterface_Access := GeographicMapCellPositionFactoryInterface_Access (geographicMapCellPositionFactoryInterface_Param);
+      geographicMapCellPositionBaseFactory : GeographicMapCellPositionBaseFactory_Access := GeographicMapCellPositionBaseFactory_Access (geographicMapCellPositionBaseFactory_Param);
+      geographicMapCellTypeFactory : GeographicMapCellTypeFactory_Access := GeographicMapCellTypeFactory_Access (geographicMapCellTypeFactory_Param);
+      customMapGeneratorBaseFactory : CustomMapGeneratorBaseFactory_Access := CustomMapGeneratorBaseFactory_Access (customMapGeneratorBaseFactory_Param);
    begin
         BaseRaceTrackGeographicMap_Package.Initialize (This, raceTrackInfo, raceTrackData, tiledLayerFactoryInterface.getInstance (raceTrackInfo, raceTrackData), BasicGeographicMapFactory_Package.Create.getInstance (raceTrackInfo, raceTrackData, tiledLayerFactoryInterface, geographicMapCellPositionFactoryInterface, geographicMapCellTypeFactory), geographicMapCellPositionFactoryInterface, geographicMapCellPositionBaseFactory, geographicMapCellTypeFactory);
         Initialize_Fields (This);
-        This.customMapGenerator := customMapGeneratorBaseFactory.create (This'Unchecked_Access);
+        This.customMapGenerator := customMapGeneratorBaseFactory.create (RaceTrackGeographicMap_Access'(This'Unchecked_Access));
    end Initialize;
 
-   function Create (raceTrackInfo : RaceTrackInfo_Access; raceTrackData : RaceTrackData_Access; tiledLayerFactoryInterface : AllBinaryTiledLayerFactoryInterface_Access; geographicMapCellPositionFactoryInterface : GeographicMapCellPositionFactoryInterface_Access; geographicMapCellPositionBaseFactory : GeographicMapCellPositionBaseFactory_Access; geographicMapCellTypeFactory : GeographicMapCellTypeFactory_Access; customMapGeneratorBaseFactory : CustomMapGeneratorBaseFactory_Access) return RaceTrackGeographicMap_Access is
+   function Create (raceTrackInfo_Param : access RaceTrackInfo'Class; raceTrackData_Param : access RaceTrackData'Class; tiledLayerFactoryInterface_Param : access AllBinaryTiledLayerFactoryInterface'Class; geographicMapCellPositionFactoryInterface_Param : access GeographicMapCellPositionFactoryInterface'Class; geographicMapCellPositionBaseFactory_Param : access GeographicMapCellPositionBaseFactory'Class; geographicMapCellTypeFactory_Param : access GeographicMapCellTypeFactory'Class; customMapGeneratorBaseFactory_Param : access CustomMapGeneratorBaseFactory'Class) return RaceTrackGeographicMap_Access is
       This : constant RaceTrackGeographicMap_Access := new RaceTrackGeographicMap;
    begin
-      RaceTrackGeographicMap_Package.Initialize (This.all, raceTrackInfo, raceTrackData, tiledLayerFactoryInterface, geographicMapCellPositionFactoryInterface, geographicMapCellPositionBaseFactory, geographicMapCellTypeFactory, customMapGeneratorBaseFactory);
+      RaceTrackGeographicMap_Package.Initialize (This.all, raceTrackInfo_Param, raceTrackData_Param, tiledLayerFactoryInterface_Param, geographicMapCellPositionFactoryInterface_Param, geographicMapCellPositionBaseFactory_Param, geographicMapCellTypeFactory_Param, customMapGeneratorBaseFactory_Param);
       return This;
    end Create;
 
@@ -42,7 +49,8 @@ package body org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeogr
    end getCustomMapGenerator;
 
    --  throws Exception
-   function isValid (This : in out RaceTrackGeographicMap; geographicMapCellPosition : GeographicMapCellPosition_Access) return Boolean is
+   function isValid (This : in out RaceTrackGeographicMap; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return Boolean is
+      geographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
       customMapArray : Integer_Array_Access_Array_Access;
       stringBuffer : StringMaker_Access;
    begin
@@ -53,7 +61,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeogr
             stringBuffer.appendint (Integer (geographicMapCellPosition.getColumn));
             stringBuffer.append (To_Unbounded_String (" not in: "));
             stringBuffer.appendint (customMapArray (0)'Length);
-            This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, This.commonStrings.IS_VALID);
+            This.logUtil.putF (stringBuffer.toString, RaceTrackGeographicMap_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
             if (geographicMapCellPosition.getColumn) = (customMapArray (0)'Length) then
                 return True;
             else
@@ -65,7 +73,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeogr
             stringBuffer.appendint (Integer (geographicMapCellPosition.getRow));
             stringBuffer.append (To_Unbounded_String (" not in: "));
             stringBuffer.appendint (customMapArray'Length);
-            This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, This.commonStrings.IS_VALID);
+            This.logUtil.putF (stringBuffer.toString, RaceTrackGeographicMap_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
             if (geographicMapCellPosition.getRow) = (customMapArray'Length) then
                 return True;
             else
@@ -75,8 +83,8 @@ package body org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeogr
         return True;
    end isValid;
 
-   procedure isValid (This : in out RaceTrackGeographicMap; geographicMapCellPosition : GeographicMapCellPosition_Access) is
-      Java_Result : constant Boolean := RaceTrackGeographicMap'Class (This).isValid (geographicMapCellPosition);
+   procedure isValid (This : in out RaceTrackGeographicMap; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is
+      Java_Result : constant Boolean := RaceTrackGeographicMap'Class (This).isValid (geographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

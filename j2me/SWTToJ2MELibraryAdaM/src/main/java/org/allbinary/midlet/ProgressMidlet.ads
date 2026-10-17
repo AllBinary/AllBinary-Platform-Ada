@@ -49,8 +49,8 @@ package org.allbinary.midlet.ProgressMidlet_Package is
       abeClientInformation : AbeClientInformationInterface_Access;
    end record;
 
-   procedure Initialize (This : in out ProgressMidlet'Class; clientInformationFactory : ClientInformationFactory_Access);
-   function Create (clientInformationFactory : ClientInformationFactory_Access) return ProgressMidlet_Access;
+   procedure Initialize (This : in out ProgressMidlet'Class; clientInformationFactory_Param : access ClientInformationFactory'Class);
+   function Create (clientInformationFactory_Param : access ClientInformationFactory'Class) return ProgressMidlet_Access;
    procedure preInit (This : in out ProgressMidlet);
    procedure exitProgress (This : in out ProgressMidlet; isProgress : Boolean);
 

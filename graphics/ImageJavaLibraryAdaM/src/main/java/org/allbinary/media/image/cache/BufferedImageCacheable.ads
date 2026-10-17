@@ -40,11 +40,11 @@ package org.allbinary.media.image.cache.BufferedImageCacheable_Package is
       bufferedImage : BufferedImage_Access;
    end record;
 
-   procedure Initialize (This : in out BufferedImageCacheable'Class; key : BufferedImageInfo_Access);
-   function Create (key : BufferedImageInfo_Access) return BufferedImageCacheable_Access;
+   procedure Initialize (This : in out BufferedImageCacheable'Class; key_Param : access BufferedImageInfo'Class);
+   function Create (key_Param : access BufferedImageInfo'Class) return BufferedImageCacheable_Access;
    function getKey (This : in out BufferedImageCacheable) return Java_Object_Access;
    function getBufferedImage (This : in out BufferedImageCacheable) return BufferedImage_Access;
-   procedure setBufferedImage (This : in out BufferedImageCacheable; bufferedImage : BufferedImage_Access);
+   procedure setBufferedImage (This : in out BufferedImageCacheable; bufferedImage_Param : access BufferedImage'Class);
    function toString (This : in out BufferedImageCacheable) return Unbounded_String;
 
 end org.allbinary.media.image.cache.BufferedImageCacheable_Package;

@@ -45,7 +45,7 @@ package org.allbinary.game.layer.VehicleLayerInterface_Package is
    function getSpeedBasicDecimal (This : in out VehicleLayerInterface) return BasicDecimal_Access is abstract;
    function isReadyForExplosion (This : in out VehicleLayerInterface) return Boolean is abstract;
    function getRotationAnimationInterface (This : in out VehicleLayerInterface) return RotationAnimation_Access is abstract;
-   procedure setRotationAnimationInterface (This : in out VehicleLayerInterface; animationInterface : RotationAnimation_Access) is abstract;
+   procedure setRotationAnimationInterface (This : in out VehicleLayerInterface; animationInterface_Param : access RotationAnimation'Class) is abstract;
    function isDestroyed (This : in out VehicleLayerInterface) return Boolean is abstract;
    function isFinish (This : in out VehicleLayerInterface) return Boolean is abstract;
    function getFinalPosition (This : in out VehicleLayerInterface) return Integer is abstract;

@@ -49,8 +49,8 @@ package org.allbinary.data.tree.dom.SimpleTransform_Package is
       dataFilePath : AbPath_Access;
    end record;
 
-   procedure Initialize (This : in out SimpleTransform'Class; xsltFilePath : AbPath_Access; dataFilePath : AbPath_Access);
-   function Create (xsltFilePath : AbPath_Access; dataFilePath : AbPath_Access) return SimpleTransform_Access;
+   procedure Initialize (This : in out SimpleTransform'Class; xsltFilePath_Param : access AbPath'Class; dataFilePath_Param : access AbPath'Class);
+   function Create (xsltFilePath_Param : access AbPath'Class; dataFilePath_Param : access AbPath'Class) return SimpleTransform_Access;
    function transform (This : in out SimpleTransform) return Unbounded_String;
 
 end org.allbinary.data.tree.dom.SimpleTransform_Package;

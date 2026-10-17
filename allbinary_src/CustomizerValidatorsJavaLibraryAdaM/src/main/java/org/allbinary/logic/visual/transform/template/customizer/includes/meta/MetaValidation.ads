@@ -62,18 +62,18 @@ package org.allbinary.logic.visual.transform.template.customizer.includes.meta.M
       content : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out MetaValidation'Class; htmlMetaAttributeData : HtmlMetaAttributeData_Access; label : Unbounded_String; attributeValue : Unbounded_String; contentValue : Unbounded_String);
-   function Create (htmlMetaAttributeData : HtmlMetaAttributeData_Access; label : Unbounded_String; attributeValue : Unbounded_String; contentValue : Unbounded_String) return MetaValidation_Access;
-   procedure Initialize (This : in out MetaValidation'Class; document : Document_Access);
-   function Create (document : Document_Access) return MetaValidation_Access;
+   procedure Initialize (This : in out MetaValidation'Class; htmlMetaAttributeData_Param : access HtmlMetaAttributeData'Class; label : Unbounded_String; attributeValue : Unbounded_String; contentValue : Unbounded_String);
+   function Create (htmlMetaAttributeData_Param : access HtmlMetaAttributeData'Class; label : Unbounded_String; attributeValue : Unbounded_String; contentValue : Unbounded_String) return MetaValidation_Access;
+   procedure Initialize (This : in out MetaValidation'Class; document_Param : access Document'Class);
+   function Create (document_Param : access Document'Class) return MetaValidation_Access;
    function isValid (This : in out MetaValidation) return Boolean;
    function validationInfo (This : in out MetaValidation) return Unbounded_String;
    function toValidationInfoDoc (This : in out MetaValidation) return Document_Access;
-   function toValidationInfoNode (This : in out MetaValidation; document : Document_Access) return Node_Access;
-   procedure toValidationInfoNode (This : in out MetaValidation; document : Document_Access);
+   function toValidationInfoNode (This : in out MetaValidation; document_Param : access Document'Class) return Node_Access;
+   procedure toValidationInfoNode (This : in out MetaValidation; document_Param : access Document'Class);
    function toHashMap (This : in out MetaValidation) return HashMap_Access;
-   function toXmlNode (This : in out MetaValidation; document : Document_Access) return Node_Access;
-   procedure toXmlNode (This : in out MetaValidation; document : Document_Access);
+   function toXmlNode (This : in out MetaValidation; document_Param : access Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out MetaValidation; document_Param : access Document'Class);
 
 end org.allbinary.logic.visual.transform.template.customizer.includes.meta.MetaValidation_Package;
 

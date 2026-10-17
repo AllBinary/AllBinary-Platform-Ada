@@ -60,8 +60,8 @@ package org.allbinary.logic.system.loader.AbeClassLoader_Package is
    classes : Map_Access;
    PATH : Unbounded_String;
 
-   procedure Initialize (This : in out AbeClassLoader'Class; parent : ClassLoader_Access; key : Unbounded_String);
-   function Create (parent : ClassLoader_Access; key : Unbounded_String) return AbeClassLoader_Access;
+   procedure Initialize (This : in out AbeClassLoader'Class; parent_Param : access ClassLoader'Class; key : Unbounded_String);
+   function Create (parent_Param : access ClassLoader'Class; key : Unbounded_String) return AbeClassLoader_Access;
    function findLoadedClass1 (This : in out AbeClassLoader; name : Unbounded_String) return Ada.Tags.Tag;
    procedure findLoadedClass1 (This : in out AbeClassLoader; name : Unbounded_String);
    function loadClass (This : in out AbeClassLoader; name : Unbounded_String) return Ada.Tags.Tag;

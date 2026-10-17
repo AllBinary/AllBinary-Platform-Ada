@@ -21,15 +21,16 @@ package body org.allbinary.logic.util.cache.BasicArrayListResetablePool_Package 
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BasicArrayListResetablePool'Class; cacheableInterfaceFactoryInterface : CacheableInterfaceFactoryInterface_Access) is
+   procedure Initialize (This : in out BasicArrayListResetablePool'Class; cacheableInterfaceFactoryInterface_Param : access CacheableInterfaceFactoryInterface'Class) is
+      cacheableInterfaceFactoryInterface : CacheableInterfaceFactoryInterface_Access := CacheableInterfaceFactoryInterface_Access (cacheableInterfaceFactoryInterface_Param);
    begin
         AbstractArrayListPool_Package.Initialize (This, cacheableInterfaceFactoryInterface);
    end Initialize;
 
-   function Create (cacheableInterfaceFactoryInterface : CacheableInterfaceFactoryInterface_Access) return BasicArrayListResetablePool_Access is
+   function Create (cacheableInterfaceFactoryInterface_Param : access CacheableInterfaceFactoryInterface'Class) return BasicArrayListResetablePool_Access is
       This : constant BasicArrayListResetablePool_Access := new BasicArrayListResetablePool;
    begin
-      BasicArrayListResetablePool_Package.Initialize (This.all, cacheableInterfaceFactoryInterface);
+      BasicArrayListResetablePool_Package.Initialize (This.all, cacheableInterfaceFactoryInterface_Param);
       return This;
    end Create;
 
@@ -39,7 +40,8 @@ package body org.allbinary.logic.util.cache.BasicArrayListResetablePool_Package 
    end clear;
 
    --  throws Exception
-   function remove (This : in out BasicArrayListResetablePool; key : Java_Object_Access) return CacheableInterface_Access is
+   function remove (This : in out BasicArrayListResetablePool; key_Param : access Java_Object'Class) return CacheableInterface_Access is
+      key : Java_Object_Access := Java_Object_Access (key_Param);
       size : Integer;
    begin
         size := This.buffers.size;
@@ -50,8 +52,8 @@ package body org.allbinary.logic.util.cache.BasicArrayListResetablePool_Package 
         end if;
    end remove;
 
-   procedure remove (This : in out BasicArrayListResetablePool; key : Java_Object_Access) is
-      Java_Result : constant CacheableInterface_Access := BasicArrayListResetablePool'Class (This).remove (key);
+   procedure remove (This : in out BasicArrayListResetablePool; key_Param : access Java_Object'Class) is
+      Java_Result : constant CacheableInterface_Access := BasicArrayListResetablePool'Class (This).remove (key_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

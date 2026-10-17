@@ -18,7 +18,7 @@ package body org.allbinary.game.part.CountedLayerInterfaceFactoryPart_Package is
    procedure Initialize_Fields (This : in out CountedLayerInterfaceFactoryPart'Class) is
    begin
       null;
-      This.updateMyFontProcessor := UpdateMyFontProcessor_Package.Create (This'Unchecked_Access);
+      This.updateMyFontProcessor := UpdateMyFontProcessor_Package.Create (CountedLayerInterfaceFactoryPart_Access'(This'Unchecked_Access));
       This.myFontProcessor := This.updateMyFontProcessor;
       This.animationInterface := NullAnimationFactory_Package.getFactoryInstance.getInstance (0);
       This.total := 0;
@@ -29,21 +29,23 @@ package body org.allbinary.game.part.CountedLayerInterfaceFactoryPart_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CountedLayerInterfaceFactoryPart'Class; total : Integer; countedPickedUpLayerInterfaceFactory : CountedPickedUpLayerInterfaceFactory_Access) is
+   procedure Initialize (This : in out CountedLayerInterfaceFactoryPart'Class; total : Integer; countedPickedUpLayerInterfaceFactory_Param : access CountedPickedUpLayerInterfaceFactory'Class) is
+      countedPickedUpLayerInterfaceFactory : CountedPickedUpLayerInterfaceFactory_Access := CountedPickedUpLayerInterfaceFactory_Access (countedPickedUpLayerInterfaceFactory_Param);
    begin
       Initialize_Fields (This);
         This.primitiveLongUtil := PrimitiveLongUtil_Package.createPowerOfTen (1000);
         This.init (total, countedPickedUpLayerInterfaceFactory);
    end Initialize;
 
-   function Create (total : Integer; countedPickedUpLayerInterfaceFactory : CountedPickedUpLayerInterfaceFactory_Access) return CountedLayerInterfaceFactoryPart_Access is
+   function Create (total : Integer; countedPickedUpLayerInterfaceFactory_Param : access CountedPickedUpLayerInterfaceFactory'Class) return CountedLayerInterfaceFactoryPart_Access is
       This : constant CountedLayerInterfaceFactoryPart_Access := new CountedLayerInterfaceFactoryPart;
    begin
-      CountedLayerInterfaceFactoryPart_Package.Initialize (This.all, total, countedPickedUpLayerInterfaceFactory);
+      CountedLayerInterfaceFactoryPart_Package.Initialize (This.all, total, countedPickedUpLayerInterfaceFactory_Param);
       return This;
    end Create;
 
-   procedure updateMeasurement (This : in out CountedLayerInterfaceFactoryPart; graphics : Graphics_Access) is
+   procedure updateMeasurement (This : in out CountedLayerInterfaceFactoryPart; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       font : Font_Access;
    begin
         font := graphics.getFont;
@@ -51,14 +53,16 @@ package body org.allbinary.game.part.CountedLayerInterfaceFactoryPart_Package is
         This.myFontProcessor := MyFontProcessor_Package.getInstance;
    end updateMeasurement;
 
-   procedure init (This : in out CountedLayerInterfaceFactoryPart; total : Integer; countedPickedUpLayerInterfaceFactory : CountedPickedUpLayerInterfaceFactory_Access) is
+   procedure init (This : in out CountedLayerInterfaceFactoryPart; total : Integer; countedPickedUpLayerInterfaceFactory_Param : access CountedPickedUpLayerInterfaceFactory'Class) is
+      countedPickedUpLayerInterfaceFactory : CountedPickedUpLayerInterfaceFactory_Access := CountedPickedUpLayerInterfaceFactory_Access (countedPickedUpLayerInterfaceFactory_Param);
    begin
         This.setCountedPickedUpLayerInterfaceFactory (countedPickedUpLayerInterfaceFactory);
         This.total := total;
    end init;
 
    --  throws Exception
-   function getInstance (This : in out CountedLayerInterfaceFactoryPart; hashtable : ABHashtable_Access; x : Integer; y : Integer; z : Integer) return AllBinaryLayer_Access is
+   function getInstance (This : in out CountedLayerInterfaceFactoryPart; hashtable_Param : access ABHashtable'Class; x : Integer; y : Integer; z : Integer) return AllBinaryLayer_Access is
+      hashtable : ABHashtable_Access := ABHashtable_Access (hashtable_Param);
    begin
         if (This.total) > (0) then
             This.setTotal ((This.total) - (1));
@@ -80,12 +84,14 @@ package body org.allbinary.game.part.CountedLayerInterfaceFactoryPart_Package is
         This.myFontProcessor := This.updateMyFontProcessor;
    end setTotal;
 
-   procedure paint (This : in out CountedLayerInterfaceFactoryPart; graphics : Graphics_Access) is
+   procedure paint (This : in out CountedLayerInterfaceFactoryPart; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.myFontProcessor.process (graphics);
    end paint;
 
-   procedure paintThreed (This : in out CountedLayerInterfaceFactoryPart; graphics : Graphics_Access) is
+   procedure paintThreed (This : in out CountedLayerInterfaceFactoryPart; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         null;
    end paintThreed;
@@ -95,7 +101,8 @@ package body org.allbinary.game.part.CountedLayerInterfaceFactoryPart_Package is
         return This.animationInterface;
    end getAnimationInterface;
 
-   procedure setAnimationInterface (This : in out CountedLayerInterfaceFactoryPart; animationInterface : Animation_Access) is
+   procedure setAnimationInterface (This : in out CountedLayerInterfaceFactoryPart; animationInterface_Param : access Animation'Class) is
+      animationInterface : Animation_Access := Animation_Access (animationInterface_Param);
    begin
         This.animationInterface := animationInterface;
    end setAnimationInterface;
@@ -120,13 +127,14 @@ package body org.allbinary.game.part.CountedLayerInterfaceFactoryPart_Package is
         return This.countedPickedUpLayerInterfaceFactory;
    end getCountedPickedUpLayerInterfaceFactory;
 
-   procedure setCountedPickedUpLayerInterfaceFactory (This : in out CountedLayerInterfaceFactoryPart; countedPickedUpLayerInterfaceFactory : CountedPickedUpLayerInterfaceFactory_Access) is
+   procedure setCountedPickedUpLayerInterfaceFactory (This : in out CountedLayerInterfaceFactoryPart; countedPickedUpLayerInterfaceFactory_Param : access CountedPickedUpLayerInterfaceFactory'Class) is
+      countedPickedUpLayerInterfaceFactory : CountedPickedUpLayerInterfaceFactory_Access := CountedPickedUpLayerInterfaceFactory_Access (countedPickedUpLayerInterfaceFactory_Param);
    begin
         This.countedPickedUpLayerInterfaceFactory := countedPickedUpLayerInterfaceFactory;
    end setCountedPickedUpLayerInterfaceFactory;
 
-   procedure getInstance (This : in out CountedLayerInterfaceFactoryPart; hashtable : ABHashtable_Access; x : Integer; y : Integer; z : Integer) is
-      Java_Result : constant AllBinaryLayer_Access := CountedLayerInterfaceFactoryPart'Class (This).getInstance (hashtable, x, y, z);
+   procedure getInstance (This : in out CountedLayerInterfaceFactoryPart; hashtable_Param : access ABHashtable'Class; x : Integer; y : Integer; z : Integer) is
+      Java_Result : constant AllBinaryLayer_Access := CountedLayerInterfaceFactoryPart'Class (This).getInstance (hashtable_Param, x, y, z);
       pragma Unreferenced (Java_Result);
    begin
       null;

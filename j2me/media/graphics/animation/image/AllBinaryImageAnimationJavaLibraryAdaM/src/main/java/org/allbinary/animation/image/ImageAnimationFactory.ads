@@ -43,10 +43,10 @@ package org.allbinary.animation.image.ImageAnimationFactory_Package is
 
    type ImageAnimationFactory is new BaseImageAnimationFactory with null record;
 
-   procedure Initialize (This : in out ImageAnimationFactory'Class; image : Image_Access; width : Integer; height : Integer; dx : Integer; dy : Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access);
-   function Create (image : Image_Access; width : Integer; height : Integer; dx : Integer; dy : Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access) return ImageAnimationFactory_Access;
-   function createFactory (image : Image_Access) return ImageAnimationFactory_Access;
-   procedure createFactory (image : Image_Access);
+   procedure Initialize (This : in out ImageAnimationFactory'Class; image_Param : access Image'Class; width : Integer; height : Integer; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class);
+   function Create (image_Param : access Image'Class; width : Integer; height : Integer; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return ImageAnimationFactory_Access;
+   function createFactory (image_Param : access Image'Class) return ImageAnimationFactory_Access;
+   procedure createFactory (image_Param : access Image'Class);
    function getInstance (This : in out ImageAnimationFactory; instanceId : Integer) return Animation_Access;
    procedure getInstance (This : in out ImageAnimationFactory; instanceId : Integer);
 

@@ -34,7 +34,8 @@ package body org.allbinary.data.tree.dom.DomNodeHelper_Package is
       return This;
    end Create;
 
-   function getFirstChildElement (parentNode : Node_Access) return Node_Access is
+   function getFirstChildElement (parentNode_Param : access Node'Class) return Node_Access is
+      parentNode : Node_Access := Node_Access (parentNode_Param);
       node : Node_Access;
       nodeList : NodeList_Access;
       index : Integer;
@@ -52,7 +53,8 @@ package body org.allbinary.data.tree.dom.DomNodeHelper_Package is
         return node;
    end getFirstChildElement;
 
-   function getTextNodeValue (node : Node_Access) return Unbounded_String is
+   function getTextNodeValue (node_Param : access Node'Class) return Unbounded_String is
+      node : Node_Access := Node_Access (node_Param);
       nodeTextNode : Node_Access;
    begin
         nodeTextNode := node.getFirstChild;
@@ -64,14 +66,16 @@ package body org.allbinary.data.tree.dom.DomNodeHelper_Package is
    end getTextNodeValue;
 
    --  throws Exception
-   function getTextNodeValue (nodeName : Unbounded_String; nodeList : NodeList_Access) return Unbounded_String is
+   function getTextNodeValue (nodeName : Unbounded_String; nodeList_Param : access NodeList'Class) return Unbounded_String is
+      nodeList : NodeList_Access := NodeList_Access (nodeList_Param);
       node : Node_Access;
    begin
         node := DomSearchHelper_Package.getNode (nodeName, nodeList);
         return DomNodeHelper_Package.getTextNodeValue (node);
    end getTextNodeValue;
 
-   function getTextNodesValue (node : Node_Access) return Unbounded_String is
+   function getTextNodesValue (node_Param : access Node'Class) return Unbounded_String is
+      node : Node_Access := Node_Access (node_Param);
       stringBuffer : StringMaker_Access;
       nodeList : NodeList_Access;
       nodeTextNode : Node_Access;
@@ -90,29 +94,29 @@ package body org.allbinary.data.tree.dom.DomNodeHelper_Package is
         return stringBuffer.toString;
    end getTextNodesValue;
 
-   procedure getFirstChildElement (parentNode : Node_Access) is
-      Java_Result : constant Node_Access := getFirstChildElement (parentNode);
+   procedure getFirstChildElement (parentNode_Param : access Node'Class) is
+      Java_Result : constant Node_Access := getFirstChildElement (parentNode_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getFirstChildElement;
 
-   procedure getTextNodeValue (node : Node_Access) is
-      Java_Result : constant Unbounded_String := getTextNodeValue (node);
+   procedure getTextNodeValue (node_Param : access Node'Class) is
+      Java_Result : constant Unbounded_String := getTextNodeValue (node_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getTextNodeValue;
 
-   procedure getTextNodeValue (nodeName : Unbounded_String; nodeList : NodeList_Access) is
-      Java_Result : constant Unbounded_String := getTextNodeValue (nodeName, nodeList);
+   procedure getTextNodeValue (nodeName : Unbounded_String; nodeList_Param : access NodeList'Class) is
+      Java_Result : constant Unbounded_String := getTextNodeValue (nodeName, nodeList_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getTextNodeValue;
 
-   procedure getTextNodesValue (node : Node_Access) is
-      Java_Result : constant Unbounded_String := getTextNodesValue (node);
+   procedure getTextNodesValue (node_Param : access Node'Class) is
+      Java_Result : constant Unbounded_String := getTextNodesValue (node_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

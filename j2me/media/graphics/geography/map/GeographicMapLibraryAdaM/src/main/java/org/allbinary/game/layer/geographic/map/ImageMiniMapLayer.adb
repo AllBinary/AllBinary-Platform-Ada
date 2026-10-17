@@ -23,16 +23,18 @@ package body org.allbinary.game.layer.geographic.map.ImageMiniMapLayer_Package i
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ImageMiniMapLayer'Class; geographicMapInterface : BasicGeographicMap_Access; viewPosition : ViewPositionBase_Access) is
+   procedure Initialize (This : in out ImageMiniMapLayer'Class; geographicMapInterface_Param : access BasicGeographicMap'Class; viewPosition_Param : access ViewPositionBase'Class) is
+      geographicMapInterface : BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
+      viewPosition : ViewPositionBase_Access := ViewPositionBase_Access (viewPosition_Param);
    begin
         MiniMapLayer_Package.Initialize (This, geographicMapInterface, viewPosition);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (geographicMapInterface : BasicGeographicMap_Access; viewPosition : ViewPositionBase_Access) return ImageMiniMapLayer_Access is
+   function Create (geographicMapInterface_Param : access BasicGeographicMap'Class; viewPosition_Param : access ViewPositionBase'Class) return ImageMiniMapLayer_Access is
       This : constant ImageMiniMapLayer_Access := new ImageMiniMapLayer;
    begin
-      ImageMiniMapLayer_Package.Initialize (This.all, geographicMapInterface, viewPosition);
+      ImageMiniMapLayer_Package.Initialize (This.all, geographicMapInterface_Param, viewPosition_Param);
       return This;
    end Create;
 
@@ -46,7 +48,8 @@ package body org.allbinary.game.layer.geographic.map.ImageMiniMapLayer_Package i
         This.image := PaintableToImageUtil_Package.getImage (This.allBinaryTiledLayer, aWidth, aHeight);
    end init;
 
-   procedure paint (This : in out ImageMiniMapLayer; graphics : Graphics_Access) is
+   procedure paint (This : in out ImageMiniMapLayer; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         graphics.drawImage (This.image, This.x, This.y, This.anchor);
         This.paintDots (graphics);

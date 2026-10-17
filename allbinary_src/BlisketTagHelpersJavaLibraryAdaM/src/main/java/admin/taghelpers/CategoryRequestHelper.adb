@@ -29,7 +29,9 @@ package body admin.taghelpers.CategoryRequestHelper_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CategoryRequestHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access) is
+   procedure Initialize (This : in out CategoryRequestHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
    begin
       ModifyTable_Package.Initialize (This);
       Initialize_Fields (This);
@@ -44,16 +46,16 @@ package body admin.taghelpers.CategoryRequestHelper_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("CategoryRequestHelper()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, CategoryRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("CategoryRequestHelper()"), e);
             end if;
                 end;
         end;
    end Initialize;
 
-   function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return CategoryRequestHelper_Access is
+   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return CategoryRequestHelper_Access is
       This : constant CategoryRequestHelper_Access := new CategoryRequestHelper;
    begin
-      CategoryRequestHelper_Package.Initialize (This.all, hashMap, pageContext);
+      CategoryRequestHelper_Package.Initialize (This.all, hashMap_Param, pageContext_Param);
       return This;
    end Create;
 
@@ -87,12 +89,12 @@ package body admin.taghelpers.CategoryRequestHelper_Package is
                     end if;
                 end loop;
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPER) then
-                    This.logUtil.putF (xmlRequest, This'Unchecked_Access, To_Unbounded_String ("getXmlData()"));
+                    This.logUtil.putF (xmlRequest, CategoryRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("getXmlData()"));
                 end if;
                 document := DomDocumentHelper_Package.create (xmlRequest);
                 requestNode := DomSearchHelper_Package.getNode (categoryData.REQUEST, document.getChildNodes);
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPER) then
-                    This.logUtil.putF (XmlDocumentHelper_Package.toString (document), This'Unchecked_Access, To_Unbounded_String ("getXmlData()"));
+                    This.logUtil.putF (XmlDocumentHelper_Package.toString (document), CategoryRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("getXmlData()"));
                 end if;
                 This.setCategoryLoader (requestNode);
                 parentCategoryNode := DomSearchHelper_Package.getNode (categoryData.PARENT, requestNode.getChildNodes);
@@ -101,17 +103,17 @@ package body admin.taghelpers.CategoryRequestHelper_Package is
                 This.categoryInterface := This.categoryLoaderInterface.get (This.categoryInterface);
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPER) then
                     This.categoryInterface.log;
-                    This.logUtil.putF (To_Unbounded_String ("Loaded Parent Category"), This'Unchecked_Access, To_Unbounded_String ("getXmlData()"));
+                    This.logUtil.putF (To_Unbounded_String ("Loaded Parent Category"), CategoryRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("getXmlData()"));
                 end if;
                 childCategoryNode := DomSearchHelper_Package.getNodeNoThrow (categoryData.NAME, requestNode.getChildNodes);
                 if (childCategoryNode) /= (null) then
                     if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPER) then
-                        This.logUtil.putF (To_Unbounded_String ("Loading Child Category"), This'Unchecked_Access, To_Unbounded_String ("getXmlData()"));
+                        This.logUtil.putF (To_Unbounded_String ("Loading Child Category"), CategoryRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("getXmlData()"));
                     end if;
                     This.childCategoryInterface := CategoryInterface_Access (StoreCategoryFactory_Package.Create (This.transformInfoInterface).getInstance (childCategoryNode));
                     if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPER) then
                         This.childCategoryInterface.log;
-                        This.logUtil.putF (To_Unbounded_String ("Loaded Child Category"), This'Unchecked_Access, To_Unbounded_String ("getXmlData()"));
+                        This.logUtil.putF (To_Unbounded_String ("Loaded Child Category"), CategoryRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("getXmlData()"));
                     end if;
                 else
                     This.childCategoryInterface := This.categoryInterface;
@@ -123,14 +125,15 @@ package body admin.taghelpers.CategoryRequestHelper_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("getXmlData()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, CategoryRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("getXmlData()"), e);
             end if;
                 end;
         end;
    end getXmlData;
 
    --  throws Exception
-   procedure setCategoryLoader (This : in out CategoryRequestHelper; requestNode : Node_Access) is
+   procedure setCategoryLoader (This : in out CategoryRequestHelper; requestNode_Param : access Node'Class) is
+      requestNode : Node_Access := Node_Access (requestNode_Param);
       storeNameNode : Node_Access;
       storeName : Unbounded_String;
       storeFrontInterface : StoreFrontInterface_Access;
@@ -160,11 +163,11 @@ package body admin.taghelpers.CategoryRequestHelper_Package is
         begin
             success := To_Unbounded_String ("Successfully Added the following to the Category table");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (To_Unbounded_String ("inserting"), This'Unchecked_Access, To_Unbounded_String ("insert()"));
+                This.logUtil.putF (To_Unbounded_String ("inserting"), CategoryRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("insert()"));
             end if;
             This.categoryLoaderInterface.insert (This.categoryInterface, This.childCategoryInterface);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, To_Unbounded_String ("insert()"));
+                This.logUtil.putF (success, CategoryRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("insert()"));
             end if;
             return success;
         exception
@@ -174,7 +177,7 @@ package body admin.taghelpers.CategoryRequestHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to add item to Category");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("insert()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, CategoryRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("insert()"), e);
             end if;
             return error;
                 end;
@@ -188,11 +191,11 @@ package body admin.taghelpers.CategoryRequestHelper_Package is
         begin
             success := To_Unbounded_String ("Successfully Removed ") & Java_Image (CategoryData_Package.getInstance.NAME) & To_Unbounded_String ("=") & Java_Image (This.childCategoryInterface.getPath);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (To_Unbounded_String ("Deleting"), This'Unchecked_Access, To_Unbounded_String ("delete()"));
+                This.logUtil.putF (To_Unbounded_String ("Deleting"), CategoryRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("delete()"));
             end if;
             This.categoryLoaderInterface.delete (This.categoryInterface, This.childCategoryInterface);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, To_Unbounded_String ("delete()"));
+                This.logUtil.putF (success, CategoryRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("delete()"));
             end if;
             return success;
         exception
@@ -203,7 +206,7 @@ package body admin.taghelpers.CategoryRequestHelper_Package is
             begin
                 error := To_Unbounded_String ("Failed to remove category: ") & Java_Image (This.childCategoryInterface.getPath);
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                    This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("delete()"), e);
+                    This.logUtil.put (This.commonStrings.EXCEPTION_Id, CategoryRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("delete()"), e);
                 end if;
                 return error;
             exception
@@ -213,7 +216,7 @@ package body admin.taghelpers.CategoryRequestHelper_Package is
                     begin
                 error := To_Unbounded_String ("Failed to remove category and show the path of the failed category");
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                    This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("delete()"), e2);
+                    This.logUtil.put (This.commonStrings.EXCEPTION_Id, CategoryRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("delete()"), e2);
                 end if;
                 return error;
                     end;
@@ -231,7 +234,7 @@ package body admin.taghelpers.CategoryRequestHelper_Package is
             document := CategoryComponent_Package.Create (This.childCategoryInterface).toXmlDoc;
             xmlString := XmlDocumentHelper_Package.toString (document);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (xmlString, This'Unchecked_Access, To_Unbounded_String ("viewCategory()"));
+                This.logUtil.putF (xmlString, CategoryRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("viewCategory()"));
             end if;
             return xmlString;
         exception
@@ -241,7 +244,7 @@ package body admin.taghelpers.CategoryRequestHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to get Category");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("viewCategory()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, CategoryRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("viewCategory()"), e);
             end if;
             return error;
                 end;
@@ -255,7 +258,7 @@ package body admin.taghelpers.CategoryRequestHelper_Package is
         begin
             success := StringUtil_Package.getInstance.EMPTY_STRING;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, To_Unbounded_String ("viewCategories()"));
+                This.logUtil.putF (success, CategoryRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("viewCategories()"));
             end if;
             return success;
         exception
@@ -265,7 +268,7 @@ package body admin.taghelpers.CategoryRequestHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to view Categories table");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("viewCategories()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, CategoryRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("viewCategories()"), e);
             end if;
             return error;
                 end;
@@ -279,7 +282,7 @@ package body admin.taghelpers.CategoryRequestHelper_Package is
         begin
             success := To_Unbounded_String ("New Item Successfully added");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, To_Unbounded_String ("update()"));
+                This.logUtil.putF (success, CategoryRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("update()"));
             end if;
             return success;
         exception
@@ -289,7 +292,7 @@ package body admin.taghelpers.CategoryRequestHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to add Item");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("update()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, CategoryRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("update()"), e);
             end if;
             return error;
                 end;

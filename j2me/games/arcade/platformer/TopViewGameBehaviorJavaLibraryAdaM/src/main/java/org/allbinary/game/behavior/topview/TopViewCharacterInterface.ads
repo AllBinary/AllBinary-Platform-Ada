@@ -35,7 +35,7 @@ package org.allbinary.game.behavior.topview.TopViewCharacterInterface_Package is
    type TopViewCharacterInterface_Access_Array is array (Natural range <>) of TopViewCharacterInterface_Access;
    type TopViewCharacterInterface_Access_Array_Access is access all TopViewCharacterInterface_Access_Array;
    procedure terrainMove (This : in out TopViewCharacterInterface; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; x : Integer; y : Integer) is abstract;
-   procedure terrainEvent (This : in out TopViewCharacterInterface; x : Integer; y : Integer; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; geographicMapCellPosition : GeographicMapCellPosition_Access) is abstract;
+   procedure terrainEvent (This : in out TopViewCharacterInterface; x : Integer; y : Integer; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is abstract;
    procedure move (This : in out TopViewCharacterInterface) is abstract;
    procedure upp (This : in out TopViewCharacterInterface) is abstract;
    procedure leftp (This : in out TopViewCharacterInterface) is abstract;

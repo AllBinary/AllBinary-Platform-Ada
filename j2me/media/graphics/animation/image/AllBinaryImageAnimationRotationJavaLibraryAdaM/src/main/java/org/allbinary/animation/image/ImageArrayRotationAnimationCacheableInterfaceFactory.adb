@@ -34,13 +34,14 @@ package body org.allbinary.animation.image.ImageArrayRotationAnimationCacheableI
 
 
    --  throws Exception
-   function getInstance (This : in out ImageArrayRotationAnimationCacheableInterfaceFactory; key : Java_Object_Access) return CacheableInterface_Access is
+   function getInstance (This : in out ImageArrayRotationAnimationCacheableInterfaceFactory; key_Param : access Java_Object'Class) return CacheableInterface_Access is
+      key : Java_Object_Access := Java_Object_Access (key_Param);
    begin
         return ImageArrayRotationAnimationCacheable_Package.Create (key, AnimationBehavior_Package.getInstance);
    end getInstance;
 
-   procedure getInstance (This : in out ImageArrayRotationAnimationCacheableInterfaceFactory; key : Java_Object_Access) is
-      Java_Result : constant CacheableInterface_Access := ImageArrayRotationAnimationCacheableInterfaceFactory'Class (This).getInstance (key);
+   procedure getInstance (This : in out ImageArrayRotationAnimationCacheableInterfaceFactory; key_Param : access Java_Object'Class) is
+      Java_Result : constant CacheableInterface_Access := ImageArrayRotationAnimationCacheableInterfaceFactory'Class (This).getInstance (key_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

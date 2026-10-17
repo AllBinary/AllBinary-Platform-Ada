@@ -44,8 +44,8 @@ package org.allbinary.input.automation.actions.script.condition.ProfileActionScr
 
    procedure Initialize (This : in out ProfileActionScriptConditionFactory'Class);
    function Create return ProfileActionScriptConditionFactory_Access;
-   function getInstance (node : Node_Access) return ProfileActionScriptConditionInterface_Access;
-   procedure getInstance (node : Node_Access);
+   function getInstance (node_Param : access Node'Class) return ProfileActionScriptConditionInterface_Access;
+   procedure getInstance (node_Param : access Node'Class);
 
 end org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionFactory_Package;
 

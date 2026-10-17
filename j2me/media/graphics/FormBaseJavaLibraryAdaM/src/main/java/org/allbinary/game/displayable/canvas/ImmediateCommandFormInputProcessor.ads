@@ -46,12 +46,12 @@ package org.allbinary.game.displayable.canvas.ImmediateCommandFormInputProcessor
       gameCommandCanvas : GameCommandCanvas_Access;
    end record;
 
-   procedure Initialize (This : in out ImmediateCommandFormInputProcessor'Class; gameKeyEventList : BasicArrayList_Access; playerInputId : Integer; gameCommandCanvas : GameCommandCanvas_Access; form : ScrollSelectionForm_Access);
-   function Create (gameKeyEventList : BasicArrayList_Access; playerInputId : Integer; gameCommandCanvas : GameCommandCanvas_Access; form : ScrollSelectionForm_Access) return ImmediateCommandFormInputProcessor_Access;
-   procedure onPressGameKeyEvent (This : in out ImmediateCommandFormInputProcessor; gameKeyEvent : GameKeyEvent_Access);
-   procedure onDownGameKeyEvent (This : in out ImmediateCommandFormInputProcessor; gameKeyEvent : GameKeyEvent_Access);
-   procedure onUpGameKeyEvent (This : in out ImmediateCommandFormInputProcessor; gameKeyEvent : GameKeyEvent_Access);
-   procedure onMotionGestureEvent (This : in out ImmediateCommandFormInputProcessor; motionGestureEvent : MotionGestureEvent_Access);
+   procedure Initialize (This : in out ImmediateCommandFormInputProcessor'Class; gameKeyEventList_Param : access BasicArrayList'Class; playerInputId : Integer; gameCommandCanvas_Param : access GameCommandCanvas'Class; form_Param : access ScrollSelectionForm'Class);
+   function Create (gameKeyEventList_Param : access BasicArrayList'Class; playerInputId : Integer; gameCommandCanvas_Param : access GameCommandCanvas'Class; form_Param : access ScrollSelectionForm'Class) return ImmediateCommandFormInputProcessor_Access;
+   procedure onPressGameKeyEvent (This : in out ImmediateCommandFormInputProcessor; gameKeyEvent_Param : access GameKeyEvent'Class);
+   procedure onDownGameKeyEvent (This : in out ImmediateCommandFormInputProcessor; gameKeyEvent_Param : access GameKeyEvent'Class);
+   procedure onUpGameKeyEvent (This : in out ImmediateCommandFormInputProcessor; gameKeyEvent_Param : access GameKeyEvent'Class);
+   procedure onMotionGestureEvent (This : in out ImmediateCommandFormInputProcessor; motionGestureEvent_Param : access MotionGestureEvent'Class);
 
 end org.allbinary.game.displayable.canvas.ImmediateCommandFormInputProcessor_Package;
 

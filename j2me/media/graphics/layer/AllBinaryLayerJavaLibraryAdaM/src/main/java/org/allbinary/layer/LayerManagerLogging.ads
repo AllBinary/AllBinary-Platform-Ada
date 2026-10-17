@@ -60,11 +60,11 @@ package org.allbinary.layer.LayerManagerLogging_Package is
    procedure Initialize (This : in out LayerManagerLogging'Class);
    function Create return LayerManagerLogging_Access;
    function getInstance return LayerManagerLogging_Access;
-   procedure append_Case (This : in out LayerManagerLogging; layerInterface : AllBinaryLayer_Access);
-   procedure appendAt (This : in out LayerManagerLogging; layerInterface : AllBinaryLayer_Access; index : Integer);
-   procedure remove_Case (This : in out LayerManagerLogging; layerInterface : AllBinaryLayer_Access);
-   procedure removeResult (This : in out LayerManagerLogging; layerManager : LayerManager_Access; layerInterface : AllBinaryLayer_Access; result : Boolean);
-   procedure log (This : in out LayerManagerLogging; layerManager : LayerManager_Access);
+   procedure append_Case (This : in out LayerManagerLogging; layerInterface_Param : access AllBinaryLayer'Class);
+   procedure appendAt (This : in out LayerManagerLogging; layerInterface_Param : access AllBinaryLayer'Class; index : Integer);
+   procedure remove_Case (This : in out LayerManagerLogging; layerInterface_Param : access AllBinaryLayer'Class);
+   procedure removeResult (This : in out LayerManagerLogging; layerManager_Param : access LayerManager'Class; layerInterface_Param : access AllBinaryLayer'Class; result : Boolean);
+   procedure log (This : in out LayerManagerLogging; layerManager_Param : access LayerManager'Class);
    procedure clear_Case (This : in out LayerManagerLogging);
 
 end org.allbinary.layer.LayerManagerLogging_Package;

@@ -40,8 +40,8 @@ package org.allbinary.game.layer.pickup.PickupLayerCircularStaticPool_Package is
    procedure Initialize (This : in out PickupLayerCircularStaticPool'Class);
    function Create return PickupLayerCircularStaticPool_Access;
    function getInstance return PickupLayerCircularStaticPool_Access;
-   function getInstanceXYZ (This : in out PickupLayerCircularStaticPool; pickedUpLayerInterfaceFactoryInterface : PickedUpLayerInterfaceFactoryInterface_Access; x : Integer; y : Integer; z : Integer) return PickedUpLayerInterface_Access;
-   procedure getInstanceXYZ (This : in out PickupLayerCircularStaticPool; pickedUpLayerInterfaceFactoryInterface : PickedUpLayerInterfaceFactoryInterface_Access; x : Integer; y : Integer; z : Integer);
+   function getInstanceXYZ (This : in out PickupLayerCircularStaticPool; pickedUpLayerInterfaceFactoryInterface_Param : access PickedUpLayerInterfaceFactoryInterface'Class; x : Integer; y : Integer; z : Integer) return PickedUpLayerInterface_Access;
+   procedure getInstanceXYZ (This : in out PickupLayerCircularStaticPool; pickedUpLayerInterfaceFactoryInterface_Param : access PickedUpLayerInterfaceFactoryInterface'Class; x : Integer; y : Integer; z : Integer);
 
 end org.allbinary.game.layer.pickup.PickupLayerCircularStaticPool_Package;
 

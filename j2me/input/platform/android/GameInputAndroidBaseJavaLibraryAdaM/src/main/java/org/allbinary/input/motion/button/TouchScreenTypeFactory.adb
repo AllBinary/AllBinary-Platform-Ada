@@ -38,7 +38,8 @@ package body org.allbinary.input.motion.button.TouchScreenTypeFactory_Package is
         return TouchScreenTypeFactory_Package.instance;
    end getInstance;
 
-   procedure update (This : in out TouchScreenTypeFactory; activity : Activity_Access) is
+   procedure update (This : in out TouchScreenTypeFactory; activity_Param : access Activity'Class) is
+      activity : Activity_Access := Activity_Access (activity_Param);
       commonStrings : CommonStrings_Access;
       touchScreenFactory : TouchScreenFactory_Access;
       touchScreenTypesFactory : TouchScreenTypesFactory_Access;
@@ -53,13 +54,13 @@ package body org.allbinary.input.motion.button.TouchScreenTypeFactory_Package is
         if (touchScreen) = (Configuration_Package.TOUCHSCREEN_FINGER) then
             touchScreenFactory.setTouchScreenType (touchScreenTypesFactory.FINGER);
             if not (touchScreenFactory.isTouch) then
-                PreLogUtil_Package.put (To_Unbounded_String ("Not Really Exception: This indicates that a touch screen does exist but is not API8 so we will try it"), This'Unchecked_Access, commonStrings.PROCESS);
+                PreLogUtil_Package.put (To_Unbounded_String ("Not Really Exception: This indicates that a touch screen does exist but is not API8 so we will try it"), TouchScreenTypeFactory_Access'(This'Unchecked_Access), commonStrings.PROCESS);
                 touchScreenFactory.setTouch (True);
             end if;
         elsif (touchScreen) = (Configuration_Package.TOUCHSCREEN_STYLUS) then
             touchScreenFactory.setTouchScreenType (touchScreenTypesFactory.STYLUS);
             if not (touchScreenFactory.isTouch) then
-                PreLogUtil_Package.put (To_Unbounded_String ("Not Really Exception: This indicates that a touch screen does exist but is not API8 so we will try it"), This'Unchecked_Access, commonStrings.PROCESS);
+                PreLogUtil_Package.put (To_Unbounded_String ("Not Really Exception: This indicates that a touch screen does exist but is not API8 so we will try it"), TouchScreenTypeFactory_Access'(This'Unchecked_Access), commonStrings.PROCESS);
                 touchScreenFactory.setTouch (True);
             end if;
         elsif (touchScreen) = (Configuration_Package.TOUCHSCREEN_NOTOUCH) then

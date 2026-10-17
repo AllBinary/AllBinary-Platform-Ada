@@ -73,8 +73,8 @@ package admin.taghelpers.PermissionItemsRequestHelper_Package is
       lastModified : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out PermissionItemsRequestHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access);
-   function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return PermissionItemsRequestHelper_Access;
+   procedure Initialize (This : in out PermissionItemsRequestHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
+   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return PermissionItemsRequestHelper_Access;
    procedure getFormData (This : in out PermissionItemsRequestHelper);
    function getHashMap (This : in out PermissionItemsRequestHelper) return HashMap_Access;
    function insert (This : in out PermissionItemsRequestHelper) return Unbounded_String;

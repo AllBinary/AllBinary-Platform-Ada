@@ -31,13 +31,15 @@ package body org.allbinary.game.ag.layer.hud.basic.health.HealthHudWidget_Packag
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out HealthHudWidget'Class; animationInterface : Animation_Access; healthInterface : Health_Access; location : Integer; direction : Integer) is
+   procedure Initialize (This : in out HealthHudWidget'Class; animationInterface_Param : access Animation'Class; healthInterface_Param : access Health'Class; location : Integer; direction : Integer) is
+      animationInterface : Animation_Access := Animation_Access (animationInterface_Param);
+      healthInterface : Health_Access := Health_Access (healthInterface_Param);
    begin
         BasicHud_Package.Initialize (This, location, direction, 2, BasicColorFactory_Package.getInstance.WHITE);
         Initialize_Fields (This);
         This.animationInterface := animationInterface;
         This.healthInterface := healthInterface;
-        This.healthInterface.addListener (This'Unchecked_Access);
+        This.healthInterface.addListener (HealthHudWidget_Access'(This'Unchecked_Access));
         This.healthScale := (((This.healthInterface.getMaxHealth) / (6))) + (1);
         This.onHealthChange;
         This.updateMaxWidth := (healthInterface.getMaxHealth) * (16);
@@ -46,10 +48,10 @@ package body org.allbinary.game.ag.layer.hud.basic.health.HealthHudWidget_Packag
         This.update;
    end Initialize;
 
-   function Create (animationInterface : Animation_Access; healthInterface : Health_Access; location : Integer; direction : Integer) return HealthHudWidget_Access is
+   function Create (animationInterface_Param : access Animation'Class; healthInterface_Param : access Health'Class; location : Integer; direction : Integer) return HealthHudWidget_Access is
       This : constant HealthHudWidget_Access := new HealthHudWidget;
    begin
-      HealthHudWidget_Package.Initialize (This.all, animationInterface, healthInterface, location, direction);
+      HealthHudWidget_Package.Initialize (This.all, animationInterface_Param, healthInterface_Param, location, direction);
       return This;
    end Create;
 
@@ -85,7 +87,8 @@ package body org.allbinary.game.ag.layer.hud.basic.health.HealthHudWidget_Packag
         end if;
    end onHealthChange;
 
-   procedure paint (This : in out HealthHudWidget; graphics : Graphics_Access) is
+   procedure paint (This : in out HealthHudWidget; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       index : Integer;
    begin
         This.myFontProcessor.process (graphics);
@@ -96,7 +99,8 @@ package body org.allbinary.game.ag.layer.hud.basic.health.HealthHudWidget_Packag
         end loop;
    end paint;
 
-   procedure paintThreed (This : in out HealthHudWidget; graphics : Graphics_Access) is
+   procedure paintThreed (This : in out HealthHudWidget; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         null;
    end paintThreed;

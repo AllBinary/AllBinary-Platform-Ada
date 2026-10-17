@@ -38,10 +38,10 @@ package org.allbinary.business.user.modules.admin.store.payment.PaymentStoreAdmi
 
    procedure Initialize (This : in out PaymentStoreAdminUser'Class);
    function Create return PaymentStoreAdminUser_Access;
-   procedure Initialize (This : in out PaymentStoreAdminUser'Class; userHashMap : HashMap_Access);
-   function Create (userHashMap : HashMap_Access) return PaymentStoreAdminUser_Access;
-   procedure validateSession (This : in out PaymentStoreAdminUser; weblisketSession : WeblisketSessionInterface_Access);
-   procedure updateSession (This : in out PaymentStoreAdminUser; weblisketSession : WeblisketSessionInterface_Access);
+   procedure Initialize (This : in out PaymentStoreAdminUser'Class; userHashMap_Param : access HashMap'Class);
+   function Create (userHashMap_Param : access HashMap'Class) return PaymentStoreAdminUser_Access;
+   procedure validateSession (This : in out PaymentStoreAdminUser; weblisketSession_Param : access WeblisketSessionInterface'Class);
+   procedure updateSession (This : in out PaymentStoreAdminUser; weblisketSession_Param : access WeblisketSessionInterface'Class);
 
 end org.allbinary.business.user.modules.admin.store.payment.PaymentStoreAdminUser_Package;
 

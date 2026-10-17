@@ -22,16 +22,17 @@ package body org.allbinary.logic.util.cache.ImageCacheable_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ImageCacheable'Class; name : Unbounded_String; anyType : Java_Object_Access) is
+   procedure Initialize (This : in out ImageCacheable'Class; name : Unbounded_String; anyType_Param : access Java_Object'Class) is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
       Initialize_Fields (This);
         null;
    end Initialize;
 
-   function Create (name : Unbounded_String; anyType : Java_Object_Access) return ImageCacheable_Access is
+   function Create (name : Unbounded_String; anyType_Param : access Java_Object'Class) return ImageCacheable_Access is
       This : constant ImageCacheable_Access := new ImageCacheable;
    begin
-      ImageCacheable_Package.Initialize (This.all, name, anyType);
+      ImageCacheable_Package.Initialize (This.all, name, anyType_Param);
       return This;
    end Create;
 

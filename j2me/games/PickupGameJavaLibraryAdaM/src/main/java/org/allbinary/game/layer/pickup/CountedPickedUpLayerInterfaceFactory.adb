@@ -22,25 +22,29 @@ package body org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactor
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CountedPickedUpLayerInterfaceFactory'Class; pickeUpLayerType : PickedUpLayerType_Access; iconLayer : IconLayer_Access; animationInterface : Animation_Access) is
+   procedure Initialize (This : in out CountedPickedUpLayerInterfaceFactory'Class; pickeUpLayerType_Param : access PickedUpLayerType'Class; iconLayer_Param : access IconLayer'Class; animationInterface_Param : access Animation'Class) is
+      pickeUpLayerType : PickedUpLayerType_Access := PickedUpLayerType_Access (pickeUpLayerType_Param);
+      iconLayer : IconLayer_Access := IconLayer_Access (iconLayer_Param);
+      animationInterface : Animation_Access := Animation_Access (animationInterface_Param);
       list : BasicArrayList_Access;
    begin
         PickedUpLayerInterfaceFactory_Package.Initialize (This, pickeUpLayerType, iconLayer, animationInterface);
         Initialize_Fields (This);
         list := CountedPickedUpLayerInterfaceFactoryPool_Package.getInstance.getList;
         This.id := list.size;
-        list.add (This'Unchecked_Access);
+        list.add (CountedPickedUpLayerInterfaceFactory_Access'(This'Unchecked_Access));
    end Initialize;
 
-   function Create (pickeUpLayerType : PickedUpLayerType_Access; iconLayer : IconLayer_Access; animationInterface : Animation_Access) return CountedPickedUpLayerInterfaceFactory_Access is
+   function Create (pickeUpLayerType_Param : access PickedUpLayerType'Class; iconLayer_Param : access IconLayer'Class; animationInterface_Param : access Animation'Class) return CountedPickedUpLayerInterfaceFactory_Access is
       This : constant CountedPickedUpLayerInterfaceFactory_Access := new CountedPickedUpLayerInterfaceFactory;
    begin
-      CountedPickedUpLayerInterfaceFactory_Package.Initialize (This.all, pickeUpLayerType, iconLayer, animationInterface);
+      CountedPickedUpLayerInterfaceFactory_Package.Initialize (This.all, pickeUpLayerType_Param, iconLayer_Param, animationInterface_Param);
       return This;
    end Create;
 
    --  throws Exception
-   function getNextInstance (This : in out CountedPickedUpLayerInterfaceFactory; hashtable : ABHashtable_Access; x : Integer; y : Integer; z : Integer) return AllBinaryLayer_Access is
+   function getNextInstance (This : in out CountedPickedUpLayerInterfaceFactory; hashtable_Param : access ABHashtable'Class; x : Integer; y : Integer; z : Integer) return AllBinaryLayer_Access is
+      hashtable : ABHashtable_Access := ABHashtable_Access (hashtable_Param);
    begin
         Java_Throw (Java_New_Exception ("Exception", CommonStrings_Package.getInstance.NOT_IMPLEMENTED));
    end getNextInstance;
@@ -55,8 +59,8 @@ package body org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactor
         return This.id;
    end getId;
 
-   procedure getNextInstance (This : in out CountedPickedUpLayerInterfaceFactory; hashtable : ABHashtable_Access; x : Integer; y : Integer; z : Integer) is
-      Java_Result : constant AllBinaryLayer_Access := CountedPickedUpLayerInterfaceFactory'Class (This).getNextInstance (hashtable, x, y, z);
+   procedure getNextInstance (This : in out CountedPickedUpLayerInterfaceFactory; hashtable_Param : access ABHashtable'Class; x : Integer; y : Integer; z : Integer) is
+      Java_Result : constant AllBinaryLayer_Access := CountedPickedUpLayerInterfaceFactory'Class (This).getNextInstance (hashtable_Param, x, y, z);
       pragma Unreferenced (Java_Result);
    begin
       null;

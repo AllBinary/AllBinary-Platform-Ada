@@ -62,30 +62,31 @@ package body org.allbinary.graphics.opengles.OpenGLConfiguration_Package is
         if ChangedGameFeatureListener_Package.getInstance.isChangedFeature (MainFeatureFactory_Package.getInstance.STATIC) then
             if This.isOpenGL then
                 if not (features.isDefault (OpenGLFeatureFactory_Package.getInstance.OPENGL)) then
-                    This.logUtil.putF (To_Unbounded_String ("Turning on OpenGL"), This'Unchecked_Access, This.commonStrings.INIT);
+                    This.logUtil.putF (To_Unbounded_String ("Turning on OpenGL"), OpenGLConfiguration_Access'(This'Unchecked_Access), This.commonStrings.INIT);
                     features.addDefault (OpenGLFeatureFactory_Package.getInstance.OPENGL);
-                    This.logUtil.putF (To_Unbounded_String ("Using OpenGL Type Feature: ") & Java_Image (This.getType), This'Unchecked_Access, This.commonStrings.INIT);
+                    This.logUtil.putF (To_Unbounded_String ("Using OpenGL Type Feature: ") & Java_Image (This.getType), OpenGLConfiguration_Access'(This'Unchecked_Access), This.commonStrings.INIT);
                     features.addDefault (This.getType);
-                    This.logUtil.putF (To_Unbounded_String ("Using OpenGL ImageColor Feature: ") & Java_Image (This.getImageColor), This'Unchecked_Access, This.commonStrings.INIT);
+                    This.logUtil.putF (To_Unbounded_String ("Using OpenGL ImageColor Feature: ") & Java_Image (This.getImageColor), OpenGLConfiguration_Access'(This'Unchecked_Access), This.commonStrings.INIT);
                     features.addDefault (This.getImageColor);
-                    This.logUtil.putF (To_Unbounded_String ("Using OpenGL Color Feature: ") & Java_Image (This.getColor), This'Unchecked_Access, This.commonStrings.INIT);
+                    This.logUtil.putF (To_Unbounded_String ("Using OpenGL Color Feature: ") & Java_Image (This.getColor), OpenGLConfiguration_Access'(This'Unchecked_Access), This.commonStrings.INIT);
                     features.addDefault (This.getColor);
-                    This.logUtil.putF (To_Unbounded_String ("Using OpenGL Version Selector Feature: ") & Java_Image (This.getVersionSelector), This'Unchecked_Access, This.commonStrings.INIT);
+                    This.logUtil.putF (To_Unbounded_String ("Using OpenGL Version Selector Feature: ") & Java_Image (This.getVersionSelector), OpenGLConfiguration_Access'(This'Unchecked_Access), This.commonStrings.INIT);
                     features.addDefault (This.getVersionSelector);
                 end if;
             else
-                This.logUtil.putF (To_Unbounded_String ("OpenGL is Off"), This'Unchecked_Access, This.commonStrings.INIT);
+                This.logUtil.putF (To_Unbounded_String ("OpenGL is Off"), OpenGLConfiguration_Access'(This'Unchecked_Access), This.commonStrings.INIT);
             end if;
         else
             if (This.isOpenGL) and then (not (features.isDefault (OpenGLFeatureFactory_Package.getInstance.OPENGL))) then
-                PreLogUtil_Package.put (To_Unbounded_String ("OpenGL is set but not Enabled since Statics where not cleared (Reboot or Complete exit is Required)"), This'Unchecked_Access, This.commonStrings.INIT);
+                PreLogUtil_Package.put (To_Unbounded_String ("OpenGL is set but not Enabled since Statics where not cleared (Reboot or Complete exit is Required)"), OpenGLConfiguration_Access'(This'Unchecked_Access), This.commonStrings.INIT);
             end if;
         end if;
-        PreLogUtil_Package.put (This.toString, This'Unchecked_Access, This.commonStrings.INIT);
+        PreLogUtil_Package.put (This.toString, OpenGLConfiguration_Access'(This'Unchecked_Access), This.commonStrings.INIT);
    end init;
 
    --  throws Exception
-   procedure update (This : in out OpenGLConfiguration; gameFeature : Feature_Access; colorLocked : Boolean) is
+   procedure update (This : in out OpenGLConfiguration; gameFeature_Param : access Feature'Class; colorLocked : Boolean) is
+      gameFeature : Feature_Access := Feature_Access (gameFeature_Param);
       features : Features_Access;
       openGLFeatureFactory : OpenGLFeatureFactory_Access;
       modified : Boolean;
@@ -157,7 +158,8 @@ package body org.allbinary.graphics.opengles.OpenGLConfiguration_Package is
         return This.opengl;
    end isOpenGL;
 
-   procedure setImageColor (This : in out OpenGLConfiguration; imageColor : OpenGLFeature_Access) is
+   procedure setImageColor (This : in out OpenGLConfiguration; imageColor_Param : access OpenGLFeature'Class) is
+      imageColor : OpenGLFeature_Access := OpenGLFeature_Access (imageColor_Param);
    begin
         This.imageColor := imageColor;
    end setImageColor;
@@ -167,7 +169,8 @@ package body org.allbinary.graphics.opengles.OpenGLConfiguration_Package is
         return This.imageColor;
    end getImageColor;
 
-   procedure setColor (This : in out OpenGLConfiguration; color : OpenGLFeature_Access) is
+   procedure setColor (This : in out OpenGLConfiguration; color_Param : access OpenGLFeature'Class) is
+      color : OpenGLFeature_Access := OpenGLFeature_Access (color_Param);
    begin
         This.color := color;
    end setColor;
@@ -177,7 +180,8 @@ package body org.allbinary.graphics.opengles.OpenGLConfiguration_Package is
         return This.color;
    end getColor;
 
-   procedure setVersionSelector (This : in out OpenGLConfiguration; versionSelector : OpenGLFeature_Access) is
+   procedure setVersionSelector (This : in out OpenGLConfiguration; versionSelector_Param : access OpenGLFeature'Class) is
+      versionSelector : OpenGLFeature_Access := OpenGLFeature_Access (versionSelector_Param);
    begin
         This.versionSelector := versionSelector;
    end setVersionSelector;
@@ -187,7 +191,8 @@ package body org.allbinary.graphics.opengles.OpenGLConfiguration_Package is
         return This.versionSelector;
    end getVersionSelector;
 
-   procedure setType (This : in out OpenGLConfiguration; type_Id : OpenGLFeature_Access) is
+   procedure setType (This : in out OpenGLConfiguration; type_Id_Param : access OpenGLFeature'Class) is
+      type_Id : OpenGLFeature_Access := OpenGLFeature_Access (type_Id_Param);
    begin
         This.type_Id := type_Id;
    end setType;

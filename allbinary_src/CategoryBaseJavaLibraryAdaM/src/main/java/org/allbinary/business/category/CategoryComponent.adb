@@ -22,16 +22,17 @@ package body org.allbinary.business.category.CategoryComponent_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CategoryComponent'Class; categoryInterface : CategoryInterface_Access) is
+   procedure Initialize (This : in out CategoryComponent'Class; categoryInterface_Param : access CategoryInterface'Class) is
+      categoryInterface : CategoryInterface_Access := CategoryInterface_Access (categoryInterface_Param);
    begin
         CategoryView_Package.Initialize (This, categoryInterface);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (categoryInterface : CategoryInterface_Access) return CategoryComponent_Access is
+   function Create (categoryInterface_Param : access CategoryInterface'Class) return CategoryComponent_Access is
       This : constant CategoryComponent_Access := new CategoryComponent;
    begin
-      CategoryComponent_Package.Initialize (This.all, categoryInterface);
+      CategoryComponent_Package.Initialize (This.all, categoryInterface_Param);
       return This;
    end Create;
 
@@ -51,7 +52,8 @@ package body org.allbinary.business.category.CategoryComponent_Package is
         return null;
    end getTransformInfoInterface;
 
-   procedure setTransformDocumentInterface (This : in out CategoryComponent; viewDocumentInterface : TransformDocumentInterface_Access) is
+   procedure setTransformDocumentInterface (This : in out CategoryComponent; viewDocumentInterface_Param : access TransformDocumentInterface'Class) is
+      viewDocumentInterface : TransformDocumentInterface_Access := TransformDocumentInterface_Access (viewDocumentInterface_Param);
    begin
         null;
    end setTransformDocumentInterface;

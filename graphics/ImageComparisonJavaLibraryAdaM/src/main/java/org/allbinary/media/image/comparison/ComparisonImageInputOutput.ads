@@ -62,7 +62,7 @@ package org.allbinary.media.image.comparison.ComparisonImageInputOutput_Package 
    procedure Initialize (This : in out ComparisonImageInputOutput'Class);
    function Create return ComparisonImageInputOutput_Access;
    procedure save (This : in out ComparisonImageInputOutput; frame : Long_Long_Integer);
-   procedure save (This : in out ComparisonImageInputOutput; imageComparisonResult : ImageComparisonResult_Access; frame : Long_Long_Integer);
+   procedure save (This : in out ComparisonImageInputOutput; imageComparisonResult_Param : access ImageComparisonResult'Class; frame : Long_Long_Integer);
 
 end org.allbinary.media.image.comparison.ComparisonImageInputOutput_Package;
 

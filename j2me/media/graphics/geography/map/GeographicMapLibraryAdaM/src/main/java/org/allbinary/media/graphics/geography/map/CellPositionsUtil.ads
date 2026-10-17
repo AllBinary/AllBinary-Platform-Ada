@@ -47,12 +47,12 @@ package org.allbinary.media.graphics.geography.map.CellPositionsUtil_Package is
    procedure Initialize (This : in out CellPositionsUtil'Class);
    function Create return CellPositionsUtil_Access;
    function getInstance return CellPositionsUtil_Access;
-   function getAll (This : in out CellPositionsUtil; geographicMapInterface : BasicGeographicMap_Access; topRightGeographicMapCellPosition : GeographicMapCellPosition_Access; columns : Integer; rows : Integer; reusableList : BasicArrayList_Access) return BasicArrayList_Access;
-   procedure getAll (This : in out CellPositionsUtil; geographicMapInterface : BasicGeographicMap_Access; topRightGeographicMapCellPosition : GeographicMapCellPosition_Access; columns : Integer; rows : Integer; reusableList : BasicArrayList_Access);
-   function getAllSurrounding (This : in out CellPositionsUtil; geographicMapInterface : BasicGeographicMap_Access; occupyList : BasicArrayList_Access; reusableList : BasicArrayList_Access) return BasicArrayList_Access;
-   procedure getAllSurrounding (This : in out CellPositionsUtil; geographicMapInterface : BasicGeographicMap_Access; occupyList : BasicArrayList_Access; reusableList : BasicArrayList_Access);
-   function getAllSurroundingAt (This : in out CellPositionsUtil; geographicMapInterface : BasicGeographicMap_Access; layerGeographicMapCellPosition : GeographicMapCellPosition_Access; reusableSurroundingList : BasicArrayList_Access) return BasicArrayList_Access;
-   procedure getAllSurroundingAt (This : in out CellPositionsUtil; geographicMapInterface : BasicGeographicMap_Access; layerGeographicMapCellPosition : GeographicMapCellPosition_Access; reusableSurroundingList : BasicArrayList_Access);
+   function getAll (This : in out CellPositionsUtil; geographicMapInterface_Param : access BasicGeographicMap'Class; topRightGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class; columns : Integer; rows : Integer; reusableList_Param : access BasicArrayList'Class) return BasicArrayList_Access;
+   procedure getAll (This : in out CellPositionsUtil; geographicMapInterface_Param : access BasicGeographicMap'Class; topRightGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class; columns : Integer; rows : Integer; reusableList_Param : access BasicArrayList'Class);
+   function getAllSurrounding (This : in out CellPositionsUtil; geographicMapInterface_Param : access BasicGeographicMap'Class; occupyList_Param : access BasicArrayList'Class; reusableList_Param : access BasicArrayList'Class) return BasicArrayList_Access;
+   procedure getAllSurrounding (This : in out CellPositionsUtil; geographicMapInterface_Param : access BasicGeographicMap'Class; occupyList_Param : access BasicArrayList'Class; reusableList_Param : access BasicArrayList'Class);
+   function getAllSurroundingAt (This : in out CellPositionsUtil; geographicMapInterface_Param : access BasicGeographicMap'Class; layerGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class; reusableSurroundingList_Param : access BasicArrayList'Class) return BasicArrayList_Access;
+   procedure getAllSurroundingAt (This : in out CellPositionsUtil; geographicMapInterface_Param : access BasicGeographicMap'Class; layerGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class; reusableSurroundingList_Param : access BasicArrayList'Class);
 
 end org.allbinary.media.graphics.geography.map.CellPositionsUtil_Package;
 

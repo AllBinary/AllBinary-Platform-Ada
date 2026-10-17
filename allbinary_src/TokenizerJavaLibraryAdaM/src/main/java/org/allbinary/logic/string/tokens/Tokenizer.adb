@@ -75,7 +75,8 @@ package body org.allbinary.logic.string_Id.tokens.Tokenizer_Package is
         return tokenList;
    end getInsideSep;
 
-   function getTokensFromString (This : in out Tokenizer; string_Id : Unbounded_String; tokenVector : BasicArrayList_Access) return BasicArrayList_Access is
+   function getTokensFromString (This : in out Tokenizer; string_Id : Unbounded_String; tokenVector_Param : access BasicArrayList'Class) return BasicArrayList_Access is
+      tokenVector : BasicArrayList_Access := BasicArrayList_Access (tokenVector_Param);
       index : Integer;
       end_Id : Integer;
    begin
@@ -94,7 +95,8 @@ package body org.allbinary.logic.string_Id.tokens.Tokenizer_Package is
         return tokenVector;
    end getTokensFromString;
 
-   function getTokens (This : in out Tokenizer; stringVector : BasicArrayList_Access) return ABHashtable_Access is
+   function getTokens (This : in out Tokenizer; stringVector_Param : access BasicArrayList'Class) return ABHashtable_Access is
+      stringVector : BasicArrayList_Access := BasicArrayList_Access (stringVector_Param);
       tokenHashtable : ABHashtable_Access;
       string_Id : Unbounded_String;
       end_Id : Integer;
@@ -122,15 +124,15 @@ package body org.allbinary.logic.string_Id.tokens.Tokenizer_Package is
       null;
    end getInsideSep;
 
-   procedure getTokensFromString (This : in out Tokenizer; string_Id : Unbounded_String; tokenVector : BasicArrayList_Access) is
-      Java_Result : constant BasicArrayList_Access := Tokenizer'Class (This).getTokensFromString (string_Id, tokenVector);
+   procedure getTokensFromString (This : in out Tokenizer; string_Id : Unbounded_String; tokenVector_Param : access BasicArrayList'Class) is
+      Java_Result : constant BasicArrayList_Access := Tokenizer'Class (This).getTokensFromString (string_Id, tokenVector_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getTokensFromString;
 
-   procedure getTokens (This : in out Tokenizer; stringVector : BasicArrayList_Access) is
-      Java_Result : constant ABHashtable_Access := Tokenizer'Class (This).getTokens (stringVector);
+   procedure getTokens (This : in out Tokenizer; stringVector_Param : access BasicArrayList'Class) is
+      Java_Result : constant ABHashtable_Access := Tokenizer'Class (This).getTokens (stringVector_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

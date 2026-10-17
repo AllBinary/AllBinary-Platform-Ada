@@ -24,14 +24,15 @@ package body org.allbinary.logic.communication.smtp.configuration.user.UserEmail
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out UserEmailConfigurationView'Class; node : Node_Access) is
+   procedure Initialize (This : in out UserEmailConfigurationView'Class; node_Param : access Node'Class) is
+      node : Node_Access := Node_Access (node_Param);
       childNodeList : NodeList_Access;
       userEmailEventsConfigurationNode : Node_Access;
       userEmailEventsConfigurationView : UserEmailEventsConfigurationView_Access;
    begin
       Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
-            This.logUtil.putF (This.commonStrings.CONSTRUCTOR, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+            This.logUtil.putF (This.commonStrings.CONSTRUCTOR, UserEmailConfigurationView_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
         This.userEmailConfigurationInterface := UserEmailConfigurationInterface_Access (UserEmailConfiguration_Package.Create);
         childNodeList := node.getChildNodes;
@@ -40,23 +41,24 @@ package body org.allbinary.logic.communication.smtp.configuration.user.UserEmail
         This.userEmailConfigurationInterface.setUserEmailEventsConfigurationInterface (userEmailEventsConfigurationView.getUserEmailEventsConfigurationInterface);
    end Initialize;
 
-   function Create (node : Node_Access) return UserEmailConfigurationView_Access is
+   function Create (node_Param : access Node'Class) return UserEmailConfigurationView_Access is
       This : constant UserEmailConfigurationView_Access := new UserEmailConfigurationView;
    begin
-      UserEmailConfigurationView_Package.Initialize (This.all, node);
+      UserEmailConfigurationView_Package.Initialize (This.all, node_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out UserEmailConfigurationView'Class; userEmailConfigurationInterface : UserEmailConfigurationInterface_Access) is
+   procedure Initialize (This : in out UserEmailConfigurationView'Class; userEmailConfigurationInterface_Param : access UserEmailConfigurationInterface'Class) is
+      userEmailConfigurationInterface : UserEmailConfigurationInterface_Access := UserEmailConfigurationInterface_Access (userEmailConfigurationInterface_Param);
    begin
       Initialize_Fields (This);
         This.userEmailConfigurationInterface := userEmailConfigurationInterface;
    end Initialize;
 
-   function Create (userEmailConfigurationInterface : UserEmailConfigurationInterface_Access) return UserEmailConfigurationView_Access is
+   function Create (userEmailConfigurationInterface_Param : access UserEmailConfigurationInterface'Class) return UserEmailConfigurationView_Access is
       This : constant UserEmailConfigurationView_Access := new UserEmailConfigurationView;
    begin
-      UserEmailConfigurationView_Package.Initialize (This.all, userEmailConfigurationInterface);
+      UserEmailConfigurationView_Package.Initialize (This.all, userEmailConfigurationInterface_Param);
       return This;
    end Create;
 
@@ -66,7 +68,8 @@ package body org.allbinary.logic.communication.smtp.configuration.user.UserEmail
    end getEmailConfigurationInterface;
 
    --  throws Exception
-   function toXmlNode (This : in out UserEmailConfigurationView; document : Document_Access) return Node_Access is
+   function toXmlNode (This : in out UserEmailConfigurationView; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
       emailConfigurationMapping : UserEmailConfigurationMapping_Access;
       hashMap : HashMap_Access;
       node : Node_Access;
@@ -84,8 +87,8 @@ package body org.allbinary.logic.communication.smtp.configuration.user.UserEmail
         return node;
    end toXmlNode;
 
-   procedure toXmlNode (This : in out UserEmailConfigurationView; document : Document_Access) is
-      Java_Result : constant Node_Access := UserEmailConfigurationView'Class (This).toXmlNode (document);
+   procedure toXmlNode (This : in out UserEmailConfigurationView; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := UserEmailConfigurationView'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

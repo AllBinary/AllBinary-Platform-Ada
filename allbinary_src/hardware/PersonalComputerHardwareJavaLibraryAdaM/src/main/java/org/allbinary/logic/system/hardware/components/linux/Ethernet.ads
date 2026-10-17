@@ -39,8 +39,8 @@ package org.allbinary.logic.system.hardware.components.linux.Ethernet_Package is
 
    procedure Initialize (This : in out Ethernet'Class; data : Unbounded_String);
    function Create (data : Unbounded_String) return Ethernet_Access;
-   function compareTo (This : in out Ethernet; componentInterface : HardwareComponentInterface_Access) return Boolean;
-   procedure compareTo (This : in out Ethernet; componentInterface : HardwareComponentInterface_Access);
+   function compareTo (This : in out Ethernet; componentInterface_Param : access HardwareComponentInterface'Class) return Boolean;
+   procedure compareTo (This : in out Ethernet; componentInterface_Param : access HardwareComponentInterface'Class);
    function toString (This : in out Ethernet) return Unbounded_String;
 
 end org.allbinary.logic.system.hardware.components.linux.Ethernet_Package;

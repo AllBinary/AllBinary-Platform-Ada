@@ -62,13 +62,13 @@ package org.allbinary.thread.ThreadFactoryUtil_Package is
    procedure Initialize (This : in out ThreadFactoryUtil'Class);
    function Create return ThreadFactoryUtil_Access;
    function getInstance return ThreadFactoryUtil_Access;
-   function getInstanceGameCanvasRunnable (This : in out ThreadFactoryUtil; runnable : GameCanvasRunnableInterface_Access) return Thread_Access;
-   procedure getInstanceGameCanvasRunnable (This : in out ThreadFactoryUtil; runnable : GameCanvasRunnableInterface_Access);
-   function getInstanceForRunnable (This : in out ThreadFactoryUtil; runnable : ABRunnable_Access) return Thread_Access;
-   procedure getInstanceForRunnable (This : in out ThreadFactoryUtil; runnable : ABRunnable_Access);
-   function getInstanceType (This : in out ThreadFactoryUtil; runnable : Runnable_Access; type_Id : Integer) return Thread_Access;
-   procedure getInstanceType (This : in out ThreadFactoryUtil; runnable : Runnable_Access; type_Id : Integer);
-   procedure start (This : in out ThreadFactoryUtil; thread : Thread_Access);
+   function getInstanceGameCanvasRunnable (This : in out ThreadFactoryUtil; runnable_Param : access GameCanvasRunnableInterface'Class) return Thread_Access;
+   procedure getInstanceGameCanvasRunnable (This : in out ThreadFactoryUtil; runnable_Param : access GameCanvasRunnableInterface'Class);
+   function getInstanceForRunnable (This : in out ThreadFactoryUtil; runnable_Param : access ABRunnable'Class) return Thread_Access;
+   procedure getInstanceForRunnable (This : in out ThreadFactoryUtil; runnable_Param : access ABRunnable'Class);
+   function getInstanceType (This : in out ThreadFactoryUtil; runnable_Param : access Runnable'Class; type_Id : Integer) return Thread_Access;
+   procedure getInstanceType (This : in out ThreadFactoryUtil; runnable_Param : access Runnable'Class; type_Id : Integer);
+   procedure start (This : in out ThreadFactoryUtil; thread_Param : access Thread'Class);
 
 end org.allbinary.thread.ThreadFactoryUtil_Package;
 

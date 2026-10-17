@@ -46,15 +46,15 @@ package org.allbinary.logic.communication.smtp.BasicEmail_Package is
       email : AbEmail_Access;
    end record;
 
-   procedure Initialize (This : in out BasicEmail'Class; emailInfo : EmailInfo_Access; to : Unbounded_String);
-   function Create (emailInfo : EmailInfo_Access; to : Unbounded_String) return BasicEmail_Access;
+   procedure Initialize (This : in out BasicEmail'Class; emailInfo_Param : access EmailInfo'Class; to : Unbounded_String);
+   function Create (emailInfo_Param : access EmailInfo'Class; to : Unbounded_String) return BasicEmail_Access;
    function getEmail (This : in out BasicEmail) return Email_Access;
    function getMimeMessage (This : in out BasicEmail) return MimeMessage_Access;
    function getDebugInfo (This : in out BasicEmail) return Unbounded_String;
    function log (This : in out BasicEmail) return Unbounded_String;
    function toHashMap (This : in out BasicEmail) return HashMap_Access;
-   function toXmlNode (This : in out BasicEmail; document : Document_Access) return Node_Access;
-   procedure toXmlNode (This : in out BasicEmail; document : Document_Access);
+   function toXmlNode (This : in out BasicEmail; document_Param : access Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out BasicEmail; document_Param : access Document'Class);
    function toXmlDoc (This : in out BasicEmail) return Document_Access;
 
 end org.allbinary.logic.communication.smtp.BasicEmail_Package;

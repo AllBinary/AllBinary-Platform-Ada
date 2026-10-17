@@ -51,11 +51,11 @@ package org.allbinary.animation.image.ImageArrayAnimationFactory_Package is
       animationBehaviorFactory : AnimationBehaviorFactory_Access;
    end record;
 
-   procedure Initialize (This : in out ImageArrayAnimationFactory'Class; imageArray : Image_Access_Array_Access; dx : Integer; dy : Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access);
-   function Create (imageArray : Image_Access_Array_Access; dx : Integer; dy : Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access) return ImageArrayAnimationFactory_Access;
+   procedure Initialize (This : in out ImageArrayAnimationFactory'Class; imageArray : Image_Access_Array_Access; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class);
+   function Create (imageArray : Image_Access_Array_Access; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return ImageArrayAnimationFactory_Access;
    function getInstance (This : in out ImageArrayAnimationFactory; instanceId : Integer) return Animation_Access;
    procedure getInstance (This : in out ImageArrayAnimationFactory; instanceId : Integer);
-   procedure setInitialScale (This : in out ImageArrayAnimationFactory; scaleProperties : ScaleProperties_Access);
+   procedure setInitialScale (This : in out ImageArrayAnimationFactory; scaleProperties_Param : access ScaleProperties'Class);
 
 end org.allbinary.animation.image.ImageArrayAnimationFactory_Package;
 

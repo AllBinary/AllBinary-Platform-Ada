@@ -65,7 +65,7 @@ package org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessor_Pack
 
    procedure Initialize (This : in out RemoteHighScoresSubmissionProcessor'Class);
    function Create return RemoteHighScoresSubmissionProcessor_Access;
-   procedure process (This : in out RemoteHighScoresSubmissionProcessor; remoteHighScores : RemoteHighScores_Access; abeClientInformation : AbeClientInformationInterface_Access; highScore : HighScore_Access);
+   procedure process (This : in out RemoteHighScoresSubmissionProcessor; remoteHighScores_Param : access RemoteHighScores'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; highScore_Param : access HighScore'Class);
 
 end org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessor_Package;
 

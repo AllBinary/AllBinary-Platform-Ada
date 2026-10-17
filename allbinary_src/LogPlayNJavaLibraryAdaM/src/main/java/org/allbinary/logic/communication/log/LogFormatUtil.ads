@@ -62,14 +62,14 @@ package org.allbinary.logic.communication.log.LogFormatUtil_Package is
    procedure Initialize (This : in out LogFormatUtil'Class);
    function Create return LogFormatUtil_Access;
    function getInstance return LogFormatUtil_Access;
-   function get (This : in out LogFormatUtil; className : Unbounded_String; functionName : Unbounded_String; specialMessage : Unbounded_String; exception_Id : Java_Object_Access) return Unbounded_String;
-   procedure get (This : in out LogFormatUtil; className : Unbounded_String; functionName : Unbounded_String; specialMessage : Unbounded_String; exception_Id : Java_Object_Access);
+   function get (This : in out LogFormatUtil; className : Unbounded_String; functionName : Unbounded_String; specialMessage : Unbounded_String; exception_Id_Param : access Java_Object'Class) return Unbounded_String;
+   procedure get (This : in out LogFormatUtil; className : Unbounded_String; functionName : Unbounded_String; specialMessage : Unbounded_String; exception_Id_Param : access Java_Object'Class);
    function getS (This : in out LogFormatUtil; className : Unbounded_String; functionName : Unbounded_String; specialMessage : Unbounded_String) return Unbounded_String;
    procedure getS (This : in out LogFormatUtil; className : Unbounded_String; functionName : Unbounded_String; specialMessage : Unbounded_String);
    function getF (This : in out LogFormatUtil; className : Unbounded_String; functionName : Unbounded_String) return StringMaker_Access;
    procedure getF (This : in out LogFormatUtil; className : Unbounded_String; functionName : Unbounded_String);
-   function getO (This : in out LogFormatUtil; exception_Id : Java_Object_Access) return Unbounded_String;
-   procedure getO (This : in out LogFormatUtil; exception_Id : Java_Object_Access);
+   function getO (This : in out LogFormatUtil; exception_Id_Param : access Java_Object'Class) return Unbounded_String;
+   procedure getO (This : in out LogFormatUtil; exception_Id_Param : access Java_Object'Class);
 
 end org.allbinary.logic.communication.log.LogFormatUtil_Package;
 

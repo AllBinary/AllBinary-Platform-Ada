@@ -38,8 +38,8 @@ package org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyView_
 
    procedure Initialize (This : in out FontFamilyView'Class);
    function Create return FontFamilyView_Access;
-   procedure Initialize (This : in out FontFamilyView'Class; node : Node_Access);
-   function Create (node : Node_Access) return FontFamilyView_Access;
+   procedure Initialize (This : in out FontFamilyView'Class; node_Param : access Node'Class);
+   function Create (node_Param : access Node'Class) return FontFamilyView_Access;
 
 end org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyView_Package;
 

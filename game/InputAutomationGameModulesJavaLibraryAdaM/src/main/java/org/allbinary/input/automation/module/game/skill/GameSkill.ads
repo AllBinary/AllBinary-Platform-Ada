@@ -53,18 +53,18 @@ package org.allbinary.input.automation.module.game.skill.GameSkill_Package is
    end record;
    hashMap : HashMap_Access;
 
-   procedure Initialize (This : in out GameSkill'Class; gameSkillType : GameSkillType_Access; extra : Unbounded_String; time : Integer);
-   function Create (gameSkillType : GameSkillType_Access; extra : Unbounded_String; time : Integer) return GameSkill_Access;
+   procedure Initialize (This : in out GameSkill'Class; gameSkillType_Param : access GameSkillType'Class; extra : Unbounded_String; time : Integer);
+   function Create (gameSkillType_Param : access GameSkillType'Class; extra : Unbounded_String; time : Integer) return GameSkill_Access;
    function getGameSkillType (This : in out GameSkill) return GameSkillType_Access;
-   procedure setGameSkillType (This : in out GameSkill; gameSkillType : GameSkillType_Access);
+   procedure setGameSkillType (This : in out GameSkill; gameSkillType_Param : access GameSkillType'Class);
    function getExtra (This : in out GameSkill) return Unbounded_String;
    procedure setExtra (This : in out GameSkill; extra : Unbounded_String);
    function getTime (This : in out GameSkill) return Integer;
    procedure setTime (This : in out GameSkill; time : Integer);
-   procedure addProperty (This : in out GameSkill; gameSkillPropertyInterface : GameSkillPropertyInterface_Access);
+   procedure addProperty (This : in out GameSkill; gameSkillPropertyInterface_Param : access GameSkillPropertyInterface'Class);
    function getProperties (This : in out GameSkill) return BasicArrayList_Access;
-   function getInstance (gameSkillType : GameSkillType_Access; extra : Unbounded_String) return GameSkill_Access;
-   procedure getInstance (gameSkillType : GameSkillType_Access; extra : Unbounded_String);
+   function getInstance (gameSkillType_Param : access GameSkillType'Class; extra : Unbounded_String) return GameSkill_Access;
+   procedure getInstance (gameSkillType_Param : access GameSkillType'Class; extra : Unbounded_String);
    function toString (This : in out GameSkill) return Unbounded_String;
 
 end org.allbinary.input.automation.module.game.skill.GameSkill_Package;

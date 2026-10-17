@@ -40,8 +40,8 @@ package org.allbinary.data.tables.user.quoterequest.QuoteRequestEntityInterface_
    function get (This : in out QuoteRequestEntityInterface; userName : Unbounded_String; id : Integer) return QuoteRequest_Access is abstract;
    function getIds (This : in out QuoteRequestEntityInterface; userName : Unbounded_String) return BasicArrayList_Access is abstract;
    procedure deleteWhere (This : in out QuoteRequestEntityInterface; key : Unbounded_String; value : Unbounded_String) is abstract;
-   procedure insert (This : in out QuoteRequestEntityInterface; values : BasicArrayList_Access) is abstract;
-   procedure update (This : in out QuoteRequestEntityInterface; userName : Unbounded_String; updatedValues : HashMap_Access) is abstract;
+   procedure insert (This : in out QuoteRequestEntityInterface; values_Param : access BasicArrayList'Class) is abstract;
+   procedure update (This : in out QuoteRequestEntityInterface; userName : Unbounded_String; updatedValues_Param : access HashMap'Class) is abstract;
 
 end org.allbinary.data.tables.user.quoterequest.QuoteRequestEntityInterface_Package;
 

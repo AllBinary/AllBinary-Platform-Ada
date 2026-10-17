@@ -41,7 +41,8 @@ package body org.allbinary.logic.io.file.FileLockUtil_Package is
    end Create;
 
    --  throws Exception
-   function getAll (This : in out FileLockUtil; vector : BasicArrayList_Access; isReturnOnFailure : Boolean) return BasicArrayList_Access is
+   function getAll (This : in out FileLockUtil; vector_Param : access BasicArrayList'Class; isReturnOnFailure : Boolean) return BasicArrayList_Access is
+      vector : BasicArrayList_Access := BasicArrayList_Access (vector_Param);
       fileLockVector : BasicArrayList_Access;
       size : Integer;
       file : AbFile_Access;
@@ -54,25 +55,27 @@ package body org.allbinary.logic.io.file.FileLockUtil_Package is
             file := AbFile_Access (vector.get (index));
             fileLock := This.getLock (file);
             if (fileLock) /= (null) then
-                This.logUtil.putF (To_Unbounded_String ("File Lock Obtained: ") & Java_Image (file.getAbsolutePath), This'Unchecked_Access, To_Unbounded_String ("getAll"));
+                This.logUtil.putF (To_Unbounded_String ("File Lock Obtained: ") & Java_Image (file.getAbsolutePath), FileLockUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("getAll"));
                 fileLockVector.add (fileLock);
             elsif isReturnOnFailure then
-                This.logUtil.putF (To_Unbounded_String ("Total Locks Obtained: ") & Java_Image (fileLockVector.size), This'Unchecked_Access, To_Unbounded_String ("getAll"));
+                This.logUtil.putF (To_Unbounded_String ("Total Locks Obtained: ") & Java_Image (fileLockVector.size), FileLockUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("getAll"));
                 return fileLockVector;
             end if;
         end loop;
-        This.logUtil.putF (To_Unbounded_String ("Total Locks Obtained: ") & Java_Image (fileLockVector.size), This'Unchecked_Access, To_Unbounded_String ("getAll"));
+        This.logUtil.putF (To_Unbounded_String ("Total Locks Obtained: ") & Java_Image (fileLockVector.size), FileLockUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("getAll"));
         return fileLockVector;
    end getAll;
 
    --  throws Exception
-   function getAllPossible (This : in out FileLockUtil; vector : BasicArrayList_Access) return BasicArrayList_Access is
+   function getAllPossible (This : in out FileLockUtil; vector_Param : access BasicArrayList'Class) return BasicArrayList_Access is
+      vector : BasicArrayList_Access := BasicArrayList_Access (vector_Param);
    begin
         return This.getAll (vector, False);
    end getAllPossible;
 
    --  throws Exception
-   function getAllOrNone (This : in out FileLockUtil; vector : BasicArrayList_Access) return BasicArrayList_Access is
+   function getAllOrNone (This : in out FileLockUtil; vector_Param : access BasicArrayList'Class) return BasicArrayList_Access is
+      vector : BasicArrayList_Access := BasicArrayList_Access (vector_Param);
       fileLockVector : BasicArrayList_Access;
    begin
         fileLockVector := This.getAll (vector, True);
@@ -84,7 +87,8 @@ package body org.allbinary.logic.io.file.FileLockUtil_Package is
    end getAllOrNone;
 
    --  throws Exception
-   function getLock (This : in out FileLockUtil; file : AbFile_Access) return FileLock_Access is
+   function getLock (This : in out FileLockUtil; file_Param : access AbFile'Class) return FileLock_Access is
+      file : AbFile_Access := AbFile_Access (file_Param);
    begin
         begin
             return This.getLock (AbFileOutputStream_Package.createFromAbFileAppend (file, True));
@@ -93,7 +97,7 @@ package body org.allbinary.logic.io.file.FileLockUtil_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (To_Unbounded_String ("Exception returns null"), This'Unchecked_Access, To_Unbounded_String ("getLock"), e);
+            This.logUtil.put (To_Unbounded_String ("Exception returns null"), FileLockUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("getLock"), e);
             return null;
                 end;
         end;
@@ -104,7 +108,8 @@ package body org.allbinary.logic.io.file.FileLockUtil_Package is
    end getLock;
 
    --  throws Exception
-   function getLock (This : in out FileLockUtil; fileOutputStream : AbFileOutputStream_Access) return FileLock_Access is
+   function getLock (This : in out FileLockUtil; fileOutputStream_Param : access AbFileOutputStream'Class) return FileLock_Access is
+      fileOutputStream : AbFileOutputStream_Access := AbFileOutputStream_Access (fileOutputStream_Param);
       fileLock : FileLock_Access;
    begin
         begin
@@ -115,19 +120,20 @@ package body org.allbinary.logic.io.file.FileLockUtil_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (To_Unbounded_String ("Exception returns null"), This'Unchecked_Access, To_Unbounded_String ("getLock"), e);
+            This.logUtil.put (To_Unbounded_String ("Exception returns null"), FileLockUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("getLock"), e);
             return null;
                 end;
         end;
         --  finally
         begin
-            This.logUtil.putF (To_Unbounded_String ("Finally - Closing FileOutputStream"), This'Unchecked_Access, To_Unbounded_String ("getLock"));
+            This.logUtil.putF (To_Unbounded_String ("Finally - Closing FileOutputStream"), FileLockUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("getLock"));
             StreamUtil_Package.getInstance.close (fileOutputStream);
         end;
    end getLock;
 
    --  throws Exception
-   function getLock (This : in out FileLockUtil; fileChannel : FileChannel_Access) return FileLock_Access is
+   function getLock (This : in out FileLockUtil; fileChannel_Param : access FileChannel'Class) return FileLock_Access is
+      fileChannel : FileChannel_Access := FileChannel_Access (fileChannel_Param);
       fileLock : FileLock_Access;
    begin
         begin
@@ -138,54 +144,54 @@ package body org.allbinary.logic.io.file.FileLockUtil_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (To_Unbounded_String ("Exception returns null"), This'Unchecked_Access, To_Unbounded_String ("getLock"), e);
+            This.logUtil.put (To_Unbounded_String ("Exception returns null"), FileLockUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("getLock"), e);
             return null;
                 end;
         end;
         --  finally
         begin
-            This.logUtil.putF (To_Unbounded_String ("Finally - Closing FileChannel"), This'Unchecked_Access, To_Unbounded_String ("getLock"));
+            This.logUtil.putF (To_Unbounded_String ("Finally - Closing FileChannel"), FileLockUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("getLock"));
             fileChannel.close;
         end;
    end getLock;
 
-   procedure getAll (This : in out FileLockUtil; vector : BasicArrayList_Access; isReturnOnFailure : Boolean) is
-      Java_Result : constant BasicArrayList_Access := FileLockUtil'Class (This).getAll (vector, isReturnOnFailure);
+   procedure getAll (This : in out FileLockUtil; vector_Param : access BasicArrayList'Class; isReturnOnFailure : Boolean) is
+      Java_Result : constant BasicArrayList_Access := FileLockUtil'Class (This).getAll (vector_Param, isReturnOnFailure);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getAll;
 
-   procedure getAllPossible (This : in out FileLockUtil; vector : BasicArrayList_Access) is
-      Java_Result : constant BasicArrayList_Access := FileLockUtil'Class (This).getAllPossible (vector);
+   procedure getAllPossible (This : in out FileLockUtil; vector_Param : access BasicArrayList'Class) is
+      Java_Result : constant BasicArrayList_Access := FileLockUtil'Class (This).getAllPossible (vector_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getAllPossible;
 
-   procedure getAllOrNone (This : in out FileLockUtil; vector : BasicArrayList_Access) is
-      Java_Result : constant BasicArrayList_Access := FileLockUtil'Class (This).getAllOrNone (vector);
+   procedure getAllOrNone (This : in out FileLockUtil; vector_Param : access BasicArrayList'Class) is
+      Java_Result : constant BasicArrayList_Access := FileLockUtil'Class (This).getAllOrNone (vector_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getAllOrNone;
 
-   procedure getLock (This : in out FileLockUtil; file : AbFile_Access) is
-      Java_Result : constant FileLock_Access := FileLockUtil'Class (This).getLock (file);
+   procedure getLock (This : in out FileLockUtil; file_Param : access AbFile'Class) is
+      Java_Result : constant FileLock_Access := FileLockUtil'Class (This).getLock (file_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getLock;
 
-   procedure getLock (This : in out FileLockUtil; fileOutputStream : AbFileOutputStream_Access) is
-      Java_Result : constant FileLock_Access := FileLockUtil'Class (This).getLock (fileOutputStream);
+   procedure getLock (This : in out FileLockUtil; fileOutputStream_Param : access AbFileOutputStream'Class) is
+      Java_Result : constant FileLock_Access := FileLockUtil'Class (This).getLock (fileOutputStream_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getLock;
 
-   procedure getLock (This : in out FileLockUtil; fileChannel : FileChannel_Access) is
-      Java_Result : constant FileLock_Access := FileLockUtil'Class (This).getLock (fileChannel);
+   procedure getLock (This : in out FileLockUtil; fileChannel_Param : access FileChannel'Class) is
+      Java_Result : constant FileLock_Access := FileLockUtil'Class (This).getLock (fileChannel_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

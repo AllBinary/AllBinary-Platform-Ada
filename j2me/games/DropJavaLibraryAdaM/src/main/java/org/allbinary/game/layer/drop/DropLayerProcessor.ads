@@ -44,7 +44,7 @@ package org.allbinary.game.layer.drop.DropLayerProcessor_Package is
    procedure Initialize (This : in out DropLayerProcessor'Class);
    function Create return DropLayerProcessor_Access;
    function getInstance return BasicLayerProcessor_Access;
-   procedure process (This : in out DropLayerProcessor; allBinaryLayerManager : AllBinaryLayerManager_Access);
+   procedure process (This : in out DropLayerProcessor; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class);
 
 end org.allbinary.game.layer.drop.DropLayerProcessor_Package;
 

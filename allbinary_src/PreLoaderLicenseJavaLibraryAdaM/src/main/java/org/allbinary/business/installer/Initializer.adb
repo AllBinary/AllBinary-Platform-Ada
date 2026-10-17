@@ -57,7 +57,8 @@ package body org.allbinary.business.installer.Initializer_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out Initializer'Class; map : Map_Access) is
+   procedure Initialize (This : in out Initializer'Class; map_Param : access Map'Class) is
+      map : Map_Access := Map_Access (map_Param);
       stringBuffer : StringMaker_Access;
       hashMap : HashMap_Access;
       keys : Set_Access;
@@ -82,32 +83,34 @@ package body org.allbinary.business.installer.Initializer_Package is
             stringBuffer.append (key);
             stringBuffer.append (To_Unbounded_String (" Value: "));
             stringBuffer.append (values (0));
-            This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("getFormData()"));
+            This.logUtil.putF (stringBuffer.toString, Initializer_Access'(This'Unchecked_Access), To_Unbounded_String ("getFormData()"));
         end loop;
         This.getFormData (hashMap);
    end Initialize;
 
-   function Create (map : Map_Access) return Initializer_Access is
+   function Create (map_Param : access Map'Class) return Initializer_Access is
       This : constant Initializer_Access := new Initializer;
    begin
-      Initializer_Package.Initialize (This.all, map);
+      Initializer_Package.Initialize (This.all, map_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out Initializer'Class; initHashMap : HashMap_Access) is
+   procedure Initialize (This : in out Initializer'Class; initHashMap_Param : access HashMap'Class) is
+      initHashMap : HashMap_Access := HashMap_Access (initHashMap_Param);
    begin
       Initialize_Fields (This);
         This.getFormData (initHashMap);
    end Initialize;
 
-   function Create (initHashMap : HashMap_Access) return Initializer_Access is
+   function Create (initHashMap_Param : access HashMap'Class) return Initializer_Access is
       This : constant Initializer_Access := new Initializer;
    begin
-      Initializer_Package.Initialize (This.all, initHashMap);
+      Initializer_Package.Initialize (This.all, initHashMap_Param);
       return This;
    end Create;
 
-   procedure getFormData (This : in out Initializer; hashMap : HashMap_Access) is
+   procedure getFormData (This : in out Initializer; hashMap_Param : access HashMap'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
       initializerData : InitializerData_Access;
    begin
         begin
@@ -152,7 +155,7 @@ package body org.allbinary.business.installer.Initializer_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (To_Unbounded_String ("Unable to get form data"), This'Unchecked_Access, To_Unbounded_String ("getFormData()"), e);
+            This.logUtil.put (To_Unbounded_String ("Unable to get form data"), Initializer_Access'(This'Unchecked_Access), To_Unbounded_String ("getFormData()"), e);
                 end;
         end;
    end getFormData;
@@ -170,7 +173,7 @@ package body org.allbinary.business.installer.Initializer_Package is
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PRELOADERERROR) then
                 commonStrings := CommonStrings_Package.getInstance;
-                This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.IS_VALID, e);
+                This.logUtil.put (commonStrings.EXCEPTION_Id, Initializer_Access'(This'Unchecked_Access), commonStrings.IS_VALID, e);
             end if;
             return False;
                 end;
@@ -359,7 +362,7 @@ package body org.allbinary.business.installer.Initializer_Package is
       staticPagesDbInitInfo : StaticPagesDbInitInfo_Access;
       inventoryDbInitInfo : InventoryDbInitInfo_Access;
    begin
-        This.logUtil.putF (To_Unbounded_String ("Creating DB connection files"), This'Unchecked_Access, To_Unbounded_String ("set()"));
+        This.logUtil.putF (To_Unbounded_String ("Creating DB connection files"), Initializer_Access'(This'Unchecked_Access), To_Unbounded_String ("set()"));
         userDbInitInfo := UserDbInitInfo_Package.Create (False);
         userDbInitInfo.setJdbcDriver (This.userJdbcDriver);
         userDbInitInfo.setName (This.userName);
@@ -410,7 +413,7 @@ package body org.allbinary.business.installer.Initializer_Package is
         inventoryDbInitInfo.setPort (This.inventoryPort);
         inventoryDbInitInfo.setHasRead (True);
         inventoryDbInitInfo.write;
-        This.logUtil.putF (To_Unbounded_String ("Created DB connection files"), This'Unchecked_Access, To_Unbounded_String ("set()"));
+        This.logUtil.putF (To_Unbounded_String ("Created DB connection files"), Initializer_Access'(This'Unchecked_Access), To_Unbounded_String ("set()"));
    end set;
 
    procedure isJdbcDriverValid (This : in out Initializer; jdbcDriverClassPathString : Unbounded_String) is

@@ -36,7 +36,8 @@ package body servlet.request.RequestHandler_Package is
 
 
    --  throws ServletException
-   procedure init (This : in out RequestHandler; config : ServletConfig_Access) is
+   procedure init (This : in out RequestHandler; config_Param : access ServletConfig'Class) is
+      config : ServletConfig_Access := ServletConfig_Access (config_Param);
    begin
         HttpServlet (This).init (config);
    end init;
@@ -47,7 +48,9 @@ package body servlet.request.RequestHandler_Package is
    end destroy;
 
    --  throws ServletException, IOException
-   procedure processRequest (This : in out RequestHandler; request : HttpServletRequest_Access; response : HttpServletResponse_Access) is
+   procedure processRequest (This : in out RequestHandler; request_Param : access HttpServletRequest'Class; response_Param : access HttpServletResponse'Class) is
+      request : HttpServletRequest_Access := HttpServletRequest_Access (request_Param);
+      response : HttpServletResponse_Access := HttpServletResponse_Access (response_Param);
       out_Id : PrintWriter_Access;
       workflowInterface : WorkFlowInterface_Access;
    begin
@@ -66,7 +69,7 @@ package body servlet.request.RequestHandler_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SERVLETERROR) then
-                This.logUtil.put (To_Unbounded_String ("Servlet LicensingException"), This'Unchecked_Access, To_Unbounded_String ("processRequest()"), e);
+                This.logUtil.put (To_Unbounded_String ("Servlet LicensingException"), RequestHandler_Access'(This'Unchecked_Access), To_Unbounded_String ("processRequest()"), e);
             end if;
             response.sendRedirect (This.abcs.globals.URLGLOBALS.LICENSEERRORPAGE);
                 end;
@@ -74,13 +77,17 @@ package body servlet.request.RequestHandler_Package is
    end processRequest;
 
    --  throws ServletException, IOException
-   procedure doGet (This : in out RequestHandler; request : HttpServletRequest_Access; response : HttpServletResponse_Access) is
+   procedure doGet (This : in out RequestHandler; request_Param : access HttpServletRequest'Class; response_Param : access HttpServletResponse'Class) is
+      request : HttpServletRequest_Access := HttpServletRequest_Access (request_Param);
+      response : HttpServletResponse_Access := HttpServletResponse_Access (response_Param);
    begin
         This.processRequest (request, response);
    end doGet;
 
    --  throws ServletException, IOException
-   procedure doPost (This : in out RequestHandler; request : HttpServletRequest_Access; response : HttpServletResponse_Access) is
+   procedure doPost (This : in out RequestHandler; request_Param : access HttpServletRequest'Class; response_Param : access HttpServletResponse'Class) is
+      request : HttpServletRequest_Access := HttpServletRequest_Access (request_Param);
+      response : HttpServletResponse_Access := HttpServletResponse_Access (response_Param);
    begin
         This.processRequest (request, response);
    end doPost;

@@ -51,10 +51,10 @@ package views.generic_Id.basket.mini.MiniBasketView_Package is
       logUtil : LogUtil_Access;
    end record;
 
-   procedure Initialize (This : in out MiniBasketView'Class; transformInfoInterface : TransformInfoInterface_Access);
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return MiniBasketView_Access;
-   function toXmlNode (This : in out MiniBasketView; document : Document_Access) return Node_Access;
-   procedure toXmlNode (This : in out MiniBasketView; document : Document_Access);
+   procedure Initialize (This : in out MiniBasketView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return MiniBasketView_Access;
+   function toXmlNode (This : in out MiniBasketView; document_Param : access Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out MiniBasketView; document_Param : access Document'Class);
    procedure addDomNodeInterfaces (This : in out MiniBasketView);
    function view (This : in out MiniBasketView) return Unbounded_String;
 

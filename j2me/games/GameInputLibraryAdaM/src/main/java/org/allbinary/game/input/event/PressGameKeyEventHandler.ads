@@ -55,11 +55,11 @@ package org.allbinary.game.input.event.PressGameKeyEventHandler_Package is
    procedure Initialize (This : in out PressGameKeyEventHandler'Class);
    function Create return PressGameKeyEventHandler_Access;
    function getInstance return PressGameKeyEventHandler_Access;
-   procedure addListener (This : in out PressGameKeyEventHandler; playerGameInput : PlayerGameInput_Access);
+   procedure addListener (This : in out PressGameKeyEventHandler; playerGameInput_Param : access PlayerGameInput'Class);
    procedure removeAllListeners (This : in out PressGameKeyEventHandler);
-   procedure removeListener (This : in out PressGameKeyEventHandler; eventListenerInterface : EventListenerInterface_Access);
-   procedure fireEvent (This : in out PressGameKeyEventHandler; eventObject : AllBinaryEventObject_Access);
-   procedure process (This : in out PressGameKeyEventHandler; eventObject : AllBinaryEventObject_Access; eventListenerInterface : EventListenerInterface_Access);
+   procedure removeListener (This : in out PressGameKeyEventHandler; eventListenerInterface_Param : access EventListenerInterface'Class);
+   procedure fireEvent (This : in out PressGameKeyEventHandler; eventObject_Param : access AllBinaryEventObject'Class);
+   procedure process (This : in out PressGameKeyEventHandler; eventObject_Param : access AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface'Class);
 
 end org.allbinary.game.input.event.PressGameKeyEventHandler_Package;
 

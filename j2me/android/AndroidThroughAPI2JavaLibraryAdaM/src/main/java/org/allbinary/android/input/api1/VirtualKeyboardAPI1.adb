@@ -21,17 +21,18 @@ package body org.allbinary.android.input.api1.VirtualKeyboardAPI1_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out VirtualKeyboardAPI1'Class; activity : Activity_Access) is
+   procedure Initialize (This : in out VirtualKeyboardAPI1'Class; activity_Param : access Activity'Class) is
+      activity : Activity_Access := Activity_Access (activity_Param);
    begin
       VirtualKeyboard_Package.Initialize (This);
       Initialize_Fields (This);
         null;
    end Initialize;
 
-   function Create (activity : Activity_Access) return VirtualKeyboardAPI1_Access is
+   function Create (activity_Param : access Activity'Class) return VirtualKeyboardAPI1_Access is
       This : constant VirtualKeyboardAPI1_Access := new VirtualKeyboardAPI1;
    begin
-      VirtualKeyboardAPI1_Package.Initialize (This.all, activity);
+      VirtualKeyboardAPI1_Package.Initialize (This.all, activity_Param);
       return This;
    end Create;
 

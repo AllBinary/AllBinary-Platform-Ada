@@ -38,9 +38,9 @@ package org.allbinary.game.input.mapping.GameInputMapping_Package is
       gameKey : GameKey_Access;
    end record;
 
-   procedure Initialize (This : in out GameInputMapping'Class; name : Unbounded_String; gameKey : GameKey_Access);
-   function Create (name : Unbounded_String; gameKey : GameKey_Access) return GameInputMapping_Access;
-   procedure setGameKey (This : in out GameInputMapping; gameKey : GameKey_Access);
+   procedure Initialize (This : in out GameInputMapping'Class; name : Unbounded_String; gameKey_Param : access GameKey'Class);
+   function Create (name : Unbounded_String; gameKey_Param : access GameKey'Class) return GameInputMapping_Access;
+   procedure setGameKey (This : in out GameInputMapping; gameKey_Param : access GameKey'Class);
    function getGameKey (This : in out GameInputMapping) return GameKey_Access;
    procedure setName (This : in out GameInputMapping; name : Unbounded_String);
    function getName (This : in out GameInputMapping) return Unbounded_String;

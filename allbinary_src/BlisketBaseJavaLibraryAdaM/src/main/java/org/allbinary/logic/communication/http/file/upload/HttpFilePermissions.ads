@@ -53,8 +53,8 @@ package org.allbinary.logic.communication.http.file.upload.HttpFilePermissions_P
       userRoles : BasicArrayList_Access;
    end record;
 
-   procedure Initialize (This : in out HttpFilePermissions'Class; fullPath : AbPath_Access);
-   function Create (fullPath : AbPath_Access) return HttpFilePermissions_Access;
+   procedure Initialize (This : in out HttpFilePermissions'Class; fullPath_Param : access AbPath'Class);
+   function Create (fullPath_Param : access AbPath'Class) return HttpFilePermissions_Access;
    function isFile (This : in out HttpFilePermissions) return Boolean;
    function getUserRoles (This : in out HttpFilePermissions) return BasicArrayList_Access;
 

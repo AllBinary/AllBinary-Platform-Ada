@@ -73,9 +73,9 @@ package org.allbinary.servlet.file.DownloadFileServlet_Package is
 
    procedure Initialize (This : in out DownloadFileServlet'Class);
    function Create return DownloadFileServlet_Access;
-   procedure processRequest (This : in out DownloadFileServlet; request : HttpServletRequest_Access; response : HttpServletResponse_Access);
-   procedure doGet (This : in out DownloadFileServlet; request : HttpServletRequest_Access; response : HttpServletResponse_Access);
-   procedure doPost (This : in out DownloadFileServlet; request : HttpServletRequest_Access; response : HttpServletResponse_Access);
+   procedure processRequest (This : in out DownloadFileServlet; request_Param : access HttpServletRequest'Class; response_Param : access HttpServletResponse'Class);
+   procedure doGet (This : in out DownloadFileServlet; request_Param : access HttpServletRequest'Class; response_Param : access HttpServletResponse'Class);
+   procedure doPost (This : in out DownloadFileServlet; request_Param : access HttpServletRequest'Class; response_Param : access HttpServletResponse'Class);
    function getServletInfo (This : in out DownloadFileServlet) return Unbounded_String;
 
 end org.allbinary.servlet.file.DownloadFileServlet_Package;

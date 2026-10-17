@@ -29,10 +29,10 @@ package org.allbinary.thread.ThreadObjectUtil_Package is
    procedure Initialize (This : in out ThreadObjectUtil'Class);
    function Create return ThreadObjectUtil_Access;
    function getInstance return ThreadObjectUtil_Access;
-   procedure notifyObject (This : in out ThreadObjectUtil; anyType : Java_Object_Access);
-   procedure waitObject (This : in out ThreadObjectUtil; anyType : Java_Object_Access);
-   procedure waitObjectFor (This : in out ThreadObjectUtil; anyType : Java_Object_Access; delay_Id : Long_Long_Integer);
-   procedure processThread (This : in out ThreadObjectUtil; runnable : Runnable_Access);
+   procedure notifyObject (This : in out ThreadObjectUtil; anyType_Param : access Java_Object'Class);
+   procedure waitObject (This : in out ThreadObjectUtil; anyType_Param : access Java_Object'Class);
+   procedure waitObjectFor (This : in out ThreadObjectUtil; anyType_Param : access Java_Object'Class; delay_Id : Long_Long_Integer);
+   procedure processThread (This : in out ThreadObjectUtil; runnable_Param : access Runnable'Class);
 
 end org.allbinary.thread.ThreadObjectUtil_Package;
 

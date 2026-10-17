@@ -33,7 +33,9 @@ package body org.allbinary.game.view.TileLayerPositionIntoViewPositionUtil_Packa
    end Create;
 
 
-   procedure init (gameCanvasInterface : AllBinaryGameCanvas_Access; viewPosition : TileLayerPositionIntoViewPosition_Access) is
+   procedure init (gameCanvasInterface_Param : access AllBinaryGameCanvas'Class; viewPosition_Param : access TileLayerPositionIntoViewPosition'Class) is
+      gameCanvasInterface : AllBinaryGameCanvas_Access := AllBinaryGameCanvas_Access (gameCanvasInterface_Param);
+      viewPosition : TileLayerPositionIntoViewPosition_Access := TileLayerPositionIntoViewPosition_Access (viewPosition_Param);
       geographicMapCompositeInterface : GeographicMapCompositeInterface_Access;
       geographicMapInterface : BasicGeographicMap_Access;
       tiledLayer : AllBinaryTiledLayer_Access;

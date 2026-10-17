@@ -22,16 +22,17 @@ package body org.allbinary.logic.util.event.AllBinaryEventObject_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AllBinaryEventObject'Class; anyType : Java_Object_Access) is
+   procedure Initialize (This : in out AllBinaryEventObject'Class; anyType_Param : access Java_Object'Class) is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
       Initialize_Fields (This);
         This.source := anyType;
    end Initialize;
 
-   function Create (anyType : Java_Object_Access) return AllBinaryEventObject_Access is
+   function Create (anyType_Param : access Java_Object'Class) return AllBinaryEventObject_Access is
       This : constant AllBinaryEventObject_Access := new AllBinaryEventObject;
    begin
-      AllBinaryEventObject_Package.Initialize (This.all, anyType);
+      AllBinaryEventObject_Package.Initialize (This.all, anyType_Param);
       return This;
    end Create;
 
@@ -40,7 +41,8 @@ package body org.allbinary.logic.util.event.AllBinaryEventObject_Package is
         return This.source;
    end getSource;
 
-   procedure setSource (This : in out AllBinaryEventObject; source : Java_Object_Access) is
+   procedure setSource (This : in out AllBinaryEventObject; source_Param : access Java_Object'Class) is
+      source : Java_Object_Access := Java_Object_Access (source_Param);
    begin
         This.source := source;
    end setSource;

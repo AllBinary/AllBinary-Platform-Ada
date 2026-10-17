@@ -46,13 +46,13 @@ package org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyValid
 
    procedure Initialize (This : in out FontFamilyValidation'Class);
    function Create return FontFamilyValidation_Access;
-   procedure Initialize (This : in out FontFamilyValidation'Class; node : Node_Access);
-   function Create (node : Node_Access) return FontFamilyValidation_Access;
+   procedure Initialize (This : in out FontFamilyValidation'Class; node_Param : access Node'Class);
+   function Create (node_Param : access Node'Class) return FontFamilyValidation_Access;
    function isValid (This : in out FontFamilyValidation) return Boolean;
    function validationInfo (This : in out FontFamilyValidation) return Unbounded_String;
    function toValidationInfoDoc (This : in out FontFamilyValidation) return Document_Access;
-   function toValidationInfoNode (This : in out FontFamilyValidation; document : Document_Access) return Node_Access;
-   procedure toValidationInfoNode (This : in out FontFamilyValidation; document : Document_Access);
+   function toValidationInfoNode (This : in out FontFamilyValidation; document_Param : access Document'Class) return Node_Access;
+   procedure toValidationInfoNode (This : in out FontFamilyValidation; document_Param : access Document'Class);
 
 end org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyValidation_Package;
 

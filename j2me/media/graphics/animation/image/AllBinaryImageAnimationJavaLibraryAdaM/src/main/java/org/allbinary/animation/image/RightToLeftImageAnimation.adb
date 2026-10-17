@@ -24,17 +24,19 @@ package body org.allbinary.animation.image.RightToLeftImageAnimation_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out RightToLeftImageAnimation'Class; image : Image_Access; animationBehavior : AnimationBehavior_Access) is
+   procedure Initialize (This : in out RightToLeftImageAnimation'Class; image_Param : access Image'Class; animationBehavior_Param : access AnimationBehavior'Class) is
+      image : Image_Access := Image_Access (image_Param);
+      animationBehavior : AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
    begin
         ImageSegmentAnimation_Package.Initialize (This, image, PrimitiveIntUtil_Package.getArrayInstance, animationBehavior);
         Initialize_Fields (This);
         This.setFrame ((This.getSize) - (1));
    end Initialize;
 
-   function Create (image : Image_Access; animationBehavior : AnimationBehavior_Access) return RightToLeftImageAnimation_Access is
+   function Create (image_Param : access Image'Class; animationBehavior_Param : access AnimationBehavior'Class) return RightToLeftImageAnimation_Access is
       This : constant RightToLeftImageAnimation_Access := new RightToLeftImageAnimation;
    begin
-      RightToLeftImageAnimation_Package.Initialize (This.all, image, animationBehavior);
+      RightToLeftImageAnimation_Package.Initialize (This.all, image_Param, animationBehavior_Param);
       return This;
    end Create;
 
@@ -62,7 +64,8 @@ package body org.allbinary.animation.image.RightToLeftImageAnimation_Package is
         This.currentWidth := (This.getDrawWidth) - (This.startWidth);
    end update;
 
-   procedure paintXY (This : in out RightToLeftImageAnimation; graphics : Graphics_Access; x : Integer; y : Integer) is
+   procedure paintXY (This : in out RightToLeftImageAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         graphics.drawRegion (This.getImage, This.startWidth, This.getStartY, This.currentWidth, This.getDrawHeight, Sprite_Package.TRANS_NONE, (x) + (This.startWidth), y, This.anchor);
    end paintXY;

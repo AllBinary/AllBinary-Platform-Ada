@@ -35,7 +35,7 @@ package org.allbinary.android.activity.NullProgressActivity_Package is
 
    procedure Initialize (This : in out NullProgressActivity'Class);
    function Create return NullProgressActivity_Access;
-   procedure runOnUiThread (This : in out NullProgressActivity; action : Runnable_Access);
+   procedure runOnUiThread (This : in out NullProgressActivity; action_Param : access Runnable'Class);
    procedure onDismissTitleProgressBar (This : in out NullProgressActivity);
    procedure onShowTitleProgressBar (This : in out NullProgressActivity; value : Integer; indeterminate : Boolean);
    procedure onTitleProgressBarSetProgress (This : in out NullProgressActivity; value : Integer);

@@ -41,8 +41,8 @@ package org.allbinary.animation.caption.CaptionAnimationHelperBase_Package is
    function Create return CaptionAnimationHelperBase_Access;
    function isShowing (This : in out CaptionAnimationHelperBase) return Boolean;
    procedure tick (This : in out CaptionAnimationHelperBase);
-   procedure update (This : in out CaptionAnimationHelperBase; message : Unbounded_String; basicColor : BasicColor_Access);
-   procedure paintXY (This : in out CaptionAnimationHelperBase; graphics : Graphics_Access; x : Integer; y : Integer);
+   procedure update (This : in out CaptionAnimationHelperBase; message : Unbounded_String; basicColor_Param : access BasicColor'Class);
+   procedure paintXY (This : in out CaptionAnimationHelperBase; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
 
 end org.allbinary.animation.caption.CaptionAnimationHelperBase_Package;
 

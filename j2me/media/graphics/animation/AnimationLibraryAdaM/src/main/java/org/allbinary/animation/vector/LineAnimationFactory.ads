@@ -42,11 +42,11 @@ package org.allbinary.animation.vector.LineAnimationFactory_Package is
       basicColor : BasicColor_Access;
    end record;
 
-   procedure Initialize (This : in out LineAnimationFactory'Class; basicColor : BasicColor_Access);
-   function Create (basicColor : BasicColor_Access) return LineAnimationFactory_Access;
+   procedure Initialize (This : in out LineAnimationFactory'Class; basicColor_Param : access BasicColor'Class);
+   function Create (basicColor_Param : access BasicColor'Class) return LineAnimationFactory_Access;
    function getInstance (This : in out LineAnimationFactory; instanceId : Integer) return Animation_Access;
    procedure getInstance (This : in out LineAnimationFactory; instanceId : Integer);
-   procedure setInitialScale (This : in out LineAnimationFactory; scaleProperties : ScaleProperties_Access);
+   procedure setInitialScale (This : in out LineAnimationFactory; scaleProperties_Param : access ScaleProperties'Class);
 
 end org.allbinary.animation.vector.LineAnimationFactory_Package;
 

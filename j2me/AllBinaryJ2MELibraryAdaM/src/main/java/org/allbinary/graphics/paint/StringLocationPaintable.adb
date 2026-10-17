@@ -36,7 +36,8 @@ package body org.allbinary.graphics.paint.StringLocationPaintable_Package is
       return This;
    end Create;
 
-   procedure paintXY (This : in out StringLocationPaintable; graphics : Graphics_Access; x : Integer; y : Integer) is
+   procedure paintXY (This : in out StringLocationPaintable; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         graphics.drawString (This.value, x, y, 0);
    end paintXY;

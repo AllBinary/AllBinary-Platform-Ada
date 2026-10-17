@@ -112,7 +112,8 @@ package body org.allbinary.business.advertisement.Advertisement_Package is
         return This.listPrice;
    end getListPrice;
 
-   procedure setListPrice (This : in out Advertisement; listPrice : Money_Access) is
+   procedure setListPrice (This : in out Advertisement; listPrice_Param : access Money'Class) is
+      listPrice : Money_Access := Money_Access (listPrice_Param);
    begin
         This.listPrice := listPrice;
    end setListPrice;
@@ -122,7 +123,8 @@ package body org.allbinary.business.advertisement.Advertisement_Package is
         return This.ourPrice;
    end getOurPrice;
 
-   procedure setOurPrice (This : in out Advertisement; ourPrice : Money_Access) is
+   procedure setOurPrice (This : in out Advertisement; ourPrice_Param : access Money'Class) is
+      ourPrice : Money_Access := Money_Access (ourPrice_Param);
    begin
         This.ourPrice := ourPrice;
    end setOurPrice;
@@ -142,7 +144,8 @@ package body org.allbinary.business.advertisement.Advertisement_Package is
         return This.image;
    end getImage;
 
-   procedure setImage (This : in out Advertisement; image : AdvertisementImageInterface_Access) is
+   procedure setImage (This : in out Advertisement; image_Param : access AdvertisementImageInterface'Class) is
+      image : AdvertisementImageInterface_Access := AdvertisementImageInterface_Access (image_Param);
    begin
         This.image := image;
    end setImage;
@@ -152,7 +155,8 @@ package body org.allbinary.business.advertisement.Advertisement_Package is
         return This.product;
    end getProduct;
 
-   procedure setProduct (This : in out Advertisement; product : AdvertisementProductInterface_Access) is
+   procedure setProduct (This : in out Advertisement; product_Param : access AdvertisementProductInterface'Class) is
+      product : AdvertisementProductInterface_Access := AdvertisementProductInterface_Access (product_Param);
    begin
         This.product := product;
    end setProduct;
@@ -162,7 +166,8 @@ package body org.allbinary.business.advertisement.Advertisement_Package is
         return This.thumbnail;
    end getThumbnail;
 
-   procedure setThumbnail (This : in out Advertisement; thumbnail : AdvertisementThumbnailInterface_Access) is
+   procedure setThumbnail (This : in out Advertisement; thumbnail_Param : access AdvertisementThumbnailInterface'Class) is
+      thumbnail : AdvertisementThumbnailInterface_Access := AdvertisementThumbnailInterface_Access (thumbnail_Param);
    begin
         This.thumbnail := thumbnail;
    end setThumbnail;

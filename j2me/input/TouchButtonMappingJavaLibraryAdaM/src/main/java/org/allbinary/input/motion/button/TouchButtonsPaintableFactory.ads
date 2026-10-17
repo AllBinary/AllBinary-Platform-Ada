@@ -38,8 +38,8 @@ package org.allbinary.input.motion.button.TouchButtonsPaintableFactory_Package i
 
    procedure Initialize (This : in out TouchButtonsPaintableFactory'Class);
    function Create return TouchButtonsPaintableFactory_Access;
-   function getInstance (basicColor : BasicColor_Access) return Paintable_Access;
-   procedure getInstance (basicColor : BasicColor_Access);
+   function getInstance (basicColor_Param : access BasicColor'Class) return Paintable_Access;
+   procedure getInstance (basicColor_Param : access BasicColor'Class);
 
 end org.allbinary.input.motion.button.TouchButtonsPaintableFactory_Package;
 

@@ -39,10 +39,10 @@ package org.allbinary.input.automation.module.generic_Id.constraints.NoImageComp
 
    procedure Initialize (This : in out NoImageComparatorConstraints'Class);
    function Create return NoImageComparatorConstraints_Access;
-   function isColorAllowed (This : in out NoImageComparatorConstraints; frame : Integer; point : GPoint_Access; color : Color_Access) return Boolean;
-   procedure isColorAllowed (This : in out NoImageComparatorConstraints; frame : Integer; point : GPoint_Access; color : Color_Access);
-   function isImageValid (This : in out NoImageComparatorConstraints; bufferedImage : BufferedImage_Access) return Boolean;
-   procedure isImageValid (This : in out NoImageComparatorConstraints; bufferedImage : BufferedImage_Access);
+   function isColorAllowed (This : in out NoImageComparatorConstraints; frame : Integer; point_Param : access GPoint'Class; color_Param : access Color'Class) return Boolean;
+   procedure isColorAllowed (This : in out NoImageComparatorConstraints; frame : Integer; point_Param : access GPoint'Class; color_Param : access Color'Class);
+   function isImageValid (This : in out NoImageComparatorConstraints; bufferedImage_Param : access BufferedImage'Class) return Boolean;
+   procedure isImageValid (This : in out NoImageComparatorConstraints; bufferedImage_Param : access BufferedImage'Class);
 
 end org.allbinary.input.automation.module.generic_Id.constraints.NoImageComparatorConstraints_Package;
 

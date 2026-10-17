@@ -55,7 +55,8 @@ package body org.allbinary.game.ag.layer.hud.basic.level.LevelHudWidget_Package 
       return This;
    end Create;
 
-   procedure updateMeasurement (This : in out LevelHudWidget; graphics : Graphics_Access) is
+   procedure updateMeasurement (This : in out LevelHudWidget; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       font : Font_Access;
    begin
         font := graphics.getFont;
@@ -100,12 +101,14 @@ package body org.allbinary.game.ag.layer.hud.basic.level.LevelHudWidget_Package 
         end if;
    end isComplete;
 
-   procedure paint (This : in out LevelHudWidget; graphics : Graphics_Access) is
+   procedure paint (This : in out LevelHudWidget; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         BasicHud (This).paintDX (graphics, This.levelString, 0, This.levelString'Length, This.levelNumberCharArray, 0, This.levelNumberTotalDigits, This.offset);
    end paint;
 
-   procedure paintThreed (This : in out LevelHudWidget; graphics : Graphics_Access) is
+   procedure paintThreed (This : in out LevelHudWidget; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         null;
    end paintThreed;

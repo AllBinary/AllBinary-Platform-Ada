@@ -21,15 +21,16 @@ package body org.allbinary.logic.communication.sql.AbSqlTablePresentation_Packag
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AbSqlTablePresentation'Class; databaseConnectionInfoInterface : DbConnectionInfo_Access) is
+   procedure Initialize (This : in out AbSqlTablePresentation'Class; databaseConnectionInfoInterface_Param : access DbConnectionInfo'Class) is
+      databaseConnectionInfoInterface : DbConnectionInfo_Access := DbConnectionInfo_Access (databaseConnectionInfoInterface_Param);
    begin
         AbSqlBasic_Package.Initialize (This, databaseConnectionInfoInterface);
    end Initialize;
 
-   function Create (databaseConnectionInfoInterface : DbConnectionInfo_Access) return AbSqlTablePresentation_Access is
+   function Create (databaseConnectionInfoInterface_Param : access DbConnectionInfo'Class) return AbSqlTablePresentation_Access is
       This : constant AbSqlTablePresentation_Access := new AbSqlTablePresentation;
    begin
-      AbSqlTablePresentation_Package.Initialize (This.all, databaseConnectionInfoInterface);
+      AbSqlTablePresentation_Package.Initialize (This.all, databaseConnectionInfoInterface_Param);
       return This;
    end Create;
 

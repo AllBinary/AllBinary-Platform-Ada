@@ -38,11 +38,11 @@ package org.allbinary.game.layer.RTSLayerEvent_Package is
       rtsLayer : PathFindingLayerInterface_Access;
    end record;
 
-   procedure Initialize (This : in out RTSLayerEvent'Class; rtsLayer : PathFindingLayerInterface_Access);
-   function Create (rtsLayer : PathFindingLayerInterface_Access) return RTSLayerEvent_Access;
+   procedure Initialize (This : in out RTSLayerEvent'Class; rtsLayer_Param : access PathFindingLayerInterface'Class);
+   function Create (rtsLayer_Param : access PathFindingLayerInterface'Class) return RTSLayerEvent_Access;
    function toString (This : in out RTSLayerEvent) return Unbounded_String;
    function getRtsLayer (This : in out RTSLayerEvent) return PathFindingLayerInterface_Access;
-   procedure setRtsLayer (This : in out RTSLayerEvent; rtsLayer : PathFindingLayerInterface_Access);
+   procedure setRtsLayer (This : in out RTSLayerEvent; rtsLayer_Param : access PathFindingLayerInterface'Class);
 
 end org.allbinary.game.layer.RTSLayerEvent_Package;
 

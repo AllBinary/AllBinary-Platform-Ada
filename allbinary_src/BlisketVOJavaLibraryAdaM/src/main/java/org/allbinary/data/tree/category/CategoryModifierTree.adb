@@ -24,35 +24,38 @@ package body org.allbinary.data.tree.category.CategoryModifierTree_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CategoryModifierTree'Class; categoryFactoryInterface : CategoryFactoryInterface_Access) is
+   procedure Initialize (This : in out CategoryModifierTree'Class; categoryFactoryInterface_Param : access CategoryFactoryInterface'Class) is
+      categoryFactoryInterface : CategoryFactoryInterface_Access := CategoryFactoryInterface_Access (categoryFactoryInterface_Param);
    begin
         CategoryPrivateTree_Package.Initialize (This, categoryFactoryInterface);
         Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY) then
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("CategoryModifierTree(CategoryFactoryInterface categoryFactoryInterface)"));
+            This.logUtil.putF (This.commonStrings.START, CategoryModifierTree_Access'(This'Unchecked_Access), To_Unbounded_String ("CategoryModifierTree(CategoryFactoryInterface categoryFactoryInterface)"));
         end if;
    end Initialize;
 
-   function Create (categoryFactoryInterface : CategoryFactoryInterface_Access) return CategoryModifierTree_Access is
+   function Create (categoryFactoryInterface_Param : access CategoryFactoryInterface'Class) return CategoryModifierTree_Access is
       This : constant CategoryModifierTree_Access := new CategoryModifierTree;
    begin
-      CategoryModifierTree_Package.Initialize (This.all, categoryFactoryInterface);
+      CategoryModifierTree_Package.Initialize (This.all, categoryFactoryInterface_Param);
       return This;
    end Create;
 
-   procedure insert (This : in out CategoryModifierTree; parentCategoryInterface : CategoryInterface_Access; newChildCategoryInterface : CategoryInterface_Access) is
+   procedure insert (This : in out CategoryModifierTree; parentCategoryInterface_Param : access CategoryInterface'Class; newChildCategoryInterface_Param : access CategoryInterface'Class) is
+      parentCategoryInterface : CategoryInterface_Access := CategoryInterface_Access (parentCategoryInterface_Param);
+      newChildCategoryInterface : CategoryInterface_Access := CategoryInterface_Access (newChildCategoryInterface_Param);
       directoryToBeCreatedAbPath : AbPath_Access;
    begin
         begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY) then
-                This.logUtil.putF (To_Unbounded_String ("Inserting"), This'Unchecked_Access, To_Unbounded_String ("insert()"));
+                This.logUtil.putF (To_Unbounded_String ("Inserting"), CategoryModifierTree_Access'(This'Unchecked_Access), To_Unbounded_String ("insert()"));
             end if;
             if parentCategoryInterface.isValid.booleanValue then
                 parentCategoryInterface.addChild (newChildCategoryInterface);
                 directoryToBeCreatedAbPath := AbPath_Package.Create (newChildCategoryInterface.getRootFilePath.toString & newChildCategoryInterface.getPath.toString, StringUtil_Package.getInstance.EMPTY_STRING);
                 This.directory.create (directoryToBeCreatedAbPath);
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY) then
-                    This.logUtil.putF (To_Unbounded_String ("Saving"), This'Unchecked_Access, To_Unbounded_String ("insert()"));
+                    This.logUtil.putF (To_Unbounded_String ("Saving"), CategoryModifierTree_Access'(This'Unchecked_Access), To_Unbounded_String ("insert()"));
                 end if;
                 This.save (parentCategoryInterface);
                 This.save (newChildCategoryInterface);
@@ -65,13 +68,15 @@ package body org.allbinary.data.tree.category.CategoryModifierTree_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("insert"), e);
+                This.logUtil.put (This.commonStrings.FAILURE, CategoryModifierTree_Access'(This'Unchecked_Access), To_Unbounded_String ("insert"), e);
             end if;
                 end;
         end;
    end insert;
 
-   procedure delete (This : in out CategoryModifierTree; parentCategoryInterface : CategoryInterface_Access; existingChildCategoryInterface : CategoryInterface_Access) is
+   procedure delete (This : in out CategoryModifierTree; parentCategoryInterface_Param : access CategoryInterface'Class; existingChildCategoryInterface_Param : access CategoryInterface'Class) is
+      parentCategoryInterface : CategoryInterface_Access := CategoryInterface_Access (parentCategoryInterface_Param);
+      existingChildCategoryInterface : CategoryInterface_Access := CategoryInterface_Access (existingChildCategoryInterface_Param);
       directoryToBeDeletedAbPath : AbPath_Access;
    begin
         begin
@@ -91,7 +96,7 @@ package body org.allbinary.data.tree.category.CategoryModifierTree_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, This.commonStrings.delete, e);
+                This.logUtil.put (This.commonStrings.FAILURE, CategoryModifierTree_Access'(This'Unchecked_Access), This.commonStrings.delete, e);
             end if;
                 end;
         end;

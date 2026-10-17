@@ -24,7 +24,8 @@ package body views.admin.storefront.statistics.StoreFrontStatisticsComponent_Pac
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out StoreFrontStatisticsComponent'Class; transformInfoInterface : TransformInfoInterface_Access) is
+   procedure Initialize (This : in out StoreFrontStatisticsComponent'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
@@ -32,10 +33,10 @@ package body views.admin.storefront.statistics.StoreFrontStatisticsComponent_Pac
         This.domNodeInterface := RealTimeStoreFrontStatisticsView_Package.Create (RealTimeStoreFrontStatistics_Package.Create (This.newStoreFrontInterface), This.getWeblisketSession.getRole);
    end Initialize;
 
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return StoreFrontStatisticsComponent_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return StoreFrontStatisticsComponent_Access is
       This : constant StoreFrontStatisticsComponent_Access := new StoreFrontStatisticsComponent;
    begin
-      StoreFrontStatisticsComponent_Package.Initialize (This.all, transformInfoInterface);
+      StoreFrontStatisticsComponent_Package.Initialize (This.all, transformInfoInterface_Param);
       return This;
    end Create;
 
@@ -56,7 +57,7 @@ package body views.admin.storefront.statistics.StoreFrontStatisticsComponent_Pac
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("view()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, StoreFrontStatisticsComponent_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
             end if;
             Java_Throw (e);
                 end;

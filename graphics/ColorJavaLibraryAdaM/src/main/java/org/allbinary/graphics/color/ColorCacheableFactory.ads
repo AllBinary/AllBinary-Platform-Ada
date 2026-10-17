@@ -38,8 +38,8 @@ package org.allbinary.graphics.color.ColorCacheableFactory_Package is
 
    procedure Initialize (This : in out ColorCacheableFactory'Class);
    function Create return ColorCacheableFactory_Access;
-   function getInstance (This : in out ColorCacheableFactory; key : Java_Object_Access) return CacheableInterface_Access;
-   procedure getInstance (This : in out ColorCacheableFactory; key : Java_Object_Access);
+   function getInstance (This : in out ColorCacheableFactory; key_Param : access Java_Object'Class) return CacheableInterface_Access;
+   procedure getInstance (This : in out ColorCacheableFactory; key_Param : access Java_Object'Class);
 
 end org.allbinary.graphics.color.ColorCacheableFactory_Package;
 

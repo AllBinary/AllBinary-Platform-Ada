@@ -27,16 +27,17 @@ package body org.allbinary.logic.communication.sql.AbSqlColumn_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AbSqlColumn'Class; databaseConnectionInfoInterface : DbConnectionInfo_Access) is
+   procedure Initialize (This : in out AbSqlColumn'Class; databaseConnectionInfoInterface_Param : access DbConnectionInfo'Class) is
+      databaseConnectionInfoInterface : DbConnectionInfo_Access := DbConnectionInfo_Access (databaseConnectionInfoInterface_Param);
    begin
         AbSqlTable_Package.Initialize (This, databaseConnectionInfoInterface);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (databaseConnectionInfoInterface : DbConnectionInfo_Access) return AbSqlColumn_Access is
+   function Create (databaseConnectionInfoInterface_Param : access DbConnectionInfo'Class) return AbSqlColumn_Access is
       This : constant AbSqlColumn_Access := new AbSqlColumn;
    begin
-      AbSqlColumn_Package.Initialize (This.all, databaseConnectionInfoInterface);
+      AbSqlColumn_Package.Initialize (This.all, databaseConnectionInfoInterface_Param);
       return This;
    end Create;
 
@@ -75,7 +76,7 @@ package body org.allbinary.logic.communication.sql.AbSqlColumn_Package is
                 stringBuffer.append (sqlStatement);
                 stringBuffer.append (This.LARGEST_INT_VALUE_IN_COLUMN);
                 stringBuffer.append (largestAsString);
-                This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, This.METHOD_GET_LARGETS_INTEGER_IN_COLUMN);
+                This.logUtil.putF (stringBuffer.toString, AbSqlColumn_Access'(This'Unchecked_Access), This.METHOD_GET_LARGETS_INTEGER_IN_COLUMN);
             end if;
             return largestAsString;
         exception
@@ -84,7 +85,7 @@ package body org.allbinary.logic.communication.sql.AbSqlColumn_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
-                This.logUtil.put (Java_Image (This.FAILED_SQL_STATEMENT) & sqlStatement, This'Unchecked_Access, This.METHOD_GET_LARGETS_INTEGER_IN_COLUMN, e);
+                This.logUtil.put (Java_Image (This.FAILED_SQL_STATEMENT) & sqlStatement, AbSqlColumn_Access'(This'Unchecked_Access), This.METHOD_GET_LARGETS_INTEGER_IN_COLUMN, e);
             end if;
             return This.INVALID_RESULT;
                 end;
@@ -117,7 +118,7 @@ package body org.allbinary.logic.communication.sql.AbSqlColumn_Package is
                 stringBuffer.append (sqlStatement);
                 stringBuffer.append (This.sqlStrings.COLUMN_VALUE);
                 stringBuffer.append (column.toString);
-                This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, This.METHOD_GET_COLUMN);
+                This.logUtil.putF (stringBuffer.toString, AbSqlColumn_Access'(This'Unchecked_Access), This.METHOD_GET_COLUMN);
             end if;
             return column;
         exception
@@ -126,7 +127,7 @@ package body org.allbinary.logic.communication.sql.AbSqlColumn_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
-                This.logUtil.put (Java_Image (This.FAILED_SQL_STATEMENT) & sqlStatement, This'Unchecked_Access, This.METHOD_GET_COLUMN, e);
+                This.logUtil.put (Java_Image (This.FAILED_SQL_STATEMENT) & sqlStatement, AbSqlColumn_Access'(This'Unchecked_Access), This.METHOD_GET_COLUMN, e);
             end if;
             return column;
                 end;
@@ -166,7 +167,7 @@ package body org.allbinary.logic.communication.sql.AbSqlColumn_Package is
                 stringBuffer.append (sqlStatement);
                 stringBuffer.append (This.sqlStrings.COLUMN_VALUE);
                 stringBuffer.append (column.toString);
-                This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, This.METHOD_GET_COLUMN_WHERE);
+                This.logUtil.putF (stringBuffer.toString, AbSqlColumn_Access'(This'Unchecked_Access), This.METHOD_GET_COLUMN_WHERE);
             end if;
             return column;
         exception
@@ -175,7 +176,7 @@ package body org.allbinary.logic.communication.sql.AbSqlColumn_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
-                This.logUtil.put (Java_Image (This.FAILED_SQL_STATEMENT) & sqlStatement, This'Unchecked_Access, This.METHOD_GET_COLUMN_WHERE, e);
+                This.logUtil.put (Java_Image (This.FAILED_SQL_STATEMENT) & sqlStatement, AbSqlColumn_Access'(This'Unchecked_Access), This.METHOD_GET_COLUMN_WHERE, e);
             end if;
             return column;
                 end;

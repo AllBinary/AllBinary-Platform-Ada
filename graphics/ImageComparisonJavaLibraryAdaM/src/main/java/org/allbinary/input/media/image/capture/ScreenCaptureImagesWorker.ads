@@ -59,7 +59,7 @@ package org.allbinary.input.media.image.capture.ScreenCaptureImagesWorker_Packag
    function Create return ScreenCaptureImagesWorker_Access;
    function isRunning (This : in out ScreenCaptureImagesWorker) return Boolean;
    procedure setRunning (This : in out ScreenCaptureImagesWorker; running : Boolean);
-   procedure setThread (This : in out ScreenCaptureImagesWorker; thread : Thread_Access);
+   procedure setThread (This : in out ScreenCaptureImagesWorker; thread_Param : access Thread'Class);
    procedure run (This : in out ScreenCaptureImagesWorker);
 
 end org.allbinary.input.media.image.capture.ScreenCaptureImagesWorker_Package;

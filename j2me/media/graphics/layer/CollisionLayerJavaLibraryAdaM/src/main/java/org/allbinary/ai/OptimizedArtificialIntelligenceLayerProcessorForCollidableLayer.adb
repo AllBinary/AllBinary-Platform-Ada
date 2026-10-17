@@ -34,7 +34,9 @@ package body org.allbinary.ai.OptimizedArtificialIntelligenceLayerProcessorForCo
    end Create;
 
    --  throws Exception
-   procedure processAt (This : in out OptimizedArtificialIntelligenceLayerProcessorForCollidableLayer; allBinaryLayerManager : AllBinaryLayerManager_Access; layerInterface : AllBinaryLayer_Access; index : Integer) is
+   procedure processAt (This : in out OptimizedArtificialIntelligenceLayerProcessorForCollidableLayer; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class; layerInterface_Param : access AllBinaryLayer'Class; index : Integer) is
+      allBinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
+      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
       artificialIntelligenceCompositeInterface : CollidableCompositeLayer_Access;
    begin
         artificialIntelligenceCompositeInterface := CollidableCompositeLayer_Access (layerInterface);
@@ -42,7 +44,8 @@ package body org.allbinary.ai.OptimizedArtificialIntelligenceLayerProcessorForCo
    end processAt;
 
    --  throws Exception
-   function isProcessorLayer (This : in out OptimizedArtificialIntelligenceLayerProcessorForCollidableLayer; layerInterface : AllBinaryLayer_Access) return Boolean is
+   function isProcessorLayer (This : in out OptimizedArtificialIntelligenceLayerProcessorForCollidableLayer; layerInterface_Param : access AllBinaryLayer'Class) return Boolean is
+      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
    begin
         if layerInterface.implmentsArtificialIntelligenceCompositeInterface then
             return True;
@@ -51,8 +54,8 @@ package body org.allbinary.ai.OptimizedArtificialIntelligenceLayerProcessorForCo
         end if;
    end isProcessorLayer;
 
-   procedure isProcessorLayer (This : in out OptimizedArtificialIntelligenceLayerProcessorForCollidableLayer; layerInterface : AllBinaryLayer_Access) is
-      Java_Result : constant Boolean := OptimizedArtificialIntelligenceLayerProcessorForCollidableLayer'Class (This).isProcessorLayer (layerInterface);
+   procedure isProcessorLayer (This : in out OptimizedArtificialIntelligenceLayerProcessorForCollidableLayer; layerInterface_Param : access AllBinaryLayer'Class) is
+      Java_Result : constant Boolean := OptimizedArtificialIntelligenceLayerProcessorForCollidableLayer'Class (This).isProcessorLayer (layerInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -47,12 +47,13 @@ package body org.allbinary.game.displayable.canvas.OverlayPaintable_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.UPDATE, e);
+            This.logUtil.put (commonStrings.EXCEPTION_Id, OverlayPaintable_Access'(This'Unchecked_Access), commonStrings.UPDATE, e);
                 end;
         end;
    end update;
 
-   procedure paint (This : in out OverlayPaintable; graphics : Graphics_Access) is
+   procedure paint (This : in out OverlayPaintable; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         null;
    end paint;

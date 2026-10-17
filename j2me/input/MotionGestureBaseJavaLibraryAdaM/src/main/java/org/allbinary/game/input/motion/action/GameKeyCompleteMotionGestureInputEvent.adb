@@ -26,19 +26,21 @@ package body org.allbinary.game.input.motion.action.GameKeyCompleteMotionGesture
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out GameKeyCompleteMotionGestureInputEvent'Class; name : Unbounded_String; motionGestureInput : MotionGestureInput_Access; inputToGameKeyMapping : InputToGameKeyMapping_Access) is
+   procedure Initialize (This : in out GameKeyCompleteMotionGestureInputEvent'Class; name : Unbounded_String; motionGestureInput_Param : access MotionGestureInput'Class; inputToGameKeyMapping_Param : access InputToGameKeyMapping'Class) is
+      motionGestureInput : MotionGestureInput_Access := MotionGestureInput_Access (motionGestureInput_Param);
+      inputToGameKeyMapping : InputToGameKeyMapping_Access := InputToGameKeyMapping_Access (inputToGameKeyMapping_Param);
    begin
         CompleteMotionGestureInputEvent_Package.Initialize (This, name, motionGestureInput);
         Initialize_Fields (This);
         This.inputToGameKeyMapping := inputToGameKeyMapping;
-        GameKeyCompleteMotionGestureInputEventFactory_Package.getInstance.add (This'Unchecked_Access);
+        GameKeyCompleteMotionGestureInputEventFactory_Package.getInstance.add (GameKeyCompleteMotionGestureInputEvent_Access'(This'Unchecked_Access));
         This.update;
    end Initialize;
 
-   function Create (name : Unbounded_String; motionGestureInput : MotionGestureInput_Access; inputToGameKeyMapping : InputToGameKeyMapping_Access) return GameKeyCompleteMotionGestureInputEvent_Access is
+   function Create (name : Unbounded_String; motionGestureInput_Param : access MotionGestureInput'Class; inputToGameKeyMapping_Param : access InputToGameKeyMapping'Class) return GameKeyCompleteMotionGestureInputEvent_Access is
       This : constant GameKeyCompleteMotionGestureInputEvent_Access := new GameKeyCompleteMotionGestureInputEvent;
    begin
-      GameKeyCompleteMotionGestureInputEvent_Package.Initialize (This.all, name, motionGestureInput, inputToGameKeyMapping);
+      GameKeyCompleteMotionGestureInputEvent_Package.Initialize (This.all, name, motionGestureInput_Param, inputToGameKeyMapping_Param);
       return This;
    end Create;
 
@@ -52,19 +54,20 @@ package body org.allbinary.game.input.motion.action.GameKeyCompleteMotionGesture
    begin
         begin
             This.setGameKey (This.inputToGameKeyMapping.getInstance (This.getMotionGestureInput.getId));
-            This.setGameKeyEvent (This.gameKeyEventFactory.getInstanceForInput (This'Unchecked_Access, This.getGameKey));
+            This.setGameKeyEvent (This.gameKeyEventFactory.getInstanceForInput (GameKeyCompleteMotionGestureInputEvent_Access'(This'Unchecked_Access), This.getGameKey));
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.UPDATE, e);
+            This.logUtil.put (commonStrings.EXCEPTION_Id, GameKeyCompleteMotionGestureInputEvent_Access'(This'Unchecked_Access), commonStrings.UPDATE, e);
                 end;
         end;
    end update;
 
-   procedure setGameKeyEvent (This : in out GameKeyCompleteMotionGestureInputEvent; gameKeyEvent : GameKeyEvent_Access) is
+   procedure setGameKeyEvent (This : in out GameKeyCompleteMotionGestureInputEvent; gameKeyEvent_Param : access GameKeyEvent'Class) is
+      gameKeyEvent : GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
    begin
         This.gameKeyEvent := gameKeyEvent;
    end setGameKeyEvent;
@@ -74,7 +77,8 @@ package body org.allbinary.game.input.motion.action.GameKeyCompleteMotionGesture
         return This.gameKeyEvent;
    end getGameKeyEvent;
 
-   procedure setGameKey (This : in out GameKeyCompleteMotionGestureInputEvent; gameKey : GameKey_Access) is
+   procedure setGameKey (This : in out GameKeyCompleteMotionGestureInputEvent; gameKey_Param : access GameKey'Class) is
+      gameKey : GameKey_Access := GameKey_Access (gameKey_Param);
    begin
         This.gameKey := gameKey;
    end setGameKey;

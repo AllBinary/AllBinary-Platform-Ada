@@ -23,17 +23,18 @@ package body org.allbinary.media.image.cache.BufferedImageFrameCacheable_Package
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BufferedImageFrameCacheable'Class; bufferedImage : BufferedImage_Access; frame : Long_Long_Integer) is
+   procedure Initialize (This : in out BufferedImageFrameCacheable'Class; bufferedImage_Param : access BufferedImage'Class; frame : Long_Long_Integer) is
+      bufferedImage : BufferedImage_Access := BufferedImage_Access (bufferedImage_Param);
    begin
       Initialize_Fields (This);
         This.frame := frame;
         This.setBufferedImage (bufferedImage);
    end Initialize;
 
-   function Create (bufferedImage : BufferedImage_Access; frame : Long_Long_Integer) return BufferedImageFrameCacheable_Access is
+   function Create (bufferedImage_Param : access BufferedImage'Class; frame : Long_Long_Integer) return BufferedImageFrameCacheable_Access is
       This : constant BufferedImageFrameCacheable_Access := new BufferedImageFrameCacheable;
    begin
-      BufferedImageFrameCacheable_Package.Initialize (This.all, bufferedImage, frame);
+      BufferedImageFrameCacheable_Package.Initialize (This.all, bufferedImage_Param, frame);
       return This;
    end Create;
 
@@ -47,7 +48,8 @@ package body org.allbinary.media.image.cache.BufferedImageFrameCacheable_Package
         return This.bufferedImage;
    end getBufferedImage;
 
-   procedure setBufferedImage (This : in out BufferedImageFrameCacheable; bufferedImage : BufferedImage_Access) is
+   procedure setBufferedImage (This : in out BufferedImageFrameCacheable; bufferedImage_Param : access BufferedImage'Class) is
+      bufferedImage : BufferedImage_Access := BufferedImage_Access (bufferedImage_Param);
    begin
         This.bufferedImage := bufferedImage;
    end setBufferedImage;

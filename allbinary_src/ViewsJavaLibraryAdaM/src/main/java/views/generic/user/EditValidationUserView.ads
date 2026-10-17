@@ -51,13 +51,13 @@ package views.generic_Id.user.EditValidationUserView_Package is
       userName : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out EditValidationUserView'Class; transformInfoInterface : TransformInfoInterface_Access);
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return EditValidationUserView_Access;
+   procedure Initialize (This : in out EditValidationUserView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return EditValidationUserView_Access;
    function isValid (This : in out EditValidationUserView) return Boolean;
    function validationInfo (This : in out EditValidationUserView) return Unbounded_String;
    function toValidationInfoDoc (This : in out EditValidationUserView) return Document_Access;
-   function toValidationInfoNode (This : in out EditValidationUserView; document : Document_Access) return Node_Access;
-   procedure toValidationInfoNode (This : in out EditValidationUserView; document : Document_Access);
+   function toValidationInfoNode (This : in out EditValidationUserView; document_Param : access Document'Class) return Node_Access;
+   procedure toValidationInfoNode (This : in out EditValidationUserView; document_Param : access Document'Class);
 
 end views.generic_Id.user.EditValidationUserView_Package;
 

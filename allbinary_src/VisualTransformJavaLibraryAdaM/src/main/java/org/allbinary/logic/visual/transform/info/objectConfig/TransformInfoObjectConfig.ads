@@ -81,18 +81,18 @@ package org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObje
       outputTypeName : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out TransformInfoObjectConfig'Class; transformInfoInterface : TransformInfoInterface_Access);
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return TransformInfoObjectConfig_Access;
-   procedure Initialize (This : in out TransformInfoObjectConfig'Class; transformInfoInterface : TransformInfoInterface_Access; document : Document_Access);
-   function Create (transformInfoInterface : TransformInfoInterface_Access; document : Document_Access) return TransformInfoObjectConfig_Access;
-   procedure Initialize (This : in out TransformInfoObjectConfig'Class; transformInfoInterface : TransformInfoInterface_Access; name : Unbounded_String; type_Id : Unbounded_String);
-   function Create (transformInfoInterface : TransformInfoInterface_Access; name : Unbounded_String; type_Id : Unbounded_String) return TransformInfoObjectConfig_Access;
+   procedure Initialize (This : in out TransformInfoObjectConfig'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return TransformInfoObjectConfig_Access;
+   procedure Initialize (This : in out TransformInfoObjectConfig'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; document_Param : access Document'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class; document_Param : access Document'Class) return TransformInfoObjectConfig_Access;
+   procedure Initialize (This : in out TransformInfoObjectConfig'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; name : Unbounded_String; type_Id : Unbounded_String);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class; name : Unbounded_String; type_Id : Unbounded_String) return TransformInfoObjectConfig_Access;
    procedure createDocument (This : in out TransformInfoObjectConfig);
    function getTransformInfoInterface (This : in out TransformInfoObjectConfig) return TransformInfoInterface_Access;
    function toXmlDoc (This : in out TransformInfoObjectConfig) return Document_Access;
-   procedure setDocument (This : in out TransformInfoObjectConfig; document : Document_Access);
-   function containsView (This : in out TransformInfoObjectConfig; transformInfoInterface : TransformInfoInterface_Access) return Boolean;
-   procedure containsView (This : in out TransformInfoObjectConfig; transformInfoInterface : TransformInfoInterface_Access);
+   procedure setDocument (This : in out TransformInfoObjectConfig; document_Param : access Document'Class);
+   function containsView (This : in out TransformInfoObjectConfig; transformInfoInterface_Param : access TransformInfoInterface'Class) return Boolean;
+   procedure containsView (This : in out TransformInfoObjectConfig; transformInfoInterface_Param : access TransformInfoInterface'Class);
    function getTemplateAttributes (This : in out TransformInfoObjectConfig) return NamedNodeMap_Access;
    function getName (This : in out TransformInfoObjectConfig) return Unbounded_String;
    procedure setName (This : in out TransformInfoObjectConfig; name : Unbounded_String);

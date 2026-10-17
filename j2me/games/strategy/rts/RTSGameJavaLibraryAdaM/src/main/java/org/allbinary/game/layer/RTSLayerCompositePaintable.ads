@@ -46,10 +46,10 @@ package org.allbinary.game.layer.RTSLayerCompositePaintable_Package is
       upgradableRTSLayerHudPaintable : UpgradableRTSLayerHudPaintable_Access;
    end record;
 
-   procedure Initialize (This : in out RTSLayerCompositePaintable'Class; upgradableRTSLayerHudPaintable : UpgradableRTSLayerHudPaintable_Access);
-   function Create (upgradableRTSLayerHudPaintable : UpgradableRTSLayerHudPaintable_Access) return RTSLayerCompositePaintable_Access;
-   procedure update (This : in out RTSLayerCompositePaintable; rtsLayer : RTSLayer_Access);
-   procedure paint (This : in out RTSLayerCompositePaintable; graphics : Graphics_Access);
+   procedure Initialize (This : in out RTSLayerCompositePaintable'Class; upgradableRTSLayerHudPaintable_Param : access UpgradableRTSLayerHudPaintable'Class);
+   function Create (upgradableRTSLayerHudPaintable_Param : access UpgradableRTSLayerHudPaintable'Class) return RTSLayerCompositePaintable_Access;
+   procedure update (This : in out RTSLayerCompositePaintable; rtsLayer_Param : access RTSLayer'Class);
+   procedure paint (This : in out RTSLayerCompositePaintable; graphics_Param : access Graphics'Class);
    procedure setUpgradeCost (This : in out RTSLayerCompositePaintable; upgradeCost : Unbounded_String);
    function getUpgradeCost (This : in out RTSLayerCompositePaintable) return Unbounded_String;
    procedure setDownGradeCost (This : in out RTSLayerCompositePaintable; downGradeCost : Unbounded_String);

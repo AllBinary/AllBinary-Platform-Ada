@@ -28,7 +28,8 @@ package body org.allbinary.media.image.comparison.ImageComparisonWorker_Package 
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ImageComparisonWorker'Class; imageComparatorConstraintsInterface : ImageComparatorConstraintsInterface_Access) is
+   procedure Initialize (This : in out ImageComparisonWorker'Class; imageComparatorConstraintsInterface_Param : access ImageComparatorConstraintsInterface'Class) is
+      imageComparatorConstraintsInterface : ImageComparatorConstraintsInterface_Access := ImageComparatorConstraintsInterface_Access (imageComparatorConstraintsInterface_Param);
    begin
       BasicEventHandler_Package.Initialize (This);
       Initialize_Fields (This);
@@ -36,10 +37,10 @@ package body org.allbinary.media.image.comparison.ImageComparisonWorker_Package 
         This.imageComparator := ImageComparator_Package.Create (imageComparatorConstraintsInterface);
    end Initialize;
 
-   function Create (imageComparatorConstraintsInterface : ImageComparatorConstraintsInterface_Access) return ImageComparisonWorker_Access is
+   function Create (imageComparatorConstraintsInterface_Param : access ImageComparatorConstraintsInterface'Class) return ImageComparisonWorker_Access is
       This : constant ImageComparisonWorker_Access := new ImageComparisonWorker;
    begin
-      ImageComparisonWorker_Package.Initialize (This.all, imageComparatorConstraintsInterface);
+      ImageComparisonWorker_Package.Initialize (This.all, imageComparatorConstraintsInterface_Param);
       return This;
    end Create;
 
@@ -53,7 +54,8 @@ package body org.allbinary.media.image.comparison.ImageComparisonWorker_Package 
         This.running := running;
    end setRunning;
 
-   procedure onCaptureEvent (This : in out ImageComparisonWorker; capturedImageWorkerResultsEvent : CapturedImageWorkerResultsEvent_Access) is
+   procedure onCaptureEvent (This : in out ImageComparisonWorker; capturedImageWorkerResultsEvent_Param : access CapturedImageWorkerResultsEvent'Class) is
+      capturedImageWorkerResultsEvent : CapturedImageWorkerResultsEvent_Access := CapturedImageWorkerResultsEvent_Access (capturedImageWorkerResultsEvent_Param);
    begin
         This.bufferedImageVector.add (capturedImageWorkerResultsEvent);
         if (This.bufferedImageVector.size) > (1) then
@@ -61,7 +63,8 @@ package body org.allbinary.media.image.comparison.ImageComparisonWorker_Package 
         end if;
    end onCaptureEvent;
 
-   procedure onEvent (This : in out ImageComparisonWorker; allBinaryEventObject : AllBinaryEventObject_Access) is
+   procedure onEvent (This : in out ImageComparisonWorker; allBinaryEventObject_Param : access AllBinaryEventObject'Class) is
+      allBinaryEventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (allBinaryEventObject_Param);
    begin
         This.onCaptureEvent (CapturedImageWorkerResultsEvent_Access (allBinaryEventObject));
    end onEvent;
@@ -75,7 +78,7 @@ package body org.allbinary.media.image.comparison.ImageComparisonWorker_Package 
       message : Unbounded_String;
    begin
         begin
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.RUN);
+            This.logUtil.putF (This.commonStrings.START, ImageComparisonWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
             This.setRunning (True);
             timeHelper := TimeDelayHelper_Package.Create (1000);
             timeHelper.setStartTimeTNT;
@@ -88,24 +91,24 @@ package body org.allbinary.media.image.comparison.ImageComparisonWorker_Package 
                     frame := capturedImageWorkerResultsEvent (1).getFrame;
                     imageComparisonResultFrameCacheable := ImageComparisonResultFrameCacheable_Package.Create (imageComparisonResult, frame);
                     ImageComparisonResultCacheSingleton_Package.getInstance.add (imageComparisonResultFrameCacheable);
-                    This.fireEvent (ImageComparisonResultsEvent_Package.Create (This'Unchecked_Access, imageComparisonResult));
-                    This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Image Comparison Result: ")).append (imageComparisonResult.toString).append (To_Unbounded_String (" for frame: ")).appendlong (frame).toString, This'Unchecked_Access, This.commonStrings.RUN);
+                    This.fireEvent (ImageComparisonResultsEvent_Package.Create (ImageComparisonWorker_Access'(This'Unchecked_Access), imageComparisonResult));
+                    This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Image Comparison Result: ")).append (imageComparisonResult.toString).append (To_Unbounded_String (" for frame: ")).appendlong (frame).toString, ImageComparisonWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
                 else
-                    This.logUtil.putF (To_Unbounded_String ("An Image Was Not Valid: Image Worker Event Processing terminated"), This'Unchecked_Access, This.commonStrings.RUN);
+                    This.logUtil.putF (To_Unbounded_String ("An Image Was Not Valid: Image Worker Event Processing terminated"), ImageComparisonWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
                 end if;
             end if;
             This.bufferedImageVector.remove (0);
             This.index2 := This.index2 + 1;
             message := StringMaker_Package.Create.append (To_Unbounded_String ("Frame: ")).appendint (This.index2).append (CommonLabels_Package.getInstance.ELAPSED).appendlong (Long_Long_Integer (timeHelper.getElapsedTNT)).toString;
-            This.logUtil.putF (message, This'Unchecked_Access, This.commonStrings.RUN);
+            This.logUtil.putF (message, ImageComparisonWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
             This.setRunning (False);
-            This.logUtil.putF (This.commonStrings.END_Id, This'Unchecked_Access, This.commonStrings.RUN);
+            This.logUtil.putF (This.commonStrings.END_Id, ImageComparisonWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.RUN, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, ImageComparisonWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN, e);
                 end;
         end;
    end run;

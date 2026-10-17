@@ -41,7 +41,8 @@ package body org.allbinary.game.combat.destroy.event.DestroyedEventHandler_Packa
       return This;
    end Create;
 
-   procedure addListener (This : in out DestroyedEventHandler; collidableDestroyableDamageableLayer : CollidableDestroyableDamageableLayer_Access) is
+   procedure addListener (This : in out DestroyedEventHandler; collidableDestroyableDamageableLayer_Param : access CollidableDestroyableDamageableLayer'Class) is
+      collidableDestroyableDamageableLayer : CollidableDestroyableDamageableLayer_Access := CollidableDestroyableDamageableLayer_Access (collidableDestroyableDamageableLayer_Param);
    begin
         if not (This.list.contains (collidableDestroyableDamageableLayer)) then
             This.list.add (collidableDestroyableDamageableLayer);
@@ -54,14 +55,16 @@ package body org.allbinary.game.combat.destroy.event.DestroyedEventHandler_Packa
         BasicEventHandler (This).removeAllListeners;
    end removeAllListeners;
 
-   procedure removeListener (This : in out DestroyedEventHandler; eventListenerInterface : EventListenerInterface_Access) is
+   procedure removeListener (This : in out DestroyedEventHandler; eventListenerInterface_Param : access EventListenerInterface'Class) is
+      eventListenerInterface : EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
    begin
         This.list.remove (eventListenerInterface);
         BasicEventHandler (This).removeListener (eventListenerInterface);
    end removeListener;
 
    --  throws Exception
-   procedure fireEvent (This : in out DestroyedEventHandler; eventObject : AllBinaryEventObject_Access) is
+   procedure fireEvent (This : in out DestroyedEventHandler; eventObject_Param : access AllBinaryEventObject'Class) is
+      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
       collidableDestroyableDamageableLayer : CollidableDestroyableDamageableLayer_Access;
       index : Integer;
    begin
@@ -75,7 +78,7 @@ package body org.allbinary.game.combat.destroy.event.DestroyedEventHandler_Packa
                     declare
                         e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                     begin
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, EventStrings_Package.getInstance.FIRE_EVENT, e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, DestroyedEventHandler_Access'(This'Unchecked_Access), EventStrings_Package.getInstance.FIRE_EVENT, e);
                     end;
             end;
         end loop;
@@ -83,7 +86,9 @@ package body org.allbinary.game.combat.destroy.event.DestroyedEventHandler_Packa
    end fireEvent;
 
    --  throws Exception
-   procedure process (This : in out DestroyedEventHandler; eventObject : AllBinaryEventObject_Access; eventListenerInterface : EventListenerInterface_Access) is
+   procedure process (This : in out DestroyedEventHandler; eventObject_Param : access AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface'Class) is
+      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
+      eventListenerInterface : EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
       destroyedEventListenerInterface : DestroyedEventListenerInterface_Access;
    begin
         destroyedEventListenerInterface := DestroyedEventListenerInterface_Access (eventListenerInterface);

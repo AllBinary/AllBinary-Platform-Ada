@@ -42,9 +42,9 @@ package org.allbinary.game.input.OptimizedGameInputLayerProcessorForCollidableLa
 
    procedure Initialize (This : in out OptimizedGameInputLayerProcessorForCollidableLayer'Class);
    function Create return OptimizedGameInputLayerProcessorForCollidableLayer_Access;
-   procedure processAt (This : in out OptimizedGameInputLayerProcessorForCollidableLayer; allBinaryLayerManager : AllBinaryLayerManager_Access; layerInterface : AllBinaryLayer_Access; index : Integer);
-   function isProcessorLayer (This : in out OptimizedGameInputLayerProcessorForCollidableLayer; layerInterface : AllBinaryLayer_Access) return Boolean;
-   procedure isProcessorLayer (This : in out OptimizedGameInputLayerProcessorForCollidableLayer; layerInterface : AllBinaryLayer_Access);
+   procedure processAt (This : in out OptimizedGameInputLayerProcessorForCollidableLayer; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class; layerInterface_Param : access AllBinaryLayer'Class; index : Integer);
+   function isProcessorLayer (This : in out OptimizedGameInputLayerProcessorForCollidableLayer; layerInterface_Param : access AllBinaryLayer'Class) return Boolean;
+   procedure isProcessorLayer (This : in out OptimizedGameInputLayerProcessorForCollidableLayer; layerInterface_Param : access AllBinaryLayer'Class);
 
 end org.allbinary.game.input.OptimizedGameInputLayerProcessorForCollidableLayer_Package;
 

@@ -38,8 +38,8 @@ package org.allbinary.game.combat.destroy.DestroyableSimpleBehavior_Package is
       destroyed : Boolean;
    end record;
 
-   procedure Initialize (This : in out DestroyableSimpleBehavior'Class; ownerLayer : CollidableCompositeLayer_Access);
-   function Create (ownerLayer : CollidableCompositeLayer_Access) return DestroyableSimpleBehavior_Access;
+   procedure Initialize (This : in out DestroyableSimpleBehavior'Class; ownerLayer_Param : access CollidableCompositeLayer'Class);
+   function Create (ownerLayer_Param : access CollidableCompositeLayer'Class) return DestroyableSimpleBehavior_Access;
    function isDestroyed (This : in out DestroyableSimpleBehavior) return Boolean;
    procedure setDestroyed (This : in out DestroyableSimpleBehavior; destroyed : Boolean);
 

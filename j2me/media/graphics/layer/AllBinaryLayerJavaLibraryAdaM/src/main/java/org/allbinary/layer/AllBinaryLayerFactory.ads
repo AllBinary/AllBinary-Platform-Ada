@@ -41,8 +41,8 @@ package org.allbinary.layer.AllBinaryLayerFactory_Package is
       rectangle : Rectangle_Access;
    end record;
 
-   procedure Initialize (This : in out AllBinaryLayerFactory'Class; rectangle : Rectangle_Access);
-   function Create (rectangle : Rectangle_Access) return AllBinaryLayerFactory_Access;
+   procedure Initialize (This : in out AllBinaryLayerFactory'Class; rectangle_Param : access Rectangle'Class);
+   function Create (rectangle_Param : access Rectangle'Class) return AllBinaryLayerFactory_Access;
    function getInstance (This : in out AllBinaryLayerFactory) return AllBinaryLayer_Access;
 
 end org.allbinary.layer.AllBinaryLayerFactory_Package;

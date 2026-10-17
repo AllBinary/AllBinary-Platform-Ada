@@ -54,12 +54,12 @@ package org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Package i
       mappedName : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out TransformInfoDomNode'Class; node : Node_Access);
-   function Create (node : Node_Access) return TransformInfoDomNode_Access;
-   procedure Initialize (This : in out TransformInfoDomNode'Class; transformInfoInterface : TransformInfoInterface_Access);
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return TransformInfoDomNode_Access;
-   procedure Initialize (This : in out TransformInfoDomNode'Class; transformInfoInterface : TransformInfoInterface_Access; mappedName : Unbounded_String);
-   function Create (transformInfoInterface : TransformInfoInterface_Access; mappedName : Unbounded_String) return TransformInfoDomNode_Access;
+   procedure Initialize (This : in out TransformInfoDomNode'Class; node_Param : access Node'Class);
+   function Create (node_Param : access Node'Class) return TransformInfoDomNode_Access;
+   procedure Initialize (This : in out TransformInfoDomNode'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return TransformInfoDomNode_Access;
+   procedure Initialize (This : in out TransformInfoDomNode'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; mappedName : Unbounded_String);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class; mappedName : Unbounded_String) return TransformInfoDomNode_Access;
    procedure Initialize (This : in out TransformInfoDomNode'Class; name : Unbounded_String; mappedName : Unbounded_String);
    function Create (name : Unbounded_String; mappedName : Unbounded_String) return TransformInfoDomNode_Access;
    function getTransformInfoInterface (This : in out TransformInfoDomNode) return TransformInfoInterface_Access;

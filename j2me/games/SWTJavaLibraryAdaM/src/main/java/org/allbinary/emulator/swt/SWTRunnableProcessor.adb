@@ -40,7 +40,8 @@ package body org.allbinary.emulator.swt.SWTRunnableProcessor_Package is
       return This;
    end Create;
 
-   procedure process (This : in out SWTRunnableProcessor; display : Display_Access) is
+   procedure process (This : in out SWTRunnableProcessor; display_Param : access Display'Class) is
+      display : Display_Access := Display_Access (display_Param);
    begin
         This.runnable.run;
    end process;

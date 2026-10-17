@@ -40,12 +40,14 @@ package body org.allbinary.game.displayable.RepaintBehavior_Package is
         return RepaintBehavior_Package.instance;
    end getInstance;
 
-   procedure repaint (This : in out RepaintBehavior; canvas : Canvas_Access) is
+   procedure repaint (This : in out RepaintBehavior; canvas_Param : access Canvas'Class) is
+      canvas : Canvas_Access := Canvas_Access (canvas_Param);
    begin
         null;
    end repaint;
 
-   procedure onChangeRepaint (This : in out RepaintBehavior; canvas : Canvas_Access) is
+   procedure onChangeRepaint (This : in out RepaintBehavior; canvas_Param : access Canvas'Class) is
+      canvas : Canvas_Access := Canvas_Access (canvas_Param);
       features : Features_Access;
       openGLFeatureFactory : OpenGLFeatureFactory_Access;
       thread : Thread_Access;
@@ -71,7 +73,7 @@ package body org.allbinary.game.displayable.RepaintBehavior_Package is
 --                              begin
 --                          commonStrings := CommonStrings_Package.getInstance;
 --                          logUtil := LogUtil_Package.getInstance;
---                          logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.RUN, e);
+--                          logUtil.put (commonStrings.EXCEPTION_Id, RepaintBehavior_Access'(This'Unchecked_Access), commonStrings.RUN, e);
 --                              end;
 --                      end;
 --     end run;

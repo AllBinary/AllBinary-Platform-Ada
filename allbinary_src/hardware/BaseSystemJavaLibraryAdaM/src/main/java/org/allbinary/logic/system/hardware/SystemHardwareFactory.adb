@@ -42,19 +42,20 @@ package body org.allbinary.logic.system.hardware.SystemHardwareFactory_Package i
       return This;
    end Create;
 
-   function getInstance (This : in out SystemHardwareFactory; operatingSystemInterface : GenericOperatingSystem_Access) return HardwareInterface_Access is
+   function getInstance (This : in out SystemHardwareFactory; operatingSystemInterface_Param : access GenericOperatingSystem'Class) return HardwareInterface_Access is
+      operatingSystemInterface : GenericOperatingSystem_Access := GenericOperatingSystem_Access (operatingSystemInterface_Param);
    begin
         begin
             if (This.hardwareInterface) = (NoHardware_Package.getInstance) then
                 This.hardwareInterface := HardwareFactory_Package.getInstance.getInstance (operatingSystemInterface);
             end if;
-            This.logUtil.putF (To_Unbounded_String ("Found Hardware"), This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+            This.logUtil.putF (To_Unbounded_String ("Found Hardware"), SystemHardwareFactory_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, SystemHardwareFactory_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR, e);
                 end;
         end;
         return This.hardwareInterface;
@@ -75,8 +76,8 @@ package body org.allbinary.logic.system.hardware.SystemHardwareFactory_Package i
         return osBuffer.toString;
    end static_toString;
 
-   procedure getInstance (This : in out SystemHardwareFactory; operatingSystemInterface : GenericOperatingSystem_Access) is
-      Java_Result : constant HardwareInterface_Access := SystemHardwareFactory'Class (This).getInstance (operatingSystemInterface);
+   procedure getInstance (This : in out SystemHardwareFactory; operatingSystemInterface_Param : access GenericOperatingSystem'Class) is
+      Java_Result : constant HardwareInterface_Access := SystemHardwareFactory'Class (This).getInstance (operatingSystemInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

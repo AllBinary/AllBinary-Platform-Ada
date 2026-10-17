@@ -37,9 +37,9 @@ package org.allbinary.game.displayable.canvas.GameCanvasNonBotPaintable_Package 
       gameCanvas : AllBinaryGameCanvas_Access;
    end record;
 
-   procedure Initialize (This : in out GameCanvasNonBotPaintable'Class; gameCanvas : AllBinaryGameCanvas_Access);
-   function Create (gameCanvas : AllBinaryGameCanvas_Access) return GameCanvasNonBotPaintable_Access;
-   procedure paint (This : in out GameCanvasNonBotPaintable; graphics : Graphics_Access);
+   procedure Initialize (This : in out GameCanvasNonBotPaintable'Class; gameCanvas_Param : access AllBinaryGameCanvas'Class);
+   function Create (gameCanvas_Param : access AllBinaryGameCanvas'Class) return GameCanvasNonBotPaintable_Access;
+   procedure paint (This : in out GameCanvasNonBotPaintable; graphics_Param : access Graphics'Class);
 
 end org.allbinary.game.displayable.canvas.GameCanvasNonBotPaintable_Package;
 

@@ -25,25 +25,26 @@ package body org.allbinary.logic.communication.http.file.upload.HttpFilePermissi
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out HttpFilePermissions'Class; fullPath : AbPath_Access) is
+   procedure Initialize (This : in out HttpFilePermissions'Class; fullPath_Param : access AbPath'Class) is
+      fullPath : AbPath_Access := AbPath_Access (fullPath_Param);
    begin
       Initialize_Fields (This);
         This.file := AbFile_Package.createAbFileFromAbPath (AbPath_Package.Create (fullPath.toFileSystemString, FileUploadData_Package.getInstance.FILE));
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-            This.logUtil.putF (To_Unbounded_String ("Loading Privileges: ") & Java_Image (fullPath.toFileSystemString), This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+            This.logUtil.putF (To_Unbounded_String ("Loading Privileges: ") & Java_Image (fullPath.toFileSystemString), HttpFilePermissions_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
         if This.isFile then
             This.userRoles.add (BasicUserRoleFactory_Package.getInstance.ADMINISTRATOR);
         end if;
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-            This.logUtil.putF (To_Unbounded_String ("User Roles: ") & Java_Image (This.userRoles), This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+            This.logUtil.putF (To_Unbounded_String ("User Roles: ") & Java_Image (This.userRoles), HttpFilePermissions_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
    end Initialize;
 
-   function Create (fullPath : AbPath_Access) return HttpFilePermissions_Access is
+   function Create (fullPath_Param : access AbPath'Class) return HttpFilePermissions_Access is
       This : constant HttpFilePermissions_Access := new HttpFilePermissions;
    begin
-      HttpFilePermissions_Package.Initialize (This.all, fullPath);
+      HttpFilePermissions_Package.Initialize (This.all, fullPath_Param);
       return This;
    end Create;
 

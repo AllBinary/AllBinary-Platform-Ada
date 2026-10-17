@@ -37,7 +37,7 @@ package org.allbinary.logic.system.loader.WebappClassLoaderInfo_Package is
 
    procedure Initialize (This : in out WebappClassLoaderInfo'Class);
    function Create return WebappClassLoaderInfo_Access;
-   procedure setLoader (classLoader : ClassLoader_Access);
+   procedure setLoader (classLoader_Param : access ClassLoader'Class);
    function getLoader return ClassLoader_Access;
 
 end org.allbinary.logic.system.loader.WebappClassLoaderInfo_Package;

@@ -46,7 +46,7 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.transact
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             exceptionMessage := To_Unbounded_String ("TransactionResult Constructor Failed");
-            This.logUtil.putF (exceptionMessage, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+            This.logUtil.putF (exceptionMessage, TransactionResult_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
                 end;
         end;
    end Initialize;
@@ -58,15 +58,15 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.transact
       return This;
    end Create;
 
-   procedure Initialize (This : in out TransactionResult'Class; keyValuePairs_Param : HashMap_Access) is
-      keyValuePairs : HashMap_Access := keyValuePairs_Param;
+   procedure Initialize (This : in out TransactionResult'Class; keyValuePairs_Param : access HashMap'Class) is
+      keyValuePairs : HashMap_Access := HashMap_Access (keyValuePairs_Param);
    begin
       Initialize_Fields (This);
         keyValuePairs := keyValuePairs;
         This.result := To_Unbounded_String ("Needs to have the hashmap converted to string for other constructor");
    end Initialize;
 
-   function Create (keyValuePairs_Param : HashMap_Access) return TransactionResult_Access is
+   function Create (keyValuePairs_Param : access HashMap'Class) return TransactionResult_Access is
       This : constant TransactionResult_Access := new TransactionResult;
    begin
       TransactionResult_Package.Initialize (This.all, keyValuePairs_Param);

@@ -23,17 +23,19 @@ package body org.allbinary.animation.image.sprite.ColorCompositeSpriteIndexedAni
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ColorCompositeSpriteIndexedAnimationFactory'Class; image : Image_Access; basicColorArray : BasicColor_Access_Array_Access; width : Integer; height : Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access) is
+   procedure Initialize (This : in out ColorCompositeSpriteIndexedAnimationFactory'Class; image_Param : access Image'Class; basicColorArray : BasicColor_Access_Array_Access; width : Integer; height : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) is
+      image : Image_Access := Image_Access (image_Param);
+      animationBehaviorFactory : AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
    begin
         BaseImageAnimationFactory_Package.Initialize (This, image, PrimitiveIntUtil_Package.getArrayInstance, width, height, 0, 0, animationBehaviorFactory);
         Initialize_Fields (This);
         This.basicColorArray := basicColorArray;
    end Initialize;
 
-   function Create (image : Image_Access; basicColorArray : BasicColor_Access_Array_Access; width : Integer; height : Integer; animationBehaviorFactory : AnimationBehaviorFactory_Access) return ColorCompositeSpriteIndexedAnimationFactory_Access is
+   function Create (image_Param : access Image'Class; basicColorArray : BasicColor_Access_Array_Access; width : Integer; height : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return ColorCompositeSpriteIndexedAnimationFactory_Access is
       This : constant ColorCompositeSpriteIndexedAnimationFactory_Access := new ColorCompositeSpriteIndexedAnimationFactory;
    begin
-      ColorCompositeSpriteIndexedAnimationFactory_Package.Initialize (This.all, image, basicColorArray, width, height, animationBehaviorFactory);
+      ColorCompositeSpriteIndexedAnimationFactory_Package.Initialize (This.all, image_Param, basicColorArray, width, height, animationBehaviorFactory_Param);
       return This;
    end Create;
 
@@ -46,7 +48,8 @@ package body org.allbinary.animation.image.sprite.ColorCompositeSpriteIndexedAni
    end getInstance;
 
    --  throws Exception
-   function getInstanceAnimation (This : in out ColorCompositeSpriteIndexedAnimationFactory; animationInterface : Animation_Access) return Animation_Access is
+   function getInstanceAnimation (This : in out ColorCompositeSpriteIndexedAnimationFactory; animationInterface_Param : access Animation'Class) return Animation_Access is
+      animationInterface : Animation_Access := Animation_Access (animationInterface_Param);
    begin
         return This.getInstance (0);
    end getInstanceAnimation;
@@ -58,8 +61,8 @@ package body org.allbinary.animation.image.sprite.ColorCompositeSpriteIndexedAni
       null;
    end getInstance;
 
-   procedure getInstanceAnimation (This : in out ColorCompositeSpriteIndexedAnimationFactory; animationInterface : Animation_Access) is
-      Java_Result : constant Animation_Access := ColorCompositeSpriteIndexedAnimationFactory'Class (This).getInstanceAnimation (animationInterface);
+   procedure getInstanceAnimation (This : in out ColorCompositeSpriteIndexedAnimationFactory; animationInterface_Param : access Animation'Class) is
+      Java_Result : constant Animation_Access := ColorCompositeSpriteIndexedAnimationFactory'Class (This).getInstanceAnimation (animationInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

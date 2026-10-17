@@ -43,10 +43,10 @@ package org.allbinary.game.layer.UpgradableWideRTSLayerPaintable_Package is
       cost : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out UpgradableWideRTSLayerPaintable'Class; upgradableRTSLayerHudPaintable : UpgradableRTSLayerHudPaintable_Access);
-   function Create (upgradableRTSLayerHudPaintable : UpgradableRTSLayerHudPaintable_Access) return UpgradableWideRTSLayerPaintable_Access;
-   procedure update (This : in out UpgradableWideRTSLayerPaintable; rtsLayer : RTSLayer_Access);
-   procedure paint (This : in out UpgradableWideRTSLayerPaintable; graphics : Graphics_Access);
+   procedure Initialize (This : in out UpgradableWideRTSLayerPaintable'Class; upgradableRTSLayerHudPaintable_Param : access UpgradableRTSLayerHudPaintable'Class);
+   function Create (upgradableRTSLayerHudPaintable_Param : access UpgradableRTSLayerHudPaintable'Class) return UpgradableWideRTSLayerPaintable_Access;
+   procedure update (This : in out UpgradableWideRTSLayerPaintable; rtsLayer_Param : access RTSLayer'Class);
+   procedure paint (This : in out UpgradableWideRTSLayerPaintable; graphics_Param : access Graphics'Class);
    procedure setCost (This : in out UpgradableWideRTSLayerPaintable; cost : Unbounded_String);
    function getCost (This : in out UpgradableWideRTSLayerPaintable) return Unbounded_String;
 

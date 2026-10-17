@@ -38,7 +38,8 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsE
       return This;
    end Create;
 
-   procedure insert (This : in out OrderItemsEntity; userName : Unbounded_String; order : OrderInterface_Access) is
+   procedure insert (This : in out OrderItemsEntity; userName : Unbounded_String; order_Param : access OrderInterface'Class) is
+      order : OrderInterface_Access := OrderInterface_Access (order_Param);
       vector : BasicArrayList_Access;
       basket : BasketInterface_Access;
       items : Set_Access;
@@ -110,7 +111,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsE
                 This.insert (vector);
             end loop;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.putF (To_Unbounded_String ("Command Success Added: ") & Java_Image (items.size), This'Unchecked_Access, INSERT);
+                This.logUtil.putF (To_Unbounded_String ("Command Success Added: ") & Java_Image (items.size), OrderItemsEntity_Access'(This'Unchecked_Access), INSERT);
             end if;
         exception
             when Java_Occurrence : others =>
@@ -118,7 +119,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsE
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.put (To_Unbounded_String ("Command Failed: ") & vector.toString, This'Unchecked_Access, INSERT, e);
+                This.logUtil.put (To_Unbounded_String ("Command Failed: ") & vector.toString, OrderItemsEntity_Access'(This'Unchecked_Access), INSERT, e);
             end if;
                 end;
         end;
@@ -141,7 +142,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsE
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("setStatus"), e);
+                This.logUtil.put (This.commonStrings.FAILURE, OrderItemsEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("setStatus"), e);
             end if;
                 end;
         end;
@@ -169,7 +170,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsE
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("isEverythingShipped"), e);
+                This.logUtil.put (This.commonStrings.FAILURE, OrderItemsEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("isEverythingShipped"), e);
             end if;
             return False;
                 end;
@@ -221,7 +222,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsE
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("getBasketReview"), e);
+                This.logUtil.put (This.commonStrings.FAILURE, OrderItemsEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("getBasketReview"), e);
             end if;
             return null;
                 end;

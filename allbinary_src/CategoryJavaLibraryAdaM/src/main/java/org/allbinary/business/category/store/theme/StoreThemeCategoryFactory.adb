@@ -24,19 +24,20 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategoryFacto
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out StoreThemeCategoryFactory'Class; transformInfoInterface : TransformInfoInterface_Access) is
+   procedure Initialize (This : in out StoreThemeCategoryFactory'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
       Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY) then
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("StoreCategoryFactory(TransformInfoInterface transformInfoInterface)"));
+            This.logUtil.putF (This.commonStrings.START, StoreThemeCategoryFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("StoreCategoryFactory(TransformInfoInterface transformInfoInterface)"));
         end if;
         This.transformInfoInterface := transformInfoInterface;
    end Initialize;
 
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return StoreThemeCategoryFactory_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return StoreThemeCategoryFactory_Access is
       This : constant StoreThemeCategoryFactory_Access := new StoreThemeCategoryFactory;
    begin
-      StoreThemeCategoryFactory_Package.Initialize (This.all, transformInfoInterface);
+      StoreThemeCategoryFactory_Package.Initialize (This.all, transformInfoInterface_Param);
       return This;
    end Create;
 
@@ -52,14 +53,15 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategoryFacto
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.ENTITYFACTORYERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("getRootInstance()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, StoreThemeCategoryFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getRootInstance()"), e);
             end if;
             return null;
                 end;
         end;
    end getRootInstance;
 
-   function getRootInstance (This : in out StoreThemeCategoryFactory; categoryAbPath : AbPath_Access) return CategoryInterface_Access is
+   function getRootInstance (This : in out StoreThemeCategoryFactory; categoryAbPath_Param : access AbPath'Class) return CategoryInterface_Access is
+      categoryAbPath : AbPath_Access := AbPath_Access (categoryAbPath_Param);
       level : Integer;
       categoryPropertiesFactoryInterface : CategoryPropertiesFactoryInterface_Access;
    begin
@@ -73,14 +75,15 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategoryFacto
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.ENTITYFACTORYERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("getRootInstance(String)"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, StoreThemeCategoryFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getRootInstance(String)"), e);
             end if;
             return null;
                 end;
         end;
    end getRootInstance;
 
-   function getRootInstanceFromNode (This : in out StoreThemeCategoryFactory; node : Node_Access) return CategoryInterface_Access is
+   function getRootInstanceFromNode (This : in out StoreThemeCategoryFactory; node_Param : access Node'Class) return CategoryInterface_Access is
+      node : Node_Access := Node_Access (node_Param);
       categoryPropertiesFactoryInterface : CategoryPropertiesFactoryInterface_Access;
       categoryPath : AbPath_Access;
       level : Integer;
@@ -96,7 +99,7 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategoryFacto
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.ENTITYFACTORYERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("getRootInstance(node)"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, StoreThemeCategoryFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getRootInstance(node)"), e);
             end if;
             return null;
                 end;
@@ -115,14 +118,16 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategoryFacto
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.ENTITYFACTORYERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("getInstance(String, int)"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, StoreThemeCategoryFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getInstance(String, int)"), e);
             end if;
             return null;
                 end;
         end;
    end getInstance;
 
-   function getInstance (This : in out StoreThemeCategoryFactory; rootCategoryInterface : CategoryInterface_Access; parentCategoryInterface : CategoryInterface_Access; categoryPath : Unbounded_String) return CategoryInterface_Access is
+   function getInstance (This : in out StoreThemeCategoryFactory; rootCategoryInterface_Param : access CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface'Class; categoryPath : Unbounded_String) return CategoryInterface_Access is
+      rootCategoryInterface : CategoryInterface_Access := CategoryInterface_Access (rootCategoryInterface_Param);
+      parentCategoryInterface : CategoryInterface_Access := CategoryInterface_Access (parentCategoryInterface_Param);
       categoryPropertiesFactoryInterface : CategoryPropertiesFactoryInterface_Access;
    begin
         begin
@@ -134,14 +139,15 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategoryFacto
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.ENTITYFACTORYERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("getInstance(CategoryInterface, CategoryInterface , String, int)"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, StoreThemeCategoryFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getInstance(CategoryInterface, CategoryInterface , String, int)"), e);
             end if;
             return null;
                 end;
         end;
    end getInstance;
 
-   function getInstance (This : in out StoreThemeCategoryFactory; node : Node_Access; level : Integer) return CategoryInterface_Access is
+   function getInstance (This : in out StoreThemeCategoryFactory; node_Param : access Node'Class; level : Integer) return CategoryInterface_Access is
+      node : Node_Access := Node_Access (node_Param);
       categoryPropertiesFactoryInterface : CategoryPropertiesFactoryInterface_Access;
    begin
         begin
@@ -153,14 +159,17 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategoryFacto
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.ENTITYFACTORYERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("getInstance(Node, int)"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, StoreThemeCategoryFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getInstance(Node, int)"), e);
             end if;
             return null;
                 end;
         end;
    end getInstance;
 
-   function getInstance (This : in out StoreThemeCategoryFactory; rootCategoryInterface : CategoryInterface_Access; parentCategoryInterface : CategoryInterface_Access; node : Node_Access) return CategoryInterface_Access is
+   function getInstance (This : in out StoreThemeCategoryFactory; rootCategoryInterface_Param : access CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface'Class; node_Param : access Node'Class) return CategoryInterface_Access is
+      rootCategoryInterface : CategoryInterface_Access := CategoryInterface_Access (rootCategoryInterface_Param);
+      parentCategoryInterface : CategoryInterface_Access := CategoryInterface_Access (parentCategoryInterface_Param);
+      node : Node_Access := Node_Access (node_Param);
       categoryPropertiesFactoryInterface : CategoryPropertiesFactoryInterface_Access;
    begin
         begin
@@ -172,14 +181,15 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategoryFacto
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.ENTITYFACTORYERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("getInstance(CategoryInterface, CategoryInterface, Node, int)"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, StoreThemeCategoryFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getInstance(CategoryInterface, CategoryInterface, Node, int)"), e);
             end if;
             return null;
                 end;
         end;
    end getInstance;
 
-   function getInstance (This : in out StoreThemeCategoryFactory; categoryPropertiesHashMap : HashMap_Access; level : Integer) return CategoryInterface_Access is
+   function getInstance (This : in out StoreThemeCategoryFactory; categoryPropertiesHashMap_Param : access HashMap'Class; level : Integer) return CategoryInterface_Access is
+      categoryPropertiesHashMap : HashMap_Access := HashMap_Access (categoryPropertiesHashMap_Param);
       categoryPropertiesFactoryInterface : CategoryPropertiesFactoryInterface_Access;
    begin
         begin
@@ -191,14 +201,17 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategoryFacto
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.ENTITYFACTORYERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("getInstance(HashMap)"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, StoreThemeCategoryFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getInstance(HashMap)"), e);
             end if;
             return null;
                 end;
         end;
    end getInstance;
 
-   function getInstance (This : in out StoreThemeCategoryFactory; rootCategoryInterface : CategoryInterface_Access; parentCategoryInterface : CategoryInterface_Access; categoryPropertiesHashMap : HashMap_Access) return CategoryInterface_Access is
+   function getInstance (This : in out StoreThemeCategoryFactory; rootCategoryInterface_Param : access CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface'Class; categoryPropertiesHashMap_Param : access HashMap'Class) return CategoryInterface_Access is
+      rootCategoryInterface : CategoryInterface_Access := CategoryInterface_Access (rootCategoryInterface_Param);
+      parentCategoryInterface : CategoryInterface_Access := CategoryInterface_Access (parentCategoryInterface_Param);
+      categoryPropertiesHashMap : HashMap_Access := HashMap_Access (categoryPropertiesHashMap_Param);
       categoryPropertiesFactoryInterface : CategoryPropertiesFactoryInterface_Access;
    begin
         begin
@@ -210,22 +223,22 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategoryFacto
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.ENTITYFACTORYERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("getInstance(CategoryInterface, CategoryInterface, HashMap)"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, StoreThemeCategoryFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getInstance(CategoryInterface, CategoryInterface, HashMap)"), e);
             end if;
             return null;
                 end;
         end;
    end getInstance;
 
-   procedure getRootInstance (This : in out StoreThemeCategoryFactory; categoryAbPath : AbPath_Access) is
-      Java_Result : constant CategoryInterface_Access := StoreThemeCategoryFactory'Class (This).getRootInstance (categoryAbPath);
+   procedure getRootInstance (This : in out StoreThemeCategoryFactory; categoryAbPath_Param : access AbPath'Class) is
+      Java_Result : constant CategoryInterface_Access := StoreThemeCategoryFactory'Class (This).getRootInstance (categoryAbPath_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getRootInstance;
 
-   procedure getRootInstanceFromNode (This : in out StoreThemeCategoryFactory; node : Node_Access) is
-      Java_Result : constant CategoryInterface_Access := StoreThemeCategoryFactory'Class (This).getRootInstanceFromNode (node);
+   procedure getRootInstanceFromNode (This : in out StoreThemeCategoryFactory; node_Param : access Node'Class) is
+      Java_Result : constant CategoryInterface_Access := StoreThemeCategoryFactory'Class (This).getRootInstanceFromNode (node_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
@@ -238,36 +251,36 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategoryFacto
       null;
    end getInstance;
 
-   procedure getInstance (This : in out StoreThemeCategoryFactory; rootCategoryInterface : CategoryInterface_Access; parentCategoryInterface : CategoryInterface_Access; categoryPath : Unbounded_String) is
-      Java_Result : constant CategoryInterface_Access := StoreThemeCategoryFactory'Class (This).getInstance (rootCategoryInterface, parentCategoryInterface, categoryPath);
+   procedure getInstance (This : in out StoreThemeCategoryFactory; rootCategoryInterface_Param : access CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface'Class; categoryPath : Unbounded_String) is
+      Java_Result : constant CategoryInterface_Access := StoreThemeCategoryFactory'Class (This).getInstance (rootCategoryInterface_Param, parentCategoryInterface_Param, categoryPath);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
-   procedure getInstance (This : in out StoreThemeCategoryFactory; node : Node_Access; level : Integer) is
-      Java_Result : constant CategoryInterface_Access := StoreThemeCategoryFactory'Class (This).getInstance (node, level);
+   procedure getInstance (This : in out StoreThemeCategoryFactory; node_Param : access Node'Class; level : Integer) is
+      Java_Result : constant CategoryInterface_Access := StoreThemeCategoryFactory'Class (This).getInstance (node_Param, level);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
-   procedure getInstance (This : in out StoreThemeCategoryFactory; rootCategoryInterface : CategoryInterface_Access; parentCategoryInterface : CategoryInterface_Access; node : Node_Access) is
-      Java_Result : constant CategoryInterface_Access := StoreThemeCategoryFactory'Class (This).getInstance (rootCategoryInterface, parentCategoryInterface, node);
+   procedure getInstance (This : in out StoreThemeCategoryFactory; rootCategoryInterface_Param : access CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface'Class; node_Param : access Node'Class) is
+      Java_Result : constant CategoryInterface_Access := StoreThemeCategoryFactory'Class (This).getInstance (rootCategoryInterface_Param, parentCategoryInterface_Param, node_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
-   procedure getInstance (This : in out StoreThemeCategoryFactory; categoryPropertiesHashMap : HashMap_Access; level : Integer) is
-      Java_Result : constant CategoryInterface_Access := StoreThemeCategoryFactory'Class (This).getInstance (categoryPropertiesHashMap, level);
+   procedure getInstance (This : in out StoreThemeCategoryFactory; categoryPropertiesHashMap_Param : access HashMap'Class; level : Integer) is
+      Java_Result : constant CategoryInterface_Access := StoreThemeCategoryFactory'Class (This).getInstance (categoryPropertiesHashMap_Param, level);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
-   procedure getInstance (This : in out StoreThemeCategoryFactory; rootCategoryInterface : CategoryInterface_Access; parentCategoryInterface : CategoryInterface_Access; categoryPropertiesHashMap : HashMap_Access) is
-      Java_Result : constant CategoryInterface_Access := StoreThemeCategoryFactory'Class (This).getInstance (rootCategoryInterface, parentCategoryInterface, categoryPropertiesHashMap);
+   procedure getInstance (This : in out StoreThemeCategoryFactory; rootCategoryInterface_Param : access CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface'Class; categoryPropertiesHashMap_Param : access HashMap'Class) is
+      Java_Result : constant CategoryInterface_Access := StoreThemeCategoryFactory'Class (This).getInstance (rootCategoryInterface_Param, parentCategoryInterface_Param, categoryPropertiesHashMap_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

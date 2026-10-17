@@ -37,8 +37,8 @@ package org.allbinary.logic.io.AbFileLocalInputStream_Package is
 
    type AbFileLocalInputStream is new AbFileInputStream with null record;
 
-   procedure Initialize (This : in out AbFileLocalInputStream'Class; file : AbFile_Access);
-   function Create (file : AbFile_Access) return AbFileLocalInputStream_Access;
+   procedure Initialize (This : in out AbFileLocalInputStream'Class; file_Param : access AbFile'Class);
+   function Create (file_Param : access AbFile'Class) return AbFileLocalInputStream_Access;
 
 end org.allbinary.logic.io.AbFileLocalInputStream_Package;
 

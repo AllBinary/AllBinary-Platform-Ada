@@ -66,12 +66,12 @@ package org.allbinary.game.layer.TechnologyRTSInterfaceImageItem_Package is
       adjustedLevelY : Integer;
    end record;
 
-   procedure Initialize (This : in out TechnologyRTSInterfaceImageItem'Class; label : Unbounded_String; img : Image_Access; layout : Integer; altText : Unbounded_String; basicColor : BasicColor_Access; rtsInterface : RTSInterface_Access);
-   function Create (label : Unbounded_String; img : Image_Access; layout : Integer; altText : Unbounded_String; basicColor : BasicColor_Access; rtsInterface : RTSInterface_Access) return TechnologyRTSInterfaceImageItem_Access;
-   procedure updateMeasurement (This : in out TechnologyRTSInterfaceImageItem; graphics : Graphics_Access);
+   procedure Initialize (This : in out TechnologyRTSInterfaceImageItem'Class; label : Unbounded_String; img_Param : access Image'Class; layout : Integer; altText : Unbounded_String; basicColor_Param : access BasicColor'Class; rtsInterface_Param : access RTSInterface'Class);
+   function Create (label : Unbounded_String; img_Param : access Image'Class; layout : Integer; altText : Unbounded_String; basicColor_Param : access BasicColor'Class; rtsInterface_Param : access RTSInterface'Class) return TechnologyRTSInterfaceImageItem_Access;
+   procedure updateMeasurement (This : in out TechnologyRTSInterfaceImageItem; graphics_Param : access Graphics'Class);
    function getRtsInterface (This : in out TechnologyRTSInterfaceImageItem) return RTSInterface_Access;
    procedure update (This : in out TechnologyRTSInterfaceImageItem);
-   procedure paintXY (This : in out TechnologyRTSInterfaceImageItem; graphics : Graphics_Access; x : Integer; y : Integer);
+   procedure paintXY (This : in out TechnologyRTSInterfaceImageItem; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
 
 end org.allbinary.game.layer.TechnologyRTSInterfaceImageItem_Package;
 

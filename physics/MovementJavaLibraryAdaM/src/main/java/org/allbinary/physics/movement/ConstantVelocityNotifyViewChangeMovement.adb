@@ -39,7 +39,8 @@ package body org.allbinary.physics.movement.ConstantVelocityNotifyViewChangeMove
       return This;
    end Create;
 
-   procedure init (This : in out ConstantVelocityNotifyViewChangeMovement; speedBasicDecimal : BasicDecimal_Access; angle : Integer; otherAngle : Integer) is
+   procedure init (This : in out ConstantVelocityNotifyViewChangeMovement; speedBasicDecimal_Param : access BasicDecimal'Class; angle : Integer; otherAngle : Integer) is
+      speedBasicDecimal : BasicDecimal_Access := BasicDecimal_Access (speedBasicDecimal_Param);
       angleFactory : AngleFactory_Access;
    begin
         This.speedBasicDecimal := speedBasicDecimal;
@@ -47,7 +48,8 @@ package body org.allbinary.physics.movement.ConstantVelocityNotifyViewChangeMove
         This.basicVelocityProperties.setVelocityWithBigDecimal (speedBasicDecimal, angleFactory.getAt (angle), angleFactory.getAt (otherAngle));
    end init;
 
-   procedure moveOutsideRadius (This : in out ConstantVelocityNotifyViewChangeMovement; layer : AllBinaryLayer_Access; radius : Long_Long_Integer; angle : Integer; otherAngle : Integer) is
+   procedure moveOutsideRadius (This : in out ConstantVelocityNotifyViewChangeMovement; layer_Param : access AllBinaryLayer'Class; radius : Long_Long_Integer; angle : Integer; otherAngle : Integer) is
+      layer : AllBinaryLayer_Access := AllBinaryLayer_Access (layer_Param);
       scaleFactorValue : Integer;
       xVector : Integer;
       yVector : Integer;
@@ -61,7 +63,8 @@ package body org.allbinary.physics.movement.ConstantVelocityNotifyViewChangeMove
    end moveOutsideRadius;
 
    --  throws Exception
-   procedure process (This : in out ConstantVelocityNotifyViewChangeMovement; layer : AllBinaryGameLayer_Access) is
+   procedure process (This : in out ConstantVelocityNotifyViewChangeMovement; layer_Param : access AllBinaryGameLayer'Class) is
+      layer : AllBinaryGameLayer_Access := AllBinaryGameLayer_Access (layer_Param);
       x : Integer;
       y : Integer;
       z : Integer;

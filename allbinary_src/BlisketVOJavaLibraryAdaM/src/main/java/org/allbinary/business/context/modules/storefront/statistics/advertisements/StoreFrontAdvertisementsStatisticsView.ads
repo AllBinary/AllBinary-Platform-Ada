@@ -44,10 +44,10 @@ package org.allbinary.business.context.modules.storefront.statistics.advertiseme
       storeFrontAdvertisementsStatisticsInterface : StoreFrontAdvertisementsStatisticsInterface_Access;
    end record;
 
-   procedure Initialize (This : in out StoreFrontAdvertisementsStatisticsView'Class; storeFrontAdvertisementsStatisticsInterface : StoreFrontAdvertisementsStatisticsInterface_Access);
-   function Create (storeFrontAdvertisementsStatisticsInterface : StoreFrontAdvertisementsStatisticsInterface_Access) return StoreFrontAdvertisementsStatisticsView_Access;
-   function toXmlNode (This : in out StoreFrontAdvertisementsStatisticsView; document : Document_Access) return Node_Access;
-   procedure toXmlNode (This : in out StoreFrontAdvertisementsStatisticsView; document : Document_Access);
+   procedure Initialize (This : in out StoreFrontAdvertisementsStatisticsView'Class; storeFrontAdvertisementsStatisticsInterface_Param : access StoreFrontAdvertisementsStatisticsInterface'Class);
+   function Create (storeFrontAdvertisementsStatisticsInterface_Param : access StoreFrontAdvertisementsStatisticsInterface'Class) return StoreFrontAdvertisementsStatisticsView_Access;
+   function toXmlNode (This : in out StoreFrontAdvertisementsStatisticsView; document_Param : access Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out StoreFrontAdvertisementsStatisticsView; document_Param : access Document'Class);
 
 end org.allbinary.business.context.modules.storefront.statistics.advertisements.StoreFrontAdvertisementsStatisticsView_Package;
 

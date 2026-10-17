@@ -48,13 +48,13 @@ package views.admin.user.NewUserView_Package is
       logUtil : LogUtil_Access;
    end record;
 
-   procedure Initialize (This : in out NewUserView'Class; transformInfoInterface : TransformInfoInterface_Access);
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return NewUserView_Access;
+   procedure Initialize (This : in out NewUserView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return NewUserView_Access;
    function isValid (This : in out NewUserView) return Boolean;
    function validationInfo (This : in out NewUserView) return Unbounded_String;
    function toValidationInfoDoc (This : in out NewUserView) return Document_Access;
-   function toValidationInfoNode (This : in out NewUserView; document : Document_Access) return Node_Access;
-   procedure toValidationInfoNode (This : in out NewUserView; document : Document_Access);
+   function toValidationInfoNode (This : in out NewUserView; document_Param : access Document'Class) return Node_Access;
+   procedure toValidationInfoNode (This : in out NewUserView; document_Param : access Document'Class);
 
 end views.admin.user.NewUserView_Package;
 

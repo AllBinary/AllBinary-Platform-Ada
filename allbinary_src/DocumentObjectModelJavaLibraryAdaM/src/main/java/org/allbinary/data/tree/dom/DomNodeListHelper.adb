@@ -33,7 +33,8 @@ package body org.allbinary.data.tree.dom.DomNodeListHelper_Package is
    end Create;
 
 
-   function getVector (nodeList : NodeList_Access) return BasicArrayList_Access is
+   function getVector (nodeList_Param : access NodeList'Class) return BasicArrayList_Access is
+      nodeList : NodeList_Access := NodeList_Access (nodeList_Param);
       vector : BasicArrayList_Access;
       size : Integer;
       index : Integer;
@@ -46,8 +47,8 @@ package body org.allbinary.data.tree.dom.DomNodeListHelper_Package is
         return vector;
    end getVector;
 
-   procedure getVector (nodeList : NodeList_Access) is
-      Java_Result : constant BasicArrayList_Access := getVector (nodeList);
+   procedure getVector (nodeList_Param : access NodeList'Class) is
+      Java_Result : constant BasicArrayList_Access := getVector (nodeList_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

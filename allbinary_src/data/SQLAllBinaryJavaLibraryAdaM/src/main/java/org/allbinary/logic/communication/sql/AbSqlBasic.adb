@@ -46,7 +46,8 @@ package body org.allbinary.logic.communication.sql.AbSqlBasic_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AbSqlBasic'Class; databaseConnectionInfoInterface : DbConnectionInfo_Access) is
+   procedure Initialize (This : in out AbSqlBasic'Class; databaseConnectionInfoInterface_Param : access DbConnectionInfo'Class) is
+      databaseConnectionInfoInterface : DbConnectionInfo_Access := DbConnectionInfo_Access (databaseConnectionInfoInterface_Param);
    begin
       Initialize_Fields (This);
         This.databaseConnectionInfoInterface := databaseConnectionInfoInterface;
@@ -54,10 +55,10 @@ package body org.allbinary.logic.communication.sql.AbSqlBasic_Package is
         This.conn := null;
    end Initialize;
 
-   function Create (databaseConnectionInfoInterface : DbConnectionInfo_Access) return AbSqlBasic_Access is
+   function Create (databaseConnectionInfoInterface_Param : access DbConnectionInfo'Class) return AbSqlBasic_Access is
       This : constant AbSqlBasic_Access := new AbSqlBasic;
    begin
-      AbSqlBasic_Package.Initialize (This.all, databaseConnectionInfoInterface);
+      AbSqlBasic_Package.Initialize (This.all, databaseConnectionInfoInterface_Param);
       return This;
    end Create;
 
@@ -83,7 +84,7 @@ package body org.allbinary.logic.communication.sql.AbSqlBasic_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
-                This.logUtil.put (This.FAILED_SQL_STATEMENT & statement, This'Unchecked_Access, This.METHOD_EXECUTED_SQL_STATEMENT, e);
+                This.logUtil.put (This.FAILED_SQL_STATEMENT & statement, AbSqlBasic_Access'(This'Unchecked_Access), This.METHOD_EXECUTED_SQL_STATEMENT, e);
             end if;
             This.conn.close;
             This.conn := null;
@@ -97,7 +98,7 @@ package body org.allbinary.logic.communication.sql.AbSqlBasic_Package is
         begin
             This.executeSQLStatement (Java_Image (This.sqlStrings.CREATE_DATABASE) & databaseName);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
-                This.logUtil.putF (This.DATABASE_CREATED_LABEL & databaseName, This'Unchecked_Access, This.METHOD_CREATE);
+                This.logUtil.putF (This.DATABASE_CREATED_LABEL & databaseName, AbSqlBasic_Access'(This'Unchecked_Access), This.METHOD_CREATE);
             end if;
             return databaseName & Java_Image (This.sqlStrings.CREATE_RETURN);
         exception
@@ -106,7 +107,7 @@ package body org.allbinary.logic.communication.sql.AbSqlBasic_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
-                This.logUtil.put (This.DATABASE_CREATION_FAILED_LABEL & databaseName, This'Unchecked_Access, This.METHOD_CREATE, e);
+                This.logUtil.put (This.DATABASE_CREATION_FAILED_LABEL & databaseName, AbSqlBasic_Access'(This'Unchecked_Access), This.METHOD_CREATE, e);
             end if;
             return This.DATABASE_CREATION_FAILED_LABEL & databaseName;
                 end;
@@ -123,7 +124,7 @@ package body org.allbinary.logic.communication.sql.AbSqlBasic_Package is
                     se : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
-                This.logUtil.put (This.SQL_CONNECTION_RETRYING, This'Unchecked_Access, This.METHOD_CREATE_CONNECTION, se);
+                This.logUtil.put (This.SQL_CONNECTION_RETRYING, AbSqlBasic_Access'(This'Unchecked_Access), This.METHOD_CREATE_CONNECTION, se);
             end if;
             begin
                 Thread_Package.currentThread.sleep (2000);
@@ -137,7 +138,7 @@ package body org.allbinary.logic.communication.sql.AbSqlBasic_Package is
                         e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                     begin
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
-                    This.logUtil.put (This.SQL_CONNECTION_RETRY & Java_Get_Message (se), This'Unchecked_Access, This.METHOD_CREATE_CONNECTION, e);
+                    This.logUtil.put (This.SQL_CONNECTION_RETRY & Java_Get_Message (se), AbSqlBasic_Access'(This'Unchecked_Access), This.METHOD_CREATE_CONNECTION, e);
                 end if;
                     end;
             end;
@@ -161,7 +162,7 @@ package body org.allbinary.logic.communication.sql.AbSqlBasic_Package is
                             e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                         begin
                     if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
-                        This.logUtil.put (This.LOAD_JDBC_DRIVER_FAILED_LABEL & Java_Image (This.getDatabaseConnectionInfoInterface.getJdbcDriver), This'Unchecked_Access, This.METHOD_INITIALIZE, e);
+                        This.logUtil.put (This.LOAD_JDBC_DRIVER_FAILED_LABEL & Java_Image (This.getDatabaseConnectionInfoInterface.getJdbcDriver), AbSqlBasic_Access'(This'Unchecked_Access), This.METHOD_INITIALIZE, e);
                     end if;
                         end;
                 end;
@@ -173,7 +174,7 @@ package body org.allbinary.logic.communication.sql.AbSqlBasic_Package is
                     se : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
-                This.logUtil.put (This.SQL_CONNECTION_FAILED, This'Unchecked_Access, This.METHOD_INITIALIZE, se);
+                This.logUtil.put (This.SQL_CONNECTION_FAILED, AbSqlBasic_Access'(This'Unchecked_Access), This.METHOD_INITIALIZE, se);
             end if;
                 end;
         end;
@@ -184,7 +185,8 @@ package body org.allbinary.logic.communication.sql.AbSqlBasic_Package is
         return This.databaseConnectionInfoInterface;
    end getDatabaseConnectionInfoInterface;
 
-   procedure setDatabaseConnectionInfoInterface (This : in out AbSqlBasic; databaseConnectionInfoInterface : DbConnectionInfo_Access) is
+   procedure setDatabaseConnectionInfoInterface (This : in out AbSqlBasic; databaseConnectionInfoInterface_Param : access DbConnectionInfo'Class) is
+      databaseConnectionInfoInterface : DbConnectionInfo_Access := DbConnectionInfo_Access (databaseConnectionInfoInterface_Param);
    begin
         This.databaseConnectionInfoInterface := databaseConnectionInfoInterface;
    end setDatabaseConnectionInfoInterface;

@@ -29,7 +29,7 @@ package body org.allbinary.game.layer.PlayerGameInputGameLayer_Package is
         Initialize_Fields (This);
         This.playerGameInput := PlayerGameInput_Package.Create (This.getGameKeyEventList, BasicArrayListD_Package.Create, playerInputId);
         canvasStrings := CanvasStrings_Package.getInstance;
-        This.logUtil.putF (To_Unbounded_String ("Danger Danger Danger: Should Not Be Called Except For Testing Input"), This'Unchecked_Access, canvasStrings.PAINT);
+        This.logUtil.putF (To_Unbounded_String ("Danger Danger Danger: Should Not Be Called Except For Testing Input"), PlayerGameInputGameLayer_Access'(This'Unchecked_Access), canvasStrings.PAINT);
    end Initialize;
 
    function Create (playerInputId : Integer) return PlayerGameInputGameLayer_Access is
@@ -50,12 +50,14 @@ package body org.allbinary.game.layer.PlayerGameInputGameLayer_Package is
    end initInputProcessors;
 
    --  throws Exception
-   procedure processInput (This : in out PlayerGameInputGameLayer; myManager : AllBinaryLayerManager_Access) is
+   procedure processInput (This : in out PlayerGameInputGameLayer; myManager_Param : access AllBinaryLayerManager'Class) is
+      myManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (myManager_Param);
    begin
         null;
    end processInput;
 
-   procedure paint (This : in out PlayerGameInputGameLayer; graphics : Graphics_Access) is
+   procedure paint (This : in out PlayerGameInputGameLayer; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         null;
    end paint;

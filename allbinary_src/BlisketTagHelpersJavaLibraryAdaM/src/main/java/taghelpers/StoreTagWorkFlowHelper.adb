@@ -24,20 +24,22 @@ package body taghelpers.StoreTagWorkFlowHelper_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out StoreTagWorkFlowHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access) is
+   procedure Initialize (This : in out StoreTagWorkFlowHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
    begin
       TagHelper_Package.Initialize (This);
       Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPER) then
-            This.logUtil.putF (To_Unbounded_String ("Properties: ") & hashMap.toString, This'Unchecked_Access, To_Unbounded_String ("StoreTagWorkFlowHelper()"));
+            This.logUtil.putF (To_Unbounded_String ("Properties: ") & hashMap.toString, StoreTagWorkFlowHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("StoreTagWorkFlowHelper()"));
         end if;
         This.storeWorkFlowInterface := StoreTagWorkFlowFactory_Package.getInstance.getInstance (This.abeClientInformation, hashMap, pageContext);
    end Initialize;
 
-   function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return StoreTagWorkFlowHelper_Access is
+   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return StoreTagWorkFlowHelper_Access is
       This : constant StoreTagWorkFlowHelper_Access := new StoreTagWorkFlowHelper;
    begin
-      StoreTagWorkFlowHelper_Package.Initialize (This.all, hashMap, pageContext);
+      StoreTagWorkFlowHelper_Package.Initialize (This.all, hashMap_Param, pageContext_Param);
       return This;
    end Create;
 
@@ -47,7 +49,7 @@ package body taghelpers.StoreTagWorkFlowHelper_Package is
    begin
         begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPER) then
-                This.logUtil.putF (To_Unbounded_String ("Process"), This'Unchecked_Access, This.commonStrings.PROCESS);
+                This.logUtil.putF (To_Unbounded_String ("Process"), StoreTagWorkFlowHelper_Access'(This'Unchecked_Access), This.commonStrings.PROCESS);
             end if;
             return This.storeWorkFlowInterface.process;
         exception
@@ -57,7 +59,7 @@ package body taghelpers.StoreTagWorkFlowHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to process workflow: ");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("view()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, StoreTagWorkFlowHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
             end if;
             Java_Throw (e);
                 end;

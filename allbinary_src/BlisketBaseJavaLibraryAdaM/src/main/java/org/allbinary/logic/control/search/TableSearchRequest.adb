@@ -26,7 +26,8 @@ package body org.allbinary.logic.control.search.TableSearchRequest_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out TableSearchRequest'Class; keywords : Unbounded_String; searchParams : SearchParams_Access; xslFile : Unbounded_String; contentType : Unbounded_String) is
+   procedure Initialize (This : in out TableSearchRequest'Class; keywords : Unbounded_String; searchParams_Param : access SearchParams'Class; xslFile : Unbounded_String; contentType : Unbounded_String) is
+      searchParams : SearchParams_Access := SearchParams_Access (searchParams_Param);
    begin
       Initialize_Fields (This);
         This.keywords := keywords;
@@ -36,10 +37,10 @@ package body org.allbinary.logic.control.search.TableSearchRequest_Package is
         This.contentType := contentType;
    end Initialize;
 
-   function Create (keywords : Unbounded_String; searchParams : SearchParams_Access; xslFile : Unbounded_String; contentType : Unbounded_String) return TableSearchRequest_Access is
+   function Create (keywords : Unbounded_String; searchParams_Param : access SearchParams'Class; xslFile : Unbounded_String; contentType : Unbounded_String) return TableSearchRequest_Access is
       This : constant TableSearchRequest_Access := new TableSearchRequest;
    begin
-      TableSearchRequest_Package.Initialize (This.all, keywords, searchParams, xslFile, contentType);
+      TableSearchRequest_Package.Initialize (This.all, keywords, searchParams_Param, xslFile, contentType);
       return This;
    end Create;
 
@@ -48,7 +49,8 @@ package body org.allbinary.logic.control.search.TableSearchRequest_Package is
         This.keywords := value;
    end setKeywords;
 
-   procedure setParams (This : in out TableSearchRequest; searchParams : SearchParams_Access) is
+   procedure setParams (This : in out TableSearchRequest; searchParams_Param : access SearchParams'Class) is
+      searchParams : SearchParams_Access := SearchParams_Access (searchParams_Param);
    begin
         This.searchParams := searchParams;
    end setParams;
@@ -97,13 +99,14 @@ package body org.allbinary.logic.control.search.TableSearchRequest_Package is
    end getContentType;
 
    --  throws Exception
-   function getFileBaseNameNode (This : in out TableSearchRequest; document : Document_Access) return Node_Access is
+   function getFileBaseNameNode (This : in out TableSearchRequest; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
    begin
         return ModDomHelper_Package.createNameValueNodes (document, SearchData_Package.FILENAME, This.getFileBaseName);
    end getFileBaseNameNode;
 
-   procedure getFileBaseNameNode (This : in out TableSearchRequest; document : Document_Access) is
-      Java_Result : constant Node_Access := TableSearchRequest'Class (This).getFileBaseNameNode (document);
+   procedure getFileBaseNameNode (This : in out TableSearchRequest; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := TableSearchRequest'Class (This).getFileBaseNameNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

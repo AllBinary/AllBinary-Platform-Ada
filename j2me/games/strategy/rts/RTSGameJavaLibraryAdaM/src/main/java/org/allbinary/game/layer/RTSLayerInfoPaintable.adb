@@ -41,17 +41,20 @@ package body org.allbinary.game.layer.RTSLayerInfoPaintable_Package is
         This.initUpdatePaintable.update;
    end update;
 
-   procedure paint (This : in out RTSLayerInfoPaintable; graphics : Graphics_Access) is
+   procedure paint (This : in out RTSLayerInfoPaintable; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.initUpdatePaintable.paint (graphics);
    end paint;
 
-   procedure updateRTSLayerInfoInit (This : in out RTSLayerInfoPaintable; hudPaintable : InitUpdatePaintable_Access) is
+   procedure updateRTSLayerInfoInit (This : in out RTSLayerInfoPaintable; hudPaintable_Param : access InitUpdatePaintable'Class) is
+      hudPaintable : InitUpdatePaintable_Access := InitUpdatePaintable_Access (hudPaintable_Param);
    begin
         This.initUpdatePaintable := hudPaintable;
    end updateRTSLayerInfoInit;
 
-   procedure updateRTSLayerInfoSelection (This : in out RTSLayerInfoPaintable; hudPaintable : SelectionHudPaintable_Access) is
+   procedure updateRTSLayerInfoSelection (This : in out RTSLayerInfoPaintable; hudPaintable_Param : access SelectionHudPaintable'Class) is
+      hudPaintable : SelectionHudPaintable_Access := SelectionHudPaintable_Access (hudPaintable_Param);
    begin
         hudPaintable.updateSelectionInfo;
         This.initUpdatePaintable := hudPaintable;

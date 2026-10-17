@@ -19,7 +19,7 @@ package body org.allbinary.graphics.draw.CanvasDrawLineString_Package is
    begin
       null;
       This.drawStringUtil := DrawStringUtil_Package.getInstance;
-      This.myFontProcessor := UpdateMyFontProcessor_Package.Create (This'Unchecked_Access);
+      This.myFontProcessor := UpdateMyFontProcessor_Package.Create (CanvasDrawLineString_Access'(This'Unchecked_Access));
       
       
       This.fontHeight := 0;
@@ -40,7 +40,8 @@ package body org.allbinary.graphics.draw.CanvasDrawLineString_Package is
       return This;
    end Create;
 
-   procedure updateMeasurement (This : in out CanvasDrawLineString; graphics : Graphics_Access) is
+   procedure updateMeasurement (This : in out CanvasDrawLineString; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       font : Font_Access;
    begin
         font := graphics.getFont;
@@ -48,7 +49,8 @@ package body org.allbinary.graphics.draw.CanvasDrawLineString_Package is
         This.myFontProcessor := MyFontProcessor_Package.getInstance;
    end updateMeasurement;
 
-   procedure paint (This : in out CanvasDrawLineString; graphics : Graphics_Access; string_Id : Unbounded_String; line : Integer) is
+   procedure paint (This : in out CanvasDrawLineString; graphics_Param : access Graphics'Class; string_Id : Unbounded_String; line : Integer) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.myFontProcessor.process (graphics);
         This.drawStringUtil.drawCenterString (graphics, string_Id, 0, Length (string_Id), This.x, (This.y) + (((line) * (This.fontHeight))));

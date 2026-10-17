@@ -43,8 +43,8 @@ package taghelpers.ViewHelperFactory_Package is
 
    procedure Initialize (This : in out ViewHelperFactory'Class);
    function Create return ViewHelperFactory_Access;
-   function getInstance (This : in out ViewHelperFactory; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return Java_Object_Access;
-   procedure getInstance (This : in out ViewHelperFactory; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access);
+   function getInstance (This : in out ViewHelperFactory; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return Java_Object_Access;
+   procedure getInstance (This : in out ViewHelperFactory; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
 
 end taghelpers.ViewHelperFactory_Package;
 

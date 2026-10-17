@@ -53,7 +53,7 @@ package org.allbinary.business.user.commerce.inventory.basket.BasketReview_Packa
    procedure Initialize (This : in out BasketReview'Class);
    function Create return BasketReview_Access;
    function isValid (This : in out BasketReview) return Boolean;
-   procedure addItem (This : in out BasketReview; item : Item_Access);
+   procedure addItem (This : in out BasketReview; item_Param : access Item'Class);
    function getItems (This : in out BasketReview) return BasicArrayList_Access;
    procedure removeItem (This : in out BasketReview; id : Unbounded_String);
    procedure adjustItem (This : in out BasketReview; id : Unbounded_String; num : Unbounded_String);
@@ -62,8 +62,8 @@ package org.allbinary.business.user.commerce.inventory.basket.BasketReview_Packa
    function getIds (This : in out BasketReview) return Set_Access;
    function getNumberOf (This : in out BasketReview; id : Unbounded_String) return Integer;
    procedure getNumberOf (This : in out BasketReview; id : Unbounded_String);
-   function toXmlNode (This : in out BasketReview; document : Document_Access) return Node_Access;
-   procedure toXmlNode (This : in out BasketReview; document : Document_Access);
+   function toXmlNode (This : in out BasketReview; document_Param : access Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out BasketReview; document_Param : access Document'Class);
 
 end org.allbinary.business.user.commerce.inventory.basket.BasketReview_Package;
 

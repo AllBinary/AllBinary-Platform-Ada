@@ -42,7 +42,9 @@ package body org.allbinary.media.image.ImageArrayRotationUtil_Package is
    end getInstance;
 
    --  throws IOException
-   procedure process (This : in out ImageArrayRotationUtil; imageProcessorInput : ImageProcessorInput_Access; input : Unbounded_String; visitor : ImageProcessedVisitor_Access) is
+   procedure process (This : in out ImageArrayRotationUtil; imageProcessorInput_Param : access ImageProcessorInput'Class; input : Unbounded_String; visitor_Param : access ImageProcessedVisitor'Class) is
+      imageProcessorInput : ImageProcessorInput_Access := ImageProcessorInput_Access (imageProcessorInput_Param);
+      visitor : ImageProcessedVisitor_Access := ImageProcessedVisitor_Access (visitor_Param);
       totalAngle : Integer;
       generatedBufferedImage : BufferedImage_Access;
       bufferedImageArray : BufferedImage_Access_Array_Access;
@@ -59,7 +61,7 @@ package body org.allbinary.media.image.ImageArrayRotationUtil_Package is
         generatedBufferedImage := null;
         bufferedImageArray := imageProcessorInput.getBufferedImageArray;
         for index in 0 .. (bufferedImageArray'Length) - 1 loop
-            This.logUtil.putF (This.TOTAL_ANGLE & Java_Image (totalAngle), This'Unchecked_Access, This.commonStrings.RUN);
+            This.logUtil.putF (This.TOTAL_ANGLE & Java_Image (totalAngle), ImageArrayRotationUtil_Access'(This'Unchecked_Access), This.commonStrings.RUN);
             generatedBufferedImage := ImageJ2SERotationUtil_Package.getInstance.getRotatedImage (bufferedImageArray (index), totalAngle.intValue);
             visitor.visit (generatedBufferedImage, input, index);
         end loop;

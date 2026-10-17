@@ -75,7 +75,8 @@ package body org.allbinary.game.configuration.GameConfigurationCentral_Package i
       return This;
    end Create;
 
-   procedure load (This : in out GameConfigurationCentral; abeClientInformation : AbeClientInformationInterface_Access) is
+   procedure load (This : in out GameConfigurationCentral; abeClientInformation_Param : access AbeClientInformationInterface'Class) is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
       commonStrings : CommonStrings_Access;
       smallIntegerSingletonFactory : SmallIntegerSingletonFactory_Access;
       keyValuePersistance : KeyValuePersistance_Access;
@@ -97,14 +98,14 @@ package body org.allbinary.game.configuration.GameConfigurationCentral_Package i
                 value := Unbounded_String (hashtable.get (anyType));
                 This.SCALE.setValue (smallIntegerSingletonFactory.getAt (To_Unbounded_String (Java_Image (value)).intValue));
             else
-                This.logUtil.putF (To_Unbounded_String ("No Game Configuration To Load"), This'Unchecked_Access, commonStrings.LOAD);
+                This.logUtil.putF (To_Unbounded_String ("No Game Configuration To Load"), GameConfigurationCentral_Access'(This'Unchecked_Access), commonStrings.LOAD);
             end if;
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.LOAD, e);
+            This.logUtil.put (commonStrings.EXCEPTION_Id, GameConfigurationCentral_Access'(This'Unchecked_Access), commonStrings.LOAD, e);
                 end;
         end;
    end load;

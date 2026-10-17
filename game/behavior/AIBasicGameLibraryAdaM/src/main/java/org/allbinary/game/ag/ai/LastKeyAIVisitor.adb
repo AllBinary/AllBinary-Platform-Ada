@@ -37,7 +37,8 @@ package body org.allbinary.game.ag.ai.LastKeyAIVisitor_Package is
       return This;
    end Create;
 
-   function visit (This : in out LastKeyAIVisitor; anyType : Java_Object_Access) return Java_Object_Access is
+   function visit (This : in out LastKeyAIVisitor; anyType_Param : access Java_Object'Class) return Java_Object_Access is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
       basicAI : BasicAI_Access;
       key : Integer;
       commonStrings : CommonStrings_Access;
@@ -54,14 +55,14 @@ package body org.allbinary.game.ag.ai.LastKeyAIVisitor_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.VISIT, e);
+            This.logUtil.put (commonStrings.EXCEPTION_Id, LastKeyAIVisitor_Access'(This'Unchecked_Access), commonStrings.VISIT, e);
                 end;
         end;
         return This.TRUE;
    end visit;
 
-   procedure visit (This : in out LastKeyAIVisitor; anyType : Java_Object_Access) is
-      Java_Result : constant Java_Object_Access := LastKeyAIVisitor'Class (This).visit (anyType);
+   procedure visit (This : in out LastKeyAIVisitor; anyType_Param : access Java_Object'Class) is
+      Java_Result : constant Java_Object_Access := LastKeyAIVisitor'Class (This).visit (anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

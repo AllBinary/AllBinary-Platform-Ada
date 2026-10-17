@@ -42,8 +42,8 @@ package org.allbinary.input.automation.actions.script.condition.processors.input
 
    procedure Initialize (This : in out ProfileActionScriptInputFactory'Class);
    function Create return ProfileActionScriptInputFactory_Access;
-   function getInstance (node : Node_Access) return ProfileActionScriptInputInterface_Access;
-   procedure getInstance (node : Node_Access);
+   function getInstance (node_Param : access Node'Class) return ProfileActionScriptInputInterface_Access;
+   procedure getInstance (node_Param : access Node'Class);
 
 end org.allbinary.input.automation.actions.script.condition.processors.input.ProfileActionScriptInputFactory_Package;
 

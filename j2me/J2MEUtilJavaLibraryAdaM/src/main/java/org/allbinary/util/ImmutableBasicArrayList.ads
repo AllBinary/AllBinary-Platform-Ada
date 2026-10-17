@@ -38,9 +38,9 @@ package org.allbinary.util.ImmutableBasicArrayList_Package is
 
    procedure Initialize (This : in out ImmutableBasicArrayList'Class; name : Unbounded_String; size : Integer);
    function Create (name : Unbounded_String; size : Integer) return ImmutableBasicArrayList_Access;
-   function add (This : in out ImmutableBasicArrayList; e : Java_Object_Access) return Boolean;
-   procedure add (This : in out ImmutableBasicArrayList; e : Java_Object_Access);
-   procedure addAt (This : in out ImmutableBasicArrayList; index : Integer; element : Java_Object_Access);
+   function add (This : in out ImmutableBasicArrayList; e_Param : access Java_Object'Class) return Boolean;
+   procedure add (This : in out ImmutableBasicArrayList; e_Param : access Java_Object'Class);
+   procedure addAt (This : in out ImmutableBasicArrayList; index : Integer; element_Param : access Java_Object'Class);
    function toString (This : in out ImmutableBasicArrayList) return Unbounded_String;
 
 end org.allbinary.util.ImmutableBasicArrayList_Package;

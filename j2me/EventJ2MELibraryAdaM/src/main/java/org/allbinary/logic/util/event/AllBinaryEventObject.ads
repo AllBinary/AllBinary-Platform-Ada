@@ -44,10 +44,10 @@ package org.allbinary.logic.util.event.AllBinaryEventObject_Package is
    end record;
    NULL_EVENT : AllBinaryEventObject_Access;
 
-   procedure Initialize (This : in out AllBinaryEventObject'Class; anyType : Java_Object_Access);
-   function Create (anyType : Java_Object_Access) return AllBinaryEventObject_Access;
+   procedure Initialize (This : in out AllBinaryEventObject'Class; anyType_Param : access Java_Object'Class);
+   function Create (anyType_Param : access Java_Object'Class) return AllBinaryEventObject_Access;
    function getSource (This : in out AllBinaryEventObject) return Java_Object_Access;
-   procedure setSource (This : in out AllBinaryEventObject; source : Java_Object_Access);
+   procedure setSource (This : in out AllBinaryEventObject; source_Param : access Java_Object'Class);
 
 end org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 

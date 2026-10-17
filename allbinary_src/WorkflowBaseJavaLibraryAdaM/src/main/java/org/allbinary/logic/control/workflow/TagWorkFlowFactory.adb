@@ -41,7 +41,10 @@ package body org.allbinary.logic.control.workflow.TagWorkFlowFactory_Package is
    end Create;
 
    --  throws Exception, LicensingException
-   function getInstance (This : in out TagWorkFlowFactory; abeClientInformation : AbeClientInformationInterface_Access; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return WorkFlowInterface_Access is
+   function getInstance (This : in out TagWorkFlowFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return WorkFlowInterface_Access is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      propertiesHashMap : HashMap_Access := HashMap_Access (propertiesHashMap_Param);
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
       workFlowClassName : Unbounded_String;
       params : Java_Object_Access_Array_Access;
       classes : Ada_Tags_Tag_Array_Access;
@@ -70,15 +73,15 @@ package body org.allbinary.logic.control.workflow.TagWorkFlowFactory_Package is
                 stringBuffer.append (To_Unbounded_String ("->"));
                 stringBuffer.append (To_Unbounded_String (Ada.Tags.Expanded_Name (TagWorkFlowFactory_Package.instance.all'Tag)));
                 commonStrings := CommonStrings_Package.getInstance;
-                This.logUtil.put (stringBuffer.toString, This'Unchecked_Access, commonStrings.GET_INSTANCE, e);
+                This.logUtil.put (stringBuffer.toString, TagWorkFlowFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE, e);
             end if;
             Java_Throw (e);
                 end;
         end;
    end getInstance;
 
-   procedure getInstance (This : in out TagWorkFlowFactory; abeClientInformation : AbeClientInformationInterface_Access; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) is
-      Java_Result : constant WorkFlowInterface_Access := TagWorkFlowFactory'Class (This).getInstance (abeClientInformation, propertiesHashMap, pageContext);
+   procedure getInstance (This : in out TagWorkFlowFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+      Java_Result : constant WorkFlowInterface_Access := TagWorkFlowFactory'Class (This).getInstance (abeClientInformation_Param, propertiesHashMap_Param, pageContext_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

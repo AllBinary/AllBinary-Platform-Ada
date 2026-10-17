@@ -32,7 +32,7 @@ package org.allbinary.business.user.commerce.money.payment.gateway.modules.gatew
    type PaymentGatewayDomNodeFactoryInterface_Access is access all PaymentGatewayDomNodeFactoryInterface'Class;
    type PaymentGatewayDomNodeFactoryInterface_Access_Array is array (Natural range <>) of PaymentGatewayDomNodeFactoryInterface_Access;
    type PaymentGatewayDomNodeFactoryInterface_Access_Array_Access is access all PaymentGatewayDomNodeFactoryInterface_Access_Array;
-   function getInstance (This : in out PaymentGatewayDomNodeFactoryInterface; paymentGatewayInterface : PaymentGatewayInterface_Access) return DomNodeInterface_Access is abstract;
+   function getInstance (This : in out PaymentGatewayDomNodeFactoryInterface; paymentGatewayInterface_Param : access PaymentGatewayInterface'Class) return DomNodeInterface_Access is abstract;
 
 end org.allbinary.business.user.commerce.money.payment.gateway.modules.gateway.PaymentGatewayDomNodeFactoryInterface_Package;
 

@@ -55,14 +55,14 @@ package org.allbinary.game.ag.layer.hud.basic.level.LevelHudWidget_Package is
    function Create (maxlevel : Integer; location : Integer; direction : Integer) return LevelHudWidget_Access;
    function createHud (maxlevel : Integer; location : Integer; direction : Integer) return LevelHudWidget_Access;
    procedure createHud (maxlevel : Integer; location : Integer; direction : Integer);
-   procedure updateMeasurement (This : in out LevelHudWidget; graphics : Graphics_Access);
+   procedure updateMeasurement (This : in out LevelHudWidget; graphics_Param : access Graphics'Class);
    procedure update (This : in out LevelHudWidget);
    procedure setLevel (This : in out LevelHudWidget; level : Integer);
    procedure nextLevel (This : in out LevelHudWidget);
    procedure previousLevel (This : in out LevelHudWidget);
    function isComplete (This : in out LevelHudWidget) return Boolean;
-   procedure paint (This : in out LevelHudWidget; graphics : Graphics_Access);
-   procedure paintThreed (This : in out LevelHudWidget; graphics : Graphics_Access);
+   procedure paint (This : in out LevelHudWidget; graphics_Param : access Graphics'Class);
+   procedure paintThreed (This : in out LevelHudWidget; graphics_Param : access Graphics'Class);
 
 end org.allbinary.game.ag.layer.hud.basic.level.LevelHudWidget_Package;
 

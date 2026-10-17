@@ -24,17 +24,19 @@ package body org.allbinary.game.combat.CombatBaseBehavior_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CombatBaseBehavior'Class; damageableBaseBehavior : DamageableBaseBehavior_Access; destroyableBaseBehavior : DestroyableBaseBehavior_Access) is
+   procedure Initialize (This : in out CombatBaseBehavior'Class; damageableBaseBehavior_Param : access DamageableBaseBehavior'Class; destroyableBaseBehavior_Param : access DestroyableBaseBehavior'Class) is
+      damageableBaseBehavior : DamageableBaseBehavior_Access := DamageableBaseBehavior_Access (damageableBaseBehavior_Param);
+      destroyableBaseBehavior : DestroyableBaseBehavior_Access := DestroyableBaseBehavior_Access (destroyableBaseBehavior_Param);
    begin
       Initialize_Fields (This);
         This.damageableBaseBehavior := damageableBaseBehavior;
         This.destroyableBaseBehavior := destroyableBaseBehavior;
    end Initialize;
 
-   function Create (damageableBaseBehavior : DamageableBaseBehavior_Access; destroyableBaseBehavior : DestroyableBaseBehavior_Access) return CombatBaseBehavior_Access is
+   function Create (damageableBaseBehavior_Param : access DamageableBaseBehavior'Class; destroyableBaseBehavior_Param : access DestroyableBaseBehavior'Class) return CombatBaseBehavior_Access is
       This : constant CombatBaseBehavior_Access := new CombatBaseBehavior;
    begin
-      CombatBaseBehavior_Package.Initialize (This.all, damageableBaseBehavior, destroyableBaseBehavior);
+      CombatBaseBehavior_Package.Initialize (This.all, damageableBaseBehavior_Param, destroyableBaseBehavior_Param);
       return This;
    end Create;
 

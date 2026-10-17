@@ -48,8 +48,8 @@ package org.allbinary.game.collision.LayerCollisionUtil_Package is
    procedure Initialize (This : in out LayerCollisionUtil'Class);
    function Create return LayerCollisionUtil_Access;
    function getInstance return LayerCollisionUtil_Access;
-   function isCollision (This : in out LayerCollisionUtil; myLayer : AllBinaryLayer_Access; myLayer2 : AllBinaryLayer_Access) return Boolean;
-   procedure isCollision (This : in out LayerCollisionUtil; myLayer : AllBinaryLayer_Access; myLayer2 : AllBinaryLayer_Access);
+   function isCollision (This : in out LayerCollisionUtil; myLayer_Param : access AllBinaryLayer'Class; myLayer2_Param : access AllBinaryLayer'Class) return Boolean;
+   procedure isCollision (This : in out LayerCollisionUtil; myLayer_Param : access AllBinaryLayer'Class; myLayer2_Param : access AllBinaryLayer'Class);
 
 end org.allbinary.game.collision.LayerCollisionUtil_Package;
 

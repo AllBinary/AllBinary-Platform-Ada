@@ -20,7 +20,7 @@ package body org.allbinary.game.displayable.canvas.GamePerformanceInitUpdatePain
       null;
       This.halfHeight := DisplayInfoSingleton_Package.getInstance.getLastHalfHeight;
       This.yArray := new Integer_Array'((This.halfHeight) + (30), (This.halfHeight) + (30), ((This.halfHeight) + (30)) + (15), ((This.halfHeight) + (30)) + (15), ((This.halfHeight) + (30)) + (30), ((This.halfHeight) + (30)) + (30), ((This.halfHeight) + (30)) + (45), ((This.halfHeight) + (30)) + (45));
-      This.myFontProcessor := UpdateMyFontProcessor_Package.Create (This'Unchecked_Access);
+      This.myFontProcessor := UpdateMyFontProcessor_Package.Create (GamePerformanceInitUpdatePaintable_Access'(This'Unchecked_Access));
       This.baseRefreshHelperCharArray := new Character_Array_Access_Array'(0 .. (0) - 1 => new Character_Array'(0 .. (0) - 1 => ASCII.NUL));
       This.defaultStringWidth := 0;
       This.RED := BasicColorFactory_Package.getInstance.RED.intValue;
@@ -40,7 +40,8 @@ package body org.allbinary.game.displayable.canvas.GamePerformanceInitUpdatePain
    end Create;
 
 
-   procedure updateMeasurement (This : in out GamePerformanceInitUpdatePaintable; graphics : Graphics_Access) is
+   procedure updateMeasurement (This : in out GamePerformanceInitUpdatePaintable; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       font : Font_Access;
    begin
         font := graphics.getFont;
@@ -58,7 +59,8 @@ package body org.allbinary.game.displayable.canvas.GamePerformanceInitUpdatePain
         This.baseRefreshHelperCharArray := GameStatisticsFactory_Package.getInstance.to2DCharArray;
    end update;
 
-   procedure paint (This : in out GamePerformanceInitUpdatePaintable; graphics : Graphics_Access) is
+   procedure paint (This : in out GamePerformanceInitUpdatePaintable; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       charArray : Character_Array_Access;
       charArray2 : Character_Array_Access;
       size2 : Integer;

@@ -118,7 +118,8 @@ package body org.allbinary.game.input.PCKeyFactory_Package is
         return PCKeyFactory_Package.SINGLETON;
    end getInstance;
 
-   function isSubmission (This : in out PCKeyFactory; input : Input_Access) return Boolean is
+   function isSubmission (This : in out PCKeyFactory; input_Param : access Input'Class) return Boolean is
+      input : Input_Access := Input_Access (input_Param);
    begin
         if (input) = (This.ENTER) then
             return True;
@@ -126,7 +127,8 @@ package body org.allbinary.game.input.PCKeyFactory_Package is
         return False;
    end isSubmission;
 
-   function isDelete (This : in out PCKeyFactory; input : Input_Access) return Boolean is
+   function isDelete (This : in out PCKeyFactory; input_Param : access Input'Class) return Boolean is
+      input : Input_Access := Input_Access (input_Param);
    begin
         if (input) = (This.DEL) then
             return True;
@@ -134,7 +136,8 @@ package body org.allbinary.game.input.PCKeyFactory_Package is
         return False;
    end isDelete;
 
-   function isBackSpace (This : in out PCKeyFactory; input : Input_Access) return Boolean is
+   function isBackSpace (This : in out PCKeyFactory; input_Param : access Input'Class) return Boolean is
+      input : Input_Access := Input_Access (input_Param);
    begin
         if (input) = (This.BACK_SPACE) then
             return True;
@@ -142,7 +145,8 @@ package body org.allbinary.game.input.PCKeyFactory_Package is
         return False;
    end isBackSpace;
 
-   function isUp (This : in out PCKeyFactory; input : Input_Access) return Boolean is
+   function isUp (This : in out PCKeyFactory; input_Param : access Input'Class) return Boolean is
+      input : Input_Access := Input_Access (input_Param);
    begin
         if ((input) = (This.DPAD_UP)) or else ((input) = (This.DPAD_UP2)) then
             return True;
@@ -150,7 +154,8 @@ package body org.allbinary.game.input.PCKeyFactory_Package is
         return False;
    end isUp;
 
-   function isDown (This : in out PCKeyFactory; input : Input_Access) return Boolean is
+   function isDown (This : in out PCKeyFactory; input_Param : access Input'Class) return Boolean is
+      input : Input_Access := Input_Access (input_Param);
    begin
         if ((input) = (This.DPAD_DOWN)) or else ((input) = (This.DPAD_DOWN2)) then
             return True;
@@ -158,7 +163,8 @@ package body org.allbinary.game.input.PCKeyFactory_Package is
         return False;
    end isDown;
 
-   function isLeft (This : in out PCKeyFactory; input : Input_Access) return Boolean is
+   function isLeft (This : in out PCKeyFactory; input_Param : access Input'Class) return Boolean is
+      input : Input_Access := Input_Access (input_Param);
    begin
         if ((input) = (This.DPAD_LEFT)) or else ((input) = (This.DPAD_LEFT2)) then
             return True;
@@ -166,7 +172,8 @@ package body org.allbinary.game.input.PCKeyFactory_Package is
         return False;
    end isLeft;
 
-   function isRight (This : in out PCKeyFactory; input : Input_Access) return Boolean is
+   function isRight (This : in out PCKeyFactory; input_Param : access Input'Class) return Boolean is
+      input : Input_Access := Input_Access (input_Param);
    begin
         if ((input) = (This.DPAD_RIGHT)) or else ((input) = (This.DPAD_RIGHT2)) then
             return True;
@@ -174,7 +181,8 @@ package body org.allbinary.game.input.PCKeyFactory_Package is
         return False;
    end isRight;
 
-   function isEnter (This : in out PCKeyFactory; input : Input_Access) return Boolean is
+   function isEnter (This : in out PCKeyFactory; input_Param : access Input'Class) return Boolean is
+      input : Input_Access := Input_Access (input_Param);
    begin
         if (input) = (This.ENTER) then
             return True;
@@ -182,57 +190,57 @@ package body org.allbinary.game.input.PCKeyFactory_Package is
         return False;
    end isEnter;
 
-   procedure isSubmission (This : in out PCKeyFactory; input : Input_Access) is
-      Java_Result : constant Boolean := PCKeyFactory'Class (This).isSubmission (input);
+   procedure isSubmission (This : in out PCKeyFactory; input_Param : access Input'Class) is
+      Java_Result : constant Boolean := PCKeyFactory'Class (This).isSubmission (input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isSubmission;
 
-   procedure isDelete (This : in out PCKeyFactory; input : Input_Access) is
-      Java_Result : constant Boolean := PCKeyFactory'Class (This).isDelete (input);
+   procedure isDelete (This : in out PCKeyFactory; input_Param : access Input'Class) is
+      Java_Result : constant Boolean := PCKeyFactory'Class (This).isDelete (input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isDelete;
 
-   procedure isBackSpace (This : in out PCKeyFactory; input : Input_Access) is
-      Java_Result : constant Boolean := PCKeyFactory'Class (This).isBackSpace (input);
+   procedure isBackSpace (This : in out PCKeyFactory; input_Param : access Input'Class) is
+      Java_Result : constant Boolean := PCKeyFactory'Class (This).isBackSpace (input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isBackSpace;
 
-   procedure isUp (This : in out PCKeyFactory; input : Input_Access) is
-      Java_Result : constant Boolean := PCKeyFactory'Class (This).isUp (input);
+   procedure isUp (This : in out PCKeyFactory; input_Param : access Input'Class) is
+      Java_Result : constant Boolean := PCKeyFactory'Class (This).isUp (input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isUp;
 
-   procedure isDown (This : in out PCKeyFactory; input : Input_Access) is
-      Java_Result : constant Boolean := PCKeyFactory'Class (This).isDown (input);
+   procedure isDown (This : in out PCKeyFactory; input_Param : access Input'Class) is
+      Java_Result : constant Boolean := PCKeyFactory'Class (This).isDown (input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isDown;
 
-   procedure isLeft (This : in out PCKeyFactory; input : Input_Access) is
-      Java_Result : constant Boolean := PCKeyFactory'Class (This).isLeft (input);
+   procedure isLeft (This : in out PCKeyFactory; input_Param : access Input'Class) is
+      Java_Result : constant Boolean := PCKeyFactory'Class (This).isLeft (input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isLeft;
 
-   procedure isRight (This : in out PCKeyFactory; input : Input_Access) is
-      Java_Result : constant Boolean := PCKeyFactory'Class (This).isRight (input);
+   procedure isRight (This : in out PCKeyFactory; input_Param : access Input'Class) is
+      Java_Result : constant Boolean := PCKeyFactory'Class (This).isRight (input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isRight;
 
-   procedure isEnter (This : in out PCKeyFactory; input : Input_Access) is
-      Java_Result : constant Boolean := PCKeyFactory'Class (This).isEnter (input);
+   procedure isEnter (This : in out PCKeyFactory; input_Param : access Input'Class) is
+      Java_Result : constant Boolean := PCKeyFactory'Class (This).isEnter (input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

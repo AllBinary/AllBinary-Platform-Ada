@@ -93,7 +93,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.Gene
         This.okNewProfileJButton.setText (To_Unbounded_String ("Ok"));
         This.okNewProfileJButton.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt : ActionEvent_Access) is
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
+--        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.okNewProfileJButtonActionPerformed (evt);
 --     end actionPerformed;
@@ -112,7 +113,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.Gene
         This.genericProfilesJPanel.setPreferredSize (Dimension_Package.Create (0, 0));
         This.genericProfilesJList.addListSelectionListener (ListSelectionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure valueChanged (This : in out ; evt : ListSelectionEvent_Access) is
+--     procedure valueChanged (This : in out ; evt_Param : access ListSelectionEvent'Class) is
+--        evt : ListSelectionEvent_Access := ListSelectionEvent_Access (evt_Param);
 --     begin
 --                  This.genericProfilesJListValueChanged (evt);
 --     end valueChanged;
@@ -122,7 +124,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.Gene
         This.newProfileJButton.setToolTipText (To_Unbounded_String ("Creates a new profile"));
         This.newProfileJButton.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt : ActionEvent_Access) is
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
+--        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.newProfileJButtonActionPerformed (evt);
 --     end actionPerformed;
@@ -131,7 +134,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.Gene
         This.deleteProfileJButton.setToolTipText (To_Unbounded_String ("Deletes the selected profile"));
         This.deleteProfileJButton.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt : ActionEvent_Access) is
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
+--        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.deleteProfileJButtonActionPerformed (evt);
 --     end actionPerformed;
@@ -143,7 +147,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.Gene
         This.screenCaptureJRadioButton.setMargin (Insets_Package.Create (0, 0, 0, 0));
         This.screenCaptureJRadioButton.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt : ActionEvent_Access) is
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
+--        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.screenCaptureJRadioButtonActionPerformed (evt);
 --     end actionPerformed;
@@ -156,7 +161,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.Gene
         This.savedCaptureJRadioButton.setMargin (Insets_Package.Create (0, 0, 0, 0));
         This.savedCaptureJRadioButton.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt : ActionEvent_Access) is
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
+--        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.savedCaptureJRadioButtonActionPerformed (evt);
 --     end actionPerformed;
@@ -167,7 +173,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.Gene
         This.captureMotionAnalysisJCheckBox.setMargin (Insets_Package.Create (0, 0, 0, 0));
         This.captureMotionAnalysisJCheckBox.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt : ActionEvent_Access) is
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
+--        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.captureMotionAnalysisJCheckBoxActionPerformed (evt);
 --     end actionPerformed;
@@ -178,7 +185,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.Gene
         This.captureComparisonJCheckBox.setMargin (Insets_Package.Create (0, 0, 0, 0));
         This.captureComparisonJCheckBox.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt : ActionEvent_Access) is
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
+--        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.captureComparisonJCheckBoxActionPerformed (evt);
 --     end actionPerformed;
@@ -202,11 +210,12 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.Gene
         This.add (This.genericJTabbedPane);
    end initComponents;
 
-   procedure savedCaptureJRadioButtonActionPerformed (This : in out GenericModuleConfigurationJPanel; evt : ActionEvent_Access) is
+   procedure savedCaptureJRadioButtonActionPerformed (This : in out GenericModuleConfigurationJPanel; evt_Param : access ActionEvent'Class) is
+      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         begin
             if This.savedCaptureJRadioButton.isSelected then
-                This.logUtil.putF (To_Unbounded_String ("Selected"), This'Unchecked_Access, To_Unbounded_String ("savedCaptureJRadioButtonActionPerformed"));
+                This.logUtil.putF (To_Unbounded_String ("Selected"), GenericModuleConfigurationJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("savedCaptureJRadioButtonActionPerformed"));
                 This.getSelectedGenericProfile.add (GenericProfileDataWorkerType_Package.SAVED_CAPTURE);
                 This.getSelectedGenericProfile.remove (GenericProfileDataWorkerType_Package.SCREEN_CAPTURE);
                 This.screenCaptureJRadioButton.setSelected (False);
@@ -217,16 +226,17 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.Gene
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("savedCaptureJRadioButtonActionPerformed"), e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, GenericModuleConfigurationJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("savedCaptureJRadioButtonActionPerformed"), e);
                 end;
         end;
    end savedCaptureJRadioButtonActionPerformed;
 
-   procedure screenCaptureJRadioButtonActionPerformed (This : in out GenericModuleConfigurationJPanel; evt : ActionEvent_Access) is
+   procedure screenCaptureJRadioButtonActionPerformed (This : in out GenericModuleConfigurationJPanel; evt_Param : access ActionEvent'Class) is
+      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         begin
             if This.screenCaptureJRadioButton.isSelected then
-                This.logUtil.putF (To_Unbounded_String ("Selected"), This'Unchecked_Access, To_Unbounded_String ("screenCaptureJRadioButtonActionPerformed"));
+                This.logUtil.putF (To_Unbounded_String ("Selected"), GenericModuleConfigurationJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("screenCaptureJRadioButtonActionPerformed"));
                 This.getSelectedGenericProfile.add (GenericProfileDataWorkerType_Package.SCREEN_CAPTURE);
                 This.getSelectedGenericProfile.remove (GenericProfileDataWorkerType_Package.SAVED_CAPTURE);
                 This.savedCaptureJRadioButton.setSelected (False);
@@ -237,12 +247,13 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.Gene
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("screenCaptureJRadioButtonActionPerformed"), e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, GenericModuleConfigurationJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("screenCaptureJRadioButtonActionPerformed"), e);
                 end;
         end;
    end screenCaptureJRadioButtonActionPerformed;
 
-   procedure captureMotionAnalysisJCheckBoxActionPerformed (This : in out GenericModuleConfigurationJPanel; evt : ActionEvent_Access) is
+   procedure captureMotionAnalysisJCheckBoxActionPerformed (This : in out GenericModuleConfigurationJPanel; evt_Param : access ActionEvent'Class) is
+      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         begin
             if This.captureMotionAnalysisJCheckBox.isSelected then
@@ -256,12 +267,13 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.Gene
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("captureComparisonJCheckBoxActionPerformed"), e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, GenericModuleConfigurationJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("captureComparisonJCheckBoxActionPerformed"), e);
                 end;
         end;
    end captureMotionAnalysisJCheckBoxActionPerformed;
 
-   procedure captureComparisonJCheckBoxActionPerformed (This : in out GenericModuleConfigurationJPanel; evt : ActionEvent_Access) is
+   procedure captureComparisonJCheckBoxActionPerformed (This : in out GenericModuleConfigurationJPanel; evt_Param : access ActionEvent'Class) is
+      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         begin
             if This.captureComparisonJCheckBox.isSelected then
@@ -275,7 +287,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.Gene
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("captureComparisonJCheckBoxActionPerformed"), e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, GenericModuleConfigurationJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("captureComparisonJCheckBoxActionPerformed"), e);
                 end;
         end;
    end captureComparisonJCheckBoxActionPerformed;
@@ -296,9 +308,9 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.Gene
             layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGap (0, 395, Short_Package.MAX_VALUE).addComponent (genericProfileActionsJPanel, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE));
             layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGap (0, 256, Short_Package.MAX_VALUE).addComponent (genericProfileActionsJPanel, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE));
             This.updateProfileOptions;
-            This.logUtil.putF (To_Unbounded_String ("Setting Configuration Profile JPanel"), This'Unchecked_Access, To_Unbounded_String ("updateProfileUI"));
+            This.logUtil.putF (To_Unbounded_String ("Setting Configuration Profile JPanel"), GenericModuleConfigurationJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("updateProfileUI"));
         else
-            This.logUtil.putF (To_Unbounded_String ("Null Configuration Profile"), This'Unchecked_Access, To_Unbounded_String ("updateProfileUI"));
+            This.logUtil.putF (To_Unbounded_String ("Null Configuration Profile"), GenericModuleConfigurationJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("updateProfileUI"));
         end if;
    end updateProfileUI;
 
@@ -320,7 +332,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.Gene
       genericProfileDataWorkerType : GenericProfileDataWorkerType_Access;
       index : Integer;
    begin
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("updateProfileOptions"));
+        This.logUtil.putF (This.commonStrings.START, GenericModuleConfigurationJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("updateProfileOptions"));
         genericProfile := This.getSelectedGenericProfile;
         vector := genericProfile.getGenericProfileDataWorkerTypeVector;
         This.screenCaptureJRadioButton.setSelected (False);
@@ -330,18 +342,18 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.Gene
         size := vector.size;
         for index in 0 .. (size) - 1 loop
             genericProfileDataWorkerType := GenericProfileDataWorkerType_Access (vector.get (index));
-            This.logUtil.putF (genericProfile.getName & To_Unbounded_String (" has GenericProfileDataWorkerType: ") & genericProfileDataWorkerType.toString, This'Unchecked_Access, To_Unbounded_String ("updateProfileOptions"));
+            This.logUtil.putF (genericProfile.getName & To_Unbounded_String (" has GenericProfileDataWorkerType: ") & genericProfileDataWorkerType.toString, GenericModuleConfigurationJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("updateProfileOptions"));
             if (genericProfileDataWorkerType) = (GenericProfileDataWorkerType_Package.SCREEN_CAPTURE) then
-                This.logUtil.putF (To_Unbounded_String ("Screen Capture Selected"), This'Unchecked_Access, To_Unbounded_String ("updateProfileOptions"));
+                This.logUtil.putF (To_Unbounded_String ("Screen Capture Selected"), GenericModuleConfigurationJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("updateProfileOptions"));
                 This.screenCaptureJRadioButton.setSelected (True);
             elsif (genericProfileDataWorkerType) = (GenericProfileDataWorkerType_Package.SAVED_CAPTURE) then
-                This.logUtil.putF (To_Unbounded_String ("Saved Capture Selected"), This'Unchecked_Access, To_Unbounded_String ("updateProfileOptions"));
+                This.logUtil.putF (To_Unbounded_String ("Saved Capture Selected"), GenericModuleConfigurationJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("updateProfileOptions"));
                 This.savedCaptureJRadioButton.setSelected (True);
             elsif (genericProfileDataWorkerType) = (GenericProfileDataWorkerType_Package.COMPARISON) then
-                This.logUtil.putF (To_Unbounded_String ("Checking Comparison Box"), This'Unchecked_Access, To_Unbounded_String ("updateProfileOptions"));
+                This.logUtil.putF (To_Unbounded_String ("Checking Comparison Box"), GenericModuleConfigurationJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("updateProfileOptions"));
                 This.captureComparisonJCheckBox.setSelected (True);
             elsif (genericProfileDataWorkerType) = (GenericProfileDataWorkerType_Package.MOTION) then
-                This.logUtil.putF (To_Unbounded_String ("Checking Motion Box"), This'Unchecked_Access, To_Unbounded_String ("updateProfileOptions"));
+                This.logUtil.putF (To_Unbounded_String ("Checking Motion Box"), GenericModuleConfigurationJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("updateProfileOptions"));
                 This.captureMotionAnalysisJCheckBox.setSelected (True);
             end if;
         end loop;
@@ -349,7 +361,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.Gene
             This.screenCaptureJRadioButton.setSelected (True);
             This.getSelectedGenericProfile.add (GenericProfileDataWorkerType_Package.SCREEN_CAPTURE);
         end if;
-        This.logUtil.putF (This.commonStrings.END_Id, This'Unchecked_Access, To_Unbounded_String ("updateProfileOptions"));
+        This.logUtil.putF (This.commonStrings.END_Id, GenericModuleConfigurationJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("updateProfileOptions"));
    end updateProfileOptions;
 
    function getBlankGenericProfileActionsJPanel (This : in out GenericModuleConfigurationJPanel) return JPanel_Access is
@@ -357,7 +369,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.Gene
         return This.blankGenericProfileActionsJPanel;
    end getBlankGenericProfileActionsJPanel;
 
-   procedure setBlankGenericProfileActionsJPanel (This : in out GenericModuleConfigurationJPanel; blankGenericProfileActionsJPanel : JPanel_Access) is
+   procedure setBlankGenericProfileActionsJPanel (This : in out GenericModuleConfigurationJPanel; blankGenericProfileActionsJPanel_Param : access JPanel'Class) is
+      blankGenericProfileActionsJPanel : JPanel_Access := JPanel_Access (blankGenericProfileActionsJPanel_Param);
    begin
         This.blankGenericProfileActionsJPanel := blankGenericProfileActionsJPanel;
    end setBlankGenericProfileActionsJPanel;
@@ -367,7 +380,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.Gene
         return This.genericProfiles;
    end getGenericProfiles;
 
-   procedure setGenericProfiles (This : in out GenericModuleConfigurationJPanel; genericProfiles : GenericProfiles_Access) is
+   procedure setGenericProfiles (This : in out GenericModuleConfigurationJPanel; genericProfiles_Param : access GenericProfiles'Class) is
+      genericProfiles : GenericProfiles_Access := GenericProfiles_Access (genericProfiles_Param);
    begin
         This.genericProfiles := genericProfiles;
    end setGenericProfiles;
@@ -377,12 +391,14 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.Gene
         return This.selectedGenericProfile;
    end getSelectedGenericProfile;
 
-   procedure setSelectedGenericProfile (This : in out GenericModuleConfigurationJPanel; selectedGenericProfile : GenericProfile_Access) is
+   procedure setSelectedGenericProfile (This : in out GenericModuleConfigurationJPanel; selectedGenericProfile_Param : access GenericProfile'Class) is
+      selectedGenericProfile : GenericProfile_Access := GenericProfile_Access (selectedGenericProfile_Param);
    begin
         This.selectedGenericProfile := selectedGenericProfile;
    end setSelectedGenericProfile;
 
-   procedure genericProfilesJListValueChanged (This : in out GenericModuleConfigurationJPanel; evt : ListSelectionEvent_Access) is
+   procedure genericProfilesJListValueChanged (This : in out GenericModuleConfigurationJPanel; evt_Param : access ListSelectionEvent'Class) is
+      evt : ListSelectionEvent_Access := ListSelectionEvent_Access (evt_Param);
       profileNameString : Unbounded_String;
    begin
         begin
@@ -393,12 +409,13 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.Gene
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("genericProfilesJListValueChanged"), e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, GenericModuleConfigurationJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("genericProfilesJListValueChanged"), e);
                 end;
         end;
    end genericProfilesJListValueChanged;
 
-   procedure deleteProfileJButtonActionPerformed (This : in out GenericModuleConfigurationJPanel; evt : ActionEvent_Access) is
+   procedure deleteProfileJButtonActionPerformed (This : in out GenericModuleConfigurationJPanel; evt_Param : access ActionEvent'Class) is
+      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
       anyType : Java_Object_Access_Array_Access;
       nextSelectedValueString : Unbounded_String;
       index : Integer;
@@ -415,12 +432,13 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.Gene
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("deleteProfileJButtonActionPerformed"), e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, GenericModuleConfigurationJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("deleteProfileJButtonActionPerformed"), e);
                 end;
         end;
    end deleteProfileJButtonActionPerformed;
 
-   procedure okNewProfileJButtonActionPerformed (This : in out GenericModuleConfigurationJPanel; evt : ActionEvent_Access) is
+   procedure okNewProfileJButtonActionPerformed (This : in out GenericModuleConfigurationJPanel; evt_Param : access ActionEvent'Class) is
+      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
       newProfileName : Unbounded_String;
    begin
         begin
@@ -435,12 +453,13 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.Gene
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("okNewProfileJButtonActionPerformed"), e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, GenericModuleConfigurationJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("okNewProfileJButtonActionPerformed"), e);
                 end;
         end;
    end okNewProfileJButtonActionPerformed;
 
-   procedure newProfileJButtonActionPerformed (This : in out GenericModuleConfigurationJPanel; evt : ActionEvent_Access) is
+   procedure newProfileJButtonActionPerformed (This : in out GenericModuleConfigurationJPanel; evt_Param : access ActionEvent'Class) is
+      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         This.newProfileJDialog.setVisible (True);
    end newProfileJButtonActionPerformed;

@@ -49,9 +49,9 @@ package org.allbinary.animation.NullIndexedAnimationFactory_Package is
    function getFactoryInstance return NullIndexedAnimationFactory_Access;
    function getInstance (This : in out NullIndexedAnimationFactory; instanceId : Integer) return Animation_Access;
    procedure getInstance (This : in out NullIndexedAnimationFactory; instanceId : Integer);
-   function getInstanceAnimation (This : in out NullIndexedAnimationFactory; animationInterface : Animation_Access) return Animation_Access;
-   procedure getInstanceAnimation (This : in out NullIndexedAnimationFactory; animationInterface : Animation_Access);
-   procedure setInitialScale (This : in out NullIndexedAnimationFactory; scaleProperties : ScaleProperties_Access);
+   function getInstanceAnimation (This : in out NullIndexedAnimationFactory; animationInterface_Param : access Animation'Class) return Animation_Access;
+   procedure getInstanceAnimation (This : in out NullIndexedAnimationFactory; animationInterface_Param : access Animation'Class);
+   procedure setInitialScale (This : in out NullIndexedAnimationFactory; scaleProperties_Param : access ScaleProperties'Class);
 
 end org.allbinary.animation.NullIndexedAnimationFactory_Package;
 
@@ -85,7 +85,7 @@ package org.allbinary.animation.NullIndexedAnimationInner_Package is
 
    procedure Initialize (This : in out NullIndexedAnimationInner'Class);
    function Create return NullIndexedAnimationInner_Access;
-   procedure paintXY (This : in out NullIndexedAnimationInner; graphics : Graphics_Access; x : Integer; y : Integer);
+   procedure paintXY (This : in out NullIndexedAnimationInner; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
 
 end org.allbinary.animation.NullIndexedAnimationInner_Package;
 

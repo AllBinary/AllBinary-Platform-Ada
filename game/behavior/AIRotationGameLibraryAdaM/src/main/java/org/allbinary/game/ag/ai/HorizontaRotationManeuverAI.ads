@@ -68,10 +68,10 @@ package org.allbinary.game.ag.ai.HorizontaRotationManeuverAI_Package is
       velocityInterface : VelocityInterface_Access;
    end record;
 
-   procedure Initialize (This : in out HorizontaRotationManeuverAI'Class; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access);
-   function Create (ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return HorizontaRotationManeuverAI_Access;
+   procedure Initialize (This : in out HorizontaRotationManeuverAI'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class);
+   function Create (ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return HorizontaRotationManeuverAI_Access;
    procedure transition (This : in out HorizontaRotationManeuverAI);
-   procedure processAI (This : in out HorizontaRotationManeuverAI; allBinaryLayerManager : AllBinaryLayerManager_Access);
+   procedure processAI (This : in out HorizontaRotationManeuverAI; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class);
    procedure reverse_Id (This : in out HorizontaRotationManeuverAI);
    procedure accelerate (This : in out HorizontaRotationManeuverAI);
    procedure drop (This : in out HorizontaRotationManeuverAI);

@@ -54,12 +54,12 @@ package org.allbinary.layer.event.LayerManagerEventHandler_Package is
    procedure Initialize (This : in out LayerManagerEventHandler'Class);
    function Create return LayerManagerEventHandler_Access;
    function getInstance return LayerManagerEventHandler_Access;
-   procedure addListener (This : in out LayerManagerEventHandler; layerManagerEventListener : LayerManagerEventListener_Access);
+   procedure addListener (This : in out LayerManagerEventHandler; layerManagerEventListener_Param : access LayerManagerEventListener'Class);
    procedure removeAllListeners (This : in out LayerManagerEventHandler);
-   procedure removeListener (This : in out LayerManagerEventHandler; eventListenerInterface : EventListenerInterface_Access);
-   procedure fireEvent (This : in out LayerManagerEventHandler; eventObject : AllBinaryEventObject_Access);
-   procedure fireDeleteEvent (This : in out LayerManagerEventHandler; eventObject : AllBinaryEventObject_Access);
-   procedure process (This : in out LayerManagerEventHandler; eventObject : AllBinaryEventObject_Access; eventListenerInterface : EventListenerInterface_Access);
+   procedure removeListener (This : in out LayerManagerEventHandler; eventListenerInterface_Param : access EventListenerInterface'Class);
+   procedure fireEvent (This : in out LayerManagerEventHandler; eventObject_Param : access AllBinaryEventObject'Class);
+   procedure fireDeleteEvent (This : in out LayerManagerEventHandler; eventObject_Param : access AllBinaryEventObject'Class);
+   procedure process (This : in out LayerManagerEventHandler; eventObject_Param : access AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface'Class);
 
 end org.allbinary.layer.event.LayerManagerEventHandler_Package;
 

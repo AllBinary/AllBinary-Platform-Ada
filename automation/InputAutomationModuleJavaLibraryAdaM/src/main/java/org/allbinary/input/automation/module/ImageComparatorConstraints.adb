@@ -44,12 +44,15 @@ package body org.allbinary.input.automation.module.ImageComparatorConstraints_Pa
         return This.avoidVector;
    end getAvoidVector;
 
-   function isColorAllowed (This : in out ImageComparatorConstraints; frame : Integer; point : GPoint_Access; color : Color_Access) return Boolean is
+   function isColorAllowed (This : in out ImageComparatorConstraints; frame : Integer; point_Param : access GPoint'Class; color_Param : access Color'Class) return Boolean is
+      point : GPoint_Access := GPoint_Access (point_Param);
+      color : Color_Access := Color_Access (color_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end isColorAllowed;
 
-   function isCollisionWithAvoidRectangles (This : in out ImageComparatorConstraints; rectangle : Rectangle_Access) return Boolean is
+   function isCollisionWithAvoidRectangles (This : in out ImageComparatorConstraints; rectangle_Param : access Rectangle'Class) return Boolean is
+      rectangle : Rectangle_Access := Rectangle_Access (rectangle_Param);
       isCollsionWithAvoidRectangles : Boolean;
       avoidVector : BasicArrayList_Access;
       size : Integer;
@@ -68,7 +71,8 @@ package body org.allbinary.input.automation.module.ImageComparatorConstraints_Pa
         return isCollsionWithAvoidRectangles;
    end isCollisionWithAvoidRectangles;
 
-   function isCollisionWithAvoidRectangles (This : in out ImageComparatorConstraints; point : GPoint_Access) return Boolean is
+   function isCollisionWithAvoidRectangles (This : in out ImageComparatorConstraints; point_Param : access GPoint'Class) return Boolean is
+      point : GPoint_Access := GPoint_Access (point_Param);
       isCollsionWithAvoidRectangles : Boolean;
       avoidVector : BasicArrayList_Access;
       size : Integer;
@@ -88,7 +92,8 @@ package body org.allbinary.input.automation.module.ImageComparatorConstraints_Pa
         return isCollsionWithAvoidRectangles;
    end isCollisionWithAvoidRectangles;
 
-   procedure setAvoidVector (This : in out ImageComparatorConstraints; avoidVector : BasicArrayList_Access) is
+   procedure setAvoidVector (This : in out ImageComparatorConstraints; avoidVector_Param : access BasicArrayList'Class) is
+      avoidVector : BasicArrayList_Access := BasicArrayList_Access (avoidVector_Param);
    begin
         This.avoidVector := avoidVector;
    end setAvoidVector;
@@ -107,7 +112,7 @@ package body org.allbinary.input.automation.module.ImageComparatorConstraints_Pa
       remainder : Integer;
    begin
         remainder := ((((frame) + (1))) rem (This.doImageComparisonEveryNthFrame));
-        This.logUtil.putF (To_Unbounded_String (" Frame: ") & Java_Image (frame) & To_Unbounded_String (" remainder: ") & Java_Image (remainder) & To_Unbounded_String (" this.doImageComparisonEveryNthFrame: ") & Java_Image (This.doImageComparisonEveryNthFrame), This'Unchecked_Access, To_Unbounded_String ("isCollisionWithAvoidRectangles"));
+        This.logUtil.putF (To_Unbounded_String (" Frame: ") & Java_Image (frame) & To_Unbounded_String (" remainder: ") & Java_Image (remainder) & To_Unbounded_String (" this.doImageComparisonEveryNthFrame: ") & Java_Image (This.doImageComparisonEveryNthFrame), ImageComparatorConstraints_Access'(This'Unchecked_Access), To_Unbounded_String ("isCollisionWithAvoidRectangles"));
         if (remainder) = (0) then
             return True;
         else
@@ -116,7 +121,8 @@ package body org.allbinary.input.automation.module.ImageComparatorConstraints_Pa
    end isFrameAllowed;
 
    --  throws Exception
-   function isImageValid (This : in out ImageComparatorConstraints; bufferedImage : BufferedImage_Access) return Boolean is
+   function isImageValid (This : in out ImageComparatorConstraints; bufferedImage_Param : access BufferedImage'Class) return Boolean is
+      bufferedImage : BufferedImage_Access := BufferedImage_Access (bufferedImage_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end isImageValid;
@@ -131,26 +137,26 @@ package body org.allbinary.input.automation.module.ImageComparatorConstraints_Pa
         size := avoidVector.size;
         for index in 0 .. (size) - 1 loop
             avoidRectangle := Rectangle_Access (avoidVector.get (index));
-            This.logUtil.putF (To_Unbounded_String ("Avoid Rectangle: ") & Java_Image (avoidRectangle), This'Unchecked_Access, To_Unbounded_String ("log"));
+            This.logUtil.putF (To_Unbounded_String ("Avoid Rectangle: ") & Java_Image (avoidRectangle), ImageComparatorConstraints_Access'(This'Unchecked_Access), To_Unbounded_String ("log"));
         end loop;
    end log;
 
-   procedure isColorAllowed (This : in out ImageComparatorConstraints; frame : Integer; point : GPoint_Access; color : Color_Access) is
-      Java_Result : constant Boolean := ImageComparatorConstraints'Class (This).isColorAllowed (frame, point, color);
+   procedure isColorAllowed (This : in out ImageComparatorConstraints; frame : Integer; point_Param : access GPoint'Class; color_Param : access Color'Class) is
+      Java_Result : constant Boolean := ImageComparatorConstraints'Class (This).isColorAllowed (frame, point_Param, color_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isColorAllowed;
 
-   procedure isCollisionWithAvoidRectangles (This : in out ImageComparatorConstraints; rectangle : Rectangle_Access) is
-      Java_Result : constant Boolean := ImageComparatorConstraints'Class (This).isCollisionWithAvoidRectangles (rectangle);
+   procedure isCollisionWithAvoidRectangles (This : in out ImageComparatorConstraints; rectangle_Param : access Rectangle'Class) is
+      Java_Result : constant Boolean := ImageComparatorConstraints'Class (This).isCollisionWithAvoidRectangles (rectangle_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isCollisionWithAvoidRectangles;
 
-   procedure isCollisionWithAvoidRectangles (This : in out ImageComparatorConstraints; point : GPoint_Access) is
-      Java_Result : constant Boolean := ImageComparatorConstraints'Class (This).isCollisionWithAvoidRectangles (point);
+   procedure isCollisionWithAvoidRectangles (This : in out ImageComparatorConstraints; point_Param : access GPoint'Class) is
+      Java_Result : constant Boolean := ImageComparatorConstraints'Class (This).isCollisionWithAvoidRectangles (point_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
@@ -163,8 +169,8 @@ package body org.allbinary.input.automation.module.ImageComparatorConstraints_Pa
       null;
    end isFrameAllowed;
 
-   procedure isImageValid (This : in out ImageComparatorConstraints; bufferedImage : BufferedImage_Access) is
-      Java_Result : constant Boolean := ImageComparatorConstraints'Class (This).isImageValid (bufferedImage);
+   procedure isImageValid (This : in out ImageComparatorConstraints; bufferedImage_Param : access BufferedImage'Class) is
+      Java_Result : constant Boolean := ImageComparatorConstraints'Class (This).isImageValid (bufferedImage_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

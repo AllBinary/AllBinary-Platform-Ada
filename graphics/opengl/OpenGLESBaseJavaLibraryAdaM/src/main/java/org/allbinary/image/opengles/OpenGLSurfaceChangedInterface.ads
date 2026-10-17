@@ -17,7 +17,7 @@ package org.allbinary.image.opengles.OpenGLSurfaceChangedInterface_Package is
    type OpenGLSurfaceChangedInterface_Access is access all OpenGLSurfaceChangedInterface'Class;
    type OpenGLSurfaceChangedInterface_Access_Array is array (Natural range <>) of OpenGLSurfaceChangedInterface_Access;
    type OpenGLSurfaceChangedInterface_Access_Array_Access is access all OpenGLSurfaceChangedInterface_Access_Array;
-   procedure set (This : in out OpenGLSurfaceChangedInterface; gl : GL_Access) is abstract;
+   procedure set (This : in out OpenGLSurfaceChangedInterface; gl_Param : access GL'Class) is abstract;
 
 end org.allbinary.image.opengles.OpenGLSurfaceChangedInterface_Package;
 

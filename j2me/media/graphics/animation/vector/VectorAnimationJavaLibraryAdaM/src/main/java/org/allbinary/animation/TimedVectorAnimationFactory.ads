@@ -39,8 +39,8 @@ package org.allbinary.animation.TimedVectorAnimationFactory_Package is
 
    procedure Initialize (This : in out TimedVectorAnimationFactory'Class);
    function Create return TimedVectorAnimationFactory_Access;
-   function getInstance (This : in out TimedVectorAnimationFactory; points : Integer_Array_Access_Array_Access_Array_Access; basicColor : BasicColor_Access) return VectorAnimation_Access;
-   procedure getInstance (This : in out TimedVectorAnimationFactory; points : Integer_Array_Access_Array_Access_Array_Access; basicColor : BasicColor_Access);
+   function getInstance (This : in out TimedVectorAnimationFactory; points : Integer_Array_Access_Array_Access_Array_Access; basicColor_Param : access BasicColor'Class) return VectorAnimation_Access;
+   procedure getInstance (This : in out TimedVectorAnimationFactory; points : Integer_Array_Access_Array_Access_Array_Access; basicColor_Param : access BasicColor'Class);
 
 end org.allbinary.animation.TimedVectorAnimationFactory_Package;
 

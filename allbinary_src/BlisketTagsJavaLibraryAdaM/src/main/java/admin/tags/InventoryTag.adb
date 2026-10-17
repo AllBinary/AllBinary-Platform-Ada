@@ -51,7 +51,7 @@ package body admin.tags.InventoryTag_Package is
                 if (This.getCommand) /= (null) then
                     if ((((This.getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.BACKUP)) /= (0)) and then ((This.getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.RESTORE)) /= (0))) and then ((This.getCommand.compareTo (This.commonStrings.CREATE)) /= (0))) and then ((This.getCommand.compareTo (This.commonStrings.DROP)) /= (0)) then
                         parentTag := This.getParent;
-                        ParentInventoryTagHelper_Package.getInstance.isValid (This'Unchecked_Access, parentTag);
+                        ParentInventoryTagHelper_Package.getInstance.isValid (InventoryTag_Access'(This'Unchecked_Access), parentTag);
                         This.getPropertiesHashMap.put (AbTagData_Package.PARENT, parentTag);
                         This.getPropertiesHashMap.put (StoreFrontData_Package.getInstance.NAME, This.storeName);
                     end if;

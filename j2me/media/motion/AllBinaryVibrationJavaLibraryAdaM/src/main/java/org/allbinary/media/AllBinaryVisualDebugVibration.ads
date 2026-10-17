@@ -55,9 +55,9 @@ package org.allbinary.media.AllBinaryVisualDebugVibration_Package is
 
    procedure Initialize (This : in out AllBinaryVisualDebugVibration'Class);
    function Create return AllBinaryVisualDebugVibration_Access;
-   procedure updateMeasurement (This : in out AllBinaryVisualDebugVibration; graphics : Graphics_Access);
+   procedure updateMeasurement (This : in out AllBinaryVisualDebugVibration; graphics_Param : access Graphics'Class);
    procedure vibrate (This : in out AllBinaryVisualDebugVibration; duration : Integer; type_Id : Integer; volume : Integer);
-   procedure paint (This : in out AllBinaryVisualDebugVibration; graphics : Graphics_Access);
+   procedure paint (This : in out AllBinaryVisualDebugVibration; graphics_Param : access Graphics'Class);
 
 end org.allbinary.media.AllBinaryVisualDebugVibration_Package;
 

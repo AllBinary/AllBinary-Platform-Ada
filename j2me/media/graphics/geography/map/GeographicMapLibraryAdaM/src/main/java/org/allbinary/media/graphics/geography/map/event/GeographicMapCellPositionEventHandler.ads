@@ -53,12 +53,12 @@ package org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositi
    procedure Initialize (This : in out GeographicMapCellPositionEventHandler'Class);
    function Create return GeographicMapCellPositionEventHandler_Access;
    function getInstance return GeographicMapCellPositionEventHandler_Access;
-   procedure addListener (This : in out GeographicMapCellPositionEventHandler; miniMapLayer : MiniMapLayer_Access);
+   procedure addListener (This : in out GeographicMapCellPositionEventHandler; miniMapLayer_Param : access MiniMapLayer'Class);
    procedure removeAllListeners (This : in out GeographicMapCellPositionEventHandler);
-   procedure removeListener (This : in out GeographicMapCellPositionEventHandler; eventListenerInterface : EventListenerInterface_Access);
-   procedure fireEvent (This : in out GeographicMapCellPositionEventHandler; eventObject : AllBinaryEventObject_Access);
-   procedure fireRemoveEvent (This : in out GeographicMapCellPositionEventHandler; eventObject : AllBinaryEventObject_Access);
-   procedure process (This : in out GeographicMapCellPositionEventHandler; eventObject : AllBinaryEventObject_Access; eventListenerInterface : EventListenerInterface_Access);
+   procedure removeListener (This : in out GeographicMapCellPositionEventHandler; eventListenerInterface_Param : access EventListenerInterface'Class);
+   procedure fireEvent (This : in out GeographicMapCellPositionEventHandler; eventObject_Param : access AllBinaryEventObject'Class);
+   procedure fireRemoveEvent (This : in out GeographicMapCellPositionEventHandler; eventObject_Param : access AllBinaryEventObject'Class);
+   procedure process (This : in out GeographicMapCellPositionEventHandler; eventObject_Param : access AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface'Class);
 
 end org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEventHandler_Package;
 

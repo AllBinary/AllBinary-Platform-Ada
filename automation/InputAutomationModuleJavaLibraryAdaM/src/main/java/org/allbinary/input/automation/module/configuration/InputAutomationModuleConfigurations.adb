@@ -23,7 +23,9 @@ package body org.allbinary.input.automation.module.configuration.InputAutomation
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out InputAutomationModuleConfigurations'Class; abeClientInformation : AbeClientInformationInterface_Access; file : File_Access) is
+   procedure Initialize (This : in out InputAutomationModuleConfigurations'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; file_Param : access File'Class) is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      file : File_Access := File_Access (file_Param);
       bytes : Short_Short_Integer_Array_Access;
       idFile : FileInputStream_Access;
       length : Integer;
@@ -46,7 +48,7 @@ package body org.allbinary.input.automation.module.configuration.InputAutomation
         nodeList := document.getElementsByTagName (NewInputAutomationModulesData_Package.NAME);
         if (nodeList.getLength) > (0) then
             nameNodeList := document.getElementsByTagName (InputAutomationModuleData_Package.NAME);
-            This.logUtil.putF (To_Unbounded_String ("Number Of Module(s) Specified: ") & Java_Image (nameNodeList.getLength), This'Unchecked_Access, To_Unbounded_String ("Contructor"));
+            This.logUtil.putF (To_Unbounded_String ("Number Of Module(s) Specified: ") & Java_Image (nameNodeList.getLength), InputAutomationModuleConfigurations_Access'(This'Unchecked_Access), To_Unbounded_String ("Contructor"));
             for index in 0 .. (nameNodeList.getLength) - 1 loop
                 node := nameNodeList.item (index);
                 This.add (InputAutomationModuleConfiguration_Package.Create (abeClientInformation, node));
@@ -54,14 +56,16 @@ package body org.allbinary.input.automation.module.configuration.InputAutomation
         end if;
    end Initialize;
 
-   function Create (abeClientInformation : AbeClientInformationInterface_Access; file : File_Access) return InputAutomationModuleConfigurations_Access is
+   function Create (abeClientInformation_Param : access AbeClientInformationInterface'Class; file_Param : access File'Class) return InputAutomationModuleConfigurations_Access is
       This : constant InputAutomationModuleConfigurations_Access := new InputAutomationModuleConfigurations;
    begin
-      InputAutomationModuleConfigurations_Package.Initialize (This.all, abeClientInformation, file);
+      InputAutomationModuleConfigurations_Package.Initialize (This.all, abeClientInformation_Param, file_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out InputAutomationModuleConfigurations'Class; abeClientInformation : AbeClientInformationInterface_Access; document : Document_Access) is
+   procedure Initialize (This : in out InputAutomationModuleConfigurations'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; document_Param : access Document'Class) is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      document : Document_Access := Document_Access (document_Param);
       nameNodeList : NodeList_Access;
       node : Node_Access;
       index : Integer;
@@ -69,21 +73,22 @@ package body org.allbinary.input.automation.module.configuration.InputAutomation
       Initialize_Fields (This);
         This.setHashMap (HashMap_Package.Create);
         nameNodeList := document.getElementsByTagName (InputAutomationModuleData_Package.NAME);
-        This.logUtil.putF (To_Unbounded_String ("Number Of Module(s) Specified: ") & Java_Image (nameNodeList.getLength), This'Unchecked_Access, To_Unbounded_String ("Contructor"));
+        This.logUtil.putF (To_Unbounded_String ("Number Of Module(s) Specified: ") & Java_Image (nameNodeList.getLength), InputAutomationModuleConfigurations_Access'(This'Unchecked_Access), To_Unbounded_String ("Contructor"));
         for index in 0 .. (nameNodeList.getLength) - 1 loop
             node := nameNodeList.item (index);
             This.add (InputAutomationModuleConfiguration_Package.Create (abeClientInformation, node));
         end loop;
    end Initialize;
 
-   function Create (abeClientInformation : AbeClientInformationInterface_Access; document : Document_Access) return InputAutomationModuleConfigurations_Access is
+   function Create (abeClientInformation_Param : access AbeClientInformationInterface'Class; document_Param : access Document'Class) return InputAutomationModuleConfigurations_Access is
       This : constant InputAutomationModuleConfigurations_Access := new InputAutomationModuleConfigurations;
    begin
-      InputAutomationModuleConfigurations_Package.Initialize (This.all, abeClientInformation, document);
+      InputAutomationModuleConfigurations_Package.Initialize (This.all, abeClientInformation_Param, document_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out InputAutomationModuleConfigurations'Class; inputAutomationModuleConfigurationList : List_Access) is
+   procedure Initialize (This : in out InputAutomationModuleConfigurations'Class; inputAutomationModuleConfigurationList_Param : access List'Class) is
+      inputAutomationModuleConfigurationList : List_Access := List_Access (inputAutomationModuleConfigurationList_Param);
       size : Integer;
       inputAutomationModuleConfiguration : InputAutomationModuleConfiguration_Access;
       index : Integer;
@@ -98,10 +103,10 @@ package body org.allbinary.input.automation.module.configuration.InputAutomation
         end loop;
    end Initialize;
 
-   function Create (inputAutomationModuleConfigurationList : List_Access) return InputAutomationModuleConfigurations_Access is
+   function Create (inputAutomationModuleConfigurationList_Param : access List'Class) return InputAutomationModuleConfigurations_Access is
       This : constant InputAutomationModuleConfigurations_Access := new InputAutomationModuleConfigurations;
    begin
-      InputAutomationModuleConfigurations_Package.Initialize (This.all, inputAutomationModuleConfigurationList);
+      InputAutomationModuleConfigurations_Package.Initialize (This.all, inputAutomationModuleConfigurationList_Param);
       return This;
    end Create;
 
@@ -118,12 +123,14 @@ package body org.allbinary.input.automation.module.configuration.InputAutomation
       return This;
    end Create;
 
-   procedure add (This : in out InputAutomationModuleConfigurations; inputAutomationModuleConfiguration : InputAutomationModuleConfiguration_Access) is
+   procedure add (This : in out InputAutomationModuleConfigurations; inputAutomationModuleConfiguration_Param : access InputAutomationModuleConfiguration'Class) is
+      inputAutomationModuleConfiguration : InputAutomationModuleConfiguration_Access := InputAutomationModuleConfiguration_Access (inputAutomationModuleConfiguration_Param);
    begin
         This.getHashMap.put (inputAutomationModuleConfiguration.getClassName, inputAutomationModuleConfiguration);
    end add;
 
-   procedure remove (This : in out InputAutomationModuleConfigurations; inputAutomationModuleConfiguration : InputAutomationModuleConfiguration_Access) is
+   procedure remove (This : in out InputAutomationModuleConfigurations; inputAutomationModuleConfiguration_Param : access InputAutomationModuleConfiguration'Class) is
+      inputAutomationModuleConfiguration : InputAutomationModuleConfiguration_Access := InputAutomationModuleConfiguration_Access (inputAutomationModuleConfiguration_Param);
    begin
         This.getHashMap.remove (inputAutomationModuleConfiguration.getClassName);
    end remove;
@@ -133,7 +140,8 @@ package body org.allbinary.input.automation.module.configuration.InputAutomation
         return This.hashMap;
    end getHashMap;
 
-   procedure setHashMap (This : in out InputAutomationModuleConfigurations; hashMap : HashMap_Access) is
+   procedure setHashMap (This : in out InputAutomationModuleConfigurations; hashMap_Param : access HashMap'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
    begin
         This.hashMap := hashMap;
    end setHashMap;

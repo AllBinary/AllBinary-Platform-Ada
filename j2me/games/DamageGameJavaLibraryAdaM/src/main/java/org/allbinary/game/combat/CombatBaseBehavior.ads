@@ -40,8 +40,8 @@ package org.allbinary.game.combat.CombatBaseBehavior_Package is
    end record;
    NULL_COMBAT_BEHAVIOR : CombatBaseBehavior_Access;
 
-   procedure Initialize (This : in out CombatBaseBehavior'Class; damageableBaseBehavior : DamageableBaseBehavior_Access; destroyableBaseBehavior : DestroyableBaseBehavior_Access);
-   function Create (damageableBaseBehavior : DamageableBaseBehavior_Access; destroyableBaseBehavior : DestroyableBaseBehavior_Access) return CombatBaseBehavior_Access;
+   procedure Initialize (This : in out CombatBaseBehavior'Class; damageableBaseBehavior_Param : access DamageableBaseBehavior'Class; destroyableBaseBehavior_Param : access DestroyableBaseBehavior'Class);
+   function Create (damageableBaseBehavior_Param : access DamageableBaseBehavior'Class; destroyableBaseBehavior_Param : access DestroyableBaseBehavior'Class) return CombatBaseBehavior_Access;
    function getDamageableBaseBehavior (This : in out CombatBaseBehavior) return DamageableBaseBehavior_Access;
    function getDestroyableBaseBehavior (This : in out CombatBaseBehavior) return DestroyableBaseBehavior_Access;
    function isReadyForExplosion (This : in out CombatBaseBehavior) return Boolean;

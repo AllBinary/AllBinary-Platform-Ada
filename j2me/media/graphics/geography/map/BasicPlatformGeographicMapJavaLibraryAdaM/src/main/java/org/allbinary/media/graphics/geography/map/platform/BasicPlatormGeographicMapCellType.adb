@@ -32,7 +32,8 @@ package body org.allbinary.media.graphics.geography.map.platform.BasicPlatormGeo
         return basicPlatormGeographicMapCellType;
    end createType;
 
-   procedure Initialize (This : in out BasicPlatormGeographicMapCellType'Class; types : BasicArrayList_Access) is
+   procedure Initialize (This : in out BasicPlatormGeographicMapCellType'Class; types_Param : access BasicArrayList'Class) is
+      types : BasicArrayList_Access := BasicArrayList_Access (types_Param);
       size : Integer;
       typeArray : Integer_Array_Access;
       typeAsInteger : Integer;
@@ -53,14 +54,15 @@ package body org.allbinary.media.graphics.geography.map.platform.BasicPlatormGeo
         This.types := typeArray;
    end Initialize;
 
-   function Create (types : BasicArrayList_Access) return BasicPlatormGeographicMapCellType_Access is
+   function Create (types_Param : access BasicArrayList'Class) return BasicPlatormGeographicMapCellType_Access is
       This : constant BasicPlatormGeographicMapCellType_Access := new BasicPlatormGeographicMapCellType;
    begin
-      BasicPlatormGeographicMapCellType_Package.Initialize (This.all, types);
+      BasicPlatormGeographicMapCellType_Package.Initialize (This.all, types_Param);
       return This;
    end Create;
 
-   function isType (This : in out BasicPlatormGeographicMapCellType; type_Id : GeographicMapCellType_Access) return Boolean is
+   function isType (This : in out BasicPlatormGeographicMapCellType; type_Id_Param : access GeographicMapCellType'Class) return Boolean is
+      type_Id : GeographicMapCellType_Access := GeographicMapCellType_Access (type_Id_Param);
    begin
         return This.hasType (type_Id.getType);
    end isType;
@@ -85,8 +87,8 @@ package body org.allbinary.media.graphics.geography.map.platform.BasicPlatormGeo
       null;
    end createType;
 
-   procedure isType (This : in out BasicPlatormGeographicMapCellType; type_Id : GeographicMapCellType_Access) is
-      Java_Result : constant Boolean := BasicPlatormGeographicMapCellType'Class (This).isType (type_Id);
+   procedure isType (This : in out BasicPlatormGeographicMapCellType; type_Id_Param : access GeographicMapCellType'Class) is
+      Java_Result : constant Boolean := BasicPlatormGeographicMapCellType'Class (This).isType (type_Id_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

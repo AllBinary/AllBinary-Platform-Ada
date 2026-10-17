@@ -58,12 +58,12 @@ package views.admin.workflow.WorkFlowsView_Package is
       workFlowsVector : BasicArrayList_Access;
    end record;
 
-   procedure Initialize (This : in out WorkFlowsView'Class; transformInfoInterface : TransformInfoInterface_Access);
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return WorkFlowsView_Access;
+   procedure Initialize (This : in out WorkFlowsView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return WorkFlowsView_Access;
    procedure addDomNodeInterfaces (This : in out WorkFlowsView);
    function view (This : in out WorkFlowsView) return Unbounded_String;
-   function toXmlNode (This : in out WorkFlowsView; document : Document_Access) return Node_Access;
-   procedure toXmlNode (This : in out WorkFlowsView; document : Document_Access);
+   function toXmlNode (This : in out WorkFlowsView; document_Param : access Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out WorkFlowsView; document_Param : access Document'Class);
 
 end views.admin.workflow.WorkFlowsView_Package;
 

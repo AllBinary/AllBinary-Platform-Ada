@@ -42,8 +42,8 @@ package org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortio
       logUtil : LogUtil_Access;
    end record;
 
-   procedure Initialize (This : in out TitleProgressBarPortionSetProgressRunnable'Class; midletActivity : Activity_Access; progressCanvas : ProgressCanvas_Access);
-   function Create (midletActivity : Activity_Access; progressCanvas : ProgressCanvas_Access) return TitleProgressBarPortionSetProgressRunnable_Access;
+   procedure Initialize (This : in out TitleProgressBarPortionSetProgressRunnable'Class; midletActivity_Param : access Activity'Class; progressCanvas_Param : access ProgressCanvas'Class);
+   function Create (midletActivity_Param : access Activity'Class; progressCanvas_Param : access ProgressCanvas'Class) return TitleProgressBarPortionSetProgressRunnable_Access;
    procedure run (This : in out TitleProgressBarPortionSetProgressRunnable);
 
 end org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package;

@@ -24,21 +24,22 @@ package body org.allbinary.animation.image.LazyImageRotationAnimationFactory_Pac
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out LazyImageRotationAnimationFactory'Class; layoutIndex : Integer; associatedLazyAnimationId : Integer; animationInterfaceFactoryInterface : BaseImageAnimationFactory_Access) is
+   procedure Initialize (This : in out LazyImageRotationAnimationFactory'Class; layoutIndex : Integer; associatedLazyAnimationId : Integer; animationInterfaceFactoryInterface_Param : access BaseImageAnimationFactory'Class) is
+      animationInterfaceFactoryInterface : BaseImageAnimationFactory_Access := BaseImageAnimationFactory_Access (animationInterfaceFactoryInterface_Param);
    begin
       Initialize_Fields (This);
         This.layoutIndex := layoutIndex;
         This.animationInterfaceFactoryInterface := animationInterfaceFactoryInterface;
         ImageCacheFactory_Package.getInstance.hasAnyLazyAnimationFactories := True;
         if (This.animationInterfaceFactoryInterface.animationBehaviorFactory) = (AnimationBehaviorFactory_Package.getInstance) then
-            ForcedLogUtil_Package.log (To_Unbounded_String ("Using default AnimationBehaviorFactory with IndexedAnimationFactory"), This'Unchecked_Access);
+            ForcedLogUtil_Package.log (To_Unbounded_String ("Using default AnimationBehaviorFactory with IndexedAnimationFactory"), LazyImageRotationAnimationFactory_Access'(This'Unchecked_Access));
         end if;
    end Initialize;
 
-   function Create (layoutIndex : Integer; associatedLazyAnimationId : Integer; animationInterfaceFactoryInterface : BaseImageAnimationFactory_Access) return LazyImageRotationAnimationFactory_Access is
+   function Create (layoutIndex : Integer; associatedLazyAnimationId : Integer; animationInterfaceFactoryInterface_Param : access BaseImageAnimationFactory'Class) return LazyImageRotationAnimationFactory_Access is
       This : constant LazyImageRotationAnimationFactory_Access := new LazyImageRotationAnimationFactory;
    begin
-      LazyImageRotationAnimationFactory_Package.Initialize (This.all, layoutIndex, associatedLazyAnimationId, animationInterfaceFactoryInterface);
+      LazyImageRotationAnimationFactory_Package.Initialize (This.all, layoutIndex, associatedLazyAnimationId, animationInterfaceFactoryInterface_Param);
       return This;
    end Create;
 
@@ -53,7 +54,8 @@ package body org.allbinary.animation.image.LazyImageRotationAnimationFactory_Pac
         end if;
    end getInstance;
 
-   procedure setInitialScale (This : in out LazyImageRotationAnimationFactory; scaleProperties : ScaleProperties_Access) is
+   procedure setInitialScale (This : in out LazyImageRotationAnimationFactory; scaleProperties_Param : access ScaleProperties'Class) is
+      scaleProperties : ScaleProperties_Access := ScaleProperties_Access (scaleProperties_Param);
    begin
         This.scaleProperties := scaleProperties;
    end setInitialScale;

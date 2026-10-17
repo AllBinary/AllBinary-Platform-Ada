@@ -35,7 +35,8 @@ package body org.allbinary.graphics.j2me.workarea.tools.GraphicItemBuilder_Packa
    end Create;
 
    --  throws Exception
-   function getInstance (node : Node_Access) return GraphicItemInterface_Access is
+   function getInstance (node_Param : access Node'Class) return GraphicItemInterface_Access is
+      node : Node_Access := Node_Access (node_Param);
       graphicItemName : Unbounded_String;
    begin
         graphicItemName := node.getNodeName;
@@ -46,8 +47,8 @@ package body org.allbinary.graphics.j2me.workarea.tools.GraphicItemBuilder_Packa
         end if;
    end getInstance;
 
-   procedure getInstance (node : Node_Access) is
-      Java_Result : constant GraphicItemInterface_Access := getInstance (node);
+   procedure getInstance (node_Param : access Node'Class) is
+      Java_Result : constant GraphicItemInterface_Access := getInstance (node_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

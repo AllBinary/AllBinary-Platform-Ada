@@ -45,7 +45,8 @@ package body org.allbinary.android.input.motion.api1.GameInputMotionEventProcess
       return This;
    end Create;
 
-   procedure process (This : in out GameInputMotionEventProcessorAPI1; motionEvent : MotionEvent_Access) is
+   procedure process (This : in out GameInputMotionEventProcessorAPI1; motionEvent_Param : access MotionEvent'Class) is
+      motionEvent : MotionEvent_Access := MotionEvent_Access (motionEvent_Param);
       x : Integer;
       y : Integer;
       action : Integer;
@@ -66,7 +67,7 @@ package body org.allbinary.android.input.motion.api1.GameInputMotionEventProcess
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.PROCESS, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, GameInputMotionEventProcessorAPI1_Access'(This'Unchecked_Access), This.commonStrings.PROCESS, e);
                 end;
         end;
    end process;

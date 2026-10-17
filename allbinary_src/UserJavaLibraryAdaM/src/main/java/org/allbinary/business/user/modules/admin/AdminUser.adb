@@ -33,25 +33,28 @@ package body org.allbinary.business.user.modules.admin.AdminUser_Package is
       return This;
    end Create;
 
-   procedure Initialize (This : in out AdminUser'Class; userHashMap : HashMap_Access) is
+   procedure Initialize (This : in out AdminUser'Class; userHashMap_Param : access HashMap'Class) is
+      userHashMap : HashMap_Access := HashMap_Access (userHashMap_Param);
    begin
         User_Package.Initialize (This, userHashMap);
    end Initialize;
 
-   function Create (userHashMap : HashMap_Access) return AdminUser_Access is
+   function Create (userHashMap_Param : access HashMap'Class) return AdminUser_Access is
       This : constant AdminUser_Access := new AdminUser;
    begin
-      AdminUser_Package.Initialize (This.all, userHashMap);
+      AdminUser_Package.Initialize (This.all, userHashMap_Param);
       return This;
    end Create;
 
-   procedure validateSession (This : in out AdminUser; weblisketSession : WeblisketSessionInterface_Access) is
+   procedure validateSession (This : in out AdminUser; weblisketSession_Param : access WeblisketSessionInterface'Class) is
+      weblisketSession : WeblisketSessionInterface_Access := WeblisketSessionInterface_Access (weblisketSession_Param);
    begin
         User (This).validateSession (weblisketSession);
         This.updateSession (weblisketSession);
    end validateSession;
 
-   procedure updateSession (This : in out AdminUser; weblisketSession : WeblisketSessionInterface_Access) is
+   procedure updateSession (This : in out AdminUser; weblisketSession_Param : access WeblisketSessionInterface'Class) is
+      weblisketSession : WeblisketSessionInterface_Access := WeblisketSessionInterface_Access (weblisketSession_Param);
    begin
         weblisketSession.setStoreName (This.getPermissions);
    end updateSession;

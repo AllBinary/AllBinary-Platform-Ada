@@ -41,23 +41,28 @@ package body org.allbinary.logic.visual.transform.generator.TransformsGeneratorU
    end Create;
 
    --  throws Exception
-   function generateComponentsFromObjectConfig (This : in out TransformsGeneratorUtil; abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access; group : Unbounded_String) return Unbounded_String is
+   function generateComponentsFromObjectConfig (This : in out TransformsGeneratorUtil; abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; group : Unbounded_String) return Unbounded_String is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
       transformInfoObjectConfigInterface : TransformInfoObjectConfigInterface_Access;
       result : Unbounded_String;
    begin
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (To_Unbounded_String ("Started Group: ") & group, This'Unchecked_Access, To_Unbounded_String ("generateComponentsFromObjectConfig(2)"));
+            This.logUtil.putF (To_Unbounded_String ("Started Group: ") & group, TransformsGeneratorUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("generateComponentsFromObjectConfig(2)"));
         end if;
         transformInfoObjectConfigInterface := transformInfoInterface.getObjectConfigInterface;
         result := This.generateComponentsFromObjectConfig (abeClientInformation, transformInfoObjectConfigInterface, transformInfoInterface, group);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (To_Unbounded_String ("End Group: ") & group, This'Unchecked_Access, To_Unbounded_String ("generateComponentsFromObjectConfig(2)"));
+            This.logUtil.putF (To_Unbounded_String ("End Group: ") & group, TransformsGeneratorUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("generateComponentsFromObjectConfig(2)"));
         end if;
         return result;
    end generateComponentsFromObjectConfig;
 
    --  throws Exception
-   function generateComponentsFromObjectConfig (This : in out TransformsGeneratorUtil; abeClientInformation : AbeClientInformationInterface_Access; transformInfoObjectConfigInterface : TransformInfoObjectConfigInterface_Access; transformInfoInterface : TransformInfoInterface_Access; group : Unbounded_String) return Unbounded_String is
+   function generateComponentsFromObjectConfig (This : in out TransformsGeneratorUtil; abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoObjectConfigInterface_Param : access TransformInfoObjectConfigInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; group : Unbounded_String) return Unbounded_String is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      transformInfoObjectConfigInterface : TransformInfoObjectConfigInterface_Access := TransformInfoObjectConfigInterface_Access (transformInfoObjectConfigInterface_Param);
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
       transformInfoObjectConfigComponentVector : BasicArrayList_Access;
       stringBuffer : StringMaker_Access;
       size : Integer;
@@ -65,7 +70,7 @@ package body org.allbinary.logic.visual.transform.generator.TransformsGeneratorU
       index : Integer;
    begin
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (To_Unbounded_String ("Started Group: ") & group, This'Unchecked_Access, To_Unbounded_String ("generateComponentsFromObjectConfig()"));
+            This.logUtil.putF (To_Unbounded_String ("Started Group: ") & group, TransformsGeneratorUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("generateComponentsFromObjectConfig()"));
         end if;
         transformInfoObjectConfigComponentVector := transformInfoObjectConfigInterface.getTransformsGroup (group);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
@@ -74,7 +79,7 @@ package body org.allbinary.logic.visual.transform.generator.TransformsGeneratorU
             stringBuffer.appendint (transformInfoObjectConfigComponentVector.size);
             stringBuffer.append (To_Unbounded_String (" Components Group: "));
             stringBuffer.append (group);
-            This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("generateComponentsFromObjectConfig()"));
+            This.logUtil.putF (stringBuffer.toString, TransformsGeneratorUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("generateComponentsFromObjectConfig()"));
         end if;
         if (transformInfoObjectConfigComponentVector.size) < (1) then
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Pages Generated For Template.")));
@@ -85,7 +90,7 @@ package body org.allbinary.logic.visual.transform.generator.TransformsGeneratorU
             TransformGeneratorUtil_Package.getInstance.generate (abeClientInformation, transformInfoObjectConfigComponent, transformInfoInterface);
         end loop;
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-            This.logUtil.putF (To_Unbounded_String ("Done Group: ") & group, This'Unchecked_Access, To_Unbounded_String ("generateComponentsFromObjectConfig()"));
+            This.logUtil.putF (To_Unbounded_String ("Done Group: ") & group, TransformsGeneratorUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("generateComponentsFromObjectConfig()"));
         end if;
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (To_Unbounded_String ("<!-- Generated all template views successfully for View: "));
@@ -94,15 +99,15 @@ package body org.allbinary.logic.visual.transform.generator.TransformsGeneratorU
         return stringBuffer.toString;
    end generateComponentsFromObjectConfig;
 
-   procedure generateComponentsFromObjectConfig (This : in out TransformsGeneratorUtil; abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access; group : Unbounded_String) is
-      Java_Result : constant Unbounded_String := TransformsGeneratorUtil'Class (This).generateComponentsFromObjectConfig (abeClientInformation, transformInfoInterface, group);
+   procedure generateComponentsFromObjectConfig (This : in out TransformsGeneratorUtil; abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; group : Unbounded_String) is
+      Java_Result : constant Unbounded_String := TransformsGeneratorUtil'Class (This).generateComponentsFromObjectConfig (abeClientInformation_Param, transformInfoInterface_Param, group);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end generateComponentsFromObjectConfig;
 
-   procedure generateComponentsFromObjectConfig (This : in out TransformsGeneratorUtil; abeClientInformation : AbeClientInformationInterface_Access; transformInfoObjectConfigInterface : TransformInfoObjectConfigInterface_Access; transformInfoInterface : TransformInfoInterface_Access; group : Unbounded_String) is
-      Java_Result : constant Unbounded_String := TransformsGeneratorUtil'Class (This).generateComponentsFromObjectConfig (abeClientInformation, transformInfoObjectConfigInterface, transformInfoInterface, group);
+   procedure generateComponentsFromObjectConfig (This : in out TransformsGeneratorUtil; abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoObjectConfigInterface_Param : access TransformInfoObjectConfigInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; group : Unbounded_String) is
+      Java_Result : constant Unbounded_String := TransformsGeneratorUtil'Class (This).generateComponentsFromObjectConfig (abeClientInformation_Param, transformInfoObjectConfigInterface_Param, transformInfoInterface_Param, group);
       pragma Unreferenced (Java_Result);
    begin
       null;

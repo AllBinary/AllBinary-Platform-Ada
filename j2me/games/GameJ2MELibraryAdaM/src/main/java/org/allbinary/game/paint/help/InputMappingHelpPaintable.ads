@@ -83,13 +83,13 @@ package org.allbinary.game.paint.help.InputMappingHelpPaintable_Package is
    SEP : Unbounded_String;
    MORE_THAN_TWO_IN_LIST_AND : Unbounded_String;
 
-   procedure Initialize (This : in out InputMappingHelpPaintable'Class; gameInputMappingArray : GameInputMapping_Access_Array_Access; backgroundBasicColor : BasicColor_Access; basicColor : BasicColor_Access);
-   function Create (gameInputMappingArray : GameInputMapping_Access_Array_Access; backgroundBasicColor : BasicColor_Access; basicColor : BasicColor_Access) return InputMappingHelpPaintable_Access;
-   procedure updateMeasurement (This : in out InputMappingHelpPaintable; graphics : Graphics_Access);
-   procedure update (This : in out InputMappingHelpPaintable; selectedGameKey : GameKey_Access; selectedInput : Input_Access);
-   function get (This : in out InputMappingHelpPaintable; keyList : BasicArrayList_Access) return Unbounded_String;
-   procedure get (This : in out InputMappingHelpPaintable; keyList : BasicArrayList_Access);
-   procedure paint (This : in out InputMappingHelpPaintable; graphics : Graphics_Access);
+   procedure Initialize (This : in out InputMappingHelpPaintable'Class; gameInputMappingArray : GameInputMapping_Access_Array_Access; backgroundBasicColor_Param : access BasicColor'Class; basicColor_Param : access BasicColor'Class);
+   function Create (gameInputMappingArray : GameInputMapping_Access_Array_Access; backgroundBasicColor_Param : access BasicColor'Class; basicColor_Param : access BasicColor'Class) return InputMappingHelpPaintable_Access;
+   procedure updateMeasurement (This : in out InputMappingHelpPaintable; graphics_Param : access Graphics'Class);
+   procedure update (This : in out InputMappingHelpPaintable; selectedGameKey_Param : access GameKey'Class; selectedInput_Param : access Input'Class);
+   function get (This : in out InputMappingHelpPaintable; keyList_Param : access BasicArrayList'Class) return Unbounded_String;
+   procedure get (This : in out InputMappingHelpPaintable; keyList_Param : access BasicArrayList'Class);
+   procedure paint (This : in out InputMappingHelpPaintable; graphics_Param : access Graphics'Class);
 
 end org.allbinary.game.paint.help.InputMappingHelpPaintable_Package;
 

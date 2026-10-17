@@ -79,15 +79,15 @@ package org.allbinary.logic.communication.xmlrpc.XmlRpcAbeClient_Package is
    end record;
    isOnline : Boolean;
 
-   procedure Initialize (This : in out XmlRpcAbeClient'Class; clientInfo : AbeClientInformationInterface_Access; remoteMethod : Unbounded_String);
-   function Create (clientInfo : AbeClientInformationInterface_Access; remoteMethod : Unbounded_String) return XmlRpcAbeClient_Access;
-   function get (This : in out XmlRpcAbeClient; anyType : Java_Object_Access) return Java_Object_Access;
-   procedure get (This : in out XmlRpcAbeClient; anyType : Java_Object_Access);
-   function tryAnother (This : in out XmlRpcAbeClient; anyType : Java_Object_Access) return Java_Object_Access;
-   procedure tryAnother (This : in out XmlRpcAbeClient; anyType : Java_Object_Access);
+   procedure Initialize (This : in out XmlRpcAbeClient'Class; clientInfo_Param : access AbeClientInformationInterface'Class; remoteMethod : Unbounded_String);
+   function Create (clientInfo_Param : access AbeClientInformationInterface'Class; remoteMethod : Unbounded_String) return XmlRpcAbeClient_Access;
+   function get (This : in out XmlRpcAbeClient; anyType_Param : access Java_Object'Class) return Java_Object_Access;
+   procedure get (This : in out XmlRpcAbeClient; anyType_Param : access Java_Object'Class);
+   function tryAnother (This : in out XmlRpcAbeClient; anyType_Param : access Java_Object'Class) return Java_Object_Access;
+   procedure tryAnother (This : in out XmlRpcAbeClient; anyType_Param : access Java_Object'Class);
    function getClientInfo (This : in out XmlRpcAbeClient) return AbeClientInformationInterface_Access;
    function getClient (This : in out XmlRpcAbeClient) return XmlRpcHandler_Access;
-   procedure setClient (This : in out XmlRpcAbeClient; client : XmlRpcClient_Access);
+   procedure setClient (This : in out XmlRpcAbeClient; client_Param : access XmlRpcClient'Class);
    function getServer (This : in out XmlRpcAbeClient) return Integer;
    procedure setServer (This : in out XmlRpcAbeClient; server : Integer);
    function getStart (This : in out XmlRpcAbeClient) return Integer;

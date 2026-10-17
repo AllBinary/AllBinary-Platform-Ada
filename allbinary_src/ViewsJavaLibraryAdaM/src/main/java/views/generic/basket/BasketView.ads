@@ -71,10 +71,10 @@ package views.generic_Id.basket.BasketView_Package is
       request : HttpServletRequest_Access;
    end record;
 
-   procedure Initialize (This : in out BasketView'Class; transformInfoInterface : TransformInfoInterface_Access);
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return BasketView_Access;
-   function toXmlNode (This : in out BasketView; document : Document_Access) return Node_Access;
-   procedure toXmlNode (This : in out BasketView; document : Document_Access);
+   procedure Initialize (This : in out BasketView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return BasketView_Access;
+   function toXmlNode (This : in out BasketView; document_Param : access Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out BasketView; document_Param : access Document'Class);
    procedure addDomNodeInterfaces (This : in out BasketView);
    function view (This : in out BasketView) return Unbounded_String;
 

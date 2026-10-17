@@ -72,10 +72,10 @@ package org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_Packa
       running : Boolean;
    end record;
 
-   procedure Initialize (This : in out MotionRectanglesWorker'Class; motionRectangleConstraintsInterface : MotionRectangleConstraintsInterface_Access);
-   function Create (motionRectangleConstraintsInterface : MotionRectangleConstraintsInterface_Access) return MotionRectanglesWorker_Access;
-   procedure onImageComparisonResultsEvent (This : in out MotionRectanglesWorker; imageComparisonResultsEvent : ImageComparisonResultsEvent_Access);
-   procedure onEvent (This : in out MotionRectanglesWorker; allBinaryEventObject : AllBinaryEventObject_Access);
+   procedure Initialize (This : in out MotionRectanglesWorker'Class; motionRectangleConstraintsInterface_Param : access MotionRectangleConstraintsInterface'Class);
+   function Create (motionRectangleConstraintsInterface_Param : access MotionRectangleConstraintsInterface'Class) return MotionRectanglesWorker_Access;
+   procedure onImageComparisonResultsEvent (This : in out MotionRectanglesWorker; imageComparisonResultsEvent_Param : access ImageComparisonResultsEvent'Class);
+   procedure onEvent (This : in out MotionRectanglesWorker; allBinaryEventObject_Param : access AllBinaryEventObject'Class);
    function isRunning (This : in out MotionRectanglesWorker) return Boolean;
    procedure setRunning (This : in out MotionRectanglesWorker; running : Boolean);
    procedure run (This : in out MotionRectanglesWorker);

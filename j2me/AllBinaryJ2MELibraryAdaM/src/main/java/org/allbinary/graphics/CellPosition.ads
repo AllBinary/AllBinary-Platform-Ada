@@ -46,8 +46,8 @@ package org.allbinary.graphics.CellPosition_Package is
    function getColumn (This : in out CellPosition) return Integer;
    function getRow (This : in out CellPosition) return Integer;
    function toString (This : in out CellPosition) return Unbounded_String;
-   function toStringCellPosition (basicGeographicMapCellPosition : CellPosition_Access) return Unbounded_String;
-   procedure toStringCellPosition (basicGeographicMapCellPosition : CellPosition_Access);
+   function toStringCellPosition (basicGeographicMapCellPosition_Param : access CellPosition'Class) return Unbounded_String;
+   procedure toStringCellPosition (basicGeographicMapCellPosition_Param : access CellPosition'Class);
    function toStringColRow (i_column : Integer; i_row : Integer) return Unbounded_String;
    procedure toStringColRow (i_column : Integer; i_row : Integer);
    function getId (This : in out CellPosition) return Integer;

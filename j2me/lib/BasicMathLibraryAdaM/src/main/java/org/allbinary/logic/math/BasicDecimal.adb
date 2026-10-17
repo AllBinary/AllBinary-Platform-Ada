@@ -25,7 +25,8 @@ package body org.allbinary.logic.math.BasicDecimal_Package is
    end Initialize_Fields;
 
 
-   function createBigDecimal (bigDecimal : BasicDecimal_Access) return BasicDecimal_Access is
+   function createBigDecimal (bigDecimal_Param : access BasicDecimal'Class) return BasicDecimal_Access is
+      bigDecimal : BasicDecimal_Access := BasicDecimal_Access (bigDecimal_Param);
    begin
         return BasicDecimal_Package.Create (bigDecimal.getUnscaled);
    end createBigDecimal;
@@ -56,7 +57,8 @@ package body org.allbinary.logic.math.BasicDecimal_Package is
         This.updateScaled;
    end setlong;
 
-   procedure set (This : in out BasicDecimal; bigDecimal : BasicDecimal_Access) is
+   procedure set (This : in out BasicDecimal; bigDecimal_Param : access BasicDecimal'Class) is
+      bigDecimal : BasicDecimal_Access := BasicDecimal_Access (bigDecimal_Param);
    begin
         This.units := bigDecimal.getUnscaled;
         This.updateScaled;
@@ -74,7 +76,8 @@ package body org.allbinary.logic.math.BasicDecimal_Package is
         This.updateScaled;
    end addlong;
 
-   procedure add (This : in out BasicDecimal; bigDecimal : BasicDecimal_Access) is
+   procedure add (This : in out BasicDecimal; bigDecimal_Param : access BasicDecimal'Class) is
+      bigDecimal : BasicDecimal_Access := BasicDecimal_Access (bigDecimal_Param);
    begin
         This.units := (This.units) + (bigDecimal.getUnscaled);
         This.updateScaled;
@@ -92,7 +95,8 @@ package body org.allbinary.logic.math.BasicDecimal_Package is
         This.updateScaled;
    end subtractlong;
 
-   procedure subtract (This : in out BasicDecimal; bigDecimal : BasicDecimal_Access) is
+   procedure subtract (This : in out BasicDecimal; bigDecimal_Param : access BasicDecimal'Class) is
+      bigDecimal : BasicDecimal_Access := BasicDecimal_Access (bigDecimal_Param);
    begin
         This.units := (This.units) - (bigDecimal.getUnscaled);
         This.updateScaled;
@@ -110,7 +114,8 @@ package body org.allbinary.logic.math.BasicDecimal_Package is
         This.updateScaled;
    end multiplylong;
 
-   procedure multiply (This : in out BasicDecimal; bigDecimal : BasicDecimal_Access) is
+   procedure multiply (This : in out BasicDecimal; bigDecimal_Param : access BasicDecimal'Class) is
+      bigDecimal : BasicDecimal_Access := BasicDecimal_Access (bigDecimal_Param);
    begin
         This.units := (This.units) * (bigDecimal.getUnscaled);
         This.updateScaled;
@@ -128,7 +133,8 @@ package body org.allbinary.logic.math.BasicDecimal_Package is
         This.updateScaled;
    end dividelong;
 
-   procedure divide (This : in out BasicDecimal; bigDecimal : BasicDecimal_Access) is
+   procedure divide (This : in out BasicDecimal; bigDecimal_Param : access BasicDecimal'Class) is
+      bigDecimal : BasicDecimal_Access := BasicDecimal_Access (bigDecimal_Param);
    begin
         This.units := (This.units) / (bigDecimal.getUnscaled);
         This.updateScaled;
@@ -164,8 +170,8 @@ package body org.allbinary.logic.math.BasicDecimal_Package is
         return This.factorValue;
    end getScaledFactorValue;
 
-   procedure createBigDecimal (bigDecimal : BasicDecimal_Access) is
-      Java_Result : constant BasicDecimal_Access := createBigDecimal (bigDecimal);
+   procedure createBigDecimal (bigDecimal_Param : access BasicDecimal'Class) is
+      Java_Result : constant BasicDecimal_Access := createBigDecimal (bigDecimal_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

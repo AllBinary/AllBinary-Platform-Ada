@@ -26,7 +26,8 @@ package body org.allbinary.logic.system.security.licensing.AbeClientLicense_Pack
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AbeClientLicense'Class; hashtable : ABHashtable_Access) is
+   procedure Initialize (This : in out AbeClientLicense'Class; hashtable_Param : access ABHashtable'Class) is
+      hashtable : ABHashtable_Access := ABHashtable_Access (hashtable_Param);
       abeClientInformationData : AbeClientInformationData_Access;
       keyValue : Java_Object_Access;
       vector : BasicArrayList_Access;
@@ -57,14 +58,15 @@ package body org.allbinary.logic.system.security.licensing.AbeClientLicense_Pack
         This.licenseType := LicenseTypeFactory_Package.getInstance.getInstance (licenseTypeString);
    end Initialize;
 
-   function Create (hashtable : ABHashtable_Access) return AbeClientLicense_Access is
+   function Create (hashtable_Param : access ABHashtable'Class) return AbeClientLicense_Access is
       This : constant AbeClientLicense_Access := new AbeClientLicense;
    begin
-      AbeClientLicense_Package.Initialize (This.all, hashtable);
+      AbeClientLicense_Package.Initialize (This.all, hashtable_Param);
       return This;
    end Create;
 
-   function hasRequiredKeys (resultHashtable : ABHashtable_Access) return Boolean is
+   function hasRequiredKeys (resultHashtable_Param : access ABHashtable'Class) return Boolean is
+      resultHashtable : ABHashtable_Access := ABHashtable_Access (resultHashtable_Param);
       abeClientInformationData : AbeClientInformationData_Access;
    begin
         abeClientInformationData := AbeClientInformationData_Package.getInstance;
@@ -150,8 +152,8 @@ package body org.allbinary.logic.system.security.licensing.AbeClientLicense_Pack
         return This.licenseType;
    end getLicenseType;
 
-   procedure hasRequiredKeys (resultHashtable : ABHashtable_Access) is
-      Java_Result : constant Boolean := hasRequiredKeys (resultHashtable);
+   procedure hasRequiredKeys (resultHashtable_Param : access ABHashtable'Class) is
+      Java_Result : constant Boolean := hasRequiredKeys (resultHashtable_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

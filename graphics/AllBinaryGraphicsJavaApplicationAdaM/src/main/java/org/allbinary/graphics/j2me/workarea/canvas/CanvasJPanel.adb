@@ -32,7 +32,9 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CanvasJPanel'Class; workAreaJTreeJPanel : WorkAreaJTreeJPanel_Access; dimension : Dimension_Access; x : Integer; y : Integer) is
+   procedure Initialize (This : in out CanvasJPanel'Class; workAreaJTreeJPanel_Param : access WorkAreaJTreeJPanel'Class; dimension_Param : access Dimension'Class; x : Integer; y : Integer) is
+      workAreaJTreeJPanel : WorkAreaJTreeJPanel_Access := WorkAreaJTreeJPanel_Access (workAreaJTreeJPanel_Param);
+      dimension : Dimension_Access := Dimension_Access (dimension_Param);
    begin
       JPanel_Package.Initialize (This);
       Initialize_Fields (This);
@@ -49,20 +51,23 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if LOGGING.contains (LOGGING.GRAPHICSCREATION) then
-                This.guiLog.put (To_Unbounded_String ("Constructor Error"), This'Unchecked_Access, To_Unbounded_String ("contructor"), e);
+                This.guiLog.put (To_Unbounded_String ("Constructor Error"), CanvasJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("contructor"), e);
             end if;
                 end;
         end;
    end Initialize;
 
-   function Create (workAreaJTreeJPanel : WorkAreaJTreeJPanel_Access; dimension : Dimension_Access; x : Integer; y : Integer) return CanvasJPanel_Access is
+   function Create (workAreaJTreeJPanel_Param : access WorkAreaJTreeJPanel'Class; dimension_Param : access Dimension'Class; x : Integer; y : Integer) return CanvasJPanel_Access is
       This : constant CanvasJPanel_Access := new CanvasJPanel;
    begin
-      CanvasJPanel_Package.Initialize (This.all, workAreaJTreeJPanel, dimension, x, y);
+      CanvasJPanel_Package.Initialize (This.all, workAreaJTreeJPanel_Param, dimension_Param, x, y);
       return This;
    end Create;
 
-   procedure Initialize (This : in out CanvasJPanel'Class; workAreaJTreeJPanel : WorkAreaJTreeJPanel_Access; dimension : Dimension_Access; canvasDom : CanvasDom_Access) is
+   procedure Initialize (This : in out CanvasJPanel'Class; workAreaJTreeJPanel_Param : access WorkAreaJTreeJPanel'Class; dimension_Param : access Dimension'Class; canvasDom_Param : access CanvasDom'Class) is
+      workAreaJTreeJPanel : WorkAreaJTreeJPanel_Access := WorkAreaJTreeJPanel_Access (workAreaJTreeJPanel_Param);
+      dimension : Dimension_Access := Dimension_Access (dimension_Param);
+      canvasDom : CanvasDom_Access := CanvasDom_Access (canvasDom_Param);
       graphicItemArray : Java_Object_Access_Array_Access;
       size : Integer;
       graphicItemTreeNode : MutableTreeNode_Access;
@@ -95,16 +100,16 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if LOGGING.contains (LOGGING.GRAPHICSCREATION) then
-                This.guiLog.put (To_Unbounded_String ("Constructor Error"), This'Unchecked_Access, To_Unbounded_String ("contructor"), e);
+                This.guiLog.put (To_Unbounded_String ("Constructor Error"), CanvasJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("contructor"), e);
             end if;
                 end;
         end;
    end Initialize;
 
-   function Create (workAreaJTreeJPanel : WorkAreaJTreeJPanel_Access; dimension : Dimension_Access; canvasDom : CanvasDom_Access) return CanvasJPanel_Access is
+   function Create (workAreaJTreeJPanel_Param : access WorkAreaJTreeJPanel'Class; dimension_Param : access Dimension'Class; canvasDom_Param : access CanvasDom'Class) return CanvasJPanel_Access is
       This : constant CanvasJPanel_Access := new CanvasJPanel;
    begin
-      CanvasJPanel_Package.Initialize (This.all, workAreaJTreeJPanel, dimension, canvasDom);
+      CanvasJPanel_Package.Initialize (This.all, workAreaJTreeJPanel_Param, dimension_Param, canvasDom_Param);
       return This;
    end Create;
 
@@ -119,10 +124,10 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
         This.grid.grid := PointFactory_Package.getInstance.createXY (0, 0);
         This.setCanvasDimension (IntegerDimension_Package.Create (0, 0));
         This.selectedTool := null;
-        This.addKeyListener (This'Unchecked_Access);
-        This.addMouseListener (This'Unchecked_Access);
-        This.addMouseMotionListener (This'Unchecked_Access);
-        MyGraphicItemEventService_Package.addListener (This'Unchecked_Access);
+        This.addKeyListener (CanvasJPanel_Access'(This'Unchecked_Access));
+        This.addMouseListener (CanvasJPanel_Access'(This'Unchecked_Access));
+        This.addMouseMotionListener (CanvasJPanel_Access'(This'Unchecked_Access));
+        MyGraphicItemEventService_Package.addListener (CanvasJPanel_Access'(This'Unchecked_Access));
    end initMyComponents;
 
    function getTreeNode (This : in out CanvasJPanel) return MutableTreeNode_Access is
@@ -141,11 +146,11 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
         This.grid.isGridPossible := True;
         if (x) <= (0) then
             This.grid.isGridPossible := False;
-            Java_Throw (Java_New_Exception ("GraphicsException", To_Unbounded_String ("X Size Error: ") & Java_Image (x), This'Unchecked_Access, To_Unbounded_String ("setWorkAreaSize")));
+            Java_Throw (Java_New_Exception ("GraphicsException", To_Unbounded_String ("X Size Error: ") & Java_Image (x), CanvasJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("setWorkAreaSize")));
         end if;
         if (y) <= (0) then
             This.grid.isGridPossible := False;
-            Java_Throw (Java_New_Exception ("GraphicsException", To_Unbounded_String ("Y Size Error: ") & Java_Image (y), This'Unchecked_Access, To_Unbounded_String ("setWorkAreaSize")));
+            Java_Throw (Java_New_Exception ("GraphicsException", To_Unbounded_String ("Y Size Error: ") & Java_Image (y), CanvasJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("setWorkAreaSize")));
         end if;
         if (x) > (This.getWidth) then
             This.grid.isGridPossible := False;
@@ -157,7 +162,8 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
         This.grid.isChanged := True;
    end setCanvasSize;
 
-   procedure setGrid (This : in out CanvasJPanel; point : GPoint_Access) is
+   procedure setGrid (This : in out CanvasJPanel; point_Param : access GPoint'Class) is
+      point : GPoint_Access := GPoint_Access (point_Param);
    begin
         This.setGrid (point.getX, point.getY);
    end setGrid;
@@ -166,10 +172,10 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
    begin
         begin
             if ((xSize) >= ((This.getCanvasDimension.getWidth) / (2))) or else ((xSize) < (1)) then
-                Java_Throw (Java_New_Exception ("GraphicsException", To_Unbounded_String ("X Size Error: ") & Java_Image (xSize) & To_Unbounded_String (" WorkArea X: ") & Java_Image (This.getCanvasDimension.getWidth), This'Unchecked_Access, To_Unbounded_String ("setGrid")));
+                Java_Throw (Java_New_Exception ("GraphicsException", To_Unbounded_String ("X Size Error: ") & Java_Image (xSize) & To_Unbounded_String (" WorkArea X: ") & Java_Image (This.getCanvasDimension.getWidth), CanvasJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("setGrid")));
             end if;
             if ((ySize) >= ((This.getCanvasDimension.getHeight) / (2))) or else ((ySize) < (1)) then
-                Java_Throw (Java_New_Exception ("GraphicsException", To_Unbounded_String ("Y Size Error") & Java_Image (ySize) & To_Unbounded_String (" WorkArea Y: ") & Java_Image (This.getCanvasDimension.getHeight), This'Unchecked_Access, To_Unbounded_String ("setGrid")));
+                Java_Throw (Java_New_Exception ("GraphicsException", To_Unbounded_String ("Y Size Error") & Java_Image (ySize) & To_Unbounded_String (" WorkArea Y: ") & Java_Image (This.getCanvasDimension.getHeight), CanvasJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("setGrid")));
             end if;
             This.grid.grid := PointFactory_Package.getInstance.createXY (xSize, ySize);
             This.grid.isChanged := True;
@@ -229,7 +235,7 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
             graphicItem := GraphicItemInterface_Access (This.getGraphicItemHashMap.get (graphicItemNode));
             if (graphicItem.getName) = (LinesGraphicItem_Package.getStaticName) then
                 while (graphicItem.getPointsInterface.getSize) > (2) loop
-                    newGraphicItem := GraphicItemFactory_Package.getInstance.getInstance (graphicItem.getName).getInstance (This'Unchecked_Access);
+                    newGraphicItem := GraphicItemFactory_Package.getInstance.getInstance (graphicItem.getName).getInstance (CanvasJPanel_Access'(This'Unchecked_Access));
                     pointOne := GPoint_Package.getInstance (graphicItem.removePoint);
                     pointTwo := GPoint_Package.getInstance (graphicItem.removePoint);
                     if ((pointOne) /= (null)) and then ((pointTwo) /= (null)) then
@@ -310,12 +316,12 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
    begin
         begin
             StatusFactory_Package.getInstance.setStatus (To_Unbounded_String ("Tool Selected"));
-            This.selectedTool := ToolFactory_Package.getInstance.getSelectedToolFactory.getInstance (This'Unchecked_Access);
+            This.selectedTool := ToolFactory_Package.getInstance.getSelectedToolFactory.getInstance (CanvasJPanel_Access'(This'Unchecked_Access));
             newNode := This.selectedTool.getTreeNode;
             This.getGraphicItemHashMap.put (newNode, This.selectedTool);
             This.canvasTreeNode.add (newNode);
             if (This.getSelectedTool) = (null) then
-                Java_Throw (Java_New_Exception ("GraphicsException", To_Unbounded_String ("No Tool Selected"), This'Unchecked_Access, To_Unbounded_String ("setSelectedTool")));
+                Java_Throw (Java_New_Exception ("GraphicsException", To_Unbounded_String ("No Tool Selected"), CanvasJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("setSelectedTool")));
             end if;
         exception
             when Java_Occurrence : others =>
@@ -328,7 +334,8 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
    end setNewTool;
 
    --  throws Exception
-   procedure duplicateGraphicItem (This : in out CanvasJPanel; graphicItem : GraphicItemInterface_Access) is
+   procedure duplicateGraphicItem (This : in out CanvasJPanel; graphicItem_Param : access GraphicItemInterface'Class) is
+      graphicItem : GraphicItemInterface_Access := GraphicItemInterface_Access (graphicItem_Param);
       graphicItemClone : GraphicItemInterface_Access;
    begin
         graphicItemClone := graphicItem.duplicate;
@@ -337,7 +344,8 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
    end duplicateGraphicItem;
 
    --  throws Exception
-   procedure duplicateGraphicItemHashMap (This : in out CanvasJPanel; hashMap : HashMap_Access) is
+   procedure duplicateGraphicItemHashMap (This : in out CanvasJPanel; hashMap_Param : access HashMap'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
       mutableTreeNodeArray : Java_Object_Access_Array_Access;
       size : Integer;
       treeNode : MutableTreeNode_Access;
@@ -385,7 +393,8 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
         return This.selectedTool;
    end getSelectedTool;
 
-   procedure drawItems (This : in out CanvasJPanel; graphics : Graphics_Access) is
+   procedure drawItems (This : in out CanvasJPanel; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       angleDouble : Long_Float;
       graphicItemArray : Java_Object_Access_Array_Access;
       size : Integer;
@@ -401,7 +410,8 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
         end loop;
    end drawItems;
 
-   procedure drawGrid (This : in out CanvasJPanel; graphics : Graphics_Access) is
+   procedure drawGrid (This : in out CanvasJPanel; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
       xAdjust : Integer;
       yAdjust : Integer;
       xLeft : Integer;
@@ -429,7 +439,8 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
         end loop;
    end drawGrid;
 
-   procedure paint (This : in out CanvasJPanel; graphics : Graphics_Access) is
+   procedure paint (This : in out CanvasJPanel; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         begin
             if This.getGrid.isChanged then
@@ -464,7 +475,7 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
    --  throws Exception
    function toDom (This : in out CanvasJPanel) return Node_Access is
    begin
-        return CanvasDom_Package.Create (This'Unchecked_Access).toDom;
+        return CanvasDom_Package.Create (CanvasJPanel_Access'(This'Unchecked_Access)).toDom;
    end toDom;
 
    procedure changed (This : in out CanvasJPanel) is
@@ -472,7 +483,8 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
         This.grid.isChanged := True;
    end changed;
 
-   procedure mouseClicked (This : in out CanvasJPanel; mouseEvent : MouseEvent_Access) is
+   procedure mouseClicked (This : in out CanvasJPanel; mouseEvent_Param : access MouseEvent'Class) is
+      mouseEvent : MouseEvent_Access := MouseEvent_Access (mouseEvent_Param);
       graphicItem : GraphicItemInterface_Access;
    begin
         StatusFactory_Package.getInstance.setStatusNoLog ((MouseStrings_Package.getInstance.MOUSE_CLICKED_LABEL) + (This.logMouseEvent (mouseEvent)));
@@ -493,17 +505,20 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
         This.workAreaJTreeJPanel.repaint;
    end mouseClicked;
 
-   procedure mouseEntered (This : in out CanvasJPanel; mouseEvent : MouseEvent_Access) is
+   procedure mouseEntered (This : in out CanvasJPanel; mouseEvent_Param : access MouseEvent'Class) is
+      mouseEvent : MouseEvent_Access := MouseEvent_Access (mouseEvent_Param);
    begin
         StatusFactory_Package.getInstance.setStatusNoLog (This.logMouseEvent (mouseEvent));
    end mouseEntered;
 
-   procedure mouseExited (This : in out CanvasJPanel; mouseEvent : MouseEvent_Access) is
+   procedure mouseExited (This : in out CanvasJPanel; mouseEvent_Param : access MouseEvent'Class) is
+      mouseEvent : MouseEvent_Access := MouseEvent_Access (mouseEvent_Param);
    begin
         StatusFactory_Package.getInstance.setStatusNoLog (This.logMouseEvent (mouseEvent));
    end mouseExited;
 
-   procedure mousePressed (This : in out CanvasJPanel; mouseEvent : MouseEvent_Access) is
+   procedure mousePressed (This : in out CanvasJPanel; mouseEvent_Param : access MouseEvent'Class) is
+      mouseEvent : MouseEvent_Access := MouseEvent_Access (mouseEvent_Param);
       graphicItem : GraphicItemInterface_Access;
    begin
         StatusFactory_Package.getInstance.setStatusNoLog ((MouseStrings_Package.getInstance.MOUSE_PRESSED_LABEL) + (This.logMouseEvent (mouseEvent)));
@@ -516,7 +531,8 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
         This.repaint;
    end mousePressed;
 
-   procedure mouseReleased (This : in out CanvasJPanel; mouseEvent : MouseEvent_Access) is
+   procedure mouseReleased (This : in out CanvasJPanel; mouseEvent_Param : access MouseEvent'Class) is
+      mouseEvent : MouseEvent_Access := MouseEvent_Access (mouseEvent_Param);
       graphicItem : GraphicItemInterface_Access;
    begin
         StatusFactory_Package.getInstance.setStatusNoLog ((MouseStrings_Package.getInstance.MOUSE_RELEASED_LABEL) + (This.logMouseEvent (mouseEvent)));
@@ -529,7 +545,8 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
         This.repaint;
    end mouseReleased;
 
-   procedure mouseDragged (This : in out CanvasJPanel; mouseEvent : MouseEvent_Access) is
+   procedure mouseDragged (This : in out CanvasJPanel; mouseEvent_Param : access MouseEvent'Class) is
+      mouseEvent : MouseEvent_Access := MouseEvent_Access (mouseEvent_Param);
       graphicItem : GraphicItemInterface_Access;
    begin
         StatusFactory_Package.getInstance.setStatusNoLog ((MouseStrings_Package.getInstance.MOUSE_DRAGGED_LABEL) + (This.logMouseEvent (mouseEvent)));
@@ -542,7 +559,8 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
         This.repaint;
    end mouseDragged;
 
-   procedure mouseMoved (This : in out CanvasJPanel; mouseEvent : MouseEvent_Access) is
+   procedure mouseMoved (This : in out CanvasJPanel; mouseEvent_Param : access MouseEvent'Class) is
+      mouseEvent : MouseEvent_Access := MouseEvent_Access (mouseEvent_Param);
       graphicItem : GraphicItemInterface_Access;
    begin
         StatusFactory_Package.getInstance.setStatusNoLog ((MouseStrings_Package.getInstance.MOUSE_MOVED_LABEL) + (This.logMouseEvent (mouseEvent)));
@@ -555,7 +573,8 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
         This.repaint;
    end mouseMoved;
 
-   function logMouseEvent (This : in out CanvasJPanel; mouseEvent : MouseEvent_Access) return Unbounded_String is
+   function logMouseEvent (This : in out CanvasJPanel; mouseEvent_Param : access MouseEvent'Class) return Unbounded_String is
+      mouseEvent : MouseEvent_Access := MouseEvent_Access (mouseEvent_Param);
       stringBuffer : StringMaker_Access;
    begin
         stringBuffer := StringMaker_Package.Create;
@@ -567,7 +586,8 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
         return stringBuffer.toString;
    end logMouseEvent;
 
-   procedure keyPressed (This : in out CanvasJPanel; keyEvent : KeyEvent_Access) is
+   procedure keyPressed (This : in out CanvasJPanel; keyEvent_Param : access KeyEvent'Class) is
+      keyEvent : KeyEvent_Access := KeyEvent_Access (keyEvent_Param);
       graphicItemArray : Java_Object_Access_Array_Access;
       size : Integer;
       graphicItemInterface : GraphicItemInterface_Access;
@@ -601,7 +621,7 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.gameInputStrings.KEY_PRESSED, e);
+            This.logUtil.put (commonStrings.EXCEPTION_Id, CanvasJPanel_Access'(This'Unchecked_Access), This.gameInputStrings.KEY_PRESSED, e);
                 end;
         end;
         if ((This.getSelectedTool) /= (null)) and then (This.getSelectedTool.isActive) then
@@ -615,17 +635,20 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
         This.repaint;
    end keyPressed;
 
-   procedure keyReleased (This : in out CanvasJPanel; keyEvent : KeyEvent_Access) is
+   procedure keyReleased (This : in out CanvasJPanel; keyEvent_Param : access KeyEvent'Class) is
+      keyEvent : KeyEvent_Access := KeyEvent_Access (keyEvent_Param);
    begin
         null;
    end keyReleased;
 
-   procedure keyTyped (This : in out CanvasJPanel; keyEvent : KeyEvent_Access) is
+   procedure keyTyped (This : in out CanvasJPanel; keyEvent_Param : access KeyEvent'Class) is
+      keyEvent : KeyEvent_Access := KeyEvent_Access (keyEvent_Param);
    begin
         null;
    end keyTyped;
 
-   procedure delete (This : in out CanvasJPanel; evt : MyGraphicItemEvent_Access) is
+   procedure delete (This : in out CanvasJPanel; evt_Param : access MyGraphicItemEvent'Class) is
+      evt : MyGraphicItemEvent_Access := MyGraphicItemEvent_Access (evt_Param);
    begin
         This.getGraphicItemHashMap.remove (evt.getTreeNode);
         This.workAreaJTreeJPanel.updateTree;
@@ -633,7 +656,8 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
         This.workAreaJTreeJPanel.repaint;
    end delete;
 
-   procedure deselect (This : in out CanvasJPanel; evt : MyGraphicItemEvent_Access) is
+   procedure deselect (This : in out CanvasJPanel; evt_Param : access MyGraphicItemEvent'Class) is
+      evt : MyGraphicItemEvent_Access := MyGraphicItemEvent_Access (evt_Param);
       graphicItemInterface : GraphicItemInterface_Access;
    begin
         graphicItemInterface := GraphicItemInterface_Access (This.getGraphicItemHashMap.get (evt.getTreeNode));
@@ -644,7 +668,8 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
         end if;
    end deselect;
 
-   procedure highlight (This : in out CanvasJPanel; evt : MyGraphicItemEvent_Access) is
+   procedure highlight (This : in out CanvasJPanel; evt_Param : access MyGraphicItemEvent'Class) is
+      evt : MyGraphicItemEvent_Access := MyGraphicItemEvent_Access (evt_Param);
       graphicItemInterface : GraphicItemInterface_Access;
    begin
         graphicItemInterface := GraphicItemInterface_Access (This.getGraphicItemHashMap.get (evt.getTreeNode));
@@ -670,7 +695,8 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
    end duplicate;
 
    --  throws Exception
-   procedure duplicate (This : in out CanvasJPanel; event : MyGraphicItemEvent_Access) is
+   procedure duplicate (This : in out CanvasJPanel; event_Param : access MyGraphicItemEvent'Class) is
+      event : MyGraphicItemEvent_Access := MyGraphicItemEvent_Access (event_Param);
       treeNode : MutableTreeNode_Access;
       graphicItem : GraphicItemInterface_Access;
    begin
@@ -684,7 +710,8 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
         end if;
    end duplicate;
 
-   procedure rotate (This : in out CanvasJPanel; event : MyGraphicItemEvent_Access) is
+   procedure rotate (This : in out CanvasJPanel; event_Param : access MyGraphicItemEvent'Class) is
+      event : MyGraphicItemEvent_Access := MyGraphicItemEvent_Access (event_Param);
       treeNode : MutableTreeNode_Access;
       graphicItem : GraphicItemInterface_Access;
    begin
@@ -700,7 +727,8 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
         return This.canvasDimension;
    end getCanvasDimension;
 
-   procedure setCanvasDimension (This : in out CanvasJPanel; canvasDimension : IntegerDimension_Access) is
+   procedure setCanvasDimension (This : in out CanvasJPanel; canvasDimension_Param : access IntegerDimension'Class) is
+      canvasDimension : IntegerDimension_Access := IntegerDimension_Access (canvasDimension_Param);
    begin
         This.canvasDimension := canvasDimension;
    end setCanvasDimension;
@@ -710,8 +738,8 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
         return This.grid;
    end getGrid;
 
-   procedure logMouseEvent (This : in out CanvasJPanel; mouseEvent : MouseEvent_Access) is
-      Java_Result : constant Unbounded_String := CanvasJPanel'Class (This).logMouseEvent (mouseEvent);
+   procedure logMouseEvent (This : in out CanvasJPanel; mouseEvent_Param : access MouseEvent'Class) is
+      Java_Result : constant Unbounded_String := CanvasJPanel'Class (This).logMouseEvent (mouseEvent_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

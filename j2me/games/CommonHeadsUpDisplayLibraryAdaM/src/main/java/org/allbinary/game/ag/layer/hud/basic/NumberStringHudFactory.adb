@@ -55,7 +55,7 @@ package body org.allbinary.game.ag.layer.hud.basic.NumberStringHudFactory_Packag
                 begin
             logUtil := LogUtil_Package.getInstance;
             commonStrings := CommonStrings_Package.getInstance;
-            logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.CONSTRUCTOR, e);
+            logUtil.put (commonStrings.EXCEPTION_Id, NumberStringHudFactory_Access'(This'Unchecked_Access), commonStrings.CONSTRUCTOR, e);
             Java_Throw (Java_New_Exception ("RuntimeException"));
                 end;
         end;

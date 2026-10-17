@@ -46,7 +46,7 @@ package body org.allbinary.business.user.role.BasicUserRole_Package is
         This.displayValue := aDisplayValue;
         This.sessionTimeout := aSessionTimeout;
         This.sessionInactivityTimeout := aSessionInactivityTimeout;
-        BasicUserRole_Package.roleVector.add (This'Unchecked_Access);
+        BasicUserRole_Package.roleVector.add (BasicUserRole_Access'(This'Unchecked_Access));
    end Initialize;
 
    function Create (aRole : Unbounded_String; aDisplayValue : Unbounded_String; a_int_RoleId : Integer; aSessionTimeout : Long_Long_Integer; aSessionInactivityTimeout : Long_Long_Integer) return BasicUserRole_Access is
@@ -76,7 +76,8 @@ package body org.allbinary.business.user.role.BasicUserRole_Package is
         return This.sessionInactivityTimeout;
    end getSessionInactivityTimeout;
 
-   function equals (This : in out BasicUserRole; basicUserRole : BasicUserRole_Access) return Boolean is
+   function equals (This : in out BasicUserRole; basicUserRole_Param : access BasicUserRole'Class) return Boolean is
+      basicUserRole : BasicUserRole_Access := BasicUserRole_Access (basicUserRole_Param);
    begin
         if (This.getRoleId) = (basicUserRole.getRoleId) then
             return True;
@@ -112,8 +113,8 @@ package body org.allbinary.business.user.role.BasicUserRole_Package is
         return BasicUserRole_Package.roleVector;
    end getAll;
 
-   procedure equals (This : in out BasicUserRole; basicUserRole : BasicUserRole_Access) is
-      Java_Result : constant Boolean := BasicUserRole'Class (This).equals (basicUserRole);
+   procedure equals (This : in out BasicUserRole; basicUserRole_Param : access BasicUserRole'Class) is
+      Java_Result : constant Boolean := BasicUserRole'Class (This).equals (basicUserRole_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -44,7 +44,8 @@ package body org.allbinary.business.advertisement.AdConfiguration_Package is
         return new Direction_Access_Array'(0 .. (0) - 1 => null);
    end getValidAdSpots;
 
-   procedure process (This : in out AdConfiguration; gameState : GameState_Access) is
+   procedure process (This : in out AdConfiguration; gameState_Param : access GameState'Class) is
+      gameState : GameState_Access := GameState_Access (gameState_Param);
    begin
         null;
    end process;

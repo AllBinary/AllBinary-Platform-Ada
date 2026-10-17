@@ -38,20 +38,23 @@ package body org.allbinary.TsUtil_Package is
         return TsUtil_Package.instance;
    end getInstance;
 
-   function hashCode (This : in out TsUtil; anyType : Java_Object_Access) return Integer is
+   function hashCode (This : in out TsUtil; anyType_Param : access Java_Object'Class) return Integer is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         return anyType.hashCode;
    end hashCode;
 
    --  throws InterruptedException
-   procedure waitFor (This : in out TsUtil; any : Java_Object_Access; timeoutMillis : Long_Long_Integer) is
+   procedure waitFor (This : in out TsUtil; any_Param : access Java_Object'Class; timeoutMillis : Long_Long_Integer) is
+      any : Java_Object_Access := Java_Object_Access (any_Param);
       anyType : Java_Object_Access;
    begin
         anyType := Java_Object_Access (any);
         anyType.wait (timeoutMillis);
    end waitFor;
 
-   function getRecord (This : in out TsUtil; anyType : Java_Object_Access; recordId : Integer) return Short_Short_Integer_Array_Access is
+   function getRecord (This : in out TsUtil; anyType_Param : access Java_Object'Class; recordId : Integer) return Short_Short_Integer_Array_Access is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         return new Short_Short_Integer_Array'(0 .. (0) - 1 => 0);
    end getRecord;
@@ -66,7 +69,9 @@ package body org.allbinary.TsUtil_Package is
         return Ada.Strings.Equal_Case_Insensitive (To_String (a), To_String (b));
    end equalIgnoreCase;
 
-   function equalsNotstring (This : in out TsUtil; anyType : Java_Object_Access; object2 : Java_Object_Access) return Boolean is
+   function equalsNotstring (This : in out TsUtil; anyType_Param : access Java_Object'Class; object2_Param : access Java_Object'Class) return Boolean is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      object2 : Java_Object_Access := Java_Object_Access (object2_Param);
    begin
         return anyType.equals (object2);
    end equalsNotstring;
@@ -86,12 +91,14 @@ package body org.allbinary.TsUtil_Package is
         return string_Id.getBytes;
    end getByteArray;
 
-   function isItemListener (This : in out TsUtil; owner : Java_Object_Access) return Boolean is
+   function isItemListener (This : in out TsUtil; owner_Param : access Java_Object'Class) return Boolean is
+      owner : Java_Object_Access := Java_Object_Access (owner_Param);
    begin
         return False;
    end isItemListener;
 
-   procedure printAvailableMethods (This : in out TsUtil; anyType : Java_Object_Access) is
+   procedure printAvailableMethods (This : in out TsUtil; anyType_Param : access Java_Object'Class) is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         null;
    end printAvailableMethods;
@@ -101,15 +108,15 @@ package body org.allbinary.TsUtil_Package is
         Java_Nothing;
    end gc;
 
-   procedure hashCode (This : in out TsUtil; anyType : Java_Object_Access) is
-      Java_Result : constant Integer := TsUtil'Class (This).hashCode (anyType);
+   procedure hashCode (This : in out TsUtil; anyType_Param : access Java_Object'Class) is
+      Java_Result : constant Integer := TsUtil'Class (This).hashCode (anyType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end hashCode;
 
-   procedure getRecord (This : in out TsUtil; anyType : Java_Object_Access; recordId : Integer) is
-      Java_Result : constant Short_Short_Integer_Array_Access := TsUtil'Class (This).getRecord (anyType, recordId);
+   procedure getRecord (This : in out TsUtil; anyType_Param : access Java_Object'Class; recordId : Integer) is
+      Java_Result : constant Short_Short_Integer_Array_Access := TsUtil'Class (This).getRecord (anyType_Param, recordId);
       pragma Unreferenced (Java_Result);
    begin
       null;
@@ -129,8 +136,8 @@ package body org.allbinary.TsUtil_Package is
       null;
    end equalIgnoreCase;
 
-   procedure equalsNotstring (This : in out TsUtil; anyType : Java_Object_Access; object2 : Java_Object_Access) is
-      Java_Result : constant Boolean := TsUtil'Class (This).equalsNotstring (anyType, object2);
+   procedure equalsNotstring (This : in out TsUtil; anyType_Param : access Java_Object'Class; object2_Param : access Java_Object'Class) is
+      Java_Result : constant Boolean := TsUtil'Class (This).equalsNotstring (anyType_Param, object2_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
@@ -157,8 +164,8 @@ package body org.allbinary.TsUtil_Package is
       null;
    end getByteArray;
 
-   procedure isItemListener (This : in out TsUtil; owner : Java_Object_Access) is
-      Java_Result : constant Boolean := TsUtil'Class (This).isItemListener (owner);
+   procedure isItemListener (This : in out TsUtil; owner_Param : access Java_Object'Class) is
+      Java_Result : constant Boolean := TsUtil'Class (This).isItemListener (owner_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

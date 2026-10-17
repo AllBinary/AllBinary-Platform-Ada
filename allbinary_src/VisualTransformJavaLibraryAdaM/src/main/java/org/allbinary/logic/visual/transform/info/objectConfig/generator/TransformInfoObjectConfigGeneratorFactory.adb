@@ -41,14 +41,15 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.generator.Tr
    end Create;
 
    --  throws Exception
-   function getInstance (This : in out TransformInfoObjectConfigGeneratorFactory; transformInfoInterface : TransformInfoInterface_Access) return TransformInfoObjectConfigGenerator_Access is
+   function getInstance (This : in out TransformInfoObjectConfigGeneratorFactory; transformInfoInterface_Param : access TransformInfoInterface'Class) return TransformInfoObjectConfigGenerator_Access is
+      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
       type_Id : Unbounded_String;
       commonStrings : CommonStrings_Access;
    begin
         type_Id := Unbounded_String (transformInfoInterface.getObjectConfigInterface.getOutputTypeName);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.putF (To_Unbounded_String ("Generating Instance for type: ") & type_Id, This'Unchecked_Access, commonStrings.GET_INSTANCE);
+            This.logUtil.putF (To_Unbounded_String ("Generating Instance for type: ") & type_Id, TransformInfoObjectConfigGeneratorFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);
         end if;
         if (((type_Id) = (Null_Unbounded_String)) or else ((type_Id.compareTo (InputOutputTypeData_Package.getInstance.RESPONSE)) = (0))) or else (transformInfoInterface.isChild) then
             return BasicGenerator_Package.Create;
@@ -59,8 +60,8 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.generator.Tr
         end if;
    end getInstance;
 
-   procedure getInstance (This : in out TransformInfoObjectConfigGeneratorFactory; transformInfoInterface : TransformInfoInterface_Access) is
-      Java_Result : constant TransformInfoObjectConfigGenerator_Access := TransformInfoObjectConfigGeneratorFactory'Class (This).getInstance (transformInfoInterface);
+   procedure getInstance (This : in out TransformInfoObjectConfigGeneratorFactory; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+      Java_Result : constant TransformInfoObjectConfigGenerator_Access := TransformInfoObjectConfigGeneratorFactory'Class (This).getInstance (transformInfoInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

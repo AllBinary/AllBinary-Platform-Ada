@@ -36,7 +36,7 @@ package org.allbinary.init.NoLicense_Package is
 
    procedure Initialize (This : in out NoLicense'Class);
    function Create return NoLicense_Access;
-   procedure init (classLoader : ClassLoader_Access; pathString : Unbounded_String);
+   procedure init (classLoader_Param : access ClassLoader'Class; pathString : Unbounded_String);
 
 end org.allbinary.init.NoLicense_Package;
 

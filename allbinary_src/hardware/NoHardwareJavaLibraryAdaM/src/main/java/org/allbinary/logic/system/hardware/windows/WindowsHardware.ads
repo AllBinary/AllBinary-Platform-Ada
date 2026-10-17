@@ -90,10 +90,10 @@ package org.allbinary.logic.system.hardware.windows.WindowsHardware_Package is
    function getComponent (This : in out WindowsHardware; index : Integer) return HardwareComponentInterface_Access;
    procedure getComponent (This : in out WindowsHardware; index : Integer);
    function toString (This : in out WindowsHardware) return Unbounded_String;
-   function compareTo (This : in out WindowsHardware; hardwareInterface : HardwareInterface_Access) return Boolean;
-   procedure compareTo (This : in out WindowsHardware; hardwareInterface : HardwareInterface_Access);
-   function difference (This : in out WindowsHardware; hardwareInterface : HardwareInterface_Access) return ABHashtable_Access;
-   procedure difference (This : in out WindowsHardware; hardwareInterface : HardwareInterface_Access);
+   function compareTo (This : in out WindowsHardware; hardwareInterface_Param : access HardwareInterface'Class) return Boolean;
+   procedure compareTo (This : in out WindowsHardware; hardwareInterface_Param : access HardwareInterface'Class);
+   function difference (This : in out WindowsHardware; hardwareInterface_Param : access HardwareInterface'Class) return ABHashtable_Access;
+   procedure difference (This : in out WindowsHardware; hardwareInterface_Param : access HardwareInterface'Class);
 
 end org.allbinary.logic.system.hardware.windows.WindowsHardware_Package;
 

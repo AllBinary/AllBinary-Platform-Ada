@@ -39,7 +39,8 @@ package body org.allbinary.graphics.j2me.workarea.canvas.Grid_Package is
       return This;
    end Create;
 
-   procedure Initialize (This : in out Grid'Class; grid : Grid_Access) is
+   procedure Initialize (This : in out Grid'Class; grid_Param : access Grid'Class) is
+      grid : Grid_Access := Grid_Access (grid_Param);
    begin
       Initialize_Fields (This);
         This.grid := grid.grid;
@@ -48,10 +49,10 @@ package body org.allbinary.graphics.j2me.workarea.canvas.Grid_Package is
         This.setZoom (grid.getZoom);
    end Initialize;
 
-   function Create (grid : Grid_Access) return Grid_Access is
+   function Create (grid_Param : access Grid'Class) return Grid_Access is
       This : constant Grid_Access := new Grid;
    begin
-      Grid_Package.Initialize (This.all, grid);
+      Grid_Package.Initialize (This.all, grid_Param);
       return This;
    end Create;
 

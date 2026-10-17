@@ -52,7 +52,7 @@ package org.allbinary.logic.visual.dhtml.html.table.HtmlRow_Package is
 
    procedure Initialize (This : in out HtmlRow'Class; before : Unbounded_String; after : Unbounded_String);
    function Create (before : Unbounded_String; after : Unbounded_String) return HtmlRow_Access;
-   procedure addCell (This : in out HtmlRow; htmlCell : HtmlCell_Access);
+   procedure addCell (This : in out HtmlRow; htmlCell_Param : access HtmlCell'Class);
    function getNumberOfColumns (This : in out HtmlRow) return Integer;
    function toString (This : in out HtmlRow) return Unbounded_String;
 

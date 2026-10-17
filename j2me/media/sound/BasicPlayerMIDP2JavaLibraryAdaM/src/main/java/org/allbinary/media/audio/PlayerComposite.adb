@@ -26,26 +26,29 @@ package body org.allbinary.media.audio.PlayerComposite_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out PlayerComposite'Class; player : Player_Access; repeatTime : Integer) is
+   procedure Initialize (This : in out PlayerComposite'Class; player_Param : access Player'Class; repeatTime : Integer) is
+      player : Player_Access := Player_Access (player_Param);
    begin
       Initialize_Fields (This);
         This.player := player;
         This.timeElapsedHelper.delay_Id := repeatTime;
    end Initialize;
 
-   function Create (player : Player_Access; repeatTime : Integer) return PlayerComposite_Access is
+   function Create (player_Param : access Player'Class; repeatTime : Integer) return PlayerComposite_Access is
       This : constant PlayerComposite_Access := new PlayerComposite;
    begin
-      PlayerComposite_Package.Initialize (This.all, player, repeatTime);
+      PlayerComposite_Package.Initialize (This.all, player_Param, repeatTime);
       return This;
    end Create;
 
-   procedure addPlayerListener (This : in out PlayerComposite; playerListener : PlayerListener_Access) is
+   procedure addPlayerListener (This : in out PlayerComposite; playerListener_Param : access PlayerListener'Class) is
+      playerListener : PlayerListener_Access := PlayerListener_Access (playerListener_Param);
    begin
         This.player.addPlayerListener (playerListener);
    end addPlayerListener;
 
-   procedure removePlayerListener (This : in out PlayerComposite; playerListener : PlayerListener_Access) is
+   procedure removePlayerListener (This : in out PlayerComposite; playerListener_Param : access PlayerListener'Class) is
+      playerListener : PlayerListener_Access := PlayerListener_Access (playerListener_Param);
    begin
         This.player.removePlayerListener (playerListener);
    end removePlayerListener;
@@ -81,7 +84,8 @@ package body org.allbinary.media.audio.PlayerComposite_Package is
    end getTimeBase;
 
    --  throws MediaException
-   procedure setTimeBase (This : in out PlayerComposite; timeBase : TimeBase_Access) is
+   procedure setTimeBase (This : in out PlayerComposite; timeBase_Param : access TimeBase'Class) is
+      timeBase : TimeBase_Access := TimeBase_Access (timeBase_Param);
    begin
         (TimeBaseInterface_Access (This.player)).setTimeBase (timeBase);
    end setTimeBase;
@@ -95,7 +99,7 @@ package body org.allbinary.media.audio.PlayerComposite_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("prefetch"), e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, PlayerComposite_Access'(This'Unchecked_Access), To_Unbounded_String ("prefetch"), e);
                 end;
         end;
    end prefetch;
@@ -109,7 +113,7 @@ package body org.allbinary.media.audio.PlayerComposite_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("realize"), e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, PlayerComposite_Access'(This'Unchecked_Access), To_Unbounded_String ("realize"), e);
                 end;
         end;
    end realize;
@@ -133,7 +137,7 @@ package body org.allbinary.media.audio.PlayerComposite_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("setMediaTime"), e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, PlayerComposite_Access'(This'Unchecked_Access), To_Unbounded_String ("setMediaTime"), e);
             return Long_Long_Integer (-(1));
                 end;
         end;
@@ -150,7 +154,7 @@ package body org.allbinary.media.audio.PlayerComposite_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.START_METHOD_NAME, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, PlayerComposite_Access'(This'Unchecked_Access), This.commonStrings.START_METHOD_NAME, e);
                 end;
         end;
    end start;
@@ -164,7 +168,7 @@ package body org.allbinary.media.audio.PlayerComposite_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("stop"), e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, PlayerComposite_Access'(This'Unchecked_Access), To_Unbounded_String ("stop"), e);
                 end;
         end;
    end stop;

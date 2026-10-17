@@ -42,9 +42,9 @@ package org.allbinary.game.layer.TileLayerItem_Package is
       tiledLayer : AllBinaryTiledLayer_Access;
    end record;
 
-   procedure Initialize (This : in out TileLayerItem'Class; label : Unbounded_String; tiledLayer : AllBinaryTiledLayer_Access; layout : Integer; altText : Unbounded_String; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access);
-   function Create (label : Unbounded_String; tiledLayer : AllBinaryTiledLayer_Access; layout : Integer; altText : Unbounded_String; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return TileLayerItem_Access;
-   procedure setOwner (This : in out TileLayerItem; owner : Screen_Access);
+   procedure Initialize (This : in out TileLayerItem'Class; label : Unbounded_String; tiledLayer_Param : access AllBinaryTiledLayer'Class; layout : Integer; altText : Unbounded_String; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class);
+   function Create (label : Unbounded_String; tiledLayer_Param : access AllBinaryTiledLayer'Class; layout : Integer; altText : Unbounded_String; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return TileLayerItem_Access;
+   procedure setOwner (This : in out TileLayerItem; owner_Param : access Screen'Class);
    function getMinimumWidth (This : in out TileLayerItem) return Integer;
    function getMinimumHeight (This : in out TileLayerItem) return Integer;
    function getMinContentHeight (This : in out TileLayerItem) return Integer;
@@ -53,8 +53,8 @@ package org.allbinary.game.layer.TileLayerItem_Package is
    procedure getPrefContentHeight (This : in out TileLayerItem; width : Integer);
    function getPrefContentWidth (This : in out TileLayerItem; height : Integer) return Integer;
    procedure getPrefContentWidth (This : in out TileLayerItem; height : Integer);
-   procedure paintXY (This : in out TileLayerItem; graphics : Graphics_Access; x : Integer; y : Integer);
-   procedure paintUnselected (This : in out TileLayerItem; graphics : Graphics_Access; x : Integer; y : Integer);
+   procedure paintXY (This : in out TileLayerItem; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
+   procedure paintUnselected (This : in out TileLayerItem; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
 
 end org.allbinary.game.layer.TileLayerItem_Package;
 

@@ -35,7 +35,8 @@ package body org.allbinary.logic.visual.dhtml.style.css.CssElementsValidationFac
    end Create;
 
    --  throws Exception
-   function getInstance (cssElementStyleNodeList : BasicArrayList_Access) return BasicArrayList_Access is
+   function getInstance (cssElementStyleNodeList_Param : access BasicArrayList'Class) return BasicArrayList_Access is
+      cssElementStyleNodeList : BasicArrayList_Access := BasicArrayList_Access (cssElementStyleNodeList_Param);
       styles : BasicArrayList_Access;
       size : Integer;
       cssElementStyleNode : Node_Access;
@@ -54,22 +55,23 @@ package body org.allbinary.logic.visual.dhtml.style.css.CssElementsValidationFac
         return styles;
    end getInstance;
 
-   function getInstance (hashMap : HashMap_Access) return BasicArrayList_Access is
+   function getInstance (hashMap_Param : access HashMap'Class) return BasicArrayList_Access is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
       styles : BasicArrayList_Access;
    begin
         styles := BasicArrayListD_Package.Create;
         return styles;
    end getInstance;
 
-   procedure getInstance (cssElementStyleNodeList : BasicArrayList_Access) is
-      Java_Result : constant BasicArrayList_Access := getInstance (cssElementStyleNodeList);
+   procedure getInstance (cssElementStyleNodeList_Param : access BasicArrayList'Class) is
+      Java_Result : constant BasicArrayList_Access := getInstance (cssElementStyleNodeList_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
-   procedure getInstance (hashMap : HashMap_Access) is
-      Java_Result : constant BasicArrayList_Access := getInstance (hashMap);
+   procedure getInstance (hashMap_Param : access HashMap'Class) is
+      Java_Result : constant BasicArrayList_Access := getInstance (hashMap_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

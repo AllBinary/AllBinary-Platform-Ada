@@ -55,10 +55,10 @@ package views.generic_Id.payment.PaymentView_Package is
       logUtil : LogUtil_Access;
    end record;
 
-   procedure Initialize (This : in out PaymentView'Class; transformInfoInterface : TransformInfoInterface_Access);
-   function Create (transformInfoInterface : TransformInfoInterface_Access) return PaymentView_Access;
-   function toXmlNode (This : in out PaymentView; document : Document_Access) return Node_Access;
-   procedure toXmlNode (This : in out PaymentView; document : Document_Access);
+   procedure Initialize (This : in out PaymentView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return PaymentView_Access;
+   function toXmlNode (This : in out PaymentView; document_Param : access Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out PaymentView; document_Param : access Document'Class);
    procedure addDomNodeInterfaces (This : in out PaymentView);
    function view (This : in out PaymentView) return Unbounded_String;
 

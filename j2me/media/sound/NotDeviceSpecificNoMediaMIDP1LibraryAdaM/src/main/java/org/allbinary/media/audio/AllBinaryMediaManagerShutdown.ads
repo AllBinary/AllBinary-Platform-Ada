@@ -40,7 +40,7 @@ package org.allbinary.media.audio.AllBinaryMediaManagerShutdown_Package is
 
    procedure Initialize (This : in out AllBinaryMediaManagerShutdown'Class);
    function Create return AllBinaryMediaManagerShutdown_Access;
-   procedure shutdown (soundsFactoryInterface : SoundsFactoryInterface_Access);
+   procedure shutdown (soundsFactoryInterface_Param : access SoundsFactoryInterface'Class);
 
 end org.allbinary.media.audio.AllBinaryMediaManagerShutdown_Package;
 

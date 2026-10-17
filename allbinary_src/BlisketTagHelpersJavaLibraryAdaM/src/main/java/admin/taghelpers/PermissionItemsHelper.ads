@@ -45,8 +45,8 @@ package admin.taghelpers.PermissionItemsHelper_Package is
       portion : Portion_Access;
    end record;
 
-   procedure Initialize (This : in out PermissionItemsHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access);
-   function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return PermissionItemsHelper_Access;
+   procedure Initialize (This : in out PermissionItemsHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
+   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return PermissionItemsHelper_Access;
    function create (This : in out PermissionItemsHelper) return Unbounded_String;
    function drop (This : in out PermissionItemsHelper) return Unbounded_String;
    function restore (This : in out PermissionItemsHelper) return Unbounded_String;

@@ -45,7 +45,8 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationModuleBun
    end init;
 
    --  throws Exception
-   function getInputAutomationConfigurationModuleChangeListener (This : in out InputAutomationModuleBundleActivator; context : BundleContext_Access) return InputAutomationConfigurationModuleChangeListener_Access is
+   function getInputAutomationConfigurationModuleChangeListener (This : in out InputAutomationModuleBundleActivator; context_Param : access BundleContext'Class) return InputAutomationConfigurationModuleChangeListener_Access is
+      context : BundleContext_Access := BundleContext_Access (context_Param);
       serviceReference : ServiceReference_Access;
       inputAutomationConfigurationModuleChangeListener : InputAutomationConfigurationModuleChangeListener_Access;
    begin
@@ -57,18 +58,19 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationModuleBun
             end if;
             return inputAutomationConfigurationModuleChangeListener;
         else
-            This.logUtil.putF (To_Unbounded_String ("No ServiceReference: ") & InputAutomationConfigurationModuleChangeListener_Package.InputAutomationConfigurationModuleChangeListener'Tag.getName, This'Unchecked_Access, To_Unbounded_String ("addModules"));
+            This.logUtil.putF (To_Unbounded_String ("No ServiceReference: ") & InputAutomationConfigurationModuleChangeListener_Package.InputAutomationConfigurationModuleChangeListener'Tag.getName, InputAutomationModuleBundleActivator_Access'(This'Unchecked_Access), To_Unbounded_String ("addModules"));
             return null;
         end if;
    end getInputAutomationConfigurationModuleChangeListener;
 
-   procedure addModules (This : in out InputAutomationModuleBundleActivator; context : BundleContext_Access) is
+   procedure addModules (This : in out InputAutomationModuleBundleActivator; context_Param : access BundleContext'Class) is
+      context : BundleContext_Access := BundleContext_Access (context_Param);
       inputAutomationConfigurationModuleChangeListener : InputAutomationConfigurationModuleChangeListener_Access;
       inputAutomationConfigurationModuleChangeEvent : InputAutomationConfigurationModuleChangeEvent_Access;
       index : Integer;
    begin
         begin
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("addModules"));
+            This.logUtil.putF (This.commonStrings.START, InputAutomationModuleBundleActivator_Access'(This'Unchecked_Access), To_Unbounded_String ("addModules"));
             inputAutomationConfigurationModuleChangeListener := This.getInputAutomationConfigurationModuleChangeListener (context);
             if (inputAutomationConfigurationModuleChangeListener) /= (null) then
                 for index in 0 .. (This.getInputAutomationModuleInterface'Length) - 1 loop
@@ -81,24 +83,26 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationModuleBun
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.putF (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("addModules"));
+            This.logUtil.putF (This.commonStrings.EXCEPTION_Id, InputAutomationModuleBundleActivator_Access'(This'Unchecked_Access), To_Unbounded_String ("addModules"));
                 end;
         end;
    end addModules;
 
    --  throws Exception
-   procedure registerAsService (This : in out InputAutomationModuleBundleActivator; bundleContext : BundleContext_Access) is
+   procedure registerAsService (This : in out InputAutomationModuleBundleActivator; bundleContext_Param : access BundleContext'Class) is
+      bundleContext : BundleContext_Access := BundleContext_Access (bundleContext_Param);
    begin
         OSGIActivatorUtil_Package.registerAsService (bundleContext, This.getServiceFactory, InputAutomationModuleServiceInterface_Package.InputAutomationModuleServiceInterface'Tag.getName);
    end registerAsService;
 
-   procedure removeModules (This : in out InputAutomationModuleBundleActivator; context : BundleContext_Access) is
+   procedure removeModules (This : in out InputAutomationModuleBundleActivator; context_Param : access BundleContext'Class) is
+      context : BundleContext_Access := BundleContext_Access (context_Param);
       inputAutomationConfigurationModuleChangeListener : InputAutomationConfigurationModuleChangeListener_Access;
       inputAutomationConfigurationModuleChangeEvent : InputAutomationConfigurationModuleChangeEvent_Access;
       index : Integer;
    begin
         begin
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("removeModules"));
+            This.logUtil.putF (This.commonStrings.START, InputAutomationModuleBundleActivator_Access'(This'Unchecked_Access), To_Unbounded_String ("removeModules"));
             inputAutomationConfigurationModuleChangeListener := This.getInputAutomationConfigurationModuleChangeListener (context);
             if (inputAutomationConfigurationModuleChangeListener) /= (null) then
                 for index in 0 .. (This.getInputAutomationModuleInterface'Length) - 1 loop
@@ -111,23 +115,25 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationModuleBun
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.putF (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("removeModules"));
+            This.logUtil.putF (This.commonStrings.EXCEPTION_Id, InputAutomationModuleBundleActivator_Access'(This'Unchecked_Access), To_Unbounded_String ("removeModules"));
                 end;
         end;
    end removeModules;
 
    --  throws Exception
-   procedure start (This : in out InputAutomationModuleBundleActivator; context : BundleContext_Access) is
+   procedure start (This : in out InputAutomationModuleBundleActivator; context_Param : access BundleContext'Class) is
+      context : BundleContext_Access := BundleContext_Access (context_Param);
    begin
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.START);
+        This.logUtil.putF (This.commonStrings.START, InputAutomationModuleBundleActivator_Access'(This'Unchecked_Access), This.commonStrings.START);
         This.addModules (context);
         This.registerAsService (context);
    end start;
 
    --  throws Exception
-   procedure stop (This : in out InputAutomationModuleBundleActivator; context : BundleContext_Access) is
+   procedure stop (This : in out InputAutomationModuleBundleActivator; context_Param : access BundleContext'Class) is
+      context : BundleContext_Access := BundleContext_Access (context_Param);
    begin
-        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("stop"));
+        This.logUtil.putF (This.commonStrings.START, InputAutomationModuleBundleActivator_Access'(This'Unchecked_Access), To_Unbounded_String ("stop"));
         This.removeModules (context);
    end stop;
 
@@ -146,13 +152,14 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationModuleBun
         return This.serviceFactory;
    end getServiceFactory;
 
-   procedure setServiceFactory (This : in out InputAutomationModuleBundleActivator; serviceObject : ServiceFactory_Access) is
+   procedure setServiceFactory (This : in out InputAutomationModuleBundleActivator; serviceObject_Param : access ServiceFactory'Class) is
+      serviceObject : ServiceFactory_Access := ServiceFactory_Access (serviceObject_Param);
    begin
         This.serviceFactory := serviceObject;
    end setServiceFactory;
 
-   procedure getInputAutomationConfigurationModuleChangeListener (This : in out InputAutomationModuleBundleActivator; context : BundleContext_Access) is
-      Java_Result : constant InputAutomationConfigurationModuleChangeListener_Access := InputAutomationModuleBundleActivator'Class (This).getInputAutomationConfigurationModuleChangeListener (context);
+   procedure getInputAutomationConfigurationModuleChangeListener (This : in out InputAutomationModuleBundleActivator; context_Param : access BundleContext'Class) is
+      Java_Result : constant InputAutomationConfigurationModuleChangeListener_Access := InputAutomationModuleBundleActivator'Class (This).getInputAutomationConfigurationModuleChangeListener (context_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

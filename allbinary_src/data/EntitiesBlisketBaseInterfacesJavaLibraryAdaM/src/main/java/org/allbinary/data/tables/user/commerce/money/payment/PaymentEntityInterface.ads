@@ -40,9 +40,9 @@ package org.allbinary.data.tables.user.commerce.money.payment.PaymentEntityInter
    procedure setDefault (This : in out PaymentEntityInterface; userName : Unbounded_String; index : Integer) is abstract;
    function getDefault (This : in out PaymentEntityInterface; userName : Unbounded_String) return PaymentInterface_Access is abstract;
    function get (This : in out PaymentEntityInterface; userName : Unbounded_String) return BasicArrayList_Access is abstract;
-   procedure add (This : in out PaymentEntityInterface; userName : Unbounded_String; paymentInterface : PaymentInterface_Access) is abstract;
+   procedure add (This : in out PaymentEntityInterface; userName : Unbounded_String; paymentInterface_Param : access PaymentInterface'Class) is abstract;
    procedure remove (This : in out PaymentEntityInterface; userName : Unbounded_String; index : Integer) is abstract;
-   procedure insert (This : in out PaymentEntityInterface; values : BasicArrayList_Access) is abstract;
+   procedure insert (This : in out PaymentEntityInterface; values_Param : access BasicArrayList'Class) is abstract;
 
 end org.allbinary.data.tables.user.commerce.money.payment.PaymentEntityInterface_Package;
 

@@ -26,7 +26,11 @@ package body org.allbinary.logic.control.search.SearchRequest_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out SearchRequest'Class; storeFront : StoreFrontInterface_Access; searchParams : SearchParams_Access; xslFile : Unbounded_String; contentType : Unbounded_String; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) is
+   procedure Initialize (This : in out SearchRequest'Class; storeFront_Param : access StoreFrontInterface'Class; searchParams_Param : access SearchParams'Class; xslFile : Unbounded_String; contentType : Unbounded_String; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+      storeFront : StoreFrontInterface_Access := StoreFrontInterface_Access (storeFront_Param);
+      searchParams : SearchParams_Access := SearchParams_Access (searchParams_Param);
+      propertiesHashMap : HashMap_Access := HashMap_Access (propertiesHashMap_Param);
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
    begin
         AbContext_Package.Initialize (This, propertiesHashMap, pageContext);
         Initialize_Fields (This);
@@ -37,19 +41,21 @@ package body org.allbinary.logic.control.search.SearchRequest_Package is
         This.contentType := contentType;
    end Initialize;
 
-   function Create (storeFront : StoreFrontInterface_Access; searchParams : SearchParams_Access; xslFile : Unbounded_String; contentType : Unbounded_String; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return SearchRequest_Access is
+   function Create (storeFront_Param : access StoreFrontInterface'Class; searchParams_Param : access SearchParams'Class; xslFile : Unbounded_String; contentType : Unbounded_String; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return SearchRequest_Access is
       This : constant SearchRequest_Access := new SearchRequest;
    begin
-      SearchRequest_Package.Initialize (This.all, storeFront, searchParams, xslFile, contentType, propertiesHashMap, pageContext);
+      SearchRequest_Package.Initialize (This.all, storeFront_Param, searchParams_Param, xslFile, contentType, propertiesHashMap_Param, pageContext_Param);
       return This;
    end Create;
 
-   procedure setStoreFront (This : in out SearchRequest; storeFront : StoreFrontInterface_Access) is
+   procedure setStoreFront (This : in out SearchRequest; storeFront_Param : access StoreFrontInterface'Class) is
+      storeFront : StoreFrontInterface_Access := StoreFrontInterface_Access (storeFront_Param);
    begin
         This.storeFront := storeFront;
    end setStoreFront;
 
-   procedure setParams (This : in out SearchRequest; searchParams : SearchParams_Access) is
+   procedure setParams (This : in out SearchRequest; searchParams_Param : access SearchParams'Class) is
+      searchParams : SearchParams_Access := SearchParams_Access (searchParams_Param);
    begin
         This.searchParams := searchParams;
    end setParams;
@@ -95,13 +101,14 @@ package body org.allbinary.logic.control.search.SearchRequest_Package is
    end getContentType;
 
    --  throws Exception
-   function getFileBaseNameNode (This : in out SearchRequest; document : Document_Access) return Node_Access is
+   function getFileBaseNameNode (This : in out SearchRequest; document_Param : access Document'Class) return Node_Access is
+      document : Document_Access := Document_Access (document_Param);
    begin
         return ModDomHelper_Package.createNameValueNodes (document, SearchData_Package.FILENAME, This.getFileBaseName);
    end getFileBaseNameNode;
 
-   procedure getFileBaseNameNode (This : in out SearchRequest; document : Document_Access) is
-      Java_Result : constant Node_Access := SearchRequest'Class (This).getFileBaseNameNode (document);
+   procedure getFileBaseNameNode (This : in out SearchRequest; document_Param : access Document'Class) is
+      Java_Result : constant Node_Access := SearchRequest'Class (This).getFileBaseNameNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

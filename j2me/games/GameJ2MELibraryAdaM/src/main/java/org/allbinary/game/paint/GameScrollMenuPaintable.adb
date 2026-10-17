@@ -21,17 +21,21 @@ package body org.allbinary.game.paint.GameScrollMenuPaintable_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out GameScrollMenuPaintable'Class; mainDemoStatePaintable : Paintable_Access; ownershipPaintable : Paintable_Access; helpPaintableInterface : Paintable_Access; basicColor : BasicColor_Access) is
+   procedure Initialize (This : in out GameScrollMenuPaintable'Class; mainDemoStatePaintable_Param : access Paintable'Class; ownershipPaintable_Param : access Paintable'Class; helpPaintableInterface_Param : access Paintable'Class; basicColor_Param : access BasicColor'Class) is
+      mainDemoStatePaintable : Paintable_Access := Paintable_Access (mainDemoStatePaintable_Param);
+      ownershipPaintable : Paintable_Access := Paintable_Access (ownershipPaintable_Param);
+      helpPaintableInterface : Paintable_Access := Paintable_Access (helpPaintableInterface_Param);
+      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         BasicGameDemoPaintable_Package.Initialize (This, mainDemoStatePaintable, ownershipPaintable, helpPaintableInterface);
         This.setColor (basicColor);
-        ColorChangeEventHandler_Package.getInstance.addListenerInterface (This'Unchecked_Access);
+        ColorChangeEventHandler_Package.getInstance.addListenerInterface (GameScrollMenuPaintable_Access'(This'Unchecked_Access));
    end Initialize;
 
-   function Create (mainDemoStatePaintable : Paintable_Access; ownershipPaintable : Paintable_Access; helpPaintableInterface : Paintable_Access; basicColor : BasicColor_Access) return GameScrollMenuPaintable_Access is
+   function Create (mainDemoStatePaintable_Param : access Paintable'Class; ownershipPaintable_Param : access Paintable'Class; helpPaintableInterface_Param : access Paintable'Class; basicColor_Param : access BasicColor'Class) return GameScrollMenuPaintable_Access is
       This : constant GameScrollMenuPaintable_Access := new GameScrollMenuPaintable;
    begin
-      GameScrollMenuPaintable_Package.Initialize (This.all, mainDemoStatePaintable, ownershipPaintable, helpPaintableInterface, basicColor);
+      GameScrollMenuPaintable_Package.Initialize (This.all, mainDemoStatePaintable_Param, ownershipPaintable_Param, helpPaintableInterface_Param, basicColor_Param);
       return This;
    end Create;
 
@@ -40,12 +44,14 @@ package body org.allbinary.game.paint.GameScrollMenuPaintable_Package is
         This.setCurrentStatePaintable (This.getMainDemoStatePaintable);
    end setState;
 
-   procedure onEvent (This : in out GameScrollMenuPaintable; eventObject : AllBinaryEventObject_Access) is
+   procedure onEvent (This : in out GameScrollMenuPaintable; eventObject_Param : access AllBinaryEventObject'Class) is
+      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
    begin
         null;
    end onEvent;
 
-   procedure setColor (This : in out GameScrollMenuPaintable; basicColor : BasicColor_Access) is
+   procedure setColor (This : in out GameScrollMenuPaintable; basicColor_Param : access BasicColor'Class) is
+      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
       mainGameDemoStatePaintable : MainGameDemoStatePaintable_Access;
       formPaintable : FormPaintable_Access;
       scrollSelectionForm : ScrollSelectionForm_Access;

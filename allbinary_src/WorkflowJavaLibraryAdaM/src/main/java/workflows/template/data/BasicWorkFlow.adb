@@ -27,21 +27,23 @@ package body workflows.template.data.BasicWorkFlow_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BasicWorkFlow'Class; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) is
+   procedure Initialize (This : in out BasicWorkFlow'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+      propertiesHashMap : HashMap_Access := HashMap_Access (propertiesHashMap_Param);
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
    begin
       Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.WORKFLOW) then
-            This.logUtil.putF (To_Unbounded_String ("Properties: ") & propertiesHashMap.toString, This'Unchecked_Access, To_Unbounded_String ("BasicWorkFlow()"));
+            This.logUtil.putF (To_Unbounded_String ("Properties: ") & propertiesHashMap.toString, BasicWorkFlow_Access'(This'Unchecked_Access), To_Unbounded_String ("BasicWorkFlow()"));
         end if;
         This.propertiesHashMap := propertiesHashMap;
         This.pageContext := pageContext;
         This.validationDomNodeInterface := ValidationComponentInterface_Access (TransformFactory_Package.getInstance.getInstance (This.abeClientInformation, propertiesHashMap, pageContext));
    end Initialize;
 
-   function Create (propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return BasicWorkFlow_Access is
+   function Create (propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return BasicWorkFlow_Access is
       This : constant BasicWorkFlow_Access := new BasicWorkFlow;
    begin
-      BasicWorkFlow_Package.Initialize (This.all, propertiesHashMap, pageContext);
+      BasicWorkFlow_Package.Initialize (This.all, propertiesHashMap_Param, pageContext_Param);
       return This;
    end Create;
 
@@ -65,7 +67,7 @@ package body workflows.template.data.BasicWorkFlow_Package is
    function process (This : in out BasicWorkFlow) return Integer is
    begin
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.WORKFLOW) then
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.PROCESS);
+            This.logUtil.putF (This.commonStrings.START, BasicWorkFlow_Access'(This'Unchecked_Access), This.commonStrings.PROCESS);
         end if;
         if This.validationDomNodeInterface.isValid.booleanValue then
             This.pageContext.getOut.print (This.validationDomNodeInterface.view);

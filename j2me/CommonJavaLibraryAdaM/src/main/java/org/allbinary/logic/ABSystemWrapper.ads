@@ -37,7 +37,7 @@ package org.allbinary.logic.ABSystemWrapper_Package is
    procedure Initialize (This : in out ABSystemWrapper'Class);
    function Create return ABSystemWrapper_Access;
    function getInstance return ABSystemWrapper_Access;
-   procedure arraycopy (This : in out ABSystemWrapper; src : Java_Object_Access; srcPos : Integer; dest : Java_Object_Access; destPos : Integer; length : Integer);
+   procedure arraycopy (This : in out ABSystemWrapper; src_Param : access Java_Object'Class; srcPos : Integer; dest_Param : access Java_Object'Class; destPos : Integer; length : Integer);
    function currentTimeMillis (This : in out ABSystemWrapper) return Long_Long_Integer;
 
 end org.allbinary.logic.ABSystemWrapper_Package;

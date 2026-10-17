@@ -38,7 +38,7 @@ package body org.allbinary.game.combat.weapon.WeaponProperties_Package is
         if (((speed) < (This.MAX)) and then ((speed) /= (0))) and then (not (WeaponProperties_Package.messageSent)) then
             MESSAGE := To_Unbounded_String ("Danger Danger Danger: Speed probably to slow if using 1 degree calculations as velocity for a single axis could be below 1024: ");
             commonStrings := CommonStrings_Package.getInstance;
-            PreLogUtil_Package.put (StringMaker_Package.Create.append (MESSAGE).appendlong (speed).toString, This'Unchecked_Access, commonStrings.CONSTRUCTOR);
+            PreLogUtil_Package.put (StringMaker_Package.Create.append (MESSAGE).appendlong (speed).toString, WeaponProperties_Access'(This'Unchecked_Access), commonStrings.CONSTRUCTOR);
             WeaponProperties_Package.messageSent := True;
         end if;
         This.setReloadTime (reloadTime);
@@ -86,7 +86,8 @@ package body org.allbinary.game.combat.weapon.WeaponProperties_Package is
         return This.speed;
    end getSpeed;
 
-   procedure setSpeed (This : in out WeaponProperties; speed : BasicDecimal_Access) is
+   procedure setSpeed (This : in out WeaponProperties; speed_Param : access BasicDecimal'Class) is
+      speed : BasicDecimal_Access := BasicDecimal_Access (speed_Param);
    begin
         This.speed := speed;
    end setSpeed;

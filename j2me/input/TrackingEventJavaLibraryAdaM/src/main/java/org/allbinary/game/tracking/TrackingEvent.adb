@@ -22,7 +22,8 @@ package body org.allbinary.game.tracking.TrackingEvent_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out TrackingEvent'Class; allBinaryLayerInterface : Java_Object_Access) is
+   procedure Initialize (This : in out TrackingEvent'Class; allBinaryLayerInterface_Param : access Java_Object'Class) is
+      allBinaryLayerInterface : Java_Object_Access := Java_Object_Access (allBinaryLayerInterface_Param);
    begin
         AllBinaryEventObject_Package.Initialize (This, allBinaryLayerInterface);
         Initialize_Fields (This);
@@ -31,14 +32,15 @@ package body org.allbinary.game.tracking.TrackingEvent_Package is
         end if;
    end Initialize;
 
-   function Create (allBinaryLayerInterface : Java_Object_Access) return TrackingEvent_Access is
+   function Create (allBinaryLayerInterface_Param : access Java_Object'Class) return TrackingEvent_Access is
       This : constant TrackingEvent_Access := new TrackingEvent;
    begin
-      TrackingEvent_Package.Initialize (This.all, allBinaryLayerInterface);
+      TrackingEvent_Package.Initialize (This.all, allBinaryLayerInterface_Param);
       return This;
    end Create;
 
-   procedure init (This : in out TrackingEvent; anyType : Java_Object_Access) is
+   procedure init (This : in out TrackingEvent; anyType_Param : access Java_Object'Class) is
+      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         This.setSource (anyType);
    end init;
@@ -48,12 +50,14 @@ package body org.allbinary.game.tracking.TrackingEvent_Package is
         return This.layerInterface;
    end getLayerInterface;
 
-   procedure setLayerInterface (This : in out TrackingEvent; layerInterface : AllBinaryLayer_Access) is
+   procedure setLayerInterface (This : in out TrackingEvent; layerInterface_Param : access AllBinaryLayer'Class) is
+      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
    begin
         This.layerInterface := layerInterface;
    end setLayerInterface;
 
-   procedure setLayerInterfaceForCircularStaticPool (This : in out TrackingEvent; layerInterface : AllBinaryLayer_Access) is
+   procedure setLayerInterfaceForCircularStaticPool (This : in out TrackingEvent; layerInterface_Param : access AllBinaryLayer'Class) is
+      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
    begin
         This.layerInterface := layerInterface;
    end setLayerInterfaceForCircularStaticPool;

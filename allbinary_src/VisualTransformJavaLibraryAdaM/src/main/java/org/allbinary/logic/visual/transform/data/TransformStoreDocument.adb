@@ -22,7 +22,9 @@ package body org.allbinary.logic.visual.transform.data.TransformStoreDocument_Pa
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out TransformStoreDocument'Class; pageContext : PageContext_Access; weblisketSession : WeblisketSession_Access) is
+   procedure Initialize (This : in out TransformStoreDocument'Class; pageContext_Param : access PageContext'Class; weblisketSession_Param : access WeblisketSession'Class) is
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
+      weblisketSession : WeblisketSession_Access := WeblisketSession_Access (weblisketSession_Param);
       storeName : Unbounded_String;
    begin
         TransformHttpRequestDocument_Package.Initialize (This, pageContext, weblisketSession);
@@ -30,7 +32,7 @@ package body org.allbinary.logic.visual.transform.data.TransformStoreDocument_Pa
         begin
             storeName := weblisketSession.getStoreName;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
-                This.logUtil.putF (To_Unbounded_String ("Using Session StoreName: ") & storeName, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+                This.logUtil.putF (To_Unbounded_String ("Using Session StoreName: ") & storeName, TransformStoreDocument_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
             end if;
             This.getBaseNode.appendChild (StoreFrontViewFactory_Package.getInstance (storeName).toXmlNode (This.getDoc));
             This.getBaseNode.appendChild (RequestParams_Package.Create (HttpServletRequest_Access (pageContext.getRequest)).toXmlNode (This.getDoc));
@@ -40,21 +42,22 @@ package body org.allbinary.logic.visual.transform.data.TransformStoreDocument_Pa
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR, e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, TransformStoreDocument_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR, e);
             end if;
             Java_Throw (e);
                 end;
         end;
    end Initialize;
 
-   function Create (pageContext : PageContext_Access; weblisketSession : WeblisketSession_Access) return TransformStoreDocument_Access is
+   function Create (pageContext_Param : access PageContext'Class; weblisketSession_Param : access WeblisketSession'Class) return TransformStoreDocument_Access is
       This : constant TransformStoreDocument_Access := new TransformStoreDocument;
    begin
-      TransformStoreDocument_Package.Initialize (This.all, pageContext, weblisketSession);
+      TransformStoreDocument_Package.Initialize (This.all, pageContext_Param, weblisketSession_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out TransformStoreDocument'Class; searchRequest : SearchRequest_Access) is
+   procedure Initialize (This : in out TransformStoreDocument'Class; searchRequest_Param : access SearchRequest'Class) is
+      searchRequest : SearchRequest_Access := SearchRequest_Access (searchRequest_Param);
    begin
         TransformHttpRequestDocument_Package.Initialize (This, searchRequest);
         Initialize_Fields (This);
@@ -67,17 +70,17 @@ package body org.allbinary.logic.visual.transform.data.TransformStoreDocument_Pa
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR, e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, TransformStoreDocument_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR, e);
             end if;
             Java_Throw (e);
                 end;
         end;
    end Initialize;
 
-   function Create (searchRequest : SearchRequest_Access) return TransformStoreDocument_Access is
+   function Create (searchRequest_Param : access SearchRequest'Class) return TransformStoreDocument_Access is
       This : constant TransformStoreDocument_Access := new TransformStoreDocument;
    begin
-      TransformStoreDocument_Package.Initialize (This.all, searchRequest);
+      TransformStoreDocument_Package.Initialize (This.all, searchRequest_Param);
       return This;
    end Create;
 

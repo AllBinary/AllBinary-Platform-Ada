@@ -25,7 +25,8 @@ package body org.allbinary.physics.movement.XYOscillateVelocityMovement_Package 
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out XYOscillateVelocityMovement'Class; speedBasicDecimal : BasicDecimal_Access; oscillateMin : Integer; oscillateMax : Integer) is
+   procedure Initialize (This : in out XYOscillateVelocityMovement'Class; speedBasicDecimal_Param : access BasicDecimal'Class; oscillateMin : Integer; oscillateMax : Integer) is
+      speedBasicDecimal : BasicDecimal_Access := BasicDecimal_Access (speedBasicDecimal_Param);
    begin
         BasicConstantVelocityMovement_Package.Initialize (This, speedBasicDecimal, VelocityProperties_Package.Create (Integer (speedBasicDecimal.getUnscaled), Integer (speedBasicDecimal.getUnscaled)));
         Initialize_Fields (This);
@@ -33,15 +34,16 @@ package body org.allbinary.physics.movement.XYOscillateVelocityMovement_Package 
         This.oscillateMax := oscillateMax;
    end Initialize;
 
-   function Create (speedBasicDecimal : BasicDecimal_Access; oscillateMin : Integer; oscillateMax : Integer) return XYOscillateVelocityMovement_Access is
+   function Create (speedBasicDecimal_Param : access BasicDecimal'Class; oscillateMin : Integer; oscillateMax : Integer) return XYOscillateVelocityMovement_Access is
       This : constant XYOscillateVelocityMovement_Access := new XYOscillateVelocityMovement;
    begin
-      XYOscillateVelocityMovement_Package.Initialize (This.all, speedBasicDecimal, oscillateMin, oscillateMax);
+      XYOscillateVelocityMovement_Package.Initialize (This.all, speedBasicDecimal_Param, oscillateMin, oscillateMax);
       return This;
    end Create;
 
    --  throws Exception
-   procedure process (This : in out XYOscillateVelocityMovement; layer : AllBinaryGameLayer_Access) is
+   procedure process (This : in out XYOscillateVelocityMovement; layer_Param : access AllBinaryGameLayer'Class) is
+      layer : AllBinaryGameLayer_Access := AllBinaryGameLayer_Access (layer_Param);
    begin
         BasicConstantVelocityMovement (This).process (layer);
         if (This.oscillate) < (This.oscillateMin) then

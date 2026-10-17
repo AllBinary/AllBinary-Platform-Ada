@@ -25,24 +25,31 @@ package body org.allbinary.media.graphics.geography.map.BasicGeographicMap_Packa
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BasicGeographicMap'Class; id : Integer; name : Unbounded_String; cellTypeIdToGeographicMapCellType : Integer_Array_Access; tiledLayer : AllBinaryTiledLayer_Access; foregroundBasicColor : BasicColor_Access; backgroundBasicColor : BasicColor_Access; geographicMapCellPositionFactoryInterface : GeographicMapCellPositionFactoryInterface_Access; geographicMapCellPositionBaseFactory : GeographicMapCellPositionBaseFactory_Access; geographicMapCellTypeFactory : GeographicMapCellTypeFactory_Access) is
+   procedure Initialize (This : in out BasicGeographicMap'Class; id : Integer; name : Unbounded_String; cellTypeIdToGeographicMapCellType : Integer_Array_Access; tiledLayer_Param : access AllBinaryTiledLayer'Class; foregroundBasicColor_Param : access BasicColor'Class; backgroundBasicColor_Param : access BasicColor'Class; geographicMapCellPositionFactoryInterface_Param : access GeographicMapCellPositionFactoryInterface'Class; geographicMapCellPositionBaseFactory_Param : access GeographicMapCellPositionBaseFactory'Class; geographicMapCellTypeFactory_Param : access GeographicMapCellTypeFactory'Class) is
+      tiledLayer : AllBinaryTiledLayer_Access := AllBinaryTiledLayer_Access (tiledLayer_Param);
+      foregroundBasicColor : BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
+      backgroundBasicColor : BasicColor_Access := BasicColor_Access (backgroundBasicColor_Param);
+      geographicMapCellPositionFactoryInterface : GeographicMapCellPositionFactoryInterface_Access := GeographicMapCellPositionFactoryInterface_Access (geographicMapCellPositionFactoryInterface_Param);
+      geographicMapCellPositionBaseFactory : GeographicMapCellPositionBaseFactory_Access := GeographicMapCellPositionBaseFactory_Access (geographicMapCellPositionBaseFactory_Param);
+      geographicMapCellTypeFactory : GeographicMapCellTypeFactory_Access := GeographicMapCellTypeFactory_Access (geographicMapCellTypeFactory_Param);
    begin
         SimpleGeographicMap_Package.Initialize (This, id, name, cellTypeIdToGeographicMapCellType, tiledLayer, foregroundBasicColor, backgroundBasicColor);
         Initialize_Fields (This);
         This.geographicMapCellPositionFactoryInterface := geographicMapCellPositionFactoryInterface;
-        This.geographicMapCellPositionFactory := geographicMapCellPositionBaseFactory.getInstance (This'Unchecked_Access);
+        This.geographicMapCellPositionFactory := geographicMapCellPositionBaseFactory.getInstance (BasicGeographicMap_Access'(This'Unchecked_Access));
         This.geographicMapCellTypeFactory := geographicMapCellTypeFactory;
    end Initialize;
 
-   function Create (id : Integer; name : Unbounded_String; cellTypeIdToGeographicMapCellType : Integer_Array_Access; tiledLayer : AllBinaryTiledLayer_Access; foregroundBasicColor : BasicColor_Access; backgroundBasicColor : BasicColor_Access; geographicMapCellPositionFactoryInterface : GeographicMapCellPositionFactoryInterface_Access; geographicMapCellPositionBaseFactory : GeographicMapCellPositionBaseFactory_Access; geographicMapCellTypeFactory : GeographicMapCellTypeFactory_Access) return BasicGeographicMap_Access is
+   function Create (id : Integer; name : Unbounded_String; cellTypeIdToGeographicMapCellType : Integer_Array_Access; tiledLayer_Param : access AllBinaryTiledLayer'Class; foregroundBasicColor_Param : access BasicColor'Class; backgroundBasicColor_Param : access BasicColor'Class; geographicMapCellPositionFactoryInterface_Param : access GeographicMapCellPositionFactoryInterface'Class; geographicMapCellPositionBaseFactory_Param : access GeographicMapCellPositionBaseFactory'Class; geographicMapCellTypeFactory_Param : access GeographicMapCellTypeFactory'Class) return BasicGeographicMap_Access is
       This : constant BasicGeographicMap_Access := new BasicGeographicMap;
    begin
-      BasicGeographicMap_Package.Initialize (This.all, id, name, cellTypeIdToGeographicMapCellType, tiledLayer, foregroundBasicColor, backgroundBasicColor, geographicMapCellPositionFactoryInterface, geographicMapCellPositionBaseFactory, geographicMapCellTypeFactory);
+      BasicGeographicMap_Package.Initialize (This.all, id, name, cellTypeIdToGeographicMapCellType, tiledLayer_Param, foregroundBasicColor_Param, backgroundBasicColor_Param, geographicMapCellPositionFactoryInterface_Param, geographicMapCellPositionBaseFactory_Param, geographicMapCellTypeFactory_Param);
       return This;
    end Create;
 
    --  throws Exception
-   function getCellPosition (This : in out BasicGeographicMap; direction : Integer; oldGeographicMapCellPosition : GeographicMapCellPosition_Access) return GeographicMapCellPosition_Access is
+   function getCellPosition (This : in out BasicGeographicMap; direction : Integer; oldGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return GeographicMapCellPosition_Access is
+      oldGeographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (oldGeographicMapCellPosition_Param);
    begin
         case direction is
             when 0 =>
@@ -59,7 +66,8 @@ package body org.allbinary.media.graphics.geography.map.BasicGeographicMap_Packa
    end getCellPosition;
 
    --  throws Exception
-   function getCellPositionNoThrow (This : in out BasicGeographicMap; direction : Integer; oldGeographicMapCellPosition : GeographicMapCellPosition_Access) return GeographicMapCellPosition_Access is
+   function getCellPositionNoThrow (This : in out BasicGeographicMap; direction : Integer; oldGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return GeographicMapCellPosition_Access is
+      oldGeographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (oldGeographicMapCellPosition_Param);
    begin
         case direction is
             when 0 =>
@@ -92,7 +100,9 @@ package body org.allbinary.media.graphics.geography.map.BasicGeographicMap_Packa
    end getCellPositionNoThrow;
 
    --  throws Exception
-   function isOfFourDirections (This : in out BasicGeographicMap; oldGeographicMapCellPosition : GeographicMapCellPosition_Access; newGeographicMapCellPosition : GeographicMapCellPosition_Access) return Boolean is
+   function isOfFourDirections (This : in out BasicGeographicMap; oldGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class; newGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return Boolean is
+      oldGeographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (oldGeographicMapCellPosition_Param);
+      newGeographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (newGeographicMapCellPosition_Param);
       index : Integer;
    begin
         for index in 0 .. (4) - 1 loop
@@ -140,7 +150,8 @@ package body org.allbinary.media.graphics.geography.map.BasicGeographicMap_Packa
    end getCellPositionAtXYNoThrow;
 
    --  throws Exception
-   function isOnMap (This : in out BasicGeographicMap; geographicMapCellPosition : GeographicMapCellPosition_Access) return Boolean is
+   function isOnMap (This : in out BasicGeographicMap; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return Boolean is
+      geographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
       allBinaryTiledLayer : AllBinaryTiledLayer_Access;
       i_column : Integer;
       i_row : Integer;
@@ -156,7 +167,8 @@ package body org.allbinary.media.graphics.geography.map.BasicGeographicMap_Packa
    end isOnMap;
 
    --  throws Exception
-   function getCellPositionAtNoThrow (This : in out BasicGeographicMap; x : Integer; y : Integer; x2 : Integer; y2 : Integer; geographicMapCellPositionList : BasicArrayList_Access) return BasicArrayList_Access is
+   function getCellPositionAtNoThrow (This : in out BasicGeographicMap; x : Integer; y : Integer; x2 : Integer; y2 : Integer; geographicMapCellPositionList_Param : access BasicArrayList'Class) return BasicArrayList_Access is
+      geographicMapCellPositionList : BasicArrayList_Access := BasicArrayList_Access (geographicMapCellPositionList_Param);
       allBinaryTiledLayer : AllBinaryTiledLayer_Access;
       i_columnMin : Integer;
       i_rowMin : Integer;
@@ -182,7 +194,8 @@ package body org.allbinary.media.graphics.geography.map.BasicGeographicMap_Packa
    end getCellPositionAtNoThrow;
 
    --  throws Exception
-   function getCellPositionsAt (This : in out BasicGeographicMap; layer : Layer_Access; currentCellPositionArray : GeographicMapCellPosition_Access_Array_Access_Array_Access; cellPositionArray : GeographicMapCellPosition_Access_Array_Access_Array_Access) return Boolean is
+   function getCellPositionsAt (This : in out BasicGeographicMap; layer_Param : access Layer'Class; currentCellPositionArray : GeographicMapCellPosition_Access_Array_Access_Array_Access; cellPositionArray : GeographicMapCellPosition_Access_Array_Access_Array_Access) return Boolean is
+      layer : Layer_Access := Layer_Access (layer_Param);
       hasChanged : Boolean;
       size : Integer;
       size2 : Integer;
@@ -234,22 +247,22 @@ package body org.allbinary.media.graphics.geography.map.BasicGeographicMap_Packa
         return This.geographicMapCellTypeFactory;
    end getGeographicMapCellTypeFactory;
 
-   procedure getCellPosition (This : in out BasicGeographicMap; direction : Integer; oldGeographicMapCellPosition : GeographicMapCellPosition_Access) is
-      Java_Result : constant GeographicMapCellPosition_Access := BasicGeographicMap'Class (This).getCellPosition (direction, oldGeographicMapCellPosition);
+   procedure getCellPosition (This : in out BasicGeographicMap; direction : Integer; oldGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is
+      Java_Result : constant GeographicMapCellPosition_Access := BasicGeographicMap'Class (This).getCellPosition (direction, oldGeographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getCellPosition;
 
-   procedure getCellPositionNoThrow (This : in out BasicGeographicMap; direction : Integer; oldGeographicMapCellPosition : GeographicMapCellPosition_Access) is
-      Java_Result : constant GeographicMapCellPosition_Access := BasicGeographicMap'Class (This).getCellPositionNoThrow (direction, oldGeographicMapCellPosition);
+   procedure getCellPositionNoThrow (This : in out BasicGeographicMap; direction : Integer; oldGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is
+      Java_Result : constant GeographicMapCellPosition_Access := BasicGeographicMap'Class (This).getCellPositionNoThrow (direction, oldGeographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getCellPositionNoThrow;
 
-   procedure isOfFourDirections (This : in out BasicGeographicMap; oldGeographicMapCellPosition : GeographicMapCellPosition_Access; newGeographicMapCellPosition : GeographicMapCellPosition_Access) is
-      Java_Result : constant Boolean := BasicGeographicMap'Class (This).isOfFourDirections (oldGeographicMapCellPosition, newGeographicMapCellPosition);
+   procedure isOfFourDirections (This : in out BasicGeographicMap; oldGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class; newGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is
+      Java_Result : constant Boolean := BasicGeographicMap'Class (This).isOfFourDirections (oldGeographicMapCellPosition_Param, newGeographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
@@ -269,22 +282,22 @@ package body org.allbinary.media.graphics.geography.map.BasicGeographicMap_Packa
       null;
    end getCellPositionAtXYNoThrow;
 
-   procedure isOnMap (This : in out BasicGeographicMap; geographicMapCellPosition : GeographicMapCellPosition_Access) is
-      Java_Result : constant Boolean := BasicGeographicMap'Class (This).isOnMap (geographicMapCellPosition);
+   procedure isOnMap (This : in out BasicGeographicMap; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is
+      Java_Result : constant Boolean := BasicGeographicMap'Class (This).isOnMap (geographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isOnMap;
 
-   procedure getCellPositionAtNoThrow (This : in out BasicGeographicMap; x : Integer; y : Integer; x2 : Integer; y2 : Integer; geographicMapCellPositionList : BasicArrayList_Access) is
-      Java_Result : constant BasicArrayList_Access := BasicGeographicMap'Class (This).getCellPositionAtNoThrow (x, y, x2, y2, geographicMapCellPositionList);
+   procedure getCellPositionAtNoThrow (This : in out BasicGeographicMap; x : Integer; y : Integer; x2 : Integer; y2 : Integer; geographicMapCellPositionList_Param : access BasicArrayList'Class) is
+      Java_Result : constant BasicArrayList_Access := BasicGeographicMap'Class (This).getCellPositionAtNoThrow (x, y, x2, y2, geographicMapCellPositionList_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getCellPositionAtNoThrow;
 
-   procedure getCellPositionsAt (This : in out BasicGeographicMap; layer : Layer_Access; currentCellPositionArray : GeographicMapCellPosition_Access_Array_Access_Array_Access; cellPositionArray : GeographicMapCellPosition_Access_Array_Access_Array_Access) is
-      Java_Result : constant Boolean := BasicGeographicMap'Class (This).getCellPositionsAt (layer, currentCellPositionArray, cellPositionArray);
+   procedure getCellPositionsAt (This : in out BasicGeographicMap; layer_Param : access Layer'Class; currentCellPositionArray : GeographicMapCellPosition_Access_Array_Access_Array_Access; cellPositionArray : GeographicMapCellPosition_Access_Array_Access_Array_Access) is
+      Java_Result : constant Boolean := BasicGeographicMap'Class (This).getCellPositionsAt (layer_Param, currentCellPositionArray, cellPositionArray);
       pragma Unreferenced (Java_Result);
    begin
       null;

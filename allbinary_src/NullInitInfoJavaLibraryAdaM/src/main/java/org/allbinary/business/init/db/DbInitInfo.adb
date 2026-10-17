@@ -37,7 +37,7 @@ package body org.allbinary.business.init.db.DbInitInfo_Package is
       url : Unbounded_String;
    begin
         url := DbConnectionInfo (This).getUrl;
-        PreLogUtil_Package.put (To_Unbounded_String ("Url: ") & url, This'Unchecked_Access, To_Unbounded_String ("getUrl"));
+        PreLogUtil_Package.put (To_Unbounded_String ("Url: ") & url, DbInitInfo_Access'(This'Unchecked_Access), To_Unbounded_String ("getUrl"));
         return url;
    end getUrl;
 

@@ -24,8 +24,8 @@ package org.allbinary.game.collision.Collision2DProcessor_Package is
 
    procedure Initialize (This : in out Collision2DProcessor'Class);
    function Create return Collision2DProcessor_Access;
-   function isCollision (This : in out Collision2DProcessor; myLayer : AllBinaryLayer_Access; myLayer2 : AllBinaryLayer_Access) return Boolean;
-   procedure isCollision (This : in out Collision2DProcessor; myLayer : AllBinaryLayer_Access; myLayer2 : AllBinaryLayer_Access);
+   function isCollision (This : in out Collision2DProcessor; myLayer_Param : access AllBinaryLayer'Class; myLayer2_Param : access AllBinaryLayer'Class) return Boolean;
+   procedure isCollision (This : in out Collision2DProcessor; myLayer_Param : access AllBinaryLayer'Class; myLayer2_Param : access AllBinaryLayer'Class);
 
 end org.allbinary.game.collision.Collision2DProcessor_Package;
 

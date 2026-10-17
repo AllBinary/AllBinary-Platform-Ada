@@ -75,19 +75,21 @@ package body org.allbinary.logic.io.file.SimpleFileUtil_Package is
 --     --  throws IOException
 --     function append (This : in out ; c : Character) return Writer_Access is
 --     begin
---                  return This'Unchecked_Access;
+--                  return SimpleFileUtil_Access'(This'Unchecked_Access);
 --     end append;
 --              
 --     --  throws IOException
---     function append (This : in out ; csq : CharSequence_Access) return Writer_Access is
+--     function append (This : in out ; csq_Param : access CharSequence'Class) return Writer_Access is
+--        csq : CharSequence_Access := CharSequence_Access (csq_Param);
 --     begin
---                  return This'Unchecked_Access;
+--                  return SimpleFileUtil_Access'(This'Unchecked_Access);
 --     end append;
 --              
 --     --  throws IOException
---     function append (This : in out ; csq : CharSequence_Access; start : Integer; end_Id : Integer) return Writer_Access is
+--     function append (This : in out ; csq_Param : access CharSequence'Class; start : Integer; end_Id : Integer) return Writer_Access is
+--        csq : CharSequence_Access := CharSequence_Access (csq_Param);
 --     begin
---                  return This'Unchecked_Access;
+--                  return SimpleFileUtil_Access'(This'Unchecked_Access);
 --     end append;
 --              
 --     --  throws IOException
@@ -145,7 +147,8 @@ package body org.allbinary.logic.io.file.SimpleFileUtil_Package is
 --     end read;
 --              
 --     --  throws IOException
---     function read (This : in out ; target : CharBuffer_Access) return Integer is
+--     function read (This : in out ; target_Param : access CharBuffer'Class) return Integer is
+--        target : CharBuffer_Access := CharBuffer_Access (target_Param);
 --     begin
 --                  return -(1);
 --     end read;
@@ -169,12 +172,14 @@ package body org.allbinary.logic.io.file.SimpleFileUtil_Package is
 ;
    end nullReader;
 
-   function loadFileAsList (This : in out SimpleFileUtil; inputStream : InputStream_Access; max : Integer; byteArray1 : Short_Short_Integer_Array_Access) return BasicArrayList_Access is
+   function loadFileAsList (This : in out SimpleFileUtil; inputStream_Param : access InputStream'Class; max : Integer; byteArray1 : Short_Short_Integer_Array_Access) return BasicArrayList_Access is
+      inputStream : InputStream_Access := InputStream_Access (inputStream_Param);
    begin
         return This.loadFileAsListReturnLine (inputStream, max, byteArray1, 0);
    end loadFileAsList;
 
-   function loadFileAsListReturnLine (This : in out SimpleFileUtil; inputStream : InputStream_Access; max : Integer; byteArray1 : Short_Short_Integer_Array_Access; includeReturnLine : Integer) return BasicArrayList_Access is
+   function loadFileAsListReturnLine (This : in out SimpleFileUtil; inputStream_Param : access InputStream'Class; max : Integer; byteArray1 : Short_Short_Integer_Array_Access; includeReturnLine : Integer) return BasicArrayList_Access is
+      inputStream : InputStream_Access := InputStream_Access (inputStream_Param);
       stringList : BasicArrayList_Access;
       byteArray : Short_Short_Integer_Array_Access;
       outputStream2 : ByteArrayOutputStream_Access;
@@ -199,7 +204,7 @@ package body org.allbinary.logic.io.file.SimpleFileUtil_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             This.streamUtil.close (inputStream);
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.ADD, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, SimpleFileUtil_Access'(This'Unchecked_Access), This.commonStrings.ADD, e);
                 end;
         end;
         if (byteArray) = (null) then
@@ -241,15 +246,15 @@ package body org.allbinary.logic.io.file.SimpleFileUtil_Package is
         return stringMaker.toString;
    end createStringFromArrayOfStrings;
 
-   procedure loadFileAsList (This : in out SimpleFileUtil; inputStream : InputStream_Access; max : Integer; byteArray1 : Short_Short_Integer_Array_Access) is
-      Java_Result : constant BasicArrayList_Access := SimpleFileUtil'Class (This).loadFileAsList (inputStream, max, byteArray1);
+   procedure loadFileAsList (This : in out SimpleFileUtil; inputStream_Param : access InputStream'Class; max : Integer; byteArray1 : Short_Short_Integer_Array_Access) is
+      Java_Result : constant BasicArrayList_Access := SimpleFileUtil'Class (This).loadFileAsList (inputStream_Param, max, byteArray1);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end loadFileAsList;
 
-   procedure loadFileAsListReturnLine (This : in out SimpleFileUtil; inputStream : InputStream_Access; max : Integer; byteArray1 : Short_Short_Integer_Array_Access; includeReturnLine : Integer) is
-      Java_Result : constant BasicArrayList_Access := SimpleFileUtil'Class (This).loadFileAsListReturnLine (inputStream, max, byteArray1, includeReturnLine);
+   procedure loadFileAsListReturnLine (This : in out SimpleFileUtil; inputStream_Param : access InputStream'Class; max : Integer; byteArray1 : Short_Short_Integer_Array_Access; includeReturnLine : Integer) is
+      Java_Result : constant BasicArrayList_Access := SimpleFileUtil'Class (This).loadFileAsListReturnLine (inputStream_Param, max, byteArray1, includeReturnLine);
       pragma Unreferenced (Java_Result);
    begin
       null;

@@ -22,22 +22,26 @@ package body org.allbinary.graphics.form.PaintableForm_Package is
         return PaintableForm_Access (PaintableForm_Package.NULL_PAINTABLE_FORM);
    end getNullPaintableForm;
 
-   procedure Initialize (This : in out PaintableForm'Class; title : Unbounded_String; items : ABCustomItem_Access_Array_Access; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) is
+   procedure Initialize (This : in out PaintableForm'Class; title : Unbounded_String; items : ABCustomItem_Access_Array_Access; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) is
+      backgroundBasicColor : BasicColor_Access := BasicColor_Access (backgroundBasicColor_Param);
+      foregroundBasicColor : BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
    begin
         ABCustomForm_Package.Initialize (This, title, items, backgroundBasicColor, foregroundBasicColor);
         Initialize_Fields (This);
         This.setSelectedIndex (0);
    end Initialize;
 
-   function Create (title : Unbounded_String; items : ABCustomItem_Access_Array_Access; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return PaintableForm_Access is
+   function Create (title : Unbounded_String; items : ABCustomItem_Access_Array_Access; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return PaintableForm_Access is
       This : constant PaintableForm_Access := new PaintableForm;
    begin
-      PaintableForm_Package.Initialize (This.all, title, items, backgroundBasicColor, foregroundBasicColor);
+      PaintableForm_Package.Initialize (This.all, title, items, backgroundBasicColor_Param, foregroundBasicColor_Param);
       return This;
    end Create;
 
    --  throws Exception
-   procedure init (This : in out PaintableForm; rectangle : Rectangle_Access; formType : FormType_Access) is
+   procedure init (This : in out PaintableForm; rectangle_Param : access Rectangle'Class; formType_Param : access FormType'Class) is
+      rectangle : Rectangle_Access := Rectangle_Access (rectangle_Param);
+      formType : FormType_Access := FormType_Access (formType_Param);
       point : GPoint_Access;
    begin
         This.rectangle := rectangle;

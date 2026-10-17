@@ -33,7 +33,7 @@ package body org.allbinary.configuration.ApplicationConfiguration_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.CONSTRUCTOR, e);
+            This.logUtil.put (commonStrings.EXCEPTION_Id, ApplicationConfiguration_Access'(This'Unchecked_Access), commonStrings.CONSTRUCTOR, e);
                 end;
         end;
    end Initialize;
@@ -51,7 +51,7 @@ package body org.allbinary.configuration.ApplicationConfiguration_Package is
         This.setFullscreen (True);
         This.setProgressBarView (False);
         This.setShowTitleBar (False);
-        This.logUtil.putF (To_Unbounded_String ("Read Configuration: ") & This.toString, This'Unchecked_Access, To_Unbounded_String ("read"));
+        This.logUtil.putF (To_Unbounded_String ("Read Configuration: ") & This.toString, ApplicationConfiguration_Access'(This'Unchecked_Access), To_Unbounded_String ("read"));
    end read;
 
    --  throws Exception
@@ -61,7 +61,8 @@ package body org.allbinary.configuration.ApplicationConfiguration_Package is
    end write;
 
    --  throws Exception
-   procedure update (This : in out ApplicationConfiguration; gameFeature : Feature_Access) is
+   procedure update (This : in out ApplicationConfiguration; gameFeature_Param : access Feature'Class) is
+      gameFeature : Feature_Access := Feature_Access (gameFeature_Param);
       features : Features_Access;
    begin
         if (gameFeature) = (MainFeatureFactory_Package.getInstance.FULL_SCREEN) then

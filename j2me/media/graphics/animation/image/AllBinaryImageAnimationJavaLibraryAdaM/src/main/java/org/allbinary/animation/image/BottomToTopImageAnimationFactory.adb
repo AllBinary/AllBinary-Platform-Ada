@@ -21,15 +21,17 @@ package body org.allbinary.animation.image.BottomToTopImageAnimationFactory_Pack
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BottomToTopImageAnimationFactory'Class; image : Image_Access; animationBehaviorFactory : AnimationBehaviorFactory_Access) is
+   procedure Initialize (This : in out BottomToTopImageAnimationFactory'Class; image_Param : access Image'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) is
+      image : Image_Access := Image_Access (image_Param);
+      animationBehaviorFactory : AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
    begin
         BaseImageAnimationFactory_Package.Initialize (This, image, PrimitiveIntUtil_Package.getArrayInstance, image.getWidth, image.getHeight, 0, 0, animationBehaviorFactory);
    end Initialize;
 
-   function Create (image : Image_Access; animationBehaviorFactory : AnimationBehaviorFactory_Access) return BottomToTopImageAnimationFactory_Access is
+   function Create (image_Param : access Image'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return BottomToTopImageAnimationFactory_Access is
       This : constant BottomToTopImageAnimationFactory_Access := new BottomToTopImageAnimationFactory;
    begin
-      BottomToTopImageAnimationFactory_Package.Initialize (This.all, image, animationBehaviorFactory);
+      BottomToTopImageAnimationFactory_Package.Initialize (This.all, image_Param, animationBehaviorFactory_Param);
       return This;
    end Create;
 

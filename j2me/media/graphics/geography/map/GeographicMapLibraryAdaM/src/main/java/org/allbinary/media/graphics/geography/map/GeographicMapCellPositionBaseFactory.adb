@@ -34,13 +34,14 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellPositio
 
 
    --  throws Exception
-   function getInstance (This : in out GeographicMapCellPositionBaseFactory; geographicMapInterface : BasicGeographicMap_Access) return BasicGeographicMapCellPositionFactory_Access is
+   function getInstance (This : in out GeographicMapCellPositionBaseFactory; geographicMapInterface_Param : access BasicGeographicMap'Class) return BasicGeographicMapCellPositionFactory_Access is
+      geographicMapInterface : BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
    begin
         return BasicGeographicMapCellPositionFactory_Package.Create (geographicMapInterface);
    end getInstance;
 
-   procedure getInstance (This : in out GeographicMapCellPositionBaseFactory; geographicMapInterface : BasicGeographicMap_Access) is
-      Java_Result : constant BasicGeographicMapCellPositionFactory_Access := GeographicMapCellPositionBaseFactory'Class (This).getInstance (geographicMapInterface);
+   procedure getInstance (This : in out GeographicMapCellPositionBaseFactory; geographicMapInterface_Param : access BasicGeographicMap'Class) is
+      Java_Result : constant BasicGeographicMapCellPositionFactory_Access := GeographicMapCellPositionBaseFactory'Class (This).getInstance (geographicMapInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

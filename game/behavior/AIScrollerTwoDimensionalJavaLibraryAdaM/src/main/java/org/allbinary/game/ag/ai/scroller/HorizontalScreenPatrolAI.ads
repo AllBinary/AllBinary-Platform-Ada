@@ -68,9 +68,9 @@ package org.allbinary.game.ag.ai.scroller.HorizontalScreenPatrolAI_Package is
    end record;
    SOUND : Integer;
 
-   procedure Initialize (This : in out HorizontalScreenPatrolAI'Class; hashtable : ABHashtable_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access);
-   function Create (hashtable : ABHashtable_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return HorizontalScreenPatrolAI_Access;
-   procedure processAI (This : in out HorizontalScreenPatrolAI; allBinaryLayerManager : AllBinaryLayerManager_Access);
+   procedure Initialize (This : in out HorizontalScreenPatrolAI'Class; hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class);
+   function Create (hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return HorizontalScreenPatrolAI_Access;
+   procedure processAI (This : in out HorizontalScreenPatrolAI; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class);
    procedure nextDirection (This : in out HorizontalScreenPatrolAI);
 
 end org.allbinary.game.ag.ai.scroller.HorizontalScreenPatrolAI_Package;

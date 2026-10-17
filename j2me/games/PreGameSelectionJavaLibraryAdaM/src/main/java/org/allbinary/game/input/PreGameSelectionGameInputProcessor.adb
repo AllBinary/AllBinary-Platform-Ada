@@ -45,7 +45,7 @@ package body org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package
 --                  This.setRunning (False);
 --                  logUtil := LogUtil_Package.getInstance;
 --                  commonStrings := CommonStrings_Package.getInstance;
---                  logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.RUN, e);
+--                  logUtil.put (commonStrings.EXCEPTION_Id, PreGameSelectionGameInputProcessor_Access'(This'Unchecked_Access), commonStrings.RUN, e);
 --                      end;
 --              end;
 --     end run;
@@ -53,21 +53,24 @@ package body org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out PreGameSelectionGameInputProcessor'Class; gameCanvas : AllBinaryGameCanvas_Access; preGameSelectorPaintable : PreGameSelectorPaintable_Access; nextGameState : GameState_Access; lockedIndex : Integer) is
+   procedure Initialize (This : in out PreGameSelectionGameInputProcessor'Class; gameCanvas_Param : access AllBinaryGameCanvas'Class; preGameSelectorPaintable_Param : access PreGameSelectorPaintable'Class; nextGameState_Param : access GameState'Class; lockedIndex : Integer) is
+      gameCanvas : AllBinaryGameCanvas_Access := AllBinaryGameCanvas_Access (gameCanvas_Param);
+      preGameSelectorPaintable : PreGameSelectorPaintable_Access := PreGameSelectorPaintable_Access (preGameSelectorPaintable_Param);
+      nextGameState : GameState_Access := GameState_Access (nextGameState_Param);
    begin
       Processor_Package.Initialize (This);
       Initialize_Fields (This);
         This.gameCanvas := gameCanvas;
         This.preGameSelectorPaintable := preGameSelectorPaintable;
         This.nextGameState := nextGameState;
-        This.playerGameInput := GameInputProcessorComposite_Package.Create (To_Unbounded_String ("Pre Game Selection"), This'Unchecked_Access);
+        This.playerGameInput := GameInputProcessorComposite_Package.Create (To_Unbounded_String ("Pre Game Selection"), PreGameSelectionGameInputProcessor_Access'(This'Unchecked_Access));
         This.lockedIndex := lockedIndex;
    end Initialize;
 
-   function Create (gameCanvas : AllBinaryGameCanvas_Access; preGameSelectorPaintable : PreGameSelectorPaintable_Access; nextGameState : GameState_Access; lockedIndex : Integer) return PreGameSelectionGameInputProcessor_Access is
+   function Create (gameCanvas_Param : access AllBinaryGameCanvas'Class; preGameSelectorPaintable_Param : access PreGameSelectorPaintable'Class; nextGameState_Param : access GameState'Class; lockedIndex : Integer) return PreGameSelectionGameInputProcessor_Access is
       This : constant PreGameSelectionGameInputProcessor_Access := new PreGameSelectionGameInputProcessor;
    begin
-      PreGameSelectionGameInputProcessor_Package.Initialize (This.all, gameCanvas, preGameSelectorPaintable, nextGameState, lockedIndex);
+      PreGameSelectionGameInputProcessor_Package.Initialize (This.all, gameCanvas_Param, preGameSelectorPaintable_Param, nextGameState_Param, lockedIndex);
       return This;
    end Create;
 
@@ -78,7 +81,8 @@ package body org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package
    end process;
 
    --  throws Exception
-   procedure onInput (This : in out PreGameSelectionGameInputProcessor; list : BasicArrayList_Access) is
+   procedure onInput (This : in out PreGameSelectionGameInputProcessor; list_Param : access BasicArrayList'Class) is
+      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
       size : Integer;
       anyType : Java_Object_Access;
       key : Integer;
@@ -117,7 +121,8 @@ package body org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package
    end getPreGameSelectorPaintable;
 
    --  throws Exception
-   procedure processInput (This : in out PreGameSelectionGameInputProcessor; layerManager : AllBinaryLayerManager_Access) is
+   procedure processInput (This : in out PreGameSelectionGameInputProcessor; layerManager_Param : access AllBinaryLayerManager'Class) is
+      layerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
    begin
         null;
    end processInput;

@@ -34,22 +34,27 @@ package body org.allbinary.layer.LayerManagerLoggingBase_Package is
 
 
    --  throws Exception
-   procedure append (This : in out LayerManagerLoggingBase; layerInterface : AllBinaryLayer_Access) is
+   procedure append (This : in out LayerManagerLoggingBase; layerInterface_Param : access AllBinaryLayer'Class) is
+      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
    begin
         null;
    end append;
 
-   procedure appendAt (This : in out LayerManagerLoggingBase; layerInterface : AllBinaryLayer_Access; index : Integer) is
+   procedure appendAt (This : in out LayerManagerLoggingBase; layerInterface_Param : access AllBinaryLayer'Class; index : Integer) is
+      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
    begin
         null;
    end appendAt;
 
-   procedure remove (This : in out LayerManagerLoggingBase; layerInterface : AllBinaryLayer_Access) is
+   procedure remove (This : in out LayerManagerLoggingBase; layerInterface_Param : access AllBinaryLayer'Class) is
+      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
    begin
         null;
    end remove;
 
-   procedure removeResult (This : in out LayerManagerLoggingBase; layerManager : LayerManager_Access; layerInterface : AllBinaryLayer_Access; result : Boolean) is
+   procedure removeResult (This : in out LayerManagerLoggingBase; layerManager_Param : access LayerManager'Class; layerInterface_Param : access AllBinaryLayer'Class; result : Boolean) is
+      layerManager : LayerManager_Access := LayerManager_Access (layerManager_Param);
+      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
    begin
         null;
    end removeResult;

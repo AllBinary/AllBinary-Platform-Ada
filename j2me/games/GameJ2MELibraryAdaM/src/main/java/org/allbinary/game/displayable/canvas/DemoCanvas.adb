@@ -61,14 +61,20 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out DemoCanvas'Class; abeClientInformation : AbeClientInformationInterface_Access; commandListener : CommandListener_Access; highScoresFactoryInterface : HighScoresFactoryInterface_Access; paintable : Paintable_Access; overlayPaintable : InitUpdatePaintable_Access; gameInitializationInterfaceFactoryInterface : BasicBuildGameInitializerFactory_Access; isContinue : Boolean) is
+   procedure Initialize (This : in out DemoCanvas'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; commandListener_Param : access CommandListener'Class; highScoresFactoryInterface_Param : access HighScoresFactoryInterface'Class; paintable_Param : access Paintable'Class; overlayPaintable_Param : access InitUpdatePaintable'Class; gameInitializationInterfaceFactoryInterface_Param : access BasicBuildGameInitializerFactory'Class; isContinue : Boolean) is
+      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      commandListener : CommandListener_Access := CommandListener_Access (commandListener_Param);
+      highScoresFactoryInterface : HighScoresFactoryInterface_Access := HighScoresFactoryInterface_Access (highScoresFactoryInterface_Param);
+      paintable : Paintable_Access := Paintable_Access (paintable_Param);
+      overlayPaintable : InitUpdatePaintable_Access := InitUpdatePaintable_Access (overlayPaintable_Param);
+      gameInitializationInterfaceFactoryInterface : BasicBuildGameInitializerFactory_Access := BasicBuildGameInitializerFactory_Access (gameInitializationInterfaceFactoryInterface_Param);
    begin
         RunnableCanvas_Package.Initialize (This, commandListener, CurrentDisplayableFactory_Package.getInstance.DEFAULT_CHILD_NAME_LIST, True);
         Initialize_Fields (This);
         This.abeClientInformation := abeClientInformation;
         This.setWait (NullWaitGameRunnable_Package.getInstance.WAIT);
         This.gameInitializationInterfaceFactoryInterface := gameInitializationInterfaceFactoryInterface;
-        GameInitializationUtil_Package.getInstance.initDemo (abeClientInformation, This'Unchecked_Access, gameInitializationInterfaceFactoryInterface);
+        GameInitializationUtil_Package.getInstance.initDemo (abeClientInformation, DemoCanvas_Access'(This'Unchecked_Access), gameInitializationInterfaceFactoryInterface);
         ResizableListenerHandler_Package.getInstance.fireEvent (False);
         This.overlayPaintable := overlayPaintable;
         This.highScoresFactoryInterface := highScoresFactoryInterface;
@@ -80,29 +86,31 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
         if ChangedGameFeatureListener_Package.getInstance.isChangedFeature (GameFeatureFactory_Package.getInstance.SOUND) then
             This.mediaInit;
         end if;
-        This.demoGameRunnable := DemoGameStartupRunnable_Package.Create (This'Unchecked_Access);
-        DisplayChangeEventHandler_Package.getInstance.addListenerInterface (This'Unchecked_Access);
+        This.demoGameRunnable := DemoGameStartupRunnable_Package.Create (DemoCanvas_Access'(This'Unchecked_Access));
+        DisplayChangeEventHandler_Package.getInstance.addListenerInterface (DemoCanvas_Access'(This'Unchecked_Access));
    end Initialize;
 
-   function Create (abeClientInformation : AbeClientInformationInterface_Access; commandListener : CommandListener_Access; highScoresFactoryInterface : HighScoresFactoryInterface_Access; paintable : Paintable_Access; overlayPaintable : InitUpdatePaintable_Access; gameInitializationInterfaceFactoryInterface : BasicBuildGameInitializerFactory_Access; isContinue : Boolean) return DemoCanvas_Access is
+   function Create (abeClientInformation_Param : access AbeClientInformationInterface'Class; commandListener_Param : access CommandListener'Class; highScoresFactoryInterface_Param : access HighScoresFactoryInterface'Class; paintable_Param : access Paintable'Class; overlayPaintable_Param : access InitUpdatePaintable'Class; gameInitializationInterfaceFactoryInterface_Param : access BasicBuildGameInitializerFactory'Class; isContinue : Boolean) return DemoCanvas_Access is
       This : constant DemoCanvas_Access := new DemoCanvas;
    begin
-      DemoCanvas_Package.Initialize (This.all, abeClientInformation, commandListener, highScoresFactoryInterface, paintable, overlayPaintable, gameInitializationInterfaceFactoryInterface, isContinue);
+      DemoCanvas_Package.Initialize (This.all, abeClientInformation_Param, commandListener_Param, highScoresFactoryInterface_Param, paintable_Param, overlayPaintable_Param, gameInitializationInterfaceFactoryInterface_Param, isContinue);
       return This;
    end Create;
 
-   procedure onEvent (This : in out DemoCanvas; eventObject : AllBinaryEventObject_Access) is
+   procedure onEvent (This : in out DemoCanvas; eventObject_Param : access AllBinaryEventObject'Class) is
+      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
    begin
-        ForcedLogUtil_Package.log (EventStrings_Package.getInstance.PERFORMANCE_MESSAGE, This'Unchecked_Access);
+        ForcedLogUtil_Package.log (EventStrings_Package.getInstance.PERFORMANCE_MESSAGE, DemoCanvas_Access'(This'Unchecked_Access));
    end onEvent;
 
-   procedure onDisplayChangeEvent (This : in out DemoCanvas; displayChangeEvent : DisplayChangeEvent_Access) is
+   procedure onDisplayChangeEvent (This : in out DemoCanvas; displayChangeEvent_Param : access DisplayChangeEvent'Class) is
+      displayChangeEvent : DisplayChangeEvent_Access := DisplayChangeEvent_Access (displayChangeEvent_Param);
       scrollSelectionForm : ScrollSelectionForm_Access;
       formType : FormType_Access;
       rectangle : Rectangle_Access;
    begin
         begin
-            This.logUtil.putF (StringMaker_Package.Create.append (This.commonLabels.START_LABEL).append (This.displayInfo.toString).toString, This'Unchecked_Access, This.canvasStrings.ON_DISPLAY_CHANGE_EVENT);
+            This.logUtil.putF (StringMaker_Package.Create.append (This.commonLabels.START_LABEL).append (This.displayInfo.toString).toString, DemoCanvas_Access'(This'Unchecked_Access), This.canvasStrings.ON_DISPLAY_CHANGE_EVENT);
             scrollSelectionForm := This.getMenuForm;
             if (scrollSelectionForm) /= (null) then
                 formType := FormTypeFactory_Package.getInstance.getFormType;
@@ -115,7 +123,7 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.canvasStrings.ON_DISPLAY_CHANGE_EVENT, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, DemoCanvas_Access'(This'Unchecked_Access), This.canvasStrings.ON_DISPLAY_CHANGE_EVENT, e);
                 end;
         end;
    end onDisplayChangeEvent;
@@ -166,7 +174,8 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
         end if;
    end getCustomCommands;
 
-   procedure initCommands (This : in out DemoCanvas; cmdListener : CommandListener_Access) is
+   procedure initCommands (This : in out DemoCanvas; cmdListener_Param : access CommandListener'Class) is
+      cmdListener : CommandListener_Access := CommandListener_Access (cmdListener_Param);
       commandArray : Java_Object_Access_Array_Access;
       size : Integer;
       index : Integer;
@@ -177,7 +186,7 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
         for index in 0 .. (size) - 1 loop
             This.addCommand (Command_Access (commandArray (index)));
         end loop;
-        CustomGameMenuUtil_Package.add (This'Unchecked_Access);
+        CustomGameMenuUtil_Package.add (DemoCanvas_Access'(This'Unchecked_Access));
         This.setCommandListener (cmdListener);
    end initCommands;
 
@@ -193,9 +202,10 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
         AllBinaryMediaManager_Package.init (EarlySoundsFactory_Package.getInstance);
    end mediaInit;
 
-   procedure itemStateChanged (This : in out DemoCanvas; item : Item_Access) is
+   procedure itemStateChanged (This : in out DemoCanvas; item_Param : access Item'Class) is
+      item : Item_Access := Item_Access (item_Param);
    begin
-        ForcedLogUtil_Package.log (This.commonStrings.NOT_IMPLEMENTED, This'Unchecked_Access);
+        ForcedLogUtil_Package.log (This.commonStrings.NOT_IMPLEMENTED, DemoCanvas_Access'(This'Unchecked_Access));
    end itemStateChanged;
 
    --  throws Exception
@@ -213,14 +223,14 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
         items := commandTextItemArrayFactory.getInstance (This.getCommandStack, This.basicColorFactory.BLACK, This.basicColorFactory.WHITE);
         formType := FormTypeFactory_Package.getInstance.getFormType;
         rectangle := This.formUtil.createFormRectangle;
-        PreLogUtil_Package.put (StringMaker_Package.Create.append (This.commonLabels.START_LABEL).append (This.displayInfo.toString).toString, This'Unchecked_Access, To_Unbounded_String ("initMenu"));
+        PreLogUtil_Package.put (StringMaker_Package.Create.append (This.commonLabels.START_LABEL).append (This.displayInfo.toString).toString, DemoCanvas_Access'(This'Unchecked_Access), To_Unbounded_String ("initMenu"));
         scrollSelectionForm := CommandCurrentSelectionFormFactory_Package.getInstance (StringUtil_Package.getInstance.EMPTY_STRING, items, rectangle, formType, 15, True, This.basicColorFactory.BLACK, This.basicColorFactory.WHITE);
         This.setMenuForm (scrollSelectionForm);
         formType2 := FormTypeFactory_Package.getInstance.getFormType;
         rectangle2 := This.formUtil.createFormRectangle;
         scrollSelectionForm.init (rectangle2, formType2);
         if (This.getMenuForm) /= (ScrollSelectionFormNoneFactory_Package.getInstance) then
-            This.setMenuInputProcessor (CommandFormInputProcessor_Package.Create (BasicArrayListD_Package.Create, -(1), This'Unchecked_Access, This.getMenuForm));
+            This.setMenuInputProcessor (CommandFormInputProcessor_Package.Create (BasicArrayListD_Package.Create, -(1), DemoCanvas_Access'(This'Unchecked_Access), This.getMenuForm));
         end if;
         This.open;
    end initMenu;
@@ -279,14 +289,14 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
       gameKeyEvent : GameKeyEvent_Access;
    begin
         begin
-            gameKey := This.inputToGameKeyMapping.getInstanceForCanvas (This'Unchecked_Access, keyCode);
+            gameKey := This.inputToGameKeyMapping.getInstanceForCanvas (DemoCanvas_Access'(This'Unchecked_Access), keyCode);
             if (gameKey) /= (This.NONE) then
-                gameKeyEvent := This.gameKeyEventFactory.getInstanceForInput (This'Unchecked_Access, gameKey);
+                gameKeyEvent := This.gameKeyEventFactory.getInstanceForInput (DemoCanvas_Access'(This'Unchecked_Access), gameKey);
                 DownGameKeyEventHandler_Package.getInstance.fireEvent (gameKeyEvent);
             else
                 if (This.lastKeyNotMapped) /= (keyCode) then
                     This.lastKeyNotMapped := keyCode;
-                    This.logUtil.putF (StringMaker_Package.Create.append (This.gameInputStrings.NO_KEY).appendint (keyCode).toString, This'Unchecked_Access, This.gameInputStrings.ADD_KEY_EVENT);
+                    This.logUtil.putF (StringMaker_Package.Create.append (This.gameInputStrings.NO_KEY).appendint (keyCode).toString, DemoCanvas_Access'(This'Unchecked_Access), This.gameInputStrings.ADD_KEY_EVENT);
                 end if;
             end if;
         exception
@@ -294,7 +304,7 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (To_Unbounded_String ("Key Event Error"), This'Unchecked_Access, This.gameInputStrings.ADD_KEY_EVENT, e);
+            This.logUtil.put (To_Unbounded_String ("Key Event Error"), DemoCanvas_Access'(This'Unchecked_Access), This.gameInputStrings.ADD_KEY_EVENT, e);
                 end;
         end;
    end addGameKeyEvent;
@@ -304,19 +314,19 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
       gameKeyEvent : GameKeyEvent_Access;
    begin
         begin
-            gameKey := This.inputToGameKeyMapping.getInstanceForCanvas (This'Unchecked_Access, keyCode);
+            gameKey := This.inputToGameKeyMapping.getInstanceForCanvas (DemoCanvas_Access'(This'Unchecked_Access), keyCode);
             if (gameKey) /= (This.NONE) then
-                gameKeyEvent := This.gameKeyEventFactory.getInstanceForInput (This'Unchecked_Access, gameKey);
+                gameKeyEvent := This.gameKeyEventFactory.getInstanceForInput (DemoCanvas_Access'(This'Unchecked_Access), gameKey);
                 UpGameKeyEventHandler_Package.getInstance.fireEvent (gameKeyEvent);
             else
-                This.logUtil.putF (StringMaker_Package.Create.append (This.gameInputStrings.NO_KEY).appendint (keyCode).toString, This'Unchecked_Access, This.gameInputStrings.REMOVE_KEY_EVENT);
+                This.logUtil.putF (StringMaker_Package.Create.append (This.gameInputStrings.NO_KEY).appendint (keyCode).toString, DemoCanvas_Access'(This'Unchecked_Access), This.gameInputStrings.REMOVE_KEY_EVENT);
             end if;
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (To_Unbounded_String ("Key Event Error"), This'Unchecked_Access, This.gameInputStrings.REMOVE_KEY_EVENT, e);
+            This.logUtil.put (To_Unbounded_String ("Key Event Error"), DemoCanvas_Access'(This'Unchecked_Access), This.gameInputStrings.REMOVE_KEY_EVENT, e);
                 end;
         end;
    end removeGameKeyEvent;
@@ -348,27 +358,28 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
 
    function isGameOver (This : in out DemoCanvas) return Boolean is
    begin
-        This.logUtil.putF (StringMaker_Package.Create.append (This.commonStrings.NOT_IMPLEMENTED).append (To_Unbounded_String (" since not a game")).toString, This'Unchecked_Access, To_Unbounded_String ("isGameOver"));
+        This.logUtil.putF (StringMaker_Package.Create.append (This.commonStrings.NOT_IMPLEMENTED).append (To_Unbounded_String (" since not a game")).toString, DemoCanvas_Access'(This'Unchecked_Access), To_Unbounded_String ("isGameOver"));
         return False;
    end isGameOver;
 
    --  throws Exception
-   procedure setLoadStateHashtable (This : in out DemoCanvas; hashtable : ABHashtable_Access) is
+   procedure setLoadStateHashtable (This : in out DemoCanvas; hashtable_Param : access ABHashtable'Class) is
+      hashtable : ABHashtable_Access := ABHashtable_Access (hashtable_Param);
    begin
-        This.logUtil.putF (To_Unbounded_String ("Trying to continue a demo lol - only continue a game canvas not the demo"), This'Unchecked_Access, To_Unbounded_String ("setLoadStateHashtable"));
+        This.logUtil.putF (To_Unbounded_String ("Trying to continue a demo lol - only continue a game canvas not the demo"), DemoCanvas_Access'(This'Unchecked_Access), To_Unbounded_String ("setLoadStateHashtable"));
    end setLoadStateHashtable;
 
    --  throws Exception
    function getLoadStateHashtable (This : in out DemoCanvas) return ABHashtable_Access is
    begin
-        This.logUtil.putF (To_Unbounded_String ("Trying to continue a demo lol - only continue a game canvas not the demo"), This'Unchecked_Access, To_Unbounded_String ("getLoadStateHashtable"));
+        This.logUtil.putF (To_Unbounded_String ("Trying to continue a demo lol - only continue a game canvas not the demo"), DemoCanvas_Access'(This'Unchecked_Access), To_Unbounded_String ("getLoadStateHashtable"));
         return This.stdUtil.NULL_TABLE;
    end getLoadStateHashtable;
 
    --  throws Exception
    function getCurrentStateHashtable (This : in out DemoCanvas) return ABHashtable_Access is
    begin
-        This.logUtil.putF (To_Unbounded_String ("Trying to save the AI lol"), This'Unchecked_Access, To_Unbounded_String ("getCurrentStateHashtable"));
+        This.logUtil.putF (To_Unbounded_String ("Trying to save the AI lol"), DemoCanvas_Access'(This'Unchecked_Access), To_Unbounded_String ("getCurrentStateHashtable"));
         return This.stdUtil.NULL_TABLE;
    end getCurrentStateHashtable;
 
@@ -377,7 +388,8 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
         null;
    end setHighScoreSubmitted;
 
-   procedure paint (This : in out DemoCanvas; graphics : Graphics_Access) is
+   procedure paint (This : in out DemoCanvas; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.paintableInterface.paint (graphics);
         This.paintedSpecialAnimationInterface.paintXY (graphics, 0, 0);
@@ -388,7 +400,8 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
         This.progressPaintable.paint (graphics);
    end paint;
 
-   procedure paintThreed (This : in out DemoCanvas; graphics : Graphics_Access) is
+   procedure paintThreed (This : in out DemoCanvas; graphics_Param : access Graphics'Class) is
+      graphics : Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.paintableInterface.paintThreed (graphics);
         This.paintedSpecialAnimationInterface.paintThreedXYZ (graphics, 0, 0, 0);
@@ -396,7 +409,7 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
 
    procedure processGameOver (This : in out DemoCanvas) is
    begin
-        This.logUtil.putF (To_Unbounded_String ("Not Implemented since not a game"), This'Unchecked_Access, To_Unbounded_String ("setGameOver"));
+        This.logUtil.putF (To_Unbounded_String ("Not Implemented since not a game"), DemoCanvas_Access'(This'Unchecked_Access), To_Unbounded_String ("setGameOver"));
    end processGameOver;
 
    procedure demoStateChange (This : in out DemoCanvas) is
@@ -425,7 +438,7 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
    procedure updateDemoState (This : in out DemoCanvas) is
       gameAdState : GameAdState_Access;
    begin
-        PreLogUtil_Package.put (SmallIntegerSingletonFactory_Package.getInstance.createInstance (This.state).toString, This'Unchecked_Access, This.SET_STATE);
+        PreLogUtil_Package.put (SmallIntegerSingletonFactory_Package.getInstance.createInstance (This.state).toString, DemoCanvas_Access'(This'Unchecked_Access), This.SET_STATE);
         This.getBasicGameDemoPaintable.setState (This.state);
         if (This.state) = (0) then
             This.highScoresPaintable := NullPaintable_Package.getInstance;
@@ -465,13 +478,13 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
       randomLevel : Integer;
       gameInfo : GameInfo_Access;
    begin
-        PreLogUtil_Package.put (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("create"));
+        PreLogUtil_Package.put (This.commonStrings.START, DemoCanvas_Access'(This'Unchecked_Access), To_Unbounded_String ("create"));
         This.highScoresPaintable := NullPaintable_Package.getInstance;
         randomLevel := This.getNextRandom;
         This.gameCanvas := AllBinaryGameCanvas_Access (This.createRunnable (randomLevel));
         This.basicColor := This.gameCanvas.getLayerManager.getForegroundBasicColor;
         This.getRealHighScoresPaintable.setBasicColorP (This.basicColor);
-        This.gameCanvas.setGameCanvasStartListener (This'Unchecked_Access);
+        This.gameCanvas.setGameCanvasStartListener (DemoCanvas_Access'(This'Unchecked_Access));
         gameInfo := This.gameCanvas.getLayerManager.getGameInfo;
         This.getHighScoresFactoryInterface.fetchHighScores (gameInfo, This.highScoresHelper);
    end create;
@@ -481,7 +494,7 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
       gameCanvas : AllBinaryGameCanvas_Access;
    begin
         gameCanvas := This.gameCanvas;
-        PreLogUtil_Package.put (StringMaker_Package.Create.append (To_Unbounded_String ("Game Thread in DemoCanvas: ")).append (This.stringUtil.toString (gameCanvas)).toString, This'Unchecked_Access, This.commonStrings.START);
+        PreLogUtil_Package.put (StringMaker_Package.Create.append (To_Unbounded_String ("Game Thread in DemoCanvas: ")).append (This.stringUtil.toString (gameCanvas)).toString, DemoCanvas_Access'(This'Unchecked_Access), This.commonStrings.START);
         This.canvasThread := This.threadFactoryUtil.getInstanceGameCanvasRunnable (gameCanvas);
         This.gameCanvas.setThread (This.canvasThread);
         This.threadFactoryUtil.start (This.canvasThread);
@@ -541,14 +554,14 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
    --  throws Exception
    procedure startDemoGame (This : in out DemoCanvas) is
    begin
-        DemoCanvasProgressUtil_Package.showProgress (This'Unchecked_Access);
+        DemoCanvasProgressUtil_Package.showProgress (DemoCanvas_Access'(This'Unchecked_Access));
    end startDemoGame;
 
    --  throws Exception
    procedure stopGameDemo (This : in out DemoCanvas) is
    begin
         if (This.gameCanvas) /= (NullGameCanvas_Package.getInstance) then
-            This.logUtil.putF (To_Unbounded_String ("Set Running False"), This'Unchecked_Access, To_Unbounded_String ("stopGameDemo"));
+            This.logUtil.putF (To_Unbounded_String ("Set Running False"), DemoCanvas_Access'(This'Unchecked_Access), To_Unbounded_String ("stopGameDemo"));
             This.gameCanvas.setRunning (False);
         end if;
         ThreadUtil_Package.getInstance.join (This.canvasThread);
@@ -559,15 +572,15 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
       isDefault : Boolean;
    begin
         METHOD_NAME := To_Unbounded_String ("showGamePaintable");
-        PreLogUtil_Package.put (This.commonStrings.START, This'Unchecked_Access, METHOD_NAME);
+        PreLogUtil_Package.put (This.commonStrings.START, DemoCanvas_Access'(This'Unchecked_Access), METHOD_NAME);
         isDefault := J2MEUtil_Package.isHTML;
         if (((This.gameCanvas) /= (NullGameCanvas_Package.getInstance)) and then ((((This.gameCanvas.isRunning) or else (isDefault)) or else (SWTUtil_Package.isSWT)))) and then (not (((This.gameCanvas.getType) = (NullGameCanvas_Package.TYPE_Id)))) then
             This.gameRunnable := This.gameCanvas.gameRunnable;
-            PreLogUtil_Package.put (To_Unbounded_String ("Showing Game"), This'Unchecked_Access, METHOD_NAME);
+            PreLogUtil_Package.put (To_Unbounded_String ("Showing Game"), DemoCanvas_Access'(This'Unchecked_Access), METHOD_NAME);
             This.setPaintableInterface (This.gameCanvas);
         else
             This.gameRunnable := NullWaitGameRunnable_Package.getInstance;
-            PreLogUtil_Package.put (To_Unbounded_String ("Not Showing Game"), This'Unchecked_Access, METHOD_NAME);
+            PreLogUtil_Package.put (To_Unbounded_String ("Not Showing Game"), DemoCanvas_Access'(This'Unchecked_Access), METHOD_NAME);
             This.setPaintableInterface (This.getDefaultPaintableInterface);
         end if;
    end showGamePaintable;
@@ -598,7 +611,7 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
       demoGameRunnable : DemoGameRunnable_Access;
       currentDisplayableFactory : CurrentDisplayableFactory_Access;
    begin
-        This.logUtil.putF (This.commonStrings.START_RUNNABLE, This'Unchecked_Access, This.commonStrings.RUN);
+        This.logUtil.putF (This.commonStrings.START_RUNNABLE, DemoCanvas_Access'(This'Unchecked_Access), This.commonStrings.RUN);
         begin
             progressCanvas := ProgressCanvasFactory_Package.getInstance;
             features := Features_Package.getInstance;
@@ -611,7 +624,7 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
             else
                 progressCanvas.addNormalPortion (50, To_Unbounded_String ("Demo Thread Running"));
             end if;
-            This.fullScreenUtil.initOnRun (This'Unchecked_Access, This.getCustomCommandListener);
+            This.fullScreenUtil.initOnRun (DemoCanvas_Access'(This'Unchecked_Access), This.getCustomCommandListener);
             This.initMenu;
             This.initPostPaint;
             This.updateDemoState;
@@ -621,17 +634,17 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
                     This.processGame;
                     This.processLoopSleep;
                 end loop;
-                demoGameRunnable := DemoGameRunnable_Package.Create (This'Unchecked_Access);
+                demoGameRunnable := DemoGameRunnable_Package.Create (DemoCanvas_Access'(This'Unchecked_Access));
                 currentDisplayableFactory := CurrentDisplayableFactory_Package.getInstance;
                 currentDisplayableFactory.setRunnable (demoGameRunnable);
-                currentDisplayableFactory.setMyCanvas (This'Unchecked_Access);
+                currentDisplayableFactory.setMyCanvas (DemoCanvas_Access'(This'Unchecked_Access));
                 OpenGLThreadUtil_Package.getInstance.onResume;
             end if;
             if (features.isDefault (openGLFeatureFactory.OPENGL_AS_GAME_THREAD)) or else (J2MEUtil_Package.isHTML) then
-                demoGameRunnable := DemoGameRunnable_Package.Create (This'Unchecked_Access);
+                demoGameRunnable := DemoGameRunnable_Package.Create (DemoCanvas_Access'(This'Unchecked_Access));
                 currentDisplayableFactory := CurrentDisplayableFactory_Package.getInstance;
                 currentDisplayableFactory.setRunnable (demoGameRunnable);
-                currentDisplayableFactory.setMyCanvas (This'Unchecked_Access);
+                currentDisplayableFactory.setMyCanvas (DemoCanvas_Access'(This'Unchecked_Access));
             else
                 while This.isRunning loop
                     This.run3;
@@ -643,10 +656,10 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.RUN, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, DemoCanvas_Access'(This'Unchecked_Access), This.commonStrings.RUN, e);
                 end;
         end;
-        This.logUtil.putF (This.commonStrings.END_RUNNABLE, This'Unchecked_Access, This.commonStrings.RUN);
+        This.logUtil.putF (This.commonStrings.END_RUNNABLE, DemoCanvas_Access'(This'Unchecked_Access), This.commonStrings.RUN);
    end run;
 
    --  throws Exception
@@ -680,7 +693,7 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.SET_RUNNING, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, DemoCanvas_Access'(This'Unchecked_Access), This.SET_RUNNING, e);
                 end;
         end;
    end setRunning;
@@ -697,13 +710,14 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
         if features.isFeature (MainFeatureFactory_Package.getInstance.LOAD_ONDEMAND) then
             progressCanvas.start;
         end if;
-        This.logUtil.putF (To_Unbounded_String ("Demo End"), This'Unchecked_Access, This.commonStrings.RUN);
+        This.logUtil.putF (To_Unbounded_String ("Demo End"), DemoCanvas_Access'(This'Unchecked_Access), This.commonStrings.RUN);
         This.close;
-        DisplayChangeEventHandler_Package.getInstance.removeListener (This'Unchecked_Access);
+        DisplayChangeEventHandler_Package.getInstance.removeListener (DemoCanvas_Access'(This'Unchecked_Access));
         This.stopGameDemo;
    end end_Id;
 
-   procedure setGameState (This : in out DemoCanvas; gameState : GameState_Access) is
+   procedure setGameState (This : in out DemoCanvas; gameState_Param : access GameState'Class) is
+      gameState : GameState_Access := GameState_Access (gameState_Param);
    begin
         null;
    end setGameState;
@@ -742,7 +756,7 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
 
    function isHighScoreSubmitted (This : in out DemoCanvas) return Boolean is
    begin
-        This.logUtil.putF (To_Unbounded_String ("Wow the AI got a high score!"), This'Unchecked_Access, To_Unbounded_String ("isHighScoreSubmitted"));
+        This.logUtil.putF (To_Unbounded_String ("Wow the AI got a high score!"), DemoCanvas_Access'(This'Unchecked_Access), To_Unbounded_String ("isHighScoreSubmitted"));
         return False;
    end isHighScoreSubmitted;
 
@@ -751,7 +765,8 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
         return This.realHighScoresPaintable;
    end getRealHighScoresPaintable;
 
-   procedure setSpecialAnimationInterface (This : in out DemoCanvas; specialAnimationInterface : SpecialAnimation_Access) is
+   procedure setSpecialAnimationInterface (This : in out DemoCanvas; specialAnimationInterface_Param : access SpecialAnimation'Class) is
+      specialAnimationInterface : SpecialAnimation_Access := SpecialAnimation_Access (specialAnimationInterface_Param);
    begin
         specialAnimationInterface.setFrame (0);
         This.specialAnimationInterface := specialAnimationInterface;
@@ -762,7 +777,8 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
         return This.specialAnimationInterface;
    end getSpecialAnimationInterface;
 
-   procedure setPaintableInterface (This : in out DemoCanvas; paintableInterface : PaintableInterface_Access) is
+   procedure setPaintableInterface (This : in out DemoCanvas; paintableInterface_Param : access PaintableInterface'Class) is
+      paintableInterface : PaintableInterface_Access := PaintableInterface_Access (paintableInterface_Param);
    begin
         This.paintableInterface := paintableInterface;
    end setPaintableInterface;
@@ -772,7 +788,8 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
         return This.paintableInterface;
    end getPaintableInterface;
 
-   procedure setDefaultPaintableInterface (This : in out DemoCanvas; defaultPaintableInterface : Paintable_Access) is
+   procedure setDefaultPaintableInterface (This : in out DemoCanvas; defaultPaintableInterface_Param : access Paintable'Class) is
+      defaultPaintableInterface : Paintable_Access := Paintable_Access (defaultPaintableInterface_Param);
    begin
         This.defaultPaintableInterface := defaultPaintableInterface;
    end setDefaultPaintableInterface;
@@ -787,7 +804,8 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
         return This.highScoresFactoryInterface;
    end getHighScoresFactoryInterface;
 
-   procedure setMenuInputProcessor (This : in out DemoCanvas; menuInputProcessor : BasicMenuInputProcessor_Access) is
+   procedure setMenuInputProcessor (This : in out DemoCanvas; menuInputProcessor_Param : access BasicMenuInputProcessor'Class) is
+      menuInputProcessor : BasicMenuInputProcessor_Access := BasicMenuInputProcessor_Access (menuInputProcessor_Param);
    begin
         This.menuInputProcessor := menuInputProcessor;
    end setMenuInputProcessor;
@@ -802,7 +820,8 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
         return This.menuForm;
    end getMenuForm;
 
-   procedure setMenuForm (This : in out DemoCanvas; menuForm : ScrollSelectionForm_Access) is
+   procedure setMenuForm (This : in out DemoCanvas; menuForm_Param : access ScrollSelectionForm'Class) is
+      menuForm : ScrollSelectionForm_Access := ScrollSelectionForm_Access (menuForm_Param);
    begin
         This.menuForm := menuForm;
    end setMenuForm;
@@ -817,7 +836,8 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
         return This.overlayPaintable;
    end getOverlayPaintable;
 
-   procedure setBasicGameDemoPaintable (This : in out DemoCanvas; basicGameDemoPaintable : StatePaintable_Access) is
+   procedure setBasicGameDemoPaintable (This : in out DemoCanvas; basicGameDemoPaintable_Param : access StatePaintable'Class) is
+      basicGameDemoPaintable : StatePaintable_Access := StatePaintable_Access (basicGameDemoPaintable_Param);
    begin
         This.basicGameDemoPaintable := basicGameDemoPaintable;
    end setBasicGameDemoPaintable;

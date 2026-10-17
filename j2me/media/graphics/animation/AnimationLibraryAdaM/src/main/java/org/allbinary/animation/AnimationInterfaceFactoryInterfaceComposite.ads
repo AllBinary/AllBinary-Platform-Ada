@@ -43,7 +43,7 @@ package org.allbinary.animation.AnimationInterfaceFactoryInterfaceComposite_Pack
    function getInstance (This : in out AnimationInterfaceFactoryInterfaceComposite; instanceId : Integer) return Animation_Access;
    procedure getInstance (This : in out AnimationInterfaceFactoryInterfaceComposite; instanceId : Integer);
    function getAnimationInterfaceFactoryInterfaceArray (This : in out AnimationInterfaceFactoryInterfaceComposite) return AnimationInterfaceFactoryInterface_Access_Array_Access;
-   procedure setInitialScale (This : in out AnimationInterfaceFactoryInterfaceComposite; scaleProperties : ScaleProperties_Access);
+   procedure setInitialScale (This : in out AnimationInterfaceFactoryInterfaceComposite; scaleProperties_Param : access ScaleProperties'Class);
 
 end org.allbinary.animation.AnimationInterfaceFactoryInterfaceComposite_Package;
 

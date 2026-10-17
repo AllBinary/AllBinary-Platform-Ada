@@ -27,7 +27,9 @@ package body org.allbinary.android.ToastUtil_Package is
         return ToastUtil_Package.instance;
    end getInstance;
 
-   procedure makeToast (This : in out ToastUtil; view : View_Access; context : Context_Access; message : Unbounded_String; time : Integer) is
+   procedure makeToast (This : in out ToastUtil; view_Param : access View'Class; context_Param : access Context'Class; message : Unbounded_String; time : Integer) is
+      view : View_Access := View_Access (view_Param);
+      context : Context_Access := Context_Access (context_Param);
    begin
         --  Java nested class MakeToast: move it to its own package
         view.post (MakeToast_Package.Create (message));

@@ -23,7 +23,10 @@ package body org.allbinary.animation.image.sprite.AllBinaryAdjustedSpriteRotatio
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AllBinaryAdjustedSpriteRotationAnimation'Class; sprite : Sprite_Access; image : Image_Access; dx : Integer; dy : Integer; animationBehavior : AnimationBehavior_Access) is
+   procedure Initialize (This : in out AllBinaryAdjustedSpriteRotationAnimation'Class; sprite_Param : access Sprite'Class; image_Param : access Image'Class; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior'Class) is
+      sprite : Sprite_Access := Sprite_Access (sprite_Param);
+      image : Image_Access := Image_Access (image_Param);
+      animationBehavior : AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
    begin
         AllBinarySpriteRotationAnimation_Package.Initialize (This, sprite, image, animationBehavior);
         Initialize_Fields (This);
@@ -31,14 +34,15 @@ package body org.allbinary.animation.image.sprite.AllBinaryAdjustedSpriteRotatio
         This.dy := dy;
    end Initialize;
 
-   function Create (sprite : Sprite_Access; image : Image_Access; dx : Integer; dy : Integer; animationBehavior : AnimationBehavior_Access) return AllBinaryAdjustedSpriteRotationAnimation_Access is
+   function Create (sprite_Param : access Sprite'Class; image_Param : access Image'Class; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior'Class) return AllBinaryAdjustedSpriteRotationAnimation_Access is
       This : constant AllBinaryAdjustedSpriteRotationAnimation_Access := new AllBinaryAdjustedSpriteRotationAnimation;
    begin
-      AllBinaryAdjustedSpriteRotationAnimation_Package.Initialize (This.all, sprite, image, dx, dy, animationBehavior);
+      AllBinaryAdjustedSpriteRotationAnimation_Package.Initialize (This.all, sprite_Param, image_Param, dx, dy, animationBehavior_Param);
       return This;
    end Create;
 
-   procedure paintXY (This : in out AllBinaryAdjustedSpriteRotationAnimation; g : Graphics_Access; x : Integer; y : Integer) is
+   procedure paintXY (This : in out AllBinaryAdjustedSpriteRotationAnimation; g_Param : access Graphics'Class; x : Integer; y : Integer) is
+      g : Graphics_Access := Graphics_Access (g_Param);
    begin
         This.sprite.setPosition ((x) + (This.dx), (y) + (This.dy));
         This.paint (g);

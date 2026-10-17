@@ -64,7 +64,7 @@ package body org.allbinary.logic.system.hardware.components.linux.Cpu_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.OS) then
-                This.logUtil.put (StringMaker_Package.Create.append (To_Unbounded_String ("Cpu Data: ")).append (This.toString).toString, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR, e);
+                This.logUtil.put (StringMaker_Package.Create.append (To_Unbounded_String ("Cpu Data: ")).append (This.toString).toString, Cpu_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR, e);
             end if;
             Java_Throw (e);
                 end;
@@ -72,8 +72,8 @@ package body org.allbinary.logic.system.hardware.components.linux.Cpu_Package is
    end init;
 
    --  throws Exception
-   procedure init (This : in out Cpu; lineNumberReader_Param : LineNumberReader_Access; filePath : Unbounded_String) is
-      lineNumberReader : LineNumberReader_Access := lineNumberReader_Param;
+   procedure init (This : in out Cpu; lineNumberReader_Param : access LineNumberReader'Class; filePath : Unbounded_String) is
+      lineNumberReader : LineNumberReader_Access := LineNumberReader_Access (lineNumberReader_Param);
       fileReader : FileReader_Access;
       fileVector : BasicArrayList_Access;
       file : AbFile_Access;
@@ -90,7 +90,7 @@ package body org.allbinary.logic.system.hardware.components.linux.Cpu_Package is
             if (lineNumberReader) = (null) then
                 fileVector := SubDirectory_Package.getInstance.search (filePath, AbFile_Package.createAbFile (FilePathData_Package.getInstance.PATH_START));
                 if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.OS) then
-                    This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Cpu File BasicArrayList Size: ")).appendint (fileVector.size).toString, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+                    This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Cpu File BasicArrayList Size: ")).appendint (fileVector.size).toString, Cpu_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
                 end if;
                 if not (fileVector.isEmpty) then
                     file := AbFile_Access (fileVector.get (0));
@@ -182,12 +182,14 @@ package body org.allbinary.logic.system.hardware.components.linux.Cpu_Package is
         return Unbounded_String (This.cpuHashMap.get (CpuInfo_Package.CACHESIZE));
    end getCacheSize;
 
-   function compareTo (This : in out Cpu; cpuInterface : CpuInterface_Access) return Boolean is
+   function compareTo (This : in out Cpu; cpuInterface_Param : access CpuInterface'Class) return Boolean is
+      cpuInterface : CpuInterface_Access := CpuInterface_Access (cpuInterface_Param);
    begin
         return True;
    end compareTo;
 
-   function compareTo (This : in out Cpu; componentInterface : HardwareComponentInterface_Access) return Boolean is
+   function compareTo (This : in out Cpu; componentInterface_Param : access HardwareComponentInterface'Class) return Boolean is
+      componentInterface : HardwareComponentInterface_Access := HardwareComponentInterface_Access (componentInterface_Param);
    begin
         return True;
    end compareTo;
@@ -218,15 +220,15 @@ package body org.allbinary.logic.system.hardware.components.linux.Cpu_Package is
         return stringMaker.toString;
    end toString;
 
-   procedure compareTo (This : in out Cpu; cpuInterface : CpuInterface_Access) is
-      Java_Result : constant Boolean := Cpu'Class (This).compareTo (cpuInterface);
+   procedure compareTo (This : in out Cpu; cpuInterface_Param : access CpuInterface'Class) is
+      Java_Result : constant Boolean := Cpu'Class (This).compareTo (cpuInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end compareTo;
 
-   procedure compareTo (This : in out Cpu; componentInterface : HardwareComponentInterface_Access) is
-      Java_Result : constant Boolean := Cpu'Class (This).compareTo (componentInterface);
+   procedure compareTo (This : in out Cpu; componentInterface_Param : access HardwareComponentInterface'Class) is
+      Java_Result : constant Boolean := Cpu'Class (This).compareTo (componentInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;

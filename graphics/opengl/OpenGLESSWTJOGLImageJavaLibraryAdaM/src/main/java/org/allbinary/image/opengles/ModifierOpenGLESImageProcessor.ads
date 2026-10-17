@@ -37,7 +37,7 @@ package org.allbinary.image.opengles.ModifierOpenGLESImageProcessor_Package is
    procedure Initialize (This : in out ModifierOpenGLESImageProcessor'Class);
    function Create return ModifierOpenGLESImageProcessor_Access;
    function getInstance return ModifierOpenGLESImageProcessor_Access;
-   procedure colorMask (This : in out ModifierOpenGLESImageProcessor; gl : GL10_Access; red : Float; green : Float; blue : Float; alpha : Float);
+   procedure colorMask (This : in out ModifierOpenGLESImageProcessor; gl_Param : access GL10'Class; red : Float; green : Float; blue : Float; alpha : Float);
 
 end org.allbinary.image.opengles.ModifierOpenGLESImageProcessor_Package;
 

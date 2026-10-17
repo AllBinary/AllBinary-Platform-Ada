@@ -72,31 +72,31 @@ package org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package is
 
    procedure Initialize (This : in out WorkAreaJTreeJPanel'Class; workAreaName : Unbounded_String);
    function Create (workAreaName : Unbounded_String) return WorkAreaJTreeJPanel_Access;
-   procedure add (This : in out WorkAreaJTreeJPanel; treeNode : MutableTreeNode_Access);
+   procedure add (This : in out WorkAreaJTreeJPanel; treeNode_Param : access MutableTreeNode'Class);
    procedure updateTree (This : in out WorkAreaJTreeJPanel);
    function getNode (This : in out WorkAreaJTreeJPanel; treePathArray : TreePath_Access_Array_Access) return BasicArrayList_Access;
    procedure getNode (This : in out WorkAreaJTreeJPanel; treePathArray : TreePath_Access_Array_Access);
-   function getNode (This : in out WorkAreaJTreeJPanel; treePath : TreePath_Access) return DefaultMutableTreeNode_Access;
-   procedure getNode (This : in out WorkAreaJTreeJPanel; treePath : TreePath_Access);
+   function getNode (This : in out WorkAreaJTreeJPanel; treePath_Param : access TreePath'Class) return DefaultMutableTreeNode_Access;
+   procedure getNode (This : in out WorkAreaJTreeJPanel; treePath_Param : access TreePath'Class);
    procedure deselectAll (This : in out WorkAreaJTreeJPanel);
-   procedure selectGraphicItem (This : in out WorkAreaJTreeJPanel; node : DefaultMutableTreeNode_Access);
-   procedure removeGraphicItem (This : in out WorkAreaJTreeJPanel; node : DefaultMutableTreeNode_Access);
-   procedure removeCanvas (This : in out WorkAreaJTreeJPanel; node : DefaultMutableTreeNode_Access);
-   procedure remove (This : in out WorkAreaJTreeJPanel; treePath : TreePath_Access);
+   procedure selectGraphicItem (This : in out WorkAreaJTreeJPanel; node_Param : access DefaultMutableTreeNode'Class);
+   procedure removeGraphicItem (This : in out WorkAreaJTreeJPanel; node_Param : access DefaultMutableTreeNode'Class);
+   procedure removeCanvas (This : in out WorkAreaJTreeJPanel; node_Param : access DefaultMutableTreeNode'Class);
+   procedure remove (This : in out WorkAreaJTreeJPanel; treePath_Param : access TreePath'Class);
    procedure copy (This : in out WorkAreaJTreeJPanel);
-   procedure copy (This : in out WorkAreaJTreeJPanel; treePath : TreePath_Access);
-   procedure rotate (This : in out WorkAreaJTreeJPanel; treePath : TreePath_Access; angle : Long_Float);
+   procedure copy (This : in out WorkAreaJTreeJPanel; treePath_Param : access TreePath'Class);
+   procedure rotate (This : in out WorkAreaJTreeJPanel; treePath_Param : access TreePath'Class; angle : Long_Float);
    function getRootTreeNode (This : in out WorkAreaJTreeJPanel) return MutableTreeNode_Access;
    procedure expand (This : in out WorkAreaJTreeJPanel);
-   procedure expand (This : in out WorkAreaJTreeJPanel; treePath : TreePath_Access);
+   procedure expand (This : in out WorkAreaJTreeJPanel; treePath_Param : access TreePath'Class);
    procedure initComponents (This : in out WorkAreaJTreeJPanel);
-   procedure rotateJMenuItemMousePressed (This : in out WorkAreaJTreeJPanel; evt : MouseEvent_Access);
-   procedure workAreaJTreeMousePressed (This : in out WorkAreaJTreeJPanel; evt : MouseEvent_Access);
-   procedure itemJPopupMenuPopupMenuWillBecomeInvisible (This : in out WorkAreaJTreeJPanel; evt : PopupMenuEvent_Access);
-   procedure itemJPopupMenuPopupMenuWillBecomeVisible (This : in out WorkAreaJTreeJPanel; evt : PopupMenuEvent_Access);
-   procedure copyJMenuItemMousePressed (This : in out WorkAreaJTreeJPanel; evt : MouseEvent_Access);
-   procedure deleteJMenuItemMousePressed (This : in out WorkAreaJTreeJPanel; evt : MouseEvent_Access);
-   procedure workAreaPropertiesJPanelMousePressed (This : in out WorkAreaJTreeJPanel; evt : MouseEvent_Access);
+   procedure rotateJMenuItemMousePressed (This : in out WorkAreaJTreeJPanel; evt_Param : access MouseEvent'Class);
+   procedure workAreaJTreeMousePressed (This : in out WorkAreaJTreeJPanel; evt_Param : access MouseEvent'Class);
+   procedure itemJPopupMenuPopupMenuWillBecomeInvisible (This : in out WorkAreaJTreeJPanel; evt_Param : access PopupMenuEvent'Class);
+   procedure itemJPopupMenuPopupMenuWillBecomeVisible (This : in out WorkAreaJTreeJPanel; evt_Param : access PopupMenuEvent'Class);
+   procedure copyJMenuItemMousePressed (This : in out WorkAreaJTreeJPanel; evt_Param : access MouseEvent'Class);
+   procedure deleteJMenuItemMousePressed (This : in out WorkAreaJTreeJPanel; evt_Param : access MouseEvent'Class);
+   procedure workAreaPropertiesJPanelMousePressed (This : in out WorkAreaJTreeJPanel; evt_Param : access MouseEvent'Class);
 
 end org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package;
 

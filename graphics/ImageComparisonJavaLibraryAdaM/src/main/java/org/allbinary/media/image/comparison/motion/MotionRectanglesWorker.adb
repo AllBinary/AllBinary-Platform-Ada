@@ -27,27 +27,30 @@ package body org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out MotionRectanglesWorker'Class; motionRectangleConstraintsInterface : MotionRectangleConstraintsInterface_Access) is
+   procedure Initialize (This : in out MotionRectanglesWorker'Class; motionRectangleConstraintsInterface_Param : access MotionRectangleConstraintsInterface'Class) is
+      motionRectangleConstraintsInterface : MotionRectangleConstraintsInterface_Access := MotionRectangleConstraintsInterface_Access (motionRectangleConstraintsInterface_Param);
    begin
       BasicEventHandler_Package.Initialize (This);
       Initialize_Fields (This);
         This.motionRectangleConstraintsInterface := motionRectangleConstraintsInterface;
    end Initialize;
 
-   function Create (motionRectangleConstraintsInterface : MotionRectangleConstraintsInterface_Access) return MotionRectanglesWorker_Access is
+   function Create (motionRectangleConstraintsInterface_Param : access MotionRectangleConstraintsInterface'Class) return MotionRectanglesWorker_Access is
       This : constant MotionRectanglesWorker_Access := new MotionRectanglesWorker;
    begin
-      MotionRectanglesWorker_Package.Initialize (This.all, motionRectangleConstraintsInterface);
+      MotionRectanglesWorker_Package.Initialize (This.all, motionRectangleConstraintsInterface_Param);
       return This;
    end Create;
 
-   procedure onImageComparisonResultsEvent (This : in out MotionRectanglesWorker; imageComparisonResultsEvent : ImageComparisonResultsEvent_Access) is
+   procedure onImageComparisonResultsEvent (This : in out MotionRectanglesWorker; imageComparisonResultsEvent_Param : access ImageComparisonResultsEvent'Class) is
+      imageComparisonResultsEvent : ImageComparisonResultsEvent_Access := ImageComparisonResultsEvent_Access (imageComparisonResultsEvent_Param);
    begin
         This.imageComparisonInfoVector.add (imageComparisonResultsEvent);
         This.run;
    end onImageComparisonResultsEvent;
 
-   procedure onEvent (This : in out MotionRectanglesWorker; allBinaryEventObject : AllBinaryEventObject_Access) is
+   procedure onEvent (This : in out MotionRectanglesWorker; allBinaryEventObject_Param : access AllBinaryEventObject'Class) is
+      allBinaryEventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (allBinaryEventObject_Param);
    begin
         This.onImageComparisonResultsEvent (ImageComparisonResultsEvent_Access (allBinaryEventObject));
    end onEvent;
@@ -71,13 +74,13 @@ package body org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_
       constrainedMotionRectangles : ConstrainedMotionRectangles_Access;
    begin
         begin
-            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.RUN);
+            This.logUtil.putF (This.commonStrings.START, MotionRectanglesWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
             This.setRunning (True);
             timeHelper := TimeDelayHelper_Package.Create (1000);
             timeHelper.setStartTimeTNT;
             imageComparisonResultsEvent := ImageComparisonResultsEvent_Access (This.imageComparisonInfoVector.get (0));
             imageComparisonInfo := ImageComparisonResult_Access (imageComparisonResultsEvent.getImageComparisonResult);
-            This.logUtil.putF (imageComparisonInfo.toString, This'Unchecked_Access, This.commonStrings.RUN);
+            This.logUtil.putF (imageComparisonInfo.toString, MotionRectanglesWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
             allMotionRectangles := AllMotionRectangles_Package.Create (imageComparisonInfo);
             AllMotionRectanglesResultsCacheSingleton_Package.getInstance.add (MotionRectanglesResultsFrameCacheable_Package.Create (allMotionRectangles, imageComparisonInfo.getFrameTwo));
             consolidatedMotionRectangles := ConsolidateMotionRectangles_Package.Create (allMotionRectangles);
@@ -85,18 +88,18 @@ package body org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_
             constrainedMotionRectangles := ConstrainedMotionRectangles_Package.Create (This.motionRectangleConstraintsInterface, consolidatedMotionRectangles);
             constrainedMotionRectangles.applyMotionRectangleConstraints (consolidatedMotionRectangles);
             ConstrainedMotionRectanglesResultsCacheSingleton_Package.getInstance.add (MotionRectanglesResultsFrameCacheable_Package.Create (constrainedMotionRectangles, imageComparisonInfo.getFrameTwo));
-            This.fireEvent (MotionRectanglesResultsEvent_Package.Create (This'Unchecked_Access, imageComparisonInfo.getFrameTwo, MotionRectangles_Access (constrainedMotionRectangles)));
+            This.fireEvent (MotionRectanglesResultsEvent_Package.Create (MotionRectanglesWorker_Access'(This'Unchecked_Access), imageComparisonInfo.getFrameTwo, MotionRectangles_Access (constrainedMotionRectangles)));
             This.imageComparisonInfoVector.remove (imageComparisonResultsEvent);
             This.index := This.index + 1;
-            This.logUtil.putF ((CommonLabels_Package.getInstance.ELAPSED) + (timeHelper.getElapsedTNT), This'Unchecked_Access, This.commonStrings.RUN);
+            This.logUtil.putF ((CommonLabels_Package.getInstance.ELAPSED) + (timeHelper.getElapsedTNT), MotionRectanglesWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
             This.setRunning (False);
-            This.logUtil.putF (This.commonStrings.END_Id, This'Unchecked_Access, This.commonStrings.RUN);
+            This.logUtil.putF (This.commonStrings.END_Id, MotionRectanglesWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.RUN, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, MotionRectanglesWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN, e);
                 end;
         end;
    end run;

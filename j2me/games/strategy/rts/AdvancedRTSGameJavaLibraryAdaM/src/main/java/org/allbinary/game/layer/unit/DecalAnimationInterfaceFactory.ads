@@ -47,8 +47,8 @@ package org.allbinary.game.layer.unit.DecalAnimationInterfaceFactory_Package is
    procedure Initialize (This : in out DecalAnimationInterfaceFactory'Class);
    function Create return DecalAnimationInterfaceFactory_Access;
    function getInstance return DecalAnimationInterfaceFactory_Access;
-   function getAnimationFactory (This : in out DecalAnimationInterfaceFactory; basicGameResources : BasicGameResources_Access; basicColor : BasicColor_Access) return AnimationInterfaceFactoryInterface_Access;
-   procedure getAnimationFactory (This : in out DecalAnimationInterfaceFactory; basicGameResources : BasicGameResources_Access; basicColor : BasicColor_Access);
+   function getAnimationFactory (This : in out DecalAnimationInterfaceFactory; basicGameResources_Param : access BasicGameResources'Class; basicColor_Param : access BasicColor'Class) return AnimationInterfaceFactoryInterface_Access;
+   procedure getAnimationFactory (This : in out DecalAnimationInterfaceFactory; basicGameResources_Param : access BasicGameResources'Class; basicColor_Param : access BasicColor'Class);
 
 end org.allbinary.game.layer.unit.DecalAnimationInterfaceFactory_Package;
 

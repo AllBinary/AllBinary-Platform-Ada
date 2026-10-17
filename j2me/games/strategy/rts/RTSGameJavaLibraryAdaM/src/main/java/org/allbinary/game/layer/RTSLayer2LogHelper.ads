@@ -36,14 +36,14 @@ package org.allbinary.game.layer.RTSLayer2LogHelper_Package is
    procedure Initialize (This : in out RTSLayer2LogHelper'Class);
    function Create return RTSLayer2LogHelper_Access;
    function getInstance return RTSLayer2LogHelper_Access;
-   procedure steeringUp (This : in out RTSLayer2LogHelper; pathFindingLayerInterface : PathFindingLayerInterface_Access);
-   procedure steeringFireOrStop (This : in out RTSLayer2LogHelper; pathFindingLayerInterface : PathFindingLayerInterface_Access);
-   procedure buildingAbove (This : in out RTSLayer2LogHelper; pathFindingLayerInterface : PathFindingLayerInterface_Access);
-   procedure buildingChaseLeft (This : in out RTSLayer2LogHelper; pathFindingLayerInterface : PathFindingLayerInterface_Access; angle : Integer);
-   procedure buildingChaseRight (This : in out RTSLayer2LogHelper; pathFindingLayerInterface : PathFindingLayerInterface_Access; angle : Integer);
-   procedure buildingDown (This : in out RTSLayer2LogHelper; pathFindingLayerInterface : PathFindingLayerInterface_Access);
-   procedure buildingChaseDown (This : in out RTSLayer2LogHelper; pathFindingLayerInterface : PathFindingLayerInterface_Access; angle : Integer);
-   procedure buildingChaseUp (This : in out RTSLayer2LogHelper; pathFindingLayerInterface : PathFindingLayerInterface_Access; angle : Integer);
+   procedure steeringUp (This : in out RTSLayer2LogHelper; pathFindingLayerInterface_Param : access PathFindingLayerInterface'Class);
+   procedure steeringFireOrStop (This : in out RTSLayer2LogHelper; pathFindingLayerInterface_Param : access PathFindingLayerInterface'Class);
+   procedure buildingAbove (This : in out RTSLayer2LogHelper; pathFindingLayerInterface_Param : access PathFindingLayerInterface'Class);
+   procedure buildingChaseLeft (This : in out RTSLayer2LogHelper; pathFindingLayerInterface_Param : access PathFindingLayerInterface'Class; angle : Integer);
+   procedure buildingChaseRight (This : in out RTSLayer2LogHelper; pathFindingLayerInterface_Param : access PathFindingLayerInterface'Class; angle : Integer);
+   procedure buildingDown (This : in out RTSLayer2LogHelper; pathFindingLayerInterface_Param : access PathFindingLayerInterface'Class);
+   procedure buildingChaseDown (This : in out RTSLayer2LogHelper; pathFindingLayerInterface_Param : access PathFindingLayerInterface'Class; angle : Integer);
+   procedure buildingChaseUp (This : in out RTSLayer2LogHelper; pathFindingLayerInterface_Param : access PathFindingLayerInterface'Class; angle : Integer);
    procedure buildingLeft (This : in out RTSLayer2LogHelper);
    procedure buildingRight (This : in out RTSLayer2LogHelper);
 

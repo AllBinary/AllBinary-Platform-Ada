@@ -28,7 +28,9 @@ package body admin.taghelpers.ShippingAddressHelper_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ShippingAddressHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access) is
+   procedure Initialize (This : in out ShippingAddressHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
    begin
       BasicTable_Package.Initialize (This);
       Initialize_Fields (This);
@@ -38,10 +40,10 @@ package body admin.taghelpers.ShippingAddressHelper_Package is
         This.getAddressForm;
    end Initialize;
 
-   function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return ShippingAddressHelper_Access is
+   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return ShippingAddressHelper_Access is
       This : constant ShippingAddressHelper_Access := new ShippingAddressHelper;
    begin
-      ShippingAddressHelper_Package.Initialize (This.all, hashMap, pageContext);
+      ShippingAddressHelper_Package.Initialize (This.all, hashMap_Param, pageContext_Param);
       return This;
    end Create;
 
@@ -61,7 +63,7 @@ package body admin.taghelpers.ShippingAddressHelper_Package is
         begin
             success := ShippingAddressesEntity_Package.Create (This.stringUtil.EMPTY_STRING).drop;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, This.commonStrings.DROP);
+                This.logUtil.putF (success, ShippingAddressHelper_Access'(This'Unchecked_Access), This.commonStrings.DROP);
             end if;
             return success;
         exception
@@ -71,7 +73,7 @@ package body admin.taghelpers.ShippingAddressHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to drop Admin table");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.DROP, e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, ShippingAddressHelper_Access'(This'Unchecked_Access), This.commonStrings.DROP, e);
             end if;
             return error;
                 end;
@@ -85,7 +87,7 @@ package body admin.taghelpers.ShippingAddressHelper_Package is
         begin
             success := ShippingAddressesEntity_Package.Create (This.stringUtil.EMPTY_STRING).createTable;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, To_Unbounded_String ("create()"));
+                This.logUtil.putF (success, ShippingAddressHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("create()"));
             end if;
             return success;
         exception
@@ -95,7 +97,7 @@ package body admin.taghelpers.ShippingAddressHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to create user table");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("create()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, ShippingAddressHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("create()"), e);
             end if;
             return error;
                 end;
@@ -111,7 +113,7 @@ package body admin.taghelpers.ShippingAddressHelper_Package is
             success := To_Unbounded_String ("Restore Successful");
             result := AbSqlTableUtil_Package.getInstance.restoreTable (ShippingAddressesEntity_Package.Create (StringUtil_Package.getInstance.EMPTY_STRING), This.portion);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, To_Unbounded_String ("restore()"));
+                This.logUtil.putF (success, ShippingAddressHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("restore()"));
             end if;
             return result;
         exception
@@ -121,7 +123,7 @@ package body admin.taghelpers.ShippingAddressHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to restore backup");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("restore()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, ShippingAddressHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("restore()"), e);
             end if;
             return error;
                 end;
@@ -137,7 +139,7 @@ package body admin.taghelpers.ShippingAddressHelper_Package is
             success := To_Unbounded_String ("Backup Successful");
             result := AbSqlTableUtil_Package.getInstance.backupTable (ShippingAddressesEntity_Package.Create (StringUtil_Package.getInstance.EMPTY_STRING));
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, To_Unbounded_String ("backup()"));
+                This.logUtil.putF (success, ShippingAddressHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("backup()"));
             end if;
             return result;
         exception
@@ -147,7 +149,7 @@ package body admin.taghelpers.ShippingAddressHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to make backup");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("backup()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, ShippingAddressHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("backup()"), e);
             end if;
             return error;
                 end;
@@ -162,7 +164,7 @@ package body admin.taghelpers.ShippingAddressHelper_Package is
             success := To_Unbounded_String ("Successfully Added Shipping Address");
             ShippingAddressesEntityFactory_Package.getInstance.getInstance (This.weblisketSession.getUserName).add (This.streetAddress);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, To_Unbounded_String ("insert"));
+                This.logUtil.putF (success, ShippingAddressHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("insert"));
             end if;
             return success;
         exception
@@ -172,7 +174,7 @@ package body admin.taghelpers.ShippingAddressHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to add Shipping streetAddress");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("insert"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, ShippingAddressHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("insert"), e);
             end if;
             return error;
                 end;
@@ -187,7 +189,7 @@ package body admin.taghelpers.ShippingAddressHelper_Package is
             success := To_Unbounded_String ("Successfully Updated Shipping Address");
             ShippingAddressesEntityFactory_Package.getInstance.getInstance (This.weblisketSession.getUserName).update (This.streetAddress);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (To_Unbounded_String ("Successfull update of a Users Shipping Address table"), This'Unchecked_Access, To_Unbounded_String ("update()"));
+                This.logUtil.putF (To_Unbounded_String ("Successfull update of a Users Shipping Address table"), ShippingAddressHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("update()"));
             end if;
             return success;
         exception
@@ -197,7 +199,7 @@ package body admin.taghelpers.ShippingAddressHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed update of a Users Shipping Address Table");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("update"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, ShippingAddressHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("update"), e);
             end if;
             return error;
                 end;
@@ -223,7 +225,7 @@ package body admin.taghelpers.ShippingAddressHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed Setting Shipping address to Billing Address");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("setToBillingAddress()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, ShippingAddressHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("setToBillingAddress()"), e);
             end if;
             return error;
                 end;
@@ -238,7 +240,7 @@ package body admin.taghelpers.ShippingAddressHelper_Package is
             success := To_Unbounded_String ("Successfully Removed Shipping Address");
             ShippingAddressesEntityFactory_Package.getInstance.getInstance (This.weblisketSession.getUserName).remove (This.streetAddress.getId);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, To_Unbounded_String ("remove()"));
+                This.logUtil.putF (success, ShippingAddressHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("remove()"));
             end if;
             return success;
         exception
@@ -248,7 +250,7 @@ package body admin.taghelpers.ShippingAddressHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to remove Shipping Address");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("remove()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, ShippingAddressHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("remove()"), e);
             end if;
             return error;
                 end;
@@ -263,7 +265,7 @@ package body admin.taghelpers.ShippingAddressHelper_Package is
             success := To_Unbounded_String ("Successfully Set Shipping Address");
             ShippingAddressesEntityFactory_Package.getInstance.getInstance (This.weblisketSession.getUserName).setDefault (This.streetAddress.getId);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
-                This.logUtil.putF (success, This'Unchecked_Access, To_Unbounded_String ("set()"));
+                This.logUtil.putF (success, ShippingAddressHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("set()"));
             end if;
             return success;
         exception
@@ -273,7 +275,7 @@ package body admin.taghelpers.ShippingAddressHelper_Package is
                 begin
             error := To_Unbounded_String ("Failed to set Shipping Address");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("set()"), e);
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, ShippingAddressHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("set()"), e);
             end if;
             return error;
                 end;
