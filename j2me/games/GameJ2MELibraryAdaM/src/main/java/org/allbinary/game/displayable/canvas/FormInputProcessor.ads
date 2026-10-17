@@ -40,22 +40,22 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.game.displayable.canvas.FormInputProcessor_Package is
 
-   package GameKey_Package renames org.allbinary.game.input.GameKey_Package;
-   package GameKeyEventSourceInterface_Package renames org.allbinary.game.input.GameKeyEventSourceInterface_Package;
-   package GameKeyFactory_Package renames org.allbinary.game.input.GameKeyFactory_Package;
-   package Input_Package renames org.allbinary.game.input.Input_Package;
-   package InputFactory_Package renames org.allbinary.game.input.InputFactory_Package;
-   package InputProcessor_Package renames org.allbinary.game.input.InputProcessor_Package;
-   package PlatformKeyFactory_Package renames org.allbinary.game.input.PlatformKeyFactory_Package;
-   package DownKeyEventHandler_Package renames org.allbinary.game.input.event.DownKeyEventHandler_Package;
-   package GameKeyEvent_Package renames org.allbinary.game.input.event.GameKeyEvent_Package;
-   package GameKeyEventFactory_Package renames org.allbinary.game.input.event.GameKeyEventFactory_Package;
-   package UpGameKeyEventHandler_Package renames org.allbinary.game.input.event.UpGameKeyEventHandler_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package PreLogUtil_Package renames org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package GameKey_Package renames Standard.org.allbinary.game.input.GameKey_Package;
+   package GameKeyEventSourceInterface_Package renames Standard.org.allbinary.game.input.GameKeyEventSourceInterface_Package;
+   package GameKeyFactory_Package renames Standard.org.allbinary.game.input.GameKeyFactory_Package;
+   package Input_Package renames Standard.org.allbinary.game.input.Input_Package;
+   package InputFactory_Package renames Standard.org.allbinary.game.input.InputFactory_Package;
+   package InputProcessor_Package renames Standard.org.allbinary.game.input.InputProcessor_Package;
+   package PlatformKeyFactory_Package renames Standard.org.allbinary.game.input.PlatformKeyFactory_Package;
+   package DownKeyEventHandler_Package renames Standard.org.allbinary.game.input.event.DownKeyEventHandler_Package;
+   package GameKeyEvent_Package renames Standard.org.allbinary.game.input.event.GameKeyEvent_Package;
+   package GameKeyEventFactory_Package renames Standard.org.allbinary.game.input.event.GameKeyEventFactory_Package;
+   package UpGameKeyEventHandler_Package renames Standard.org.allbinary.game.input.event.UpGameKeyEventHandler_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type FormInputProcessor is tagged;
    type FormInputProcessor_Access is access all FormInputProcessor'Class;

@@ -25,8 +25,8 @@ with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDela
 
 package org.allbinary.android.input.motion.AnalogControllerHelper_Package is
 
-   package CollidableDestroyableDamageableLayer_Package renames org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
-   package TimeDelayHelper_Package renames org.allbinary.time.TimeDelayHelper_Package;
+   package CollidableDestroyableDamageableLayer_Package renames Standard.org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
+   package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
 
    type AnalogControllerHelper is tagged;
    type AnalogControllerHelper_Access is access all AnalogControllerHelper'Class;

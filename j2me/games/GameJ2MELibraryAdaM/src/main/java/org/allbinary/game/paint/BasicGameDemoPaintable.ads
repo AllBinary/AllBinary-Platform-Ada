@@ -27,9 +27,9 @@ with org.allbinary.graphics.paint.StatePaintable_Package; use org.allbinary.grap
 
 package org.allbinary.game.paint.BasicGameDemoPaintable_Package is
 
-   package NullPaintable_Package renames org.allbinary.graphics.paint.NullPaintable_Package;
-   package Paintable_Package renames org.allbinary.graphics.paint.Paintable_Package;
-   package StatePaintable_Package renames org.allbinary.graphics.paint.StatePaintable_Package;
+   package NullPaintable_Package renames Standard.org.allbinary.graphics.paint.NullPaintable_Package;
+   package Paintable_Package renames Standard.org.allbinary.graphics.paint.Paintable_Package;
+   package StatePaintable_Package renames Standard.org.allbinary.graphics.paint.StatePaintable_Package;
 
    type BasicGameDemoPaintable is tagged;
    type BasicGameDemoPaintable_Access is access all BasicGameDemoPaintable'Class;

@@ -85,11 +85,15 @@ package body org.allbinary.logic.visual.dhtml.style.css.CssElementView_Package i
             nodeList := node.getChildNodes;
             This.cssPropertyVector := CssPropertiesValidationFactory_Package.getInstance (nodeList);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
                 This.logUtil.put (StringMaker_Package.Create.append (To_Unbounded_String ("Value: ")).append (This.value).append (To_Unbounded_String ("" & ASCII.LF & "Title: ")).append (This.title_Case).append (To_Unbounded_String ("" & ASCII.LF & "Description: ")).append (This.description_Case).toString, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR, e);
             end if;
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("CssElementView")));
+                end;
         end;
    end Initialize;
 

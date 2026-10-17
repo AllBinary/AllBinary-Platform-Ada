@@ -37,20 +37,20 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package is
 
-   package GPoint_Package renames org.allbinary.graphics.GPoint_Package;
-   package Line_Package renames org.allbinary.graphics.Line_Package;
-   package PointFactory_Package renames org.allbinary.graphics.PointFactory_Package;
-   package MotionGestureConfiguration_Package renames org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package;
-   package MotionGestureConfigurationFactory_Package renames org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurationFactory_Package;
-   package BasicMotionGesturesHandler_Package renames org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package;
-   package MotionEventCircularPool_Package renames org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package;
-   package MotionGestureEvent_Package renames org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package;
-   package MovedMotionGesturesHandler_Package renames org.allbinary.input.motion.gesture.observer.MovedMotionGesturesHandler_Package;
-   package ScrolledMotionGesturesHandler_Package renames org.allbinary.input.motion.gesture.observer.ScrolledMotionGesturesHandler_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package J2SEMath_Package renames org.allbinary.logic.math.J2SEMath_Package;
-   package BasicEventHandler_Package renames org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package Line_Package renames Standard.org.allbinary.graphics.Line_Package;
+   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
+   package MotionGestureConfiguration_Package renames Standard.org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package;
+   package MotionGestureConfigurationFactory_Package renames Standard.org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurationFactory_Package;
+   package BasicMotionGesturesHandler_Package renames Standard.org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package;
+   package MotionEventCircularPool_Package renames Standard.org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package;
+   package MotionGestureEvent_Package renames Standard.org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package;
+   package MovedMotionGesturesHandler_Package renames Standard.org.allbinary.input.motion.gesture.observer.MovedMotionGesturesHandler_Package;
+   package ScrolledMotionGesturesHandler_Package renames Standard.org.allbinary.input.motion.gesture.observer.ScrolledMotionGesturesHandler_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package J2SEMath_Package renames Standard.org.allbinary.logic.math.J2SEMath_Package;
+   package BasicEventHandler_Package renames Standard.org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type MotionGestureRecognizer is tagged;
    type MotionGestureRecognizer_Access is access all MotionGestureRecognizer'Class;

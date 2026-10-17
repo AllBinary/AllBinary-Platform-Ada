@@ -28,9 +28,9 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.logic.io.SmallDelete_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package AbFileSystem_Package renames org.allbinary.logic.io.file.AbFileSystem_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package AbFileSystem_Package renames Standard.org.allbinary.logic.io.file.AbFileSystem_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type SmallDelete is tagged;
    type SmallDelete_Access is access all SmallDelete'Class;

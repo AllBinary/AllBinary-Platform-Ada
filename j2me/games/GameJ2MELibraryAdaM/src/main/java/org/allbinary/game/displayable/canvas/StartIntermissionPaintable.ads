@@ -38,19 +38,19 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 
 package org.allbinary.game.displayable.canvas.StartIntermissionPaintable_Package is
 
-   package Anchor_Package renames org.allbinary.graphics.Anchor_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package BasicColorFactory_Package renames org.allbinary.graphics.color.BasicColorFactory_Package;
-   package BasicColorSetUtil_Package renames org.allbinary.graphics.color.BasicColorSetUtil_Package;
-   package DisplayInfoSingleton_Package renames org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
-   package FontDebugFactory_Package renames org.allbinary.graphics.font.FontDebugFactory_Package;
-   package MyFontProcessor_Package renames org.allbinary.graphics.font.MyFontProcessor_Package;
-   package UpdateMyFontInterface_Package renames org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-   package UpdateMyFontProcessor_Package renames org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
-   package InitUpdatePaintable_Package renames org.allbinary.graphics.paint.InitUpdatePaintable_Package;
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
+   package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package BasicColorSetUtil_Package renames Standard.org.allbinary.graphics.color.BasicColorSetUtil_Package;
+   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+   package FontDebugFactory_Package renames Standard.org.allbinary.graphics.font.FontDebugFactory_Package;
+   package MyFontProcessor_Package renames Standard.org.allbinary.graphics.font.MyFontProcessor_Package;
+   package UpdateMyFontInterface_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontInterface_Package;
+   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+   package InitUpdatePaintable_Package renames Standard.org.allbinary.graphics.paint.InitUpdatePaintable_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type StartIntermissionPaintable is tagged;
    type StartIntermissionPaintable_Access is access all StartIntermissionPaintable'Class;

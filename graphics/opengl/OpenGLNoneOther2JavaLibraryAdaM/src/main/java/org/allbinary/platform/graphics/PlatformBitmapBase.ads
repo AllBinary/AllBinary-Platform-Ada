@@ -27,8 +27,8 @@ with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.g
 
 package org.allbinary.platform.graphics.PlatformBitmapBase_Package is
 
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package BasicColorFactory_Package renames org.allbinary.graphics.color.BasicColorFactory_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
 
    type PlatformBitmapBase is tagged;
    type PlatformBitmapBase_Access is access all PlatformBitmapBase'Class;

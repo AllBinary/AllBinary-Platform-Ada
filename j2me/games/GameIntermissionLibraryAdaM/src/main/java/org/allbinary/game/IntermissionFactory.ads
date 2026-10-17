@@ -25,8 +25,8 @@ with org.allbinary.game.state.GameStateFactory_Package; use org.allbinary.game.s
 
 package org.allbinary.game.IntermissionFactory_Package is
 
-   package GameState_Package renames org.allbinary.game.state.GameState_Package;
-   package GameStateFactory_Package renames org.allbinary.game.state.GameStateFactory_Package;
+   package GameState_Package renames Standard.org.allbinary.game.state.GameState_Package;
+   package GameStateFactory_Package renames Standard.org.allbinary.game.state.GameStateFactory_Package;
 
    type IntermissionFactory is tagged;
    type IntermissionFactory_Access is access all IntermissionFactory'Class;

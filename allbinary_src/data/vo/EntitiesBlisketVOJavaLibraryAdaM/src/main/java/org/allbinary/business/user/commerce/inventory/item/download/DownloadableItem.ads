@@ -34,15 +34,15 @@ with org.allbinary.time.TimeUtil_Package; use org.allbinary.time.TimeUtil_Packag
 
 package org.allbinary.business.user.commerce.inventory.item.download.DownloadableItem_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package EntryData_Package renames org.allbinary.business.entry_Id.EntryData_Package;
-   package BasicItemData_Package renames org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package;
-   package ProductIdGenerator_Package renames org.allbinary.data.generator.ProductIdGenerator_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package StringValidationUtil_Package renames org.allbinary.logic.string_Id.StringValidationUtil_Package;
-   package TimeUtil_Package renames org.allbinary.time.TimeUtil_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package EntryData_Package renames Standard.org.allbinary.business.entry_Id.EntryData_Package;
+   package BasicItemData_Package renames Standard.org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package;
+   package ProductIdGenerator_Package renames Standard.org.allbinary.data.generator.ProductIdGenerator_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
+   package TimeUtil_Package renames Standard.org.allbinary.time.TimeUtil_Package;
 
    type DownloadableItem is tagged;
    type DownloadableItem_Access is access all DownloadableItem'Class;

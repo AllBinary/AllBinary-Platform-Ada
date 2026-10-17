@@ -26,8 +26,8 @@ with org.allbinary.layer.Layer_Package; use org.allbinary.layer.Layer_Package;
 
 package org.allbinary.game.layer.LinePathAnimation_Package is
 
-   package GPoint_Package renames org.allbinary.graphics.GPoint_Package;
-   package Layer_Package renames org.allbinary.layer.Layer_Package;
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package Layer_Package renames Standard.org.allbinary.layer.Layer_Package;
 
    type LinePathAnimation is tagged;
    type LinePathAnimation_Access is access all LinePathAnimation'Class;

@@ -35,17 +35,17 @@ with org.allbinary.game.paint.help.HelpPaintable_Package; use org.allbinary.game
 
 package org.allbinary.game.paint.help.BasicInputMappingHelpPaintable_Package is
 
-   package GameKey_Package renames org.allbinary.game.input.GameKey_Package;
-   package GameKeyFactory_Package renames org.allbinary.game.input.GameKeyFactory_Package;
-   package Input_Package renames org.allbinary.game.input.Input_Package;
-   package PlatformInputMappingFactory_Package renames org.allbinary.game.input.PlatformInputMappingFactory_Package;
-   package GameInputMapping_Package renames org.allbinary.game.input.mapping.GameInputMapping_Package;
-   package PersistentInputMapping_Package renames org.allbinary.game.input.mapping.PersistentInputMapping_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package BasicColorFactory_Package renames org.allbinary.graphics.color.BasicColorFactory_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package GameKey_Package renames Standard.org.allbinary.game.input.GameKey_Package;
+   package GameKeyFactory_Package renames Standard.org.allbinary.game.input.GameKeyFactory_Package;
+   package Input_Package renames Standard.org.allbinary.game.input.Input_Package;
+   package PlatformInputMappingFactory_Package renames Standard.org.allbinary.game.input.PlatformInputMappingFactory_Package;
+   package GameInputMapping_Package renames Standard.org.allbinary.game.input.mapping.GameInputMapping_Package;
+   package PersistentInputMapping_Package renames Standard.org.allbinary.game.input.mapping.PersistentInputMapping_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type BasicInputMappingHelpPaintable is tagged;
    type BasicInputMappingHelpPaintable_Access is access all BasicInputMappingHelpPaintable'Class;

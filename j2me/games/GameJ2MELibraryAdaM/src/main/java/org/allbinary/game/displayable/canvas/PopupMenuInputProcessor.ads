@@ -39,20 +39,20 @@ with org.allbinary.game.displayable.canvas.BasicMenuInputProcessor_Package; use 
 
 package org.allbinary.game.displayable.canvas.PopupMenuInputProcessor_Package is
 
-   package GameInputStrings_Package renames org.allbinary.game.input.GameInputStrings_Package;
-   package GameKeyEvent_Package renames org.allbinary.game.input.event.GameKeyEvent_Package;
-   package GPoint_Package renames org.allbinary.graphics.GPoint_Package;
-   package Rectangle_Package renames org.allbinary.graphics.Rectangle_Package;
-   package MyCanvas_Package renames org.allbinary.graphics.displayable.MyCanvas_Package;
-   package MotionGestureInput_Package renames org.allbinary.input.motion.gesture.MotionGestureInput_Package;
-   package TouchMotionGestureFactory_Package renames org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package;
-   package MotionGestureEvent_Package renames org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package;
-   package PreLogUtil_Package renames org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package RectangleCollisionUtil_Package renames org.allbinary.math.RectangleCollisionUtil_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
-   package TimeDelayHelper_Package renames org.allbinary.time.TimeDelayHelper_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package GameInputStrings_Package renames Standard.org.allbinary.game.input.GameInputStrings_Package;
+   package GameKeyEvent_Package renames Standard.org.allbinary.game.input.event.GameKeyEvent_Package;
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
+   package MyCanvas_Package renames Standard.org.allbinary.graphics.displayable.MyCanvas_Package;
+   package MotionGestureInput_Package renames Standard.org.allbinary.input.motion.gesture.MotionGestureInput_Package;
+   package TouchMotionGestureFactory_Package renames Standard.org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package;
+   package MotionGestureEvent_Package renames Standard.org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package RectangleCollisionUtil_Package renames Standard.org.allbinary.math.RectangleCollisionUtil_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type PopupMenuInputProcessor is tagged;
    type PopupMenuInputProcessor_Access is access all PopupMenuInputProcessor'Class;

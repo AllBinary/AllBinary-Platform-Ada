@@ -26,8 +26,8 @@ with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics
 
 package org.allbinary.animation.caption.CaptionAnimationHelperBase_Package is
 
-   package Animation_Package renames org.allbinary.animation.Animation_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
+   package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
 
    type CaptionAnimationHelperBase is tagged;
    type CaptionAnimationHelperBase_Access is access all CaptionAnimationHelperBase'Class;

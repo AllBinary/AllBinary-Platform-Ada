@@ -31,14 +31,14 @@ with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface
 
 package org.allbinary.game.init.GameInitializationUtil_Package is
 
-   package ChangedGameFeatureListener_Package renames org.allbinary.game.configuration.event_Case.ChangedGameFeatureListener_Package;
-   package GameInitializedEvent_Package renames org.allbinary.game.configuration.event_Case.GameInitializedEvent_Package;
-   package GameInitializedEventHandler_Package renames org.allbinary.game.configuration.event_Case.GameInitializedEventHandler_Package;
-   package Features_Package renames org.allbinary.game.configuration.feature.Features_Package;
-   package MainFeatureFactory_Package renames org.allbinary.game.configuration.feature.MainFeatureFactory_Package;
-   package ResourceLoadingLevelFactory_Package renames org.allbinary.game.resource.ResourceLoadingLevelFactory_Package;
-   package MyCanvas_Package renames org.allbinary.graphics.displayable.MyCanvas_Package;
-   package AbeClientInformationInterface_Package renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package ChangedGameFeatureListener_Package renames Standard.org.allbinary.game.configuration.event_Case.ChangedGameFeatureListener_Package;
+   package GameInitializedEvent_Package renames Standard.org.allbinary.game.configuration.event_Case.GameInitializedEvent_Package;
+   package GameInitializedEventHandler_Package renames Standard.org.allbinary.game.configuration.event_Case.GameInitializedEventHandler_Package;
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
+   package MainFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.MainFeatureFactory_Package;
+   package ResourceLoadingLevelFactory_Package renames Standard.org.allbinary.game.resource.ResourceLoadingLevelFactory_Package;
+   package MyCanvas_Package renames Standard.org.allbinary.graphics.displayable.MyCanvas_Package;
+   package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 
    type GameInitializationUtil is tagged;
    type GameInitializationUtil_Access is access all GameInitializationUtil'Class;

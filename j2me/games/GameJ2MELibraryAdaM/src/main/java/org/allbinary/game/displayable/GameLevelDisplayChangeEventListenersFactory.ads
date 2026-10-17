@@ -28,11 +28,11 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 
 package org.allbinary.game.displayable.GameLevelDisplayChangeEventListenersFactory_Package is
 
-   package DisplayChangeEventHandler_Package renames org.allbinary.graphics.displayable.event.DisplayChangeEventHandler_Package;
-   package DisplayChangeEventListener_Package renames org.allbinary.graphics.displayable.event.DisplayChangeEventListener_Package;
-   package BasicEventHandler_Package renames org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
+   package DisplayChangeEventHandler_Package renames Standard.org.allbinary.graphics.displayable.event.DisplayChangeEventHandler_Package;
+   package DisplayChangeEventListener_Package renames Standard.org.allbinary.graphics.displayable.event.DisplayChangeEventListener_Package;
+   package BasicEventHandler_Package renames Standard.org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type GameLevelDisplayChangeEventListenersFactory is tagged;
    type GameLevelDisplayChangeEventListenersFactory_Access is access all GameLevelDisplayChangeEventListenersFactory'Class;

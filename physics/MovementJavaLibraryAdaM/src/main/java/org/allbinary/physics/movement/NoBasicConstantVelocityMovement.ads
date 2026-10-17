@@ -27,9 +27,9 @@ with org.allbinary.physics.movement.BasicConstantVelocityMovement_Package; use o
 
 package org.allbinary.physics.movement.NoBasicConstantVelocityMovement_Package is
 
-   package AllBinaryGameLayer_Package renames org.allbinary.game.layer.AllBinaryGameLayer_Package;
-   package BasicVelocityProperties_Package renames org.allbinary.game.physics.velocity.BasicVelocityProperties_Package;
-   package BasicDecimal_Package renames org.allbinary.logic.math.BasicDecimal_Package;
+   package AllBinaryGameLayer_Package renames Standard.org.allbinary.game.layer.AllBinaryGameLayer_Package;
+   package BasicVelocityProperties_Package renames Standard.org.allbinary.game.physics.velocity.BasicVelocityProperties_Package;
+   package BasicDecimal_Package renames Standard.org.allbinary.logic.math.BasicDecimal_Package;
 
    type NoBasicConstantVelocityMovement is tagged;
    type NoBasicConstantVelocityMovement_Access is access all NoBasicConstantVelocityMovement'Class;

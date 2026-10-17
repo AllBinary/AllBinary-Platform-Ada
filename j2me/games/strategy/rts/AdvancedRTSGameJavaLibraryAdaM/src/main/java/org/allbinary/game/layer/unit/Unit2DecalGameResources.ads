@@ -27,10 +27,10 @@ with org.allbinary.game.configuration.feature.GraphicsFeatureFactory_Package; us
 
 package org.allbinary.game.layer.unit.Unit2DecalGameResources_Package is
 
-   package BasicGameResources_Package renames org.allbinary.game.layer.resources.BasicGameResources_Package;
-   package GameGraphicsResourceUtil_Package renames org.allbinary.game.layer.resources.GameGraphicsResourceUtil_Package;
-   package AndroidUtil_Package renames org.allbinary.AndroidUtil_Package;
-   package GraphicsFeatureFactory_Package renames org.allbinary.game.configuration.feature.GraphicsFeatureFactory_Package;
+   package BasicGameResources_Package renames Standard.org.allbinary.game.layer.resources.BasicGameResources_Package;
+   package GameGraphicsResourceUtil_Package renames Standard.org.allbinary.game.layer.resources.GameGraphicsResourceUtil_Package;
+   package AndroidUtil_Package renames Standard.org.allbinary.AndroidUtil_Package;
+   package GraphicsFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.GraphicsFeatureFactory_Package;
 
    type Unit2DecalGameResources is tagged;
    type Unit2DecalGameResources_Access is access all Unit2DecalGameResources'Class;

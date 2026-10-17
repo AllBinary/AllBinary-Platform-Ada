@@ -27,10 +27,10 @@ with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 
 package org.allbinary.business.category.store.theme.StoreThemeCategoriesView_Package is
 
-   package CategoryInterface_Package renames org.allbinary.business.category.CategoryInterface_Package;
-   package DomNodeInterface_Package renames org.allbinary.data.tree.dom.DomNodeInterface_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
+   package CategoryInterface_Package renames Standard.org.allbinary.business.category.CategoryInterface_Package;
+   package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type StoreThemeCategoriesView is tagged;
    type StoreThemeCategoriesView_Access is access all StoreThemeCategoriesView'Class;

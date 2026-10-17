@@ -25,7 +25,7 @@ with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary
 
 package org.allbinary.logic.io.file.FileWrapperUtil_Package is
 
-   package PreLogUtil_Package renames org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
 
    type FileWrapperUtil is tagged;
    type FileWrapperUtil_Access is access all FileWrapperUtil'Class;

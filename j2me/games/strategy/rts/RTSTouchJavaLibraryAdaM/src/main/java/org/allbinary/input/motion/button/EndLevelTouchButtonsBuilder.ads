@@ -28,10 +28,10 @@ with org.allbinary.input.motion.button.TouchButtonsListBuilder_Package; use org.
 
 package org.allbinary.input.motion.button.EndLevelTouchButtonsBuilder_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package BasicArrayListUtil_Package renames org.allbinary.util.BasicArrayListUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type EndLevelTouchButtonsBuilder is tagged;
    type EndLevelTouchButtonsBuilder_Access is access all EndLevelTouchButtonsBuilder'Class;

@@ -27,9 +27,9 @@ with org.allbinary.data.tables.BasicDataTableInterface_Package; use org.allbinar
 
 package org.allbinary.data.tables.user.commerce.inventory.item.customs.CustomItemsEntityInterface_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package BasicDataTableInterface_Package renames org.allbinary.data.tables.BasicDataTableInterface_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package BasicDataTableInterface_Package renames Standard.org.allbinary.data.tables.BasicDataTableInterface_Package;
 
    type CustomItemsEntityInterface is interface and BasicDataTableInterface;
    type CustomItemsEntityInterface_Access is access all CustomItemsEntityInterface'Class;

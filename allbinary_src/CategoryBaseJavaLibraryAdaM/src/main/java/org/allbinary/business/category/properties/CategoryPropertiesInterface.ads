@@ -27,10 +27,10 @@ with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path
 
 package org.allbinary.business.category.properties.CategoryPropertiesInterface_Package is
 
-   package CategoryHierarchyInterface_Package renames org.allbinary.business.category.hierarchy.CategoryHierarchyInterface_Package;
-   package TableMappingInterface_Package renames org.allbinary.data.tables.TableMappingInterface_Package;
-   package ValidationInterface_Package renames org.allbinary.logic.control.validate.ValidationInterface_Package;
-   package AbPath_Package renames org.allbinary.logic.io.path.AbPath_Package;
+   package CategoryHierarchyInterface_Package renames Standard.org.allbinary.business.category.hierarchy.CategoryHierarchyInterface_Package;
+   package TableMappingInterface_Package renames Standard.org.allbinary.data.tables.TableMappingInterface_Package;
+   package ValidationInterface_Package renames Standard.org.allbinary.logic.control.validate.ValidationInterface_Package;
+   package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
 
    type CategoryPropertiesInterface is interface and TableMappingInterface and ValidationInterface;
    type CategoryPropertiesInterface_Access is access all CategoryPropertiesInterface'Class;

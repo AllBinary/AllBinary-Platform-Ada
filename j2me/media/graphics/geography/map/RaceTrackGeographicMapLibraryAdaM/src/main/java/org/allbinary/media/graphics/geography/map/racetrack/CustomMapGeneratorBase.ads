@@ -24,7 +24,7 @@ with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Pack
 
 package org.allbinary.media.graphics.geography.map.racetrack.CustomMapGeneratorBase_Package is
 
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
 
    type CustomMapGeneratorBase is tagged;
    type CustomMapGeneratorBase_Access is access all CustomMapGeneratorBase'Class;

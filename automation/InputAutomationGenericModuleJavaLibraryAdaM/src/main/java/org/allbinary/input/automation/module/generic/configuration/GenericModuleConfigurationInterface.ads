@@ -24,7 +24,7 @@ with org.allbinary.input.automation.module.generic_Id.configuration.profile.Gene
 
 package org.allbinary.input.automation.module.generic_Id.configuration.GenericModuleConfigurationInterface_Package is
 
-   package GenericProfile_Package renames org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfile_Package;
+   package GenericProfile_Package renames Standard.org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfile_Package;
 
    type GenericModuleConfigurationInterface is interface;
    type GenericModuleConfigurationInterface_Access is access all GenericModuleConfigurationInterface'Class;

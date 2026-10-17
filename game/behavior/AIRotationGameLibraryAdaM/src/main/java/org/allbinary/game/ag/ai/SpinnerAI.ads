@@ -28,10 +28,10 @@ with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.
 
 package org.allbinary.game.ag.ai.SpinnerAI_Package is
 
-   package BasicAI_Package renames org.allbinary.game.ai.BasicAI_Package;
-   package GameInput_Package renames org.allbinary.game.input.GameInput_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package AllBinaryLayerManager_Package renames org.allbinary.layer.AllBinaryLayerManager_Package;
+   package BasicAI_Package renames Standard.org.allbinary.game.ai.BasicAI_Package;
+   package GameInput_Package renames Standard.org.allbinary.game.input.GameInput_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
 
    type SpinnerAI is tagged;
    type SpinnerAI_Access is access all SpinnerAI'Class;

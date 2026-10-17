@@ -126,8 +126,12 @@ package body org.allbinary.media.image.comparison.motion.TestInputForMotionRecta
             This.logUtil.putF ((CommonLabels_Package.getInstance.ELAPSED) + (timeHelper.getElapsedTNT), This'Unchecked_Access, This.commonStrings.RUN);
             This.logUtil.putF (This.commonStrings.END_Id, This'Unchecked_Access, This.commonStrings.RUN);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.RUN, e);
+                end;
         end;
    end run;
 

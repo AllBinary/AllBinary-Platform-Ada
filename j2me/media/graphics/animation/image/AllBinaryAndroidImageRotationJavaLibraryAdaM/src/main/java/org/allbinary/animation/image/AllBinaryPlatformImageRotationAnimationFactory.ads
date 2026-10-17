@@ -26,7 +26,7 @@ with org.allbinary.animation.image.AllBinaryAndroidImageRotationAnimationFactory
 
 package org.allbinary.animation.image.AllBinaryPlatformImageRotationAnimationFactory_Package is
 
-   package AnimationBehaviorFactory_Package renames org.allbinary.animation.AnimationBehaviorFactory_Package;
+   package AnimationBehaviorFactory_Package renames Standard.org.allbinary.animation.AnimationBehaviorFactory_Package;
 
    type AllBinaryPlatformImageRotationAnimationFactory is tagged;
    type AllBinaryPlatformImageRotationAnimationFactory_Access is access all AllBinaryPlatformImageRotationAnimationFactory'Class;

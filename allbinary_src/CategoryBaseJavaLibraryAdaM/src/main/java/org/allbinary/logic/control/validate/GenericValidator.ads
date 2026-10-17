@@ -26,8 +26,8 @@ with org.allbinary.logic.control.validate.ValidatorBase_Package; use org.allbina
 
 package org.allbinary.logic.control.validate.GenericValidator_Package is
 
-   package Document_Package renames org.w3c.dom.Document_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type GenericValidator is tagged;
    type GenericValidator_Access is access all GenericValidator'Class;

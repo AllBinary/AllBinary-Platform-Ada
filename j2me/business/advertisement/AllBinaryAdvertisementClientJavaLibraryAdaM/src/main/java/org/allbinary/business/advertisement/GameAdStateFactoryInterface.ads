@@ -24,7 +24,7 @@ with org.allbinary.logic.system.SoftwareInformation_Package; use org.allbinary.l
 
 package org.allbinary.business.advertisement.GameAdStateFactoryInterface_Package is
 
-   package SoftwareInformation_Package renames org.allbinary.logic.system.SoftwareInformation_Package;
+   package SoftwareInformation_Package renames Standard.org.allbinary.logic.system.SoftwareInformation_Package;
 
    type GameAdStateFactoryInterface is interface;
    type GameAdStateFactoryInterface_Access is access all GameAdStateFactoryInterface'Class;

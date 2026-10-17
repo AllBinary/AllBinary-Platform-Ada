@@ -24,7 +24,7 @@ with org.allbinary.game.identification.Group_Package; use org.allbinary.game.ide
 
 package org.allbinary.game.layer.waypoint.event.WaypointEventHandlerFactory_Package is
 
-   package Group_Package renames org.allbinary.game.identification.Group_Package;
+   package Group_Package renames Standard.org.allbinary.game.identification.Group_Package;
 
    type WaypointEventHandlerFactory is tagged;
    type WaypointEventHandlerFactory_Access is access all WaypointEventHandlerFactory'Class;

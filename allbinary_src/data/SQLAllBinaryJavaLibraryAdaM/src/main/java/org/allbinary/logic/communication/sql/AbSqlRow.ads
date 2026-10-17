@@ -36,14 +36,14 @@ with org.allbinary.logic.communication.sql.AbSqlColumn_Package; use org.allbinar
 
 package org.allbinary.logic.communication.sql.AbSqlRow_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package DbConnectionInfo_Package renames org.allbinary.business.init.db.DbConnectionInfo_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package StringValidationUtil_Package renames org.allbinary.logic.string_Id.StringValidationUtil_Package;
-   package Replace_Package renames org.allbinary.logic.string_Id.regex.replace.Replace_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package DbConnectionInfo_Package renames Standard.org.allbinary.business.init.db.DbConnectionInfo_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
+   package Replace_Package renames Standard.org.allbinary.logic.string_Id.regex.replace.Replace_Package;
 
    type AbSqlRow is tagged;
    type AbSqlRow_Access is access all AbSqlRow'Class;

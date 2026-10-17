@@ -31,12 +31,12 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.logic.visual.transform.info.TransformInfoHttpFactory_Package is
 
-   package StoreFrontFactory_Package renames org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
-   package StoreFrontInterface_Package renames org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
-   package WeblisketSession_Package renames org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringValidationUtil_Package renames org.allbinary.logic.string_Id.StringValidationUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package StoreFrontFactory_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
+   package StoreFrontInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
+   package WeblisketSession_Package renames Standard.org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type TransformInfoHttpFactory is tagged;
    type TransformInfoHttpFactory_Access is access all TransformInfoHttpFactory'Class;

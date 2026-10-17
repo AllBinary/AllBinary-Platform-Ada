@@ -26,7 +26,7 @@ with org.allbinary.animation.image.AlphaBaseProcessor_Package; use org.allbinary
 
 package org.allbinary.animation.image.AlphaProcessor_Package is
 
-   package ImageModifierUtil_Package renames org.allbinary.media.image.ImageModifierUtil_Package;
+   package ImageModifierUtil_Package renames Standard.org.allbinary.media.image.ImageModifierUtil_Package;
 
    type AlphaProcessor is tagged;
    type AlphaProcessor_Access is access all AlphaProcessor'Class;

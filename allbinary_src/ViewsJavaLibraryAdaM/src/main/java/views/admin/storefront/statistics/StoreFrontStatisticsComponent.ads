@@ -31,14 +31,14 @@ with views.business.context.modules.storefront.HttpStoreComponentView_Package; u
 
 package views.admin.storefront.statistics.StoreFrontStatisticsComponent_Package is
 
-   package StoreFrontFactory_Package renames org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
-   package StoreFrontInterface_Package renames org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
-   package RealTimeStoreFrontStatistics_Package renames org.allbinary.business.context.modules.storefront.statistics.RealTimeStoreFrontStatistics_Package;
-   package RealTimeStoreFrontStatisticsView_Package renames org.allbinary.business.context.modules.storefront.statistics.RealTimeStoreFrontStatisticsView_Package;
-   package DomNodeInterface_Package renames org.allbinary.data.tree.dom.DomNodeInterface_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package TransformInfoInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-   package HttpStoreComponentView_Package renames views.business.context.modules.storefront.HttpStoreComponentView_Package;
+   package StoreFrontFactory_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
+   package StoreFrontInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
+   package RealTimeStoreFrontStatistics_Package renames Standard.org.allbinary.business.context.modules.storefront.statistics.RealTimeStoreFrontStatistics_Package;
+   package RealTimeStoreFrontStatisticsView_Package renames Standard.org.allbinary.business.context.modules.storefront.statistics.RealTimeStoreFrontStatisticsView_Package;
+   package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package HttpStoreComponentView_Package renames Standard.views.business.context.modules.storefront.HttpStoreComponentView_Package;
 
    type StoreFrontStatisticsComponent is tagged;
    type StoreFrontStatisticsComponent_Access is access all StoreFrontStatisticsComponent'Class;

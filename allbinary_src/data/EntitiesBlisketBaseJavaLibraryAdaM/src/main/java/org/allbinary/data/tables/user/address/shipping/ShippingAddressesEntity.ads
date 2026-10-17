@@ -24,7 +24,7 @@ with org.allbinary.data.tables.user.address.StreetAddressesEntity_Package; use o
 
 package org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntity_Package is
 
-   package StreetAddressesEntity_Package renames org.allbinary.data.tables.user.address.StreetAddressesEntity_Package;
+   package StreetAddressesEntity_Package renames Standard.org.allbinary.data.tables.user.address.StreetAddressesEntity_Package;
 
    type ShippingAddressesEntity is tagged;
    type ShippingAddressesEntity_Access is access all ShippingAddressesEntity'Class;

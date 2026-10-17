@@ -26,9 +26,9 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.logic.math.PrimitiveLongUtil_Package is
 
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type PrimitiveLongUtil is tagged;
    type PrimitiveLongUtil_Access is access all PrimitiveLongUtil'Class;

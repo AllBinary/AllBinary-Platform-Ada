@@ -25,7 +25,7 @@ with org.allbinary.graphics.form.item.validation.TextFieldItemValidator_Package;
 
 package org.allbinary.graphics.form.item.validation.UsernameValidator_Package is
 
-   package ABTextFieldItem_Package renames org.allbinary.graphics.form.item.ABTextFieldItem_Package;
+   package ABTextFieldItem_Package renames Standard.org.allbinary.graphics.form.item.ABTextFieldItem_Package;
 
    type UsernameValidator is tagged;
    type UsernameValidator_Access is access all UsernameValidator'Class;

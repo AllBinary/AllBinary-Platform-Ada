@@ -31,13 +31,13 @@ with org.allbinary.business.advertisement.area.AdvertisementAreaConstraintsInter
 
 package org.allbinary.business.advertisement.area.AdvertisementAreaConstraints_Package is
 
-   package DomSearchHelper_Package renames org.allbinary.data.tree.dom.DomSearchHelper_Package;
-   package DisplayInBrowserContraints_Package renames org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraints_Package;
-   package DisplayInBrowserContraintsInterface_Package renames org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraintsInterface_Package;
-   package TwoDimensionalConstraint_Package renames org.allbinary.logic.control.contraints.size.TwoDimensionalConstraint_Package;
-   package TwoDimensionalConstraintInterface_Package renames org.allbinary.logic.control.contraints.size.TwoDimensionalConstraintInterface_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
+   package DomSearchHelper_Package renames Standard.org.allbinary.data.tree.dom.DomSearchHelper_Package;
+   package DisplayInBrowserContraints_Package renames Standard.org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraints_Package;
+   package DisplayInBrowserContraintsInterface_Package renames Standard.org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraintsInterface_Package;
+   package TwoDimensionalConstraint_Package renames Standard.org.allbinary.logic.control.contraints.size.TwoDimensionalConstraint_Package;
+   package TwoDimensionalConstraintInterface_Package renames Standard.org.allbinary.logic.control.contraints.size.TwoDimensionalConstraintInterface_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type AdvertisementAreaConstraints is tagged;
    type AdvertisementAreaConstraints_Access is access all AdvertisementAreaConstraints'Class;

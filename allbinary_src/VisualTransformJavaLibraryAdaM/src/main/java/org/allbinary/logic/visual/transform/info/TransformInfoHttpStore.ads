@@ -35,14 +35,14 @@ with org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreInterface_P
 
 package org.allbinary.logic.visual.transform.info.TransformInfoHttpStore_Package is
 
-   package StoreFrontData_Package renames org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
-   package StoreFrontInterface_Package renames org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
-   package FREEBLISKET_PATH_GLOBALS_Package renames org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package;
-   package URLGLOBALS_Package renames org.allbinary.globals.URLGLOBALS_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package AbPath_Package renames org.allbinary.logic.io.path.AbPath_Package;
-   package AbPathData_Package renames org.allbinary.logic.io.path.AbPathData_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
+   package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+   package StoreFrontInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
+   package FREEBLISKET_PATH_GLOBALS_Package renames Standard.org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package;
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
+   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
 
    type TransformInfoHttpStore is tagged;
    type TransformInfoHttpStore_Access is access all TransformInfoHttpStore'Class;

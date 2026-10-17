@@ -25,8 +25,8 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 
 package org.allbinary.business.user.commerce.money.payment.gateway.transaction.TransactionResultInterface_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type TransactionResultInterface is interface;
    type TransactionResultInterface_Access is access all TransactionResultInterface'Class;

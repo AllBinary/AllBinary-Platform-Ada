@@ -31,12 +31,12 @@ with org.allbinary.input.automation.module.AbstractInputAutomationWorker_Package
 
 package org.allbinary.input.automation.module.TestInputAutomationActionWorker_Package is
 
-   package InputRobotFactory_Package renames org.allbinary.input.automation.robot.InputRobotFactory_Package;
-   package InputRobotInterface_Package renames org.allbinary.input.automation.robot.InputRobotInterface_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package ImageComparatorConstraintsInterface_Package renames org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package;
-   package MotionRectangleConstraintsInterface_Package renames org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInterface_Package;
-   package ABHashtable_Package renames org.allbinary.util.ABHashtable_Package;
+   package InputRobotFactory_Package renames Standard.org.allbinary.input.automation.robot.InputRobotFactory_Package;
+   package InputRobotInterface_Package renames Standard.org.allbinary.input.automation.robot.InputRobotInterface_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package ImageComparatorConstraintsInterface_Package renames Standard.org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package;
+   package MotionRectangleConstraintsInterface_Package renames Standard.org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInterface_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
    type TestInputAutomationActionWorker is tagged;
    type TestInputAutomationActionWorker_Access is access all TestInputAutomationActionWorker'Class;

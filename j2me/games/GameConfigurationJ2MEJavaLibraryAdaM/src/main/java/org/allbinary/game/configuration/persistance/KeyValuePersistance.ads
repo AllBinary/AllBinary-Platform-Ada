@@ -21,7 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.io.ByteArrayInputStream_Package; use java.io.ByteArrayInputStream_Package;
---  with java.io.ByteArrayOutputStream_Package; use java.io.ByteArrayOutputStream_Package;
+with java.io.ByteArrayOutputStream_Package; use java.io.ByteArrayOutputStream_Package;
 --  with java.io.DataInputStream_Package; use java.io.DataInputStream_Package;
 --  with java.io.DataOutputStream_Package; use java.io.DataOutputStream_Package;
 --  with javax.microedition.rms.RecordEnumeration_Package; use javax.microedition.rms.RecordEnumeration_Package;
@@ -39,15 +39,16 @@ with org.allbinary.game.configuration.persistance.BasicPersitance_Package; use o
 
 package org.allbinary.game.configuration.persistance.KeyValuePersistance_Package is
 
-   package TsUtil_Package renames org.allbinary.TsUtil_Package;
-   package PreLogUtil_Package renames org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package SmallIntegerSingletonFactory_Package renames org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package AbeClientInformationInterface_Package renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
-   package ABHashtable_Package renames org.allbinary.util.ABHashtable_Package;
-   package HashtableUtil_Package renames org.allbinary.util.HashtableUtil_Package;
+   package ByteArrayOutputStream_Package renames Standard.java.io.ByteArrayOutputStream_Package;
+   package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
+   package HashtableUtil_Package renames Standard.org.allbinary.util.HashtableUtil_Package;
 
    type KeyValuePersistance is tagged;
    type KeyValuePersistance_Access is access all KeyValuePersistance'Class;

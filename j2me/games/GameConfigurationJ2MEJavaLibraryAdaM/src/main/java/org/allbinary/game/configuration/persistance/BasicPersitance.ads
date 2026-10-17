@@ -32,14 +32,14 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 
 package org.allbinary.game.configuration.persistance.BasicPersitance_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package PreLogUtil_Package renames org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package AbeClientInformationInterface_Package renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-   package PlatformRecordIdUtil_Package renames org.allbinary.persistance.PlatformRecordIdUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package PlatformRecordIdUtil_Package renames Standard.org.allbinary.persistance.PlatformRecordIdUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type BasicPersitance is tagged;
    type BasicPersitance_Access is access all BasicPersitance'Class;

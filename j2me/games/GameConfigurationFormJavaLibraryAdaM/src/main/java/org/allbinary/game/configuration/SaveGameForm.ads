@@ -30,11 +30,11 @@ with org.allbinary.logic.MEUtil_Package; use org.allbinary.logic.MEUtil_Package;
 
 package org.allbinary.game.configuration.SaveGameForm_Package is
 
-   package GameCommandsFactory_Package renames org.allbinary.game.commands.GameCommandsFactory_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package CommandForm_Package renames org.allbinary.graphics.displayable.screen.CommandForm_Package;
-   package ABSystemWrapper_Package renames org.allbinary.logic.ABSystemWrapper_Package;
-   package MEUtil_Package renames org.allbinary.logic.MEUtil_Package;
+   package GameCommandsFactory_Package renames Standard.org.allbinary.game.commands.GameCommandsFactory_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package CommandForm_Package renames Standard.org.allbinary.graphics.displayable.screen.CommandForm_Package;
+   package ABSystemWrapper_Package renames Standard.org.allbinary.logic.ABSystemWrapper_Package;
+   package MEUtil_Package renames Standard.org.allbinary.logic.MEUtil_Package;
 
    type SaveGameForm is tagged;
    type SaveGameForm_Access is access all SaveGameForm'Class;

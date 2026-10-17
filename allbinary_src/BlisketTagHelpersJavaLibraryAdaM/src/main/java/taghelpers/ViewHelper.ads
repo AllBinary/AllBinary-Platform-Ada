@@ -34,15 +34,15 @@ with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 
 package taghelpers.ViewHelper_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package AbeClientInformationInterface_Package renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-   package ServiceClientInformationInterfaceFactory_Package renames org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package;
-   package TransformFactory_Package renames org.allbinary.logic.visual.transform.TransformFactory_Package;
-   package TransformInterface_Package renames org.allbinary.logic.visual.transform.TransformInterface_Package;
-   package TransformDocumentInterface_Package renames org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Package;
-   package TransformInfoInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package ServiceClientInformationInterfaceFactory_Package renames Standard.org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package;
+   package TransformFactory_Package renames Standard.org.allbinary.logic.visual.transform.TransformFactory_Package;
+   package TransformInterface_Package renames Standard.org.allbinary.logic.visual.transform.TransformInterface_Package;
+   package TransformDocumentInterface_Package renames Standard.org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Package;
+   package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
 
    type ViewHelper is tagged;
    type ViewHelper_Access is access all ViewHelper'Class;

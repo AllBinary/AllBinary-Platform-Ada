@@ -49,8 +49,12 @@ package body org.allbinary.image.ImageTool_Package is
 --                      logUtil.putF (commonStrings.START, This'Unchecked_Access, commonStrings.RUN);
 --                      ImageToolJFrame_Package.Create.setVisible (True);
 --                  exception
---                      when e : others =>
+--                      when Java_Occurrence : others =>
+--                          declare
+--                              e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+--                          begin
 --                      logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.RUN, e);
+--                          end;
 --                  end;
 --     end run;
 );

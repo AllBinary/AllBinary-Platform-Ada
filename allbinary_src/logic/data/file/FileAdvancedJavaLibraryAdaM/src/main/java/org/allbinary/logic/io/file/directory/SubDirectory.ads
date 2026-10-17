@@ -28,10 +28,10 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 
 package org.allbinary.logic.io.file.directory.SubDirectory_Package is
 
-   package AbFile_Package renames org.allbinary.logic.io.file.AbFile_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type SubDirectory is tagged;
    type SubDirectory_Access is access all SubDirectory'Class;

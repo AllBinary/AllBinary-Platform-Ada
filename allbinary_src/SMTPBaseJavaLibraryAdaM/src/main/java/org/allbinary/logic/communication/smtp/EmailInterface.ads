@@ -26,8 +26,8 @@ with org.allbinary.data.tree.dom.document.mapping.DomDocumentMappingInterface_Pa
 
 package org.allbinary.logic.communication.smtp.EmailInterface_Package is
 
-   package DomNodeInterface_Package renames org.allbinary.data.tree.dom.DomNodeInterface_Package;
-   package DomDocumentMappingInterface_Package renames org.allbinary.data.tree.dom.document.mapping.DomDocumentMappingInterface_Package;
+   package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
+   package DomDocumentMappingInterface_Package renames Standard.org.allbinary.data.tree.dom.document.mapping.DomDocumentMappingInterface_Package;
 
    type EmailInterface is interface and DomNodeInterface and DomDocumentMappingInterface;
    type EmailInterface_Access is access all EmailInterface'Class;

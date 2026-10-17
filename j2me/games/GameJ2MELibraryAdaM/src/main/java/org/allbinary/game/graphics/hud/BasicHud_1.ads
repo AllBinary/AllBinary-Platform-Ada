@@ -42,24 +42,24 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.game.graphics.hud.BasicHud_1_Package is
 
-   package Anchor_Package renames org.allbinary.graphics.Anchor_Package;
-   package GPoint_Package renames org.allbinary.graphics.GPoint_Package;
-   package PointFactory_Package renames org.allbinary.graphics.PointFactory_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package BasicColorFactory_Package renames org.allbinary.graphics.color.BasicColorFactory_Package;
-   package BasicColorSetUtil_Package renames org.allbinary.graphics.color.BasicColorSetUtil_Package;
-   package CanvasStrings_Package renames org.allbinary.graphics.displayable.CanvasStrings_Package;
-   package DisplayInfoSingleton_Package renames org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
-   package DisplayChangeEvent_Package renames org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package;
-   package MyFontProcessor_Package renames org.allbinary.graphics.font.MyFontProcessor_Package;
-   package UpdateMyFontInterface_Package renames org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-   package UpdateMyFontProcessor_Package renames org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
-   package ForcedLogUtil_Package renames org.allbinary.logic.communication.log.ForcedLogUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package AllBinaryEventObject_Package renames org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-   package EventStrings_Package renames org.allbinary.logic.util.event.EventStrings_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package BasicColorSetUtil_Package renames Standard.org.allbinary.graphics.color.BasicColorSetUtil_Package;
+   package CanvasStrings_Package renames Standard.org.allbinary.graphics.displayable.CanvasStrings_Package;
+   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+   package DisplayChangeEvent_Package renames Standard.org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package;
+   package MyFontProcessor_Package renames Standard.org.allbinary.graphics.font.MyFontProcessor_Package;
+   package UpdateMyFontInterface_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontInterface_Package;
+   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+   package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type BasicHud_1 is tagged;
    type BasicHud_1_Access is access all BasicHud_1'Class;

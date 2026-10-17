@@ -25,8 +25,8 @@ with org.allbinary.data.tables.BasicDataTableInterface_Package; use org.allbinar
 
 package org.allbinary.data.tables.user.address.StreetAddressesEntityInterface_Package is
 
-   package StreetAddress_Package renames org.allbinary.business.user.address.StreetAddress_Package;
-   package BasicDataTableInterface_Package renames org.allbinary.data.tables.BasicDataTableInterface_Package;
+   package StreetAddress_Package renames Standard.org.allbinary.business.user.address.StreetAddress_Package;
+   package BasicDataTableInterface_Package renames Standard.org.allbinary.data.tables.BasicDataTableInterface_Package;
 
    type StreetAddressesEntityInterface is interface and BasicDataTableInterface;
    type StreetAddressesEntityInterface_Access is access all StreetAddressesEntityInterface'Class;

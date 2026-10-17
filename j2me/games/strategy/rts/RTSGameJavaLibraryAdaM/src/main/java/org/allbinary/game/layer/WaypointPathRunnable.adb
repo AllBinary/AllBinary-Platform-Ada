@@ -52,10 +52,14 @@ package body org.allbinary.game.layer.WaypointPathRunnable_Package is
             This.pathFindingLayer.getWaypointRunnableLogHelper.end_Id (This.pathFindingLayer);
             Java_Sleep ((15) + (((This.priorityP) * (2))));
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.RUN, e);
             This.setRunning (False);
+                end;
         end;
    end run;
 

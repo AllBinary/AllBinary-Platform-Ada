@@ -25,7 +25,7 @@ with admin.taghelpers.TableInterface_Package; use admin.taghelpers.TableInterfac
 
 package admin.taghelpers.Table_Package is
 
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type Table is tagged;
    type Table_Access is access all Table'Class;

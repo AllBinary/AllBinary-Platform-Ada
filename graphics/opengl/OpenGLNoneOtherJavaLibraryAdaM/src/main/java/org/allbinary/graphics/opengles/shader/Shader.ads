@@ -26,9 +26,9 @@ with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.Basic
 
 package org.allbinary.graphics.opengles.shader.Shader_Package is
 
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListUtil_Package renames org.allbinary.util.BasicArrayListUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
 
    type Shader is tagged;
    type Shader_Access is access all Shader'Class;

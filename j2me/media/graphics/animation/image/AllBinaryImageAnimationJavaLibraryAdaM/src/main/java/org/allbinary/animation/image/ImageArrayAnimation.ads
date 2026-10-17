@@ -31,11 +31,11 @@ with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.Circul
 
 package org.allbinary.animation.image.ImageArrayAnimation_Package is
 
-   package AnimationBehavior_Package renames org.allbinary.animation.AnimationBehavior_Package;
-   package IndexedAnimation_Package renames org.allbinary.animation.IndexedAnimation_Package;
-   package Anchor_Package renames org.allbinary.graphics.Anchor_Package;
-   package PrimitiveIntUtil_Package renames org.allbinary.logic.math.PrimitiveIntUtil_Package;
-   package CircularIndexUtil_Package renames org.allbinary.util.CircularIndexUtil_Package;
+   package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
+   package IndexedAnimation_Package renames Standard.org.allbinary.animation.IndexedAnimation_Package;
+   package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
+   package PrimitiveIntUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveIntUtil_Package;
+   package CircularIndexUtil_Package renames Standard.org.allbinary.util.CircularIndexUtil_Package;
 
    type ImageArrayAnimation is tagged;
    type ImageArrayAnimation_Access is access all ImageArrayAnimation'Class;

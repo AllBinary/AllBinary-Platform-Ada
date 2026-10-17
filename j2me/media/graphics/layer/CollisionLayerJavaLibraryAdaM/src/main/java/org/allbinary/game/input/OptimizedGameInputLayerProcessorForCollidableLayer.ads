@@ -27,10 +27,10 @@ with org.allbinary.layer.LayerProcessor_Package; use org.allbinary.layer.LayerPr
 
 package org.allbinary.game.input.OptimizedGameInputLayerProcessorForCollidableLayer_Package is
 
-   package AllBinaryGameLayer_Package renames org.allbinary.game.layer.AllBinaryGameLayer_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package AllBinaryLayerManager_Package renames org.allbinary.layer.AllBinaryLayerManager_Package;
-   package LayerProcessor_Package renames org.allbinary.layer.LayerProcessor_Package;
+   package AllBinaryGameLayer_Package renames Standard.org.allbinary.game.layer.AllBinaryGameLayer_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
+   package LayerProcessor_Package renames Standard.org.allbinary.layer.LayerProcessor_Package;
 
    type OptimizedGameInputLayerProcessorForCollidableLayer is tagged;
    type OptimizedGameInputLayerProcessorForCollidableLayer_Access is access all OptimizedGameInputLayerProcessorForCollidableLayer'Class;

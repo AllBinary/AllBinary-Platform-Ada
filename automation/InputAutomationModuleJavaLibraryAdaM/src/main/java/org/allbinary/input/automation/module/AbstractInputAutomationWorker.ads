@@ -31,14 +31,14 @@ with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDela
 
 package org.allbinary.input.automation.module.AbstractInputAutomationWorker_Package is
 
-   package CaptureWorkerInterface_Package renames org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package ImageComparisonWorker_Package renames org.allbinary.media.image.comparison.ImageComparisonWorker_Package;
-   package MotionRectanglesWorker_Package renames org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_Package;
-   package CommonLabels_Package renames org.allbinary.string_Id.CommonLabels_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package RunnableInterface_Package renames org.allbinary.thread.RunnableInterface_Package;
-   package TimeDelayHelper_Package renames org.allbinary.time.TimeDelayHelper_Package;
+   package CaptureWorkerInterface_Package renames Standard.org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package ImageComparisonWorker_Package renames Standard.org.allbinary.media.image.comparison.ImageComparisonWorker_Package;
+   package MotionRectanglesWorker_Package renames Standard.org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package RunnableInterface_Package renames Standard.org.allbinary.thread.RunnableInterface_Package;
+   package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
 
    type AbstractInputAutomationWorker is tagged;
    type AbstractInputAutomationWorker_Access is access all AbstractInputAutomationWorker'Class;

@@ -17,9 +17,9 @@ with org.allbinary.graphics.form.item.ABTextItem_Package; use org.allbinary.grap
 
 package org.allbinary.graphics.form.item.ABTextFieldItem_Package is
 
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package Visitor_Package renames org.allbinary.logic.util.visitor.Visitor_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package Visitor_Package renames Standard.org.allbinary.logic.util.visitor.Visitor_Package;
 
    type ABTextFieldItem is tagged;
    type ABTextFieldItem_Access is access all ABTextFieldItem'Class;

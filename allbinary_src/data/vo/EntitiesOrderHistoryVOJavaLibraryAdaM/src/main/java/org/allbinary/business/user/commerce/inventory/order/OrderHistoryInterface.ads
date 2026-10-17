@@ -26,9 +26,9 @@ with org.allbinary.business.user.commerce.money.payment.Payment_Package; use org
 
 package org.allbinary.business.user.commerce.inventory.order.OrderHistoryInterface_Package is
 
-   package StreetAddress_Package renames org.allbinary.business.user.address.StreetAddress_Package;
-   package Money_Package renames org.allbinary.business.user.commerce.money.Money_Package;
-   package Payment_Package renames org.allbinary.business.user.commerce.money.payment.Payment_Package;
+   package StreetAddress_Package renames Standard.org.allbinary.business.user.address.StreetAddress_Package;
+   package Money_Package renames Standard.org.allbinary.business.user.commerce.money.Money_Package;
+   package Payment_Package renames Standard.org.allbinary.business.user.commerce.money.payment.Payment_Package;
 
    type OrderHistoryInterface is interface;
    type OrderHistoryInterface_Access is access all OrderHistoryInterface'Class;

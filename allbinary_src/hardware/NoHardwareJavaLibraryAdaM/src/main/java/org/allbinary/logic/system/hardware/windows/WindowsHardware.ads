@@ -39,22 +39,22 @@ with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_
 
 package org.allbinary.logic.system.hardware.windows.WindowsHardware_Package is
 
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package HardwareInterface_Package renames org.allbinary.logic.system.hardware.HardwareInterface_Package;
-   package BridgeInterface_Package renames org.allbinary.logic.system.hardware.components.interfaces.BridgeInterface_Package;
-   package CpuInterface_Package renames org.allbinary.logic.system.hardware.components.interfaces.CpuInterface_Package;
-   package EthernetInterface_Package renames org.allbinary.logic.system.hardware.components.interfaces.EthernetInterface_Package;
-   package FireWireInterface_Package renames org.allbinary.logic.system.hardware.components.interfaces.FireWireInterface_Package;
-   package HardDriveControllerInterface_Package renames org.allbinary.logic.system.hardware.components.interfaces.HardDriveControllerInterface_Package;
-   package HardDriveInterface_Package renames org.allbinary.logic.system.hardware.components.interfaces.HardDriveInterface_Package;
-   package HardwareComponentInterface_Package renames org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package;
-   package MachineAccessControlAddressInterface_Package renames org.allbinary.logic.system.hardware.components.interfaces.MachineAccessControlAddressInterface_Package;
-   package MediaInterface_Package renames org.allbinary.logic.system.hardware.components.interfaces.MediaInterface_Package;
-   package MonitorInterface_Package renames org.allbinary.logic.system.hardware.components.interfaces.MonitorInterface_Package;
-   package UsbInterface_Package renames org.allbinary.logic.system.hardware.components.interfaces.UsbInterface_Package;
-   package VideoInterface_Package renames org.allbinary.logic.system.hardware.components.interfaces.VideoInterface_Package;
-   package ABHashtable_Package renames org.allbinary.util.ABHashtable_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package HardwareInterface_Package renames Standard.org.allbinary.logic.system.hardware.HardwareInterface_Package;
+   package BridgeInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.BridgeInterface_Package;
+   package CpuInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.CpuInterface_Package;
+   package EthernetInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.EthernetInterface_Package;
+   package FireWireInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.FireWireInterface_Package;
+   package HardDriveControllerInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.HardDriveControllerInterface_Package;
+   package HardDriveInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.HardDriveInterface_Package;
+   package HardwareComponentInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package;
+   package MachineAccessControlAddressInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.MachineAccessControlAddressInterface_Package;
+   package MediaInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.MediaInterface_Package;
+   package MonitorInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.MonitorInterface_Package;
+   package UsbInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.UsbInterface_Package;
+   package VideoInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.VideoInterface_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
    type WindowsHardware is tagged;
    type WindowsHardware_Access is access all WindowsHardware'Class;

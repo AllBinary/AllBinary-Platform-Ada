@@ -16,11 +16,11 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.android.ToastUtil_Package is
 
-   package Context_Package renames android.content.Context_Package;
-   package View_Package renames android.view.View_Package;
-   package Toast_Package renames android.widget.Toast_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package Context_Package renames Standard.android.content.Context_Package;
+   package View_Package renames Standard.android.view.View_Package;
+   package Toast_Package renames Standard.android.widget.Toast_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type ToastUtil is tagged;
    type ToastUtil_Access is access all ToastUtil'Class;

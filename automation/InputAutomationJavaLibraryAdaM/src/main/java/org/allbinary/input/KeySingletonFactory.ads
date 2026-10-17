@@ -28,10 +28,10 @@ with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_
 
 package org.allbinary.input.KeySingletonFactory_Package is
 
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package ABHashtable_Package renames org.allbinary.util.ABHashtable_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
    type KeySingletonFactory is tagged;
    type KeySingletonFactory_Access is access all KeySingletonFactory'Class;

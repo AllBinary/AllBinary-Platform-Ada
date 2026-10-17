@@ -26,8 +26,8 @@ with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMap
 
 package org.allbinary.media.graphics.geography.map.racetrack.EmptyRaceRaceTrackGeographicMapCellTypeFactory_Package is
 
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package PathFindingNodeCostInfoData_Package renames org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoData_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package PathFindingNodeCostInfoData_Package renames Standard.org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoData_Package;
 
    type EmptyRaceRaceTrackGeographicMapCellTypeFactory is tagged;
    type EmptyRaceRaceTrackGeographicMapCellTypeFactory_Access is access all EmptyRaceRaceTrackGeographicMapCellTypeFactory'Class;

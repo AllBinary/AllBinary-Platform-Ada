@@ -26,8 +26,8 @@ with org.allbinary.logic.system.security.licensing.LicensingException_Package; u
 
 package org.allbinary.business.installer.InitDb_Package is
 
-   package DbConnectionInfo_Package renames org.allbinary.business.init.db.DbConnectionInfo_Package;
-   package LicensingException_Package renames org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package DbConnectionInfo_Package renames Standard.org.allbinary.business.init.db.DbConnectionInfo_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
 
    type InitDb is tagged;
    type InitDb_Access is access all InitDb'Class;

@@ -13,7 +13,7 @@ with org.allbinary.game.input.CompleteMotionGestureInputEventListenerInterface_P
 
 package org.allbinary.game.input.CompleteMotionGestureInputEventListener_Package is
 
-   package AllBinaryEventObject_Package renames org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+   package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 
    type CompleteMotionGestureInputEventListener is tagged;
    type CompleteMotionGestureInputEventListener_Access is access all CompleteMotionGestureInputEventListener'Class;

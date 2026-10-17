@@ -97,8 +97,12 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
             This.imageJList.setModel (defaultListModel);
             This.updateOnPropertiesChange;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.INIT, e);
+                end;
         end;
    end init;
 
@@ -135,8 +139,12 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
             end if;
             This.updateImage (tempBufferedImageArray);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("updateImage"), e);
+                end;
         end;
    end updateImage;
 
@@ -163,8 +171,12 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
             fudgedBufferedImageArray := This.imagesRatioUtil.fudge (tempBufferedImageArray, totalImages, averageRatio);
             This.updateImage (fudgedBufferedImageArray);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("updateImageWithFudgedImages"), e);
+                end;
         end;
    end updateImageWithFudgedImages;
 
@@ -411,8 +423,12 @@ package body org.allbinary.image.gui.ImageUnifierJPanel_Package is
             outputFile := File_Package.Create (filePath);
             ImagePersistanceUtil_Package.getInstance.saveWithBatik (FileWrapperUtil_Package.wrapFile (outputFile), This.result);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("jButton1ActionPerformed"), e);
+                end;
         end;
    end jButton1ActionPerformed;
 

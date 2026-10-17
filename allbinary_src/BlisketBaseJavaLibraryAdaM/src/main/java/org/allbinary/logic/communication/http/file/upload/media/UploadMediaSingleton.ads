@@ -32,13 +32,13 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.logic.communication.http.file.upload.media.UploadMediaSingleton_Package is
 
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package MediaData_Package renames org.allbinary.logic.visual.media.MediaData_Package;
-   package MediaIOUtil_Package renames org.allbinary.logic.visual.media.MediaIOUtil_Package;
-   package MediaTypeData_Package renames org.allbinary.logic.visual.media.MediaTypeData_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package MediaData_Package renames Standard.org.allbinary.logic.visual.media.MediaData_Package;
+   package MediaIOUtil_Package renames Standard.org.allbinary.logic.visual.media.MediaIOUtil_Package;
+   package MediaTypeData_Package renames Standard.org.allbinary.logic.visual.media.MediaTypeData_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type UploadMediaSingleton is tagged;
    type UploadMediaSingleton_Access is access all UploadMediaSingleton'Class;

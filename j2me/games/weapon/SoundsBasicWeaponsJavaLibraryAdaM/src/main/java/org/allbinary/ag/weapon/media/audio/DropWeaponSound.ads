@@ -25,8 +25,8 @@ with org.allbinary.media.audio.Sound_Package; use org.allbinary.media.audio.Soun
 
 package org.allbinary.ag.weapon.media.audio.DropWeaponSound_Package is
 
-   package CompositeSound_Package renames org.allbinary.media.audio.CompositeSound_Package;
-   package Sound_Package renames org.allbinary.media.audio.Sound_Package;
+   package CompositeSound_Package renames Standard.org.allbinary.media.audio.CompositeSound_Package;
+   package Sound_Package renames Standard.org.allbinary.media.audio.Sound_Package;
 
    type DropWeaponSound is tagged;
    type DropWeaponSound_Access is access all DropWeaponSound'Class;

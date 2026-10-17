@@ -25,8 +25,8 @@ with org.allbinary.layer.AllBinaryLayerFactoryInterface_Package; use org.allbina
 
 package org.allbinary.game.ag.layer.pickup.health.HealLayerFactory_Package is
 
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package AllBinaryLayerFactoryInterface_Package renames org.allbinary.layer.AllBinaryLayerFactoryInterface_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package AllBinaryLayerFactoryInterface_Package renames Standard.org.allbinary.layer.AllBinaryLayerFactoryInterface_Package;
 
    type HealLayerFactory is tagged;
    type HealLayerFactory_Access is access all HealLayerFactory'Class;

@@ -24,7 +24,7 @@ with org.allbinary.input.automation.module.InputAutomationActionInterface_Packag
 
 package org.allbinary.input.automation.module.game.BasicGameInputAutomationActionInterface_Package is
 
-   package InputAutomationActionInterface_Package renames org.allbinary.input.automation.module.InputAutomationActionInterface_Package;
+   package InputAutomationActionInterface_Package renames Standard.org.allbinary.input.automation.module.InputAutomationActionInterface_Package;
 
    type BasicGameInputAutomationActionInterface is interface and InputAutomationActionInterface;
    type BasicGameInputAutomationActionInterface_Access is access all BasicGameInputAutomationActionInterface'Class;

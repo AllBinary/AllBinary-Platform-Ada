@@ -32,12 +32,12 @@ with admin.taghelpers.TagHelper_Package; use admin.taghelpers.TagHelper_Package;
 
 package admin.taghelpers.BasketHelper_Package is
 
-   package StoreFrontData_Package renames org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
-   package StoreFrontFactory_Package renames org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
-   package StoreFrontInterface_Package renames org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
-   package BasketInterface_Package renames org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package;
-   package WeblisketSession_Package renames org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
+   package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+   package StoreFrontFactory_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
+   package StoreFrontInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
+   package BasketInterface_Package renames Standard.org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package;
+   package WeblisketSession_Package renames Standard.org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type BasketHelper is tagged;
    type BasketHelper_Access is access all BasketHelper'Class;

@@ -24,7 +24,7 @@ with org.allbinary.input.automation.module.configuration.InputAutomationModuleCo
 
 package org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package is
 
-   package InputAutomationModuleConfiguration_Package renames org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package;
+   package InputAutomationModuleConfiguration_Package renames Standard.org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package;
 
    type InputAutomationConfigurationModuleChangeEvent is tagged;
    type InputAutomationConfigurationModuleChangeEvent_Access is access all InputAutomationConfigurationModuleChangeEvent'Class;

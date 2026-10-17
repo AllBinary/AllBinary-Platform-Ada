@@ -24,7 +24,7 @@ with org.allbinary.logic.math.BasicDecimal_Package; use org.allbinary.logic.math
 
 package org.allbinary.game.physics.acceleration.AccelerateableInterface_Package is
 
-   package BasicDecimal_Package renames org.allbinary.logic.math.BasicDecimal_Package;
+   package BasicDecimal_Package renames Standard.org.allbinary.logic.math.BasicDecimal_Package;
 
    type AccelerateableInterface is interface;
    type AccelerateableInterface_Access is access all AccelerateableInterface'Class;

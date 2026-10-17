@@ -29,12 +29,12 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 
 package org.allbinary.game.configuration.GameConfiguration_Package is
 
-   package GameFeatureEvent_Package renames org.allbinary.game.configuration.event.GameFeatureEvent_Package;
-   package GameFeatureEventHandler_Package renames org.allbinary.game.configuration.event.GameFeatureEventHandler_Package;
-   package BooleanFactory_Package renames org.allbinary.logic.java.bool.BooleanFactory_Package;
-   package SmallIntegerSingletonFactory_Package renames org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
+   package GameFeatureEvent_Package renames Standard.org.allbinary.game.configuration.event.GameFeatureEvent_Package;
+   package GameFeatureEventHandler_Package renames Standard.org.allbinary.game.configuration.event.GameFeatureEventHandler_Package;
+   package BooleanFactory_Package renames Standard.org.allbinary.logic.java.bool.BooleanFactory_Package;
+   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type GameConfiguration is tagged;
    type GameConfiguration_Access is access all GameConfiguration'Class;

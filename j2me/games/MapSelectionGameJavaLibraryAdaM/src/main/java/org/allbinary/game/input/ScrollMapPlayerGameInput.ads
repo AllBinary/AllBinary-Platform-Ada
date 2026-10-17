@@ -38,18 +38,18 @@ with org.allbinary.game.input.PlayerGameInput_Package; use org.allbinary.game.in
 
 package org.allbinary.game.input.ScrollMapPlayerGameInput_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package Features_Package renames org.allbinary.game.configuration.feature.Features_Package;
-   package InputFeatureFactory_Package renames org.allbinary.game.configuration.feature.InputFeatureFactory_Package;
-   package GameKeyEvent_Package renames org.allbinary.game.input.event.GameKeyEvent_Package;
-   package AllBinaryGameLayerManager_Package renames org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
-   package AllBinaryTiledLayer_Package renames org.allbinary.game.layer.AllBinaryTiledLayer_Package;
-   package DisplayInfoSingleton_Package renames org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
-   package AllBinaryLayerManager_Package renames org.allbinary.layer.AllBinaryLayerManager_Package;
-   package ScrollMapEvent_Package renames org.allbinary.layer.event.ScrollMapEvent_Package;
-   package ScrollMapEventHandler_Package renames org.allbinary.layer.event.ScrollMapEventHandler_Package;
-   package BasicGeographicMap_Package renames org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
+   package InputFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.InputFeatureFactory_Package;
+   package GameKeyEvent_Package renames Standard.org.allbinary.game.input.event.GameKeyEvent_Package;
+   package AllBinaryGameLayerManager_Package renames Standard.org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
+   package AllBinaryTiledLayer_Package renames Standard.org.allbinary.game.layer.AllBinaryTiledLayer_Package;
+   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+   package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
+   package ScrollMapEvent_Package renames Standard.org.allbinary.layer.event.ScrollMapEvent_Package;
+   package ScrollMapEventHandler_Package renames Standard.org.allbinary.layer.event.ScrollMapEventHandler_Package;
+   package BasicGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type ScrollMapPlayerGameInput is tagged;
    type ScrollMapPlayerGameInput_Access is access all ScrollMapPlayerGameInput'Class;

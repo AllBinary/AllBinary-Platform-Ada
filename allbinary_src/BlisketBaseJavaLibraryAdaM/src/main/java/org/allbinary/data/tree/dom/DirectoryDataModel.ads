@@ -34,16 +34,16 @@ with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.dat
 
 package org.allbinary.data.tree.dom.DirectoryDataModel_Package is
 
-   package XmlDocumentHelper_Package renames org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
-   package AbFile_Package renames org.allbinary.logic.io.file.AbFile_Package;
-   package Directory_Package renames org.allbinary.logic.io.file.directory.Directory_Package;
-   package TransformInterface_Package renames org.allbinary.logic.visual.transform.TransformInterface_Package;
-   package TransformDocumentFactory_Package renames org.allbinary.logic.visual.transform.data.TransformDocumentFactory_Package;
-   package TransformDocumentInterface_Package renames org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Package;
-   package TransformInfoInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
+   package XmlDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
+   package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
+   package Directory_Package renames Standard.org.allbinary.logic.io.file.directory.Directory_Package;
+   package TransformInterface_Package renames Standard.org.allbinary.logic.visual.transform.TransformInterface_Package;
+   package TransformDocumentFactory_Package renames Standard.org.allbinary.logic.visual.transform.data.TransformDocumentFactory_Package;
+   package TransformDocumentInterface_Package renames Standard.org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Package;
+   package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type DirectoryDataModel is tagged;
    type DirectoryDataModel_Access is access all DirectoryDataModel'Class;

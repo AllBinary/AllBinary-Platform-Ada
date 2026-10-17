@@ -24,7 +24,7 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 
 package org.allbinary.graphics.opengles.shader.Shader_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type Shader is tagged;
    type Shader_Access is access all Shader'Class;

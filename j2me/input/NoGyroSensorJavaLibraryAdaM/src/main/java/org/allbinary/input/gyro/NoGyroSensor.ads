@@ -27,9 +27,9 @@ with org.allbinary.input.gyro.AllBinaryOrientationSensor_Package; use org.allbin
 
 package org.allbinary.input.gyro.NoGyroSensor_Package is
 
-   package AllBinarySensorListener_Package renames org.allbinary.input.AllBinarySensorListener_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package Orientation_Package renames org.allbinary.logic.math.Orientation_Package;
+   package AllBinarySensorListener_Package renames Standard.org.allbinary.input.AllBinarySensorListener_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package Orientation_Package renames Standard.org.allbinary.logic.math.Orientation_Package;
 
    type NoGyroSensor is tagged;
    type NoGyroSensor_Access is access all NoGyroSensor'Class;

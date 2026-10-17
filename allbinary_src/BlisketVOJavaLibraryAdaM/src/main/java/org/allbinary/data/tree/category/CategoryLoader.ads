@@ -39,20 +39,20 @@ with org.allbinary.data.tree.category.CategoryLoaderInterface_Package; use org.a
 
 package org.allbinary.data.tree.category.CategoryLoader_Package is
 
-   package CategoryData_Package renames org.allbinary.business.category.CategoryData_Package;
-   package CategoryFactoryInterface_Package renames org.allbinary.business.category.CategoryFactoryInterface_Package;
-   package CategoryInterface_Package renames org.allbinary.business.category.CategoryInterface_Package;
-   package CategoryProperties_Package renames org.allbinary.business.category.properties.CategoryProperties_Package;
-   package CategoryPropertiesInterface_Package renames org.allbinary.business.category.properties.CategoryPropertiesInterface_Package;
-   package DomSearchHelper_Package renames org.allbinary.data.tree.dom.DomSearchHelper_Package;
-   package DomDocumentHelper_Package renames org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CryptFileReader_Package renames org.allbinary.logic.control.crypt.file.CryptFileReader_Package;
-   package AbFile_Package renames org.allbinary.logic.io.file.AbFile_Package;
-   package AbPath_Package renames org.allbinary.logic.io.path.AbPath_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
-   package NodeList_Package renames org.w3c.dom.NodeList_Package;
+   package CategoryData_Package renames Standard.org.allbinary.business.category.CategoryData_Package;
+   package CategoryFactoryInterface_Package renames Standard.org.allbinary.business.category.CategoryFactoryInterface_Package;
+   package CategoryInterface_Package renames Standard.org.allbinary.business.category.CategoryInterface_Package;
+   package CategoryProperties_Package renames Standard.org.allbinary.business.category.properties.CategoryProperties_Package;
+   package CategoryPropertiesInterface_Package renames Standard.org.allbinary.business.category.properties.CategoryPropertiesInterface_Package;
+   package DomSearchHelper_Package renames Standard.org.allbinary.data.tree.dom.DomSearchHelper_Package;
+   package DomDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CryptFileReader_Package renames Standard.org.allbinary.logic.control.crypt.file.CryptFileReader_Package;
+   package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
+   package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
+   package NodeList_Package renames Standard.org.w3c.dom.NodeList_Package;
 
    type CategoryLoader is tagged;
    type CategoryLoader_Access is access all CategoryLoader'Class;

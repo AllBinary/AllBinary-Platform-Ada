@@ -32,13 +32,13 @@ with org.allbinary.data.tables.generator.IdGeneratorEntityInterface_Package; use
 
 package org.allbinary.data.tables.generator.IdGeneratorEntity_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package UserDbInitInfo_Package renames org.allbinary.business.init.db.UserDbInitInfo_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package AbSqlBean_Package renames org.allbinary.logic.communication.sql.AbSqlBean_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package UserDbInitInfo_Package renames Standard.org.allbinary.business.init.db.UserDbInitInfo_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package AbSqlBean_Package renames Standard.org.allbinary.logic.communication.sql.AbSqlBean_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
 
    type IdGeneratorEntity is tagged;
    type IdGeneratorEntity_Access is access all IdGeneratorEntity'Class;

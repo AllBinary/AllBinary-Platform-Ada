@@ -26,9 +26,9 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 
 package org.allbinary.image.opengles.OpenGLImageSpecificFactory_Package is
 
-   package PreLogUtil_Package renames org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type OpenGLImageSpecificFactory is tagged;
    type OpenGLImageSpecificFactory_Access is access all OpenGLImageSpecificFactory'Class;

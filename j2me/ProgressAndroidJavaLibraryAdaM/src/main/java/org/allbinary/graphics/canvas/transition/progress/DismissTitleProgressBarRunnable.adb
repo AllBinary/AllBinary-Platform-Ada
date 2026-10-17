@@ -42,9 +42,13 @@ package body org.allbinary.graphics.canvas.transition.progress.DismissTitleProgr
         begin
             This.midletActivity.onDismissProgress (This.ZOOM_OUT_AND_IN);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.RUN, e);
+                end;
         end;
    end run;
 

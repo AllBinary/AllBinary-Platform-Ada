@@ -27,10 +27,10 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 
 package org.allbinary.logic.java.anyType.clazz.ClassUtil_Package is
 
-   package ConstructorUtil_Package renames org.allbinary.logic.java.anyType.ConstructorUtil_Package;
-   package InterfaceUtil_Package renames org.allbinary.logic.java.anyType.InterfaceUtil_Package;
-   package MethodUtil_Package renames org.allbinary.logic.java.anyType.MethodUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
+   package ConstructorUtil_Package renames Standard.org.allbinary.logic.java.anyType.ConstructorUtil_Package;
+   package InterfaceUtil_Package renames Standard.org.allbinary.logic.java.anyType.InterfaceUtil_Package;
+   package MethodUtil_Package renames Standard.org.allbinary.logic.java.anyType.MethodUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
 
    type ClassUtil is tagged;
    type ClassUtil_Access is access all ClassUtil'Class;

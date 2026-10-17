@@ -29,11 +29,11 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.input.motion.button.TouchButtonsMappingPaintable_Package is
 
-   package CellPositionFactory_Package renames org.allbinary.graphics.CellPositionFactory_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package Paintable_Package renames org.allbinary.graphics.paint.Paintable_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package CellPositionFactory_Package renames Standard.org.allbinary.graphics.CellPositionFactory_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package Paintable_Package renames Standard.org.allbinary.graphics.paint.Paintable_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type TouchButtonsMappingPaintable is tagged;
    type TouchButtonsMappingPaintable_Access is access all TouchButtonsMappingPaintable'Class;

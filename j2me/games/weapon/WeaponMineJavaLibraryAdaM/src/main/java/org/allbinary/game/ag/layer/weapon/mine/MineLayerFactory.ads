@@ -26,9 +26,9 @@ with org.allbinary.view.ViewPositionFactoryInterface_Package; use org.allbinary.
 
 package org.allbinary.game.ag.layer.weapon.mine.MineLayerFactory_Package is
 
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package AllBinaryLayerFactoryInterface_Package renames org.allbinary.layer.AllBinaryLayerFactoryInterface_Package;
-   package ViewPositionFactoryInterface_Package renames org.allbinary.view.ViewPositionFactoryInterface_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package AllBinaryLayerFactoryInterface_Package renames Standard.org.allbinary.layer.AllBinaryLayerFactoryInterface_Package;
+   package ViewPositionFactoryInterface_Package renames Standard.org.allbinary.view.ViewPositionFactoryInterface_Package;
 
    type MineLayerFactory is tagged;
    type MineLayerFactory_Access is access all MineLayerFactory'Class;

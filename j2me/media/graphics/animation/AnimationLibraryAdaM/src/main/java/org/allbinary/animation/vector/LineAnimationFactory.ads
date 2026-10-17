@@ -27,10 +27,10 @@ with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleP
 
 package org.allbinary.animation.vector.LineAnimationFactory_Package is
 
-   package Animation_Package renames org.allbinary.animation.Animation_Package;
-   package AnimationInterfaceFactoryInterface_Package renames org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package ScaleProperties_Package renames org.allbinary.media.ScaleProperties_Package;
+   package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
+   package AnimationInterfaceFactoryInterface_Package renames Standard.org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package ScaleProperties_Package renames Standard.org.allbinary.media.ScaleProperties_Package;
 
    type LineAnimationFactory is tagged;
    type LineAnimationFactory_Access is access all LineAnimationFactory'Class;

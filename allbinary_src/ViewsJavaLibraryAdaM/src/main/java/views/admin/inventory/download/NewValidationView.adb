@@ -40,8 +40,12 @@ package body views.admin.inventory.download.NewValidationView_Package is
         begin
             return True;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             return False;
+                end;
         end;
    end isValid;
 

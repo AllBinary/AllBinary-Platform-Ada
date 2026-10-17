@@ -17,9 +17,9 @@ with org.allbinary.platform.graphics.PlatformBitmapBase_Package; use org.allbina
 
 package org.allbinary.graphics.OpenGLBitmapFactory_Package is
 
-   package ImageFactory_Package renames org.allbinary.image.ImageFactory_Package;
-   package PlatformBitmapBaseFactory_Package renames org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package;
-   package PlatformBitmapBase_Package renames org.allbinary.platform.graphics.PlatformBitmapBase_Package;
+   package ImageFactory_Package renames Standard.org.allbinary.image.ImageFactory_Package;
+   package PlatformBitmapBaseFactory_Package renames Standard.org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package;
+   package PlatformBitmapBase_Package renames Standard.org.allbinary.platform.graphics.PlatformBitmapBase_Package;
 
    type OpenGLBitmapFactory is tagged;
    type OpenGLBitmapFactory_Access is access all OpenGLBitmapFactory'Class;
@@ -61,9 +61,9 @@ with org.allbinary.platform.graphics.PlatformBitmapBase_Package; use org.allbina
 
 package org.allbinary.graphics.Config_Package is
 
-   package ImageFactory_Package renames org.allbinary.image.ImageFactory_Package;
-   package PlatformBitmapBaseFactory_Package renames org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package;
-   package PlatformBitmapBase_Package renames org.allbinary.platform.graphics.PlatformBitmapBase_Package;
+   package ImageFactory_Package renames Standard.org.allbinary.image.ImageFactory_Package;
+   package PlatformBitmapBaseFactory_Package renames Standard.org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package;
+   package PlatformBitmapBase_Package renames Standard.org.allbinary.platform.graphics.PlatformBitmapBase_Package;
 
    type Config is tagged;
    type Config_Access is access all Config'Class;

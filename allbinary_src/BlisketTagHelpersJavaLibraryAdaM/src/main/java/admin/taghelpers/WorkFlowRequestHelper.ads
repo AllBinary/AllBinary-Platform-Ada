@@ -34,14 +34,14 @@ with admin.taghelpers.ModifyTable_Package; use admin.taghelpers.ModifyTable_Pack
 
 package admin.taghelpers.WorkFlowRequestHelper_Package is
 
-   package WorkFlowEntityFactory_Package renames org.allbinary.data.tables.workflow.WorkFlowEntityFactory_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package NewWorkFlowFactory_Package renames org.allbinary.logic.control.workflow.NewWorkFlowFactory_Package;
-   package WorkFlowData_Package renames org.allbinary.logic.control.workflow.WorkFlowData_Package;
-   package WorkFlowInterface_Package renames org.allbinary.logic.control.workflow.WorkFlowInterface_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package AbeClientInformationInterface_Package renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-   package ServiceClientInformationInterfaceFactory_Package renames org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package;
+   package WorkFlowEntityFactory_Package renames Standard.org.allbinary.data.tables.workflow.WorkFlowEntityFactory_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package NewWorkFlowFactory_Package renames Standard.org.allbinary.logic.control.workflow.NewWorkFlowFactory_Package;
+   package WorkFlowData_Package renames Standard.org.allbinary.logic.control.workflow.WorkFlowData_Package;
+   package WorkFlowInterface_Package renames Standard.org.allbinary.logic.control.workflow.WorkFlowInterface_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package ServiceClientInformationInterfaceFactory_Package renames Standard.org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package;
 
    type WorkFlowRequestHelper is tagged;
    type WorkFlowRequestHelper_Access is access all WorkFlowRequestHelper'Class;

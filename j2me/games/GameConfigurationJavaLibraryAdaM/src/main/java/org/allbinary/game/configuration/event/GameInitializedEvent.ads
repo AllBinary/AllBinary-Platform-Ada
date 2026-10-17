@@ -26,9 +26,9 @@ with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbin
 
 package org.allbinary.game.configuration.event.GameInitializedEvent_Package is
 
-   package ResourceLoadingLevel_Package renames org.allbinary.game.resource.ResourceLoadingLevel_Package;
-   package ResourceLoadingLevelFactory_Package renames org.allbinary.game.resource.ResourceLoadingLevelFactory_Package;
-   package AllBinaryEventObject_Package renames org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+   package ResourceLoadingLevel_Package renames Standard.org.allbinary.game.resource.ResourceLoadingLevel_Package;
+   package ResourceLoadingLevelFactory_Package renames Standard.org.allbinary.game.resource.ResourceLoadingLevelFactory_Package;
+   package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 
    type GameInitializedEvent is tagged;
    type GameInitializedEvent_Access is access all GameInitializedEvent'Class;

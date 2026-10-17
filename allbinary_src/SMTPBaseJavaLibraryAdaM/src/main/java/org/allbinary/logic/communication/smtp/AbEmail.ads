@@ -28,8 +28,8 @@ with org.allbinary.logic.communication.smtp.EmailInterface_Package; use org.allb
 
 package org.allbinary.logic.communication.smtp.AbEmail_Package is
 
-   package Document_Package renames org.w3c.dom.Document_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type AbEmail is tagged;
    type AbEmail_Access is access all AbEmail'Class;

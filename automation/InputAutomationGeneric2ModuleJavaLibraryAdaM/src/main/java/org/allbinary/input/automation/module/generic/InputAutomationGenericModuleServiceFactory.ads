@@ -26,9 +26,9 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 
 package org.allbinary.input.automation.module.generic_Id.InputAutomationGenericModuleServiceFactory_Package is
 
-   package InputAutomationModuleFactoryInterface_Package renames org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package;
-   package InputAutomationModuleServiceFactory_Package renames org.allbinary.input.automation.module.osgi.InputAutomationModuleServiceFactory_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
+   package InputAutomationModuleFactoryInterface_Package renames Standard.org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package;
+   package InputAutomationModuleServiceFactory_Package renames Standard.org.allbinary.input.automation.module.osgi.InputAutomationModuleServiceFactory_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type InputAutomationGenericModuleServiceFactory is tagged;
    type InputAutomationGenericModuleServiceFactory_Access is access all InputAutomationGenericModuleServiceFactory'Class;

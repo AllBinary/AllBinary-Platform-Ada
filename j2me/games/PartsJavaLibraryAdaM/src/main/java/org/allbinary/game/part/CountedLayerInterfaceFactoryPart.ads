@@ -36,16 +36,16 @@ with org.allbinary.game.part.PartInterface_Package; use org.allbinary.game.part.
 
 package org.allbinary.game.part.CountedLayerInterfaceFactoryPart_Package is
 
-   package Animation_Package renames org.allbinary.animation.Animation_Package;
-   package NullAnimationFactory_Package renames org.allbinary.animation.NullAnimationFactory_Package;
-   package CountedPickedUpLayerInterfaceFactory_Package renames org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactory_Package;
-   package MyFontProcessor_Package renames org.allbinary.graphics.font.MyFontProcessor_Package;
-   package UpdateMyFontInterface_Package renames org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-   package UpdateMyFontProcessor_Package renames org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
-   package PrimitiveLongUtil_Package renames org.allbinary.logic.math.PrimitiveLongUtil_Package;
-   package ABHashtable_Package renames org.allbinary.util.ABHashtable_Package;
+   package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
+   package NullAnimationFactory_Package renames Standard.org.allbinary.animation.NullAnimationFactory_Package;
+   package CountedPickedUpLayerInterfaceFactory_Package renames Standard.org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactory_Package;
+   package MyFontProcessor_Package renames Standard.org.allbinary.graphics.font.MyFontProcessor_Package;
+   package UpdateMyFontInterface_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontInterface_Package;
+   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package PrimitiveLongUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveLongUtil_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
    type CountedLayerInterfaceFactoryPart is tagged;
    type CountedLayerInterfaceFactoryPart_Access is access all CountedLayerInterfaceFactoryPart'Class;

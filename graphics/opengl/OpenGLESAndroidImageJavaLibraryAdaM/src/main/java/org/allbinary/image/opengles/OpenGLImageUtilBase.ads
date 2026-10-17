@@ -27,8 +27,8 @@ with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics
 
 package org.allbinary.image.opengles.OpenGLImageUtilBase_Package is
 
-   package OpenGLBitmap_Package renames org.allbinary.graphics.OpenGLBitmap_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
+   package OpenGLBitmap_Package renames Standard.org.allbinary.graphics.OpenGLBitmap_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
 
    type OpenGLImageUtilBase is tagged;
    type OpenGLImageUtilBase_Access is access all OpenGLImageUtilBase'Class;

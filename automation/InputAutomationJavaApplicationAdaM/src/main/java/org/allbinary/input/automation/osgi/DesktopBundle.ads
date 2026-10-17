@@ -27,10 +27,10 @@ with org.allbinary.gui.dialog.BasicTextJDialog_Package; use org.allbinary.gui.di
 
 package org.allbinary.input.automation.osgi.DesktopBundle_Package is
 
-   package Bundle_Package renames org.osgi.framework.Bundle_Package;
-   package BundleContext_Package renames org.osgi.framework.BundleContext_Package;
-   package InputAutomationBundleActivator_Package renames bundle.input.automation.InputAutomationBundleActivator_Package;
-   package BasicTextJDialog_Package renames org.allbinary.gui.dialog.BasicTextJDialog_Package;
+   package Bundle_Package renames Standard.org.osgi.framework.Bundle_Package;
+   package BundleContext_Package renames Standard.org.osgi.framework.BundleContext_Package;
+   package InputAutomationBundleActivator_Package renames Standard.bundle.input.automation.InputAutomationBundleActivator_Package;
+   package BasicTextJDialog_Package renames Standard.org.allbinary.gui.dialog.BasicTextJDialog_Package;
 
    type DesktopBundle is tagged;
    type DesktopBundle_Access is access all DesktopBundle'Class;

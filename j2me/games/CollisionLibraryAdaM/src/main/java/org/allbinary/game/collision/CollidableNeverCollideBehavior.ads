@@ -25,7 +25,7 @@ with org.allbinary.game.collision.CollidableBaseBehavior_Package; use org.allbin
 
 package org.allbinary.game.collision.CollidableNeverCollideBehavior_Package is
 
-   package CollidableCompositeLayer_Package renames org.allbinary.game.layer.CollidableCompositeLayer_Package;
+   package CollidableCompositeLayer_Package renames Standard.org.allbinary.game.layer.CollidableCompositeLayer_Package;
 
    type CollidableNeverCollideBehavior is tagged;
    type CollidableNeverCollideBehavior_Access is access all CollidableNeverCollideBehavior'Class;

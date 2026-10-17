@@ -28,11 +28,11 @@ with views.business.context.modules.storefront.HttpStoreComponentView_Package; u
 
 package views.business.context.modules.storefront.customizer.includes.style.theme.ThemeCustomizerView_Package is
 
-   package DomNodeInterface_Package renames org.allbinary.data.tree.dom.DomNodeInterface_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package ValidationInterface_Package renames org.allbinary.logic.control.validate.ValidationInterface_Package;
-   package TransformInfoInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-   package HttpStoreComponentView_Package renames views.business.context.modules.storefront.HttpStoreComponentView_Package;
+   package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package ValidationInterface_Package renames Standard.org.allbinary.logic.control.validate.ValidationInterface_Package;
+   package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package HttpStoreComponentView_Package renames Standard.views.business.context.modules.storefront.HttpStoreComponentView_Package;
 
    type ThemeCustomizerView is tagged;
    type ThemeCustomizerView_Access is access all ThemeCustomizerView'Class;

@@ -26,9 +26,9 @@ with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBina
 
 package org.allbinary.game.health.HealthBarFactory_Package is
 
-   package OpenGLFeatureUtil_Package renames org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package;
-   package FeaturedAnimationInterfaceFactoryInterfaceFactory_Package renames org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
+   package OpenGLFeatureUtil_Package renames Standard.org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package;
+   package FeaturedAnimationInterfaceFactoryInterfaceFactory_Package renames Standard.org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
 
    type HealthBarFactory is tagged;
    type HealthBarFactory_Access is access all HealthBarFactory'Class;

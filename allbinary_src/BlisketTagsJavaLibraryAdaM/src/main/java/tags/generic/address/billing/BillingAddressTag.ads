@@ -28,10 +28,10 @@ with tags.StoreValidationTransformTag_Package; use tags.StoreValidationTransform
 
 package tags.generic_Id.address.billing.BillingAddressTag_Package is
 
-   package BillingAddressData_Package renames org.allbinary.business.user.address.BillingAddressData_Package;
-   package AbResponseHandler_Package renames org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
-   package LicensingException_Package renames org.allbinary.logic.system.security.licensing.LicensingException_Package;
-   package StoreValidationTransformTag_Package renames tags.StoreValidationTransformTag_Package;
+   package BillingAddressData_Package renames Standard.org.allbinary.business.user.address.BillingAddressData_Package;
+   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package StoreValidationTransformTag_Package renames Standard.tags.StoreValidationTransformTag_Package;
 
    type BillingAddressTag is tagged;
    type BillingAddressTag_Access is access all BillingAddressTag'Class;

@@ -78,11 +78,15 @@ package body org.allbinary.business.init.InitSql_Package is
             This.executeSQLStatement (tableData);
             return True;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGINGERROR) then
                 PreLogUtil_Package.putOE (This.commonStrings.EXCEPTION_Id, This.INIT_SQL, To_Unbounded_String ("createTable()"), e);
             end if;
             return False;
+                end;
         end;
    end createTable;
 
@@ -94,11 +98,15 @@ package body org.allbinary.business.init.InitSql_Package is
             This.executeSQLStatement (sqlStatement);
             return True;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGINGERROR) then
                 PreLogUtil_Package.putOE (This.commonStrings.EXCEPTION_Id, This.INIT_SQL, To_Unbounded_String ("dropTables()"), e);
             end if;
             return False;
+                end;
         end;
    end dropTable;
 
@@ -163,11 +171,15 @@ package body org.allbinary.business.init.InitSql_Package is
             end if;
             return null;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
                 PreLogUtil_Package.putOE (This.FAILED_SQL_STATEMENT & Java_Image (stringBuffer), This.INIT_SQL, This.METHOD_GET_ROW, e);
             end if;
             return null;
+                end;
         end;
    end getRow;
 
@@ -215,10 +227,14 @@ package body org.allbinary.business.init.InitSql_Package is
                 PreLogUtil_Package.put (This.SUCCESS_SQL_STATEMENT & sqlStatement, This.INIT_SQL, This.METHOD_UPDATE_WHERE);
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
                 PreLogUtil_Package.putOE (This.FAILED_SQL_STATEMENT & Java_Image (stringBuffer), This.INIT_SQL, This.METHOD_UPDATE_WHERE, e);
             end if;
+                end;
         end;
    end updateWhere;
 
@@ -249,10 +265,14 @@ package body org.allbinary.business.init.InitSql_Package is
                 PreLogUtil_Package.put (This.SUCCESS_SQL_STATEMENT & sqlStatement, This.INIT_SQL, This.INSERT);
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
                 PreLogUtil_Package.putOE (This.FAILED_SQL_STATEMENT & stringBuffer.toString, This.INIT_SQL, This.INSERT, e);
             end if;
+                end;
         end;
    end insert_Case;
 
@@ -280,11 +300,15 @@ package body org.allbinary.business.init.InitSql_Package is
             stmt.close;
             return rset;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGINGERROR) then
                 PreLogUtil_Package.putOE (This.commonStrings.EXCEPTION_Id, This.INIT_SQL, To_Unbounded_String ("executeSQLStatement()"), e);
             end if;
             Java_Throw (e);
+                end;
         end;
    end executeSQLStatement;
 
@@ -298,9 +322,13 @@ package body org.allbinary.business.init.InitSql_Package is
                 This.conn := DriverManager_Package.getConnection (This.databaseConnectionInfoInterface.getUrl);
             end if;
         exception
-            when se : others =>
+            when Java_Occurrence : others =>
+                declare
+                    se : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             PreLogUtil_Package.putOE (This.commonStrings.EXCEPTION_Id, This.INIT_SQL, To_Unbounded_String ("createConnection()"), se);
             Java_Throw (se);
+                end;
         end;
    end createConnection;
 
@@ -314,22 +342,30 @@ package body org.allbinary.business.init.InitSql_Package is
                 PreLogUtil_Package.put (StringMaker_Package.Create.append (To_Unbounded_String ("Loading DbConnnectionInfo: ")).append (To_Unbounded_String (Ada.Tags.Expanded_Name (This.databaseConnectionInfoInterface.all'Tag))).append (To_Unbounded_String (" Driver: ")).append (jdbcDriver).toString, This.INIT_SQL, To_Unbounded_String ("initialize()"));
                 Class_Package.forName (jdbcDriver).newInstance;
             exception
-                when e : others =>
+                when Java_Occurrence : others =>
+                    declare
+                        e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                    begin
                 if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGINGERROR) then
                     PreLogUtil_Package.putOE (To_Unbounded_String ("LoadDriver Failed: ") & Java_Image (This.databaseConnectionInfoInterface.getJdbcDriver), This.INIT_SQL, To_Unbounded_String ("initialize()"), e);
                 end if;
                 Java_Throw (e);
+                    end;
             end;
             if ((This.userid) = (Null_Unbounded_String)) and then ((This.password) = (Null_Unbounded_String)) then
                 This.useridAndPassword := True;
             end if;
             This.createConnection;
         exception
-            when se : others =>
+            when Java_Occurrence : others =>
+                declare
+                    se : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGINGERROR) then
                 PreLogUtil_Package.putOE (This.commonStrings.EXCEPTION_Id, This.INIT_SQL, To_Unbounded_String ("initialize()"), se);
             end if;
             Java_Throw (se);
+                end;
         end;
    end initialize;
 

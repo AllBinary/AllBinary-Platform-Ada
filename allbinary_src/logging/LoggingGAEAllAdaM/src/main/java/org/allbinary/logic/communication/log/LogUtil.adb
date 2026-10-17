@@ -82,8 +82,12 @@ package body org.allbinary.logic.communication.log.LogUtil_Package is
                 This.logger.log (Level_Package.INFO, message);
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             null;
+                end;
         end;
    end put;
 
@@ -98,8 +102,12 @@ package body org.allbinary.logic.communication.log.LogUtil_Package is
                 This.logger.log (Level_Package.INFO, message);
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             null;
+                end;
         end;
    end putS;
 

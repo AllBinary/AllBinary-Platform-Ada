@@ -29,11 +29,11 @@ with org.allbinary.layer.LayerManagerLoggingBase_Package; use org.allbinary.laye
 
 package org.allbinary.layer.LayerManagerLogging_Package is
 
-   package TsUtil_Package renames org.allbinary.TsUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
+   package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
 
    type LayerManagerLogging is tagged;
    type LayerManagerLogging_Access is access all LayerManagerLogging'Class;

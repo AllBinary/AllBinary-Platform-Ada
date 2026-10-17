@@ -12,7 +12,7 @@ with org.allbinary.graphics.CustomGPoint_Package; use org.allbinary.graphics.Cus
 
 package org.allbinary.game.input.analog.AnalogLocationInput_Package is
 
-   package CustomGPoint_Package renames org.allbinary.graphics.CustomGPoint_Package;
+   package CustomGPoint_Package renames Standard.org.allbinary.graphics.CustomGPoint_Package;
 
    type AnalogLocationInput is tagged;
    type AnalogLocationInput_Access is access all AnalogLocationInput'Class;

@@ -27,10 +27,10 @@ with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.C
 
 package org.allbinary.media.graphics.geography.map.racetrack.RaceTracksPathPrinter_Package is
 
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package PreLogUtil_Package renames org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package CommonLabels_Package renames org.allbinary.string_Id.CommonLabels_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
 
    type RaceTracksPathPrinter is tagged;
    type RaceTracksPathPrinter_Access is access all RaceTracksPathPrinter'Class;

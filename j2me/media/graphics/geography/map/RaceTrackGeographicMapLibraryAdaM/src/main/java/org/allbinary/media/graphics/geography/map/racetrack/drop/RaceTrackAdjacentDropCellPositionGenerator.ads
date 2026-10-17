@@ -48,30 +48,30 @@ with org.allbinary.media.graphics.geography.map.racetrack.drop.RaceTrackDropCell
 
 package org.allbinary.media.graphics.geography.map.racetrack.drop.RaceTrackAdjacentDropCellPositionGenerator_Package is
 
-   package GroupCommonFactory_Package renames org.allbinary.game.identification.GroupCommonFactory_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package Direction_Package renames org.allbinary.direction.Direction_Package;
-   package DirectionFactory_Package renames org.allbinary.direction.DirectionFactory_Package;
-   package BasicGroupFactory_Package renames org.allbinary.game.identification.BasicGroupFactory_Package;
-   package AllBinaryGameLayerManager_Package renames org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
-   package LayerCoveringCellPositionsUtil_Package renames org.allbinary.game.layer.geographic.map.LayerCoveringCellPositionsUtil_Package;
-   package GPoint_Package renames org.allbinary.graphics.GPoint_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package AllBinaryLayerManager_Package renames org.allbinary.layer.AllBinaryLayerManager_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package BasicGeographicMap_Package renames org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
-   package BasicGeographicMapCellPositionFactory_Package renames org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package;
-   package GeographicMapCellPosition_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
-   package GeographicMapCellType_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
-   package GeographicMapDirectionUtil_Package renames org.allbinary.media.graphics.geography.map.GeographicMapDirectionUtil_Package;
-   package SimpleGeographicMapCellPositionFactory_Package renames org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package;
-   package DropCellPositionGeneratorInterface_Package renames org.allbinary.media.graphics.geography.map.drop.DropCellPositionGeneratorInterface_Package;
-   package DropCellPositionHistory_Package renames org.allbinary.media.graphics.geography.map.drop.DropCellPositionHistory_Package;
-   package BaseRaceTrackGeographicMap_Package renames org.allbinary.media.graphics.geography.map.racetrack.BaseRaceTrackGeographicMap_Package;
-   package RaceTrackGeographicMapCellType_Package renames org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package;
-   package RaceTrackGeographicMapCellTypeFactory_Package renames org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellTypeFactory_Package;
-   package ABHashtable_Package renames org.allbinary.util.ABHashtable_Package;
+   package GroupCommonFactory_Package renames Standard.org.allbinary.game.identification.GroupCommonFactory_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package Direction_Package renames Standard.org.allbinary.direction.Direction_Package;
+   package DirectionFactory_Package renames Standard.org.allbinary.direction.DirectionFactory_Package;
+   package BasicGroupFactory_Package renames Standard.org.allbinary.game.identification.BasicGroupFactory_Package;
+   package AllBinaryGameLayerManager_Package renames Standard.org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
+   package LayerCoveringCellPositionsUtil_Package renames Standard.org.allbinary.game.layer.geographic.map.LayerCoveringCellPositionsUtil_Package;
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package BasicGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
+   package BasicGeographicMapCellPositionFactory_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package;
+   package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+   package GeographicMapCellType_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
+   package GeographicMapDirectionUtil_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapDirectionUtil_Package;
+   package SimpleGeographicMapCellPositionFactory_Package renames Standard.org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package;
+   package DropCellPositionGeneratorInterface_Package renames Standard.org.allbinary.media.graphics.geography.map.drop.DropCellPositionGeneratorInterface_Package;
+   package DropCellPositionHistory_Package renames Standard.org.allbinary.media.graphics.geography.map.drop.DropCellPositionHistory_Package;
+   package BaseRaceTrackGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.racetrack.BaseRaceTrackGeographicMap_Package;
+   package RaceTrackGeographicMapCellType_Package renames Standard.org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package;
+   package RaceTrackGeographicMapCellTypeFactory_Package renames Standard.org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellTypeFactory_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
    type RaceTrackAdjacentDropCellPositionGenerator is tagged;
    type RaceTrackAdjacentDropCellPositionGenerator_Access is access all RaceTrackAdjacentDropCellPositionGenerator'Class;

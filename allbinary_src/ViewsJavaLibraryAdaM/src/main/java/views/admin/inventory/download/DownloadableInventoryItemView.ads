@@ -48,28 +48,28 @@ with views.business.context.modules.storefront.HttpStoreComponentView_Package; u
 
 package views.admin.inventory.download.DownloadableInventoryItemView_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package StoreFrontFactory_Package renames org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
-   package StoreFrontInterface_Package renames org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
-   package BasicItemData_Package renames org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package;
-   package BasicItemView_Package renames org.allbinary.business.user.commerce.inventory.item.BasicItemView_Package;
-   package ItemInterface_Package renames org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package;
-   package DownloadableItem_Package renames org.allbinary.business.user.commerce.inventory.item.download.DownloadableItem_Package;
-   package DownloadableItemView_Package renames org.allbinary.business.user.commerce.inventory.item.download.DownloadableItemView_Package;
-   package URLGLOBALS_Package renames org.allbinary.globals.URLGLOBALS_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package MultipartRequestParams_Package renames org.allbinary.logic.communication.http.request.MultipartRequestParams_Package;
-   package RequestMapInterface_Package renames org.allbinary.logic.communication.http.request.RequestMapInterface_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package AbFile_Package renames org.allbinary.logic.io.file.AbFile_Package;
-   package FilePathData_Package renames org.allbinary.logic.io.file.FilePathData_Package;
-   package FileUtil_Package renames org.allbinary.logic.io.file.FileUtil_Package;
-   package ZipFileUtil_Package renames org.allbinary.logic.io.file.zip.ZipFileUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package TransformInfoInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-   package FileItem_Package renames org.apache.commons.fileupload.FileItem_Package;
-   package HttpStoreComponentView_Package renames views.business.context.modules.storefront.HttpStoreComponentView_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StoreFrontFactory_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
+   package StoreFrontInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
+   package BasicItemData_Package renames Standard.org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package;
+   package BasicItemView_Package renames Standard.org.allbinary.business.user.commerce.inventory.item.BasicItemView_Package;
+   package ItemInterface_Package renames Standard.org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package;
+   package DownloadableItem_Package renames Standard.org.allbinary.business.user.commerce.inventory.item.download.DownloadableItem_Package;
+   package DownloadableItemView_Package renames Standard.org.allbinary.business.user.commerce.inventory.item.download.DownloadableItemView_Package;
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package MultipartRequestParams_Package renames Standard.org.allbinary.logic.communication.http.request.MultipartRequestParams_Package;
+   package RequestMapInterface_Package renames Standard.org.allbinary.logic.communication.http.request.RequestMapInterface_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
+   package FilePathData_Package renames Standard.org.allbinary.logic.io.file.FilePathData_Package;
+   package FileUtil_Package renames Standard.org.allbinary.logic.io.file.FileUtil_Package;
+   package ZipFileUtil_Package renames Standard.org.allbinary.logic.io.file.zip.ZipFileUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package FileItem_Package renames Standard.org.apache.commons.fileupload.FileItem_Package;
+   package HttpStoreComponentView_Package renames Standard.views.business.context.modules.storefront.HttpStoreComponentView_Package;
 
    type DownloadableInventoryItemView is tagged;
    type DownloadableInventoryItemView_Access is access all DownloadableInventoryItemView'Class;

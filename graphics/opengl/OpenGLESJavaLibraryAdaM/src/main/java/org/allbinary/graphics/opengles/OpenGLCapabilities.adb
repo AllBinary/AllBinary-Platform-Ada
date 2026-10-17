@@ -112,9 +112,13 @@ package body org.allbinary.graphics.opengles.OpenGLCapabilities_Package is
                     This.shaderVersion := Integer'Value (To_String (This.glShaderVersionString.replace (CommonSeps_Package.getInstance.PERIOD, StringUtil_Package.getInstance.EMPTY_STRING)));
                 end if;
             exception
-                when e : others =>
+                when Java_Occurrence : others =>
+                    declare
+                        e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                    begin
                 commonStrings := CommonStrings_Package.getInstance;
                 This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, METHOD_NAME, e);
+                    end;
             end;
             This.glRenderer := gl.glGetString (GL10.GL_RENDERER);
             This.glVendor := gl.glGetString (GL10.GL_VENDOR);
@@ -193,9 +197,13 @@ package body org.allbinary.graphics.opengles.OpenGLCapabilities_Package is
             This.maxTextureSize := maxTextureSizeArray (0);
             This.initialized := True;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, METHOD_NAME, e);
+                end;
         end;
    end initCapabilities;
 
@@ -311,9 +319,13 @@ package body org.allbinary.graphics.opengles.OpenGLCapabilities_Package is
                 stringBuffer.append (This.stringUtil.toString (list.objectArray (index)));
             end loop;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             PreLogUtil_Package.putOE (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.TOSTRING, e);
+                end;
         end;
         return stringBuffer.toString;
    end toString;

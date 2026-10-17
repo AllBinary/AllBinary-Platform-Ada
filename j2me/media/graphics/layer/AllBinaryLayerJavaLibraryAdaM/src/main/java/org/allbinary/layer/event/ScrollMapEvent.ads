@@ -24,7 +24,7 @@ with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbin
 
 package org.allbinary.layer.event.ScrollMapEvent_Package is
 
-   package AllBinaryEventObject_Package renames org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+   package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 
    type ScrollMapEvent is tagged;
    type ScrollMapEvent_Access is access all ScrollMapEvent'Class;

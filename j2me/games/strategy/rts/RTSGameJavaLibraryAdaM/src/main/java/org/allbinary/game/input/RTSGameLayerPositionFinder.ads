@@ -27,9 +27,9 @@ with org.allbinary.game.input.LayerPositionFinderInterface_Package; use org.allb
 
 package org.allbinary.game.input.RTSGameLayerPositionFinder_Package is
 
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package GeographicMapCellPosition_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
-   package DropCellPositionHistory_Package renames org.allbinary.media.graphics.geography.map.drop.DropCellPositionHistory_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+   package DropCellPositionHistory_Package renames Standard.org.allbinary.media.graphics.geography.map.drop.DropCellPositionHistory_Package;
 
    type RTSGameLayerPositionFinder is tagged;
    type RTSGameLayerPositionFinder_Access is access all RTSGameLayerPositionFinder'Class;

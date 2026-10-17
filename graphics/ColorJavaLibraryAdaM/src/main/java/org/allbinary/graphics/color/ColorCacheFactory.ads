@@ -29,12 +29,12 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.graphics.color.ColorCacheFactory_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package AutomaticCacheInterface_Package renames org.allbinary.logic.util.cache.AutomaticCacheInterface_Package;
-   package AutomaticCacheInterfaceFactory_Package renames org.allbinary.logic.util.cache.AutomaticCacheInterfaceFactory_Package;
-   package CachePolicyFactory_Package renames org.allbinary.logic.util.cache.CachePolicyFactory_Package;
-   package CacheTypeFactory_Package renames org.allbinary.logic.util.cache.CacheTypeFactory_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package AutomaticCacheInterface_Package renames Standard.org.allbinary.logic.util.cache.AutomaticCacheInterface_Package;
+   package AutomaticCacheInterfaceFactory_Package renames Standard.org.allbinary.logic.util.cache.AutomaticCacheInterfaceFactory_Package;
+   package CachePolicyFactory_Package renames Standard.org.allbinary.logic.util.cache.CachePolicyFactory_Package;
+   package CacheTypeFactory_Package renames Standard.org.allbinary.logic.util.cache.CacheTypeFactory_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type ColorCacheFactory is tagged;
    type ColorCacheFactory_Access is access all ColorCacheFactory'Class;

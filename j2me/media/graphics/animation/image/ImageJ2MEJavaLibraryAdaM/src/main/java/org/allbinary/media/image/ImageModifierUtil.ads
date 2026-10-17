@@ -25,7 +25,7 @@ with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics
 
 package org.allbinary.media.image.ImageModifierUtil_Package is
 
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
 
    type ImageModifierUtil is tagged;
    type ImageModifierUtil_Access is access all ImageModifierUtil'Class;

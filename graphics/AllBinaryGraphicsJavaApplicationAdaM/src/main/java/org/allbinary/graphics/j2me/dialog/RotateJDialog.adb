@@ -86,9 +86,13 @@ package body org.allbinary.graphics.j2me.dialog.RotateJDialog_Package is
             (HashMapJDialogListenerInterface_Access (This.getParent)).onHashMap (This.hashMap);
             This.setVisible (False);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             This.logUtil.putF (commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("jButton1ActionPerformed"));
+                end;
         end;
    end jButton1ActionPerformed;
 

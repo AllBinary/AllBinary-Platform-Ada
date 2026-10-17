@@ -28,10 +28,10 @@ with org.allbinary.game.displayable.canvas.CommandFormInputProcessor_Package; us
 
 package org.allbinary.game.displayable.canvas.PopupCommandFormInputProcessor_Package is
 
-   package MyCanvas_Package renames org.allbinary.graphics.displayable.MyCanvas_Package;
-   package ScrollSelectionForm_Package renames org.allbinary.graphics.form.ScrollSelectionForm_Package;
-   package MotionGestureEvent_Package renames org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package MyCanvas_Package renames Standard.org.allbinary.graphics.displayable.MyCanvas_Package;
+   package ScrollSelectionForm_Package renames Standard.org.allbinary.graphics.form.ScrollSelectionForm_Package;
+   package MotionGestureEvent_Package renames Standard.org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type PopupCommandFormInputProcessor is tagged;
    type PopupCommandFormInputProcessor_Access is access all PopupCommandFormInputProcessor'Class;

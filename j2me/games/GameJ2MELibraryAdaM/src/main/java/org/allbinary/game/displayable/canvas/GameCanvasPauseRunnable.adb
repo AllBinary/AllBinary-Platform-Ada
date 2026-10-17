@@ -55,9 +55,13 @@ package body org.allbinary.game.displayable.canvas.GameCanvasPauseRunnable_Packa
                 This.allBinaryGameCanvas.processSleep;
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.RUN, e);
+                end;
         end;
    end processLoopSleep;
 

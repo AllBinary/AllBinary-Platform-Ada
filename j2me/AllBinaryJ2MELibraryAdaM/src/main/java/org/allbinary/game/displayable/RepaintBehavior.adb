@@ -65,10 +65,14 @@ package body org.allbinary.game.displayable.RepaintBehavior_Package is
 --                          canvas.repaint;
 --                          DisplayInfoSingleton_Package.getInstance.process;
 --                      exception
---                          when e : others =>
+--                          when Java_Occurrence : others =>
+--                              declare
+--                                  e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+--                              begin
 --                          commonStrings := CommonStrings_Package.getInstance;
 --                          logUtil := LogUtil_Package.getInstance;
 --                          logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.RUN, e);
+--                              end;
 --                      end;
 --     end run;
 , This.NAME);

@@ -25,7 +25,7 @@ with org.allbinary.graphics.font.FontDebugBase_Package; use org.allbinary.graphi
 
 package org.allbinary.device.GraphicsInterface_Package is
 
-   package FontDebugBase_Package renames org.allbinary.graphics.font.FontDebugBase_Package;
+   package FontDebugBase_Package renames Standard.org.allbinary.graphics.font.FontDebugBase_Package;
 
    type GraphicsInterface is interface;
    type GraphicsInterface_Access is access all GraphicsInterface'Class;

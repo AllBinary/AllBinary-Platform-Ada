@@ -25,8 +25,8 @@ with org.allbinary.logic.util.visitor.Visitor_Package; use org.allbinary.logic.u
 
 package org.allbinary.graphics.form.item.validation.AllCommandsVisitor_Package is
 
-   package BooleanFactory_Package renames org.allbinary.logic.java.bool.BooleanFactory_Package;
-   package Visitor_Package renames org.allbinary.logic.util.visitor.Visitor_Package;
+   package BooleanFactory_Package renames Standard.org.allbinary.logic.java.bool.BooleanFactory_Package;
+   package Visitor_Package renames Standard.org.allbinary.logic.util.visitor.Visitor_Package;
 
    type AllCommandsVisitor is tagged;
    type AllCommandsVisitor_Access is access all AllCommandsVisitor'Class;

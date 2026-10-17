@@ -26,9 +26,9 @@ with org.allbinary.math.Angle_Package; use org.allbinary.math.Angle_Package;
 
 package org.allbinary.game.physics.velocity.BasicVelocityInterface_Package is
 
-   package Direction_Package renames org.allbinary.direction.Direction_Package;
-   package BasicDecimal_Package renames org.allbinary.logic.math.BasicDecimal_Package;
-   package Angle_Package renames org.allbinary.math.Angle_Package;
+   package Direction_Package renames Standard.org.allbinary.direction.Direction_Package;
+   package BasicDecimal_Package renames Standard.org.allbinary.logic.math.BasicDecimal_Package;
+   package Angle_Package renames Standard.org.allbinary.math.Angle_Package;
 
    type BasicVelocityInterface is interface;
    type BasicVelocityInterface_Access is access all BasicVelocityInterface'Class;

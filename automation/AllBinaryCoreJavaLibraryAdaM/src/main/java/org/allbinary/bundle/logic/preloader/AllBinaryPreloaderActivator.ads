@@ -32,15 +32,15 @@ with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_
 
 package org.allbinary.bundle.logic.preloader.AllBinaryPreloaderActivator_Package is
 
-   package BundleActivator_Package renames org.osgi.framework.BundleActivator_Package;
-   package BundleContext_Package renames org.osgi.framework.BundleContext_Package;
-   package ServiceReference_Package renames org.osgi.framework.ServiceReference_Package;
-   package ServiceRegistration_Package renames org.osgi.framework.ServiceRegistration_Package;
-   package CryptServiceFactory_Package renames org.allbinary.bundle.logic.system.loader.CryptServiceFactory_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package ABHashtable_Package renames org.allbinary.util.ABHashtable_Package;
+   package BundleActivator_Package renames Standard.org.osgi.framework.BundleActivator_Package;
+   package BundleContext_Package renames Standard.org.osgi.framework.BundleContext_Package;
+   package ServiceReference_Package renames Standard.org.osgi.framework.ServiceReference_Package;
+   package ServiceRegistration_Package renames Standard.org.osgi.framework.ServiceRegistration_Package;
+   package CryptServiceFactory_Package renames Standard.org.allbinary.bundle.logic.system.loader.CryptServiceFactory_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
    type AllBinaryPreloaderActivator is tagged;
    type AllBinaryPreloaderActivator_Access is access all AllBinaryPreloaderActivator'Class;

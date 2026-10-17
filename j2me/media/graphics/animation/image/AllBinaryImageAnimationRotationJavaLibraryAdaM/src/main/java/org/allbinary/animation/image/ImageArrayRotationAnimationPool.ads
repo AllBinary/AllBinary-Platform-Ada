@@ -27,10 +27,10 @@ with org.allbinary.logic.util.cache.PoolInterface_Package; use org.allbinary.log
 
 package org.allbinary.animation.image.ImageArrayRotationAnimationPool_Package is
 
-   package BasicArrayListResetablePool_Package renames org.allbinary.logic.util.cache.BasicArrayListResetablePool_Package;
-   package CacheableInterface_Package renames org.allbinary.logic.util.cache.CacheableInterface_Package;
-   package CacheableInterfaceFactoryInterface_Package renames org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package;
-   package PoolInterface_Package renames org.allbinary.logic.util.cache.PoolInterface_Package;
+   package BasicArrayListResetablePool_Package renames Standard.org.allbinary.logic.util.cache.BasicArrayListResetablePool_Package;
+   package CacheableInterface_Package renames Standard.org.allbinary.logic.util.cache.CacheableInterface_Package;
+   package CacheableInterfaceFactoryInterface_Package renames Standard.org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package;
+   package PoolInterface_Package renames Standard.org.allbinary.logic.util.cache.PoolInterface_Package;
 
    type ImageArrayRotationAnimationPool is tagged;
    type ImageArrayRotationAnimationPool_Access is access all ImageArrayRotationAnimationPool'Class;

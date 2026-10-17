@@ -30,11 +30,11 @@ with org.allbinary.business.user.modules.configuration.UserConfigurationInterfac
 
 package org.allbinary.business.user.modules.configuration.UserConfiguration_Package is
 
-   package EntryData_Package renames org.allbinary.business.entry_Id.EntryData_Package;
-   package TimeCreated_Package renames org.allbinary.business.time.created.TimeCreated_Package;
-   package TimeLastModified_Package renames org.allbinary.business.time.modified.TimeLastModified_Package;
-   package UserEmailConfiguration_Package renames org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfiguration_Package;
-   package UserEmailConfigurationInterface_Package renames org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationInterface_Package;
+   package EntryData_Package renames Standard.org.allbinary.business.entry_Id.EntryData_Package;
+   package TimeCreated_Package renames Standard.org.allbinary.business.time.created.TimeCreated_Package;
+   package TimeLastModified_Package renames Standard.org.allbinary.business.time.modified.TimeLastModified_Package;
+   package UserEmailConfiguration_Package renames Standard.org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfiguration_Package;
+   package UserEmailConfigurationInterface_Package renames Standard.org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationInterface_Package;
 
    type UserConfiguration is tagged;
    type UserConfiguration_Access is access all UserConfiguration'Class;

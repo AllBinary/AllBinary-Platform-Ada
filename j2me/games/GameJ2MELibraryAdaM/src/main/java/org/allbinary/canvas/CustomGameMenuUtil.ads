@@ -27,10 +27,10 @@ with org.allbinary.graphics.displayable.MyCanvas_Package; use org.allbinary.grap
 
 package org.allbinary.canvas.CustomGameMenuUtil_Package is
 
-   package AppletUtil_Package renames org.allbinary.AppletUtil_Package;
-   package J2MEUtil_Package renames org.allbinary.J2MEUtil_Package;
-   package GameCommandsFactory_Package renames org.allbinary.game.commands.GameCommandsFactory_Package;
-   package MyCanvas_Package renames org.allbinary.graphics.displayable.MyCanvas_Package;
+   package AppletUtil_Package renames Standard.org.allbinary.AppletUtil_Package;
+   package J2MEUtil_Package renames Standard.org.allbinary.J2MEUtil_Package;
+   package GameCommandsFactory_Package renames Standard.org.allbinary.game.commands.GameCommandsFactory_Package;
+   package MyCanvas_Package renames Standard.org.allbinary.graphics.displayable.MyCanvas_Package;
 
    type CustomGameMenuUtil is tagged;
    type CustomGameMenuUtil_Access is access all CustomGameMenuUtil'Class;

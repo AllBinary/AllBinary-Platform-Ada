@@ -280,8 +280,12 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
         begin
             Desktop_Package.getDesktop.browse (This.uri);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("subscriptionJMenuItemActionPerformed"), e);
+                end;
         end;
    end subscriptionJMenuItemActionPerformed;
 
@@ -290,8 +294,12 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
         begin
             Desktop_Package.getDesktop.browse (This.uri);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("updatesJMenuItemActionPerformed"), e);
+                end;
         end;
    end updatesJMenuItemActionPerformed;
 
@@ -308,8 +316,12 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
         begin
             DesktopBundle_Package.Create.start;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("modulesJMenuItemActionPerformed"), e);
+                end;
         end;
    end modulesJMenuItemActionPerformed;
 
@@ -372,8 +384,12 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
                 This.gameRobotJTabbedPane.setEnabledAt (1, False);
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("gameAutomationRobotModuleJListValueChanged"), e);
+                end;
         end;
    end inputAutomationModuleJListValueChanged;
 
@@ -408,8 +424,12 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
                 This.noModuleSelectedJDialog.setLocationRelativeTo (This'Unchecked_Access);
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("startJMenuItemActionPerformed"), e);
+                end;
         end;
    end startJMenuItemActionPerformed;
 
@@ -449,8 +469,12 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
 --                      end if;
 --                      INPUTAUTOMATION_JFRAME.setVisible (True);
 --                  exception
---                      when e : others =>
+--                      when Java_Occurrence : others =>
+--                          declare
+--                              e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+--                          begin
 --                      logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.RUN, e);
+--                          end;
 --                  end;
 --     end run;
 );
@@ -478,8 +502,12 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
             This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("onAdd"));
             InputRobotFactory_Package.getInstance.add (inputAutomationRobotChangeEvent.getInputAutomationRobotInterfaceWrapper.getInputRobotInterface);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("onAdd"), e);
+                end;
         end;
    end onAdd;
 
@@ -489,8 +517,12 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
             This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("onRemove"));
             InputRobotFactory_Package.getInstance.add (inputAutomationRobotChangeEvent.getInputAutomationRobotInterfaceWrapper.getInputRobotInterface);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("onRemove"), e);
+                end;
         end;
    end onRemove;
 
@@ -501,8 +533,12 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
             This.inputAutomationModuleConfigurations.add (inputAutomationConfigurationChangeEvent.getInputAutomationModuleConfiguration);
             This.init;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("onAdd"), e);
+                end;
         end;
    end onAdd;
 
@@ -527,8 +563,12 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
             inputAutomationModuleConfigurations.remove (inputAutomationConfigurationChangeEvent.getInputAutomationModuleConfiguration);
             This.init;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("onRemove"), e);
+                end;
         end;
    end onRemove;
 

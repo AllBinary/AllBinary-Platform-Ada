@@ -30,13 +30,13 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.input.automation.module.osgi.InputAutomationModuleServiceFactory_Package is
 
-   package Bundle_Package renames org.osgi.framework.Bundle_Package;
-   package ServiceFactory_Package renames org.osgi.framework.ServiceFactory_Package;
-   package ServiceRegistration_Package renames org.osgi.framework.ServiceRegistration_Package;
-   package InputAutomationModuleService_Package renames bundle.input.automation.module.InputAutomationModuleService_Package;
-   package InputAutomationModuleFactoryInterface_Package renames org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package Bundle_Package renames Standard.org.osgi.framework.Bundle_Package;
+   package ServiceFactory_Package renames Standard.org.osgi.framework.ServiceFactory_Package;
+   package ServiceRegistration_Package renames Standard.org.osgi.framework.ServiceRegistration_Package;
+   package InputAutomationModuleService_Package renames Standard.bundle.input.automation.module.InputAutomationModuleService_Package;
+   package InputAutomationModuleFactoryInterface_Package renames Standard.org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type InputAutomationModuleServiceFactory is tagged;
    type InputAutomationModuleServiceFactory_Access is access all InputAutomationModuleServiceFactory'Class;

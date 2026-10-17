@@ -29,10 +29,10 @@ with org.allbinary.business.context.modules.storefront.statistics.advertisements
 
 package org.allbinary.business.context.modules.storefront.statistics.advertisements.StoreFrontAdvertisementsStatistics_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package StoreFrontInterface_Package renames org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StoreFrontInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
 
    type StoreFrontAdvertisementsStatistics is tagged;
    type StoreFrontAdvertisementsStatistics_Access is access all StoreFrontAdvertisementsStatistics'Class;

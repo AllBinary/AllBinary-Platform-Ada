@@ -51,14 +51,22 @@ package body org.allbinary.midlet.ExitRunnable_Package is
             This.logUtil.putF (This.commonStrings.END_RUNNABLE, This'Unchecked_Access, This.commonStrings.RUN);
             This.processor.process;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.RUN, e);
             begin
                 This.processor.process;
             exception
-                when e2 : others =>
+                when Java_Occurrence : others =>
+                    declare
+                        e2 : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                    begin
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.RUN, e);
+                    end;
             end;
+                end;
         end;
    end run;
 

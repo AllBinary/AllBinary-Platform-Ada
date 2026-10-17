@@ -63,9 +63,13 @@ package body org.allbinary.logic.io.file.directory.Directory_Package is
             end if;
             return True;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             PreLogUtil_Package.putOE (To_Unbounded_String ("Error Creating Directories: ") & directory, This'Unchecked_Access, To_Unbounded_String ("create"), e);
             return False;
+                end;
         end;
    end create;
 

@@ -24,7 +24,7 @@ with org.allbinary.data.tables.TableMappingInterface_Package; use org.allbinary.
 
 package org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsInterface_Package is
 
-   package TableMappingInterface_Package renames org.allbinary.data.tables.TableMappingInterface_Package;
+   package TableMappingInterface_Package renames Standard.org.allbinary.data.tables.TableMappingInterface_Package;
 
    type StoreFrontUsersStatisticsInterface is interface and TableMappingInterface;
    type StoreFrontUsersStatisticsInterface_Access is access all StoreFrontUsersStatisticsInterface'Class;

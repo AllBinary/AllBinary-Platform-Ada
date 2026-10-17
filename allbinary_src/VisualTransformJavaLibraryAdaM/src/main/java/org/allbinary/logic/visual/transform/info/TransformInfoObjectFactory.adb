@@ -73,7 +73,10 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoObjectFactor
             end if;
             return anyType;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             error := To_Unbounded_String ("Failed To Get Instance: ");
             if (transformInfoInterface) /= (null) then
                 error := error & transformInfoInterface.getName;
@@ -83,6 +86,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoObjectFactor
                 This.logUtil.put (error, This'Unchecked_Access, commonStrings.GET_INSTANCE, e);
             end if;
             Java_Throw (e);
+                end;
         end;
    end getInstance;
 

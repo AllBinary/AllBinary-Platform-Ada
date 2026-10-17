@@ -42,20 +42,20 @@ with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
 
 package org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package is
 
-   package DynamicObjectData_Package renames org.allbinary.business.DynamicObjectData_Package;
-   package DomNodeHelper_Package renames org.allbinary.data.tree.dom.DomNodeHelper_Package;
-   package DomSearchHelper_Package renames org.allbinary.data.tree.dom.DomSearchHelper_Package;
-   package ModDomHelper_Package renames org.allbinary.data.tree.dom.ModDomHelper_Package;
-   package InputAutomationData_Package renames org.allbinary.input.automation.InputAutomationData_Package;
-   package InputAutomationModuleData_Package renames org.allbinary.input.automation.module.InputAutomationModuleData_Package;
-   package InputAutomationModuleFactoryInterface_Package renames org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package AbeFactory_Package renames org.allbinary.logic.system.loader.AbeFactory_Package;
-   package AbeClientInformationInterface_Package renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
-   package NodeList_Package renames org.w3c.dom.NodeList_Package;
+   package DynamicObjectData_Package renames Standard.org.allbinary.business.DynamicObjectData_Package;
+   package DomNodeHelper_Package renames Standard.org.allbinary.data.tree.dom.DomNodeHelper_Package;
+   package DomSearchHelper_Package renames Standard.org.allbinary.data.tree.dom.DomSearchHelper_Package;
+   package ModDomHelper_Package renames Standard.org.allbinary.data.tree.dom.ModDomHelper_Package;
+   package InputAutomationData_Package renames Standard.org.allbinary.input.automation.InputAutomationData_Package;
+   package InputAutomationModuleData_Package renames Standard.org.allbinary.input.automation.module.InputAutomationModuleData_Package;
+   package InputAutomationModuleFactoryInterface_Package renames Standard.org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package AbeFactory_Package renames Standard.org.allbinary.logic.system.loader.AbeFactory_Package;
+   package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
+   package NodeList_Package renames Standard.org.w3c.dom.NodeList_Package;
 
    type InputAutomationModuleConfiguration is tagged;
    type InputAutomationModuleConfiguration_Access is access all InputAutomationModuleConfiguration'Class;

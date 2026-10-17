@@ -32,15 +32,15 @@ with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.C
 
 package org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package is
 
-   package GPoint_Package renames org.allbinary.graphics.GPoint_Package;
-   package PointFactory_Package renames org.allbinary.graphics.PointFactory_Package;
-   package MotionGestureInput_Package renames org.allbinary.input.motion.gesture.MotionGestureInput_Package;
-   package TouchMotionGestureFactory_Package renames org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package;
-   package TsUtil_Package renames org.allbinary.TsUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package AllBinaryEventObject_Package renames org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-   package CommonLabels_Package renames org.allbinary.string_Id.CommonLabels_Package;
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
+   package MotionGestureInput_Package renames Standard.org.allbinary.input.motion.gesture.MotionGestureInput_Package;
+   package TouchMotionGestureFactory_Package renames Standard.org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package;
+   package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
 
    type MotionGestureEvent is tagged;
    type MotionGestureEvent_Access is access all MotionGestureEvent'Class;

@@ -25,7 +25,7 @@ with org.allbinary.game.input.PCGameInputMapping_Package; use org.allbinary.game
 
 package org.allbinary.game.input.MotionLaptopGameInputMapping_Package is
 
-   package InputToGameKeyMapping_Package renames org.allbinary.game.input.mapping.InputToGameKeyMapping_Package;
+   package InputToGameKeyMapping_Package renames Standard.org.allbinary.game.input.mapping.InputToGameKeyMapping_Package;
 
    type MotionLaptopGameInputMapping is tagged;
    type MotionLaptopGameInputMapping_Access is access all MotionLaptopGameInputMapping'Class;

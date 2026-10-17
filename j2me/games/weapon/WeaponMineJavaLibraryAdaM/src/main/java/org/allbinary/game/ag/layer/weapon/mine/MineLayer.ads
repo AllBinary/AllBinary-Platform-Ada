@@ -34,17 +34,17 @@ with org.allbinary.view.event.ViewPositionEventHandler_Package; use org.allbinar
 
 package org.allbinary.game.ag.layer.weapon.mine.MineLayer_Package is
 
-   package DropWeaponSound_Package renames org.allbinary.ag.weapon.media.audio.DropWeaponSound_Package;
-   package FeaturedAnimationInterfaceFactoryInterfaceFactory_Package renames org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package;
-   package SimpleWeaponLayer_Package renames org.allbinary.game.layer.weapon.SimpleWeaponLayer_Package;
-   package RemoteInfo_Package renames org.allbinary.game.multiplayer.layer.RemoteInfo_Package;
-   package PointFactory_Package renames org.allbinary.graphics.PointFactory_Package;
-   package Rectangle_Package renames org.allbinary.graphics.Rectangle_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package SecondaryPlayerQueueFactory_Package renames org.allbinary.media.audio.SecondaryPlayerQueueFactory_Package;
-   package NoMovementFactory_Package renames org.allbinary.physics.movement.NoMovementFactory_Package;
-   package ViewPositionBase_Package renames org.allbinary.view.ViewPositionBase_Package;
-   package ViewPositionEventHandler_Package renames org.allbinary.view.event.ViewPositionEventHandler_Package;
+   package DropWeaponSound_Package renames Standard.org.allbinary.ag.weapon.media.audio.DropWeaponSound_Package;
+   package FeaturedAnimationInterfaceFactoryInterfaceFactory_Package renames Standard.org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package;
+   package SimpleWeaponLayer_Package renames Standard.org.allbinary.game.layer.weapon.SimpleWeaponLayer_Package;
+   package RemoteInfo_Package renames Standard.org.allbinary.game.multiplayer.layer.RemoteInfo_Package;
+   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
+   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package SecondaryPlayerQueueFactory_Package renames Standard.org.allbinary.media.audio.SecondaryPlayerQueueFactory_Package;
+   package NoMovementFactory_Package renames Standard.org.allbinary.physics.movement.NoMovementFactory_Package;
+   package ViewPositionBase_Package renames Standard.org.allbinary.view.ViewPositionBase_Package;
+   package ViewPositionEventHandler_Package renames Standard.org.allbinary.view.event.ViewPositionEventHandler_Package;
 
    type MineLayer is tagged;
    type MineLayer_Access is access all MineLayer'Class;

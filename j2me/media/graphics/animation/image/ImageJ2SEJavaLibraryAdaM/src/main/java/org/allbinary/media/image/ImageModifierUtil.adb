@@ -177,10 +177,14 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
             end loop;
             return newImageArray;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             PreLogUtil_Package.putOE (commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("getImageArray"), e);
             return originalImageArray;
+                end;
         end;
    end getImageArray;
 

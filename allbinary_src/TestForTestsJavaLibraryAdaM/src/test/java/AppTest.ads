@@ -14,9 +14,9 @@ with org.junit.jupiter.api.Test_Package; use org.junit.jupiter.api.Test_Package;
 
 package AppTest_Package is
 
-   package Assertions_Package renames org.junit.jupiter.api.Assertions_Package;
-   package DisplayName_Package renames org.junit.jupiter.api.DisplayName_Package;
-   package Test_Package renames org.junit.jupiter.api.Test_Package;
+   package Assertions_Package renames Standard.org.junit.jupiter.api.Assertions_Package;
+   package DisplayName_Package renames Standard.org.junit.jupiter.api.DisplayName_Package;
+   package Test_Package renames Standard.org.junit.jupiter.api.Test_Package;
 
    type AppTest is tagged;
    type AppTest_Access is access all AppTest'Class;

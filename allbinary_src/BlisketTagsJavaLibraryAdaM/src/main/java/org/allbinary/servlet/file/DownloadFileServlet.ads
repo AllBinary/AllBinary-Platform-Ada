@@ -44,20 +44,20 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.servlet.file.DownloadFileServlet_Package is
 
-   package AuthenticationHelper_Package renames admin.taghelpers.AuthenticationHelper_Package;
-   package AuthenticationHelperFactory_Package renames admin.taghelpers.AuthenticationHelperFactory_Package;
-   package AuthenticationHelperUtil_Package renames admin.taghelpers.AuthenticationHelperUtil_Package;
-   package URLGLOBALS_Package renames org.allbinary.globals.URLGLOBALS_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CloudStreamUtil_Package renames org.allbinary.logic.io.CloudStreamUtil_Package;
-   package StreamUtil_Package renames org.allbinary.logic.io.StreamUtil_Package;
-   package AbFile_Package renames org.allbinary.logic.io.file.AbFile_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package BlisketServletUtil_Package renames org.allbinary.servlet.BlisketServletUtil_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package AuthenticationHelper_Package renames Standard.admin.taghelpers.AuthenticationHelper_Package;
+   package AuthenticationHelperFactory_Package renames Standard.admin.taghelpers.AuthenticationHelperFactory_Package;
+   package AuthenticationHelperUtil_Package renames Standard.admin.taghelpers.AuthenticationHelperUtil_Package;
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CloudStreamUtil_Package renames Standard.org.allbinary.logic.io.CloudStreamUtil_Package;
+   package StreamUtil_Package renames Standard.org.allbinary.logic.io.StreamUtil_Package;
+   package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package BlisketServletUtil_Package renames Standard.org.allbinary.servlet.BlisketServletUtil_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type DownloadFileServlet is tagged;
    type DownloadFileServlet_Access is access all DownloadFileServlet'Class;

@@ -24,7 +24,7 @@ with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Pack
 
 package org.allbinary.game.identification.BasicGroupFactory_Package is
 
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
 
    type BasicGroupFactory is tagged;
    type BasicGroupFactory_Access is access all BasicGroupFactory'Class;

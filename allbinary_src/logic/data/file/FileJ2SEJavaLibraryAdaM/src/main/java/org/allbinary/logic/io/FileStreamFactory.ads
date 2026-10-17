@@ -26,9 +26,9 @@ with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path
 
 package org.allbinary.logic.io.FileStreamFactory_Package is
 
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
-   package AbFile_Package renames org.allbinary.logic.io.file.AbFile_Package;
-   package AbPath_Package renames org.allbinary.logic.io.path.AbPath_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
+   package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
 
    type FileStreamFactory is tagged;
    type FileStreamFactory_Access is access all FileStreamFactory'Class;

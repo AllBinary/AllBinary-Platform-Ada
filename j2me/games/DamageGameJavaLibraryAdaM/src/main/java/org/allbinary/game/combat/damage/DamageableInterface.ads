@@ -24,7 +24,7 @@ with org.allbinary.layer.NamedInterface_Package; use org.allbinary.layer.NamedIn
 
 package org.allbinary.game.combat.damage.DamageableInterface_Package is
 
-   package NamedInterface_Package renames org.allbinary.layer.NamedInterface_Package;
+   package NamedInterface_Package renames Standard.org.allbinary.layer.NamedInterface_Package;
 
    type DamageableInterface is interface and NamedInterface;
    type DamageableInterface_Access is access all DamageableInterface'Class;

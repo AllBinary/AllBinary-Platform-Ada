@@ -25,8 +25,8 @@ with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.strin
 
 package org.allbinary.logic.java.number.LongUtil_Package is
 
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonPhoneStrings_Package renames org.allbinary.string_Id.CommonPhoneStrings_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonPhoneStrings_Package renames Standard.org.allbinary.string_Id.CommonPhoneStrings_Package;
 
    type LongUtil is tagged;
    type LongUtil_Access is access all LongUtil'Class;

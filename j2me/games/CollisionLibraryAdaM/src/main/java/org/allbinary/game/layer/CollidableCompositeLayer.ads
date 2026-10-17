@@ -38,20 +38,20 @@ with org.allbinary.game.layer.AllBinaryGameLayer_Package; use org.allbinary.game
 
 package org.allbinary.game.layer.CollidableCompositeLayer_Package is
 
-   package ArtificialIntelligence_Package renames org.allbinary.ai.ArtificialIntelligence_Package;
-   package ArtificialIntelligenceInterface_Package renames org.allbinary.ai.ArtificialIntelligenceInterface_Package;
-   package CollidableBaseBehavior_Package renames org.allbinary.game.collision.CollidableBaseBehavior_Package;
-   package CollidableBaseBehaviorFactory_Package renames org.allbinary.game.collision.CollidableBaseBehaviorFactory_Package;
-   package CollidableInterfaceCompositeInterface_Package renames org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package;
-   package CollidableNeverCollideBehaviorFactory_Package renames org.allbinary.game.collision.CollidableNeverCollideBehaviorFactory_Package;
-   package Rectangle_Package renames org.allbinary.graphics.Rectangle_Package;
-   package RectangleFactory_Package renames org.allbinary.graphics.RectangleFactory_Package;
-   package ForcedLogUtil_Package renames org.allbinary.logic.communication.log.ForcedLogUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
-   package ViewPositionBase_Package renames org.allbinary.view.ViewPositionBase_Package;
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
+   package ArtificialIntelligence_Package renames Standard.org.allbinary.ai.ArtificialIntelligence_Package;
+   package ArtificialIntelligenceInterface_Package renames Standard.org.allbinary.ai.ArtificialIntelligenceInterface_Package;
+   package CollidableBaseBehavior_Package renames Standard.org.allbinary.game.collision.CollidableBaseBehavior_Package;
+   package CollidableBaseBehaviorFactory_Package renames Standard.org.allbinary.game.collision.CollidableBaseBehaviorFactory_Package;
+   package CollidableInterfaceCompositeInterface_Package renames Standard.org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package;
+   package CollidableNeverCollideBehaviorFactory_Package renames Standard.org.allbinary.game.collision.CollidableNeverCollideBehaviorFactory_Package;
+   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
+   package RectangleFactory_Package renames Standard.org.allbinary.graphics.RectangleFactory_Package;
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package ViewPositionBase_Package renames Standard.org.allbinary.view.ViewPositionBase_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
 
    type CollidableCompositeLayer is tagged;
    type CollidableCompositeLayer_Access is access all CollidableCompositeLayer'Class;

@@ -32,13 +32,13 @@ with org.allbinary.business.context.modules.storefronts.BasicStoreFrontInterface
 
 package org.allbinary.business.context.modules.storefronts.BasicStoreFront_Package is
 
-   package StoreFrontData_Package renames org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
-   package EntryData_Package renames org.allbinary.business.entry_Id.EntryData_Package;
-   package UserData_Package renames org.allbinary.business.user.UserData_Package;
-   package Tokenizer_Package renames org.allbinary.logic.string_Id.tokens.Tokenizer_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
+   package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+   package EntryData_Package renames Standard.org.allbinary.business.entry_Id.EntryData_Package;
+   package UserData_Package renames Standard.org.allbinary.business.user.UserData_Package;
+   package Tokenizer_Package renames Standard.org.allbinary.logic.string_Id.tokens.Tokenizer_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type BasicStoreFront is tagged;
    type BasicStoreFront_Access is access all BasicStoreFront'Class;

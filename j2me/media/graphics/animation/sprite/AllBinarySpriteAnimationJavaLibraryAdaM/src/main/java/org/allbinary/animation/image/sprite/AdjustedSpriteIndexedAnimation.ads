@@ -30,9 +30,9 @@ with org.allbinary.animation.image.sprite.SpriteIndexedAnimation_Package; use or
 
 package org.allbinary.animation.image.sprite.AdjustedSpriteIndexedAnimation_Package is
 
-   package AnimationBehavior_Package renames org.allbinary.animation.AnimationBehavior_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package BasicColorUtil_Package renames org.allbinary.graphics.color.BasicColorUtil_Package;
+   package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package BasicColorUtil_Package renames Standard.org.allbinary.graphics.color.BasicColorUtil_Package;
 
    type AdjustedSpriteIndexedAnimation is tagged;
    type AdjustedSpriteIndexedAnimation_Access is access all AdjustedSpriteIndexedAnimation'Class;

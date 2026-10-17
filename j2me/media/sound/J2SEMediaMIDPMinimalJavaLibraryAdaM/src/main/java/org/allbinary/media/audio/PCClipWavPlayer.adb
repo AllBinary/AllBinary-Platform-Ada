@@ -40,8 +40,12 @@ package body org.allbinary.media.audio.PCClipWavPlayer_Package is
                 Java_Throw (Java_New_Exception ("RuntimeException"));
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR, e);
+                end;
         end;
         This.audioInputStream := audioInputStream;
         This.clip := clip;
@@ -63,8 +67,12 @@ package body org.allbinary.media.audio.PCClipWavPlayer_Package is
 --                  begin
 --                      This.close2;
 --                  exception
---                      when e : others =>
+--                      when Java_Occurrence : others =>
+--                          declare
+--                              e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+--                          begin
 --                      PreLogUtil_Package.putOE (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.PROCESS, e);
+--                          end;
 --                  end;
 --     end run;
 );
@@ -93,8 +101,12 @@ package body org.allbinary.media.audio.PCClipWavPlayer_Package is
 --                  begin
 --                      This.start2;
 --                  exception
---                      when e : others =>
+--                      when Java_Occurrence : others =>
+--                          declare
+--                              e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+--                          begin
 --                      PreLogUtil_Package.putOE (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.PROCESS, e);
+--                          end;
 --                  end;
 --     end run;
 );
@@ -129,8 +141,12 @@ package body org.allbinary.media.audio.PCClipWavPlayer_Package is
 --                  begin
 --                      This.stop2;
 --                  exception
---                      when e : others =>
+--                      when Java_Occurrence : others =>
+--                          declare
+--                              e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+--                          begin
 --                      PreLogUtil_Package.putOE (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.PROCESS, e);
+--                          end;
 --                  end;
 --     end run;
 );

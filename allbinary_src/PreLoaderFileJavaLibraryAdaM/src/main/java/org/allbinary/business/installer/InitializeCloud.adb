@@ -90,9 +90,13 @@ package body org.allbinary.business.installer.InitializeCloud_Package is
             end if;
             return True;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (To_Unbounded_String ("Unable to copy installer files into cloud"), This'Unchecked_Access, To_Unbounded_String ("initialize()"), e);
             return False;
+                end;
         end;
    end initialize;
 

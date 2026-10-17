@@ -25,7 +25,7 @@ with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.
 
 package org.allbinary.game.displayable.canvas.EndGamePaintable_Package is
 
-   package Paintable_Package renames org.allbinary.graphics.paint.Paintable_Package;
+   package Paintable_Package renames Standard.org.allbinary.graphics.paint.Paintable_Package;
 
    type EndGamePaintable is tagged;
    type EndGamePaintable_Access is access all EndGamePaintable'Class;

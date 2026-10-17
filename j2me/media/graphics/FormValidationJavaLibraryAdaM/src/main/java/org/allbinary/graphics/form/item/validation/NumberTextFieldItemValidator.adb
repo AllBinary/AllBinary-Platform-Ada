@@ -64,8 +64,12 @@ package body org.allbinary.graphics.form.item.validation.NumberTextFieldItemVali
             begin
                 Integer'Value (To_String (This.textFieldItem.getString));
             exception
-                when e : others =>
+                when Java_Occurrence : others =>
+                    declare
+                        e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                    begin
                 result := BooleanFactory_Package.getInstance.FALSE;
+                    end;
             end;
         else
             if (textLength) < (1) then
@@ -105,9 +109,13 @@ package body org.allbinary.graphics.form.item.validation.NumberTextFieldItemVali
                     list.add (stringMaker.append (name).append (To_Unbounded_String (" is to large")).toString);
                 end if;
             exception
-                when e : others =>
+                when Java_Occurrence : others =>
+                    declare
+                        e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                    begin
                 stringMaker.delete (0, stringMaker.length);
                 list.add (stringMaker.append (name).append (To_Unbounded_String (" is not a number")).toString);
+                    end;
             end;
         else
             if (textLength) < (1) then

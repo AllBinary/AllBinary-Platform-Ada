@@ -44,25 +44,25 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 
 package org.allbinary.logic.io.file.FileUtil_Package is
 
-   package URLGLOBALS_Package renames org.allbinary.globals.URLGLOBALS_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package PreLogUtil_Package renames org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package LogConfigTypeFactory_Package renames org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
-   package AbDataOutputStream_Package renames org.allbinary.logic.io.AbDataOutputStream_Package;
-   package AbFileInputStream_Package renames org.allbinary.logic.io.AbFileInputStream_Package;
-   package AbFileLocalInputStream_Package renames org.allbinary.logic.io.AbFileLocalInputStream_Package;
-   package AbIOSystem_Package renames org.allbinary.logic.io.AbIOSystem_Package;
-   package DataOutputStreamFactory_Package renames org.allbinary.logic.io.DataOutputStreamFactory_Package;
-   package FileStreamFactory_Package renames org.allbinary.logic.io.FileStreamFactory_Package;
-   package StreamUtil_Package renames org.allbinary.logic.io.StreamUtil_Package;
-   package Directory_Package renames org.allbinary.logic.io.file.directory.Directory_Package;
-   package AbPath_Package renames org.allbinary.logic.io.path.AbPath_Package;
-   package AbPathData_Package renames org.allbinary.logic.io.path.AbPathData_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package CommonLabels_Package renames org.allbinary.string_Id.CommonLabels_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package AbDataOutputStream_Package renames Standard.org.allbinary.logic.io.AbDataOutputStream_Package;
+   package AbFileInputStream_Package renames Standard.org.allbinary.logic.io.AbFileInputStream_Package;
+   package AbFileLocalInputStream_Package renames Standard.org.allbinary.logic.io.AbFileLocalInputStream_Package;
+   package AbIOSystem_Package renames Standard.org.allbinary.logic.io.AbIOSystem_Package;
+   package DataOutputStreamFactory_Package renames Standard.org.allbinary.logic.io.DataOutputStreamFactory_Package;
+   package FileStreamFactory_Package renames Standard.org.allbinary.logic.io.FileStreamFactory_Package;
+   package StreamUtil_Package renames Standard.org.allbinary.logic.io.StreamUtil_Package;
+   package Directory_Package renames Standard.org.allbinary.logic.io.file.directory.Directory_Package;
+   package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
+   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type FileUtil is tagged;
    type FileUtil_Access is access all FileUtil'Class;

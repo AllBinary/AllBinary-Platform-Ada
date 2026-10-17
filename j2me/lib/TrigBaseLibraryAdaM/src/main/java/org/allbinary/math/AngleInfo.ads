@@ -29,12 +29,12 @@ with jsinterop.annotations.JsConstructor_Package; use jsinterop.annotations.JsCo
 
 package org.allbinary.math.AngleInfo_Package is
 
-   package JsType_Package renames jsinterop.annotations.JsType_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
-   package JsMethod_Package renames jsinterop.annotations.JsMethod_Package;
-   package JsConstructor_Package renames jsinterop.annotations.JsConstructor_Package;
+   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package JsMethod_Package renames Standard.jsinterop.annotations.JsMethod_Package;
+   package JsConstructor_Package renames Standard.jsinterop.annotations.JsConstructor_Package;
 
    type AngleInfo is tagged;
    type AngleInfo_Access is access all AngleInfo'Class;

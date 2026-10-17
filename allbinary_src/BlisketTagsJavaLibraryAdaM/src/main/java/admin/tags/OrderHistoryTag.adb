@@ -71,8 +71,12 @@ package body admin.tags.OrderHistoryTag_Package is
                 return result;
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Java_Throw (e);
+                end;
         end;
    end setOrderStatus;
 
@@ -92,9 +96,13 @@ package body admin.tags.OrderHistoryTag_Package is
             end if;
             return SKIP_BODY;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             AbResponseHandler_Package.sendJspTagLicensingRedirect (This.pageContext, e);
             return SKIP_BODY;
+                end;
         end;
    end doStartTag;
 

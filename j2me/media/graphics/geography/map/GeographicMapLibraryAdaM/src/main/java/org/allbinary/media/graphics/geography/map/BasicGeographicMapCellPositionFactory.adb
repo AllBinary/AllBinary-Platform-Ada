@@ -91,10 +91,14 @@ package body org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPo
                 end loop;
             end loop;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonSeps := CommonSeps_Package.getInstance;
             This.logUtil.put (StringMaker_Package.Create.append (commonSeps.BRACKET_OPEN).appendint (rows).append (commonSeps.BRACKET_CLOSE).append (commonSeps.BRACKET_OPEN).appendint (columns).append (commonSeps.BRACKET_CLOSE).toString, This'Unchecked_Access, To_Unbounded_String ("visit"), e);
             Java_Throw (e);
+                end;
         end;
    end visit;
 

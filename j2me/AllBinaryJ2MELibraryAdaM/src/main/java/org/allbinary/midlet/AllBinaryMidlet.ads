@@ -42,18 +42,18 @@ with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_
 
 package org.allbinary.midlet.AllBinaryMidlet_Package is
 
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package ForcedLogUtil_Package renames org.allbinary.logic.communication.log.ForcedLogUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package PreLogUtil_Package renames org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package EventStrings_Package renames org.allbinary.logic.util.event.EventStrings_Package;
-   package CommonLabels_Package renames org.allbinary.string_Id.CommonLabels_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package Memory_Package renames org.allbinary.system.Memory_Package;
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
-   package ABHashtable_Package renames org.allbinary.util.ABHashtable_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package Memory_Package renames Standard.org.allbinary.system.Memory_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
    type AllBinaryMidlet is tagged;
    type AllBinaryMidlet_Access is access all AllBinaryMidlet'Class;

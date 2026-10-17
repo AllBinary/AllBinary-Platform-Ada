@@ -45,27 +45,27 @@ with org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectC
 
 package org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfig_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package DomNodeHelper_Package renames org.allbinary.data.tree.dom.DomNodeHelper_Package;
-   package DomSearchHelper_Package renames org.allbinary.data.tree.dom.DomSearchHelper_Package;
-   package DomDocumentHelper_Package renames org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
-   package XmlDocumentHelper_Package renames org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package InputOutputTypeData_Package renames org.allbinary.logic.io.InputOutputTypeData_Package;
-   package OutputTypeData_Package renames org.allbinary.logic.io.OutputTypeData_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package TransformInfoData_Package renames org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
-   package TransformInfoDomNode_Package renames org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Package;
-   package TransformInfoInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-   package TransformInfosData_Package renames org.allbinary.logic.visual.transform.info.TransformInfosData_Package;
-   package XslData_Package renames org.allbinary.logic.visual.transform.template.XslData_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package Attr_Package renames org.w3c.dom.Attr_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
-   package NamedNodeMap_Package renames org.w3c.dom.NamedNodeMap_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
-   package NodeList_Package renames org.w3c.dom.NodeList_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package DomNodeHelper_Package renames Standard.org.allbinary.data.tree.dom.DomNodeHelper_Package;
+   package DomSearchHelper_Package renames Standard.org.allbinary.data.tree.dom.DomSearchHelper_Package;
+   package DomDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
+   package XmlDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package InputOutputTypeData_Package renames Standard.org.allbinary.logic.io.InputOutputTypeData_Package;
+   package OutputTypeData_Package renames Standard.org.allbinary.logic.io.OutputTypeData_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package TransformInfoData_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
+   package TransformInfoDomNode_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Package;
+   package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package TransformInfosData_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfosData_Package;
+   package XslData_Package renames Standard.org.allbinary.logic.visual.transform.template.XslData_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package Attr_Package renames Standard.org.w3c.dom.Attr_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package NamedNodeMap_Package renames Standard.org.w3c.dom.NamedNodeMap_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
+   package NodeList_Package renames Standard.org.w3c.dom.NodeList_Package;
 
    type TransformInfoObjectConfig is tagged;
    type TransformInfoObjectConfig_Access is access all TransformInfoObjectConfig'Class;

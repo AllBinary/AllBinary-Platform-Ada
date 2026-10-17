@@ -34,15 +34,15 @@ with org.allbinary.game.init.BaseGameInitialization_Package; use org.allbinary.g
 
 package org.allbinary.game.init.CommonGameInitialization_Package is
 
-   package ResourceInitialization_Package renames org.allbinary.game.resource.ResourceInitialization_Package;
-   package ResourceLoadingLevelFactory_Package renames org.allbinary.game.resource.ResourceLoadingLevelFactory_Package;
-   package PointFactory_Package renames org.allbinary.graphics.PointFactory_Package;
-   package ProgressCanvas_Package renames org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
-   package ProgressCanvasFactory_Package renames org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package;
-   package SmallIntegerSingletonFactory_Package renames org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
-   package AbeClientInformationInterface_Package renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-   package AngleFactory_Package renames org.allbinary.math.AngleFactory_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package ResourceInitialization_Package renames Standard.org.allbinary.game.resource.ResourceInitialization_Package;
+   package ResourceLoadingLevelFactory_Package renames Standard.org.allbinary.game.resource.ResourceLoadingLevelFactory_Package;
+   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
+   package ProgressCanvas_Package renames Standard.org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
+   package ProgressCanvasFactory_Package renames Standard.org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package;
+   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+   package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type CommonGameInitialization is tagged;
    type CommonGameInitialization_Access is access all CommonGameInitialization'Class;

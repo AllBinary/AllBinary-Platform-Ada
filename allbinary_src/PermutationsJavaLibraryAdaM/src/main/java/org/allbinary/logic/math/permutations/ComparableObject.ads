@@ -25,7 +25,7 @@ with org.allbinary.logic.math.permutations.Comparable_Package; use org.allbinary
 
 package org.allbinary.logic.math.permutations.ComparableObject_Package is
 
-   package TsUtil_Package renames org.allbinary.TsUtil_Package;
+   package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
 
    type ComparableObject is tagged;
    type ComparableObject_Access is access all ComparableObject'Class;

@@ -27,8 +27,8 @@ with org.allbinary.input.automation.module.game.MeteredGameObjectInterface_Packa
 
 package org.allbinary.input.automation.module.game.MeteredGameObject_Package is
 
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
 
    type MeteredGameObject is tagged;
    type MeteredGameObject_Access is access all MeteredGameObject'Class;

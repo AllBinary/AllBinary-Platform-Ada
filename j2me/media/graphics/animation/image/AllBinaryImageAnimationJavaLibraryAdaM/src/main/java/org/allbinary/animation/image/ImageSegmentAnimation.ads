@@ -28,8 +28,8 @@ with org.allbinary.animation.image.ImageAnimation_Package; use org.allbinary.ani
 
 package org.allbinary.animation.image.ImageSegmentAnimation_Package is
 
-   package AnimationBehavior_Package renames org.allbinary.animation.AnimationBehavior_Package;
-   package CircularIndexUtil_Package renames org.allbinary.util.CircularIndexUtil_Package;
+   package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
+   package CircularIndexUtil_Package renames Standard.org.allbinary.util.CircularIndexUtil_Package;
 
    type ImageSegmentAnimation is tagged;
    type ImageSegmentAnimation_Access is access all ImageSegmentAnimation'Class;

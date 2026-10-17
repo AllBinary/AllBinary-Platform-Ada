@@ -34,12 +34,12 @@ with org.allbinary.logic.visual.transform.BasicTransformerInterface_Package; use
 
 package org.allbinary.logic.visual.transform.AbTransformer_Package is
 
-   package XslHelper_Package renames org.allbinary.data.tree.dom.XslHelper_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package TransformInfoInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-   package TransformInfoObjectConfigGenerator_Package renames org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGenerator_Package;
-   package TransformInfoObjectConfigGeneratorFactory_Package renames org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactory_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package XslHelper_Package renames Standard.org.allbinary.data.tree.dom.XslHelper_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package TransformInfoObjectConfigGenerator_Package renames Standard.org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGenerator_Package;
+   package TransformInfoObjectConfigGeneratorFactory_Package renames Standard.org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactory_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type AbTransformer is tagged;
    type AbTransformer_Access is access all AbTransformer'Class;

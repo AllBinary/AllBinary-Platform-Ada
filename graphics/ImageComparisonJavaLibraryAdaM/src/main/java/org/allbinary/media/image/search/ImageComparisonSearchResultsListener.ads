@@ -24,7 +24,7 @@ with org.allbinary.logic.util.event.BasicEventListenerInterface_Package; use org
 
 package org.allbinary.media.image.search.ImageComparisonSearchResultsListener_Package is
 
-   package BasicEventListenerInterface_Package renames org.allbinary.logic.util.event.BasicEventListenerInterface_Package;
+   package BasicEventListenerInterface_Package renames Standard.org.allbinary.logic.util.event.BasicEventListenerInterface_Package;
 
    type ImageComparisonSearchResultsListener is interface and BasicEventListenerInterface;
    type ImageComparisonSearchResultsListener_Access is access all ImageComparisonSearchResultsListener'Class;

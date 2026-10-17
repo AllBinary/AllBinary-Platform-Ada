@@ -89,7 +89,10 @@ package body admin.taghelpers.OrderHelper_Package is
             end if;
             return paymentGatewayBoolean;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
                 stringBuffer := StringMaker_Package.Create;
                 stringBuffer.append (To_Unbounded_String ("Failed to set PaymentGateway for Order: "));
@@ -101,12 +104,17 @@ package body admin.taghelpers.OrderHelper_Package is
                         stringBuffer.append (orderInterface.getPaymentMethod);
                     end if;
                 exception
-                    when ex : others =>
+                    when Java_Occurrence : others =>
+                        declare
+                            ex : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                        begin
                     stringBuffer.append (To_Unbounded_String (" Exception Getting"));
+                        end;
                 end;
                 This.logUtil.put (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("setPaymentGateway()"), e);
             end if;
             return False;
+                end;
         end;
    end setPaymentGateway;
 
@@ -125,20 +133,28 @@ package body admin.taghelpers.OrderHelper_Package is
             end if;
             return result;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             stringBuffer := StringMaker_Package.Create;
             stringBuffer.append (To_Unbounded_String ("Failed to Process Order: "));
             begin
                 stringBuffer.append (This.weblisketSession.getOrder.getId);
             exception
-                when ex : others =>
+                when Java_Occurrence : others =>
+                    declare
+                        ex : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                    begin
                 stringBuffer.append (To_Unbounded_String (" Exception Getting Id"));
+                    end;
             end;
             error := stringBuffer.toString;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.PROCESS, e);
             end if;
             return error;
+                end;
         end;
    end process;
 

@@ -31,11 +31,11 @@ with org.allbinary.animation.compound.CompoundAnimationInterface_Package; use or
 
 package org.allbinary.animation.compound.CompoundIndexedAnimation_Package is
 
-   package Animation_Package renames org.allbinary.animation.Animation_Package;
-   package AnimationBehavior_Package renames org.allbinary.animation.AnimationBehavior_Package;
-   package IndexedAnimation_Package renames org.allbinary.animation.IndexedAnimation_Package;
-   package PrimitiveIntUtil_Package renames org.allbinary.logic.math.PrimitiveIntUtil_Package;
-   package CircularIndexUtil_Package renames org.allbinary.util.CircularIndexUtil_Package;
+   package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
+   package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
+   package IndexedAnimation_Package renames Standard.org.allbinary.animation.IndexedAnimation_Package;
+   package PrimitiveIntUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveIntUtil_Package;
+   package CircularIndexUtil_Package renames Standard.org.allbinary.util.CircularIndexUtil_Package;
 
    type CompoundIndexedAnimation is tagged;
    type CompoundIndexedAnimation_Access is access all CompoundIndexedAnimation'Class;

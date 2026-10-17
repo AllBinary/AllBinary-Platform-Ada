@@ -24,7 +24,7 @@ with org.allbinary.game.identification.Group_Package; use org.allbinary.game.ide
 
 package org.allbinary.game.layer.capital.event.CapitalEventHandlerFactory_Package is
 
-   package Group_Package renames org.allbinary.game.identification.Group_Package;
+   package Group_Package renames Standard.org.allbinary.game.identification.Group_Package;
 
    type CapitalEventHandlerFactory is tagged;
    type CapitalEventHandlerFactory_Access is access all CapitalEventHandlerFactory'Class;

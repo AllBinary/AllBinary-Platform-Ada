@@ -26,9 +26,9 @@ with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbin
 
 package org.allbinary.game.input.event.GameKeyEvent_Package is
 
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package AllBinaryEventObject_Package renames org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 
    type GameKeyEvent is tagged;
    type GameKeyEvent_Access is access all GameKeyEvent'Class;

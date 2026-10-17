@@ -29,11 +29,11 @@ with playn.core.CoreImage_Package; use playn.core.CoreImage_Package;
 
 package org.allbinary.media.image.ImageCompleteUtil_Package is
 
-   package PreLogUtil_Package renames org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package TimeDelayHelper_Package renames org.allbinary.time.TimeDelayHelper_Package;
-   package PlaynImage_Package renames org.microemu.device.playn.PlaynImage_Package;
-   package CoreImage_Package renames playn.core.CoreImage_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
+   package PlaynImage_Package renames Standard.org.microemu.device.playn.PlaynImage_Package;
+   package CoreImage_Package renames Standard.playn.core.CoreImage_Package;
 
    type ImageCompleteUtil is tagged;
    type ImageCompleteUtil_Access is access all ImageCompleteUtil'Class;

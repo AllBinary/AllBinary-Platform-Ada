@@ -25,8 +25,8 @@ with org.allbinary.logic.system.hardware.components.interfaces.MediaInterface_Pa
 
 package org.allbinary.logic.system.hardware.components.linux.Media_Package is
 
-   package HardwareComponentInterface_Package renames org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package;
-   package MediaInterface_Package renames org.allbinary.logic.system.hardware.components.interfaces.MediaInterface_Package;
+   package HardwareComponentInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package;
+   package MediaInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.MediaInterface_Package;
 
    type Media is tagged;
    type Media_Access is access all Media'Class;

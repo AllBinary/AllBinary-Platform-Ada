@@ -75,10 +75,14 @@ package body org.allbinary.animation.VectorMirrorGenerator_Package is
             newPoints := This.vectorAnimationUtil.toAnimationArrayFromListOfPointList (pointsBasicArrayList);
             return newPoints;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.GET_INSTANCE, e);
             return NullUtil_Package.getInstance.NULL_INT_ARRAY_ARRAY_ARRAY;
+                end;
         end;
    end getInstance;
 

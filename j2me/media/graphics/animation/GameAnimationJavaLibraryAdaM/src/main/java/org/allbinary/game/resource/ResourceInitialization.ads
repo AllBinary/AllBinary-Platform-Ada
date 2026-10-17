@@ -24,7 +24,7 @@ with org.allbinary.init.Init_Package; use org.allbinary.init.Init_Package;
 
 package org.allbinary.game.resource.ResourceInitialization_Package is
 
-   package Init_Package renames org.allbinary.init.Init_Package;
+   package Init_Package renames Standard.org.allbinary.init.Init_Package;
 
    type ResourceInitialization is tagged;
    type ResourceInitialization_Access is access all ResourceInitialization'Class;

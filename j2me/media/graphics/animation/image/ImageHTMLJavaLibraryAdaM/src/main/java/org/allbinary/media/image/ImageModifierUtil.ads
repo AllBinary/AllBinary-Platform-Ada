@@ -28,10 +28,10 @@ with playn.core.CanvasSurface_Package; use playn.core.CanvasSurface_Package;
 
 package org.allbinary.media.image.ImageModifierUtil_Package is
 
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package PlaynMutableImage_Package renames org.microemu.device.playn.PlaynMutableImage_Package;
-   package CanvasImage_Package renames playn.core.CanvasImage_Package;
-   package CanvasSurface_Package renames playn.core.CanvasSurface_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package PlaynMutableImage_Package renames Standard.org.microemu.device.playn.PlaynMutableImage_Package;
+   package CanvasImage_Package renames Standard.playn.core.CanvasImage_Package;
+   package CanvasSurface_Package renames Standard.playn.core.CanvasSurface_Package;
 
    type ImageModifierUtil is tagged;
    type ImageModifierUtil_Access is access all ImageModifierUtil'Class;

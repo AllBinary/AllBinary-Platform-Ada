@@ -71,8 +71,12 @@ package body org.allbinary.view.event.ViewPositionEventHandler_Package is
                 layerInterface := AllBinaryLayer_Access (This.list.objectArray (index));
                 layerInterface.onChangeEvent (ViewPositionEvent_Access (eventObject));
             exception
-                when e : others =>
+                when Java_Occurrence : others =>
+                    declare
+                        e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                    begin
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, EventStrings_Package.getInstance.FIRE_EVENT, e);
+                    end;
             end;
         end loop;
         BasicEventHandler (This).fireEvent (eventObject);

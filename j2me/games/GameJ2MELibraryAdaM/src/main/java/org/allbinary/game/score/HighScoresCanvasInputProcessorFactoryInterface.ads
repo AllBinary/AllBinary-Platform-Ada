@@ -24,7 +24,7 @@ with org.allbinary.game.score.displayable.HighScoresCanvas_Package; use org.allb
 
 package org.allbinary.game.score.HighScoresCanvasInputProcessorFactoryInterface_Package is
 
-   package HighScoresCanvas_Package renames org.allbinary.game.score.displayable.HighScoresCanvas_Package;
+   package HighScoresCanvas_Package renames Standard.org.allbinary.game.score.displayable.HighScoresCanvas_Package;
 
    type HighScoresCanvasInputProcessorFactoryInterface is interface;
    type HighScoresCanvasInputProcessorFactoryInterface_Access is access all HighScoresCanvasInputProcessorFactoryInterface'Class;

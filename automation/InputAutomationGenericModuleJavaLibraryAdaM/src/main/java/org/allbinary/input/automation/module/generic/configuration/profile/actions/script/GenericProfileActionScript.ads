@@ -39,20 +39,20 @@ with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
 
 package org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.script.GenericProfileActionScript_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package DomSearchHelper_Package renames org.allbinary.data.tree.dom.DomSearchHelper_Package;
-   package ProfileActionScriptNodeInterface_Package renames org.allbinary.input.automation.actions.script.ProfileActionScriptNodeInterface_Package;
-   package ProfileActionScriptConditionFactory_Package renames org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionFactory_Package;
-   package ProfileActionScriptConditionInterface_Package renames org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionInterface_Package;
-   package GenericProfileActionData_Package renames org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionData_Package;
-   package GenericProfileActionJPanel_Package renames org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionJPanel_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
-   package NodeList_Package renames org.w3c.dom.NodeList_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package DomSearchHelper_Package renames Standard.org.allbinary.data.tree.dom.DomSearchHelper_Package;
+   package ProfileActionScriptNodeInterface_Package renames Standard.org.allbinary.input.automation.actions.script.ProfileActionScriptNodeInterface_Package;
+   package ProfileActionScriptConditionFactory_Package renames Standard.org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionFactory_Package;
+   package ProfileActionScriptConditionInterface_Package renames Standard.org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionInterface_Package;
+   package GenericProfileActionData_Package renames Standard.org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionData_Package;
+   package GenericProfileActionJPanel_Package renames Standard.org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionJPanel_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
+   package NodeList_Package renames Standard.org.w3c.dom.NodeList_Package;
 
    type GenericProfileActionScript is tagged;
    type GenericProfileActionScript_Access is access all GenericProfileActionScript'Class;

@@ -37,20 +37,20 @@ with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.C
 
 package org.allbinary.business.init.LicenseInitInfoUtil_Package is
 
-   package TsUtil_Package renames org.allbinary.TsUtil_Package;
-   package PATH_GLOBALS_Package renames org.allbinary.globals.PATH_GLOBALS_Package;
-   package URLGLOBALS_Package renames org.allbinary.globals.URLGLOBALS_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package AbDataInputStream_Package renames org.allbinary.logic.io.AbDataInputStream_Package;
-   package AbDataOutputStream_Package renames org.allbinary.logic.io.AbDataOutputStream_Package;
-   package AbFileInputStream_Package renames org.allbinary.logic.io.AbFileInputStream_Package;
-   package DataOutputStreamFactory_Package renames org.allbinary.logic.io.DataOutputStreamFactory_Package;
-   package FileStreamFactory_Package renames org.allbinary.logic.io.FileStreamFactory_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package DatabaseEncoder_Package renames org.allbinary.logic.system.security.crypt.DatabaseEncoder_Package;
-   package WeakCrypt_Package renames org.allbinary.logic.system.security.crypt.WeakCrypt_Package;
-   package CommonLabels_Package renames org.allbinary.string_Id.CommonLabels_Package;
+   package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
+   package PATH_GLOBALS_Package renames Standard.org.allbinary.globals.PATH_GLOBALS_Package;
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package AbDataInputStream_Package renames Standard.org.allbinary.logic.io.AbDataInputStream_Package;
+   package AbDataOutputStream_Package renames Standard.org.allbinary.logic.io.AbDataOutputStream_Package;
+   package AbFileInputStream_Package renames Standard.org.allbinary.logic.io.AbFileInputStream_Package;
+   package DataOutputStreamFactory_Package renames Standard.org.allbinary.logic.io.DataOutputStreamFactory_Package;
+   package FileStreamFactory_Package renames Standard.org.allbinary.logic.io.FileStreamFactory_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package DatabaseEncoder_Package renames Standard.org.allbinary.logic.system.security.crypt.DatabaseEncoder_Package;
+   package WeakCrypt_Package renames Standard.org.allbinary.logic.system.security.crypt.WeakCrypt_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
 
    type LicenseInitInfoUtil is tagged;
    type LicenseInitInfoUtil_Access is access all LicenseInitInfoUtil'Class;

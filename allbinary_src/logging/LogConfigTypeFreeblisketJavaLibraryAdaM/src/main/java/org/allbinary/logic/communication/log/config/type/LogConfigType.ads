@@ -26,9 +26,9 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 
 package org.allbinary.logic.communication.log.config.type_Id.LogConfigType_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type LogConfigType is tagged;
    type LogConfigType_Access is access all LogConfigType'Class;

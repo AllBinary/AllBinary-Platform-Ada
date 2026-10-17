@@ -26,9 +26,9 @@ with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Pack
 
 package org.allbinary.input.gyro.OrientationMotionGestureFactory_Package is
 
-   package InputFactory_Package renames org.allbinary.game.input.InputFactory_Package;
-   package MotionGestureInput_Package renames org.allbinary.input.motion.gesture.MotionGestureInput_Package;
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
+   package InputFactory_Package renames Standard.org.allbinary.game.input.InputFactory_Package;
+   package MotionGestureInput_Package renames Standard.org.allbinary.input.motion.gesture.MotionGestureInput_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
 
    type OrientationMotionGestureFactory is tagged;
    type OrientationMotionGestureFactory_Access is access all OrientationMotionGestureFactory'Class;

@@ -51,7 +51,10 @@ package body taghelpers.ViewHelper_Package is
         begin
             return This.componentInterface.view;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             error := To_Unbounded_String ("Failed to View: ");
             if (This.componentInterface) /= (null) then
                 error := error & To_Unbounded_String (Ada.Tags.Expanded_Name (This.componentInterface.all'Tag));
@@ -62,6 +65,7 @@ package body taghelpers.ViewHelper_Package is
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("view()"), e);
             end if;
             Java_Throw (e);
+                end;
         end;
    end view;
 
@@ -72,7 +76,10 @@ package body taghelpers.ViewHelper_Package is
         begin
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Hmm: ") & Java_Image (This.componentInterface.getTransformDocumentInterface.getDoc)));
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             error := To_Unbounded_String ("Failed to View: ");
             if (This.componentInterface) /= (null) then
                 error := error & To_Unbounded_String (Ada.Tags.Expanded_Name (This.componentInterface.all'Tag));
@@ -83,6 +90,7 @@ package body taghelpers.ViewHelper_Package is
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("view()"), e);
             end if;
             Java_Throw (e);
+                end;
         end;
    end toXmlDoc;
 

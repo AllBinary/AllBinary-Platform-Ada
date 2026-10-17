@@ -76,11 +76,15 @@ package body admin.taghelpers.AuthenticationHelper_Package is
             This.weblisketSession.clear;
             return TagSupport_Package.EVAL_BODY_INCLUDE;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.AUTHENTICATIONERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("invalidateSession()"), e);
             end if;
             return null;
+                end;
         end;
    end invalidateSession;
 
@@ -158,12 +162,16 @@ package body admin.taghelpers.AuthenticationHelper_Package is
             stringBuffer.append (To_Unbounded_String ("Trying New login<p/>"));
             return stringBuffer.toString;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             error := To_Unbounded_String ("Failed to set valid role");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.AUTHENTICATIONERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("validRole()"), e);
             end if;
             return error;
+                end;
         end;
    end validRole;
 
@@ -178,12 +186,16 @@ package body admin.taghelpers.AuthenticationHelper_Package is
             stringBuffer.append (To_Unbounded_String ("Trying New login<p/>"));
             return stringBuffer.toString;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             error := To_Unbounded_String ("Failed to set role invalid");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.AUTHENTICATIONERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("invalidRole()"), e);
             end if;
             return error;
+                end;
         end;
    end invalidRole;
 
@@ -236,11 +248,15 @@ package body admin.taghelpers.AuthenticationHelper_Package is
             end if;
             return False;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.AUTHENTICATIONERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("isAuthenticatedSessionValid()"), e);
             end if;
             return False;
+                end;
         end;
    end isAuthenticationSessionValid;
 
@@ -279,11 +295,15 @@ package body admin.taghelpers.AuthenticationHelper_Package is
             This.nextAttempt;
             return False;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.AUTHENTICATIONERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("processIfNewLogin()"), e);
             end if;
             return False;
+                end;
         end;
    end processIfNewLogin;
 
@@ -299,11 +319,15 @@ package body admin.taghelpers.AuthenticationHelper_Package is
                 return False;
             end;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.AUTHENTICATIONERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("processInvalidation()"), e);
             end if;
             return False;
+                end;
         end;
    end processInvalidation;
 
@@ -341,8 +365,12 @@ package body admin.taghelpers.AuthenticationHelper_Package is
             end if;
             return stringBuffer.toString;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             return To_Unbounded_String ("Error");
+                end;
         end;
    end outputSessionInfo;
 

@@ -26,8 +26,8 @@ with org.allbinary.graphics.color.BasicColorCompositeSetterInterface_Package; us
 
 package org.allbinary.graphics.color.ColorCompositeInterface_Package is
 
-   package JsType_Package renames jsinterop.annotations.JsType_Package;
-   package JsMethod_Package renames jsinterop.annotations.JsMethod_Package;
+   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
+   package JsMethod_Package renames Standard.jsinterop.annotations.JsMethod_Package;
 
    type ColorCompositeInterface is interface and BasicColorCompositeSetterInterface;
    type ColorCompositeInterface_Access is access all ColorCompositeInterface'Class;

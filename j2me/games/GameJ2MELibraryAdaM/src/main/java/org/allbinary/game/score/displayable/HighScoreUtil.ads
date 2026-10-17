@@ -38,19 +38,19 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.game.score.displayable.HighScoreUtil_Package is
 
-   package GameInfo_Package renames org.allbinary.game.GameInfo_Package;
-   package HighScore_Package renames org.allbinary.game.score.HighScore_Package;
-   package HighScoreNamePersistanceSingleton_Package renames org.allbinary.game.score.HighScoreNamePersistanceSingleton_Package;
-   package HighScores_Package renames org.allbinary.game.score.HighScores_Package;
-   package HighScoresFactoryInterface_Package renames org.allbinary.game.score.HighScoresFactoryInterface_Package;
-   package HighScoresHelperBaseInterface_Package renames org.allbinary.game.score.HighScoresHelperBaseInterface_Package;
-   package HighScoresResultsListener_Package renames org.allbinary.game.score.HighScoresResultsListener_Package;
-   package MyCanvas_Package renames org.allbinary.graphics.displayable.MyCanvas_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package AbeClientInformationInterface_Package renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package GameInfo_Package renames Standard.org.allbinary.game.GameInfo_Package;
+   package HighScore_Package renames Standard.org.allbinary.game.score.HighScore_Package;
+   package HighScoreNamePersistanceSingleton_Package renames Standard.org.allbinary.game.score.HighScoreNamePersistanceSingleton_Package;
+   package HighScores_Package renames Standard.org.allbinary.game.score.HighScores_Package;
+   package HighScoresFactoryInterface_Package renames Standard.org.allbinary.game.score.HighScoresFactoryInterface_Package;
+   package HighScoresHelperBaseInterface_Package renames Standard.org.allbinary.game.score.HighScoresHelperBaseInterface_Package;
+   package HighScoresResultsListener_Package renames Standard.org.allbinary.game.score.HighScoresResultsListener_Package;
+   package MyCanvas_Package renames Standard.org.allbinary.graphics.displayable.MyCanvas_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type HighScoreUtil is tagged;
    type HighScoreUtil_Access is access all HighScoreUtil'Class;

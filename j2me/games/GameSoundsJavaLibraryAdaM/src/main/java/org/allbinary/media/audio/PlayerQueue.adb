@@ -44,8 +44,12 @@ package body org.allbinary.media.audio.PlayerQueue_Package is
                 This.list.add (sound);
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             PreLogUtil_Package.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.ADD);
+                end;
         end;
    end add;
 
@@ -69,13 +73,17 @@ package body org.allbinary.media.audio.PlayerQueue_Package is
             end if;
             return played;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             resource := StringUtil_Package.getInstance.EMPTY_STRING;
             if (sound) /= (null) then
                 resource := sound.getResource;
             end if;
             PreLogUtil_Package.put (StringMaker_Package.Create.append (This.commonStrings.EXCEPTION_LABEL).append (resource).toString, This'Unchecked_Access, This.commonStrings.PROCESS);
             return False;
+                end;
         end;
    end process;
 

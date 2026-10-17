@@ -27,10 +27,10 @@ with jsinterop.annotations.JsProperty_Package; use jsinterop.annotations.JsPrope
 
 package org.allbinary.graphics.color.BasicColorFactory_Package is
 
-   package JsType_Package renames jsinterop.annotations.JsType_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package JsMethod_Package renames jsinterop.annotations.JsMethod_Package;
-   package JsProperty_Package renames jsinterop.annotations.JsProperty_Package;
+   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package JsMethod_Package renames Standard.jsinterop.annotations.JsMethod_Package;
+   package JsProperty_Package renames Standard.jsinterop.annotations.JsProperty_Package;
 
    type BasicColorFactory is tagged;
    type BasicColorFactory_Access is access all BasicColorFactory'Class;

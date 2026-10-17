@@ -14,7 +14,7 @@ with org.allbinary.animation.IndexedAnimation_Package; use org.allbinary.animati
 
 package org.allbinary.animation.FillAnimation_Package is
 
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
 
    type FillAnimation is tagged;
    type FillAnimation_Access is access all FillAnimation'Class;

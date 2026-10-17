@@ -32,15 +32,15 @@ with org.allbinary.media.graphics.geography.pathfinding.GeographicMapCellPathHis
 
 package org.allbinary.game.ai.path.BasicAIProcessor_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package Direction_Package renames org.allbinary.direction.Direction_Package;
-   package DirectionFactory_Package renames org.allbinary.direction.DirectionFactory_Package;
-   package AllBinaryLayerManager_Package renames org.allbinary.layer.AllBinaryLayerManager_Package;
-   package AngleInfo_Package renames org.allbinary.math.AngleInfo_Package;
-   package GeographicMapCellHistory_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package;
-   package GeographicMapCellPosition_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
-   package GeographicMapDirectionUtil_Package renames org.allbinary.media.graphics.geography.map.GeographicMapDirectionUtil_Package;
-   package GeographicMapCellPathHistoryInfo_Package renames org.allbinary.media.graphics.geography.pathfinding.GeographicMapCellPathHistoryInfo_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package Direction_Package renames Standard.org.allbinary.direction.Direction_Package;
+   package DirectionFactory_Package renames Standard.org.allbinary.direction.DirectionFactory_Package;
+   package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
+   package AngleInfo_Package renames Standard.org.allbinary.math.AngleInfo_Package;
+   package GeographicMapCellHistory_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package;
+   package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+   package GeographicMapDirectionUtil_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapDirectionUtil_Package;
+   package GeographicMapCellPathHistoryInfo_Package renames Standard.org.allbinary.media.graphics.geography.pathfinding.GeographicMapCellPathHistoryInfo_Package;
 
    type BasicAIProcessor is tagged;
    type BasicAIProcessor_Access is access all BasicAIProcessor'Class;

@@ -28,8 +28,12 @@ package body org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package is
         begin
             return AndroidMediaPlayerWrapper_Package.Create (StringUtil_Package.getInstance.EMPTY_STRING);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Java_Throw (Java_New_Exception ("RuntimeException"));
+                end;
         end;
    end createPlayerWrapper;
 
@@ -52,9 +56,13 @@ package body org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package is
                 This.mediaPlayer.setLooping (False);
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (Java_Image (This.commonStrings.EXCEPTION_LABEL) & resource, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR, e);
             Java_Throw (e);
+                end;
         end;
    end Initialize;
 
@@ -102,8 +110,12 @@ package body org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package is
             This.mediaPlayer.release;
             This.mediaPlayer := NullAndroidCanvas_Package.NULL_MEDIA_PLAYER;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.CLOSE, e);
+                end;
         end;
    end close;
 
@@ -118,8 +130,12 @@ package body org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package is
             This.mediaPlayer.start;
             BasicPlayer (This).start;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.START_METHOD_NAME, e);
+                end;
         end;
    end start;
 
@@ -131,8 +147,12 @@ package body org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package is
             This.mediaPlayer.prepare;
             BasicPlayer (This).stop;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("stop"), e);
+                end;
         end;
    end stop;
 

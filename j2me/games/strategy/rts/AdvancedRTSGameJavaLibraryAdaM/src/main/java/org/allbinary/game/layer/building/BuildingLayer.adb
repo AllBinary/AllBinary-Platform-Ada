@@ -97,8 +97,12 @@ package body org.allbinary.game.layer.building.BuildingLayer_Package is
                 layerInterface.onMovementFound (This.trackingEvent);
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("onMovement"), e);
+                end;
         end;
    end onMovement;
 

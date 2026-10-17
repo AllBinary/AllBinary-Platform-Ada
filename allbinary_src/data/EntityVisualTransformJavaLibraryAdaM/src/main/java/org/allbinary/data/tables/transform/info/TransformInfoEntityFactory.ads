@@ -28,11 +28,11 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.data.tables.transform.info.TransformInfoEntityFactory_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package TransformInfoFactoryInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoFactoryInterface_Package;
-   package TransformInfoObjectConfigAndManipulatorFactoryBase_Package renames org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigAndManipulatorFactoryBase_Package;
-   package TransformInfoObjectConfigGeneratorFactoryInterface_Package renames org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactoryInterface_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package TransformInfoFactoryInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoFactoryInterface_Package;
+   package TransformInfoObjectConfigAndManipulatorFactoryBase_Package renames Standard.org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigAndManipulatorFactoryBase_Package;
+   package TransformInfoObjectConfigGeneratorFactoryInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactoryInterface_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type TransformInfoEntityFactory is tagged;
    type TransformInfoEntityFactory_Access is access all TransformInfoEntityFactory'Class;

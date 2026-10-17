@@ -25,8 +25,8 @@ with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; u
 
 package org.allbinary.business.user.commerce.money.payment.gateway.processor.PaymentProcessorInterfaceFactoryInterface_Package is
 
-   package PaymentTransactionInterface_Package renames org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterface_Package;
-   package TransformInfoInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package PaymentTransactionInterface_Package renames Standard.org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterface_Package;
+   package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 
    type PaymentProcessorInterfaceFactoryInterface is interface;
    type PaymentProcessorInterfaceFactoryInterface_Access is access all PaymentProcessorInterfaceFactoryInterface'Class;

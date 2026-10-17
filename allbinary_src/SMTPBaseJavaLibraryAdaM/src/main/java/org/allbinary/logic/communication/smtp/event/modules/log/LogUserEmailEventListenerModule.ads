@@ -26,9 +26,9 @@ with org.allbinary.logic.communication.smtp.event.UserEmailEventListenerInterfac
 
 package org.allbinary.logic.communication.smtp.event.modules.log.LogUserEmailEventListenerModule_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package EmailEvent_Package renames org.allbinary.logic.communication.smtp.event.EmailEvent_Package;
-   package UserEmailEventListenerInterface_Package renames org.allbinary.logic.communication.smtp.event.UserEmailEventListenerInterface_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package EmailEvent_Package renames Standard.org.allbinary.logic.communication.smtp.event.EmailEvent_Package;
+   package UserEmailEventListenerInterface_Package renames Standard.org.allbinary.logic.communication.smtp.event.UserEmailEventListenerInterface_Package;
 
    type LogUserEmailEventListenerModule is tagged;
    type LogUserEmailEventListenerModule_Access is access all LogUserEmailEventListenerModule'Class;

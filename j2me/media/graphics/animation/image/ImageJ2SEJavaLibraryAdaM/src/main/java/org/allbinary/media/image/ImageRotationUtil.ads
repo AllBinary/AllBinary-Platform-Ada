@@ -28,9 +28,9 @@ with org.microemu.device.j2se.J2SEMutableImage_Package; use org.microemu.device.
 
 package org.allbinary.media.image.ImageRotationUtil_Package is
 
-   package PreLogUtil_Package renames org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package J2SEImmutableImage_Package renames org.microemu.device.j2se.J2SEImmutableImage_Package;
-   package J2SEMutableImage_Package renames org.microemu.device.j2se.J2SEMutableImage_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package J2SEImmutableImage_Package renames Standard.org.microemu.device.j2se.J2SEImmutableImage_Package;
+   package J2SEMutableImage_Package renames Standard.org.microemu.device.j2se.J2SEMutableImage_Package;
 
    type ImageRotationUtil is tagged;
    type ImageRotationUtil_Access is access all ImageRotationUtil'Class;

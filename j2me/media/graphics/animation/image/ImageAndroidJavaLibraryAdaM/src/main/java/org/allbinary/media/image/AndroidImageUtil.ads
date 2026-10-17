@@ -30,12 +30,12 @@ with org.microemu.android.device.AndroidImageInterface_Package; use org.microemu
 
 package org.allbinary.media.image.AndroidImageUtil_Package is
 
-   package Bitmap_Package renames android.graphics.Bitmap_Package;
-   package Canvas_Package renames android.graphics.Canvas_Package;
-   package Color_Package renames android.graphics.Color_Package;
-   package Matrix_Package renames android.graphics.Matrix_Package;
-   package Paint_Package renames android.graphics.Paint_Package;
-   package AndroidImageInterface_Package renames org.microemu.android.device.AndroidImageInterface_Package;
+   package Bitmap_Package renames Standard.android.graphics.Bitmap_Package;
+   package Canvas_Package renames Standard.android.graphics.Canvas_Package;
+   package Color_Package renames Standard.android.graphics.Color_Package;
+   package Matrix_Package renames Standard.android.graphics.Matrix_Package;
+   package Paint_Package renames Standard.android.graphics.Paint_Package;
+   package AndroidImageInterface_Package renames Standard.org.microemu.android.device.AndroidImageInterface_Package;
 
    type AndroidImageUtil is tagged;
    type AndroidImageUtil_Access is access all AndroidImageUtil'Class;

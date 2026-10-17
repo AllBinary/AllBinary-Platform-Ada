@@ -30,10 +30,10 @@ with org.allbinary.game.layer.hud.basic.HealthGraphic_Package; use org.allbinary
 
 package org.allbinary.game.layer.hud.basic.ImageHealthGraphic_Package is
 
-   package AnimationInterface_Package renames org.allbinary.animation.AnimationInterface_Package;
-   package HealthInterface_Package renames org.allbinary.game.health.HealthInterface_Package;
-   package Anchor_Package renames org.allbinary.graphics.Anchor_Package;
-   package ImageCacheFactory_Package renames org.allbinary.image.ImageCacheFactory_Package;
+   package AnimationInterface_Package renames Standard.org.allbinary.animation.AnimationInterface_Package;
+   package HealthInterface_Package renames Standard.org.allbinary.game.health.HealthInterface_Package;
+   package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
+   package ImageCacheFactory_Package renames Standard.org.allbinary.image.ImageCacheFactory_Package;
 
    type ImageHealthGraphic is tagged;
    type ImageHealthGraphic_Access is access all ImageHealthGraphic'Class;

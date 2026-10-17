@@ -24,7 +24,7 @@ with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.Com
 
 package org.allbinary.logic.communication.http.HttpData_Package is
 
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
 
    type HttpData is tagged;
    type HttpData_Access is access all HttpData'Class;

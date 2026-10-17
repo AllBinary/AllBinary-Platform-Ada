@@ -39,22 +39,22 @@ with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 
 package views.HttpComponentView_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package DomNodeHelper_Package renames org.allbinary.data.tree.dom.DomNodeHelper_Package;
-   package DomNodeInterface_Package renames org.allbinary.data.tree.dom.DomNodeInterface_Package;
-   package XmlDocumentHelper_Package renames org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package AbeClientInformationInterface_Package renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-   package ServiceClientInformationInterfaceFactory_Package renames org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package;
-   package BasicTransformer_Package renames org.allbinary.logic.visual.transform.BasicTransformer_Package;
-   package TransformInterface_Package renames org.allbinary.logic.visual.transform.TransformInterface_Package;
-   package TransformDocumentInterface_Package renames org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Package;
-   package TransformHttpRequestDocumentFactory_Package renames org.allbinary.logic.visual.transform.data.TransformHttpRequestDocumentFactory_Package;
-   package TransformInfoHttpComposite_Package renames org.allbinary.logic.visual.transform.info.TransformInfoHttpComposite_Package;
-   package TransformInfoInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package DomNodeHelper_Package renames Standard.org.allbinary.data.tree.dom.DomNodeHelper_Package;
+   package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
+   package XmlDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package ServiceClientInformationInterfaceFactory_Package renames Standard.org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package;
+   package BasicTransformer_Package renames Standard.org.allbinary.logic.visual.transform.BasicTransformer_Package;
+   package TransformInterface_Package renames Standard.org.allbinary.logic.visual.transform.TransformInterface_Package;
+   package TransformDocumentInterface_Package renames Standard.org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Package;
+   package TransformHttpRequestDocumentFactory_Package renames Standard.org.allbinary.logic.visual.transform.data.TransformHttpRequestDocumentFactory_Package;
+   package TransformInfoHttpComposite_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoHttpComposite_Package;
+   package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type HttpComponentView is tagged;
    type HttpComponentView_Access is access all HttpComponentView'Class;

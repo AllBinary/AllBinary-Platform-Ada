@@ -27,7 +27,7 @@ with admin.taghelpers.BasicTable_Package; use admin.taghelpers.BasicTable_Packag
 
 package admin.taghelpers.AdminConfigurationHelper_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type AdminConfigurationHelper is tagged;
    type AdminConfigurationHelper_Access is access all AdminConfigurationHelper'Class;

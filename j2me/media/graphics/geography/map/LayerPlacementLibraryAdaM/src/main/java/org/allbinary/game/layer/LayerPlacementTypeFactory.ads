@@ -24,7 +24,7 @@ with org.allbinary.direction.DirectionFactory_Package; use org.allbinary.directi
 
 package org.allbinary.game.layer.LayerPlacementTypeFactory_Package is
 
-   package DirectionFactory_Package renames org.allbinary.direction.DirectionFactory_Package;
+   package DirectionFactory_Package renames Standard.org.allbinary.direction.DirectionFactory_Package;
 
    type LayerPlacementTypeFactory is tagged;
    type LayerPlacementTypeFactory_Access is access all LayerPlacementTypeFactory'Class;

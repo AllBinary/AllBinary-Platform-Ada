@@ -39,19 +39,19 @@ with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logi
 
 package org.allbinary.game.layer.item.RTSLayerCostAnimation_Package is
 
-   package CostLayerInterfaceFactoryInterface_Package renames org.allbinary.game.layer.CostLayerInterfaceFactoryInterface_Package;
-   package TechEventListenerInterface_Package renames org.allbinary.game.rts.technology.event.TechEventListenerInterface_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package ForcedLogUtil_Package renames org.allbinary.logic.communication.log.ForcedLogUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package Animation_Package renames org.allbinary.animation.Animation_Package;
-   package MyFontProcessor_Package renames org.allbinary.graphics.font.MyFontProcessor_Package;
-   package UpdateMyFontInterface_Package renames org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-   package UpdateMyFontProcessor_Package renames org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
-   package AllBinaryEventObject_Package renames org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-   package PrimitiveLongUtil_Package renames org.allbinary.logic.math.PrimitiveLongUtil_Package;
-   package EventStrings_Package renames org.allbinary.logic.util.event.EventStrings_Package;
+   package CostLayerInterfaceFactoryInterface_Package renames Standard.org.allbinary.game.layer.CostLayerInterfaceFactoryInterface_Package;
+   package TechEventListenerInterface_Package renames Standard.org.allbinary.game.rts.technology.event.TechEventListenerInterface_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
+   package MyFontProcessor_Package renames Standard.org.allbinary.graphics.font.MyFontProcessor_Package;
+   package UpdateMyFontInterface_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontInterface_Package;
+   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+   package PrimitiveLongUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveLongUtil_Package;
+   package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
 
    type RTSLayerCostAnimation is tagged;
    type RTSLayerCostAnimation_Access is access all RTSLayerCostAnimation'Class;

@@ -28,11 +28,11 @@ with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbin
 
 package org.allbinary.game.layer.special.CollidableDestroyableDamageableBehavior_Package is
 
-   package CollidableBaseBehavior_Package renames org.allbinary.game.collision.CollidableBaseBehavior_Package;
-   package CollidableInterfaceCompositeInterface_Package renames org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package;
-   package DamageUtil_Package renames org.allbinary.game.combat.damage.DamageUtil_Package;
-   package CollidableCompositeLayer_Package renames org.allbinary.game.layer.CollidableCompositeLayer_Package;
-   package ForcedLogUtil_Package renames org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+   package CollidableBaseBehavior_Package renames Standard.org.allbinary.game.collision.CollidableBaseBehavior_Package;
+   package CollidableInterfaceCompositeInterface_Package renames Standard.org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package;
+   package DamageUtil_Package renames Standard.org.allbinary.game.combat.damage.DamageUtil_Package;
+   package CollidableCompositeLayer_Package renames Standard.org.allbinary.game.layer.CollidableCompositeLayer_Package;
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
 
    type CollidableDestroyableDamageableBehavior is tagged;
    type CollidableDestroyableDamageableBehavior_Access is access all CollidableDestroyableDamageableBehavior'Class;

@@ -29,11 +29,11 @@ with org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Package; use
 
 package org.allbinary.logic.visual.transform.info.TransformInfoDomNodeView_Package is
 
-   package DomNodeInterface_Package renames org.allbinary.data.tree.dom.DomNodeInterface_Package;
-   package Attr_Package renames org.w3c.dom.Attr_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
-   package NamedNodeMap_Package renames org.w3c.dom.NamedNodeMap_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
+   package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
+   package Attr_Package renames Standard.org.w3c.dom.Attr_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package NamedNodeMap_Package renames Standard.org.w3c.dom.NamedNodeMap_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type TransformInfoDomNodeView is tagged;
    type TransformInfoDomNodeView_Access is access all TransformInfoDomNodeView'Class;

@@ -25,7 +25,7 @@ with admin.tags.TableTag_Package; use admin.tags.TableTag_Package;
 
 package admin.tags.PaymentTransactionResultTag_Package is
 
-   package PaymentTransactionResultHelperFactory_Package renames admin.taghelpers.PaymentTransactionResultHelperFactory_Package;
+   package PaymentTransactionResultHelperFactory_Package renames Standard.admin.taghelpers.PaymentTransactionResultHelperFactory_Package;
 
    type PaymentTransactionResultTag is tagged;
    type PaymentTransactionResultTag_Access is access all PaymentTransactionResultTag'Class;

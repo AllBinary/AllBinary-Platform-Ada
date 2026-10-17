@@ -46,8 +46,12 @@ package body org.allbinary.logic.system.hardware.HardwareFactory_Package is
         begin
             return This.SINGLETON;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Java_Throw (e);
+                end;
         end;
    end getInstance;
 

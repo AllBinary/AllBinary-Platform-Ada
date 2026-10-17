@@ -35,16 +35,16 @@ with playn.core.util.Callback_Package; use playn.core.util.Callback_Package;
 
 package org.allbinary.media.image.ImageModifierUtil_Package is
 
-   package Anchor_Package renames org.allbinary.graphics.Anchor_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package PlaynImage_Package renames org.microemu.device.playn.PlaynImage_Package;
-   package ResourceCallbackStrings_Package renames org.microemu.device.ResourceCallbackStrings_Package;
-   package Canvas_Package renames playn.core.Canvas_Package;
-   package CanvasImage_Package renames playn.core.CanvasImage_Package;
-   package Callback_Package renames playn.core.util.Callback_Package;
+   package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package PlaynImage_Package renames Standard.org.microemu.device.playn.PlaynImage_Package;
+   package ResourceCallbackStrings_Package renames Standard.org.microemu.device.ResourceCallbackStrings_Package;
+   package Canvas_Package renames Standard.playn.core.Canvas_Package;
+   package CanvasImage_Package renames Standard.playn.core.CanvasImage_Package;
+   package Callback_Package renames Standard.playn.core.util.Callback_Package;
 
    type ImageModifierUtil is tagged;
    type ImageModifierUtil_Access is access all ImageModifierUtil'Class;

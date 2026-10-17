@@ -30,13 +30,13 @@ with org.allbinary.osgi.OSGIServiceInterface_Package; use org.allbinary.osgi.OSG
 
 package org.allbinary.osgi.service.OSGIServiceUtil_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package BundleContext_Package renames org.osgi.framework.BundleContext_Package;
-   package ServiceReference_Package renames org.osgi.framework.ServiceReference_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package OSGIServiceInterface_Package renames org.allbinary.osgi.OSGIServiceInterface_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package BundleContext_Package renames Standard.org.osgi.framework.BundleContext_Package;
+   package ServiceReference_Package renames Standard.org.osgi.framework.ServiceReference_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package OSGIServiceInterface_Package renames Standard.org.allbinary.osgi.OSGIServiceInterface_Package;
 
    type OSGIServiceUtil is tagged;
    type OSGIServiceUtil_Access is access all OSGIServiceUtil'Class;

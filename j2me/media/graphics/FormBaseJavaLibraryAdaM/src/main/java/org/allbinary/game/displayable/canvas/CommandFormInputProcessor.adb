@@ -113,9 +113,13 @@ package body org.allbinary.game.displayable.canvas.CommandFormInputProcessor_Pac
                 return -(1);
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.gameInputStrings.PROCESS_INPUT, e);
             return -(1);
+                end;
         end;
    end processInputList;
 

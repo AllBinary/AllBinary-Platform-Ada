@@ -31,12 +31,12 @@ with org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactoryInterfa
 
 package org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactory_Package is
 
-   package Animation_Package renames org.allbinary.animation.Animation_Package;
-   package NullAnimationFactory_Package renames org.allbinary.animation.NullAnimationFactory_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package ABHashtable_Package renames org.allbinary.util.ABHashtable_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
+   package NullAnimationFactory_Package renames Standard.org.allbinary.animation.NullAnimationFactory_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type CountedPickedUpLayerInterfaceFactory is tagged;
    type CountedPickedUpLayerInterfaceFactory_Access is access all CountedPickedUpLayerInterfaceFactory'Class;

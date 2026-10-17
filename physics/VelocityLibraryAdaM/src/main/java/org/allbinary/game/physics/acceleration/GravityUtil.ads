@@ -24,7 +24,7 @@ with org.allbinary.game.physics.velocity.BasicVelocityProperties_Package; use or
 
 package org.allbinary.game.physics.acceleration.GravityUtil_Package is
 
-   package BasicVelocityProperties_Package renames org.allbinary.game.physics.velocity.BasicVelocityProperties_Package;
+   package BasicVelocityProperties_Package renames Standard.org.allbinary.game.physics.velocity.BasicVelocityProperties_Package;
 
    type GravityUtil is tagged;
    type GravityUtil_Access is access all GravityUtil'Class;

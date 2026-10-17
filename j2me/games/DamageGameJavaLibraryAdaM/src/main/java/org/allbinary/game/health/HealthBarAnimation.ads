@@ -27,10 +27,10 @@ with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBina
 
 package org.allbinary.game.health.HealthBarAnimation_Package is
 
-   package Animation_Package renames org.allbinary.animation.Animation_Package;
-   package BasicHudFactory_Package renames org.allbinary.game.graphics.hud.BasicHudFactory_Package;
-   package BasicColorFactory_Package renames org.allbinary.graphics.color.BasicColorFactory_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
+   package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
+   package BasicHudFactory_Package renames Standard.org.allbinary.game.graphics.hud.BasicHudFactory_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
 
    type HealthBarAnimation is tagged;
    type HealthBarAnimation_Access is access all HealthBarAnimation'Class;

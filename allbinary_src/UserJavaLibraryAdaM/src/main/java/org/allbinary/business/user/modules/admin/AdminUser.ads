@@ -26,8 +26,8 @@ with org.allbinary.logic.communication.http.request.session.WeblisketSessionInte
 
 package org.allbinary.business.user.modules.admin.AdminUser_Package is
 
-   package User_Package renames org.allbinary.business.user.modules.User_Package;
-   package WeblisketSessionInterface_Package renames org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package;
+   package User_Package renames Standard.org.allbinary.business.user.modules.User_Package;
+   package WeblisketSessionInterface_Package renames Standard.org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package;
 
    type AdminUser is tagged;
    type AdminUser_Access is access all AdminUser'Class;

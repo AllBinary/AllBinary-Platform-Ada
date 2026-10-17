@@ -28,11 +28,11 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 
 package org.allbinary.game.layer.PathFindingLayerInterface_Package is
 
-   package DestroyableInterface_Package renames org.allbinary.game.combat.destroy.DestroyableInterface_Package;
-   package GroupInterfaceCompositeInterface_Package renames org.allbinary.game.identification.GroupInterfaceCompositeInterface_Package;
-   package GameKeyEventSourceInterface_Package renames org.allbinary.game.input.GameKeyEventSourceInterface_Package;
-   package WaypointLayerInterface_Package renames org.allbinary.game.layer.waypoint.WaypointLayerInterface_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package DestroyableInterface_Package renames Standard.org.allbinary.game.combat.destroy.DestroyableInterface_Package;
+   package GroupInterfaceCompositeInterface_Package renames Standard.org.allbinary.game.identification.GroupInterfaceCompositeInterface_Package;
+   package GameKeyEventSourceInterface_Package renames Standard.org.allbinary.game.input.GameKeyEventSourceInterface_Package;
+   package WaypointLayerInterface_Package renames Standard.org.allbinary.game.layer.waypoint.WaypointLayerInterface_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type PathFindingLayerInterface is interface and WaypointLayerInterface and GameKeyEventSourceInterface and GroupInterfaceCompositeInterface and DestroyableInterface;
    type PathFindingLayerInterface_Access is access all PathFindingLayerInterface'Class;

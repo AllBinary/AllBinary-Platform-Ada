@@ -27,10 +27,10 @@ with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_
 
 package org.allbinary.graphics.canvas.transition.progress.ProgressRunnable_Package is
 
-   package Activity_Package renames android.app.Activity_Package;
-   package MidletActivityBase_Package renames org.allbinary.android.activity.MidletActivityBase_Package;
-   package SimpleProgressActivityInterface_Package renames org.allbinary.android.activity.SimpleProgressActivityInterface_Package;
-   package ARunnable_Package renames org.allbinary.thread.ARunnable_Package;
+   package Activity_Package renames Standard.android.app.Activity_Package;
+   package MidletActivityBase_Package renames Standard.org.allbinary.android.activity.MidletActivityBase_Package;
+   package SimpleProgressActivityInterface_Package renames Standard.org.allbinary.android.activity.SimpleProgressActivityInterface_Package;
+   package ARunnable_Package renames Standard.org.allbinary.thread.ARunnable_Package;
 
    type ProgressRunnable is tagged;
    type ProgressRunnable_Access is access all ProgressRunnable'Class;

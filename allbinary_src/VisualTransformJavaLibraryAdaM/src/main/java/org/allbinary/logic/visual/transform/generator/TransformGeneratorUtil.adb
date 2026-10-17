@@ -62,11 +62,15 @@ package body org.allbinary.logic.visual.transform.generator.TransformGeneratorUt
             end if;
             StoreFileGenerator_Package.Create (componentInterface.getTransformInfoInterface).process (result);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
                 This.logUtil.put (To_Unbounded_String ("Failed to generate a view"), This'Unchecked_Access, To_Unbounded_String ("generate()"), e);
             end if;
             Java_Throw (e);
+                end;
         end;
    end generate;
 

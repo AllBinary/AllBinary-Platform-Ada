@@ -28,10 +28,10 @@ with org.allbinary.physics.movement.BasicConstantVelocityMovement_Package; use o
 
 package org.allbinary.physics.movement.CustomGravityConstantVelocityMovement_Package is
 
-   package AllBinaryGameLayer_Package renames org.allbinary.game.layer.AllBinaryGameLayer_Package;
-   package GravityUtil_Package renames org.allbinary.game.physics.acceleration.GravityUtil_Package;
-   package VelocityProperties_Package renames org.allbinary.game.physics.velocity.VelocityProperties_Package;
-   package BasicDecimal_Package renames org.allbinary.logic.math.BasicDecimal_Package;
+   package AllBinaryGameLayer_Package renames Standard.org.allbinary.game.layer.AllBinaryGameLayer_Package;
+   package GravityUtil_Package renames Standard.org.allbinary.game.physics.acceleration.GravityUtil_Package;
+   package VelocityProperties_Package renames Standard.org.allbinary.game.physics.velocity.VelocityProperties_Package;
+   package BasicDecimal_Package renames Standard.org.allbinary.logic.math.BasicDecimal_Package;
 
    type CustomGravityConstantVelocityMovement is tagged;
    type CustomGravityConstantVelocityMovement_Access is access all CustomGravityConstantVelocityMovement'Class;

@@ -30,13 +30,13 @@ with org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Packa
 
 package org.allbinary.game.layer.CollidableVehicleBehavior_Package is
 
-   package PickedUpLayerInterface_Package renames org.allbinary.game.layer.pickup.PickedUpLayerInterface_Package;
-   package ForcedLogUtil_Package renames org.allbinary.logic.communication.log.ForcedLogUtil_Package;
-   package CollidableInterfaceCompositeInterface_Package renames org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package;
-   package CollisionType_Package renames org.allbinary.game.collision.CollisionType_Package;
-   package CollisionTypeFactory_Package renames org.allbinary.game.collision.CollisionTypeFactory_Package;
-   package CollidableDestroyableDamageableBehavior_Package renames org.allbinary.game.layer.special.CollidableDestroyableDamageableBehavior_Package;
-   package CollidableDestroyableDamageableLayer_Package renames org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
+   package PickedUpLayerInterface_Package renames Standard.org.allbinary.game.layer.pickup.PickedUpLayerInterface_Package;
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+   package CollidableInterfaceCompositeInterface_Package renames Standard.org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package;
+   package CollisionType_Package renames Standard.org.allbinary.game.collision.CollisionType_Package;
+   package CollisionTypeFactory_Package renames Standard.org.allbinary.game.collision.CollisionTypeFactory_Package;
+   package CollidableDestroyableDamageableBehavior_Package renames Standard.org.allbinary.game.layer.special.CollidableDestroyableDamageableBehavior_Package;
+   package CollidableDestroyableDamageableLayer_Package renames Standard.org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
 
    type CollidableVehicleBehavior is tagged;
    type CollidableVehicleBehavior_Access is access all CollidableVehicleBehavior'Class;

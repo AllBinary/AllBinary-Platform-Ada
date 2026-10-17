@@ -43,21 +43,21 @@ with org.allbinary.emulator.device.TrueTypeFontUtilBase_Package; use org.allbina
 
 package org.allbinary.emulator.device.TrueTypeFontUtil_Package is
 
-   package Bitmap_Package renames android.graphics.Bitmap_Package;
-   package Canvas_Package renames android.graphics.Canvas_Package;
-   package Paint_Package renames android.graphics.Paint_Package;
-   package Rect_Package renames android.graphics.Rect_Package;
-   package Typeface_Package renames android.graphics.Typeface_Package;
-   package ResourceUtil_Package renames org.allbinary.data.resource.ResourceUtil_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package CanvasStrings_Package renames org.allbinary.graphics.displayable.CanvasStrings_Package;
-   package PreResourceImageUtil_Package renames org.allbinary.image.PreResourceImageUtil_Package;
-   package OpenGLESImage_Package renames org.allbinary.image.opengles.OpenGLESImage_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package PreLogUtil_Package renames org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package AndroidImageInterface_Package renames org.microemu.android.device.AndroidImageInterface_Package;
-   package AndroidImmutableImage_Package renames org.microemu.android.device.AndroidImmutableImage_Package;
+   package Bitmap_Package renames Standard.android.graphics.Bitmap_Package;
+   package Canvas_Package renames Standard.android.graphics.Canvas_Package;
+   package Paint_Package renames Standard.android.graphics.Paint_Package;
+   package Rect_Package renames Standard.android.graphics.Rect_Package;
+   package Typeface_Package renames Standard.android.graphics.Typeface_Package;
+   package ResourceUtil_Package renames Standard.org.allbinary.data.resource.ResourceUtil_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package CanvasStrings_Package renames Standard.org.allbinary.graphics.displayable.CanvasStrings_Package;
+   package PreResourceImageUtil_Package renames Standard.org.allbinary.image.PreResourceImageUtil_Package;
+   package OpenGLESImage_Package renames Standard.org.allbinary.image.opengles.OpenGLESImage_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package AndroidImageInterface_Package renames Standard.org.microemu.android.device.AndroidImageInterface_Package;
+   package AndroidImmutableImage_Package renames Standard.org.microemu.android.device.AndroidImmutableImage_Package;
 
    type TrueTypeFontUtil is tagged;
    type TrueTypeFontUtil_Access is access all TrueTypeFontUtil'Class;

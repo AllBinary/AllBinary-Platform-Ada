@@ -25,8 +25,8 @@ with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_
 
 package org.allbinary.graphics.color.BasicColorCacheFactory_Package is
 
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package ABHashtable_Package renames org.allbinary.util.ABHashtable_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
    type BasicColorCacheFactory is tagged;
    type BasicColorCacheFactory_Access is access all BasicColorCacheFactory'Class;

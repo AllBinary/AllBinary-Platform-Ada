@@ -28,10 +28,10 @@ with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Pack
 
 package org.allbinary.game.ai.path.BasicDirectionAIHelper_Package is
 
-   package Direction_Package renames org.allbinary.direction.Direction_Package;
-   package DirectionFactory_Package renames org.allbinary.direction.DirectionFactory_Package;
-   package AngleIncrementInfo_Package renames org.allbinary.math.AngleIncrementInfo_Package;
-   package AngleInfo_Package renames org.allbinary.math.AngleInfo_Package;
+   package Direction_Package renames Standard.org.allbinary.direction.Direction_Package;
+   package DirectionFactory_Package renames Standard.org.allbinary.direction.DirectionFactory_Package;
+   package AngleIncrementInfo_Package renames Standard.org.allbinary.math.AngleIncrementInfo_Package;
+   package AngleInfo_Package renames Standard.org.allbinary.math.AngleInfo_Package;
 
    type BasicDirectionAIHelper is tagged;
    type BasicDirectionAIHelper_Access is access all BasicDirectionAIHelper'Class;

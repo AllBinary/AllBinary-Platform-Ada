@@ -31,14 +31,14 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.logic.communication.http.file.upload.HttpFilePermissions_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package BasicUserRoleFactory_Package renames org.allbinary.business.user.role.BasicUserRoleFactory_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package AbFile_Package renames org.allbinary.logic.io.file.AbFile_Package;
-   package AbPath_Package renames org.allbinary.logic.io.path.AbPath_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package BasicUserRoleFactory_Package renames Standard.org.allbinary.business.user.role.BasicUserRoleFactory_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
+   package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type HttpFilePermissions is tagged;
    type HttpFilePermissions_Access is access all HttpFilePermissions'Class;

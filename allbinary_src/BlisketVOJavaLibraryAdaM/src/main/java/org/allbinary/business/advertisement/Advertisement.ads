@@ -29,11 +29,11 @@ with org.allbinary.business.advertisement.AdvertisementInterface_Package; use or
 
 package org.allbinary.business.advertisement.Advertisement_Package is
 
-   package AdvertisementImageInterface_Package renames org.allbinary.business.advertisement.image.AdvertisementImageInterface_Package;
-   package AdvertisementProductInterface_Package renames org.allbinary.business.advertisement.product.AdvertisementProductInterface_Package;
-   package AdvertisementThumbnailInterface_Package renames org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnailInterface_Package;
-   package Money_Package renames org.allbinary.business.user.commerce.money.Money_Package;
-   package DisplayInBrowserContraintsInterface_Package renames org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraintsInterface_Package;
+   package AdvertisementImageInterface_Package renames Standard.org.allbinary.business.advertisement.image.AdvertisementImageInterface_Package;
+   package AdvertisementProductInterface_Package renames Standard.org.allbinary.business.advertisement.product.AdvertisementProductInterface_Package;
+   package AdvertisementThumbnailInterface_Package renames Standard.org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnailInterface_Package;
+   package Money_Package renames Standard.org.allbinary.business.user.commerce.money.Money_Package;
+   package DisplayInBrowserContraintsInterface_Package renames Standard.org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraintsInterface_Package;
 
    type Advertisement is tagged;
    type Advertisement_Access is access all Advertisement'Class;

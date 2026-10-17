@@ -25,7 +25,7 @@ with org.allbinary.game.score.HighScoresHelperBase_Package; use org.allbinary.ga
 
 package org.allbinary.game.score.HighScoresHelper2_Package is
 
-   package CircularIndexUtil_Package renames org.allbinary.util.CircularIndexUtil_Package;
+   package CircularIndexUtil_Package renames Standard.org.allbinary.util.CircularIndexUtil_Package;
 
    type HighScoresHelper2 is tagged;
    type HighScoresHelper2_Access is access all HighScoresHelper2'Class;

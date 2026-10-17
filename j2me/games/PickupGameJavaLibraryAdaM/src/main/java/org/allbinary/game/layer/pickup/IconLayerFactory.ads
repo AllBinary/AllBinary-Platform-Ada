@@ -24,7 +24,7 @@ with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Anim
 
 package org.allbinary.game.layer.pickup.IconLayerFactory_Package is
 
-   package Animation_Package renames org.allbinary.animation.Animation_Package;
+   package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
 
    type IconLayerFactory is tagged;
    type IconLayerFactory_Access is access all IconLayerFactory'Class;

@@ -29,11 +29,11 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 
 package org.allbinary.game.score.HighScoresCanvasInputProcessor_Package is
 
-   package PlayerGameInput_Package renames org.allbinary.game.input.PlayerGameInput_Package;
-   package GameKeyEvent_Package renames org.allbinary.game.input.event.GameKeyEvent_Package;
-   package HighScoresCanvas_Package renames org.allbinary.game.score.displayable.HighScoresCanvas_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
+   package PlayerGameInput_Package renames Standard.org.allbinary.game.input.PlayerGameInput_Package;
+   package GameKeyEvent_Package renames Standard.org.allbinary.game.input.event.GameKeyEvent_Package;
+   package HighScoresCanvas_Package renames Standard.org.allbinary.game.score.displayable.HighScoresCanvas_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type HighScoresCanvasInputProcessor is tagged;
    type HighScoresCanvasInputProcessor_Access is access all HighScoresCanvasInputProcessor'Class;

@@ -28,11 +28,11 @@ with jsinterop.annotations.JsConstructor_Package; use jsinterop.annotations.JsCo
 
 package org.allbinary.logic.communication.log.LogUtil_Package is
 
-   package JsType_Package renames jsinterop.annotations.JsType_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package PlayN_Package renames playn.core.PlayN_Package;
-   package JsMethod_Package renames jsinterop.annotations.JsMethod_Package;
-   package JsConstructor_Package renames jsinterop.annotations.JsConstructor_Package;
+   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package PlayN_Package renames Standard.playn.core.PlayN_Package;
+   package JsMethod_Package renames Standard.jsinterop.annotations.JsMethod_Package;
+   package JsConstructor_Package renames Standard.jsinterop.annotations.JsConstructor_Package;
 
    type LogUtil is tagged;
    type LogUtil_Access is access all LogUtil'Class;

@@ -24,7 +24,7 @@ with org.allbinary.input.automation.robot.InputRobotInterface_Package; use org.a
 
 package org.allbinary.input.automation.robot.osgi.InputAutomationRobotInterfaceWrapper_Package is
 
-   package InputRobotInterface_Package renames org.allbinary.input.automation.robot.InputRobotInterface_Package;
+   package InputRobotInterface_Package renames Standard.org.allbinary.input.automation.robot.InputRobotInterface_Package;
 
    type InputAutomationRobotInterfaceWrapper is tagged;
    type InputAutomationRobotInterfaceWrapper_Access is access all InputAutomationRobotInterfaceWrapper'Class;

@@ -27,10 +27,10 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 
 package org.allbinary.business.advertisement.Advertisements_Package is
 
-   package MyRandomFactory_Package renames org.allbinary.game.rand.MyRandomFactory_Package;
-   package LockedUtil_Package renames org.allbinary.logic.system.security.licensing.LockedUtil_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
+   package MyRandomFactory_Package renames Standard.org.allbinary.game.rand.MyRandomFactory_Package;
+   package LockedUtil_Package renames Standard.org.allbinary.logic.system.security.licensing.LockedUtil_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type Advertisements is tagged;
    type Advertisements_Access is access all Advertisements'Class;

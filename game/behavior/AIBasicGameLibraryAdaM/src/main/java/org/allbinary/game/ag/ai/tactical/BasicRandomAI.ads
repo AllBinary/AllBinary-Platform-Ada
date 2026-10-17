@@ -32,14 +32,14 @@ with org.allbinary.time.GameTickTimeDelayHelperFactory_Package; use org.allbinar
 
 package org.allbinary.game.ag.ai.tactical.BasicRandomAI_Package is
 
-   package BasicAI_Package renames org.allbinary.game.ai.BasicAI_Package;
-   package InputProbability_Package renames org.allbinary.game.ag.ai.InputProbability_Package;
-   package GameInput_Package renames org.allbinary.game.input.GameInput_Package;
-   package MyRandomFactory_Package renames org.allbinary.game.rand.MyRandomFactory_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package AllBinaryLayerManager_Package renames org.allbinary.layer.AllBinaryLayerManager_Package;
-   package Visitor_Package renames org.allbinary.logic.util.visitor.Visitor_Package;
-   package GameTickTimeDelayHelperFactory_Package renames org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
+   package BasicAI_Package renames Standard.org.allbinary.game.ai.BasicAI_Package;
+   package InputProbability_Package renames Standard.org.allbinary.game.ag.ai.InputProbability_Package;
+   package GameInput_Package renames Standard.org.allbinary.game.input.GameInput_Package;
+   package MyRandomFactory_Package renames Standard.org.allbinary.game.rand.MyRandomFactory_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
+   package Visitor_Package renames Standard.org.allbinary.logic.util.visitor.Visitor_Package;
+   package GameTickTimeDelayHelperFactory_Package renames Standard.org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
 
    type BasicRandomAI is tagged;
    type BasicRandomAI_Access is access all BasicRandomAI'Class;

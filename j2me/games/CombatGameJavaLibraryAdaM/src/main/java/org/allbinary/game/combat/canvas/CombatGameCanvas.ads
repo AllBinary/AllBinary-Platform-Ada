@@ -38,20 +38,20 @@ with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface
 
 package org.allbinary.game.combat.canvas.CombatGameCanvas_Package is
 
-   package DestroyedLayerProcessor_Package renames org.allbinary.game.combat.destroy.DestroyedLayerProcessor_Package;
-   package DestroyEventCircularStaticPool_Package renames org.allbinary.game.combat.destroy.event.DestroyEventCircularStaticPool_Package;
-   package DestroyedEventHandler_Package renames org.allbinary.game.combat.destroy.event.DestroyedEventHandler_Package;
-   package Features_Package renames org.allbinary.game.configuration.feature.Features_Package;
-   package GameFeatureFactory_Package renames org.allbinary.game.configuration.feature.GameFeatureFactory_Package;
-   package AllBinaryGameCanvas_Package renames org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
-   package BasicBuildGameInitializerFactory_Package renames org.allbinary.game.init.BasicBuildGameInitializerFactory_Package;
-   package AllBinaryGameLayerManager_Package renames org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
-   package DropLayerProcessor_Package renames org.allbinary.game.layer.drop.DropLayerProcessor_Package;
-   package GroupLayerManagerListener_Package renames org.allbinary.game.layer.identification.GroupLayerManagerListener_Package;
-   package HighScoresFactoryInterface_Package renames org.allbinary.game.score.HighScoresFactoryInterface_Package;
-   package ProgressCanvasFactory_Package renames org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package;
-   package BasicLayerProcessor_Package renames org.allbinary.layer.BasicLayerProcessor_Package;
-   package AbeClientInformationInterface_Package renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package DestroyedLayerProcessor_Package renames Standard.org.allbinary.game.combat.destroy.DestroyedLayerProcessor_Package;
+   package DestroyEventCircularStaticPool_Package renames Standard.org.allbinary.game.combat.destroy.event.DestroyEventCircularStaticPool_Package;
+   package DestroyedEventHandler_Package renames Standard.org.allbinary.game.combat.destroy.event.DestroyedEventHandler_Package;
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
+   package GameFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.GameFeatureFactory_Package;
+   package AllBinaryGameCanvas_Package renames Standard.org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
+   package BasicBuildGameInitializerFactory_Package renames Standard.org.allbinary.game.init.BasicBuildGameInitializerFactory_Package;
+   package AllBinaryGameLayerManager_Package renames Standard.org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
+   package DropLayerProcessor_Package renames Standard.org.allbinary.game.layer.drop.DropLayerProcessor_Package;
+   package GroupLayerManagerListener_Package renames Standard.org.allbinary.game.layer.identification.GroupLayerManagerListener_Package;
+   package HighScoresFactoryInterface_Package renames Standard.org.allbinary.game.score.HighScoresFactoryInterface_Package;
+   package ProgressCanvasFactory_Package renames Standard.org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package;
+   package BasicLayerProcessor_Package renames Standard.org.allbinary.layer.BasicLayerProcessor_Package;
+   package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 
    type CombatGameCanvas is tagged;
    type CombatGameCanvas_Access is access all CombatGameCanvas'Class;

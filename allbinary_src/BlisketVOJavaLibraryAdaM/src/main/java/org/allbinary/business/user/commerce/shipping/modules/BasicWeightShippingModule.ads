@@ -28,10 +28,10 @@ with org.allbinary.business.user.commerce.shipping.modules.ShippingInterface_Pac
 
 package org.allbinary.business.user.commerce.shipping.modules.BasicWeightShippingModule_Package is
 
-   package BasketInterface_Package renames org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package;
-   package OrderInterface_Package renames org.allbinary.business.user.commerce.inventory.order.OrderInterface_Package;
-   package Money_Package renames org.allbinary.business.user.commerce.money.Money_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package BasketInterface_Package renames Standard.org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package;
+   package OrderInterface_Package renames Standard.org.allbinary.business.user.commerce.inventory.order.OrderInterface_Package;
+   package Money_Package renames Standard.org.allbinary.business.user.commerce.money.Money_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type BasicWeightShippingModule is tagged;
    type BasicWeightShippingModule_Access is access all BasicWeightShippingModule'Class;

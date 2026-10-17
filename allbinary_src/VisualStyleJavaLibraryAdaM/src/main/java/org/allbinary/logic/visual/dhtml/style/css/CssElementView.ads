@@ -40,22 +40,22 @@ with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
 
 package org.allbinary.logic.visual.dhtml.style.css.CssElementView_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package DomData_Package renames org.allbinary.data.tree.dom.DomData_Package;
-   package DomNodeHelper_Package renames org.allbinary.data.tree.dom.DomNodeHelper_Package;
-   package DomNodeInterface_Package renames org.allbinary.data.tree.dom.DomNodeInterface_Package;
-   package DomSearchHelper_Package renames org.allbinary.data.tree.dom.DomSearchHelper_Package;
-   package ModDomHelper_Package renames org.allbinary.data.tree.dom.ModDomHelper_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package CssPropertiesValidationFactory_Package renames org.allbinary.logic.visual.dhtml.style.css.property.CssPropertiesValidationFactory_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
-   package NodeList_Package renames org.w3c.dom.NodeList_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package DomData_Package renames Standard.org.allbinary.data.tree.dom.DomData_Package;
+   package DomNodeHelper_Package renames Standard.org.allbinary.data.tree.dom.DomNodeHelper_Package;
+   package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
+   package DomSearchHelper_Package renames Standard.org.allbinary.data.tree.dom.DomSearchHelper_Package;
+   package ModDomHelper_Package renames Standard.org.allbinary.data.tree.dom.ModDomHelper_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package CssPropertiesValidationFactory_Package renames Standard.org.allbinary.logic.visual.dhtml.style.css.property.CssPropertiesValidationFactory_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
+   package NodeList_Package renames Standard.org.w3c.dom.NodeList_Package;
 
    type CssElementView is tagged;
    type CssElementView_Access is access all CssElementView'Class;

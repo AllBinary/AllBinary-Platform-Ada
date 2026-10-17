@@ -29,11 +29,11 @@ with org.allbinary.android.input.motion.MotionEventProcessor_Package; use org.al
 
 package org.allbinary.android.input.motion.BaseGameInputMotionEventProcessor_Package is
 
-   package MotionEvent_Package renames android.view.MotionEvent_Package;
-   package BasicMotionGesturesHandler_Package renames org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package;
-   package GameMotionGestureListener_Package renames org.allbinary.input.motion.gesture.observer.GameMotionGestureListener_Package;
-   package MotionGestureReceiveInterfaceFactory_Package renames org.allbinary.input.motion.gesture.observer.MotionGestureReceiveInterfaceFactory_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package MotionEvent_Package renames Standard.android.view.MotionEvent_Package;
+   package BasicMotionGesturesHandler_Package renames Standard.org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package;
+   package GameMotionGestureListener_Package renames Standard.org.allbinary.input.motion.gesture.observer.GameMotionGestureListener_Package;
+   package MotionGestureReceiveInterfaceFactory_Package renames Standard.org.allbinary.input.motion.gesture.observer.MotionGestureReceiveInterfaceFactory_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type BaseGameInputMotionEventProcessor is tagged;
    type BaseGameInputMotionEventProcessor_Access is access all BaseGameInputMotionEventProcessor'Class;

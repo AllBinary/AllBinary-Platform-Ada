@@ -36,15 +36,15 @@ with org.allbinary.game.score.HighScoresCanvasInputProcessor_Package; use org.al
 
 package org.allbinary.game.score.HighScoresCanvasLevelChangeInputProcessor_Package is
 
-   package GameKeyEventHandler_Package renames org.allbinary.game.input.event.GameKeyEventHandler_Package;
-   package GameKeyEventUtil_Package renames org.allbinary.game.input.event.GameKeyEventUtil_Package;
-   package HighScoresCanvas_Package renames org.allbinary.game.score.displayable.HighScoresCanvas_Package;
-   package Anchor_Package renames org.allbinary.graphics.Anchor_Package;
-   package DisplayInfoSingleton_Package renames org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
-   package MyFontProcessor_Package renames org.allbinary.graphics.font.MyFontProcessor_Package;
-   package UpdateMyFontInterface_Package renames org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-   package UpdateMyFontProcessor_Package renames org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package GameKeyEventHandler_Package renames Standard.org.allbinary.game.input.event.GameKeyEventHandler_Package;
+   package GameKeyEventUtil_Package renames Standard.org.allbinary.game.input.event.GameKeyEventUtil_Package;
+   package HighScoresCanvas_Package renames Standard.org.allbinary.game.score.displayable.HighScoresCanvas_Package;
+   package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
+   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+   package MyFontProcessor_Package renames Standard.org.allbinary.graphics.font.MyFontProcessor_Package;
+   package UpdateMyFontInterface_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontInterface_Package;
+   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type HighScoresCanvasLevelChangeInputProcessor is tagged;
    type HighScoresCanvasLevelChangeInputProcessor_Access is access all HighScoresCanvasLevelChangeInputProcessor'Class;

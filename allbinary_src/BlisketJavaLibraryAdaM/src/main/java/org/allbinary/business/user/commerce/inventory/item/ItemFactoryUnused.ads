@@ -28,9 +28,9 @@ with org.allbinary.logic.communication.http.request.RequestParams_Package; use o
 
 package org.allbinary.business.user.commerce.inventory.item.ItemFactoryUnused_Package is
 
-   package MoneyException_Package renames org.allbinary.business.user.commerce.money.MoneyException_Package;
-   package TableMappingInterface_Package renames org.allbinary.data.tables.TableMappingInterface_Package;
-   package RequestParams_Package renames org.allbinary.logic.communication.http.request.RequestParams_Package;
+   package MoneyException_Package renames Standard.org.allbinary.business.user.commerce.money.MoneyException_Package;
+   package TableMappingInterface_Package renames Standard.org.allbinary.data.tables.TableMappingInterface_Package;
+   package RequestParams_Package renames Standard.org.allbinary.logic.communication.http.request.RequestParams_Package;
 
    type ItemFactoryUnused is tagged;
    type ItemFactoryUnused_Access is access all ItemFactoryUnused'Class;

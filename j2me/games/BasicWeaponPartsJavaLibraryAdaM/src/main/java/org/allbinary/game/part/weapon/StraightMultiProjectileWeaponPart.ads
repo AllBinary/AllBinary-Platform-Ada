@@ -34,16 +34,16 @@ with org.allbinary.game.part.weapon.BasicWeaponPart_Package; use org.allbinary.g
 
 package org.allbinary.game.part.weapon.StraightMultiProjectileWeaponPart_Package is
 
-   package Animation_Package renames org.allbinary.animation.Animation_Package;
-   package WeaponProperties_Package renames org.allbinary.game.combat.weapon.WeaponProperties_Package;
-   package WeaponLayer_Package renames org.allbinary.game.layer.weapon.WeaponLayer_Package;
-   package WeaponLayerCircularPool_Package renames org.allbinary.game.layer.weapon.WeaponLayerCircularPool_Package;
-   package NoScoreable_Package renames org.allbinary.game.score.NoScoreable_Package;
-   package ScoreableInterface_Package renames org.allbinary.game.score.ScoreableInterface_Package;
-   package RelativeRelationship_Package renames org.allbinary.graphics.RelativeRelationship_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package AllBinaryLayerManager_Package renames org.allbinary.layer.AllBinaryLayerManager_Package;
-   package NoDecimalTrigTable_Package renames org.allbinary.math.NoDecimalTrigTable_Package;
+   package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
+   package WeaponProperties_Package renames Standard.org.allbinary.game.combat.weapon.WeaponProperties_Package;
+   package WeaponLayer_Package renames Standard.org.allbinary.game.layer.weapon.WeaponLayer_Package;
+   package WeaponLayerCircularPool_Package renames Standard.org.allbinary.game.layer.weapon.WeaponLayerCircularPool_Package;
+   package NoScoreable_Package renames Standard.org.allbinary.game.score.NoScoreable_Package;
+   package ScoreableInterface_Package renames Standard.org.allbinary.game.score.ScoreableInterface_Package;
+   package RelativeRelationship_Package renames Standard.org.allbinary.graphics.RelativeRelationship_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
+   package NoDecimalTrigTable_Package renames Standard.org.allbinary.math.NoDecimalTrigTable_Package;
 
    type StraightMultiProjectileWeaponPart is tagged;
    type StraightMultiProjectileWeaponPart_Access is access all StraightMultiProjectileWeaponPart'Class;

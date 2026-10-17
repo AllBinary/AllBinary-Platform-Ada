@@ -16,10 +16,10 @@ with org.microemu.device.swt.SwtMutableImage_Package; use org.microemu.device.sw
 
 package org.allbinary.graphics.OpenGLBitmap_Package is
 
-   package DisposalUtil_Package renames org.allbinary.DisposalUtil_Package;
-   package PlatformBitmapBase_Package renames org.allbinary.platform.graphics.PlatformBitmapBase_Package;
-   package SwtImmutableImage_Package renames org.microemu.device.swt.SwtImmutableImage_Package;
-   package SwtMutableImage_Package renames org.microemu.device.swt.SwtMutableImage_Package;
+   package DisposalUtil_Package renames Standard.org.allbinary.DisposalUtil_Package;
+   package PlatformBitmapBase_Package renames Standard.org.allbinary.platform.graphics.PlatformBitmapBase_Package;
+   package SwtImmutableImage_Package renames Standard.org.microemu.device.swt.SwtImmutableImage_Package;
+   package SwtMutableImage_Package renames Standard.org.microemu.device.swt.SwtMutableImage_Package;
 
    type OpenGLBitmap is tagged;
    type OpenGLBitmap_Access is access all OpenGLBitmap'Class;

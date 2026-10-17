@@ -26,8 +26,8 @@ with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.C
 
 package org.allbinary.media.image.ImagesRatioUtil_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonLabels_Package renames org.allbinary.string_Id.CommonLabels_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
 
    type ImagesRatioUtil is tagged;
    type ImagesRatioUtil_Access is access all ImagesRatioUtil'Class;

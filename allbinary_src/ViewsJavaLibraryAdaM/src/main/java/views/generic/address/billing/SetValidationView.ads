@@ -29,11 +29,11 @@ with views.generic_Id.address.billing.BillingAddressView_Package; use views.gene
 
 package views.generic_Id.address.billing.SetValidationView_Package is
 
-   package MESSAGES_Package renames org.allbinary.globals.MESSAGES_Package;
-   package ValidationComponentInterface_Package renames org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
-   package TransformInfoInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
+   package MESSAGES_Package renames Standard.org.allbinary.globals.MESSAGES_Package;
+   package ValidationComponentInterface_Package renames Standard.org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
+   package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type SetValidationView is tagged;
    type SetValidationView_Access is access all SetValidationView'Class;

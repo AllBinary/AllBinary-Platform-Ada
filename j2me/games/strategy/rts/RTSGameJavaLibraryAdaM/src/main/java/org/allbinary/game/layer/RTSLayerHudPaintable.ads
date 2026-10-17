@@ -31,11 +31,11 @@ with org.allbinary.game.layer.SelectionHudPaintable_Package; use org.allbinary.g
 
 package org.allbinary.game.layer.RTSLayerHudPaintable_Package is
 
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package AndroidUtil_Package renames org.allbinary.AndroidUtil_Package;
-   package CollidableDestroyableDamageableLayer_Package renames org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
-   package BasicWeaponPart_Package renames org.allbinary.game.part.weapon.BasicWeaponPart_Package;
-   package UpdateMyFontInterface_Package renames org.allbinary.graphics.font.UpdateMyFontInterface_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package AndroidUtil_Package renames Standard.org.allbinary.AndroidUtil_Package;
+   package CollidableDestroyableDamageableLayer_Package renames Standard.org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
+   package BasicWeaponPart_Package renames Standard.org.allbinary.game.part.weapon.BasicWeaponPart_Package;
+   package UpdateMyFontInterface_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontInterface_Package;
 
    type RTSLayerHudPaintable is tagged;
    type RTSLayerHudPaintable_Access is access all RTSLayerHudPaintable'Class;

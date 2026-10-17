@@ -36,19 +36,19 @@ with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface
 
 package org.allbinary.logic.communication.smtp.event.handler.EmailEventHandlerUtil_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package UserInterface_Package renames org.allbinary.business.user.UserInterface_Package;
-   package UserConfigurationInterface_Package renames org.allbinary.business.user.modules.configuration.UserConfigurationInterface_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package UserEmailConfigurationInterface_Package renames org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationInterface_Package;
-   package UserEmailEventsConfigurationInterface_Package renames org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationInterface_Package;
-   package UserEmailEventListenerInterface_Package renames org.allbinary.logic.communication.smtp.event.UserEmailEventListenerInterface_Package;
-   package UserEmailEventNameData_Package renames org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package;
-   package LogUserEmailEventListenerModule_Package renames org.allbinary.logic.communication.smtp.event.modules.log.LogUserEmailEventListenerModule_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package AbeClientInformationInterface_Package renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package UserInterface_Package renames Standard.org.allbinary.business.user.UserInterface_Package;
+   package UserConfigurationInterface_Package renames Standard.org.allbinary.business.user.modules.configuration.UserConfigurationInterface_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package UserEmailConfigurationInterface_Package renames Standard.org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationInterface_Package;
+   package UserEmailEventsConfigurationInterface_Package renames Standard.org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationInterface_Package;
+   package UserEmailEventListenerInterface_Package renames Standard.org.allbinary.logic.communication.smtp.event.UserEmailEventListenerInterface_Package;
+   package UserEmailEventNameData_Package renames Standard.org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package;
+   package LogUserEmailEventListenerModule_Package renames Standard.org.allbinary.logic.communication.smtp.event.modules.log.LogUserEmailEventListenerModule_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 
    type EmailEventHandlerUtil is tagged;
    type EmailEventHandlerUtil_Access is access all EmailEventHandlerUtil'Class;

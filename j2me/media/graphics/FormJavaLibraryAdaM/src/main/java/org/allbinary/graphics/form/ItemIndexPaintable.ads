@@ -25,7 +25,7 @@ with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.gr
 
 package org.allbinary.graphics.form.ItemIndexPaintable_Package is
 
-   package ABCustomItem_Package renames org.allbinary.graphics.form.item.ABCustomItem_Package;
+   package ABCustomItem_Package renames Standard.org.allbinary.graphics.form.item.ABCustomItem_Package;
 
    type ItemIndexPaintable is tagged;
    type ItemIndexPaintable_Access is access all ItemIndexPaintable'Class;

@@ -25,8 +25,8 @@ with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_P
 
 package org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package is
 
-   package LogConfigTypes_Package renames org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
-   package LogConfigTypeFactory_Package renames org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
 
    type LogConfigTypeFactory is tagged;
    type LogConfigTypeFactory_Access is access all LogConfigTypeFactory'Class;

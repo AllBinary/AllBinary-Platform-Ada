@@ -28,11 +28,11 @@ with views.business.context.modules.storefront.HttpStoreComponentView_Package; u
 
 package views.admin.payment.gateways.SelectExistingValidationView_Package is
 
-   package ValidationComponentInterface_Package renames org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
-   package TransformInfoInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
-   package HttpStoreComponentView_Package renames views.business.context.modules.storefront.HttpStoreComponentView_Package;
+   package ValidationComponentInterface_Package renames Standard.org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
+   package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
+   package HttpStoreComponentView_Package renames Standard.views.business.context.modules.storefront.HttpStoreComponentView_Package;
 
    type SelectExistingValidationView is tagged;
    type SelectExistingValidationView_Access is access all SelectExistingValidationView'Class;

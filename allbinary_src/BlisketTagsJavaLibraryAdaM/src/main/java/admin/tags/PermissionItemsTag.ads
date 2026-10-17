@@ -26,8 +26,8 @@ with admin.tags.TableTag_Package; use admin.tags.TableTag_Package;
 
 package admin.tags.PermissionItemsTag_Package is
 
-   package PermissionItemsHelperFactory_Package renames admin.taghelpers.PermissionItemsHelperFactory_Package;
-   package PermissionItemsRequestHelperFactory_Package renames admin.taghelpers.PermissionItemsRequestHelperFactory_Package;
+   package PermissionItemsHelperFactory_Package renames Standard.admin.taghelpers.PermissionItemsHelperFactory_Package;
+   package PermissionItemsRequestHelperFactory_Package renames Standard.admin.taghelpers.PermissionItemsRequestHelperFactory_Package;
 
    type PermissionItemsTag is tagged;
    type PermissionItemsTag_Access is access all PermissionItemsTag'Class;

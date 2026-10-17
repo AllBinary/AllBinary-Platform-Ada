@@ -29,10 +29,10 @@ with org.allbinary.media.graphics.geography.pathfinding.Comparable_Package; use 
 
 package org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCost_Package is
 
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
-   package GeographicMapCellPosition_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
-   package CommonLabels_Package renames org.allbinary.string_Id.CommonLabels_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
 
    type PathFindingNodeCost is tagged;
    type PathFindingNodeCost_Access is access all PathFindingNodeCost'Class;

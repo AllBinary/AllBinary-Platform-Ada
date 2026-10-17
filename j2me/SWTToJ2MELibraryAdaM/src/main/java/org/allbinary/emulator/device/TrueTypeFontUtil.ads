@@ -44,23 +44,23 @@ with org.allbinary.emulator.device.TrueTypeFontUtilBase_Package; use org.allbina
 
 package org.allbinary.emulator.device.TrueTypeFontUtil_Package is
 
-   package SWT_Package renames org.eclipse.swt.SWT_Package;
-   package ImageData_Package renames org.eclipse.swt.graphics.ImageData_Package;
-   package ImageLoader_Package renames org.eclipse.swt.graphics.ImageLoader_Package;
-   package SwtMutableImage_Package renames org.microemu.device.swt.SwtMutableImage_Package;
-   package AvianUtil_Package renames org.allbinary.AvianUtil_Package;
-   package ResourceUtil_Package renames org.allbinary.data.resource.ResourceUtil_Package;
-   package PointFactory_Package renames org.allbinary.graphics.PointFactory_Package;
-   package Rectangle_Package renames org.allbinary.graphics.Rectangle_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package BasicColorFactory_Package renames org.allbinary.graphics.color.BasicColorFactory_Package;
-   package CanvasStrings_Package renames org.allbinary.graphics.displayable.CanvasStrings_Package;
-   package OpenGLCapabilities_Package renames org.allbinary.graphics.opengles.OpenGLCapabilities_Package;
-   package PreResourceImageUtil_Package renames org.allbinary.image.PreResourceImageUtil_Package;
-   package OpenGLESImage_Package renames org.allbinary.image.opengles.OpenGLESImage_Package;
-   package PreLogUtil_Package renames org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package SWT_Package renames Standard.org.eclipse.swt.SWT_Package;
+   package ImageData_Package renames Standard.org.eclipse.swt.graphics.ImageData_Package;
+   package ImageLoader_Package renames Standard.org.eclipse.swt.graphics.ImageLoader_Package;
+   package SwtMutableImage_Package renames Standard.org.microemu.device.swt.SwtMutableImage_Package;
+   package AvianUtil_Package renames Standard.org.allbinary.AvianUtil_Package;
+   package ResourceUtil_Package renames Standard.org.allbinary.data.resource.ResourceUtil_Package;
+   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
+   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package CanvasStrings_Package renames Standard.org.allbinary.graphics.displayable.CanvasStrings_Package;
+   package OpenGLCapabilities_Package renames Standard.org.allbinary.graphics.opengles.OpenGLCapabilities_Package;
+   package PreResourceImageUtil_Package renames Standard.org.allbinary.image.PreResourceImageUtil_Package;
+   package OpenGLESImage_Package renames Standard.org.allbinary.image.opengles.OpenGLESImage_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type TrueTypeFontUtil is tagged;
    type TrueTypeFontUtil_Access is access all TrueTypeFontUtil'Class;

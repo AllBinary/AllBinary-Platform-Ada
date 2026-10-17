@@ -32,14 +32,14 @@ with org.allbinary.util.EnumerationUtil_Package; use org.allbinary.util.Enumerat
 
 package org.allbinary.game.layer.LayerPlacer_Package is
 
-   package GPoint_Package renames org.allbinary.graphics.GPoint_Package;
-   package PointFactory_Package renames org.allbinary.graphics.PointFactory_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package LayerInterfaceFactory_Package renames org.allbinary.layer.LayerInterfaceFactory_Package;
-   package LayerInterfaceVisitor_Package renames org.allbinary.layer.LayerInterfaceVisitor_Package;
-   package ABHashtable_Package renames org.allbinary.util.ABHashtable_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package EnumerationUtil_Package renames org.allbinary.util.EnumerationUtil_Package;
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package LayerInterfaceFactory_Package renames Standard.org.allbinary.layer.LayerInterfaceFactory_Package;
+   package LayerInterfaceVisitor_Package renames Standard.org.allbinary.layer.LayerInterfaceVisitor_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package EnumerationUtil_Package renames Standard.org.allbinary.util.EnumerationUtil_Package;
 
    type LayerPlacer is tagged;
    type LayerPlacer_Access is access all LayerPlacer'Class;

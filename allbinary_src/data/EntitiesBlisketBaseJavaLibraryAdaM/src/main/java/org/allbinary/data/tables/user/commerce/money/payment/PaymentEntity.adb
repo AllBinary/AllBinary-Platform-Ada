@@ -64,10 +64,14 @@ package body org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity
                 This.logUtil.putF (This.commonStrings.SUCCESS, This'Unchecked_Access, To_Unbounded_String ("setDefault"));
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("setDefault"), e);
             end if;
+                end;
         end;
    end setDefault;
 
@@ -95,11 +99,15 @@ package body org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity
             end loop;
             return paymentVector;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, This.commonStrings.GET, e);
             end if;
             return null;
+                end;
         end;
    end get;
 
@@ -124,11 +132,15 @@ package body org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity
                 return null;
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("getDefault"), e);
             end if;
             return null;
+                end;
         end;
    end getDefault;
 
@@ -144,10 +156,14 @@ package body org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity
                 This.logUtil.putF (This.commonStrings.SUCCESS, This'Unchecked_Access, To_Unbounded_String ("remove"));
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("remove"), e);
             end if;
+                end;
         end;
    end remove;
 
@@ -176,10 +192,14 @@ package body org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity
                 This.logUtil.putF (This.commonStrings.SUCCESS, This'Unchecked_Access, To_Unbounded_String ("add"));
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("add"), e);
             end if;
+                end;
         end;
    end add;
 

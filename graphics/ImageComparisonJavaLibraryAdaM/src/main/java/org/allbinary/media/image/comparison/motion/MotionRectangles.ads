@@ -26,9 +26,9 @@ with org.allbinary.media.image.comparison.ImageComparisonResult_Package; use org
 
 package org.allbinary.media.image.comparison.motion.MotionRectangles_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package ImageComparisonResult_Package renames org.allbinary.media.image.comparison.ImageComparisonResult_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package ImageComparisonResult_Package renames Standard.org.allbinary.media.image.comparison.ImageComparisonResult_Package;
 
    type MotionRectangles is tagged;
    type MotionRectangles_Access is access all MotionRectangles'Class;

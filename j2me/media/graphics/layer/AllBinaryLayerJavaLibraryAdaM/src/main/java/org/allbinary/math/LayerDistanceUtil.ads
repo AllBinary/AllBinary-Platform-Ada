@@ -26,9 +26,9 @@ with org.allbinary.logic.math.MathUtil_Package; use org.allbinary.logic.math.Mat
 
 package org.allbinary.math.LayerDistanceUtil_Package is
 
-   package GPoint_Package renames org.allbinary.graphics.GPoint_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package MathUtil_Package renames org.allbinary.logic.math.MathUtil_Package;
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package MathUtil_Package renames Standard.org.allbinary.logic.math.MathUtil_Package;
 
    type LayerDistanceUtil is tagged;
    type LayerDistanceUtil_Access is access all LayerDistanceUtil'Class;

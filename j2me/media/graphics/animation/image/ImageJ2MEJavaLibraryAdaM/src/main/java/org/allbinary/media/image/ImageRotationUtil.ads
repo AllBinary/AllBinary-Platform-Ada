@@ -25,7 +25,7 @@ with org.allbinary.graphics.Anchor_Package; use org.allbinary.graphics.Anchor_Pa
 
 package org.allbinary.media.image.ImageRotationUtil_Package is
 
-   package Anchor_Package renames org.allbinary.graphics.Anchor_Package;
+   package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
 
    type ImageRotationUtil is tagged;
    type ImageRotationUtil_Access is access all ImageRotationUtil'Class;

@@ -25,8 +25,8 @@ with org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package; 
 
 package org.allbinary.media.image.cache.BufferedImageCacheableFactory_Package is
 
-   package CacheableInterface_Package renames org.allbinary.logic.util.cache.CacheableInterface_Package;
-   package CacheableInterfaceFactoryInterface_Package renames org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package;
+   package CacheableInterface_Package renames Standard.org.allbinary.logic.util.cache.CacheableInterface_Package;
+   package CacheableInterfaceFactoryInterface_Package renames Standard.org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package;
 
    type BufferedImageCacheableFactory is tagged;
    type BufferedImageCacheableFactory_Access is access all BufferedImageCacheableFactory'Class;

@@ -28,11 +28,11 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 
 package org.allbinary.logic.io.file.FileUtil2_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package AbFileInputStream_Package renames org.allbinary.logic.io.AbFileInputStream_Package;
-   package StreamUtil_Package renames org.allbinary.logic.io.StreamUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package AbFileInputStream_Package renames Standard.org.allbinary.logic.io.AbFileInputStream_Package;
+   package StreamUtil_Package renames Standard.org.allbinary.logic.io.StreamUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type FileUtil2 is tagged;
    type FileUtil2_Access is access all FileUtil2'Class;

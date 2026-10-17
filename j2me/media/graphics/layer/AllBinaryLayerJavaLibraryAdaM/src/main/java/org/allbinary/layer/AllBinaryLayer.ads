@@ -40,20 +40,20 @@ with org.allbinary.layer.LayerInterface_Package; use org.allbinary.layer.LayerIn
 
 package org.allbinary.layer.AllBinaryLayer_Package is
 
-   package BasicGroupFactory_Package renames org.allbinary.game.identification.BasicGroupFactory_Package;
-   package Group_Package renames org.allbinary.game.identification.Group_Package;
-   package GPoint_Package renames org.allbinary.graphics.GPoint_Package;
-   package Rectangle_Package renames org.allbinary.graphics.Rectangle_Package;
-   package RectangleFactory_Package renames org.allbinary.graphics.RectangleFactory_Package;
-   package OpenGLFeatureUtil_Package renames org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package;
-   package TsUtil_Package renames org.allbinary.TsUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package PositionStrings_Package renames org.allbinary.math.PositionStrings_Package;
-   package CommonLabels_Package renames org.allbinary.string_Id.CommonLabels_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
-   package ViewPositionBase_Package renames org.allbinary.view.ViewPositionBase_Package;
-   package ViewPositionEvent_Package renames org.allbinary.view.event.ViewPositionEvent_Package;
+   package BasicGroupFactory_Package renames Standard.org.allbinary.game.identification.BasicGroupFactory_Package;
+   package Group_Package renames Standard.org.allbinary.game.identification.Group_Package;
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
+   package RectangleFactory_Package renames Standard.org.allbinary.graphics.RectangleFactory_Package;
+   package OpenGLFeatureUtil_Package renames Standard.org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package;
+   package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package PositionStrings_Package renames Standard.org.allbinary.math.PositionStrings_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package ViewPositionBase_Package renames Standard.org.allbinary.view.ViewPositionBase_Package;
+   package ViewPositionEvent_Package renames Standard.org.allbinary.view.event.ViewPositionEvent_Package;
 
    type AllBinaryLayer is tagged;
    type AllBinaryLayer_Access is access all AllBinaryLayer'Class;

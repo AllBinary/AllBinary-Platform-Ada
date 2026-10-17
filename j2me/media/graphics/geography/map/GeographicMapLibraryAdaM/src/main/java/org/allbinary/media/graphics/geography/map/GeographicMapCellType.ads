@@ -25,8 +25,8 @@ with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allb
 
 package org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package SmallIntegerSingletonFactory_Package renames org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
 
    type GeographicMapCellType is tagged;
    type GeographicMapCellType_Access is access all GeographicMapCellType'Class;

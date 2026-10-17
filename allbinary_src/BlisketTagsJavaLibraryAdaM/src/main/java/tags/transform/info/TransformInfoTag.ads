@@ -32,14 +32,14 @@ with tags.ModifyTag_Package; use tags.ModifyTag_Package;
 
 package tags.transform.info.TransformInfoTag_Package is
 
-   package TagHelperFactoryInterface_Package renames admin.taghelpers.TagHelperFactoryInterface_Package;
-   package StoreFrontData_Package renames org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
-   package AbResponseHandler_Package renames org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package OutputTypeData_Package renames org.allbinary.logic.io.OutputTypeData_Package;
-   package TransformInfoData_Package renames org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
-   package TransformInfoRequestHelperFactory_Package renames taghelpers.transform.info.TransformInfoRequestHelperFactory_Package;
-   package ModifyTag_Package renames tags.ModifyTag_Package;
+   package TagHelperFactoryInterface_Package renames Standard.admin.taghelpers.TagHelperFactoryInterface_Package;
+   package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package OutputTypeData_Package renames Standard.org.allbinary.logic.io.OutputTypeData_Package;
+   package TransformInfoData_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
+   package TransformInfoRequestHelperFactory_Package renames Standard.taghelpers.transform.info.TransformInfoRequestHelperFactory_Package;
+   package ModifyTag_Package renames Standard.tags.ModifyTag_Package;
 
    type TransformInfoTag is tagged;
    type TransformInfoTag_Access is access all TransformInfoTag'Class;

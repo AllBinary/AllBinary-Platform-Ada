@@ -25,7 +25,7 @@ with org.allbinary.game.input.mapping.event.InputMappingEventListenerInterface_P
 
 package org.allbinary.game.input.mapping.event.NullInputMappingEventListener_Package is
 
-   package AllBinaryEventObject_Package renames org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+   package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 
    type NullInputMappingEventListener is tagged;
    type NullInputMappingEventListener_Access is access all NullInputMappingEventListener'Class;

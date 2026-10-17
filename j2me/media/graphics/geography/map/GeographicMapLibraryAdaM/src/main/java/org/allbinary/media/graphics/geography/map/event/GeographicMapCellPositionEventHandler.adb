@@ -71,8 +71,12 @@ package body org.allbinary.media.graphics.geography.map.event.GeographicMapCellP
                 miniMapLayer := MiniMapLayer_Access (This.list.get (index));
                 miniMapLayer.onGeographicMapCellPositionEvent (GeographicMapCellPositionEvent_Access (eventObject));
             exception
-                when e : others =>
+                when Java_Occurrence : others =>
+                    declare
+                        e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                    begin
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, EventStrings_Package.getInstance.FIRE_EVENT, e);
+                    end;
             end;
         end loop;
         BasicEventHandler (This).fireEvent (eventObject);
@@ -94,8 +98,12 @@ package body org.allbinary.media.graphics.geography.map.event.GeographicMapCellP
                 miniMapLayer := MiniMapLayer_Access (This.list.get (index));
                 miniMapLayer.onRemoveGeographicMapCellPositionEvent (GeographicMapCellPositionEvent_Access (eventObject));
             exception
-                when e : others =>
+                when Java_Occurrence : others =>
+                    declare
+                        e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                    begin
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, EventStrings_Package.getInstance.FIRE_EVENT, e);
+                    end;
             end;
         end loop;
         eventListenerInterface := null;
@@ -107,8 +115,12 @@ package body org.allbinary.media.graphics.geography.map.event.GeographicMapCellP
                 geographicMapCellPositionEventListenerInterface := (GeographicMapCellPositionEventListenerInterface_Access (eventListenerInterface));
                 geographicMapCellPositionEventListenerInterface.onRemoveGeographicMapCellPositionEvent (GeographicMapCellPositionEvent_Access (eventObject));
             exception
-                when e : others =>
+                when Java_Occurrence : others =>
+                    declare
+                        e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                    begin
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, EventStrings_Package.getInstance.FIRE_EVENT, e);
+                    end;
             end;
         end loop;
    end fireRemoveEvent;

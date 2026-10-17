@@ -25,8 +25,8 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 
 package org.allbinary.math.RectangleCollisionPointUtil_Package is
 
-   package GPoint_Package renames org.allbinary.graphics.GPoint_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type RectangleCollisionPointUtil is tagged;
    type RectangleCollisionPointUtil_Access is access all RectangleCollisionPointUtil'Class;

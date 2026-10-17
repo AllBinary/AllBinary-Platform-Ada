@@ -40,17 +40,17 @@ with org.allbinary.image.gui.JFrame_Package; use org.allbinary.image.gui.JFrame_
 
 package org.allbinary.image.gui.ImageToolJFrame_Package is
 
-   package FileJDialog_Package renames org.allbinary.gui.dialog.FileJDialog_Package;
-   package FileJDialogListenerInterface_Package renames org.allbinary.gui.dialog.FileJDialogListenerInterface_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package ImageProcessorInput_Package renames org.allbinary.media.image.ImageProcessorInput_Package;
-   package ImageProcessorInputCompositeInterface_Package renames org.allbinary.media.image.ImageProcessorInputCompositeInterface_Package;
-   package ColorRange_Package renames org.allbinary.media.image.analysis.ColorRange_Package;
-   package ColorRangeInterface_Package renames org.allbinary.media.image.analysis.ColorRangeInterface_Package;
-   package ImageAnalysis_Package renames org.allbinary.media.image.analysis.ImageAnalysis_Package;
-   package ImageAnalysisResults_Package renames org.allbinary.media.image.analysis.ImageAnalysisResults_Package;
-   package CommonPhoneStrings_Package renames org.allbinary.string_Id.CommonPhoneStrings_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package FileJDialog_Package renames Standard.org.allbinary.gui.dialog.FileJDialog_Package;
+   package FileJDialogListenerInterface_Package renames Standard.org.allbinary.gui.dialog.FileJDialogListenerInterface_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package ImageProcessorInput_Package renames Standard.org.allbinary.media.image.ImageProcessorInput_Package;
+   package ImageProcessorInputCompositeInterface_Package renames Standard.org.allbinary.media.image.ImageProcessorInputCompositeInterface_Package;
+   package ColorRange_Package renames Standard.org.allbinary.media.image.analysis.ColorRange_Package;
+   package ColorRangeInterface_Package renames Standard.org.allbinary.media.image.analysis.ColorRangeInterface_Package;
+   package ImageAnalysis_Package renames Standard.org.allbinary.media.image.analysis.ImageAnalysis_Package;
+   package ImageAnalysisResults_Package renames Standard.org.allbinary.media.image.analysis.ImageAnalysisResults_Package;
+   package CommonPhoneStrings_Package renames Standard.org.allbinary.string_Id.CommonPhoneStrings_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type ImageToolJFrame is tagged;
    type ImageToolJFrame_Access is access all ImageToolJFrame'Class;

@@ -25,8 +25,8 @@ with org.allbinary.view.ViewPositionFactoryInterface_Package; use org.allbinary.
 
 package org.allbinary.game.view.StaticTileLayerViewPositionFactory_Package is
 
-   package ViewPositionBase_Package renames org.allbinary.view.ViewPositionBase_Package;
-   package ViewPositionFactoryInterface_Package renames org.allbinary.view.ViewPositionFactoryInterface_Package;
+   package ViewPositionBase_Package renames Standard.org.allbinary.view.ViewPositionBase_Package;
+   package ViewPositionFactoryInterface_Package renames Standard.org.allbinary.view.ViewPositionFactoryInterface_Package;
 
    type StaticTileLayerViewPositionFactory is tagged;
    type StaticTileLayerViewPositionFactory_Access is access all StaticTileLayerViewPositionFactory'Class;

@@ -28,11 +28,11 @@ with org.allbinary.input.event.VirtualKeyboardEventListenerInterface_Package; us
 
 package org.allbinary.game.GameAdState_Package is
 
-   package GameAdStateBase_Package renames org.allbinary.business.advertisement.GameAdStateBase_Package;
-   package AdConfiguration_Package renames org.allbinary.business.advertisement.AdConfiguration_Package;
-   package VirtualKeyboardEvent_Package renames org.allbinary.input.event.VirtualKeyboardEvent_Package;
-   package VirtualKeyboardEventHandler_Package renames org.allbinary.input.event.VirtualKeyboardEventHandler_Package;
-   package VirtualKeyboardEventListenerInterface_Package renames org.allbinary.input.event.VirtualKeyboardEventListenerInterface_Package;
+   package GameAdStateBase_Package renames Standard.org.allbinary.business.advertisement.GameAdStateBase_Package;
+   package AdConfiguration_Package renames Standard.org.allbinary.business.advertisement.AdConfiguration_Package;
+   package VirtualKeyboardEvent_Package renames Standard.org.allbinary.input.event.VirtualKeyboardEvent_Package;
+   package VirtualKeyboardEventHandler_Package renames Standard.org.allbinary.input.event.VirtualKeyboardEventHandler_Package;
+   package VirtualKeyboardEventListenerInterface_Package renames Standard.org.allbinary.input.event.VirtualKeyboardEventListenerInterface_Package;
 
    type GameAdState is tagged;
    type GameAdState_Access is access all GameAdState'Class;

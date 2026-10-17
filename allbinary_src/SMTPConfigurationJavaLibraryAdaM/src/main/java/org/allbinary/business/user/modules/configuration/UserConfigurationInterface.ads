@@ -26,9 +26,9 @@ with org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigur
 
 package org.allbinary.business.user.modules.configuration.UserConfigurationInterface_Package is
 
-   package TimeCreated_Package renames org.allbinary.business.time.created.TimeCreated_Package;
-   package TimeLastModified_Package renames org.allbinary.business.time.modified.TimeLastModified_Package;
-   package UserEmailConfigurationInterface_Package renames org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationInterface_Package;
+   package TimeCreated_Package renames Standard.org.allbinary.business.time.created.TimeCreated_Package;
+   package TimeLastModified_Package renames Standard.org.allbinary.business.time.modified.TimeLastModified_Package;
+   package UserEmailConfigurationInterface_Package renames Standard.org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationInterface_Package;
 
    type UserConfigurationInterface is interface;
    type UserConfigurationInterface_Access is access all UserConfigurationInterface'Class;

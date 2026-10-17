@@ -37,12 +37,12 @@ with org.microemu.device.j2se.J2SEMutableImage_Package; use org.microemu.device.
 
 package org.allbinary.media.image.ImageUtil_Package is
 
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonLabels_Package renames org.allbinary.string_Id.CommonLabels_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package J2SEImmutableImage_Package renames org.microemu.device.j2se.J2SEImmutableImage_Package;
-   package J2SEMutableImage_Package renames org.microemu.device.j2se.J2SEMutableImage_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package J2SEImmutableImage_Package renames Standard.org.microemu.device.j2se.J2SEImmutableImage_Package;
+   package J2SEMutableImage_Package renames Standard.org.microemu.device.j2se.J2SEMutableImage_Package;
 
    type ImageUtil is tagged;
    type ImageUtil_Access is access all ImageUtil'Class;

@@ -25,7 +25,7 @@ with org.allbinary.game.IntermissionInterface_Package; use org.allbinary.game.In
 
 package org.allbinary.game.Intermission_Package is
 
-   package TimeDelayHelper_Package renames org.allbinary.time.TimeDelayHelper_Package;
+   package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
 
    type Intermission is tagged;
    type Intermission_Access is access all Intermission'Class;

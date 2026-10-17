@@ -26,8 +26,8 @@ with org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package; use org
 
 package org.allbinary.image.opengles.OpenGLImageFactory_Package is
 
-   package PlatformBitmapBaseFactory_Package renames org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package;
-   package PlatformTextureBaseFactory_Package renames org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package;
+   package PlatformBitmapBaseFactory_Package renames Standard.org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package;
+   package PlatformTextureBaseFactory_Package renames Standard.org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package;
 
    type OpenGLImageFactory is tagged;
    type OpenGLImageFactory_Access is access all OpenGLImageFactory'Class;

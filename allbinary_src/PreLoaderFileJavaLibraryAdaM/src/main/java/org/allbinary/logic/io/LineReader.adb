@@ -39,11 +39,15 @@ package body org.allbinary.logic.io.LineReader_Package is
             This.idFile.read (bytes);
             This.string_Id := Java_New_String (bytes);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (To_Unbounded_String ("File: ") & fileName, This'Unchecked_Access, To_Unbounded_String ("LineReader"), e);
             begin
                 null;
             end;
+                end;
         end;
    end Initialize;
 
@@ -64,12 +68,16 @@ package body org.allbinary.logic.io.LineReader_Package is
             end if;
             return True;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("hasNext"), e);
             begin
                 null;
             end;
             return False;
+                end;
         end;
    end hasNext;
 
@@ -87,12 +95,16 @@ package body org.allbinary.logic.io.LineReader_Package is
             This.index := (nextIndex) + (1);
             return temp;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("next"), e);
             begin
                 null;
             end;
             Java_Throw (e);
+                end;
         end;
    end next;
 

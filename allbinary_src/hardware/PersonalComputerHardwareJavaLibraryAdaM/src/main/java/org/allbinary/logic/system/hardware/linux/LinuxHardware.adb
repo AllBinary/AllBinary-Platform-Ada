@@ -84,11 +84,15 @@ package body org.allbinary.logic.system.hardware.linux.LinuxHardware_Package is
         begin
             This.init (lineNumberReader, filePath);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.OS) then
                 This.logUtil.put (To_Unbounded_String ("Hardware Data: ") & This.toString, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR, e);
             end if;
             Java_Throw (e);
+                end;
         end;
    end init;
 

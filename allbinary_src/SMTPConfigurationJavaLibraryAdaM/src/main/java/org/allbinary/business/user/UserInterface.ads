@@ -29,11 +29,11 @@ with org.allbinary.logic.control.validate.ValidationInterface_Package; use org.a
 
 package org.allbinary.business.user.UserInterface_Package is
 
-   package UserConfigurationInterface_Package renames org.allbinary.business.user.modules.configuration.UserConfigurationInterface_Package;
-   package UserRole_Package renames org.allbinary.business.user.role.UserRole_Package;
-   package TableMappingInterface_Package renames org.allbinary.data.tables.TableMappingInterface_Package;
-   package WeblisketSessionInterface_Package renames org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package;
-   package ValidationInterface_Package renames org.allbinary.logic.control.validate.ValidationInterface_Package;
+   package UserConfigurationInterface_Package renames Standard.org.allbinary.business.user.modules.configuration.UserConfigurationInterface_Package;
+   package UserRole_Package renames Standard.org.allbinary.business.user.role.UserRole_Package;
+   package TableMappingInterface_Package renames Standard.org.allbinary.data.tables.TableMappingInterface_Package;
+   package WeblisketSessionInterface_Package renames Standard.org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package;
+   package ValidationInterface_Package renames Standard.org.allbinary.logic.control.validate.ValidationInterface_Package;
 
    type UserInterface is interface and TableMappingInterface and ValidationInterface;
    type UserInterface_Access is access all UserInterface'Class;

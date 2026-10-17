@@ -30,12 +30,12 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 
 package org.allbinary.logic.string_Id.tokens.UniqueTokens_Package is
 
-   package AbPathData_Package renames org.allbinary.logic.io.path.AbPathData_Package;
-   package Replace_Package renames org.allbinary.logic.string_Id.regex.replace.Replace_Package;
-   package CommonPhoneStrings_Package renames org.allbinary.string_Id.CommonPhoneStrings_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
+   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
+   package Replace_Package renames Standard.org.allbinary.logic.string_Id.regex.replace.Replace_Package;
+   package CommonPhoneStrings_Package renames Standard.org.allbinary.string_Id.CommonPhoneStrings_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type UniqueTokens is tagged;
    type UniqueTokens_Access is access all UniqueTokens'Class;

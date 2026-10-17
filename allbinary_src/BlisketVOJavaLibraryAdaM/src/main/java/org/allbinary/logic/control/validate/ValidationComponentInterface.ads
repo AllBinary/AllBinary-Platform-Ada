@@ -25,7 +25,7 @@ with org.allbinary.logic.control.validate.ValidationInterface_Package; use org.a
 
 package org.allbinary.logic.control.validate.ValidationComponentInterface_Package is
 
-   package TransformInterface_Package renames org.allbinary.logic.visual.transform.TransformInterface_Package;
+   package TransformInterface_Package renames Standard.org.allbinary.logic.visual.transform.TransformInterface_Package;
 
    type ValidationComponentInterface is interface and TransformInterface and ValidationInterface;
    type ValidationComponentInterface_Access is access all ValidationComponentInterface'Class;

@@ -28,11 +28,11 @@ with jsinterop.annotations.JsProperty_Package; use jsinterop.annotations.JsPrope
 
 package org.allbinary.logic.util.event.AllBinaryEventObject_Package is
 
-   package JsType_Package renames jsinterop.annotations.JsType_Package;
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
-   package JsMethod_Package renames jsinterop.annotations.JsMethod_Package;
-   package JsConstructor_Package renames jsinterop.annotations.JsConstructor_Package;
-   package JsProperty_Package renames jsinterop.annotations.JsProperty_Package;
+   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package JsMethod_Package renames Standard.jsinterop.annotations.JsMethod_Package;
+   package JsConstructor_Package renames Standard.jsinterop.annotations.JsConstructor_Package;
+   package JsProperty_Package renames Standard.jsinterop.annotations.JsProperty_Package;
 
    type AllBinaryEventObject is tagged;
    type AllBinaryEventObject_Access is access all AllBinaryEventObject'Class;

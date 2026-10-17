@@ -32,14 +32,14 @@ with org.allbinary.android.input.motion.MotionEventProcessor_Package; use org.al
 
 package org.allbinary.android.input.motion.TrackballGameInputMotionEventProcessor_Package is
 
-   package MotionEvent_Package renames android.view.MotionEvent_Package;
-   package SingleKeyPressGameKeyFromMotionGestureEventListener_Package renames org.allbinary.game.input.motion.action.SingleKeyPressGameKeyFromMotionGestureEventListener_Package;
-   package DownTrackballInputToGameKeyEventAction_Package renames org.allbinary.input.motion.trackball.action.DownTrackballInputToGameKeyEventAction_Package;
-   package LeftTrackballInputToGameKeyEventAction_Package renames org.allbinary.input.motion.trackball.action.LeftTrackballInputToGameKeyEventAction_Package;
-   package RightTrackballInputToGameKeyEventAction_Package renames org.allbinary.input.motion.trackball.action.RightTrackballInputToGameKeyEventAction_Package;
-   package UpTrackballInputToGameKeyEventAction_Package renames org.allbinary.input.motion.trackball.action.UpTrackballInputToGameKeyEventAction_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package MotionEvent_Package renames Standard.android.view.MotionEvent_Package;
+   package SingleKeyPressGameKeyFromMotionGestureEventListener_Package renames Standard.org.allbinary.game.input.motion.action.SingleKeyPressGameKeyFromMotionGestureEventListener_Package;
+   package DownTrackballInputToGameKeyEventAction_Package renames Standard.org.allbinary.input.motion.trackball.action.DownTrackballInputToGameKeyEventAction_Package;
+   package LeftTrackballInputToGameKeyEventAction_Package renames Standard.org.allbinary.input.motion.trackball.action.LeftTrackballInputToGameKeyEventAction_Package;
+   package RightTrackballInputToGameKeyEventAction_Package renames Standard.org.allbinary.input.motion.trackball.action.RightTrackballInputToGameKeyEventAction_Package;
+   package UpTrackballInputToGameKeyEventAction_Package renames Standard.org.allbinary.input.motion.trackball.action.UpTrackballInputToGameKeyEventAction_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type TrackballGameInputMotionEventProcessor is tagged;
    type TrackballGameInputMotionEventProcessor_Access is access all TrackballGameInputMotionEventProcessor'Class;

@@ -25,8 +25,8 @@ with org.allbinary.layer.AllBinaryLayerFactoryInterface_Package; use org.allbina
 
 package org.allbinary.game.ag.layer.pickup.points.PointsLayerFactory_Package is
 
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package AllBinaryLayerFactoryInterface_Package renames org.allbinary.layer.AllBinaryLayerFactoryInterface_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package AllBinaryLayerFactoryInterface_Package renames Standard.org.allbinary.layer.AllBinaryLayerFactoryInterface_Package;
 
    type PointsLayerFactory is tagged;
    type PointsLayerFactory_Access is access all PointsLayerFactory'Class;

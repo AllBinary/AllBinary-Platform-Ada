@@ -29,10 +29,10 @@ with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary
 
 package org.allbinary.graphics.opengles.renderer.EmulatorCustomRenderer_Package is
 
-   package InitEmulatorFactory_Package renames org.allbinary.emulator.InitEmulatorFactory_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package PreLogUtil_Package renames org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package InitEmulatorFactory_Package renames Standard.org.allbinary.emulator.InitEmulatorFactory_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
 
    type EmulatorCustomRenderer is tagged;
    type EmulatorCustomRenderer_Access is access all EmulatorCustomRenderer'Class;

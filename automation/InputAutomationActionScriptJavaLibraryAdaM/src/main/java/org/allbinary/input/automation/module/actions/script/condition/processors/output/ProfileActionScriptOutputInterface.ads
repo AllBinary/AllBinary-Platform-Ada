@@ -24,7 +24,7 @@ with org.allbinary.input.automation.actions.script.condition.processors.ProfileA
 
 package org.allbinary.input.automation.module.actions.script.condition.processors.output.ProfileActionScriptOutputInterface_Package is
 
-   package ProfileActionScriptProcessorInterface_Package renames org.allbinary.input.automation.actions.script.condition.processors.ProfileActionScriptProcessorInterface_Package;
+   package ProfileActionScriptProcessorInterface_Package renames Standard.org.allbinary.input.automation.actions.script.condition.processors.ProfileActionScriptProcessorInterface_Package;
 
    type ProfileActionScriptOutputInterface is interface and ProfileActionScriptProcessorInterface;
    type ProfileActionScriptOutputInterface_Access is access all ProfileActionScriptOutputInterface'Class;

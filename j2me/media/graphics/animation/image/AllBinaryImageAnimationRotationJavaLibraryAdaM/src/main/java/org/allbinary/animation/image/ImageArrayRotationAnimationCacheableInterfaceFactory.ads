@@ -26,9 +26,9 @@ with org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package; 
 
 package org.allbinary.animation.image.ImageArrayRotationAnimationCacheableInterfaceFactory_Package is
 
-   package AnimationBehavior_Package renames org.allbinary.animation.AnimationBehavior_Package;
-   package CacheableInterface_Package renames org.allbinary.logic.util.cache.CacheableInterface_Package;
-   package CacheableInterfaceFactoryInterface_Package renames org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package;
+   package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
+   package CacheableInterface_Package renames Standard.org.allbinary.logic.util.cache.CacheableInterface_Package;
+   package CacheableInterfaceFactoryInterface_Package renames Standard.org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package;
 
    type ImageArrayRotationAnimationCacheableInterfaceFactory is tagged;
    type ImageArrayRotationAnimationCacheableInterfaceFactory_Access is access all ImageArrayRotationAnimationCacheableInterfaceFactory'Class;

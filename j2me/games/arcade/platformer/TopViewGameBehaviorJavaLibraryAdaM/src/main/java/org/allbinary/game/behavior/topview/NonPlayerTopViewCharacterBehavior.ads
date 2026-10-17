@@ -38,20 +38,20 @@ with org.allbinary.game.behavior.topview.TopViewCharacterBehavior_Package; use o
 
 package org.allbinary.game.behavior.topview.NonPlayerTopViewCharacterBehavior_Package is
 
-   package MultiGeographicMapBehavior_Package renames org.allbinary.media.graphics.geography.map.MultiGeographicMapBehavior_Package;
-   package Direction_Package renames org.allbinary.direction.Direction_Package;
-   package DirectionFactory_Package renames org.allbinary.direction.DirectionFactory_Package;
-   package BasicTerrainInfo_Package renames org.allbinary.game.terrain.BasicTerrainInfo_Package;
-   package TerrainEvent_Package renames org.allbinary.game.terrain.TerrainEvent_Package;
-   package TerrainEventCircularStaticPool_Package renames org.allbinary.game.terrain.TerrainEventCircularStaticPool_Package;
-   package TerrainEventHandler_Package renames org.allbinary.game.terrain.TerrainEventHandler_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package AngleFactory_Package renames org.allbinary.math.AngleFactory_Package;
-   package BasicGeographicMap_Package renames org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
-   package BasicGeographicMapCellPositionFactory_Package renames org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package;
-   package GeographicMapCellPosition_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
-   package GeographicMapCellType_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
-   package SimpleGeographicMapCellPositionFactory_Package renames org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package;
+   package MultiGeographicMapBehavior_Package renames Standard.org.allbinary.media.graphics.geography.map.MultiGeographicMapBehavior_Package;
+   package Direction_Package renames Standard.org.allbinary.direction.Direction_Package;
+   package DirectionFactory_Package renames Standard.org.allbinary.direction.DirectionFactory_Package;
+   package BasicTerrainInfo_Package renames Standard.org.allbinary.game.terrain.BasicTerrainInfo_Package;
+   package TerrainEvent_Package renames Standard.org.allbinary.game.terrain.TerrainEvent_Package;
+   package TerrainEventCircularStaticPool_Package renames Standard.org.allbinary.game.terrain.TerrainEventCircularStaticPool_Package;
+   package TerrainEventHandler_Package renames Standard.org.allbinary.game.terrain.TerrainEventHandler_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;
+   package BasicGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
+   package BasicGeographicMapCellPositionFactory_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package;
+   package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+   package GeographicMapCellType_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
+   package SimpleGeographicMapCellPositionFactory_Package renames Standard.org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package;
 
    type NonPlayerTopViewCharacterBehavior is tagged;
    type NonPlayerTopViewCharacterBehavior_Access is access all NonPlayerTopViewCharacterBehavior'Class;

@@ -26,8 +26,8 @@ with org.allbinary.data.tree.category.CategoryModifierTreeInterface_Package; use
 
 package org.allbinary.data.tree.category.CategoryLoaderInterface_Package is
 
-   package CategoryInterface_Package renames org.allbinary.business.category.CategoryInterface_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
+   package CategoryInterface_Package renames Standard.org.allbinary.business.category.CategoryInterface_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
 
    type CategoryLoaderInterface is interface and CategoryModifierTreeInterface;
    type CategoryLoaderInterface_Access is access all CategoryLoaderInterface'Class;

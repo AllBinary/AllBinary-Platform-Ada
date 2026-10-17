@@ -30,13 +30,13 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 
 package org.allbinary.game.layer.waypoint.WaypointLayerInterface_Package is
 
-   package CaptionAnimationHelperBase_Package renames org.allbinary.animation.caption.CaptionAnimationHelperBase_Package;
-   package WaypointBehaviorBase_Package renames org.allbinary.game.layer.WaypointBehaviorBase_Package;
-   package TrackingEvent_Package renames org.allbinary.game.tracking.TrackingEvent_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package GeographicMapCellHistory_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package;
-   package GeographicMapCellPosition_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package CaptionAnimationHelperBase_Package renames Standard.org.allbinary.animation.caption.CaptionAnimationHelperBase_Package;
+   package WaypointBehaviorBase_Package renames Standard.org.allbinary.game.layer.WaypointBehaviorBase_Package;
+   package TrackingEvent_Package renames Standard.org.allbinary.game.tracking.TrackingEvent_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package GeographicMapCellHistory_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package;
+   package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type WaypointLayerInterface is interface;
    type WaypointLayerInterface_Access is access all WaypointLayerInterface'Class;

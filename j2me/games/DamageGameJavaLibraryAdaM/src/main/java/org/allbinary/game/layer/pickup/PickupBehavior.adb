@@ -56,9 +56,13 @@ package body org.allbinary.game.layer.pickup.PickupBehavior_Package is
                 pickupProcessorInterface.process (This.ownerLayerInterface);
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("doPickup"), e);
+                end;
         end;
    end doPickup;
 
@@ -87,9 +91,13 @@ package body org.allbinary.game.layer.pickup.PickupBehavior_Package is
             end if;
             pickupLayerInterface.setPickedUp;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             PreLogUtil_Package.putOE (commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("doPickup"), e);
+                end;
         end;
    end doPickupLayer;
 

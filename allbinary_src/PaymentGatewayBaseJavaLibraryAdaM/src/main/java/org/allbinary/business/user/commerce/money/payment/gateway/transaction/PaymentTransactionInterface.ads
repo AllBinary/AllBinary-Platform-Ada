@@ -26,9 +26,9 @@ with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.dat
 
 package org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterface_Package is
 
-   package OrderHistory_Package renames org.allbinary.business.user.commerce.inventory.order.OrderHistory_Package;
-   package TableMappingInterface_Package renames org.allbinary.data.tables.TableMappingInterface_Package;
-   package DomNodeInterface_Package renames org.allbinary.data.tree.dom.DomNodeInterface_Package;
+   package OrderHistory_Package renames Standard.org.allbinary.business.user.commerce.inventory.order.OrderHistory_Package;
+   package TableMappingInterface_Package renames Standard.org.allbinary.data.tables.TableMappingInterface_Package;
+   package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
 
    type PaymentTransactionInterface is interface and TableMappingInterface and DomNodeInterface;
    type PaymentTransactionInterface_Access is access all PaymentTransactionInterface'Class;

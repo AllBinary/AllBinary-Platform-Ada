@@ -17,10 +17,10 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 
 package org.allbinary.graphics.form.item.ABCustomItem_Package is
 
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package BasicColorFactory_Package renames org.allbinary.graphics.color.BasicColorFactory_Package;
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type ABCustomItem is tagged;
    type ABCustomItem_Access is access all ABCustomItem'Class;

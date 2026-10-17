@@ -24,7 +24,7 @@ with org.allbinary.game.input.GameInputProcessor_Package; use org.allbinary.game
 
 package org.allbinary.game.layer.special.SpecialGameInputProcessor_Package is
 
-   package GameInputProcessor_Package renames org.allbinary.game.input.GameInputProcessor_Package;
+   package GameInputProcessor_Package renames Standard.org.allbinary.game.input.GameInputProcessor_Package;
 
    type SpecialGameInputProcessor is tagged;
    type SpecialGameInputProcessor_Access is access all SpecialGameInputProcessor'Class;

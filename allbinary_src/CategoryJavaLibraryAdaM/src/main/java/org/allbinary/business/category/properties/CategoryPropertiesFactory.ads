@@ -28,9 +28,9 @@ with org.allbinary.business.category.properties.CategoryPropertiesFactoryInterfa
 
 package org.allbinary.business.category.properties.CategoryPropertiesFactory_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type CategoryPropertiesFactory is tagged;
    type CategoryPropertiesFactory_Access is access all CategoryPropertiesFactory'Class;

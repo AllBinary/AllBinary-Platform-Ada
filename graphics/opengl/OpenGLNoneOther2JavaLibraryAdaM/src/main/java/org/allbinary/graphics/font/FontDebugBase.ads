@@ -13,7 +13,7 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 
 package org.allbinary.graphics.font.FontDebugBase_Package is
 
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
 
    type FontDebugBase is tagged;
    type FontDebugBase_Access is access all FontDebugBase'Class;

@@ -36,15 +36,15 @@ with admin.taghelpers.Table_Package; use admin.taghelpers.Table_Package;
 
 package admin.taghelpers.PaymentHelper_Package is
 
-   package Portion_Package renames org.allbinary.business.installer.Portion_Package;
-   package PaymentFactory_Package renames org.allbinary.business.user.commerce.money.payment.PaymentFactory_Package;
-   package PaymentInterface_Package renames org.allbinary.business.user.commerce.money.payment.PaymentInterface_Package;
-   package PaymentEntity_Package renames org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity_Package;
-   package PaymentEntityFactory_Package renames org.allbinary.data.tables.user.commerce.money.payment.PaymentEntityFactory_Package;
-   package WeblisketSession_Package renames org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package AbSqlTableUtil_Package renames org.allbinary.logic.communication.sql.AbSqlTableUtil_Package;
-   package LicensingException_Package renames org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package Portion_Package renames Standard.org.allbinary.business.installer.Portion_Package;
+   package PaymentFactory_Package renames Standard.org.allbinary.business.user.commerce.money.payment.PaymentFactory_Package;
+   package PaymentInterface_Package renames Standard.org.allbinary.business.user.commerce.money.payment.PaymentInterface_Package;
+   package PaymentEntity_Package renames Standard.org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity_Package;
+   package PaymentEntityFactory_Package renames Standard.org.allbinary.data.tables.user.commerce.money.payment.PaymentEntityFactory_Package;
+   package WeblisketSession_Package renames Standard.org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package AbSqlTableUtil_Package renames Standard.org.allbinary.logic.communication.sql.AbSqlTableUtil_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
 
    type PaymentHelper is tagged;
    type PaymentHelper_Access is access all PaymentHelper'Class;

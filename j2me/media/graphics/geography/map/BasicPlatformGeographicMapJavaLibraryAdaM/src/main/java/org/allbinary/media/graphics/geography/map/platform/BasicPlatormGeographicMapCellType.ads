@@ -27,10 +27,10 @@ with org.allbinary.util.BasicArrayListS_Package; use org.allbinary.util.BasicArr
 
 package org.allbinary.media.graphics.geography.map.platform.BasicPlatormGeographicMapCellType_Package is
 
-   package SmallIntegerSingletonFactory_Package renames org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
-   package GeographicMapCellType_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListS_Package renames org.allbinary.util.BasicArrayListS_Package;
+   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+   package GeographicMapCellType_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListS_Package renames Standard.org.allbinary.util.BasicArrayListS_Package;
 
    type BasicPlatormGeographicMapCellType is tagged;
    type BasicPlatormGeographicMapCellType_Access is access all BasicPlatormGeographicMapCellType'Class;

@@ -89,9 +89,13 @@ package body org.allbinary.logic.io.file.FileLockUtil_Package is
         begin
             return This.getLock (AbFileOutputStream_Package.createFromAbFileAppend (file, True));
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (To_Unbounded_String ("Exception returns null"), This'Unchecked_Access, To_Unbounded_String ("getLock"), e);
             return null;
+                end;
         end;
         --  finally
         begin
@@ -107,9 +111,13 @@ package body org.allbinary.logic.io.file.FileLockUtil_Package is
             fileLock := This.getLock (fileOutputStream.getChannel);
             return fileLock;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (To_Unbounded_String ("Exception returns null"), This'Unchecked_Access, To_Unbounded_String ("getLock"), e);
             return null;
+                end;
         end;
         --  finally
         begin
@@ -126,9 +134,13 @@ package body org.allbinary.logic.io.file.FileLockUtil_Package is
             fileLock := fileChannel.tryLock;
             return fileLock;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (To_Unbounded_String ("Exception returns null"), This'Unchecked_Access, To_Unbounded_String ("getLock"), e);
             return null;
+                end;
         end;
         --  finally
         begin

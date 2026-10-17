@@ -47,8 +47,12 @@ package body org.allbinary.graphics.draw.DrawStringUtil_Package is
         begin
             graphics.drawSubstring (string_Id, offset, length, (x) - (width), y, This.anchor);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             PreLogUtil_Package.put (StringMaker_Package.Create.append (To_Unbounded_String ("Exception: stringLength: ")).appendint (Length (string_Id)).append (To_Unbounded_String (" offset: ")).appendint (offset).append (To_Unbounded_String (" currentLength: ")).appendint (length).toString, This'Unchecked_Access, To_Unbounded_String ("drawCenterString"));
+                end;
         end;
    end drawCenterString;
 

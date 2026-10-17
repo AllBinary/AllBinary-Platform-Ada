@@ -24,7 +24,7 @@ with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.
 
 package org.allbinary.game.combat.damage.DamageFloaters_Package is
 
-   package Paintable_Package renames org.allbinary.graphics.paint.Paintable_Package;
+   package Paintable_Package renames Standard.org.allbinary.graphics.paint.Paintable_Package;
 
    type DamageFloaters is tagged;
    type DamageFloaters_Access is access all DamageFloaters'Class;

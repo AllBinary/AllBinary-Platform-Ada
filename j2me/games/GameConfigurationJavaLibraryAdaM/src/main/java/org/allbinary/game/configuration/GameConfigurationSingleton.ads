@@ -27,10 +27,10 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 
 package org.allbinary.game.configuration.GameConfigurationSingleton_Package is
 
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package ABHashtable_Package renames org.allbinary.util.ABHashtable_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type GameConfigurationSingleton is tagged;
    type GameConfigurationSingleton_Access is access all GameConfigurationSingleton'Class;

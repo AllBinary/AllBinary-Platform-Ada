@@ -31,13 +31,13 @@ with org.allbinary.view.ViewPosition_Package; use org.allbinary.view.ViewPositio
 
 package org.allbinary.game.layer.pickup.IconLayer_Package is
 
-   package Animation_Package renames org.allbinary.animation.Animation_Package;
-   package NullAnimationFactory_Package renames org.allbinary.animation.NullAnimationFactory_Package;
-   package PointFactory_Package renames org.allbinary.graphics.PointFactory_Package;
-   package Rectangle_Package renames org.allbinary.graphics.Rectangle_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package ViewPosition_Package renames org.allbinary.view.ViewPosition_Package;
+   package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
+   package NullAnimationFactory_Package renames Standard.org.allbinary.animation.NullAnimationFactory_Package;
+   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
+   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package ViewPosition_Package renames Standard.org.allbinary.view.ViewPosition_Package;
 
    type IconLayer is tagged;
    type IconLayer_Access is access all IconLayer'Class;

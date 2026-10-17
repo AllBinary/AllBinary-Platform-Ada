@@ -31,13 +31,13 @@ with org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package; 
 
 package org.allbinary.logic.system.security.licensing.AbeClientLicense_Package is
 
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package StringValidationUtil_Package renames org.allbinary.logic.string_Id.StringValidationUtil_Package;
-   package ABHashtable_Package renames org.allbinary.util.ABHashtable_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type AbeClientLicense is tagged;
    type AbeClientLicense_Access is access all AbeClientLicense'Class;

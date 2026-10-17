@@ -28,7 +28,7 @@ with admin.taghelpers.TagHelperFactoryInterface_Package; use admin.taghelpers.Ta
 
 package admin.taghelpers.CategoryRequestHelperFactory_Package is
 
-   package LicensingException_Package renames org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
 
    type CategoryRequestHelperFactory is tagged;
    type CategoryRequestHelperFactory_Access is access all CategoryRequestHelperFactory'Class;

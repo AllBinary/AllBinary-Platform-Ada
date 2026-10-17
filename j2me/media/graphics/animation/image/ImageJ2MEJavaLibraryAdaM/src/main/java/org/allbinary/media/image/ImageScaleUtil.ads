@@ -25,7 +25,7 @@ with org.allbinary.image.ImageCache_Package; use org.allbinary.image.ImageCache_
 
 package org.allbinary.media.image.ImageScaleUtil_Package is
 
-   package ImageCache_Package renames org.allbinary.image.ImageCache_Package;
+   package ImageCache_Package renames Standard.org.allbinary.image.ImageCache_Package;
 
    type ImageScaleUtil is tagged;
    type ImageScaleUtil_Access is access all ImageScaleUtil'Class;

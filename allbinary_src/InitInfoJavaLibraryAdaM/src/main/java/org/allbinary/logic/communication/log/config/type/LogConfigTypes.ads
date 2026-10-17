@@ -30,13 +30,13 @@ with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 
 package org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package is
 
-   package DomNodeHelper_Package renames org.allbinary.data.tree.dom.DomNodeHelper_Package;
-   package DomSearchHelper_Package renames org.allbinary.data.tree.dom.DomSearchHelper_Package;
-   package PreLogUtil_Package renames org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package LoggingInitInfo_Package renames org.allbinary.logic.communication.log.config.LoggingInitInfo_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
+   package DomNodeHelper_Package renames Standard.org.allbinary.data.tree.dom.DomNodeHelper_Package;
+   package DomSearchHelper_Package renames Standard.org.allbinary.data.tree.dom.DomSearchHelper_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package LoggingInitInfo_Package renames Standard.org.allbinary.logic.communication.log.config.LoggingInitInfo_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type LogConfigTypes is tagged;
    type LogConfigTypes_Access is access all LogConfigTypes'Class;

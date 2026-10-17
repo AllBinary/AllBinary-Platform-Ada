@@ -28,8 +28,8 @@ with admin.taghelpers.TagHelperFactory_Package; use admin.taghelpers.TagHelperFa
 
 package admin.taghelpers.OrderItemsHelperFactory_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package LicensingException_Package renames org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
 
    type OrderItemsHelperFactory is tagged;
    type OrderItemsHelperFactory_Access is access all OrderItemsHelperFactory'Class;

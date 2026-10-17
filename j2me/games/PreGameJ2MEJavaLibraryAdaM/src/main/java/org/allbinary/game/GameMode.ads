@@ -24,7 +24,7 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 
 package org.allbinary.game.GameMode_Package is
 
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type GameMode is tagged;
    type GameMode_Access is access all GameMode'Class;

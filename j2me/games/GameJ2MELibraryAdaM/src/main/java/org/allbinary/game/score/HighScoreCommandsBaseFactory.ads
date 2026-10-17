@@ -26,8 +26,8 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 
 package org.allbinary.game.score.HighScoreCommandsBaseFactory_Package is
 
-   package J2MEUtil_Package renames org.allbinary.J2MEUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
+   package J2MEUtil_Package renames Standard.org.allbinary.J2MEUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type HighScoreCommandsBaseFactory is tagged;
    type HighScoreCommandsBaseFactory_Access is access all HighScoreCommandsBaseFactory'Class;

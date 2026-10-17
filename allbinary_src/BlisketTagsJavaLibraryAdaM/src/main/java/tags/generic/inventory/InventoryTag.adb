@@ -50,8 +50,12 @@ package body tags.generic_Id.inventory.InventoryTag_Package is
             result := Unbounded_String (method.invoke (anyType, null));
             This.pageContext.getOut.print (result);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Java_Throw (e);
+                end;
         end;
    end search;
 
@@ -70,8 +74,12 @@ package body tags.generic_Id.inventory.InventoryTag_Package is
             result := Unbounded_String (method.invoke (anyType, null));
             This.pageContext.getOut.print (result);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Java_Throw (e);
+                end;
         end;
    end viewSummary;
 
@@ -100,9 +108,13 @@ package body tags.generic_Id.inventory.InventoryTag_Package is
             end if;
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Command Null")));
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             AbResponseHandler_Package.sendJspTagLicensingRedirect (This.pageContext, e);
             return SKIP_BODY;
+                end;
         end;
    end doStartTag;
 

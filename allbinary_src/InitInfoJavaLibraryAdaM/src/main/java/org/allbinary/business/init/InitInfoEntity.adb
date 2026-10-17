@@ -80,11 +80,15 @@ package body org.allbinary.business.init.InitInfoEntity_Package is
                 return False;
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.PRELOADERERROR) then
                 PreLogUtil_Package.putOE (This.commonStrings.EXCEPTION_Id, This.NAME, This.METHOD_GET, e);
             end if;
             return False;
+                end;
         end;
    end get;
 
@@ -105,11 +109,15 @@ package body org.allbinary.business.init.InitInfoEntity_Package is
                 return False;
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.PRELOADERERROR) then
                 PreLogUtil_Package.putOE (This.commonStrings.EXCEPTION_Id, This.NAME, This.METHOD_IS, e);
             end if;
             return False;
+                end;
         end;
    end is_Id;
 
@@ -129,10 +137,14 @@ package body org.allbinary.business.init.InitInfoEntity_Package is
             values.add (InitInfo_Package.getInstance.getMainPath);
             This.insert (values);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.PRELOADERERROR) then
                 PreLogUtil_Package.putOE (This.commonStrings.EXCEPTION_Id, This.NAME, This.METHOD_ADD, e);
             end if;
+                end;
         end;
    end add;
 

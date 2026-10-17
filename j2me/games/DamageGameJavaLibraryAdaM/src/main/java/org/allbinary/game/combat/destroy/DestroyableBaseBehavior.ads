@@ -25,7 +25,7 @@ with org.allbinary.game.combat.destroy.DestroyableInterface_Package; use org.all
 
 package org.allbinary.game.combat.destroy.DestroyableBaseBehavior_Package is
 
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type DestroyableBaseBehavior is tagged;
    type DestroyableBaseBehavior_Access is access all DestroyableBaseBehavior'Class;

@@ -55,9 +55,13 @@ package body org.allbinary.logic.util.event.handler.BasicEventHandler_Package is
                 stringBuffer.append (LISTENER);
                 stringBuffer.append (StringUtil_Package.getInstance.toString (eventListenerInterface));
             exception
-                when e : others =>
+                when Java_Occurrence : others =>
+                    declare
+                        e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                    begin
                 commonStrings := CommonStrings_Package.getInstance;
                 This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.TOSTRING, e);
+                    end;
             end;
             index := index + 1;
         end loop;
@@ -106,9 +110,13 @@ package body org.allbinary.logic.util.event.handler.BasicEventHandler_Package is
                 eventListenerInterface := EventListenerInterface_Access (This.eventListenerInterfaceList.objectArray (index));
                 This.process (eventObject, eventListenerInterface);
             exception
-                when e : others =>
+                when Java_Occurrence : others =>
+                    declare
+                        e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                    begin
                 commonStrings := CommonStrings_Package.getInstance;
                 This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, EventStrings_Package.getInstance.FIRE_EVENT, e);
+                    end;
             end;
             index := index + 1;
         end loop;

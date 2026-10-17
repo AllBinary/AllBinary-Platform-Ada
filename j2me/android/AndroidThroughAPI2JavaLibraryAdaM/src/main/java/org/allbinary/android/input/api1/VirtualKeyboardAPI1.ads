@@ -26,9 +26,9 @@ with android.app.Activity_Package; use android.app.Activity_Package;
 
 package org.allbinary.android.input.api1.VirtualKeyboardAPI1_Package is
 
-   package VirtualKeyboard_Package renames org.allbinary.android.input.VirtualKeyboard_Package;
-   package VirtualKeyboardEventListenerInterface_Package renames org.allbinary.input.event.VirtualKeyboardEventListenerInterface_Package;
-   package Activity_Package renames android.app.Activity_Package;
+   package VirtualKeyboard_Package renames Standard.org.allbinary.android.input.VirtualKeyboard_Package;
+   package VirtualKeyboardEventListenerInterface_Package renames Standard.org.allbinary.input.event.VirtualKeyboardEventListenerInterface_Package;
+   package Activity_Package renames Standard.android.app.Activity_Package;
 
    type VirtualKeyboardAPI1 is tagged;
    type VirtualKeyboardAPI1_Access is access all VirtualKeyboardAPI1'Class;

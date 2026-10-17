@@ -26,9 +26,9 @@ with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 
 package org.allbinary.input.automation.actions.script.condition.processors.BasicProfileActionScriptProcessorNode_Package is
 
-   package DomSearchHelper_Package renames org.allbinary.data.tree.dom.DomSearchHelper_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
+   package DomSearchHelper_Package renames Standard.org.allbinary.data.tree.dom.DomSearchHelper_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type BasicProfileActionScriptProcessorNode is tagged;
    type BasicProfileActionScriptProcessorNode_Access is access all BasicProfileActionScriptProcessorNode'Class;

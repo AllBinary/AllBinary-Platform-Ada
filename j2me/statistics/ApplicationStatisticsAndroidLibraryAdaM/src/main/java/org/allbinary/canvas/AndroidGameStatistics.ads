@@ -29,11 +29,11 @@ with org.allbinary.canvas.BaseGameStatistics_Package; use org.allbinary.canvas.B
 
 package org.allbinary.canvas.AndroidGameStatistics_Package is
 
-   package View_Package renames android.view.View_Package;
-   package BaseViewWrapper_Package renames org.allbinary.android.view.BaseViewWrapper_Package;
-   package ViewWrapper_Package renames org.allbinary.android.view.ViewWrapper_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
+   package View_Package renames Standard.android.view.View_Package;
+   package BaseViewWrapper_Package renames Standard.org.allbinary.android.view.BaseViewWrapper_Package;
+   package ViewWrapper_Package renames Standard.org.allbinary.android.view.ViewWrapper_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type AndroidGameStatistics is tagged;
    type AndroidGameStatistics_Access is access all AndroidGameStatistics'Class;

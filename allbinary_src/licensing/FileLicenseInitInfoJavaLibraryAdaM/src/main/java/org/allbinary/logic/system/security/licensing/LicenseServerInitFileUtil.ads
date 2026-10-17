@@ -34,15 +34,15 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.logic.system.security.licensing.LicenseServerInitFileUtil_Package is
 
-   package LicenseInitInfoUtil_Package renames org.allbinary.business.init.LicenseInitInfoUtil_Package;
-   package ResourceUtil_Package renames org.allbinary.data.resource.ResourceUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package FileStreamFactory_Package renames org.allbinary.logic.io.FileStreamFactory_Package;
-   package StreamUtil_Package renames org.allbinary.logic.io.StreamUtil_Package;
-   package FileFactory_Package renames org.allbinary.logic.io.file.FileFactory_Package;
-   package SimpleFileUtil_Package renames org.allbinary.logic.io.file.SimpleFileUtil_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package LicenseInitInfoUtil_Package renames Standard.org.allbinary.business.init.LicenseInitInfoUtil_Package;
+   package ResourceUtil_Package renames Standard.org.allbinary.data.resource.ResourceUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package FileStreamFactory_Package renames Standard.org.allbinary.logic.io.FileStreamFactory_Package;
+   package StreamUtil_Package renames Standard.org.allbinary.logic.io.StreamUtil_Package;
+   package FileFactory_Package renames Standard.org.allbinary.logic.io.file.FileFactory_Package;
+   package SimpleFileUtil_Package renames Standard.org.allbinary.logic.io.file.SimpleFileUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type LicenseServerInitFileUtil is tagged;
    type LicenseServerInitFileUtil_Access is access all LicenseServerInitFileUtil'Class;

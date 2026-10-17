@@ -29,9 +29,9 @@ with org.allbinary.game.displayable.canvas.Runnable_Package; use org.allbinary.g
 
 package org.allbinary.game.displayable.canvas.CommandRunnable_Package is
 
-   package MyCanvas_Package renames org.allbinary.graphics.displayable.MyCanvas_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package MyCanvas_Package renames Standard.org.allbinary.graphics.displayable.MyCanvas_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type CommandRunnable is tagged;
    type CommandRunnable_Access is access all CommandRunnable'Class;

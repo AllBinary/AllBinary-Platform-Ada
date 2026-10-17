@@ -26,9 +26,9 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 
 package org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package is
 
-   package ContextConfigurationInterface_Package renames org.allbinary.business.context.configuration.ContextConfigurationInterface_Package;
-   package TableMappingInterface_Package renames org.allbinary.data.tables.TableMappingInterface_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package ContextConfigurationInterface_Package renames Standard.org.allbinary.business.context.configuration.ContextConfigurationInterface_Package;
+   package TableMappingInterface_Package renames Standard.org.allbinary.data.tables.TableMappingInterface_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type StoreFrontInterface is interface and TableMappingInterface;
    type StoreFrontInterface_Access is access all StoreFrontInterface'Class;

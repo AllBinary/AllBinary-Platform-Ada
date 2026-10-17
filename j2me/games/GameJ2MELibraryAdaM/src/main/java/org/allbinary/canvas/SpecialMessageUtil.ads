@@ -28,11 +28,11 @@ with org.allbinary.system.Memory_Package; use org.allbinary.system.Memory_Packag
 
 package org.allbinary.canvas.SpecialMessageUtil_Package is
 
-   package Features_Package renames org.allbinary.game.configuration.feature.Features_Package;
-   package OpenGLFeatureFactory_Package renames org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
-   package Memory_Package renames org.allbinary.system.Memory_Package;
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
+   package OpenGLFeatureFactory_Package renames Standard.org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package Memory_Package renames Standard.org.allbinary.system.Memory_Package;
 
    type SpecialMessageUtil is tagged;
    type SpecialMessageUtil_Access is access all SpecialMessageUtil'Class;

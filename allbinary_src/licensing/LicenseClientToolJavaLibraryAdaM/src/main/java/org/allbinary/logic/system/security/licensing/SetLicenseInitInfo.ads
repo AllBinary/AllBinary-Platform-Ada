@@ -33,11 +33,11 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 
 package org.allbinary.logic.system.security.licensing.SetLicenseInitInfo_Package is
 
-   package LicenseInitInfo_Package renames org.allbinary.business.init.LicenseInitInfo_Package;
-   package LicenseInitInfoUtil_Package renames org.allbinary.business.init.LicenseInitInfoUtil_Package;
-   package FileFactory_Package renames org.allbinary.logic.io.file.FileFactory_Package;
-   package PATH_GLOBALS_Package renames org.allbinary.globals.PATH_GLOBALS_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package LicenseInitInfo_Package renames Standard.org.allbinary.business.init.LicenseInitInfo_Package;
+   package LicenseInitInfoUtil_Package renames Standard.org.allbinary.business.init.LicenseInitInfoUtil_Package;
+   package FileFactory_Package renames Standard.org.allbinary.logic.io.file.FileFactory_Package;
+   package PATH_GLOBALS_Package renames Standard.org.allbinary.globals.PATH_GLOBALS_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type SetLicenseInitInfo is tagged;
    type SetLicenseInitInfo_Access is access all SetLicenseInitInfo'Class;

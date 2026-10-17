@@ -25,7 +25,7 @@ with org.allbinary.animation.IndexedAnimationInterface_Package; use org.allbinar
 
 package org.allbinary.animation.VectorAnimationInterface_Package is
 
-   package ColorCompositeInterface_Package renames org.allbinary.graphics.color.ColorCompositeInterface_Package;
+   package ColorCompositeInterface_Package renames Standard.org.allbinary.graphics.color.ColorCompositeInterface_Package;
 
    type VectorAnimationInterface is interface and IndexedAnimationInterface and ColorCompositeInterface;
    type VectorAnimationInterface_Access is access all VectorAnimationInterface'Class;

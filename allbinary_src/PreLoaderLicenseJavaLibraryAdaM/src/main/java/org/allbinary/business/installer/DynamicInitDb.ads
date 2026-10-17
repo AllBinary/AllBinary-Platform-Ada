@@ -28,10 +28,10 @@ with org.allbinary.business.installer.InitDb_Package; use org.allbinary.business
 
 package org.allbinary.business.installer.DynamicInitDb_Package is
 
-   package DatabaseConnectionInfoInterface_Package renames org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package;
-   package InitDbHelperFactory_Package renames org.allbinary.business.init.db.InitDbHelperFactory_Package;
-   package AbeClientInformationInterface_Package renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-   package LicensingException_Package renames org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package DatabaseConnectionInfoInterface_Package renames Standard.org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package;
+   package InitDbHelperFactory_Package renames Standard.org.allbinary.business.init.db.InitDbHelperFactory_Package;
+   package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
 
    type DynamicInitDb is tagged;
    type DynamicInitDb_Access is access all DynamicInitDb'Class;

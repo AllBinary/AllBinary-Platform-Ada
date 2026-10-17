@@ -27,9 +27,9 @@ with org.allbinary.canvas.Processor_Package; use org.allbinary.canvas.Processor_
 
 package org.allbinary.midlet.MidletExitProcessorFactory_Package is
 
-   package AppletUtil_Package renames org.allbinary.AppletUtil_Package;
-   package J2MEUtil_Package renames org.allbinary.J2MEUtil_Package;
-   package Processor_Package renames org.allbinary.canvas.Processor_Package;
+   package AppletUtil_Package renames Standard.org.allbinary.AppletUtil_Package;
+   package J2MEUtil_Package renames Standard.org.allbinary.J2MEUtil_Package;
+   package Processor_Package renames Standard.org.allbinary.canvas.Processor_Package;
 
    type MidletExitProcessorFactory is tagged;
    type MidletExitProcessorFactory_Access is access all MidletExitProcessorFactory'Class;

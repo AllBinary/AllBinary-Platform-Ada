@@ -27,10 +27,10 @@ with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_
 
 package org.allbinary.game.ag.ai.InputProbability_Package is
 
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package SmallIntegerSingletonFactory_Package renames org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
-   package TimeDelayHelper_Package renames org.allbinary.time.TimeDelayHelper_Package;
-   package ABHashtable_Package renames org.allbinary.util.ABHashtable_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+   package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
    type InputProbability is tagged;
    type InputProbability_Access is access all InputProbability'Class;

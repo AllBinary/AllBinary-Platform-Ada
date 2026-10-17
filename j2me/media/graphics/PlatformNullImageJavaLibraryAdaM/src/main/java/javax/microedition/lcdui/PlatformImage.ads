@@ -24,7 +24,7 @@ with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Pack
 
 package javax.microedition.lcdui.PlatformImage_Package is
 
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
 
    type PlatformImage is tagged;
    type PlatformImage_Access is access all PlatformImage'Class;

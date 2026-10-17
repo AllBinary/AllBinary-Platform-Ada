@@ -29,12 +29,12 @@ with jsinterop.annotations.JsProperty_Package; use jsinterop.annotations.JsPrope
 
 package org.allbinary.util.CircularIndexUtil_Package is
 
-   package JsType_Package renames jsinterop.annotations.JsType_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonLabels_Package renames org.allbinary.string_Id.CommonLabels_Package;
-   package JsMethod_Package renames jsinterop.annotations.JsMethod_Package;
-   package JsConstructor_Package renames jsinterop.annotations.JsConstructor_Package;
-   package JsProperty_Package renames jsinterop.annotations.JsProperty_Package;
+   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package JsMethod_Package renames Standard.jsinterop.annotations.JsMethod_Package;
+   package JsConstructor_Package renames Standard.jsinterop.annotations.JsConstructor_Package;
+   package JsProperty_Package renames Standard.jsinterop.annotations.JsProperty_Package;
 
    type CircularIndexUtil is tagged;
    type CircularIndexUtil_Access is access all CircularIndexUtil'Class;

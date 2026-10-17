@@ -27,10 +27,10 @@ with org.allbinary.layer.LayerProcessor_Package; use org.allbinary.layer.LayerPr
 
 package org.allbinary.ai.OptimizedArtificialIntelligenceLayerProcessorForCollidableLayer_Package is
 
-   package CollidableCompositeLayer_Package renames org.allbinary.game.layer.CollidableCompositeLayer_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package AllBinaryLayerManager_Package renames org.allbinary.layer.AllBinaryLayerManager_Package;
-   package LayerProcessor_Package renames org.allbinary.layer.LayerProcessor_Package;
+   package CollidableCompositeLayer_Package renames Standard.org.allbinary.game.layer.CollidableCompositeLayer_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
+   package LayerProcessor_Package renames Standard.org.allbinary.layer.LayerProcessor_Package;
 
    type OptimizedArtificialIntelligenceLayerProcessorForCollidableLayer is tagged;
    type OptimizedArtificialIntelligenceLayerProcessorForCollidableLayer_Access is access all OptimizedArtificialIntelligenceLayerProcessorForCollidableLayer'Class;

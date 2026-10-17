@@ -27,9 +27,9 @@ with views.generic_Id.order.history.OrderHistoryView_Package; use views.generic_
 
 package views.generic_Id.order.history.ValidationView_Package is
 
-   package MESSAGES_Package renames org.allbinary.globals.MESSAGES_Package;
-   package ValidationComponentInterface_Package renames org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
-   package TransformInfoInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package MESSAGES_Package renames Standard.org.allbinary.globals.MESSAGES_Package;
+   package ValidationComponentInterface_Package renames Standard.org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
+   package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 
    type ValidationView is tagged;
    type ValidationView_Access is access all ValidationView'Class;

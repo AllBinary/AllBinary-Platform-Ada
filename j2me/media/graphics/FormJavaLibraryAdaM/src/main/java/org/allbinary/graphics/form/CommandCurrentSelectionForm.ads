@@ -36,16 +36,16 @@ with org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package; use org.all
 
 package org.allbinary.graphics.form.CommandCurrentSelectionForm_Package is
 
-   package J2MEUtil_Package renames org.allbinary.J2MEUtil_Package;
-   package Animation_Package renames org.allbinary.animation.Animation_Package;
-   package NullAnimationFactory_Package renames org.allbinary.animation.NullAnimationFactory_Package;
-   package RectangleAdjustedAnimation_Package renames org.allbinary.animation.vector.RectangleAdjustedAnimation_Package;
-   package RectangleFilledAdjustedAnimation_Package renames org.allbinary.animation.vector.RectangleFilledAdjustedAnimation_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package BasicColorFactory_Package renames org.allbinary.graphics.color.BasicColorFactory_Package;
-   package UpdateMyFontInterface_Package renames org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-   package CommandTextItem_Package renames org.allbinary.graphics.form.item.CommandTextItem_Package;
-   package ABCustomItem_Package renames org.allbinary.graphics.form.item.ABCustomItem_Package;
+   package J2MEUtil_Package renames Standard.org.allbinary.J2MEUtil_Package;
+   package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
+   package NullAnimationFactory_Package renames Standard.org.allbinary.animation.NullAnimationFactory_Package;
+   package RectangleAdjustedAnimation_Package renames Standard.org.allbinary.animation.vector.RectangleAdjustedAnimation_Package;
+   package RectangleFilledAdjustedAnimation_Package renames Standard.org.allbinary.animation.vector.RectangleFilledAdjustedAnimation_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package UpdateMyFontInterface_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontInterface_Package;
+   package CommandTextItem_Package renames Standard.org.allbinary.graphics.form.item.CommandTextItem_Package;
+   package ABCustomItem_Package renames Standard.org.allbinary.graphics.form.item.ABCustomItem_Package;
 
    type CommandCurrentSelectionForm is tagged;
    type CommandCurrentSelectionForm_Access is access all CommandCurrentSelectionForm'Class;

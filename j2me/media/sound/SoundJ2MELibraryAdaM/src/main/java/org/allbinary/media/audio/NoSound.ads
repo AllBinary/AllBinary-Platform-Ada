@@ -25,7 +25,7 @@ with org.allbinary.media.audio.Sound_Package; use org.allbinary.media.audio.Soun
 
 package org.allbinary.media.audio.NoSound_Package is
 
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type NoSound is tagged;
    type NoSound_Access is access all NoSound'Class;

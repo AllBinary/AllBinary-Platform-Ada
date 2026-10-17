@@ -35,15 +35,15 @@ with tags.CustomTagSupport_Package; use tags.CustomTagSupport_Package;
 
 package admin.tags.BasketTag_Package is
 
-   package BasketHelperFactory_Package renames admin.taghelpers.BasketHelperFactory_Package;
-   package BasketRequestHelperFactory_Package renames admin.taghelpers.BasketRequestHelperFactory_Package;
-   package StoreFrontData_Package renames org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
-   package BasketData_Package renames org.allbinary.business.user.commerce.inventory.basket.BasketData_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package AbResponseHandler_Package renames org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package LicensingException_Package renames org.allbinary.logic.system.security.licensing.LicensingException_Package;
-   package CustomTagSupport_Package renames tags.CustomTagSupport_Package;
+   package BasketHelperFactory_Package renames Standard.admin.taghelpers.BasketHelperFactory_Package;
+   package BasketRequestHelperFactory_Package renames Standard.admin.taghelpers.BasketRequestHelperFactory_Package;
+   package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+   package BasketData_Package renames Standard.org.allbinary.business.user.commerce.inventory.basket.BasketData_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package CustomTagSupport_Package renames Standard.tags.CustomTagSupport_Package;
 
    type BasketTag is tagged;
    type BasketTag_Access is access all BasketTag'Class;

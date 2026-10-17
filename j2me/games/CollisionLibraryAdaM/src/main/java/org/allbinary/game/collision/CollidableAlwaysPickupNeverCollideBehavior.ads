@@ -25,7 +25,7 @@ with org.allbinary.game.collision.CollidableNeverCollideBehavior_Package; use or
 
 package org.allbinary.game.collision.CollidableAlwaysPickupNeverCollideBehavior_Package is
 
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
 
    type CollidableAlwaysPickupNeverCollideBehavior is tagged;
    type CollidableAlwaysPickupNeverCollideBehavior_Access is access all CollidableAlwaysPickupNeverCollideBehavior'Class;

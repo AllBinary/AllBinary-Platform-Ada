@@ -27,9 +27,9 @@ with org.allbinary.logic.communication.http.request.session.WeblisketSessionInte
 
 package org.allbinary.business.user.modules.customer.affiliate.AffiliateUser_Package is
 
-   package AffiliateSales_Package renames org.allbinary.business.advertisement.affiliate.sales.AffiliateSales_Package;
-   package User_Package renames org.allbinary.business.user.modules.User_Package;
-   package WeblisketSessionInterface_Package renames org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package;
+   package AffiliateSales_Package renames Standard.org.allbinary.business.advertisement.affiliate.sales.AffiliateSales_Package;
+   package User_Package renames Standard.org.allbinary.business.user.modules.User_Package;
+   package WeblisketSessionInterface_Package renames Standard.org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package;
 
    type AffiliateUser is tagged;
    type AffiliateUser_Access is access all AffiliateUser'Class;

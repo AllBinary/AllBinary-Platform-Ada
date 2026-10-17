@@ -27,10 +27,10 @@ with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logi
 
 package org.allbinary.android.input.VirtualKeyboard_Package is
 
-   package VirtualKeyboardEvent_Package renames org.allbinary.input.event.VirtualKeyboardEvent_Package;
-   package ForcedLogUtil_Package renames org.allbinary.logic.communication.log.ForcedLogUtil_Package;
-   package AllBinaryEventObject_Package renames org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-   package EventStrings_Package renames org.allbinary.logic.util.event.EventStrings_Package;
+   package VirtualKeyboardEvent_Package renames Standard.org.allbinary.input.event.VirtualKeyboardEvent_Package;
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+   package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+   package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
 
    type VirtualKeyboard is tagged;
    type VirtualKeyboard_Access is access all VirtualKeyboard'Class;

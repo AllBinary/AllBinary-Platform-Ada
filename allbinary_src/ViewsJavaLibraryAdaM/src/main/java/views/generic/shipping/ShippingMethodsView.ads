@@ -45,28 +45,28 @@ with views.business.context.modules.storefront.HttpStoreComponentView_Package; u
 
 package views.generic_Id.shipping.ShippingMethodsView_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package StoreFrontFactory_Package renames org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
-   package StoreFrontInterface_Package renames org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
-   package EntryData_Package renames org.allbinary.business.entry_Id.EntryData_Package;
-   package StreetAddress_Package renames org.allbinary.business.user.address.StreetAddress_Package;
-   package BasketInterface_Package renames org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package;
-   package OrderInterface_Package renames org.allbinary.business.user.commerce.inventory.order.OrderInterface_Package;
-   package Money_Package renames org.allbinary.business.user.commerce.money.Money_Package;
-   package TaxFactory_Package renames org.allbinary.business.user.commerce.money.tax.TaxFactory_Package;
-   package ShippingMethods_Package renames org.allbinary.business.user.commerce.shipping.ShippingMethods_Package;
-   package ShippingMethodsData_Package renames org.allbinary.business.user.commerce.shipping.ShippingMethodsData_Package;
-   package ShippingInterface_Package renames org.allbinary.business.user.commerce.shipping.modules.ShippingInterface_Package;
-   package StreetAddressesEntityInterface_Package renames org.allbinary.data.tables.user.address.StreetAddressesEntityInterface_Package;
-   package ShippingAddressesEntityFactory_Package renames org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntityFactory_Package;
-   package DomNodeInterface_Package renames org.allbinary.data.tree.dom.DomNodeInterface_Package;
-   package ModDomHelper_Package renames org.allbinary.data.tree.dom.ModDomHelper_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package TransformInfoInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
-   package HttpStoreComponentView_Package renames views.business.context.modules.storefront.HttpStoreComponentView_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StoreFrontFactory_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
+   package StoreFrontInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
+   package EntryData_Package renames Standard.org.allbinary.business.entry_Id.EntryData_Package;
+   package StreetAddress_Package renames Standard.org.allbinary.business.user.address.StreetAddress_Package;
+   package BasketInterface_Package renames Standard.org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package;
+   package OrderInterface_Package renames Standard.org.allbinary.business.user.commerce.inventory.order.OrderInterface_Package;
+   package Money_Package renames Standard.org.allbinary.business.user.commerce.money.Money_Package;
+   package TaxFactory_Package renames Standard.org.allbinary.business.user.commerce.money.tax.TaxFactory_Package;
+   package ShippingMethods_Package renames Standard.org.allbinary.business.user.commerce.shipping.ShippingMethods_Package;
+   package ShippingMethodsData_Package renames Standard.org.allbinary.business.user.commerce.shipping.ShippingMethodsData_Package;
+   package ShippingInterface_Package renames Standard.org.allbinary.business.user.commerce.shipping.modules.ShippingInterface_Package;
+   package StreetAddressesEntityInterface_Package renames Standard.org.allbinary.data.tables.user.address.StreetAddressesEntityInterface_Package;
+   package ShippingAddressesEntityFactory_Package renames Standard.org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntityFactory_Package;
+   package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
+   package ModDomHelper_Package renames Standard.org.allbinary.data.tree.dom.ModDomHelper_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
+   package HttpStoreComponentView_Package renames Standard.views.business.context.modules.storefront.HttpStoreComponentView_Package;
 
    type ShippingMethodsView is tagged;
    type ShippingMethodsView_Access is access all ShippingMethodsView'Class;

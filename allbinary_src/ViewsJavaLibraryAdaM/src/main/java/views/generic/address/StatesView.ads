@@ -33,16 +33,16 @@ with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 
 package views.generic_Id.address.StatesView_Package is
 
-   package StreetAddressData_Package renames org.allbinary.business.user.address.StreetAddressData_Package;
-   package DomNodeInterface_Package renames org.allbinary.data.tree.dom.DomNodeInterface_Package;
-   package ModDomHelper_Package renames org.allbinary.data.tree.dom.ModDomHelper_Package;
-   package FREEBLISKET_PATH_GLOBALS_Package renames org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package;
-   package URLGLOBALS_Package renames org.allbinary.globals.URLGLOBALS_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package LineReader_Package renames org.allbinary.logic.io.LineReader_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
+   package StreetAddressData_Package renames Standard.org.allbinary.business.user.address.StreetAddressData_Package;
+   package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
+   package ModDomHelper_Package renames Standard.org.allbinary.data.tree.dom.ModDomHelper_Package;
+   package FREEBLISKET_PATH_GLOBALS_Package renames Standard.org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package;
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package LineReader_Package renames Standard.org.allbinary.logic.io.LineReader_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type StatesView is tagged;
    type StatesView_Access is access all StatesView'Class;

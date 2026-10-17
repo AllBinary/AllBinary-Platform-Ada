@@ -27,10 +27,10 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.logic.system.security.licensing.PartnerIdentifierFileUtil_Package is
 
-   package ResourceUtil_Package renames org.allbinary.data.resource.ResourceUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package ResourceUtil_Package renames Standard.org.allbinary.data.resource.ResourceUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type PartnerIdentifierFileUtil is tagged;
    type PartnerIdentifierFileUtil_Access is access all PartnerIdentifierFileUtil'Class;

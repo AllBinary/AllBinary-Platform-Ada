@@ -24,7 +24,7 @@ with android.app.Activity_Package; use android.app.Activity_Package;
 
 package org.allbinary.android.ActivityFractureUtil_Package is
 
-   package Activity_Package renames android.app.Activity_Package;
+   package Activity_Package renames Standard.android.app.Activity_Package;
 
    type ActivityFractureUtil is tagged;
    type ActivityFractureUtil_Access is access all ActivityFractureUtil'Class;

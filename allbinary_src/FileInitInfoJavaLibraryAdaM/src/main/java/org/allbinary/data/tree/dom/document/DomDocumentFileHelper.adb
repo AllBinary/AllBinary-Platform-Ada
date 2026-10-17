@@ -40,8 +40,12 @@ package body org.allbinary.data.tree.dom.document.DomDocumentFileHelper_Package 
         begin
             return DomDocumentHelper_Package.create (AbFileInputStream_Package.Create (xmlFile));
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Java_Throw (e);
+                end;
         end;
    end createDocument;
 
@@ -67,8 +71,12 @@ package body org.allbinary.data.tree.dom.document.DomDocumentFileHelper_Package 
             copyTransformer.transform (domSource, streamResult);
             dataOutputStream.flush;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Java_Throw (e);
+                end;
         end;
         --  finally
         begin

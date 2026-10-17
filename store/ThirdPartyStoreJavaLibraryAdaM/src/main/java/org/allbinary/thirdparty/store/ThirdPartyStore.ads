@@ -24,7 +24,7 @@ with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface
 
 package org.allbinary.thirdparty.store.ThirdPartyStore_Package is
 
-   package AbeClientInformationInterface_Package renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 
    type ThirdPartyStore is tagged;
    type ThirdPartyStore_Access is access all ThirdPartyStore'Class;

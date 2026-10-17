@@ -29,10 +29,10 @@ with org.allbinary.logic.communication.java.vm.stats.JvmStatistics_Package; use 
 
 package org.allbinary.logic.communication.java.vm.stats.JvmStatisticsMapping_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package TableMappingInterface_Package renames org.allbinary.data.tables.TableMappingInterface_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package TableMappingInterface_Package renames Standard.org.allbinary.data.tables.TableMappingInterface_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
 
    type JvmStatisticsMapping is tagged;
    type JvmStatisticsMapping_Access is access all JvmStatisticsMapping'Class;

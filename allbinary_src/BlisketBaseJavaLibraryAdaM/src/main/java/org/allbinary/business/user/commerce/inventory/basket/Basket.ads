@@ -33,12 +33,12 @@ with org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Packa
 
 package org.allbinary.business.user.commerce.inventory.basket.Basket_Package is
 
-   package ItemInterface_Package renames org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package;
-   package Money_Package renames org.allbinary.business.user.commerce.money.Money_Package;
-   package MoneyException_Package renames org.allbinary.business.user.commerce.money.MoneyException_Package;
-   package InventoryEntity_Package renames org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntity_Package;
-   package InventoryEntityFactory_Package renames org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityFactory_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
+   package ItemInterface_Package renames Standard.org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package;
+   package Money_Package renames Standard.org.allbinary.business.user.commerce.money.Money_Package;
+   package MoneyException_Package renames Standard.org.allbinary.business.user.commerce.money.MoneyException_Package;
+   package InventoryEntity_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntity_Package;
+   package InventoryEntityFactory_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityFactory_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
 
    type Basket is tagged;
    type Basket_Access is access all Basket'Class;

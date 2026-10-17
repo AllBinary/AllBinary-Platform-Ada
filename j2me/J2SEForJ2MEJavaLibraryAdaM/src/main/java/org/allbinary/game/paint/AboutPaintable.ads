@@ -32,13 +32,13 @@ with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.
 
 package org.allbinary.game.paint.AboutPaintable_Package is
 
-   package Anchor_Package renames org.allbinary.graphics.Anchor_Package;
-   package CanvasStrings_Package renames org.allbinary.graphics.displayable.CanvasStrings_Package;
-   package DisplayInfoSingleton_Package renames org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
-   package MyFontProcessor_Package renames org.allbinary.graphics.font.MyFontProcessor_Package;
-   package UpdateMyFontInterface_Package renames org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-   package UpdateMyFontProcessor_Package renames org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
-   package Paintable_Package renames org.allbinary.graphics.paint.Paintable_Package;
+   package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
+   package CanvasStrings_Package renames Standard.org.allbinary.graphics.displayable.CanvasStrings_Package;
+   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+   package MyFontProcessor_Package renames Standard.org.allbinary.graphics.font.MyFontProcessor_Package;
+   package UpdateMyFontInterface_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontInterface_Package;
+   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+   package Paintable_Package renames Standard.org.allbinary.graphics.paint.Paintable_Package;
 
    type AboutPaintable is tagged;
    type AboutPaintable_Access is access all AboutPaintable'Class;

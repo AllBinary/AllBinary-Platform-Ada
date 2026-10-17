@@ -26,9 +26,9 @@ with org.allbinary.game.layer.special.CollidableDestroyableDamageableBehavior_Pa
 
 package org.allbinary.game.layer.CollidableRTSBehavior_Package is
 
-   package CollisionType_Package renames org.allbinary.game.collision.CollisionType_Package;
-   package CollisionTypeFactory_Package renames org.allbinary.game.collision.CollisionTypeFactory_Package;
-   package CollidableDestroyableDamageableBehavior_Package renames org.allbinary.game.layer.special.CollidableDestroyableDamageableBehavior_Package;
+   package CollisionType_Package renames Standard.org.allbinary.game.collision.CollisionType_Package;
+   package CollisionTypeFactory_Package renames Standard.org.allbinary.game.collision.CollisionTypeFactory_Package;
+   package CollidableDestroyableDamageableBehavior_Package renames Standard.org.allbinary.game.layer.special.CollidableDestroyableDamageableBehavior_Package;
 
    type CollidableRTSBehavior is tagged;
    type CollidableRTSBehavior_Access is access all CollidableRTSBehavior'Class;

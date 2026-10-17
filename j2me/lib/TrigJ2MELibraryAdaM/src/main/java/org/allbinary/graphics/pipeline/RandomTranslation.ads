@@ -25,8 +25,8 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 
 package org.allbinary.graphics.pipeline.RandomTranslation_Package is
 
-   package MyRandomFactory_Package renames org.allbinary.game.rand.MyRandomFactory_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package MyRandomFactory_Package renames Standard.org.allbinary.game.rand.MyRandomFactory_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type RandomTranslation is tagged;
    type RandomTranslation_Access is access all RandomTranslation'Class;

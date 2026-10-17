@@ -26,8 +26,8 @@ with org.allbinary.game.layer.special.SpecialGameInputProcessor_Package; use org
 
 package org.allbinary.game.layer.special.SpecialLeftGameInputProcessor_Package is
 
-   package GameKeyEvent_Package renames org.allbinary.game.input.event.GameKeyEvent_Package;
-   package AllBinaryLayerManager_Package renames org.allbinary.layer.AllBinaryLayerManager_Package;
+   package GameKeyEvent_Package renames Standard.org.allbinary.game.input.event.GameKeyEvent_Package;
+   package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
 
    type SpecialLeftGameInputProcessor is tagged;
    type SpecialLeftGameInputProcessor_Access is access all SpecialLeftGameInputProcessor'Class;

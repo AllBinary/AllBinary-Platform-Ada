@@ -32,12 +32,12 @@ with org.apache.commons.fileupload.FileItemUtil_Package; use org.apache.commons.
 
 package org.allbinary.logic.communication.http.file.upload.AbFileUploadFactory_Package is
 
-   package AbFileItemFactory_Package renames org.allbinary.logic.communication.http.AbFileItemFactory_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package FileItemIterator_Package renames org.apache.commons.fileupload.FileItemIterator_Package;
-   package FileItemStream_Package renames org.apache.commons.fileupload.FileItemStream_Package;
-   package FileItemUtil_Package renames org.apache.commons.fileupload.FileItemUtil_Package;
+   package AbFileItemFactory_Package renames Standard.org.allbinary.logic.communication.http.AbFileItemFactory_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package FileItemIterator_Package renames Standard.org.apache.commons.fileupload.FileItemIterator_Package;
+   package FileItemStream_Package renames Standard.org.apache.commons.fileupload.FileItemStream_Package;
+   package FileItemUtil_Package renames Standard.org.apache.commons.fileupload.FileItemUtil_Package;
 
    type AbFileUploadFactory is tagged;
    type AbFileUploadFactory_Access is access all AbFileUploadFactory'Class;

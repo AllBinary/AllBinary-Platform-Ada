@@ -30,13 +30,13 @@ with org.eclipse.swt.graphics.ImageData_Package; use org.eclipse.swt.graphics.Im
 
 package org.allbinary.media.image.ImageSwtRotationUtil_Package is
 
-   package Features_Package renames org.allbinary.game.configuration.feature.Features_Package;
-   package GameFeatureFactory_Package renames org.allbinary.game.configuration.feature.GameFeatureFactory_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package SWT_Package renames org.eclipse.swt.SWT_Package;
-   package GC_Package renames org.eclipse.swt.graphics.GC_Package;
-   package ImageData_Package renames org.eclipse.swt.graphics.ImageData_Package;
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
+   package GameFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.GameFeatureFactory_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package SWT_Package renames Standard.org.eclipse.swt.SWT_Package;
+   package GC_Package renames Standard.org.eclipse.swt.graphics.GC_Package;
+   package ImageData_Package renames Standard.org.eclipse.swt.graphics.ImageData_Package;
 
    type ImageSwtRotationUtil is tagged;
    type ImageSwtRotationUtil_Access is access all ImageSwtRotationUtil'Class;

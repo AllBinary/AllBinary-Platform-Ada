@@ -26,8 +26,8 @@ with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.strin
 
 package org.allbinary.game.input.GameKeyFactory_Package is
 
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
-   package CommonPhoneStrings_Package renames org.allbinary.string_Id.CommonPhoneStrings_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package CommonPhoneStrings_Package renames Standard.org.allbinary.string_Id.CommonPhoneStrings_Package;
 
    type GameKeyFactory is tagged;
    type GameKeyFactory_Access is access all GameKeyFactory'Class;

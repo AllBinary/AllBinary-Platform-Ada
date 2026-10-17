@@ -25,7 +25,7 @@ with org.allbinary.graphics.paint.ProcessPaintable_Package; use org.allbinary.gr
 
 package org.allbinary.game.displayable.canvas.GameCanvasPaintHelper_Package is
 
-   package ProcessPaintable_Package renames org.allbinary.graphics.paint.ProcessPaintable_Package;
+   package ProcessPaintable_Package renames Standard.org.allbinary.graphics.paint.ProcessPaintable_Package;
 
    type GameCanvasPaintHelper is tagged;
    type GameCanvasPaintHelper_Access is access all GameCanvasPaintHelper'Class;

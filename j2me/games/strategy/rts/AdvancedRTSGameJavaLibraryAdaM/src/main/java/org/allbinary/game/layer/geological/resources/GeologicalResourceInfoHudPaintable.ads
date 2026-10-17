@@ -29,10 +29,10 @@ with org.allbinary.graphics.draw.KeyValueDrawCharArray_Package; use org.allbinar
 
 package org.allbinary.game.layer.geological.resources_Case.GeologicalResourceInfoHudPaintable_Package is
 
-   package RTSLayer_Package renames org.allbinary.game.layer.RTSLayer_Package;
-   package WaypointInfoHudPaintable_Package renames org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package KeyValueDrawCharArray_Package renames org.allbinary.graphics.draw.KeyValueDrawCharArray_Package;
+   package RTSLayer_Package renames Standard.org.allbinary.game.layer.RTSLayer_Package;
+   package WaypointInfoHudPaintable_Package renames Standard.org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package KeyValueDrawCharArray_Package renames Standard.org.allbinary.graphics.draw.KeyValueDrawCharArray_Package;
 
    type GeologicalResourceInfoHudPaintable is tagged;
    type GeologicalResourceInfoHudPaintable_Access is access all GeologicalResourceInfoHudPaintable'Class;

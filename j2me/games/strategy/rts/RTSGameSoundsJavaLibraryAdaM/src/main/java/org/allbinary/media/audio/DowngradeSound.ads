@@ -24,8 +24,8 @@ with org.allbinary.media.audio.Sound_Package; use org.allbinary.media.audio.Soun
 
 package org.allbinary.media.audio.DowngradeSound_Package is
 
-   package CompositeSound_Package renames org.allbinary.media.audio.CompositeSound_Package;
-   package Sound_Package renames org.allbinary.media.audio.Sound_Package;
+   package CompositeSound_Package renames Standard.org.allbinary.media.audio.CompositeSound_Package;
+   package Sound_Package renames Standard.org.allbinary.media.audio.Sound_Package;
 
    type DowngradeSound is tagged;
    type DowngradeSound_Access is access all DowngradeSound'Class;

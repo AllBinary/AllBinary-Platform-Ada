@@ -27,9 +27,13 @@ package body org.allbinary.game.displayable.canvas.NullGameCanvas_Package is
         begin
             return NullGameCanvas_Package.Create (AllBinaryGameLayerManager_Package.getNullInstance);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             LogUtil_Package.getInstance.put (CommonStrings_Package.getInstance.EXCEPTION_Id, To_Unbounded_String ("NullGameCanvas"), CommonStrings_Package.getInstance.GET_INSTANCE, e);
             Java_Throw (Java_New_Exception ("RuntimeException"));
+                end;
         end;
    end createNull;
 
@@ -113,8 +117,12 @@ package body org.allbinary.game.displayable.canvas.NullGameCanvas_Package is
             This.logUtil.putF (This.commonStrings.START_RUNNABLE, This'Unchecked_Access, This.commonStrings.RUN);
             This.logUtil.putF (This.commonStrings.END_RUNNABLE, This'Unchecked_Access, This.commonStrings.RUN);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.RUN, e);
+                end;
         end;
    end run;
 

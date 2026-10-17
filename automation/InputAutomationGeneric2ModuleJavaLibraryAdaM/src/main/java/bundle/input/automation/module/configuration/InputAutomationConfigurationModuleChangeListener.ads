@@ -24,7 +24,7 @@ with org.allbinary.input.automation.configuration.InputAutomationConfigurationMo
 
 package bundle.input.automation.module.configuration.InputAutomationConfigurationModuleChangeListener_Package is
 
-   package InputAutomationConfigurationModuleChangeEvent_Package renames org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package;
+   package InputAutomationConfigurationModuleChangeEvent_Package renames Standard.org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package;
 
    type InputAutomationConfigurationModuleChangeListener is interface;
    type InputAutomationConfigurationModuleChangeListener_Access is access all InputAutomationConfigurationModuleChangeListener'Class;

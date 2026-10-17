@@ -30,11 +30,11 @@ with org.allbinary.media.graphics.geography.map.GeographicMapInterface_Package; 
 
 package org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package is
 
-   package AllBinaryTiledLayer_Package renames org.allbinary.game.layer.AllBinaryTiledLayer_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package Layer_Package renames org.allbinary.layer.Layer_Package;
-   package MathUtil_Package renames org.allbinary.logic.math.MathUtil_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package AllBinaryTiledLayer_Package renames Standard.org.allbinary.game.layer.AllBinaryTiledLayer_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package Layer_Package renames Standard.org.allbinary.layer.Layer_Package;
+   package MathUtil_Package renames Standard.org.allbinary.logic.math.MathUtil_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type BasicGeographicMap is tagged;
    type BasicGeographicMap_Access is access all BasicGeographicMap'Class;

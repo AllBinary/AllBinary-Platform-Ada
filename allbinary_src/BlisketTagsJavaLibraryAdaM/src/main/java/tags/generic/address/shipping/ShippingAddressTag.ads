@@ -28,10 +28,10 @@ with tags.StoreValidationTransformTag_Package; use tags.StoreValidationTransform
 
 package tags.generic_Id.address.shipping.ShippingAddressTag_Package is
 
-   package ShippingAddressData_Package renames org.allbinary.business.user.address.ShippingAddressData_Package;
-   package AbResponseHandler_Package renames org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
-   package LicensingException_Package renames org.allbinary.logic.system.security.licensing.LicensingException_Package;
-   package StoreValidationTransformTag_Package renames tags.StoreValidationTransformTag_Package;
+   package ShippingAddressData_Package renames Standard.org.allbinary.business.user.address.ShippingAddressData_Package;
+   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package StoreValidationTransformTag_Package renames Standard.tags.StoreValidationTransformTag_Package;
 
    type ShippingAddressTag is tagged;
    type ShippingAddressTag_Access is access all ShippingAddressTag'Class;

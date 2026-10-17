@@ -32,15 +32,15 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.game.input.motion.action.SingleKeyPressGameKeyFromMotionGestureEventListener_Package is
 
-   package CompleteMotionGestureInputEvent_Package renames org.allbinary.game.input.CompleteMotionGestureInputEvent_Package;
-   package CompleteMotionGestureInputEventListener_Package renames org.allbinary.game.input.CompleteMotionGestureInputEventListener_Package;
-   package GameKeyEvent_Package renames org.allbinary.game.input.event.GameKeyEvent_Package;
-   package PressGameKeyEventHandler_Package renames org.allbinary.game.input.event.PressGameKeyEventHandler_Package;
-   package ForcedLogUtil_Package renames org.allbinary.logic.communication.log.ForcedLogUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package AllBinaryEventObject_Package renames org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-   package EventStrings_Package renames org.allbinary.logic.util.event.EventStrings_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package CompleteMotionGestureInputEvent_Package renames Standard.org.allbinary.game.input.CompleteMotionGestureInputEvent_Package;
+   package CompleteMotionGestureInputEventListener_Package renames Standard.org.allbinary.game.input.CompleteMotionGestureInputEventListener_Package;
+   package GameKeyEvent_Package renames Standard.org.allbinary.game.input.event.GameKeyEvent_Package;
+   package PressGameKeyEventHandler_Package renames Standard.org.allbinary.game.input.event.PressGameKeyEventHandler_Package;
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+   package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type SingleKeyPressGameKeyFromMotionGestureEventListener is tagged;
    type SingleKeyPressGameKeyFromMotionGestureEventListener_Access is access all SingleKeyPressGameKeyFromMotionGestureEventListener'Class;

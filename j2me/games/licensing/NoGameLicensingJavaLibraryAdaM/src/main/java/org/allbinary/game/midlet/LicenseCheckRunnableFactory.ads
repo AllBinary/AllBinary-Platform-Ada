@@ -25,8 +25,8 @@ with org.allbinary.thread.NullABRunnable_Package; use org.allbinary.thread.NullA
 
 package org.allbinary.game.midlet.LicenseCheckRunnableFactory_Package is
 
-   package ABRunnable_Package renames org.allbinary.thread.ABRunnable_Package;
-   package NullABRunnable_Package renames org.allbinary.thread.NullABRunnable_Package;
+   package ABRunnable_Package renames Standard.org.allbinary.thread.ABRunnable_Package;
+   package NullABRunnable_Package renames Standard.org.allbinary.thread.NullABRunnable_Package;
 
    type LicenseCheckRunnableFactory is tagged;
    type LicenseCheckRunnableFactory_Access is access all LicenseCheckRunnableFactory'Class;

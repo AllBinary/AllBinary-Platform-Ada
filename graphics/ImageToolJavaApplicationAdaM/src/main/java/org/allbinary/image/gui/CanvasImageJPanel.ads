@@ -40,17 +40,17 @@ with org.allbinary.image.gui.JPanel_Package; use org.allbinary.image.gui.JPanel_
 
 package org.allbinary.image.gui.CanvasImageJPanel_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package CanvasExpandUtil_Package renames org.allbinary.media.image.CanvasExpandUtil_Package;
-   package CanvasTrimUtil_Package renames org.allbinary.media.image.CanvasTrimUtil_Package;
-   package ImageProcessedVisitor_Package renames org.allbinary.media.image.ImageProcessedVisitor_Package;
-   package ImageProcessorInput_Package renames org.allbinary.media.image.ImageProcessorInput_Package;
-   package ImageStrings_Package renames org.allbinary.media.image.ImageStrings_Package;
-   package CommonPhoneStrings_Package renames org.allbinary.string_Id.CommonPhoneStrings_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package CanvasExpandUtil_Package renames Standard.org.allbinary.media.image.CanvasExpandUtil_Package;
+   package CanvasTrimUtil_Package renames Standard.org.allbinary.media.image.CanvasTrimUtil_Package;
+   package ImageProcessedVisitor_Package renames Standard.org.allbinary.media.image.ImageProcessedVisitor_Package;
+   package ImageProcessorInput_Package renames Standard.org.allbinary.media.image.ImageProcessorInput_Package;
+   package ImageStrings_Package renames Standard.org.allbinary.media.image.ImageStrings_Package;
+   package CommonPhoneStrings_Package renames Standard.org.allbinary.string_Id.CommonPhoneStrings_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type CanvasImageJPanel is tagged;
    type CanvasImageJPanel_Access is access all CanvasImageJPanel'Class;

@@ -24,7 +24,7 @@ with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBina
 
 package org.allbinary.media.graphics.geography.map.TrackListenerInterface_Package is
 
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
 
    type TrackListenerInterface is interface;
    type TrackListenerInterface_Access is access all TrackListenerInterface'Class;

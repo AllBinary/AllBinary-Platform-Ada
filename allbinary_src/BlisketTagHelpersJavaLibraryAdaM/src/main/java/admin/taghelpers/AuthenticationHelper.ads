@@ -44,21 +44,21 @@ with admin.taghelpers.TagHelper_Package; use admin.taghelpers.TagHelper_Package;
 
 package admin.taghelpers.AuthenticationHelper_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package UserInterface_Package renames org.allbinary.business.user.UserInterface_Package;
-   package BasicUserRole_Package renames org.allbinary.business.user.role.BasicUserRole_Package;
-   package UserRole_Package renames org.allbinary.business.user.role.UserRole_Package;
-   package UserRoleFactory_Package renames org.allbinary.business.user.role.UserRoleFactory_Package;
-   package UserEntityFactory_Package renames org.allbinary.data.tables.user.UserEntityFactory_Package;
-   package UserEntityInterface_Package renames org.allbinary.data.tables.user.UserEntityInterface_Package;
-   package GLOBALS2_Package renames org.allbinary.globals.GLOBALS2_Package;
-   package WeblisketSession_Package renames org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package BooleanFactory_Package renames org.allbinary.logic.java.bool.BooleanFactory_Package;
-   package BooleanUtil_Package renames org.allbinary.logic.java.bool.BooleanUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package UserInterface_Package renames Standard.org.allbinary.business.user.UserInterface_Package;
+   package BasicUserRole_Package renames Standard.org.allbinary.business.user.role.BasicUserRole_Package;
+   package UserRole_Package renames Standard.org.allbinary.business.user.role.UserRole_Package;
+   package UserRoleFactory_Package renames Standard.org.allbinary.business.user.role.UserRoleFactory_Package;
+   package UserEntityFactory_Package renames Standard.org.allbinary.data.tables.user.UserEntityFactory_Package;
+   package UserEntityInterface_Package renames Standard.org.allbinary.data.tables.user.UserEntityInterface_Package;
+   package GLOBALS2_Package renames Standard.org.allbinary.globals.GLOBALS2_Package;
+   package WeblisketSession_Package renames Standard.org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package BooleanFactory_Package renames Standard.org.allbinary.logic.java.bool.BooleanFactory_Package;
+   package BooleanUtil_Package renames Standard.org.allbinary.logic.java.bool.BooleanUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type AuthenticationHelper is tagged;
    type AuthenticationHelper_Access is access all AuthenticationHelper'Class;

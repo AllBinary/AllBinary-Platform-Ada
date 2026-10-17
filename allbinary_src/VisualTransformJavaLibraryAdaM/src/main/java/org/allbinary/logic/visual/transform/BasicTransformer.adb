@@ -61,7 +61,10 @@ package body org.allbinary.logic.visual.transform.BasicTransformer_Package is
             This.setInputStream (InputStream_Access (ByteArrayInputStream_Package.Create (decrypted)));
             This.setURIResolver (URIResolver_Access (BasicUriResolver_Package.Create (TransformInfoTemplateData_Package.getInstance.ENCRYPTED_EXTENSION)));
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORYERROR) then
                 stringBuffer := StringMaker_Package.Create;
                 stringBuffer.append (To_Unbounded_String ("Failed to get Encrypted File: "));
@@ -71,6 +74,7 @@ package body org.allbinary.logic.visual.transform.BasicTransformer_Package is
                 This.logUtil.put (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("setEncryptedTemplateFileAsInputStream()"), e);
             end if;
             Java_Throw (e);
+                end;
         end;
         --  finally
         begin
@@ -100,11 +104,15 @@ package body org.allbinary.logic.visual.transform.BasicTransformer_Package is
             This.setInputStream (InputStream_Access (ByteArrayInputStream_Package.Create (decrypted)));
             This.setURIResolver (URIResolver_Access (BasicUriResolver_Package.Create (TransformInfoTemplateData_Package.getInstance.ENCRYPTED_EXTENSION)));
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORYERROR) then
                 This.logUtil.put (To_Unbounded_String ("Failed to set with template: ") & Java_Image (This.getTransformInfoInterface.getTemplateFilePath), This'Unchecked_Access, To_Unbounded_String ("setEncryptedTemplateFileAsInputStream()"), e);
             end if;
             Java_Throw (e);
+                end;
         end;
         --  finally
         begin
@@ -195,11 +203,15 @@ package body org.allbinary.logic.visual.transform.BasicTransformer_Package is
                 This.setEncryptedTemplateAsInputStream;
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORYERROR) then
                 This.logUtil.put (To_Unbounded_String ("Failed to get Template Data"), This'Unchecked_Access, To_Unbounded_String ("setTemplateAsInputStream()"), e);
             end if;
             Java_Throw (e);
+                end;
         end;
         --  finally
         begin

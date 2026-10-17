@@ -27,7 +27,7 @@ with org.allbinary.animation.image.RightToLeftImageAnimation_Package; use org.al
 
 package org.allbinary.animation.image.AdjustedRightToLeftImageAnimation_Package is
 
-   package AnimationBehavior_Package renames org.allbinary.animation.AnimationBehavior_Package;
+   package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
 
    type AdjustedRightToLeftImageAnimation is tagged;
    type AdjustedRightToLeftImageAnimation_Access is access all AdjustedRightToLeftImageAnimation'Class;

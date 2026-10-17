@@ -24,7 +24,7 @@ with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; u
 
 package org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactoryInterface_Package is
 
-   package TransformInfoInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 
    type TransformInfoObjectConfigGeneratorFactoryInterface is interface;
    type TransformInfoObjectConfigGeneratorFactoryInterface_Access is access all TransformInfoObjectConfigGeneratorFactoryInterface'Class;

@@ -27,10 +27,10 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.input.motion.button.BasicTouchButtonCellPositionFactory_Package is
 
-   package CellPosition_Package renames org.allbinary.graphics.CellPosition_Package;
-   package CellPositionFactory_Package renames org.allbinary.graphics.CellPositionFactory_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package CellPosition_Package renames Standard.org.allbinary.graphics.CellPosition_Package;
+   package CellPositionFactory_Package renames Standard.org.allbinary.graphics.CellPositionFactory_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type BasicTouchButtonCellPositionFactory is tagged;
    type BasicTouchButtonCellPositionFactory_Access is access all BasicTouchButtonCellPositionFactory'Class;

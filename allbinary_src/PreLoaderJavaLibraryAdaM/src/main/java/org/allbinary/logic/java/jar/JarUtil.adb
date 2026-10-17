@@ -72,9 +72,13 @@ package body org.allbinary.logic.java.jar.JarUtil_Package is
                 end if;
             end loop;
         exception
-            when ex : others =>
+            when Java_Occurrence : others =>
+                declare
+                    ex : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Ada.Text_IO.Put_Line (Java_Image (ex));
-            Ada.Text_IO.Put_Line (Ada.Exceptions.Exception_Information (ex));
+            Java_Print_Stack_Trace (ex);
+                end;
         end;
    end show;
 

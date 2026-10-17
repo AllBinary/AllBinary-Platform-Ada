@@ -25,8 +25,8 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 
 package org.allbinary.animation.VectorAnimationUtil_Package is
 
-   package GPoint_Package renames org.allbinary.graphics.GPoint_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type VectorAnimationUtil is tagged;
    type VectorAnimationUtil_Access is access all VectorAnimationUtil'Class;

@@ -26,7 +26,7 @@ with org.allbinary.logic.system.security.licensing.LicensingException_Package; u
 
 package taghelpers.TagHelperFactoryInterface_Package is
 
-   package LicensingException_Package renames org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
 
    type TagHelperFactoryInterface is interface;
    type TagHelperFactoryInterface_Access is access all TagHelperFactoryInterface'Class;

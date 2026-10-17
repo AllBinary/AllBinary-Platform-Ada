@@ -28,9 +28,9 @@ with org.allbinary.animation.IndexedAnimationInterface_Package; use org.allbinar
 
 package org.allbinary.animation.IndexedAnimation_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package PrimitiveIntUtil_Package renames org.allbinary.logic.math.PrimitiveIntUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package PrimitiveIntUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveIntUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type IndexedAnimation is tagged;
    type IndexedAnimation_Access is access all IndexedAnimation'Class;

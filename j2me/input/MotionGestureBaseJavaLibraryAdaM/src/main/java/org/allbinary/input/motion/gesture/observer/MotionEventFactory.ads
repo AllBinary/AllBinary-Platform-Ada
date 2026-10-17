@@ -29,12 +29,12 @@ with org.allbinary.logic.util.event.AllBinaryEventObjectFactoryInterface_Package
 
 package org.allbinary.input.motion.gesture.observer.MotionEventFactory_Package is
 
-   package Input_Package renames org.allbinary.game.input.Input_Package;
-   package InputFactory_Package renames org.allbinary.game.input.InputFactory_Package;
-   package MotionGestureInput_Package renames org.allbinary.input.motion.gesture.MotionGestureInput_Package;
-   package TouchMotionGestureFactory_Package renames org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package;
-   package AllBinaryEventObject_Package renames org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-   package AllBinaryEventObjectFactoryInterface_Package renames org.allbinary.logic.util.event.AllBinaryEventObjectFactoryInterface_Package;
+   package Input_Package renames Standard.org.allbinary.game.input.Input_Package;
+   package InputFactory_Package renames Standard.org.allbinary.game.input.InputFactory_Package;
+   package MotionGestureInput_Package renames Standard.org.allbinary.input.motion.gesture.MotionGestureInput_Package;
+   package TouchMotionGestureFactory_Package renames Standard.org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package;
+   package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+   package AllBinaryEventObjectFactoryInterface_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObjectFactoryInterface_Package;
 
    type MotionEventFactory is tagged;
    type MotionEventFactory_Access is access all MotionEventFactory'Class;

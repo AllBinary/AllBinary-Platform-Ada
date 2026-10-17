@@ -25,8 +25,8 @@ with org.allbinary.business.advertisement.search.AdvertisementSearchInterface_Pa
 
 package org.allbinary.business.advertisement.campaign.AdvertisementCampaignInterface_Package is
 
-   package AdvertisementsInterface_Package renames org.allbinary.business.advertisement.AdvertisementsInterface_Package;
-   package AdvertisementSearchInterface_Package renames org.allbinary.business.advertisement.search.AdvertisementSearchInterface_Package;
+   package AdvertisementsInterface_Package renames Standard.org.allbinary.business.advertisement.AdvertisementsInterface_Package;
+   package AdvertisementSearchInterface_Package renames Standard.org.allbinary.business.advertisement.search.AdvertisementSearchInterface_Package;
 
    type AdvertisementCampaignInterface is interface;
    type AdvertisementCampaignInterface_Access is access all AdvertisementCampaignInterface'Class;

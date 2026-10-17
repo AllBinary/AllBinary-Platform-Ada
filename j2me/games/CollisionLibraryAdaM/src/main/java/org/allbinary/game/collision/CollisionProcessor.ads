@@ -12,7 +12,7 @@ with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBina
 
 package org.allbinary.game.collision.CollisionProcessor_Package is
 
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
 
    type CollisionProcessor is tagged;
    type CollisionProcessor_Access is access all CollisionProcessor'Class;

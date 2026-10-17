@@ -69,9 +69,13 @@ package body org.allbinary.logic.system.security.licensing.AbeLicenseInterfaceFa
             end if;
             return This.abeLicenseInterface;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (To_Unbounded_String ("Licensing IO Error"), This'Unchecked_Access, This.commonStrings.GET, e);
             Java_Throw (Java_New_Exception ("LicensingException", To_Unbounded_String ("License Server Connection Error")));
+                end;
         end;
    end get;
 

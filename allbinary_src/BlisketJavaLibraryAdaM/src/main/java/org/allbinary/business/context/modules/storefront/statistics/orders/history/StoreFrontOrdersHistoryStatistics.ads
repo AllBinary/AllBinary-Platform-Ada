@@ -33,14 +33,14 @@ with org.allbinary.business.context.modules.storefront.statistics.orders.history
 
 package org.allbinary.business.context.modules.storefront.statistics.orders.history.StoreFrontOrdersHistoryStatistics_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package StoreFrontInterface_Package renames org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
-   package OrderHistoryInterface_Package renames org.allbinary.business.user.commerce.inventory.order.OrderHistoryInterface_Package;
-   package Money_Package renames org.allbinary.business.user.commerce.money.Money_Package;
-   package OrderHistoryEntityFactory_Package renames org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntityFactory_Package;
-   package OrderHistoryEntityInterface_Package renames org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntityInterface_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StoreFrontInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
+   package OrderHistoryInterface_Package renames Standard.org.allbinary.business.user.commerce.inventory.order.OrderHistoryInterface_Package;
+   package Money_Package renames Standard.org.allbinary.business.user.commerce.money.Money_Package;
+   package OrderHistoryEntityFactory_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntityFactory_Package;
+   package OrderHistoryEntityInterface_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntityInterface_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
 
    type StoreFrontOrdersHistoryStatistics is tagged;
    type StoreFrontOrdersHistoryStatistics_Access is access all StoreFrontOrdersHistoryStatistics'Class;

@@ -24,7 +24,7 @@ with org.allbinary.data.tree.dom.document.mapping.DomDocumentMappingInterface_Pa
 
 package org.allbinary.data.tree.dom.document.DomDocumentQueueInterface_Package is
 
-   package DomDocumentMappingInterface_Package renames org.allbinary.data.tree.dom.document.mapping.DomDocumentMappingInterface_Package;
+   package DomDocumentMappingInterface_Package renames Standard.org.allbinary.data.tree.dom.document.mapping.DomDocumentMappingInterface_Package;
 
    type DomDocumentQueueInterface is interface;
    type DomDocumentQueueInterface_Access is access all DomDocumentQueueInterface'Class;

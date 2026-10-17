@@ -26,8 +26,8 @@ with org.allbinary.logic.util.visitor.Visitor_Package; use org.allbinary.logic.u
 
 package org.allbinary.logic.math.permutations.OrderedObjectArrayPermutationUtil_Package is
 
-   package TsUtil_Package renames org.allbinary.TsUtil_Package;
-   package Visitor_Package renames org.allbinary.logic.util.visitor.Visitor_Package;
+   package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
+   package Visitor_Package renames Standard.org.allbinary.logic.util.visitor.Visitor_Package;
 
    type OrderedObjectArrayPermutationUtil is tagged;
    type OrderedObjectArrayPermutationUtil_Access is access all OrderedObjectArrayPermutationUtil'Class;

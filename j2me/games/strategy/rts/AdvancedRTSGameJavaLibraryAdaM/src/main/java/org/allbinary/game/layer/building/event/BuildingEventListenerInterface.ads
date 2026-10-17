@@ -24,8 +24,8 @@ with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allb
 
 package org.allbinary.game.layer.building.event.BuildingEventListenerInterface_Package is
 
-   package RTSLayerEvent_Package renames org.allbinary.game.layer.RTSLayerEvent_Package;
-   package EventListenerInterface_Package renames org.allbinary.logic.util.event.EventListenerInterface_Package;
+   package RTSLayerEvent_Package renames Standard.org.allbinary.game.layer.RTSLayerEvent_Package;
+   package EventListenerInterface_Package renames Standard.org.allbinary.logic.util.event.EventListenerInterface_Package;
 
    type BuildingEventListenerInterface is interface and EventListenerInterface;
    type BuildingEventListenerInterface_Access is access all BuildingEventListenerInterface'Class;

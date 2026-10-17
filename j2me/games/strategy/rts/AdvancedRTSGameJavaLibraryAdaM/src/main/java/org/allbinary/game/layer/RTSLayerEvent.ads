@@ -24,8 +24,8 @@ with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbin
 
 package org.allbinary.game.layer.RTSLayerEvent_Package is
 
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package AllBinaryEventObject_Package renames org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 
    type RTSLayerEvent is tagged;
    type RTSLayerEvent_Access is access all RTSLayerEvent'Class;

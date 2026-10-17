@@ -25,8 +25,8 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 
 package org.allbinary.media.audio.MediaPlayerUtil_Package is
 
-   package MediaPlayer_Package renames android.media.MediaPlayer_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
+   package MediaPlayer_Package renames Standard.android.media.MediaPlayer_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type MediaPlayerUtil is tagged;
    type MediaPlayerUtil_Access is access all MediaPlayerUtil'Class;

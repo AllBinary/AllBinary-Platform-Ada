@@ -24,7 +24,7 @@ with org.allbinary.math.Angle_Package; use org.allbinary.math.Angle_Package;
 
 package org.allbinary.direction.DirectionalInterface_Package is
 
-   package Angle_Package renames org.allbinary.math.Angle_Package;
+   package Angle_Package renames Standard.org.allbinary.math.Angle_Package;
 
    type DirectionalInterface is interface;
    type DirectionalInterface_Access is access all DirectionalInterface'Class;

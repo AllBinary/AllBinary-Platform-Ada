@@ -25,7 +25,7 @@ with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Packag
 
 package org.allbinary.logic.visual.dhtml.html.HtmlTag_Package is
 
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
 
    type HtmlTag is tagged;
    type HtmlTag_Access is access all HtmlTag'Class;

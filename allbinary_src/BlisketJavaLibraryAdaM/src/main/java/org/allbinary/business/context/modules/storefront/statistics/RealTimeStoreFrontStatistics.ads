@@ -33,15 +33,15 @@ with org.allbinary.business.context.modules.storefront.statistics.StoreFrontStat
 
 package org.allbinary.business.context.modules.storefront.statistics.RealTimeStoreFrontStatistics_Package is
 
-   package StoreFrontInterface_Package renames org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
-   package StoreFrontAdvertisementsStatistics_Package renames org.allbinary.business.context.modules.storefront.statistics.advertisements.StoreFrontAdvertisementsStatistics_Package;
-   package StoreFrontAdvertisementsStatisticsInterface_Package renames org.allbinary.business.context.modules.storefront.statistics.advertisements.StoreFrontAdvertisementsStatisticsInterface_Package;
-   package StoreFrontInventoryStatistics_Package renames org.allbinary.business.context.modules.storefront.statistics.inventory.StoreFrontInventoryStatistics_Package;
-   package StoreFrontInventoryStatisticsInterface_Package renames org.allbinary.business.context.modules.storefront.statistics.inventory.StoreFrontInventoryStatisticsInterface_Package;
-   package StoreFrontOrdersHistoryStatistics_Package renames org.allbinary.business.context.modules.storefront.statistics.orders.history.StoreFrontOrdersHistoryStatistics_Package;
-   package StoreFrontOrdersHistoryStatisticsInterface_Package renames org.allbinary.business.context.modules.storefront.statistics.orders.history.StoreFrontOrdersHistoryStatisticsInterface_Package;
-   package StoreFrontUsersStatistics_Package renames org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatistics_Package;
-   package StoreFrontUsersStatisticsInterface_Package renames org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsInterface_Package;
+   package StoreFrontInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
+   package StoreFrontAdvertisementsStatistics_Package renames Standard.org.allbinary.business.context.modules.storefront.statistics.advertisements.StoreFrontAdvertisementsStatistics_Package;
+   package StoreFrontAdvertisementsStatisticsInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.statistics.advertisements.StoreFrontAdvertisementsStatisticsInterface_Package;
+   package StoreFrontInventoryStatistics_Package renames Standard.org.allbinary.business.context.modules.storefront.statistics.inventory.StoreFrontInventoryStatistics_Package;
+   package StoreFrontInventoryStatisticsInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.statistics.inventory.StoreFrontInventoryStatisticsInterface_Package;
+   package StoreFrontOrdersHistoryStatistics_Package renames Standard.org.allbinary.business.context.modules.storefront.statistics.orders.history.StoreFrontOrdersHistoryStatistics_Package;
+   package StoreFrontOrdersHistoryStatisticsInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.statistics.orders.history.StoreFrontOrdersHistoryStatisticsInterface_Package;
+   package StoreFrontUsersStatistics_Package renames Standard.org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatistics_Package;
+   package StoreFrontUsersStatisticsInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsInterface_Package;
 
    type RealTimeStoreFrontStatistics is tagged;
    type RealTimeStoreFrontStatistics_Access is access all RealTimeStoreFrontStatistics'Class;

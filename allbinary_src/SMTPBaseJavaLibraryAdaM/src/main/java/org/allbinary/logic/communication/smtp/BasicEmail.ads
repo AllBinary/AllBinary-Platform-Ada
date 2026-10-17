@@ -30,10 +30,10 @@ with org.allbinary.logic.communication.smtp.EmailInterface_Package; use org.allb
 
 package org.allbinary.logic.communication.smtp.BasicEmail_Package is
 
-   package BasicEmailInfo_Package renames org.allbinary.logic.communication.smtp.info.BasicEmailInfo_Package;
-   package EmailInfo_Package renames org.allbinary.logic.communication.smtp.info.EmailInfo_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
+   package BasicEmailInfo_Package renames Standard.org.allbinary.logic.communication.smtp.info.BasicEmailInfo_Package;
+   package EmailInfo_Package renames Standard.org.allbinary.logic.communication.smtp.info.EmailInfo_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type BasicEmail is tagged;
    type BasicEmail_Access is access all BasicEmail'Class;

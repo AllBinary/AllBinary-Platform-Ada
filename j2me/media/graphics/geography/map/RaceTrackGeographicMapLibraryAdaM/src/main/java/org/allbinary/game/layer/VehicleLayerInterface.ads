@@ -30,12 +30,12 @@ with org.allbinary.game.layer.VehiclePropertiesCompositeInterface_Package; use o
 
 package org.allbinary.game.layer.VehicleLayerInterface_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package RotationAnimation_Package renames org.allbinary.animation.RotationAnimation_Package;
-   package LayerInterface_Package renames org.allbinary.layer.LayerInterface_Package;
-   package BasicDecimal_Package renames org.allbinary.logic.math.BasicDecimal_Package;
-   package GeographicMapCellHistory_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package;
-   package GeographicMapCellPositionTracking_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCellPositionTracking_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package RotationAnimation_Package renames Standard.org.allbinary.animation.RotationAnimation_Package;
+   package LayerInterface_Package renames Standard.org.allbinary.layer.LayerInterface_Package;
+   package BasicDecimal_Package renames Standard.org.allbinary.logic.math.BasicDecimal_Package;
+   package GeographicMapCellHistory_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package;
+   package GeographicMapCellPositionTracking_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPositionTracking_Package;
 
    type VehicleLayerInterface is interface and LayerInterface and VehiclePropertiesCompositeInterface;
    type VehicleLayerInterface_Access is access all VehicleLayerInterface'Class;

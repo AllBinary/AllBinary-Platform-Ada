@@ -32,13 +32,13 @@ with org.allbinary.animation.image.BaseImageAnimationFactory_Package; use org.al
 
 package org.allbinary.animation.image.AllBinaryHTMLImageRotationAnimationFactory_Package is
 
-   package Animation_Package renames org.allbinary.animation.Animation_Package;
-   package AnimationBehaviorFactory_Package renames org.allbinary.animation.AnimationBehaviorFactory_Package;
-   package GameConfigurationCentral_Package renames org.allbinary.game.configuration.GameConfigurationCentral_Package;
-   package PrimitiveIntUtil_Package renames org.allbinary.logic.math.PrimitiveIntUtil_Package;
-   package ImageCopyUtil_Package renames org.allbinary.media.image.ImageCopyUtil_Package;
-   package AngleFactory_Package renames org.allbinary.math.AngleFactory_Package;
-   package AngleInfo_Package renames org.allbinary.math.AngleInfo_Package;
+   package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
+   package AnimationBehaviorFactory_Package renames Standard.org.allbinary.animation.AnimationBehaviorFactory_Package;
+   package GameConfigurationCentral_Package renames Standard.org.allbinary.game.configuration.GameConfigurationCentral_Package;
+   package PrimitiveIntUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveIntUtil_Package;
+   package ImageCopyUtil_Package renames Standard.org.allbinary.media.image.ImageCopyUtil_Package;
+   package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;
+   package AngleInfo_Package renames Standard.org.allbinary.math.AngleInfo_Package;
 
    type AllBinaryHTMLImageRotationAnimationFactory is tagged;
    type AllBinaryHTMLImageRotationAnimationFactory_Access is access all AllBinaryHTMLImageRotationAnimationFactory'Class;

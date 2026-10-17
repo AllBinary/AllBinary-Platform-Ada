@@ -25,8 +25,8 @@ with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactor
 
 package org.allbinary.direction.DirectionUtil_Package is
 
-   package Angle_Package renames org.allbinary.math.Angle_Package;
-   package AngleFactory_Package renames org.allbinary.math.AngleFactory_Package;
+   package Angle_Package renames Standard.org.allbinary.math.Angle_Package;
+   package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;
 
    type DirectionUtil is tagged;
    type DirectionUtil_Access is access all DirectionUtil'Class;

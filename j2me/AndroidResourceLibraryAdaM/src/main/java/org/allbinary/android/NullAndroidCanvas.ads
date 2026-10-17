@@ -25,8 +25,8 @@ with android.media.MediaPlayer_Package; use android.media.MediaPlayer_Package;
 
 package org.allbinary.android.NullAndroidCanvas_Package is
 
-   package Canvas_Package renames android.graphics.Canvas_Package;
-   package MediaPlayer_Package renames android.media.MediaPlayer_Package;
+   package Canvas_Package renames Standard.android.graphics.Canvas_Package;
+   package MediaPlayer_Package renames Standard.android.media.MediaPlayer_Package;
 
    type NullAndroidCanvas is tagged;
    type NullAndroidCanvas_Access is access all NullAndroidCanvas'Class;

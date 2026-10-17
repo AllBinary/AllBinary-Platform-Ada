@@ -148,8 +148,12 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
             end if;
             This.myFontProcessor := MyFontProcessor_Package.getInstance;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.canvasStrings.ON_DISPLAY_CHANGE_EVENT, e);
+                end;
         end;
    end updateMeasurement;
 
@@ -179,8 +183,12 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
             This.myFontProcessor := This.updateMyFontProcessor;
             This.menuBehavior.onDisplayChangeEvent (This'Unchecked_Access, displayChangeEvent);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.canvasStrings.ON_DISPLAY_CHANGE_EVENT, e);
+                end;
         end;
    end onDisplayChangeEvent;
 
@@ -234,8 +242,12 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
         begin
             This.menuBehavior.initMenu (This'Unchecked_Access);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("initMenu"), e);
+                end;
         end;
    end initMenu;
 
@@ -277,8 +289,12 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
         begin
             This.menuBehavior.updateMenu (This'Unchecked_Access);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("initMenu"), e);
+                end;
         end;
    end updateMenu;
 
@@ -606,8 +622,12 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
             This.updateScreenButtonPaintable;
             This.sensorGameUpdateProcessor.sendNotifications (This.gameLayerManager);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("itemStateChanged"), e);
+                end;
         end;
    end itemStateChanged;
 
@@ -1097,8 +1117,12 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
             This.gameBehavior.run (This'Unchecked_Access);
             This.logUtil.putF (This.commonStrings.END_RUNNABLE, This'Unchecked_Access, This.commonStrings.RUN);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.RUN, e);
+                end;
         end;
    end run;
 
@@ -1163,8 +1187,12 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
                 end if;
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.SET_RUNNING, e);
+                end;
         end;
    end setRunning;
 

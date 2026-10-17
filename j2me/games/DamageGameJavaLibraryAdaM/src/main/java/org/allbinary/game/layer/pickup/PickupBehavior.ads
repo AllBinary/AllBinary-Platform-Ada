@@ -33,15 +33,15 @@ with org.allbinary.game.layer.pickup.PickupBehaviorInterface_Package; use org.al
 
 package org.allbinary.game.layer.pickup.PickupBehavior_Package is
 
-   package HealthInterfaceCompositeInterface_Package renames org.allbinary.game.health.HealthInterfaceCompositeInterface_Package;
-   package CollidableCompositeLayer_Package renames org.allbinary.game.layer.CollidableCompositeLayer_Package;
-   package CollidableDestroyableDamageableLayer_Package renames org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
-   package CountedLayerInterfaceFactoryPart_Package renames org.allbinary.game.part.CountedLayerInterfaceFactoryPart_Package;
-   package PartInterface_Package renames org.allbinary.game.part.PartInterface_Package;
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package PreLogUtil_Package renames org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package HealthInterfaceCompositeInterface_Package renames Standard.org.allbinary.game.health.HealthInterfaceCompositeInterface_Package;
+   package CollidableCompositeLayer_Package renames Standard.org.allbinary.game.layer.CollidableCompositeLayer_Package;
+   package CollidableDestroyableDamageableLayer_Package renames Standard.org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
+   package CountedLayerInterfaceFactoryPart_Package renames Standard.org.allbinary.game.part.CountedLayerInterfaceFactoryPart_Package;
+   package PartInterface_Package renames Standard.org.allbinary.game.part.PartInterface_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type PickupBehavior is tagged;
    type PickupBehavior_Access is access all PickupBehavior'Class;

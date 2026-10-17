@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.ByteArrayOutputStream_Package; use java.io.ByteArrayOutputStream_Package;
+with java.io.ByteArrayOutputStream_Package; use java.io.ByteArrayOutputStream_Package;
 --  with java.io.Closeable_Package; use java.io.Closeable_Package;
 --  with java.io.InputStream_Package; use java.io.InputStream_Package;
 --  with java.io.OutputStream_Package; use java.io.OutputStream_Package;
@@ -29,8 +29,9 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.logic.io.StreamUtil_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package ByteArrayOutputStream_Package renames Standard.java.io.ByteArrayOutputStream_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type StreamUtil is tagged;
    type StreamUtil_Access is access all StreamUtil'Class;

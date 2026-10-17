@@ -115,9 +115,13 @@ package body org.allbinary.media.audio.AllBinaryMediaManager_Package is
             begin
                 return AndroidMediaPlayerWrapper_Package.Create (resource);
             exception
-                when e : others =>
+                when Java_Occurrence : others =>
+                    declare
+                        e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                    begin
                 logUtil.put (To_Unbounded_String ("Could not create AndroidMediaPlayerWrapper using NoPlayer at ") & Java_Image (CommonLabels_Package.getInstance.TOTAL_LABEL) & Java_Image (AllBinaryMediaManager_Package.mostUsedTotal), AllBinaryMediaManager_Package.THIS_Id, To_Unbounded_String ("createPlayer"), e);
                 return NoPlayer_Package.NO_PLAYER;
+                    end;
             end;
         else
             return NoPlayer_Package.NO_PLAYER;

@@ -39,17 +39,17 @@ with admin.taghelpers.ModifyTable_Package; use admin.taghelpers.ModifyTable_Pack
 
 package admin.taghelpers.CustomItemsRequestHelper_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package DynamicObjectData_Package renames org.allbinary.business.DynamicObjectData_Package;
-   package EntryData_Package renames org.allbinary.business.entry_Id.EntryData_Package;
-   package BasicItemData_Package renames org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package;
-   package CustomItemData_Package renames org.allbinary.business.user.commerce.inventory.item.custom.CustomItemData_Package;
-   package CustomItemsEntityFactory_Package renames org.allbinary.data.tables.user.commerce.inventory.item.customs.CustomItemsEntityFactory_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package DynamicObjectData_Package renames Standard.org.allbinary.business.DynamicObjectData_Package;
+   package EntryData_Package renames Standard.org.allbinary.business.entry_Id.EntryData_Package;
+   package BasicItemData_Package renames Standard.org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package;
+   package CustomItemData_Package renames Standard.org.allbinary.business.user.commerce.inventory.item.custom.CustomItemData_Package;
+   package CustomItemsEntityFactory_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.item.customs.CustomItemsEntityFactory_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
 
    type CustomItemsRequestHelper is tagged;
    type CustomItemsRequestHelper_Access is access all CustomItemsRequestHelper'Class;

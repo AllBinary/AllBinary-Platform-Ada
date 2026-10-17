@@ -27,9 +27,9 @@ with org.allbinary.input.AllBinarySensorListener_Package; use org.allbinary.inpu
 
 package org.allbinary.input.AllBinarySensor_Package is
 
-   package ForcedLogUtil_Package renames org.allbinary.logic.communication.log.ForcedLogUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type AllBinarySensor is tagged;
    type AllBinarySensor_Access is access all AllBinarySensor'Class;

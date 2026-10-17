@@ -29,11 +29,11 @@ with org.allbinary.business.user.role.UserRole_Package; use org.allbinary.busine
 
 package org.allbinary.business.user.role.UserRoleB_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package UserFactoryInterface_Package renames org.allbinary.business.user.UserFactoryInterface_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package StringValidationUtil_Package renames org.allbinary.logic.string_Id.StringValidationUtil_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package UserFactoryInterface_Package renames Standard.org.allbinary.business.user.UserFactoryInterface_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
 
    type UserRoleB is tagged;
    type UserRoleB_Access is access all UserRoleB'Class;

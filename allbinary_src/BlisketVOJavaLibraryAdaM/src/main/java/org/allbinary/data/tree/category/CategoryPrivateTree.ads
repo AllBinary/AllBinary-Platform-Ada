@@ -32,15 +32,15 @@ with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 
 package org.allbinary.data.tree.category.CategoryPrivateTree_Package is
 
-   package CategoryComponent_Package renames org.allbinary.business.category.CategoryComponent_Package;
-   package CategoryData_Package renames org.allbinary.business.category.CategoryData_Package;
-   package CategoryFactoryInterface_Package renames org.allbinary.business.category.CategoryFactoryInterface_Package;
-   package CategoryInterface_Package renames org.allbinary.business.category.CategoryInterface_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CryptFileWriter_Package renames org.allbinary.logic.control.crypt.file.CryptFileWriter_Package;
-   package AbFile_Package renames org.allbinary.logic.io.file.AbFile_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
+   package CategoryComponent_Package renames Standard.org.allbinary.business.category.CategoryComponent_Package;
+   package CategoryData_Package renames Standard.org.allbinary.business.category.CategoryData_Package;
+   package CategoryFactoryInterface_Package renames Standard.org.allbinary.business.category.CategoryFactoryInterface_Package;
+   package CategoryInterface_Package renames Standard.org.allbinary.business.category.CategoryInterface_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CryptFileWriter_Package renames Standard.org.allbinary.logic.control.crypt.file.CryptFileWriter_Package;
+   package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
 
    type CategoryPrivateTree is tagged;
    type CategoryPrivateTree_Access is access all CategoryPrivateTree'Class;

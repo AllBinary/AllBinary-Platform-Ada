@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.ByteArrayOutputStream_Package; use java.io.ByteArrayOutputStream_Package;
+with java.io.ByteArrayOutputStream_Package; use java.io.ByteArrayOutputStream_Package;
 --  with java.io.IOException_Package; use java.io.IOException_Package;
 --  with java.io.InputStream_Package; use java.io.InputStream_Package;
 --  with javax.servlet.ServletException_Package; use javax.servlet.ServletException_Package;
@@ -36,12 +36,13 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.servlet.CloudImageServlet_Package is
 
-   package URLGLOBALS_Package renames org.allbinary.globals.URLGLOBALS_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CloudStreamUtil_Package renames org.allbinary.logic.io.CloudStreamUtil_Package;
-   package StreamUtil_Package renames org.allbinary.logic.io.StreamUtil_Package;
-   package AbFile_Package renames org.allbinary.logic.io.file.AbFile_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package ByteArrayOutputStream_Package renames Standard.java.io.ByteArrayOutputStream_Package;
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CloudStreamUtil_Package renames Standard.org.allbinary.logic.io.CloudStreamUtil_Package;
+   package StreamUtil_Package renames Standard.org.allbinary.logic.io.StreamUtil_Package;
+   package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type CloudImageServlet is tagged;
    type CloudImageServlet_Access is access all CloudImageServlet'Class;

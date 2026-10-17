@@ -27,10 +27,10 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 
 package org.allbinary.game.layer.waypoint.Waypoint2LogHelper_Package is
 
-   package PathFindingLayerInterface_Package renames org.allbinary.game.layer.PathFindingLayerInterface_Package;
-   package WaypointBehaviorBase_Package renames org.allbinary.game.layer.WaypointBehaviorBase_Package;
-   package GeographicMapCellPosition_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package PathFindingLayerInterface_Package renames Standard.org.allbinary.game.layer.PathFindingLayerInterface_Package;
+   package WaypointBehaviorBase_Package renames Standard.org.allbinary.game.layer.WaypointBehaviorBase_Package;
+   package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type Waypoint2LogHelper is tagged;
    type Waypoint2LogHelper_Access is access all Waypoint2LogHelper'Class;

@@ -12,7 +12,7 @@ with org.allbinary.game.testgamedemo.R_Package; use org.allbinary.game.testgamed
 
 package org.allbinary.AndroidResources_Package is
 
-   package R_Package renames org.allbinary.game.testgamedemo.R_Package;
+   package R_Package renames Standard.org.allbinary.game.testgamedemo.R_Package;
 
    type AndroidResources is tagged;
    type AndroidResources_Access is access all AndroidResources'Class;

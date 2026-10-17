@@ -24,7 +24,7 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 
 package org.allbinary.game.layer.LayerPlacementInterfaceBasicArrayListFactoryInterface_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type LayerPlacementInterfaceBasicArrayListFactoryInterface is interface;
    type LayerPlacementInterfaceBasicArrayListFactoryInterface_Access is access all LayerPlacementInterfaceBasicArrayListFactoryInterface'Class;

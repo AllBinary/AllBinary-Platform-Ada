@@ -27,9 +27,9 @@ with org.allbinary.input.motion.button.TouchButtonResourceAnimationInterfaceFact
 
 package org.allbinary.input.motion.button.TouchButtonResourceOpenGLESAnimationInterfaceFactoryInterfaceFactory_Package is
 
-   package Features_Package renames org.allbinary.game.configuration.feature.Features_Package;
-   package OpenGLFeatureFactory_Package renames org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
-   package OpenGLImageCacheFactory_Package renames org.allbinary.image.opengles.OpenGLImageCacheFactory_Package;
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
+   package OpenGLFeatureFactory_Package renames Standard.org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
+   package OpenGLImageCacheFactory_Package renames Standard.org.allbinary.image.opengles.OpenGLImageCacheFactory_Package;
 
    type TouchButtonResourceOpenGLESAnimationInterfaceFactoryInterfaceFactory is tagged;
    type TouchButtonResourceOpenGLESAnimationInterfaceFactoryInterfaceFactory_Access is access all TouchButtonResourceOpenGLESAnimationInterfaceFactoryInterfaceFactory'Class;

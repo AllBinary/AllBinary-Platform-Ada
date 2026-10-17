@@ -25,8 +25,8 @@ with org.allbinary.logic.system.hardware.components.interfaces.MonitorInterface_
 
 package org.allbinary.logic.system.hardware.components.linux.Monitor_Package is
 
-   package HardwareComponentInterface_Package renames org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package;
-   package MonitorInterface_Package renames org.allbinary.logic.system.hardware.components.interfaces.MonitorInterface_Package;
+   package HardwareComponentInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package;
+   package MonitorInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.MonitorInterface_Package;
 
    type Monitor is tagged;
    type Monitor_Access is access all Monitor'Class;

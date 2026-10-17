@@ -25,7 +25,7 @@ with org.allbinary.canvas.Processor_Package; use org.allbinary.canvas.Processor_
 
 package org.allbinary.graphics.displayable.screen.ScreenRepaintProcessor_Package is
 
-   package Processor_Package renames org.allbinary.canvas.Processor_Package;
+   package Processor_Package renames Standard.org.allbinary.canvas.Processor_Package;
 
    type ScreenRepaintProcessor is tagged;
    type ScreenRepaintProcessor_Access is access all ScreenRepaintProcessor'Class;

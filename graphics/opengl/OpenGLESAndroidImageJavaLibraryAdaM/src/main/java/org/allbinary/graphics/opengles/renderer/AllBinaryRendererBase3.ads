@@ -28,9 +28,9 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 
 package org.allbinary.graphics.opengles.renderer.AllBinaryRendererBase3_Package is
 
-   package OpenGLESImage_Package renames org.allbinary.image.opengles.OpenGLESImage_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
+   package OpenGLESImage_Package renames Standard.org.allbinary.image.opengles.OpenGLESImage_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type AllBinaryRendererBase3 is tagged;
    type AllBinaryRendererBase3_Access is access all AllBinaryRendererBase3'Class;

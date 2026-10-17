@@ -24,7 +24,7 @@ with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allb
 
 package org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEventListenerInterface_Package is
 
-   package EventListenerInterface_Package renames org.allbinary.logic.util.event.EventListenerInterface_Package;
+   package EventListenerInterface_Package renames Standard.org.allbinary.logic.util.event.EventListenerInterface_Package;
 
    type GeographicMapCellPositionEventListenerInterface is interface and EventListenerInterface;
    type GeographicMapCellPositionEventListenerInterface_Access is access all GeographicMapCellPositionEventListenerInterface'Class;

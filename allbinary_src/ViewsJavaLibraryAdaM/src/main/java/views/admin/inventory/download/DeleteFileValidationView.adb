@@ -69,8 +69,12 @@ package body views.admin.inventory.download.DeleteFileValidationView_Package is
             end if;
             return True;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             return False;
+                end;
         end;
    end isValid;
 
@@ -107,8 +111,12 @@ package body views.admin.inventory.download.DeleteFileValidationView_Package is
             end if;
             return stringBuffer.toString;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             return To_Unbounded_String ("Unkown Validation Error.<br />");
+                end;
         end;
    end validationInfo;
 

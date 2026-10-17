@@ -25,8 +25,8 @@ with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.al
 
 package org.allbinary.business.advertisement.BottomLimiter_Package is
 
-   package GameAdState_Package renames org.allbinary.game.GameAdState_Package;
-   package DisplayInfoSingleton_Package renames org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+   package GameAdState_Package renames Standard.org.allbinary.game.GameAdState_Package;
+   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
 
    type BottomLimiter is tagged;
    type BottomLimiter_Access is access all BottomLimiter'Class;

@@ -25,7 +25,7 @@ with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Pa
 
 package org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package is
 
-   package GPoint_Package renames org.allbinary.graphics.GPoint_Package;
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
 
    type ImageComparatorConstraintsInterface is interface;
    type ImageComparatorConstraintsInterface_Access is access all ImageComparatorConstraintsInterface'Class;

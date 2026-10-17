@@ -30,13 +30,13 @@ with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logi
 
 package org.allbinary.bounds.LayerBounds_Package is
 
-   package BoundsChangeEvent_Package renames org.allbinary.bounds.event.BoundsChangeEvent_Package;
-   package BoundsChangeEventListener_Package renames org.allbinary.bounds.event.BoundsChangeEventListener_Package;
-   package Rectangle_Package renames org.allbinary.graphics.Rectangle_Package;
-   package ForcedLogUtil_Package renames org.allbinary.logic.communication.log.ForcedLogUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package AllBinaryEventObject_Package renames org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-   package EventStrings_Package renames org.allbinary.logic.util.event.EventStrings_Package;
+   package BoundsChangeEvent_Package renames Standard.org.allbinary.bounds.event.BoundsChangeEvent_Package;
+   package BoundsChangeEventListener_Package renames Standard.org.allbinary.bounds.event.BoundsChangeEventListener_Package;
+   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+   package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
 
    type LayerBounds is tagged;
    type LayerBounds_Access is access all LayerBounds'Class;

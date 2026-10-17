@@ -25,7 +25,7 @@ with org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnailInterf
 
 package org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnail_Package is
 
-   package TwoDimensionalConstraintInterface_Package renames org.allbinary.logic.control.contraints.size.TwoDimensionalConstraintInterface_Package;
+   package TwoDimensionalConstraintInterface_Package renames Standard.org.allbinary.logic.control.contraints.size.TwoDimensionalConstraintInterface_Package;
 
    type AdvertisementThumbnail is tagged;
    type AdvertisementThumbnail_Access is access all AdvertisementThumbnail'Class;

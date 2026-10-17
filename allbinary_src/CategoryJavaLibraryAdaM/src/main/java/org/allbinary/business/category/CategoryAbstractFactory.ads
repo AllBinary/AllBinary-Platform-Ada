@@ -31,12 +31,12 @@ with org.allbinary.business.category.CategoryFactoryInterface_Package; use org.a
 
 package org.allbinary.business.category.CategoryAbstractFactory_Package is
 
-   package CategoryPropertiesFactory_Package renames org.allbinary.business.category.properties.CategoryPropertiesFactory_Package;
-   package CategoryPropertiesFactoryInterface_Package renames org.allbinary.business.category.properties.CategoryPropertiesFactoryInterface_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package AbPath_Package renames org.allbinary.logic.io.path.AbPath_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
+   package CategoryPropertiesFactory_Package renames Standard.org.allbinary.business.category.properties.CategoryPropertiesFactory_Package;
+   package CategoryPropertiesFactoryInterface_Package renames Standard.org.allbinary.business.category.properties.CategoryPropertiesFactoryInterface_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type CategoryAbstractFactory is tagged;
    type CategoryAbstractFactory_Access is access all CategoryAbstractFactory'Class;

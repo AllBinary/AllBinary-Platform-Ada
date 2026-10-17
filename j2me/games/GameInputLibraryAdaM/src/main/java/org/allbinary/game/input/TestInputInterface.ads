@@ -24,7 +24,7 @@ with org.allbinary.graphics.paint.PaintableInterface_Package; use org.allbinary.
 
 package org.allbinary.game.input.TestInputInterface_Package is
 
-   package PaintableInterface_Package renames org.allbinary.graphics.paint.PaintableInterface_Package;
+   package PaintableInterface_Package renames Standard.org.allbinary.graphics.paint.PaintableInterface_Package;
 
    type TestInputInterface is interface and PaintableInterface;
    type TestInputInterface_Access is access all TestInputInterface'Class;

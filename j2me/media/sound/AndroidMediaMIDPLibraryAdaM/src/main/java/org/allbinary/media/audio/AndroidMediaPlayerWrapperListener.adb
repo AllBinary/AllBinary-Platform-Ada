@@ -29,8 +29,12 @@ package body org.allbinary.media.audio.AndroidMediaPlayerWrapperListener_Package
             mediaPlayer.setOnPreparedListener (This.mOnPreparedListener);
             mediaPlayer.setOnErrorListener (This.mOnErrorListener);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR, e);
+                end;
         end;
    end Initialize;
 

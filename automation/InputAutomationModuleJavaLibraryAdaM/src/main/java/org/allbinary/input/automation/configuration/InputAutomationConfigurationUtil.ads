@@ -25,8 +25,8 @@ with org.allbinary.input.automation.module.configuration.InputAutomationModuleCo
 
 package org.allbinary.input.automation.configuration.InputAutomationConfigurationUtil_Package is
 
-   package InputAutomationModuleFactoryInterface_Package renames org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package;
-   package InputAutomationModuleConfiguration_Package renames org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package;
+   package InputAutomationModuleFactoryInterface_Package renames Standard.org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package;
+   package InputAutomationModuleConfiguration_Package renames Standard.org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package;
 
    type InputAutomationConfigurationUtil is tagged;
    type InputAutomationConfigurationUtil_Access is access all InputAutomationConfigurationUtil'Class;

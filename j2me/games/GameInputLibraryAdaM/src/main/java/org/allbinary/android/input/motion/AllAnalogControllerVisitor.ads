@@ -28,10 +28,10 @@ with org.allbinary.android.input.motion.AnalogControllerVisitor_Package; use org
 
 package org.allbinary.android.input.motion.AllAnalogControllerVisitor_Package is
 
-   package AnalogLocationInput_Package renames org.allbinary.game.input.analog.AnalogLocationInput_Package;
-   package AnalogLocationInputFactory_Package renames org.allbinary.game.input.analog.AnalogLocationInputFactory_Package;
-   package AllBinaryLayerManager_Package renames org.allbinary.layer.AllBinaryLayerManager_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package AnalogLocationInput_Package renames Standard.org.allbinary.game.input.analog.AnalogLocationInput_Package;
+   package AnalogLocationInputFactory_Package renames Standard.org.allbinary.game.input.analog.AnalogLocationInputFactory_Package;
+   package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type AllAnalogControllerVisitor is tagged;
    type AllAnalogControllerVisitor_Access is access all AllAnalogControllerVisitor'Class;

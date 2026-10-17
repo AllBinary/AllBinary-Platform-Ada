@@ -24,7 +24,7 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 
 package org.allbinary.logic.java.PrimitiveArrayToString_Package is
 
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
 
    type PrimitiveArrayToString is tagged;
    type PrimitiveArrayToString_Access is access all PrimitiveArrayToString'Class;

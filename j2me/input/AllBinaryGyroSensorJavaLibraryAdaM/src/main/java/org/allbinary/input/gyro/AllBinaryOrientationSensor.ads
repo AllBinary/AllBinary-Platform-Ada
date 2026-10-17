@@ -28,11 +28,11 @@ with org.allbinary.logic.math.PrimitiveFloatUtil_Package; use org.allbinary.logi
 
 package org.allbinary.input.gyro.AllBinaryOrientationSensor_Package is
 
-   package CompleteMotionGestureInputEventListenerInterface_Package renames org.allbinary.game.input.CompleteMotionGestureInputEventListenerInterface_Package;
-   package NoCompleteMotionGestureInputEventListener_Package renames org.allbinary.game.input.motion.action.NoCompleteMotionGestureInputEventListener_Package;
-   package AllBinarySensor_Package renames org.allbinary.input.AllBinarySensor_Package;
-   package Orientation_Package renames org.allbinary.logic.math.Orientation_Package;
-   package PrimitiveFloatUtil_Package renames org.allbinary.logic.math.PrimitiveFloatUtil_Package;
+   package CompleteMotionGestureInputEventListenerInterface_Package renames Standard.org.allbinary.game.input.CompleteMotionGestureInputEventListenerInterface_Package;
+   package NoCompleteMotionGestureInputEventListener_Package renames Standard.org.allbinary.game.input.motion.action.NoCompleteMotionGestureInputEventListener_Package;
+   package AllBinarySensor_Package renames Standard.org.allbinary.input.AllBinarySensor_Package;
+   package Orientation_Package renames Standard.org.allbinary.logic.math.Orientation_Package;
+   package PrimitiveFloatUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveFloatUtil_Package;
 
    type AllBinaryOrientationSensor is tagged;
    type AllBinaryOrientationSensor_Access is access all AllBinaryOrientationSensor'Class;

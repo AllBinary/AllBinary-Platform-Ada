@@ -25,8 +25,8 @@ with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allb
 
 package org.allbinary.game.identification.GroupCommonFactory_Package is
 
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
-   package SmallIntegerSingletonFactory_Package renames org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
 
    type GroupCommonFactory is tagged;
    type GroupCommonFactory_Access is access all GroupCommonFactory'Class;

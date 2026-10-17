@@ -25,7 +25,7 @@ with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.
 
 package org.allbinary.graphics.form.FormPaintable_Package is
 
-   package Paintable_Package renames org.allbinary.graphics.paint.Paintable_Package;
+   package Paintable_Package renames Standard.org.allbinary.graphics.paint.Paintable_Package;
 
    type FormPaintable is tagged;
    type FormPaintable_Access is access all FormPaintable'Class;

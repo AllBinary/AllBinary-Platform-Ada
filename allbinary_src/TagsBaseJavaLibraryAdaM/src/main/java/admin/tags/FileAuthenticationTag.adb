@@ -126,8 +126,12 @@ package body admin.tags.FileAuthenticationTag_Package is
             end if;
             return False;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Java_Throw (e);
+                end;
         end;
    end changePassword;
 
@@ -137,11 +141,15 @@ package body admin.tags.FileAuthenticationTag_Package is
             This.weblisketSession.clear;
             return TagSupport_Package.EVAL_BODY_INCLUDE.intValue;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAGERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("invalidateSession()"), e);
             end if;
             return TagSupport_Package.SKIP_BODY;
+                end;
         end;
    end invalidateSession;
 
@@ -179,11 +187,15 @@ package body admin.tags.FileAuthenticationTag_Package is
             end if;
             return This.isRarelyUsedSession.booleanValue;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAGERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("isSessionOld()"), e);
             end if;
             return False;
+                end;
         end;
    end isSessionOld;
 
@@ -226,11 +238,15 @@ package body admin.tags.FileAuthenticationTag_Package is
             This.makeSessionValid (BasicUserRoleFactory_Package.getInstance.INSTALLER, This.userName);
             return True.booleanValue;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAGERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("isRoleValid()"), e);
             end if;
             return False;
+                end;
         end;
    end isRoleValid;
 
@@ -244,12 +260,16 @@ package body admin.tags.FileAuthenticationTag_Package is
             stringBuffer.append (To_Unbounded_String ("Trying New login<p>"));
             return stringBuffer.toString;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             error := To_Unbounded_String ("Failed to set valid role");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAGERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("validRole()"), e);
             end if;
             return error;
+                end;
         end;
    end validRole;
 
@@ -265,12 +285,16 @@ package body admin.tags.FileAuthenticationTag_Package is
             stringBuffer.append (To_Unbounded_String ("Trying New login<p>"));
             return stringBuffer.toString;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             error := To_Unbounded_String ("Failed to set role invalid");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAGERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("invalidRole()"), e);
             end if;
             return error;
+                end;
         end;
    end invalidRole;
 
@@ -293,11 +317,15 @@ package body admin.tags.FileAuthenticationTag_Package is
             end if;
             return False.booleanValue;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAGERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("isAuthenticationSessionValid()"), e);
             end if;
             return False;
+                end;
         end;
    end isAuthenticationSessionValid;
 
@@ -328,11 +356,15 @@ package body admin.tags.FileAuthenticationTag_Package is
             This.nextAttempt;
             return False.booleanValue;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAGERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("processIfNewLogin()"), e);
             end if;
             return False;
+                end;
         end;
    end processIfNewLogin;
 
@@ -349,11 +381,15 @@ package body admin.tags.FileAuthenticationTag_Package is
                 return False.booleanValue;
             end;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAGERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("isSetToInvalidate()"), e);
             end if;
             return False;
+                end;
         end;
    end processInvalidation;
 
@@ -472,9 +508,13 @@ package body admin.tags.FileAuthenticationTag_Package is
             end if;
             return SKIP_BODY;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             AbResponseHandler_Package.sendJspTagLicensingRedirect (This.pageContext, e);
             return SKIP_BODY;
+                end;
         end;
    end doStartTag;
 

@@ -25,7 +25,7 @@ with org.allbinary.game.behavior.topview.placement.TileMapPlacementVisitor_Packa
 
 package org.allbinary.game.behavior.topview.placement.AllAnimationsEverywhereTileMapPlacementVisitor_Package is
 
-   package TiledMap_Package renames org.mapeditor.core.TiledMap_Package;
+   package TiledMap_Package renames Standard.org.mapeditor.core.TiledMap_Package;
 
    type AllAnimationsEverywhereTileMapPlacementVisitor is tagged;
    type AllAnimationsEverywhereTileMapPlacementVisitor_Access is access all AllAnimationsEverywhereTileMapPlacementVisitor'Class;

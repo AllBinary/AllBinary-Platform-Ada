@@ -33,15 +33,15 @@ with org.allbinary.android.input.api3.Runnable_Package; use org.allbinary.androi
 
 package org.allbinary.android.input.api3.HideVirtualKeyboardRunnable_Package is
 
-   package Activity_Package renames android.app.Activity_Package;
-   package Context_Package renames android.content.Context_Package;
-   package IBinder_Package renames android.os.IBinder_Package;
-   package View_Package renames android.view.View_Package;
-   package InputMethodManager_Package renames android.view.inputmethod.InputMethodManager_Package;
-   package ViewCompositeInterface_Package renames org.allbinary.android.activity.ViewCompositeInterface_Package;
-   package ForcedLogUtil_Package renames org.allbinary.logic.communication.log.ForcedLogUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package Activity_Package renames Standard.android.app.Activity_Package;
+   package Context_Package renames Standard.android.content.Context_Package;
+   package IBinder_Package renames Standard.android.os.IBinder_Package;
+   package View_Package renames Standard.android.view.View_Package;
+   package InputMethodManager_Package renames Standard.android.view.inputmethod.InputMethodManager_Package;
+   package ViewCompositeInterface_Package renames Standard.org.allbinary.android.activity.ViewCompositeInterface_Package;
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type HideVirtualKeyboardRunnable is tagged;
    type HideVirtualKeyboardRunnable_Access is access all HideVirtualKeyboardRunnable'Class;

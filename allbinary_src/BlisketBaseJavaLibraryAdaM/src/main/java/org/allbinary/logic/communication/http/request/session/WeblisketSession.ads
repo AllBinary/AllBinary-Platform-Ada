@@ -41,19 +41,19 @@ with org.allbinary.logic.communication.http.request.session.WeblisketSessionInte
 
 package org.allbinary.logic.communication.http.request.session.WeblisketSession_Package is
 
-   package StoreFrontData_Package renames org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
-   package StoreFrontFactory_Package renames org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
-   package StoreFrontInterface_Package renames org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
-   package UserData_Package renames org.allbinary.business.user.UserData_Package;
-   package Basket_Package renames org.allbinary.business.user.commerce.inventory.basket.Basket_Package;
-   package Order_Package renames org.allbinary.business.user.commerce.inventory.order.Order_Package;
-   package OrderInterface_Package renames org.allbinary.business.user.commerce.inventory.order.OrderInterface_Package;
-   package PaymentGatewayData_Package renames org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package;
-   package UserRole_Package renames org.allbinary.business.user.role.UserRole_Package;
-   package UserRoleB_Package renames org.allbinary.business.user.role.UserRoleB_Package;
-   package UserRoleData_Package renames org.allbinary.business.user.role.UserRoleData_Package;
-   package BooleanFactory_Package renames org.allbinary.logic.java.bool.BooleanFactory_Package;
-   package StringValidationUtil_Package renames org.allbinary.logic.string_Id.StringValidationUtil_Package;
+   package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+   package StoreFrontFactory_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
+   package StoreFrontInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
+   package UserData_Package renames Standard.org.allbinary.business.user.UserData_Package;
+   package Basket_Package renames Standard.org.allbinary.business.user.commerce.inventory.basket.Basket_Package;
+   package Order_Package renames Standard.org.allbinary.business.user.commerce.inventory.order.Order_Package;
+   package OrderInterface_Package renames Standard.org.allbinary.business.user.commerce.inventory.order.OrderInterface_Package;
+   package PaymentGatewayData_Package renames Standard.org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package;
+   package UserRole_Package renames Standard.org.allbinary.business.user.role.UserRole_Package;
+   package UserRoleB_Package renames Standard.org.allbinary.business.user.role.UserRoleB_Package;
+   package UserRoleData_Package renames Standard.org.allbinary.business.user.role.UserRoleData_Package;
+   package BooleanFactory_Package renames Standard.org.allbinary.logic.java.bool.BooleanFactory_Package;
+   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
 
    type WeblisketSession is tagged;
    type WeblisketSession_Access is access all WeblisketSession'Class;

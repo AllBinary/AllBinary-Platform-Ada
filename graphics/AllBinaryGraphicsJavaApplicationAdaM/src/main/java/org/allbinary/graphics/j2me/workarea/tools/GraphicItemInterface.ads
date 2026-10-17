@@ -28,10 +28,10 @@ with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 
 package org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package is
 
-   package GPoint_Package renames org.allbinary.graphics.GPoint_Package;
-   package CanvasDom_Package renames org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package;
-   package IntegerDimension_Package renames org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package CanvasDom_Package renames Standard.org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package;
+   package IntegerDimension_Package renames Standard.org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type GraphicItemInterface is interface;
    type GraphicItemInterface_Access is access all GraphicItemInterface'Class;

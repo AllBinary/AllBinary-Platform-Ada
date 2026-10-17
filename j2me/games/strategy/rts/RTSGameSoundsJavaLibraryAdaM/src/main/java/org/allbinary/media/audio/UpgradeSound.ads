@@ -24,8 +24,8 @@ with org.allbinary.media.audio.Sound_Package; use org.allbinary.media.audio.Soun
 
 package org.allbinary.media.audio.UpgradeSound_Package is
 
-   package CompositeSound_Package renames org.allbinary.media.audio.CompositeSound_Package;
-   package Sound_Package renames org.allbinary.media.audio.Sound_Package;
+   package CompositeSound_Package renames Standard.org.allbinary.media.audio.CompositeSound_Package;
+   package Sound_Package renames Standard.org.allbinary.media.audio.Sound_Package;
 
    type UpgradeSound is tagged;
    type UpgradeSound_Access is access all UpgradeSound'Class;

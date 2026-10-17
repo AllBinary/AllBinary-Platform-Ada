@@ -26,9 +26,9 @@ with org.allbinary.game.physics.velocity.VelocityProperties_Package; use org.all
 
 package org.allbinary.game.behavior.topview.TopViewGameLayerBehavior_Package is
 
-   package GameLayerBehavior_Package renames org.allbinary.game.layer.behavior.GameLayerBehavior_Package;
-   package BasicAccelerationProperties_Package renames org.allbinary.game.physics.acceleration.BasicAccelerationProperties_Package;
-   package VelocityProperties_Package renames org.allbinary.game.physics.velocity.VelocityProperties_Package;
+   package GameLayerBehavior_Package renames Standard.org.allbinary.game.layer.behavior.GameLayerBehavior_Package;
+   package BasicAccelerationProperties_Package renames Standard.org.allbinary.game.physics.acceleration.BasicAccelerationProperties_Package;
+   package VelocityProperties_Package renames Standard.org.allbinary.game.physics.velocity.VelocityProperties_Package;
 
    type TopViewGameLayerBehavior is tagged;
    type TopViewGameLayerBehavior_Access is access all TopViewGameLayerBehavior'Class;

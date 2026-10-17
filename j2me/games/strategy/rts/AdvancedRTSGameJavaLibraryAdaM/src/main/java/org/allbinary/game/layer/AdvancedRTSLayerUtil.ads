@@ -26,10 +26,10 @@ with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_
 
 package org.allbinary.game.layer.AdvancedRTSLayerUtil_Package is
 
-   package WorkWaypoint_Package renames org.allbinary.game.layer.waypoint.WorkWaypoint_Package;
-   package SmallIntegerSingletonFactory_Package renames org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
-   package BaseRaceTrackGeographicMap_Package renames org.allbinary.media.graphics.geography.map.racetrack.BaseRaceTrackGeographicMap_Package;
-   package ABHashtable_Package renames org.allbinary.util.ABHashtable_Package;
+   package WorkWaypoint_Package renames Standard.org.allbinary.game.layer.waypoint.WorkWaypoint_Package;
+   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+   package BaseRaceTrackGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.racetrack.BaseRaceTrackGeographicMap_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
    type AdvancedRTSLayerUtil is tagged;
    type AdvancedRTSLayerUtil_Access is access all AdvancedRTSLayerUtil'Class;

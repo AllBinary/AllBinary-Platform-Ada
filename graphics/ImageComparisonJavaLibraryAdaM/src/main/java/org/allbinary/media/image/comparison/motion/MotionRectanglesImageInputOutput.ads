@@ -41,23 +41,23 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.media.image.comparison.motion.MotionRectanglesImageInputOutput_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package ImageOutputData_Package renames org.allbinary.input.automation.ImageOutputData_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package LongUtil_Package renames org.allbinary.logic.java.number.LongUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package AutomaticCacheInterface_Package renames org.allbinary.logic.util.cache.AutomaticCacheInterface_Package;
-   package PoolInterface_Package renames org.allbinary.logic.util.cache.PoolInterface_Package;
-   package MediaDataFactory_Package renames org.allbinary.logic.visual.media.MediaDataFactory_Package;
-   package ImagePersistanceUtil_Package renames org.allbinary.media.image.ImagePersistanceUtil_Package;
-   package BufferedImageCacheable_Package renames org.allbinary.media.image.cache.BufferedImageCacheable_Package;
-   package BufferedImageInfo_Package renames org.allbinary.media.image.cache.BufferedImageInfo_Package;
-   package BufferedImageInfoFactory_Package renames org.allbinary.media.image.cache.BufferedImageInfoFactory_Package;
-   package BufferedImagePoolSingleton_Package renames org.allbinary.media.image.cache.BufferedImagePoolSingleton_Package;
-   package ImageComparisonResult_Package renames org.allbinary.media.image.comparison.ImageComparisonResult_Package;
-   package ImageIOInterface_Package renames org.allbinary.media.image.io.ImageIOInterface_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package ImageOutputData_Package renames Standard.org.allbinary.input.automation.ImageOutputData_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package LongUtil_Package renames Standard.org.allbinary.logic.java.number.LongUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package AutomaticCacheInterface_Package renames Standard.org.allbinary.logic.util.cache.AutomaticCacheInterface_Package;
+   package PoolInterface_Package renames Standard.org.allbinary.logic.util.cache.PoolInterface_Package;
+   package MediaDataFactory_Package renames Standard.org.allbinary.logic.visual.media.MediaDataFactory_Package;
+   package ImagePersistanceUtil_Package renames Standard.org.allbinary.media.image.ImagePersistanceUtil_Package;
+   package BufferedImageCacheable_Package renames Standard.org.allbinary.media.image.cache.BufferedImageCacheable_Package;
+   package BufferedImageInfo_Package renames Standard.org.allbinary.media.image.cache.BufferedImageInfo_Package;
+   package BufferedImageInfoFactory_Package renames Standard.org.allbinary.media.image.cache.BufferedImageInfoFactory_Package;
+   package BufferedImagePoolSingleton_Package renames Standard.org.allbinary.media.image.cache.BufferedImagePoolSingleton_Package;
+   package ImageComparisonResult_Package renames Standard.org.allbinary.media.image.comparison.ImageComparisonResult_Package;
+   package ImageIOInterface_Package renames Standard.org.allbinary.media.image.io.ImageIOInterface_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type MotionRectanglesImageInputOutput is tagged;
    type MotionRectanglesImageInputOutput_Access is access all MotionRectanglesImageInputOutput'Class;

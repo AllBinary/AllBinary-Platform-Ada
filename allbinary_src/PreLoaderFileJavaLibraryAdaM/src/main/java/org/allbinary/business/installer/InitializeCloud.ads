@@ -34,17 +34,17 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 
 package org.allbinary.business.installer.InitializeCloud_Package is
 
-   package PATH_GLOBALS_Package renames org.allbinary.globals.PATH_GLOBALS_Package;
-   package URLGLOBALS_Package renames org.allbinary.globals.URLGLOBALS_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package AbIOSystem_Package renames org.allbinary.logic.io.AbIOSystem_Package;
-   package AbFile_Package renames org.allbinary.logic.io.file.AbFile_Package;
-   package FileUtil_Package renames org.allbinary.logic.io.file.FileUtil_Package;
-   package Directory_Package renames org.allbinary.logic.io.file.directory.Directory_Package;
-   package AbPath_Package renames org.allbinary.logic.io.path.AbPath_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package PATH_GLOBALS_Package renames Standard.org.allbinary.globals.PATH_GLOBALS_Package;
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package AbIOSystem_Package renames Standard.org.allbinary.logic.io.AbIOSystem_Package;
+   package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
+   package FileUtil_Package renames Standard.org.allbinary.logic.io.file.FileUtil_Package;
+   package Directory_Package renames Standard.org.allbinary.logic.io.file.directory.Directory_Package;
+   package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type InitializeCloud is tagged;
    type InitializeCloud_Access is access all InitializeCloud'Class;

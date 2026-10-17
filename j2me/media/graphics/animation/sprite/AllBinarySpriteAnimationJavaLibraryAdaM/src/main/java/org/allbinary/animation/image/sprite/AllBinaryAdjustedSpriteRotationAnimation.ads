@@ -28,7 +28,7 @@ with org.allbinary.animation.image.sprite.AllBinarySpriteRotationAnimation_Packa
 
 package org.allbinary.animation.image.sprite.AllBinaryAdjustedSpriteRotationAnimation_Package is
 
-   package AnimationBehavior_Package renames org.allbinary.animation.AnimationBehavior_Package;
+   package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
 
    type AllBinaryAdjustedSpriteRotationAnimation is tagged;
    type AllBinaryAdjustedSpriteRotationAnimation_Access is access all AllBinaryAdjustedSpriteRotationAnimation'Class;

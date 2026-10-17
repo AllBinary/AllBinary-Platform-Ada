@@ -55,10 +55,14 @@ package body org.allbinary.logic.system.security.licensing.AbeClientInformation_
             commonStrings := CommonStrings_Package.getInstance;
             PreLogUtil_Package.put (StringMaker_Package.Create.append (To_Unbounded_String ("Special Name: ")).append (This.getSpecialName).toString, This'Unchecked_Access, commonStrings.CONSTRUCTOR);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             logUtil := LogUtil_Package.getInstance;
             commonStrings := CommonStrings_Package.getInstance;
             logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.CONSTRUCTOR, e);
+                end;
         end;
    end init;
 

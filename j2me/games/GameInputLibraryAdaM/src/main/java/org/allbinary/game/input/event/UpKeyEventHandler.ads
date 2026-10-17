@@ -26,8 +26,8 @@ with org.allbinary.game.input.event.UpKeyEventHandlerBase_Package; use org.allbi
 
 package org.allbinary.game.input.event.UpKeyEventHandler_Package is
 
-   package LocalPlayerInputIdFactory_Package renames org.allbinary.game.input.LocalPlayerInputIdFactory_Package;
-   package EventListenerInterface_Package renames org.allbinary.logic.util.event.EventListenerInterface_Package;
+   package LocalPlayerInputIdFactory_Package renames Standard.org.allbinary.game.input.LocalPlayerInputIdFactory_Package;
+   package EventListenerInterface_Package renames Standard.org.allbinary.logic.util.event.EventListenerInterface_Package;
 
    type UpKeyEventHandler is tagged;
    type UpKeyEventHandler_Access is access all UpKeyEventHandler'Class;

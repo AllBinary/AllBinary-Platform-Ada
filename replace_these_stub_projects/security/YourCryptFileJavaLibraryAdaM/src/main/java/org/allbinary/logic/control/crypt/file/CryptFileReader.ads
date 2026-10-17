@@ -13,7 +13,7 @@ with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path
 
 package org.allbinary.logic.control.crypt.file.CryptFileReader_Package is
 
-   package AbPath_Package renames org.allbinary.logic.io.path.AbPath_Package;
+   package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
 
    type CryptFileReader is tagged;
    type CryptFileReader_Access is access all CryptFileReader'Class;

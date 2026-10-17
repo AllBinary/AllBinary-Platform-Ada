@@ -26,9 +26,9 @@ with android.view.WindowManager_Package; use android.view.WindowManager_Package;
 
 package org.allbinary.android.api1.ActivityFractureUtilAPI1_Package is
 
-   package ActivityFractureUtil_Package renames org.allbinary.android.ActivityFractureUtil_Package;
-   package Activity_Package renames android.app.Activity_Package;
-   package WindowManager_Package renames android.view.WindowManager_Package;
+   package ActivityFractureUtil_Package renames Standard.org.allbinary.android.ActivityFractureUtil_Package;
+   package Activity_Package renames Standard.android.app.Activity_Package;
+   package WindowManager_Package renames Standard.android.view.WindowManager_Package;
 
    type ActivityFractureUtilAPI1 is tagged;
    type ActivityFractureUtilAPI1_Access is access all ActivityFractureUtilAPI1'Class;

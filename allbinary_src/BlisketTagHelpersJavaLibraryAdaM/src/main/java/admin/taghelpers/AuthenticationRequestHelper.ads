@@ -44,23 +44,23 @@ with admin.taghelpers.TagHelper_Package; use admin.taghelpers.TagHelper_Package;
 
 package admin.taghelpers.AuthenticationRequestHelper_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package UserData_Package renames org.allbinary.business.user.UserData_Package;
-   package UserInterface_Package renames org.allbinary.business.user.UserInterface_Package;
-   package Password_Package renames org.allbinary.business.user.password.Password_Package;
-   package BasicUserRole_Package renames org.allbinary.business.user.role.BasicUserRole_Package;
-   package UserEntityFactory_Package renames org.allbinary.data.tables.user.UserEntityFactory_Package;
-   package UserEntityInterface_Package renames org.allbinary.data.tables.user.UserEntityInterface_Package;
-   package GLOBALS2_Package renames org.allbinary.globals.GLOBALS2_Package;
-   package WeblisketSession_Package renames org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
-   package WeblisketSessionData_Package renames org.allbinary.logic.communication.http.request.session.WeblisketSessionData_Package;
-   package WeblisketSessionInterface_Package renames org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package NewPasswordEmail_Package renames org.allbinary.logic.communication.smtp.email.NewPasswordEmail_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package AbeClientInformationInterface_Package renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-   package ServiceClientInformationInterfaceFactory_Package renames org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package UserData_Package renames Standard.org.allbinary.business.user.UserData_Package;
+   package UserInterface_Package renames Standard.org.allbinary.business.user.UserInterface_Package;
+   package Password_Package renames Standard.org.allbinary.business.user.password.Password_Package;
+   package BasicUserRole_Package renames Standard.org.allbinary.business.user.role.BasicUserRole_Package;
+   package UserEntityFactory_Package renames Standard.org.allbinary.data.tables.user.UserEntityFactory_Package;
+   package UserEntityInterface_Package renames Standard.org.allbinary.data.tables.user.UserEntityInterface_Package;
+   package GLOBALS2_Package renames Standard.org.allbinary.globals.GLOBALS2_Package;
+   package WeblisketSession_Package renames Standard.org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
+   package WeblisketSessionData_Package renames Standard.org.allbinary.logic.communication.http.request.session.WeblisketSessionData_Package;
+   package WeblisketSessionInterface_Package renames Standard.org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package NewPasswordEmail_Package renames Standard.org.allbinary.logic.communication.smtp.email.NewPasswordEmail_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package ServiceClientInformationInterfaceFactory_Package renames Standard.org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package;
 
    type AuthenticationRequestHelper is tagged;
    type AuthenticationRequestHelper_Access is access all AuthenticationRequestHelper'Class;

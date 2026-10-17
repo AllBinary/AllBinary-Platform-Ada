@@ -27,10 +27,10 @@ with org.allbinary.logic.system.hardware.windows.WindowsHardware_Package; use or
 
 package org.allbinary.logic.system.hardware.HardwareFactory_Package is
 
-   package GenericOperatingSystem_Package renames org.allbinary.logic.system.os.GenericOperatingSystem_Package;
-   package OperatingSystems_Package renames org.allbinary.logic.system.os.OperatingSystems_Package;
-   package LinuxHardware_Package renames org.allbinary.logic.system.hardware.linux.LinuxHardware_Package;
-   package WindowsHardware_Package renames org.allbinary.logic.system.hardware.windows.WindowsHardware_Package;
+   package GenericOperatingSystem_Package renames Standard.org.allbinary.logic.system.os.GenericOperatingSystem_Package;
+   package OperatingSystems_Package renames Standard.org.allbinary.logic.system.os.OperatingSystems_Package;
+   package LinuxHardware_Package renames Standard.org.allbinary.logic.system.hardware.linux.LinuxHardware_Package;
+   package WindowsHardware_Package renames Standard.org.allbinary.logic.system.hardware.windows.WindowsHardware_Package;
 
    type HardwareFactory is tagged;
    type HardwareFactory_Access is access all HardwareFactory'Class;

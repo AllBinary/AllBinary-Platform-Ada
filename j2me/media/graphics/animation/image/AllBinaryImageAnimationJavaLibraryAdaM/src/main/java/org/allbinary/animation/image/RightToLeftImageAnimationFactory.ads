@@ -28,9 +28,9 @@ with org.allbinary.animation.image.BaseImageAnimationFactory_Package; use org.al
 
 package org.allbinary.animation.image.RightToLeftImageAnimationFactory_Package is
 
-   package Animation_Package renames org.allbinary.animation.Animation_Package;
-   package AnimationBehaviorFactory_Package renames org.allbinary.animation.AnimationBehaviorFactory_Package;
-   package PrimitiveIntUtil_Package renames org.allbinary.logic.math.PrimitiveIntUtil_Package;
+   package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
+   package AnimationBehaviorFactory_Package renames Standard.org.allbinary.animation.AnimationBehaviorFactory_Package;
+   package PrimitiveIntUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveIntUtil_Package;
 
    type RightToLeftImageAnimationFactory is tagged;
    type RightToLeftImageAnimationFactory_Access is access all RightToLeftImageAnimationFactory'Class;

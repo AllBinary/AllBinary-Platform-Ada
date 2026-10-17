@@ -27,9 +27,9 @@ with org.apache.xmlrpc.XmlRpcHandler_Package; use org.apache.xmlrpc.XmlRpcHandle
 
 package org.apache.xmlrpc.NullXmlRpcHandler_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
 
    type NullXmlRpcHandler is tagged;
    type NullXmlRpcHandler_Access is access all NullXmlRpcHandler'Class;

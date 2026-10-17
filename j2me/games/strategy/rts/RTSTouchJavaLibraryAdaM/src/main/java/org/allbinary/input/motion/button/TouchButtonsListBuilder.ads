@@ -26,8 +26,8 @@ with org.allbinary.input.motion.button.BaseTouchInput_Package; use org.allbinary
 
 package org.allbinary.input.motion.button.TouchButtonsListBuilder_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type TouchButtonsListBuilder is tagged;
    type TouchButtonsListBuilder_Access is access all TouchButtonsListBuilder'Class;

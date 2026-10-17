@@ -31,14 +31,14 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.input.automation.module.osgi.InputAutomationModuleOSGIServiceVisitor_Package is
 
-   package InputAutomationModuleService_Package renames bundle.input.automation.module.InputAutomationModuleService_Package;
-   package InputAutomationJFrame_Package renames org.allbinary.input.automation.InputAutomationJFrame_Package;
-   package InputAutomationConfigurationUtil_Package renames org.allbinary.input.automation.configuration.InputAutomationConfigurationUtil_Package;
-   package InputAutomationModuleFactoryInterface_Package renames org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package OSGIServiceInterface_Package renames org.allbinary.osgi.OSGIServiceInterface_Package;
-   package OSGIServiceVisitorInterface_Package renames org.allbinary.osgi.OSGIServiceVisitorInterface_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package InputAutomationModuleService_Package renames Standard.bundle.input.automation.module.InputAutomationModuleService_Package;
+   package InputAutomationJFrame_Package renames Standard.org.allbinary.input.automation.InputAutomationJFrame_Package;
+   package InputAutomationConfigurationUtil_Package renames Standard.org.allbinary.input.automation.configuration.InputAutomationConfigurationUtil_Package;
+   package InputAutomationModuleFactoryInterface_Package renames Standard.org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package OSGIServiceInterface_Package renames Standard.org.allbinary.osgi.OSGIServiceInterface_Package;
+   package OSGIServiceVisitorInterface_Package renames Standard.org.allbinary.osgi.OSGIServiceVisitorInterface_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type InputAutomationModuleOSGIServiceVisitor is tagged;
    type InputAutomationModuleOSGIServiceVisitor_Access is access all InputAutomationModuleOSGIServiceVisitor'Class;

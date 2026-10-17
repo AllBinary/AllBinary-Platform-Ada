@@ -23,7 +23,7 @@ with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allb
 
 package org.allbinary.game.layer.capital.event.CapitalEventListenerInterface_Package is
 
-   package EventListenerInterface_Package renames org.allbinary.logic.util.event.EventListenerInterface_Package;
+   package EventListenerInterface_Package renames Standard.org.allbinary.logic.util.event.EventListenerInterface_Package;
 
    type CapitalEventListenerInterface is interface and EventListenerInterface;
    type CapitalEventListenerInterface_Access is access all CapitalEventListenerInterface'Class;

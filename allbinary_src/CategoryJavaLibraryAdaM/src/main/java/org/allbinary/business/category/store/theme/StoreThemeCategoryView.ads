@@ -29,11 +29,11 @@ with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 
 package org.allbinary.business.category.store.theme.StoreThemeCategoryView_Package is
 
-   package CategoryView_Package renames org.allbinary.business.category.CategoryView_Package;
-   package DomNodeInterface_Package renames org.allbinary.data.tree.dom.DomNodeInterface_Package;
-   package ThemeValidation_Package renames org.allbinary.logic.visual.theme.ThemeValidation_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
+   package CategoryView_Package renames Standard.org.allbinary.business.category.CategoryView_Package;
+   package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
+   package ThemeValidation_Package renames Standard.org.allbinary.logic.visual.theme.ThemeValidation_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type StoreThemeCategoryView is tagged;
    type StoreThemeCategoryView_Access is access all StoreThemeCategoryView'Class;

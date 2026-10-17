@@ -42,21 +42,21 @@ with tags.CustomTagSupport_Package; use tags.CustomTagSupport_Package;
 
 package admin.tags.FileAuthenticationTag_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package InstallerInfo_Package renames org.allbinary.business.init.InstallerInfo_Package;
-   package BasicUserRole_Package renames org.allbinary.business.user.role.BasicUserRole_Package;
-   package BasicUserRoleFactory_Package renames org.allbinary.business.user.role.BasicUserRoleFactory_Package;
-   package AbResponseHandler_Package renames org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
-   package BasicWeblisketSession_Package renames org.allbinary.logic.communication.http.request.session.BasicWeblisketSession_Package;
-   package WeblisketSessionData_Package renames org.allbinary.logic.communication.http.request.session.WeblisketSessionData_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package BooleanFactory_Package renames org.allbinary.logic.java.bool.BooleanFactory_Package;
-   package BooleanUtil_Package renames org.allbinary.logic.java.bool.BooleanUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package LicensingException_Package renames org.allbinary.logic.system.security.licensing.LicensingException_Package;
-   package CustomTagSupport_Package renames tags.CustomTagSupport_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package InstallerInfo_Package renames Standard.org.allbinary.business.init.InstallerInfo_Package;
+   package BasicUserRole_Package renames Standard.org.allbinary.business.user.role.BasicUserRole_Package;
+   package BasicUserRoleFactory_Package renames Standard.org.allbinary.business.user.role.BasicUserRoleFactory_Package;
+   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+   package BasicWeblisketSession_Package renames Standard.org.allbinary.logic.communication.http.request.session.BasicWeblisketSession_Package;
+   package WeblisketSessionData_Package renames Standard.org.allbinary.logic.communication.http.request.session.WeblisketSessionData_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package BooleanFactory_Package renames Standard.org.allbinary.logic.java.bool.BooleanFactory_Package;
+   package BooleanUtil_Package renames Standard.org.allbinary.logic.java.bool.BooleanUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package CustomTagSupport_Package renames Standard.tags.CustomTagSupport_Package;
 
    type FileAuthenticationTag is tagged;
    type FileAuthenticationTag_Access is access all FileAuthenticationTag'Class;

@@ -24,7 +24,7 @@ with org.allbinary.game.configuration.feature.Feature_Package; use org.allbinary
 
 package org.allbinary.graphics.opengles.OpenGLFeature_Package is
 
-   package Feature_Package renames org.allbinary.game.configuration.feature.Feature_Package;
+   package Feature_Package renames Standard.org.allbinary.game.configuration.feature.Feature_Package;
 
    type OpenGLFeature is tagged;
    type OpenGLFeature_Access is access all OpenGLFeature'Class;

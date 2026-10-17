@@ -24,7 +24,7 @@ with org.allbinary.logic.math.MathUtil_Package; use org.allbinary.logic.math.Mat
 
 package org.allbinary.math.DistanceUtil_Package is
 
-   package MathUtil_Package renames org.allbinary.logic.math.MathUtil_Package;
+   package MathUtil_Package renames Standard.org.allbinary.logic.math.MathUtil_Package;
 
    type DistanceUtil is tagged;
    type DistanceUtil_Access is access all DistanceUtil'Class;

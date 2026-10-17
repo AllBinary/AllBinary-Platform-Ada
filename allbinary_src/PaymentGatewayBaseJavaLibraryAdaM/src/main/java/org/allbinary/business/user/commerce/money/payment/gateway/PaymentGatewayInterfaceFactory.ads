@@ -32,12 +32,12 @@ with org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayIn
 
 package org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayInterfaceFactory_Package is
 
-   package BasicPaymentType_Package renames org.allbinary.business.user.commerce.money.payment.types.BasicPaymentType_Package;
-   package BasicPaymentTypeUtil_Package renames org.allbinary.business.user.commerce.money.payment.types.BasicPaymentTypeUtil_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package RequestParams_Package renames org.allbinary.logic.communication.http.request.RequestParams_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package BasicPaymentType_Package renames Standard.org.allbinary.business.user.commerce.money.payment.types.BasicPaymentType_Package;
+   package BasicPaymentTypeUtil_Package renames Standard.org.allbinary.business.user.commerce.money.payment.types.BasicPaymentTypeUtil_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package RequestParams_Package renames Standard.org.allbinary.logic.communication.http.request.RequestParams_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type PaymentGatewayInterfaceFactory is tagged;
    type PaymentGatewayInterfaceFactory_Access is access all PaymentGatewayInterfaceFactory'Class;

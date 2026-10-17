@@ -71,8 +71,12 @@ package body org.allbinary.game.input.CompleteMotionGestureInputEventHandler_Pac
                 completeMotionGestureInputEventListener := CompleteMotionGestureInputEventListener_Access (This.list.objectArray (index));
                 completeMotionGestureInputEventListener.onCompleteMotionGestureInputEvent (CompleteMotionGestureInputEvent_Access (eventObject));
             exception
-                when e : others =>
+                when Java_Occurrence : others =>
+                    declare
+                        e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                    begin
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, EventStrings_Package.getInstance.FIRE_EVENT, e);
+                    end;
             end;
         end loop;
         BasicEventHandler (This).fireEvent (eventObject);

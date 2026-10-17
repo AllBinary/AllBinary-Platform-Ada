@@ -30,13 +30,13 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutputProcessor_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package InputImageIOInterfaceFactory_Package renames org.allbinary.input.media.image.InputImageIOInterfaceFactory_Package;
-   package InputImageType_Package renames org.allbinary.input.media.image.InputImageType_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package ImageIOInterface_Package renames org.allbinary.media.image.io.ImageIOInterface_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package InputImageIOInterfaceFactory_Package renames Standard.org.allbinary.input.media.image.InputImageIOInterfaceFactory_Package;
+   package InputImageType_Package renames Standard.org.allbinary.input.media.image.InputImageType_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package ImageIOInterface_Package renames Standard.org.allbinary.media.image.io.ImageIOInterface_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type ImageActionScriptOutputProcessor is tagged;
    type ImageActionScriptOutputProcessor_Access is access all ImageActionScriptOutputProcessor'Class;

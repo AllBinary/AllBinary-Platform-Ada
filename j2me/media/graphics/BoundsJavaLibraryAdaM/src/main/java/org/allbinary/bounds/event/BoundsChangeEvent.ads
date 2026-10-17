@@ -25,8 +25,8 @@ with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbin
 
 package org.allbinary.bounds.event.BoundsChangeEvent_Package is
 
-   package Rectangle_Package renames org.allbinary.graphics.Rectangle_Package;
-   package AllBinaryEventObject_Package renames org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
+   package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 
    type BoundsChangeEvent is tagged;
    type BoundsChangeEvent_Access is access all BoundsChangeEvent'Class;

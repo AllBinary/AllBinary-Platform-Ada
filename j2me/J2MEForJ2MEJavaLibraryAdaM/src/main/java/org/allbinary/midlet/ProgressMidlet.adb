@@ -53,14 +53,22 @@ package body org.allbinary.midlet.ProgressMidlet_Package is
             runnable := ExitRunnable_Package.Create (This'Unchecked_Access, processor, isProgress);
             primaryThreadPool.runTask (runnable);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("exit"), e);
             begin
                 processor.process;
             exception
-                when e2 : others =>
+                when Java_Occurrence : others =>
+                    declare
+                        e2 : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                    begin
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("exit"), e);
+                    end;
             end;
+                end;
         end;
    end exitProgress;
 

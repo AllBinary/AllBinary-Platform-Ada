@@ -26,9 +26,9 @@ with org.allbinary.logic.util.event.AllBinaryEventObjectFactoryInterface_Package
 
 package org.allbinary.game.terrain.TerrainEventFactory_Package is
 
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
-   package AllBinaryEventObject_Package renames org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-   package AllBinaryEventObjectFactoryInterface_Package renames org.allbinary.logic.util.event.AllBinaryEventObjectFactoryInterface_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+   package AllBinaryEventObjectFactoryInterface_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObjectFactoryInterface_Package;
 
    type TerrainEventFactory is tagged;
    type TerrainEventFactory_Access is access all TerrainEventFactory'Class;

@@ -25,7 +25,7 @@ with org.allbinary.input.automation.module.MotionRectangleConstraints_Package; u
 
 package org.allbinary.input.automation.module.generic_Id.constraints.NoMotionRectangleConstraints_Package is
 
-   package MotionRectangleConstraints_Package renames org.allbinary.input.automation.module.MotionRectangleConstraints_Package;
+   package MotionRectangleConstraints_Package renames Standard.org.allbinary.input.automation.module.MotionRectangleConstraints_Package;
 
    type NoMotionRectangleConstraints is tagged;
    type NoMotionRectangleConstraints_Access is access all NoMotionRectangleConstraints'Class;

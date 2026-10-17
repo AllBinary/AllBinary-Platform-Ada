@@ -26,8 +26,8 @@ with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Packag
 
 package org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package is
 
-   package OrderHistoryData_Package renames org.allbinary.business.user.commerce.inventory.order.OrderHistoryData_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
+   package OrderHistoryData_Package renames Standard.org.allbinary.business.user.commerce.inventory.order.OrderHistoryData_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
 
    type UserEmailEventNameData is tagged;
    type UserEmailEventNameData_Access is access all UserEmailEventNameData'Class;

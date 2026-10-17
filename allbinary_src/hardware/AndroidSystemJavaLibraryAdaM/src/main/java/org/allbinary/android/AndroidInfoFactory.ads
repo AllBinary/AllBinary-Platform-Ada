@@ -24,7 +24,7 @@ with android.os.Build_Package; use android.os.Build_Package;
 
 package org.allbinary.android.AndroidInfoFactory_Package is
 
-   package Build_Package renames android.os.Build_Package;
+   package Build_Package renames Standard.android.os.Build_Package;
 
    type AndroidInfoFactory is tagged;
    type AndroidInfoFactory_Access is access all AndroidInfoFactory'Class;

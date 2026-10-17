@@ -25,8 +25,8 @@ with org.allbinary.osgi.OSGIServiceInterface_Package; use org.allbinary.osgi.OSG
 
 package bundle.input.automation.robot.InputAutomationRobotServiceInterface_Package is
 
-   package InputRobotInterface_Package renames org.allbinary.input.automation.robot.InputRobotInterface_Package;
-   package OSGIServiceInterface_Package renames org.allbinary.osgi.OSGIServiceInterface_Package;
+   package InputRobotInterface_Package renames Standard.org.allbinary.input.automation.robot.InputRobotInterface_Package;
+   package OSGIServiceInterface_Package renames Standard.org.allbinary.osgi.OSGIServiceInterface_Package;
 
    type InputAutomationRobotServiceInterface is interface and OSGIServiceInterface;
    type InputAutomationRobotServiceInterface_Access is access all InputAutomationRobotServiceInterface'Class;

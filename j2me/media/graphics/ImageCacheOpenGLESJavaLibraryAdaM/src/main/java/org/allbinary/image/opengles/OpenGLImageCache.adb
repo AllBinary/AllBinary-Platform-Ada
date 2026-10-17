@@ -118,8 +118,12 @@ package body org.allbinary.image.opengles.OpenGLImageCache_Package is
             end;
             This.renderer.add (image);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.INIT, e);
+                end;
         end;
    end init;
 

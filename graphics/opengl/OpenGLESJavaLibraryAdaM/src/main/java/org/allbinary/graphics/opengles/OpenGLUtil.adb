@@ -46,8 +46,12 @@ package body org.allbinary.graphics.opengles.OpenGLUtil_Package is
                 PreLogUtil_Package.put (Java_Image (CommonLabels_Package.getInstance.START_LABEL) & OpenGLCapabilities_Package.getInstance.toString, This'Unchecked_Access, This.renderStrings.ON_SURFACE_CREATED);
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.renderStrings.ON_SURFACE_CREATED, e);
+                end;
         end;
    end onSurfaceCreated;
 
@@ -57,8 +61,12 @@ package body org.allbinary.graphics.opengles.OpenGLUtil_Package is
             loadTextures.load (gl);
             OpenGLLogUtil_Package.getInstance.logError (gl);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.renderStrings.ON_SURFACE_CREATED, e);
+                end;
         end;
    end onSurfaceCreated;
 

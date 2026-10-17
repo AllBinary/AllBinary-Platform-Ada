@@ -27,8 +27,8 @@ with org.allbinary.game.layer.LinePathAnimation_Package; use org.allbinary.game.
 
 package org.allbinary.game.layer.LinePathRelativeAnimation_Package is
 
-   package GPoint_Package renames org.allbinary.graphics.GPoint_Package;
-   package Layer_Package renames org.allbinary.layer.Layer_Package;
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package Layer_Package renames Standard.org.allbinary.layer.Layer_Package;
 
    type LinePathRelativeAnimation is tagged;
    type LinePathRelativeAnimation_Access is access all LinePathRelativeAnimation'Class;

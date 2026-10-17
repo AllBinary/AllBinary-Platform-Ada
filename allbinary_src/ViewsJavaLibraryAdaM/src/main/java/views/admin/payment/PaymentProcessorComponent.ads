@@ -30,13 +30,13 @@ with views.business.context.modules.storefront.HttpStoreComponentView_Package; u
 
 package views.admin.payment.PaymentProcessorComponent_Package is
 
-   package PaymentProcessorInterface_Package renames org.allbinary.business.user.commerce.money.payment.gateway.processor.PaymentProcessorInterface_Package;
-   package PaymentProcessorInterfaceFactory_Package renames org.allbinary.business.user.commerce.money.payment.gateway.processor.PaymentProcessorInterfaceFactory_Package;
-   package DomNodeInterface_Package renames org.allbinary.data.tree.dom.DomNodeInterface_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package TransformInfoHttpInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package;
-   package TransformInfoInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-   package HttpStoreComponentView_Package renames views.business.context.modules.storefront.HttpStoreComponentView_Package;
+   package PaymentProcessorInterface_Package renames Standard.org.allbinary.business.user.commerce.money.payment.gateway.processor.PaymentProcessorInterface_Package;
+   package PaymentProcessorInterfaceFactory_Package renames Standard.org.allbinary.business.user.commerce.money.payment.gateway.processor.PaymentProcessorInterfaceFactory_Package;
+   package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package TransformInfoHttpInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package;
+   package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package HttpStoreComponentView_Package renames Standard.views.business.context.modules.storefront.HttpStoreComponentView_Package;
 
    type PaymentProcessorComponent is tagged;
    type PaymentProcessorComponent_Access is access all PaymentProcessorComponent'Class;

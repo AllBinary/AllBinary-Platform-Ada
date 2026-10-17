@@ -26,9 +26,9 @@ with org.allbinary.logic.system.security.licensing.LicensingException_Package; u
 
 package org.allbinary.business.init.db.InitDbHelperFactory_Package is
 
-   package AbeFactory_Package renames org.allbinary.logic.system.loader.AbeFactory_Package;
-   package AbeClientInformationInterface_Package renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-   package LicensingException_Package renames org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package AbeFactory_Package renames Standard.org.allbinary.logic.system.loader.AbeFactory_Package;
+   package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
 
    type InitDbHelperFactory is tagged;
    type InitDbHelperFactory_Access is access all InitDbHelperFactory'Class;

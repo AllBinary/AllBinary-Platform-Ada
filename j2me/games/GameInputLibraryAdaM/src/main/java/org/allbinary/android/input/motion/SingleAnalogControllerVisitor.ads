@@ -27,9 +27,9 @@ with org.allbinary.android.input.motion.AnalogControllerVisitor_Package; use org
 
 package org.allbinary.android.input.motion.SingleAnalogControllerVisitor_Package is
 
-   package AnalogLocationInput_Package renames org.allbinary.game.input.analog.AnalogLocationInput_Package;
-   package AnalogLocationInputFactory_Package renames org.allbinary.game.input.analog.AnalogLocationInputFactory_Package;
-   package AllBinaryLayerManager_Package renames org.allbinary.layer.AllBinaryLayerManager_Package;
+   package AnalogLocationInput_Package renames Standard.org.allbinary.game.input.analog.AnalogLocationInput_Package;
+   package AnalogLocationInputFactory_Package renames Standard.org.allbinary.game.input.analog.AnalogLocationInputFactory_Package;
+   package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
 
    type SingleAnalogControllerVisitor is tagged;
    type SingleAnalogControllerVisitor_Access is access all SingleAnalogControllerVisitor'Class;

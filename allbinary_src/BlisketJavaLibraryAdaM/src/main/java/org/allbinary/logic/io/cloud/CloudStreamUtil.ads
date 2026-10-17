@@ -26,8 +26,8 @@ with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file
 
 package org.allbinary.logic.io.CloudStreamUtil_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package AbFile_Package renames org.allbinary.logic.io.file.AbFile_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
 
    type CloudStreamUtil is tagged;
    type CloudStreamUtil_Access is access all CloudStreamUtil'Class;

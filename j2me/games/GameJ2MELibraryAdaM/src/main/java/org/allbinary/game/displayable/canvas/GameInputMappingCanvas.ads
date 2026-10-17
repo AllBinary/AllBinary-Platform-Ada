@@ -45,24 +45,24 @@ with org.allbinary.game.displayable.canvas.GameCommandCanvas_Package; use org.al
 
 package org.allbinary.game.displayable.canvas.GameInputMappingCanvas_Package is
 
-   package GameCommandsFactory_Package renames org.allbinary.game.commands.GameCommandsFactory_Package;
-   package GameKey_Package renames org.allbinary.game.input.GameKey_Package;
-   package GameKeyFactory_Package renames org.allbinary.game.input.GameKeyFactory_Package;
-   package Input_Package renames org.allbinary.game.input.Input_Package;
-   package InputFactory_Package renames org.allbinary.game.input.InputFactory_Package;
-   package PlatformInputMappingFactory_Package renames org.allbinary.game.input.PlatformInputMappingFactory_Package;
-   package InputMappingInterface_Package renames org.allbinary.game.input.mapping.InputMappingInterface_Package;
-   package PersistentInputMapping_Package renames org.allbinary.game.input.mapping.PersistentInputMapping_Package;
-   package AllBinaryGameLayerManager_Package renames org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
-   package ColorFillBasePaintable_Package renames org.allbinary.game.paint.ColorFillBasePaintable_Package;
-   package ColorFillPaintableFactory_Package renames org.allbinary.game.paint.ColorFillPaintableFactory_Package;
-   package HelpPaintable_Package renames org.allbinary.game.paint.help.HelpPaintable_Package;
-   package InputMappingHelpPaintable_Package renames org.allbinary.game.paint.help.InputMappingHelpPaintable_Package;
-   package ProcessPaintable_Package renames org.allbinary.graphics.paint.ProcessPaintable_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package AbeClientInformationInterface_Package renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package GameCommandsFactory_Package renames Standard.org.allbinary.game.commands.GameCommandsFactory_Package;
+   package GameKey_Package renames Standard.org.allbinary.game.input.GameKey_Package;
+   package GameKeyFactory_Package renames Standard.org.allbinary.game.input.GameKeyFactory_Package;
+   package Input_Package renames Standard.org.allbinary.game.input.Input_Package;
+   package InputFactory_Package renames Standard.org.allbinary.game.input.InputFactory_Package;
+   package PlatformInputMappingFactory_Package renames Standard.org.allbinary.game.input.PlatformInputMappingFactory_Package;
+   package InputMappingInterface_Package renames Standard.org.allbinary.game.input.mapping.InputMappingInterface_Package;
+   package PersistentInputMapping_Package renames Standard.org.allbinary.game.input.mapping.PersistentInputMapping_Package;
+   package AllBinaryGameLayerManager_Package renames Standard.org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
+   package ColorFillBasePaintable_Package renames Standard.org.allbinary.game.paint.ColorFillBasePaintable_Package;
+   package ColorFillPaintableFactory_Package renames Standard.org.allbinary.game.paint.ColorFillPaintableFactory_Package;
+   package HelpPaintable_Package renames Standard.org.allbinary.game.paint.help.HelpPaintable_Package;
+   package InputMappingHelpPaintable_Package renames Standard.org.allbinary.game.paint.help.InputMappingHelpPaintable_Package;
+   package ProcessPaintable_Package renames Standard.org.allbinary.graphics.paint.ProcessPaintable_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type GameInputMappingCanvas is tagged;
    type GameInputMappingCanvas_Access is access all GameInputMappingCanvas'Class;

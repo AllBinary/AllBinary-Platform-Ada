@@ -39,16 +39,16 @@ with org.allbinary.graphics.displayable.DisplayableInterface_Package; use org.al
 
 package org.allbinary.graphics.displayable.MyCanvas_Package is
 
-   package MyCommandInterface_Package renames org.allbinary.graphics.displayable.command.MyCommandInterface_Package;
-   package MyCommandsFactory_Package renames org.allbinary.graphics.displayable.command.MyCommandsFactory_Package;
-   package TouchJ2ME_Package renames org.allbinary.input.TouchJ2ME_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package Sound_Package renames org.allbinary.media.audio.Sound_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package ABStack_Package renames org.allbinary.util.ABStack_Package;
+   package MyCommandInterface_Package renames Standard.org.allbinary.graphics.displayable.command.MyCommandInterface_Package;
+   package MyCommandsFactory_Package renames Standard.org.allbinary.graphics.displayable.command.MyCommandsFactory_Package;
+   package TouchJ2ME_Package renames Standard.org.allbinary.input.TouchJ2ME_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package Sound_Package renames Standard.org.allbinary.media.audio.Sound_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package ABStack_Package renames Standard.org.allbinary.util.ABStack_Package;
 
    type MyCanvas is tagged;
    type MyCanvas_Access is access all MyCanvas'Class;

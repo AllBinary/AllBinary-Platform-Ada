@@ -38,19 +38,19 @@ with org.allbinary.business.category.store.theme.StoreThemeCategoryInterface_Pac
 
 package org.allbinary.business.category.store.theme.StoreThemeCategory_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package Category_Package renames org.allbinary.business.category.Category_Package;
-   package CategoryInterface_Package renames org.allbinary.business.category.CategoryInterface_Package;
-   package CategoryPropertiesFactoryInterface_Package renames org.allbinary.business.category.properties.CategoryPropertiesFactoryInterface_Package;
-   package DomSearchHelper_Package renames org.allbinary.data.tree.dom.DomSearchHelper_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package ThemeData_Package renames org.allbinary.logic.visual.theme.ThemeData_Package;
-   package ThemeValidation_Package renames org.allbinary.logic.visual.theme.ThemeValidation_Package;
-   package ThemesData_Package renames org.allbinary.logic.visual.theme.ThemesData_Package;
-   package TransformInfoInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
-   package NodeList_Package renames org.w3c.dom.NodeList_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package Category_Package renames Standard.org.allbinary.business.category.Category_Package;
+   package CategoryInterface_Package renames Standard.org.allbinary.business.category.CategoryInterface_Package;
+   package CategoryPropertiesFactoryInterface_Package renames Standard.org.allbinary.business.category.properties.CategoryPropertiesFactoryInterface_Package;
+   package DomSearchHelper_Package renames Standard.org.allbinary.data.tree.dom.DomSearchHelper_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package ThemeData_Package renames Standard.org.allbinary.logic.visual.theme.ThemeData_Package;
+   package ThemeValidation_Package renames Standard.org.allbinary.logic.visual.theme.ThemeValidation_Package;
+   package ThemesData_Package renames Standard.org.allbinary.logic.visual.theme.ThemesData_Package;
+   package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
+   package NodeList_Package renames Standard.org.w3c.dom.NodeList_Package;
 
    type StoreThemeCategory is tagged;
    type StoreThemeCategory_Access is access all StoreThemeCategory'Class;

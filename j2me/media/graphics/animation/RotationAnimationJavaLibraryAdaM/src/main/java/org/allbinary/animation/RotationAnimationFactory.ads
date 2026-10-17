@@ -29,10 +29,10 @@ with org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Packag
 
 package org.allbinary.animation.RotationAnimationFactory_Package is
 
-   package GameConfigurationCentral_Package renames org.allbinary.game.configuration.GameConfigurationCentral_Package;
-   package AngleFactory_Package renames org.allbinary.math.AngleFactory_Package;
-   package AngleInfo_Package renames org.allbinary.math.AngleInfo_Package;
-   package ScaleProperties_Package renames org.allbinary.media.ScaleProperties_Package;
+   package GameConfigurationCentral_Package renames Standard.org.allbinary.game.configuration.GameConfigurationCentral_Package;
+   package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;
+   package AngleInfo_Package renames Standard.org.allbinary.math.AngleInfo_Package;
+   package ScaleProperties_Package renames Standard.org.allbinary.media.ScaleProperties_Package;
 
    type RotationAnimationFactory is tagged;
    type RotationAnimationFactory_Access is access all RotationAnimationFactory'Class;

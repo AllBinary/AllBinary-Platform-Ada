@@ -38,17 +38,17 @@ with org.allbinary.image.gui.JPanel_Package; use org.allbinary.image.gui.JPanel_
 
 package org.allbinary.image.gui.CreateIconImagesJPanel_Package is
 
-   package CanvasStrings_Package renames org.allbinary.graphics.displayable.CanvasStrings_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package AbFile_Package renames org.allbinary.logic.io.file.AbFile_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package ImagePersistanceUtil_Package renames org.allbinary.media.image.ImagePersistanceUtil_Package;
-   package ImageProcessorInput_Package renames org.allbinary.media.image.ImageProcessorInput_Package;
-   package ImageProcessorInputCompositeInterface_Package renames org.allbinary.media.image.ImageProcessorInputCompositeInterface_Package;
-   package ImageUtil_Package renames org.allbinary.media.image.ImageUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
+   package CanvasStrings_Package renames Standard.org.allbinary.graphics.displayable.CanvasStrings_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package ImagePersistanceUtil_Package renames Standard.org.allbinary.media.image.ImagePersistanceUtil_Package;
+   package ImageProcessorInput_Package renames Standard.org.allbinary.media.image.ImageProcessorInput_Package;
+   package ImageProcessorInputCompositeInterface_Package renames Standard.org.allbinary.media.image.ImageProcessorInputCompositeInterface_Package;
+   package ImageUtil_Package renames Standard.org.allbinary.media.image.ImageUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type CreateIconImagesJPanel is tagged;
    type CreateIconImagesJPanel_Access is access all CreateIconImagesJPanel'Class;

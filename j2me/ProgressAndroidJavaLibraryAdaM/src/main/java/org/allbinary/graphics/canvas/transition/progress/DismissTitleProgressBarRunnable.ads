@@ -28,10 +28,10 @@ with org.allbinary.graphics.canvas.transition.progress.ProgressRunnable_Package;
 
 package org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package is
 
-   package TransistionTypes_Package renames org.allbinary.animation.transition.TransistionTypes_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package Activity_Package renames android.app.Activity_Package;
+   package TransistionTypes_Package renames Standard.org.allbinary.animation.transition.TransistionTypes_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package Activity_Package renames Standard.android.app.Activity_Package;
 
    type DismissTitleProgressBarRunnable is tagged;
    type DismissTitleProgressBarRunnable_Access is access all DismissTitleProgressBarRunnable'Class;

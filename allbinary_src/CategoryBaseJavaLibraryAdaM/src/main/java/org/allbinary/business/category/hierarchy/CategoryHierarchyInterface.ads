@@ -24,7 +24,7 @@ with org.allbinary.business.category.CategoryInterface_Package; use org.allbinar
 
 package org.allbinary.business.category.hierarchy.CategoryHierarchyInterface_Package is
 
-   package CategoryInterface_Package renames org.allbinary.business.category.CategoryInterface_Package;
+   package CategoryInterface_Package renames Standard.org.allbinary.business.category.CategoryInterface_Package;
 
    type CategoryHierarchyInterface is interface;
    type CategoryHierarchyInterface_Access is access all CategoryHierarchyInterface'Class;

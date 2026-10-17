@@ -27,10 +27,10 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 
 package org.allbinary.game.displayable.canvas.FormUtil_Package is
 
-   package PointFactory_Package renames org.allbinary.graphics.PointFactory_Package;
-   package Rectangle_Package renames org.allbinary.graphics.Rectangle_Package;
-   package DisplayInfoSingleton_Package renames org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
+   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
+   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
+   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type FormUtil is tagged;
    type FormUtil_Access is access all FormUtil'Class;

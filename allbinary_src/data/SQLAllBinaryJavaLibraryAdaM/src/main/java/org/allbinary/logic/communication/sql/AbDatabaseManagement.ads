@@ -22,11 +22,11 @@ with org.allbinary.logic.communication.sql.AbSqlBean_Package; use org.allbinary.
 
 package org.allbinary.logic.communication.sql.AbDatabaseManagement_Package is
 
-   package DatabaseConnectionInfoInterface_Package renames org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package;
-   package DbConnectionInfo_Package renames org.allbinary.business.init.db.DbConnectionInfo_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package DatabaseConnectionInfoInterface_Package renames Standard.org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package;
+   package DbConnectionInfo_Package renames Standard.org.allbinary.business.init.db.DbConnectionInfo_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type AbDatabaseManagement is tagged;
    type AbDatabaseManagement_Access is access all AbDatabaseManagement'Class;

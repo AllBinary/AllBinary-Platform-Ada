@@ -28,11 +28,11 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 
 package org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package is
 
-   package AllBinaryEventObject_Package renames org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-   package EventListenerInterface_Package renames org.allbinary.logic.util.event.EventListenerInterface_Package;
-   package NullEventListener_Package renames org.allbinary.logic.util.event.NullEventListener_Package;
-   package BasicEventHandler_Package renames org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+   package EventListenerInterface_Package renames Standard.org.allbinary.logic.util.event.EventListenerInterface_Package;
+   package NullEventListener_Package renames Standard.org.allbinary.logic.util.event.NullEventListener_Package;
+   package BasicEventHandler_Package renames Standard.org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type GameNotificationEventHandler is tagged;
    type GameNotificationEventHandler_Access is access all GameNotificationEventHandler'Class;

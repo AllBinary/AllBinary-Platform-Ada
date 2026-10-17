@@ -27,9 +27,9 @@ with org.allbinary.math.Angle_Package; use org.allbinary.math.Angle_Package;
 
 package org.allbinary.math.NamedAngle_Package is
 
-   package JsType_Package renames jsinterop.annotations.JsType_Package;
-   package JsProperty_Package renames jsinterop.annotations.JsProperty_Package;
-   package JsConstructor_Package renames jsinterop.annotations.JsConstructor_Package;
+   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
+   package JsProperty_Package renames Standard.jsinterop.annotations.JsProperty_Package;
+   package JsConstructor_Package renames Standard.jsinterop.annotations.JsConstructor_Package;
 
    type NamedAngle is tagged;
    type NamedAngle_Access is access all NamedAngle'Class;

@@ -81,8 +81,12 @@ package body org.allbinary.input.motion.button.TouchButtonsPaintableComposite_Pa
             This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("GameKey: ")).append (StringUtil_Package.getInstance.toString (gameKey)).append (To_Unbounded_String (" MotionGestureInput: ")).append (StringUtil_Package.getInstance.toString (motionGestureInput)).toString, This'Unchecked_Access, This.METHOD_NAME);
             This.inputMappingInterface.processInputMapping (gameKey, motionGestureInput);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.METHOD_NAME, e);
+                end;
         end;
    end onCompleteMotionGestureInputEvent;
 

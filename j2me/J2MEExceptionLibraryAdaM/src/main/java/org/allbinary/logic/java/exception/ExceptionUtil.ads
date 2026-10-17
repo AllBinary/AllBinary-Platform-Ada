@@ -20,10 +20,11 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.ByteArrayOutputStream_Package; use java.io.ByteArrayOutputStream_Package;
+with java.io.ByteArrayOutputStream_Package; use java.io.ByteArrayOutputStream_Package;
 
 package org.allbinary.logic.java.exception_Id.ExceptionUtil_Package is
 
+   package ByteArrayOutputStream_Package renames Standard.java.io.ByteArrayOutputStream_Package;
 
    type ExceptionUtil is tagged;
    type ExceptionUtil_Access is access all ExceptionUtil'Class;
@@ -31,17 +32,17 @@ package org.allbinary.logic.java.exception_Id.ExceptionUtil_Package is
    type ExceptionUtil_Access_Array_Access is access all ExceptionUtil_Access_Array;
 
    type ExceptionUtil is new Java_Object with record
-      PRETEND_EXCEPTION : Ada.Exceptions.Exception_Occurrence;
+      PRETEND_EXCEPTION : Java_Throwable;
       NONE : Unbounded_String;
    end record;
-   instance : Ada.Exceptions.Exception_Occurrence;
+   instance : ExceptionUtil_Access;
 
    procedure Initialize (This : in out ExceptionUtil'Class);
    function Create return ExceptionUtil_Access;
-   function getInstance return Ada.Exceptions.Exception_Occurrence;
+   function getInstance return ExceptionUtil_Access;
    procedure getInstance;
-   function getStackTrace (This : in out ExceptionUtil; e : Ada.Exceptions.Exception_Occurrence) return Unbounded_String;
-   procedure getStackTrace (This : in out ExceptionUtil; e : Ada.Exceptions.Exception_Occurrence);
+   function getStackTrace (This : in out ExceptionUtil; e : Java_Throwable) return Unbounded_String;
+   procedure getStackTrace (This : in out ExceptionUtil; e : Java_Throwable);
 
 end org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 

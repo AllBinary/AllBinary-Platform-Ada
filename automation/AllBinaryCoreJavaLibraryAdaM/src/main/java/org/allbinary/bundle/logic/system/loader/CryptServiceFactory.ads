@@ -28,11 +28,11 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.bundle.logic.system.loader.CryptServiceFactory_Package is
 
-   package Bundle_Package renames org.osgi.framework.Bundle_Package;
-   package ServiceFactory_Package renames org.osgi.framework.ServiceFactory_Package;
-   package ServiceRegistration_Package renames org.osgi.framework.ServiceRegistration_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package Bundle_Package renames Standard.org.osgi.framework.Bundle_Package;
+   package ServiceFactory_Package renames Standard.org.osgi.framework.ServiceFactory_Package;
+   package ServiceRegistration_Package renames Standard.org.osgi.framework.ServiceRegistration_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type CryptServiceFactory is tagged;
    type CryptServiceFactory_Access is access all CryptServiceFactory'Class;

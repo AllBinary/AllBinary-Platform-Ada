@@ -31,14 +31,14 @@ with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.Basic
 
 package org.allbinary.game.part.MakeCountedPartsSingletonArrayFactory_Package is
 
-   package CountedPickedUpLayerInterfaceFactory_Package renames org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactory_Package;
-   package CountedPickedUpLayerInterfaceFactoryPool_Package renames org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactoryPool_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package BasicArrayListUtil_Package renames org.allbinary.util.BasicArrayListUtil_Package;
+   package CountedPickedUpLayerInterfaceFactory_Package renames Standard.org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactory_Package;
+   package CountedPickedUpLayerInterfaceFactoryPool_Package renames Standard.org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactoryPool_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
 
    type MakeCountedPartsSingletonArrayFactory is tagged;
    type MakeCountedPartsSingletonArrayFactory_Access is access all MakeCountedPartsSingletonArrayFactory'Class;

@@ -31,13 +31,13 @@ with org.allbinary.input.automation.module.generic_Id.configuration.profile.acti
 
 package org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionJPanel_Package is
 
-   package JTreeInterfaceFactory_Package renames org.allbinary.input.automation.actions.script.JTreeInterfaceFactory_Package;
-   package AlwaysActionScriptCondition_Package renames org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptCondition_Package;
-   package ColorAtActionScriptCondition_Package renames org.allbinary.input.automation.actions.script.condition.ColorAtActionScriptCondition_Package;
-   package ProfileActionScriptConditionInterface_Package renames org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionInterface_Package;
-   package TimeIntervalActionScriptCondition_Package renames org.allbinary.input.automation.actions.script.condition.TimeIntervalActionScriptCondition_Package;
-   package GenericProfileActionScriptJPanel_Package renames org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.script.GenericProfileActionScriptJPanel_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
+   package JTreeInterfaceFactory_Package renames Standard.org.allbinary.input.automation.actions.script.JTreeInterfaceFactory_Package;
+   package AlwaysActionScriptCondition_Package renames Standard.org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptCondition_Package;
+   package ColorAtActionScriptCondition_Package renames Standard.org.allbinary.input.automation.actions.script.condition.ColorAtActionScriptCondition_Package;
+   package ProfileActionScriptConditionInterface_Package renames Standard.org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionInterface_Package;
+   package TimeIntervalActionScriptCondition_Package renames Standard.org.allbinary.input.automation.actions.script.condition.TimeIntervalActionScriptCondition_Package;
+   package GenericProfileActionScriptJPanel_Package renames Standard.org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.script.GenericProfileActionScriptJPanel_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type GenericProfileActionJPanel is tagged;
    type GenericProfileActionJPanel_Access is access all GenericProfileActionJPanel'Class;

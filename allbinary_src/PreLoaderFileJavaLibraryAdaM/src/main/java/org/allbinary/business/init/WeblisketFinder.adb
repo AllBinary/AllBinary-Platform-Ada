@@ -48,12 +48,16 @@ package body org.allbinary.business.init.WeblisketFinder_Package is
             This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("findAll"));
             return This.subDirectory.search (WeblisketFinder_Package.KEY, AbFile_Package.createAbFile (path));
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("findAll"), e);
             if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.PRELOADERERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("findAll"), e);
             end if;
             return null;
+                end;
         end;
    end findAll;
 
@@ -69,11 +73,15 @@ package body org.allbinary.business.init.WeblisketFinder_Package is
             end if;
             return Unbounded_Slice (filePath, (0) + 1, end_Id);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PRELOADERERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("getInstallationPath"), e);
             end if;
             return Null_Unbounded_String;
+                end;
         end;
    end getInstallationPath;
 

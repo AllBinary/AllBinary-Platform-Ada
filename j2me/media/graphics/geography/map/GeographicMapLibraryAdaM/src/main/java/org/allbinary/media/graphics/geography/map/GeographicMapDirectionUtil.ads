@@ -27,10 +27,10 @@ with org.allbinary.graphics.CellPosition_Package; use org.allbinary.graphics.Cel
 
 package org.allbinary.media.graphics.geography.map.GeographicMapDirectionUtil_Package is
 
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package Direction_Package renames org.allbinary.direction.Direction_Package;
-   package DirectionFactory_Package renames org.allbinary.direction.DirectionFactory_Package;
-   package CellPosition_Package renames org.allbinary.graphics.CellPosition_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package Direction_Package renames Standard.org.allbinary.direction.Direction_Package;
+   package DirectionFactory_Package renames Standard.org.allbinary.direction.DirectionFactory_Package;
+   package CellPosition_Package renames Standard.org.allbinary.graphics.CellPosition_Package;
 
    type GeographicMapDirectionUtil is tagged;
    type GeographicMapDirectionUtil_Access is access all GeographicMapDirectionUtil'Class;

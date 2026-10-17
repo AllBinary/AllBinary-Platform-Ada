@@ -25,8 +25,8 @@ with taghelpers.transform.info.TransformInfoHelperFactory_Package; use taghelper
 
 package tags.transform.info.TransformInfoTableTag_Package is
 
-   package TableTag_Package renames admin.tags.TableTag_Package;
-   package TransformInfoHelperFactory_Package renames taghelpers.transform.info.TransformInfoHelperFactory_Package;
+   package TableTag_Package renames Standard.admin.tags.TableTag_Package;
+   package TransformInfoHelperFactory_Package renames Standard.taghelpers.transform.info.TransformInfoHelperFactory_Package;
 
    type TransformInfoTableTag is tagged;
    type TransformInfoTableTag_Access is access all TransformInfoTableTag'Class;

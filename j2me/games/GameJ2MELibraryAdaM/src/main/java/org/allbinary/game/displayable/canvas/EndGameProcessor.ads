@@ -29,12 +29,12 @@ with org.allbinary.graphics.paint.NullPaintable_Package; use org.allbinary.graph
 
 package org.allbinary.game.displayable.canvas.EndGameProcessor_Package is
 
-   package Processor_Package renames org.allbinary.canvas.Processor_Package;
-   package HighScores_Package renames org.allbinary.game.score.HighScores_Package;
-   package HighScoresHelperBase_Package renames org.allbinary.game.score.HighScoresHelperBase_Package;
-   package NullHighScoresSingletonFactory_Package renames org.allbinary.game.score.NullHighScoresSingletonFactory_Package;
-   package GameStateFactory_Package renames org.allbinary.game.state.GameStateFactory_Package;
-   package NullPaintable_Package renames org.allbinary.graphics.paint.NullPaintable_Package;
+   package Processor_Package renames Standard.org.allbinary.canvas.Processor_Package;
+   package HighScores_Package renames Standard.org.allbinary.game.score.HighScores_Package;
+   package HighScoresHelperBase_Package renames Standard.org.allbinary.game.score.HighScoresHelperBase_Package;
+   package NullHighScoresSingletonFactory_Package renames Standard.org.allbinary.game.score.NullHighScoresSingletonFactory_Package;
+   package GameStateFactory_Package renames Standard.org.allbinary.game.state.GameStateFactory_Package;
+   package NullPaintable_Package renames Standard.org.allbinary.graphics.paint.NullPaintable_Package;
 
    type EndGameProcessor is tagged;
    type EndGameProcessor_Access is access all EndGameProcessor'Class;

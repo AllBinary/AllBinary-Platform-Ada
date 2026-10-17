@@ -30,10 +30,10 @@ with admin.taghelpers.BasicTable_Package; use admin.taghelpers.BasicTable_Packag
 
 package admin.taghelpers.OrderHistoryHelper_Package is
 
-   package Portion_Package renames org.allbinary.business.installer.Portion_Package;
-   package OrderHistoryEntityFactory_Package renames org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntityFactory_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package AbSqlTableUtil_Package renames org.allbinary.logic.communication.sql.AbSqlTableUtil_Package;
+   package Portion_Package renames Standard.org.allbinary.business.installer.Portion_Package;
+   package OrderHistoryEntityFactory_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntityFactory_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package AbSqlTableUtil_Package renames Standard.org.allbinary.logic.communication.sql.AbSqlTableUtil_Package;
 
    type OrderHistoryHelper is tagged;
    type OrderHistoryHelper_Access is access all OrderHistoryHelper'Class;

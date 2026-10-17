@@ -71,8 +71,12 @@ package body org.allbinary.game.configuration.persistance.BasicPersitance_Packag
             recordStore := RecordStore_Package.openRecordStore (This.getRecordId (abeClientInformation), True);
             recordStore.deleteRecord (deleteId);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Java_Throw (e);
+                end;
         end;
         --  finally
         begin

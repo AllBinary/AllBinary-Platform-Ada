@@ -42,11 +42,15 @@ package body admin.taghelpers.XmlOptionItemsRequestHelperFactory_Package is
         begin
             return XmlOptionItemsRequestHelper_Package.Create (hashMap, pageContext);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORYERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.GET_INSTANCE, e);
             end if;
             return null;
+                end;
         end;
    end getInstance;
 

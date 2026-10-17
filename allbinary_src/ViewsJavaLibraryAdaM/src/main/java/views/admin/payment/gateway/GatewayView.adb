@@ -51,11 +51,15 @@ package body views.admin.payment.gateway.GatewayView_Package is
             paymentGatewayInterface := PaymentGatewayEntityFactory_Package.getInstance.getPaymentGatewayInterface (This.getPaymentGatewayPrimaryKey.getStoreName, BasicPaymentTypeUtil_Package.getInstance.get (This.getPaymentGatewayPrimaryKey.getName));
             return PaymentGatewayComponent_Package.Create (This.getTransformInfoInterface, paymentGatewayInterface).view;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("edit()"), e);
             end if;
             Java_Throw (e);
+                end;
         end;
    end view;
 

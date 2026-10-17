@@ -25,7 +25,7 @@ with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package; use org
 
 package org.allbinary.animation.AnimationInterfaceFactoryInterfaceComposite_Package is
 
-   package ScaleProperties_Package renames org.allbinary.media.ScaleProperties_Package;
+   package ScaleProperties_Package renames Standard.org.allbinary.media.ScaleProperties_Package;
 
    type AnimationInterfaceFactoryInterfaceComposite is tagged;
    type AnimationInterfaceFactoryInterfaceComposite_Access is access all AnimationInterfaceFactoryInterfaceComposite'Class;

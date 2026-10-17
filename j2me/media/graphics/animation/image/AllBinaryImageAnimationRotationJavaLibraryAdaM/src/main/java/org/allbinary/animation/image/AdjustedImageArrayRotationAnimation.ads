@@ -28,8 +28,8 @@ with org.allbinary.animation.image.ImageArrayRotationAnimation_Package; use org.
 
 package org.allbinary.animation.image.AdjustedImageArrayRotationAnimation_Package is
 
-   package AnimationBehavior_Package renames org.allbinary.animation.AnimationBehavior_Package;
-   package AngleInfo_Package renames org.allbinary.math.AngleInfo_Package;
+   package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
+   package AngleInfo_Package renames Standard.org.allbinary.math.AngleInfo_Package;
 
    type AdjustedImageArrayRotationAnimation is tagged;
    type AdjustedImageArrayRotationAnimation_Access is access all AdjustedImageArrayRotationAnimation'Class;

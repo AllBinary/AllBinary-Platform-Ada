@@ -48,27 +48,27 @@ with org.allbinary.graphics.j2me.KeyListener_Package; use org.allbinary.graphics
 
 package org.allbinary.graphics.j2me.MyFrame_Package is
 
-   package XslHelper_Package renames org.allbinary.data.tree.dom.XslHelper_Package;
-   package DomHelper_Package renames org.allbinary.dom.DomHelper_Package;
-   package NewWorkAreaJDialog_Package renames org.allbinary.graphics.j2me.dialog.NewWorkAreaJDialog_Package;
-   package RotateJDialog_Package renames org.allbinary.graphics.j2me.dialog.RotateJDialog_Package;
-   package WorkAreaDom_Package renames org.allbinary.graphics.j2me.workarea.WorkAreaDom_Package;
-   package WorkAreaJPanel_Package renames org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package;
-   package WorkAreaJPanelInterface_Package renames org.allbinary.graphics.j2me.workarea.WorkAreaJPanelInterface_Package;
-   package MyCanvasEvent_Package renames org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package;
-   package MyCanvasEventService_Package renames org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package;
-   package MyCanvasEventSource_Package renames org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventSource_Package;
-   package FileJDialog_Package renames org.allbinary.gui.dialog.FileJDialog_Package;
-   package FileJDialogListenerInterface_Package renames org.allbinary.gui.dialog.FileJDialogListenerInterface_Package;
-   package HashMapJDialogListenerInterface_Package renames org.allbinary.gui.dialog.HashMapJDialogListenerInterface_Package;
-   package LOGGING_Package renames org.allbinary.log.LOGGING_Package;
-   package GuiLog_Package renames org.allbinary.logic.communication.log.GuiLog_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package SmallIntegerSingletonFactory_Package renames org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
-   package AngleFactory_Package renames org.allbinary.math.AngleFactory_Package;
-   package CommonLabels_Package renames org.allbinary.string_Id.CommonLabels_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
+   package XslHelper_Package renames Standard.org.allbinary.data.tree.dom.XslHelper_Package;
+   package DomHelper_Package renames Standard.org.allbinary.dom.DomHelper_Package;
+   package NewWorkAreaJDialog_Package renames Standard.org.allbinary.graphics.j2me.dialog.NewWorkAreaJDialog_Package;
+   package RotateJDialog_Package renames Standard.org.allbinary.graphics.j2me.dialog.RotateJDialog_Package;
+   package WorkAreaDom_Package renames Standard.org.allbinary.graphics.j2me.workarea.WorkAreaDom_Package;
+   package WorkAreaJPanel_Package renames Standard.org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package;
+   package WorkAreaJPanelInterface_Package renames Standard.org.allbinary.graphics.j2me.workarea.WorkAreaJPanelInterface_Package;
+   package MyCanvasEvent_Package renames Standard.org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package;
+   package MyCanvasEventService_Package renames Standard.org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package;
+   package MyCanvasEventSource_Package renames Standard.org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventSource_Package;
+   package FileJDialog_Package renames Standard.org.allbinary.gui.dialog.FileJDialog_Package;
+   package FileJDialogListenerInterface_Package renames Standard.org.allbinary.gui.dialog.FileJDialogListenerInterface_Package;
+   package HashMapJDialogListenerInterface_Package renames Standard.org.allbinary.gui.dialog.HashMapJDialogListenerInterface_Package;
+   package LOGGING_Package renames Standard.org.allbinary.log.LOGGING_Package;
+   package GuiLog_Package renames Standard.org.allbinary.logic.communication.log.GuiLog_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+   package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
 
    type MyFrame is tagged;
    type MyFrame_Access is access all MyFrame'Class;

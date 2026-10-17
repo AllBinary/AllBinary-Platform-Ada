@@ -28,10 +28,10 @@ with org.allbinary.logic.control.contraints.size.TwoDimensionalConstraintInterfa
 
 package org.allbinary.business.advertisement.search.AdvertisementSearchInterface_Package is
 
-   package AdvertisementCategoryInterface_Package renames org.allbinary.business.advertisement.search.category.AdvertisementCategoryInterface_Package;
-   package AdvertisementWebsiteInterface_Package renames org.allbinary.business.advertisement.search.website.AdvertisementWebsiteInterface_Package;
-   package PriceConstraintInterface_Package renames org.allbinary.logic.control.contraints.price.PriceConstraintInterface_Package;
-   package TwoDimensionalConstraintInterface_Package renames org.allbinary.logic.control.contraints.size.TwoDimensionalConstraintInterface_Package;
+   package AdvertisementCategoryInterface_Package renames Standard.org.allbinary.business.advertisement.search.category.AdvertisementCategoryInterface_Package;
+   package AdvertisementWebsiteInterface_Package renames Standard.org.allbinary.business.advertisement.search.website.AdvertisementWebsiteInterface_Package;
+   package PriceConstraintInterface_Package renames Standard.org.allbinary.logic.control.contraints.price.PriceConstraintInterface_Package;
+   package TwoDimensionalConstraintInterface_Package renames Standard.org.allbinary.logic.control.contraints.size.TwoDimensionalConstraintInterface_Package;
 
    type AdvertisementSearchInterface is interface;
    type AdvertisementSearchInterface_Access is access all AdvertisementSearchInterface'Class;

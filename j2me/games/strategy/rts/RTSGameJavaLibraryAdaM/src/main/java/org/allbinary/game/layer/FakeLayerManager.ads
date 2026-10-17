@@ -28,11 +28,11 @@ with org.allbinary.game.layer.AllBinaryGameLayerManager_Package; use org.allbina
 
 package org.allbinary.game.layer.FakeLayerManager_Package is
 
-   package GameInfo_Package renames org.allbinary.game.GameInfo_Package;
-   package BasicColorFactory_Package renames org.allbinary.graphics.color.BasicColorFactory_Package;
-   package BasicGeographicMap_Package renames org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
-   package GeographicMapCellType_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
-   package GeographicMapCompositeInterface_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package;
+   package GameInfo_Package renames Standard.org.allbinary.game.GameInfo_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package BasicGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
+   package GeographicMapCellType_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
+   package GeographicMapCompositeInterface_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package;
 
    type FakeLayerManager is tagged;
    type FakeLayerManager_Access is access all FakeLayerManager'Class;

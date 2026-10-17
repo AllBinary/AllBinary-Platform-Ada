@@ -28,10 +28,10 @@ with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface
 
 package org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationInterface_Package is
 
-   package UserInterface_Package renames org.allbinary.business.user.UserInterface_Package;
-   package UserEmailEventListenerInterface_Package renames org.allbinary.logic.communication.smtp.event.UserEmailEventListenerInterface_Package;
-   package UserEmailEventNameData_Package renames org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package;
-   package AbeClientInformationInterface_Package renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package UserInterface_Package renames Standard.org.allbinary.business.user.UserInterface_Package;
+   package UserEmailEventListenerInterface_Package renames Standard.org.allbinary.logic.communication.smtp.event.UserEmailEventListenerInterface_Package;
+   package UserEmailEventNameData_Package renames Standard.org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package;
+   package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 
    type UserEmailEventsConfigurationInterface is interface;
    type UserEmailEventsConfigurationInterface_Access is access all UserEmailEventsConfigurationInterface'Class;

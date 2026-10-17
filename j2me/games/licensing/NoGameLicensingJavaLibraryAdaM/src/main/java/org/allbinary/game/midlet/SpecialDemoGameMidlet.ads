@@ -26,8 +26,8 @@ with org.allbinary.game.midlet.DemoGameMidlet_Package; use org.allbinary.game.mi
 
 package org.allbinary.game.midlet.SpecialDemoGameMidlet_Package is
 
-   package ClientInformationFactory_Package renames org.allbinary.logic.system.security.licensing.ClientInformationFactory_Package;
-   package LicenseServerInitFileUtil_Package renames org.allbinary.logic.system.security.licensing.LicenseServerInitFileUtil_Package;
+   package ClientInformationFactory_Package renames Standard.org.allbinary.logic.system.security.licensing.ClientInformationFactory_Package;
+   package LicenseServerInitFileUtil_Package renames Standard.org.allbinary.logic.system.security.licensing.LicenseServerInitFileUtil_Package;
 
    type SpecialDemoGameMidlet is tagged;
    type SpecialDemoGameMidlet_Access is access all SpecialDemoGameMidlet'Class;

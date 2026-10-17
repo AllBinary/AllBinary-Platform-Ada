@@ -31,13 +31,13 @@ with org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package; use or
 
 package org.allbinary.logic.visual.transform.info.TransformInfoHttpSearch_Package is
 
-   package FREEBLISKET_PATH_GLOBALS_Package renames org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package;
-   package URLGLOBALS_Package renames org.allbinary.globals.URLGLOBALS_Package;
-   package SearchRequest_Package renames org.allbinary.logic.control.search.SearchRequest_Package;
-   package AbPath_Package renames org.allbinary.logic.io.path.AbPath_Package;
-   package AbPathData_Package renames org.allbinary.logic.io.path.AbPathData_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
+   package FREEBLISKET_PATH_GLOBALS_Package renames Standard.org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package;
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
+   package SearchRequest_Package renames Standard.org.allbinary.logic.control.search.SearchRequest_Package;
+   package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
+   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type TransformInfoHttpSearch is tagged;
    type TransformInfoHttpSearch_Access is access all TransformInfoHttpSearch'Class;

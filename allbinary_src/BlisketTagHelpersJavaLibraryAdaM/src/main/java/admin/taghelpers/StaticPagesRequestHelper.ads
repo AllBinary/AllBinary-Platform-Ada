@@ -52,31 +52,31 @@ with admin.taghelpers.TagHelperInterface_Package; use admin.taghelpers.TagHelper
 
 package admin.taghelpers.StaticPagesRequestHelper_Package is
 
-   package AbContext_Package renames org.allbinary.business.context.AbContext_Package;
-   package StoreFrontData_Package renames org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
-   package StoreFrontFactory_Package renames org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
-   package StoreFrontInterface_Package renames org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
-   package URLGLOBALS_Package renames org.allbinary.globals.URLGLOBALS_Package;
-   package AcceptableResponseGenerator_Package renames org.allbinary.logic.communication.http.AcceptableResponseGenerator_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package UserEmailEventNameData_Package renames org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package;
-   package UserEmailEventHandler_Package renames org.allbinary.logic.communication.smtp.event.handler.UserEmailEventHandler_Package;
-   package AdminUserEmailEventHandlerSingletons_Package renames org.allbinary.logic.communication.smtp.event.handler.factory.AdminUserEmailEventHandlerSingletons_Package;
-   package StoreAdminUserEmailEventHandlerSingletons_Package renames org.allbinary.logic.communication.smtp.event.handler.factory.StoreAdminUserEmailEventHandlerSingletons_Package;
-   package AdminEmailInfo_Package renames org.allbinary.logic.communication.smtp.info.AdminEmailInfo_Package;
-   package BasicEmailInfo_Package renames org.allbinary.logic.communication.smtp.info.BasicEmailInfo_Package;
-   package EmailInfo_Package renames org.allbinary.logic.communication.smtp.info.EmailInfo_Package;
-   package StoreEmailInfo_Package renames org.allbinary.logic.communication.smtp.info.StoreEmailInfo_Package;
-   package SearchParams_Package renames org.allbinary.logic.control.search.SearchParams_Package;
-   package SearchRequest_Package renames org.allbinary.logic.control.search.SearchRequest_Package;
-   package FileUtil_Package renames org.allbinary.logic.io.file.FileUtil_Package;
-   package AbPath_Package renames org.allbinary.logic.io.path.AbPath_Package;
-   package AbPathData_Package renames org.allbinary.logic.io.path.AbPathData_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package AbeClientInformationInterface_Package renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-   package ServiceClientInformationInterfaceFactory_Package renames org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package;
-   package TransformInfoData_Package renames org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
-   package ProductListingFactory_Package renames views.admin.inventory.listings.ProductListingFactory_Package;
+   package AbContext_Package renames Standard.org.allbinary.business.context.AbContext_Package;
+   package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+   package StoreFrontFactory_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
+   package StoreFrontInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
+   package AcceptableResponseGenerator_Package renames Standard.org.allbinary.logic.communication.http.AcceptableResponseGenerator_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package UserEmailEventNameData_Package renames Standard.org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package;
+   package UserEmailEventHandler_Package renames Standard.org.allbinary.logic.communication.smtp.event.handler.UserEmailEventHandler_Package;
+   package AdminUserEmailEventHandlerSingletons_Package renames Standard.org.allbinary.logic.communication.smtp.event.handler.factory.AdminUserEmailEventHandlerSingletons_Package;
+   package StoreAdminUserEmailEventHandlerSingletons_Package renames Standard.org.allbinary.logic.communication.smtp.event.handler.factory.StoreAdminUserEmailEventHandlerSingletons_Package;
+   package AdminEmailInfo_Package renames Standard.org.allbinary.logic.communication.smtp.info.AdminEmailInfo_Package;
+   package BasicEmailInfo_Package renames Standard.org.allbinary.logic.communication.smtp.info.BasicEmailInfo_Package;
+   package EmailInfo_Package renames Standard.org.allbinary.logic.communication.smtp.info.EmailInfo_Package;
+   package StoreEmailInfo_Package renames Standard.org.allbinary.logic.communication.smtp.info.StoreEmailInfo_Package;
+   package SearchParams_Package renames Standard.org.allbinary.logic.control.search.SearchParams_Package;
+   package SearchRequest_Package renames Standard.org.allbinary.logic.control.search.SearchRequest_Package;
+   package FileUtil_Package renames Standard.org.allbinary.logic.io.file.FileUtil_Package;
+   package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
+   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package ServiceClientInformationInterfaceFactory_Package renames Standard.org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package;
+   package TransformInfoData_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
+   package ProductListingFactory_Package renames Standard.views.admin.inventory.listings.ProductListingFactory_Package;
 
    type StaticPagesRequestHelper is tagged;
    type StaticPagesRequestHelper_Access is access all StaticPagesRequestHelper'Class;

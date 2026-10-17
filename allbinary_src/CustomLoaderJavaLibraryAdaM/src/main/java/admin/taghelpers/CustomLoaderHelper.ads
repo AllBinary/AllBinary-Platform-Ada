@@ -29,10 +29,10 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package admin.taghelpers.CustomLoaderHelper_Package is
 
-   package AppUrlGlobals_Package renames org.allbinary.globals.AppUrlGlobals_Package;
-   package URLGLOBALS_Package renames org.allbinary.globals.URLGLOBALS_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package AppUrlGlobals_Package renames Standard.org.allbinary.globals.AppUrlGlobals_Package;
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type CustomLoaderHelper is tagged;
    type CustomLoaderHelper_Access is access all CustomLoaderHelper'Class;

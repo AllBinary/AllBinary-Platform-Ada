@@ -30,9 +30,13 @@ package body org.allbinary.logic.system.security.crypt.WeakCrypt_Package is
         begin
             This.abCrypt.init (WeakCrypt_Package.keys (key));
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             PreLogUtil_Package.putOE (commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("SuperCrypt(key)"), e);
+                end;
         end;
    end Initialize;
 
@@ -50,9 +54,13 @@ package body org.allbinary.logic.system.security.crypt.WeakCrypt_Package is
             crypted := This.abCrypt.encrypt (This.tsUtil.getByteArray (value));
             return DatabaseEncoder_Package.encode (crypted);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             PreLogUtil_Package.putOE (To_Unbounded_String ("Encrypt Failed"), This'Unchecked_Access, To_Unbounded_String ("encrypt"), e);
             return StringUtil_Package.getInstance.EMPTY_STRING;
+                end;
         end;
    end encrypt;
 
@@ -63,9 +71,13 @@ package body org.allbinary.logic.system.security.crypt.WeakCrypt_Package is
             decrypted := This.abCrypt.decrypt (DatabaseEncoder_Package.decode (value));
             return Java_New_String (decrypted);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             PreLogUtil_Package.putOE (To_Unbounded_String ("decrypt Failed"), This'Unchecked_Access, To_Unbounded_String ("decrypt"), e);
             return StringUtil_Package.getInstance.EMPTY_STRING;
+                end;
         end;
    end decrypt;
 

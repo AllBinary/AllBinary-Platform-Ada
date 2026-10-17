@@ -172,8 +172,12 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
             ProgressMidlet (This).destroyApp (True);
             PreLogUtil_Package.put (This.commonStrings.END_Id, This'Unchecked_Access, METHOD_NAME);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, METHOD_NAME, e);
+                end;
         end;
         This.logUtil.putF (This.commonStrings.END_Id, This'Unchecked_Access, METHOD_NAME);
    end destroyApp;
@@ -202,10 +206,14 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
                 end if;
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("startApp"), e);
             This.destroyApp (False);
             This.notifyDestroyed;
+                end;
         end;
    end startApp;
 
@@ -460,11 +468,15 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
                 This.updateFullScreen;
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (StringMaker_Package.Create.append (This.commonStrings.EXCEPTION_LABEL).append (command.getLabel).toString, This'Unchecked_Access, This.midletStrings.COMMAND_ACTION, e);
             if (command) /= (GameCommandsFactory_Package.getInstance.EXIT_COMMAND) then
                 This.exitProgress (False);
             end if;
+                end;
         end;
    end commandAction;
 

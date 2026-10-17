@@ -213,8 +213,12 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.Gene
                 This.getGenericProfiles.save;
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("savedCaptureJRadioButtonActionPerformed"), e);
+                end;
         end;
    end savedCaptureJRadioButtonActionPerformed;
 
@@ -229,8 +233,12 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.Gene
                 This.getGenericProfiles.save;
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("screenCaptureJRadioButtonActionPerformed"), e);
+                end;
         end;
    end screenCaptureJRadioButtonActionPerformed;
 
@@ -244,8 +252,12 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.Gene
             end if;
             This.getGenericProfiles.save;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("captureComparisonJCheckBoxActionPerformed"), e);
+                end;
         end;
    end captureMotionAnalysisJCheckBoxActionPerformed;
 
@@ -259,8 +271,12 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.Gene
             end if;
             This.getGenericProfiles.save;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("captureComparisonJCheckBoxActionPerformed"), e);
+                end;
         end;
    end captureComparisonJCheckBoxActionPerformed;
 
@@ -373,8 +389,12 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.Gene
             profileNameString := Unbounded_String (This.genericProfilesJList.getSelectedValue);
             This.updateProfileUI (profileNameString);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("genericProfilesJListValueChanged"), e);
+                end;
         end;
    end genericProfilesJListValueChanged;
 
@@ -391,8 +411,12 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.Gene
             end loop;
             This.selectFirstElement;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("deleteProfileJButtonActionPerformed"), e);
+                end;
         end;
    end deleteProfileJButtonActionPerformed;
 
@@ -407,8 +431,12 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.Gene
             This.newProfileJDialog.setVisible (False);
             This.updateProfileUI (newProfileName);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("okNewProfileJButtonActionPerformed"), e);
+                end;
         end;
    end okNewProfileJButtonActionPerformed;
 

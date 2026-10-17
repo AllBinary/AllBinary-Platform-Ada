@@ -25,7 +25,7 @@ with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.
 
 package org.allbinary.game.displayable.canvas.GameCanvasNonBotPaintable_Package is
 
-   package Paintable_Package renames org.allbinary.graphics.paint.Paintable_Package;
+   package Paintable_Package renames Standard.org.allbinary.graphics.paint.Paintable_Package;
 
    type GameCanvasNonBotPaintable is tagged;
    type GameCanvasNonBotPaintable_Access is access all GameCanvasNonBotPaintable'Class;

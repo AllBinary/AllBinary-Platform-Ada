@@ -24,7 +24,7 @@ with org.allbinary.canvas.Processor_Package; use org.allbinary.canvas.Processor_
 
 package org.allbinary.game.displayable.canvas.EndLevelIntermissionProcessor_Package is
 
-   package Processor_Package renames org.allbinary.canvas.Processor_Package;
+   package Processor_Package renames Standard.org.allbinary.canvas.Processor_Package;
 
    type EndLevelIntermissionProcessor is tagged;
    type EndLevelIntermissionProcessor_Access is access all EndLevelIntermissionProcessor'Class;

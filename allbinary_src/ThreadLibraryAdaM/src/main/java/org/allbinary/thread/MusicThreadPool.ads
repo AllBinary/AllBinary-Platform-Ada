@@ -27,9 +27,9 @@ with org.allbinary.thread.ThreadPool_Package; use org.allbinary.thread.ThreadPoo
 
 package org.allbinary.thread.MusicThreadPool_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type MusicThreadPool is tagged;
    type MusicThreadPool_Access is access all MusicThreadPool'Class;

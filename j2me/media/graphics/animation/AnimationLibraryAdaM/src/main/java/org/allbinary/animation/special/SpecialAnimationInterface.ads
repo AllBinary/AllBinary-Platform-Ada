@@ -24,7 +24,7 @@ with org.allbinary.animation.IndexedAnimationInterface_Package; use org.allbinar
 
 package org.allbinary.animation.special.SpecialAnimationInterface_Package is
 
-   package IndexedAnimationInterface_Package renames org.allbinary.animation.IndexedAnimationInterface_Package;
+   package IndexedAnimationInterface_Package renames Standard.org.allbinary.animation.IndexedAnimationInterface_Package;
 
    type SpecialAnimationInterface is interface and IndexedAnimationInterface;
    type SpecialAnimationInterface_Access is access all SpecialAnimationInterface'Class;

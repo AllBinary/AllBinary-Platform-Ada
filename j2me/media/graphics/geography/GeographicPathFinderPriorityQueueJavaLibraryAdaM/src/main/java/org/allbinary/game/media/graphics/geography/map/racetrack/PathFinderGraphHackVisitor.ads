@@ -26,8 +26,8 @@ with org.allbinary.game.media.graphics.geography.map.racetrack.BasePathFinderGra
 
 package org.allbinary.game.media.graphics.geography.map.racetrack.PathFinderGraphHackVisitor_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicGeographicMap_Package renames org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
 
    type PathFinderGraphHackVisitor is tagged;
    type PathFinderGraphHackVisitor_Access is access all PathFinderGraphHackVisitor'Class;

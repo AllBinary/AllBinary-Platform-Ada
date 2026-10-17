@@ -29,11 +29,11 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.media.image.ImageScaleUtil_Package is
 
-   package Features_Package renames org.allbinary.game.configuration.feature.Features_Package;
-   package GameFeatureFactory_Package renames org.allbinary.game.configuration.feature.GameFeatureFactory_Package;
-   package ImageCache_Package renames org.allbinary.image.ImageCache_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
+   package GameFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.GameFeatureFactory_Package;
+   package ImageCache_Package renames Standard.org.allbinary.image.ImageCache_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type ImageScaleUtil is tagged;
    type ImageScaleUtil_Access is access all ImageScaleUtil'Class;

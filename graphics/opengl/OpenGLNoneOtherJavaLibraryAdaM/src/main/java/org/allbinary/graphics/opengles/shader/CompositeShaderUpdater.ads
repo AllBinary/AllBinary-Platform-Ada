@@ -29,9 +29,9 @@ with org.allbinary.graphics.opengles.shader.ShaderUpdater_Package; use org.allbi
 
 package org.allbinary.graphics.opengles.shader.CompositeShaderUpdater_Package is
 
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
 
    type CompositeShaderUpdater is tagged;
    type CompositeShaderUpdater_Access is access all CompositeShaderUpdater'Class;

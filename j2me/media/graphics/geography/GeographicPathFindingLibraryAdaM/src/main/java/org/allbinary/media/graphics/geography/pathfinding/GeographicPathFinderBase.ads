@@ -25,8 +25,8 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 
 package org.allbinary.media.graphics.geography.pathfinding.GeographicPathFinderBase_Package is
 
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type GeographicPathFinderBase is tagged;
    type GeographicPathFinderBase_Access is access all GeographicPathFinderBase'Class;

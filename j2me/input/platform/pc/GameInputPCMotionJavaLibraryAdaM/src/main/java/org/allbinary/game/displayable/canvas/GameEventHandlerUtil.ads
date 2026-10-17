@@ -25,8 +25,8 @@ with org.allbinary.game.input.event.UpGameKeyEventHandler_Package; use org.allbi
 
 package org.allbinary.game.displayable.canvas.GameEventHandlerUtil_Package is
 
-   package DownGameKeyEventHandler_Package renames org.allbinary.game.input.event.DownGameKeyEventHandler_Package;
-   package UpGameKeyEventHandler_Package renames org.allbinary.game.input.event.UpGameKeyEventHandler_Package;
+   package DownGameKeyEventHandler_Package renames Standard.org.allbinary.game.input.event.DownGameKeyEventHandler_Package;
+   package UpGameKeyEventHandler_Package renames Standard.org.allbinary.game.input.event.UpGameKeyEventHandler_Package;
 
    type GameEventHandlerUtil is tagged;
    type GameEventHandlerUtil_Access is access all GameEventHandlerUtil'Class;

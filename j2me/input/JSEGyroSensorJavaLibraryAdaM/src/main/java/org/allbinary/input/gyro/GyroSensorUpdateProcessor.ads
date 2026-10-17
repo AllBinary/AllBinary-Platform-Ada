@@ -24,7 +24,7 @@ with org.allbinary.canvas.Processor_Package; use org.allbinary.canvas.Processor_
 
 package org.allbinary.input.gyro.GyroSensorUpdateProcessor_Package is
 
-   package Processor_Package renames org.allbinary.canvas.Processor_Package;
+   package Processor_Package renames Standard.org.allbinary.canvas.Processor_Package;
 
    type GyroSensorUpdateProcessor is tagged;
    type GyroSensorUpdateProcessor_Access is access all GyroSensorUpdateProcessor'Class;

@@ -53,7 +53,10 @@ package body admin.taghelpers.WorkFlowRequestHelper_Package is
             end if;
             return success;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             begin
                 error := To_Unbounded_String ("Failed to remove workflow with ") & Java_Image (WorkFlowData_Package.getInstance.NAME) & To_Unbounded_String ("= ") & This.workFlowInterface.getName & To_Unbounded_String (" from ");
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
@@ -61,13 +64,18 @@ package body admin.taghelpers.WorkFlowRequestHelper_Package is
                 end if;
                 Java_Throw (Java_New_Exception ("Exception", e));
             exception
-                when e2 : others =>
+                when Java_Occurrence : others =>
+                    declare
+                        e2 : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                    begin
                 error := To_Unbounded_String ("Failed to get data from workflowinterface to set error string");
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
                     This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("delete()"), e2);
                 end if;
                 return error;
+                    end;
             end;
+                end;
         end;
    end delete;
 
@@ -82,12 +90,16 @@ package body admin.taghelpers.WorkFlowRequestHelper_Package is
             end if;
             return success;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             error := To_Unbounded_String ("Failed to add User");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("add()"), e);
             end if;
             return error;
+                end;
         end;
    end insert;
 
@@ -102,12 +114,16 @@ package body admin.taghelpers.WorkFlowRequestHelper_Package is
             end if;
             return success;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             error := To_Unbounded_String ("Failed to update WorkFlow");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("update()"), e);
             end if;
             return error;
+                end;
         end;
    end update;
 

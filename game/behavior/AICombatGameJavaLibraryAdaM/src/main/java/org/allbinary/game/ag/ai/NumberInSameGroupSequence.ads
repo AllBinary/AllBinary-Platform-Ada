@@ -24,7 +24,7 @@ with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allb
 
 package org.allbinary.game.ag.ai.NumberInSameGroupSequence_Package is
 
-   package SmallIntegerSingletonFactory_Package renames org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
 
    type NumberInSameGroupSequence is tagged;
    type NumberInSameGroupSequence_Access is access all NumberInSameGroupSequence'Class;

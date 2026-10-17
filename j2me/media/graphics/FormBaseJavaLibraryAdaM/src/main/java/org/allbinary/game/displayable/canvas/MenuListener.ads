@@ -24,7 +24,7 @@ with org.allbinary.game.input.GameKeyEventSourceInterface_Package; use org.allbi
 
 package org.allbinary.game.displayable.canvas.MenuListener_Package is
 
-   package GameKeyEventSourceInterface_Package renames org.allbinary.game.input.GameKeyEventSourceInterface_Package;
+   package GameKeyEventSourceInterface_Package renames Standard.org.allbinary.game.input.GameKeyEventSourceInterface_Package;
 
    type MenuListener is interface and GameKeyEventSourceInterface;
    type MenuListener_Access is access all MenuListener'Class;

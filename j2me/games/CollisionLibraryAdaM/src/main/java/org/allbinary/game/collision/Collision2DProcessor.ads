@@ -13,7 +13,7 @@ with org.allbinary.game.collision.CollisionProcessor_Package; use org.allbinary.
 
 package org.allbinary.game.collision.Collision2DProcessor_Package is
 
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
 
    type Collision2DProcessor is tagged;
    type Collision2DProcessor_Access is access all Collision2DProcessor'Class;

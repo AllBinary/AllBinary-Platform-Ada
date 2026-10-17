@@ -219,8 +219,12 @@ package body org.allbinary.logic.string_Id.regex.replace.Replace_Package is
             testString := replaceCat.all_Case_Id (testString);
             Ada.Text_IO.Put_Line (Java_Image (To_Unbounded_String ("New String: ") & testString));
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             null;
+                end;
         end;
    end main;
 

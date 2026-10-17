@@ -26,9 +26,9 @@ with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.Com
 
 package org.allbinary.game.input.PCKeyFactory_Package is
 
-   package PositionStrings_Package renames org.allbinary.math.PositionStrings_Package;
-   package CommonPhoneStrings_Package renames org.allbinary.string_Id.CommonPhoneStrings_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
+   package PositionStrings_Package renames Standard.org.allbinary.math.PositionStrings_Package;
+   package CommonPhoneStrings_Package renames Standard.org.allbinary.string_Id.CommonPhoneStrings_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
 
    type PCKeyFactory is tagged;
    type PCKeyFactory_Access is access all PCKeyFactory'Class;

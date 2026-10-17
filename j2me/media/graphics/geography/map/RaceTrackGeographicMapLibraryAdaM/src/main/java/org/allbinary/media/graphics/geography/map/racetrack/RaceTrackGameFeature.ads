@@ -24,7 +24,7 @@ with org.allbinary.game.configuration.feature.GameFeature_Package; use org.allbi
 
 package org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGameFeature_Package is
 
-   package GameFeature_Package renames org.allbinary.game.configuration.feature.GameFeature_Package;
+   package GameFeature_Package renames Standard.org.allbinary.game.configuration.feature.GameFeature_Package;
 
    type RaceTrackGameFeature is tagged;
    type RaceTrackGameFeature_Access is access all RaceTrackGameFeature'Class;

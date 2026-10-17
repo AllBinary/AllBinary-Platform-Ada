@@ -34,15 +34,15 @@ with org.allbinary.game.layer.AllBinaryGameLayer_Package; use org.allbinary.game
 
 package org.allbinary.game.layer.PlayerGameInputGameLayer_Package is
 
-   package PlayerGameInput_Package renames org.allbinary.game.input.PlayerGameInput_Package;
-   package PlayerGameInputCompositeInterface_Package renames org.allbinary.game.input.PlayerGameInputCompositeInterface_Package;
-   package PointFactory_Package renames org.allbinary.graphics.PointFactory_Package;
-   package Rectangle_Package renames org.allbinary.graphics.Rectangle_Package;
-   package CanvasStrings_Package renames org.allbinary.graphics.displayable.CanvasStrings_Package;
-   package AllBinaryLayerManager_Package renames org.allbinary.layer.AllBinaryLayerManager_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package StaticViewPosition_Package renames org.allbinary.view.StaticViewPosition_Package;
+   package PlayerGameInput_Package renames Standard.org.allbinary.game.input.PlayerGameInput_Package;
+   package PlayerGameInputCompositeInterface_Package renames Standard.org.allbinary.game.input.PlayerGameInputCompositeInterface_Package;
+   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
+   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
+   package CanvasStrings_Package renames Standard.org.allbinary.graphics.displayable.CanvasStrings_Package;
+   package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StaticViewPosition_Package renames Standard.org.allbinary.view.StaticViewPosition_Package;
 
    type PlayerGameInputGameLayer is tagged;
    type PlayerGameInputGameLayer_Access is access all PlayerGameInputGameLayer'Class;

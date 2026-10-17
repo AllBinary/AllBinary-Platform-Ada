@@ -25,8 +25,8 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 
 package org.allbinary.input.motion.gesture.MotionGestureToMotionGestureActionAssociation_Package is
 
-   package CompleteMotionGestureInputEvent_Package renames org.allbinary.game.input.CompleteMotionGestureInputEvent_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package CompleteMotionGestureInputEvent_Package renames Standard.org.allbinary.game.input.CompleteMotionGestureInputEvent_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type MotionGestureToMotionGestureActionAssociation is tagged;
    type MotionGestureToMotionGestureActionAssociation_Access is access all MotionGestureToMotionGestureActionAssociation'Class;

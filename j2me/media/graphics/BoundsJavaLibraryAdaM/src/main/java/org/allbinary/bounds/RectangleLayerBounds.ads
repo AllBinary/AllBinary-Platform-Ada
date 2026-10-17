@@ -25,7 +25,7 @@ with org.allbinary.bounds.LayerBounds_Package; use org.allbinary.bounds.LayerBou
 
 package org.allbinary.bounds.RectangleLayerBounds_Package is
 
-   package Rectangle_Package renames org.allbinary.graphics.Rectangle_Package;
+   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
 
    type RectangleLayerBounds is tagged;
    type RectangleLayerBounds_Access is access all RectangleLayerBounds'Class;

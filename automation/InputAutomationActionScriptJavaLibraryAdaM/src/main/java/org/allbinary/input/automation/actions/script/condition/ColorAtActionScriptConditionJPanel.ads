@@ -28,10 +28,10 @@ with org.allbinary.input.automation.actions.script.condition.JPanel_Package; use
 
 package org.allbinary.input.automation.actions.script.condition.ColorAtActionScriptConditionJPanel_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringValidationUtil_Package renames org.allbinary.logic.string_Id.StringValidationUtil_Package;
-   package ColorRangeInterface_Package renames org.allbinary.media.image.analysis.ColorRangeInterface_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
+   package ColorRangeInterface_Package renames Standard.org.allbinary.media.image.analysis.ColorRangeInterface_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type ColorAtActionScriptConditionJPanel is tagged;
    type ColorAtActionScriptConditionJPanel_Access is access all ColorAtActionScriptConditionJPanel'Class;

@@ -158,12 +158,16 @@ package body org.allbinary.business.user.modules.User_Package is
             end if;
             return valid;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VALIDATIONERROR) then
                 commonStrings := CommonStrings_Package.getInstance;
                 This.logUtil.put (To_Unbounded_String ("Failed to validate form"), This'Unchecked_Access, commonStrings.IS_VALID, e);
             end if;
             return False;
+                end;
         end;
    end isValid;
 
@@ -187,11 +191,15 @@ package body org.allbinary.business.user.modules.User_Package is
             end if;
             return stringBuffer.toString;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
                 This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), This'Unchecked_Access, To_Unbounded_String ("validationInfo()"), e);
             end if;
             return To_Unbounded_String ("Error Validating Form");
+                end;
         end;
    end validationInfo;
 

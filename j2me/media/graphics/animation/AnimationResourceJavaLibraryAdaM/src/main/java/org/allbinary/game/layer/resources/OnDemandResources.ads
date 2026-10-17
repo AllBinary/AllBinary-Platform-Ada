@@ -26,9 +26,9 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 
 package org.allbinary.game.layer.resources.OnDemandResources_Package is
 
-   package BaseResourceAnimationInterfaceFactoryInterfaceFactory_Package renames org.allbinary.animation.resource.BaseResourceAnimationInterfaceFactoryInterfaceFactory_Package;
-   package ImageCache_Package renames org.allbinary.image.ImageCache_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
+   package BaseResourceAnimationInterfaceFactoryInterfaceFactory_Package renames Standard.org.allbinary.animation.resource.BaseResourceAnimationInterfaceFactoryInterfaceFactory_Package;
+   package ImageCache_Package renames Standard.org.allbinary.image.ImageCache_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type OnDemandResources is tagged;
    type OnDemandResources_Access is access all OnDemandResources'Class;

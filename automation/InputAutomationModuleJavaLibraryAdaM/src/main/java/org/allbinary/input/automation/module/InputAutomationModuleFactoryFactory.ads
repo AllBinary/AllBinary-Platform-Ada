@@ -36,12 +36,12 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.input.automation.module.InputAutomationModuleFactoryFactory_Package is
 
-   package InputAutomationModuleConfiguration_Package renames org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package;
-   package InputAutomationModuleConfigurations_Package renames org.allbinary.input.automation.module.configuration.InputAutomationModuleConfigurations_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package JavaHelpSetNotifier_Package renames org.allbinary.logic.java.help.JavaHelpSetNotifier_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package InputAutomationModuleConfiguration_Package renames Standard.org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package;
+   package InputAutomationModuleConfigurations_Package renames Standard.org.allbinary.input.automation.module.configuration.InputAutomationModuleConfigurations_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package JavaHelpSetNotifier_Package renames Standard.org.allbinary.logic.java.help.JavaHelpSetNotifier_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type InputAutomationModuleFactoryFactory is tagged;
    type InputAutomationModuleFactoryFactory_Access is access all InputAutomationModuleFactoryFactory'Class;

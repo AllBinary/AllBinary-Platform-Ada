@@ -26,9 +26,9 @@ with org.allbinary.layer.LayerProcessor_Package; use org.allbinary.layer.LayerPr
 
 package org.allbinary.ai.ArtificialIntelligenceLayerProcessor_Package is
 
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package AllBinaryLayerManager_Package renames org.allbinary.layer.AllBinaryLayerManager_Package;
-   package LayerProcessor_Package renames org.allbinary.layer.LayerProcessor_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
+   package LayerProcessor_Package renames Standard.org.allbinary.layer.LayerProcessor_Package;
 
    type ArtificialIntelligenceLayerProcessor is tagged;
    type ArtificialIntelligenceLayerProcessor_Access is access all ArtificialIntelligenceLayerProcessor'Class;

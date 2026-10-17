@@ -24,7 +24,7 @@ with org.allbinary.logic.util.visitor.Visitor_Package; use org.allbinary.logic.u
 
 package org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAICompositeVisitorFactory_Package is
 
-   package Visitor_Package renames org.allbinary.logic.util.visitor.Visitor_Package;
+   package Visitor_Package renames Standard.org.allbinary.logic.util.visitor.Visitor_Package;
 
    type DiveAndDirectionalTrackingAICompositeVisitorFactory is tagged;
    type DiveAndDirectionalTrackingAICompositeVisitorFactory_Access is access all DiveAndDirectionalTrackingAICompositeVisitorFactory'Class;

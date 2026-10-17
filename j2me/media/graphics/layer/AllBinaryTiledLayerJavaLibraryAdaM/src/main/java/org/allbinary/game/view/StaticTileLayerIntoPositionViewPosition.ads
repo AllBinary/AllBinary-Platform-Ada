@@ -28,11 +28,11 @@ with org.allbinary.view.ViewPosition_Package; use org.allbinary.view.ViewPositio
 
 package org.allbinary.game.view.StaticTileLayerIntoPositionViewPosition_Package is
 
-   package AllBinaryTiledLayer_Package renames org.allbinary.game.layer.AllBinaryTiledLayer_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package Layer_Package renames org.allbinary.layer.Layer_Package;
-   package NullLayer_Package renames org.allbinary.layer.NullLayer_Package;
-   package ViewPosition_Package renames org.allbinary.view.ViewPosition_Package;
+   package AllBinaryTiledLayer_Package renames Standard.org.allbinary.game.layer.AllBinaryTiledLayer_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package Layer_Package renames Standard.org.allbinary.layer.Layer_Package;
+   package NullLayer_Package renames Standard.org.allbinary.layer.NullLayer_Package;
+   package ViewPosition_Package renames Standard.org.allbinary.view.ViewPosition_Package;
 
    type StaticTileLayerIntoPositionViewPosition is tagged;
    type StaticTileLayerIntoPositionViewPosition_Access is access all StaticTileLayerIntoPositionViewPosition'Class;

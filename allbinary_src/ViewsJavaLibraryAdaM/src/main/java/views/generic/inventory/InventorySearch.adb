@@ -68,11 +68,15 @@ package body views.generic_Id.inventory.InventorySearch_Package is
                 return filePath;
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PRODUCTSEARCHLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("searchSingleStaticPage"), e);
             end if;
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Failed retrieve Single Product Page Static")));
+                end;
         end;
    end searchSingleStaticPage;
 
@@ -84,11 +88,15 @@ package body views.generic_Id.inventory.InventorySearch_Package is
             str := This.search;
             return str (This.searchRequest.getParams.getStartPageInt.intValue);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PRODUCTSEARCHLOGGINGERROR) then
                 This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("searchSingleDynamicPage"), e);
             end if;
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Failed retrieve Single Product Page Dynamically")));
+                end;
         end;
    end searchSingleDynamicPage;
 

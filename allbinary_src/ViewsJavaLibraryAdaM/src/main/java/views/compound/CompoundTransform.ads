@@ -33,14 +33,14 @@ with views.compound.objectConfig.CompoundContextTransformInfoObjectConfig_Packag
 
 package views.compound.CompoundTransform_Package is
 
-   package BasicUriResolver_Package renames org.allbinary.data.tree.dom.BasicUriResolver_Package;
-   package StoreUriResolver_Package renames org.allbinary.data.tree.dom.StoreUriResolver_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package AbeClientInformationInterface_Package renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-   package ServiceClientInformationInterfaceFactory_Package renames org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package;
-   package AbTransformer_Package renames org.allbinary.logic.visual.transform.AbTransformer_Package;
-   package TransformInfoInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-   package CompoundContextTransformInfoObjectConfig_Package renames views.compound.objectConfig.CompoundContextTransformInfoObjectConfig_Package;
+   package BasicUriResolver_Package renames Standard.org.allbinary.data.tree.dom.BasicUriResolver_Package;
+   package StoreUriResolver_Package renames Standard.org.allbinary.data.tree.dom.StoreUriResolver_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package ServiceClientInformationInterfaceFactory_Package renames Standard.org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package;
+   package AbTransformer_Package renames Standard.org.allbinary.logic.visual.transform.AbTransformer_Package;
+   package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package CompoundContextTransformInfoObjectConfig_Package renames Standard.views.compound.objectConfig.CompoundContextTransformInfoObjectConfig_Package;
 
    type CompoundTransform is tagged;
    type CompoundTransform_Access is access all CompoundTransform'Class;

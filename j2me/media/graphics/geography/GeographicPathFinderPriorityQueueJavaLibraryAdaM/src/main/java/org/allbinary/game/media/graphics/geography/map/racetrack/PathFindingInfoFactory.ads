@@ -33,16 +33,16 @@ with org.allbinary.util.BasicArrayListS_Package; use org.allbinary.util.BasicArr
 
 package org.allbinary.game.media.graphics.geography.map.racetrack.PathFindingInfoFactory_Package is
 
-   package AllBinaryTiledLayer_Package renames org.allbinary.game.layer.AllBinaryTiledLayer_Package;
-   package BasicGeographicMap_Package renames org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
-   package BasicGeographicMapCellPositionFactory_Package renames org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package;
-   package GeographicMapCellPosition_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
-   package BasePathFindingInfoFactory_Package renames org.allbinary.media.graphics.geography.map.racetrack.BasePathFindingInfoFactory_Package;
-   package RaceTrackRoadsGeographicMapCellHistoryFactory_Package renames org.allbinary.media.graphics.geography.map.racetrack.RaceTrackRoadsGeographicMapCellHistoryFactory_Package;
-   package PathFinder_Package renames org.allbinary.media.graphics.geography.pathfinding.PathFinder_Package;
-   package PathFindingInfo_Package renames org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package;
-   package PathFindingNodeCostInfoFactory_Package renames org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoFactory_Package;
-   package BasicArrayListS_Package renames org.allbinary.util.BasicArrayListS_Package;
+   package AllBinaryTiledLayer_Package renames Standard.org.allbinary.game.layer.AllBinaryTiledLayer_Package;
+   package BasicGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
+   package BasicGeographicMapCellPositionFactory_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package;
+   package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+   package BasePathFindingInfoFactory_Package renames Standard.org.allbinary.media.graphics.geography.map.racetrack.BasePathFindingInfoFactory_Package;
+   package RaceTrackRoadsGeographicMapCellHistoryFactory_Package renames Standard.org.allbinary.media.graphics.geography.map.racetrack.RaceTrackRoadsGeographicMapCellHistoryFactory_Package;
+   package PathFinder_Package renames Standard.org.allbinary.media.graphics.geography.pathfinding.PathFinder_Package;
+   package PathFindingInfo_Package renames Standard.org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package;
+   package PathFindingNodeCostInfoFactory_Package renames Standard.org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoFactory_Package;
+   package BasicArrayListS_Package renames Standard.org.allbinary.util.BasicArrayListS_Package;
 
    type PathFindingInfoFactory is tagged;
    type PathFindingInfoFactory_Access is access all PathFindingInfoFactory'Class;

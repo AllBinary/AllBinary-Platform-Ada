@@ -31,12 +31,12 @@ with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 
 package org.allbinary.data.tree.dom.SimpleTransform_Package is
 
-   package DomDocumentHelper_Package renames org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
-   package XmlDocumentHelper_Package renames org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
-   package AbFileLocalInputStream_Package renames org.allbinary.logic.io.AbFileLocalInputStream_Package;
-   package AbFile_Package renames org.allbinary.logic.io.file.AbFile_Package;
-   package AbPath_Package renames org.allbinary.logic.io.path.AbPath_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
+   package DomDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
+   package XmlDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
+   package AbFileLocalInputStream_Package renames Standard.org.allbinary.logic.io.AbFileLocalInputStream_Package;
+   package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
+   package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
 
    type SimpleTransform is tagged;
    type SimpleTransform_Access is access all SimpleTransform'Class;

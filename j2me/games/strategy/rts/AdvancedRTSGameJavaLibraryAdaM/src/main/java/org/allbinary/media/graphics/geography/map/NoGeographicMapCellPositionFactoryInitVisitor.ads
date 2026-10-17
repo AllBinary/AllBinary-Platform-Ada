@@ -25,7 +25,7 @@ with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactory
 
 package org.allbinary.media.graphics.geography.map.NoGeographicMapCellPositionFactoryInitVisitor_Package is
 
-   package AllBinaryTiledLayer_Package renames org.allbinary.game.layer.AllBinaryTiledLayer_Package;
+   package AllBinaryTiledLayer_Package renames Standard.org.allbinary.game.layer.AllBinaryTiledLayer_Package;
 
    type NoGeographicMapCellPositionFactoryInitVisitor is tagged;
    type NoGeographicMapCellPositionFactoryInitVisitor_Access is access all NoGeographicMapCellPositionFactoryInitVisitor'Class;

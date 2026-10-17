@@ -80,10 +80,14 @@ package body org.allbinary.game.combat.damage.AnimationDamageFloaters_Package is
                 end if;
             end loop;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             canvasStrings := CanvasStrings_Package.getInstance;
             This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, canvasStrings.PAINT, e);
+                end;
         end;
    end paint;
 

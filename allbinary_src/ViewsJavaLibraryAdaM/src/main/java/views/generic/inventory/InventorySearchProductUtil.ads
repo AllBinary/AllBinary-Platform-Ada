@@ -38,21 +38,21 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package views.generic_Id.inventory.InventorySearchProductUtil_Package is
 
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package BasicItemView_Package renames org.allbinary.business.user.commerce.inventory.item.BasicItemView_Package;
-   package ItemInterface_Package renames org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package;
-   package InventoryEntity_Package renames org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntity_Package;
-   package InventoryEntityFactory_Package renames org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityFactory_Package;
-   package XmlDocumentHelper_Package renames org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package SearchRequest_Package renames org.allbinary.logic.control.search.SearchRequest_Package;
-   package AbeClientInformationInterface_Package renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-   package StoreTransformer_Package renames org.allbinary.logic.visual.transform.StoreTransformer_Package;
-   package TransformDocumentInterface_Package renames org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Package;
-   package TransformStoreDocumentFactory_Package renames org.allbinary.logic.visual.transform.data.TransformStoreDocumentFactory_Package;
-   package TransformInfoHttpSearch_Package renames org.allbinary.logic.visual.transform.info.TransformInfoHttpSearch_Package;
-   package TransformInfoInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package BasicItemView_Package renames Standard.org.allbinary.business.user.commerce.inventory.item.BasicItemView_Package;
+   package ItemInterface_Package renames Standard.org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package;
+   package InventoryEntity_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntity_Package;
+   package InventoryEntityFactory_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityFactory_Package;
+   package XmlDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package SearchRequest_Package renames Standard.org.allbinary.logic.control.search.SearchRequest_Package;
+   package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package StoreTransformer_Package renames Standard.org.allbinary.logic.visual.transform.StoreTransformer_Package;
+   package TransformDocumentInterface_Package renames Standard.org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Package;
+   package TransformStoreDocumentFactory_Package renames Standard.org.allbinary.logic.visual.transform.data.TransformStoreDocumentFactory_Package;
+   package TransformInfoHttpSearch_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoHttpSearch_Package;
+   package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type InventorySearchProductUtil is tagged;
    type InventorySearchProductUtil_Access is access all InventorySearchProductUtil'Class;

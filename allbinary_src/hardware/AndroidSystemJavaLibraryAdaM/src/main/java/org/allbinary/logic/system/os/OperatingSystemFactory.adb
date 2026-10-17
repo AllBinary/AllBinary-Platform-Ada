@@ -66,9 +66,13 @@ package body org.allbinary.logic.system.os.OperatingSystemFactory_Package is
                 end if;
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.genericOperatingSystem := NoOperatingSystem_Package.NO_OPERATING_SYSTEM;
             This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.GET_INSTANCE, e);
+                end;
         end;
         return This.genericOperatingSystem;
    end getOperatingSystemInstance;

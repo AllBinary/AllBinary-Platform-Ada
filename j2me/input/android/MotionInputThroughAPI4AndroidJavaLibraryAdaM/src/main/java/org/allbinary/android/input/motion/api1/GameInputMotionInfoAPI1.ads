@@ -24,7 +24,7 @@ with org.allbinary.android.input.motion.GameInputMotionInfo_Package; use org.all
 
 package org.allbinary.android.input.motion.api1.GameInputMotionInfoAPI1_Package is
 
-   package GameInputMotionInfo_Package renames org.allbinary.android.input.motion.GameInputMotionInfo_Package;
+   package GameInputMotionInfo_Package renames Standard.org.allbinary.android.input.motion.GameInputMotionInfo_Package;
 
    type GameInputMotionInfoAPI1 is tagged;
    type GameInputMotionInfoAPI1_Access is access all GameInputMotionInfoAPI1'Class;

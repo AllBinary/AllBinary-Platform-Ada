@@ -149,10 +149,14 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
                 This.logUtil.putF (This.commonStrings.SUCCESS, This'Unchecked_Access, INSERT);
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.put (To_Unbounded_String ("Command Failed: ") & Java_Image (vector), This'Unchecked_Access, INSERT, e);
             end if;
+                end;
         end;
    end insert;
 
@@ -164,10 +168,14 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
                 This.logUtil.putF (This.commonStrings.SUCCESS, This'Unchecked_Access, INSERT);
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, INSERT, e);
             end if;
+                end;
         end;
    end insert;
 
@@ -188,10 +196,14 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
             end if;
             AbSqlBean (This).updateWhere (OrderData_Package.ID, orderId, updateHashMap);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("setStatus"), e);
             end if;
+                end;
         end;
    end setStatus;
 
@@ -208,10 +220,14 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
             updateHashMap.put (OrderHistoryData_Package.TRANSDATE, time);
             AbSqlBean (This).updateWhere (OrderData_Package.ID, orderId, updateHashMap);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("setPaymentMethod"), e);
             end if;
+                end;
         end;
    end setPaymentMethod;
 
@@ -426,8 +442,12 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
         begin
             This.updateWhere (whereHashMap, orderHashMap);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Java_Throw (e);
+                end;
         end;
    end update;
 

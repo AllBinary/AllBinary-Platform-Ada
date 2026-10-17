@@ -25,7 +25,7 @@ with com.google.gwt.i18n.client.DateTimeFormat_Package; use com.google.gwt.i18n.
 
 package org.allbinary.time.TimeStampUtil_Package is
 
-   package DateTimeFormat_Package renames com.google.gwt.i18n.client.DateTimeFormat_Package;
+   package DateTimeFormat_Package renames Standard.com.google.gwt.i18n.client.DateTimeFormat_Package;
 
    type TimeStampUtil is tagged;
    type TimeStampUtil_Access is access all TimeStampUtil'Class;

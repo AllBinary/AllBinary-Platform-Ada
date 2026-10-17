@@ -21,15 +21,15 @@ with org.allbinary.game.layer.weapon.SimpleWeaponLayer_Package; use org.allbinar
 
 package org.allbinary.game.layer.weapon.TempExplosionWeaponLayer_Package is
 
-   package Animation_Package renames org.allbinary.animation.Animation_Package;
-   package WeaponProperties_Package renames org.allbinary.game.combat.weapon.WeaponProperties_Package;
-   package RemoteInfo_Package renames org.allbinary.game.multiplayer.layer.RemoteInfo_Package;
-   package Rectangle_Package renames org.allbinary.graphics.Rectangle_Package;
-   package AllBinaryLayerManager_Package renames org.allbinary.layer.AllBinaryLayerManager_Package;
-   package Movement_Package renames org.allbinary.physics.movement.Movement_Package;
-   package GameTickTimeDelayHelperFactory_Package renames org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
-   package TimeDelayHelper_Package renames org.allbinary.time.TimeDelayHelper_Package;
-   package ViewPositionBase_Package renames org.allbinary.view.ViewPositionBase_Package;
+   package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
+   package WeaponProperties_Package renames Standard.org.allbinary.game.combat.weapon.WeaponProperties_Package;
+   package RemoteInfo_Package renames Standard.org.allbinary.game.multiplayer.layer.RemoteInfo_Package;
+   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
+   package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
+   package Movement_Package renames Standard.org.allbinary.physics.movement.Movement_Package;
+   package GameTickTimeDelayHelperFactory_Package renames Standard.org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
+   package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
+   package ViewPositionBase_Package renames Standard.org.allbinary.view.ViewPositionBase_Package;
 
    type TempExplosionWeaponLayer is tagged;
    type TempExplosionWeaponLayer_Access is access all TempExplosionWeaponLayer'Class;

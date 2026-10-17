@@ -29,11 +29,11 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 
 package org.allbinary.business.context.modules.storefronts.BasicStoreFrontsEntity_Package is
 
-   package StoreFrontData_Package renames org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
-   package InitSql_Package renames org.allbinary.business.init.InitSql_Package;
-   package UserDbInitInfo_Package renames org.allbinary.business.init.db.UserDbInitInfo_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
+   package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+   package InitSql_Package renames Standard.org.allbinary.business.init.InitSql_Package;
+   package UserDbInitInfo_Package renames Standard.org.allbinary.business.init.db.UserDbInitInfo_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type BasicStoreFrontsEntity is tagged;
    type BasicStoreFrontsEntity_Access is access all BasicStoreFrontsEntity'Class;

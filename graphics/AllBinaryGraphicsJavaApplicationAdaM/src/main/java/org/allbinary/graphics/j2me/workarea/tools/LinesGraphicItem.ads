@@ -44,24 +44,24 @@ with org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package; us
 
 package org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package DomHelper_Package renames org.allbinary.dom.DomHelper_Package;
-   package GameInputStrings_Package renames org.allbinary.game.input.GameInputStrings_Package;
-   package GPoint_Package renames org.allbinary.graphics.GPoint_Package;
-   package PointFactory_Package renames org.allbinary.graphics.PointFactory_Package;
-   package BasicColorFactory_Package renames org.allbinary.graphics.color.BasicColorFactory_Package;
-   package StatusFactory_Package renames org.allbinary.graphics.j2me.StatusFactory_Package;
-   package CanvasDom_Package renames org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package;
-   package IntegerDimension_Package renames org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package;
-   package BasicGraphicsPipeline_Package renames org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package PositionStrings_Package renames org.allbinary.math.PositionStrings_Package;
-   package CommonStrings_Package renames org.allbinary.string_Case_Id.CommonStrings_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
-   package NodeList_Package renames org.w3c.dom.NodeList_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package DomHelper_Package renames Standard.org.allbinary.dom.DomHelper_Package;
+   package GameInputStrings_Package renames Standard.org.allbinary.game.input.GameInputStrings_Package;
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package StatusFactory_Package renames Standard.org.allbinary.graphics.j2me.StatusFactory_Package;
+   package CanvasDom_Package renames Standard.org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package;
+   package IntegerDimension_Package renames Standard.org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package;
+   package BasicGraphicsPipeline_Package renames Standard.org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package PositionStrings_Package renames Standard.org.allbinary.math.PositionStrings_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Case_Id.CommonStrings_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
+   package NodeList_Package renames Standard.org.w3c.dom.NodeList_Package;
 
    type LinesGraphicItem is tagged;
    type LinesGraphicItem_Access is access all LinesGraphicItem'Class;

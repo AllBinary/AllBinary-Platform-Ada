@@ -29,12 +29,12 @@ with org.allbinary.android.api5.ActivityFractureUtilAPI5_Package; use org.allbin
 
 package org.allbinary.android.api30.ActivityFractureUtilAPI30_Package is
 
-   package Activity_Package renames android.app.Activity_Package;
-   package Window_Package renames android.view.Window_Package;
-   package WindowCompat_Package renames androidx.core.view.WindowCompat_Package;
-   package WindowInsetsCompat_Package renames androidx.core.view.WindowInsetsCompat_Package;
-   package WindowInsetsControllerCompat_Package renames androidx.core.view.WindowInsetsControllerCompat_Package;
-   package ActivityFractureUtilAPI5_Package renames org.allbinary.android.api5.ActivityFractureUtilAPI5_Package;
+   package Activity_Package renames Standard.android.app.Activity_Package;
+   package Window_Package renames Standard.android.view.Window_Package;
+   package WindowCompat_Package renames Standard.androidx.core.view.WindowCompat_Package;
+   package WindowInsetsCompat_Package renames Standard.androidx.core.view.WindowInsetsCompat_Package;
+   package WindowInsetsControllerCompat_Package renames Standard.androidx.core.view.WindowInsetsControllerCompat_Package;
+   package ActivityFractureUtilAPI5_Package renames Standard.org.allbinary.android.api5.ActivityFractureUtilAPI5_Package;
 
    type ActivityFractureUtilAPI30 is tagged;
    type ActivityFractureUtilAPI30_Access is access all ActivityFractureUtilAPI30'Class;

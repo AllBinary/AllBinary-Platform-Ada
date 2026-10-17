@@ -34,17 +34,17 @@ with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
 
 package org.allbinary.business.user.modules.configuration.UserConfigurationView_Package is
 
-   package EntryData_Package renames org.allbinary.business.entry_Id.EntryData_Package;
-   package TimeCreatedView_Package renames org.allbinary.business.time.created.TimeCreatedView_Package;
-   package TimeLastModifiedView_Package renames org.allbinary.business.time.modified.TimeLastModifiedView_Package;
-   package DomNodeInterface_Package renames org.allbinary.data.tree.dom.DomNodeInterface_Package;
-   package DomSearchHelper_Package renames org.allbinary.data.tree.dom.DomSearchHelper_Package;
-   package UserEmailConfigurationData_Package renames org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationData_Package;
-   package UserEmailConfigurationInterface_Package renames org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationInterface_Package;
-   package UserEmailConfigurationView_Package renames org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationView_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
-   package NodeList_Package renames org.w3c.dom.NodeList_Package;
+   package EntryData_Package renames Standard.org.allbinary.business.entry_Id.EntryData_Package;
+   package TimeCreatedView_Package renames Standard.org.allbinary.business.time.created.TimeCreatedView_Package;
+   package TimeLastModifiedView_Package renames Standard.org.allbinary.business.time.modified.TimeLastModifiedView_Package;
+   package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
+   package DomSearchHelper_Package renames Standard.org.allbinary.data.tree.dom.DomSearchHelper_Package;
+   package UserEmailConfigurationData_Package renames Standard.org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationData_Package;
+   package UserEmailConfigurationInterface_Package renames Standard.org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationInterface_Package;
+   package UserEmailConfigurationView_Package renames Standard.org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationView_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
+   package NodeList_Package renames Standard.org.w3c.dom.NodeList_Package;
 
    type UserConfigurationView is tagged;
    type UserConfigurationView_Access is access all UserConfigurationView'Class;

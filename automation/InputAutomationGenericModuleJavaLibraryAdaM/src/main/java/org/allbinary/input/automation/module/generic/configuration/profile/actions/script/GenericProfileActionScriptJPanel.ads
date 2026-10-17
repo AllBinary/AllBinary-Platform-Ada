@@ -32,10 +32,10 @@ with org.allbinary.input.automation.module.generic_Id.configuration.profile.acti
 
 package org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.script.GenericProfileActionScriptJPanel_Package is
 
-   package JTreeInterface_Package renames org.allbinary.input.automation.actions.script.JTreeInterface_Package;
-   package CustomTreeNodeInterface_Package renames org.allbinary.input.automation.actions.script.condition.CustomTreeNodeInterface_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package JTreeInterface_Package renames Standard.org.allbinary.input.automation.actions.script.JTreeInterface_Package;
+   package CustomTreeNodeInterface_Package renames Standard.org.allbinary.input.automation.actions.script.condition.CustomTreeNodeInterface_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type GenericProfileActionScriptJPanel is tagged;
    type GenericProfileActionScriptJPanel_Access is access all GenericProfileActionScriptJPanel'Class;

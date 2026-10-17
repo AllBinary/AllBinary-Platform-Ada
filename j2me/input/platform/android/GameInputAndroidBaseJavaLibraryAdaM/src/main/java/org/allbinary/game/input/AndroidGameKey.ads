@@ -13,7 +13,7 @@ with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_
 
 package org.allbinary.game.input.AndroidGameKey_Package is
 
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type AndroidGameKey is tagged;
    type AndroidGameKey_Access is access all AndroidGameKey'Class;

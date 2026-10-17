@@ -57,7 +57,7 @@ package body org.allbinary.logic.communication.log.PreLogUtil_Package is
         end if;
         className := StringMaker_Package.Create.append (className).append (CommonSeps_Package.getInstance.FORWARD_SLASH).append (StringUtil_Package.getInstance.toString (anyType)).toString;
         message := LogFormatUtil_Package.getInstance.get (className, functionName, specialMessage, exception_Id);
-        PlayN_Package.log.error (Java_Image (PreLogUtil_Package.LOG_SUCCESS) & message, Ada.Exceptions.Exception_Occurrence (exception_Id));
+        PlayN_Package.log.error (Java_Image (PreLogUtil_Package.LOG_SUCCESS) & message, Java_Throwable (exception_Id));
    end putOE;
 
    procedure putS (specialMessage : Unbounded_String; className : Unbounded_String; functionName : Unbounded_String) is
@@ -71,7 +71,7 @@ package body org.allbinary.logic.communication.log.PreLogUtil_Package is
       message : Unbounded_String;
    begin
         message := LogFormatUtil_Package.getInstance.get (className, functionName, specialMessage, exception_Id);
-        PlayN_Package.log.error (Java_Image (PreLogUtil_Package.LOG_SUCCESS) & message, Ada.Exceptions.Exception_Occurrence (exception_Id));
+        PlayN_Package.log.error (Java_Image (PreLogUtil_Package.LOG_SUCCESS) & message, Java_Throwable (exception_Id));
    end putSE;
 
 

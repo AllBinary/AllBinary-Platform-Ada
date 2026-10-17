@@ -69,8 +69,12 @@ package body org.allbinary.image.ImageCache_Package is
             begin
                 This.runTask;
             exception
-                when e : others =>
+                when Java_Occurrence : others =>
+                    declare
+                        e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                    begin
                 logUtil.putF (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.END_METHOD_NAME);
+                    end;
             end;
         end if;
    end firstProcess;
@@ -305,7 +309,10 @@ package body org.allbinary.image.ImageCache_Package is
             begin
                 image := This.createImageFromInputStream (key, inputStream);
             exception
-                when e : others =>
+                when Java_Occurrence : others =>
+                    declare
+                        e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                    begin
                 This.logUtil.put (To_Unbounded_String ("Exception: Trying Again After GC"), This'Unchecked_Access, This.commonStrings.GET, e);
                 This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("InputStream: ")).append (StringUtil_Package.getInstance.toString (inputStream)).toString, This'Unchecked_Access, This.commonStrings.GET);
                 This.tsUtil.gc;
@@ -313,6 +320,7 @@ package body org.allbinary.image.ImageCache_Package is
                 This.logUtil.putF (Memory_Package.getInfo, This'Unchecked_Access, This.commonStrings.GET);
                 Java_Sleep (100);
                 image := This.createImageFromInputStream (key, inputStream);
+                    end;
             end;
             This.hashtable.put (key, image);
         end if;

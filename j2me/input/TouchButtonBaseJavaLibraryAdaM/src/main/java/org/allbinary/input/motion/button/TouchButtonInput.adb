@@ -49,9 +49,13 @@ package body org.allbinary.input.motion.button.TouchButtonInput_Package is
             gameKey := inputToGameKeyMapping.getInstance (This.getId);
             This.gameKeyEvent := This.gameKeyEventFactory.getInstanceForInput (This'Unchecked_Access, gameKey);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.UPDATE, e);
+                end;
         end;
    end update;
 

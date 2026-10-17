@@ -27,9 +27,9 @@ with tags.StoreValidationTransformTag_Package; use tags.StoreValidationTransform
 
 package tags.generic_Id.user.UsersTag_Package is
 
-   package UserRoleData_Package renames org.allbinary.business.user.role.UserRoleData_Package;
-   package AbResponseHandler_Package renames org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
-   package StoreValidationTransformTag_Package renames tags.StoreValidationTransformTag_Package;
+   package UserRoleData_Package renames Standard.org.allbinary.business.user.role.UserRoleData_Package;
+   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+   package StoreValidationTransformTag_Package renames Standard.tags.StoreValidationTransformTag_Package;
 
    type UsersTag is tagged;
    type UsersTag_Access is access all UsersTag'Class;

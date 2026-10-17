@@ -30,10 +30,10 @@ with admin.taghelpers.BasicTable_Package; use admin.taghelpers.BasicTable_Packag
 
 package admin.taghelpers.SpecialItemsHelper_Package is
 
-   package Portion_Package renames org.allbinary.business.installer.Portion_Package;
-   package SpecialItemsEntityFactory_Package renames org.allbinary.data.tables.user.commerce.inventory.item.special.SpecialItemsEntityFactory_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package AbSqlTableUtil_Package renames org.allbinary.logic.communication.sql.AbSqlTableUtil_Package;
+   package Portion_Package renames Standard.org.allbinary.business.installer.Portion_Package;
+   package SpecialItemsEntityFactory_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.item.special.SpecialItemsEntityFactory_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package AbSqlTableUtil_Package renames Standard.org.allbinary.logic.communication.sql.AbSqlTableUtil_Package;
 
    type SpecialItemsHelper is tagged;
    type SpecialItemsHelper_Access is access all SpecialItemsHelper'Class;

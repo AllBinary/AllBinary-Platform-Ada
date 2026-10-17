@@ -31,14 +31,14 @@ with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDela
 
 package org.allbinary.canvas.BaseGameStatistics_Package is
 
-   package PrimitiveLongSingleton_Package renames org.allbinary.logic.math.PrimitiveLongSingleton_Package;
-   package ScaleFactorFactory_Package renames org.allbinary.logic.math.ScaleFactorFactory_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
-   package GameTickTimeDelayHelper_Package renames org.allbinary.time.GameTickTimeDelayHelper_Package;
-   package GameTickTimeDelayHelperFactory_Package renames org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
-   package TimeDelayHelper_Package renames org.allbinary.time.TimeDelayHelper_Package;
+   package PrimitiveLongSingleton_Package renames Standard.org.allbinary.logic.math.PrimitiveLongSingleton_Package;
+   package ScaleFactorFactory_Package renames Standard.org.allbinary.logic.math.ScaleFactorFactory_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package GameTickTimeDelayHelper_Package renames Standard.org.allbinary.time.GameTickTimeDelayHelper_Package;
+   package GameTickTimeDelayHelperFactory_Package renames Standard.org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
+   package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
 
    type BaseGameStatistics is tagged;
    type BaseGameStatistics_Access is access all BaseGameStatistics'Class;

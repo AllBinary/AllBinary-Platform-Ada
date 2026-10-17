@@ -30,13 +30,13 @@ with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.a
 
 package org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEventHandler_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package MiniMapLayer_Package renames org.allbinary.game.layer.geographic.map.MiniMapLayer_Package;
-   package AllBinaryEventObject_Package renames org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-   package EventListenerInterface_Package renames org.allbinary.logic.util.event.EventListenerInterface_Package;
-   package EventStrings_Package renames org.allbinary.logic.util.event.EventStrings_Package;
-   package BasicEventHandler_Package renames org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package MiniMapLayer_Package renames Standard.org.allbinary.game.layer.geographic.map.MiniMapLayer_Package;
+   package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+   package EventListenerInterface_Package renames Standard.org.allbinary.logic.util.event.EventListenerInterface_Package;
+   package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
+   package BasicEventHandler_Package renames Standard.org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
 
    type GeographicMapCellPositionEventHandler is tagged;
    type GeographicMapCellPositionEventHandler_Access is access all GeographicMapCellPositionEventHandler'Class;

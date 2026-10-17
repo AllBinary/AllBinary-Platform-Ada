@@ -37,8 +37,12 @@ package body org.allbinary.media.image.cache.BufferedImagePoolSingleton_Package 
             BufferedImagePoolSingleton_Package.poolInterface := PoolInterfaceFactory_Package.getInstance (BufferedImageCacheableFactory_Package.Create, PoolTypeFactory_Package.getInstance.VECTOR_POOL, CachePolicyFactory_Package.getInstance.MAX_TIME_THOUSAND_MAX);
             logUtil.putF (commonStrings.END_Id, instance, STATIC_BLOCK);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             logUtil.put (commonStrings.EXCEPTION_Id, instance, STATIC_BLOCK, e);
+                end;
         end;
    end Initializer;
 

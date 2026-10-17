@@ -29,10 +29,10 @@ with org.allbinary.business.advertisement.area.AdvertisementAreaInterface_Packag
 
 package org.allbinary.business.advertisement.area.AdvertisementArea_Package is
 
-   package AdvertisementCampaignData_Package renames org.allbinary.business.advertisement.campaign.AdvertisementCampaignData_Package;
-   package StoreFrontData_Package renames org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
-   package DomDocumentHelper_Package renames org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
+   package AdvertisementCampaignData_Package renames Standard.org.allbinary.business.advertisement.campaign.AdvertisementCampaignData_Package;
+   package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+   package DomDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
 
    type AdvertisementArea is tagged;
    type AdvertisementArea_Access is access all AdvertisementArea'Class;

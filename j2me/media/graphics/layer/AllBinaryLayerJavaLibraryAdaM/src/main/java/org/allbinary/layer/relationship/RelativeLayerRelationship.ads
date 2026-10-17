@@ -27,10 +27,10 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 
 package org.allbinary.layer.relationship.RelativeLayerRelationship_Package is
 
-   package GPoint_Package renames org.allbinary.graphics.GPoint_Package;
-   package RelativeRelationship_Package renames org.allbinary.graphics.RelativeRelationship_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package RelativeRelationship_Package renames Standard.org.allbinary.graphics.RelativeRelationship_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type RelativeLayerRelationship is tagged;
    type RelativeLayerRelationship_Access is access all RelativeLayerRelationship'Class;

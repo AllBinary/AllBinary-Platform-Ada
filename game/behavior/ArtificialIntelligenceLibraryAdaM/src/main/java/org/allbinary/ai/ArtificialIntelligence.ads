@@ -25,7 +25,7 @@ with org.allbinary.ai.ArtificialIntelligenceInterface_Package; use org.allbinary
 
 package org.allbinary.ai.ArtificialIntelligence_Package is
 
-   package AllBinaryLayerManager_Package renames org.allbinary.layer.AllBinaryLayerManager_Package;
+   package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
 
    type ArtificialIntelligence is tagged;
    type ArtificialIntelligence_Access is access all ArtificialIntelligence'Class;

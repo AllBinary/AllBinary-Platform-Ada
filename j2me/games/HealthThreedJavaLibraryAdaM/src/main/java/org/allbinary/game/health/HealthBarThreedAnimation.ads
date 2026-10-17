@@ -36,16 +36,16 @@ with org.allbinary.game.health.HealthBarAnimation_Package; use org.allbinary.gam
 
 package org.allbinary.game.health.HealthBarThreedAnimation_Package is
 
-   package ColorBufferList_Package renames min3d.core.ColorBufferList_Package;
-   package Number3dBufferList_Package renames min3d.core.Number3dBufferList_Package;
-   package Rectangle_Package renames min3d.objectPrimitives.Rectangle_Package;
-   package Number3d_Package renames min3d.vos.Number3d_Package;
-   package OpenGLESGraphics_Package renames org.allbinary.device.OpenGLESGraphics_Package;
-   package Object3dProcessor_Package renames org.allbinary.graphics.threed.min3d.renderer.Object3dProcessor_Package;
-   package Object3dProcessorUtil_Package renames org.allbinary.graphics.threed.min3d.renderer.Object3dProcessorUtil_Package;
-   package BasicColorFactory_Package renames org.allbinary.graphics.color.BasicColorFactory_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package ViewPositionBase_Package renames org.allbinary.view.ViewPositionBase_Package;
+   package ColorBufferList_Package renames Standard.min3d.core.ColorBufferList_Package;
+   package Number3dBufferList_Package renames Standard.min3d.core.Number3dBufferList_Package;
+   package Rectangle_Package renames Standard.min3d.objectPrimitives.Rectangle_Package;
+   package Number3d_Package renames Standard.min3d.vos.Number3d_Package;
+   package OpenGLESGraphics_Package renames Standard.org.allbinary.device.OpenGLESGraphics_Package;
+   package Object3dProcessor_Package renames Standard.org.allbinary.graphics.threed.min3d.renderer.Object3dProcessor_Package;
+   package Object3dProcessorUtil_Package renames Standard.org.allbinary.graphics.threed.min3d.renderer.Object3dProcessorUtil_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package ViewPositionBase_Package renames Standard.org.allbinary.view.ViewPositionBase_Package;
 
    type HealthBarThreedAnimation is tagged;
    type HealthBarThreedAnimation_Access is access all HealthBarThreedAnimation'Class;

@@ -25,7 +25,7 @@ with org.allbinary.layer.event.LayerManagerEventListenerInterface_Package; use o
 
 package org.allbinary.layer.event.LayerManagerEventListener_Package is
 
-   package AllBinaryEventObject_Package renames org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+   package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 
    type LayerManagerEventListener is tagged;
    type LayerManagerEventListener_Access is access all LayerManagerEventListener'Class;

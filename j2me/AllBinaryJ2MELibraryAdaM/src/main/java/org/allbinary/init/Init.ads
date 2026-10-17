@@ -25,7 +25,7 @@ with org.allbinary.init.InitInterface_Package; use org.allbinary.init.InitInterf
 
 package org.allbinary.init.Init_Package is
 
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type Init is tagged;
    type Init_Access is access all Init'Class;

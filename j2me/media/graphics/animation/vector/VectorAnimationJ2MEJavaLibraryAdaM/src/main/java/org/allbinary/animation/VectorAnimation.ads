@@ -31,10 +31,10 @@ with org.allbinary.animation.VectorAnimationInterface_Package; use org.allbinary
 
 package org.allbinary.animation.VectorAnimation_Package is
 
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
-   package PrimitiveIntUtil_Package renames org.allbinary.logic.math.PrimitiveIntUtil_Package;
-   package CircularIndexUtil_Package renames org.allbinary.util.CircularIndexUtil_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package PrimitiveIntUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveIntUtil_Package;
+   package CircularIndexUtil_Package renames Standard.org.allbinary.util.CircularIndexUtil_Package;
 
    type VectorAnimation is tagged;
    type VectorAnimation_Access is access all VectorAnimation'Class;

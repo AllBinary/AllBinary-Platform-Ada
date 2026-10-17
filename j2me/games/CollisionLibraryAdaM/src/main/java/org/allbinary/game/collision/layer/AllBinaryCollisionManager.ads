@@ -27,10 +27,10 @@ with org.allbinary.layer.LayerManager_Package; use org.allbinary.layer.LayerMana
 
 package org.allbinary.game.collision.layer.AllBinaryCollisionManager_Package is
 
-   package CollidableBaseBehavior_Package renames org.allbinary.game.collision.CollidableBaseBehavior_Package;
-   package CollidableInterfaceCompositeInterface_Package renames org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package;
-   package CollidableCompositeLayer_Package renames org.allbinary.game.layer.CollidableCompositeLayer_Package;
-   package LayerManager_Package renames org.allbinary.layer.LayerManager_Package;
+   package CollidableBaseBehavior_Package renames Standard.org.allbinary.game.collision.CollidableBaseBehavior_Package;
+   package CollidableInterfaceCompositeInterface_Package renames Standard.org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package;
+   package CollidableCompositeLayer_Package renames Standard.org.allbinary.game.layer.CollidableCompositeLayer_Package;
+   package LayerManager_Package renames Standard.org.allbinary.layer.LayerManager_Package;
 
    type AllBinaryCollisionManager is tagged;
    type AllBinaryCollisionManager_Access is access all AllBinaryCollisionManager'Class;

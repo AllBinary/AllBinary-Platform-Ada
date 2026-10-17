@@ -15,7 +15,7 @@ with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.gr
 
 package org.allbinary.graphics.form.item.ABCustomImageItem_Package is
 
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
 
    type ABCustomImageItem is tagged;
    type ABCustomImageItem_Access is access all ABCustomImageItem'Class;

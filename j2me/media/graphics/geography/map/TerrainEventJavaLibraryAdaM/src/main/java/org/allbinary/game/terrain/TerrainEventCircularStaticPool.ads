@@ -24,7 +24,7 @@ with org.allbinary.logic.util.event.AllBinaryEventCircularPool_Package; use org.
 
 package org.allbinary.game.terrain.TerrainEventCircularStaticPool_Package is
 
-   package AllBinaryEventCircularPool_Package renames org.allbinary.logic.util.event.AllBinaryEventCircularPool_Package;
+   package AllBinaryEventCircularPool_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventCircularPool_Package;
 
    type TerrainEventCircularStaticPool is tagged;
    type TerrainEventCircularStaticPool_Access is access all TerrainEventCircularStaticPool'Class;

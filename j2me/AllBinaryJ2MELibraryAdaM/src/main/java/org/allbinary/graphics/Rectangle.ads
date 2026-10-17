@@ -26,9 +26,9 @@ with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.Com
 
 package org.allbinary.graphics.Rectangle_Package is
 
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonLabels_Package renames org.allbinary.string_Id.CommonLabels_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
 
    type Rectangle is tagged;
    type Rectangle_Access is access all Rectangle'Class;

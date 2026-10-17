@@ -25,7 +25,7 @@ with org.allbinary.logic.util.cache.AbstractArrayListPool_Package; use org.allbi
 
 package org.allbinary.logic.util.cache.BasicArrayListPool_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type BasicArrayListPool is tagged;
    type BasicArrayListPool_Access is access all BasicArrayListPool'Class;

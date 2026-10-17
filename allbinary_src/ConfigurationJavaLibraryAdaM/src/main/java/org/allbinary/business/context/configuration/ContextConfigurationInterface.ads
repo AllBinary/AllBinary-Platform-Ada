@@ -24,7 +24,7 @@ with org.allbinary.logic.communication.smtp.configuration.server.EmailServerConf
 
 package org.allbinary.business.context.configuration.ContextConfigurationInterface_Package is
 
-   package EmailServerConfigurationInterface_Package renames org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationInterface_Package;
+   package EmailServerConfigurationInterface_Package renames Standard.org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationInterface_Package;
 
    type ContextConfigurationInterface is interface;
    type ContextConfigurationInterface_Access is access all ContextConfigurationInterface'Class;

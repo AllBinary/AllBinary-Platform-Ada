@@ -30,10 +30,10 @@ with org.allbinary.game.displayable.canvas.GameCommandCanvas_Package; use org.al
 
 package org.allbinary.game.displayable.canvas.BasicPaintablesCanvas_Package is
 
-   package AllBinaryGameLayerManager_Package renames org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
-   package ColorFillBasePaintable_Package renames org.allbinary.game.paint.ColorFillBasePaintable_Package;
-   package ColorFillPaintableFactory_Package renames org.allbinary.game.paint.ColorFillPaintableFactory_Package;
-   package Paintable_Package renames org.allbinary.graphics.paint.Paintable_Package;
+   package AllBinaryGameLayerManager_Package renames Standard.org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
+   package ColorFillBasePaintable_Package renames Standard.org.allbinary.game.paint.ColorFillBasePaintable_Package;
+   package ColorFillPaintableFactory_Package renames Standard.org.allbinary.game.paint.ColorFillPaintableFactory_Package;
+   package Paintable_Package renames Standard.org.allbinary.graphics.paint.Paintable_Package;
 
    type BasicPaintablesCanvas is tagged;
    type BasicPaintablesCanvas_Access is access all BasicPaintablesCanvas'Class;

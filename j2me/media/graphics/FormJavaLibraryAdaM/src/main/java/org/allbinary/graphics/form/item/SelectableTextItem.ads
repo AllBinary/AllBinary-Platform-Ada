@@ -26,7 +26,7 @@ with org.allbinary.graphics.form.item.ABTextItem_Package; use org.allbinary.grap
 
 package org.allbinary.graphics.form.item.SelectableTextItem_Package is
 
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
 
    type SelectableTextItem is tagged;
    type SelectableTextItem_Access is access all SelectableTextItem'Class;

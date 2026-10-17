@@ -34,17 +34,17 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 
 package org.allbinary.game.layer.AllBinaryGameLayerManager_Package is
 
-   package GameInfo_Package renames org.allbinary.game.GameInfo_Package;
-   package NullPlayerGameInputComposite_Package renames org.allbinary.game.input.NullPlayerGameInputComposite_Package;
-   package PlayerGameInputCompositeInterface_Package renames org.allbinary.game.input.PlayerGameInputCompositeInterface_Package;
-   package ItemColorFactory_Package renames org.allbinary.graphics.ItemColorFactory_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package BasicColorFactory_Package renames org.allbinary.graphics.color.BasicColorFactory_Package;
-   package AllBinaryLayerManager_Package renames org.allbinary.layer.AllBinaryLayerManager_Package;
-   package LayerProcessor_Package renames org.allbinary.layer.LayerProcessor_Package;
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
-   package SmallIntegerSingletonFactory_Package renames org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package GameInfo_Package renames Standard.org.allbinary.game.GameInfo_Package;
+   package NullPlayerGameInputComposite_Package renames Standard.org.allbinary.game.input.NullPlayerGameInputComposite_Package;
+   package PlayerGameInputCompositeInterface_Package renames Standard.org.allbinary.game.input.PlayerGameInputCompositeInterface_Package;
+   package ItemColorFactory_Package renames Standard.org.allbinary.graphics.ItemColorFactory_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
+   package LayerProcessor_Package renames Standard.org.allbinary.layer.LayerProcessor_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type AllBinaryGameLayerManager is tagged;
    type AllBinaryGameLayerManager_Access is access all AllBinaryGameLayerManager'Class;

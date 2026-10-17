@@ -224,8 +224,12 @@ package body views.admin.inventory_Case.listings.ProductListing_Package is
             stringBuffer.append (This.INVENTORY);
             return stringBuffer.toString;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Java_Throw (e);
+                end;
         end;
    end generateAll;
 
@@ -259,8 +263,12 @@ package body views.admin.inventory_Case.listings.ProductListing_Package is
             stringBuffer.append (To_Unbounded_String ("All Static Pages Generated<br/>"));
             return stringBuffer.toString;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Java_Throw (e);
+                end;
         end;
    end generateAll;
 

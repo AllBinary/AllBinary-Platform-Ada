@@ -25,7 +25,7 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 
 package org.allbinary.game.score.HighScoreCommands_Package is
 
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type HighScoreCommands is tagged;
    type HighScoreCommands_Access is access all HighScoreCommands'Class;

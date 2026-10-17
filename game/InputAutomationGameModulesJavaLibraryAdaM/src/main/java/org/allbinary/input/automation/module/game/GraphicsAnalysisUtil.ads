@@ -27,9 +27,9 @@ with org.allbinary.logic.util.cache.AutomaticCacheInterface_Package; use org.all
 
 package org.allbinary.input.automation.module.game.GraphicsAnalysisUtil_Package is
 
-   package ColorCacheFactory_Package renames org.allbinary.graphics.color.ColorCacheFactory_Package;
-   package ColorCacheable_Package renames org.allbinary.graphics.color.ColorCacheable_Package;
-   package AutomaticCacheInterface_Package renames org.allbinary.logic.util.cache.AutomaticCacheInterface_Package;
+   package ColorCacheFactory_Package renames Standard.org.allbinary.graphics.color.ColorCacheFactory_Package;
+   package ColorCacheable_Package renames Standard.org.allbinary.graphics.color.ColorCacheable_Package;
+   package AutomaticCacheInterface_Package renames Standard.org.allbinary.logic.util.cache.AutomaticCacheInterface_Package;
 
    type GraphicsAnalysisUtil is tagged;
    type GraphicsAnalysisUtil_Access is access all GraphicsAnalysisUtil'Class;

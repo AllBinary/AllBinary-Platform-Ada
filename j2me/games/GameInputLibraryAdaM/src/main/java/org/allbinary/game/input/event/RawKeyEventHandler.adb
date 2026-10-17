@@ -96,9 +96,13 @@ package body org.allbinary.game.input.event.RawKeyEventHandler_Package is
                 eventListenerInterface := RawKeyEventListener_Access (This.eventListenerInterfaceList.get (index));
                 This.process (keyCode, deviceId, repeated, eventListenerInterface);
             exception
-                when e : others =>
+                when Java_Occurrence : others =>
+                    declare
+                        e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                    begin
                 commonStrings := CommonStrings_Package.getInstance;
                 This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, EventStrings_Package.getInstance.FIRE_EVENT, e);
+                    end;
             end;
             index := index + 1;
         end loop;
@@ -132,9 +136,13 @@ package body org.allbinary.game.input.event.RawKeyEventHandler_Package is
                 stringBuffer.append (RawKeyEventHandler_Package.LISTENER_LABEL);
                 stringBuffer.append (eventListenerInterface.toString);
             exception
-                when e : others =>
+                when Java_Occurrence : others =>
+                    declare
+                        e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                    begin
                 commonStrings := CommonStrings_Package.getInstance;
                 This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.TOSTRING, e);
+                    end;
             end;
             index := index + 1;
         end loop;

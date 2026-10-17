@@ -30,12 +30,12 @@ with org.allbinary.input.motion.button.TouchButton_Package; use org.allbinary.in
 
 package org.allbinary.input.motion.button.FullTouchButton_Package is
 
-   package Animation_Package renames org.allbinary.animation.Animation_Package;
-   package FeaturedAnimationInterfaceFactoryInterfaceFactory_Package renames org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package;
-   package CellPosition_Package renames org.allbinary.graphics.CellPosition_Package;
-   package GPoint_Package renames org.allbinary.graphics.GPoint_Package;
-   package PointFactory_Package renames org.allbinary.graphics.PointFactory_Package;
-   package Rectangle_Package renames org.allbinary.graphics.Rectangle_Package;
+   package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
+   package FeaturedAnimationInterfaceFactoryInterfaceFactory_Package renames Standard.org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package;
+   package CellPosition_Package renames Standard.org.allbinary.graphics.CellPosition_Package;
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
+   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
 
    type FullTouchButton is tagged;
    type FullTouchButton_Access is access all FullTouchButton'Class;

@@ -47,10 +47,14 @@ package body org.allbinary.game.displayable.canvas.DemoGameStartupRunnable_Packa
             This.demoCanvas.start;
             This.setRunning (False);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.setRunning (False);
             commonStrings := CommonStrings_Package.getInstance;
             This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.RUN, e);
+                end;
         end;
    end run;
 

@@ -26,8 +26,8 @@ with org.allbinary.media.image.ImageModifierUtil_Package; use org.allbinary.medi
 
 package org.allbinary.animation.image.ModifierBaseProcessor_Package is
 
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package ImageModifierUtil_Package renames org.allbinary.media.image.ImageModifierUtil_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package ImageModifierUtil_Package renames Standard.org.allbinary.media.image.ImageModifierUtil_Package;
 
    type ModifierBaseProcessor is tagged;
    type ModifierBaseProcessor_Access is access all ModifierBaseProcessor'Class;

@@ -34,10 +34,10 @@ with org.allbinary.logic.system.security.licensing.LicensingException_Package; u
 
 package org.allbinary.logic.control.workflow.RequestWorkFlowFactory_Package is
 
-   package WorkFlowEntityFactory_Package renames org.allbinary.data.tables.workflow.WorkFlowEntityFactory_Package;
-   package WeblisketSession_Package renames org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
-   package AbPathData_Package renames org.allbinary.logic.io.path.AbPathData_Package;
-   package LicensingException_Package renames org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package WorkFlowEntityFactory_Package renames Standard.org.allbinary.data.tables.workflow.WorkFlowEntityFactory_Package;
+   package WeblisketSession_Package renames Standard.org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
+   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
 
    type RequestWorkFlowFactory is tagged;
    type RequestWorkFlowFactory_Access is access all RequestWorkFlowFactory'Class;

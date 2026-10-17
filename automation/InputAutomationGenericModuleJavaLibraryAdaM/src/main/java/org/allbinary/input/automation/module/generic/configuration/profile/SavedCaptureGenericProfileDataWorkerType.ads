@@ -25,7 +25,7 @@ with org.allbinary.input.automation.module.generic_Id.configuration.profile.Gene
 
 package org.allbinary.input.automation.module.generic_Id.configuration.profile.SavedCaptureGenericProfileDataWorkerType_Package is
 
-   package InputImageType_Package renames org.allbinary.input.media.image.InputImageType_Package;
+   package InputImageType_Package renames Standard.org.allbinary.input.media.image.InputImageType_Package;
 
    type SavedCaptureGenericProfileDataWorkerType is tagged;
    type SavedCaptureGenericProfileDataWorkerType_Access is access all SavedCaptureGenericProfileDataWorkerType'Class;

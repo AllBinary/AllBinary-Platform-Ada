@@ -29,9 +29,9 @@ with admin.tags.TableTag_Package; use admin.tags.TableTag_Package;
 
 package admin.tags.DownloadItemsTag_Package is
 
-   package DownloadItemsHelperFactory_Package renames admin.taghelpers.DownloadItemsHelperFactory_Package;
-   package DownloadItemsRequestHelperFactory_Package renames admin.taghelpers.DownloadItemsRequestHelperFactory_Package;
-   package AbResponseHandler_Package renames org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+   package DownloadItemsHelperFactory_Package renames Standard.admin.taghelpers.DownloadItemsHelperFactory_Package;
+   package DownloadItemsRequestHelperFactory_Package renames Standard.admin.taghelpers.DownloadItemsRequestHelperFactory_Package;
+   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
 
    type DownloadItemsTag is tagged;
    type DownloadItemsTag_Access is access all DownloadItemsTag'Class;

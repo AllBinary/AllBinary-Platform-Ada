@@ -194,9 +194,13 @@ package body org.allbinary.logic.io.file.SimpleFileUtil_Package is
             byteArray := This.streamUtil.getByteArray (inputStream, outputStream2, byteArray1);
             This.streamUtil.close (inputStream);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.streamUtil.close (inputStream);
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.ADD, e);
+                end;
         end;
         if (byteArray) = (null) then
             return stringList;

@@ -27,9 +27,9 @@ with org.allbinary.business.user.commerce.money.payment.gateway.Serializable_Pac
 
 package org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayPrimaryKey_Package is
 
-   package StoreFront_Package renames org.allbinary.business.context.modules.storefront.StoreFront_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
+   package StoreFront_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFront_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
 
    type PaymentGatewayPrimaryKey is tagged;
    type PaymentGatewayPrimaryKey_Access is access all PaymentGatewayPrimaryKey'Class;

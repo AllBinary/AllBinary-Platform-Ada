@@ -30,13 +30,13 @@ with org.allbinary.logic.communication.smtp.info.EmailInfo_Package; use org.allb
 
 package org.allbinary.logic.communication.smtp.event.handler.UserEmailEventHandler_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package EmailEvent_Package renames org.allbinary.logic.communication.smtp.event.EmailEvent_Package;
-   package UserEmailEventListenerInterface_Package renames org.allbinary.logic.communication.smtp.event.UserEmailEventListenerInterface_Package;
-   package UserEmailEventNameData_Package renames org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package;
-   package EmailInfo_Package renames org.allbinary.logic.communication.smtp.info.EmailInfo_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package EmailEvent_Package renames Standard.org.allbinary.logic.communication.smtp.event.EmailEvent_Package;
+   package UserEmailEventListenerInterface_Package renames Standard.org.allbinary.logic.communication.smtp.event.UserEmailEventListenerInterface_Package;
+   package UserEmailEventNameData_Package renames Standard.org.allbinary.logic.communication.smtp.event.UserEmailEventNameData_Package;
+   package EmailInfo_Package renames Standard.org.allbinary.logic.communication.smtp.info.EmailInfo_Package;
 
    type UserEmailEventHandler is tagged;
    type UserEmailEventHandler_Access is access all UserEmailEventHandler'Class;

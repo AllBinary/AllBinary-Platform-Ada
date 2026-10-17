@@ -29,11 +29,11 @@ with org.allbinary.media.graphics.geography.map.racetrack.BaseRaceTrackGeographi
 
 package org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMap_Package is
 
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package GeographicMapCellPosition_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
-   package GeographicMapCellPositionBaseFactory_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCellPositionBaseFactory_Package;
-   package GeographicMapCellPositionFactoryInterface_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactoryInterface_Package;
-   package GeographicMapCellTypeFactory_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+   package GeographicMapCellPositionBaseFactory_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPositionBaseFactory_Package;
+   package GeographicMapCellPositionFactoryInterface_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactoryInterface_Package;
+   package GeographicMapCellTypeFactory_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package;
 
    type RaceTrackGeographicMap is tagged;
    type RaceTrackGeographicMap_Access is access all RaceTrackGeographicMap'Class;

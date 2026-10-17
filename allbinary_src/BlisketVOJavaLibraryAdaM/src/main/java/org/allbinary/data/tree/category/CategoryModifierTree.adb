@@ -60,10 +60,14 @@ package body org.allbinary.data.tree.category.CategoryModifierTree_Package is
                 Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Will Not Add Null Category")));
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("insert"), e);
             end if;
+                end;
         end;
    end insert;
 
@@ -82,10 +86,14 @@ package body org.allbinary.data.tree.category.CategoryModifierTree_Package is
                 Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Will Not Add Null Category")));
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, This.commonStrings.delete, e);
             end if;
+                end;
         end;
    end delete;
 

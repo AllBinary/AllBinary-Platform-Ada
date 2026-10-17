@@ -15,7 +15,7 @@ with org.allbinary.graphics.form.item.ABCustomItemInterface_Package; use org.all
 
 package org.allbinary.graphics.form.item.ABTextItem_Package is
 
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
 
    type ABTextItem is tagged;
    type ABTextItem_Access is access all ABTextItem'Class;

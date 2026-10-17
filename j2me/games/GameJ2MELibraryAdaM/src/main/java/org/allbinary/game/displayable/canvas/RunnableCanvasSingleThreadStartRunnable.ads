@@ -27,9 +27,9 @@ with org.allbinary.game.displayable.canvas.GameRunnable_Package; use org.allbina
 
 package org.allbinary.game.displayable.canvas.RunnableCanvasSingleThreadStartRunnable_Package is
 
-   package RunnableCanvas_Package renames org.allbinary.canvas.RunnableCanvas_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package RunnableCanvas_Package renames Standard.org.allbinary.canvas.RunnableCanvas_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type RunnableCanvasSingleThreadStartRunnable is tagged;
    type RunnableCanvasSingleThreadStartRunnable_Access is access all RunnableCanvasSingleThreadStartRunnable'Class;

@@ -33,16 +33,16 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.media.image.comparison.pixel.PixelDeltaFactory_Package is
 
-   package GPoint_Package renames org.allbinary.graphics.GPoint_Package;
-   package PointFactory_Package renames org.allbinary.graphics.PointFactory_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package AutomaticCacheInterface_Package renames org.allbinary.logic.util.cache.AutomaticCacheInterface_Package;
-   package CacheInterfaceFactory_Package renames org.allbinary.logic.util.cache.CacheInterfaceFactory_Package;
-   package CachePolicyFactory_Package renames org.allbinary.logic.util.cache.CachePolicyFactory_Package;
-   package CacheTypeFactory_Package renames org.allbinary.logic.util.cache.CacheTypeFactory_Package;
-   package ColorDelta_Package renames org.allbinary.media.image.comparison.color.ColorDelta_Package;
-   package ColorDeltaFactory_Package renames org.allbinary.media.image.comparison.color.ColorDeltaFactory_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package AutomaticCacheInterface_Package renames Standard.org.allbinary.logic.util.cache.AutomaticCacheInterface_Package;
+   package CacheInterfaceFactory_Package renames Standard.org.allbinary.logic.util.cache.CacheInterfaceFactory_Package;
+   package CachePolicyFactory_Package renames Standard.org.allbinary.logic.util.cache.CachePolicyFactory_Package;
+   package CacheTypeFactory_Package renames Standard.org.allbinary.logic.util.cache.CacheTypeFactory_Package;
+   package ColorDelta_Package renames Standard.org.allbinary.media.image.comparison.color.ColorDelta_Package;
+   package ColorDeltaFactory_Package renames Standard.org.allbinary.media.image.comparison.color.ColorDeltaFactory_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type PixelDeltaFactory is tagged;
    type PixelDeltaFactory_Access is access all PixelDeltaFactory'Class;

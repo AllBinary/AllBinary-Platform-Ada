@@ -33,15 +33,15 @@ with org.allbinary.game.midlet.GameMidlet_Package; use org.allbinary.game.midlet
 
 package org.allbinary.game.midlet.DemoGameMidlet_Package is
 
-   package GameCanvasRunnableInterface_Package renames org.allbinary.game.displayable.canvas.GameCanvasRunnableInterface_Package;
-   package AllBinaryGameLayerManager_Package renames org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
-   package ProgressCanvas_Package renames org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
-   package ProgressCanvasFactory_Package renames org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package ClientInformationFactory_Package renames org.allbinary.logic.system.security.licensing.ClientInformationFactory_Package;
-   package PrimaryThreadPool_Package renames org.allbinary.thread.PrimaryThreadPool_Package;
-   package NullGameCanvasRunnable_Package renames org.allbinary.game.displayable.canvas.NullGameCanvasRunnable_Package;
-   package ABHashtable_Package renames org.allbinary.util.ABHashtable_Package;
+   package GameCanvasRunnableInterface_Package renames Standard.org.allbinary.game.displayable.canvas.GameCanvasRunnableInterface_Package;
+   package AllBinaryGameLayerManager_Package renames Standard.org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
+   package ProgressCanvas_Package renames Standard.org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
+   package ProgressCanvasFactory_Package renames Standard.org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package ClientInformationFactory_Package renames Standard.org.allbinary.logic.system.security.licensing.ClientInformationFactory_Package;
+   package PrimaryThreadPool_Package renames Standard.org.allbinary.thread.PrimaryThreadPool_Package;
+   package NullGameCanvasRunnable_Package renames Standard.org.allbinary.game.displayable.canvas.NullGameCanvasRunnable_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
    type DemoGameMidlet is tagged;
    type DemoGameMidlet_Access is access all DemoGameMidlet'Class;

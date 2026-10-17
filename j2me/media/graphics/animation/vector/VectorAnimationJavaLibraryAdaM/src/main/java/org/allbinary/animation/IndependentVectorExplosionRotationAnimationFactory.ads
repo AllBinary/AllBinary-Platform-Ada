@@ -27,9 +27,9 @@ with org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Packag
 
 package org.allbinary.animation.IndependentVectorExplosionRotationAnimationFactory_Package is
 
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
-   package VectorInfo_Package renames org.allbinary.vector.VectorInfo_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package VectorInfo_Package renames Standard.org.allbinary.vector.VectorInfo_Package;
 
    type IndependentVectorExplosionRotationAnimationFactory is tagged;
    type IndependentVectorExplosionRotationAnimationFactory_Access is access all IndependentVectorExplosionRotationAnimationFactory'Class;

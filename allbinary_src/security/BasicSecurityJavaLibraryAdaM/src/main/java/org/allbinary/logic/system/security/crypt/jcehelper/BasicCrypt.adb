@@ -32,9 +32,13 @@ package body org.allbinary.logic.system.security.crypt.jcehelper.BasicCrypt_Pack
         begin
             key := TsUtil_Package.getInstance.getByteArray (keyAsString);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             PreLogUtil_Package.putOE (commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("AbCrypt(alg,key)"), e);
+                end;
         end;
         This.key := key;
    end Initialize;
@@ -51,9 +55,13 @@ package body org.allbinary.logic.system.security.crypt.jcehelper.BasicCrypt_Pack
         begin
             return This.mutilate (array_Id);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             PreLogUtil_Package.putOE (To_Unbounded_String ("Encrypt Failed"), This'Unchecked_Access, To_Unbounded_String ("encrypt"), e);
             return NullUtil_Package.getInstance.NULL_BYTE_ARRAY;
+                end;
         end;
    end encrypt;
 
@@ -62,9 +70,13 @@ package body org.allbinary.logic.system.security.crypt.jcehelper.BasicCrypt_Pack
         begin
             return This.mutilate (array_Id);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             PreLogUtil_Package.putOE (To_Unbounded_String ("decrypt Failed"), This'Unchecked_Access, To_Unbounded_String ("decrypt"), e);
             return NullUtil_Package.getInstance.NULL_BYTE_ARRAY;
+                end;
         end;
    end decrypt;
 

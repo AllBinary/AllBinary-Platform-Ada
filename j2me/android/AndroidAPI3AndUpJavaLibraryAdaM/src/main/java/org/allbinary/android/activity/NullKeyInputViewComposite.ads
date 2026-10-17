@@ -25,7 +25,7 @@ with org.allbinary.android.activity.KeyInputViewCompositeInterface_Package; use 
 
 package org.allbinary.android.activity.NullKeyInputViewComposite_Package is
 
-   package View_Package renames android.view.View_Package;
+   package View_Package renames Standard.android.view.View_Package;
 
    type NullKeyInputViewComposite is tagged;
    type NullKeyInputViewComposite_Access is access all NullKeyInputViewComposite'Class;

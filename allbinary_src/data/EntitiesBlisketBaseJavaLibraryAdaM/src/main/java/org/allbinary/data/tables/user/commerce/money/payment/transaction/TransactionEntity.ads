@@ -38,18 +38,18 @@ with org.allbinary.data.tables.user.commerce.money.payment.transaction.Transacti
 
 package org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionEntity_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package EntryData_Package renames org.allbinary.business.entry_Id.EntryData_Package;
-   package UserDbInitInfo_Package renames org.allbinary.business.init.db.UserDbInitInfo_Package;
-   package UserData_Package renames org.allbinary.business.user.UserData_Package;
-   package OrderData_Package renames org.allbinary.business.user.commerce.inventory.order.OrderData_Package;
-   package PaymentTransactionInterface_Package renames org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterface_Package;
-   package PaymentTransactionKeysFactory_Package renames org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeysFactory_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package AbSqlBean_Package renames org.allbinary.logic.communication.sql.AbSqlBean_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package EntryData_Package renames Standard.org.allbinary.business.entry_Id.EntryData_Package;
+   package UserDbInitInfo_Package renames Standard.org.allbinary.business.init.db.UserDbInitInfo_Package;
+   package UserData_Package renames Standard.org.allbinary.business.user.UserData_Package;
+   package OrderData_Package renames Standard.org.allbinary.business.user.commerce.inventory.order.OrderData_Package;
+   package PaymentTransactionInterface_Package renames Standard.org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterface_Package;
+   package PaymentTransactionKeysFactory_Package renames Standard.org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeysFactory_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package AbSqlBean_Package renames Standard.org.allbinary.logic.communication.sql.AbSqlBean_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
 
    type TransactionEntity is tagged;
    type TransactionEntity_Access is access all TransactionEntity'Class;

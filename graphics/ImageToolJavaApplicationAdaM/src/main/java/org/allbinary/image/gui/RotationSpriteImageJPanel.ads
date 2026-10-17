@@ -37,15 +37,15 @@ with org.allbinary.image.gui.JPanel_Package; use org.allbinary.image.gui.JPanel_
 
 package org.allbinary.image.gui.RotationSpriteImageJPanel_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package ImageJ2SERotationUtil_Package renames org.allbinary.media.image.ImageJ2SERotationUtil_Package;
-   package ImageProcessorInput_Package renames org.allbinary.media.image.ImageProcessorInput_Package;
-   package ImageProcessorInputCompositeInterface_Package renames org.allbinary.media.image.ImageProcessorInputCompositeInterface_Package;
-   package ImageStrings_Package renames org.allbinary.media.image.ImageStrings_Package;
-   package CommonPhoneStrings_Package renames org.allbinary.string_Id.CommonPhoneStrings_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package ImageJ2SERotationUtil_Package renames Standard.org.allbinary.media.image.ImageJ2SERotationUtil_Package;
+   package ImageProcessorInput_Package renames Standard.org.allbinary.media.image.ImageProcessorInput_Package;
+   package ImageProcessorInputCompositeInterface_Package renames Standard.org.allbinary.media.image.ImageProcessorInputCompositeInterface_Package;
+   package ImageStrings_Package renames Standard.org.allbinary.media.image.ImageStrings_Package;
+   package CommonPhoneStrings_Package renames Standard.org.allbinary.string_Id.CommonPhoneStrings_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type RotationSpriteImageJPanel is tagged;
    type RotationSpriteImageJPanel_Access is access all RotationSpriteImageJPanel'Class;

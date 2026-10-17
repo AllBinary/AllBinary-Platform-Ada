@@ -30,12 +30,12 @@ with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionBaseFac
 
 package org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactory_Package is
 
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package AllBinaryTiledLayer_Package renames org.allbinary.game.layer.AllBinaryTiledLayer_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package ABHashtable_Package renames org.allbinary.util.ABHashtable_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package AllBinaryTiledLayer_Package renames Standard.org.allbinary.game.layer.AllBinaryTiledLayer_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
    type GeographicMapCellPositionFactory is tagged;
    type GeographicMapCellPositionFactory_Access is access all GeographicMapCellPositionFactory'Class;

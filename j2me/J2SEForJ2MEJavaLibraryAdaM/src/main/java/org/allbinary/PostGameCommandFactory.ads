@@ -25,7 +25,7 @@ with org.allbinary.game.configuration.feature.MultiPlayerGameFeatureFactory_Pack
 
 package org.allbinary.PostGameCommandFactory_Package is
 
-   package MultiPlayerGameFeatureFactory_Package renames org.allbinary.game.configuration.feature.MultiPlayerGameFeatureFactory_Package;
+   package MultiPlayerGameFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.MultiPlayerGameFeatureFactory_Package;
 
    type PostGameCommandFactory is tagged;
    type PostGameCommandFactory_Access is access all PostGameCommandFactory'Class;

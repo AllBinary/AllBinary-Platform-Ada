@@ -14,8 +14,8 @@ with org.allbinary.business.advertisement.GameAdStateFactoryInterface_Package; u
 
 package org.allbinary.business.advertisement.GameAdStateFactory_Package is
 
-   package GameAdState_Package renames org.allbinary.game.GameAdState_Package;
-   package SoftwareInformation_Package renames org.allbinary.logic.system.SoftwareInformation_Package;
+   package GameAdState_Package renames Standard.org.allbinary.game.GameAdState_Package;
+   package SoftwareInformation_Package renames Standard.org.allbinary.logic.system.SoftwareInformation_Package;
 
    type GameAdStateFactory is tagged;
    type GameAdStateFactory_Access is access all GameAdStateFactory'Class;

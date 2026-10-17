@@ -34,13 +34,13 @@ with org.allbinary.logic.math.PrimitiveLongUtil_Package; use org.allbinary.logic
 
 package org.allbinary.game.layer.TechnologyRTSInterfaceImageItem_Package is
 
-   package ABCustomImageItem_Package renames org.allbinary.graphics.form.item.ABCustomImageItem_Package;
-   package CharArrayFactory_Package renames org.allbinary.logic.java.character_Id.CharArrayFactory_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package MyFontProcessor_Package renames org.allbinary.graphics.font.MyFontProcessor_Package;
-   package UpdateMyFontInterface_Package renames org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-   package UpdateMyFontProcessor_Package renames org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
-   package PrimitiveLongUtil_Package renames org.allbinary.logic.math.PrimitiveLongUtil_Package;
+   package ABCustomImageItem_Package renames Standard.org.allbinary.graphics.form.item.ABCustomImageItem_Package;
+   package CharArrayFactory_Package renames Standard.org.allbinary.logic.java.character_Id.CharArrayFactory_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package MyFontProcessor_Package renames Standard.org.allbinary.graphics.font.MyFontProcessor_Package;
+   package UpdateMyFontInterface_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontInterface_Package;
+   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+   package PrimitiveLongUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveLongUtil_Package;
 
    type TechnologyRTSInterfaceImageItem is tagged;
    type TechnologyRTSInterfaceImageItem_Access is access all TechnologyRTSInterfaceImageItem'Class;

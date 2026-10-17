@@ -24,7 +24,7 @@ with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Pa
 
 package org.allbinary.graphics.j2me.workarea.canvas.Grid_Package is
 
-   package GPoint_Package renames org.allbinary.graphics.GPoint_Package;
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
 
    type Grid is tagged;
    type Grid_Access is access all Grid'Class;

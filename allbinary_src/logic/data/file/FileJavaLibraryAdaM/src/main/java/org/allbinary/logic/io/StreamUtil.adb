@@ -66,8 +66,12 @@ package body org.allbinary.logic.io.StreamUtil_Package is
             This.get (inputStream, outputStream, byteArray);
             return outputStream.toByteArray;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Java_Throw (e);
+                end;
         end;
         --  finally
         begin
@@ -84,10 +88,14 @@ package body org.allbinary.logic.io.StreamUtil_Package is
             end if;
             return True;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.CLOSE, e);
             return False;
+                end;
         end;
    end close;
 

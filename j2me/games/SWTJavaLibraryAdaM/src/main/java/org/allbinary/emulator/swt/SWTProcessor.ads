@@ -25,8 +25,8 @@ with org.eclipse.swt.widgets.Display_Package; use org.eclipse.swt.widgets.Displa
 
 package org.allbinary.emulator.swt.SWTProcessor_Package is
 
-   package NullRunnable_Package renames org.allbinary.thread.NullRunnable_Package;
-   package Display_Package renames org.eclipse.swt.widgets.Display_Package;
+   package NullRunnable_Package renames Standard.org.allbinary.thread.NullRunnable_Package;
+   package Display_Package renames Standard.org.eclipse.swt.widgets.Display_Package;
 
    type SWTProcessor is tagged;
    type SWTProcessor_Access is access all SWTProcessor'Class;

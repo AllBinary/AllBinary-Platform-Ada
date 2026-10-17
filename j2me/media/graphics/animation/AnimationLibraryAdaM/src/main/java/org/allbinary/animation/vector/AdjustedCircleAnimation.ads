@@ -27,8 +27,8 @@ with org.allbinary.animation.vector.CircleAnimation_Package; use org.allbinary.a
 
 package org.allbinary.animation.vector.AdjustedCircleAnimation_Package is
 
-   package AndroidUtil_Package renames org.allbinary.AndroidUtil_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
+   package AndroidUtil_Package renames Standard.org.allbinary.AndroidUtil_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
 
    type AdjustedCircleAnimation is tagged;
    type AdjustedCircleAnimation_Access is access all AdjustedCircleAnimation'Class;

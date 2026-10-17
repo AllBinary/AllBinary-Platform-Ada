@@ -32,15 +32,15 @@ with jsinterop.annotations.JsProperty_Package; use jsinterop.annotations.JsPrope
 
 package org.allbinary.math.AngleFactory_Package is
 
-   package JsType_Package renames jsinterop.annotations.JsType_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonPhoneStrings_Package renames org.allbinary.string_Id.CommonPhoneStrings_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package JsMethod_Package renames jsinterop.annotations.JsMethod_Package;
-   package JsConstructor_Package renames jsinterop.annotations.JsConstructor_Package;
-   package JsProperty_Package renames jsinterop.annotations.JsProperty_Package;
+   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonPhoneStrings_Package renames Standard.org.allbinary.string_Id.CommonPhoneStrings_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package JsMethod_Package renames Standard.jsinterop.annotations.JsMethod_Package;
+   package JsConstructor_Package renames Standard.jsinterop.annotations.JsConstructor_Package;
+   package JsProperty_Package renames Standard.jsinterop.annotations.JsProperty_Package;
 
    type AngleFactory is tagged;
    type AngleFactory_Access is access all AngleFactory'Class;

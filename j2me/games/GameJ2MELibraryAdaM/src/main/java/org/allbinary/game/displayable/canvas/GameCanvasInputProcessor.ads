@@ -38,20 +38,20 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 
 package org.allbinary.game.displayable.canvas.GameCanvasInputProcessor_Package is
 
-   package GameKey_Package renames org.allbinary.game.input.GameKey_Package;
-   package GameKeyEventSourceInterface_Package renames org.allbinary.game.input.GameKeyEventSourceInterface_Package;
-   package GameKeyFactory_Package renames org.allbinary.game.input.GameKeyFactory_Package;
-   package InputProcessor_Package renames org.allbinary.game.input.InputProcessor_Package;
-   package PlatformInputMappingFactory_Package renames org.allbinary.game.input.PlatformInputMappingFactory_Package;
-   package DownGameKeyEventHandler_Package renames org.allbinary.game.input.event.DownGameKeyEventHandler_Package;
-   package DownKeyEventHandler_Package renames org.allbinary.game.input.event.DownKeyEventHandler_Package;
-   package GameKeyEvent_Package renames org.allbinary.game.input.event.GameKeyEvent_Package;
-   package GameKeyEventFactory_Package renames org.allbinary.game.input.event.GameKeyEventFactory_Package;
-   package UpGameKeyEventHandler_Package renames org.allbinary.game.input.event.UpGameKeyEventHandler_Package;
-   package InputToGameKeyMapping_Package renames org.allbinary.game.input.mapping.InputToGameKeyMapping_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package SmallIntegerSingletonFactory_Package renames org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
+   package GameKey_Package renames Standard.org.allbinary.game.input.GameKey_Package;
+   package GameKeyEventSourceInterface_Package renames Standard.org.allbinary.game.input.GameKeyEventSourceInterface_Package;
+   package GameKeyFactory_Package renames Standard.org.allbinary.game.input.GameKeyFactory_Package;
+   package InputProcessor_Package renames Standard.org.allbinary.game.input.InputProcessor_Package;
+   package PlatformInputMappingFactory_Package renames Standard.org.allbinary.game.input.PlatformInputMappingFactory_Package;
+   package DownGameKeyEventHandler_Package renames Standard.org.allbinary.game.input.event.DownGameKeyEventHandler_Package;
+   package DownKeyEventHandler_Package renames Standard.org.allbinary.game.input.event.DownKeyEventHandler_Package;
+   package GameKeyEvent_Package renames Standard.org.allbinary.game.input.event.GameKeyEvent_Package;
+   package GameKeyEventFactory_Package renames Standard.org.allbinary.game.input.event.GameKeyEventFactory_Package;
+   package UpGameKeyEventHandler_Package renames Standard.org.allbinary.game.input.event.UpGameKeyEventHandler_Package;
+   package InputToGameKeyMapping_Package renames Standard.org.allbinary.game.input.mapping.InputToGameKeyMapping_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
 
    type GameCanvasInputProcessor is tagged;
    type GameCanvasInputProcessor_Access is access all GameCanvasInputProcessor'Class;

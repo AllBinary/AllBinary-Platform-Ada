@@ -80,17 +80,25 @@ package body org.allbinary.business.installer.DeleteCloud_Package is
                             nextFile.delete;
                         end if;
                     exception
-                        when e : others =>
+                        when Java_Occurrence : others =>
+                            declare
+                                e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                            begin
                         null;
+                            end;
                     end;
                 end loop;
                 This.logUtil.putF (To_Unbounded_String ("Deleted Files From Cloud"), This'Unchecked_Access, To_Unbounded_String ("initialize()"));
             end if;
             return True;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (To_Unbounded_String ("Unable to copy installer files into cloud"), This'Unchecked_Access, To_Unbounded_String ("initialize()"), e);
             return False;
+                end;
         end;
    end delete;
 

@@ -38,20 +38,20 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package views.admin.inventory.InventoryUploadMediaUtil_Package is
 
-   package StoreFrontInterface_Package renames org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
-   package ItemInterface_Package renames org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package;
-   package URLGLOBALS_Package renames org.allbinary.globals.URLGLOBALS_Package;
-   package UploadMediaSingleton_Package renames org.allbinary.logic.communication.http.file.upload.media.UploadMediaSingleton_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package AbFile_Package renames org.allbinary.logic.io.file.AbFile_Package;
-   package FileUtil_Package renames org.allbinary.logic.io.file.FileUtil_Package;
-   package AbPathData_Package renames org.allbinary.logic.io.path.AbPathData_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringValidationUtil_Package renames org.allbinary.logic.string_Id.StringValidationUtil_Package;
-   package MediaData_Package renames org.allbinary.logic.visual.media.MediaData_Package;
-   package MediaTypeData_Package renames org.allbinary.logic.visual.media.MediaTypeData_Package;
-   package MediaUtil_Package renames org.allbinary.logic.visual.media.MediaUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package StoreFrontInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
+   package ItemInterface_Package renames Standard.org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package;
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
+   package UploadMediaSingleton_Package renames Standard.org.allbinary.logic.communication.http.file.upload.media.UploadMediaSingleton_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
+   package FileUtil_Package renames Standard.org.allbinary.logic.io.file.FileUtil_Package;
+   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
+   package MediaData_Package renames Standard.org.allbinary.logic.visual.media.MediaData_Package;
+   package MediaTypeData_Package renames Standard.org.allbinary.logic.visual.media.MediaTypeData_Package;
+   package MediaUtil_Package renames Standard.org.allbinary.logic.visual.media.MediaUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type InventoryUploadMediaUtil is tagged;
    type InventoryUploadMediaUtil_Access is access all InventoryUploadMediaUtil'Class;

@@ -26,8 +26,8 @@ with org.allbinary.animation.IndexedAnimationInterface_Package; use org.allbinar
 
 package org.allbinary.animation.RotationAnimationInterface_Package is
 
-   package DirectionalInterface_Package renames org.allbinary.direction.DirectionalInterface_Package;
-   package AngleInfo_Package renames org.allbinary.math.AngleInfo_Package;
+   package DirectionalInterface_Package renames Standard.org.allbinary.direction.DirectionalInterface_Package;
+   package AngleInfo_Package renames Standard.org.allbinary.math.AngleInfo_Package;
 
    type RotationAnimationInterface is interface and IndexedAnimationInterface and DirectionalInterface;
    type RotationAnimationInterface_Access is access all RotationAnimationInterface'Class;

@@ -26,7 +26,7 @@ with org.allbinary.media.audio.BasicPlayer_Package; use org.allbinary.media.audi
 
 package org.allbinary.media.audio.NoPlayer_Package is
 
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type NoPlayer is tagged;
    type NoPlayer_Access is access all NoPlayer'Class;

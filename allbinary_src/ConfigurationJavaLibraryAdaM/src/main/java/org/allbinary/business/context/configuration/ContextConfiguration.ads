@@ -29,10 +29,10 @@ with org.allbinary.business.context.configuration.ContextConfigurationInterface_
 
 package org.allbinary.business.context.configuration.ContextConfiguration_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package EmailServerConfiguration_Package renames org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfiguration_Package;
-   package EmailServerConfigurationInterface_Package renames org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationInterface_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package EmailServerConfiguration_Package renames Standard.org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfiguration_Package;
+   package EmailServerConfigurationInterface_Package renames Standard.org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationInterface_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type ContextConfiguration is tagged;
    type ContextConfiguration_Access is access all ContextConfiguration'Class;

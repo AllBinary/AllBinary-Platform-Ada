@@ -24,7 +24,7 @@ with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Pack
 
 package org.allbinary.logic.communication.log.ExceptionFactory_Package is
 
-   package JsType_Package renames jsinterop.annotations.JsType_Package;
+   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
 
    type ExceptionFactory is tagged;
    type ExceptionFactory_Access is access all ExceptionFactory'Class;
@@ -35,7 +35,7 @@ package org.allbinary.logic.communication.log.ExceptionFactory_Package is
 
    procedure Initialize (This : in out ExceptionFactory'Class);
    function Create return ExceptionFactory_Access;
-   function createThrowable (message : Unbounded_String) return Ada.Exceptions.Exception_Occurrence;
+   function createThrowable (message : Unbounded_String) return Java_Throwable;
    procedure createThrowable (message : Unbounded_String);
 
 end org.allbinary.logic.communication.log.ExceptionFactory_Package;

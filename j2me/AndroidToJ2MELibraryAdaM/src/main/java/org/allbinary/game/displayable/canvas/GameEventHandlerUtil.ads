@@ -26,9 +26,9 @@ with org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Pack
 
 package org.allbinary.game.displayable.canvas.GameEventHandlerUtil_Package is
 
-   package GameInputMotionEventProcessorFactory_Package renames org.allbinary.android.input.motion.GameInputMotionEventProcessorFactory_Package;
-   package GameKeyEventHandler_Package renames org.allbinary.game.input.event.GameKeyEventHandler_Package;
-   package BasicMotionGesturesHandler_Package renames org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package;
+   package GameInputMotionEventProcessorFactory_Package renames Standard.org.allbinary.android.input.motion.GameInputMotionEventProcessorFactory_Package;
+   package GameKeyEventHandler_Package renames Standard.org.allbinary.game.input.event.GameKeyEventHandler_Package;
+   package BasicMotionGesturesHandler_Package renames Standard.org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package;
 
    type GameEventHandlerUtil is tagged;
    type GameEventHandlerUtil_Access is access all GameEventHandlerUtil'Class;

@@ -26,9 +26,9 @@ with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBina
 
 package org.allbinary.game.collision.CollidableHelperFactory_Package is
 
-   package Features_Package renames org.allbinary.game.configuration.feature.Features_Package;
-   package GameFeatureFactory_Package renames org.allbinary.game.configuration.feature.GameFeatureFactory_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
+   package GameFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.GameFeatureFactory_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
 
    type CollidableHelperFactory is tagged;
    type CollidableHelperFactory_Access is access all CollidableHelperFactory'Class;

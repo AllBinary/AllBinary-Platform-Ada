@@ -30,11 +30,11 @@ with org.allbinary.graphics.j2me.dialog.JDialog_Package; use org.allbinary.graph
 
 package org.allbinary.graphics.j2me.dialog.RotateJDialog_Package is
 
-   package ARunnable_Package renames org.allbinary.thread.ARunnable_Package;
-   package HashMapJDialogListenerInterface_Package renames org.allbinary.gui.dialog.HashMapJDialogListenerInterface_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package ARunnable_Package renames Standard.org.allbinary.thread.ARunnable_Package;
+   package HashMapJDialogListenerInterface_Package renames Standard.org.allbinary.gui.dialog.HashMapJDialogListenerInterface_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type RotateJDialog is tagged;
    type RotateJDialog_Access is access all RotateJDialog'Class;

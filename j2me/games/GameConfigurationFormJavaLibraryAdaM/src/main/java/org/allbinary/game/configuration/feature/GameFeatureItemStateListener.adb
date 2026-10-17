@@ -72,9 +72,13 @@ package body org.allbinary.game.configuration.feature.GameFeatureItemStateListen
                 end if;
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("itemStateChanged"), e);
+                end;
         end;
    end itemStateChanged;
 

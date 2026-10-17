@@ -62,9 +62,13 @@ package body org.allbinary.game.score.ScoreComparator_Package is
             scoreOne := inputStreamOne.readLong;
             scoreTwo := inputStreamTwo.readLong;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("compare"), e);
+                end;
         end;
         if This.isHighestBest then
             return This.getHighTooLow (scoreOne, scoreTwo);

@@ -26,8 +26,8 @@ with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
 
 package org.allbinary.content.NotificationUtil_Package is
 
-   package ResourceUtil_Package renames org.allbinary.data.resource.ResourceUtil_Package;
-   package TsUtil_Package renames org.allbinary.TsUtil_Package;
+   package ResourceUtil_Package renames Standard.org.allbinary.data.resource.ResourceUtil_Package;
+   package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
 
    type NotificationUtil is tagged;
    type NotificationUtil_Access is access all NotificationUtil'Class;

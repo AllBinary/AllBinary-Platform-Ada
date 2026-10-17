@@ -44,9 +44,13 @@ package body org.allbinary.logic.io.file.FileWrapperUtil_Package is
             end loop;
             return abFileArray;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             PreLogUtil_Package.putSE (To_Unbounded_String ("Exception Wrapping Files"), To_Unbounded_String ("FileWrapperUtil"), To_Unbounded_String ("wrapFiles"), e);
             return new AbFile_Access_Array'(0 .. (0) - 1 => null);
+                end;
         end;
    end wrapFiles;
 
@@ -55,9 +59,13 @@ package body org.allbinary.logic.io.file.FileWrapperUtil_Package is
         begin
             return AbFile_Package.Create (file);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             PreLogUtil_Package.putSE (To_Unbounded_String ("Exception Wrapping File"), To_Unbounded_String ("FileWrapperUtil"), To_Unbounded_String ("wrapFile"), e);
             return AbFile_Package.NULL_FILE;
+                end;
         end;
    end wrapFile;
 

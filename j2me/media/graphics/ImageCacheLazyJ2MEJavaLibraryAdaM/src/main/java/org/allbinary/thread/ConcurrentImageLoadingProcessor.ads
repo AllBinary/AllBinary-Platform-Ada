@@ -29,11 +29,11 @@ with org.allbinary.thread.BaseImageLoadingProcessor_Package; use org.allbinary.t
 
 package org.allbinary.thread.ConcurrentImageLoadingProcessor_Package is
 
-   package ProgressCanvas_Package renames org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
-   package ProgressCanvasFactory_Package renames org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package;
-   package ImageCache_Package renames org.allbinary.image.ImageCache_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package ProgressCanvas_Package renames Standard.org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
+   package ProgressCanvasFactory_Package renames Standard.org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package;
+   package ImageCache_Package renames Standard.org.allbinary.image.ImageCache_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type ConcurrentImageLoadingProcessor is tagged;
    type ConcurrentImageLoadingProcessor_Access is access all ConcurrentImageLoadingProcessor'Class;
@@ -68,11 +68,11 @@ with org.allbinary.thread.BaseImageLoadingProcessor_Package; use org.allbinary.t
 
 package org.allbinary.thread.ImageCacheRunnable_Package is
 
-   package ProgressCanvas_Package renames org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
-   package ProgressCanvasFactory_Package renames org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package;
-   package ImageCache_Package renames org.allbinary.image.ImageCache_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package ProgressCanvas_Package renames Standard.org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
+   package ProgressCanvasFactory_Package renames Standard.org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package;
+   package ImageCache_Package renames Standard.org.allbinary.image.ImageCache_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type ImageCacheRunnable is tagged;
    type ImageCacheRunnable_Access is access all ImageCacheRunnable'Class;

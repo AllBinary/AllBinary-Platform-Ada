@@ -14,8 +14,8 @@ with org.allbinary.game.input.AndroidAPI9KeyFactory_Package; use org.allbinary.g
 
 package org.allbinary.game.input.AndroidAPI12KeyFactory_Package is
 
-   package KeyEvent_Package renames android.view.KeyEvent_Package;
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
+   package KeyEvent_Package renames Standard.android.view.KeyEvent_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
 
    type AndroidAPI12KeyFactory is tagged;
    type AndroidAPI12KeyFactory_Access is access all AndroidAPI12KeyFactory'Class;

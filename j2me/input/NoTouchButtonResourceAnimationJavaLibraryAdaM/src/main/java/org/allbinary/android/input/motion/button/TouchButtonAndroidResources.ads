@@ -24,7 +24,7 @@ with org.allbinary.init.Init_Package; use org.allbinary.init.Init_Package;
 
 package org.allbinary.android.input.motion.button.TouchButtonAndroidResources_Package is
 
-   package Init_Package renames org.allbinary.init.Init_Package;
+   package Init_Package renames Standard.org.allbinary.init.Init_Package;
 
    type TouchButtonAndroidResources is tagged;
    type TouchButtonAndroidResources_Access is access all TouchButtonAndroidResources'Class;

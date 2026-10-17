@@ -15,9 +15,9 @@ with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.gr
 
 package org.allbinary.graphics.form.item.ABCustomGaugeItem_Package is
 
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package BasicColorFactory_Package renames org.allbinary.graphics.color.BasicColorFactory_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type ABCustomGaugeItem is tagged;
    type ABCustomGaugeItem_Access is access all ABCustomGaugeItem'Class;

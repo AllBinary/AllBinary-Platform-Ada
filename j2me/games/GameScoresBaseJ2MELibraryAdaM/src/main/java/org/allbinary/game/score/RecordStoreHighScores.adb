@@ -82,8 +82,12 @@ package body org.allbinary.game.score.RecordStoreHighScores_Package is
             recordId := recordStore.addRecord (highScoreBytes, 0, highScoreBytes'Length);
             This.load;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.ADD, e);
+                end;
         end;
         --  finally
         begin
@@ -93,8 +97,12 @@ package body org.allbinary.game.score.RecordStoreHighScores_Package is
                     recordStore.closeRecordStore;
                 end if;
             exception
-                when e : others =>
+                when Java_Occurrence : others =>
+                    declare
+                        e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                    begin
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.ADD, e);
+                    end;
             end;
         end;
    end addHighScore;
@@ -140,8 +148,12 @@ package body org.allbinary.game.score.RecordStoreHighScores_Package is
                 recordStore.deleteRecord (bestHighScore.getId);
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("removeLowestHighScore"), e);
+                end;
         end;
         --  finally
         begin
@@ -151,8 +163,12 @@ package body org.allbinary.game.score.RecordStoreHighScores_Package is
                     recordStore.closeRecordStore;
                 end if;
             exception
-                when e : others =>
+                when Java_Occurrence : others =>
+                    declare
+                        e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                    begin
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("removeLowestHighScore"), e);
+                    end;
             end;
         end;
    end removeLowestHighScore;
@@ -203,15 +219,23 @@ package body org.allbinary.game.score.RecordStoreHighScores_Package is
                         end loop;
                         list.addAt (lastIndex, newHighScore);
                     exception
-                        when e : others =>
+                        when Java_Occurrence : others =>
+                            declare
+                                e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                            begin
                         This.logUtil.put (To_Unbounded_String ("EOF"), This'Unchecked_Access, This.commonStrings.LOAD, e);
                         Java_Throw (e);
+                            end;
                     end;
                 end if;
             end loop;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (To_Unbounded_String ("No High Scores"), This'Unchecked_Access, This.commonStrings.LOAD, e);
+                end;
         end;
         --  finally
         begin
@@ -221,8 +245,12 @@ package body org.allbinary.game.score.RecordStoreHighScores_Package is
                     recordStore.closeRecordStore;
                 end if;
             exception
-                when e : others =>
+                when Java_Occurrence : others =>
+                    declare
+                        e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                    begin
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.LOAD, e);
+                    end;
             end;
         end;
    end load;
@@ -262,9 +290,13 @@ package body org.allbinary.game.score.RecordStoreHighScores_Package is
             This.logUtil.putF (To_Unbounded_String ("Not a High Score"), This'Unchecked_Access, To_Unbounded_String ("isBestScore"));
             return False;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.ADD, e);
             Java_Throw (e);
+                end;
         end;
    end isBestScore;
 

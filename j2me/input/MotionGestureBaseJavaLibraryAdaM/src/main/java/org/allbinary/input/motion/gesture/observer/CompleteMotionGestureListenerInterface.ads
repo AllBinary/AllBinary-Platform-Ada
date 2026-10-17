@@ -24,7 +24,7 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 
 package org.allbinary.input.motion.gesture.observer.CompleteMotionGestureListenerInterface_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type CompleteMotionGestureListenerInterface is interface;
    type CompleteMotionGestureListenerInterface_Access is access all CompleteMotionGestureListenerInterface'Class;

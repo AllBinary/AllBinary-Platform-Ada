@@ -29,12 +29,12 @@ with org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeographicMa
 
 package org.allbinary.game.behavior.topview.TopViewCharacterBehavior_Package is
 
-   package Direction_Package renames org.allbinary.direction.Direction_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package BasicGeographicMap_Package renames org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
-   package GeographicMapCellPosition_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
-   package GeographicMapCellType_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
-   package BasicTopViewGeographicMapCellTypeFactory_Package renames org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeographicMapCellTypeFactory_Package;
+   package Direction_Package renames Standard.org.allbinary.direction.Direction_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package BasicGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
+   package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+   package GeographicMapCellType_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
+   package BasicTopViewGeographicMapCellTypeFactory_Package renames Standard.org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeographicMapCellTypeFactory_Package;
 
    type TopViewCharacterBehavior is tagged;
    type TopViewCharacterBehavior_Access is access all TopViewCharacterBehavior'Class;

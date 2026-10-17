@@ -33,14 +33,14 @@ with org.allbinary.util.HashtableUtil_Package; use org.allbinary.util.HashtableU
 
 package org.allbinary.game.configuration.feature.GameFeatureUtil_Package is
 
-   package TsUtil_Package renames org.allbinary.TsUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonLabels_Package renames org.allbinary.string_Id.CommonLabels_Package;
-   package ABHashtable_Package renames org.allbinary.util.ABHashtable_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package EnumerationUtil_Package renames org.allbinary.util.EnumerationUtil_Package;
-   package HashtableUtil_Package renames org.allbinary.util.HashtableUtil_Package;
+   package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package EnumerationUtil_Package renames Standard.org.allbinary.util.EnumerationUtil_Package;
+   package HashtableUtil_Package renames Standard.org.allbinary.util.HashtableUtil_Package;
 
    type GameFeatureUtil is tagged;
    type GameFeatureUtil_Access is access all GameFeatureUtil'Class;

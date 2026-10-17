@@ -24,7 +24,7 @@ with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 
 package org.allbinary.business.init.InitInfoDocument_Package is
 
-   package Document_Package renames org.w3c.dom.Document_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
 
    type InitInfoDocument is tagged;
    type InitInfoDocument_Access is access all InitInfoDocument'Class;

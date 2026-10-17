@@ -42,22 +42,22 @@ with org.allbinary.game.paint.help.HelpPaintable_Package; use org.allbinary.game
 
 package org.allbinary.game.paint.help.InputMappingHelpPaintable_Package is
 
-   package GameKey_Package renames org.allbinary.game.input.GameKey_Package;
-   package GameKeyFactory_Package renames org.allbinary.game.input.GameKeyFactory_Package;
-   package Input_Package renames org.allbinary.game.input.Input_Package;
-   package PlatformInputMappingFactory_Package renames org.allbinary.game.input.PlatformInputMappingFactory_Package;
-   package GameInputMapping_Package renames org.allbinary.game.input.mapping.GameInputMapping_Package;
-   package PersistentInputMapping_Package renames org.allbinary.game.input.mapping.PersistentInputMapping_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package BasicColorFactory_Package renames org.allbinary.graphics.color.BasicColorFactory_Package;
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package CommonLabels_Package renames org.allbinary.string_Id.CommonLabels_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package GameKey_Package renames Standard.org.allbinary.game.input.GameKey_Package;
+   package GameKeyFactory_Package renames Standard.org.allbinary.game.input.GameKeyFactory_Package;
+   package Input_Package renames Standard.org.allbinary.game.input.Input_Package;
+   package PlatformInputMappingFactory_Package renames Standard.org.allbinary.game.input.PlatformInputMappingFactory_Package;
+   package GameInputMapping_Package renames Standard.org.allbinary.game.input.mapping.GameInputMapping_Package;
+   package PersistentInputMapping_Package renames Standard.org.allbinary.game.input.mapping.PersistentInputMapping_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type InputMappingHelpPaintable is tagged;
    type InputMappingHelpPaintable_Access is access all InputMappingHelpPaintable'Class;
@@ -123,22 +123,22 @@ with org.allbinary.game.paint.help.HelpPaintable_Package; use org.allbinary.game
 
 package org.allbinary.game.paint.help.UpdateMyFontProperties_Package is
 
-   package GameKey_Package renames org.allbinary.game.input.GameKey_Package;
-   package GameKeyFactory_Package renames org.allbinary.game.input.GameKeyFactory_Package;
-   package Input_Package renames org.allbinary.game.input.Input_Package;
-   package PlatformInputMappingFactory_Package renames org.allbinary.game.input.PlatformInputMappingFactory_Package;
-   package GameInputMapping_Package renames org.allbinary.game.input.mapping.GameInputMapping_Package;
-   package PersistentInputMapping_Package renames org.allbinary.game.input.mapping.PersistentInputMapping_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package BasicColorFactory_Package renames org.allbinary.graphics.color.BasicColorFactory_Package;
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package CommonLabels_Package renames org.allbinary.string_Id.CommonLabels_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package GameKey_Package renames Standard.org.allbinary.game.input.GameKey_Package;
+   package GameKeyFactory_Package renames Standard.org.allbinary.game.input.GameKeyFactory_Package;
+   package Input_Package renames Standard.org.allbinary.game.input.Input_Package;
+   package PlatformInputMappingFactory_Package renames Standard.org.allbinary.game.input.PlatformInputMappingFactory_Package;
+   package GameInputMapping_Package renames Standard.org.allbinary.game.input.mapping.GameInputMapping_Package;
+   package PersistentInputMapping_Package renames Standard.org.allbinary.game.input.mapping.PersistentInputMapping_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type UpdateMyFontProperties is tagged;
    type UpdateMyFontProperties_Access is access all UpdateMyFontProperties'Class;

@@ -24,7 +24,7 @@ with org.allbinary.logic.java.character_Id.CharacterSet_Package; use org.allbina
 
 package org.allbinary.logic.system.os.OperatingSystemInterface_Package is
 
-   package CharacterSet_Package renames org.allbinary.logic.java.character_Id.CharacterSet_Package;
+   package CharacterSet_Package renames Standard.org.allbinary.logic.java.character_Id.CharacterSet_Package;
 
    type OperatingSystemInterface is interface;
    type OperatingSystemInterface_Access is access all OperatingSystemInterface'Class;

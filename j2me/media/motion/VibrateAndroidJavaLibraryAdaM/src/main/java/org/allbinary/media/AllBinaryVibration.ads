@@ -28,10 +28,10 @@ with org.allbinary.media.AllBinaryVibrationME_Package; use org.allbinary.media.A
 
 package org.allbinary.media.AllBinaryVibration_Package is
 
-   package Context_Package renames android.content.Context_Package;
-   package Vibrator_Package renames android.os.Vibrator_Package;
-   package ResourceUtil_Package renames org.allbinary.data.resource.ResourceUtil_Package;
-   package GameConfigurationCentral_Package renames org.allbinary.game.configuration.GameConfigurationCentral_Package;
+   package Context_Package renames Standard.android.content.Context_Package;
+   package Vibrator_Package renames Standard.android.os.Vibrator_Package;
+   package ResourceUtil_Package renames Standard.org.allbinary.data.resource.ResourceUtil_Package;
+   package GameConfigurationCentral_Package renames Standard.org.allbinary.game.configuration.GameConfigurationCentral_Package;
 
    type AllBinaryVibration is tagged;
    type AllBinaryVibration_Access is access all AllBinaryVibration'Class;

@@ -28,11 +28,11 @@ with jsinterop.annotations.JsProperty_Package; use jsinterop.annotations.JsPrope
 
 package org.allbinary.logic.util.cache.BaseCircularPool_Package is
 
-   package JsType_Package renames jsinterop.annotations.JsType_Package;
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
-   package CircularIndexUtil_Package renames org.allbinary.util.CircularIndexUtil_Package;
-   package JsMethod_Package renames jsinterop.annotations.JsMethod_Package;
-   package JsProperty_Package renames jsinterop.annotations.JsProperty_Package;
+   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package CircularIndexUtil_Package renames Standard.org.allbinary.util.CircularIndexUtil_Package;
+   package JsMethod_Package renames Standard.jsinterop.annotations.JsMethod_Package;
+   package JsProperty_Package renames Standard.jsinterop.annotations.JsProperty_Package;
 
    type BaseCircularPool is tagged;
    type BaseCircularPool_Access is access all BaseCircularPool'Class;

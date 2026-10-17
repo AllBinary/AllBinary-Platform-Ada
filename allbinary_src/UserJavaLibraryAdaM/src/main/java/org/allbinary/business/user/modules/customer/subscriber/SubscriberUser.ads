@@ -27,9 +27,9 @@ with org.allbinary.logic.communication.http.request.session.WeblisketSessionInte
 
 package org.allbinary.business.user.modules.customer.subscriber.SubscriberUser_Package is
 
-   package User_Package renames org.allbinary.business.user.modules.User_Package;
-   package Subscription_Package renames org.allbinary.business.user.subscription.Subscription_Package;
-   package WeblisketSessionInterface_Package renames org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package;
+   package User_Package renames Standard.org.allbinary.business.user.modules.User_Package;
+   package Subscription_Package renames Standard.org.allbinary.business.user.subscription.Subscription_Package;
+   package WeblisketSessionInterface_Package renames Standard.org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package;
 
    type SubscriberUser is tagged;
    type SubscriberUser_Access is access all SubscriberUser'Class;

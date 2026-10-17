@@ -36,17 +36,17 @@ with org.allbinary.logic.math.MathUtil_Package; use org.allbinary.logic.math.Mat
 
 package org.allbinary.game.layer.building.BuildingInfoHudPaintable_Package is
 
-   package NumberStringHud_Package renames org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package;
-   package NumberStringHudFactory_Package renames org.allbinary.game.ag.layer.hud.basic.NumberStringHudFactory_Package;
-   package SelectionHudPaintable_Package renames org.allbinary.game.layer.SelectionHudPaintable_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package BasicHudFactory_Package renames org.allbinary.game.graphics.hud.BasicHudFactory_Package;
-   package NullPathFindingLayer_Package renames org.allbinary.game.layer.NullPathFindingLayer_Package;
-   package PathFindingLayerInterface_Package renames org.allbinary.game.layer.PathFindingLayerInterface_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package MyFontProcessor_Package renames org.allbinary.graphics.font.MyFontProcessor_Package;
-   package MathUtil_Package renames org.allbinary.logic.math.MathUtil_Package;
+   package NumberStringHud_Package renames Standard.org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package;
+   package NumberStringHudFactory_Package renames Standard.org.allbinary.game.ag.layer.hud.basic.NumberStringHudFactory_Package;
+   package SelectionHudPaintable_Package renames Standard.org.allbinary.game.layer.SelectionHudPaintable_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package BasicHudFactory_Package renames Standard.org.allbinary.game.graphics.hud.BasicHudFactory_Package;
+   package NullPathFindingLayer_Package renames Standard.org.allbinary.game.layer.NullPathFindingLayer_Package;
+   package PathFindingLayerInterface_Package renames Standard.org.allbinary.game.layer.PathFindingLayerInterface_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package MyFontProcessor_Package renames Standard.org.allbinary.graphics.font.MyFontProcessor_Package;
+   package MathUtil_Package renames Standard.org.allbinary.logic.math.MathUtil_Package;
 
    type BuildingInfoHudPaintable is tagged;
    type BuildingInfoHudPaintable_Access is access all BuildingInfoHudPaintable'Class;

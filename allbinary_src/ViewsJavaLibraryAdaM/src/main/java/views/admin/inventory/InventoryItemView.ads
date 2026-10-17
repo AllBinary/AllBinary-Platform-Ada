@@ -49,29 +49,29 @@ with views.business.context.modules.storefront.HttpStoreComponentView_Package; u
 
 package views.admin.inventory.InventoryItemView_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package StoreFrontFactory_Package renames org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
-   package StoreFrontInterface_Package renames org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
-   package BasicItem_Package renames org.allbinary.business.user.commerce.inventory.item.BasicItem_Package;
-   package BasicItemData_Package renames org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package;
-   package BasicItemView_Package renames org.allbinary.business.user.commerce.inventory.item.BasicItemView_Package;
-   package ItemInterface_Package renames org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package;
-   package DownloadableItem_Package renames org.allbinary.business.user.commerce.inventory.item.download.DownloadableItem_Package;
-   package DownloadableItemView_Package renames org.allbinary.business.user.commerce.inventory.item.download.DownloadableItemView_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package HttpFileUploadUtil_Package renames org.allbinary.logic.communication.http.file.upload.HttpFileUploadUtil_Package;
-   package HttpRequestUtil_Package renames org.allbinary.logic.communication.http.request.HttpRequestUtil_Package;
-   package MultipartRequestParams_Package renames org.allbinary.logic.communication.http.request.MultipartRequestParams_Package;
-   package RequestMapInterface_Package renames org.allbinary.logic.communication.http.request.RequestMapInterface_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package AbPathData_Package renames org.allbinary.logic.io.path.AbPathData_Package;
-   package PathUtil_Package renames org.allbinary.logic.io.path.PathUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package MediaData_Package renames org.allbinary.logic.visual.media.MediaData_Package;
-   package TransformInfoInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-   package FileItem_Package renames org.apache.commons.fileupload.FileItem_Package;
-   package HttpStoreComponentView_Package renames views.business.context.modules.storefront.HttpStoreComponentView_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StoreFrontFactory_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
+   package StoreFrontInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
+   package BasicItem_Package renames Standard.org.allbinary.business.user.commerce.inventory.item.BasicItem_Package;
+   package BasicItemData_Package renames Standard.org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package;
+   package BasicItemView_Package renames Standard.org.allbinary.business.user.commerce.inventory.item.BasicItemView_Package;
+   package ItemInterface_Package renames Standard.org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package;
+   package DownloadableItem_Package renames Standard.org.allbinary.business.user.commerce.inventory.item.download.DownloadableItem_Package;
+   package DownloadableItemView_Package renames Standard.org.allbinary.business.user.commerce.inventory.item.download.DownloadableItemView_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package HttpFileUploadUtil_Package renames Standard.org.allbinary.logic.communication.http.file.upload.HttpFileUploadUtil_Package;
+   package HttpRequestUtil_Package renames Standard.org.allbinary.logic.communication.http.request.HttpRequestUtil_Package;
+   package MultipartRequestParams_Package renames Standard.org.allbinary.logic.communication.http.request.MultipartRequestParams_Package;
+   package RequestMapInterface_Package renames Standard.org.allbinary.logic.communication.http.request.RequestMapInterface_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
+   package PathUtil_Package renames Standard.org.allbinary.logic.io.path.PathUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package MediaData_Package renames Standard.org.allbinary.logic.visual.media.MediaData_Package;
+   package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package FileItem_Package renames Standard.org.apache.commons.fileupload.FileItem_Package;
+   package HttpStoreComponentView_Package renames Standard.views.business.context.modules.storefront.HttpStoreComponentView_Package;
 
    type InventoryItemView is tagged;
    type InventoryItemView_Access is access all InventoryItemView'Class;

@@ -41,12 +41,12 @@ with org.allbinary.media.audio.BasicPlayer_Package; use org.allbinary.media.audi
 
 package org.allbinary.media.audio.PCClipWavPlayer_Package is
 
-   package ARunnable_Package renames org.allbinary.thread.ARunnable_Package;
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package PreLogUtil_Package renames org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package MusicThreadPool_Package renames org.allbinary.thread.MusicThreadPool_Package;
+   package ARunnable_Package renames Standard.org.allbinary.thread.ARunnable_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package MusicThreadPool_Package renames Standard.org.allbinary.thread.MusicThreadPool_Package;
 
    type PCClipWavPlayer is tagged;
    type PCClipWavPlayer_Access is access all PCClipWavPlayer'Class;

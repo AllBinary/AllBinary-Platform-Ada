@@ -28,10 +28,10 @@ with org.allbinary.input.motion.button.BaseTouchInput_Package; use org.allbinary
 
 package org.allbinary.input.motion.button.NoBuildingSelectedTouchButtonsBuilder_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package BasicArrayListUtil_Package renames org.allbinary.util.BasicArrayListUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type NoBuildingSelectedTouchButtonsBuilder is tagged;
    type NoBuildingSelectedTouchButtonsBuilder_Access is access all NoBuildingSelectedTouchButtonsBuilder'Class;

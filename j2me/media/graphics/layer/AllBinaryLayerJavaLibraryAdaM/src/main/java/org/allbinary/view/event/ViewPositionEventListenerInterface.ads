@@ -24,7 +24,7 @@ with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allb
 
 package org.allbinary.view.event.ViewPositionEventListenerInterface_Package is
 
-   package EventListenerInterface_Package renames org.allbinary.logic.util.event.EventListenerInterface_Package;
+   package EventListenerInterface_Package renames Standard.org.allbinary.logic.util.event.EventListenerInterface_Package;
 
    type ViewPositionEventListenerInterface is interface and EventListenerInterface;
    type ViewPositionEventListenerInterface_Access is access all ViewPositionEventListenerInterface'Class;

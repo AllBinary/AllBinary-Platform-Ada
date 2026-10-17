@@ -26,9 +26,9 @@ with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.Com
 
 package org.allbinary.logic.io.path.AbPathData_Package is
 
-   package FilePathData_Package renames org.allbinary.logic.io.file.FilePathData_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
+   package FilePathData_Package renames Standard.org.allbinary.logic.io.file.FilePathData_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
 
    type AbPathData is tagged;
    type AbPathData_Access is access all AbPathData'Class;

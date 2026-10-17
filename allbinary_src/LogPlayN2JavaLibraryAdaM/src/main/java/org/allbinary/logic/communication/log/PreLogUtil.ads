@@ -29,12 +29,12 @@ with playn.core.PlayN_Package; use playn.core.PlayN_Package;
 
 package org.allbinary.logic.communication.log.PreLogUtil_Package is
 
-   package JsType_Package renames jsinterop.annotations.JsType_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package PlayN_Package renames playn.core.PlayN_Package;
+   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package PlayN_Package renames Standard.playn.core.PlayN_Package;
 
    type PreLogUtil is tagged;
    type PreLogUtil_Access is access all PreLogUtil'Class;

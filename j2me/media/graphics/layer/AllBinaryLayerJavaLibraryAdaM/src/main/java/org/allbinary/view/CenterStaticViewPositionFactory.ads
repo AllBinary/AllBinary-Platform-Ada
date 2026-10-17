@@ -24,7 +24,7 @@ with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.al
 
 package org.allbinary.view.CenterStaticViewPositionFactory_Package is
 
-   package DisplayInfoSingleton_Package renames org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
 
    type CenterStaticViewPositionFactory is tagged;
    type CenterStaticViewPositionFactory_Access is access all CenterStaticViewPositionFactory'Class;

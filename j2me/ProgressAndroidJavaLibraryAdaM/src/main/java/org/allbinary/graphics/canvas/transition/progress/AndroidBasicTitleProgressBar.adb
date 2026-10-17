@@ -60,8 +60,12 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
                 This.image_Case := ImageCacheFactory_Package.getInstance.getWithKey (AndroidBasicTitleProgressBar_Package.RESOURCE);
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.INIT, e);
+                end;
         end;
    end init;
 
@@ -78,8 +82,12 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
             end if;
             This.updateCurrent;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.INIT, e);
+                end;
         end;
    end initActivity;
 
@@ -105,8 +113,12 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
                 end if;
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.UPDATE, e);
+                end;
         end;
    end updateCurrent;
 
@@ -121,9 +133,13 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
             This.loadProgressImages;
             This.updateCurrent;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.putF ((This.commonStrings.EXCEPTION_LABEL) + (ExceptionUtil_Package.getInstance.getStackTrace (e)), This'Unchecked_Access, This.canvasStrings.ON_DISPLAY_CHANGE_EVENT);
             This.animation := NullAnimationFactory_Package.getFactoryInstance.getInstance (0);
+                end;
         end;
    end onDisplayChangeEvent;
 
@@ -142,9 +158,13 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
                 This.setImages (2, lastWidth, lastHeight);
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.putF (To_Unbounded_String ("IllegalArgumentException ") & Java_Image (ExceptionUtil_Package.getInstance.getStackTrace (e)), This'Unchecked_Access, To_Unbounded_String ("loadProgressImages"));
             This.animation := NullAnimationFactory_Package.getFactoryInstance.getInstance (0);
+                end;
         end;
    end loadProgressImages;
 
@@ -164,8 +184,12 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
             ProgressCanvas (This).start;
             This.midletActivity.runOnUiThread (This.showTitleProgressBarRunnable);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.START_METHOD_NAME, e);
+                end;
         end;
    end start;
 
@@ -176,8 +200,12 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
             This.midletActivity.runOnUiThread (This.dismissTitleProgressBarRunnable);
             ProgressCanvas (This).end_Id;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.END_METHOD_NAME, e);
+                end;
         end;
    end end_Id;
 
@@ -190,8 +218,12 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
                 This.midletActivity.runOnUiThread (This.titleProgressDialogPortionSetProgressRunnable);
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.ADD_PORTION, e);
+                end;
         end;
    end addEarlyPortion;
 
@@ -202,8 +234,12 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
             ProgressCanvas (This).addPortion (value, text, index);
             This.midletActivity.runOnUiThread (This.titleProgressDialogPortionSetProgressRunnable);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.ADD_PORTION, e);
+                end;
         end;
    end addPortion;
 
@@ -214,8 +250,12 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
             ProgressCanvas (This).addNormalPortion (value, text);
             This.midletActivity.runOnUiThread (This.titleProgressDialogPortionSetProgressRunnable);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.ADD_PORTION, e);
+                end;
         end;
    end addNormalPortion;
 
@@ -225,8 +265,12 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
             ProgressCanvas (This).setValue (value);
             This.midletActivity.runOnUiThread (This.titleProgressDialogSetProgressRunnable);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("setValue"), e);
+                end;
         end;
    end setValue;
 
@@ -310,8 +354,12 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
             This.animation.paintXY (graphics, 0, 20);
             ProgressCanvas (This).paint2 (graphics);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.canvasStrings.PAINT, e);
+                end;
         end;
    end paint2;
 

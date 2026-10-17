@@ -29,12 +29,12 @@ with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.
 
 package org.allbinary.game.ag.ai.NumberOnOwnGroupSequenceAI_Package is
 
-   package ArtificialIntelligenceInterface_Package renames org.allbinary.ai.ArtificialIntelligenceInterface_Package;
-   package SequenceAI_Package renames org.allbinary.game.ag.ai.sequence.SequenceAI_Package;
-   package GameInput_Package renames org.allbinary.game.input.GameInput_Package;
-   package GroupLayerManagerListener_Package renames org.allbinary.game.layer.identification.GroupLayerManagerListener_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package AllBinaryLayerManager_Package renames org.allbinary.layer.AllBinaryLayerManager_Package;
+   package ArtificialIntelligenceInterface_Package renames Standard.org.allbinary.ai.ArtificialIntelligenceInterface_Package;
+   package SequenceAI_Package renames Standard.org.allbinary.game.ag.ai.sequence.SequenceAI_Package;
+   package GameInput_Package renames Standard.org.allbinary.game.input.GameInput_Package;
+   package GroupLayerManagerListener_Package renames Standard.org.allbinary.game.layer.identification.GroupLayerManagerListener_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
 
    type NumberOnOwnGroupSequenceAI is tagged;
    type NumberOnOwnGroupSequenceAI_Access is access all NumberOnOwnGroupSequenceAI'Class;

@@ -127,12 +127,16 @@ package body org.allbinary.media.audio.music.MusicManager_Package is
                 end if;
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             resource := StringUtil_Package.getInstance.EMPTY_STRING;
             if (This.currentSongSound) /= (NoSound_Package.getInstance) then
                 resource := This.currentSongSound.getResource;
             end if;
             PreLogUtil_Package.putOE (Java_Image (This.commonStrings.EXCEPTION_LABEL) & resource, This'Unchecked_Access, This.commonStrings.PROCESS, e);
+                end;
         end;
    end process;
 
@@ -162,12 +166,16 @@ package body org.allbinary.media.audio.music.MusicManager_Package is
             This.timeDelayHelper.setStartTime (0);
             PreLogUtil_Package.put (StringMaker_Package.Create.append (This.commonStrings.END_Id).append (StringUtil_Package.getInstance.toString (currentSongSound)).toString, This'Unchecked_Access, This.commonStrings.END_Id);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             resource := StringUtil_Package.getInstance.EMPTY_STRING;
             if (currentSongSound) /= (NoSound_Package.getInstance) then
                 resource := currentSongSound.getResource;
             end if;
             PreLogUtil_Package.putOE (Java_Image (This.commonStrings.EXCEPTION_LABEL) & resource, This'Unchecked_Access, This.commonStrings.END_Id, e);
+                end;
         end;
    end stop;
 

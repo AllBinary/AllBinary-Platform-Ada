@@ -27,9 +27,9 @@ with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_
 
 package org.allbinary.thread.NullRunnable_Package is
 
-   package JsType_Package renames jsinterop.annotations.JsType_Package;
-   package JsMethod_Package renames jsinterop.annotations.JsMethod_Package;
-   package JsConstructor_Package renames jsinterop.annotations.JsConstructor_Package;
+   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
+   package JsMethod_Package renames Standard.jsinterop.annotations.JsMethod_Package;
+   package JsConstructor_Package renames Standard.jsinterop.annotations.JsConstructor_Package;
 
    type NullRunnable is tagged;
    type NullRunnable_Access is access all NullRunnable'Class;

@@ -26,9 +26,9 @@ with org.allbinary.logic.visual.transform.info.CompositeTransformInfoInterface_P
 
 package org.allbinary.logic.visual.transform.TransformInterface_Package is
 
-   package DomDocumentMappingInterface_Package renames org.allbinary.data.tree.dom.document.mapping.DomDocumentMappingInterface_Package;
-   package TransformDocumentInterface_Package renames org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Package;
-   package CompositeTransformInfoInterface_Package renames org.allbinary.logic.visual.transform.info.CompositeTransformInfoInterface_Package;
+   package DomDocumentMappingInterface_Package renames Standard.org.allbinary.data.tree.dom.document.mapping.DomDocumentMappingInterface_Package;
+   package TransformDocumentInterface_Package renames Standard.org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Package;
+   package CompositeTransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.CompositeTransformInfoInterface_Package;
 
    type TransformInterface is interface and DomDocumentMappingInterface and CompositeTransformInfoInterface;
    type TransformInterface_Access is access all TransformInterface'Class;

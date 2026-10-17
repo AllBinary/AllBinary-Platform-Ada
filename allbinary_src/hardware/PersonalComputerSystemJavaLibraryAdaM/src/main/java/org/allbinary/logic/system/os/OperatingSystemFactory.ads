@@ -34,17 +34,17 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.logic.system.os.OperatingSystemFactory_Package is
 
-   package Log_Package renames org.allbinary.logic.communication.log.Log_Package;
-   package LogFactory_Package renames org.allbinary.logic.communication.log.LogFactory_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package LogConfigTypeFactory_Package renames org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
-   package LogConfigTypes_Package renames org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package LinuxOperatingSystemFactory_Package renames org.allbinary.logic.system.os.linux.LinuxOperatingSystemFactory_Package;
-   package SolarisOperatingSystemFactory_Package renames org.allbinary.logic.system.os.solaris.SolarisOperatingSystemFactory_Package;
-   package WindowsOperatingSystemFactory_Package renames org.allbinary.logic.system.os.windows.WindowsOperatingSystemFactory_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package Log_Package renames Standard.org.allbinary.logic.communication.log.Log_Package;
+   package LogFactory_Package renames Standard.org.allbinary.logic.communication.log.LogFactory_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package LinuxOperatingSystemFactory_Package renames Standard.org.allbinary.logic.system.os.linux.LinuxOperatingSystemFactory_Package;
+   package SolarisOperatingSystemFactory_Package renames Standard.org.allbinary.logic.system.os.solaris.SolarisOperatingSystemFactory_Package;
+   package WindowsOperatingSystemFactory_Package renames Standard.org.allbinary.logic.system.os.windows.WindowsOperatingSystemFactory_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type OperatingSystemFactory is tagged;
    type OperatingSystemFactory_Access is access all OperatingSystemFactory'Class;

@@ -25,7 +25,7 @@ with org.allbinary.graphics.displayable.screen.CommandForm_Package; use org.allb
 
 package org.allbinary.logic.MEUtil_Package is
 
-   package CommandForm_Package renames org.allbinary.graphics.displayable.screen.CommandForm_Package;
+   package CommandForm_Package renames Standard.org.allbinary.graphics.displayable.screen.CommandForm_Package;
 
    type MEUtil is tagged;
    type MEUtil_Access is access all MEUtil'Class;

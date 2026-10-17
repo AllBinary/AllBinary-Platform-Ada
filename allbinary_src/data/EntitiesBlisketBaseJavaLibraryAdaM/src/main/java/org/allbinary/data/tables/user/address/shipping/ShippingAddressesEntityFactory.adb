@@ -46,12 +46,16 @@ package body org.allbinary.data.tables.user.address.shipping.ShippingAddressesEn
         begin
             return ShippingAddressesEntity_Package.Create (userName);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.ENTITYFACTORYERROR) then
                 This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("getShippingAddressesEntityInstance()"), e);
             end if;
             return null;
+                end;
         end;
    end getInstance;
 

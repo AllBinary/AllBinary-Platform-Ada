@@ -55,12 +55,16 @@ package body org.allbinary.logic.control.workflow.WorkFlowWrapper_Package is
             result := Unbounded_String (method.invoke (This.anyType, null));
             return result;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             error := To_Unbounded_String ("Reflection Exception");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("getName()"), e);
             end if;
             Java_Throw (Java_New_Exception ("Exception", error));
+                end;
         end;
    end getName;
 
@@ -77,12 +81,16 @@ package body org.allbinary.logic.control.workflow.WorkFlowWrapper_Package is
             result := Unbounded_String (method.invoke (This.anyType, null));
             return result;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             error := To_Unbounded_String ("Reflection Exception");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("getStoreName()"), e);
             end if;
             Java_Throw (Java_New_Exception ("Exception", error));
+                end;
         end;
    end getStoreName;
 
@@ -99,12 +107,16 @@ package body org.allbinary.logic.control.workflow.WorkFlowWrapper_Package is
             result := Integer (method.invoke (This.anyType, null));
             return result;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             error := To_Unbounded_String ("Reflection Exception");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.PROCESS, e);
             end if;
             Java_Throw (Java_New_Exception ("Exception", error));
+                end;
         end;
    end process;
 

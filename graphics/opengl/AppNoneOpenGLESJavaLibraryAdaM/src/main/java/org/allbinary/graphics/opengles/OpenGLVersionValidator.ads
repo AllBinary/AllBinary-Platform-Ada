@@ -24,7 +24,7 @@ with org.allbinary.graphics.opengles.shader.ShaderComposite_Package; use org.all
 
 package org.allbinary.graphics.opengles.OpenGLVersionValidator_Package is
 
-   package ShaderComposite_Package renames org.allbinary.graphics.opengles.shader.ShaderComposite_Package;
+   package ShaderComposite_Package renames Standard.org.allbinary.graphics.opengles.shader.ShaderComposite_Package;
 
    type OpenGLVersionValidator is tagged;
    type OpenGLVersionValidator_Access is access all OpenGLVersionValidator'Class;

@@ -24,7 +24,7 @@ with org.allbinary.logic.system.os.OperatingSystemInterface_Package; use org.all
 
 package org.allbinary.logic.system.hardware.HardwareFactory_Package is
 
-   package OperatingSystemInterface_Package renames org.allbinary.logic.system.os.OperatingSystemInterface_Package;
+   package OperatingSystemInterface_Package renames Standard.org.allbinary.logic.system.os.OperatingSystemInterface_Package;
 
    type HardwareFactory is tagged;
    type HardwareFactory_Access is access all HardwareFactory'Class;

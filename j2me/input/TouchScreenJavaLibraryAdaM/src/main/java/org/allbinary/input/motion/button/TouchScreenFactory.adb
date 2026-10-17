@@ -34,9 +34,13 @@ package body org.allbinary.input.motion.button.TouchScreenFactory_Package is
             This.setTouch (True);
             This.setMultiTouch (False);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             This.logUtil.put (commonStrings.EXCEPTION_Id, TouchScreenFactory_Package.SINGLETON, commonStrings.GET_INSTANCE, e);
+                end;
         end;
    end Initialize;
 

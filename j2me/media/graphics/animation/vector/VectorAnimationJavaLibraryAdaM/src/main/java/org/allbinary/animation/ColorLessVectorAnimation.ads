@@ -26,7 +26,7 @@ with org.allbinary.animation.VectorAnimation_Package; use org.allbinary.animatio
 
 package org.allbinary.animation.ColorLessVectorAnimation_Package is
 
-   package BasicColorFactory_Package renames org.allbinary.graphics.color.BasicColorFactory_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
 
    type ColorLessVectorAnimation is tagged;
    type ColorLessVectorAnimation_Access is access all ColorLessVectorAnimation'Class;

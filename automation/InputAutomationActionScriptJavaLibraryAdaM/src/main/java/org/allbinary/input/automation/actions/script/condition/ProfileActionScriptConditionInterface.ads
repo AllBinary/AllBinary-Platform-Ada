@@ -27,9 +27,9 @@ with org.allbinary.input.automation.actions.script.condition.CustomTreeNodeInter
 
 package org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionInterface_Package is
 
-   package ProfileActionScriptItemInterface_Package renames org.allbinary.input.automation.actions.script.ProfileActionScriptItemInterface_Package;
-   package ProfileActionScriptNodeInterface_Package renames org.allbinary.input.automation.actions.script.ProfileActionScriptNodeInterface_Package;
-   package ProfileActionScriptProcessorInterface_Package renames org.allbinary.input.automation.actions.script.condition.processors.ProfileActionScriptProcessorInterface_Package;
+   package ProfileActionScriptItemInterface_Package renames Standard.org.allbinary.input.automation.actions.script.ProfileActionScriptItemInterface_Package;
+   package ProfileActionScriptNodeInterface_Package renames Standard.org.allbinary.input.automation.actions.script.ProfileActionScriptNodeInterface_Package;
+   package ProfileActionScriptProcessorInterface_Package renames Standard.org.allbinary.input.automation.actions.script.condition.processors.ProfileActionScriptProcessorInterface_Package;
 
    type ProfileActionScriptConditionInterface is interface and ProfileActionScriptNodeInterface and CustomTreeNodeInterface and ProfileActionScriptItemInterface;
    type ProfileActionScriptConditionInterface_Access is access all ProfileActionScriptConditionInterface'Class;

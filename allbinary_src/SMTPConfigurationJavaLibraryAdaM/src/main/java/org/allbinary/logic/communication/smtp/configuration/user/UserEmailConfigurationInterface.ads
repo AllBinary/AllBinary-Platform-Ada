@@ -24,7 +24,7 @@ with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEv
 
 package org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationInterface_Package is
 
-   package UserEmailEventsConfigurationInterface_Package renames org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationInterface_Package;
+   package UserEmailEventsConfigurationInterface_Package renames Standard.org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationInterface_Package;
 
    type UserEmailConfigurationInterface is interface;
    type UserEmailConfigurationInterface_Access is access all UserEmailConfigurationInterface'Class;

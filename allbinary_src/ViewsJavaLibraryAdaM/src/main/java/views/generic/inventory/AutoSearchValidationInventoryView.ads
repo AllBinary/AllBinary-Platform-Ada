@@ -27,9 +27,9 @@ with views.generic_Id.inventory.InventorySearch_Package; use views.generic_Id.in
 
 package views.generic_Id.inventory.AutoSearchValidationInventoryView_Package is
 
-   package SearchRequest_Package renames org.allbinary.logic.control.search.SearchRequest_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
+   package SearchRequest_Package renames Standard.org.allbinary.logic.control.search.SearchRequest_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type AutoSearchValidationInventoryView is tagged;
    type AutoSearchValidationInventoryView_Access is access all AutoSearchValidationInventoryView'Class;

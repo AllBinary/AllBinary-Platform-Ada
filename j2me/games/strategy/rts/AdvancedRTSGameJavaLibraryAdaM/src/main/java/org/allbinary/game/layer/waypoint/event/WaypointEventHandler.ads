@@ -26,10 +26,10 @@ with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.a
 
 package org.allbinary.game.layer.waypoint.event.WaypointEventHandler_Package is
 
-   package RTSLayerEvent_Package renames org.allbinary.game.layer.RTSLayerEvent_Package;
-   package AllBinaryEventObject_Package renames org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-   package EventListenerInterface_Package renames org.allbinary.logic.util.event.EventListenerInterface_Package;
-   package BasicEventHandler_Package renames org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
+   package RTSLayerEvent_Package renames Standard.org.allbinary.game.layer.RTSLayerEvent_Package;
+   package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+   package EventListenerInterface_Package renames Standard.org.allbinary.logic.util.event.EventListenerInterface_Package;
+   package BasicEventHandler_Package renames Standard.org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
 
    type WaypointEventHandler is tagged;
    type WaypointEventHandler_Access is access all WaypointEventHandler'Class;

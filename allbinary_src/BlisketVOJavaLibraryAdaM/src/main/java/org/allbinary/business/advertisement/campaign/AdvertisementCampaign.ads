@@ -28,9 +28,9 @@ with org.allbinary.business.advertisement.campaign.AdvertisementCampaignInterfac
 
 package org.allbinary.business.advertisement.campaign.AdvertisementCampaign_Package is
 
-   package DynamicObjectData_Package renames org.allbinary.business.DynamicObjectData_Package;
-   package AdvertisementsInterface_Package renames org.allbinary.business.advertisement.AdvertisementsInterface_Package;
-   package AdvertisementSearchInterface_Package renames org.allbinary.business.advertisement.search.AdvertisementSearchInterface_Package;
+   package DynamicObjectData_Package renames Standard.org.allbinary.business.DynamicObjectData_Package;
+   package AdvertisementsInterface_Package renames Standard.org.allbinary.business.advertisement.AdvertisementsInterface_Package;
+   package AdvertisementSearchInterface_Package renames Standard.org.allbinary.business.advertisement.search.AdvertisementSearchInterface_Package;
 
    type AdvertisementCampaign is tagged;
    type AdvertisementCampaign_Access is access all AdvertisementCampaign'Class;

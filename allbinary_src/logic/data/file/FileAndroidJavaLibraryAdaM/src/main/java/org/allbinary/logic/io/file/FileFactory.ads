@@ -26,8 +26,8 @@ with org.allbinary.data.resource.ResourceUtil_Package; use org.allbinary.data.re
 
 package org.allbinary.logic.io.file.FileFactory_Package is
 
-   package Context_Package renames android.content.Context_Package;
-   package ResourceUtil_Package renames org.allbinary.data.resource.ResourceUtil_Package;
+   package Context_Package renames Standard.android.content.Context_Package;
+   package ResourceUtil_Package renames Standard.org.allbinary.data.resource.ResourceUtil_Package;
 
    type FileFactory is tagged;
    type FileFactory_Access is access all FileFactory'Class;

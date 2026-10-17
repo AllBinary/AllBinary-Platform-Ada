@@ -37,20 +37,20 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.logic.system.hardware.linux.PCComponentFactory_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package LogConfigTypeFactory_Package renames org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
-   package LogConfigTypes_Package renames org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
-   package ComponentFactory_Package renames org.allbinary.logic.system.hardware.components.ComponentFactory_Package;
-   package HardwareComponentInterface_Package renames org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package;
-   package Bridge_Package renames org.allbinary.logic.system.hardware.components.linux.Bridge_Package;
-   package Ethernet_Package renames org.allbinary.logic.system.hardware.components.linux.Ethernet_Package;
-   package HardDriveController_Package renames org.allbinary.logic.system.hardware.components.linux.HardDriveController_Package;
-   package Media_Package renames org.allbinary.logic.system.hardware.components.linux.Media_Package;
-   package PCI_Package renames org.allbinary.logic.system.hardware.components.linux.PCI_Package;
-   package Unknown_Package renames org.allbinary.logic.system.hardware.components.linux.Unknown_Package;
-   package Usb_Package renames org.allbinary.logic.system.hardware.components.linux.Usb_Package;
-   package Video_Package renames org.allbinary.logic.system.hardware.components.linux.Video_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
+   package ComponentFactory_Package renames Standard.org.allbinary.logic.system.hardware.components.ComponentFactory_Package;
+   package HardwareComponentInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package;
+   package Bridge_Package renames Standard.org.allbinary.logic.system.hardware.components.linux.Bridge_Package;
+   package Ethernet_Package renames Standard.org.allbinary.logic.system.hardware.components.linux.Ethernet_Package;
+   package HardDriveController_Package renames Standard.org.allbinary.logic.system.hardware.components.linux.HardDriveController_Package;
+   package Media_Package renames Standard.org.allbinary.logic.system.hardware.components.linux.Media_Package;
+   package PCI_Package renames Standard.org.allbinary.logic.system.hardware.components.linux.PCI_Package;
+   package Unknown_Package renames Standard.org.allbinary.logic.system.hardware.components.linux.Unknown_Package;
+   package Usb_Package renames Standard.org.allbinary.logic.system.hardware.components.linux.Usb_Package;
+   package Video_Package renames Standard.org.allbinary.logic.system.hardware.components.linux.Video_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type PCComponentFactory is tagged;
    type PCComponentFactory_Access is access all PCComponentFactory'Class;

@@ -13,8 +13,8 @@ with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 
 package org.allbinary.logic.control.crypt.file.CryptFileWriter_Package is
 
-   package AbPath_Package renames org.allbinary.logic.io.path.AbPath_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
+   package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
 
    type CryptFileWriter is tagged;
    type CryptFileWriter_Access is access all CryptFileWriter'Class;

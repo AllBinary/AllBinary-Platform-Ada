@@ -30,13 +30,13 @@ with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logi
 
 package org.allbinary.game.input.mapping.MotionInputMappingEventListener_Package is
 
-   package InputMappingEvent_Package renames org.allbinary.game.input.mapping.event.InputMappingEvent_Package;
-   package InputMappingEventListenerInterface_Package renames org.allbinary.game.input.mapping.event.InputMappingEventListenerInterface_Package;
-   package GameKeyCompleteMotionGestureInputEventFactory_Package renames org.allbinary.game.input.motion.action.GameKeyCompleteMotionGestureInputEventFactory_Package;
-   package BasicTouchInputFactory_Package renames org.allbinary.input.motion.button.BasicTouchInputFactory_Package;
-   package ForcedLogUtil_Package renames org.allbinary.logic.communication.log.ForcedLogUtil_Package;
-   package AllBinaryEventObject_Package renames org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-   package EventStrings_Package renames org.allbinary.logic.util.event.EventStrings_Package;
+   package InputMappingEvent_Package renames Standard.org.allbinary.game.input.mapping.event.InputMappingEvent_Package;
+   package InputMappingEventListenerInterface_Package renames Standard.org.allbinary.game.input.mapping.event.InputMappingEventListenerInterface_Package;
+   package GameKeyCompleteMotionGestureInputEventFactory_Package renames Standard.org.allbinary.game.input.motion.action.GameKeyCompleteMotionGestureInputEventFactory_Package;
+   package BasicTouchInputFactory_Package renames Standard.org.allbinary.input.motion.button.BasicTouchInputFactory_Package;
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+   package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+   package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
 
    type MotionInputMappingEventListener is tagged;
    type MotionInputMappingEventListener_Access is access all MotionInputMappingEventListener'Class;

@@ -79,9 +79,13 @@ package body org.allbinary.logic.system.security.licensing.SetLicenseInitInfo_Pa
             LicenseInitInfoUtil_Package.getInstance.write (licenseInitInfo);
             LicenseInitInfoUtil_Package.getInstance.read;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Ada.Text_IO.Put (Java_Image (To_Unbounded_String ("Error: ") & Java_Image (e)));
-            Ada.Text_IO.Put_Line (Ada.Exceptions.Exception_Information (e));
+            Java_Print_Stack_Trace (e);
+                end;
         end;
    end createNewLicenseInitInfo;
 

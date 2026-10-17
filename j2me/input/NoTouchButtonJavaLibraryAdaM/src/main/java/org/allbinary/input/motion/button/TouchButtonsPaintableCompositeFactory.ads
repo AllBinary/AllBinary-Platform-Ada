@@ -26,9 +26,9 @@ with org.allbinary.graphics.paint.ProcessPaintable_Package; use org.allbinary.gr
 
 package org.allbinary.input.motion.button.TouchButtonsPaintableCompositeFactory_Package is
 
-   package InputMappingInterface_Package renames org.allbinary.game.input.mapping.InputMappingInterface_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package ProcessPaintable_Package renames org.allbinary.graphics.paint.ProcessPaintable_Package;
+   package InputMappingInterface_Package renames Standard.org.allbinary.game.input.mapping.InputMappingInterface_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package ProcessPaintable_Package renames Standard.org.allbinary.graphics.paint.ProcessPaintable_Package;
 
    type TouchButtonsPaintableCompositeFactory is tagged;
    type TouchButtonsPaintableCompositeFactory_Access is access all TouchButtonsPaintableCompositeFactory'Class;

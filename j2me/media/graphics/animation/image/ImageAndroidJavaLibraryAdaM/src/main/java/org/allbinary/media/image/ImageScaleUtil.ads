@@ -35,16 +35,16 @@ with org.microemu.android.device.AndroidImageInterface_Package; use org.microemu
 
 package org.allbinary.media.image.ImageScaleUtil_Package is
 
-   package Bitmap_Package renames android.graphics.Bitmap_Package;
-   package Canvas_Package renames android.graphics.Canvas_Package;
-   package Matrix_Package renames android.graphics.Matrix_Package;
-   package Anchor_Package renames org.allbinary.graphics.Anchor_Package;
-   package ImageCache_Package renames org.allbinary.image.ImageCache_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package AndroidImageInterface_Package renames org.microemu.android.device.AndroidImageInterface_Package;
+   package Bitmap_Package renames Standard.android.graphics.Bitmap_Package;
+   package Canvas_Package renames Standard.android.graphics.Canvas_Package;
+   package Matrix_Package renames Standard.android.graphics.Matrix_Package;
+   package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
+   package ImageCache_Package renames Standard.org.allbinary.image.ImageCache_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package AndroidImageInterface_Package renames Standard.org.microemu.android.device.AndroidImageInterface_Package;
 
    type ImageScaleUtil is tagged;
    type ImageScaleUtil_Access is access all ImageScaleUtil'Class;

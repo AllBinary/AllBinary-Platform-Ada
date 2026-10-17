@@ -24,7 +24,7 @@ with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Pack
 
 package org.allbinary.graphics.opengles.shader.ModelViewProjection_Package is
 
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
 
    type ModelViewProjection is tagged;
    type ModelViewProjection_Access is access all ModelViewProjection'Class;

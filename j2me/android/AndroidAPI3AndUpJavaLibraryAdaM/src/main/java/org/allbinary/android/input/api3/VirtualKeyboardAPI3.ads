@@ -31,14 +31,14 @@ with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logi
 
 package org.allbinary.android.input.api3.VirtualKeyboardAPI3_Package is
 
-   package Activity_Package renames android.app.Activity_Package;
-   package VirtualKeyboard_Package renames org.allbinary.android.input.VirtualKeyboard_Package;
-   package VirtualKeyboardEvent_Package renames org.allbinary.input.event.VirtualKeyboardEvent_Package;
-   package VirtualKeyboardEventHandler_Package renames org.allbinary.input.event.VirtualKeyboardEventHandler_Package;
-   package VirtualKeyboardEventListenerInterface_Package renames org.allbinary.input.event.VirtualKeyboardEventListenerInterface_Package;
-   package ForcedLogUtil_Package renames org.allbinary.logic.communication.log.ForcedLogUtil_Package;
-   package AllBinaryEventObject_Package renames org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-   package EventStrings_Package renames org.allbinary.logic.util.event.EventStrings_Package;
+   package Activity_Package renames Standard.android.app.Activity_Package;
+   package VirtualKeyboard_Package renames Standard.org.allbinary.android.input.VirtualKeyboard_Package;
+   package VirtualKeyboardEvent_Package renames Standard.org.allbinary.input.event.VirtualKeyboardEvent_Package;
+   package VirtualKeyboardEventHandler_Package renames Standard.org.allbinary.input.event.VirtualKeyboardEventHandler_Package;
+   package VirtualKeyboardEventListenerInterface_Package renames Standard.org.allbinary.input.event.VirtualKeyboardEventListenerInterface_Package;
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+   package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+   package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
 
    type VirtualKeyboardAPI3 is tagged;
    type VirtualKeyboardAPI3_Access is access all VirtualKeyboardAPI3'Class;

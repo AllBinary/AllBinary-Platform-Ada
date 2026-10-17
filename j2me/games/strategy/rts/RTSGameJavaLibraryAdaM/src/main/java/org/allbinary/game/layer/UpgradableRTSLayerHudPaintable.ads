@@ -31,11 +31,11 @@ with org.allbinary.game.layer.SelectionHudPaintable_Package; use org.allbinary.g
 
 package org.allbinary.game.layer.UpgradableRTSLayerHudPaintable_Package is
 
-   package CollidableDestroyableDamageableLayer_Package renames org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
-   package CharArrayFactory_Package renames org.allbinary.logic.java.character_Id.CharArrayFactory_Package;
-   package DisplayInfoSingleton_Package renames org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
-   package MyFontProcessor_Package renames org.allbinary.graphics.font.MyFontProcessor_Package;
-   package CommonButtons_Package renames org.allbinary.input.motion.button.CommonButtons_Package;
+   package CollidableDestroyableDamageableLayer_Package renames Standard.org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
+   package CharArrayFactory_Package renames Standard.org.allbinary.logic.java.character_Id.CharArrayFactory_Package;
+   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+   package MyFontProcessor_Package renames Standard.org.allbinary.graphics.font.MyFontProcessor_Package;
+   package CommonButtons_Package renames Standard.org.allbinary.input.motion.button.CommonButtons_Package;
 
    type UpgradableRTSLayerHudPaintable is tagged;
    type UpgradableRTSLayerHudPaintable_Access is access all UpgradableRTSLayerHudPaintable'Class;

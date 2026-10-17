@@ -34,16 +34,16 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 
 package org.allbinary.animation.vector.VectorCenterGenerator_Package is
 
-   package GPoint_Package renames org.allbinary.graphics.GPoint_Package;
-   package GraphicItemInterface_Package renames org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package;
-   package LinesGraphicItem_Package renames org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package;
-   package Points_Package renames org.allbinary.graphics.j2me.workarea.tools.Points_Package;
-   package BasicGraphicsPipeline_Package renames org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonLabels_Package renames org.allbinary.string_Id.CommonLabels_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package GraphicItemInterface_Package renames Standard.org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package;
+   package LinesGraphicItem_Package renames Standard.org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package;
+   package Points_Package renames Standard.org.allbinary.graphics.j2me.workarea.tools.Points_Package;
+   package BasicGraphicsPipeline_Package renames Standard.org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type VectorCenterGenerator is tagged;
    type VectorCenterGenerator_Access is access all VectorCenterGenerator'Class;

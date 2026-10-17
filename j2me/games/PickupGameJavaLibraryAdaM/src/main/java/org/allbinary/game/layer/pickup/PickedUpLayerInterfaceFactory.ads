@@ -26,8 +26,8 @@ with org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryBase_Package; 
 
 package org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactory_Package is
 
-   package Animation_Package renames org.allbinary.animation.Animation_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
+   package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
 
    type PickedUpLayerInterfaceFactory is tagged;
    type PickedUpLayerInterfaceFactory_Access is access all PickedUpLayerInterfaceFactory'Class;

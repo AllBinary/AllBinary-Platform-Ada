@@ -25,7 +25,7 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 
 package org.allbinary.data.tables.TableMappingInterface_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type TableMappingInterface is interface;
    type TableMappingInterface_Access is access all TableMappingInterface'Class;

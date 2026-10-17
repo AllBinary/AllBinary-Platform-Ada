@@ -42,23 +42,23 @@ with views.admin.inventory.download.DownloadableInventoryItemView_Package; use v
 
 package views.admin.inventory.download.EditValidationView_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package BasicItemData_Package renames org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package;
-   package DownloadItemData_Package renames org.allbinary.business.user.commerce.inventory.item.download.DownloadItemData_Package;
-   package DownloadableItem_Package renames org.allbinary.business.user.commerce.inventory.item.download.DownloadableItem_Package;
-   package MoneyException_Package renames org.allbinary.business.user.commerce.money.MoneyException_Package;
-   package InventoryEntityFactory_Package renames org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityFactory_Package;
-   package DownloadItemsEntity_Package renames org.allbinary.data.tables.user.commerce.inventory.item.downloads.DownloadItemsEntity_Package;
-   package DownloadItemsEntityFactory_Package renames org.allbinary.data.tables.user.commerce.inventory.item.downloads.DownloadItemsEntityFactory_Package;
-   package RequestParams_Package renames org.allbinary.logic.communication.http.request.RequestParams_Package;
-   package ValidationComponentInterface_Package renames org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package StringValidationUtil_Package renames org.allbinary.logic.string_Id.StringValidationUtil_Package;
-   package TransformInfoInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package BasicItemData_Package renames Standard.org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package;
+   package DownloadItemData_Package renames Standard.org.allbinary.business.user.commerce.inventory.item.download.DownloadItemData_Package;
+   package DownloadableItem_Package renames Standard.org.allbinary.business.user.commerce.inventory.item.download.DownloadableItem_Package;
+   package MoneyException_Package renames Standard.org.allbinary.business.user.commerce.money.MoneyException_Package;
+   package InventoryEntityFactory_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityFactory_Package;
+   package DownloadItemsEntity_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.item.downloads.DownloadItemsEntity_Package;
+   package DownloadItemsEntityFactory_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.item.downloads.DownloadItemsEntityFactory_Package;
+   package RequestParams_Package renames Standard.org.allbinary.logic.communication.http.request.RequestParams_Package;
+   package ValidationComponentInterface_Package renames Standard.org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
+   package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type EditValidationView is tagged;
    type EditValidationView_Access is access all EditValidationView'Class;

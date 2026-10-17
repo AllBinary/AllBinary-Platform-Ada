@@ -25,8 +25,8 @@ with org.allbinary.business.user.role.UserRole_Package; use org.allbinary.busine
 
 package org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package is
 
-   package OrderInterface_Package renames org.allbinary.business.user.commerce.inventory.order.OrderInterface_Package;
-   package UserRole_Package renames org.allbinary.business.user.role.UserRole_Package;
+   package OrderInterface_Package renames Standard.org.allbinary.business.user.commerce.inventory.order.OrderInterface_Package;
+   package UserRole_Package renames Standard.org.allbinary.business.user.role.UserRole_Package;
 
    type WeblisketSessionInterface is interface;
    type WeblisketSessionInterface_Access is access all WeblisketSessionInterface'Class;

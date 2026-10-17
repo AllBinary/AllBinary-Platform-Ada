@@ -26,8 +26,8 @@ with org.allbinary.input.magnetic.field.AllBinaryMagneticFieldSensor_Package; us
 
 package org.allbinary.input.magnetic.field.NoMagneticFieldSensor_Package is
 
-   package AllBinarySensorListener_Package renames org.allbinary.input.AllBinarySensorListener_Package;
-   package Orientation_Package renames org.allbinary.logic.math.Orientation_Package;
+   package AllBinarySensorListener_Package renames Standard.org.allbinary.input.AllBinarySensorListener_Package;
+   package Orientation_Package renames Standard.org.allbinary.logic.math.Orientation_Package;
 
    type NoMagneticFieldSensor is tagged;
    type NoMagneticFieldSensor_Access is access all NoMagneticFieldSensor'Class;

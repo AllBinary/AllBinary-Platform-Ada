@@ -25,7 +25,7 @@ with org.allbinary.logic.math.vector.MathVector_Package; use org.allbinary.logic
 
 package org.allbinary.logic.math.vector.XAxisMathVector_Package is
 
-   package BasicDecimal_Package renames org.allbinary.logic.math.BasicDecimal_Package;
+   package BasicDecimal_Package renames Standard.org.allbinary.logic.math.BasicDecimal_Package;
 
    type XAxisMathVector is tagged;
    type XAxisMathVector_Access is access all XAxisMathVector'Class;

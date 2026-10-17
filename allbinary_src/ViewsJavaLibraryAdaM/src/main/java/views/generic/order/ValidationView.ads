@@ -32,14 +32,14 @@ with views.generic_Id.order.OrderView_Package; use views.generic_Id.order.OrderV
 
 package views.generic_Id.order.ValidationView_Package is
 
-   package OrderHistoryFactory_Package renames org.allbinary.business.user.commerce.inventory.order.OrderHistoryFactory_Package;
-   package OrderItemsEntity_Package renames org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsEntity_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package ValidationComponentInterface_Package renames org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package TransformInfoInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
+   package OrderHistoryFactory_Package renames Standard.org.allbinary.business.user.commerce.inventory.order.OrderHistoryFactory_Package;
+   package OrderItemsEntity_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsEntity_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package ValidationComponentInterface_Package renames Standard.org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type ValidationView is tagged;
    type ValidationView_Access is access all ValidationView'Class;

@@ -34,15 +34,15 @@ with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleP
 
 package org.allbinary.animation.text.CustomTextBoxIndexedAnimationFactory_Package is
 
-   package CustomTextBox_Package renames org.allbinary.graphics.form.item.CustomTextBox_Package;
-   package Animation_Package renames org.allbinary.animation.Animation_Package;
-   package AnimationInterfaceFactoryInterface_Package renames org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
-   package ABToGBUtil_Package renames org.allbinary.game.canvas.ABToGBUtil_Package;
-   package AllBinaryGameCanvas_Package renames org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package ScaleProperties_Package renames org.allbinary.media.ScaleProperties_Package;
+   package CustomTextBox_Package renames Standard.org.allbinary.graphics.form.item.CustomTextBox_Package;
+   package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
+   package AnimationInterfaceFactoryInterface_Package renames Standard.org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
+   package ABToGBUtil_Package renames Standard.org.allbinary.game.canvas.ABToGBUtil_Package;
+   package AllBinaryGameCanvas_Package renames Standard.org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package ScaleProperties_Package renames Standard.org.allbinary.media.ScaleProperties_Package;
 
    type CustomTextBoxIndexedAnimationFactory is tagged;
    type CustomTextBoxIndexedAnimationFactory_Access is access all CustomTextBoxIndexedAnimationFactory'Class;

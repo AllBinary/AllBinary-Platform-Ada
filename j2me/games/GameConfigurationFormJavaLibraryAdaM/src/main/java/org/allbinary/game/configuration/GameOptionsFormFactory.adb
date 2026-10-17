@@ -46,10 +46,14 @@ package body org.allbinary.game.configuration.GameOptionsFormFactory_Package is
         begin
             return GameOptionsForm_Package.Create (commandListener, title, backgrounBasicColor, foregroundBasicColor);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.INIT, e);
             return CommandForm_Package.getNullCommandForm;
+                end;
         end;
    end init;
 

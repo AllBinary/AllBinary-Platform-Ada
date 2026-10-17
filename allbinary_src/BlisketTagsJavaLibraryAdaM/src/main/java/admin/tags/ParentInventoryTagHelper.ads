@@ -25,7 +25,7 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 
 package admin.tags.ParentInventoryTagHelper_Package is
 
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
 
    type ParentInventoryTagHelper is tagged;
    type ParentInventoryTagHelper_Access is access all ParentInventoryTagHelper'Class;

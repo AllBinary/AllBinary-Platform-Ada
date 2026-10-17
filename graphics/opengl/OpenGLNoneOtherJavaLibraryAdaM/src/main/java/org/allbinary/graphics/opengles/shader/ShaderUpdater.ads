@@ -27,8 +27,8 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.graphics.opengles.shader.ShaderUpdater_Package is
 
-   package RendererStrings_Package renames org.allbinary.graphics.opengles.renderer.RendererStrings_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package RendererStrings_Package renames Standard.org.allbinary.graphics.opengles.renderer.RendererStrings_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type ShaderUpdater is tagged;
    type ShaderUpdater_Access is access all ShaderUpdater'Class;

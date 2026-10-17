@@ -35,15 +35,15 @@ with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary
 
 package org.allbinary.logic.system.security.licensing.registration.RegistrationConfiguration_Package is
 
-   package AbDataOutputStream_Package renames org.allbinary.logic.io.AbDataOutputStream_Package;
-   package FileStreamFactory_Package renames org.allbinary.logic.io.FileStreamFactory_Package;
-   package StreamUtil_Package renames org.allbinary.logic.io.StreamUtil_Package;
-   package FileFactory_Package renames org.allbinary.logic.io.file_Case.FileFactory_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package PreLogUtil_Package renames org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package AbDataOutputStream_Package renames Standard.org.allbinary.logic.io.AbDataOutputStream_Package;
+   package FileStreamFactory_Package renames Standard.org.allbinary.logic.io.FileStreamFactory_Package;
+   package StreamUtil_Package renames Standard.org.allbinary.logic.io.StreamUtil_Package;
+   package FileFactory_Package renames Standard.org.allbinary.logic.io.file_Case.FileFactory_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
 
    type RegistrationConfiguration is tagged;
    type RegistrationConfiguration_Access is access all RegistrationConfiguration'Class;

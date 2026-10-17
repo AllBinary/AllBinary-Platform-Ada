@@ -27,8 +27,8 @@ with org.allbinary.layer.PositionInterface_Package; use org.allbinary.layer.Posi
 
 package org.allbinary.layer.LayerInterface_Package is
 
-   package GroupInterfaceCompositeInterface_Package renames org.allbinary.game.identification.GroupInterfaceCompositeInterface_Package;
-   package PaintableInterface_Package renames org.allbinary.graphics.paint.PaintableInterface_Package;
+   package GroupInterfaceCompositeInterface_Package renames Standard.org.allbinary.game.identification.GroupInterfaceCompositeInterface_Package;
+   package PaintableInterface_Package renames Standard.org.allbinary.graphics.paint.PaintableInterface_Package;
 
    type LayerInterface is interface and NamedInterface and PaintableInterface and GroupInterfaceCompositeInterface and PositionInterface;
    type LayerInterface_Access is access all LayerInterface'Class;

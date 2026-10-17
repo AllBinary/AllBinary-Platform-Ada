@@ -26,8 +26,8 @@ with admin.taghelpers.ModifyTableInterface_Package; use admin.taghelpers.ModifyT
 
 package admin.taghelpers.ModifyTable_Package is
 
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package TagStrings_Package renames tags.TagStrings_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package TagStrings_Package renames Standard.tags.TagStrings_Package;
 
    type ModifyTable is tagged;
    type ModifyTable_Access is access all ModifyTable'Class;

@@ -30,12 +30,12 @@ with org.allbinary.game.layer.special.CollidableDestroyableDamageableBehavior_Pa
 
 package org.allbinary.game.layer.special.CollidableCharacterBehavior_Package is
 
-   package CollidableInterfaceCompositeInterface_Package renames org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package;
-   package CollisionType_Package renames org.allbinary.game.collision.CollisionType_Package;
-   package CollisionTypeFactory_Package renames org.allbinary.game.collision.CollisionTypeFactory_Package;
-   package CollidableCompositeLayer_Package renames org.allbinary.game.layer.CollidableCompositeLayer_Package;
-   package PickedUpLayerInterface_Package renames org.allbinary.game.layer.pickup.PickedUpLayerInterface_Package;
-   package ForcedLogUtil_Package renames org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+   package CollidableInterfaceCompositeInterface_Package renames Standard.org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package;
+   package CollisionType_Package renames Standard.org.allbinary.game.collision.CollisionType_Package;
+   package CollisionTypeFactory_Package renames Standard.org.allbinary.game.collision.CollisionTypeFactory_Package;
+   package CollidableCompositeLayer_Package renames Standard.org.allbinary.game.layer.CollidableCompositeLayer_Package;
+   package PickedUpLayerInterface_Package renames Standard.org.allbinary.game.layer.pickup.PickedUpLayerInterface_Package;
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
 
    type CollidableCharacterBehavior is tagged;
    type CollidableCharacterBehavior_Access is access all CollidableCharacterBehavior'Class;

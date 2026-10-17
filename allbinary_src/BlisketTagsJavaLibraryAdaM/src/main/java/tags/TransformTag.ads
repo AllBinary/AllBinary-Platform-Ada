@@ -31,13 +31,13 @@ with tags.transform.info.TransformInfoTag_Package; use tags.transform.info.Trans
 
 package tags.TransformTag_Package is
 
-   package TagHelperFactoryInterface_Package renames admin.taghelpers.TagHelperFactoryInterface_Package;
-   package AbResponseHandler_Package renames org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package LicensingException_Package renames org.allbinary.logic.system.security.licensing.LicensingException_Package;
-   package ViewHelperFactory_Package renames taghelpers.ViewHelperFactory_Package;
-   package TransformInfoTag_Package renames tags.transform.info.TransformInfoTag_Package;
+   package TagHelperFactoryInterface_Package renames Standard.admin.taghelpers.TagHelperFactoryInterface_Package;
+   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package ViewHelperFactory_Package renames Standard.taghelpers.ViewHelperFactory_Package;
+   package TransformInfoTag_Package renames Standard.tags.transform.info.TransformInfoTag_Package;
 
    type TransformTag is tagged;
    type TransformTag_Access is access all TransformTag'Class;

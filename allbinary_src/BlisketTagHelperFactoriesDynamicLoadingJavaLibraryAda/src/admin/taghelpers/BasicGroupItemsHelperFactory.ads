@@ -27,7 +27,7 @@ with admin.taghelpers.TagHelperFactoryInterface_Package; use admin.taghelpers.Ta
 
 package admin.taghelpers.BasicGroupItemsHelperFactory_Package is
 
-   package LicensingException_Package renames org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
 
    type BasicGroupItemsHelperFactory is tagged;
    type BasicGroupItemsHelperFactory_Access is access all BasicGroupItemsHelperFactory'Class;

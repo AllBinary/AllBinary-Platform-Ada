@@ -26,8 +26,8 @@ with org.allbinary.graphics.j2me.Exception_Package; use org.allbinary.graphics.j
 
 package org.allbinary.graphics.j2me.GraphicsException_Package is
 
-   package GuiLog_Package renames org.allbinary.logic.communication.log.GuiLog_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
+   package GuiLog_Package renames Standard.org.allbinary.logic.communication.log.GuiLog_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type GraphicsException is tagged;
    type GraphicsException_Access is access all GraphicsException'Class;

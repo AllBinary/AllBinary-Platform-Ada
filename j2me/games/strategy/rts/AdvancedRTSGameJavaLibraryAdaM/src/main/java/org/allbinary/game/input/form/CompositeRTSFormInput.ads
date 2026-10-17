@@ -36,18 +36,18 @@ with org.allbinary.game.input.form.RTSFormInput_Package; use org.allbinary.game.
 
 package org.allbinary.game.input.form.CompositeRTSFormInput_Package is
 
-   package RTSPlayerLayerInterface_Package renames org.allbinary.game.layer.RTSPlayerLayerInterface_Package;
-   package ABCustomItem_Package renames org.allbinary.graphics.form.item.ABCustomItem_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package Group_Package renames org.allbinary.game.identification.Group_Package;
-   package AllBinaryGameLayerManager_Package renames org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
-   package CollidableDestroyableDamageableLayer_Package renames org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
-   package GPoint_Package renames org.allbinary.graphics.GPoint_Package;
-   package ScrollSelectionForm_Package renames org.allbinary.graphics.form.ScrollSelectionForm_Package;
-   package AllBinaryLayerManager_Package renames org.allbinary.layer.AllBinaryLayerManager_Package;
-   package BasicGeographicMap_Package renames org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
-   package GeographicMapCompositeInterface_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package;
-   package CommonLabels_Package renames org.allbinary.string_Id.CommonLabels_Package;
+   package RTSPlayerLayerInterface_Package renames Standard.org.allbinary.game.layer.RTSPlayerLayerInterface_Package;
+   package ABCustomItem_Package renames Standard.org.allbinary.graphics.form.item.ABCustomItem_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package Group_Package renames Standard.org.allbinary.game.identification.Group_Package;
+   package AllBinaryGameLayerManager_Package renames Standard.org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
+   package CollidableDestroyableDamageableLayer_Package renames Standard.org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package ScrollSelectionForm_Package renames Standard.org.allbinary.graphics.form.ScrollSelectionForm_Package;
+   package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
+   package BasicGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
+   package GeographicMapCompositeInterface_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
 
    type CompositeRTSFormInput is tagged;
    type CompositeRTSFormInput_Access is access all CompositeRTSFormInput'Class;

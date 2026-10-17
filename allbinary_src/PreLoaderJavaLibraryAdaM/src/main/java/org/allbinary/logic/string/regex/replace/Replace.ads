@@ -32,14 +32,14 @@ with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package
 
 package org.allbinary.logic.string_Id.regex.replace.Replace_Package is
 
-   package J2SEUtil_Package renames org.allbinary.J2SEUtil_Package;
-   package AppUrlGlobals_Package renames org.allbinary.globals.AppUrlGlobals_Package;
-   package URLGLOBALS_Package renames org.allbinary.globals.URLGLOBALS_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package LogConfigTypes_Package renames org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
+   package J2SEUtil_Package renames Standard.org.allbinary.J2SEUtil_Package;
+   package AppUrlGlobals_Package renames Standard.org.allbinary.globals.AppUrlGlobals_Package;
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 
    type Replace is tagged;
    type Replace_Access is access all Replace'Class;

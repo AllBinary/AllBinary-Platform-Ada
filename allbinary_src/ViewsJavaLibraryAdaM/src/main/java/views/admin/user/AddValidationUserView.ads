@@ -33,16 +33,16 @@ with views.business.context.HttpContextView_Package; use views.business.context.
 
 package views.admin.user.AddValidationUserView_Package is
 
-   package NewUserFactory_Package renames org.allbinary.business.user.NewUserFactory_Package;
-   package UserInterface_Package renames org.allbinary.business.user.UserInterface_Package;
-   package UserEntityFactory_Package renames org.allbinary.data.tables.user.UserEntityFactory_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package ValidationComponentInterface_Package renames org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package TransformInfoInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
-   package HttpContextView_Package renames views.business.context.HttpContextView_Package;
+   package NewUserFactory_Package renames Standard.org.allbinary.business.user.NewUserFactory_Package;
+   package UserInterface_Package renames Standard.org.allbinary.business.user.UserInterface_Package;
+   package UserEntityFactory_Package renames Standard.org.allbinary.data.tables.user.UserEntityFactory_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package ValidationComponentInterface_Package renames Standard.org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
+   package HttpContextView_Package renames Standard.views.business.context.HttpContextView_Package;
 
    type AddValidationUserView is tagged;
    type AddValidationUserView_Access is access all AddValidationUserView'Class;

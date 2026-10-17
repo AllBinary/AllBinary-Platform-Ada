@@ -32,13 +32,13 @@ with org.allbinary.logic.math.PrimitiveIntUtil_Package; use org.allbinary.logic.
 
 package org.allbinary.animation.image.sprite.ColorCompositeSpriteIndexedAnimationFactory_Package is
 
-   package Animation_Package renames org.allbinary.animation.Animation_Package;
-   package AnimationBehaviorFactory_Package renames org.allbinary.animation.AnimationBehaviorFactory_Package;
-   package ProceduralAnimationInterfaceFactoryInterface_Package renames org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package;
-   package BaseImageAnimationFactory_Package renames org.allbinary.animation.image.BaseImageAnimationFactory_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package AnimationFactorySpriteScaleUtil_Package renames org.allbinary.image.sprite.AnimationFactorySpriteScaleUtil_Package;
-   package PrimitiveIntUtil_Package renames org.allbinary.logic.math.PrimitiveIntUtil_Package;
+   package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
+   package AnimationBehaviorFactory_Package renames Standard.org.allbinary.animation.AnimationBehaviorFactory_Package;
+   package ProceduralAnimationInterfaceFactoryInterface_Package renames Standard.org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package;
+   package BaseImageAnimationFactory_Package renames Standard.org.allbinary.animation.image.BaseImageAnimationFactory_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package AnimationFactorySpriteScaleUtil_Package renames Standard.org.allbinary.image.sprite.AnimationFactorySpriteScaleUtil_Package;
+   package PrimitiveIntUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveIntUtil_Package;
 
    type ColorCompositeSpriteIndexedAnimationFactory is tagged;
    type ColorCompositeSpriteIndexedAnimationFactory_Access is access all ColorCompositeSpriteIndexedAnimationFactory'Class;

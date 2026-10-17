@@ -29,10 +29,10 @@ with org.allbinary.logic.visual.transform.BasicTransformer_Package; use org.allb
 
 package org.allbinary.logic.visual.transform.StoreTransformer_Package is
 
-   package BasicUriResolver_Package renames org.allbinary.data.tree.dom.BasicUriResolver_Package;
-   package StoreUriResolver_Package renames org.allbinary.data.tree.dom.StoreUriResolver_Package;
-   package AbeClientInformationInterface_Package renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-   package TransformInfoInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package BasicUriResolver_Package renames Standard.org.allbinary.data.tree.dom.BasicUriResolver_Package;
+   package StoreUriResolver_Package renames Standard.org.allbinary.data.tree.dom.StoreUriResolver_Package;
+   package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 
    type StoreTransformer is tagged;
    type StoreTransformer_Access is access all StoreTransformer'Class;

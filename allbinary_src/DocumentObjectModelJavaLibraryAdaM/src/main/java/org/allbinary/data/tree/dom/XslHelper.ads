@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.ByteArrayOutputStream_Package; use java.io.ByteArrayOutputStream_Package;
+with java.io.ByteArrayOutputStream_Package; use java.io.ByteArrayOutputStream_Package;
 --  with java.io.File_Package; use java.io.File_Package;
 --  with java.io.OutputStream_Package; use java.io.OutputStream_Package;
 --  with java.io.StringBufferInputStream_Package; use java.io.StringBufferInputStream_Package;
@@ -34,8 +34,9 @@ with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 
 package org.allbinary.data.tree.dom.XslHelper_Package is
 
-   package XmlDocumentHelper_Package renames org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
+   package ByteArrayOutputStream_Package renames Standard.java.io.ByteArrayOutputStream_Package;
+   package XmlDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
 
    type XslHelper is tagged;
    type XslHelper_Access is access all XslHelper'Class;

@@ -27,7 +27,7 @@ with org.allbinary.logic.visual.transform.info.CompositeTransformInfoInterface_P
 
 package org.allbinary.logic.visual.transform.BasicTransformerInterface_Package is
 
-   package CompositeTransformInfoInterface_Package renames org.allbinary.logic.visual.transform.info.CompositeTransformInfoInterface_Package;
+   package CompositeTransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.CompositeTransformInfoInterface_Package;
 
    type BasicTransformerInterface is interface and CompositeTransformInfoInterface;
    type BasicTransformerInterface_Access is access all BasicTransformerInterface'Class;

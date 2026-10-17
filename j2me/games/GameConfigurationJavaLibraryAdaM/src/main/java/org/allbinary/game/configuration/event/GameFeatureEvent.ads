@@ -24,7 +24,7 @@ with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbin
 
 package org.allbinary.game.configuration.event.GameFeatureEvent_Package is
 
-   package AllBinaryEventObject_Package renames org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+   package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 
    type GameFeatureEvent is tagged;
    type GameFeatureEvent_Access is access all GameFeatureEvent'Class;

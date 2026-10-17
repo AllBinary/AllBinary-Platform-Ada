@@ -36,18 +36,18 @@ with org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessorInterfac
 
 package org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessor_Package is
 
-   package GameInfoData_Package renames org.allbinary.game.GameInfoData_Package;
-   package GameConfigurationCentral_Package renames org.allbinary.game.configuration.GameConfigurationCentral_Package;
-   package HighScore_Package renames org.allbinary.game.score.HighScore_Package;
-   package DisplayInfoSingleton_Package renames org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package XmlRpcAbeClient_Package renames org.allbinary.logic.communication.xmlrpc.XmlRpcAbeClient_Package;
-   package BooleanFactory_Package renames org.allbinary.logic.java.bool.BooleanFactory_Package;
-   package NoCrypt_Package renames org.allbinary.logic.system.security.crypt.jcehelper.NoCrypt_Package;
-   package AbeClientInformationInterface_Package renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package ABHashtable_Package renames org.allbinary.util.ABHashtable_Package;
-   package HashtableUtil_Package renames org.allbinary.util.HashtableUtil_Package;
+   package GameInfoData_Package renames Standard.org.allbinary.game.GameInfoData_Package;
+   package GameConfigurationCentral_Package renames Standard.org.allbinary.game.configuration.GameConfigurationCentral_Package;
+   package HighScore_Package renames Standard.org.allbinary.game.score.HighScore_Package;
+   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package XmlRpcAbeClient_Package renames Standard.org.allbinary.logic.communication.xmlrpc.XmlRpcAbeClient_Package;
+   package BooleanFactory_Package renames Standard.org.allbinary.logic.java.bool.BooleanFactory_Package;
+   package NoCrypt_Package renames Standard.org.allbinary.logic.system.security.crypt.jcehelper.NoCrypt_Package;
+   package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
+   package HashtableUtil_Package renames Standard.org.allbinary.util.HashtableUtil_Package;
 
    type RemoteHighScoresSubmissionProcessor is tagged;
    type RemoteHighScoresSubmissionProcessor_Access is access all RemoteHighScoresSubmissionProcessor'Class;

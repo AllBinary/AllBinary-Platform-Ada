@@ -19,9 +19,9 @@ with org.allbinary.device.GraphicsInterface_Package; use org.allbinary.device.Gr
 
 package org.allbinary.device.OpenGLESGraphics_Package is
 
-   package FontDebugBase_Package renames org.allbinary.graphics.font.FontDebugBase_Package;
-   package OpenGLSurfaceChangedInterface_Package renames org.allbinary.image.opengles.OpenGLSurfaceChangedInterface_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package FontDebugBase_Package renames Standard.org.allbinary.graphics.font.FontDebugBase_Package;
+   package OpenGLSurfaceChangedInterface_Package renames Standard.org.allbinary.image.opengles.OpenGLSurfaceChangedInterface_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type OpenGLESGraphics is tagged;
    type OpenGLESGraphics_Access is access all OpenGLESGraphics'Class;

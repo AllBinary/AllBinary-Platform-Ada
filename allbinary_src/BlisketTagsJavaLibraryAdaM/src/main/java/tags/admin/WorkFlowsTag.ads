@@ -26,8 +26,8 @@ with tags.StoreValidationTransformTag_Package; use tags.StoreValidationTransform
 
 package tags.admin.WorkFlowsTag_Package is
 
-   package AbResponseHandler_Package renames org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
-   package StoreValidationTransformTag_Package renames tags.StoreValidationTransformTag_Package;
+   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+   package StoreValidationTransformTag_Package renames Standard.tags.StoreValidationTransformTag_Package;
 
    type WorkFlowsTag is tagged;
    type WorkFlowsTag_Access is access all WorkFlowsTag'Class;

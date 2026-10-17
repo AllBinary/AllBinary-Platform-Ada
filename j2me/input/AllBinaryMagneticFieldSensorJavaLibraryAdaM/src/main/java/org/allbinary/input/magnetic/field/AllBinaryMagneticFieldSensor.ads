@@ -24,7 +24,7 @@ with org.allbinary.input.AllBinarySensor_Package; use org.allbinary.input.AllBin
 
 package org.allbinary.input.magnetic.field.AllBinaryMagneticFieldSensor_Package is
 
-   package AllBinarySensor_Package renames org.allbinary.input.AllBinarySensor_Package;
+   package AllBinarySensor_Package renames Standard.org.allbinary.input.AllBinarySensor_Package;
 
    type AllBinaryMagneticFieldSensor is tagged;
    type AllBinaryMagneticFieldSensor_Access is access all AllBinaryMagneticFieldSensor'Class;

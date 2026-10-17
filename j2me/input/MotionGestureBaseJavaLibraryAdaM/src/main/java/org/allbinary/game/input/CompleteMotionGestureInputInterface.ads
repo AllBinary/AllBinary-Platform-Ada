@@ -24,7 +24,7 @@ with org.allbinary.layer.NamedInterface_Package; use org.allbinary.layer.NamedIn
 
 package org.allbinary.game.input.CompleteMotionGestureInputInterface_Package is
 
-   package NamedInterface_Package renames org.allbinary.layer.NamedInterface_Package;
+   package NamedInterface_Package renames Standard.org.allbinary.layer.NamedInterface_Package;
 
    type CompleteMotionGestureInputInterface is interface and NamedInterface;
    type CompleteMotionGestureInputInterface_Access is access all CompleteMotionGestureInputInterface'Class;

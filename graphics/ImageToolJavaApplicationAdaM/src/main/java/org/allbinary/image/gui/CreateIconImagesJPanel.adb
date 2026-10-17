@@ -116,8 +116,12 @@ package body org.allbinary.image.gui.CreateIconImagesJPanel_Package is
 --                      end loop;
 --                      This.getParent.repaint;
 --                  exception
---                      when e : others =>
+--                      when Java_Occurrence : others =>
+--                          declare
+--                              e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+--                          begin
 --                      logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.RUN, e);
+--                          end;
 --                  end;
 --     end run;
 .start;

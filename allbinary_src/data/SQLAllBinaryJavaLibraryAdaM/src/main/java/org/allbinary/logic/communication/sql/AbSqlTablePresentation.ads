@@ -25,7 +25,7 @@ with org.allbinary.logic.communication.sql.AbSqlBasic_Package; use org.allbinary
 
 package org.allbinary.logic.communication.sql.AbSqlTablePresentation_Package is
 
-   package DbConnectionInfo_Package renames org.allbinary.business.init.db.DbConnectionInfo_Package;
+   package DbConnectionInfo_Package renames Standard.org.allbinary.business.init.db.DbConnectionInfo_Package;
 
    type AbSqlTablePresentation is tagged;
    type AbSqlTablePresentation_Access is access all AbSqlTablePresentation'Class;

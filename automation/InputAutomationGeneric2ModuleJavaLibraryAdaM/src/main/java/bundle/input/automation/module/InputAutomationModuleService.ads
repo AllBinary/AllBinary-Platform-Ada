@@ -25,7 +25,7 @@ with bundle.input.automation.module.InputAutomationModuleServiceInterface_Packag
 
 package bundle.input.automation.module.InputAutomationModuleService_Package is
 
-   package InputAutomationModuleFactoryInterface_Package renames org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package;
+   package InputAutomationModuleFactoryInterface_Package renames Standard.org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package;
 
    type InputAutomationModuleService is tagged;
    type InputAutomationModuleService_Access is access all InputAutomationModuleService'Class;

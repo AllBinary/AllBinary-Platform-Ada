@@ -27,9 +27,9 @@ with org.allbinary.media.graphics.geography.pathfinding.PathGeneratorInterface_P
 
 package org.allbinary.media.graphics.geography.pathfinding.PathGenerator_Package is
 
-   package BasicGeographicMap_Package renames org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
-   package GeographicMapCellHistory_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package BasicGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
+   package GeographicMapCellHistory_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type PathGenerator is tagged;
    type PathGenerator_Access is access all PathGenerator'Class;

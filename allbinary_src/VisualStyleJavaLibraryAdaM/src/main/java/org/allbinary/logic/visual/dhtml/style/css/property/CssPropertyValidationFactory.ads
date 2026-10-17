@@ -26,9 +26,9 @@ with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 
 package org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyValidationFactory_Package is
 
-   package ValidationInterface_Package renames org.allbinary.logic.control.validate.ValidationInterface_Package;
-   package FontFamilyValidation_Package renames org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyValidation_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
+   package ValidationInterface_Package renames Standard.org.allbinary.logic.control.validate.ValidationInterface_Package;
+   package FontFamilyValidation_Package renames Standard.org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyValidation_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type CssPropertyValidationFactory is tagged;
    type CssPropertyValidationFactory_Access is access all CssPropertyValidationFactory'Class;

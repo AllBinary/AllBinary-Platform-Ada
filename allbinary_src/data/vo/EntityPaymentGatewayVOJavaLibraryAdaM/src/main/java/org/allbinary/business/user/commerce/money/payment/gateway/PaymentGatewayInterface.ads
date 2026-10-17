@@ -27,9 +27,9 @@ with org.allbinary.data.tables.TableMappingInterface_Package; use org.allbinary.
 
 package org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayInterface_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package TableMappingInterface_Package renames org.allbinary.data.tables.TableMappingInterface_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package TableMappingInterface_Package renames Standard.org.allbinary.data.tables.TableMappingInterface_Package;
 
    type PaymentGatewayInterface is interface and TableMappingInterface;
    type PaymentGatewayInterface_Access is access all PaymentGatewayInterface'Class;

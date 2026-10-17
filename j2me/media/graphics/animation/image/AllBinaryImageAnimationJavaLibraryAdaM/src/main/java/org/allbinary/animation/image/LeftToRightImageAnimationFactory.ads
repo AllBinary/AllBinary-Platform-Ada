@@ -27,8 +27,8 @@ with org.allbinary.animation.image.BaseImageAnimationFactory_Package; use org.al
 
 package org.allbinary.animation.image.LeftToRightImageAnimationFactory_Package is
 
-   package Animation_Package renames org.allbinary.animation.Animation_Package;
-   package AnimationBehaviorFactory_Package renames org.allbinary.animation.AnimationBehaviorFactory_Package;
+   package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
+   package AnimationBehaviorFactory_Package renames Standard.org.allbinary.animation.AnimationBehaviorFactory_Package;
 
    type LeftToRightImageAnimationFactory is tagged;
    type LeftToRightImageAnimationFactory_Access is access all LeftToRightImageAnimationFactory'Class;

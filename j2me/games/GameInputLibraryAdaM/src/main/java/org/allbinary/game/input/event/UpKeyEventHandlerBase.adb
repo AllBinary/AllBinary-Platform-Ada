@@ -73,8 +73,12 @@ package body org.allbinary.game.input.event.UpKeyEventHandlerBase_Package is
                 playerGameInput := PlayerGameInput_Access (This.list.objectArray (index));
                 playerGameInput.onUpKeyEvent (eventObject);
             exception
-                when e : others =>
+                when Java_Occurrence : others =>
+                    declare
+                        e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                    begin
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, EventStrings_Package.getInstance.FIRE_EVENT, e);
+                    end;
             end;
         end loop;
         index := 0;
@@ -84,8 +88,12 @@ package body org.allbinary.game.input.event.UpKeyEventHandlerBase_Package is
                 eventListenerInterface := EventListenerInterface_Access (This.eventListenerInterfaceList.get (index));
                 This.processForInteger (eventObject, eventListenerInterface);
             exception
-                when e : others =>
+                when Java_Occurrence : others =>
+                    declare
+                        e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                    begin
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, EventStrings_Package.getInstance.FIRE_EVENT, e);
+                    end;
             end;
             index := index + 1;
         end loop;
@@ -114,8 +122,12 @@ package body org.allbinary.game.input.event.UpKeyEventHandlerBase_Package is
                 stringBuffer.append (UpKeyEventHandlerBase_Package.LISTENER_LABEL);
                 stringBuffer.append (eventListenerInterface.toString);
             exception
-                when e : others =>
+                when Java_Occurrence : others =>
+                    declare
+                        e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                    begin
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.TOSTRING, e);
+                    end;
             end;
         end loop;
         return stringBuffer.toString;

@@ -17,12 +17,12 @@ with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.C
 
 package org.allbinary.game.midlet.GameMidletStateFactory_Package is
 
-   package GameState_Package renames org.allbinary.game.state.GameState_Package;
-   package GameStateFactory_Package renames org.allbinary.game.state.GameStateFactory_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package CommonLabels_Package renames org.allbinary.string_Id.CommonLabels_Package;
+   package GameState_Package renames Standard.org.allbinary.game.state.GameState_Package;
+   package GameStateFactory_Package renames Standard.org.allbinary.game.state.GameStateFactory_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
 
    type GameMidletStateFactory is tagged;
    type GameMidletStateFactory_Access is access all GameMidletStateFactory'Class;

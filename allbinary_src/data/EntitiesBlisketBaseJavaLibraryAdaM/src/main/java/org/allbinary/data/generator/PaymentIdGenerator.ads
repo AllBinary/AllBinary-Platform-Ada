@@ -27,9 +27,9 @@ with org.allbinary.data.generator.UniqueIdGenerator_Package; use org.allbinary.d
 
 package org.allbinary.data.generator.PaymentIdGenerator_Package is
 
-   package PATH_GLOBALS_Package renames org.allbinary.globals.PATH_GLOBALS_Package;
-   package URLGLOBALS_Package renames org.allbinary.globals.URLGLOBALS_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
+   package PATH_GLOBALS_Package renames Standard.org.allbinary.globals.PATH_GLOBALS_Package;
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
 
    type PaymentIdGenerator is tagged;
    type PaymentIdGenerator_Access is access all PaymentIdGenerator'Class;

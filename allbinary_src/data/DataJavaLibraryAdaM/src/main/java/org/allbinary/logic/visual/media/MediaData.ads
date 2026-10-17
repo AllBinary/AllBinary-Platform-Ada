@@ -25,7 +25,7 @@ with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Packag
 
 package org.allbinary.logic.visual.media.MediaData_Package is
 
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
 
    type MediaData is tagged;
    type MediaData_Access is access all MediaData'Class;

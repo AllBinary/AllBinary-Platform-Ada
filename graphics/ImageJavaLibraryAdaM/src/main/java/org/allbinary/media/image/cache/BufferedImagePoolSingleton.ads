@@ -29,12 +29,12 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.media.image.cache.BufferedImagePoolSingleton_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CachePolicyFactory_Package renames org.allbinary.logic.util.cache.CachePolicyFactory_Package;
-   package PoolInterface_Package renames org.allbinary.logic.util.cache.PoolInterface_Package;
-   package PoolInterfaceFactory_Package renames org.allbinary.logic.util.cache.PoolInterfaceFactory_Package;
-   package PoolTypeFactory_Package renames org.allbinary.logic.util.cache.PoolTypeFactory_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CachePolicyFactory_Package renames Standard.org.allbinary.logic.util.cache.CachePolicyFactory_Package;
+   package PoolInterface_Package renames Standard.org.allbinary.logic.util.cache.PoolInterface_Package;
+   package PoolInterfaceFactory_Package renames Standard.org.allbinary.logic.util.cache.PoolInterfaceFactory_Package;
+   package PoolTypeFactory_Package renames Standard.org.allbinary.logic.util.cache.PoolTypeFactory_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type BufferedImagePoolSingleton is tagged;
    type BufferedImagePoolSingleton_Access is access all BufferedImagePoolSingleton'Class;

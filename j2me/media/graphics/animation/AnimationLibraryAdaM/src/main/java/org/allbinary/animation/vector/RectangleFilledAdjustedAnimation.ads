@@ -27,8 +27,8 @@ with org.allbinary.animation.vector.RectangleFilledAnimation_Package; use org.al
 
 package org.allbinary.animation.vector.RectangleFilledAdjustedAnimation_Package is
 
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package ColorCompositeInterface_Package renames org.allbinary.graphics.color.ColorCompositeInterface_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package ColorCompositeInterface_Package renames Standard.org.allbinary.graphics.color.ColorCompositeInterface_Package;
 
    type RectangleFilledAdjustedAnimation is tagged;
    type RectangleFilledAdjustedAnimation_Access is access all RectangleFilledAdjustedAnimation'Class;

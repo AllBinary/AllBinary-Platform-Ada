@@ -26,8 +26,8 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 
 package org.allbinary.emulator.device.TrueTypeFontUtilBase_Package is
 
-   package AvianUtil_Package renames org.allbinary.AvianUtil_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
+   package AvianUtil_Package renames Standard.org.allbinary.AvianUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type TrueTypeFontUtilBase is tagged;
    type TrueTypeFontUtilBase_Access is access all TrueTypeFontUtilBase'Class;

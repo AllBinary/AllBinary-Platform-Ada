@@ -28,8 +28,8 @@ with org.allbinary.input.automation.module.game.MagicGameObjectInterface_Package
 
 package org.allbinary.input.automation.module.game.MagicGameObject_Package is
 
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
 
    type MagicGameObject is tagged;
    type MagicGameObject_Access is access all MagicGameObject'Class;

@@ -16,8 +16,8 @@ with org.allbinary.logic.io.file.AbFileNativeUtil_Package; use org.allbinary.log
 
 package org.allbinary.logic.visual.media.ImageIOUtil_Package is
 
-   package AbFile_Package renames org.allbinary.logic.io.file.AbFile_Package;
-   package AbFileNativeUtil_Package renames org.allbinary.logic.io.file.AbFileNativeUtil_Package;
+   package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
+   package AbFileNativeUtil_Package renames Standard.org.allbinary.logic.io.file.AbFileNativeUtil_Package;
 
    type ImageIOUtil is tagged;
    type ImageIOUtil_Access is access all ImageIOUtil'Class;

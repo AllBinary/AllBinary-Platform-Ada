@@ -65,9 +65,13 @@ package body org.allbinary.game.graphics.hud.BasicHud_1_Package is
             This.x := This.hudGraphicsPosition.getPoint.getX;
             This.setY (This.hudGraphicsPosition.getPoint.getY);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.canvasStrings.ON_DISPLAY_CHANGE_EVENT, e);
+                end;
         end;
         This.myFontProcessor := MyFontProcessor_Package.getInstance;
    end updateMeasurement;

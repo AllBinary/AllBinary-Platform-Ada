@@ -28,10 +28,10 @@ with org.allbinary.logic.util.cache.IndexedBasicArrayListCache_Package; use org.
 
 package org.allbinary.logic.util.cache.KeylessBasicArrayListCache_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListUtil_Package renames org.allbinary.util.BasicArrayListUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
 
    type KeylessBasicArrayListCache is tagged;
    type KeylessBasicArrayListCache_Access is access all KeylessBasicArrayListCache'Class;

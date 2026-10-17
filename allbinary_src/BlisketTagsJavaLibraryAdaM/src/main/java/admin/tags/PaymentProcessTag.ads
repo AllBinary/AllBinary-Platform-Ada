@@ -30,11 +30,11 @@ with tags.StoreValidationTransformTag_Package; use tags.StoreValidationTransform
 
 package admin.tags.PaymentProcessTag_Package is
 
-   package PaymentProcessHelperFactory_Package renames admin.taghelpers.PaymentProcessHelperFactory_Package;
-   package AbResponseHandler_Package renames org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package LicensingException_Package renames org.allbinary.logic.system.security.licensing.LicensingException_Package;
-   package StoreValidationTransformTag_Package renames tags.StoreValidationTransformTag_Package;
+   package PaymentProcessHelperFactory_Package renames Standard.admin.taghelpers.PaymentProcessHelperFactory_Package;
+   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package StoreValidationTransformTag_Package renames Standard.tags.StoreValidationTransformTag_Package;
 
    type PaymentProcessTag is tagged;
    type PaymentProcessTag_Access is access all PaymentProcessTag'Class;

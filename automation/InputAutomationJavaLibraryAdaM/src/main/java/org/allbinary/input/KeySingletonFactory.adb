@@ -39,8 +39,12 @@ package body org.allbinary.input.KeySingletonFactory_Package is
                 KeySingletonFactory_Package.keyStringHashtable.put (keyAsString, keyArray (index));
             end loop;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             logUtil.put (commonStrings.EXCEPTION_Id, To_Unbounded_String ("KeySingleFactory"), STATIC_BLOCK, e);
+                end;
         end;
    end Initializer;
 

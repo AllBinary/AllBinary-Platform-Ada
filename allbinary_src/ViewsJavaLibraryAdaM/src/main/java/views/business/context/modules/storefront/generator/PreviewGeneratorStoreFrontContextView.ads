@@ -30,12 +30,12 @@ with views.business.context.modules.storefront.generator.GeneratorStoreFrontCont
 
 package views.business.context.modules.storefront.generator.PreviewGeneratorStoreFrontContextView_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package TransformInfoData_Package renames org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
-   package TransformInfoHttpInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package;
-   package TransformInfoInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-   package TransformInfosData_Package renames org.allbinary.logic.visual.transform.info.TransformInfosData_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package TransformInfoData_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
+   package TransformInfoHttpInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package;
+   package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package TransformInfosData_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfosData_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
 
    type PreviewGeneratorStoreFrontContextView is tagged;
    type PreviewGeneratorStoreFrontContextView_Access is access all PreviewGeneratorStoreFrontContextView'Class;

@@ -26,8 +26,8 @@ with org.allbinary.layer.LayerManager_Package; use org.allbinary.layer.LayerMana
 
 package org.allbinary.layer.AllBinaryLayerManager_Package is
 
-   package LayerManagerEvent_Package renames org.allbinary.layer.event.LayerManagerEvent_Package;
-   package LayerManagerEventHandler_Package renames org.allbinary.layer.event.LayerManagerEventHandler_Package;
+   package LayerManagerEvent_Package renames Standard.org.allbinary.layer.event.LayerManagerEvent_Package;
+   package LayerManagerEventHandler_Package renames Standard.org.allbinary.layer.event.LayerManagerEventHandler_Package;
 
    type AllBinaryLayerManager is tagged;
    type AllBinaryLayerManager_Access is access all AllBinaryLayerManager'Class;

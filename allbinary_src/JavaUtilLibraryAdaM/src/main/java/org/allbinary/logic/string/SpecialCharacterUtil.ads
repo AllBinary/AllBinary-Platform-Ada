@@ -29,11 +29,11 @@ with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.Com
 
 package org.allbinary.logic.string_Id.SpecialCharacterUtil_Package is
 
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package AbPathData_Package renames org.allbinary.logic.io.path.AbPathData_Package;
-   package MathData_Package renames org.allbinary.logic.math.MathData_Package;
-   package CommonPhoneStrings_Package renames org.allbinary.string_Id.CommonPhoneStrings_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
+   package MathData_Package renames Standard.org.allbinary.logic.math.MathData_Package;
+   package CommonPhoneStrings_Package renames Standard.org.allbinary.string_Id.CommonPhoneStrings_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
 
    type SpecialCharacterUtil is tagged;
    type SpecialCharacterUtil_Access is access all SpecialCharacterUtil'Class;

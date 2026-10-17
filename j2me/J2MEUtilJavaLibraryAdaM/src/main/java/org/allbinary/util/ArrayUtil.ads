@@ -17,12 +17,12 @@ with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_
 
 package org.allbinary.util.ArrayUtil_Package is
 
-   package JsType_Package renames jsinterop.annotations.JsType_Package;
-   package MathUtil_Package renames org.allbinary.logic.math.MathUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
-   package JsMethod_Package renames jsinterop.annotations.JsMethod_Package;
+   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
+   package MathUtil_Package renames Standard.org.allbinary.logic.math.MathUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package JsMethod_Package renames Standard.jsinterop.annotations.JsMethod_Package;
 
    type ArrayUtil is tagged;
    type ArrayUtil_Access is access all ArrayUtil'Class;

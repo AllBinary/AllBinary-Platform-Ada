@@ -28,11 +28,11 @@ with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Packag
 
 package org.allbinary.game.layer.geographic.map.LayerCoveringCellPositionsUtil_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package BasicGeographicMap_Package renames org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
-   package CellPositionsUtil_Package renames org.allbinary.media.graphics.geography.map.CellPositionsUtil_Package;
-   package GeographicMapCellPosition_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package BasicGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
+   package CellPositionsUtil_Package renames Standard.org.allbinary.media.graphics.geography.map.CellPositionsUtil_Package;
+   package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
 
    type LayerCoveringCellPositionsUtil is tagged;
    type LayerCoveringCellPositionsUtil_Access is access all LayerCoveringCellPositionsUtil'Class;

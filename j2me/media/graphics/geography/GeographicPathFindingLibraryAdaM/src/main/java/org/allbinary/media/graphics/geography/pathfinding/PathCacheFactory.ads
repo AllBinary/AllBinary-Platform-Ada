@@ -27,10 +27,10 @@ with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.Basic
 
 package org.allbinary.media.graphics.geography.pathfinding.PathCacheFactory_Package is
 
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package ABHashtable_Package renames org.allbinary.util.ABHashtable_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListUtil_Package renames org.allbinary.util.BasicArrayListUtil_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
 
    type PathCacheFactory is tagged;
    type PathCacheFactory_Access is access all PathCacheFactory'Class;

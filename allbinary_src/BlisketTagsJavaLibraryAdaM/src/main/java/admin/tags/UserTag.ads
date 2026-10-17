@@ -29,10 +29,10 @@ with admin.tags.TableTag_Package; use admin.tags.TableTag_Package;
 
 package admin.tags.UserTag_Package is
 
-   package UserHelperFactory_Package renames admin.taghelpers.UserHelperFactory_Package;
-   package EntryData_Package renames org.allbinary.business.entry_Id.EntryData_Package;
-   package UserRoleData_Package renames org.allbinary.business.user.role.UserRoleData_Package;
-   package AbResponseHandler_Package renames org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+   package UserHelperFactory_Package renames Standard.admin.taghelpers.UserHelperFactory_Package;
+   package EntryData_Package renames Standard.org.allbinary.business.entry_Id.EntryData_Package;
+   package UserRoleData_Package renames Standard.org.allbinary.business.user.role.UserRoleData_Package;
+   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
 
    type UserTag is tagged;
    type UserTag_Access is access all UserTag'Class;

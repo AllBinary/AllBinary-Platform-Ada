@@ -29,10 +29,10 @@ with org.allbinary.layer.LayerInterfaceFactoryInterface_Package; use org.allbina
 
 package org.allbinary.game.layer.item.LayerInterfaceFactoryImageItem_Package is
 
-   package ABCustomImageItem_Package renames org.allbinary.graphics.form.item.ABCustomImageItem_Package;
-   package Animation_Package renames org.allbinary.animation.Animation_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package LayerInterfaceFactoryInterface_Package renames org.allbinary.layer.LayerInterfaceFactoryInterface_Package;
+   package ABCustomImageItem_Package renames Standard.org.allbinary.graphics.form.item.ABCustomImageItem_Package;
+   package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package LayerInterfaceFactoryInterface_Package renames Standard.org.allbinary.layer.LayerInterfaceFactoryInterface_Package;
 
    type LayerInterfaceFactoryImageItem is tagged;
    type LayerInterfaceFactoryImageItem_Access is access all LayerInterfaceFactoryImageItem'Class;

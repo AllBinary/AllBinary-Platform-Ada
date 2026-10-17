@@ -27,10 +27,10 @@ with org.allbinary.input.accelerometer.AccelerometerSensorFactory_Package; use o
 
 package org.allbinary.input.gyro.SensorGameUpdateProcessor_Package is
 
-   package NoCompleteMotionGestureInputEventListener_Package renames org.allbinary.game.input.motion.action.NoCompleteMotionGestureInputEventListener_Package;
-   package AllBinarySensor_Package renames org.allbinary.input.AllBinarySensor_Package;
-   package NoAllBinarySensor_Package renames org.allbinary.input.NoAllBinarySensor_Package;
-   package AccelerometerSensorFactory_Package renames org.allbinary.input.accelerometer.AccelerometerSensorFactory_Package;
+   package NoCompleteMotionGestureInputEventListener_Package renames Standard.org.allbinary.game.input.motion.action.NoCompleteMotionGestureInputEventListener_Package;
+   package AllBinarySensor_Package renames Standard.org.allbinary.input.AllBinarySensor_Package;
+   package NoAllBinarySensor_Package renames Standard.org.allbinary.input.NoAllBinarySensor_Package;
+   package AccelerometerSensorFactory_Package renames Standard.org.allbinary.input.accelerometer.AccelerometerSensorFactory_Package;
 
    type SensorGameUpdateProcessor is tagged;
    type SensorGameUpdateProcessor_Access is access all SensorGameUpdateProcessor'Class;

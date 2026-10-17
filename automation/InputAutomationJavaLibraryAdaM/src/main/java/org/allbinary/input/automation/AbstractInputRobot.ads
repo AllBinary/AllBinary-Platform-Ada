@@ -25,7 +25,7 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 
 package org.allbinary.input.automation.AbstractInputRobot_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type AbstractInputRobot is tagged;
    type AbstractInputRobot_Access is access all AbstractInputRobot'Class;

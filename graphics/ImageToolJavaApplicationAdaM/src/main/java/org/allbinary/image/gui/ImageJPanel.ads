@@ -28,9 +28,9 @@ with org.allbinary.image.gui.JPanel_Package; use org.allbinary.image.gui.JPanel_
 
 package org.allbinary.image.gui.ImageJPanel_Package is
 
-   package CanvasStrings_Package renames org.allbinary.graphics.displayable.CanvasStrings_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package CanvasStrings_Package renames Standard.org.allbinary.graphics.displayable.CanvasStrings_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type ImageJPanel is tagged;
    type ImageJPanel_Access is access all ImageJPanel'Class;

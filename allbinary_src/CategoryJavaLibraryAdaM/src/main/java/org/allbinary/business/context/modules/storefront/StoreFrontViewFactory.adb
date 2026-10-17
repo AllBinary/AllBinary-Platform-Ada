@@ -45,12 +45,16 @@ package body org.allbinary.business.context.modules.storefront.StoreFrontViewFac
             storeFronts := StoreFrontsEntityFactory_Package.getInstance.getStoreFrontsEntityInstance;
             return DomNodeInterface_Access (StoreFrontView_Package.Create (storeFronts.getStoreFrontInterface (storeName)));
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.FACTORYERROR) then
                 logUtil.put (commonStrings.EXCEPTION_Id, To_Unbounded_String ("StoreFrontFactory"), commonStrings.GET_INSTANCE, e);
             end if;
             return null;
+                end;
         end;
    end getInstance;
 

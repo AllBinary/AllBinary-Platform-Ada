@@ -33,16 +33,16 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 
 package org.allbinary.business.installer.DeleteCloud_Package is
 
-   package URLGLOBALS_Package renames org.allbinary.globals.URLGLOBALS_Package;
-   package FileUploadData_Package renames org.allbinary.logic.communication.http.file.upload.FileUploadData_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package AbIOSystem_Package renames org.allbinary.logic.io.AbIOSystem_Package;
-   package AbFile_Package renames org.allbinary.logic.io.file.AbFile_Package;
-   package Directory_Package renames org.allbinary.logic.io.file.directory.Directory_Package;
-   package AbPath_Package renames org.allbinary.logic.io.path.AbPath_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
+   package FileUploadData_Package renames Standard.org.allbinary.logic.communication.http.file.upload.FileUploadData_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package AbIOSystem_Package renames Standard.org.allbinary.logic.io.AbIOSystem_Package;
+   package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
+   package Directory_Package renames Standard.org.allbinary.logic.io.file.directory.Directory_Package;
+   package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type DeleteCloud is tagged;
    type DeleteCloud_Access is access all DeleteCloud'Class;

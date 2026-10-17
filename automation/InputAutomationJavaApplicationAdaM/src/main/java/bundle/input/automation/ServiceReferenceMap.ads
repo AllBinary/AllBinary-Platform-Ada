@@ -28,8 +28,8 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 
 package bundle.input.automation.ServiceReferenceMap_Package is
 
-   package ServiceReference_Package renames org.osgi.framework.ServiceReference_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
+   package ServiceReference_Package renames Standard.org.osgi.framework.ServiceReference_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
 
    type ServiceReferenceMap is tagged;
    type ServiceReferenceMap_Access is access all ServiceReferenceMap'Class;

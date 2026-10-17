@@ -30,13 +30,13 @@ with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path
 
 package org.allbinary.business.category.CategoryInterface_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package CategoryHierarchyInterface_Package renames org.allbinary.business.category.hierarchy.CategoryHierarchyInterface_Package;
-   package CategoryPropertiesInterface_Package renames org.allbinary.business.category.properties.CategoryPropertiesInterface_Package;
-   package TableMappingInterface_Package renames org.allbinary.data.tables.TableMappingInterface_Package;
-   package ValidationInterface_Package renames org.allbinary.logic.control.validate.ValidationInterface_Package;
-   package AbPath_Package renames org.allbinary.logic.io.path.AbPath_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package CategoryHierarchyInterface_Package renames Standard.org.allbinary.business.category.hierarchy.CategoryHierarchyInterface_Package;
+   package CategoryPropertiesInterface_Package renames Standard.org.allbinary.business.category.properties.CategoryPropertiesInterface_Package;
+   package TableMappingInterface_Package renames Standard.org.allbinary.data.tables.TableMappingInterface_Package;
+   package ValidationInterface_Package renames Standard.org.allbinary.logic.control.validate.ValidationInterface_Package;
+   package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
 
    type CategoryInterface is interface and TableMappingInterface and ValidationInterface;
    type CategoryInterface_Access is access all CategoryInterface'Class;

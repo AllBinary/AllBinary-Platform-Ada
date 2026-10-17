@@ -28,11 +28,11 @@ with org.allbinary.game.ai.BasicAI_Package; use org.allbinary.game.ai.BasicAI_Pa
 
 package org.allbinary.game.ag.ai.ArrayAI_Package is
 
-   package ArtificialIntelligenceInterface_Package renames org.allbinary.ai.ArtificialIntelligenceInterface_Package;
-   package GameInput_Package renames org.allbinary.game.input.GameInput_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package AllBinaryLayerManager_Package renames org.allbinary.layer.AllBinaryLayerManager_Package;
-   package BasicAI_Package renames org.allbinary.game.ai.BasicAI_Package;
+   package ArtificialIntelligenceInterface_Package renames Standard.org.allbinary.ai.ArtificialIntelligenceInterface_Package;
+   package GameInput_Package renames Standard.org.allbinary.game.input.GameInput_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
+   package BasicAI_Package renames Standard.org.allbinary.game.ai.BasicAI_Package;
 
    type ArrayAI is tagged;
    type ArrayAI_Access is access all ArrayAI'Class;

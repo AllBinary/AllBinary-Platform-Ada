@@ -32,11 +32,11 @@ with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_
 
 package org.allbinary.input.media.image.capture.ScreenScavangerRobot_Package is
 
-   package InputRobotFactory_Package renames org.allbinary.input.automation.robot.InputRobotFactory_Package;
-   package InputRobotInterface_Package renames org.allbinary.input.automation.robot.InputRobotInterface_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package ABHashtable_Package renames org.allbinary.util.ABHashtable_Package;
+   package InputRobotFactory_Package renames Standard.org.allbinary.input.automation.robot.InputRobotFactory_Package;
+   package InputRobotInterface_Package renames Standard.org.allbinary.input.automation.robot.InputRobotInterface_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
    type ScreenScavangerRobot is tagged;
    type ScreenScavangerRobot_Access is access all ScreenScavangerRobot'Class;

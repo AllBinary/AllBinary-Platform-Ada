@@ -25,8 +25,8 @@ with org.allbinary.game.state.GameState_Package; use org.allbinary.game.state.Ga
 
 package org.allbinary.business.advertisement.AdConfiguration_Package is
 
-   package Direction_Package renames org.allbinary.direction.Direction_Package;
-   package GameState_Package renames org.allbinary.game.state.GameState_Package;
+   package Direction_Package renames Standard.org.allbinary.direction.Direction_Package;
+   package GameState_Package renames Standard.org.allbinary.game.state.GameState_Package;
 
    type AdConfiguration is tagged;
    type AdConfiguration_Access is access all AdConfiguration'Class;

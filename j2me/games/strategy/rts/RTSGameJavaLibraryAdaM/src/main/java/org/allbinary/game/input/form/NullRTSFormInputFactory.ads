@@ -24,7 +24,7 @@ with org.allbinary.game.identification.BasicGroupFactory_Package; use org.allbin
 
 package org.allbinary.game.input.form.NullRTSFormInputFactory_Package is
 
-   package BasicGroupFactory_Package renames org.allbinary.game.identification.BasicGroupFactory_Package;
+   package BasicGroupFactory_Package renames Standard.org.allbinary.game.identification.BasicGroupFactory_Package;
 
    type NullRTSFormInputFactory is tagged;
    type NullRTSFormInputFactory_Access is access all NullRTSFormInputFactory'Class;

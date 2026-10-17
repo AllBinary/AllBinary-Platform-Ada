@@ -25,7 +25,7 @@ with org.allbinary.game.score.HighScoresCanvasInputProcessorFactoryInterface_Pac
 
 package org.allbinary.game.score.HighScoresCanvasChangeLevelInputProcessorFactory_Package is
 
-   package HighScoresCanvas_Package renames org.allbinary.game.score.displayable.HighScoresCanvas_Package;
+   package HighScoresCanvas_Package renames Standard.org.allbinary.game.score.displayable.HighScoresCanvas_Package;
 
    type HighScoresCanvasChangeLevelInputProcessorFactory is tagged;
    type HighScoresCanvasChangeLevelInputProcessorFactory_Access is access all HighScoresCanvasChangeLevelInputProcessorFactory'Class;

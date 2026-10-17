@@ -74,10 +74,14 @@ package body org.allbinary.business.init.LicenseInitInfoUtil_Package is
                 dataOutputStream.writeUTF (DatabaseEncoder_Package.encode (licenseServerCrypted));
             end loop;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (To_Unbounded_String ("Command Failed: ") & This.INITFILENAME, This'Unchecked_Access, To_Unbounded_String ("write"), e);
             FileStreamFactory_Package.getInstance.delete (This.filePath, This.INITFILENAME);
             Java_Throw (e);
+                end;
         end;
    end write;
 
@@ -129,14 +133,22 @@ package body org.allbinary.business.init.LicenseInitInfoUtil_Package is
                 Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Could Not Load License InitInfo: ") & This.INITFILENAME));
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             begin
                 This.logUtil.put (To_Unbounded_String ("Command Failed: ") & This.INITFILENAME, This'Unchecked_Access, METHOD_NAME, e);
             exception
-                when e2 : others =>
+                when Java_Occurrence : others =>
+                    declare
+                        e2 : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                    begin
                 This.logUtil.put (To_Unbounded_String ("LicenseInitInfo Read Retry: ") & This.INITFILENAME, This'Unchecked_Access, To_Unbounded_String ("readAgain()"), e2);
+                    end;
             end;
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("LicenseInitInfo Read Error: ") & This.INITFILENAME));
+                end;
         end;
    end readAgain;
 

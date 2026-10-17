@@ -58,7 +58,10 @@ package body org.allbinary.logic.control.workflow.TagWorkFlowFactory_Package is
             params (1) := Java_Object_Access (pageContext);
             return WorkFlowInterface_Access (AbeFactory_Package.getInstance.getInstance (abeClientInformation, workFlowClassName, classes, params));
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORYERROR) then
                 workFlowClassName := Unbounded_String (propertiesHashMap.get (DynamicObjectData_Package.NAME));
                 stringBuffer := StringMaker_Package.Create;
@@ -70,6 +73,7 @@ package body org.allbinary.logic.control.workflow.TagWorkFlowFactory_Package is
                 This.logUtil.put (stringBuffer.toString, This'Unchecked_Access, commonStrings.GET_INSTANCE, e);
             end if;
             Java_Throw (e);
+                end;
         end;
    end getInstance;
 

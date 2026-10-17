@@ -58,8 +58,12 @@ package body org.allbinary.data.tree.dom.AbXslHelper_Package is
             outputStream := ByteArrayOutputStream_Package.Create;
             return XslHelper_Package.getInstance.translate (StreamSource_Package.Create (xsltFilePath), StreamSource_Package.Create (xmlFilePath), StreamResult_Package.Create (outputStream)).toString;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Java_Throw (e);
+                end;
         end;
    end translate;
 

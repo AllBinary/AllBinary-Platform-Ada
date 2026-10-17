@@ -26,9 +26,9 @@ with org.allbinary.logic.system.security.licensing.PartnerIdentifierFileUtil_Pac
 
 package org.allbinary.AllBinaryAndroidGameInitializationUtil_Package is
 
-   package LicenseInitInfoUtil_Package renames org.allbinary.business.init.LicenseInitInfoUtil_Package;
-   package ResourceUtil_Package renames org.allbinary.data.resource.ResourceUtil_Package;
-   package PartnerIdentifierFileUtil_Package renames org.allbinary.logic.system.security.licensing.PartnerIdentifierFileUtil_Package;
+   package LicenseInitInfoUtil_Package renames Standard.org.allbinary.business.init.LicenseInitInfoUtil_Package;
+   package ResourceUtil_Package renames Standard.org.allbinary.data.resource.ResourceUtil_Package;
+   package PartnerIdentifierFileUtil_Package renames Standard.org.allbinary.logic.system.security.licensing.PartnerIdentifierFileUtil_Package;
 
    type AllBinaryAndroidGameInitializationUtil is tagged;
    type AllBinaryAndroidGameInitializationUtil_Access is access all AllBinaryAndroidGameInitializationUtil'Class;

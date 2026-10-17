@@ -33,15 +33,15 @@ with org.allbinary.game.paint.BasicGameDemoPaintable_Package; use org.allbinary.
 
 package org.allbinary.game.paint.GameScrollMenuPaintable_Package is
 
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package ColorChangeEventHandler_Package renames org.allbinary.graphics.color.ColorChangeEventHandler_Package;
-   package ColorChangeListener_Package renames org.allbinary.graphics.color.ColorChangeListener_Package;
-   package FormPaintable_Package renames org.allbinary.graphics.form.FormPaintable_Package;
-   package ScrollSelectionForm_Package renames org.allbinary.graphics.form.ScrollSelectionForm_Package;
-   package ABStringComponent_Package renames org.allbinary.graphics.form.item.ABStringComponent_Package;
-   package ABTextItem_Package renames org.allbinary.graphics.form.item.ABTextItem_Package;
-   package Paintable_Package renames org.allbinary.graphics.paint.Paintable_Package;
-   package AllBinaryEventObject_Package renames org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package ColorChangeEventHandler_Package renames Standard.org.allbinary.graphics.color.ColorChangeEventHandler_Package;
+   package ColorChangeListener_Package renames Standard.org.allbinary.graphics.color.ColorChangeListener_Package;
+   package FormPaintable_Package renames Standard.org.allbinary.graphics.form.FormPaintable_Package;
+   package ScrollSelectionForm_Package renames Standard.org.allbinary.graphics.form.ScrollSelectionForm_Package;
+   package ABStringComponent_Package renames Standard.org.allbinary.graphics.form.item.ABStringComponent_Package;
+   package ABTextItem_Package renames Standard.org.allbinary.graphics.form.item.ABTextItem_Package;
+   package Paintable_Package renames Standard.org.allbinary.graphics.paint.Paintable_Package;
+   package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 
    type GameScrollMenuPaintable is tagged;
    type GameScrollMenuPaintable_Access is access all GameScrollMenuPaintable'Class;

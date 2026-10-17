@@ -27,8 +27,8 @@ with org.allbinary.game.paint.ColorFillBasePaintable_Package; use org.allbinary.
 
 package org.allbinary.game.paint.ColorFillPaintable_Package is
 
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package DisplayInfoSingleton_Package renames org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
 
    type ColorFillPaintable is tagged;
    type ColorFillPaintable_Access is access all ColorFillPaintable'Class;

@@ -34,16 +34,16 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.logic.visual.transform.template.util.TransformTemplateCustomizerUtil_Package is
 
-   package GLOBALS2_Package renames org.allbinary.globals.GLOBALS2_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package Replace_Package renames org.allbinary.logic.string_Id.regex.replace.Replace_Package;
-   package CustomizerTransformInfoData_Package renames org.allbinary.logic.visual.transform.info.CustomizerTransformInfoData_Package;
-   package BodyData_Package renames org.allbinary.logic.visual.transform.template.customizer.bodies.BodyData_Package;
-   package TitleData_Package renames org.allbinary.logic.visual.transform.template.customizer.widgets.title.TitleData_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package GLOBALS2_Package renames Standard.org.allbinary.globals.GLOBALS2_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package Replace_Package renames Standard.org.allbinary.logic.string_Id.regex.replace.Replace_Package;
+   package CustomizerTransformInfoData_Package renames Standard.org.allbinary.logic.visual.transform.info.CustomizerTransformInfoData_Package;
+   package BodyData_Package renames Standard.org.allbinary.logic.visual.transform.template.customizer.bodies.BodyData_Package;
+   package TitleData_Package renames Standard.org.allbinary.logic.visual.transform.template.customizer.widgets.title.TitleData_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type TransformTemplateCustomizerUtil is tagged;
    type TransformTemplateCustomizerUtil_Access is access all TransformTemplateCustomizerUtil'Class;

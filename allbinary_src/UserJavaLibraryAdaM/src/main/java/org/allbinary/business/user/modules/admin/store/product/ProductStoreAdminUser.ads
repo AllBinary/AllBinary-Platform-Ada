@@ -26,8 +26,8 @@ with org.allbinary.logic.communication.http.request.session.WeblisketSessionInte
 
 package org.allbinary.business.user.modules.admin.store.product.ProductStoreAdminUser_Package is
 
-   package User_Package renames org.allbinary.business.user.modules.User_Package;
-   package WeblisketSessionInterface_Package renames org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package;
+   package User_Package renames Standard.org.allbinary.business.user.modules.User_Package;
+   package WeblisketSessionInterface_Package renames Standard.org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package;
 
    type ProductStoreAdminUser is tagged;
    type ProductStoreAdminUser_Access is access all ProductStoreAdminUser'Class;

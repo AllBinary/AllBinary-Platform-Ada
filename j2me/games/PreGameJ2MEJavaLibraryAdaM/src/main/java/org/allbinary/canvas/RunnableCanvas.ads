@@ -39,21 +39,21 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 
 package org.allbinary.canvas.RunnableCanvas_Package is
 
-   package TsUtil_Package renames org.allbinary.TsUtil_Package;
-   package NullWaitGameRunnable_Package renames org.allbinary.game.displayable.canvas.NullWaitGameRunnable_Package;
-   package MyCanvas_Package renames org.allbinary.graphics.displayable.MyCanvas_Package;
-   package ABSystemWrapper_Package renames org.allbinary.logic.ABSystemWrapper_Package;
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package CommonLabels_Package renames org.allbinary.string_Id.CommonLabels_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package NullThread_Package renames org.allbinary.thread_Case.NullThread_Package;
-   package RunnableInterface_Package renames org.allbinary.thread_Case.RunnableInterface_Package;
-   package ThreadObjectUtil_Package renames org.allbinary.thread_Case.ThreadObjectUtil_Package;
-   package TimeDelayHelper_Package renames org.allbinary.time.TimeDelayHelper_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
+   package NullWaitGameRunnable_Package renames Standard.org.allbinary.game.displayable.canvas.NullWaitGameRunnable_Package;
+   package MyCanvas_Package renames Standard.org.allbinary.graphics.displayable.MyCanvas_Package;
+   package ABSystemWrapper_Package renames Standard.org.allbinary.logic.ABSystemWrapper_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package NullThread_Package renames Standard.org.allbinary.thread_Case.NullThread_Package;
+   package RunnableInterface_Package renames Standard.org.allbinary.thread_Case.RunnableInterface_Package;
+   package ThreadObjectUtil_Package renames Standard.org.allbinary.thread_Case.ThreadObjectUtil_Package;
+   package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type RunnableCanvas is tagged;
    type RunnableCanvas_Access is access all RunnableCanvas'Class;

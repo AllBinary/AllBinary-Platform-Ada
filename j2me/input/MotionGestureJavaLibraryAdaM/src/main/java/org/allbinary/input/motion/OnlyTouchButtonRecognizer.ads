@@ -25,7 +25,7 @@ with org.allbinary.input.motion.MotionRecognizer_Package; use org.allbinary.inpu
 
 package org.allbinary.input.motion.OnlyTouchButtonRecognizer_Package is
 
-   package TouchButtonRecognizer_Package renames org.allbinary.input.motion.button.TouchButtonRecognizer_Package;
+   package TouchButtonRecognizer_Package renames Standard.org.allbinary.input.motion.button.TouchButtonRecognizer_Package;
 
    type OnlyTouchButtonRecognizer is tagged;
    type OnlyTouchButtonRecognizer_Access is access all OnlyTouchButtonRecognizer'Class;

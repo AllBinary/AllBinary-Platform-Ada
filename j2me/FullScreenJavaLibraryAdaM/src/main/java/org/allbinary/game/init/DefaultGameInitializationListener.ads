@@ -33,16 +33,16 @@ with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logi
 
 package org.allbinary.game.init.DefaultGameInitializationListener_Package is
 
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package ForcedLogUtil_Package renames org.allbinary.logic.communication.log.ForcedLogUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package GameInitializedEvent_Package renames org.allbinary.game.configuration.event.GameInitializedEvent_Package;
-   package GameInitializedEventHandler_Package renames org.allbinary.game.configuration.event.GameInitializedEventHandler_Package;
-   package GameInitializedListenerInterface_Package renames org.allbinary.game.configuration.event.GameInitializedListenerInterface_Package;
-   package FeatureResourceInitializationUtil_Package renames org.allbinary.game.resource.FeatureResourceInitializationUtil_Package;
-   package SWTJOGLProcessor_Package renames org.allbinary.graphics.threed.SWTJOGLProcessor_Package;
-   package AllBinaryEventObject_Package renames org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-   package EventStrings_Package renames org.allbinary.logic.util.event.EventStrings_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package GameInitializedEvent_Package renames Standard.org.allbinary.game.configuration.event.GameInitializedEvent_Package;
+   package GameInitializedEventHandler_Package renames Standard.org.allbinary.game.configuration.event.GameInitializedEventHandler_Package;
+   package GameInitializedListenerInterface_Package renames Standard.org.allbinary.game.configuration.event.GameInitializedListenerInterface_Package;
+   package FeatureResourceInitializationUtil_Package renames Standard.org.allbinary.game.resource.FeatureResourceInitializationUtil_Package;
+   package SWTJOGLProcessor_Package renames Standard.org.allbinary.graphics.threed.SWTJOGLProcessor_Package;
+   package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+   package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
 
    type DefaultGameInitializationListener is tagged;
    type DefaultGameInitializationListener_Access is access all DefaultGameInitializationListener'Class;

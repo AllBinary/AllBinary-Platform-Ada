@@ -100,7 +100,7 @@ package body org.allbinary.logic.communication.log.LogFormatUtil_Package is
             end if;
             stringBuffer.append (This.STACK_TRACE);
             if (exception_Id) /= (This.nullUtil.NULL_OBJECT) then
-                stringBuffer.append (This.exceptionUtil.getStackTrace (Ada.Exceptions.Exception_Occurrence (exception_Id)));
+                stringBuffer.append (This.exceptionUtil.getStackTrace (Java_Throwable (exception_Id)));
             else
                 stringBuffer.append (This.stringUtil.NULL_STRING);
             end if;

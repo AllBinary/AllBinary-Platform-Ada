@@ -78,8 +78,12 @@ package body org.allbinary.game.score.BasicHighScoresFactory_Package is
 --                      LastFetchHighScoresFactory_Package.getInstance.highScoresArray := This.highScoresArray;
 --                      highScoresResultsListener.setHighScoresArray (This.highScoresArray);
 --                  exception
---                      when e : others =>
+--                      when Java_Occurrence : others =>
+--                          declare
+--                              e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+--                          begin
 --                      logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.FETCH, e);
+--                          end;
 --                  end;
 --     end run;
 );

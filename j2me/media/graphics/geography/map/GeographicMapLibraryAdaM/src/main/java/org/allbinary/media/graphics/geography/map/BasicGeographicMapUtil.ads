@@ -25,8 +25,8 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 
 package org.allbinary.media.graphics.geography.map.BasicGeographicMapUtil_Package is
 
-   package Layer_Package renames org.allbinary.layer.Layer_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
+   package Layer_Package renames Standard.org.allbinary.layer.Layer_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type BasicGeographicMapUtil is tagged;
    type BasicGeographicMapUtil_Access is access all BasicGeographicMapUtil'Class;

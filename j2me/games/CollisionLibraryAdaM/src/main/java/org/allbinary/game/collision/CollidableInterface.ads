@@ -26,9 +26,9 @@ with org.allbinary.layer.NamedInterface_Package; use org.allbinary.layer.NamedIn
 
 package org.allbinary.game.collision.CollidableInterface_Package is
 
-   package CollidableCompositeLayer_Package renames org.allbinary.game.layer.CollidableCompositeLayer_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package NamedInterface_Package renames org.allbinary.layer.NamedInterface_Package;
+   package CollidableCompositeLayer_Package renames Standard.org.allbinary.game.layer.CollidableCompositeLayer_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package NamedInterface_Package renames Standard.org.allbinary.layer.NamedInterface_Package;
 
    type CollidableInterface is interface and NamedInterface;
    type CollidableInterface_Access is access all CollidableInterface'Class;

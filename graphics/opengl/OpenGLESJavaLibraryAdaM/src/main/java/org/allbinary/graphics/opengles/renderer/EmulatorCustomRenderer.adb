@@ -50,8 +50,12 @@ package body org.allbinary.graphics.opengles.renderer.EmulatorCustomRenderer_Pac
                     Java_Sleep (180);
                 end loop;
             exception
-                when e : others =>
+                when Java_Occurrence : others =>
+                    declare
+                        e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                    begin
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.renderStrings.ON_SURFACE_CREATED, e);
+                    end;
             end;
         end if;
    end onSurfaceCreated;

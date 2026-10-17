@@ -69,11 +69,15 @@ package body views.generic_Id.address.shipping.AddTaxValidationView_Package is
             end loop;
             return True;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
                 This.logUtil.put (To_Unbounded_String ("Failed to validate"), This'Unchecked_Access, This.commonStrings.IS_VALID, e);
             end if;
             return False;
+                end;
         end;
    end isValid;
 
@@ -110,11 +114,15 @@ package body views.generic_Id.address.shipping.AddTaxValidationView_Package is
             end loop;
             return stringBuffer.toString;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
                 This.logUtil.put (To_Unbounded_String ("Failed to create validateInfo"), This'Unchecked_Access, To_Unbounded_String ("validationInfo()"), e);
             end if;
             return To_Unbounded_String ("Error Creating ValidationInfo");
+                end;
         end;
    end validationInfo;
 

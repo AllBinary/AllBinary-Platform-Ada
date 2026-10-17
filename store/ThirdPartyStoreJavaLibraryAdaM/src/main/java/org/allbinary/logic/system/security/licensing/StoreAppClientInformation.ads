@@ -25,7 +25,7 @@ with org.allbinary.logic.system.security.licensing.AbeClientInformation_Package;
 
 package org.allbinary.logic.system.security.licensing.StoreAppClientInformation_Package is
 
-   package LongArrayIdentifierInterface_Package renames org.allbinary.thirdparty.store.LongArrayIdentifierInterface_Package;
+   package LongArrayIdentifierInterface_Package renames Standard.org.allbinary.thirdparty.store.LongArrayIdentifierInterface_Package;
 
    type StoreAppClientInformation is tagged;
    type StoreAppClientInformation_Access is access all StoreAppClientInformation'Class;

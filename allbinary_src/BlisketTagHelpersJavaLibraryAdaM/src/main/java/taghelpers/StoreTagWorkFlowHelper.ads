@@ -31,12 +31,12 @@ with org.allbinary.logic.system.security.licensing.ServiceClientInformationInter
 
 package taghelpers.StoreTagWorkFlowHelper_Package is
 
-   package TagHelper_Package renames admin.taghelpers.TagHelper_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StoreTagWorkFlowFactory_Package renames org.allbinary.logic.control.workflow.StoreTagWorkFlowFactory_Package;
-   package StoreWorkFlowInterface_Package renames org.allbinary.logic.control.workflow.StoreWorkFlowInterface_Package;
-   package AbeClientInformationInterface_Package renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-   package ServiceClientInformationInterfaceFactory_Package renames org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package;
+   package TagHelper_Package renames Standard.admin.taghelpers.TagHelper_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StoreTagWorkFlowFactory_Package renames Standard.org.allbinary.logic.control.workflow.StoreTagWorkFlowFactory_Package;
+   package StoreWorkFlowInterface_Package renames Standard.org.allbinary.logic.control.workflow.StoreWorkFlowInterface_Package;
+   package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package ServiceClientInformationInterfaceFactory_Package renames Standard.org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package;
 
    type StoreTagWorkFlowHelper is tagged;
    type StoreTagWorkFlowHelper_Access is access all StoreTagWorkFlowHelper'Class;

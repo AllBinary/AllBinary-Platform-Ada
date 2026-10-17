@@ -25,8 +25,8 @@ with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.
 
 package org.allbinary.game.input.GameInputProcessor_Package is
 
-   package GameKeyEvent_Package renames org.allbinary.game.input.event.GameKeyEvent_Package;
-   package AllBinaryLayerManager_Package renames org.allbinary.layer.AllBinaryLayerManager_Package;
+   package GameKeyEvent_Package renames Standard.org.allbinary.game.input.event.GameKeyEvent_Package;
+   package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
 
    type GameInputProcessor is tagged;
    type GameInputProcessor_Access is access all GameInputProcessor'Class;

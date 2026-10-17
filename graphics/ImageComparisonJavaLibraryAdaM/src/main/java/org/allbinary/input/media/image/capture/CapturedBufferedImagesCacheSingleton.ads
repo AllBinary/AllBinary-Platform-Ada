@@ -30,13 +30,13 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.input.media.image.capture.CapturedBufferedImagesCacheSingleton_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package AutomaticCacheInterface_Package renames org.allbinary.logic.util.cache.AutomaticCacheInterface_Package;
-   package CacheInterface_Package renames org.allbinary.logic.util.cache.CacheInterface_Package;
-   package CacheInterfaceFactory_Package renames org.allbinary.logic.util.cache.CacheInterfaceFactory_Package;
-   package CachePolicyFactory_Package renames org.allbinary.logic.util.cache.CachePolicyFactory_Package;
-   package CacheTypeFactory_Package renames org.allbinary.logic.util.cache.CacheTypeFactory_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package AutomaticCacheInterface_Package renames Standard.org.allbinary.logic.util.cache.AutomaticCacheInterface_Package;
+   package CacheInterface_Package renames Standard.org.allbinary.logic.util.cache.CacheInterface_Package;
+   package CacheInterfaceFactory_Package renames Standard.org.allbinary.logic.util.cache.CacheInterfaceFactory_Package;
+   package CachePolicyFactory_Package renames Standard.org.allbinary.logic.util.cache.CachePolicyFactory_Package;
+   package CacheTypeFactory_Package renames Standard.org.allbinary.logic.util.cache.CacheTypeFactory_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type CapturedBufferedImagesCacheSingleton is tagged;
    type CapturedBufferedImagesCacheSingleton_Access is access all CapturedBufferedImagesCacheSingleton'Class;

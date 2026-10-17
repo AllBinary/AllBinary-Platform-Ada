@@ -25,8 +25,8 @@ with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Packag
 
 package org.allbinary.game.input.LayerPositionFinderInterface_Package is
 
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package GeographicMapCellPosition_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
 
    type LayerPositionFinderInterface is interface;
    type LayerPositionFinderInterface_Access is access all LayerPositionFinderInterface'Class;

@@ -73,10 +73,14 @@ package body org.allbinary.graphics.CellPositionFactory_Package is
         begin
             return This.cellPositionArray (i_column) (i_row);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             This.logUtil.put (StringMaker_Package.Create.append (To_Unbounded_String ("columns: ")).appendint (This.getColumns).append (To_Unbounded_String (" rows: ")).appendint (This.getRows).append (To_Unbounded_String (" col: ")).appendint (i_column).append (To_Unbounded_String (" row: ")).appendint (i_row).toString, This'Unchecked_Access, commonStrings.GET_INSTANCE, e);
             return This.NONE;
+                end;
         end;
    end getInstanceColRow;
 

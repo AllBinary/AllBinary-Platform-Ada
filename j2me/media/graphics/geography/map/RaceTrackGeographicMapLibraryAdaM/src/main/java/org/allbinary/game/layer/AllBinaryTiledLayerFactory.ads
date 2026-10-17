@@ -30,12 +30,12 @@ with org.allbinary.media.graphics.geography.map.racetrack.TiledLayerFactory_Pack
 
 package org.allbinary.game.layer.AllBinaryTiledLayerFactory_Package is
 
-   package BasicColorFactory_Package renames org.allbinary.graphics.color.BasicColorFactory_Package;
-   package SmallIntegerSingletonFactory_Package renames org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
-   package AllBinaryTiledLayerFactoryInterface_Package renames org.allbinary.media.graphics.geography.map.racetrack.AllBinaryTiledLayerFactoryInterface_Package;
-   package RaceTrackData_Package renames org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_Package;
-   package RaceTrackInfo_Package renames org.allbinary.media.graphics.geography.map.racetrack.RaceTrackInfo_Package;
-   package TiledLayerFactory_Package renames org.allbinary.media.graphics.geography.map.racetrack.TiledLayerFactory_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+   package AllBinaryTiledLayerFactoryInterface_Package renames Standard.org.allbinary.media.graphics.geography.map.racetrack.AllBinaryTiledLayerFactoryInterface_Package;
+   package RaceTrackData_Package renames Standard.org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_Package;
+   package RaceTrackInfo_Package renames Standard.org.allbinary.media.graphics.geography.map.racetrack.RaceTrackInfo_Package;
+   package TiledLayerFactory_Package renames Standard.org.allbinary.media.graphics.geography.map.racetrack.TiledLayerFactory_Package;
 
    type AllBinaryTiledLayerFactory is tagged;
    type AllBinaryTiledLayerFactory_Access is access all AllBinaryTiledLayerFactory'Class;

@@ -24,7 +24,7 @@ with org.allbinary.game.score.Scoreable_Package; use org.allbinary.game.score.Sc
 
 package org.allbinary.game.ag.layer.hud.basic.score.ScoreableAddOnlyForHud_Package is
 
-   package Scoreable_Package renames org.allbinary.game.score.Scoreable_Package;
+   package Scoreable_Package renames Standard.org.allbinary.game.score.Scoreable_Package;
 
    type ScoreableAddOnlyForHud is tagged;
    type ScoreableAddOnlyForHud_Access is access all ScoreableAddOnlyForHud'Class;

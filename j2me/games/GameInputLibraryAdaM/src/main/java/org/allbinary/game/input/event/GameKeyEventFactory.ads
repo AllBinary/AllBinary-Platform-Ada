@@ -28,11 +28,11 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 
 package org.allbinary.game.input.event.GameKeyEventFactory_Package is
 
-   package GameKeyEventSourceInterface_Package renames org.allbinary.game.input.GameKeyEventSourceInterface_Package;
-   package Input_Package renames org.allbinary.game.input.Input_Package;
-   package InputFactory_Package renames org.allbinary.game.input.InputFactory_Package;
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
+   package GameKeyEventSourceInterface_Package renames Standard.org.allbinary.game.input.GameKeyEventSourceInterface_Package;
+   package Input_Package renames Standard.org.allbinary.game.input.Input_Package;
+   package InputFactory_Package renames Standard.org.allbinary.game.input.InputFactory_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type GameKeyEventFactory is tagged;
    type GameKeyEventFactory_Access is access all GameKeyEventFactory'Class;

@@ -33,13 +33,13 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 
 package org.allbinary.graphics.displayable.screen.WebCommandProcessor_Package is
 
-   package Context_Package renames android.content.Context_Package;
-   package Intent_Package renames android.content.Intent_Package;
-   package TsUtil_Package renames org.allbinary.TsUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
+   package Context_Package renames Standard.android.content.Context_Package;
+   package Intent_Package renames Standard.android.content.Intent_Package;
+   package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type WebCommandProcessor is tagged;
    type WebCommandProcessor_Access is access all WebCommandProcessor'Class;

@@ -27,10 +27,10 @@ with org.allbinary.layer.AllBinaryLayerFactoryInterface_Package; use org.allbina
 
 package org.allbinary.game.ag.layer.pickup.points.PointsLayerCircularStaticPool_Package is
 
-   package ScoreableInterface_Package renames org.allbinary.game.score.ScoreableInterface_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package AllBinaryLayerCircularPool_Package renames org.allbinary.layer.AllBinaryLayerCircularPool_Package;
-   package AllBinaryLayerFactoryInterface_Package renames org.allbinary.layer.AllBinaryLayerFactoryInterface_Package;
+   package ScoreableInterface_Package renames Standard.org.allbinary.game.score.ScoreableInterface_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package AllBinaryLayerCircularPool_Package renames Standard.org.allbinary.layer.AllBinaryLayerCircularPool_Package;
+   package AllBinaryLayerFactoryInterface_Package renames Standard.org.allbinary.layer.AllBinaryLayerFactoryInterface_Package;
 
    type PointsLayerCircularStaticPool is tagged;
    type PointsLayerCircularStaticPool_Access is access all PointsLayerCircularStaticPool'Class;

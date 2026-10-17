@@ -25,8 +25,8 @@ with org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package; 
 
 package org.allbinary.media.image.io.IIOImageCacheableFactory_Package is
 
-   package CacheableInterface_Package renames org.allbinary.logic.util.cache.CacheableInterface_Package;
-   package CacheableInterfaceFactoryInterface_Package renames org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package;
+   package CacheableInterface_Package renames Standard.org.allbinary.logic.util.cache.CacheableInterface_Package;
+   package CacheableInterfaceFactoryInterface_Package renames Standard.org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package;
 
    type IIOImageCacheableFactory is tagged;
    type IIOImageCacheableFactory_Access is access all IIOImageCacheableFactory'Class;

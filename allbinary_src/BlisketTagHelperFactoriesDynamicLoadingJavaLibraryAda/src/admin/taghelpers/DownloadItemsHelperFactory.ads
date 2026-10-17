@@ -27,7 +27,7 @@ with admin.taghelpers.TagHelperFactoryInterface_Package; use admin.taghelpers.Ta
 
 package admin.taghelpers.DownloadItemsHelperFactory_Package is
 
-   package LicensingException_Package renames org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
 
    type DownloadItemsHelperFactory is tagged;
    type DownloadItemsHelperFactory_Access is access all DownloadItemsHelperFactory'Class;

@@ -30,11 +30,11 @@ with org.allbinary.logic.util.cache.CacheInterface_Package; use org.allbinary.lo
 
 package org.allbinary.logic.util.cache.IndexedBasicArrayListCache_Package is
 
-   package JsType_Package renames jsinterop.annotations.JsType_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package JsMethod_Package renames jsinterop.annotations.JsMethod_Package;
-   package JsConstructor_Package renames jsinterop.annotations.JsConstructor_Package;
-   package JsProperty_Package renames jsinterop.annotations.JsProperty_Package;
+   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package JsMethod_Package renames Standard.jsinterop.annotations.JsMethod_Package;
+   package JsConstructor_Package renames Standard.jsinterop.annotations.JsConstructor_Package;
+   package JsProperty_Package renames Standard.jsinterop.annotations.JsProperty_Package;
 
    type IndexedBasicArrayListCache is tagged;
    type IndexedBasicArrayListCache_Access is access all IndexedBasicArrayListCache'Class;

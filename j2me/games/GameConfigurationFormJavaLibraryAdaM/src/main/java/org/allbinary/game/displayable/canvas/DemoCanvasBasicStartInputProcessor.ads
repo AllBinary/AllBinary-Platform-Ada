@@ -32,13 +32,13 @@ with org.allbinary.game.displayable.canvas.BasicMenuInputProcessor_Package; use 
 
 package org.allbinary.game.displayable.canvas.DemoCanvasBasicStartInputProcessor_Package is
 
-   package RunnableCanvas_Package renames org.allbinary.canvas.RunnableCanvas_Package;
-   package GameCommandsFactory_Package renames org.allbinary.game.commands.GameCommandsFactory_Package;
-   package GameInputStrings_Package renames org.allbinary.game.input.GameInputStrings_Package;
-   package GameKeyEvent_Package renames org.allbinary.game.input.event.GameKeyEvent_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package RunnableCanvas_Package renames Standard.org.allbinary.canvas.RunnableCanvas_Package;
+   package GameCommandsFactory_Package renames Standard.org.allbinary.game.commands.GameCommandsFactory_Package;
+   package GameInputStrings_Package renames Standard.org.allbinary.game.input.GameInputStrings_Package;
+   package GameKeyEvent_Package renames Standard.org.allbinary.game.input.event.GameKeyEvent_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type DemoCanvasBasicStartInputProcessor is tagged;
    type DemoCanvasBasicStartInputProcessor_Access is access all DemoCanvasBasicStartInputProcessor'Class;

@@ -45,8 +45,12 @@ package body org.allbinary.image.opengles.OpenGLESGL11ExtImage_Package is
             This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("onResize"));
             This.a := (DisplayInfoSingleton_Package.getInstance.getLastHeight) - (This.getHeight);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("onResize"), e);
+                end;
         end;
    end onDisplayChangeEvent;
 

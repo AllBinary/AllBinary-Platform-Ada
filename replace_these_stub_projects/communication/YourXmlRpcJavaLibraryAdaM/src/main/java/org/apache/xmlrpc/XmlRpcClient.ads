@@ -19,10 +19,10 @@ with org.apache.xmlrpc.XmlRpcHandler_Package; use org.apache.xmlrpc.XmlRpcHandle
 
 package org.apache.xmlrpc.XmlRpcClient_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package CryptInterface_Package renames org.allbinary.init.crypt.jcehelper.CryptInterface_Package;
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package CryptInterface_Package renames Standard.org.allbinary.init.crypt.jcehelper.CryptInterface_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
 
    type XmlRpcClient is tagged;
    type XmlRpcClient_Access is access all XmlRpcClient'Class;

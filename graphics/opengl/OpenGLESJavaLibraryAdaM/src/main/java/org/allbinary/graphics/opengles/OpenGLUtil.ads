@@ -31,24 +31,24 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 
 package org.allbinary.graphics.opengles.OpenGLUtil_Package is
 
-   package LoadTextures_Package renames org.allbinary.device.LoadTextures_Package;
-   package OpenGLESGraphics_Package renames org.allbinary.device.OpenGLESGraphics_Package;
-   package ProgressCanvas_Package renames org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
-   package ProgressCanvasFactory_Package renames org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package;
-   package CanvasStrings_Package renames org.allbinary.graphics.displayable.CanvasStrings_Package;
-   package DisplayInfoSingleton_Package renames org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
-   package RendererStrings_Package renames org.allbinary.graphics.opengles.renderer.RendererStrings_Package;
-   package PreResourceImageUtil_Package renames org.allbinary.image.PreResourceImageUtil_Package;
-   package OpenGLESImage_Package renames org.allbinary.image.opengles.OpenGLESImage_Package;
-   package OpenGLImageCache_Package renames org.allbinary.image.opengles.OpenGLImageCache_Package;
-   package OpenGLImageCacheFactory_Package renames org.allbinary.image.opengles.OpenGLImageCacheFactory_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package PreLogUtil_Package renames org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package CommonLabels_Package renames org.allbinary.string_Id.CommonLabels_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package SynchObject_Package renames org.allbinary.thread.SynchObject_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
+   package LoadTextures_Package renames Standard.org.allbinary.device.LoadTextures_Package;
+   package OpenGLESGraphics_Package renames Standard.org.allbinary.device.OpenGLESGraphics_Package;
+   package ProgressCanvas_Package renames Standard.org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
+   package ProgressCanvasFactory_Package renames Standard.org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package;
+   package CanvasStrings_Package renames Standard.org.allbinary.graphics.displayable.CanvasStrings_Package;
+   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+   package RendererStrings_Package renames Standard.org.allbinary.graphics.opengles.renderer.RendererStrings_Package;
+   package PreResourceImageUtil_Package renames Standard.org.allbinary.image.PreResourceImageUtil_Package;
+   package OpenGLESImage_Package renames Standard.org.allbinary.image.opengles.OpenGLESImage_Package;
+   package OpenGLImageCache_Package renames Standard.org.allbinary.image.opengles.OpenGLImageCache_Package;
+   package OpenGLImageCacheFactory_Package renames Standard.org.allbinary.image.opengles.OpenGLImageCacheFactory_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package SynchObject_Package renames Standard.org.allbinary.thread.SynchObject_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type OpenGLUtil is tagged;
    type OpenGLUtil_Access is access all OpenGLUtil'Class;

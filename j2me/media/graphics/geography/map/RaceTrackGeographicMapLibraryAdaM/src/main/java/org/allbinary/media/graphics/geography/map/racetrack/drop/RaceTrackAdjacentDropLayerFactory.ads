@@ -27,10 +27,10 @@ with org.allbinary.layer.LayerInterfaceFactoryInterface_Package; use org.allbina
 
 package org.allbinary.media.graphics.geography.map.racetrack.drop.RaceTrackAdjacentDropLayerFactory_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package BasicArrayListUtil_Package renames org.allbinary.util.BasicArrayListUtil_Package;
-   package LayerInterfaceFactoryInterface_Package renames org.allbinary.layer.LayerInterfaceFactoryInterface_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
+   package LayerInterfaceFactoryInterface_Package renames Standard.org.allbinary.layer.LayerInterfaceFactoryInterface_Package;
 
    type RaceTrackAdjacentDropLayerFactory is tagged;
    type RaceTrackAdjacentDropLayerFactory_Access is access all RaceTrackAdjacentDropLayerFactory'Class;

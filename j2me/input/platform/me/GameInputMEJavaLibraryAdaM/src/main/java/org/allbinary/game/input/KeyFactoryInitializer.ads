@@ -25,8 +25,8 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 
 package org.allbinary.game.input.KeyFactoryInitializer_Package is
 
-   package Init_Package renames org.allbinary.init.Init_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
+   package Init_Package renames Standard.org.allbinary.init.Init_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type KeyFactoryInitializer is tagged;
    type KeyFactoryInitializer_Access is access all KeyFactoryInitializer'Class;

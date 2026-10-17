@@ -42,12 +42,16 @@ package body taghelpers.InventoryHelperFactory_Package is
         begin
             return InventoryHelper_Package.Create (hashMap, pageContext);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORYERROR) then
                 commonStrings := CommonStrings_Package.getInstance;
                 This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.GET_INSTANCE, e);
             end if;
             return null;
+                end;
         end;
    end getInstance;
 

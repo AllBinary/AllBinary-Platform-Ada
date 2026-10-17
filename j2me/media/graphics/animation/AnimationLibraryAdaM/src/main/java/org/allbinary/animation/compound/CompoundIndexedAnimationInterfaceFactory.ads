@@ -28,10 +28,10 @@ with org.allbinary.animation.compound.CompoundAnimationInterfaceFactory_Package;
 
 package org.allbinary.animation.compound.CompoundIndexedAnimationInterfaceFactory_Package is
 
-   package Animation_Package renames org.allbinary.animation.Animation_Package;
-   package AnimationBehaviorFactory_Package renames org.allbinary.animation.AnimationBehaviorFactory_Package;
-   package AnimationInterfaceFactoryInterface_Package renames org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
-   package ForcedLogUtil_Package renames org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+   package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
+   package AnimationBehaviorFactory_Package renames Standard.org.allbinary.animation.AnimationBehaviorFactory_Package;
+   package AnimationInterfaceFactoryInterface_Package renames Standard.org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
 
    type CompoundIndexedAnimationInterfaceFactory is tagged;
    type CompoundIndexedAnimationInterfaceFactory_Access is access all CompoundIndexedAnimationInterfaceFactory'Class;

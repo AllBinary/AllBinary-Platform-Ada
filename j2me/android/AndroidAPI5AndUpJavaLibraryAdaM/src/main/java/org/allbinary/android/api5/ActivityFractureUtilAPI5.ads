@@ -29,12 +29,12 @@ with org.allbinary.input.motion.button.TouchScreenFactory_Package; use org.allbi
 
 package org.allbinary.android.api5.ActivityFractureUtilAPI5_Package is
 
-   package Activity_Package renames android.app.Activity_Package;
-   package TouchScreenTypeFactory_Package renames org.allbinary.input.motion.button.TouchScreenTypeFactory_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package PreLogUtil_Package renames org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package ActivityFractureUtilAPI1_Package renames org.allbinary.android.api1.ActivityFractureUtilAPI1_Package;
-   package TouchScreenFactory_Package renames org.allbinary.input.motion.button.TouchScreenFactory_Package;
+   package Activity_Package renames Standard.android.app.Activity_Package;
+   package TouchScreenTypeFactory_Package renames Standard.org.allbinary.input.motion.button.TouchScreenTypeFactory_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package ActivityFractureUtilAPI1_Package renames Standard.org.allbinary.android.api1.ActivityFractureUtilAPI1_Package;
+   package TouchScreenFactory_Package renames Standard.org.allbinary.input.motion.button.TouchScreenFactory_Package;
 
    type ActivityFractureUtilAPI5 is tagged;
    type ActivityFractureUtilAPI5_Access is access all ActivityFractureUtilAPI5'Class;

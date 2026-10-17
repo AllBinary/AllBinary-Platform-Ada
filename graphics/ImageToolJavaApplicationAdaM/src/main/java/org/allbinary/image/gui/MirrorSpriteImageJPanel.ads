@@ -35,13 +35,13 @@ with org.allbinary.image.gui.JPanel_Package; use org.allbinary.image.gui.JPanel_
 
 package org.allbinary.image.gui.MirrorSpriteImageJPanel_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package BufferedImageUtil2_Package renames org.allbinary.media.image.BufferedImageUtil2_Package;
-   package ImageProcessorInput_Package renames org.allbinary.media.image.ImageProcessorInput_Package;
-   package ImageProcessorInputCompositeInterface_Package renames org.allbinary.media.image.ImageProcessorInputCompositeInterface_Package;
-   package ImageStrings_Package renames org.allbinary.media.image.ImageStrings_Package;
-   package MirrorImageUtil_Package renames org.allbinary.media.image.MirrorImageUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package BufferedImageUtil2_Package renames Standard.org.allbinary.media.image.BufferedImageUtil2_Package;
+   package ImageProcessorInput_Package renames Standard.org.allbinary.media.image.ImageProcessorInput_Package;
+   package ImageProcessorInputCompositeInterface_Package renames Standard.org.allbinary.media.image.ImageProcessorInputCompositeInterface_Package;
+   package ImageStrings_Package renames Standard.org.allbinary.media.image.ImageStrings_Package;
+   package MirrorImageUtil_Package renames Standard.org.allbinary.media.image.MirrorImageUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type MirrorSpriteImageJPanel is tagged;
    type MirrorSpriteImageJPanel_Access is access all MirrorSpriteImageJPanel'Class;

@@ -12,7 +12,7 @@ with org.allbinary.image.opengles.OpenGLImageUtilBase_Package; use org.allbinary
 
 package org.platform.graphics.OpenGLImageUtil_Package is
 
-   package OpenGLImageUtilBase_Package renames org.allbinary.image.opengles.OpenGLImageUtilBase_Package;
+   package OpenGLImageUtilBase_Package renames Standard.org.allbinary.image.opengles.OpenGLImageUtilBase_Package;
 
    type OpenGLImageUtil is tagged;
    type OpenGLImageUtil_Access is access all OpenGLImageUtil'Class;

@@ -27,10 +27,10 @@ with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.al
 
 package org.allbinary.graphics.displayable.screen.DisplayPointScalar_Package is
 
-   package GPoint_Package renames org.allbinary.graphics.GPoint_Package;
-   package PointFactory_Package renames org.allbinary.graphics.PointFactory_Package;
-   package Rectangle_Package renames org.allbinary.graphics.Rectangle_Package;
-   package DisplayInfoSingleton_Package renames org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
+   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
+   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
 
    type DisplayPointScalar is tagged;
    type DisplayPointScalar_Access is access all DisplayPointScalar'Class;

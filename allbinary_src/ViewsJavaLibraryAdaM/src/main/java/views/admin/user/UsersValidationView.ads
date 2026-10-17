@@ -34,16 +34,16 @@ with views.admin.user.UsersView_Package; use views.admin.user.UsersView_Package;
 
 package views.admin.user.UsersValidationView_Package is
 
-   package UserRole_Package renames org.allbinary.business.user.role.UserRole_Package;
-   package UserRoleB_Package renames org.allbinary.business.user.role.UserRoleB_Package;
-   package UserRoleData_Package renames org.allbinary.business.user.role.UserRoleData_Package;
-   package UserEntityFactory_Package renames org.allbinary.data.tables.user.UserEntityFactory_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package ValidationComponentInterface_Package renames org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
-   package TransformInfoHttpInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package;
-   package TransformInfoInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
+   package UserRole_Package renames Standard.org.allbinary.business.user.role.UserRole_Package;
+   package UserRoleB_Package renames Standard.org.allbinary.business.user.role.UserRoleB_Package;
+   package UserRoleData_Package renames Standard.org.allbinary.business.user.role.UserRoleData_Package;
+   package UserEntityFactory_Package renames Standard.org.allbinary.data.tables.user.UserEntityFactory_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package ValidationComponentInterface_Package renames Standard.org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
+   package TransformInfoHttpInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package;
+   package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type UsersValidationView is tagged;
    type UsersValidationView_Access is access all UsersValidationView'Class;

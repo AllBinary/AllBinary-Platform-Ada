@@ -25,7 +25,7 @@ with org.allbinary.android.view.BaseViewWrapper_Package; use org.allbinary.andro
 
 package org.allbinary.android.view.ViewWrapper_Package is
 
-   package View_Package renames android.view.View_Package;
+   package View_Package renames Standard.android.view.View_Package;
 
    type ViewWrapper is tagged;
    type ViewWrapper_Access is access all ViewWrapper'Class;

@@ -29,12 +29,12 @@ with org.allbinary.input.accelerometer.AccelerometerSensorFactory_Package; use o
 
 package org.allbinary.input.gyro.AccelerometerSensorUpdateProcessor_Package is
 
-   package Processor_Package renames org.allbinary.canvas.Processor_Package;
-   package Features_Package renames org.allbinary.game.configuration.feature.Features_Package;
-   package SensorFeatureFactory_Package renames org.allbinary.game.configuration.feature.SensorFeatureFactory_Package;
-   package NoCompleteMotionGestureInputEventListener_Package renames org.allbinary.game.input.motion.action.NoCompleteMotionGestureInputEventListener_Package;
-   package SingleKeyPressGameKeyFromMotionGestureEventListener_Package renames org.allbinary.game.input.motion.action.SingleKeyPressGameKeyFromMotionGestureEventListener_Package;
-   package AccelerometerSensorFactory_Package renames org.allbinary.input.accelerometer.AccelerometerSensorFactory_Package;
+   package Processor_Package renames Standard.org.allbinary.canvas.Processor_Package;
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
+   package SensorFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.SensorFeatureFactory_Package;
+   package NoCompleteMotionGestureInputEventListener_Package renames Standard.org.allbinary.game.input.motion.action.NoCompleteMotionGestureInputEventListener_Package;
+   package SingleKeyPressGameKeyFromMotionGestureEventListener_Package renames Standard.org.allbinary.game.input.motion.action.SingleKeyPressGameKeyFromMotionGestureEventListener_Package;
+   package AccelerometerSensorFactory_Package renames Standard.org.allbinary.input.accelerometer.AccelerometerSensorFactory_Package;
 
    type AccelerometerSensorUpdateProcessor is tagged;
    type AccelerometerSensorUpdateProcessor_Access is access all AccelerometerSensorUpdateProcessor'Class;

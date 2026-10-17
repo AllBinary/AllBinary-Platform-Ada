@@ -37,15 +37,15 @@ with org.apache.commons.fileupload.FileItemUtil_Package; use org.apache.commons.
 
 package org.allbinary.logic.communication.http.file.upload.AbFileItem_Package is
 
-   package ForcedLogUtil_Package renames org.allbinary.logic.communication.log.ForcedLogUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package AbFile_Package renames org.allbinary.logic.io.file.AbFile_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package StringValidationUtil_Package renames org.allbinary.logic.string_Id.StringValidationUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package FileItem_Package renames org.apache.commons.fileupload.FileItem_Package;
-   package FileItemHeaders_Package renames org.apache.commons.fileupload.FileItemHeaders_Package;
-   package FileItemUtil_Package renames org.apache.commons.fileupload.FileItemUtil_Package;
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package FileItem_Package renames Standard.org.apache.commons.fileupload.FileItem_Package;
+   package FileItemHeaders_Package renames Standard.org.apache.commons.fileupload.FileItemHeaders_Package;
+   package FileItemUtil_Package renames Standard.org.apache.commons.fileupload.FileItemUtil_Package;
 
    type AbFileItem is tagged;
    type AbFileItem_Access is access all AbFileItem'Class;

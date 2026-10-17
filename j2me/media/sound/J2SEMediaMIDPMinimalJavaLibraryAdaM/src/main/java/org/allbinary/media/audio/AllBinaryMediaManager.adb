@@ -84,11 +84,15 @@ package body org.allbinary.media.audio.AllBinaryMediaManager_Package is
                 bufferedInputStream := BufferedInputStream_Package.Create (inputStream);
                 return PCClipWavPlayer_Package.Create (bufferedInputStream);
             exception
-                when e : others =>
+                when Java_Occurrence : others =>
+                    declare
+                        e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                    begin
                 logUtil := LogUtil_Package.getInstance;
                 commonString := CommonStrings_Package.getInstance;
                 logUtil.put (commonString.EXCEPTION_Id, AllBinaryMediaManager_Package.THIS_Id, CREATE_PLAYER, e);
                 return NoPlayer_Package.NO_PLAYER;
+                    end;
             end;
         else
             return NoPlayer_Package.NO_PLAYER;

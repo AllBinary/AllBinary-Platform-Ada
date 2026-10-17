@@ -26,7 +26,7 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package is
 
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type PlatformTextureBaseFactory is tagged;
    type PlatformTextureBaseFactory_Access is access all PlatformTextureBaseFactory'Class;

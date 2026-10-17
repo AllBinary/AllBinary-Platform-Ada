@@ -25,7 +25,7 @@ with org.allbinary.game.layer.capital.Capital_Package; use org.allbinary.game.la
 
 package org.allbinary.game.layer.capital.HudCapital_Package is
 
-   package NumberStringHud_Package renames org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package;
+   package NumberStringHud_Package renames Standard.org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package;
 
    type HudCapital is tagged;
    type HudCapital_Access is access all HudCapital'Class;

@@ -38,8 +38,12 @@ package body org.allbinary.logic.communication.log.ForcedLogUtil_Package is
         begin
             Java_Throw (Java_New_Exception ("Exception", message));
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             PreLogUtil_Package.putOE (CommonStrings_Package.getInstance.EXCEPTION_Id, anyType, To_Unbounded_String ("log"), e);
+                end;
         end;
    end log;
 

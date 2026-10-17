@@ -28,10 +28,10 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 
 package org.allbinary.util.BasicArrayListS_Package is
 
-   package JsType_Package renames jsinterop.annotations.JsType_Package;
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package JsConstructor_Package renames jsinterop.annotations.JsConstructor_Package;
+   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package JsConstructor_Package renames Standard.jsinterop.annotations.JsConstructor_Package;
 
    type BasicArrayListS is tagged;
    type BasicArrayListS_Access is access all BasicArrayListS'Class;

@@ -29,11 +29,11 @@ with org.allbinary.business.category.CategoryView_Package; use org.allbinary.bus
 
 package org.allbinary.business.category.CategoryComponent_Package is
 
-   package DomDocumentHelper_Package renames org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
-   package TransformInterface_Package renames org.allbinary.logic.visual.transform.TransformInterface_Package;
-   package TransformDocumentInterface_Package renames org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Package;
-   package TransformInfoInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
+   package DomDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
+   package TransformInterface_Package renames Standard.org.allbinary.logic.visual.transform.TransformInterface_Package;
+   package TransformDocumentInterface_Package renames Standard.org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Package;
+   package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
 
    type CategoryComponent is tagged;
    type CategoryComponent_Access is access all CategoryComponent'Class;

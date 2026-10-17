@@ -26,9 +26,9 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.game.displayable.canvas.StartIntermissionProcessor_Package is
 
-   package Processor_Package renames org.allbinary.canvas.Processor_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package Processor_Package renames Standard.org.allbinary.canvas.Processor_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type StartIntermissionProcessor is tagged;
    type StartIntermissionProcessor_Access is access all StartIntermissionProcessor'Class;

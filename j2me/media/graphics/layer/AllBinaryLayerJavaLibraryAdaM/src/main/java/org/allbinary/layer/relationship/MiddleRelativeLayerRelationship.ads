@@ -27,9 +27,9 @@ with org.allbinary.layer.relationship.RelativeLayerRelationship_Package; use org
 
 package org.allbinary.layer.relationship.MiddleRelativeLayerRelationship_Package is
 
-   package PointFactory_Package renames org.allbinary.graphics.PointFactory_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package BasicArrayListUtil_Package renames org.allbinary.util.BasicArrayListUtil_Package;
+   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
 
    type MiddleRelativeLayerRelationship is tagged;
    type MiddleRelativeLayerRelationship_Access is access all MiddleRelativeLayerRelationship'Class;

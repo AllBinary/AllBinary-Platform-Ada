@@ -26,9 +26,9 @@ with org.allbinary.logic.system.hardware.components.interfaces.MachineAccessCont
 
 package org.allbinary.logic.system.hardware.components.linux.MachineAccessControlAddress_Package is
 
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package HardwareComponentInterface_Package renames org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package;
-   package MachineAccessControlAddressInterface_Package renames org.allbinary.logic.system.hardware.components.interfaces.MachineAccessControlAddressInterface_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package HardwareComponentInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package;
+   package MachineAccessControlAddressInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.MachineAccessControlAddressInterface_Package;
 
    type MachineAccessControlAddress is tagged;
    type MachineAccessControlAddress_Access is access all MachineAccessControlAddress'Class;

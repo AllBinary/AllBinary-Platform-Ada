@@ -27,8 +27,8 @@ with admin.taghelpers.HelperFactory_Package; use admin.taghelpers.HelperFactory_
 
 package taghelpers.InventoryHelperFactory_Package is
 
-   package LicensingException_Package renames org.allbinary.logic.system.security.licensing.LicensingException_Package;
-   package HelperFactory_Package renames admin.taghelpers.HelperFactory_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package HelperFactory_Package renames Standard.admin.taghelpers.HelperFactory_Package;
 
    type InventoryHelperFactory is tagged;
    type InventoryHelperFactory_Access is access all InventoryHelperFactory'Class;

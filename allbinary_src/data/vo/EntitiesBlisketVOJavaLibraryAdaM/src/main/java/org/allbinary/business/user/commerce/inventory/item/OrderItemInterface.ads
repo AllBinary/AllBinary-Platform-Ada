@@ -25,7 +25,7 @@ with org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package; 
 
 package org.allbinary.business.user.commerce.inventory.item.OrderItemInterface_Package is
 
-   package StreetAddress_Package renames org.allbinary.business.user.address.StreetAddress_Package;
+   package StreetAddress_Package renames Standard.org.allbinary.business.user.address.StreetAddress_Package;
 
    type OrderItemInterface is interface and ItemInterface;
    type OrderItemInterface_Access is access all OrderItemInterface'Class;

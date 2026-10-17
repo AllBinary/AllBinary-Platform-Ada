@@ -24,7 +24,7 @@ with org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package; use org.a
 
 package org.allbinary.graphics.j2me.workarea.tools.GraphicsItemInterfaceFactoryInterface_Package is
 
-   package CanvasJPanel_Package renames org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package;
+   package CanvasJPanel_Package renames Standard.org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package;
 
    type GraphicsItemInterfaceFactoryInterface is interface;
    type GraphicsItemInterfaceFactoryInterface_Access is access all GraphicsItemInterfaceFactoryInterface'Class;

@@ -43,24 +43,24 @@ with org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectC
 
 package org.allbinary.logic.visual.transform.info.objectConfig.GenericStoreTransformInfoObjectConfig_Package is
 
-   package StoreFrontData_Package renames org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
-   package DomDocumentHelper_Package renames org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
-   package XmlDocumentHelper_Package renames org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package Replace_Package renames org.allbinary.logic.string_Id.regex.replace.Replace_Package;
-   package AbeClientInformationInterface_Package renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-   package RootTransformInfoData_Package renames org.allbinary.logic.visual.transform.info.RootTransformInfoData_Package;
-   package TransformInfoData_Package renames org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
-   package TransformInfoHttp_Package renames org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package;
-   package TransformInfoInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-   package TransformTemplateFactory_Package renames org.allbinary.logic.visual.transform.template.TransformTemplateFactory_Package;
-   package TransformTemplateInterface_Package renames org.allbinary.logic.visual.transform.template.TransformTemplateInterface_Package;
-   package TransformTemplateCustomizerUtil_Package renames org.allbinary.logic.visual.transform.template.util.TransformTemplateCustomizerUtil_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
+   package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+   package DomDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.DomDocumentHelper_Package;
+   package XmlDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package Replace_Package renames Standard.org.allbinary.logic.string_Id.regex.replace.Replace_Package;
+   package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package RootTransformInfoData_Package renames Standard.org.allbinary.logic.visual.transform.info.RootTransformInfoData_Package;
+   package TransformInfoData_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
+   package TransformInfoHttp_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package;
+   package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package TransformTemplateFactory_Package renames Standard.org.allbinary.logic.visual.transform.template.TransformTemplateFactory_Package;
+   package TransformTemplateInterface_Package renames Standard.org.allbinary.logic.visual.transform.template.TransformTemplateInterface_Package;
+   package TransformTemplateCustomizerUtil_Package renames Standard.org.allbinary.logic.visual.transform.template.util.TransformTemplateCustomizerUtil_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
 
    type GenericStoreTransformInfoObjectConfig is tagged;
    type GenericStoreTransformInfoObjectConfig_Access is access all GenericStoreTransformInfoObjectConfig'Class;

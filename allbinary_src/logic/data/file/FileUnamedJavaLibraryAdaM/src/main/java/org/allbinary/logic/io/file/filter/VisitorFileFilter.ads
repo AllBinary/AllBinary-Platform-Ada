@@ -28,9 +28,9 @@ with org.allbinary.logic.util.visitor.VisitorInterface_Package; use org.allbinar
 
 package org.allbinary.logic.io.file.filter.VisitorFileFilter_Package is
 
-   package AbFile_Package renames org.allbinary.logic.io.file.AbFile_Package;
-   package FileWrapperUtil_Package renames org.allbinary.logic.io.file.FileWrapperUtil_Package;
-   package VisitorInterface_Package renames org.allbinary.logic.util.visitor.VisitorInterface_Package;
+   package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
+   package FileWrapperUtil_Package renames Standard.org.allbinary.logic.io.file.FileWrapperUtil_Package;
+   package VisitorInterface_Package renames Standard.org.allbinary.logic.util.visitor.VisitorInterface_Package;
 
    type VisitorFileFilter is tagged;
    type VisitorFileFilter_Access is access all VisitorFileFilter'Class;

@@ -24,7 +24,7 @@ with org.allbinary.game.layer.RTSInterface_Package; use org.allbinary.game.layer
 
 package org.allbinary.game.rts.technology.ReloadTechnology_Package is
 
-   package RTSInterface_Package renames org.allbinary.game.layer.RTSInterface_Package;
+   package RTSInterface_Package renames Standard.org.allbinary.game.layer.RTSInterface_Package;
 
    type ReloadTechnology is tagged;
    type ReloadTechnology_Access is access all ReloadTechnology'Class;

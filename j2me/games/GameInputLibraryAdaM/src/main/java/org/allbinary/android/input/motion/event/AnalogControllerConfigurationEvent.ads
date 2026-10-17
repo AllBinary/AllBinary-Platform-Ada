@@ -24,7 +24,7 @@ with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbin
 
 package org.allbinary.android.input.motion.event.AnalogControllerConfigurationEvent_Package is
 
-   package AllBinaryEventObject_Package renames org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+   package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 
    type AnalogControllerConfigurationEvent is tagged;
    type AnalogControllerConfigurationEvent_Access is access all AnalogControllerConfigurationEvent'Class;

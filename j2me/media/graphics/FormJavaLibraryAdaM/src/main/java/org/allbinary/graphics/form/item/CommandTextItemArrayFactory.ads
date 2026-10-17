@@ -33,14 +33,14 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 
 package org.allbinary.graphics.form.item.CommandTextItemArrayFactory_Package is
 
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package DisplayInfoSingleton_Package renames org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
-   package ScreenInfo_Package renames org.allbinary.graphics.form.ScreenInfo_Package;
-   package VectorUtil_Package renames org.allbinary.logic.VectorUtil_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package Visitor_Package renames org.allbinary.logic.util.visitor.Visitor_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+   package ScreenInfo_Package renames Standard.org.allbinary.graphics.form.ScreenInfo_Package;
+   package VectorUtil_Package renames Standard.org.allbinary.logic.VectorUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package Visitor_Package renames Standard.org.allbinary.logic.util.visitor.Visitor_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type CommandTextItemArrayFactory is tagged;
    type CommandTextItemArrayFactory_Access is access all CommandTextItemArrayFactory'Class;

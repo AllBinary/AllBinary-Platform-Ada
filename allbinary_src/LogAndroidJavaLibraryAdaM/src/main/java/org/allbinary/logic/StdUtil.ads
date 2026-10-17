@@ -27,10 +27,10 @@ with org.allbinary.util.ABVector_Package; use org.allbinary.util.ABVector_Packag
 
 package org.allbinary.logic.StdUtil_Package is
 
-   package ABHashMap_Package renames org.allbinary.util.ABHashMap_Package;
-   package ABHashtable_Package renames org.allbinary.util.ABHashtable_Package;
-   package ABStack_Package renames org.allbinary.util.ABStack_Package;
-   package ABVector_Package renames org.allbinary.util.ABVector_Package;
+   package ABHashMap_Package renames Standard.org.allbinary.util.ABHashMap_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
+   package ABStack_Package renames Standard.org.allbinary.util.ABStack_Package;
+   package ABVector_Package renames Standard.org.allbinary.util.ABVector_Package;
 
    type StdUtil is tagged;
    type StdUtil_Access is access all StdUtil'Class;

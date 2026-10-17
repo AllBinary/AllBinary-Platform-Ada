@@ -53,9 +53,13 @@ package body org.allbinary.logic.java.help.JavaHelpUtil_Package is
             helpSetURL := helpSetURI.toURL;
             return This.getHelpSet (helpSetURL);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, getInstance, To_Unbounded_String ("set"), e);
             return null;
+                end;
         end;
    end getHelpSet;
 
@@ -64,9 +68,13 @@ package body org.allbinary.logic.java.help.JavaHelpUtil_Package is
         begin
             return HelpSet_Package.Create (null, url);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, getInstance, To_Unbounded_String ("set"), e);
             return null;
+                end;
         end;
    end getHelpSet;
 
@@ -80,8 +88,12 @@ package body org.allbinary.logic.java.help.JavaHelpUtil_Package is
             DisplayHelpFromSource_Package.Create (helpBroker).actionPerformed (This.contextSensitiveHelpActionEvent);
             This.logUtil.putF (To_Unbounded_String ("CSH Action"), getInstance, To_Unbounded_String ("show"));
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, getInstance, To_Unbounded_String ("show"), e);
+                end;
         end;
    end show;
 
@@ -92,8 +104,12 @@ package body org.allbinary.logic.java.help.JavaHelpUtil_Package is
             javaHelpUtil := JavaHelpUtil_Package.getInstance;
             javaHelpUtil.show (javaHelpUtil.getHelpSet (To_Unbounded_String ("G:/mnt/bc/mydev/working/automation/InputAutomationJavaApplication/AllBinaryInputAutomationHelp/AllBinaryInputAutomation.hs")));
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             null;
+                end;
         end;
    end main;
 

@@ -26,8 +26,8 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 
 package org.allbinary.logic.communication.smtp.event.EmailEvent_Package is
 
-   package EmailInfo_Package renames org.allbinary.logic.communication.smtp.info.EmailInfo_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
+   package EmailInfo_Package renames Standard.org.allbinary.logic.communication.smtp.info.EmailInfo_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
 
    type EmailEvent is tagged;
    type EmailEvent_Access is access all EmailEvent'Class;

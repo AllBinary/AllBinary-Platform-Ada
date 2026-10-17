@@ -33,15 +33,15 @@ with org.allbinary.game.layer.GeographicMapCellPositionAreaBase_Package; use org
 
 package org.allbinary.game.layer.GeographicMapCellPositionArea_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package CircularIndexUtil_Package renames org.allbinary.util.CircularIndexUtil_Package;
-   package LayerCoveringCellPositionsUtil_Package renames org.allbinary.game.layer.geographic.map.LayerCoveringCellPositionsUtil_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package BasicGeographicMap_Package renames org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
-   package CellPositionsUtil_Package renames org.allbinary.media.graphics.geography.map.CellPositionsUtil_Package;
-   package GeographicMapCellPosition_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
-   package BasicArrayListS_Package renames org.allbinary.util.BasicArrayListS_Package;
-   package BasicArrayListUtil_Package renames org.allbinary.util.BasicArrayListUtil_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package CircularIndexUtil_Package renames Standard.org.allbinary.util.CircularIndexUtil_Package;
+   package LayerCoveringCellPositionsUtil_Package renames Standard.org.allbinary.game.layer.geographic.map.LayerCoveringCellPositionsUtil_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package BasicGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
+   package CellPositionsUtil_Package renames Standard.org.allbinary.media.graphics.geography.map.CellPositionsUtil_Package;
+   package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+   package BasicArrayListS_Package renames Standard.org.allbinary.util.BasicArrayListS_Package;
+   package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
 
    type GeographicMapCellPositionArea is tagged;
    type GeographicMapCellPositionArea_Access is access all GeographicMapCellPositionArea'Class;

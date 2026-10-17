@@ -25,8 +25,8 @@ with org.allbinary.logic.system.hardware.components.interfaces.HardwareComponent
 
 package org.allbinary.logic.system.hardware.components.linux.HardDriveController_Package is
 
-   package HardDriveControllerInterface_Package renames org.allbinary.logic.system.hardware.components.interfaces.HardDriveControllerInterface_Package;
-   package HardwareComponentInterface_Package renames org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package;
+   package HardDriveControllerInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.HardDriveControllerInterface_Package;
+   package HardwareComponentInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package;
 
    type HardDriveController is tagged;
    type HardDriveController_Access is access all HardDriveController'Class;

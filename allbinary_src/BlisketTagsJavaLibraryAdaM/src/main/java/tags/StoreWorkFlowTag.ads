@@ -31,11 +31,11 @@ with tags.HelperTag_Package; use tags.HelperTag_Package;
 
 package tags.StoreWorkFlowTag_Package is
 
-   package AbResponseHandler_Package renames org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package LicensingException_Package renames org.allbinary.logic.system.security.licensing.LicensingException_Package;
-   package TransformInfoData_Package renames org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
-   package StoreTagWorkFlowHelperFactory_Package renames taghelpers.StoreTagWorkFlowHelperFactory_Package;
+   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package TransformInfoData_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
+   package StoreTagWorkFlowHelperFactory_Package renames Standard.taghelpers.StoreTagWorkFlowHelperFactory_Package;
 
    type StoreWorkFlowTag is tagged;
    type StoreWorkFlowTag_Access is access all StoreWorkFlowTag'Class;

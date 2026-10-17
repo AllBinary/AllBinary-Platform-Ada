@@ -27,7 +27,7 @@ with org.allbinary.game.layer.SpriteFactoryInterface_Package; use org.allbinary.
 
 package org.allbinary.game.layer.SpriteFactory_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type SpriteFactory is tagged;
    type SpriteFactory_Access is access all SpriteFactory'Class;

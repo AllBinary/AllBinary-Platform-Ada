@@ -24,7 +24,7 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.logic.system.hardware.components.ComponentFactory_Package is
 
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type ComponentFactory is tagged;
    type ComponentFactory_Access is access all ComponentFactory'Class;

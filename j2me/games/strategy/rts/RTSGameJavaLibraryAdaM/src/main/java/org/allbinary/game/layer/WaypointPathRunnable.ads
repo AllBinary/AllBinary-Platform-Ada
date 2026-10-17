@@ -27,9 +27,9 @@ with org.allbinary.game.layer.WaypointPathRunnableBase_Package; use org.allbinar
 
 package org.allbinary.game.layer.WaypointPathRunnable_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package GeographicMapCellPosition_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
 
    type WaypointPathRunnable is tagged;
    type WaypointPathRunnable_Access is access all WaypointPathRunnable'Class;

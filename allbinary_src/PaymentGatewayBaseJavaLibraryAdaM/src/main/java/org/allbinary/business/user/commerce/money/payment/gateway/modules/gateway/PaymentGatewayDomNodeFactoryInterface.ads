@@ -25,8 +25,8 @@ with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.dat
 
 package org.allbinary.business.user.commerce.money.payment.gateway.modules.gateway.PaymentGatewayDomNodeFactoryInterface_Package is
 
-   package PaymentGatewayInterface_Package renames org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayInterface_Package;
-   package DomNodeInterface_Package renames org.allbinary.data.tree.dom.DomNodeInterface_Package;
+   package PaymentGatewayInterface_Package renames Standard.org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayInterface_Package;
+   package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
 
    type PaymentGatewayDomNodeFactoryInterface is interface;
    type PaymentGatewayDomNodeFactoryInterface_Access is access all PaymentGatewayDomNodeFactoryInterface'Class;

@@ -14,9 +14,9 @@ with jsinterop.annotations.JsConstructor_Package; use jsinterop.annotations.JsCo
 
 package org.allbinary.logic.string_Id.StringMaker_Package is
 
-   package JsType_Package renames jsinterop.annotations.JsType_Package;
-   package JsMethod_Package renames jsinterop.annotations.JsMethod_Package;
-   package JsConstructor_Package renames jsinterop.annotations.JsConstructor_Package;
+   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
+   package JsMethod_Package renames Standard.jsinterop.annotations.JsMethod_Package;
+   package JsConstructor_Package renames Standard.jsinterop.annotations.JsConstructor_Package;
 
    type StringMaker is tagged;
    type StringMaker_Access is access all StringMaker'Class;

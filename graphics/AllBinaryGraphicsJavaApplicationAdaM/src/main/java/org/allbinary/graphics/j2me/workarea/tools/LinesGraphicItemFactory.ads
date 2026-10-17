@@ -25,7 +25,7 @@ with org.allbinary.graphics.j2me.workarea.tools.GraphicsItemInterfaceFactoryInte
 
 package org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItemFactory_Package is
 
-   package CanvasJPanel_Package renames org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package;
+   package CanvasJPanel_Package renames Standard.org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package;
 
    type LinesGraphicItemFactory is tagged;
    type LinesGraphicItemFactory_Access is access all LinesGraphicItemFactory'Class;

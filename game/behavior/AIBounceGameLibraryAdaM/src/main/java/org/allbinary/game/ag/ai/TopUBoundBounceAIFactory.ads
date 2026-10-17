@@ -35,18 +35,18 @@ with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_
 
 package org.allbinary.game.ag.ai.TopUBoundBounceAIFactory_Package is
 
-   package ArtificialIntelligenceInterface_Package renames org.allbinary.ai.ArtificialIntelligenceInterface_Package;
-   package TopULayerBounds_Package renames org.allbinary.bounds.TopULayerBounds_Package;
-   package ArtificialIntelligenceInterfaceFactoryInterface_Package renames org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterface_Package;
-   package GameInput_Package renames org.allbinary.game.input.GameInput_Package;
-   package VelocityInterface_Package renames org.allbinary.game.physics.velocity.VelocityInterface_Package;
-   package VelocityInterfaceCompositeInterface_Package renames org.allbinary.game.physics.velocity.VelocityInterfaceCompositeInterface_Package;
-   package GPoint_Package renames org.allbinary.graphics.GPoint_Package;
-   package PointFactory_Package renames org.allbinary.graphics.PointFactory_Package;
-   package Rectangle_Package renames org.allbinary.graphics.Rectangle_Package;
-   package DisplayInfoSingleton_Package renames org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package ABHashtable_Package renames org.allbinary.util.ABHashtable_Package;
+   package ArtificialIntelligenceInterface_Package renames Standard.org.allbinary.ai.ArtificialIntelligenceInterface_Package;
+   package TopULayerBounds_Package renames Standard.org.allbinary.bounds.TopULayerBounds_Package;
+   package ArtificialIntelligenceInterfaceFactoryInterface_Package renames Standard.org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterface_Package;
+   package GameInput_Package renames Standard.org.allbinary.game.input.GameInput_Package;
+   package VelocityInterface_Package renames Standard.org.allbinary.game.physics.velocity.VelocityInterface_Package;
+   package VelocityInterfaceCompositeInterface_Package renames Standard.org.allbinary.game.physics.velocity.VelocityInterfaceCompositeInterface_Package;
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
+   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
+   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
    type TopUBoundBounceAIFactory is tagged;
    type TopUBoundBounceAIFactory_Access is access all TopUBoundBounceAIFactory'Class;

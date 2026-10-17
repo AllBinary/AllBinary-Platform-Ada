@@ -26,9 +26,9 @@ with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackInfo_Package;
 
 package org.allbinary.media.graphics.geography.map.racetrack.threed.AllBinaryThreedTiledLayerFactory_Package is
 
-   package AllBinaryTiledLayer_Package renames org.allbinary.game.layer.AllBinaryTiledLayer_Package;
-   package RaceTrackData_Package renames org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_Package;
-   package RaceTrackInfo_Package renames org.allbinary.media.graphics.geography.map.racetrack.RaceTrackInfo_Package;
+   package AllBinaryTiledLayer_Package renames Standard.org.allbinary.game.layer.AllBinaryTiledLayer_Package;
+   package RaceTrackData_Package renames Standard.org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_Package;
+   package RaceTrackInfo_Package renames Standard.org.allbinary.media.graphics.geography.map.racetrack.RaceTrackInfo_Package;
 
    type AllBinaryThreedTiledLayerFactory is tagged;
    type AllBinaryThreedTiledLayerFactory_Access is access all AllBinaryThreedTiledLayerFactory'Class;

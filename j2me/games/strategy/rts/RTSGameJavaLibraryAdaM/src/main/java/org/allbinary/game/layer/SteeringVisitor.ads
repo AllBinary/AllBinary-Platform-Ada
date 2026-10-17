@@ -26,9 +26,9 @@ with org.allbinary.logic.util.visitor.Visitor_Package; use org.allbinary.logic.u
 
 package org.allbinary.game.layer.SteeringVisitor_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package Visitor_Package renames org.allbinary.logic.util.visitor.Visitor_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package Visitor_Package renames Standard.org.allbinary.logic.util.visitor.Visitor_Package;
 
    type SteeringVisitor is tagged;
    type SteeringVisitor_Access is access all SteeringVisitor'Class;

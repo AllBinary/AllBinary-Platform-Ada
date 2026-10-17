@@ -25,7 +25,7 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package tags.CustomTagSupport_Package is
 
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type CustomTagSupport is tagged;
    type CustomTagSupport_Access is access all CustomTagSupport'Class;

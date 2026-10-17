@@ -67,9 +67,13 @@ package body org.allbinary.logic.communication.sql.AbDatabaseManagement_Package 
             addr := InetAddress_Package.getLocalHost;
             return addr.getHostName;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.FAILED, This'Unchecked_Access, This.GET_HOST_NAME, e);
             return Null_Unbounded_String;
+                end;
         end;
    end getHostName;
 
@@ -106,9 +110,13 @@ package body org.allbinary.logic.communication.sql.AbDatabaseManagement_Package 
             end if;
             return True;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.UNABLE_TO_CREATE_USER & userName, This'Unchecked_Access, This.METHOD_ADD_USER, e);
             return False;
+                end;
         end;
    end addDbUser;
 
@@ -122,9 +130,13 @@ package body org.allbinary.logic.communication.sql.AbDatabaseManagement_Package 
             AbSqlBean (This).executeSQLStatement (sqlStatement);
             return True;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.UNABLE_TO_CREATE_DATABASE & db, This'Unchecked_Access, This.METHOD_ADD_DB, e);
             return False;
+                end;
         end;
    end addDb;
 

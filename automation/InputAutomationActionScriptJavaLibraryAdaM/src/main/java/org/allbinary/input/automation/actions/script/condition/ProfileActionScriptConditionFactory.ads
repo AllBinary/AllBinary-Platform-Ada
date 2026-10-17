@@ -25,8 +25,8 @@ with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 
 package org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionFactory_Package is
 
-   package DomSearchHelper_Package renames org.allbinary.data.tree.dom.DomSearchHelper_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
+   package DomSearchHelper_Package renames Standard.org.allbinary.data.tree.dom.DomSearchHelper_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type ProfileActionScriptConditionFactory is tagged;
    type ProfileActionScriptConditionFactory_Access is access all ProfileActionScriptConditionFactory'Class;

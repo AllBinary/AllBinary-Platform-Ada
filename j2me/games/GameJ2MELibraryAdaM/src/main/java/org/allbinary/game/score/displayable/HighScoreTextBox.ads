@@ -43,22 +43,22 @@ with org.allbinary.logic.system.security.licensing.InApplicationPurchaseFactory_
 
 package org.allbinary.game.score.displayable.HighScoreTextBox_Package is
 
-   package PostGameCommandFactory_Package renames org.allbinary.PostGameCommandFactory_Package;
-   package GameInfo_Package renames org.allbinary.game.GameInfo_Package;
-   package HighScore_Package renames org.allbinary.game.score.HighScore_Package;
-   package HighScoresHelperBaseInterface_Package renames org.allbinary.game.score.HighScoresHelperBaseInterface_Package;
-   package HighScoresFactoryInterface_Package renames org.allbinary.game.score.HighScoresFactoryInterface_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package BasicColorFactory_Package renames org.allbinary.graphics.color.BasicColorFactory_Package;
-   package CustomTextBox_Package renames org.allbinary.graphics.form.item.CustomTextBox_Package;
-   package NullPaintable_Package renames org.allbinary.graphics.paint.NullPaintable_Package;
-   package Paintable_Package renames org.allbinary.graphics.paint.Paintable_Package;
-   package SimpleTextPaintable_Package renames org.allbinary.graphics.paint.SimpleTextPaintable_Package;
-   package VirtualKeyboardEventHandler_Package renames org.allbinary.input.event.VirtualKeyboardEventHandler_Package;
-   package GenericOperatingSystem_Package renames org.allbinary.logic.system.os.GenericOperatingSystem_Package;
-   package OperatingSystemFactory_Package renames org.allbinary.logic.system.os.OperatingSystemFactory_Package;
-   package AbeClientInformationInterface_Package renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-   package InApplicationPurchaseFactory_Package renames org.allbinary.logic.system.security.licensing.InApplicationPurchaseFactory_Package;
+   package PostGameCommandFactory_Package renames Standard.org.allbinary.PostGameCommandFactory_Package;
+   package GameInfo_Package renames Standard.org.allbinary.game.GameInfo_Package;
+   package HighScore_Package renames Standard.org.allbinary.game.score.HighScore_Package;
+   package HighScoresHelperBaseInterface_Package renames Standard.org.allbinary.game.score.HighScoresHelperBaseInterface_Package;
+   package HighScoresFactoryInterface_Package renames Standard.org.allbinary.game.score.HighScoresFactoryInterface_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package CustomTextBox_Package renames Standard.org.allbinary.graphics.form.item.CustomTextBox_Package;
+   package NullPaintable_Package renames Standard.org.allbinary.graphics.paint.NullPaintable_Package;
+   package Paintable_Package renames Standard.org.allbinary.graphics.paint.Paintable_Package;
+   package SimpleTextPaintable_Package renames Standard.org.allbinary.graphics.paint.SimpleTextPaintable_Package;
+   package VirtualKeyboardEventHandler_Package renames Standard.org.allbinary.input.event.VirtualKeyboardEventHandler_Package;
+   package GenericOperatingSystem_Package renames Standard.org.allbinary.logic.system.os.GenericOperatingSystem_Package;
+   package OperatingSystemFactory_Package renames Standard.org.allbinary.logic.system.os.OperatingSystemFactory_Package;
+   package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package InApplicationPurchaseFactory_Package renames Standard.org.allbinary.logic.system.security.licensing.InApplicationPurchaseFactory_Package;
 
    type HighScoreTextBox is tagged;
    type HighScoreTextBox_Access is access all HighScoreTextBox'Class;

@@ -33,14 +33,14 @@ with org.allbinary.animation.special.SpecialAnimation_Package; use org.allbinary
 
 package org.allbinary.animation.special.TitleAnimation_Package is
 
-   package AnimationBehavior_Package renames org.allbinary.animation.AnimationBehavior_Package;
-   package IndexedAnimation_Package renames org.allbinary.animation.IndexedAnimation_Package;
-   package IndexedAnimationBehavior_Package renames org.allbinary.animation.IndexedAnimationBehavior_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package BasicColorFactory_Package renames org.allbinary.graphics.color.BasicColorFactory_Package;
-   package DisplayInfoSingleton_Package renames org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
-   package ABSystemWrapper_Package renames org.allbinary.logic.ABSystemWrapper_Package;
-   package PrimitiveIntUtil_Package renames org.allbinary.logic.math.PrimitiveIntUtil_Package;
+   package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
+   package IndexedAnimation_Package renames Standard.org.allbinary.animation.IndexedAnimation_Package;
+   package IndexedAnimationBehavior_Package renames Standard.org.allbinary.animation.IndexedAnimationBehavior_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+   package ABSystemWrapper_Package renames Standard.org.allbinary.logic.ABSystemWrapper_Package;
+   package PrimitiveIntUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveIntUtil_Package;
 
    type TitleAnimation is tagged;
    type TitleAnimation_Access is access all TitleAnimation'Class;

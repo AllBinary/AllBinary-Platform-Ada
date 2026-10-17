@@ -31,14 +31,14 @@ with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBina
 
 package org.allbinary.game.ag.layer.pickup.life.LifePickedUpLayerInterfaceFactory_Package is
 
-   package FeaturedAnimationInterfaceFactoryInterfaceFactory_Package renames org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package;
-   package CountedPickedUpLayerInterfaceFactory_Package renames org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactory_Package;
-   package IconLayerFactory_Package renames org.allbinary.game.layer.pickup.IconLayerFactory_Package;
-   package PickedUpLayerInterfaceFactory_Package renames org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactory_Package;
-   package PickedUpLayerInterfaceFactoryInterface_Package renames org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package;
-   package PickedUpLayerTypeFactory_Package renames org.allbinary.game.layer.pickup.PickedUpLayerTypeFactory_Package;
-   package PickupProcessorInterface_Package renames org.allbinary.game.layer.pickup.PickupProcessorInterface_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
+   package FeaturedAnimationInterfaceFactoryInterfaceFactory_Package renames Standard.org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package;
+   package CountedPickedUpLayerInterfaceFactory_Package renames Standard.org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactory_Package;
+   package IconLayerFactory_Package renames Standard.org.allbinary.game.layer.pickup.IconLayerFactory_Package;
+   package PickedUpLayerInterfaceFactory_Package renames Standard.org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactory_Package;
+   package PickedUpLayerInterfaceFactoryInterface_Package renames Standard.org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package;
+   package PickedUpLayerTypeFactory_Package renames Standard.org.allbinary.game.layer.pickup.PickedUpLayerTypeFactory_Package;
+   package PickupProcessorInterface_Package renames Standard.org.allbinary.game.layer.pickup.PickupProcessorInterface_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
 
    type LifePickedUpLayerInterfaceFactory is tagged;
    type LifePickedUpLayerInterfaceFactory_Access is access all LifePickedUpLayerInterfaceFactory'Class;

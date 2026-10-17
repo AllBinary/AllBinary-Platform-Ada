@@ -33,16 +33,16 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.game.layer.resources.GameGraphicsResourceUtil_Package is
 
-   package Features_Package renames org.allbinary.game.configuration.feature.Features_Package;
-   package GraphicsFeature_Package renames org.allbinary.game.configuration.feature.GraphicsFeature_Package;
-   package GraphicsFeatureFactory_Package renames org.allbinary.game.configuration.feature.GraphicsFeatureFactory_Package;
-   package CanvasStrings_Package renames org.allbinary.graphics.displayable.CanvasStrings_Package;
-   package OpenGLFeatureUtil_Package renames org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package;
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
+   package GraphicsFeature_Package renames Standard.org.allbinary.game.configuration.feature.GraphicsFeature_Package;
+   package GraphicsFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.GraphicsFeatureFactory_Package;
+   package CanvasStrings_Package renames Standard.org.allbinary.graphics.displayable.CanvasStrings_Package;
+   package OpenGLFeatureUtil_Package renames Standard.org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type GameGraphicsResourceUtil is tagged;
    type GameGraphicsResourceUtil_Access is access all GameGraphicsResourceUtil'Class;

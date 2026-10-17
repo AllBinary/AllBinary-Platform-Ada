@@ -25,8 +25,8 @@ with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.
 
 package org.allbinary.android.input.motion.AnalogLocationInputProcessor_Package is
 
-   package AnalogLocationInput_Package renames org.allbinary.game.input.analog.AnalogLocationInput_Package;
-   package AllBinaryLayerManager_Package renames org.allbinary.layer.AllBinaryLayerManager_Package;
+   package AnalogLocationInput_Package renames Standard.org.allbinary.game.input.analog.AnalogLocationInput_Package;
+   package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
 
    type AnalogLocationInputProcessor is tagged;
    type AnalogLocationInputProcessor_Access is access all AnalogLocationInputProcessor'Class;

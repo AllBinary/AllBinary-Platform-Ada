@@ -26,8 +26,8 @@ with admin.tags.TableTag_Package; use admin.tags.TableTag_Package;
 
 package admin.tags.AdminConfigurationTag_Package is
 
-   package AdminConfigurationHelperFactory_Package renames admin.taghelpers.AdminConfigurationHelperFactory_Package;
-   package AdminConfigurationRequestHelperFactory_Package renames admin.taghelpers.AdminConfigurationRequestHelperFactory_Package;
+   package AdminConfigurationHelperFactory_Package renames Standard.admin.taghelpers.AdminConfigurationHelperFactory_Package;
+   package AdminConfigurationRequestHelperFactory_Package renames Standard.admin.taghelpers.AdminConfigurationRequestHelperFactory_Package;
 
    type AdminConfigurationTag is tagged;
    type AdminConfigurationTag_Access is access all AdminConfigurationTag'Class;

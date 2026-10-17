@@ -25,8 +25,8 @@ with org.allbinary.data.tables.TableMappingInterface_Package; use org.allbinary.
 
 package org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package is
 
-   package Money_Package renames org.allbinary.business.user.commerce.money.Money_Package;
-   package TableMappingInterface_Package renames org.allbinary.data.tables.TableMappingInterface_Package;
+   package Money_Package renames Standard.org.allbinary.business.user.commerce.money.Money_Package;
+   package TableMappingInterface_Package renames Standard.org.allbinary.data.tables.TableMappingInterface_Package;
 
    type ItemInterface is interface and TableMappingInterface;
    type ItemInterface_Access is access all ItemInterface'Class;

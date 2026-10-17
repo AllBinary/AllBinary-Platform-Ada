@@ -28,10 +28,10 @@ with tags.StoreValidationTransformTag_Package; use tags.StoreValidationTransform
 
 package tags.generic_Id.payment.PaymentTag_Package is
 
-   package PaymentData_Package renames org.allbinary.business.user.commerce.money.payment.PaymentData_Package;
-   package AbResponseHandler_Package renames org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
-   package LicensingException_Package renames org.allbinary.logic.system.security.licensing.LicensingException_Package;
-   package StoreValidationTransformTag_Package renames tags.StoreValidationTransformTag_Package;
+   package PaymentData_Package renames Standard.org.allbinary.business.user.commerce.money.payment.PaymentData_Package;
+   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package StoreValidationTransformTag_Package renames Standard.tags.StoreValidationTransformTag_Package;
 
    type PaymentTag is tagged;
    type PaymentTag_Access is access all PaymentTag'Class;

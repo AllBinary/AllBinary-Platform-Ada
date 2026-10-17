@@ -39,21 +39,21 @@ with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.Circul
 
 package org.allbinary.game.ag.ai.HorizontaRotationManeuverAI_Package is
 
-   package ArtificialIntelligence_Package renames org.allbinary.ai.ArtificialIntelligence_Package;
-   package ArtificialIntelligenceTransitionInterface_Package renames org.allbinary.ai.ArtificialIntelligenceTransitionInterface_Package;
-   package IndexedAnimation_Package renames org.allbinary.animation.IndexedAnimation_Package;
-   package RotationAnimationInterface_Package renames org.allbinary.animation.RotationAnimationInterface_Package;
-   package RotationAnimationInterfaceCompositeInterface_Package renames org.allbinary.animation.RotationAnimationInterfaceCompositeInterface_Package;
-   package BasicAI_Package renames org.allbinary.game.ai.BasicAI_Package;
-   package GameInput_Package renames org.allbinary.game.input.GameInput_Package;
-   package BasicVelocityProperties_Package renames org.allbinary.game.physics.velocity.BasicVelocityProperties_Package;
-   package VelocityInterface_Package renames org.allbinary.game.physics.velocity.VelocityInterface_Package;
-   package VelocityInterfaceCompositeInterface_Package renames org.allbinary.game.physics.velocity.VelocityInterfaceCompositeInterface_Package;
-   package DisplayInfoSingleton_Package renames org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package AllBinaryLayerManager_Package renames org.allbinary.layer.AllBinaryLayerManager_Package;
-   package AngleIncrementInfo_Package renames org.allbinary.math.AngleIncrementInfo_Package;
-   package CircularIndexUtil_Package renames org.allbinary.util.CircularIndexUtil_Package;
+   package ArtificialIntelligence_Package renames Standard.org.allbinary.ai.ArtificialIntelligence_Package;
+   package ArtificialIntelligenceTransitionInterface_Package renames Standard.org.allbinary.ai.ArtificialIntelligenceTransitionInterface_Package;
+   package IndexedAnimation_Package renames Standard.org.allbinary.animation.IndexedAnimation_Package;
+   package RotationAnimationInterface_Package renames Standard.org.allbinary.animation.RotationAnimationInterface_Package;
+   package RotationAnimationInterfaceCompositeInterface_Package renames Standard.org.allbinary.animation.RotationAnimationInterfaceCompositeInterface_Package;
+   package BasicAI_Package renames Standard.org.allbinary.game.ai.BasicAI_Package;
+   package GameInput_Package renames Standard.org.allbinary.game.input.GameInput_Package;
+   package BasicVelocityProperties_Package renames Standard.org.allbinary.game.physics.velocity.BasicVelocityProperties_Package;
+   package VelocityInterface_Package renames Standard.org.allbinary.game.physics.velocity.VelocityInterface_Package;
+   package VelocityInterfaceCompositeInterface_Package renames Standard.org.allbinary.game.physics.velocity.VelocityInterfaceCompositeInterface_Package;
+   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
+   package AngleIncrementInfo_Package renames Standard.org.allbinary.math.AngleIncrementInfo_Package;
+   package CircularIndexUtil_Package renames Standard.org.allbinary.util.CircularIndexUtil_Package;
 
    type HorizontaRotationManeuverAI is tagged;
    type HorizontaRotationManeuverAI_Access is access all HorizontaRotationManeuverAI'Class;

@@ -27,10 +27,10 @@ with org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package; use
 
 package org.allbinary.input.motion.gesture.MirrorMotionGestureEventUtil_Package is
 
-   package GPoint_Package renames org.allbinary.graphics.GPoint_Package;
-   package PointFactory_Package renames org.allbinary.graphics.PointFactory_Package;
-   package MotionEventCircularPool_Package renames org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package;
-   package MotionGestureEvent_Package renames org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package;
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
+   package MotionEventCircularPool_Package renames Standard.org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package;
+   package MotionGestureEvent_Package renames Standard.org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package;
 
    type MirrorMotionGestureEventUtil is tagged;
    type MirrorMotionGestureEventUtil_Access is access all MirrorMotionGestureEventUtil'Class;

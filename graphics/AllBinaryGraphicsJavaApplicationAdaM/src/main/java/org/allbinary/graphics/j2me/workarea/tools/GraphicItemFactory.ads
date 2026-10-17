@@ -28,10 +28,10 @@ with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 
 package org.allbinary.graphics.j2me.workarea.tools.GraphicItemFactory_Package is
 
-   package LOGGING_Package renames org.allbinary.log.LOGGING_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
+   package LOGGING_Package renames Standard.org.allbinary.log.LOGGING_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type GraphicItemFactory is tagged;
    type GraphicItemFactory_Access is access all GraphicItemFactory'Class;

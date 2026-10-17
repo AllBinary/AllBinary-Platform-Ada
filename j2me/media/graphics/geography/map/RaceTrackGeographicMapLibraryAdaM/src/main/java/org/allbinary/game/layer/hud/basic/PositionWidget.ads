@@ -28,10 +28,10 @@ with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics
 
 package org.allbinary.game.layer.hud.basic.PositionWidget_Package is
 
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package BasicHud_Package renames org.allbinary.game.graphics.hud.BasicHud_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package BasicHud_Package renames Standard.org.allbinary.game.graphics.hud.BasicHud_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
 
    type PositionWidget is tagged;
    type PositionWidget_Access is access all PositionWidget'Class;

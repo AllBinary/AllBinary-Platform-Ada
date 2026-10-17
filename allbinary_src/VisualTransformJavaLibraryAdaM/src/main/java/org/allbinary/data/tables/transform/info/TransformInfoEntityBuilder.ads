@@ -26,9 +26,9 @@ with org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformI
 
 package org.allbinary.data.tables.transform.info.TransformInfoEntityBuilder_Package is
 
-   package TransformInfoHttpStoreFactory_Package renames org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreFactory_Package;
-   package TransformInfoObjectConfigAndManipulatorFactory_Package renames org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigAndManipulatorFactory_Package;
-   package TransformInfoObjectConfigGeneratorFactory_Package renames org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactory_Package;
+   package TransformInfoHttpStoreFactory_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreFactory_Package;
+   package TransformInfoObjectConfigAndManipulatorFactory_Package renames Standard.org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigAndManipulatorFactory_Package;
+   package TransformInfoObjectConfigGeneratorFactory_Package renames Standard.org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactory_Package;
 
    type TransformInfoEntityBuilder is tagged;
    type TransformInfoEntityBuilder_Access is access all TransformInfoEntityBuilder'Class;

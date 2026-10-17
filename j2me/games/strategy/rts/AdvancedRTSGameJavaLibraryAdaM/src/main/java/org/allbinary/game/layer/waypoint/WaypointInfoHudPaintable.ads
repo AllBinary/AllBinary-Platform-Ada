@@ -30,11 +30,11 @@ with org.allbinary.graphics.draw.KeyValueDrawString_Package; use org.allbinary.g
 
 package org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package is
 
-   package NullPathFindingLayer_Package renames org.allbinary.game.layer.NullPathFindingLayer_Package;
-   package PathFindingLayerInterface_Package renames org.allbinary.game.layer.PathFindingLayerInterface_Package;
-   package RTSLayer_Package renames org.allbinary.game.layer.RTSLayer_Package;
-   package SelectionHudPaintable_Package renames org.allbinary.game.layer.SelectionHudPaintable_Package;
-   package KeyValueDrawString_Package renames org.allbinary.graphics.draw.KeyValueDrawString_Package;
+   package NullPathFindingLayer_Package renames Standard.org.allbinary.game.layer.NullPathFindingLayer_Package;
+   package PathFindingLayerInterface_Package renames Standard.org.allbinary.game.layer.PathFindingLayerInterface_Package;
+   package RTSLayer_Package renames Standard.org.allbinary.game.layer.RTSLayer_Package;
+   package SelectionHudPaintable_Package renames Standard.org.allbinary.game.layer.SelectionHudPaintable_Package;
+   package KeyValueDrawString_Package renames Standard.org.allbinary.graphics.draw.KeyValueDrawString_Package;
 
    type WaypointInfoHudPaintable is tagged;
    type WaypointInfoHudPaintable_Access is access all WaypointInfoHudPaintable'Class;

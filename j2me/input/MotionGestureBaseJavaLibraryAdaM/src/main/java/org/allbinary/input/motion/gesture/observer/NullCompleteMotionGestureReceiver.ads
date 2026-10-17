@@ -27,9 +27,9 @@ with org.allbinary.input.motion.gesture.observer.CompleteMotionGestureListenerIn
 
 package org.allbinary.input.motion.gesture.observer.NullCompleteMotionGestureReceiver_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type NullCompleteMotionGestureReceiver is tagged;
    type NullCompleteMotionGestureReceiver_Access is access all NullCompleteMotionGestureReceiver'Class;

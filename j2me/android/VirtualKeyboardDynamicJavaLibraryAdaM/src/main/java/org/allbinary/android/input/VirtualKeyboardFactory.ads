@@ -27,10 +27,10 @@ with android.app.Activity_Package; use android.app.Activity_Package;
 
 package org.allbinary.android.input.VirtualKeyboardFactory_Package is
 
-   package AndroidInfoFactory_Package renames org.allbinary.android.AndroidInfoFactory_Package;
-   package VirtualKeyboardAPI1_Package renames org.allbinary.android.input.api1.VirtualKeyboardAPI1_Package;
-   package VirtualKeyboardAPI3_Package renames org.allbinary.android.input.api3.VirtualKeyboardAPI3_Package;
-   package Activity_Package renames android.app.Activity_Package;
+   package AndroidInfoFactory_Package renames Standard.org.allbinary.android.AndroidInfoFactory_Package;
+   package VirtualKeyboardAPI1_Package renames Standard.org.allbinary.android.input.api1.VirtualKeyboardAPI1_Package;
+   package VirtualKeyboardAPI3_Package renames Standard.org.allbinary.android.input.api3.VirtualKeyboardAPI3_Package;
+   package Activity_Package renames Standard.android.app.Activity_Package;
 
    type VirtualKeyboardFactory is tagged;
    type VirtualKeyboardFactory_Access is access all VirtualKeyboardFactory'Class;

@@ -28,8 +28,8 @@ with org.allbinary.emulator.device.TrueTypeFontUtilBase_Package; use org.allbina
 
 package org.allbinary.emulator.device.TrueTypeFontUtil_Package is
 
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package OpenGLESImage_Package renames org.allbinary.image.opengles.OpenGLESImage_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package OpenGLESImage_Package renames Standard.org.allbinary.image.opengles.OpenGLESImage_Package;
 
    type TrueTypeFontUtil is tagged;
    type TrueTypeFontUtil_Access is access all TrueTypeFontUtil'Class;

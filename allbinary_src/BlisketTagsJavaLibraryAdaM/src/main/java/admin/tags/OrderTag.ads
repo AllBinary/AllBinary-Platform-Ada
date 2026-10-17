@@ -35,14 +35,14 @@ with tags.CustomTagSupport_Package; use tags.CustomTagSupport_Package;
 
 package admin.tags.OrderTag_Package is
 
-   package OrderHelperFactory_Package renames admin.taghelpers.OrderHelperFactory_Package;
-   package StoreFrontData_Package renames org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
-   package PaymentGatewayData_Package renames org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package AbResponseHandler_Package renames org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package LicensingException_Package renames org.allbinary.logic.system.security.licensing.LicensingException_Package;
-   package CustomTagSupport_Package renames tags.CustomTagSupport_Package;
+   package OrderHelperFactory_Package renames Standard.admin.taghelpers.OrderHelperFactory_Package;
+   package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+   package PaymentGatewayData_Package renames Standard.org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package CustomTagSupport_Package renames Standard.tags.CustomTagSupport_Package;
 
    type OrderTag is tagged;
    type OrderTag_Access is access all OrderTag'Class;

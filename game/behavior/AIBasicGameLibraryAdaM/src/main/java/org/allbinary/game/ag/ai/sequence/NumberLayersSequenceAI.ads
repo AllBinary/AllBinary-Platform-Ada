@@ -28,10 +28,10 @@ with org.allbinary.game.ag.ai.sequence.SequenceAI_Package; use org.allbinary.gam
 
 package org.allbinary.game.ag.ai.sequence.NumberLayersSequenceAI_Package is
 
-   package ArtificialIntelligenceInterface_Package renames org.allbinary.ai.ArtificialIntelligenceInterface_Package;
-   package GameInput_Package renames org.allbinary.game.input.GameInput_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package AllBinaryLayerManager_Package renames org.allbinary.layer.AllBinaryLayerManager_Package;
+   package ArtificialIntelligenceInterface_Package renames Standard.org.allbinary.ai.ArtificialIntelligenceInterface_Package;
+   package GameInput_Package renames Standard.org.allbinary.game.input.GameInput_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
 
    type NumberLayersSequenceAI is tagged;
    type NumberLayersSequenceAI_Access is access all NumberLayersSequenceAI'Class;

@@ -56,9 +56,13 @@ package body org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package is
             This.transformer.setOutputProperty (OutputKeys_Package.OMIT_XML_DECLARATION, (if ignoreDeclaration then booleanFactory.YES else booleanFactory.NO));
             This.transformer.setOutputProperty (OutputKeys_Package.INDENT, booleanFactory.YES);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.INIT, e);
+                end;
         end;
    end init;
 
@@ -92,8 +96,12 @@ package body org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package is
             copyTransformer.transform (domSource, streamResult);
             return byteArrayOutputStream.toString;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Java_Throw (e);
+                end;
         end;
    end toString;
 

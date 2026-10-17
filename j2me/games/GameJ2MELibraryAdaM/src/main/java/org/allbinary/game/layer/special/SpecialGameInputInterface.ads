@@ -26,9 +26,9 @@ with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.
 
 package org.allbinary.game.layer.special.SpecialGameInputInterface_Package is
 
-   package GameKeyEvent_Package renames org.allbinary.game.input.event.GameKeyEvent_Package;
-   package PaintableInterface_Package renames org.allbinary.graphics.paint.PaintableInterface_Package;
-   package AllBinaryLayerManager_Package renames org.allbinary.layer.AllBinaryLayerManager_Package;
+   package GameKeyEvent_Package renames Standard.org.allbinary.game.input.event.GameKeyEvent_Package;
+   package PaintableInterface_Package renames Standard.org.allbinary.graphics.paint.PaintableInterface_Package;
+   package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
 
    type SpecialGameInputInterface is interface and PaintableInterface;
    type SpecialGameInputInterface_Access is access all SpecialGameInputInterface'Class;

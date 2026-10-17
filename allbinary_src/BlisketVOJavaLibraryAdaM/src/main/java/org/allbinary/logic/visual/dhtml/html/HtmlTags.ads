@@ -26,9 +26,9 @@ with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Packag
 
 package org.allbinary.logic.visual.dhtml.html.HtmlTags_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
 
    type HtmlTags is tagged;
    type HtmlTags_Access is access all HtmlTags'Class;

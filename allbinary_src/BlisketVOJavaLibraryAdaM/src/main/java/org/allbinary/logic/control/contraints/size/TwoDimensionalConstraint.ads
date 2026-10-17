@@ -25,7 +25,7 @@ with org.allbinary.logic.control.contraints.size.TwoDimensionalConstraintInterfa
 
 package org.allbinary.logic.control.contraints.size.TwoDimensionalConstraint_Package is
 
-   package Node_Package renames org.w3c.dom.Node_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type TwoDimensionalConstraint is tagged;
    type TwoDimensionalConstraint_Access is access all TwoDimensionalConstraint'Class;

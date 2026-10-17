@@ -30,11 +30,11 @@ with tags.StoreValidationTransformTag_Package; use tags.StoreValidationTransform
 
 package tags.generic_Id.inventory.InventoryTag_Package is
 
-   package AbResponseHandler_Package renames org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package LicensingException_Package renames org.allbinary.logic.system.security.licensing.LicensingException_Package;
-   package InventoryHelperFactory_Package renames taghelpers.InventoryHelperFactory_Package;
-   package StoreValidationTransformTag_Package renames tags.StoreValidationTransformTag_Package;
+   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package InventoryHelperFactory_Package renames Standard.taghelpers.InventoryHelperFactory_Package;
+   package StoreValidationTransformTag_Package renames Standard.tags.StoreValidationTransformTag_Package;
 
    type InventoryTag is tagged;
    type InventoryTag_Access is access all InventoryTag'Class;

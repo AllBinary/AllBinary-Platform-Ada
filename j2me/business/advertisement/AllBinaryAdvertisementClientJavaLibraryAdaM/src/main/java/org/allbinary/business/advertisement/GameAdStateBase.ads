@@ -28,11 +28,11 @@ with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logi
 
 package org.allbinary.business.advertisement.GameAdStateBase_Package is
 
-   package GameType_Package renames org.allbinary.game.GameType_Package;
-   package GameState_Package renames org.allbinary.game.state.GameState_Package;
-   package ForcedLogUtil_Package renames org.allbinary.logic.communication.log.ForcedLogUtil_Package;
-   package AllBinaryEventObject_Package renames org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-   package EventStrings_Package renames org.allbinary.logic.util.event.EventStrings_Package;
+   package GameType_Package renames Standard.org.allbinary.game.GameType_Package;
+   package GameState_Package renames Standard.org.allbinary.game.state.GameState_Package;
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+   package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+   package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
 
    type GameAdStateBase is tagged;
    type GameAdStateBase_Access is access all GameAdStateBase'Class;

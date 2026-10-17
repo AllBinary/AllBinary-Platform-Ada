@@ -26,8 +26,8 @@ with org.allbinary.logic.util.cache.CacheableInterface_Package; use org.allbinar
 
 package org.allbinary.logic.util.cache.BasicArrayListCacheable_Package is
 
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type BasicArrayListCacheable is tagged;
    type BasicArrayListCacheable_Access is access all BasicArrayListCacheable'Class;

@@ -33,14 +33,14 @@ with org.allbinary.business.context.modules.storefront.statistics.inventory.Stor
 
 package org.allbinary.business.context.modules.storefront.statistics.inventory.StoreFrontInventoryStatistics_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package StoreFrontInterface_Package renames org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
-   package ItemInterface_Package renames org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package;
-   package Money_Package renames org.allbinary.business.user.commerce.money.Money_Package;
-   package InventoryEntityFactory_Package renames org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityFactory_Package;
-   package InventoryEntityInterface_Package renames org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityInterface_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StoreFrontInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
+   package ItemInterface_Package renames Standard.org.allbinary.business.user.commerce.inventory.item.ItemInterface_Package;
+   package Money_Package renames Standard.org.allbinary.business.user.commerce.money.Money_Package;
+   package InventoryEntityFactory_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityFactory_Package;
+   package InventoryEntityInterface_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityInterface_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
 
    type StoreFrontInventoryStatistics is tagged;
    type StoreFrontInventoryStatistics_Access is access all StoreFrontInventoryStatistics'Class;

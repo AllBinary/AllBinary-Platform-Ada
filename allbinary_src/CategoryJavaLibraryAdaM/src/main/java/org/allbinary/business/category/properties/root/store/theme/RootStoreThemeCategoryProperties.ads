@@ -37,18 +37,18 @@ with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 
 package org.allbinary.business.category.properties.root.store.theme.RootStoreThemeCategoryProperties_Package is
 
-   package RootStoreCategoryProperties_Package renames org.allbinary.business.category.properties.root.store.RootStoreCategoryProperties_Package;
-   package StoreFrontFactory_Package renames org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
-   package StoreFrontInterface_Package renames org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
-   package FREEBLISKET_PATH_GLOBALS_Package renames org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package;
-   package URLGLOBALS_Package renames org.allbinary.globals.URLGLOBALS_Package;
-   package AbPath_Package renames org.allbinary.logic.io.path.AbPath_Package;
-   package AbPathData_Package renames org.allbinary.logic.io.path.AbPathData_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package TransformInfoHttpStoreInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreInterface_Package;
-   package TransformInfoInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
+   package RootStoreCategoryProperties_Package renames Standard.org.allbinary.business.category.properties.root.store.RootStoreCategoryProperties_Package;
+   package StoreFrontFactory_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
+   package StoreFrontInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
+   package FREEBLISKET_PATH_GLOBALS_Package renames Standard.org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package;
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
+   package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
+   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package TransformInfoHttpStoreInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreInterface_Package;
+   package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type RootStoreThemeCategoryProperties is tagged;
    type RootStoreThemeCategoryProperties_Access is access all RootStoreThemeCategoryProperties'Class;

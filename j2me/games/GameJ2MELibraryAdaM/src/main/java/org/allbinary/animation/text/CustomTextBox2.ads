@@ -27,8 +27,8 @@ with org.allbinary.graphics.form.item.CustomTextBox_Package; use org.allbinary.g
 
 package org.allbinary.animation.text.CustomTextBox2_Package is
 
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package CustomTextBox_Package renames org.allbinary.graphics.form.item.CustomTextBox_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package CustomTextBox_Package renames Standard.org.allbinary.graphics.form.item.CustomTextBox_Package;
 
    type CustomTextBox2 is tagged;
    type CustomTextBox2_Access is access all CustomTextBox2'Class;

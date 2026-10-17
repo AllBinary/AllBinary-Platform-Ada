@@ -189,8 +189,12 @@ package body org.allbinary.game.input.mapping.InputToGameKeyMapping_Package is
                 This.initGameKey (canvas, This.mappedGameKeys (index));
             end loop;
         exception
-            when t : others =>
+            when Java_Occurrence : others =>
+                declare
+                    t : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.INIT, t);
+                end;
         end;
    end init;
 

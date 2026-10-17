@@ -25,7 +25,7 @@ with org.allbinary.math.AngleInfo_Package; use org.allbinary.math.AngleInfo_Pack
 
 package org.allbinary.animation.image.ImageArrayRotationAnimationInfo_Package is
 
-   package AngleInfo_Package renames org.allbinary.math.AngleInfo_Package;
+   package AngleInfo_Package renames Standard.org.allbinary.math.AngleInfo_Package;
 
    type ImageArrayRotationAnimationInfo is tagged;
    type ImageArrayRotationAnimationInfo_Access is access all ImageArrayRotationAnimationInfo'Class;

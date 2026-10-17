@@ -88,8 +88,12 @@ package body org.allbinary.input.motion.button.TouchButton_Package is
             This.animationY := point.getY;
             This.hintAnimationY := (This.animationY) - (32);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("updateRectangle"), e);
+                end;
         end;
    end updateRectangle;
 

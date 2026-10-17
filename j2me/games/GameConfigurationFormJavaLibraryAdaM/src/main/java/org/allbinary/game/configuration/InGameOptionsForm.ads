@@ -32,12 +32,12 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 
 package org.allbinary.game.configuration.InGameOptionsForm_Package is
 
-   package GameCommandsFactory_Package renames org.allbinary.game.commands.GameCommandsFactory_Package;
-   package GameFeatureFormUtil_Package renames org.allbinary.game.configuration.feature.GameFeatureFormUtil_Package;
-   package InGameFeatureChoiceGroups_Package renames org.allbinary.game.configuration.feature.InGameFeatureChoiceGroups_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package CommandForm_Package renames org.allbinary.graphics.displayable.screen.CommandForm_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
+   package GameCommandsFactory_Package renames Standard.org.allbinary.game.commands.GameCommandsFactory_Package;
+   package GameFeatureFormUtil_Package renames Standard.org.allbinary.game.configuration.feature.GameFeatureFormUtil_Package;
+   package InGameFeatureChoiceGroups_Package renames Standard.org.allbinary.game.configuration.feature.InGameFeatureChoiceGroups_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package CommandForm_Package renames Standard.org.allbinary.graphics.displayable.screen.CommandForm_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type InGameOptionsForm is tagged;
    type InGameOptionsForm_Access is access all InGameOptionsForm'Class;

@@ -27,10 +27,10 @@ with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Pack
 
 package org.allbinary.input.motion.gyro.action.RollLeftOrientationInputToGameKeyEventAction_Package is
 
-   package PlatformInputMappingFactory_Package renames org.allbinary.game.input.PlatformInputMappingFactory_Package;
-   package GameKeyCompleteMotionGestureInputEvent_Package renames org.allbinary.game.input.motion.action.GameKeyCompleteMotionGestureInputEvent_Package;
-   package OrientationMotionGestureFactory_Package renames org.allbinary.input.gyro.OrientationMotionGestureFactory_Package;
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
+   package PlatformInputMappingFactory_Package renames Standard.org.allbinary.game.input.PlatformInputMappingFactory_Package;
+   package GameKeyCompleteMotionGestureInputEvent_Package renames Standard.org.allbinary.game.input.motion.action.GameKeyCompleteMotionGestureInputEvent_Package;
+   package OrientationMotionGestureFactory_Package renames Standard.org.allbinary.input.gyro.OrientationMotionGestureFactory_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
 
    type RollLeftOrientationInputToGameKeyEventAction is tagged;
    type RollLeftOrientationInputToGameKeyEventAction_Access is access all RollLeftOrientationInputToGameKeyEventAction'Class;

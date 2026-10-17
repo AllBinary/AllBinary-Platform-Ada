@@ -43,23 +43,23 @@ with org.allbinary.game.input.PlayerGameInputCompositeInterface_Package; use org
 
 package org.allbinary.game.input.MapSelectionGameInputProcessor_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package LockedFeatureNotificationUtil_Package renames org.allbinary.logic.system.security.licensing.LockedFeatureNotificationUtil_Package;
-   package LockedUtil_Package renames org.allbinary.logic.system.security.licensing.LockedUtil_Package;
-   package Processor_Package renames org.allbinary.canvas.Processor_Package;
-   package AllBinaryGameCanvas_Package renames org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
-   package PreGameSelectorPaintable_Package renames org.allbinary.game.displayable.canvas.PreGameSelectorPaintable_Package;
-   package GameKeyEventHandler_Package renames org.allbinary.game.input.event.GameKeyEventHandler_Package;
-   package GameKeyEventUtil_Package renames org.allbinary.game.input.event.GameKeyEventUtil_Package;
-   package AllBinaryLayerManager_Package renames org.allbinary.layer.AllBinaryLayerManager_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package SecondaryPlayerQueueFactory_Package renames org.allbinary.media.audio.SecondaryPlayerQueueFactory_Package;
-   package SelectSound_Package renames org.allbinary.media.audio.SelectSound_Package;
-   package MultiLevelRaceTrackGeographicMapInterfaceFactoryInterface_Package renames org.allbinary.media.graphics.geography.map.racetrack.MultiLevelRaceTrackGeographicMapInterfaceFactoryInterface_Package;
-   package ABRunnable_Package renames org.allbinary.thread.ABRunnable_Package;
-   package ThreadObjectUtil_Package renames org.allbinary.thread.ThreadObjectUtil_Package;
-   package TimeDelayHelper_Package renames org.allbinary.time.TimeDelayHelper_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package LockedFeatureNotificationUtil_Package renames Standard.org.allbinary.logic.system.security.licensing.LockedFeatureNotificationUtil_Package;
+   package LockedUtil_Package renames Standard.org.allbinary.logic.system.security.licensing.LockedUtil_Package;
+   package Processor_Package renames Standard.org.allbinary.canvas.Processor_Package;
+   package AllBinaryGameCanvas_Package renames Standard.org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
+   package PreGameSelectorPaintable_Package renames Standard.org.allbinary.game.displayable.canvas.PreGameSelectorPaintable_Package;
+   package GameKeyEventHandler_Package renames Standard.org.allbinary.game.input.event.GameKeyEventHandler_Package;
+   package GameKeyEventUtil_Package renames Standard.org.allbinary.game.input.event.GameKeyEventUtil_Package;
+   package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package SecondaryPlayerQueueFactory_Package renames Standard.org.allbinary.media.audio.SecondaryPlayerQueueFactory_Package;
+   package SelectSound_Package renames Standard.org.allbinary.media.audio.SelectSound_Package;
+   package MultiLevelRaceTrackGeographicMapInterfaceFactoryInterface_Package renames Standard.org.allbinary.media.graphics.geography.map.racetrack.MultiLevelRaceTrackGeographicMapInterfaceFactoryInterface_Package;
+   package ABRunnable_Package renames Standard.org.allbinary.thread.ABRunnable_Package;
+   package ThreadObjectUtil_Package renames Standard.org.allbinary.thread.ThreadObjectUtil_Package;
+   package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
 
    type MapSelectionGameInputProcessor is tagged;
    type MapSelectionGameInputProcessor_Access is access all MapSelectionGameInputProcessor'Class;

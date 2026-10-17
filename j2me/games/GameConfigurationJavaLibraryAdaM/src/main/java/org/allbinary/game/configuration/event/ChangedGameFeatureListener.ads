@@ -25,7 +25,7 @@ with org.allbinary.game.configuration.event.BaseChangedGameFeatureListener_Packa
 
 package org.allbinary.game.configuration.event.ChangedGameFeatureListener_Package is
 
-   package GameConfiguration_Package renames org.allbinary.game.configuration.GameConfiguration_Package;
+   package GameConfiguration_Package renames Standard.org.allbinary.game.configuration.GameConfiguration_Package;
 
    type ChangedGameFeatureListener is tagged;
    type ChangedGameFeatureListener_Access is access all ChangedGameFeatureListener'Class;

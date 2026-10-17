@@ -27,9 +27,9 @@ with org.allbinary.graphics.color.ColorCompositeInterface_Package; use org.allbi
 
 package org.allbinary.animation.vector.RectangleAdjustedAnimation_Package is
 
-   package Animation_Package renames org.allbinary.animation.Animation_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package ColorCompositeInterface_Package renames org.allbinary.graphics.color.ColorCompositeInterface_Package;
+   package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package ColorCompositeInterface_Package renames Standard.org.allbinary.graphics.color.ColorCompositeInterface_Package;
 
    type RectangleAdjustedAnimation is tagged;
    type RectangleAdjustedAnimation_Access is access all RectangleAdjustedAnimation'Class;

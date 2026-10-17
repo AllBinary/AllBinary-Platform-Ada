@@ -28,11 +28,11 @@ with org.allbinary.layer.LayerProcessor_Package; use org.allbinary.layer.LayerPr
 
 package org.allbinary.game.collision.OptimizedAllBinaryCollisionLayerProcessorForCollidableLayer_Package is
 
-   package CollidableCompositeLayer_Package renames org.allbinary.game.layer.CollidableCompositeLayer_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package AllBinaryLayerManager_Package renames org.allbinary.layer.AllBinaryLayerManager_Package;
-   package LayerManager_Package renames org.allbinary.layer.LayerManager_Package;
-   package LayerProcessor_Package renames org.allbinary.layer.LayerProcessor_Package;
+   package CollidableCompositeLayer_Package renames Standard.org.allbinary.game.layer.CollidableCompositeLayer_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
+   package LayerManager_Package renames Standard.org.allbinary.layer.LayerManager_Package;
+   package LayerProcessor_Package renames Standard.org.allbinary.layer.LayerProcessor_Package;
 
    type OptimizedAllBinaryCollisionLayerProcessorForCollidableLayer is tagged;
    type OptimizedAllBinaryCollisionLayerProcessorForCollidableLayer_Access is access all OptimizedAllBinaryCollisionLayerProcessorForCollidableLayer'Class;

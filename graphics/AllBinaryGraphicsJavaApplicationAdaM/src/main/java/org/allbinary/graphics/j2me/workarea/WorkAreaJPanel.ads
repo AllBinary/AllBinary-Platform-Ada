@@ -45,21 +45,21 @@ with org.allbinary.graphics.j2me.workarea.Runnable_Package; use org.allbinary.gr
 
 package org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
 
-   package DomHelper_Package renames org.allbinary.dom.DomHelper_Package;
-   package StatusFactory_Package renames org.allbinary.graphics.j2me.StatusFactory_Package;
-   package CanvasDom_Package renames org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package;
-   package CanvasJPanel_Package renames org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package;
-   package MyCanvasEvent_Package renames org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package;
-   package MyCanvasEventListener_Package renames org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventListener_Package;
-   package MyCanvasEventService_Package renames org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package;
-   package PropertiesJPanel_Package renames org.allbinary.graphics.j2me.workarea.properties.PropertiesJPanel_Package;
-   package ToolJPanel_Package renames org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package;
-   package LOGGING_Package renames org.allbinary.log.LOGGING_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
+   package DomHelper_Package renames Standard.org.allbinary.dom.DomHelper_Package;
+   package StatusFactory_Package renames Standard.org.allbinary.graphics.j2me.StatusFactory_Package;
+   package CanvasDom_Package renames Standard.org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package;
+   package CanvasJPanel_Package renames Standard.org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package;
+   package MyCanvasEvent_Package renames Standard.org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package;
+   package MyCanvasEventListener_Package renames Standard.org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventListener_Package;
+   package MyCanvasEventService_Package renames Standard.org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package;
+   package PropertiesJPanel_Package renames Standard.org.allbinary.graphics.j2me.workarea.properties.PropertiesJPanel_Package;
+   package ToolJPanel_Package renames Standard.org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package;
+   package LOGGING_Package renames Standard.org.allbinary.log.LOGGING_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type WorkAreaJPanel is tagged;
    type WorkAreaJPanel_Access is access all WorkAreaJPanel'Class;

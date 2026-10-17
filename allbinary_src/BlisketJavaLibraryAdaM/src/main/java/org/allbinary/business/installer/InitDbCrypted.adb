@@ -103,9 +103,13 @@ package body org.allbinary.business.installer.InitDbCrypted_Package is
             This.logUtil.putF (This.commonStrings.END_Id, This'Unchecked_Access, This.METHOD_ADD_USERS);
             return True;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.METHOD_ADD_USERS, e);
             return True;
+                end;
         end;
    end addUsers;
 
@@ -156,9 +160,13 @@ package body org.allbinary.business.installer.InitDbCrypted_Package is
             idOutData.writeBytes (This.sqlCommandLog.toString);
             return True;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.METHOD_ADD_DATABASES, e);
             return True;
+                end;
         end;
    end addDatabases;
 
@@ -187,9 +195,13 @@ package body org.allbinary.business.installer.InitDbCrypted_Package is
             This.logUtil.putF (Java_Image (ADD_TABLES_RESULTS_LABEL) & stringBuffer.toString, This'Unchecked_Access, This.METHOD_ADD_TABLES);
             return True;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.METHOD_ADD_TABLES, e);
             return False;
+                end;
         end;
    end addTables;
 

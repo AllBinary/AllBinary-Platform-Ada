@@ -24,7 +24,7 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 
 package org.allbinary.logic.util.cache.ImageCacheable_Package is
 
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type ImageCacheable is tagged;
    type ImageCacheable_Access is access all ImageCacheable'Class;

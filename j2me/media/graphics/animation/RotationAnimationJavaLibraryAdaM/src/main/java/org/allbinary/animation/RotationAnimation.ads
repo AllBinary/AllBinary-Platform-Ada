@@ -32,13 +32,13 @@ with org.allbinary.animation.RotationAnimationInterface_Package; use org.allbina
 
 package org.allbinary.animation.RotationAnimation_Package is
 
-   package Direction_Package renames org.allbinary.direction.Direction_Package;
-   package DirectionUtil_Package renames org.allbinary.direction.DirectionUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package Angle_Package renames org.allbinary.math.Angle_Package;
-   package AngleInfo_Package renames org.allbinary.math.AngleInfo_Package;
-   package FrameUtil_Package renames org.allbinary.math.FrameUtil_Package;
-   package CircularIndexUtil_Package renames org.allbinary.util.CircularIndexUtil_Package;
+   package Direction_Package renames Standard.org.allbinary.direction.Direction_Package;
+   package DirectionUtil_Package renames Standard.org.allbinary.direction.DirectionUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package Angle_Package renames Standard.org.allbinary.math.Angle_Package;
+   package AngleInfo_Package renames Standard.org.allbinary.math.AngleInfo_Package;
+   package FrameUtil_Package renames Standard.org.allbinary.math.FrameUtil_Package;
+   package CircularIndexUtil_Package renames Standard.org.allbinary.util.CircularIndexUtil_Package;
 
    type RotationAnimation is tagged;
    type RotationAnimation_Access is access all RotationAnimation'Class;

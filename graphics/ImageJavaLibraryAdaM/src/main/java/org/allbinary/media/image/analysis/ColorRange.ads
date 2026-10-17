@@ -26,8 +26,8 @@ with org.allbinary.media.image.analysis.ColorRangeInterface_Package; use org.all
 
 package org.allbinary.media.image.analysis.ColorRange_Package is
 
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
 
    type ColorRange is tagged;
    type ColorRange_Access is access all ColorRange'Class;

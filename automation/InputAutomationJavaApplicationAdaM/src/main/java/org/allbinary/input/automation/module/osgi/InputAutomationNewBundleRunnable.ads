@@ -46,21 +46,21 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 
 package org.allbinary.input.automation.module.osgi.InputAutomationNewBundleRunnable_Package is
 
-   package Bundle_Package renames org.osgi.framework.Bundle_Package;
-   package BundleContext_Package renames org.osgi.framework.BundleContext_Package;
-   package Constants_Package renames org.osgi.framework.Constants_Package;
-   package InputAutomationBundleActivator_Package renames bundle.input.automation.InputAutomationBundleActivator_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package FileWrapperUtil_Package renames org.allbinary.logic.io.file_Case.FileWrapperUtil_Package;
-   package SubDirectory_Package renames org.allbinary.logic.io.file_Case.directory.SubDirectory_Package;
-   package BasicFileFilterUtil_Package renames org.allbinary.logic.io.file_Case.filter.BasicFileFilterUtil_Package;
-   package CommonLabels_Package renames org.allbinary.string_Id.CommonLabels_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package RunnableInterface_Package renames org.allbinary.thread.RunnableInterface_Package;
-   package TimeDelayHelper_Package renames org.allbinary.time.TimeDelayHelper_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
+   package Bundle_Package renames Standard.org.osgi.framework.Bundle_Package;
+   package BundleContext_Package renames Standard.org.osgi.framework.BundleContext_Package;
+   package Constants_Package renames Standard.org.osgi.framework.Constants_Package;
+   package InputAutomationBundleActivator_Package renames Standard.bundle.input.automation.InputAutomationBundleActivator_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package FileWrapperUtil_Package renames Standard.org.allbinary.logic.io.file_Case.FileWrapperUtil_Package;
+   package SubDirectory_Package renames Standard.org.allbinary.logic.io.file_Case.directory.SubDirectory_Package;
+   package BasicFileFilterUtil_Package renames Standard.org.allbinary.logic.io.file_Case.filter.BasicFileFilterUtil_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package RunnableInterface_Package renames Standard.org.allbinary.thread.RunnableInterface_Package;
+   package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type InputAutomationNewBundleRunnable is tagged;
    type InputAutomationNewBundleRunnable_Access is access all InputAutomationNewBundleRunnable'Class;

@@ -30,13 +30,13 @@ with org.allbinary.math.AngleIncrementInfo_Package; use org.allbinary.math.Angle
 
 package org.allbinary.game.ag.ai.LurchRotationAI_Package is
 
-   package IndexedAnimation_Package renames org.allbinary.animation.IndexedAnimation_Package;
-   package RotationAnimationInterface_Package renames org.allbinary.animation.RotationAnimationInterface_Package;
-   package RotationAnimationInterfaceCompositeInterface_Package renames org.allbinary.animation.RotationAnimationInterfaceCompositeInterface_Package;
-   package LurchAI_Package renames org.allbinary.game.ag.ai.tactical.LurchAI_Package;
-   package GameInput_Package renames org.allbinary.game.input.GameInput_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package AngleIncrementInfo_Package renames org.allbinary.math.AngleIncrementInfo_Package;
+   package IndexedAnimation_Package renames Standard.org.allbinary.animation.IndexedAnimation_Package;
+   package RotationAnimationInterface_Package renames Standard.org.allbinary.animation.RotationAnimationInterface_Package;
+   package RotationAnimationInterfaceCompositeInterface_Package renames Standard.org.allbinary.animation.RotationAnimationInterfaceCompositeInterface_Package;
+   package LurchAI_Package renames Standard.org.allbinary.game.ag.ai.tactical.LurchAI_Package;
+   package GameInput_Package renames Standard.org.allbinary.game.input.GameInput_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package AngleIncrementInfo_Package renames Standard.org.allbinary.math.AngleIncrementInfo_Package;
 
    type LurchRotationAI is tagged;
    type LurchRotationAI_Access is access all LurchRotationAI'Class;

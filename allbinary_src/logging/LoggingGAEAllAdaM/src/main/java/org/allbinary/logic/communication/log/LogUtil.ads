@@ -27,8 +27,8 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.logic.communication.log.LogUtil_Package is
 
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type LogUtil is tagged;
    type LogUtil_Access is access all LogUtil'Class;

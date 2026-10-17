@@ -28,9 +28,9 @@ with org.allbinary.business.category.hierarchy.CategoryHierarchyInterface_Packag
 
 package org.allbinary.business.category.hierarchy.CategoryHierarchy_Package is
 
-   package CategoryData_Package renames org.allbinary.business.category.CategoryData_Package;
-   package CategoryInterface_Package renames org.allbinary.business.category.CategoryInterface_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
+   package CategoryData_Package renames Standard.org.allbinary.business.category.CategoryData_Package;
+   package CategoryInterface_Package renames Standard.org.allbinary.business.category.CategoryInterface_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type CategoryHierarchy is tagged;
    type CategoryHierarchy_Access is access all CategoryHierarchy'Class;

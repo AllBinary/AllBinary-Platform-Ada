@@ -25,8 +25,8 @@ with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBina
 
 package org.allbinary.media.graphics.geography.map.GeographicMapCellPositionTracking_Package is
 
-   package AllBinaryGameCanvasInterface_Package renames org.allbinary.game.displayable.canvas.AllBinaryGameCanvasInterface_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
+   package AllBinaryGameCanvasInterface_Package renames Standard.org.allbinary.game.displayable.canvas.AllBinaryGameCanvasInterface_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
 
    type GeographicMapCellPositionTracking is tagged;
    type GeographicMapCellPositionTracking_Access is access all GeographicMapCellPositionTracking'Class;

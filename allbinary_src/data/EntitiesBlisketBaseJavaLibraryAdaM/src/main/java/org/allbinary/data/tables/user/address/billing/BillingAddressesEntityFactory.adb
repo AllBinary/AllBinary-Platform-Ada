@@ -46,12 +46,16 @@ package body org.allbinary.data.tables.user.address.billing.BillingAddressesEnti
         begin
             return BillingAddressesEntity_Package.Create (userName);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.ENTITYFACTORYERROR) then
                 commonStrings := CommonStrings_Package.getInstance;
                 This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.GET_INSTANCE, e);
             end if;
             return null;
+                end;
         end;
    end getInstance;
 

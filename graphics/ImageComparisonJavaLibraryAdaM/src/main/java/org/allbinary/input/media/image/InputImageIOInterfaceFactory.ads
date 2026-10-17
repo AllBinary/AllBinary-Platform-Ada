@@ -27,10 +27,10 @@ with org.allbinary.media.image.io.ImageIOInterface_Package; use org.allbinary.me
 
 package org.allbinary.input.media.image.InputImageIOInterfaceFactory_Package is
 
-   package CapturedImageInputOutput_Package renames org.allbinary.input.media.image.capture.CapturedImageInputOutput_Package;
-   package ComparisonImageInputOutput_Package renames org.allbinary.media.image.comparison.ComparisonImageInputOutput_Package;
-   package MotionRectanglesImageInputOutput_Package renames org.allbinary.media.image.comparison.motion.MotionRectanglesImageInputOutput_Package;
-   package ImageIOInterface_Package renames org.allbinary.media.image.io.ImageIOInterface_Package;
+   package CapturedImageInputOutput_Package renames Standard.org.allbinary.input.media.image.capture.CapturedImageInputOutput_Package;
+   package ComparisonImageInputOutput_Package renames Standard.org.allbinary.media.image.comparison.ComparisonImageInputOutput_Package;
+   package MotionRectanglesImageInputOutput_Package renames Standard.org.allbinary.media.image.comparison.motion.MotionRectanglesImageInputOutput_Package;
+   package ImageIOInterface_Package renames Standard.org.allbinary.media.image.io.ImageIOInterface_Package;
 
    type InputImageIOInterfaceFactory is tagged;
    type InputImageIOInterfaceFactory_Access is access all InputImageIOInterfaceFactory'Class;

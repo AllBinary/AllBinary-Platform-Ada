@@ -24,7 +24,7 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 
 package org.allbinary.graphics.j2me.workarea.tools.PointsInterface_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type PointsInterface is interface;
    type PointsInterface_Access is access all PointsInterface'Class;

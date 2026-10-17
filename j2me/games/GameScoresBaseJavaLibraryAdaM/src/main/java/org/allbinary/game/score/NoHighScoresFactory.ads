@@ -26,8 +26,8 @@ with org.allbinary.game.score.HighScoresBase_Package; use org.allbinary.game.sco
 
 package org.allbinary.game.score.NoHighScoresFactory_Package is
 
-   package GameInfo_Package renames org.allbinary.game.GameInfo_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
+   package GameInfo_Package renames Standard.org.allbinary.game.GameInfo_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type NoHighScoresFactory is tagged;
    type NoHighScoresFactory_Access is access all NoHighScoresFactory'Class;

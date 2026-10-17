@@ -27,10 +27,10 @@ with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
 
 package org.allbinary.data.tree.dom.DomNodeListHelper_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package NodeList_Package renames org.w3c.dom.NodeList_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package NodeList_Package renames Standard.org.w3c.dom.NodeList_Package;
 
    type DomNodeListHelper is tagged;
    type DomNodeListHelper_Access is access all DomNodeListHelper'Class;

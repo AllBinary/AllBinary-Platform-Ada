@@ -21,7 +21,7 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.io.ByteArrayInputStream_Package; use java.io.ByteArrayInputStream_Package;
---  with java.io.ByteArrayOutputStream_Package; use java.io.ByteArrayOutputStream_Package;
+with java.io.ByteArrayOutputStream_Package; use java.io.ByteArrayOutputStream_Package;
 --  with java.io.DataInputStream_Package; use java.io.DataInputStream_Package;
 --  with java.io.DataOutputStream_Package; use java.io.DataOutputStream_Package;
 --  with javax.microedition.rms.RecordEnumeration_Package; use javax.microedition.rms.RecordEnumeration_Package;
@@ -46,22 +46,23 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 
 package org.allbinary.game.score.HighScoreNamePersistanceSingleton_Package is
 
-   package TsUtil_Package renames org.allbinary.TsUtil_Package;
-   package GameInfo_Package renames org.allbinary.game.GameInfo_Package;
-   package NullRecordComparator_Package renames org.allbinary.game.configuration.persistance.NullRecordComparator_Package;
-   package NullRecordFilter_Package renames org.allbinary.game.configuration.persistance.NullRecordFilter_Package;
-   package NullRecordStore_Package renames org.allbinary.game.configuration.persistance.NullRecordStore_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package PreLogUtil_Package renames org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package ExceptionUtil_Package renames org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
-   package SmallIntegerSingletonFactory_Package renames org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package AbeClientInformationInterface_Package renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-   package PlatformRecordIdUtil_Package renames org.allbinary.persistance.PlatformRecordIdUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
+   package ByteArrayOutputStream_Package renames Standard.java.io.ByteArrayOutputStream_Package;
+   package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
+   package GameInfo_Package renames Standard.org.allbinary.game.GameInfo_Package;
+   package NullRecordComparator_Package renames Standard.org.allbinary.game.configuration.persistance.NullRecordComparator_Package;
+   package NullRecordFilter_Package renames Standard.org.allbinary.game.configuration.persistance.NullRecordFilter_Package;
+   package NullRecordStore_Package renames Standard.org.allbinary.game.configuration.persistance.NullRecordStore_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package ExceptionUtil_Package renames Standard.org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package PlatformRecordIdUtil_Package renames Standard.org.allbinary.persistance.PlatformRecordIdUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type HighScoreNamePersistanceSingleton is tagged;
    type HighScoreNamePersistanceSingleton_Access is access all HighScoreNamePersistanceSingleton'Class;

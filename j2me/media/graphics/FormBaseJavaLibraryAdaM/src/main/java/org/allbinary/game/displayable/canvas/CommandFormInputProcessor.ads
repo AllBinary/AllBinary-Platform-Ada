@@ -46,26 +46,26 @@ with org.allbinary.game.displayable.canvas.BasicMenuInputProcessor_Package; use 
 
 package org.allbinary.game.displayable.canvas.CommandFormInputProcessor_Package is
 
-   package GameCommandsFactory_Package renames org.allbinary.game.commands.GameCommandsFactory_Package;
-   package Features_Package renames org.allbinary.game.configuration.feature.Features_Package;
-   package InputFeatureFactory_Package renames org.allbinary.game.configuration.feature.InputFeatureFactory_Package;
-   package GameKeyEvent_Package renames org.allbinary.game.input.event.GameKeyEvent_Package;
-   package GameKeyEventFactory_Package renames org.allbinary.game.input.event.GameKeyEventFactory_Package;
-   package SWTUtil_Package renames org.allbinary.game.layer.SWTUtil_Package;
-   package GPoint_Package renames org.allbinary.graphics.GPoint_Package;
-   package MyCanvas_Package renames org.allbinary.graphics.displayable.MyCanvas_Package;
-   package CommandCurrentSelectionForm_Package renames org.allbinary.graphics.form.CommandCurrentSelectionForm_Package;
-   package ScrollSelectionForm_Package renames org.allbinary.graphics.form.ScrollSelectionForm_Package;
-   package OpenGLFeatureFactory_Package renames org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
-   package MotionGestureInput_Package renames org.allbinary.input.motion.gesture.MotionGestureInput_Package;
-   package TouchMotionGestureFactory_Package renames org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package;
-   package MotionGestureEvent_Package renames org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package PrimaryPlayerQueueFactory_Package renames org.allbinary.media.audio.PrimaryPlayerQueueFactory_Package;
-   package SelectSound_Package renames org.allbinary.media.audio.SelectSound_Package;
-   package PrimaryThreadPool_Package renames org.allbinary.thread.PrimaryThreadPool_Package;
-   package TimeDelayHelper_Package renames org.allbinary.time.TimeDelayHelper_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package GameCommandsFactory_Package renames Standard.org.allbinary.game.commands.GameCommandsFactory_Package;
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
+   package InputFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.InputFeatureFactory_Package;
+   package GameKeyEvent_Package renames Standard.org.allbinary.game.input.event.GameKeyEvent_Package;
+   package GameKeyEventFactory_Package renames Standard.org.allbinary.game.input.event.GameKeyEventFactory_Package;
+   package SWTUtil_Package renames Standard.org.allbinary.game.layer.SWTUtil_Package;
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package MyCanvas_Package renames Standard.org.allbinary.graphics.displayable.MyCanvas_Package;
+   package CommandCurrentSelectionForm_Package renames Standard.org.allbinary.graphics.form.CommandCurrentSelectionForm_Package;
+   package ScrollSelectionForm_Package renames Standard.org.allbinary.graphics.form.ScrollSelectionForm_Package;
+   package OpenGLFeatureFactory_Package renames Standard.org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
+   package MotionGestureInput_Package renames Standard.org.allbinary.input.motion.gesture.MotionGestureInput_Package;
+   package TouchMotionGestureFactory_Package renames Standard.org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package;
+   package MotionGestureEvent_Package renames Standard.org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package PrimaryPlayerQueueFactory_Package renames Standard.org.allbinary.media.audio.PrimaryPlayerQueueFactory_Package;
+   package SelectSound_Package renames Standard.org.allbinary.media.audio.SelectSound_Package;
+   package PrimaryThreadPool_Package renames Standard.org.allbinary.thread.PrimaryThreadPool_Package;
+   package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type CommandFormInputProcessor is tagged;
    type CommandFormInputProcessor_Access is access all CommandFormInputProcessor'Class;

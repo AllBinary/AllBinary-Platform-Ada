@@ -33,16 +33,16 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.game.layer.resources.OnDemandLoader_Package is
 
-   package BaseResourceAnimationInterfaceFactoryInterfaceFactory_Package renames org.allbinary.animation.resource.BaseResourceAnimationInterfaceFactoryInterfaceFactory_Package;
-   package Features_Package renames org.allbinary.game.configuration.feature.Features_Package;
-   package MainFeatureFactory_Package renames org.allbinary.game.configuration.feature.MainFeatureFactory_Package;
-   package GameLayerPlacementInterfaceBasicArrayListFactoryInterfaceFactory_Package renames org.allbinary.game.layer.GameLayerPlacementInterfaceBasicArrayListFactoryInterfaceFactory_Package;
-   package LayerPlacementInterfaceBasicArrayListFactoryInterface_Package renames org.allbinary.game.layer.LayerPlacementInterfaceBasicArrayListFactoryInterface_Package;
-   package ResourceLoadingLevelFactory_Package renames org.allbinary.game.resource.ResourceLoadingLevelFactory_Package;
-   package ImageCache_Package renames org.allbinary.image.ImageCache_Package;
-   package PreLogUtil_Package renames org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package BaseResourceAnimationInterfaceFactoryInterfaceFactory_Package renames Standard.org.allbinary.animation.resource.BaseResourceAnimationInterfaceFactoryInterfaceFactory_Package;
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
+   package MainFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.MainFeatureFactory_Package;
+   package GameLayerPlacementInterfaceBasicArrayListFactoryInterfaceFactory_Package renames Standard.org.allbinary.game.layer.GameLayerPlacementInterfaceBasicArrayListFactoryInterfaceFactory_Package;
+   package LayerPlacementInterfaceBasicArrayListFactoryInterface_Package renames Standard.org.allbinary.game.layer.LayerPlacementInterfaceBasicArrayListFactoryInterface_Package;
+   package ResourceLoadingLevelFactory_Package renames Standard.org.allbinary.game.resource.ResourceLoadingLevelFactory_Package;
+   package ImageCache_Package renames Standard.org.allbinary.image.ImageCache_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type OnDemandLoader is tagged;
    type OnDemandLoader_Access is access all OnDemandLoader'Class;

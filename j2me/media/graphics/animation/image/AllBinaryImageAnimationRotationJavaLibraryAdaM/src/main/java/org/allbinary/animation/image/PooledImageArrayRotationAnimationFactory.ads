@@ -32,14 +32,14 @@ with org.allbinary.media.image.ImageToRotationImageArrayUtil_Package; use org.al
 
 package org.allbinary.animation.image.PooledImageArrayRotationAnimationFactory_Package is
 
-   package Animation_Package renames org.allbinary.animation.Animation_Package;
-   package AnimationBehaviorFactory_Package renames org.allbinary.animation.AnimationBehaviorFactory_Package;
-   package AnimationInterfaceFactoryInterface_Package renames org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
-   package GameConfigurationCentral_Package renames org.allbinary.game.configuration.GameConfigurationCentral_Package;
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
-   package AngleFactory_Package renames org.allbinary.math.AngleFactory_Package;
-   package ScaleProperties_Package renames org.allbinary.media.ScaleProperties_Package;
-   package ImageToRotationImageArrayUtil_Package renames org.allbinary.media.image.ImageToRotationImageArrayUtil_Package;
+   package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
+   package AnimationBehaviorFactory_Package renames Standard.org.allbinary.animation.AnimationBehaviorFactory_Package;
+   package AnimationInterfaceFactoryInterface_Package renames Standard.org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
+   package GameConfigurationCentral_Package renames Standard.org.allbinary.game.configuration.GameConfigurationCentral_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;
+   package ScaleProperties_Package renames Standard.org.allbinary.media.ScaleProperties_Package;
+   package ImageToRotationImageArrayUtil_Package renames Standard.org.allbinary.media.image.ImageToRotationImageArrayUtil_Package;
 
    type PooledImageArrayRotationAnimationFactory is tagged;
    type PooledImageArrayRotationAnimationFactory_Access is access all PooledImageArrayRotationAnimationFactory'Class;

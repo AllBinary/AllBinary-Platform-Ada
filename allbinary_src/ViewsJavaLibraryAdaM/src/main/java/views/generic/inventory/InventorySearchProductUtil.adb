@@ -62,11 +62,15 @@ package body views.generic_Id.inventory.InventorySearchProductUtil_Package is
                 return This.ITEM_NOT_FOUND;
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PRODUCTSEARCHLOGGINGERROR) then
                 This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("getProduct"), e);
             end if;
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Failed to getProduct")));
+                end;
         end;
    end getProduct;
 

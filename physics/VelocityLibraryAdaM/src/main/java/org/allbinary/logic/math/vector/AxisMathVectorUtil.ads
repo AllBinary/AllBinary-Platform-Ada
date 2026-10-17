@@ -24,7 +24,7 @@ with org.allbinary.math.NoDecimalTrigTable_Package; use org.allbinary.math.NoDec
 
 package org.allbinary.logic.math.vector.AxisMathVectorUtil_Package is
 
-   package NoDecimalTrigTable_Package renames org.allbinary.math.NoDecimalTrigTable_Package;
+   package NoDecimalTrigTable_Package renames Standard.org.allbinary.math.NoDecimalTrigTable_Package;
 
    type AxisMathVectorUtil is tagged;
    type AxisMathVectorUtil_Access is access all AxisMathVectorUtil'Class;

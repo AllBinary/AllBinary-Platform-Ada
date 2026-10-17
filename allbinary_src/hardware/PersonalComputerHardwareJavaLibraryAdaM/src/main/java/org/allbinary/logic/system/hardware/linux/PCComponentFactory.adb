@@ -66,12 +66,16 @@ package body org.allbinary.logic.system.hardware.linux.PCComponentFactory_Packag
             end if;
             return HardwareComponentInterface_Access (Unknown_Package.Create (componentData));
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.FACTORYERROR) then
                 This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.GET_INSTANCE, e);
             end if;
             return Unknown_Package.Create (commonStrings.EXCEPTION_Id);
+                end;
         end;
    end getInstance;
 

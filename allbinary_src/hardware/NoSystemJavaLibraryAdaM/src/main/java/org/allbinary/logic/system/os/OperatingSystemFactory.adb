@@ -51,8 +51,12 @@ package body org.allbinary.logic.system.os.OperatingSystemFactory_Package is
             Ada.Text_IO.Put_Line (Java_Image (osString));
             This.logUtil.putF (osString, This'Unchecked_Access, commonStrings.GET_INSTANCE);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.GET_INSTANCE, e);
+                end;
         end;
         return This.genericOperatingSystem;
    end getOperatingSystemInstance;

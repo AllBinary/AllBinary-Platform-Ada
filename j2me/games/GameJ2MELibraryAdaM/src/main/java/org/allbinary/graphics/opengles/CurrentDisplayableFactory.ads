@@ -46,28 +46,28 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 
 package org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package is
 
-   package J2MEUtil_Package renames org.allbinary.J2MEUtil_Package;
-   package Features_Package renames org.allbinary.game.configuration.feature.Features_Package;
-   package AllBinaryGameCanvas_Package renames org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
-   package DemoCanvas_Package renames org.allbinary.game.displayable.canvas.DemoCanvas_Package;
-   package GameInputMappingCanvas_Package renames org.allbinary.game.displayable.canvas.GameInputMappingCanvas_Package;
-   package GameInputMappingInstructionsCanvas_Package renames org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas_Package;
-   package GameRunnable_Package renames org.allbinary.game.displayable.canvas.GameRunnable_Package;
-   package NullDisplayable_Package renames org.allbinary.game.displayable.canvas.NullDisplayable_Package;
-   package NullWaitGameRunnable_Package renames org.allbinary.game.displayable.canvas.NullWaitGameRunnable_Package;
-   package SWTUtil_Package renames org.allbinary.game.layer.SWTUtil_Package;
-   package HighScoresCanvas_Package renames org.allbinary.game.score.displayable.HighScoresCanvas_Package;
-   package GraphicsStrings_Package renames org.allbinary.graphics.GraphicsStrings_Package;
-   package CanvasStrings_Package renames org.allbinary.graphics.displayable.CanvasStrings_Package;
-   package MyCanvas_Package renames org.allbinary.graphics.displayable.MyCanvas_Package;
-   package PreLogUtil_Package renames org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package NullRunnable_Package renames org.allbinary.thread.NullRunnable_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
+   package J2MEUtil_Package renames Standard.org.allbinary.J2MEUtil_Package;
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
+   package AllBinaryGameCanvas_Package renames Standard.org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
+   package DemoCanvas_Package renames Standard.org.allbinary.game.displayable.canvas.DemoCanvas_Package;
+   package GameInputMappingCanvas_Package renames Standard.org.allbinary.game.displayable.canvas.GameInputMappingCanvas_Package;
+   package GameInputMappingInstructionsCanvas_Package renames Standard.org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas_Package;
+   package GameRunnable_Package renames Standard.org.allbinary.game.displayable.canvas.GameRunnable_Package;
+   package NullDisplayable_Package renames Standard.org.allbinary.game.displayable.canvas.NullDisplayable_Package;
+   package NullWaitGameRunnable_Package renames Standard.org.allbinary.game.displayable.canvas.NullWaitGameRunnable_Package;
+   package SWTUtil_Package renames Standard.org.allbinary.game.layer.SWTUtil_Package;
+   package HighScoresCanvas_Package renames Standard.org.allbinary.game.score.displayable.HighScoresCanvas_Package;
+   package GraphicsStrings_Package renames Standard.org.allbinary.graphics.GraphicsStrings_Package;
+   package CanvasStrings_Package renames Standard.org.allbinary.graphics.displayable.CanvasStrings_Package;
+   package MyCanvas_Package renames Standard.org.allbinary.graphics.displayable.MyCanvas_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package NullRunnable_Package renames Standard.org.allbinary.thread.NullRunnable_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type CurrentDisplayableFactory is tagged;
    type CurrentDisplayableFactory_Access is access all CurrentDisplayableFactory'Class;

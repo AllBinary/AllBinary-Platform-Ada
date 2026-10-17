@@ -49,11 +49,15 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
             data := CryptFileReader_Package.Create (TransformInfoObjectConfigData_Package.getInstance.UNCRYPTED_EXTENSION, TransformInfoObjectConfigData_Package.getInstance.ENCRYPTED_EXTENSION).get (objectConfigFileAbPath);
             return This.getInstance (abeClientInformation, transformInfoInterface, DomDocumentHelper_Package.create (data));
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
                 This.logUtil.put (To_Unbounded_String ("Could Not Load Object Config"), getInstance, This.commonStrings.GET_INSTANCE, e);
             end if;
             Java_Throw (e);
+                end;
         end;
    end getInstance;
 
@@ -70,7 +74,10 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
                 return TransformInfoObjectConfigInterface_Access (TransformInfoObjectConfig_Package.Create (transformInfoInterface));
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             error := To_Unbounded_String ("Failed To Get Instance: ");
             if (transformInfoInterface) /= (null) then
                 error := error & transformInfoInterface.getName;
@@ -79,6 +86,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, getInstance, This.commonStrings.GET_INSTANCE, e);
             end if;
             Java_Throw (e);
+                end;
         end;
    end getInstance;
 
@@ -95,7 +103,10 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
                 return TransformInfoObjectConfigInterface_Access (TransformInfoObjectConfig_Package.Create (transformInfoInterface, document));
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             error := To_Unbounded_String ("Failed To Get Instance: ");
             if (transformInfoInterface) /= (null) then
                 error := error & transformInfoInterface.getName;
@@ -104,6 +115,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, getInstance, To_Unbounded_String ("getInstance(document)"), e);
             end if;
             Java_Throw (e);
+                end;
         end;
    end getInstance;
 

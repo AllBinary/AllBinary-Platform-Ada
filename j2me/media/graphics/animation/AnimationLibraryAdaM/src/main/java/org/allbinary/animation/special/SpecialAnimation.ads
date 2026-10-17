@@ -27,9 +27,9 @@ with org.allbinary.animation.special.SpecialAnimationInterface_Package; use org.
 
 package org.allbinary.animation.special.SpecialAnimation_Package is
 
-   package AnimationBehavior_Package renames org.allbinary.animation.AnimationBehavior_Package;
-   package IndexedAnimation_Package renames org.allbinary.animation.IndexedAnimation_Package;
-   package IndexedAnimationBehavior_Package renames org.allbinary.animation.IndexedAnimationBehavior_Package;
+   package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
+   package IndexedAnimation_Package renames Standard.org.allbinary.animation.IndexedAnimation_Package;
+   package IndexedAnimationBehavior_Package renames Standard.org.allbinary.animation.IndexedAnimationBehavior_Package;
 
    type SpecialAnimation is tagged;
    type SpecialAnimation_Access is access all SpecialAnimation'Class;

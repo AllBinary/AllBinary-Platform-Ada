@@ -76,12 +76,16 @@ package body taghelpers.InventoryHelper_Package is
             end if;
             return result;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             error := To_Unbounded_String ("Failed to View Summary");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("viewSummary()"), e);
             end if;
             return error & To_Unbounded_String ("<br>") & To_Unbounded_String ("Exception: ") & Java_Image (e) & To_Unbounded_String ("<br>");
+                end;
         end;
    end viewSummary;
 
@@ -105,12 +109,16 @@ package body taghelpers.InventoryHelper_Package is
             end if;
             return result;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             error := To_Unbounded_String ("Failed to search Inventory by keyword");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("searchSingleDynamicPage()"), e);
             end if;
             return error & To_Unbounded_String ("<br>") & To_Unbounded_String ("Exception: ") & Java_Image (e) & To_Unbounded_String ("<br>");
+                end;
         end;
    end search;
 

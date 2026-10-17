@@ -50,8 +50,12 @@ package body org.allbinary.logic.system.security.crypt.jcehelper.AbCrypt_Package
             begin
                 Security_Package.addProvider (BouncyCastleProvider_Package.Create);
             exception
-                when e : others =>
+                when Java_Occurrence : others =>
+                    declare
+                        e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                    begin
                 PreLogUtil_Package.putOE (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.INIT, e);
+                    end;
             end;
             key := This.tsUtil.getByteArray (keyAsString);
             keySpec := KeySpecFactory_Package.getInstance.getInstance (This.algorithm, key);
@@ -60,8 +64,12 @@ package body org.allbinary.logic.system.security.crypt.jcehelper.AbCrypt_Package
             cipher := Cipher_Package.getInstance (This.algorithm);
             This.secretComposite := SecretComposite_Package.Create (secretKey, cipher, key);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             PreLogUtil_Package.putOE (To_Unbounded_String ("init Failed"), This'Unchecked_Access, commonStrings.INIT, e);
+                end;
         end;
    end init;
 
@@ -70,9 +78,13 @@ package body org.allbinary.logic.system.security.crypt.jcehelper.AbCrypt_Package
         begin
             return This.secretComposite.encrypt (array_Id);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             PreLogUtil_Package.putOE (To_Unbounded_String ("Encrypt Failed"), This'Unchecked_Access, To_Unbounded_String ("encrypt"), e);
             return NullUtil_Package.getInstance.NULL_BYTE_ARRAY;
+                end;
         end;
    end encrypt;
 
@@ -81,9 +93,13 @@ package body org.allbinary.logic.system.security.crypt.jcehelper.AbCrypt_Package
         begin
             return This.secretComposite.decrypt (array_Id);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             PreLogUtil_Package.putOE (To_Unbounded_String ("decrypt Failed"), This'Unchecked_Access, To_Unbounded_String ("decrypt"), e);
             return NullUtil_Package.getInstance.NULL_BYTE_ARRAY;
+                end;
         end;
    end decrypt;
 

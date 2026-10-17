@@ -25,7 +25,7 @@ with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbin
 
 package org.allbinary.input.media.image.capture.CapturedImageWorkerResultsEvent_Package is
 
-   package AllBinaryEventObject_Package renames org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+   package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 
    type CapturedImageWorkerResultsEvent is tagged;
    type CapturedImageWorkerResultsEvent_Access is access all CapturedImageWorkerResultsEvent'Class;

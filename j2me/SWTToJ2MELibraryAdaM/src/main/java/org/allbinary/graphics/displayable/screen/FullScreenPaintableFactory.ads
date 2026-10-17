@@ -25,8 +25,8 @@ with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.
 
 package org.allbinary.graphics.displayable.screen.FullScreenPaintableFactory_Package is
 
-   package FullScreenPaintable_Package renames org.allbinary.game.paint.FullScreenPaintable_Package;
-   package Paintable_Package renames org.allbinary.graphics.paint.Paintable_Package;
+   package FullScreenPaintable_Package renames Standard.org.allbinary.game.paint.FullScreenPaintable_Package;
+   package Paintable_Package renames Standard.org.allbinary.graphics.paint.Paintable_Package;
 
    type FullScreenPaintableFactory is tagged;
    type FullScreenPaintableFactory_Access is access all FullScreenPaintableFactory'Class;

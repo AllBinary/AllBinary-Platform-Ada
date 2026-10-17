@@ -30,13 +30,13 @@ with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.C
 
 package org.allbinary.logic.communication.log.LogFormatUtil_Package is
 
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
-   package TimeStampUtil_Package renames org.allbinary.time_Case.TimeStampUtil_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package ExceptionUtil_Package renames org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
-   package CommonLabels_Package renames org.allbinary.string_Id.CommonLabels_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package TimeStampUtil_Package renames Standard.org.allbinary.time_Case.TimeStampUtil_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package ExceptionUtil_Package renames Standard.org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
 
    type LogFormatUtil is tagged;
    type LogFormatUtil_Access is access all LogFormatUtil'Class;
@@ -54,7 +54,7 @@ package org.allbinary.logic.communication.log.LogFormatUtil_Package is
       FUNCTION_CALL : Unbounded_String;
       SPECIAL_MESSAGE : Unbounded_String;
       stringUtil : StringUtil_Access;
-      exceptionUtil : Ada.Exceptions.Exception_Occurrence;
+      exceptionUtil : ExceptionUtil_Access;
       nullUtil : NullUtil_Access;
    end record;
    instance : LogFormatUtil_Access;

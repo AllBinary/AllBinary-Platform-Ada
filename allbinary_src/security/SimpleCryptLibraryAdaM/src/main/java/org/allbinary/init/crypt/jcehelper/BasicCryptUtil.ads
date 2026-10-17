@@ -21,15 +21,16 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.io.ByteArrayInputStream_Package; use java.io.ByteArrayInputStream_Package;
---  with java.io.ByteArrayOutputStream_Package; use java.io.ByteArrayOutputStream_Package;
+with java.io.ByteArrayOutputStream_Package; use java.io.ByteArrayOutputStream_Package;
 --  with java.io.InputStream_Package; use java.io.InputStream_Package;
 with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 
 package org.allbinary.init.crypt.jcehelper.BasicCryptUtil_Package is
 
-   package TsUtil_Package renames org.allbinary.TsUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
+   package ByteArrayOutputStream_Package renames Standard.java.io.ByteArrayOutputStream_Package;
+   package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type BasicCryptUtil is tagged;
    type BasicCryptUtil_Access is access all BasicCryptUtil'Class;

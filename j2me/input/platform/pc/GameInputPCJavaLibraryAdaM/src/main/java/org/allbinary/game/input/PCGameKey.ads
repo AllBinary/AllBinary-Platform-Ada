@@ -25,7 +25,7 @@ with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_
 
 package org.allbinary.game.input.PCGameKey_Package is
 
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type PCGameKey is tagged;
    type PCGameKey_Access is access all PCGameKey'Class;

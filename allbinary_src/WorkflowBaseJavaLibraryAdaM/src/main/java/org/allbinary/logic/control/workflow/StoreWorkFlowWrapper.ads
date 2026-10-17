@@ -27,8 +27,8 @@ with org.allbinary.logic.control.workflow.WorkFlowWrapper_Package; use org.allbi
 
 package org.allbinary.logic.control.workflow.StoreWorkFlowWrapper_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type StoreWorkFlowWrapper is tagged;
    type StoreWorkFlowWrapper_Access is access all StoreWorkFlowWrapper'Class;

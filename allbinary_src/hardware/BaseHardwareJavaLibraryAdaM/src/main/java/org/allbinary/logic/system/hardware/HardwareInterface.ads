@@ -25,8 +25,8 @@ with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_
 
 package org.allbinary.logic.system.hardware.HardwareInterface_Package is
 
-   package HardwareComponentInterface_Package renames org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package;
-   package ABHashtable_Package renames org.allbinary.util.ABHashtable_Package;
+   package HardwareComponentInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
    type HardwareInterface is interface;
    type HardwareInterface_Access is access all HardwareInterface'Class;

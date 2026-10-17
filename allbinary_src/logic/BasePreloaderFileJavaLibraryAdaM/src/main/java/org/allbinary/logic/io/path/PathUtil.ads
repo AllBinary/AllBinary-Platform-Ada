@@ -26,9 +26,9 @@ with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbina
 
 package org.allbinary.logic.io.path.PathUtil_Package is
 
-   package FilePathData_Package renames org.allbinary.logic.io.file.FilePathData_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package StringValidationUtil_Package renames org.allbinary.logic.string_Id.StringValidationUtil_Package;
+   package FilePathData_Package renames Standard.org.allbinary.logic.io.file.FilePathData_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
 
    type PathUtil is tagged;
    type PathUtil_Access is access all PathUtil'Class;

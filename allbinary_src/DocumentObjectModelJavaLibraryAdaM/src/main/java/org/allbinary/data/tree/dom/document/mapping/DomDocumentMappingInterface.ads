@@ -24,7 +24,7 @@ with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 
 package org.allbinary.data.tree.dom.document.mapping.DomDocumentMappingInterface_Package is
 
-   package Document_Package renames org.w3c.dom.Document_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
 
    type DomDocumentMappingInterface is interface;
    type DomDocumentMappingInterface_Access is access all DomDocumentMappingInterface'Class;

@@ -27,9 +27,9 @@ with org.allbinary.animation.resource.ResourceAnimationInterfaceFactoryInterface
 
 package org.allbinary.animation.resource.FeatureResourceAnimationInterfaceFactoryInterface_Package is
 
-   package GameFeatureControlledInterface_Package renames org.allbinary.game.configuration.feature.GameFeatureControlledInterface_Package;
-   package RectangleResourceFactoryInterface_Package renames org.allbinary.game.resource.RectangleResourceFactoryInterface_Package;
-   package ABHashtable_Package renames org.allbinary.util.ABHashtable_Package;
+   package GameFeatureControlledInterface_Package renames Standard.org.allbinary.game.configuration.feature.GameFeatureControlledInterface_Package;
+   package RectangleResourceFactoryInterface_Package renames Standard.org.allbinary.game.resource.RectangleResourceFactoryInterface_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
    type FeatureResourceAnimationInterfaceFactoryInterface is interface and ResourceAnimationInterfaceFactoryInterface and RectangleResourceFactoryInterface and GameFeatureControlledInterface;
    type FeatureResourceAnimationInterfaceFactoryInterface_Access is access all FeatureResourceAnimationInterfaceFactoryInterface'Class;

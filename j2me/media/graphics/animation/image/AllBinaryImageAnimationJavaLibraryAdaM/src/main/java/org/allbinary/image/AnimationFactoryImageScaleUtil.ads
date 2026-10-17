@@ -32,14 +32,14 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.image.AnimationFactoryImageScaleUtil_Package is
 
-   package AnimationFactoryInitializationVisitor_Package renames org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package;
-   package BaseImageAnimationFactory_Package renames org.allbinary.animation.image.BaseImageAnimationFactory_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package ScaleProperties_Package renames org.allbinary.media.ScaleProperties_Package;
-   package ImageJ2MEScaleUtil_Package renames org.allbinary.media.image.ImageJ2MEScaleUtil_Package;
-   package CommonLabels_Package renames org.allbinary.string_Id.CommonLabels_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package AnimationFactoryInitializationVisitor_Package renames Standard.org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package;
+   package BaseImageAnimationFactory_Package renames Standard.org.allbinary.animation.image.BaseImageAnimationFactory_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package ScaleProperties_Package renames Standard.org.allbinary.media.ScaleProperties_Package;
+   package ImageJ2MEScaleUtil_Package renames Standard.org.allbinary.media.image.ImageJ2MEScaleUtil_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type AnimationFactoryImageScaleUtil is tagged;
    type AnimationFactoryImageScaleUtil_Access is access all AnimationFactoryImageScaleUtil'Class;

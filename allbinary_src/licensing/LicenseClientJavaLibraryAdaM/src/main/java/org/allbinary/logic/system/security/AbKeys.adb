@@ -50,8 +50,12 @@ package body org.allbinary.logic.system.security.AbKeys_Package is
             end if;
             return AbeLicenseInterfaceFactory_Package.getInstance.getLicenseInstance (abeClientInformation).getKey (keyName);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Java_Throw (e);
+                end;
         end;
    end getKey;
 

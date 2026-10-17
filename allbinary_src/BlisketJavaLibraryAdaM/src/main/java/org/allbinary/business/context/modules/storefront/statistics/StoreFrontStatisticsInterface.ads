@@ -27,10 +27,10 @@ with org.allbinary.business.context.modules.storefront.statistics.users.StoreFro
 
 package org.allbinary.business.context.modules.storefront.statistics.StoreFrontStatisticsInterface_Package is
 
-   package StoreFrontAdvertisementsStatisticsInterface_Package renames org.allbinary.business.context.modules.storefront.statistics.advertisements.StoreFrontAdvertisementsStatisticsInterface_Package;
-   package StoreFrontInventoryStatisticsInterface_Package renames org.allbinary.business.context.modules.storefront.statistics.inventory.StoreFrontInventoryStatisticsInterface_Package;
-   package StoreFrontOrdersHistoryStatisticsInterface_Package renames org.allbinary.business.context.modules.storefront.statistics.orders.history.StoreFrontOrdersHistoryStatisticsInterface_Package;
-   package StoreFrontUsersStatisticsInterface_Package renames org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsInterface_Package;
+   package StoreFrontAdvertisementsStatisticsInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.statistics.advertisements.StoreFrontAdvertisementsStatisticsInterface_Package;
+   package StoreFrontInventoryStatisticsInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.statistics.inventory.StoreFrontInventoryStatisticsInterface_Package;
+   package StoreFrontOrdersHistoryStatisticsInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.statistics.orders.history.StoreFrontOrdersHistoryStatisticsInterface_Package;
+   package StoreFrontUsersStatisticsInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsInterface_Package;
 
    type StoreFrontStatisticsInterface is interface;
    type StoreFrontStatisticsInterface_Access is access all StoreFrontStatisticsInterface'Class;

@@ -41,9 +41,13 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.transact
             hashtable := tokenizer2.getTokens (tokens);
             This.keyValuePairs.putAll (hashtable);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             exceptionMessage := To_Unbounded_String ("TransactionResult Constructor Failed");
             This.logUtil.putF (exceptionMessage, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+                end;
         end;
    end Initialize;
 

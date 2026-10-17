@@ -24,7 +24,7 @@ with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allb
 
 package org.allbinary.input.event.VirtualKeyboardEventListenerInterface_Package is
 
-   package EventListenerInterface_Package renames org.allbinary.logic.util.event.EventListenerInterface_Package;
+   package EventListenerInterface_Package renames Standard.org.allbinary.logic.util.event.EventListenerInterface_Package;
 
    type VirtualKeyboardEventListenerInterface is interface and EventListenerInterface;
    type VirtualKeyboardEventListenerInterface_Access is access all VirtualKeyboardEventListenerInterface'Class;

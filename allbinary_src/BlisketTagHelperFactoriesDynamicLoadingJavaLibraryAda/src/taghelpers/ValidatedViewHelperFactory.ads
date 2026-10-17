@@ -28,9 +28,9 @@ with admin.taghelpers.TagHelperFactoryInterface_Package; use admin.taghelpers.Ta
 
 package taghelpers.ValidatedViewHelperFactory_Package is
 
-   package HelperFactory_Package renames admin.taghelpers.HelperFactory_Package;
-   package LicensingException_Package renames org.allbinary.logic.system.security.licensing.LicensingException_Package;
-   package TagHelperFactoryInterface_Package renames admin.taghelpers.TagHelperFactoryInterface_Package;
+   package HelperFactory_Package renames Standard.admin.taghelpers.HelperFactory_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package TagHelperFactoryInterface_Package renames Standard.admin.taghelpers.TagHelperFactoryInterface_Package;
 
    type ValidatedViewHelperFactory is tagged;
    type ValidatedViewHelperFactory_Access is access all ValidatedViewHelperFactory'Class;

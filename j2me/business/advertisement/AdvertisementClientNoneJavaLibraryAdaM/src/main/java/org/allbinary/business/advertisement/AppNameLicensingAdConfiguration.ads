@@ -13,7 +13,7 @@ with org.allbinary.business.advertisement.AdConfiguration_Package; use org.allbi
 
 package org.allbinary.business.advertisement.AppNameLicensingAdConfiguration_Package is
 
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type AppNameLicensingAdConfiguration is tagged;
    type AppNameLicensingAdConfiguration_Access is access all AppNameLicensingAdConfiguration'Class;

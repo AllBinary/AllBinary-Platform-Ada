@@ -40,21 +40,21 @@ with org.allbinary.layer.LayerInterfaceFactoryInterface_Package; use org.allbina
 
 package org.allbinary.game.layer.unit.UnitItemArrayFactory_Package is
 
-   package RTSGameStrings_Package renames org.allbinary.game.layer.RTSGameStrings_Package;
-   package LayerInterfaceFactoryImageItem_Package renames org.allbinary.game.layer.item.LayerInterfaceFactoryImageItem_Package;
-   package RTSLayerTextAnimation_Package renames org.allbinary.game.layer.item.RTSLayerTextAnimation_Package;
-   package BasicGameResources_Package renames org.allbinary.game.layer.resources.BasicGameResources_Package;
-   package FlagGameResources_Package renames org.allbinary.game.layer.waypoint.FlagGameResources_Package;
-   package ABCustomItem_Package renames org.allbinary.graphics.form.item.ABCustomItem_Package;
-   package GameFeatureImageCacheFactory_Package renames org.allbinary.image.GameFeatureImageCacheFactory_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
-   package Animation_Package renames org.allbinary.animation.Animation_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package BasicColorFactory_Package renames org.allbinary.graphics.color.BasicColorFactory_Package;
-   package CustomItemUtil_Package renames org.allbinary.graphics.form.item.CustomItemUtil_Package;
-   package ItemArraySingletonFactoryInterface_Package renames org.allbinary.graphics.form.item.ItemArraySingletonFactoryInterface_Package;
-   package ImageCache_Package renames org.allbinary.image.ImageCache_Package;
-   package LayerInterfaceFactoryInterface_Package renames org.allbinary.layer.LayerInterfaceFactoryInterface_Package;
+   package RTSGameStrings_Package renames Standard.org.allbinary.game.layer.RTSGameStrings_Package;
+   package LayerInterfaceFactoryImageItem_Package renames Standard.org.allbinary.game.layer.item.LayerInterfaceFactoryImageItem_Package;
+   package RTSLayerTextAnimation_Package renames Standard.org.allbinary.game.layer.item.RTSLayerTextAnimation_Package;
+   package BasicGameResources_Package renames Standard.org.allbinary.game.layer.resources.BasicGameResources_Package;
+   package FlagGameResources_Package renames Standard.org.allbinary.game.layer.waypoint.FlagGameResources_Package;
+   package ABCustomItem_Package renames Standard.org.allbinary.graphics.form.item.ABCustomItem_Package;
+   package GameFeatureImageCacheFactory_Package renames Standard.org.allbinary.image.GameFeatureImageCacheFactory_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package CustomItemUtil_Package renames Standard.org.allbinary.graphics.form.item.CustomItemUtil_Package;
+   package ItemArraySingletonFactoryInterface_Package renames Standard.org.allbinary.graphics.form.item.ItemArraySingletonFactoryInterface_Package;
+   package ImageCache_Package renames Standard.org.allbinary.image.ImageCache_Package;
+   package LayerInterfaceFactoryInterface_Package renames Standard.org.allbinary.layer.LayerInterfaceFactoryInterface_Package;
 
    type UnitItemArrayFactory is tagged;
    type UnitItemArrayFactory_Access is access all UnitItemArrayFactory'Class;

@@ -56,8 +56,12 @@ package body org.allbinary.input.event.VirtualKeyboardEventHandler_Package is
             Java_Sleep (120);
             This.fireEvent (This.SHOW_EVENT);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("open"), e);
+                end;
         end;
    end open;
 
@@ -68,8 +72,12 @@ package body org.allbinary.input.event.VirtualKeyboardEventHandler_Package is
             Java_Sleep (120);
             This.fireEvent (This.HIDE_EVENT);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.CLOSE, e);
+                end;
         end;
    end close;
 

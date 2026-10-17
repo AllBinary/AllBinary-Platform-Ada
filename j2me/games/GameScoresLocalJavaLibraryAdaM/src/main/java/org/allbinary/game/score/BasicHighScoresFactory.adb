@@ -42,8 +42,12 @@ package body org.allbinary.game.score.BasicHighScoresFactory_Package is
             This.highScoresArray (0) := RecordStoreHighScores_Package.getInstance (This.abeClientInformation, gameInfo, This.TOP, This.PERSONAL_HIGH_SCORES, This.SCORES, ScoreComparator_Package.Create (True));
             highScoresResultsListener.setHighScoresArray (This.highScoresArray);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.FETCH, e);
+                end;
         end;
    end fetchHighScoresPreload;
 

@@ -58,13 +58,17 @@ package body org.allbinary.logic.communication.log.XmlRpcRemoteLogClient_Package
             Ada.Text_IO.Put_Line (Java_Image (Java_Image ((CommonLabels_Package.getInstance.RESULT_U) + (CommonSeps_Package.getInstance.NEW_LINE)) & result.toString));
             return result;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Ada.Text_IO.Put_Line (Java_Image (To_Unbounded_String ("IOException Trying Other Servers")));
-            if not (To_Unbounded_String (Ada.Exceptions.Exception_Message (e)).startsWith (HOST_NOT_RESOLVED)) then
+            if not (Java_Get_Message (e).startsWith (HOST_NOT_RESOLVED)) then
                 return This.tryAnother (anyType);
             else
                 Java_Throw (Java_New_Exception ("Exception", HOST_NOT_RESOLVED_MSG));
             end if;
+                end;
         end;
    end get;
 

@@ -32,14 +32,14 @@ with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_
 
 package org.allbinary.game.ag.ai.scroller.BasePatrolAI_Package is
 
-   package BasicAI_Package renames org.allbinary.game.ai.BasicAI_Package;
-   package GameInput_Package renames org.allbinary.game.input.GameInput_Package;
-   package BasicVelocityProperties_Package renames org.allbinary.game.physics.velocity.BasicVelocityProperties_Package;
-   package VelocityInterfaceCompositeInterface_Package renames org.allbinary.game.physics.velocity.VelocityInterfaceCompositeInterface_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package MathUtil_Package renames org.allbinary.logic.math.MathUtil_Package;
-   package SmallIntegerSingletonFactory_Package renames org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
-   package ABHashtable_Package renames org.allbinary.util.ABHashtable_Package;
+   package BasicAI_Package renames Standard.org.allbinary.game.ai.BasicAI_Package;
+   package GameInput_Package renames Standard.org.allbinary.game.input.GameInput_Package;
+   package BasicVelocityProperties_Package renames Standard.org.allbinary.game.physics.velocity.BasicVelocityProperties_Package;
+   package VelocityInterfaceCompositeInterface_Package renames Standard.org.allbinary.game.physics.velocity.VelocityInterfaceCompositeInterface_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package MathUtil_Package renames Standard.org.allbinary.logic.math.MathUtil_Package;
+   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
    type BasePatrolAI is tagged;
    type BasePatrolAI_Access is access all BasePatrolAI'Class;

@@ -27,10 +27,10 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 
 package org.allbinary.graphics.displayable.screen.AboutPaintableFactory_Package is
 
-   package AboutPaintable_Package renames org.allbinary.game.paint.AboutPaintable_Package;
-   package NullPaintable_Package renames org.allbinary.graphics.paint.NullPaintable_Package;
-   package Paintable_Package renames org.allbinary.graphics.paint.Paintable_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
+   package AboutPaintable_Package renames Standard.org.allbinary.game.paint.AboutPaintable_Package;
+   package NullPaintable_Package renames Standard.org.allbinary.graphics.paint.NullPaintable_Package;
+   package Paintable_Package renames Standard.org.allbinary.graphics.paint.Paintable_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type AboutPaintableFactory is tagged;
    type AboutPaintableFactory_Access is access all AboutPaintableFactory'Class;

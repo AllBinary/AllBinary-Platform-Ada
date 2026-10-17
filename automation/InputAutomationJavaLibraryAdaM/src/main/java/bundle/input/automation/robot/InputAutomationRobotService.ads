@@ -25,7 +25,7 @@ with bundle.input.automation.robot.InputAutomationRobotServiceInterface_Package;
 
 package bundle.input.automation.robot.InputAutomationRobotService_Package is
 
-   package InputRobotInterface_Package renames org.allbinary.input.automation.robot.InputRobotInterface_Package;
+   package InputRobotInterface_Package renames Standard.org.allbinary.input.automation.robot.InputRobotInterface_Package;
 
    type InputAutomationRobotService is tagged;
    type InputAutomationRobotService_Access is access all InputAutomationRobotService'Class;

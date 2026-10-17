@@ -46,8 +46,12 @@ package body org.allbinary.game.displayable.canvas.ImmediateCommandFormInputProc
                 This.gameCommandCanvas.repaintBehavior.onChangeRepaint (This.getCanvas);
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.gameInputStrings.ON_PRESS_GAME_KEY, e);
+                end;
         end;
    end onPressGameKeyEvent;
 
@@ -60,8 +64,12 @@ package body org.allbinary.game.displayable.canvas.ImmediateCommandFormInputProc
                 This.gameCommandCanvas.repaintBehavior.onChangeRepaint (This.getCanvas);
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.gameInputStrings.ON_DOWN_GAME_KEY, e);
+                end;
         end;
    end onDownGameKeyEvent;
 
@@ -74,8 +82,12 @@ package body org.allbinary.game.displayable.canvas.ImmediateCommandFormInputProc
                 This.gameCommandCanvas.repaintBehavior.onChangeRepaint (This.getCanvas);
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.gameInputStrings.ON_UP_GAME_KEY, e);
+                end;
         end;
    end onUpGameKeyEvent;
 
@@ -88,8 +100,12 @@ package body org.allbinary.game.displayable.canvas.ImmediateCommandFormInputProc
                 This.gameCommandCanvas.repaintBehavior.onChangeRepaint (This.getCanvas);
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("onMotionGestureEvent"), e);
+                end;
         end;
    end onMotionGestureEvent;
 

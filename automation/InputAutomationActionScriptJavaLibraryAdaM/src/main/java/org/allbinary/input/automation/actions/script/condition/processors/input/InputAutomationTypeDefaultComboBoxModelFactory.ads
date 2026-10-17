@@ -25,7 +25,7 @@ with org.allbinary.input.automation.robot.InputRobotFactory_Package; use org.all
 
 package org.allbinary.input.automation.actions.script.condition.processors.input.InputAutomationTypeDefaultComboBoxModelFactory_Package is
 
-   package InputRobotFactory_Package renames org.allbinary.input.automation.robot.InputRobotFactory_Package;
+   package InputRobotFactory_Package renames Standard.org.allbinary.input.automation.robot.InputRobotFactory_Package;
 
    type InputAutomationTypeDefaultComboBoxModelFactory is tagged;
    type InputAutomationTypeDefaultComboBoxModelFactory_Access is access all InputAutomationTypeDefaultComboBoxModelFactory'Class;

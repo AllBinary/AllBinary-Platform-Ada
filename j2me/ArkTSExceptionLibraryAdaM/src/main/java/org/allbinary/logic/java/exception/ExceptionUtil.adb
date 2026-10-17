@@ -23,7 +23,7 @@ package body org.allbinary.logic.java.exception_Id.ExceptionUtil_Package is
    end Initialize_Fields;
 
 
-   function getInstance return Ada.Exceptions.Exception_Occurrence is
+   function getInstance return ExceptionUtil_Access is
    begin
         return ExceptionUtil_Package.instance;
    end getInstance;
@@ -41,7 +41,7 @@ package body org.allbinary.logic.java.exception_Id.ExceptionUtil_Package is
       return This;
    end Create;
 
-   function getStackTrace (This : in out ExceptionUtil; e : Ada.Exceptions.Exception_Occurrence) return Unbounded_String is
+   function getStackTrace (This : in out ExceptionUtil; e : Java_Throwable) return Unbounded_String is
    begin
         if True then
             null;
@@ -59,13 +59,13 @@ package body org.allbinary.logic.java.exception_Id.ExceptionUtil_Package is
    end getStackTrace;
 
    procedure getInstance is
-      Java_Result : constant Ada.Exceptions.Exception_Occurrence := getInstance;
+      Java_Result : constant ExceptionUtil_Access := getInstance;
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
-   procedure getStackTrace (This : in out ExceptionUtil; e : Ada.Exceptions.Exception_Occurrence) is
+   procedure getStackTrace (This : in out ExceptionUtil; e : Java_Throwable) is
       Java_Result : constant Unbounded_String := ExceptionUtil'Class (This).getStackTrace (e);
       pragma Unreferenced (Java_Result);
    begin
@@ -74,7 +74,7 @@ package body org.allbinary.logic.java.exception_Id.ExceptionUtil_Package is
 
 begin
    null;
-   instance := Java_New_Exception ("ExceptionUtil");
+   instance := ExceptionUtil_Package.Create;
 
 end org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 

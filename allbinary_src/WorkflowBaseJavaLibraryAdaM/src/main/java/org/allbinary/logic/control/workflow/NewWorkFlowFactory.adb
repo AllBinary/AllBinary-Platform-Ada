@@ -59,12 +59,16 @@ package body org.allbinary.logic.control.workflow.NewWorkFlowFactory_Package is
             anyType := AbeFactory_Package.getInstance.getInstance (abeClientInformation, className, classes, params);
             return WorkFlowInterface_Access (WorkFlowWrapper_Package.Create (anyType));
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORYERROR) then
                 commonStrings := CommonStrings_Package.getInstance;
                 This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("getInstance(HashMap)"), e);
             end if;
             Java_Throw (e);
+                end;
         end;
    end getInstance;
 
@@ -83,12 +87,16 @@ package body org.allbinary.logic.control.workflow.NewWorkFlowFactory_Package is
                 Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No WorkFlow ClassName")));
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORYERROR) then
                 commonStrings := CommonStrings_Package.getInstance;
                 This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.GET_INSTANCE, e);
             end if;
             Java_Throw (e);
+                end;
         end;
    end getInstance;
 

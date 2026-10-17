@@ -26,8 +26,8 @@ with org.allbinary.game.layer.RTSPlayerLayerInterface_Package; use org.allbinary
 
 package org.allbinary.game.layer.AdvancedRTSPlayerLayerInterface_Package is
 
-   package GameType_Package renames org.allbinary.game.GameType_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
+   package GameType_Package renames Standard.org.allbinary.game.GameType_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
 
    type AdvancedRTSPlayerLayerInterface is interface and RTSPlayerLayerInterface;
    type AdvancedRTSPlayerLayerInterface_Access is access all AdvancedRTSPlayerLayerInterface'Class;

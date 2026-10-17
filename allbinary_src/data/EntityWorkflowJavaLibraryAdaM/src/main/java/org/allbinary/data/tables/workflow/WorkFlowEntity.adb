@@ -48,10 +48,14 @@ package body org.allbinary.data.tables.workflow.WorkFlowEntity_Package is
                 This.logUtil.putF (This.commonStrings.SUCCESS, This'Unchecked_Access, INSERT);
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, INSERT, e);
             end if;
+                end;
         end;
    end insert;
 
@@ -67,10 +71,14 @@ package body org.allbinary.data.tables.workflow.WorkFlowEntity_Package is
                 This.logUtil.putF (This.commonStrings.SUCCESS, This'Unchecked_Access, This.commonStrings.delete);
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, This.commonStrings.delete, e);
             end if;
+                end;
         end;
    end delete;
 
@@ -86,11 +94,15 @@ package body org.allbinary.data.tables.workflow.WorkFlowEntity_Package is
             hashMap := AbSqlBean (This).getRow (keysAndValues);
             return WorkFlowInterface_Access (DbWorkFlowFactory_Package.getInstance.getInstance (This.abeClientInformation, hashMap));
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, This.METHOD_GET, e);
             end if;
             Java_Throw (e);
+                end;
         end;
    end get;
 
@@ -116,11 +128,15 @@ package body org.allbinary.data.tables.workflow.WorkFlowEntity_Package is
             end loop;
             return workFlowsVector;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, This.METHOD_GET, e);
             end if;
             return null;
+                end;
         end;
    end get;
 
@@ -133,10 +149,14 @@ package body org.allbinary.data.tables.workflow.WorkFlowEntity_Package is
             wherekeysAndValues.put (StoreFrontData_Package.getInstance.NAME, Unbounded_String (updatedValues.get (StoreFrontData_Package.getInstance.NAME)));
             AbSqlBean (This).updateWhere (wherekeysAndValues, updatedValues);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, This.METHOD_UPDATE, e);
             end if;
+                end;
         end;
    end update;
 

@@ -39,17 +39,17 @@ with org.allbinary.input.event.VirtualKeyboardEventHandler_Package; use org.allb
 
 package org.allbinary.game.displayable.screen.LicenseRegistrationTextBox_Package is
 
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package GameCommandsFactory_Package renames org.allbinary.game.commands.GameCommandsFactory_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package BasicColorFactory_Package renames org.allbinary.graphics.color.BasicColorFactory_Package;
-   package CustomTextBox_Package renames org.allbinary.graphics.form.item.CustomTextBox_Package;
-   package NullPaintable_Package renames org.allbinary.graphics.paint.NullPaintable_Package;
-   package Paintable_Package renames org.allbinary.graphics.paint.Paintable_Package;
-   package SimpleTextPaintable_Package renames org.allbinary.graphics.paint.SimpleTextPaintable_Package;
-   package VirtualKeyboardEventHandler_Package renames org.allbinary.input.event.VirtualKeyboardEventHandler_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package GameCommandsFactory_Package renames Standard.org.allbinary.game.commands.GameCommandsFactory_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package CustomTextBox_Package renames Standard.org.allbinary.graphics.form.item.CustomTextBox_Package;
+   package NullPaintable_Package renames Standard.org.allbinary.graphics.paint.NullPaintable_Package;
+   package Paintable_Package renames Standard.org.allbinary.graphics.paint.Paintable_Package;
+   package SimpleTextPaintable_Package renames Standard.org.allbinary.graphics.paint.SimpleTextPaintable_Package;
+   package VirtualKeyboardEventHandler_Package renames Standard.org.allbinary.input.event.VirtualKeyboardEventHandler_Package;
 
    type LicenseRegistrationTextBox is tagged;
    type LicenseRegistrationTextBox_Access is access all LicenseRegistrationTextBox'Class;

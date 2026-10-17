@@ -24,7 +24,7 @@ with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbin
 
 package org.allbinary.media.image.comparison.motion.MotionRectanglesResultsEvent_Package is
 
-   package AllBinaryEventObject_Package renames org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+   package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 
    type MotionRectanglesResultsEvent is tagged;
    type MotionRectanglesResultsEvent_Access is access all MotionRectanglesResultsEvent'Class;

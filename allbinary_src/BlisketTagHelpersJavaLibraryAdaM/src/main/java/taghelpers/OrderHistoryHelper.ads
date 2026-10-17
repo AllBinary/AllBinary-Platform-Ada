@@ -40,20 +40,20 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 
 package taghelpers.OrderHistoryHelper_Package is
 
-   package TagHelper_Package renames admin.taghelpers.TagHelper_Package;
-   package StoreFrontData_Package renames org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
-   package StoreFrontFactory_Package renames org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
-   package StoreFrontInterface_Package renames org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
-   package StreetAddress_Package renames org.allbinary.business.user.address.StreetAddress_Package;
-   package OrderData_Package renames org.allbinary.business.user.commerce.inventory.order.OrderData_Package;
-   package OrderHistoryData_Package renames org.allbinary.business.user.commerce.inventory.order.OrderHistoryData_Package;
-   package OrderHistoryFactory_Package renames org.allbinary.business.user.commerce.inventory.order.OrderHistoryFactory_Package;
-   package OrderHistoryInterface_Package renames org.allbinary.business.user.commerce.inventory.order.OrderHistoryInterface_Package;
-   package ShippingMethodData_Package renames org.allbinary.business.user.commerce.shipping.ShippingMethodData_Package;
-   package OrderHistoryEntityFactory_Package renames org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntityFactory_Package;
-   package OrderHistoryEntityInterface_Package renames org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntityInterface_Package;
-   package WeblisketSession_Package renames org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
+   package TagHelper_Package renames Standard.admin.taghelpers.TagHelper_Package;
+   package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+   package StoreFrontFactory_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
+   package StoreFrontInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
+   package StreetAddress_Package renames Standard.org.allbinary.business.user.address.StreetAddress_Package;
+   package OrderData_Package renames Standard.org.allbinary.business.user.commerce.inventory.order.OrderData_Package;
+   package OrderHistoryData_Package renames Standard.org.allbinary.business.user.commerce.inventory.order.OrderHistoryData_Package;
+   package OrderHistoryFactory_Package renames Standard.org.allbinary.business.user.commerce.inventory.order.OrderHistoryFactory_Package;
+   package OrderHistoryInterface_Package renames Standard.org.allbinary.business.user.commerce.inventory.order.OrderHistoryInterface_Package;
+   package ShippingMethodData_Package renames Standard.org.allbinary.business.user.commerce.shipping.ShippingMethodData_Package;
+   package OrderHistoryEntityFactory_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntityFactory_Package;
+   package OrderHistoryEntityInterface_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntityInterface_Package;
+   package WeblisketSession_Package renames Standard.org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type OrderHistoryHelper is tagged;
    type OrderHistoryHelper_Access is access all OrderHistoryHelper'Class;

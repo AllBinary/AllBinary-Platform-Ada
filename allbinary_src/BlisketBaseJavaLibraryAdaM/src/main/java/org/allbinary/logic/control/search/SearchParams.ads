@@ -31,11 +31,11 @@ with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 
 package org.allbinary.logic.control.search.SearchParams_Package is
 
-   package ModDomHelper_Package renames org.allbinary.data.tree.dom.ModDomHelper_Package;
-   package ToDomHelper_Package renames org.allbinary.data.tree.dom.ToDomHelper_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
+   package ModDomHelper_Package renames Standard.org.allbinary.data.tree.dom.ModDomHelper_Package;
+   package ToDomHelper_Package renames Standard.org.allbinary.data.tree.dom.ToDomHelper_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type SearchParams is tagged;
    type SearchParams_Access is access all SearchParams'Class;

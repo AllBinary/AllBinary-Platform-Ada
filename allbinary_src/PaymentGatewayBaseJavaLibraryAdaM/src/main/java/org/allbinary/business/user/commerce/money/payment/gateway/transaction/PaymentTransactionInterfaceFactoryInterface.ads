@@ -25,8 +25,8 @@ with org.allbinary.business.user.commerce.money.payment.types.TenderType_Package
 
 package org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterfaceFactoryInterface_Package is
 
-   package OrderHistory_Package renames org.allbinary.business.user.commerce.inventory.order.OrderHistory_Package;
-   package TenderType_Package renames org.allbinary.business.user.commerce.money.payment.types.TenderType_Package;
+   package OrderHistory_Package renames Standard.org.allbinary.business.user.commerce.inventory.order.OrderHistory_Package;
+   package TenderType_Package renames Standard.org.allbinary.business.user.commerce.money.payment.types.TenderType_Package;
 
    type PaymentTransactionInterfaceFactoryInterface is interface;
    type PaymentTransactionInterfaceFactoryInterface_Access is access all PaymentTransactionInterfaceFactoryInterface'Class;

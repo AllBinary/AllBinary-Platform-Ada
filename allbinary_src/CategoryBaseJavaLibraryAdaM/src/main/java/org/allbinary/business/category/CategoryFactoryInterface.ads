@@ -26,8 +26,8 @@ with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 
 package org.allbinary.business.category.CategoryFactoryInterface_Package is
 
-   package AbPath_Package renames org.allbinary.logic.io.path.AbPath_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
+   package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type CategoryFactoryInterface is interface;
    type CategoryFactoryInterface_Access is access all CategoryFactoryInterface'Class;

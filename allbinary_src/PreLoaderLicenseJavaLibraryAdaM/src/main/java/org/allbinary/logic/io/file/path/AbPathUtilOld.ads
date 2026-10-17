@@ -30,13 +30,13 @@ with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbina
 
 package org.allbinary.logic.io.file.path.AbPathUtilOld_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package FilePathData_Package renames org.allbinary.logic.io.file.FilePathData_Package;
-   package AbFilePath_Package renames org.allbinary.logic.io.path.AbFilePath_Package;
-   package AbPath_Package renames org.allbinary.logic.io.path.AbPath_Package;
-   package AbPathData_Package renames org.allbinary.logic.io.path.AbPathData_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package StringValidationUtil_Package renames org.allbinary.logic.string_Id.StringValidationUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package FilePathData_Package renames Standard.org.allbinary.logic.io.file.FilePathData_Package;
+   package AbFilePath_Package renames Standard.org.allbinary.logic.io.path.AbFilePath_Package;
+   package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
+   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
 
    type AbPathUtilOld is tagged;
    type AbPathUtilOld_Access is access all AbPathUtilOld'Class;

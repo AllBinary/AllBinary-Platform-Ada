@@ -33,14 +33,14 @@ with org.allbinary.input.automation.actions.script.condition.processors.input.JP
 
 package org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputJPanel_Package is
 
-   package InputRobot_Package renames org.allbinary.input.automation.robot.InputRobot_Package;
-   package InputRobotFactory_Package renames org.allbinary.input.automation.robot.InputRobotFactory_Package;
-   package TempInputRobotNames_Package renames org.allbinary.input.automation.robot.TempInputRobotNames_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringValidationUtil_Package renames org.allbinary.logic.string_Id.StringValidationUtil_Package;
-   package CommonLabels_Package renames org.allbinary.string_Id.CommonLabels_Package;
-   package CommonPhoneStrings_Package renames org.allbinary.string_Id.CommonPhoneStrings_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package InputRobot_Package renames Standard.org.allbinary.input.automation.robot.InputRobot_Package;
+   package InputRobotFactory_Package renames Standard.org.allbinary.input.automation.robot.InputRobotFactory_Package;
+   package TempInputRobotNames_Package renames Standard.org.allbinary.input.automation.robot.TempInputRobotNames_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package CommonPhoneStrings_Package renames Standard.org.allbinary.string_Id.CommonPhoneStrings_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type MouseActionScriptInputJPanel is tagged;
    type MouseActionScriptInputJPanel_Access is access all MouseActionScriptInputJPanel'Class;

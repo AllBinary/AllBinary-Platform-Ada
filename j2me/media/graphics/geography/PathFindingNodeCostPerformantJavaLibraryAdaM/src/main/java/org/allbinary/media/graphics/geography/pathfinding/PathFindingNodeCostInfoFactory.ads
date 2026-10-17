@@ -28,10 +28,10 @@ with org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoF
 
 package org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoFactory_Package is
 
-   package BasicGeographicMap_Package renames org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
-   package GeographicMapCellPosition_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
-   package GeographicMapCellType_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
-   package RaceTrackGeographicMapCellType_Package renames org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package;
+   package BasicGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
+   package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+   package GeographicMapCellType_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
+   package RaceTrackGeographicMapCellType_Package renames Standard.org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package;
 
    type PathFindingNodeCostInfoFactory is tagged;
    type PathFindingNodeCostInfoFactory_Access is access all PathFindingNodeCostInfoFactory'Class;

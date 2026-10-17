@@ -24,7 +24,7 @@ with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.gr
 
 package org.allbinary.graphics.form.ItemIndexDx_Package is
 
-   package ABCustomItem_Package renames org.allbinary.graphics.form.item.ABCustomItem_Package;
+   package ABCustomItem_Package renames Standard.org.allbinary.graphics.form.item.ABCustomItem_Package;
 
    type ItemIndexDx is tagged;
    type ItemIndexDx_Access is access all ItemIndexDx'Class;

@@ -26,9 +26,9 @@ with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 
 package org.allbinary.data.tree.dom.BasicErrorNodeUtil_Package is
 
-   package ErrorData_Package renames org.allbinary.business.error.ErrorData_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
+   package ErrorData_Package renames Standard.org.allbinary.business.error.ErrorData_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type BasicErrorNodeUtil is tagged;
    type BasicErrorNodeUtil_Access is access all BasicErrorNodeUtil'Class;

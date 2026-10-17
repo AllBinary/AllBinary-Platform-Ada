@@ -61,10 +61,14 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
                 This.logUtil.putF (This.commonStrings.END_Id, This'Unchecked_Access, To_Unbounded_String ("add"));
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("add"), e);
             end if;
+                end;
         end;
    end add;
 
@@ -90,10 +94,14 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
                 This.logUtil.putF (This.commonStrings.SUCCESS, This'Unchecked_Access, To_Unbounded_String ("update"));
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("update"), e);
             end if;
+                end;
         end;
    end update;
 
@@ -153,11 +161,15 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
                 return PaymentGatewayInterfaceFactory_Package.Create.getInstance (paymentType);
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.put (To_Unbounded_String ("Command Failed for paymentType: ") & paymentType.getName, This'Unchecked_Access, To_Unbounded_String ("getPaymentGatewayInterface"), e);
             end if;
             return null;
+                end;
         end;
    end getPaymentGatewayInterface;
 
@@ -188,11 +200,15 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
                 return BasicArrayListD_Package.Create;
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("findPaymentTypeVectorByStore"), e);
             end if;
             return null;
+                end;
         end;
    end findPaymentTypeVectorByStore;
 
@@ -208,10 +224,14 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
                 This.logUtil.putF (This.commonStrings.SUCCESS, This'Unchecked_Access, To_Unbounded_String ("remove"));
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("remove"), e);
             end if;
+                end;
         end;
    end remove;
 

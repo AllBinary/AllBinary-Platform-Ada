@@ -25,7 +25,7 @@ with org.allbinary.graphics.threed.min3d.renderer.processor.ObjectThreedOpenGLPr
 
 package org.allbinary.graphics.opengles.VertexAttributePointerOpenGLProcessor_Package is
 
-   package ObjectThreedOpenGLProcessor_Package renames org.allbinary.graphics.threed.min3d.renderer.processor.ObjectThreedOpenGLProcessor_Package;
+   package ObjectThreedOpenGLProcessor_Package renames Standard.org.allbinary.graphics.threed.min3d.renderer.processor.ObjectThreedOpenGLProcessor_Package;
 
    type VertexAttributePointerOpenGLProcessor is tagged;
    type VertexAttributePointerOpenGLProcessor_Access is access all VertexAttributePointerOpenGLProcessor'Class;

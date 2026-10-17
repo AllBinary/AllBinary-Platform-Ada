@@ -24,7 +24,7 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 
 package org.allbinary.game.multiplayer.layer.MultiplayerBehavior_Package is
 
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type MultiplayerBehavior is tagged;
    type MultiplayerBehavior_Access is access all MultiplayerBehavior'Class;

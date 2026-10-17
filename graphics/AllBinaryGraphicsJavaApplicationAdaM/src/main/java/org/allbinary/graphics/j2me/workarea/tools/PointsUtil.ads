@@ -27,10 +27,10 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 
 package org.allbinary.graphics.j2me.workarea.tools.PointsUtil_Package is
 
-   package VectorRotationGenerator_Package renames org.allbinary.animation.VectorRotationGenerator_Package;
-   package GPoint_Package renames org.allbinary.graphics.GPoint_Package;
-   package AngleFactory_Package renames org.allbinary.math.AngleFactory_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package VectorRotationGenerator_Package renames Standard.org.allbinary.animation.VectorRotationGenerator_Package;
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type PointsUtil is tagged;
    type PointsUtil_Access is access all PointsUtil'Class;

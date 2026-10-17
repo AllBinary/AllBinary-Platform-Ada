@@ -71,13 +71,17 @@ package body org.allbinary.logic.system.security.licensing.registration.XmlRpcRe
             This.isOnline := True;
             return result;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.putF ((TRYING_OTHER_SERVERS) + (ExceptionUtil_Package.getInstance.getStackTrace (e)), This'Unchecked_Access, This.commonStrings.GET);
-            if not (To_Unbounded_String (Ada.Exceptions.Exception_Message (e)).startsWith (HOST_NOT_RESOLVED)) then
+            if not (Java_Get_Message (e).startsWith (HOST_NOT_RESOLVED)) then
                 return This.tryAnother (anyType);
             else
                 Java_Throw (Java_New_Exception ("Exception", HOST_NOT_RESOLVED_MSG));
             end if;
+                end;
         end;
    end get;
 

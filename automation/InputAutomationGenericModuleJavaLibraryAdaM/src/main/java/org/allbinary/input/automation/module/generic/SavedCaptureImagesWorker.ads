@@ -41,21 +41,21 @@ with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDela
 
 package org.allbinary.input.automation.module.generic_Id.SavedCaptureImagesWorker_Package is
 
-   package SavedCaptureGenericProfileDataWorkerType_Package renames org.allbinary.input.automation.module.generic_Id.configuration.profile.SavedCaptureGenericProfileDataWorkerType_Package;
-   package CaptureWorkerInterface_Package renames org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package;
-   package CapturedBufferedImagesCacheSingleton_Package renames org.allbinary.input.media.image.capture.CapturedBufferedImagesCacheSingleton_Package;
-   package CapturedImageWorkerResultsEvent_Package renames org.allbinary.input.media.image.capture.CapturedImageWorkerResultsEvent_Package;
-   package ProcessingFrameIndexFactory_Package renames org.allbinary.input.media.image.capture.ProcessingFrameIndexFactory_Package;
-   package ScreenScavangerRobot_Package renames org.allbinary.input.media.image.capture.ScreenScavangerRobot_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package LongUtil_Package renames org.allbinary.logic.java.number.LongUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package BasicEventHandler_Package renames org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
-   package MediaDataFactory_Package renames org.allbinary.logic.visual.media.MediaDataFactory_Package;
-   package BufferedImageFrameCacheable_Package renames org.allbinary.media.image.cache.BufferedImageFrameCacheable_Package;
-   package CommonLabels_Package renames org.allbinary.string_Id.CommonLabels_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package TimeDelayHelper_Package renames org.allbinary.time.TimeDelayHelper_Package;
+   package SavedCaptureGenericProfileDataWorkerType_Package renames Standard.org.allbinary.input.automation.module.generic_Id.configuration.profile.SavedCaptureGenericProfileDataWorkerType_Package;
+   package CaptureWorkerInterface_Package renames Standard.org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package;
+   package CapturedBufferedImagesCacheSingleton_Package renames Standard.org.allbinary.input.media.image.capture.CapturedBufferedImagesCacheSingleton_Package;
+   package CapturedImageWorkerResultsEvent_Package renames Standard.org.allbinary.input.media.image.capture.CapturedImageWorkerResultsEvent_Package;
+   package ProcessingFrameIndexFactory_Package renames Standard.org.allbinary.input.media.image.capture.ProcessingFrameIndexFactory_Package;
+   package ScreenScavangerRobot_Package renames Standard.org.allbinary.input.media.image.capture.ScreenScavangerRobot_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package LongUtil_Package renames Standard.org.allbinary.logic.java.number.LongUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package BasicEventHandler_Package renames Standard.org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
+   package MediaDataFactory_Package renames Standard.org.allbinary.logic.visual.media.MediaDataFactory_Package;
+   package BufferedImageFrameCacheable_Package renames Standard.org.allbinary.media.image.cache.BufferedImageFrameCacheable_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
 
    type SavedCaptureImagesWorker is tagged;
    type SavedCaptureImagesWorker_Access is access all SavedCaptureImagesWorker'Class;

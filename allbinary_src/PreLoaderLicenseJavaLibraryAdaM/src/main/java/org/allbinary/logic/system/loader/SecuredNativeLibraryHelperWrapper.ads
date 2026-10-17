@@ -27,9 +27,9 @@ with org.allbinary.logic.system.loader.NativeLibraryHelperWrapper_Package; use o
 
 package org.allbinary.logic.system.loader.SecuredNativeLibraryHelperWrapper_Package is
 
-   package AbKeys_Package renames org.allbinary.logic.system.security.AbKeys_Package;
-   package AbeClientInformationInterface_Package renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-   package LicensingException_Package renames org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package AbKeys_Package renames Standard.org.allbinary.logic.system.security.AbKeys_Package;
+   package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
 
    type SecuredNativeLibraryHelperWrapper is tagged;
    type SecuredNativeLibraryHelperWrapper_Access is access all SecuredNativeLibraryHelperWrapper'Class;

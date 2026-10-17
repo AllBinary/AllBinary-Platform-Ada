@@ -27,10 +27,10 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 
 package org.allbinary.graphics.opengles.OpenGLOptions_Package is
 
-   package Features_Package renames org.allbinary.game.configuration.feature.Features_Package;
-   package GameFeatureChoiceGroups_Package renames org.allbinary.game.configuration.feature.GameFeatureChoiceGroups_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
+   package GameFeatureChoiceGroups_Package renames Standard.org.allbinary.game.configuration.feature.GameFeatureChoiceGroups_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type OpenGLOptions is tagged;
    type OpenGLOptions_Access is access all OpenGLOptions'Class;

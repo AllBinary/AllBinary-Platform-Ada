@@ -26,8 +26,8 @@ with admin.tags.TableTag_Package; use admin.tags.TableTag_Package;
 
 package admin.tags.CustomItemsTag_Package is
 
-   package CustomItemsHelperFactory_Package renames admin.taghelpers.CustomItemsHelperFactory_Package;
-   package CustomItemsRequestHelperFactory_Package renames admin.taghelpers.CustomItemsRequestHelperFactory_Package;
+   package CustomItemsHelperFactory_Package renames Standard.admin.taghelpers.CustomItemsHelperFactory_Package;
+   package CustomItemsRequestHelperFactory_Package renames Standard.admin.taghelpers.CustomItemsRequestHelperFactory_Package;
 
    type CustomItemsTag is tagged;
    type CustomItemsTag_Access is access all CustomItemsTag'Class;

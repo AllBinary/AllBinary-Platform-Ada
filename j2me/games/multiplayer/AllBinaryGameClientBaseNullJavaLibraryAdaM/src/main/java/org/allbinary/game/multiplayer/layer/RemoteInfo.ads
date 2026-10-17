@@ -16,7 +16,7 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 
 package org.allbinary.game.multiplayer.layer.RemoteInfo_Package is
 
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type RemoteInfo is tagged;
    type RemoteInfo_Access is access all RemoteInfo'Class;

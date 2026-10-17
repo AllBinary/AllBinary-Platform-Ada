@@ -30,13 +30,13 @@ with org.allbinary.logic.math.BasicDecimal_Package; use org.allbinary.logic.math
 
 package org.allbinary.game.ag.ai.UpDownVectorAI_Package is
 
-   package BasicAI_Package renames org.allbinary.game.ai.BasicAI_Package;
-   package GameInput_Package renames org.allbinary.game.input.GameInput_Package;
-   package BasicVelocityProperties_Package renames org.allbinary.game.physics.velocity.BasicVelocityProperties_Package;
-   package VelocityInterfaceCompositeInterface_Package renames org.allbinary.game.physics.velocity.VelocityInterfaceCompositeInterface_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package AllBinaryLayerManager_Package renames org.allbinary.layer.AllBinaryLayerManager_Package;
-   package BasicDecimal_Package renames org.allbinary.logic.math.BasicDecimal_Package;
+   package BasicAI_Package renames Standard.org.allbinary.game.ai.BasicAI_Package;
+   package GameInput_Package renames Standard.org.allbinary.game.input.GameInput_Package;
+   package BasicVelocityProperties_Package renames Standard.org.allbinary.game.physics.velocity.BasicVelocityProperties_Package;
+   package VelocityInterfaceCompositeInterface_Package renames Standard.org.allbinary.game.physics.velocity.VelocityInterfaceCompositeInterface_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
+   package BasicDecimal_Package renames Standard.org.allbinary.logic.math.BasicDecimal_Package;
 
    type UpDownVectorAI is tagged;
    type UpDownVectorAI_Access is access all UpDownVectorAI'Class;

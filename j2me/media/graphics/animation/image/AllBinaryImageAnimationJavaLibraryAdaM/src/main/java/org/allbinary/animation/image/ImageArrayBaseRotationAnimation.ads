@@ -34,14 +34,14 @@ with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.Circul
 
 package org.allbinary.animation.image.ImageArrayBaseRotationAnimation_Package is
 
-   package DisposalUtil_Package renames org.allbinary.DisposalUtil_Package;
-   package AnimationBehavior_Package renames org.allbinary.animation.AnimationBehavior_Package;
-   package RotationAnimation_Package renames org.allbinary.animation.RotationAnimation_Package;
-   package Anchor_Package renames org.allbinary.graphics.Anchor_Package;
-   package PrimitiveIntUtil_Package renames org.allbinary.logic.math.PrimitiveIntUtil_Package;
-   package AngleInfo_Package renames org.allbinary.math.AngleInfo_Package;
-   package ImageModifierUtil_Package renames org.allbinary.media.image.ImageModifierUtil_Package;
-   package CircularIndexUtil_Package renames org.allbinary.util.CircularIndexUtil_Package;
+   package DisposalUtil_Package renames Standard.org.allbinary.DisposalUtil_Package;
+   package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
+   package RotationAnimation_Package renames Standard.org.allbinary.animation.RotationAnimation_Package;
+   package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
+   package PrimitiveIntUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveIntUtil_Package;
+   package AngleInfo_Package renames Standard.org.allbinary.math.AngleInfo_Package;
+   package ImageModifierUtil_Package renames Standard.org.allbinary.media.image.ImageModifierUtil_Package;
+   package CircularIndexUtil_Package renames Standard.org.allbinary.util.CircularIndexUtil_Package;
 
    type ImageArrayBaseRotationAnimation is tagged;
    type ImageArrayBaseRotationAnimation_Access is access all ImageArrayBaseRotationAnimation'Class;

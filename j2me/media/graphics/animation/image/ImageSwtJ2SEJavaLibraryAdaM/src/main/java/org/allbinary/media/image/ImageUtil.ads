@@ -38,21 +38,21 @@ with org.microemu.app.BareMain_Package; use org.microemu.app.BareMain_Package;
 
 package org.allbinary.media.image.ImageUtil_Package is
 
-   package SWT_Package renames org.eclipse.swt.SWT_Package;
-   package Canvas_Package renames org.eclipse.swt.widgets.Canvas_Package;
-   package Composite_Package renames org.eclipse.swt.widgets.Composite_Package;
-   package GC_Package renames org.eclipse.swt.graphics.GC_Package;
-   package ImageData_Package renames org.eclipse.swt.graphics.ImageData_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonLabels_Package renames org.allbinary.string_Id.CommonLabels_Package;
-   package PaintEvent_Package renames org.eclipse.swt.events.PaintEvent_Package;
-   package PaintListener_Package renames org.eclipse.swt.events.PaintListener_Package;
-   package Transform_Package renames org.eclipse.swt.graphics.Transform_Package;
-   package Display_Package renames org.eclipse.swt.widgets.Display_Package;
-   package BareMain_Package renames org.microemu.app.BareMain_Package;
+   package SWT_Package renames Standard.org.eclipse.swt.SWT_Package;
+   package Canvas_Package renames Standard.org.eclipse.swt.widgets.Canvas_Package;
+   package Composite_Package renames Standard.org.eclipse.swt.widgets.Composite_Package;
+   package GC_Package renames Standard.org.eclipse.swt.graphics.GC_Package;
+   package ImageData_Package renames Standard.org.eclipse.swt.graphics.ImageData_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package PaintEvent_Package renames Standard.org.eclipse.swt.events.PaintEvent_Package;
+   package PaintListener_Package renames Standard.org.eclipse.swt.events.PaintListener_Package;
+   package Transform_Package renames Standard.org.eclipse.swt.graphics.Transform_Package;
+   package Display_Package renames Standard.org.eclipse.swt.widgets.Display_Package;
+   package BareMain_Package renames Standard.org.microemu.app.BareMain_Package;
 
    type ImageUtil is tagged;
    type ImageUtil_Access is access all ImageUtil'Class;

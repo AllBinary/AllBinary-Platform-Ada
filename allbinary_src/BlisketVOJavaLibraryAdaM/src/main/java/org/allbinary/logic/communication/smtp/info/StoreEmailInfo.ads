@@ -29,11 +29,11 @@ with org.allbinary.logic.communication.smtp.info.BasicEmailInfo_Package; use org
 
 package org.allbinary.logic.communication.smtp.info.StoreEmailInfo_Package is
 
-   package ContextConfigurationInterface_Package renames org.allbinary.business.context.configuration.ContextConfigurationInterface_Package;
-   package StoreFrontInterface_Package renames org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package EmailServerConfigurationInterface_Package renames org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationInterface_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package ContextConfigurationInterface_Package renames Standard.org.allbinary.business.context.configuration.ContextConfigurationInterface_Package;
+   package StoreFrontInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package EmailServerConfigurationInterface_Package renames Standard.org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationInterface_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type StoreEmailInfo is tagged;
    type StoreEmailInfo_Access is access all StoreEmailInfo'Class;

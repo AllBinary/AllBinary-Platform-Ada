@@ -24,7 +24,7 @@ with org.allbinary.logic.system.os.GenericOperatingSystem_Package; use org.allbi
 
 package org.allbinary.logic.system.os.linux.LinuxOS_Package is
 
-   package GenericOperatingSystem_Package renames org.allbinary.logic.system.os.GenericOperatingSystem_Package;
+   package GenericOperatingSystem_Package renames Standard.org.allbinary.logic.system.os.GenericOperatingSystem_Package;
 
    type LinuxOS is tagged;
    type LinuxOS_Access is access all LinuxOS'Class;

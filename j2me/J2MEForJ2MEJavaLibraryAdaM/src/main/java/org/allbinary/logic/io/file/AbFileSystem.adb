@@ -77,9 +77,13 @@ package body org.allbinary.logic.io.file.AbFileSystem_Package is
             end if;
             return True;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.CLOSE, e);
             return False;
+                end;
         end;
    end close;
 

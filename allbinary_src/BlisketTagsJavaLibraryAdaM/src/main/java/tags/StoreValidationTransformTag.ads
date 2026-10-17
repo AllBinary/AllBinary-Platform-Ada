@@ -28,9 +28,9 @@ with tags.ValidationTransformTag_Package; use tags.ValidationTransformTag_Packag
 
 package tags.StoreValidationTransformTag_Package is
 
-   package StoreFrontData_Package renames org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
-   package AbResponseHandler_Package renames org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
+   package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type StoreValidationTransformTag is tagged;
    type StoreValidationTransformTag_Access is access all StoreValidationTransformTag'Class;

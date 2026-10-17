@@ -30,10 +30,10 @@ with org.allbinary.animation.AnimationInterface_Package; use org.allbinary.anima
 
 package org.allbinary.animation.Animation_Package is
 
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package BasicColorFactory_Package renames org.allbinary.graphics.color.BasicColorFactory_Package;
-   package BasicColorSetUtil_Package renames org.allbinary.graphics.color.BasicColorSetUtil_Package;
-   package OpenGLSurfaceChangedInterface_Package renames org.allbinary.image.opengles.OpenGLSurfaceChangedInterface_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package BasicColorSetUtil_Package renames Standard.org.allbinary.graphics.color.BasicColorSetUtil_Package;
+   package OpenGLSurfaceChangedInterface_Package renames Standard.org.allbinary.image.opengles.OpenGLSurfaceChangedInterface_Package;
 
    type Animation is tagged;
    type Animation_Access is access all Animation'Class;

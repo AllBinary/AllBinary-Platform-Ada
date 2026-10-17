@@ -76,8 +76,12 @@ package body org.allbinary.business.installer.InitDb_Package is
             result := Unbounded_String (method.invoke (This.anyType, null));
             return result;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             return Null_Unbounded_String;
+                end;
         end;
    end getHostName;
 
@@ -92,8 +96,12 @@ package body org.allbinary.business.installer.InitDb_Package is
             result := Boolean (method.invoke (This.anyType, null));
             return result.booleanValue;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             return False;
+                end;
         end;
    end addUsers;
 
@@ -108,8 +116,12 @@ package body org.allbinary.business.installer.InitDb_Package is
             result := Boolean (method.invoke (This.anyType, null));
             return result.booleanValue;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             return False;
+                end;
         end;
    end addDatabases;
 
@@ -124,8 +136,12 @@ package body org.allbinary.business.installer.InitDb_Package is
             result := Boolean (method.invoke (This.anyType, null));
             return result.booleanValue;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             return False;
+                end;
         end;
    end addTables;
 
@@ -140,8 +156,12 @@ package body org.allbinary.business.installer.InitDb_Package is
             result := Boolean (method.invoke (This.anyType, null));
             return result.booleanValue;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             return False;
+                end;
         end;
    end useTemporaryMainPath;
 
@@ -156,8 +176,12 @@ package body org.allbinary.business.installer.InitDb_Package is
             result := Boolean (method.invoke (This.anyType, null));
             return result.booleanValue;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             return False;
+                end;
         end;
    end useNormalMainPath;
 

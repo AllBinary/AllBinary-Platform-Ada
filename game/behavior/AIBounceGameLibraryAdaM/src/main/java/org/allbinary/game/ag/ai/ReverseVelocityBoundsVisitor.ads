@@ -28,11 +28,11 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 
 package org.allbinary.game.ag.ai.ReverseVelocityBoundsVisitor_Package is
 
-   package BoundsVisitorInterface_Package renames org.allbinary.bounds.BoundsVisitorInterface_Package;
-   package VelocityInterface_Package renames org.allbinary.game.physics.velocity.VelocityInterface_Package;
-   package VelocityInterfaceCompositeInterface_Package renames org.allbinary.game.physics.velocity.VelocityInterfaceCompositeInterface_Package;
-   package LayerInterface_Package renames org.allbinary.layer.LayerInterface_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
+   package BoundsVisitorInterface_Package renames Standard.org.allbinary.bounds.BoundsVisitorInterface_Package;
+   package VelocityInterface_Package renames Standard.org.allbinary.game.physics.velocity.VelocityInterface_Package;
+   package VelocityInterfaceCompositeInterface_Package renames Standard.org.allbinary.game.physics.velocity.VelocityInterfaceCompositeInterface_Package;
+   package LayerInterface_Package renames Standard.org.allbinary.layer.LayerInterface_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type ReverseVelocityBoundsVisitor is tagged;
    type ReverseVelocityBoundsVisitor_Access is access all ReverseVelocityBoundsVisitor'Class;

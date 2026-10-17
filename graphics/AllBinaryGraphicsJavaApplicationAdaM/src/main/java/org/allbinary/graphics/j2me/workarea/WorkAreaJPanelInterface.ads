@@ -25,7 +25,7 @@ with org.allbinary.graphics.j2me.workarea.KeyListener_Package; use org.allbinary
 
 package org.allbinary.graphics.j2me.workarea.WorkAreaJPanelInterface_Package is
 
-   package Document_Package renames org.w3c.dom.Document_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
 
    type WorkAreaJPanelInterface is interface and KeyListener;
    type WorkAreaJPanelInterface_Access is access all WorkAreaJPanelInterface'Class;

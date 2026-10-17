@@ -79,8 +79,12 @@ package body org.allbinary.game.score.HighScoreNamePersistanceSingleton_Package 
             recordStore := RecordStore_Package.openRecordStore (This.getRecordId (abeClientInformation), True);
             recordStore.deleteRecord (deleteId);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Java_Throw (e);
+                end;
         end;
         --  finally
         begin
@@ -129,9 +133,13 @@ package body org.allbinary.game.score.HighScoreNamePersistanceSingleton_Package 
                 end loop;
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.save (abeClientInformation, gameInfo, This.name);
             This.logUtil.putF (StringMaker_Package.Create.append (This.commonStrings.EXCEPTION_LABEL).append (ExceptionUtil_Package.getInstance.getStackTrace (e)).toString, This'Unchecked_Access, This.commonStrings.LOAD);
+                end;
         end;
         --  finally
         begin
@@ -141,8 +149,12 @@ package body org.allbinary.game.score.HighScoreNamePersistanceSingleton_Package 
                     recordStore.closeRecordStore;
                 end if;
             exception
-                when e : others =>
+                when Java_Occurrence : others =>
+                    declare
+                        e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                    begin
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.LOAD, e);
+                    end;
             end;
         end;
         return This.name;
@@ -165,8 +177,12 @@ package body org.allbinary.game.score.HighScoreNamePersistanceSingleton_Package 
             recordStore.addRecord (savedGameBytes, 0, savedGameBytes'Length);
             This.name := name;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.SAVE, e);
+                end;
         end;
         --  finally
         begin
@@ -176,8 +192,12 @@ package body org.allbinary.game.score.HighScoreNamePersistanceSingleton_Package 
                     recordStore.closeRecordStore;
                 end if;
             exception
-                when e : others =>
+                when Java_Occurrence : others =>
+                    declare
+                        e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                    begin
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.SAVE, e);
+                    end;
             end;
         end;
    end save;

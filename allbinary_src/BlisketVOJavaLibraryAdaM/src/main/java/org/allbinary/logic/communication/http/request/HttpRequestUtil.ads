@@ -24,7 +24,7 @@ with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.
 
 package org.allbinary.logic.communication.http.request.HttpRequestUtil_Package is
 
-   package AbPathData_Package renames org.allbinary.logic.io.path.AbPathData_Package;
+   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
 
    type HttpRequestUtil is tagged;
    type HttpRequestUtil_Access is access all HttpRequestUtil'Class;

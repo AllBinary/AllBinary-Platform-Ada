@@ -71,7 +71,7 @@ package body org.allbinary.logic.communication.log.GuiLog_Package is
         return This.put (specialMessage, anyType, functionName, null);
    end put;
 
-   function put (This : in out GuiLog; specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String; exception_Id : Ada.Exceptions.Exception_Occurrence) return Unbounded_String is
+   function put (This : in out GuiLog; specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String; exception_Id : Java_Throwable) return Unbounded_String is
       data : Unbounded_String;
    begin
         begin
@@ -80,9 +80,13 @@ package body org.allbinary.logic.communication.log.GuiLog_Package is
             Ada.Text_IO.Put_Line (Java_Image (data));
             return data;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             PreLogUtil_Package.putOE (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("put"), e);
             return To_Unbounded_String ("Logging Error");
+                end;
         end;
    end put;
 
@@ -91,7 +95,7 @@ package body org.allbinary.logic.communication.log.GuiLog_Package is
         return This.put (specialMessage, className, functionName, null);
    end put;
 
-   function put (This : in out GuiLog; specialMessage : Unbounded_String; className : Unbounded_String; functionName : Unbounded_String; exception_Id : Ada.Exceptions.Exception_Occurrence) return Unbounded_String is
+   function put (This : in out GuiLog; specialMessage : Unbounded_String; className : Unbounded_String; functionName : Unbounded_String; exception_Id : Java_Throwable) return Unbounded_String is
       data : Unbounded_String;
    begin
         begin
@@ -100,9 +104,13 @@ package body org.allbinary.logic.communication.log.GuiLog_Package is
             Ada.Text_IO.Put_Line (Java_Image (data));
             return data;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             PreLogUtil_Package.putOE (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("put"), e);
             return To_Unbounded_String ("Logging Error");
+                end;
         end;
    end put;
 
@@ -120,7 +128,7 @@ package body org.allbinary.logic.communication.log.GuiLog_Package is
       null;
    end put;
 
-   procedure put (This : in out GuiLog; specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String; exception_Id : Ada.Exceptions.Exception_Occurrence) is
+   procedure put (This : in out GuiLog; specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String; exception_Id : Java_Throwable) is
       Java_Result : constant Unbounded_String := GuiLog'Class (This).put (specialMessage, anyType, functionName, exception_Id);
       pragma Unreferenced (Java_Result);
    begin
@@ -134,7 +142,7 @@ package body org.allbinary.logic.communication.log.GuiLog_Package is
       null;
    end put;
 
-   procedure put (This : in out GuiLog; specialMessage : Unbounded_String; className : Unbounded_String; functionName : Unbounded_String; exception_Id : Ada.Exceptions.Exception_Occurrence) is
+   procedure put (This : in out GuiLog; specialMessage : Unbounded_String; className : Unbounded_String; functionName : Unbounded_String; exception_Id : Java_Throwable) is
       Java_Result : constant Unbounded_String := GuiLog'Class (This).put (specialMessage, className, functionName, exception_Id);
       pragma Unreferenced (Java_Result);
    begin

@@ -44,10 +44,14 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
             This.setSize (dimension);
             This.setCanvasSize (x, y);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if LOGGING.contains (LOGGING.GRAPHICSCREATION) then
                 This.guiLog.put (To_Unbounded_String ("Constructor Error"), This'Unchecked_Access, To_Unbounded_String ("contructor"), e);
             end if;
+                end;
         end;
    end Initialize;
 
@@ -87,10 +91,14 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
             This.workAreaJTreeJPanel.expand;
             This.workAreaJTreeJPanel.repaint;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if LOGGING.contains (LOGGING.GRAPHICSCREATION) then
                 This.guiLog.put (To_Unbounded_String ("Constructor Error"), This'Unchecked_Access, To_Unbounded_String ("contructor"), e);
             end if;
+                end;
         end;
    end Initialize;
 
@@ -167,8 +175,12 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
             This.grid.grid := PointFactory_Package.getInstance.createXY (xSize, ySize);
             This.grid.isChanged := True;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             null;
+                end;
         end;
    end setGrid;
 
@@ -307,8 +319,12 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
                 Java_Throw (Java_New_Exception ("GraphicsException", To_Unbounded_String ("No Tool Selected"), This'Unchecked_Access, To_Unbounded_String ("setSelectedTool")));
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             null;
+                end;
         end;
    end setNewTool;
 
@@ -429,8 +445,12 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
                 This.grid.isChanged := False;
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             null;
+                end;
         end;
    end paint;
 
@@ -577,9 +597,13 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
                 end if;
             end loop;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.gameInputStrings.KEY_PRESSED, e);
+                end;
         end;
         if ((This.getSelectedTool) /= (null)) and then (This.getSelectedTool.isActive) then
             StatusFactory_Package.getInstance.setStatus (To_Unbounded_String ("Key Pressed for Tool"));

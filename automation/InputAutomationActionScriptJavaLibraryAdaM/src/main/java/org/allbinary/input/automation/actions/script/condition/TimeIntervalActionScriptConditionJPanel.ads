@@ -26,8 +26,8 @@ with org.allbinary.input.automation.actions.script.condition.JPanel_Package; use
 
 package org.allbinary.input.automation.actions.script.condition.TimeIntervalActionScriptConditionJPanel_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type TimeIntervalActionScriptConditionJPanel is tagged;
    type TimeIntervalActionScriptConditionJPanel_Access is access all TimeIntervalActionScriptConditionJPanel'Class;

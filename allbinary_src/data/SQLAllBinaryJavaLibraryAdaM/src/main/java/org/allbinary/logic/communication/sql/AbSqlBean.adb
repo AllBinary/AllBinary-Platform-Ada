@@ -71,11 +71,15 @@ package body org.allbinary.logic.communication.sql.AbSqlBean_Package is
             end loop;
             return Null_Unbounded_String;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
                 This.logUtil.put (Java_Image (This.FAILED_SQL_STATEMENT) & sqlStatement, This'Unchecked_Access, This.METHOD_GET_FIELD, e);
             end if;
             return Java_Image (This.FAILED_SQL_STATEMENT) & sqlStatement;
+                end;
         end;
    end getField;
 
@@ -131,12 +135,16 @@ package body org.allbinary.logic.communication.sql.AbSqlBean_Package is
             end loop;
             return Null_Unbounded_String;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             sqlStatement := stringBuffer.toString;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
                 This.logUtil.put (Java_Image (This.FAILED_SQL_STATEMENT) & sqlStatement, This'Unchecked_Access, This.METHOD_GET_FIELD, e);
             end if;
             return Java_Image (This.FAILED_SQL_STATEMENT) & sqlStatement;
+                end;
         end;
    end getField;
 
@@ -191,12 +199,16 @@ package body org.allbinary.logic.communication.sql.AbSqlBean_Package is
                 return org_Package.allbinary.globals.GLOBALS2.ISASUBSET;
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             sqlStatement := stringBuffer.toString;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
                 This.logUtil.put (Java_Image (This.FAILED_SQL_STATEMENT) & sqlStatement, This'Unchecked_Access, This.METHOD_IS_SUBSET_OF_ENTRY, e);
             end if;
             return Java_Image (This.FAILED_SQL_STATEMENT) & sqlStatement;
+                end;
         end;
    end isSubsetOfEntry;
 

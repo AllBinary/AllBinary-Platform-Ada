@@ -39,9 +39,13 @@ package body org.allbinary.input.motion.touch.action.ReleaseTouchInputToGameKeyE
             This.setGameKey (This.NONE);
             This.setGameKeyEvent (GameKeyEventFactory_Package.getInstance.getInstanceForInput (This'Unchecked_Access, This.NONE));
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.CONSTRUCTOR, e);
+                end;
         end;
    end Initialize;
 

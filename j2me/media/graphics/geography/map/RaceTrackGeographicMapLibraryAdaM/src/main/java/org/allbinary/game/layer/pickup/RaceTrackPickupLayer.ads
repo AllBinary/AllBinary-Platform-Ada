@@ -34,16 +34,16 @@ with org.allbinary.game.layer.pickup.PickupLayer_Package; use org.allbinary.game
 
 package org.allbinary.game.layer.pickup.RaceTrackPickupLayer_Package is
 
-   package NullAnimationFactory_Package renames org.allbinary.animation.NullAnimationFactory_Package;
-   package BasicGroupFactory_Package renames org.allbinary.game.identification.BasicGroupFactory_Package;
-   package AllBinaryTiledLayer_Package renames org.allbinary.game.layer.AllBinaryTiledLayer_Package;
-   package RemoteInfo_Package renames org.allbinary.game.multiplayer.layer.RemoteInfo_Package;
-   package TileLayerPositionIntoViewPosition_Package renames org.allbinary.game.view.TileLayerPositionIntoViewPosition_Package;
-   package PointFactory_Package renames org.allbinary.graphics.PointFactory_Package;
-   package Rectangle_Package renames org.allbinary.graphics.Rectangle_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package ViewPosition_Package renames org.allbinary.view.ViewPosition_Package;
-   package ViewPositionEventHandler_Package renames org.allbinary.view.event.ViewPositionEventHandler_Package;
+   package NullAnimationFactory_Package renames Standard.org.allbinary.animation.NullAnimationFactory_Package;
+   package BasicGroupFactory_Package renames Standard.org.allbinary.game.identification.BasicGroupFactory_Package;
+   package AllBinaryTiledLayer_Package renames Standard.org.allbinary.game.layer.AllBinaryTiledLayer_Package;
+   package RemoteInfo_Package renames Standard.org.allbinary.game.multiplayer.layer.RemoteInfo_Package;
+   package TileLayerPositionIntoViewPosition_Package renames Standard.org.allbinary.game.view.TileLayerPositionIntoViewPosition_Package;
+   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
+   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package ViewPosition_Package renames Standard.org.allbinary.view.ViewPosition_Package;
+   package ViewPositionEventHandler_Package renames Standard.org.allbinary.view.event.ViewPositionEventHandler_Package;
 
    type RaceTrackPickupLayer is tagged;
    type RaceTrackPickupLayer_Access is access all RaceTrackPickupLayer'Class;

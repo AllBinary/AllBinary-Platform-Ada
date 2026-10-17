@@ -58,31 +58,31 @@ with org.allbinary.input.automation.JFrame_Package; use org.allbinary.input.auto
 
 package org.allbinary.input.automation.InputAutomationJFrame_Package is
 
-   package ARunnable_Package renames org.allbinary.thread.ARunnable_Package;
-   package InputAutomationBundleActivatorListenerInterface_Package renames bundle.input.automation.InputAutomationBundleActivatorListenerInterface_Package;
-   package InputAutomationConfigurationModuleChangeListener_Package renames bundle.input.automation.module.configuration.InputAutomationConfigurationModuleChangeListener_Package;
-   package InputAutomationRobotChangeListener_Package renames bundle.input.automation.robot.InputAutomationRobotChangeListener_Package;
-   package AppUrlGlobals_Package renames org.allbinary.globals.AppUrlGlobals_Package;
-   package URLGLOBALS_Package renames org.allbinary.globals.URLGLOBALS_Package;
-   package BasicTextJDialog_Package renames org.allbinary.gui.dialog.BasicTextJDialog_Package;
-   package JListSwingWorker_Package renames org.allbinary.gui.swing.workers.JListSwingWorker_Package;
-   package InputAutomationConfiguration_Package renames org.allbinary.input.automation.configuration.InputAutomationConfiguration_Package;
-   package InputAutomationConfigurationFactory_Package renames org.allbinary.input.automation.configuration.InputAutomationConfigurationFactory_Package;
-   package InputAutomationConfigurationModuleChangeEvent_Package renames org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package;
-   package InputAutomationModuleFactoryFactory_Package renames org.allbinary.input.automation.module.InputAutomationModuleFactoryFactory_Package;
-   package InputAutomationModuleFactoryInterface_Package renames org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package;
-   package InputAutomationModuleConfiguration_Package renames org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package;
-   package InputAutomationModuleConfigurations_Package renames org.allbinary.input.automation.module.configuration.InputAutomationModuleConfigurations_Package;
-   package DesktopBundle_Package renames org.allbinary.input.automation.osgi.DesktopBundle_Package;
-   package InputRobotFactory_Package renames org.allbinary.input.automation.robot.InputRobotFactory_Package;
-   package InputAutomationRobotChangeEvent_Package renames org.allbinary.input.automation.robot.osgi.InputAutomationRobotChangeEvent_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package LogConfigTypeFactory_Package renames org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
-   package JavaHelpUtil_Package renames org.allbinary.logic.java.help.JavaHelpUtil_Package;
-   package WebappClassLoaderInfo_Package renames org.allbinary.logic.system.loader.WebappClassLoaderInfo_Package;
-   package InputAutomationClientInformationFactory_Package renames org.allbinary.logic.system.security.licensing.InputAutomationClientInformationFactory_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package RunnableInterface_Package renames org.allbinary.thread.RunnableInterface_Package;
+   package ARunnable_Package renames Standard.org.allbinary.thread.ARunnable_Package;
+   package InputAutomationBundleActivatorListenerInterface_Package renames Standard.bundle.input.automation.InputAutomationBundleActivatorListenerInterface_Package;
+   package InputAutomationConfigurationModuleChangeListener_Package renames Standard.bundle.input.automation.module.configuration.InputAutomationConfigurationModuleChangeListener_Package;
+   package InputAutomationRobotChangeListener_Package renames Standard.bundle.input.automation.robot.InputAutomationRobotChangeListener_Package;
+   package AppUrlGlobals_Package renames Standard.org.allbinary.globals.AppUrlGlobals_Package;
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
+   package BasicTextJDialog_Package renames Standard.org.allbinary.gui.dialog.BasicTextJDialog_Package;
+   package JListSwingWorker_Package renames Standard.org.allbinary.gui.swing.workers.JListSwingWorker_Package;
+   package InputAutomationConfiguration_Package renames Standard.org.allbinary.input.automation.configuration.InputAutomationConfiguration_Package;
+   package InputAutomationConfigurationFactory_Package renames Standard.org.allbinary.input.automation.configuration.InputAutomationConfigurationFactory_Package;
+   package InputAutomationConfigurationModuleChangeEvent_Package renames Standard.org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package;
+   package InputAutomationModuleFactoryFactory_Package renames Standard.org.allbinary.input.automation.module.InputAutomationModuleFactoryFactory_Package;
+   package InputAutomationModuleFactoryInterface_Package renames Standard.org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package;
+   package InputAutomationModuleConfiguration_Package renames Standard.org.allbinary.input.automation.module.configuration.InputAutomationModuleConfiguration_Package;
+   package InputAutomationModuleConfigurations_Package renames Standard.org.allbinary.input.automation.module.configuration.InputAutomationModuleConfigurations_Package;
+   package DesktopBundle_Package renames Standard.org.allbinary.input.automation.osgi.DesktopBundle_Package;
+   package InputRobotFactory_Package renames Standard.org.allbinary.input.automation.robot.InputRobotFactory_Package;
+   package InputAutomationRobotChangeEvent_Package renames Standard.org.allbinary.input.automation.robot.osgi.InputAutomationRobotChangeEvent_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package JavaHelpUtil_Package renames Standard.org.allbinary.logic.java.help.JavaHelpUtil_Package;
+   package WebappClassLoaderInfo_Package renames Standard.org.allbinary.logic.system.loader.WebappClassLoaderInfo_Package;
+   package InputAutomationClientInformationFactory_Package renames Standard.org.allbinary.logic.system.security.licensing.InputAutomationClientInformationFactory_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package RunnableInterface_Package renames Standard.org.allbinary.thread.RunnableInterface_Package;
 
    type InputAutomationJFrame is tagged;
    type InputAutomationJFrame_Access is access all InputAutomationJFrame'Class;

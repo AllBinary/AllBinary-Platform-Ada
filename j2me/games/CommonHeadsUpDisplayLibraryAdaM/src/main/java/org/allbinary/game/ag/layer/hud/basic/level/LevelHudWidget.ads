@@ -30,11 +30,11 @@ with org.allbinary.logic.math.PrimitiveLongUtil_Package; use org.allbinary.logic
 
 package org.allbinary.game.ag.layer.hud.basic.level.LevelHudWidget_Package is
 
-   package BasicHud_Package renames org.allbinary.game.graphics.hud.BasicHud_Package;
-   package BasicColorFactory_Package renames org.allbinary.graphics.color.BasicColorFactory_Package;
-   package PaintableInterface_Package renames org.allbinary.graphics.paint.PaintableInterface_Package;
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
-   package PrimitiveLongUtil_Package renames org.allbinary.logic.math.PrimitiveLongUtil_Package;
+   package BasicHud_Package renames Standard.org.allbinary.game.graphics.hud.BasicHud_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package PaintableInterface_Package renames Standard.org.allbinary.graphics.paint.PaintableInterface_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package PrimitiveLongUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveLongUtil_Package;
 
    type LevelHudWidget is tagged;
    type LevelHudWidget_Access is access all LevelHudWidget'Class;

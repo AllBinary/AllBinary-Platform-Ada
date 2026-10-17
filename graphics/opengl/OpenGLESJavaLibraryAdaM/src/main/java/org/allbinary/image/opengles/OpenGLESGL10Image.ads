@@ -35,11 +35,11 @@ with org.allbinary.image.opengles.OpenGLESImage_Package; use org.allbinary.image
 
 package org.allbinary.image.opengles.OpenGLESGL10Image_Package is
 
-   package DisplayInfoSingleton_Package renames org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
-   package OpenGLLogUtil_Package renames org.allbinary.graphics.opengles.OpenGLLogUtil_Package;
-   package GLUtil_Package renames org.allbinary.opengles.GLUtil_Package;
-   package PlatformBitmapBaseFactory_Package renames org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package;
-   package PlatformTextureBaseFactory_Package renames org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package;
+   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+   package OpenGLLogUtil_Package renames Standard.org.allbinary.graphics.opengles.OpenGLLogUtil_Package;
+   package GLUtil_Package renames Standard.org.allbinary.opengles.GLUtil_Package;
+   package PlatformBitmapBaseFactory_Package renames Standard.org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package;
+   package PlatformTextureBaseFactory_Package renames Standard.org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package;
 
    type OpenGLESGL10Image is tagged;
    type OpenGLESGL10Image_Access is access all OpenGLESGL10Image'Class;

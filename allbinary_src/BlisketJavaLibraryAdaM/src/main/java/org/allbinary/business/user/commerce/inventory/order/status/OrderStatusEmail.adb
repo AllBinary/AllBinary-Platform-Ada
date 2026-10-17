@@ -80,10 +80,14 @@ package body org.allbinary.business.user.commerce.inventory.order.status.OrderSt
             storeAdminUserEmailEventHandler.receiveEmailInfo (userEmailEventNameData, storeAdminEmailInfo);
             adminUserEmailEventHandler.receiveEmailInfo (userEmailEventNameData, adminEmailInfo);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGINGERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("emailAdmin"), e);
             end if;
+                end;
         end;
    end notifyStoreAdmin;
 
@@ -108,11 +112,15 @@ package body org.allbinary.business.user.commerce.inventory.order.status.OrderSt
             userEmailEventHandler := UserEmailEventHandlerSingletons_Package.getInstance.getInstance (This.abeClientInformation, userEmailEventNameData, This.user);
             userEmailEventHandler.receiveEmailInfo (userEmailEventNameData, emailInfo);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGINGERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("notifyUser"), e);
             end if;
             Java_Throw (e);
+                end;
         end;
    end notifyUser;
 

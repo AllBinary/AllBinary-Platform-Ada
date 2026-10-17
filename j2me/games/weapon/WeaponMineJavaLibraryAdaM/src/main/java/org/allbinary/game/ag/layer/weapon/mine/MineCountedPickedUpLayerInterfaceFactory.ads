@@ -34,17 +34,17 @@ with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_
 
 package org.allbinary.game.ag.layer.weapon.mine.MineCountedPickedUpLayerInterfaceFactory_Package is
 
-   package FeaturedAnimationInterfaceFactoryInterfaceFactory_Package renames org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package;
-   package WeaponProperties_Package renames org.allbinary.game.combat.weapon.WeaponProperties_Package;
-   package CountedPickedUpLayerInterfaceFactory_Package renames org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactory_Package;
-   package IconLayerFactory_Package renames org.allbinary.game.layer.pickup.IconLayerFactory_Package;
-   package PickedUpLayerInterfaceFactoryInterface_Package renames org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package;
-   package PickedUpLayerTypeFactory_Package renames org.allbinary.game.layer.pickup.PickedUpLayerTypeFactory_Package;
-   package WeaponLayerCircularPool_Package renames org.allbinary.game.layer.weapon.WeaponLayerCircularPool_Package;
-   package ScoreableInterface_Package renames org.allbinary.game.score.ScoreableInterface_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package SmallIntegerSingletonFactory_Package renames org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
-   package ABHashtable_Package renames org.allbinary.util.ABHashtable_Package;
+   package FeaturedAnimationInterfaceFactoryInterfaceFactory_Package renames Standard.org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package;
+   package WeaponProperties_Package renames Standard.org.allbinary.game.combat.weapon.WeaponProperties_Package;
+   package CountedPickedUpLayerInterfaceFactory_Package renames Standard.org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactory_Package;
+   package IconLayerFactory_Package renames Standard.org.allbinary.game.layer.pickup.IconLayerFactory_Package;
+   package PickedUpLayerInterfaceFactoryInterface_Package renames Standard.org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package;
+   package PickedUpLayerTypeFactory_Package renames Standard.org.allbinary.game.layer.pickup.PickedUpLayerTypeFactory_Package;
+   package WeaponLayerCircularPool_Package renames Standard.org.allbinary.game.layer.weapon.WeaponLayerCircularPool_Package;
+   package ScoreableInterface_Package renames Standard.org.allbinary.game.score.ScoreableInterface_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
    type MineCountedPickedUpLayerInterfaceFactory is tagged;
    type MineCountedPickedUpLayerInterfaceFactory_Access is access all MineCountedPickedUpLayerInterfaceFactory'Class;

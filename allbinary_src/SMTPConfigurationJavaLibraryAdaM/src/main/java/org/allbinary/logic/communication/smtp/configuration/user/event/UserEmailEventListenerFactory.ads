@@ -27,10 +27,10 @@ with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface
 
 package org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventListenerFactory_Package is
 
-   package UserInterface_Package renames org.allbinary.business.user.UserInterface_Package;
-   package UserEmailEventListenerInterface_Package renames org.allbinary.logic.communication.smtp.event.UserEmailEventListenerInterface_Package;
-   package AbeFactory_Package renames org.allbinary.logic.system.loader.AbeFactory_Package;
-   package AbeClientInformationInterface_Package renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package UserInterface_Package renames Standard.org.allbinary.business.user.UserInterface_Package;
+   package UserEmailEventListenerInterface_Package renames Standard.org.allbinary.logic.communication.smtp.event.UserEmailEventListenerInterface_Package;
+   package AbeFactory_Package renames Standard.org.allbinary.logic.system.loader.AbeFactory_Package;
+   package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 
    type UserEmailEventListenerFactory is tagged;
    type UserEmailEventListenerFactory_Access is access all UserEmailEventListenerFactory'Class;

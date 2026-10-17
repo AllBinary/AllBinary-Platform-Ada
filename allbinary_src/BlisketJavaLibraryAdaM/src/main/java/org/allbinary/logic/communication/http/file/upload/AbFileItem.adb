@@ -83,11 +83,15 @@ package body org.allbinary.logic.communication.http.file.upload.AbFileItem_Packa
         begin
             return FileItemUtil_Package.getInstance.getString (This.byteArray);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("getString"), e);
             end if;
             return StringUtil_Package.getInstance.EMPTY_STRING;
+                end;
         end;
    end getString;
 

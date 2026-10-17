@@ -27,9 +27,9 @@ with org.allbinary.game.score.HighScoresHelperBaseInterface_Package; use org.all
 
 package org.allbinary.game.score.HighScoresHelperBase_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type HighScoresHelperBase is tagged;
    type HighScoresHelperBase_Access is access all HighScoresHelperBase'Class;

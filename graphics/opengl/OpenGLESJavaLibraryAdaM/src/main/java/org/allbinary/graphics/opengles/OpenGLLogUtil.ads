@@ -17,10 +17,10 @@ with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary
 
 package org.allbinary.graphics.opengles.OpenGLLogUtil_Package is
 
-   package OpenGLStrings_Package renames org.allbinary.image_Case.opengles.OpenGLStrings_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package ForcedLogUtil_Package renames org.allbinary.logic.communication.log.ForcedLogUtil_Package;
-   package PreLogUtil_Package renames org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package OpenGLStrings_Package renames Standard.org.allbinary.image_Case.opengles.OpenGLStrings_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
 
    type OpenGLLogUtil is tagged;
    type OpenGLLogUtil_Access is access all OpenGLLogUtil'Class;

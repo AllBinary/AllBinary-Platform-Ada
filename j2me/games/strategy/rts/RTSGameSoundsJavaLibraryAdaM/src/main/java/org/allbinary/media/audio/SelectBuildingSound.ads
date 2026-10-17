@@ -24,8 +24,8 @@ with org.allbinary.media.audio.Sound_Package; use org.allbinary.media.audio.Soun
 
 package org.allbinary.media.audio.SelectBuildingSound_Package is
 
-   package CompositeSound_Package renames org.allbinary.media.audio.CompositeSound_Package;
-   package Sound_Package renames org.allbinary.media.audio.Sound_Package;
+   package CompositeSound_Package renames Standard.org.allbinary.media.audio.CompositeSound_Package;
+   package Sound_Package renames Standard.org.allbinary.media.audio.Sound_Package;
 
    type SelectBuildingSound is tagged;
    type SelectBuildingSound_Access is access all SelectBuildingSound'Class;

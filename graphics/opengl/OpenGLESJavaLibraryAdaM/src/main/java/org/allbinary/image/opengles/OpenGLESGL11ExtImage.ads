@@ -35,12 +35,12 @@ with org.allbinary.image.opengles.OpenGLESImage_Package; use org.allbinary.image
 
 package org.allbinary.image.opengles.OpenGLESGL11ExtImage_Package is
 
-   package DisplayInfoSingleton_Package renames org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
-   package DisplayChangeEvent_Package renames org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package;
-   package OpenGLLogUtil_Package renames org.allbinary.graphics.opengles.OpenGLLogUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package PlatformBitmapBaseFactory_Package renames org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package;
-   package PlatformTextureBaseFactory_Package renames org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package;
+   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+   package DisplayChangeEvent_Package renames Standard.org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package;
+   package OpenGLLogUtil_Package renames Standard.org.allbinary.graphics.opengles.OpenGLLogUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package PlatformBitmapBaseFactory_Package renames Standard.org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package;
+   package PlatformTextureBaseFactory_Package renames Standard.org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package;
 
    type OpenGLESGL11ExtImage is tagged;
    type OpenGLESGL11ExtImage_Access is access all OpenGLESGL11ExtImage'Class;

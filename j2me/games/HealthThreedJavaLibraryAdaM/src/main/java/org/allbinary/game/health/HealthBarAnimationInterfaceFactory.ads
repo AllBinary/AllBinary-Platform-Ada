@@ -28,11 +28,11 @@ with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleP
 
 package org.allbinary.game.health.HealthBarAnimationInterfaceFactory_Package is
 
-   package Animation_Package renames org.allbinary.animation.Animation_Package;
-   package AnimationInterfaceFactoryInterface_Package renames org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
-   package ProceduralAnimationInterfaceFactoryInterface_Package renames org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package ScaleProperties_Package renames org.allbinary.media.ScaleProperties_Package;
+   package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
+   package AnimationInterfaceFactoryInterface_Package renames Standard.org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
+   package ProceduralAnimationInterfaceFactoryInterface_Package renames Standard.org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package ScaleProperties_Package renames Standard.org.allbinary.media.ScaleProperties_Package;
 
    type HealthBarAnimationInterfaceFactory is tagged;
    type HealthBarAnimationInterfaceFactory_Access is access all HealthBarAnimationInterfaceFactory'Class;

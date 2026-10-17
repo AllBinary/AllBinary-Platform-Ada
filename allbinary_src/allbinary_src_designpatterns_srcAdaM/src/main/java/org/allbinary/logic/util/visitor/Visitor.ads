@@ -25,7 +25,7 @@ with org.allbinary.logic.util.visitor.VisitorInterface_Package; use org.allbinar
 
 package org.allbinary.logic.util.visitor.Visitor_Package is
 
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
 
    type Visitor is tagged;
    type Visitor_Access is access all Visitor'Class;

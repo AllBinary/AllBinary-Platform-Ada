@@ -29,12 +29,12 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.logic.system.security.crypt.jcehelper.BasicCrypt_Package is
 
-   package TsUtil_Package renames org.allbinary.TsUtil_Package;
-   package CryptInterface_Package renames org.allbinary.init.crypt.jcehelper.CryptInterface_Package;
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
-   package PreLogUtil_Package renames org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package ByteUtil_Package renames org.allbinary.logic.java.byteutil.ByteUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
+   package CryptInterface_Package renames Standard.org.allbinary.init.crypt.jcehelper.CryptInterface_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package ByteUtil_Package renames Standard.org.allbinary.logic.java.byteutil.ByteUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type BasicCrypt is tagged;
    type BasicCrypt_Access is access all BasicCrypt'Class;

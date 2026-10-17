@@ -24,7 +24,7 @@ with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file
 
 package org.allbinary.logic.io.DataOutputStreamFactory_Package is
 
-   package AbFile_Package renames org.allbinary.logic.io.file.AbFile_Package;
+   package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
 
    type DataOutputStreamFactory is tagged;
    type DataOutputStreamFactory_Access is access all DataOutputStreamFactory'Class;

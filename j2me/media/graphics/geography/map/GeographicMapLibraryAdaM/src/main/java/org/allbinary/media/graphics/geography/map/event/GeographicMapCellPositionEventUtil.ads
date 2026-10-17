@@ -25,8 +25,8 @@ with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionTrackin
 
 package org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEventUtil_Package is
 
-   package CellPositionFactory_Package renames org.allbinary.graphics.CellPositionFactory_Package;
-   package GeographicMapCellPositionTracking_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCellPositionTracking_Package;
+   package CellPositionFactory_Package renames Standard.org.allbinary.graphics.CellPositionFactory_Package;
+   package GeographicMapCellPositionTracking_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPositionTracking_Package;
 
    type GeographicMapCellPositionEventUtil is tagged;
    type GeographicMapCellPositionEventUtil_Access is access all GeographicMapCellPositionEventUtil'Class;

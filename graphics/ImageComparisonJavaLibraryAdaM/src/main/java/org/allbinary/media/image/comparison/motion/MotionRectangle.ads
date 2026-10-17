@@ -28,8 +28,8 @@ with org.allbinary.media.image.comparison.motion.Cloneable_Package; use org.allb
 
 package org.allbinary.media.image.comparison.motion.MotionRectangle_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type MotionRectangle is tagged;
    type MotionRectangle_Access is access all MotionRectangle'Class;

@@ -24,7 +24,7 @@ with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDela
 
 package org.allbinary.input.automation.actions.script.condition.TimeIntervalActionScriptConditionInterface_Package is
 
-   package TimeDelayHelper_Package renames org.allbinary.time.TimeDelayHelper_Package;
+   package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
 
    type TimeIntervalActionScriptConditionInterface is interface;
    type TimeIntervalActionScriptConditionInterface_Access is access all TimeIntervalActionScriptConditionInterface'Class;

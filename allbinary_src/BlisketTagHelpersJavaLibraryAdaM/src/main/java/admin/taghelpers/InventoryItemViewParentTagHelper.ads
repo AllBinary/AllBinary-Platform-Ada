@@ -30,13 +30,13 @@ with views.admin.inventory.download.DownloadableInventoryItemView_Package; use v
 
 package admin.taghelpers.InventoryItemViewParentTagHelper_Package is
 
-   package RequestMapInterface_Package renames org.allbinary.logic.communication.http.request.RequestMapInterface_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package TransformInterface_Package renames org.allbinary.logic.visual.transform.TransformInterface_Package;
-   package ValidationViewHelper_Package renames taghelpers.ValidationViewHelper_Package;
-   package HelperTag_Package renames tags.HelperTag_Package;
-   package InventoryItemView_Package renames views.admin.inventory.InventoryItemView_Package;
-   package DownloadableInventoryItemView_Package renames views.admin.inventory.download.DownloadableInventoryItemView_Package;
+   package RequestMapInterface_Package renames Standard.org.allbinary.logic.communication.http.request.RequestMapInterface_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package TransformInterface_Package renames Standard.org.allbinary.logic.visual.transform.TransformInterface_Package;
+   package ValidationViewHelper_Package renames Standard.taghelpers.ValidationViewHelper_Package;
+   package HelperTag_Package renames Standard.tags.HelperTag_Package;
+   package InventoryItemView_Package renames Standard.views.admin.inventory.InventoryItemView_Package;
+   package DownloadableInventoryItemView_Package renames Standard.views.admin.inventory.download.DownloadableInventoryItemView_Package;
 
    type InventoryItemViewParentTagHelper is tagged;
    type InventoryItemViewParentTagHelper_Access is access all InventoryItemViewParentTagHelper'Class;

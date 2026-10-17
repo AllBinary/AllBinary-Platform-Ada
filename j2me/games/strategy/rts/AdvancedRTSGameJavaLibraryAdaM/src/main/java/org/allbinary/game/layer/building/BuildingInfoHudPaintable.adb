@@ -83,9 +83,13 @@ package body org.allbinary.game.layer.building.BuildingInfoHudPaintable_Package 
             --  Java nested class MaxHealthNumberStringHud: move it to its own package
             maxHealthHud := MaxHealthNumberStringHud_Package.Create;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.CONSTRUCTOR, e);
+                end;
         end;
         This.productivityHud := productivityHud;
         This.efficiencyHud := efficiencyHud;

@@ -25,7 +25,7 @@ with org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserCont
 
 package org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraints_Package is
 
-   package Node_Package renames org.w3c.dom.Node_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type DisplayInBrowserContraints is tagged;
    type DisplayInBrowserContraints_Access is access all DisplayInBrowserContraints'Class;

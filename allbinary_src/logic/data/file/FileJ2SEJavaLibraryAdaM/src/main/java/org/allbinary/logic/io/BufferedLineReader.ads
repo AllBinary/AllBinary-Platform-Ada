@@ -27,8 +27,8 @@ with org.allbinary.logic.io.file.AbFileNativeUtil_Package; use org.allbinary.log
 
 package org.allbinary.logic.io.BufferedLineReader_Package is
 
-   package AbFile_Package renames org.allbinary.logic.io.file.AbFile_Package;
-   package AbFileNativeUtil_Package renames org.allbinary.logic.io.file.AbFileNativeUtil_Package;
+   package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
+   package AbFileNativeUtil_Package renames Standard.org.allbinary.logic.io.file.AbFileNativeUtil_Package;
 
    type BufferedLineReader is tagged;
    type BufferedLineReader_Access is access all BufferedLineReader'Class;

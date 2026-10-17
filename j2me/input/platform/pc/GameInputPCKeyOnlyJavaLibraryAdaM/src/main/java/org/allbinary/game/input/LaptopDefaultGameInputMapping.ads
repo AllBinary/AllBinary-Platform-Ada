@@ -26,9 +26,9 @@ with org.allbinary.game.input.mapping.PersistentInputMapping_Package; use org.al
 
 package org.allbinary.game.input.LaptopDefaultGameInputMapping_Package is
 
-   package GamePersistanceStrings_Package renames org.allbinary.game.configuration.persistance.GamePersistanceStrings_Package;
-   package InputToGameKeyMapping_Package renames org.allbinary.game.input.mapping.InputToGameKeyMapping_Package;
-   package PersistentInputMapping_Package renames org.allbinary.game.input.mapping.PersistentInputMapping_Package;
+   package GamePersistanceStrings_Package renames Standard.org.allbinary.game.configuration.persistance.GamePersistanceStrings_Package;
+   package InputToGameKeyMapping_Package renames Standard.org.allbinary.game.input.mapping.InputToGameKeyMapping_Package;
+   package PersistentInputMapping_Package renames Standard.org.allbinary.game.input.mapping.PersistentInputMapping_Package;
 
    type LaptopDefaultGameInputMapping is tagged;
    type LaptopDefaultGameInputMapping_Access is access all LaptopDefaultGameInputMapping'Class;

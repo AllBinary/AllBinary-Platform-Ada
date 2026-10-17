@@ -29,12 +29,12 @@ with org.allbinary.graphics.form.item.ItemArraySingletonFactoryInterface_Package
 
 package org.allbinary.game.layer.AdvancedRTSLayerFormFactory_Package is
 
-   package RTSLayerFormFactory_Package renames org.allbinary.game.input.RTSLayerFormFactory_Package;
-   package ABCustomItem_Package renames org.allbinary.graphics.form.item.ABCustomItem_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package ScrollSelectionForm_Package renames org.allbinary.graphics.form.ScrollSelectionForm_Package;
-   package ItemArraySingletonFactoryInterface_Package renames org.allbinary.graphics.form.item.ItemArraySingletonFactoryInterface_Package;
+   package RTSLayerFormFactory_Package renames Standard.org.allbinary.game.input.RTSLayerFormFactory_Package;
+   package ABCustomItem_Package renames Standard.org.allbinary.graphics.form.item.ABCustomItem_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package ScrollSelectionForm_Package renames Standard.org.allbinary.graphics.form.ScrollSelectionForm_Package;
+   package ItemArraySingletonFactoryInterface_Package renames Standard.org.allbinary.graphics.form.item.ItemArraySingletonFactoryInterface_Package;
 
    type AdvancedRTSLayerFormFactory is tagged;
    type AdvancedRTSLayerFormFactory_Access is access all AdvancedRTSLayerFormFactory'Class;

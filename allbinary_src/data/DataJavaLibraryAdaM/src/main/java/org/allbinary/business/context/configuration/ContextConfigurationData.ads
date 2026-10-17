@@ -24,7 +24,7 @@ with org.allbinary.logic.io.file.CommonDataFileStrings_Package; use org.allbinar
 
 package org.allbinary.business.context.configuration.ContextConfigurationData_Package is
 
-   package CommonDataFileStrings_Package renames org.allbinary.logic.io.file.CommonDataFileStrings_Package;
+   package CommonDataFileStrings_Package renames Standard.org.allbinary.logic.io.file.CommonDataFileStrings_Package;
 
    type ContextConfigurationData is tagged;
    type ContextConfigurationData_Access is access all ContextConfigurationData'Class;

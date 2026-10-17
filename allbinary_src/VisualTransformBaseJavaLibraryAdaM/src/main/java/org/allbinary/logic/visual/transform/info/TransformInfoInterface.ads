@@ -28,10 +28,10 @@ with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 
 package org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package is
 
-   package TableMappingInterface_Package renames org.allbinary.data.tables.TableMappingInterface_Package;
-   package AbPath_Package renames org.allbinary.logic.io.path.AbPath_Package;
-   package TransformInfoObjectConfigInterface_Package renames org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigInterface_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
+   package TableMappingInterface_Package renames Standard.org.allbinary.data.tables.TableMappingInterface_Package;
+   package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
+   package TransformInfoObjectConfigInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigInterface_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
 
    type TransformInfoInterface is interface and TableMappingInterface;
    type TransformInfoInterface_Access is access all TransformInfoInterface'Class;

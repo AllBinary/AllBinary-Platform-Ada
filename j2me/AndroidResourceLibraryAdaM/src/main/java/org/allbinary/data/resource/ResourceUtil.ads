@@ -39,21 +39,21 @@ with org.allbinary.util.HashtableUtil_Package; use org.allbinary.util.HashtableU
 
 package org.allbinary.data.resource.ResourceUtil_Package is
 
-   package Activity_Package renames android.app.Activity_Package;
-   package Context_Package renames android.content.Context_Package;
-   package Resources_Package renames android.content.res.Resources_Package;
-   package DebugFactory_Package renames org.allbinary.debug.DebugFactory_Package;
-   package NoDebug_Package renames org.allbinary.debug.NoDebug_Package;
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package ForcedLogUtil_Package renames org.allbinary.logic.communication.log.ForcedLogUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package PreLogUtil_Package renames org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package ABHashtable_Package renames org.allbinary.util.ABHashtable_Package;
-   package HashtableUtil_Package renames org.allbinary.util.HashtableUtil_Package;
+   package Activity_Package renames Standard.android.app.Activity_Package;
+   package Context_Package renames Standard.android.content.Context_Package;
+   package Resources_Package renames Standard.android.content.res.Resources_Package;
+   package DebugFactory_Package renames Standard.org.allbinary.debug.DebugFactory_Package;
+   package NoDebug_Package renames Standard.org.allbinary.debug.NoDebug_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
+   package HashtableUtil_Package renames Standard.org.allbinary.util.HashtableUtil_Package;
 
    type ResourceUtil is tagged;
    type ResourceUtil_Access is access all ResourceUtil'Class;

@@ -69,10 +69,14 @@ package body org.allbinary.game.layer.MultipassWaypointPathRunnable_Package is
         begin
             This.currentPassRunnable.run;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.RUN, e);
             This.setRunning (False);
+                end;
         end;
    end run;
 
@@ -124,11 +128,15 @@ package body org.allbinary.game.layer.MultipassWaypointPathRunnable_Package is
                 This.currentPassRunnable := This.SECOND_RUNNABLE;
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.RUN, e);
             This.setRunning (False);
             This.finish;
+                end;
         end;
    end processFirstRunnable;
 
@@ -145,11 +153,15 @@ package body org.allbinary.game.layer.MultipassWaypointPathRunnable_Package is
                 This.END_RUNNABLE.run;
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.RUN, e);
             This.setRunning (False);
             This.finish;
+                end;
         end;
    end processSecondRunnable;
 
@@ -162,10 +174,14 @@ package body org.allbinary.game.layer.MultipassWaypointPathRunnable_Package is
             waypointBehavior.setWaypointPathsList (This.list);
             This.pathFindingLayer.getWaypointRunnableLogHelper.end_Id (This.pathFindingLayer);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.RUN, e);
             This.setRunning (False);
+                end;
         end;
         This.finish;
    end processEndRunnable;

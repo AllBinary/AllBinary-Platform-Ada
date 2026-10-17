@@ -26,9 +26,9 @@ with org.allbinary.layer.Layer_Package; use org.allbinary.layer.Layer_Package;
 
 package org.allbinary.media.graphics.geography.map.GeographicMapInterface_Package is
 
-   package AllBinaryTiledLayer_Package renames org.allbinary.game.layer.AllBinaryTiledLayer_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package Layer_Package renames org.allbinary.layer.Layer_Package;
+   package AllBinaryTiledLayer_Package renames Standard.org.allbinary.game.layer.AllBinaryTiledLayer_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package Layer_Package renames Standard.org.allbinary.layer.Layer_Package;
 
    type GeographicMapInterface is interface;
    type GeographicMapInterface_Access is access all GeographicMapInterface'Class;

@@ -37,19 +37,19 @@ with org.allbinary.game.media.graphics.geography.map.racetrack.BasePathFinderGra
 
 package org.allbinary.game.media.graphics.geography.map.racetrack.PathFinderGraphHackVisitor_Package is
 
-   package GraphPath_Package renames org.jgrapht.GraphPath_Package;
-   package DefaultWeightedEdge_Package renames org.jgrapht.graph.DefaultWeightedEdge_Package;
-   package SimpleWeightedGraph_Package renames org.jgrapht.graph.SimpleWeightedGraph_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package AllBinaryTiledLayer_Package renames org.allbinary.game.layer.AllBinaryTiledLayer_Package;
-   package CellPosition_Package renames org.allbinary.graphics.CellPosition_Package;
-   package BasicGeographicMap_Package renames org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
-   package BasicGeographicMapCellPositionFactory_Package renames org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package;
-   package BasicGeographicMapUtil_Package renames org.allbinary.media.graphics.geography.map.BasicGeographicMapUtil_Package;
-   package GeographicMapCellPosition_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
-   package RaceTrackGeographicMap_Package renames org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMap_Package;
-   package PathFindingNode_Package renames org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package;
+   package GraphPath_Package renames Standard.org.jgrapht.GraphPath_Package;
+   package DefaultWeightedEdge_Package renames Standard.org.jgrapht.graph.DefaultWeightedEdge_Package;
+   package SimpleWeightedGraph_Package renames Standard.org.jgrapht.graph.SimpleWeightedGraph_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package AllBinaryTiledLayer_Package renames Standard.org.allbinary.game.layer.AllBinaryTiledLayer_Package;
+   package CellPosition_Package renames Standard.org.allbinary.graphics.CellPosition_Package;
+   package BasicGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
+   package BasicGeographicMapCellPositionFactory_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package;
+   package BasicGeographicMapUtil_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMapUtil_Package;
+   package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+   package RaceTrackGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMap_Package;
+   package PathFindingNode_Package renames Standard.org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package;
 
    type PathFinderGraphHackVisitor is tagged;
    type PathFinderGraphHackVisitor_Access is access all PathFinderGraphHackVisitor'Class;

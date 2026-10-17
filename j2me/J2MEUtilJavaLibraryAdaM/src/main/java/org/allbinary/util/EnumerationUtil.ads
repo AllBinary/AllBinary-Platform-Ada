@@ -26,8 +26,8 @@ with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_
 
 package org.allbinary.util.EnumerationUtil_Package is
 
-   package JsType_Package renames jsinterop.annotations.JsType_Package;
-   package JsMethod_Package renames jsinterop.annotations.JsMethod_Package;
+   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
+   package JsMethod_Package renames Standard.jsinterop.annotations.JsMethod_Package;
 
    type EnumerationUtil is tagged;
    type EnumerationUtil_Access is access all EnumerationUtil'Class;

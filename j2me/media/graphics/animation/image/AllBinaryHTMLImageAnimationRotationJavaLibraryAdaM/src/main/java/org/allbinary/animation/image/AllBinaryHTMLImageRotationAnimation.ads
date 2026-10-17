@@ -35,15 +35,15 @@ with org.allbinary.animation.image.ImageBaseRotationAnimation_Package; use org.a
 
 package org.allbinary.animation.image.AllBinaryHTMLImageRotationAnimation_Package is
 
-   package AnimationBehavior_Package renames org.allbinary.animation.AnimationBehavior_Package;
-   package AngleInfo_Package renames org.allbinary.math.AngleInfo_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package ImageCopyUtil_Package renames org.allbinary.media.image.ImageCopyUtil_Package;
-   package ImageModifierUtil_Package renames org.allbinary.media.image.ImageModifierUtil_Package;
-   package ImageRotationUtil_Package renames org.allbinary.media.image.ImageRotationUtil_Package;
-   package PlaynMutableImage_Package renames org.microemu.device.playn.PlaynMutableImage_Package;
-   package CanvasImage_Package renames playn.core.CanvasImage_Package;
-   package CanvasSurface_Package renames playn.core.CanvasSurface_Package;
+   package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
+   package AngleInfo_Package renames Standard.org.allbinary.math.AngleInfo_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package ImageCopyUtil_Package renames Standard.org.allbinary.media.image.ImageCopyUtil_Package;
+   package ImageModifierUtil_Package renames Standard.org.allbinary.media.image.ImageModifierUtil_Package;
+   package ImageRotationUtil_Package renames Standard.org.allbinary.media.image.ImageRotationUtil_Package;
+   package PlaynMutableImage_Package renames Standard.org.microemu.device.playn.PlaynMutableImage_Package;
+   package CanvasImage_Package renames Standard.playn.core.CanvasImage_Package;
+   package CanvasSurface_Package renames Standard.playn.core.CanvasSurface_Package;
 
    type AllBinaryHTMLImageRotationAnimation is tagged;
    type AllBinaryHTMLImageRotationAnimation_Access is access all AllBinaryHTMLImageRotationAnimation'Class;

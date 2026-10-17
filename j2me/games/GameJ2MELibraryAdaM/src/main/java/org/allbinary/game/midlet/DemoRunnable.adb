@@ -51,8 +51,12 @@ package body org.allbinary.game.midlet.DemoRunnable_Package is
             This.demoGameMidlet.postDemoSetup;
             This.logUtil.putF (This.commonStrings.END_RUNNABLE, This'Unchecked_Access, This.commonStrings.RUN);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.RUN, e);
+                end;
         end;
    end run;
 

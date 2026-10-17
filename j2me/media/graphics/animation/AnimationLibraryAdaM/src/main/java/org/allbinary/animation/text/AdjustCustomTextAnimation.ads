@@ -26,7 +26,7 @@ with org.allbinary.animation.text.CustomTextAnimation_Package; use org.allbinary
 
 package org.allbinary.animation.text.AdjustCustomTextAnimation_Package is
 
-   package AnimationBehavior_Package renames org.allbinary.animation.AnimationBehavior_Package;
+   package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
 
    type AdjustCustomTextAnimation is tagged;
    type AdjustCustomTextAnimation_Access is access all AdjustCustomTextAnimation'Class;

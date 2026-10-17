@@ -27,10 +27,10 @@ with org.allbinary.time.GameTickTimeDelayHelperFactory_Package; use org.allbinar
 
 package org.allbinary.game.ag.layer.hud.basic.time.Timer_Package is
 
-   package PrimitiveLongSingleton_Package renames org.allbinary.logic.math.PrimitiveLongSingleton_Package;
-   package PrimitiveLongUtil_Package renames org.allbinary.logic.math.PrimitiveLongUtil_Package;
-   package GameTickTimeDelayHelper_Package renames org.allbinary.time.GameTickTimeDelayHelper_Package;
-   package GameTickTimeDelayHelperFactory_Package renames org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
+   package PrimitiveLongSingleton_Package renames Standard.org.allbinary.logic.math.PrimitiveLongSingleton_Package;
+   package PrimitiveLongUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveLongUtil_Package;
+   package GameTickTimeDelayHelper_Package renames Standard.org.allbinary.time.GameTickTimeDelayHelper_Package;
+   package GameTickTimeDelayHelperFactory_Package renames Standard.org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
 
    type Timer is tagged;
    type Timer_Access is access all Timer'Class;

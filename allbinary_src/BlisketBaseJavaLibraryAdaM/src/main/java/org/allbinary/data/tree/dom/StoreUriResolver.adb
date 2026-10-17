@@ -67,8 +67,12 @@ package body org.allbinary.data.tree.dom.StoreUriResolver_Package is
             end if;
             return StreamSource_Package.Create (CryptFileReader_Package.Create (TransformInfoTemplateData_Package.getInstance.UNCRYPTED_EXTENSION, TransformInfoTemplateData_Package.getInstance.ENCRYPTED_EXTENSION).getInputStream (fileAbPath));
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Java_Throw (e);
+                end;
         end;
    end resolve;
 
@@ -77,8 +81,12 @@ package body org.allbinary.data.tree.dom.StoreUriResolver_Package is
         begin
             return Java_Image ((URLGLOBALS.getMainPath) + (FREEBLISKET_PATH_GLOBALS.getInstance.XSLPATH)) & To_Unbounded_String ("{Store Name if Any}/{import url}");
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             return To_Unbounded_String ("StoreUriResolver - Does not work without webapp path should be changed");
+                end;
         end;
    end toString;
 

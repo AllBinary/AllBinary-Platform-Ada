@@ -31,11 +31,11 @@ with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.Circul
 
 package org.allbinary.animation.image.sprite.HackRotationSpriteIndexedAnimation_Package is
 
-   package AnimationBehavior_Package renames org.allbinary.animation.AnimationBehavior_Package;
-   package RotationAnimation_Package renames org.allbinary.animation.RotationAnimation_Package;
-   package PrimitiveIntUtil_Package renames org.allbinary.logic.math.PrimitiveIntUtil_Package;
-   package AngleInfo_Package renames org.allbinary.math.AngleInfo_Package;
-   package CircularIndexUtil_Package renames org.allbinary.util.CircularIndexUtil_Package;
+   package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
+   package RotationAnimation_Package renames Standard.org.allbinary.animation.RotationAnimation_Package;
+   package PrimitiveIntUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveIntUtil_Package;
+   package AngleInfo_Package renames Standard.org.allbinary.math.AngleInfo_Package;
+   package CircularIndexUtil_Package renames Standard.org.allbinary.util.CircularIndexUtil_Package;
 
    type HackRotationSpriteIndexedAnimation is tagged;
    type HackRotationSpriteIndexedAnimation_Access is access all HackRotationSpriteIndexedAnimation'Class;

@@ -30,11 +30,11 @@ with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; u
 
 package org.allbinary.business.user.NewUserFactory_Package is
 
-   package User_Package renames org.allbinary.business.user.modules.User_Package;
-   package UserRoleData_Package renames org.allbinary.business.user.role.UserRoleData_Package;
-   package RequestParams_Package renames org.allbinary.logic.communication.http.request.RequestParams_Package;
-   package TransformInfoHttpInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package;
-   package TransformInfoInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package User_Package renames Standard.org.allbinary.business.user.modules.User_Package;
+   package UserRoleData_Package renames Standard.org.allbinary.business.user.role.UserRoleData_Package;
+   package RequestParams_Package renames Standard.org.allbinary.logic.communication.http.request.RequestParams_Package;
+   package TransformInfoHttpInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package;
+   package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 
    type NewUserFactory is tagged;
    type NewUserFactory_Access is access all NewUserFactory'Class;

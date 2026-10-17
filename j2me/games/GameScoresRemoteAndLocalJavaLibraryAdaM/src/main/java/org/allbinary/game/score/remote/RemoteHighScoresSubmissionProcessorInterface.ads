@@ -25,8 +25,8 @@ with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface
 
 package org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessorInterface_Package is
 
-   package HighScore_Package renames org.allbinary.game.score.HighScore_Package;
-   package AbeClientInformationInterface_Package renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package HighScore_Package renames Standard.org.allbinary.game.score.HighScore_Package;
+   package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 
    type RemoteHighScoresSubmissionProcessorInterface is interface;
    type RemoteHighScoresSubmissionProcessorInterface_Access is access all RemoteHighScoresSubmissionProcessorInterface'Class;

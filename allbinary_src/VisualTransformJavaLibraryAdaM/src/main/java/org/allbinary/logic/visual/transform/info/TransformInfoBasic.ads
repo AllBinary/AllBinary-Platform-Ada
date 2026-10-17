@@ -33,13 +33,13 @@ with org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Packag
 
 package org.allbinary.logic.visual.transform.info.TransformInfoBasic_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package AbContext_Package renames org.allbinary.business.context.AbContext_Package;
-   package StoreFrontInterface_Package renames org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
-   package AbPath_Package renames org.allbinary.logic.io.path.AbPath_Package;
-   package TransformInfoObjectConfigInterface_Package renames org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigInterface_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package AbContext_Package renames Standard.org.allbinary.business.context.AbContext_Package;
+   package StoreFrontInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
+   package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
+   package TransformInfoObjectConfigInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigInterface_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
 
    type TransformInfoBasic is tagged;
    type TransformInfoBasic_Access is access all TransformInfoBasic'Class;

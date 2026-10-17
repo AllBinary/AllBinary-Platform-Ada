@@ -45,11 +45,15 @@ package body views.admin.payment.gateways.SelectExistingView_Package is
             existingGateways := paymentGatewayEntityInterface.findPaymentTypeVectorByStore (This.getPaymentGatewayPrimaryKey.getStoreName);
             return PaymentGatewaysView_Package.Create (This.getTransformInfoInterface, existingGateways).view;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("view"), e);
             end if;
             Java_Throw (e);
+                end;
         end;
    end view;
 

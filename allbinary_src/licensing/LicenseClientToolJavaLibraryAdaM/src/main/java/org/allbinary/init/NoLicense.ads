@@ -24,7 +24,7 @@ with org.allbinary.globals.Globals_Package; use org.allbinary.globals.Globals_Pa
 
 package org.allbinary.init.NoLicense_Package is
 
-   package Globals_Package renames org.allbinary.globals.Globals_Package;
+   package Globals_Package renames Standard.org.allbinary.globals.Globals_Package;
 
    type NoLicense is tagged;
    type NoLicense_Access is access all NoLicense'Class;

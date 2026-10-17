@@ -34,16 +34,16 @@ with org.allbinary.game.physics.velocity.BasicVelocityInterface_Package; use org
 
 package org.allbinary.game.physics.velocity.BasicVelocityProperties_Package is
 
-   package Direction_Package renames org.allbinary.direction.Direction_Package;
-   package DirectionUtil_Package renames org.allbinary.direction.DirectionUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package BasicDecimal_Package renames org.allbinary.logic.math.BasicDecimal_Package;
-   package AxisMathVectorUtil_Package renames org.allbinary.logic.math.vector.AxisMathVectorUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package Angle_Package renames org.allbinary.math.Angle_Package;
-   package PositionStrings_Package renames org.allbinary.math.PositionStrings_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
+   package Direction_Package renames Standard.org.allbinary.direction.Direction_Package;
+   package DirectionUtil_Package renames Standard.org.allbinary.direction.DirectionUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package BasicDecimal_Package renames Standard.org.allbinary.logic.math.BasicDecimal_Package;
+   package AxisMathVectorUtil_Package renames Standard.org.allbinary.logic.math.vector.AxisMathVectorUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package Angle_Package renames Standard.org.allbinary.math.Angle_Package;
+   package PositionStrings_Package renames Standard.org.allbinary.math.PositionStrings_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
 
    type BasicVelocityProperties is tagged;
    type BasicVelocityProperties_Access is access all BasicVelocityProperties'Class;

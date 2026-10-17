@@ -105,11 +105,15 @@ package body org.allbinary.game.input.mapping.PersistentInputMapping_Package is
         begin
             This.inputPersistance.loadAll (abeClientInformation);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             PreLogUtil_Package.putOE (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.INIT, e);
             This.inputPersistance.deleteRecoreStore (abeClientInformation);
             This.setDefault (abeClientInformation);
             This.inputPersistance.loadAll (abeClientInformation);
+                end;
         end;
         list := This.inputPersistance.getList;
         totalMappedTo := 0;

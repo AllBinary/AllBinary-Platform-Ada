@@ -26,9 +26,9 @@ with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.Com
 
 package org.allbinary.graphics.CellPosition_Package is
 
-   package V_Package renames org.allbinary.graph.V_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
+   package V_Package renames Standard.org.allbinary.graph.V_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
 
    type CellPosition is tagged;
    type CellPosition_Access is access all CellPosition'Class;

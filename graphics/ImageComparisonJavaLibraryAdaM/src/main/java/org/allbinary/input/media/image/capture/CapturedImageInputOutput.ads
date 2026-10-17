@@ -35,17 +35,17 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.input.media.image.capture.CapturedImageInputOutput_Package is
 
-   package ImageOutputData_Package renames org.allbinary.input.automation.ImageOutputData_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package LongUtil_Package renames org.allbinary.logic.java.number.LongUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package AutomaticCacheInterface_Package renames org.allbinary.logic.util.cache.AutomaticCacheInterface_Package;
-   package MediaDataFactory_Package renames org.allbinary.logic.visual.media.MediaDataFactory_Package;
-   package ImagePersistanceUtil_Package renames org.allbinary.media.image.ImagePersistanceUtil_Package;
-   package ImageUtil_Package renames org.allbinary.media.image.ImageUtil_Package;
-   package BufferedImageFrameCacheable_Package renames org.allbinary.media.image.cache.BufferedImageFrameCacheable_Package;
-   package ImageIOInterface_Package renames org.allbinary.media.image.io.ImageIOInterface_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package ImageOutputData_Package renames Standard.org.allbinary.input.automation.ImageOutputData_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package LongUtil_Package renames Standard.org.allbinary.logic.java.number.LongUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package AutomaticCacheInterface_Package renames Standard.org.allbinary.logic.util.cache.AutomaticCacheInterface_Package;
+   package MediaDataFactory_Package renames Standard.org.allbinary.logic.visual.media.MediaDataFactory_Package;
+   package ImagePersistanceUtil_Package renames Standard.org.allbinary.media.image.ImagePersistanceUtil_Package;
+   package ImageUtil_Package renames Standard.org.allbinary.media.image.ImageUtil_Package;
+   package BufferedImageFrameCacheable_Package renames Standard.org.allbinary.media.image.cache.BufferedImageFrameCacheable_Package;
+   package ImageIOInterface_Package renames Standard.org.allbinary.media.image.io.ImageIOInterface_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type CapturedImageInputOutput is tagged;
    type CapturedImageInputOutput_Access is access all CapturedImageInputOutput'Class;

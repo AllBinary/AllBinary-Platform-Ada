@@ -33,16 +33,16 @@ with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Pack
 
 package org.allbinary.game.layer.weapon.CollidableWeaponBehavior_Package is
 
-   package CollidableHelperFactory_Package renames org.allbinary.game.collision.CollidableHelperFactory_Package;
-   package CollidableInterfaceCompositeInterface_Package renames org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package;
-   package CollisionHelper_Package renames org.allbinary.game.collision.CollisionHelper_Package;
-   package CollisionType_Package renames org.allbinary.game.collision.CollisionType_Package;
-   package CollisionTypeFactory_Package renames org.allbinary.game.collision.CollisionTypeFactory_Package;
-   package DamageableInterface_Package renames org.allbinary.game.combat.damage.DamageableInterface_Package;
-   package CollidableCompositeLayer_Package renames org.allbinary.game.layer.CollidableCompositeLayer_Package;
-   package CollidableDestroyableDamageableBehavior_Package renames org.allbinary.game.layer.special.CollidableDestroyableDamageableBehavior_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
+   package CollidableHelperFactory_Package renames Standard.org.allbinary.game.collision.CollidableHelperFactory_Package;
+   package CollidableInterfaceCompositeInterface_Package renames Standard.org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package;
+   package CollisionHelper_Package renames Standard.org.allbinary.game.collision.CollisionHelper_Package;
+   package CollisionType_Package renames Standard.org.allbinary.game.collision.CollisionType_Package;
+   package CollisionTypeFactory_Package renames Standard.org.allbinary.game.collision.CollisionTypeFactory_Package;
+   package DamageableInterface_Package renames Standard.org.allbinary.game.combat.damage.DamageableInterface_Package;
+   package CollidableCompositeLayer_Package renames Standard.org.allbinary.game.layer.CollidableCompositeLayer_Package;
+   package CollidableDestroyableDamageableBehavior_Package renames Standard.org.allbinary.game.layer.special.CollidableDestroyableDamageableBehavior_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
 
    type CollidableWeaponBehavior is tagged;
    type CollidableWeaponBehavior_Access is access all CollidableWeaponBehavior'Class;

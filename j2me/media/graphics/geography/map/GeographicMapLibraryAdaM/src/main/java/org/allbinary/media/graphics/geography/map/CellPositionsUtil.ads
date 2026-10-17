@@ -26,9 +26,9 @@ with org.allbinary.util.BasicArrayListS_Package; use org.allbinary.util.BasicArr
 
 package org.allbinary.media.graphics.geography.map.CellPositionsUtil_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package AllBinaryTiledLayer_Package renames org.allbinary.game.layer.AllBinaryTiledLayer_Package;
-   package BasicArrayListS_Package renames org.allbinary.util.BasicArrayListS_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package AllBinaryTiledLayer_Package renames Standard.org.allbinary.game.layer.AllBinaryTiledLayer_Package;
+   package BasicArrayListS_Package renames Standard.org.allbinary.util.BasicArrayListS_Package;
 
    type CellPositionsUtil is tagged;
    type CellPositionsUtil_Access is access all CellPositionsUtil'Class;

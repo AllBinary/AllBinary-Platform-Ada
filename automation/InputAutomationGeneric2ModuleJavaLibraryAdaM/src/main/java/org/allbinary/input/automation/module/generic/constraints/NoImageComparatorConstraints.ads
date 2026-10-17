@@ -26,8 +26,8 @@ with org.allbinary.input.automation.module.ImageComparatorConstraints_Package; u
 
 package org.allbinary.input.automation.module.generic_Id.constraints.NoImageComparatorConstraints_Package is
 
-   package GPoint_Package renames org.allbinary.graphics.GPoint_Package;
-   package ImageComparatorConstraints_Package renames org.allbinary.input.automation.module.ImageComparatorConstraints_Package;
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package ImageComparatorConstraints_Package renames Standard.org.allbinary.input.automation.module.ImageComparatorConstraints_Package;
 
    type NoImageComparatorConstraints is tagged;
    type NoImageComparatorConstraints_Access is access all NoImageComparatorConstraints'Class;

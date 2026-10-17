@@ -30,11 +30,11 @@ with org.allbinary.logic.communication.sql.AbSqlTableUtil_Package; use org.allbi
 
 package taghelpers.transform.info.TransformInfoHelper_Package is
 
-   package BasicTable_Package renames admin.taghelpers.BasicTable_Package;
-   package Portion_Package renames org.allbinary.business.installer.Portion_Package;
-   package TransformInfoEntityBuilder_Package renames org.allbinary.data.tables.transform.info.TransformInfoEntityBuilder_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package AbSqlTableUtil_Package renames org.allbinary.logic.communication.sql.AbSqlTableUtil_Package;
+   package BasicTable_Package renames Standard.admin.taghelpers.BasicTable_Package;
+   package Portion_Package renames Standard.org.allbinary.business.installer.Portion_Package;
+   package TransformInfoEntityBuilder_Package renames Standard.org.allbinary.data.tables.transform.info.TransformInfoEntityBuilder_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package AbSqlTableUtil_Package renames Standard.org.allbinary.logic.communication.sql.AbSqlTableUtil_Package;
 
    type TransformInfoHelper is tagged;
    type TransformInfoHelper_Access is access all TransformInfoHelper'Class;

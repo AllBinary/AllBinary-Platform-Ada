@@ -86,7 +86,7 @@ package body org.allbinary.logic.communication.log.LogUtil_Package is
         end if;
         message := This.logFormatUtil.get (className, functionName, specialMessage, exception_Id);
         if (exception_Id) /= (null) then
-            PlayN_Package.log.error (This.LOG_SUCCESS & message, Ada.Exceptions.Exception_Occurrence (exception_Id));
+            PlayN_Package.log.error (This.LOG_SUCCESS & message, Java_Throwable (exception_Id));
         else
             PlayN_Package.log.debug (This.LOG_SUCCESS & message);
         end if;

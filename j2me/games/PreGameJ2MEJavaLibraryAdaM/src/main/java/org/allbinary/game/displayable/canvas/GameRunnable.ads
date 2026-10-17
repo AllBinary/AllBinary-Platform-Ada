@@ -25,7 +25,7 @@ with org.allbinary.game.displayable.canvas.Runnable_Package; use org.allbinary.g
 
 package org.allbinary.game.displayable.canvas.GameRunnable_Package is
 
-   package DisplayInfoSingleton_Package renames org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
 
    type GameRunnable is tagged;
    type GameRunnable_Access is access all GameRunnable'Class;

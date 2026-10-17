@@ -29,12 +29,12 @@ with views.business.context.modules.storefront.HttpStoreComponentView_Package; u
 
 package views.business.context.modules.storefront.generator.GeneratorStoreFrontContextView_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package TransformsGeneratorUtil_Package renames org.allbinary.logic.visual.transform.generator.TransformsGeneratorUtil_Package;
-   package TransformInfoInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-   package TransformInfosData_Package renames org.allbinary.logic.visual.transform.info.TransformInfosData_Package;
-   package HttpStoreComponentView_Package renames views.business.context.modules.storefront.HttpStoreComponentView_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package TransformsGeneratorUtil_Package renames Standard.org.allbinary.logic.visual.transform.generator.TransformsGeneratorUtil_Package;
+   package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package TransformInfosData_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfosData_Package;
+   package HttpStoreComponentView_Package renames Standard.views.business.context.modules.storefront.HttpStoreComponentView_Package;
 
    type GeneratorStoreFrontContextView is tagged;
    type GeneratorStoreFrontContextView_Access is access all GeneratorStoreFrontContextView'Class;

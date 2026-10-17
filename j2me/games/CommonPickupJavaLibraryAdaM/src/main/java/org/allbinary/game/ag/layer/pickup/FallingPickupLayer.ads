@@ -32,15 +32,15 @@ with org.allbinary.view.ViewPosition_Package; use org.allbinary.view.ViewPositio
 
 package org.allbinary.game.ag.layer.pickup.FallingPickupLayer_Package is
 
-   package NullAnimationFactory_Package renames org.allbinary.animation.NullAnimationFactory_Package;
-   package CountedPickedUpLayerInterfaceFactory_Package renames org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactory_Package;
-   package PickupLayer_Package renames org.allbinary.game.layer.pickup.PickupLayer_Package;
-   package RemoteInfo_Package renames org.allbinary.game.multiplayer.layer.RemoteInfo_Package;
-   package TickableInterface_Package renames org.allbinary.game.tick.TickableInterface_Package;
-   package PointFactory_Package renames org.allbinary.graphics.PointFactory_Package;
-   package Rectangle_Package renames org.allbinary.graphics.Rectangle_Package;
-   package AllBinaryLayerManager_Package renames org.allbinary.layer.AllBinaryLayerManager_Package;
-   package ViewPosition_Package renames org.allbinary.view.ViewPosition_Package;
+   package NullAnimationFactory_Package renames Standard.org.allbinary.animation.NullAnimationFactory_Package;
+   package CountedPickedUpLayerInterfaceFactory_Package renames Standard.org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactory_Package;
+   package PickupLayer_Package renames Standard.org.allbinary.game.layer.pickup.PickupLayer_Package;
+   package RemoteInfo_Package renames Standard.org.allbinary.game.multiplayer.layer.RemoteInfo_Package;
+   package TickableInterface_Package renames Standard.org.allbinary.game.tick.TickableInterface_Package;
+   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
+   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
+   package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
+   package ViewPosition_Package renames Standard.org.allbinary.view.ViewPosition_Package;
 
    type FallingPickupLayer is tagged;
    type FallingPickupLayer_Access is access all FallingPickupLayer'Class;

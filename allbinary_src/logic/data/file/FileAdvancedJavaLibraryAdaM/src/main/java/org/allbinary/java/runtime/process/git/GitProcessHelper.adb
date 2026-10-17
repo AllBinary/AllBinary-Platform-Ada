@@ -95,8 +95,12 @@ package body org.allbinary.java.runtime.process.git.GitProcessHelper_Package is
             process.getInputStream.readAllBytes;
             return (process.waitFor) = (0);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             return False;
+                end;
         end;
    end isTracked;
 

@@ -29,10 +29,10 @@ with org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigur
 
 package org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfiguration_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package UserEmailEventsConfiguration_Package renames org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfiguration_Package;
-   package UserEmailEventsConfigurationInterface_Package renames org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationInterface_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package UserEmailEventsConfiguration_Package renames Standard.org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfiguration_Package;
+   package UserEmailEventsConfigurationInterface_Package renames Standard.org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationInterface_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type UserEmailConfiguration is tagged;
    type UserEmailConfiguration_Access is access all UserEmailConfiguration'Class;

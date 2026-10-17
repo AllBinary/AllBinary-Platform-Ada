@@ -25,8 +25,8 @@ with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.Poi
 
 package org.allbinary.canvas.GameGlobalsFactory_Package is
 
-   package GPoint_Package renames org.allbinary.graphics.GPoint_Package;
-   package PointFactory_Package renames org.allbinary.graphics.PointFactory_Package;
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
 
    type GameGlobalsFactory is tagged;
    type GameGlobalsFactory_Access is access all GameGlobalsFactory'Class;

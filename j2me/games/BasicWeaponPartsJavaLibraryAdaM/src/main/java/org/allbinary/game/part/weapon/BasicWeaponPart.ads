@@ -36,17 +36,17 @@ with org.allbinary.game.part.weapon.SalvoInterface_Package; use org.allbinary.ga
 
 package org.allbinary.game.part.weapon.BasicWeaponPart_Package is
 
-   package Animation_Package renames org.allbinary.animation.Animation_Package;
-   package NullAnimationFactory_Package renames org.allbinary.animation.NullAnimationFactory_Package;
-   package WeaponProperties_Package renames org.allbinary.game.combat.weapon.WeaponProperties_Package;
-   package PartInterface_Package renames org.allbinary.game.part.PartInterface_Package;
-   package NoScoreable_Package renames org.allbinary.game.score.NoScoreable_Package;
-   package ScoreableInterface_Package renames org.allbinary.game.score.ScoreableInterface_Package;
-   package RelativeRelationship_Package renames org.allbinary.graphics.RelativeRelationship_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package AllBinaryLayerManager_Package renames org.allbinary.layer.AllBinaryLayerManager_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package ViewPositionBase_Package renames org.allbinary.view.ViewPositionBase_Package;
+   package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
+   package NullAnimationFactory_Package renames Standard.org.allbinary.animation.NullAnimationFactory_Package;
+   package WeaponProperties_Package renames Standard.org.allbinary.game.combat.weapon.WeaponProperties_Package;
+   package PartInterface_Package renames Standard.org.allbinary.game.part.PartInterface_Package;
+   package NoScoreable_Package renames Standard.org.allbinary.game.score.NoScoreable_Package;
+   package ScoreableInterface_Package renames Standard.org.allbinary.game.score.ScoreableInterface_Package;
+   package RelativeRelationship_Package renames Standard.org.allbinary.graphics.RelativeRelationship_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package ViewPositionBase_Package renames Standard.org.allbinary.view.ViewPositionBase_Package;
 
    type BasicWeaponPart is tagged;
    type BasicWeaponPart_Access is access all BasicWeaponPart'Class;

@@ -25,8 +25,8 @@ with org.allbinary.game.physics.friction.FrictionData_Package; use org.allbinary
 
 package org.allbinary.game.behavior.topview.CharacterFrictionProperties_Package is
 
-   package FrictionProperties_Package renames org.allbinary.game.physics.FrictionProperties_Package;
-   package FrictionData_Package renames org.allbinary.game.physics.friction.FrictionData_Package;
+   package FrictionProperties_Package renames Standard.org.allbinary.game.physics.FrictionProperties_Package;
+   package FrictionData_Package renames Standard.org.allbinary.game.physics.friction.FrictionData_Package;
 
    type CharacterFrictionProperties is tagged;
    type CharacterFrictionProperties_Access is access all CharacterFrictionProperties'Class;

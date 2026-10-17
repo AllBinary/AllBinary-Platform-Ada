@@ -106,11 +106,15 @@ package body admin.taghelpers.AuthenticationRequestHelper_Package is
             end if;
             return True;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("newPassword()"), e);
             end if;
             return False;
+                end;
         end;
    end newPassword;
 
@@ -165,11 +169,15 @@ package body admin.taghelpers.AuthenticationRequestHelper_Package is
             end if;
             return False;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERERROR) then
                 This.logUtil.put (To_Unbounded_String ("Authentication Failed"), This'Unchecked_Access, To_Unbounded_String ("changePassword()"), e);
             end if;
             return False;
+                end;
         end;
    end changePassword;
 
@@ -212,11 +220,15 @@ package body admin.taghelpers.AuthenticationRequestHelper_Package is
             end if;
             return False;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("isRoleValid()"), e);
             end if;
             return False;
+                end;
         end;
    end isRoleValid;
 

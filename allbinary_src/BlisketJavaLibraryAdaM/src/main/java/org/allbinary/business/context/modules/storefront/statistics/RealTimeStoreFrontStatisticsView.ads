@@ -36,19 +36,19 @@ with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 
 package org.allbinary.business.context.modules.storefront.statistics.RealTimeStoreFrontStatisticsView_Package is
 
-   package StoreFrontAdvertisementsStatisticsInterface_Package renames org.allbinary.business.context.modules.storefront.statistics.advertisements.StoreFrontAdvertisementsStatisticsInterface_Package;
-   package StoreFrontAdvertisementsStatisticsView_Package renames org.allbinary.business.context.modules.storefront.statistics.advertisements.StoreFrontAdvertisementsStatisticsView_Package;
-   package StoreFrontInventoryStatisticsInterface_Package renames org.allbinary.business.context.modules.storefront.statistics.inventory.StoreFrontInventoryStatisticsInterface_Package;
-   package StoreFrontInventoryStatisticsView_Package renames org.allbinary.business.context.modules.storefront.statistics.inventory.StoreFrontInventoryStatisticsView_Package;
-   package StoreFrontOrdersHistoryStatisticsInterface_Package renames org.allbinary.business.context.modules.storefront.statistics.orders.history.StoreFrontOrdersHistoryStatisticsInterface_Package;
-   package StoreFrontOrdersHistoryStatisticsView_Package renames org.allbinary.business.context.modules.storefront.statistics.orders.history.StoreFrontOrdersHistoryStatisticsView_Package;
-   package StoreFrontUsersStatisticsInterface_Package renames org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsInterface_Package;
-   package StoreFrontUsersStatisticsView_Package renames org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsView_Package;
-   package UserRole_Package renames org.allbinary.business.user.role.UserRole_Package;
-   package UserRoleFactory_Package renames org.allbinary.business.user.role.UserRoleFactory_Package;
-   package DomNodeInterface_Package renames org.allbinary.data.tree.dom.DomNodeInterface_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
+   package StoreFrontAdvertisementsStatisticsInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.statistics.advertisements.StoreFrontAdvertisementsStatisticsInterface_Package;
+   package StoreFrontAdvertisementsStatisticsView_Package renames Standard.org.allbinary.business.context.modules.storefront.statistics.advertisements.StoreFrontAdvertisementsStatisticsView_Package;
+   package StoreFrontInventoryStatisticsInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.statistics.inventory.StoreFrontInventoryStatisticsInterface_Package;
+   package StoreFrontInventoryStatisticsView_Package renames Standard.org.allbinary.business.context.modules.storefront.statistics.inventory.StoreFrontInventoryStatisticsView_Package;
+   package StoreFrontOrdersHistoryStatisticsInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.statistics.orders.history.StoreFrontOrdersHistoryStatisticsInterface_Package;
+   package StoreFrontOrdersHistoryStatisticsView_Package renames Standard.org.allbinary.business.context.modules.storefront.statistics.orders.history.StoreFrontOrdersHistoryStatisticsView_Package;
+   package StoreFrontUsersStatisticsInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsInterface_Package;
+   package StoreFrontUsersStatisticsView_Package renames Standard.org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsView_Package;
+   package UserRole_Package renames Standard.org.allbinary.business.user.role.UserRole_Package;
+   package UserRoleFactory_Package renames Standard.org.allbinary.business.user.role.UserRoleFactory_Package;
+   package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type RealTimeStoreFrontStatisticsView is tagged;
    type RealTimeStoreFrontStatisticsView_Access is access all RealTimeStoreFrontStatisticsView'Class;

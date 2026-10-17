@@ -25,7 +25,7 @@ with org.allbinary.view.ViewPositionBase_Package; use org.allbinary.view.ViewPos
 
 package org.allbinary.view.ViewPosition_Package is
 
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
 
    type ViewPosition is tagged;
    type ViewPosition_Access is access all ViewPosition'Class;

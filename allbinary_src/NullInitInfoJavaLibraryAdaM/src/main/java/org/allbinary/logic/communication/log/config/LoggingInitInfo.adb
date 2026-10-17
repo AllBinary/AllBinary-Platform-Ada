@@ -40,8 +40,12 @@ package body org.allbinary.logic.communication.log.config.LoggingInitInfo_Packag
         begin
             LoggingInitInfo_Package.hasRead := False;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Java_Throw (e);
+                end;
         end;
    end write;
 
@@ -51,8 +55,12 @@ package body org.allbinary.logic.communication.log.config.LoggingInitInfo_Packag
         begin
             null;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Java_Throw (e);
+                end;
         end;
    end read;
 
@@ -78,8 +86,12 @@ package body org.allbinary.logic.communication.log.config.LoggingInitInfo_Packag
         begin
             return True;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             return False;
+                end;
         end;
    end isValid;
 
@@ -127,8 +139,12 @@ package body org.allbinary.logic.communication.log.config.LoggingInitInfo_Packag
         begin
             return Null_Unbounded_String;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             return To_Unbounded_String ("Error");
+                end;
         end;
    end toString;
 

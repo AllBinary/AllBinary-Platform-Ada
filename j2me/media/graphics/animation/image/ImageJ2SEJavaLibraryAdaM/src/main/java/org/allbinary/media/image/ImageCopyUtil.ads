@@ -28,9 +28,9 @@ with org.microemu.device.j2se.J2SEImmutableImage_Package; use org.microemu.devic
 
 package org.allbinary.media.image.ImageCopyUtil_Package is
 
-   package Anchor_Package renames org.allbinary.graphics.Anchor_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package J2SEImmutableImage_Package renames org.microemu.device.j2se.J2SEImmutableImage_Package;
+   package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package J2SEImmutableImage_Package renames Standard.org.microemu.device.j2se.J2SEImmutableImage_Package;
 
    type ImageCopyUtil is tagged;
    type ImageCopyUtil_Access is access all ImageCopyUtil'Class;

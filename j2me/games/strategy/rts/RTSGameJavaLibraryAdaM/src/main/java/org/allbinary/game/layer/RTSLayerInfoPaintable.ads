@@ -26,8 +26,8 @@ with org.allbinary.graphics.paint.NullInitUpdatePaintable_Package; use org.allbi
 
 package org.allbinary.game.layer.RTSLayerInfoPaintable_Package is
 
-   package InitUpdatePaintable_Package renames org.allbinary.graphics.paint.InitUpdatePaintable_Package;
-   package NullInitUpdatePaintable_Package renames org.allbinary.graphics.paint.NullInitUpdatePaintable_Package;
+   package InitUpdatePaintable_Package renames Standard.org.allbinary.graphics.paint.InitUpdatePaintable_Package;
+   package NullInitUpdatePaintable_Package renames Standard.org.allbinary.graphics.paint.NullInitUpdatePaintable_Package;
 
    type RTSLayerInfoPaintable is tagged;
    type RTSLayerInfoPaintable_Access is access all RTSLayerInfoPaintable'Class;

@@ -27,9 +27,9 @@ with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_
 
 package org.allbinary.game.ag.ai.BasicProbabilityAIDataFactory_Package is
 
-   package SmallIntegerSingletonFactory_Package renames org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
-   package NoTimeDelayHelper_Package renames org.allbinary.time.NoTimeDelayHelper_Package;
-   package ABHashtable_Package renames org.allbinary.util.ABHashtable_Package;
+   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+   package NoTimeDelayHelper_Package renames Standard.org.allbinary.time.NoTimeDelayHelper_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
    type BasicProbabilityAIDataFactory is tagged;
    type BasicProbabilityAIDataFactory_Access is access all BasicProbabilityAIDataFactory'Class;

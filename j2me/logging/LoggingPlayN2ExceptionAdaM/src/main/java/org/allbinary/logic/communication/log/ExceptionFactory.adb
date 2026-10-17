@@ -33,13 +33,13 @@ package body org.allbinary.logic.communication.log.ExceptionFactory_Package is
    end Create;
 
 
-   function createThrowable (message : Unbounded_String) return Ada.Exceptions.Exception_Occurrence is
+   function createThrowable (message : Unbounded_String) return Java_Throwable is
    begin
         return Java_New_Exception ("Throwable", message);
    end createThrowable;
 
    procedure createThrowable (message : Unbounded_String) is
-      Java_Result : constant Ada.Exceptions.Exception_Occurrence := createThrowable (message);
+      Java_Result : constant Java_Throwable := createThrowable (message);
       pragma Unreferenced (Java_Result);
    begin
       null;

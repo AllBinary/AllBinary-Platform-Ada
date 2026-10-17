@@ -33,13 +33,13 @@ with tags.CustomTagSupport_Package; use tags.CustomTagSupport_Package;
 
 package admin.tags.StoreFrontTag_Package is
 
-   package StoreFrontHelperFactory_Package renames admin.taghelpers.StoreFrontHelperFactory_Package;
-   package StoreFrontData_Package renames org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package AbResponseHandler_Package renames org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package LicensingException_Package renames org.allbinary.logic.system.security.licensing.LicensingException_Package;
-   package CustomTagSupport_Package renames tags.CustomTagSupport_Package;
+   package StoreFrontHelperFactory_Package renames Standard.admin.taghelpers.StoreFrontHelperFactory_Package;
+   package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package CustomTagSupport_Package renames Standard.tags.CustomTagSupport_Package;
 
    type StoreFrontTag is tagged;
    type StoreFrontTag_Access is access all StoreFrontTag'Class;

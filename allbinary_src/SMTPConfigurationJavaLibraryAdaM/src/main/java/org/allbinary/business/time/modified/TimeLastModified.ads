@@ -24,7 +24,7 @@ with org.allbinary.business.time.Time_Package; use org.allbinary.business.time.T
 
 package org.allbinary.business.time.modified.TimeLastModified_Package is
 
-   package Time_Package renames org.allbinary.business.time.Time_Package;
+   package Time_Package renames Standard.org.allbinary.business.time.Time_Package;
 
    type TimeLastModified is tagged;
    type TimeLastModified_Access is access all TimeLastModified'Class;

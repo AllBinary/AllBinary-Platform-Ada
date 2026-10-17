@@ -29,11 +29,11 @@ with org.allbinary.business.advertisement.campaign.AdvertisementCampaignsInterfa
 
 package org.allbinary.business.advertisement.campaign.AdvertisementCampaigns_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package AdvertisementInterface_Package renames org.allbinary.business.advertisement.AdvertisementInterface_Package;
-   package AdvertisementsInterface_Package renames org.allbinary.business.advertisement.AdvertisementsInterface_Package;
-   package AdvertisementSearchInterface_Package renames org.allbinary.business.advertisement.search.AdvertisementSearchInterface_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package AdvertisementInterface_Package renames Standard.org.allbinary.business.advertisement.AdvertisementInterface_Package;
+   package AdvertisementsInterface_Package renames Standard.org.allbinary.business.advertisement.AdvertisementsInterface_Package;
+   package AdvertisementSearchInterface_Package renames Standard.org.allbinary.business.advertisement.search.AdvertisementSearchInterface_Package;
 
    type AdvertisementCampaigns is tagged;
    type AdvertisementCampaigns_Access is access all AdvertisementCampaigns'Class;

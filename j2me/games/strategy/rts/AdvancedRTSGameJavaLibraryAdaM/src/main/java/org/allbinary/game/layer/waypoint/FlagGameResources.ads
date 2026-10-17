@@ -26,9 +26,9 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 
 package org.allbinary.game.layer.waypoint.FlagGameResources_Package is
 
-   package BasicGameResources_Package renames org.allbinary.game.layer.resources.BasicGameResources_Package;
-   package GameGraphicsResourceUtil_Package renames org.allbinary.game.layer.resources.GameGraphicsResourceUtil_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
+   package BasicGameResources_Package renames Standard.org.allbinary.game.layer.resources.BasicGameResources_Package;
+   package GameGraphicsResourceUtil_Package renames Standard.org.allbinary.game.layer.resources.GameGraphicsResourceUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type FlagGameResources is tagged;
    type FlagGameResources_Access is access all FlagGameResources'Class;

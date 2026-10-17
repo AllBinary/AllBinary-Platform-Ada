@@ -53,9 +53,13 @@ package body org.allbinary.content.CommandUriAction_Package is
             intent := This.getIntent (command);
             ResourceUtil_Package.getInstance.getContext.startActivity (intent);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.PROCESS, e);
+                end;
         end;
    end process;
 

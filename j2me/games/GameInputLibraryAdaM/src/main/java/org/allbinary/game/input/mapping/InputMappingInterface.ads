@@ -25,8 +25,8 @@ with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_
 
 package org.allbinary.game.input.mapping.InputMappingInterface_Package is
 
-   package GameKey_Package renames org.allbinary.game.input.GameKey_Package;
-   package Input_Package renames org.allbinary.game.input.Input_Package;
+   package GameKey_Package renames Standard.org.allbinary.game.input.GameKey_Package;
+   package Input_Package renames Standard.org.allbinary.game.input.Input_Package;
 
    type InputMappingInterface is interface;
    type InputMappingInterface_Access is access all InputMappingInterface'Class;

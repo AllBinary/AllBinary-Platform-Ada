@@ -24,7 +24,7 @@ with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics
 
 package org.allbinary.animation.VectorAnimationFactoryInterface_Package is
 
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
 
    type VectorAnimationFactoryInterface is interface;
    type VectorAnimationFactoryInterface_Access is access all VectorAnimationFactoryInterface'Class;

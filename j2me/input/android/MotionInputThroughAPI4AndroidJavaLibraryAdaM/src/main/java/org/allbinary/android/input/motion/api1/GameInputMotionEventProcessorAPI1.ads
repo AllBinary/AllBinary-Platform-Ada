@@ -29,12 +29,12 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 
 package org.allbinary.android.input.motion.api1.GameInputMotionEventProcessorAPI1_Package is
 
-   package MotionEvent_Package renames android.view.MotionEvent_Package;
-   package BaseGameInputMotionEventProcessor_Package renames org.allbinary.android.input.motion.BaseGameInputMotionEventProcessor_Package;
-   package AllMotionRecognizer_Package renames org.allbinary.input.motion.AllMotionRecognizer_Package;
-   package MotionRecognizer_Package renames org.allbinary.input.motion.MotionRecognizer_Package;
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
+   package MotionEvent_Package renames Standard.android.view.MotionEvent_Package;
+   package BaseGameInputMotionEventProcessor_Package renames Standard.org.allbinary.android.input.motion.BaseGameInputMotionEventProcessor_Package;
+   package AllMotionRecognizer_Package renames Standard.org.allbinary.input.motion.AllMotionRecognizer_Package;
+   package MotionRecognizer_Package renames Standard.org.allbinary.input.motion.MotionRecognizer_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type GameInputMotionEventProcessorAPI1 is tagged;
    type GameInputMotionEventProcessorAPI1_Access is access all GameInputMotionEventProcessorAPI1'Class;

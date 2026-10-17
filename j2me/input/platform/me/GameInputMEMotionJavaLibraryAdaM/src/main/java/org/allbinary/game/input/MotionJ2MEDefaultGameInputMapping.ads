@@ -28,11 +28,11 @@ with org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package; use o
 
 package org.allbinary.game.input.MotionJ2MEDefaultGameInputMapping_Package is
 
-   package GamePersistanceStrings_Package renames org.allbinary.game.configuration.persistance.GamePersistanceStrings_Package;
-   package InputToGameKeyMapping_Package renames org.allbinary.game.input.mapping.InputToGameKeyMapping_Package;
-   package PersistentInputMapping_Package renames org.allbinary.game.input.mapping.PersistentInputMapping_Package;
-   package BasicTouchInputFactory_Package renames org.allbinary.input.motion.button.BasicTouchInputFactory_Package;
-   package TouchMotionGestureFactory_Package renames org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package;
+   package GamePersistanceStrings_Package renames Standard.org.allbinary.game.configuration.persistance.GamePersistanceStrings_Package;
+   package InputToGameKeyMapping_Package renames Standard.org.allbinary.game.input.mapping.InputToGameKeyMapping_Package;
+   package PersistentInputMapping_Package renames Standard.org.allbinary.game.input.mapping.PersistentInputMapping_Package;
+   package BasicTouchInputFactory_Package renames Standard.org.allbinary.input.motion.button.BasicTouchInputFactory_Package;
+   package TouchMotionGestureFactory_Package renames Standard.org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package;
 
    type MotionJ2MEDefaultGameInputMapping is tagged;
    type MotionJ2MEDefaultGameInputMapping_Access is access all MotionJ2MEDefaultGameInputMapping'Class;

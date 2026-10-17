@@ -100,8 +100,12 @@ package body org.allbinary.game.configuration.GameConfigurationCentral_Package i
                 This.logUtil.putF (To_Unbounded_String ("No Game Configuration To Load"), This'Unchecked_Access, commonStrings.LOAD);
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.LOAD, e);
+                end;
         end;
    end load;
 

@@ -25,8 +25,8 @@ with org.allbinary.osgi.OSGIServiceInterface_Package; use org.allbinary.osgi.OSG
 
 package bundle.input.automation.module.InputAutomationModuleServiceInterface_Package is
 
-   package InputAutomationModuleFactoryInterface_Package renames org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package;
-   package OSGIServiceInterface_Package renames org.allbinary.osgi.OSGIServiceInterface_Package;
+   package InputAutomationModuleFactoryInterface_Package renames Standard.org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package;
+   package OSGIServiceInterface_Package renames Standard.org.allbinary.osgi.OSGIServiceInterface_Package;
 
    type InputAutomationModuleServiceInterface is interface and OSGIServiceInterface;
    type InputAutomationModuleServiceInterface_Access is access all InputAutomationModuleServiceInterface'Class;

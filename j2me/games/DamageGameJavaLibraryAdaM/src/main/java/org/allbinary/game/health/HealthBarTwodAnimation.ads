@@ -26,7 +26,7 @@ with org.allbinary.game.health.HealthBarAnimation_Package; use org.allbinary.gam
 
 package org.allbinary.game.health.HealthBarTwodAnimation_Package is
 
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
 
    type HealthBarTwodAnimation is tagged;
    type HealthBarTwodAnimation_Access is access all HealthBarTwodAnimation'Class;

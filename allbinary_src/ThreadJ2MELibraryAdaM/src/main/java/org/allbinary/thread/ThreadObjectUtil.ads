@@ -12,7 +12,7 @@ with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
 
 package org.allbinary.thread.ThreadObjectUtil_Package is
 
-   package TsUtil_Package renames org.allbinary.TsUtil_Package;
+   package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
 
    type ThreadObjectUtil is tagged;
    type ThreadObjectUtil_Access is access all ThreadObjectUtil'Class;

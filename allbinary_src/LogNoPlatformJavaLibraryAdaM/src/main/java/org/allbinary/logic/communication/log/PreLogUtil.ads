@@ -24,7 +24,7 @@ with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Pack
 
 package org.allbinary.logic.communication.log.PreLogUtil_Package is
 
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
 
    type PreLogUtil is tagged;
    type PreLogUtil_Access is access all PreLogUtil'Class;

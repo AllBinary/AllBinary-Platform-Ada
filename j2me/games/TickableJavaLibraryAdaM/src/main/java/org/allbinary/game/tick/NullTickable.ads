@@ -25,7 +25,7 @@ with org.allbinary.game.tick.TickableInterface_Package; use org.allbinary.game.t
 
 package org.allbinary.game.tick.NullTickable_Package is
 
-   package AllBinaryLayerManager_Package renames org.allbinary.layer.AllBinaryLayerManager_Package;
+   package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
 
    type NullTickable is tagged;
    type NullTickable_Access is access all NullTickable'Class;

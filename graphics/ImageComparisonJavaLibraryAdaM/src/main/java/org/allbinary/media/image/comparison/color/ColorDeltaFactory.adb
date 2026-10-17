@@ -38,8 +38,12 @@ package body org.allbinary.media.image.comparison.color.ColorDeltaFactory_Packag
             ColorDeltaFactory_Package.cacheInterface := AutomaticCacheInterface_Access (CacheInterfaceFactory_Package.getInstance (CacheTypeFactory_Package.getInstance.CACHE, CachePolicyFactory_Package.getInstance.THIRTY_MINUTES_TEN_THOUSAND_MAX));
             logUtil.putF (commonStrings.END_Id, instance, STATIC_BLOCK);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             logUtil.put (commonStrings.EXCEPTION_Id, instance, STATIC_BLOCK, e);
+                end;
         end;
    end Initializer;
 

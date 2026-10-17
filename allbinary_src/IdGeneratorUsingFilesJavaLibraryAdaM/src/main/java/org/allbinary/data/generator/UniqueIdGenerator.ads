@@ -34,15 +34,15 @@ with org.allbinary.data.generator.IdGeneratorInterface_Package; use org.allbinar
 
 package org.allbinary.data.generator.UniqueIdGenerator_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package AbDataInputStream_Package renames org.allbinary.logic.io.AbDataInputStream_Package;
-   package AbDataOutputStream_Package renames org.allbinary.logic.io.AbDataOutputStream_Package;
-   package AbFileInputStream_Package renames org.allbinary.logic.io.AbFileInputStream_Package;
-   package AbFileOutputStream_Package renames org.allbinary.logic.io.AbFileOutputStream_Package;
-   package DataOutputStreamFactory_Package renames org.allbinary.logic.io.DataOutputStreamFactory_Package;
-   package StreamUtil_Package renames org.allbinary.logic.io.StreamUtil_Package;
-   package AbFile_Package renames org.allbinary.logic.io.file.AbFile_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package AbDataInputStream_Package renames Standard.org.allbinary.logic.io.AbDataInputStream_Package;
+   package AbDataOutputStream_Package renames Standard.org.allbinary.logic.io.AbDataOutputStream_Package;
+   package AbFileInputStream_Package renames Standard.org.allbinary.logic.io.AbFileInputStream_Package;
+   package AbFileOutputStream_Package renames Standard.org.allbinary.logic.io.AbFileOutputStream_Package;
+   package DataOutputStreamFactory_Package renames Standard.org.allbinary.logic.io.DataOutputStreamFactory_Package;
+   package StreamUtil_Package renames Standard.org.allbinary.logic.io.StreamUtil_Package;
+   package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type UniqueIdGenerator is tagged;
    type UniqueIdGenerator_Access is access all UniqueIdGenerator'Class;

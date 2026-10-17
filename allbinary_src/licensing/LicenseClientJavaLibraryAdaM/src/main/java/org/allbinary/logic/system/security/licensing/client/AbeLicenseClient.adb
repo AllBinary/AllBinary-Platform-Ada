@@ -73,8 +73,12 @@ package body org.allbinary.logic.system.security.licensing.client.AbeLicenseClie
             This.logUtil.putF (This.commonStrings.END_Id, This'Unchecked_Access, This.commonStrings.GET);
             return abeLicenseInterface;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Java_Throw (e);
+                end;
         end;
    end get;
 

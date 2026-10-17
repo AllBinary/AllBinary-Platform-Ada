@@ -28,11 +28,11 @@ with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.gr
 
 package org.allbinary.graphics.form.CommandCurrentSelectionFormFactory_Package is
 
-   package Features_Package renames org.allbinary.game.configuration.feature.Features_Package;
-   package TouchFeatureFactory_Package renames org.allbinary.game.configuration.feature.TouchFeatureFactory_Package;
-   package Rectangle_Package renames org.allbinary.graphics.Rectangle_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package ABCustomItem_Package renames org.allbinary.graphics.form.item.ABCustomItem_Package;
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
+   package TouchFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.TouchFeatureFactory_Package;
+   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package ABCustomItem_Package renames Standard.org.allbinary.graphics.form.item.ABCustomItem_Package;
 
    type CommandCurrentSelectionFormFactory is tagged;
    type CommandCurrentSelectionFormFactory_Access is access all CommandCurrentSelectionFormFactory'Class;

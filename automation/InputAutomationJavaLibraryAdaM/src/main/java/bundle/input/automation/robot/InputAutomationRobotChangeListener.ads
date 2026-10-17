@@ -24,7 +24,7 @@ with org.allbinary.input.automation.robot.osgi.InputAutomationRobotChangeEvent_P
 
 package bundle.input.automation.robot.InputAutomationRobotChangeListener_Package is
 
-   package InputAutomationRobotChangeEvent_Package renames org.allbinary.input.automation.robot.osgi.InputAutomationRobotChangeEvent_Package;
+   package InputAutomationRobotChangeEvent_Package renames Standard.org.allbinary.input.automation.robot.osgi.InputAutomationRobotChangeEvent_Package;
 
    type InputAutomationRobotChangeListener is interface;
    type InputAutomationRobotChangeListener_Access is access all InputAutomationRobotChangeListener'Class;

@@ -26,9 +26,9 @@ with org.allbinary.logic.math.Orientation_Package; use org.allbinary.logic.math.
 
 package org.allbinary.input.gyro.OrientationToGameKeyEvent_Package is
 
-   package Features_Package renames org.allbinary.game.configuration.feature.Features_Package;
-   package SensorFeatureFactory_Package renames org.allbinary.game.configuration.feature.SensorFeatureFactory_Package;
-   package Orientation_Package renames org.allbinary.logic.math.Orientation_Package;
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
+   package SensorFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.SensorFeatureFactory_Package;
+   package Orientation_Package renames Standard.org.allbinary.logic.math.Orientation_Package;
 
    type OrientationToGameKeyEvent is tagged;
    type OrientationToGameKeyEvent_Access is access all OrientationToGameKeyEvent'Class;

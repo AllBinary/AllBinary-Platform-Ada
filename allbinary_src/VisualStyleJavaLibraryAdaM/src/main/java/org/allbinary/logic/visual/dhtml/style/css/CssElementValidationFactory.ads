@@ -25,8 +25,8 @@ with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 
 package org.allbinary.logic.visual.dhtml.style.css.CssElementValidationFactory_Package is
 
-   package ValidationInterface_Package renames org.allbinary.logic.control.validate.ValidationInterface_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
+   package ValidationInterface_Package renames Standard.org.allbinary.logic.control.validate.ValidationInterface_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type CssElementValidationFactory is tagged;
    type CssElementValidationFactory_Access is access all CssElementValidationFactory'Class;

@@ -36,17 +36,17 @@ with views.business.context.modules.storefront.customizer.bodies.generic_Id.titl
 
 package views.business.context.modules.storefront.customizer.bodies.generic_Id.title.InsertTitleBodyValidationView_Package is
 
-   package DomNodeInterface_Package renames org.allbinary.data.tree.dom.DomNodeInterface_Package;
-   package RequestParams_Package renames org.allbinary.logic.communication.http.request.RequestParams_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package ValidationComponentInterface_Package renames org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package TransformInfoInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-   package TitleBodyValidation_Package renames org.allbinary.logic.visual.transform.template.customizer.bodies.title.TitleBodyValidation_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
-   package CustomizerUtil_Package renames views.business.context.modules.storefront.customizer.CustomizerUtil_Package;
-   package StoreCustomizerComponentUtil_Package renames views.business.context.modules.storefront.customizer.StoreCustomizerComponentUtil_Package;
+   package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
+   package RequestParams_Package renames Standard.org.allbinary.logic.communication.http.request.RequestParams_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package ValidationComponentInterface_Package renames Standard.org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package TitleBodyValidation_Package renames Standard.org.allbinary.logic.visual.transform.template.customizer.bodies.title.TitleBodyValidation_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
+   package CustomizerUtil_Package renames Standard.views.business.context.modules.storefront.customizer.CustomizerUtil_Package;
+   package StoreCustomizerComponentUtil_Package renames Standard.views.business.context.modules.storefront.customizer.StoreCustomizerComponentUtil_Package;
 
    type InsertTitleBodyValidationView is tagged;
    type InsertTitleBodyValidationView_Access is access all InsertTitleBodyValidationView'Class;

@@ -24,7 +24,7 @@ with org.allbinary.logic.io.file.CommonDataFileStrings_Package; use org.allbinar
 
 package org.allbinary.business.user.modules.configuration.UserConfigurationData_Package is
 
-   package CommonDataFileStrings_Package renames org.allbinary.logic.io.file.CommonDataFileStrings_Package;
+   package CommonDataFileStrings_Package renames Standard.org.allbinary.logic.io.file.CommonDataFileStrings_Package;
 
    type UserConfigurationData is tagged;
    type UserConfigurationData_Access is access all UserConfigurationData'Class;

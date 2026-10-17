@@ -26,7 +26,7 @@ with org.allbinary.logic.util.visitor.VisitorInterface_Package; use org.allbinar
 
 package org.allbinary.logic.io.file.directory.DirectoryFileVisitor_Package is
 
-   package VisitorInterface_Package renames org.allbinary.logic.util.visitor.VisitorInterface_Package;
+   package VisitorInterface_Package renames Standard.org.allbinary.logic.util.visitor.VisitorInterface_Package;
 
    type DirectoryFileVisitor is tagged;
    type DirectoryFileVisitor_Access is access all DirectoryFileVisitor'Class;

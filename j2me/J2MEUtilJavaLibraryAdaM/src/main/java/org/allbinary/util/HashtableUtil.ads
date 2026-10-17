@@ -25,7 +25,7 @@ with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Pack
 
 package org.allbinary.util.HashtableUtil_Package is
 
-   package JsType_Package renames jsinterop.annotations.JsType_Package;
+   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
 
    type HashtableUtil is tagged;
    type HashtableUtil_Access is access all HashtableUtil'Class;

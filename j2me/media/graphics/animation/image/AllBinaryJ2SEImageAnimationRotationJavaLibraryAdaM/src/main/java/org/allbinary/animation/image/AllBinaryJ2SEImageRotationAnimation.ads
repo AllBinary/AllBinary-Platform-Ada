@@ -34,13 +34,13 @@ with org.allbinary.animation.image.ImageBaseRotationAnimation_Package; use org.a
 
 package org.allbinary.animation.image.AllBinaryJ2SEImageRotationAnimation_Package is
 
-   package DisposalUtil_Package renames org.allbinary.DisposalUtil_Package;
-   package AnimationBehavior_Package renames org.allbinary.animation.AnimationBehavior_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package AngleInfo_Package renames org.allbinary.math.AngleInfo_Package;
-   package ImageCopyUtil_Package renames org.allbinary.media.image.ImageCopyUtil_Package;
-   package ImageModifierUtil_Package renames org.allbinary.media.image.ImageModifierUtil_Package;
-   package ImageRotationUtil_Package renames org.allbinary.media.image.ImageRotationUtil_Package;
+   package DisposalUtil_Package renames Standard.org.allbinary.DisposalUtil_Package;
+   package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package AngleInfo_Package renames Standard.org.allbinary.math.AngleInfo_Package;
+   package ImageCopyUtil_Package renames Standard.org.allbinary.media.image.ImageCopyUtil_Package;
+   package ImageModifierUtil_Package renames Standard.org.allbinary.media.image.ImageModifierUtil_Package;
+   package ImageRotationUtil_Package renames Standard.org.allbinary.media.image.ImageRotationUtil_Package;
 
    type AllBinaryJ2SEImageRotationAnimation is tagged;
    type AllBinaryJ2SEImageRotationAnimation_Access is access all AllBinaryJ2SEImageRotationAnimation'Class;

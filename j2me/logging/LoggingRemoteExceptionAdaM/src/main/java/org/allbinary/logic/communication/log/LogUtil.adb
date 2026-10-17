@@ -102,9 +102,13 @@ package body org.allbinary.logic.communication.log.LogUtil_Package is
                     hashtable.put (This.MESSAGE, This.stringBuffer.toString);
                     XmlRpcRemoteLogClient_Package.Create (This.abeClientInformation).get (hashtable);
                 exception
-                    when e : others =>
+                    when Java_Occurrence : others =>
+                        declare
+                            e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                        begin
                     Ada.Text_IO.Put_Line (Java_Image (To_Unbounded_String ("Exception")));
-                    Ada.Text_IO.Put_Line (Ada.Exceptions.Exception_Information (e));
+                    Java_Print_Stack_Trace (e);
+                        end;
                 end;
             end if;
         end if;

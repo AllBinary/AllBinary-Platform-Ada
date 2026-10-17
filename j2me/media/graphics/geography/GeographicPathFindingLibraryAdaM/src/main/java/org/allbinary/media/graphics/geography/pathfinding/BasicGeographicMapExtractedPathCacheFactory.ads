@@ -14,9 +14,9 @@ with org.allbinary.util.BasicArrayListS_Package; use org.allbinary.util.BasicArr
 
 package org.allbinary.media.graphics.geography.pathfinding.BasicGeographicMapExtractedPathCacheFactory_Package is
 
-   package BaseBasicArrayListCache_Package renames org.allbinary.logic.util.cache.BaseBasicArrayListCache_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListS_Package renames org.allbinary.util.BasicArrayListS_Package;
+   package BaseBasicArrayListCache_Package renames Standard.org.allbinary.logic.util.cache.BaseBasicArrayListCache_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListS_Package renames Standard.org.allbinary.util.BasicArrayListS_Package;
 
    type BasicGeographicMapExtractedPathCacheFactory is tagged;
    type BasicGeographicMapExtractedPathCacheFactory_Access is access all BasicGeographicMapExtractedPathCacheFactory'Class;

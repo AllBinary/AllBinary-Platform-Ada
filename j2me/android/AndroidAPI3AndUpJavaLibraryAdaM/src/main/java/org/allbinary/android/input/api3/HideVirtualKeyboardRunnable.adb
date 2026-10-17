@@ -58,8 +58,12 @@ package body org.allbinary.android.input.api3.HideVirtualKeyboardRunnable_Packag
             token := view.getWindowToken;
             inputMethodManager.hideSoftInputFromWindow (token, 0);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.RUN, e);
+                end;
         end;
    end run;
 

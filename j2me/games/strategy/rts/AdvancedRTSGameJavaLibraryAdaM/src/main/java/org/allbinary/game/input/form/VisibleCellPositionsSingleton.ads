@@ -37,18 +37,18 @@ with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logi
 
 package org.allbinary.game.input.form.VisibleCellPositionsSingleton_Package is
 
-   package RTSLayerEvent_Package renames org.allbinary.game.layer.RTSLayerEvent_Package;
-   package BuildingEventListenerInterface_Package renames org.allbinary.game.layer.building.event.BuildingEventListenerInterface_Package;
-   package LocalPlayerBuildingEventHandler_Package renames org.allbinary.game.layer.building.event.LocalPlayerBuildingEventHandler_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package ForcedLogUtil_Package renames org.allbinary.logic.communication.log.ForcedLogUtil_Package;
-   package CellPosition_Package renames org.allbinary.graphics.CellPosition_Package;
-   package ScrollMapEvent_Package renames org.allbinary.layer.event.ScrollMapEvent_Package;
-   package ScrollMapEventHandler_Package renames org.allbinary.layer.event.ScrollMapEventHandler_Package;
-   package ScrollMapEventListenerInterface_Package renames org.allbinary.layer.event.ScrollMapEventListenerInterface_Package;
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
-   package AllBinaryEventObject_Package renames org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-   package EventStrings_Package renames org.allbinary.logic.util.event.EventStrings_Package;
+   package RTSLayerEvent_Package renames Standard.org.allbinary.game.layer.RTSLayerEvent_Package;
+   package BuildingEventListenerInterface_Package renames Standard.org.allbinary.game.layer.building.event.BuildingEventListenerInterface_Package;
+   package LocalPlayerBuildingEventHandler_Package renames Standard.org.allbinary.game.layer.building.event.LocalPlayerBuildingEventHandler_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+   package CellPosition_Package renames Standard.org.allbinary.graphics.CellPosition_Package;
+   package ScrollMapEvent_Package renames Standard.org.allbinary.layer.event.ScrollMapEvent_Package;
+   package ScrollMapEventHandler_Package renames Standard.org.allbinary.layer.event.ScrollMapEventHandler_Package;
+   package ScrollMapEventListenerInterface_Package renames Standard.org.allbinary.layer.event.ScrollMapEventListenerInterface_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+   package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
 
    type VisibleCellPositionsSingleton is tagged;
    type VisibleCellPositionsSingleton_Access is access all VisibleCellPositionsSingleton'Class;

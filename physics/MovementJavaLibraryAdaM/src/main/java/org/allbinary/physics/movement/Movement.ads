@@ -26,8 +26,8 @@ with org.allbinary.physics.movement.MovementInterface_Package; use org.allbinary
 
 package org.allbinary.physics.movement.Movement_Package is
 
-   package AllBinaryGameLayer_Package renames org.allbinary.game.layer.AllBinaryGameLayer_Package;
-   package BasicDecimal_Package renames org.allbinary.logic.math.BasicDecimal_Package;
+   package AllBinaryGameLayer_Package renames Standard.org.allbinary.game.layer.AllBinaryGameLayer_Package;
+   package BasicDecimal_Package renames Standard.org.allbinary.logic.math.BasicDecimal_Package;
 
    type Movement is tagged;
    type Movement_Access is access all Movement'Class;

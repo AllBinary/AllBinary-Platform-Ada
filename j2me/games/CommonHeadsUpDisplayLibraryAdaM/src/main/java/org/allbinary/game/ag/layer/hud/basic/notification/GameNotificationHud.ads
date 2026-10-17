@@ -33,15 +33,15 @@ with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logi
 
 package org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package is
 
-   package BasicHud_Package renames org.allbinary.game.graphics.hud.BasicHud_Package;
-   package BasicHudFactory_Package renames org.allbinary.game.graphics.hud.BasicHudFactory_Package;
-   package GameNotificationEvent_Package renames org.allbinary.game.layer.hud.event.GameNotificationEvent_Package;
-   package GameNotificationListenerInterface_Package renames org.allbinary.game.layer.hud.event.GameNotificationListenerInterface_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package BasicColorFactory_Package renames org.allbinary.graphics.color.BasicColorFactory_Package;
-   package ForcedLogUtil_Package renames org.allbinary.logic.communication.log.ForcedLogUtil_Package;
-   package AllBinaryEventObject_Package renames org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-   package EventStrings_Package renames org.allbinary.logic.util.event.EventStrings_Package;
+   package BasicHud_Package renames Standard.org.allbinary.game.graphics.hud.BasicHud_Package;
+   package BasicHudFactory_Package renames Standard.org.allbinary.game.graphics.hud.BasicHudFactory_Package;
+   package GameNotificationEvent_Package renames Standard.org.allbinary.game.layer.hud.event.GameNotificationEvent_Package;
+   package GameNotificationListenerInterface_Package renames Standard.org.allbinary.game.layer.hud.event.GameNotificationListenerInterface_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+   package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+   package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
 
    type GameNotificationHud is tagged;
    type GameNotificationHud_Access is access all GameNotificationHud'Class;

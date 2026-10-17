@@ -30,11 +30,11 @@ with org.allbinary.game.ag.ai.scroller.BasePatrolAI_Package; use org.allbinary.g
 
 package org.allbinary.game.ag.ai.scroller.RandomPatrolAI_Package is
 
-   package GameInput_Package renames org.allbinary.game.input.GameInput_Package;
-   package MyRandomFactory_Package renames org.allbinary.game.rand.MyRandomFactory_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package AllBinaryLayerManager_Package renames org.allbinary.layer.AllBinaryLayerManager_Package;
-   package ABHashtable_Package renames org.allbinary.util.ABHashtable_Package;
+   package GameInput_Package renames Standard.org.allbinary.game.input.GameInput_Package;
+   package MyRandomFactory_Package renames Standard.org.allbinary.game.rand.MyRandomFactory_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
    type RandomPatrolAI is tagged;
    type RandomPatrolAI_Access is access all RandomPatrolAI'Class;

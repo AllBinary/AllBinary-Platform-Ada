@@ -25,7 +25,7 @@ with org.allbinary.business.advertisement.product.AdvertisementProductInterface_
 
 package org.allbinary.business.advertisement.product.AdvertisementProduct_Package is
 
-   package TwoDimensionalConstraintInterface_Package renames org.allbinary.logic.control.contraints.size.TwoDimensionalConstraintInterface_Package;
+   package TwoDimensionalConstraintInterface_Package renames Standard.org.allbinary.logic.control.contraints.size.TwoDimensionalConstraintInterface_Package;
 
    type AdvertisementProduct is tagged;
    type AdvertisementProduct_Access is access all AdvertisementProduct'Class;

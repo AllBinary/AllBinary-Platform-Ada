@@ -25,7 +25,7 @@ with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.
 
 package org.allbinary.game.paint.MainGameDemoStatePaintable_Package is
 
-   package Paintable_Package renames org.allbinary.graphics.paint.Paintable_Package;
+   package Paintable_Package renames Standard.org.allbinary.graphics.paint.Paintable_Package;
 
    type MainGameDemoStatePaintable is tagged;
    type MainGameDemoStatePaintable_Access is access all MainGameDemoStatePaintable'Class;

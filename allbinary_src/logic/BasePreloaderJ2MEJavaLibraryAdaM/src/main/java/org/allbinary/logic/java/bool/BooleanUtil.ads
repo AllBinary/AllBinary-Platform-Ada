@@ -26,9 +26,9 @@ with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbina
 
 package org.allbinary.logic.java.bool.BooleanUtil_Package is
 
-   package TsUtil_Package renames org.allbinary.TsUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringValidationUtil_Package renames org.allbinary.logic.string_Id.StringValidationUtil_Package;
+   package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
 
    type BooleanUtil is tagged;
    type BooleanUtil_Access is access all BooleanUtil'Class;

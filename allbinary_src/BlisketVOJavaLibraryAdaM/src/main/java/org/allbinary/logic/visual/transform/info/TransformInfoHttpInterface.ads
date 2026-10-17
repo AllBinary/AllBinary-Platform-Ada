@@ -27,7 +27,7 @@ with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; u
 
 package org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package is
 
-   package WeblisketSessionInterface_Package renames org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package;
+   package WeblisketSessionInterface_Package renames Standard.org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package;
 
    type TransformInfoHttpInterface is interface and TransformInfoInterface;
    type TransformInfoHttpInterface_Access is access all TransformInfoHttpInterface'Class;

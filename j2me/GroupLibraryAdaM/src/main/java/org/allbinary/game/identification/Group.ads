@@ -26,8 +26,8 @@ with org.allbinary.game.identification.GroupInterface_Package; use org.allbinary
 
 package org.allbinary.game.identification.Group_Package is
 
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type Group is tagged;
    type Group_Access is access all Group'Class;

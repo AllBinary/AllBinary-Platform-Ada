@@ -30,10 +30,10 @@ with admin.taghelpers.BasicTable_Package; use admin.taghelpers.BasicTable_Packag
 
 package admin.taghelpers.PaymentTransactionHelper_Package is
 
-   package Portion_Package renames org.allbinary.business.installer.Portion_Package;
-   package TransactionEntity_Package renames org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionEntity_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package AbSqlTableUtil_Package renames org.allbinary.logic.communication.sql.AbSqlTableUtil_Package;
+   package Portion_Package renames Standard.org.allbinary.business.installer.Portion_Package;
+   package TransactionEntity_Package renames Standard.org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionEntity_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package AbSqlTableUtil_Package renames Standard.org.allbinary.logic.communication.sql.AbSqlTableUtil_Package;
 
    type PaymentTransactionHelper is tagged;
    type PaymentTransactionHelper_Access is access all PaymentTransactionHelper'Class;

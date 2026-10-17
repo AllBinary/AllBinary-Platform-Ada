@@ -63,12 +63,16 @@ package body admin.tags.BasicTextEmailTag_Package is
             method.invoke (anyType, null);
             return To_Unbounded_String ("Email Sent");
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             error := To_Unbounded_String ("Failed to Send Email.");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("send()"), e);
             end if;
             return error;
+                end;
         end;
    end send;
 
@@ -79,9 +83,13 @@ package body admin.tags.BasicTextEmailTag_Package is
             This.pageContext.getOut.print (This.send);
             return SKIP_BODY;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             AbResponseHandler_Package.sendJspTagRedirect (This.pageContext, e);
             return SKIP_BODY;
+                end;
         end;
    end doStartTag;
 

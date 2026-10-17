@@ -26,8 +26,8 @@ with org.allbinary.util.BasicArrayListS_Package; use org.allbinary.util.BasicArr
 
 package org.allbinary.util.BasicArrayListD_Package is
 
-   package JsType_Package renames jsinterop.annotations.JsType_Package;
-   package JsConstructor_Package renames jsinterop.annotations.JsConstructor_Package;
+   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
+   package JsConstructor_Package renames Standard.jsinterop.annotations.JsConstructor_Package;
 
    type BasicArrayListD is tagged;
    type BasicArrayListD_Access is access all BasicArrayListD'Class;

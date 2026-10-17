@@ -82,16 +82,24 @@ package body org.allbinary.logic.io.file.zip.ZipFileUtil_Package is
                         outputStream.closeEntry;
                         streamUtil.close (fileInputStream);
                     exception
-                        when e : others =>
+                        when Java_Occurrence : others =>
+                            declare
+                                e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                            begin
                         This.logUtil.putF (To_Unbounded_String ("Skipping File (Probably Local): ") & Java_Image (file.getPath), This'Unchecked_Access, To_Unbounded_String ("create()"));
+                            end;
                     end;
                 end if;
                 current := current + 1;
             end loop;
             streamUtil.close (outputStream);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("create"), e);
+                end;
         end;
    end create;
 

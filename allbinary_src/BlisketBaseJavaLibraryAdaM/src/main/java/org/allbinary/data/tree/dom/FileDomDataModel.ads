@@ -29,10 +29,10 @@ with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.dat
 
 package org.allbinary.data.tree.dom.FileDomDataModel_Package is
 
-   package TableMappingInterface_Package renames org.allbinary.data.tables.TableMappingInterface_Package;
-   package AbFile_Package renames org.allbinary.logic.io.file.AbFile_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
+   package TableMappingInterface_Package renames Standard.org.allbinary.data.tables.TableMappingInterface_Package;
+   package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type FileDomDataModel is tagged;
    type FileDomDataModel_Access is access all FileDomDataModel'Class;

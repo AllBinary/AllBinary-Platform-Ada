@@ -28,9 +28,9 @@ with org.allbinary.logic.math.PrimitiveIntUtil_Package; use org.allbinary.logic.
 
 package org.allbinary.animation.compound.SimultaneousCompoundIndexAnimation_Package is
 
-   package AnimationBehavior_Package renames org.allbinary.animation.AnimationBehavior_Package;
-   package IndexedAnimation_Package renames org.allbinary.animation.IndexedAnimation_Package;
-   package PrimitiveIntUtil_Package renames org.allbinary.logic.math.PrimitiveIntUtil_Package;
+   package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
+   package IndexedAnimation_Package renames Standard.org.allbinary.animation.IndexedAnimation_Package;
+   package PrimitiveIntUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveIntUtil_Package;
 
    type SimultaneousCompoundIndexAnimation is tagged;
    type SimultaneousCompoundIndexAnimation_Access is access all SimultaneousCompoundIndexAnimation'Class;

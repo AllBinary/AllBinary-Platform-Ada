@@ -37,18 +37,18 @@ with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_
 
 package org.allbinary.game.input.InputPersistance_Package is
 
-   package BasicPersitance_Package renames org.allbinary.game.configuration.persistance.BasicPersitance_Package;
-   package NullRecordComparator_Package renames org.allbinary.game.configuration.persistance.NullRecordComparator_Package;
-   package NullRecordFilter_Package renames org.allbinary.game.configuration.persistance.NullRecordFilter_Package;
-   package PreLogUtil_Package renames org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package SmallIntegerSingletonFactory_Package renames org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package AbeClientInformationInterface_Package renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package HashtableUtil_Package renames org.allbinary.util.HashtableUtil_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package ABHashtable_Package renames org.allbinary.util.ABHashtable_Package;
+   package BasicPersitance_Package renames Standard.org.allbinary.game.configuration.persistance.BasicPersitance_Package;
+   package NullRecordComparator_Package renames Standard.org.allbinary.game.configuration.persistance.NullRecordComparator_Package;
+   package NullRecordFilter_Package renames Standard.org.allbinary.game.configuration.persistance.NullRecordFilter_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package HashtableUtil_Package renames Standard.org.allbinary.util.HashtableUtil_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
    type InputPersistance is tagged;
    type InputPersistance_Access is access all InputPersistance'Class;

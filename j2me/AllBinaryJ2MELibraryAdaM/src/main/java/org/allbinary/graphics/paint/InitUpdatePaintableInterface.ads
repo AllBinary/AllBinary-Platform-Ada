@@ -26,8 +26,8 @@ with org.allbinary.graphics.paint.PaintableInterface_Package; use org.allbinary.
 
 package org.allbinary.graphics.paint.InitUpdatePaintableInterface_Package is
 
-   package InitInterface_Package renames org.allbinary.init.InitInterface_Package;
-   package UpdateInterface_Package renames org.allbinary.init.UpdateInterface_Package;
+   package InitInterface_Package renames Standard.org.allbinary.init.InitInterface_Package;
+   package UpdateInterface_Package renames Standard.org.allbinary.init.UpdateInterface_Package;
 
    type InitUpdatePaintableInterface is interface and InitInterface and UpdateInterface and PaintableInterface;
    type InitUpdatePaintableInterface_Access is access all InitUpdatePaintableInterface'Class;

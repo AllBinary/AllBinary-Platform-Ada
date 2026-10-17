@@ -25,7 +25,7 @@ with org.allbinary.globals.UrlGlobalsInterface_Package; use org.allbinary.global
 
 package org.allbinary.globals.AppUrlGlobals_Package is
 
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type AppUrlGlobals is tagged;
    type AppUrlGlobals_Access is access all AppUrlGlobals'Class;

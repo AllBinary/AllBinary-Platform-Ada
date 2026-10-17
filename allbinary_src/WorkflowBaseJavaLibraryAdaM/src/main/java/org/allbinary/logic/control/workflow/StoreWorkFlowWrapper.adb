@@ -49,13 +49,17 @@ package body org.allbinary.logic.control.workflow.StoreWorkFlowWrapper_Package i
             result := Unbounded_String (method.invoke (This.getWorkFlowObject, null));
             return result;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             error := To_Unbounded_String ("Reflection Exception");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
                 commonStrings := CommonStrings_Package.getInstance;
                 This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("getStoreName()"), e);
             end if;
             Java_Throw (Java_New_Exception ("Exception", error));
+                end;
         end;
    end getStoreName;
 

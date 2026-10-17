@@ -26,9 +26,9 @@ with org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package;
 
 package org.allbinary.game.layer.waypoint.CollidableWaypointBehavior_Package is
 
-   package CollidableCompositeLayer_Package renames org.allbinary.game.layer.CollidableCompositeLayer_Package;
-   package CollidableRTSBehavior_Package renames org.allbinary.game.layer.CollidableRTSBehavior_Package;
-   package CollidableInterfaceCompositeInterface_Package renames org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package;
+   package CollidableCompositeLayer_Package renames Standard.org.allbinary.game.layer.CollidableCompositeLayer_Package;
+   package CollidableRTSBehavior_Package renames Standard.org.allbinary.game.layer.CollidableRTSBehavior_Package;
+   package CollidableInterfaceCompositeInterface_Package renames Standard.org.allbinary.game.collision.CollidableInterfaceCompositeInterface_Package;
 
    type CollidableWaypointBehavior is tagged;
    type CollidableWaypointBehavior_Access is access all CollidableWaypointBehavior'Class;

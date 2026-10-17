@@ -30,9 +30,9 @@ with org.allbinary.logic.communication.sql.AbSqlRow_Package; use org.allbinary.l
 
 package org.allbinary.logic.communication.sql.AbSqlBean_Package is
 
-   package DbConnectionInfo_Package renames org.allbinary.business.init.db.DbConnectionInfo_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
+   package DbConnectionInfo_Package renames Standard.org.allbinary.business.init.db.DbConnectionInfo_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
 
    type AbSqlBean is tagged;
    type AbSqlBean_Access is access all AbSqlBean'Class;

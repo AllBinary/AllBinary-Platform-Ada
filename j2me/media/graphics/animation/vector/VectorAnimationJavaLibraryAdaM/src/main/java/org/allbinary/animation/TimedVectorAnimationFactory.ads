@@ -25,7 +25,7 @@ with org.allbinary.animation.VectorAnimationFactoryInterface_Package; use org.al
 
 package org.allbinary.animation.TimedVectorAnimationFactory_Package is
 
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
 
    type TimedVectorAnimationFactory is tagged;
    type TimedVectorAnimationFactory_Access is access all TimedVectorAnimationFactory'Class;

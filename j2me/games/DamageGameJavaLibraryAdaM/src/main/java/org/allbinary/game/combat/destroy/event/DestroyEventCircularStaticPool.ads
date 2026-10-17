@@ -26,9 +26,9 @@ with org.allbinary.logic.util.event.AllBinaryEventCircularPool_Package; use org.
 
 package org.allbinary.game.combat.destroy.event.DestroyEventCircularStaticPool_Package is
 
-   package AllBinaryGameCanvas_Package renames org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package AllBinaryEventCircularPool_Package renames org.allbinary.logic.util.event.AllBinaryEventCircularPool_Package;
+   package AllBinaryGameCanvas_Package renames Standard.org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package AllBinaryEventCircularPool_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventCircularPool_Package;
 
    type DestroyEventCircularStaticPool is tagged;
    type DestroyEventCircularStaticPool_Access is access all DestroyEventCircularStaticPool'Class;

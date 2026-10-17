@@ -25,8 +25,8 @@ with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBina
 
 package org.allbinary.game.part.PartFactoryInterface_Package is
 
-   package RelativeRelationship_Package renames org.allbinary.graphics.RelativeRelationship_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
+   package RelativeRelationship_Package renames Standard.org.allbinary.graphics.RelativeRelationship_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
 
    type PartFactoryInterface is interface;
    type PartFactoryInterface_Access is access all PartFactoryInterface'Class;

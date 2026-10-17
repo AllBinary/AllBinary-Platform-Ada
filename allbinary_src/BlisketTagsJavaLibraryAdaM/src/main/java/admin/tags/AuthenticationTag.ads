@@ -40,18 +40,18 @@ with tags.CustomTagSupport_Package; use tags.CustomTagSupport_Package;
 
 package admin.tags.AuthenticationTag_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package AuthenticationHelperFactory_Package renames admin.taghelpers.AuthenticationHelperFactory_Package;
-   package AuthenticationRequestHelperFactory_Package renames admin.taghelpers.AuthenticationRequestHelperFactory_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package AbResponseHandler_Package renames org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
-   package WeblisketSessionData_Package renames org.allbinary.logic.communication.http.request.session.WeblisketSessionData_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package LicensingException_Package renames org.allbinary.logic.system.security.licensing.LicensingException_Package;
-   package CustomTagSupport_Package renames tags.CustomTagSupport_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package AuthenticationHelperFactory_Package renames Standard.admin.taghelpers.AuthenticationHelperFactory_Package;
+   package AuthenticationRequestHelperFactory_Package renames Standard.admin.taghelpers.AuthenticationRequestHelperFactory_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+   package WeblisketSessionData_Package renames Standard.org.allbinary.logic.communication.http.request.session.WeblisketSessionData_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package CustomTagSupport_Package renames Standard.tags.CustomTagSupport_Package;
 
    type AuthenticationTag is tagged;
    type AuthenticationTag_Access is access all AuthenticationTag'Class;

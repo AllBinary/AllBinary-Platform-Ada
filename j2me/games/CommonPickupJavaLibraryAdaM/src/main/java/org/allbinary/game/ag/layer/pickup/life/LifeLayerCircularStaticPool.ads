@@ -28,11 +28,11 @@ with org.allbinary.layer.AllBinaryLayerFactoryInterface_Package; use org.allbina
 
 package org.allbinary.game.ag.layer.pickup.life.LifeLayerCircularStaticPool_Package is
 
-   package Life_Package renames org.allbinary.game.ag.life.Life_Package;
-   package LifeInterfaceCompositeInterface_Package renames org.allbinary.game.ag.life.LifeInterfaceCompositeInterface_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package AllBinaryLayerCircularPool_Package renames org.allbinary.layer.AllBinaryLayerCircularPool_Package;
-   package AllBinaryLayerFactoryInterface_Package renames org.allbinary.layer.AllBinaryLayerFactoryInterface_Package;
+   package Life_Package renames Standard.org.allbinary.game.ag.life.Life_Package;
+   package LifeInterfaceCompositeInterface_Package renames Standard.org.allbinary.game.ag.life.LifeInterfaceCompositeInterface_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package AllBinaryLayerCircularPool_Package renames Standard.org.allbinary.layer.AllBinaryLayerCircularPool_Package;
+   package AllBinaryLayerFactoryInterface_Package renames Standard.org.allbinary.layer.AllBinaryLayerFactoryInterface_Package;
 
    type LifeLayerCircularStaticPool is tagged;
    type LifeLayerCircularStaticPool_Access is access all LifeLayerCircularStaticPool'Class;

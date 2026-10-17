@@ -103,8 +103,12 @@ package body org.allbinary.game.layer.PathAnimation_Package is
                 end if;
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.putF (To_Unbounded_String ("Cleared Target"), This'Unchecked_Access, CanvasStrings_Package.getInstance.PAINT);
+                end;
         end;
    end paintXY;
 

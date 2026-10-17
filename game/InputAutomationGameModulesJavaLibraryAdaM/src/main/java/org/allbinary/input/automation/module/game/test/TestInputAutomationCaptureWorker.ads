@@ -37,18 +37,18 @@ with org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInter
 
 package org.allbinary.input.automation.module.game.test.TestInputAutomationCaptureWorker_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package AbstractInputAutomationWorker_Package renames org.allbinary.input.automation.module.AbstractInputAutomationWorker_Package;
-   package InputAutomationActionInterface_Package renames org.allbinary.input.automation.module.InputAutomationActionInterface_Package;
-   package GenericProfileAction_Package renames org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileAction_Package;
-   package GenericProfileActions_Package renames org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActions_Package;
-   package GenericProfileActionScript_Package renames org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.script.GenericProfileActionScript_Package;
-   package CapturedBufferedImagesCacheSingleton_Package renames org.allbinary.input.media.image.capture.CapturedBufferedImagesCacheSingleton_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package J2SECacheInterface_Package renames org.allbinary.logic.util.cache.J2SECacheInterface_Package;
-   package ImageComparatorConstraintsInterface_Package renames org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package;
-   package MotionRectangleConstraintsInterface_Package renames org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInterface_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package AbstractInputAutomationWorker_Package renames Standard.org.allbinary.input.automation.module.AbstractInputAutomationWorker_Package;
+   package InputAutomationActionInterface_Package renames Standard.org.allbinary.input.automation.module.InputAutomationActionInterface_Package;
+   package GenericProfileAction_Package renames Standard.org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileAction_Package;
+   package GenericProfileActions_Package renames Standard.org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActions_Package;
+   package GenericProfileActionScript_Package renames Standard.org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.script.GenericProfileActionScript_Package;
+   package CapturedBufferedImagesCacheSingleton_Package renames Standard.org.allbinary.input.media.image.capture.CapturedBufferedImagesCacheSingleton_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package J2SECacheInterface_Package renames Standard.org.allbinary.logic.util.cache.J2SECacheInterface_Package;
+   package ImageComparatorConstraintsInterface_Package renames Standard.org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package;
+   package MotionRectangleConstraintsInterface_Package renames Standard.org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInterface_Package;
 
    type TestInputAutomationCaptureWorker is tagged;
    type TestInputAutomationCaptureWorker_Access is access all TestInputAutomationCaptureWorker'Class;

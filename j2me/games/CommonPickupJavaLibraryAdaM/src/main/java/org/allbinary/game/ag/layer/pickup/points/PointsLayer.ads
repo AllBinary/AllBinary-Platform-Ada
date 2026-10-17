@@ -30,12 +30,12 @@ with org.allbinary.view.ViewPosition_Package; use org.allbinary.view.ViewPositio
 
 package org.allbinary.game.ag.layer.pickup.points.PointsLayer_Package is
 
-   package ScoreableInterface_Package renames org.allbinary.game.score.ScoreableInterface_Package;
-   package PointFactory_Package renames org.allbinary.graphics.PointFactory_Package;
-   package Rectangle_Package renames org.allbinary.graphics.Rectangle_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package ViewPosition_Package renames org.allbinary.view.ViewPosition_Package;
+   package ScoreableInterface_Package renames Standard.org.allbinary.game.score.ScoreableInterface_Package;
+   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
+   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package ViewPosition_Package renames Standard.org.allbinary.view.ViewPosition_Package;
 
    type PointsLayer is tagged;
    type PointsLayer_Access is access all PointsLayer'Class;

@@ -63,10 +63,14 @@ package body org.allbinary.data.tables.user.address.StreetAddressesEntity_Packag
                 This.logUtil.putF (This.commonStrings.SUCCESS, This'Unchecked_Access, To_Unbounded_String ("remove"));
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("remove"), e);
             end if;
+                end;
         end;
    end remove;
 
@@ -100,10 +104,14 @@ package body org.allbinary.data.tables.user.address.StreetAddressesEntity_Packag
                 This.logUtil.putF (This.commonStrings.SUCCESS, This'Unchecked_Access, To_Unbounded_String ("add"));
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("add"), e);
             end if;
+                end;
         end;
    end add;
 
@@ -122,10 +130,14 @@ package body org.allbinary.data.tables.user.address.StreetAddressesEntity_Packag
                 This.logUtil.putF (This.commonStrings.SUCCESS, This'Unchecked_Access, To_Unbounded_String ("update"));
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("add"), e);
             end if;
+                end;
         end;
    end update;
 
@@ -158,11 +170,15 @@ package body org.allbinary.data.tables.user.address.StreetAddressesEntity_Packag
             end loop;
             return streetAddressVector;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, This.commonStrings.GET, e);
             end if;
             return null;
+                end;
         end;
    end get;
 
@@ -181,11 +197,15 @@ package body org.allbinary.data.tables.user.address.StreetAddressesEntity_Packag
                 return null;
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, This.commonStrings.GET, e);
             end if;
             return null;
+                end;
         end;
    end get;
 
@@ -213,11 +233,15 @@ package body org.allbinary.data.tables.user.address.StreetAddressesEntity_Packag
                 return null;
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("getDefault"), e);
             end if;
             return null;
+                end;
         end;
    end getDefault;
 
@@ -243,10 +267,14 @@ package body org.allbinary.data.tables.user.address.StreetAddressesEntity_Packag
                 This.logUtil.putF (This.commonStrings.SUCCESS, This'Unchecked_Access, To_Unbounded_String ("setDefault"));
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("setShippingAddress"), e);
             end if;
+                end;
         end;
    end setDefault;
 

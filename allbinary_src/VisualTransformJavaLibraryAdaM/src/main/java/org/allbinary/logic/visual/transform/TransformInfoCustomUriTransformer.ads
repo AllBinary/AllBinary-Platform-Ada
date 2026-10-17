@@ -31,12 +31,12 @@ with org.allbinary.logic.visual.transform.BasicTransformer_Package; use org.allb
 
 package org.allbinary.logic.visual.transform.TransformInfoCustomUriTransformer_Package is
 
-   package BasicUriResolver_Package renames org.allbinary.data.tree.dom.BasicUriResolver_Package;
-   package CustomUriResolver_Package renames org.allbinary.data.tree.dom.CustomUriResolver_Package;
-   package AbeClientInformationInterface_Package renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-   package TransformInfoInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-   package TransformInfoObjectConfigAndManipulatorFactory_Package renames org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigAndManipulatorFactory_Package;
-   package TransformInfoObjectConfigInterface_Package renames org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigInterface_Package;
+   package BasicUriResolver_Package renames Standard.org.allbinary.data.tree.dom.BasicUriResolver_Package;
+   package CustomUriResolver_Package renames Standard.org.allbinary.data.tree.dom.CustomUriResolver_Package;
+   package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package TransformInfoObjectConfigAndManipulatorFactory_Package renames Standard.org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigAndManipulatorFactory_Package;
+   package TransformInfoObjectConfigInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigInterface_Package;
 
    type TransformInfoCustomUriTransformer is tagged;
    type TransformInfoCustomUriTransformer_Access is access all TransformInfoCustomUriTransformer'Class;

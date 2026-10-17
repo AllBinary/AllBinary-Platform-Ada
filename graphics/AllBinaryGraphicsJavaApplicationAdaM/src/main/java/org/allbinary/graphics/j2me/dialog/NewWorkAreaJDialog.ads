@@ -30,10 +30,10 @@ with org.allbinary.graphics.j2me.dialog.JDialog_Package; use org.allbinary.graph
 
 package org.allbinary.graphics.j2me.dialog.NewWorkAreaJDialog_Package is
 
-   package GraphicsException_Package renames org.allbinary.graphics.j2me.GraphicsException_Package;
-   package MyFrame_Package renames org.allbinary.graphics.j2me.MyFrame_Package;
-   package WorkAreaJPanel_Package renames org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package;
-   package WorkAreaJPanelInterface_Package renames org.allbinary.graphics.j2me.workarea.WorkAreaJPanelInterface_Package;
+   package GraphicsException_Package renames Standard.org.allbinary.graphics.j2me.GraphicsException_Package;
+   package MyFrame_Package renames Standard.org.allbinary.graphics.j2me.MyFrame_Package;
+   package WorkAreaJPanel_Package renames Standard.org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package;
+   package WorkAreaJPanelInterface_Package renames Standard.org.allbinary.graphics.j2me.workarea.WorkAreaJPanelInterface_Package;
 
    type NewWorkAreaJDialog is tagged;
    type NewWorkAreaJDialog_Access is access all NewWorkAreaJDialog'Class;

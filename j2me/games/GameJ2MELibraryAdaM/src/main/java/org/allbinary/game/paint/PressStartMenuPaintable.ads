@@ -35,16 +35,16 @@ with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDela
 
 package org.allbinary.game.paint.PressStartMenuPaintable_Package is
 
-   package AppletUtil_Package renames org.allbinary.AppletUtil_Package;
-   package Anchor_Package renames org.allbinary.graphics.Anchor_Package;
-   package DisplayInfoSingleton_Package renames org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
-   package MyFontProcessor_Package renames org.allbinary.graphics.font.MyFontProcessor_Package;
-   package UpdateMyFontInterface_Package renames org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-   package UpdateMyFontProcessor_Package renames org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
-   package Paintable_Package renames org.allbinary.graphics.paint.Paintable_Package;
-   package TouchScreenFactory_Package renames org.allbinary.input.motion.button.TouchScreenFactory_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package TimeDelayHelper_Package renames org.allbinary.time.TimeDelayHelper_Package;
+   package AppletUtil_Package renames Standard.org.allbinary.AppletUtil_Package;
+   package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
+   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+   package MyFontProcessor_Package renames Standard.org.allbinary.graphics.font.MyFontProcessor_Package;
+   package UpdateMyFontInterface_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontInterface_Package;
+   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+   package Paintable_Package renames Standard.org.allbinary.graphics.paint.Paintable_Package;
+   package TouchScreenFactory_Package renames Standard.org.allbinary.input.motion.button.TouchScreenFactory_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
 
    type PressStartMenuPaintable is tagged;
    type PressStartMenuPaintable_Access is access all PressStartMenuPaintable'Class;

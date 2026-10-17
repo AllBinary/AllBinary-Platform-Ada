@@ -33,14 +33,14 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 
 package org.allbinary.graphics.draw.DrawVerticalStringUtil_Package is
 
-   package AndroidUtil_Package renames org.allbinary.AndroidUtil_Package;
-   package J2MEUtil_Package renames org.allbinary.J2MEUtil_Package;
-   package Anchor_Package renames org.allbinary.graphics.Anchor_Package;
-   package OpenGLFeatureUtil_Package renames org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package;
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
-   package PreLogUtil_Package renames org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
+   package AndroidUtil_Package renames Standard.org.allbinary.AndroidUtil_Package;
+   package J2MEUtil_Package renames Standard.org.allbinary.J2MEUtil_Package;
+   package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
+   package OpenGLFeatureUtil_Package renames Standard.org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type DrawVerticalStringUtil is tagged;
    type DrawVerticalStringUtil_Access is access all DrawVerticalStringUtil'Class;

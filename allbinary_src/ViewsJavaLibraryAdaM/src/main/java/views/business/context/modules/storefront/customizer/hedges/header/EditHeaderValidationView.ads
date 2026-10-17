@@ -32,14 +32,14 @@ with views.business.context.modules.storefront.customizer.hedges.header.TopBarVi
 
 package views.business.context.modules.storefront.customizer.hedges.header.EditHeaderValidationView_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package ValidationComponentInterface_Package renames org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package TransformInfoInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-   package HeadingValidation_Package renames org.allbinary.logic.visual.transform.template.customizer.hedges.heading.HeadingValidation_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
-   package CustomizerUtil_Package renames views.business.context.modules.storefront.customizer.CustomizerUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package ValidationComponentInterface_Package renames Standard.org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package HeadingValidation_Package renames Standard.org.allbinary.logic.visual.transform.template.customizer.hedges.heading.HeadingValidation_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
+   package CustomizerUtil_Package renames Standard.views.business.context.modules.storefront.customizer.CustomizerUtil_Package;
 
    type EditHeaderValidationView is tagged;
    type EditHeaderValidationView_Access is access all EditHeaderValidationView'Class;

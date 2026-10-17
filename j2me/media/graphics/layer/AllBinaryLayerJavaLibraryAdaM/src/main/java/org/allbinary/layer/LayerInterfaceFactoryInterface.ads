@@ -24,7 +24,7 @@ with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_
 
 package org.allbinary.layer.LayerInterfaceFactoryInterface_Package is
 
-   package ABHashtable_Package renames org.allbinary.util.ABHashtable_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
    type LayerInterfaceFactoryInterface is interface;
    type LayerInterfaceFactoryInterface_Access is access all LayerInterfaceFactoryInterface'Class;

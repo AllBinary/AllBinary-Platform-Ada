@@ -12,7 +12,7 @@ with org.allbinary.android.AndroidInfoFactory_Package; use org.allbinary.android
 
 package org.allbinary.game.input.ActivityFractureControllerUtilFactory_Package is
 
-   package AndroidInfoFactory_Package renames org.allbinary.android.AndroidInfoFactory_Package;
+   package AndroidInfoFactory_Package renames Standard.org.allbinary.android.AndroidInfoFactory_Package;
 
    type ActivityFractureControllerUtilFactory is tagged;
    type ActivityFractureControllerUtilFactory_Access is access all ActivityFractureControllerUtilFactory'Class;

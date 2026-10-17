@@ -99,11 +99,15 @@ package body org.allbinary.logic.communication.smtp.queue.BasicEmailQueue_Packag
             end if;
             return True;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
                 This.logUtil.put (To_Unbounded_String ("Failed Email Send Debug: ") & Java_Image (emailInterface.getDebugInfo), This'Unchecked_Access, To_Unbounded_String ("send"), e);
             end if;
             return False;
+                end;
         end;
    end send;
 

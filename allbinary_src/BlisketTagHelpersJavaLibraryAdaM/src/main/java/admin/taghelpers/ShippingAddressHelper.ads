@@ -38,17 +38,17 @@ with admin.taghelpers.BasicTable_Package; use admin.taghelpers.BasicTable_Packag
 
 package admin.taghelpers.ShippingAddressHelper_Package is
 
-   package Portion_Package renames org.allbinary.business.installer.Portion_Package;
-   package UserData_Package renames org.allbinary.business.user.UserData_Package;
-   package StreetAddress_Package renames org.allbinary.business.user.address.StreetAddress_Package;
-   package BillingAddressesEntityFactory_Package renames org.allbinary.data.tables.user.address.billing.BillingAddressesEntityFactory_Package;
-   package ShippingAddressesEntity_Package renames org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntity_Package;
-   package ShippingAddressesEntityFactory_Package renames org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntityFactory_Package;
-   package WeblisketSession_Package renames org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
-   package WeblisketSessionData_Package renames org.allbinary.logic.communication.http.request.session.WeblisketSessionData_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package AbSqlTableUtil_Package renames org.allbinary.logic.communication.sql.AbSqlTableUtil_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
+   package Portion_Package renames Standard.org.allbinary.business.installer.Portion_Package;
+   package UserData_Package renames Standard.org.allbinary.business.user.UserData_Package;
+   package StreetAddress_Package renames Standard.org.allbinary.business.user.address.StreetAddress_Package;
+   package BillingAddressesEntityFactory_Package renames Standard.org.allbinary.data.tables.user.address.billing.BillingAddressesEntityFactory_Package;
+   package ShippingAddressesEntity_Package renames Standard.org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntity_Package;
+   package ShippingAddressesEntityFactory_Package renames Standard.org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntityFactory_Package;
+   package WeblisketSession_Package renames Standard.org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
+   package WeblisketSessionData_Package renames Standard.org.allbinary.logic.communication.http.request.session.WeblisketSessionData_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package AbSqlTableUtil_Package renames Standard.org.allbinary.logic.communication.sql.AbSqlTableUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type ShippingAddressHelper is tagged;
    type ShippingAddressHelper_Access is access all ShippingAddressHelper'Class;

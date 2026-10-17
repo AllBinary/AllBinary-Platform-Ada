@@ -36,16 +36,16 @@ with org.allbinary.util.HashtableUtil_Package; use org.allbinary.util.HashtableU
 
 package org.allbinary.game.configuration.feature.GameFeatureFormUtil_Package is
 
-   package GameConfigurationGauge_Package renames org.allbinary.game.configuration.GameConfigurationGauge_Package;
-   package GameConfigurationUtil_Package renames org.allbinary.game.configuration.GameConfigurationUtil_Package;
-   package CommandForm_Package renames org.allbinary.graphics.displayable.screen.CommandForm_Package;
-   package MEUtil_Package renames org.allbinary.logic.MEUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package ABHashtable_Package renames org.allbinary.util.ABHashtable_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package HashtableUtil_Package renames org.allbinary.util.HashtableUtil_Package;
+   package GameConfigurationGauge_Package renames Standard.org.allbinary.game.configuration.GameConfigurationGauge_Package;
+   package GameConfigurationUtil_Package renames Standard.org.allbinary.game.configuration.GameConfigurationUtil_Package;
+   package CommandForm_Package renames Standard.org.allbinary.graphics.displayable.screen.CommandForm_Package;
+   package MEUtil_Package renames Standard.org.allbinary.logic.MEUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package HashtableUtil_Package renames Standard.org.allbinary.util.HashtableUtil_Package;
 
    type GameFeatureFormUtil is tagged;
    type GameFeatureFormUtil_Access is access all GameFeatureFormUtil'Class;

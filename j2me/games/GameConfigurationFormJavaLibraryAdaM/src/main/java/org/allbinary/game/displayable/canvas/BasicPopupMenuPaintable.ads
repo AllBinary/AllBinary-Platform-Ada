@@ -45,26 +45,26 @@ with org.allbinary.graphics.threed.SWTJOGLProcessor_Package; use org.allbinary.g
 
 package org.allbinary.game.displayable.canvas.BasicPopupMenuPaintable_Package is
 
-   package AndroidUtil_Package renames org.allbinary.AndroidUtil_Package;
-   package J2MEUtil_Package renames org.allbinary.J2MEUtil_Package;
-   package Animation_Package renames org.allbinary.animation.Animation_Package;
-   package NullAnimationFactory_Package renames org.allbinary.animation.NullAnimationFactory_Package;
-   package RectangleFilledAnimation_Package renames org.allbinary.animation.vector.RectangleFilledAnimation_Package;
-   package Features_Package renames org.allbinary.game.configuration.feature.Features_Package;
-   package SWTUtil_Package renames org.allbinary.game.layer.SWTUtil_Package;
-   package GPoint_Package renames org.allbinary.graphics.GPoint_Package;
-   package Rectangle_Package renames org.allbinary.graphics.Rectangle_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package BasicColorFactory_Package renames org.allbinary.graphics.color.BasicColorFactory_Package;
-   package BasicColorSetUtil_Package renames org.allbinary.graphics.color.BasicColorSetUtil_Package;
-   package DrawVerticalStringUtil_Package renames org.allbinary.graphics.draw.DrawVerticalStringUtil_Package;
-   package MyFontProcessor_Package renames org.allbinary.graphics.font.MyFontProcessor_Package;
-   package UpdateMyFontInterface_Package renames org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-   package UpdateMyFontProcessor_Package renames org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
-   package OpenGLFeatureFactory_Package renames org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
-   package OpenGLFeatureUtil_Package renames org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package;
-   package Paintable_Package renames org.allbinary.graphics.paint.Paintable_Package;
-   package SWTJOGLProcessor_Package renames org.allbinary.graphics.threed.SWTJOGLProcessor_Package;
+   package AndroidUtil_Package renames Standard.org.allbinary.AndroidUtil_Package;
+   package J2MEUtil_Package renames Standard.org.allbinary.J2MEUtil_Package;
+   package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
+   package NullAnimationFactory_Package renames Standard.org.allbinary.animation.NullAnimationFactory_Package;
+   package RectangleFilledAnimation_Package renames Standard.org.allbinary.animation.vector.RectangleFilledAnimation_Package;
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
+   package SWTUtil_Package renames Standard.org.allbinary.game.layer.SWTUtil_Package;
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package BasicColorSetUtil_Package renames Standard.org.allbinary.graphics.color.BasicColorSetUtil_Package;
+   package DrawVerticalStringUtil_Package renames Standard.org.allbinary.graphics.draw.DrawVerticalStringUtil_Package;
+   package MyFontProcessor_Package renames Standard.org.allbinary.graphics.font.MyFontProcessor_Package;
+   package UpdateMyFontInterface_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontInterface_Package;
+   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+   package OpenGLFeatureFactory_Package renames Standard.org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
+   package OpenGLFeatureUtil_Package renames Standard.org.allbinary.graphics.opengles.OpenGLFeatureUtil_Package;
+   package Paintable_Package renames Standard.org.allbinary.graphics.paint.Paintable_Package;
+   package SWTJOGLProcessor_Package renames Standard.org.allbinary.graphics.threed.SWTJOGLProcessor_Package;
 
    type BasicPopupMenuPaintable is tagged;
    type BasicPopupMenuPaintable_Access is access all BasicPopupMenuPaintable'Class;

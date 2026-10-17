@@ -29,11 +29,11 @@ with org.allbinary.logic.system.os.OperatingSystemInterface_Package; use org.all
 
 package org.allbinary.logic.system.os.GenericOperatingSystem_Package is
 
-   package CharacterSet_Package renames org.allbinary.logic.java.character_Id.CharacterSet_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package StringValidationUtil_Package renames org.allbinary.logic.string_Id.StringValidationUtil_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
+   package CharacterSet_Package renames Standard.org.allbinary.logic.java.character_Id.CharacterSet_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
 
    type GenericOperatingSystem is tagged;
    type GenericOperatingSystem_Access is access all GenericOperatingSystem'Class;

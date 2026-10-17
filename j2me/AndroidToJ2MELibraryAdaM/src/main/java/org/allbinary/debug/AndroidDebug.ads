@@ -25,7 +25,7 @@ with org.allbinary.debug.DebugInterface_Package; use org.allbinary.debug.DebugIn
 
 package org.allbinary.debug.AndroidDebug_Package is
 
-   package Debug_Package renames android.os.Debug_Package;
+   package Debug_Package renames Standard.android.os.Debug_Package;
 
    type AndroidDebug is tagged;
    type AndroidDebug_Access is access all AndroidDebug'Class;

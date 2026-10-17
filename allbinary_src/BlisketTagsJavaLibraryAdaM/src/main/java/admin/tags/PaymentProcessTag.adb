@@ -50,11 +50,15 @@ package body admin.tags.PaymentProcessTag_Package is
             result := Unbounded_String (method.invoke (anyType, null));
             return result;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.LICENSINGERROR) then
                 This.logUtil.put (To_Unbounded_String ("LicensingException"), This'Unchecked_Access, This.commonStrings.PROCESS, e);
             end if;
             Java_Throw (e);
+                end;
         end;
    end process;
 
@@ -73,9 +77,13 @@ package body admin.tags.PaymentProcessTag_Package is
                 Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such Payment Processing Command")));
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             AbResponseHandler_Package.sendJspTagRedirect (This.pageContext, e);
             return SKIP_BODY;
+                end;
         end;
    end doStartTag;
 

@@ -25,8 +25,8 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 
 package org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type CurrentlyPressedTouchButtonSingleton is tagged;
    type CurrentlyPressedTouchButtonSingleton_Access is access all CurrentlyPressedTouchButtonSingleton'Class;

@@ -25,7 +25,7 @@ with org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformI
 
 package org.allbinary.logic.visual.transform.info.objectConfig.generator.BasicGenerator_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type BasicGenerator is tagged;
    type BasicGenerator_Access is access all BasicGenerator'Class;

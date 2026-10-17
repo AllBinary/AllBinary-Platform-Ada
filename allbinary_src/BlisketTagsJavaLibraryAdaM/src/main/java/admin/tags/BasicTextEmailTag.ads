@@ -31,11 +31,11 @@ with tags.CustomTagSupport_Package; use tags.CustomTagSupport_Package;
 
 package admin.tags.BasicTextEmailTag_Package is
 
-   package BasicTextEmailHelperFactory_Package renames admin.taghelpers.BasicTextEmailHelperFactory_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package AbResponseHandler_Package renames org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CustomTagSupport_Package renames tags.CustomTagSupport_Package;
+   package BasicTextEmailHelperFactory_Package renames Standard.admin.taghelpers.BasicTextEmailHelperFactory_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CustomTagSupport_Package renames Standard.tags.CustomTagSupport_Package;
 
    type BasicTextEmailTag is tagged;
    type BasicTextEmailTag_Access is access all BasicTextEmailTag'Class;

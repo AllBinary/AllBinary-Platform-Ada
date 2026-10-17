@@ -28,10 +28,10 @@ with android.os.Parcelable_Package; use android.os.Parcelable_Package;
 
 package org.allbinary.content.NotificationBuilder_Package is
 
-   package NullParcelable_Package renames org.allbinary.android.NullParcelable_Package;
-   package PendingIntent_Package renames android.app.PendingIntent_Package;
-   package Context_Package renames android.content.Context_Package;
-   package Parcelable_Package renames android.os.Parcelable_Package;
+   package NullParcelable_Package renames Standard.org.allbinary.android.NullParcelable_Package;
+   package PendingIntent_Package renames Standard.android.app.PendingIntent_Package;
+   package Context_Package renames Standard.android.content.Context_Package;
+   package Parcelable_Package renames Standard.android.os.Parcelable_Package;
 
    type NotificationBuilder is tagged;
    type NotificationBuilder_Access is access all NotificationBuilder'Class;

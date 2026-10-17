@@ -35,14 +35,14 @@ with org.allbinary.thread.SynchObject_Package; use org.allbinary.thread.SynchObj
 
 package org.allbinary.image.opengles.OpenGLImageCache_Package is
 
-   package NullGL10_Package renames org.allbinary.device.NullGL10_Package;
-   package AllBinaryRendererBase3_Package renames org.allbinary.graphics.opengles.renderer.AllBinaryRendererBase3_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package ImageCache_Package renames org.allbinary.image.ImageCache_Package;
-   package ImageCacheFactory_Package renames org.allbinary.image.ImageCacheFactory_Package;
-   package PreResourceImageUtil_Package renames org.allbinary.image.PreResourceImageUtil_Package;
-   package SynchObject_Package renames org.allbinary.thread.SynchObject_Package;
+   package NullGL10_Package renames Standard.org.allbinary.device.NullGL10_Package;
+   package AllBinaryRendererBase3_Package renames Standard.org.allbinary.graphics.opengles.renderer.AllBinaryRendererBase3_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package ImageCache_Package renames Standard.org.allbinary.image.ImageCache_Package;
+   package ImageCacheFactory_Package renames Standard.org.allbinary.image.ImageCacheFactory_Package;
+   package PreResourceImageUtil_Package renames Standard.org.allbinary.image.PreResourceImageUtil_Package;
+   package SynchObject_Package renames Standard.org.allbinary.thread.SynchObject_Package;
 
    type OpenGLImageCache is tagged;
    type OpenGLImageCache_Access is access all OpenGLImageCache'Class;

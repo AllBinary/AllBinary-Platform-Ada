@@ -29,12 +29,12 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.input.TouchJ2ME_Package is
 
-   package AllMotionRecognizer_Package renames org.allbinary.input.motion.AllMotionRecognizer_Package;
-   package BasicMotionGesturesHandler_Package renames org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package;
-   package GameMotionGestureListener_Package renames org.allbinary.input.motion.gesture.observer.GameMotionGestureListener_Package;
-   package MotionGestureReceiveInterfaceFactory_Package renames org.allbinary.input.motion.gesture.observer.MotionGestureReceiveInterfaceFactory_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package AllMotionRecognizer_Package renames Standard.org.allbinary.input.motion.AllMotionRecognizer_Package;
+   package BasicMotionGesturesHandler_Package renames Standard.org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package;
+   package GameMotionGestureListener_Package renames Standard.org.allbinary.input.motion.gesture.observer.GameMotionGestureListener_Package;
+   package MotionGestureReceiveInterfaceFactory_Package renames Standard.org.allbinary.input.motion.gesture.observer.MotionGestureReceiveInterfaceFactory_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type TouchJ2ME is tagged;
    type TouchJ2ME_Access is access all TouchJ2ME'Class;

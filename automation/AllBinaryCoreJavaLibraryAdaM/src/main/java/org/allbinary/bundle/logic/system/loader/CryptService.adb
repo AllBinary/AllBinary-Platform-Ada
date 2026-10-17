@@ -47,19 +47,23 @@ package body org.allbinary.bundle.logic.system.loader.CryptService_Package is
             decrypted := This.abCryptUtil.decrypt (inputStream, key);
             return ByteArrayInputStream_Package.Create (decrypted);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.showLicenseDialog (abeClientInformation, e);
+                end;
         end;
         return null;
    end getDecryptedInputStream;
 
-   procedure showLicenseDialog (This : in out CryptService; abeClientInformation : AbeClientInformationInterface_Access; e : Ada.Exceptions.Exception_Occurrence) is
+   procedure showLicenseDialog (This : in out CryptService; abeClientInformation : AbeClientInformationInterface_Access; e : Java_Throwable) is
       basicTextJDialog : BasicTextJDialog_Access;
       abeLicenseInterface : AbeLicenseInterface_Access;
    begin
         begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.INIT, e);
-            basicTextJDialog := BasicTextJDialog_Package.Create (To_Unbounded_String (Ada.Exceptions.Exception_Message (e)));
+            basicTextJDialog := BasicTextJDialog_Package.Create (Java_Get_Message (e));
             begin
                 abeLicenseInterface := AbeLicenseInterfaceFactory_Package.getInstance.getLicenseInstance (abeClientInformation);
                 if (abeLicenseInterface) /= (AbeNoLicense_Package.getInstance) then
@@ -68,14 +72,22 @@ package body org.allbinary.bundle.logic.system.loader.CryptService_Package is
                     end if;
                 end if;
             exception
-                when e2 : others =>
+                when Java_Occurrence : others =>
+                    declare
+                        e2 : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                    begin
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.INIT, e2);
+                    end;
             end;
             basicTextJDialog.addCloseListener (ExitCloseListener_Package.Create);
             basicTextJDialog.setVisible (True);
         exception
-            when e3 : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e3 : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.INIT, e3);
+                end;
         end;
    end showLicenseDialog;
 

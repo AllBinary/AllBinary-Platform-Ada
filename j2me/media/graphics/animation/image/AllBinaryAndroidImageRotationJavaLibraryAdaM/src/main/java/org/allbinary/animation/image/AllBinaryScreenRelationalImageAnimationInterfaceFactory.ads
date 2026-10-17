@@ -33,13 +33,13 @@ with org.allbinary.animation.image.BaseImageAnimationFactory_Package; use org.al
 
 package org.allbinary.animation.image.AllBinaryScreenRelationalImageAnimationInterfaceFactory_Package is
 
-   package GameFeatureImageCacheFactory_Package renames org.allbinary.image.GameFeatureImageCacheFactory_Package;
-   package Animation_Package renames org.allbinary.animation.Animation_Package;
-   package AnimationBehaviorFactory_Package renames org.allbinary.animation.AnimationBehaviorFactory_Package;
-   package ScreenRelationalUtil_Package renames org.allbinary.graphics.displayable.ScreenRelationalUtil_Package;
-   package PrimitiveIntUtil_Package renames org.allbinary.logic.math.PrimitiveIntUtil_Package;
-   package ImageScaleUtil_Package renames org.allbinary.media.image.ImageScaleUtil_Package;
-   package AndroidImageInterface_Package renames org.microemu.android.device.AndroidImageInterface_Package;
+   package GameFeatureImageCacheFactory_Package renames Standard.org.allbinary.image.GameFeatureImageCacheFactory_Package;
+   package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
+   package AnimationBehaviorFactory_Package renames Standard.org.allbinary.animation.AnimationBehaviorFactory_Package;
+   package ScreenRelationalUtil_Package renames Standard.org.allbinary.graphics.displayable.ScreenRelationalUtil_Package;
+   package PrimitiveIntUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveIntUtil_Package;
+   package ImageScaleUtil_Package renames Standard.org.allbinary.media.image.ImageScaleUtil_Package;
+   package AndroidImageInterface_Package renames Standard.org.microemu.android.device.AndroidImageInterface_Package;
 
    type AllBinaryScreenRelationalImageAnimationInterfaceFactory is tagged;
    type AllBinaryScreenRelationalImageAnimationInterfaceFactory_Access is access all AllBinaryScreenRelationalImageAnimationInterfaceFactory'Class;

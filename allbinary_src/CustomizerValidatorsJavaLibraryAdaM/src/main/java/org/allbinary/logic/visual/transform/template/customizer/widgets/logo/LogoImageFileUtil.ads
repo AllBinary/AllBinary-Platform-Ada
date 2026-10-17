@@ -29,11 +29,11 @@ with org.apache.commons.fileupload.FileItem_Package; use org.apache.commons.file
 
 package org.allbinary.logic.visual.transform.template.customizer.widgets.logo.LogoImageFileUtil_Package is
 
-   package AbFile_Package renames org.allbinary.logic.io.file.AbFile_Package;
-   package FileUtil_Package renames org.allbinary.logic.io.file.FileUtil_Package;
-   package Directory_Package renames org.allbinary.logic.io.file.directory.Directory_Package;
-   package AbPath_Package renames org.allbinary.logic.io.path.AbPath_Package;
-   package FileItem_Package renames org.apache.commons.fileupload.FileItem_Package;
+   package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
+   package FileUtil_Package renames Standard.org.allbinary.logic.io.file.FileUtil_Package;
+   package Directory_Package renames Standard.org.allbinary.logic.io.file.directory.Directory_Package;
+   package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
+   package FileItem_Package renames Standard.org.apache.commons.fileupload.FileItem_Package;
 
    type LogoImageFileUtil is tagged;
    type LogoImageFileUtil_Access is access all LogoImageFileUtil'Class;

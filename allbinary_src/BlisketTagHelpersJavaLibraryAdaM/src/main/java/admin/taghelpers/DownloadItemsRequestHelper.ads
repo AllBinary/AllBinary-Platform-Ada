@@ -35,15 +35,15 @@ with admin.taghelpers.ModifyTable_Package; use admin.taghelpers.ModifyTable_Pack
 
 package admin.taghelpers.DownloadItemsRequestHelper_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package AbTagData_Package renames admin.tags.AbTagData_Package;
-   package DownloadableItem_Package renames org.allbinary.business.user.commerce.inventory.item.download.DownloadableItem_Package;
-   package DownloadItemsEntityFactory_Package renames org.allbinary.data.tables.user.commerce.inventory.item.downloads.DownloadItemsEntityFactory_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
-   package HelperTag_Package renames tags.HelperTag_Package;
-   package DownloadableInventoryItemView_Package renames views.admin.inventory.download.DownloadableInventoryItemView_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package AbTagData_Package renames Standard.admin.tags.AbTagData_Package;
+   package DownloadableItem_Package renames Standard.org.allbinary.business.user.commerce.inventory.item.download.DownloadableItem_Package;
+   package DownloadItemsEntityFactory_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.item.downloads.DownloadItemsEntityFactory_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package HelperTag_Package renames Standard.tags.HelperTag_Package;
+   package DownloadableInventoryItemView_Package renames Standard.views.admin.inventory.download.DownloadableInventoryItemView_Package;
 
    type DownloadItemsRequestHelper is tagged;
    type DownloadItemsRequestHelper_Access is access all DownloadItemsRequestHelper'Class;

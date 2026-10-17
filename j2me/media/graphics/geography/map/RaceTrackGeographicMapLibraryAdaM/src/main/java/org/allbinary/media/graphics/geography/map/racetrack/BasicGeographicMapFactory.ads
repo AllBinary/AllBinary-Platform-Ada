@@ -29,12 +29,12 @@ with org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Pac
 
 package org.allbinary.media.graphics.geography.map.racetrack.BasicGeographicMapFactory_Package is
 
-   package BasicColorFactory_Package renames org.allbinary.graphics.color.BasicColorFactory_Package;
-   package SmallIntegerSingletonFactory_Package renames org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
-   package BasicGeographicMap_Package renames org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
-   package GeographicMapCellPositionBaseFactory_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCellPositionBaseFactory_Package;
-   package GeographicMapCellPositionFactoryInterface_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactoryInterface_Package;
-   package GeographicMapCellTypeFactory_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+   package BasicGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
+   package GeographicMapCellPositionBaseFactory_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPositionBaseFactory_Package;
+   package GeographicMapCellPositionFactoryInterface_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactoryInterface_Package;
+   package GeographicMapCellTypeFactory_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package;
 
    type BasicGeographicMapFactory is tagged;
    type BasicGeographicMapFactory_Access is access all BasicGeographicMapFactory'Class;

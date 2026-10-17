@@ -43,11 +43,15 @@ package body org.allbinary.graphics.form.ScrollSelectionForm_Package is
                 return PaintableForm_Package.getNullPaintableForm;
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             logUtil := LogUtil_Package.getInstance;
             logUtil.put (commonStrings.EXCEPTION_Id, logUtil, commonStrings.EXCEPTION_Id, e);
             return PaintableForm_Package.getNullPaintableForm;
+                end;
         end;
    end createForm;
 

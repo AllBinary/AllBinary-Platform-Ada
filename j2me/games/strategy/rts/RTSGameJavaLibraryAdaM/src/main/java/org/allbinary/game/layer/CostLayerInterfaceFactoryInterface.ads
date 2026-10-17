@@ -24,7 +24,7 @@ with org.allbinary.layer.LayerInterfaceFactoryInterface_Package; use org.allbina
 
 package org.allbinary.game.layer.CostLayerInterfaceFactoryInterface_Package is
 
-   package LayerInterfaceFactoryInterface_Package renames org.allbinary.layer.LayerInterfaceFactoryInterface_Package;
+   package LayerInterfaceFactoryInterface_Package renames Standard.org.allbinary.layer.LayerInterfaceFactoryInterface_Package;
 
    type CostLayerInterfaceFactoryInterface is interface and LayerInterfaceFactoryInterface;
    type CostLayerInterfaceFactoryInterface_Access is access all CostLayerInterfaceFactoryInterface'Class;

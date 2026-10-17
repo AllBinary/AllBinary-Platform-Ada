@@ -47,11 +47,15 @@ package body org.allbinary.logic.system.loader.AbeFactory_Package is
         begin
             return This.getClass (abeClientInformation, className).newInstance;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.LOADERERROR) then
                 This.logUtil.put (To_Unbounded_String ("Failure for: ") & className, This'Unchecked_Access, To_Unbounded_String ("getInstance(classname)"), e);
             end if;
             Java_Throw (e);
+                end;
         end;
    end getInstance;
 
@@ -77,7 +81,10 @@ package body org.allbinary.logic.system.loader.AbeFactory_Package is
                 return constructor.newInstance (params);
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.LOADERERROR) then
                 stringBuffer := StringMaker_Package.Create;
                 stringBuffer.append (To_Unbounded_String ("Failure for: "));
@@ -87,6 +94,7 @@ package body org.allbinary.logic.system.loader.AbeFactory_Package is
                 This.logUtil.put (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("getInstance(className,params)"), e);
             end if;
             Java_Throw (e);
+                end;
         end;
    end getInstance;
 
@@ -107,11 +115,15 @@ package body org.allbinary.logic.system.loader.AbeFactory_Package is
                 return c;
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.LOADERERROR) then
                 This.logUtil.put (To_Unbounded_String ("Failure for: ") & className, This'Unchecked_Access, To_Unbounded_String ("getClass(className)"), e);
             end if;
             Java_Throw (e);
+                end;
         end;
    end getClass;
 

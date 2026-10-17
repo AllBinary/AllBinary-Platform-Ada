@@ -25,8 +25,8 @@ with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.
 
 package org.allbinary.game.input.RTSLayerFormFactoryInterface_Package is
 
-   package RTSLayer_Package renames org.allbinary.game.layer.RTSLayer_Package;
-   package ScrollSelectionForm_Package renames org.allbinary.graphics.form.ScrollSelectionForm_Package;
+   package RTSLayer_Package renames Standard.org.allbinary.game.layer.RTSLayer_Package;
+   package ScrollSelectionForm_Package renames Standard.org.allbinary.graphics.form.ScrollSelectionForm_Package;
 
    type RTSLayerFormFactoryInterface is interface;
    type RTSLayerFormFactoryInterface_Access is access all RTSLayerFormFactoryInterface'Class;

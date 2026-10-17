@@ -24,7 +24,7 @@ with org.mapeditor.core.TiledMap_Package; use org.mapeditor.core.TiledMap_Packag
 
 package org.allbinary.game.behavior.topview.placement.TileMapPlacementVisitor_Package is
 
-   package TiledMap_Package renames org.mapeditor.core.TiledMap_Package;
+   package TiledMap_Package renames Standard.org.mapeditor.core.TiledMap_Package;
 
    type TileMapPlacementVisitor is tagged;
    type TileMapPlacementVisitor_Access is access all TileMapPlacementVisitor'Class;

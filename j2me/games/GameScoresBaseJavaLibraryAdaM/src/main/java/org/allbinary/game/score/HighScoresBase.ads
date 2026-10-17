@@ -26,8 +26,8 @@ with org.allbinary.game.score.HighScoresFactoryInterface_Package; use org.allbin
 
 package org.allbinary.game.score.HighScoresBase_Package is
 
-   package GameInfo_Package renames org.allbinary.game.GameInfo_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package GameInfo_Package renames Standard.org.allbinary.game.GameInfo_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type HighScoresBase is tagged;
    type HighScoresBase_Access is access all HighScoresBase'Class;

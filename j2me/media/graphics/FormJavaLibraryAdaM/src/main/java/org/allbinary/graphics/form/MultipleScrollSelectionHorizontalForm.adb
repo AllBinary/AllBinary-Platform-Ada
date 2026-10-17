@@ -127,8 +127,12 @@ package body org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_P
                 dx := This.multipleScrollSelectionHorizontalFormTypeItemIndexPaintable.paint (graphics, index, item, dx, dy);
             end loop;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             PreLogUtil_Package.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.canvasStrings.PAINT);
+                end;
         end;
    end paint;
 

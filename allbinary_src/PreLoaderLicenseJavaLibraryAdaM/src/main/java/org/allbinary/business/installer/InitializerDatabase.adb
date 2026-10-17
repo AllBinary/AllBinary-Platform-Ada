@@ -104,8 +104,12 @@ package body org.allbinary.business.installer.InitializerDatabase_Package is
             dbConnectionInfo.setPort (This.getAdminPort);
             This.initDb := DynamicInitDb_Package.Create (abeClientInformation, DatabaseConnectionInfoInterface_Access (dbConnectionInfo));
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (To_Unbounded_String ("Unable to get form data"), This'Unchecked_Access, To_Unbounded_String ("getFormData()"), e);
+                end;
         end;
    end getFormData;
 
@@ -116,12 +120,16 @@ package body org.allbinary.business.installer.InitializerDatabase_Package is
             Class_Package.forName (jdbcDriverClassPathString).newInstance;
             return True;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PRELOADERERROR) then
                 commonStrings := CommonStrings_Package.getInstance;
                 This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.IS_VALID, e);
             end if;
             return False;
+                end;
         end;
    end isJdbcDriverValid;
 
@@ -185,9 +193,13 @@ package body org.allbinary.business.installer.InitializerDatabase_Package is
             This.initDb.addUsers;
             return True;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (To_Unbounded_String ("Unable to Create Users"), This'Unchecked_Access, To_Unbounded_String ("createUsers()"), e);
             return False;
+                end;
         end;
    end createUsers;
 
@@ -197,9 +209,13 @@ package body org.allbinary.business.installer.InitializerDatabase_Package is
             This.initDb.addDatabases;
             return True;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (To_Unbounded_String ("Unable to Create Databases"), This'Unchecked_Access, To_Unbounded_String ("createDatabases()"), e);
             return False;
+                end;
         end;
    end createDatabases;
 
@@ -209,9 +225,13 @@ package body org.allbinary.business.installer.InitializerDatabase_Package is
             This.initDb.addTables;
             return True;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (To_Unbounded_String ("Unable to Create Tables"), This'Unchecked_Access, To_Unbounded_String ("createTables()"), e);
             return False;
+                end;
         end;
    end createTables;
 

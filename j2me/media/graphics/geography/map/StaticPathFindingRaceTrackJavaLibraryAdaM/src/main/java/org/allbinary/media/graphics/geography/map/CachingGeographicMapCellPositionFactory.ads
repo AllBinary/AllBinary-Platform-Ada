@@ -26,8 +26,8 @@ with org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFa
 
 package org.allbinary.media.graphics.geography.map.CachingGeographicMapCellPositionFactory_Package is
 
-   package CellPosition_Package renames org.allbinary.graphics.CellPosition_Package;
-   package ABHashtable_Package renames org.allbinary.util.ABHashtable_Package;
+   package CellPosition_Package renames Standard.org.allbinary.graphics.CellPosition_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
    type CachingGeographicMapCellPositionFactory is tagged;
    type CachingGeographicMapCellPositionFactory_Access is access all CachingGeographicMapCellPositionFactory'Class;

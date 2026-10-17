@@ -28,9 +28,9 @@ with org.allbinary.game.displayable.canvas.BasicMenuInputProcessor_Package; use 
 
 package org.allbinary.game.displayable.canvas.NoMenuInputProcessor_Package is
 
-   package GameKeyEvent_Package renames org.allbinary.game.input.event.GameKeyEvent_Package;
-   package MotionGestureEvent_Package renames org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package;
-   package BasicArrayListUtil_Package renames org.allbinary.util.BasicArrayListUtil_Package;
+   package GameKeyEvent_Package renames Standard.org.allbinary.game.input.event.GameKeyEvent_Package;
+   package MotionGestureEvent_Package renames Standard.org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package;
+   package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
 
    type NoMenuInputProcessor is tagged;
    type NoMenuInputProcessor_Access is access all NoMenuInputProcessor'Class;

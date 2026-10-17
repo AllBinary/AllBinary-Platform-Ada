@@ -12,7 +12,7 @@ with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Pack
 
 package org.allbinary.logic.math.MathUtil_Package is
 
-   package JsType_Package renames jsinterop.annotations.JsType_Package;
+   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
 
    type MathUtil is tagged;
    type MathUtil_Access is access all MathUtil'Class;

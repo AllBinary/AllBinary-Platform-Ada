@@ -48,8 +48,12 @@ package body org.allbinary.graphics.canvas.transition.progress.LazyProgressCanva
             ImageCacheFactory_Package.getInstance.runTask;
             ImageCacheFactory_Package.getInstance.progressEnded;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.putF (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.END_METHOD_NAME);
+                end;
         end;
    end end_Id;
 

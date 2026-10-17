@@ -67,10 +67,14 @@ package body org.allbinary.logic.communication.smtp.email.NewPasswordEmail_Packa
             adminUserEmailEventHandler := AdminUserEmailEventHandlerSingletons_Package.getInstance.getInstance (This.abeClientInformation, UserEmailEventNameData_Package.NEWPASSWORD);
             adminUserEmailEventHandler.receiveEmailInfo (UserEmailEventNameData_Package.NEWPASSWORD, emailInfo);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGINGERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("emailAdmin"), e);
             end if;
+                end;
         end;
    end notifyStoreAdmin;
 
@@ -93,11 +97,15 @@ package body org.allbinary.logic.communication.smtp.email.NewPasswordEmail_Packa
             userEmailEventHandler := UserEmailEventHandlerSingletons_Package.getInstance.getInstance (This.abeClientInformation, UserEmailEventNameData_Package.NEWPASSWORD, This.userInterface);
             userEmailEventHandler.receiveEmailInfo (UserEmailEventNameData_Package.NEWPASSWORD, emailInfo);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGINGERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("notifyUser"), e);
             end if;
             Java_Throw (e);
+                end;
         end;
    end notifyUser;
 

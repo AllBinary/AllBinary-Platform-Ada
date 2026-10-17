@@ -51,9 +51,13 @@ package body org.allbinary.log.FileLog_Package is
             canWrite := FileLog_Package.logFile.canWrite;
             return canWrite;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Ada.Text_IO.Put_Line (Java_Image (To_Unbounded_String ("Error Creating Log: ") & Java_Image (e)));
             return False;
+                end;
         end;
    end createLogFile;
 
@@ -84,9 +88,13 @@ package body org.allbinary.log.FileLog_Package is
             FileLog_Package.logFile.delete;
             return True;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Ada.Text_IO.Put_Line (Java_Image (To_Unbounded_String ("Error Creating Backup: ") & Java_Image (e)));
             return False;
+                end;
         end;
    end createLogFileBackup;
 
@@ -95,7 +103,7 @@ package body org.allbinary.log.FileLog_Package is
         return FileLog_Package.put (specialMessage, anyType, functionName, null);
    end put;
 
-   function put (specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String; exception_Id : Ada.Exceptions.Exception_Occurrence) return Unbounded_String is
+   function put (specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String; exception_Id : Java_Throwable) return Unbounded_String is
       length : Long_Long_Integer;
       className : Unbounded_String;
       message : Unbounded_String;
@@ -129,8 +137,12 @@ package body org.allbinary.log.FileLog_Package is
             FileLog_Package.fileOut.flush;
             return Java_New_String (Java_Image (FileLog_Package.ORG_ALLBINARY) & message);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             return Java_New_String (To_Unbounded_String ("Error: ") & Java_Image (e));
+                end;
         end;
    end put;
 
@@ -139,7 +151,7 @@ package body org.allbinary.log.FileLog_Package is
         return FileLog_Package.put (specialMessage, className, functionName, null);
    end put;
 
-   function put (specialMessage : Unbounded_String; className : Unbounded_String; functionName : Unbounded_String; exception_Id : Ada.Exceptions.Exception_Occurrence) return Unbounded_String is
+   function put (specialMessage : Unbounded_String; className : Unbounded_String; functionName : Unbounded_String; exception_Id : Java_Throwable) return Unbounded_String is
       length : Long_Long_Integer;
       message : Unbounded_String;
    begin
@@ -168,8 +180,12 @@ package body org.allbinary.log.FileLog_Package is
             FileLog_Package.fileOut.flush;
             return Java_New_String (Java_Image (FileLog_Package.ORG_ALLBINARY) & message);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             return Java_New_String (To_Unbounded_String ("Error: ") & Java_Image (e));
+                end;
         end;
    end put;
 
@@ -199,7 +215,7 @@ package body org.allbinary.log.FileLog_Package is
       null;
    end put;
 
-   procedure put (specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String; exception_Id : Ada.Exceptions.Exception_Occurrence) is
+   procedure put (specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String; exception_Id : Java_Throwable) is
       Java_Result : constant Unbounded_String := put (specialMessage, anyType, functionName, exception_Id);
       pragma Unreferenced (Java_Result);
    begin
@@ -213,7 +229,7 @@ package body org.allbinary.log.FileLog_Package is
       null;
    end put;
 
-   procedure put (specialMessage : Unbounded_String; className : Unbounded_String; functionName : Unbounded_String; exception_Id : Ada.Exceptions.Exception_Occurrence) is
+   procedure put (specialMessage : Unbounded_String; className : Unbounded_String; functionName : Unbounded_String; exception_Id : Java_Throwable) is
       Java_Result : constant Unbounded_String := put (specialMessage, className, functionName, exception_Id);
       pragma Unreferenced (Java_Result);
    begin

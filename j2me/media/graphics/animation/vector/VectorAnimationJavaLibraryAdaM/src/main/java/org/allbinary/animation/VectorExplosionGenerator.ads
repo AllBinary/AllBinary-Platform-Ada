@@ -30,13 +30,13 @@ with org.allbinary.util.BasicArrayListS_Package; use org.allbinary.util.BasicArr
 
 package org.allbinary.animation.VectorExplosionGenerator_Package is
 
-   package GPoint_Package renames org.allbinary.graphics.GPoint_Package;
-   package PointFactory_Package renames org.allbinary.graphics.PointFactory_Package;
-   package RandomRotationFactory_Package renames org.allbinary.graphics.pipeline.RandomRotationFactory_Package;
-   package RandomTranslation_Package renames org.allbinary.graphics.pipeline.RandomTranslation_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package BasicArrayListS_Package renames org.allbinary.util.BasicArrayListS_Package;
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
+   package RandomRotationFactory_Package renames Standard.org.allbinary.graphics.pipeline.RandomRotationFactory_Package;
+   package RandomTranslation_Package renames Standard.org.allbinary.graphics.pipeline.RandomTranslation_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package BasicArrayListS_Package renames Standard.org.allbinary.util.BasicArrayListS_Package;
 
    type VectorExplosionGenerator is tagged;
    type VectorExplosionGenerator_Access is access all VectorExplosionGenerator'Class;

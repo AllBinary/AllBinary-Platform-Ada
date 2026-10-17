@@ -102,8 +102,12 @@ package body org.allbinary.game.displayable.canvas.GameInputMappingCanvas_Packag
             input := This.inputFactory.getInstanceById (keyCode);
             This.processInputMapping (gameKey, input);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (To_Unbounded_String ("Key Event Error"), This'Unchecked_Access, This.gameInputStrings.ADD_KEY_EVENT, e);
+                end;
         end;
    end addGameKey;
 

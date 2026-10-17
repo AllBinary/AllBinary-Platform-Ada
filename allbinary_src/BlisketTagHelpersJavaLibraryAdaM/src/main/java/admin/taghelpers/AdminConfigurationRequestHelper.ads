@@ -30,9 +30,9 @@ with admin.taghelpers.ModifyTable_Package; use admin.taghelpers.ModifyTable_Pack
 
 package admin.taghelpers.AdminConfigurationRequestHelper_Package is
 
-   package AdminConfiguration_Package renames org.allbinary.business.user.modules.admin.configuration.AdminConfiguration_Package;
-   package AdminConfigurationInterface_Package renames org.allbinary.business.user.modules.admin.configuration.AdminConfigurationInterface_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
+   package AdminConfiguration_Package renames Standard.org.allbinary.business.user.modules.admin.configuration.AdminConfiguration_Package;
+   package AdminConfigurationInterface_Package renames Standard.org.allbinary.business.user.modules.admin.configuration.AdminConfigurationInterface_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type AdminConfigurationRequestHelper is tagged;
    type AdminConfigurationRequestHelper_Access is access all AdminConfigurationRequestHelper'Class;

@@ -24,7 +24,7 @@ with org.allbinary.image.ImageCache_Package; use org.allbinary.image.ImageCache_
 
 package org.allbinary.image.opengles.OpenGLImageCacheFactory_Package is
 
-   package ImageCache_Package renames org.allbinary.image.ImageCache_Package;
+   package ImageCache_Package renames Standard.org.allbinary.image.ImageCache_Package;
 
    type OpenGLImageCacheFactory is tagged;
    type OpenGLImageCacheFactory_Access is access all OpenGLImageCacheFactory'Class;

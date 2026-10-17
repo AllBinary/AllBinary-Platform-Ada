@@ -24,7 +24,7 @@ with org.allbinary.logic.util.visitor.Visitor_Package; use org.allbinary.logic.u
 
 package org.allbinary.logic.math.permutations.OrderedIntArrayPermutationUtil_Package is
 
-   package Visitor_Package renames org.allbinary.logic.util.visitor.Visitor_Package;
+   package Visitor_Package renames Standard.org.allbinary.logic.util.visitor.Visitor_Package;
 
    type OrderedIntArrayPermutationUtil is tagged;
    type OrderedIntArrayPermutationUtil_Access is access all OrderedIntArrayPermutationUtil'Class;

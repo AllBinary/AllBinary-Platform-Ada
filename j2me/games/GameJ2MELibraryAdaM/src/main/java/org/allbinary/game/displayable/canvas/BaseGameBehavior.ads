@@ -30,12 +30,12 @@ with org.allbinary.game.displayable.canvas.DemoGameBehavior_Package; use org.all
 
 package org.allbinary.game.displayable.canvas.BaseGameBehavior_Package is
 
-   package GameAdStateFactory_Package renames org.allbinary.business.advertisement.GameAdStateFactory_Package;
-   package GameAdState_Package renames org.allbinary.game.GameAdState_Package;
-   package Features_Package renames org.allbinary.game.configuration.feature.Features_Package;
-   package CurrentDisplayableFactory_Package renames org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package;
-   package OpenGLFeatureFactory_Package renames org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
-   package AbeClientInformationInterface_Package renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package GameAdStateFactory_Package renames Standard.org.allbinary.business.advertisement.GameAdStateFactory_Package;
+   package GameAdState_Package renames Standard.org.allbinary.game.GameAdState_Package;
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
+   package CurrentDisplayableFactory_Package renames Standard.org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package;
+   package OpenGLFeatureFactory_Package renames Standard.org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
+   package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 
    type BaseGameBehavior is tagged;
    type BaseGameBehavior_Access is access all BaseGameBehavior'Class;

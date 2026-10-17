@@ -27,10 +27,10 @@ with org.allbinary.image.AnimationFrameToImageUtil_Package; use org.allbinary.im
 
 package org.allbinary.animation.image.ImageAnimationSingletonInterfaceFactory_Package is
 
-   package Animation_Package renames org.allbinary.animation.Animation_Package;
-   package AnimationBehavior_Package renames org.allbinary.animation.AnimationBehavior_Package;
-   package SingletonAnimationInterfaceFactory_Package renames org.allbinary.animation.SingletonAnimationInterfaceFactory_Package;
-   package AnimationFrameToImageUtil_Package renames org.allbinary.image.AnimationFrameToImageUtil_Package;
+   package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
+   package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
+   package SingletonAnimationInterfaceFactory_Package renames Standard.org.allbinary.animation.SingletonAnimationInterfaceFactory_Package;
+   package AnimationFrameToImageUtil_Package renames Standard.org.allbinary.image.AnimationFrameToImageUtil_Package;
 
    type ImageAnimationSingletonInterfaceFactory is tagged;
    type ImageAnimationSingletonInterfaceFactory_Access is access all ImageAnimationSingletonInterfaceFactory'Class;

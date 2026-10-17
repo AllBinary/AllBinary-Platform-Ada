@@ -64,7 +64,7 @@ package body org.allbinary.logic.communication.log.LogUtil_Package is
 
    procedure put (This : in out LogUtil; specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String; exception_Id : Java_Object_Access) is
    begin
-        FileLog_Package.put (specialMessage, anyType, functionName, Ada.Exceptions.Exception_Occurrence (exception_Id));
+        FileLog_Package.put (specialMessage, anyType, functionName, Java_Throwable (exception_Id));
    end put;
 
    procedure getInstance is

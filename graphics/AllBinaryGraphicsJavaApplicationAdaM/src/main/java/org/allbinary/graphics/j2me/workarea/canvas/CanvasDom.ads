@@ -36,18 +36,18 @@ with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 
 package org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package is
 
-   package VectorCenterGenerator_Package renames org.allbinary.animation.vector.VectorCenterGenerator_Package;
-   package DomHelper_Package renames org.allbinary.dom.DomHelper_Package;
-   package GPoint_Package renames org.allbinary.graphics.GPoint_Package;
-   package GraphicsStrings_Package renames org.allbinary.graphics.GraphicsStrings_Package;
-   package PointFactory_Package renames org.allbinary.graphics.PointFactory_Package;
-   package WorkAreaJPanel_Package renames org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package;
-   package GraphicItemFactory_Package renames org.allbinary.graphics.j2me.workarea.tools.GraphicItemFactory_Package;
-   package GraphicItemInterface_Package renames org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package;
-   package LinesGraphicItem_Package renames org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
+   package VectorCenterGenerator_Package renames Standard.org.allbinary.animation.vector.VectorCenterGenerator_Package;
+   package DomHelper_Package renames Standard.org.allbinary.dom.DomHelper_Package;
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package GraphicsStrings_Package renames Standard.org.allbinary.graphics.GraphicsStrings_Package;
+   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
+   package WorkAreaJPanel_Package renames Standard.org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package;
+   package GraphicItemFactory_Package renames Standard.org.allbinary.graphics.j2me.workarea.tools.GraphicItemFactory_Package;
+   package GraphicItemInterface_Package renames Standard.org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package;
+   package LinesGraphicItem_Package renames Standard.org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type CanvasDom is tagged;
    type CanvasDom_Access is access all CanvasDom'Class;

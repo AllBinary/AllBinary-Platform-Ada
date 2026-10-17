@@ -31,14 +31,14 @@ with org.allbinary.thread.RunnableInterface_Package; use org.allbinary.thread.Ru
 
 package org.allbinary.input.automation.module.generic_Id.GenericModuleFactory_Package is
 
-   package AbstractInputAutomationFactory_Package renames org.allbinary.input.automation.module.AbstractInputAutomationFactory_Package;
-   package InputAutomationActionInterface_Package renames org.allbinary.input.automation.module.InputAutomationActionInterface_Package;
-   package InputAutomationModuleData_Package renames org.allbinary.input.automation.module.InputAutomationModuleData_Package;
-   package GenericModuleConfigurationJPanel_Package renames org.allbinary.input.automation.module.generic_Id.configuration.GenericModuleConfigurationJPanel_Package;
-   package GenericProfile_Package renames org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfile_Package;
-   package NoImageComparatorConstraints_Package renames org.allbinary.input.automation.module.generic_Id.constraints.NoImageComparatorConstraints_Package;
-   package NoMotionRectangleConstraints_Package renames org.allbinary.input.automation.module.generic_Id.constraints.NoMotionRectangleConstraints_Package;
-   package RunnableInterface_Package renames org.allbinary.thread.RunnableInterface_Package;
+   package AbstractInputAutomationFactory_Package renames Standard.org.allbinary.input.automation.module.AbstractInputAutomationFactory_Package;
+   package InputAutomationActionInterface_Package renames Standard.org.allbinary.input.automation.module.InputAutomationActionInterface_Package;
+   package InputAutomationModuleData_Package renames Standard.org.allbinary.input.automation.module.InputAutomationModuleData_Package;
+   package GenericModuleConfigurationJPanel_Package renames Standard.org.allbinary.input.automation.module.generic_Id.configuration.GenericModuleConfigurationJPanel_Package;
+   package GenericProfile_Package renames Standard.org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfile_Package;
+   package NoImageComparatorConstraints_Package renames Standard.org.allbinary.input.automation.module.generic_Id.constraints.NoImageComparatorConstraints_Package;
+   package NoMotionRectangleConstraints_Package renames Standard.org.allbinary.input.automation.module.generic_Id.constraints.NoMotionRectangleConstraints_Package;
+   package RunnableInterface_Package renames Standard.org.allbinary.thread.RunnableInterface_Package;
 
    type GenericModuleFactory is tagged;
    type GenericModuleFactory_Access is access all GenericModuleFactory'Class;

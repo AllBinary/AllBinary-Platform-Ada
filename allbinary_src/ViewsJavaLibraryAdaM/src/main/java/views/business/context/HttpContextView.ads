@@ -30,13 +30,13 @@ with views.HttpComponentView_Package; use views.HttpComponentView_Package;
 
 package views.business.context.HttpContextView_Package is
 
-   package XmlDocumentHelper_Package renames org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package ContextTransformer_Package renames org.allbinary.logic.visual.transform.ContextTransformer_Package;
-   package TransformHttpRequestDocumentFactory_Package renames org.allbinary.logic.visual.transform.data.TransformHttpRequestDocumentFactory_Package;
-   package TransformInfoInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package HttpComponentView_Package renames views.HttpComponentView_Package;
+   package XmlDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package ContextTransformer_Package renames Standard.org.allbinary.logic.visual.transform.ContextTransformer_Package;
+   package TransformHttpRequestDocumentFactory_Package renames Standard.org.allbinary.logic.visual.transform.data.TransformHttpRequestDocumentFactory_Package;
+   package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package HttpComponentView_Package renames Standard.views.HttpComponentView_Package;
 
    type HttpContextView is tagged;
    type HttpContextView_Access is access all HttpContextView'Class;

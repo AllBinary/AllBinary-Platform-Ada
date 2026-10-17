@@ -26,9 +26,9 @@ with org.allbinary.logic.system.os.OperatingSystemFactory_Package; use org.allbi
 
 package org.allbinary.game.paint.ColorFillPaintableFactory_Package is
 
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package GenericOperatingSystem_Package renames org.allbinary.logic.system.os.GenericOperatingSystem_Package;
-   package OperatingSystemFactory_Package renames org.allbinary.logic.system.os.OperatingSystemFactory_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package GenericOperatingSystem_Package renames Standard.org.allbinary.logic.system.os.GenericOperatingSystem_Package;
+   package OperatingSystemFactory_Package renames Standard.org.allbinary.logic.system.os.OperatingSystemFactory_Package;
 
    type ColorFillPaintableFactory is tagged;
    type ColorFillPaintableFactory_Access is access all ColorFillPaintableFactory'Class;

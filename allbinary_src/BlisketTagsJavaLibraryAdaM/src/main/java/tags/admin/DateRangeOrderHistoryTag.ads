@@ -27,9 +27,9 @@ with tags.StoreValidationTransformTag_Package; use tags.StoreValidationTransform
 
 package tags.admin.DateRangeOrderHistoryTag_Package is
 
-   package AbResponseHandler_Package renames org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StoreValidationTransformTag_Package renames tags.StoreValidationTransformTag_Package;
+   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StoreValidationTransformTag_Package renames Standard.tags.StoreValidationTransformTag_Package;
 
    type DateRangeOrderHistoryTag is tagged;
    type DateRangeOrderHistoryTag_Access is access all DateRangeOrderHistoryTag'Class;

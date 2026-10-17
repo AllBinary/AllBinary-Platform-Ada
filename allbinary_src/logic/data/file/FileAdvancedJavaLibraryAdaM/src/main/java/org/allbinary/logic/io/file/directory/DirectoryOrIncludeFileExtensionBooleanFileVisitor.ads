@@ -26,9 +26,9 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 
 package org.allbinary.logic.io.file.directory.DirectoryOrIncludeFileExtensionBooleanFileVisitor_Package is
 
-   package AbFile_Package renames org.allbinary.logic.io.file.AbFile_Package;
-   package IncludeFileExtensionsBooleanFileVisitor_Package renames org.allbinary.logic.io.file.visitor.IncludeFileExtensionsBooleanFileVisitor_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
+   package IncludeFileExtensionsBooleanFileVisitor_Package renames Standard.org.allbinary.logic.io.file.visitor.IncludeFileExtensionsBooleanFileVisitor_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type DirectoryOrIncludeFileExtensionBooleanFileVisitor is tagged;
    type DirectoryOrIncludeFileExtensionBooleanFileVisitor_Access is access all DirectoryOrIncludeFileExtensionBooleanFileVisitor'Class;

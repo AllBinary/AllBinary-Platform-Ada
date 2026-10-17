@@ -66,10 +66,14 @@ package body org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Pac
             This.processor.process;
             This.processor := Processor_Package.getInstance;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             logUtil := LogUtil_Package.getInstance;
             commonStrings := CommonStrings_Package.getInstance;
             logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.UPDATE, e);
+                end;
         end;
    end updateMeasurement;
 

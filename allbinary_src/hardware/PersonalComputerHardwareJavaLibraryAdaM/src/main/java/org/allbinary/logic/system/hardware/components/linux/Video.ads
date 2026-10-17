@@ -25,8 +25,8 @@ with org.allbinary.logic.system.hardware.components.interfaces.VideoInterface_Pa
 
 package org.allbinary.logic.system.hardware.components.linux.Video_Package is
 
-   package HardwareComponentInterface_Package renames org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package;
-   package VideoInterface_Package renames org.allbinary.logic.system.hardware.components.interfaces.VideoInterface_Package;
+   package HardwareComponentInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package;
+   package VideoInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.VideoInterface_Package;
 
    type Video is tagged;
    type Video_Access is access all Video'Class;

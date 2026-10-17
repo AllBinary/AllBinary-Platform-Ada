@@ -127,8 +127,12 @@ package body org.allbinary.media.graphics.geography.map.BasicGeographicMap_Packa
             begin
                 return This.geographicMapCellPositionFactory.getAt (i_column, i_row);
             exception
-                when e : others =>
+                when Java_Occurrence : others =>
+                    declare
+                        e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                    begin
                 return SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION;
+                    end;
             end;
         else
             return SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION;

@@ -25,7 +25,7 @@ with org.osgi.framework.BundleContext_Package; use org.osgi.framework.BundleCont
 
 package org.allbinary.input.automation.RemoteFramework_Package is
 
-   package BundleContext_Package renames org.osgi.framework.BundleContext_Package;
+   package BundleContext_Package renames Standard.org.osgi.framework.BundleContext_Package;
 
    type RemoteFramework is interface;
    type RemoteFramework_Access is access all RemoteFramework'Class;

@@ -35,18 +35,18 @@ with org.apache.xmlrpc.XmlRpcHandler_Package; use org.apache.xmlrpc.XmlRpcHandle
 
 package org.allbinary.logic.communication.xmlrpc.XmlRpcAbeClient_Package is
 
-   package MyRandomFactory_Package renames org.allbinary.game.rand.MyRandomFactory_Package;
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
-   package ForcedLogUtil_Package renames org.allbinary.logic.communication.log.ForcedLogUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package AbeClientInformationInterface_Package renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-   package CommonLabels_Package renames org.allbinary.string_Id.CommonLabels_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package NullXmlRpcHandler_Package renames org.apache.xmlrpc.NullXmlRpcHandler_Package;
-   package XmlRpcClient_Package renames org.apache.xmlrpc.XmlRpcClient_Package;
-   package XmlRpcHandler_Package renames org.apache.xmlrpc.XmlRpcHandler_Package;
+   package MyRandomFactory_Package renames Standard.org.allbinary.game.rand.MyRandomFactory_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package NullXmlRpcHandler_Package renames Standard.org.apache.xmlrpc.NullXmlRpcHandler_Package;
+   package XmlRpcClient_Package renames Standard.org.apache.xmlrpc.XmlRpcClient_Package;
+   package XmlRpcHandler_Package renames Standard.org.apache.xmlrpc.XmlRpcHandler_Package;
 
    type XmlRpcAbeClient is tagged;
    type XmlRpcAbeClient_Access is access all XmlRpcAbeClient'Class;

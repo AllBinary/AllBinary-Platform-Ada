@@ -91,8 +91,12 @@ package body org.allbinary.image.gui.RotationSpriteImageJPanel_Package is
 --                          logUtil.putF (To_Unbounded_String ("File: ") & Java_Image (file) & To_Unbounded_String (" Wrote: ") & Java_Image (isWritten), This'Unchecked_Access, This.commonStrings.RUN);
 --                      end loop;
 --                  exception
---                      when e : others =>
+--                      when Java_Occurrence : others =>
+--                          declare
+--                              e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+--                          begin
 --                      logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.RUN, e);
+--                          end;
 --                  end;
 --     end run;
 .start;

@@ -26,9 +26,9 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.data.tables.user.address.billing.BillingAddressesEntityFactory_Package is
 
-   package StreetAddressesEntity_Package renames org.allbinary.data.tables.user.address.StreetAddressesEntity_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package StreetAddressesEntity_Package renames Standard.org.allbinary.data.tables.user.address.StreetAddressesEntity_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type BillingAddressesEntityFactory is tagged;
    type BillingAddressesEntityFactory_Access is access all BillingAddressesEntityFactory'Class;

@@ -27,8 +27,8 @@ with org.allbinary.business.user.commerce.money.MoneyException_Package; use org.
 
 package org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package is
 
-   package Money_Package renames org.allbinary.business.user.commerce.money.Money_Package;
-   package MoneyException_Package renames org.allbinary.business.user.commerce.money.MoneyException_Package;
+   package Money_Package renames Standard.org.allbinary.business.user.commerce.money.Money_Package;
+   package MoneyException_Package renames Standard.org.allbinary.business.user.commerce.money.MoneyException_Package;
 
    type BasketInterface is interface;
    type BasketInterface_Access is access all BasketInterface'Class;

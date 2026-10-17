@@ -28,11 +28,11 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 
 package org.allbinary.game.layer.unit.UnitGameResources_Package is
 
-   package BasicGameResources_Package renames org.allbinary.game.layer.resources.BasicGameResources_Package;
-   package GameGraphicsResourceUtil_Package renames org.allbinary.game.layer.resources.GameGraphicsResourceUtil_Package;
-   package AndroidUtil_Package renames org.allbinary.AndroidUtil_Package;
-   package GraphicsFeatureFactory_Package renames org.allbinary.game.configuration.feature.GraphicsFeatureFactory_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
+   package BasicGameResources_Package renames Standard.org.allbinary.game.layer.resources.BasicGameResources_Package;
+   package GameGraphicsResourceUtil_Package renames Standard.org.allbinary.game.layer.resources.GameGraphicsResourceUtil_Package;
+   package AndroidUtil_Package renames Standard.org.allbinary.AndroidUtil_Package;
+   package GraphicsFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.GraphicsFeatureFactory_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type UnitGameResources is tagged;
    type UnitGameResources_Access is access all UnitGameResources'Class;

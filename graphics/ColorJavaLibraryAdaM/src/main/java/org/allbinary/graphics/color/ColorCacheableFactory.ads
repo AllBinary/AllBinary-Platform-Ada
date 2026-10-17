@@ -25,8 +25,8 @@ with org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package; 
 
 package org.allbinary.graphics.color.ColorCacheableFactory_Package is
 
-   package CacheableInterface_Package renames org.allbinary.logic.util.cache.CacheableInterface_Package;
-   package CacheableInterfaceFactoryInterface_Package renames org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package;
+   package CacheableInterface_Package renames Standard.org.allbinary.logic.util.cache.CacheableInterface_Package;
+   package CacheableInterfaceFactoryInterface_Package renames Standard.org.allbinary.logic.util.cache.CacheableInterfaceFactoryInterface_Package;
 
    type ColorCacheableFactory is tagged;
    type ColorCacheableFactory_Access is access all ColorCacheableFactory'Class;

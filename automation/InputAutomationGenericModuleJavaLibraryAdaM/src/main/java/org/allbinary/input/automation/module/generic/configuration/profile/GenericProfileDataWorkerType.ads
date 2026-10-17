@@ -31,12 +31,12 @@ with org.allbinary.input.automation.module.generic_Id.configuration.profile.Gene
 
 package org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerType_Package is
 
-   package DomNodeHelper_Package renames org.allbinary.data.tree.dom.DomNodeHelper_Package;
-   package ModDomHelper_Package renames org.allbinary.data.tree.dom.ModDomHelper_Package;
-   package InputImageType_Package renames org.allbinary.input.media.image.InputImageType_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
+   package DomNodeHelper_Package renames Standard.org.allbinary.data.tree.dom.DomNodeHelper_Package;
+   package ModDomHelper_Package renames Standard.org.allbinary.data.tree.dom.ModDomHelper_Package;
+   package InputImageType_Package renames Standard.org.allbinary.input.media.image.InputImageType_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type GenericProfileDataWorkerType is tagged;
    type GenericProfileDataWorkerType_Access is access all GenericProfileDataWorkerType'Class;

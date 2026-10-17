@@ -28,10 +28,10 @@ with org.allbinary.graphics.paint.InitUpdatePaintable_Package; use org.allbinary
 
 package org.allbinary.game.displayable.canvas.PreGameSelectorPaintable_Package is
 
-   package BasicColorFactory_Package renames org.allbinary.graphics.color.BasicColorFactory_Package;
-   package DisplayInfoSingleton_Package renames org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
-   package CanvasDrawLineString_Package renames org.allbinary.graphics.draw.CanvasDrawLineString_Package;
-   package InitUpdatePaintable_Package renames org.allbinary.graphics.paint.InitUpdatePaintable_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+   package CanvasDrawLineString_Package renames Standard.org.allbinary.graphics.draw.CanvasDrawLineString_Package;
+   package InitUpdatePaintable_Package renames Standard.org.allbinary.graphics.paint.InitUpdatePaintable_Package;
 
    type PreGameSelectorPaintable is tagged;
    type PreGameSelectorPaintable_Access is access all PreGameSelectorPaintable'Class;

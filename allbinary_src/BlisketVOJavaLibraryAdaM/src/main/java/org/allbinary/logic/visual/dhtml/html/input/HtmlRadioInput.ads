@@ -25,7 +25,7 @@ with org.allbinary.logic.visual.dhtml.html.input.HtmlValueInput_Package; use org
 
 package org.allbinary.logic.visual.dhtml.html.input.HtmlRadioInput_Package is
 
-   package BooleanFactory_Package renames org.allbinary.logic.java.bool.BooleanFactory_Package;
+   package BooleanFactory_Package renames Standard.org.allbinary.logic.java.bool.BooleanFactory_Package;
 
    type HtmlRadioInput is tagged;
    type HtmlRadioInput_Access is access all HtmlRadioInput'Class;

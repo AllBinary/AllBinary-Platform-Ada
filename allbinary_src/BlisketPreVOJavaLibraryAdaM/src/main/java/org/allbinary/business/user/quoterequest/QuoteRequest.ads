@@ -38,18 +38,18 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.business.user.quoterequest.QuoteRequest_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package EntryData_Package renames org.allbinary.business.entry_Id.EntryData_Package;
-   package QuoteRequestData_Package renames org.allbinary.business.quoterequest.QuoteRequestData_Package;
-   package UserData_Package renames org.allbinary.business.user.UserData_Package;
-   package QuoteRequestIdGenerator_Package renames org.allbinary.data.generator.QuoteRequestIdGenerator_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package AbSqlData_Package renames org.allbinary.logic.communication.sql.AbSqlData_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package EntryData_Package renames Standard.org.allbinary.business.entry_Id.EntryData_Package;
+   package QuoteRequestData_Package renames Standard.org.allbinary.business.quoterequest.QuoteRequestData_Package;
+   package UserData_Package renames Standard.org.allbinary.business.user.UserData_Package;
+   package QuoteRequestIdGenerator_Package renames Standard.org.allbinary.data.generator.QuoteRequestIdGenerator_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package AbSqlData_Package renames Standard.org.allbinary.logic.communication.sql.AbSqlData_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type QuoteRequest is tagged;
    type QuoteRequest_Access is access all QuoteRequest'Class;

@@ -25,8 +25,8 @@ with org.allbinary.input.NoAllBinarySensor_Package; use org.allbinary.input.NoAl
 
 package org.allbinary.input.gyro.SensorGameUpdateProcessor_Package is
 
-   package AllBinarySensor_Package renames org.allbinary.input.AllBinarySensor_Package;
-   package NoAllBinarySensor_Package renames org.allbinary.input.NoAllBinarySensor_Package;
+   package AllBinarySensor_Package renames Standard.org.allbinary.input.AllBinarySensor_Package;
+   package NoAllBinarySensor_Package renames Standard.org.allbinary.input.NoAllBinarySensor_Package;
 
    type SensorGameUpdateProcessor is tagged;
    type SensorGameUpdateProcessor_Access is access all SensorGameUpdateProcessor'Class;

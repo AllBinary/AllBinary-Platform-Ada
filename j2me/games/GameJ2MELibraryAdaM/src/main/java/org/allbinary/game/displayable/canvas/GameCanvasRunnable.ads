@@ -29,11 +29,11 @@ with org.allbinary.game.displayable.canvas.GameRunnable_Package; use org.allbina
 
 package org.allbinary.game.displayable.canvas.GameCanvasRunnable_Package is
 
-   package GameTickDisplayInfoSingleton_Package renames org.allbinary.graphics.displayable.GameTickDisplayInfoSingleton_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package GameTickTimeDelayHelper_Package renames org.allbinary.time.GameTickTimeDelayHelper_Package;
-   package GameTickTimeDelayHelperFactory_Package renames org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
+   package GameTickDisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.GameTickDisplayInfoSingleton_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package GameTickTimeDelayHelper_Package renames Standard.org.allbinary.time.GameTickTimeDelayHelper_Package;
+   package GameTickTimeDelayHelperFactory_Package renames Standard.org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
 
    type GameCanvasRunnable is tagged;
    type GameCanvasRunnable_Access is access all GameCanvasRunnable'Class;

@@ -29,11 +29,11 @@ with playn.core.CanvasSurface_Package; use playn.core.CanvasSurface_Package;
 
 package org.allbinary.media.image.ImageJ2MEScaleUtil_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package PlaynImmutableImage_Package renames org.microemu.device.playn.PlaynImmutableImage_Package;
-   package PlaynMutableImage_Package renames org.microemu.device.playn.PlaynMutableImage_Package;
-   package CanvasImage_Package renames playn.core.CanvasImage_Package;
-   package CanvasSurface_Package renames playn.core.CanvasSurface_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package PlaynImmutableImage_Package renames Standard.org.microemu.device.playn.PlaynImmutableImage_Package;
+   package PlaynMutableImage_Package renames Standard.org.microemu.device.playn.PlaynMutableImage_Package;
+   package CanvasImage_Package renames Standard.playn.core.CanvasImage_Package;
+   package CanvasSurface_Package renames Standard.playn.core.CanvasSurface_Package;
 
    type ImageJ2MEScaleUtil is tagged;
    type ImageJ2MEScaleUtil_Access is access all ImageJ2MEScaleUtil'Class;

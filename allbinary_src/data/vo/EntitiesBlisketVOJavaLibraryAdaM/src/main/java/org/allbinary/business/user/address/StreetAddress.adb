@@ -316,12 +316,16 @@ package body org.allbinary.business.user.address.StreetAddress_Package is
             node.appendChild (This.toXmlNode (document));
             return node;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
                 commonStrings := CommonStrings_Package.getInstance;
                 This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("toValidationInfoNode"), e);
             end if;
             return null;
+                end;
         end;
    end toValidationInfoNode;
 

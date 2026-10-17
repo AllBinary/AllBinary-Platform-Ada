@@ -38,17 +38,17 @@ with org.allbinary.graphics.j2me.workarea.JPanel_Package; use org.allbinary.grap
 
 package org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package is
 
-   package CanvasTreeLabel_Package renames org.allbinary.graphics.j2me.workarea.canvas.CanvasTreeLabel_Package;
-   package MyCanvasEvent_Package renames org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package;
-   package MyCanvasEventService_Package renames org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package;
-   package MyCanvasEventSource_Package renames org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventSource_Package;
-   package MyGraphicItemEvent_Package renames org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent_Package;
-   package MyGraphicItemEventService_Package renames org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventService_Package;
-   package MyGraphicItemEventSource_Package renames org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventSource_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
+   package CanvasTreeLabel_Package renames Standard.org.allbinary.graphics.j2me.workarea.canvas.CanvasTreeLabel_Package;
+   package MyCanvasEvent_Package renames Standard.org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package;
+   package MyCanvasEventService_Package renames Standard.org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package;
+   package MyCanvasEventSource_Package renames Standard.org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventSource_Package;
+   package MyGraphicItemEvent_Package renames Standard.org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent_Package;
+   package MyGraphicItemEventService_Package renames Standard.org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventService_Package;
+   package MyGraphicItemEventSource_Package renames Standard.org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEventSource_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type WorkAreaJTreeJPanel is tagged;
    type WorkAreaJTreeJPanel_Access is access all WorkAreaJTreeJPanel'Class;

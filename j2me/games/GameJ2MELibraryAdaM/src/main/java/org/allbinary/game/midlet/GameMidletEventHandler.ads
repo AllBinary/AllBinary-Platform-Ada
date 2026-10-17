@@ -26,9 +26,9 @@ with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.a
 
 package org.allbinary.game.midlet.GameMidletEventHandler_Package is
 
-   package AllBinaryEventObject_Package renames org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-   package EventListenerInterface_Package renames org.allbinary.logic.util.event.EventListenerInterface_Package;
-   package BasicEventHandler_Package renames org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
+   package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+   package EventListenerInterface_Package renames Standard.org.allbinary.logic.util.event.EventListenerInterface_Package;
+   package BasicEventHandler_Package renames Standard.org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
 
    type GameMidletEventHandler is tagged;
    type GameMidletEventHandler_Access is access all GameMidletEventHandler'Class;

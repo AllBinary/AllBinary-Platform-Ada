@@ -31,14 +31,14 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 
 package org.allbinary.input.motion.button.TouchButtonRecognizer_Package is
 
-   package DownGameKeyEventHandler_Package renames org.allbinary.game.input.event.DownGameKeyEventHandler_Package;
-   package GameKeyEvent_Package renames org.allbinary.game.input.event.GameKeyEvent_Package;
-   package UpGameKeyEventHandler_Package renames org.allbinary.game.input.event.UpGameKeyEventHandler_Package;
-   package GPoint_Package renames org.allbinary.graphics.GPoint_Package;
-   package Rectangle_Package renames org.allbinary.graphics.Rectangle_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package RectangleCollisionUtil_Package renames org.allbinary.math.RectangleCollisionUtil_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package DownGameKeyEventHandler_Package renames Standard.org.allbinary.game.input.event.DownGameKeyEventHandler_Package;
+   package GameKeyEvent_Package renames Standard.org.allbinary.game.input.event.GameKeyEvent_Package;
+   package UpGameKeyEventHandler_Package renames Standard.org.allbinary.game.input.event.UpGameKeyEventHandler_Package;
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package RectangleCollisionUtil_Package renames Standard.org.allbinary.math.RectangleCollisionUtil_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type TouchButtonRecognizer is tagged;
    type TouchButtonRecognizer_Access is access all TouchButtonRecognizer'Class;
@@ -84,14 +84,14 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 
 package org.allbinary.input.motion.button.ReleaseHelper_Package is
 
-   package DownGameKeyEventHandler_Package renames org.allbinary.game.input.event.DownGameKeyEventHandler_Package;
-   package GameKeyEvent_Package renames org.allbinary.game.input.event.GameKeyEvent_Package;
-   package UpGameKeyEventHandler_Package renames org.allbinary.game.input.event.UpGameKeyEventHandler_Package;
-   package GPoint_Package renames org.allbinary.graphics.GPoint_Package;
-   package Rectangle_Package renames org.allbinary.graphics.Rectangle_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package RectangleCollisionUtil_Package renames org.allbinary.math.RectangleCollisionUtil_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package DownGameKeyEventHandler_Package renames Standard.org.allbinary.game.input.event.DownGameKeyEventHandler_Package;
+   package GameKeyEvent_Package renames Standard.org.allbinary.game.input.event.GameKeyEvent_Package;
+   package UpGameKeyEventHandler_Package renames Standard.org.allbinary.game.input.event.UpGameKeyEventHandler_Package;
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package RectangleCollisionUtil_Package renames Standard.org.allbinary.math.RectangleCollisionUtil_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type ReleaseHelper is tagged;
    type ReleaseHelper_Access is access all ReleaseHelper'Class;
@@ -127,14 +127,14 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 
 package org.allbinary.input.motion.button.MultitouchReleaseHelper_Package is
 
-   package DownGameKeyEventHandler_Package renames org.allbinary.game.input.event.DownGameKeyEventHandler_Package;
-   package GameKeyEvent_Package renames org.allbinary.game.input.event.GameKeyEvent_Package;
-   package UpGameKeyEventHandler_Package renames org.allbinary.game.input.event.UpGameKeyEventHandler_Package;
-   package GPoint_Package renames org.allbinary.graphics.GPoint_Package;
-   package Rectangle_Package renames org.allbinary.graphics.Rectangle_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package RectangleCollisionUtil_Package renames org.allbinary.math.RectangleCollisionUtil_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package DownGameKeyEventHandler_Package renames Standard.org.allbinary.game.input.event.DownGameKeyEventHandler_Package;
+   package GameKeyEvent_Package renames Standard.org.allbinary.game.input.event.GameKeyEvent_Package;
+   package UpGameKeyEventHandler_Package renames Standard.org.allbinary.game.input.event.UpGameKeyEventHandler_Package;
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package RectangleCollisionUtil_Package renames Standard.org.allbinary.math.RectangleCollisionUtil_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type MultitouchReleaseHelper is tagged;
    type MultitouchReleaseHelper_Access is access all MultitouchReleaseHelper'Class;

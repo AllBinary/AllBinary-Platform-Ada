@@ -25,8 +25,8 @@ with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.
 
 package org.allbinary.game.ag.ai.NullAI_Package is
 
-   package ArtificialIntelligence_Package renames org.allbinary.ai.ArtificialIntelligence_Package;
-   package AllBinaryLayerManager_Package renames org.allbinary.layer.AllBinaryLayerManager_Package;
+   package ArtificialIntelligence_Package renames Standard.org.allbinary.ai.ArtificialIntelligence_Package;
+   package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
 
    type NullAI is tagged;
    type NullAI_Access is access all NullAI'Class;

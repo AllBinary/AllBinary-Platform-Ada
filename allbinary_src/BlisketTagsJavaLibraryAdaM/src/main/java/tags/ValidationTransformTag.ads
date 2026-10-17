@@ -32,11 +32,11 @@ with tags.TransformTag_Package; use tags.TransformTag_Package;
 
 package tags.ValidationTransformTag_Package is
 
-   package AbResponseHandler_Package renames org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package LicensingException_Package renames org.allbinary.logic.system.security.licensing.LicensingException_Package;
-   package ValidatedViewHelperFactory_Package renames taghelpers.ValidatedViewHelperFactory_Package;
+   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package ValidatedViewHelperFactory_Package renames Standard.taghelpers.ValidatedViewHelperFactory_Package;
 
    type ValidationTransformTag is tagged;
    type ValidationTransformTag_Access is access all ValidationTransformTag'Class;

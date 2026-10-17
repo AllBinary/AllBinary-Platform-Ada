@@ -28,11 +28,11 @@ with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_
 
 package org.allbinary.logic.util.event.handler.BasicEventHandlerInterface_Package is
 
-   package JsType_Package renames jsinterop.annotations.JsType_Package;
-   package AllBinaryEventObject_Package renames org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-   package EventListenerInterface_Package renames org.allbinary.logic.util.event.EventListenerInterface_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package JsMethod_Package renames jsinterop.annotations.JsMethod_Package;
+   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
+   package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+   package EventListenerInterface_Package renames Standard.org.allbinary.logic.util.event.EventListenerInterface_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package JsMethod_Package renames Standard.jsinterop.annotations.JsMethod_Package;
 
    type BasicEventHandlerInterface is interface;
    type BasicEventHandlerInterface_Access is access all BasicEventHandlerInterface'Class;

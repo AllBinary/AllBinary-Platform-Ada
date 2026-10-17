@@ -26,7 +26,7 @@ with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Anim
 
 package org.allbinary.image.AnimationFrameToImageUtil_Package is
 
-   package Animation_Package renames org.allbinary.animation.Animation_Package;
+   package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
 
    type AnimationFrameToImageUtil is tagged;
    type AnimationFrameToImageUtil_Access is access all AnimationFrameToImageUtil'Class;

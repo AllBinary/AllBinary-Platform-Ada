@@ -44,24 +44,24 @@ with org.allbinary.input.automation.actions.script.condition.ProfileActionScript
 
 package org.allbinary.input.automation.actions.script.condition.BasicProfileActionScriptCondition_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package JTreeInterfaceFactory_Package renames org.allbinary.input.automation.actions.script.JTreeInterfaceFactory_Package;
-   package ProfileActionScriptItem_Package renames org.allbinary.input.automation.actions.script.ProfileActionScriptItem_Package;
-   package ProfileActionScriptNodeInterface_Package renames org.allbinary.input.automation.actions.script.ProfileActionScriptNodeInterface_Package;
-   package ProfileActionScriptProcessorInterface_Package renames org.allbinary.input.automation.actions.script.condition.processors.ProfileActionScriptProcessorInterface_Package;
-   package GenericProfileActionScriptInputData_Package renames org.allbinary.input.automation.actions.script.condition.processors.input.GenericProfileActionScriptInputData_Package;
-   package KeyboardActionScriptInput_Package renames org.allbinary.input.automation.actions.script.condition.processors.input.KeyboardActionScriptInput_Package;
-   package MouseActionScriptInput_Package renames org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInput_Package;
-   package ProfileActionScriptInputFactory_Package renames org.allbinary.input.automation.actions.script.condition.processors.input.ProfileActionScriptInputFactory_Package;
-   package GenericProfileActionScriptOutputData_Package renames org.allbinary.input.automation.module.actions.script.condition.processors.output.GenericProfileActionScriptOutputData_Package;
-   package ImageActionScriptOutput_Package renames org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutput_Package;
-   package ProfileActionScriptOutputFactory_Package renames org.allbinary.input.automation.module.actions.script.condition.processors.output.ProfileActionScriptOutputFactory_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
-   package NodeList_Package renames org.w3c.dom.NodeList_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package JTreeInterfaceFactory_Package renames Standard.org.allbinary.input.automation.actions.script.JTreeInterfaceFactory_Package;
+   package ProfileActionScriptItem_Package renames Standard.org.allbinary.input.automation.actions.script.ProfileActionScriptItem_Package;
+   package ProfileActionScriptNodeInterface_Package renames Standard.org.allbinary.input.automation.actions.script.ProfileActionScriptNodeInterface_Package;
+   package ProfileActionScriptProcessorInterface_Package renames Standard.org.allbinary.input.automation.actions.script.condition.processors.ProfileActionScriptProcessorInterface_Package;
+   package GenericProfileActionScriptInputData_Package renames Standard.org.allbinary.input.automation.actions.script.condition.processors.input.GenericProfileActionScriptInputData_Package;
+   package KeyboardActionScriptInput_Package renames Standard.org.allbinary.input.automation.actions.script.condition.processors.input.KeyboardActionScriptInput_Package;
+   package MouseActionScriptInput_Package renames Standard.org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInput_Package;
+   package ProfileActionScriptInputFactory_Package renames Standard.org.allbinary.input.automation.actions.script.condition.processors.input.ProfileActionScriptInputFactory_Package;
+   package GenericProfileActionScriptOutputData_Package renames Standard.org.allbinary.input.automation.module.actions.script.condition.processors.output.GenericProfileActionScriptOutputData_Package;
+   package ImageActionScriptOutput_Package renames Standard.org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutput_Package;
+   package ProfileActionScriptOutputFactory_Package renames Standard.org.allbinary.input.automation.module.actions.script.condition.processors.output.ProfileActionScriptOutputFactory_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
+   package NodeList_Package renames Standard.org.w3c.dom.NodeList_Package;
 
    type BasicProfileActionScriptCondition is tagged;
    type BasicProfileActionScriptCondition_Access is access all BasicProfileActionScriptCondition'Class;

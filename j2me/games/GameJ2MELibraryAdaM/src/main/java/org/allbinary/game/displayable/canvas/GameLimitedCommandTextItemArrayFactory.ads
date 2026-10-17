@@ -25,8 +25,8 @@ with org.allbinary.graphics.form.item.LimitCommandsVisitor_Package; use org.allb
 
 package org.allbinary.game.displayable.canvas.GameLimitedCommandTextItemArrayFactory_Package is
 
-   package CommandTextItemArrayFactory_Package renames org.allbinary.graphics.form.item.CommandTextItemArrayFactory_Package;
-   package LimitCommandsVisitor_Package renames org.allbinary.graphics.form.item.LimitCommandsVisitor_Package;
+   package CommandTextItemArrayFactory_Package renames Standard.org.allbinary.graphics.form.item.CommandTextItemArrayFactory_Package;
+   package LimitCommandsVisitor_Package renames Standard.org.allbinary.graphics.form.item.LimitCommandsVisitor_Package;
 
    type GameLimitedCommandTextItemArrayFactory is tagged;
    type GameLimitedCommandTextItemArrayFactory_Access is access all GameLimitedCommandTextItemArrayFactory'Class;

@@ -25,8 +25,8 @@ with org.allbinary.game.combat.destroy.DestroyableBaseBehavior_Package; use org.
 
 package org.allbinary.game.combat.CombatBaseBehavior_Package is
 
-   package DamageableBaseBehavior_Package renames org.allbinary.game.combat.damage.DamageableBaseBehavior_Package;
-   package DestroyableBaseBehavior_Package renames org.allbinary.game.combat.destroy.DestroyableBaseBehavior_Package;
+   package DamageableBaseBehavior_Package renames Standard.org.allbinary.game.combat.damage.DamageableBaseBehavior_Package;
+   package DestroyableBaseBehavior_Package renames Standard.org.allbinary.game.combat.destroy.DestroyableBaseBehavior_Package;
 
    type CombatBaseBehavior is tagged;
    type CombatBaseBehavior_Access is access all CombatBaseBehavior'Class;

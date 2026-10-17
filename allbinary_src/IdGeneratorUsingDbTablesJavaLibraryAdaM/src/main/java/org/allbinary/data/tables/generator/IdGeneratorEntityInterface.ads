@@ -27,9 +27,9 @@ with org.allbinary.data.tables.BasicDataTableInterface_Package; use org.allbinar
 
 package org.allbinary.data.tables.generator.IdGeneratorEntityInterface_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package BasicDataTableInterface_Package renames org.allbinary.data.tables.BasicDataTableInterface_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package BasicDataTableInterface_Package renames Standard.org.allbinary.data.tables.BasicDataTableInterface_Package;
 
    type IdGeneratorEntityInterface is interface and BasicDataTableInterface;
    type IdGeneratorEntityInterface_Access is access all IdGeneratorEntityInterface'Class;

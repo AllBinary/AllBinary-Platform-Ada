@@ -27,9 +27,9 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 
 package org.allbinary.logic.io.file.filter.BasicFileFilterUtil_Package is
 
-   package IncludeFileExtensionsBooleanFileVisitor_Package renames org.allbinary.logic.io.file.visitor.IncludeFileExtensionsBooleanFileVisitor_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
+   package IncludeFileExtensionsBooleanFileVisitor_Package renames Standard.org.allbinary.logic.io.file.visitor.IncludeFileExtensionsBooleanFileVisitor_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type BasicFileFilterUtil is tagged;
    type BasicFileFilterUtil_Access is access all BasicFileFilterUtil'Class;

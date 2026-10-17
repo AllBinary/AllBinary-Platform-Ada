@@ -24,7 +24,7 @@ with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use 
 
 package org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorFactoryBase_Package is
 
-   package BasicGeographicMap_Package renames org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
+   package BasicGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
 
    type PathFinderGraphVisitorFactoryBase is tagged;
    type PathFinderGraphVisitorFactoryBase_Access is access all PathFinderGraphVisitorFactoryBase'Class;

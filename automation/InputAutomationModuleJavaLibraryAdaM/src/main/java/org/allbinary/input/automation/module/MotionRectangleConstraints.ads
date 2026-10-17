@@ -25,7 +25,7 @@ with org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInter
 
 package org.allbinary.input.automation.module.MotionRectangleConstraints_Package is
 
-   package MotionRectangleConstraintsInterface_Package renames org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInterface_Package;
+   package MotionRectangleConstraintsInterface_Package renames Standard.org.allbinary.media.image.comparison.motion.MotionRectangleConstraintsInterface_Package;
 
    type MotionRectangleConstraints is tagged;
    type MotionRectangleConstraints_Access is access all MotionRectangleConstraints'Class;

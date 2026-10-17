@@ -34,16 +34,16 @@ with org.allbinary.game.layer.PathFindingLayerInterface_Package; use org.allbina
 
 package org.allbinary.game.layer.NullPathFindingLayer_Package is
 
-   package CaptionAnimationHelperBase_Package renames org.allbinary.animation.caption.CaptionAnimationHelperBase_Package;
-   package Group_Package renames org.allbinary.game.identification.Group_Package;
-   package Waypoint2LogHelper_Package renames org.allbinary.game.layer.waypoint.Waypoint2LogHelper_Package;
-   package WaypointLogHelper_Package renames org.allbinary.game.layer.waypoint.WaypointLogHelper_Package;
-   package WaypointRunnableLogHelper_Package renames org.allbinary.game.layer.waypoint.WaypointRunnableLogHelper_Package;
-   package TrackingEvent_Package renames org.allbinary.game.tracking.TrackingEvent_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package GeographicMapCellHistory_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package;
-   package GeographicMapCellPosition_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package CaptionAnimationHelperBase_Package renames Standard.org.allbinary.animation.caption.CaptionAnimationHelperBase_Package;
+   package Group_Package renames Standard.org.allbinary.game.identification.Group_Package;
+   package Waypoint2LogHelper_Package renames Standard.org.allbinary.game.layer.waypoint.Waypoint2LogHelper_Package;
+   package WaypointLogHelper_Package renames Standard.org.allbinary.game.layer.waypoint.WaypointLogHelper_Package;
+   package WaypointRunnableLogHelper_Package renames Standard.org.allbinary.game.layer.waypoint.WaypointRunnableLogHelper_Package;
+   package TrackingEvent_Package renames Standard.org.allbinary.game.tracking.TrackingEvent_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package GeographicMapCellHistory_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package;
+   package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type NullPathFindingLayer is tagged;
    type NullPathFindingLayer_Access is access all NullPathFindingLayer'Class;

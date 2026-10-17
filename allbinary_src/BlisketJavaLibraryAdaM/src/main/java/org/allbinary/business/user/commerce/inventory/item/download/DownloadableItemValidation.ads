@@ -30,13 +30,13 @@ with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 
 package org.allbinary.business.user.commerce.inventory.item.download.DownloadableItemValidation_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package AbSqlData_Package renames org.allbinary.logic.communication.sql.AbSqlData_Package;
-   package Validation_Package renames org.allbinary.logic.control.validate.Validation_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringValidationUtil_Package renames org.allbinary.logic.string_Id.StringValidationUtil_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package AbSqlData_Package renames Standard.org.allbinary.logic.communication.sql.AbSqlData_Package;
+   package Validation_Package renames Standard.org.allbinary.logic.control.validate.Validation_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type DownloadableItemValidation is tagged;
    type DownloadableItemValidation_Access is access all DownloadableItemValidation'Class;

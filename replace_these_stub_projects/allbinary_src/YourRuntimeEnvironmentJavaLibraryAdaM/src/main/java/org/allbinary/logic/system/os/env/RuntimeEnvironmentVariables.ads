@@ -19,11 +19,11 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.logic.system.os.env.RuntimeEnvironmentVariables_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package GenericOperatingSystem_Package renames org.allbinary.logic.system.os.GenericOperatingSystem_Package;
-   package OperatingSystemFactory_Package renames org.allbinary.logic.system.os.OperatingSystemFactory_Package;
-   package OperatingSystems_Package renames org.allbinary.logic.system.os.OperatingSystems_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package GenericOperatingSystem_Package renames Standard.org.allbinary.logic.system.os.GenericOperatingSystem_Package;
+   package OperatingSystemFactory_Package renames Standard.org.allbinary.logic.system.os.OperatingSystemFactory_Package;
+   package OperatingSystems_Package renames Standard.org.allbinary.logic.system.os.OperatingSystems_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type RuntimeEnvironmentVariables is tagged;
    type RuntimeEnvironmentVariables_Access is access all RuntimeEnvironmentVariables'Class;

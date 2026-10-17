@@ -51,32 +51,32 @@ with org.allbinary.game.input.PlayerGameInput_Package; use org.allbinary.game.in
 
 package org.allbinary.game.input.SelectedRTSLayersPlayerGameInput_Package is
 
-   package RTSGameStrings_Package renames org.allbinary.game.layer.RTSGameStrings_Package;
-   package RTSLayer_Package renames org.allbinary.game.layer.RTSLayer_Package;
-   package RTSLayerInfoPaintable_Package renames org.allbinary.game.layer.RTSLayerInfoPaintable_Package;
-   package RTSPlayerLayerInterface_Package renames org.allbinary.game.layer.RTSPlayerLayerInterface_Package;
-   package Capital_Package renames org.allbinary.game.layer.capital.Capital_Package;
-   package DowngradeSound_Package renames org.allbinary.media.audio.DowngradeSound_Package;
-   package UpgradeSound_Package renames org.allbinary.media.audio.UpgradeSound_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package BasicArrayListUtil_Package renames org.allbinary.util.BasicArrayListUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package BooleanFactory_Package renames org.allbinary.logic.java.bool.BooleanFactory_Package;
-   package Features_Package renames org.allbinary.game.configuration.feature.Features_Package;
-   package InputFeatureFactory_Package renames org.allbinary.game.configuration.feature.InputFeatureFactory_Package;
-   package GameKeyEvent_Package renames org.allbinary.game.input.event.GameKeyEvent_Package;
-   package AllBinaryGameLayerManager_Package renames org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
-   package GameNotificationEvent_Package renames org.allbinary.game.layer.hud.event.GameNotificationEvent_Package;
-   package GameNotificationEventHandler_Package renames org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package;
-   package CollidableDestroyableDamageableLayer_Package renames org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
-   package BasicColorFactory_Package renames org.allbinary.graphics.color.BasicColorFactory_Package;
-   package AllBinaryLayerManager_Package renames org.allbinary.layer.AllBinaryLayerManager_Package;
-   package Visitor_Package renames org.allbinary.logic.util.visitor.Visitor_Package;
-   package SmallIntegerSingletonFactory_Package renames org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
-   package ErrorSound_Package renames org.allbinary.media.audio.ErrorSound_Package;
-   package BasicGeographicMap_Package renames org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
-   package GeographicMapCompositeInterface_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package;
+   package RTSGameStrings_Package renames Standard.org.allbinary.game.layer.RTSGameStrings_Package;
+   package RTSLayer_Package renames Standard.org.allbinary.game.layer.RTSLayer_Package;
+   package RTSLayerInfoPaintable_Package renames Standard.org.allbinary.game.layer.RTSLayerInfoPaintable_Package;
+   package RTSPlayerLayerInterface_Package renames Standard.org.allbinary.game.layer.RTSPlayerLayerInterface_Package;
+   package Capital_Package renames Standard.org.allbinary.game.layer.capital.Capital_Package;
+   package DowngradeSound_Package renames Standard.org.allbinary.media.audio.DowngradeSound_Package;
+   package UpgradeSound_Package renames Standard.org.allbinary.media.audio.UpgradeSound_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package BooleanFactory_Package renames Standard.org.allbinary.logic.java.bool.BooleanFactory_Package;
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
+   package InputFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.InputFeatureFactory_Package;
+   package GameKeyEvent_Package renames Standard.org.allbinary.game.input.event.GameKeyEvent_Package;
+   package AllBinaryGameLayerManager_Package renames Standard.org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
+   package GameNotificationEvent_Package renames Standard.org.allbinary.game.layer.hud.event.GameNotificationEvent_Package;
+   package GameNotificationEventHandler_Package renames Standard.org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package;
+   package CollidableDestroyableDamageableLayer_Package renames Standard.org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
+   package Visitor_Package renames Standard.org.allbinary.logic.util.visitor.Visitor_Package;
+   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+   package ErrorSound_Package renames Standard.org.allbinary.media.audio.ErrorSound_Package;
+   package BasicGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
+   package GeographicMapCompositeInterface_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package;
 
    type SelectedRTSLayersPlayerGameInput is tagged;
    type SelectedRTSLayersPlayerGameInput_Access is access all SelectedRTSLayersPlayerGameInput'Class;

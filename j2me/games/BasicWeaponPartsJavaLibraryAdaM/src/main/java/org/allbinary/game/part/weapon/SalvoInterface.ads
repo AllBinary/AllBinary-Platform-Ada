@@ -26,9 +26,9 @@ with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.
 
 package org.allbinary.game.part.weapon.SalvoInterface_Package is
 
-   package WeaponProperties_Package renames org.allbinary.game.combat.weapon.WeaponProperties_Package;
-   package ScoreableInterface_Package renames org.allbinary.game.score.ScoreableInterface_Package;
-   package AllBinaryLayerManager_Package renames org.allbinary.layer.AllBinaryLayerManager_Package;
+   package WeaponProperties_Package renames Standard.org.allbinary.game.combat.weapon.WeaponProperties_Package;
+   package ScoreableInterface_Package renames Standard.org.allbinary.game.score.ScoreableInterface_Package;
+   package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
 
    type SalvoInterface is interface;
    type SalvoInterface_Access is access all SalvoInterface'Class;

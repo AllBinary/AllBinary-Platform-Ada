@@ -24,7 +24,7 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.game.score.RemoteErrorHighScoresSingletonFactory_Package is
 
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type RemoteErrorHighScoresSingletonFactory is tagged;
    type RemoteErrorHighScoresSingletonFactory_Access is access all RemoteErrorHighScoresSingletonFactory'Class;

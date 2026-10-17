@@ -48,29 +48,29 @@ with org.allbinary.game.layer.special.SpecialGameInputInterface_Package; use org
 
 package org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package is
 
-   package CollidableNeverCollideBehaviorFactory_Package renames org.allbinary.game.collision.CollidableNeverCollideBehaviorFactory_Package;
-   package DamageableInterface_Package renames org.allbinary.game.combat.damage.DamageableInterface_Package;
-   package DestroyableInterface_Package renames org.allbinary.game.combat.destroy.DestroyableInterface_Package;
-   package DestroyedEvent_Package renames org.allbinary.game.combat.destroy.event.DestroyedEvent_Package;
-   package BasicGroupFactory_Package renames org.allbinary.game.identification.BasicGroupFactory_Package;
-   package Group_Package renames org.allbinary.game.identification.Group_Package;
-   package GameKeyEvent_Package renames org.allbinary.game.input.event.GameKeyEvent_Package;
-   package AllBinaryGameLayerManager_Package renames org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
-   package CollidableCompositeLayer_Package renames org.allbinary.game.layer.CollidableCompositeLayer_Package;
-   package PickedUpLayerInterfaceFactoryInterface_Package renames org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package;
-   package PickupBehavior_Package renames org.allbinary.game.layer.pickup.PickupBehavior_Package;
-   package PickupCompositeInterface_Package renames org.allbinary.game.layer.pickup.PickupCompositeInterface_Package;
-   package PartInterface_Package renames org.allbinary.game.part.PartInterface_Package;
-   package PartInterfaceUtil_Package renames org.allbinary.game.part.PartInterfaceUtil_Package;
-   package Rectangle_Package renames org.allbinary.graphics.Rectangle_Package;
-   package RectangleFactory_Package renames org.allbinary.graphics.RectangleFactory_Package;
-   package AllBinaryLayerManager_Package renames org.allbinary.layer.AllBinaryLayerManager_Package;
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package PositionStrings_Package renames org.allbinary.math.PositionStrings_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
-   package ViewPositionBase_Package renames org.allbinary.view.ViewPositionBase_Package;
+   package CollidableNeverCollideBehaviorFactory_Package renames Standard.org.allbinary.game.collision.CollidableNeverCollideBehaviorFactory_Package;
+   package DamageableInterface_Package renames Standard.org.allbinary.game.combat.damage.DamageableInterface_Package;
+   package DestroyableInterface_Package renames Standard.org.allbinary.game.combat.destroy.DestroyableInterface_Package;
+   package DestroyedEvent_Package renames Standard.org.allbinary.game.combat.destroy.event.DestroyedEvent_Package;
+   package BasicGroupFactory_Package renames Standard.org.allbinary.game.identification.BasicGroupFactory_Package;
+   package Group_Package renames Standard.org.allbinary.game.identification.Group_Package;
+   package GameKeyEvent_Package renames Standard.org.allbinary.game.input.event.GameKeyEvent_Package;
+   package AllBinaryGameLayerManager_Package renames Standard.org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
+   package CollidableCompositeLayer_Package renames Standard.org.allbinary.game.layer.CollidableCompositeLayer_Package;
+   package PickedUpLayerInterfaceFactoryInterface_Package renames Standard.org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package;
+   package PickupBehavior_Package renames Standard.org.allbinary.game.layer.pickup.PickupBehavior_Package;
+   package PickupCompositeInterface_Package renames Standard.org.allbinary.game.layer.pickup.PickupCompositeInterface_Package;
+   package PartInterface_Package renames Standard.org.allbinary.game.part.PartInterface_Package;
+   package PartInterfaceUtil_Package renames Standard.org.allbinary.game.part.PartInterfaceUtil_Package;
+   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
+   package RectangleFactory_Package renames Standard.org.allbinary.graphics.RectangleFactory_Package;
+   package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package PositionStrings_Package renames Standard.org.allbinary.math.PositionStrings_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package ViewPositionBase_Package renames Standard.org.allbinary.view.ViewPositionBase_Package;
 
    type CollidableDestroyableDamageableLayer is tagged;
    type CollidableDestroyableDamageableLayer_Access is access all CollidableDestroyableDamageableLayer'Class;

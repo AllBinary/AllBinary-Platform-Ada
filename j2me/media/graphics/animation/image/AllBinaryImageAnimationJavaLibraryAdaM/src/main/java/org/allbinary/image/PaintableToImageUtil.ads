@@ -26,7 +26,7 @@ with org.allbinary.graphics.paint.PaintableInterface_Package; use org.allbinary.
 
 package org.allbinary.image.PaintableToImageUtil_Package is
 
-   package PaintableInterface_Package renames org.allbinary.graphics.paint.PaintableInterface_Package;
+   package PaintableInterface_Package renames Standard.org.allbinary.graphics.paint.PaintableInterface_Package;
 
    type PaintableToImageUtil is tagged;
    type PaintableToImageUtil_Access is access all PaintableToImageUtil'Class;

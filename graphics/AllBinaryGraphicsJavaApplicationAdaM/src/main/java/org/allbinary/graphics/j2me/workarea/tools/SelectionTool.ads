@@ -36,16 +36,16 @@ with org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package; us
 
 package org.allbinary.graphics.j2me.workarea.tools.SelectionTool_Package is
 
-   package GPoint_Package renames org.allbinary.graphics.GPoint_Package;
-   package PointFactory_Package renames org.allbinary.graphics.PointFactory_Package;
-   package BasicColorFactory_Package renames org.allbinary.graphics.color.BasicColorFactory_Package;
-   package CanvasDom_Package renames org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package;
-   package CanvasJPanel_Package renames org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package;
-   package IntegerDimension_Package renames org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package RectangleCollisionPointUtil_Package renames org.allbinary.math.RectangleCollisionPointUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package CanvasDom_Package renames Standard.org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package;
+   package CanvasJPanel_Package renames Standard.org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package;
+   package IntegerDimension_Package renames Standard.org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package RectangleCollisionPointUtil_Package renames Standard.org.allbinary.math.RectangleCollisionPointUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type SelectionTool is tagged;
    type SelectionTool_Access is access all SelectionTool'Class;

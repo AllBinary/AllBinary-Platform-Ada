@@ -50,9 +50,13 @@ package body bundle.input.automation.InputAutomationBundleActivator_Package is
             InputAutomationBundleActivator_Package.moduleManagementThread.start;
             InputAutomationJFrame_Package.create (This'Unchecked_Access);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.START, e);
             Java_Throw (e);
+                end;
         end;
    end start;
 

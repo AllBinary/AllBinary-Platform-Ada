@@ -27,7 +27,7 @@ with org.allbinary.logic.system.security.crypt.jcehelper.BaseSecretComposite_Pac
 
 package org.allbinary.logic.system.security.crypt.jcehelper.SecretComposite_Package is
 
-   package ByteUtil_Package renames org.allbinary.logic.java.byteutil.ByteUtil_Package;
+   package ByteUtil_Package renames Standard.org.allbinary.logic.java.byteutil.ByteUtil_Package;
 
    type SecretComposite is tagged;
    type SecretComposite_Access is access all SecretComposite'Class;

@@ -24,7 +24,7 @@ with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Pack
 
 package org.allbinary.logic.ABSystemWrapper_Package is
 
-   package JsType_Package renames jsinterop.annotations.JsType_Package;
+   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
 
    type ABSystemWrapper is tagged;
    type ABSystemWrapper_Access is access all ABSystemWrapper'Class;

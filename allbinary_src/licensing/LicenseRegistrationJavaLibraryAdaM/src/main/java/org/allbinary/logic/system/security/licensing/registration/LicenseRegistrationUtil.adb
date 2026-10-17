@@ -50,8 +50,12 @@ package body org.allbinary.logic.system.security.licensing.registration.LicenseR
             hashtable.put (To_Unbounded_String ("message"), SpecialMessageUtil_Package.getInstance.get);
             XmlRpcRemoteLicenseRegistrationClient_Package.Create (abeClientInformation).get (hashtable);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             PreLogUtil_Package.putOE (To_Unbounded_String ("License Registration Exception"), To_Unbounded_String ("LicenseRegistrationUtil"), To_Unbounded_String ("License Registration"), e);
+                end;
         end;
    end process;
 

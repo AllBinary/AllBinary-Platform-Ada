@@ -24,7 +24,7 @@ with org.allbinary.input.motion.button.TouchButtonResource_Package; use org.allb
 
 package org.allbinary.game.input.resource.TouchButtonUpgradeResource_Package is
 
-   package TouchButtonResource_Package renames org.allbinary.input.motion.button.TouchButtonResource_Package;
+   package TouchButtonResource_Package renames Standard.org.allbinary.input.motion.button.TouchButtonResource_Package;
 
    type TouchButtonUpgradeResource is tagged;
    type TouchButtonUpgradeResource_Access is access all TouchButtonUpgradeResource'Class;

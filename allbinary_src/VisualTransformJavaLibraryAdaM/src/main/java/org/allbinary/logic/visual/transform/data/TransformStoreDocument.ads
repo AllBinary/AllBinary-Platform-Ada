@@ -31,11 +31,11 @@ with org.allbinary.logic.visual.transform.data.TransformHttpRequestDocument_Pack
 
 package org.allbinary.logic.visual.transform.data.TransformStoreDocument_Package is
 
-   package StoreFrontViewFactory_Package renames org.allbinary.business.context.modules.storefront.StoreFrontViewFactory_Package;
-   package RequestParams_Package renames org.allbinary.logic.communication.http.request.RequestParams_Package;
-   package WeblisketSession_Package renames org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package SearchRequest_Package renames org.allbinary.logic.control.search.SearchRequest_Package;
+   package StoreFrontViewFactory_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontViewFactory_Package;
+   package RequestParams_Package renames Standard.org.allbinary.logic.communication.http.request.RequestParams_Package;
+   package WeblisketSession_Package renames Standard.org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package SearchRequest_Package renames Standard.org.allbinary.logic.control.search.SearchRequest_Package;
 
    type TransformStoreDocument is tagged;
    type TransformStoreDocument_Access is access all TransformStoreDocument'Class;

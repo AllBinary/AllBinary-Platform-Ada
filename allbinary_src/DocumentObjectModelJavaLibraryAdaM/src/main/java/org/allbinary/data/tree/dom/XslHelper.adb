@@ -50,8 +50,12 @@ package body org.allbinary.data.tree.dom.XslHelper_Package is
             transformer.transform (xmlStreamSource, streamResult);
             return streamResult.getOutputStream;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Java_Throw (e);
+                end;
         end;
    end translate;
 
@@ -67,8 +71,12 @@ package body org.allbinary.data.tree.dom.XslHelper_Package is
             transformer.transform (xmlStreamSource, streamResult);
             return streamResult.getOutputStream;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Java_Throw (e);
+                end;
         end;
    end translate;
 
@@ -80,8 +88,12 @@ package body org.allbinary.data.tree.dom.XslHelper_Package is
             outputStream := ByteArrayOutputStream_Package.Create;
             return This.translate (xsltStreamSource, StreamSource_Package.Create (StringBufferInputStream_Package.Create (XmlDocumentHelper_Package.toString (xmlDocument))), StreamResult_Package.Create (outputStream)).toString;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Java_Throw (e);
+                end;
         end;
    end translate;
 
@@ -93,8 +105,12 @@ package body org.allbinary.data.tree.dom.XslHelper_Package is
             outputStream := ByteArrayOutputStream_Package.Create;
             return This.translate (xsltStreamSource, xmlStreamSource, StreamResult_Package.Create (outputStream)).toString;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Java_Throw (e);
+                end;
         end;
    end translate;
 
@@ -106,8 +122,12 @@ package body org.allbinary.data.tree.dom.XslHelper_Package is
             outputStream := ByteArrayOutputStream_Package.Create;
             return This.translate (resolver, xsltStreamSource, xmlStreamSource, StreamResult_Package.Create (outputStream)).toString;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Java_Throw (e);
+                end;
         end;
    end translate;
 
@@ -118,8 +138,12 @@ package body org.allbinary.data.tree.dom.XslHelper_Package is
             outputFile.createNewFile;
             This.translate (StreamSource_Package.Create (xsltFilePath), StreamSource_Package.Create (StringBufferInputStream_Package.Create (XmlDocumentHelper_Package.toString (xmlDocument))), StreamResult_Package.Create (outputFile));
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Java_Throw (e);
+                end;
         end;
    end export;
 

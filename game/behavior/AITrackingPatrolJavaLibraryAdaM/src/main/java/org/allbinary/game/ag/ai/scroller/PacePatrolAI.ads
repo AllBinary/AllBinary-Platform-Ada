@@ -41,22 +41,22 @@ with org.allbinary.game.ag.ai.scroller.BasePatrolAI_Package; use org.allbinary.g
 
 package org.allbinary.game.ag.ai.scroller.PacePatrolAI_Package is
 
-   package Direction_Package renames org.allbinary.direction.Direction_Package;
-   package DirectionCompositeInterface_Package renames org.allbinary.direction.DirectionCompositeInterface_Package;
-   package DirectionFactory_Package renames org.allbinary.direction.DirectionFactory_Package;
-   package GameInput_Package renames org.allbinary.game.input.GameInput_Package;
-   package TrackingEvent_Package renames org.allbinary.game.tracking.TrackingEvent_Package;
-   package TrackingEventHandler_Package renames org.allbinary.game.tracking.TrackingEventHandler_Package;
-   package TrackingEventListenerInterface_Package renames org.allbinary.game.tracking.TrackingEventListenerInterface_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package AllBinaryLayerManager_Package renames org.allbinary.layer.AllBinaryLayerManager_Package;
-   package LayerInterface_Package renames org.allbinary.layer.LayerInterface_Package;
-   package ForcedLogUtil_Package renames org.allbinary.logic.communication.log.ForcedLogUtil_Package;
-   package AllBinaryEventObject_Package renames org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-   package EventStrings_Package renames org.allbinary.logic.util.event.EventStrings_Package;
-   package ABHashtable_Package renames org.allbinary.util.ABHashtable_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
+   package Direction_Package renames Standard.org.allbinary.direction.Direction_Package;
+   package DirectionCompositeInterface_Package renames Standard.org.allbinary.direction.DirectionCompositeInterface_Package;
+   package DirectionFactory_Package renames Standard.org.allbinary.direction.DirectionFactory_Package;
+   package GameInput_Package renames Standard.org.allbinary.game.input.GameInput_Package;
+   package TrackingEvent_Package renames Standard.org.allbinary.game.tracking.TrackingEvent_Package;
+   package TrackingEventHandler_Package renames Standard.org.allbinary.game.tracking.TrackingEventHandler_Package;
+   package TrackingEventListenerInterface_Package renames Standard.org.allbinary.game.tracking.TrackingEventListenerInterface_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
+   package LayerInterface_Package renames Standard.org.allbinary.layer.LayerInterface_Package;
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+   package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+   package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type PacePatrolAI is tagged;
    type PacePatrolAI_Access is access all PacePatrolAI'Class;

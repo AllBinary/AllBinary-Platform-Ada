@@ -59,8 +59,12 @@ package body admin.tags.PaymentTag_Package is
             result := Unbounded_String (method.invoke (anyType, null));
             return result;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Java_Throw (e);
+                end;
         end;
    end select_Id;
 
@@ -86,9 +90,13 @@ package body admin.tags.PaymentTag_Package is
             end if;
             return SKIP_BODY;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             AbResponseHandler_Package.sendJspTagLicensingRedirect (This.pageContext, e);
             return SKIP_BODY;
+                end;
         end;
    end doStartTag;
 

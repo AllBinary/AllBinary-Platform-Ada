@@ -27,8 +27,8 @@ with org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Packag
 
 package org.allbinary.animation.NullSpecialAnimationFactory_Package is
 
-   package SpecialAnimation_Package renames org.allbinary.animation.special.SpecialAnimation_Package;
-   package ScaleProperties_Package renames org.allbinary.media.ScaleProperties_Package;
+   package SpecialAnimation_Package renames Standard.org.allbinary.animation.special.SpecialAnimation_Package;
+   package ScaleProperties_Package renames Standard.org.allbinary.media.ScaleProperties_Package;
 
    type NullSpecialAnimationFactory is tagged;
    type NullSpecialAnimationFactory_Access is access all NullSpecialAnimationFactory'Class;

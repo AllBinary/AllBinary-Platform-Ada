@@ -24,7 +24,7 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 
 package org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorBase_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type PathFinderGraphVisitorBase is tagged;
    type PathFinderGraphVisitorBase_Access is access all PathFinderGraphVisitorBase'Class;

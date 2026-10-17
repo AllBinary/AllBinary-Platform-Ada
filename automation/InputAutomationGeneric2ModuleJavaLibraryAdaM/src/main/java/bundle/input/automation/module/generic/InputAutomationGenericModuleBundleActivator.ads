@@ -25,8 +25,8 @@ with org.allbinary.input.automation.module.osgi.InputAutomationModuleBundleActiv
 
 package bundle.input.automation.module.generic_Id.InputAutomationGenericModuleBundleActivator_Package is
 
-   package InputAutomationGenericModuleServiceFactory_Package renames org.allbinary.input.automation.module.generic_Id.InputAutomationGenericModuleServiceFactory_Package;
-   package InputAutomationModuleBundleActivator_Package renames org.allbinary.input.automation.module.osgi.InputAutomationModuleBundleActivator_Package;
+   package InputAutomationGenericModuleServiceFactory_Package renames Standard.org.allbinary.input.automation.module.generic_Id.InputAutomationGenericModuleServiceFactory_Package;
+   package InputAutomationModuleBundleActivator_Package renames Standard.org.allbinary.input.automation.module.osgi.InputAutomationModuleBundleActivator_Package;
 
    type InputAutomationGenericModuleBundleActivator is tagged;
    type InputAutomationGenericModuleBundleActivator_Access is access all InputAutomationGenericModuleBundleActivator'Class;

@@ -27,9 +27,9 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 
 package org.allbinary.game.layer.RTSLayerCompositePaintable_Package is
 
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package Paintable_Package renames org.allbinary.graphics.paint.Paintable_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package Paintable_Package renames Standard.org.allbinary.graphics.paint.Paintable_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
 
    type RTSLayerCompositePaintable is tagged;
    type RTSLayerCompositePaintable_Access is access all RTSLayerCompositePaintable'Class;

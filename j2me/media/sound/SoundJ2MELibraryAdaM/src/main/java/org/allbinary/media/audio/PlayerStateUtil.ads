@@ -25,7 +25,7 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.media.audio.PlayerStateUtil_Package is
 
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type PlayerStateUtil is tagged;
    type PlayerStateUtil_Access is access all PlayerStateUtil'Class;

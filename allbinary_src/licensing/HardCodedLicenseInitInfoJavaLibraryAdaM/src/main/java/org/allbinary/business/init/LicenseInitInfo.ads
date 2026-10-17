@@ -28,11 +28,11 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 
 package org.allbinary.business.init.LicenseInitInfo_Package is
 
-   package DebugFactory_Package renames org.allbinary.debug.DebugFactory_Package;
-   package NoDebug_Package renames org.allbinary.debug.NoDebug_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
+   package DebugFactory_Package renames Standard.org.allbinary.debug.DebugFactory_Package;
+   package NoDebug_Package renames Standard.org.allbinary.debug.NoDebug_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type LicenseInitInfo is tagged;
    type LicenseInitInfo_Access is access all LicenseInitInfo'Class;

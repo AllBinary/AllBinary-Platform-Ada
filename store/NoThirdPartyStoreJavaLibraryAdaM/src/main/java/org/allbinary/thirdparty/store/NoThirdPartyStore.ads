@@ -26,8 +26,8 @@ with org.allbinary.thirdparty.store.ThirdPartyStore_Package; use org.allbinary.t
 
 package org.allbinary.thirdparty.store.NoThirdPartyStore_Package is
 
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package AbeClientInformationInterface_Package renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 
    type NoThirdPartyStore is tagged;
    type NoThirdPartyStore_Access is access all NoThirdPartyStore'Class;

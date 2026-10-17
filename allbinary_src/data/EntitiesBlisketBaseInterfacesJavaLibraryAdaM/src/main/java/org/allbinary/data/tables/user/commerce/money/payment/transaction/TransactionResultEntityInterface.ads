@@ -25,8 +25,8 @@ with org.allbinary.data.tables.BasicDataTableInterface_Package; use org.allbinar
 
 package org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionResultEntityInterface_Package is
 
-   package TransactionResultInterface_Package renames org.allbinary.business.user.commerce.money.payment.gateway.transaction.TransactionResultInterface_Package;
-   package BasicDataTableInterface_Package renames org.allbinary.data.tables.BasicDataTableInterface_Package;
+   package TransactionResultInterface_Package renames Standard.org.allbinary.business.user.commerce.money.payment.gateway.transaction.TransactionResultInterface_Package;
+   package BasicDataTableInterface_Package renames Standard.org.allbinary.data.tables.BasicDataTableInterface_Package;
 
    type TransactionResultEntityInterface is interface and BasicDataTableInterface;
    type TransactionResultEntityInterface_Access is access all TransactionResultEntityInterface'Class;

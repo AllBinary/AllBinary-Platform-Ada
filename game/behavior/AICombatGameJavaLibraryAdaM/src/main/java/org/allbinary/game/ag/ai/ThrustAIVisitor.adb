@@ -45,9 +45,13 @@ package body org.allbinary.game.ag.ai.ThrustAIVisitor_Package is
             basicAI := BasicAI_Access (anyType);
             basicAI.processKeyAI (Canvas_Package.UP);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.VISIT, e);
+                end;
         end;
         return This.TRUE;
    end visit;

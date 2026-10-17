@@ -25,8 +25,8 @@ with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.
 
 package org.allbinary.ai.ArtificialIntelligenceInterface_Package is
 
-   package IdentifierInterface_Package renames org.allbinary.graphics.IdentifierInterface_Package;
-   package AllBinaryLayerManager_Package renames org.allbinary.layer.AllBinaryLayerManager_Package;
+   package IdentifierInterface_Package renames Standard.org.allbinary.graphics.IdentifierInterface_Package;
+   package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
 
    type ArtificialIntelligenceInterface is interface and IdentifierInterface;
    type ArtificialIntelligenceInterface_Access is access all ArtificialIntelligenceInterface'Class;

@@ -34,14 +34,14 @@ with org.allbinary.business.user.commerce.inventory.item.OrderItemInterface_Pack
 
 package org.allbinary.business.user.commerce.inventory.item.Item_Package is
 
-   package EntryData_Package renames org.allbinary.business.entry_Id.EntryData_Package;
-   package ShippingAddressData_Package renames org.allbinary.business.user.address.ShippingAddressData_Package;
-   package StreetAddress_Package renames org.allbinary.business.user.address.StreetAddress_Package;
-   package StreetAddressData_Package renames org.allbinary.business.user.address.StreetAddressData_Package;
-   package OrderHistoryData_Package renames org.allbinary.business.user.commerce.inventory.order.OrderHistoryData_Package;
-   package MoneyException_Package renames org.allbinary.business.user.commerce.money.MoneyException_Package;
-   package ShippingMethodData_Package renames org.allbinary.business.user.commerce.shipping.ShippingMethodData_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
+   package EntryData_Package renames Standard.org.allbinary.business.entry_Id.EntryData_Package;
+   package ShippingAddressData_Package renames Standard.org.allbinary.business.user.address.ShippingAddressData_Package;
+   package StreetAddress_Package renames Standard.org.allbinary.business.user.address.StreetAddress_Package;
+   package StreetAddressData_Package renames Standard.org.allbinary.business.user.address.StreetAddressData_Package;
+   package OrderHistoryData_Package renames Standard.org.allbinary.business.user.commerce.inventory.order.OrderHistoryData_Package;
+   package MoneyException_Package renames Standard.org.allbinary.business.user.commerce.money.MoneyException_Package;
+   package ShippingMethodData_Package renames Standard.org.allbinary.business.user.commerce.shipping.ShippingMethodData_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type Item is tagged;
    type Item_Access is access all Item'Class;

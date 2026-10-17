@@ -26,8 +26,8 @@ with org.allbinary.game.collision.CollisionHelper_Package; use org.allbinary.gam
 
 package org.allbinary.game.collision.SourceCollisionHelper_Package is
 
-   package CollidableCompositeLayer_Package renames org.allbinary.game.layer.CollidableCompositeLayer_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
+   package CollidableCompositeLayer_Package renames Standard.org.allbinary.game.layer.CollidableCompositeLayer_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
 
    type SourceCollisionHelper is tagged;
    type SourceCollisionHelper_Access is access all SourceCollisionHelper'Class;

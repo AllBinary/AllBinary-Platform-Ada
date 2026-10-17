@@ -53,8 +53,12 @@ package body org.allbinary.game.displayable.screen.LicenseRegistrationTextBox_Pa
             virtualKeyboardEventHandler := VirtualKeyboardEventHandler_Package.getInstance;
             virtualKeyboardEventHandler.fireEvent (virtualKeyboardEventHandler.SHOW_EVENT);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("open"), e);
+                end;
         end;
         CustomTextBox (This).open;
         This.paintable := NullPaintable_Package.getInstance;
@@ -69,8 +73,12 @@ package body org.allbinary.game.displayable.screen.LicenseRegistrationTextBox_Pa
             virtualKeyboardEventHandler := VirtualKeyboardEventHandler_Package.getInstance;
             virtualKeyboardEventHandler.fireEvent (virtualKeyboardEventHandler.HIDE_EVENT);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("open"), e);
+                end;
         end;
         This.paintable := This.pleaseWaitPaintable;
         This.repaint;

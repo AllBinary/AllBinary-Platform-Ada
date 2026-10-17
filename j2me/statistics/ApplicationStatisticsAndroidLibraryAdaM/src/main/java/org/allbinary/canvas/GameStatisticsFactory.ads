@@ -25,7 +25,7 @@ with org.allbinary.canvas.AndroidGameStatistics_Package; use org.allbinary.canva
 
 package org.allbinary.canvas.GameStatisticsFactory_Package is
 
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
 
    type GameStatisticsFactory is tagged;
    type GameStatisticsFactory_Access is access all GameStatisticsFactory'Class;

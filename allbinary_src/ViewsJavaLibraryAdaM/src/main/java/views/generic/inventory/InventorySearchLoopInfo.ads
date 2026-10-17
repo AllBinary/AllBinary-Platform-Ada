@@ -24,7 +24,7 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 
 package views.generic_Id.inventory.InventorySearchLoopInfo_Package is
 
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
 
    type InventorySearchLoopInfo is tagged;
    type InventorySearchLoopInfo_Access is access all InventorySearchLoopInfo'Class;

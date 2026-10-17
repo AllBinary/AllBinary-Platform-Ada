@@ -27,8 +27,8 @@ with org.allbinary.image.opengles.OpenGLImageFactory_Package; use org.allbinary.
 
 package org.allbinary.image.opengles.OpenGLESGL11VBOImageFactory_Package is
 
-   package PlatformBitmapBaseFactory_Package renames org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package;
-   package PlatformTextureBaseFactory_Package renames org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package;
+   package PlatformBitmapBaseFactory_Package renames Standard.org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package;
+   package PlatformTextureBaseFactory_Package renames Standard.org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package;
 
    type OpenGLESGL11VBOImageFactory is tagged;
    type OpenGLESGL11VBOImageFactory_Access is access all OpenGLESGL11VBOImageFactory'Class;

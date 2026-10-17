@@ -31,13 +31,13 @@ with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 
 package org.allbinary.business.category.properties.root.store.theme.RootStoreThemeCategoryPropertiesFactory_Package is
 
-   package CategoryPropertiesFactoryInterface_Package renames org.allbinary.business.category.properties.CategoryPropertiesFactoryInterface_Package;
-   package CategoryPropertiesInterface_Package renames org.allbinary.business.category.properties.CategoryPropertiesInterface_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package AbPath_Package renames org.allbinary.logic.io.path.AbPath_Package;
-   package TransformInfoInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
+   package CategoryPropertiesFactoryInterface_Package renames Standard.org.allbinary.business.category.properties.CategoryPropertiesFactoryInterface_Package;
+   package CategoryPropertiesInterface_Package renames Standard.org.allbinary.business.category.properties.CategoryPropertiesInterface_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
+   package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type RootStoreThemeCategoryPropertiesFactory is tagged;
    type RootStoreThemeCategoryPropertiesFactory_Access is access all RootStoreThemeCategoryPropertiesFactory'Class;

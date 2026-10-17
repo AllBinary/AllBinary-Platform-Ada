@@ -24,7 +24,7 @@ with org.allbinary.logic.util.event.BasicEventListenerInterface_Package; use org
 
 package org.allbinary.input.media.image.capture.CapturedImageWorkerResultsListener_Package is
 
-   package BasicEventListenerInterface_Package renames org.allbinary.logic.util.event.BasicEventListenerInterface_Package;
+   package BasicEventListenerInterface_Package renames Standard.org.allbinary.logic.util.event.BasicEventListenerInterface_Package;
 
    type CapturedImageWorkerResultsListener is interface and BasicEventListenerInterface;
    type CapturedImageWorkerResultsListener_Access is access all CapturedImageWorkerResultsListener'Class;

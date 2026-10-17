@@ -30,12 +30,12 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.game.layer.AllBinaryTiledLayer_Package is
 
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package PaintableInterface_Package renames org.allbinary.graphics.paint.PaintableInterface_Package;
-   package Layer_Package renames org.allbinary.layer.Layer_Package;
-   package NamedInterface_Package renames org.allbinary.layer.NamedInterface_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package PaintableInterface_Package renames Standard.org.allbinary.graphics.paint.PaintableInterface_Package;
+   package Layer_Package renames Standard.org.allbinary.layer.Layer_Package;
+   package NamedInterface_Package renames Standard.org.allbinary.layer.NamedInterface_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type AllBinaryTiledLayer is tagged;
    type AllBinaryTiledLayer_Access is access all AllBinaryTiledLayer'Class;

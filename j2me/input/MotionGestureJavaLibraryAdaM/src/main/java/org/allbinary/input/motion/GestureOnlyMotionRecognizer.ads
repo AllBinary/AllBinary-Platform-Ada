@@ -27,9 +27,9 @@ with org.allbinary.input.motion.MotionRecognizer_Package; use org.allbinary.inpu
 
 package org.allbinary.input.motion.GestureOnlyMotionRecognizer_Package is
 
-   package CustomGPoint_Package renames org.allbinary.graphics.CustomGPoint_Package;
-   package GPointCircularPool_Package renames org.allbinary.graphics.GPointCircularPool_Package;
-   package MotionGestureRecognizer_Package renames org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package;
+   package CustomGPoint_Package renames Standard.org.allbinary.graphics.CustomGPoint_Package;
+   package GPointCircularPool_Package renames Standard.org.allbinary.graphics.GPointCircularPool_Package;
+   package MotionGestureRecognizer_Package renames Standard.org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package;
 
    type GestureOnlyMotionRecognizer is tagged;
    type GestureOnlyMotionRecognizer_Access is access all GestureOnlyMotionRecognizer'Class;

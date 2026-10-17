@@ -33,16 +33,16 @@ with org.allbinary.input.motion.button.TouchButtonLocationHelper_Package; use or
 
 package org.allbinary.game.layer.RTSScrollSelectionFormFactory_Package is
 
-   package ABCustomItem_Package renames org.allbinary.graphics.form.item.ABCustomItem_Package;
-   package PointFactory_Package renames org.allbinary.graphics.PointFactory_Package;
-   package Rectangle_Package renames org.allbinary.graphics.Rectangle_Package;
-   package BasicColorFactory_Package renames org.allbinary.graphics.color.BasicColorFactory_Package;
-   package DisplayInfoSingleton_Package renames org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
-   package FormTypeFactory_Package renames org.allbinary.graphics.form.FormTypeFactory_Package;
-   package MultipleScrollSelectionHorizontalForm_Package renames org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package;
-   package ScrollSelectionForm_Package renames org.allbinary.graphics.form.ScrollSelectionForm_Package;
-   package CommonButtons_Package renames org.allbinary.input.motion.button.CommonButtons_Package;
-   package TouchButtonLocationHelper_Package renames org.allbinary.input.motion.button.TouchButtonLocationHelper_Package;
+   package ABCustomItem_Package renames Standard.org.allbinary.graphics.form.item.ABCustomItem_Package;
+   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
+   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+   package FormTypeFactory_Package renames Standard.org.allbinary.graphics.form.FormTypeFactory_Package;
+   package MultipleScrollSelectionHorizontalForm_Package renames Standard.org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package;
+   package ScrollSelectionForm_Package renames Standard.org.allbinary.graphics.form.ScrollSelectionForm_Package;
+   package CommonButtons_Package renames Standard.org.allbinary.input.motion.button.CommonButtons_Package;
+   package TouchButtonLocationHelper_Package renames Standard.org.allbinary.input.motion.button.TouchButtonLocationHelper_Package;
 
    type RTSScrollSelectionFormFactory is tagged;
    type RTSScrollSelectionFormFactory_Access is access all RTSScrollSelectionFormFactory'Class;

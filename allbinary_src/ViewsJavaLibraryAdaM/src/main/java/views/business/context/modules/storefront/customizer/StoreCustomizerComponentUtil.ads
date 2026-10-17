@@ -31,14 +31,14 @@ with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; u
 
 package views.business.context.modules.storefront.customizer.StoreCustomizerComponentUtil_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package AbeClientInformationInterface_Package renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-   package TransformGeneratorUtil_Package renames org.allbinary.logic.visual.transform.generator.TransformGeneratorUtil_Package;
-   package TransformInfo_Package renames org.allbinary.logic.visual.transform.info.TransformInfo_Package;
-   package TransformInfoInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package TransformGeneratorUtil_Package renames Standard.org.allbinary.logic.visual.transform.generator.TransformGeneratorUtil_Package;
+   package TransformInfo_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfo_Package;
+   package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 
    type StoreCustomizerComponentUtil is tagged;
    type StoreCustomizerComponentUtil_Access is access all StoreCustomizerComponentUtil'Class;

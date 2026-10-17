@@ -25,8 +25,8 @@ with org.allbinary.logic.util.event.AllBinaryEventCircularPool_Package; use org.
 
 package org.allbinary.game.tracking.TrackingEventCircularStaticPool_Package is
 
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package AllBinaryEventCircularPool_Package renames org.allbinary.logic.util.event.AllBinaryEventCircularPool_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package AllBinaryEventCircularPool_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventCircularPool_Package;
 
    type TrackingEventCircularStaticPool is tagged;
    type TrackingEventCircularStaticPool_Access is access all TrackingEventCircularStaticPool'Class;

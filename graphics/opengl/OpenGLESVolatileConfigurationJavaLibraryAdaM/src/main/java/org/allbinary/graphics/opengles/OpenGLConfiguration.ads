@@ -33,16 +33,16 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 
 package org.allbinary.graphics.opengles.OpenGLConfiguration_Package is
 
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package PreLogUtil_Package renames org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package ChangedGameFeatureListener_Package renames org.allbinary.game.configuration.event.ChangedGameFeatureListener_Package;
-   package Feature_Package renames org.allbinary.game.configuration.feature.Feature_Package;
-   package Features_Package renames org.allbinary.game.configuration.feature.Features_Package;
-   package MainFeatureFactory_Package renames org.allbinary.game.configuration.feature.MainFeatureFactory_Package;
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package ChangedGameFeatureListener_Package renames Standard.org.allbinary.game.configuration.event.ChangedGameFeatureListener_Package;
+   package Feature_Package renames Standard.org.allbinary.game.configuration.feature.Feature_Package;
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
+   package MainFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.MainFeatureFactory_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type OpenGLConfiguration is tagged;
    type OpenGLConfiguration_Access is access all OpenGLConfiguration'Class;

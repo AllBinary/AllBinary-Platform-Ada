@@ -33,15 +33,15 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.content.NotificationUtil_Package is
 
-   package Notification_Package renames android.app.Notification_Package;
-   package NotificationManager_Package renames android.app.NotificationManager_Package;
-   package PendingIntent_Package renames android.app.PendingIntent_Package;
-   package Context_Package renames android.content.Context_Package;
-   package Intent_Package renames android.content.Intent_Package;
-   package AndroidInfoFactory_Package renames org.allbinary.android.AndroidInfoFactory_Package;
-   package ResourceUtil_Package renames org.allbinary.data.resource.ResourceUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package Notification_Package renames Standard.android.app.Notification_Package;
+   package NotificationManager_Package renames Standard.android.app.NotificationManager_Package;
+   package PendingIntent_Package renames Standard.android.app.PendingIntent_Package;
+   package Context_Package renames Standard.android.content.Context_Package;
+   package Intent_Package renames Standard.android.content.Intent_Package;
+   package AndroidInfoFactory_Package renames Standard.org.allbinary.android.AndroidInfoFactory_Package;
+   package ResourceUtil_Package renames Standard.org.allbinary.data.resource.ResourceUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type NotificationUtil is tagged;
    type NotificationUtil_Access is access all NotificationUtil'Class;

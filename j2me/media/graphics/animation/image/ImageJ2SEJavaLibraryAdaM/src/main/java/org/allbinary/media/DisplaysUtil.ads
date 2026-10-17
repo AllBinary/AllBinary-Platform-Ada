@@ -30,8 +30,8 @@ with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectan
 
 package org.allbinary.media.DisplaysUtil_Package is
 
-   package PointFactory_Package renames org.allbinary.graphics.PointFactory_Package;
-   package Rectangle_Package renames org.allbinary.graphics.Rectangle_Package;
+   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
+   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
 
    type DisplaysUtil is tagged;
    type DisplaysUtil_Access is access all DisplaysUtil'Class;

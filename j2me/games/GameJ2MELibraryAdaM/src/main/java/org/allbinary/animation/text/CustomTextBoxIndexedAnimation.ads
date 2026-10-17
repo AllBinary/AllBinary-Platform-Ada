@@ -33,13 +33,13 @@ with org.allbinary.animation.text.TextInterface_Package; use org.allbinary.anima
 
 package org.allbinary.animation.text.CustomTextBoxIndexedAnimation_Package is
 
-   package AnimationBehavior_Package renames org.allbinary.animation.AnimationBehavior_Package;
-   package IndexedAnimation_Package renames org.allbinary.animation.IndexedAnimation_Package;
-   package RawKeyEventListener_Package renames org.allbinary.game.input.event.RawKeyEventListener_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package UpdateMyFontInterface_Package renames org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-   package CustomTextBox_Package renames org.allbinary.graphics.form.item.CustomTextBox_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
+   package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
+   package IndexedAnimation_Package renames Standard.org.allbinary.animation.IndexedAnimation_Package;
+   package RawKeyEventListener_Package renames Standard.org.allbinary.game.input.event.RawKeyEventListener_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package UpdateMyFontInterface_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontInterface_Package;
+   package CustomTextBox_Package renames Standard.org.allbinary.graphics.form.item.CustomTextBox_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type CustomTextBoxIndexedAnimation is tagged;
    type CustomTextBoxIndexedAnimation_Access is access all CustomTextBoxIndexedAnimation'Class;

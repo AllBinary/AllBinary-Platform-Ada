@@ -63,8 +63,12 @@ package body org.allbinary.data.tables.generator.IdGeneratorEntity_Package is
             AbSqlBean (This).insert (values);
             This.logUtil.putF (This.commonStrings.SUCCESS, This'Unchecked_Access, INSERT);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, INSERT, e);
+                end;
         end;
    end insert;
 
@@ -74,8 +78,12 @@ package body org.allbinary.data.tables.generator.IdGeneratorEntity_Package is
             AbSqlBean (This).deleteWhere (This.NAME, value_Case);
             This.logUtil.putF (This.commonStrings.SUCCESS, This'Unchecked_Access, This.commonStrings.delete);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, This.commonStrings.delete, e);
+                end;
         end;
    end delete;
 

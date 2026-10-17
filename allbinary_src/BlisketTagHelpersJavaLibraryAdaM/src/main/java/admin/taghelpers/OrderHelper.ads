@@ -44,23 +44,23 @@ with admin.taghelpers.TagHelper_Package; use admin.taghelpers.TagHelper_Package;
 
 package admin.taghelpers.OrderHelper_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package StoreFrontData_Package renames org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
-   package StoreFrontFactory_Package renames org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
-   package StoreFrontInterface_Package renames org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
-   package Order_Package renames org.allbinary.business.user.commerce.inventory.order.Order_Package;
-   package OrderInterface_Package renames org.allbinary.business.user.commerce.inventory.order.OrderInterface_Package;
-   package OrderProcessorUtil_Package renames org.allbinary.business.user.commerce.inventory.order.OrderProcessorUtil_Package;
-   package PaymentGatewayData_Package renames org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package;
-   package PaymentGatewayInterface_Package renames org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayInterface_Package;
-   package BasicPaymentType_Package renames org.allbinary.business.user.commerce.money.payment.types.BasicPaymentType_Package;
-   package PaymentGatewayEntity_Package renames org.allbinary.data.tables.user.commerce.money.payment.gateway.PaymentGatewayEntity_Package;
-   package PaymentGatewayEntityFactory_Package renames org.allbinary.data.tables.user.commerce.money.payment.gateway.PaymentGatewayEntityFactory_Package;
-   package WeblisketSession_Package renames org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringValidationUtil_Package renames org.allbinary.logic.string_Id.StringValidationUtil_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+   package StoreFrontFactory_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
+   package StoreFrontInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
+   package Order_Package renames Standard.org.allbinary.business.user.commerce.inventory.order.Order_Package;
+   package OrderInterface_Package renames Standard.org.allbinary.business.user.commerce.inventory.order.OrderInterface_Package;
+   package OrderProcessorUtil_Package renames Standard.org.allbinary.business.user.commerce.inventory.order.OrderProcessorUtil_Package;
+   package PaymentGatewayData_Package renames Standard.org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package;
+   package PaymentGatewayInterface_Package renames Standard.org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayInterface_Package;
+   package BasicPaymentType_Package renames Standard.org.allbinary.business.user.commerce.money.payment.types.BasicPaymentType_Package;
+   package PaymentGatewayEntity_Package renames Standard.org.allbinary.data.tables.user.commerce.money.payment.gateway.PaymentGatewayEntity_Package;
+   package PaymentGatewayEntityFactory_Package renames Standard.org.allbinary.data.tables.user.commerce.money.payment.gateway.PaymentGatewayEntityFactory_Package;
+   package WeblisketSession_Package renames Standard.org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
 
    type OrderHelper is tagged;
    type OrderHelper_Access is access all OrderHelper'Class;

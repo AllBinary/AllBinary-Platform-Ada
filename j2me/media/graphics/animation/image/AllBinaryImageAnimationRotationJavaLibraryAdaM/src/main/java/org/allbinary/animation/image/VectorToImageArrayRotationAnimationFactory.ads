@@ -38,18 +38,18 @@ with org.allbinary.animation.image.BaseImageAnimationFactory_Package; use org.al
 
 package org.allbinary.animation.image.VectorToImageArrayRotationAnimationFactory_Package is
 
-   package Animation_Package renames org.allbinary.animation.Animation_Package;
-   package AnimationBehaviorFactory_Package renames org.allbinary.animation.AnimationBehaviorFactory_Package;
-   package VectorAnimation_Package renames org.allbinary.animation.VectorAnimation_Package;
-   package GameConfigurationCentral_Package renames org.allbinary.game.configuration.GameConfigurationCentral_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package AnimationFrameToImageUtil_Package renames org.allbinary.image.AnimationFrameToImageUtil_Package;
-   package PrimitiveIntUtil_Package renames org.allbinary.logic.math.PrimitiveIntUtil_Package;
-   package AngleFactory_Package renames org.allbinary.math.AngleFactory_Package;
-   package AngleInfo_Package renames org.allbinary.math.AngleInfo_Package;
-   package ScaleProperties_Package renames org.allbinary.media.ScaleProperties_Package;
-   package ImageToRotationImageArrayUtil_Package renames org.allbinary.media.image.ImageToRotationImageArrayUtil_Package;
-   package VectorInfo_Package renames org.allbinary.vector.VectorInfo_Package;
+   package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
+   package AnimationBehaviorFactory_Package renames Standard.org.allbinary.animation.AnimationBehaviorFactory_Package;
+   package VectorAnimation_Package renames Standard.org.allbinary.animation.VectorAnimation_Package;
+   package GameConfigurationCentral_Package renames Standard.org.allbinary.game.configuration.GameConfigurationCentral_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package AnimationFrameToImageUtil_Package renames Standard.org.allbinary.image.AnimationFrameToImageUtil_Package;
+   package PrimitiveIntUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveIntUtil_Package;
+   package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;
+   package AngleInfo_Package renames Standard.org.allbinary.math.AngleInfo_Package;
+   package ScaleProperties_Package renames Standard.org.allbinary.media.ScaleProperties_Package;
+   package ImageToRotationImageArrayUtil_Package renames Standard.org.allbinary.media.image.ImageToRotationImageArrayUtil_Package;
+   package VectorInfo_Package renames Standard.org.allbinary.vector.VectorInfo_Package;
 
    type VectorToImageArrayRotationAnimationFactory is tagged;
    type VectorToImageArrayRotationAnimationFactory_Access is access all VectorToImageArrayRotationAnimationFactory'Class;

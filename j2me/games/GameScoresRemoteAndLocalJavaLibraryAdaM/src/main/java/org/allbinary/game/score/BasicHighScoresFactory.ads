@@ -35,17 +35,17 @@ with org.allbinary.game.score.HighScoresBase_Package; use org.allbinary.game.sco
 
 package org.allbinary.game.score.BasicHighScoresFactory_Package is
 
-   package ARunnable_Package renames org.allbinary.thread.ARunnable_Package;
-   package BasicHighScoresGameInfoFactory_Package renames org.allbinary.game.BasicHighScoresGameInfoFactory_Package;
-   package GameInfo_Package renames org.allbinary.game.GameInfo_Package;
-   package GameType_Package renames org.allbinary.game.GameType_Package;
-   package GameTypeFactory_Package renames org.allbinary.game.GameTypeFactory_Package;
-   package RemoteHighScores_Package renames org.allbinary.game.score.remote.RemoteHighScores_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package BooleanFactory_Package renames org.allbinary.logic.java.bool.BooleanFactory_Package;
-   package SoftwareInformation_Package renames org.allbinary.logic.system.SoftwareInformation_Package;
-   package AbeClientInformationInterface_Package renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-   package SecondaryThreadPool_Package renames org.allbinary.thread.SecondaryThreadPool_Package;
+   package ARunnable_Package renames Standard.org.allbinary.thread.ARunnable_Package;
+   package BasicHighScoresGameInfoFactory_Package renames Standard.org.allbinary.game.BasicHighScoresGameInfoFactory_Package;
+   package GameInfo_Package renames Standard.org.allbinary.game.GameInfo_Package;
+   package GameType_Package renames Standard.org.allbinary.game.GameType_Package;
+   package GameTypeFactory_Package renames Standard.org.allbinary.game.GameTypeFactory_Package;
+   package RemoteHighScores_Package renames Standard.org.allbinary.game.score.remote.RemoteHighScores_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package BooleanFactory_Package renames Standard.org.allbinary.logic.java.bool.BooleanFactory_Package;
+   package SoftwareInformation_Package renames Standard.org.allbinary.logic.system.SoftwareInformation_Package;
+   package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package SecondaryThreadPool_Package renames Standard.org.allbinary.thread.SecondaryThreadPool_Package;
 
    type BasicHighScoresFactory is tagged;
    type BasicHighScoresFactory_Access is access all BasicHighScoresFactory'Class;

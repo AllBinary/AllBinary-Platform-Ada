@@ -61,12 +61,16 @@ package body org.allbinary.logic.system.os.linux.LinuxOperatingSystemFactory_Pac
             end if;
             return operatingSystemInterface;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.FACTORYERROR) then
                 commonStrings := CommonStrings_Package.getInstance;
                 This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.GET_INSTANCE, e);
             end if;
             return NoOperatingSystem_Package.NO_OPERATING_SYSTEM;
+                end;
         end;
    end getOperatingSystemInstance;
 

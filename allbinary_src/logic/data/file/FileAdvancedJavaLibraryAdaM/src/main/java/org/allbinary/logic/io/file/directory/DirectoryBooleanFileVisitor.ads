@@ -25,8 +25,8 @@ with org.allbinary.logic.util.visitor.VisitorInterface_Package; use org.allbinar
 
 package org.allbinary.logic.io.file.directory.DirectoryBooleanFileVisitor_Package is
 
-   package AbFile_Package renames org.allbinary.logic.io.file.AbFile_Package;
-   package VisitorInterface_Package renames org.allbinary.logic.util.visitor.VisitorInterface_Package;
+   package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
+   package VisitorInterface_Package renames Standard.org.allbinary.logic.util.visitor.VisitorInterface_Package;
 
    type DirectoryBooleanFileVisitor is tagged;
    type DirectoryBooleanFileVisitor_Access is access all DirectoryBooleanFileVisitor'Class;

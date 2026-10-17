@@ -33,14 +33,14 @@ with org.allbinary.media.ScaleProperties_Package; use org.allbinary.media.ScaleP
 
 package org.allbinary.animation.image.AllBinaryFlickerAndroidImageRotationAnimationFactory_Package is
 
-   package Animation_Package renames org.allbinary.animation.Animation_Package;
-   package AnimationBehaviorFactory_Package renames org.allbinary.animation.AnimationBehaviorFactory_Package;
-   package AnimationInterfaceFactoryInterface_Package renames org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
-   package ForcedLogUtil_Package renames org.allbinary.logic.communication.log.ForcedLogUtil_Package;
-   package ImageCopyUtil_Package renames org.allbinary.media.image.ImageCopyUtil_Package;
-   package AngleFactory_Package renames org.allbinary.math.AngleFactory_Package;
-   package AngleInfo_Package renames org.allbinary.math.AngleInfo_Package;
-   package ScaleProperties_Package renames org.allbinary.media.ScaleProperties_Package;
+   package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
+   package AnimationBehaviorFactory_Package renames Standard.org.allbinary.animation.AnimationBehaviorFactory_Package;
+   package AnimationInterfaceFactoryInterface_Package renames Standard.org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+   package ImageCopyUtil_Package renames Standard.org.allbinary.media.image.ImageCopyUtil_Package;
+   package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;
+   package AngleInfo_Package renames Standard.org.allbinary.math.AngleInfo_Package;
+   package ScaleProperties_Package renames Standard.org.allbinary.media.ScaleProperties_Package;
 
    type AllBinaryFlickerAndroidImageRotationAnimationFactory is tagged;
    type AllBinaryFlickerAndroidImageRotationAnimationFactory_Access is access all AllBinaryFlickerAndroidImageRotationAnimationFactory'Class;

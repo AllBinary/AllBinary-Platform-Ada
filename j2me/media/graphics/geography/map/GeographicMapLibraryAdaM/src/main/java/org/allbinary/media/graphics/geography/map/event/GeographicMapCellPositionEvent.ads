@@ -29,12 +29,12 @@ with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Packag
 
 package org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEvent_Package is
 
-   package CellPosition_Package renames org.allbinary.graphics.CellPosition_Package;
-   package CellPositionFactory_Package renames org.allbinary.graphics.CellPositionFactory_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package AllBinaryEventObject_Package renames org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-   package GeographicMapCellPosition_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+   package CellPosition_Package renames Standard.org.allbinary.graphics.CellPosition_Package;
+   package CellPositionFactory_Package renames Standard.org.allbinary.graphics.CellPositionFactory_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+   package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
 
    type GeographicMapCellPositionEvent is tagged;
    type GeographicMapCellPositionEvent_Access is access all GeographicMapCellPositionEvent'Class;

@@ -30,12 +30,12 @@ with org.allbinary.midlet.AllBinaryMidlet_Package; use org.allbinary.midlet.AllB
 
 package org.allbinary.midlet.ProgressMidlet_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package Processor_Package renames org.allbinary.canvas.Processor_Package;
-   package AbeClientInformationInterface_Package renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-   package ClientInformationFactory_Package renames org.allbinary.logic.system.security.licensing.ClientInformationFactory_Package;
-   package PrimaryThreadPool_Package renames org.allbinary.thread.PrimaryThreadPool_Package;
-   package ThreadPool_Package renames org.allbinary.thread.ThreadPool_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package Processor_Package renames Standard.org.allbinary.canvas.Processor_Package;
+   package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package ClientInformationFactory_Package renames Standard.org.allbinary.logic.system.security.licensing.ClientInformationFactory_Package;
+   package PrimaryThreadPool_Package renames Standard.org.allbinary.thread.PrimaryThreadPool_Package;
+   package ThreadPool_Package renames Standard.org.allbinary.thread.ThreadPool_Package;
 
    type ProgressMidlet is tagged;
    type ProgressMidlet_Access is access all ProgressMidlet'Class;

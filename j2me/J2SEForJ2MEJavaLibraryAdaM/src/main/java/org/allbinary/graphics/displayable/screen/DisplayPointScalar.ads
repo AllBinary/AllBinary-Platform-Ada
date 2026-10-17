@@ -24,7 +24,7 @@ with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Pa
 
 package org.allbinary.graphics.displayable.screen.DisplayPointScalar_Package is
 
-   package GPoint_Package renames org.allbinary.graphics.GPoint_Package;
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
 
    type DisplayPointScalar is tagged;
    type DisplayPointScalar_Access is access all DisplayPointScalar'Class;

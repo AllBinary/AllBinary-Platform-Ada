@@ -25,8 +25,8 @@ with org.allbinary.graphics.displayable.DisplayableInterface_Package; use org.al
 
 package org.allbinary.game.displayable.canvas.AllBinaryGameCanvasInterface_Package is
 
-   package AllBinaryGameLayerManager_Package renames org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
-   package DisplayableInterface_Package renames org.allbinary.graphics.displayable.DisplayableInterface_Package;
+   package AllBinaryGameLayerManager_Package renames Standard.org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
+   package DisplayableInterface_Package renames Standard.org.allbinary.graphics.displayable.DisplayableInterface_Package;
 
    type AllBinaryGameCanvasInterface is interface and DisplayableInterface;
    type AllBinaryGameCanvasInterface_Access is access all AllBinaryGameCanvasInterface'Class;

@@ -44,9 +44,13 @@ package body org.allbinary.input.DirectionalAnalogLocationInputProcessor_Package
             This.leftTriggerGameKeyEvent := GameKeyEventFactory_Package.getInstance.getInstanceForInput (This'Unchecked_Access, This.gameKeyFactory.KEY_NUM0);
             This.rightTriggerGameKeyEvent := GameKeyEventFactory_Package.getInstance.getInstanceForInput (This'Unchecked_Access, This.gameKeyFactory.KEY_NUM5);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.CONSTRUCTOR, e);
+                end;
         end;
    end Initialize;
 
@@ -89,9 +93,13 @@ package body org.allbinary.input.DirectionalAnalogLocationInputProcessor_Package
                 This.inputProcessorArray (This.rightTriggerGameKeyEvent.getKey).processAnalog (allbinaryLayerManager, This.rightTriggerGameKeyEvent, rightTrigger);
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             This.logUtil.put (To_Unbounded_String ("Unable to process analog input"), This'Unchecked_Access, commonStrings.PROCESS, e);
+                end;
         end;
    end process;
 

@@ -27,8 +27,8 @@ with admin.tags.TableTag_Package; use admin.tags.TableTag_Package;
 
 package admin.tags.BasicOptionItemsTag_Package is
 
-   package BasicOptionItemsHelperFactory_Package renames admin.taghelpers.BasicOptionItemsHelperFactory_Package;
-   package BasicOptionItemsRequestHelperFactory_Package renames admin.taghelpers.BasicOptionItemsRequestHelperFactory_Package;
+   package BasicOptionItemsHelperFactory_Package renames Standard.admin.taghelpers.BasicOptionItemsHelperFactory_Package;
+   package BasicOptionItemsRequestHelperFactory_Package renames Standard.admin.taghelpers.BasicOptionItemsRequestHelperFactory_Package;
 
    type BasicOptionItemsTag is tagged;
    type BasicOptionItemsTag_Access is access all BasicOptionItemsTag'Class;

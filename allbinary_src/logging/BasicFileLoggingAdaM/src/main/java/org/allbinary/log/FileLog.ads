@@ -33,10 +33,10 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 
 package org.allbinary.log.FileLog_Package is
 
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package LogFormatUtil_Package renames org.allbinary.logic.communication.log.LogFormatUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package LogFormatUtil_Package renames Standard.org.allbinary.logic.communication.log.LogFormatUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
 
    type FileLog is tagged;
    type FileLog_Access is access all FileLog'Class;
@@ -65,12 +65,12 @@ package org.allbinary.log.FileLog_Package is
    procedure createLogFileBackup;
    function put (specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String) return Unbounded_String;
    procedure put (specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String);
-   function put (specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String; exception_Id : Ada.Exceptions.Exception_Occurrence) return Unbounded_String;
-   procedure put (specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String; exception_Id : Ada.Exceptions.Exception_Occurrence);
+   function put (specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String; exception_Id : Java_Throwable) return Unbounded_String;
+   procedure put (specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String; exception_Id : Java_Throwable);
    function put (specialMessage : Unbounded_String; className : Unbounded_String; functionName : Unbounded_String) return Unbounded_String;
    procedure put (specialMessage : Unbounded_String; className : Unbounded_String; functionName : Unbounded_String);
-   function put (specialMessage : Unbounded_String; className : Unbounded_String; functionName : Unbounded_String; exception_Id : Ada.Exceptions.Exception_Occurrence) return Unbounded_String;
-   procedure put (specialMessage : Unbounded_String; className : Unbounded_String; functionName : Unbounded_String; exception_Id : Ada.Exceptions.Exception_Occurrence);
+   function put (specialMessage : Unbounded_String; className : Unbounded_String; functionName : Unbounded_String; exception_Id : Java_Throwable) return Unbounded_String;
+   procedure put (specialMessage : Unbounded_String; className : Unbounded_String; functionName : Unbounded_String; exception_Id : Java_Throwable);
    function getFilePath return Unbounded_String;
    procedure getFilePath;
 

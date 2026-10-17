@@ -36,7 +36,7 @@ package body org.allbinary.logic.communication.http.request.AbResponseHandler_Pa
    end Create;
 
    --  throws JspTagException
-   procedure sendJspTagRedirect (pageContext : PageContext_Access; e : Ada.Exceptions.Exception_Occurrence) is
+   procedure sendJspTagRedirect (pageContext : PageContext_Access; e : Java_Throwable) is
       logUtil : LogUtil_Access;
    begin
         logUtil := LogUtil_Package.getInstance;
@@ -46,16 +46,20 @@ package body org.allbinary.logic.communication.http.request.AbResponseHandler_Pa
             end if;
             AbResponseHandler_Package.sendRedirect (pageContext, FREEBLISKET_PATH_GLOBALS.getInstance.ERRORPAGE);
         exception
-            when e2 : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e2 : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.LICENSINGERROR) then
                 logUtil.put (To_Unbounded_String ("Exception in Redirect Handling"), To_Unbounded_String ("AbResponseHandler"), To_Unbounded_String ("sendJspRedirect"), e);
             end if;
             Java_Throw (Java_New_Exception ("JspTagException"));
+                end;
         end;
    end sendJspTagRedirect;
 
    --  throws ServletException
-   procedure sendServletRedirect (pageContext : PageContext_Access; e : Ada.Exceptions.Exception_Occurrence) is
+   procedure sendServletRedirect (pageContext : PageContext_Access; e : Java_Throwable) is
       logUtil : LogUtil_Access;
    begin
         logUtil := LogUtil_Package.getInstance;
@@ -65,16 +69,20 @@ package body org.allbinary.logic.communication.http.request.AbResponseHandler_Pa
             end if;
             AbResponseHandler_Package.sendRedirect (pageContext, FREEBLISKET_PATH_GLOBALS.getInstance.ERRORPAGE);
         exception
-            when e2 : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e2 : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.LICENSINGERROR) then
                 logUtil.put (To_Unbounded_String ("Exception in Redirect Handling"), To_Unbounded_String ("AbResponseHandler"), To_Unbounded_String ("sendJspRedirect"), e);
             end if;
             Java_Throw (Java_New_Exception ("ServletException"));
+                end;
         end;
    end sendServletRedirect;
 
    --  throws JspTagException
-   procedure sendJspTagLicensingRedirect (pageContext : PageContext_Access; e : Ada.Exceptions.Exception_Occurrence) is
+   procedure sendJspTagLicensingRedirect (pageContext : PageContext_Access; e : Java_Throwable) is
       logUtil : LogUtil_Access;
    begin
         logUtil := LogUtil_Package.getInstance;
@@ -84,16 +92,20 @@ package body org.allbinary.logic.communication.http.request.AbResponseHandler_Pa
             end if;
             AbResponseHandler_Package.sendRedirect (pageContext, FREEBLISKET_PATH_GLOBALS.getInstance.LICENSEERRORPAGE);
         exception
-            when e2 : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e2 : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.LICENSINGERROR) then
                 logUtil.put (To_Unbounded_String ("Exception in Redirect Handling"), To_Unbounded_String ("AbResponseHandler"), To_Unbounded_String ("sendJspTagLicensingRedirect"), e);
             end if;
             Java_Throw (Java_New_Exception ("JspTagException"));
+                end;
         end;
    end sendJspTagLicensingRedirect;
 
    --  throws ServletException
-   procedure sendServletLicensingRedirect (pageContext : PageContext_Access; e : Ada.Exceptions.Exception_Occurrence) is
+   procedure sendServletLicensingRedirect (pageContext : PageContext_Access; e : Java_Throwable) is
       logUtil : LogUtil_Access;
    begin
         logUtil := LogUtil_Package.getInstance;
@@ -103,11 +115,15 @@ package body org.allbinary.logic.communication.http.request.AbResponseHandler_Pa
             end if;
             AbResponseHandler_Package.sendRedirect (pageContext, FREEBLISKET_PATH_GLOBALS.getInstance.LICENSEERRORPAGE);
         exception
-            when e2 : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e2 : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.LICENSINGERROR) then
                 logUtil.put (To_Unbounded_String ("Exception in Redirect Handling"), To_Unbounded_String ("AbResponseHandler"), To_Unbounded_String ("sendServletLicensingRedirect"), e);
             end if;
             Java_Throw (Java_New_Exception ("ServletException"));
+                end;
         end;
    end sendServletLicensingRedirect;
 
@@ -126,8 +142,12 @@ package body org.allbinary.logic.communication.http.request.AbResponseHandler_Pa
             begin
                 requestDispatcher.forward (request, response);
             exception
-                when e : others =>
+                when Java_Occurrence : others =>
+                    declare
+                        e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                    begin
                 pageContext.getOut.print (To_Unbounded_String ("Error: ") & page);
+                    end;
             end;
         end if;
    end sendRedirect;

@@ -26,9 +26,9 @@ with org.allbinary.game.layer.waypoint.WaypointLayer_Package; use org.allbinary.
 
 package org.allbinary.game.input.form.PrimaryWaypointHelper_Package is
 
-   package NullPathFindingLayer_Package renames org.allbinary.game.layer.NullPathFindingLayer_Package;
-   package PathFindingLayerInterface_Package renames org.allbinary.game.layer.PathFindingLayerInterface_Package;
-   package WaypointLayer_Package renames org.allbinary.game.layer.waypoint.WaypointLayer_Package;
+   package NullPathFindingLayer_Package renames Standard.org.allbinary.game.layer.NullPathFindingLayer_Package;
+   package PathFindingLayerInterface_Package renames Standard.org.allbinary.game.layer.PathFindingLayerInterface_Package;
+   package WaypointLayer_Package renames Standard.org.allbinary.game.layer.waypoint.WaypointLayer_Package;
 
    type PrimaryWaypointHelper is tagged;
    type PrimaryWaypointHelper_Access is access all PrimaryWaypointHelper'Class;

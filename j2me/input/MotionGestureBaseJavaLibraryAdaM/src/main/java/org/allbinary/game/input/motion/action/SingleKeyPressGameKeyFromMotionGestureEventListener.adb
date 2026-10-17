@@ -50,9 +50,13 @@ package body org.allbinary.game.input.motion.action.SingleKeyPressGameKeyFromMot
             gameKeyEvent := gameKeyCompleteMotionGestureInputEvent.getGameKeyEvent;
             PressGameKeyEventHandler_Package.getInstance.fireEvent (gameKeyEvent);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("onCompleteMotionGestureInputEvent"), e);
+                end;
         end;
    end onCompleteMotionGestureInputEvent;
 

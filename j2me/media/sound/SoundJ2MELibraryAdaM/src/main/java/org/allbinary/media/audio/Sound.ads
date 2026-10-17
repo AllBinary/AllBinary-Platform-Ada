@@ -28,8 +28,8 @@ with org.allbinary.media.audio.Runnable_Package; use org.allbinary.media.audio.R
 
 package org.allbinary.media.audio.Sound_Package is
 
-   package PreLogUtil_Package renames org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type Sound is tagged;
    type Sound_Access is access all Sound'Class;

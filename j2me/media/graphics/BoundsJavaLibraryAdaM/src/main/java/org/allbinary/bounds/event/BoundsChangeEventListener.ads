@@ -24,7 +24,7 @@ with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allb
 
 package org.allbinary.bounds.event.BoundsChangeEventListener_Package is
 
-   package EventListenerInterface_Package renames org.allbinary.logic.util.event.EventListenerInterface_Package;
+   package EventListenerInterface_Package renames Standard.org.allbinary.logic.util.event.EventListenerInterface_Package;
 
    type BoundsChangeEventListener is interface and EventListenerInterface;
    type BoundsChangeEventListener_Access is access all BoundsChangeEventListener'Class;

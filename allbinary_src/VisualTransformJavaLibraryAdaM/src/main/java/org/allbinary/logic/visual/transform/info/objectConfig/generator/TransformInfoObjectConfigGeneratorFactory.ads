@@ -28,10 +28,10 @@ with org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformI
 
 package org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactory_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package InputOutputTypeData_Package renames org.allbinary.logic.io.InputOutputTypeData_Package;
-   package TransformInfoInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package InputOutputTypeData_Package renames Standard.org.allbinary.logic.io.InputOutputTypeData_Package;
+   package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type TransformInfoObjectConfigGeneratorFactory is tagged;
    type TransformInfoObjectConfigGeneratorFactory_Access is access all TransformInfoObjectConfigGeneratorFactory'Class;

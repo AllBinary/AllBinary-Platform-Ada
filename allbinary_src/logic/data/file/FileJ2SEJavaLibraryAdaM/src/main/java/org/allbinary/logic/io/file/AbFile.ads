@@ -32,9 +32,9 @@ with org.allbinary.logic.io.file.AbFileInterface_Package; use org.allbinary.logi
 
 package org.allbinary.logic.io.file.AbFile_Package is
 
-   package TsUtil_Package renames org.allbinary.TsUtil_Package;
-   package AbPath_Package renames org.allbinary.logic.io.path.AbPath_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
+   package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
+   package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type AbFile is tagged;
    type AbFile_Access is access all AbFile'Class;

@@ -27,8 +27,8 @@ with org.allbinary.opengles.GL11_Package; use org.allbinary.opengles.GL11_Packag
 
 package org.allbinary.opengles.JOGL11_Package is
 
-   package GL_Package renames com.jogamp.opengl.GL_Package;
-   package GL2_Package renames com.jogamp.opengl.GL2_Package;
+   package GL_Package renames Standard.com.jogamp.opengl.GL_Package;
+   package GL2_Package renames Standard.com.jogamp.opengl.GL2_Package;
 
    type JOGL11 is tagged;
    type JOGL11_Access is access all JOGL11'Class;

@@ -26,9 +26,9 @@ with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Pack
 
 package org.allbinary.logic.io.FileStreamFactory_Package is
 
-   package Context_Package renames android.content.Context_Package;
-   package ResourceUtil_Package renames org.allbinary.data.resource.ResourceUtil_Package;
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
+   package Context_Package renames Standard.android.content.Context_Package;
+   package ResourceUtil_Package renames Standard.org.allbinary.data.resource.ResourceUtil_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
 
    type FileStreamFactory is tagged;
    type FileStreamFactory_Access is access all FileStreamFactory'Class;

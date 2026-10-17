@@ -29,11 +29,11 @@ with org.allbinary.input.motion.MotionRecognizer_Package; use org.allbinary.inpu
 
 package org.allbinary.input.motion.AllMotionRecognizer_Package is
 
-   package CustomGPoint_Package renames org.allbinary.graphics.CustomGPoint_Package;
-   package GPointCircularPool_Package renames org.allbinary.graphics.GPointCircularPool_Package;
-   package TouchButtonRecognizer_Package renames org.allbinary.input.motion.button.TouchButtonRecognizer_Package;
-   package MotionGestureRecognizer_Package renames org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
+   package CustomGPoint_Package renames Standard.org.allbinary.graphics.CustomGPoint_Package;
+   package GPointCircularPool_Package renames Standard.org.allbinary.graphics.GPointCircularPool_Package;
+   package TouchButtonRecognizer_Package renames Standard.org.allbinary.input.motion.button.TouchButtonRecognizer_Package;
+   package MotionGestureRecognizer_Package renames Standard.org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type AllMotionRecognizer is tagged;
    type AllMotionRecognizer_Access is access all AllMotionRecognizer'Class;

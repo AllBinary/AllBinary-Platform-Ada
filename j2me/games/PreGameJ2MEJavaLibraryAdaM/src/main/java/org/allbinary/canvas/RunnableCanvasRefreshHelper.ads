@@ -25,7 +25,7 @@ with org.allbinary.canvas.Processor_Package; use org.allbinary.canvas.Processor_
 
 package org.allbinary.canvas.RunnableCanvasRefreshHelper_Package is
 
-   package MyCanvas_Package renames org.allbinary.graphics.displayable.MyCanvas_Package;
+   package MyCanvas_Package renames Standard.org.allbinary.graphics.displayable.MyCanvas_Package;
 
    type RunnableCanvasRefreshHelper is tagged;
    type RunnableCanvasRefreshHelper_Access is access all RunnableCanvasRefreshHelper'Class;

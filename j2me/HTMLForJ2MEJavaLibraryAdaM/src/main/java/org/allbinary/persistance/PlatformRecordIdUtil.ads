@@ -26,9 +26,9 @@ with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface
 
 package org.allbinary.persistance.PlatformRecordIdUtil_Package is
 
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package AbeClientInformationInterface_Package renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 
    type PlatformRecordIdUtil is tagged;
    type PlatformRecordIdUtil_Access is access all PlatformRecordIdUtil'Class;

@@ -26,7 +26,7 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.logic.system.loader.NativeLibraryHelperWrapper_Package is
 
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type NativeLibraryHelperWrapper is tagged;
    type NativeLibraryHelperWrapper_Access is access all NativeLibraryHelperWrapper'Class;

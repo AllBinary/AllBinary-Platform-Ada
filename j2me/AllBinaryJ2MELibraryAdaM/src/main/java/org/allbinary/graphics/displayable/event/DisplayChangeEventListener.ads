@@ -24,7 +24,7 @@ with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allb
 
 package org.allbinary.graphics.displayable.event.DisplayChangeEventListener_Package is
 
-   package EventListenerInterface_Package renames org.allbinary.logic.util.event.EventListenerInterface_Package;
+   package EventListenerInterface_Package renames Standard.org.allbinary.logic.util.event.EventListenerInterface_Package;
 
    type DisplayChangeEventListener is interface and EventListenerInterface;
    type DisplayChangeEventListener_Access is access all DisplayChangeEventListener'Class;

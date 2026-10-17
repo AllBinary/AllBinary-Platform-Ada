@@ -28,10 +28,10 @@ with servlet.request.HttpServlet_Package; use servlet.request.HttpServlet_Packag
 
 package servlet.request.RequestHandler_Package is
 
-   package LicensingException_Package renames org.allbinary.logic.system.security.licensing.LicensingException_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package WorkFlowInterface_Package renames org.allbinary.logic.control.workflow.WorkFlowInterface_Package;
-   package RequestWorkFlowFactory_Package renames org.allbinary.logic.control.workflow.RequestWorkFlowFactory_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package WorkFlowInterface_Package renames Standard.org.allbinary.logic.control.workflow.WorkFlowInterface_Package;
+   package RequestWorkFlowFactory_Package renames Standard.org.allbinary.logic.control.workflow.RequestWorkFlowFactory_Package;
 
    type RequestHandler is tagged;
    type RequestHandler_Access is access all RequestHandler'Class;

@@ -26,7 +26,7 @@ with org.allbinary.game.paint.ColorFillPaintable_Package; use org.allbinary.game
 
 package org.allbinary.game.paint.OverScanColorFillPaintable_Package is
 
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
 
    type OverScanColorFillPaintable is tagged;
    type OverScanColorFillPaintable_Access is access all OverScanColorFillPaintable'Class;

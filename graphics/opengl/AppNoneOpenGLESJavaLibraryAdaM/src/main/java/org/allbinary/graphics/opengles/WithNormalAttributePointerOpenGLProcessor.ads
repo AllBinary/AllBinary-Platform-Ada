@@ -25,7 +25,7 @@ with org.allbinary.graphics.threed.min3d.renderer.processor.ObjectThreedOpenGLPr
 
 package org.allbinary.graphics.opengles.WithNormalAttributePointerOpenGLProcessor_Package is
 
-   package ObjectThreedOpenGLProcessor_Package renames org.allbinary.graphics.threed.min3d.renderer.processor.ObjectThreedOpenGLProcessor_Package;
+   package ObjectThreedOpenGLProcessor_Package renames Standard.org.allbinary.graphics.threed.min3d.renderer.processor.ObjectThreedOpenGLProcessor_Package;
 
    type WithNormalAttributePointerOpenGLProcessor is tagged;
    type WithNormalAttributePointerOpenGLProcessor_Access is access all WithNormalAttributePointerOpenGLProcessor'Class;

@@ -28,10 +28,10 @@ with org.allbinary.logic.system.hardware.HardwareInterface_Package; use org.allb
 
 package org.allbinary.logic.system.hardware.NoHardware_Package is
 
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package HardwareComponentInterface_Package renames org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package;
-   package NoHardwareComponent_Package renames org.allbinary.logic.system.hardware.components.interfaces.NoHardwareComponent_Package;
-   package ABHashtable_Package renames org.allbinary.util.ABHashtable_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package HardwareComponentInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package;
+   package NoHardwareComponent_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.NoHardwareComponent_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
    type NoHardware is tagged;
    type NoHardware_Access is access all NoHardware'Class;

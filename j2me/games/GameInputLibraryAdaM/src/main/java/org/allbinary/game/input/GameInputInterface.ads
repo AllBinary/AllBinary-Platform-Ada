@@ -25,8 +25,8 @@ with org.allbinary.layer.NamedInterface_Package; use org.allbinary.layer.NamedIn
 
 package org.allbinary.game.input.GameInputInterface_Package is
 
-   package AllBinaryLayerManager_Package renames org.allbinary.layer.AllBinaryLayerManager_Package;
-   package NamedInterface_Package renames org.allbinary.layer.NamedInterface_Package;
+   package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
+   package NamedInterface_Package renames Standard.org.allbinary.layer.NamedInterface_Package;
 
    type GameInputInterface is interface and NamedInterface;
    type GameInputInterface_Access is access all GameInputInterface'Class;

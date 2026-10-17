@@ -30,12 +30,12 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.game.configuration.InGameOptionsFormFactory_Package is
 
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package CommandForm_Package renames org.allbinary.graphics.displayable.screen.CommandForm_Package;
-   package Init_Package renames org.allbinary.init.Init_Package;
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package CommandForm_Package renames Standard.org.allbinary.graphics.displayable.screen.CommandForm_Package;
+   package Init_Package renames Standard.org.allbinary.init.Init_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type InGameOptionsFormFactory is tagged;
    type InGameOptionsFormFactory_Access is access all InGameOptionsFormFactory'Class;

@@ -34,9 +34,13 @@ package body org.allbinary.logic.system.security.crypt.jcehelper.AbBasicCrypt_Pa
             This.key := key.getBytes;
             This.init;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             PreLogUtil_Package.putOE (commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("AbCrypt(alg,key)"), e);
+                end;
         end;
    end Initialize;
 
@@ -61,9 +65,13 @@ package body org.allbinary.logic.system.security.crypt.jcehelper.AbBasicCrypt_Pa
             This.secretKey := keyFactory.generateSecret (keySpec);
             This.cipher := Cipher_Package.getInstance (This.algorithm);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             PreLogUtil_Package.putOE (To_Unbounded_String ("init Failed"), This'Unchecked_Access, commonStrings.INIT, e);
+                end;
         end;
    end init;
 
@@ -87,9 +95,13 @@ package body org.allbinary.logic.system.security.crypt.jcehelper.AbBasicCrypt_Pa
             end loop;
             return result;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             PreLogUtil_Package.putOE (To_Unbounded_String ("Encrypt Failed"), This'Unchecked_Access, To_Unbounded_String ("encrypt"), e);
             return null;
+                end;
         end;
    end encrypt;
 
@@ -113,9 +125,13 @@ package body org.allbinary.logic.system.security.crypt.jcehelper.AbBasicCrypt_Pa
             decrypted := This.cipher.doFinal (result);
             return result;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             PreLogUtil_Package.putOE (To_Unbounded_String ("decrypt Failed"), This'Unchecked_Access, To_Unbounded_String ("decrypt"), e);
             return null;
+                end;
         end;
    end decrypt;
 

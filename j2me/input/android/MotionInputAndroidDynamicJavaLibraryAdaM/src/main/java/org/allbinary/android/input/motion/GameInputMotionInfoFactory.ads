@@ -26,9 +26,9 @@ with org.allbinary.android.input.motion.api5.GameInputMotionInfoAPI5_Package; us
 
 package org.allbinary.android.input.motion.GameInputMotionInfoFactory_Package is
 
-   package AndroidInfoFactory_Package renames org.allbinary.android.AndroidInfoFactory_Package;
-   package GameInputMotionInfoAPI1_Package renames org.allbinary.android.input.motion.api1.GameInputMotionInfoAPI1_Package;
-   package GameInputMotionInfoAPI5_Package renames org.allbinary.android.input.motion.api5.GameInputMotionInfoAPI5_Package;
+   package AndroidInfoFactory_Package renames Standard.org.allbinary.android.AndroidInfoFactory_Package;
+   package GameInputMotionInfoAPI1_Package renames Standard.org.allbinary.android.input.motion.api1.GameInputMotionInfoAPI1_Package;
+   package GameInputMotionInfoAPI5_Package renames Standard.org.allbinary.android.input.motion.api5.GameInputMotionInfoAPI5_Package;
 
    type GameInputMotionInfoFactory is tagged;
    type GameInputMotionInfoFactory_Access is access all GameInputMotionInfoFactory'Class;

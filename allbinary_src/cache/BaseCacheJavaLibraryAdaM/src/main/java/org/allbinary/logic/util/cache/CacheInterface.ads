@@ -25,8 +25,8 @@ with jsinterop.annotations.JsMethod_Package; use jsinterop.annotations.JsMethod_
 
 package org.allbinary.logic.util.cache.CacheInterface_Package is
 
-   package JsType_Package renames jsinterop.annotations.JsType_Package;
-   package JsMethod_Package renames jsinterop.annotations.JsMethod_Package;
+   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
+   package JsMethod_Package renames Standard.jsinterop.annotations.JsMethod_Package;
 
    type CacheInterface is interface;
    type CacheInterface_Access is access all CacheInterface'Class;

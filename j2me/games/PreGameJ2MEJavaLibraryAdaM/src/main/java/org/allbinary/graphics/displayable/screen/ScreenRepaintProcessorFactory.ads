@@ -26,8 +26,8 @@ with org.allbinary.canvas.Processor_Package; use org.allbinary.canvas.Processor_
 
 package org.allbinary.graphics.displayable.screen.ScreenRepaintProcessorFactory_Package is
 
-   package J2MEUtil_Package renames org.allbinary.J2MEUtil_Package;
-   package Processor_Package renames org.allbinary.canvas.Processor_Package;
+   package J2MEUtil_Package renames Standard.org.allbinary.J2MEUtil_Package;
+   package Processor_Package renames Standard.org.allbinary.canvas.Processor_Package;
 
    type ScreenRepaintProcessorFactory is tagged;
    type ScreenRepaintProcessorFactory_Access is access all ScreenRepaintProcessorFactory'Class;

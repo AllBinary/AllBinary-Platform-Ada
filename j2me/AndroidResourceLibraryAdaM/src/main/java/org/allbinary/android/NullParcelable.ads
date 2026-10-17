@@ -25,8 +25,8 @@ with android.os.Parcel_Package; use android.os.Parcel_Package;
 
 package org.allbinary.android.NullParcelable_Package is
 
-   package Parcelable_Package renames android.os.Parcelable_Package;
-   package Parcel_Package renames android.os.Parcel_Package;
+   package Parcelable_Package renames Standard.android.os.Parcelable_Package;
+   package Parcel_Package renames Standard.android.os.Parcel_Package;
 
    type NullParcelable is tagged;
    type NullParcelable_Access is access all NullParcelable'Class;

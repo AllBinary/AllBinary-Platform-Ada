@@ -277,8 +277,12 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package is
             This.expand;
             This.repaint;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("rotateJMenuItemMousePressed"), e);
+                end;
         end;
    end rotateJMenuItemMousePressed;
 
@@ -315,8 +319,12 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package is
                 end if;
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("workAreaJTreeMousePressed"), e);
+                end;
         end;
    end workAreaJTreeMousePressed;
 
@@ -335,8 +343,12 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package is
         begin
             This.copy;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("copyJMenuItemMousePressed"), e);
+                end;
         end;
    end copyJMenuItemMousePressed;
 
@@ -355,8 +367,12 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package is
                 This.repaint;
             end loop;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("deleteJMenuItemMousePressed"), e);
+                end;
         end;
    end deleteJMenuItemMousePressed;
 

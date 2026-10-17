@@ -25,8 +25,8 @@ with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface
 
 package org.allbinary.game.score.remote.RemoteHighScoresProcessorInterface_Package is
 
-   package GameInfo_Package renames org.allbinary.game.GameInfo_Package;
-   package AbeClientInformationInterface_Package renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package GameInfo_Package renames Standard.org.allbinary.game.GameInfo_Package;
+   package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 
    type RemoteHighScoresProcessorInterface is interface;
    type RemoteHighScoresProcessorInterface_Access is access all RemoteHighScoresProcessorInterface'Class;

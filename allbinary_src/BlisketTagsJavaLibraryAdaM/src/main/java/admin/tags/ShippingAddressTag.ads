@@ -31,11 +31,11 @@ with admin.tags.TableTag_Package; use admin.tags.TableTag_Package;
 
 package admin.tags.ShippingAddressTag_Package is
 
-   package ShippingAddressHelperFactory_Package renames admin.taghelpers.ShippingAddressHelperFactory_Package;
-   package ShippingAddressData_Package renames org.allbinary.business.user.address.ShippingAddressData_Package;
-   package AbResponseHandler_Package renames org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package LicensingException_Package renames org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package ShippingAddressHelperFactory_Package renames Standard.admin.taghelpers.ShippingAddressHelperFactory_Package;
+   package ShippingAddressData_Package renames Standard.org.allbinary.business.user.address.ShippingAddressData_Package;
+   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
 
    type ShippingAddressTag is tagged;
    type ShippingAddressTag_Access is access all ShippingAddressTag'Class;

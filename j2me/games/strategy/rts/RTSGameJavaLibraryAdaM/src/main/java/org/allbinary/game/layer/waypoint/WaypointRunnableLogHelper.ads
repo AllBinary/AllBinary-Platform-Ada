@@ -24,7 +24,7 @@ with org.allbinary.game.layer.PathFindingLayerInterface_Package; use org.allbina
 
 package org.allbinary.game.layer.waypoint.WaypointRunnableLogHelper_Package is
 
-   package PathFindingLayerInterface_Package renames org.allbinary.game.layer.PathFindingLayerInterface_Package;
+   package PathFindingLayerInterface_Package renames Standard.org.allbinary.game.layer.PathFindingLayerInterface_Package;
 
    type WaypointRunnableLogHelper is tagged;
    type WaypointRunnableLogHelper_Access is access all WaypointRunnableLogHelper'Class;

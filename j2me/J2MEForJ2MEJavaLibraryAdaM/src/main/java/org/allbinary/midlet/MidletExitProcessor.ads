@@ -25,7 +25,7 @@ with org.allbinary.canvas.Processor_Package; use org.allbinary.canvas.Processor_
 
 package org.allbinary.midlet.MidletExitProcessor_Package is
 
-   package Processor_Package renames org.allbinary.canvas.Processor_Package;
+   package Processor_Package renames Standard.org.allbinary.canvas.Processor_Package;
 
    type MidletExitProcessor is tagged;
    type MidletExitProcessor_Access is access all MidletExitProcessor'Class;

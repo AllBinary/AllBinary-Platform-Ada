@@ -25,8 +25,8 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 
 package org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package is
 
-   package AbPathData_Package renames org.allbinary.logic.io.path.AbPathData_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
+   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
 
    type FREEBLISKET_PATH_GLOBALS is tagged;
    type FREEBLISKET_PATH_GLOBALS_Access is access all FREEBLISKET_PATH_GLOBALS'Class;

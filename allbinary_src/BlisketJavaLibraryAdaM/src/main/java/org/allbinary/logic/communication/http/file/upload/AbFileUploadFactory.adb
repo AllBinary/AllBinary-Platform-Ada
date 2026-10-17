@@ -61,12 +61,16 @@ package body org.allbinary.logic.communication.http.file.upload.AbFileUploadFact
             end loop;
             return items;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPERROR) then
                 commonStrings := CommonStrings_Package.getInstance;
                 This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("get()"), e);
             end if;
             Java_Throw (e);
+                end;
         end;
    end getFileItemStreamList;
 
@@ -79,12 +83,16 @@ package body org.allbinary.logic.communication.http.file.upload.AbFileUploadFact
             abFileUpload := AbFileUpload_Package.Create (AbFileItemFactory_Package.Create);
             return abFileUpload.parseRequest (httpServletRequest);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPERROR) then
                 This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("get()"), e);
             end if;
             Java_Throw (e);
+                end;
         end;
    end getFileItemList;
 

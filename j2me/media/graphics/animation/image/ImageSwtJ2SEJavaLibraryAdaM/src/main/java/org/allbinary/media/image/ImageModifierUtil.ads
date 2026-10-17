@@ -35,17 +35,17 @@ with org.microemu.device.swt.SwtMutableImage_Package; use org.microemu.device.sw
 
 package org.allbinary.media.image.ImageModifierUtil_Package is
 
-   package Features_Package renames org.allbinary.game.configuration.feature.Features_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package OpenGLFeatureFactory_Package renames org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
-   package ModifierOpenGLESImageProcessor_Package renames org.allbinary.image.opengles.ModifierOpenGLESImageProcessor_Package;
-   package OpenGLESImage_Package renames org.allbinary.image.opengles.OpenGLESImage_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package PreLogUtil_Package renames org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package ImageData_Package renames org.eclipse.swt.graphics.ImageData_Package;
-   package SwtImmutableImage_Package renames org.microemu.device.swt.SwtImmutableImage_Package;
-   package SwtMutableImage_Package renames org.microemu.device.swt.SwtMutableImage_Package;
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package OpenGLFeatureFactory_Package renames Standard.org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
+   package ModifierOpenGLESImageProcessor_Package renames Standard.org.allbinary.image.opengles.ModifierOpenGLESImageProcessor_Package;
+   package OpenGLESImage_Package renames Standard.org.allbinary.image.opengles.OpenGLESImage_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package ImageData_Package renames Standard.org.eclipse.swt.graphics.ImageData_Package;
+   package SwtImmutableImage_Package renames Standard.org.microemu.device.swt.SwtImmutableImage_Package;
+   package SwtMutableImage_Package renames Standard.org.microemu.device.swt.SwtMutableImage_Package;
 
    type ImageModifierUtil is tagged;
    type ImageModifierUtil_Access is access all ImageModifierUtil'Class;

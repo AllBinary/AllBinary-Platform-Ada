@@ -33,9 +33,9 @@ with org.allbinary.media.audio.Controllable2_Package; use org.allbinary.media.au
 
 package org.allbinary.media.audio.BasicPlayer_Package is
 
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type BasicPlayer is tagged;
    type BasicPlayer_Access is access all BasicPlayer'Class;

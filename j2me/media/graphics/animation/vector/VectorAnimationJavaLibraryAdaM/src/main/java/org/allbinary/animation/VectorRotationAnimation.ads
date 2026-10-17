@@ -29,11 +29,11 @@ with org.allbinary.animation.VectorBaseRotationAnimation_Package; use org.allbin
 
 package org.allbinary.animation.VectorRotationAnimation_Package is
 
-   package Direction_Package renames org.allbinary.direction.Direction_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package Angle_Package renames org.allbinary.math.Angle_Package;
-   package AngleFactory_Package renames org.allbinary.math.AngleFactory_Package;
-   package AngleInfo_Package renames org.allbinary.math.AngleInfo_Package;
+   package Direction_Package renames Standard.org.allbinary.direction.Direction_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package Angle_Package renames Standard.org.allbinary.math.Angle_Package;
+   package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;
+   package AngleInfo_Package renames Standard.org.allbinary.math.AngleInfo_Package;
 
    type VectorRotationAnimation is tagged;
    type VectorRotationAnimation_Access is access all VectorRotationAnimation'Class;

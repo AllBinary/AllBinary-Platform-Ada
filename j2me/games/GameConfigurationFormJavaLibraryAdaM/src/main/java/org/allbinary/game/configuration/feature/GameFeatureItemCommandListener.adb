@@ -47,9 +47,13 @@ package body org.allbinary.game.configuration.feature.GameFeatureItemCommandList
                 GameConfigurationUtil_Package.getInstance.change (This.gameOptionsForm, GameConfigurationGauge_Access (item));
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, MidletStrings_Package.getInstance.COMMAND_ACTION, e);
+                end;
         end;
    end commandAction;
 

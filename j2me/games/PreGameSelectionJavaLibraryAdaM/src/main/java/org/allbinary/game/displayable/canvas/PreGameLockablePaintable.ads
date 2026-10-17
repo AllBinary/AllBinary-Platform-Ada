@@ -29,11 +29,11 @@ with org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package; use org.all
 
 package org.allbinary.game.displayable.canvas.PreGameLockablePaintable_Package is
 
-   package GameFeatureImageCacheFactory_Package renames org.allbinary.image.GameFeatureImageCacheFactory_Package;
-   package LockedResources_Package renames org.allbinary.logic.system.security.licensing.LockedResources_Package;
-   package LockedUtil_Package renames org.allbinary.logic.system.security.licensing.LockedUtil_Package;
-   package LockablePaintable_Package renames org.allbinary.graphics.form.LockablePaintable_Package;
-   package ScrollCurrentSelectionForm_Package renames org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package;
+   package GameFeatureImageCacheFactory_Package renames Standard.org.allbinary.image.GameFeatureImageCacheFactory_Package;
+   package LockedResources_Package renames Standard.org.allbinary.logic.system.security.licensing.LockedResources_Package;
+   package LockedUtil_Package renames Standard.org.allbinary.logic.system.security.licensing.LockedUtil_Package;
+   package LockablePaintable_Package renames Standard.org.allbinary.graphics.form.LockablePaintable_Package;
+   package ScrollCurrentSelectionForm_Package renames Standard.org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package;
 
    type PreGameLockablePaintable is tagged;
    type PreGameLockablePaintable_Access is access all PreGameLockablePaintable'Class;

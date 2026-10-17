@@ -31,14 +31,14 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.business.user.commerce.money.payment.gateway.processor.PaymentProcessorInterfaceFactory_Package is
 
-   package PaymentTransactionInterface_Package renames org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterface_Package;
-   package PaymentTransactionInterfaceRequestFactory_Package renames org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterfaceRequestFactory_Package;
-   package PaymentType_Package renames org.allbinary.business.user.commerce.money.payment.types.PaymentType_Package;
-   package PaymentTypeUtil_Package renames org.allbinary.business.user.commerce.money.payment.types.PaymentTypeUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringValidationUtil_Package renames org.allbinary.logic.string_Id.StringValidationUtil_Package;
-   package TransformInfoInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package PaymentTransactionInterface_Package renames Standard.org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterface_Package;
+   package PaymentTransactionInterfaceRequestFactory_Package renames Standard.org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterfaceRequestFactory_Package;
+   package PaymentType_Package renames Standard.org.allbinary.business.user.commerce.money.payment.types.PaymentType_Package;
+   package PaymentTypeUtil_Package renames Standard.org.allbinary.business.user.commerce.money.payment.types.PaymentTypeUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
+   package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type PaymentProcessorInterfaceFactory is tagged;
    type PaymentProcessorInterfaceFactory_Access is access all PaymentProcessorInterfaceFactory'Class;

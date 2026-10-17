@@ -31,10 +31,10 @@ with org.allbinary.game.layer.geographic.map.MiniMapLayer_Package; use org.allbi
 
 package org.allbinary.game.layer.geographic.map.ImageMiniMapLayer_Package is
 
-   package Anchor_Package renames org.allbinary.graphics.Anchor_Package;
-   package PaintableToImageUtil_Package renames org.allbinary.image.PaintableToImageUtil_Package;
-   package BasicGeographicMap_Package renames org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
-   package ViewPositionBase_Package renames org.allbinary.view.ViewPositionBase_Package;
+   package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
+   package PaintableToImageUtil_Package renames Standard.org.allbinary.image.PaintableToImageUtil_Package;
+   package BasicGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
+   package ViewPositionBase_Package renames Standard.org.allbinary.view.ViewPositionBase_Package;
 
    type ImageMiniMapLayer is tagged;
    type ImageMiniMapLayer_Access is access all ImageMiniMapLayer'Class;

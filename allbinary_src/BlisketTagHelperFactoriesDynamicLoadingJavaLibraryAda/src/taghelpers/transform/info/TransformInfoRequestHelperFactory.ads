@@ -28,9 +28,9 @@ with admin.taghelpers.HelperFactory_Package; use admin.taghelpers.HelperFactory_
 
 package taghelpers.transform.info.TransformInfoRequestHelperFactory_Package is
 
-   package LicensingException_Package renames org.allbinary.logic.system.security.licensing.LicensingException_Package;
-   package TagHelperFactoryInterface_Package renames admin.taghelpers.TagHelperFactoryInterface_Package;
-   package HelperFactory_Package renames admin.taghelpers.HelperFactory_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package TagHelperFactoryInterface_Package renames Standard.admin.taghelpers.TagHelperFactoryInterface_Package;
+   package HelperFactory_Package renames Standard.admin.taghelpers.HelperFactory_Package;
 
    type TransformInfoRequestHelperFactory is tagged;
    type TransformInfoRequestHelperFactory_Access is access all TransformInfoRequestHelperFactory'Class;

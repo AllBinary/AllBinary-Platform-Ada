@@ -24,7 +24,7 @@ with org.allbinary.media.graphics.geography.map.GeographicMapInterface_Package; 
 
 package org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapInterface_Package is
 
-   package GeographicMapInterface_Package renames org.allbinary.media.graphics.geography.map.GeographicMapInterface_Package;
+   package GeographicMapInterface_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapInterface_Package;
 
    type RaceTrackGeographicMapInterface is interface and GeographicMapInterface;
    type RaceTrackGeographicMapInterface_Access is access all RaceTrackGeographicMapInterface'Class;

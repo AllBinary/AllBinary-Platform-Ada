@@ -179,8 +179,12 @@ package body org.allbinary.game.input.ScrollMapPlayerGameInput_Package is
                 This.update;
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.gameInputStrings.PROCESS_INPUT, e);
+                end;
         end;
    end processInput;
 

@@ -14,7 +14,7 @@ with org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package; use org
 
 package org.platform.opengl.OpenGLTextureFactory_Package is
 
-   package PlatformTextureBaseFactory_Package renames org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package;
+   package PlatformTextureBaseFactory_Package renames Standard.org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package;
 
    type OpenGLTextureFactory is tagged;
    type OpenGLTextureFactory_Access is access all OpenGLTextureFactory'Class;

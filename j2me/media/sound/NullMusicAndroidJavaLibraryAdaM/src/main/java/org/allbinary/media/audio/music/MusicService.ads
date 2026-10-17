@@ -24,7 +24,7 @@ with org.allbinary.media.audio.music.BaseMusicService_Package; use org.allbinary
 
 package org.allbinary.media.audio.music.MusicService_Package is
 
-   package BaseMusicService_Package renames org.allbinary.media.audio.music.BaseMusicService_Package;
+   package BaseMusicService_Package renames Standard.org.allbinary.media.audio.music.BaseMusicService_Package;
 
    type MusicService is tagged;
    type MusicService_Access is access all MusicService'Class;

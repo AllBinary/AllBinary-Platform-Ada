@@ -27,8 +27,8 @@ with org.allbinary.gui.dialog.JDialog_Package; use org.allbinary.gui.dialog.JDia
 
 package org.allbinary.gui.dialog.FileJDialog_Package is
 
-   package ARunnable_Package renames org.allbinary.thread.ARunnable_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
+   package ARunnable_Package renames Standard.org.allbinary.thread.ARunnable_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type FileJDialog is tagged;
    type FileJDialog_Access is access all FileJDialog'Class;

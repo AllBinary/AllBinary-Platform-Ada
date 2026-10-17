@@ -33,15 +33,15 @@ with org.allbinary.game.layer.waypoint.Waypoint_Package; use org.allbinary.game.
 
 package org.allbinary.game.layer.waypoint.WorkWaypoint_Package is
 
-   package PathFindingLayerInterface_Package renames org.allbinary.game.layer.PathFindingLayerInterface_Package;
-   package RTSLayer_Package renames org.allbinary.game.layer.RTSLayer_Package;
-   package GeologicalGeographicMapCellPosition_Package renames org.allbinary.game.layer.geological.resources.GeologicalGeographicMapCellPosition_Package;
-   package GeologicalResource_Package renames org.allbinary.game.layer.geological.resources.GeologicalResource_Package;
-   package UnitLayer_Package renames org.allbinary.game.layer.unit.UnitLayer_Package;
-   package UnitWaypointBehavior_Package renames org.allbinary.game.layer.unit.UnitWaypointBehavior_Package;
-   package WorkSound_Package renames org.allbinary.media.audio.WorkSound_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package SmallIntegerSingletonFactory_Package renames org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+   package PathFindingLayerInterface_Package renames Standard.org.allbinary.game.layer.PathFindingLayerInterface_Package;
+   package RTSLayer_Package renames Standard.org.allbinary.game.layer.RTSLayer_Package;
+   package GeologicalGeographicMapCellPosition_Package renames Standard.org.allbinary.game.layer.geological.resources.GeologicalGeographicMapCellPosition_Package;
+   package GeologicalResource_Package renames Standard.org.allbinary.game.layer.geological.resources.GeologicalResource_Package;
+   package UnitLayer_Package renames Standard.org.allbinary.game.layer.unit.UnitLayer_Package;
+   package UnitWaypointBehavior_Package renames Standard.org.allbinary.game.layer.unit.UnitWaypointBehavior_Package;
+   package WorkSound_Package renames Standard.org.allbinary.media.audio.WorkSound_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
 
    type WorkWaypoint is tagged;
    type WorkWaypoint_Access is access all WorkWaypoint'Class;

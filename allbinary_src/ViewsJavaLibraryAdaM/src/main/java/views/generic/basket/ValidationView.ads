@@ -29,11 +29,11 @@ with views.generic_Id.basket.BasketView_Package; use views.generic_Id.basket.Bas
 
 package views.generic_Id.basket.ValidationView_Package is
 
-   package MESSAGES_Package renames org.allbinary.globals.MESSAGES_Package;
-   package ValidationComponentInterface_Package renames org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
-   package TransformInfoInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
+   package MESSAGES_Package renames Standard.org.allbinary.globals.MESSAGES_Package;
+   package ValidationComponentInterface_Package renames Standard.org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
+   package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type ValidationView is tagged;
    type ValidationView_Access is access all ValidationView'Class;

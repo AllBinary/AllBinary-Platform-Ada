@@ -144,8 +144,12 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         begin
             This.getGenericProfileActions.save;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("saveJButtonActionPerformed"), e);
+                end;
         end;
    end saveJButtonActionPerformed;
 
@@ -173,8 +177,12 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
             profileActionNameString := Unbounded_String (This.genericProfileActionsJList.getSelectedValue);
             This.updateProfileActionUI (profileActionNameString);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("genericProfileActionsJListValueChanged"), e);
+                end;
         end;
    end genericProfileActionsJListValueChanged;
 
@@ -189,8 +197,12 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
             This.newProfileActionJDialog.setVisible (False);
             This.updateProfileActionUI (newActionName);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("okNewProfileActionJButtonActionPerformed"), e);
+                end;
         end;
    end okNewProfileActionJButtonActionPerformed;
 
@@ -207,8 +219,12 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
             end loop;
             This.selectFirstElement;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("deleteActionJButtonActionPerformed"), e);
+                end;
         end;
    end deleteActionJButtonActionPerformed;
 

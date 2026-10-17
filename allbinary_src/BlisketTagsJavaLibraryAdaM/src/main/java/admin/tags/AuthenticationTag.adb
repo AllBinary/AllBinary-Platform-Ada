@@ -84,8 +84,12 @@ package body admin.tags.AuthenticationTag_Package is
             result := Boolean (method.invoke (anyType, null));
             return result.booleanValue;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Java_Throw (e);
+                end;
         end;
    end changePassword;
 
@@ -103,8 +107,12 @@ package body admin.tags.AuthenticationTag_Package is
             result := Boolean (method.invoke (anyType, null));
             return result.booleanValue;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Java_Throw (e);
+                end;
         end;
    end newPassword;
 
@@ -122,8 +130,12 @@ package body admin.tags.AuthenticationTag_Package is
             resultInteger := Integer (method.invoke (anyType, null));
             return resultInteger.intValue;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Java_Throw (e);
+                end;
         end;
    end invalidateSession;
 
@@ -141,8 +153,12 @@ package body admin.tags.AuthenticationTag_Package is
             resultBoolean := Boolean (method.invoke (anyType, null));
             return resultBoolean.booleanValue;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Java_Throw (e);
+                end;
         end;
    end isSessionOld;
 
@@ -164,8 +180,12 @@ package body admin.tags.AuthenticationTag_Package is
             resultBoolean := Boolean (method.invoke (anyType, methodArgs));
             return resultBoolean.booleanValue;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Java_Throw (e);
+                end;
         end;
    end isRoleValid;
 
@@ -184,8 +204,12 @@ package body admin.tags.AuthenticationTag_Package is
             result := Unbounded_String (method.invoke (anyType, null));
             return result;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Java_Throw (e);
+                end;
         end;
    end validRole;
 
@@ -204,8 +228,12 @@ package body admin.tags.AuthenticationTag_Package is
             result := Unbounded_String (method.invoke (anyType, null));
             return result;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Java_Throw (e);
+                end;
         end;
    end invalidRole;
 
@@ -227,8 +255,12 @@ package body admin.tags.AuthenticationTag_Package is
             resultBoolean := Boolean (method.invoke (anyType, methodArgs));
             return resultBoolean.booleanValue;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Java_Throw (e);
+                end;
         end;
    end isAuthenticationSessionValid;
 
@@ -250,8 +282,12 @@ package body admin.tags.AuthenticationTag_Package is
             resultBoolean := Boolean (method.invoke (anyType, methodArgs));
             return resultBoolean.booleanValue;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Java_Throw (e);
+                end;
         end;
    end processIfNewLogin;
 
@@ -269,8 +305,12 @@ package body admin.tags.AuthenticationTag_Package is
             resultBoolean := Boolean (method.invoke (anyType, null));
             return resultBoolean.booleanValue;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Java_Throw (e);
+                end;
         end;
    end processInvalidation;
 
@@ -396,9 +436,13 @@ package body admin.tags.AuthenticationTag_Package is
             end if;
             return SKIP_BODY;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             AbResponseHandler_Package.sendJspTagLicensingRedirect (This.pageContext, e);
             return SKIP_BODY;
+                end;
         end;
    end doStartTag;
 

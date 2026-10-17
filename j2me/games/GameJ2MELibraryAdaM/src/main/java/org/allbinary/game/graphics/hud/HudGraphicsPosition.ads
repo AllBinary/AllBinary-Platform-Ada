@@ -25,8 +25,8 @@ with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.Poi
 
 package org.allbinary.game.graphics.hud.HudGraphicsPosition_Package is
 
-   package GPoint_Package renames org.allbinary.graphics.GPoint_Package;
-   package PointFactory_Package renames org.allbinary.graphics.PointFactory_Package;
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
 
    type HudGraphicsPosition is tagged;
    type HudGraphicsPosition_Access is access all HudGraphicsPosition'Class;

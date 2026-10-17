@@ -24,7 +24,7 @@ with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.
 
 package org.allbinary.android.input.motion.AnalogControllerVisitor_Package is
 
-   package AllBinaryLayerManager_Package renames org.allbinary.layer.AllBinaryLayerManager_Package;
+   package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
 
    type AnalogControllerVisitor is tagged;
    type AnalogControllerVisitor_Access is access all AnalogControllerVisitor'Class;

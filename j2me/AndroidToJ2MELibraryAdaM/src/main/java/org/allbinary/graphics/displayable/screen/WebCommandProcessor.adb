@@ -54,9 +54,13 @@ package body org.allbinary.graphics.displayable.screen.WebCommandProcessor_Packa
             intent.setFlags (Intent_Package.FLAG_ACTIVITY_NEW_TASK);
             context.startActivity (intent);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("process"), e);
+                end;
         end;
    end process;
 

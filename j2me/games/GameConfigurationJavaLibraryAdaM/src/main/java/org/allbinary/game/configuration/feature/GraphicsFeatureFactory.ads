@@ -24,7 +24,7 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 
 package org.allbinary.game.configuration.feature.GraphicsFeatureFactory_Package is
 
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type GraphicsFeatureFactory is tagged;
    type GraphicsFeatureFactory_Access is access all GraphicsFeatureFactory'Class;

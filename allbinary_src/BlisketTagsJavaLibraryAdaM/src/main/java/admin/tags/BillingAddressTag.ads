@@ -31,11 +31,11 @@ with admin.tags.TableTag_Package; use admin.tags.TableTag_Package;
 
 package admin.tags.BillingAddressTag_Package is
 
-   package BillingAddressHelperFactory_Package renames admin.taghelpers.BillingAddressHelperFactory_Package;
-   package BillingAddressData_Package renames org.allbinary.business.user.address.BillingAddressData_Package;
-   package AbResponseHandler_Package renames org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package LicensingException_Package renames org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package BillingAddressHelperFactory_Package renames Standard.admin.taghelpers.BillingAddressHelperFactory_Package;
+   package BillingAddressData_Package renames Standard.org.allbinary.business.user.address.BillingAddressData_Package;
+   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
 
    type BillingAddressTag is tagged;
    type BillingAddressTag_Access is access all BillingAddressTag'Class;

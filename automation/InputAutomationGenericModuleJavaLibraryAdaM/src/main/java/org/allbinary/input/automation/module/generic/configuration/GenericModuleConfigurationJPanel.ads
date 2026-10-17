@@ -35,16 +35,16 @@ with org.allbinary.input.automation.module.generic_Id.configuration.GenericModul
 
 package org.allbinary.input.automation.module.generic_Id.configuration.GenericModuleConfigurationJPanel_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package GenericProfile_Package renames org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfile_Package;
-   package GenericProfileDataWorkerType_Package renames org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerType_Package;
-   package GenericProfiles_Package renames org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfiles_Package;
-   package GenericProfileActions_Package renames org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActions_Package;
-   package GenericProfileActionsJPanel_Package renames org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionsJPanel_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package GenericProfile_Package renames Standard.org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfile_Package;
+   package GenericProfileDataWorkerType_Package renames Standard.org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerType_Package;
+   package GenericProfiles_Package renames Standard.org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfiles_Package;
+   package GenericProfileActions_Package renames Standard.org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActions_Package;
+   package GenericProfileActionsJPanel_Package renames Standard.org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionsJPanel_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type GenericModuleConfigurationJPanel is tagged;
    type GenericModuleConfigurationJPanel_Access is access all GenericModuleConfigurationJPanel'Class;

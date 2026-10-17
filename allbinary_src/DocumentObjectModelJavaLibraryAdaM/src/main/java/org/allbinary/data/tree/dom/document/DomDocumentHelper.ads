@@ -28,7 +28,7 @@ with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 
 package org.allbinary.data.tree.dom.document.DomDocumentHelper_Package is
 
-   package Document_Package renames org.w3c.dom.Document_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
 
    type DomDocumentHelper is tagged;
    type DomDocumentHelper_Access is access all DomDocumentHelper'Class;

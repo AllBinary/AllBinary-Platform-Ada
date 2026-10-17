@@ -27,7 +27,7 @@ with org.allbinary.animation.image.ImageAnimation_Package; use org.allbinary.ani
 
 package org.allbinary.animation.image.AdjustedImageAnimation_Package is
 
-   package AnimationBehavior_Package renames org.allbinary.animation.AnimationBehavior_Package;
+   package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
 
    type AdjustedImageAnimation is tagged;
    type AdjustedImageAnimation_Access is access all AdjustedImageAnimation'Class;

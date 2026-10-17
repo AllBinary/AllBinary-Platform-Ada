@@ -32,14 +32,14 @@ with org.allbinary.game.layer.weapon.WeaponLayer_Package; use org.allbinary.game
 
 package org.allbinary.game.layer.weapon.SimpleWeaponLayer_Package is
 
-   package Animation_Package renames org.allbinary.animation.Animation_Package;
-   package FeaturedAnimationInterfaceFactoryInterfaceFactory_Package renames org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package;
-   package NullIndexedAnimationFactory_Package renames org.allbinary.animation.NullIndexedAnimationFactory_Package;
-   package ExplosionResources_Package renames org.allbinary.game.combat.damage.ExplosionResources_Package;
-   package RemoteInfo_Package renames org.allbinary.game.multiplayer.layer.RemoteInfo_Package;
-   package Rectangle_Package renames org.allbinary.graphics.Rectangle_Package;
-   package Movement_Package renames org.allbinary.physics.movement.Movement_Package;
-   package ViewPositionBase_Package renames org.allbinary.view.ViewPositionBase_Package;
+   package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
+   package FeaturedAnimationInterfaceFactoryInterfaceFactory_Package renames Standard.org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package;
+   package NullIndexedAnimationFactory_Package renames Standard.org.allbinary.animation.NullIndexedAnimationFactory_Package;
+   package ExplosionResources_Package renames Standard.org.allbinary.game.combat.damage.ExplosionResources_Package;
+   package RemoteInfo_Package renames Standard.org.allbinary.game.multiplayer.layer.RemoteInfo_Package;
+   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
+   package Movement_Package renames Standard.org.allbinary.physics.movement.Movement_Package;
+   package ViewPositionBase_Package renames Standard.org.allbinary.view.ViewPositionBase_Package;
 
    type SimpleWeaponLayer is tagged;
    type SimpleWeaponLayer_Access is access all SimpleWeaponLayer'Class;

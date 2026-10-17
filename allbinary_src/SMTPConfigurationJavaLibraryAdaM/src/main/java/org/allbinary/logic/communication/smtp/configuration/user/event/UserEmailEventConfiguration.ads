@@ -27,8 +27,8 @@ with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEv
 
 package org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfiguration_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type UserEmailEventConfiguration is tagged;
    type UserEmailEventConfiguration_Access is access all UserEmailEventConfiguration'Class;

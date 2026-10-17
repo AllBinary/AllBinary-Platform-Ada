@@ -25,8 +25,8 @@ with org.allbinary.graphics.paint.NullPaintable_Package; use org.allbinary.graph
 
 package org.allbinary.game.displayable.canvas.BaseMenuBehavior_Package is
 
-   package DisplayChangeEvent_Package renames org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package;
-   package NullPaintable_Package renames org.allbinary.graphics.paint.NullPaintable_Package;
+   package DisplayChangeEvent_Package renames Standard.org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package;
+   package NullPaintable_Package renames Standard.org.allbinary.graphics.paint.NullPaintable_Package;
 
    type BaseMenuBehavior is tagged;
    type BaseMenuBehavior_Access is access all BaseMenuBehavior'Class;

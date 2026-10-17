@@ -33,12 +33,12 @@ with org.allbinary.game.displayable.canvas.GameCommandCanvas_Package; use org.al
 
 package org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas_Package is
 
-   package AllBinaryGameLayerManager_Package renames org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
-   package ColorFillBasePaintable_Package renames org.allbinary.game.paint.ColorFillBasePaintable_Package;
-   package ColorFillPaintableFactory_Package renames org.allbinary.game.paint.ColorFillPaintableFactory_Package;
-   package Anchor_Package renames org.allbinary.graphics.Anchor_Package;
-   package DrawStringUtil_Package renames org.allbinary.graphics.draw.DrawStringUtil_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
+   package AllBinaryGameLayerManager_Package renames Standard.org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
+   package ColorFillBasePaintable_Package renames Standard.org.allbinary.game.paint.ColorFillBasePaintable_Package;
+   package ColorFillPaintableFactory_Package renames Standard.org.allbinary.game.paint.ColorFillPaintableFactory_Package;
+   package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
+   package DrawStringUtil_Package renames Standard.org.allbinary.graphics.draw.DrawStringUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type GameInputMappingInstructionsCanvas is tagged;
    type GameInputMappingInstructionsCanvas_Access is access all GameInputMappingInstructionsCanvas'Class;

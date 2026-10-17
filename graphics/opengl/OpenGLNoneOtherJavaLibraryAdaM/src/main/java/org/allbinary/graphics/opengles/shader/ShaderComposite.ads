@@ -27,9 +27,9 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 
 package org.allbinary.graphics.opengles.shader.ShaderComposite_Package is
 
-   package NullOpenGLProcessorFactory_Package renames org.allbinary.graphics.opengles.NullOpenGLProcessorFactory_Package;
-   package OpenGLProcessor_Package renames org.allbinary.graphics.opengles.OpenGLProcessor_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
+   package NullOpenGLProcessorFactory_Package renames Standard.org.allbinary.graphics.opengles.NullOpenGLProcessorFactory_Package;
+   package OpenGLProcessor_Package renames Standard.org.allbinary.graphics.opengles.OpenGLProcessor_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type ShaderComposite is tagged;
    type ShaderComposite_Access is access all ShaderComposite'Class;

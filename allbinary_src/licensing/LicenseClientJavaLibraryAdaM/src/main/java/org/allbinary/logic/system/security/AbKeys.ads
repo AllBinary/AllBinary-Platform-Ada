@@ -27,10 +27,10 @@ with org.allbinary.logic.system.security.licensing.LicensingException_Package; u
 
 package org.allbinary.logic.system.security.AbKeys_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package AbeClientInformationInterface_Package renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-   package AbeLicenseInterfaceFactory_Package renames org.allbinary.logic.system.security.licensing.AbeLicenseInterfaceFactory_Package;
-   package LicensingException_Package renames org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package AbeLicenseInterfaceFactory_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeLicenseInterfaceFactory_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
 
    type AbKeys is tagged;
    type AbKeys_Access is access all AbKeys'Class;

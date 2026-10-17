@@ -32,15 +32,15 @@ with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 
 package org.allbinary.business.category.CategoryUtil_Package is
 
-   package DomNodeHelper_Package renames org.allbinary.data.tree.dom.DomNodeHelper_Package;
-   package DomSearchHelper_Package renames org.allbinary.data.tree.dom.DomSearchHelper_Package;
-   package AbPath_Package renames org.allbinary.logic.io.path.AbPath_Package;
-   package AbPathData_Package renames org.allbinary.logic.io.path.AbPathData_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package StringUtils_Package renames org.apache.commons.lang3.StringUtils_Package;
-   package Attr_Package renames org.w3c.dom.Attr_Package;
-   package NamedNodeMap_Package renames org.w3c.dom.NamedNodeMap_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
+   package DomNodeHelper_Package renames Standard.org.allbinary.data.tree.dom.DomNodeHelper_Package;
+   package DomSearchHelper_Package renames Standard.org.allbinary.data.tree.dom.DomSearchHelper_Package;
+   package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
+   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package StringUtils_Package renames Standard.org.apache.commons.lang3.StringUtils_Package;
+   package Attr_Package renames Standard.org.w3c.dom.Attr_Package;
+   package NamedNodeMap_Package renames Standard.org.w3c.dom.NamedNodeMap_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type CategoryUtil is tagged;
    type CategoryUtil_Access is access all CategoryUtil'Class;

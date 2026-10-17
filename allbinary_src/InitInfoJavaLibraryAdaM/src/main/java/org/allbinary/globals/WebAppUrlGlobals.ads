@@ -26,8 +26,8 @@ with org.allbinary.globals.UrlGlobalsInterface_Package; use org.allbinary.global
 
 package org.allbinary.globals.WebAppUrlGlobals_Package is
 
-   package InitInfo_Package renames org.allbinary.business.init.InitInfo_Package;
-   package StringValidationUtil_Package renames org.allbinary.logic.string_Id.StringValidationUtil_Package;
+   package InitInfo_Package renames Standard.org.allbinary.business.init.InitInfo_Package;
+   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
 
    type WebAppUrlGlobals is tagged;
    type WebAppUrlGlobals_Access is access all WebAppUrlGlobals'Class;

@@ -25,7 +25,7 @@ with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.strin
 
 package org.allbinary.game.displayable.canvas.CanvasUtil_Package is
 
-   package CommonPhoneStrings_Package renames org.allbinary.string_Id.CommonPhoneStrings_Package;
+   package CommonPhoneStrings_Package renames Standard.org.allbinary.string_Id.CommonPhoneStrings_Package;
 
    type CanvasUtil is tagged;
    type CanvasUtil_Access is access all CanvasUtil'Class;

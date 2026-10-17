@@ -28,10 +28,10 @@ with org.allbinary.game.multiplayer.layer.MultiPlayerGameLayerInterface_Package;
 
 package org.allbinary.game.multiplayer.layer.MultiPlayerGameLayer_Package is
 
-   package Group_Package renames org.allbinary.game.identification.Group_Package;
-   package CollidableDestroyableDamageableLayer_Package renames org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
-   package Rectangle_Package renames org.allbinary.graphics.Rectangle_Package;
-   package ViewPositionBase_Package renames org.allbinary.view.ViewPositionBase_Package;
+   package Group_Package renames Standard.org.allbinary.game.identification.Group_Package;
+   package CollidableDestroyableDamageableLayer_Package renames Standard.org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
+   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
+   package ViewPositionBase_Package renames Standard.org.allbinary.view.ViewPositionBase_Package;
 
    type MultiPlayerGameLayer is tagged;
    type MultiPlayerGameLayer_Access is access all MultiPlayerGameLayer'Class;

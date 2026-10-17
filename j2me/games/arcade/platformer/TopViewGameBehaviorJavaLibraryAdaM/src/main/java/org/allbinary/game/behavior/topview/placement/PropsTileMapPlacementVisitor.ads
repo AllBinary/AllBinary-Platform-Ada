@@ -29,11 +29,11 @@ with org.allbinary.game.behavior.topview.placement.TileMapPlacementVisitor_Packa
 
 package org.allbinary.game.behavior.topview.placement.PropsTileMapPlacementVisitor_Package is
 
-   package MyRandomFactory_Package renames org.allbinary.game.rand.MyRandomFactory_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package TileLayer_Package renames org.mapeditor.core.TileLayer_Package;
-   package TiledMap_Package renames org.mapeditor.core.TiledMap_Package;
+   package MyRandomFactory_Package renames Standard.org.allbinary.game.rand.MyRandomFactory_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package TileLayer_Package renames Standard.org.mapeditor.core.TileLayer_Package;
+   package TiledMap_Package renames Standard.org.mapeditor.core.TiledMap_Package;
 
    type PropsTileMapPlacementVisitor is tagged;
    type PropsTileMapPlacementVisitor_Access is access all PropsTileMapPlacementVisitor'Class;

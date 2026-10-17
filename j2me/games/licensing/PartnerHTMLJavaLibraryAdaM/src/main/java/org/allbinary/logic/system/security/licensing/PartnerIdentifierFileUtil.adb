@@ -50,10 +50,14 @@ package body org.allbinary.logic.system.security.licensing.PartnerIdentifierFile
             partnerString := StringUtil_Package.getInstance.EMPTY_STRING;
             return partnerString;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.GET, e);
             return StringUtil_Package.getInstance.NULL_STRING;
+                end;
         end;
    end get;
 

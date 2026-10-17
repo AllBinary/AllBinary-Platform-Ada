@@ -30,12 +30,12 @@ with org.allbinary.game.resource.ResourceRelativeRelationshipFactoryInterface_Pa
 
 package org.allbinary.game.resource.ResourceRelativeRelationshipFactory_Package is
 
-   package RelativeRelationship_Package renames org.allbinary.graphics.RelativeRelationship_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package ABHashtable_Package renames org.allbinary.util.ABHashtable_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package BasicArrayListUtil_Package renames org.allbinary.util.BasicArrayListUtil_Package;
+   package RelativeRelationship_Package renames Standard.org.allbinary.graphics.RelativeRelationship_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
 
    type ResourceRelativeRelationshipFactory is tagged;
    type ResourceRelativeRelationshipFactory_Access is access all ResourceRelativeRelationshipFactory'Class;

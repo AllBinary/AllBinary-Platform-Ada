@@ -26,9 +26,9 @@ with org.microemu.app.BareMain_Package; use org.microemu.app.BareMain_Package;
 
 package org.allbinary.media.image.ImageSwtUtil_Package is
 
-   package Color_Package renames org.eclipse.swt.graphics.Color_Package;
-   package RGB_Package renames org.eclipse.swt.graphics.RGB_Package;
-   package BareMain_Package renames org.microemu.app.BareMain_Package;
+   package Color_Package renames Standard.org.eclipse.swt.graphics.Color_Package;
+   package RGB_Package renames Standard.org.eclipse.swt.graphics.RGB_Package;
+   package BareMain_Package renames Standard.org.microemu.app.BareMain_Package;
 
    type ImageSwtUtil is tagged;
    type ImageSwtUtil_Access is access all ImageSwtUtil'Class;

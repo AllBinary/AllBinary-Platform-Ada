@@ -87,9 +87,13 @@ package body org.allbinary.game.displayable.canvas.PopupMenuInputProcessor_Packa
                 return -(1);
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, GameInputStrings_Package.getInstance.PROCESS_INPUT, e);
             return -(1);
+                end;
         end;
    end processInputList;
 

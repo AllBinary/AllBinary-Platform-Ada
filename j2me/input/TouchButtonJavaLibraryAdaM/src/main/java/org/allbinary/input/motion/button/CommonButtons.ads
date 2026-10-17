@@ -26,9 +26,9 @@ with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.al
 
 package org.allbinary.input.motion.button.CommonButtons_Package is
 
-   package PointFactory_Package renames org.allbinary.graphics.PointFactory_Package;
-   package Rectangle_Package renames org.allbinary.graphics.Rectangle_Package;
-   package DisplayInfoSingleton_Package renames org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
+   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
+   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
 
    type CommonButtons is tagged;
    type CommonButtons_Access is access all CommonButtons'Class;

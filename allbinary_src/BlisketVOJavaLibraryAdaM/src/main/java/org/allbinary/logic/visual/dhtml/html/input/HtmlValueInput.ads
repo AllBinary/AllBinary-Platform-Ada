@@ -25,7 +25,7 @@ with org.allbinary.logic.visual.dhtml.html.input.HtmlInput_Package; use org.allb
 
 package org.allbinary.logic.visual.dhtml.html.input.HtmlValueInput_Package is
 
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type HtmlValueInput is tagged;
    type HtmlValueInput_Access is access all HtmlValueInput'Class;

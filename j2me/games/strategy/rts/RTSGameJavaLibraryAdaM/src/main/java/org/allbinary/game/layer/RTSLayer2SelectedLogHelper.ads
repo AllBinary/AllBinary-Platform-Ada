@@ -26,8 +26,8 @@ with org.allbinary.game.layer.RTSLayer2LogHelper_Package; use org.allbinary.game
 
 package org.allbinary.game.layer.RTSLayer2SelectedLogHelper_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
 
    type RTSLayer2SelectedLogHelper is tagged;
    type RTSLayer2SelectedLogHelper_Access is access all RTSLayer2SelectedLogHelper'Class;

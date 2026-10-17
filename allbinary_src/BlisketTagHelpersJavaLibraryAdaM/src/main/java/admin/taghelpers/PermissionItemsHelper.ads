@@ -30,10 +30,10 @@ with admin.taghelpers.BasicTable_Package; use admin.taghelpers.BasicTable_Packag
 
 package admin.taghelpers.PermissionItemsHelper_Package is
 
-   package Portion_Package renames org.allbinary.business.installer.Portion_Package;
-   package PermissionItemsEntityFactory_Package renames org.allbinary.data.tables.user.commerce.inventory.item.permissions.PermissionItemsEntityFactory_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package AbSqlTableUtil_Package renames org.allbinary.logic.communication.sql.AbSqlTableUtil_Package;
+   package Portion_Package renames Standard.org.allbinary.business.installer.Portion_Package;
+   package PermissionItemsEntityFactory_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.item.permissions.PermissionItemsEntityFactory_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package AbSqlTableUtil_Package renames Standard.org.allbinary.logic.communication.sql.AbSqlTableUtil_Package;
 
    type PermissionItemsHelper is tagged;
    type PermissionItemsHelper_Access is access all PermissionItemsHelper'Class;

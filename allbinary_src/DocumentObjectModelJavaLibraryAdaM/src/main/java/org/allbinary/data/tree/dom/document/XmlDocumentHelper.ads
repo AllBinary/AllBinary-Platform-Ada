@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.ByteArrayOutputStream_Package; use java.io.ByteArrayOutputStream_Package;
+with java.io.ByteArrayOutputStream_Package; use java.io.ByteArrayOutputStream_Package;
 --  with java.io.StringReader_Package; use java.io.StringReader_Package;
 --  with java.io.StringWriter_Package; use java.io.StringWriter_Package;
 --  with java.io.Writer_Package; use java.io.Writer_Package;
@@ -39,12 +39,13 @@ with org.xml.sax.InputSource_Package; use org.xml.sax.InputSource_Package;
 
 package org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package BooleanFactory_Package renames org.allbinary.logic.java.bool.BooleanFactory_Package;
-   package CharacterSetData_Package renames org.allbinary.logic.java.characters.CharacterSetData_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
-   package InputSource_Package renames org.xml.sax.InputSource_Package;
+   package ByteArrayOutputStream_Package renames Standard.java.io.ByteArrayOutputStream_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package BooleanFactory_Package renames Standard.org.allbinary.logic.java.bool.BooleanFactory_Package;
+   package CharacterSetData_Package renames Standard.org.allbinary.logic.java.characters.CharacterSetData_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package InputSource_Package renames Standard.org.xml.sax.InputSource_Package;
 
    type XmlDocumentHelper is tagged;
    type XmlDocumentHelper_Access is access all XmlDocumentHelper'Class;

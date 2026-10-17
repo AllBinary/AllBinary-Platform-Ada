@@ -25,8 +25,8 @@ with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path
 
 package org.allbinary.logic.communication.http.file.upload.HttpFilePermissionsUtil_Package is
 
-   package AbFile_Package renames org.allbinary.logic.io.file.AbFile_Package;
-   package AbPath_Package renames org.allbinary.logic.io.path.AbPath_Package;
+   package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
+   package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
 
    type HttpFilePermissionsUtil is tagged;
    type HttpFilePermissionsUtil_Access is access all HttpFilePermissionsUtil'Class;

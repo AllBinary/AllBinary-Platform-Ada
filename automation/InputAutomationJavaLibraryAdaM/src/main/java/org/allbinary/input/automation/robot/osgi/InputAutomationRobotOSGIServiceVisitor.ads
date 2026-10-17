@@ -30,13 +30,13 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.input.automation.robot.osgi.InputAutomationRobotOSGIServiceVisitor_Package is
 
-   package InputAutomationRobotServiceInterface_Package renames bundle.input.automation.robot.InputAutomationRobotServiceInterface_Package;
-   package InputRobotFactory_Package renames org.allbinary.input.automation.robot.InputRobotFactory_Package;
-   package InputRobotInterface_Package renames org.allbinary.input.automation.robot.InputRobotInterface_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package OSGIServiceInterface_Package renames org.allbinary.osgi.OSGIServiceInterface_Package;
-   package OSGIServiceVisitorInterface_Package renames org.allbinary.osgi.OSGIServiceVisitorInterface_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package InputAutomationRobotServiceInterface_Package renames Standard.bundle.input.automation.robot.InputAutomationRobotServiceInterface_Package;
+   package InputRobotFactory_Package renames Standard.org.allbinary.input.automation.robot.InputRobotFactory_Package;
+   package InputRobotInterface_Package renames Standard.org.allbinary.input.automation.robot.InputRobotInterface_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package OSGIServiceInterface_Package renames Standard.org.allbinary.osgi.OSGIServiceInterface_Package;
+   package OSGIServiceVisitorInterface_Package renames Standard.org.allbinary.osgi.OSGIServiceVisitorInterface_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type InputAutomationRobotOSGIServiceVisitor is tagged;
    type InputAutomationRobotOSGIServiceVisitor_Access is access all InputAutomationRobotOSGIServiceVisitor'Class;

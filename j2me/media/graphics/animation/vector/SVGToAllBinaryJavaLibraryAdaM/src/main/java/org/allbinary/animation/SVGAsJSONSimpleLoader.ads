@@ -34,16 +34,16 @@ with org.json.me.JSONObject_Package; use org.json.me.JSONObject_Package;
 
 package org.allbinary.animation.SVGAsJSONSimpleLoader_Package is
 
-   package GraphicsStrings_Package renames org.allbinary.graphics.GraphicsStrings_Package;
-   package PrimitiveIntUtil_Package renames org.allbinary.logic.math.PrimitiveIntUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package PositionStrings_Package renames org.allbinary.math.PositionStrings_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package JSONArray_Package renames org.json.me.JSONArray_Package;
-   package JSONException_Package renames org.json.me.JSONException_Package;
-   package JSONObject_Package renames org.json.me.JSONObject_Package;
+   package GraphicsStrings_Package renames Standard.org.allbinary.graphics.GraphicsStrings_Package;
+   package PrimitiveIntUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveIntUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package PositionStrings_Package renames Standard.org.allbinary.math.PositionStrings_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package JSONArray_Package renames Standard.org.json.me.JSONArray_Package;
+   package JSONException_Package renames Standard.org.json.me.JSONException_Package;
+   package JSONObject_Package renames Standard.org.json.me.JSONObject_Package;
 
    type SVGAsJSONSimpleLoader is tagged;
    type SVGAsJSONSimpleLoader_Access is access all SVGAsJSONSimpleLoader'Class;

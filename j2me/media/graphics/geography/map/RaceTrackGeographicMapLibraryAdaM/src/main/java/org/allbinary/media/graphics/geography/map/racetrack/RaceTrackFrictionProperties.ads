@@ -24,7 +24,7 @@ with org.allbinary.game.physics.friction.FrictionData_Package; use org.allbinary
 
 package org.allbinary.media.graphics.geography.map.racetrack.RaceTrackFrictionProperties_Package is
 
-   package FrictionData_Package renames org.allbinary.game.physics.friction.FrictionData_Package;
+   package FrictionData_Package renames Standard.org.allbinary.game.physics.friction.FrictionData_Package;
 
    type RaceTrackFrictionProperties is tagged;
    type RaceTrackFrictionProperties_Access is access all RaceTrackFrictionProperties'Class;

@@ -215,8 +215,12 @@ package body org.allbinary.graphics.displayable.DisplayInfoSingleton_Package is
             end if;
             This.list.clear;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             PreLogUtil_Package.putOE (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.FIRE_METHOD_NAME, e);
+                end;
         end;
    end process;
 
@@ -230,8 +234,12 @@ package body org.allbinary.graphics.displayable.DisplayInfoSingleton_Package is
             LastDisplayChangeEventHandler_Package.getInstance.fireEvent (This.displayChangeEvent);
             swtJOGLProcessor.onSurfaceChanged;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             PreLogUtil_Package.putOE (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.FIRE_METHOD_NAME, e);
+                end;
         end;
    end processForced;
 

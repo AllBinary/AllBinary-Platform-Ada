@@ -25,8 +25,8 @@ with org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration
 
 package org.allbinary.input.motion.gesture.observer.MotionGestureReceiveInterfaceFactory_Package is
 
-   package MotionGestureConfiguration_Package renames org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package;
-   package MotionGestureConfigurationFactory_Package renames org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurationFactory_Package;
+   package MotionGestureConfiguration_Package renames Standard.org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package;
+   package MotionGestureConfigurationFactory_Package renames Standard.org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurationFactory_Package;
 
    type MotionGestureReceiveInterfaceFactory is tagged;
    type MotionGestureReceiveInterfaceFactory_Access is access all MotionGestureReceiveInterfaceFactory'Class;

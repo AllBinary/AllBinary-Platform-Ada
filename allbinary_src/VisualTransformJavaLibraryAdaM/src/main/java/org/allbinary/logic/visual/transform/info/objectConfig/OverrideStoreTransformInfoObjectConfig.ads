@@ -27,9 +27,9 @@ with org.allbinary.logic.visual.transform.info.objectConfig.GenericStoreTransfor
 
 package org.allbinary.logic.visual.transform.info.objectConfig.OverrideStoreTransformInfoObjectConfig_Package is
 
-   package AbeClientInformationInterface_Package renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-   package TransformInfoInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
+   package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
 
    type OverrideStoreTransformInfoObjectConfig is tagged;
    type OverrideStoreTransformInfoObjectConfig_Access is access all OverrideStoreTransformInfoObjectConfig'Class;

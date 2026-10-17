@@ -32,11 +32,11 @@ with admin.taghelpers.TagHelper_Package; use admin.taghelpers.TagHelper_Package;
 
 package admin.taghelpers.OrderItemsRequestHelper_Package is
 
-   package OrderData_Package renames org.allbinary.business.user.commerce.inventory.order.OrderData_Package;
-   package OrderHistoryData_Package renames org.allbinary.business.user.commerce.inventory.order.OrderHistoryData_Package;
-   package ShippingMethodData_Package renames org.allbinary.business.user.commerce.shipping.ShippingMethodData_Package;
-   package OrderItemsEntityFactory_Package renames org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsEntityFactory_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
+   package OrderData_Package renames Standard.org.allbinary.business.user.commerce.inventory.order.OrderData_Package;
+   package OrderHistoryData_Package renames Standard.org.allbinary.business.user.commerce.inventory.order.OrderHistoryData_Package;
+   package ShippingMethodData_Package renames Standard.org.allbinary.business.user.commerce.shipping.ShippingMethodData_Package;
+   package OrderItemsEntityFactory_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsEntityFactory_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type OrderItemsRequestHelper is tagged;
    type OrderItemsRequestHelper_Access is access all OrderItemsRequestHelper'Class;

@@ -113,10 +113,14 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsE
                 This.logUtil.putF (To_Unbounded_String ("Command Success Added: ") & Java_Image (items.size), This'Unchecked_Access, INSERT);
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.put (To_Unbounded_String ("Command Failed: ") & vector.toString, This'Unchecked_Access, INSERT, e);
             end if;
+                end;
         end;
    end insert;
 
@@ -132,10 +136,14 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsE
             updateHashMap.put (OrderHistoryData_Package.STATUS, status);
             AbSqlBean (This).updateWhere (whereHashMap, updateHashMap);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("setStatus"), e);
             end if;
+                end;
         end;
    end setStatus;
 
@@ -156,11 +164,15 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsE
             end loop;
             return True;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("isEverythingShipped"), e);
             end if;
             return False;
+                end;
         end;
    end isEverythingShipped;
 
@@ -204,11 +216,15 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsE
                 return null;
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("getBasketReview"), e);
             end if;
             return null;
+                end;
         end;
    end getBasketReview;
 

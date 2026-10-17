@@ -29,8 +29,8 @@ with org.allbinary.game.configuration.feature.Features_Package; use org.allbinar
 
 package org.allbinary.image.ChoiceGroupImageUtil_Package is
 
-   package OpenGLFeatureFactory_Package renames org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
-   package Features_Package renames org.allbinary.game.configuration.feature.Features_Package;
+   package OpenGLFeatureFactory_Package renames Standard.org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
 
    type ChoiceGroupImageUtil is tagged;
    type ChoiceGroupImageUtil_Access is access all ChoiceGroupImageUtil'Class;

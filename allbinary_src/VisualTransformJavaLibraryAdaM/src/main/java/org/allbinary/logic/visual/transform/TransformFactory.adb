@@ -65,11 +65,15 @@ package body org.allbinary.logic.visual.transform.TransformFactory_Package is
             end if;
             return TransformInterface_Access (anyType);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORYERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.GET_INSTANCE, e);
             end if;
             Java_Throw (e);
+                end;
         end;
    end getInstance;
 
@@ -99,7 +103,10 @@ package body org.allbinary.logic.visual.transform.TransformFactory_Package is
             end if;
             return TransformInterface_Access (anyType);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORYERROR) then
                 stringBuffer := StringMaker_Package.Create;
                 stringBuffer.append (To_Unbounded_String ("Failed To Get Instance: "));
@@ -108,6 +115,7 @@ package body org.allbinary.logic.visual.transform.TransformFactory_Package is
                 This.logUtil.put (stringBuffer.toString, This'Unchecked_Access, This.commonStrings.GET_INSTANCE, e);
             end if;
             Java_Throw (e);
+                end;
         end;
    end getInstance;
 
@@ -125,11 +133,15 @@ package body org.allbinary.logic.visual.transform.TransformFactory_Package is
             end if;
             return TransformInterface_Access (anyType);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORYERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("getInstance(TransformInfoInterface)"), e);
             end if;
             Java_Throw (e);
+                end;
         end;
    end getInstance;
 

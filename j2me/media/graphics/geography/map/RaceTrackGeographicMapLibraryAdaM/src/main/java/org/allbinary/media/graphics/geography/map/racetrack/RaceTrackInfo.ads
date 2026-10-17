@@ -24,7 +24,7 @@ with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics
 
 package org.allbinary.media.graphics.geography.map.racetrack.RaceTrackInfo_Package is
 
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
 
    type RaceTrackInfo is tagged;
    type RaceTrackInfo_Access is access all RaceTrackInfo'Class;

@@ -36,19 +36,19 @@ with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_
 
 package org.allbinary.game.layer.building.BuildingPropertiesFactory_Package is
 
-   package DamageFloaters_Package renames org.allbinary.game.combat.damage.DamageFloaters_Package;
-   package PtsDamageFloaters_Package renames org.allbinary.game.combat.damage.PtsDamageFloaters_Package;
-   package Features_Package renames org.allbinary.game.configuration.feature.Features_Package;
-   package GameFeatureFactory_Package renames org.allbinary.game.configuration.feature.GameFeatureFactory_Package;
-   package BasicHudFactory_Package renames org.allbinary.game.graphics.hud.BasicHudFactory_Package;
-   package HealthBar_Package renames org.allbinary.game.health.HealthBar_Package;
-   package HealthBarTwodAnimation_Package renames org.allbinary.game.health.HealthBarTwodAnimation_Package;
-   package TrackingEvent_Package renames org.allbinary.game.tracking.TrackingEvent_Package;
-   package NullPaintable_Package renames org.allbinary.graphics.paint.NullPaintable_Package;
-   package Paintable_Package renames org.allbinary.graphics.paint.Paintable_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package ABHashtable_Package renames org.allbinary.util.ABHashtable_Package;
+   package DamageFloaters_Package renames Standard.org.allbinary.game.combat.damage.DamageFloaters_Package;
+   package PtsDamageFloaters_Package renames Standard.org.allbinary.game.combat.damage.PtsDamageFloaters_Package;
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
+   package GameFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.GameFeatureFactory_Package;
+   package BasicHudFactory_Package renames Standard.org.allbinary.game.graphics.hud.BasicHudFactory_Package;
+   package HealthBar_Package renames Standard.org.allbinary.game.health.HealthBar_Package;
+   package HealthBarTwodAnimation_Package renames Standard.org.allbinary.game.health.HealthBarTwodAnimation_Package;
+   package TrackingEvent_Package renames Standard.org.allbinary.game.tracking.TrackingEvent_Package;
+   package NullPaintable_Package renames Standard.org.allbinary.graphics.paint.NullPaintable_Package;
+   package Paintable_Package renames Standard.org.allbinary.graphics.paint.Paintable_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
    type BuildingPropertiesFactory is tagged;
    type BuildingPropertiesFactory_Access is access all BuildingPropertiesFactory'Class;

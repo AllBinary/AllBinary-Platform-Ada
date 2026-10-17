@@ -27,9 +27,9 @@ with org.allbinary.layer.AllBinaryLayerFactoryInterface_Package; use org.allbina
 
 package org.allbinary.layer.AllBinaryLayerFactory_Package is
 
-   package Rectangle_Package renames org.allbinary.graphics.Rectangle_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package ViewPosition_Package renames org.allbinary.view.ViewPosition_Package;
+   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package ViewPosition_Package renames Standard.org.allbinary.view.ViewPosition_Package;
 
    type AllBinaryLayerFactory is tagged;
    type AllBinaryLayerFactory_Access is access all AllBinaryLayerFactory'Class;

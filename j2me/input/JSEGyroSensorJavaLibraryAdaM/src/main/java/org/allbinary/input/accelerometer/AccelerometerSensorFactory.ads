@@ -26,9 +26,9 @@ with org.allbinary.input.gyro.AllBinaryOrientationSensor_Package; use org.allbin
 
 package org.allbinary.input.accelerometer.AccelerometerSensorFactory_Package is
 
-   package Features_Package renames org.allbinary.game.configuration.feature.Features_Package;
-   package SensorFeatureFactory_Package renames org.allbinary.game.configuration.feature.SensorFeatureFactory_Package;
-   package AllBinaryOrientationSensor_Package renames org.allbinary.input.gyro.AllBinaryOrientationSensor_Package;
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
+   package SensorFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.SensorFeatureFactory_Package;
+   package AllBinaryOrientationSensor_Package renames Standard.org.allbinary.input.gyro.AllBinaryOrientationSensor_Package;
 
    type AccelerometerSensorFactory is tagged;
    type AccelerometerSensorFactory_Access is access all AccelerometerSensorFactory'Class;

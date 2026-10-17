@@ -30,10 +30,10 @@ with org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Packag
 
 package org.allbinary.animation.NullRotationAnimationFactory_Package is
 
-   package AngleFactory_Package renames org.allbinary.math.AngleFactory_Package;
-   package AngleInfo_Package renames org.allbinary.math.AngleInfo_Package;
-   package ScaleProperties_Package renames org.allbinary.media.ScaleProperties_Package;
-   package CircularIndexUtil_Package renames org.allbinary.util.CircularIndexUtil_Package;
+   package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;
+   package AngleInfo_Package renames Standard.org.allbinary.math.AngleInfo_Package;
+   package ScaleProperties_Package renames Standard.org.allbinary.media.ScaleProperties_Package;
+   package CircularIndexUtil_Package renames Standard.org.allbinary.util.CircularIndexUtil_Package;
 
    type NullRotationAnimationFactory is tagged;
    type NullRotationAnimationFactory_Access is access all NullRotationAnimationFactory'Class;
@@ -76,10 +76,10 @@ with org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Packag
 
 package org.allbinary.animation.NullRotationAnimation2_Package is
 
-   package AngleFactory_Package renames org.allbinary.math.AngleFactory_Package;
-   package AngleInfo_Package renames org.allbinary.math.AngleInfo_Package;
-   package ScaleProperties_Package renames org.allbinary.media.ScaleProperties_Package;
-   package CircularIndexUtil_Package renames org.allbinary.util.CircularIndexUtil_Package;
+   package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;
+   package AngleInfo_Package renames Standard.org.allbinary.math.AngleInfo_Package;
+   package ScaleProperties_Package renames Standard.org.allbinary.media.ScaleProperties_Package;
+   package CircularIndexUtil_Package renames Standard.org.allbinary.util.CircularIndexUtil_Package;
 
    type NullRotationAnimation2 is tagged;
    type NullRotationAnimation2_Access is access all NullRotationAnimation2'Class;

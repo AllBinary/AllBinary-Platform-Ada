@@ -32,13 +32,13 @@ with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.
 
 package org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package is
 
-   package Processor_Package renames org.allbinary.canvas.Processor_Package;
-   package Rectangle_Package renames org.allbinary.graphics.Rectangle_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package MyFontProcessor_Package renames org.allbinary.graphics.font.MyFontProcessor_Package;
-   package UpdateMyFontInterface_Package renames org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-   package UpdateMyFontProcessor_Package renames org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
-   package ABCustomItem_Package renames org.allbinary.graphics.form.item.ABCustomItem_Package;
+   package Processor_Package renames Standard.org.allbinary.canvas.Processor_Package;
+   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package MyFontProcessor_Package renames Standard.org.allbinary.graphics.font.MyFontProcessor_Package;
+   package UpdateMyFontInterface_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontInterface_Package;
+   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+   package ABCustomItem_Package renames Standard.org.allbinary.graphics.form.item.ABCustomItem_Package;
 
    type ScrollCurrentSelectionForm is tagged;
    type ScrollCurrentSelectionForm_Access is access all ScrollCurrentSelectionForm'Class;
@@ -99,13 +99,13 @@ with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.
 
 package org.allbinary.graphics.form.TempHorizontalFormProcessor_Package is
 
-   package Processor_Package renames org.allbinary.canvas.Processor_Package;
-   package Rectangle_Package renames org.allbinary.graphics.Rectangle_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package MyFontProcessor_Package renames org.allbinary.graphics.font.MyFontProcessor_Package;
-   package UpdateMyFontInterface_Package renames org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-   package UpdateMyFontProcessor_Package renames org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
-   package ABCustomItem_Package renames org.allbinary.graphics.form.item.ABCustomItem_Package;
+   package Processor_Package renames Standard.org.allbinary.canvas.Processor_Package;
+   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package MyFontProcessor_Package renames Standard.org.allbinary.graphics.font.MyFontProcessor_Package;
+   package UpdateMyFontInterface_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontInterface_Package;
+   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+   package ABCustomItem_Package renames Standard.org.allbinary.graphics.form.item.ABCustomItem_Package;
 
    type TempHorizontalFormProcessor is tagged;
    type TempHorizontalFormProcessor_Access is access all TempHorizontalFormProcessor'Class;
@@ -142,13 +142,13 @@ with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.
 
 package org.allbinary.graphics.form.HorizontalFormProcessor_Package is
 
-   package Processor_Package renames org.allbinary.canvas.Processor_Package;
-   package Rectangle_Package renames org.allbinary.graphics.Rectangle_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package MyFontProcessor_Package renames org.allbinary.graphics.font.MyFontProcessor_Package;
-   package UpdateMyFontInterface_Package renames org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-   package UpdateMyFontProcessor_Package renames org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
-   package ABCustomItem_Package renames org.allbinary.graphics.form.item.ABCustomItem_Package;
+   package Processor_Package renames Standard.org.allbinary.canvas.Processor_Package;
+   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package MyFontProcessor_Package renames Standard.org.allbinary.graphics.font.MyFontProcessor_Package;
+   package UpdateMyFontInterface_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontInterface_Package;
+   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+   package ABCustomItem_Package renames Standard.org.allbinary.graphics.form.item.ABCustomItem_Package;
 
    type HorizontalFormProcessor is tagged;
    type HorizontalFormProcessor_Access is access all HorizontalFormProcessor'Class;
@@ -185,13 +185,13 @@ with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.
 
 package org.allbinary.graphics.form.VerticalFormProcessor_Package is
 
-   package Processor_Package renames org.allbinary.canvas.Processor_Package;
-   package Rectangle_Package renames org.allbinary.graphics.Rectangle_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package MyFontProcessor_Package renames org.allbinary.graphics.font.MyFontProcessor_Package;
-   package UpdateMyFontInterface_Package renames org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-   package UpdateMyFontProcessor_Package renames org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
-   package ABCustomItem_Package renames org.allbinary.graphics.form.item.ABCustomItem_Package;
+   package Processor_Package renames Standard.org.allbinary.canvas.Processor_Package;
+   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package MyFontProcessor_Package renames Standard.org.allbinary.graphics.font.MyFontProcessor_Package;
+   package UpdateMyFontInterface_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontInterface_Package;
+   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+   package ABCustomItem_Package renames Standard.org.allbinary.graphics.form.item.ABCustomItem_Package;
 
    type VerticalFormProcessor is tagged;
    type VerticalFormProcessor_Access is access all VerticalFormProcessor'Class;
@@ -228,13 +228,13 @@ with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.
 
 package org.allbinary.graphics.form.TempHorizontalItemIndexDx_Package is
 
-   package Processor_Package renames org.allbinary.canvas.Processor_Package;
-   package Rectangle_Package renames org.allbinary.graphics.Rectangle_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package MyFontProcessor_Package renames org.allbinary.graphics.font.MyFontProcessor_Package;
-   package UpdateMyFontInterface_Package renames org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-   package UpdateMyFontProcessor_Package renames org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
-   package ABCustomItem_Package renames org.allbinary.graphics.form.item.ABCustomItem_Package;
+   package Processor_Package renames Standard.org.allbinary.canvas.Processor_Package;
+   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package MyFontProcessor_Package renames Standard.org.allbinary.graphics.font.MyFontProcessor_Package;
+   package UpdateMyFontInterface_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontInterface_Package;
+   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+   package ABCustomItem_Package renames Standard.org.allbinary.graphics.form.item.ABCustomItem_Package;
 
    type TempHorizontalItemIndexDx is tagged;
    type TempHorizontalItemIndexDx_Access is access all TempHorizontalItemIndexDx'Class;
@@ -272,13 +272,13 @@ with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.
 
 package org.allbinary.graphics.form.HorizontalItemIndexDx_Package is
 
-   package Processor_Package renames org.allbinary.canvas.Processor_Package;
-   package Rectangle_Package renames org.allbinary.graphics.Rectangle_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package MyFontProcessor_Package renames org.allbinary.graphics.font.MyFontProcessor_Package;
-   package UpdateMyFontInterface_Package renames org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-   package UpdateMyFontProcessor_Package renames org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
-   package ABCustomItem_Package renames org.allbinary.graphics.form.item.ABCustomItem_Package;
+   package Processor_Package renames Standard.org.allbinary.canvas.Processor_Package;
+   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package MyFontProcessor_Package renames Standard.org.allbinary.graphics.font.MyFontProcessor_Package;
+   package UpdateMyFontInterface_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontInterface_Package;
+   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+   package ABCustomItem_Package renames Standard.org.allbinary.graphics.form.item.ABCustomItem_Package;
 
    type HorizontalItemIndexDx is tagged;
    type HorizontalItemIndexDx_Access is access all HorizontalItemIndexDx'Class;
@@ -316,13 +316,13 @@ with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.
 
 package org.allbinary.graphics.form.VerticalItemIndexDx_Package is
 
-   package Processor_Package renames org.allbinary.canvas.Processor_Package;
-   package Rectangle_Package renames org.allbinary.graphics.Rectangle_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package MyFontProcessor_Package renames org.allbinary.graphics.font.MyFontProcessor_Package;
-   package UpdateMyFontInterface_Package renames org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-   package UpdateMyFontProcessor_Package renames org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
-   package ABCustomItem_Package renames org.allbinary.graphics.form.item.ABCustomItem_Package;
+   package Processor_Package renames Standard.org.allbinary.canvas.Processor_Package;
+   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package MyFontProcessor_Package renames Standard.org.allbinary.graphics.font.MyFontProcessor_Package;
+   package UpdateMyFontInterface_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontInterface_Package;
+   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+   package ABCustomItem_Package renames Standard.org.allbinary.graphics.form.item.ABCustomItem_Package;
 
    type VerticalItemIndexDx is tagged;
    type VerticalItemIndexDx_Access is access all VerticalItemIndexDx'Class;

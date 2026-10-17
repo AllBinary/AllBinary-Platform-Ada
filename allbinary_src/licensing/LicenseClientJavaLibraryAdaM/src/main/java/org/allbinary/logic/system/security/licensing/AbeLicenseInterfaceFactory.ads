@@ -28,9 +28,9 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.logic.system.security.licensing.AbeLicenseInterfaceFactory_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package AbeLicenseClient_Package renames org.allbinary.logic.system.security.licensing.client.AbeLicenseClient_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package AbeLicenseClient_Package renames Standard.org.allbinary.logic.system.security.licensing.client.AbeLicenseClient_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type AbeLicenseInterfaceFactory is tagged;
    type AbeLicenseInterfaceFactory_Access is access all AbeLicenseInterfaceFactory'Class;

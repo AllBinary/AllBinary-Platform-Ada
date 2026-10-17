@@ -36,18 +36,18 @@ with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 
 package org.allbinary.logic.visual.transform.template.customizer.includes.meta.MetaValidation_Package is
 
-   package DomNodeInterface_Package renames org.allbinary.data.tree.dom.DomNodeInterface_Package;
-   package ModDomHelper_Package renames org.allbinary.data.tree.dom.ModDomHelper_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package Validation_Package renames org.allbinary.logic.control.validate.Validation_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package HtmlMetaAttributeData_Package renames org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeData_Package;
-   package HtmlMetaAttributeDataFactory_Package renames org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeDataFactory_Package;
-   package HtmlMetaData_Package renames org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaData_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
+   package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
+   package ModDomHelper_Package renames Standard.org.allbinary.data.tree.dom.ModDomHelper_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package Validation_Package renames Standard.org.allbinary.logic.control.validate.Validation_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package HtmlMetaAttributeData_Package renames Standard.org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeData_Package;
+   package HtmlMetaAttributeDataFactory_Package renames Standard.org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeDataFactory_Package;
+   package HtmlMetaData_Package renames Standard.org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaData_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type MetaValidation is tagged;
    type MetaValidation_Access is access all MetaValidation'Class;

@@ -25,8 +25,8 @@ with org.allbinary.view.ViewPositionFactoryInterface_Package; use org.allbinary.
 
 package org.allbinary.game.ag.layer.weapon.mine.MineLayerCircularStaticPool_Package is
 
-   package WeaponLayerCircularPool_Package renames org.allbinary.game.layer.weapon.WeaponLayerCircularPool_Package;
-   package ViewPositionFactoryInterface_Package renames org.allbinary.view.ViewPositionFactoryInterface_Package;
+   package WeaponLayerCircularPool_Package renames Standard.org.allbinary.game.layer.weapon.WeaponLayerCircularPool_Package;
+   package ViewPositionFactoryInterface_Package renames Standard.org.allbinary.view.ViewPositionFactoryInterface_Package;
 
    type MineLayerCircularStaticPool is tagged;
    type MineLayerCircularStaticPool_Access is access all MineLayerCircularStaticPool'Class;

@@ -24,7 +24,7 @@ with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allb
 
 package org.allbinary.layer.event.LayerManagerEventListenerInterface_Package is
 
-   package EventListenerInterface_Package renames org.allbinary.logic.util.event.EventListenerInterface_Package;
+   package EventListenerInterface_Package renames Standard.org.allbinary.logic.util.event.EventListenerInterface_Package;
 
    type LayerManagerEventListenerInterface is interface and EventListenerInterface;
    type LayerManagerEventListenerInterface_Access is access all LayerManagerEventListenerInterface'Class;

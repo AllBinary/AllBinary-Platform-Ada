@@ -25,7 +25,7 @@ with org.allbinary.business.init.db.DbConnectionInfo_Package; use org.allbinary.
 
 package org.allbinary.business.init.db.DbInitInfo_Package is
 
-   package PreLogUtil_Package renames org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
 
    type DbInitInfo is tagged;
    type DbInitInfo_Access is access all DbInitInfo'Class;

@@ -25,7 +25,7 @@ with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Anim
 
 package org.allbinary.animation.caption.CaptionAnimation_Package is
 
-   package Animation_Package renames org.allbinary.animation.Animation_Package;
+   package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
 
    type CaptionAnimation is tagged;
    type CaptionAnimation_Access is access all CaptionAnimation'Class;

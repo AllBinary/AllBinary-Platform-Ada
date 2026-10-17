@@ -24,7 +24,7 @@ with org.allbinary.logic.control.contraints.MinMaxDoubleConstraintInterface_Pack
 
 package org.allbinary.logic.control.contraints.price.PriceConstraintInterface_Package is
 
-   package MinMaxDoubleConstraintInterface_Package renames org.allbinary.logic.control.contraints.MinMaxDoubleConstraintInterface_Package;
+   package MinMaxDoubleConstraintInterface_Package renames Standard.org.allbinary.logic.control.contraints.MinMaxDoubleConstraintInterface_Package;
 
    type PriceConstraintInterface is interface and MinMaxDoubleConstraintInterface;
    type PriceConstraintInterface_Access is access all PriceConstraintInterface'Class;

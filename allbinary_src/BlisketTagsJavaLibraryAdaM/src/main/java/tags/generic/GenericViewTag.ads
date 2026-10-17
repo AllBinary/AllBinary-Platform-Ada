@@ -26,9 +26,9 @@ with tags.TransformTag_Package; use tags.TransformTag_Package;
 
 package tags.generic_Id.GenericViewTag_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package InputOutputTypeData_Package renames org.allbinary.logic.io.InputOutputTypeData_Package;
-   package TransformTag_Package renames tags.TransformTag_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package InputOutputTypeData_Package renames Standard.org.allbinary.logic.io.InputOutputTypeData_Package;
+   package TransformTag_Package renames Standard.tags.TransformTag_Package;
 
    type GenericViewTag is tagged;
    type GenericViewTag_Access is access all GenericViewTag'Class;

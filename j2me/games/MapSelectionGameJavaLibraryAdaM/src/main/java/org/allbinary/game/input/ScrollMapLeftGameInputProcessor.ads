@@ -26,8 +26,8 @@ with org.allbinary.game.input.ScrollMapGameInputProcessor_Package; use org.allbi
 
 package org.allbinary.game.input.ScrollMapLeftGameInputProcessor_Package is
 
-   package GameKeyEvent_Package renames org.allbinary.game.input.event.GameKeyEvent_Package;
-   package AllBinaryLayerManager_Package renames org.allbinary.layer.AllBinaryLayerManager_Package;
+   package GameKeyEvent_Package renames Standard.org.allbinary.game.input.event.GameKeyEvent_Package;
+   package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
 
    type ScrollMapLeftGameInputProcessor is tagged;
    type ScrollMapLeftGameInputProcessor_Access is access all ScrollMapLeftGameInputProcessor'Class;

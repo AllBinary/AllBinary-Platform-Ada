@@ -238,8 +238,12 @@ package body org.allbinary.business.context.modules.storefronts.BasicStoreFront_
             subStoreVector := tokenizer.getTokensFromString (This.subStores, BasicArrayListD_Package.Create);
             return subStoreVector;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Java_Throw (e);
+                end;
         end;
    end getSubStores;
 

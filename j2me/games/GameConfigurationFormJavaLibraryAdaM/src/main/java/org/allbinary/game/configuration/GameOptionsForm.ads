@@ -47,25 +47,25 @@ with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_
 
 package org.allbinary.game.configuration.GameOptionsForm_Package is
 
-   package GameCommandsFactory_Package renames org.allbinary.game.commands.GameCommandsFactory_Package;
-   package GameFeatureChoiceGroups_Package renames org.allbinary.game.configuration.feature.GameFeatureChoiceGroups_Package;
-   package GameFeatureFormUtil_Package renames org.allbinary.game.configuration.feature.GameFeatureFormUtil_Package;
-   package GameFeatureItemCommandListener_Package renames org.allbinary.game.configuration.feature.GameFeatureItemCommandListener_Package;
-   package GameFeatureItemStateListener_Package renames org.allbinary.game.configuration.feature.GameFeatureItemStateListener_Package;
-   package SensorFeatureFactory_Package renames org.allbinary.game.configuration.feature.SensorFeatureFactory_Package;
-   package GameConfigurationPersistanceSingleton_Package renames org.allbinary.game.configuration.persistance.GameConfigurationPersistanceSingleton_Package;
-   package KeyValuePersistance_Package renames org.allbinary.game.configuration.persistance.KeyValuePersistance_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package MyCommandsFactory_Package renames org.allbinary.graphics.displayable.command.MyCommandsFactory_Package;
-   package CommandForm_Package renames org.allbinary.graphics.displayable.screen.CommandForm_Package;
-   package OrientationData_Package renames org.allbinary.input.gyro.OrientationData_Package;
-   package MEUtil_Package renames org.allbinary.logic.MEUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package AbeClientInformationInterface_Package renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package HashtableUtil_Package renames org.allbinary.util.HashtableUtil_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package ABHashtable_Package renames org.allbinary.util.ABHashtable_Package;
+   package GameCommandsFactory_Package renames Standard.org.allbinary.game.commands.GameCommandsFactory_Package;
+   package GameFeatureChoiceGroups_Package renames Standard.org.allbinary.game.configuration.feature.GameFeatureChoiceGroups_Package;
+   package GameFeatureFormUtil_Package renames Standard.org.allbinary.game.configuration.feature.GameFeatureFormUtil_Package;
+   package GameFeatureItemCommandListener_Package renames Standard.org.allbinary.game.configuration.feature.GameFeatureItemCommandListener_Package;
+   package GameFeatureItemStateListener_Package renames Standard.org.allbinary.game.configuration.feature.GameFeatureItemStateListener_Package;
+   package SensorFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.SensorFeatureFactory_Package;
+   package GameConfigurationPersistanceSingleton_Package renames Standard.org.allbinary.game.configuration.persistance.GameConfigurationPersistanceSingleton_Package;
+   package KeyValuePersistance_Package renames Standard.org.allbinary.game.configuration.persistance.KeyValuePersistance_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package MyCommandsFactory_Package renames Standard.org.allbinary.graphics.displayable.command.MyCommandsFactory_Package;
+   package CommandForm_Package renames Standard.org.allbinary.graphics.displayable.screen.CommandForm_Package;
+   package OrientationData_Package renames Standard.org.allbinary.input.gyro.OrientationData_Package;
+   package MEUtil_Package renames Standard.org.allbinary.logic.MEUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package HashtableUtil_Package renames Standard.org.allbinary.util.HashtableUtil_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
    type GameOptionsForm is tagged;
    type GameOptionsForm_Access is access all GameOptionsForm'Class;

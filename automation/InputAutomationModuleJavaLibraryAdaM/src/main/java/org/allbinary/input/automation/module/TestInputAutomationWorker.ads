@@ -29,12 +29,12 @@ with org.allbinary.media.image.comparison.motion.TestInputForMotionRectanglesRes
 
 package org.allbinary.input.automation.module.TestInputAutomationWorker_Package is
 
-   package ScreenCaptureImagesWorker_Package renames org.allbinary.input.media.image.capture.ScreenCaptureImagesWorker_Package;
-   package ImageComparisonWorker_Package renames org.allbinary.media.image.comparison.ImageComparisonWorker_Package;
-   package SaveImageComparisonWorker_Package renames org.allbinary.media.image.comparison.SaveImageComparisonWorker_Package;
-   package MotionRectanglesWorker_Package renames org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_Package;
-   package SaveMotionRectanglesResultsWorker_Package renames org.allbinary.media.image.comparison.motion.SaveMotionRectanglesResultsWorker_Package;
-   package TestInputForMotionRectanglesResultsWorker_Package renames org.allbinary.media.image.comparison.motion.TestInputForMotionRectanglesResultsWorker_Package;
+   package ScreenCaptureImagesWorker_Package renames Standard.org.allbinary.input.media.image.capture.ScreenCaptureImagesWorker_Package;
+   package ImageComparisonWorker_Package renames Standard.org.allbinary.media.image.comparison.ImageComparisonWorker_Package;
+   package SaveImageComparisonWorker_Package renames Standard.org.allbinary.media.image.comparison.SaveImageComparisonWorker_Package;
+   package MotionRectanglesWorker_Package renames Standard.org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_Package;
+   package SaveMotionRectanglesResultsWorker_Package renames Standard.org.allbinary.media.image.comparison.motion.SaveMotionRectanglesResultsWorker_Package;
+   package TestInputForMotionRectanglesResultsWorker_Package renames Standard.org.allbinary.media.image.comparison.motion.TestInputForMotionRectanglesResultsWorker_Package;
 
    type TestInputAutomationWorker is tagged;
    type TestInputAutomationWorker_Access is access all TestInputAutomationWorker'Class;

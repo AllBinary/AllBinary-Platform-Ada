@@ -28,10 +28,10 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 
 package org.allbinary.input.motion.button.TouchButtonsPaintable_Package is
 
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package BasicColorSetUtil_Package renames org.allbinary.graphics.color.BasicColorSetUtil_Package;
-   package Paintable_Package renames org.allbinary.graphics.paint.Paintable_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package BasicColorSetUtil_Package renames Standard.org.allbinary.graphics.color.BasicColorSetUtil_Package;
+   package Paintable_Package renames Standard.org.allbinary.graphics.paint.Paintable_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type TouchButtonsPaintable is tagged;
    type TouchButtonsPaintable_Access is access all TouchButtonsPaintable'Class;

@@ -122,8 +122,12 @@ package body org.allbinary.game.input.InputPersistance_Package is
                 end if;
             end loop;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Java_Throw (e);
+                end;
         end;
         --  finally
         begin
@@ -183,8 +187,12 @@ package body org.allbinary.game.input.InputPersistance_Package is
             savedGameBytes := byteArrayOutputStream.toByteArray;
             recordStore.addRecord (savedGameBytes, 0, savedGameBytes'Length);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Java_Throw (e);
+                end;
         end;
         --  finally
         begin

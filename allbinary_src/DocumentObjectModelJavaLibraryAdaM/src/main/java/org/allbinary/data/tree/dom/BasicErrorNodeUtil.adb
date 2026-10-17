@@ -43,8 +43,12 @@ package body org.allbinary.data.tree.dom.BasicErrorNodeUtil_Package is
             node.appendChild (ModDomHelper_Package.createNameValueNodes (document, ErrorData_Package.getInstance.TEXT, errorText));
             return node;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Error Node Creation Failure")));
+                end;
         end;
    end get;
 

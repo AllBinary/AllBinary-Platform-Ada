@@ -40,23 +40,23 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 
 package org.allbinary.input.motion.CompleteMotionGestureInputToGameMotionGestureInput_Package is
 
-   package TouchMotionGestureFactory_Package renames org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package;
-   package MotionGestureConfiguration_Package renames org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package;
-   package MotionGestureConfigurationFactory_Package renames org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurationFactory_Package;
-   package DiagonalDownLeftTouchInputToGameKeyEventAction_Package renames org.allbinary.input.motion.touch.action.DiagonalDownLeftTouchInputToGameKeyEventAction_Package;
-   package DiagonalDownRightTouchInputToGameKeyEventAction_Package renames org.allbinary.input.motion.touch.action.DiagonalDownRightTouchInputToGameKeyEventAction_Package;
-   package DiagonalUpLeftTouchInputToGameKeyEventAction_Package renames org.allbinary.input.motion.touch.action.DiagonalUpLeftTouchInputToGameKeyEventAction_Package;
-   package DiagonalUpRightTouchInputToGameKeyEventAction_Package renames org.allbinary.input.motion.touch.action.DiagonalUpRightTouchInputToGameKeyEventAction_Package;
-   package DownTouchInputToGameKeyEventAction_Package renames org.allbinary.input.motion.touch.action.DownTouchInputToGameKeyEventAction_Package;
-   package LeftTouchInputToGameKeyEventAction_Package renames org.allbinary.input.motion.touch.action.LeftTouchInputToGameKeyEventAction_Package;
-   package ReleaseTouchInputToGameKeyEventAction_Package renames org.allbinary.input.motion.touch.action.ReleaseTouchInputToGameKeyEventAction_Package;
-   package RightTouchInputToGameKeyEventAction_Package renames org.allbinary.input.motion.touch.action.RightTouchInputToGameKeyEventAction_Package;
-   package UpTouchInputToGameKeyEventAction_Package renames org.allbinary.input.motion.touch.action.UpTouchInputToGameKeyEventAction_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package PreLogUtil_Package renames org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
+   package TouchMotionGestureFactory_Package renames Standard.org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package;
+   package MotionGestureConfiguration_Package renames Standard.org.allbinary.input.motion.gesture.configuration.MotionGestureConfiguration_Package;
+   package MotionGestureConfigurationFactory_Package renames Standard.org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurationFactory_Package;
+   package DiagonalDownLeftTouchInputToGameKeyEventAction_Package renames Standard.org.allbinary.input.motion.touch.action.DiagonalDownLeftTouchInputToGameKeyEventAction_Package;
+   package DiagonalDownRightTouchInputToGameKeyEventAction_Package renames Standard.org.allbinary.input.motion.touch.action.DiagonalDownRightTouchInputToGameKeyEventAction_Package;
+   package DiagonalUpLeftTouchInputToGameKeyEventAction_Package renames Standard.org.allbinary.input.motion.touch.action.DiagonalUpLeftTouchInputToGameKeyEventAction_Package;
+   package DiagonalUpRightTouchInputToGameKeyEventAction_Package renames Standard.org.allbinary.input.motion.touch.action.DiagonalUpRightTouchInputToGameKeyEventAction_Package;
+   package DownTouchInputToGameKeyEventAction_Package renames Standard.org.allbinary.input.motion.touch.action.DownTouchInputToGameKeyEventAction_Package;
+   package LeftTouchInputToGameKeyEventAction_Package renames Standard.org.allbinary.input.motion.touch.action.LeftTouchInputToGameKeyEventAction_Package;
+   package ReleaseTouchInputToGameKeyEventAction_Package renames Standard.org.allbinary.input.motion.touch.action.ReleaseTouchInputToGameKeyEventAction_Package;
+   package RightTouchInputToGameKeyEventAction_Package renames Standard.org.allbinary.input.motion.touch.action.RightTouchInputToGameKeyEventAction_Package;
+   package UpTouchInputToGameKeyEventAction_Package renames Standard.org.allbinary.input.motion.touch.action.UpTouchInputToGameKeyEventAction_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type CompleteMotionGestureInputToGameMotionGestureInput is tagged;
    type CompleteMotionGestureInputToGameMotionGestureInput_Access is access all CompleteMotionGestureInputToGameMotionGestureInput'Class;

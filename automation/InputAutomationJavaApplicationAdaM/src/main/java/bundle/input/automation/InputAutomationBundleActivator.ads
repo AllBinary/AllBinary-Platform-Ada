@@ -36,18 +36,18 @@ with bundle.input.automation.InputAutomationBundleActivatorListenerInterface_Pac
 
 package bundle.input.automation.InputAutomationBundleActivator_Package is
 
-   package BundleActivator_Package renames org.osgi.framework.BundleActivator_Package;
-   package BundleContext_Package renames org.osgi.framework.BundleContext_Package;
-   package InputAutomationConfigurationModuleChangeListener_Package renames bundle.input.automation.module.configuration.InputAutomationConfigurationModuleChangeListener_Package;
-   package InputAutomationRobotChangeListener_Package renames bundle.input.automation.robot.InputAutomationRobotChangeListener_Package;
-   package InputAutomationJFrame_Package renames org.allbinary.input.automation.InputAutomationJFrame_Package;
-   package InputAutomationModuleServiceConsumer_Package renames org.allbinary.input.automation.module.osgi.InputAutomationModuleServiceConsumer_Package;
-   package InputAutomationNewBundleRunnable_Package renames org.allbinary.input.automation.module.osgi.InputAutomationNewBundleRunnable_Package;
-   package InputAutomationServiceFactory_Package renames org.allbinary.input.automation.osgi.InputAutomationServiceFactory_Package;
-   package InputAutomationRobotServiceConsumer_Package renames org.allbinary.input.automation.robot.osgi.InputAutomationRobotServiceConsumer_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package OSGIActivatorUtil_Package renames org.allbinary.osgi.OSGIActivatorUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package BundleActivator_Package renames Standard.org.osgi.framework.BundleActivator_Package;
+   package BundleContext_Package renames Standard.org.osgi.framework.BundleContext_Package;
+   package InputAutomationConfigurationModuleChangeListener_Package renames Standard.bundle.input.automation.module.configuration.InputAutomationConfigurationModuleChangeListener_Package;
+   package InputAutomationRobotChangeListener_Package renames Standard.bundle.input.automation.robot.InputAutomationRobotChangeListener_Package;
+   package InputAutomationJFrame_Package renames Standard.org.allbinary.input.automation.InputAutomationJFrame_Package;
+   package InputAutomationModuleServiceConsumer_Package renames Standard.org.allbinary.input.automation.module.osgi.InputAutomationModuleServiceConsumer_Package;
+   package InputAutomationNewBundleRunnable_Package renames Standard.org.allbinary.input.automation.module.osgi.InputAutomationNewBundleRunnable_Package;
+   package InputAutomationServiceFactory_Package renames Standard.org.allbinary.input.automation.osgi.InputAutomationServiceFactory_Package;
+   package InputAutomationRobotServiceConsumer_Package renames Standard.org.allbinary.input.automation.robot.osgi.InputAutomationRobotServiceConsumer_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package OSGIActivatorUtil_Package renames Standard.org.allbinary.osgi.OSGIActivatorUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type InputAutomationBundleActivator is tagged;
    type InputAutomationBundleActivator_Access is access all InputAutomationBundleActivator'Class;

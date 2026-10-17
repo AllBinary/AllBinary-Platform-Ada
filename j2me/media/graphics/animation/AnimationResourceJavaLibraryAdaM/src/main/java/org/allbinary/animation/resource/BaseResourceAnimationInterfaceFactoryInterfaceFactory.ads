@@ -35,17 +35,17 @@ with org.allbinary.animation.resource.FeatureResourceAnimationInterfaceFactoryIn
 
 package org.allbinary.animation.resource.BaseResourceAnimationInterfaceFactoryInterfaceFactory_Package is
 
-   package BasicAnimationInterfaceFactoryInterface_Package renames org.allbinary.animation.BasicAnimationInterfaceFactoryInterface_Package;
-   package NullAnimationFactory_Package renames org.allbinary.animation.NullAnimationFactory_Package;
-   package ResourceLoadingLevelFactory_Package renames org.allbinary.game.resource.ResourceLoadingLevelFactory_Package;
-   package Rectangle_Package renames org.allbinary.graphics.Rectangle_Package;
-   package RectangleFactory_Package renames org.allbinary.graphics.RectangleFactory_Package;
-   package ImageCache_Package renames org.allbinary.image.ImageCache_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package ABHashtable_Package renames org.allbinary.util.ABHashtable_Package;
+   package BasicAnimationInterfaceFactoryInterface_Package renames Standard.org.allbinary.animation.BasicAnimationInterfaceFactoryInterface_Package;
+   package NullAnimationFactory_Package renames Standard.org.allbinary.animation.NullAnimationFactory_Package;
+   package ResourceLoadingLevelFactory_Package renames Standard.org.allbinary.game.resource.ResourceLoadingLevelFactory_Package;
+   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
+   package RectangleFactory_Package renames Standard.org.allbinary.graphics.RectangleFactory_Package;
+   package ImageCache_Package renames Standard.org.allbinary.image.ImageCache_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
    type BaseResourceAnimationInterfaceFactoryInterfaceFactory is tagged;
    type BaseResourceAnimationInterfaceFactoryInterfaceFactory_Access is access all BaseResourceAnimationInterfaceFactoryInterfaceFactory'Class;

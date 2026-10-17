@@ -25,8 +25,8 @@ with org.allbinary.layer.LayerInterface_Package; use org.allbinary.layer.LayerIn
 
 package org.allbinary.game.layer.drop.DropLayerInterface_Package is
 
-   package PickedUpLayerInterface_Package renames org.allbinary.game.layer.pickup.PickedUpLayerInterface_Package;
-   package LayerInterface_Package renames org.allbinary.layer.LayerInterface_Package;
+   package PickedUpLayerInterface_Package renames Standard.org.allbinary.game.layer.pickup.PickedUpLayerInterface_Package;
+   package LayerInterface_Package renames Standard.org.allbinary.layer.LayerInterface_Package;
 
    type DropLayerInterface is interface and LayerInterface;
    type DropLayerInterface_Access is access all DropLayerInterface'Class;

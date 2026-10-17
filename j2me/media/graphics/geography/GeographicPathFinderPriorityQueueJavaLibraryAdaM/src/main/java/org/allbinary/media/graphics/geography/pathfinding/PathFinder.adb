@@ -76,10 +76,14 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFinder_Packa
         begin
             return This.search (PathFindingNode_Access (startPathFindingNodeList.get (0)), PathFindingNode_Access (endPathFindingNodeList.get (0)));
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("search"), e);
             return This.basicArrayListUtil.getImmutableInstance;
+                end;
         end;
    end searchTotalPath;
 

@@ -26,9 +26,9 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 
 package org.allbinary.game.resource.ResourceRelativeRelationshipFactoryInterface_Package is
 
-   package GameFeatureControlledInterface_Package renames org.allbinary.game.configuration.feature.GameFeatureControlledInterface_Package;
-   package RelativeRelationship_Package renames org.allbinary.graphics.RelativeRelationship_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package GameFeatureControlledInterface_Package renames Standard.org.allbinary.game.configuration.feature.GameFeatureControlledInterface_Package;
+   package RelativeRelationship_Package renames Standard.org.allbinary.graphics.RelativeRelationship_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type ResourceRelativeRelationshipFactoryInterface is interface and GameFeatureControlledInterface;
    type ResourceRelativeRelationshipFactoryInterface_Access is access all ResourceRelativeRelationshipFactoryInterface'Class;

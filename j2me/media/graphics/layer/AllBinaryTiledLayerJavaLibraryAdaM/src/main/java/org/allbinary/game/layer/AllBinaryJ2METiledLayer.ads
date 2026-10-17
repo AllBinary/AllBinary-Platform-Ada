@@ -29,8 +29,8 @@ with org.allbinary.game.layer.AllBinaryTiledLayer_Package; use org.allbinary.gam
 
 package org.allbinary.game.layer.AllBinaryJ2METiledLayer_Package is
 
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
 
    type AllBinaryJ2METiledLayer is tagged;
    type AllBinaryJ2METiledLayer_Access is access all AllBinaryJ2METiledLayer'Class;

@@ -28,10 +28,10 @@ with org.allbinary.game.layer.waypoint.WaypointRunnableLogHelper_Package; use or
 
 package org.allbinary.game.layer.waypoint.WaypointRunnableSelectedLogHelper_Package is
 
-   package PathFindingLayerInterface_Package renames org.allbinary.game.layer.PathFindingLayerInterface_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
+   package PathFindingLayerInterface_Package renames Standard.org.allbinary.game.layer.PathFindingLayerInterface_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
 
    type WaypointRunnableSelectedLogHelper is tagged;
    type WaypointRunnableSelectedLogHelper_Access is access all WaypointRunnableSelectedLogHelper'Class;

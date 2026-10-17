@@ -31,13 +31,13 @@ with playn.html.HTMLPlaynUtil_Package; use playn.html.HTMLPlaynUtil_Package;
 
 package org.allbinary.media.image.ImageScaleUtil_Package is
 
-   package ImageCache_Package renames org.allbinary.image.ImageCache_Package;
-   package PlaynImmutableImage_Package renames org.microemu.device.playn.PlaynImmutableImage_Package;
-   package PlaynMutableImage_Package renames org.microemu.device.playn.PlaynMutableImage_Package;
-   package Canvas_Package renames playn.core.Canvas_Package;
-   package CoreImage_Package renames playn.core.CoreImage_Package;
-   package ImageImpl_Package renames playn.core.ImageImpl_Package;
-   package HTMLPlaynUtil_Package renames playn.html.HTMLPlaynUtil_Package;
+   package ImageCache_Package renames Standard.org.allbinary.image.ImageCache_Package;
+   package PlaynImmutableImage_Package renames Standard.org.microemu.device.playn.PlaynImmutableImage_Package;
+   package PlaynMutableImage_Package renames Standard.org.microemu.device.playn.PlaynMutableImage_Package;
+   package Canvas_Package renames Standard.playn.core.Canvas_Package;
+   package CoreImage_Package renames Standard.playn.core.CoreImage_Package;
+   package ImageImpl_Package renames Standard.playn.core.ImageImpl_Package;
+   package HTMLPlaynUtil_Package renames Standard.playn.html.HTMLPlaynUtil_Package;
 
    type ImageScaleUtil is tagged;
    type ImageScaleUtil_Access is access all ImageScaleUtil'Class;

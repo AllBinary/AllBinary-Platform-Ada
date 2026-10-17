@@ -40,20 +40,20 @@ with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.Circul
 
 package org.allbinary.animation.image.LazyImageRotationAnimation_Package is
 
-   package AnimationBehavior_Package renames org.allbinary.animation.AnimationBehavior_Package;
-   package IndexedAnimation_Package renames org.allbinary.animation.IndexedAnimation_Package;
-   package NullRotationAnimationFactory_Package renames org.allbinary.animation.NullRotationAnimationFactory_Package;
-   package RotationAnimation_Package renames org.allbinary.animation.RotationAnimation_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package ImageCache_Package renames org.allbinary.image.ImageCache_Package;
-   package ImageCacheFactory_Package renames org.allbinary.image.ImageCacheFactory_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package AngleFactory_Package renames org.allbinary.math.AngleFactory_Package;
-   package AngleInfo_Package renames org.allbinary.math.AngleInfo_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package ScaleProperties_Package renames org.allbinary.media.ScaleProperties_Package;
-   package CircularIndexUtil_Package renames org.allbinary.util.CircularIndexUtil_Package;
+   package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
+   package IndexedAnimation_Package renames Standard.org.allbinary.animation.IndexedAnimation_Package;
+   package NullRotationAnimationFactory_Package renames Standard.org.allbinary.animation.NullRotationAnimationFactory_Package;
+   package RotationAnimation_Package renames Standard.org.allbinary.animation.RotationAnimation_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package ImageCache_Package renames Standard.org.allbinary.image.ImageCache_Package;
+   package ImageCacheFactory_Package renames Standard.org.allbinary.image.ImageCacheFactory_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;
+   package AngleInfo_Package renames Standard.org.allbinary.math.AngleInfo_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package ScaleProperties_Package renames Standard.org.allbinary.media.ScaleProperties_Package;
+   package CircularIndexUtil_Package renames Standard.org.allbinary.util.CircularIndexUtil_Package;
 
    type LazyImageRotationAnimation is tagged;
    type LazyImageRotationAnimation_Access is access all LazyImageRotationAnimation'Class;

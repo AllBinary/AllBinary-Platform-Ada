@@ -31,13 +31,13 @@ with org.allbinary.time_Case.TimeDelayHelper_Package; use org.allbinary.time_Cas
 
 package org.allbinary.game.ag.ai.scroller.TimedFireAI_Package is
 
-   package BasicAI_Package renames org.allbinary.game.ai.BasicAI_Package;
-   package GameInput_Package renames org.allbinary.game.input.GameInput_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package AllBinaryLayerManager_Package renames org.allbinary.layer.AllBinaryLayerManager_Package;
-   package SmallIntegerSingletonFactory_Package renames org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
-   package GameTickTimeDelayHelperFactory_Package renames org.allbinary.time_Case.GameTickTimeDelayHelperFactory_Package;
-   package TimeDelayHelper_Package renames org.allbinary.time_Case.TimeDelayHelper_Package;
+   package BasicAI_Package renames Standard.org.allbinary.game.ai.BasicAI_Package;
+   package GameInput_Package renames Standard.org.allbinary.game.input.GameInput_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
+   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+   package GameTickTimeDelayHelperFactory_Package renames Standard.org.allbinary.time_Case.GameTickTimeDelayHelperFactory_Package;
+   package TimeDelayHelper_Package renames Standard.org.allbinary.time_Case.TimeDelayHelper_Package;
 
    type TimedFireAI is tagged;
    type TimedFireAI_Access is access all TimedFireAI'Class;

@@ -56,12 +56,16 @@ package body admin.taghelpers.HelperFactory_Package is
             anyType := abeFactory.getInstance (abeClientInformation, className, classes, params);
             return anyType;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             error := To_Unbounded_String ("Failed To Get Instance Args: HashMap=") & hashMap.toString & To_Unbounded_String (" HttpServletRequest=") & Java_Image (httpServletRequest);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORYERROR) then
                 logUtil.put (error, factoryName & To_Unbounded_String ("->HelperFactory"), To_Unbounded_String ("getInstance(String, String, HashMap, PageContext)"), e);
             end if;
             Java_Throw (e);
+                end;
         end;
    end getInstance;
 
@@ -87,12 +91,16 @@ package body admin.taghelpers.HelperFactory_Package is
             anyType := abeFactory.getInstance (abeClientInformation, className, classes, params);
             return anyType;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORYERROR) then
                 error := To_Unbounded_String ("Failed To Get Instance Args: HashMap=") & hashMap.toString & To_Unbounded_String (" PageContext=") & Java_Image (pageContext);
                 logUtil.put (error, factoryName & To_Unbounded_String ("->HelperFactory"), To_Unbounded_String ("getInstance(String, String, HashMap, PageContext)"), e);
             end if;
             Java_Throw (e);
+                end;
         end;
    end getInstance;
 
@@ -120,12 +128,16 @@ package body admin.taghelpers.HelperFactory_Package is
             anyType := abeFactory.getInstance (abeClientInformation, className, classes, params);
             return anyType;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORYERROR) then
                 error := To_Unbounded_String ("Failed To Get Instance Args: HashMap=") & hashMap.toString & To_Unbounded_String (" PageContext=") & Java_Image (pageContext);
                 logUtil.put (error, factoryName & To_Unbounded_String ("->HelperFactory"), To_Unbounded_String ("getInstance(String, String, HashMap, PageContext)"), e);
             end if;
             Java_Throw (e);
+                end;
         end;
    end getInstance;
 
@@ -140,12 +152,16 @@ package body admin.taghelpers.HelperFactory_Package is
             anyType := AbeFactory_Package.getInstance.getInstance (abeClientInformation, className);
             return anyType;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORYERROR) then
                 commonStrings := CommonStrings_Package.getInstance;
                 logUtil.put (commonStrings.EXCEPTION_Id, factoryName & To_Unbounded_String ("->HelperFactory"), To_Unbounded_String ("getInstance(String, String, HashMap, PageContext)"), e);
             end if;
             Java_Throw (e);
+                end;
         end;
    end getInstance;
 

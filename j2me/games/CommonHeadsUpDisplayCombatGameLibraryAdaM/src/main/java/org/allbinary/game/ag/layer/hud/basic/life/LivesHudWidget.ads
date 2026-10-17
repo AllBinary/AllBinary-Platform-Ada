@@ -30,12 +30,12 @@ with org.allbinary.graphics.paint.PaintableInterface_Package; use org.allbinary.
 
 package org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package is
 
-   package Animation_Package renames org.allbinary.animation.Animation_Package;
-   package Life_Package renames org.allbinary.game.ag.life.Life_Package;
-   package BasicHud_Package renames org.allbinary.game.graphics.hud.BasicHud_Package;
-   package BasicColorFactory_Package renames org.allbinary.graphics.color.BasicColorFactory_Package;
-   package DisplayChangeEvent_Package renames org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package;
-   package PaintableInterface_Package renames org.allbinary.graphics.paint.PaintableInterface_Package;
+   package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
+   package Life_Package renames Standard.org.allbinary.game.ag.life.Life_Package;
+   package BasicHud_Package renames Standard.org.allbinary.game.graphics.hud.BasicHud_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package DisplayChangeEvent_Package renames Standard.org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package;
+   package PaintableInterface_Package renames Standard.org.allbinary.graphics.paint.PaintableInterface_Package;
 
    type LivesHudWidget is tagged;
    type LivesHudWidget_Access is access all LivesHudWidget'Class;

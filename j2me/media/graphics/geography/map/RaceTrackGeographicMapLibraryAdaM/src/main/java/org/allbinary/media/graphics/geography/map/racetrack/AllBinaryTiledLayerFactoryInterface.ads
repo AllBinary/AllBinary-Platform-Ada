@@ -12,7 +12,7 @@ with org.allbinary.game.layer.AllBinaryTiledLayer_Package; use org.allbinary.gam
 
 package org.allbinary.media.graphics.geography.map.racetrack.AllBinaryTiledLayerFactoryInterface_Package is
 
-   package AllBinaryTiledLayer_Package renames org.allbinary.game.layer.AllBinaryTiledLayer_Package;
+   package AllBinaryTiledLayer_Package renames Standard.org.allbinary.game.layer.AllBinaryTiledLayer_Package;
 
    type AllBinaryTiledLayerFactoryInterface is interface;
    type AllBinaryTiledLayerFactoryInterface_Access is access all AllBinaryTiledLayerFactoryInterface'Class;

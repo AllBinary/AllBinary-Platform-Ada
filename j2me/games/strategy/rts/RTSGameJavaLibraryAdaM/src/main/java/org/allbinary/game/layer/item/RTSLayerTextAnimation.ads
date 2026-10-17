@@ -30,10 +30,10 @@ with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinar
 
 package org.allbinary.game.layer.item.RTSLayerTextAnimation_Package is
 
-   package Animation_Package renames org.allbinary.animation.Animation_Package;
-   package MyFontProcessor_Package renames org.allbinary.graphics.font.MyFontProcessor_Package;
-   package UpdateMyFontInterface_Package renames org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-   package UpdateMyFontProcessor_Package renames org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+   package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
+   package MyFontProcessor_Package renames Standard.org.allbinary.graphics.font.MyFontProcessor_Package;
+   package UpdateMyFontInterface_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontInterface_Package;
+   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
 
    type RTSLayerTextAnimation is tagged;
    type RTSLayerTextAnimation_Access is access all RTSLayerTextAnimation'Class;

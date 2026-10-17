@@ -24,7 +24,7 @@ with org.allbinary.game.displayable.canvas.GameCanvasRunnableInterface_Package; 
 
 package org.allbinary.game.midlet.DemoGameMidletJs_Package is
 
-   package GameCanvasRunnableInterface_Package renames org.allbinary.game.displayable.canvas.GameCanvasRunnableInterface_Package;
+   package GameCanvasRunnableInterface_Package renames Standard.org.allbinary.game.displayable.canvas.GameCanvasRunnableInterface_Package;
 
    type DemoGameMidletJs is interface;
    type DemoGameMidletJs_Access is access all DemoGameMidletJs'Class;

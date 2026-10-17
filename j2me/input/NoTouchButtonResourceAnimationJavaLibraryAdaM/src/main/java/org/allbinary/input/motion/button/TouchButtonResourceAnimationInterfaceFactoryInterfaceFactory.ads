@@ -30,13 +30,13 @@ with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Packag
 
 package org.allbinary.input.motion.button.TouchButtonResourceAnimationInterfaceFactoryInterfaceFactory_Package is
 
-   package BaseResourceAnimationInterfaceFactoryInterfaceFactory_Package renames org.allbinary.animation.resource.BaseResourceAnimationInterfaceFactoryInterfaceFactory_Package;
-   package Features_Package renames org.allbinary.game.configuration.feature.Features_Package;
-   package ResourceLoadingLevelFactory_Package renames org.allbinary.game.resource.ResourceLoadingLevelFactory_Package;
-   package OpenGLFeatureFactory_Package renames org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
-   package ImageCache_Package renames org.allbinary.image.ImageCache_Package;
-   package ImageCacheFactory_Package renames org.allbinary.image.ImageCacheFactory_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
+   package BaseResourceAnimationInterfaceFactoryInterfaceFactory_Package renames Standard.org.allbinary.animation.resource.BaseResourceAnimationInterfaceFactoryInterfaceFactory_Package;
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
+   package ResourceLoadingLevelFactory_Package renames Standard.org.allbinary.game.resource.ResourceLoadingLevelFactory_Package;
+   package OpenGLFeatureFactory_Package renames Standard.org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
+   package ImageCache_Package renames Standard.org.allbinary.image.ImageCache_Package;
+   package ImageCacheFactory_Package renames Standard.org.allbinary.image.ImageCacheFactory_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
 
    type TouchButtonResourceAnimationInterfaceFactoryInterfaceFactory is tagged;
    type TouchButtonResourceAnimationInterfaceFactoryInterfaceFactory_Access is access all TouchButtonResourceAnimationInterfaceFactoryInterfaceFactory'Class;

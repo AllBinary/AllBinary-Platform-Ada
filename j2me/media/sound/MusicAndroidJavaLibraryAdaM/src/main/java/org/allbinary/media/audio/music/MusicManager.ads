@@ -28,23 +28,23 @@ with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.Basic
 
 package org.allbinary.media.audio.music.MusicManager_Package is
 
-   package Activity_Package renames android.app.Activity_Package;
-   package Context_Package renames android.content.Context_Package;
-   package Intent_Package renames android.content.Intent_Package;
-   package AndroidServicesUtil_Package renames org.allbinary.android.AndroidServicesUtil_Package;
-   package ResourceUtil_Package renames org.allbinary.data.resource.ResourceUtil_Package;
-   package PreLogUtil_Package renames org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package NoSound_Package renames org.allbinary.media.audio.NoSound_Package;
-   package Sound_Package renames org.allbinary.media.audio.Sound_Package;
-   package CommonStateStrings_Package renames org.allbinary.string_Id.CommonStateStrings_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package GameTickTimeDelayHelper_Package renames org.allbinary.time.GameTickTimeDelayHelper_Package;
-   package GameTickTimeDelayHelperFactory_Package renames org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
-   package TimeDelayHelper_Package renames org.allbinary.time.TimeDelayHelper_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListUtil_Package renames org.allbinary.util.BasicArrayListUtil_Package;
+   package Activity_Package renames Standard.android.app.Activity_Package;
+   package Context_Package renames Standard.android.content.Context_Package;
+   package Intent_Package renames Standard.android.content.Intent_Package;
+   package AndroidServicesUtil_Package renames Standard.org.allbinary.android.AndroidServicesUtil_Package;
+   package ResourceUtil_Package renames Standard.org.allbinary.data.resource.ResourceUtil_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package NoSound_Package renames Standard.org.allbinary.media.audio.NoSound_Package;
+   package Sound_Package renames Standard.org.allbinary.media.audio.Sound_Package;
+   package CommonStateStrings_Package renames Standard.org.allbinary.string_Id.CommonStateStrings_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package GameTickTimeDelayHelper_Package renames Standard.org.allbinary.time.GameTickTimeDelayHelper_Package;
+   package GameTickTimeDelayHelperFactory_Package renames Standard.org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
+   package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
 
    type MusicManager is tagged;
    type MusicManager_Access is access all MusicManager'Class;

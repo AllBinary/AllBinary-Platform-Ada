@@ -111,8 +111,12 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
             end if;
             This.overlayPaintable.init;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.canvasStrings.ON_DISPLAY_CHANGE_EVENT, e);
+                end;
         end;
    end onDisplayChangeEvent;
 
@@ -149,8 +153,12 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
                     commandList.add (GameInputMappingCanvas_Package.DISPLAY);
                 end if;
             exception
-                when e : others =>
+                when Java_Occurrence : others =>
+                    declare
+                        e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                    begin
                 null;
+                    end;
             end;
             commandList.add (gameCommandsFactory.DISPLAY_ABOUT);
             commandArray := commandList.toArray;
@@ -282,8 +290,12 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
                 end if;
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (To_Unbounded_String ("Key Event Error"), This'Unchecked_Access, This.gameInputStrings.ADD_KEY_EVENT, e);
+                end;
         end;
    end addGameKeyEvent;
 
@@ -300,8 +312,12 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
                 This.logUtil.putF (StringMaker_Package.Create.append (This.gameInputStrings.NO_KEY).appendint (keyCode).toString, This'Unchecked_Access, This.gameInputStrings.REMOVE_KEY_EVENT);
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (To_Unbounded_String ("Key Event Error"), This'Unchecked_Access, This.gameInputStrings.REMOVE_KEY_EVENT, e);
+                end;
         end;
    end removeGameKeyEvent;
 
@@ -623,8 +639,12 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
                 This.end_Id;
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.RUN, e);
+                end;
         end;
         This.logUtil.putF (This.commonStrings.END_RUNNABLE, This'Unchecked_Access, This.commonStrings.RUN);
    end run;
@@ -656,8 +676,12 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
                 end if;
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.SET_RUNNING, e);
+                end;
         end;
    end setRunning;
 

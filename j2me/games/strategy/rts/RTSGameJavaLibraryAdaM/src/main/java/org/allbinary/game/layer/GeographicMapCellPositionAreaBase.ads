@@ -27,9 +27,9 @@ with org.allbinary.game.layer.GeographicMapCellPositionAreaInterface_Package; us
 
 package org.allbinary.game.layer.GeographicMapCellPositionAreaBase_Package is
 
-   package BasicGeographicMap_Package renames org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
-   package GeographicMapCellPosition_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package BasicGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
+   package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type GeographicMapCellPositionAreaBase is tagged;
    type GeographicMapCellPositionAreaBase_Access is access all GeographicMapCellPositionAreaBase'Class;

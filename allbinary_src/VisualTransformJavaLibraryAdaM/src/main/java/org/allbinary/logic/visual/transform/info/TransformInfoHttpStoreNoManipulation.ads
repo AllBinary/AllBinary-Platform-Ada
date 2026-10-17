@@ -27,7 +27,7 @@ with org.allbinary.logic.visual.transform.info.TransformInfoHttpStore_Package; u
 
 package org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreNoManipulation_Package is
 
-   package TransformInfoObjectConfigNoManipulationFactory_Package renames org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigNoManipulationFactory_Package;
+   package TransformInfoObjectConfigNoManipulationFactory_Package renames Standard.org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigNoManipulationFactory_Package;
 
    type TransformInfoHttpStoreNoManipulation is tagged;
    type TransformInfoHttpStoreNoManipulation_Access is access all TransformInfoHttpStoreNoManipulation'Class;

@@ -28,11 +28,11 @@ with views.generic_Id.inventory.InventorySearch_Package; use views.generic_Id.in
 
 package views.admin.inventory.listings.InventoryViewFactory_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package SearchRequest_Package renames org.allbinary.logic.control.search.SearchRequest_Package;
-   package LicensingException_Package renames org.allbinary.logic.system.security.licensing.LicensingException_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package InventorySearch_Package renames views.generic_Id.inventory.InventorySearch_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package SearchRequest_Package renames Standard.org.allbinary.logic.control.search.SearchRequest_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package InventorySearch_Package renames Standard.views.generic_Id.inventory.InventorySearch_Package;
 
    type InventoryViewFactory is tagged;
    type InventoryViewFactory_Access is access all InventoryViewFactory'Class;

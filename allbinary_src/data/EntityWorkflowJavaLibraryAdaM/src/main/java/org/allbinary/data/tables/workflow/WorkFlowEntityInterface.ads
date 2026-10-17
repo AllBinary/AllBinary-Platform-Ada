@@ -29,11 +29,11 @@ with org.allbinary.logic.system.security.licensing.LicensingException_Package; u
 
 package org.allbinary.data.tables.workflow.WorkFlowEntityInterface_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package BasicDataTableInterface_Package renames org.allbinary.data.tables.BasicDataTableInterface_Package;
-   package WorkFlowInterface_Package renames org.allbinary.logic.control.workflow.WorkFlowInterface_Package;
-   package LicensingException_Package renames org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package BasicDataTableInterface_Package renames Standard.org.allbinary.data.tables.BasicDataTableInterface_Package;
+   package WorkFlowInterface_Package renames Standard.org.allbinary.logic.control.workflow.WorkFlowInterface_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
 
    type WorkFlowEntityInterface is interface and BasicDataTableInterface;
    type WorkFlowEntityInterface_Access is access all WorkFlowEntityInterface'Class;

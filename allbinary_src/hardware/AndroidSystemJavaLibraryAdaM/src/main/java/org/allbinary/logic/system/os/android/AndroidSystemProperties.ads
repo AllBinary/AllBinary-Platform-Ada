@@ -28,11 +28,11 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.logic.system.os.android.AndroidSystemProperties_Package is
 
-   package Context_Package renames android.content.Context_Package;
-   package Build_Package renames android.os.Build_Package;
-   package ResourceUtil_Package renames org.allbinary.data.resource.ResourceUtil_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package Context_Package renames Standard.android.content.Context_Package;
+   package Build_Package renames Standard.android.os.Build_Package;
+   package ResourceUtil_Package renames Standard.org.allbinary.data.resource.ResourceUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type AndroidSystemProperties is tagged;
    type AndroidSystemProperties_Access is access all AndroidSystemProperties'Class;

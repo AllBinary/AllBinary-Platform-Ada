@@ -25,8 +25,8 @@ with android.os.Build_Package; use android.os.Build_Package;
 
 package org.allbinary.AndroidUtil_Package is
 
-   package Activity_Package renames android.app.Activity_Package;
-   package Build_Package renames android.os.Build_Package;
+   package Activity_Package renames Standard.android.app.Activity_Package;
+   package Build_Package renames Standard.android.os.Build_Package;
 
    type AndroidUtil is tagged;
    type AndroidUtil_Access is access all AndroidUtil'Class;

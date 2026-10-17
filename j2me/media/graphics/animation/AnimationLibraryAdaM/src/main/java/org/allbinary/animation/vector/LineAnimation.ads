@@ -29,11 +29,11 @@ with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Pack
 
 package org.allbinary.animation.vector.LineAnimation_Package is
 
-   package Animation_Package renames org.allbinary.animation.Animation_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package ColorCompositeInterface_Package renames org.allbinary.graphics.color.ColorCompositeInterface_Package;
-   package PositionInterface_Package renames org.allbinary.layer.PositionInterface_Package;
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
+   package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package ColorCompositeInterface_Package renames Standard.org.allbinary.graphics.color.ColorCompositeInterface_Package;
+   package PositionInterface_Package renames Standard.org.allbinary.layer.PositionInterface_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
 
    type LineAnimation is tagged;
    type LineAnimation_Access is access all LineAnimation'Class;

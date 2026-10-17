@@ -31,12 +31,12 @@ with org.allbinary.game.layer.VehicleLayerInterface_Package; use org.allbinary.g
 
 package org.allbinary.game.layer.NullVehicleLayer_Package is
 
-   package RotationAnimation_Package renames org.allbinary.animation.RotationAnimation_Package;
-   package Group_Package renames org.allbinary.game.identification.Group_Package;
-   package BasicDecimal_Package renames org.allbinary.logic.math.BasicDecimal_Package;
-   package GeographicMapCellHistory_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package;
-   package GeographicMapCellPositionTracking_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCellPositionTracking_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package RotationAnimation_Package renames Standard.org.allbinary.animation.RotationAnimation_Package;
+   package Group_Package renames Standard.org.allbinary.game.identification.Group_Package;
+   package BasicDecimal_Package renames Standard.org.allbinary.logic.math.BasicDecimal_Package;
+   package GeographicMapCellHistory_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package;
+   package GeographicMapCellPositionTracking_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPositionTracking_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type NullVehicleLayer is tagged;
    type NullVehicleLayer_Access is access all NullVehicleLayer'Class;

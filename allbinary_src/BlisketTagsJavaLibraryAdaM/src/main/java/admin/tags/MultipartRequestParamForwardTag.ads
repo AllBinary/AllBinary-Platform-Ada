@@ -34,14 +34,14 @@ with tags.HelperTag_Package; use tags.HelperTag_Package;
 
 package admin.tags.MultipartRequestParamForwardTag_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package MultipartRequestParamForwardHelper_Package renames admin.taghelpers.MultipartRequestParamForwardHelper_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package AbResponseHandler_Package renames org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
-   package LicensingException_Package renames org.allbinary.logic.system.security.licensing.LicensingException_Package;
-   package CustomTagSupport_Package renames tags.CustomTagSupport_Package;
-   package HelperTag_Package renames tags.HelperTag_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package MultipartRequestParamForwardHelper_Package renames Standard.admin.taghelpers.MultipartRequestParamForwardHelper_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package CustomTagSupport_Package renames Standard.tags.CustomTagSupport_Package;
+   package HelperTag_Package renames Standard.tags.HelperTag_Package;
 
    type MultipartRequestParamForwardTag is tagged;
    type MultipartRequestParamForwardTag_Access is access all MultipartRequestParamForwardTag'Class;

@@ -31,12 +31,12 @@ with views.admin.payment.gateway.PaymentGatewayViewAbstract_Package; use views.a
 
 package views.admin.payment.gateway.GatewayView_Package is
 
-   package PaymentGatewayInterface_Package renames org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayInterface_Package;
-   package BasicPaymentTypeUtil_Package renames org.allbinary.business.user.commerce.money.payment.types.BasicPaymentTypeUtil_Package;
-   package PaymentGatewayEntityFactory_Package renames org.allbinary.data.tables.user.commerce.money.payment.gateway.PaymentGatewayEntityFactory_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringValidationUtil_Package renames org.allbinary.logic.string_Id.StringValidationUtil_Package;
-   package TransformInfoInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package PaymentGatewayInterface_Package renames Standard.org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayInterface_Package;
+   package BasicPaymentTypeUtil_Package renames Standard.org.allbinary.business.user.commerce.money.payment.types.BasicPaymentTypeUtil_Package;
+   package PaymentGatewayEntityFactory_Package renames Standard.org.allbinary.data.tables.user.commerce.money.payment.gateway.PaymentGatewayEntityFactory_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
+   package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 
    type GatewayView is tagged;
    type GatewayView_Access is access all GatewayView'Class;

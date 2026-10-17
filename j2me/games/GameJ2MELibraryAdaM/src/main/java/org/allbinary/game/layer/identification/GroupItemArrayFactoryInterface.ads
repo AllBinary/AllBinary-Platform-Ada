@@ -25,8 +25,8 @@ with org.allbinary.graphics.form.item.ABCustomItem_Package; use org.allbinary.gr
 
 package org.allbinary.game.layer.identification.GroupItemArrayFactoryInterface_Package is
 
-   package Group_Package renames org.allbinary.game.identification.Group_Package;
-   package ABCustomItem_Package renames org.allbinary.graphics.form.item.ABCustomItem_Package;
+   package Group_Package renames Standard.org.allbinary.game.identification.Group_Package;
+   package ABCustomItem_Package renames Standard.org.allbinary.graphics.form.item.ABCustomItem_Package;
 
    type GroupItemArrayFactoryInterface is interface;
    type GroupItemArrayFactoryInterface_Access is access all GroupItemArrayFactoryInterface'Class;

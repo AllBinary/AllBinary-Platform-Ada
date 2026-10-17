@@ -29,11 +29,11 @@ with org.allbinary.game.displayable.canvas.GameRunnable_Package; use org.allbina
 
 package org.allbinary.game.displayable.canvas.GameCanvasPauseRunnable_Package is
 
-   package AndroidUtil_Package renames org.allbinary.AndroidUtil_Package;
-   package Features_Package renames org.allbinary.game.configuration.feature.Features_Package;
-   package OpenGLFeatureFactory_Package renames org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package AndroidUtil_Package renames Standard.org.allbinary.AndroidUtil_Package;
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
+   package OpenGLFeatureFactory_Package renames Standard.org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type GameCanvasPauseRunnable is tagged;
    type GameCanvasPauseRunnable_Access is access all GameCanvasPauseRunnable'Class;

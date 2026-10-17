@@ -54,8 +54,12 @@ package body org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes
             LogConfigTypes_Package.LOGGING.addAllList (logConfigTypeVector);
             LogConfigTypes_Package.LOGGING.add (LogConfigTypeFactory_Package.getInstance.NETBEANS_MODULE);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             PreLogUtil_Package.putSE (To_Unbounded_String ("Unable to initialize LogConfigTypes"), To_Unbounded_String ("LogConfigTypes"), To_Unbounded_String ("init()"), e);
+                end;
         end;
    end init;
 

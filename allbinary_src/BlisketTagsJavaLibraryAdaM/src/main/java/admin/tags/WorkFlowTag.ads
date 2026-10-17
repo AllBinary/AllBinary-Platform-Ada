@@ -25,7 +25,7 @@ with admin.tags.TableTag_Package; use admin.tags.TableTag_Package;
 
 package admin.tags.WorkFlowTag_Package is
 
-   package WorkFlowHelperFactory_Package renames admin.taghelpers.WorkFlowHelperFactory_Package;
+   package WorkFlowHelperFactory_Package renames Standard.admin.taghelpers.WorkFlowHelperFactory_Package;
 
    type WorkFlowTag is tagged;
    type WorkFlowTag_Access is access all WorkFlowTag'Class;

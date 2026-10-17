@@ -24,7 +24,7 @@ with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.strin
 
 package org.allbinary.data.tables.TableDataFactory_Package is
 
-   package CommonPhoneStrings_Package renames org.allbinary.string_Id.CommonPhoneStrings_Package;
+   package CommonPhoneStrings_Package renames Standard.org.allbinary.string_Id.CommonPhoneStrings_Package;
 
    type TableDataFactory is tagged;
    type TableDataFactory_Access is access all TableDataFactory'Class;

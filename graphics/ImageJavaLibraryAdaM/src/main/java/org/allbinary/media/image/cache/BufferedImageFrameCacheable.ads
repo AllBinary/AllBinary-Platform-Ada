@@ -26,8 +26,8 @@ with org.allbinary.logic.util.cache.CacheableInterface_Package; use org.allbinar
 
 package org.allbinary.media.image.cache.BufferedImageFrameCacheable_Package is
 
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package CacheableInterface_Package renames org.allbinary.logic.util.cache.CacheableInterface_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CacheableInterface_Package renames Standard.org.allbinary.logic.util.cache.CacheableInterface_Package;
 
    type BufferedImageFrameCacheable is tagged;
    type BufferedImageFrameCacheable_Access is access all BufferedImageFrameCacheable'Class;

@@ -30,12 +30,12 @@ with org.allbinary.util.EnumerationUtil_Package; use org.allbinary.util.Enumerat
 
 package org.allbinary.game.layer.LevelLayersFinder_Package is
 
-   package Layer_Package renames org.allbinary.layer.Layer_Package;
-   package SmallIntegerSingletonFactory_Package renames org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
-   package ABHashtable_Package renames org.allbinary.util.ABHashtable_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package EnumerationUtil_Package renames org.allbinary.util.EnumerationUtil_Package;
+   package Layer_Package renames Standard.org.allbinary.layer.Layer_Package;
+   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package EnumerationUtil_Package renames Standard.org.allbinary.util.EnumerationUtil_Package;
 
    type LevelLayersFinder is tagged;
    type LevelLayersFinder_Access is access all LevelLayersFinder'Class;

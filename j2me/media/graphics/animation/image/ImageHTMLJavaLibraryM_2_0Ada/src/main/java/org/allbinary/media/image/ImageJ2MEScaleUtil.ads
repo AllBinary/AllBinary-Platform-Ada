@@ -33,15 +33,15 @@ with playn.html.HtmlImage_Package; use playn.html.HtmlImage_Package;
 
 package org.allbinary.media.image.ImageJ2MEScaleUtil_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package PlaynImmutableImage_Package renames org.microemu.device.playn.PlaynImmutableImage_Package;
-   package PlaynMutableImage_Package renames org.microemu.device.playn.PlaynMutableImage_Package;
-   package Canvas_Package renames playn.core.Canvas_Package;
-   package CoreImage_Package renames playn.core.CoreImage_Package;
-   package ImageImpl_Package renames playn.core.ImageImpl_Package;
-   package PlayN_Package renames playn.core.PlayN_Package;
-   package HtmlGraphics_Package renames playn.html.HtmlGraphics_Package;
-   package HtmlImage_Package renames playn.html.HtmlImage_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package PlaynImmutableImage_Package renames Standard.org.microemu.device.playn.PlaynImmutableImage_Package;
+   package PlaynMutableImage_Package renames Standard.org.microemu.device.playn.PlaynMutableImage_Package;
+   package Canvas_Package renames Standard.playn.core.Canvas_Package;
+   package CoreImage_Package renames Standard.playn.core.CoreImage_Package;
+   package ImageImpl_Package renames Standard.playn.core.ImageImpl_Package;
+   package PlayN_Package renames Standard.playn.core.PlayN_Package;
+   package HtmlGraphics_Package renames Standard.playn.html.HtmlGraphics_Package;
+   package HtmlImage_Package renames Standard.playn.html.HtmlImage_Package;
 
    type ImageJ2MEScaleUtil is tagged;
    type ImageJ2MEScaleUtil_Access is access all ImageJ2MEScaleUtil'Class;

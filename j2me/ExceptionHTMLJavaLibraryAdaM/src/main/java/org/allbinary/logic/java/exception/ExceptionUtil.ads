@@ -24,7 +24,7 @@ with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Pack
 
 package org.allbinary.logic.java.exception_Id.ExceptionUtil_Package is
 
-   package JsType_Package renames jsinterop.annotations.JsType_Package;
+   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
 
    type ExceptionUtil is tagged;
    type ExceptionUtil_Access is access all ExceptionUtil'Class;
@@ -34,15 +34,15 @@ package org.allbinary.logic.java.exception_Id.ExceptionUtil_Package is
    type ExceptionUtil is new Java_Object with record
       NONE : Unbounded_String;
    end record;
-   instance : Ada.Exceptions.Exception_Occurrence;
-   PRETEND_EXCEPTION : Ada.Exceptions.Exception_Occurrence;
+   instance : ExceptionUtil_Access;
+   PRETEND_EXCEPTION : Java_Throwable;
 
    procedure Initialize (This : in out ExceptionUtil'Class);
    function Create return ExceptionUtil_Access;
-   function getInstance return Ada.Exceptions.Exception_Occurrence;
+   function getInstance return ExceptionUtil_Access;
    procedure getInstance;
-   function getStackTrace (This : in out ExceptionUtil; e : Ada.Exceptions.Exception_Occurrence) return Unbounded_String;
-   procedure getStackTrace (This : in out ExceptionUtil; e : Ada.Exceptions.Exception_Occurrence);
+   function getStackTrace (This : in out ExceptionUtil; e : Java_Throwable) return Unbounded_String;
+   procedure getStackTrace (This : in out ExceptionUtil; e : Java_Throwable);
 
 end org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 

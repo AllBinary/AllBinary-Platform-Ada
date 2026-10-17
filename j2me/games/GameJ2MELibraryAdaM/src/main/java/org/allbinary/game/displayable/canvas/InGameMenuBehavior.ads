@@ -25,7 +25,7 @@ with org.allbinary.game.displayable.canvas.BaseMenuBehavior_Package; use org.all
 
 package org.allbinary.game.displayable.canvas.InGameMenuBehavior_Package is
 
-   package DisplayChangeEvent_Package renames org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package;
+   package DisplayChangeEvent_Package renames Standard.org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package;
 
    type InGameMenuBehavior is tagged;
    type InGameMenuBehavior_Access is access all InGameMenuBehavior'Class;

@@ -31,14 +31,14 @@ with views.business.context.modules.storefront.HttpStoreComponentView_Package; u
 
 package views.admin.payment.gateway.PaymentGatewayComponent_Package is
 
-   package PaymentGatewayInterface_Package renames org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayInterface_Package;
-   package PaymentGatewayDomNodeFactoryInterface_Package renames org.allbinary.business.user.commerce.money.payment.gateway.modules.gateway.PaymentGatewayDomNodeFactoryInterface_Package;
-   package BasicPaymentType_Package renames org.allbinary.business.user.commerce.money.payment.types.BasicPaymentType_Package;
-   package BasicPaymentTypeUtil_Package renames org.allbinary.business.user.commerce.money.payment.types.BasicPaymentTypeUtil_Package;
-   package DomNodeInterface_Package renames org.allbinary.data.tree.dom.DomNodeInterface_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package TransformInfoInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-   package HttpStoreComponentView_Package renames views.business.context.modules.storefront.HttpStoreComponentView_Package;
+   package PaymentGatewayInterface_Package renames Standard.org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayInterface_Package;
+   package PaymentGatewayDomNodeFactoryInterface_Package renames Standard.org.allbinary.business.user.commerce.money.payment.gateway.modules.gateway.PaymentGatewayDomNodeFactoryInterface_Package;
+   package BasicPaymentType_Package renames Standard.org.allbinary.business.user.commerce.money.payment.types.BasicPaymentType_Package;
+   package BasicPaymentTypeUtil_Package renames Standard.org.allbinary.business.user.commerce.money.payment.types.BasicPaymentTypeUtil_Package;
+   package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package HttpStoreComponentView_Package renames Standard.views.business.context.modules.storefront.HttpStoreComponentView_Package;
 
    type PaymentGatewayComponent is tagged;
    type PaymentGatewayComponent_Access is access all PaymentGatewayComponent'Class;

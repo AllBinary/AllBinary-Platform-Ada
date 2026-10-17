@@ -47,9 +47,13 @@ package body org.allbinary.logic.util.cache.KeylessBasicArrayListCache_Package i
             list := BasicArrayList_Access (This.getAt (Java_Post_Increment (This.index)));
             return list;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.GET, e);
             return This.basicArrayListUtil.getImmutableInstance;
+                end;
         end;
    end get;
 

@@ -30,13 +30,13 @@ with views.HttpComponentView_Package; use views.HttpComponentView_Package;
 
 package views.business.context.modules.storefront.HttpStoreComponentView_Package is
 
-   package XmlDocumentHelper_Package renames org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StoreTransformer_Package renames org.allbinary.logic.visual.transform.StoreTransformer_Package;
-   package TransformStoreDocumentFactory_Package renames org.allbinary.logic.visual.transform.data.TransformStoreDocumentFactory_Package;
-   package TransformInfoInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package HttpComponentView_Package renames views.HttpComponentView_Package;
+   package XmlDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StoreTransformer_Package renames Standard.org.allbinary.logic.visual.transform.StoreTransformer_Package;
+   package TransformStoreDocumentFactory_Package renames Standard.org.allbinary.logic.visual.transform.data.TransformStoreDocumentFactory_Package;
+   package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package HttpComponentView_Package renames Standard.views.HttpComponentView_Package;
 
    type HttpStoreComponentView is tagged;
    type HttpStoreComponentView_Access is access all HttpStoreComponentView'Class;

@@ -53,8 +53,12 @@ package body org.allbinary.game.displayable.canvas.FormInputProcessor_Package is
             gameKeyEvent := This.gameKeyEventFactory.getInstanceForInput (This.allBinaryGameCanvas, input);
             This.downKeyEventHandler.fireEventForGameKeyEvent (gameKeyEvent);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.gameInputStrings.ADD_KEY_EVENT, e);
+                end;
         end;
    end keyPressedByDevice;
 
@@ -75,8 +79,12 @@ package body org.allbinary.game.displayable.canvas.FormInputProcessor_Package is
                 This.upGameKeyEventHandler.getInstanceForDevice (deviceId).fireEvent (gameKeyEvent);
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.gameInputStrings.ADD_KEY_EVENT, e);
+                end;
         end;
    end keyReleasedByDevice;
 

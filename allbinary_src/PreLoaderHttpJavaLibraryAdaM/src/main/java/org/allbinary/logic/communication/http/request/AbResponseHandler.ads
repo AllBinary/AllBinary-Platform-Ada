@@ -33,10 +33,10 @@ with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package
 
 package org.allbinary.logic.communication.http.request.AbResponseHandler_Package is
 
-   package FREEBLISKET_PATH_GLOBALS_Package renames org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package LogConfigTypeFactory_Package renames org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
-   package LogConfigTypes_Package renames org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
+   package FREEBLISKET_PATH_GLOBALS_Package renames Standard.org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 
    type AbResponseHandler is tagged;
    type AbResponseHandler_Access is access all AbResponseHandler'Class;
@@ -49,10 +49,10 @@ package org.allbinary.logic.communication.http.request.AbResponseHandler_Package
 
    procedure Initialize (This : in out AbResponseHandler'Class);
    function Create return AbResponseHandler_Access;
-   procedure sendJspTagRedirect (pageContext : PageContext_Access; e : Ada.Exceptions.Exception_Occurrence);
-   procedure sendServletRedirect (pageContext : PageContext_Access; e : Ada.Exceptions.Exception_Occurrence);
-   procedure sendJspTagLicensingRedirect (pageContext : PageContext_Access; e : Ada.Exceptions.Exception_Occurrence);
-   procedure sendServletLicensingRedirect (pageContext : PageContext_Access; e : Ada.Exceptions.Exception_Occurrence);
+   procedure sendJspTagRedirect (pageContext : PageContext_Access; e : Java_Throwable);
+   procedure sendServletRedirect (pageContext : PageContext_Access; e : Java_Throwable);
+   procedure sendJspTagLicensingRedirect (pageContext : PageContext_Access; e : Java_Throwable);
+   procedure sendServletLicensingRedirect (pageContext : PageContext_Access; e : Java_Throwable);
    procedure sendRedirect (pageContext : PageContext_Access; page : Unbounded_String);
 
 end org.allbinary.logic.communication.http.request.AbResponseHandler_Package;

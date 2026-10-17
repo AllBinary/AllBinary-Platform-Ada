@@ -29,11 +29,11 @@ with org.microemu.device.playn.PlaynImage_Package; use org.microemu.device.playn
 
 package org.allbinary.media.image.ImageCompleteUtil_Package is
 
-   package GameFeatureImageCacheFactory_Package renames org.allbinary.image.GameFeatureImageCacheFactory_Package;
-   package PreLogUtil_Package renames org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package TimeDelayHelper_Package renames org.allbinary.time.TimeDelayHelper_Package;
-   package HashtableUtil_Package renames org.allbinary.util.HashtableUtil_Package;
-   package PlaynImage_Package renames org.microemu.device.playn.PlaynImage_Package;
+   package GameFeatureImageCacheFactory_Package renames Standard.org.allbinary.image.GameFeatureImageCacheFactory_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
+   package HashtableUtil_Package renames Standard.org.allbinary.util.HashtableUtil_Package;
+   package PlaynImage_Package renames Standard.org.microemu.device.playn.PlaynImage_Package;
 
    type ImageCompleteUtil is tagged;
    type ImageCompleteUtil_Access is access all ImageCompleteUtil'Class;

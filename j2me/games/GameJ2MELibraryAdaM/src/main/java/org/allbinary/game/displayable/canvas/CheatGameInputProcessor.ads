@@ -33,16 +33,16 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 
 package org.allbinary.game.displayable.canvas.CheatGameInputProcessor_Package is
 
-   package GameKeyFactory_Package renames org.allbinary.game.input.GameKeyFactory_Package;
-   package PlayerGameInput_Package renames org.allbinary.game.input.PlayerGameInput_Package;
-   package GameKeyEvent_Package renames org.allbinary.game.input.event.GameKeyEvent_Package;
-   package GameKeyEventUtil_Package renames org.allbinary.game.input.event.GameKeyEventUtil_Package;
-   package AllBinaryGameLayerManager_Package renames org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
-   package SpecialGameInputFactory_Package renames org.allbinary.game.layer.special.SpecialGameInputFactory_Package;
-   package SpecialGameInputInterface_Package renames org.allbinary.game.layer.special.SpecialGameInputInterface_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
+   package GameKeyFactory_Package renames Standard.org.allbinary.game.input.GameKeyFactory_Package;
+   package PlayerGameInput_Package renames Standard.org.allbinary.game.input.PlayerGameInput_Package;
+   package GameKeyEvent_Package renames Standard.org.allbinary.game.input.event.GameKeyEvent_Package;
+   package GameKeyEventUtil_Package renames Standard.org.allbinary.game.input.event.GameKeyEventUtil_Package;
+   package AllBinaryGameLayerManager_Package renames Standard.org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
+   package SpecialGameInputFactory_Package renames Standard.org.allbinary.game.layer.special.SpecialGameInputFactory_Package;
+   package SpecialGameInputInterface_Package renames Standard.org.allbinary.game.layer.special.SpecialGameInputInterface_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type CheatGameInputProcessor is tagged;
    type CheatGameInputProcessor_Access is access all CheatGameInputProcessor'Class;

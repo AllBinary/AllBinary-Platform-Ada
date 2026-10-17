@@ -29,10 +29,10 @@ with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_
 
 package org.allbinary.game.displayable.canvas.GameCanvasRunnableInterface_Package is
 
-   package GameStateCompositeInterface_Package renames org.allbinary.game.state.GameStateCompositeInterface_Package;
-   package PaintableInterface_Package renames org.allbinary.graphics.paint.PaintableInterface_Package;
-   package RunnableInterface_Package renames org.allbinary.thread.RunnableInterface_Package;
-   package ABHashtable_Package renames org.allbinary.util.ABHashtable_Package;
+   package GameStateCompositeInterface_Package renames Standard.org.allbinary.game.state.GameStateCompositeInterface_Package;
+   package PaintableInterface_Package renames Standard.org.allbinary.graphics.paint.PaintableInterface_Package;
+   package RunnableInterface_Package renames Standard.org.allbinary.thread.RunnableInterface_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
    type GameCanvasRunnableInterface is interface and RunnableInterface and PaintableInterface and ItemStateListener and GameStateCompositeInterface;
    type GameCanvasRunnableInterface_Access is access all GameCanvasRunnableInterface'Class;

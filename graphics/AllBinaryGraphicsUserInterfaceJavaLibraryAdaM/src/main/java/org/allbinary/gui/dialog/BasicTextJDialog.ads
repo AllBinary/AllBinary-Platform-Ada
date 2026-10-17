@@ -25,7 +25,7 @@ with org.allbinary.gui.dialog.JDialog_Package; use org.allbinary.gui.dialog.JDia
 
 package org.allbinary.gui.dialog.BasicTextJDialog_Package is
 
-   package ARunnable_Package renames org.allbinary.thread.ARunnable_Package;
+   package ARunnable_Package renames Standard.org.allbinary.thread.ARunnable_Package;
 
    type BasicTextJDialog is tagged;
    type BasicTextJDialog_Access is access all BasicTextJDialog'Class;

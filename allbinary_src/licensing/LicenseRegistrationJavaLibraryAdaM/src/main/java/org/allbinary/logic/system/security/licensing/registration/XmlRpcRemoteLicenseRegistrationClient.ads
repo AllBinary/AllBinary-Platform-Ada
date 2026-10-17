@@ -36,18 +36,18 @@ with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_
 
 package org.allbinary.logic.system.security.licensing.registration.XmlRpcRemoteLicenseRegistrationClient_Package is
 
-   package XmlRpcClient_Package renames org.apache.xmlrpc.XmlRpcClient_Package;
-   package XmlRpcException_Package renames org.apache.xmlrpc.XmlRpcException_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package CryptInterface_Package renames org.allbinary.init.crypt.jcehelper.CryptInterface_Package;
-   package CommonLabels_Package renames org.allbinary.string_Id.CommonLabels_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package XmlRpcAbeClient_Package renames org.allbinary.logic.communication.xmlrpc.XmlRpcAbeClient_Package;
-   package ExceptionUtil_Package renames org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
-   package AbeClientInformationInterface_Package renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-   package ABHashtable_Package renames org.allbinary.util.ABHashtable_Package;
+   package XmlRpcClient_Package renames Standard.org.apache.xmlrpc.XmlRpcClient_Package;
+   package XmlRpcException_Package renames Standard.org.apache.xmlrpc.XmlRpcException_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package CryptInterface_Package renames Standard.org.allbinary.init.crypt.jcehelper.CryptInterface_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package XmlRpcAbeClient_Package renames Standard.org.allbinary.logic.communication.xmlrpc.XmlRpcAbeClient_Package;
+   package ExceptionUtil_Package renames Standard.org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+   package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
    type XmlRpcRemoteLicenseRegistrationClient is tagged;
    type XmlRpcRemoteLicenseRegistrationClient_Access is access all XmlRpcRemoteLicenseRegistrationClient'Class;

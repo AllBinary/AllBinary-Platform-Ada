@@ -19,13 +19,13 @@ with org.allbinary.logic.ABSystemWrapper_Package; use org.allbinary.logic.ABSyst
 
 package org.allbinary.layer.LayerManager_Package is
 
-   package TsUtil_Package renames org.allbinary.TsUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package SynchObject_Package renames org.allbinary.thread.SynchObject_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package ABSystemWrapper_Package renames org.allbinary.logic.ABSystemWrapper_Package;
+   package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package SynchObject_Package renames Standard.org.allbinary.thread.SynchObject_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package ABSystemWrapper_Package renames Standard.org.allbinary.logic.ABSystemWrapper_Package;
 
    type LayerManager is tagged;
    type LayerManager_Access is access all LayerManager'Class;

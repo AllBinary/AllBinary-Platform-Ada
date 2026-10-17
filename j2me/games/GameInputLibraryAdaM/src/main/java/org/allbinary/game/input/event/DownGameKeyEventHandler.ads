@@ -26,8 +26,8 @@ with org.allbinary.game.input.event.DownGameKeyEventHandlerBase_Package; use org
 
 package org.allbinary.game.input.event.DownGameKeyEventHandler_Package is
 
-   package LocalPlayerInputIdFactory_Package renames org.allbinary.game.input.LocalPlayerInputIdFactory_Package;
-   package EventListenerInterface_Package renames org.allbinary.logic.util.event.EventListenerInterface_Package;
+   package LocalPlayerInputIdFactory_Package renames Standard.org.allbinary.game.input.LocalPlayerInputIdFactory_Package;
+   package EventListenerInterface_Package renames Standard.org.allbinary.logic.util.event.EventListenerInterface_Package;
 
    type DownGameKeyEventHandler is tagged;
    type DownGameKeyEventHandler_Access is access all DownGameKeyEventHandler'Class;

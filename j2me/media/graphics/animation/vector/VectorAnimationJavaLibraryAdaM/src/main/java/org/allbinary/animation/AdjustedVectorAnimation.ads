@@ -26,7 +26,7 @@ with org.allbinary.animation.VectorAnimation_Package; use org.allbinary.animatio
 
 package org.allbinary.animation.AdjustedVectorAnimation_Package is
 
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
 
    type AdjustedVectorAnimation is tagged;
    type AdjustedVectorAnimation_Access is access all AdjustedVectorAnimation'Class;

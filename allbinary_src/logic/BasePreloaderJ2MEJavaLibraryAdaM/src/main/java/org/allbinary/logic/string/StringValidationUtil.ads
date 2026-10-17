@@ -24,7 +24,7 @@ with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
 
 package org.allbinary.logic.string_Id.StringValidationUtil_Package is
 
-   package TsUtil_Package renames org.allbinary.TsUtil_Package;
+   package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
 
    type StringValidationUtil is tagged;
    type StringValidationUtil_Access is access all StringValidationUtil'Class;

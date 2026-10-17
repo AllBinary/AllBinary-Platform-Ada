@@ -26,9 +26,9 @@ with org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorBa
 
 package org.allbinary.game.media.graphics.geography.map.racetrack.PathFinderGraphHackVisitorFactory_Package is
 
-   package BasicGeographicMap_Package renames org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
-   package PathFinderGraphVisitorFactoryBase_Package renames org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorFactoryBase_Package;
-   package PathFinderGraphVisitorBase_Package renames org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorBase_Package;
+   package BasicGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
+   package PathFinderGraphVisitorFactoryBase_Package renames Standard.org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorFactoryBase_Package;
+   package PathFinderGraphVisitorBase_Package renames Standard.org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorBase_Package;
 
    type PathFinderGraphHackVisitorFactory is tagged;
    type PathFinderGraphHackVisitorFactory_Access is access all PathFinderGraphHackVisitorFactory'Class;

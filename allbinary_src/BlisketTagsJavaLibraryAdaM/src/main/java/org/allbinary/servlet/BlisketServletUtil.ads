@@ -28,10 +28,10 @@ with org.allbinary.logic.system.loader.WebappClassLoaderInfo_Package; use org.al
 
 package org.allbinary.servlet.BlisketServletUtil_Package is
 
-   package AppUrlGlobals_Package renames org.allbinary.globals.AppUrlGlobals_Package;
-   package URLGLOBALS_Package renames org.allbinary.globals.URLGLOBALS_Package;
-   package AbPathData_Package renames org.allbinary.logic.io.path.AbPathData_Package;
-   package WebappClassLoaderInfo_Package renames org.allbinary.logic.system.loader.WebappClassLoaderInfo_Package;
+   package AppUrlGlobals_Package renames Standard.org.allbinary.globals.AppUrlGlobals_Package;
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
+   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
+   package WebappClassLoaderInfo_Package renames Standard.org.allbinary.logic.system.loader.WebappClassLoaderInfo_Package;
 
    type BlisketServletUtil is tagged;
    type BlisketServletUtil_Access is access all BlisketServletUtil'Class;

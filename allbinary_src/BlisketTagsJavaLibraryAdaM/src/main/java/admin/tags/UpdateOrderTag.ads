@@ -25,7 +25,7 @@ with admin.tags.TableTag_Package; use admin.tags.TableTag_Package;
 
 package admin.tags.UpdateOrderTag_Package is
 
-   package UpdateOrderHelperFactory_Package renames admin.taghelpers.UpdateOrderHelperFactory_Package;
+   package UpdateOrderHelperFactory_Package renames Standard.admin.taghelpers.UpdateOrderHelperFactory_Package;
 
    type UpdateOrderTag is tagged;
    type UpdateOrderTag_Access is access all UpdateOrderTag'Class;

@@ -47,23 +47,23 @@ with org.apache.commons.fileupload.FileItem_Package; use org.apache.commons.file
 
 package org.allbinary.servlet.file.UploadFileServlet_Package is
 
-   package AuthenticationHelper_Package renames admin.taghelpers.AuthenticationHelper_Package;
-   package AuthenticationHelperFactory_Package renames admin.taghelpers.AuthenticationHelperFactory_Package;
-   package AuthenticationHelperUtil_Package renames admin.taghelpers.AuthenticationHelperUtil_Package;
-   package URLGLOBALS_Package renames org.allbinary.globals.URLGLOBALS_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package FileUploadData_Package renames org.allbinary.logic.communication.http.file.upload.FileUploadData_Package;
-   package HttpFileUploadUtil_Package renames org.allbinary.logic.communication.http.file.upload.HttpFileUploadUtil_Package;
-   package HttpRequestUtil_Package renames org.allbinary.logic.communication.http.request.HttpRequestUtil_Package;
-   package MultipartRequestParams_Package renames org.allbinary.logic.communication.http.request.MultipartRequestParams_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package AbFileOutputStream_Package renames org.allbinary.logic.io.AbFileOutputStream_Package;
-   package StreamUtil_Package renames org.allbinary.logic.io.StreamUtil_Package;
-   package AbFile_Package renames org.allbinary.logic.io.file.AbFile_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package BlisketServletUtil_Package renames org.allbinary.servlet.BlisketServletUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package FileItem_Package renames org.apache.commons.fileupload.FileItem_Package;
+   package AuthenticationHelper_Package renames Standard.admin.taghelpers.AuthenticationHelper_Package;
+   package AuthenticationHelperFactory_Package renames Standard.admin.taghelpers.AuthenticationHelperFactory_Package;
+   package AuthenticationHelperUtil_Package renames Standard.admin.taghelpers.AuthenticationHelperUtil_Package;
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package FileUploadData_Package renames Standard.org.allbinary.logic.communication.http.file.upload.FileUploadData_Package;
+   package HttpFileUploadUtil_Package renames Standard.org.allbinary.logic.communication.http.file.upload.HttpFileUploadUtil_Package;
+   package HttpRequestUtil_Package renames Standard.org.allbinary.logic.communication.http.request.HttpRequestUtil_Package;
+   package MultipartRequestParams_Package renames Standard.org.allbinary.logic.communication.http.request.MultipartRequestParams_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package AbFileOutputStream_Package renames Standard.org.allbinary.logic.io.AbFileOutputStream_Package;
+   package StreamUtil_Package renames Standard.org.allbinary.logic.io.StreamUtil_Package;
+   package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package BlisketServletUtil_Package renames Standard.org.allbinary.servlet.BlisketServletUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package FileItem_Package renames Standard.org.apache.commons.fileupload.FileItem_Package;
 
    type UploadFileServlet is tagged;
    type UploadFileServlet_Access is access all UploadFileServlet'Class;

@@ -32,14 +32,14 @@ with org.allbinary.media.image.comparison.pixel.PixelDelta_Package; use org.allb
 
 package org.allbinary.media.image.comparison.ChangedPixelsUtil_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package PoolInterface_Package renames org.allbinary.logic.util.cache.PoolInterface_Package;
-   package BufferedImageCacheable_Package renames org.allbinary.media.image.cache.BufferedImageCacheable_Package;
-   package BufferedImageInfo_Package renames org.allbinary.media.image.cache.BufferedImageInfo_Package;
-   package BufferedImageInfoFactory_Package renames org.allbinary.media.image.cache.BufferedImageInfoFactory_Package;
-   package BufferedImagePoolSingleton_Package renames org.allbinary.media.image.cache.BufferedImagePoolSingleton_Package;
-   package PixelDelta_Package renames org.allbinary.media.image.comparison.pixel.PixelDelta_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package PoolInterface_Package renames Standard.org.allbinary.logic.util.cache.PoolInterface_Package;
+   package BufferedImageCacheable_Package renames Standard.org.allbinary.media.image.cache.BufferedImageCacheable_Package;
+   package BufferedImageInfo_Package renames Standard.org.allbinary.media.image.cache.BufferedImageInfo_Package;
+   package BufferedImageInfoFactory_Package renames Standard.org.allbinary.media.image.cache.BufferedImageInfoFactory_Package;
+   package BufferedImagePoolSingleton_Package renames Standard.org.allbinary.media.image.cache.BufferedImagePoolSingleton_Package;
+   package PixelDelta_Package renames Standard.org.allbinary.media.image.comparison.pixel.PixelDelta_Package;
 
    type ChangedPixelsUtil is tagged;
    type ChangedPixelsUtil_Access is access all ChangedPixelsUtil'Class;

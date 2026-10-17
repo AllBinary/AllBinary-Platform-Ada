@@ -26,9 +26,9 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.business.user.commerce.inventory.order.OrderHistoryFactory_Package is
 
-   package OrderHistoryEntity_Package renames org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntity_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package OrderHistoryEntity_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntity_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type OrderHistoryFactory is tagged;
    type OrderHistoryFactory_Access is access all OrderHistoryFactory'Class;

@@ -32,11 +32,11 @@ with org.allbinary.game.displayable.canvas.GameCanvasRunnableInterface_Package; 
 
 package org.allbinary.game.displayable.canvas.NullGameCanvasRunnable_Package is
 
-   package GameState_Package renames org.allbinary.game.state.GameState_Package;
-   package GameStateFactory_Package renames org.allbinary.game.state.GameStateFactory_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package ABHashtable_Package renames org.allbinary.util.ABHashtable_Package;
+   package GameState_Package renames Standard.org.allbinary.game.state.GameState_Package;
+   package GameStateFactory_Package renames Standard.org.allbinary.game.state.GameStateFactory_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
    type NullGameCanvasRunnable is tagged;
    type NullGameCanvasRunnable_Access is access all NullGameCanvasRunnable'Class;

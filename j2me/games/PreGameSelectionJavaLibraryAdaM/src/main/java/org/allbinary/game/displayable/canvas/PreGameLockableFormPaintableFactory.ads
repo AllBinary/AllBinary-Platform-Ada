@@ -27,10 +27,10 @@ with org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package; use org.all
 
 package org.allbinary.game.displayable.canvas.PreGameLockableFormPaintableFactory_Package is
 
-   package ItemPaintable_Package renames org.allbinary.graphics.form.ItemPaintable_Package;
-   package ItemPaintableFactory_Package renames org.allbinary.graphics.form.ItemPaintableFactory_Package;
-   package PaintableForm_Package renames org.allbinary.graphics.form.PaintableForm_Package;
-   package ScrollCurrentSelectionForm_Package renames org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package;
+   package ItemPaintable_Package renames Standard.org.allbinary.graphics.form.ItemPaintable_Package;
+   package ItemPaintableFactory_Package renames Standard.org.allbinary.graphics.form.ItemPaintableFactory_Package;
+   package PaintableForm_Package renames Standard.org.allbinary.graphics.form.PaintableForm_Package;
+   package ScrollCurrentSelectionForm_Package renames Standard.org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package;
 
    type PreGameLockableFormPaintableFactory is tagged;
    type PreGameLockableFormPaintableFactory_Access is access all PreGameLockableFormPaintableFactory'Class;

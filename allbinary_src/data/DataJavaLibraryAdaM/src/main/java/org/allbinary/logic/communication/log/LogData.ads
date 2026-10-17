@@ -24,7 +24,7 @@ with org.allbinary_Case.logic.io.path.AbPathData_Package; use org.allbinary_Case
 
 package org.allbinary_Case.logic.communication.log.LogData_Package is
 
-   package AbPathData_Package renames org.allbinary_Case.logic.io.path.AbPathData_Package;
+   package AbPathData_Package renames Standard.org.allbinary_Case.logic.io.path.AbPathData_Package;
 
    type LogData is tagged;
    type LogData_Access is access all LogData'Class;

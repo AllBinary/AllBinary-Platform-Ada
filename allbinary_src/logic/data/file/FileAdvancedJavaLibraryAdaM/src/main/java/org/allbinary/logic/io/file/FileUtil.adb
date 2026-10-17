@@ -151,7 +151,10 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
             fileInputStream := AbFileLocalInputStream_Package.Create (file);
             This.copy (fileInputStream, dataOutputStream);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (This.logConfigTypeFactory.FILEERROR) then
                 stringBuffer := StringMaker_Package.Create;
                 stringBuffer.append (To_Unbounded_String ("Error Copying File File: "));
@@ -160,6 +163,7 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
                 This.logUtil.put (stringBuffer.toString, getInstance, To_Unbounded_String ("copyToCloud"), e);
             end if;
             Java_Throw (e);
+                end;
         end;
    end copyToCloud;
 
@@ -194,7 +198,10 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
             fileInputStream := AbFileLocalInputStream_Package.Create (file);
             This.copy (fileInputStream, dataOutputStream);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (This.logConfigTypeFactory.FILEERROR) then
                 stringBuffer := StringMaker_Package.Create;
                 stringBuffer.append (To_Unbounded_String ("Error Copying File File: "));
@@ -203,6 +210,7 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
                 This.logUtil.put (stringBuffer.toString, getInstance, To_Unbounded_String ("copyToCloud"), e);
             end if;
             Java_Throw (e);
+                end;
         end;
    end copyToCloud;
 
@@ -284,7 +292,10 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
             fileInputStream := AbFileInputStream_Package.Create (fromFile);
             This.copy (fileInputStream, dataOutputStream);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (This.logConfigTypeFactory.FILEERROR) then
                 stringBuffer := StringMaker_Package.Create;
                 stringBuffer.append (To_Unbounded_String ("Error Copying File fromFile: "));
@@ -294,6 +305,7 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
                 This.logUtil.put (stringBuffer.toString, getInstance, To_Unbounded_String ("copyFile"), e);
             end if;
             Java_Throw (e);
+                end;
         end;
    end copyFile;
 
@@ -421,7 +433,10 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
                 end if;
             end loop;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (This.logConfigTypeFactory.FILEERROR) then
                 stringBuffer := StringMaker_Package.Create;
                 stringBuffer.append (To_Unbounded_String ("Error Copying Directory fromFile: "));
@@ -431,6 +446,7 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
                 This.logUtil.put (stringBuffer.toString, getInstance, To_Unbounded_String ("copyDirectory"), e);
             end if;
             Java_Throw (e);
+                end;
         end;
    end copyDirectory;
 
@@ -521,7 +537,10 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
             end if;
             return True;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (This.logConfigTypeFactory.FILEERROR) then
                 stringBuffer := StringMaker_Package.Create;
                 stringBuffer.append (To_Unbounded_String ("Error Copying fromAbPath: "));
@@ -531,6 +550,7 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
                 This.logUtil.put (stringBuffer.toString, getInstance, COPY, e);
             end if;
             Java_Throw (e);
+                end;
         end;
    end copy;
 

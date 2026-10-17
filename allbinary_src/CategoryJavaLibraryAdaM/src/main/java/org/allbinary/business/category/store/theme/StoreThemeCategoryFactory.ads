@@ -36,18 +36,18 @@ with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 
 package org.allbinary.business.category.store.theme.StoreThemeCategoryFactory_Package is
 
-   package CategoryFactoryInterface_Package renames org.allbinary.business.category.CategoryFactoryInterface_Package;
-   package CategoryInterface_Package renames org.allbinary.business.category.CategoryInterface_Package;
-   package CategoryUtil_Package renames org.allbinary.business.category.CategoryUtil_Package;
-   package CategoryPropertiesFactory_Package renames org.allbinary.business.category.properties.CategoryPropertiesFactory_Package;
-   package CategoryPropertiesFactoryInterface_Package renames org.allbinary.business.category.properties.CategoryPropertiesFactoryInterface_Package;
-   package RootStoreThemeCategoryPropertiesFactory_Package renames org.allbinary.business.category.properties.root.store.theme.RootStoreThemeCategoryPropertiesFactory_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package AbPath_Package renames org.allbinary.logic.io.path.AbPath_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package TransformInfoInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
+   package CategoryFactoryInterface_Package renames Standard.org.allbinary.business.category.CategoryFactoryInterface_Package;
+   package CategoryInterface_Package renames Standard.org.allbinary.business.category.CategoryInterface_Package;
+   package CategoryUtil_Package renames Standard.org.allbinary.business.category.CategoryUtil_Package;
+   package CategoryPropertiesFactory_Package renames Standard.org.allbinary.business.category.properties.CategoryPropertiesFactory_Package;
+   package CategoryPropertiesFactoryInterface_Package renames Standard.org.allbinary.business.category.properties.CategoryPropertiesFactoryInterface_Package;
+   package RootStoreThemeCategoryPropertiesFactory_Package renames Standard.org.allbinary.business.category.properties.root.store.theme.RootStoreThemeCategoryPropertiesFactory_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type StoreThemeCategoryFactory is tagged;
    type StoreThemeCategoryFactory_Access is access all StoreThemeCategoryFactory'Class;

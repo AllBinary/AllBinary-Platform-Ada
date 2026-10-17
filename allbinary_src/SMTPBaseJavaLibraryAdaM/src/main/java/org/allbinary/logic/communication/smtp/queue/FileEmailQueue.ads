@@ -24,7 +24,7 @@ with org.allbinary.data.tree.dom.document.DomDocumentQueueInterface_Package; use
 
 package org.allbinary.logic.communication.smtp.queue.FileEmailQueue_Package is
 
-   package DomDocumentQueueInterface_Package renames org.allbinary.data.tree.dom.document.DomDocumentQueueInterface_Package;
+   package DomDocumentQueueInterface_Package renames Standard.org.allbinary.data.tree.dom.document.DomDocumentQueueInterface_Package;
 
    type FileEmailQueue is tagged;
    type FileEmailQueue_Access is access all FileEmailQueue'Class;

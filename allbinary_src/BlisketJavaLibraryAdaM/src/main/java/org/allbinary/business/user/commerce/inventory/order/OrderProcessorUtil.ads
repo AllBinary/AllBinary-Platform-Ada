@@ -26,9 +26,9 @@ with org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsEntity_Pa
 
 package org.allbinary.business.user.commerce.inventory.order.OrderProcessorUtil_Package is
 
-   package OrderIdGenerator_Package renames org.allbinary.data.generator.OrderIdGenerator_Package;
-   package OrderHistoryEntity_Package renames org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntity_Package;
-   package OrderItemsEntity_Package renames org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsEntity_Package;
+   package OrderIdGenerator_Package renames Standard.org.allbinary.data.generator.OrderIdGenerator_Package;
+   package OrderHistoryEntity_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntity_Package;
+   package OrderItemsEntity_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsEntity_Package;
 
    type OrderProcessorUtil is tagged;
    type OrderProcessorUtil_Access is access all OrderProcessorUtil'Class;

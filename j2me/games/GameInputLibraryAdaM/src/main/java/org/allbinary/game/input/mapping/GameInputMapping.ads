@@ -25,8 +25,8 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 
 package org.allbinary.game.input.mapping.GameInputMapping_Package is
 
-   package GameKey_Package renames org.allbinary.game.input.GameKey_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
+   package GameKey_Package renames Standard.org.allbinary.game.input.GameKey_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type GameInputMapping is tagged;
    type GameInputMapping_Access is access all GameInputMapping'Class;

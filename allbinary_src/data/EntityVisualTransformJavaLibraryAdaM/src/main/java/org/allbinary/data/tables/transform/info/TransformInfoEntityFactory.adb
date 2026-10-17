@@ -42,12 +42,16 @@ package body org.allbinary.data.tables.transform.info.TransformInfoEntityFactory
         begin
             return TransformInfoEntity_Package.Create (transformInfoObjectConfigGeneratorFactoryInterface, transformInfoObjectConfigAndManipulatorFactoryInterface, transformInfoFactoryInterface);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.ENTITYFACTORYERROR) then
                 logUtil.put (commonStrings.EXCEPTION_Id, To_Unbounded_String ("TransformInfoEntityFactory"), commonStrings.GET_INSTANCE, e);
             end if;
             return null;
+                end;
         end;
    end getInstance;
 

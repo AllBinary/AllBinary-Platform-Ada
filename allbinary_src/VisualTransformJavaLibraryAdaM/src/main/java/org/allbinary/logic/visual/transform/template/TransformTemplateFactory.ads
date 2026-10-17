@@ -31,12 +31,12 @@ with org.allbinary.logic.visual.transform.info.TransformInfoObjectFactory_Packag
 
 package org.allbinary.logic.visual.transform.template.TransformTemplateFactory_Package is
 
-   package TransformInfoEntity_Package renames org.allbinary.data.tables.transform.info.TransformInfoEntity_Package;
-   package TransformInfoEntityBuilder_Package renames org.allbinary.data.tables.transform.info.TransformInfoEntityBuilder_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package AbeClientInformationInterface_Package renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-   package TransformInfoInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-   package TransformInfoObjectFactory_Package renames org.allbinary.logic.visual.transform.info.TransformInfoObjectFactory_Package;
+   package TransformInfoEntity_Package renames Standard.org.allbinary.data.tables.transform.info.TransformInfoEntity_Package;
+   package TransformInfoEntityBuilder_Package renames Standard.org.allbinary.data.tables.transform.info.TransformInfoEntityBuilder_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package TransformInfoObjectFactory_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoObjectFactory_Package;
 
    type TransformTemplateFactory is tagged;
    type TransformTemplateFactory_Access is access all TransformTemplateFactory'Class;

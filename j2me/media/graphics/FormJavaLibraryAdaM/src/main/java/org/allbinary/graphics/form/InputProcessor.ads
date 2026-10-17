@@ -25,8 +25,8 @@ with org.allbinary.game.input.PlayerGameInputCompositeInterface_Package; use org
 
 package org.allbinary.graphics.form.InputProcessor_Package is
 
-   package Processor_Package renames org.allbinary.canvas.Processor_Package;
-   package PlayerGameInputCompositeInterface_Package renames org.allbinary.game.input.PlayerGameInputCompositeInterface_Package;
+   package Processor_Package renames Standard.org.allbinary.canvas.Processor_Package;
+   package PlayerGameInputCompositeInterface_Package renames Standard.org.allbinary.game.input.PlayerGameInputCompositeInterface_Package;
 
    type InputProcessor is tagged;
    type InputProcessor_Access is access all InputProcessor'Class;

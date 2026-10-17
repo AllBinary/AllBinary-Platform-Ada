@@ -27,10 +27,10 @@ with org.allbinary.game.configuration.feature.GraphicsFeatureFactory_Package; us
 
 package org.allbinary.game.layer.geological.resources.GeologicalGameResources_Package is
 
-   package BasicGameResources_Package renames org.allbinary.game.layer.resources.BasicGameResources_Package;
-   package GameGraphicsResourceUtil_Package renames org.allbinary.game.layer.resources.GameGraphicsResourceUtil_Package;
-   package AndroidUtil_Package renames org.allbinary.AndroidUtil_Package;
-   package GraphicsFeatureFactory_Package renames org.allbinary.game.configuration.feature.GraphicsFeatureFactory_Package;
+   package BasicGameResources_Package renames Standard.org.allbinary.game.layer.resources.BasicGameResources_Package;
+   package GameGraphicsResourceUtil_Package renames Standard.org.allbinary.game.layer.resources.GameGraphicsResourceUtil_Package;
+   package AndroidUtil_Package renames Standard.org.allbinary.AndroidUtil_Package;
+   package GraphicsFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.GraphicsFeatureFactory_Package;
 
    type GeologicalGameResources is tagged;
    type GeologicalGameResources_Access is access all GeologicalGameResources'Class;

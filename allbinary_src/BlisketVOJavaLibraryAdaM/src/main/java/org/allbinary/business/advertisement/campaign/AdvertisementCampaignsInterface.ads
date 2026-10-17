@@ -24,7 +24,7 @@ with org.allbinary.business.advertisement.AdvertisementInterface_Package; use or
 
 package org.allbinary.business.advertisement.campaign.AdvertisementCampaignsInterface_Package is
 
-   package AdvertisementInterface_Package renames org.allbinary.business.advertisement.AdvertisementInterface_Package;
+   package AdvertisementInterface_Package renames Standard.org.allbinary.business.advertisement.AdvertisementInterface_Package;
 
    type AdvertisementCampaignsInterface is interface;
    type AdvertisementCampaignsInterface_Access is access all AdvertisementCampaignsInterface'Class;

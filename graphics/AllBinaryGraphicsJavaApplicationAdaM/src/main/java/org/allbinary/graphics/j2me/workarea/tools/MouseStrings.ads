@@ -24,7 +24,7 @@ with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.Com
 
 package org.allbinary.graphics.j2me.workarea.tools.MouseStrings_Package is
 
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
 
    type MouseStrings is tagged;
    type MouseStrings_Access is access all MouseStrings'Class;

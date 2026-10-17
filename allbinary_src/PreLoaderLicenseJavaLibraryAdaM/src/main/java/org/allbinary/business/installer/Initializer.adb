@@ -149,8 +149,12 @@ package body org.allbinary.business.installer.Initializer_Package is
             This.staticPagesServer := Unbounded_String (hashMap.get (initializerData.STATICPAGESSERVER));
             This.staticPagesPort := Unbounded_String (hashMap.get (initializerData.STATICPAGESPORT));
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (To_Unbounded_String ("Unable to get form data"), This'Unchecked_Access, To_Unbounded_String ("getFormData()"), e);
+                end;
         end;
    end getFormData;
 
@@ -161,12 +165,16 @@ package body org.allbinary.business.installer.Initializer_Package is
             Class_Package.forName (jdbcDriverClassPathString).newInstance;
             return True;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PRELOADERERROR) then
                 commonStrings := CommonStrings_Package.getInstance;
                 This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.IS_VALID, e);
             end if;
             return False;
+                end;
         end;
    end isJdbcDriverValid;
 

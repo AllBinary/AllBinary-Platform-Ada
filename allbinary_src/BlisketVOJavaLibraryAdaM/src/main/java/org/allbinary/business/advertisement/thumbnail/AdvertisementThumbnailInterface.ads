@@ -24,7 +24,7 @@ with org.allbinary.business.advertisement.image.AdvertisementImageInterface_Pack
 
 package org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnailInterface_Package is
 
-   package AdvertisementImageInterface_Package renames org.allbinary.business.advertisement.image.AdvertisementImageInterface_Package;
+   package AdvertisementImageInterface_Package renames Standard.org.allbinary.business.advertisement.image.AdvertisementImageInterface_Package;
 
    type AdvertisementThumbnailInterface is interface and AdvertisementImageInterface;
    type AdvertisementThumbnailInterface_Access is access all AdvertisementThumbnailInterface'Class;

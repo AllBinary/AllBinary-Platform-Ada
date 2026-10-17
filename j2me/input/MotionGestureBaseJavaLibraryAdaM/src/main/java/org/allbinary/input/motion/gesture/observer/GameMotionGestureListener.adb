@@ -98,11 +98,15 @@ package body org.allbinary.input.motion.gesture.observer.GameMotionGestureListen
             This.signed.onMotionGestureCompleted (This.touchGestureCollection);
             This.touchGestureCollection.clear;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             stringBuffer := StringMaker_Package.Create;
             stringBuffer.append (This.commonStrings.EXCEPTION_LABEL);
             stringBuffer.append (StringUtil_Package.getInstance.toString (ev.getMotionGesture));
             This.logUtil.put (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("release"), e);
+                end;
         end;
    end released;
 
@@ -128,11 +132,15 @@ package body org.allbinary.input.motion.gesture.observer.GameMotionGestureListen
                 This.touchGestureCollection.clear;
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             stringBuffer := StringMaker_Package.Create;
             stringBuffer.append (This.commonStrings.EXCEPTION_LABEL);
             stringBuffer.append (StringUtil_Package.getInstance.toString (ev.getMotionGesture));
             This.logUtil.put (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("onMotionGestureEvent"), e);
+                end;
         end;
    end onMotionGestureEvent;
 

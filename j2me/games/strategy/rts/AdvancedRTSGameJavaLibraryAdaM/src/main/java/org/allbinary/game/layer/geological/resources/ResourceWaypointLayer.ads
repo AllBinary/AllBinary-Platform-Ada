@@ -31,14 +31,14 @@ with org.allbinary.game.multiplayer.layer.RemoteInfo_Package; use org.allbinary.
 
 package org.allbinary.game.layer.geological.resources.ResourceWaypointLayer_Package is
 
-   package SelectionHudPaintable_Package renames org.allbinary.game.layer.SelectionHudPaintable_Package;
-   package WaypointLayer_Package renames org.allbinary.game.layer.waypoint.WaypointLayer_Package;
-   package AnimationInterfaceFactoryInterface_Package renames org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
-   package ProceduralAnimationInterfaceFactoryInterface_Package renames org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package;
-   package Group_Package renames org.allbinary.game.identification.Group_Package;
-   package PathFindingLayerInterface_Package renames org.allbinary.game.layer.PathFindingLayerInterface_Package;
-   package Rectangle_Package renames org.allbinary.graphics.Rectangle_Package;
-   package RemoteInfo_Package renames org.allbinary.game.multiplayer.layer.RemoteInfo_Package;
+   package SelectionHudPaintable_Package renames Standard.org.allbinary.game.layer.SelectionHudPaintable_Package;
+   package WaypointLayer_Package renames Standard.org.allbinary.game.layer.waypoint.WaypointLayer_Package;
+   package AnimationInterfaceFactoryInterface_Package renames Standard.org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
+   package ProceduralAnimationInterfaceFactoryInterface_Package renames Standard.org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package;
+   package Group_Package renames Standard.org.allbinary.game.identification.Group_Package;
+   package PathFindingLayerInterface_Package renames Standard.org.allbinary.game.layer.PathFindingLayerInterface_Package;
+   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
+   package RemoteInfo_Package renames Standard.org.allbinary.game.multiplayer.layer.RemoteInfo_Package;
 
    type ResourceWaypointLayer is tagged;
    type ResourceWaypointLayer_Access is access all ResourceWaypointLayer'Class;

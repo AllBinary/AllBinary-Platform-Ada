@@ -78,12 +78,16 @@ package body org.allbinary.logic.communication.smtp.Email_Package is
             end if;
             This.init (server, Authenticator_Access (null), new InternetAddress_Access_Array'(0 => InternetAddress_Package.Create (from)), new InternetAddress_Access_Array'(0 => InternetAddress_Package.Create (to)), InternetAddress_Access_Array_Access (null), InternetAddress_Access_Array_Access (null), subject, mimeBodyParts);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGINGERROR) then
                 commonStrings := CommonStrings_Package.getInstance;
                 This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("emailConstructor"), e);
             end if;
             Java_Throw (e);
+                end;
         end;
    end init;
 
@@ -106,11 +110,15 @@ package body org.allbinary.logic.communication.smtp.Email_Package is
                 This.properties.put (Email_Package.SMTP_LOCAL_HOST, To_Unbounded_String ("FakeHostName"));
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGINGERROR) then
                 This.logUtil.put (To_Unbounded_String ("Continuing on Exception: Unable to get HostName"), This'Unchecked_Access, To_Unbounded_String ("init()"), e);
             end if;
             This.properties.put (Email_Package.SMTP_LOCAL_HOST, To_Unbounded_String ("FakeHostName"));
+                end;
         end;
         if This.isDebug then
             This.properties.put (Email_Package.DEBUG, To_Unbounded_String ("true"));
@@ -200,11 +208,15 @@ package body org.allbinary.logic.communication.smtp.Email_Package is
             end if;
             return hashMap;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGINGERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("toHashMap()"), e);
             end if;
             Java_Throw (e);
+                end;
         end;
    end toHashMap;
 

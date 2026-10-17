@@ -38,20 +38,20 @@ with org.allbinary.util.EnumerationUtil_Package; use org.allbinary.util.Enumerat
 
 package org.allbinary.game.score.remote.RemoteHighScores_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package GameInfo_Package renames org.allbinary.game.GameInfo_Package;
-   package HighScore_Package renames org.allbinary.game.score.HighScore_Package;
-   package HighScores_Package renames org.allbinary.game.score.HighScores_Package;
-   package RemoteErrorHighScoresSingletonFactory_Package renames org.allbinary.game.score.RemoteErrorHighScoresSingletonFactory_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package SoftwareInformation_Package renames org.allbinary.logic.system.SoftwareInformation_Package;
-   package AbeClientInformationInterface_Package renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-   package CommonLabels_Package renames org.allbinary.string_Id.CommonLabels_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package ABHashtable_Package renames org.allbinary.util.ABHashtable_Package;
-   package EnumerationUtil_Package renames org.allbinary.util.EnumerationUtil_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package GameInfo_Package renames Standard.org.allbinary.game.GameInfo_Package;
+   package HighScore_Package renames Standard.org.allbinary.game.score.HighScore_Package;
+   package HighScores_Package renames Standard.org.allbinary.game.score.HighScores_Package;
+   package RemoteErrorHighScoresSingletonFactory_Package renames Standard.org.allbinary.game.score.RemoteErrorHighScoresSingletonFactory_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package SoftwareInformation_Package renames Standard.org.allbinary.logic.system.SoftwareInformation_Package;
+   package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
+   package EnumerationUtil_Package renames Standard.org.allbinary.util.EnumerationUtil_Package;
 
    type RemoteHighScores is tagged;
    type RemoteHighScores_Access is access all RemoteHighScores'Class;

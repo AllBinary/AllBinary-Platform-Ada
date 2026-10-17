@@ -25,7 +25,7 @@ with org.allbinary.game.input.J2MEGameInputMapping_Package; use org.allbinary.ga
 
 package org.allbinary.game.input.NormalJ2MEGameInputMapping_Package is
 
-   package InputToGameKeyMapping_Package renames org.allbinary.game.input.mapping.InputToGameKeyMapping_Package;
+   package InputToGameKeyMapping_Package renames Standard.org.allbinary.game.input.mapping.InputToGameKeyMapping_Package;
 
    type NormalJ2MEGameInputMapping is tagged;
    type NormalJ2MEGameInputMapping_Access is access all NormalJ2MEGameInputMapping'Class;

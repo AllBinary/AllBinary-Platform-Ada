@@ -26,9 +26,9 @@ with org.allbinary.android.api5.ActivityFractureUtilAPI5_Package; use org.allbin
 
 package org.allbinary.android.api16.ActivityFractureUtilAPI16_Package is
 
-   package Activity_Package renames android.app.Activity_Package;
-   package View_Package renames android.view.View_Package;
-   package ActivityFractureUtilAPI5_Package renames org.allbinary.android.api5.ActivityFractureUtilAPI5_Package;
+   package Activity_Package renames Standard.android.app.Activity_Package;
+   package View_Package renames Standard.android.view.View_Package;
+   package ActivityFractureUtilAPI5_Package renames Standard.org.allbinary.android.api5.ActivityFractureUtilAPI5_Package;
 
    type ActivityFractureUtilAPI16 is tagged;
    type ActivityFractureUtilAPI16_Access is access all ActivityFractureUtilAPI16'Class;

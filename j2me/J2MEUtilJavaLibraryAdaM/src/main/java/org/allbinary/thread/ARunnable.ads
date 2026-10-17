@@ -26,8 +26,8 @@ with org.allbinary.thread.Runnable_Package; use org.allbinary.thread.Runnable_Pa
 
 package org.allbinary.thread.ARunnable_Package is
 
-   package JsType_Package renames jsinterop.annotations.JsType_Package;
-   package JsMethod_Package renames jsinterop.annotations.JsMethod_Package;
+   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
+   package JsMethod_Package renames Standard.jsinterop.annotations.JsMethod_Package;
 
    type ARunnable is tagged;
    type ARunnable_Access is access all ARunnable'Class;

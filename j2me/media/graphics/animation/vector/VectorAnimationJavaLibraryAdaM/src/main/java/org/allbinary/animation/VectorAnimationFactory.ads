@@ -25,7 +25,7 @@ with org.allbinary.animation.VectorAnimationFactoryInterface_Package; use org.al
 
 package org.allbinary.animation.VectorAnimationFactory_Package is
 
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
 
    type VectorAnimationFactory is tagged;
    type VectorAnimationFactory_Access is access all VectorAnimationFactory'Class;

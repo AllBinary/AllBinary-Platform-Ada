@@ -29,11 +29,11 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.media.image.analysis.ImageAnalysis_Package is
 
-   package ColorCacheFactory_Package renames org.allbinary.graphics.color.ColorCacheFactory_Package;
-   package ColorCacheable_Package renames org.allbinary.graphics.color.ColorCacheable_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonLabels_Package renames org.allbinary.string_Id.CommonLabels_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package ColorCacheFactory_Package renames Standard.org.allbinary.graphics.color.ColorCacheFactory_Package;
+   package ColorCacheable_Package renames Standard.org.allbinary.graphics.color.ColorCacheable_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type ImageAnalysis is tagged;
    type ImageAnalysis_Access is access all ImageAnalysis'Class;

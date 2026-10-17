@@ -27,7 +27,7 @@ with org.allbinary.game.displayable.canvas.AllBinaryGameCanvasInterface_Package;
 
 package org.allbinary.game.displayable.canvas.NullAllBinaryGameCanvas_Package is
 
-   package AllBinaryGameLayerManager_Package renames org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
+   package AllBinaryGameLayerManager_Package renames Standard.org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
 
    type NullAllBinaryGameCanvas is tagged;
    type NullAllBinaryGameCanvas_Access is access all NullAllBinaryGameCanvas'Class;

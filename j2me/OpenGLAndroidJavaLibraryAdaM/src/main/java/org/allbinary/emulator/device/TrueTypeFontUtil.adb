@@ -59,9 +59,13 @@ package body org.allbinary.emulator.device.TrueTypeFontUtil_Package is
             bitmap := (AndroidImageInterface_Access (This.fontImage.openGLBitmap.getImage)).getBitmap;
             bitmap.compress (Bitmap_Package.CompressFormat.PNG, 100, fos);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             PreLogUtil_Package.putOE (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.EXCEPTION_Id, e);
+                end;
         end;
    end saveFontAtlasAsFile;
 

@@ -85,11 +85,15 @@ package body org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
             outputStream := AbFileOutputStream_Package.Create (backupFile);
             return outputStream;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
                 This.logUtil.put (To_Unbounded_String ("Create File"), This'Unchecked_Access, This.METHOD_GET_OUTPUT_STREAM, e);
             end if;
             return null;
+                end;
         end;
    end getOutputStream;
 
@@ -126,11 +130,15 @@ package body org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
             FileUtil_Package.getInstance.copy (path, backupAbPath);
             return True;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.METHOD_BACKUP_FILE, e);
             end if;
             return False;
+                end;
         end;
    end backupFile;
 
@@ -210,11 +218,15 @@ package body org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
             StreamUtil_Package.getInstance.close (outputStream);
             return This.TABLE_LABEL & tableName & This.BACKUP_SUCCESS;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
                 This.logUtil.put (To_Unbounded_String ("Backup Table Failed" & ASCII.LF & "SQL Statement"), This'Unchecked_Access, This.METHOD_BACKUP_TABLE, e);
             end if;
             return This.TABLE_LABEL & tableName & To_Unbounded_String (" Backup Failed");
+                end;
         end;
    end backupTable;
 
@@ -274,7 +286,10 @@ package body org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
             stringBuffer.append (This.PORTION_RESTORED);
             return stringBuffer.toString;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
                 This.logUtil.put (To_Unbounded_String ("Restore Table Failed" & ASCII.LF & "SQL Statement"), This'Unchecked_Access, This.METHOD_RESTORE_TABLE, e);
             end if;
@@ -283,6 +298,7 @@ package body org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
             stringBuffer.append (tableName);
             stringBuffer.append (To_Unbounded_String (" Restoration Failed"));
             return stringBuffer.toString;
+                end;
         end;
    end restoreTable;
 

@@ -28,9 +28,9 @@ with org.allbinary.logic.system.security.licensing.LicensingException_Package; u
 
 package taghelpers.ValidatedViewHelperFactory_Package is
 
-   package TagHelperFactory_Package renames admin.taghelpers.TagHelperFactory_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package LicensingException_Package renames org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package TagHelperFactory_Package renames Standard.admin.taghelpers.TagHelperFactory_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
 
    type ValidatedViewHelperFactory is tagged;
    type ValidatedViewHelperFactory_Access is access all ValidatedViewHelperFactory'Class;

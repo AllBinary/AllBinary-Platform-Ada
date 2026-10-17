@@ -25,8 +25,8 @@ with org.allbinary.animation.IndexedAnimation_Package; use org.allbinary.animati
 
 package org.allbinary.animation.compound.CompoundAnimationInterface_Package is
 
-   package AnimationInterface_Package renames org.allbinary.animation.AnimationInterface_Package;
-   package IndexedAnimation_Package renames org.allbinary.animation.IndexedAnimation_Package;
+   package AnimationInterface_Package renames Standard.org.allbinary.animation.AnimationInterface_Package;
+   package IndexedAnimation_Package renames Standard.org.allbinary.animation.IndexedAnimation_Package;
 
    type CompoundAnimationInterface is interface and AnimationInterface;
    type CompoundAnimationInterface_Access is access all CompoundAnimationInterface'Class;

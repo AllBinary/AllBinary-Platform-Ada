@@ -27,7 +27,7 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 
 package org.allbinary.media.image.MirrorImageUtil_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type MirrorImageUtil is tagged;
    type MirrorImageUtil_Access is access all MirrorImageUtil'Class;

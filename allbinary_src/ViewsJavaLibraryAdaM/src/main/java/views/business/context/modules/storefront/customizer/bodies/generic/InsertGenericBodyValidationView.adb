@@ -57,11 +57,15 @@ package body views.business.context.modules.storefront.customizer.bodies.generic
             end if;
             return isValid;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
                 This.logUtil.put (To_Unbounded_String ("Failed to validate"), This'Unchecked_Access, This.commonStrings.IS_VALID, e);
             end if;
             return False;
+                end;
         end;
    end isValid;
 
@@ -73,11 +77,15 @@ package body views.business.context.modules.storefront.customizer.bodies.generic
             stringBuffer.append (This.body_Id.validationInfo);
             return stringBuffer.toString;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
                 This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), This'Unchecked_Access, To_Unbounded_String ("validationInfo()"), e);
             end if;
             return To_Unbounded_String ("Error Getting Validation Info");
+                end;
         end;
    end validationInfo;
 
@@ -97,11 +105,15 @@ package body views.business.context.modules.storefront.customizer.bodies.generic
         begin
             return StoreCustomizerComponentUtil_Package.getInstance.generate (This.abeClientInformation, This.getTransformInfoInterface);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("view()"), e);
             end if;
             Java_Throw (e);
+                end;
         end;
    end view;
 

@@ -24,7 +24,7 @@ with org.allbinary.game.GameInfo_Package; use org.allbinary.game.GameInfo_Packag
 
 package org.allbinary.game.score.HighScoresFactoryInterface_Package is
 
-   package GameInfo_Package renames org.allbinary.game.GameInfo_Package;
+   package GameInfo_Package renames Standard.org.allbinary.game.GameInfo_Package;
 
    type HighScoresFactoryInterface is interface;
    type HighScoresFactoryInterface_Access is access all HighScoresFactoryInterface'Class;

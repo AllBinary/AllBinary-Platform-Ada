@@ -28,10 +28,10 @@ with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinar
 
 package org.allbinary.graphics.draw.KeyValueDrawCharArray_Package is
 
-   package CharArrayFactory_Package renames org.allbinary.logic.java.character_Id.CharArrayFactory_Package;
-   package MyFontProcessor_Package renames org.allbinary.graphics.font.MyFontProcessor_Package;
-   package UpdateMyFontInterface_Package renames org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-   package UpdateMyFontProcessor_Package renames org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+   package CharArrayFactory_Package renames Standard.org.allbinary.logic.java.character_Id.CharArrayFactory_Package;
+   package MyFontProcessor_Package renames Standard.org.allbinary.graphics.font.MyFontProcessor_Package;
+   package UpdateMyFontInterface_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontInterface_Package;
+   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
 
    type KeyValueDrawCharArray is tagged;
    type KeyValueDrawCharArray_Access is access all KeyValueDrawCharArray'Class;

@@ -19,11 +19,11 @@ with org.microemu.android.device.AndroidImageInterface_Package; use org.microemu
 
 package org.allbinary.graphics.OpenGLBitmapFactory_Package is
 
-   package Bitmap_Package renames android.graphics.Bitmap_Package;
-   package BitmapFactory_Package renames android.graphics.BitmapFactory_Package;
-   package PlatformBitmapBaseFactory_Package renames org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package;
-   package PlatformBitmapBase_Package renames org.allbinary.platform.graphics.PlatformBitmapBase_Package;
-   package AndroidImageInterface_Package renames org.microemu.android.device.AndroidImageInterface_Package;
+   package Bitmap_Package renames Standard.android.graphics.Bitmap_Package;
+   package BitmapFactory_Package renames Standard.android.graphics.BitmapFactory_Package;
+   package PlatformBitmapBaseFactory_Package renames Standard.org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package;
+   package PlatformBitmapBase_Package renames Standard.org.allbinary.platform.graphics.PlatformBitmapBase_Package;
+   package AndroidImageInterface_Package renames Standard.org.microemu.android.device.AndroidImageInterface_Package;
 
    type OpenGLBitmapFactory is tagged;
    type OpenGLBitmapFactory_Access is access all OpenGLBitmapFactory'Class;
@@ -67,11 +67,11 @@ with org.microemu.android.device.AndroidImageInterface_Package; use org.microemu
 
 package org.allbinary.graphics.Config_Package is
 
-   package Bitmap_Package renames android.graphics.Bitmap_Package;
-   package BitmapFactory_Package renames android.graphics.BitmapFactory_Package;
-   package PlatformBitmapBaseFactory_Package renames org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package;
-   package PlatformBitmapBase_Package renames org.allbinary.platform.graphics.PlatformBitmapBase_Package;
-   package AndroidImageInterface_Package renames org.microemu.android.device.AndroidImageInterface_Package;
+   package Bitmap_Package renames Standard.android.graphics.Bitmap_Package;
+   package BitmapFactory_Package renames Standard.android.graphics.BitmapFactory_Package;
+   package PlatformBitmapBaseFactory_Package renames Standard.org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package;
+   package PlatformBitmapBase_Package renames Standard.org.allbinary.platform.graphics.PlatformBitmapBase_Package;
+   package AndroidImageInterface_Package renames Standard.org.microemu.android.device.AndroidImageInterface_Package;
 
    type Config is tagged;
    type Config_Access is access all Config'Class;

@@ -35,17 +35,17 @@ with org.allbinary.game.ag.ai.scroller.PacePatrolAI_Package; use org.allbinary.g
 
 package org.allbinary.game.ag.ai.scroller.TerrainPatrolAI_Package is
 
-   package GameInput_Package renames org.allbinary.game.input.GameInput_Package;
-   package BasicTerrainInfo_Package renames org.allbinary.game.terrain.BasicTerrainInfo_Package;
-   package TerrainEvent_Package renames org.allbinary.game.terrain.TerrainEvent_Package;
-   package TerrainEventCircularStaticPool_Package renames org.allbinary.game.terrain.TerrainEventCircularStaticPool_Package;
-   package TerrainEventHandler_Package renames org.allbinary.game.terrain.TerrainEventHandler_Package;
-   package TerrainEventListener_Package renames org.allbinary.game.terrain.TerrainEventListener_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package Angle_Package renames org.allbinary.math.Angle_Package;
-   package AngleFactory_Package renames org.allbinary.math.AngleFactory_Package;
-   package ABHashtable_Package renames org.allbinary.util.ABHashtable_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package GameInput_Package renames Standard.org.allbinary.game.input.GameInput_Package;
+   package BasicTerrainInfo_Package renames Standard.org.allbinary.game.terrain.BasicTerrainInfo_Package;
+   package TerrainEvent_Package renames Standard.org.allbinary.game.terrain.TerrainEvent_Package;
+   package TerrainEventCircularStaticPool_Package renames Standard.org.allbinary.game.terrain.TerrainEventCircularStaticPool_Package;
+   package TerrainEventHandler_Package renames Standard.org.allbinary.game.terrain.TerrainEventHandler_Package;
+   package TerrainEventListener_Package renames Standard.org.allbinary.game.terrain.TerrainEventListener_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package Angle_Package renames Standard.org.allbinary.math.Angle_Package;
+   package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type TerrainPatrolAI is tagged;
    type TerrainPatrolAI_Access is access all TerrainPatrolAI'Class;

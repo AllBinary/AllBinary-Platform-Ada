@@ -27,9 +27,9 @@ with org.allbinary.layer.Layer_Package; use org.allbinary.layer.Layer_Package;
 
 package org.allbinary.game.layer.PaintableLayerComposite_Package is
 
-   package Paintable_Package renames org.allbinary.graphics.paint.Paintable_Package;
-   package PaintableInterface_Package renames org.allbinary.graphics.paint.PaintableInterface_Package;
-   package Layer_Package renames org.allbinary.layer.Layer_Package;
+   package Paintable_Package renames Standard.org.allbinary.graphics.paint.Paintable_Package;
+   package PaintableInterface_Package renames Standard.org.allbinary.graphics.paint.PaintableInterface_Package;
+   package Layer_Package renames Standard.org.allbinary.layer.Layer_Package;
 
    type PaintableLayerComposite is tagged;
    type PaintableLayerComposite_Access is access all PaintableLayerComposite'Class;

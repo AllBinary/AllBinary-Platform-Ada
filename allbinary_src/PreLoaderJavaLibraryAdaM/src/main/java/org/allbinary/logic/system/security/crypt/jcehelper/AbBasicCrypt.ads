@@ -32,9 +32,9 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.logic.system.security.crypt.jcehelper.AbBasicCrypt_Package is
 
-   package CryptInterface_Package renames org.allbinary.init.crypt.jcehelper.CryptInterface_Package;
-   package PreLogUtil_Package renames org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package CryptInterface_Package renames Standard.org.allbinary.init.crypt.jcehelper.CryptInterface_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type AbBasicCrypt is tagged;
    type AbBasicCrypt_Access is access all AbBasicCrypt'Class;

@@ -26,8 +26,8 @@ with tags.PropertiesTag_Package; use tags.PropertiesTag_Package;
 
 package tags.HelperTag_Package is
 
-   package TagHelperFactoryInterface_Package renames admin.taghelpers.TagHelperFactoryInterface_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
+   package TagHelperFactoryInterface_Package renames Standard.admin.taghelpers.TagHelperFactoryInterface_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type HelperTag is tagged;
    type HelperTag_Access is access all HelperTag'Class;

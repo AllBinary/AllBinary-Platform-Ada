@@ -25,7 +25,7 @@ with org.allbinary.opengles.GL10_Package; use org.allbinary.opengles.GL10_Packag
 
 package org.allbinary.opengles.JOGL10_Package is
 
-   package GLU_Package renames com.jogamp.opengl.glu.GLU_Package;
+   package GLU_Package renames Standard.com.jogamp.opengl.glu.GLU_Package;
 
    type JOGL10 is tagged;
    type JOGL10_Access is access all JOGL10'Class;

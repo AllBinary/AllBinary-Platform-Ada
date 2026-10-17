@@ -13,8 +13,8 @@ with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.g
 
 package org.allbinary.graphics.form.item.ABStringComponent_Package is
 
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package BasicColorFactory_Package renames org.allbinary.graphics.color.BasicColorFactory_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
 
    type ABStringComponent is tagged;
    type ABStringComponent_Access is access all ABStringComponent'Class;

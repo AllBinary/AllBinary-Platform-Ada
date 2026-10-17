@@ -24,7 +24,7 @@ with org.allbinary.graphics.GPoint_Package; use org.allbinary.graphics.GPoint_Pa
 
 package org.allbinary.view.ViewPositionBase_Package is
 
-   package GPoint_Package renames org.allbinary.graphics.GPoint_Package;
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
 
    type ViewPositionBase is tagged;
    type ViewPositionBase_Access is access all ViewPositionBase'Class;

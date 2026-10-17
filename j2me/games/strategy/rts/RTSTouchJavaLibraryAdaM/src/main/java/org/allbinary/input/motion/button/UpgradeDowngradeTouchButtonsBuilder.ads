@@ -31,13 +31,13 @@ with org.allbinary.input.motion.button.BaseTouchInput_Package; use org.allbinary
 
 package org.allbinary.input.motion.button.UpgradeDowngradeTouchButtonsBuilder_Package is
 
-   package TouchButtonDowngradeResource_Package renames org.allbinary.game.input.resource.TouchButtonDowngradeResource_Package;
-   package TouchButtonUpgradeResource_Package renames org.allbinary.game.input.resource.TouchButtonUpgradeResource_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package BasicArrayListUtil_Package renames org.allbinary.util.BasicArrayListUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CellPositionFactory_Package renames org.allbinary.graphics.CellPositionFactory_Package;
+   package TouchButtonDowngradeResource_Package renames Standard.org.allbinary.game.input.resource.TouchButtonDowngradeResource_Package;
+   package TouchButtonUpgradeResource_Package renames Standard.org.allbinary.game.input.resource.TouchButtonUpgradeResource_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CellPositionFactory_Package renames Standard.org.allbinary.graphics.CellPositionFactory_Package;
 
    type UpgradeDowngradeTouchButtonsBuilder is tagged;
    type UpgradeDowngradeTouchButtonsBuilder_Access is access all UpgradeDowngradeTouchButtonsBuilder'Class;

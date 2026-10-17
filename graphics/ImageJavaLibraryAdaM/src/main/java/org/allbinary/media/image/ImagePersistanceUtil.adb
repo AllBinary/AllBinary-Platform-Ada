@@ -78,8 +78,12 @@ package body org.allbinary.media.image.ImagePersistanceUtil_Package is
             writer.write (null, IIOImage_Package.Create (bufferedImage, null, null), iwp);
             This.logUtil.putF (To_Unbounded_String ("Wrote Image: ") & Java_Image (file.getAbsolutePath), This'Unchecked_Access, This.commonStrings.SAVE);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.SAVE, e);
+                end;
         end;
         --  finally
         begin
@@ -92,16 +96,24 @@ package body org.allbinary.media.image.ImagePersistanceUtil_Package is
                             ios.close;
                         end if;
                     exception
-                        when e : others =>
+                        when Java_Occurrence : others =>
+                            declare
+                                e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                            begin
                         This.logUtil.put (This.commonStrings.EXCEPTION_Id, ios, This.commonStrings.CLOSE, e);
+                            end;
                     end;
                 end if;
                 if (writer) /= (null) then
                     writer.dispose;
                 end if;
             exception
-                when e2 : others =>
+                when Java_Occurrence : others =>
+                    declare
+                        e2 : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                    begin
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.SAVE, e2);
+                    end;
             end;
         end;
    end saveWithImageIO;

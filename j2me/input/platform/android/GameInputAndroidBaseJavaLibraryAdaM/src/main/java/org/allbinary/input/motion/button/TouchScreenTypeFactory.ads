@@ -27,10 +27,10 @@ with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary
 
 package org.allbinary.input.motion.button.TouchScreenTypeFactory_Package is
 
-   package Activity_Package renames android.app.Activity_Package;
-   package Configuration_Package renames android.content.res.Configuration_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package PreLogUtil_Package renames org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package Activity_Package renames Standard.android.app.Activity_Package;
+   package Configuration_Package renames Standard.android.content.res.Configuration_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
 
    type TouchScreenTypeFactory is tagged;
    type TouchScreenTypeFactory_Access is access all TouchScreenTypeFactory'Class;

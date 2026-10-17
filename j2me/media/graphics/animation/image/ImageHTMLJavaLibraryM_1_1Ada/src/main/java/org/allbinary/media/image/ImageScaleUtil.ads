@@ -29,11 +29,11 @@ with playn.core.CanvasSurface_Package; use playn.core.CanvasSurface_Package;
 
 package org.allbinary.media.image.ImageScaleUtil_Package is
 
-   package ImageCache_Package renames org.allbinary.image.ImageCache_Package;
-   package PlaynImmutableImage_Package renames org.microemu.device.playn.PlaynImmutableImage_Package;
-   package PlaynMutableImage_Package renames org.microemu.device.playn.PlaynMutableImage_Package;
-   package CanvasImage_Package renames playn.core.CanvasImage_Package;
-   package CanvasSurface_Package renames playn.core.CanvasSurface_Package;
+   package ImageCache_Package renames Standard.org.allbinary.image.ImageCache_Package;
+   package PlaynImmutableImage_Package renames Standard.org.microemu.device.playn.PlaynImmutableImage_Package;
+   package PlaynMutableImage_Package renames Standard.org.microemu.device.playn.PlaynMutableImage_Package;
+   package CanvasImage_Package renames Standard.playn.core.CanvasImage_Package;
+   package CanvasSurface_Package renames Standard.playn.core.CanvasSurface_Package;
 
    type ImageScaleUtil is tagged;
    type ImageScaleUtil_Access is access all ImageScaleUtil'Class;

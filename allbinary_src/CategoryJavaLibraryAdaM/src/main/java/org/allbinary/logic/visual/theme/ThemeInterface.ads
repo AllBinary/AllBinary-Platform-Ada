@@ -24,7 +24,7 @@ with org.allbinary.data.tables.TableMappingInterface_Package; use org.allbinary.
 
 package org.allbinary.logic.visual.theme.ThemeInterface_Package is
 
-   package TableMappingInterface_Package renames org.allbinary.data.tables.TableMappingInterface_Package;
+   package TableMappingInterface_Package renames Standard.org.allbinary.data.tables.TableMappingInterface_Package;
 
    type ThemeInterface is interface and TableMappingInterface;
    type ThemeInterface_Access is access all ThemeInterface'Class;

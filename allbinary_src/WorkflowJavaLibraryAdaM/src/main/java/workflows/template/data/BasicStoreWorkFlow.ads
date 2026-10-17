@@ -28,8 +28,8 @@ with workflows.template.data.BasicWorkFlow_Package; use workflows.template.data.
 
 package workflows.template.data.BasicStoreWorkFlow_Package is
 
-   package StoreFrontData_Package renames org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
-   package StoreWorkFlowInterface_Package renames org.allbinary.logic.control.workflow.StoreWorkFlowInterface_Package;
+   package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+   package StoreWorkFlowInterface_Package renames Standard.org.allbinary.logic.control.workflow.StoreWorkFlowInterface_Package;
 
    type BasicStoreWorkFlow is tagged;
    type BasicStoreWorkFlow_Access is access all BasicStoreWorkFlow'Class;

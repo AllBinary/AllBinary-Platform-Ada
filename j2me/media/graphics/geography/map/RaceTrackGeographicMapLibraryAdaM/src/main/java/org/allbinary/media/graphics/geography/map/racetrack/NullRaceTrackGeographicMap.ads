@@ -31,13 +31,13 @@ with org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMap
 
 package org.allbinary.media.graphics.geography.map.racetrack.NullRaceTrackGeographicMap_Package is
 
-   package AllBinaryTiledLayer_Package renames org.allbinary.game.layer.AllBinaryTiledLayer_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package Layer_Package renames org.allbinary.layer.Layer_Package;
-   package BasicGeographicMapCellPositionFactory_Package renames org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package;
-   package GeographicMapCellPosition_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
-   package GeographicMapCellPositionFactoryInterface_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactoryInterface_Package;
-   package GeographicMapCellType_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
+   package AllBinaryTiledLayer_Package renames Standard.org.allbinary.game.layer.AllBinaryTiledLayer_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package Layer_Package renames Standard.org.allbinary.layer.Layer_Package;
+   package BasicGeographicMapCellPositionFactory_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package;
+   package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+   package GeographicMapCellPositionFactoryInterface_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactoryInterface_Package;
+   package GeographicMapCellType_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
 
    type NullRaceTrackGeographicMap is tagged;
    type NullRaceTrackGeographicMap_Access is access all NullRaceTrackGeographicMap'Class;

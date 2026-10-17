@@ -73,8 +73,12 @@ package body org.allbinary.layer.event.LayerManagerEventHandler_Package is
                 layerManagerEventListener := LayerManagerEventListener_Access (This.list.objectArray (index));
                 layerManagerEventListener.onCreateLayerManagerEvent (LayerManagerEvent_Access (eventObject));
             exception
-                when e : others =>
+                when Java_Occurrence : others =>
+                    declare
+                        e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                    begin
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, EventStrings_Package.getInstance.FIRE_EVENT, e);
+                    end;
             end;
         end loop;
         BasicEventHandler (This).fireEvent (eventObject);
@@ -94,8 +98,12 @@ package body org.allbinary.layer.event.LayerManagerEventHandler_Package is
                 layerManagerEventListener := LayerManagerEventListener_Access (This.list.objectArray (index));
                 layerManagerEventListener.onDeleteLayerManagerEvent (LayerManagerEvent_Access (eventObject));
             exception
-                when e : others =>
+                when Java_Occurrence : others =>
+                    declare
+                        e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                    begin
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, EventStrings_Package.getInstance.FIRE_EVENT, e);
+                    end;
             end;
         end loop;
         eventListenerInterfaceList := This.eventListenerInterfaceList;
@@ -108,8 +116,12 @@ package body org.allbinary.layer.event.LayerManagerEventHandler_Package is
                 layerManagerEventListenerInterface := (LayerManagerEventListenerInterface_Access (eventListenerInterface));
                 layerManagerEventListenerInterface.onDeleteLayerManagerEvent (LayerManagerEvent_Access (eventObject));
             exception
-                when e : others =>
+                when Java_Occurrence : others =>
+                    declare
+                        e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                    begin
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, EventStrings_Package.getInstance.FIRE_EVENT, e);
+                    end;
             end;
             index := index + 1;
         end loop;

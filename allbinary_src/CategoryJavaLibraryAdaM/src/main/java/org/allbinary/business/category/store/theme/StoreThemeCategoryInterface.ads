@@ -30,13 +30,13 @@ with org.allbinary.logic.visual.transform.info.CompositeTransformInfoInterface_P
 
 package org.allbinary.business.category.store.theme.StoreThemeCategoryInterface_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package CategoryInterface_Package renames org.allbinary.business.category.CategoryInterface_Package;
-   package TableMappingInterface_Package renames org.allbinary.data.tables.TableMappingInterface_Package;
-   package ValidationInterface_Package renames org.allbinary.logic.control.validate.ValidationInterface_Package;
-   package ThemeValidation_Package renames org.allbinary.logic.visual.theme.ThemeValidation_Package;
-   package CompositeTransformInfoInterface_Package renames org.allbinary.logic.visual.transform.info.CompositeTransformInfoInterface_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package CategoryInterface_Package renames Standard.org.allbinary.business.category.CategoryInterface_Package;
+   package TableMappingInterface_Package renames Standard.org.allbinary.data.tables.TableMappingInterface_Package;
+   package ValidationInterface_Package renames Standard.org.allbinary.logic.control.validate.ValidationInterface_Package;
+   package ThemeValidation_Package renames Standard.org.allbinary.logic.visual.theme.ThemeValidation_Package;
+   package CompositeTransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.CompositeTransformInfoInterface_Package;
 
    type StoreThemeCategoryInterface is interface and CategoryInterface and TableMappingInterface and ValidationInterface and CompositeTransformInfoInterface;
    type StoreThemeCategoryInterface_Access is access all StoreThemeCategoryInterface'Class;

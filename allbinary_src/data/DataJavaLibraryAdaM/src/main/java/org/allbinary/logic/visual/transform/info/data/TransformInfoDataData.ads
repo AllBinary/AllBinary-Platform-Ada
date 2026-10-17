@@ -24,7 +24,7 @@ with org.allbinary.logic.io.file.CommonDataFileStrings_Package; use org.allbinar
 
 package org.allbinary.logic.visual.transform.info.data.TransformInfoDataData_Package is
 
-   package CommonDataFileStrings_Package renames org.allbinary.logic.io.file.CommonDataFileStrings_Package;
+   package CommonDataFileStrings_Package renames Standard.org.allbinary.logic.io.file.CommonDataFileStrings_Package;
 
    type TransformInfoDataData is tagged;
    type TransformInfoDataData_Access is access all TransformInfoDataData'Class;

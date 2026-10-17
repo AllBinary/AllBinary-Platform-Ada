@@ -27,10 +27,10 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 
 package org.allbinary.logic.math.SmallIntegerSingletonFactory_Package is
 
-   package AndroidUtil_Package renames org.allbinary.AndroidUtil_Package;
-   package J2MEUtil_Package renames org.allbinary.J2MEUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
+   package AndroidUtil_Package renames Standard.org.allbinary.AndroidUtil_Package;
+   package J2MEUtil_Package renames Standard.org.allbinary.J2MEUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
 
    type SmallIntegerSingletonFactory is tagged;
    type SmallIntegerSingletonFactory_Access is access all SmallIntegerSingletonFactory'Class;

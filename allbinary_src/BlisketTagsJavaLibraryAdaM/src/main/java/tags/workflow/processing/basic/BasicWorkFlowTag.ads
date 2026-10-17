@@ -28,10 +28,10 @@ with tags.StoreWorkFlowTag_Package; use tags.StoreWorkFlowTag_Package;
 
 package tags.workflow.processing.basic.BasicWorkFlowTag_Package is
 
-   package DynamicObjectData_Package renames org.allbinary.business.DynamicObjectData_Package;
-   package AbResponseHandler_Package renames org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StoreWorkFlowTag_Package renames tags.StoreWorkFlowTag_Package;
+   package DynamicObjectData_Package renames Standard.org.allbinary.business.DynamicObjectData_Package;
+   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StoreWorkFlowTag_Package renames Standard.tags.StoreWorkFlowTag_Package;
 
    type BasicWorkFlowTag is tagged;
    type BasicWorkFlowTag_Access is access all BasicWorkFlowTag'Class;

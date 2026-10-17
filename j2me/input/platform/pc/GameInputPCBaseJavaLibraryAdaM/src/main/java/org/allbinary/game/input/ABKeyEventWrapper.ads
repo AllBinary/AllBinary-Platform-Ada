@@ -25,7 +25,7 @@ with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Pack
 
 package org.allbinary.game.input.ABKeyEventWrapper_Package is
 
-   package JsType_Package renames jsinterop.annotations.JsType_Package;
+   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
 
    type ABKeyEventWrapper is tagged;
    type ABKeyEventWrapper_Access is access all ABKeyEventWrapper'Class;

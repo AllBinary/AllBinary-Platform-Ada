@@ -34,12 +34,12 @@ with org.bouncycastle.jce.provider.BouncyCastleProvider_Package; use org.bouncyc
 
 package org.allbinary.logic.system.security.crypt.jcehelper.AbCrypt_Package is
 
-   package TsUtil_Package renames org.allbinary.TsUtil_Package;
-   package CryptInterface_Package renames org.allbinary.init.crypt.jcehelper.CryptInterface_Package;
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
-   package PreLogUtil_Package renames org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package BouncyCastleProvider_Package renames org.bouncycastle.jce.provider.BouncyCastleProvider_Package;
+   package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
+   package CryptInterface_Package renames Standard.org.allbinary.init.crypt.jcehelper.CryptInterface_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package BouncyCastleProvider_Package renames Standard.org.bouncycastle.jce.provider.BouncyCastleProvider_Package;
 
    type AbCrypt is tagged;
    type AbCrypt_Access is access all AbCrypt'Class;

@@ -25,7 +25,7 @@ with admin.tags.TableTag_Package; use admin.tags.TableTag_Package;
 
 package admin.tags.LogTag_Package is
 
-   package LogHelperFactory_Package renames admin.taghelpers.LogHelperFactory_Package;
+   package LogHelperFactory_Package renames Standard.admin.taghelpers.LogHelperFactory_Package;
 
    type LogTag is tagged;
    type LogTag_Access is access all LogTag'Class;

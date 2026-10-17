@@ -49,11 +49,15 @@ package body org.allbinary.game.ag.layer.hud.basic.NumberStringHudFactory_Packag
         begin
             return NumberStringHud_Package.Create (StringUtil_Package.getInstance.EMPTY_STRING, 9, BasicHudFactory_Package.getInstance.ABSOLUTE, 1, 0, BasicColorFactory_Package.getInstance.NULL_COLOR);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             logUtil := LogUtil_Package.getInstance;
             commonStrings := CommonStrings_Package.getInstance;
             logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.CONSTRUCTOR, e);
             Java_Throw (Java_New_Exception ("RuntimeException"));
+                end;
         end;
    end createHud;
 

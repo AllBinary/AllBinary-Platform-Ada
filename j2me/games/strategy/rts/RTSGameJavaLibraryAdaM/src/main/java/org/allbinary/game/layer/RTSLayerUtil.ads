@@ -37,20 +37,20 @@ with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_
 
 package org.allbinary.game.layer.RTSLayerUtil_Package is
 
-   package GroupCommonFactory_Package renames org.allbinary.game.identification.GroupCommonFactory_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package DirectionFactory_Package renames org.allbinary.direction.DirectionFactory_Package;
-   package GameInfo_Package renames org.allbinary.game.GameInfo_Package;
-   package WeaponProperties_Package renames org.allbinary.game.combat.weapon.WeaponProperties_Package;
-   package BasicGroupFactory_Package renames org.allbinary.game.identification.BasicGroupFactory_Package;
-   package PartInterface_Package renames org.allbinary.game.part.PartInterface_Package;
-   package BasicWeaponPart_Package renames org.allbinary.game.part.weapon.BasicWeaponPart_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package BasicGeographicMap_Package renames org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
-   package BaseRaceTrackGeographicMap_Package renames org.allbinary.media.graphics.geography.map.racetrack.BaseRaceTrackGeographicMap_Package;
-   package ABHashtable_Package renames org.allbinary.util.ABHashtable_Package;
+   package GroupCommonFactory_Package renames Standard.org.allbinary.game.identification.GroupCommonFactory_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package DirectionFactory_Package renames Standard.org.allbinary.direction.DirectionFactory_Package;
+   package GameInfo_Package renames Standard.org.allbinary.game.GameInfo_Package;
+   package WeaponProperties_Package renames Standard.org.allbinary.game.combat.weapon.WeaponProperties_Package;
+   package BasicGroupFactory_Package renames Standard.org.allbinary.game.identification.BasicGroupFactory_Package;
+   package PartInterface_Package renames Standard.org.allbinary.game.part.PartInterface_Package;
+   package BasicWeaponPart_Package renames Standard.org.allbinary.game.part.weapon.BasicWeaponPart_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package BasicGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
+   package BaseRaceTrackGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.racetrack.BaseRaceTrackGeographicMap_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
    type RTSLayerUtil is tagged;
    type RTSLayerUtil_Access is access all RTSLayerUtil'Class;

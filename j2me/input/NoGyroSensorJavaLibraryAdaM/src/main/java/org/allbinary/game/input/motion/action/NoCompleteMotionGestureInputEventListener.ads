@@ -28,11 +28,11 @@ with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logi
 
 package org.allbinary.game.input.motion.action.NoCompleteMotionGestureInputEventListener_Package is
 
-   package CompleteMotionGestureInputEvent_Package renames org.allbinary.game.input.CompleteMotionGestureInputEvent_Package;
-   package CompleteMotionGestureInputEventListenerInterface_Package renames org.allbinary.game.input.CompleteMotionGestureInputEventListenerInterface_Package;
-   package ForcedLogUtil_Package renames org.allbinary.logic.communication.log.ForcedLogUtil_Package;
-   package AllBinaryEventObject_Package renames org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-   package EventStrings_Package renames org.allbinary.logic.util.event.EventStrings_Package;
+   package CompleteMotionGestureInputEvent_Package renames Standard.org.allbinary.game.input.CompleteMotionGestureInputEvent_Package;
+   package CompleteMotionGestureInputEventListenerInterface_Package renames Standard.org.allbinary.game.input.CompleteMotionGestureInputEventListenerInterface_Package;
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+   package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+   package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
 
    type NoCompleteMotionGestureInputEventListener is tagged;
    type NoCompleteMotionGestureInputEventListener_Access is access all NoCompleteMotionGestureInputEventListener'Class;

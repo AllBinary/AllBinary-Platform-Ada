@@ -25,8 +25,8 @@ with org.allbinary.input.KeySingletonFactory_Package; use org.allbinary.input.Ke
 
 package org.allbinary.input.automation.actions.script.condition.processors.input.KeyCharDefaultComboBoxModelFactory_Package is
 
-   package KeyStrokeMap_Package renames abbot.tester.KeyStrokeMap_Package;
-   package KeySingletonFactory_Package renames org.allbinary.input.KeySingletonFactory_Package;
+   package KeyStrokeMap_Package renames Standard.abbot.tester.KeyStrokeMap_Package;
+   package KeySingletonFactory_Package renames Standard.org.allbinary.input.KeySingletonFactory_Package;
 
    type KeyCharDefaultComboBoxModelFactory is tagged;
    type KeyCharDefaultComboBoxModelFactory_Access is access all KeyCharDefaultComboBoxModelFactory'Class;

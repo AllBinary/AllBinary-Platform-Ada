@@ -48,9 +48,13 @@ package body tags.workflow.processing.basic.BasicWorkFlowTag_Package is
             This.getPropertiesHashMap.put (DynamicObjectData_Package.NAME, To_Unbounded_String ("workflows.template.data.BasicStoreWorkFlow"));
             return StoreWorkFlowTag (This).doStartTag;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             AbResponseHandler_Package.sendJspTagRedirect (This.pageContext, e);
             return SKIP_BODY;
+                end;
         end;
    end doStartTag;
 

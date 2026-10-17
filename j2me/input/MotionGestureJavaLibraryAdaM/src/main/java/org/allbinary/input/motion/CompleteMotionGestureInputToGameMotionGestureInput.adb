@@ -78,8 +78,12 @@ package body org.allbinary.input.motion.CompleteMotionGestureInputToGameMotionGe
             list.add (touchMotionGestureFactory.RELEASED);
             motionGestureConfiguration.addMotionGestureAction (list, ReleaseTouchInputToGameKeyEventAction_Package.getInstance);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.INIT, e);
+                end;
         end;
    end init;
 

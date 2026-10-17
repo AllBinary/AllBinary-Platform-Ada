@@ -38,11 +38,15 @@ package body org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package
 --                  GameKeyEventHandler_Package.getInstance.removeListener (This.getPlayerGameInput);
 --                  This.setRunning (False);
 --              exception
---                  when e : others =>
+--                  when Java_Occurrence : others =>
+--                      declare
+--                          e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+--                      begin
 --                  This.setRunning (False);
 --                  logUtil := LogUtil_Package.getInstance;
 --                  commonStrings := CommonStrings_Package.getInstance;
 --                  logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.RUN, e);
+--                      end;
 --              end;
 --     end run;
 ;

@@ -67,9 +67,13 @@ package body admin.tags.MultipartRequestParamForwardTag_Package is
             multipartRequestParamForwardHelper.forward;
             return Tag_Package.SKIP_BODY;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             AbResponseHandler_Package.sendJspTagLicensingRedirect (This.pageContext, e);
             return Tag_Package.SKIP_BODY;
+                end;
         end;
    end doStartTag;
 

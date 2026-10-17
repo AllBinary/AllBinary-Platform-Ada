@@ -51,12 +51,16 @@ package body org.allbinary.logic.visual.transform.template.TransformTemplateFact
             transformInfoInterface := transformInfoEntity.get (templateName, propertiesHashMap, pageContext);
             return TransformTemplateInterface_Access (TransformInfoObjectFactory_Package.getInstance.getInstance (abeClientInformation, transformInfoInterface));
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             error := To_Unbounded_String ("Failed To Get Instance");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORYERROR) then
                 This.logUtil.put (error & templateName & To_Unbounded_String ("->TemplateFactory"), This'Unchecked_Access, To_Unbounded_String ("getInstance(viewName, HashMap, PageContext)"), e);
             end if;
             Java_Throw (e);
+                end;
         end;
    end getInstance;
 

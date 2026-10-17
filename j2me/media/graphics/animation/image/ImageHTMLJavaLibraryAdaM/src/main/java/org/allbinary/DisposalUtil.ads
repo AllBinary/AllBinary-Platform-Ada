@@ -24,7 +24,7 @@ with org.eclipse.swt.graphics.Resource_Package; use org.eclipse.swt.graphics.Res
 
 package org.allbinary.DisposalUtil_Package is
 
-   package Resource_Package renames org.eclipse.swt.graphics.Resource_Package;
+   package Resource_Package renames Standard.org.eclipse.swt.graphics.Resource_Package;
 
    type DisposalUtil is tagged;
    type DisposalUtil_Access is access all DisposalUtil'Class;

@@ -15,9 +15,9 @@ with org.allbinary.view.EmulatorViewInterface_Package; use org.allbinary.view.Em
 
 package org.allbinary.view.AllBinaryMidletViewInterface_Package is
 
-   package GameInitializedListenerInterface_Package renames org.allbinary.game.configuration.event.GameInitializedListenerInterface_Package;
-   package DemoGameMidletEventListener_Package renames org.allbinary.game.midlet.DemoGameMidletEventListener_Package;
-   package MidletCompositeInterface_Package renames org.allbinary.midlet.MidletCompositeInterface_Package;
+   package GameInitializedListenerInterface_Package renames Standard.org.allbinary.game.configuration.event.GameInitializedListenerInterface_Package;
+   package DemoGameMidletEventListener_Package renames Standard.org.allbinary.game.midlet.DemoGameMidletEventListener_Package;
+   package MidletCompositeInterface_Package renames Standard.org.allbinary.midlet.MidletCompositeInterface_Package;
 
    type AllBinaryMidletViewInterface is interface and MidletCompositeInterface and EmulatorViewInterface and DemoGameMidletEventListener and GameInitializedListenerInterface;
    type AllBinaryMidletViewInterface_Access is access all AllBinaryMidletViewInterface'Class;

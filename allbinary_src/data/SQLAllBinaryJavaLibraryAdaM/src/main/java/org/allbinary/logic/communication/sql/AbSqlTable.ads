@@ -26,8 +26,8 @@ with org.allbinary.logic.communication.sql.AbSqlBasic_Package; use org.allbinary
 
 package org.allbinary.logic.communication.sql.AbSqlTable_Package is
 
-   package DbConnectionInfo_Package renames org.allbinary.business.init.db.DbConnectionInfo_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
+   package DbConnectionInfo_Package renames Standard.org.allbinary.business.init.db.DbConnectionInfo_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type AbSqlTable is tagged;
    type AbSqlTable_Access is access all AbSqlTable'Class;

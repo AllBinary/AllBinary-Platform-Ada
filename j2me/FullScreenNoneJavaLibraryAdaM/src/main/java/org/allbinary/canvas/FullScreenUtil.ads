@@ -27,8 +27,8 @@ with org.allbinary.game.configuration.feature.MainFeatureFactory_Package; use or
 
 package org.allbinary.canvas.FullScreenUtil_Package is
 
-   package Features_Package renames org.allbinary.game.configuration.feature.Features_Package;
-   package MainFeatureFactory_Package renames org.allbinary.game.configuration.feature.MainFeatureFactory_Package;
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
+   package MainFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.MainFeatureFactory_Package;
 
    type FullScreenUtil is tagged;
    type FullScreenUtil_Access is access all FullScreenUtil'Class;

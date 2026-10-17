@@ -26,8 +26,8 @@ with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_
 
 package org.allbinary.game.input.J2MEGameKey_Package is
 
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type J2MEGameKey is tagged;
    type J2MEGameKey_Access is access all J2MEGameKey'Class;

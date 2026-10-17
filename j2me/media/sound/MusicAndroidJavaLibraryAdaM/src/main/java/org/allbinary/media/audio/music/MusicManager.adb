@@ -110,12 +110,16 @@ package body org.allbinary.media.audio.music.MusicManager_Package is
             This.currentIntent.putExtra (This.musicStrings.RIGHT_VOLUME, This.rightVolume);
             This.resourceUtil.getContext.startService (This.currentIntent);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             resource := StringUtil_Package.getInstance.EMPTY_STRING;
             if (This.currentSongSound) /= (null) then
                 resource := This.currentSongSound.getResource;
             end if;
             PreLogUtil_Package.putOE (Java_Image (This.commonStrings.EXCEPTION_LABEL) & resource, This'Unchecked_Access, This.commonStrings.PROCESS, e);
+                end;
         end;
    end startNewSong;
 

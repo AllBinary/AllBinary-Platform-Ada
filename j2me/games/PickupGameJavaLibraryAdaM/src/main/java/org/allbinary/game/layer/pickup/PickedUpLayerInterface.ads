@@ -24,7 +24,7 @@ with org.allbinary.layer.LayerInterface_Package; use org.allbinary.layer.LayerIn
 
 package org.allbinary.game.layer.pickup.PickedUpLayerInterface_Package is
 
-   package LayerInterface_Package renames org.allbinary.layer.LayerInterface_Package;
+   package LayerInterface_Package renames Standard.org.allbinary.layer.LayerInterface_Package;
 
    type PickedUpLayerInterface is interface and LayerInterface;
    type PickedUpLayerInterface_Access is access all PickedUpLayerInterface'Class;

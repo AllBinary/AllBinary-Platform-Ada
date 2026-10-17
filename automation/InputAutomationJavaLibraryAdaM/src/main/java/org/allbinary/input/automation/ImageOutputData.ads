@@ -25,8 +25,8 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 
 package org.allbinary.input.automation.ImageOutputData_Package is
 
-   package FilePathData_Package renames org.allbinary.logic.io.file.FilePathData_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
+   package FilePathData_Package renames Standard.org.allbinary.logic.io.file.FilePathData_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
 
    type ImageOutputData is tagged;
    type ImageOutputData_Access is access all ImageOutputData'Class;

@@ -26,9 +26,9 @@ with org.allbinary.game.physics.velocity.VelocityProperties_Package; use org.all
 
 package org.allbinary.game.physics.FrictionProperties_Package is
 
-   package FrictionData_Package renames org.allbinary.game.physics.friction.FrictionData_Package;
-   package DragVelocityBehavior_Package renames org.allbinary.game.physics.velocity.DragVelocityBehavior_Package;
-   package VelocityProperties_Package renames org.allbinary.game.physics.velocity.VelocityProperties_Package;
+   package FrictionData_Package renames Standard.org.allbinary.game.physics.friction.FrictionData_Package;
+   package DragVelocityBehavior_Package renames Standard.org.allbinary.game.physics.velocity.DragVelocityBehavior_Package;
+   package VelocityProperties_Package renames Standard.org.allbinary.game.physics.velocity.VelocityProperties_Package;
 
    type FrictionProperties is tagged;
    type FrictionProperties_Access is access all FrictionProperties'Class;

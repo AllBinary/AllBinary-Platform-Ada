@@ -25,8 +25,8 @@ with org.allbinary.logic.control.contraints.size.TwoDimensionalConstraintInterfa
 
 package org.allbinary.business.advertisement.area.AdvertisementAreaConstraintsInterface_Package is
 
-   package DisplayInBrowserContraintsInterface_Package renames org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraintsInterface_Package;
-   package TwoDimensionalConstraintInterface_Package renames org.allbinary.logic.control.contraints.size.TwoDimensionalConstraintInterface_Package;
+   package DisplayInBrowserContraintsInterface_Package renames Standard.org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraintsInterface_Package;
+   package TwoDimensionalConstraintInterface_Package renames Standard.org.allbinary.logic.control.contraints.size.TwoDimensionalConstraintInterface_Package;
 
    type AdvertisementAreaConstraintsInterface is interface;
    type AdvertisementAreaConstraintsInterface_Access is access all AdvertisementAreaConstraintsInterface'Class;

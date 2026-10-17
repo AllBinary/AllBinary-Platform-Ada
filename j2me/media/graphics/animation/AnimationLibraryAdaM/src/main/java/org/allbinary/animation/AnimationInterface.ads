@@ -25,7 +25,7 @@ with org.allbinary.graphics.paint.LocationPaintableInterface_Package; use org.al
 
 package org.allbinary.animation.AnimationInterface_Package is
 
-   package LocationPaintableInterface_Package renames org.allbinary.graphics.paint.LocationPaintableInterface_Package;
+   package LocationPaintableInterface_Package renames Standard.org.allbinary.graphics.paint.LocationPaintableInterface_Package;
 
    type AnimationInterface is interface and LocationPaintableInterface;
    type AnimationInterface_Access is access all AnimationInterface'Class;

@@ -28,10 +28,10 @@ with org.allbinary.image.gui.JPanel_Package; use org.allbinary.image.gui.JPanel_
 
 package org.allbinary.image.gui.ImageAnalysisResultsJPanel_Package is
 
-   package ImageAnalysisResults_Package renames org.allbinary.media.image.analysis.ImageAnalysisResults_Package;
-   package ImageColorRangeResults_Package renames org.allbinary.media.image.analysis.ImageColorRangeResults_Package;
-   package ImageColorResults_Package renames org.allbinary.media.image.analysis.ImageColorResults_Package;
-   package CommonPhoneStrings_Package renames org.allbinary.string_Id.CommonPhoneStrings_Package;
+   package ImageAnalysisResults_Package renames Standard.org.allbinary.media.image.analysis.ImageAnalysisResults_Package;
+   package ImageColorRangeResults_Package renames Standard.org.allbinary.media.image.analysis.ImageColorRangeResults_Package;
+   package ImageColorResults_Package renames Standard.org.allbinary.media.image.analysis.ImageColorResults_Package;
+   package CommonPhoneStrings_Package renames Standard.org.allbinary.string_Id.CommonPhoneStrings_Package;
 
    type ImageAnalysisResultsJPanel is tagged;
    type ImageAnalysisResultsJPanel_Access is access all ImageAnalysisResultsJPanel'Class;

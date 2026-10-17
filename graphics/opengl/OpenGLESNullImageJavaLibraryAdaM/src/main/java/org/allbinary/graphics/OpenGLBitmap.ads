@@ -12,7 +12,7 @@ with org.allbinary.platform.graphics.PlatformBitmapBase_Package; use org.allbina
 
 package org.allbinary.graphics.OpenGLBitmap_Package is
 
-   package PlatformBitmapBase_Package renames org.allbinary.platform.graphics.PlatformBitmapBase_Package;
+   package PlatformBitmapBase_Package renames Standard.org.allbinary.platform.graphics.PlatformBitmapBase_Package;
 
    type OpenGLBitmap is tagged;
    type OpenGLBitmap_Access is access all OpenGLBitmap'Class;

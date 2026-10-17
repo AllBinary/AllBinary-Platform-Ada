@@ -13,7 +13,7 @@ with org.allbinary.game.collision.CollisionProcessor_Package; use org.allbinary.
 
 package org.allbinary.game.collision.CollisionThreedProcessor_Package is
 
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
 
    type CollisionThreedProcessor is tagged;
    type CollisionThreedProcessor_Access is access all CollisionThreedProcessor'Class;

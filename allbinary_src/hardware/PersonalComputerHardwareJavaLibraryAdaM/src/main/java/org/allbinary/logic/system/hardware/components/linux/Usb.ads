@@ -25,8 +25,8 @@ with org.allbinary.logic.system.hardware.components.interfaces.UsbInterface_Pack
 
 package org.allbinary.logic.system.hardware.components.linux.Usb_Package is
 
-   package HardwareComponentInterface_Package renames org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package;
-   package UsbInterface_Package renames org.allbinary.logic.system.hardware.components.interfaces.UsbInterface_Package;
+   package HardwareComponentInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package;
+   package UsbInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.UsbInterface_Package;
 
    type Usb is tagged;
    type Usb_Access is access all Usb'Class;

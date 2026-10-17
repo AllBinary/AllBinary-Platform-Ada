@@ -30,11 +30,11 @@ with org.apache.commons.fileupload.servlet.ServletRequestContext_Package; use or
 
 package org.allbinary.logic.communication.http.file.upload.AbFileUpload_Package is
 
-   package FileItemFactory_Package renames org.apache.commons.fileupload.FileItemFactory_Package;
-   package FileItemIterator_Package renames org.apache.commons.fileupload.FileItemIterator_Package;
-   package FileUpload_Package renames org.apache.commons.fileupload.FileUpload_Package;
-   package FileUploadException_Package renames org.apache.commons.fileupload.FileUploadException_Package;
-   package ServletRequestContext_Package renames org.apache.commons.fileupload.servlet.ServletRequestContext_Package;
+   package FileItemFactory_Package renames Standard.org.apache.commons.fileupload.FileItemFactory_Package;
+   package FileItemIterator_Package renames Standard.org.apache.commons.fileupload.FileItemIterator_Package;
+   package FileUpload_Package renames Standard.org.apache.commons.fileupload.FileUpload_Package;
+   package FileUploadException_Package renames Standard.org.apache.commons.fileupload.FileUploadException_Package;
+   package ServletRequestContext_Package renames Standard.org.apache.commons.fileupload.servlet.ServletRequestContext_Package;
 
    type AbFileUpload is tagged;
    type AbFileUpload_Access is access all AbFileUpload'Class;

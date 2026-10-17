@@ -25,8 +25,8 @@ with org.allbinary.game.input.InputFactory_Package; use org.allbinary.game.input
 
 package org.allbinary.input.motion.gesture.MotionGestureInput_Package is
 
-   package Input_Package renames org.allbinary.game.input.Input_Package;
-   package InputFactory_Package renames org.allbinary.game.input.InputFactory_Package;
+   package Input_Package renames Standard.org.allbinary.game.input.Input_Package;
+   package InputFactory_Package renames Standard.org.allbinary.game.input.InputFactory_Package;
 
    type MotionGestureInput is tagged;
    type MotionGestureInput_Access is access all MotionGestureInput'Class;

@@ -25,7 +25,7 @@ with org.allbinary.logic.system.security.licensing.ThirdPartyInApplicationPurcha
 
 package org.allbinary.logic.system.security.licensing.ThirdPartyInApplicationPurchase_Package is
 
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type ThirdPartyInApplicationPurchase is tagged;
    type ThirdPartyInApplicationPurchase_Access is access all ThirdPartyInApplicationPurchase'Class;

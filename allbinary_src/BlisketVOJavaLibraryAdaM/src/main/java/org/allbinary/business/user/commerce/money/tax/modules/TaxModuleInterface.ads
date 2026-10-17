@@ -25,8 +25,8 @@ with org.allbinary.business.user.address.StreetAddress_Package; use org.allbinar
 
 package org.allbinary.business.user.commerce.money.tax.modules.TaxModuleInterface_Package is
 
-   package StoreFrontInterface_Package renames org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
-   package StreetAddress_Package renames org.allbinary.business.user.address.StreetAddress_Package;
+   package StoreFrontInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
+   package StreetAddress_Package renames Standard.org.allbinary.business.user.address.StreetAddress_Package;
 
    type TaxModuleInterface is interface;
    type TaxModuleInterface_Access is access all TaxModuleInterface'Class;

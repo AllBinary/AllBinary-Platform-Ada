@@ -15,8 +15,8 @@ with org.allbinary.image.opengles.OpenGLESImage_Package; use org.allbinary.image
 
 package org.platform.opengl.OpenGLGLUUtils_Package is
 
-   package OpenGLBitmap_Package renames org.allbinary.graphics.OpenGLBitmap_Package;
-   package OpenGLESImage_Package renames org.allbinary.image.opengles.OpenGLESImage_Package;
+   package OpenGLBitmap_Package renames Standard.org.allbinary.graphics.OpenGLBitmap_Package;
+   package OpenGLESImage_Package renames Standard.org.allbinary.image.opengles.OpenGLESImage_Package;
 
    type OpenGLGLUUtils is tagged;
    type OpenGLGLUUtils_Access is access all OpenGLGLUUtils'Class;

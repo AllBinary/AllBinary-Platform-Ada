@@ -27,7 +27,7 @@ with org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface
 
 package org.allbinary.input.automation.module.AbstractInputAutomationFactory_Package is
 
-   package JavaHelpUtil_Package renames org.allbinary.logic.java.help.JavaHelpUtil_Package;
+   package JavaHelpUtil_Package renames Standard.org.allbinary.logic.java.help.JavaHelpUtil_Package;
 
    type AbstractInputAutomationFactory is tagged;
    type AbstractInputAutomationFactory_Access is access all AbstractInputAutomationFactory'Class;

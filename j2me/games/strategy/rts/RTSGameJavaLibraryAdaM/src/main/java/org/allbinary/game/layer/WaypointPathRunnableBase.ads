@@ -27,10 +27,10 @@ with org.allbinary.thread.RunnableInterface_Package; use org.allbinary.thread.Ru
 
 package org.allbinary.game.layer.WaypointPathRunnableBase_Package is
 
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package LayerDistanceUtil_Package renames org.allbinary.math.LayerDistanceUtil_Package;
-   package PriorityRunnable_Package renames org.allbinary.thread.PriorityRunnable_Package;
-   package RunnableInterface_Package renames org.allbinary.thread.RunnableInterface_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package LayerDistanceUtil_Package renames Standard.org.allbinary.math.LayerDistanceUtil_Package;
+   package PriorityRunnable_Package renames Standard.org.allbinary.thread.PriorityRunnable_Package;
+   package RunnableInterface_Package renames Standard.org.allbinary.thread.RunnableInterface_Package;
 
    type WaypointPathRunnableBase is tagged;
    type WaypointPathRunnableBase_Access is access all WaypointPathRunnableBase'Class;

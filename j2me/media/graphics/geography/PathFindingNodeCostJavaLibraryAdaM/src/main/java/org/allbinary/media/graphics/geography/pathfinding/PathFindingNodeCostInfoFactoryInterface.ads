@@ -25,7 +25,7 @@ with org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoF
 
 package org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfoFactoryInterface_Package is
 
-   package GeographicMapCellPosition_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+   package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
 
    type PathFindingNodeCostInfoFactoryInterface is interface and PathFindingNodeCostInfoFactoryBaseInterface;
    type PathFindingNodeCostInfoFactoryInterface_Access is access all PathFindingNodeCostInfoFactoryInterface'Class;

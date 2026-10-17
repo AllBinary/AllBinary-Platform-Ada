@@ -31,11 +31,11 @@ with playn.core.PlayN_Package; use playn.core.PlayN_Package;
 
 package org.allbinary.graphics.displayable.screen.WebCommandProcessor_Package is
 
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package PlayN_Package renames playn.core.PlayN_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package PlayN_Package renames Standard.playn.core.PlayN_Package;
 
    type WebCommandProcessor is tagged;
    type WebCommandProcessor_Access is access all WebCommandProcessor'Class;

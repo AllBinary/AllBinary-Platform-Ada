@@ -47,25 +47,25 @@ with org.allbinary.thread.ThreadPool_Package; use org.allbinary.thread.ThreadPoo
 
 package org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package is
 
-   package Processor_Package renames org.allbinary.canvas.Processor_Package;
-   package RunnableCanvas_Package renames org.allbinary.canvas.RunnableCanvas_Package;
-   package GameCommandsFactory_Package renames org.allbinary.game.commands.GameCommandsFactory_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package CanvasStrings_Package renames org.allbinary.graphics.displayable.CanvasStrings_Package;
-   package MyFontProcessor_Package renames org.allbinary.graphics.font.MyFontProcessor_Package;
-   package UpdateMyFontInterface_Package renames org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-   package UpdateMyFontProcessor_Package renames org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
-   package ABCustomGaugeItem_Package renames org.allbinary.graphics.form.item.ABCustomGaugeItem_Package;
-   package NullPaintable_Package renames org.allbinary.graphics.paint.NullPaintable_Package;
-   package Paintable_Package renames org.allbinary.graphics.paint.Paintable_Package;
-   package PaintableInterface_Package renames org.allbinary.graphics.paint.PaintableInterface_Package;
-   package PreLogUtil_Package renames org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package SmallIntegerSingletonFactory_Package renames org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package AllBinaryMidlet_Package renames org.allbinary.midlet.AllBinaryMidlet_Package;
-   package PathFindingThreadPool_Package renames org.allbinary.thread.PathFindingThreadPool_Package;
-   package ThreadPool_Package renames org.allbinary.thread.ThreadPool_Package;
+   package Processor_Package renames Standard.org.allbinary.canvas.Processor_Package;
+   package RunnableCanvas_Package renames Standard.org.allbinary.canvas.RunnableCanvas_Package;
+   package GameCommandsFactory_Package renames Standard.org.allbinary.game.commands.GameCommandsFactory_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package CanvasStrings_Package renames Standard.org.allbinary.graphics.displayable.CanvasStrings_Package;
+   package MyFontProcessor_Package renames Standard.org.allbinary.graphics.font.MyFontProcessor_Package;
+   package UpdateMyFontInterface_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontInterface_Package;
+   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+   package ABCustomGaugeItem_Package renames Standard.org.allbinary.graphics.form.item.ABCustomGaugeItem_Package;
+   package NullPaintable_Package renames Standard.org.allbinary.graphics.paint.NullPaintable_Package;
+   package Paintable_Package renames Standard.org.allbinary.graphics.paint.Paintable_Package;
+   package PaintableInterface_Package renames Standard.org.allbinary.graphics.paint.PaintableInterface_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package AllBinaryMidlet_Package renames Standard.org.allbinary.midlet.AllBinaryMidlet_Package;
+   package PathFindingThreadPool_Package renames Standard.org.allbinary.thread.PathFindingThreadPool_Package;
+   package ThreadPool_Package renames Standard.org.allbinary.thread.ThreadPool_Package;
 
    type ProgressCanvas is tagged;
    type ProgressCanvas_Access is access all ProgressCanvas'Class;
@@ -166,25 +166,25 @@ with org.allbinary.thread.ThreadPool_Package; use org.allbinary.thread.ThreadPoo
 
 package org.allbinary.graphics.canvas.transition.progress.ProgressPaintable_Package is
 
-   package Processor_Package renames org.allbinary.canvas.Processor_Package;
-   package RunnableCanvas_Package renames org.allbinary.canvas.RunnableCanvas_Package;
-   package GameCommandsFactory_Package renames org.allbinary.game.commands.GameCommandsFactory_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package CanvasStrings_Package renames org.allbinary.graphics.displayable.CanvasStrings_Package;
-   package MyFontProcessor_Package renames org.allbinary.graphics.font.MyFontProcessor_Package;
-   package UpdateMyFontInterface_Package renames org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-   package UpdateMyFontProcessor_Package renames org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
-   package ABCustomGaugeItem_Package renames org.allbinary.graphics.form.item.ABCustomGaugeItem_Package;
-   package NullPaintable_Package renames org.allbinary.graphics.paint.NullPaintable_Package;
-   package Paintable_Package renames org.allbinary.graphics.paint.Paintable_Package;
-   package PaintableInterface_Package renames org.allbinary.graphics.paint.PaintableInterface_Package;
-   package PreLogUtil_Package renames org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package SmallIntegerSingletonFactory_Package renames org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package AllBinaryMidlet_Package renames org.allbinary.midlet.AllBinaryMidlet_Package;
-   package PathFindingThreadPool_Package renames org.allbinary.thread.PathFindingThreadPool_Package;
-   package ThreadPool_Package renames org.allbinary.thread.ThreadPool_Package;
+   package Processor_Package renames Standard.org.allbinary.canvas.Processor_Package;
+   package RunnableCanvas_Package renames Standard.org.allbinary.canvas.RunnableCanvas_Package;
+   package GameCommandsFactory_Package renames Standard.org.allbinary.game.commands.GameCommandsFactory_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package CanvasStrings_Package renames Standard.org.allbinary.graphics.displayable.CanvasStrings_Package;
+   package MyFontProcessor_Package renames Standard.org.allbinary.graphics.font.MyFontProcessor_Package;
+   package UpdateMyFontInterface_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontInterface_Package;
+   package UpdateMyFontProcessor_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+   package ABCustomGaugeItem_Package renames Standard.org.allbinary.graphics.form.item.ABCustomGaugeItem_Package;
+   package NullPaintable_Package renames Standard.org.allbinary.graphics.paint.NullPaintable_Package;
+   package Paintable_Package renames Standard.org.allbinary.graphics.paint.Paintable_Package;
+   package PaintableInterface_Package renames Standard.org.allbinary.graphics.paint.PaintableInterface_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package AllBinaryMidlet_Package renames Standard.org.allbinary.midlet.AllBinaryMidlet_Package;
+   package PathFindingThreadPool_Package renames Standard.org.allbinary.thread.PathFindingThreadPool_Package;
+   package ThreadPool_Package renames Standard.org.allbinary.thread.ThreadPool_Package;
 
    type ProgressPaintable is tagged;
    type ProgressPaintable_Access is access all ProgressPaintable'Class;

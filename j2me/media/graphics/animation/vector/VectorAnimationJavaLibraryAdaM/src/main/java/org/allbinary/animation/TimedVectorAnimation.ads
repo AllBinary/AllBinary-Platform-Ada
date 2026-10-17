@@ -27,9 +27,9 @@ with org.allbinary.animation.VectorAnimation_Package; use org.allbinary.animatio
 
 package org.allbinary.animation.TimedVectorAnimation_Package is
 
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package GameTickTimeDelayHelperFactory_Package renames org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
-   package TimeDelayHelper_Package renames org.allbinary.time.TimeDelayHelper_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package GameTickTimeDelayHelperFactory_Package renames Standard.org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
+   package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
 
    type TimedVectorAnimation is tagged;
    type TimedVectorAnimation_Access is access all TimedVectorAnimation'Class;

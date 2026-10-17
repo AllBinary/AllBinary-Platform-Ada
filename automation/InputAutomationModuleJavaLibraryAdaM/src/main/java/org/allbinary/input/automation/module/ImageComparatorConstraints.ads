@@ -32,12 +32,12 @@ with org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Pa
 
 package org.allbinary.input.automation.module.ImageComparatorConstraints_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package RectangleCollisionUtil_Package renames org.allbinary.collision.RectangleCollisionUtil_Package;
-   package GPoint_Package renames org.allbinary.graphics.GPoint_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package ImageComparatorConstraintsInterface_Package renames org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package RectangleCollisionUtil_Package renames Standard.org.allbinary.collision.RectangleCollisionUtil_Package;
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package ImageComparatorConstraintsInterface_Package renames Standard.org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package;
 
    type ImageComparatorConstraints is tagged;
    type ImageComparatorConstraints_Access is access all ImageComparatorConstraints'Class;

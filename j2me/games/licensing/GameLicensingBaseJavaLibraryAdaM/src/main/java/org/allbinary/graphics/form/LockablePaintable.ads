@@ -29,10 +29,10 @@ with org.allbinary.graphics.form.ItemPaintable_Package; use org.allbinary.graphi
 
 package org.allbinary.graphics.form.LockablePaintable_Package is
 
-   package Animation_Package renames org.allbinary.animation.Animation_Package;
-   package FeaturedAnimationInterfaceFactoryInterfaceFactory_Package renames org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package;
-   package LockedResources_Package renames org.allbinary.logic.system.security.licensing.LockedResources_Package;
-   package LockedUtil_Package renames org.allbinary.logic.system.security.licensing.LockedUtil_Package;
+   package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
+   package FeaturedAnimationInterfaceFactoryInterfaceFactory_Package renames Standard.org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package;
+   package LockedResources_Package renames Standard.org.allbinary.logic.system.security.licensing.LockedResources_Package;
+   package LockedUtil_Package renames Standard.org.allbinary.logic.system.security.licensing.LockedUtil_Package;
 
    type LockablePaintable is tagged;
    type LockablePaintable_Access is access all LockablePaintable'Class;

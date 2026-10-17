@@ -44,25 +44,25 @@ with org.allbinary.view.ViewPositionBase_Package; use org.allbinary.view.ViewPos
 
 package org.allbinary.game.layer.weapon.WeaponLayer_Package is
 
-   package Animation_Package renames org.allbinary.animation.Animation_Package;
-   package IndexedAnimation_Package renames org.allbinary.animation.IndexedAnimation_Package;
-   package NullAnimationFactory_Package renames org.allbinary.animation.NullAnimationFactory_Package;
-   package CollidableBaseBehavior_Package renames org.allbinary.game.collision.CollidableBaseBehavior_Package;
-   package DestroyedLayerProcessor_Package renames org.allbinary.game.combat.destroy.DestroyedLayerProcessor_Package;
-   package WeaponProperties_Package renames org.allbinary.game.combat.weapon.WeaponProperties_Package;
-   package GameConfigurationUtil_Package renames org.allbinary.game.configuration.GameConfigurationUtil_Package;
-   package BasicGroupFactory_Package renames org.allbinary.game.identification.BasicGroupFactory_Package;
-   package MultiPlayerGameLayer_Package renames org.allbinary.game.multiplayer.layer.MultiPlayerGameLayer_Package;
-   package RemoteInfo_Package renames org.allbinary.game.multiplayer.layer.RemoteInfo_Package;
-   package NoScoreable_Package renames org.allbinary.game.score.NoScoreable_Package;
-   package ScoreableInterface_Package renames org.allbinary.game.score.ScoreableInterface_Package;
-   package TickableInterface_Package renames org.allbinary.game.tick.TickableInterface_Package;
-   package Rectangle_Package renames org.allbinary.graphics.Rectangle_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package AllBinaryLayerManager_Package renames org.allbinary.layer.AllBinaryLayerManager_Package;
-   package Movement_Package renames org.allbinary.physics.movement.Movement_Package;
-   package ViewPosition_Package renames org.allbinary.view.ViewPosition_Package;
-   package ViewPositionBase_Package renames org.allbinary.view.ViewPositionBase_Package;
+   package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
+   package IndexedAnimation_Package renames Standard.org.allbinary.animation.IndexedAnimation_Package;
+   package NullAnimationFactory_Package renames Standard.org.allbinary.animation.NullAnimationFactory_Package;
+   package CollidableBaseBehavior_Package renames Standard.org.allbinary.game.collision.CollidableBaseBehavior_Package;
+   package DestroyedLayerProcessor_Package renames Standard.org.allbinary.game.combat.destroy.DestroyedLayerProcessor_Package;
+   package WeaponProperties_Package renames Standard.org.allbinary.game.combat.weapon.WeaponProperties_Package;
+   package GameConfigurationUtil_Package renames Standard.org.allbinary.game.configuration.GameConfigurationUtil_Package;
+   package BasicGroupFactory_Package renames Standard.org.allbinary.game.identification.BasicGroupFactory_Package;
+   package MultiPlayerGameLayer_Package renames Standard.org.allbinary.game.multiplayer.layer.MultiPlayerGameLayer_Package;
+   package RemoteInfo_Package renames Standard.org.allbinary.game.multiplayer.layer.RemoteInfo_Package;
+   package NoScoreable_Package renames Standard.org.allbinary.game.score.NoScoreable_Package;
+   package ScoreableInterface_Package renames Standard.org.allbinary.game.score.ScoreableInterface_Package;
+   package TickableInterface_Package renames Standard.org.allbinary.game.tick.TickableInterface_Package;
+   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
+   package Movement_Package renames Standard.org.allbinary.physics.movement.Movement_Package;
+   package ViewPosition_Package renames Standard.org.allbinary.view.ViewPosition_Package;
+   package ViewPositionBase_Package renames Standard.org.allbinary.view.ViewPositionBase_Package;
 
    type WeaponLayer is tagged;
    type WeaponLayer_Access is access all WeaponLayer'Class;

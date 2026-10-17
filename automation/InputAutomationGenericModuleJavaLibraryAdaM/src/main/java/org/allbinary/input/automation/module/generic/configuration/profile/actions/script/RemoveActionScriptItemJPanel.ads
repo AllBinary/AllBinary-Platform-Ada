@@ -28,10 +28,10 @@ with org.allbinary.input.automation.module.generic_Id.configuration.profile.acti
 
 package org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.script.RemoveActionScriptItemJPanel_Package is
 
-   package ProfileActionScriptConditionInterface_Package renames org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionInterface_Package;
-   package GenericProfileAction_Package renames org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileAction_Package;
-   package GenericProfileActionJPanel_Package renames org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionJPanel_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
+   package ProfileActionScriptConditionInterface_Package renames Standard.org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionInterface_Package;
+   package GenericProfileAction_Package renames Standard.org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileAction_Package;
+   package GenericProfileActionJPanel_Package renames Standard.org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionJPanel_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type RemoveActionScriptItemJPanel is tagged;
    type RemoveActionScriptItemJPanel_Access is access all RemoveActionScriptItemJPanel'Class;

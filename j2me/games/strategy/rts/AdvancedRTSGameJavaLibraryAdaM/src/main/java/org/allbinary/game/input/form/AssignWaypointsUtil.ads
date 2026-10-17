@@ -33,16 +33,16 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 
 package org.allbinary.game.input.form.AssignWaypointsUtil_Package is
 
-   package AdvancedRTSGameLayer_Package renames org.allbinary.game.layer.AdvancedRTSGameLayer_Package;
-   package NullPathFindingLayer_Package renames org.allbinary.game.layer.NullPathFindingLayer_Package;
-   package PathFindingLayerInterface_Package renames org.allbinary.game.layer.PathFindingLayerInterface_Package;
-   package RTSLayer_Package renames org.allbinary.game.layer.RTSLayer_Package;
-   package RTSLayerEvent_Package renames org.allbinary.game.layer.RTSLayerEvent_Package;
-   package UnitLayer_Package renames org.allbinary.game.layer.unit.UnitLayer_Package;
-   package UnitWaypointBehavior_Package renames org.allbinary.game.layer.unit.UnitWaypointBehavior_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
+   package AdvancedRTSGameLayer_Package renames Standard.org.allbinary.game.layer.AdvancedRTSGameLayer_Package;
+   package NullPathFindingLayer_Package renames Standard.org.allbinary.game.layer.NullPathFindingLayer_Package;
+   package PathFindingLayerInterface_Package renames Standard.org.allbinary.game.layer.PathFindingLayerInterface_Package;
+   package RTSLayer_Package renames Standard.org.allbinary.game.layer.RTSLayer_Package;
+   package RTSLayerEvent_Package renames Standard.org.allbinary.game.layer.RTSLayerEvent_Package;
+   package UnitLayer_Package renames Standard.org.allbinary.game.layer.unit.UnitLayer_Package;
+   package UnitWaypointBehavior_Package renames Standard.org.allbinary.game.layer.unit.UnitWaypointBehavior_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type AssignWaypointsUtil is tagged;
    type AssignWaypointsUtil_Access is access all AssignWaypointsUtil'Class;

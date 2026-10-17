@@ -25,8 +25,8 @@ with org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package; u
 
 package org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellType_Package is
 
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package GeographicMapCellType_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package GeographicMapCellType_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
 
    type RaceTrackGeographicMapCellType is tagged;
    type RaceTrackGeographicMapCellType_Access is access all RaceTrackGeographicMapCellType'Class;

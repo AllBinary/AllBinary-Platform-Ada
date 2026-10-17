@@ -26,8 +26,8 @@ with org.allbinary.media.graphics.geography.pathfinding.PathFindingInfoInterface
 
 package org.allbinary.media.graphics.geography.pathfinding.PathFindingInfo_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListUtil_Package renames org.allbinary.util.BasicArrayListUtil_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
 
    type PathFindingInfo is tagged;
    type PathFindingInfo_Access is access all PathFindingInfo'Class;

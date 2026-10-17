@@ -28,10 +28,10 @@ with org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package; u
 
 package org.allbinary.graphics.canvas.transition.progress.LazyProgressCanvas_Package is
 
-   package Processor_Package renames org.allbinary.canvas.Processor_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package NullPaintable_Package renames org.allbinary.graphics.paint.NullPaintable_Package;
-   package ImageCacheFactory_Package renames org.allbinary.image.ImageCacheFactory_Package;
+   package Processor_Package renames Standard.org.allbinary.canvas.Processor_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package NullPaintable_Package renames Standard.org.allbinary.graphics.paint.NullPaintable_Package;
+   package ImageCacheFactory_Package renames Standard.org.allbinary.image.ImageCacheFactory_Package;
 
    type LazyProgressCanvas is tagged;
    type LazyProgressCanvas_Access is access all LazyProgressCanvas'Class;

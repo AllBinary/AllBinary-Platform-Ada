@@ -27,9 +27,9 @@ with org.allbinary.input.automation.module.generic_Id.configuration.profile.acti
 
 package org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionsJPanel_Package is
 
-   package DefaultListModelHelper_Package renames org.allbinary.input.automation.module.DefaultListModelHelper_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package DefaultListModelHelper_Package renames Standard.org.allbinary.input.automation.module.DefaultListModelHelper_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type GenericProfileActionsJPanel is tagged;
    type GenericProfileActionsJPanel_Access is access all GenericProfileActionsJPanel'Class;

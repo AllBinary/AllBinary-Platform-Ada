@@ -54,9 +54,13 @@ package body org.allbinary.game.input.motion.action.GameKeyCompleteMotionGesture
             This.setGameKey (This.inputToGameKeyMapping.getInstance (This.getMotionGestureInput.getId));
             This.setGameKeyEvent (This.gameKeyEventFactory.getInstanceForInput (This'Unchecked_Access, This.getGameKey));
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.UPDATE, e);
+                end;
         end;
    end update;
 

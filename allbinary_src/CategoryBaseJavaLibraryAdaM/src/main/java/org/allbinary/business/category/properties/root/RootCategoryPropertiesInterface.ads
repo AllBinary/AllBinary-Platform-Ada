@@ -24,7 +24,7 @@ with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path
 
 package org.allbinary.business.category.properties.root.RootCategoryPropertiesInterface_Package is
 
-   package AbPath_Package renames org.allbinary.logic.io.path.AbPath_Package;
+   package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
 
    type RootCategoryPropertiesInterface is interface;
    type RootCategoryPropertiesInterface_Access is access all RootCategoryPropertiesInterface'Class;

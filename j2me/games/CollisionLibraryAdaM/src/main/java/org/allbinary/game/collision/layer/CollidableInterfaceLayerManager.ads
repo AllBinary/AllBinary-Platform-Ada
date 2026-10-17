@@ -25,8 +25,8 @@ with org.allbinary.layer.LayerManagerNoDebug_Package; use org.allbinary.layer.La
 
 package org.allbinary.game.collision.layer.CollidableInterfaceLayerManager_Package is
 
-   package LayerManager_Package renames org.allbinary.layer.LayerManager_Package;
-   package LayerManagerNoDebug_Package renames org.allbinary.layer.LayerManagerNoDebug_Package;
+   package LayerManager_Package renames Standard.org.allbinary.layer.LayerManager_Package;
+   package LayerManagerNoDebug_Package renames Standard.org.allbinary.layer.LayerManagerNoDebug_Package;
 
    type CollidableInterfaceLayerManager is tagged;
    type CollidableInterfaceLayerManager_Access is access all CollidableInterfaceLayerManager'Class;

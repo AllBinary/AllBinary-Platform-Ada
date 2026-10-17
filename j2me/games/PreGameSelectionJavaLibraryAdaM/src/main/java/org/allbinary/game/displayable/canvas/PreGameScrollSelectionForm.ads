@@ -29,12 +29,12 @@ with org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package; use org.all
 
 package org.allbinary.game.displayable.canvas.PreGameScrollSelectionForm_Package is
 
-   package ABCustomItem_Package renames org.allbinary.graphics.form.item.ABCustomItem_Package;
-   package Rectangle_Package renames org.allbinary.graphics.Rectangle_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package FormTypeFactory_Package renames org.allbinary.graphics.form.FormTypeFactory_Package;
-   package ItemPaintableFactory_Package renames org.allbinary.graphics.form.ItemPaintableFactory_Package;
-   package ScrollCurrentSelectionForm_Package renames org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package;
+   package ABCustomItem_Package renames Standard.org.allbinary.graphics.form.item.ABCustomItem_Package;
+   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package FormTypeFactory_Package renames Standard.org.allbinary.graphics.form.FormTypeFactory_Package;
+   package ItemPaintableFactory_Package renames Standard.org.allbinary.graphics.form.ItemPaintableFactory_Package;
+   package ScrollCurrentSelectionForm_Package renames Standard.org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package;
 
    type PreGameScrollSelectionForm is tagged;
    type PreGameScrollSelectionForm_Access is access all PreGameScrollSelectionForm'Class;

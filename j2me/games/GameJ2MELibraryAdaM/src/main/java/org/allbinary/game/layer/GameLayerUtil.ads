@@ -26,9 +26,9 @@ with org.allbinary.view.ViewPositionBase_Package; use org.allbinary.view.ViewPos
 
 package org.allbinary.game.layer.GameLayerUtil_Package is
 
-   package DisplayInfoSingleton_Package renames org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package ViewPositionBase_Package renames org.allbinary.view.ViewPositionBase_Package;
+   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package ViewPositionBase_Package renames Standard.org.allbinary.view.ViewPositionBase_Package;
 
    type GameLayerUtil is tagged;
    type GameLayerUtil_Access is access all GameLayerUtil'Class;

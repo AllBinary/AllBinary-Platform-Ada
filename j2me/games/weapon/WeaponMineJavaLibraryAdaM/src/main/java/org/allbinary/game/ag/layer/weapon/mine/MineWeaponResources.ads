@@ -25,8 +25,8 @@ with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Pack
 
 package org.allbinary.game.ag.layer.weapon.mine.MineWeaponResources_Package is
 
-   package BasicGameResources_Package renames org.allbinary.game.layer.resources.BasicGameResources_Package;
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
+   package BasicGameResources_Package renames Standard.org.allbinary.game.layer.resources.BasicGameResources_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
 
    type MineWeaponResources is tagged;
    type MineWeaponResources_Access is access all MineWeaponResources'Class;

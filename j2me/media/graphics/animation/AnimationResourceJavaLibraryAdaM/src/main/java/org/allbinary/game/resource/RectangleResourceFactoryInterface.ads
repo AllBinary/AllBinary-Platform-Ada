@@ -24,7 +24,7 @@ with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectan
 
 package org.allbinary.game.resource.RectangleResourceFactoryInterface_Package is
 
-   package Rectangle_Package renames org.allbinary.graphics.Rectangle_Package;
+   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
 
    type RectangleResourceFactoryInterface is interface;
    type RectangleResourceFactoryInterface_Access is access all RectangleResourceFactoryInterface'Class;

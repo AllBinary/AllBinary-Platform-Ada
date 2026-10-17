@@ -29,12 +29,12 @@ with org.apache.commons.fileupload.FileItemStream_Package; use org.apache.common
 
 package org.allbinary.logic.communication.http.file.upload.HttpFileUploadUtil_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package ClassUtil_Package renames org.allbinary.logic.java.anyType.clazz.ClassUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
-   package FileItem_Package renames org.apache.commons.fileupload.FileItem_Package;
-   package FileItemStream_Package renames org.apache.commons.fileupload.FileItemStream_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package ClassUtil_Package renames Standard.org.allbinary.logic.java.anyType.clazz.ClassUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package FileItem_Package renames Standard.org.apache.commons.fileupload.FileItem_Package;
+   package FileItemStream_Package renames Standard.org.apache.commons.fileupload.FileItemStream_Package;
 
    type HttpFileUploadUtil is tagged;
    type HttpFileUploadUtil_Access is access all HttpFileUploadUtil'Class;

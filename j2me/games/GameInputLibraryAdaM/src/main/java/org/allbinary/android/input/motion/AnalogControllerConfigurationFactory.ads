@@ -26,9 +26,9 @@ with org.allbinary.logic.math.ScaleFactorFactory_Package; use org.allbinary.logi
 
 package org.allbinary.android.input.motion.AnalogControllerConfigurationFactory_Package is
 
-   package AnalogControllerConfigurationEvent_Package renames org.allbinary.android.input.motion.event.AnalogControllerConfigurationEvent_Package;
-   package AnalogControllerConfigurationEventHandler_Package renames org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventHandler_Package;
-   package ScaleFactorFactory_Package renames org.allbinary.logic.math.ScaleFactorFactory_Package;
+   package AnalogControllerConfigurationEvent_Package renames Standard.org.allbinary.android.input.motion.event.AnalogControllerConfigurationEvent_Package;
+   package AnalogControllerConfigurationEventHandler_Package renames Standard.org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventHandler_Package;
+   package ScaleFactorFactory_Package renames Standard.org.allbinary.logic.math.ScaleFactorFactory_Package;
 
    type AnalogControllerConfigurationFactory is tagged;
    type AnalogControllerConfigurationFactory_Access is access all AnalogControllerConfigurationFactory'Class;

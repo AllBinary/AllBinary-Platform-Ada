@@ -27,10 +27,10 @@ with org.allbinary.thread.RunnableInterface_Package; use org.allbinary.thread.Ru
 
 package org.allbinary.input.automation.module.game.test.TestModuleFactory_Package is
 
-   package AbstractInputAutomationFactory_Package renames org.allbinary.input.automation.module.AbstractInputAutomationFactory_Package;
-   package InputAutomationModuleData_Package renames org.allbinary.input.automation.module.InputAutomationModuleData_Package;
-   package BlankModuleConfigurationJPanel_Package renames org.allbinary.input.automation.module.configuration.BlankModuleConfigurationJPanel_Package;
-   package RunnableInterface_Package renames org.allbinary.thread.RunnableInterface_Package;
+   package AbstractInputAutomationFactory_Package renames Standard.org.allbinary.input.automation.module.AbstractInputAutomationFactory_Package;
+   package InputAutomationModuleData_Package renames Standard.org.allbinary.input.automation.module.InputAutomationModuleData_Package;
+   package BlankModuleConfigurationJPanel_Package renames Standard.org.allbinary.input.automation.module.configuration.BlankModuleConfigurationJPanel_Package;
+   package RunnableInterface_Package renames Standard.org.allbinary.thread.RunnableInterface_Package;
 
    type TestModuleFactory is tagged;
    type TestModuleFactory_Access is access all TestModuleFactory'Class;

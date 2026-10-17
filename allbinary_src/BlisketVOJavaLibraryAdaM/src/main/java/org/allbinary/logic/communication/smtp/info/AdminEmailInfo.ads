@@ -30,12 +30,12 @@ with org.allbinary.logic.communication.smtp.info.BasicEmailInfo_Package; use org
 
 package org.allbinary.logic.communication.smtp.info.AdminEmailInfo_Package is
 
-   package ContextConfigurationInterface_Package renames org.allbinary.business.context.configuration.ContextConfigurationInterface_Package;
-   package AdminConfiguration_Package renames org.allbinary.business.user.modules.admin.configuration.AdminConfiguration_Package;
-   package AdminConfigurationInterface_Package renames org.allbinary.business.user.modules.admin.configuration.AdminConfigurationInterface_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package EmailServerConfigurationInterface_Package renames org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationInterface_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package ContextConfigurationInterface_Package renames Standard.org.allbinary.business.context.configuration.ContextConfigurationInterface_Package;
+   package AdminConfiguration_Package renames Standard.org.allbinary.business.user.modules.admin.configuration.AdminConfiguration_Package;
+   package AdminConfigurationInterface_Package renames Standard.org.allbinary.business.user.modules.admin.configuration.AdminConfigurationInterface_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package EmailServerConfigurationInterface_Package renames Standard.org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationInterface_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type AdminEmailInfo is tagged;
    type AdminEmailInfo_Access is access all AdminEmailInfo'Class;

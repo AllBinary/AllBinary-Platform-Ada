@@ -28,10 +28,10 @@ with org.allbinary.math.AngleFactory_Package; use org.allbinary.math.AngleFactor
 
 package org.allbinary.animation.vector.CircleAnimation_Package is
 
-   package Animation_Package renames org.allbinary.animation.Animation_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package ColorCompositeInterface_Package renames org.allbinary.graphics.color.ColorCompositeInterface_Package;
-   package AngleFactory_Package renames org.allbinary.math.AngleFactory_Package;
+   package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package ColorCompositeInterface_Package renames Standard.org.allbinary.graphics.color.ColorCompositeInterface_Package;
+   package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;
 
    type CircleAnimation is tagged;
    type CircleAnimation_Access is access all CircleAnimation'Class;

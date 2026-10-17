@@ -33,13 +33,13 @@ with admin.tags.TableTag_Package; use admin.tags.TableTag_Package;
 
 package admin.tags.CategoryTag_Package is
 
-   package CategoryHelperFactory_Package renames admin.taghelpers.CategoryHelperFactory_Package;
-   package CategoryRequestHelperFactory_Package renames admin.taghelpers.CategoryRequestHelperFactory_Package;
-   package CategoryData_Package renames org.allbinary.business.category.CategoryData_Package;
-   package AbResponseHandler_Package renames org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package LicensingException_Package renames org.allbinary.logic.system.security.licensing.LicensingException_Package;
-   package TransformInfoData_Package renames org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
+   package CategoryHelperFactory_Package renames Standard.admin.taghelpers.CategoryHelperFactory_Package;
+   package CategoryRequestHelperFactory_Package renames Standard.admin.taghelpers.CategoryRequestHelperFactory_Package;
+   package CategoryData_Package renames Standard.org.allbinary.business.category.CategoryData_Package;
+   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package TransformInfoData_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
 
    type CategoryTag is tagged;
    type CategoryTag_Access is access all CategoryTag'Class;

@@ -28,10 +28,10 @@ with org.allbinary.animation.compound.CompoundAnimationInterfaceFactory_Package;
 
 package org.allbinary.animation.compound.AutoCompoundRotationAnimationInterfaceFactory_Package is
 
-   package Animation_Package renames org.allbinary.animation.Animation_Package;
-   package AnimationBehaviorFactory_Package renames org.allbinary.animation.AnimationBehaviorFactory_Package;
-   package AnimationInterfaceFactoryInterface_Package renames org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
-   package RotationAnimation_Package renames org.allbinary.animation.RotationAnimation_Package;
+   package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
+   package AnimationBehaviorFactory_Package renames Standard.org.allbinary.animation.AnimationBehaviorFactory_Package;
+   package AnimationInterfaceFactoryInterface_Package renames Standard.org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
+   package RotationAnimation_Package renames Standard.org.allbinary.animation.RotationAnimation_Package;
 
    type AutoCompoundRotationAnimationInterfaceFactory is tagged;
    type AutoCompoundRotationAnimationInterfaceFactory_Access is access all AutoCompoundRotationAnimationInterfaceFactory'Class;

@@ -27,8 +27,8 @@ with org.allbinary.game.health.HealthListenerInterface_Package; use org.allbinar
 
 package org.allbinary.game.health.HealthBar_Package is
 
-   package Paintable_Package renames org.allbinary.graphics.paint.Paintable_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
+   package Paintable_Package renames Standard.org.allbinary.graphics.paint.Paintable_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
 
    type HealthBar is tagged;
    type HealthBar_Access is access all HealthBar'Class;

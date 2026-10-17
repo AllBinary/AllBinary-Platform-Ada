@@ -32,14 +32,14 @@ with org.allbinary.game.layer.PathFindingLayerInterface_Package; use org.allbina
 
 package org.allbinary.game.layer.RTSPlayerLayerInterface_Package is
 
-   package GameNotificationHudCompositeInterface_Package renames org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHudCompositeInterface_Package;
-   package BuildMenuCompositeInterface_Package renames org.allbinary.game.input.BuildMenuCompositeInterface_Package;
-   package RTSFormInput_Package renames org.allbinary.game.input.form.RTSFormInput_Package;
-   package Capital_Package renames org.allbinary.game.layer.capital.Capital_Package;
-   package DestroyedEventListenerInterface_Package renames org.allbinary.game.combat.destroy.event.DestroyedEventListenerInterface_Package;
-   package PlayerGameInputCompositeInterface_Package renames org.allbinary.game.input.PlayerGameInputCompositeInterface_Package;
-   package TickableInterface_Package renames org.allbinary.game.tick.TickableInterface_Package;
-   package Sound_Package renames org.allbinary.media.audio.Sound_Package;
+   package GameNotificationHudCompositeInterface_Package renames Standard.org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHudCompositeInterface_Package;
+   package BuildMenuCompositeInterface_Package renames Standard.org.allbinary.game.input.BuildMenuCompositeInterface_Package;
+   package RTSFormInput_Package renames Standard.org.allbinary.game.input.form.RTSFormInput_Package;
+   package Capital_Package renames Standard.org.allbinary.game.layer.capital.Capital_Package;
+   package DestroyedEventListenerInterface_Package renames Standard.org.allbinary.game.combat.destroy.event.DestroyedEventListenerInterface_Package;
+   package PlayerGameInputCompositeInterface_Package renames Standard.org.allbinary.game.input.PlayerGameInputCompositeInterface_Package;
+   package TickableInterface_Package renames Standard.org.allbinary.game.tick.TickableInterface_Package;
+   package Sound_Package renames Standard.org.allbinary.media.audio.Sound_Package;
 
    type RTSPlayerLayerInterface is interface and GameNotificationHudCompositeInterface and BuildMenuCompositeInterface and PlayerGameInputCompositeInterface and DestroyedEventListenerInterface and TickableInterface and PathFindingLayerInterface;
    type RTSPlayerLayerInterface_Access is access all RTSPlayerLayerInterface'Class;

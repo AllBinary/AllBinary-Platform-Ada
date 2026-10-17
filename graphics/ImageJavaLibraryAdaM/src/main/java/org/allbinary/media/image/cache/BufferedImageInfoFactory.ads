@@ -26,8 +26,8 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 
 package org.allbinary.media.image.cache.BufferedImageInfoFactory_Package is
 
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
 
    type BufferedImageInfoFactory is tagged;
    type BufferedImageInfoFactory_Access is access all BufferedImageInfoFactory'Class;

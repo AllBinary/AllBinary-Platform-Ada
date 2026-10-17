@@ -25,8 +25,8 @@ with org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Pac
 
 package org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapCellTypeFactory_Package is
 
-   package GeographicMapCellType_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
-   package GeographicMapCellTypeFactory_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package;
+   package GeographicMapCellType_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
+   package GeographicMapCellTypeFactory_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package;
 
    type RaceTrackGeographicMapCellTypeFactory is tagged;
    type RaceTrackGeographicMapCellTypeFactory_Access is access all RaceTrackGeographicMapCellTypeFactory'Class;

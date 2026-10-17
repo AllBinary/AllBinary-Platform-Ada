@@ -47,8 +47,12 @@ package body org.allbinary.logic.io.file.FileFactory_Package is
             This.context.openFileInput (path);
             return True;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             return False;
+                end;
         end;
    end isFile;
 

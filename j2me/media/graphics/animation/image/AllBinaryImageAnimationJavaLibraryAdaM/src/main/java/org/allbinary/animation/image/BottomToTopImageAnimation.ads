@@ -30,9 +30,9 @@ with org.allbinary.animation.image.ImageSegmentAnimation_Package; use org.allbin
 
 package org.allbinary.animation.image.BottomToTopImageAnimation_Package is
 
-   package AnimationBehavior_Package renames org.allbinary.animation.AnimationBehavior_Package;
-   package Anchor_Package renames org.allbinary.graphics.Anchor_Package;
-   package PrimitiveIntUtil_Package renames org.allbinary.logic.math.PrimitiveIntUtil_Package;
+   package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
+   package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
+   package PrimitiveIntUtil_Package renames Standard.org.allbinary.logic.math.PrimitiveIntUtil_Package;
 
    type BottomToTopImageAnimation is tagged;
    type BottomToTopImageAnimation_Access is access all BottomToTopImageAnimation'Class;

@@ -26,9 +26,9 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 
 package org.allbinary.game.input.LocalPlayerInputIdFactory_Package is
 
-   package AnalogLocationInputFactory_Package renames org.allbinary.game.input.analog.AnalogLocationInputFactory_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
+   package AnalogLocationInputFactory_Package renames Standard.org.allbinary.game.input.analog.AnalogLocationInputFactory_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
 
    type LocalPlayerInputIdFactory is tagged;
    type LocalPlayerInputIdFactory_Access is access all LocalPlayerInputIdFactory'Class;

@@ -25,8 +25,8 @@ with org.allbinary.graphics.paint.PaintableInterface_Package; use org.allbinary.
 
 package org.allbinary.game.part.PartInterface_Package is
 
-   package AnimationInterfaceCompositeInterface_Package renames org.allbinary.animation.AnimationInterfaceCompositeInterface_Package;
-   package PaintableInterface_Package renames org.allbinary.graphics.paint.PaintableInterface_Package;
+   package AnimationInterfaceCompositeInterface_Package renames Standard.org.allbinary.animation.AnimationInterfaceCompositeInterface_Package;
+   package PaintableInterface_Package renames Standard.org.allbinary.graphics.paint.PaintableInterface_Package;
 
    type PartInterface is interface and PaintableInterface and AnimationInterfaceCompositeInterface;
    type PartInterface_Access is access all PartInterface'Class;

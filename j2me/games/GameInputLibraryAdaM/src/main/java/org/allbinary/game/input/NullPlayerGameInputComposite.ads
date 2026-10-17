@@ -26,8 +26,8 @@ with org.allbinary.game.input.PlayerGameInputCompositeInterface_Package; use org
 
 package org.allbinary.game.input.NullPlayerGameInputComposite_Package is
 
-   package AllBinaryLayerManager_Package renames org.allbinary.layer.AllBinaryLayerManager_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
+   package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type NullPlayerGameInputComposite is tagged;
    type NullPlayerGameInputComposite_Access is access all NullPlayerGameInputComposite'Class;

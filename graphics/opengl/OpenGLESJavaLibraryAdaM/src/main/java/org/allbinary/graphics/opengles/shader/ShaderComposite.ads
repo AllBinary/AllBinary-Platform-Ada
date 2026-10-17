@@ -26,8 +26,8 @@ with org.allbinary.graphics.opengles.NullOpenGLProcessorFactory_Package; use org
 
 package org.allbinary.graphics.opengles.shader.ShaderComposite_Package is
 
-   package OpenGLProcessor_Package renames org.allbinary.graphics.opengles.OpenGLProcessor_Package;
-   package NullOpenGLProcessorFactory_Package renames org.allbinary.graphics.opengles.NullOpenGLProcessorFactory_Package;
+   package OpenGLProcessor_Package renames Standard.org.allbinary.graphics.opengles.OpenGLProcessor_Package;
+   package NullOpenGLProcessorFactory_Package renames Standard.org.allbinary.graphics.opengles.NullOpenGLProcessorFactory_Package;
 
    type ShaderComposite is tagged;
    type ShaderComposite_Access is access all ShaderComposite'Class;

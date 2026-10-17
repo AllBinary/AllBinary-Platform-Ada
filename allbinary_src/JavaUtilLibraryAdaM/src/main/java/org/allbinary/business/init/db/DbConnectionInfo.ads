@@ -27,9 +27,9 @@ with org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package; use
 
 package org.allbinary.business.init.db.DbConnectionInfo_Package is
 
-   package AbPathData_Package renames org.allbinary.logic.io.path.AbPathData_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
+   package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
 
    type DbConnectionInfo is tagged;
    type DbConnectionInfo_Access is access all DbConnectionInfo'Class;

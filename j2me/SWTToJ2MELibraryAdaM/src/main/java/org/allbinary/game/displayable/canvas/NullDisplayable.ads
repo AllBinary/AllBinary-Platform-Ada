@@ -15,8 +15,8 @@ with org.allbinary.canvas.GameStatisticsFactory_Package; use org.allbinary.canva
 
 package org.allbinary.game.displayable.canvas.NullDisplayable_Package is
 
-   package BaseGameStatistics_Package renames org.allbinary.canvas.BaseGameStatistics_Package;
-   package GameStatisticsFactory_Package renames org.allbinary.canvas.GameStatisticsFactory_Package;
+   package BaseGameStatistics_Package renames Standard.org.allbinary.canvas.BaseGameStatistics_Package;
+   package GameStatisticsFactory_Package renames Standard.org.allbinary.canvas.GameStatisticsFactory_Package;
 
    type NullDisplayable is tagged;
    type NullDisplayable_Access is access all NullDisplayable'Class;

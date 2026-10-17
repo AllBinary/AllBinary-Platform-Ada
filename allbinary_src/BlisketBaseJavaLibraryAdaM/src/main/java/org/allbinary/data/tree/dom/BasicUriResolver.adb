@@ -70,8 +70,12 @@ package body org.allbinary.data.tree.dom.BasicUriResolver_Package is
             end if;
             return StreamSource_Package.Create (CryptFileReader_Package.Create (TransformInfoTemplateData_Package.getInstance.UNCRYPTED_EXTENSION, TransformInfoTemplateData_Package.getInstance.ENCRYPTED_EXTENSION).getInputStream (abPath));
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Java_Throw (e);
+                end;
         end;
    end resolve;
 
@@ -85,8 +89,12 @@ package body org.allbinary.data.tree.dom.BasicUriResolver_Package is
             stringBuffer.append (This.uriResolverStrings.IMPORT_URL);
             return stringBuffer.toString;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             return To_Unbounded_String ("BasicUriResolver - Does not work without webapp path should be changed");
+                end;
         end;
    end toString;
 

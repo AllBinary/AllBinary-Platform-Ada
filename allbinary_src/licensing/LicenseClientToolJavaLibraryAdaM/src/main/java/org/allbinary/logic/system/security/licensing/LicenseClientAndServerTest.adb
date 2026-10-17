@@ -98,15 +98,23 @@ package body org.allbinary.logic.system.security.licensing.LicenseClientAndServe
                     This.logUtil.putF (RESULT & stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("test"));
                     stringBuffer.delete (0, stringBuffer.length);
                 exception
-                    when e : others =>
+                    when Java_Occurrence : others =>
+                        declare
+                            e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                        begin
                     list.add (serverName);
                     This.logUtil.put (To_Unbounded_String ("Test Error: ") & stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("test"), e);
+                        end;
                 end;
             end loop;
             This.logUtil.putF (To_Unbounded_String ("Total Servers Failed: ") & Java_Image (list.size) & To_Unbounded_String (" Failed Servers: ") & list.toString, This'Unchecked_Access, To_Unbounded_String ("test"));
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (To_Unbounded_String ("Test Error: ") & stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("test"), e);
+                end;
         end;
    end test;
 
@@ -118,9 +126,13 @@ package body org.allbinary.logic.system.security.licensing.LicenseClientAndServe
             licensingTest := LicenseClientAndServerTest_Package.Create (args);
             licensingTest.test;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             logUtil := LogUtil_Package.getInstance;
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, To_Unbounded_String ("main()"), To_Unbounded_String ("main()"), e);
+                end;
         end;
    end main;
 

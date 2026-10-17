@@ -40,21 +40,21 @@ with org.allbinary.data.tables.advertisement.campaign.internal.AdvertisementCamp
 
 package org.allbinary.data.tables.advertisement.campaign.internal.AdvertisementCampaignInternalEntity_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package AdvertisementCampaign_Package renames org.allbinary.business.advertisement.campaign.AdvertisementCampaign_Package;
-   package AdvertisementCampaignData_Package renames org.allbinary.business.advertisement.campaign.AdvertisementCampaignData_Package;
-   package AdvertisementCampaignInterface_Package renames org.allbinary.business.advertisement.campaign.AdvertisementCampaignInterface_Package;
-   package AdvertisementCampaigns_Package renames org.allbinary.business.advertisement.campaign.AdvertisementCampaigns_Package;
-   package AdvertisementCampaignsInterface_Package renames org.allbinary.business.advertisement.campaign.AdvertisementCampaignsInterface_Package;
-   package StoreFrontData_Package renames org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
-   package EntryData_Package renames org.allbinary.business.entry_Id.EntryData_Package;
-   package UserDbInitInfo_Package renames org.allbinary.business.init.db.UserDbInitInfo_Package;
-   package TimeData_Package renames org.allbinary.business.time.TimeData_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package AbSqlBean_Package renames org.allbinary.logic.communication.sql.AbSqlBean_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package AdvertisementCampaign_Package renames Standard.org.allbinary.business.advertisement.campaign.AdvertisementCampaign_Package;
+   package AdvertisementCampaignData_Package renames Standard.org.allbinary.business.advertisement.campaign.AdvertisementCampaignData_Package;
+   package AdvertisementCampaignInterface_Package renames Standard.org.allbinary.business.advertisement.campaign.AdvertisementCampaignInterface_Package;
+   package AdvertisementCampaigns_Package renames Standard.org.allbinary.business.advertisement.campaign.AdvertisementCampaigns_Package;
+   package AdvertisementCampaignsInterface_Package renames Standard.org.allbinary.business.advertisement.campaign.AdvertisementCampaignsInterface_Package;
+   package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+   package EntryData_Package renames Standard.org.allbinary.business.entry_Id.EntryData_Package;
+   package UserDbInitInfo_Package renames Standard.org.allbinary.business.init.db.UserDbInitInfo_Package;
+   package TimeData_Package renames Standard.org.allbinary.business.time.TimeData_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package AbSqlBean_Package renames Standard.org.allbinary.logic.communication.sql.AbSqlBean_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
 
    type AdvertisementCampaignInternalEntity is tagged;
    type AdvertisementCampaignInternalEntity_Access is access all AdvertisementCampaignInternalEntity'Class;

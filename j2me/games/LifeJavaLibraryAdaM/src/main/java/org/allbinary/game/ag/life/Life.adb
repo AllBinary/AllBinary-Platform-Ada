@@ -29,8 +29,12 @@ package body org.allbinary.game.ag.life.Life_Package is
         begin
             return Life_Package.Create (Short_Integer (0), Short_Integer (0));
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Java_Throw (Java_New_Exception ("RuntimeException"));
+                end;
         end;
    end createLife;
 

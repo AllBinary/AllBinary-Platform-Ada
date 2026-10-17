@@ -38,18 +38,18 @@ with org.allbinary.media.audio.Sound_Package; use org.allbinary.media.audio.Soun
 
 package org.allbinary.animation.image.sprite.ImageCaptionIndexedAnimationFactory_Package is
 
-   package Animation_Package renames org.allbinary.animation.Animation_Package;
-   package AnimationBehaviorFactory_Package renames org.allbinary.animation.AnimationBehaviorFactory_Package;
-   package AnimationInterfaceFactoryInterface_Package renames org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
-   package IndexedAnimation_Package renames org.allbinary.animation.IndexedAnimation_Package;
-   package CaptionIndexedAnimation_Package renames org.allbinary.animation.caption.CaptionIndexedAnimation_Package;
-   package ImageAnimation_Package renames org.allbinary.animation.image.ImageAnimation_Package;
-   package BasicColorUtil_Package renames org.allbinary.graphics.color.BasicColorUtil_Package;
-   package AnimationFactoryImageScaleUtil_Package renames org.allbinary.image.AnimationFactoryImageScaleUtil_Package;
-   package AnimationFactorySpriteScaleUtil_Package renames org.allbinary.image.sprite.AnimationFactorySpriteScaleUtil_Package;
-   package ForcedLogUtil_Package renames org.allbinary.logic.communication.log.ForcedLogUtil_Package;
-   package ScaleProperties_Package renames org.allbinary.media.ScaleProperties_Package;
-   package Sound_Package renames org.allbinary.media.audio.Sound_Package;
+   package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
+   package AnimationBehaviorFactory_Package renames Standard.org.allbinary.animation.AnimationBehaviorFactory_Package;
+   package AnimationInterfaceFactoryInterface_Package renames Standard.org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
+   package IndexedAnimation_Package renames Standard.org.allbinary.animation.IndexedAnimation_Package;
+   package CaptionIndexedAnimation_Package renames Standard.org.allbinary.animation.caption.CaptionIndexedAnimation_Package;
+   package ImageAnimation_Package renames Standard.org.allbinary.animation.image.ImageAnimation_Package;
+   package BasicColorUtil_Package renames Standard.org.allbinary.graphics.color.BasicColorUtil_Package;
+   package AnimationFactoryImageScaleUtil_Package renames Standard.org.allbinary.image.AnimationFactoryImageScaleUtil_Package;
+   package AnimationFactorySpriteScaleUtil_Package renames Standard.org.allbinary.image.sprite.AnimationFactorySpriteScaleUtil_Package;
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+   package ScaleProperties_Package renames Standard.org.allbinary.media.ScaleProperties_Package;
+   package Sound_Package renames Standard.org.allbinary.media.audio.Sound_Package;
 
    type ImageCaptionIndexedAnimationFactory is tagged;
    type ImageCaptionIndexedAnimationFactory_Access is access all ImageCaptionIndexedAnimationFactory'Class;

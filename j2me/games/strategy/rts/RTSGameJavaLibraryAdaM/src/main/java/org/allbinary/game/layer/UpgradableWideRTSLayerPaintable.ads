@@ -28,9 +28,9 @@ with org.allbinary.game.layer.RTSLayerCompositePaintable_Package; use org.allbin
 
 package org.allbinary.game.layer.UpgradableWideRTSLayerPaintable_Package is
 
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type UpgradableWideRTSLayerPaintable is tagged;
    type UpgradableWideRTSLayerPaintable_Access is access all UpgradableWideRTSLayerPaintable'Class;

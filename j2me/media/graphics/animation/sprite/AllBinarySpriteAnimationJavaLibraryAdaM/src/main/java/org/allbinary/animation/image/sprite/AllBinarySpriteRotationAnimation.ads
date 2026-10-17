@@ -31,11 +31,11 @@ with org.allbinary.animation.image.sprite.HackRotationSpriteIndexedAnimation_Pac
 
 package org.allbinary.animation.image.sprite.AllBinarySpriteRotationAnimation_Package is
 
-   package AnimationBehavior_Package renames org.allbinary.animation.AnimationBehavior_Package;
-   package Direction_Package renames org.allbinary.direction.Direction_Package;
-   package Angle_Package renames org.allbinary.math.Angle_Package;
-   package AngleFactory_Package renames org.allbinary.math.AngleFactory_Package;
-   package AngleInfo_Package renames org.allbinary.math.AngleInfo_Package;
+   package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
+   package Direction_Package renames Standard.org.allbinary.direction.Direction_Package;
+   package Angle_Package renames Standard.org.allbinary.math.Angle_Package;
+   package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;
+   package AngleInfo_Package renames Standard.org.allbinary.math.AngleInfo_Package;
 
    type AllBinarySpriteRotationAnimation is tagged;
    type AllBinarySpriteRotationAnimation_Access is access all AllBinarySpriteRotationAnimation'Class;

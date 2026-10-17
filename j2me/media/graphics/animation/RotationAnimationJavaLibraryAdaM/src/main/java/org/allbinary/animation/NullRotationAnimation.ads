@@ -15,9 +15,9 @@ with org.allbinary.animation.RotationAnimation_Package; use org.allbinary.animat
 
 package org.allbinary.animation.NullRotationAnimation_Package is
 
-   package AngleFactory_Package renames org.allbinary.math.AngleFactory_Package;
-   package AngleInfo_Package renames org.allbinary.math.AngleInfo_Package;
-   package CircularIndexUtil_Package renames org.allbinary.util.CircularIndexUtil_Package;
+   package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;
+   package AngleInfo_Package renames Standard.org.allbinary.math.AngleInfo_Package;
+   package CircularIndexUtil_Package renames Standard.org.allbinary.util.CircularIndexUtil_Package;
 
    type NullRotationAnimation is tagged;
    type NullRotationAnimation_Access is access all NullRotationAnimation'Class;

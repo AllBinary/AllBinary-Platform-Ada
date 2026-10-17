@@ -25,7 +25,7 @@ with org.allbinary.thread.RunnableInterface_Package; use org.allbinary.thread.Ru
 
 package org.allbinary.input.automation.module.InputAutomationModuleFactoryInterface_Package is
 
-   package RunnableInterface_Package renames org.allbinary.thread.RunnableInterface_Package;
+   package RunnableInterface_Package renames Standard.org.allbinary.thread.RunnableInterface_Package;
 
    type InputAutomationModuleFactoryInterface is tagged;
    type InputAutomationModuleFactoryInterface_Access is access all InputAutomationModuleFactoryInterface'Class;

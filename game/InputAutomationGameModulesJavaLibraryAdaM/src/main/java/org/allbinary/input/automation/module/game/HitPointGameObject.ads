@@ -28,8 +28,8 @@ with org.allbinary.input.automation.module.game.HitPointGameObjectInterface_Pack
 
 package org.allbinary.input.automation.module.game.HitPointGameObject_Package is
 
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
 
    type HitPointGameObject is tagged;
    type HitPointGameObject_Access is access all HitPointGameObject'Class;

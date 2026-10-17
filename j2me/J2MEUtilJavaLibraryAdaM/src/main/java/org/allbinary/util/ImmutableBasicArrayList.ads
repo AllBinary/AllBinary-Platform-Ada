@@ -25,7 +25,7 @@ with org.allbinary.util.BasicArrayListS_Package; use org.allbinary.util.BasicArr
 
 package org.allbinary.util.ImmutableBasicArrayList_Package is
 
-   package ForcedLogUtil_Package renames org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
 
    type ImmutableBasicArrayList is tagged;
    type ImmutableBasicArrayList_Access is access all ImmutableBasicArrayList'Class;

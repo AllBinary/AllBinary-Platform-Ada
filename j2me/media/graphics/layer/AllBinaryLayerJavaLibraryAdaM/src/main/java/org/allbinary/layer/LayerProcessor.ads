@@ -25,7 +25,7 @@ with org.allbinary.layer.LayerProcessorInterface_Package; use org.allbinary.laye
 
 package org.allbinary.layer.LayerProcessor_Package is
 
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type LayerProcessor is tagged;
    type LayerProcessor_Access is access all LayerProcessor'Class;

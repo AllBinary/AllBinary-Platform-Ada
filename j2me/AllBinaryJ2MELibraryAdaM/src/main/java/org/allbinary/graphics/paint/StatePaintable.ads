@@ -25,7 +25,7 @@ with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.
 
 package org.allbinary.graphics.paint.StatePaintable_Package is
 
-   package StateControlledInterface_Package renames org.allbinary.graphics.displayable.StateControlledInterface_Package;
+   package StateControlledInterface_Package renames Standard.org.allbinary.graphics.displayable.StateControlledInterface_Package;
 
    type StatePaintable is tagged;
    type StatePaintable_Access is access all StatePaintable'Class;

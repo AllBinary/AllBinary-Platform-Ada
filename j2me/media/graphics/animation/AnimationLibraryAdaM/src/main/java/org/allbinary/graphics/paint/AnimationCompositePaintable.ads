@@ -26,7 +26,7 @@ with org.allbinary.graphics.paint.InitUpdatePaintable_Package; use org.allbinary
 
 package org.allbinary.graphics.paint.AnimationCompositePaintable_Package is
 
-   package Animation_Package renames org.allbinary.animation.Animation_Package;
+   package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
 
    type AnimationCompositePaintable is tagged;
    type AnimationCompositePaintable_Access is access all AnimationCompositePaintable'Class;

@@ -25,8 +25,8 @@ with org.allbinary.thread.RunnableInterface_Package; use org.allbinary.thread.Ru
 
 package org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package is
 
-   package BasicEventHandlerInterface_Package renames org.allbinary.logic.util.event.handler.BasicEventHandlerInterface_Package;
-   package RunnableInterface_Package renames org.allbinary.thread.RunnableInterface_Package;
+   package BasicEventHandlerInterface_Package renames Standard.org.allbinary.logic.util.event.handler.BasicEventHandlerInterface_Package;
+   package RunnableInterface_Package renames Standard.org.allbinary.thread.RunnableInterface_Package;
 
    type CaptureWorkerInterface is interface and RunnableInterface and BasicEventHandlerInterface;
    type CaptureWorkerInterface_Access is access all CaptureWorkerInterface'Class;

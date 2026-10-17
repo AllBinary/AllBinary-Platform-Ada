@@ -52,10 +52,14 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
                 This.logUtil.putF (This.commonStrings.SUCCESS, This'Unchecked_Access, INSERT);
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, INSERT, e);
             end if;
+                end;
         end;
    end insert;
 
@@ -164,10 +168,14 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
                 This.logUtil.putF (This.commonStrings.SUCCESS, This'Unchecked_Access, To_Unbounded_String ("deleteWhere"));
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("deleteWhere"), e);
             end if;
+                end;
         end;
    end deleteWhere;
 
@@ -216,11 +224,15 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
                 return GLOBALS2.LOGINFAILED;
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("login"), e);
             end if;
             return To_Unbounded_String ("Error");
+                end;
         end;
    end login;
 

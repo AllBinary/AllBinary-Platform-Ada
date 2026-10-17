@@ -29,11 +29,11 @@ with views.business.context.modules.storefront.HttpStoreComponentView_Package; u
 
 package views.admin.storefront.StoreFrontComponent_Package is
 
-   package StoreFront_Package renames org.allbinary.business.context.modules.storefront.StoreFront_Package;
-   package StoreFrontInterface_Package renames org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package TransformInfoInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-   package HttpStoreComponentView_Package renames views.business.context.modules.storefront.HttpStoreComponentView_Package;
+   package StoreFront_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFront_Package;
+   package StoreFrontInterface_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package HttpStoreComponentView_Package renames Standard.views.business.context.modules.storefront.HttpStoreComponentView_Package;
 
    type StoreFrontComponent is tagged;
    type StoreFrontComponent_Access is access all StoreFrontComponent'Class;

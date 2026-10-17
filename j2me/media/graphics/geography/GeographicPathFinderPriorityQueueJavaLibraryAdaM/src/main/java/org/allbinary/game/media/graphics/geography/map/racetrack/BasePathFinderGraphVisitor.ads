@@ -28,11 +28,11 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 
 package org.allbinary.game.media.graphics.geography.map.racetrack.BasePathFinderGraphVisitor_Package is
 
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package BasicGeographicMap_Package renames org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
-   package PathFinderGraphVisitorBase_Package renames org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorBase_Package;
-   package PathFindingNode_Package renames org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package BasicGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
+   package PathFinderGraphVisitorBase_Package renames Standard.org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorBase_Package;
+   package PathFindingNode_Package renames Standard.org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type BasePathFinderGraphVisitor is tagged;
    type BasePathFinderGraphVisitor_Access is access all BasePathFinderGraphVisitor'Class;

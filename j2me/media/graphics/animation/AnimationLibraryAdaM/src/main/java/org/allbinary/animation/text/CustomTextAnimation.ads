@@ -30,9 +30,9 @@ with org.allbinary.animation.text.TextInterface_Package; use org.allbinary.anima
 
 package org.allbinary.animation.text.CustomTextAnimation_Package is
 
-   package AnimationBehavior_Package renames org.allbinary.animation.AnimationBehavior_Package;
-   package FontDebugFactory_Package renames org.allbinary.graphics.font.FontDebugFactory_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
+   package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
+   package FontDebugFactory_Package renames Standard.org.allbinary.graphics.font.FontDebugFactory_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type CustomTextAnimation is tagged;
    type CustomTextAnimation_Access is access all CustomTextAnimation'Class;

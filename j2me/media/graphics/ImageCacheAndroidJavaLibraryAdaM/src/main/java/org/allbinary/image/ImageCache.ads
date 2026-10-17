@@ -35,14 +35,14 @@ with org.allbinary.image.ImageCacheBase_Package; use org.allbinary.image.ImageCa
 
 package org.allbinary.image.ImageCache_Package is
 
-   package TsUtil_Package renames org.allbinary.TsUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package ResourceUtil_Package renames org.allbinary.data.resource.ResourceUtil_Package;
-   package GDResources_Package renames org.allbinary.game.gd.resource.GDResources_Package;
-   package ABSystemWrapper_Package renames org.allbinary.logic.ABSystemWrapper_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package Memory_Package renames org.allbinary.system.Memory_Package;
+   package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package ResourceUtil_Package renames Standard.org.allbinary.data.resource.ResourceUtil_Package;
+   package GDResources_Package renames Standard.org.allbinary.game.gd.resource.GDResources_Package;
+   package ABSystemWrapper_Package renames Standard.org.allbinary.logic.ABSystemWrapper_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package Memory_Package renames Standard.org.allbinary.system.Memory_Package;
 
    type ImageCache is tagged;
    type ImageCache_Access is access all ImageCache'Class;

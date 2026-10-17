@@ -32,15 +32,15 @@ with org.allbinary.logic.util.visitor.Visitor_Package; use org.allbinary.logic.u
 
 package org.allbinary.game.input.SelectAdvancedRTSLayerVisitor_Package is
 
-   package AssignWaypointsUtil_Package renames org.allbinary.game.input.form.AssignWaypointsUtil_Package;
-   package AdvancedRTSGameLayer_Package renames org.allbinary.game.layer.AdvancedRTSGameLayer_Package;
-   package RTSLayer_Package renames org.allbinary.game.layer.RTSLayer_Package;
-   package BuildingLayer_Package renames org.allbinary.game.layer.building.BuildingLayer_Package;
-   package CollidableDestroyableDamageableLayer_Package renames org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
-   package UnitLayer_Package renames org.allbinary.game.layer.unit.UnitLayer_Package;
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package Visitor_Package renames org.allbinary.logic.util.visitor.Visitor_Package;
+   package AssignWaypointsUtil_Package renames Standard.org.allbinary.game.input.form.AssignWaypointsUtil_Package;
+   package AdvancedRTSGameLayer_Package renames Standard.org.allbinary.game.layer.AdvancedRTSGameLayer_Package;
+   package RTSLayer_Package renames Standard.org.allbinary.game.layer.RTSLayer_Package;
+   package BuildingLayer_Package renames Standard.org.allbinary.game.layer.building.BuildingLayer_Package;
+   package CollidableDestroyableDamageableLayer_Package renames Standard.org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
+   package UnitLayer_Package renames Standard.org.allbinary.game.layer.unit.UnitLayer_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package Visitor_Package renames Standard.org.allbinary.logic.util.visitor.Visitor_Package;
 
    type SelectAdvancedRTSLayerVisitor is tagged;
    type SelectAdvancedRTSLayerVisitor_Access is access all SelectAdvancedRTSLayerVisitor'Class;

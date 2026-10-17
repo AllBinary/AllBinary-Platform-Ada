@@ -44,26 +44,26 @@ with views.business.context.modules.storefront.HttpStoreComponentView_Package; u
 
 package views.admin.customizers.CustomizersView_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package TransformInfoEntityBuilder_Package renames org.allbinary.data.tables.transform.info.TransformInfoEntityBuilder_Package;
-   package DomNodeInterface_Package renames org.allbinary.data.tree.dom.DomNodeInterface_Package;
-   package ModDomHelper_Package renames org.allbinary.data.tree.dom.ModDomHelper_Package;
-   package GLOBALS2_Package renames org.allbinary.globals.GLOBALS2_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringComparator_Package renames org.allbinary.logic.control.sort.StringComparator_Package;
-   package CustomizerTransformInfoData_Package renames org.allbinary.logic.visual.transform.info.CustomizerTransformInfoData_Package;
-   package TransformInfoInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-   package TransformTemplateCustomizerData_Package renames org.allbinary.logic.visual.transform.template.customizer.TransformTemplateCustomizerData_Package;
-   package TransformTemplateCustomizersData_Package renames org.allbinary.logic.visual.transform.template.customizer.TransformTemplateCustomizersData_Package;
-   package BodyData_Package renames org.allbinary.logic.visual.transform.template.customizer.bodies.BodyData_Package;
-   package TitleData_Package renames org.allbinary.logic.visual.transform.template.customizer.widgets.title.TitleData_Package;
-   package TransformTemplateCustomizerUtil_Package renames org.allbinary.logic.visual.transform.template.util.TransformTemplateCustomizerUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
-   package HttpStoreComponentView_Package renames views.business.context.modules.storefront.HttpStoreComponentView_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package TransformInfoEntityBuilder_Package renames Standard.org.allbinary.data.tables.transform.info.TransformInfoEntityBuilder_Package;
+   package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
+   package ModDomHelper_Package renames Standard.org.allbinary.data.tree.dom.ModDomHelper_Package;
+   package GLOBALS2_Package renames Standard.org.allbinary.globals.GLOBALS2_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringComparator_Package renames Standard.org.allbinary.logic.control.sort.StringComparator_Package;
+   package CustomizerTransformInfoData_Package renames Standard.org.allbinary.logic.visual.transform.info.CustomizerTransformInfoData_Package;
+   package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package TransformTemplateCustomizerData_Package renames Standard.org.allbinary.logic.visual.transform.template.customizer.TransformTemplateCustomizerData_Package;
+   package TransformTemplateCustomizersData_Package renames Standard.org.allbinary.logic.visual.transform.template.customizer.TransformTemplateCustomizersData_Package;
+   package BodyData_Package renames Standard.org.allbinary.logic.visual.transform.template.customizer.bodies.BodyData_Package;
+   package TitleData_Package renames Standard.org.allbinary.logic.visual.transform.template.customizer.widgets.title.TitleData_Package;
+   package TransformTemplateCustomizerUtil_Package renames Standard.org.allbinary.logic.visual.transform.template.util.TransformTemplateCustomizerUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
+   package HttpStoreComponentView_Package renames Standard.views.business.context.modules.storefront.HttpStoreComponentView_Package;
 
    type CustomizersView is tagged;
    type CustomizersView_Access is access all CustomizersView'Class;

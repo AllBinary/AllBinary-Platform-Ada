@@ -30,11 +30,11 @@ with org.allbinary.content.NotificationBuilder_Package; use org.allbinary.conten
 
 package org.allbinary.content.NotificationBuilderAPI23_Package is
 
-   package Notification_Package renames android.app.Notification_Package;
-   package Builder_Package renames android.app.Notification.Builder_Package;
-   package PendingIntent_Package renames android.app.PendingIntent_Package;
-   package Context_Package renames android.content.Context_Package;
-   package Parcelable_Package renames android.os.Parcelable_Package;
+   package Notification_Package renames Standard.android.app.Notification_Package;
+   package Builder_Package renames Standard.android.app.Notification.Builder_Package;
+   package PendingIntent_Package renames Standard.android.app.PendingIntent_Package;
+   package Context_Package renames Standard.android.content.Context_Package;
+   package Parcelable_Package renames Standard.android.os.Parcelable_Package;
 
    type NotificationBuilderAPI23 is tagged;
    type NotificationBuilderAPI23_Access is access all NotificationBuilderAPI23'Class;

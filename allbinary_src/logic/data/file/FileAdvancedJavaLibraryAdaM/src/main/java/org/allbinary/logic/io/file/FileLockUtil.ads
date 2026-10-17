@@ -31,12 +31,12 @@ with org.allbinary.logic.io.StreamUtil_Package; use org.allbinary.logic.io.Strea
 
 package org.allbinary.logic.io.file.FileLockUtil_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package AbFileOutputStream_Package renames org.allbinary.logic.io.AbFileOutputStream_Package;
-   package StreamUtil_Package renames org.allbinary.logic.io.StreamUtil_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package AbFileOutputStream_Package renames Standard.org.allbinary.logic.io.AbFileOutputStream_Package;
+   package StreamUtil_Package renames Standard.org.allbinary.logic.io.StreamUtil_Package;
 
    type FileLockUtil is tagged;
    type FileLockUtil_Access is access all FileLockUtil'Class;

@@ -29,9 +29,9 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.logic.system.security.crypt.jcehelper.KeySpecFactory_Package is
 
-   package TsUtil_Package renames org.allbinary.TsUtil_Package;
-   package PreLogUtil_Package renames org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type KeySpecFactory is tagged;
    type KeySpecFactory_Access is access all KeySpecFactory'Class;

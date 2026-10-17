@@ -27,10 +27,10 @@ with jsinterop.annotations.JsConstructor_Package; use jsinterop.annotations.JsCo
 
 package org.allbinary.graphics.color.BasicColorArrayIndexer_Package is
 
-   package JsType_Package renames jsinterop.annotations.JsType_Package;
-   package CircularIndexUtil_Package renames org.allbinary.util.CircularIndexUtil_Package;
-   package JsMethod_Package renames jsinterop.annotations.JsMethod_Package;
-   package JsConstructor_Package renames jsinterop.annotations.JsConstructor_Package;
+   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
+   package CircularIndexUtil_Package renames Standard.org.allbinary.util.CircularIndexUtil_Package;
+   package JsMethod_Package renames Standard.jsinterop.annotations.JsMethod_Package;
+   package JsConstructor_Package renames Standard.jsinterop.annotations.JsConstructor_Package;
 
    type BasicColorArrayIndexer is tagged;
    type BasicColorArrayIndexer_Access is access all BasicColorArrayIndexer'Class;

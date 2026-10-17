@@ -24,8 +24,8 @@ with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allb
 
 package org.allbinary.game.layer.waypoint.event.WaypointEventListenerInterface_Package is
 
-   package RTSLayerEvent_Package renames org.allbinary.game.layer.RTSLayerEvent_Package;
-   package EventListenerInterface_Package renames org.allbinary.logic.util.event.EventListenerInterface_Package;
+   package RTSLayerEvent_Package renames Standard.org.allbinary.game.layer.RTSLayerEvent_Package;
+   package EventListenerInterface_Package renames Standard.org.allbinary.logic.util.event.EventListenerInterface_Package;
 
    type WaypointEventListenerInterface is interface and EventListenerInterface;
    type WaypointEventListenerInterface_Access is access all WaypointEventListenerInterface'Class;

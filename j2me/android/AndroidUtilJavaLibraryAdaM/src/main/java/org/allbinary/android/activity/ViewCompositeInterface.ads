@@ -24,7 +24,7 @@ with android.view.View_Package; use android.view.View_Package;
 
 package org.allbinary.android.activity.ViewCompositeInterface_Package is
 
-   package View_Package renames android.view.View_Package;
+   package View_Package renames Standard.android.view.View_Package;
 
    type ViewCompositeInterface is interface;
    type ViewCompositeInterface_Access is access all ViewCompositeInterface'Class;

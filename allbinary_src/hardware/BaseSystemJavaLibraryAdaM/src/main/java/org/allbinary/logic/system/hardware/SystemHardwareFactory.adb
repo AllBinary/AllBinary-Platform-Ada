@@ -50,8 +50,12 @@ package body org.allbinary.logic.system.hardware.SystemHardwareFactory_Package i
             end if;
             This.logUtil.putF (To_Unbounded_String ("Found Hardware"), This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR, e);
+                end;
         end;
         return This.hardwareInterface;
    end getInstance;

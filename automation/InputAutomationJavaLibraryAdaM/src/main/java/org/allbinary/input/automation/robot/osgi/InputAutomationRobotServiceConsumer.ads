@@ -26,9 +26,9 @@ with org.allbinary.osgi.service.InputAutomationServiceConsumer_Package; use org.
 
 package org.allbinary.input.automation.robot.osgi.InputAutomationRobotServiceConsumer_Package is
 
-   package BundleContext_Package renames org.osgi.framework.BundleContext_Package;
-   package InputAutomationRobotServiceInterface_Package renames bundle.input.automation.robot.InputAutomationRobotServiceInterface_Package;
-   package InputAutomationServiceConsumer_Package renames org.allbinary.osgi.service.InputAutomationServiceConsumer_Package;
+   package BundleContext_Package renames Standard.org.osgi.framework.BundleContext_Package;
+   package InputAutomationRobotServiceInterface_Package renames Standard.bundle.input.automation.robot.InputAutomationRobotServiceInterface_Package;
+   package InputAutomationServiceConsumer_Package renames Standard.org.allbinary.osgi.service.InputAutomationServiceConsumer_Package;
 
    type InputAutomationRobotServiceConsumer is tagged;
    type InputAutomationRobotServiceConsumer_Access is access all InputAutomationRobotServiceConsumer'Class;

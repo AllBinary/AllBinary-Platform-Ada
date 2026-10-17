@@ -29,10 +29,10 @@ with org.allbinary.logic.math.PrimitiveLongSingleton_Package; use org.allbinary.
 
 package org.allbinary.game.ag.layer.hud.basic.time.TimeHudWidget_Package is
 
-   package BasicHud_Package renames org.allbinary.game.graphics.hud.BasicHud_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package MyFontProcessor_Package renames org.allbinary.graphics.font.MyFontProcessor_Package;
-   package PrimitiveLongSingleton_Package renames org.allbinary.logic.math.PrimitiveLongSingleton_Package;
+   package BasicHud_Package renames Standard.org.allbinary.game.graphics.hud.BasicHud_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package MyFontProcessor_Package renames Standard.org.allbinary.graphics.font.MyFontProcessor_Package;
+   package PrimitiveLongSingleton_Package renames Standard.org.allbinary.logic.math.PrimitiveLongSingleton_Package;
 
    type TimeHudWidget is tagged;
    type TimeHudWidget_Access is access all TimeHudWidget'Class;

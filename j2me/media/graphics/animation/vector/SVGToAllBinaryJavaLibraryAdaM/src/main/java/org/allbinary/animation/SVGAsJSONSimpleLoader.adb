@@ -89,8 +89,12 @@ package body org.allbinary.animation.SVGAsJSONSimpleLoader_Package is
             end loop;
             return This.toPoints (pointVector);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Java_Throw (Java_New_Exception ("IllegalArgumentException", This.ERROR_PARSE_SVG_JSON, e));
+                end;
         end;
    end load;
 
@@ -204,8 +208,12 @@ package body org.allbinary.animation.SVGAsJSONSimpleLoader_Package is
                 return This.toInt (value, key);
             end if;
         exception
-            when e : others =>
-            Ada.Text_IO.Put_Line (Ada.Exceptions.Exception_Information (e));
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
+            Java_Print_Stack_Trace (e);
+                end;
         end;
         return defaultValue;
    end readInt;

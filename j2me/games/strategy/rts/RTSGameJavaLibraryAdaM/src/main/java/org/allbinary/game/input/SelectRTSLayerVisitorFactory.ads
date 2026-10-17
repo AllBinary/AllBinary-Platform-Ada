@@ -25,7 +25,7 @@ with org.allbinary.game.input.SelectRTSLayerVisitorFactoryInterface_Package; use
 
 package org.allbinary.game.input.SelectRTSLayerVisitorFactory_Package is
 
-   package Visitor_Package renames org.allbinary.logic.util.visitor.Visitor_Package;
+   package Visitor_Package renames Standard.org.allbinary.logic.util.visitor.Visitor_Package;
 
    type SelectRTSLayerVisitorFactory is tagged;
    type SelectRTSLayerVisitorFactory_Access is access all SelectRTSLayerVisitorFactory'Class;

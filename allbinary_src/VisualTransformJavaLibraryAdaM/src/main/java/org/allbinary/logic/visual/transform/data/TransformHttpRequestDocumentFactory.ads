@@ -25,7 +25,7 @@ with org.allbinary.logic.communication.http.request.session.WeblisketSession_Pac
 
 package org.allbinary.logic.visual.transform.data.TransformHttpRequestDocumentFactory_Package is
 
-   package WeblisketSession_Package renames org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
+   package WeblisketSession_Package renames Standard.org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
 
    type TransformHttpRequestDocumentFactory is tagged;
    type TransformHttpRequestDocumentFactory_Access is access all TransformHttpRequestDocumentFactory'Class;

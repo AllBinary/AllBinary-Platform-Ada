@@ -68,8 +68,12 @@ package body org.allbinary.business.backup.BlisketBackupFactory_Package is
             fileBasicArrayList := This.getFileBasicArrayList (backupPath);
             This.backup (fileBasicArrayList, Java_Image (path.toFileSystemString) & To_Unbounded_String ("backup.zip"));
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("backup()"), e);
+                end;
         end;
    end backup;
 
@@ -115,8 +119,12 @@ package body org.allbinary.business.backup.BlisketBackupFactory_Package is
             end loop;
             This.backup (fileBasicArrayList, Java_Image (path.toFileSystemString) & To_Unbounded_String ("backupViews.zip"));
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("backupViews()"), e);
+                end;
         end;
    end backupViews;
 
@@ -165,8 +173,12 @@ package body org.allbinary.business.backup.BlisketBackupFactory_Package is
             end loop;
             This.backup (fileBasicArrayList, Java_Image (path.toFileSystemString) & To_Unbounded_String ("backupResources.zip"));
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("backupResources()"), e);
+                end;
         end;
    end backupResources;
 
@@ -203,8 +215,12 @@ package body org.allbinary.business.backup.BlisketBackupFactory_Package is
             end loop;
             This.backup (fileBasicArrayList, Java_Image (path.toFileSystemString) & To_Unbounded_String ("backupJsps.zip"));
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("backupJsps()"), e);
+                end;
         end;
    end backupJsps;
 
@@ -222,8 +238,12 @@ package body org.allbinary.business.backup.BlisketBackupFactory_Package is
             ZipFileUtil_Package.getInstance.create (zipFile, fileBasicArrayList);
             This.logUtil.putF (To_Unbounded_String ("Created Backup Zip File"), This'Unchecked_Access, To_Unbounded_String ("backup()"));
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("backup()"), e);
+                end;
         end;
    end backup;
 

@@ -26,8 +26,8 @@ with org.allbinary.business.user.commerce.shipping.modules.ShippingInterface_Pac
 
 package org.allbinary.business.user.commerce.shipping.modules.FedExShippingModule_Package is
 
-   package OrderInterface_Package renames org.allbinary.business.user.commerce.inventory.order.OrderInterface_Package;
-   package Money_Package renames org.allbinary.business.user.commerce.money.Money_Package;
+   package OrderInterface_Package renames Standard.org.allbinary.business.user.commerce.inventory.order.OrderInterface_Package;
+   package Money_Package renames Standard.org.allbinary.business.user.commerce.money.Money_Package;
 
    type FedExShippingModule is tagged;
    type FedExShippingModule_Access is access all FedExShippingModule'Class;

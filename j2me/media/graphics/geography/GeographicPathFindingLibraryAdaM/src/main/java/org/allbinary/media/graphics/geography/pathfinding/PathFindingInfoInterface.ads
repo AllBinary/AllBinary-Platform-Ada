@@ -24,7 +24,7 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 
 package org.allbinary.media.graphics.geography.pathfinding.PathFindingInfoInterface_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type PathFindingInfoInterface is interface;
    type PathFindingInfoInterface_Access is access all PathFindingInfoInterface'Class;

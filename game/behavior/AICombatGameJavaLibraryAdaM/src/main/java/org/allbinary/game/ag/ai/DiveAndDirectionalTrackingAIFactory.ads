@@ -31,14 +31,14 @@ with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_
 
 package org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAIFactory_Package is
 
-   package ArtificialIntelligenceInterface_Package renames org.allbinary.ai.ArtificialIntelligenceInterface_Package;
-   package BasicRandomAIFactory_Package renames org.allbinary.game.ag.ai.tactical.BasicRandomAIFactory_Package;
-   package ArtificialIntelligenceInterfaceFactoryInterface_Package renames org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterface_Package;
-   package BasicAI_Package renames org.allbinary.game.ai.BasicAI_Package;
-   package GameInput_Package renames org.allbinary.game.input.GameInput_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package Visitor_Package renames org.allbinary.logic.util.visitor.Visitor_Package;
-   package ABHashtable_Package renames org.allbinary.util.ABHashtable_Package;
+   package ArtificialIntelligenceInterface_Package renames Standard.org.allbinary.ai.ArtificialIntelligenceInterface_Package;
+   package BasicRandomAIFactory_Package renames Standard.org.allbinary.game.ag.ai.tactical.BasicRandomAIFactory_Package;
+   package ArtificialIntelligenceInterfaceFactoryInterface_Package renames Standard.org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterface_Package;
+   package BasicAI_Package renames Standard.org.allbinary.game.ai.BasicAI_Package;
+   package GameInput_Package renames Standard.org.allbinary.game.input.GameInput_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package Visitor_Package renames Standard.org.allbinary.logic.util.visitor.Visitor_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
    type DiveAndDirectionalTrackingAIFactory is tagged;
    type DiveAndDirectionalTrackingAIFactory_Access is access all DiveAndDirectionalTrackingAIFactory'Class;

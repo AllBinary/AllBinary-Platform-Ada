@@ -42,12 +42,16 @@ package body org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntityF
         begin
             return AffiliateSalesEntityInterface_Access (AffiliateSalesEntity_Package.Create);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.ENTITYFACTORYERROR) then
                 commonStrings := CommonStrings_Package.getInstance;
                 logUtil.put (commonStrings.EXCEPTION_Id, To_Unbounded_String ("AffiliateEntityFactory"), commonStrings.GET_INSTANCE, e);
             end if;
             return null;
+                end;
         end;
    end getInstance;
 

@@ -25,8 +25,8 @@ with org.allbinary.logic.string_Id.regex.replace.Replace_Package; use org.allbin
 
 package org.allbinary.data.tree.dom.document.DocumentToNode_Package is
 
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package Replace_Package renames org.allbinary.logic.string_Id.regex.replace.Replace_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package Replace_Package renames Standard.org.allbinary.logic.string_Id.regex.replace.Replace_Package;
 
    type DocumentToNode is tagged;
    type DocumentToNode_Access is access all DocumentToNode'Class;

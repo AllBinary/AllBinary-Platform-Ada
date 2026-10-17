@@ -32,12 +32,12 @@ with org.allbinary.logic.java.bool.BooleanFactory_Package; use org.allbinary.log
 
 package org.allbinary.logic.communication.http.request.session.BasicWeblisketSession_Package is
 
-   package StoreFrontData_Package renames org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
-   package UserData_Package renames org.allbinary.business.user.UserData_Package;
-   package PaymentGatewayData_Package renames org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package;
-   package BasicUserRole_Package renames org.allbinary.business.user.role.BasicUserRole_Package;
-   package BasicUserRoleData_Package renames org.allbinary.business.user.role.BasicUserRoleData_Package;
-   package BooleanFactory_Package renames org.allbinary.logic.java.bool.BooleanFactory_Package;
+   package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+   package UserData_Package renames Standard.org.allbinary.business.user.UserData_Package;
+   package PaymentGatewayData_Package renames Standard.org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package;
+   package BasicUserRole_Package renames Standard.org.allbinary.business.user.role.BasicUserRole_Package;
+   package BasicUserRoleData_Package renames Standard.org.allbinary.business.user.role.BasicUserRoleData_Package;
+   package BooleanFactory_Package renames Standard.org.allbinary.logic.java.bool.BooleanFactory_Package;
 
    type BasicWeblisketSession is tagged;
    type BasicWeblisketSession_Access is access all BasicWeblisketSession'Class;

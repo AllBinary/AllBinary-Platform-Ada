@@ -34,17 +34,17 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 
 package org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package is
 
-   package FeatureResourceAnimationInterfaceFactoryInterface_Package renames org.allbinary.animation.resource.FeatureResourceAnimationInterfaceFactoryInterface_Package;
-   package GameConfigurationCentral_Package renames org.allbinary.game.configuration.GameConfigurationCentral_Package;
-   package FeaturedResourceFactory_Package renames org.allbinary.game.resource.FeaturedResourceFactory_Package;
-   package PointFactory_Package renames org.allbinary.graphics.PointFactory_Package;
-   package Rectangle_Package renames org.allbinary.graphics.Rectangle_Package;
-   package RectangleFactory_Package renames org.allbinary.graphics.RectangleFactory_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
+   package FeatureResourceAnimationInterfaceFactoryInterface_Package renames Standard.org.allbinary.animation.resource.FeatureResourceAnimationInterfaceFactoryInterface_Package;
+   package GameConfigurationCentral_Package renames Standard.org.allbinary.game.configuration.GameConfigurationCentral_Package;
+   package FeaturedResourceFactory_Package renames Standard.org.allbinary.game.resource.FeaturedResourceFactory_Package;
+   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
+   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
+   package RectangleFactory_Package renames Standard.org.allbinary.graphics.RectangleFactory_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type FeaturedAnimationInterfaceFactoryInterfaceFactory is tagged;
    type FeaturedAnimationInterfaceFactoryInterfaceFactory_Access is access all FeaturedAnimationInterfaceFactoryInterfaceFactory'Class;

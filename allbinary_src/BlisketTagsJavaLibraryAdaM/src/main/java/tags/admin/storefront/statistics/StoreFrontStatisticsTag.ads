@@ -27,9 +27,9 @@ with tags.StoreValidationTransformTag_Package; use tags.StoreValidationTransform
 
 package tags.admin.storefront.statistics.StoreFrontStatisticsTag_Package is
 
-   package AbResponseHandler_Package renames org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
-   package LicensingException_Package renames org.allbinary.logic.system.security.licensing.LicensingException_Package;
-   package StoreValidationTransformTag_Package renames tags.StoreValidationTransformTag_Package;
+   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package StoreValidationTransformTag_Package renames Standard.tags.StoreValidationTransformTag_Package;
 
    type StoreFrontStatisticsTag is tagged;
    type StoreFrontStatisticsTag_Access is access all StoreFrontStatisticsTag'Class;

@@ -30,10 +30,10 @@ with org.allbinary.input.automation.robot.InputRobotInterface_Package; use org.a
 
 package org.allbinary.input.automation.robot.InputRobot_Package is
 
-   package PointHelper_Package renames org.allbinary.input.automation.PointHelper_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
+   package PointHelper_Package renames Standard.org.allbinary.input.automation.PointHelper_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type InputRobot is tagged;
    type InputRobot_Access is access all InputRobot'Class;

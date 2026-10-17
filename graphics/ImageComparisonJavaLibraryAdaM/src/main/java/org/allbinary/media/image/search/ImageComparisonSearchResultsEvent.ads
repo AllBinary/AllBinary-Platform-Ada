@@ -24,7 +24,7 @@ with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbin
 
 package org.allbinary.media.image.search.ImageComparisonSearchResultsEvent_Package is
 
-   package AllBinaryEventObject_Package renames org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+   package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 
    type ImageComparisonSearchResultsEvent is tagged;
    type ImageComparisonSearchResultsEvent_Access is access all ImageComparisonSearchResultsEvent'Class;

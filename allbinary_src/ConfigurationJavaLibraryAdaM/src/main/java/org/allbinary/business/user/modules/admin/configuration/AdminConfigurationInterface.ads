@@ -24,7 +24,7 @@ with org.allbinary.business.context.configuration.ContextConfigurationInterface_
 
 package org.allbinary.business.user.modules.admin.configuration.AdminConfigurationInterface_Package is
 
-   package ContextConfigurationInterface_Package renames org.allbinary.business.context.configuration.ContextConfigurationInterface_Package;
+   package ContextConfigurationInterface_Package renames Standard.org.allbinary.business.context.configuration.ContextConfigurationInterface_Package;
 
    type AdminConfigurationInterface is interface;
    type AdminConfigurationInterface_Access is access all AdminConfigurationInterface'Class;

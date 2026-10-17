@@ -25,8 +25,8 @@ with org.allbinary.input.automation.robot.InputRobotInterface_Package; use org.a
 
 package org.allbinary.input.automation.actions.script.condition.processors.input.ProfileActionScriptInputInterface_Package is
 
-   package ProfileActionScriptProcessorInterface_Package renames org.allbinary.input.automation.actions.script.condition.processors.ProfileActionScriptProcessorInterface_Package;
-   package InputRobotInterface_Package renames org.allbinary.input.automation.robot.InputRobotInterface_Package;
+   package ProfileActionScriptProcessorInterface_Package renames Standard.org.allbinary.input.automation.actions.script.condition.processors.ProfileActionScriptProcessorInterface_Package;
+   package InputRobotInterface_Package renames Standard.org.allbinary.input.automation.robot.InputRobotInterface_Package;
 
    type ProfileActionScriptInputInterface is interface and ProfileActionScriptProcessorInterface;
    type ProfileActionScriptInputInterface_Access is access all ProfileActionScriptInputInterface'Class;

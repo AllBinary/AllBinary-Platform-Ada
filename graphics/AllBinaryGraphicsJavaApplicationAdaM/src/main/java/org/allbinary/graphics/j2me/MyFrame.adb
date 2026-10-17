@@ -399,8 +399,12 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
         begin
             MyCanvasEventService_Package.fire (MyCanvasEvent_Package.Create (Java_Object_Access (MyCanvasEventSource_Package.Create (MyCanvasEventService_Package.EXPLODE, null))));
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("explodeAllJMenuItemMousePressed"), e);
+                end;
         end;
    end explodeAllJMenuItemMousePressed;
 
@@ -409,8 +413,12 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
         begin
             MyCanvasEventService_Package.fire (MyCanvasEvent_Package.Create (Java_Object_Access (MyCanvasEventSource_Package.Create (MyCanvasEventService_Package.AUTOEXPLODE, null))));
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("autoExplodeJMenuItemMousePressed"), e);
+                end;
         end;
    end autoExplodeJMenuItemMousePressed;
 
@@ -499,8 +507,12 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
         begin
             MyCanvasEventService_Package.fire (MyCanvasEvent_Package.Create (Java_Object_Access (MyCanvasEventSource_Package.Create (MyCanvasEventService_Package.CENTER, null))));
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("centerJMenuItemActionPerformed"), e);
+                end;
         end;
    end centerJMenuItemActionPerformed;
 
@@ -519,8 +531,12 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
         begin
             This.getSelectedWorkArea.autoMirror;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("centerJMenuItemActionPerformed"), e);
+                end;
         end;
    end jMenuItem1ActionPerformed;
 
@@ -539,8 +555,12 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
             end loop;
             This.fileJDialog.setVisible (False);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("onFiles"), e);
+                end;
         end;
    end onFiles;
 
@@ -554,10 +574,14 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
             dim := This.getSize;
             newDialog := NewWorkAreaJDialog_Package.Create (This'Unchecked_Access, False, dim, newName);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if LOGGING.contains (LOGGING.MENUEVENT) then
                 This.guiLog.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("newJMenuItemActionPerformed"), e);
             end if;
+                end;
         end;
    end newGraphics;
 
@@ -567,10 +591,14 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
             This.logUtil.putF (To_Unbounded_String ("Starting"), This'Unchecked_Access, To_Unbounded_String ("openImageJMenuItemActionPerformed"));
             This.fileJDialog.setVisible (True);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if LOGGING.contains (LOGGING.MENUEVENT) then
                 This.guiLog.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("open"), e);
             end if;
+                end;
         end;
    end openGraphics;
 
@@ -586,10 +614,14 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
             This.logUtil.putF (To_Unbounded_String ("Export: ") & DomHelper_Package.getInstance.toString (document), This'Unchecked_Access, To_Unbounded_String ("exportJMenuItem1ActionPerformed"));
             This.xslHelper.export (file, Java_Image (MyFrame_Package.TEMPLATE_EXPORT_PATH) & To_Unbounded_String ("/") & This.JAVA_TEMPLATE, document);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if LOGGING.contains (LOGGING.MENUEVENT) then
                 This.guiLog.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("export"), e);
             end if;
+                end;
         end;
    end export;
 
@@ -600,10 +632,14 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
             workAreaJPanel := WorkAreaJPanelInterface_Access (This.jTabbedPane.getSelectedComponent);
             DomHelper_Package.getInstance.save (File_Package.Create (SAVE_PATH & To_Unbounded_String ("/") & workAreaJPanel.getName & This.SAVEEXTENSION), workAreaJPanel.toDocument);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if LOGGING.contains (LOGGING.MENUEVENT) then
                 This.guiLog.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.SAVE, e);
             end if;
+                end;
         end;
    end save;
 
@@ -653,10 +689,14 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
             animationThread.start;
             This.updateSelectedWorkArea;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if LOGGING.contains (LOGGING.GRAPHICSCREATION) then
                 This.guiLog.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("addNewCanvas"), e);
             end if;
+                end;
         end;
    end add;
 
@@ -683,9 +723,13 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
             SmallIntegerSingletonFactory_Package.getInstance.init;
             MyFrame_Package.Create.show;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             logUtil := LogUtil_Package.getInstance;
             logUtil.put (CommonStrings_Package.getInstance.EXCEPTION_Id, null, To_Unbounded_String ("main"), e);
+                end;
         end;
    end main;
 

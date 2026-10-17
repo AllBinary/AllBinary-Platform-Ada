@@ -25,7 +25,7 @@ with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.dat
 
 package org.allbinary.input.automation.actions.script.ProfileActionScriptNodeInterface_Package is
 
-   package DomNodeInterface_Package renames org.allbinary.data.tree.dom.DomNodeInterface_Package;
+   package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
 
    type ProfileActionScriptNodeInterface is interface and DomNodeInterface and MutableTreeNode;
    type ProfileActionScriptNodeInterface_Access is access all ProfileActionScriptNodeInterface'Class;

@@ -65,10 +65,14 @@ package body org.allbinary.game.score.remote.RemoteHighScores_Package is
             end if;
             return highScores;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             logUtil.put (commonStrings.EXCEPTION_Id, RemoteErrorHighScoresSingletonFactory_Package.getInstance, commonStrings.GET_INSTANCE, e);
             return RemoteErrorHighScoresSingletonFactory_Package.getInstance;
+                end;
         end;
    end getInstancePreload;
 

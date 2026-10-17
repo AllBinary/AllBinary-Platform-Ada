@@ -32,12 +32,12 @@ with admin.tags.TableTag_Package; use admin.tags.TableTag_Package;
 
 package admin.tags.OrderItemsTag_Package is
 
-   package OrderItemsHelperFactory_Package renames admin.taghelpers.OrderItemsHelperFactory_Package;
-   package OrderItemsRequestHelperFactory_Package renames admin.taghelpers.OrderItemsRequestHelperFactory_Package;
-   package OrderHistoryData_Package renames org.allbinary.business.user.commerce.inventory.order.OrderHistoryData_Package;
-   package AbResponseHandler_Package renames org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package LicensingException_Package renames org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package OrderItemsHelperFactory_Package renames Standard.admin.taghelpers.OrderItemsHelperFactory_Package;
+   package OrderItemsRequestHelperFactory_Package renames Standard.admin.taghelpers.OrderItemsRequestHelperFactory_Package;
+   package OrderHistoryData_Package renames Standard.org.allbinary.business.user.commerce.inventory.order.OrderHistoryData_Package;
+   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
 
    type OrderItemsTag is tagged;
    type OrderItemsTag_Access is access all OrderItemsTag'Class;

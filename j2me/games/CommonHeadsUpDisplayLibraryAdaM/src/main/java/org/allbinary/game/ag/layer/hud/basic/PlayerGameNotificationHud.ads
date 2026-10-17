@@ -44,25 +44,25 @@ with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.Circul
 
 package org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package is
 
-   package GameAdStateFactory_Package renames org.allbinary.business.advertisement.GameAdStateFactory_Package;
-   package Processor_Package renames org.allbinary.canvas.Processor_Package;
-   package GameAdState_Package renames org.allbinary.game.GameAdState_Package;
-   package GameNotification_Package renames org.allbinary.game.ag.layer.hud.basic.notification.GameNotification_Package;
-   package GameNotificationHud_Package renames org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package;
-   package GameNotificationEventHandler_Package renames org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package;
-   package CustomGPoint_Package renames org.allbinary.graphics.CustomGPoint_Package;
-   package GPoint_Package renames org.allbinary.graphics.GPoint_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package DisplayInfoSingleton_Package renames org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
-   package UpdateMyFontInterface_Package renames org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package GameTickTimeDelayHelper_Package renames org.allbinary.time.GameTickTimeDelayHelper_Package;
-   package GameTickTimeDelayHelperFactory_Package renames org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
-   package TimeDelayHelper_Package renames org.allbinary.time.TimeDelayHelper_Package;
-   package CircularIndexUtil_Package renames org.allbinary.util.CircularIndexUtil_Package;
+   package GameAdStateFactory_Package renames Standard.org.allbinary.business.advertisement.GameAdStateFactory_Package;
+   package Processor_Package renames Standard.org.allbinary.canvas.Processor_Package;
+   package GameAdState_Package renames Standard.org.allbinary.game.GameAdState_Package;
+   package GameNotification_Package renames Standard.org.allbinary.game.ag.layer.hud.basic.notification.GameNotification_Package;
+   package GameNotificationHud_Package renames Standard.org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package;
+   package GameNotificationEventHandler_Package renames Standard.org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package;
+   package CustomGPoint_Package renames Standard.org.allbinary.graphics.CustomGPoint_Package;
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+   package UpdateMyFontInterface_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontInterface_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package GameTickTimeDelayHelper_Package renames Standard.org.allbinary.time.GameTickTimeDelayHelper_Package;
+   package GameTickTimeDelayHelperFactory_Package renames Standard.org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
+   package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
+   package CircularIndexUtil_Package renames Standard.org.allbinary.util.CircularIndexUtil_Package;
 
    type PlayerGameNotificationHud is tagged;
    type PlayerGameNotificationHud_Access is access all PlayerGameNotificationHud'Class;
@@ -135,25 +135,25 @@ with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.Circul
 
 package org.allbinary.game.ag.layer.hud.basic.SetAndRemoveProcessor_Package is
 
-   package GameAdStateFactory_Package renames org.allbinary.business.advertisement.GameAdStateFactory_Package;
-   package Processor_Package renames org.allbinary.canvas.Processor_Package;
-   package GameAdState_Package renames org.allbinary.game.GameAdState_Package;
-   package GameNotification_Package renames org.allbinary.game.ag.layer.hud.basic.notification.GameNotification_Package;
-   package GameNotificationHud_Package renames org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package;
-   package GameNotificationEventHandler_Package renames org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package;
-   package CustomGPoint_Package renames org.allbinary.graphics.CustomGPoint_Package;
-   package GPoint_Package renames org.allbinary.graphics.GPoint_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package DisplayInfoSingleton_Package renames org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
-   package UpdateMyFontInterface_Package renames org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package GameTickTimeDelayHelper_Package renames org.allbinary.time.GameTickTimeDelayHelper_Package;
-   package GameTickTimeDelayHelperFactory_Package renames org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
-   package TimeDelayHelper_Package renames org.allbinary.time.TimeDelayHelper_Package;
-   package CircularIndexUtil_Package renames org.allbinary.util.CircularIndexUtil_Package;
+   package GameAdStateFactory_Package renames Standard.org.allbinary.business.advertisement.GameAdStateFactory_Package;
+   package Processor_Package renames Standard.org.allbinary.canvas.Processor_Package;
+   package GameAdState_Package renames Standard.org.allbinary.game.GameAdState_Package;
+   package GameNotification_Package renames Standard.org.allbinary.game.ag.layer.hud.basic.notification.GameNotification_Package;
+   package GameNotificationHud_Package renames Standard.org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package;
+   package GameNotificationEventHandler_Package renames Standard.org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package;
+   package CustomGPoint_Package renames Standard.org.allbinary.graphics.CustomGPoint_Package;
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+   package UpdateMyFontInterface_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontInterface_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package GameTickTimeDelayHelper_Package renames Standard.org.allbinary.time.GameTickTimeDelayHelper_Package;
+   package GameTickTimeDelayHelperFactory_Package renames Standard.org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
+   package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
+   package CircularIndexUtil_Package renames Standard.org.allbinary.util.CircularIndexUtil_Package;
 
    type SetAndRemoveProcessor is tagged;
    type SetAndRemoveProcessor_Access is access all SetAndRemoveProcessor'Class;
@@ -202,25 +202,25 @@ with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.Circul
 
 package org.allbinary.game.ag.layer.hud.basic.NextUnremoveableProcessor_Package is
 
-   package GameAdStateFactory_Package renames org.allbinary.business.advertisement.GameAdStateFactory_Package;
-   package Processor_Package renames org.allbinary.canvas.Processor_Package;
-   package GameAdState_Package renames org.allbinary.game.GameAdState_Package;
-   package GameNotification_Package renames org.allbinary.game.ag.layer.hud.basic.notification.GameNotification_Package;
-   package GameNotificationHud_Package renames org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package;
-   package GameNotificationEventHandler_Package renames org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package;
-   package CustomGPoint_Package renames org.allbinary.graphics.CustomGPoint_Package;
-   package GPoint_Package renames org.allbinary.graphics.GPoint_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package DisplayInfoSingleton_Package renames org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
-   package UpdateMyFontInterface_Package renames org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package GameTickTimeDelayHelper_Package renames org.allbinary.time.GameTickTimeDelayHelper_Package;
-   package GameTickTimeDelayHelperFactory_Package renames org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
-   package TimeDelayHelper_Package renames org.allbinary.time.TimeDelayHelper_Package;
-   package CircularIndexUtil_Package renames org.allbinary.util.CircularIndexUtil_Package;
+   package GameAdStateFactory_Package renames Standard.org.allbinary.business.advertisement.GameAdStateFactory_Package;
+   package Processor_Package renames Standard.org.allbinary.canvas.Processor_Package;
+   package GameAdState_Package renames Standard.org.allbinary.game.GameAdState_Package;
+   package GameNotification_Package renames Standard.org.allbinary.game.ag.layer.hud.basic.notification.GameNotification_Package;
+   package GameNotificationHud_Package renames Standard.org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package;
+   package GameNotificationEventHandler_Package renames Standard.org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package;
+   package CustomGPoint_Package renames Standard.org.allbinary.graphics.CustomGPoint_Package;
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+   package UpdateMyFontInterface_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontInterface_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package GameTickTimeDelayHelper_Package renames Standard.org.allbinary.time.GameTickTimeDelayHelper_Package;
+   package GameTickTimeDelayHelperFactory_Package renames Standard.org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
+   package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
+   package CircularIndexUtil_Package renames Standard.org.allbinary.util.CircularIndexUtil_Package;
 
    type NextUnremoveableProcessor is tagged;
    type NextUnremoveableProcessor_Access is access all NextUnremoveableProcessor'Class;

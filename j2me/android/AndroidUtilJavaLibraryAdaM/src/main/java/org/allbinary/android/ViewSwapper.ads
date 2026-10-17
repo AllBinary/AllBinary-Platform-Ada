@@ -14,9 +14,9 @@ with android.view.ViewGroup_Package; use android.view.ViewGroup_Package;
 
 package org.allbinary.android.ViewSwapper_Package is
 
-   package Activity_Package renames android.app.Activity_Package;
-   package View_Package renames android.view.View_Package;
-   package ViewGroup_Package renames android.view.ViewGroup_Package;
+   package Activity_Package renames Standard.android.app.Activity_Package;
+   package View_Package renames Standard.android.view.View_Package;
+   package ViewGroup_Package renames Standard.android.view.ViewGroup_Package;
 
    type ViewSwapper is tagged;
    type ViewSwapper_Access is access all ViewSwapper'Class;

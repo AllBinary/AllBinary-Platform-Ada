@@ -31,12 +31,12 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 
 package org.allbinary.game.displayable.canvas.BasicMenuInputProcessor_Package is
 
-   package PlayerGameInput_Package renames org.allbinary.game.input.PlayerGameInput_Package;
-   package MyCanvas_Package renames org.allbinary.graphics.displayable.MyCanvas_Package;
-   package BaseMotionGestureEventListener_Package renames org.allbinary.input.motion.gesture.observer.BaseMotionGestureEventListener_Package;
-   package MotionGestureEvent_Package renames org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
+   package PlayerGameInput_Package renames Standard.org.allbinary.game.input.PlayerGameInput_Package;
+   package MyCanvas_Package renames Standard.org.allbinary.graphics.displayable.MyCanvas_Package;
+   package BaseMotionGestureEventListener_Package renames Standard.org.allbinary.input.motion.gesture.observer.BaseMotionGestureEventListener_Package;
+   package MotionGestureEvent_Package renames Standard.org.allbinary.input.motion.gesture.observer.MotionGestureEvent_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type BasicMenuInputProcessor is tagged;
    type BasicMenuInputProcessor_Access is access all BasicMenuInputProcessor'Class;

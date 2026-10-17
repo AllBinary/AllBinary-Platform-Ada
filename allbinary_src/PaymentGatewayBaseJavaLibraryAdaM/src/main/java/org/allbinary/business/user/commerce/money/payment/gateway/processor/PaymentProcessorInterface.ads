@@ -25,8 +25,8 @@ with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.dat
 
 package org.allbinary.business.user.commerce.money.payment.gateway.processor.PaymentProcessorInterface_Package is
 
-   package PaymentException_Package renames org.allbinary.business.user.commerce.money.payment.PaymentException_Package;
-   package DomNodeInterface_Package renames org.allbinary.data.tree.dom.DomNodeInterface_Package;
+   package PaymentException_Package renames Standard.org.allbinary.business.user.commerce.money.payment.PaymentException_Package;
+   package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
 
    type PaymentProcessorInterface is interface and DomNodeInterface;
    type PaymentProcessorInterface_Access is access all PaymentProcessorInterface'Class;

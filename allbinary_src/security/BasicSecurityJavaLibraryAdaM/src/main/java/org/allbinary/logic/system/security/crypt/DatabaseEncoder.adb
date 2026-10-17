@@ -51,10 +51,14 @@ package body org.allbinary.logic.system.security.crypt.DatabaseEncoder_Package i
             end loop;
             return stringBuffer.toString;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             PreLogUtil_Package.putOE (commonStrings.EXCEPTION_Id, To_Unbounded_String ("DatabaseEncoder"), To_Unbounded_String ("decode"), e);
             return StringUtil_Package.getInstance.EMPTY_STRING;
+                end;
         end;
    end encode;
 
@@ -90,10 +94,14 @@ package body org.allbinary.logic.system.security.crypt.DatabaseEncoder_Package i
             end loop;
             return decode;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             PreLogUtil_Package.putSE (commonStrings.EXCEPTION_Id, To_Unbounded_String ("DatabaseEncoder"), To_Unbounded_String ("decode"), e);
             return NullUtil_Package.getInstance.NULL_BYTE_ARRAY;
+                end;
         end;
    end decode;
 

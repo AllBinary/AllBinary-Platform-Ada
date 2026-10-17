@@ -27,10 +27,10 @@ with org.allbinary.logic.util.event.AllBinaryEventCircularPool_Package; use org.
 
 package org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package is
 
-   package InputFactory_Package renames org.allbinary.game.input.InputFactory_Package;
-   package MotionGestureInput_Package renames org.allbinary.input.motion.gesture.MotionGestureInput_Package;
-   package TouchMotionGestureFactory_Package renames org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package;
-   package AllBinaryEventCircularPool_Package renames org.allbinary.logic.util.event.AllBinaryEventCircularPool_Package;
+   package InputFactory_Package renames Standard.org.allbinary.game.input.InputFactory_Package;
+   package MotionGestureInput_Package renames Standard.org.allbinary.input.motion.gesture.MotionGestureInput_Package;
+   package TouchMotionGestureFactory_Package renames Standard.org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package;
+   package AllBinaryEventCircularPool_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventCircularPool_Package;
 
    type MotionEventCircularPool is tagged;
    type MotionEventCircularPool_Access is access all MotionEventCircularPool'Class;

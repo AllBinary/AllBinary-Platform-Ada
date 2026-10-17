@@ -26,8 +26,8 @@ with org.allbinary.game.layer.special.SpecialGameInputInterfaceProcessor_Package
 
 package org.allbinary.game.layer.special.Special2GameInputInterfaceProcessor_Package is
 
-   package GameKeyEvent_Package renames org.allbinary.game.input.event.GameKeyEvent_Package;
-   package AllBinaryLayerManager_Package renames org.allbinary.layer.AllBinaryLayerManager_Package;
+   package GameKeyEvent_Package renames Standard.org.allbinary.game.input.event.GameKeyEvent_Package;
+   package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
 
    type Special2GameInputInterfaceProcessor is tagged;
    type Special2GameInputInterfaceProcessor_Access is access all Special2GameInputInterfaceProcessor'Class;

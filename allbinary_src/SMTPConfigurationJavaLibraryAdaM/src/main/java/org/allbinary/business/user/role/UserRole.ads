@@ -25,7 +25,7 @@ with org.allbinary.business.user.UserFactoryInterface_Package; use org.allbinary
 
 package org.allbinary.business.user.role.UserRole_Package is
 
-   package UserFactoryInterface_Package renames org.allbinary.business.user.UserFactoryInterface_Package;
+   package UserFactoryInterface_Package renames Standard.org.allbinary.business.user.UserFactoryInterface_Package;
 
    type UserRole is tagged;
    type UserRole_Access is access all UserRole'Class;

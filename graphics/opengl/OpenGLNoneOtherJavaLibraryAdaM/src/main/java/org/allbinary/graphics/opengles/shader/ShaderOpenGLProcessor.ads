@@ -13,7 +13,7 @@ with org.allbinary.graphics.opengles.OpenGLProcessor_Package; use org.allbinary.
 
 package org.allbinary.graphics.opengles.shader.ShaderOpenGLProcessor_Package is
 
-   package OpenGLProcessor_Package renames org.allbinary.graphics.opengles.OpenGLProcessor_Package;
+   package OpenGLProcessor_Package renames Standard.org.allbinary.graphics.opengles.OpenGLProcessor_Package;
 
    type ShaderOpenGLProcessor is tagged;
    type ShaderOpenGLProcessor_Access is access all ShaderOpenGLProcessor'Class;

@@ -25,8 +25,8 @@ with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.Circul
 
 package org.allbinary.layer.AllBinaryLayerCircularPool_Package is
 
-   package BaseCircularPool_Package renames org.allbinary.logic.util.cache.BaseCircularPool_Package;
-   package CircularIndexUtil_Package renames org.allbinary.util.CircularIndexUtil_Package;
+   package BaseCircularPool_Package renames Standard.org.allbinary.logic.util.cache.BaseCircularPool_Package;
+   package CircularIndexUtil_Package renames Standard.org.allbinary.util.CircularIndexUtil_Package;
 
    type AllBinaryLayerCircularPool is tagged;
    type AllBinaryLayerCircularPool_Access is access all AllBinaryLayerCircularPool'Class;

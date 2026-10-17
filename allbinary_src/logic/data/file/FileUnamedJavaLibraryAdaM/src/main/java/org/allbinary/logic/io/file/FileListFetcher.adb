@@ -46,9 +46,13 @@ package body org.allbinary.logic.io.file.FileListFetcher_Package is
             files := This.subDirectory.search (AbFile_Package.createAbFile (path));
             return files;
         exception
-            when e : others =>
-            Ada.Text_IO.Put_Line (Ada.Exceptions.Exception_Information (e));
-            Ada.Text_IO.Put_Line (Java_Image (To_Unbounded_String ("Error: ") & Java_Image (e) & To_Unbounded_String ("" & ASCII.LF & "Msg: ") & To_Unbounded_String (Ada.Exceptions.Exception_Message (e))));
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
+            Java_Print_Stack_Trace (e);
+            Ada.Text_IO.Put_Line (Java_Image (To_Unbounded_String ("Error: ") & Java_Image (e) & To_Unbounded_String ("" & ASCII.LF & "Msg: ") & Java_Get_Message (e)));
+                end;
         end;
         return null;
    end getFiles;
@@ -70,9 +74,13 @@ package body org.allbinary.logic.io.file.FileListFetcher_Package is
             files := This.subDirectory.search (visitorFileFilter, AbFile_Package.createAbFile (path));
             return files;
         exception
-            when e : others =>
-            Ada.Text_IO.Put_Line (Ada.Exceptions.Exception_Information (e));
-            Ada.Text_IO.Put_Line (Java_Image (To_Unbounded_String ("Error: ") & Java_Image (e) & To_Unbounded_String ("" & ASCII.LF & "Msg: ") & To_Unbounded_String (Ada.Exceptions.Exception_Message (e))));
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
+            Java_Print_Stack_Trace (e);
+            Ada.Text_IO.Put_Line (Java_Image (To_Unbounded_String ("Error: ") & Java_Image (e) & To_Unbounded_String ("" & ASCII.LF & "Msg: ") & Java_Get_Message (e)));
+                end;
         end;
         return null;
    end getFiles;
@@ -89,9 +97,13 @@ package body org.allbinary.logic.io.file.FileListFetcher_Package is
             files := This.subDirectory.search (visitorFileFilter, AbFile_Package.createAbFile (path));
             return files;
         exception
-            when e : others =>
-            Ada.Text_IO.Put_Line (Ada.Exceptions.Exception_Information (e));
-            Ada.Text_IO.Put_Line (Java_Image (To_Unbounded_String ("Error: ") & Java_Image (e) & To_Unbounded_String ("" & ASCII.LF & "Msg: ") & To_Unbounded_String (Ada.Exceptions.Exception_Message (e))));
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
+            Java_Print_Stack_Trace (e);
+            Ada.Text_IO.Put_Line (Java_Image (To_Unbounded_String ("Error: ") & Java_Image (e) & To_Unbounded_String ("" & ASCII.LF & "Msg: ") & Java_Get_Message (e)));
+                end;
         end;
         return null;
    end getFiles;
@@ -108,9 +120,13 @@ package body org.allbinary.logic.io.file.FileListFetcher_Package is
             files := This.subDirectory.search (visitorFileFilter, AbFile_Package.createAbFile (path));
             return files;
         exception
-            when e : others =>
-            Ada.Text_IO.Put_Line (Ada.Exceptions.Exception_Information (e));
-            Ada.Text_IO.Put_Line (Java_Image (To_Unbounded_String ("Error: ") & Java_Image (e) & To_Unbounded_String ("" & ASCII.LF & "Msg: ") & To_Unbounded_String (Ada.Exceptions.Exception_Message (e))));
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
+            Java_Print_Stack_Trace (e);
+            Ada.Text_IO.Put_Line (Java_Image (To_Unbounded_String ("Error: ") & Java_Image (e) & To_Unbounded_String ("" & ASCII.LF & "Msg: ") & Java_Get_Message (e)));
+                end;
         end;
         return null;
    end getFiles;
@@ -132,9 +148,13 @@ package body org.allbinary.logic.io.file.FileListFetcher_Package is
             files := This.subDirectory.search (visitorFileFilter, AbFile_Package.createAbFile (path));
             return files;
         exception
-            when e : others =>
-            Ada.Text_IO.Put_Line (Ada.Exceptions.Exception_Information (e));
-            Ada.Text_IO.Put_Line (Java_Image (To_Unbounded_String ("Error: ") & Java_Image (e) & To_Unbounded_String ("" & ASCII.LF & "Msg: ") & To_Unbounded_String (Ada.Exceptions.Exception_Message (e))));
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
+            Java_Print_Stack_Trace (e);
+            Ada.Text_IO.Put_Line (Java_Image (To_Unbounded_String ("Error: ") & Java_Image (e) & To_Unbounded_String ("" & ASCII.LF & "Msg: ") & Java_Get_Message (e)));
+                end;
         end;
         return null;
    end getTrackedFiles;
@@ -151,9 +171,13 @@ package body org.allbinary.logic.io.file.FileListFetcher_Package is
             files := This.subDirectory.search (visitorFileFilter, AbFile_Package.createAbFile (path));
             return files;
         exception
-            when e : others =>
-            Ada.Text_IO.Put_Line (Ada.Exceptions.Exception_Information (e));
-            Ada.Text_IO.Put_Line (Java_Image (To_Unbounded_String ("Error: ") & Java_Image (e) & To_Unbounded_String ("" & ASCII.LF & "Msg: ") & To_Unbounded_String (Ada.Exceptions.Exception_Message (e))));
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
+            Java_Print_Stack_Trace (e);
+            Ada.Text_IO.Put_Line (Java_Image (To_Unbounded_String ("Error: ") & Java_Image (e) & To_Unbounded_String ("" & ASCII.LF & "Msg: ") & Java_Get_Message (e)));
+                end;
         end;
         return null;
    end getTrackedFiles;
@@ -167,9 +191,13 @@ package body org.allbinary.logic.io.file.FileListFetcher_Package is
             files := This.subDirectory.search (visitorFileFilter, AbFile_Package.createAbFile (path));
             return files;
         exception
-            when e : others =>
-            Ada.Text_IO.Put_Line (Ada.Exceptions.Exception_Information (e));
-            Ada.Text_IO.Put_Line (Java_Image (To_Unbounded_String ("Error: ") & Java_Image (e) & To_Unbounded_String ("" & ASCII.LF & "Msg: ") & To_Unbounded_String (Ada.Exceptions.Exception_Message (e))));
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
+            Java_Print_Stack_Trace (e);
+            Ada.Text_IO.Put_Line (Java_Image (To_Unbounded_String ("Error: ") & Java_Image (e) & To_Unbounded_String ("" & ASCII.LF & "Msg: ") & Java_Get_Message (e)));
+                end;
         end;
         return null;
    end getDirectories;

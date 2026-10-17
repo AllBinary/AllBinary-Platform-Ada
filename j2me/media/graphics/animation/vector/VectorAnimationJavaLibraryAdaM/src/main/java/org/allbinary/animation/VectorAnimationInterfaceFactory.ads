@@ -27,9 +27,9 @@ with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package; use org
 
 package org.allbinary.animation.VectorAnimationInterfaceFactory_Package is
 
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package BasicColorFactory_Package renames org.allbinary.graphics.color.BasicColorFactory_Package;
-   package ScaleProperties_Package renames org.allbinary.media.ScaleProperties_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package ScaleProperties_Package renames Standard.org.allbinary.media.ScaleProperties_Package;
 
    type VectorAnimationInterfaceFactory is tagged;
    type VectorAnimationInterfaceFactory_Access is access all VectorAnimationInterfaceFactory'Class;

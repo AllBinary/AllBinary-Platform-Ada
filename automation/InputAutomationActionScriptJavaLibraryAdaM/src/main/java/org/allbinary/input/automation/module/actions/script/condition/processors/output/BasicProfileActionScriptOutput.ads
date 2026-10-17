@@ -27,9 +27,9 @@ with org.allbinary.input.automation.module.actions.script.condition.processors.o
 
 package org.allbinary.input.automation.module.actions.script.condition.processors.output.BasicProfileActionScriptOutput_Package is
 
-   package BasicProfileActionScriptProcessor_Package renames org.allbinary.input.automation.actions.script.condition.processors.BasicProfileActionScriptProcessor_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
+   package BasicProfileActionScriptProcessor_Package renames Standard.org.allbinary.input.automation.actions.script.condition.processors.BasicProfileActionScriptProcessor_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type BasicProfileActionScriptOutput is tagged;
    type BasicProfileActionScriptOutput_Access is access all BasicProfileActionScriptOutput'Class;

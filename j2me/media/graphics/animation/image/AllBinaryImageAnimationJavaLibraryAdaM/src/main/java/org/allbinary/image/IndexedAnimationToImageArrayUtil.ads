@@ -25,7 +25,7 @@ with org.allbinary.animation.IndexedAnimation_Package; use org.allbinary.animati
 
 package org.allbinary.image.IndexedAnimationToImageArrayUtil_Package is
 
-   package IndexedAnimation_Package renames org.allbinary.animation.IndexedAnimation_Package;
+   package IndexedAnimation_Package renames Standard.org.allbinary.animation.IndexedAnimation_Package;
 
    type IndexedAnimationToImageArrayUtil is tagged;
    type IndexedAnimationToImageArrayUtil_Access is access all IndexedAnimationToImageArrayUtil'Class;

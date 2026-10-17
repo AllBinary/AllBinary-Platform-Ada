@@ -33,13 +33,13 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 
 package org.allbinary.logic.system.security.licensing.LicenseClientAndServerTest_Package is
 
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package LicenseInitInfo_Package renames org.allbinary.business.init.LicenseInitInfo_Package;
-   package LicenseInitInfoUtil_Package renames org.allbinary.business.init.LicenseInitInfoUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package XmlRpcAbeLicenseRetrievalClient_Package renames org.allbinary.logic.system.security.licensing.client.XmlRpcAbeLicenseRetrievalClient_Package;
-   package PATH_GLOBALS_Package renames org.allbinary.globals.PATH_GLOBALS_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package LicenseInitInfo_Package renames Standard.org.allbinary.business.init.LicenseInitInfo_Package;
+   package LicenseInitInfoUtil_Package renames Standard.org.allbinary.business.init.LicenseInitInfoUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package XmlRpcAbeLicenseRetrievalClient_Package renames Standard.org.allbinary.logic.system.security.licensing.client.XmlRpcAbeLicenseRetrievalClient_Package;
+   package PATH_GLOBALS_Package renames Standard.org.allbinary.globals.PATH_GLOBALS_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type LicenseClientAndServerTest is tagged;
    type LicenseClientAndServerTest_Access is access all LicenseClientAndServerTest'Class;

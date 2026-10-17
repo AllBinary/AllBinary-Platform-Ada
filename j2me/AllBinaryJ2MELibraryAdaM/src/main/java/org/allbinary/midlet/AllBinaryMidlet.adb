@@ -113,8 +113,12 @@ package body org.allbinary.midlet.AllBinaryMidlet_Package is
             PreLogUtil_Package.put (Memory_Package.getInfo, This'Unchecked_Access, METHOD_NAME);
             This.setDestroyed (True);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, METHOD_NAME, e);
+                end;
         end;
    end destroyApp;
 

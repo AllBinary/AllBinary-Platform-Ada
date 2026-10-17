@@ -28,9 +28,9 @@ with org.allbinary.logic.communication.smtp.configuration.server.EmailServerConf
 
 package org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfiguration_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type EmailServerConfiguration is tagged;
    type EmailServerConfiguration_Access is access all EmailServerConfiguration'Class;

@@ -30,11 +30,11 @@ with org.allbinary.input.automation.actions.script.condition.processors.ProfileA
 
 package org.allbinary.input.automation.actions.script.condition.processors.BasicProfileActionScriptProcessor_Package is
 
-   package JTreeInterfaceFactory_Package renames org.allbinary.input.automation.actions.script.JTreeInterfaceFactory_Package;
-   package ProfileActionScriptItem_Package renames org.allbinary.input.automation.actions.script.ProfileActionScriptItem_Package;
-   package ProfileActionScriptConditionInterface_Package renames org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionInterface_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
+   package JTreeInterfaceFactory_Package renames Standard.org.allbinary.input.automation.actions.script.JTreeInterfaceFactory_Package;
+   package ProfileActionScriptItem_Package renames Standard.org.allbinary.input.automation.actions.script.ProfileActionScriptItem_Package;
+   package ProfileActionScriptConditionInterface_Package renames Standard.org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionInterface_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type BasicProfileActionScriptProcessor is tagged;
    type BasicProfileActionScriptProcessor_Access is access all BasicProfileActionScriptProcessor'Class;

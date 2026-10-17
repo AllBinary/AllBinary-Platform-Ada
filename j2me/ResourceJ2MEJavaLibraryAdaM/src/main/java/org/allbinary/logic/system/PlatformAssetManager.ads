@@ -25,7 +25,7 @@ with org.allbinary.data.resource.ResourceUtil_Package; use org.allbinary.data.re
 
 package org.allbinary.logic.system.PlatformAssetManager_Package is
 
-   package ResourceUtil_Package renames org.allbinary.data.resource.ResourceUtil_Package;
+   package ResourceUtil_Package renames Standard.org.allbinary.data.resource.ResourceUtil_Package;
 
    type PlatformAssetManager is tagged;
    type PlatformAssetManager_Access is access all PlatformAssetManager'Class;

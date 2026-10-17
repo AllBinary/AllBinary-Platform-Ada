@@ -27,9 +27,9 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.game.displayable.canvas.OverlayPaintable_Package is
 
-   package InitUpdatePaintable_Package renames org.allbinary.graphics.paint.InitUpdatePaintable_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package InitUpdatePaintable_Package renames Standard.org.allbinary.graphics.paint.InitUpdatePaintable_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type OverlayPaintable is tagged;
    type OverlayPaintable_Access is access all OverlayPaintable'Class;

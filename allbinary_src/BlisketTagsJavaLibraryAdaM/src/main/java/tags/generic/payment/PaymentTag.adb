@@ -57,9 +57,13 @@ package body tags.generic_Id.payment.PaymentTag_Package is
             end if;
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Command Null")));
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             AbResponseHandler_Package.sendJspTagLicensingRedirect (This.pageContext, e);
             return SKIP_BODY;
+                end;
         end;
    end doStartTag;
 

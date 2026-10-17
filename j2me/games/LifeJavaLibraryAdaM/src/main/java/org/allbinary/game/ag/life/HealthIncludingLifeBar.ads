@@ -31,13 +31,13 @@ with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBina
 
 package org.allbinary.game.ag.life.HealthIncludingLifeBar_Package is
 
-   package Health_Package renames org.allbinary.game.health.Health_Package;
-   package HealthBarAnimation_Package renames org.allbinary.game.health.HealthBarAnimation_Package;
-   package HealthBarTwodAnimation_Package renames org.allbinary.game.health.HealthBarTwodAnimation_Package;
-   package HealthInterface_Package renames org.allbinary.game.health.HealthInterface_Package;
-   package HealthListenerInterface_Package renames org.allbinary.game.health.HealthListenerInterface_Package;
-   package Paintable_Package renames org.allbinary.graphics.paint.Paintable_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
+   package Health_Package renames Standard.org.allbinary.game.health.Health_Package;
+   package HealthBarAnimation_Package renames Standard.org.allbinary.game.health.HealthBarAnimation_Package;
+   package HealthBarTwodAnimation_Package renames Standard.org.allbinary.game.health.HealthBarTwodAnimation_Package;
+   package HealthInterface_Package renames Standard.org.allbinary.game.health.HealthInterface_Package;
+   package HealthListenerInterface_Package renames Standard.org.allbinary.game.health.HealthListenerInterface_Package;
+   package Paintable_Package renames Standard.org.allbinary.graphics.paint.Paintable_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
 
    type HealthIncludingLifeBar is tagged;
    type HealthIncludingLifeBar_Access is access all HealthIncludingLifeBar'Class;

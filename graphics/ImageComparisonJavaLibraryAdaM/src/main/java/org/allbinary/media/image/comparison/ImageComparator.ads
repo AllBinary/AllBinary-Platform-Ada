@@ -31,13 +31,13 @@ with org.allbinary.media.image.comparison.pixel.PixelDeltaFactory_Package; use o
 
 package org.allbinary.media.image.comparison.ImageComparator_Package is
 
-   package GPoint_Package renames org.allbinary.graphics.GPoint_Package;
-   package PointFactory_Package renames org.allbinary.graphics.PointFactory_Package;
-   package ColorCacheFactory_Package renames org.allbinary.graphics.color.ColorCacheFactory_Package;
-   package ColorCacheable_Package renames org.allbinary.graphics.color.ColorCacheable_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package AutomaticCacheInterface_Package renames org.allbinary.logic.util.cache.AutomaticCacheInterface_Package;
-   package PixelDeltaFactory_Package renames org.allbinary.media.image.comparison.pixel.PixelDeltaFactory_Package;
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
+   package ColorCacheFactory_Package renames Standard.org.allbinary.graphics.color.ColorCacheFactory_Package;
+   package ColorCacheable_Package renames Standard.org.allbinary.graphics.color.ColorCacheable_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package AutomaticCacheInterface_Package renames Standard.org.allbinary.logic.util.cache.AutomaticCacheInterface_Package;
+   package PixelDeltaFactory_Package renames Standard.org.allbinary.media.image.comparison.pixel.PixelDeltaFactory_Package;
 
    type ImageComparator is tagged;
    type ImageComparator_Access is access all ImageComparator'Class;

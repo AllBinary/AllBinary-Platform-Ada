@@ -88,8 +88,12 @@ package body org.allbinary.image.gui.SpriteSplitterImageJPanel_Package is
 --                      increaseHeight := To_Unbounded_String (Java_Image (This.increaseHeightTextField.getText));
 --                      spriteSplitterUtil.process (This.getImageProcessorInput, totalFrames, totalAnimations, widthReduction, heightReduction, increaseWidth, increaseHeight, spriteType, This'Unchecked_Access);
 --                  exception
---                      when e : others =>
+--                      when Java_Occurrence : others =>
+--                          declare
+--                              e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+--                          begin
 --                      logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.RUN, e);
+--                          end;
 --                  end;
 --     end run;
 .start;

@@ -34,16 +34,16 @@ with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_
 
 package org.allbinary.logic.communication.log.XmlRpcRemoteLogClient_Package is
 
-   package XmlRpcClient_Package renames org.apache.xmlrpc.XmlRpcClient_Package;
-   package XmlRpcException_Package renames org.apache.xmlrpc.XmlRpcException_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package XmlRpcAbeClient_Package renames org.allbinary.logic.communication.xmlrpc.XmlRpcAbeClient_Package;
-   package NoCrypt_Package renames org.allbinary.logic.system.security.crypt.jcehelper.NoCrypt_Package;
-   package AbeClientInformationInterface_Package renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-   package CommonLabels_Package renames org.allbinary.string_Id.CommonLabels_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
-   package ABHashtable_Package renames org.allbinary.util.ABHashtable_Package;
+   package XmlRpcClient_Package renames Standard.org.apache.xmlrpc.XmlRpcClient_Package;
+   package XmlRpcException_Package renames Standard.org.apache.xmlrpc.XmlRpcException_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package XmlRpcAbeClient_Package renames Standard.org.allbinary.logic.communication.xmlrpc.XmlRpcAbeClient_Package;
+   package NoCrypt_Package renames Standard.org.allbinary.logic.system.security.crypt.jcehelper.NoCrypt_Package;
+   package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
    type XmlRpcRemoteLogClient is tagged;
    type XmlRpcRemoteLogClient_Access is access all XmlRpcRemoteLogClient'Class;

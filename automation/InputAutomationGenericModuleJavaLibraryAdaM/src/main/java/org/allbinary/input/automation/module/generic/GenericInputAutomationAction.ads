@@ -25,8 +25,8 @@ with org.allbinary.input.automation.robot.InputRobotInterface_Package; use org.a
 
 package org.allbinary.input.automation.module.generic_Id.GenericInputAutomationAction_Package is
 
-   package InputAutomationActionInterface_Package renames org.allbinary.input.automation.module.InputAutomationActionInterface_Package;
-   package InputRobotInterface_Package renames org.allbinary.input.automation.robot.InputRobotInterface_Package;
+   package InputAutomationActionInterface_Package renames Standard.org.allbinary.input.automation.module.InputAutomationActionInterface_Package;
+   package InputRobotInterface_Package renames Standard.org.allbinary.input.automation.robot.InputRobotInterface_Package;
 
    type GenericInputAutomationAction is tagged;
    type GenericInputAutomationAction_Access is access all GenericInputAutomationAction'Class;

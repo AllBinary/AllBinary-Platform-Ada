@@ -24,7 +24,7 @@ with org.allbinary.logic.util.cache.CacheableInterface_Package; use org.allbinar
 
 package org.allbinary.graphics.color.ColorCacheable_Package is
 
-   package CacheableInterface_Package renames org.allbinary.logic.util.cache.CacheableInterface_Package;
+   package CacheableInterface_Package renames Standard.org.allbinary.logic.util.cache.CacheableInterface_Package;
 
    type ColorCacheable is tagged;
    type ColorCacheable_Access is access all ColorCacheable'Class;

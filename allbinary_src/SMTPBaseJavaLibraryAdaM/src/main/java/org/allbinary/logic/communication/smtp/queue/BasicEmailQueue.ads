@@ -28,9 +28,9 @@ with org.allbinary.logic.communication.smtp.queue.EmailQueueInterface_Package; u
 
 package org.allbinary.logic.communication.smtp.queue.BasicEmailQueue_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package EmailInterface_Package renames org.allbinary.logic.communication.smtp.EmailInterface_Package;
-   package BasicQueue_Package renames org.allbinary.logic.util.queue.BasicQueue_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package EmailInterface_Package renames Standard.org.allbinary.logic.communication.smtp.EmailInterface_Package;
+   package BasicQueue_Package renames Standard.org.allbinary.logic.util.queue.BasicQueue_Package;
 
    type BasicEmailQueue is tagged;
    type BasicEmailQueue_Access is access all BasicEmailQueue'Class;

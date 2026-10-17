@@ -33,9 +33,13 @@ package body org.allbinary.game.input.CompleteMotionGestureInputEvent_Package is
         begin
             This.setMotionGestureInput (motionGestureInput);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("InputToGameKeyEventAction"), e);
+                end;
         end;
    end Initialize;
 

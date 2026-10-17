@@ -27,9 +27,9 @@ with org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package; 
 
 package org.allbinary.logic.system.security.licensing.AbeNoLicense_Package is
 
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type AbeNoLicense is tagged;
    type AbeNoLicense_Access is access all AbeNoLicense'Class;

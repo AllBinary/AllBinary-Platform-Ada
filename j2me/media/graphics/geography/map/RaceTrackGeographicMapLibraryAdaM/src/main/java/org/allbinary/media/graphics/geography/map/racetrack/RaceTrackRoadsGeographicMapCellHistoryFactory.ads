@@ -24,7 +24,7 @@ with org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package
 
 package org.allbinary.media.graphics.geography.map.racetrack.RaceTrackRoadsGeographicMapCellHistoryFactory_Package is
 
-   package GeographicMapCellHistory_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package;
+   package GeographicMapCellHistory_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package;
 
    type RaceTrackRoadsGeographicMapCellHistoryFactory is tagged;
    type RaceTrackRoadsGeographicMapCellHistoryFactory_Access is access all RaceTrackRoadsGeographicMapCellHistoryFactory'Class;

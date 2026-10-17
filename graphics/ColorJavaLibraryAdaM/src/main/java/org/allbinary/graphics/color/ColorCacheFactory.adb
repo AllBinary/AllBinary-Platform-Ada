@@ -35,8 +35,12 @@ package body org.allbinary.graphics.color.ColorCacheFactory_Package is
             ColorCacheFactory_Package.cacheInterface := AutomaticCacheInterfaceFactory_Package.getInstance (ColorCacheableFactory_Package.Create, CacheTypeFactory_Package.getInstance.CACHE, CachePolicyFactory_Package.getInstance.THIRTY_MINUTES_TEN_THOUSAND_MAX);
             logUtil.putF (commonStrings.END_Id, ColorCacheFactory_Package.ColorCacheFactory'Tag, STATIC_BLOCK);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             logUtil.put (commonStrings.EXCEPTION_Id, ColorCacheFactory_Package.ColorCacheFactory'Tag, STATIC_BLOCK, e);
+                end;
         end;
    end Initializer;
 

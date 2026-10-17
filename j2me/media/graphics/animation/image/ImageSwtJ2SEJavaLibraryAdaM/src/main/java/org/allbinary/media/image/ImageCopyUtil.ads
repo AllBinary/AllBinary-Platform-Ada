@@ -41,23 +41,23 @@ with org.microemu.device.swt.SwtMutableImage_Package; use org.microemu.device.sw
 
 package org.allbinary.media.image.ImageCopyUtil_Package is
 
-   package Features_Package renames org.allbinary.game.configuration.feature.Features_Package;
-   package GameFeatureFactory_Package renames org.allbinary.game.configuration.feature.GameFeatureFactory_Package;
-   package DisplayInfoSingleton_Package renames org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
-   package OpenGLFeatureFactory_Package renames org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
-   package OpenGLUtil_Package renames org.allbinary.graphics.opengles.OpenGLUtil_Package;
-   package OpenGLESDeviceImageTranslate_Package renames org.allbinary.image.opengles.OpenGLESDeviceImageTranslate_Package;
-   package OpenGLESImage_Package renames org.allbinary.image.opengles.OpenGLESImage_Package;
-   package OpenGLESImageExclusionUtil_Package renames org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package;
-   package OpenGLESImageProperties_Package renames org.allbinary.image.opengles.OpenGLESImageProperties_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package ImageData_Package renames org.eclipse.swt.graphics.ImageData_Package;
-   package SwtDeviceComponent_Package renames org.microemu.app.ui.swt.SwtDeviceComponent_Package;
-   package PostLoadSwtImmutableImageProcessor_Package renames org.microemu.device.swt.PostLoadSwtImmutableImageProcessor_Package;
-   package PostLoadSwtMutableImageProcessor_Package renames org.microemu.device.swt.PostLoadSwtMutableImageProcessor_Package;
-   package SwtImmutableImage_Package renames org.microemu.device.swt.SwtImmutableImage_Package;
-   package SwtMutableImage_Package renames org.microemu.device.swt.SwtMutableImage_Package;
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
+   package GameFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.GameFeatureFactory_Package;
+   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+   package OpenGLFeatureFactory_Package renames Standard.org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
+   package OpenGLUtil_Package renames Standard.org.allbinary.graphics.opengles.OpenGLUtil_Package;
+   package OpenGLESDeviceImageTranslate_Package renames Standard.org.allbinary.image.opengles.OpenGLESDeviceImageTranslate_Package;
+   package OpenGLESImage_Package renames Standard.org.allbinary.image.opengles.OpenGLESImage_Package;
+   package OpenGLESImageExclusionUtil_Package renames Standard.org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package;
+   package OpenGLESImageProperties_Package renames Standard.org.allbinary.image.opengles.OpenGLESImageProperties_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package ImageData_Package renames Standard.org.eclipse.swt.graphics.ImageData_Package;
+   package SwtDeviceComponent_Package renames Standard.org.microemu.app.ui.swt.SwtDeviceComponent_Package;
+   package PostLoadSwtImmutableImageProcessor_Package renames Standard.org.microemu.device.swt.PostLoadSwtImmutableImageProcessor_Package;
+   package PostLoadSwtMutableImageProcessor_Package renames Standard.org.microemu.device.swt.PostLoadSwtMutableImageProcessor_Package;
+   package SwtImmutableImage_Package renames Standard.org.microemu.device.swt.SwtImmutableImage_Package;
+   package SwtMutableImage_Package renames Standard.org.microemu.device.swt.SwtMutableImage_Package;
 
    type ImageCopyUtil is tagged;
    type ImageCopyUtil_Access is access all ImageCopyUtil'Class;

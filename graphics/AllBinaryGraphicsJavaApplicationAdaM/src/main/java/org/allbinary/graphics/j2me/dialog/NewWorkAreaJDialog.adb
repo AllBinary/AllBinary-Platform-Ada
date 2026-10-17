@@ -46,8 +46,12 @@ package body org.allbinary.graphics.j2me.dialog.NewWorkAreaJDialog_Package is
 --                      begin
 --                          This.disposeNewDialog;
 --                      exception
---                          when e : others =>
+--                          when Java_Occurrence : others =>
+--                              declare
+--                                  e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+--                              begin
 --                          null;
+--                              end;
 --                      end;
 --     end actionPerformed;
 );
@@ -64,8 +68,12 @@ package body org.allbinary.graphics.j2me.dialog.NewWorkAreaJDialog_Package is
             This.getContentPane.add (submitButton);
             This.show;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Java_Throw (e);
+                end;
         end;
    end Initialize;
 
@@ -95,8 +103,12 @@ package body org.allbinary.graphics.j2me.dialog.NewWorkAreaJDialog_Package is
             This.parent.add (WorkAreaJPanelInterface_Access (workAreaJPanel));
             This.dispose;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Java_Throw (e);
+                end;
         end;
    end disposeNewDialog;
 
@@ -123,8 +135,12 @@ package body org.allbinary.graphics.j2me.dialog.NewWorkAreaJDialog_Package is
         begin
             NewWorkAreaJDialog_Package.Create (MyFrame_Package.Create, True, Dimension_Package.Create (100, 100), To_Unbounded_String ("testing")).show;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             null;
+                end;
         end;
    end main;
 

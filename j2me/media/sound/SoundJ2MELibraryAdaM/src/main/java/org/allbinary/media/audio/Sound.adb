@@ -68,9 +68,13 @@ package body org.allbinary.media.audio.Sound_Package is
         begin
             This.player.start;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             PreLogUtil_Package.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.RUN);
+                end;
         end;
    end run;
 

@@ -25,7 +25,7 @@ with admin.taghelpers.BasicTableInterface_Package; use admin.taghelpers.BasicTab
 
 package admin.taghelpers.BasicTable_Package is
 
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type BasicTable is tagged;
    type BasicTable_Access is access all BasicTable'Class;

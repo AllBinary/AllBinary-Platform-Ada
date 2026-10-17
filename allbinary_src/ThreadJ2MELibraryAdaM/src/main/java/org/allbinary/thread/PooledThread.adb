@@ -53,10 +53,14 @@ package body org.allbinary.thread.PooledThread_Package is
                 This.threadPool.runningTask := True;
                 This.threadPool.startTask (task2);
             exception
-                when ex : others =>
+                when Java_Occurrence : others =>
+                    declare
+                        ex : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                    begin
                 logUtil := LogUtil_Package.getInstance;
                 logUtil.putF (This.INTERRUPT_EXCEPTION, This'Unchecked_Access, This.commonStrings.RUN);
                 exit;
+                    end;
             end;
             if (task2) = (This.threadObjectUtil.NULL_PRIORITY_RUNNABLE) then
                 exit;
@@ -66,9 +70,13 @@ package body org.allbinary.thread.PooledThread_Package is
                 This.threadPool.completedTask (task2);
                 This.threadPool.runningTask := False;
             exception
-                when e : others =>
+                when Java_Occurrence : others =>
+                    declare
+                        e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                    begin
                 logUtil := LogUtil_Package.getInstance;
                 logUtil.put (StringMaker_Package.Create.append (This.commonStrings.EXCEPTION_LABEL).append (StringUtil_Package.getInstance.toString (task2)).toString, This'Unchecked_Access, This.commonStrings.RUN, e);
+                    end;
             end;
         end loop;
         This.threadPool.threadStopped;

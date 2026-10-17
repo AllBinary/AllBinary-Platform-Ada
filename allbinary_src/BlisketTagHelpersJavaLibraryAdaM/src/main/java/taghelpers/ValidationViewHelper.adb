@@ -48,11 +48,15 @@ package body taghelpers.ValidationViewHelper_Package is
             end if;
             return This.viewInterface.isValid;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.IS_VALID, e);
             end if;
             return False;
+                end;
         end;
    end isValid;
 
@@ -61,11 +65,15 @@ package body taghelpers.ValidationViewHelper_Package is
         begin
             return This.viewInterface.validationInfo;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("validationInfo()"), e);
             end if;
             return To_Unbounded_String ("Unknown Validation Error");
+                end;
         end;
    end validationInfo;
 
@@ -74,11 +82,15 @@ package body taghelpers.ValidationViewHelper_Package is
         begin
             return This.viewInterface.toValidationInfoDoc;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("toValidationInfoDoc()"), e);
             end if;
             return null;
+                end;
         end;
    end toValidationInfoDoc;
 
@@ -87,11 +99,15 @@ package body taghelpers.ValidationViewHelper_Package is
         begin
             return This.viewInterface.toValidationInfoNode (document);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("toValidationInfoNode()"), e);
             end if;
             return null;
+                end;
         end;
    end toValidationInfoNode;
 

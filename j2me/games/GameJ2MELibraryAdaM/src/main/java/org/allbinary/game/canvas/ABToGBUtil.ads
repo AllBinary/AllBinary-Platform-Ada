@@ -26,7 +26,7 @@ with org.allbinary.game.layer.AllBinaryGameLayerManager_Package; use org.allbina
 
 package org.allbinary.game.canvas.ABToGBUtil_Package is
 
-   package AllBinaryGameLayerManager_Package renames org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
+   package AllBinaryGameLayerManager_Package renames Standard.org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
 
    type ABToGBUtil is tagged;
    type ABToGBUtil_Access is access all ABToGBUtil'Class;

@@ -99,9 +99,13 @@ package body org.allbinary.media.graphics.geography.pathfinding.StaticPathGenera
             This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Using Cached Path(s): ")).append (StringUtil_Package.getInstance.toString (list)).toString, This'Unchecked_Access, commonStrings.GET_INSTANCE);
             return list;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.GET_INSTANCE, e);
             return BasicArrayListD_Package.Create;
+                end;
         end;
    end createList;
 

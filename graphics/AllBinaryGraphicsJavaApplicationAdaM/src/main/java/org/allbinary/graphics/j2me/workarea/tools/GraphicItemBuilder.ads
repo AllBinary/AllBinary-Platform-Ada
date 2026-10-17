@@ -24,7 +24,7 @@ with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 
 package org.allbinary.graphics.j2me.workarea.tools.GraphicItemBuilder_Package is
 
-   package Node_Package renames org.w3c.dom.Node_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type GraphicItemBuilder is tagged;
    type GraphicItemBuilder_Access is access all GraphicItemBuilder'Class;

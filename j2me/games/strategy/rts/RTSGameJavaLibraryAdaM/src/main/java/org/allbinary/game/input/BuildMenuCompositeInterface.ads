@@ -24,7 +24,7 @@ with org.allbinary.graphics.form.ScrollSelectionForm_Package; use org.allbinary.
 
 package org.allbinary.game.input.BuildMenuCompositeInterface_Package is
 
-   package ScrollSelectionForm_Package renames org.allbinary.graphics.form.ScrollSelectionForm_Package;
+   package ScrollSelectionForm_Package renames Standard.org.allbinary.graphics.form.ScrollSelectionForm_Package;
 
    type BuildMenuCompositeInterface is interface;
    type BuildMenuCompositeInterface_Access is access all BuildMenuCompositeInterface'Class;

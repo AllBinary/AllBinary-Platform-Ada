@@ -26,9 +26,9 @@ with org.allbinary.android.input.motion.api5.GameInputMotionEventProcessorAPI5_P
 
 package org.allbinary.android.input.motion.GameInputMotionEventProcessorFactory_Package is
 
-   package AndroidInfoFactory_Package renames org.allbinary.android.AndroidInfoFactory_Package;
-   package GameInputMotionEventProcessorAPI1_Package renames org.allbinary.android.input.motion.api1.GameInputMotionEventProcessorAPI1_Package;
-   package GameInputMotionEventProcessorAPI5_Package renames org.allbinary.android.input.motion.api5.GameInputMotionEventProcessorAPI5_Package;
+   package AndroidInfoFactory_Package renames Standard.org.allbinary.android.AndroidInfoFactory_Package;
+   package GameInputMotionEventProcessorAPI1_Package renames Standard.org.allbinary.android.input.motion.api1.GameInputMotionEventProcessorAPI1_Package;
+   package GameInputMotionEventProcessorAPI5_Package renames Standard.org.allbinary.android.input.motion.api5.GameInputMotionEventProcessorAPI5_Package;
 
    type GameInputMotionEventProcessorFactory is tagged;
    type GameInputMotionEventProcessorFactory_Access is access all GameInputMotionEventProcessorFactory'Class;

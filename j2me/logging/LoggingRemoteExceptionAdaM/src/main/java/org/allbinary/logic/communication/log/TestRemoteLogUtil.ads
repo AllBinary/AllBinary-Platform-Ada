@@ -25,8 +25,8 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.logic.communication.log.TestRemoteLogUtil_Package is
 
-   package Globals_Package renames org.allbinary.globals.Globals_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package Globals_Package renames Standard.org.allbinary.globals.Globals_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type TestRemoteLogUtil is tagged;
    type TestRemoteLogUtil_Access is access all TestRemoteLogUtil'Class;

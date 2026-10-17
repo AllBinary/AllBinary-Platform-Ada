@@ -27,9 +27,9 @@ with org.allbinary.graphics.canvas.transition.progress.ProgressRunnable_Package;
 
 package org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package is
 
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package Activity_Package renames android.app.Activity_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package Activity_Package renames Standard.android.app.Activity_Package;
 
    type TitleProgressBarSetProgressRunnable is tagged;
    type TitleProgressBarSetProgressRunnable_Access is access all TitleProgressBarSetProgressRunnable'Class;

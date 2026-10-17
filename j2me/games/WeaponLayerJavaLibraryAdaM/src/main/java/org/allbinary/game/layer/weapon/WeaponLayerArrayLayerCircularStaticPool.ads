@@ -24,7 +24,7 @@ with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.Circul
 
 package org.allbinary.game.layer.weapon.WeaponLayerArrayLayerCircularStaticPool_Package is
 
-   package CircularIndexUtil_Package renames org.allbinary.util.CircularIndexUtil_Package;
+   package CircularIndexUtil_Package renames Standard.org.allbinary.util.CircularIndexUtil_Package;
 
    type WeaponLayerArrayLayerCircularStaticPool is tagged;
    type WeaponLayerArrayLayerCircularStaticPool_Access is access all WeaponLayerArrayLayerCircularStaticPool'Class;

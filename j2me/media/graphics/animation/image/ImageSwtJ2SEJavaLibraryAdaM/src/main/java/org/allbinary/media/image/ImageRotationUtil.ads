@@ -31,13 +31,13 @@ with org.microemu.device.swt.SwtMutableImage_Package; use org.microemu.device.sw
 
 package org.allbinary.media.image.ImageRotationUtil_Package is
 
-   package Features_Package renames org.allbinary.game.configuration.feature.Features_Package;
-   package OpenGLFeatureFactory_Package renames org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
-   package OpenGLESImage_Package renames org.allbinary.image.opengles.OpenGLESImage_Package;
-   package PreLogUtil_Package renames org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package GC_Package renames org.eclipse.swt.graphics.GC_Package;
-   package SwtImmutableImage_Package renames org.microemu.device.swt.SwtImmutableImage_Package;
-   package SwtMutableImage_Package renames org.microemu.device.swt.SwtMutableImage_Package;
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
+   package OpenGLFeatureFactory_Package renames Standard.org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
+   package OpenGLESImage_Package renames Standard.org.allbinary.image.opengles.OpenGLESImage_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package GC_Package renames Standard.org.eclipse.swt.graphics.GC_Package;
+   package SwtImmutableImage_Package renames Standard.org.microemu.device.swt.SwtImmutableImage_Package;
+   package SwtMutableImage_Package renames Standard.org.microemu.device.swt.SwtMutableImage_Package;
 
    type ImageRotationUtil is tagged;
    type ImageRotationUtil_Access is access all ImageRotationUtil'Class;

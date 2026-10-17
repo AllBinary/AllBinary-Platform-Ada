@@ -26,9 +26,9 @@ with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.Poi
 
 package org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package is
 
-   package CellPosition_Package renames org.allbinary.graphics.CellPosition_Package;
-   package GPoint_Package renames org.allbinary.graphics.GPoint_Package;
-   package PointFactory_Package renames org.allbinary.graphics.PointFactory_Package;
+   package CellPosition_Package renames Standard.org.allbinary.graphics.CellPosition_Package;
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
 
    type GeographicMapCellPosition is tagged;
    type GeographicMapCellPosition_Access is access all GeographicMapCellPosition'Class;

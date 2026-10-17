@@ -32,15 +32,15 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 
 package org.allbinary.android.input.motion.api5.GameInputMotionEventProcessorAPI5_Package is
 
-   package MotionEvent_Package renames android.view.MotionEvent_Package;
-   package BaseGameInputMotionEventProcessor_Package renames org.allbinary.android.input.motion.BaseGameInputMotionEventProcessor_Package;
-   package DisplayInfoSingleton_Package renames org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
-   package ScalableListener_Package renames org.allbinary.graphics.displayable.ScalableListener_Package;
-   package AllMotionRecognizer_Package renames org.allbinary.input.motion.AllMotionRecognizer_Package;
-   package MotionRecognizer_Package renames org.allbinary.input.motion.MotionRecognizer_Package;
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
-   package ForcedLogUtil_Package renames org.allbinary.logic.communication.log.ForcedLogUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
+   package MotionEvent_Package renames Standard.android.view.MotionEvent_Package;
+   package BaseGameInputMotionEventProcessor_Package renames Standard.org.allbinary.android.input.motion.BaseGameInputMotionEventProcessor_Package;
+   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+   package ScalableListener_Package renames Standard.org.allbinary.graphics.displayable.ScalableListener_Package;
+   package AllMotionRecognizer_Package renames Standard.org.allbinary.input.motion.AllMotionRecognizer_Package;
+   package MotionRecognizer_Package renames Standard.org.allbinary.input.motion.MotionRecognizer_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type GameInputMotionEventProcessorAPI5 is tagged;
    type GameInputMotionEventProcessorAPI5_Access is access all GameInputMotionEventProcessorAPI5'Class;

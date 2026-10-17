@@ -34,17 +34,17 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.input.DirectionalAnalogLocationInputProcessor_Package is
 
-   package AnalogLocationInputProcessor_Package renames org.allbinary.android.input.motion.AnalogLocationInputProcessor_Package;
-   package GameInputProcessor_Package renames org.allbinary.game.input.GameInputProcessor_Package;
-   package GameKeyEventSourceInterface_Package renames org.allbinary.game.input.GameKeyEventSourceInterface_Package;
-   package GameKeyFactory_Package renames org.allbinary.game.input.GameKeyFactory_Package;
-   package AnalogLocationInput_Package renames org.allbinary.game.input.analog.AnalogLocationInput_Package;
-   package GameKeyEvent_Package renames org.allbinary.game.input.event.GameKeyEvent_Package;
-   package GameKeyEventFactory_Package renames org.allbinary.game.input.event.GameKeyEventFactory_Package;
-   package CustomGPoint_Package renames org.allbinary.graphics.CustomGPoint_Package;
-   package AllBinaryLayerManager_Package renames org.allbinary.layer.AllBinaryLayerManager_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package AnalogLocationInputProcessor_Package renames Standard.org.allbinary.android.input.motion.AnalogLocationInputProcessor_Package;
+   package GameInputProcessor_Package renames Standard.org.allbinary.game.input.GameInputProcessor_Package;
+   package GameKeyEventSourceInterface_Package renames Standard.org.allbinary.game.input.GameKeyEventSourceInterface_Package;
+   package GameKeyFactory_Package renames Standard.org.allbinary.game.input.GameKeyFactory_Package;
+   package AnalogLocationInput_Package renames Standard.org.allbinary.game.input.analog.AnalogLocationInput_Package;
+   package GameKeyEvent_Package renames Standard.org.allbinary.game.input.event.GameKeyEvent_Package;
+   package GameKeyEventFactory_Package renames Standard.org.allbinary.game.input.event.GameKeyEventFactory_Package;
+   package CustomGPoint_Package renames Standard.org.allbinary.graphics.CustomGPoint_Package;
+   package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type DirectionalAnalogLocationInputProcessor is tagged;
    type DirectionalAnalogLocationInputProcessor_Access is access all DirectionalAnalogLocationInputProcessor'Class;

@@ -97,8 +97,12 @@ package body org.allbinary.animation.VectorExplosionGenerator_Package is
             end if;
             return pointsBasicArrayList;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Java_Throw (e);
+                end;
         end;
    end getInstanceStartFrame;
 

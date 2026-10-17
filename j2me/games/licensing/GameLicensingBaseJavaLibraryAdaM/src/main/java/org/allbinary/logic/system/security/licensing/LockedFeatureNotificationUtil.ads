@@ -31,14 +31,14 @@ with org.allbinary.media.audio.PrimaryPlayerQueueFactory_Package; use org.allbin
 
 package org.allbinary.logic.system.security.licensing.LockedFeatureNotificationUtil_Package is
 
-   package GameNotificationEvent_Package renames org.allbinary.game.layer.hud.event.GameNotificationEvent_Package;
-   package GameNotificationEventHandler_Package renames org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package BasicColorFactory_Package renames org.allbinary.graphics.color.BasicColorFactory_Package;
-   package BooleanFactory_Package renames org.allbinary.logic.java.bool.BooleanFactory_Package;
-   package SmallIntegerSingletonFactory_Package renames org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
-   package ErrorSound_Package renames org.allbinary.media.audio.ErrorSound_Package;
-   package PrimaryPlayerQueueFactory_Package renames org.allbinary.media.audio.PrimaryPlayerQueueFactory_Package;
+   package GameNotificationEvent_Package renames Standard.org.allbinary.game.layer.hud.event.GameNotificationEvent_Package;
+   package GameNotificationEventHandler_Package renames Standard.org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package BooleanFactory_Package renames Standard.org.allbinary.logic.java.bool.BooleanFactory_Package;
+   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+   package ErrorSound_Package renames Standard.org.allbinary.media.audio.ErrorSound_Package;
+   package PrimaryPlayerQueueFactory_Package renames Standard.org.allbinary.media.audio.PrimaryPlayerQueueFactory_Package;
 
    type LockedFeatureNotificationUtil is tagged;
    type LockedFeatureNotificationUtil_Access is access all LockedFeatureNotificationUtil'Class;

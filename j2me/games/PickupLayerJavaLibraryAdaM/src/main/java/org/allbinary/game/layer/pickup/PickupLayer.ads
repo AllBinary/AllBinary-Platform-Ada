@@ -37,16 +37,16 @@ with org.allbinary.game.layer.pickup.PickupableInterface_Package; use org.allbin
 
 package org.allbinary.game.layer.pickup.PickupLayer_Package is
 
-   package Animation_Package renames org.allbinary.animation.Animation_Package;
-   package NullAnimationFactory_Package renames org.allbinary.animation.NullAnimationFactory_Package;
-   package CollidableAlwaysPickupNeverCollideBehaviorFactory_Package renames org.allbinary.game.collision.CollidableAlwaysPickupNeverCollideBehaviorFactory_Package;
-   package DestroyedLayerProcessor_Package renames org.allbinary.game.combat.destroy.DestroyedLayerProcessor_Package;
-   package BasicGroupFactory_Package renames org.allbinary.game.identification.BasicGroupFactory_Package;
-   package MultiPlayerGameLayer_Package renames org.allbinary.game.multiplayer.layer.MultiPlayerGameLayer_Package;
-   package RemoteInfo_Package renames org.allbinary.game.multiplayer.layer.RemoteInfo_Package;
-   package Rectangle_Package renames org.allbinary.graphics.Rectangle_Package;
-   package OpenGLSurfaceChangedInterface_Package renames org.allbinary.image.opengles.OpenGLSurfaceChangedInterface_Package;
-   package ViewPositionBase_Package renames org.allbinary.view.ViewPositionBase_Package;
+   package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
+   package NullAnimationFactory_Package renames Standard.org.allbinary.animation.NullAnimationFactory_Package;
+   package CollidableAlwaysPickupNeverCollideBehaviorFactory_Package renames Standard.org.allbinary.game.collision.CollidableAlwaysPickupNeverCollideBehaviorFactory_Package;
+   package DestroyedLayerProcessor_Package renames Standard.org.allbinary.game.combat.destroy.DestroyedLayerProcessor_Package;
+   package BasicGroupFactory_Package renames Standard.org.allbinary.game.identification.BasicGroupFactory_Package;
+   package MultiPlayerGameLayer_Package renames Standard.org.allbinary.game.multiplayer.layer.MultiPlayerGameLayer_Package;
+   package RemoteInfo_Package renames Standard.org.allbinary.game.multiplayer.layer.RemoteInfo_Package;
+   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
+   package OpenGLSurfaceChangedInterface_Package renames Standard.org.allbinary.image.opengles.OpenGLSurfaceChangedInterface_Package;
+   package ViewPositionBase_Package renames Standard.org.allbinary.view.ViewPositionBase_Package;
 
    type PickupLayer is tagged;
    type PickupLayer_Access is access all PickupLayer'Class;

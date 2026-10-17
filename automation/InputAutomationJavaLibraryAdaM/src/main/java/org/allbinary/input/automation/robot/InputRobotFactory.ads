@@ -38,13 +38,13 @@ with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_
 
 package org.allbinary.input.automation.robot.InputRobotFactory_Package is
 
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package JavaHelpSetNotifier_Package renames org.allbinary.logic.java.help.JavaHelpSetNotifier_Package;
-   package InterfaceUtil_Package renames org.allbinary.logic.java.anyType.InterfaceUtil_Package;
-   package SecuredNativeLibraryInterface_Package renames org.allbinary.logic.system.loader.SecuredNativeLibraryInterface_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package ABHashtable_Package renames org.allbinary.util.ABHashtable_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package JavaHelpSetNotifier_Package renames Standard.org.allbinary.logic.java.help.JavaHelpSetNotifier_Package;
+   package InterfaceUtil_Package renames Standard.org.allbinary.logic.java.anyType.InterfaceUtil_Package;
+   package SecuredNativeLibraryInterface_Package renames Standard.org.allbinary.logic.system.loader.SecuredNativeLibraryInterface_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
    type InputRobotFactory is tagged;
    type InputRobotFactory_Access is access all InputRobotFactory'Class;

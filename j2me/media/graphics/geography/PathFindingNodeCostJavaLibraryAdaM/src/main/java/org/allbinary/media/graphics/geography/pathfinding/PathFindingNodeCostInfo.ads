@@ -26,8 +26,8 @@ with org.allbinary.media.graphics.geography.pathfinding.Comparable_Package; use 
 
 package org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfo_Package is
 
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonLabels_Package renames org.allbinary.string_Id.CommonLabels_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
 
    type PathFindingNodeCostInfo is tagged;
    type PathFindingNodeCostInfo_Access is access all PathFindingNodeCostInfo'Class;

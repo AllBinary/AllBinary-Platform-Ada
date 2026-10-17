@@ -28,8 +28,8 @@ with org.allbinary.animation.image.AllBinaryJ2SEImageRotationAnimation_Package; 
 
 package org.allbinary.animation.image.AllBinaryAdjustedJ2SEImageRotationAnimation_Package is
 
-   package AnimationBehavior_Package renames org.allbinary.animation.AnimationBehavior_Package;
-   package AngleInfo_Package renames org.allbinary.math.AngleInfo_Package;
+   package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
+   package AngleInfo_Package renames Standard.org.allbinary.math.AngleInfo_Package;
 
    type AllBinaryAdjustedJ2SEImageRotationAnimation is tagged;
    type AllBinaryAdjustedJ2SEImageRotationAnimation_Access is access all AllBinaryAdjustedJ2SEImageRotationAnimation'Class;

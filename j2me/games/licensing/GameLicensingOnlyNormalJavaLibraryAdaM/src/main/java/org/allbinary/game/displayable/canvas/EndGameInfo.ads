@@ -26,9 +26,9 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 
 package org.allbinary.game.displayable.canvas.EndGameInfo_Package is
 
-   package GameInfo_Package renames org.allbinary.game.GameInfo_Package;
-   package MyCanvas_Package renames org.allbinary.graphics.displayable.MyCanvas_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
+   package GameInfo_Package renames Standard.org.allbinary.game.GameInfo_Package;
+   package MyCanvas_Package renames Standard.org.allbinary.graphics.displayable.MyCanvas_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type EndGameInfo is tagged;
    type EndGameInfo_Access is access all EndGameInfo'Class;

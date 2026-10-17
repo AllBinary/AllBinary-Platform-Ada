@@ -26,7 +26,7 @@ with org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Packag
 
 package org.allbinary.animation.SingletonAnimationInterfaceFactory_Package is
 
-   package ScaleProperties_Package renames org.allbinary.media.ScaleProperties_Package;
+   package ScaleProperties_Package renames Standard.org.allbinary.media.ScaleProperties_Package;
 
    type SingletonAnimationInterfaceFactory is tagged;
    type SingletonAnimationInterfaceFactory_Access is access all SingletonAnimationInterfaceFactory'Class;

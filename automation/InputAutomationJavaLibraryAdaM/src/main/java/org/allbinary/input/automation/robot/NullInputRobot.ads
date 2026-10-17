@@ -29,9 +29,9 @@ with org.allbinary.input.automation.robot.InputRobotInterface_Package; use org.a
 
 package org.allbinary.input.automation.robot.NullInputRobot_Package is
 
-   package AbstractInputRobot_Package renames org.allbinary.input.automation.AbstractInputRobot_Package;
-   package PointFactory_Package renames org.allbinary.input.automation.PointFactory_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
+   package AbstractInputRobot_Package renames Standard.org.allbinary.input.automation.AbstractInputRobot_Package;
+   package PointFactory_Package renames Standard.org.allbinary.input.automation.PointFactory_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type NullInputRobot is tagged;
    type NullInputRobot_Access is access all NullInputRobot'Class;

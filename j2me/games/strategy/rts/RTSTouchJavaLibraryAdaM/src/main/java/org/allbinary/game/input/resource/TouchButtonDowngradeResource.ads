@@ -25,8 +25,8 @@ with org.allbinary.input.motion.button.TouchButtonResource_Package; use org.allb
 
 package org.allbinary.game.input.resource.TouchButtonDowngradeResource_Package is
 
-   package TouchButtonBlankResource_Package renames org.allbinary.input.motion.button.TouchButtonBlankResource_Package;
-   package TouchButtonResource_Package renames org.allbinary.input.motion.button.TouchButtonResource_Package;
+   package TouchButtonBlankResource_Package renames Standard.org.allbinary.input.motion.button.TouchButtonBlankResource_Package;
+   package TouchButtonResource_Package renames Standard.org.allbinary.input.motion.button.TouchButtonResource_Package;
 
    type TouchButtonDowngradeResource is tagged;
    type TouchButtonDowngradeResource_Access is access all TouchButtonDowngradeResource'Class;

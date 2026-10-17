@@ -31,13 +31,13 @@ with org.allbinary.thread.NullRunnable_Package; use org.allbinary.thread.NullRun
 
 package org.allbinary.game.displayable.RepaintBehavior_Package is
 
-   package ARunnable_Package renames org.allbinary.thread.ARunnable_Package;
-   package Features_Package renames org.allbinary.game.configuration.feature.Features_Package;
-   package DisplayInfoSingleton_Package renames org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
-   package OpenGLFeatureFactory_Package renames org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package NullRunnable_Package renames org.allbinary.thread.NullRunnable_Package;
+   package ARunnable_Package renames Standard.org.allbinary.thread.ARunnable_Package;
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
+   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+   package OpenGLFeatureFactory_Package renames Standard.org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package NullRunnable_Package renames Standard.org.allbinary.thread.NullRunnable_Package;
 
    type RepaintBehavior is tagged;
    type RepaintBehavior_Access is access all RepaintBehavior'Class;

@@ -31,14 +31,14 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.logic.system.os.windows.WindowsOperatingSystemFactory_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package LogConfigTypeFactory_Package renames org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
-   package LogConfigTypes_Package renames org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
-   package GenericOperatingSystem_Package renames org.allbinary.logic.system.os.GenericOperatingSystem_Package;
-   package NoOperatingSystem_Package renames org.allbinary.logic.system.os.NoOperatingSystem_Package;
-   package OperatingSystems_Package renames org.allbinary.logic.system.os.OperatingSystems_Package;
-   package SystemProperties_Package renames org.allbinary.logic.system.os.SystemProperties_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
+   package GenericOperatingSystem_Package renames Standard.org.allbinary.logic.system.os.GenericOperatingSystem_Package;
+   package NoOperatingSystem_Package renames Standard.org.allbinary.logic.system.os.NoOperatingSystem_Package;
+   package OperatingSystems_Package renames Standard.org.allbinary.logic.system.os.OperatingSystems_Package;
+   package SystemProperties_Package renames Standard.org.allbinary.logic.system.os.SystemProperties_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type WindowsOperatingSystemFactory is tagged;
    type WindowsOperatingSystemFactory_Access is access all WindowsOperatingSystemFactory'Class;

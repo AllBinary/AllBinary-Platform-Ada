@@ -24,7 +24,7 @@ with org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Packa
 
 package org.allbinary.business.user.commerce.inventory.order.OrderInterface_Package is
 
-   package BasketInterface_Package renames org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package;
+   package BasketInterface_Package renames Standard.org.allbinary.business.user.commerce.inventory.basket.BasketInterface_Package;
 
    type OrderInterface is interface;
    type OrderInterface_Access is access all OrderInterface'Class;

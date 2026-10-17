@@ -24,7 +24,7 @@ with org.allbinary.animation.BasicAnimationInterfaceFactoryInterface_Package; us
 
 package org.allbinary.animation.resource.ResourceAnimationInterfaceFactoryInterface_Package is
 
-   package BasicAnimationInterfaceFactoryInterface_Package renames org.allbinary.animation.BasicAnimationInterfaceFactoryInterface_Package;
+   package BasicAnimationInterfaceFactoryInterface_Package renames Standard.org.allbinary.animation.BasicAnimationInterfaceFactoryInterface_Package;
 
    type ResourceAnimationInterfaceFactoryInterface is interface;
    type ResourceAnimationInterfaceFactoryInterface_Access is access all ResourceAnimationInterfaceFactoryInterface'Class;

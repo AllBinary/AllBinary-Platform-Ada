@@ -77,10 +77,14 @@ package body admin.taghelpers.StaticPagesRequestHelper_Package is
             storeAdminUserEmailEventHandler.receiveEmailInfo (UserEmailEventNameData_Package.STOREGENERATINGSTATICPAGES, storeAdminEmailInfo);
             adminUserEmailEventHandler.receiveEmailInfo (UserEmailEventNameData_Package.STOREGENERATINGSTATICPAGES, adminEmailInfo);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGINGERROR) then
                 This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("email"), e);
             end if;
+                end;
         end;
    end email;
 
@@ -100,12 +104,16 @@ package body admin.taghelpers.StaticPagesRequestHelper_Package is
             end if;
             return success;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             error := To_Unbounded_String ("Failed to generate staticpages table");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("generateStaticPages()"), e);
             end if;
             return error;
+                end;
         end;
    end generateStaticPages;
 
@@ -127,12 +135,16 @@ package body admin.taghelpers.StaticPagesRequestHelper_Package is
             end if;
             return success;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             error := To_Unbounded_String ("Failed to makePublic");
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("makePublic()"), e);
             end if;
             return error;
+                end;
         end;
    end makePublic;
 

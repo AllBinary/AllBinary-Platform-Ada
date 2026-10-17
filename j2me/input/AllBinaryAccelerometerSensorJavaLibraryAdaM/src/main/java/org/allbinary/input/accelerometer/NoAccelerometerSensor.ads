@@ -25,8 +25,8 @@ with org.allbinary.logic.math.Orientation_Package; use org.allbinary.logic.math.
 
 package org.allbinary.input.accelerometer.NoAccelerometerSensor_Package is
 
-   package AllBinaryOrientationSensor_Package renames org.allbinary.input.gyro.AllBinaryOrientationSensor_Package;
-   package Orientation_Package renames org.allbinary.logic.math.Orientation_Package;
+   package AllBinaryOrientationSensor_Package renames Standard.org.allbinary.input.gyro.AllBinaryOrientationSensor_Package;
+   package Orientation_Package renames Standard.org.allbinary.logic.math.Orientation_Package;
 
    type NoAccelerometerSensor is tagged;
    type NoAccelerometerSensor_Access is access all NoAccelerometerSensor'Class;

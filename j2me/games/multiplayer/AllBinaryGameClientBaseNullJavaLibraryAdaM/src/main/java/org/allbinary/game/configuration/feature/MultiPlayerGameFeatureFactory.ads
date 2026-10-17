@@ -13,7 +13,7 @@ with org.allbinary.game.commands.GameCommandsFactory_Package; use org.allbinary.
 
 package org.allbinary.game.configuration.feature.MultiPlayerGameFeatureFactory_Package is
 
-   package GameCommandsFactory_Package renames org.allbinary.game.commands.GameCommandsFactory_Package;
+   package GameCommandsFactory_Package renames Standard.org.allbinary.game.commands.GameCommandsFactory_Package;
 
    type MultiPlayerGameFeatureFactory is tagged;
    type MultiPlayerGameFeatureFactory_Access is access all MultiPlayerGameFeatureFactory'Class;

@@ -36,17 +36,17 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.image.sprite.AnimationFactorySpriteScaleUtil_Package is
 
-   package SpriteFactory_Package renames org.allbinary.game.layer.SpriteFactory_Package;
-   package OpenGLUtil_Package renames org.allbinary.graphics.opengles.OpenGLUtil_Package;
-   package ImageCache_Package renames org.allbinary.image.ImageCache_Package;
-   package ImageCacheFactory_Package renames org.allbinary.image.ImageCacheFactory_Package;
-   package OpenGLESImageExclusionUtil_Package renames org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package J2SEMath_Package renames org.allbinary.logic.math.J2SEMath_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package ImageScaleUtil_Package renames org.allbinary.media.image.ImageScaleUtil_Package;
-   package CommonLabels_Package renames org.allbinary.string_Id.CommonLabels_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package SpriteFactory_Package renames Standard.org.allbinary.game.layer.SpriteFactory_Package;
+   package OpenGLUtil_Package renames Standard.org.allbinary.graphics.opengles.OpenGLUtil_Package;
+   package ImageCache_Package renames Standard.org.allbinary.image.ImageCache_Package;
+   package ImageCacheFactory_Package renames Standard.org.allbinary.image.ImageCacheFactory_Package;
+   package OpenGLESImageExclusionUtil_Package renames Standard.org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package J2SEMath_Package renames Standard.org.allbinary.logic.math.J2SEMath_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package ImageScaleUtil_Package renames Standard.org.allbinary.media.image.ImageScaleUtil_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type AnimationFactorySpriteScaleUtil is tagged;
    type AnimationFactorySpriteScaleUtil_Access is access all AnimationFactorySpriteScaleUtil'Class;

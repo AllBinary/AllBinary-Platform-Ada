@@ -24,7 +24,7 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.logic.communication.log.GuiLog_Package is
 
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type GuiLog is tagged;
    type GuiLog_Access is access all GuiLog'Class;
@@ -44,12 +44,12 @@ package org.allbinary.logic.communication.log.GuiLog_Package is
    procedure showDialog (This : in out GuiLog; msg : Unbounded_String);
    function put (This : in out GuiLog; specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String) return Unbounded_String;
    procedure put (This : in out GuiLog; specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String);
-   function put (This : in out GuiLog; specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String; exception_Id : Ada.Exceptions.Exception_Occurrence) return Unbounded_String;
-   procedure put (This : in out GuiLog; specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String; exception_Id : Ada.Exceptions.Exception_Occurrence);
+   function put (This : in out GuiLog; specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String; exception_Id : Java_Throwable) return Unbounded_String;
+   procedure put (This : in out GuiLog; specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String; exception_Id : Java_Throwable);
    function put (This : in out GuiLog; specialMessage : Unbounded_String; className : Unbounded_String; functionName : Unbounded_String) return Unbounded_String;
    procedure put (This : in out GuiLog; specialMessage : Unbounded_String; className : Unbounded_String; functionName : Unbounded_String);
-   function put (This : in out GuiLog; specialMessage : Unbounded_String; className : Unbounded_String; functionName : Unbounded_String; exception_Id : Ada.Exceptions.Exception_Occurrence) return Unbounded_String;
-   procedure put (This : in out GuiLog; specialMessage : Unbounded_String; className : Unbounded_String; functionName : Unbounded_String; exception_Id : Ada.Exceptions.Exception_Occurrence);
+   function put (This : in out GuiLog; specialMessage : Unbounded_String; className : Unbounded_String; functionName : Unbounded_String; exception_Id : Java_Throwable) return Unbounded_String;
+   procedure put (This : in out GuiLog; specialMessage : Unbounded_String; className : Unbounded_String; functionName : Unbounded_String; exception_Id : Java_Throwable);
 
 end org.allbinary.logic.communication.log.GuiLog_Package;
 

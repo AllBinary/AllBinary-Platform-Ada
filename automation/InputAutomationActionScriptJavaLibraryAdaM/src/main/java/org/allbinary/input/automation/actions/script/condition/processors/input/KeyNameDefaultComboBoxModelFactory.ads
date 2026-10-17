@@ -25,7 +25,7 @@ with org.allbinary.input.KeySingletonFactory_Package; use org.allbinary.input.Ke
 
 package org.allbinary.input.automation.actions.script.condition.processors.input.KeyNameDefaultComboBoxModelFactory_Package is
 
-   package KeySingletonFactory_Package renames org.allbinary.input.KeySingletonFactory_Package;
+   package KeySingletonFactory_Package renames Standard.org.allbinary.input.KeySingletonFactory_Package;
 
    type KeyNameDefaultComboBoxModelFactory is tagged;
    type KeyNameDefaultComboBoxModelFactory_Access is access all KeyNameDefaultComboBoxModelFactory'Class;

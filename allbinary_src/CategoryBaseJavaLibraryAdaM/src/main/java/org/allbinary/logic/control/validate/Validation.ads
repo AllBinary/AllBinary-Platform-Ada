@@ -27,9 +27,9 @@ with org.allbinary.logic.control.validate.ValidationInterface_Package; use org.a
 
 package org.allbinary.logic.control.validate.Validation_Package is
 
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type Validation is tagged;
    type Validation_Access is access all Validation'Class;

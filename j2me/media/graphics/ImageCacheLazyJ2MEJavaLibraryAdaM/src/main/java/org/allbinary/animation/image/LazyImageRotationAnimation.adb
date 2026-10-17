@@ -60,8 +60,12 @@ package body org.allbinary.animation.image.LazyImageRotationAnimation_Package is
             This.animation := IndexedAnimation_Access (This.animationInterfaceFactoryInterface.getInstance (This.instanceId));
             This.animation.setState (animation);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, LazyImageRotationAnimation_Package.SET_REAL_ANIMATION, e);
+                end;
         end;
    end setRealAnimation;
 
@@ -245,8 +249,12 @@ package body org.allbinary.animation.image.LazyImageRotationAnimation_Package is
         begin
             This.animation.paintXY (graphics, x, y);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.PROCESS, e);
+                end;
         end;
    end paintXY;
 
@@ -255,8 +263,12 @@ package body org.allbinary.animation.image.LazyImageRotationAnimation_Package is
         begin
             This.animation.paintThreedXYZ (graphics, x, y, z);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.PROCESS, e);
+                end;
         end;
    end paintThreedXYZ;
 

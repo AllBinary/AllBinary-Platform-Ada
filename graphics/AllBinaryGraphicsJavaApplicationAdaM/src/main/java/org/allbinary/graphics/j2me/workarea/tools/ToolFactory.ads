@@ -26,9 +26,9 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.graphics.j2me.workarea.tools.ToolFactory_Package is
 
-   package StatusFactory_Package renames org.allbinary.graphics.j2me.StatusFactory_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package StatusFactory_Package renames Standard.org.allbinary.graphics.j2me.StatusFactory_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type ToolFactory is tagged;
    type ToolFactory_Access is access all ToolFactory'Class;

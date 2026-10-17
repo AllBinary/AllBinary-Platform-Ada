@@ -49,8 +49,12 @@ package body org.allbinary.graphics.j2me.workarea.tools.ToolFactory_Package is
             StatusFactory_Package.getInstance.setStatus (This.SELECTED_LABEL & tool);
             This.tool := tool;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("setSelectionTool"), e);
+                end;
         end;
    end setSelectedTool;
 

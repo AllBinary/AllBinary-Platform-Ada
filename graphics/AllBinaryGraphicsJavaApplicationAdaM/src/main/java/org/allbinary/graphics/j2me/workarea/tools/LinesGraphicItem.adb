@@ -40,8 +40,12 @@ package body org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package
             This.init;
             This.active := True;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR, e);
+                end;
         end;
    end Initialize;
 
@@ -282,8 +286,12 @@ package body org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package
                 firstPoint := secondPoint;
             end loop;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("mouseMoved"), e);
+                end;
         end;
    end paint;
 
@@ -334,8 +342,12 @@ package body org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package
             end if;
             This.currentMousePoint := mousePoint;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("mouseMoved"), e);
+                end;
         end;
    end mouseClicked;
 
@@ -373,8 +385,12 @@ package body org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package
             point := PointFactory_Package.getInstance.createXY ((mousePoint.getX) / (x), (mousePoint.getY) / (y));
             This.currentMousePoint := point;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("mouseMoved"), e);
+                end;
         end;
    end mouseMoved;
 
@@ -396,8 +412,12 @@ package body org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package
                 This.translate (1, 0);
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.gameInputStrings.KEY_PRESSED, e);
+                end;
         end;
    end keyPressed;
 

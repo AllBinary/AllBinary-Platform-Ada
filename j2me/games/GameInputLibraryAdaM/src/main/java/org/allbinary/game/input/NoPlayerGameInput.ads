@@ -26,8 +26,8 @@ with org.allbinary.game.input.PlayerGameInput_Package; use org.allbinary.game.in
 
 package org.allbinary.game.input.NoPlayerGameInput_Package is
 
-   package GameKeyEvent_Package renames org.allbinary.game.input.event.GameKeyEvent_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
+   package GameKeyEvent_Package renames Standard.org.allbinary.game.input.event.GameKeyEvent_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type NoPlayerGameInput is tagged;
    type NoPlayerGameInput_Access is access all NoPlayerGameInput'Class;

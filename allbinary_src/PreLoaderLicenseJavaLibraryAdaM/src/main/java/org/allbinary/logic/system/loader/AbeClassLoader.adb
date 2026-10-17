@@ -72,8 +72,12 @@ package body org.allbinary.logic.system.loader.AbeClassLoader_Package is
                         return normalClass;
                     end if;
                 exception
-                    when e : others =>
+                    when Java_Occurrence : others =>
+                        declare
+                            e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                        begin
                     logBuffer.add (LogFactory_Package.getInstance (To_Unbounded_String ("Failed to Load Class: ") & name & To_Unbounded_String ("" & ASCII.LF & "with: ") & loadedWith, This'Unchecked_Access, This.LOAD_CLASS, e));
+                        end;
                 end;
                 classBytes := This.loadClassBytesFromFile (name);
                 if (classBytes) = (null) then
@@ -90,12 +94,16 @@ package body org.allbinary.logic.system.loader.AbeClassLoader_Package is
             This.resolveClass (myClass);
             return myClass;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.LOADERERROR) then
                 logBuffer.logAll;
                 This.logUtil.put (To_Unbounded_String ("Failure loading: ") & name & To_Unbounded_String ("" & ASCII.LF & "with: ") & loadedWith, This'Unchecked_Access, This.LOAD_CLASS, e);
             end if;
             return null;
+                end;
         end;
    end loadClass;
 
@@ -113,11 +121,15 @@ package body org.allbinary.logic.system.loader.AbeClassLoader_Package is
             decrypted := This.abCryptUtil.decrypt (in_Id, This.key);
             return decrypted;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.LOADERERROR) then
                 This.logUtil.put (To_Unbounded_String ("(Before LogBuffer Output) Failure loading Encrypted: ") & name & To_Unbounded_String (" File: ") & cname, To_Unbounded_String ("AbeClassLoader"), To_Unbounded_String ("loadClassBytes"), e);
             end if;
             StreamUtil_Package.getInstance.close (in_Id);
+                end;
         end;
         return null;
    end loadClassBytesFromFile;
@@ -140,10 +152,14 @@ package body org.allbinary.logic.system.loader.AbeClassLoader_Package is
                         return normalClass;
                     end if;
                 exception
-                    when e : others =>
+                    when Java_Occurrence : others =>
+                        declare
+                            e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                        begin
                     if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.LOADER) then
                         This.logUtil.putF (To_Unbounded_String ("Failed Loaded Class: ") & name & To_Unbounded_String (" with: ") & loadedWith, This'Unchecked_Access, This.LOAD_CLASS);
                     end if;
+                        end;
                 end;
                 loadedWith := To_Unbounded_String ("loadClassBytes");
                 classBytes := This.loadClassBytesFromFile (name);
@@ -163,11 +179,15 @@ package body org.allbinary.logic.system.loader.AbeClassLoader_Package is
             This.resolveClass (myClass);
             return myClass;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.LOADERERROR) then
                 This.logUtil.put (To_Unbounded_String ("Failure loading: ") & name, To_Unbounded_String ("AbeClassLoader"), This.LOAD_CLASS, e);
             end if;
             return null;
+                end;
         end;
    end oldLoadClass;
 

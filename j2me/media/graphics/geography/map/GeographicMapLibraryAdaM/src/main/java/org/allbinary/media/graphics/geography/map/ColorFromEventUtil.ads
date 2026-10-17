@@ -26,9 +26,9 @@ with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.g
 
 package org.allbinary.media.graphics.geography.map.ColorFromEventUtil_Package is
 
-   package AllBinaryGameCanvas_Package renames org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package BasicColorFactory_Package renames org.allbinary.graphics.color.BasicColorFactory_Package;
+   package AllBinaryGameCanvas_Package renames Standard.org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
 
    type ColorFromEventUtil is tagged;
    type ColorFromEventUtil_Access is access all ColorFromEventUtil'Class;

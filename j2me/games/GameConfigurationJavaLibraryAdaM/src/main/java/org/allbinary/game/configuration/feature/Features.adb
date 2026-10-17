@@ -117,8 +117,12 @@ package body org.allbinary.game.configuration.feature.Features_Package is
             This.addDefault (MainFeatureFactory_Package.getInstance.FULL_SCREEN);
             This.addDefault (MainFeatureFactory_Package.getInstance.LOAD_ONDEMAND);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             PreLogUtil_Package.putOE (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.INIT, e);
+                end;
         end;
    end init;
 

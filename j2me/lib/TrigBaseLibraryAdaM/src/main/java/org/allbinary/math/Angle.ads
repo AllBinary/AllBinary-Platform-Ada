@@ -26,9 +26,9 @@ with jsinterop.annotations.JsConstructor_Package; use jsinterop.annotations.JsCo
 
 package org.allbinary.math.Angle_Package is
 
-   package JsType_Package renames jsinterop.annotations.JsType_Package;
-   package JsMethod_Package renames jsinterop.annotations.JsMethod_Package;
-   package JsConstructor_Package renames jsinterop.annotations.JsConstructor_Package;
+   package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
+   package JsMethod_Package renames Standard.jsinterop.annotations.JsMethod_Package;
+   package JsConstructor_Package renames Standard.jsinterop.annotations.JsConstructor_Package;
 
    type Angle is tagged;
    type Angle_Access is access all Angle'Class;

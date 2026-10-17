@@ -31,13 +31,13 @@ with org.allbinary.media.graphics.geography.map.racetrack.CustomMapGeneratorBase
 
 package org.allbinary.media.graphics.geography.map.racetrack.CustomMapGenerator_Package is
 
-   package AdvancedRTSGameLayer_Package renames org.allbinary.game.layer.AdvancedRTSGameLayer_Package;
-   package WaypointLayer_Package renames org.allbinary.game.layer.waypoint.WaypointLayer_Package;
-   package CellPosition_Package renames org.allbinary.graphics.CellPosition_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package BasicGeographicMapCellPositionFactory_Package renames org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package;
-   package GeographicMapCellTypeFactory_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package;
-   package DropCellPositionHistory_Package renames org.allbinary.media.graphics.geography.map.drop.DropCellPositionHistory_Package;
+   package AdvancedRTSGameLayer_Package renames Standard.org.allbinary.game.layer.AdvancedRTSGameLayer_Package;
+   package WaypointLayer_Package renames Standard.org.allbinary.game.layer.waypoint.WaypointLayer_Package;
+   package CellPosition_Package renames Standard.org.allbinary.graphics.CellPosition_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package BasicGeographicMapCellPositionFactory_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositionFactory_Package;
+   package GeographicMapCellTypeFactory_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package;
+   package DropCellPositionHistory_Package renames Standard.org.allbinary.media.graphics.geography.map.drop.DropCellPositionHistory_Package;
 
    type CustomMapGenerator is tagged;
    type CustomMapGenerator_Access is access all CustomMapGenerator'Class;

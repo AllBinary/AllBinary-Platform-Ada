@@ -27,9 +27,9 @@ with org.allbinary.business.category.store.theme.StoreThemeCategoryPathView_Pack
 
 package org.allbinary.business.category.store.theme.StoreThemeCategoryPathValidationView_Package is
 
-   package ValidationInterface_Package renames org.allbinary.logic.control.validate.ValidationInterface_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
+   package ValidationInterface_Package renames Standard.org.allbinary.logic.control.validate.ValidationInterface_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type StoreThemeCategoryPathValidationView is tagged;
    type StoreThemeCategoryPathValidationView_Access is access all StoreThemeCategoryPathValidationView'Class;

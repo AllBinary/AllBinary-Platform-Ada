@@ -25,8 +25,8 @@ with org.allbinary.graphics.displayable.MyCanvas_Package; use org.allbinary.grap
 
 package org.allbinary.PostGameCommandFactory_Package is
 
-   package MultiPlayerGameFeatureFactory_Package renames org.allbinary.game.configuration.feature.MultiPlayerGameFeatureFactory_Package;
-   package MyCanvas_Package renames org.allbinary.graphics.displayable.MyCanvas_Package;
+   package MultiPlayerGameFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.MultiPlayerGameFeatureFactory_Package;
+   package MyCanvas_Package renames Standard.org.allbinary.graphics.displayable.MyCanvas_Package;
 
    type PostGameCommandFactory is tagged;
    type PostGameCommandFactory_Access is access all PostGameCommandFactory'Class;

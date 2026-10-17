@@ -98,8 +98,12 @@ package body org.allbinary.game.score.displayable.HighScoresCanvas_Package is
         begin
             This.highScoresFactoryInterface.fetchHighScores (This.getGameInfo, This'Unchecked_Access);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.UPDATE, e);
+                end;
         end;
    end executeUpdate;
 
@@ -120,8 +124,12 @@ package body org.allbinary.game.score.displayable.HighScoresCanvas_Package is
             This.updateCommand (This.currentCommand);
             This.setPaintable (This.getHighScoresPaintable);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.UPDATE, e);
+                end;
         end;
    end setHighScoresArray;
 

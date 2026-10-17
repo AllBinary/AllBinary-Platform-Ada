@@ -38,17 +38,17 @@ with org.allbinary.util.ABStack_Package; use org.allbinary.util.ABStack_Package;
 
 package org.allbinary.graphics.displayable.screen.CommandForm_Package is
 
-   package Processor_Package renames org.allbinary.canvas.Processor_Package;
-   package MenuListener_Package renames org.allbinary.game.displayable.canvas.MenuListener_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package BasicColorFactory_Package renames org.allbinary.graphics.color.BasicColorFactory_Package;
-   package MyCommandInterface_Package renames org.allbinary.graphics.displayable.command.MyCommandInterface_Package;
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package ABStack_Package renames org.allbinary.util.ABStack_Package;
+   package Processor_Package renames Standard.org.allbinary.canvas.Processor_Package;
+   package MenuListener_Package renames Standard.org.allbinary.game.displayable.canvas.MenuListener_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
+   package MyCommandInterface_Package renames Standard.org.allbinary.graphics.displayable.command.MyCommandInterface_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package ABStack_Package renames Standard.org.allbinary.util.ABStack_Package;
 
    type CommandForm is tagged;
    type CommandForm_Access is access all CommandForm'Class;

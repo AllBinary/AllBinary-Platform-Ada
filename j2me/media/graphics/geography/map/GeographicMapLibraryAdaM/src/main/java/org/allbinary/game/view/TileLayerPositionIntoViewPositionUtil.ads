@@ -28,11 +28,11 @@ with org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_
 
 package org.allbinary.game.view.TileLayerPositionIntoViewPositionUtil_Package is
 
-   package TileLayerPositionIntoViewPosition_Package renames org.allbinary.game.view.TileLayerPositionIntoViewPosition_Package;
-   package AllBinaryGameCanvas_Package renames org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
-   package AllBinaryTiledLayer_Package renames org.allbinary.game.layer.AllBinaryTiledLayer_Package;
-   package BasicGeographicMap_Package renames org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
-   package GeographicMapCompositeInterface_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package;
+   package TileLayerPositionIntoViewPosition_Package renames Standard.org.allbinary.game.view.TileLayerPositionIntoViewPosition_Package;
+   package AllBinaryGameCanvas_Package renames Standard.org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
+   package AllBinaryTiledLayer_Package renames Standard.org.allbinary.game.layer.AllBinaryTiledLayer_Package;
+   package BasicGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
+   package GeographicMapCompositeInterface_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCompositeInterface_Package;
 
    type TileLayerPositionIntoViewPositionUtil is tagged;
    type TileLayerPositionIntoViewPositionUtil_Access is access all TileLayerPositionIntoViewPositionUtil'Class;

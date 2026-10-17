@@ -28,8 +28,8 @@ with admin.taghelpers.BasicTable_Package; use admin.taghelpers.BasicTable_Packag
 
 package admin.taghelpers.InitHelper_Package is
 
-   package InitInfoEntity_Package renames org.allbinary.business.init.InitInfoEntity_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
+   package InitInfoEntity_Package renames Standard.org.allbinary.business.init.InitInfoEntity_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type InitHelper is tagged;
    type InitHelper_Access is access all InitHelper'Class;

@@ -102,10 +102,14 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
                 This.logUtil.putF (Java_Image (This.SUCCESS_SQL_STATEMENT) & sqlStatement, This'Unchecked_Access, This.METHOD_UPDATE_WHERE);
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
                 This.logUtil.put ((This.FAILED_SQL_STATEMENT) + (stringBuffer), This'Unchecked_Access, This.METHOD_UPDATE_WHERE, e);
             end if;
+                end;
         end;
    end updateWhere;
 
@@ -174,11 +178,15 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
                 This.logUtil.putF (Java_Image (This.SUCCESS_SQL_STATEMENT) & sqlStatement, This'Unchecked_Access, This.METHOD_UPDATE_WHERE);
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
                 This.logUtil.put ((This.FAILED_SQL_STATEMENT) + (stringBuffer), This'Unchecked_Access, This.METHOD_UPDATE_WHERE, e);
             end if;
             Java_Throw (e);
+                end;
         end;
    end updateWhere;
 
@@ -202,10 +210,14 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
                 This.logUtil.putF (Java_Image (This.SUCCESS_SQL_STATEMENT) & sqlStatement, This'Unchecked_Access, This.METHOD_DELETE_WHERE);
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
                 This.logUtil.put (Java_Image (This.FAILED_SQL_STATEMENT) & stringBuffer.toString, This'Unchecked_Access, This.METHOD_DELETE_WHERE, e);
             end if;
+                end;
         end;
    end deleteWhere;
 
@@ -245,10 +257,14 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
                 This.logUtil.putF (Java_Image (This.SUCCESS_SQL_STATEMENT) & sqlStatement, This'Unchecked_Access, This.METHOD_DELETE_WHERE);
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
                 This.logUtil.put (Java_Image (This.FAILED_SQL_STATEMENT) & stringBuffer.toString, This'Unchecked_Access, This.METHOD_DELETE_WHERE, e);
             end if;
+                end;
         end;
    end deleteWhere;
 
@@ -279,10 +295,14 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
                 This.logUtil.putF (Java_Image (This.SUCCESS_SQL_STATEMENT) & sqlStatement, This'Unchecked_Access, This.INSERT);
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
                 This.logUtil.put (Java_Image (This.FAILED_SQL_STATEMENT) & stringBuffer.toString, This'Unchecked_Access, INSERT, e);
             end if;
+                end;
         end;
    end insert;
 
@@ -346,11 +366,15 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
             end if;
             return null;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
                 This.logUtil.put ((This.FAILED_SQL_STATEMENT) + (stringBuffer), This'Unchecked_Access, This.METHOD_GET_ROW, e);
             end if;
             return null;
+                end;
         end;
    end getRow;
 
@@ -420,11 +444,15 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
             end loop;
             return rows;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
                 This.logUtil.put ((This.FAILED_SQL_STATEMENT) + (stringBuffer), This'Unchecked_Access, This.METHOD_GET_ROWS, e);
             end if;
             return null;
+                end;
         end;
    end getRows;
 
@@ -466,11 +494,15 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
             end loop;
             return rows;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
                 This.logUtil.put ((This.FAILED_SQL_STATEMENT) + (stringBuffer), This'Unchecked_Access, This.METHOD_GET_ALL_ROWS, e);
             end if;
             return null;
+                end;
         end;
    end getAllRows;
 
@@ -548,11 +580,15 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
             end loop;
             return rows;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
                 This.logUtil.put ((This.FAILED_SQL_STATEMENT) + (stringBuffer), This'Unchecked_Access, This.METHOD_GET_ROWS_WHERE_BETWEEN, e);
             end if;
             return null;
+                end;
         end;
    end getRowsWhereBetween;
 
@@ -611,11 +647,15 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
             end loop;
             return rows;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
                 This.logUtil.put ((This.FAILED_SQL_STATEMENT) + (stringBuffer), This'Unchecked_Access, This.METHOD_GET_ROWS_WHERE_BETWEEN, e);
             end if;
             return null;
+                end;
         end;
    end getRowsWhereBetween;
 

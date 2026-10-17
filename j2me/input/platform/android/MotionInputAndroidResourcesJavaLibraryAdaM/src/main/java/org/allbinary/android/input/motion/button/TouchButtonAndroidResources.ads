@@ -38,21 +38,21 @@ with org.allbinary.logic.system.os.OperatingSystemFactory_Package; use org.allbi
 
 package org.allbinary.android.input.motion.button.TouchButtonAndroidResources_Package is
 
-   package AndroidResources_Package renames org.allbinary.AndroidResources_Package;
-   package ResourceUtil_Package renames org.allbinary.data.resource.ResourceUtil_Package;
-   package Init_Package renames org.allbinary.init.Init_Package;
-   package CommonButtons_Package renames org.allbinary.input.motion.button.CommonButtons_Package;
-   package TouchButtonBlankResource_Package renames org.allbinary.input.motion.button.TouchButtonBlankResource_Package;
-   package TouchButtonDownResource_Package renames org.allbinary.input.motion.button.TouchButtonDownResource_Package;
-   package TouchButtonGenericActionResource_Package renames org.allbinary.input.motion.button.TouchButtonGenericActionResource_Package;
-   package TouchButtonResource_Package renames org.allbinary.input.motion.button.TouchButtonResource_Package;
-   package TouchButtonStartResource_Package renames org.allbinary.input.motion.button.TouchButtonStartResource_Package;
-   package TouchButtonStrafeLeftResource_Package renames org.allbinary.input.motion.button.TouchButtonStrafeLeftResource_Package;
-   package TouchButtonStrafeRightResource_Package renames org.allbinary.input.motion.button.TouchButtonStrafeRightResource_Package;
-   package TouchButtonTurnLeftResource_Package renames org.allbinary.input.motion.button.TouchButtonTurnLeftResource_Package;
-   package TouchButtonTurnRightResource_Package renames org.allbinary.input.motion.button.TouchButtonTurnRightResource_Package;
-   package TouchButtonUpResource_Package renames org.allbinary.input.motion.button.TouchButtonUpResource_Package;
-   package OperatingSystemFactory_Package renames org.allbinary.logic.system.os.OperatingSystemFactory_Package;
+   package AndroidResources_Package renames Standard.org.allbinary.AndroidResources_Package;
+   package ResourceUtil_Package renames Standard.org.allbinary.data.resource.ResourceUtil_Package;
+   package Init_Package renames Standard.org.allbinary.init.Init_Package;
+   package CommonButtons_Package renames Standard.org.allbinary.input.motion.button.CommonButtons_Package;
+   package TouchButtonBlankResource_Package renames Standard.org.allbinary.input.motion.button.TouchButtonBlankResource_Package;
+   package TouchButtonDownResource_Package renames Standard.org.allbinary.input.motion.button.TouchButtonDownResource_Package;
+   package TouchButtonGenericActionResource_Package renames Standard.org.allbinary.input.motion.button.TouchButtonGenericActionResource_Package;
+   package TouchButtonResource_Package renames Standard.org.allbinary.input.motion.button.TouchButtonResource_Package;
+   package TouchButtonStartResource_Package renames Standard.org.allbinary.input.motion.button.TouchButtonStartResource_Package;
+   package TouchButtonStrafeLeftResource_Package renames Standard.org.allbinary.input.motion.button.TouchButtonStrafeLeftResource_Package;
+   package TouchButtonStrafeRightResource_Package renames Standard.org.allbinary.input.motion.button.TouchButtonStrafeRightResource_Package;
+   package TouchButtonTurnLeftResource_Package renames Standard.org.allbinary.input.motion.button.TouchButtonTurnLeftResource_Package;
+   package TouchButtonTurnRightResource_Package renames Standard.org.allbinary.input.motion.button.TouchButtonTurnRightResource_Package;
+   package TouchButtonUpResource_Package renames Standard.org.allbinary.input.motion.button.TouchButtonUpResource_Package;
+   package OperatingSystemFactory_Package renames Standard.org.allbinary.logic.system.os.OperatingSystemFactory_Package;
 
    type TouchButtonAndroidResources is tagged;
    type TouchButtonAndroidResources_Access is access all TouchButtonAndroidResources'Class;

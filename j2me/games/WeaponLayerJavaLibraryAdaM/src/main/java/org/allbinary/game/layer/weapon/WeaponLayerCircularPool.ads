@@ -27,10 +27,10 @@ with org.allbinary.layer.AllBinaryLayerCircularPool_Package; use org.allbinary.l
 
 package org.allbinary.game.layer.weapon.WeaponLayerCircularPool_Package is
 
-   package WeaponProperties_Package renames org.allbinary.game.combat.weapon.WeaponProperties_Package;
-   package ScoreableInterface_Package renames org.allbinary.game.score.ScoreableInterface_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package AllBinaryLayerCircularPool_Package renames org.allbinary.layer.AllBinaryLayerCircularPool_Package;
+   package WeaponProperties_Package renames Standard.org.allbinary.game.combat.weapon.WeaponProperties_Package;
+   package ScoreableInterface_Package renames Standard.org.allbinary.game.score.ScoreableInterface_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package AllBinaryLayerCircularPool_Package renames Standard.org.allbinary.layer.AllBinaryLayerCircularPool_Package;
 
    type WeaponLayerCircularPool is tagged;
    type WeaponLayerCircularPool_Access is access all WeaponLayerCircularPool'Class;

@@ -24,7 +24,7 @@ with org.allbinary.logic.communication.smtp.EmailInterface_Package; use org.allb
 
 package org.allbinary.logic.communication.smtp.queue.EmailQueueInterface_Package is
 
-   package EmailInterface_Package renames org.allbinary.logic.communication.smtp.EmailInterface_Package;
+   package EmailInterface_Package renames Standard.org.allbinary.logic.communication.smtp.EmailInterface_Package;
 
    type EmailQueueInterface is interface;
    type EmailQueueInterface_Access is access all EmailQueueInterface'Class;

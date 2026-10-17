@@ -24,7 +24,7 @@ with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allb
 
 package org.allbinary.game.configuration.event.GameInitializedListenerInterface_Package is
 
-   package EventListenerInterface_Package renames org.allbinary.logic.util.event.EventListenerInterface_Package;
+   package EventListenerInterface_Package renames Standard.org.allbinary.logic.util.event.EventListenerInterface_Package;
 
    type GameInitializedListenerInterface is interface and EventListenerInterface;
    type GameInitializedListenerInterface_Access is access all GameInitializedListenerInterface'Class;

@@ -28,10 +28,10 @@ with org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Pack
 
 package org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingletonDebug_Package is
 
-   package GPoint_Package renames org.allbinary.graphics.GPoint_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
 
    type CurrentlyPressedTouchButtonSingletonDebug is tagged;
    type CurrentlyPressedTouchButtonSingletonDebug_Access is access all CurrentlyPressedTouchButtonSingletonDebug'Class;

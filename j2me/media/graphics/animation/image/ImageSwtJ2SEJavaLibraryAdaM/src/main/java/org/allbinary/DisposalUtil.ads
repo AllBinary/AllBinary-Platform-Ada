@@ -27,9 +27,9 @@ with org.microemu.device.swt.SwtMutableImage_Package; use org.microemu.device.sw
 
 package org.allbinary.DisposalUtil_Package is
 
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package Resource_Package renames org.eclipse.swt.graphics.Resource_Package;
-   package SwtMutableImage_Package renames org.microemu.device.swt.SwtMutableImage_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package Resource_Package renames Standard.org.eclipse.swt.graphics.Resource_Package;
+   package SwtMutableImage_Package renames Standard.org.microemu.device.swt.SwtMutableImage_Package;
 
    type DisposalUtil is tagged;
    type DisposalUtil_Access is access all DisposalUtil'Class;

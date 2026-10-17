@@ -29,12 +29,12 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 
 package org.allbinary.logic.io.file.directory.DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor_Package is
 
-   package GitProcessHelper_Package renames org.allbinary.java.runtime.process.git.GitProcessHelper_Package;
-   package AbFile_Package renames org.allbinary.logic.io.file.AbFile_Package;
-   package CommonDataFileStrings_Package renames org.allbinary.logic.io.file.CommonDataFileStrings_Package;
-   package IncludeFileExtensionsBooleanFileVisitor_Package renames org.allbinary.logic.io.file.visitor.IncludeFileExtensionsBooleanFileVisitor_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
+   package GitProcessHelper_Package renames Standard.org.allbinary.java.runtime.process.git.GitProcessHelper_Package;
+   package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
+   package CommonDataFileStrings_Package renames Standard.org.allbinary.logic.io.file.CommonDataFileStrings_Package;
+   package IncludeFileExtensionsBooleanFileVisitor_Package renames Standard.org.allbinary.logic.io.file.visitor.IncludeFileExtensionsBooleanFileVisitor_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor is tagged;
    type DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor_Access is access all DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor'Class;

@@ -108,8 +108,12 @@ package body org.allbinary.input.motion.gesture.observer.ReleaseControlledMotion
             This.signed.onMotionGestureCompleted (This.motionGestureCollection);
             This.motionGestureCollection.clear;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (StringMaker_Package.Create.append (This.commonStrings.EXCEPTION_LABEL).append (StringUtil_Package.getInstance.toString (ev.getMotionGesture)).toString, This'Unchecked_Access, To_Unbounded_String ("release"), e);
+                end;
         end;
    end released;
 

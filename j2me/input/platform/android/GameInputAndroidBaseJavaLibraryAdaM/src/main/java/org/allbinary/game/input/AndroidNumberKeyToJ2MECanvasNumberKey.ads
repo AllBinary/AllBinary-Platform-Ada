@@ -13,7 +13,7 @@ with android.view.KeyEvent_Package; use android.view.KeyEvent_Package;
 
 package org.allbinary.game.input.AndroidNumberKeyToJ2MECanvasNumberKey_Package is
 
-   package KeyEvent_Package renames android.view.KeyEvent_Package;
+   package KeyEvent_Package renames Standard.android.view.KeyEvent_Package;
 
    type AndroidNumberKeyToJ2MECanvasNumberKey is tagged;
    type AndroidNumberKeyToJ2MECanvasNumberKey_Access is access all AndroidNumberKeyToJ2MECanvasNumberKey'Class;

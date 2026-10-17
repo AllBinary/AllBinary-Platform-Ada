@@ -64,8 +64,12 @@ package body org.allbinary.game.init.DefaultGameInitializationListener_Package i
                 This.swtJOGLProcessor.onSurfaceChanged;
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, ON_GAME_INITIALIZED, e);
+                end;
         end;
    end onGameInitialized;
 

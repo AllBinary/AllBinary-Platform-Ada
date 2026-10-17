@@ -51,8 +51,12 @@ package body org.allbinary.dom.DomHelper_Package is
             document := builder.newDocument;
             return document;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             return null;
+                end;
         end;
    end createDocument;
 
@@ -68,8 +72,12 @@ package body org.allbinary.dom.DomHelper_Package is
             document := builder.parse (xmlFile);
             return document;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Java_Throw (e);
+                end;
         end;
    end createDocument;
 
@@ -90,8 +98,12 @@ package body org.allbinary.dom.DomHelper_Package is
             copyTransformer.transform (domSource, streamResult);
             return byteArrayOutputStream.toString;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Java_Throw (e);
+                end;
         end;
    end toString;
 
@@ -110,8 +122,12 @@ package body org.allbinary.dom.DomHelper_Package is
             streamResult := StreamResult_Package.Create (file);
             copyTransformer.transform (domSource, streamResult);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Java_Throw (e);
+                end;
         end;
    end save;
 

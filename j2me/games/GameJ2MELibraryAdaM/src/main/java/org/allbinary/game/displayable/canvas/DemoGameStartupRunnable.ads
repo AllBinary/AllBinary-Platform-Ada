@@ -26,9 +26,9 @@ with org.allbinary.thread.ABRunnable_Package; use org.allbinary.thread.ABRunnabl
 
 package org.allbinary.game.displayable.canvas.DemoGameStartupRunnable_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package ABRunnable_Package renames org.allbinary.thread.ABRunnable_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package ABRunnable_Package renames Standard.org.allbinary.thread.ABRunnable_Package;
 
    type DemoGameStartupRunnable is tagged;
    type DemoGameStartupRunnable_Access is access all DemoGameStartupRunnable'Class;

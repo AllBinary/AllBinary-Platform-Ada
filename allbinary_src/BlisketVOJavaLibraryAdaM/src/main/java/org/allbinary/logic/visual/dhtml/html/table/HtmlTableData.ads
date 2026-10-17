@@ -24,7 +24,7 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.logic.visual.dhtml.html.table.HtmlTableData_Package is
 
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type HtmlTableData is tagged;
    type HtmlTableData_Access is access all HtmlTableData'Class;

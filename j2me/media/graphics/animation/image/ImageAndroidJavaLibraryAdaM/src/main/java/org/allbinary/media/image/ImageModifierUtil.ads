@@ -28,10 +28,10 @@ with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics
 
 package org.allbinary.media.image.ImageModifierUtil_Package is
 
-   package Paint_Package renames android.graphics.Paint_Package;
-   package PorterDuff_Package renames android.graphics.PorterDuff_Package;
-   package PorterDuffColorFilter_Package renames android.graphics.PorterDuffColorFilter_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
+   package Paint_Package renames Standard.android.graphics.Paint_Package;
+   package PorterDuff_Package renames Standard.android.graphics.PorterDuff_Package;
+   package PorterDuffColorFilter_Package renames Standard.android.graphics.PorterDuffColorFilter_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
 
    type ImageModifierUtil is tagged;
    type ImageModifierUtil_Access is access all ImageModifierUtil'Class;

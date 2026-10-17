@@ -32,10 +32,10 @@ with org.allbinary.util.CircularIndexUtil_Package; use org.allbinary.util.Circul
 
 package org.allbinary.game.displayable.canvas.BufferedGameCanvasPaintHelper_Package is
 
-   package Anchor_Package renames org.allbinary.graphics.Anchor_Package;
-   package MyCanvas_Package renames org.allbinary.graphics.displayable.MyCanvas_Package;
-   package ProcessPaintable_Package renames org.allbinary.graphics.paint.ProcessPaintable_Package;
-   package CircularIndexUtil_Package renames org.allbinary.util.CircularIndexUtil_Package;
+   package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
+   package MyCanvas_Package renames Standard.org.allbinary.graphics.displayable.MyCanvas_Package;
+   package ProcessPaintable_Package renames Standard.org.allbinary.graphics.paint.ProcessPaintable_Package;
+   package CircularIndexUtil_Package renames Standard.org.allbinary.util.CircularIndexUtil_Package;
 
    type BufferedGameCanvasPaintHelper is tagged;
    type BufferedGameCanvasPaintHelper_Access is access all BufferedGameCanvasPaintHelper'Class;

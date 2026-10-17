@@ -30,13 +30,13 @@ with org.allbinary.input.media.image.capture.ScreenCaptureImagesWorker_Package; 
 
 package org.allbinary.input.automation.module.generic_Id.GenericProfileCaptureWorkerFactory_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package GenericProfile_Package renames org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfile_Package;
-   package GenericProfileDataWorkerType_Package renames org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerType_Package;
-   package SavedCaptureGenericProfileDataWorkerType_Package renames org.allbinary.input.automation.module.generic_Id.configuration.profile.SavedCaptureGenericProfileDataWorkerType_Package;
-   package CaptureWorkerInterface_Package renames org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package;
-   package ScreenCaptureImagesWorker_Package renames org.allbinary.input.media.image.capture.ScreenCaptureImagesWorker_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package GenericProfile_Package renames Standard.org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfile_Package;
+   package GenericProfileDataWorkerType_Package renames Standard.org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerType_Package;
+   package SavedCaptureGenericProfileDataWorkerType_Package renames Standard.org.allbinary.input.automation.module.generic_Id.configuration.profile.SavedCaptureGenericProfileDataWorkerType_Package;
+   package CaptureWorkerInterface_Package renames Standard.org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package;
+   package ScreenCaptureImagesWorker_Package renames Standard.org.allbinary.input.media.image.capture.ScreenCaptureImagesWorker_Package;
 
    type GenericProfileCaptureWorkerFactory is tagged;
    type GenericProfileCaptureWorkerFactory_Access is access all GenericProfileCaptureWorkerFactory'Class;

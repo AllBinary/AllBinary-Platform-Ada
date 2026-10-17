@@ -25,8 +25,8 @@ with org.allbinary.layer.LayerManagerNoDebug_Package; use org.allbinary.layer.La
 
 package org.allbinary.game.collision.OptimizedAllBinaryCollisionLayerManager_Package is
 
-   package LayerManager_Package renames org.allbinary.layer.LayerManager_Package;
-   package LayerManagerNoDebug_Package renames org.allbinary.layer.LayerManagerNoDebug_Package;
+   package LayerManager_Package renames Standard.org.allbinary.layer.LayerManager_Package;
+   package LayerManagerNoDebug_Package renames Standard.org.allbinary.layer.LayerManagerNoDebug_Package;
 
    type OptimizedAllBinaryCollisionLayerManager is tagged;
    type OptimizedAllBinaryCollisionLayerManager_Access is access all OptimizedAllBinaryCollisionLayerManager'Class;

@@ -29,11 +29,11 @@ with org.allbinary.logic.system.security.licensing.AbeClientInformation_Package;
 
 package org.allbinary.logic.system.security.licensing.MobileClientInformation_Package is
 
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package RegistrationConfiguration_Package renames org.allbinary.logic.system.security.licensing.registration.RegistrationConfiguration_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package ABHashtable_Package renames org.allbinary.util.ABHashtable_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package RegistrationConfiguration_Package renames Standard.org.allbinary.logic.system.security.licensing.registration.RegistrationConfiguration_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
    type MobileClientInformation is tagged;
    type MobileClientInformation_Access is access all MobileClientInformation'Class;

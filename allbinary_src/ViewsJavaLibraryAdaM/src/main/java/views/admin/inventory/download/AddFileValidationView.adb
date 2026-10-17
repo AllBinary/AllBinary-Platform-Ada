@@ -65,10 +65,14 @@ package body views.admin.inventory.download.AddFileValidationView_Package is
                 inventoryEntity := InventoryEntityFactory_Package.getInstance.getInventoryEntityInstance;
                 This.itemInterface := inventoryEntity.getItem (This.id);
             exception
-                when e : others =>
+                when Java_Occurrence : others =>
+                    declare
+                        e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                    begin
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
                     This.logUtil.put (To_Unbounded_String ("Existing Item With MoneyException"), This'Unchecked_Access, This.commonStrings.IS_VALID, e);
                 end if;
+                    end;
             end;
             if (This.itemInterface) = (null) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
@@ -159,11 +163,15 @@ package body views.admin.inventory.download.AddFileValidationView_Package is
             end if;
             return True;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
                 This.logUtil.put (To_Unbounded_String ("Exception in validation"), This'Unchecked_Access, This.commonStrings.IS_VALID, e);
             end if;
             return False;
+                end;
         end;
    end isValid;
 
@@ -265,11 +273,15 @@ package body views.admin.inventory.download.AddFileValidationView_Package is
             end if;
             return stringBuffer.toString;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
                 This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), This'Unchecked_Access, To_Unbounded_String ("validationInfo()"), e);
             end if;
             return To_Unbounded_String ("Error Getting Validation Info");
+                end;
         end;
    end validationInfo;
 

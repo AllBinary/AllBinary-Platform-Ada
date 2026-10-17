@@ -82,8 +82,12 @@ package body org.allbinary.game.displayable.canvas.CheatGameInputProcessor_Packa
             end loop;
             list.clear;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.UPDATE, e);
+                end;
         end;
    end update;
 

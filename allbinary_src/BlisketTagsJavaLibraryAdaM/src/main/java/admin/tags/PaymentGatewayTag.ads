@@ -30,10 +30,10 @@ with admin.tags.TableTag_Package; use admin.tags.TableTag_Package;
 
 package admin.tags.PaymentGatewayTag_Package is
 
-   package PaymentGatewayHelperFactory_Package renames admin.taghelpers.PaymentGatewayHelperFactory_Package;
-   package AbResponseHandler_Package renames org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package LicensingException_Package renames org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package PaymentGatewayHelperFactory_Package renames Standard.admin.taghelpers.PaymentGatewayHelperFactory_Package;
+   package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
 
    type PaymentGatewayTag is tagged;
    type PaymentGatewayTag_Access is access all PaymentGatewayTag'Class;

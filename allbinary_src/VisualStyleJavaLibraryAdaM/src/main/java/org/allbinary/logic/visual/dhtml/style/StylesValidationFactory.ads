@@ -36,18 +36,18 @@ with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
 
 package org.allbinary.logic.visual.dhtml.style.StylesValidationFactory_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package DomSearchHelper_Package renames org.allbinary.data.tree.dom.DomSearchHelper_Package;
-   package XmlDocumentHelper_Package renames org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
-   package NameSpaceRequestParamData_Package renames org.allbinary.logic.communication.http.request.NameSpaceRequestParamData_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CssElementData_Package renames org.allbinary.logic.visual.dhtml.style.css.CssElementData_Package;
-   package CssElementsValidationFactory_Package renames org.allbinary.logic.visual.dhtml.style.css.CssElementsValidationFactory_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
-   package NodeList_Package renames org.w3c.dom.NodeList_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package DomSearchHelper_Package renames Standard.org.allbinary.data.tree.dom.DomSearchHelper_Package;
+   package XmlDocumentHelper_Package renames Standard.org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
+   package NameSpaceRequestParamData_Package renames Standard.org.allbinary.logic.communication.http.request.NameSpaceRequestParamData_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CssElementData_Package renames Standard.org.allbinary.logic.visual.dhtml.style.css.CssElementData_Package;
+   package CssElementsValidationFactory_Package renames Standard.org.allbinary.logic.visual.dhtml.style.css.CssElementsValidationFactory_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
+   package NodeList_Package renames Standard.org.w3c.dom.NodeList_Package;
 
    type StylesValidationFactory is tagged;
    type StylesValidationFactory_Access is access all StylesValidationFactory'Class;

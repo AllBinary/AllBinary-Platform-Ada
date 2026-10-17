@@ -24,7 +24,7 @@ with org.allbinary.logic.util.event.EventListenerInterface_Package; use org.allb
 
 package org.allbinary.layer.event.ScrollMapEventListenerInterface_Package is
 
-   package EventListenerInterface_Package renames org.allbinary.logic.util.event.EventListenerInterface_Package;
+   package EventListenerInterface_Package renames Standard.org.allbinary.logic.util.event.EventListenerInterface_Package;
 
    type ScrollMapEventListenerInterface is interface and EventListenerInterface;
    type ScrollMapEventListenerInterface_Access is access all ScrollMapEventListenerInterface'Class;

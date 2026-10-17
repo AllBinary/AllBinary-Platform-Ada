@@ -110,9 +110,13 @@ package body org.allbinary.input.automation.module.configuration.InputAutomation
             This.logUtil.putF (To_Unbounded_String ("ClassName: ") & This.className, This'Unchecked_Access, This.commonStrings.INIT);
             This.setInputAutomationModuleInterface (InputAutomationModuleFactoryInterface_Access (AbeFactory_Package.getInstance.getInstance.getInstance (abeClientInformation, This.getClassName)));
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.INIT, e);
             Java_Throw (Java_New_Exception ("RuntimeException"));
+                end;
         end;
    end init;
 

@@ -27,8 +27,8 @@ with org.allbinary.game.layer.special.SpecialGameInputInterface_Package; use org
 
 package org.allbinary.game.layer.special.SpecialGameInput_Package is
 
-   package GameKeyEvent_Package renames org.allbinary.game.input.event.GameKeyEvent_Package;
-   package AllBinaryLayerManager_Package renames org.allbinary.layer.AllBinaryLayerManager_Package;
+   package GameKeyEvent_Package renames Standard.org.allbinary.game.input.event.GameKeyEvent_Package;
+   package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
 
    type SpecialGameInput is tagged;
    type SpecialGameInput_Access is access all SpecialGameInput'Class;

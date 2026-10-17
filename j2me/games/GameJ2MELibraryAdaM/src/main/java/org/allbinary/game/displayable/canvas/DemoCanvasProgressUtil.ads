@@ -27,10 +27,10 @@ with org.allbinary.graphics.paint.PaintableInterface_Package; use org.allbinary.
 
 package org.allbinary.game.displayable.canvas.DemoCanvasProgressUtil_Package is
 
-   package ProgressCanvas_Package renames org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
-   package ProgressCanvasFactory_Package renames org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package;
-   package PaintableComposite_Package renames org.allbinary.graphics.paint.PaintableComposite_Package;
-   package PaintableInterface_Package renames org.allbinary.graphics.paint.PaintableInterface_Package;
+   package ProgressCanvas_Package renames Standard.org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
+   package ProgressCanvasFactory_Package renames Standard.org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package;
+   package PaintableComposite_Package renames Standard.org.allbinary.graphics.paint.PaintableComposite_Package;
+   package PaintableInterface_Package renames Standard.org.allbinary.graphics.paint.PaintableInterface_Package;
 
    type DemoCanvasProgressUtil is tagged;
    type DemoCanvasProgressUtil_Access is access all DemoCanvasProgressUtil'Class;

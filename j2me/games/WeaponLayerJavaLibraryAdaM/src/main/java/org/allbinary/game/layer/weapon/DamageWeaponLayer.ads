@@ -29,11 +29,11 @@ with org.allbinary.game.layer.weapon.WeaponLayer_Package; use org.allbinary.game
 
 package org.allbinary.game.layer.weapon.DamageWeaponLayer_Package is
 
-   package Animation_Package renames org.allbinary.animation.Animation_Package;
-   package RemoteInfo_Package renames org.allbinary.game.multiplayer.layer.RemoteInfo_Package;
-   package Rectangle_Package renames org.allbinary.graphics.Rectangle_Package;
-   package Movement_Package renames org.allbinary.physics.movement.Movement_Package;
-   package ViewPositionBase_Package renames org.allbinary.view.ViewPositionBase_Package;
+   package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
+   package RemoteInfo_Package renames Standard.org.allbinary.game.multiplayer.layer.RemoteInfo_Package;
+   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
+   package Movement_Package renames Standard.org.allbinary.physics.movement.Movement_Package;
+   package ViewPositionBase_Package renames Standard.org.allbinary.view.ViewPositionBase_Package;
 
    type DamageWeaponLayer is tagged;
    type DamageWeaponLayer_Access is access all DamageWeaponLayer'Class;

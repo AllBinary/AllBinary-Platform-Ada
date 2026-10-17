@@ -32,15 +32,15 @@ with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArr
 
 package org.allbinary.game.configuration.InGameFeatures_Package is
 
-   package Features_Package renames org.allbinary.game.configuration.feature.Features_Package;
-   package GameFeatureChoiceGroups_Package renames org.allbinary.game.configuration.feature.GameFeatureChoiceGroups_Package;
-   package InGameFeatureChoiceGroups_Package renames org.allbinary.game.configuration.feature.InGameFeatureChoiceGroups_Package;
-   package SensorFeatureFactory_Package renames org.allbinary.game.configuration.feature.SensorFeatureFactory_Package;
-   package TouchFeatureFactory_Package renames org.allbinary.game.configuration.feature.TouchFeatureFactory_Package;
-   package Init_Package renames org.allbinary.init.Init_Package;
-   package OrientationData_Package renames org.allbinary.input.gyro.OrientationData_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
+   package GameFeatureChoiceGroups_Package renames Standard.org.allbinary.game.configuration.feature.GameFeatureChoiceGroups_Package;
+   package InGameFeatureChoiceGroups_Package renames Standard.org.allbinary.game.configuration.feature.InGameFeatureChoiceGroups_Package;
+   package SensorFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.SensorFeatureFactory_Package;
+   package TouchFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.TouchFeatureFactory_Package;
+   package Init_Package renames Standard.org.allbinary.init.Init_Package;
+   package OrientationData_Package renames Standard.org.allbinary.input.gyro.OrientationData_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type InGameFeatures is tagged;
    type InGameFeatures_Access is access all InGameFeatures'Class;

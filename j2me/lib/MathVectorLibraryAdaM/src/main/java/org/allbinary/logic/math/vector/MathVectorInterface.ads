@@ -24,7 +24,7 @@ with org.allbinary.logic.math.BasicDecimal_Package; use org.allbinary.logic.math
 
 package org.allbinary.logic.math.vector.MathVectorInterface_Package is
 
-   package BasicDecimal_Package renames org.allbinary.logic.math.BasicDecimal_Package;
+   package BasicDecimal_Package renames Standard.org.allbinary.logic.math.BasicDecimal_Package;
 
    type MathVectorInterface is interface;
    type MathVectorInterface_Access is access all MathVectorInterface'Class;

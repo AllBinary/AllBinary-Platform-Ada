@@ -28,10 +28,10 @@ with org.allbinary.animation.image.AdjustedImageArrayRotationAnimation_Package; 
 
 package org.allbinary.animation.image.ImageArrayRotationAnimationCacheable_Package is
 
-   package AnimationBehavior_Package renames org.allbinary.animation.AnimationBehavior_Package;
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package CacheableInterface_Package renames org.allbinary.logic.util.cache.CacheableInterface_Package;
+   package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package CacheableInterface_Package renames Standard.org.allbinary.logic.util.cache.CacheableInterface_Package;
 
    type ImageArrayRotationAnimationCacheable is tagged;
    type ImageArrayRotationAnimationCacheable_Access is access all ImageArrayRotationAnimationCacheable'Class;

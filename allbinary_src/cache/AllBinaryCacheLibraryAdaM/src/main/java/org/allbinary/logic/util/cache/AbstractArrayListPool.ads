@@ -27,9 +27,9 @@ with org.allbinary.logic.util.cache.PoolInterface_Package; use org.allbinary.log
 
 package org.allbinary.logic.util.cache.AbstractArrayListPool_Package is
 
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type AbstractArrayListPool is tagged;
    type AbstractArrayListPool_Access is access all AbstractArrayListPool'Class;

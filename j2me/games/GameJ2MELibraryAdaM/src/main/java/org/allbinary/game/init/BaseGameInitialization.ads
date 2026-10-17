@@ -42,23 +42,23 @@ with org.allbinary.game.init.GameInitializationInterface_Package; use org.allbin
 
 package org.allbinary.game.init.BaseGameInitialization_Package is
 
-   package FeaturedAnimationInterfaceFactoryInterfaceFactory_Package renames org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package;
-   package GameConfigurationCentral_Package renames org.allbinary.game.configuration.GameConfigurationCentral_Package;
-   package ChangedGameFeatureListener_Package renames org.allbinary.game.configuration.event.ChangedGameFeatureListener_Package;
-   package InputFeatureFactory_Package renames org.allbinary.game.configuration.feature.InputFeatureFactory_Package;
-   package MainFeatureFactory_Package renames org.allbinary.game.configuration.feature.MainFeatureFactory_Package;
-   package PlatformInputMappingFactory_Package renames org.allbinary.game.input.PlatformInputMappingFactory_Package;
-   package GameKeyEventFactory_Package renames org.allbinary.game.input.event.GameKeyEventFactory_Package;
-   package FeaturedResourceRelativeRelationshipFactory_Package renames org.allbinary.game.resource.FeaturedResourceRelativeRelationshipFactory_Package;
-   package ResourceInitialization_Package renames org.allbinary.game.resource.ResourceInitialization_Package;
-   package ResourceLoadingLevelFactory_Package renames org.allbinary.game.resource.ResourceLoadingLevelFactory_Package;
-   package ProgressCanvas_Package renames org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
-   package ProgressCanvasFactory_Package renames org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package;
-   package GameFeatureImageCacheFactory_Package renames org.allbinary.image.GameFeatureImageCacheFactory_Package;
-   package CompleteMotionGestureInputToGameMotionGestureInput_Package renames org.allbinary.input.motion.CompleteMotionGestureInputToGameMotionGestureInput_Package;
-   package BasicTouchInputFactory_Package renames org.allbinary.input.motion.button.BasicTouchInputFactory_Package;
-   package CancelTouchButtonInputFactory_Package renames org.allbinary.input.motion.button.CancelTouchButtonInputFactory_Package;
-   package AbeClientInformationInterface_Package renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package FeaturedAnimationInterfaceFactoryInterfaceFactory_Package renames Standard.org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package;
+   package GameConfigurationCentral_Package renames Standard.org.allbinary.game.configuration.GameConfigurationCentral_Package;
+   package ChangedGameFeatureListener_Package renames Standard.org.allbinary.game.configuration.event.ChangedGameFeatureListener_Package;
+   package InputFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.InputFeatureFactory_Package;
+   package MainFeatureFactory_Package renames Standard.org.allbinary.game.configuration.feature.MainFeatureFactory_Package;
+   package PlatformInputMappingFactory_Package renames Standard.org.allbinary.game.input.PlatformInputMappingFactory_Package;
+   package GameKeyEventFactory_Package renames Standard.org.allbinary.game.input.event.GameKeyEventFactory_Package;
+   package FeaturedResourceRelativeRelationshipFactory_Package renames Standard.org.allbinary.game.resource.FeaturedResourceRelativeRelationshipFactory_Package;
+   package ResourceInitialization_Package renames Standard.org.allbinary.game.resource.ResourceInitialization_Package;
+   package ResourceLoadingLevelFactory_Package renames Standard.org.allbinary.game.resource.ResourceLoadingLevelFactory_Package;
+   package ProgressCanvas_Package renames Standard.org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
+   package ProgressCanvasFactory_Package renames Standard.org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package;
+   package GameFeatureImageCacheFactory_Package renames Standard.org.allbinary.image.GameFeatureImageCacheFactory_Package;
+   package CompleteMotionGestureInputToGameMotionGestureInput_Package renames Standard.org.allbinary.input.motion.CompleteMotionGestureInputToGameMotionGestureInput_Package;
+   package BasicTouchInputFactory_Package renames Standard.org.allbinary.input.motion.button.BasicTouchInputFactory_Package;
+   package CancelTouchButtonInputFactory_Package renames Standard.org.allbinary.input.motion.button.CancelTouchButtonInputFactory_Package;
+   package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 
    type BaseGameInitialization is tagged;
    type BaseGameInitialization_Access is access all BaseGameInitialization'Class;

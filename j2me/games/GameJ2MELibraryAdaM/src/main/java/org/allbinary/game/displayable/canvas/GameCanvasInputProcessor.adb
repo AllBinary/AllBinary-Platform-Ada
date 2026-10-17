@@ -63,8 +63,12 @@ package body org.allbinary.game.displayable.canvas.GameCanvasInputProcessor_Pack
             This.downKeyEventHandler.fireEventI (keyCodeAsInteger);
             This.downKeyEventHandler.getInstanceForDevice (deviceId).fireEventI (keyCodeAsInteger);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (To_Unbounded_String ("Key Event Error"), This'Unchecked_Access, This.gameInputStrings.ADD_KEY_EVENT, e);
+                end;
         end;
    end keyPressedByDevice;
 
@@ -89,8 +93,12 @@ package body org.allbinary.game.displayable.canvas.GameCanvasInputProcessor_Pack
                 This.logUtil.putF (StringMaker_Package.Create.append (This.gameInputStrings.NO_KEY).appendint (keyCode).toString, This'Unchecked_Access, This.gameInputStrings.REMOVE_KEY_EVENT);
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (To_Unbounded_String ("Key Event Error"), This'Unchecked_Access, This.gameInputStrings.REMOVE_KEY_EVENT, e);
+                end;
         end;
    end removeGameKeyEvent;
 

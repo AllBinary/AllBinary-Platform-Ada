@@ -77,8 +77,12 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationModuleBun
                 end loop;
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.putF (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("addModules"));
+                end;
         end;
    end addModules;
 
@@ -103,8 +107,12 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationModuleBun
                 end loop;
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.putF (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("removeModules"));
+                end;
         end;
    end removeModules;
 

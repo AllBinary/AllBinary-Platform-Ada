@@ -134,7 +134,7 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
 --                          This.copy (imageArray, index, image, image3);
 --     end onSuccess;
 --                      
---     procedure onFailure (This : in out ; e : Ada.Exceptions.Exception_Occurrence) is
+--     procedure onFailure (This : in out ; e : Java_Throwable) is
 --        logUtil : LogUtil_Access;
 --     begin
 --                          logUtil := LogUtil_Package.getInstance;
@@ -158,8 +158,12 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
             graphics.drawImage (image, 0, 0, Anchor_Package.TOP_LEFT);
             imageArray (index) := image2;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.putF ((This.commonStrings.EXCEPTION_LABEL) + (This.resourceCallbackStrings.DONE), This'Unchecked_Access, This.resourceCallbackStrings.HANDLE_IMAGE);
+                end;
         end;
    end copy;
 

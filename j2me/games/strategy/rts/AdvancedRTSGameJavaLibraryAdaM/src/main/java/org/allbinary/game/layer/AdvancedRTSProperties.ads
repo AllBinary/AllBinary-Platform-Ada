@@ -31,14 +31,14 @@ with org.allbinary.media.AllBinaryVibrationME_Package; use org.allbinary.media.A
 
 package org.allbinary.game.layer.AdvancedRTSProperties_Package is
 
-   package NoShakeAnimationListener_Package renames org.allbinary.animation.transition.shake.NoShakeAnimationListener_Package;
-   package ShakeAnimationListener_Package renames org.allbinary.animation.transition.shake.ShakeAnimationListener_Package;
-   package ShakeAnimationListenerFactory_Package renames org.allbinary.animation.transition.shake.ShakeAnimationListenerFactory_Package;
-   package GameConfigurationCentral_Package renames org.allbinary.game.configuration.GameConfigurationCentral_Package;
-   package TickableInterface_Package renames org.allbinary.game.tick.TickableInterface_Package;
-   package AllBinaryNoVibration_Package renames org.allbinary.media.AllBinaryNoVibration_Package;
-   package AllBinaryVibration_Package renames org.allbinary.media.AllBinaryVibration_Package;
-   package AllBinaryVibrationME_Package renames org.allbinary.media.AllBinaryVibrationME_Package;
+   package NoShakeAnimationListener_Package renames Standard.org.allbinary.animation.transition.shake.NoShakeAnimationListener_Package;
+   package ShakeAnimationListener_Package renames Standard.org.allbinary.animation.transition.shake.ShakeAnimationListener_Package;
+   package ShakeAnimationListenerFactory_Package renames Standard.org.allbinary.animation.transition.shake.ShakeAnimationListenerFactory_Package;
+   package GameConfigurationCentral_Package renames Standard.org.allbinary.game.configuration.GameConfigurationCentral_Package;
+   package TickableInterface_Package renames Standard.org.allbinary.game.tick.TickableInterface_Package;
+   package AllBinaryNoVibration_Package renames Standard.org.allbinary.media.AllBinaryNoVibration_Package;
+   package AllBinaryVibration_Package renames Standard.org.allbinary.media.AllBinaryVibration_Package;
+   package AllBinaryVibrationME_Package renames Standard.org.allbinary.media.AllBinaryVibrationME_Package;
 
    type AdvancedRTSProperties is tagged;
    type AdvancedRTSProperties_Access is access all AdvancedRTSProperties'Class;

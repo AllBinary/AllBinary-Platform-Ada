@@ -28,10 +28,10 @@ with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; u
 
 package views.admin.payment.gateway.PaymentGatewayViewAbstract_Package is
 
-   package PaymentGatewayData_Package renames org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package;
-   package PaymentGatewayPrimaryKey_Package renames org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayPrimaryKey_Package;
-   package TransformInfoHttpComposite_Package renames org.allbinary.logic.visual.transform.info.TransformInfoHttpComposite_Package;
-   package TransformInfoInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package PaymentGatewayData_Package renames Standard.org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package;
+   package PaymentGatewayPrimaryKey_Package renames Standard.org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayPrimaryKey_Package;
+   package TransformInfoHttpComposite_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoHttpComposite_Package;
+   package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 
    type PaymentGatewayViewAbstract is tagged;
    type PaymentGatewayViewAbstract_Access is access all PaymentGatewayViewAbstract'Class;

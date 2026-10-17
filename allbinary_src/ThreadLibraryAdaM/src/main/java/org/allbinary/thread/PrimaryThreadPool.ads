@@ -26,8 +26,8 @@ with org.allbinary.thread.ThreadPool_Package; use org.allbinary.thread.ThreadPoo
 
 package org.allbinary.thread.PrimaryThreadPool_Package is
 
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type PrimaryThreadPool is tagged;
    type PrimaryThreadPool_Access is access all PrimaryThreadPool'Class;

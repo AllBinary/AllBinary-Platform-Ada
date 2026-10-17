@@ -50,9 +50,13 @@ package body org.allbinary.graphics.form.item.validation.TextItemNumberVisitor_P
                 begin
                     TextNotificationUtil_Package.getInstance.fireError (To_Unbounded_String ("Numbers Only"));
                 exception
-                    when e : others =>
+                    when Java_Occurrence : others =>
+                        declare
+                            e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                        begin
                     commonStrings := CommonStrings_Package.getInstance;
                     This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.VISIT, e);
+                        end;
                 end;
                 return BooleanFactory_Package.getInstance.FALSE;
             end if;

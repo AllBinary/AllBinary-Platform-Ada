@@ -25,7 +25,7 @@ with org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Pack
 
 package org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactoryInterface_Package is
 
-   package LayerInterfaceFactoryInterface_Package renames org.allbinary.layer.LayerInterfaceFactoryInterface_Package;
+   package LayerInterfaceFactoryInterface_Package renames Standard.org.allbinary.layer.LayerInterfaceFactoryInterface_Package;
 
    type CountedPickedUpLayerInterfaceFactoryInterface is interface and PickedUpLayerInterfaceFactoryInterface and LayerInterfaceFactoryInterface;
    type CountedPickedUpLayerInterfaceFactoryInterface_Access is access all CountedPickedUpLayerInterfaceFactoryInterface'Class;

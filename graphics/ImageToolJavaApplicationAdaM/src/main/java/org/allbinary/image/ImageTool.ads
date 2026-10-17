@@ -27,10 +27,10 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.image.ImageTool_Package is
 
-   package ARunnable_Package renames org.allbinary.thread.ARunnable_Package;
-   package ImageToolJFrame_Package renames org.allbinary.image.gui.ImageToolJFrame_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package ARunnable_Package renames Standard.org.allbinary.thread.ARunnable_Package;
+   package ImageToolJFrame_Package renames Standard.org.allbinary.image.gui.ImageToolJFrame_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type ImageTool is tagged;
    type ImageTool_Access is access all ImageTool'Class;

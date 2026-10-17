@@ -25,8 +25,8 @@ with org.allbinary.layer.LayerManagerNoDebug_Package; use org.allbinary.layer.La
 
 package org.allbinary.ai.ArtificialIntelligenceLayerManager_Package is
 
-   package LayerManager_Package renames org.allbinary.layer.LayerManager_Package;
-   package LayerManagerNoDebug_Package renames org.allbinary.layer.LayerManagerNoDebug_Package;
+   package LayerManager_Package renames Standard.org.allbinary.layer.LayerManager_Package;
+   package LayerManagerNoDebug_Package renames Standard.org.allbinary.layer.LayerManagerNoDebug_Package;
 
    type ArtificialIntelligenceLayerManager is tagged;
    type ArtificialIntelligenceLayerManager_Access is access all ArtificialIntelligenceLayerManager'Class;

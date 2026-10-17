@@ -28,11 +28,11 @@ with org.allbinary.layer.AllBinaryLayerFactoryInterface_Package; use org.allbina
 
 package org.allbinary.game.ag.layer.pickup.health.HealLayerCircularStaticPool_Package is
 
-   package HealthInterface_Package renames org.allbinary.game.health.HealthInterface_Package;
-   package HealthInterfaceCompositeInterface_Package renames org.allbinary.game.health.HealthInterfaceCompositeInterface_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package AllBinaryLayerCircularPool_Package renames org.allbinary.layer.AllBinaryLayerCircularPool_Package;
-   package AllBinaryLayerFactoryInterface_Package renames org.allbinary.layer.AllBinaryLayerFactoryInterface_Package;
+   package HealthInterface_Package renames Standard.org.allbinary.game.health.HealthInterface_Package;
+   package HealthInterfaceCompositeInterface_Package renames Standard.org.allbinary.game.health.HealthInterfaceCompositeInterface_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package AllBinaryLayerCircularPool_Package renames Standard.org.allbinary.layer.AllBinaryLayerCircularPool_Package;
+   package AllBinaryLayerFactoryInterface_Package renames Standard.org.allbinary.layer.AllBinaryLayerFactoryInterface_Package;
 
    type HealLayerCircularStaticPool is tagged;
    type HealLayerCircularStaticPool_Access is access all HealLayerCircularStaticPool'Class;

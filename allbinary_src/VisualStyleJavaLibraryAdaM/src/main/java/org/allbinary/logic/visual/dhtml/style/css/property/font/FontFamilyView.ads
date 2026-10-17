@@ -25,8 +25,8 @@ with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 
 package org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyView_Package is
 
-   package CssPropertyView_Package renames org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyView_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
+   package CssPropertyView_Package renames Standard.org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyView_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type FontFamilyView is tagged;
    type FontFamilyView_Access is access all FontFamilyView'Class;

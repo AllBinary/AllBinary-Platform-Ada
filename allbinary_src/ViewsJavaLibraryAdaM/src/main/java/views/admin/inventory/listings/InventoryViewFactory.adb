@@ -43,12 +43,16 @@ package body views.admin.inventory.listings.InventoryViewFactory_Package is
         begin
             return InventorySearch_Package.Create (searchRequest);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORYERROR) then
                 commonStrings := CommonStrings_Package.getInstance;
                 logUtil.put (commonStrings.EXCEPTION_Id, To_Unbounded_String ("InventoryViewFactory"), To_Unbounded_String ("getInstance(SearchRequest)"), e);
             end if;
             return null;
+                end;
         end;
    end getInstance;
 

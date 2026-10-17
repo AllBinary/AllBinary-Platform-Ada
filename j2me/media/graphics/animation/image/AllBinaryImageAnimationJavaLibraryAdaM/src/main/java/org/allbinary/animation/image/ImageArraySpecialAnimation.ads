@@ -31,11 +31,11 @@ with org.allbinary.animation.image.ImageArrayAnimation_Package; use org.allbinar
 
 package org.allbinary.animation.image.ImageArraySpecialAnimation_Package is
 
-   package AnimationBehavior_Package renames org.allbinary.animation.AnimationBehavior_Package;
-   package SpecialAnimationInterface_Package renames org.allbinary.animation.special.SpecialAnimationInterface_Package;
-   package DisplayInfoSingleton_Package renames org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
-   package GameTickTimeDelayHelperFactory_Package renames org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
-   package TimeDelayHelper_Package renames org.allbinary.time.TimeDelayHelper_Package;
+   package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
+   package SpecialAnimationInterface_Package renames Standard.org.allbinary.animation.special.SpecialAnimationInterface_Package;
+   package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+   package GameTickTimeDelayHelperFactory_Package renames Standard.org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
+   package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
 
    type ImageArraySpecialAnimation is tagged;
    type ImageArraySpecialAnimation_Access is access all ImageArraySpecialAnimation'Class;

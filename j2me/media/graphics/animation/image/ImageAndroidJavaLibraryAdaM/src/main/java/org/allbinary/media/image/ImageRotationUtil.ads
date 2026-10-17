@@ -29,11 +29,11 @@ with org.microemu.android.device.AndroidImageInterface_Package; use org.microemu
 
 package org.allbinary.media.image.ImageRotationUtil_Package is
 
-   package Anchor_Package renames org.allbinary.graphics.Anchor_Package;
-   package Bitmap_Package renames android.graphics.Bitmap_Package;
-   package Canvas_Package renames android.graphics.Canvas_Package;
-   package Matrix_Package renames android.graphics.Matrix_Package;
-   package AndroidImageInterface_Package renames org.microemu.android.device.AndroidImageInterface_Package;
+   package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
+   package Bitmap_Package renames Standard.android.graphics.Bitmap_Package;
+   package Canvas_Package renames Standard.android.graphics.Canvas_Package;
+   package Matrix_Package renames Standard.android.graphics.Matrix_Package;
+   package AndroidImageInterface_Package renames Standard.org.microemu.android.device.AndroidImageInterface_Package;
 
    type ImageRotationUtil is tagged;
    type ImageRotationUtil_Access is access all ImageRotationUtil'Class;

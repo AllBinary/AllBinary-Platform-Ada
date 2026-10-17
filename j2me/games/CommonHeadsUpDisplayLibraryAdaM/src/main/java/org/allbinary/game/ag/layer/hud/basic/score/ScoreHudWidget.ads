@@ -28,9 +28,9 @@ with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.g
 
 package org.allbinary.game.ag.layer.hud.basic.score.ScoreHudWidget_Package is
 
-   package NumberStringHud_Package renames org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package BasicColorFactory_Package renames org.allbinary.graphics.color.BasicColorFactory_Package;
+   package NumberStringHud_Package renames Standard.org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
 
    type ScoreHudWidget is tagged;
    type ScoreHudWidget_Access is access all ScoreHudWidget'Class;

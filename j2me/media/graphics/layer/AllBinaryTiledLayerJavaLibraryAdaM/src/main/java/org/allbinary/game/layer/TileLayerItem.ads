@@ -28,9 +28,9 @@ with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics
 
 package org.allbinary.game.layer.TileLayerItem_Package is
 
-   package ABCustomItem_Package renames org.allbinary.graphics.form.item.ABCustomItem_Package;
-   package ABCustomItemInterface_Package renames org.allbinary.graphics.form.item.ABCustomItemInterface_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
+   package ABCustomItem_Package renames Standard.org.allbinary.graphics.form.item.ABCustomItem_Package;
+   package ABCustomItemInterface_Package renames Standard.org.allbinary.graphics.form.item.ABCustomItemInterface_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
 
    type TileLayerItem is tagged;
    type TileLayerItem_Access is access all TileLayerItem'Class;

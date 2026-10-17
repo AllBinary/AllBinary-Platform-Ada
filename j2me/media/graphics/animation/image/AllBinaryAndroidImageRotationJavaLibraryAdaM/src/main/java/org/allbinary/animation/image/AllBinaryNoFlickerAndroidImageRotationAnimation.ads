@@ -33,13 +33,13 @@ with org.allbinary.animation.image.ImageBaseRotationAnimation_Package; use org.a
 
 package org.allbinary.animation.image.AllBinaryNoFlickerAndroidImageRotationAnimation_Package is
 
-   package Matrix_Package renames android.graphics.Matrix_Package;
-   package AngleInfo_Package renames org.allbinary.math.AngleInfo_Package;
-   package AnimationBehavior_Package renames org.allbinary.animation.AnimationBehavior_Package;
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package AndroidImageUtil_Package renames org.allbinary.media.image.AndroidImageUtil_Package;
-   package ImageCopyUtil_Package renames org.allbinary.media.image.ImageCopyUtil_Package;
-   package ImageModifierUtil_Package renames org.allbinary.media.image.ImageModifierUtil_Package;
+   package Matrix_Package renames Standard.android.graphics.Matrix_Package;
+   package AngleInfo_Package renames Standard.org.allbinary.math.AngleInfo_Package;
+   package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package AndroidImageUtil_Package renames Standard.org.allbinary.media.image.AndroidImageUtil_Package;
+   package ImageCopyUtil_Package renames Standard.org.allbinary.media.image.ImageCopyUtil_Package;
+   package ImageModifierUtil_Package renames Standard.org.allbinary.media.image.ImageModifierUtil_Package;
 
    type AllBinaryNoFlickerAndroidImageRotationAnimation is tagged;
    type AllBinaryNoFlickerAndroidImageRotationAnimation_Access is access all AllBinaryNoFlickerAndroidImageRotationAnimation'Class;

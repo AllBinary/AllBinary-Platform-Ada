@@ -25,8 +25,8 @@ with org.allbinary.logic.util.event.AllBinaryEventObjectFactoryInterface_Package
 
 package org.allbinary.game.tracking.TrackingEventFactory_Package is
 
-   package AllBinaryEventObject_Package renames org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-   package AllBinaryEventObjectFactoryInterface_Package renames org.allbinary.logic.util.event.AllBinaryEventObjectFactoryInterface_Package;
+   package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+   package AllBinaryEventObjectFactoryInterface_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObjectFactoryInterface_Package;
 
    type TrackingEventFactory is tagged;
    type TrackingEventFactory_Access is access all TrackingEventFactory'Class;

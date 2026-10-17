@@ -34,12 +34,12 @@ with org.allbinary.logic.communication.http.request.RequestParams_Package; use o
 
 package org.allbinary.logic.communication.http.request.MultipartRequestParams_Package is
 
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package AbFileUploadFactory_Package renames org.allbinary.logic.communication.http.file.upload.AbFileUploadFactory_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringValidationUtil_Package renames org.allbinary.logic.string_Id.StringValidationUtil_Package;
-   package FileItem_Package renames org.apache.commons.fileupload.FileItem_Package;
-   package InvalidContentTypeException_Package renames org.apache.commons.fileupload.FileUploadBase.InvalidContentTypeException_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package AbFileUploadFactory_Package renames Standard.org.allbinary.logic.communication.http.file.upload.AbFileUploadFactory_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
+   package FileItem_Package renames Standard.org.apache.commons.fileupload.FileItem_Package;
+   package InvalidContentTypeException_Package renames Standard.org.apache.commons.fileupload.FileUploadBase.InvalidContentTypeException_Package;
 
    type MultipartRequestParams is tagged;
    type MultipartRequestParams_Access is access all MultipartRequestParams'Class;

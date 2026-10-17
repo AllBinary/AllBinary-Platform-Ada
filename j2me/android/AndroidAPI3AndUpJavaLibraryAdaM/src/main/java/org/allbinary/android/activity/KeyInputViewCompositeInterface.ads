@@ -25,7 +25,7 @@ with org.allbinary.android.activity.ViewCompositeInterface_Package; use org.allb
 
 package org.allbinary.android.activity.KeyInputViewCompositeInterface_Package is
 
-   package View_Package renames android.view.View_Package;
+   package View_Package renames Standard.android.view.View_Package;
 
    type KeyInputViewCompositeInterface is interface and ViewCompositeInterface;
    type KeyInputViewCompositeInterface_Access is access all KeyInputViewCompositeInterface'Class;

@@ -34,17 +34,17 @@ with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.C
 
 package admin.taghelpers.AuthenticationHelperUtil_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package BasicUserRole_Package renames org.allbinary.business.user.role.BasicUserRole_Package;
-   package UserRole_Package renames org.allbinary.business.user.role.UserRole_Package;
-   package URLGLOBALS_Package renames org.allbinary.globals.URLGLOBALS_Package;
-   package HttpFilePermissions_Package renames org.allbinary.logic.communication.http.file.upload.HttpFilePermissions_Package;
-   package HttpRequestUtil_Package renames org.allbinary.logic.communication.http.request.HttpRequestUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package AbPath_Package renames org.allbinary.logic.io.path.AbPath_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package CommonLabels_Package renames org.allbinary.string_Id.CommonLabels_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package BasicUserRole_Package renames Standard.org.allbinary.business.user.role.BasicUserRole_Package;
+   package UserRole_Package renames Standard.org.allbinary.business.user.role.UserRole_Package;
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
+   package HttpFilePermissions_Package renames Standard.org.allbinary.logic.communication.http.file.upload.HttpFilePermissions_Package;
+   package HttpRequestUtil_Package renames Standard.org.allbinary.logic.communication.http.request.HttpRequestUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
 
    type AuthenticationHelperUtil is tagged;
    type AuthenticationHelperUtil_Access is access all AuthenticationHelperUtil'Class;

@@ -35,16 +35,16 @@ with org.allbinary.game.layer.RTSPlayerLayerInterface_Package; use org.allbinary
 
 package org.allbinary.game.layer.NullRTSLayer_Package is
 
-   package GameNotificationHud_Package renames org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package;
-   package DestroyedEvent_Package renames org.allbinary.game.combat.destroy.event.DestroyedEvent_Package;
-   package PlayerGameInput_Package renames org.allbinary.game.input.PlayerGameInput_Package;
-   package NullRTSFormInputFactory_Package renames org.allbinary.game.input.form.NullRTSFormInputFactory_Package;
-   package RTSFormInput_Package renames org.allbinary.game.input.form.RTSFormInput_Package;
-   package Capital_Package renames org.allbinary.game.layer.capital.Capital_Package;
-   package ScrollSelectionForm_Package renames org.allbinary.graphics.form.ScrollSelectionForm_Package;
-   package AllBinaryLayerManager_Package renames org.allbinary.layer.AllBinaryLayerManager_Package;
-   package AllBinaryEventObject_Package renames org.allbinary.logic.util.event.AllBinaryEventObject_Package;
-   package Sound_Package renames org.allbinary.media.audio.Sound_Package;
+   package GameNotificationHud_Package renames Standard.org.allbinary.game.ag.layer.hud.basic.notification.GameNotificationHud_Package;
+   package DestroyedEvent_Package renames Standard.org.allbinary.game.combat.destroy.event.DestroyedEvent_Package;
+   package PlayerGameInput_Package renames Standard.org.allbinary.game.input.PlayerGameInput_Package;
+   package NullRTSFormInputFactory_Package renames Standard.org.allbinary.game.input.form.NullRTSFormInputFactory_Package;
+   package RTSFormInput_Package renames Standard.org.allbinary.game.input.form.RTSFormInput_Package;
+   package Capital_Package renames Standard.org.allbinary.game.layer.capital.Capital_Package;
+   package ScrollSelectionForm_Package renames Standard.org.allbinary.graphics.form.ScrollSelectionForm_Package;
+   package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
+   package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+   package Sound_Package renames Standard.org.allbinary.media.audio.Sound_Package;
 
    type NullRTSLayer is tagged;
    type NullRTSLayer_Access is access all NullRTSLayer'Class;

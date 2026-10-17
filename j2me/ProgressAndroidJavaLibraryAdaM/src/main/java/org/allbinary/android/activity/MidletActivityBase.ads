@@ -34,15 +34,15 @@ with org.allbinary.android.activity.KeyInputViewCompositeInterface_Package; use 
 
 package org.allbinary.android.activity.MidletActivityBase_Package is
 
-   package Activity_Package renames android.app.Activity_Package;
-   package MotionEvent_Package renames android.view.MotionEvent_Package;
-   package View_Package renames android.view.View_Package;
-   package GenericMotionEventVerifyInterface_Package renames org.allbinary.android.GenericMotionEventVerifyInterface_Package;
-   package GameFeatureEvent_Package renames org.allbinary.game.configuration.event.GameFeatureEvent_Package;
-   package GameFeatureListenerInterface_Package renames org.allbinary.game.configuration.event.GameFeatureListenerInterface_Package;
-   package GameInitializedEvent_Package renames org.allbinary.game.configuration.event.GameInitializedEvent_Package;
-   package GameInitializedListenerInterface_Package renames org.allbinary.game.configuration.event.GameInitializedListenerInterface_Package;
-   package AllBinaryEventObject_Package renames org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+   package Activity_Package renames Standard.android.app.Activity_Package;
+   package MotionEvent_Package renames Standard.android.view.MotionEvent_Package;
+   package View_Package renames Standard.android.view.View_Package;
+   package GenericMotionEventVerifyInterface_Package renames Standard.org.allbinary.android.GenericMotionEventVerifyInterface_Package;
+   package GameFeatureEvent_Package renames Standard.org.allbinary.game.configuration.event.GameFeatureEvent_Package;
+   package GameFeatureListenerInterface_Package renames Standard.org.allbinary.game.configuration.event.GameFeatureListenerInterface_Package;
+   package GameInitializedEvent_Package renames Standard.org.allbinary.game.configuration.event.GameInitializedEvent_Package;
+   package GameInitializedListenerInterface_Package renames Standard.org.allbinary.game.configuration.event.GameInitializedListenerInterface_Package;
+   package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 
    type MidletActivityBase is tagged;
    type MidletActivityBase_Access is access all MidletActivityBase'Class;

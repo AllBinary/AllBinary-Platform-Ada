@@ -28,11 +28,11 @@ with org.allbinary.logic.visual.dhtml.html.HtmlTag_Package; use org.allbinary.lo
 
 package org.allbinary.logic.visual.dhtml.html.table.HtmlRow_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package HtmlTag_Package renames org.allbinary.logic.visual.dhtml.html.HtmlTag_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package HtmlTag_Package renames Standard.org.allbinary.logic.visual.dhtml.html.HtmlTag_Package;
 
    type HtmlRow is tagged;
    type HtmlRow_Access is access all HtmlRow'Class;

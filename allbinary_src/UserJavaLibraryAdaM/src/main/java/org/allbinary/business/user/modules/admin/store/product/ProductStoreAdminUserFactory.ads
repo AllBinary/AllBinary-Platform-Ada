@@ -26,8 +26,8 @@ with org.allbinary.business.user.UserInterface_Package; use org.allbinary.busine
 
 package org.allbinary.business.user.modules.admin.store.product.ProductStoreAdminUserFactory_Package is
 
-   package UserFactoryInterface_Package renames org.allbinary.business.user.UserFactoryInterface_Package;
-   package UserInterface_Package renames org.allbinary.business.user.UserInterface_Package;
+   package UserFactoryInterface_Package renames Standard.org.allbinary.business.user.UserFactoryInterface_Package;
+   package UserInterface_Package renames Standard.org.allbinary.business.user.UserInterface_Package;
 
    type ProductStoreAdminUserFactory is tagged;
    type ProductStoreAdminUserFactory_Access is access all ProductStoreAdminUserFactory'Class;

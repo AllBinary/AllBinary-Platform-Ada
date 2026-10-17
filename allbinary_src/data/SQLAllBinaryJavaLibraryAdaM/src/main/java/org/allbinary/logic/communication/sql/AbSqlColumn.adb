@@ -79,11 +79,15 @@ package body org.allbinary.logic.communication.sql.AbSqlColumn_Package is
             end if;
             return largestAsString;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
                 This.logUtil.put (Java_Image (This.FAILED_SQL_STATEMENT) & sqlStatement, This'Unchecked_Access, This.METHOD_GET_LARGETS_INTEGER_IN_COLUMN, e);
             end if;
             return This.INVALID_RESULT;
+                end;
         end;
    end getLargestIntegerInColumnWhere;
 
@@ -117,11 +121,15 @@ package body org.allbinary.logic.communication.sql.AbSqlColumn_Package is
             end if;
             return column;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
                 This.logUtil.put (Java_Image (This.FAILED_SQL_STATEMENT) & sqlStatement, This'Unchecked_Access, This.METHOD_GET_COLUMN, e);
             end if;
             return column;
+                end;
         end;
    end getColumn;
 
@@ -162,11 +170,15 @@ package body org.allbinary.logic.communication.sql.AbSqlColumn_Package is
             end if;
             return column;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
                 This.logUtil.put (Java_Image (This.FAILED_SQL_STATEMENT) & sqlStatement, This'Unchecked_Access, This.METHOD_GET_COLUMN_WHERE, e);
             end if;
             return column;
+                end;
         end;
    end getColumnWhere;
 

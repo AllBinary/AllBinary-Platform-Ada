@@ -25,7 +25,7 @@ with org.allbinary.game.physics.velocity.VelocityBehaviorBase_Package; use org.a
 
 package org.allbinary.game.physics.velocity.DragVelocityBehavior_Package is
 
-   package BasicDecimal_Package renames org.allbinary.logic.math.BasicDecimal_Package;
+   package BasicDecimal_Package renames Standard.org.allbinary.logic.math.BasicDecimal_Package;
 
    type DragVelocityBehavior is tagged;
    type DragVelocityBehavior_Access is access all DragVelocityBehavior'Class;

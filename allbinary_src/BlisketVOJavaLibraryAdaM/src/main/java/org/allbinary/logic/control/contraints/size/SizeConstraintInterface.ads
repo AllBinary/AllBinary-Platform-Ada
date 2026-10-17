@@ -24,7 +24,7 @@ with org.allbinary.logic.control.contraints.MinMaxIntConstraintInterface_Package
 
 package org.allbinary.logic.control.contraints.size.SizeConstraintInterface_Package is
 
-   package MinMaxIntConstraintInterface_Package renames org.allbinary.logic.control.contraints.MinMaxIntConstraintInterface_Package;
+   package MinMaxIntConstraintInterface_Package renames Standard.org.allbinary.logic.control.contraints.MinMaxIntConstraintInterface_Package;
 
    type SizeConstraintInterface is interface and MinMaxIntConstraintInterface;
    type SizeConstraintInterface_Access is access all SizeConstraintInterface'Class;

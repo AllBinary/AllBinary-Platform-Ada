@@ -78,13 +78,17 @@ package body org.allbinary.logic.communication.sql.AbSqlBasic_Package is
             This.sqlConnectionPool.add (This.getDatabaseConnectionInfoInterface.getUrl, tempConnection);
             return rset;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
                 This.logUtil.put (This.FAILED_SQL_STATEMENT & statement, This'Unchecked_Access, This.METHOD_EXECUTED_SQL_STATEMENT, e);
             end if;
             This.conn.close;
             This.conn := null;
             Java_Throw (e);
+                end;
         end;
    end executeSQLStatement;
 
@@ -97,11 +101,15 @@ package body org.allbinary.logic.communication.sql.AbSqlBasic_Package is
             end if;
             return databaseName & Java_Image (This.sqlStrings.CREATE_RETURN);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
                 This.logUtil.put (This.DATABASE_CREATION_FAILED_LABEL & databaseName, This'Unchecked_Access, This.METHOD_CREATE, e);
             end if;
             return This.DATABASE_CREATION_FAILED_LABEL & databaseName;
+                end;
         end;
    end create;
 
@@ -110,7 +118,10 @@ package body org.allbinary.logic.communication.sql.AbSqlBasic_Package is
         begin
             This.conn := This.sqlConnectionPool.get (This.getDatabaseConnectionInfoInterface.getUrl);
         exception
-            when se : others =>
+            when Java_Occurrence : others =>
+                declare
+                    se : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
                 This.logUtil.put (This.SQL_CONNECTION_RETRYING, This'Unchecked_Access, This.METHOD_CREATE_CONNECTION, se);
             end if;
@@ -121,11 +132,16 @@ package body org.allbinary.logic.communication.sql.AbSqlBasic_Package is
                     This.initialize;
                 end if;
             exception
-                when e : others =>
+                when Java_Occurrence : others =>
+                    declare
+                        e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                    begin
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
-                    This.logUtil.put (This.SQL_CONNECTION_RETRY & To_Unbounded_String (Ada.Exceptions.Exception_Message (se)), This'Unchecked_Access, This.METHOD_CREATE_CONNECTION, e);
+                    This.logUtil.put (This.SQL_CONNECTION_RETRY & Java_Get_Message (se), This'Unchecked_Access, This.METHOD_CREATE_CONNECTION, e);
                 end if;
+                    end;
             end;
+                end;
         end;
    end createConnection;
 
@@ -140,18 +156,26 @@ package body org.allbinary.logic.communication.sql.AbSqlBasic_Package is
                     jdbcDriverClass := loader.loadClass (This.getDatabaseConnectionInfoInterface.getJdbcDriver);
                     jdbcDriverClass.newInstance;
                 exception
-                    when e : others =>
+                    when Java_Occurrence : others =>
+                        declare
+                            e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                        begin
                     if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
                         This.logUtil.put (This.LOAD_JDBC_DRIVER_FAILED_LABEL & Java_Image (This.getDatabaseConnectionInfoInterface.getJdbcDriver), This'Unchecked_Access, This.METHOD_INITIALIZE, e);
                     end if;
+                        end;
                 end;
             end;
             This.createConnection;
         exception
-            when se : others =>
+            when Java_Occurrence : others =>
+                declare
+                    se : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
                 This.logUtil.put (This.SQL_CONNECTION_FAILED, This'Unchecked_Access, This.METHOD_INITIALIZE, se);
             end if;
+                end;
         end;
    end initialize;
 

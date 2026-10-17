@@ -24,7 +24,7 @@ with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Packag
 
 package org.allbinary.game.layer.geological.resources.GeologicalGeographicMapCellPosition_Package is
 
-   package GeographicMapCellPosition_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+   package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
 
    type GeologicalGeographicMapCellPosition is tagged;
    type GeologicalGeographicMapCellPosition_Access is access all GeologicalGeographicMapCellPosition'Class;

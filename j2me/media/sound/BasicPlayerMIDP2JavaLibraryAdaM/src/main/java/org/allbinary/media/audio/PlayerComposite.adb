@@ -91,8 +91,12 @@ package body org.allbinary.media.audio.PlayerComposite_Package is
         begin
             This.player.prefetch;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("prefetch"), e);
+                end;
         end;
    end prefetch;
 
@@ -101,8 +105,12 @@ package body org.allbinary.media.audio.PlayerComposite_Package is
         begin
             This.player.realize;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("realize"), e);
+                end;
         end;
    end realize;
 
@@ -121,9 +129,13 @@ package body org.allbinary.media.audio.PlayerComposite_Package is
         begin
             return This.player.setMediaTime (now);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("setMediaTime"), e);
             return Long_Long_Integer (-(1));
+                end;
         end;
    end setMediaTime;
 
@@ -134,8 +146,12 @@ package body org.allbinary.media.audio.PlayerComposite_Package is
                 This.player.start;
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.START_METHOD_NAME, e);
+                end;
         end;
    end start;
 
@@ -144,8 +160,12 @@ package body org.allbinary.media.audio.PlayerComposite_Package is
         begin
             This.player.stop;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("stop"), e);
+                end;
         end;
    end stop;
 

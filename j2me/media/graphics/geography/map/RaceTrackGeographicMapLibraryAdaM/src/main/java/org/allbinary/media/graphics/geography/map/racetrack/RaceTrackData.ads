@@ -27,8 +27,8 @@ with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Pack
 
 package org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_Package is
 
-   package CellPosition_Package renames org.allbinary.graphics.CellPosition_Package;
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
+   package CellPosition_Package renames Standard.org.allbinary.graphics.CellPosition_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
 
    type RaceTrackData is tagged;
    type RaceTrackData_Access is access all RaceTrackData'Class;

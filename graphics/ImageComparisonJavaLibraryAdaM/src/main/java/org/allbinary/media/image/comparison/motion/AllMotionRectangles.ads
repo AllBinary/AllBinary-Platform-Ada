@@ -28,10 +28,10 @@ with org.allbinary.media.image.comparison.motion.MotionRectangles_Package; use o
 
 package org.allbinary.media.image.comparison.motion.AllMotionRectangles_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package ImageComparisonResult_Package renames org.allbinary.media.image.comparison.ImageComparisonResult_Package;
-   package PixelDelta_Package renames org.allbinary.media.image.comparison.pixel.PixelDelta_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package ImageComparisonResult_Package renames Standard.org.allbinary.media.image.comparison.ImageComparisonResult_Package;
+   package PixelDelta_Package renames Standard.org.allbinary.media.image.comparison.pixel.PixelDelta_Package;
 
    type AllMotionRectangles is tagged;
    type AllMotionRectangles_Access is access all AllMotionRectangles'Class;

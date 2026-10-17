@@ -32,13 +32,13 @@ with org.allbinary.logic.visual.transform.template.customizer.includes.style.css
 
 package org.allbinary.logic.visual.transform.template.customizer.includes.style.css.template.retail.EditCssStyleValidation_Package is
 
-   package DomNodeInterface_Package renames org.allbinary.data.tree.dom.DomNodeInterface_Package;
-   package ValidationInterface_Package renames org.allbinary.logic.control.validate.ValidationInterface_Package;
-   package StyleData_Package renames org.allbinary.logic.visual.dhtml.style.StyleData_Package;
-   package StylesData_Package renames org.allbinary.logic.visual.dhtml.style.StylesData_Package;
-   package ColorsView_Package renames org.allbinary.logic.visual.dhtml.style.color.ColorsView_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
+   package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
+   package ValidationInterface_Package renames Standard.org.allbinary.logic.control.validate.ValidationInterface_Package;
+   package StyleData_Package renames Standard.org.allbinary.logic.visual.dhtml.style.StyleData_Package;
+   package StylesData_Package renames Standard.org.allbinary.logic.visual.dhtml.style.StylesData_Package;
+   package ColorsView_Package renames Standard.org.allbinary.logic.visual.dhtml.style.color.ColorsView_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
 
    type EditCssStyleValidation is tagged;
    type EditCssStyleValidation_Access is access all EditCssStyleValidation'Class;

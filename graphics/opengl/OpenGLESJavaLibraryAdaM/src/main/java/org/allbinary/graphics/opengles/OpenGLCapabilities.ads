@@ -39,20 +39,20 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 
 package org.allbinary.graphics.opengles.OpenGLCapabilities_Package is
 
-   package AndroidUtil_Package renames org.allbinary.AndroidUtil_Package;
-   package OpenGLESGL10ImageFactory_Package renames org.allbinary.image.opengles.OpenGLESGL10ImageFactory_Package;
-   package OpenGLESGL11VBOImageFactory_Package renames org.allbinary.image.opengles.OpenGLESGL11VBOImageFactory_Package;
-   package OpenGLImageSpecificFactory_Package renames org.allbinary.image.opengles.OpenGLImageSpecificFactory_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package Tokenizer_Package renames org.allbinary.logic.string_Id.tokens.Tokenizer_Package;
-   package PreLogUtil_Package renames org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package Features_Package renames org.allbinary.game.configuration.feature.Features_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
+   package AndroidUtil_Package renames Standard.org.allbinary.AndroidUtil_Package;
+   package OpenGLESGL10ImageFactory_Package renames Standard.org.allbinary.image.opengles.OpenGLESGL10ImageFactory_Package;
+   package OpenGLESGL11VBOImageFactory_Package renames Standard.org.allbinary.image.opengles.OpenGLESGL11VBOImageFactory_Package;
+   package OpenGLImageSpecificFactory_Package renames Standard.org.allbinary.image.opengles.OpenGLImageSpecificFactory_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package Tokenizer_Package renames Standard.org.allbinary.logic.string_Id.tokens.Tokenizer_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type OpenGLCapabilities is tagged;
    type OpenGLCapabilities_Access is access all OpenGLCapabilities'Class;

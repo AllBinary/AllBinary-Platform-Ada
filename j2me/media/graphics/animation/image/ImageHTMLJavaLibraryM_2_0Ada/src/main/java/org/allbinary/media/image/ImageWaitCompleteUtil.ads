@@ -33,14 +33,14 @@ with org.allbinary.media.image.ImageCompleteUtil_Package; use org.allbinary.medi
 
 package org.allbinary.media.image.ImageWaitCompleteUtil_Package is
 
-   package GameFeatureImageCacheFactory_Package renames org.allbinary.image.GameFeatureImageCacheFactory_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package PreLogUtil_Package renames org.allbinary.logic.communication.log.PreLogUtil_Package;
-   package TimeDelayHelper_Package renames org.allbinary.time.TimeDelayHelper_Package;
-   package ABHashtable_Package renames org.allbinary.util.ABHashtable_Package;
-   package HashtableUtil_Package renames org.allbinary.util.HashtableUtil_Package;
-   package PlaynImage_Package renames org.microemu.device.playn.PlaynImage_Package;
-   package CoreImage_Package renames playn.core.CoreImage_Package;
+   package GameFeatureImageCacheFactory_Package renames Standard.org.allbinary.image.GameFeatureImageCacheFactory_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
+   package HashtableUtil_Package renames Standard.org.allbinary.util.HashtableUtil_Package;
+   package PlaynImage_Package renames Standard.org.microemu.device.playn.PlaynImage_Package;
+   package CoreImage_Package renames Standard.playn.core.CoreImage_Package;
 
    type ImageWaitCompleteUtil is tagged;
    type ImageWaitCompleteUtil_Access is access all ImageWaitCompleteUtil'Class;

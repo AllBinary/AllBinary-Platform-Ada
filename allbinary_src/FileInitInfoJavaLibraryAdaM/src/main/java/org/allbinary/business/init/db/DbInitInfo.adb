@@ -100,10 +100,14 @@ package body org.allbinary.business.init.db.DbInitInfo_Package is
                 StreamUtil_Package.getInstance.close (dataOutputStream);
             end;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.PRELOADERERROR) then
                 PreLogUtil_Package.putOE (To_Unbounded_String ("Failed Write: ") & FILEABPATH.toString, This'Unchecked_Access, To_Unbounded_String ("write"), e);
             end if;
+                end;
         end;
    end write;
 
@@ -156,10 +160,14 @@ package body org.allbinary.business.init.db.DbInitInfo_Package is
                 end if;
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.PRELOADERERROR) then
                 PreLogUtil_Package.putOE (To_Unbounded_String ("Failed Loading: ") & FILEABPATH.toString, This'Unchecked_Access, This.commonStrings.LOAD, e);
             end if;
+                end;
         end;
    end load;
 
@@ -176,10 +184,14 @@ package body org.allbinary.business.init.db.DbInitInfo_Package is
                 This.load;
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.PRELOADERERROR) then
                 PreLogUtil_Package.putOE (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("updateIfNeeded"), e);
             end if;
+                end;
         end;
    end updateIfNeeded;
 

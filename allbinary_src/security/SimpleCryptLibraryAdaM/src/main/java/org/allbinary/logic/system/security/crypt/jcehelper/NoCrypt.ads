@@ -24,7 +24,7 @@ with org.allbinary.init.crypt.jcehelper.CryptInterface_Package; use org.allbinar
 
 package org.allbinary.logic.system.security.crypt.jcehelper.NoCrypt_Package is
 
-   package CryptInterface_Package renames org.allbinary.init.crypt.jcehelper.CryptInterface_Package;
+   package CryptInterface_Package renames Standard.org.allbinary.init.crypt.jcehelper.CryptInterface_Package;
 
    type NoCrypt is tagged;
    type NoCrypt_Access is access all NoCrypt'Class;

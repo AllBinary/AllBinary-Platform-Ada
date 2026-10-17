@@ -25,8 +25,8 @@ with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.
 
 package org.allbinary.input.motion.button.TouchButtonsPaintableFactory_Package is
 
-   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
-   package Paintable_Package renames org.allbinary.graphics.paint.Paintable_Package;
+   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package Paintable_Package renames Standard.org.allbinary.graphics.paint.Paintable_Package;
 
    type TouchButtonsPaintableFactory is tagged;
    type TouchButtonsPaintableFactory_Access is access all TouchButtonsPaintableFactory'Class;

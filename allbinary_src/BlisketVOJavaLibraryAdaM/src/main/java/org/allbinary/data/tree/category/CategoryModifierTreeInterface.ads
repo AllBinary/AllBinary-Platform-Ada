@@ -24,7 +24,7 @@ with org.allbinary.business.category.CategoryInterface_Package; use org.allbinar
 
 package org.allbinary.data.tree.category.CategoryModifierTreeInterface_Package is
 
-   package CategoryInterface_Package renames org.allbinary.business.category.CategoryInterface_Package;
+   package CategoryInterface_Package renames Standard.org.allbinary.business.category.CategoryInterface_Package;
 
    type CategoryModifierTreeInterface is interface;
    type CategoryModifierTreeInterface_Access is access all CategoryModifierTreeInterface'Class;

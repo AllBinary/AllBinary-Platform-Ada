@@ -32,15 +32,15 @@ with org.allbinary.logic.visual.transform.info.objectConfig.generator.StoreFileG
 
 package org.allbinary.logic.visual.transform.generator.TransformGeneratorUtil_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package InputOutputTypeData_Package renames org.allbinary.logic.io.InputOutputTypeData_Package;
-   package AbeClientInformationInterface_Package renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-   package TransformFactory_Package renames org.allbinary.logic.visual.transform.TransformFactory_Package;
-   package TransformInterface_Package renames org.allbinary.logic.visual.transform.TransformInterface_Package;
-   package TransformInfoDomNode_Package renames org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Package;
-   package TransformInfoHttpInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package;
-   package TransformInfoInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-   package StoreFileGenerator_Package renames org.allbinary.logic.visual.transform.info.objectConfig.generator.StoreFileGenerator_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package InputOutputTypeData_Package renames Standard.org.allbinary.logic.io.InputOutputTypeData_Package;
+   package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package TransformFactory_Package renames Standard.org.allbinary.logic.visual.transform.TransformFactory_Package;
+   package TransformInterface_Package renames Standard.org.allbinary.logic.visual.transform.TransformInterface_Package;
+   package TransformInfoDomNode_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Package;
+   package TransformInfoHttpInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package;
+   package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package StoreFileGenerator_Package renames Standard.org.allbinary.logic.visual.transform.info.objectConfig.generator.StoreFileGenerator_Package;
 
    type TransformGeneratorUtil is tagged;
    type TransformGeneratorUtil_Access is access all TransformGeneratorUtil'Class;

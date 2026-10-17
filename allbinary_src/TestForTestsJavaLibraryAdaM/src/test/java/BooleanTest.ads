@@ -14,9 +14,9 @@ with org.junit.jupiter.api.Test_Package; use org.junit.jupiter.api.Test_Package;
 
 package BooleanTest_Package is
 
-   package Assertions_Package renames org.junit.jupiter.api.Assertions_Package;
-   package DisplayName_Package renames org.junit.jupiter.api.DisplayName_Package;
-   package Test_Package renames org.junit.jupiter.api.Test_Package;
+   package Assertions_Package renames Standard.org.junit.jupiter.api.Assertions_Package;
+   package DisplayName_Package renames Standard.org.junit.jupiter.api.DisplayName_Package;
+   package Test_Package renames Standard.org.junit.jupiter.api.Test_Package;
 
    type BooleanTest is tagged;
    type BooleanTest_Access is access all BooleanTest'Class;

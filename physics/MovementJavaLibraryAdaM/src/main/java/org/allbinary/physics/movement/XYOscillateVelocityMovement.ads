@@ -27,9 +27,9 @@ with org.allbinary.physics.movement.BasicConstantVelocityMovement_Package; use o
 
 package org.allbinary.physics.movement.XYOscillateVelocityMovement_Package is
 
-   package AllBinaryGameLayer_Package renames org.allbinary.game.layer.AllBinaryGameLayer_Package;
-   package VelocityProperties_Package renames org.allbinary.game.physics.velocity.VelocityProperties_Package;
-   package BasicDecimal_Package renames org.allbinary.logic.math.BasicDecimal_Package;
+   package AllBinaryGameLayer_Package renames Standard.org.allbinary.game.layer.AllBinaryGameLayer_Package;
+   package VelocityProperties_Package renames Standard.org.allbinary.game.physics.velocity.VelocityProperties_Package;
+   package BasicDecimal_Package renames Standard.org.allbinary.logic.math.BasicDecimal_Package;
 
    type XYOscillateVelocityMovement is tagged;
    type XYOscillateVelocityMovement_Access is access all XYOscillateVelocityMovement'Class;

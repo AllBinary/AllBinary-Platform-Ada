@@ -28,11 +28,11 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterfaceFactory_Package is
 
-   package OrderHistory_Package renames org.allbinary.business.user.commerce.inventory.order.OrderHistory_Package;
-   package PaymentType_Package renames org.allbinary.business.user.commerce.money.payment.types.PaymentType_Package;
-   package PaymentTypeUtil_Package renames org.allbinary.business.user.commerce.money.payment.types.PaymentTypeUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package OrderHistory_Package renames Standard.org.allbinary.business.user.commerce.inventory.order.OrderHistory_Package;
+   package PaymentType_Package renames Standard.org.allbinary.business.user.commerce.money.payment.types.PaymentType_Package;
+   package PaymentTypeUtil_Package renames Standard.org.allbinary.business.user.commerce.money.payment.types.PaymentTypeUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type PaymentTransactionInterfaceFactory is tagged;
    type PaymentTransactionInterfaceFactory_Access is access all PaymentTransactionInterfaceFactory'Class;

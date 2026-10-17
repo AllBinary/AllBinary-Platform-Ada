@@ -26,8 +26,8 @@ with org.allbinary.graphics.j2me.workarea.tools.PointsInterface_Package; use org
 
 package org.allbinary.graphics.j2me.workarea.tools.Points_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
 
    type Points is tagged;
    type Points_Access is access all Points'Class;

@@ -76,8 +76,12 @@ package body org.allbinary.game.input.RTSPlayerGameInput_Package is
             This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("onDisplayChangeEvent"));
             This.getRTSLayerInfoPaintable.update;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("onDisplayChangeEvent"), e);
+                end;
         end;
    end onDisplayChangeEvent;
 
@@ -135,8 +139,12 @@ package body org.allbinary.game.input.RTSPlayerGameInput_Package is
                 This.update;
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.gameInputStrings.PROCESS_INPUT, e);
+                end;
         end;
    end processInput;
 

@@ -26,8 +26,8 @@ with org.allbinary.logic.io.file.visitor.BooleanFileVisitor_Package; use org.all
 
 package org.allbinary.logic.io.file.visitor.ExcludeFileExtensionsBooleanFileVisitor_Package is
 
-   package AbFile_Package renames org.allbinary.logic.io.file.AbFile_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
 
    type ExcludeFileExtensionsBooleanFileVisitor is tagged;
    type ExcludeFileExtensionsBooleanFileVisitor_Access is access all ExcludeFileExtensionsBooleanFileVisitor'Class;

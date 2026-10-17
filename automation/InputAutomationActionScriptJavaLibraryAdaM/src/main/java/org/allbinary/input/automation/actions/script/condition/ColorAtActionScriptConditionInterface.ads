@@ -24,7 +24,7 @@ with org.allbinary.media.image.analysis.ColorRangeInterface_Package; use org.all
 
 package org.allbinary.input.automation.actions.script.condition.ColorAtActionScriptConditionInterface_Package is
 
-   package ColorRangeInterface_Package renames org.allbinary.media.image.analysis.ColorRangeInterface_Package;
+   package ColorRangeInterface_Package renames Standard.org.allbinary.media.image.analysis.ColorRangeInterface_Package;
 
    type ColorAtActionScriptConditionInterface is interface;
    type ColorAtActionScriptConditionInterface_Access is access all ColorAtActionScriptConditionInterface'Class;

@@ -268,8 +268,12 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
             This.jPanel1.updateUI;
             ImageToolJFrame_Package.imageProcessorInputCompositeInterface := imageUnifierJPanel;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("createStripImageJMenuItemActionPerformed"), e);
+                end;
         end;
    end createStripImageJMenuItemActionPerformed;
 
@@ -285,8 +289,12 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
             This.analysisActionJDialog.setVisible (False);
             ImageToolJFrame_Package.imageProcessorInputCompositeInterface := null;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("okJButtonActionPerformed"), e);
+                end;
         end;
    end okJButtonActionPerformed;
 
@@ -301,8 +309,12 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
             This.logUtil.putF (To_Unbounded_String ("Starting"), This'Unchecked_Access, To_Unbounded_String ("openImageJMenuItemActionPerformed"));
             This.fileJDialog.setVisible (True);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("openImageJMenuItemActionPerformed"), e);
+                end;
         end;
    end openImageJMenuItemActionPerformed;
 
@@ -336,8 +348,12 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
 --                          number := Unbounded_Slice (name, (start) + 1, end_Id);
 --                          i := Integer'Value (To_String (number));
 --                      exception
---                          when e : others =>
+--                          when Java_Occurrence : others =>
+--                              declare
+--                                  e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+--                              begin
 --                          i := 0;
+--                              end;
 --                      end;
 --                      return i;
 --     end extractIndexNumberIfAnyFromFileName;
@@ -355,8 +371,12 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
                 ImageToolJFrame_Package.imageProcessorInputCompositeInterface.setImageProcessorInput (This.imageProcessorInput);
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("onFiles"), e);
+                end;
         end;
    end onFiles;
 
@@ -371,8 +391,12 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
             This.logUtil.putF (To_Unbounded_String ("Starting"), This'Unchecked_Access, To_Unbounded_String ("analyzeJMenuItemActionPerformed"));
             This.analysisActionJDialog.setVisible (True);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("analyzeJMenuItemActionPerformed"), e);
+                end;
         end;
    end analyzeJMenuItemActionPerformed;
 
@@ -387,8 +411,12 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
             This.jPanel1.updateUI;
             ImageToolJFrame_Package.imageProcessorInputCompositeInterface := spriteImageJPanel;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("generateRotationSpriteJMenuItemActionPerformed"), e);
+                end;
         end;
    end generateRotationSpriteJMenuItemActionPerformed;
 
@@ -403,8 +431,12 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
             This.jPanel1.updateUI;
             ImageToolJFrame_Package.imageProcessorInputCompositeInterface := imageJPanel;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("generateRotationMenuItemActionPerformed"), e);
+                end;
         end;
    end generateSpriteSplitterMenuItemActionPerformed;
 
@@ -419,8 +451,12 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
             This.jPanel1.updateUI;
             ImageToolJFrame_Package.imageProcessorInputCompositeInterface := rotationImageJPanel;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("generateRotationMenuItemActionPerformed"), e);
+                end;
         end;
    end generateRotationMenuItemActionPerformed;
 
@@ -435,8 +471,12 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
             This.jPanel1.updateUI;
             ImageToolJFrame_Package.imageProcessorInputCompositeInterface := resizeImageJPanel;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("scaleImagesJMenuItemActionPerformed"), e);
+                end;
         end;
    end scaleImagesJMenuItemActionPerformed;
 
@@ -451,8 +491,12 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
             This.jPanel1.updateUI;
             ImageToolJFrame_Package.imageProcessorInputCompositeInterface := createIconImagesJPanel;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("scaleImagesJMenuItemActionPerformed"), e);
+                end;
         end;
    end createIconsJMenuItemActionPerformed;
 
@@ -467,8 +511,12 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
             This.jPanel1.updateUI;
             ImageToolJFrame_Package.imageProcessorInputCompositeInterface := resizeImageJPanel;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("scaleImagesJMenuItemActionPerformed"), e);
+                end;
         end;
    end canvasImagesJMenuItemActionPerformed;
 
@@ -483,8 +531,12 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
             This.jPanel1.updateUI;
             ImageToolJFrame_Package.imageProcessorInputCompositeInterface := spriteImageJPanel;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("generateMirrorSpriteJMenuItemActionPerformed"), e);
+                end;
         end;
    end generateMirrorSpriteMenuItemActionPerformed;
 
@@ -499,8 +551,12 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
             This.jPanel1.updateUI;
             ImageToolJFrame_Package.imageProcessorInputCompositeInterface := mirrorImageJPanel;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("generateMirrorJMenuItemActionPerformed"), e);
+                end;
         end;
    end mirrorJMenuItemActionPerformed;
 

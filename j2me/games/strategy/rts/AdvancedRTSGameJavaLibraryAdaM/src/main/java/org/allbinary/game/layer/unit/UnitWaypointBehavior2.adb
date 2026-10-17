@@ -616,10 +616,14 @@ package body org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package is
                 end if;
                 return NullUtil_Package.getInstance.NULL_OBJECT;
             exception
-                when e : others =>
+                when Java_Occurrence : others =>
+                    declare
+                        e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                    begin
                 commonStrings := CommonStrings_Package.getInstance;
                 logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("visit"), e);
                 return NullUtil_Package.getInstance.NULL_OBJECT;
+                    end;
             end;
    end visit;
     

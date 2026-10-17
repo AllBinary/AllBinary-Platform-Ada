@@ -32,14 +32,14 @@ with org.allbinary.game.resource.FeaturedResourceFactory_Package; use org.allbin
 
 package org.allbinary.game.resource.FeaturedResourceRelativeRelationshipFactory_Package is
 
-   package PointFactory_Package renames org.allbinary.graphics.PointFactory_Package;
-   package RelativeRelationship_Package renames org.allbinary.graphics.RelativeRelationship_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package RelativeLayerRelationship_Package renames org.allbinary.layer.relationship.RelativeLayerRelationship_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package BasicArrayListUtil_Package renames org.allbinary.util.BasicArrayListUtil_Package;
+   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
+   package RelativeRelationship_Package renames Standard.org.allbinary.graphics.RelativeRelationship_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package RelativeLayerRelationship_Package renames Standard.org.allbinary.layer.relationship.RelativeLayerRelationship_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
 
    type FeaturedResourceRelativeRelationshipFactory is tagged;
    type FeaturedResourceRelativeRelationshipFactory_Access is access all FeaturedResourceRelativeRelationshipFactory'Class;

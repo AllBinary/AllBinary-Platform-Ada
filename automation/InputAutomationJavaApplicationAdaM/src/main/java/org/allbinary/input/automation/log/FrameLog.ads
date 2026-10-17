@@ -31,12 +31,12 @@ with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.Com
 
 package org.allbinary.input.automation.log.FrameLog_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package ImageOutputData_Package renames org.allbinary.input.automation.ImageOutputData_Package;
-   package LongUtil_Package renames org.allbinary.logic.java.number.LongUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package ImageOutputData_Package renames Standard.org.allbinary.input.automation.ImageOutputData_Package;
+   package LongUtil_Package renames Standard.org.allbinary.logic.java.number.LongUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
 
    type FrameLog is tagged;
    type FrameLog_Access is access all FrameLog'Class;

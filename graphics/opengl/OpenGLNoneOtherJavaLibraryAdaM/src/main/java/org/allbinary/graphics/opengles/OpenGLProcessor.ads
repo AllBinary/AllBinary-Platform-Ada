@@ -13,7 +13,7 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 
 package org.allbinary.graphics.opengles.OpenGLProcessor_Package is
 
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type OpenGLProcessor is tagged;
    type OpenGLProcessor_Access is access all OpenGLProcessor'Class;

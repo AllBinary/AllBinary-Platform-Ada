@@ -38,20 +38,20 @@ with org.apache.xmlrpc.XmlRpcException_Package; use org.apache.xmlrpc.XmlRpcExce
 
 package org.allbinary.logic.system.security.licensing.client.XmlRpcAbeLicenseRetrievalClient_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package CryptInterface_Package renames org.allbinary.init.crypt.jcehelper.CryptInterface_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package XmlRpcAbeClient_Package renames org.allbinary.logic.communication.xmlrpc.XmlRpcAbeClient_Package;
-   package ExceptionUtil_Package renames org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package AbeClientInformationInterface_Package renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
-   package AbeClientLicense_Package renames org.allbinary.logic.system.security.licensing.AbeClientLicense_Package;
-   package AbeLicenseInterface_Package renames org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package;
-   package CommonLabels_Package renames org.allbinary.string_Id.CommonLabels_Package;
-   package ABHashtable_Package renames org.allbinary.util.ABHashtable_Package;
-   package XmlRpcClient_Package renames org.apache.xmlrpc.XmlRpcClient_Package;
-   package XmlRpcException_Package renames org.apache.xmlrpc.XmlRpcException_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package CryptInterface_Package renames Standard.org.allbinary.init.crypt.jcehelper.CryptInterface_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package XmlRpcAbeClient_Package renames Standard.org.allbinary.logic.communication.xmlrpc.XmlRpcAbeClient_Package;
+   package ExceptionUtil_Package renames Standard.org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package AbeClientLicense_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientLicense_Package;
+   package AbeLicenseInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package;
+   package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
+   package XmlRpcClient_Package renames Standard.org.apache.xmlrpc.XmlRpcClient_Package;
+   package XmlRpcException_Package renames Standard.org.apache.xmlrpc.XmlRpcException_Package;
 
    type XmlRpcAbeLicenseRetrievalClient is tagged;
    type XmlRpcAbeLicenseRetrievalClient_Access is access all XmlRpcAbeLicenseRetrievalClient'Class;

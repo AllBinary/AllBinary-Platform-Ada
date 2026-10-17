@@ -35,17 +35,17 @@ with org.allbinary.media.graphics.geography.map.racetrack.drop.RaceTrackDropCell
 
 package org.allbinary.media.graphics.geography.map.racetrack.drop.RaceTrackRandomDropCellPositionGenerator_Package is
 
-   package PickedUpLayerInterfaceFactoryInterface_Package renames org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package;
-   package AllBinaryGameLayerManager_Package renames org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
-   package AllBinaryTiledLayer_Package renames org.allbinary.game.layer.AllBinaryTiledLayer_Package;
-   package DropLayerFactory_Package renames org.allbinary.game.layer.drop.DropLayerFactory_Package;
-   package PickupLayerCircularStaticPool_Package renames org.allbinary.game.layer.pickup.PickupLayerCircularStaticPool_Package;
-   package RaceTrackPickupLayer_Package renames org.allbinary.game.layer.pickup.RaceTrackPickupLayer_Package;
-   package MyRandomFactory_Package renames org.allbinary.game.rand.MyRandomFactory_Package;
-   package GPoint_Package renames org.allbinary.graphics.GPoint_Package;
-   package AllBinaryLayerManager_Package renames org.allbinary.layer.AllBinaryLayerManager_Package;
-   package BasicGeographicMap_Package renames org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
-   package GeographicMapCellPosition_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+   package PickedUpLayerInterfaceFactoryInterface_Package renames Standard.org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package;
+   package AllBinaryGameLayerManager_Package renames Standard.org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
+   package AllBinaryTiledLayer_Package renames Standard.org.allbinary.game.layer.AllBinaryTiledLayer_Package;
+   package DropLayerFactory_Package renames Standard.org.allbinary.game.layer.drop.DropLayerFactory_Package;
+   package PickupLayerCircularStaticPool_Package renames Standard.org.allbinary.game.layer.pickup.PickupLayerCircularStaticPool_Package;
+   package RaceTrackPickupLayer_Package renames Standard.org.allbinary.game.layer.pickup.RaceTrackPickupLayer_Package;
+   package MyRandomFactory_Package renames Standard.org.allbinary.game.rand.MyRandomFactory_Package;
+   package GPoint_Package renames Standard.org.allbinary.graphics.GPoint_Package;
+   package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
+   package BasicGeographicMap_Package renames Standard.org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
+   package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
 
    type RaceTrackRandomDropCellPositionGenerator is tagged;
    type RaceTrackRandomDropCellPositionGenerator_Access is access all RaceTrackRandomDropCellPositionGenerator'Class;

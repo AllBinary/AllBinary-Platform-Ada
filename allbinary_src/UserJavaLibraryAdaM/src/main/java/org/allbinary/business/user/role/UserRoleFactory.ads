@@ -39,22 +39,22 @@ with org.allbinary.business.user.modules.customer_Case.wholesale.WholesaleUserFa
 
 package org.allbinary.business.user.role.UserRoleFactory_Package is
 
-   package UserFactory_Package renames org.allbinary.business.user.modules.UserFactory_Package;
-   package AdminUserFactory_Package renames org.allbinary.business.user.modules.admin.AdminUserFactory_Package;
-   package StoreAdminUserFactory_Package renames org.allbinary.business.user.modules.admin.store.StoreAdminUserFactory_Package;
-   package CustomerStoreAdminUserFactory_Package renames org.allbinary.business.user.modules.admin.store.customer_Case.CustomerStoreAdminUserFactory_Package;
-   package OrderStoreAdminUserFactory_Package renames org.allbinary.business.user.modules.admin.store.order.OrderStoreAdminUserFactory_Package;
-   package AdjustOrderStoreAdminUserFactory_Package renames org.allbinary.business.user.modules.admin.store.order.adjust.AdjustOrderStoreAdminUserFactory_Package;
-   package ReviewOrderStoreAdminUserFactory_Package renames org.allbinary.business.user.modules.admin.store.order.review.ReviewOrderStoreAdminUserFactory_Package;
-   package ShipOrderStoreAdminUserFactory_Package renames org.allbinary.business.user.modules.admin.store.order.ship.ShipOrderStoreAdminUserFactory_Package;
-   package PaymentStoreAdminUserFactory_Package renames org.allbinary.business.user.modules.admin.store.payment.PaymentStoreAdminUserFactory_Package;
-   package ProductStoreAdminUserFactory_Package renames org.allbinary.business.user.modules.admin.store.product.ProductStoreAdminUserFactory_Package;
-   package WebStoreAdminUserFactory_Package renames org.allbinary.business.user.modules.admin.store.web.WebStoreAdminUserFactory_Package;
-   package ViewEditorWebStoreAdminUserFactory_Package renames org.allbinary.business.user.modules.admin.store.web.view.editor.ViewEditorWebStoreAdminUserFactory_Package;
-   package WizardWebStoreAdminUserFactory_Package renames org.allbinary.business.user.modules.admin.store.web.wizard_Case.WizardWebStoreAdminUserFactory_Package;
-   package WorkflowEditorWebStoreAdminUserFactory_Package renames org.allbinary.business.user.modules.admin.store.web.workflow.editor.WorkflowEditorWebStoreAdminUserFactory_Package;
-   package SubscriberUserFactory_Package renames org.allbinary.business.user.modules.customer_Case.subscriber.SubscriberUserFactory_Package;
-   package WholesaleUserFactory_Package renames org.allbinary.business.user.modules.customer_Case.wholesale.WholesaleUserFactory_Package;
+   package UserFactory_Package renames Standard.org.allbinary.business.user.modules.UserFactory_Package;
+   package AdminUserFactory_Package renames Standard.org.allbinary.business.user.modules.admin.AdminUserFactory_Package;
+   package StoreAdminUserFactory_Package renames Standard.org.allbinary.business.user.modules.admin.store.StoreAdminUserFactory_Package;
+   package CustomerStoreAdminUserFactory_Package renames Standard.org.allbinary.business.user.modules.admin.store.customer_Case.CustomerStoreAdminUserFactory_Package;
+   package OrderStoreAdminUserFactory_Package renames Standard.org.allbinary.business.user.modules.admin.store.order.OrderStoreAdminUserFactory_Package;
+   package AdjustOrderStoreAdminUserFactory_Package renames Standard.org.allbinary.business.user.modules.admin.store.order.adjust.AdjustOrderStoreAdminUserFactory_Package;
+   package ReviewOrderStoreAdminUserFactory_Package renames Standard.org.allbinary.business.user.modules.admin.store.order.review.ReviewOrderStoreAdminUserFactory_Package;
+   package ShipOrderStoreAdminUserFactory_Package renames Standard.org.allbinary.business.user.modules.admin.store.order.ship.ShipOrderStoreAdminUserFactory_Package;
+   package PaymentStoreAdminUserFactory_Package renames Standard.org.allbinary.business.user.modules.admin.store.payment.PaymentStoreAdminUserFactory_Package;
+   package ProductStoreAdminUserFactory_Package renames Standard.org.allbinary.business.user.modules.admin.store.product.ProductStoreAdminUserFactory_Package;
+   package WebStoreAdminUserFactory_Package renames Standard.org.allbinary.business.user.modules.admin.store.web.WebStoreAdminUserFactory_Package;
+   package ViewEditorWebStoreAdminUserFactory_Package renames Standard.org.allbinary.business.user.modules.admin.store.web.view.editor.ViewEditorWebStoreAdminUserFactory_Package;
+   package WizardWebStoreAdminUserFactory_Package renames Standard.org.allbinary.business.user.modules.admin.store.web.wizard_Case.WizardWebStoreAdminUserFactory_Package;
+   package WorkflowEditorWebStoreAdminUserFactory_Package renames Standard.org.allbinary.business.user.modules.admin.store.web.workflow.editor.WorkflowEditorWebStoreAdminUserFactory_Package;
+   package SubscriberUserFactory_Package renames Standard.org.allbinary.business.user.modules.customer_Case.subscriber.SubscriberUserFactory_Package;
+   package WholesaleUserFactory_Package renames Standard.org.allbinary.business.user.modules.customer_Case.wholesale.WholesaleUserFactory_Package;
 
    type UserRoleFactory is tagged;
    type UserRoleFactory_Access is access all UserRoleFactory'Class;

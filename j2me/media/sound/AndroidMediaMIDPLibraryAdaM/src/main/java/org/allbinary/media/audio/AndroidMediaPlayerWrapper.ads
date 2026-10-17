@@ -34,13 +34,13 @@ with org.allbinary.media.audio.BasicPlayer_Package; use org.allbinary.media.audi
 
 package org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package is
 
-   package MediaPlayer_Package renames android.media.MediaPlayer_Package;
-   package NullAndroidCanvas_Package renames org.allbinary.android.NullAndroidCanvas_Package;
-   package ResourceUtil_Package renames org.allbinary.data.resource.ResourceUtil_Package;
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
+   package MediaPlayer_Package renames Standard.android.media.MediaPlayer_Package;
+   package NullAndroidCanvas_Package renames Standard.org.allbinary.android.NullAndroidCanvas_Package;
+   package ResourceUtil_Package renames Standard.org.allbinary.data.resource.ResourceUtil_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
 
    type AndroidMediaPlayerWrapper is tagged;
    type AndroidMediaPlayerWrapper_Access is access all AndroidMediaPlayerWrapper'Class;

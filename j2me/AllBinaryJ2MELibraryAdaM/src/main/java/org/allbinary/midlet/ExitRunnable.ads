@@ -28,9 +28,9 @@ with org.allbinary.midlet.Runnable_Package; use org.allbinary.midlet.Runnable_Pa
 
 package org.allbinary.midlet.ExitRunnable_Package is
 
-   package Processor_Package renames org.allbinary.canvas.Processor_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package Processor_Package renames Standard.org.allbinary.canvas.Processor_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type ExitRunnable is tagged;
    type ExitRunnable_Access is access all ExitRunnable'Class;

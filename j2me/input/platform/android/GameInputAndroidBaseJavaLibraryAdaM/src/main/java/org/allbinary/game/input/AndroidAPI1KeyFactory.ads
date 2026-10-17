@@ -13,7 +13,7 @@ with org.allbinary.game.input.AndroidKeyFactory_Package; use org.allbinary.game.
 
 package org.allbinary.game.input.AndroidAPI1KeyFactory_Package is
 
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
 
    type AndroidAPI1KeyFactory is tagged;
    type AndroidAPI1KeyFactory_Access is access all AndroidAPI1KeyFactory'Class;

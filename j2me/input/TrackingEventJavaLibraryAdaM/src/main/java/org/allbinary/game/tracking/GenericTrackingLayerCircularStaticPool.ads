@@ -24,7 +24,7 @@ with org.allbinary.layer.AllBinaryLayerCircularPool_Package; use org.allbinary.l
 
 package org.allbinary.game.tracking.GenericTrackingLayerCircularStaticPool_Package is
 
-   package AllBinaryLayerCircularPool_Package renames org.allbinary.layer.AllBinaryLayerCircularPool_Package;
+   package AllBinaryLayerCircularPool_Package renames Standard.org.allbinary.layer.AllBinaryLayerCircularPool_Package;
 
    type GenericTrackingLayerCircularStaticPool is tagged;
    type GenericTrackingLayerCircularStaticPool_Access is access all GenericTrackingLayerCircularStaticPool'Class;

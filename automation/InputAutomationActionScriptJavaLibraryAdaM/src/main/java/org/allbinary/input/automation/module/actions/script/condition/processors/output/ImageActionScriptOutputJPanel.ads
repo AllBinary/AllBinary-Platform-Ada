@@ -29,11 +29,11 @@ with org.allbinary.input.automation.module.actions.script.condition.processors.o
 
 package org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutputJPanel_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package InputImageType_Package renames org.allbinary.input.media.image.InputImageType_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package InputImageType_Package renames Standard.org.allbinary.input.media.image.InputImageType_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
 
    type ImageActionScriptOutputJPanel is tagged;
    type ImageActionScriptOutputJPanel_Access is access all ImageActionScriptOutputJPanel'Class;

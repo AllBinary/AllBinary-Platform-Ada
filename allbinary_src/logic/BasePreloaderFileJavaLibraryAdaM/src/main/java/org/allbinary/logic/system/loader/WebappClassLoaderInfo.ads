@@ -24,7 +24,7 @@ with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Pack
 
 package org.allbinary.logic.system.loader.WebappClassLoaderInfo_Package is
 
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
 
    type WebappClassLoaderInfo is tagged;
    type WebappClassLoaderInfo_Access is access all WebappClassLoaderInfo'Class;

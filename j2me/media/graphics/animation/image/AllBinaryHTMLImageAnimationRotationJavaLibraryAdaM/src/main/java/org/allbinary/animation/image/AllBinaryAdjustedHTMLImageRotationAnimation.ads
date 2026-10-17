@@ -28,8 +28,8 @@ with org.allbinary.animation.image.AllBinaryHTMLImageRotationAnimation_Package; 
 
 package org.allbinary.animation.image.AllBinaryAdjustedHTMLImageRotationAnimation_Package is
 
-   package AnimationBehavior_Package renames org.allbinary.animation.AnimationBehavior_Package;
-   package AngleInfo_Package renames org.allbinary.math.AngleInfo_Package;
+   package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
+   package AngleInfo_Package renames Standard.org.allbinary.math.AngleInfo_Package;
 
    type AllBinaryAdjustedHTMLImageRotationAnimation is tagged;
    type AllBinaryAdjustedHTMLImageRotationAnimation_Access is access all AllBinaryAdjustedHTMLImageRotationAnimation'Class;

@@ -31,13 +31,13 @@ with org.allbinary.view.ViewPosition_Package; use org.allbinary.view.ViewPositio
 
 package org.allbinary.game.ag.layer.pickup.health.HealLayer_Package is
 
-   package HealthInterface_Package renames org.allbinary.game.health.HealthInterface_Package;
-   package HealthVisitorInterface_Package renames org.allbinary.game.health.HealthVisitorInterface_Package;
-   package PointFactory_Package renames org.allbinary.graphics.PointFactory_Package;
-   package Rectangle_Package renames org.allbinary.graphics.Rectangle_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
-   package ViewPosition_Package renames org.allbinary.view.ViewPosition_Package;
+   package HealthInterface_Package renames Standard.org.allbinary.game.health.HealthInterface_Package;
+   package HealthVisitorInterface_Package renames Standard.org.allbinary.game.health.HealthVisitorInterface_Package;
+   package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
+   package Rectangle_Package renames Standard.org.allbinary.graphics.Rectangle_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package ViewPosition_Package renames Standard.org.allbinary.view.ViewPosition_Package;
 
    type HealLayer is tagged;
    type HealLayer_Access is access all HealLayer'Class;

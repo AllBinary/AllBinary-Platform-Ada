@@ -31,13 +31,13 @@ with org.allbinary.game.layer.building.BuildingPropertiesFactory_Package; use or
 
 package org.allbinary.game.layer.building.SimulatedBuildingPropertiesFactory_Package is
 
-   package DamageFloaters_Package renames org.allbinary.game.combat.damage.DamageFloaters_Package;
-   package TrackingEvent_Package renames org.allbinary.game.tracking.TrackingEvent_Package;
-   package TrackingEventHandler_Package renames org.allbinary.game.tracking.TrackingEventHandler_Package;
-   package NullPaintable_Package renames org.allbinary.graphics.paint.NullPaintable_Package;
-   package Paintable_Package renames org.allbinary.graphics.paint.Paintable_Package;
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package ABHashtable_Package renames org.allbinary.util.ABHashtable_Package;
+   package DamageFloaters_Package renames Standard.org.allbinary.game.combat.damage.DamageFloaters_Package;
+   package TrackingEvent_Package renames Standard.org.allbinary.game.tracking.TrackingEvent_Package;
+   package TrackingEventHandler_Package renames Standard.org.allbinary.game.tracking.TrackingEventHandler_Package;
+   package NullPaintable_Package renames Standard.org.allbinary.graphics.paint.NullPaintable_Package;
+   package Paintable_Package renames Standard.org.allbinary.graphics.paint.Paintable_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
 
    type SimulatedBuildingPropertiesFactory is tagged;
    type SimulatedBuildingPropertiesFactory_Access is access all SimulatedBuildingPropertiesFactory'Class;

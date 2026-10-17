@@ -28,11 +28,11 @@ with org.allbinary.media.graphics.geography.map.drop.DropCellPositionHistory_Pac
 
 package org.allbinary.game.input.form.AdvancedRTSGameLayerPositionFinder_Package is
 
-   package LayerPositionFinderInterface_Package renames org.allbinary.game.input.LayerPositionFinderInterface_Package;
-   package WaypointCellPositionHistory_Package renames org.allbinary.game.layer.waypoint.WaypointCellPositionHistory_Package;
-   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
-   package GeographicMapCellPosition_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
-   package DropCellPositionHistory_Package renames org.allbinary.media.graphics.geography.map.drop.DropCellPositionHistory_Package;
+   package LayerPositionFinderInterface_Package renames Standard.org.allbinary.game.input.LayerPositionFinderInterface_Package;
+   package WaypointCellPositionHistory_Package renames Standard.org.allbinary.game.layer.waypoint.WaypointCellPositionHistory_Package;
+   package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
+   package GeographicMapCellPosition_Package renames Standard.org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+   package DropCellPositionHistory_Package renames Standard.org.allbinary.media.graphics.geography.map.drop.DropCellPositionHistory_Package;
 
    type AdvancedRTSGameLayerPositionFinder is tagged;
    type AdvancedRTSGameLayerPositionFinder_Access is access all AdvancedRTSGameLayerPositionFinder'Class;

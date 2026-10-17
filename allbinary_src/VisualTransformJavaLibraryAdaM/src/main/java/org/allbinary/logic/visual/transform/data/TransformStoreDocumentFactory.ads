@@ -26,8 +26,8 @@ with org.allbinary.logic.control.search.SearchRequest_Package; use org.allbinary
 
 package org.allbinary.logic.visual.transform.data.TransformStoreDocumentFactory_Package is
 
-   package WeblisketSession_Package renames org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
-   package SearchRequest_Package renames org.allbinary.logic.control.search.SearchRequest_Package;
+   package WeblisketSession_Package renames Standard.org.allbinary.logic.communication.http.request.session.WeblisketSession_Package;
+   package SearchRequest_Package renames Standard.org.allbinary.logic.control.search.SearchRequest_Package;
 
    type TransformStoreDocumentFactory is tagged;
    type TransformStoreDocumentFactory_Access is access all TransformStoreDocumentFactory'Class;

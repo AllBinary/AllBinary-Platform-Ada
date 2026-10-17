@@ -25,7 +25,7 @@ with org.allbinary.graphics.form.item.validation.TextFieldItemValidator_Package;
 
 package org.allbinary.graphics.form.item.validation.PasswordValidator_Package is
 
-   package ABTextFieldItem_Package renames org.allbinary.graphics.form.item.ABTextFieldItem_Package;
+   package ABTextFieldItem_Package renames Standard.org.allbinary.graphics.form.item.ABTextFieldItem_Package;
 
    type PasswordValidator is tagged;
    type PasswordValidator_Access is access all PasswordValidator'Class;

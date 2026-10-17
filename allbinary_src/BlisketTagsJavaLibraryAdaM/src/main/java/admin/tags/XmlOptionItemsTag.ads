@@ -26,8 +26,8 @@ with admin.tags.TableTag_Package; use admin.tags.TableTag_Package;
 
 package admin.tags.XmlOptionItemsTag_Package is
 
-   package XmlOptionItemsHelperFactory_Package renames admin.taghelpers.XmlOptionItemsHelperFactory_Package;
-   package XmlOptionItemsRequestHelperFactory_Package renames admin.taghelpers.XmlOptionItemsRequestHelperFactory_Package;
+   package XmlOptionItemsHelperFactory_Package renames Standard.admin.taghelpers.XmlOptionItemsHelperFactory_Package;
+   package XmlOptionItemsRequestHelperFactory_Package renames Standard.admin.taghelpers.XmlOptionItemsRequestHelperFactory_Package;
 
    type XmlOptionItemsTag is tagged;
    type XmlOptionItemsTag_Access is access all XmlOptionItemsTag'Class;

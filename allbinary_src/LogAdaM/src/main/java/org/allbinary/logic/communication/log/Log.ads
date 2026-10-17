@@ -25,8 +25,8 @@ with org.allbinary.logic.communication.log.LogFormatUtil_Package; use org.allbin
 
 package org.allbinary.logic.communication.log.Log_Package is
 
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package LogFormatUtil_Package renames org.allbinary.logic.communication.log.LogFormatUtil_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package LogFormatUtil_Package renames Standard.org.allbinary.logic.communication.log.LogFormatUtil_Package;
 
    type Log is tagged;
    type Log_Access is access all Log'Class;

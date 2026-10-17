@@ -46,8 +46,12 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
             This.propertiesJPanel.set (This.workAreaJTreeJPanel);
             This.canvasHolderJPanel.add (Component_Access (canvasJPanel));
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Java_Throw (e);
+                end;
         end;
    end Initialize;
 
@@ -83,11 +87,15 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
             This.canvasHolderJPanel.add (Component_Access (This.getCurrentFrame));
             This.propertiesJPanel.set (This.workAreaJTreeJPanel);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             if LOGGING.contains (LOGGING.LOADINGERROR) then
                 This.logUtil.put (To_Unbounded_String ("Constructor Error"), This'Unchecked_Access, To_Unbounded_String ("WorkAreaJPanel"), e);
             end if;
             Java_Throw (e);
+                end;
         end;
    end Initialize;
 
@@ -498,8 +506,12 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
                 Java_Sleep (250);
             end loop;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             null;
+                end;
         end;
    end run;
 

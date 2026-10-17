@@ -30,13 +30,13 @@ with org.allbinary.logic.communication.smtp.queue.EmailQueueFactory_Package; use
 
 package org.allbinary.logic.communication.smtp.event.modules.event.user.UserEmailEventListenerModule_Package is
 
-   package UserInterface_Package renames org.allbinary.business.user.UserInterface_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package BasicEmail_Package renames org.allbinary.logic.communication.smtp.BasicEmail_Package;
-   package EmailInterface_Package renames org.allbinary.logic.communication.smtp.EmailInterface_Package;
-   package EmailEvent_Package renames org.allbinary.logic.communication.smtp.event.EmailEvent_Package;
-   package UserEmailEventListenerInterface_Package renames org.allbinary.logic.communication.smtp.event.UserEmailEventListenerInterface_Package;
-   package EmailQueueFactory_Package renames org.allbinary.logic.communication.smtp.queue.EmailQueueFactory_Package;
+   package UserInterface_Package renames Standard.org.allbinary.business.user.UserInterface_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package BasicEmail_Package renames Standard.org.allbinary.logic.communication.smtp.BasicEmail_Package;
+   package EmailInterface_Package renames Standard.org.allbinary.logic.communication.smtp.EmailInterface_Package;
+   package EmailEvent_Package renames Standard.org.allbinary.logic.communication.smtp.event.EmailEvent_Package;
+   package UserEmailEventListenerInterface_Package renames Standard.org.allbinary.logic.communication.smtp.event.UserEmailEventListenerInterface_Package;
+   package EmailQueueFactory_Package renames Standard.org.allbinary.logic.communication.smtp.queue.EmailQueueFactory_Package;
 
    type UserEmailEventListenerModule is tagged;
    type UserEmailEventListenerModule_Access is access all UserEmailEventListenerModule'Class;

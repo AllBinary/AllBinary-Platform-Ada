@@ -30,12 +30,12 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 
 package org.allbinary.android.AndroidServicesUtil_Package is
 
-   package ActivityManager_Package renames android.app.ActivityManager_Package;
-   package RunningServiceInfo_Package renames android.app.ActivityManager.RunningServiceInfo_Package;
-   package ComponentName_Package renames android.content.ComponentName_Package;
-   package Context_Package renames android.content.Context_Package;
-   package ResourceUtil_Package renames org.allbinary.data.resource.ResourceUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
+   package ActivityManager_Package renames Standard.android.app.ActivityManager_Package;
+   package RunningServiceInfo_Package renames Standard.android.app.ActivityManager.RunningServiceInfo_Package;
+   package ComponentName_Package renames Standard.android.content.ComponentName_Package;
+   package Context_Package renames Standard.android.content.Context_Package;
+   package ResourceUtil_Package renames Standard.org.allbinary.data.resource.ResourceUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type AndroidServicesUtil is tagged;
    type AndroidServicesUtil_Access is access all AndroidServicesUtil'Class;

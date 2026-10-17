@@ -26,9 +26,9 @@ with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allb
 
 package org.allbinary.game.input.KeyFactoryInitializer_Package is
 
-   package Init_Package renames org.allbinary.init.Init_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package SmallIntegerSingletonFactory_Package renames org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
+   package Init_Package renames Standard.org.allbinary.init.Init_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package SmallIntegerSingletonFactory_Package renames Standard.org.allbinary.logic.math.SmallIntegerSingletonFactory_Package;
 
    type KeyFactoryInitializer is tagged;
    type KeyFactoryInitializer_Access is access all KeyFactoryInitializer'Class;

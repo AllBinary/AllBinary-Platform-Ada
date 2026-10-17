@@ -25,7 +25,7 @@ with org.allbinary.image.GameFeatureImageCacheFactory_Package; use org.allbinary
 
 package org.allbinary.media.image.ImageJ2MEScaleUtil_Package is
 
-   package GameFeatureImageCacheFactory_Package renames org.allbinary.image.GameFeatureImageCacheFactory_Package;
+   package GameFeatureImageCacheFactory_Package renames Standard.org.allbinary.image.GameFeatureImageCacheFactory_Package;
 
    type ImageJ2MEScaleUtil is tagged;
    type ImageJ2MEScaleUtil_Access is access all ImageJ2MEScaleUtil'Class;

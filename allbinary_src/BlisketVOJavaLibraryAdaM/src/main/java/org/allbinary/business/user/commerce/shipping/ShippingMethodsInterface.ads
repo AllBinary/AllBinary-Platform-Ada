@@ -26,9 +26,9 @@ with org.allbinary.business.user.commerce.shipping.modules.ShippingInterface_Pac
 
 package org.allbinary.business.user.commerce.shipping.ShippingMethodsInterface_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package ShippingInterface_Package renames org.allbinary.business.user.commerce.shipping.modules.ShippingInterface_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package ShippingInterface_Package renames Standard.org.allbinary.business.user.commerce.shipping.modules.ShippingInterface_Package;
 
    type ShippingMethodsInterface is interface;
    type ShippingMethodsInterface_Access is access all ShippingMethodsInterface'Class;

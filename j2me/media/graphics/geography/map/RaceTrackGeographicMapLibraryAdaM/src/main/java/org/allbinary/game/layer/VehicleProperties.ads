@@ -24,7 +24,7 @@ with org.allbinary.game.physics.velocity.VelocityProperties_Package; use org.all
 
 package org.allbinary.game.layer.VehicleProperties_Package is
 
-   package VelocityProperties_Package renames org.allbinary.game.physics.velocity.VelocityProperties_Package;
+   package VelocityProperties_Package renames Standard.org.allbinary.game.physics.velocity.VelocityProperties_Package;
 
    type VehicleProperties is tagged;
    type VehicleProperties_Access is access all VehicleProperties'Class;

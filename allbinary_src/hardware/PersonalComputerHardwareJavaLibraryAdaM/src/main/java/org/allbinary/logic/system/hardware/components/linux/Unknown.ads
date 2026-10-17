@@ -24,7 +24,7 @@ with org.allbinary.logic.system.hardware.components.interfaces.HardwareComponent
 
 package org.allbinary.logic.system.hardware.components.linux.Unknown_Package is
 
-   package HardwareComponentInterface_Package renames org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package;
+   package HardwareComponentInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package;
 
    type Unknown is tagged;
    type Unknown_Access is access all Unknown'Class;

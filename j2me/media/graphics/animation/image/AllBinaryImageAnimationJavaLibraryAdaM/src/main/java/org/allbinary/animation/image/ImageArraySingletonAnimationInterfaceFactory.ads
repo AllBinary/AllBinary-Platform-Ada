@@ -29,11 +29,11 @@ with org.allbinary.image.IndexedAnimationToImageArrayUtil_Package; use org.allbi
 
 package org.allbinary.animation.image.ImageArraySingletonAnimationInterfaceFactory_Package is
 
-   package Animation_Package renames org.allbinary.animation.Animation_Package;
-   package AnimationBehavior_Package renames org.allbinary.animation.AnimationBehavior_Package;
-   package IndexedAnimation_Package renames org.allbinary.animation.IndexedAnimation_Package;
-   package SingletonAnimationInterfaceFactory_Package renames org.allbinary.animation.SingletonAnimationInterfaceFactory_Package;
-   package IndexedAnimationToImageArrayUtil_Package renames org.allbinary.image.IndexedAnimationToImageArrayUtil_Package;
+   package Animation_Package renames Standard.org.allbinary.animation.Animation_Package;
+   package AnimationBehavior_Package renames Standard.org.allbinary.animation.AnimationBehavior_Package;
+   package IndexedAnimation_Package renames Standard.org.allbinary.animation.IndexedAnimation_Package;
+   package SingletonAnimationInterfaceFactory_Package renames Standard.org.allbinary.animation.SingletonAnimationInterfaceFactory_Package;
+   package IndexedAnimationToImageArrayUtil_Package renames Standard.org.allbinary.image.IndexedAnimationToImageArrayUtil_Package;
 
    type ImageArraySingletonAnimationInterfaceFactory is tagged;
    type ImageArraySingletonAnimationInterfaceFactory_Access is access all ImageArraySingletonAnimationInterfaceFactory'Class;

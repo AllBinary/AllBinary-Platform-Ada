@@ -82,10 +82,14 @@ package body org.allbinary.emulator.device.TrueTypeFontUtil_Package is
                 return This.fontImage;
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             PreLogUtil_Package.putOE (commonStrings.EXCEPTION_Id, This'Unchecked_Access, commonStrings.EXCEPTION_Id, e);
             Java_Throw (Java_New_Exception ("RuntimeException"));
+                end;
         end;
    end getFontBitmapGL;
 

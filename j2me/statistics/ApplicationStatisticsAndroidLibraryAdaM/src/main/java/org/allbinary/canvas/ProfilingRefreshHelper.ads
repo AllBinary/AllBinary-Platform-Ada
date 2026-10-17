@@ -26,8 +26,8 @@ with org.allbinary.canvas.AndroidGameStatistics_Package; use org.allbinary.canva
 
 package org.allbinary.canvas.ProfilingRefreshHelper_Package is
 
-   package View_Package renames android.view.View_Package;
-   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
+   package View_Package renames Standard.android.view.View_Package;
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
 
    type ProfilingRefreshHelper is tagged;
    type ProfilingRefreshHelper_Access is access all ProfilingRefreshHelper'Class;

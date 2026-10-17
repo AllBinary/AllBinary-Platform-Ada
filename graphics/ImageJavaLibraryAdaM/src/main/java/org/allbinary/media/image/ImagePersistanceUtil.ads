@@ -30,12 +30,12 @@ with org.apache.batik.ext.awt.image.codec.png.PNGImageWriter_Package; use org.ap
 
 package org.allbinary.media.image.ImagePersistanceUtil_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package AbFileOutputStream_Package renames org.allbinary.logic.io.AbFileOutputStream_Package;
-   package StreamUtil_Package renames org.allbinary.logic.io.StreamUtil_Package;
-   package AbFile_Package renames org.allbinary.logic.io.file.AbFile_Package;
-   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
-   package PNGImageWriter_Package renames org.apache.batik.ext.awt.image.codec.png.PNGImageWriter_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package AbFileOutputStream_Package renames Standard.org.allbinary.logic.io.AbFileOutputStream_Package;
+   package StreamUtil_Package renames Standard.org.allbinary.logic.io.StreamUtil_Package;
+   package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package PNGImageWriter_Package renames Standard.org.apache.batik.ext.awt.image.codec.png.PNGImageWriter_Package;
 
    type ImagePersistanceUtil is tagged;
    type ImagePersistanceUtil_Access is access all ImagePersistanceUtil'Class;

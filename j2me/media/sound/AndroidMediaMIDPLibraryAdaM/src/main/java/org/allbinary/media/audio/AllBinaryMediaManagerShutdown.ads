@@ -24,7 +24,7 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 
 package org.allbinary.media.audio.AllBinaryMediaManagerShutdown_Package is
 
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type AllBinaryMediaManagerShutdown is tagged;
    type AllBinaryMediaManagerShutdown_Access is access all AllBinaryMediaManagerShutdown'Class;

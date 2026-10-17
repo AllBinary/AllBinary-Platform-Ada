@@ -25,8 +25,8 @@ with org.allbinary.logic.system.hardware.components.interfaces.HardwareComponent
 
 package org.allbinary.logic.system.hardware.components.linux.Bridge_Package is
 
-   package BridgeInterface_Package renames org.allbinary.logic.system.hardware.components.interfaces.BridgeInterface_Package;
-   package HardwareComponentInterface_Package renames org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package;
+   package BridgeInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.BridgeInterface_Package;
+   package HardwareComponentInterface_Package renames Standard.org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package;
 
    type Bridge is tagged;
    type Bridge_Access is access all Bridge'Class;

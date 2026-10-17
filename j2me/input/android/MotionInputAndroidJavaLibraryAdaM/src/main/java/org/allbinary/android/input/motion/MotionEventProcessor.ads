@@ -24,7 +24,7 @@ with android.view.MotionEvent_Package; use android.view.MotionEvent_Package;
 
 package org.allbinary.android.input.motion.MotionEventProcessor_Package is
 
-   package MotionEvent_Package renames android.view.MotionEvent_Package;
+   package MotionEvent_Package renames Standard.android.view.MotionEvent_Package;
 
    type MotionEventProcessor is tagged;
    type MotionEventProcessor_Access is access all MotionEventProcessor'Class;

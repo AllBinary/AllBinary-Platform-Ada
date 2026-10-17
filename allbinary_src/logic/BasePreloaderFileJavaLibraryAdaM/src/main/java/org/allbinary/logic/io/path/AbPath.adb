@@ -37,8 +37,12 @@ package body org.allbinary.logic.io.path.AbPath_Package is
             EMPTY_STRING := StringUtil_Package.getInstance.EMPTY_STRING;
             return AbPath_Package.Create (EMPTY_STRING, EMPTY_STRING);
         exception
-            when ex : others =>
+            when Java_Occurrence : others =>
+                declare
+                    ex : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             Java_Throw (Java_New_Exception ("RuntimeException"));
+                end;
         end;
    end createAbPath;
 

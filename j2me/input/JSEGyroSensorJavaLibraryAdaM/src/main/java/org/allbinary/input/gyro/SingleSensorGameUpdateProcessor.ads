@@ -25,7 +25,7 @@ with org.allbinary.input.gyro.SensorGameUpdateProcessor_Package; use org.allbina
 
 package org.allbinary.input.gyro.SingleSensorGameUpdateProcessor_Package is
 
-   package Processor_Package renames org.allbinary.canvas.Processor_Package;
+   package Processor_Package renames Standard.org.allbinary.canvas.Processor_Package;
 
    type SingleSensorGameUpdateProcessor is tagged;
    type SingleSensorGameUpdateProcessor_Access is access all SingleSensorGameUpdateProcessor'Class;

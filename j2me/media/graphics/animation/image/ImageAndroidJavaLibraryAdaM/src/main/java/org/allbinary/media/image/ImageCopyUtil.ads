@@ -27,8 +27,8 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 
 package org.allbinary.media.image.ImageCopyUtil_Package is
 
-   package Anchor_Package renames org.allbinary.graphics.Anchor_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
+   package Anchor_Package renames Standard.org.allbinary.graphics.Anchor_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type ImageCopyUtil is tagged;
    type ImageCopyUtil_Access is access all ImageCopyUtil'Class;

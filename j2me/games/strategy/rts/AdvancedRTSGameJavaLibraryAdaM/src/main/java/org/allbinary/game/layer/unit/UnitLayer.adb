@@ -263,8 +263,12 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
                 layerInterface.onMovementFound (This.getTrackingEvent);
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("onMovement"), e);
+                end;
         end;
    end onMovement;
 
@@ -682,8 +686,12 @@ package body org.allbinary.game.layer.unit.UnitLayer_Package is
                 SecondaryPlayerQueueFactory_Package.getInstance.add (This.moveSoundInterface);
             end if;
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("move"), e);
+                end;
         end;
    end move_Case;
 

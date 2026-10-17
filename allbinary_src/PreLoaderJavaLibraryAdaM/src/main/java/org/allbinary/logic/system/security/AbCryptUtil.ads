@@ -20,7 +20,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.io.ByteArrayOutputStream_Package; use java.io.ByteArrayOutputStream_Package;
+with java.io.ByteArrayOutputStream_Package; use java.io.ByteArrayOutputStream_Package;
 --  with java.io.InputStream_Package; use java.io.InputStream_Package;
 with org.allbinary.logic.io.StreamUtil_Package; use org.allbinary.logic.io.StreamUtil_Package;
 with org.allbinary.logic.system.security.crypt.jcehelper.AbCrypt_Package; use org.allbinary.logic.system.security.crypt.jcehelper.AbCrypt_Package;
@@ -28,9 +28,10 @@ with org.allbinary.logic.system.security.crypt.jcehelper.KeySpecFactory_Package;
 
 package org.allbinary.logic.system.security.AbCryptUtil_Package is
 
-   package StreamUtil_Package renames org.allbinary.logic.io.StreamUtil_Package;
-   package AbCrypt_Package renames org.allbinary.logic.system.security.crypt.jcehelper.AbCrypt_Package;
-   package KeySpecFactory_Package renames org.allbinary.logic.system.security.crypt.jcehelper.KeySpecFactory_Package;
+   package ByteArrayOutputStream_Package renames Standard.java.io.ByteArrayOutputStream_Package;
+   package StreamUtil_Package renames Standard.org.allbinary.logic.io.StreamUtil_Package;
+   package AbCrypt_Package renames Standard.org.allbinary.logic.system.security.crypt.jcehelper.AbCrypt_Package;
+   package KeySpecFactory_Package renames Standard.org.allbinary.logic.system.security.crypt.jcehelper.KeySpecFactory_Package;
 
    type AbCryptUtil is tagged;
    type AbCryptUtil_Access is access all AbCryptUtil'Class;

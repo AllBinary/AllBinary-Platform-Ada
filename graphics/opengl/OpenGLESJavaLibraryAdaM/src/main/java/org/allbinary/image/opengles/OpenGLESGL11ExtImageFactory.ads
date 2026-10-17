@@ -27,8 +27,8 @@ with org.allbinary.image.opengles.OpenGLImageFactory_Package; use org.allbinary.
 
 package org.allbinary.image.opengles.OpenGLESGL11ExtImageFactory_Package is
 
-   package PlatformBitmapBaseFactory_Package renames org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package;
-   package PlatformTextureBaseFactory_Package renames org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package;
+   package PlatformBitmapBaseFactory_Package renames Standard.org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package;
+   package PlatformTextureBaseFactory_Package renames Standard.org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package;
 
    type OpenGLESGL11ExtImageFactory is tagged;
    type OpenGLESGL11ExtImageFactory_Access is access all OpenGLESGL11ExtImageFactory'Class;

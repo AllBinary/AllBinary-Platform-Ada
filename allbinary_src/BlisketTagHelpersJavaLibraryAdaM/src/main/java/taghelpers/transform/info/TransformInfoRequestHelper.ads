@@ -32,13 +32,13 @@ with org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreNoManipulat
 
 package taghelpers.transform.info.TransformInfoRequestHelper_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package ModifyTable_Package renames admin.taghelpers.ModifyTable_Package;
-   package TransformInfoEntityBuilder_Package renames org.allbinary.data.tables.transform.info.TransformInfoEntityBuilder_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package TransformInfoHttpInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package;
-   package TransformInfoHttpStoreNoManipulation_Package renames org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreNoManipulation_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package ModifyTable_Package renames Standard.admin.taghelpers.ModifyTable_Package;
+   package TransformInfoEntityBuilder_Package renames Standard.org.allbinary.data.tables.transform.info.TransformInfoEntityBuilder_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package TransformInfoHttpInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package;
+   package TransformInfoHttpStoreNoManipulation_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreNoManipulation_Package;
 
    type TransformInfoRequestHelper is tagged;
    type TransformInfoRequestHelper_Access is access all TransformInfoRequestHelper'Class;

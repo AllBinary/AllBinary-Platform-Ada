@@ -24,7 +24,7 @@ with org.allbinary.logic.system.os.GenericOperatingSystem_Package; use org.allbi
 
 package org.allbinary.logic.system.os.solaris.SolarisOS_Package is
 
-   package GenericOperatingSystem_Package renames org.allbinary.logic.system.os.GenericOperatingSystem_Package;
+   package GenericOperatingSystem_Package renames Standard.org.allbinary.logic.system.os.GenericOperatingSystem_Package;
 
    type SolarisOS is tagged;
    type SolarisOS_Access is access all SolarisOS'Class;

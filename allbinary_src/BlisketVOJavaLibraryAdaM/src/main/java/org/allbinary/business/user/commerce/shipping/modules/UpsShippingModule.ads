@@ -26,8 +26,8 @@ with org.allbinary.business.user.commerce.shipping.modules.ShippingInterface_Pac
 
 package org.allbinary.business.user.commerce.shipping.modules.UpsShippingModule_Package is
 
-   package OrderInterface_Package renames org.allbinary.business.user.commerce.inventory.order.OrderInterface_Package;
-   package Money_Package renames org.allbinary.business.user.commerce.money.Money_Package;
+   package OrderInterface_Package renames Standard.org.allbinary.business.user.commerce.inventory.order.OrderInterface_Package;
+   package Money_Package renames Standard.org.allbinary.business.user.commerce.money.Money_Package;
 
    type UpsShippingModule is tagged;
    type UpsShippingModule_Access is access all UpsShippingModule'Class;

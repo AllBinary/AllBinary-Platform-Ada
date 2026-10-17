@@ -45,9 +45,13 @@ package body org.allbinary.input.TouchJ2ME_Package is
         begin
             This.motionRecognizer.processDraggedMotionEvent (x, y, This.DEVICE_ID, 0);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("pointerDragged"), e);
+                end;
         end;
    end pointerDragged;
 
@@ -57,9 +61,13 @@ package body org.allbinary.input.TouchJ2ME_Package is
         begin
             This.motionRecognizer.processStartMotionEvent (x, y, This.DEVICE_ID, 0);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("pointerPressed"), e);
+                end;
         end;
    end pointerPressed;
 
@@ -69,9 +77,13 @@ package body org.allbinary.input.TouchJ2ME_Package is
         begin
             This.motionRecognizer.processEndMotionEvent (x, y, This.DEVICE_ID, 0);
         exception
-            when e : others =>
+            when Java_Occurrence : others =>
+                declare
+                    e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
+                begin
             commonStrings := CommonStrings_Package.getInstance;
             This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("pointerReleased"), e);
+                end;
         end;
    end pointerReleased;
 

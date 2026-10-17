@@ -14,7 +14,7 @@ with org.allbinary.animation.vector.RectangleFilledAnimation_Package; use org.al
 
 package org.allbinary.animation.vector.ARectangleFilledAnimation_Package is
 
-   package BasicColorFactory_Package renames org.allbinary.graphics.color.BasicColorFactory_Package;
+   package BasicColorFactory_Package renames Standard.org.allbinary.graphics.color.BasicColorFactory_Package;
 
    type ARectangleFilledAnimation is tagged;
    type ARectangleFilledAnimation_Access is access all ARectangleFilledAnimation'Class;

@@ -24,7 +24,7 @@ with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.a
 
 package org.allbinary.graphics.color.ColorChangeEventHandler_Package is
 
-   package BasicEventHandler_Package renames org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
+   package BasicEventHandler_Package renames Standard.org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
 
    type ColorChangeEventHandler is tagged;
    type ColorChangeEventHandler_Access is access all ColorChangeEventHandler'Class;

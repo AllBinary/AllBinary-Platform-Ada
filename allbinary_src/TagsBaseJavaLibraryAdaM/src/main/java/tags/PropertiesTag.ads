@@ -27,8 +27,8 @@ with tags.CommandTag_Package; use tags.CommandTag_Package;
 
 package tags.PropertiesTag_Package is
 
-   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
+   package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
 
    type PropertiesTag is tagged;
    type PropertiesTag_Access is access all PropertiesTag'Class;

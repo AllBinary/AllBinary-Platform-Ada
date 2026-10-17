@@ -34,17 +34,17 @@ with views.business.context.HttpContextView_Package; use views.business.context.
 
 package views.admin.user.UsersView_Package is
 
-   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
-   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
-   package UserDomNode_Package renames org.allbinary.business.user.UserDomNode_Package;
-   package UsersData_Package renames org.allbinary.business.user.UsersData_Package;
-   package User_Package renames org.allbinary.business.user.modules.User_Package;
-   package DomNodeInterface_Package renames org.allbinary.data.tree.dom.DomNodeInterface_Package;
-   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
-   package TransformInfoInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
-   package Document_Package renames org.w3c.dom.Document_Package;
-   package Node_Package renames org.w3c.dom.Node_Package;
-   package HttpContextView_Package renames views.business.context.HttpContextView_Package;
+   package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package UserDomNode_Package renames Standard.org.allbinary.business.user.UserDomNode_Package;
+   package UsersData_Package renames Standard.org.allbinary.business.user.UsersData_Package;
+   package User_Package renames Standard.org.allbinary.business.user.modules.User_Package;
+   package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
+   package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package TransformInfoInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package Node_Package renames Standard.org.w3c.dom.Node_Package;
+   package HttpContextView_Package renames Standard.views.business.context.HttpContextView_Package;
 
    type UsersView is tagged;
    type UsersView_Access is access all UsersView'Class;

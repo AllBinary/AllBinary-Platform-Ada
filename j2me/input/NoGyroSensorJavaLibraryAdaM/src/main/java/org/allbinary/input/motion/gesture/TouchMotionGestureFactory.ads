@@ -25,8 +25,8 @@ with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Pack
 
 package org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package is
 
-   package InputFactory_Package renames org.allbinary.game.input.InputFactory_Package;
-   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
+   package InputFactory_Package renames Standard.org.allbinary.game.input.InputFactory_Package;
+   package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
 
    type TouchMotionGestureFactory is tagged;
    type TouchMotionGestureFactory_Access is access all TouchMotionGestureFactory'Class;

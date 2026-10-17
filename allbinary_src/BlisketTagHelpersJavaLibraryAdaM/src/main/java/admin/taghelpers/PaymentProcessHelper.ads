@@ -29,9 +29,9 @@ with admin.taghelpers.TagHelper_Package; use admin.taghelpers.TagHelper_Package;
 
 package admin.taghelpers.PaymentProcessHelper_Package is
 
-   package TransformInfoHttpFactory_Package renames org.allbinary.logic.visual.transform.info.TransformInfoHttpFactory_Package;
-   package TransformInfoHttpInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package;
-   package PaymentProcessorComponent_Package renames views.admin.payment.PaymentProcessorComponent_Package;
+   package TransformInfoHttpFactory_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoHttpFactory_Package;
+   package TransformInfoHttpInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package;
+   package PaymentProcessorComponent_Package renames Standard.views.admin.payment.PaymentProcessorComponent_Package;
 
    type PaymentProcessHelper is tagged;
    type PaymentProcessHelper_Access is access all PaymentProcessHelper'Class;

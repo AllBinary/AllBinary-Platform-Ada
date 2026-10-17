@@ -25,7 +25,7 @@ with org.allbinary.game.combat.destroy.DestroyableBaseBehavior_Package; use org.
 
 package org.allbinary.game.combat.destroy.DestroyableSimpleBehavior_Package is
 
-   package CollidableCompositeLayer_Package renames org.allbinary.game.layer.CollidableCompositeLayer_Package;
+   package CollidableCompositeLayer_Package renames Standard.org.allbinary.game.layer.CollidableCompositeLayer_Package;
 
    type DestroyableSimpleBehavior is tagged;
    type DestroyableSimpleBehavior_Access is access all DestroyableSimpleBehavior'Class;
