@@ -36,7 +36,7 @@ package body org.allbinary.logic.system.security.licensing.ServiceClientInformat
 
    function getInstance return AbeClientInformationInterface_Access is
    begin
-        return ServiceClientInformationInterfaceFactory_Package.instance;
+        return AbeClientInformationInterface_Access (ServiceClientInformationInterfaceFactory_Package.instance);
    end getInstance;
 
 begin

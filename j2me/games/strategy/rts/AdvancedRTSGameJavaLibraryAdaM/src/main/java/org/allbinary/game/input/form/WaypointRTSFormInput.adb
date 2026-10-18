@@ -78,7 +78,7 @@ package body org.allbinary.game.input.form.WaypointRTSFormInput_Package is
       
       
       
-      This.stickyAssociatedRtsLayer := NullPathFindingLayer_Package.NULL_PATH_FINDING_LAYER;
+      This.stickyAssociatedRtsLayer := PathFindingLayerInterface_Access (NullPathFindingLayer_Package.NULL_PATH_FINDING_LAYER);
    end Initialize_Fields;
 
 

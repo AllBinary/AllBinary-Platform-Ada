@@ -49,6 +49,7 @@ with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDela
 with org.allbinary.util.EnumerationUtil_Package; use org.allbinary.util.EnumerationUtil_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.game.midlet.GameMidletStateFactory_Package; use org.allbinary.game.midlet.GameMidletStateFactory_Package;
+with java.lang.Thread_Package; use java.lang.Thread_Package;
 
 package org.allbinary.game.midlet.GameMidlet_Package is
 
@@ -80,6 +81,7 @@ package org.allbinary.game.midlet.GameMidlet_Package is
    package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
    package EnumerationUtil_Package renames Standard.org.allbinary.util.EnumerationUtil_Package;
    package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
+   package Thread_Package renames Standard.java.lang.Thread_Package;
 
    type GameMidlet is tagged;
    type GameMidlet_Access is access all GameMidlet'Class;

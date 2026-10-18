@@ -24,6 +24,7 @@ with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 
 package org.allbinary.game.displayable.canvas.GameRunnable_Package is
 
+   package Runnable_Package renames Standard.java.lang.Runnable_Package;
 
    type GameRunnable is tagged;
    type GameRunnable_Access is access all GameRunnable'Class;

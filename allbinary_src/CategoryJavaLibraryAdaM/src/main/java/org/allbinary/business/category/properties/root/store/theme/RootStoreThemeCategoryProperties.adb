@@ -102,7 +102,7 @@ package body org.allbinary.business.category.properties.root.store.theme.RootSto
       httpServletRequest : HttpServletRequest_Access;
    begin
         transformInfoHttpStoreInterface := TransformInfoHttpStoreInterface_Access (This.transformInfoInterface);
-        storeFrontInterface := StoreFrontFactory_Package.getInstance (transformInfoHttpStoreInterface.getStoreName);
+        storeFrontInterface := StoreFrontInterface_Access (StoreFrontFactory_Package.getInstance (transformInfoHttpStoreInterface.getStoreName));
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (AbPathData_Package.getInstance.SEPARATOR);
         stringBuffer.append (FREEBLISKET_PATH_GLOBALS_Package.getInstance.XSLPATH);

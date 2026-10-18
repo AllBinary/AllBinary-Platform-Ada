@@ -58,7 +58,7 @@ package body views.generic_Id.shipping.ShippingMethodsView_Package is
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
-        This.storeFrontInterface := StoreFrontFactory_Package.getInstance (ShippingMethodsView'Class (This).getTransformInfoInterface.getStoreName);
+        This.storeFrontInterface := StoreFrontInterface_Access (StoreFrontFactory_Package.getInstance (ShippingMethodsView'Class (This).getTransformInfoInterface.getStoreName));
         This.shippingMethods := ShippingMethods_Package.Create (This.abeClientInformation, This.storeFrontInterface);
    end Initialize;
 
@@ -91,9 +91,9 @@ package body views.generic_Id.shipping.ShippingMethodsView_Package is
    begin
         begin
             shippingMethodsNode := document.createElement (ShippingMethodsData_Package.SHIPPINGMETHODSORDERSUMMARIES);
-            order := ShippingMethodsView'Class (This).getWeblisketSession.getOrder;
-            basket := ShippingMethodsView'Class (This).getWeblisketSession.getOrder.getBasket;
-            shippingAddressesEntityInterface := ShippingAddressesEntityFactory_Package.getInstance.getInstance (ShippingMethodsView'Class (This).getWeblisketSession.getUserName);
+            order := OrderInterface_Access (ShippingMethodsView'Class (This).getWeblisketSession.getOrder);
+            basket := BasketInterface_Access (ShippingMethodsView'Class (This).getWeblisketSession.getOrder.getBasket);
+            shippingAddressesEntityInterface := StreetAddressesEntityInterface_Access (ShippingAddressesEntityFactory_Package.getInstance.getInstance (ShippingMethodsView'Class (This).getWeblisketSession.getUserName));
             streetAddress := shippingAddressesEntityInterface.getDefault;
             shippingVector := This.shippingMethods.get;
             size := shippingVector.size;

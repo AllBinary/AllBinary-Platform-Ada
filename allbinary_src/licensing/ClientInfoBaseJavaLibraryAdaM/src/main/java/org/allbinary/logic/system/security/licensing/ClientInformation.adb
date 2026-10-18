@@ -128,7 +128,7 @@ package body org.allbinary.logic.system.security.licensing.ClientInformation_Pac
         clientInfoHashtable.put (abeClientInformationData.OSARCH, genericOperatingSystem.getArch);
         clientInfoHashtable.put (abeClientInformationData.OSVERSION, genericOperatingSystem.getVersion);
         clientInfoHashtable.put (abeClientInformationData.OS, Java_Box (genericOperatingSystem.toString));
-        hardwareInterface := SystemHardwareFactory_Package.getInstance.getInstance (genericOperatingSystem);
+        hardwareInterface := HardwareInterface_Access (SystemHardwareFactory_Package.getInstance.getInstance (genericOperatingSystem));
         hardwareString := Java_Object'Class (hardwareInterface.all).toString;
         clientInfoHashtable.put (abeClientInformationData.HARDWARE, Java_Box (hardwareString));
         return clientInfoHashtable;

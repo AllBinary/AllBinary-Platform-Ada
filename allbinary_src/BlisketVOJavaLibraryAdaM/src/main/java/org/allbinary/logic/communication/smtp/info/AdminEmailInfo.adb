@@ -59,8 +59,8 @@ package body org.allbinary.logic.communication.smtp.info.AdminEmailInfo_Package 
       emailServerConfigurationInterface : EmailServerConfigurationInterface_Access;
    begin
         adminConfigurationInterface := AdminConfigurationInterface_Access (AdminConfiguration_Package.Create);
-        contextConfigurationInterface := adminConfigurationInterface.getContextConfigurationInterface;
-        emailServerConfigurationInterface := contextConfigurationInterface.getEmailServerConfigurationInterface;
+        contextConfigurationInterface := ContextConfigurationInterface_Access (adminConfigurationInterface.getContextConfigurationInterface);
+        emailServerConfigurationInterface := EmailServerConfigurationInterface_Access (contextConfigurationInterface.getEmailServerConfigurationInterface);
         AdminEmailInfo'Class (This).setEmailServerConfigurationInterface (emailServerConfigurationInterface);
    end init;
 

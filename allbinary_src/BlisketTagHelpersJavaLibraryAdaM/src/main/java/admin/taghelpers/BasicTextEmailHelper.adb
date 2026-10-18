@@ -33,7 +33,7 @@ package body admin.taghelpers.BasicTextEmailHelper_Package is
    procedure Initialize_Fields (This : in out BasicTextEmailHelper'Class) is
    begin
       null;
-      This.abeClientInformation := ServiceClientInformationInterfaceFactory_Package.getInstance;
+      This.abeClientInformation := AbeClientInformationInterface_Access (ServiceClientInformationInterfaceFactory_Package.getInstance);
       
       
    end Initialize_Fields;

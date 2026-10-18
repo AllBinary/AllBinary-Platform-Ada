@@ -31,6 +31,7 @@ package org.allbinary.midlet.ExitRunnable_Package is
    package Processor_Package renames Standard.org.allbinary.canvas.Processor_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package Runnable_Package renames Standard.java.lang.Runnable_Package;
 
    type ExitRunnable is tagged;
    type ExitRunnable_Access is access all ExitRunnable'Class;

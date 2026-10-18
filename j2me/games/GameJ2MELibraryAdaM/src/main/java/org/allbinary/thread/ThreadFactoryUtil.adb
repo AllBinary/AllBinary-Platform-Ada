@@ -83,11 +83,11 @@ package body org.allbinary.thread.ThreadFactoryUtil_Package is
         if J2MEUtil_Package.isHTML then
             if ((type_Id) = (DemoCanvas_Package.TYPE_Id)) or else ((type_Id) = (AllBinaryGameCanvas_Package.TYPE_Id)) then
                 demoGameSingleThreadStartRunnable := RunnableCanvasSingleThreadStartRunnable_Package.Create (RunnableCanvas_Access (runnable));
-                PreLogUtil_Package.put (StringMaker_Package.Create.append (To_Unbounded_String ("Using Pseudo Thread for DemoCanvas/AllBinaryGameCanvas under PlayN/HTML5: ")).append (StringUtil_Package.getInstance.toString (runnable)).toString, ThreadFactoryUtil_Access'(This'Unchecked_Access), commonStrings.CONSTRUCTOR);
+                PreLogUtil_Package.put (StringMaker_Package.Create.append (To_Unbounded_String ("Using Pseudo Thread for DemoCanvas/AllBinaryGameCanvas under PlayN/HTML5: ")).append (StringUtil_Package.getInstance.toString (Java_Object_Access (runnable))).toString, ThreadFactoryUtil_Access'(This'Unchecked_Access), commonStrings.CONSTRUCTOR);
                 primaryThreadPool := PrimaryThreadPool_Package.getInstance;
                 primaryThreadPool.runTask (demoGameSingleThreadStartRunnable);
             else
-                PreLogUtil_Package.put (StringMaker_Package.Create.append (To_Unbounded_String ("Using Pseudo Thread for Runnable under PlayN/HTML5: ")).append (StringUtil_Package.getInstance.toString (runnable)).toString, ThreadFactoryUtil_Access'(This'Unchecked_Access), commonStrings.CONSTRUCTOR);
+                PreLogUtil_Package.put (StringMaker_Package.Create.append (To_Unbounded_String ("Using Pseudo Thread for Runnable under PlayN/HTML5: ")).append (StringUtil_Package.getInstance.toString (Java_Object_Access (runnable))).toString, ThreadFactoryUtil_Access'(This'Unchecked_Access), commonStrings.CONSTRUCTOR);
                 primaryThreadPool := PrimaryThreadPool_Package.getInstance;
                 primaryThreadPool.runTask (runnable);
             end if;

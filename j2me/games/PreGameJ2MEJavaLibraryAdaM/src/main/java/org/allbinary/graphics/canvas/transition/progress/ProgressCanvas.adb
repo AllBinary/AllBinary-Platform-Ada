@@ -170,7 +170,7 @@ package body org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Pa
         This.logUtil.putF (This.commonStrings.START, ProgressCanvas_Access'(This'Unchecked_Access), This.commonStrings.END_METHOD_NAME);
         This.gauge.setValue (ProgressCanvas'Class (This).getMaxValue);
         ProgressCanvas'Class (This).endActual;
-        This.paintable := NullPaintable_Package.getInstance;
+        This.paintable := PaintableInterface_Access (NullPaintable_Package.getInstance);
    end end_Id;
 
    procedure endFromInitialLazyLoadingComplete (This : in out ProgressCanvas) is

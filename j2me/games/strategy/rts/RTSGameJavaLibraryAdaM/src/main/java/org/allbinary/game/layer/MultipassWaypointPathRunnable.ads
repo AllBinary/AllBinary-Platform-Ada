@@ -35,6 +35,7 @@ package org.allbinary.game.layer.MultipassWaypointPathRunnable_Package is
    package MultipassState_Package renames Standard.org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
+   package Runnable_Package renames Standard.java.lang.Runnable_Package;
 
    type MultipassWaypointPathRunnable is tagged;
    type MultipassWaypointPathRunnable_Access is access all MultipassWaypointPathRunnable'Class;
@@ -94,6 +95,7 @@ package org.allbinary.game.layer.FirstRunnable_Package is
    package MultipassState_Package renames Standard.org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
+   package Runnable_Package renames Standard.java.lang.Runnable_Package;
 
    type FirstRunnable is tagged;
    type FirstRunnable_Access is access all FirstRunnable'Class;
@@ -135,6 +137,7 @@ package org.allbinary.game.layer.SecondRunnable_Package is
    package MultipassState_Package renames Standard.org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
+   package Runnable_Package renames Standard.java.lang.Runnable_Package;
 
    type SecondRunnable is tagged;
    type SecondRunnable_Access is access all SecondRunnable'Class;
@@ -176,6 +179,7 @@ package org.allbinary.game.layer.EndRunnable_Package is
    package MultipassState_Package renames Standard.org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
+   package Runnable_Package renames Standard.java.lang.Runnable_Package;
 
    type EndRunnable is tagged;
    type EndRunnable_Access is access all EndRunnable'Class;

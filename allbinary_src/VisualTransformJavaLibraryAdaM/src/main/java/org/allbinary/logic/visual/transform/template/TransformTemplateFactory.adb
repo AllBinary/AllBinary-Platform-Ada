@@ -60,7 +60,7 @@ package body org.allbinary.logic.visual.transform.template.TransformTemplateFact
    begin
         begin
             transformInfoEntity := TransformInfoEntityBuilder_Package.getInstance;
-            transformInfoInterface := transformInfoEntity.get (templateName, propertiesHashMap, pageContext);
+            transformInfoInterface := TransformInfoInterface_Access (transformInfoEntity.get (templateName, propertiesHashMap, pageContext));
             return TransformTemplateInterface_Access (TransformInfoObjectFactory_Package.getInstance.getInstance (abeClientInformation, transformInfoInterface));
         exception
             when Java_Occurrence : others =>

@@ -40,12 +40,12 @@ package body org.allbinary.logic.system.hardware.NoHardware_Package is
 
    function getInstance return HardwareInterface_Access is
    begin
-        return NoHardware_Package.instance;
+        return HardwareInterface_Access (NoHardware_Package.instance);
    end getInstance;
 
    function getComponent (This : in out NoHardware; index : Integer) return HardwareComponentInterface_Access is
    begin
-        return NoHardwareComponent_Package.getInstance;
+        return HardwareComponentInterface_Access (NoHardwareComponent_Package.getInstance);
    end getComponent;
 
    function toString (This : in out NoHardware) return Unbounded_String is

@@ -258,8 +258,8 @@ package body admin.taghelpers.AuthenticationHelper_Package is
                             mustBeOfRole := BasicUserRole_Access (basicUserRoleArray (index));
                             if basicUserRole.equals (mustBeOfRole) then
                                 if basicUserRole.equals (UserRoleFactory_Package.getInstance.CUSTOMER) then
-                                    userEntityInterface := UserEntityFactory_Package.getInstance;
-                                    userInterface := userEntityInterface.getUser (This.sessionUserName);
+                                    userEntityInterface := UserEntityInterface_Access (UserEntityFactory_Package.getInstance);
+                                    userInterface := UserInterface_Access (userEntityInterface.getUser (This.sessionUserName));
                                     if not (userInterface.isSessionValid.booleanValue) then
                                         return False;
                                     end if;
@@ -309,10 +309,10 @@ package body admin.taghelpers.AuthenticationHelper_Package is
             end if;
             if ((((userName) /= (Null_Unbounded_String)) and then ((Java_Compare_To (userName, StringUtil_Package.getInstance.EMPTY_STRING)) /= (0))) and then ((password) /= (Null_Unbounded_String))) and then ((Java_Compare_To (password, StringUtil_Package.getInstance.EMPTY_STRING)) /= (0)) then
                 login := Null_Unbounded_String;
-                userEntityInterface := UserEntityFactory_Package.getInstance;
+                userEntityInterface := UserEntityInterface_Access (UserEntityFactory_Package.getInstance);
                 login := userEntityInterface.login (userName, password);
                 if (Java_Compare_To (login, GLOBALS2_Package.LOGINSUCCESS)) = (0) then
-                    userInterface := userEntityInterface.getUser (userName);
+                    userInterface := UserInterface_Access (userEntityInterface.getUser (userName));
                     if userInterface.isSessionValid.booleanValue then
                         This.weblisketSession.setAttempts (0);
                         return True;

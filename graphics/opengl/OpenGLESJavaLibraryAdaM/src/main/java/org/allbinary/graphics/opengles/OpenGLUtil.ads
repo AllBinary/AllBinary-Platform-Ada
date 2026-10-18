@@ -36,6 +36,7 @@ package org.allbinary.graphics.opengles.OpenGLUtil_Package is
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package SynchObject_Package renames Standard.org.allbinary.thread.SynchObject_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package Runnable_Package renames Standard.java.lang.Runnable_Package;
 
    type OpenGLUtil is tagged;
    type OpenGLUtil_Access is access all OpenGLUtil'Class;

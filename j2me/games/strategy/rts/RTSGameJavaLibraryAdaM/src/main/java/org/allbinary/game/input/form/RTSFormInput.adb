@@ -183,7 +183,7 @@ package body org.allbinary.game.input.form.RTSFormInput_Package is
       cellPoint : GPoint_Access;
    begin
         item := LayerInterfaceFactoryImageItem_Access (aItem);
-        layerInterfaceFactoryInterface := item.getLayerInterfaceFactoryInterface;
+        layerInterfaceFactoryInterface := LayerInterfaceFactoryInterface_Access (item.getLayerInterfaceFactoryInterface);
         cellPoint := geographicMapCellPosition.getPoint;
         if (layerInterfaceFactoryInterface) /= (null) then
             This.hashtable.put (AllBinaryGameLayerManager_Package.ID, layerManager);

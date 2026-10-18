@@ -102,7 +102,7 @@ package body views.generic_Id.inventory.InventorySearchUtil_Package is
       index : Integer;
    begin
         inventoryEntityInterface := InventoryEntityFactory_Package.getInstance.getInventoryEntityInstance;
-        storeFrontInterface := searchRequest.getStoreFront;
+        storeFrontInterface := StoreFrontInterface_Access (searchRequest.getStoreFront);
         inventorySearchUtil_Var := InventoryColumnUtil_Package.getInstance;
         column := inventorySearchUtil_Var.getColumnWhereLike (inventoryEntityInterface, storeFrontInterface.getCategoryPath, This.basicItemData.ID);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PRODUCTSEARCHLOGGING) then
@@ -195,7 +195,7 @@ package body views.generic_Id.inventory.InventorySearchUtil_Package is
                 lastPage := -(1);
                 numberOfResultsOnCurrentPage := 0;
                 numberOfResults := 0;
-                viewDocumentInterface := TransformStoreDocumentFactory_Package.getInstance (searchRequest);
+                viewDocumentInterface := TransformDocumentInterface_Access (TransformStoreDocumentFactory_Package.getInstance (searchRequest));
                 inventoryNode := viewDocumentInterface.getDoc.createElement (InventoryData_Package.INVENTORY);
                 viewDocumentInterface.getBaseNode.appendChild (inventoryNode);
                 inventoryNode.appendChild (ModDomHelper_Package.createNameValueNodes (viewDocumentInterface.getDoc, SearchData_Package.PAGE, startPage.toString));
@@ -206,7 +206,7 @@ package body views.generic_Id.inventory.InventorySearchUtil_Package is
                 size := column.size;
                 for index in 0 .. (size) - 1 loop
                     product := Java_New_String (Java_Unbox (column.get (index)));
-                    itemInterface := inventoryEntityInterface.getItem (product);
+                    itemInterface := ItemInterface_Access (inventoryEntityInterface.getItem (product));
                     keywords := itemInterface.getKeywords;
                     keywords := Translate (keywords, Ada.Strings.Maps.Constants.Upper_Case_Map);
                     if (Java_Index_Of (keywords, Java_Image (keyword))) /= (-(1)) then
@@ -223,7 +223,7 @@ package body views.generic_Id.inventory.InventorySearchUtil_Package is
                                 documents (currentPage) := viewDocumentInterface.getDoc;
                                 inventoryNodes (currentPage) := inventoryNode;
                                 savedPagesInRange := savedPagesInRange + 1;
-                                viewDocumentInterface := TransformStoreDocumentFactory_Package.getInstance (searchRequest);
+                                viewDocumentInterface := TransformDocumentInterface_Access (TransformStoreDocumentFactory_Package.getInstance (searchRequest));
                                 inventoryNode := viewDocumentInterface.getDoc.createElement (InventoryData_Package.INVENTORY);
                                 viewDocumentInterface.getBaseNode.appendChild (inventoryNode);
                                 inventoryNode.appendChild (ModDomHelper_Package.createNameValueNodes (viewDocumentInterface.getDoc, SearchData_Package.PAGE, (currentPage) + (1).toString));

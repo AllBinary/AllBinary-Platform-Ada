@@ -44,7 +44,7 @@ package body org.allbinary.logic.system.hardware.components.interfaces.NoHardwar
    function compareTo (This : in out NoHardwareComponent; componentInterface_Param : access HardwareComponentInterface_Package.HardwareComponentInterface'Class) return Boolean is
       componentInterface : constant HardwareComponentInterface_Access := HardwareComponentInterface_Access (componentInterface_Param);
    begin
-        if (NoHardwareComponent_Access'(This'Unchecked_Access)) = (componentInterface) then
+        if (Java_Object_Access (NoHardwareComponent_Access'(This'Unchecked_Access))) = (Java_Object_Access (componentInterface)) then
             return True;
         end if;
         return False;

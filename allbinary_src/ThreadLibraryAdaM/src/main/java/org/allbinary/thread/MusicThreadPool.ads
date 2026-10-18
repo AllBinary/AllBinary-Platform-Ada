@@ -25,6 +25,7 @@ with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 
 package org.allbinary.thread.MusicThreadPool_Package is
 
+   package Runnable_Package renames Standard.java.lang.Runnable_Package;
 
    type MusicThreadPool is tagged;
    type MusicThreadPool_Access is access all MusicThreadPool'Class;

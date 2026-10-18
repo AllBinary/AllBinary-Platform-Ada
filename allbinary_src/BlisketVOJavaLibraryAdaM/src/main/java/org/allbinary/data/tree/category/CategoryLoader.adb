@@ -115,7 +115,7 @@ package body org.allbinary.data.tree.category.CategoryLoader_Package is
         begin
             document := CategoryLoader'Class (This).getDoc (categoryInterface);
             categoryNode := DomSearchHelper_Package.getNode (CategoryData_Package.getInstance.NAME, document.getChildNodes);
-            return CategoryLoader'Class (This).addProperties (categoryInterface, categoryNode.getChildNodes);
+            return CategoryInterface_Access (CategoryLoader'Class (This).addProperties (categoryInterface, categoryNode.getChildNodes));
         exception
             when Java_Occurrence : others =>
                 declare
@@ -136,8 +136,8 @@ package body org.allbinary.data.tree.category.CategoryLoader_Package is
    begin
         begin
             categoryNode := DomSearchHelper_Package.getNode (CategoryData_Package.getInstance.NAME, document.getChildNodes);
-            loadedCategoryInterface := This.categoryFactoryInterface.getRootInstanceFromNode (categoryNode);
-            return CategoryLoader'Class (This).addProperties (loadedCategoryInterface, categoryNode.getChildNodes);
+            loadedCategoryInterface := CategoryInterface_Access (This.categoryFactoryInterface.getRootInstanceFromNode (categoryNode));
+            return CategoryInterface_Access (CategoryLoader'Class (This).addProperties (loadedCategoryInterface, categoryNode.getChildNodes));
         exception
             when Java_Occurrence : others =>
                 declare
@@ -157,7 +157,7 @@ package body org.allbinary.data.tree.category.CategoryLoader_Package is
    begin
         begin
             document := CategoryLoader'Class (This).getDoc (categoryInterface);
-            return CategoryLoader'Class (This).getAll (document);
+            return CategoryInterface_Access (CategoryLoader'Class (This).getAll (document));
         exception
             when Java_Occurrence : others =>
                 declare
@@ -178,8 +178,8 @@ package body org.allbinary.data.tree.category.CategoryLoader_Package is
    begin
         begin
             categoryNode := DomSearchHelper_Package.getNode (CategoryData_Package.getInstance.NAME, document.getChildNodes);
-            loadedCategoryInterface := This.categoryFactoryInterface.getRootInstanceFromNode (categoryNode);
-            return CategoryLoader'Class (This).addProperties (loadedCategoryInterface, categoryNode.getChildNodes);
+            loadedCategoryInterface := CategoryInterface_Access (This.categoryFactoryInterface.getRootInstanceFromNode (categoryNode));
+            return CategoryInterface_Access (CategoryLoader'Class (This).addProperties (loadedCategoryInterface, categoryNode.getChildNodes));
         exception
             when Java_Occurrence : others =>
                 declare

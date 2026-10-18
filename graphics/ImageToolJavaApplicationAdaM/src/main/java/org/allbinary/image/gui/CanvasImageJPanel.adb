@@ -19,6 +19,7 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 with org.allbinary.media.image.CanvasExpandUtil_Package; use org.allbinary.media.image.CanvasExpandUtil_Package;
 with org.allbinary.media.image.CanvasTrimUtil_Package; use org.allbinary.media.image.CanvasTrimUtil_Package;
 with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.string_Id.CommonPhoneStrings_Package;
+with java.lang.Thread_Package; use java.lang.Thread_Package;
 with org.allbinary.image.gui.Graphics_Package; use org.allbinary.image.gui.Graphics_Package;
 
 package body org.allbinary.image.gui.CanvasImageJPanel_Package is
@@ -29,6 +30,7 @@ package body org.allbinary.image.gui.CanvasImageJPanel_Package is
    package CanvasExpandUtil_Package renames Standard.org.allbinary.media.image.CanvasExpandUtil_Package;
    package CanvasTrimUtil_Package renames Standard.org.allbinary.media.image.CanvasTrimUtil_Package;
    package CommonPhoneStrings_Package renames Standard.org.allbinary.string_Id.CommonPhoneStrings_Package;
+   package Thread_Package renames Standard.java.lang.Thread_Package;
    procedure Initialize_Fields (This : in out CanvasImageJPanel'Class) is
    begin
       null;

@@ -97,10 +97,10 @@ package body views.business.context.OverrideObjectConfigRootContextView_Package 
                 This.logUtil.putF (To_Unbounded_String ("Retrieved OverrideObjectConfig: ") & XmlDocumentHelper_Package.toString (overrideObjectConfigDocument), OverrideObjectConfigRootContextView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"));
             end if;
             transformFactory := TransformFactory_Package.getInstance;
-            rootComponentInterface := transformFactory.getInstance (This.abeClientInformation, rootTransformInfoInterface.getName, rootTransformInfoInterface);
+            rootComponentInterface := TransformInterface_Access (transformFactory.getInstance (This.abeClientInformation, rootTransformInfoInterface.getName, rootTransformInfoInterface));
             transformTemplateInterface := TransformTemplateInterface_Access (rootComponentInterface);
-            componentInterface := transformFactory.getInstance (This.abeClientInformation, transformTemplateInterface.getName, rootComponentInterface.getTransformInfoInterface);
-            transformInfoObjectConfigInterface := TransformInfoObjectConfigAndManipulatorFactory_Package.getInstance.getInstance (This.abeClientInformation, componentInterface.getTransformInfoInterface, overrideObjectConfigDocument);
+            componentInterface := TransformInterface_Access (transformFactory.getInstance (This.abeClientInformation, transformTemplateInterface.getName, rootComponentInterface.getTransformInfoInterface));
+            transformInfoObjectConfigInterface := TransformInfoObjectConfigInterface_Access (TransformInfoObjectConfigAndManipulatorFactory_Package.getInstance.getInstance (This.abeClientInformation, componentInterface.getTransformInfoInterface, overrideObjectConfigDocument));
             componentInterface.getTransformInfoInterface.setObjectConfigInterface (transformInfoObjectConfigInterface);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
                 This.logUtil.putF (To_Unbounded_String ("Set OverrideObjectConfig: ") & componentInterface.getTransformInfoInterface.getObjectConfigInterface.toString, OverrideObjectConfigRootContextView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"));

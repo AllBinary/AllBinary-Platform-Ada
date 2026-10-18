@@ -37,7 +37,7 @@ package org.allbinary.business.user.modules.admin.store.order.review.ReviewOrder
    type ReviewOrderStoreAdminUser_Access_Array_Access_Array is array (Natural range <>) of ReviewOrderStoreAdminUser_Access_Array_Access;
    type ReviewOrderStoreAdminUser_Access_Array_Access_Array_Access is access all ReviewOrderStoreAdminUser_Access_Array_Access_Array;
 
-   type ReviewOrderStoreAdminUser is new User with null record;
+   type ReviewOrderStoreAdminUser is new User_Package.User with null record;
 
    procedure Initialize (This : in out ReviewOrderStoreAdminUser'Class);
    function Create return ReviewOrderStoreAdminUser_Access;

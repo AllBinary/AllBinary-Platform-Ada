@@ -113,7 +113,7 @@ package body org.allbinary.game.resource.FeaturedResourceFactory_Package is
    procedure add (This : in out FeaturedResourceFactory; featureInterface_Param : access GameFeatureControlledInterface_Package.GameFeatureControlledInterface'Class) is
       featureInterface : constant GameFeatureControlledInterface_Access := GameFeatureControlledInterface_Access (featureInterface_Param);
    begin
-        This.logUtil.putF (StringMaker_Package.Create.append (CommonLabels_Package.getInstance.START_LABEL).append (StringUtil_Package.getInstance.toString (featureInterface)).toString, FeaturedResourceFactory_Access'(This'Unchecked_Access), This.commonStrings.ADD);
+        This.logUtil.putF (StringMaker_Package.Create.append (CommonLabels_Package.getInstance.START_LABEL).append (StringUtil_Package.getInstance.toString (Java_Object_Access (featureInterface))).toString, FeaturedResourceFactory_Access'(This'Unchecked_Access), This.commonStrings.ADD);
         This.list.add (Java_Object_Access (featureInterface));
    end add;
 

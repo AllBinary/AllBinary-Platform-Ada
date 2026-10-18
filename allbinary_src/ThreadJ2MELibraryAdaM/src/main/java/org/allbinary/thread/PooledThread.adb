@@ -21,6 +21,7 @@ package body org.allbinary.thread.PooledThread_Package is
 
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package Runnable_Package renames Standard.java.lang.Runnable_Package;
    procedure Initialize_Fields (This : in out PooledThread'Class) is
    begin
       null;
@@ -54,9 +55,9 @@ package body org.allbinary.thread.PooledThread_Package is
    begin
         This.threadPool.threadStarted;
         while True loop
-            task2 := This.threadObjectUtil.NULL_PRIORITY_RUNNABLE;
+            task2 := Runnable_Access (This.threadObjectUtil.NULL_PRIORITY_RUNNABLE);
             begin
-                task2 := This.threadPool.getTask;
+                task2 := Runnable_Access (This.threadPool.getTask);
                 This.threadPool.runningTask := True;
                 This.threadPool.startTask (task2);
             exception
@@ -69,7 +70,7 @@ package body org.allbinary.thread.PooledThread_Package is
                 exit;
                     end;
             end;
-            if (task2) = (This.threadObjectUtil.NULL_PRIORITY_RUNNABLE) then
+            if (Java_Object_Access (task2)) = (Java_Object_Access (This.threadObjectUtil.NULL_PRIORITY_RUNNABLE)) then
                 exit;
             end if;
             begin
@@ -82,7 +83,7 @@ package body org.allbinary.thread.PooledThread_Package is
                         e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                     begin
                 logUtil := LogUtil_Package.getInstance;
-                logUtil.put (StringMaker_Package.Create.append (This.commonStrings.EXCEPTION_LABEL).append (StringUtil_Package.getInstance.toString (task2)).toString, PooledThread_Access'(This'Unchecked_Access), This.commonStrings.RUN, e);
+                logUtil.put (StringMaker_Package.Create.append (This.commonStrings.EXCEPTION_LABEL).append (StringUtil_Package.getInstance.toString (Java_Object_Access (task2))).toString, PooledThread_Access'(This'Unchecked_Access), This.commonStrings.RUN, e);
                     end;
             end;
         end loop;

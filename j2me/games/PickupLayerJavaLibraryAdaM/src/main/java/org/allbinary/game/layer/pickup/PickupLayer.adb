@@ -30,7 +30,7 @@ package body org.allbinary.game.layer.pickup.PickupLayer_Package is
    procedure Initialize_Fields (This : in out PickupLayer'Class) is
    begin
       null;
-      This.pickedUpLayerInterfaceFactoryInterface := CountedPickedUpLayerInterfaceFactory_Package.NULL_COUNTED_PICKUP_LAYER_FACTORY;
+      This.pickedUpLayerInterfaceFactoryInterface := PickedUpLayerInterfaceFactoryInterface_Access (CountedPickedUpLayerInterfaceFactory_Package.NULL_COUNTED_PICKUP_LAYER_FACTORY);
       This.destroyed := False;
       This.animationInterface := NullAnimationFactory_Package.getFactoryInstance.getInstance (0);
    end Initialize_Fields;

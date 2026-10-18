@@ -121,7 +121,7 @@ package body views.business.context.modules.storefront.customizer.template.Inser
                     if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
                         This.logUtil.putF (To_Unbounded_String ("Setting Template Component with ViewName: ") & transformInfoName, InsertCustomizerValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
                     end if;
-                    componentInterface := TransformFactory_Package.getInstance.getInstance (This.abeClientInformation, transformInfoName, InsertCustomizerValidationView'Class (This).getTransformInfoInterface);
+                    componentInterface := TransformInterface_Access (TransformFactory_Package.getInstance.getInstance (This.abeClientInformation, transformInfoName, InsertCustomizerValidationView'Class (This).getTransformInfoInterface));
                     templateViewObjectConfig := InsertTemplateCustomizerTransformInfoObjectConfig_Package.Create (componentInterface.getTransformInfoInterface, componentInterface.getTransformInfoInterface.getObjectConfigInterface.toXmlDoc);
                     storeName := InsertCustomizerValidationView'Class (This).getTransformInfoInterface.getStoreName;
                     endIndex := (Java_Index_Of (This.viewName, Java_Image (storeName))) + (Length (storeName));

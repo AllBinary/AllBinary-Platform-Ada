@@ -18,6 +18,7 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.media.image.SpriteSplitterUtil_Package; use org.allbinary.media.image.SpriteSplitterUtil_Package;
 with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.string_Id.CommonPhoneStrings_Package;
+with java.lang.Thread_Package; use java.lang.Thread_Package;
 with org.allbinary.image.gui.Graphics_Package; use org.allbinary.image.gui.Graphics_Package;
 
 package body org.allbinary.image.gui.SpriteSplitterImageJPanel_Package is
@@ -27,6 +28,7 @@ package body org.allbinary.image.gui.SpriteSplitterImageJPanel_Package is
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package SpriteSplitterUtil_Package renames Standard.org.allbinary.media.image.SpriteSplitterUtil_Package;
    package CommonPhoneStrings_Package renames Standard.org.allbinary.string_Id.CommonPhoneStrings_Package;
+   package Thread_Package renames Standard.java.lang.Thread_Package;
    procedure Initialize_Fields (This : in out SpriteSplitterImageJPanel'Class) is
    begin
       null;

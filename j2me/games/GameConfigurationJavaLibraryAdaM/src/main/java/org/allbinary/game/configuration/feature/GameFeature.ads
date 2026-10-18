@@ -32,7 +32,7 @@ package org.allbinary.game.configuration.feature.GameFeature_Package is
    type GameFeature_Access_Array_Access_Array is array (Natural range <>) of GameFeature_Access_Array_Access;
    type GameFeature_Access_Array_Access_Array_Access is access all GameFeature_Access_Array_Access_Array;
 
-   type GameFeature is new Feature with null record;
+   type GameFeature is new Feature_Package.Feature with null record;
 
    procedure Initialize (This : in out GameFeature'Class; name : Unbounded_String);
    function Create (name : Unbounded_String) return GameFeature_Access;

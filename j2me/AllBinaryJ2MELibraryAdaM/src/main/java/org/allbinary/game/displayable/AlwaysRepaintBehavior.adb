@@ -20,6 +20,7 @@ with org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package; use org.allbi
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.thread.NullRunnable_Package; use org.allbinary.thread.NullRunnable_Package;
+with java.lang.Thread_Package; use java.lang.Thread_Package;
 
 package body org.allbinary.game.displayable.AlwaysRepaintBehavior_Package is
 
@@ -30,6 +31,7 @@ package body org.allbinary.game.displayable.AlwaysRepaintBehavior_Package is
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package NullRunnable_Package renames Standard.org.allbinary.thread.NullRunnable_Package;
+   package Thread_Package renames Standard.java.lang.Thread_Package;
    procedure Initialize_Fields (This : in out AlwaysRepaintBehavior'Class) is
    begin
       null;

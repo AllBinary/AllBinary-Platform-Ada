@@ -37,7 +37,7 @@ package org.allbinary.business.user.modules.admin.store.web.workflow.editor.Work
    type WorkflowEditorWebStoreAdminUser_Access_Array_Access_Array is array (Natural range <>) of WorkflowEditorWebStoreAdminUser_Access_Array_Access;
    type WorkflowEditorWebStoreAdminUser_Access_Array_Access_Array_Access is access all WorkflowEditorWebStoreAdminUser_Access_Array_Access_Array;
 
-   type WorkflowEditorWebStoreAdminUser is new User with null record;
+   type WorkflowEditorWebStoreAdminUser is new User_Package.User with null record;
 
    procedure Initialize (This : in out WorkflowEditorWebStoreAdminUser'Class);
    function Create return WorkflowEditorWebStoreAdminUser_Access;

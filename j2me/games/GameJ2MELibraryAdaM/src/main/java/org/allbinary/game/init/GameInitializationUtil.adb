@@ -58,7 +58,7 @@ package body org.allbinary.game.init.GameInitializationUtil_Package is
    begin
         mainFeatureFactory := MainFeatureFactory_Package.getInstance;
         if ChangedGameFeatureListener_Package.getInstance.isChangedFeature (mainFeatureFactory.STATIC) then
-            gameInitializationInterface := gameInitializationInterfaceFactoryInterface.getInstance;
+            gameInitializationInterface := GameInitializationInterface_Access (gameInitializationInterfaceFactoryInterface.getInstance);
             features := Features_Package.getInstance;
             if features.isFeature (mainFeatureFactory.LOAD_ALL) then
                 GameInitializationUtil'Class (This).initGame (abeClientInformation, canvas, gameInitializationInterfaceFactoryInterface);
@@ -82,7 +82,7 @@ package body org.allbinary.game.init.GameInitializationUtil_Package is
       resourceLoadingLevelFactory : ResourceLoadingLevelFactory_Access;
    begin
         if ChangedGameFeatureListener_Package.getInstance.isChangedFeature (MainFeatureFactory_Package.getInstance.STATIC) then
-            gameInitializationInterface := gameInitializationInterfaceFactoryInterface.getInstance;
+            gameInitializationInterface := GameInitializationInterface_Access (gameInitializationInterfaceFactoryInterface.getInstance);
             resourceLoadingLevelFactory := ResourceLoadingLevelFactory_Package.getInstance;
             gameInitializationInterface.init (abeClientInformation, canvas.getCustomCommandListener, resourceLoadingLevelFactory.LOAD_ALL.getLevel);
             This.EVENT.setResourceLoadingLevel (resourceLoadingLevelFactory.LOAD_ALL);

@@ -80,7 +80,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity
             updateKeyAndValue := StdUtil_Package.getInstance.createHashMap;
             whereKeyAndValue := StdUtil_Package.getInstance.createHashMap;
             whereKeyAndValue.put (UserData_Package.USERNAME, Java_Box (userName));
-            paymentInterface := PaymentEntity'Class (This).getDefault (userName);
+            paymentInterface := PaymentInterface_Access (PaymentEntity'Class (This).getDefault (userName));
             if (paymentInterface) /= (null) then
                 updateKeyAndValue.put (EntryData_Package.getInstance.DEFAULT, StringUtil_Package.getInstance.EMPTY_STRING);
                 whereKeyAndValue.put (PaymentData_Package.ID, paymentInterface.getId);

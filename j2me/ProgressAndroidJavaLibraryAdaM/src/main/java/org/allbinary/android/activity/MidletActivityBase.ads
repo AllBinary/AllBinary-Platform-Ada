@@ -51,7 +51,7 @@ package org.allbinary.android.activity.MidletActivityBase_Package is
    type MidletActivityBase_Access_Array_Access_Array is array (Natural range <>) of MidletActivityBase_Access_Array_Access;
    type MidletActivityBase_Access_Array_Access_Array_Access is access all MidletActivityBase_Access_Array_Access_Array;
 
-   type MidletActivityBase is new Activity and GameFeatureListenerInterface and GameInitializedListenerInterface and SimpleProgressActivityInterface and KeyInputViewCompositeInterface and GenericMotionEventVerifyInterface with null record;
+   type MidletActivityBase is new Activity_Package.Activity and GameFeatureListenerInterface and GameInitializedListenerInterface and SimpleProgressActivityInterface and KeyInputViewCompositeInterface and GenericMotionEventVerifyInterface with null record;
 
    procedure Initialize (This : in out MidletActivityBase'Class);
    function Create return MidletActivityBase_Access;

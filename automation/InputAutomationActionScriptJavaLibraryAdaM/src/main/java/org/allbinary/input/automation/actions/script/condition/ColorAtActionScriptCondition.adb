@@ -183,7 +183,7 @@ package body org.allbinary.input.automation.actions.script.condition.ColorAtActi
    begin
         capturedBufferedImageCacheable := BufferedImageFrameCacheable_Access ((AutomaticCacheInterface_Access (CapturedBufferedImagesCacheSingleton_Package.getInstance)).get (To_Unbounded_String (Java_Image (frame))));
         bufferedImage := capturedBufferedImageCacheable.getBufferedImage;
-        automaticCacheInterface := ColorCacheFactory_Package.getInstance;
+        automaticCacheInterface := AutomaticCacheInterface_Access (ColorCacheFactory_Package.getInstance);
         colorInteger := To_Unbounded_String (Java_Image (bufferedImage.getRGB (ColorAtActionScriptCondition'Class (This).getPoint.x, ColorAtActionScriptCondition'Class (This).getPoint.y)));
         colorCacheable := ColorCacheable_Access (automaticCacheInterface.get (colorInteger));
         color := colorCacheable.getColor;

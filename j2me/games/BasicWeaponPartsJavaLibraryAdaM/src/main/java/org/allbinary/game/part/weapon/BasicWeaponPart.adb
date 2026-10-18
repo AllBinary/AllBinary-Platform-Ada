@@ -30,7 +30,7 @@ package body org.allbinary.game.part.weapon.BasicWeaponPart_Package is
       This.animationInterface := NullAnimationFactory_Package.getFactoryInstance.getInstance (0);
       This.ownerLayerInterface := AllBinaryLayer_Package.NULL_ALLBINARY_LAYER;
       This.weaponProperties := WeaponProperties_Package.NULL_WEAPON_PROPERTIES;
-      This.scoreableInterface := NoScoreable_Package.getInstance;
+      This.scoreableInterface := ScoreableInterface_Access (NoScoreable_Package.getInstance);
       This.relativeRelationship := RelativeRelationship_Package.NULL_RELATIVE_RELATIONSHIP;
    end Initialize_Fields;
 

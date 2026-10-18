@@ -34,7 +34,7 @@ package body org.allbinary.game.layer.AllBinaryGameLayerManager_Package is
       
       
       
-      This.playerGameInputCompositeInterface := NullPlayerGameInputComposite_Package.NULL_PLAYER_GAME_INPUT_COMPOSITE;
+      This.playerGameInputCompositeInterface := PlayerGameInputCompositeInterface_Access (NullPlayerGameInputComposite_Package.NULL_PLAYER_GAME_INPUT_COMPOSITE);
    end Initialize_Fields;
 
 

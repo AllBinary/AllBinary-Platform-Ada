@@ -18,6 +18,7 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
+with java.lang.Thread_Package; use java.lang.Thread_Package;
 
 package body org.allbinary.input.automation.actions.script.condition.processors.input.KeyboardInputAutomationProcessor_Package is
 
@@ -26,6 +27,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
    package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
+   package Thread_Package renames Standard.java.lang.Thread_Package;
    procedure Initialize_Fields (This : in out KeyboardInputAutomationProcessor'Class) is
    begin
       null;
@@ -59,7 +61,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
         logUtil := LogUtil_Package.getInstance;
         commonStrings := CommonStrings_Package.getInstance;
         logUtil.putF (Java_Image (CommonLabels_Package.getInstance.START) & Java_Object'Class (keyActionScriptInputInterface.all).toString, To_Unbounded_String ("KeyInputAutomationProcessor"), commonStrings.PROCESS);
-        inputRobotInterface := keyActionScriptInputInterface.getInputRobotInterface;
+        inputRobotInterface := InputRobotInterface_Access (keyActionScriptInputInterface.getInputRobotInterface);
         integer_Id := keyActionScriptInputInterface.getKeyArray;
         if (keyActionScriptInputInterface.getDelayBetweenKeys) = (0) then
             for index in 0 .. (keyActionScriptInputInterface.getKeyArray'Length) - 1 loop

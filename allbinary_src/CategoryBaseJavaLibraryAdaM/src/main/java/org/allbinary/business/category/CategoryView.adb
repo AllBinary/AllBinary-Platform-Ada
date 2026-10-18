@@ -82,7 +82,7 @@ package body org.allbinary.business.category.CategoryView_Package is
                 categoryPropertiesInterface := CategoryPropertiesInterface_Access (anyType);
             elsif InterfaceUtil_Package.isImplemented (To_Unbounded_String ("CategoryInterface"), anyType) then
                 categoryInterface := CategoryInterface_Access (anyType);
-                categoryPropertiesInterface := categoryInterface.getProperties;
+                categoryPropertiesInterface := CategoryPropertiesInterface_Access (categoryInterface.getProperties);
             else
                 isImpl := InterfaceUtil_Package.viewAll (anyType.all'Tag, CommonSeps_Package.getInstance.NEW_LINE);
                 Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("CategoryView found unknown object." & ASCII.LF & "") & To_Unbounded_String ("Show Testing:") & isImpl));

@@ -36,7 +36,7 @@ package body org.allbinary.debug.NoDebug_Package is
 
    function getInstance return DebugInterface_Access is
    begin
-        return NoDebug_Package.SINGLETON;
+        return DebugInterface_Access (NoDebug_Package.SINGLETON);
    end getInstance;
 
    procedure start (This : in out NoDebug) is

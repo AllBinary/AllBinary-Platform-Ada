@@ -65,7 +65,7 @@ package body org.allbinary.logic.visual.transform.generator.TransformGeneratorUt
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
                 This.logUtil.putF (To_Unbounded_String ("Generating View: ") & transformInfoInterface.getName, TransformGeneratorUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("generate()"));
             end if;
-            componentInterface := TransformFactory_Package.getInstance.getInstance (abeClientInformation, transformInfoInterface.getName, ownerTransformInfoInterface);
+            componentInterface := TransformInterface_Access (TransformFactory_Package.getInstance.getInstance (abeClientInformation, transformInfoInterface.getName, ownerTransformInfoInterface));
             result := componentInterface.view;
             httpTransformInfoInterface := TransformInfoHttpInterface_Access (componentInterface.getTransformInfoInterface);
             inputOutputTypeData := InputOutputTypeData_Package.getInstance;

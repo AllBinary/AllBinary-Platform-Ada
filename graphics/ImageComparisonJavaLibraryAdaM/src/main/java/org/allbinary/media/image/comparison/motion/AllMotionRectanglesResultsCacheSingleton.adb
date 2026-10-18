@@ -71,7 +71,7 @@ package body org.allbinary.media.image.comparison.motion.AllMotionRectanglesResu
 
    function getInstance return CacheInterface_Access is
    begin
-        return AllMotionRectanglesResultsCacheSingleton_Package.cacheInterface;
+        return CacheInterface_Access (AllMotionRectanglesResultsCacheSingleton_Package.cacheInterface);
    end getInstance;
 
 begin

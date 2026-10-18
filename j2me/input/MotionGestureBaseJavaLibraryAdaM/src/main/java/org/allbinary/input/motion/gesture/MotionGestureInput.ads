@@ -33,7 +33,7 @@ package org.allbinary.input.motion.gesture.MotionGestureInput_Package is
    type MotionGestureInput_Access_Array_Access_Array is array (Natural range <>) of MotionGestureInput_Access_Array_Access;
    type MotionGestureInput_Access_Array_Access_Array_Access is access all MotionGestureInput_Access_Array_Access_Array;
 
-   type MotionGestureInput is new Input with null record;
+   type MotionGestureInput is new Input_Package.Input with null record;
 
    procedure Initialize (This : in out MotionGestureInput'Class; id : Integer; name : Unbounded_String);
    function Create (id : Integer; name : Unbounded_String) return MotionGestureInput_Access;

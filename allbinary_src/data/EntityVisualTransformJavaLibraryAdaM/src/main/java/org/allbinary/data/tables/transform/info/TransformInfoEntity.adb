@@ -41,7 +41,7 @@ package body org.allbinary.data.tables.transform.info.TransformInfoEntity_Packag
       null;
       This.logUtil := LogUtil_Package.getInstance;
       This.tableName := To_Unbounded_String ("transforminfo");
-      This.abeClientInformation := ServiceClientInformationInterfaceFactory_Package.getInstance;
+      This.abeClientInformation := AbeClientInformationInterface_Access (ServiceClientInformationInterfaceFactory_Package.getInstance);
       
       
       
@@ -133,7 +133,7 @@ package body org.allbinary.data.tables.transform.info.TransformInfoEntity_Packag
                 string_Id := Java_Unbox (objectData);
                 hashMap.put (transformInfoData.DATA, Java_New_String (Encoder_Package.decode (string_Id)));
             end if;
-            return This.transformInfoFactoryInterface.getInstance (hashMap, propertiesHashMap, pageContext);
+            return TransformInfoInterface_Access (This.transformInfoFactoryInterface.getInstance (hashMap, propertiesHashMap, pageContext));
         else
             return null;
         end if;

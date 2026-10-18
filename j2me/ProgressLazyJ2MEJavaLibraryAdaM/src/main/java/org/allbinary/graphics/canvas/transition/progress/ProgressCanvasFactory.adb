@@ -51,7 +51,7 @@ package body org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFac
 
    function getLazyInstance return PaintableInterface_Access is
    begin
-        return ProgressCanvasFactory_Package.getInstance;
+        return PaintableInterface_Access (ProgressCanvasFactory_Package.getInstance);
    end getLazyInstance;
 
 begin

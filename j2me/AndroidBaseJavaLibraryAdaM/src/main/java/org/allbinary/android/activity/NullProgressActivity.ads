@@ -25,6 +25,7 @@ with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 
 package org.allbinary.android.activity.NullProgressActivity_Package is
 
+   package Runnable_Package renames Standard.java.lang.Runnable_Package;
 
    type NullProgressActivity is tagged;
    type NullProgressActivity_Access is access all NullProgressActivity'Class;

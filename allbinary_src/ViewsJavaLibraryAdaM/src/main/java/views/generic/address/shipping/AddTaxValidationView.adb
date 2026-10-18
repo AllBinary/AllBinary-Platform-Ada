@@ -69,8 +69,8 @@ package body views.generic_Id.address.shipping.AddTaxValidationView_Package is
    begin
         begin
             This.streetAddress := StreetAddress_Package.Create (AddTaxValidationView'Class (This).getRequest);
-            storeFrontInterface := StoreFrontFactory_Package.getInstance (AddTaxValidationView'Class (This).getTransformInfoInterface.getStoreName);
-            taxInterface := TaxFactory_Package.getInstance.getInstance (This.abeClientInformation, storeFrontInterface);
+            storeFrontInterface := StoreFrontInterface_Access (StoreFrontFactory_Package.getInstance (AddTaxValidationView'Class (This).getTransformInfoInterface.getStoreName));
+            taxInterface := TaxModuleInterface_Access (TaxFactory_Package.getInstance.getInstance (This.abeClientInformation, storeFrontInterface));
             if (taxInterface) = (null) then
                 return False;
             end if;
@@ -116,8 +116,8 @@ package body views.generic_Id.address.shipping.AddTaxValidationView_Package is
    begin
         begin
             stringBuffer := StringMaker_Package.Create;
-            storeFrontInterface := StoreFrontFactory_Package.getInstance (AddTaxValidationView'Class (This).getTransformInfoInterface.getStoreName);
-            taxInterface := TaxFactory_Package.getInstance.getInstance (This.abeClientInformation, storeFrontInterface);
+            storeFrontInterface := StoreFrontInterface_Access (StoreFrontFactory_Package.getInstance (AddTaxValidationView'Class (This).getTransformInfoInterface.getStoreName));
+            taxInterface := TaxModuleInterface_Access (TaxFactory_Package.getInstance.getInstance (This.abeClientInformation, storeFrontInterface));
             if (taxInterface) = (null) then
                 stringBuffer.append (To_Unbounded_String ("Unable to Load Tax Component<br/>"));
             else

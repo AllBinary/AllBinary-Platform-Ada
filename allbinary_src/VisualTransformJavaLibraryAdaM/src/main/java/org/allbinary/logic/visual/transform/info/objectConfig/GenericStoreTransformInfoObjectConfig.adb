@@ -169,7 +169,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.GenericStore
         templateNameStringBuffer.append (RootTransformInfoData_Package.NAME);
         templateNameKey := (TransformInfoObjectConfigData_Package.getInstance.VARKEY) + (TransformInfoData_Package.getInstance.OWNER);
         if (Java_Index_Of (objectConfigDocumentString, Java_Image (templateNameKey))) /= (-(1)) then
-            templateInterface := TransformTemplateFactory_Package.getInstance.getInstance (This.abeClientInformation, templateNameStringBuffer.toString, transformInfoHttpStoreInterface.getPropertiesHashMap, transformInfoHttpStoreInterface.getPageContext);
+            templateInterface := TransformTemplateInterface_Access (TransformTemplateFactory_Package.getInstance.getInstance (This.abeClientInformation, templateNameStringBuffer.toString, transformInfoHttpStoreInterface.getPropertiesHashMap, transformInfoHttpStoreInterface.getPageContext));
             selectedTemplate := templateInterface.getName;
             hashMap.put (Java_Box (templateNameKey), Java_Box (selectedTemplate));
         end if;

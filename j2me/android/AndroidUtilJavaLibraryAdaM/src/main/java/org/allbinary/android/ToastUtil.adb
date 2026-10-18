@@ -9,6 +9,7 @@ package body org.allbinary.android.ToastUtil_Package is
 
    package Toast_Package renames Standard.android.widget.Toast_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package Runnable_Package renames Standard.java.lang.Runnable_Package;
    procedure Initialize_Fields (This : in out ToastUtil'Class) is
    begin
       null;

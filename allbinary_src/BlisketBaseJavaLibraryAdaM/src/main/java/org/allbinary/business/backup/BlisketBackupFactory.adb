@@ -180,7 +180,7 @@ package body org.allbinary.business.backup.BlisketBackupFactory_Package is
             resourcesPath := Null_Unbounded_String;
             for index in 0 .. (size) - 1 loop
                 nextStore := Java_Unbox (storeFrontNamesBasicArrayList.get (index));
-                storeFrontInterface := storeFrontsEntity.getStoreFrontInterface (nextStore);
+                storeFrontInterface := StoreFrontInterface_Access (storeFrontsEntity.getStoreFrontInterface (nextStore));
                 stringBuffer.delete (0, stringBuffer.length);
                 stringBuffer.append (URLGLOBALS_Package.getWebappPath);
                 stringBuffer.append (storeFrontInterface.getCurrentHostNamePath);

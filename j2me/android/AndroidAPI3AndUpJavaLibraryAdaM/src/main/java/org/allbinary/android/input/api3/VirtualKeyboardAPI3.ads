@@ -34,6 +34,7 @@ package org.allbinary.android.input.api3.VirtualKeyboardAPI3_Package is
    package VirtualKeyboardEvent_Package renames Standard.org.allbinary.input.event.VirtualKeyboardEvent_Package;
    package VirtualKeyboardEventListenerInterface_Package renames Standard.org.allbinary.input.event.VirtualKeyboardEventListenerInterface_Package;
    package AllBinaryEventObject_Package renames Standard.org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+   package Runnable_Package renames Standard.java.lang.Runnable_Package;
 
    type VirtualKeyboardAPI3 is tagged;
    type VirtualKeyboardAPI3_Access is access all VirtualKeyboardAPI3'Class;

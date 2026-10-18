@@ -24,7 +24,7 @@ package body org.allbinary.game.NullIntermissionEnableListener_Package is
 
    function getInstance return IntermissionEnableListenerInterface_Access is
    begin
-        return NullIntermissionEnableListener_Package.SINGLETON;
+        return IntermissionEnableListenerInterface_Access (NullIntermissionEnableListener_Package.SINGLETON);
    end getInstance;
 
    procedure Initialize (This : in out NullIntermissionEnableListener'Class) is

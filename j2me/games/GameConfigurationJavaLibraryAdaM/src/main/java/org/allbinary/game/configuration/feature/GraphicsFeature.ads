@@ -32,7 +32,7 @@ package org.allbinary.game.configuration.feature.GraphicsFeature_Package is
    type GraphicsFeature_Access_Array_Access_Array is array (Natural range <>) of GraphicsFeature_Access_Array_Access;
    type GraphicsFeature_Access_Array_Access_Array_Access is access all GraphicsFeature_Access_Array_Access_Array;
 
-   type GraphicsFeature is new Feature with null record;
+   type GraphicsFeature is new Feature_Package.Feature with null record;
 
    procedure Initialize (This : in out GraphicsFeature'Class; name : Unbounded_String);
    function Create (name : Unbounded_String) return GraphicsFeature_Access;

@@ -60,7 +60,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.drop.RaceTrack
 
    function getInstance return DropCellPositionGeneratorInterface_Access is
    begin
-        return RaceTrackAdjacentDropCellPositionGenerator_Package.SINGLETON;
+        return DropCellPositionGeneratorInterface_Access (RaceTrackAdjacentDropCellPositionGenerator_Package.SINGLETON);
    end getInstance;
 
    procedure Initialize (This : in out RaceTrackAdjacentDropCellPositionGenerator'Class) is

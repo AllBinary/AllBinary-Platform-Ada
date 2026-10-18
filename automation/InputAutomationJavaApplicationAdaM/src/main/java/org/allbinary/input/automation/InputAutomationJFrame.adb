@@ -429,7 +429,7 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
         begin
             gameAutomationRobotModuleNameString := Java_Unbox (This.inputAutomationModuleJList.getSelectedValue);
             if (gameAutomationRobotModuleNameString) /= (Null_Unbounded_String) then
-                This.inputAutomationModuleInterface := This.inputAutomationModuleFactory.getInstance (gameAutomationRobotModuleNameString);
+                This.inputAutomationModuleInterface := InputAutomationModuleFactoryInterface_Access (This.inputAutomationModuleFactory.getInstance (gameAutomationRobotModuleNameString));
                 InputAutomationJFrame'Class (This).getAutomationModuleConfigurationJPanel.removeAll;
                 layout := GroupLayout_Access (InputAutomationJFrame'Class (This).getAutomationModuleConfigurationJPanel.getLayout);
                 layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGap (0, 395, Short_Integer'Last).addComponent (This.inputAutomationModuleInterface.getConfigurationJPanel, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE));
@@ -467,7 +467,7 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
         begin
             This.logUtil.putF (To_Unbounded_String ("Starting"), InputAutomationJFrame_Access'(This'Unchecked_Access), To_Unbounded_String ("startJMenuItemActionPerformed"));
             if (This.inputAutomationModuleInterface) /= (null) then
-                This.runnableInterface := This.inputAutomationModuleInterface.getInstance;
+                This.runnableInterface := RunnableInterface_Access (This.inputAutomationModuleInterface.getInstance);
                 if (This.runnableInterface) /= (null) then
                     This.thread := Thread_Package.Create (This.runnableInterface);
                     This.thread.setPriority ((Thread_Package.MIN_PRIORITY) + (1));

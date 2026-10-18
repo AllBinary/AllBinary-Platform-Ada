@@ -17,6 +17,7 @@ with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Pack
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with java.lang.Thread_Package; use java.lang.Thread_Package;
 
 package body org.allbinary.data.resource.ResourceUtil_Package is
 
@@ -24,6 +25,7 @@ package body org.allbinary.data.resource.ResourceUtil_Package is
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package Thread_Package renames Standard.java.lang.Thread_Package;
    procedure Initialize_Fields (This : in out ResourceUtil'Class) is
    begin
       null;

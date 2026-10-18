@@ -83,7 +83,7 @@ package body org.allbinary.business.user.modules.User_Package is
    procedure Initialize (This : in out User'Class) is
    begin
       Initialize_Fields (This);
-        This.userConfigurationInterface := UserConfigurationInterfaceFactory_Package.getInstance;
+        This.userConfigurationInterface := UserConfigurationInterface_Access (UserConfigurationInterfaceFactory_Package.getInstance);
         This.password := Password_Package.Create (StringUtil_Package.getInstance.EMPTY_STRING);
    end Initialize;
 
@@ -99,7 +99,7 @@ package body org.allbinary.business.user.modules.User_Package is
    begin
       Initialize_Fields (This);
         User'Class (This).getFormData (RequestParams_Package.Create (request).toHashMap);
-        This.userConfigurationInterface := UserConfigurationInterfaceFactory_Package.getInstance (User'Class (This).getRole);
+        This.userConfigurationInterface := UserConfigurationInterface_Access (UserConfigurationInterfaceFactory_Package.getInstance (User'Class (This).getRole));
    end Initialize;
 
    function Create (request_Param : access HttpServletRequest_Package.HttpServletRequest'Class) return User_Access is
@@ -114,7 +114,7 @@ package body org.allbinary.business.user.modules.User_Package is
    begin
       Initialize_Fields (This);
         User'Class (This).getFormData (userHashMap);
-        This.userConfigurationInterface := UserConfigurationInterfaceFactory_Package.getInstance (User'Class (This).getRole);
+        This.userConfigurationInterface := UserConfigurationInterface_Access (UserConfigurationInterfaceFactory_Package.getInstance (User'Class (This).getRole));
    end Initialize;
 
    function Create (userHashMap_Param : access HashMap_Package.HashMap'Class) return User_Access is

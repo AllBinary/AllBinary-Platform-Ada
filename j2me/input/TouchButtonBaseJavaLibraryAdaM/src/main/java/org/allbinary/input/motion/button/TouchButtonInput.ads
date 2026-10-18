@@ -43,7 +43,7 @@ package org.allbinary.input.motion.button.TouchButtonInput_Package is
    type TouchButtonInput_Access_Array_Access_Array is array (Natural range <>) of TouchButtonInput_Access_Array_Access;
    type TouchButtonInput_Access_Array_Access_Array_Access is access all TouchButtonInput_Access_Array_Access_Array;
 
-   type TouchButtonInput is new Input and GameKeyEventSourceInterface with record
+   type TouchButtonInput is new Input_Package.Input and GameKeyEventSourceInterface with record
       logUtil : LogUtil_Access;
       gameKeyEventFactory : GameKeyEventFactory_Access;
       TOUCH_BUTTON_SOURCE_ID : Integer;

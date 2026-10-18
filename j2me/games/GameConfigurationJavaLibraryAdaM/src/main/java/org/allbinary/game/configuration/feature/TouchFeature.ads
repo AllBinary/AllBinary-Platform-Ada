@@ -32,7 +32,7 @@ package org.allbinary.game.configuration.feature.TouchFeature_Package is
    type TouchFeature_Access_Array_Access_Array is array (Natural range <>) of TouchFeature_Access_Array_Access;
    type TouchFeature_Access_Array_Access_Array_Access is access all TouchFeature_Access_Array_Access_Array;
 
-   type TouchFeature is new Feature with null record;
+   type TouchFeature is new Feature_Package.Feature with null record;
 
    procedure Initialize (This : in out TouchFeature'Class; name : Unbounded_String);
    function Create (name : Unbounded_String) return TouchFeature_Access;

@@ -169,7 +169,7 @@ package body views.admin.inventory.listings.ProductListing_Package is
         searchParams.setStartPage (CommonPhoneStrings_Package.getInstance.ZERO);
         This.searchRequest.setParams (searchParams);
         This.searchRequest.setFileBaseName (pageName);
-        abeClientInformation := ServiceClientInformationInterfaceFactory_Package.getInstance;
+        abeClientInformation := AbeClientInformationInterface_Access (ServiceClientInformationInterfaceFactory_Package.getInstance);
         inventorySearchUtil := InventorySearchUtil_Package.getInstance;
         productListingPages := inventorySearchUtil.search (abeClientInformation, This.searchRequest, vector);
         for index in 0 .. (productListingPages'Length) - 1 loop
@@ -238,7 +238,7 @@ package body views.admin.inventory.listings.ProductListing_Package is
       index : Integer;
    begin
         begin
-            storeFront := This.searchRequest.getStoreFront;
+            storeFront := StoreFrontInterface_Access (This.searchRequest.getStoreFront);
             stringBuffer := StringMaker_Package.Create;
             stringBuffer.append (URLGLOBALS_Package.getWebappPath);
             stringBuffer.append (storeFront.getName);

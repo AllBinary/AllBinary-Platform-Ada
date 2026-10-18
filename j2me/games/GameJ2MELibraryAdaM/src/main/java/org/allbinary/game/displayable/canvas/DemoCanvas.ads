@@ -60,6 +60,7 @@ with org.allbinary.game.displayable.canvas.MenuListener_Package; use org.allbina
 with org.allbinary.game.displayable.canvas.DemoPaintableInterface_Package; use org.allbinary.game.displayable.canvas.DemoPaintableInterface_Package;
 with org.allbinary.game.displayable.canvas.FormUtil_Package; use org.allbinary.game.displayable.canvas.FormUtil_Package;
 with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package; use org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
+with java.lang.Thread_Package; use java.lang.Thread_Package;
 with org.allbinary.game.displayable.canvas.BasicMenuInputProcessor_Package; use org.allbinary.game.displayable.canvas.BasicMenuInputProcessor_Package;
 with org.allbinary.game.displayable.canvas.DemoGameStartupRunnable_Package; use org.allbinary.game.displayable.canvas.DemoGameStartupRunnable_Package;
 with org.allbinary.game.displayable.canvas.GameRunnable_Package; use org.allbinary.game.displayable.canvas.GameRunnable_Package;
@@ -101,6 +102,7 @@ package org.allbinary.game.displayable.canvas.DemoCanvas_Package is
    package ThreadFactoryUtil_Package renames Standard.org.allbinary.thread.ThreadFactoryUtil_Package;
    package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
    package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
+   package Thread_Package renames Standard.java.lang.Thread_Package;
 
    type DemoCanvas is tagged;
    type DemoCanvas_Access is access all DemoCanvas'Class;

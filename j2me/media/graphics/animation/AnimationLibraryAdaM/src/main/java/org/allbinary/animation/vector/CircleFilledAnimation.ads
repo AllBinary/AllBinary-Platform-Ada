@@ -39,7 +39,7 @@ package org.allbinary.animation.vector.CircleFilledAnimation_Package is
    type CircleFilledAnimation_Access_Array_Access_Array is array (Natural range <>) of CircleFilledAnimation_Access_Array_Access;
    type CircleFilledAnimation_Access_Array_Access_Array_Access is access all CircleFilledAnimation_Access_Array_Access_Array;
 
-   type CircleFilledAnimation is new Animation and ColorCompositeInterface with record
+   type CircleFilledAnimation is new Animation_Package.Animation and ColorCompositeInterface with record
       width : Integer;
       height : Integer;
    end record;

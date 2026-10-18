@@ -24,6 +24,7 @@ with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 
 package org.allbinary.android.view.AllBinaryRenderer_Package is
 
+   package Runnable_Package renames Standard.java.lang.Runnable_Package;
 
    type AllBinaryRenderer is tagged;
    type AllBinaryRenderer_Access is access all AllBinaryRenderer'Class;

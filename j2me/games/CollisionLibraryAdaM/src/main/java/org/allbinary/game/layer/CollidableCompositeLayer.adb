@@ -67,7 +67,7 @@ package body org.allbinary.game.layer.CollidableCompositeLayer_Package is
    function getArtificialIntelligenceInterface (This : in out CollidableCompositeLayer) return ArtificialIntelligenceInterface_Access is
    begin
         ForcedLogUtil_Package.log (This.commonStrings.NOT_IMPLEMENTED, CollidableCompositeLayer_Access'(This'Unchecked_Access));
-        return ArtificialIntelligence_Package.getInstance;
+        return ArtificialIntelligenceInterface_Access (ArtificialIntelligence_Package.getInstance);
    end getArtificialIntelligenceInterface;
 
    function getCollidableInferface (This : in out CollidableCompositeLayer) return CollidableBaseBehavior_Access is

@@ -37,7 +37,7 @@ package org.allbinary.business.user.modules.admin.AdminUser_Package is
    type AdminUser_Access_Array_Access_Array is array (Natural range <>) of AdminUser_Access_Array_Access;
    type AdminUser_Access_Array_Access_Array_Access is access all AdminUser_Access_Array_Access_Array;
 
-   type AdminUser is new User with null record;
+   type AdminUser is new User_Package.User with null record;
 
    procedure Initialize (This : in out AdminUser'Class);
    function Create return AdminUser_Access;

@@ -28,6 +28,7 @@ package org.allbinary.android.input.api3.HideVirtualKeyboardRunnable_Package is
 
    package Activity_Package renames Standard.android.app.Activity_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package Runnable_Package renames Standard.java.lang.Runnable_Package;
 
    type HideVirtualKeyboardRunnable is tagged;
    type HideVirtualKeyboardRunnable_Access is access all HideVirtualKeyboardRunnable'Class;

@@ -53,7 +53,7 @@ package body org.allbinary.business.user.CreateUserFactory_Package is
             roleString := Java_Unbox (hashMap.get (Java_Box (UserRoleData_Package.NAME.toString)));
             if not (StringValidationUtil_Package.getInstance.isEmpty (roleString)) then
                 role := UserRoleB_Package.getRole (roleString);
-                return role.getUserFactory.getInstance (hashMap);
+                return UserInterface_Access (role.getUserFactory.getInstance (hashMap));
             else
                 Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Role Specified")));
             end if;

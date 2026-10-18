@@ -127,14 +127,14 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
    begin
         vector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         begin
-            paymentInterface := PaymentEntity_Package.Create.getDefault (userName);
+            paymentInterface := PaymentInterface_Access (PaymentEntity_Package.Create.getDefault (userName));
             billingAddress := BillingAddressesEntity_Package.Create (userName).getDefault;
             shippingAddress := ShippingAddressesEntity_Package.Create (userName).getDefault;
-            abeClientInformation := ServiceClientInformationInterfaceFactory_Package.getInstance;
-            storeFrontInterface := StoreFrontFactory_Package.getInstance (order.getStoreName);
-            shippingInterface := ShippingMethods_Package.Create (abeClientInformation, storeFrontInterface).getShippingInterface (order.getShippingMethod);
+            abeClientInformation := AbeClientInformationInterface_Access (ServiceClientInformationInterfaceFactory_Package.getInstance);
+            storeFrontInterface := StoreFrontInterface_Access (StoreFrontFactory_Package.getInstance (order.getStoreName));
+            shippingInterface := ShippingInterface_Access (ShippingMethods_Package.Create (abeClientInformation, storeFrontInterface).getShippingInterface (order.getShippingMethod));
             shippingCost := shippingInterface.getCost (order);
-            basketInterface := order.getBasket;
+            basketInterface := BasketInterface_Access (order.getBasket);
             subTotal := basketInterface.getSubTotal;
             taxRate := TaxFactory_Package.getInstance.getInstance (abeClientInformation, storeFrontInterface).getTaxRate (shippingAddress, storeFrontInterface);
             tax := Money_Package.Create;

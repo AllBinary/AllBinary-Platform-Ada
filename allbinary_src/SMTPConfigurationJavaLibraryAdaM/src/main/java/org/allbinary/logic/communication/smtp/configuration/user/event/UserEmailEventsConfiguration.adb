@@ -85,7 +85,7 @@ package body org.allbinary.logic.communication.smtp.configuration.user.event.Use
       userEmailEventConfigurationInterface : UserEmailEventConfigurationInterface_Access;
    begin
         userEmailEventConfigurationInterface := UserEmailEventConfigurationInterface_Access (This.emailEventHashMap.get (Java_Box (userEmailEventNameData.toString)));
-        return UserEmailEventListenerFactory_Package.getInstance (abeClientInformation, userEmailEventConfigurationInterface, userInterface);
+        return UserEmailEventListenerInterface_Access (UserEmailEventListenerFactory_Package.getInstance (abeClientInformation, userEmailEventConfigurationInterface, userInterface));
    end getEventListener;
 
    procedure getEventListener (This : in out UserEmailEventsConfiguration; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; userEmailEventNameData_Param : access UserEmailEventNameData_Package.UserEmailEventNameData'Class; userInterface_Param : access UserInterface_Package.UserInterface'Class) is

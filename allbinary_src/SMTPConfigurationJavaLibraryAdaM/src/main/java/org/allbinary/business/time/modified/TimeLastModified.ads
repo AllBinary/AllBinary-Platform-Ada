@@ -33,7 +33,7 @@ package org.allbinary.business.time.modified.TimeLastModified_Package is
    type TimeLastModified_Access_Array_Access_Array is array (Natural range <>) of TimeLastModified_Access_Array_Access;
    type TimeLastModified_Access_Array_Access_Array_Access is access all TimeLastModified_Access_Array_Access_Array;
 
-   type TimeLastModified is new Time with null record;
+   type TimeLastModified is new Time_Package.Time with null record;
 
    procedure Initialize (This : in out TimeLastModified'Class; time : Unbounded_String);
    function Create (time : Unbounded_String) return TimeLastModified_Access;

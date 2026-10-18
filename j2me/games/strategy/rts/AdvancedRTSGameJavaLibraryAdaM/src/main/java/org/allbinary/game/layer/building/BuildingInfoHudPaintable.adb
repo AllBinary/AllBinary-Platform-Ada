@@ -40,7 +40,7 @@ package body org.allbinary.game.layer.building.BuildingInfoHudPaintable_Package 
       
       
       
-      This.rtsLayer := NullPathFindingLayer_Package.NULL_PATH_FINDING_LAYER;
+      This.rtsLayer := PathFindingLayerInterface_Access (NullPathFindingLayer_Package.NULL_PATH_FINDING_LAYER);
       This.currentHealth := 0;
    end Initialize_Fields;
 

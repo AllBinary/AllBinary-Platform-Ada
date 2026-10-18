@@ -53,7 +53,7 @@ package body org.allbinary.input.automation.module.game.GraphicsAnalysisUtil_Pac
    begin
         for index in reverse (Integer (min_x)) + 1 .. Integer (max_x) loop
             colorInteger := To_Unbounded_String (Java_Image (bufferedImage.getRGB (index, Integer (y))));
-            automaticCacheInterface := ColorCacheFactory_Package.getInstance;
+            automaticCacheInterface := AutomaticCacheInterface_Access (ColorCacheFactory_Package.getInstance);
             colorCacheable := ColorCacheable_Access (automaticCacheInterface.get (colorInteger));
             color := colorCacheable.getColor;
             if (((color.getRed) < (GraphicsAnalysisUtil_Package.MAX)) and then ((color.getGreen) < (GraphicsAnalysisUtil_Package.MAX))) and then ((color.getBlue) < (GraphicsAnalysisUtil_Package.MAX)) then

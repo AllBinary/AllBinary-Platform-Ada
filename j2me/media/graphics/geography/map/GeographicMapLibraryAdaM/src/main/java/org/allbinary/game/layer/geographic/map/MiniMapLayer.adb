@@ -120,7 +120,7 @@ package body org.allbinary.game.layer.geographic.map.MiniMapLayer_Package is
         nextColorCompositeInterface := null;
         for index in 0 .. (size) - 1 loop
             nextColorCompositeInterface := ColorCompositeInterface_Access (This.list.get (index));
-            if (nextColorCompositeInterface) = (colorCompositeInterface) then
+            if (Java_Object_Access (nextColorCompositeInterface)) = (Java_Object_Access (colorCompositeInterface)) then
                 layerIndex := index;
                 exit;
             end if;

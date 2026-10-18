@@ -24,6 +24,7 @@ with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 
 package org.allbinary.android.activity.SimpleProgressActivityInterface_Package is
 
+   package Runnable_Package renames Standard.java.lang.Runnable_Package;
 
    type SimpleProgressActivityInterface is interface;
    type SimpleProgressActivityInterface_Access is access all SimpleProgressActivityInterface'Class;

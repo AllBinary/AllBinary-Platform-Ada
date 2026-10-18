@@ -56,7 +56,7 @@ package body views.generic_Id.basket.mini.MiniBasketView_Package is
       subTotalTextNode : Node_Access;
    begin
         begin
-            basketInterface := MiniBasketView'Class (This).getWeblisketSession.getOrder.getBasket;
+            basketInterface := BasketInterface_Access (MiniBasketView'Class (This).getWeblisketSession.getOrder.getBasket);
             basketNode := document.createElement (BasketData_Package.BASKET);
             totalNumberNode := document.createElement (SearchData_Package.TOTAL_NUMBER_ITEMS);
             totalNumberTextNode := document.createTextNode (basketInterface.getNumberOfItems.toString);

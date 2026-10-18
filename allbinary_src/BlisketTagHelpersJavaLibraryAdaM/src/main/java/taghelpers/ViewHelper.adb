@@ -25,7 +25,7 @@ package body taghelpers.ViewHelper_Package is
       null;
       This.logUtil := LogUtil_Package.getInstance;
       This.commonStrings := CommonStrings_Package.getInstance;
-      This.abeClientInformation := ServiceClientInformationInterfaceFactory_Package.getInstance;
+      This.abeClientInformation := AbeClientInformationInterface_Access (ServiceClientInformationInterfaceFactory_Package.getInstance);
       
       This.NO_TYPE := 0;
    end Initialize_Fields;
@@ -36,7 +36,7 @@ package body taghelpers.ViewHelper_Package is
       pageContext : constant PageContext_Access := PageContext_Access (pageContext_Param);
    begin
       Initialize_Fields (This);
-        This.componentInterface := TransformFactory_Package.getInstance.getInstance (This.abeClientInformation, hashMap, pageContext);
+        This.componentInterface := TransformInterface_Access (TransformFactory_Package.getInstance.getInstance (This.abeClientInformation, hashMap, pageContext));
    end Initialize;
 
    function Create (hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return ViewHelper_Access is
@@ -110,7 +110,7 @@ package body taghelpers.ViewHelper_Package is
    --  throws Exception
    function getTransformInfoInterface (This : in out ViewHelper) return TransformInfoInterface_Access is
    begin
-        return This.componentInterface.getTransformInfoInterface;
+        return TransformInfoInterface_Access (This.componentInterface.getTransformInfoInterface);
    end getTransformInfoInterface;
 
    function getTransformDocumentInterface (This : in out ViewHelper) return TransformDocumentInterface_Access is

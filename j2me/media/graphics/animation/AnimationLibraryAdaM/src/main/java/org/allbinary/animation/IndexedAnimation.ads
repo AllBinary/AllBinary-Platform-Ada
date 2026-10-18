@@ -38,7 +38,7 @@ package org.allbinary.animation.IndexedAnimation_Package is
    type IndexedAnimation_Access_Array_Access_Array is array (Natural range <>) of IndexedAnimation_Access_Array_Access;
    type IndexedAnimation_Access_Array_Access_Array_Access is access all IndexedAnimation_Access_Array_Access_Array;
 
-   type IndexedAnimation is new Animation and IndexedAnimationInterface with record
+   type IndexedAnimation is new Animation_Package.Animation and IndexedAnimationInterface with record
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
       animationBehaviorP : AnimationBehavior_Access;

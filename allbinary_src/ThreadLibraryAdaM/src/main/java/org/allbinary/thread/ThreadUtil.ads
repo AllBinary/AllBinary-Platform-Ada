@@ -21,10 +21,12 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with java.lang.Thread_Package; use java.lang.Thread_Package;
 
 package org.allbinary.thread.ThreadUtil_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package Thread_Package renames Standard.java.lang.Thread_Package;
 
    type ThreadUtil is tagged;
    type ThreadUtil_Access is access all ThreadUtil'Class;

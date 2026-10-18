@@ -20,7 +20,7 @@ package org.allbinary.game.input.AndroidGameKey_Package is
    type AndroidGameKey_Access_Array_Access_Array is array (Natural range <>) of AndroidGameKey_Access_Array_Access;
    type AndroidGameKey_Access_Array_Access_Array_Access is access all AndroidGameKey_Access_Array_Access_Array;
 
-   type AndroidGameKey is new Input with null record;
+   type AndroidGameKey is new Input_Package.Input with null record;
 
    procedure Initialize (This : in out AndroidGameKey'Class; keyCode : Integer; name : Unbounded_String);
    function Create (keyCode : Integer; name : Unbounded_String) return AndroidGameKey_Access;

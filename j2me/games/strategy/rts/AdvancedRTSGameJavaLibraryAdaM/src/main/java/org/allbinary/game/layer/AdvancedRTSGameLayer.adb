@@ -73,8 +73,8 @@ package body org.allbinary.game.layer.AdvancedRTSGameLayer_Package is
       
       
       
-      This.parentLayer := NullPathFindingLayer_Package.NULL_PATH_FINDING_LAYER;
-      This.waypointBehaviorBase := NullTickable_Package.getInstance;
+      This.parentLayer := PathFindingLayerInterface_Access (NullPathFindingLayer_Package.NULL_PATH_FINDING_LAYER);
+      This.waypointBehaviorBase := TickableInterface_Access (NullTickable_Package.getInstance);
    end Initialize_Fields;
 
 
@@ -83,8 +83,8 @@ package body org.allbinary.game.layer.AdvancedRTSGameLayer_Package is
       nullAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access;
       nullIndexedAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access;
    begin
-        nullAnimationInterfaceFactoryInterface := NullAnimationFactory_Package.getFactoryInstance;
-        nullIndexedAnimationInterfaceFactoryInterface := NullIndexedAnimationFactory_Package.getFactoryInstance;
+        nullAnimationInterfaceFactoryInterface := AnimationInterfaceFactoryInterface_Access (NullAnimationFactory_Package.getFactoryInstance);
+        nullIndexedAnimationInterfaceFactoryInterface := AnimationInterfaceFactoryInterface_Access (NullIndexedAnimationFactory_Package.getFactoryInstance);
         return AdvancedRTSGameLayer_Package.Create (RemoteInfo_Package.REMOTE_INFO, NullPathFindingLayer_Package.NULL_PATH_FINDING_LAYER, AdvancedRTSProperties_Package.createPropertiesSimulated, GroupFactory_Package.getInstance.NULL_GROUP_ARRAY, StringUtil_Package.getInstance.EMPTY_STRING, StringUtil_Package.getInstance.EMPTY_STRING, Health_Package.NULL_HEALTH, NullRTSFormInputFactory_Package.getInstance, nullAnimationInterfaceFactoryInterface, nullIndexedAnimationInterfaceFactoryInterface, nullAnimationInterfaceFactoryInterface, nullAnimationInterfaceFactoryInterface, nullIndexedAnimationInterfaceFactoryInterface, NullIndexedAnimationFactory_Package.getFactoryInstance, RectangleFactory_Package.SINGLETON, 0, 0, TileLayerPositionIntoViewPosition_Package.Create);
    end createSimulated;
 
@@ -201,7 +201,7 @@ package body org.allbinary.game.layer.AdvancedRTSGameLayer_Package is
    function shouldAddWaypointFromBuilding (This : in out AdvancedRTSGameLayer) return Boolean is
       parentAdvancedRTSGameLayer : AdvancedRTSGameLayer_Access;
    begin
-        if (This.parentLayer) /= (NullPathFindingLayer_Package.NULL_PATH_FINDING_LAYER) then
+        if (Java_Object_Access (This.parentLayer)) /= (Java_Object_Access (NullPathFindingLayer_Package.NULL_PATH_FINDING_LAYER)) then
             parentAdvancedRTSGameLayer := AdvancedRTSGameLayer_Access (This.parentLayer);
             if (parentAdvancedRTSGameLayer.getType) /= (UnitLayer_Package.getStaticType) then
                 return True;

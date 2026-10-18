@@ -40,7 +40,7 @@ package body org.allbinary.game.layer.weapon.WeaponLayer_Package is
       This.totalDamage := 0;
       This.initDamage := 0;
       This.destroyed := True;
-      This.scoreableInterface := NoScoreable_Package.getInstance;
+      This.scoreableInterface := ScoreableInterface_Access (NoScoreable_Package.getInstance);
       
       This.weaponProperties := WeaponProperties_Package.NULL_WEAPON_PROPERTIES;
       
@@ -189,7 +189,7 @@ package body org.allbinary.game.layer.weapon.WeaponLayer_Package is
    begin
         This.destroyed := destroyed;
         if WeaponLayer'Class (This).isDestroyed then
-            This.scoreableInterface := NoScoreable_Package.getInstance;
+            This.scoreableInterface := ScoreableInterface_Access (NoScoreable_Package.getInstance);
             DestroyedLayerProcessor_Package.getInstance.add (WeaponLayer_Access'(This'Unchecked_Access));
         end if;
    end setDestroyed;

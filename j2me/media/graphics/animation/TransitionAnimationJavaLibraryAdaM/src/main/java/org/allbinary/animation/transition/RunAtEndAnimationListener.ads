@@ -25,6 +25,7 @@ with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 
 package org.allbinary.animation.transition.RunAtEndAnimationListener_Package is
 
+   package Runnable_Package renames Standard.java.lang.Runnable_Package;
 
    type RunAtEndAnimationListener is tagged;
    type RunAtEndAnimationListener_Access is access all RunAtEndAnimationListener'Class;

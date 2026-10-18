@@ -37,7 +37,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.includes.g
    begin
       Validation_Package.Initialize (This);
       Initialize_Fields (This);
-        This.storeFrontInterface := StoreFrontFactory_Package.getInstance (storeName);
+        This.storeFrontInterface := StoreFrontInterface_Access (StoreFrontFactory_Package.getInstance (storeName));
    end Initialize;
 
    function Create (storeName : Unbounded_String) return GlobalsValidation_Access is

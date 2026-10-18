@@ -23,8 +23,8 @@ package body org.allbinary.game.layer.WaypointPathRunnableBase_Package is
    begin
       null;
       This.layerDistanceUtil := LayerDistanceUtil_Package.getInstance;
-      This.pathFindingLayer := NullPathFindingLayer_Package.NULL_PATH_FINDING_LAYER;
-      This.targetPathFindingLayer := NullPathFindingLayer_Package.NULL_PATH_FINDING_LAYER;
+      This.pathFindingLayer := PathFindingLayerInterface_Access (NullPathFindingLayer_Package.NULL_PATH_FINDING_LAYER);
+      This.targetPathFindingLayer := PathFindingLayerInterface_Access (NullPathFindingLayer_Package.NULL_PATH_FINDING_LAYER);
       This.priorityP := Integer'Last;
       This.runningP := False;
    end Initialize_Fields;

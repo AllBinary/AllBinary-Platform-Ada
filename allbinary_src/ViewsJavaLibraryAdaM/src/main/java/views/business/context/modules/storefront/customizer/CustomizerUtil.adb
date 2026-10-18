@@ -72,7 +72,7 @@ package body views.business.context.modules.storefront.customizer.CustomizerUtil
         transformInfoEntityInterface := TransformInfoEntityBuilder_Package.getInstance;
         viewName := transformInfoInterface.getName;
         httpTransformInfoInterface := TransformInfoHttpInterface_Access (customizerTransformInfoInterface);
-        customizedTransformInfoInterface := transformInfoEntityInterface.get (viewName, httpTransformInfoInterface.getPropertiesHashMap, httpTransformInfoInterface.getPageContext);
+        customizedTransformInfoInterface := TransformInfoInterface_Access (transformInfoEntityInterface.get (viewName, httpTransformInfoInterface.getPropertiesHashMap, httpTransformInfoInterface.getPageContext));
         return customizedTransformInfoInterface;
    end getTransformInfoInterfaceToCustomize;
 
@@ -91,7 +91,7 @@ package body views.business.context.modules.storefront.customizer.CustomizerUtil
         transformInfoEntityInterface := TransformInfoEntityBuilder_Package.getInstance;
         viewName := transformInfoInterface.getName;
         httpTransformInfoInterface := TransformInfoHttpInterface_Access (customizerTransformInfoInterface);
-        customizedTransformInfoInterface := transformInfoEntityInterface.get (viewName, httpTransformInfoInterface.getPropertiesHashMap, httpTransformInfoInterface.getPageContext);
+        customizedTransformInfoInterface := TransformInfoInterface_Access (transformInfoEntityInterface.get (viewName, httpTransformInfoInterface.getPropertiesHashMap, httpTransformInfoInterface.getPageContext));
         return CustomizerUtil'Class (This).getTransformInfoObjectConfigComponentNodes (customizedTransformInfoInterface);
    end getTransformInfoObjectConfigComponentNodesToCustomize;
 
@@ -103,7 +103,7 @@ package body views.business.context.modules.storefront.customizer.CustomizerUtil
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("View Name: ") & transformInfoInterface.getName, CustomizerUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("getTransformInfoObjectConfigComponentNodes()"));
         end if;
-        transformInfoObjectConfigInterface := transformInfoInterface.getObjectConfigInterface;
+        transformInfoObjectConfigInterface := TransformInfoObjectConfigInterface_Access (transformInfoInterface.getObjectConfigInterface);
         return transformInfoObjectConfigInterface.getTransforms;
    end getTransformInfoObjectConfigComponentNodes;
 
@@ -115,7 +115,7 @@ package body views.business.context.modules.storefront.customizer.CustomizerUtil
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("View Name: ") & transformInfoInterface.getName, CustomizerUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("getTransformInfoObjectConfigComponentNodes()"));
         end if;
-        transformInfoObjectConfigInterface := transformInfoInterface.getObjectConfigInterface;
+        transformInfoObjectConfigInterface := TransformInfoObjectConfigInterface_Access (transformInfoInterface.getObjectConfigInterface);
         return transformInfoObjectConfigInterface.getGroupTransforms;
    end getTransformInfoObjectConfigGroupComponentNodes;
 
@@ -164,7 +164,7 @@ package body views.business.context.modules.storefront.customizer.CustomizerUtil
                 This.logUtil.putF (stringBuffer.toString, CustomizerUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("insert()"));
             end if;
             httpTransformInfoInterface := TransformInfoHttpInterface_Access (transformInfoInterface);
-            specifiedTransformInfoInterface := transformInfoEntityInterface.get (viewNameOfViewToBeModified, httpTransformInfoInterface.getPropertiesHashMap, httpTransformInfoInterface.getPageContext);
+            specifiedTransformInfoInterface := TransformInfoInterface_Access (transformInfoEntityInterface.get (viewNameOfViewToBeModified, httpTransformInfoInterface.getPropertiesHashMap, httpTransformInfoInterface.getPageContext));
             if (specifiedTransformInfoInterface) = (null) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
                     stringBuffer.delete (0, stringBuffer.length);
@@ -221,7 +221,7 @@ package body views.business.context.modules.storefront.customizer.CustomizerUtil
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("View Name: ") & transformInfoInterface.getName, CustomizerUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("getViewDataForComponentsInObjectConfig()"));
         end if;
-        transformInfoObjectConfigInterface := transformInfoInterface.getObjectConfigInterface;
+        transformInfoObjectConfigInterface := TransformInfoObjectConfigInterface_Access (transformInfoInterface.getObjectConfigInterface);
         allViewsToBeModified := transformInfoObjectConfigInterface.getGroupTransforms;
         transformInfoEntityInterface := TransformInfoEntityBuilder_Package.getInstance;
         size := allViewsToBeModified.size;
@@ -229,7 +229,7 @@ package body views.business.context.modules.storefront.customizer.CustomizerUtil
             nextTransformInfoInterface := TransformInfo_Access (allViewsToBeModified.get (index));
             viewNameOfViewToBeModified := nextTransformInfoInterface.getName;
             httpTransformInfoInterface := TransformInfoHttpInterface_Access (transformInfoInterface);
-            specifiedTransformInfoInterface := transformInfoEntityInterface.get (viewNameOfViewToBeModified, httpTransformInfoInterface.getPropertiesHashMap, httpTransformInfoInterface.getPageContext);
+            specifiedTransformInfoInterface := TransformInfoInterface_Access (transformInfoEntityInterface.get (viewNameOfViewToBeModified, httpTransformInfoInterface.getPropertiesHashMap, httpTransformInfoInterface.getPageContext));
             return specifiedTransformInfoInterface.getDataDocument;
         end loop;
         Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Components Specified in ObjectConfig")));

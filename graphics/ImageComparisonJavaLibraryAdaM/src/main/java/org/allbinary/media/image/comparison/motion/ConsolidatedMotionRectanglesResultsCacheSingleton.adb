@@ -71,7 +71,7 @@ package body org.allbinary.media.image.comparison.motion.ConsolidatedMotionRecta
 
    function getInstance return CacheInterface_Access is
    begin
-        return ConsolidatedMotionRectanglesResultsCacheSingleton_Package.cacheInterface;
+        return CacheInterface_Access (ConsolidatedMotionRectanglesResultsCacheSingleton_Package.cacheInterface);
    end getInstance;
 
 begin

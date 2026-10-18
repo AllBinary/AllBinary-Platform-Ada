@@ -3,10 +3,12 @@
 
 with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
 with org.allbinary.thread.NullPriorityRunnable_Package; use org.allbinary.thread.NullPriorityRunnable_Package;
+with java.lang.Thread_Package; use java.lang.Thread_Package;
 
 package body org.allbinary.thread.ThreadObjectUtil_Package is
 
    package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
+   package Thread_Package renames Standard.java.lang.Thread_Package;
    procedure Initialize_Fields (This : in out ThreadObjectUtil'Class) is
    begin
       null;

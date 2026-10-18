@@ -31,6 +31,7 @@ package org.allbinary.game.displayable.canvas.CommandRunnable_Package is
    package Command_Package renames Standard.javax.microedition.lcdui.Command_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package Runnable_Package renames Standard.java.lang.Runnable_Package;
 
    type CommandRunnable is tagged;
    type CommandRunnable_Access is access all CommandRunnable'Class;

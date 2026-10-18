@@ -66,7 +66,7 @@ package body org.allbinary.media.image.comparison.ChangedPixelsUtil_Package is
         originalBufferedImage := imageComparisonInfo.getBufferedImages (0);
         bufferedImageCacheables := new BufferedImageCacheable_Access_Array'(0 .. (2) - 1 => null);
         bufferedImageInfo := BufferedImageInfoFactory_Package.getInstance (imageComparisonInfo.imageWidth, imageComparisonInfo.imageHeight, originalBufferedImage.getType);
-        poolInterface := BufferedImagePoolSingleton_Package.getInstance;
+        poolInterface := PoolInterface_Access (BufferedImagePoolSingleton_Package.getInstance);
         for index in 0 .. (bufferedImageCacheables'Length) - 1 loop
             bufferedImageCacheable := BufferedImageCacheable_Access (poolInterface.remove (bufferedImageInfo));
             bufferedImageCacheables (index) := bufferedImageCacheable;

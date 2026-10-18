@@ -42,7 +42,7 @@ package body org.allbinary.data.tables.workflow.WorkFlowEntity_Package is
    begin
       null;
       This.logUtil := LogUtil_Package.getInstance;
-      This.abeClientInformation := ServiceClientInformationInterfaceFactory_Package.getInstance;
+      This.abeClientInformation := AbeClientInformationInterface_Access (ServiceClientInformationInterfaceFactory_Package.getInstance);
       This.tableName := To_Unbounded_String ("workflows");
       This.METHOD_GET := To_Unbounded_String ("get()");
       This.METHOD_UPDATE := To_Unbounded_String ("update");

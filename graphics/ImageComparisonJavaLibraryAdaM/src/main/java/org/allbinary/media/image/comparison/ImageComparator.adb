@@ -69,7 +69,7 @@ package body org.allbinary.media.image.comparison.ImageComparator_Package is
         if not (isCollsionWithAvoidRectangles) then
             rgb1 := imageComparisonInfo.getBufferedImages (0).getRGB (point.getX, point.getY);
             rgb2 := imageComparisonInfo.getBufferedImages (1).getRGB (point.getX, point.getY);
-            automaticCacheInterface := ColorCacheFactory_Package.getInstance;
+            automaticCacheInterface := AutomaticCacheInterface_Access (ColorCacheFactory_Package.getInstance);
             colorInteger := To_Unbounded_String (Java_Image (rgb1));
             colorCacheable := ColorCacheable_Access (automaticCacheInterface.get (colorInteger));
             color := colorCacheable.getColor;

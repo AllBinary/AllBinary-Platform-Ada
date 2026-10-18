@@ -16,6 +16,7 @@
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
+with java.lang.Thread_Package; use java.lang.Thread_Package;
 with org.allbinary.thread.PooledThread_Package; use org.allbinary.thread.PooledThread_Package;
 
 package body org.allbinary.thread.ThreadPool_Package is
@@ -23,6 +24,7 @@ package body org.allbinary.thread.ThreadPool_Package is
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
+   package Thread_Package renames Standard.java.lang.Thread_Package;
    procedure Initialize_Fields (This : in out ThreadPool'Class) is
    begin
       null;

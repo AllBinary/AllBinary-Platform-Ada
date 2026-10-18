@@ -137,7 +137,7 @@ package body org.allbinary.logic.visual.theme.ThemeValidation_Package is
       previewImageNameValueNode : Node_Access;
    begin
       Initialize_Fields (This);
-        This.transformInfoInterface := storeThemeCategoryInterface.getTransformInfoInterface;
+        This.transformInfoInterface := TransformInfoInterface_Access (storeThemeCategoryInterface.getTransformInfoInterface);
         This.categoryAbPath := storeThemeCategoryInterface.getPath;
         themeNameNode := DomSearchHelper_Package.getNode (ThemeData_Package.getInstance.NAME, node.getChildNodes);
         valueNode := DomSearchHelper_Package.getNode (DomData_Package.VALUE, themeNameNode.getChildNodes);
@@ -163,7 +163,7 @@ package body org.allbinary.logic.visual.theme.ThemeValidation_Package is
       rootStoreThemeCategoryInterface : StoreThemeCategoryInterface_Access;
    begin
         categoryFactoryInterface := CategoryFactoryInterface_Access (StoreThemeCategoryFactory_Package.Create (ThemeValidation'Class (This).getTransformInfoInterface));
-        categoryLoaderInterface := CategoryLoaderFactory_Package.getInstance (categoryFactoryInterface);
+        categoryLoaderInterface := CategoryLoaderInterface_Access (CategoryLoaderFactory_Package.getInstance (categoryFactoryInterface));
         rootStoreThemeCategoryInterface := StoreThemeCategoryInterface_Access (categoryFactoryInterface.getRootInstance);
         ThemeValidation'Class (This).init (rootStoreThemeCategoryInterface);
    end init;

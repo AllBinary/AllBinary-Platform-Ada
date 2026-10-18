@@ -64,7 +64,7 @@ package body views.business.context.RootContextView_Package is
                 This.logUtil.putF (To_Unbounded_String ("View Name: ") & RootContextView'Class (This).getTransformInfoInterface.getName, RootContextView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"));
             end if;
             viewName := RootContextView'Class (This).getName;
-            componentInterface := TransformFactory_Package.getInstance.getInstance (This.abeClientInformation, viewName, RootContextView'Class (This).getTransformInfoInterface);
+            componentInterface := TransformInterface_Access (TransformFactory_Package.getInstance.getInstance (This.abeClientInformation, viewName, RootContextView'Class (This).getTransformInfoInterface));
             return componentInterface.view;
         exception
             when Java_Occurrence : others =>

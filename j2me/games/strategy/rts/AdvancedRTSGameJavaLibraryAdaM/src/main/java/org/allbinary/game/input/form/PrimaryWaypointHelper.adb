@@ -21,7 +21,7 @@ package body org.allbinary.game.input.form.PrimaryWaypointHelper_Package is
    procedure Initialize_Fields (This : in out PrimaryWaypointHelper'Class) is
    begin
       null;
-      This.waypointLayer := NullPathFindingLayer_Package.NULL_PATH_FINDING_LAYER;
+      This.waypointLayer := PathFindingLayerInterface_Access (NullPathFindingLayer_Package.NULL_PATH_FINDING_LAYER);
    end Initialize_Fields;
 
 

@@ -30,7 +30,7 @@ package body admin.taghelpers.WorkFlowRequestHelper_Package is
    begin
       null;
       This.logUtil := LogUtil_Package.getInstance;
-      This.abeClientInformation := ServiceClientInformationInterfaceFactory_Package.getInstance;
+      This.abeClientInformation := AbeClientInformationInterface_Access (ServiceClientInformationInterfaceFactory_Package.getInstance);
       
    end Initialize_Fields;
 
@@ -41,7 +41,7 @@ package body admin.taghelpers.WorkFlowRequestHelper_Package is
    begin
       ModifyTable_Package.Initialize (This);
       Initialize_Fields (This);
-        This.workFlowInterface := NewWorkFlowFactory_Package.getInstance.getInstance (This.abeClientInformation, hashMap, pageContext);
+        This.workFlowInterface := WorkFlowInterface_Access (NewWorkFlowFactory_Package.getInstance.getInstance (This.abeClientInformation, hashMap, pageContext));
    end Initialize;
 
    function Create (hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return WorkFlowRequestHelper_Access is

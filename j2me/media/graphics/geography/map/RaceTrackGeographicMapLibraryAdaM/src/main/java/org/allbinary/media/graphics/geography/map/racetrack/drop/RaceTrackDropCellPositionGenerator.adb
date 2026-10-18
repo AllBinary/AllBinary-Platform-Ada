@@ -40,7 +40,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.drop.RaceTrack
       This.list := BasicArrayList_Access (BasicArrayListD_Package.Create);
       
       This.STRAIGHTAWAY := 4;
-      This.raceTrackGeographicMap := NullRaceTrackGeographicMap_Package.NULL_RACE_TRACK_GEOGRAPHIC_MAP;
+      This.raceTrackGeographicMap := RaceTrackGeographicMapInterface_Access (NullRaceTrackGeographicMap_Package.NULL_RACE_TRACK_GEOGRAPHIC_MAP);
       This.raceTrackGeographicMapCellTypeFactory := GeographicMapCellTypeFactory_Package.getInstance;
       This.basicArrayListUtil := BasicArrayListUtil_Package.getInstance;
    end Initialize_Fields;

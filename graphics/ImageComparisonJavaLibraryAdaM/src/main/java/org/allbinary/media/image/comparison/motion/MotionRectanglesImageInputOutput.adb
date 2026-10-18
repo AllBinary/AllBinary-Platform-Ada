@@ -143,7 +143,7 @@ package body org.allbinary.media.image.comparison.motion.MotionRectanglesImageIn
         imageComparisonInfo := motionRectangles.getImageComparisonResult;
         originalBufferedImage := imageComparisonInfo.getBufferedImages (0);
         bufferedImageInfo := BufferedImageInfoFactory_Package.getInstance (imageComparisonInfo.imageWidth, imageComparisonInfo.imageHeight, originalBufferedImage.getType);
-        poolInterface := BufferedImagePoolSingleton_Package.getInstance;
+        poolInterface := PoolInterface_Access (BufferedImagePoolSingleton_Package.getInstance);
         for index in 0 .. (This.NUMBER_OF_IMAGES) - 1 loop
             bufferedImageCacheables (index) := BufferedImageCacheable_Access (poolInterface.remove (bufferedImageInfo));
         end loop;

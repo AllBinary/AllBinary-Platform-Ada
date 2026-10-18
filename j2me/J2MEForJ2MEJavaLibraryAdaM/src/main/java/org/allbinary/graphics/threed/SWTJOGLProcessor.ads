@@ -29,6 +29,7 @@ package org.allbinary.graphics.threed.SWTJOGLProcessor_Package is
 
    package Font_Package renames Standard.javax.microedition.lcdui.Font_Package;
    package MIDlet_Package renames Standard.javax.microedition.midlet.MIDlet_Package;
+   package Runnable_Package renames Standard.java.lang.Runnable_Package;
 
    type SWTJOGLProcessor is tagged;
    type SWTJOGLProcessor_Access is access all SWTJOGLProcessor'Class;

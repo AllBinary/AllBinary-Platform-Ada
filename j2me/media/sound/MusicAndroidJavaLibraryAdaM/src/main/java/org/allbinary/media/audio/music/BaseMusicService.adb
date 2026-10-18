@@ -5,6 +5,7 @@ with org.allbinary.android.NullAndroidCanvas_Package; use org.allbinary.android.
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_Package;
 with org.allbinary.media.audio.music.MusicStrings_Package; use org.allbinary.media.audio.music.MusicStrings_Package;
+with java.lang.Thread_Package; use java.lang.Thread_Package;
 with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 
 package body org.allbinary.media.audio.music.BaseMusicService_Package is
@@ -12,6 +13,8 @@ package body org.allbinary.media.audio.music.BaseMusicService_Package is
    package NullAndroidCanvas_Package renames Standard.org.allbinary.android.NullAndroidCanvas_Package;
    package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
    package ARunnable_Package renames Standard.org.allbinary.thread.ARunnable_Package;
+   package Thread_Package renames Standard.java.lang.Thread_Package;
+   package Runnable_Package renames Standard.java.lang.Runnable_Package;
    procedure Initialize_Fields (This : in out BaseMusicService'Class) is
    begin
       null;

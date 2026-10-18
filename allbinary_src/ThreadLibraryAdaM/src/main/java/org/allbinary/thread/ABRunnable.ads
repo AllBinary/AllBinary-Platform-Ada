@@ -21,9 +21,11 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.thread.RunnableInterface_Package; use org.allbinary.thread.RunnableInterface_Package;
+with java.lang.Thread_Package; use java.lang.Thread_Package;
 
 package org.allbinary.thread.ABRunnable_Package is
 
+   package Thread_Package renames Standard.java.lang.Thread_Package;
 
    type ABRunnable is tagged;
    type ABRunnable_Access is access all ABRunnable'Class;

@@ -27,6 +27,7 @@ with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 package org.allbinary.android.activity.NullKeyInputViewComposite_Package is
 
    package View_Package renames Standard.android.view.View_Package;
+   package Runnable_Package renames Standard.java.lang.Runnable_Package;
 
    type NullKeyInputViewComposite is tagged;
    type NullKeyInputViewComposite_Access is access all NullKeyInputViewComposite'Class;

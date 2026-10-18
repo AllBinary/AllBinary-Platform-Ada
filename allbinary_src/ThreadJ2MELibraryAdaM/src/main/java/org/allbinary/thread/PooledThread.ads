@@ -30,6 +30,7 @@ package org.allbinary.thread.PooledThread_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package Thread_Package renames Standard.java.lang.Thread_Package;
 
    type PooledThread is tagged;
    type PooledThread_Access is access all PooledThread'Class;
@@ -38,7 +39,7 @@ package org.allbinary.thread.PooledThread_Package is
    type PooledThread_Access_Array_Access_Array is array (Natural range <>) of PooledThread_Access_Array_Access;
    type PooledThread_Access_Array_Access_Array_Access is access all PooledThread_Access_Array_Access_Array;
 
-   type PooledThread is new Thread with record
+   type PooledThread is new Thread_Package.Thread with record
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
       threadObjectUtil : ThreadObjectUtil_Access;

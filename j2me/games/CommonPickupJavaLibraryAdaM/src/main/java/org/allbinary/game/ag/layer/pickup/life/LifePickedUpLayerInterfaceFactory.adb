@@ -59,7 +59,7 @@ package body org.allbinary.game.ag.layer.pickup.life.LifePickedUpLayerInterfaceF
 
    function getInstance return PickedUpLayerInterfaceFactoryInterface_Access is
    begin
-        return LifePickedUpLayerInterfaceFactory_Package.pickedUpLayerInterfaceFactoryInterface;
+        return PickedUpLayerInterfaceFactoryInterface_Access (LifePickedUpLayerInterfaceFactory_Package.pickedUpLayerInterfaceFactoryInterface);
    end getInstance;
 
    --  throws Exception
@@ -71,7 +71,7 @@ package body org.allbinary.game.ag.layer.pickup.life.LifePickedUpLayerInterfaceF
 
 begin
    null;
-   pickedUpLayerInterfaceFactoryInterface := CountedPickedUpLayerInterfaceFactory_Package.NULL_COUNTED_PICKUP_LAYER_FACTORY;
+   pickedUpLayerInterfaceFactoryInterface := PickedUpLayerInterfaceFactoryInterface_Access (CountedPickedUpLayerInterfaceFactory_Package.NULL_COUNTED_PICKUP_LAYER_FACTORY);
 
 end org.allbinary.game.ag.layer.pickup.life.LifePickedUpLayerInterfaceFactory_Package;
 

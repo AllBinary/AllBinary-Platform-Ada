@@ -21,7 +21,7 @@ package body org.allbinary.game.layer.RTSLayerEvent_Package is
    procedure Initialize_Fields (This : in out RTSLayerEvent'Class) is
    begin
       null;
-      This.rtsLayer := NullPathFindingLayer_Package.NULL_PATH_FINDING_LAYER;
+      This.rtsLayer := PathFindingLayerInterface_Access (NullPathFindingLayer_Package.NULL_PATH_FINDING_LAYER);
    end Initialize_Fields;
 
 

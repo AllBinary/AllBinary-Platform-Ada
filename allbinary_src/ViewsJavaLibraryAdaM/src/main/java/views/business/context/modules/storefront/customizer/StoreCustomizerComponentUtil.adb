@@ -93,7 +93,7 @@ package body views.business.context.modules.storefront.customizer.StoreCustomize
         size := allViewsToBeModifiedVector.size;
         for index in 0 .. (size) - 1 loop
             nextTransformInfoInterface := TransformInfo_Access (allViewsToBeModifiedVector.get (index));
-            specifiedTransformInfoInterface := customizerUtil.getTransformInfoInterfaceToCustomize (transformInfoInterface, nextTransformInfoInterface);
+            specifiedTransformInfoInterface := TransformInfoInterface_Access (customizerUtil.getTransformInfoInterfaceToCustomize (transformInfoInterface, nextTransformInfoInterface));
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
                 This.logUtil.putF (To_Unbounded_String ("Retrieved: ") & specifiedTransformInfoInterface.getName, StoreCustomizerComponentUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("generateModifiedViews()"));
             end if;

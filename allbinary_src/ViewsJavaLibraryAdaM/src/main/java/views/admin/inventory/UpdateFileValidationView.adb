@@ -95,7 +95,7 @@ package body views.admin.inventory.UpdateFileValidationView_Package is
                 end if;
                 return False;
             end if;
-            storeFrontInterface := StoreFrontFactory_Package.getInstance (UpdateFileValidationView'Class (This).getWeblisketSession.getStoreName);
+            storeFrontInterface := StoreFrontInterface_Access (StoreFrontFactory_Package.getInstance (UpdateFileValidationView'Class (This).getWeblisketSession.getStoreName));
             stringBuffer := StringMaker_Package.Create;
             stringBuffer.append (URLGLOBALS_Package.getWebappPath);
             stringBuffer.append (storeFrontInterface.getCurrentHostNamePath);
@@ -165,7 +165,7 @@ package body views.admin.inventory.UpdateFileValidationView_Package is
             return CommonSeps_Package.getInstance.SPACE;
         end if;
         stringBuffer.append (BasicItemValidation_Package.Create (This.itemInterface).validationInfo);
-        storeFrontInterface := StoreFrontFactory_Package.getInstance (UpdateFileValidationView'Class (This).getWeblisketSession.getStoreName);
+        storeFrontInterface := StoreFrontInterface_Access (StoreFrontFactory_Package.getInstance (UpdateFileValidationView'Class (This).getWeblisketSession.getStoreName));
         fullCategory := ((Java_Unbox (URLGLOBALS_Package.getWebappPath)) + (storeFrontInterface.getCurrentHostNamePath)) + (This.itemInterface.getCategory);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("Category: ") & fullCategory, UpdateFileValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"));

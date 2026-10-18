@@ -121,7 +121,7 @@ package body admin.taghelpers.UserHelper_Package is
       error : Unbounded_String;
    begin
         begin
-            userInterface := NewUserFactory_Package.getInstance (This.request, This.hashMap);
+            userInterface := UserInterface_Access (NewUserFactory_Package.getInstance (This.request, This.hashMap));
             enable := Java_Unbox (This.hashMap.get (EntryData_Package.getInstance.ENABLE));
             if not (StringValidationUtil_Package.getInstance.isEmpty (enable)) then
                 userInterface.setEnable (enable);
@@ -154,7 +154,7 @@ package body admin.taghelpers.UserHelper_Package is
       error : Unbounded_String;
    begin
         begin
-            user := NewUserFactory_Package.getInstance (This.request, This.hashMap);
+            user := UserInterface_Access (NewUserFactory_Package.getInstance (This.request, This.hashMap));
             values := user.toHashMap;
             UserEntityFactory_Package.getInstance.update (user.getUserName, values);
             success := To_Unbounded_String ("New User Successfully added to the Users Table");

@@ -73,17 +73,17 @@ package body org.allbinary.business.context.modules.storefront.statistics.RealTi
       storeFrontUsersStatisticsDomNodeInterface : DomNodeInterface_Access;
    begin
         node := document.createElement (StoreFrontStatisticsData_Package.getInstance.NAME);
-        storeFrontAdvertisementsStatisticsInterface := This.storeFrontStatisticsInterface.getAdvertisements;
+        storeFrontAdvertisementsStatisticsInterface := StoreFrontAdvertisementsStatisticsInterface_Access (This.storeFrontStatisticsInterface.getAdvertisements);
         storeFrontAdvertisementsStatisticsDomNodeInterface := DomNodeInterface_Access (StoreFrontAdvertisementsStatisticsView_Package.Create (storeFrontAdvertisementsStatisticsInterface));
         node.appendChild (storeFrontAdvertisementsStatisticsDomNodeInterface.toXmlNode (document));
-        storeFrontInventoryStatisticsInterface := This.storeFrontStatisticsInterface.getInventory;
+        storeFrontInventoryStatisticsInterface := StoreFrontInventoryStatisticsInterface_Access (This.storeFrontStatisticsInterface.getInventory);
         storeFrontInventoryStatisticsDomNodeInterface := DomNodeInterface_Access (StoreFrontInventoryStatisticsView_Package.Create (storeFrontInventoryStatisticsInterface));
         node.appendChild (storeFrontInventoryStatisticsDomNodeInterface.toXmlNode (document));
-        storeFrontOrdersHistoryStatisticsInterface := This.storeFrontStatisticsInterface.getOrders;
+        storeFrontOrdersHistoryStatisticsInterface := StoreFrontOrdersHistoryStatisticsInterface_Access (This.storeFrontStatisticsInterface.getOrders);
         storeFrontOrdersHistoryStatisticsDomNodeInterface := DomNodeInterface_Access (StoreFrontOrdersHistoryStatisticsView_Package.Create (storeFrontOrdersHistoryStatisticsInterface));
         node.appendChild (storeFrontOrdersHistoryStatisticsDomNodeInterface.toXmlNode (document));
         if (This.userRole) = (UserRoleFactory_Package.getInstance.ADMINISTRATOR) then
-            storeFrontUsersStatisticsInterface := This.storeFrontStatisticsInterface.getUsers;
+            storeFrontUsersStatisticsInterface := StoreFrontUsersStatisticsInterface_Access (This.storeFrontStatisticsInterface.getUsers);
             storeFrontUsersStatisticsDomNodeInterface := DomNodeInterface_Access (StoreFrontUsersStatisticsView_Package.Create (storeFrontUsersStatisticsInterface));
             node.appendChild (storeFrontUsersStatisticsDomNodeInterface.toXmlNode (document));
         end if;

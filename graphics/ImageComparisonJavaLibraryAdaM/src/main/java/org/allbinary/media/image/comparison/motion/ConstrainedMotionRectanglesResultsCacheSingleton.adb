@@ -71,7 +71,7 @@ package body org.allbinary.media.image.comparison.motion.ConstrainedMotionRectan
 
    function getInstance return CacheInterface_Access is
    begin
-        return ConstrainedMotionRectanglesResultsCacheSingleton_Package.cacheInterface;
+        return CacheInterface_Access (ConstrainedMotionRectanglesResultsCacheSingleton_Package.cacheInterface);
    end getInstance;
 
 begin

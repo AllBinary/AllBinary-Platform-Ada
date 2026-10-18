@@ -46,7 +46,7 @@ package body org.allbinary.input.media.image.capture.CapturedBufferedImagesCache
 
    function getInstance return CacheInterface_Access is
    begin
-        return CapturedBufferedImagesCacheSingleton_Package.cacheInterface;
+        return CacheInterface_Access (CapturedBufferedImagesCacheSingleton_Package.cacheInterface);
    end getInstance;
 
    --  Java static initializer: call this once

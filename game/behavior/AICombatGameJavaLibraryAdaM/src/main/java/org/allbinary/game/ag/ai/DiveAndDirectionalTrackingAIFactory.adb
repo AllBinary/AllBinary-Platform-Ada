@@ -59,7 +59,7 @@ package body org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAIFactory_Packag
         end if;
         hashtable2 := BasicProbabilityAIDataFactory_Package.Create.getInstance;
         hashtable2.put (BasicAI_Package.AI_VISITOR, LastKeyAIVisitorFactory_Package.getInstance);
-        artificialIntelligenceInterface := BasicRandomAIFactory_Package.Create.getInstance (hashtable2, ownerLayerInterface, gameInput);
+        artificialIntelligenceInterface := ArtificialIntelligenceInterface_Access (BasicRandomAIFactory_Package.Create.getInstance (hashtable2, ownerLayerInterface, gameInput));
         return ArtificialIntelligenceInterface_Access (DiveAndDirectionalTrackingAI_Package.Create (ownerLayerInterface, artificialIntelligenceInterface, gameInput, Visitor_Access (visitorCanBeNull)));
    end getInstance;
 

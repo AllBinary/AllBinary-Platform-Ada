@@ -17,6 +17,7 @@ with java.io.File_Package; use java.io.File_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.media.image.ImageArrayRotationUtil_Package; use org.allbinary.media.image.ImageArrayRotationUtil_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with java.lang.Thread_Package; use java.lang.Thread_Package;
 with org.allbinary.image.gui.Graphics_Package; use org.allbinary.image.gui.Graphics_Package;
 
 package body org.allbinary.image.gui.RotationImageJPanel_Package is
@@ -25,6 +26,7 @@ package body org.allbinary.image.gui.RotationImageJPanel_Package is
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package ImageArrayRotationUtil_Package renames Standard.org.allbinary.media.image.ImageArrayRotationUtil_Package;
    package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package Thread_Package renames Standard.java.lang.Thread_Package;
    procedure Initialize_Fields (This : in out RotationImageJPanel'Class) is
    begin
       null;

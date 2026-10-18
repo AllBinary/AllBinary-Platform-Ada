@@ -59,8 +59,8 @@ package body org.allbinary.business.user.commerce.inventory.order.status.OrderSt
         This.abeClientInformation := abeClientInformation;
         This.orderHistory := orderHistory;
         storeName := orderHistory.getStoreName;
-        This.storeFrontInterface := StoreFrontFactory_Package.getInstance (storeName);
-        This.user := UserEntityFactory_Package.getInstance.getUser (orderHistory.getUserName);
+        This.storeFrontInterface := StoreFrontInterface_Access (StoreFrontFactory_Package.getInstance (storeName));
+        This.user := UserInterface_Access (UserEntityFactory_Package.getInstance.getUser (orderHistory.getUserName));
    end Initialize;
 
    function Create (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; orderHistory_Param : access OrderHistory_Package.OrderHistory'Class) return OrderStatusEmail_Access is

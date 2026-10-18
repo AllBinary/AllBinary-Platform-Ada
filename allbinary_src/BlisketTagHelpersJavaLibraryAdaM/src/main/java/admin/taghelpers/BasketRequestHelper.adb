@@ -56,7 +56,7 @@ package body admin.taghelpers.BasketRequestHelper_Package is
         This.request := HttpServletRequest_Access (pageContext.getRequest);
         storeName := Java_Unbox (propertiesHashMap.get (StoreFrontData_Package.getInstance.NAME));
         if (storeName) /= (Null_Unbounded_String) then
-            This.storeFrontInterface := StoreFrontFactory_Package.getInstance (storeName);
+            This.storeFrontInterface := StoreFrontInterface_Access (StoreFrontFactory_Package.getInstance (storeName));
         else
             This.storeFrontInterface := StoreFrontInterface_Access (StoreFront_Package.Create);
         end if;
@@ -82,7 +82,7 @@ package body admin.taghelpers.BasketRequestHelper_Package is
    begin
         begin
             if ((This.id) /= (Null_Unbounded_String)) and then ((This.num) /= (Null_Unbounded_String)) then
-                basket := This.weblisketSession.getOrder.getBasket;
+                basket := BasketInterface_Access (This.weblisketSession.getOrder.getBasket);
                 if (InventoryEntityFactory_Package.getInstance.getInventoryEntityInstance.getItem (This.id)) = (null) then
                     return False;
                 end if;
@@ -110,7 +110,7 @@ package body admin.taghelpers.BasketRequestHelper_Package is
    begin
         begin
             if (This.id) /= (Null_Unbounded_String) then
-                basket := This.weblisketSession.getOrder.getBasket;
+                basket := BasketInterface_Access (This.weblisketSession.getOrder.getBasket);
                 basket.removeItem (This.id);
             end if;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
@@ -134,7 +134,7 @@ package body admin.taghelpers.BasketRequestHelper_Package is
       basket : BasketInterface_Access;
    begin
         begin
-            basket := This.weblisketSession.getOrder.getBasket;
+            basket := BasketInterface_Access (This.weblisketSession.getOrder.getBasket);
             if ((This.id) /= (Null_Unbounded_String)) and then ((This.num) /= (Null_Unbounded_String)) then
                 basket.adjustItem (This.id, This.num);
             end if;

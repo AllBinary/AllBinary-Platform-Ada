@@ -47,7 +47,7 @@ package body admin.taghelpers.StoreFrontHelper_Package is
       Initialize_Fields (This);
         storeName := Java_Unbox (hashMap.get (StoreFrontData_Package.getInstance.NAME));
         if (storeName) /= (Null_Unbounded_String) then
-            This.storeFrontInterface := StoreFrontFactory_Package.getInstance (storeName);
+            This.storeFrontInterface := StoreFrontInterface_Access (StoreFrontFactory_Package.getInstance (storeName));
             This.currentLocation := Replace_Package.Create (CommonSeps_Package.getInstance.SPACE, To_Unbounded_String ("%20")).all_Id ((This.storeFrontInterface.getCurrentHostName) + (This.storeFrontInterface.getCurrentHostNamePath));
             This.currentHomeLocation := Replace_Package.Create (CommonSeps_Package.getInstance.SPACE, To_Unbounded_String ("%20")).all_Id ((This.storeFrontInterface.getCurrentHomeHostName) + (This.storeFrontInterface.getCurrentHomeHostNamePath));
         else

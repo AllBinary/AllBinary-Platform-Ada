@@ -106,14 +106,14 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.transact
             httpServletRequest := HttpServletRequest_Access (pageContext.getRequest);
             command := httpServletRequest.getParameter (org_Package.allbinary.globals.GLOBALS2.ADMINCOMMAND);
             if ((command) /= (Null_Unbounded_String)) and then ((Java_Compare_To (command, org_Package.allbinary.globals.GLOBALS2.AUTHORIZEFORMEVALBODYONERROR)) = (0)) then
-                return PaymentTransactionInterfaceRequestFactory'Class (This).generateFromTestData (transformInfoInterface);
+                return PaymentTransactionInterface_Access (PaymentTransactionInterfaceRequestFactory'Class (This).generateFromTestData (transformInfoInterface));
             else
                 propertiesHashMap := httpTransformInfoInterface.getPropertiesHashMap;
                 weblisketSession := WeblisketSession_Package.Create (propertiesHashMap, pageContext);
-                storeFrontInterface := StoreFrontFactory_Package.getInstance (weblisketSession.getStoreName);
-                order := weblisketSession.getOrder;
+                storeFrontInterface := StoreFrontInterface_Access (StoreFrontFactory_Package.getInstance (weblisketSession.getStoreName));
+                order := OrderInterface_Access (weblisketSession.getOrder);
                 orderId := order.getId;
-                orderHistoryEntityInterface := OrderHistoryEntityFactory_Package.getInstance;
+                orderHistoryEntityInterface := OrderHistoryEntityInterface_Access (OrderHistoryEntityFactory_Package.getInstance);
                 orderReview := orderHistoryEntityInterface.getOrder (orderId);
                 orderPaymentInfo := orderReview.getPaymentInfo;
                 orderPaymentInfo.setTransactionType (TransactionTypeFactory_Package.getInstance.SALE.toString);
@@ -122,7 +122,7 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.transact
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PAYMENT) then
                     This.logUtil.putF (orderReview.getId, PaymentTransactionInterfaceRequestFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getPaymentTransactionInterface()"));
                 end if;
-                paymentTransactionInterface := PaymentTransactionInterfaceFactory_Package.getInstance.getInstance (orderReview);
+                paymentTransactionInterface := PaymentTransactionInterface_Access (PaymentTransactionInterfaceFactory_Package.getInstance.getInstance (orderReview));
                 return paymentTransactionInterface;
             end if;
         exception
@@ -175,7 +175,7 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.transact
             propertiesHashMap := httpTransformInfoInterface.getPropertiesHashMap;
             pageContext := httpTransformInfoInterface.getPageContext;
             weblisketSession := WeblisketSession_Package.Create (propertiesHashMap, pageContext);
-            storeFrontInterface := StoreFrontFactory_Package.getInstance (weblisketSession.getStoreName);
+            storeFrontInterface := StoreFrontInterface_Access (StoreFrontFactory_Package.getInstance (weblisketSession.getStoreName));
             httpServletRequest := HttpServletRequest_Access (pageContext.getRequest);
             gatewayName := Java_Unbox (weblisketSession.getPaymentMethod);
             if StringValidationUtil_Package.getInstance.isEmpty (gatewayName) then
@@ -228,7 +228,7 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.transact
                 orderReview.setId (orderId);
             end if;
             orderReview.setPaymentInfo (payment);
-            paymentTransactionInterface := PaymentTransactionInterfaceFactory_Package.getInstance.getInstance (orderReview);
+            paymentTransactionInterface := PaymentTransactionInterface_Access (PaymentTransactionInterfaceFactory_Package.getInstance.getInstance (orderReview));
             return paymentTransactionInterface;
         exception
             when Java_Occurrence : others =>

@@ -73,7 +73,7 @@ package body org.allbinary.media.image.cache.BufferedImagePoolSingleton_Package 
 
    function getInstance return PoolInterface_Access is
    begin
-        return BufferedImagePoolSingleton_Package.poolInterface;
+        return PoolInterface_Access (BufferedImagePoolSingleton_Package.poolInterface);
    end getInstance;
 
 begin

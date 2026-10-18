@@ -61,8 +61,8 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.transact
             gatewayName := orderReview.getPaymentMethod;
             if (gatewayName) /= (Null_Unbounded_String) then
                 paymentType := PaymentTypeUtil_Package.getInstance.get (gatewayName);
-                paymentTransactionInterfaceFactoryInterface := paymentType.getPaymentTransactionInterfaceFactoryInterface;
-                paymentTransactionInterface := paymentTransactionInterfaceFactoryInterface.getInstance (orderReview);
+                paymentTransactionInterfaceFactoryInterface := PaymentTransactionInterfaceFactoryInterface_Access (paymentType.getPaymentTransactionInterfaceFactoryInterface);
+                paymentTransactionInterface := PaymentTransactionInterface_Access (paymentTransactionInterfaceFactoryInterface.getInstance (orderReview));
                 return paymentTransactionInterface;
             end if;
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Failed to create PaymentTransactionInterface: ") & To_Unbounded_String ("GatewayName is: ") & gatewayName));

@@ -70,7 +70,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
       null;
       This.logUtil := LogUtil_Package.getInstance;
       This.commonStrings := CommonStrings_Package.getInstance;
-      This.abeClientInformation := ServiceClientInformationInterfaceFactory_Package.getInstance;
+      This.abeClientInformation := AbeClientInformationInterface_Access (ServiceClientInformationInterfaceFactory_Package.getInstance);
       This.isChild_Field := False;
       This.name := Null_Unbounded_String;
       This.storeName := Null_Unbounded_String;

@@ -32,7 +32,7 @@ package org.allbinary.game.configuration.feature.SensorFeature_Package is
    type SensorFeature_Access_Array_Access_Array is array (Natural range <>) of SensorFeature_Access_Array_Access;
    type SensorFeature_Access_Array_Access_Array_Access is access all SensorFeature_Access_Array_Access_Array;
 
-   type SensorFeature is new Feature with null record;
+   type SensorFeature is new Feature_Package.Feature with null record;
 
    procedure Initialize (This : in out SensorFeature'Class; name : Unbounded_String);
    function Create (name : Unbounded_String) return SensorFeature_Access;

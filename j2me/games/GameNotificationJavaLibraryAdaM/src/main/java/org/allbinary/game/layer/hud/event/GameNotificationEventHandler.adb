@@ -47,13 +47,13 @@ package body org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Pac
       eventListenerInterface : EventListenerInterface_Access;
       list : BasicArrayList_Access;
    begin
-        eventListenerInterface := NullEventListener_Package.NULL_EVENT_LISTENER;
+        eventListenerInterface := EventListenerInterface_Access (NullEventListener_Package.NULL_EVENT_LISTENER);
         list := This.eventListenerInterfaceList;
         if (list.size) > (0) then
             eventListenerInterface := EventListenerInterface_Access (list.objectArray (0));
         end if;
         BasicEventHandler (This).removeAllListeners;
-        if (eventListenerInterface) /= (NullEventListener_Package.NULL_EVENT_LISTENER) then
+        if (Java_Object_Access (eventListenerInterface)) /= (Java_Object_Access (NullEventListener_Package.NULL_EVENT_LISTENER)) then
             GameNotificationEventHandler'Class (This).addListenerInterface (eventListenerInterface);
         end if;
    end removeAllListeners;

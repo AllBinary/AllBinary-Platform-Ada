@@ -18,6 +18,7 @@ with org.allbinary.game.resource.FeatureResourceInitializationUtil_Package; use 
 with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
 with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with java.lang.Thread_Package; use java.lang.Thread_Package;
 
 package body org.allbinary.game.init.DefaultGameInitializationListener_Package is
 
@@ -26,6 +27,7 @@ package body org.allbinary.game.init.DefaultGameInitializationListener_Package i
    package ForcedLogUtil_Package renames Standard.org.allbinary.logic.communication.log.ForcedLogUtil_Package;
    package EventStrings_Package renames Standard.org.allbinary.logic.util.event.EventStrings_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package Thread_Package renames Standard.java.lang.Thread_Package;
    procedure Initialize_Fields (This : in out DefaultGameInitializationListener'Class) is
    begin
       null;

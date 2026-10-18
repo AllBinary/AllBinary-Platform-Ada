@@ -37,7 +37,7 @@ package body org.allbinary.game.score.remote.RemoteHighScoresProcessorFactory_Pa
 
    function getInstance return RemoteHighScoresProcessorInterface_Access is
    begin
-        return RemoteHighScoresProcessorFactory_Package.SINGLETON;
+        return RemoteHighScoresProcessorInterface_Access (RemoteHighScoresProcessorFactory_Package.SINGLETON);
    end getInstance;
 
 begin

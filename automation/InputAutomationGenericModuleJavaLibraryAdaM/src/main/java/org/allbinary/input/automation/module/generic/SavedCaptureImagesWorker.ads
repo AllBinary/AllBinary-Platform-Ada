@@ -28,6 +28,7 @@ with org.allbinary.input.media.image.capture.ScreenScavangerRobot_Package; use o
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with java.lang.Thread_Package; use java.lang.Thread_Package;
 
 package org.allbinary.input.automation.module.generic_Id.SavedCaptureImagesWorker_Package is
 
@@ -37,6 +38,7 @@ package org.allbinary.input.automation.module.generic_Id.SavedCaptureImagesWorke
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package BasicEventHandler_Package renames Standard.org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package Thread_Package renames Standard.java.lang.Thread_Package;
 
    type SavedCaptureImagesWorker is tagged;
    type SavedCaptureImagesWorker_Access is access all SavedCaptureImagesWorker'Class;

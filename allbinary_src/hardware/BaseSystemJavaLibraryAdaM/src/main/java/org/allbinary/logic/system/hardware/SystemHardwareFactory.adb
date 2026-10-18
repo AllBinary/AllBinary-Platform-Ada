@@ -27,7 +27,7 @@ package body org.allbinary.logic.system.hardware.SystemHardwareFactory_Package i
       null;
       This.logUtil := LogUtil_Package.getInstance;
       This.commonStrings := CommonStrings_Package.getInstance;
-      This.hardwareInterface := NoHardware_Package.getInstance;
+      This.hardwareInterface := HardwareInterface_Access (NoHardware_Package.getInstance);
    end Initialize_Fields;
 
 
@@ -53,8 +53,8 @@ package body org.allbinary.logic.system.hardware.SystemHardwareFactory_Package i
       operatingSystemInterface : constant GenericOperatingSystem_Access := GenericOperatingSystem_Access (operatingSystemInterface_Param);
    begin
         begin
-            if (This.hardwareInterface) = (NoHardware_Package.getInstance) then
-                This.hardwareInterface := HardwareFactory_Package.getInstance.getInstance (operatingSystemInterface);
+            if (Java_Object_Access (This.hardwareInterface)) = (Java_Object_Access (NoHardware_Package.getInstance)) then
+                This.hardwareInterface := HardwareInterface_Access (HardwareFactory_Package.getInstance.getInstance (operatingSystemInterface));
             end if;
             This.logUtil.putF (To_Unbounded_String ("Found Hardware"), SystemHardwareFactory_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         exception

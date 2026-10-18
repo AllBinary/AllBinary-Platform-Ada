@@ -37,7 +37,7 @@ package org.allbinary.business.user.modules.admin.store.web.WebStoreAdminUser_Pa
    type WebStoreAdminUser_Access_Array_Access_Array is array (Natural range <>) of WebStoreAdminUser_Access_Array_Access;
    type WebStoreAdminUser_Access_Array_Access_Array_Access is access all WebStoreAdminUser_Access_Array_Access_Array;
 
-   type WebStoreAdminUser is new User with null record;
+   type WebStoreAdminUser is new User_Package.User with null record;
 
    procedure Initialize (This : in out WebStoreAdminUser'Class);
    function Create return WebStoreAdminUser_Access;

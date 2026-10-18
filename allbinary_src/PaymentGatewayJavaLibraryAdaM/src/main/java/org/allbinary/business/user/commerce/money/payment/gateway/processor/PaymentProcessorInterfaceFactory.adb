@@ -64,11 +64,11 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.processo
       commonStrings : CommonStrings_Access;
    begin
         begin
-            paymentTransactionInterface := PaymentTransactionInterfaceRequestFactory_Package.getInstance.getInstance (transformInfoInterface);
+            paymentTransactionInterface := PaymentTransactionInterface_Access (PaymentTransactionInterfaceRequestFactory_Package.getInstance.getInstance (transformInfoInterface));
             gatewayName := paymentTransactionInterface.getOrderHistory.getPaymentMethod;
             if not (StringValidationUtil_Package.getInstance.isEmpty (gatewayName)) then
                 paymentType := PaymentTypeUtil_Package.getInstance.get (gatewayName);
-                paymentProcessorInterfaceFactoryInterface := paymentType.getPaymentProcessorInterfaceFactoryInterface;
+                paymentProcessorInterfaceFactoryInterface := PaymentProcessorInterfaceFactoryInterface_Access (paymentType.getPaymentProcessorInterfaceFactoryInterface);
                 return PaymentProcessorInterface_Access (paymentProcessorInterfaceFactoryInterface.getInstance (transformInfoInterface, paymentTransactionInterface));
             end if;
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Error Getting PaymentProcessorInterface")));

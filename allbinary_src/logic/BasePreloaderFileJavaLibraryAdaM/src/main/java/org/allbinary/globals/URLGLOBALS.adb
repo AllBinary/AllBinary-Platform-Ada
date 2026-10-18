@@ -64,7 +64,7 @@ package body org.allbinary.globals.URLGLOBALS_Package is
 
 begin
    null;
-   urlGlobalsInterface := AppUrlGlobals_Package.NULL_APP_URL_GLOBALS;
+   urlGlobalsInterface := UrlGlobalsInterface_Access (AppUrlGlobals_Package.NULL_APP_URL_GLOBALS);
 
 end org.allbinary.globals.URLGLOBALS_Package;
 

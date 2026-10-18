@@ -69,7 +69,7 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
         size := vector.size;
         for index in 0 .. (size) - 1 loop
             imageType := InputImageType_Access (vector.get (index));
-            imageIOInterface := InputImageIOInterfaceFactory_Package.getInstance (imageType);
+            imageIOInterface := ImageIOInterface_Access (InputImageIOInterfaceFactory_Package.getInstance (imageType));
             imageIOInterface.save (frame);
         end loop;
    end process;

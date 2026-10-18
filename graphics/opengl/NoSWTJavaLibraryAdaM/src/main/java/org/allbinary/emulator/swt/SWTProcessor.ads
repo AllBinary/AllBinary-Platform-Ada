@@ -26,6 +26,7 @@ with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 package org.allbinary.emulator.swt.SWTProcessor_Package is
 
    package Display_Package renames Standard.org.eclipse.swt.widgets.Display_Package;
+   package Runnable_Package renames Standard.java.lang.Runnable_Package;
 
    type SWTProcessor is tagged;
    type SWTProcessor_Access is access all SWTProcessor'Class;

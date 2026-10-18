@@ -21,6 +21,7 @@ with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.C
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.media.image.comparison.motion.MotionRectangles_Package; use org.allbinary.media.image.comparison.motion.MotionRectangles_Package;
+with java.lang.Thread_Package; use java.lang.Thread_Package;
 
 package body org.allbinary.media.image.comparison.motion.TestInputForMotionRectanglesResultsWorker_Package is
 
@@ -31,6 +32,7 @@ package body org.allbinary.media.image.comparison.motion.TestInputForMotionRecta
    package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
    package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
    package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
+   package Thread_Package renames Standard.java.lang.Thread_Package;
    procedure Initialize_Fields (This : in out TestInputForMotionRectanglesResultsWorker'Class) is
    begin
       null;

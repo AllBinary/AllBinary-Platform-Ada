@@ -34,7 +34,7 @@ package body org.allbinary.game.input.TestingInputSingleton_Package is
    begin
       null;
       This.inputProcessorArray := new GameInputProcessor_Access_Array'(0 .. (InputFactory_Package.getInstance.MAX) - 1 => null);
-      This.paintable := NullPaintable_Package.getInstance;
+      This.paintable := PaintableInterface_Access (NullPaintable_Package.getInstance);
    end Initialize_Fields;
 
 

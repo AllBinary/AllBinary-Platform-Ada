@@ -49,7 +49,7 @@ package body org.allbinary.business.category.Category_Package is
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY_Var) then
             This.logUtil.putF (This.commonStrings.CONSTRUCTOR, Category_Access'(This'Unchecked_Access), To_Unbounded_String ("Category(CategoryPropertiesFactoryInterface)"));
         end if;
-        This.categoryPropertiesInterface := categoryPropertiesFactoryInterface.getInstance;
+        This.categoryPropertiesInterface := CategoryPropertiesInterface_Access (categoryPropertiesFactoryInterface.getInstance);
         This.categoryHierarchyInterface := CategoryHierarchyInterface_Access (CategoryHierarchy_Package.Create (Category_Access'(This'Unchecked_Access), Category_Access'(This'Unchecked_Access)));
         Category'Class (This).log;
    end Initialize;
@@ -65,7 +65,7 @@ package body org.allbinary.business.category.Category_Package is
       categoryPropertiesFactoryInterface : constant CategoryPropertiesFactoryInterface_Access := CategoryPropertiesFactoryInterface_Access (categoryPropertiesFactoryInterface_Param);
    begin
       Initialize_Fields (This);
-        This.categoryPropertiesInterface := categoryPropertiesFactoryInterface.getInstance;
+        This.categoryPropertiesInterface := CategoryPropertiesInterface_Access (categoryPropertiesFactoryInterface.getInstance);
         This.categoryHierarchyInterface := CategoryHierarchyInterface_Access (CategoryHierarchy_Package.Create (Category_Access'(This'Unchecked_Access), Category_Access'(This'Unchecked_Access), level));
         Category'Class (This).log;
    end Initialize;
@@ -108,7 +108,7 @@ package body org.allbinary.business.category.Category_Package is
       rootCategoryPropertiesInterface : RootCategoryPropertiesInterface_Access;
    begin
         rootAbPath := AbPath_Package.Create (NOT_ROOT, StringUtil_Package.getInstance.EMPTY_STRING);
-        categoryInterface := This.categoryHierarchyInterface.getRoot;
+        categoryInterface := CategoryInterface_Access (This.categoryHierarchyInterface.getRoot);
         if categoryInterface.getProperties.isRoot then
             rootCategoryPropertiesInterface := RootCategoryPropertiesInterface_Access (categoryInterface.getProperties);
             rootAbPath := rootCategoryPropertiesInterface.getRootFilePath;
@@ -126,7 +126,7 @@ package body org.allbinary.business.category.Category_Package is
    function getWebAppPath (This : in out Category) return AbPath_Access is
       categoryInterface : CategoryInterface_Access;
    begin
-        categoryInterface := This.categoryHierarchyInterface.getRoot;
+        categoryInterface := CategoryInterface_Access (This.categoryHierarchyInterface.getRoot);
         return categoryInterface.getProperties.getWebAppPath;
    end getWebAppPath;
 
@@ -151,7 +151,7 @@ package body org.allbinary.business.category.Category_Package is
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY_Var) then
             This.logUtil.putF (To_Unbounded_String ("adding"), Category_Access'(This'Unchecked_Access), To_Unbounded_String ("addChild"));
         end if;
-        childCategoryHierarchyInterface := categoryInterface.getHierarchy;
+        childCategoryHierarchyInterface := CategoryHierarchyInterface_Access (categoryInterface.getHierarchy);
         childCategoryHierarchyInterface.setParent (Category_Access'(This'Unchecked_Access));
         childCategoryHierarchyInterface.setRoot (Category'Class (This).getHierarchy.getRoot);
         categoryInterface.setHierarchy (childCategoryHierarchyInterface);
@@ -230,7 +230,7 @@ package body org.allbinary.business.category.Category_Package is
                 end if;
             elsif (This.CATEGORY_Var) = (This.typeVector.get (index)) then
                 existingCategoryInterface := CategoryInterface_Access (anyType);
-                categoryPropertiesInterface := existingCategoryInterface.getProperties;
+                categoryPropertiesInterface := CategoryPropertiesInterface_Access (existingCategoryInterface.getProperties);
                 if (categoryInterface.getProperties.getValue.compareTo (categoryPropertiesInterface.getValue)) = (0) then
                     removalVector.add (Java_Object_Access (existingCategoryInterface));
                     bool_return := True;

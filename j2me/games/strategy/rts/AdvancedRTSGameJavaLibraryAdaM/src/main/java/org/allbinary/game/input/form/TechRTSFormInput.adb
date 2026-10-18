@@ -99,7 +99,7 @@ package body org.allbinary.game.input.form.TechRTSFormInput_Package is
         commonStrings := CommonStrings_Package.getInstance;
         stringMaker := StringMaker_Package.Create;
         technologyRTSInterfaceImageItem := TechnologyRTSInterfaceImageItem_Access (item);
-        rtsInterface := technologyRTSInterfaceImageItem.getRtsInterface;
+        rtsInterface := RTSInterface_Access (technologyRTSInterfaceImageItem.getRtsInterface);
         This.logUtil.putF (stringMaker.append (To_Unbounded_String ("isUpgradeable: ")).appendboolean (rtsInterface.isUpgradeable).toString, TechRTSFormInput_Access'(This'Unchecked_Access), commonStrings.PROCESS);
         if rtsInterface.isUpgradeable then
             cost := rtsInterface.getUpgradeCost;

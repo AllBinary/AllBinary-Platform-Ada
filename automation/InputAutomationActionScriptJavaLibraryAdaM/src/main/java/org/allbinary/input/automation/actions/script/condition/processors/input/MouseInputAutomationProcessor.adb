@@ -17,6 +17,7 @@ with org.allbinary.input.automation.robot.InputRobotInterface_Package; use org.a
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with java.lang.Thread_Package; use java.lang.Thread_Package;
 
 package body org.allbinary.input.automation.actions.script.condition.processors.input.MouseInputAutomationProcessor_Package is
 
@@ -24,6 +25,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package Thread_Package renames Standard.java.lang.Thread_Package;
    procedure Initialize_Fields (This : in out MouseInputAutomationProcessor'Class) is
    begin
       null;
@@ -53,7 +55,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
         logUtil := LogUtil_Package.getInstance;
         commonStrings := CommonStrings_Package.getInstance;
         logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Start - Processing Mouse Input at: ")).append (mouseActionScriptInputInterface.getPoint.toString).append (To_Unbounded_String (" clicks: ")).appendint (Integer (mouseActionScriptInputInterface.getButtonClicks)).toString, To_Unbounded_String ("MouseInputAutomationProcessor"), commonStrings.PROCESS);
-        inputRobotInterface := mouseActionScriptInputInterface.getInputRobotInterface;
+        inputRobotInterface := InputRobotInterface_Access (mouseActionScriptInputInterface.getInputRobotInterface);
         if ((mouseActionScriptInputInterface.getPoint.x) /= (-(1))) and then ((mouseActionScriptInputInterface.getPoint.y) /= (-(1))) then
             inputRobotInterface.mouseMove (mouseActionScriptInputInterface.getPoint);
         end if;

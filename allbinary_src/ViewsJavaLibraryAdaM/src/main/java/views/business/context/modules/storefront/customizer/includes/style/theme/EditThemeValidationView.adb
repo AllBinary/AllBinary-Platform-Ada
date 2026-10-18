@@ -72,7 +72,7 @@ package body views.business.context.modules.storefront.customizer.includes.style
         begin
             isValid := True;
             categoryFactoryInterface := CategoryFactoryInterface_Access (StoreThemeCategoryFactory_Package.Create (EditThemeValidationView'Class (This).getTransformInfoInterface));
-            categoryLoaderInterface := CategoryLoaderFactory_Package.getInstance (categoryFactoryInterface);
+            categoryLoaderInterface := CategoryLoaderInterface_Access (CategoryLoaderFactory_Package.getInstance (categoryFactoryInterface));
             rootStoreThemeCategoryInterface := StoreThemeCategoryInterface_Access (categoryFactoryInterface.getRootInstance);
             storeThemeCategoryInterface := StoreThemeCategoryInterface_Access (categoryLoaderInterface.getAll (CategoryInterface_Access (rootStoreThemeCategoryInterface)));
             This.validationInterface := StoreThemeCategoryPathValidationView_Package.Create (StoreThemeCategoryInterface_Access (storeThemeCategoryInterface));

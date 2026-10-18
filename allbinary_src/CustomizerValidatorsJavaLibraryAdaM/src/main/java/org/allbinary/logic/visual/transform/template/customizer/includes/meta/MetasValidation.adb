@@ -50,7 +50,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.includes.m
    begin
       Validation_Package.Initialize (This);
       Initialize_Fields (This);
-        This.storeFrontInterface := StoreFrontFactory_Package.getInstance (storeName);
+        This.storeFrontInterface := StoreFrontInterface_Access (StoreFrontFactory_Package.getInstance (storeName));
         This.metaValidationVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         contentValue := This.storeFrontInterface.getName & To_Unbounded_String (" E-Commerce Site");
         keywordsMetaValidation := MetaValidation_Package.Create (HtmlMetaAttributeDataFactory_Package.getInstance.NAME, To_Unbounded_String ("Keywords"), HtmlMetaAttributeValuesData_Package.getInstance.KEYWORDS, contentValue);

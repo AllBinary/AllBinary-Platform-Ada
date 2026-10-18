@@ -22,6 +22,7 @@ with org.allbinary.logic.ABSystemWrapper_Package; use org.allbinary.logic.ABSyst
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.system.Memory_Package; use org.allbinary.system.Memory_Package;
+with java.lang.Thread_Package; use java.lang.Thread_Package;
 
 package body org.allbinary.image.ImageCache_Package is
 
@@ -34,6 +35,7 @@ package body org.allbinary.image.ImageCache_Package is
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package Memory_Package renames Standard.org.allbinary.system.Memory_Package;
+   package Thread_Package renames Standard.java.lang.Thread_Package;
    procedure Initialize_Fields (This : in out ImageCache'Class) is
    begin
       null;

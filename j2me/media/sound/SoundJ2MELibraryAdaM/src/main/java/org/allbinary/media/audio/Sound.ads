@@ -27,6 +27,7 @@ with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 package org.allbinary.media.audio.Sound_Package is
 
    package Player_Package renames Standard.javax.microedition.media.Player_Package;
+   package Runnable_Package renames Standard.java.lang.Runnable_Package;
 
    type Sound is tagged;
    type Sound_Access is access all Sound'Class;

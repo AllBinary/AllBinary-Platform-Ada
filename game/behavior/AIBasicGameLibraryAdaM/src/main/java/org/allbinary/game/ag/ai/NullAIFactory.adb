@@ -39,12 +39,12 @@ package body org.allbinary.game.ag.ai.NullAIFactory_Package is
       ownerLayerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (ownerLayerInterface_Param);
       gameInput : constant GameInput_Access := GameInput_Access (gameInput_Param);
    begin
-        return NullAIFactory_Package.NULL_AI;
+        return ArtificialIntelligenceInterface_Access (NullAIFactory_Package.NULL_AI);
    end getInstance;
 
    function getInstance return ArtificialIntelligenceInterface_Access is
    begin
-        return NullAIFactory_Package.NULL_AI;
+        return ArtificialIntelligenceInterface_Access (NullAIFactory_Package.NULL_AI);
    end getInstance;
 
    procedure getInstance (This : in out NullAIFactory; hashtable_Param : access ABHashtable_Package.ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) is

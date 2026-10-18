@@ -88,8 +88,8 @@ package body org.allbinary.bundle.logic.system.loader.CryptService_Package is
             This.logUtil.put (This.commonStrings.EXCEPTION_Id, CryptService_Access'(This'Unchecked_Access), This.commonStrings.INIT, e);
             basicTextJDialog := BasicTextJDialog_Package.Create (Java_Get_Message (e));
             begin
-                abeLicenseInterface := AbeLicenseInterfaceFactory_Package.getInstance.getLicenseInstance (abeClientInformation);
-                if (abeLicenseInterface) /= (AbeNoLicense_Package.getInstance) then
+                abeLicenseInterface := AbeLicenseInterface_Access (AbeLicenseInterfaceFactory_Package.getInstance.getLicenseInstance (abeClientInformation));
+                if (Java_Object_Access (abeLicenseInterface)) /= (Java_Object_Access (AbeNoLicense_Package.getInstance)) then
                     if abeLicenseInterface.isValid then
                         basicTextJDialog.setText (To_Unbounded_String ("Subscription Invalid"));
                     end if;

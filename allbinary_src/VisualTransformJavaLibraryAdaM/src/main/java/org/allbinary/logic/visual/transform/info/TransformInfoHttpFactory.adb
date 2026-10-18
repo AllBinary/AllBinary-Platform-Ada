@@ -62,7 +62,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpFactory_
         begin
             weblisketSession := WeblisketSession_Package.Create (propertiesHashMap, pageContext);
             if not (StringValidationUtil_Package.getInstance.isEmpty (weblisketSession.getStoreName)) then
-                storeFrontInterface := StoreFrontFactory_Package.getInstance (weblisketSession.getStoreName);
+                storeFrontInterface := StoreFrontInterface_Access (StoreFrontFactory_Package.getInstance (weblisketSession.getStoreName));
                 if (storeFrontInterface) /= (null) then
                     return TransformInfoInterface_Access (TransformInfoHttpStore_Package.Create (storeFrontInterface, propertiesHashMap, pageContext));
                 else

@@ -24,12 +24,14 @@ with org.allbinary.math.LayerDistanceUtil_Package; use org.allbinary.math.LayerD
 with org.allbinary.thread.PriorityRunnable_Package; use org.allbinary.thread.PriorityRunnable_Package;
 with org.allbinary.thread.RunnableInterface_Package; use org.allbinary.thread.RunnableInterface_Package;
 with org.allbinary.game.layer.PathFindingLayerInterface_Package; use org.allbinary.game.layer.PathFindingLayerInterface_Package;
+with java.lang.Thread_Package; use java.lang.Thread_Package;
 
 package org.allbinary.game.layer.WaypointPathRunnableBase_Package is
 
    package LayerDistanceUtil_Package renames Standard.org.allbinary.math.LayerDistanceUtil_Package;
    package PriorityRunnable_Package renames Standard.org.allbinary.thread.PriorityRunnable_Package;
    package RunnableInterface_Package renames Standard.org.allbinary.thread.RunnableInterface_Package;
+   package Thread_Package renames Standard.java.lang.Thread_Package;
 
    type WaypointPathRunnableBase is tagged;
    type WaypointPathRunnableBase_Access is access all WaypointPathRunnableBase'Class;

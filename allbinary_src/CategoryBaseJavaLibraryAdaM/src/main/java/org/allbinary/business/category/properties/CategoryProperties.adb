@@ -119,7 +119,7 @@ package body org.allbinary.business.category.properties.CategoryProperties_Packa
         abPathData := AbPathData_Package.getInstance;
         pathStringBuffer := StringMaker_Package.Create;
         list := BasicArrayList_Access (BasicArrayListD_Package.Create);
-        nextParentCategoryInterface := categoryHierarchyInterface.getParent;
+        nextParentCategoryInterface := CategoryInterface_Access (categoryHierarchyInterface.getParent);
         if (CategoryProperties_Access'(This'Unchecked_Access)) /= (nextParentCategoryInterface.getProperties) then
             depthIndex := 0;
             while (nextParentCategoryInterface) /= (null) loop
@@ -132,10 +132,10 @@ package body org.allbinary.business.category.properties.CategoryProperties_Packa
                     pathStringBuffer.delete (0, pathStringBuffer.length);
                     list.addAt (0, pathStringBuffer.append (abPathData.SEPARATOR).append (nextParentCategoryInterface.getProperties.getValue).toString);
                 end if;
-                if (nextParentCategoryInterface) = (nextParentCategoryInterface.getHierarchy.getParent) then
+                if (Java_Object_Access (nextParentCategoryInterface)) = (Java_Object_Access (nextParentCategoryInterface.getHierarchy.getParent)) then
                     exit;
                 end if;
-                nextParentCategoryInterface := nextParentCategoryInterface.getHierarchy.getParent;
+                nextParentCategoryInterface := CategoryInterface_Access (nextParentCategoryInterface.getHierarchy.getParent);
                 depthIndex := depthIndex + 1;
                 if (depthIndex) > (CategoryProperties_Package.MAXDEPTH) then
                     Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Probably Major Error")));

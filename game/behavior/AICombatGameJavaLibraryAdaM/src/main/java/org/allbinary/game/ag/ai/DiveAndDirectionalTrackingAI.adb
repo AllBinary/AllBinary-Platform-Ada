@@ -73,7 +73,7 @@ package body org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package is
         This.aiVistor := visitor;
         This.artificialIntelligenceInterface := artificialIntelligenceInterface;
         directionalCompositeInterface := DirectionalCompositeInterface_Access (DiveAndDirectionalTrackingAI'Class (This).getOwnerLayerInterface);
-        This.directionalInterface := directionalCompositeInterface.getDirectionalInterface;
+        This.directionalInterface := DirectionalInterface_Access (directionalCompositeInterface.getDirectionalInterface);
         velocityInterfaceCompositeInterface := VelocityInterfaceCompositeInterface_Access (DiveAndDirectionalTrackingAI'Class (This).getOwnerLayerInterface);
         This.velocityInterface := velocityInterfaceCompositeInterface.getVelocityProperties;
         DestroyedEventHandler_Package.getInstance.addListenerInterface (DiveAndDirectionalTrackingAI_Access'(This'Unchecked_Access));

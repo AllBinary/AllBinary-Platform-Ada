@@ -26,6 +26,7 @@ with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 
 package org.allbinary.thread.PathFindingThreadPool_Package is
 
+   package Runnable_Package renames Standard.java.lang.Runnable_Package;
 
    type PathFindingThreadPool is tagged;
    type PathFindingThreadPool_Access is access all PathFindingThreadPool'Class;

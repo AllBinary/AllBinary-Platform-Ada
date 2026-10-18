@@ -60,7 +60,7 @@ package body org.allbinary.logic.visual.transform.generator.TransformsGeneratorU
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("Started Group: ") & group, TransformsGeneratorUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("generateComponentsFromObjectConfig(2)"));
         end if;
-        transformInfoObjectConfigInterface := transformInfoInterface.getObjectConfigInterface;
+        transformInfoObjectConfigInterface := TransformInfoObjectConfigInterface_Access (transformInfoInterface.getObjectConfigInterface);
         result := TransformsGeneratorUtil'Class (This).generateComponentsFromObjectConfig (abeClientInformation, transformInfoObjectConfigInterface, transformInfoInterface, group);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("End Group: ") & group, TransformsGeneratorUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("generateComponentsFromObjectConfig(2)"));

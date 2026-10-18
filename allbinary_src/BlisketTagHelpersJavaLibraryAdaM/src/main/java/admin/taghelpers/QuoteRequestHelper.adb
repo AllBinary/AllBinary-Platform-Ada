@@ -49,7 +49,7 @@ package body admin.taghelpers.QuoteRequestHelper_Package is
         This.quoteRequest := QuoteRequest_Package.Create (This.weblisketSession.getUserName, request);
         storeName := Java_Unbox (hashMap.get (StoreFrontData_Package.getInstance.NAME));
         if (storeName) /= (Null_Unbounded_String) then
-            This.storeFrontInterface := StoreFrontFactory_Package.getInstance (storeName);
+            This.storeFrontInterface := StoreFrontInterface_Access (StoreFrontFactory_Package.getInstance (storeName));
         end if;
    end Initialize;
 

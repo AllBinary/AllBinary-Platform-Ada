@@ -48,7 +48,7 @@ package org.allbinary.business.user.commerce.inventory.order.OrderHistory_Packag
    type OrderHistory_Access_Array_Access_Array is array (Natural range <>) of OrderHistory_Access_Array_Access;
    type OrderHistory_Access_Array_Access_Array_Access is access all OrderHistory_Access_Array_Access_Array;
 
-   type OrderHistory is new Order and OrderHistoryInterface with record
+   type OrderHistory is new Order_Package.Order and OrderHistoryInterface with record
       userName : Unbounded_String;
       shippingAddress : StreetAddress_Access;
       billingAddress : StreetAddress_Access;

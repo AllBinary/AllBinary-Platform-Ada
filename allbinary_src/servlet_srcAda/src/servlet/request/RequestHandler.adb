@@ -67,7 +67,7 @@ package body servlet.request.RequestHandler_Package is
         begin
             response.setContentType (To_Unbounded_String ("text/html"));
             out_Id := response.getWriter;
-            workflowInterface := RequestWorkFlowFactory_Package.getInstance (ServletRequest_Access (request), ServletResponse_Access (response), RequestHandler'Class (This).getServletConfig, RequestHandler'Class (This).getServletContext);
+            workflowInterface := WorkFlowInterface_Access (RequestWorkFlowFactory_Package.getInstance (ServletRequest_Access (request), ServletResponse_Access (response), RequestHandler'Class (This).getServletConfig, RequestHandler'Class (This).getServletContext));
             if (workflowInterface) /= (null) then
                 out_Id.print (workflowInterface.process);
             end if;

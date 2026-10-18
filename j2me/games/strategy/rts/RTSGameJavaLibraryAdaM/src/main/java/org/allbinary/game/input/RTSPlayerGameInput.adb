@@ -97,7 +97,7 @@ package body org.allbinary.game.input.RTSPlayerGameInput_Package is
         This.towerInfoPaintable := towerInfoPaintable;
         This.rtsPlayerLayerInterface := rtsPlayerLayerInterface;
         This.selectedRTSLayerPlayerGameInput := SelectedRTSLayersPlayerGameInput_Package.Create (RTSPlayerGameInput'Class (This).getRTSLayerInfoPaintable, RTSPlayerGameInput'Class (This).getRtsPlayerLayerInterface, This.inputList, playerInputId, selectRTSLayerVisitorFactoryInterface);
-        if (This.rtsPlayerLayerInterface) /= (NullRTSLayer_Package.NULL_RTS_LAYER) then
+        if (Java_Object_Access (This.rtsPlayerLayerInterface)) /= (Java_Object_Access (NullRTSLayer_Package.NULL_RTS_LAYER)) then
             RTSPlayerGameInput'Class (This).setSelectedRtsFormInput (This.rtsPlayerLayerInterface.getRTSFormInput);
         end if;
         geographicMapCompositeInterface := GeographicMapCompositeInterface_Access (This.gameCanvas.getLayerManager);

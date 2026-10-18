@@ -27,6 +27,7 @@ with org.allbinary.game.state.GameState_Package; use org.allbinary.game.state.Ga
 with org.allbinary.game.state.GameStateFactory_Package; use org.allbinary.game.state.GameStateFactory_Package;
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.game.displayable.canvas.GameCanvasRunnableInterface_Package; use org.allbinary.game.displayable.canvas.GameCanvasRunnableInterface_Package;
+with java.lang.Thread_Package; use java.lang.Thread_Package;
 
 package org.allbinary.game.displayable.canvas.NullGameCanvasRunnable_Package is
 
@@ -36,6 +37,7 @@ package org.allbinary.game.displayable.canvas.NullGameCanvasRunnable_Package is
    package GameState_Package renames Standard.org.allbinary.game.state.GameState_Package;
    package GameStateFactory_Package renames Standard.org.allbinary.game.state.GameStateFactory_Package;
    package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
+   package Thread_Package renames Standard.java.lang.Thread_Package;
 
    type NullGameCanvasRunnable is tagged;
    type NullGameCanvasRunnable_Access is access all NullGameCanvasRunnable'Class;

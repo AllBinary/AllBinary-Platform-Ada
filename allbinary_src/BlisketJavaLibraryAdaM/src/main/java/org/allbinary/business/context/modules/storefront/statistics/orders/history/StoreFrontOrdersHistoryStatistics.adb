@@ -52,7 +52,7 @@ package body org.allbinary.business.context.modules.storefront.statistics.orders
         This.shippingCostMoney := Money_Package.Create;
         This.taxesMoney := Money_Package.Create;
         This.totalMoney := Money_Package.Create;
-        orderHistoryEntityInterface := OrderHistoryEntityFactory_Package.getInstance;
+        orderHistoryEntityInterface := OrderHistoryEntityInterface_Access (OrderHistoryEntityFactory_Package.getInstance);
         orderHistoryInterfaceVector := orderHistoryEntityInterface.getStoreOrders (storeFrontInterface);
         numberOfOrders := 0;
         orderHistoryInterface := null;

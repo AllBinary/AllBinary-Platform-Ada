@@ -45,7 +45,7 @@ package body admin.taghelpers.BasketHelper_Package is
         This.pageContext := pageContext;
         storeName := Java_Unbox (This.propertiesHashMap.get (StoreFrontData_Package.getInstance.NAME));
         if (storeName) /= (Null_Unbounded_String) then
-            This.storeFrontInterface := StoreFrontFactory_Package.getInstance (storeName);
+            This.storeFrontInterface := StoreFrontInterface_Access (StoreFrontFactory_Package.getInstance (storeName));
         end if;
         This.weblisketSession := WeblisketSession_Package.Create (hashMap, pageContext);
    end Initialize;
@@ -61,7 +61,7 @@ package body admin.taghelpers.BasketHelper_Package is
       basket : BasketInterface_Access;
    begin
         begin
-            basket := This.weblisketSession.getOrder.getBasket;
+            basket := BasketInterface_Access (This.weblisketSession.getOrder.getBasket);
             if (basket.getNumberOfItems.intValue) <= (0) then
                 return True;
             else

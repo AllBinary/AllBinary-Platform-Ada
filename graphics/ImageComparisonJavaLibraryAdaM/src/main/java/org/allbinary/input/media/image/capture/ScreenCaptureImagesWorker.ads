@@ -26,12 +26,14 @@ with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.a
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package; use org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package;
 with org.allbinary.input.media.image.capture.ScreenScavangerRobot_Package; use org.allbinary.input.media.image.capture.ScreenScavangerRobot_Package;
+with java.lang.Thread_Package; use java.lang.Thread_Package;
 
 package org.allbinary.input.media.image.capture.ScreenCaptureImagesWorker_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package BasicEventHandler_Package renames Standard.org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package Thread_Package renames Standard.java.lang.Thread_Package;
 
    type ScreenCaptureImagesWorker is tagged;
    type ScreenCaptureImagesWorker_Access is access all ScreenCaptureImagesWorker'Class;

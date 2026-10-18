@@ -37,7 +37,7 @@ package body org.allbinary.debug.DebugFactory_Package is
 
    function getInstance return DebugInterface_Access is
    begin
-        return NoDebug_Package.getInstance;
+        return DebugInterface_Access (NoDebug_Package.getInstance);
    end getInstance;
 
 end org.allbinary.debug.DebugFactory_Package;

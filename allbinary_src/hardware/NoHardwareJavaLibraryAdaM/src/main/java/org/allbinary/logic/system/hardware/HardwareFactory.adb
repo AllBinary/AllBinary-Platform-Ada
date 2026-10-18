@@ -20,7 +20,7 @@ package body org.allbinary.logic.system.hardware.HardwareFactory_Package is
    procedure Initialize_Fields (This : in out HardwareFactory'Class) is
    begin
       null;
-      This.SINGLETON := NoHardware_Package.getInstance;
+      This.SINGLETON := HardwareInterface_Access (NoHardware_Package.getInstance);
    end Initialize_Fields;
 
 

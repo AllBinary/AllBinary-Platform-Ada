@@ -60,7 +60,7 @@ package body views.admin.payment.gateway.GatewayView_Package is
       paymentGatewayInterface : PaymentGatewayInterface_Access;
    begin
         begin
-            paymentGatewayInterface := PaymentGatewayEntityFactory_Package.getInstance.getPaymentGatewayInterface (GatewayView'Class (This).getPaymentGatewayPrimaryKey.getStoreName, BasicPaymentTypeUtil_Package.getInstance.get (GatewayView'Class (This).getPaymentGatewayPrimaryKey.getName));
+            paymentGatewayInterface := PaymentGatewayInterface_Access (PaymentGatewayEntityFactory_Package.getInstance.getPaymentGatewayInterface (GatewayView'Class (This).getPaymentGatewayPrimaryKey.getStoreName, BasicPaymentTypeUtil_Package.getInstance.get (GatewayView'Class (This).getPaymentGatewayPrimaryKey.getName)));
             return PaymentGatewayComponent_Package.Create (GatewayView'Class (This).getTransformInfoInterface, paymentGatewayInterface).view;
         exception
             when Java_Occurrence : others =>

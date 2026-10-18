@@ -153,7 +153,7 @@ package body org.allbinary.business.user.commerce.inventory.basket.Basket_Packag
             size := itemArray'Length;
             for index in 0 .. (size) - 1 loop
                 product := Java_New_String (Java_Unbox (itemArray (index)));
-                itemInterface := inventoryEntity.getItem (product);
+                itemInterface := ItemInterface_Access (inventoryEntity.getItem (product));
                 productTotal := itemInterface.getPrice;
                 productTotal.multiply (Basket'Class (This).getNumberOf (product).intValue);
                 subTotal.add (productTotal.toString);

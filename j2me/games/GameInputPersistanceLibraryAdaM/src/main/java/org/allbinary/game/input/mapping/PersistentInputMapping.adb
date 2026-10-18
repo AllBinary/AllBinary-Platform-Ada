@@ -39,7 +39,7 @@ package body org.allbinary.game.input.mapping.PersistentInputMapping_Package is
       This.commonStrings := CommonStrings_Package.getInstance;
       This.enumerationUtil := EnumerationUtil_Package.getInstance;
       This.inputMapping := InputToGameKeyMapping_Package.Create;
-      This.inputMappingEventListenerInterface := NullInputMappingEventListener_Package.NULL_INPUT_MAPPING_EVENT_LISTENER;
+      This.inputMappingEventListenerInterface := InputMappingEventListenerInterface_Access (NullInputMappingEventListener_Package.NULL_INPUT_MAPPING_EVENT_LISTENER);
       
       This.inputMappingEvent := InputMappingEvent_Package.Create (PersistentInputMapping_Access'(This'Unchecked_Access));
    end Initialize_Fields;

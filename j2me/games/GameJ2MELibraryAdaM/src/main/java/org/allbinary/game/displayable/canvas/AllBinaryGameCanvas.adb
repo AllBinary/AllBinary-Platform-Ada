@@ -106,6 +106,7 @@ with org.allbinary.game.displayable.canvas.EndGamePaintable_Package; use org.all
 with org.allbinary.game.displayable.canvas.NullDemoPaintable_Package; use org.allbinary.game.displayable.canvas.NullDemoPaintable_Package;
 with org.allbinary.game.displayable.canvas.GameCanvasInputProcessor_Package; use org.allbinary.game.displayable.canvas.GameCanvasInputProcessor_Package;
 with org.allbinary.game.displayable.canvas.FormInputProcessor_Package; use org.allbinary.game.displayable.canvas.FormInputProcessor_Package;
+with java.lang.Thread_Package; use java.lang.Thread_Package;
 with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 
 package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package is
@@ -187,6 +188,8 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
    package GameTickTimeDelayHelperFactory_Package renames Standard.org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package BasicArrayListUtil_Package renames Standard.org.allbinary.util.BasicArrayListUtil_Package;
+   package Thread_Package renames Standard.java.lang.Thread_Package;
+   package Runnable_Package renames Standard.java.lang.Runnable_Package;
    procedure Initialize_Fields (This : in out AllBinaryGameCanvas'Class) is
    begin
       null;
@@ -262,9 +265,9 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
       This.gameKeyEventHandler := GameKeyEventHandler_Package.getInstance;
       This.gameBehavior := null;
       This.menuBehavior := null;
-      This.progressPaintable := ProgressCanvasFactory_Package.getLazyInstance;
+      This.progressPaintable := PaintableInterface_Access (ProgressCanvasFactory_Package.getLazyInstance);
       This.fontHeightP := 0;
-      This.gameCanvasStartListener := NullDemoPaintable_Package.NULL_DEMO_PAINTABLE;
+      This.gameCanvasStartListener := DemoPaintableInterface_Access (NullDemoPaintable_Package.NULL_DEMO_PAINTABLE);
       This.rawGameInputProcessor := InputProcessor_Access (GameCanvasInputProcessor_Package.Create (AllBinaryGameCanvas_Access'(This'Unchecked_Access)));
       This.rawInputProcessor := InputProcessor_Access (FormInputProcessor_Package.Create (AllBinaryGameCanvas_Access'(This'Unchecked_Access)));
       This.inputProcessor := AllBinaryGameCanvas'Class (This).getRawGameInputProcessor;
@@ -280,7 +283,7 @@ package body org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package i
    begin
         RunnableCanvas_Package.Initialize (This, commandListener, CanvasStrings_Package.getInstance.EMPTY_CHILD_NAME_LIST, True);
         Initialize_Fields (This);
-        This.highScoresHelper := highScoresFactoryInterface.createHighScoresHelper;
+        This.highScoresHelper := HighScoresHelperBaseInterface_Access (highScoresFactoryInterface.createHighScoresHelper);
         This.gameInitializationInterfaceFactoryInterface := gameInitializationInterfaceFactoryInterface;
         AllBinaryGameCanvas'Class (This).init (gameLayerManager, buffered);
         This.highScoresFactoryInterface := highScoresFactoryInterface;

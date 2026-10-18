@@ -133,7 +133,7 @@ package body admin.taghelpers.CategoryRequestHelper_Package is
                 parentCategoryNode := DomSearchHelper_Package.getNode (categoryData.PARENT, requestNode.getChildNodes);
                 categoryNode := DomSearchHelper_Package.getNode (categoryData.NAME, parentCategoryNode.getChildNodes);
                 This.categoryInterface := CategoryInterface_Access (StoreCategoryFactory_Package.Create (This.transformInfoInterface).getRootInstanceFromNode (categoryNode));
-                This.categoryInterface := This.categoryLoaderInterface.get (This.categoryInterface);
+                This.categoryInterface := CategoryInterface_Access (This.categoryLoaderInterface.get (This.categoryInterface));
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPER) then
                     This.categoryInterface.log;
                     This.logUtil.putF (To_Unbounded_String ("Loaded Parent Category"), CategoryRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("getXmlData()"));
@@ -176,13 +176,13 @@ package body admin.taghelpers.CategoryRequestHelper_Package is
         if (storeNameNode) /= (null) then
             storeName := DomNodeHelper_Package.getTextNodeValue (storeNameNode);
             if (storeName) /= (Null_Unbounded_String) then
-                storeFrontInterface := StoreFrontFactory_Package.getInstance (storeName);
+                storeFrontInterface := StoreFrontInterface_Access (StoreFrontFactory_Package.getInstance (storeName));
                 This.transformInfoInterface := TransformInfoInterface_Access (TransformInfoBasic_Package.Create (storeFrontInterface, This.hashMap, This.pageContext));
                 if (This.transformInfoInterface) = (null) then
                     Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("TransformInfo null")));
                 end if;
                 storeCategoryFactory := StoreCategoryFactory_Package.Create (This.transformInfoInterface);
-                This.categoryLoaderInterface := CategoryLoaderFactory_Package.getInstance (storeCategoryFactory);
+                This.categoryLoaderInterface := CategoryLoaderInterface_Access (CategoryLoaderFactory_Package.getInstance (storeCategoryFactory));
             else
                 Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Store Name Error: ") & storeName));
             end if;

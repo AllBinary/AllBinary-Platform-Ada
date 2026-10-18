@@ -47,7 +47,7 @@ package body org.allbinary.business.context.modules.storefront.statistics.invent
    begin
       Initialize_Fields (This);
         This.totalInventorySaleValueMoney := Money_Package.Create;
-        inventoryEntityInterface := InventoryEntityFactory_Package.getInstance.getInventoryEntityInstance;
+        inventoryEntityInterface := InventoryEntityInterface_Access (InventoryEntityFactory_Package.getInstance.getInventoryEntityInstance);
         itemVector := inventoryEntityInterface.getItems (storeFrontInterface);
         size := itemVector.size;
         for index in 0 .. (size) - 1 loop

@@ -94,7 +94,7 @@ package body org.allbinary.game.layer.pickup.PickupBehavior_Package is
       commonStrings : CommonStrings_Access;
    begin
         begin
-            pickedUpLayerInterfaceFactoryInterface := pickupLayerInterface.getPickedUpLayerInterfaceFactoryInterface;
+            pickedUpLayerInterfaceFactoryInterface := PickedUpLayerInterfaceFactoryInterface_Access (pickupLayerInterface.getPickedUpLayerInterfaceFactoryInterface);
             pickedUpLayerType := pickedUpLayerInterfaceFactoryInterface.getPickedUpLayerType;
             pickedUpLayerTypeFactory := PickedUpLayerTypeFactory_Package.getInstance;
             if ((((pickedUpLayerType) = (pickedUpLayerTypeFactory.BEAM)) or else ((pickedUpLayerType) = (pickedUpLayerTypeFactory.MINE))) or else ((pickedUpLayerType) = (pickedUpLayerTypeFactory.PROJECTILE))) or else ((pickedUpLayerType) = (pickedUpLayerTypeFactory.ENHANCEMENT)) then

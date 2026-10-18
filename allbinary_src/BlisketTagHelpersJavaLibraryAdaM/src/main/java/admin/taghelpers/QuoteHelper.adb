@@ -60,7 +60,7 @@ package body admin.taghelpers.QuoteHelper_Package is
    begin
       null;
       This.logUtil := LogUtil_Package.getInstance;
-      This.abeClientInformation := ServiceClientInformationInterfaceFactory_Package.getInstance;
+      This.abeClientInformation := AbeClientInformationInterface_Access (ServiceClientInformationInterfaceFactory_Package.getInstance);
       
       This.storeFrontInterface := null;
       
@@ -76,7 +76,7 @@ package body admin.taghelpers.QuoteHelper_Package is
       Initialize_Fields (This);
         storeName := Java_Unbox (hashMap.get (StoreFrontData_Package.getInstance.NAME));
         if (storeName) /= (Null_Unbounded_String) then
-            This.storeFrontInterface := StoreFrontFactory_Package.getInstance (storeName);
+            This.storeFrontInterface := StoreFrontInterface_Access (StoreFrontFactory_Package.getInstance (storeName));
         else
             This.storeFrontInterface := StoreFrontInterface_Access (StoreFront_Package.Create);
         end if;
@@ -102,7 +102,7 @@ package body admin.taghelpers.QuoteHelper_Package is
       emailInfo : EmailInfo_Access;
       userEmailEventHandler : UserEmailEventHandler_Access;
    begin
-        user := UserEntityFactory_Package.getInstance.getUser (quoteRequest.getUserName);
+        user := UserInterface_Access (UserEntityFactory_Package.getInstance.getUser (quoteRequest.getUserName));
         userEmailSubject := To_Unbounded_String ("Quote Request Receipt");
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (To_Unbounded_String ("This is just a verification email. "));

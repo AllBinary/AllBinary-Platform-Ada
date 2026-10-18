@@ -60,7 +60,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellPositio
       geographicMapCompositeInterface : GeographicMapCompositeInterface_Access;
       geographicMapInterface : BasicGeographicMap_Access;
    begin
-        if (gameCanvasInterface) /= (SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION) then
+        if (Java_Object_Access (gameCanvasInterface)) /= (Java_Object_Access (SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION)) then
             geographicMapCompositeInterface := GeographicMapCompositeInterface_Access (gameCanvasInterface.getLayerManager);
             geographicMapInterface := geographicMapCompositeInterface.getGeographicMapInterface (0);
             This.newGeographicMapCellPosition := geographicMapInterface.getCellPositionAtXY ((layer.getXP) + (layer.getHalfWidth), (layer.getYP) + (layer.getHalfHeight));

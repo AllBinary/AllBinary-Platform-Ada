@@ -37,7 +37,7 @@ package body org.allbinary.game.init.BasicBuildGameInitializerFactory_Package is
 
    function getInstance (This : in out BasicBuildGameInitializerFactory) return GameInitializationInterface_Access is
    begin
-        return BaseGameInitialization_Package.NULL_BASE_GAME_INITIALIZATION;
+        return GameInitializationInterface_Access (BaseGameInitialization_Package.NULL_BASE_GAME_INITIALIZATION);
    end getInstance;
 
 begin

@@ -72,7 +72,7 @@ package body org.allbinary.input.automation.actions.script.condition.ColorAtActi
    procedure set (This : in out ColorAtActionScriptConditionJPanel) is
       colorRangeInterface : ColorRangeInterface_Access;
    begin
-        colorRangeInterface := This.colorAtActionScriptConditionInterface.getColorRangeInterface;
+        colorRangeInterface := ColorRangeInterface_Access (This.colorAtActionScriptConditionInterface.getColorRangeInterface);
         ColorAtActionScriptConditionJPanel'Class (This).getMinRedJTextField.setText (To_Unbounded_String (Java_Image (colorRangeInterface.getMinRed)));
         ColorAtActionScriptConditionJPanel'Class (This).getMaxRedJTextField.setText (To_Unbounded_String (Java_Image (colorRangeInterface.getMaxRed)));
         ColorAtActionScriptConditionJPanel'Class (This).getMinGreenJTextField.setText (To_Unbounded_String (Java_Image (colorRangeInterface.getMinGreen)));
@@ -89,7 +89,7 @@ package body org.allbinary.input.automation.actions.script.condition.ColorAtActi
       xString : Unbounded_String;
       yString : Unbounded_String;
    begin
-        colorRangeInterface := This.colorAtActionScriptConditionInterface.getColorRangeInterface;
+        colorRangeInterface := ColorRangeInterface_Access (This.colorAtActionScriptConditionInterface.getColorRangeInterface);
         colorRangeInterface.setMinRed (To_Unbounded_String (Java_Image (ColorAtActionScriptConditionJPanel'Class (This).getMinRedJTextField.getText)).intValue);
         colorRangeInterface.setMaxRed (To_Unbounded_String (Java_Image (ColorAtActionScriptConditionJPanel'Class (This).getMaxRedJTextField.getText)).intValue);
         colorRangeInterface.setMinGreen (To_Unbounded_String (Java_Image (ColorAtActionScriptConditionJPanel'Class (This).getMinGreenJTextField.getText)).intValue);

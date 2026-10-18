@@ -73,7 +73,7 @@ package body org.allbinary.business.user.modules.configuration.UserConfiguration
         abPath := AbPath_Package.Create ((URLGLOBALS_Package.getMainPath) + (FREEBLISKET_PATH_GLOBALS_Package.getInstance.USERCONFIGURATIONPATH), Java_Image (UserConfigurationInterfaceFactory_Package.configurationName) & userRole.toString & Java_Image (AbPathData_Package.getInstance.EXTENSION_SEP) & Java_Image (UserConfigurationData_Package.UNCRYPTED_EXTENSION));
         documentString := CryptFileReader_Package.Create (UserConfigurationData_Package.UNCRYPTED_EXTENSION, UserConfigurationData_Package.ENCRYPTED_EXTENSION).get (abPath);
         document := DomDocumentHelper_Package.create (documentString);
-        return UserConfigurationInterfaceFactory_Package.getInstance (document);
+        return UserConfigurationInterface_Access (UserConfigurationInterfaceFactory_Package.getInstance (document));
    end getInstance;
 
    --  throws Exception

@@ -32,6 +32,7 @@ package org.allbinary.game.midlet.CreateGameRunnable_Package is
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package ABHashtable_Package renames Standard.org.allbinary.util.ABHashtable_Package;
+   package Runnable_Package renames Standard.java.lang.Runnable_Package;
 
    type CreateGameRunnable is tagged;
    type CreateGameRunnable_Access is access all CreateGameRunnable'Class;

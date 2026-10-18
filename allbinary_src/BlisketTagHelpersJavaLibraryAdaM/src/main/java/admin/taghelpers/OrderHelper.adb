@@ -68,7 +68,7 @@ package body admin.taghelpers.OrderHelper_Package is
         This.request := HttpServletRequest_Access (pageContext.getRequest);
         storeName := Java_Unbox (propertiesHashMap.get (StoreFrontData_Package.getInstance.NAME));
         if not (StringValidationUtil_Package.getInstance.isEmpty (storeName)) then
-            This.storeFrontInterface := StoreFrontFactory_Package.getInstance (storeName);
+            This.storeFrontInterface := StoreFrontInterface_Access (StoreFrontFactory_Package.getInstance (storeName));
         end if;
         This.weblisketSession := WeblisketSession_Package.Create (This.propertiesHashMap, This.pageContext);
    end Initialize;
@@ -93,7 +93,7 @@ package body admin.taghelpers.OrderHelper_Package is
    begin
         begin
             paymentGatewayBoolean := False;
-            orderInterface := This.weblisketSession.getOrder;
+            orderInterface := OrderInterface_Access (This.weblisketSession.getOrder);
             requestPaymentGateway := Java_Unbox (This.request.getParameter (PaymentGatewayData_Package.NAME.toString));
             if not (StringValidationUtil_Package.getInstance.isEmpty (requestPaymentGateway)) then
                 This.weblisketSession.setPaymentMethod (requestPaymentGateway);
@@ -128,7 +128,7 @@ package body admin.taghelpers.OrderHelper_Package is
                 stringBuffer := StringMaker_Package.Create;
                 stringBuffer.append (To_Unbounded_String ("Failed to set PaymentGateway for Order: "));
                 begin
-                    orderInterface := This.weblisketSession.getOrder;
+                    orderInterface := OrderInterface_Access (This.weblisketSession.getOrder);
                     if (orderInterface) /= (null) then
                         stringBuffer.append (orderInterface.getId);
                         stringBuffer.append (To_Unbounded_String (" to: "));
@@ -156,7 +156,7 @@ package body admin.taghelpers.OrderHelper_Package is
       error : Unbounded_String;
    begin
         begin
-            order := This.weblisketSession.getOrder;
+            order := OrderInterface_Access (This.weblisketSession.getOrder);
             order.setStoreName (This.storeFrontInterface.getName);
             result := OrderProcessorUtil_Package.getInstance.process (This.weblisketSession.getUserName, Order_Access (order));
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then

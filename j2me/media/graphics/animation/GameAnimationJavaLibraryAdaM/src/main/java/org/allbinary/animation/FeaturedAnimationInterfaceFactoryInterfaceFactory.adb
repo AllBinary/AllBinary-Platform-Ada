@@ -130,8 +130,8 @@ package body org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceF
             featureInterface := FeatureResourceAnimationInterfaceFactoryInterface_Access (list.objectArray (index));
             if featureInterface.isFeature then
                 resourceTypeAvailableList.add (Java_Object_Access (featureInterface));
-                animationInterfaceFactoryInterface := featureInterface.getBasicAnimationInterfaceFactoryInstance (resource);
-                if (animationInterfaceFactoryInterface) /= (NullAnimationFactory_Package.NULL_NOT_FOR_USE_ANIMATION_FACTORY) then
+                animationInterfaceFactoryInterface := BasicAnimationInterfaceFactoryInterface_Access (featureInterface.getBasicAnimationInterfaceFactoryInstance (resource));
+                if (Java_Object_Access (animationInterfaceFactoryInterface)) /= (Java_Object_Access (NullAnimationFactory_Package.NULL_NOT_FOR_USE_ANIMATION_FACTORY)) then
                     return animationInterfaceFactoryInterface;
                 end if;
             end if;
@@ -159,7 +159,7 @@ package body org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceF
                 stringBuffer.append (CommonSeps_Package.getInstance.NEW_LINE);
                 featureInterface := FeatureResourceAnimationInterfaceFactoryInterface_Access (list.objectArray (index));
                 if featureInterface.isFeature then
-                    stringBuffer.append (StringUtil_Package.getInstance.toString (featureInterface));
+                    stringBuffer.append (StringUtil_Package.getInstance.toString (Java_Object_Access (featureInterface)));
                     stringBuffer.append (HAS_KEY);
                     stringBuffer.appendint (featureInterface.getHashtable.size);
                     stringBuffer.append (RESOURCES_LABEL);

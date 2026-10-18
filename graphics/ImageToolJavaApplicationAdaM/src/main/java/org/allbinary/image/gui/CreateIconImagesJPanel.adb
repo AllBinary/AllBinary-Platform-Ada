@@ -21,6 +21,7 @@ with org.allbinary.media.image.ImagePersistanceUtil_Package; use org.allbinary.m
 with org.allbinary.media.image.ImageUtil_Package; use org.allbinary.media.image.ImageUtil_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with java.lang.Thread_Package; use java.lang.Thread_Package;
 
 package body org.allbinary.image.gui.CreateIconImagesJPanel_Package is
 
@@ -32,6 +33,7 @@ package body org.allbinary.image.gui.CreateIconImagesJPanel_Package is
    package ImageUtil_Package renames Standard.org.allbinary.media.image.ImageUtil_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package Thread_Package renames Standard.java.lang.Thread_Package;
    procedure Initialize_Fields (This : in out CreateIconImagesJPanel'Class) is
    begin
       null;

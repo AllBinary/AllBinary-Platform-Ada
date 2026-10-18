@@ -39,7 +39,7 @@ package org.allbinary.business.user.modules.customer.subscriber.SubscriberUser_P
    type SubscriberUser_Access_Array_Access_Array is array (Natural range <>) of SubscriberUser_Access_Array_Access;
    type SubscriberUser_Access_Array_Access_Array_Access is access all SubscriberUser_Access_Array_Access_Array;
 
-   type SubscriberUser is new User with record
+   type SubscriberUser is new User_Package.User with record
       subscription : Subscription_Access;
    end record;
 

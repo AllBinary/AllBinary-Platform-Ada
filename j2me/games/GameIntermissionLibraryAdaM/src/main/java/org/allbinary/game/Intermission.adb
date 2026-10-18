@@ -22,7 +22,7 @@ package body org.allbinary.game.Intermission_Package is
       null;
       This.enabled := False;
       This.timeElapsedHelper := TimeDelayHelper_Package.Create (0);
-      This.intermissionEnableListener := NullIntermissionEnableListener_Package.getInstance;
+      This.intermissionEnableListener := IntermissionEnableListenerInterface_Access (NullIntermissionEnableListener_Package.getInstance);
    end Initialize_Fields;
 
 

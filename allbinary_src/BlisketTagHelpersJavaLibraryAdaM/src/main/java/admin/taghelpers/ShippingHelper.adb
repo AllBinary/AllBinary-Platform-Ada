@@ -48,7 +48,7 @@ package body admin.taghelpers.ShippingHelper_Package is
         This.request := HttpServletRequest_Access (pageContext.getRequest);
         storeName := Java_Unbox (hashMap.get (StoreFrontData_Package.getInstance.NAME));
         if (storeName) /= (Null_Unbounded_String) then
-            This.storeFrontInterface := StoreFrontFactory_Package.getInstance (storeName);
+            This.storeFrontInterface := StoreFrontInterface_Access (StoreFrontFactory_Package.getInstance (storeName));
         end if;
         This.weblisketSession := WeblisketSession_Package.Create (hashMap, pageContext);
         ShippingHelper'Class (This).getFormData;
@@ -73,7 +73,7 @@ package body admin.taghelpers.ShippingHelper_Package is
    begin
         begin
             success := To_Unbounded_String ("Successfully Set Shipping Type");
-            order := This.weblisketSession.getOrder;
+            order := OrderInterface_Access (This.weblisketSession.getOrder);
             order.setShippingMethod (This.shippingType);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
                 This.logUtil.putF (success, ShippingHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("setShippingType()"));

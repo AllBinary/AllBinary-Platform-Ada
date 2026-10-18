@@ -99,7 +99,7 @@ package body org.allbinary.game.part.CountedLayersHudPaintable_Package is
         for index in This.startIndex .. (size) - 1 loop
             countedLayerInterfaceFactory := CountedLayerInterfaceFactoryPart_Access (This.partInterfaceArray (index));
             if (countedLayerInterfaceFactory.getTotal) > (0) then
-                pickedUpLayerInterfaceFactoryInterface := countedLayerInterfaceFactory.getCountedPickedUpLayerInterfaceFactory;
+                pickedUpLayerInterfaceFactoryInterface := PickedUpLayerInterfaceFactoryInterface_Access (countedLayerInterfaceFactory.getCountedPickedUpLayerInterfaceFactory);
                 layerInterface := pickedUpLayerInterfaceFactoryInterface.getIconLayer;
                 y := (40) + (((count) * (This.height)));
                 layerInterface.setPosition (widthEdge, y, layerInterface.getZP);

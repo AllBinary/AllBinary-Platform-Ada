@@ -20,9 +20,11 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+with java.lang.Thread_Package; use java.lang.Thread_Package;
 
 package org.allbinary.thread.NullThread_Package is
 
+   package Thread_Package renames Standard.java.lang.Thread_Package;
 
    type NullThread is tagged;
    type NullThread_Access is access all NullThread'Class;

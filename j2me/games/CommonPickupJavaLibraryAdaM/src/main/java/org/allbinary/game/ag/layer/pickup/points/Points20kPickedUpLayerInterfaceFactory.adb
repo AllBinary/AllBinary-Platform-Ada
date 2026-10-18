@@ -61,7 +61,7 @@ package body org.allbinary.game.ag.layer.pickup.points.Points20kPickedUpLayerInt
 
    function getInstance return PickedUpLayerInterfaceFactoryInterface_Access is
    begin
-        return Points20kPickedUpLayerInterfaceFactory_Package.pickedUpLayerInterfaceFactoryInterface;
+        return PickedUpLayerInterfaceFactoryInterface_Access (Points20kPickedUpLayerInterfaceFactory_Package.pickedUpLayerInterfaceFactoryInterface);
    end getInstance;
 
    --  throws Exception
@@ -73,7 +73,7 @@ package body org.allbinary.game.ag.layer.pickup.points.Points20kPickedUpLayerInt
 
 begin
    null;
-   pickedUpLayerInterfaceFactoryInterface := CountedPickedUpLayerInterfaceFactory_Package.NULL_COUNTED_PICKUP_LAYER_FACTORY;
+   pickedUpLayerInterfaceFactoryInterface := PickedUpLayerInterfaceFactoryInterface_Access (CountedPickedUpLayerInterfaceFactory_Package.NULL_COUNTED_PICKUP_LAYER_FACTORY);
 
 end org.allbinary.game.ag.layer.pickup.points.Points20kPickedUpLayerInterfaceFactory_Package;
 

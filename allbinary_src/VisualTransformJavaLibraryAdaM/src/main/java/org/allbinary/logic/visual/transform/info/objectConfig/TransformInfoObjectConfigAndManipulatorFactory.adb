@@ -60,7 +60,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
    begin
         begin
             data := CryptFileReader_Package.Create (TransformInfoObjectConfigData_Package.getInstance.UNCRYPTED_EXTENSION, TransformInfoObjectConfigData_Package.getInstance.ENCRYPTED_EXTENSION).get (objectConfigFileAbPath);
-            return TransformInfoObjectConfigAndManipulatorFactory'Class (This).getInstance (abeClientInformation, transformInfoInterface, DomDocumentHelper_Package.create (data));
+            return TransformInfoObjectConfigInterface_Access (TransformInfoObjectConfigAndManipulatorFactory'Class (This).getInstance (abeClientInformation, transformInfoInterface, DomDocumentHelper_Package.create (data)));
         exception
             when Java_Occurrence : others =>
                 declare

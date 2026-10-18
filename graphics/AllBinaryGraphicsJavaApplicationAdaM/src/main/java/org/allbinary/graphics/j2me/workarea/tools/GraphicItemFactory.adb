@@ -78,7 +78,7 @@ package body org.allbinary.graphics.j2me.workarea.tools.GraphicItemFactory_Packa
             null;
         end if;
         for index in 0 .. (numberOfItems) - 1 loop
-            graphicItem := GraphicItemBuilder_Package.getInstance (Node_Access (graphicItemNodeList.get (index)));
+            graphicItem := GraphicItemInterface_Access (GraphicItemBuilder_Package.getInstance (Node_Access (graphicItemNodeList.get (index))));
             graphicItemHashMap.put (graphicItem.getTreeNode, graphicItem);
         end loop;
         return graphicItemHashMap;

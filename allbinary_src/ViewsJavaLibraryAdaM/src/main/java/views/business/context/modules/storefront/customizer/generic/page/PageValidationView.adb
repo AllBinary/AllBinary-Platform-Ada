@@ -92,7 +92,7 @@ package body views.business.context.modules.storefront.customizer.generic_Id.pag
                 This.logUtil.putF (This.commonStrings.START, PageValidationView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
             end if;
             transformInfoEntityInterface := TransformInfoEntityBuilder_Package.getInstance;
-            pageObjectConfigInterface := PageValidationView'Class (This).getTransformInfoInterface.getObjectConfigInterface;
+            pageObjectConfigInterface := TransformInfoObjectConfigInterface_Access (PageValidationView'Class (This).getTransformInfoInterface.getObjectConfigInterface);
             allViewsToBeModifiedVector := pageObjectConfigInterface.getGroupTransforms;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
                 This.logUtil.putF (To_Unbounded_String ("Views To Be Modified: ") & Java_Image (allViewsToBeModifiedVector.size), PageValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("get(transformInfoInterface)"));
@@ -109,7 +109,7 @@ package body views.business.context.modules.storefront.customizer.generic_Id.pag
                     This.logUtil.putF (stringBuffer.toString, PageValidationView_Access'(This'Unchecked_Access), To_Unbounded_String ("insert()"));
                 end if;
                 httpTransformInfoInterface := TransformInfoHttpInterface_Access (PageValidationView'Class (This).getTransformInfoInterface);
-                specifiedTransformInfoInterface := transformInfoEntityInterface.get (viewNameOfViewToBeModified, httpTransformInfoInterface.getPropertiesHashMap, httpTransformInfoInterface.getPageContext);
+                specifiedTransformInfoInterface := TransformInfoInterface_Access (transformInfoEntityInterface.get (viewNameOfViewToBeModified, httpTransformInfoInterface.getPropertiesHashMap, httpTransformInfoInterface.getPageContext));
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
                     stringBuffer := StringMaker_Package.Create;
                     stringBuffer.append (PageValidationView'Class (This).getTransformInfoInterface.getName);
@@ -176,14 +176,14 @@ package body views.business.context.modules.storefront.customizer.generic_Id.pag
         begin
             stringBuffer := StringMaker_Package.Create;
             transformInfoEntityInterface := TransformInfoEntityBuilder_Package.getInstance;
-            objectConfig := PageValidationView'Class (This).getTransformInfoInterface.getObjectConfigInterface;
+            objectConfig := TransformInfoObjectConfigInterface_Access (PageValidationView'Class (This).getTransformInfoInterface.getObjectConfigInterface);
             httpTransformInfoInterface := TransformInfoHttpInterface_Access (PageValidationView'Class (This).getTransformInfoInterface);
             allViewsToBeModifiedVector := objectConfig.getGroupTransforms;
             size := allViewsToBeModifiedVector.size;
             for index in 0 .. (size) - 1 loop
                 transformInfoInterface := TransformInfo_Access (allViewsToBeModifiedVector.get (index));
                 viewNameOfViewToBeModified := transformInfoInterface.getName;
-                specifiedTransformInfoInterface := transformInfoEntityInterface.get (viewNameOfViewToBeModified, httpTransformInfoInterface.getPropertiesHashMap, httpTransformInfoInterface.getPageContext);
+                specifiedTransformInfoInterface := TransformInfoInterface_Access (transformInfoEntityInterface.get (viewNameOfViewToBeModified, httpTransformInfoInterface.getPropertiesHashMap, httpTransformInfoInterface.getPageContext));
                 hashMap := StdUtil_Package.getInstance.createHashMap;
                 title := specifiedTransformInfoInterface.getName.substring (PageValidationView'Class (This).getTransformInfoInterface.getStoreName.length);
                 if (Java_Compare_To (title, To_Unbounded_String ("index"))) = (0) then

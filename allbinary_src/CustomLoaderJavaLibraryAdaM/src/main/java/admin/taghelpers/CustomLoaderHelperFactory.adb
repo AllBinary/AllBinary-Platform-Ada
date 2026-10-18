@@ -46,7 +46,7 @@ package body admin.taghelpers.CustomLoaderHelperFactory_Package is
       pageContext : constant PageContext_Access := PageContext_Access (pageContext_Param);
       abeClientInformation : AbeClientInformationInterface_Access;
    begin
-        abeClientInformation := ServiceClientInformationInterfaceFactory_Package.getInstance;
+        abeClientInformation := AbeClientInformationInterface_Access (ServiceClientInformationInterfaceFactory_Package.getInstance);
         return HelperFactory_Package.getInstance (abeClientInformation, FACTORYNAME, CLASSNAME, hashMap, pageContext);
    end getInstance;
 

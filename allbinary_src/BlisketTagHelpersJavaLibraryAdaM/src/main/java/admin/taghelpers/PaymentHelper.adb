@@ -72,7 +72,7 @@ package body admin.taghelpers.PaymentHelper_Package is
         begin
             success := To_Unbounded_String ("Successfully Added Payment");
             paymentEntity := PaymentEntityFactory_Package.getInstance.getPaymentEntityInstance;
-            paymentInterface := PaymentFactory_Package.getInstance (This.request);
+            paymentInterface := PaymentInterface_Access (PaymentFactory_Package.getInstance (This.request));
             paymentEntity.add (This.weblisketSession.getUserName, paymentInterface);
             paymentEntity.setDefault (This.weblisketSession.getUserName, paymentEntity.getLastId (This.weblisketSession.getUserName));
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
@@ -130,7 +130,7 @@ package body admin.taghelpers.PaymentHelper_Package is
             success := To_Unbounded_String ("Successfully Removed Payment");
             paymentEntity := PaymentEntityFactory_Package.getInstance.getPaymentEntityInstance;
             paymentEntity.remove (This.weblisketSession.getUserName, This.value);
-            paymentInterface := paymentEntity.getDefault (This.weblisketSession.getUserName);
+            paymentInterface := PaymentInterface_Access (paymentEntity.getDefault (This.weblisketSession.getUserName));
             if (paymentInterface) = (null) then
                 paymentEntity.setDefault (This.weblisketSession.getUserName, paymentEntity.getLastId (This.weblisketSession.getUserName));
             end if;

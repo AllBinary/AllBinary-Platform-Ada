@@ -114,7 +114,7 @@ package body org.allbinary.game.ag.ai.scroller.PacePatrolAI_Package is
         size := This.trackingList.size;
         for index in 0 .. (size) - 1 loop
             lastTrackingEvent := TrackingEvent_Access (This.trackingList.get (0));
-            lastTrackingLayerInterface := lastTrackingEvent.getLayerInterface;
+            lastTrackingLayerInterface := LayerInterface_Access (lastTrackingEvent.getLayerInterface);
             x := lastTrackingLayerInterface.getXP;
             y := lastTrackingLayerInterface.getYP;
             yDistance := ((ownerLayerInterface.getYP) - (y)) - (ownerLayerInterface.getHeight);

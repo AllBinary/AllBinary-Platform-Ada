@@ -25,6 +25,7 @@ with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 
 package org.allbinary.thread.PrimaryThreadPool_Package is
 
+   package Runnable_Package renames Standard.java.lang.Runnable_Package;
 
    type PrimaryThreadPool is tagged;
    type PrimaryThreadPool_Access is access all PrimaryThreadPool'Class;

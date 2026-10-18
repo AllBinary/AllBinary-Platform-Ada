@@ -53,9 +53,9 @@ package body org.allbinary.game.layer.unit.DecalAnimationInterfaceFactory_Packag
    begin
         animationInterfaceFactoryInterface := null;
         if (basicColor) = (BasicColorFactory_Package.getInstance.RED) then
-            animationInterfaceFactoryInterface := FeaturedAnimationInterfaceFactoryInterfaceFactory_Package.getInstance.get (basicGameResources.RESOURCE);
+            animationInterfaceFactoryInterface := AnimationInterfaceFactoryInterface_Access (FeaturedAnimationInterfaceFactoryInterfaceFactory_Package.getInstance.get (basicGameResources.RESOURCE));
         else
-            animationInterfaceFactoryInterface := NullRotationAnimationFactory_Package.getFactoryInstance;
+            animationInterfaceFactoryInterface := AnimationInterfaceFactoryInterface_Access (NullRotationAnimationFactory_Package.getFactoryInstance);
         end if;
         return animationInterfaceFactoryInterface;
    end getAnimationFactory;

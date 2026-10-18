@@ -46,6 +46,7 @@ package org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
    package PropertiesJPanel_Package renames Standard.org.allbinary.graphics.j2me.workarea.properties.PropertiesJPanel_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package Runnable_Package renames Standard.java.lang.Runnable_Package;
 
    type WorkAreaJPanel is tagged;
    type WorkAreaJPanel_Access is access all WorkAreaJPanel'Class;

@@ -24,7 +24,7 @@ package body taghelpers.StoreTagWorkFlowHelper_Package is
    begin
       null;
       This.logUtil := LogUtil_Package.getInstance;
-      This.abeClientInformation := ServiceClientInformationInterfaceFactory_Package.getInstance;
+      This.abeClientInformation := AbeClientInformationInterface_Access (ServiceClientInformationInterfaceFactory_Package.getInstance);
       
    end Initialize_Fields;
 
@@ -38,7 +38,7 @@ package body taghelpers.StoreTagWorkFlowHelper_Package is
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPER) then
             This.logUtil.putF (To_Unbounded_String ("Properties: ") & hashMap.toString, StoreTagWorkFlowHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("StoreTagWorkFlowHelper()"));
         end if;
-        This.storeWorkFlowInterface := StoreTagWorkFlowFactory_Package.getInstance.getInstance (This.abeClientInformation, hashMap, pageContext);
+        This.storeWorkFlowInterface := StoreWorkFlowInterface_Access (StoreTagWorkFlowFactory_Package.getInstance.getInstance (This.abeClientInformation, hashMap, pageContext));
    end Initialize;
 
    function Create (hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return StoreTagWorkFlowHelper_Access is

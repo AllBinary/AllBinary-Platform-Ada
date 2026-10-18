@@ -48,7 +48,7 @@ package org.allbinary.business.category.store.theme.StoreThemeCategory_Package i
    type StoreThemeCategory_Access_Array_Access_Array is array (Natural range <>) of StoreThemeCategory_Access_Array_Access;
    type StoreThemeCategory_Access_Array_Access_Array_Access is access all StoreThemeCategory_Access_Array_Access_Array;
 
-   type StoreThemeCategory is new Category and StoreThemeCategoryInterface with record
+   type StoreThemeCategory is new Category_Package.Category and StoreThemeCategoryInterface with record
       transformInfoInterface : TransformInfoInterface_Access;
       themeVector : BasicArrayList_Access;
    end record;

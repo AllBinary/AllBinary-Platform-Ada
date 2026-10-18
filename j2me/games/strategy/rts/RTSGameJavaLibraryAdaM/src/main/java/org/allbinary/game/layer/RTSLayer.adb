@@ -92,8 +92,8 @@ package body org.allbinary.game.layer.RTSLayer_Package is
       nullAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access;
       nullIndexedAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access;
    begin
-        nullAnimationInterfaceFactoryInterface := NullAnimationFactory_Package.getFactoryInstance;
-        nullIndexedAnimationInterfaceFactoryInterface := NullIndexedAnimationFactory_Package.getFactoryInstance;
+        nullAnimationInterfaceFactoryInterface := AnimationInterfaceFactoryInterface_Access (NullAnimationFactory_Package.getFactoryInstance);
+        nullIndexedAnimationInterfaceFactoryInterface := AnimationInterfaceFactoryInterface_Access (NullIndexedAnimationFactory_Package.getFactoryInstance);
         return RTSLayer_Package.Create (RemoteInfo_Package.REMOTE_INFO, GroupFactory_Package.getInstance.NULL_GROUP_ARRAY, StringUtil_Package.getInstance.EMPTY_STRING, StringUtil_Package.getInstance.EMPTY_STRING, Health_Package.NULL_HEALTH, NullRTSFormInputFactory_Package.getInstance, nullAnimationInterfaceFactoryInterface, nullIndexedAnimationInterfaceFactoryInterface, nullAnimationInterfaceFactoryInterface, nullAnimationInterfaceFactoryInterface, nullIndexedAnimationInterfaceFactoryInterface, NullIndexedAnimationFactory_Package.getFactoryInstance, RectangleFactory_Package.SINGLETON, 0, 0, TileLayerPositionIntoViewPosition_Package.Create);
    end createSimulatedInstance;
 

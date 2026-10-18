@@ -29,7 +29,7 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidTitleProgr
       This.dismissTitleProgressBarRunnable_Var := DismissTitleProgressBarRunnable_Package.Create (AndroidTitleProgressBar_Access'(This'Unchecked_Access));
       This.progressDialogPortionSetProgressRunnable := TitleProgressBarPortionSetProgressRunnable_Package.Create (AndroidTitleProgressBar_Access'(This'Unchecked_Access));
       This.progressDialogSetProgressRunnable := TitleProgressBarSetProgressRunnable_Package.Create (AndroidTitleProgressBar_Access'(This'Unchecked_Access));
-      This.progressActivity := NullProgressActivity_Package.NULL_PROGRESS_ACTIVITY;
+      This.progressActivity := ProgressActivityInterface_Access (NullProgressActivity_Package.NULL_PROGRESS_ACTIVITY);
       This.portion := 0;
    end Initialize_Fields;
 
@@ -57,7 +57,7 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidTitleProgr
 
    function isInitialized (This : in out AndroidTitleProgressBar) return Boolean is
    begin
-        if (This.progressActivity) /= (NullProgressActivity_Package.NULL_PROGRESS_ACTIVITY) then
+        if (Java_Object_Access (This.progressActivity)) /= (Java_Object_Access (NullProgressActivity_Package.NULL_PROGRESS_ACTIVITY)) then
             return True;
         else
             return False;

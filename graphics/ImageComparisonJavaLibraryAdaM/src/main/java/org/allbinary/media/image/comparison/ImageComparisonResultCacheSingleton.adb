@@ -71,7 +71,7 @@ package body org.allbinary.media.image.comparison.ImageComparisonResultCacheSing
 
    function getInstance return CacheInterface_Access is
    begin
-        return ImageComparisonResultCacheSingleton_Package.cacheInterface;
+        return CacheInterface_Access (ImageComparisonResultCacheSingleton_Package.cacheInterface);
    end getInstance;
 
 begin

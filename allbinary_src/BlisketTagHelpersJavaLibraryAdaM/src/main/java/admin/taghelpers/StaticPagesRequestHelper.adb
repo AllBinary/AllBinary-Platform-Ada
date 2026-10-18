@@ -62,7 +62,7 @@ package body admin.taghelpers.StaticPagesRequestHelper_Package is
    begin
       null;
       This.logUtil := LogUtil_Package.getInstance;
-      This.abeClientInformation := ServiceClientInformationInterfaceFactory_Package.getInstance;
+      This.abeClientInformation := AbeClientInformationInterface_Access (ServiceClientInformationInterfaceFactory_Package.getInstance);
       
       This.storeName := Null_Unbounded_String;
       This.searchParams := null;
@@ -110,7 +110,7 @@ package body admin.taghelpers.StaticPagesRequestHelper_Package is
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
                 This.logUtil.putF (To_Unbounded_String ("Generated Static Pages Notification Email"), StaticPagesRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("email"));
             end if;
-            storeFrontInterface := StoreFrontFactory_Package.getInstance (This.storeName);
+            storeFrontInterface := StoreFrontInterface_Access (StoreFrontFactory_Package.getInstance (This.storeName));
             adminEmailSubject := To_Unbounded_String ("Generated Static Pages Email Notification");
             adminEmailTextBody := To_Unbounded_String ("Generated static pages for store: ") & This.storeName;
             adminBasicEmailInfo := BasicEmailInfo_Access (AdminEmailInfo_Package.Create (adminEmailSubject, adminEmailTextBody));
@@ -170,7 +170,7 @@ package body admin.taghelpers.StaticPagesRequestHelper_Package is
       error : Unbounded_String;
    begin
         begin
-            storeFrontInterface := StoreFrontFactory_Package.getInstance (This.storeName);
+            storeFrontInterface := StoreFrontInterface_Access (StoreFrontFactory_Package.getInstance (This.storeName));
             fromAbPath := AbPath_Package.Create ((storeFrontInterface.getTestHtmlPath) + (storeFrontInterface.getStaticPath), StringUtil_Package.getInstance.EMPTY_STRING);
             toAbPath := AbPath_Package.Create (Java_Image (URLGLOBALS_Package.getWebappPath) & storeFrontInterface.getName & Java_Image (AbPathData_Package.getInstance.SEPARATOR) & Java_Image (storeFrontInterface.getStaticPath), StringUtil_Package.getInstance.EMPTY_STRING);
             FileUtil_Package.getInstance.copy (fromAbPath, toAbPath);

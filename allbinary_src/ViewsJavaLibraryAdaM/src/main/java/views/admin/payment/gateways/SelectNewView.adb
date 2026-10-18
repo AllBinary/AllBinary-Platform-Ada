@@ -55,7 +55,7 @@ package body views.admin.payment.gateways.SelectNewView_Package is
       allGatewaysLessExisting : BasicArrayList_Access;
    begin
         begin
-            paymentGatewayEntityInterface := PaymentGatewayEntityFactory_Package.getInstance;
+            paymentGatewayEntityInterface := PaymentGatewayEntityInterface_Access (PaymentGatewayEntityFactory_Package.getInstance);
             existingGateways := paymentGatewayEntityInterface.findPaymentTypeVectorByStore (SelectNewView'Class (This).getPaymentGatewayPrimaryKey.getStoreName);
             allGatewaysLessExisting := BasicPaymentTypeUtil_Package.getInstance.difference (existingGateways);
             return PaymentGatewaysView_Package.Create (SelectNewView'Class (This).getTransformInfoInterface, allGatewaysLessExisting).view;

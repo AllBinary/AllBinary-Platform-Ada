@@ -32,7 +32,7 @@ package org.allbinary.game.input.PCGameKey_Package is
    type PCGameKey_Access_Array_Access_Array is array (Natural range <>) of PCGameKey_Access_Array_Access;
    type PCGameKey_Access_Array_Access_Array_Access is access all PCGameKey_Access_Array_Access_Array;
 
-   type PCGameKey is new Input with null record;
+   type PCGameKey is new Input_Package.Input with null record;
 
    procedure Initialize (This : in out PCGameKey'Class; keyCode : Integer; name : Unbounded_String);
    function Create (keyCode : Integer; name : Unbounded_String) return PCGameKey_Access;

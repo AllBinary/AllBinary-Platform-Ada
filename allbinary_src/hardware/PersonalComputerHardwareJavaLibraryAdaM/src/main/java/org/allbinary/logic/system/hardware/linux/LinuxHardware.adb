@@ -181,7 +181,7 @@ package body org.allbinary.logic.system.hardware.linux.LinuxHardware_Package is
                             exit;
                         end if;
                     end loop;
-                    componentInterface := PCComponentFactory_Package.getInstance.getInstance (componentType, componentData.toString);
+                    componentInterface := HardwareComponentInterface_Access (PCComponentFactory_Package.getInstance.getInstance (componentType, componentData.toString));
                     if (componentInterface) /= (null) then
                         This.componentInterfaceVector.add (Java_Object_Access (componentInterface));
                     end if;

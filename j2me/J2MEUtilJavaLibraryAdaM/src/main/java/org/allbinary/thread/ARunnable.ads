@@ -24,6 +24,7 @@ with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 
 package org.allbinary.thread.ARunnable_Package is
 
+   package Runnable_Package renames Standard.java.lang.Runnable_Package;
 
    type ARunnable is tagged;
    type ARunnable_Access is access all ARunnable'Class;

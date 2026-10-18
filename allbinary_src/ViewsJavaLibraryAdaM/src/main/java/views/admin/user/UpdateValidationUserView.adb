@@ -35,7 +35,7 @@ package body views.admin.user.UpdateValidationUserView_Package is
    begin
         HttpContextView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
-        This.user := NewUserFactory_Package.getInstance (transformInfoInterface);
+        This.user := UserInterface_Access (NewUserFactory_Package.getInstance (transformInfoInterface));
    end Initialize;
 
    function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return UpdateValidationUserView_Access is

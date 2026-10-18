@@ -24,6 +24,7 @@ with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 
 package org.allbinary.thread.PriorityRunnable_Package is
 
+   package Runnable_Package renames Standard.java.lang.Runnable_Package;
 
    type PriorityRunnable is interface and Runnable;
    type PriorityRunnable_Access is access all PriorityRunnable'Class;

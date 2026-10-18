@@ -37,7 +37,7 @@ package org.allbinary.business.user.modules.admin.store.StoreAdminUser_Package i
    type StoreAdminUser_Access_Array_Access_Array is array (Natural range <>) of StoreAdminUser_Access_Array_Access;
    type StoreAdminUser_Access_Array_Access_Array_Access is access all StoreAdminUser_Access_Array_Access_Array;
 
-   type StoreAdminUser is new User with null record;
+   type StoreAdminUser is new User_Package.User with null record;
 
    procedure Initialize (This : in out StoreAdminUser'Class);
    function Create return StoreAdminUser_Access;

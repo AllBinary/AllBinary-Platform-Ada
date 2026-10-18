@@ -51,7 +51,7 @@ package body org.allbinary.game.ag.layer.pickup.health.HealLayerCircularStaticPo
    begin
         healLayer := HealLayer_Access (HealLayerCircularStaticPool'Class (This).getNextInstance);
         healthInterfaceCompositeInterface := HealthInterfaceCompositeInterface_Access (sourceLayerInterface);
-        healthInterface := healthInterfaceCompositeInterface.getHealthInterface;
+        healthInterface := HealthInterface_Access (healthInterfaceCompositeInterface.getHealthInterface);
         healLayer.visit (healthInterface);
    end visit;
 

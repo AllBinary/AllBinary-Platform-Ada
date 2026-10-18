@@ -26,6 +26,7 @@ with org.allbinary.graphics.j2me.workarea.Component_Package; use org.allbinary.g
 with org.allbinary.graphics.j2me.workarea.GridLayout_Package; use org.allbinary.graphics.j2me.workarea.GridLayout_Package;
 with org.allbinary.graphics.j2me.workarea.GridBagLayout_Package; use org.allbinary.graphics.j2me.workarea.GridBagLayout_Package;
 with org.allbinary.graphics.j2me.workarea.GridBagConstraints_Package; use org.allbinary.graphics.j2me.workarea.GridBagConstraints_Package;
+with java.lang.Thread_Package; use java.lang.Thread_Package;
 
 package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
 
@@ -38,6 +39,7 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
    package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
+   package Thread_Package renames Standard.java.lang.Thread_Package;
    procedure Initialize_Fields (This : in out WorkAreaJPanel'Class) is
    begin
       null;

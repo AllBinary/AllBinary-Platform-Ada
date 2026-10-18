@@ -34,7 +34,7 @@ package org.allbinary.layer.NullLayer_Package is
    type NullLayer_Access_Array_Access_Array is array (Natural range <>) of NullLayer_Access_Array_Access;
    type NullLayer_Access_Array_Access_Array_Access is access all NullLayer_Access_Array_Access_Array;
 
-   type NullLayer is new Layer with null record;
+   type NullLayer is new Layer_Package.Layer with null record;
    instance : NullLayer_Access;
 
    procedure Initialize (This : in out NullLayer'Class);

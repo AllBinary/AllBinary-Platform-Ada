@@ -13,10 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with java.lang.Thread_Package; use java.lang.Thread_Package;
 with org.allbinary.logic.communication.sql.ClassLoader_Package; use org.allbinary.logic.communication.sql.ClassLoader_Package;
 
 package body org.allbinary.logic.communication.sql.AbSqlBasic_Package is
 
+   package Thread_Package renames Standard.java.lang.Thread_Package;
    procedure Initialize_Fields (This : in out AbSqlBasic'Class) is
    begin
       null;

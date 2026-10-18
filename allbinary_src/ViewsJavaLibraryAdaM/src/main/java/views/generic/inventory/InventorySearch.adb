@@ -81,7 +81,7 @@ package body views.generic_Id.inventory.InventorySearch_Package is
       filePath : Unbounded_String;
    begin
         begin
-            storeFront := This.searchRequest.getStoreFront;
+            storeFront := StoreFrontInterface_Access (This.searchRequest.getStoreFront);
             searchParams := This.searchRequest.getParams;
             columnValueHashMap := searchParams.get;
             file := StaticPagesEntity_Package.Create.getFile (storeFront.getName, Replace_Package.Create (To_Unbounded_String ("-"), CommonSeps_Package.getInstance.SPACE).all_Id (Java_Unbox (columnValueHashMap.get (This.basicItemData.KEYWORDS))));
@@ -138,7 +138,7 @@ package body views.generic_Id.inventory.InventorySearch_Package is
       inventorySearchUtil : InventorySearchUtil_Access;
       vector : BasicArrayList_Access;
    begin
-        abeClientInformation := ServiceClientInformationInterfaceFactory_Package.getInstance;
+        abeClientInformation := AbeClientInformationInterface_Access (ServiceClientInformationInterfaceFactory_Package.getInstance);
         inventorySearchUtil := InventorySearchUtil_Package.getInstance;
         vector := inventorySearchUtil.getBasicItemIdColumn (This.searchRequest);
         return inventorySearchUtil.search (abeClientInformation, This.searchRequest, vector);
@@ -148,7 +148,7 @@ package body views.generic_Id.inventory.InventorySearch_Package is
    function getProduct (This : in out InventorySearch; product : Unbounded_String) return Unbounded_String is
       abeClientInformation : AbeClientInformationInterface_Access;
    begin
-        abeClientInformation := ServiceClientInformationInterfaceFactory_Package.getInstance;
+        abeClientInformation := AbeClientInformationInterface_Access (ServiceClientInformationInterfaceFactory_Package.getInstance);
         return InventorySearchProductUtil_Package.getInstance.getProduct (abeClientInformation, This.searchRequest, product);
    end getProduct;
 

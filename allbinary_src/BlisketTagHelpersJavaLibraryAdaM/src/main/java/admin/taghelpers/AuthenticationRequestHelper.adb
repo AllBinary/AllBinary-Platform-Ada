@@ -46,7 +46,7 @@ package body admin.taghelpers.AuthenticationRequestHelper_Package is
    begin
       null;
       This.logUtil := LogUtil_Package.getInstance;
-      This.abeClientInformation := ServiceClientInformationInterfaceFactory_Package.getInstance;
+      This.abeClientInformation := AbeClientInformationInterface_Access (ServiceClientInformationInterfaceFactory_Package.getInstance);
       
       
    end Initialize_Fields;
@@ -116,8 +116,8 @@ package body admin.taghelpers.AuthenticationRequestHelper_Package is
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPER) then
                 This.logUtil.putF (To_Unbounded_String ("Generating New Password For: ") & userName, AuthenticationRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("newPassword()"));
             end if;
-            userEntityInterface := UserEntityFactory_Package.getInstance;
-            userInterface := userEntityInterface.getUser (userName);
+            userEntityInterface := UserEntityInterface_Access (UserEntityFactory_Package.getInstance);
+            userInterface := UserInterface_Access (userEntityInterface.getUser (userName));
             if (userInterface.getMainEmail.compareTo (email)) /= (0) then
                 if ((userInterface.getSecondaryEmail) /= (null)) and then ((userInterface.getSecondaryEmail.compareTo (email)) /= (0)) then
                     if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPER) then
@@ -182,8 +182,8 @@ package body admin.taghelpers.AuthenticationRequestHelper_Package is
                 return False;
             end if;
             sessionPassword := This.weblisketSession.getPassword;
-            userEntityInterface := UserEntityFactory_Package.getInstance;
-            userInterface := userEntityInterface.getUser (userName);
+            userEntityInterface := UserEntityInterface_Access (UserEntityFactory_Package.getInstance);
+            userInterface := UserInterface_Access (userEntityInterface.getUser (userName));
             login := userEntityInterface.login (userName, passwordString);
             if (Java_Compare_To (login, GLOBALS2_Package.LOGINSUCCESS)) = (0) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPER) then
@@ -222,8 +222,8 @@ package body admin.taghelpers.AuthenticationRequestHelper_Package is
       stringBuffer : StringMaker_Access;
    begin
         begin
-            userEntityInterface := UserEntityFactory_Package.getInstance;
-            userInterface := userEntityInterface.getUser (userName);
+            userEntityInterface := UserEntityInterface_Access (UserEntityFactory_Package.getInstance);
+            userInterface := UserInterface_Access (userEntityInterface.getUser (userName));
             if (userInterface.getRole) = (null) then
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPER) then
                     This.logUtil.putF (To_Unbounded_String ("Role is null: ") & Java_Image (userInterface.getRole) & To_Unbounded_String (" Valid Roles: ") & roles.toString, AuthenticationRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("isRoleValid()"));

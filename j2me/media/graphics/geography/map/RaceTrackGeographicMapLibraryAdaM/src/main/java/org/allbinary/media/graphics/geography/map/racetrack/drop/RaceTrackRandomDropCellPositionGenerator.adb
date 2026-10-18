@@ -95,7 +95,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.drop.RaceTrack
         column := This.columnArray (randomCell);
         x := (point.getX) + (((row) * (This.cellWidth)));
         y := (point.getY) + (((column) * (This.cellHeight)));
-        pickedUpLayerInterfaceFactory := DropLayerFactory_Package.getInstance.getRandomInstance;
+        pickedUpLayerInterfaceFactory := PickedUpLayerInterfaceFactoryInterface_Access (DropLayerFactory_Package.getInstance.getRandomInstance);
         tiledLayer := This.raceTrackGeographicMap.getAllBinaryTiledLayer;
         pickupLayer := RaceTrackPickupLayer_Access (PickupLayerCircularStaticPool_Package.getInstance.getInstanceXYZ (pickedUpLayerInterfaceFactory, x, y, (tiledLayer.getZP) + (3)));
         pickupLayer.setTiledLayer (tiledLayer);

@@ -13,9 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with java.lang.Thread_Package; use java.lang.Thread_Package;
 
 package body org.allbinary.logic.communication.java.vm.stats.JvmStatistics_Package is
 
+   package Thread_Package renames Standard.java.lang.Thread_Package;
    procedure Initialize_Fields (This : in out JvmStatistics'Class) is
    begin
       null;

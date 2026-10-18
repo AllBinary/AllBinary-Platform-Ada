@@ -61,7 +61,7 @@ package body org.allbinary.logic.control.workflow.RequestWorkFlowFactory_Package
         index := Java_Index_Of (requestCommand, Java_Image (AbPathData_Package.getInstance.SEPARATOR));
         storeName := Unbounded_Slice (requestCommand, (0) + 1, index);
         requestName := Unbounded_Slice (requestCommand, (index) + 1, Length (requestCommand));
-        return WorkFlowEntityFactory_Package.getInstance.create2.get (requestName, storeName);
+        return WorkFlowInterface_Access (WorkFlowEntityFactory_Package.getInstance.create2.get (requestName, storeName));
    end getInstance;
 
    --  throws Exception, LicensingException
@@ -75,7 +75,7 @@ package body org.allbinary.logic.control.workflow.RequestWorkFlowFactory_Package
         workFlowName := Java_Unbox (pageContext.getRequest.getParameter (WorkFlowData_Package.getInstance.NAME));
         weblisketSession := WeblisketSession_Package.Create (hashMap, pageContext);
         storeName := weblisketSession.getStoreName;
-        return WorkFlowEntityFactory_Package.getInstance.create2.get (workFlowName, storeName);
+        return WorkFlowInterface_Access (WorkFlowEntityFactory_Package.getInstance.create2.get (workFlowName, storeName));
    end getInstance;
 
    procedure getInstance (request_Param : access ServletRequest_Package.ServletRequest'Class; response_Param : access ServletResponse_Package.ServletResponse'Class; servletConfig_Param : access ServletConfig_Package.ServletConfig'Class; servletContext_Param : access ServletContext_Package.ServletContext'Class) is

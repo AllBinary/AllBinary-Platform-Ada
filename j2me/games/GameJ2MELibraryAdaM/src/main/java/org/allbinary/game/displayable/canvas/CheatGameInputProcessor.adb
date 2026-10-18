@@ -109,7 +109,7 @@ package body org.allbinary.game.displayable.canvas.CheatGameInputProcessor_Packa
 
 begin
    null;
-   inputProcessor := SpecialGameInputFactory_Package.NO_SPECIAL_GAME_INPUT;
+   inputProcessor := SpecialGameInputInterface_Access (SpecialGameInputFactory_Package.NO_SPECIAL_GAME_INPUT);
 
 end org.allbinary.game.displayable.canvas.CheatGameInputProcessor_Package;
 

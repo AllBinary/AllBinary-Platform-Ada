@@ -56,7 +56,7 @@ package body org.allbinary.game.ag.layer.weapon.mine.MineCountedPickedUpLayerInt
 
    function getInstance return PickedUpLayerInterfaceFactoryInterface_Access is
    begin
-        return MineCountedPickedUpLayerInterfaceFactory_Package.pickedUpLayerInterfaceFactoryInterface;
+        return PickedUpLayerInterfaceFactoryInterface_Access (MineCountedPickedUpLayerInterfaceFactory_Package.pickedUpLayerInterfaceFactoryInterface);
    end getInstance;
 
    function getTotal (This : in out MineCountedPickedUpLayerInterfaceFactory) return Integer is
@@ -86,7 +86,7 @@ package body org.allbinary.game.ag.layer.weapon.mine.MineCountedPickedUpLayerInt
 
 begin
    null;
-   pickedUpLayerInterfaceFactoryInterface := CountedPickedUpLayerInterfaceFactory_Package.NULL_COUNTED_PICKUP_LAYER_FACTORY;
+   pickedUpLayerInterfaceFactoryInterface := PickedUpLayerInterfaceFactoryInterface_Access (CountedPickedUpLayerInterfaceFactory_Package.NULL_COUNTED_PICKUP_LAYER_FACTORY);
 
 end org.allbinary.game.ag.layer.weapon.mine.MineCountedPickedUpLayerInterfaceFactory_Package;
 

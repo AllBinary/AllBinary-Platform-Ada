@@ -38,7 +38,7 @@ package body org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPo
    begin
       Initialize_Fields (This);
         This.geographicMapInterface := geographicMapInterface;
-        This.geographicMapCellPositionFactoryInterface := This.geographicMapInterface.getGeographicMapCellPositionFactoryInterface;
+        This.geographicMapCellPositionFactoryInterface := GeographicMapCellPositionFactoryInterface_Access (This.geographicMapInterface.getGeographicMapCellPositionFactoryInterface);
         This.tiledLayer := This.geographicMapInterface.getAllBinaryTiledLayer;
         This.columns := This.tiledLayer.getColumns;
         This.rows := This.tiledLayer.getRows;

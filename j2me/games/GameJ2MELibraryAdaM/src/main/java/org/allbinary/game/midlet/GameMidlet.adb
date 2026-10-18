@@ -166,7 +166,7 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
       This.gameStartTimeHelper := TimeDelayHelper_Package.Create (240);
       This.fullScreenUtil := FullScreenUtil_Package.getInstance;
       
-      This.allbinaryGameCanvasRunnableInterface := NullGameCanvasRunnable_Package.NULL_GAME_CANVAS_RUNNABLE;
+      This.allbinaryGameCanvasRunnableInterface := GameCanvasRunnableInterface_Access (NullGameCanvasRunnable_Package.NULL_GAME_CANVAS_RUNNABLE);
       This.thread := NullThread_Package.NULL_THREAD;
       
       This.isFullScreen := False;
@@ -187,7 +187,7 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
         progressCanvas.init (GameMidlet_Access'(This'Unchecked_Access));
         GameFeatureEventHandler_Package.getInstance.addListenerInterface (ChangedGameFeatureListener_Package.getInstance);
         GamePersistanceSingleton_Package.getInstance.clear;
-        This.debugInterface := DebugFactory_Package.getInstance;
+        This.debugInterface := DebugInterface_Access (DebugFactory_Package.getInstance);
         GameMidlet'Class (This).init;
    end Initialize;
 
@@ -237,7 +237,7 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
    procedure pauseAppBackground (This : in out GameMidlet; background : Boolean) is
    begin
         This.logUtil.putF (This.commonStrings.START, GameMidlet_Access'(This'Unchecked_Access), This.PAUSE_APP_BACKGROUND);
-        if (This.allbinaryGameCanvasRunnableInterface) /= (NullGameCanvasRunnable_Package.NULL_GAME_CANVAS_RUNNABLE) then
+        if (Java_Object_Access (This.allbinaryGameCanvasRunnableInterface)) /= (Java_Object_Access (NullGameCanvasRunnable_Package.NULL_GAME_CANVAS_RUNNABLE)) then
             This.allbinaryGameCanvasRunnableInterface.pause;
         else
             This.logUtil.putF (To_Unbounded_String ("<<<<<< Null"), GameMidlet_Access'(This'Unchecked_Access), This.PAUSE_APP_BACKGROUND);
@@ -259,7 +259,7 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
         This.logUtil.putF (This.commonStrings.START, GameMidlet_Access'(This'Unchecked_Access), This.UN_PAUSE_APP_BACKGROUND);
         AllBinarySensorManager_Package.getInstance.init;
         gameCanvasRunnableInterface := This.allbinaryGameCanvasRunnableInterface;
-        if (gameCanvasRunnableInterface) /= (NullGameCanvasRunnable_Package.NULL_GAME_CANVAS_RUNNABLE) then
+        if (Java_Object_Access (gameCanvasRunnableInterface)) /= (Java_Object_Access (NullGameCanvasRunnable_Package.NULL_GAME_CANVAS_RUNNABLE)) then
             gameCanvasRunnableInterface.unPause;
         else
             This.logUtil.putF (To_Unbounded_String ("<<<<<< Null"), GameMidlet_Access'(This'Unchecked_Access), This.UN_PAUSE_APP_BACKGROUND);
@@ -683,7 +683,7 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
         ColorChangeEventHandler_Package.getInstance.removeAllListeners;
         GameEventHandlerUtil_Package.removeAllListeners;
         gameCanvasRunnableInterface := This.allbinaryGameCanvasRunnableInterface;
-        if (gameCanvasRunnableInterface) /= (NullGameCanvasRunnable_Package.NULL_GAME_CANVAS_RUNNABLE) then
+        if (Java_Object_Access (gameCanvasRunnableInterface)) /= (Java_Object_Access (NullGameCanvasRunnable_Package.NULL_GAME_CANVAS_RUNNABLE)) then
             This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Set Running False: ")).append (Java_Object'Class (gameCanvasRunnableInterface.all).toString).toString, GameMidlet_Access'(This'Unchecked_Access), This.gameStrings.STOP_GAME_CANVAS_RUNNABLE_INTERFACE);
             gameCanvasRunnableInterface.setRunning (False);
         else
@@ -742,7 +742,7 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
    begin
         This.logUtil.putF (This.commonStrings.START, GameMidlet_Access'(This'Unchecked_Access), To_Unbounded_String ("getCurrentStateHashtable"));
         hashtable := StdUtil_Package.getInstance.createHashtable;
-        if (This.allbinaryGameCanvasRunnableInterface) /= (NullGameCanvasRunnable_Package.NULL_GAME_CANVAS_RUNNABLE) then
+        if (Java_Object_Access (This.allbinaryGameCanvasRunnableInterface)) /= (Java_Object_Access (NullGameCanvasRunnable_Package.NULL_GAME_CANVAS_RUNNABLE)) then
             currentHashtable := This.allbinaryGameCanvasRunnableInterface.getCurrentStateHashtable;
             enumeration := currentHashtable.keys;
             key := null;

@@ -21,7 +21,7 @@ package body org.allbinary.emulator.swt.SWTProcessor_Package is
    procedure Initialize_Fields (This : in out SWTProcessor'Class) is
    begin
       null;
-      This.runnable := NullRunnable_Package.getInstance;
+      This.runnable := Runnable_Access (NullRunnable_Package.getInstance);
    end Initialize_Fields;
 
 

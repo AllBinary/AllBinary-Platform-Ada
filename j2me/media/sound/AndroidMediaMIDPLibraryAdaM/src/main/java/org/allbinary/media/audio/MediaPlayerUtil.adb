@@ -13,9 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with java.lang.Thread_Package; use java.lang.Thread_Package;
 
 package body org.allbinary.media.audio.MediaPlayerUtil_Package is
 
+   package Thread_Package renames Standard.java.lang.Thread_Package;
    procedure Initialize_Fields (This : in out MediaPlayerUtil'Class) is
    begin
       null;

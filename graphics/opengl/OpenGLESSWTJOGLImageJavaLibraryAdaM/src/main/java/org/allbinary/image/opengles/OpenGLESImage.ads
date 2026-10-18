@@ -53,7 +53,7 @@ package org.allbinary.image.opengles.OpenGLESImage_Package is
    type OpenGLESImage_Access_Array_Access_Array is array (Natural range <>) of OpenGLESImage_Access_Array_Access;
    type OpenGLESImage_Access_Array_Access_Array_Access is access all OpenGLESImage_Access_Array_Access_Array;
 
-   type OpenGLESImage is new Image and OpenGLSurfaceChangedInterface with record
+   type OpenGLESImage is new Image_Package.Image and OpenGLSurfaceChangedInterface with record
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
       textureFactory : PlatformTextureBaseFactory_Access;

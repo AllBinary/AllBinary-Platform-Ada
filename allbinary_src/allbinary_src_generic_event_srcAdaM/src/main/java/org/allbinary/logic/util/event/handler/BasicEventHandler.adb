@@ -64,7 +64,7 @@ package body org.allbinary.logic.util.event.handler.BasicEventHandler_Package is
             begin
                 eventListenerInterface := EventListenerInterface_Access (This.eventListenerInterfaceList.objectArray (index));
                 stringBuffer.append (LISTENER);
-                stringBuffer.append (StringUtil_Package.getInstance.toString (eventListenerInterface));
+                stringBuffer.append (StringUtil_Package.getInstance.toString (Java_Object_Access (eventListenerInterface)));
             exception
                 when Java_Occurrence : others =>
                     declare

@@ -173,7 +173,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package
 
    function getWeblisketSession (This : in out TransformInfoHttp) return WeblisketSessionInterface_Access is
    begin
-        return This.abContext.getWeblisketSession;
+        return WeblisketSessionInterface_Access (This.abContext.getWeblisketSession);
    end getWeblisketSession;
 
    function getPageContext (This : in out TransformInfoHttp) return PageContext_Access is

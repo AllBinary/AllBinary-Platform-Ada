@@ -34,7 +34,7 @@ package body org.allbinary.business.user.commerce.shipping.ShippingMethods_Packa
       storeFrontInterface : constant StoreFrontInterface_Access := StoreFrontInterface_Access (storeFrontInterface_Param);
    begin
       Initialize_Fields (This);
-        This.defaultShippingMethodInterface := ShippingMethodsFactory_Package.Create (abeClientInformation, storeFrontInterface).getDefaultInstance;
+        This.defaultShippingMethodInterface := ShippingInterface_Access (ShippingMethodsFactory_Package.Create (abeClientInformation, storeFrontInterface).getDefaultInstance);
         This.shippingVector := ShippingMethodsFactory_Package.Create (abeClientInformation, storeFrontInterface).getInstance;
    end Initialize;
 

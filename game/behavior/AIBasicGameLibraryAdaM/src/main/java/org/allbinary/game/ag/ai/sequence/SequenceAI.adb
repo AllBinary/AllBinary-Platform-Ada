@@ -58,7 +58,7 @@ package body org.allbinary.game.ag.ai.sequence.SequenceAI_Package is
       artificialIntelligenceTransitionInterface : ArtificialIntelligenceTransitionInterface_Access;
    begin
         This.index := This.index + 1;
-        artificialIntelligenceInterface := SequenceAI'Class (This).getSelectedArtificialIntelligenceInterface;
+        artificialIntelligenceInterface := ArtificialIntelligenceInterface_Access (SequenceAI'Class (This).getSelectedArtificialIntelligenceInterface);
         if (artificialIntelligenceInterface.getId) = (ArtificialIntelligence_Package.AI_ID) then
             artificialIntelligenceTransitionInterface := ArtificialIntelligenceTransitionInterface_Access (artificialIntelligenceInterface);
             artificialIntelligenceTransitionInterface.transition;

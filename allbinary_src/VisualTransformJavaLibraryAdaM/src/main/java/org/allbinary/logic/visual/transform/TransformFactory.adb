@@ -71,7 +71,7 @@ package body org.allbinary.logic.visual.transform.TransformFactory_Package is
             end if;
             ownerTransformInfoHttpInterface := TransformInfoHttpInterface_Access (ownerTransformInfoInterface);
             transformInfoEntity := TransformInfoEntityBuilder_Package.getInstance;
-            transformInfoInterface := transformInfoEntity.get (viewName, ownerTransformInfoHttpInterface.getPropertiesHashMap, ownerTransformInfoHttpInterface.getPageContext);
+            transformInfoInterface := TransformInfoInterface_Access (transformInfoEntity.get (viewName, ownerTransformInfoHttpInterface.getPropertiesHashMap, ownerTransformInfoHttpInterface.getPageContext));
             if (transformInfoInterface) = (null) then
                 Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such View In DB: ") & viewName));
             end if;
@@ -111,7 +111,7 @@ package body org.allbinary.logic.visual.transform.TransformFactory_Package is
                 This.logUtil.putF (To_Unbounded_String ("Creating Transform: ") & Java_Image (propertiesHashMap.get (transformInfoData.NAME)), TransformFactory_Access'(This'Unchecked_Access), This.commonStrings.GET_INSTANCE);
             end if;
             transformInfoEntity := TransformInfoEntityBuilder_Package.getInstance;
-            transformInfoInterface := transformInfoEntity.get (Java_Unbox (propertiesHashMap.get (transformInfoData.NAME)), propertiesHashMap, pageContext);
+            transformInfoInterface := TransformInfoInterface_Access (transformInfoEntity.get (Java_Unbox (propertiesHashMap.get (transformInfoData.NAME)), propertiesHashMap, pageContext));
             if (transformInfoInterface) /= (null) then
                 transformInfoInterface.override (propertiesHashMap);
             else

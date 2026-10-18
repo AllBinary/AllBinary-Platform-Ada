@@ -91,7 +91,7 @@ package body views.generic_Id.basket.BasketView_Package is
    begin
         begin
             inventoryEntity := InventoryEntityFactory_Package.getInstance.getInventoryEntityInstance;
-            basketInterface := BasketView'Class (This).getWeblisketSession.getOrder.getBasket;
+            basketInterface := BasketInterface_Access (BasketView'Class (This).getWeblisketSession.getOrder.getBasket);
             basketNode := document.createElement (BasketData_Package.BASKET);
             itemsAndNumberInBasket := basketInterface.getItems;
             numberOfResults := 1;
@@ -100,7 +100,7 @@ package body views.generic_Id.basket.BasketView_Package is
             size := productArray'Length;
             for index in 0 .. (size) - 1 loop
                 product := Java_New_String (Java_Unbox (productArray (index)));
-                itemInterface := inventoryEntity.getItem (product);
+                itemInterface := ItemInterface_Access (inventoryEntity.getItem (product));
                 if (itemInterface) /= (null) then
                     basicItemView := BasicItemView_Package.Create (itemInterface, BasicArrayListD_Package.Create);
                     node := basicItemView.toXmlNode (document);

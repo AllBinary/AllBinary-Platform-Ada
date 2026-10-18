@@ -52,7 +52,7 @@ package body admin.taghelpers.InventoryRequestHelper_Package is
       Initialize_Fields (This);
         inventoryTag := HelperTag_Access (propertiesHashMap.get (AbTagData_Package.PARENT));
         itemView := InventoryItemViewParentTagHelper_Package.getInstance.getInventoryItemView (inventoryTag);
-        This.itemInterface := itemView.getItemInterface;
+        This.itemInterface := ItemInterface_Access (itemView.getItemInterface);
    end Initialize;
 
    function Create (propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return InventoryRequestHelper_Access is

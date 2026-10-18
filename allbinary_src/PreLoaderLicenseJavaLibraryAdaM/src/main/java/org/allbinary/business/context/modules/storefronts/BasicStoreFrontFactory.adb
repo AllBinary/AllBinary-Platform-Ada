@@ -51,7 +51,7 @@ package body org.allbinary.business.context.modules.storefronts.BasicStoreFrontF
    begin
         begin
             storeFronts := BasicStoreFrontsEntity_Package.Create;
-            return storeFronts.getStoreFrontInterface (storeName);
+            return BasicStoreFrontInterface_Access (storeFronts.getStoreFrontInterface (storeName));
         exception
             when Java_Occurrence : others =>
                 declare

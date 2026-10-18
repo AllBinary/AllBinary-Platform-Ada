@@ -21,7 +21,7 @@ package body org.allbinary.input.gyro.AllBinaryOrientationSensor_Package is
    procedure Initialize_Fields (This : in out AllBinaryOrientationSensor'Class) is
    begin
       null;
-      This.listener := NoCompleteMotionGestureInputEventListener_Package.getInstance;
+      This.listener := CompleteMotionGestureInputEventListenerInterface_Access (NoCompleteMotionGestureInputEventListener_Package.getInstance);
    end Initialize_Fields;
 
 

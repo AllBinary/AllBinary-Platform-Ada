@@ -36,7 +36,7 @@ package org.allbinary.game.layer.waypoint.WorkWaypoint_Package is
    type WorkWaypoint_Access_Array_Access_Array is array (Natural range <>) of WorkWaypoint_Access_Array_Access;
    type WorkWaypoint_Access_Array_Access_Array_Access is access all WorkWaypoint_Access_Array_Access_Array;
 
-   type WorkWaypoint is new Waypoint with null record;
+   type WorkWaypoint is new Waypoint_Package.Waypoint with null record;
    ID : Integer;
 
    procedure Initialize (This : in out WorkWaypoint'Class; ownerLayer_Param : access PathFindingLayerInterface_Package.PathFindingLayerInterface'Class);

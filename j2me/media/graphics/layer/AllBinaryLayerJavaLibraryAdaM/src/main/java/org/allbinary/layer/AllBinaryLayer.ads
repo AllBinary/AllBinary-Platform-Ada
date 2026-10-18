@@ -45,7 +45,7 @@ package org.allbinary.layer.AllBinaryLayer_Package is
    type AllBinaryLayer_Access_Array_Access_Array is array (Natural range <>) of AllBinaryLayer_Access_Array_Access;
    type AllBinaryLayer_Access_Array_Access_Array_Access is access all AllBinaryLayer_Access_Array_Access_Array;
 
-   type AllBinaryLayer is new Layer and LayerInterface with record
+   type AllBinaryLayer is new Layer_Package.Layer and LayerInterface with record
       viewPositionEvent : ViewPositionEvent_Access;
       halfWidth : Integer;
       halfHeight : Integer;

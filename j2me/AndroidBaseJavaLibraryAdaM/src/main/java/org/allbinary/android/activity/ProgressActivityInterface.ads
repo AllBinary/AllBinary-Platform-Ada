@@ -24,6 +24,7 @@ with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 
 package org.allbinary.android.activity.ProgressActivityInterface_Package is
 
+   package Runnable_Package renames Standard.java.lang.Runnable_Package;
 
    type ProgressActivityInterface is interface;
    type ProgressActivityInterface_Access is access all ProgressActivityInterface'Class;

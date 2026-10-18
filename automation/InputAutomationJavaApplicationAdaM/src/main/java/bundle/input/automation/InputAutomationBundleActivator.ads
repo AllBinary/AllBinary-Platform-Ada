@@ -25,6 +25,7 @@ with org.osgi.framework.BundleContext_Package; use org.osgi.framework.BundleCont
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with bundle.input.automation.InputAutomationBundleActivatorListenerInterface_Package; use bundle.input.automation.InputAutomationBundleActivatorListenerInterface_Package;
+with java.lang.Thread_Package; use java.lang.Thread_Package;
 
 package bundle.input.automation.InputAutomationBundleActivator_Package is
 
@@ -32,6 +33,7 @@ package bundle.input.automation.InputAutomationBundleActivator_Package is
    package BundleContext_Package renames Standard.org.osgi.framework.BundleContext_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package Thread_Package renames Standard.java.lang.Thread_Package;
 
    type InputAutomationBundleActivator is tagged;
    type InputAutomationBundleActivator_Access is access all InputAutomationBundleActivator'Class;

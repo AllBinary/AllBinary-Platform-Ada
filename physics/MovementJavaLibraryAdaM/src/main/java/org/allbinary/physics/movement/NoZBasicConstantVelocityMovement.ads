@@ -44,7 +44,7 @@ package org.allbinary.physics.movement.NoZBasicConstantVelocityMovement_Package 
    type NoZBasicConstantVelocityMovement_Access_Array_Access_Array is array (Natural range <>) of NoZBasicConstantVelocityMovement_Access_Array_Access;
    type NoZBasicConstantVelocityMovement_Access_Array_Access_Array_Access is access all NoZBasicConstantVelocityMovement_Access_Array_Access_Array;
 
-   type NoZBasicConstantVelocityMovement is new Movement and VelocityInterfaceCompositeInterface with record
+   type NoZBasicConstantVelocityMovement is new Movement_Package.Movement and VelocityInterfaceCompositeInterface with record
       velocityProperties : BasicVelocityProperties_Access;
       speedBasicDecimal : BasicDecimal_Access;
       axisMathVectorUtil : AxisMathVectorUtil_Access;

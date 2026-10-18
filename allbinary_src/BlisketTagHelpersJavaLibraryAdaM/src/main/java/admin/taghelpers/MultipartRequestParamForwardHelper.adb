@@ -53,7 +53,7 @@ package body admin.taghelpers.MultipartRequestParamForwardHelper_Package is
         This.page := page;
         This.command := command;
         This.paramVector := paramVector;
-        This.requestMapInterface := InventoryItemViewParentTagHelper_Package.getInstance.getRequestMapInterface (parentHelperTag);
+        This.requestMapInterface := RequestMapInterface_Access (InventoryItemViewParentTagHelper_Package.getInstance.getRequestMapInterface (parentHelperTag));
    end Initialize;
 
    function Create (parentHelperTag_Param : access HelperTag_Package.HelperTag'Class; page : Unbounded_String; command : Unbounded_String; paramVector_Param : access BasicArrayList_Package.BasicArrayList'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return MultipartRequestParamForwardHelper_Access is

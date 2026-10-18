@@ -55,7 +55,7 @@ package body views.admin.payment.gateway.PaymentGatewayComponent_Package is
       domNodeInterface : DomNodeInterface_Access;
    begin
         paymentType := BasicPaymentTypeUtil_Package.getInstance.get (This.paymentGatewayInterface.getName);
-        paymentGatewayDomNodeFactoryInterface := paymentType.getPaymentGatewayDomNodeFactoryInterface;
+        paymentGatewayDomNodeFactoryInterface := PaymentGatewayDomNodeFactoryInterface_Access (paymentType.getPaymentGatewayDomNodeFactoryInterface);
         domNodeInterface := DomNodeInterface_Access (paymentGatewayDomNodeFactoryInterface.getInstance (This.paymentGatewayInterface));
         PaymentGatewayComponent'Class (This).addDomNodeInterface (domNodeInterface);
    end addDomNodeInterfaces;

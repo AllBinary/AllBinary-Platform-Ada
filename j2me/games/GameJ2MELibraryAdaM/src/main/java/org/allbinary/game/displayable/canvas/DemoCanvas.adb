@@ -183,9 +183,9 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
       This.initialized := False;
       
       This.defaultPaintableInterface := NullPaintable_Package.getInstance;
-      This.paintableInterface := NullPaintable_Package.getInstance;
+      This.paintableInterface := PaintableInterface_Access (NullPaintable_Package.getInstance);
       
-      This.progressPaintable := ProgressCanvasFactory_Package.getLazyInstance;
+      This.progressPaintable := PaintableInterface_Access (ProgressCanvasFactory_Package.getLazyInstance);
       This.tempWait := NullWaitGameRunnable_Package.getInstance.WAIT;
       This.inputToGameKeyMapping := PlatformInputMappingFactory_Package.getInstance.getPersistentInputMappingInstance.getInputMapping;
       This.gameRunnable := NullWaitGameRunnable_Package.getInstance;

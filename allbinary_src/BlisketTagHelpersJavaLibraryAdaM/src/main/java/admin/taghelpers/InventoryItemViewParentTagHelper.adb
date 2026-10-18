@@ -55,7 +55,7 @@ package body admin.taghelpers.InventoryItemViewParentTagHelper_Package is
         if (inventoryTag) /= (null) then
             InventoryItemViewParentTagHelper'Class (This).checkForValidationViewHelper (inventoryTag.getHelper);
             validationViewHelper := ValidationViewHelper_Access (inventoryTag.getHelper);
-            viewObject := validationViewHelper.getViewObject;
+            viewObject := TransformInterface_Access (validationViewHelper.getViewObject);
             if (viewObject.getTypeId) /= (InventoryItemView_Package.TYPE_ID) then
                 stringBuffer := StringMaker_Package.Create;
                 stringBuffer.append (To_Unbounded_String ("Must have "));
@@ -79,7 +79,7 @@ package body admin.taghelpers.InventoryItemViewParentTagHelper_Package is
         if (inventoryTag) /= (null) then
             InventoryItemViewParentTagHelper'Class (This).checkForValidationViewHelper (inventoryTag.getHelper);
             validationViewHelper := ValidationViewHelper_Access (inventoryTag.getHelper);
-            viewObject := validationViewHelper.getViewObject;
+            viewObject := TransformInterface_Access (validationViewHelper.getViewObject);
             if (viewObject.getTypeId) /= (DownloadableInventoryItemView_Package.TYPE_ID) then
                 stringBuffer := StringMaker_Package.Create;
                 stringBuffer.append (To_Unbounded_String ("Must have "));
@@ -103,7 +103,7 @@ package body admin.taghelpers.InventoryItemViewParentTagHelper_Package is
         if (inventoryTag) /= (null) then
             InventoryItemViewParentTagHelper'Class (This).checkForValidationViewHelper (inventoryTag.getHelper);
             validationViewHelper := ValidationViewHelper_Access (inventoryTag.getHelper);
-            viewObject := validationViewHelper.getViewObject;
+            viewObject := TransformInterface_Access (validationViewHelper.getViewObject);
             if ((viewObject.getTypeId) /= (InventoryItemView_Package.TYPE_ID)) and then ((viewObject.getTypeId) /= (DownloadableInventoryItemView_Package.TYPE_ID)) then
                 stringBuffer := StringMaker_Package.Create;
                 stringBuffer.append (To_Unbounded_String ("Must have "));

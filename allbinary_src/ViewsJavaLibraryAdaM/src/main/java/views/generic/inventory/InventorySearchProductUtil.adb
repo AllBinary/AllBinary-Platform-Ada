@@ -76,9 +76,9 @@ package body views.generic_Id.inventory.InventorySearchProductUtil_Package is
    begin
         begin
             inventoryEntityInterface := InventoryEntityFactory_Package.getInstance.getInventoryEntityInstance;
-            itemInterface := inventoryEntityInterface.getItem (product);
+            itemInterface := ItemInterface_Access (inventoryEntityInterface.getItem (product));
             if (itemInterface) /= (null) then
-                viewDocumentInterface := TransformStoreDocumentFactory_Package.getInstance (searchRequest);
+                viewDocumentInterface := TransformDocumentInterface_Access (TransformStoreDocumentFactory_Package.getInstance (searchRequest));
                 viewDocumentInterface.getBaseNode.appendChild (BasicItemView_Package.Create (itemInterface, BasicArrayListD_Package.Create).toXmlNode (viewDocumentInterface.getDoc));
                 success := XmlDocumentHelper_Package.toString (viewDocumentInterface.getDoc);
                 outputStr := StoreTransformer_Package.Create (abeClientInformation, TransformInfoInterface_Access (TransformInfoHttpSearch_Package.Create (searchRequest))).translate (success);

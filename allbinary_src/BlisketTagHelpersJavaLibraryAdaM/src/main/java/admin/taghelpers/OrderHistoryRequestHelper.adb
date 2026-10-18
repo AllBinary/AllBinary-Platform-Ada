@@ -38,7 +38,7 @@ package body admin.taghelpers.OrderHistoryRequestHelper_Package is
    begin
       null;
       This.logUtil := LogUtil_Package.getInstance;
-      This.abeClientInformation := ServiceClientInformationInterfaceFactory_Package.getInstance;
+      This.abeClientInformation := AbeClientInformationInterface_Access (ServiceClientInformationInterfaceFactory_Package.getInstance);
       
       This.id := Null_Unbounded_String;
       This.groupId := Null_Unbounded_String;

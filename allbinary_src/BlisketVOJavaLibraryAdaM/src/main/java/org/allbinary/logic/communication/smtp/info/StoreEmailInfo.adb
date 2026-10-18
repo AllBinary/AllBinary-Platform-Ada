@@ -56,8 +56,8 @@ package body org.allbinary.logic.communication.smtp.info.StoreEmailInfo_Package 
       contextConfigurationInterface : ContextConfigurationInterface_Access;
       emailServerConfigurationInterface : EmailServerConfigurationInterface_Access;
    begin
-        contextConfigurationInterface := This.storeFrontInterface.getContextConfigurationInterface;
-        emailServerConfigurationInterface := contextConfigurationInterface.getEmailServerConfigurationInterface;
+        contextConfigurationInterface := ContextConfigurationInterface_Access (This.storeFrontInterface.getContextConfigurationInterface);
+        emailServerConfigurationInterface := EmailServerConfigurationInterface_Access (contextConfigurationInterface.getEmailServerConfigurationInterface);
         StoreEmailInfo'Class (This).setEmailServerConfigurationInterface (emailServerConfigurationInterface);
    end init;
 

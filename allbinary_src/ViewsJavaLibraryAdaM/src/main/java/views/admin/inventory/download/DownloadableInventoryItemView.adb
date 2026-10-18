@@ -178,7 +178,7 @@ package body views.admin.inventory.download.DownloadableInventoryItemView_Packag
       filePathData : FilePathData_Access;
       stringBuffer : StringMaker_Access;
    begin
-        storeFrontInterface := StoreFrontFactory_Package.getInstance (DownloadableInventoryItemView'Class (This).getWeblisketSession.getStoreName);
+        storeFrontInterface := StoreFrontInterface_Access (StoreFrontFactory_Package.getInstance (DownloadableInventoryItemView'Class (This).getWeblisketSession.getStoreName));
         filePathData := FilePathData_Package.getInstance;
         stringBuffer := StringMaker_Package.Create;
         stringBuffer.append (URLGLOBALS_Package.getWebappPath);

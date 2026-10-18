@@ -15,12 +15,14 @@
 
 with java.io.File_Package; use java.io.File_Package;
 with org.allbinary.media.image.MirrorImageUtil_Package; use org.allbinary.media.image.MirrorImageUtil_Package;
+with java.lang.Thread_Package; use java.lang.Thread_Package;
 with org.allbinary.image.gui.Graphics_Package; use org.allbinary.image.gui.Graphics_Package;
 
 package body org.allbinary.image.gui.MirrorImageJPanel_Package is
 
    package File_Package renames Standard.java.io.File_Package;
    package MirrorImageUtil_Package renames Standard.org.allbinary.media.image.MirrorImageUtil_Package;
+   package Thread_Package renames Standard.java.lang.Thread_Package;
    procedure Initialize_Fields (This : in out MirrorImageJPanel'Class) is
    begin
       null;

@@ -95,7 +95,7 @@ package body org.allbinary.animation.resource.BaseResourceAnimationInterfaceFact
    begin
         basicAnimationInterfaceFactoryInterfaceCanBeNull := This.hashtable.get (Java_Box (resource));
         if (basicAnimationInterfaceFactoryInterfaceCanBeNull) = (null) then
-            return NullAnimationFactory_Package.NULL_NOT_FOR_USE_ANIMATION_FACTORY;
+            return BasicAnimationInterfaceFactoryInterface_Access (NullAnimationFactory_Package.NULL_NOT_FOR_USE_ANIMATION_FACTORY);
         end if;
         return BasicAnimationInterfaceFactoryInterface_Access (basicAnimationInterfaceFactoryInterfaceCanBeNull);
    end getBasicAnimationInterfaceFactoryInstance;

@@ -31,6 +31,7 @@ package org.allbinary.graphics.canvas.transition.progress.AndroidTitleProgressBa
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    package ProgressActivityInterface_Package renames Standard.org.allbinary.android.activity.ProgressActivityInterface_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package Runnable_Package renames Standard.java.lang.Runnable_Package;
 
    type AndroidTitleProgressBar is tagged;
    type AndroidTitleProgressBar_Access is access all AndroidTitleProgressBar'Class;
@@ -81,6 +82,7 @@ package org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetPro
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    package ProgressActivityInterface_Package renames Standard.org.allbinary.android.activity.ProgressActivityInterface_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package Runnable_Package renames Standard.java.lang.Runnable_Package;
 
    type TitleProgressBarSetProgressRunnable is tagged;
    type TitleProgressBarSetProgressRunnable_Access is access all TitleProgressBarSetProgressRunnable'Class;
@@ -118,6 +120,7 @@ package org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortio
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    package ProgressActivityInterface_Package renames Standard.org.allbinary.android.activity.ProgressActivityInterface_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package Runnable_Package renames Standard.java.lang.Runnable_Package;
 
    type TitleProgressBarPortionSetProgressRunnable is tagged;
    type TitleProgressBarPortionSetProgressRunnable_Access is access all TitleProgressBarPortionSetProgressRunnable'Class;
@@ -155,6 +158,7 @@ package org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRu
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    package ProgressActivityInterface_Package renames Standard.org.allbinary.android.activity.ProgressActivityInterface_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package Runnable_Package renames Standard.java.lang.Runnable_Package;
 
    type ShowTitleProgressBarRunnable is tagged;
    type ShowTitleProgressBarRunnable_Access is access all ShowTitleProgressBarRunnable'Class;
@@ -192,6 +196,7 @@ package org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBa
    package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
    package ProgressActivityInterface_Package renames Standard.org.allbinary.android.activity.ProgressActivityInterface_Package;
    package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
+   package Runnable_Package renames Standard.java.lang.Runnable_Package;
 
    type DismissTitleProgressBarRunnable is tagged;
    type DismissTitleProgressBarRunnable_Access is access all DismissTitleProgressBarRunnable'Class;

@@ -40,7 +40,7 @@ package body org.allbinary.animation.image.ImageArrayRotationAnimationPool_Packa
 
    function getInstance return PoolInterface_Access is
    begin
-        return ImageArrayRotationAnimationPool_Package.IMAGE_ROTATION_ANIMATION_POOL;
+        return PoolInterface_Access (ImageArrayRotationAnimationPool_Package.IMAGE_ROTATION_ANIMATION_POOL);
    end getInstance;
 
    --  throws Exception
@@ -50,7 +50,7 @@ package body org.allbinary.animation.image.ImageArrayRotationAnimationPool_Packa
       allBinaryImageRotationAnimationInfo : ImageArrayRotationAnimationInfo_Access;
       imageArrayRotationAnimationCacheable : ImageArrayRotationAnimationCacheable_Access;
    begin
-        cacheableInterface := BasicArrayListResetablePool (This).remove (key);
+        cacheableInterface := CacheableInterface_Access (BasicArrayListResetablePool (This).remove (key));
         allBinaryImageRotationAnimationInfo := ImageArrayRotationAnimationInfo_Access (key);
         imageArrayRotationAnimationCacheable := (ImageArrayRotationAnimationCacheable_Access (cacheableInterface));
         imageArrayRotationAnimationCacheable.setImageArray (allBinaryImageRotationAnimationInfo.getImageArray);

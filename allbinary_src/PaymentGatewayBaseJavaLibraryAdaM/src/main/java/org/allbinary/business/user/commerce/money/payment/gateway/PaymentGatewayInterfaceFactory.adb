@@ -55,7 +55,7 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentG
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PAYMENT) then
                 This.logUtil.putF (To_Unbounded_String ("Getting"), PaymentGatewayInterfaceFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);
             end if;
-            return PaymentGatewayInterfaceFactory'Class (This).getInstance (RequestParams_Package.Create (httpServletRequest).toHashMap);
+            return PaymentGatewayInterface_Access (PaymentGatewayInterfaceFactory'Class (This).getInstance (RequestParams_Package.Create (httpServletRequest).toHashMap));
         exception
             when Java_Occurrence : others =>
                 declare
@@ -76,7 +76,7 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentG
    begin
         hashMap := StdUtil_Package.getInstance.createHashMap;
         hashMap.put (Java_Box (PaymentGatewayData_Package.NAME.toString), Java_Box (paymentType.getName));
-        return PaymentGatewayInterfaceFactory'Class (This).getInstance (hashMap);
+        return PaymentGatewayInterface_Access (PaymentGatewayInterfaceFactory'Class (This).getInstance (hashMap));
    end getInstance;
 
    --  throws Exception
@@ -94,8 +94,8 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentG
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PAYMENT) then
                 This.logUtil.putF (To_Unbounded_String ("Getting PaymentGatewayInterface for PaymentType: ") & paymentType.getName & To_Unbounded_String (" with: ") & Java_Image (hashMap), PaymentGatewayInterfaceFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);
             end if;
-            paymentGatewayInterfaceFactoryInterface := paymentType.getPaymentGatewayInterfaceFactoryInterface;
-            return paymentGatewayInterfaceFactoryInterface.getInstance (hashMap);
+            paymentGatewayInterfaceFactoryInterface := PaymentGatewayInterfaceFactoryInterface_Access (paymentType.getPaymentGatewayInterfaceFactoryInterface);
+            return PaymentGatewayInterface_Access (paymentGatewayInterfaceFactoryInterface.getInstance (hashMap));
         exception
             when Java_Occurrence : others =>
                 declare

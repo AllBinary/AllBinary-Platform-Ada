@@ -64,7 +64,7 @@ package body taghelpers.OrderHistoryHelper_Package is
         storeName := Java_Unbox (propertiesHashMap.get (StoreFrontData_Package.getInstance.NAME));
         This.newStatus := Java_Unbox (propertiesHashMap.get (OrderHistoryData_Package.STATUS));
         if (storeName) /= (Null_Unbounded_String) then
-            This.storeFrontInterface := StoreFrontFactory_Package.getInstance (storeName);
+            This.storeFrontInterface := StoreFrontInterface_Access (StoreFrontFactory_Package.getInstance (storeName));
         end if;
         OrderHistoryHelper'Class (This).getFormData;
    end Initialize;
@@ -94,7 +94,7 @@ package body taghelpers.OrderHistoryHelper_Package is
    begin
         begin
             success := To_Unbounded_String ("Status successfully set to: ") & This.status;
-            orderReviewInterface := OrderHistoryFactory_Package.getInstance (This.id);
+            orderReviewInterface := OrderHistoryInterface_Access (OrderHistoryFactory_Package.getInstance (This.id));
             status := orderReviewInterface.getStatus;
             if (Java_Compare_To (status, OrderHistoryData_Package.CANCELLED)) = (0) then
                 return To_Unbounded_String ("Order ") & This.id & To_Unbounded_String (" Already Cancelled<br/>");
@@ -105,7 +105,7 @@ package body taghelpers.OrderHistoryHelper_Package is
             elsif (Java_Compare_To (status, OrderHistoryData_Package.PARTIALLYSHIPPED)) = (0) then
                 return To_Unbounded_String ("Order ") & This.id & To_Unbounded_String (" Partially Shipped. You can cancel unshipped items, but not the whole order.<br/>");
             elsif (Java_Compare_To (status, OrderHistoryData_Package.PROCESSING)) = (0) then
-                orderHistoryEntityInterface := OrderHistoryEntityFactory_Package.getInstance;
+                orderHistoryEntityInterface := OrderHistoryEntityInterface_Access (OrderHistoryEntityFactory_Package.getInstance);
                 orderHistoryEntityInterface.setStatus (This.id, This.newStatus);
                 return To_Unbounded_String ("Order ") & This.id & To_Unbounded_String (" has been cancelled.<br/>");
             end if;

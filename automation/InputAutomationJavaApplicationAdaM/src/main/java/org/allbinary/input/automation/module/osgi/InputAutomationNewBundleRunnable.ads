@@ -33,6 +33,7 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.thread.RunnableInterface_Package; use org.allbinary.thread.RunnableInterface_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with java.lang.Thread_Package; use java.lang.Thread_Package;
 
 package org.allbinary.input.automation.module.osgi.InputAutomationNewBundleRunnable_Package is
 
@@ -43,6 +44,7 @@ package org.allbinary.input.automation.module.osgi.InputAutomationNewBundleRunna
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package RunnableInterface_Package renames Standard.org.allbinary.thread.RunnableInterface_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package Thread_Package renames Standard.java.lang.Thread_Package;
 
    type InputAutomationNewBundleRunnable is tagged;
    type InputAutomationNewBundleRunnable_Access is access all InputAutomationNewBundleRunnable'Class;

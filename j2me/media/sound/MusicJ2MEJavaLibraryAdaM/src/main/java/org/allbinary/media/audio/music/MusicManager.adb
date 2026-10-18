@@ -9,6 +9,7 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 with org.allbinary.media.audio.NoSound_Package; use org.allbinary.media.audio.NoSound_Package;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.time.GameTickTimeDelayHelperFactory_Package; use org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
+with java.lang.Thread_Package; use java.lang.Thread_Package;
 
 package body org.allbinary.media.audio.music.MusicManager_Package is
 
@@ -20,6 +21,7 @@ package body org.allbinary.media.audio.music.MusicManager_Package is
    package NoSound_Package renames Standard.org.allbinary.media.audio.NoSound_Package;
    package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
    package GameTickTimeDelayHelperFactory_Package renames Standard.org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
+   package Thread_Package renames Standard.java.lang.Thread_Package;
    procedure Initialize_Fields (This : in out MusicManager'Class) is
    begin
       null;
@@ -211,6 +213,7 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 with org.allbinary.media.audio.NoSound_Package; use org.allbinary.media.audio.NoSound_Package;
 with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.time.GameTickTimeDelayHelperFactory_Package; use org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
+with java.lang.Thread_Package; use java.lang.Thread_Package;
 
 package body org.allbinary.media.audio.music.MusicManagerPlayerListener_Package is
 
@@ -222,6 +225,7 @@ package body org.allbinary.media.audio.music.MusicManagerPlayerListener_Package 
    package NoSound_Package renames Standard.org.allbinary.media.audio.NoSound_Package;
    package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
    package GameTickTimeDelayHelperFactory_Package renames Standard.org.allbinary.time.GameTickTimeDelayHelperFactory_Package;
+   package Thread_Package renames Standard.java.lang.Thread_Package;
    procedure Initialize_Fields (This : in out MusicManagerPlayerListener'Class) is
    begin
       null;

@@ -14,6 +14,7 @@ with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 package org.allbinary.graphics.opengles.OpenGLUtil_Package is
 
    package Image_Package renames Standard.javax.microedition.lcdui.Image_Package;
+   package Runnable_Package renames Standard.java.lang.Runnable_Package;
 
    type OpenGLUtil is tagged;
    type OpenGLUtil_Access is access all OpenGLUtil'Class;

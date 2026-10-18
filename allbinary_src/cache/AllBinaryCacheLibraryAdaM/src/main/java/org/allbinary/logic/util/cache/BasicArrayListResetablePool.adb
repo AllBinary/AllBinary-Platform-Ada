@@ -49,7 +49,7 @@ package body org.allbinary.logic.util.cache.BasicArrayListResetablePool_Package 
         if (size) > (0) then
             return CacheableInterface_Access (This.buffers.removeAt ((size) - (1)));
         else
-            return This.cacheableInterfaceFactoryInterface.getInstance (key);
+            return CacheableInterface_Access (This.cacheableInterfaceFactoryInterface.getInstance (key));
         end if;
    end remove;
 

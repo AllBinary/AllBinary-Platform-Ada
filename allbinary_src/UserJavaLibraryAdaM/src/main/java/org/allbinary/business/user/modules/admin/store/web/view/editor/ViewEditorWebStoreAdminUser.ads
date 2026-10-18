@@ -37,7 +37,7 @@ package org.allbinary.business.user.modules.admin.store.web.view.editor.ViewEdit
    type ViewEditorWebStoreAdminUser_Access_Array_Access_Array is array (Natural range <>) of ViewEditorWebStoreAdminUser_Access_Array_Access;
    type ViewEditorWebStoreAdminUser_Access_Array_Access_Array_Access is access all ViewEditorWebStoreAdminUser_Access_Array_Access_Array;
 
-   type ViewEditorWebStoreAdminUser is new User with null record;
+   type ViewEditorWebStoreAdminUser is new User_Package.User with null record;
 
    procedure Initialize (This : in out ViewEditorWebStoreAdminUser'Class);
    function Create return ViewEditorWebStoreAdminUser_Access;

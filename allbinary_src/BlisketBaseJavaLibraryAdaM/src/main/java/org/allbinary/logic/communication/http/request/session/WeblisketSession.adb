@@ -186,7 +186,7 @@ package body org.allbinary.logic.communication.http.request.session.WeblisketSes
       basketName : Unbounded_String;
       orderInterface : OrderInterface_Access;
    begin
-        storeFrontInterface := StoreFrontFactory_Package.getInstance (WeblisketSession'Class (This).getStoreName);
+        storeFrontInterface := StoreFrontInterface_Access (StoreFrontFactory_Package.getInstance (WeblisketSession'Class (This).getStoreName));
         basketName := storeFrontInterface.getBasketName;
         if not (StringValidationUtil_Package.getInstance.isEmpty (basketName)) then
             orderInterface := OrderInterface_Access (This.session.getAttribute (basketName));
@@ -227,7 +227,7 @@ package body org.allbinary.logic.communication.http.request.session.WeblisketSes
       storeFrontInterface : StoreFrontInterface_Access;
       basketName : Unbounded_String;
    begin
-        storeFrontInterface := StoreFrontFactory_Package.getInstance (WeblisketSession'Class (This).getStoreName);
+        storeFrontInterface := StoreFrontInterface_Access (StoreFrontFactory_Package.getInstance (WeblisketSession'Class (This).getStoreName));
         basketName := storeFrontInterface.getBasketName;
         if not (StringValidationUtil_Package.getInstance.isEmpty (basketName)) then
             This.session.removeAttribute (basketName);

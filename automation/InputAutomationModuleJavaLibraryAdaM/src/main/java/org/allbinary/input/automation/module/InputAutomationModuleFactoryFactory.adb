@@ -67,7 +67,7 @@ package body org.allbinary.input.automation.module.InputAutomationModuleFactoryF
       helpSet : HelpSet_Access;
       helpSetEvent : HelpSetEvent_Access;
    begin
-        inputAutomationModuleInterface := inputAutomationModuleConfiguration.getInputAutomationModuleInterface;
+        inputAutomationModuleInterface := InputAutomationModuleFactoryInterface_Access (inputAutomationModuleConfiguration.getInputAutomationModuleInterface);
         This.hashMap.put (Java_Box (inputAutomationModuleConfiguration.getName), inputAutomationModuleInterface);
         This.defaultListModelHelper.add (inputAutomationModuleConfiguration.getName);
         helpSet := inputAutomationModuleInterface.getHelpSet;

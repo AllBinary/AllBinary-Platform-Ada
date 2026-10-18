@@ -27,6 +27,7 @@ with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.C
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.allbinary.graphics.j2me.Dimension_Package; use org.allbinary.graphics.j2me.Dimension_Package;
 with org.allbinary.graphics.j2me.GridLayout_Package; use org.allbinary.graphics.j2me.GridLayout_Package;
+with java.lang.Thread_Package; use java.lang.Thread_Package;
 with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 
 package body org.allbinary.graphics.j2me.MyFrame_Package is
@@ -43,6 +44,8 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
    package AngleFactory_Package renames Standard.org.allbinary.math.AngleFactory_Package;
    package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package Thread_Package renames Standard.java.lang.Thread_Package;
+   package Runnable_Package renames Standard.java.lang.Runnable_Package;
    procedure Initialize_Fields (This : in out MyFrame'Class) is
    begin
       null;

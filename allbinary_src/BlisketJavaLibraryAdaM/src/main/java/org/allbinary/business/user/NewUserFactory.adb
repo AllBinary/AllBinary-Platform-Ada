@@ -63,7 +63,7 @@ package body org.allbinary.business.user.NewUserFactory_Package is
         hashMap := RequestParams_Package.Create (httpServletRequest).toHashMap;
         role := Java_Unbox (httpTransformInfoInterface.getPropertiesHashMap.get (UserRoleData_Package.NAME.toString));
         hashMap.put (Java_Box (UserRoleData_Package.NAME.toString), Java_Box (role));
-        return CreateUserFactory_Package.getInstance (hashMap);
+        return UserInterface_Access (CreateUserFactory_Package.getInstance (hashMap));
    end getInstance;
 
    --  throws Exception
@@ -77,7 +77,7 @@ package body org.allbinary.business.user.NewUserFactory_Package is
             requestHashMap := RequestParams_Package.Create (httpServletRequest).toHashMap;
             roleString := Java_Unbox (propertiesHashMap.get (Java_Box (UserRoleData_Package.NAME.toString)));
             requestHashMap.put (Java_Box (UserRoleData_Package.NAME.toString), Java_Box (roleString));
-            return CreateUserFactory_Package.getInstance (requestHashMap);
+            return UserInterface_Access (CreateUserFactory_Package.getInstance (requestHashMap));
         else
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Null HashMap")));
         end if;

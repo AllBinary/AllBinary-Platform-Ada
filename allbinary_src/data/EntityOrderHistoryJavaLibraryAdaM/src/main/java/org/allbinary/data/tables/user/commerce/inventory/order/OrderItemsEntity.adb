@@ -97,7 +97,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsE
    begin
         vector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         begin
-            basket := order.getBasket;
+            basket := BasketInterface_Access (order.getBasket);
             items := basket.getIds;
             ZERO_STRING := TableDataFactory_Package.getInstance.ZERO_STRING;
             EMPTY_STRING := StringUtil_Package.getInstance.EMPTY_STRING;
@@ -106,7 +106,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsE
             itemsSize := itemsArray'Length;
             for i in 0 .. (itemsSize) - 1 loop
                 item := Java_Unbox (itemsArray (i));
-                itemInterface := inventoryEntity.getItem (item);
+                itemInterface := ItemInterface_Access (inventoryEntity.getItem (item));
                 vector := BasicArrayList_Access (BasicArrayListD_Package.Create);
                 vector.add (OrderItemIdGenerator_Package.Create.getNext);
                 vector.add (order.getId);

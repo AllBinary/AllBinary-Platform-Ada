@@ -28,7 +28,7 @@ package body org.allbinary.game.health.Health_Package is
       null;
       This.health_Var := 0;
       This.maxHealth := 0;
-      This.healthListenerInterface := NullHealthListener_Package.NULL_HEALTH_LISTENER;
+      This.healthListenerInterface := HealthListenerInterface_Access (NullHealthListener_Package.NULL_HEALTH_LISTENER);
    end Initialize_Fields;
 
 

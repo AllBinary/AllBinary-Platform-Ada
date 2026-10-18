@@ -54,8 +54,8 @@ package body views.generic_Id.advertisement.area.AdvertisementAreaView_Package i
       advertisementAreaInterface : AdvertisementAreaInterface_Access;
    begin
         begin
-            advertisementAreasEntityInterface := AdvertisementAreasEntityFactory_Package.getInstance;
-            advertisementAreaInterface := advertisementAreasEntityInterface.get (AdvertisementAreaView'Class (This).getTransformInfoInterface.getStoreName, This.advertisementAreaName);
+            advertisementAreasEntityInterface := AdvertisementAreasEntityInterface_Access (AdvertisementAreasEntityFactory_Package.getInstance);
+            advertisementAreaInterface := AdvertisementAreaInterface_Access (advertisementAreasEntityInterface.get (AdvertisementAreaView'Class (This).getTransformInfoInterface.getStoreName, This.advertisementAreaName));
             return null;
         exception
             when Java_Occurrence : others =>

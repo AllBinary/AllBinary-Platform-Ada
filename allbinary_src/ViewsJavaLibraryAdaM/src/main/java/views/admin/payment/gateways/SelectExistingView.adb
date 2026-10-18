@@ -52,7 +52,7 @@ package body views.admin.payment.gateways.SelectExistingView_Package is
       existingGateways : BasicArrayList_Access;
    begin
         begin
-            paymentGatewayEntityInterface := PaymentGatewayEntityFactory_Package.getInstance;
+            paymentGatewayEntityInterface := PaymentGatewayEntityInterface_Access (PaymentGatewayEntityFactory_Package.getInstance);
             existingGateways := paymentGatewayEntityInterface.findPaymentTypeVectorByStore (SelectExistingView'Class (This).getPaymentGatewayPrimaryKey.getStoreName);
             return PaymentGatewaysView_Package.Create (SelectExistingView'Class (This).getTransformInfoInterface, existingGateways).view;
         exception

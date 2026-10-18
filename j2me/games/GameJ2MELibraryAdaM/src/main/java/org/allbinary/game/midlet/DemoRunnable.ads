@@ -30,6 +30,7 @@ package org.allbinary.game.midlet.DemoRunnable_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package Runnable_Package renames Standard.java.lang.Runnable_Package;
 
    type DemoRunnable is tagged;
    type DemoRunnable_Access is access all DemoRunnable'Class;

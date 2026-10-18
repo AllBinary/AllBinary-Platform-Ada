@@ -41,6 +41,7 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.thread.RunnableInterface_Package; use org.allbinary.thread.RunnableInterface_Package;
 with org.allbinary.input.automation.JFrame_Package; use org.allbinary.input.automation.JFrame_Package;
+with java.lang.Thread_Package; use java.lang.Thread_Package;
 
 package org.allbinary.input.automation.InputAutomationJFrame_Package is
 
@@ -55,6 +56,7 @@ package org.allbinary.input.automation.InputAutomationJFrame_Package is
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package RunnableInterface_Package renames Standard.org.allbinary.thread.RunnableInterface_Package;
+   package Thread_Package renames Standard.java.lang.Thread_Package;
 
    type InputAutomationJFrame is tagged;
    type InputAutomationJFrame_Access is access all InputAutomationJFrame'Class;

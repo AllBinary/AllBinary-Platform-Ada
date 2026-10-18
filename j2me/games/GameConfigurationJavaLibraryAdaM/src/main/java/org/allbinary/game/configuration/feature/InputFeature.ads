@@ -32,7 +32,7 @@ package org.allbinary.game.configuration.feature.InputFeature_Package is
    type InputFeature_Access_Array_Access_Array is array (Natural range <>) of InputFeature_Access_Array_Access;
    type InputFeature_Access_Array_Access_Array_Access is access all InputFeature_Access_Array_Access_Array;
 
-   type InputFeature is new Feature with null record;
+   type InputFeature is new Feature_Package.Feature with null record;
 
    procedure Initialize (This : in out InputFeature'Class; name : Unbounded_String);
    function Create (name : Unbounded_String) return InputFeature_Access;

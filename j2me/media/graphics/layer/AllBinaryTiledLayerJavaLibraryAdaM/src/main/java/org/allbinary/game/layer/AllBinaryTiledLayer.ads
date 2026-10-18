@@ -39,7 +39,7 @@ package org.allbinary.game.layer.AllBinaryTiledLayer_Package is
    type AllBinaryTiledLayer_Access_Array_Access_Array is array (Natural range <>) of AllBinaryTiledLayer_Access_Array_Access;
    type AllBinaryTiledLayer_Access_Array_Access_Array_Access is access all AllBinaryTiledLayer_Access_Array_Access_Array;
 
-   type AllBinaryTiledLayer is new Layer and NamedInterface and PaintableInterface with record
+   type AllBinaryTiledLayer is new Layer_Package.Layer and NamedInterface and PaintableInterface with record
       cellWidth : Integer;
       cellHeight : Integer;
       halfWidth : Integer;

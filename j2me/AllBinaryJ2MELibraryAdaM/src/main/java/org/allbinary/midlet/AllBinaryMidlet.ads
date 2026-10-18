@@ -47,7 +47,7 @@ package org.allbinary.midlet.AllBinaryMidlet_Package is
    type AllBinaryMidlet_Access_Array_Access_Array is array (Natural range <>) of AllBinaryMidlet_Access_Array_Access;
    type AllBinaryMidlet_Access_Array_Access_Array_Access is access all AllBinaryMidlet_Access_Array_Access_Array;
 
-   type AllBinaryMidlet is new MIDlet and CommandListener with record
+   type AllBinaryMidlet is new MIDlet_Package.MIDlet and CommandListener with record
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
       SET_DISPLAY : Unbounded_String;

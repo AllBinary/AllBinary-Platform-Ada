@@ -98,10 +98,10 @@ package body org.allbinary.logic.communication.smtp.event.handler.EmailEventHand
       userEmailEventListenerInterface : UserEmailEventListenerInterface_Access;
       vector : BasicArrayList_Access;
    begin
-        userConfigurationInterface := userInterface.getUserConfigurationInterface;
-        userEmailConfigurationInterface := userConfigurationInterface.getUserEmailConfigurationInterface;
-        userEmailEventsConfigurationInterface := userEmailConfigurationInterface.getUserEmailEventsConfigurationInterface;
-        userEmailEventListenerInterface := userEmailEventsConfigurationInterface.getEventListener (abeClientInformation, userEmailEventNameData, userInterface);
+        userConfigurationInterface := UserConfigurationInterface_Access (userInterface.getUserConfigurationInterface);
+        userEmailConfigurationInterface := UserEmailConfigurationInterface_Access (userConfigurationInterface.getUserEmailConfigurationInterface);
+        userEmailEventsConfigurationInterface := UserEmailEventsConfigurationInterface_Access (userEmailConfigurationInterface.getUserEmailEventsConfigurationInterface);
+        userEmailEventListenerInterface := UserEmailEventListenerInterface_Access (userEmailEventsConfigurationInterface.getEventListener (abeClientInformation, userEmailEventNameData, userInterface));
         vector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         vector.add (Java_Object_Access (userEmailEventListenerInterface));
         return vector;

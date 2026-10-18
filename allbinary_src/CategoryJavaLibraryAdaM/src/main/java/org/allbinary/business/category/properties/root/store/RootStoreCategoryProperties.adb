@@ -152,7 +152,7 @@ package body org.allbinary.business.category.properties.root.store.RootStoreCate
       httpServletRequest : HttpServletRequest_Access;
    begin
         transformInfoHttpStoreInterface := TransformInfoHttpInterface_Access (This.transformInfoInterface);
-        storeFrontInterface := StoreFrontFactory_Package.getInstance (transformInfoHttpStoreInterface.getStoreName);
+        storeFrontInterface := StoreFrontInterface_Access (StoreFrontFactory_Package.getInstance (transformInfoHttpStoreInterface.getStoreName));
         postPath := (storeFrontInterface.getCurrentHostNamePath) + (storeFrontInterface.getCategoryPath);
         httpServletRequest := HttpServletRequest_Access (transformInfoHttpStoreInterface.getPageContext.getRequest);
         This.webAppAbPath := AbPath_Package.Create (Java_Image (httpServletRequest.getContextPath) & postPath, StringUtil_Package.getInstance.EMPTY_STRING);

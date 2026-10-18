@@ -22,6 +22,7 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with org.allbinary.game.displayable.canvas.GameCanvasRunnableInterface_Package; use org.allbinary.game.displayable.canvas.GameCanvasRunnableInterface_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with java.lang.Thread_Package; use java.lang.Thread_Package;
 with org.allbinary.thread.ABRunnable_Package; use org.allbinary.thread.ABRunnable_Package;
 with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 
@@ -29,6 +30,8 @@ package org.allbinary.thread.ThreadFactoryUtil_Package is
 
    package GameCanvasRunnableInterface_Package renames Standard.org.allbinary.game.displayable.canvas.GameCanvasRunnableInterface_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package Thread_Package renames Standard.java.lang.Thread_Package;
+   package Runnable_Package renames Standard.java.lang.Runnable_Package;
 
    type ThreadFactoryUtil is tagged;
    type ThreadFactoryUtil_Access is access all ThreadFactoryUtil'Class;

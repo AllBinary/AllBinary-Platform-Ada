@@ -47,7 +47,7 @@ package body org.allbinary.business.context.modules.storefront.statistics.users.
    begin
       Initialize_Fields (This);
         This.totalUsersByRoleHashMap := StdUtil_Package.getInstance.createHashMap;
-        userEntityInterface := UserEntityFactory_Package.getInstance;
+        userEntityInterface := UserEntityInterface_Access (UserEntityFactory_Package.getInstance);
         userVector := userEntityInterface.getCustomers;
         This.totalNumberOfUsers := userVector.size;
         size := userVector.size;

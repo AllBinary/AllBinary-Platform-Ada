@@ -34,7 +34,7 @@ package body views.HttpComponentView_Package is
    begin
       null;
       This.logUtil := LogUtil_Package.getInstance;
-      This.abeClientInformation := ServiceClientInformationInterfaceFactory_Package.getInstance;
+      This.abeClientInformation := AbeClientInformationInterface_Access (ServiceClientInformationInterfaceFactory_Package.getInstance);
       
       This.transformDocumentInterface := null;
       This.NO_TYPE := 0;

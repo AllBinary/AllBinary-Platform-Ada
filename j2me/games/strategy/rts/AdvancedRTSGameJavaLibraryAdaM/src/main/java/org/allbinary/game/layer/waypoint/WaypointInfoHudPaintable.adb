@@ -24,7 +24,7 @@ package body org.allbinary.game.layer.waypoint.WaypointInfoHudPaintable_Package 
    begin
       null;
       
-      This.rtsLayerP := NullPathFindingLayer_Package.NULL_PATH_FINDING_LAYER;
+      This.rtsLayerP := PathFindingLayerInterface_Access (NullPathFindingLayer_Package.NULL_PATH_FINDING_LAYER);
       This.textLine2Y := 0;
    end Initialize_Fields;
 

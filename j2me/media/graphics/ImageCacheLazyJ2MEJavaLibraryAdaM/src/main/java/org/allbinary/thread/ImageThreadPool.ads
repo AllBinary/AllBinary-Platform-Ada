@@ -27,6 +27,7 @@ with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 package org.allbinary.thread.ImageThreadPool_Package is
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
+   package Runnable_Package renames Standard.java.lang.Runnable_Package;
 
    type ImageThreadPool is tagged;
    type ImageThreadPool_Access is access all ImageThreadPool'Class;

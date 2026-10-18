@@ -45,7 +45,7 @@ package body org.allbinary.business.user.commerce.shipping.modules.BasicWeightSh
       basket : BasketInterface_Access;
       money : Money_Access;
    begin
-        basket := order.getBasket;
+        basket := BasketInterface_Access (order.getBasket);
         money := Money_Package.Create;
         money.add (basket.getTotalWeight);
         money.multiply (1);

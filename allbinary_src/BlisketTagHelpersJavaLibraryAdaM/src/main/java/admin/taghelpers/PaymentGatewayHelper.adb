@@ -74,7 +74,7 @@ package body admin.taghelpers.PaymentGatewayHelper_Package is
       error : Unbounded_String;
    begin
         begin
-            paymentGatewayInterface := PaymentGatewayInterfaceFactory_Package.Create.getInstance (This.httpServletRequest);
+            paymentGatewayInterface := PaymentGatewayInterface_Access (PaymentGatewayInterfaceFactory_Package.Create.getInstance (This.httpServletRequest));
             paymentGatewayInterface.setStoreName (This.weblisketSession.getStoreName);
             PaymentGatewayEntityFactory_Package.getInstance.add (paymentGatewayInterface);
             success := To_Unbounded_String ("Successfully Added New Payment Gateway");
@@ -103,7 +103,7 @@ package body admin.taghelpers.PaymentGatewayHelper_Package is
       error : Unbounded_String;
    begin
         begin
-            paymentGatewayInterface := PaymentGatewayInterfaceFactory_Package.Create.getInstance (This.httpServletRequest);
+            paymentGatewayInterface := PaymentGatewayInterface_Access (PaymentGatewayInterfaceFactory_Package.Create.getInstance (This.httpServletRequest));
             paymentGatewayInterface.setStoreName (This.weblisketSession.getStoreName);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
                 stringBuffer := StringMaker_Package.Create;
@@ -142,7 +142,7 @@ package body admin.taghelpers.PaymentGatewayHelper_Package is
       error : Unbounded_String;
    begin
         begin
-            paymentGatewayInterface := PaymentGatewayInterfaceFactory_Package.Create.getInstance (This.httpServletRequest);
+            paymentGatewayInterface := PaymentGatewayInterface_Access (PaymentGatewayInterfaceFactory_Package.Create.getInstance (This.httpServletRequest));
             paymentGatewayInterface.setStoreName (This.weblisketSession.getStoreName);
             storeName := paymentGatewayInterface.getStoreName;
             gatewayName := paymentGatewayInterface.getName;

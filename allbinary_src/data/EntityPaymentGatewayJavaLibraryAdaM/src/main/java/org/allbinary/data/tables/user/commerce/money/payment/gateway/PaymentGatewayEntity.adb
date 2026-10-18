@@ -188,13 +188,13 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
                 paymentGatewayHashMap.put (Java_Box (PaymentGatewayData_Package.SPECIAL7.toString), superCrypt.decrypt (special7));
                 paymentGatewayHashMap.put (Java_Box (PaymentGatewayData_Package.SPECIAL8.toString), superCrypt.decrypt (special8));
                 paymentGatewayHashMap.put (Java_Box (PaymentGatewayData_Package.SPECIAL9.toString), superCrypt.decrypt (special9));
-                paymentGatewayInterface := PaymentGatewayInterfaceFactory_Package.Create.getInstance (paymentGatewayHashMap);
+                paymentGatewayInterface := PaymentGatewayInterface_Access (PaymentGatewayInterfaceFactory_Package.Create.getInstance (paymentGatewayHashMap));
                 if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
                     This.logUtil.putF (This.commonStrings.SUCCESS, PaymentGatewayEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("getPaymentGatewayInterface()"));
                 end if;
                 return paymentGatewayInterface;
             else
-                return PaymentGatewayInterfaceFactory_Package.Create.getInstance (paymentType);
+                return PaymentGatewayInterface_Access (PaymentGatewayInterfaceFactory_Package.Create.getInstance (paymentType));
             end if;
         exception
             when Java_Occurrence : others =>

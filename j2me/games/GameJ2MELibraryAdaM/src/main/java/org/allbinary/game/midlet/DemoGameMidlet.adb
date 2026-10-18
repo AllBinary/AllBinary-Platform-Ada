@@ -70,7 +70,7 @@ package body org.allbinary.game.midlet.DemoGameMidlet_Package is
    function createDemoGameCanvasRunnableInterface (This : in out DemoGameMidlet) return GameCanvasRunnableInterface_Access is
    begin
         This.logUtil.putF (This.commonStrings.NOT_IMPLEMENTED, DemoGameMidlet_Access'(This'Unchecked_Access), This.commonStrings.CREATE);
-        return NullGameCanvasRunnable_Package.NULL_GAME_CANVAS_RUNNABLE;
+        return GameCanvasRunnableInterface_Access (NullGameCanvasRunnable_Package.NULL_GAME_CANVAS_RUNNABLE);
    end createDemoGameCanvasRunnableInterface;
 
    --  throws Exception
@@ -84,7 +84,7 @@ package body org.allbinary.game.midlet.DemoGameMidlet_Package is
    --  throws Exception
    function createGameCanvasRunnableInterface (This : in out DemoGameMidlet) return GameCanvasRunnableInterface_Access is
    begin
-        return DemoGameMidlet'Class (This).createGameCanvasRunnable (DemoGameMidlet'Class (This).createGameLayerManager);
+        return GameCanvasRunnableInterface_Access (DemoGameMidlet'Class (This).createGameCanvasRunnable (DemoGameMidlet'Class (This).createGameLayerManager));
    end createGameCanvasRunnableInterface;
 
    procedure demoSetup (This : in out DemoGameMidlet) is

@@ -125,7 +125,7 @@ package body views.compound.objectConfig.CompoundContextTransformInfoObjectConfi
         stringBuffer.append (templateNameOverride);
         stringBuffer.append (CommonSeps_Package.getInstance.SPACE);
         stringBuffer.append (RootTransformInfoData_Package.NAME);
-        rootComponentInterface := TransformFactory_Package.getInstance.getInstance (This.abeClientInformation, stringBuffer.toString, CompoundContextTransformInfoObjectConfig'Class (This).getTransformInfoInterface);
+        rootComponentInterface := TransformInterface_Access (TransformFactory_Package.getInstance.getInstance (This.abeClientInformation, stringBuffer.toString, CompoundContextTransformInfoObjectConfig'Class (This).getTransformInfoInterface));
         viewVector := CompoundContextTransformInfoObjectConfig'Class (This).getTransformDomNodes;
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("Root View Called with: ") & Java_Image (viewVector.size), CompoundContextTransformInfoObjectConfig_Access'(This'Unchecked_Access), To_Unbounded_String ("get(transformInfoInterface)"));
@@ -137,7 +137,7 @@ package body views.compound.objectConfig.CompoundContextTransformInfoObjectConfi
         for index in 0 .. (size) - 1 loop
             objectConfigTransformInfoDomNode := TransformInfoDomNode_Access (viewVector.get (index));
             templateKey := objectConfigTransformInfoDomNode.getReplaceKey;
-            componentInterface := TransformFactory_Package.getInstance.getInstance (This.abeClientInformation, objectConfigTransformInfoDomNode.getTransformInfoInterface.getName, CompoundContextTransformInfoObjectConfig'Class (This).getTransformInfoInterface);
+            componentInterface := TransformInterface_Access (TransformFactory_Package.getInstance.getInstance (This.abeClientInformation, objectConfigTransformInfoDomNode.getTransformInfoInterface.getName, CompoundContextTransformInfoObjectConfig'Class (This).getTransformInfoInterface));
             replacementViewString := componentInterface.view;
             replacementViewString := DocumentToNode_Package.convertDocumentToNodeString (replacementViewString);
             stringBuffer.delete (0, stringBuffer.length);

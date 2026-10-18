@@ -42,7 +42,7 @@ package org.allbinary.physics.movement.ConstantVelocityNotifyViewChangeMovement_
    type ConstantVelocityNotifyViewChangeMovement_Access_Array_Access_Array is array (Natural range <>) of ConstantVelocityNotifyViewChangeMovement_Access_Array_Access;
    type ConstantVelocityNotifyViewChangeMovement_Access_Array_Access_Array_Access is access all ConstantVelocityNotifyViewChangeMovement_Access_Array_Access_Array;
 
-   type ConstantVelocityNotifyViewChangeMovement is new Movement with record
+   type ConstantVelocityNotifyViewChangeMovement is new Movement_Package.Movement with record
       basicVelocityProperties : BasicVelocityProperties_Access;
       speedBasicDecimal : BasicDecimal_Access;
       axisMathVectorUtil : AxisMathVectorUtil_Access;

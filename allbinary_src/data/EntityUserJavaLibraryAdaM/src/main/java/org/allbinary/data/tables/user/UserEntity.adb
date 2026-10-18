@@ -187,7 +187,7 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
         row.put (UserData_Package.USERNAME, Java_Box (userName));
         userHashMap := AbSqlBean (This).getRow (row);
         if (userHashMap) /= (null) then
-            return CreateUserFactory_Package.getInstance (userHashMap);
+            return UserInterface_Access (CreateUserFactory_Package.getInstance (userHashMap));
         else
             return null;
         end if;

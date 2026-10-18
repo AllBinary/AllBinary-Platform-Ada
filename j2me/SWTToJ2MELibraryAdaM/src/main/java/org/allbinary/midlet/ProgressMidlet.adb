@@ -25,6 +25,7 @@ package body org.allbinary.midlet.ProgressMidlet_Package is
    package Processor_Package renames Standard.org.allbinary.canvas.Processor_Package;
    package PrimaryThreadPool_Package renames Standard.org.allbinary.thread.PrimaryThreadPool_Package;
    package ThreadPool_Package renames Standard.org.allbinary.thread.ThreadPool_Package;
+   package Runnable_Package renames Standard.java.lang.Runnable_Package;
    procedure Initialize_Fields (This : in out ProgressMidlet'Class) is
    begin
       null;
@@ -39,7 +40,7 @@ package body org.allbinary.midlet.ProgressMidlet_Package is
       AllBinaryMidlet_Package.Initialize (This);
       Initialize_Fields (This);
         ProgressMidlet'Class (This).preInit;
-        This.abeClientInformation := clientInformationFactory.getInstance;
+        This.abeClientInformation := AbeClientInformationInterface_Access (clientInformationFactory.getInstance);
    end Initialize;
 
    function Create (clientInformationFactory_Param : access ClientInformationFactory_Package.ClientInformationFactory'Class) return ProgressMidlet_Access is

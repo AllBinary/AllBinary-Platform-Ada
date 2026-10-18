@@ -31,6 +31,7 @@ with org.allbinary.thread.RunnableInterface_Package; use org.allbinary.thread.Ru
 with org.allbinary.thread.ThreadObjectUtil_Package; use org.allbinary.thread.ThreadObjectUtil_Package;
 with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with java.lang.Thread_Package; use java.lang.Thread_Package;
 with org.allbinary.canvas.Processor_Package; use org.allbinary.canvas.Processor_Package;
 
 package org.allbinary.canvas.RunnableCanvas_Package is
@@ -46,6 +47,7 @@ package org.allbinary.canvas.RunnableCanvas_Package is
    package ThreadObjectUtil_Package renames Standard.org.allbinary.thread.ThreadObjectUtil_Package;
    package TimeDelayHelper_Package renames Standard.org.allbinary.time.TimeDelayHelper_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package Thread_Package renames Standard.java.lang.Thread_Package;
 
    type RunnableCanvas is tagged;
    type RunnableCanvas_Access is access all RunnableCanvas'Class;

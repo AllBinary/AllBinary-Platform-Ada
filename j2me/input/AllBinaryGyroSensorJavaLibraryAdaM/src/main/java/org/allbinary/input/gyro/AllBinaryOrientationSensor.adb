@@ -24,7 +24,7 @@ package body org.allbinary.input.gyro.AllBinaryOrientationSensor_Package is
    begin
       null;
       This.sensorDataFloatArray := PrimitiveFloatUtil_Package.getArrayInstance;
-      This.listener := NoCompleteMotionGestureInputEventListener_Package.getInstance;
+      This.listener := CompleteMotionGestureInputEventListenerInterface_Access (NoCompleteMotionGestureInputEventListener_Package.getInstance);
    end Initialize_Fields;
 
 

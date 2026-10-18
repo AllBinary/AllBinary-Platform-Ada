@@ -25,6 +25,7 @@ with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 
 package org.allbinary.thread.SecondaryThreadPool_Package is
 
+   package Runnable_Package renames Standard.java.lang.Runnable_Package;
 
    type SecondaryThreadPool is tagged;
    type SecondaryThreadPool_Access is access all SecondaryThreadPool'Class;

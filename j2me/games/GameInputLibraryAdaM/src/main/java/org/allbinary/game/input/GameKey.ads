@@ -32,7 +32,7 @@ package org.allbinary.game.input.GameKey_Package is
    type GameKey_Access_Array_Access_Array is array (Natural range <>) of GameKey_Access_Array_Access;
    type GameKey_Access_Array_Access_Array_Access is access all GameKey_Access_Array_Access_Array;
 
-   type GameKey is new Input with null record;
+   type GameKey is new Input_Package.Input with null record;
    NULL_GAME_KEY : GameKey_Access;
 
    procedure Initialize (This : in out GameKey'Class; key : Integer; name : Unbounded_String);

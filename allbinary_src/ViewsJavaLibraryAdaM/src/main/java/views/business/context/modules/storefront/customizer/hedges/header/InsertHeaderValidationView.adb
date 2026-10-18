@@ -53,7 +53,7 @@ package body views.business.context.modules.storefront.customizer.hedges.header.
         TopBarView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
         multipartRequestHashMap := MultipartRequestParams_Package.Create (InsertHeaderValidationView'Class (This).getPageContext).toHashMap;
-        storeFrontInterface := StoreFrontFactory_Package.getInstance (InsertHeaderValidationView'Class (This).getWeblisketSession.getStoreName);
+        storeFrontInterface := StoreFrontInterface_Access (StoreFrontFactory_Package.getInstance (InsertHeaderValidationView'Class (This).getWeblisketSession.getStoreName));
         fullPath := Java_Image ((URLGLOBALS_Package.getWebappPath) + (storeFrontInterface.getCurrentHostNamePath)) & This.LOGOPATH;
         multipartRequestHashMap.put (LogoData_Package.getInstance.IMAGEPATH, Java_Box (fullPath));
         This.heading := HeadingValidation_Package.Create (multipartRequestHashMap);

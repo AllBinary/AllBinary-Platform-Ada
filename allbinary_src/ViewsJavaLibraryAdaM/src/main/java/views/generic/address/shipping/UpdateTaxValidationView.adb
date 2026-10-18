@@ -62,7 +62,7 @@ package body views.generic_Id.address.shipping.UpdateTaxValidationView_Package i
       index : Integer;
    begin
         This.streetAddress := StreetAddress_Package.Create (UpdateTaxValidationView'Class (This).getRequest);
-        storeFrontInterface := StoreFrontFactory_Package.getInstance (UpdateTaxValidationView'Class (This).getTransformInfoInterface.getStoreName);
+        storeFrontInterface := StoreFrontInterface_Access (StoreFrontFactory_Package.getInstance (UpdateTaxValidationView'Class (This).getTransformInfoInterface.getStoreName));
         if (TaxFactory_Package.getInstance.getInstance (This.abeClientInformation, storeFrontInterface).isValid (This.streetAddress, storeFrontInterface)) = (False) then
             return False;
         end if;

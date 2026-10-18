@@ -71,7 +71,7 @@ package body org.allbinary.game.input.form.AssignWaypointsUtil_Package is
                 This.WAYPOINT_EVENT.setRtsLayer (waypointLayer);
                 unitWaypointBehavior.onWaypointEvent (This.WAYPOINT_EVENT);
             end loop;
-            waypointLayer := PrimaryWaypointHelper_Package.getInstance.getWaypointLayer;
+            waypointLayer := PathFindingLayerInterface_Access (PrimaryWaypointHelper_Package.getInstance.getWaypointLayer);
             if (waypointLayer) /= (NullPathFindingLayer_Package.NULL_PATH_FINDING_LAYER) then
                 This.WAYPOINT_EVENT.setRtsLayer (waypointLayer);
                 unitWaypointBehavior.onWaypointEvent (This.WAYPOINT_EVENT);

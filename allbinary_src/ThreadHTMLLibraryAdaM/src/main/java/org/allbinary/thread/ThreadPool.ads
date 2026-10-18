@@ -34,6 +34,7 @@ package org.allbinary.thread.ThreadPool_Package is
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package Runnable_Package renames Standard.java.lang.Runnable_Package;
 
    type ThreadPool is tagged;
    type ThreadPool_Access is access all ThreadPool'Class;

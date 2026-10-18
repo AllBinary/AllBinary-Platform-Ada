@@ -64,7 +64,7 @@ package body taghelpers.InventoryHelper_Package is
         storeName := Java_Unbox (propertiesHashMap.get (StoreFrontData_Package.getInstance.NAME));
         xslFile := Java_Unbox (propertiesHashMap.get (TransformInfoData_Package.getInstance.TEMPLATEFILENAME));
         if (storeName) /= (Null_Unbounded_String) then
-            storeFrontInterface := StoreFrontFactory_Package.getInstance (storeName);
+            storeFrontInterface := StoreFrontInterface_Access (StoreFrontFactory_Package.getInstance (storeName));
             contentType := AcceptableResponseGenerator_Package.getInstance.get (This.request);
             searchParams := SearchParams_Package.Create (This.request);
             This.searchRequest := SearchRequest_Package.Create (storeFrontInterface, searchParams, xslFile, contentType, propertiesHashMap, pageContext);
@@ -90,7 +90,7 @@ package body taghelpers.InventoryHelper_Package is
       error : Unbounded_String;
    begin
         begin
-            inventoryViewSearchInterface := InventoryViewFactory_Package.getInstance (This.searchRequest);
+            inventoryViewSearchInterface := InventoryViewSearchInterface_Access (InventoryViewFactory_Package.getInstance (This.searchRequest));
             result := inventoryViewSearchInterface.getProduct (This.id);
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
                 This.logUtil.putF (To_Unbounded_String ("Successfull Inventory View Summary"), InventoryHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("viewSummary()"));
@@ -123,7 +123,7 @@ package body taghelpers.InventoryHelper_Package is
             if ((keywords) = (Null_Unbounded_String)) or else ((Java_Compare_To (keywords, stringUtil.EMPTY_STRING)) = (0)) then
                 return To_Unbounded_String ("Please enter a keyword in the search field above the Search button.");
             end if;
-            inventoryViewSearchInterface := InventoryViewFactory_Package.getInstance (This.searchRequest);
+            inventoryViewSearchInterface := InventoryViewSearchInterface_Access (InventoryViewFactory_Package.getInstance (This.searchRequest));
             result := inventoryViewSearchInterface.searchSingleDynamicPage;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
                 This.logUtil.putF (To_Unbounded_String ("Successful Inventory Dynamic Search"), InventoryHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("searchSingleDynamicPage()"));

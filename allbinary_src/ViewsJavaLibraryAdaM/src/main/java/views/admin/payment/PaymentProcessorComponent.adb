@@ -50,7 +50,7 @@ package body views.admin.payment.PaymentProcessorComponent_Package is
       paymentProcessorInterface : PaymentProcessorInterface_Access;
       httpTransformInfoInterface : TransformInfoHttpInterface_Access;
    begin
-        paymentProcessorInterface := PaymentProcessorInterfaceFactory_Package.getInstance.getInstance (PaymentProcessorComponent'Class (This).getTransformInfoInterface);
+        paymentProcessorInterface := PaymentProcessorInterface_Access (PaymentProcessorInterfaceFactory_Package.getInstance.getInstance (PaymentProcessorComponent'Class (This).getTransformInfoInterface));
         paymentProcessorInterface.process;
         httpTransformInfoInterface := TransformInfoHttpInterface_Access (PaymentProcessorComponent'Class (This).getTransformInfoInterface);
         httpTransformInfoInterface.getWeblisketSession.removeBasket;

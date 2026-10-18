@@ -21,9 +21,12 @@ with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 with java.lang.Runnable_Package; use java.lang.Runnable_Package;
+with java.lang.Thread_Package; use java.lang.Thread_Package;
 
 package org.allbinary.thread.RunnableInterface_Package is
 
+   package Runnable_Package renames Standard.java.lang.Runnable_Package;
+   package Thread_Package renames Standard.java.lang.Thread_Package;
 
    type RunnableInterface is interface and Runnable;
    type RunnableInterface_Access is access all RunnableInterface'Class;

@@ -105,7 +105,7 @@ package body org.allbinary.logic.system.security.licensing.LicenseClientAndServe
                     licenseInitInfo := LicenseInitInfo_Package.Create;
                     licenseInitInfo.addServer (serverName);
                     LicenseInitInfoUtil_Package.getInstance.write (licenseInitInfo);
-                    abeClientInformation := AbeClientInformationInterfaceFactory_Package.getInstance;
+                    abeClientInformation := AbeClientInformationInterface_Access (AbeClientInformationInterfaceFactory_Package.getInstance);
                     xmlRpcAbeLicenseClient := XmlRpcAbeLicenseRetrievalClient_Package.Create (abeClientInformation);
                     abeLicenseInterface := AbeLicenseInterface_Access (xmlRpcAbeLicenseClient.get (null));
                     if (abeLicenseInterface) /= (null) then

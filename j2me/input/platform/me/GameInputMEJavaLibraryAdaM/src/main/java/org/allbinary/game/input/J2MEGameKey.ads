@@ -32,7 +32,7 @@ package org.allbinary.game.input.J2MEGameKey_Package is
    type J2MEGameKey_Access_Array_Access_Array is array (Natural range <>) of J2MEGameKey_Access_Array_Access;
    type J2MEGameKey_Access_Array_Access_Array_Access is access all J2MEGameKey_Access_Array_Access_Array;
 
-   type J2MEGameKey is new Input with null record;
+   type J2MEGameKey is new Input_Package.Input with null record;
 
    procedure Initialize (This : in out J2MEGameKey'Class; key : Integer; keyName : Unbounded_String);
    function Create (key : Integer; keyName : Unbounded_String) return J2MEGameKey_Access;

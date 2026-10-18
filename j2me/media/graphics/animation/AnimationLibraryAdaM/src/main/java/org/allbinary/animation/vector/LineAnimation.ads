@@ -41,7 +41,7 @@ package org.allbinary.animation.vector.LineAnimation_Package is
    type LineAnimation_Access_Array_Access_Array is array (Natural range <>) of LineAnimation_Access_Array_Access;
    type LineAnimation_Access_Array_Access_Array_Access is access all LineAnimation_Access_Array_Access_Array;
 
-   type LineAnimation is new Animation and ColorCompositeInterface and PositionInterface with record
+   type LineAnimation is new Animation_Package.Animation and ColorCompositeInterface and PositionInterface with record
       newLine : Integer_Array_Access_Array_Access;
       tempLine : Integer_Array_Access_Array_Access;
       line : Integer_Array_Access_Array_Access;

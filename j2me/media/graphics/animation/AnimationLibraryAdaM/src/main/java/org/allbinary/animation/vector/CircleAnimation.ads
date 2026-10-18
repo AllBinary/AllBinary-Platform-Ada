@@ -39,7 +39,7 @@ package org.allbinary.animation.vector.CircleAnimation_Package is
    type CircleAnimation_Access_Array_Access_Array is array (Natural range <>) of CircleAnimation_Access_Array_Access;
    type CircleAnimation_Access_Array_Access_Array_Access is access all CircleAnimation_Access_Array_Access_Array;
 
-   type CircleAnimation is new Animation and ColorCompositeInterface with record
+   type CircleAnimation is new Animation_Package.Animation and ColorCompositeInterface with record
       TOTAL_ANGLE : Integer;
       width : Integer;
       height : Integer;
