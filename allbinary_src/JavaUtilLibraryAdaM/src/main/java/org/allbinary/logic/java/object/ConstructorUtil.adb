@@ -68,7 +68,7 @@ package body org.allbinary.logic.java.anyType.ConstructorUtil_Package is
             classes := constructor.getParameterTypes;
             for index in 0 .. (classes'Length) - 1 loop
                 stringBuffer.append (commonSeps.SPACE);
-                stringBuffer.append (classes (index).getName);
+                stringBuffer.append (To_Unbounded_String (Ada.Tags.Expanded_Name (classes (index))));
                 stringBuffer.append (commonSeps.COLON);
                 stringBuffer.appendint (index);
             end loop;

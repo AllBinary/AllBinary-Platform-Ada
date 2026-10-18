@@ -308,7 +308,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
    procedure prependText (This : in out KeyboardActionScriptInputJPanel; integer_Id : Integer) is
       newKey : Unbounded_String;
    begin
-        if (integer_Id) /= (null) then
+        if (integer_Id) /= (0) then
             newKey := To_Unbounded_String ("&#") & To_Unbounded_String (Java_Image (integer_Id)) & To_Unbounded_String (";");
             This.textJTextField.setText (newKey & Java_Image (This.textJTextField.getText));
         end if;

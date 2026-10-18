@@ -92,7 +92,7 @@ package body org.allbinary.business.user.commerce.inventory.basket.Basket_Packag
         if (itemsAndNumberInBasket.size) > (0) then
             items := itemsAndNumberInBasket.keySet;
             product := Null_Unbounded_String;
-            weightFloat := null;
+            weightFloat := 0.0;
             itemArray := items.toArray;
             size := itemArray'Length;
             for index in 0 .. (size) - 1 loop

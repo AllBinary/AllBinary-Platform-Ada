@@ -36,7 +36,7 @@ package body org.allbinary.game.ag.ai.KeyPressesAI_Package is
    begin
         BasicAI_Package.Initialize (This, ownerLayerInterface, gameInput);
         Initialize_Fields (This);
-        This.keys := new Integer_Array'(0 .. (hashtable.size) - 1 => null);
+        This.keys := new Integer_Array'(0 .. (hashtable.size) - 1 => 0);
         objectArray := HashtableUtil_Package.getInstance.getKeysAsArray (hashtable);
         size := objectArray'Length;
         for index in 0 .. (size) - 1 loop
@@ -58,7 +58,7 @@ package body org.allbinary.game.ag.ai.KeyPressesAI_Package is
    begin
         if This.on then
             for index in 0 .. (This.keys'Length) - 1 loop
-                BasicAI (This).processKeyAI (This.keys (index).intValue);
+                BasicAI (This).processKeyAI (Integer (This.keys (index)));
             end loop;
         end if;
    end processAI;

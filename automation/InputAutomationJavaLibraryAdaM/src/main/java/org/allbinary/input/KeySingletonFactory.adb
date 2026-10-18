@@ -41,7 +41,7 @@ package body org.allbinary.input.KeySingletonFactory_Package is
         begin
             for index in 0 .. (keyArray'Length) - 1 loop
                 keyAsString := KeyEvent_Package.getKeyText (keyArray (index));
-                KeySingletonFactory_Package.keyStringHashtable.put (Java_Box (keyAsString), keyArray (index));
+                KeySingletonFactory_Package.keyStringHashtable.put (Java_Box (keyAsString), Java_Box (keyArray (index)));
             end loop;
         exception
             when Java_Occurrence : others =>

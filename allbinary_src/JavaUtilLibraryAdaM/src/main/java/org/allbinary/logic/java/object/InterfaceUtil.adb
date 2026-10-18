@@ -51,7 +51,7 @@ package body org.allbinary.logic.java.anyType.InterfaceUtil_Package is
         stringBuffer.append (lineBreak);
         for index in 0 .. (interfaces'Length) - 1 loop
             stringBuffer.append (To_Unbounded_String ("Interface: "));
-            stringBuffer.append (interfaces (index).getName);
+            stringBuffer.append (To_Unbounded_String (Ada.Tags.Expanded_Name (interfaces (index))));
             stringBuffer.append (lineBreak);
         end loop;
         return stringBuffer.toString;
@@ -62,7 +62,7 @@ package body org.allbinary.logic.java.anyType.InterfaceUtil_Package is
    begin
         if (((interfaceName) /= (Null_Unbounded_String)) and then ((interfaces) /= (null))) and then ((interfaces'Length) > (0)) then
             for index in 0 .. (interfaces'Length) - 1 loop
-                if (interfaces (index).getName.indexOf (interfaceName)) >= (0) then
+                if (To_Unbounded_String (Ada.Tags.Expanded_Name (interfaces (index))).indexOf (interfaceName)) >= (0) then
                     return interfaces (index);
                 end if;
             end loop;
@@ -77,7 +77,7 @@ package body org.allbinary.logic.java.anyType.InterfaceUtil_Package is
    begin
         classes := anyType.all'Tag.getInterfaces;
         for index in 0 .. (classes'Length) - 1 loop
-            if (To_Unbounded_String (Ada.Tags.Expanded_Name (clazz)).compareTo (classes (index).getName)) = (0) then
+            if (To_Unbounded_String (Ada.Tags.Expanded_Name (clazz)).compareTo (To_Unbounded_String (Ada.Tags.Expanded_Name (classes (index))))) = (0) then
                 return True;
             end if;
         end loop;
@@ -91,7 +91,7 @@ package body org.allbinary.logic.java.anyType.InterfaceUtil_Package is
    begin
         classes := anyType.all'Tag.getInterfaces;
         for index in 0 .. (classes'Length) - 1 loop
-            if (classes (index).getName.indexOf (className)) = (0) then
+            if (To_Unbounded_String (Ada.Tags.Expanded_Name (classes (index))).indexOf (className)) = (0) then
                 return True;
             end if;
         end loop;
@@ -110,8 +110,8 @@ package body org.allbinary.logic.java.anyType.InterfaceUtil_Package is
         for index in 0 .. (classes'Length) - 1 loop
             stringBuffer.append (To_Unbounded_String (Ada.Tags.Expanded_Name (clazz)));
             stringBuffer.append (To_Unbounded_String (" should be = "));
-            stringBuffer.append (classes (index).getName);
-            stringBuffer.append (classes (index).getName);
+            stringBuffer.append (To_Unbounded_String (Ada.Tags.Expanded_Name (classes (index))));
+            stringBuffer.append (To_Unbounded_String (Ada.Tags.Expanded_Name (classes (index))));
             stringBuffer.append (CommonSeps_Package.getInstance.NEW_LINE);
         end loop;
         return stringBuffer.toString;

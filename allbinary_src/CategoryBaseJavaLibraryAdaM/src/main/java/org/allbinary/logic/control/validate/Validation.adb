@@ -39,7 +39,7 @@ package body org.allbinary.logic.control.validate.Validation_Package is
    function isValid (This : in out Validation) return Boolean is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
-        return null;
+        return False;
    end isValid;
 
    --  throws Exception

@@ -81,7 +81,7 @@ package body org.allbinary.game.ag.ai.NumberOnOwnGroupSequenceAIFactory_Package 
         if ((artificialIntelligenceInterface'Length) - (1)) < (list.size) then
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Too Many AI properties.")));
         end if;
-        numberOnSameTeam := new Integer_Array'(0 .. (list.size) - 1 => null);
+        numberOnSameTeam := new Integer_Array'(0 .. (list.size) - 1 => 0);
         for index in 0 .. (numberOnSameTeam'Length) - 1 loop
             numberOnSameTeam (index) := Integer (list.objectArray (index));
         end loop;

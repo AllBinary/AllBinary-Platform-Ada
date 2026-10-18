@@ -184,7 +184,7 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
 --              
 --     function getElementAt (This : in out ; i : Integer) return Java_Object_Access is
 --     begin
---                  return strings (i);
+--                  return Java_Box (strings (i));
 --          return null;
 --     end getElementAt;
 );

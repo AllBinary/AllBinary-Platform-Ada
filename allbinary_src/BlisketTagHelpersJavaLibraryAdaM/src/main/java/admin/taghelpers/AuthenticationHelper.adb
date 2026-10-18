@@ -49,7 +49,7 @@ package body admin.taghelpers.AuthenticationHelper_Package is
       This.sessionUserName := Null_Unbounded_String;
       This.role := null;
       This.timeout := Null_Unbounded_String;
-      This.attemptsInteger := null;
+      This.attemptsInteger := 0;
    end Initialize_Fields;
 
 
@@ -291,7 +291,7 @@ package body admin.taghelpers.AuthenticationHelper_Package is
 
    procedure nextAttempt (This : in out AuthenticationHelper) is
    begin
-        if ((This.attemptsInteger) /= (null)) and then ((Integer (This.attemptsInteger)) > (0)) then
+        if ((This.attemptsInteger) /= (0)) and then ((Integer (This.attemptsInteger)) > (0)) then
             This.weblisketSession.setAttempts ((Integer (This.attemptsInteger)) + (1));
         else
             This.weblisketSession.setAttempts (1);

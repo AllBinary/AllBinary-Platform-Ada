@@ -40,7 +40,7 @@ package body org.allbinary.game.score.remote.RemoteHighScores_Package is
       This.enumerationUtil := EnumerationUtil_Package.getInstance;
       
       
-      This.ascending_Case := null;
+      This.ascending_Case := False;
       This.ASCENDING := To_Unbounded_String ("ASCENDING");
    end Initialize_Fields;
 

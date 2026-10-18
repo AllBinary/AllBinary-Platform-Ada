@@ -21,7 +21,7 @@ package body org.allbinary.logic.math.SmallLongFactory_Package is
       null;
       This.NEGATIVE_MAX := 500;
       This.POSITIVE_MAX := 16#2D1#;
-      This.INTEGER_ARRAY := new Long_Long_Integer_Array'(0 .. ((This.NEGATIVE_MAX) + (This.POSITIVE_MAX)) - 1 => null);
+      This.INTEGER_ARRAY := new Long_Long_Integer_Array'(0 .. ((This.NEGATIVE_MAX) + (This.POSITIVE_MAX)) - 1 => 0);
       This.STRING_ARRAY := new Unbounded_String_Array'(0 .. ((This.NEGATIVE_MAX) + (This.POSITIVE_MAX)) - 1 => Null_Unbounded_String);
       This.MIN := 0;
       This.lastMin := 0;
@@ -38,10 +38,10 @@ package body org.allbinary.logic.math.SmallLongFactory_Package is
       index : Integer;
    begin
         for index in reverse This.lastMin .. (value) - (1) loop
-            This.INTEGER_ARRAY ((index) + (This.NEGATIVE_MAX)) := index;
+            This.INTEGER_ARRAY ((index) + (This.NEGATIVE_MAX)) := Long_Long_Integer (index);
         end loop;
         for index in reverse This.lastNegativeMin .. (negativeValue) - (1) loop
-            This.INTEGER_ARRAY (index) := -(index);
+            This.INTEGER_ARRAY (index) := Long_Long_Integer (-(index));
         end loop;
         if (This.lastMin) < (value) then
             This.lastMin := value;
@@ -55,13 +55,13 @@ package body org.allbinary.logic.math.SmallLongFactory_Package is
    procedure init (This : in out SmallLongFactory) is
       index : Integer;
    begin
-        if (This.INTEGER_ARRAY (0)) = (null) then
+        if (This.INTEGER_ARRAY (0)) = (0) then
             if ((This.lastMin) < (This.POSITIVE_MAX)) or else ((This.lastNegativeMin) < (This.NEGATIVE_MAX)) then
                 for index in reverse This.lastMin .. (This.POSITIVE_MAX) - (1) loop
-                    This.INTEGER_ARRAY ((index) + (This.NEGATIVE_MAX)) := index;
+                    This.INTEGER_ARRAY ((index) + (This.NEGATIVE_MAX)) := Long_Long_Integer (index);
                 end loop;
                 for index in reverse This.lastNegativeMin .. (This.NEGATIVE_MAX) - (1) loop
-                    This.INTEGER_ARRAY (index) := -(index);
+                    This.INTEGER_ARRAY (index) := Long_Long_Integer (-(index));
                 end loop;
                 This.lastMin := This.POSITIVE_MAX;
                 This.lastNegativeMin := This.NEGATIVE_MAX;
@@ -94,8 +94,8 @@ package body org.allbinary.logic.math.SmallLongFactory_Package is
       i : Integer;
    begin
         i := (index) + (This.NEGATIVE_MAX);
-        if (This.STRING_ARRAY (i)) = (null) then
-            This.STRING_ARRAY (i) := This.INTEGER_ARRAY (i).toString;
+        if (This.STRING_ARRAY (i)) = (Null_Unbounded_String) then
+            This.STRING_ARRAY (i) := To_Unbounded_String (Java_Image (This.INTEGER_ARRAY (i)));
         end if;
         return This.STRING_ARRAY (i);
    end getString;

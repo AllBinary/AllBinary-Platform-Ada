@@ -406,7 +406,7 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
                 values := Unbounded_String_Array_Access (NameSpaceRequestParams'Class (This).getMap.get (key));
                 if (Java_Index_Of (key, Java_Image (NameSpaceRequestParamData_Package.NAME))) < (0) then
                     if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
-                        This.logUtil.putF (To_Unbounded_String ("Not NameSpace key: ") & key & To_Unbounded_String (" Value: ") & Java_Image (values (0)), NameSpaceRequestParams_Access'(This'Unchecked_Access), To_Unbounded_String ("toHashMap()"));
+                        This.logUtil.putF (To_Unbounded_String ("Not NameSpace key: ") & key & To_Unbounded_String (" Value: ") & values (0), NameSpaceRequestParams_Access'(This'Unchecked_Access), To_Unbounded_String ("toHashMap()"));
                     end if;
                     hashMap.put (Java_New_String (key), Java_New_String (values (0)));
                 else

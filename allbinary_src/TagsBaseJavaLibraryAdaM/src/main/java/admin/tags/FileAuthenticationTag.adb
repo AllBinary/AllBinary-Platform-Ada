@@ -42,7 +42,7 @@ package body admin.tags.FileAuthenticationTag_Package is
    begin
       null;
       This.logUtil := LogUtil_Package.getInstance;
-      This.attemptsInteger := null;
+      This.attemptsInteger := 0;
       This.weblisketSession := null;
       This.request := null;
       This.command := Null_Unbounded_String;
@@ -118,7 +118,7 @@ package body admin.tags.FileAuthenticationTag_Package is
 
    procedure nextAttempt (This : in out FileAuthenticationTag) is
    begin
-        if ((This.attemptsInteger) /= (null)) and then ((Integer (This.attemptsInteger)) > (0)) then
+        if ((This.attemptsInteger) /= (0)) and then ((Integer (This.attemptsInteger)) > (0)) then
             This.weblisketSession.setAttempts ((Integer (This.attemptsInteger)) + (1));
         else
             This.weblisketSession.setAttempts (1);

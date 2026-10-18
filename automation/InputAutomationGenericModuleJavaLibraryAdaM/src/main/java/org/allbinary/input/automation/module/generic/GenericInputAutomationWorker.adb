@@ -44,7 +44,7 @@ package body org.allbinary.input.automation.module.generic_Id.GenericInputAutoma
       This.logUtil := LogUtil_Package.getInstance;
       This.PROCESS_DATA_WORKER_RESULTS := To_Unbounded_String ("processDataWorkerResults");
       This.lastFrame := -(1);
-      This.frame := null;
+      This.frame := 0;
       This.genericProfile := null;
    end Initialize_Fields;
 

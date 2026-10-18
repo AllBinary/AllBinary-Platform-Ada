@@ -52,7 +52,7 @@ package body org.allbinary.media.image.ImageArrayRotationUtil_Package is
       bufferedImageArray : BufferedImage_Access_Array_Access;
       index : Integer;
    begin
-        totalAngle := null;
+        totalAngle := 0;
         if (input) = (This.commonStrings.UP) then
             totalAngle := To_Unbounded_String (Java_Image (-(90)));
         elsif (input) = (This.commonStrings.DOWN) then

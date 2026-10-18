@@ -29,7 +29,7 @@ package body org.allbinary.logic.math.SmallIntegerSingletonFactory_Package is
       null;
       This.NEGATIVE_MAX := 500;
       This.POSITIVE_MAX := 16#2D1#;
-      This.INTEGER_ARRAY := new Integer_Array'(0 .. ((This.NEGATIVE_MAX) + (This.POSITIVE_MAX)) - 1 => null);
+      This.INTEGER_ARRAY := new Integer_Array'(0 .. ((This.NEGATIVE_MAX) + (This.POSITIVE_MAX)) - 1 => 0);
       This.STRING_ARRAY := new Unbounded_String_Array'(0 .. ((This.NEGATIVE_MAX) + (This.POSITIVE_MAX)) - 1 => Null_Unbounded_String);
       This.MIN := 0;
       This.lastMin := 0;
@@ -144,7 +144,7 @@ package body org.allbinary.logic.math.SmallIntegerSingletonFactory_Package is
       integer_Id : Integer;
    begin
         integer_Id := SmallIntegerSingletonFactory'Class (This).getAt (index);
-        if (integer_Id) = (null) then
+        if (integer_Id) = (0) then
             integer_Id := index;
         end if;
         return integer_Id;
@@ -154,8 +154,8 @@ package body org.allbinary.logic.math.SmallIntegerSingletonFactory_Package is
       i : Integer;
    begin
         i := (index) + (This.NEGATIVE_MAX);
-        if (This.STRING_ARRAY (i)) = (null) then
-            This.STRING_ARRAY (i) := This.INTEGER_ARRAY (i).toString;
+        if (This.STRING_ARRAY (i)) = (Null_Unbounded_String) then
+            This.STRING_ARRAY (i) := To_Unbounded_String (Java_Image (This.INTEGER_ARRAY (i)));
         end if;
         return This.STRING_ARRAY (i);
    end getString;

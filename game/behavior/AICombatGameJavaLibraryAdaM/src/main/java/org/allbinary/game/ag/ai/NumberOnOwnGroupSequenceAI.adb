@@ -52,7 +52,7 @@ package body org.allbinary.game.ag.ai.NumberOnOwnGroupSequenceAI_Package is
         index := NumberOnOwnGroupSequenceAI'Class (This).getIndex;
         if (This.numberOnSameTeam'Length) > (index) then
             size := GroupLayerManagerListener_Package.getInstance.getGroupSizeFromInterface (layerInterface);
-            if (This.numberOnSameTeam (index).intValue) > (size) then
+            if (Integer (This.numberOnSameTeam (index))) > (size) then
                 NumberOnOwnGroupSequenceAI'Class (This).next;
             end if;
         end if;

@@ -63,14 +63,14 @@ package body org.allbinary.game.ag.ai.MultiKeyPressesAI_Package is
         size := keys'Length;
         if MultiKeyPressesAI'Class (This).isOn then
             for index in 0 .. (size) - 1 loop
-                key := keys (index).intValue;
+                key := Integer (keys (index));
                 if (key) /= (-(1)) then
                     gameInput.add (This.gameKeyEventFactory.getInstanceForKey (MultiKeyPressesAI_Access'(This'Unchecked_Access), key));
                 end if;
             end loop;
         else
             for index in 0 .. (size) - 1 loop
-                key := keys (index).intValue;
+                key := Integer (keys (index));
                 if (key) /= (-(1)) then
                     gameInput.addForRemoval (This.gameKeyEventFactory.getInstanceForKey (MultiKeyPressesAI_Access'(This'Unchecked_Access), key));
                 end if;

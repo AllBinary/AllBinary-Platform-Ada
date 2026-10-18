@@ -73,7 +73,7 @@ package body org.allbinary.logic.java.anyType.clazz.ClassUtil_Package is
             stringBuffer.append (lineBreak);
             for index in 0 .. (classes'Length) - 1 loop
                 stringBuffer.append (To_Unbounded_String ("Class: "));
-                stringBuffer.append (classes (index).getName);
+                stringBuffer.append (To_Unbounded_String (Ada.Tags.Expanded_Name (classes (index))));
                 stringBuffer.append (lineBreak);
             end loop;
             stringBuffer.append (InterfaceUtil_Package.viewAll (myClass, lineBreak));

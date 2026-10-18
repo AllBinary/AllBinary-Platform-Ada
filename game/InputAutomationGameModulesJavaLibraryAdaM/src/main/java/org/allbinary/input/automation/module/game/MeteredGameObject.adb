@@ -27,10 +27,10 @@ package body org.allbinary.input.automation.module.game.MeteredGameObject_Packag
       This.ratios := null;
       This.good := False;
       This.dropping := False;
-      This.minX := null;
-      This.maxX := null;
-      This.y := null;
-      This.size := null;
+      This.minX := 0;
+      This.maxX := 0;
+      This.y := 0;
+      This.size := 0;
       This.RATIOS_LABEL := To_Unbounded_String ("Ratios: ");
       This.IS_GOOD_LABEL := To_Unbounded_String ("isGood: ");
       This.IS_DROPPPING_LABEL := To_Unbounded_String ("isDropping: ");
@@ -42,7 +42,7 @@ package body org.allbinary.input.automation.module.game.MeteredGameObject_Packag
       index : Integer;
    begin
       Initialize_Fields (This);
-        MeteredGameObject'Class (This).setRatios (new Long_Float_Array'(0 .. (bufferedImage'Length) - 1 => null));
+        MeteredGameObject'Class (This).setRatios (new Long_Float_Array'(0 .. (bufferedImage'Length) - 1 => 0.0));
         MeteredGameObject'Class (This).setMinX (minX);
         MeteredGameObject'Class (This).setMaxX (maxX);
         MeteredGameObject'Class (This).setY (y);

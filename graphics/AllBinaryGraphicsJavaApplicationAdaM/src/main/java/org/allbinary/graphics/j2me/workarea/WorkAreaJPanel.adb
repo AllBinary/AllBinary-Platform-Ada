@@ -356,7 +356,7 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
    begin
         canvasJPanelHashMap := WorkAreaJPanel'Class (This).getCanvasHashMap;
         frameInteger := Integer (canvasJPanelHashMap.get (treeNode));
-        if (frameInteger) /= (null) then
+        if (frameInteger) /= (0) then
             WorkAreaJPanel'Class (This).select_Id (Integer (frameInteger));
         end if;
    end select_Id;

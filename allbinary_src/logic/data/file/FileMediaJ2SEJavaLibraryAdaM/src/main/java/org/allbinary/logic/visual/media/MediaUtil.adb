@@ -109,7 +109,7 @@ package body org.allbinary.logic.visual.media.MediaUtil_Package is
         if (propertyStringArray) /= (null) then
             for index in 0 .. (propertyStringArray'Length) - 1 loop
                 propertyObject := bufferedImage.getProperty (propertyStringArray (index));
-                hashMap.put (propertyStringArray (index), Java_Box (propertyObject.toString));
+                hashMap.put (Java_Box (propertyStringArray (index)), Java_Box (propertyObject.toString));
             end loop;
         end if;
         return hashMap;

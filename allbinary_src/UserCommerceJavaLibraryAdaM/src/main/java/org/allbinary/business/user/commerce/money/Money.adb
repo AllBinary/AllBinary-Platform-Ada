@@ -91,7 +91,7 @@ package body org.allbinary.business.user.commerce.money.Money_Package is
 
    function isValid (This : in out Money) return Boolean is
    begin
-        if (((This.units) /= (null)) and then ((Long_Long_Integer (This.units)) > (0))) and then ((Long_Long_Integer (This.units)) < (Long_Long_Integer'Last)) then
+        if (((This.units) /= (0)) and then ((Long_Long_Integer (This.units)) > (0))) and then ((Long_Long_Integer (This.units)) < (Long_Long_Integer'Last)) then
             return True;
         else
             return False;

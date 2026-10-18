@@ -47,7 +47,7 @@ package body org.allbinary.game.ag.ai.BasicProbabilityAIDataFactory_Package is
       repeatLikelyhoodIntegerArray : Integer_Array_Access;
       inputProbability : InputProbability_Access;
    begin
-        likelyhoodIntegerArray := new Integer_Array_Access_Array'(0 .. ((Canvas_Package.KEY_NUM9) + (1)) - 1 => new Integer_Array'(0 .. (2) - 1 => null));
+        likelyhoodIntegerArray := new Integer_Array_Access_Array'(0 .. ((Canvas_Package.KEY_NUM9) + (1)) - 1 => new Integer_Array'(0 .. (2) - 1 => 0));
         smallIntegerSingletonFactory := SmallIntegerSingletonFactory_Package.getInstance;
         likelyhoodIntegerArray (Canvas_Package.UP) (0) := smallIntegerSingletonFactory.getAt (0);
         likelyhoodIntegerArray (Canvas_Package.UP) (1) := smallIntegerSingletonFactory.getAt (10);
@@ -63,7 +63,7 @@ package body org.allbinary.game.ag.ai.BasicProbabilityAIDataFactory_Package is
         likelyhoodIntegerArray (Canvas_Package.KEY_NUM9) (1) := smallIntegerSingletonFactory.getAt (30);
         likelyhoodIntegerArray (Canvas_Package.KEY_NUM1) (0) := smallIntegerSingletonFactory.getAt (30);
         likelyhoodIntegerArray (Canvas_Package.KEY_NUM1) (1) := smallIntegerSingletonFactory.getAt (40);
-        repeatLikelyhoodIntegerArray := new Integer_Array'(0 .. ((Canvas_Package.KEY_NUM9) + (1)) - 1 => null);
+        repeatLikelyhoodIntegerArray := new Integer_Array'(0 .. ((Canvas_Package.KEY_NUM9) + (1)) - 1 => 0);
         repeatLikelyhoodIntegerArray (Canvas_Package.UP) := smallIntegerSingletonFactory.getAt (0);
         repeatLikelyhoodIntegerArray (Canvas_Package.DOWN) := smallIntegerSingletonFactory.getAt (0);
         repeatLikelyhoodIntegerArray (Canvas_Package.LEFT) := smallIntegerSingletonFactory.getAt (0);

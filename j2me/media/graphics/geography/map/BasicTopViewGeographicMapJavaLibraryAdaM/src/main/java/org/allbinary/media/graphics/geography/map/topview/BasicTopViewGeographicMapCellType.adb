@@ -55,7 +55,7 @@ package body org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeog
       Initialize_Fields (This);
         size := types.size;
         typeArray := new Integer_Array'(0 .. (size) - 1 => 0);
-        typeAsInteger := null;
+        typeAsInteger := 0;
         type_Id := 0;
         for index in 0 .. (size) - 1 loop
             typeAsInteger := (Integer (types.get (index)));

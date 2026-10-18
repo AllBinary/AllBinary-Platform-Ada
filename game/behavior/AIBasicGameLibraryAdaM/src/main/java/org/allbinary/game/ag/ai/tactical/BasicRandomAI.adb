@@ -65,7 +65,7 @@ package body org.allbinary.game.ag.ai.tactical.BasicRandomAI_Package is
             This.i_random := This.myRandomFactory.getAbsoluteNextInt (This.inputProbability.getMax);
             repeat := False;
             repeatLikelyhoodIntegerArray := This.inputProbability.getRepeatLikelyhoodIntegerArray;
-            if ((BasicRandomAI'Class (This).getLastKey) /= (-(1))) and then ((repeatLikelyhoodIntegerArray (BasicRandomAI'Class (This).getLastKey).intValue) >= (This.i_random)) then
+            if ((BasicRandomAI'Class (This).getLastKey) /= (-(1))) and then ((Integer (repeatLikelyhoodIntegerArray (BasicRandomAI'Class (This).getLastKey))) >= (This.i_random)) then
                 repeat := True;
             end if;
             if not (repeat) then
@@ -76,8 +76,8 @@ package body org.allbinary.game.ag.ai.tactical.BasicRandomAI_Package is
                 for index in 0 .. (size) - 1 loop
                     key := This.keyArray (index);
                     likelyhoodIntegerKeyArray := likelyhoodIntegerArray (key);
-                    if ((likelyhoodIntegerArray'Length) >= (key)) and then ((likelyhoodIntegerKeyArray (0)) /= (null)) then
-                        if ((This.i_random) >= (likelyhoodIntegerKeyArray (0).intValue)) and then ((This.i_random) < (likelyhoodIntegerKeyArray (1).intValue)) then
+                    if ((likelyhoodIntegerArray'Length) >= (key)) and then ((likelyhoodIntegerKeyArray (0)) /= (0)) then
+                        if ((This.i_random) >= (Integer (likelyhoodIntegerKeyArray (0)))) and then ((This.i_random) < (Integer (likelyhoodIntegerKeyArray (1)))) then
                             BasicRandomAI'Class (This).setLastKey (key);
                             exit;
                         end if;

@@ -66,11 +66,11 @@ package body org.allbinary.logic.communication.http.file.upload.media.UploadMedi
         RESIZABLE_MEDIA := MediaTypeData_Package.getInstance.RESIZABLE_MEDIA;
         readerFileTypes := mediaIOUtil.getReaderFormatNames;
         for index in 0 .. (readerFileTypes'Length) - 1 loop
-            This.readerFileTypesHashMap.put (readerFileTypes (index), Java_Box (RESIZABLE_MEDIA));
+            This.readerFileTypesHashMap.put (Java_Box (readerFileTypes (index)), Java_Box (RESIZABLE_MEDIA));
         end loop;
         writerFileTypes := mediaIOUtil.getWriterFormatNames;
         for index in 0 .. (writerFileTypes'Length) - 1 loop
-            This.writerFileTypesHashMap.put (writerFileTypes (index), Java_Box (RESIZABLE_MEDIA));
+            This.writerFileTypesHashMap.put (Java_Box (writerFileTypes (index)), Java_Box (RESIZABLE_MEDIA));
         end loop;
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
             stringBuffer := StringMaker_Package.Create;

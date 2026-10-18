@@ -19,8 +19,8 @@ package body org.allbinary.media.image.ImageUnifierProperties_Package is
    procedure Initialize_Fields (This : in out ImageUnifierProperties'Class) is
    begin
       null;
-      This.rows := null;
-      This.columns := null;
+      This.rows := 0;
+      This.columns := 0;
       This.imageUnifierCell := null;
    end Initialize_Fields;
 

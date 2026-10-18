@@ -71,7 +71,7 @@ package body org.allbinary.media.audio.Sounds_Package is
         This.soundsFactoryInterface.init;
         soundInterfaceArray := This.soundsFactoryInterface.getSoundInterfaceArray;
         smallIntegerSingletonFactory := SmallIntegerSingletonFactory_Package.getInstance;
-        indexInteger := null;
+        indexInteger := 0;
         indexString := Null_Unbounded_String;
         stringBuffer := StringMaker_Package.Create;
         for i in 0 .. (soundInterfaceArray'Length) - 1 loop

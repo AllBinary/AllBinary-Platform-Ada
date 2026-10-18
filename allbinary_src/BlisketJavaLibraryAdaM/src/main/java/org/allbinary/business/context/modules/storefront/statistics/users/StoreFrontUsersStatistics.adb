@@ -71,7 +71,7 @@ package body org.allbinary.business.context.modules.storefront.statistics.users.
       numberOfUsersForRoleLong : Long_Long_Integer;
    begin
         numberOfUsersForRoleLong := Long_Long_Integer (This.totalUsersByRoleHashMap.get (userRole));
-        if (numberOfUsersForRoleLong) = (null) then
+        if (numberOfUsersForRoleLong) = (0) then
             numberOfUsersForRoleLong := 0;
         end if;
         return (Long_Long_Integer (numberOfUsersForRoleLong)) + (1);

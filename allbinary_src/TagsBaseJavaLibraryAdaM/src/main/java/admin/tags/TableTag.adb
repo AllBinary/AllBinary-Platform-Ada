@@ -36,8 +36,8 @@ package body admin.tags.TableTag_Package is
       This.tagHelperFactoryInterface := null;
       This.tagRequestHelperFactoryInterface := null;
       This.requestObject := null;
-      This.current := null;
-      This.total := null;
+      This.current := 0;
+      This.total := 0;
    end Initialize_Fields;
 
 

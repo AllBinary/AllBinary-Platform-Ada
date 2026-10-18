@@ -45,7 +45,7 @@ package body org.allbinary.logic.java.anyType.ParamsUtil_Package is
             stringBuffer := StringMaker_Package.Create;
             for index in 0 .. (params'Length) - 1 loop
                 stringBuffer.append (To_Unbounded_String (" "));
-                stringBuffer.append (params (index).getName);
+                stringBuffer.append (To_Unbounded_String (Ada.Tags.Expanded_Name (params (index))));
             end loop;
             return stringBuffer.toString;
         else

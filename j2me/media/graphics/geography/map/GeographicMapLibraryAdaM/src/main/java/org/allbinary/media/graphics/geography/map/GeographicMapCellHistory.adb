@@ -144,7 +144,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellHistory
         localList := This.list;
         localVisitedList := This.visitedList;
         size := localVisitedList.size;
-        value := null;
+        value := False;
         for index in 0 .. (size) - 1 loop
             value := Boolean (This.visitedList.get (index));
             if (value) = (This.booleanFactory.FALSE) then
@@ -162,7 +162,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellHistory
    begin
         localVisitedList := This.visitedList;
         size := localVisitedList.size;
-        value := null;
+        value := False;
         for index in 0 .. (size) - 1 loop
             value := Boolean (This.visitedList.get (index));
             if (value) = (This.booleanFactory.FALSE) then
@@ -217,7 +217,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellHistory
       TRUE : Boolean;
    begin
         index := This.list.indexOf (Java_Object_Access (geographicMapCellPosition));
-        value := null;
+        value := False;
         if (index) /= (-(1)) then
             value := Boolean (This.visitedList.get (index));
             TRUE := This.booleanFactory.TRUE;
@@ -318,7 +318,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellHistory
             localVisitedList := This.visitedList;
             size := localVisitedList.size;
             geographicMapCellPosition := null;
-            isCellVisitedBoolean := null;
+            isCellVisitedBoolean := False;
             index := size;
             while (Java_Pre_Decrement (index)) >= (0) loop
                 geographicMapCellPosition := GeographicMapCellPosition_Access (This.list.get (index));

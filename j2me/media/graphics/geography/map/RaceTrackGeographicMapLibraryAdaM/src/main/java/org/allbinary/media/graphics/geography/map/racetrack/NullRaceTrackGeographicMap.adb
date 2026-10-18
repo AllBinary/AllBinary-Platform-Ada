@@ -37,7 +37,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.NullRaceTrackG
    function getId (This : in out NullRaceTrackGeographicMap) return Integer is
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
-        return null;
+        return 0;
    end getId;
 
    function getName (This : in out NullRaceTrackGeographicMap) return Unbounded_String is

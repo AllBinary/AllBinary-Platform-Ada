@@ -173,7 +173,7 @@ package body views.admin.inventory.listings.ProductListing_Package is
         inventorySearchUtil := InventorySearchUtil_Package.getInstance;
         productListingPages := inventorySearchUtil.search (abeClientInformation, This.searchRequest, vector);
         for index in 0 .. (productListingPages'Length) - 1 loop
-            if (productListingPages (index)) = (null) then
+            if (productListingPages (index)) = (Null_Unbounded_String) then
                 exit;
             end if;
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.STATICPAGEGENERATIONLOGGING) then

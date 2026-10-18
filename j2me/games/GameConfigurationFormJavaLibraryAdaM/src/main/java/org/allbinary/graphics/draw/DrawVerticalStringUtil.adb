@@ -158,7 +158,7 @@ package body org.allbinary.graphics.draw.DrawVerticalStringUtil_Package is
                         currentLength := (size) - (offset);
                     end if;
                     if ((offset) + (currentLength)) /= (size) then
-                        while ((currentLength) > (0)) and then ((stringArray (index).charAt ((offset) + (currentLength))) /= (' ')) loop
+                        while ((currentLength) > (0)) and then ((Element (stringArray (index), ((offset) + (currentLength)) + 1)) /= (' ')) loop
                             currentLength := currentLength - 1;
                         end loop;
                         if (currentLength) <= (4) then

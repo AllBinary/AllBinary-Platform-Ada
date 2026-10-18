@@ -88,7 +88,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
                     Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Action Script Input Unknown Node")));
                 end if;
             end loop;
-            KeyboardActionScriptInput'Class (This).setKeyArray (Integer_Array_Access (vector.toArrayType (new Integer_Array'(0 .. (vector.size) - 1 => null))));
+            KeyboardActionScriptInput'Class (This).setKeyArray (Integer_Array_Access (vector.toArrayType (new Integer_Array'(0 .. (vector.size) - 1 => 0))));
         else
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Action Script Input Node Null")));
         end if;
@@ -245,7 +245,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
             index := index + 1;
             <<Continue_N69468>> null;
         end loop;
-        integerArray := Integer_Array_Access (vector.toArrayType (new Integer_Array'(0 .. (vector.size) - 1 => null)));
+        integerArray := Integer_Array_Access (vector.toArrayType (new Integer_Array'(0 .. (vector.size) - 1 => 0)));
         return integerArray;
    end integerArrayValue;
 
