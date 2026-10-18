@@ -58,7 +58,7 @@ package body org.allbinary.logic.communication.log.PreLogUtil_Package is
             className := actualClassName;
         end if;
         message := LogFormatUtil_Package.getInstance.get (className, functionName, specialMessage, exception_Id);
-        android_Package.util.Log.i (PreLogUtil_Package.LABEL, message);
+        Ada.Text_IO.Put_Line (Ada.Text_IO.Standard_Error, "I/" & Java_Image (PreLogUtil_Package.LABEL) & ": " & Java_Image (message));
    end putOE;
 
    procedure putS (specialMessage : Unbounded_String; className : Unbounded_String; functionName : Unbounded_String) is
@@ -71,7 +71,7 @@ package body org.allbinary.logic.communication.log.PreLogUtil_Package is
       message : Unbounded_String;
    begin
         message := LogFormatUtil_Package.getInstance.get (className, functionName, specialMessage, exception_Id);
-        android_Package.util.Log.i (className, message);
+        Ada.Text_IO.Put_Line (Ada.Text_IO.Standard_Error, "I/" & Java_Image (className) & ": " & Java_Image (message));
    end putSE;
 
 begin

@@ -83,7 +83,7 @@ package body org.allbinary.logic.communication.log.LogUtil_Package is
         className := This.LABEL;
         className := Java_New_String (StringMaker_Package.Create.append (To_Unbounded_String (Ada.Tags.Expanded_Name (anyType.all'Tag))).append (This.commonSeps.COLON).append (To_Unbounded_String (Java_To_Unsigned_String (TsUtil_Package.getInstance.hashCode (anyType), 16))).toString);
         message := This.logFormatUtil.get (className, functionName, specialMessage, exception_Id);
-        android_Package.util.Log.i (This.LABEL, message);
+        Ada.Text_IO.Put_Line (Ada.Text_IO.Standard_Error, "I/" & Java_Image (This.LABEL) & ": " & Java_Image (message));
    end put;
 
    procedure putS (This : in out LogUtil; specialMessage : Unbounded_String; string_Id : Unbounded_String; functionName : Unbounded_String; exception_Id_Param : access Java_Object'Class) is
@@ -94,7 +94,7 @@ package body org.allbinary.logic.communication.log.LogUtil_Package is
         className := This.LABEL;
         className := Java_New_String (StringMaker_Package.Create.append (string_Id).append (This.commonSeps.COLON).append (To_Unbounded_String (Java_To_Unsigned_String (TsUtil_Package.getInstance.hashCode (string_Id), 16))).toString);
         message := This.logFormatUtil.get (className, functionName, specialMessage, exception_Id);
-        android_Package.util.Log.i (This.LABEL, message);
+        Ada.Text_IO.Put_Line (Ada.Text_IO.Standard_Error, "I/" & Java_Image (This.LABEL) & ": " & Java_Image (message));
    end putS;
 
 begin

@@ -79,7 +79,7 @@ package body org.allbinary.logic.communication.log.LogUtil_Package is
         className := This.LABEL;
         className := To_Unbounded_String (Ada.Tags.Expanded_Name (anyType.all'Tag));
         message := This.logFormatUtil.get (className, functionName, specialMessage, exception_Id);
-        android_Package.util.Log.i (This.LABEL, This.LOG_SUCCESS & message);
+        Ada.Text_IO.Put_Line (Ada.Text_IO.Standard_Error, "I/" & Java_Image (This.LABEL) & ": " & Java_Image (This.LOG_SUCCESS & message));
    end put;
 
 begin
